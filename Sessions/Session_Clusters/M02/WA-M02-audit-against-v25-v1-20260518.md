@@ -1,6 +1,6 @@
 # M02 audit against wa-sessionb-cluster-instruction-v2_5-20260518
 
-**Date:** 2026-05-18 06:10
+**Date:** 2026-05-18 06:18
 **Script:** `scripts/_audit_cluster_against_instruction_v25_v1_20260518.py`
 **Instruction version checked against:** v2_5
 **Cluster status at audit time:** 'Analysis Completed (Terms Added)'
@@ -12,12 +12,12 @@
 
 **Level:** `MIXED`
 
-**Recommendation:** Restart from Phase 9. Blocking findings cannot be repaired surgically. Advisory findings can be handled as surgical fixes either during the restart or before it.
+**Recommendation:** Restart from Phase 1. Blocking findings cannot be repaired surgically. Advisory findings can be handled as surgical fixes either during the restart or before it.
 
-**Restart-from-phase:** Phase 9
+**Restart-from-phase:** Phase 1
 
 Per v2_5 §17.3.2, the cluster.status transition for this restart is:
-  (see §17.3.2 table)
+  `Analysis Completed` → `Data - In Progress`
 
 ---
 
@@ -25,6 +25,8 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 
 | Check code | Count | Threshold | Severity | Section |
 |---|---:|---:|---|---|
+| `AUDIT-V25-STATUS-SUFFIX` | 1 | 1 | blocking | §2.6 (status discipline) + cluster.status conventions |
+| `AUDIT-V25-PIPELINE-INCOMPLETE` | 4 | 1 | blocking | §4 (Phase 1) + §5 (Phase 2) + §9 (Phase 6) + §10 (Phase 7) |
 | `AUDIT-V25-BOUNDARY-PENDING` | 4 | 5 | advisory | §11A (Phase 8.5) + §15.2 check 8 |
 | `AUDIT-V25-FORBIDDEN-SETASIDE` | 0 | 10 | clean | §4.5.1 (forbidden grounds for SET_ASIDE) |
 | `AUDIT-V25-TERSE-SETASIDE` | 2 | 20 | advisory | §4.5.1 (valid SET_ASIDE reasons require specific evidence ground) |
@@ -36,6 +38,44 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 ---
 
 ## §3 — Per-check detail
+
+### AUDIT-V25-STATUS-SUFFIX — cluster.status carries a post-closure suffix indicating un-processed additions
+
+**Section reference:** §2.6 (status discipline) + cluster.status conventions
+**Count:** 1
+**Blocking threshold:** 1
+**If blocking, restart from:** Phase 1
+
+_Suffix indicates post-closure work that has not been folded through the pipeline. The pipeline-completeness check (§AUDIT-V25-PIPELINE-INCOMPLETE) will name the affected terms/verses._
+
+Raw cluster.status: `'Analysis Completed (Terms Added)'`
+
+- Suffix detected: post-closure terms added
+
+---
+
+### AUDIT-V25-PIPELINE-INCOMPLETE — Pipeline-completeness gaps (Phase 1/2/6/7 outputs missing on relevant verses)
+
+**Section reference:** §4 (Phase 1) + §5 (Phase 2) + §9 (Phase 6) + §10 (Phase 7)
+**Count:** 4
+**Blocking threshold:** 1
+**If blocking, restart from:** Phase 6
+
+Total gap items: 4
+
+By category:
+- missing_subgroup: 4
+
+By term (highest-gap-count first):
+- G4088 pikria (term_id=705): {'missing_subgroup': 4}
+
+Sample affected items (first 4):
+- missing_subgroup: G4088 pikria Eph 4:31 (phase owner: 6)
+- missing_subgroup: G4088 pikria Act 8:23 (phase owner: 6)
+- missing_subgroup: G4088 pikria Rom 3:14 (phase owner: 6)
+- missing_subgroup: G4088 pikria Heb 12:15 (phase owner: 6)
+
+---
 
 ### AUDIT-V25-BOUNDARY-PENDING — BOUNDARY_DECISION_PENDING flags unresolved
 
@@ -223,7 +263,7 @@ BOUNDARY verses scanned: 82
 
 ## §4 — Researcher next steps
 
-1. Review the blocking findings above and confirm or override the recommended phase restart (Phase 9).
+1. Review the blocking findings above and confirm or override the recommended phase restart (Phase 1).
 2. If accepting the restart, CC will build a phase-restart directive per §17.3.2: backup affected rows + status transition + roll-back ops.
 3. If pursuing surgical fixes despite the recommendation, approve a fix list and CC will build surgical directives per §17.5 — but note the recommendation indicates the fixes will not be sufficient on their own.
 

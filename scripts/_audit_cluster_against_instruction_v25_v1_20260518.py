@@ -109,7 +109,22 @@ VOLUME_THRESHOLDS = {
     "EVIDENCE_GROUNDING_BLOCKING": 5,
     "COMPLETENESS_BLOCKING": 5,
     "REGISTER_FAMILY_BLOCKING": 8,  # >= 8 verses of a missing register = blocking
+    "PIPELINE_INCOMPLETE_BLOCKING": 1,  # any pipeline-incomplete row = blocking
+    "STATUS_SUFFIX_BLOCKING": 1,  # status flag = blocking by definition
 }
+
+# Status-string patterns indicating known post-closure state that requires audit.
+# These are researcher conventions appended to `cluster.status` after closure
+# (e.g. "Analysis Completed (Terms Added)" or "(Verses Added)") to signal that
+# the cluster has accumulated work that hasn't been processed through the v2_5
+# pipeline.
+STATUS_SUFFIX_PATTERNS = [
+    (r"\(terms?\s+added\)", "post-closure terms added"),
+    (r"\(verses?\s+added\)", "post-closure verses added"),
+    (r"\(reset\)", "post-closure reset"),
+    (r"\(re-?examination\)", "post-closure re-examination"),
+    (r"\(amended\)", "post-closure amended"),
+]
 
 # Verse-reference regex used for evidence-grounding check. Matches "Gen 1:1",
 # "1Co 13:4", "Psa 23:1-5", VCG codes "M01-E-VCG-02", and anchor markers "[A]".
@@ -405,6 +420,218 @@ def check_completeness(conn, code):
     }
 
 
+def check_status_suffix(conn, code, cluster_meta):
+    """Check 0: cluster.status carries a post-closure suffix (e.g. 'Terms Added').
+
+    Researcher convention appends a parenthetical suffix to `cluster.status`
+    after closure when terms/verses have been added but not yet processed. The
+    presence of such a suffix is itself a blocking signal — the cluster is not
+    cleanly Analysis Completed.
+    """
+    status = (cluster_meta.get("status") or "").lower()
+    matches = []
+    for pattern, label in STATUS_SUFFIX_PATTERNS:
+        if re.search(pattern, status, re.IGNORECASE):
+            matches.append(label)
+    return {
+        "code": "AUDIT-V25-STATUS-SUFFIX",
+        "title": "cluster.status carries a post-closure suffix indicating un-processed additions",
+        "section_ref": "§2.6 (status discipline) + cluster.status conventions",
+        "count": len(matches),
+        "items": [{"suffix": m} for m in matches],
+        "raw_status": cluster_meta.get("status"),
+        "blocking_threshold": VOLUME_THRESHOLDS["STATUS_SUFFIX_BLOCKING"],
+        "restart_from_phase": "1",
+        "note": "Suffix indicates post-closure work that has not been folded through the pipeline. The pipeline-completeness check (§AUDIT-V25-PIPELINE-INCOMPLETE) will name the affected terms/verses.",
+    }
+
+
+def check_pipeline_completeness(conn, code):
+    """Pipeline-completeness check.
+
+    For every active relevant `verse_context` row in the cluster, verify the
+    minimum v2_5 pipeline outputs are present:
+
+    - `analysis_note` populated (Phase 2 Pass A)
+    - `cluster_subgroup_id` populated (Phase 6 routing)
+    - `group_id` populated (Phase 7 VCG assignment)
+
+    Also check:
+    - Every term has at least one is_anchor=1 row (R4 anchor gate, §10.6)
+    - No UT verse_records remain for the cluster's terms (Phase 1 ran)
+
+    Pipeline gaps indicate post-closure additions weren't carried through.
+    """
+    items = []
+
+    # 1. Missing Pass A meanings on is_relevant rows
+    rows = conn.execute(
+        """
+        SELECT vc.id, vc.verse_record_id, mt.id AS term_id,
+               mt.strongs_number, mt.transliteration, vr.reference
+        FROM verse_context vc
+        JOIN mti_terms mt ON mt.id = vc.mti_term_id
+        LEFT JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
+        WHERE mt.cluster_code = ?
+          AND vc.is_relevant = 1
+          AND COALESCE(vc.delete_flagged, 0) = 0
+          AND (vc.analysis_note IS NULL OR vc.analysis_note = '')
+        """,
+        (code,),
+    ).fetchall()
+    for r in rows:
+        items.append({
+            "category": "missing_pass_a_meaning",
+            "vc_id": r["id"],
+            "term_id": r["term_id"],
+            "strongs": r["strongs_number"],
+            "transliteration": r["transliteration"],
+            "reference": r["reference"],
+            "phase_owner": "2",
+        })
+
+    # 2. Missing cluster_subgroup_id on is_relevant rows
+    rows = conn.execute(
+        """
+        SELECT vc.id, vc.verse_record_id, mt.id AS term_id,
+               mt.strongs_number, mt.transliteration, vr.reference
+        FROM verse_context vc
+        JOIN mti_terms mt ON mt.id = vc.mti_term_id
+        LEFT JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
+        WHERE mt.cluster_code = ?
+          AND vc.is_relevant = 1
+          AND COALESCE(vc.delete_flagged, 0) = 0
+          AND vc.cluster_subgroup_id IS NULL
+        """,
+        (code,),
+    ).fetchall()
+    for r in rows:
+        items.append({
+            "category": "missing_subgroup",
+            "vc_id": r["id"],
+            "term_id": r["term_id"],
+            "strongs": r["strongs_number"],
+            "transliteration": r["transliteration"],
+            "reference": r["reference"],
+            "phase_owner": "6",
+        })
+
+    # 3. Missing group_id on is_relevant rows (no VCG assignment)
+    rows = conn.execute(
+        """
+        SELECT vc.id, vc.verse_record_id, mt.id AS term_id,
+               mt.strongs_number, mt.transliteration, vr.reference
+        FROM verse_context vc
+        JOIN mti_terms mt ON mt.id = vc.mti_term_id
+        LEFT JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
+        WHERE mt.cluster_code = ?
+          AND vc.is_relevant = 1
+          AND COALESCE(vc.delete_flagged, 0) = 0
+          AND vc.group_id IS NULL
+        """,
+        (code,),
+    ).fetchall()
+    for r in rows:
+        items.append({
+            "category": "missing_vcg",
+            "vc_id": r["id"],
+            "term_id": r["term_id"],
+            "strongs": r["strongs_number"],
+            "transliteration": r["transliteration"],
+            "reference": r["reference"],
+            "phase_owner": "7",
+        })
+
+    # 4. Terms without an active anchor (R4 violation)
+    rows = conn.execute(
+        """
+        SELECT mt.id AS term_id, mt.strongs_number, mt.transliteration,
+               SUM(CASE WHEN vc.is_relevant=1 THEN 1 ELSE 0 END) AS rel,
+               SUM(CASE WHEN vc.is_anchor=1 AND COALESCE(vc.delete_flagged,0)=0 THEN 1 ELSE 0 END) AS anchors
+        FROM mti_terms mt
+        LEFT JOIN verse_context vc ON vc.mti_term_id = mt.id AND COALESCE(vc.delete_flagged,0)=0
+        WHERE mt.cluster_code = ? AND COALESCE(mt.delete_flagged,0)=0
+        GROUP BY mt.id
+        HAVING rel > 0 AND (anchors IS NULL OR anchors = 0)
+        """,
+        (code,),
+    ).fetchall()
+    for r in rows:
+        items.append({
+            "category": "missing_anchor",
+            "vc_id": None,
+            "term_id": r["term_id"],
+            "strongs": r["strongs_number"],
+            "transliteration": r["transliteration"],
+            "reference": None,
+            "phase_owner": "7",
+            "extra": f"relevant verses={r['rel']}, anchor count={r['anchors']}",
+        })
+
+    # 5. UT verses (wa_verse_records with no verse_context row for the term)
+    rows = conn.execute(
+        """
+        SELECT vr.id AS vr_id, vr.reference, mt.id AS term_id,
+               mt.strongs_number, mt.transliteration
+        FROM wa_verse_records vr
+        JOIN mti_terms mt ON mt.id = vr.mti_term_id
+        LEFT JOIN verse_context vc ON vc.verse_record_id = vr.id AND vc.mti_term_id = mt.id
+        WHERE mt.cluster_code = ?
+          AND COALESCE(vr.delete_flagged, 0) = 0
+          AND vc.id IS NULL
+        """,
+        (code,),
+    ).fetchall()
+    for r in rows:
+        items.append({
+            "category": "ut_verse",
+            "vc_id": None,
+            "term_id": r["term_id"],
+            "strongs": r["strongs_number"],
+            "transliteration": r["transliteration"],
+            "reference": r["reference"],
+            "phase_owner": "1",
+            "extra": f"vr_id={r['vr_id']}",
+        })
+
+    # Aggregate by term and by category
+    by_term = defaultdict(lambda: defaultdict(int))
+    by_category = Counter()
+    for item in items:
+        by_category[item["category"]] += 1
+        key = (item["term_id"], item["strongs"], item["transliteration"])
+        by_term[key][item["category"]] += 1
+
+    return {
+        "code": "AUDIT-V25-PIPELINE-INCOMPLETE",
+        "title": "Pipeline-completeness gaps (Phase 1/2/6/7 outputs missing on relevant verses)",
+        "section_ref": "§4 (Phase 1) + §5 (Phase 2) + §9 (Phase 6) + §10 (Phase 7)",
+        "count": len(items),
+        "items": items[:50],  # cap in report
+        "items_total": len(items),
+        "by_category": dict(by_category),
+        "by_term": [
+            {
+                "strongs": k[1],
+                "transliteration": k[2],
+                "term_id": k[0],
+                "gaps": dict(v),
+            }
+            for k, v in sorted(by_term.items(), key=lambda kv: -sum(kv[1].values()))
+        ],
+        "blocking_threshold": VOLUME_THRESHOLDS["PIPELINE_INCOMPLETE_BLOCKING"],
+        # Earliest phase among gaps: Phase 1 if any UT verse; otherwise the
+        # earliest among 2, 6, 7. The script picks the earliest applicable phase.
+        "restart_from_phase": "1" if by_category.get("ut_verse", 0) > 0 else (
+            "2" if by_category.get("missing_pass_a_meaning", 0) > 0 else (
+                "6" if by_category.get("missing_subgroup", 0) > 0 else (
+                    "7" if (by_category.get("missing_vcg", 0) > 0 or by_category.get("missing_anchor", 0) > 0) else None
+                )
+            )
+        ),
+    }
+
+
 def check_register_families_in_boundary(conn, code):
     """Soft check: scan BOUNDARY Pass A meanings for §1.1 register-family keywords.
 
@@ -485,7 +712,7 @@ def compute_verdict(findings):
     - Any check count above threshold → PHASE-RESTART (from earliest affected phase).
     - Mix → MIXED verdict listing items per category.
     """
-    PHASE_ORDER = ["1", "3", "5", "7", "8.5", "9", "10", "11", "12"]
+    PHASE_ORDER = ["1", "2", "3", "5", "6", "7", "8.5", "9", "10", "11", "12"]
 
     blocking_items = []
     advisory_items = []
@@ -620,7 +847,28 @@ def write_report(code, findings, verdict, cluster_meta):
 
         # Code-specific rendering
         code_key = f["code"]
-        if code_key == "AUDIT-V25-BOUNDARY-PENDING":
+        if code_key == "AUDIT-V25-STATUS-SUFFIX":
+            lines.append(f"Raw cluster.status: `{f['raw_status']!r}`")
+            lines.append("")
+            for item in f["items"]:
+                lines.append(f"- Suffix detected: {item['suffix']}")
+        elif code_key == "AUDIT-V25-PIPELINE-INCOMPLETE":
+            lines.append(f"Total gap items: {f['items_total']}")
+            lines.append("")
+            lines.append("By category:")
+            for cat, n in f["by_category"].items():
+                lines.append(f"- {cat}: {n}")
+            lines.append("")
+            lines.append("By term (highest-gap-count first):")
+            for term in f["by_term"][:15]:
+                lines.append(f"- {term['strongs']} {term['transliteration']} (term_id={term['term_id']}): {term['gaps']}")
+            lines.append("")
+            lines.append(f"Sample affected items (first {len(f['items'])}):")
+            for item in f["items"][:20]:
+                ref = item.get("reference") or ""
+                extra = f" [{item['extra']}]" if item.get("extra") else ""
+                lines.append(f"- {item['category']}: {item['strongs']} {item['transliteration']} {ref} (phase owner: {item['phase_owner']}){extra}")
+        elif code_key == "AUDIT-V25-BOUNDARY-PENDING":
             for item in f["items"]:
                 lines.append(f"- flag id={item['id']}, registry={item['registry']!r}, strongs={item['strongs']}")
                 lines.append(f"  desc: {item['description']}")
@@ -719,6 +967,8 @@ def main():
     print(f"Auditing cluster {code} (status={cluster_meta['status']!r}) against v2_5 ...")
 
     findings = []
+    findings.append(check_status_suffix(conn, code, cluster_meta))
+    findings.append(check_pipeline_completeness(conn, code))
     findings.append(check_boundary_pending(conn, code))
     findings.append(check_forbidden_setaside(conn, code))
     findings.append(check_terse_setaside(conn, code))

@@ -1,6 +1,6 @@
 # M04 audit against wa-sessionb-cluster-instruction-v2_5-20260518
 
-**Date:** 2026-05-18 06:10
+**Date:** 2026-05-18 06:18
 **Script:** `scripts/_audit_cluster_against_instruction_v25_v1_20260518.py`
 **Instruction version checked against:** v2_5
 **Cluster status at audit time:** 'Analysis - In Progress'
@@ -25,6 +25,8 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 
 | Check code | Count | Threshold | Severity | Section |
 |---|---:|---:|---|---|
+| `AUDIT-V25-STATUS-SUFFIX` | 0 | 1 | clean | §2.6 (status discipline) + cluster.status conventions |
+| `AUDIT-V25-PIPELINE-INCOMPLETE` | 19 | 1 | blocking | §4 (Phase 1) + §5 (Phase 2) + §9 (Phase 6) + §10 (Phase 7) |
 | `AUDIT-V25-BOUNDARY-PENDING` | 0 | 5 | clean | §11A (Phase 8.5) + §15.2 check 8 |
 | `AUDIT-V25-FORBIDDEN-SETASIDE` | 0 | 10 | clean | §4.5.1 (forbidden grounds for SET_ASIDE) |
 | `AUDIT-V25-TERSE-SETASIDE` | 75 | 20 | blocking | §4.5.1 (valid SET_ASIDE reasons require specific evidence ground) |
@@ -36,6 +38,62 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 ---
 
 ## §3 — Per-check detail
+
+### AUDIT-V25-STATUS-SUFFIX — cluster.status carries a post-closure suffix indicating un-processed additions
+
+**Section reference:** §2.6 (status discipline) + cluster.status conventions
+**Count:** 0
+**Blocking threshold:** 1
+**If blocking, restart from:** Phase 1
+
+_Suffix indicates post-closure work that has not been folded through the pipeline. The pipeline-completeness check (§AUDIT-V25-PIPELINE-INCOMPLETE) will name the affected terms/verses._
+
+No items found. Check is clean.
+
+---
+
+### AUDIT-V25-PIPELINE-INCOMPLETE — Pipeline-completeness gaps (Phase 1/2/6/7 outputs missing on relevant verses)
+
+**Section reference:** §4 (Phase 1) + §5 (Phase 2) + §9 (Phase 6) + §10 (Phase 7)
+**Count:** 19
+**Blocking threshold:** 1
+**If blocking, restart from:** Phase 2
+
+Total gap items: 19
+
+By category:
+- missing_pass_a_meaning: 19
+
+By term (highest-gap-count first):
+- G5463 chairo (term_id=381): {'missing_pass_a_meaning': 7}
+- G5479 chara (term_id=378): {'missing_pass_a_meaning': 6}
+- G4796 sunchairo (term_id=382): {'missing_pass_a_meaning': 2}
+- H5273A na.im (term_id=549): {'missing_pass_a_meaning': 2}
+- H1524A gil (term_id=359): {'missing_pass_a_meaning': 1}
+- H2304 ched.vah (term_id=356): {'missing_pass_a_meaning': 1}
+
+Sample affected items (first 19):
+- missing_pass_a_meaning: G4796 sunchairo Php 2:17 (phase owner: 2)
+- missing_pass_a_meaning: G4796 sunchairo Php 2:18 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 4:4 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 1:18 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 2:17 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 2:18 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 2:28 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 3:1 (phase owner: 2)
+- missing_pass_a_meaning: G5463 chairo Php 4:10 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara Php 1:4 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara Php 1:25 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara Php 2:2 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara Php 2:29 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara Php 4:1 (phase owner: 2)
+- missing_pass_a_meaning: G5479 chara 1Jn 1:4 (phase owner: 2)
+- missing_pass_a_meaning: H1524A gil Dan 1:10 (phase owner: 2)
+- missing_pass_a_meaning: H2304 ched.vah Ezr 6:16 (phase owner: 2)
+- missing_pass_a_meaning: H5273A na.im 2Sa 23:1 (phase owner: 2)
+- missing_pass_a_meaning: H5273A na.im Psa 81:2 (phase owner: 2)
+
+---
 
 ### AUDIT-V25-BOUNDARY-PENDING — BOUNDARY_DECISION_PENDING flags unresolved
 
