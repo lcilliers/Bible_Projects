@@ -95,3 +95,43 @@ Per v2_6 §4.1:
 ---
 
 *Phase 1 obslog opening complete. Next steps: status advance + housekeeping + run the API.*
+
+---
+
+## PHASE 1 — APPLIED (2026-05-19)
+
+- Session-open script `_apply_m07_session_open_20260519.py` ran clean: cluster.status `Not started` → `Data - In Progress`; reg#146 shame.phase1_status `In Progress` → `Complete`.
+- UT API run via `_apply_m07_ut_review_via_api_20260519.py` (claude-sonnet-4-6, system prompt cached across 6 term calls).
+- Outcome tally (parser): **relevant 99 · set_aside 12 · borderline 1 = 112 ✓**.
+- VCNEW patch `wa-cluster-M07-patch-vcnew-utreview-api-v1-20260519.json` applied: 111 inserts, 6 terms marked `vc_completed`.
+- Borderline held: Judg 3:25 (`bosh` — ambiguous between social-awkwardness-from-delay and inner shame). Researcher decision deferred.
+- `G0880 afōnos` flagged as "all-verses-fail" by the applier (its single UT verse classified set_aside). Candidate for exclusion review later.
+
+Post-state: `verse_context` 565 → 676 (530 is_relevant + 146 set_aside). UT remaining: 1 (the borderline).
+
+---
+
+## PHASE 2 — PASS A MEANING RECORD (v2_6 §5)
+
+- Fetch: 527 of 530 is_relevant rows needing analysis_note (the other 3 are orphan vc rows whose underlying `wa_verse_records.delete_flagged=1`; excluded from fetch by design).
+- API run via `scripts/_run_passa_via_api_v1_20260515.py --m-cluster M07`: 11 batches × 50 (last 27). claude-sonnet-4-6.
+- Total usage: input 71,993 · output 41,585.
+- VCREVISE patch `wa-cluster-M07-patch-passa-meanings-v1-20260519.json` (527 ops) applied clean: 527 verse_context UPDATEs; all 36 M07 mti_terms now `vc_completed`.
+- System prompt saved to `WA-M07-passa-system-prompt-20260519.txt`.
+- Sample meanings spot-checked good (per-verse, plain English, no group/VCG language).
+- AI correctly flagged Jer 9:24 (`H2617B che.sed`) as "positive steadfast love — does not evidence shame content"; this kind of signal is exactly what Phase 3 / Phase 8.5 will use for re-classification.
+
+### Phase 2 cleanup queue (carried forward)
+
+3 orphan vc rows (vc.is_relevant=1, vc.delete_flagged=0, but vr.delete_flagged=1) need disposition:
+
+| vc_id | reference | strongs | translit |
+|---:|---|---|---|
+| 34973 | Php 3:19 | G0152 | aischunē |
+| 37337 | Pro 25:10 | H2616B | cha.sad |
+| 49397 | Php 3:2 | G2699 | katatomē |
+
+Same pattern as M04 Step 1 orphan cleanup precedent. Resolution at Phase 3 or before Phase 8.5: either soft-delete the orphan vc rows, restore the vr rows if they should be active, or treat as out-of-scope. Not blocking Phase 2 completion.
+
+**Phase 2 functionally complete on 527 healthy rows.** Ready for Phase 3 — Cluster constitution debate (v2_6 §6).
+
