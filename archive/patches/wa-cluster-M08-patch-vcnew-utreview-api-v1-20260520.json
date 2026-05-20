@@ -1,0 +1,3691 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M08-patch-vcnew-utreview-api-v1-20260520",
+    "cluster_code": "M08",
+    "session_ref": "M08 Phase 1 UT review via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_2-20260516",
+    "date": "20260520",
+    "terms_covered": [
+      2782,
+      26,
+      59,
+      4440,
+      6037,
+      97,
+      98,
+      99,
+      101,
+      5068,
+      165,
+      6992,
+      6025,
+      241
+    ],
+    "input_versions": {
+      "2782": 1,
+      "26": 1,
+      "59": 1,
+      "4440": 1,
+      "6037": 1,
+      "97": 1,
+      "98": 1,
+      "99": 1,
+      "101": 1,
+      "5068": 1,
+      "165": 1,
+      "6992": 1,
+      "6025": 1,
+      "241": 1
+    },
+    "op_count": 215,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "provisional_anchor_promotions": [],
+    "provisional_anchor_count": 0
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83398,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' auxiliary verb, not ruling-with-arrogance or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83402,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' auxiliary verb describing commencement of settling accounts — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83403,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'beginning with' indicating sequential order in wage payment, not self-exaltation or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83385,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' auxiliary verb, no pride or arrogance content — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83391,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' auxiliary verb describing commencement of bringing the sick — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83364,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' auxiliary verb for the resurrected man speaking — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 83368,
+        "mti_term_id": 2782,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "archō used as 'began/start' in a temporal expression about the day declining — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5945,
+        "mti_term_id": 26,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5792,
+        "mti_term_id": 59,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132838,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of literal mountain height, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132837,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of literal mountain height, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132836,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of literal mountain height, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132832,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of God's uplifted arm (divine power/action), not human inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132833,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of divine/heavenly majesty and Christ's exaltation, not human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132834,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of Christ's divine exaltation above the heavens, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132839,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of literal mountain height in apocalyptic vision, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 132840,
+        "mti_term_id": 4440,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "hupsēlos used of literal wall height of the New Jerusalem, not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186823,
+        "mti_term_id": 6037,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.ah used of literal plant growth, not human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186821,
+        "mti_term_id": 6037,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.ah used of literal water level rising, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5888,
+        "mti_term_id": 97,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.a.vah used of Leviathan's physical back/scales (rows of shields), not of inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5893,
+        "mti_term_id": 97,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.a.vah used of the swelling/tumult of the sea (natural phenomenon), not human arrogance or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5896,
+        "mti_term_id": 97,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.a.vah used of a physical rod/back (instrument of punishment on the body), not of inner-being pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5801,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.on used of the proud/swelling waves of the sea, a natural phenomenon — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5818,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.on used of the lush thicket/jungle of the Jordan, a physical landscape term — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5820,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5821,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.on used of the Jordan's thicket/jungle, a physical landscape designation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5822,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.on used of the Jordan's thicket/jungle, a physical landscape designation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186818,
+        "mti_term_id": 98,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.on used of the Jordan's thicket/jungle, a physical landscape term — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5767,
+        "mti_term_id": 99,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ge.ut used of a rising column of smoke (literal physical elevation imagery), not human arrogance or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5705,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal physical height (six cubits and a span), not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5706,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal architectural measurement (120 cubits), not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5710,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal physical height of visionary wheel-rims, not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5711,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal architectural dimension (one cubit high) for temple tables, not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5712,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal architectural raised platform in temple vision, not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5713,
+        "mti_term_id": 101,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "go.vah used of literal physical stature of the Amorites (like cedars in height), not inner pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154167,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of mountains, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154155,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal height of fortified walls, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154154,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal height of fortified walls, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154151,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical stature of a person, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154148,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of hills, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154152,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of hills, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154159,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a gallows, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154160,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a gallows, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154181,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of mountains, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154157,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of elevated social/official rank, not inner-being self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154156,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height feared by the elderly, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154169,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of towers/walls, not directly of inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154170,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of mountains, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154171,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a mountain as herald's vantage point, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154173,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal/cultic physical height of a mountain, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154175,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of hills as idolatrous cultic sites, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154176,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of hills as idolatrous cultic sites, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154174,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of idolatrous cultic hills, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154177,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of city gates, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154161,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a mountain in a divine planting allegory, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154165,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a visionary mountain, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154166,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal measured height of a temple altar, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154153,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of a ram's horns in a vision, not inner-being pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 154183,
+        "mti_term_id": 5068,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ga.vo.ah used of literal physical height of military battlements, not inner-being self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5714,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal physical high ground on a battlefield — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5722,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Target word 'flee' is unrelated to ma.rom; verse describes animal behaviour with no inner-being pride content — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5734,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of God's heavenly height from which he rescues, not human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5735,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of heavenly heights summoned to praise God, a doxological/cosmic reference — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5736,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal elevated geographic positions where personified Wisdom stands — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5737,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal high places in a city as physical vantage points for Wisdom's call — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5738,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal elevated seat in the city occupied by personified Folly — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5740,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of a literal rocky elevation where a tomb is hewn — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5741,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of the socially exalted class languishing in judgment, not of an inner pride disposition — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5742,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of heaven's windows in a cosmic judgment scene, not of human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5743,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of the heavenly realm in a cosmic judgment context, not of human arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5751,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of the divine cosmic heights pointing to God's creative majesty — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5753,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of God's heavenly height as the destination of prayer, not of human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5755,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of God's heavenly habitation from which he roars in judgment — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5757,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5759,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal geographic mountain heights of Israel as planting location — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5760,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of the sacred mountain heights of Israel as God's holy worship site — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5761,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rom used of literal mountain pastureland for sheep in a shepherding metaphor — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186367,
+        "mti_term_id": 165,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219569,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the ark — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219551,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the ark of the covenant — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219552,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the tabernacle table — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219553,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the altar — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219554,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the courtyard hangings — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219555,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the altar of incense — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219556,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the ark of the covenant — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219557,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the tabernacle table — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219558,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the altar of incense — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219559,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the altar of burnt offering — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219560,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the courtyard screen — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219545,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal full-body length falling prostrate, not inner-being elevation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219533,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the temple building — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219532,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a temple annex structure — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219534,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the inner sanctuary — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219535,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the cherubim statues — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219536,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the cherubim — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219539,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the House of the Forest of Lebanon — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219537,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a bronze pillar — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219538,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of bronze capitals on pillars — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219540,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the bronze sea — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219541,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the bronze stands — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219542,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a wheel — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219543,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a structural band on a bronze stand — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219550,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of temple pillars and capitals — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219546,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the bronze altar — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219547,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the bronze sea — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219548,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the bronze platform — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219574,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical stature in a romantic simile, not inner-being elevation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219572,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a bronze pillar — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219573,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of a bronze capital — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219561,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal human physical stature as a size category, not inner-being elevation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219562,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah not present in M08-relevant sense; verse describes a low-spreading vine literally — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219566,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal tree height in an allegory; pride content is in the broader allegory not in this term's use — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219567,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal tree height in an allegory, not of an inner-being pride stance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219568,
+        "mti_term_id": 6992,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "qo.mah used of literal physical height of the temple wall in a measurement context — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186436,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical rising of floodwaters, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186431,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the hand in oath/worship to God, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186432,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically erecting a stone pillar, not inner self-elevation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186433,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice in a cry, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186434,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice in a cry, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186435,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used idiomatically of lifting hand/foot meaning 'to act', not of inner pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186409,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically lifting a staff as a divine sign-act, not human pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186403,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of lifting a staff to perform a divine miracle, not self-exaltation or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186406,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the hand in intercession/prayer posture during battle, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186407,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for priestly contribution/heave offering, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186408,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for making a contribution/offering, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186471,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for lifting/removing a portion of grain offering, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186475,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for removing fat from a sacrificial offering, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186473,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for removing sacrificial portions, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186474,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for removing fat of sin offering, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186476,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically removing ashes from the altar as a priestly duty, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186477,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for taking memorial portion of grain offering, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186472,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting holy contributions/offerings, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186480,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting a contribution/offering to the Lord, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186481,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting a dough contribution/offering, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186482,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186483,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically taking up censers, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186484,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting holy contributions/offerings, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186485,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting tithe as a contribution, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186486,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting a contribution/offering, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186487,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting a contribution from tithes, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186488,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting contributions/offerings to the Lord, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186489,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for offering a contribution from produce, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186490,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for having contributed the best portion, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186491,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically lifting the hand to strike a rock, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-145",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186492,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of divinely-granted royal exaltation/honour, not human pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-146",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186493,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for levying a tribute/contribution, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-147",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186494,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for presenting a contribution/offering to the Lord, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-148",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186394,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical stature of the Anakim, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-149",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186397,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical height/stature of the Emim people, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-150",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186398,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical stature of a people, not self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-151",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186402,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical height/stature of the Anakim, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-152",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186395,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical elevation of mountains, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-153",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186399,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice loudly in a liturgical proclamation, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-154",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186400,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-155",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186469,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically taking up a stone for a memorial action, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-156",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186378,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically lifting/serving food, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-157",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186385,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically taking up a garment, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-158",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186386,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically retrieving an object (axe head), not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-159",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186384,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-160",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186368,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising sounds of joy in worship/music, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-161",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186383,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising a song in worship/praise of God, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-162",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186379,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for contributing/giving offerings, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-163",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186380,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used as technical term for contributing Passover offerings, not pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-164",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186381,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of presenting/contributing offerings, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-165",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186382,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of presenting offerings, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-166",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186427,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice in joyful shouting, not pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-167",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186428,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of presenting/offering goods, not human pride or self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-168",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186430,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising/establishing the temple, not human pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-169",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186463,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of being elevated/triumphant in debate context, not inner self-exaltation or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-170",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186464,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of persons in elevated positions judged by God, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-171",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186465,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of the literal height of stars in the sky — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-172",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186466,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of a physically raised arm, not the inner stance of pride or arrogance — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-173",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186467,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising/lifting one's voice, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-174",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186468,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal physical high elevation of a bird's nest — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-175",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186534,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of directing steps toward a place, not inner self-exaltation or pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-176",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186540,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of divine/cosmic height of the heavens, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-177",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186541,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of God's exalted right hand — divine majesty, not human pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-178",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186504,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal waves of the sea being raised, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-179",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186500,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used in the sense of acquiring/receiving disgrace as a result, not inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-180",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186499,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of wisdom's inaccessibility to fools, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-181",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186440,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of God rearing/nurturing children, not human self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-182",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186445,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-183",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186461,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of God's throne exalted on high — divine majesty, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-184",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186441,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literally lifting a rod/staff, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-185",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186442,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-186",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186443,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice as a signal call, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-187",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186448,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of rearing/bringing up young people, not human pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-188",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186454,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of ascending a mountain and raising the voice in proclamation, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-189",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186455,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising/building up highways, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-190",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186456,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of God raising a signal/standard, not human inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-191",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186458,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of removing obstructions from a road, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-192",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186460,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice in prophetic proclamation, not human inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-193",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186462,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising a highway and signal banner, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-194",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186426,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal high hills as sites of idol worship, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-195",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186412,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of the divine glory rising/ascending — divine movement, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-196",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186410,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of cherubim lifting wings to ascend — visionary/angelic movement, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-197",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186411,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of cherubim ascending — visionary/angelic movement, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-198",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186413,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of the top of a cedar tree in divine-restoration allegory, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-199",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186414,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal high hills as sites of idolatrous sacrifice, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-200",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186415,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of raising the voice in battle shouting, not inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-201",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186416,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-202",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186418,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of a tree's literal physical growth/height — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-203",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186417,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-204",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186419,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of literal high hills as geographic terrain, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-205",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186420,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of setting apart/offering a holy land portion, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-206",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186422,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of removing/ceasing oppressive evictions, not the inner stance of pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-207",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186421,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of presenting/making a cultic offering, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-208",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186424,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of setting apart a sacred land portion in allotment, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-209",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186425,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of setting apart a sacred land portion, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-210",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186423,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of setting apart a sacred land portion in the allotment vision, not human inner pride — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-211",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186393,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of removing/taking away the regular burnt offering, not human inner self-exaltation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-212",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186392,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of physically raising the hand to swear an oath, not of arrogant self-elevation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-213",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186437,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of lifting a yoke (relieving burden), describing God's compassionate act toward Israel — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-214",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186478,
+        "mti_term_id": 6025,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "rum used of honorable military/divine vindication (hand lifted over enemies), not of prideful inner self-elevation — outside M08 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-215",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 5906,
+        "mti_term_id": 241,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sha.chats used of fierce/proud wild beasts in a literal zoological sense, not of human inner-being pride or self-exaltation — outside M08 inner-being scope."
+      }
+    }
+  ]
+}
