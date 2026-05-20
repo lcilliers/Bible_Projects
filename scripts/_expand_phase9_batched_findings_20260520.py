@@ -32,7 +32,9 @@ from pathlib import Path
 #   **T2.3.1 through T2.3.3 — Heart location**
 SINGLE_RE = re.compile(r'^\*\*(T\d+\.\d+\.\d+)\*\*\s*$')
 SINGLE_DESC_RE = re.compile(r'^\*\*(T\d+\.\d+\.\d+)\s*(?:—|--)\s*(.*?)\*\*\s*$')
-RANGE_RE = re.compile(r'^\*\*(T\d+\.\d+\.\d+)\s+through\s+(T\d+\.\d+\.\d+)(?:\s*(?:—|--)\s*(.*?))?\*\*\s*$')
+RANGE_RE = re.compile(
+    r'^\*\*(T\d+\.\d+\.\d+)\s*(?:through|–|-)\s*(T\d+\.\d+\.\d+)(?:\s*(?:—|--)\s*(.*?))?\*\*\s*$'
+)
 
 
 def expand_range(start_code: str, end_code: str) -> list[str]:
