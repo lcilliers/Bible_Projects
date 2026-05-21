@@ -1,6 +1,6 @@
 # Cluster Overview — programme-wide snapshot
 
-_Generated: 2026-05-21 11:33 UTC_  
+_Generated: 2026-05-21 11:49 UTC_  
 _Source: `database/bible_research.db`_
 
 ## Status roll-up
@@ -35,11 +35,11 @@ These clusters have `mti_terms.last_changed > cluster.last_updated_date` but the
 | ✓+ | **M01** | Fear | Fear, Dread and Terror | Analysis Completed (Terms Added) | 83 (65+18) | 8 | 1026 | 91 | 805 (115/543/0/147) | ✓ | · | 2026-05-16 |
 | ✓+ | **M02** | Anger | Anger, Wrath and Indignation | Analysis Completed (Terms Added) | 44 (29+15) | 7 | 699 | 55 | 389 (41/289/3/56) | ✓ | · | 2026-05-16 |
 | ✓ | **M03** | Grief | Grief, Sorrow and Mourning | Analysis Completed | 78 (54+24) | 8 | 923 | 81 | 360 (108/142/8/102) | ✓ | ✓ | 2026-05-17 |
-| ✓ | **M04** | Joy | Joy, Gladness and Delight | Analysis Completed | 58 (40+18) | 17 | 1233 | 73 | 1512 (71/1231/21/189) | · | — | 2026-05-19 |
+| ✓ | **M04** | Joy | Joy, Gladness and Delight | Analysis Completed | 58 (40+18) | 17 | 1233 | 73 | 1512 (71/1231/21/189) | ✓ | · | 2026-05-19 |
 | ✓+ | **M05** | Love | Love, Compassion and Kindness | Analysis Completed (Terms Added) | 88 (27+61) | 8 | 1842 | 127 | 1517 (36/1411/3/67) | ✓ | · | 2026-05-19 |
 | ✓ | **M06** | Hate | Hate, Contempt and Hostility | Analysis Completed | 34 (30+4) | 8 | 448 | 57 | 1516 (1/1483/1/31) | ✓ | · | 2026-05-06 |
-| ✓ | **M07** | Shame | Shame, Disgrace and Humiliation | Analysis Completed | 33 (16+17) | 9 | 374 | 28 | 1323 (142/972/20/189) | · | — | 2026-05-20 |
-| ✓ | **M08** | Pride | Pride, Arrogance and Boasting | Analysis Completed | 46 (28+18) | 8 | 680 | 24 | 1134 (141/787/17/189) | · | — | 2026-05-21 |
+| ✓ | **M07** | Shame | Shame, Disgrace and Humiliation | Analysis Completed | 33 (16+17) | 9 | 374 | 28 | 1323 (142/972/20/189) | ✓ | · | 2026-05-20 |
+| ✓ | **M08** | Pride | Pride, Arrogance and Boasting | Analysis Completed | 46 (28+18) | 8 | 680 | 24 | 1134 (141/787/17/189) | ✓ | · | 2026-05-21 |
 | · | **M09** | Humility | Humility, Meekness and Submission | Not started | 17 (6+11) | 0 | 116 | 26 | — | — | — | 2026-05-05 |
 | · | **M10** | Guilt | Guilt, Sin and Transgression | Not started | 88 (55+33) | 0 | 2075 | 154 | — | — | — | 2026-05-05 |
 | · | **M11** | Repentance | Repentance, Forgiveness and Restoration | Not started | 15 (7+8) | 0 | 289 | 30 | — | — | — | 2026-05-05 |
@@ -78,7 +78,7 @@ These clusters have `mti_terms.last_changed > cluster.last_updated_date` but the
 | ✓ | **M46** | Abundance | Abundance, Prosperity and Wealth | Analysis Completed | 22 (13+9) | 4 | 291 | 31 | 381 (35/292/3/51) | ✓ | · | 2026-05-15 |
 | · | **T2** | Supplementary | T2 - Supplementary | Not started | 620 (473+147) | 0 | 8906 | 845 | — | — | — | 2026-05-05 |
 
-_Session C totals: **10** clusters with full inputs on file · **2** clusters published._
+_Session C totals: **13** clusters with full inputs on file · **2** clusters published._
 
 ## Cluster glosses (full term-gloss lists)
 
