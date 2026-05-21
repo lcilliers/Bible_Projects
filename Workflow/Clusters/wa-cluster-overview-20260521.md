@@ -1,14 +1,13 @@
 # Cluster Overview — programme-wide snapshot
 
-_Generated: 2026-05-21 06:16 UTC_  
+_Generated: 2026-05-21 11:33 UTC_  
 _Source: `database/bible_research.db`_
 
 ## Status roll-up
 
 | Status | Count |
 |---|---:|
-| ✓ Analysis Completed | 8 |
-| ▶ Analysis - In Progress | 1 |
+| ✓ Analysis Completed | 9 |
 | · Not started | 33 |
 | Analysis Completed (Terms Added) | 4 |
 | **Total clusters** | **46** |
@@ -18,7 +17,7 @@ _Source: `database/bible_research.db`_
 - Active terms (cluster-assigned): **2,372**
 - Active verses (in cluster groups): **38,666**
 - Anchor verses set: **3,749**
-- `cluster_finding` rows (active): **11,113**
+- `cluster_finding` rows (active): **12,247**
 
 ## ⚠ Post-closure activity detected (status string out of sync)
 
@@ -40,7 +39,7 @@ These clusters have `mti_terms.last_changed > cluster.last_updated_date` but the
 | ✓+ | **M05** | Love | Love, Compassion and Kindness | Analysis Completed (Terms Added) | 88 (27+61) | 8 | 1842 | 127 | 1517 (36/1411/3/67) | ✓ | · | 2026-05-19 |
 | ✓ | **M06** | Hate | Hate, Contempt and Hostility | Analysis Completed | 34 (30+4) | 8 | 448 | 57 | 1516 (1/1483/1/31) | ✓ | · | 2026-05-06 |
 | ✓ | **M07** | Shame | Shame, Disgrace and Humiliation | Analysis Completed | 33 (16+17) | 9 | 374 | 28 | 1323 (142/972/20/189) | · | — | 2026-05-20 |
-| ▶ | **M08** | Pride | Pride, Arrogance and Boasting | Analysis - In Progress | 46 (28+18) | 8 | 680 | 24 | — | — | — | 2026-05-20 |
+| ✓ | **M08** | Pride | Pride, Arrogance and Boasting | Analysis Completed | 46 (28+18) | 8 | 680 | 24 | 1134 (141/787/17/189) | · | — | 2026-05-21 |
 | · | **M09** | Humility | Humility, Meekness and Submission | Not started | 17 (6+11) | 0 | 116 | 26 | — | — | — | 2026-05-05 |
 | · | **M10** | Guilt | Guilt, Sin and Transgression | Not started | 88 (55+33) | 0 | 2075 | 154 | — | — | — | 2026-05-05 |
 | · | **M11** | Repentance | Repentance, Forgiveness and Restoration | Not started | 15 (7+8) | 0 | 289 | 30 | — | — | — | 2026-05-05 |
