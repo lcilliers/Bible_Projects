@@ -1,16 +1,16 @@
 # Cluster Overview — programme-wide snapshot
 
-_Generated: 2026-05-21 05:04 UTC_  
+_Generated: 2026-05-21 06:16 UTC_  
 _Source: `database/bible_research.db`_
 
 ## Status roll-up
 
 | Status | Count |
 |---|---:|
-| ✓ Analysis Completed | 9 |
+| ✓ Analysis Completed | 8 |
 | ▶ Analysis - In Progress | 1 |
 | · Not started | 33 |
-| Analysis Completed (Terms Added) | 3 |
+| Analysis Completed (Terms Added) | 4 |
 | **Total clusters** | **46** |
 
 ## Programme totals
@@ -19,6 +19,14 @@ _Source: `database/bible_research.db`_
 - Active verses (in cluster groups): **38,666**
 - Anchor verses set: **3,749**
 - `cluster_finding` rows (active): **11,113**
+
+## ⚠ Post-closure activity detected (status string out of sync)
+
+These clusters have `mti_terms.last_changed > cluster.last_updated_date` but the status string does not carry the `(Terms Added)` suffix. The status should be amended to reflect the post-closure changes.
+
+| Cluster | Current status | Terms changed post-closure | Latest change |
+|---|---|---:|---|
+| `M39` | Analysis Completed | 1 | 2026-05-14 |
 
 ## Per-cluster detail
 
@@ -29,7 +37,7 @@ _Source: `database/bible_research.db`_
 | ✓+ | **M02** | Anger | Anger, Wrath and Indignation | Analysis Completed (Terms Added) | 44 (29+15) | 7 | 699 | 55 | 389 (41/289/3/56) | ✓ | · | 2026-05-16 |
 | ✓ | **M03** | Grief | Grief, Sorrow and Mourning | Analysis Completed | 78 (54+24) | 8 | 923 | 81 | 360 (108/142/8/102) | ✓ | ✓ | 2026-05-17 |
 | ✓ | **M04** | Joy | Joy, Gladness and Delight | Analysis Completed | 58 (40+18) | 17 | 1233 | 73 | 1512 (71/1231/21/189) | · | — | 2026-05-19 |
-| ✓ | **M05** | Love | Love, Compassion and Kindness | Analysis Completed | 88 (27+61) | 8 | 1842 | 127 | 1517 (36/1411/3/67) | ✓ | · | 2026-05-08 |
+| ✓+ | **M05** | Love | Love, Compassion and Kindness | Analysis Completed (Terms Added) | 88 (27+61) | 8 | 1842 | 127 | 1517 (36/1411/3/67) | ✓ | · | 2026-05-19 |
 | ✓ | **M06** | Hate | Hate, Contempt and Hostility | Analysis Completed | 34 (30+4) | 8 | 448 | 57 | 1516 (1/1483/1/31) | ✓ | · | 2026-05-06 |
 | ✓ | **M07** | Shame | Shame, Disgrace and Humiliation | Analysis Completed | 33 (16+17) | 9 | 374 | 28 | 1323 (142/972/20/189) | · | — | 2026-05-20 |
 | ▶ | **M08** | Pride | Pride, Arrogance and Boasting | Analysis - In Progress | 46 (28+18) | 8 | 680 | 24 | — | — | — | 2026-05-20 |
@@ -362,3 +370,4 @@ Belial: worthless (be.liy.ya.al), Day Star (he.lel), Do Not Destroy (al tash.che
 - **Findings (s/f/g/syn):** `silent` / `finding` / `gap` / `cluster_synthesis` row counts; total in parens
 - **SC inputs:** Session C per-chapter input files at `Sessions/Session_Clusters/{CODE}/inputs/` (✓ = all 10 present · ◐ = partial · · = eligible but not generated · — = not yet eligible)
 - **SC published:** any of (a) publication PDF at cluster root, (b) `*combined-draft*.{docx,pdf}` (in cluster root or `published/`), or (c) ≥5 of 7 chapter draft files (`*ch1-draft*` … `*ch7-draft*.md`). (✓ = present · · = eligible but not published · — = not yet eligible)
+- **Post-closure activity callout (⚠):** detects clusters whose `mti_terms.last_changed > cluster.last_updated_date` but whose status string lacks the `(Terms Added)` suffix. Catches silent post-closure drift (M05 precedent, where M07 transferred 2 terms in 2026-05-19 but M05's status was not updated).

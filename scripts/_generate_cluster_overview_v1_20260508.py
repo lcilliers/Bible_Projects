@@ -185,6 +185,28 @@ def main():
     ):
         finding_counts.setdefault(r["cluster_code"], {})[r["finding_status"]] = r["n"]
 
+    # Post-closure-activity detection: clusters whose mti_terms have
+    # last_changed > cluster.last_updated_date — terms moved in/out after closure
+    # without the status string being updated. Catches the M05-precedent case.
+    post_closure_changes = {}  # cluster_code -> {'n_terms': N, 'latest': iso_date}
+    for r in cur.execute(
+        """
+        SELECT c.cluster_code, COUNT(DISTINCT mt.id) AS n_terms, MAX(mt.last_changed) AS latest
+        FROM cluster c
+        JOIN mti_terms mt ON mt.cluster_code = c.cluster_code
+        WHERE c.status LIKE 'Analysis Completed%'
+          AND c.last_updated_date IS NOT NULL
+          AND mt.last_changed IS NOT NULL
+          AND mt.last_changed > c.last_updated_date
+          AND COALESCE(mt.delete_flagged, 0) = 0
+        GROUP BY c.cluster_code
+        """
+    ):
+        post_closure_changes[r["cluster_code"]] = {
+            "n_terms": r["n_terms"],
+            "latest": r["latest"],
+        }
+
     # Build report
     today = now_compact()
     out_path = Path(OUT_DIR) / f"wa-cluster-overview-{today}.md"
@@ -227,6 +249,22 @@ def main():
     lines.append(f"- Anchor verses set: **{total_anchors:,}**")
     lines.append(f"- `cluster_finding` rows (active): **{total_findings:,}**")
     lines.append("")
+
+    # Post-closure-activity callout (table-level, before per-cluster)
+    silent_drift = {k: v for k, v in post_closure_changes.items()
+                    if not ("Terms Added" in (next((c["status"] for c in clusters if c["cluster_code"] == k), "")))}
+    if silent_drift:
+        lines.append("## ⚠ Post-closure activity detected (status string out of sync)")
+        lines.append("")
+        lines.append("These clusters have `mti_terms.last_changed > cluster.last_updated_date` but the status string does not carry the `(Terms Added)` suffix. The status should be amended to reflect the post-closure changes.")
+        lines.append("")
+        lines.append("| Cluster | Current status | Terms changed post-closure | Latest change |")
+        lines.append("|---|---|---:|---|")
+        for code in sorted(silent_drift):
+            current = next((c["status"] for c in clusters if c["cluster_code"] == code), "?")
+            info = silent_drift[code]
+            lines.append(f"| `{code}` | {current} | {info['n_terms']} | {(info['latest'] or '')[:10]} |")
+        lines.append("")
 
     # Per-cluster table
     lines.append("## Per-cluster detail")
@@ -331,6 +369,11 @@ def main():
         "(b) `*combined-draft*.{docx,pdf}` (in cluster root or `published/`), "
         "or (c) ≥5 of 7 chapter draft files (`*ch1-draft*` … `*ch7-draft*.md`). "
         "(✓ = present · · = eligible but not published · — = not yet eligible)"
+    )
+    lines.append(
+        "- **Post-closure activity callout (⚠):** detects clusters whose `mti_terms.last_changed > cluster.last_updated_date` "
+        "but whose status string lacks the `(Terms Added)` suffix. Catches silent post-closure drift (M05 precedent, "
+        "where M07 transferred 2 terms in 2026-05-19 but M05's status was not updated)."
     )
     lines.append("")
 
