@@ -7,6 +7,8 @@ Programme-wide cluster overview report. One row per cluster, summarising:
   - active verse count (across all cluster terms)
   - anchor count (is_anchor=1 active rows)
   - cluster_finding count by status (synthesis / finding / silent / gap)
+  - Session C inputs (10 per-chapter inputs on disk?)
+  - Session C published (publication PDF on disk?)
   - last_updated_date
 
 Output: Workflow/Clusters/wa-cluster-overview-{date}.md
@@ -21,6 +23,90 @@ from pathlib import Path
 
 DB_PATH = os.path.join("database", "bible_research.db")
 OUT_DIR = os.path.join("Workflow", "Clusters")
+CLUSTER_FOLDERS = Path("Sessions") / "Session_Clusters"
+SESSION_C_INPUT_COUNT_EXPECTED = 10  # 7 chapters + 3 appendices, per the Session C overview spec
+
+
+def session_c_status(cluster_code: str, cluster_status: str) -> tuple[str, str]:
+    """Return (inputs_marker, published_marker) for a cluster.
+
+    Inputs marker:
+      ✓  — inputs/ directory exists with the expected 10 per-chapter input files
+      ◐  — inputs/ exists but is incomplete (< 10 input files)
+      ·  — no inputs/ directory (eligible but not yet generated)
+      —  — cluster not yet 'Analysis Completed' (not eligible)
+
+    Published marker (any one signal is sufficient — handles M15's PDF
+    convention AND M03's combined-DOCX convention):
+      ✓  — publication PDF at cluster root, OR combined-draft DOCX/PDF,
+           OR at least 5 of 7 chapter draft files (ch1..ch7) anywhere
+           in the cluster folder (`published/`, `files published/`,
+           or directly under the cluster folder).
+      ·  — eligible (inputs present) but no publication artefact yet
+      —  — not yet eligible (no inputs / cluster not completed)
+    """
+    folder = CLUSTER_FOLDERS / cluster_code
+    inputs_dir = folder / "inputs"
+
+    eligible = cluster_status == "Analysis Completed"
+
+    if inputs_dir.exists():
+        # Count Session C per-chapter input files (filename pattern from the generator).
+        input_files = [p for p in inputs_dir.iterdir()
+                       if p.is_file() and p.name.startswith(f"wa-cluster-{cluster_code}-")
+                       and "-input-" in p.name and p.suffix == ".md"]
+        if len(input_files) >= SESSION_C_INPUT_COUNT_EXPECTED:
+            inputs = "✓"
+        elif len(input_files) > 0:
+            inputs = f"◐ {len(input_files)}/{SESSION_C_INPUT_COUNT_EXPECTED}"
+        else:
+            inputs = "·" if eligible else "—"
+    else:
+        inputs = "·" if eligible else "—"
+
+    # Publication detection — multiple signals (any one is sufficient)
+    pub_signals: list[str] = []
+
+    # Signal 1: M15-style top-level publication PDF
+    if list(folder.glob(f"wa-cluster-{cluster_code}-publication-v*.pdf")):
+        pub_signals.append("publication.pdf")
+
+    # Signal 2: Combined-draft DOCX/PDF (M03's convention) — case-insensitive,
+    # may be at cluster root or in a published/ subfolder
+    for pattern_dir in (folder, folder / "published", folder / "files published"):
+        if not pattern_dir.exists():
+            continue
+        for ext in ("docx", "pdf"):
+            # Match e.g. WA-cluster-M03-Grief-combined-draft-v1-2026-05-17.docx
+            for p in pattern_dir.glob(f"*[Cc]luster-{cluster_code}-*combined-draft*.{ext}"):
+                pub_signals.append(p.name)
+                break
+
+    # Signal 3: presence of chapter drafts (ch1..ch7) somewhere in the cluster folder
+    chapter_drafts_found: set[int] = set()
+    candidate_dirs = [folder]
+    for sub in ("published", "files published"):
+        if (folder / sub).exists():
+            candidate_dirs.append(folder / sub)
+    for d in candidate_dirs:
+        for n in range(1, 8):
+            # Match e.g. WA-M15-ch3-draft-v1-20260512.md OR wa-cluster-M03-ch3-draft-v1-2026-05-17.md
+            found = list(d.glob(f"*ch{n}-draft-*.md"))
+            if found:
+                chapter_drafts_found.add(n)
+    if len(chapter_drafts_found) >= 5:
+        pub_signals.append(f"chapters={sorted(chapter_drafts_found)}")
+
+    if pub_signals:
+        published = "✓"
+    else:
+        # If inputs are present (even partial), publication is "pending"
+        if inputs.startswith("✓") or inputs.startswith("◐"):
+            published = "·"
+        else:
+            published = "—"
+
+    return inputs, published
 
 
 def now_compact():
@@ -146,11 +232,13 @@ def main():
     lines.append("## Per-cluster detail")
     lines.append("")
     lines.append(
-        "| | Code | Short | Description | Status | Terms (OT+NT) | Sub-grps | Verses | Anchors | Findings (s/f/g/syn) | Updated |"
+        "| | Code | Short | Description | Status | Terms (OT+NT) | Sub-grps | Verses | Anchors | Findings (s/f/g/syn) | SC inputs | SC published | Updated |"
     )
     lines.append(
-        "|---|---|---|---|---|---:|---:|---:|---:|---|---|"
+        "|---|---|---|---|---|---:|---:|---:|---:|---|:-:|:-:|---|"
     )
+    sc_inputs_total = 0
+    sc_published_total = 0
     for c in clusters:
         code = c["cluster_code"]
         tc = term_counts.get(code, {})
@@ -171,6 +259,11 @@ def main():
             f_cell = f"{f_total} ({f_str})"
         else:
             f_cell = "—"
+        sc_in, sc_pub = session_c_status(code, c["status"])
+        if sc_in.startswith("✓"):
+            sc_inputs_total += 1
+        if sc_pub == "✓":
+            sc_published_total += 1
         updated = (c["last_updated_date"] or "")[:10]
         lines.append(
             f"| {status_marker(c['status'])} "
@@ -183,8 +276,15 @@ def main():
             f"| {v} "
             f"| {a} "
             f"| {f_cell} "
+            f"| {sc_in} "
+            f"| {sc_pub} "
             f"| {updated} |"
         )
+    lines.append("")
+    lines.append(
+        f"_Session C totals: **{sc_inputs_total}** clusters with full inputs on file · "
+        f"**{sc_published_total}** clusters published._"
+    )
     lines.append("")
 
     # Per-cluster gloss listing (full term-gloss text for each cluster)
@@ -221,6 +321,17 @@ def main():
     lines.append("- **Verses:** active `verse_context` rows for terms in this cluster")
     lines.append("- **Anchors:** `verse_context.is_anchor=1` rows in cluster groups")
     lines.append("- **Findings (s/f/g/syn):** `silent` / `finding` / `gap` / `cluster_synthesis` row counts; total in parens")
+    lines.append(
+        f"- **SC inputs:** Session C per-chapter input files at "
+        f"`Sessions/Session_Clusters/{{CODE}}/inputs/` "
+        f"(✓ = all {SESSION_C_INPUT_COUNT_EXPECTED} present · ◐ = partial · · = eligible but not generated · — = not yet eligible)"
+    )
+    lines.append(
+        "- **SC published:** any of (a) publication PDF at cluster root, "
+        "(b) `*combined-draft*.{docx,pdf}` (in cluster root or `published/`), "
+        "or (c) ≥5 of 7 chapter draft files (`*ch1-draft*` … `*ch7-draft*.md`). "
+        "(✓ = present · · = eligible but not published · — = not yet eligible)"
+    )
     lines.append("")
 
     out_path.write_text("\n".join(lines), encoding="utf-8")
@@ -229,6 +340,9 @@ def main():
     print(f"  Completed:    {by_status.get('Analysis Completed', 0)}")
     print(f"  In progress:  {by_status.get('Analysis - In Progress', 0)}")
     print(f"  Not started:  {by_status.get('Not started', 0)}")
+    print(f"Session C:")
+    print(f"  Full inputs on file: {sc_inputs_total}")
+    print(f"  Published (PDF):     {sc_published_total}")
 
     conn.close()
     return 0

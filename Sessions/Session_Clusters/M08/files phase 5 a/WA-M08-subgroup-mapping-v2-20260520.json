@@ -1,0 +1,724 @@
+{
+  "_meta": {
+    "cluster": "M08",
+    "phase": "5v2",
+    "version": "v2",
+    "date": "2026-05-20",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "substantive_total": 295,
+    "gate_threshold_pct": 40.0,
+    "gate_threshold_v": 118,
+    "split_axis": "seat_of_pride: heart | eyes_bearing | national_collective | general_dispositional",
+    "phase_5_5_set_aside_total": 174,
+    "note": "v2 resubmission after §8.6 gate fail on v1. M08-A split into A1-A4 by seat-of-pride axis. M08-F/G replaced by set_aside blocks per researcher Option 2 direction."
+  },
+  "subgroups": {
+    "M08-A1": "Heart-Elevation — Pride Seated in the Heart",
+    "M08-A2": "Eye-Elevation and Outward Bearing — Pride's Visible Register",
+    "M08-A3": "National and Collective Pride — Pride as a Corporate Inner Characteristic",
+    "M08-A4": "General Dispositional Pride — Individual Self-Elevation (Unspecified Seat)",
+    "M08-B": "Presumptuous Defiance — Pride as Willful Transgression",
+    "M08-C": "Boasting and Self-Display — Pride's Verbal and Public Form",
+    "M08-D": "Vain Conceit — Inflated Self-Estimate in the Mind",
+    "M08-E": "Pride of Power and Position — Arrogance in Strength, Wealth, and Authority",
+    "M08-BOUNDARY": "BOUNDARY — Qualifying / Supportive Register"
+  },
+  "characteristic_map": {
+    "M08-A1": "CHAR-1 (Arrogant self-elevation) — split by seat_of_pride axis: heart",
+    "M08-A2": "CHAR-1 (Arrogant self-elevation) — split by seat_of_pride axis: eyes_bearing",
+    "M08-A3": "CHAR-1 (Arrogant self-elevation) — split by seat_of_pride axis: national_collective",
+    "M08-A4": "CHAR-1 (Arrogant self-elevation) — split by seat_of_pride axis: general_dispositional",
+    "M08-B": "CHAR-2 (Presumptuous defiance)",
+    "M08-C": "CHAR-3 (Boasting and self-display)",
+    "M08-D": "CHAR-4 (Vain conceit)",
+    "M08-E": "CHAR-5 (Pride of power and position)"
+  },
+  "distribution_estimate": {
+    "M08-A1": {
+      "verses": 34,
+      "pct_of_295": 11.5
+    },
+    "M08-A2": {
+      "verses": 11,
+      "pct_of_295": 3.7
+    },
+    "M08-A3": {
+      "verses": 37,
+      "pct_of_295": 12.5
+    },
+    "M08-A4": {
+      "verses": 69,
+      "pct_of_295": 23.4
+    },
+    "M08-B": {
+      "verses": 45,
+      "pct_of_295": 15.3
+    },
+    "M08-C": {
+      "verses": 70,
+      "pct_of_295": 23.7
+    },
+    "M08-D": {
+      "verses": 12,
+      "pct_of_295": 4.1
+    },
+    "M08-E": {
+      "verses": 17,
+      "pct_of_295": 5.8
+    },
+    "M08-BOUNDARY": {
+      "verses": 1,
+      "pct_of_295": "excluded"
+    },
+    "TOTAL_SUBSTANTIVE": 295,
+    "gate_ceiling": 118,
+    "gate_pass_predicted": true
+  },
+  "vc_id_assignments": {
+    "_note": "Non-A sub-groups carried forward from resolved-v1. M08-A vc_ids reassigned by CC from seat-of-pride term_assignments below. CC resolves verse references to vc_ids via the DB.",
+    "carry_forward_unchanged": {
+      "source": "WA-M08-subgroup-mapping-resolved-v1-20260520.json",
+      "sub_groups": [
+        "M08-B",
+        "M08-C",
+        "M08-D",
+        "M08-E",
+        "M08-BOUNDARY"
+      ],
+      "vc_ids": {
+        "4670": "M08-B",
+        "9563": "M08-E",
+        "33342": "M08-C",
+        "33343": "M08-C",
+        "33353": "M08-C",
+        "33354": "M08-C",
+        "33355": "M08-C",
+        "33356": "M08-C",
+        "33357": "M08-C",
+        "33358": "M08-C",
+        "33359": "M08-C",
+        "33360": "M08-C",
+        "33865": "M08-C",
+        "33866": "M08-C",
+        "33867": "M08-C",
+        "33868": "M08-C",
+        "33869": "M08-C",
+        "33870": "M08-C",
+        "33871": "M08-C",
+        "33872": "M08-C",
+        "33873": "M08-C",
+        "33874": "M08-C",
+        "33875": "M08-C",
+        "33876": "M08-C",
+        "33877": "M08-C",
+        "33878": "M08-C",
+        "33879": "M08-C",
+        "33880": "M08-C",
+        "33881": "M08-C",
+        "33882": "M08-C",
+        "33883": "M08-C",
+        "33884": "M08-C",
+        "33885": "M08-C",
+        "33886": "M08-C",
+        "33887": "M08-C",
+        "33888": "M08-C",
+        "33889": "M08-C",
+        "33890": "M08-C",
+        "33891": "M08-C",
+        "33892": "M08-C",
+        "33893": "M08-C",
+        "33894": "M08-C",
+        "33895": "M08-C",
+        "33896": "M08-C",
+        "33897": "M08-C",
+        "33898": "M08-C",
+        "33899": "M08-C",
+        "33901": "M08-C",
+        "33902": "M08-C",
+        "33903": "M08-C",
+        "33904": "M08-C",
+        "33905": "M08-C",
+        "33906": "M08-C",
+        "33907": "M08-C",
+        "33908": "M08-C",
+        "33909": "M08-C",
+        "33910": "M08-C",
+        "33911": "M08-C",
+        "33912": "M08-C",
+        "33913": "M08-C",
+        "33914": "M08-C",
+        "33915": "M08-C",
+        "33916": "M08-C",
+        "33917": "M08-C",
+        "33918": "M08-C",
+        "33919": "M08-C",
+        "33920": "M08-C",
+        "33921": "M08-C",
+        "33922": "M08-C",
+        "33923": "M08-C",
+        "33924": "M08-D",
+        "33925": "M08-D",
+        "33926": "M08-D",
+        "33935": "M08-D",
+        "33936": "M08-D",
+        "33937": "M08-D",
+        "33938": "M08-D",
+        "33939": "M08-D",
+        "33940": "M08-D",
+        "33941": "M08-D",
+        "33942": "M08-D",
+        "33979": "M08-E",
+        "33982": "M08-E",
+        "33993": "M08-E",
+        "33995": "M08-E",
+        "33996": "M08-E",
+        "33997": "M08-E",
+        "33998": "M08-E",
+        "33999": "M08-E",
+        "34046": "M08-E",
+        "34095": "M08-B",
+        "34096": "M08-B",
+        "34097": "M08-B",
+        "34098": "M08-B",
+        "34099": "M08-B",
+        "34100": "M08-B",
+        "34101": "M08-B",
+        "34102": "M08-B",
+        "34103": "M08-B",
+        "34104": "M08-B",
+        "34105": "M08-B",
+        "34106": "M08-B",
+        "34107": "M08-B",
+        "34108": "M08-B",
+        "34109": "M08-B",
+        "34110": "M08-B",
+        "34111": "M08-B",
+        "34112": "M08-B",
+        "34113": "M08-B",
+        "34114": "M08-B",
+        "34115": "M08-B",
+        "34116": "M08-B",
+        "34117": "M08-B",
+        "34118": "M08-B",
+        "34119": "M08-B",
+        "34120": "M08-B",
+        "34121": "M08-B",
+        "34122": "M08-B",
+        "34123": "M08-B",
+        "34124": "M08-B",
+        "34125": "M08-B",
+        "34126": "M08-B",
+        "34127": "M08-B",
+        "34167": "M08-E",
+        "34169": "M08-E",
+        "34212": "M08-B",
+        "34222": "M08-C",
+        "36675": "M08-BOUNDARY",
+        "42739": "M08-B",
+        "42740": "M08-B",
+        "54398": "M08-E",
+        "55567": "M08-B",
+        "55569": "M08-B",
+        "55578": "M08-B",
+        "55587": "M08-B",
+        "55588": "M08-B",
+        "55607": "M08-B",
+        "55612": "M08-B",
+        "55613": "M08-B",
+        "57959": "M08-E",
+        "60866": "M08-D",
+        "60878": "M08-E",
+        "65604": "M08-C",
+        "65670": "M08-E",
+        "65674": "M08-E"
+      }
+    }
+  },
+  "term_assignments_M08A_split": {
+    "_note": "All former M08-A verses reassigned to A1/A2/A3/A4 by seat-of-pride axis. CC maps verse references to vc_ids from DB.",
+    "split_axis": "seat_of_pride",
+    "terms": {
+      "1113_akratas": {
+        "strongs": "G0193",
+        "note": "BOUNDARY — unchanged",
+        "primary": "M08-BOUNDARY"
+      },
+      "59_huperefania": {
+        "strongs": "G5243",
+        "translit": "huperēfania",
+        "primary": "M08-A1",
+        "rationale": "Mar 7:22: pride constitutionally located in the heart as source of moral corruption"
+      },
+      "60_huperefanos": {
+        "strongs": "G5244",
+        "translit": "huperēfanos",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A1": [
+            "Luk 1:51"
+          ]
+        },
+        "rationale": "Luk 1:51 explicitly names thoughts of their hearts → A1; remaining 4 verses evidence general inner arrogance → A4"
+      },
+      "4440_hupselos": {
+        "strongs": "G5308",
+        "translit": "hupsēlos",
+        "primary": "M08-A4",
+        "rationale": "All 3 verses: proud inner orientation / high-mindedness — general dispositional"
+      },
+      "1587_filautos": {
+        "strongs": "G5367",
+        "translit": "filautos",
+        "primary": "M08-A4",
+        "rationale": "2Ti 3:2: self-love as root generating M08 — general dispositional"
+      },
+      "94_ge": {
+        "strongs": "H1341",
+        "translit": "ge",
+        "primary": "M08-A4",
+        "rationale": "Isa 16:6: settled inner disposition of self-importance — general"
+      },
+      "6037_gaah": {
+        "strongs": "H1342",
+        "translit": "ga.ah",
+        "primary": "M08-A2",
+        "verses_to_A2": [
+          "Job 10:16"
+        ],
+        "rationale": "Job 10:16: head being lifted up in pride — outward bearing (head/posture) register"
+      },
+      "95_geeh": {
+        "strongs": "H1343",
+        "translit": "ge.eh",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A1": [
+            "Jer 48:29"
+          ],
+          "M08-A3": [
+            "Isa 2:12"
+          ]
+        },
+        "rationale": "Jer 48:29: heart explicitly named as pride's seat → A1. Isa 2:12: God's day targets everything proud and lofty (collective/cosmic judgment) → A3. Remaining 7 verses: individual proud person as general dispositional → A4."
+      },
+      "96_geah_pride": {
+        "strongs": "H1344",
+        "translit": "ge.ah",
+        "primary": "M08-A4",
+        "rationale": "Pro 8:13: pride as intrinsically evil opposite of fear of Lord — general"
+      },
+      "97_gaavah": {
+        "strongs": "H1346",
+        "translit": "ga.a.vah",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A1": [
+            "Isa 9:9"
+          ],
+          "M08-A2": [
+            "Psa 73:6"
+          ],
+          "M08-A3": [
+            "Isa 13:11",
+            "Isa 16:6",
+            "Isa 25:11",
+            "Jer 48:29",
+            "Zep 3:11"
+          ]
+        },
+        "rationale": "Isa 9:9: 'pride and arrogance of heart' — heart named → A1. Psa 73:6: pride worn like necklace, outward display — bearing register → A2. Isa 13:11, 16:6, 25:11, Jer 48:29: Babylon/Moab national pride clusters → A3. Zep 3:11: the proudly exultant ones (collective) → A3. Remaining verses: individual arrogant will/agency → A4."
+      },
+      "98_gaon": {
+        "strongs": "H1347",
+        "translit": "ga.on",
+        "primary": "M08-A3",
+        "note": "All M08-A verses of ga.on are in the national/collective pride register",
+        "A3_verses": [
+          "Isa 13:11",
+          "Isa 13:19",
+          "Isa 14:11",
+          "Isa 16:6",
+          "Isa 23:9",
+          "Jer 13:9",
+          "Jer 48:29",
+          "Eze 7:20",
+          "Eze 16:56",
+          "Hos 5:5",
+          "Hos 7:10",
+          "Amo 6:8",
+          "Amo 8:7",
+          "Zep 2:10",
+          "Zec 9:6",
+          "Zec 10:11"
+        ],
+        "A4_verses": [
+          "Job 35:12",
+          "Psa 59:12",
+          "Pro 8:13",
+          "Pro 16:18"
+        ],
+        "split": {
+          "M08-A4": [
+            "Job 35:12",
+            "Psa 59:12",
+            "Pro 8:13",
+            "Pro 16:18"
+          ]
+        },
+        "rationale": "16 verses evidence national/collective pride (Babylon, Moab, Egypt, Israel, Assyria as collective subjects) → A3. 4 verses evidence individual dispositional pride (Job, Proverbs wisdom maxims) → A4. Primary A3."
+      },
+      "99_geut": {
+        "strongs": "H1348",
+        "translit": "ge.ut",
+        "primary": "M08-A3",
+        "split": {
+          "M08-A1": [
+            "Psa 17:10"
+          ],
+          "M08-A4": [
+            "Isa 26:10"
+          ]
+        },
+        "rationale": "Psa 17:10: arrogant speech flows from closed, pitiless hearts → A1. Isa 28:1, 28:3: proud crown of Ephraim's leaders (collective/national leadership) → A3 (primary). Isa 26:10: wicked's inner perceptual faculty closed to LORD's majesty → A4."
+      },
+      "100_gavah": {
+        "strongs": "H1361",
+        "translit": "ga.vah",
+        "primary": "M08-A1",
+        "split": {
+          "M08-A2": [
+            "Isa 3:16"
+          ],
+          "M08-A3": [
+            "Eze 16:50",
+            "Obd 4",
+            "Zep 3:11"
+          ],
+          "M08-A4": [
+            "Pro 17:19",
+            "Jer 13:15"
+          ]
+        },
+        "rationale": "Heart-idiom verses → A1: 2Ch 26:16 (heart turns destructive), 2Ch 32:25 (heart was proud), Psa 131:1 (heart deliberately held back), Pro 18:12 (heart's inner elevation), Jer 49:16 (pride of the heart soars), Eze 28:2 (prince of Tyre's heart proud, claimed divine status), Eze 28:17 (heart's pride triggered by beauty), Eze 31:10 (great tree's proud heart). Isa 3:16: daughters of Zion's ostentatious posture and wanton glances — bearing/eyes → A2. Eze 16:50, Obd 4, Zep 3:11: collective/national subjects → A3. Pro 17:19, Jer 13:15: general individual pride → A4."
+      },
+      "101_govah": {
+        "strongs": "H1363",
+        "translit": "go.vah",
+        "primary": "M08-A1",
+        "split": {
+          "M08-A2": [
+            "Psa 10:4"
+          ],
+          "M08-A3": [
+            "Jer 48:29"
+          ]
+        },
+        "rationale": "Heart-idiom verses → A1: 2Ch 32:26 (pride of his heart), Eze 31:10 (height the tree's heart was proud of). Eye/face-posture → A2: Psa 10:4 (haughty face-posture shutting out God). National collective → A3: Jer 48:29 (Moab's loftiness in pride cluster). Pro 16:18 (haughty spirit precedes fall) → A4."
+      },
+      "5068_gavoah": {
+        "strongs": "H1364",
+        "translit": "ga.vo.ah",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A1": [
+            "1Sa 16:7",
+            "Psa 101:5",
+            "Pro 16:5"
+          ],
+          "M08-A2": [
+            "Isa 5:15"
+          ]
+        },
+        "rationale": "Heart-seat verses → A1: 1Sa 16:7 (God looks at the heart over outward height), Psa 101:5 (haughty look + arrogant heart — heart named as constitutional seat), Pro 16:5 (arrogance in the heart). Eye/visibility → A2: Isa 5:15 (haughtiness expressed in the eyes). General dispositional → A4: 1Sa 2:3 (proud talk), Job 41:34 (Leviathan's self-assertion), Psa 138:6 (haughty at a distance), Ecc 7:8 (proud in spirit), Eze 21:26 (what is exalted brought low)."
+      },
+      "102_gavhut": {
+        "strongs": "H1365",
+        "translit": "gav.hut",
+        "primary": "M08-A2",
+        "rationale": "Isa 2:11: haughtiness expressed in the looks of men; Isa 2:17: haughtiness of man humbled — both verses specify the visible/outward register of human haughtiness."
+      },
+      "6038_gevah": {
+        "strongs": "H1466",
+        "translit": "ge.vah",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A3": [
+            "Jer 13:17"
+          ]
+        },
+        "rationale": "Jer 13:17: people's pride driving community toward captivity — collective → A3. Job 22:29, 33:17: individual dispositional → A4."
+      },
+      "103_gevah_dan": {
+        "strongs": "H1467",
+        "translit": "ge.vah",
+        "primary": "M08-A4",
+        "rationale": "Dan 4:37: pride as habitual posture one walks in — general individual"
+      },
+      "113_zud": {
+        "strongs": "H2103",
+        "translit": "zud",
+        "primary": "M08-A1",
+        "rationale": "Dan 5:20: heart being lifted up and spirit hardening together — heart explicitly named as the seat of Belshazzar's pride"
+      },
+      "231_rahav_proud": {
+        "strongs": "H7295",
+        "translit": "ra.hav (proud)",
+        "primary": "M08-A4",
+        "rationale": "Psa 40:4: proud inner disposition of arrogant self-assertion — general"
+      },
+      "6025_rum": {
+        "strongs": "H7311A",
+        "translit": "rum (to exalt)",
+        "note": "M08-A verses only (~35V); M08-F verses handled in set_aside block",
+        "primary": "M08-A4",
+        "split": {
+          "M08-A1": [
+            "Deu 8:14",
+            "Deu 17:20",
+            "Dan 11:12",
+            "Dan 11:36",
+            "1Ki 11:26",
+            "1Ki 11:27",
+            "Hos 13:6",
+            "Eze 31:10"
+          ],
+          "M08-A2": [
+            "Psa 18:27",
+            "Pro 6:17",
+            "Pro 30:13",
+            "Psa 131:1"
+          ],
+          "M08-A3": [
+            "Deu 32:27",
+            "Isa 2:12",
+            "Isa 10:33",
+            "Psa 12:8"
+          ]
+        },
+        "rationale": "Heart-idiom → A1: Deu 8:14 (heart lifted up producing forgetfulness of God), Deu 17:20 (king's heart not to be lifted up above brothers), Dan 11:12 (heart exalted after military victory), Dan 11:36 (king exalts himself by his own will), 1Ki 11:26-27 (Jeroboam lifted hand = inner will in rebellion), Hos 13:6 (heart lifted up through prosperity), Eze 31:10 (heart proud of its height). Eye/posture → A2: Psa 18:27 (haughty eyes brought down), Pro 6:17 (haughty eyes first in list God hates), Pro 30:13 (lofty eyes and high-lifted eyelids), Psa 131:1 (eyes not raised high). National/collective → A3: Deu 32:27 (enemy's collective self-exaltation), Isa 2:12 (everything lifted up = universal/cosmic collective), Isa 10:33 (great ones brought low), Psa 12:8 (vileness exalted among humanity — collective moral state). General individual → A4: Exo 14:8 (Israelites high hand — assertive), Num 15:30 (high hand against God), 2Sa 22:28 (haughty individual), Psa 66:7 (rebellious not to exalt themselves), Psa 75:4-7 (complex on self-exaltation), Psa 75:10, Psa 138:6, Psa 140:8, Isa 14:13 (will declares intent to self-exalt), Isa 37:23, 2Ki 19:22, Pro 14:29, Ezr 9:6."
+      },
+      "6027_rum_height": {
+        "strongs": "H7312",
+        "translit": "rum (height)",
+        "note": "M08-A verses only (5V); Pro 25:3 handled in set_aside block",
+        "primary": "M08-A1",
+        "split": {
+          "M08-A3": [
+            "Isa 2:11",
+            "Isa 2:17"
+          ]
+        },
+        "rationale": "Heart-idiom → A1: Pro 21:4 (haughty eyes + proud heart — heart named), Isa 10:12 (arrogant heart + boastful look — heart named as primary seat), Jer 48:29 (haughtiness explicitly in Moab's heart). National collective → A3: Isa 2:11 (lofty pride of men will be humbled — universal), Isa 2:17 (lofty pride of men brought low — universal)."
+      },
+      "241_shachats": {
+        "strongs": "H7830",
+        "translit": "sha.chats",
+        "primary": "M08-A4",
+        "rationale": "Job 41:34: Leviathan's daunting haughty boldness of spirit — general dispositional"
+      },
+      "6992_qomah": {
+        "strongs": "H6967",
+        "translit": "qo.mah",
+        "note": "M08-A verses only (6V); Eze 19:11 in M08-E",
+        "primary": "M08-A3",
+        "split": {
+          "M08-A4": [
+            "1Sa 16:7"
+          ]
+        },
+        "rationale": "National/collective conquest-pride → A3: 2Ki 19:23 (Assyrian king's boasting of felling tallest cedars), Isa 10:33 (great in height hewn down = collective), Isa 37:24 (heights as object of boastful military campaign), Eze 31:10 (great tree's heart proud of height — national allegory), Eze 31:14 (ambition to tower — addressed as collective). 1Sa 16:7: what proud human judgment prizes in outward stature — general individual → A4."
+      },
+      "59_huperefania_duplicate_note": {
+        "_note": "Mar 7:22 may have 2 vc_ids per Phase 3 observation. CC: if 2 distinct vc_ids exist for this verse under mti_id=59, assign both to M08-A1."
+      }
+    }
+  },
+  "set_aside": {
+    "_note": "174 verses formerly routed to holding sub-groups M08-F and M08-G. CC to apply is_relevant=0 with set_aside_reason via Phase 5.5 patch before Phase 6 fires. Reason codes below.",
+    "reason_codes": {
+      "M22_REGISTER": "non-M08 content — M22-register (divine majesty / God-directed exaltation); term STAYS in M08 via other verses (v2_8 §6.3.2)",
+      "NO_INNER_BEING": "non-M08 content — narrative marker / neutral assertiveness; no inner-being state evidenced in this verse as an individual unit of analysis"
+    },
+    "vc_ids_M22_register": [
+      33340,
+      33341,
+      33344,
+      33345,
+      33346,
+      33347,
+      33348,
+      33349,
+      33350,
+      33351,
+      33352,
+      33944,
+      33946,
+      33961,
+      33962,
+      33973,
+      33974,
+      33980,
+      33981,
+      34007,
+      34008,
+      34009,
+      34010,
+      34011,
+      34012,
+      34013,
+      34014,
+      34015,
+      34016,
+      34023,
+      34026,
+      34027,
+      34042,
+      34043,
+      34056,
+      34057,
+      34058,
+      34060,
+      34061,
+      34062,
+      34063,
+      34075,
+      34079,
+      34080,
+      34138,
+      34139,
+      34142,
+      34143,
+      34144,
+      34145,
+      34146,
+      34147,
+      34148,
+      34149,
+      34150,
+      34151,
+      34152,
+      34153,
+      34154,
+      34155,
+      34156,
+      34157,
+      34158,
+      34159,
+      34168,
+      34225,
+      34226,
+      34227,
+      34228,
+      34229,
+      34250,
+      34251,
+      34252,
+      34253,
+      34254,
+      34255,
+      34256,
+      34257,
+      34258,
+      34259,
+      34260,
+      34261,
+      34262,
+      34265,
+      34266,
+      34267,
+      34268,
+      34269,
+      34270,
+      34271,
+      34272,
+      34273,
+      34274,
+      34275,
+      34276,
+      34277,
+      34278,
+      34279,
+      34280,
+      34281,
+      34282,
+      34283,
+      34284,
+      34285,
+      34286,
+      34287,
+      34288,
+      34289,
+      34290,
+      34291,
+      34292,
+      34293,
+      34294,
+      34296,
+      34297,
+      34298,
+      34299,
+      34302,
+      34303,
+      34305,
+      34307,
+      65797
+    ],
+    "vc_ids_no_inner_being": [
+      34211,
+      34213,
+      34214,
+      34600,
+      55562,
+      55563,
+      55564,
+      55565,
+      55566,
+      55568,
+      55570,
+      55571,
+      55572,
+      55573,
+      55574,
+      55575,
+      55576,
+      55577,
+      55579,
+      55580,
+      55581,
+      55582,
+      55583,
+      55584,
+      55585,
+      55586,
+      55589,
+      55590,
+      55591,
+      55592,
+      55593,
+      55594,
+      55595,
+      55596,
+      55597,
+      55598,
+      55599,
+      55600,
+      55601,
+      55602,
+      55603,
+      55604,
+      55605,
+      55606,
+      55608,
+      55609,
+      55610,
+      55611,
+      55614,
+      55615,
+      55616,
+      55617
+    ],
+    "total_M22_register": 122,
+    "total_no_inner_being": 52,
+    "total": 174
+  }
+}
