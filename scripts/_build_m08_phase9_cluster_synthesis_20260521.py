@@ -2,7 +2,7 @@
 
 Per researcher direction:
 - Source structural input: per-prompt synthesis matrix - for each of the
-  189 prompts (T0.1.1...T7.3.4), the 6 characteristics' findings are
+  189 prompts (T0.1.1...T7.3.4), the 5 characteristics' findings are
   stacked side-by-side (verbatim from cluster_finding).
 - Output expected: BOTH 189 cluster-scope rows AND a free-form
   synthesis prose appendix.
@@ -53,7 +53,7 @@ def main():
         (CLUSTER,),
     ).fetchall()
 
-    # Pull all cluster_finding rows for the 6 characteristics, joined to the
+    # Pull all cluster_finding rows for the 5 characteristics, joined to the
     # catalogue so we have tier/component/question for grouping.
     rows = conn.execute(
         """
@@ -81,10 +81,11 @@ def main():
             qmeta[qc] = (r["tier"], r["component_code"], r["component_title"], r["question_text"])
         by_qcode[qc].append((r["char_seq"], r["short_name"], r["finding_status"], r["finding_text"]))
 
-    # Sanity: every q_code should have 7 entries (one per characteristic)
-    bad = {qc: len(lst) for qc, lst in by_qcode.items() if len(lst) != 7}
+    # Sanity: every q_code should have 5 entries (one per M08 characteristic)
+    EXPECTED_CHAR_COUNT = 5
+    bad = {qc: len(lst) for qc, lst in by_qcode.items() if len(lst) != EXPECTED_CHAR_COUNT}
     if bad:
-        print(f"WARNING: {len(bad)} prompts do not have 7 findings. Sample: {dict(list(bad.items())[:3])}")
+        print(f"WARNING: {len(bad)} prompts do not have {EXPECTED_CHAR_COUNT} findings. Sample: {dict(list(bad.items())[:3])}")
 
     # =====
     # BRIEF
@@ -97,7 +98,7 @@ def main():
     B.append(f"**Task date:** {TODAY_ISO}")
     B.append("**Audience:** Claude AI session")
     B.append("")
-    B.append("This is the final Phase 9 session for M08. The six characteristic-scope batches (Pride as experienced inner state, Humiliation as enforced abasement, Dishonour as relational worth-denial, Pridefulness as moral-evaluative judgment, Pride produced by contempt and rejection, Innocence as structural counter to pride) are complete; each authored 189 findings citing specific verses. This session looks ACROSS those six sets to author the cluster-scope findings — patterns, divergences, and shared anchors that emerge only when the six are compared.")
+    B.append("This is the final Phase 9 session for M08. The five characteristic-scope batches (Arrogant self-elevation, Presumptuous defiance, Boasting and self-display, Vain conceit, Pride of power and position) are complete; each authored 189 findings citing specific verses. This session looks ACROSS those five sets to author the cluster-scope findings — patterns, divergences, and shared anchors that emerge only when the five are compared.")
     B.append("")
     B.append("**Read this brief first.** Structural input is in a separate file referenced below.")
     B.append("")
@@ -108,7 +109,7 @@ def main():
     B.append("| # | Document | Purpose |")
     B.append("|---|---|---|")
     B.append(f"| 1 | **This brief** — `Sessions/Session_Clusters/M08/{BRIEF.name}` | Primary task instructions |")
-    B.append(f"| 2 | **Structural input** — `Sessions/Session_Clusters/M08/{INPUT.name}` | Per-prompt synthesis matrix: for each of the 189 prompts, the 6 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |")
+    B.append(f"| 2 | **Structural input** — `Sessions/Session_Clusters/M08/{INPUT.name}` | Per-prompt synthesis matrix: for each of the 189 prompts, the 5 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |")
     B.append("| 3 | **Governing instruction** — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_8-20260519.md` | §12 Phase 9 disciplines; §12.4 parser-safe form |")
     B.append(f"| 4 | **Science extract** — `{SCIENCE}` | Programme-curated scientific lens for T7.3 prompts — ensures consistent framing |")
     B.append("| 5 | **Programme prose** — `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260506.md` Ch.1 'Defining Inner Being' | Inner-being scope definition (background) |")
@@ -122,7 +123,7 @@ def main():
     B.append("")
     B.append("### Output A — 189 cluster-scope findings (parser-safe rows)")
     B.append("")
-    B.append("For each of the 189 catalogue prompts, author ONE cluster-scope finding examining what surfaces when the 6 characteristics' findings are compared. The cluster-scope finding answers: *what does the M08 cluster — across its 6 characteristics — reveal about this question?* It is the comparative-integrative layer above the per-characteristic answers.")
+    B.append("For each of the 189 catalogue prompts, author ONE cluster-scope finding examining what surfaces when the 5 characteristics' findings are compared. The cluster-scope finding answers: *what does the M08 cluster — across its 5 characteristics — reveal about this question?* It is the comparative-integrative layer above the per-characteristic answers.")
     B.append("")
     B.append("Use the SAME parser-safe format as the per-characteristic sessions:")
     B.append("")
@@ -137,13 +138,13 @@ def main():
     B.append("**Scope marker** is `**[CLUSTER]**` (CC's loader will map this to characteristic_id=NULL, finding_status='cluster_synthesis'). Do NOT use [CHAR-N] markers in this output.")
     B.append("")
     B.append("**Outcome codes:**")
-    B.append("- **E** — evidenced; the 6 characteristics' findings provide enough comparative evidence to author a cluster-scope answer")
+    B.append("- **E** — evidenced; the 5 characteristics' findings provide enough comparative evidence to author a cluster-scope answer")
     B.append("- **S** — silent; the cluster's combined evidence reveals no meaningful cluster-level pattern beyond the per-char answers")
-    B.append("- **G** — gap; the cluster-level pattern would require evidence the 6 characteristics' findings don't supply")
+    B.append("- **G** — gap; the cluster-level pattern would require evidence the 5 characteristics' findings don't supply")
     B.append("")
     B.append("### Output B — Synthesis prose appendix (free-form)")
     B.append("")
-    B.append("After the 189-row block, write a free-form prose appendix capturing the emergent themes that surface across the six characteristics — themes that the 189-prompt structure does not fully capture. Suggested themes (drawn from the M08 carry-forward observations + analytical hints surfaced through Phase 3–8.5):")
+    B.append("After the 189-row block, write a free-form prose appendix capturing the emergent themes that surface across the five characteristics — themes that the 189-prompt structure does not fully capture. Suggested themes (drawn from the M08 carry-forward observations + analytical hints surfaced through Phase 3–8.5):")
     B.append("")
     B.append("- The **CHAR-1 volume-split** across M08-A (unjust wound) / M08-B (moral consequence) / M08-C (divine encounter) — what coherent characteristic identity holds the three registers together, and where do they genuinely diverge?")
     B.append("- The **M06 ↔ M08 contempt-pride relational pair** — CHAR-5 holds the pride-recipient face; M06 holds the contempt-projection source. The cross-cluster dynamic in detail.")
@@ -163,8 +164,8 @@ def main():
     B.append("")
     B.append("## Discipline")
     B.append("")
-    B.append("1. **Per-prompt comparative reading.** For each T#.#.# block in §3 of the structural input, read the 6 characteristics' findings stacked together before authoring the cluster-scope row. The test for a good cluster-scope answer is: *what does seeing the 6 side-by-side reveal that no single characteristic's answer reveals?*")
-    B.append("2. **Cite by characteristic.** The cluster-scope finding names which characteristics contribute what — e.g., \"Pride-as-experienced (Char 1) and Humiliation-as-enforced (Char 2) co-occur in many verses but with different agencies — Char 1 names the inner state; Char 2 names the enforcing mechanism.\"")
+    B.append("1. **Per-prompt comparative reading.** For each T#.#.# block in §3 of the structural input, read the 5 characteristics' findings stacked together before authoring the cluster-scope row. The test for a good cluster-scope answer is: *what does seeing the 5 side-by-side reveal that no single characteristic's answer reveals?*")
+    B.append("2. **Cite by characteristic.** The cluster-scope finding names which characteristics contribute what — e.g., \"Arrogant-self-elevation (Char 1) and Presumptuous-defiance (Char 2) co-occur in many verses but with different agencies — Char 1 names the dispositional posture; Char 2 names the volitional act of transgression.\"")
     B.append("3. **Don't restate the per-char findings.** The cluster-scope row is the INTEGRATION across them, not a summary of each.")
     B.append("4. **Fluency is not a quality signal.** Plausible-sounding integration without specific cross-characteristic naming is rejected.")
     B.append("5. **Use [CLUSTER] scope marker only.** Do NOT use [CHAR-N] markers; this is the cluster-scope layer.")
@@ -190,7 +191,7 @@ def main():
     B.append(f"# {CLUSTER} Phase 9 — Cluster Synthesis — findings")
     B.append("")
     B.append(f"**Date:** {TODAY_ISO}")
-    B.append("**Scope:** Cluster M08 (Pride, Arrogance and Boasting) — across 6 characteristics")
+    B.append("**Scope:** Cluster M08 (Pride, Arrogance and Boasting) — across 5 characteristics")
     B.append("**Prompts answered:** 189 / 189")
     B.append("")
     B.append("## T0 — Divine Image and Created Design")
@@ -285,7 +286,7 @@ def main():
     # §3 — per-prompt synthesis matrix
     S.append("## §3 — Per-prompt synthesis matrix")
     S.append("")
-    S.append("For each of the 189 prompts (T0.1.1 … T7.3.4), the 6 characteristics' findings are stacked verbatim below. Read all 6 before authoring the cluster-scope row in your output.")
+    S.append("For each of the 189 prompts (T0.1.1 … T7.3.4), the 5 characteristics' findings are stacked verbatim below. Read all 5 before authoring the cluster-scope row in your output.")
     S.append("")
 
     # Order: by tier, by component, by prompt_seq

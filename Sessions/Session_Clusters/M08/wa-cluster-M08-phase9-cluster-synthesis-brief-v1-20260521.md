@@ -5,7 +5,7 @@
 **Task date:** 2026-05-21
 **Audience:** Claude AI session
 
-This is the final Phase 9 session for M08. The six characteristic-scope batches (Pride as experienced inner state, Humiliation as enforced abasement, Dishonour as relational worth-denial, Pridefulness as moral-evaluative judgment, Pride produced by contempt and rejection, Innocence as structural counter to pride) are complete; each authored 189 findings citing specific verses. This session looks ACROSS those six sets to author the cluster-scope findings — patterns, divergences, and shared anchors that emerge only when the six are compared.
+This is the final Phase 9 session for M08. The five characteristic-scope batches (Arrogant self-elevation, Presumptuous defiance, Boasting and self-display, Vain conceit, Pride of power and position) are complete; each authored 189 findings citing specific verses. This session looks ACROSS those five sets to author the cluster-scope findings — patterns, divergences, and shared anchors that emerge only when the five are compared.
 
 **Read this brief first.** Structural input is in a separate file referenced below.
 
@@ -16,7 +16,7 @@ This is the final Phase 9 session for M08. The six characteristic-scope batches 
 | # | Document | Purpose |
 |---|---|---|
 | 1 | **This brief** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-brief-v1-20260521.md` | Primary task instructions |
-| 2 | **Structural input** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-input-v1-20260521.md` | Per-prompt synthesis matrix: for each of the 189 prompts, the 6 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |
+| 2 | **Structural input** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-input-v1-20260521.md` | Per-prompt synthesis matrix: for each of the 189 prompts, the 5 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |
 | 3 | **Governing instruction** — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_8-20260519.md` | §12 Phase 9 disciplines; §12.4 parser-safe form |
 | 4 | **Science extract** — `Workflow/Sciences/wa-m08-pride-scienceextract-v1_0-20260513.md` | Programme-curated scientific lens for T7.3 prompts — ensures consistent framing |
 | 5 | **Programme prose** — `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260506.md` Ch.1 'Defining Inner Being' | Inner-being scope definition (background) |
@@ -30,7 +30,7 @@ For the M08 cluster as a whole, two output forms are required (per researcher di
 
 ### Output A — 189 cluster-scope findings (parser-safe rows)
 
-For each of the 189 catalogue prompts, author ONE cluster-scope finding examining what surfaces when the 6 characteristics' findings are compared. The cluster-scope finding answers: *what does the M08 cluster — across its 6 characteristics — reveal about this question?* It is the comparative-integrative layer above the per-characteristic answers.
+For each of the 189 catalogue prompts, author ONE cluster-scope finding examining what surfaces when the 5 characteristics' findings are compared. The cluster-scope finding answers: *what does the M08 cluster — across its 5 characteristics — reveal about this question?* It is the comparative-integrative layer above the per-characteristic answers.
 
 Use the SAME parser-safe format as the per-characteristic sessions:
 
@@ -45,13 +45,13 @@ Use the SAME parser-safe format as the per-characteristic sessions:
 **Scope marker** is `**[CLUSTER]**` (CC's loader will map this to characteristic_id=NULL, finding_status='cluster_synthesis'). Do NOT use [CHAR-N] markers in this output.
 
 **Outcome codes:**
-- **E** — evidenced; the 6 characteristics' findings provide enough comparative evidence to author a cluster-scope answer
+- **E** — evidenced; the 5 characteristics' findings provide enough comparative evidence to author a cluster-scope answer
 - **S** — silent; the cluster's combined evidence reveals no meaningful cluster-level pattern beyond the per-char answers
-- **G** — gap; the cluster-level pattern would require evidence the 6 characteristics' findings don't supply
+- **G** — gap; the cluster-level pattern would require evidence the 5 characteristics' findings don't supply
 
 ### Output B — Synthesis prose appendix (free-form)
 
-After the 189-row block, write a free-form prose appendix capturing the emergent themes that surface across the six characteristics — themes that the 189-prompt structure does not fully capture. Suggested themes (drawn from the M08 carry-forward observations + analytical hints surfaced through Phase 3–8.5):
+After the 189-row block, write a free-form prose appendix capturing the emergent themes that surface across the five characteristics — themes that the 189-prompt structure does not fully capture. Suggested themes (drawn from the M08 carry-forward observations + analytical hints surfaced through Phase 3–8.5):
 
 - The **CHAR-1 volume-split** across M08-A (unjust wound) / M08-B (moral consequence) / M08-C (divine encounter) — what coherent characteristic identity holds the three registers together, and where do they genuinely diverge?
 - The **M06 ↔ M08 contempt-pride relational pair** — CHAR-5 holds the pride-recipient face; M06 holds the contempt-projection source. The cross-cluster dynamic in detail.
@@ -71,8 +71,8 @@ Suggested length: 2,000–4,000 words for the appendix. Use sub-headings per the
 
 ## Discipline
 
-1. **Per-prompt comparative reading.** For each T#.#.# block in §3 of the structural input, read the 6 characteristics' findings stacked together before authoring the cluster-scope row. The test for a good cluster-scope answer is: *what does seeing the 6 side-by-side reveal that no single characteristic's answer reveals?*
-2. **Cite by characteristic.** The cluster-scope finding names which characteristics contribute what — e.g., "Pride-as-experienced (Char 1) and Humiliation-as-enforced (Char 2) co-occur in many verses but with different agencies — Char 1 names the inner state; Char 2 names the enforcing mechanism."
+1. **Per-prompt comparative reading.** For each T#.#.# block in §3 of the structural input, read the 5 characteristics' findings stacked together before authoring the cluster-scope row. The test for a good cluster-scope answer is: *what does seeing the 5 side-by-side reveal that no single characteristic's answer reveals?*
+2. **Cite by characteristic.** The cluster-scope finding names which characteristics contribute what — e.g., "Arrogant-self-elevation (Char 1) and Presumptuous-defiance (Char 2) co-occur in many verses but with different agencies — Char 1 names the dispositional posture; Char 2 names the volitional act of transgression."
 3. **Don't restate the per-char findings.** The cluster-scope row is the INTEGRATION across them, not a summary of each.
 4. **Fluency is not a quality signal.** Plausible-sounding integration without specific cross-characteristic naming is rejected.
 5. **Use [CLUSTER] scope marker only.** Do NOT use [CHAR-N] markers; this is the cluster-scope layer.
@@ -100,7 +100,7 @@ Reference the resolution notes in §2 of the structural input for the validated 
 # M08 Phase 9 — Cluster Synthesis — findings
 
 **Date:** 2026-05-21
-**Scope:** Cluster M08 (Pride, Arrogance and Boasting) — across 6 characteristics
+**Scope:** Cluster M08 (Pride, Arrogance and Boasting) — across 5 characteristics
 **Prompts answered:** 189 / 189
 
 ## T0 — Divine Image and Created Design

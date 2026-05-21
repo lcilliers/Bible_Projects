@@ -18,8 +18,8 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 REPO = Path(__file__).resolve().parent.parent
 DB = REPO / 'database' / 'bible_research.db'
-FINDINGS = REPO / 'Sessions/Session_Clusters/M08/files phase 9/WA-M08-phase9-char1-Arrogant-self-elevation-findings-v1-20260521.md'
-OUT = REPO / 'Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-spotcheck-v1-20260521.md'
+FINDINGS = REPO / 'Sessions/Session_Clusters/M08/files phase 9/wa-cluster-M08-phase9-char1-Arrogant-self-elevation-findings-v1-20260521.md'
+OUT = REPO / 'Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-spotcheck-v2-20260521.md'
 
 text = FINDINGS.read_text(encoding='utf-8')
 
