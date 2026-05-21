@@ -34,35 +34,67 @@ This package covers **multiple characteristics** to save on session setup overhe
 
 ---
 
-## ⚠️ STAGED EXECUTION PROTOCOL — MANDATORY ⚠️
+## ⚠️ STAGED EXECUTION PROTOCOL — MANDATORY (two-level: batch and tier) ⚠️
 
-**Known prior failure mode (M07 bundle, 2026-05-20):** the AI attempted to hold all 4 characteristics × 189 prompts in working memory and answer them as a continuous stream. It fell over twice — lost track of which batch was active, mixed evidence across characteristics, and produced inconsistent CHAR-N scope markers. **Do not repeat that pattern.**
+**Known prior failure modes:** (a) M07 bundle (2026-05-20) — the AI tried to hold all 4 characteristics × 189 prompts in working memory and fell over twice (mixed evidence across characteristics, lost CHAR-N markers). (b) M08 CHAR-1 (2026-05-21) — the AI tried to process all 189 prompts in one pass and drifted (carried prior-tier reasoning into later tiers, performed analysis between tiers, substituted fluency for citation). **Do not repeat either pattern.**
 
-This bundle is **a series of independent batches**, not a single 4×189 pass. Each batch must be **completed, written to disk, and confirmed** before the next batch begins.
+This bundle is **two nested levels of staged execution**:
 
-### Hard procedural sequence
+1. **Batch-level** — 4 batches, one per characteristic (Char 2 → Char 3 → Char 4 → Char 5). Each batch must be **completed, written to disk, and confirmed** before the next batch begins. CC needs to validate Batch N before you start Batch N+1.
+2. **Tier-level (inside each batch)** — each batch's 189 prompts are split across 8 tiers (T0..T7). **One tier per response.** Each tier is announced, authored, appended to the batch's findings file, confirmed, and STOPPED before the next tier begins.
 
-**For each batch, in the order listed below, you MUST:**
+**Net effect:** ≈ 32 responses per bundle (4 batches × 8 tiers, plus Self-checks). That is the right cadence; you are not being asked to be fast. You are being asked to be correct.
 
-1. **OPEN BATCH** — announce: *"Starting Batch N — Characteristic N (<name>)"*.
-2. **READ EVIDENCE** — read **every** verse-meaning in §3.{letter} of the structural input for THIS batch's characteristic. Do not look at any other §3 section.
-3. **AUTHOR 189 PROMPTS** — work through T0..T7 in order. If a single response can't hold the whole batch, split by tier pair (T0+T1 → T2+T3 → T4+T5 → T6+T7) — but the batch is not finished until all 189 prompts have a finding row.
-4. **WRITE THE FILE** — emit the complete findings document as a single contiguous markdown block, with the exact filename from the table below. Include the Self-check at the end.
-5. **CONFIRM WRITTEN** — announce: *"Batch N file written: wa-cluster-M08-phase9-charN-<name>-findings-v1-20260521.md, 189/189 prompts, [CHAR-N] markers verified"*.
-6. **STOP** — do not begin Batch N+1 in the same response. Wait for the next prompt from CC or the user. CC needs to validate Batch N's file before you start Batch N+1.
+### Tier breakdown (applies inside every batch)
 
-**Between batches, your working memory must reset.** Do not carry verse-citation patterns, finding language, or evidence summaries from one batch into another. The next batch starts fresh from §3.{next-letter}.
+Each batch's 189 prompts split across 8 tiers. Tier sizes: **T0=12, T1=24, T2=31, T3=33, T4=24, T5=21, T6=24, T7=20.** One tier per response.
 
-### Recovery if you find yourself drifting mid-batch
+### Hard procedural sequence — per BATCH
 
-If at any point you notice you have:
+For each batch in order:
 
-- Cited evidence from another characteristic's §3 block,
-- Mixed `[CHAR-N]` scope markers within one findings file,
-- Skipped prompts "to come back later",
-- Begun a second characteristic before the first file is written,
+1. **OPEN BATCH** — *"Starting Batch N — Characteristic N (<name>). Tier T0 next."*
+2. **READ EVIDENCE FRESH** — read **every** verse-meaning in §3.{letter} for THIS batch's characteristic. Do not look at any other §3 section.
+3. **Run the per-tier sequence (T0 → T7)** — see next subsection.
+4. **After T7 — Self-check response** — post the Self-check block for this batch.
+5. **STOP** — do not begin Batch N+1 in the same response. CC validates Batch N's file before you start Batch N+1.
 
-then: **STOP** the current response, announce the issue, abandon the half-written batch, and restart that batch from scratch (re-read §3.{letter}, re-author from T0.1.1). It is faster to restart cleanly than to patch a contaminated batch.
+### Hard procedural sequence — per TIER (inside each batch)
+
+For each tier T0 → T1 → … → T7 within the current batch:
+
+1. **OPEN TIER** — *"Batch N · Tier T{N} — {tier title}."*
+2. **RE-READ EVIDENCE** — re-read §3.{letter} for this tier's lens. Don't rely on memorised summaries from prior tiers.
+3. **AUTHOR THIS TIER'S PROMPTS** — every prompt gets one finding block (parser-safe form below). No skipping. No "summarise the rest".
+4. **WRITE TO FILE** — T0 CREATES the batch's findings file with the header + T0 section; T1..T7 APPEND each tier's `## T{N} — {title}` section. Each response shows the complete segment ready to be appended.
+5. **CONFIRM WRITTEN** — *"Batch N · Tier T{N} written: <filename>, {n}/{n} prompts, [CHAR-N] markers verified."*
+6. **STOP** — do not begin Tier T{N+1} in the same response.
+
+**Between tiers, working memory must reset.** Do not carry prior-tier reasoning or finding patterns into the next tier. Each tier re-reads §3 fresh with its own analytical lens.
+
+**Between batches, working memory must reset.** Don't carry verse-citation patterns, finding language, or evidence summaries from Batch N into Batch N+1. The next batch starts fresh from §3.{next-letter}.
+
+### What NOT to do (each is a drift signal)
+
+- Authoring prompts from a tier you have not announced as OPEN
+- Holding multiple tiers' worth of unwritten findings in one response
+- Skipping prompts "to come back later"
+- Inter-tier or inter-batch analysis while a tier/batch is in flight — finish current, write, STOP. Cross-tier patterns belong in the batch Self-check; cross-batch patterns belong in the cluster-synthesis session.
+- Substituting fluency for citation — every E must name verses / VCGs from §3
+- Bulk-classifying prompts from a sample — each prompt is its own analytical pass
+- Beginning Batch N+1 before Batch N's findings file is written and validated
+- Citing evidence from another characteristic's §3 block in the current batch
+- Mixing `[CHAR-N]` scope markers within one batch's findings file
+
+### Recovery if you find yourself drifting
+
+If at any point you notice any of the things in the "NOT to do" list:
+
+- **STOP** the current response immediately and announce the issue.
+- Identify the level of drift (mid-tier vs cross-batch) and abandon the contaminated work.
+- Re-read §3.{letter} fresh and restart the affected tier from its first prompt (or the affected batch from T0 if the contamination is cross-batch).
+
+It is faster to restart cleanly than to patch a contaminated batch or tier.
 
 ---
 
@@ -154,15 +186,15 @@ At end of this batch, flag whether the observation surfaced as expected.
 
 ## After you finish each batch — the STOP gate
 
-1. **Write the batch's findings to its own file** using the exact filename from the batch sequence table.
-2. **Self-check inside the file** — confirm 189 prompts have rows; confirm every E names evidence; confirm every `[CHAR-N]` marker matches the batch's characteristic number.
-3. **Announce file written** — *"Batch N file written: <filename>, 189/189 prompts, [CHAR-N] markers verified"*.
+1. The batch's findings file is built incrementally by tier: T0 created the file with the header + T0 section; T1..T7 each appended their section.
+2. **Post the batch Self-check** (separate response, after T7's STOP) — counts of E/S/G, carry-forward observations addressed, unexpected patterns.
+3. **Announce batch complete** — *"Batch N complete: <filename>, 189/189 prompts, [CHAR-N] markers verified, Self-check posted."*
 4. **STOP**. Do not begin Batch N+1 in the same response. Wait for the next prompt.
 5. CC validates and applies the batch's findings to `cluster_finding` with the right characteristic_id.
-6. When CC confirms validation, you may begin Batch N+1 in a new response — starting from step 1 of the staged execution protocol (re-read §3.{next-letter} fresh).
+6. When CC confirms validation, begin Batch N+1 in a new response — starting from the batch-level OPEN BATCH step.
 
-If a single batch is too large to fit in one response, split that batch's authorship by tier-pair (T0+T1 → T2+T3 → T4+T5 → T6+T7) — but the batch is still ONE file with ONE filename. Don't fragment one batch across multiple files.
+**One batch = one file = 8 tier-segments + 1 Self-check segment (≈ 9 responses).** Bundle total: 4 × 9 ≈ 36 responses. That is the right cadence; you are being asked to be correct, not fast.
 
 ---
 
-*End of brief. Load the structural input (#2) and begin Batch 1 (and only Batch 1).*
+*End of brief. Load the structural input (#2) and begin **Batch 1 · Tier T0** (and only that) in your first response.*
