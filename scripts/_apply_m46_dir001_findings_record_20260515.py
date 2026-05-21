@@ -1,4 +1,4 @@
-"""Apply WA-M46-dir-001-findings-record-v1-20260515.md — Phase 9 cluster_finding load.
+"""Apply wa-cluster-M46-dir-001-findings-record-v1-20260515.md — Phase 9 cluster_finding load.
 
 Parses the 4 consolidated findings markdown files for M46 and inserts cluster_finding
 rows per the directive's parsing rules.
@@ -33,14 +33,14 @@ REPO = Path(__file__).resolve().parent.parent
 DB = REPO / "database" / "bible_research.db"
 INPUT_DIR = REPO / "Sessions" / "Session_Clusters" / "M46" / "files phase 9"
 PARTS = [
-    "WA-M46-consolidated-findings-v1-20260515-part1.md",
-    "WA-M46-consolidated-findings-v1-20260515-part2.md",
-    "WA-M46-consolidated-findings-v1-20260515-part3.md",
-    "WA-M46-consolidated-findings-v1-20260515-part4.md",
+    "wa-cluster-M46-consolidated-findings-v1-20260515-part1.md",
+    "wa-cluster-M46-consolidated-findings-v1-20260515-part2.md",
+    "wa-cluster-M46-consolidated-findings-v1-20260515-part3.md",
+    "wa-cluster-M46-consolidated-findings-v1-20260515-part4.md",
 ]
 
 CLUSTER_CODE = "M46"
-DIRECTIVE = "WA-M46-dir-001-findings-record-v1-20260515"
+DIRECTIVE = "wa-cluster-M46-dir-001-findings-record-v1-20260515"
 INSTRUCTION_VERSION = "wa-sessionb-cluster-instruction-v1_13-20260514"
 CATALOGUE_VERSION = "v2.1-2026-05-15"  # stamped on emitted rows
 

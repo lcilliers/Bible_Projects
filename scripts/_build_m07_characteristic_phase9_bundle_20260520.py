@@ -7,11 +7,11 @@ AI to do SEPARATE 189-prompt passes per characteristic (no cross-mixing
 of evidence across characteristics).
 
 Output filenames:
-    Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-char{N1+N2+...}-brief-v1-{date}.md
-    Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-char{N1+N2+...}-input-v1-{date}.md
+    Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-char{N1+N2+...}-brief-v1-{date}.md
+    Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-char{N1+N2+...}-input-v1-{date}.md
 
 The AI is expected to produce ONE findings file per characteristic
-(named WA-M07-phase9-char{N}-{short}-findings-v1-{date}.md). The
+(named wa-cluster-M07-phase9-char{N}-{short}-findings-v1-{date}.md). The
 existing loader (`_apply_phase9_characteristic_findings_20260518.py`)
 processes each findings file separately with --char-seq matching.
 
@@ -163,8 +163,8 @@ def main():
     by_tier = fetch_catalogue(conn)
 
     bundle_tag = "char" + "+".join(str(s) for s in char_seqs)
-    BRIEF = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-{bundle_tag}-brief-v1-{TODAY}.md")
-    INPUT = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-{bundle_tag}-input-v1-{TODAY}.md")
+    BRIEF = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-{bundle_tag}-brief-v1-{TODAY}.md")
+    INPUT = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-{bundle_tag}-input-v1-{TODAY}.md")
 
     total_verses_all = sum(c["total_verses"] for c in chars_data)
 
@@ -216,7 +216,7 @@ def main():
     B.append("|---|---|---|---:|---|")
     for c in chars_data:
         sg_codes = ", ".join(sg["subgroup_code"] for sg in c["subgroups"])
-        out_name = f"WA-M07-phase9-char{c['seq']}-{c['safe_short']}-findings-v1-{TODAY}.md"
+        out_name = f"wa-cluster-M07-phase9-char{c['seq']}-{c['safe_short']}-findings-v1-{TODAY}.md"
         B.append(f"| {c['seq']} | {c['short']} | {sg_codes} | ~{c['total_verses']} | `Sessions/Session_Clusters/M07/{out_name}` |")
     B.append("")
     B.append("Complete each batch fully (189 prompts + self-check) and check it against the discipline list BEFORE moving to the next batch. Each output is a standalone findings file.")

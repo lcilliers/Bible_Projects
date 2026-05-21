@@ -1,0 +1,1961 @@
+{
+  "_meta": {
+    "generated_at": "2026-05-21T05:16:21Z",
+    "mode": "EXECUTE",
+    "total": 325,
+    "collisions": 13,
+    "canonical": "wa-cluster-{CODE}-{kind}-v{n}-{date}"
+  },
+  "renames": [
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-A-stress-test-analysis-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-A-stress-test-analysis-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-A-stress-test-input-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-A-stress-test-input-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-A-stress-test-output-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-A-stress-test-output-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-A-stress-test-raw-20260516.txt",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-A-stress-test-raw-20260516.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-consolidated-findings-v1-20260516-part1.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-consolidated-findings-v1-20260516-part1.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-consolidated-findings-v1-20260516-part2-T2.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-consolidated-findings-v1-20260516-part2-T2.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-consolidated-findings-v1-20260516-part3-T3-T4.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-consolidated-findings-v1-20260516-part3-T3-T4.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-consolidated-findings-v1-20260516-part4-T5-T7.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-consolidated-findings-v1-20260516-part4-T5-T7.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-blind-verification-test-analysis-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-blind-verification-test-analysis-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-blind-verification-test-input-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-blind-verification-test-input-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-blind-verification-test-output-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-blind-verification-test-output-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-mixed-verification-test-analysis-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-mixed-verification-test-analysis-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-mixed-verification-test-input-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-mixed-verification-test-input-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-D-mixed-verification-test-output-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-D-mixed-verification-test-output-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-001-term-transfer-applied-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-001-term-transfer-applied-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-001-term-transfer-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-001-term-transfer-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-002-subgroup-assign-applied-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-002-subgroup-assign-applied-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-003-vcg-creation-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-003-vcg-creation-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-004-vcg-dissolve-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-004-vcg-dissolve-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-005-inherited-findings-reconcile-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-005-inherited-findings-reconcile-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-006-findings-record-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-006-findings-record-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-dir-007-closure-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-dir-007-closure-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-for-reconciliation-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-for-reconciliation-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-for-reconciliation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-for-reconciliation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-reconciliation-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-reconciliation-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-reconciliation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-reconciliation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-reconciliation-v2-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-reconciliation-v2-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-inherited-findings-reconciliation-v2-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-inherited-findings-reconciliation-v2-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-passa-api-raw-responses-20260515.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-passa-api-raw-responses-20260515.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-passa-meanings-applied-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-passa-meanings-applied-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-passa-system-prompt-20260515.txt",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-passa-system-prompt-20260515.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase10-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase10-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase11-design-decisions-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase11-design-decisions-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase5-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase5-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase6-reminder-to-AI-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase6-reminder-to-AI-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase7-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase7-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase9-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase9-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-phase9-findings-validation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-phase9-findings-validation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-pre-phase7-routing-snapshot-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-pre-phase7-routing-snapshot-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-subgroup-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-subgroup-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-UT-api-raw-responses-20260515.json",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-UT-api-raw-responses-20260515.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-UT-verse-review-api-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-UT-verse-review-api-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M01",
+      "old": "Sessions/Session_Clusters/M01/WA-M01-vcg-dissolution-comparison-v2-20260516.md",
+      "new": "Sessions/Session_Clusters/M01/wa-cluster-M01-vcg-dissolution-comparison-v2-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-audit-against-v25-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-audit-against-v25-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-consolidated-findings-v1-20260516-part1.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-consolidated-findings-v1-20260516-part1.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-consolidated-findings-v1-20260516-part2-T2.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-consolidated-findings-v1-20260516-part2-T2.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-consolidated-findings-v1-20260516-part3-T3-T4.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-consolidated-findings-v1-20260516-part3-T3-T4.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-consolidated-findings-v1-20260516-part4-T5-T7.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-consolidated-findings-v1-20260516-part4-T5-T7.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-001-term-transfer-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-001-term-transfer-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-003-vcg-create-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-003-vcg-create-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-004-vcg-dissolve-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-004-vcg-dissolve-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-005-inherited-findings-reconcile-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-005-inherited-findings-reconcile-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-006-findings-record-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-006-findings-record-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-dir-007-closure-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-dir-007-closure-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-inherited-findings-for-reconciliation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-inherited-findings-for-reconciliation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-inherited-findings-reconciliation-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-inherited-findings-reconciliation-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-inherited-findings-reconciliation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-inherited-findings-reconciliation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-inherited-vcg-archive-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-inherited-vcg-archive-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-A-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-A-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-B-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-B-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-C-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-C-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-D-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-D-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-E-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-E-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-M02-F-and-BOUNDARY-vcg-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-F-and-BOUNDARY-vcg-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-passa-api-raw-responses-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-passa-api-raw-responses-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-passa-meanings-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-passa-meanings-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-passa-system-prompt-20260516.txt",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-passa-system-prompt-20260516.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase10-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase10-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase3-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase3-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase5-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase5-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase5-distribution-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase5-distribution-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase7-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase7-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase7-cross-routing-flags-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase7-cross-routing-flags-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase9-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase9-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-phase9-findings-validation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-phase9-findings-validation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-pre-phase7-routing-snapshot-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-pre-phase7-routing-snapshot-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-subgroup-design-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-subgroup-design-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-subgroup-mapping-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-subgroup-mapping-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-UT-api-raw-responses-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-UT-api-raw-responses-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-UT-verse-review-api-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-UT-verse-review-api-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-vcg-analytical-lens-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-vcg-analytical-lens-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-vcg-creation-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-vcg-creation-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-vcg-dissolution-comparison-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-vcg-dissolution-comparison-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-vcg-missing-verse-api-raw-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-vcg-missing-verse-api-raw-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M02",
+      "old": "Sessions/Session_Clusters/M02/WA-M02-vcg-missing-verse-assignments-v1-20260516.json",
+      "new": "Sessions/Session_Clusters/M02/wa-cluster-M02-vcg-missing-verse-assignments-v1-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/wa-cluster-m03-debate-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-debate-v1-20260516.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-001-term-transfer-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-001-term-transfer-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-002-subgroup-routing-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-003-vcg-creation-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-003-vcg-creation-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-004-vcg-dissolve-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-004-vcg-dissolve-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-005-inherited-findings-reconcile-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-005-inherited-findings-reconcile-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-006-findings-record-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-006-findings-record-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-dir-007-closure-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-dir-007-closure-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-inherited-findings-for-reconciliation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-inherited-findings-for-reconciliation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-inherited-findings-reconciliation-v1-20260517.json",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-inherited-findings-reconciliation-v1-20260517.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-inherited-findings-reconciliation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-inherited-findings-reconciliation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-passa-api-raw-responses-20260516.json",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-passa-api-raw-responses-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-passa-meanings-applied-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-passa-meanings-applied-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-passa-system-prompt-20260516.txt",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-passa-system-prompt-20260516.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase10-brief-to-AI-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase10-brief-to-AI-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase10-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase10-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase3-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase3-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase5-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase5-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase5-distribution-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase5-distribution-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase7-brief-to-AI-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase7-brief-to-AI-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase7-validation-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase7-validation-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase9-brief-to-AI-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase9-brief-to-AI-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-phase9-findings-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-phase9-findings-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-UT-api-raw-responses-20260516.json",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-UT-api-raw-responses-20260516.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M03",
+      "old": "Sessions/Session_Clusters/M03/WA-M03-UT-verse-review-api-v1-20260516.md",
+      "new": "Sessions/Session_Clusters/M03/wa-cluster-M03-UT-verse-review-api-v1-20260516.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-audit-against-v25-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-audit-against-v25-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-boundary-content-analysis-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-boundary-content-analysis-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-characteristic-load-applied-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-characteristic-load-applied-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-characteristic-map-v4-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-characteristic-map-v4-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-characteristic-mapping-brief-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-characteristic-mapping-brief-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-characteristic-mapping-input-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-characteristic-mapping-input-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-001-term-transfer-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-001-term-transfer-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-002-rollback-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-002-rollback-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-002-subgroup-routing-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-002-subgroup-routing-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-003-subgroup-routing-applied-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-003-subgroup-routing-applied-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-004-vcg-creation-applied-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-004-vcg-creation-applied-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-005-vcg-dissolve-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-005-vcg-dissolve-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-dir-006-closure-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-dir-006-closure-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-api-raw-responses-20260517.json",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-api-raw-responses-20260517.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-api-raw-responses-20260518.json",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-api-raw-responses-20260518.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-meanings-applied-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-meanings-applied-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-meanings-applied-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-meanings-applied-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-system-prompt-20260517.txt",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-system-prompt-20260517.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-passa-system-prompt-20260518.txt",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-passa-system-prompt-20260518.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase1-2-summary-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase1-2-summary-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase10-closure-record-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase10-closure-record-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase11-validation-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase11-validation-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase3-brief-to-AI-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase3-brief-to-AI-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase4-distribution-preview-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase4-distribution-preview-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase5-brief-to-AI-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase5-brief-to-AI-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase5-distribution-validation-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase5-distribution-validation-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase7-brief-to-AI-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase7-brief-to-AI-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase7-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase7-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-brief-to-AI-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-brief-to-AI-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-bundle-char3+7-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-bundle-char3+7-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-bundle-char3+7-input-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-bundle-char3+7-input-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-bundle-char5+6-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-bundle-char5+6-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-bundle-char5+6-input-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-bundle-char5+6-input-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char1-Exultation-brief-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char1-Exultation-brief-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char1-Exultation-findings-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char1-Exultation-findings-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char1-Exultation-input-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char1-Exultation-input-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char2-Joy-brief-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char2-Joy-brief-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char2-Joy-findings-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char2-Joy-findings-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char2-Joy-input-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char2-Joy-input-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char3-Gladness-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char3-Gladness-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char4-Delight-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char4-Delight-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char4-Delight-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char4-Delight-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char4-Delight-input-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char4-Delight-input-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char5-Pleasure-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char5-Pleasure-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char6-Wonder-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char6-Wonder-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-char7-Suffering-Joy-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-char7-Suffering-Joy-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-cluster-synthesis-appendix-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-cluster-synthesis-appendix-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-cluster-synthesis-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-cluster-synthesis-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-cluster-synthesis-findings-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-cluster-synthesis-findings-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-cluster-synthesis-input-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-cluster-synthesis-input-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-validation-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-validation-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-phase9-validation-v2-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-phase9-validation-v2-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-post-passa-disposition-review-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-post-passa-disposition-review-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-special-case-orphan-review-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-special-case-orphan-review-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step3-new-subgroups-applied-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step3-new-subgroups-applied-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step4-boundary-resolution-applied-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step4-boundary-resolution-applied-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step4-boundary-resolution-brief-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step4-boundary-resolution-brief-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step4-boundary-resolution-input-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step4-boundary-resolution-input-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step5-vcg-design-applied-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step5-vcg-design-applied-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step5-vcg-design-brief-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step5-vcg-design-brief-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-step5-vcg-design-input-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-step5-vcg-design-input-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-terse-setaside-review-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-terse-setaside-review-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-UT-api-raw-responses-20260517.json",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-UT-api-raw-responses-20260517.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M04",
+      "old": "Sessions/Session_Clusters/M04/WA-M04-UT-verse-review-api-v1-20260517.md",
+      "new": "Sessions/Session_Clusters/M04/wa-cluster-M04-UT-verse-review-api-v1-20260517.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/wa-cluster-m05-affinity-v1-20260505.json",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-affinity-v1-20260505.json",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/wa-cluster-m05-affinity-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-affinity-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/wa-cluster-m05-coverage-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-coverage-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/wa-cluster-m05-finding-orphans-v1-20260505.json",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-finding-orphans-v1-20260505.json",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/wa-cluster-m05-finding-orphans-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-finding-orphans-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/WA-M05-audit-against-v25-v1-20260518.md",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-audit-against-v25-v1-20260518.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M05",
+      "old": "Sessions/Session_Clusters/M05/WA-M05-dir012-findings-applied-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M05/wa-cluster-M05-dir012-findings-applied-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-affinity-v1-20260505.json",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-affinity-v1-20260505.json",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-affinity-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-affinity-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-anchor-verse-links-v1-20260505.json",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-anchor-verse-links-v1-20260505.json",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-anchor-verse-links-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-anchor-verse-links-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-coverage-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-coverage-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-finding-orphans-v1-20260505.json",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-finding-orphans-v1-20260505.json",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/wa-cluster-m06-finding-orphans-v1-20260505.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-finding-orphans-v1-20260505.md",
+      "status": "DELETE_DUPLICATE"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-A-group-mapping-applied-v1-20260506.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-A-group-mapping-applied-v1-20260506.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-A-group-mapping-dryrun-v1-20260506.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-A-group-mapping-dryrun-v1-20260506.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-A-group-verse-mapping-v1-20260506.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-A-group-verse-mapping-v1-20260506.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-consolidated-findings-v1-20260506-part1.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-consolidated-findings-v1-20260506-part1.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-consolidated-findings-v1-20260506-part2-T2.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-consolidated-findings-v1-20260506-part2-T2.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-consolidated-findings-v1-20260506-part3-T3-T4.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-consolidated-findings-v1-20260506-part3-T3-T4.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-consolidated-findings-v1-20260506-part4-T5-T7.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-consolidated-findings-v1-20260506-part4-T5-T7.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-LXX-research-brief-v1-20260506.docx",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-LXX-research-brief-v1-20260506.docx",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-UT-verse-review-v1-2026-05-05.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-UT-verse-review-v1-2026-05-05.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M06",
+      "old": "Sessions/Session_Clusters/M06/WA-M06-verification-response-v1-20260506.md",
+      "new": "Sessions/Session_Clusters/M06/wa-cluster-M06-verification-response-v1-20260506.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-boundary-cooccurrence-list-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-boundary-cooccurrence-list-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-boundary-resolution-input-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-boundary-resolution-input-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-boundary-resolution-v1-20260519.json",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-boundary-resolution-v1-20260519.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-boundary-resolution-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-boundary-resolution-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-constitution-debate-v2-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-constitution-debate-v2-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-001-term-transfer-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-001-term-transfer-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-002-subgroup-assign-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-002-subgroup-assign-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-003-vcg-create-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-003-vcg-create-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-004-vcg-dissolve-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-004-vcg-dissolve-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-005-boundary-resolution-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-005-boundary-resolution-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-dir-006-closure-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-dir-006-closure-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-A-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-A-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-B-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-B-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-BOUNDARY-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-BOUNDARY-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-C-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-C-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-D-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-D-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-E-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-E-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-F-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-F-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-G-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-G-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-M07-H-vcg-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-H-vcg-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-passa-api-raw-responses-20260519.json",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-passa-api-raw-responses-20260519.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-passa-meanings-applied-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-passa-meanings-applied-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-passa-system-prompt-20260519.txt",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-passa-system-prompt-20260519.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase10-closure-record-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase10-closure-record-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase11-validation-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase11-validation-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase3-constitution-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase3-constitution-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase4-cooccurrence-list-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase4-cooccurrence-list-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase5-distribution-validation-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase5-distribution-validation-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase5-subgroup-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase5-subgroup-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase7-vcg-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase7-vcg-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase85-boundary-brief-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase85-boundary-brief-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase85-researcher-decisions-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase85-researcher-decisions-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-char2+3+4+5+6-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-char2+3+4+5+6-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-bundle-char2+3+4+5+6-input-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-bundle-char2+3+4+5+6-input-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char1-Shame-as-experienced-inner-state-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char1-Shame-as-experienced-inner-state-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char1-Shame-as-experienced-inner-state-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char1-Shame-as-experienced-inner-state-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char1-Shame-as-experienced-inner-state-input-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char1-Shame-as-experienced-inner-state-input-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char2-Humiliation-as-enforced-abasement-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char2-Humiliation-as-enforced-abasement-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char3-Dishonour-as-relational-worth-denial-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char3-Dishonour-as-relational-worth-denial-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char4-Shamefulness-as-moral-evaluative-judgment-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char4-Shamefulness-as-moral-evaluative-judgment-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char5-Shame-produced-by-contempt-and-rejection-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char5-Shame-produced-by-contempt-and-rejection-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-char6-Innocence-as-structural-counter-to-shame-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char6-Innocence-as-structural-counter-to-shame-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-appendix-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-appendix-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-findings-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-findings-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-input-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-input-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-session-start-prep-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-session-start-prep-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-subgroup-design-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-subgroup-design-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-subgroup-mapping-v1-20260519.json",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-subgroup-mapping-v1-20260519.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-UT-api-raw-responses-20260519.json",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-UT-api-raw-responses-20260519.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-UT-verse-review-api-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-UT-verse-review-api-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-vcg-creation-v1-20260519.json",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-vcg-creation-v1-20260519.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M07",
+      "old": "Sessions/Session_Clusters/M07/WA-M07-vcg-dissolution-comparison-v1-20260519.md",
+      "new": "Sessions/Session_Clusters/M07/wa-cluster-M07-vcg-dissolution-comparison-v1-20260519.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-A1-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-A1-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-A2-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-A2-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-A3-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-A3-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-A4-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-A4-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-B-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-B-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-BOUNDARY-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-BOUNDARY-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-C-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-C-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-constitution-debate-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-constitution-debate-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-D-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-D-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-dir-001-term-transfer-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-dir-001-term-transfer-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-dir-002-subgroup-assign-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-dir-002-subgroup-assign-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-dir-003-vcg-create-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-dir-003-vcg-create-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-dir-004-vcg-dissolve-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-dir-004-vcg-dissolve-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-dir-005-phase85-boundary-resolution-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-dir-005-phase85-boundary-resolution-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-E-vcg-design-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-E-vcg-design-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-passa-api-raw-responses-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-passa-api-raw-responses-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-passa-meanings-applied-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-passa-meanings-applied-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-passa-system-prompt-20260520.txt",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-passa-system-prompt-20260520.txt",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase3-constitution-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase3-constitution-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase4-cooccurrence-list-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase4-cooccurrence-list-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase5-distribution-validation-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase5-distribution-validation-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase5-distribution-validation-v2-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase5-distribution-validation-v2-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase5-resubmission-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase5-resubmission-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase5-subgroup-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase5-subgroup-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase7-vcg-brief-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase7-vcg-brief-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char2+3+4+5-brief-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char2+3+4+5-brief-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char2+3+4+5-input-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char2+3+4+5-input-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-char1-Arrogant-self-elevation-brief-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-Arrogant-self-elevation-brief-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-char1-Arrogant-self-elevation-input-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-Arrogant-self-elevation-input-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-cluster-synthesis-brief-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-brief-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-phase9-cluster-synthesis-input-v1-20260521.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-input-v1-20260521.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-subgroup-design-v2-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-subgroup-design-v2-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-subgroup-mapping-resolved-v1-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-subgroup-mapping-resolved-v1-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-subgroup-mapping-resolved-v2-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-subgroup-mapping-resolved-v2-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-subgroup-mapping-v2-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-subgroup-mapping-v2-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-UT-api-raw-responses-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-UT-api-raw-responses-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-UT-verse-review-api-v1-20260520.md",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-UT-verse-review-api-v1-20260520.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M08",
+      "old": "Sessions/Session_Clusters/M08/WA-M08-vcg-creation-v1-20260520.json",
+      "new": "Sessions/Session_Clusters/M08/wa-cluster-M08-vcg-creation-v1-20260520.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M15",
+      "old": "Sessions/Session_Clusters/M15/WA-M15-dir-findings-record-completion-report-v1-20260512.md",
+      "new": "Sessions/Session_Clusters/M15/wa-cluster-M15-dir-findings-record-completion-report-v1-20260512.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M15",
+      "old": "Sessions/Session_Clusters/M15/WA-M15-session-log-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M15/wa-cluster-M15-session-log-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M26",
+      "old": "Sessions/Session_Clusters/M26/WA-M26-dir-001-completion-report-v1-20260511.md",
+      "new": "Sessions/Session_Clusters/M26/wa-cluster-M26-dir-001-completion-report-v1-20260511.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-A-group-verse-mapping-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-A-group-verse-mapping-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-B-group-mapping-applied-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-B-group-mapping-applied-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-B-group-verse-mapping-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-B-group-verse-mapping-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-characteristic-debate-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-characteristic-debate-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-consolidated-findings-v1-20260508-part1.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-consolidated-findings-v1-20260508-part1.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-consolidated-findings-v1-20260508-part2-T2.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-consolidated-findings-v1-20260508-part2-T2.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-consolidated-findings-v1-20260508-part3-T3-T4.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-consolidated-findings-v1-20260508-part3-T3-T4.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-consolidated-findings-v1-20260508-part4-T5-T7.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-consolidated-findings-v1-20260508-part4-T5-T7.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-dissolution-applied-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-dissolution-applied-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-findings-record-applied-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-findings-record-applied-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-session-log-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-session-log-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M32",
+      "old": "Sessions/Session_Clusters/M32/WA-M32-subgroup-summaries-v1-20260508.md",
+      "new": "Sessions/Session_Clusters/M32/wa-cluster-M32-subgroup-summaries-v1-20260508.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M39",
+      "old": "Sessions/Session_Clusters/M39/WA-M39-A-group-mapping-applied-v1-20260514.md",
+      "new": "Sessions/Session_Clusters/M39/wa-cluster-M39-A-group-mapping-applied-v1-20260514.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M39",
+      "old": "Sessions/Session_Clusters/M39/WA-M39-B-group-mapping-applied-v1-20260514.md",
+      "new": "Sessions/Session_Clusters/M39/wa-cluster-M39-B-group-mapping-applied-v1-20260514.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M39",
+      "old": "Sessions/Session_Clusters/M39/WA-M39-phase10-input-pack-v1-20260514.md",
+      "new": "Sessions/Session_Clusters/M39/wa-cluster-M39-phase10-input-pack-v1-20260514.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M39",
+      "old": "Sessions/Session_Clusters/M39/WA-M39-verification-corrections-applied-v1-20260514.md",
+      "new": "Sessions/Session_Clusters/M39/wa-cluster-M39-verification-corrections-applied-v1-20260514.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-cc-instructions-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-cc-instructions-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-cc-response-to-phase7-patch-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-cc-response-to-phase7-patch-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-closure-applied-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-closure-applied-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-dir-002-verification-corrections-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-dir-002-verification-corrections-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-directive-subgroups-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-directive-subgroups-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-findings-record-applied-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-findings-record-applied-v1-20260515.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-patch-phase7-newverses-v3-20260515.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-patch-phase7-newverses-v3-20260515.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-patch-phase7-routing-v1-20260515.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-patch-phase7-routing-v1-20260515.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-patch-phase8-vcg-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-patch-phase8-vcg-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-patch-vcg-from-reading-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-patch-vcg-from-reading-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-subgroup-restructure-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-subgroup-restructure-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-term-reallocation-v1-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-term-reallocation-v1-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-UT-api-raw-responses-20260514.json",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-UT-api-raw-responses-20260514.json",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-UT-verse-review-api-v1-20260514.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-UT-verse-review-api-v1-20260514.md",
+      "status": "pending"
+    },
+    {
+      "cluster": "M46",
+      "old": "Sessions/Session_Clusters/M46/WA-M46-verification-response-v1-20260515.md",
+      "new": "Sessions/Session_Clusters/M46/wa-cluster-M46-verification-response-v1-20260515.md",
+      "status": "pending"
+    }
+  ]
+}

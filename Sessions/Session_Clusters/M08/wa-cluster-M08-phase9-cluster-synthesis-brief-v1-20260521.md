@@ -15,8 +15,8 @@ This is the final Phase 9 session for M08. The six characteristic-scope batches 
 
 | # | Document | Purpose |
 |---|---|---|
-| 1 | **This brief** — `Sessions/Session_Clusters/M08/WA-M08-phase9-cluster-synthesis-brief-v1-20260521.md` | Primary task instructions |
-| 2 | **Structural input** — `Sessions/Session_Clusters/M08/WA-M08-phase9-cluster-synthesis-input-v1-20260521.md` | Per-prompt synthesis matrix: for each of the 189 prompts, the 6 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |
+| 1 | **This brief** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-brief-v1-20260521.md` | Primary task instructions |
+| 2 | **Structural input** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-input-v1-20260521.md` | Per-prompt synthesis matrix: for each of the 189 prompts, the 6 characteristics' findings stacked side-by-side (verbatim from `cluster_finding`); plus confirmed observations |
 | 3 | **Governing instruction** — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_8-20260519.md` | §12 Phase 9 disciplines; §12.4 parser-safe form |
 | 4 | **Science extract** — `Workflow/Sciences/wa-m08-pride-scienceextract-v1_0-20260513.md` | Programme-curated scientific lens for T7.3 prompts — ensures consistent framing |
 | 5 | **Programme prose** — `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260506.md` Ch.1 'Defining Inner Being' | Inner-being scope definition (background) |
@@ -133,8 +133,8 @@ Prose text…
 
 ## After you finish
 
-1. Save the output as `Sessions/Session_Clusters/M08/WA-M08-phase9-cluster-synthesis-findings-v1-20260521.md`.
-2. If segmenting by tier-pair: filename pattern `WA-M08-phase9-cluster-synthesis-findings-seg{N}-T#T#-v1-20260521.md` in a sub-folder.
+1. Save the output as `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-cluster-synthesis-findings-v1-20260521.md`.
+2. If segmenting by tier-pair: filename pattern `wa-cluster-M08-phase9-cluster-synthesis-findings-seg{N}-T#T#-v1-20260521.md` in a sub-folder.
 3. Ping CC: "M08 cluster synthesis Phase 9 findings ready".
 4. CC parses, validates 189 [CLUSTER] rows, applies to cluster_finding with finding_status='cluster_synthesis' and characteristic_id=NULL; appendix saved as standalone artefact.
 

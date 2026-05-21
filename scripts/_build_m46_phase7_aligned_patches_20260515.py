@@ -1,9 +1,9 @@
 """Build M46 Phase 7 aligned patches (v2 VCREVISE + v3 VCNEW).
 
-Source: WA-M46-patch-phase7-routing-v1-20260515.json (AI's reading-grounded patch).
+Source: wa-cluster-M46-patch-phase7-routing-v1-20260515.json (AI's reading-grounded patch).
 Output:
-  - WA-M46-patch-phase7-routing-v2-20260515.json (VCREVISE, applier format)
-  - WA-M46-patch-phase7-newverses-v3-20260515.json (VCNEW, 2 sha.men adj inserts)
+  - wa-cluster-M46-patch-phase7-routing-v2-20260515.json (VCREVISE, applier format)
+  - wa-cluster-M46-patch-phase7-newverses-v3-20260515.json (VCNEW, 2 sha.men adj inserts)
 
 Alignment per outputs/markdown/m46-phase7-patch-alignment-v1-20260515.md.
 
@@ -17,9 +17,9 @@ from datetime import datetime, timezone
 
 REPO = Path(__file__).resolve().parent.parent
 DB = REPO / "database" / "bible_research.db"
-SRC = REPO / "Sessions" / "Session_Clusters" / "M46" / "WA-M46-patch-phase7-routing-v1-20260515.json"
-OUT_V2 = REPO / "Sessions" / "Session_Clusters" / "M46" / "WA-M46-patch-phase7-routing-v2-20260515.json"
-OUT_V3 = REPO / "Sessions" / "Session_Clusters" / "M46" / "WA-M46-patch-phase7-newverses-v3-20260515.json"
+SRC = REPO / "Sessions" / "Session_Clusters" / "M46" / "wa-cluster-M46-patch-phase7-routing-v1-20260515.json"
+OUT_V2 = REPO / "Sessions" / "Session_Clusters" / "M46" / "wa-cluster-M46-patch-phase7-routing-v2-20260515.json"
+OUT_V3 = REPO / "Sessions" / "Session_Clusters" / "M46" / "wa-cluster-M46-patch-phase7-newverses-v3-20260515.json"
 
 SUBGROUP_MAP = {"M46-A": 45, "M46-B": 46, "M46-C": 47, "M46-D": 48}
 
@@ -173,7 +173,7 @@ def main():
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     v2_meta = {
-        "patch_id": "WA-M46-patch-phase7-routing-v2-20260515",
+        "patch_id": "wa-cluster-M46-patch-phase7-routing-v2-20260515",
         "patch_type": "VCREVISE",
         "cluster_code": "M46",
         "source_report": src_meta["source_report"],
@@ -182,7 +182,7 @@ def main():
         "date": now,
         "description": (
             "Phase 7 verse routing for M46. CC-aligned from AI v1 patch "
-            "(WA-M46-patch-phase7-routing-v1-20260515.json). Eight technical "
+            "(wa-cluster-M46-patch-phase7-routing-v1-20260515.json). Eight technical "
             "defects in v1 were corrected without disturbing the reading-"
             "grounded routing decisions. See "
             "outputs/markdown/m46-phase7-patch-alignment-v1-20260515.md and "
@@ -196,7 +196,7 @@ def main():
             "anchor_strategy": "Existing anchors preserved except where AI explicitly designated 7 new anchor ops (per AI's _patch_meta.description: 'Anchors set where designated'). set_is_anchor field omitted from non-anchor ops.",
             "vr_id_corrections": f"{len(realignments)} ops had vr_id corrected via (reference, mti_term_id) lookup. Original AI patch used verse_context.id values where verse_record_id was expected.",
             "h7600_additions": "4 H7600 sha.a.nan verses added per AI's instruction in v1 notes (CC to identify 413-002 verses) and pattern extrapolation: Isa 32:9, Isa 32:11, Isa 37:29 -> M46-A gid=1861; Isa 32:18 -> M46-D gid=1862.",
-            "orphan_inserts_split": "2 truly-orphan ops (Neh 9:25, Neh 9:35 for sha.men adj mti=4695) split into companion VCNEW patch WA-M46-patch-phase7-newverses-v3-20260515.json.",
+            "orphan_inserts_split": "2 truly-orphan ops (Neh 9:25, Neh 9:35 for sha.men adj mti=4695) split into companion VCNEW patch wa-cluster-M46-patch-phase7-newverses-v3-20260515.json.",
             "subgroup_code_resolution": "AI's 'M46-A'..'M46-D' translated to integer cluster_subgroup_id: 45/46/47/48.",
             "liparos_term_move": "Term G3045 liparos moved from M46-A to M46-B via mti_term_subgroup UPDATE before patch apply (separate inline operation, not part of this patch). Required because AI's reading routes Rev 18:14 to M46-B.",
             "anchor_preservation_for_isa_32_18": "Isa 32:18 H7600 retained is_anchor=1 (existing) — patch op does not modify is_anchor.",
@@ -206,16 +206,16 @@ def main():
     }
 
     v3_meta = {
-        "patch_id": "WA-M46-patch-phase7-newverses-v3-20260515",
+        "patch_id": "wa-cluster-M46-patch-phase7-newverses-v3-20260515",
         "patch_type": "VCNEW",
         "cluster_code": "M46",
         "source_report": src_meta["source_report"],
         "governing_instruction": "wa-sessionb-cluster-instruction-v1_13-20260514.md",
-        "companion_to": "WA-M46-patch-phase7-routing-v2-20260515",
+        "companion_to": "wa-cluster-M46-patch-phase7-routing-v2-20260515",
         "date": now,
         "description": (
             "VCNEW inserts for 2 sha.men adj verses not previously in verse_context. "
-            "Companion to WA-M46-patch-phase7-routing-v2-20260515 (VCREVISE)."
+            "Companion to wa-cluster-M46-patch-phase7-routing-v2-20260515 (VCREVISE)."
         ),
         "terms_covered": [4695],
         "input_versions": {"4695": md_versions[4695]},

@@ -140,7 +140,7 @@ def main():
                 "VALUES (?, ?, ?, 0, ?, ?)",
                 (r["vcg_id"], r["mti_id"],
                  f"{LABEL}: linkage backfill for VCG created by "
-                 f"WA-M46-patch-vcg-from-reading-v1-20260514",
+                 f"wa-cluster-M46-patch-vcg-from-reading-v1-20260514",
                  ts, ts)
             )
             n_inserted += 1

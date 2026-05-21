@@ -15,8 +15,8 @@
 
 | # | Document | Purpose |
 |---|---|---|
-| 1 | **This brief** — `Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char2+3+4+5-brief-v1-20260521.md` | Primary task instructions |
-| 2 | **Structural input** — `Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char2+3+4+5-input-v1-20260521.md` | Per-characteristic data blocks + shared 189-prompt catalogue + carry-forward observations |
+| 1 | **This brief** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char2+3+4+5-brief-v1-20260521.md` | Primary task instructions |
+| 2 | **Structural input** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char2+3+4+5-input-v1-20260521.md` | Per-characteristic data blocks + shared 189-prompt catalogue + carry-forward observations |
 | 3 | **Governing instruction** — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_8-20260519.md` | §12 Phase 9 disciplines; §12.4 parser-safe form |
 | 4 | **Science extract** — `Workflow/Sciences/wa-m08-pride-scienceextract-v1_0-20260513.md` | Programme-curated scientific lens for T7.3 (human science framework) prompts — ensures consistent framing across clusters and reviewers |
 | 5 | **Programme prose** — `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260506.md` Ch.1 'Defining Inner Being' | Inner-being scope definition (background) |
@@ -48,7 +48,7 @@ This bundle is **a series of independent batches**, not a single 4×189 pass. Ea
 2. **READ EVIDENCE** — read **every** verse-meaning in §3.{letter} of the structural input for THIS batch's characteristic. Do not look at any other §3 section.
 3. **AUTHOR 189 PROMPTS** — work through T0..T7 in order. If a single response can't hold the whole batch, split by tier pair (T0+T1 → T2+T3 → T4+T5 → T6+T7) — but the batch is not finished until all 189 prompts have a finding row.
 4. **WRITE THE FILE** — emit the complete findings document as a single contiguous markdown block, with the exact filename from the table below. Include the Self-check at the end.
-5. **CONFIRM WRITTEN** — announce: *"Batch N file written: WA-M08-phase9-charN-<name>-findings-v1-20260521.md, 189/189 prompts, [CHAR-N] markers verified"*.
+5. **CONFIRM WRITTEN** — announce: *"Batch N file written: wa-cluster-M08-phase9-charN-<name>-findings-v1-20260521.md, 189/189 prompts, [CHAR-N] markers verified"*.
 6. **STOP** — do not begin Batch N+1 in the same response. Wait for the next prompt from CC or the user. CC needs to validate Batch N's file before you start Batch N+1.
 
 **Between batches, your working memory must reset.** Do not carry verse-citation patterns, finding language, or evidence summaries from one batch into another. The next batch starts fresh from §3.{next-letter}.
@@ -72,10 +72,10 @@ You will do **4 separate 189-prompt batches**, one per characteristic, in the or
 
 | Batch | Characteristic | Sub-groups | Verses | §3 section | Output file (you produce) |
 |---|---|---|---:|---|---|
-| 1 | Char 2 — Presumptuous defiance | M08-B | ~45 | §3.A | `Sessions/Session_Clusters/M08/WA-M08-phase9-char2-Presumptuous-defiance-findings-v1-20260521.md` |
-| 2 | Char 3 — Boasting and self-display | M08-C | ~70 | §3.B | `Sessions/Session_Clusters/M08/WA-M08-phase9-char3-Boasting-and-self-display-findings-v1-20260521.md` |
-| 3 | Char 4 — Vain conceit | M08-D | ~12 | §3.C | `Sessions/Session_Clusters/M08/WA-M08-phase9-char4-Vain-conceit-findings-v1-20260521.md` |
-| 4 | Char 5 — Pride of power and position | M08-E | ~17 | §3.D | `Sessions/Session_Clusters/M08/WA-M08-phase9-char5-Pride-of-power-and-position-findings-v1-20260521.md` |
+| 1 | Char 2 — Presumptuous defiance | M08-B | ~45 | §3.A | `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char2-Presumptuous-defiance-findings-v1-20260521.md` |
+| 2 | Char 3 — Boasting and self-display | M08-C | ~70 | §3.B | `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char3-Boasting-and-self-display-findings-v1-20260521.md` |
+| 3 | Char 4 — Vain conceit | M08-D | ~12 | §3.C | `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char4-Vain-conceit-findings-v1-20260521.md` |
+| 4 | Char 5 — Pride of power and position | M08-E | ~17 | §3.D | `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char5-Pride-of-power-and-position-findings-v1-20260521.md` |
 
 **The batch is not finished until the file is on disk.** CC validates each file (parser-safe form, completeness, CHAR-N scope marker consistency) before Batch N+1 begins.
 

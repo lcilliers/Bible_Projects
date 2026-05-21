@@ -12,8 +12,8 @@ Reads cluster_finding directly from the DB to assemble the per-prompt
 matrix; no dependency on the markdown findings files.
 
 Outputs:
-  Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-brief-v1-{date}.md
-  Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-input-v1-{date}.md
+  Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-brief-v1-{date}.md
+  Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-input-v1-{date}.md
 """
 from __future__ import annotations
 
@@ -28,8 +28,8 @@ TODAY = datetime.now().strftime("%Y%m%d")
 TODAY_ISO = datetime.now().strftime("%Y-%m-%d")
 SCIENCE = "Workflow/Sciences/wa-m07-shame-scienceextract-v1_0-20260513.md"
 
-BRIEF = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-brief-v1-{TODAY}.md")
-INPUT = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-input-v1-{TODAY}.md")
+BRIEF = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-brief-v1-{TODAY}.md")
+INPUT = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-input-v1-{TODAY}.md")
 
 
 def main():
@@ -223,8 +223,8 @@ def main():
     B.append("")
     B.append("## After you finish")
     B.append("")
-    B.append(f"1. Save the output as `Sessions/Session_Clusters/M07/WA-M07-phase9-cluster-synthesis-findings-v1-{TODAY}.md`.")
-    B.append(f"2. If segmenting by tier-pair: filename pattern `WA-M07-phase9-cluster-synthesis-findings-seg{{N}}-T#T#-v1-{TODAY}.md` in a sub-folder.")
+    B.append(f"1. Save the output as `Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-cluster-synthesis-findings-v1-{TODAY}.md`.")
+    B.append(f"2. If segmenting by tier-pair: filename pattern `wa-cluster-M07-phase9-cluster-synthesis-findings-seg{{N}}-T#T#-v1-{TODAY}.md` in a sub-folder.")
     B.append("3. Ping CC: \"M07 cluster synthesis Phase 9 findings ready\".")
     B.append("4. CC parses, validates 189 [CLUSTER] rows, applies to cluster_finding with finding_status='cluster_synthesis' and characteristic_id=NULL; appendix saved as standalone artefact.")
     B.append("")

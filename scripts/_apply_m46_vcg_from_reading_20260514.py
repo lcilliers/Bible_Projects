@@ -1,4 +1,4 @@
-"""Apply WA-M46-patch-vcg-from-reading-v1-20260514.json — Stage 2 of 2.
+"""Apply wa-cluster-M46-patch-vcg-from-reading-v1-20260514.json — Stage 2 of 2.
 
 Operations (single transaction):
   - 12 RETAIN_REVISE: UPDATE verse_context_group.context_description
@@ -20,8 +20,8 @@ except Exception:
 
 DB = "database/bible_research.db"
 BACKUP_DIR = "backups"
-PATCH_ID = "WA-M46-patch-vcg-from-reading-v1-20260514"
-INPUT_JSON = "Sessions/Session_Clusters/M46/WA-M46-patch-vcg-from-reading-v1-20260514.json"
+PATCH_ID = "wa-cluster-M46-patch-vcg-from-reading-v1-20260514"
+INPUT_JSON = "Sessions/Session_Clusters/M46/wa-cluster-M46-patch-vcg-from-reading-v1-20260514.json"
 
 
 def now_iso():

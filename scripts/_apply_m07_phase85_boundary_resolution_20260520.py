@@ -1,6 +1,6 @@
 """M07 Phase 8.5 — apply BOUNDARY-resolution dispositions.
 
-Per directive WA-M07-dir-005-boundary-resolution-v1-20260520.
+Per directive wa-cluster-M07-dir-005-boundary-resolution-v1-20260520.
 
 Researcher-confirmed dispositions (27 verses + 1 term):
 - SET-ASIDE: 4 verses
@@ -28,7 +28,7 @@ from pathlib import Path
 
 DB = Path('database/bible_research.db')
 NOW = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-DIRECTIVE = 'WA-M07-dir-005-boundary-resolution-v1-20260520'
+DIRECTIVE = 'wa-cluster-M07-dir-005-boundary-resolution-v1-20260520'
 
 # === Dispositions ===
 # Each tuple: (vc_id, disposition, target/reason)

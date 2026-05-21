@@ -7,11 +7,11 @@ AI to do SEPARATE 189-prompt passes per characteristic (no cross-mixing
 of evidence across characteristics).
 
 Output filenames:
-    Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char{N1+N2+...}-brief-v1-{date}.md
-    Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-char{N1+N2+...}-input-v1-{date}.md
+    Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char{N1+N2+...}-brief-v1-{date}.md
+    Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-char{N1+N2+...}-input-v1-{date}.md
 
 The AI is expected to produce ONE findings file per characteristic
-(named WA-M08-phase9-char{N}-{short}-findings-v1-{date}.md). The
+(named wa-cluster-M08-phase9-char{N}-{short}-findings-v1-{date}.md). The
 existing loader (`_apply_phase9_characteristic_findings_20260521.py`)
 processes each findings file separately with --char-seq matching.
 
@@ -163,8 +163,8 @@ def main():
     by_tier = fetch_catalogue(conn)
 
     bundle_tag = "char" + "+".join(str(s) for s in char_seqs)
-    BRIEF = Path(f"Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-{bundle_tag}-brief-v1-{TODAY}.md")
-    INPUT = Path(f"Sessions/Session_Clusters/M08/WA-M08-phase9-bundle-{bundle_tag}-input-v1-{TODAY}.md")
+    BRIEF = Path(f"Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-{bundle_tag}-brief-v1-{TODAY}.md")
+    INPUT = Path(f"Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-bundle-{bundle_tag}-input-v1-{TODAY}.md")
 
     total_verses_all = sum(c["total_verses"] for c in chars_data)
 
@@ -222,7 +222,7 @@ def main():
     B.append("2. **READ EVIDENCE** — read **every** verse-meaning in §3.{letter} of the structural input for THIS batch's characteristic. Do not look at any other §3 section.")
     B.append("3. **AUTHOR 189 PROMPTS** — work through T0..T7 in order. If a single response can't hold the whole batch, split by tier pair (T0+T1 → T2+T3 → T4+T5 → T6+T7) — but the batch is not finished until all 189 prompts have a finding row.")
     B.append("4. **WRITE THE FILE** — emit the complete findings document as a single contiguous markdown block, with the exact filename from the table below. Include the Self-check at the end.")
-    B.append("5. **CONFIRM WRITTEN** — announce: *\"Batch N file written: WA-M08-phase9-charN-<name>-findings-v1-20260521.md, 189/189 prompts, [CHAR-N] markers verified\"*.")
+    B.append("5. **CONFIRM WRITTEN** — announce: *\"Batch N file written: wa-cluster-M08-phase9-charN-<name>-findings-v1-20260521.md, 189/189 prompts, [CHAR-N] markers verified\"*.")
     B.append("6. **STOP** — do not begin Batch N+1 in the same response. Wait for the next prompt from CC or the user. CC needs to validate Batch N's file before you start Batch N+1.")
     B.append("")
     B.append("**Between batches, your working memory must reset.** Do not carry verse-citation patterns, finding language, or evidence summaries from one batch into another. The next batch starts fresh from §3.{next-letter}.")
@@ -248,7 +248,7 @@ def main():
     B.append("|---|---|---|---:|---|---|")
     for idx, c in enumerate(chars_data, start=1):
         sg_codes = ", ".join(sg["subgroup_code"] for sg in c["subgroups"])
-        out_name = f"WA-M08-phase9-char{c['seq']}-{c['safe_short']}-findings-v1-{TODAY}.md"
+        out_name = f"wa-cluster-M08-phase9-char{c['seq']}-{c['safe_short']}-findings-v1-{TODAY}.md"
         letter = chr(ord("A") + idx - 1)
         B.append(f"| {idx} | Char {c['seq']} — {c['short']} | {sg_codes} | ~{c['total_verses']} | §3.{letter} | `Sessions/Session_Clusters/M08/{out_name}` |")
     B.append("")

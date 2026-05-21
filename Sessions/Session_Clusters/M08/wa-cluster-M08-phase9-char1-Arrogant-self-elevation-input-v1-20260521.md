@@ -8,8 +8,8 @@
 
 | # | Document | Purpose |
 |---|---|---|
-| 1 | **Brief (read first)** — `Sessions/Session_Clusters/M08/WA-M08-phase9-char1-Arrogant-self-elevation-brief-v1-20260521.md` | Primary task instructions |
-| 2 | **This document** — `Sessions/Session_Clusters/M08/WA-M08-phase9-char1-Arrogant-self-elevation-input-v1-20260521.md` | Characteristic definition + sub-groups + VCGs + verses + 189 prompts |
+| 1 | **Brief (read first)** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-Arrogant-self-elevation-brief-v1-20260521.md` | Primary task instructions |
+| 2 | **This document** — `Sessions/Session_Clusters/M08/wa-cluster-M08-phase9-char1-Arrogant-self-elevation-input-v1-20260521.md` | Characteristic definition + sub-groups + VCGs + verses + 189 prompts |
 | 3 | Governing instruction — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_8-20260519.md` | §12 Phase 9 disciplines |
 
 ---

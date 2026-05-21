@@ -11,8 +11,8 @@ Usage:
     ...
 
 Outputs (per characteristic):
-    Sessions/Session_Clusters/M07/WA-M07-phase9-char{N}-{short_name}-brief-v1-{date}.md
-    Sessions/Session_Clusters/M07/WA-M07-phase9-char{N}-{short_name}-input-v1-{date}.md
+    Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char{N}-{short_name}-brief-v1-{date}.md
+    Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char{N}-{short_name}-input-v1-{date}.md
 """
 from __future__ import annotations
 import argparse
@@ -120,8 +120,8 @@ def main():
     ).fetchone()
 
     # ===== File paths =====
-    BRIEF = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-char{args.char_seq}-{safe_short}-brief-v1-{TODAY}.md")
-    INPUT = Path(f"Sessions/Session_Clusters/M07/WA-M07-phase9-char{args.char_seq}-{safe_short}-input-v1-{TODAY}.md")
+    BRIEF = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char{args.char_seq}-{safe_short}-brief-v1-{TODAY}.md")
+    INPUT = Path(f"Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char{args.char_seq}-{safe_short}-input-v1-{TODAY}.md")
 
     total_verses = sum(sg["verse_count"] or 0 for sg in subgroups)
 
@@ -269,7 +269,7 @@ def main():
     B.append("")
     B.append("## After you finish")
     B.append("")
-    B.append(f"1. Drop the output in `Sessions/Session_Clusters/M07/WA-M07-phase9-char{args.char_seq}-{safe_short}-findings-v1-20260518.md`")
+    B.append(f"1. Drop the output in `Sessions/Session_Clusters/M07/wa-cluster-M07-phase9-char{args.char_seq}-{safe_short}-findings-v1-20260518.md`")
     B.append(f"2. Ping CC: \"M07 Char {args.char_seq} ({short}) Phase 9 findings ready\"")
     B.append("3. CC parses, validates evidence-grounding + completeness, applies to cluster_finding with characteristic_id set.")
     B.append(f"4. Move to next characteristic (Char {args.char_seq + 1 if args.char_seq < 7 else '(cluster synthesis)'}).")

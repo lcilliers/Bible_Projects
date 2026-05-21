@@ -32,7 +32,7 @@ BACKUP_DIR = "backups"
 
 CLUSTER_CODE = "M06"
 VERSION = "v1"
-SOURCE_FILE_PREFIX = "WA-M06-consolidated-findings-v1-20260506"
+SOURCE_FILE_PREFIX = "wa-cluster-M06-consolidated-findings-v1-20260506"
 
 # Map tier → source-file part suffix (what's on disk)
 TIER_TO_PART = {
