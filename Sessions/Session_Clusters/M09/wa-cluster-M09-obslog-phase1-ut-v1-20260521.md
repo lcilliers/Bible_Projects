@@ -95,10 +95,46 @@ Applied via `apply_session_patch.py`: 18 vc_inserts, 2 mti_terms marked complete
 | set_aside (`is_relevant=0`) | 24 (was 6, +18) |
 | With Pass A meaning | 0 / 110 — **Phase 2 work** |
 
-### Step 9 — Phase 2 readiness
+### Step 9 — Phase 2 (Pass A meanings) — executed 2026-05-21
 
-Phase 1 complete. Phase 2 (Pass A meanings) is the next workload — 110 is_relevant verses need analysis_note authored via API. Pre-existing M07 cross-cluster handoffs (Pro 16:19 + Pro 29:23 sha.phel) are flagged for Phase 3 constitution-debate consideration.
+Script: `scripts/_run_passa_via_api_v1_20260515.py --m-cluster M09` — auto-generated cluster characteristic from gloss; claude-sonnet-4-6; 3 batches × 50.
+
+**Result:**
+- 109 / 110 is_relevant verses authored (one row, vc=21109 Php 2:3, was an orphan pointing at a soft-deleted vr — soft-deleted as Op 0; duplicate vc=21116 carries the live Php 2:3 meaning)
+- 109 / 109 active is_relevant verses now carry analysis_note
+- Token usage: input 15,072 + output 9,057 (no cache hits — fresh cluster)
+- Applied via apply_session_patch.py: 109 vc_updated, 17 terms marked Phase 2 complete, 12 contributing registries affected, 1 advanced to complete
+
+**Outputs:**
+- `Sessions/Session_Clusters/M09/wa-cluster-M09-patch-passa-meanings-v1-20260521.json` — applied 2026-05-21
+- `Sessions/Session_Clusters/M09/WA-M09-passa-meanings-applied-v1-20260521.md` — applied report
+- `Sessions/Session_Clusters/M09/WA-M09-passa-api-raw-responses-20260521.json` — raw API responses
+
+### Step 10 — Pass A revealed 6 likely Phase 3/5.5 reclassification candidates
+
+The Pass A meanings on 6 verses (5.5% of corpus) explicitly note "does not evidence inner-being content" — these are pre-cluster legacy classifications inherited from Session B work on the contributing registries. They will be handled downstream:
+
+| vc_id | Reference | Term | Pass A signal |
+|---:|---|---|---|
+| 21121 | Luk 3:5 | G5013 tapeinoō | "mountains made low" — physical-prophetic imagery, not inner humbling |
+| 55673 | Luk 17:9 | G1299 diatassō | "the servant does what is commanded" — rhetorical / external |
+| 55677 | Act 18:2 | G1299 diatassō | "Claudius commanded all Jews to leave Rome" — imperial edict |
+| 55678 | Act 7:44 | G1299 diatassō | "God directed Moses to make tabernacle" — divine instruction |
+| 55681 | Luk 3:13 | G1299 diatassō | "John directs tax collectors" — practical command |
+| 55682 | Mat 11:1 | G1299 diatassō | "Jesus directed his twelve disciples" — narrative transition |
+
+**Disposition path:** G1299 diatassō (4 verses, all flagged) is a clear Phase 3 TRANSFERS or BOUNDARY candidate — the term doesn't carry inner humility/submission content. Luk 3:5 tapeinoō is an outlier in tapeinoō's otherwise-clean inner-disposition corpus and is a likely Phase 5.5 set-aside.
+
+### Step 11 — Phase 3 readiness
+
+M09 post-Phase-2 state:
+- 109 is_relevant verses with Pass A meanings (clean foundation for Phase 3)
+- 24 set-aside (6 hupakouō legacy + 18 from Phase 1)
+- 17 active mti_terms
+- M07 cross-cluster handoffs (Pro 16:19 + Pro 29:23 sha.phel) and the 6 Pass A "no inner-being" candidates are inputs to the Phase 3 constitution debate
+
+Ready for Phase 3 (constitution report + AI verdict per v2_8 §6).
 
 ---
 
-*Phase 1 obslog complete.*
+*Phase 1 + Phase 2 obslog complete.*
