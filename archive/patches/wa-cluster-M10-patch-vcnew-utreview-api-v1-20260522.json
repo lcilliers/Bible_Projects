@@ -1,0 +1,738 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M10-patch-vcnew-utreview-api-v1-20260522",
+    "cluster_code": "M10",
+    "session_ref": "M10 Phase 1 UT review via Claude API (post-split)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "date": "20260522",
+    "terms_covered": [
+      4899,
+      75,
+      86,
+      4648,
+      4646,
+      2449,
+      862,
+      861,
+      5959,
+      924,
+      923,
+      2438,
+      4710
+    ],
+    "input_versions": {
+      "4899": 1,
+      "75": 1,
+      "86": 1,
+      "4648": 1,
+      "4646": 1,
+      "2449": 1,
+      "862": 1,
+      "861": 1,
+      "5959": 1,
+      "924": 1,
+      "923": 1,
+      "2438": 1,
+      "4710": 1
+    },
+    "op_count": 41,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "provisional_anchor_promotions": [
+      {
+        "op_id": "OP-017",
+        "mti_term_id": 4646,
+        "strongs": "H2256D",
+        "verse_record_id": 232127,
+        "reference": "Mic 2:10"
+      },
+      {
+        "op_id": "OP-040",
+        "mti_term_id": 4710,
+        "strongs": "H8397",
+        "verse_record_id": 139496,
+        "reference": "Lev 18:23"
+      }
+    ],
+    "provisional_anchor_count": 2
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 148153,
+        "mti_term_id": 4899,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "diaftheirō used of physical destruction of ships, not moral corruption — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 148152,
+        "mti_term_id": 4899,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "diaftheirō used of physical/eschatological destruction of earth-destroyers, not moral corruption of persons — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157150,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used of external calamity/misfortune in a blessing oracle, not the inner moral-trouble state of a transgressor — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12386,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used of the emptiness/delusion of idols, not moral-failure inner state of a sinner — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157148,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used of announced military calamity/disaster, not a sinner's inner moral-trouble state — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157147,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used in a ritual-defilement/mourning context, not the inner moral-collapse state of a transgressor — belongs to M10c defilement."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157144,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used as a place-name pun on Bethel's destruction, not an inner moral-failure state — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157146,
+        "mti_term_id": 75,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ven used of physical affliction/distress of nations in theophany context, not inner moral-collapse of a sinner — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 3100,
+        "mti_term_id": 86,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 3116,
+        "mti_term_id": 86,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.sham used of animals suffering/perishing from drought, not of moral guilt or transgression — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 3118,
+        "mti_term_id": 86,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232175,
+        "mti_term_id": 4648,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.val used of physical destruction of one's works by divine anger, not guilt-agony of the inner being — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232185,
+        "mti_term_id": 4648,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.val used of physical spoiling of vineyards by foxes, not guilt-agony — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232176,
+        "mti_term_id": 4648,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.val used of a physical yoke being broken, not guilt-agony of the inner being — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232177,
+        "mti_term_id": 4648,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.val used of physical destruction of a whole land by divine weapons, not guilt-agony — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232179,
+        "mti_term_id": 4648,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.val used of a divinely-created ravager causing physical destruction, not guilt-agony — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 232127,
+        "mti_term_id": 4646,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_provisional_anchor": "Set per v2_2 §4.4 — term had no existing anchor; first relevant op promoted."
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 76625,
+        "mti_term_id": 2449,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "chat.tat used in the sense of purification-water for ritual cleansing of Levites, not the punishment/consequence-of-sin sense owned by H2403I — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 114971,
+        "mti_term_id": 862,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.al used as generic 'sin in speech/judgment' rather than covenant-breaking unfaithfulness or sacrilege — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 22839,
+        "mti_term_id": 861,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.al used in the sense of 'falsehood/deception' in a wisdom dispute, not covenant-unfaithfulness or sacrilegious transgression — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 184250,
+        "mti_term_id": 5959,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sa.laph used of God overthrowing the powerful (physical/political reversal), not perverting justice or morality — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25795,
+        "mti_term_id": 924,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.vah used of physical twisting/distortion of the earth's surface, not moral perversion or iniquity — outside M10 sin/guilt/transgression scope."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 171842,
+        "mti_term_id": 923,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75944,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75932,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75947,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75949,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75946,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75948,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75939,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75940,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75941,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75938,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75934,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75935,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75936,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75937,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75942,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 75943,
+        "mti_term_id": 2438,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139496,
+        "mti_term_id": 4710,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_provisional_anchor": "Set per v2_2 §4.4 — term had no existing anchor; first relevant op promoted."
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139497,
+        "mti_term_id": 4710,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    }
+  ]
+}
