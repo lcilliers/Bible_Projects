@@ -26,7 +26,7 @@ REPO = Path(__file__).resolve().parent.parent
 DB = REPO / 'database' / 'bible_research.db'
 
 TIER_SIZES = {'T0': 12, 'T1': 24, 'T2': 31, 'T3': 33, 'T4': 24, 'T5': 21, 'T6': 24, 'T7': 20}
-BIBLE_REF_RE = re.compile(r'\b(?:[1-3] ?)?[A-Z][a-z]{1,4}\.? \d+:\d+(?:[–\-]\d+)?\b')
+BIBLE_REF_RE = re.compile(r'\b(?:[1-3] ?)?[A-Z][a-z]{1,4}\.?\s*\d+:\d+(?:[–\-]\d+)?\b')
 
 
 def main():
@@ -133,8 +133,16 @@ def main():
     cross_tier_signals = []
     bulk_openings = Counter()
 
+    # Normalise: AI may write 'Mat11:29' or 'Mat 11:29'; DB stores 'Mat 11:29'.
+    # Insert space between book abbrev and chapter number.
+    def _normalise_ref(r: str) -> str:
+        # Match optional leading digit-prefix, then letters, then digits — insert space before digits
+        m = re.match(r'^((?:[1-3] ?)?[A-Z][a-z]{1,4}\.?)\s*(\d+:\d+(?:[–\-]\d+)?)$', r)
+        return f'{m.group(1).rstrip(".")} {m.group(2)}' if m else r
+
     for code, char_n, outcome, body in blocks:
-        refs = BIBLE_REF_RE.findall(body)
+        refs_raw = BIBLE_REF_RE.findall(body)
+        refs = [_normalise_ref(r) for r in refs_raw]
         vcgs = VCG_REF_RE.findall(body)
         if outcome == 'E' and not refs and not vcgs:
             e_no_citation.append((code, body[:100]))

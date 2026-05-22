@@ -1,0 +1,246 @@
+{
+  "_meta": {
+    "cluster": "M09",
+    "cluster_label": "Humility, Meekness and Submission",
+    "phase": 7,
+    "date": "2026-05-22",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "total_subgroups": 8,
+    "total_vcgs": 18,
+    "total_verses": 109,
+    "notes": [
+      "field name is 'verses' (complete arrays per §10.8 — not key_verses, not members)",
+      "anchor_vc_id is a member of its VCG's verses array in every case",
+      "M09-F-VCG-01: Mat11:29 (vc_id 21101) is secondary multi-faceted — primary vc_id counted in M09-A-VCG-04; not included in M09-F verses array",
+      "Rom6:16 appears as two vc_ids (30251 hupakoē; 61410 hupakouō) — both in M09-C-VCG-01; same verse_record",
+      "1Pe5:5 appears as two vc_ids (21108 tapeinos; 21115 tapeinofrosunē) — both in M09-A-VCG-04; same verse_record",
+      "1Ti3:4 appears as two vc_ids (12082 semnotēs → M09-G-VCG-01; 38461 hupotagē → M09-D-VCG-03) — different sub-groups; not dual-membership",
+      "Luk3:5 (vc_id 21121) in M09-A-VCG-02: Phase 5.5 set-aside candidate; CC to flag on this vc_id",
+      "M09-D-VCG-05: 11 PHASE_8_5_FLAG diatassō verses — CC to maintain flag; Phase 8.5 resolves to SET-ASIDE or ROUTE-TO-M23",
+      "Mat11:29 (vc_id 21101) secondary multi-faceted member of M09-F-VCG-01: primary placement M09-A-VCG-04"
+    ]
+  },
+  "subgroups": {
+    "M09-A": {
+      "label": "Humility — willed self-lowering",
+      "input_verse_count": 37,
+      "vcg_verse_sum": 37,
+      "vcgs": [
+        {
+          "provisional_code": "M09-A-VCG-01",
+          "label": "Voluntary humbling before God: the Hebrew OT register",
+          "description": "The Old Testament Hebrew register of willed self-lowering — the inner act of ka.na (humbling before God) in response to divine word, impending judgment, or a recognised inner fault. The dominant structure is inner pressure or divine address → voluntary act of humbling → God's corresponding response of mercy or restored relationship. Negative instances (2Ch33:23 Amon; 2Ch36:12 Zedekiah) define the characteristic by absence. Hebrew wisdom and prophetic register (Pro11:2; Mic6:8) contribute the comprehensive inner orientation of humility before God.",
+          "verses": [60913, 60889, 60904, 60903, 60892, 60893, 60891, 60896, 60897, 60898, 60899, 60900, 60901, 60902, 21161, 21160],
+          "anchor_vc_id": 60903
+        },
+        {
+          "provisional_code": "M09-A-VCG-02",
+          "label": "Self-humbling as willed movement toward God: the Greek NT register",
+          "description": "The Greek NT register of the verbal act of self-humbling (tapeinoō) directed Godward, where the willed downward movement of the self is the precondition for divine exaltation. The schema: the person who inwardly lowers themselves before God will be lifted up. The tax collector's posture (Luk18:14) and the child's posture (Mat18:4) are the paradigmatic expressions. Luk3:5 (mountains made low — physical-prophetic landscape imagery) is included per Phase 5 instruction but is a Phase 5.5 set-aside candidate with no inner-being content for the term.",
+          "verses": [21119, 21120, 21121, 21122, 21123, 21126, 21127],
+          "anchor_vc_id": 21123,
+          "flags": {"21121": "PHASE_5_5_SET_ASIDE_CANDIDATE"}
+        },
+        {
+          "provisional_code": "M09-A-VCG-03",
+          "label": "Self-humbling in apostolic and Christological vocation",
+          "description": "The costlier, service-register expression of willed self-lowering: humility as the inner quality of self-giving in vocation. Christ's self-humbling (Phili2:8) is the paradigm — a willed downward movement accepting servanthood and death in obedience to the Father. Paul's voluntary ministry expressions follow: unpaid role for Corinthians' benefit (2Cor11:7) and sustained humility through suffering (Act20:19). Humility as a disposition that costs the person something and is sustained over time or in extremis.",
+          "verses": [21117, 21124, 21111],
+          "anchor_vc_id": 21117
+        },
+        {
+          "provisional_code": "M09-A-VCG-04",
+          "label": "Humility as inner relational posture",
+          "description": "The relational-disposition register of humility — as a quality of inner bearing toward God and community, contrasted with proud self-regard and social hierarchy. Jesus names lowliness explicitly in the heart paired with gentleness (Mat11:29 — MULTI-FACETED: secondary M09-F-VCG-01). Relational expressions: solidarity with the lowly against haughtiness (Rom12:16), self-effacing personal presence (2Cor10:1), disposition opening will toward God (Jam4:6), willed mutual self-lowering within community (1Pe5:5 — both vc_ids 21108 and 21115 at same verse_record, both routed here).",
+          "verses": [21101, 21103, 21105, 21107, 21108, 21115],
+          "anchor_vc_id": 21101,
+          "notes": ["21101 Mat11:29 is MULTI-FACETED: primary M09-A-VCG-04; secondary M09-F-VCG-01", "21108 and 21115 are two vc_ids at the same verse_record (1Pe5:5)"]
+        },
+        {
+          "provisional_code": "M09-A-VCG-05",
+          "label": "Tapeinofrosunē as chosen inner character disposition",
+          "description": "The Pauline epistolary register of tapeinofrosunē — humility as a chosen, genuine inner character disposition placed alongside the other virtues of the renewed person. Humility as character-garment (Col3:12) — something put on, not merely exhibited. Col2:18 and Col2:23 expose false, performed humility that masks inner pride, implicitly defining genuine tapeinofrosunē as actual inner transformation. Eph4:2 (foundational community-enabling disposition) and Phili2:3 (cognitive-affective act of genuinely counting others more significant) complete the register.",
+          "verses": [21112, 21116, 21113, 21110, 21114],
+          "anchor_vc_id": 21116
+        }
+      ]
+    },
+    "M09-B": {
+      "label": "Lowliness — experienced and imposed state",
+      "input_verse_count": 13,
+      "vcg_verse_sum": 13,
+      "vcgs": [
+        {
+          "provisional_code": "M09-B-VCG-01",
+          "label": "Imposed divine lowering: judicial and providential humbling",
+          "description": "The register of externally-imposed humbling where God is the agent and the person or people experience being brought low as a consequence of unfaithfulness or as a judicial act upon pride. Not voluntary inner submission but divinely-enacted lowering: God humbling Judah as national consequence (2Ch28:19), forcible bringing-low of the proud as judicial act (Job40:12), Israel subjected under enemies as consequence (Psa106:42), and God bowing hearts down through hard labor — acting on the inner faculty of the heart itself (Psa107:12).",
+          "verses": [60895, 60908, 60915, 60916],
+          "anchor_vc_id": 60916
+        },
+        {
+          "provisional_code": "M09-B-VCG-02",
+          "label": "Social and condition lowliness in divine reversal",
+          "description": "The register of lowliness as a social or existential condition that stands in relation to divine reversals, reframings, or consolations. Mary's lowly estate as the condition from which God lifts her (Luk1:48); the humble of low estate whom God exalts (Luk1:52); Christ's humiliation as imposed suffering-state denied justice (Act8:33); the lowly brother called to boast in spiritual elevation (Jam1:9); the rich person called to boast in their humiliation as corrective recognition of transience (Jam1:10).",
+          "verses": [21128, 21102, 21129, 21106, 21131],
+          "anchor_vc_id": 21128
+        },
+        {
+          "provisional_code": "M09-B-VCG-03",
+          "label": "Affliction-produced lowliness: the inner experience of being brought low",
+          "description": "The register of lowliness as an experienced inner state produced by affliction, suffering, circumstance, or God's action. God's comfort actively meets the downcast condition of those pressed down by outward affliction (2Cor7:6). The painful experience of being humbled before a congregation over others' unrepentant sin (2Cor12:21). The creaturely lowly body as objective mortal condition awaiting transformation (Phili3:21). Being brought low as a circumstantial state Paul has traversed and learned to navigate with cultivated contentment (Phili4:12).",
+          "verses": [21104, 21125, 21130, 21118],
+          "anchor_vc_id": 21118
+        }
+      ]
+    },
+    "M09-C": {
+      "label": "Submission — inner disposition of will",
+      "input_verse_count": 17,
+      "vcg_verse_sum": 17,
+      "cross_register_flags": ["M30 — obedience register-adjacent"],
+      "vcgs": [
+        {
+          "provisional_code": "M09-C-VCG-01",
+          "label": "Inner allegiance of will: what one obeys determines whose servant one is",
+          "description": "The register of submission as inner allegiance of the will — the will's habitual yielding discloses and constitutes whose authority rules the person. Obeying sin's desires (Rom6:12) is the negative inner yielding to resist; whoever one presents to as slave defines whose servant one is (Rom6:16 — both hupakoē vc_id 30251 and hupakouō vc_id 61410 at same verse_record); obedience located explicitly in the heart as genuine transformation (Rom6:17). Luk17:10 (sole diatassō M09 verse): servant who has done all that was directed adopts inner posture of self-assessment rejecting merit — the will that has yielded to direction arrives at inner non-claim. Cross-register: M30 (obedience adjacent); M23 (diatassō — primary register).",
+          "verses": [55680, 61409, 30251, 61410, 61397],
+          "anchor_vc_id": 61397,
+          "notes": ["30251 and 61410 are two vc_ids at the same verse_record (Rom6:16)", "55680 diatassō Luk17:10 carries M23 cross-register flag"]
+        },
+        {
+          "provisional_code": "M09-C-VCG-02",
+          "label": "Cognitive-volitional submission: mind, conscience, and deliberate acts of will",
+          "description": "The cognitive-volitional register of submission — obedience named in the mind's capture, the conscience's deliberation, and the will's active positioning. Taking every thought captive to Christ as the cognitive prelude to obedience (2Cor10:5); completeness of corporate inner submission as the condition before discipline (2Cor10:6); receptive reverent welcome with fear and trembling as inner disposition expressed through posture (2Cor7:15); submission as a decisive act of will that can be consciously withheld — inner conscience and conviction at stake (Gal2:5). Cross-register: M30 (obedience adjacent).",
+          "verses": [30252, 30246, 30253, 38459],
+          "anchor_vc_id": 30246
+        },
+        {
+          "provisional_code": "M09-C-VCG-03",
+          "label": "Sincerity of heart: genuine inner motive against performance",
+          "description": "The register of submission-as-genuine-inner-motive — verses that explicitly distinguish sincere, God-ward inner compliance from outward performance or social-pressure compliance. Obedience with sincere heart as to Christ rather than as people-pleasers (Eph6:5); sustained inner disposition rooted in conscience and fear of God rather than social pressure (Phili2:12); sincerity of heart and fear of Lord replacing eye-service (Col3:22); submissive learning posture as whole-hearted receptivity rather than resistance (1Ti2:11). Cross-register: M30 (obedience adjacent).",
+          "verses": [61405, 61403, 61404, 38460],
+          "anchor_vc_id": 61403
+        },
+        {
+          "provisional_code": "M09-C-VCG-04",
+          "label": "Learned, costly, and purifying submission",
+          "description": "The register of submission as something acquired, transformative, or costly at the deepest levels of the inner person. Christ learned obedience through suffering — a quality shaped by enduring pain in submission to the Father (Heb5:8). Abraham's obedience faith-driven, overriding need for comprehension (Heb11:8). Obedience to truth purifying the soul itself, producing sincere love from a pure heart (1Pe1:22). Sarah's obedience sustained by courage and inward disposition alongside speech (1Pe3:6). Cross-register: M30 (obedience adjacent).",
+          "verses": [30255, 61398, 30245, 61406],
+          "anchor_vc_id": 30255
+        }
+      ]
+    },
+    "M09-D": {
+      "label": "Submission — relational pattern of obedience",
+      "input_verse_count": 30,
+      "vcg_verse_sum": 30,
+      "cross_register_flags": ["M30 — obedience register-adjacent", "M23 — G1299 diatassō primary register (11 PHASE_8_5_FLAG verses)"],
+      "vcgs": [
+        {
+          "provisional_code": "M09-D-VCG-01",
+          "label": "Gospel-obedience: the pattern of inner yielding in response to the gospel",
+          "description": "The gospel-obedience register — obedience of faith as both the response to gospel proclamation and the defining characteristic of gospel-formed life. Obedience of faith as goal of apostolic mission (Rom1:5) and culminating response to gospel disclosure (Rom16:26); obeying and believing the gospel as inseparable inner acts (Rom10:16); the Gentiles' transformed response of word and deed orienting life toward God (Rom15:18); the Roman community's characteristic publicly-known obedience redirected toward discernment (Rom16:19); priests becoming obedient to the faith as decisive reorientation (Act6:7); Christ's obedience vs Adam's disobedience (Rom5:19); failing to obey the gospel as fundamental inner rejection (2Th1:8). Cross-register: M30 (obedience adjacent).",
+          "verses": [61399, 30248, 30247, 61402, 30258, 30250, 30249, 61401],
+          "anchor_vc_id": 30248
+        },
+        {
+          "provisional_code": "M09-D-VCG-02",
+          "label": "Soteriological and sanctifying telos of obedience",
+          "description": "The register of obedience as soteriological and sanctifying telos — the orientation of the will that connects the person to Christ's salvation and that is the Spirit's goal in sanctification. Christ becomes salvation's source only to those who obey him (Heb5:9); submission flowing from gospel confession expressing itself in generous giving (2Cor9:13); obedience as the Spirit's sanctifying goal and the will's orientation toward Jesus Christ (1Pe1:2); obedience defining the believer's identity and structuring will against former passions (1Pe1:14); refusing apostolic obedience requiring communal shaming to awaken repentance (2Th3:14). Cross-register: M30 (obedience adjacent).",
+          "verses": [38458, 61411, 61400, 30256, 30257],
+          "anchor_vc_id": 61400
+        },
+        {
+          "provisional_code": "M09-D-VCG-03",
+          "label": "Household and relational obedience patterns",
+          "description": "The household and relational register of the submission-obedience pattern — obedience as a shaped quality within the authority structures of daily life. Children obeying parents in the Lord — theologically motivated act of will (Eph6:1); same pattern with Lord's pleasure as deepest reason for compliance (Col3:20); the overseer's children's submissiveness reflecting his character and household order (1Ti3:4); obedience to a mother as the expected inner response whose absence marks fatal moral failure (Pro30:17). Cross-register: M30 (obedience adjacent). Note: 1Ti3:4 shared verse_record with G4587 semnotēs (M09-G-VCG-01).",
+          "verses": [30260, 61408, 61407, 38461],
+          "anchor_vc_id": 61408,
+          "notes": ["38461 (1Ti3:4 hupotagē) shared verse_record with vc_id 12082 (1Ti3:4 semnotēs → M09-G-VCG-01)"]
+        },
+        {
+          "provisional_code": "M09-D-VCG-04",
+          "label": "Personal and eschatological allegiance-submission",
+          "description": "The personal and eschatological allegiance register — obedience as a directed disposition of will toward a named authority in a personal or eschatological frame. The willing inner yielding of allegiance toward Judah's coming ruler as future gathering of nations under his sovereign authority (Gen49:10 — eschatological). Paul's confidence in Philemon's reliable inner disposition of will oriented toward doing good beyond the minimum (Phile21 — personal-relational). Cross-register: M30 (obedience adjacent).",
+          "verses": [30259, 30254],
+          "anchor_vc_id": 30259
+        },
+        {
+          "provisional_code": "M09-D-VCG-05",
+          "label": "PHASE_8_5_FLAG — G1299 diatassō non-M09 verses pending Phase 8.5 resolution",
+          "description": "PHASE_8_5_FLAG — G1299 diatassō non-M09 verses pending Phase 8.5 resolution. Provisionally routed to M09-D for structural integrity of the Phase 5/6 pipeline. Pass A meanings show no M09 inner-being content for this term in these 11 verses — they evidence the authority/directive register (M23 primary). Phase 8.5 will resolve each to SET-ASIDE or ROUTE-TO-M23. Verses: Mat11:1; Luk3:13; Luk17:9; Act7:44; Act18:2; 1Cor7:17; 1Cor9:14; 1Cor11:34; 1Cor16:1; Gal3:19; Tit1:5.",
+          "verses": [55682, 55681, 55673, 55678, 55677, 55672, 55676, 55674, 55675, 55679, 55683],
+          "anchor_vc_id": 55682,
+          "flags": "PHASE_8_5_FLAG — all 11 verses pending SET-ASIDE or ROUTE-TO-M23 at Phase 8.5"
+        }
+      ]
+    },
+    "M09-E": {
+      "label": "Contrition — crushed and broken spirit",
+      "input_verse_count": 2,
+      "vcg_verse_sum": 2,
+      "vcgs": [
+        {
+          "provisional_code": "M09-E-VCG-01",
+          "label": "The crushed and broken spirit: contrition before God",
+          "description": "The full contrition register — the acute, grief-laden inner brokenness of spirit that follows genuine confrontation with one's failure or with the holiness of God. The contrite spirit is crushed inwardly and broken in heart; God's nearness and saving action is the direct response (Psa34:18). Contrition is paired with lowliness and located in the spirit; God dwells with and revives the contrite and lowly spirit (Isa57:15). The pairing of contrition with lowliness in Isa57:15 places this VCG in closest proximity to M09-A, showing contrition as the acute, crisis-precipitated form of the humility characteristic.",
+          "verses": [62968, 62969],
+          "anchor_vc_id": 62969
+        }
+      ]
+    },
+    "M09-F": {
+      "label": "Meekness — calibrated restraint and gentleness",
+      "input_verse_count": 2,
+      "vcg_verse_sum": 2,
+      "vcgs": [
+        {
+          "provisional_code": "M09-F-VCG-01",
+          "label": "Meekness as calibrated restraint: governed strength and volitional readiness",
+          "description": "The meekness and gentleness characteristic — holding force, capability, or will in calibrated, measured expression. The high priest's capacity to deal gently with the erring, grounded in shared creaturely vulnerability — meekness as measured compassionate restraint requiring both capability and the inner decision to modulate it (Heb5:2). Immediate, unimpeded volitional responsiveness — the absence of hesitation and reluctance that characterises the will that does not resist (Act9:38). Both evidence inner quality of meekness: not force absent, but force governed. Mat11:29 (vc_id 21101) contributes as secondary multi-faceted member (primary: M09-A-VCG-04) — not included in verses array.",
+          "verses": [60786, 6225],
+          "anchor_vc_id": 6225,
+          "notes": ["21101 Mat11:29 is secondary multi-faceted member — primary in M09-A-VCG-04; not in this verses array"]
+        }
+      ]
+    },
+    "M09-G": {
+      "label": "Dignity — grounded moral gravity",
+      "input_verse_count": 3,
+      "vcg_verse_sum": 3,
+      "cross_register_flags": ["M08 — structural opposite of proud self-display"],
+      "vcgs": [
+        {
+          "provisional_code": "M09-G-VCG-01",
+          "label": "Semnotēs: settled moral gravity as authenticating inner character",
+          "description": "The full dignity characteristic — settled moral seriousness and gravitas that grounds composed, non-self-displaying conduct. Semnotēs as the sober, weighty seriousness shaping how believers carry themselves in public life (1Ti2:2); inner gravity from which orderly household governance flows (1Ti3:4); gravitas and moral seriousness authenticating teaching character (Tit2:7). Three contexts, one inner quality: settled moral weight that does not need to prove, assert, or display itself. Cross-register flag M08 (structural opposite — dignity precludes proud self-display) travels to Phase 9 T6. Note: 1Ti3:4 shared verse_record with G5292 hupotagē (M09-D-VCG-03).",
+          "verses": [12081, 12082, 12080],
+          "anchor_vc_id": 12081,
+          "notes": ["12082 (1Ti3:4 semnotēs) shared verse_record with vc_id 38461 (1Ti3:4 hupotagē → M09-D-VCG-03)"]
+        }
+      ]
+    },
+    "M09-H": {
+      "label": "Willing-heartedness — the freely-moved spirit",
+      "input_verse_count": 5,
+      "vcg_verse_sum": 5,
+      "cross_register_flags": ["M04 — joy/delight spontaneous-generosity dimension", "M29 — volitional dimension"],
+      "vcgs": [
+        {
+          "provisional_code": "M09-H-VCG-01",
+          "label": "The freely-moved willing heart: uncoerced offering and service",
+          "description": "The register of willing-heartedness as the freely-moved inner disposition driving offering and service without external compulsion. A freely-moved heart is explicitly named as the inner source from which outward giving flows (Exo35:5; Exo35:22); willingness as inner readiness enabling wholehearted participation (1Ch28:21); willing heart as the distinguishing inner condition of those who bring beyond-required offerings (2Ch29:31). The opposite of the resistant, self-protecting, or compelled will. Cross-register flags M04 (spontaneous generous delight) and M29 (volitional readiness) travel with this VCG.",
+          "verses": [43495, 43496, 43497, 43498],
+          "anchor_vc_id": 43495
+        },
+        {
+          "provisional_code": "M09-H-VCG-02",
+          "label": "The willing spirit as divine gift: penitential context",
+          "description": "The distinctive register of willing-heartedness as a divine gift that must be sought and may be lost — evidenced in Psa51:12 alone. The psalmist who has fallen into moral failure asks God to restore the joy of salvation and to uphold him with a willing spirit. Willingness is located in the spirit and is presented not as a natural inner capacity but as a grace requiring divine sustenance after failure — the inner disposition of freely-offered devotion that the penitent can no longer sustain alone. Cross-register flags M04 (joy of salvation — immediate pairing in the verse) and M29 (volitional dimension) travel with this VCG.",
+          "verses": [43494],
+          "anchor_vc_id": 43494
+        }
+      ]
+    }
+  }
+}
