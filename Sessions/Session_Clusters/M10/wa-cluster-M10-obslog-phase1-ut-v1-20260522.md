@@ -125,3 +125,54 @@ M10 (revised) post-Phase-1 state:
 Ready for Phase 2 (Pass A meaning generation per v2_8 §5) once researcher confirms borderline disposition (or defers them to Phase 8.5).
 
 ---
+
+## PHASE 2 — Pass A meaning record — executed 2026-05-22
+
+### Step 11 — Pass A via Claude API
+
+Script: `scripts/_run_passa_via_api_v1_20260515.py --m-cluster M10` — cluster-agnostic Pass A driver; cluster description and gloss auto-sourced from the (post-split) M10 cluster row. claude-sonnet-4-6; 27 batches × 50 verses.
+
+**v1 run (main):** 1,320 / 1,323 verses authored across 27 batches; 3 verses dropped sporadically (1 each in batches 4, 21, 25). Token usage: input 160,496 + output 112,977 + cache_create 2,260 + cache_read 28,250. No sentinel violations.
+
+**v2 gap-fill:** re-ran Pass A; 3 remaining verses filled cleanly (Rom 7:20 G0266 hamartia, Mic 3:10 H5766B av.lah, Num 5:8 H3725 kip.pu.rim). Token usage: input 394 + output 264 + cache_read 1,130.
+
+**Combined output:** 1,323 + 1 inherited = **1,324 / 1,324 relevant verses now carry Pass A `analysis_note`** ✓.
+
+**Outputs:**
+- `Sessions/Session_Clusters/M10/wa-cluster-M10-patch-passa-meanings-v1-20260522.json` — 1,320 ops, applied 2026-05-22 (archived)
+- `Sessions/Session_Clusters/M10/wa-cluster-M10-patch-passa-meanings-v2-gapfill-20260522.json` — 3 ops, applied 2026-05-22 (archived)
+- `Sessions/Session_Clusters/M10/WA-M10-passa-meanings-applied-v2-gapfill-20260522.md` — Note: the v1 applied-report was overwritten by the gap-fill run; the v1 1,320-op summary lives in this obslog and the archived v1 patch.
+- `Sessions/Session_Clusters/M10/WA-M10-passa-api-raw-responses-v2-gapfill-20260522.json` — only the gap-fill raw responses survived; the v1 raw archive was overwritten.
+
+**Sample meanings:**
+- *Gen 4:7 (H2403B chat.tat):* "Sin is depicted as a predatory force crouching at the door of Cain's will, actively desiring to master him; the inner person must exert ruling agency to resist it."
+- *Gen 4:13 (H5771I a.von):* "Cain experiences his iniquity's consequence as an unbearable weight — punishment so overwhelming it exceeds his inner capacity to endure it."
+- *Gen 13:13 (H2400 chat.ta):* "The men of Sodom are identified as habitual, extreme sinners whose wrongdoing is directed against the Lord himself, marking a deep moral disposition of rebellion."
+
+### Step 12 — M10 post-Phase-2 state
+
+| Metric | Value |
+|---|---|
+| `cluster.M10.status` | `Data - In Progress` |
+| vc rows total (active) | 1,477 |
+| `is_relevant=1` | 1,324 |
+| With Pass A `analysis_note` | **1,324 / 1,324** ✓ |
+| `is_relevant=0` (set-aside) | 153 |
+| Borderline held (not in DB) | 2 |
+| mti_terms marked complete by patches | 61 / 63 (58 from v1, 3 from gap-fill — the 2 borderline-holding terms still pending) |
+
+### Step 13 — Loss of v1 applied-report / raw-responses
+
+The Pass A runner uses date-only filenames, so the gap-fill run overwrote `WA-M10-passa-meanings-applied-v1-20260522.md` and `WA-M10-passa-api-raw-responses-20260522.json`. The v1 summary lines (per-batch counts, sample meanings) are now reconstructed only in this obslog and the archived v1 patch. Future Pass A runs that may need a gap-fill should rename the v1 outputs before re-running (or improve the script to version-suffix outputs automatically — flagged as a minor follow-up).
+
+### Step 14 — Phase 3 readiness
+
+M10 (revised) post-Phase-2 state:
+- 1,324 is_relevant verses with Pass A meanings (clean foundation for Phase 3 constitution debate)
+- 153 set-aside (incl. 2 borderline awaiting researcher decision)
+- 63 active mti_terms, 19 contributing registries
+- 0 sentinel violations across both Pass A runs
+
+Ready for Phase 3 (constitution debate per v2_8 §6) once researcher confirms borderline disposition.
+
+---

@@ -1,0 +1,66 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M10-patch-passa-meanings-v2-gapfill-20260522",
+    "cluster_code": "M10",
+    "session_ref": "M10 Phase 2 Pass A gap-fill (3 verses dropped from v1)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260522",
+    "terms_covered": [
+      9,
+      3171,
+      5615
+    ],
+    "input_versions": {
+      "3171": 2,
+      "5615": 2,
+      "9": 2
+    },
+    "op_count": 3,
+    "source": "Claude API meaning record (Sonnet 4.6); 3 verses across 3 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Atonement here is a required ritual offering (the ram) that restores a broken relationship with God when no human recipient exists for restitution, showing it functions as the necessary inner-relational repair between the guilty party and the Lord."
+      },
+      "_reference": "Num 5:8",
+      "_strongs": "H3725"
+    },
+    {
+      "op_id": "OP-0002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21768,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Injustice here is the moral material used to construct Jerusalem—violence and wrongdoing are the foundation of civic building, showing injustice as an active inner disposition of the will that corrupts public life and society from the ground up."
+      },
+      "_reference": "Mic 3:10",
+      "_strongs": "H5766B"
+    },
+    {
+      "op_id": "OP-0003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 19749,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sin is located as an indwelling force within the self, distinct from the person's conscious will—it operates inside the person, overriding chosen intent, revealing it as a constitutional inner power that hijacks agency from within."
+      },
+      "_reference": "Rom 7:20",
+      "_strongs": "G0266"
+    }
+  ]
+}
