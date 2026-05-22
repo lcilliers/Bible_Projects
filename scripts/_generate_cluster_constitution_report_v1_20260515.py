@@ -269,10 +269,13 @@ def build_report(conn, cluster_code: str, status_after: str, backup_path: str | 
         for a, b, score in overlaps[:50]:
             shared = sorted(vocab_by_term[a] & vocab_by_term[b])
             shared_cell = ", ".join(shared[:12]) + (f", ... +{len(shared)-12}" if len(shared) > 12 else "")
-            ta = term_by_id.get(a, {})
-            tb = term_by_id.get(b, {})
-            lines.append(f"| {ta.get('strongs_number','?')} {ta.get('transliteration','')} | "
-                         f"{tb.get('strongs_number','?')} {tb.get('transliteration','')} | "
+            ta = term_by_id.get(a)
+            tb = term_by_id.get(b)
+            ta_str = (ta["strongs_number"] if ta else "?")
+            ta_tr = (ta["transliteration"] if ta else "")
+            tb_str = (tb["strongs_number"] if tb else "?")
+            tb_tr = (tb["transliteration"] if tb else "")
+            lines.append(f"| {ta_str} {ta_tr} | {tb_str} {tb_tr} | "
                          f"{score:.2f} | {shared_cell} |")
         if len(overlaps) > 50:
             lines.append(f"_(showing top 50 of {len(overlaps)} pairs above threshold)_")
