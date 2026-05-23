@@ -13,14 +13,29 @@ and writes a single combined .docx into the same Published/ folder with canonica
 
 Cluster description and short_name are sourced from the `cluster` row in the DB.
 
-Handles these markdown elements:
+Per-chapter preprocessing (so the combined doc is publication-ready, not analytical):
+  - The chapter's H1 generic title (e.g. `# Fear, Dread and Terror — Chapter 1 input`)
+    is dropped; the H2 line (e.g. `## What this study is`) is used as the **topical
+    chapter title** in the combined doc (rendered as Heading 1).
+  - The metadata block (`**Cluster:** … **Chapter:** … **Generated:** …`) is dropped.
+  - The "Cross-chapter consistency: characteristics in this study" block (where present)
+    is dropped — it is reference material for the AI session, not for the published doc.
+  - The redundant numbered chapter header (`## 1. What this study is`) is dropped because
+    the topical title already serves as the chapter heading.
+  - `<!-- EVIDENCE: ... -->` … `<!-- /EVIDENCE -->` blocks are dropped — they are the
+    per-section verse-evidence packets included for AI grounding, not for the published doc.
+
+A Table of Contents listing the topical title of every chapter is inserted on the first
+page (static; survives editing without needing Word to refresh fields).
+
+Other markdown elements handled:
   - headings (#, ##, ###, ####)
   - paragraphs with inline **bold** and *italic* / _italic_
   - bullet lists (- item)
   - blockquotes (> ...)
   - horizontal rules (---) -> visual paragraph break
   - links [text](url) -> plain text (URLs dropped)
-  - HTML comments stripped
+  - other HTML comments stripped
 A hard page break is inserted between chapters and appendices.
 """
 from __future__ import annotations
@@ -50,6 +65,20 @@ RE_ITALIC_AST = re.compile(r"(?<!\*)\*([^*\n]+?)\*(?!\*)")
 RE_ITALIC_UND = re.compile(r"(?<![A-Za-z0-9_])_([^_\n]+?)_(?![A-Za-z0-9_])")
 RE_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 RE_HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+
+# Per-chapter preprocessing patterns
+RE_HR = re.compile(r"^---+\s*$")
+RE_EVIDENCE_OPEN = re.compile(r"<!--\s*EVIDENCE[\s:]", re.IGNORECASE)
+RE_EVIDENCE_CLOSE = re.compile(r"<!--\s*/\s*EVIDENCE", re.IGNORECASE)
+RE_CROSS_CHAPTER_HEADER = re.compile(
+    r"^##\s+Cross-chapter\s+consistency", re.IGNORECASE
+)
+RE_NUMBERED_SECTION_HEADER = re.compile(r"^##\s+\d+\.\s+")
+# Bold-line analytical labels that introduce evidence content but live outside the
+# <!-- EVIDENCE --> comment delimiters. Drop the whole line.
+RE_ANALYTICAL_LABEL = re.compile(
+    r"^\s*\*\*\s*Evidence\b[^*]*\*\*\s*$", re.IGNORECASE
+)
 
 # Chapter / appendix filename patterns
 RE_CHAPTER_FILE = re.compile(
@@ -163,6 +192,100 @@ def add_runs_with_inline_formatting(paragraph, text: str) -> None:
             run = paragraph.add_run(p)
             run.bold = bold
             run.italic = italic
+
+
+def preprocess_chapter(md: str) -> tuple[str, str]:
+    """Strip chapter preamble, cross-chapter-consistency block, redundant numbered
+    section header, and evidence blocks. Return (topical_title, cleaned_body_md).
+
+    The topical title comes from the H2 line that immediately follows the H1 line.
+    Body content starts after the first `---` separator that follows the metadata.
+    If the next H2 after that separator is the cross-chapter-consistency block, it
+    is dropped together with its trailing `---`. The redundant `## N. <title>`
+    header is then also dropped (the topical title already serves as the heading).
+    `<!-- EVIDENCE: ... --> ... <!-- /EVIDENCE -->` blocks are excised line-by-line.
+    """
+    lines = md.splitlines()
+
+    # 1. Find H2 topical title (the H2 line nearest the top, after the H1)
+    h2_idx = None
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if s.startswith("## ") and not s.startswith("## #"):
+            h2_idx = i
+            break
+    if h2_idx is None:
+        raise ValueError("No H2 topical title found in chapter")
+    topical_title = lines[h2_idx][3:].strip()
+    for pat in (RE_BOLD, RE_ITALIC_AST, RE_ITALIC_UND):
+        topical_title = pat.sub(r"\1", topical_title)
+    topical_title = RE_LINK.sub(r"\1", topical_title)
+
+    # 2. Find first `---` after H2 — marks end of metadata block
+    sep_idx = None
+    for i in range(h2_idx + 1, len(lines)):
+        if RE_HR.match(lines[i].strip()):
+            sep_idx = i
+            break
+    if sep_idx is None:
+        raise ValueError("No '---' separator found after chapter metadata")
+    body_start = sep_idx + 1
+
+    # 3. If next non-empty line is cross-chapter-consistency H2, skip its whole block
+    j = body_start
+    while j < len(lines) and not lines[j].strip():
+        j += 1
+    if j < len(lines) and RE_CROSS_CHAPTER_HEADER.match(lines[j].strip()):
+        # Skip to next `---`
+        for k in range(j + 1, len(lines)):
+            if RE_HR.match(lines[k].strip()):
+                body_start = k + 1
+                break
+
+    # 4. If the next non-empty line is `## N. <title>`, skip it (redundant header)
+    j = body_start
+    while j < len(lines) and not lines[j].strip():
+        j += 1
+    if j < len(lines) and RE_NUMBERED_SECTION_HEADER.match(lines[j].strip()):
+        body_start = j + 1
+        # Skip any trailing blanks immediately after
+        while body_start < len(lines) and not lines[body_start].strip():
+            body_start += 1
+
+    # 5. Drop evidence blocks (HTML-comment-delimited, possibly multi-line) and
+    #    drop bold-line analytical labels like `**Evidence: cluster-wide claims …**`.
+    out_lines: list[str] = []
+    in_evidence = False
+    for line in lines[body_start:]:
+        if not in_evidence and RE_EVIDENCE_OPEN.search(line):
+            in_evidence = True
+            continue
+        if in_evidence:
+            if RE_EVIDENCE_CLOSE.search(line):
+                in_evidence = False
+            continue
+        if RE_ANALYTICAL_LABEL.match(line):
+            continue
+        out_lines.append(line)
+
+    return topical_title, "\n".join(out_lines)
+
+
+def add_toc(doc: Document, sections: list[tuple[int, str, str]]) -> None:
+    """Insert a simple, static TOC. `sections` is a list of (chapter_num, topical_title, kind)
+    where kind is 'chapter' or 'appendix'. Page numbers are deliberately omitted (would
+    require post-render computation) — the TOC names titles and lets the reader navigate
+    via the chapter headings.
+    """
+    doc.add_heading("Table of Contents", level=1)
+    for num, title, kind in sections:
+        p = doc.add_paragraph()
+        if kind == "appendix":
+            label_run = p.add_run(f"Appendix {num}.  ")
+        else:
+            label_run = p.add_run(f"Chapter {num}.  ")
+        label_run.bold = True
+        p.add_run(title)
 
 
 def render_markdown_to_docx(doc: Document, md: str) -> None:
@@ -288,6 +411,14 @@ def main() -> int:
         out_path = src_dir / f"{base_name}-v{v}-{date_str}.docx"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
+    # First pass: preprocess each chapter to extract topical title + cleaned body
+    prepared: list[tuple[str, str, Path, str, str]] = []  # (label, kind, path, topical_title, body_md)
+    for label, path in pieces:
+        md = path.read_text(encoding="utf-8")
+        title, body = preprocess_chapter(md)
+        kind = "appendix" if label.startswith("Appendix") else "chapter"
+        prepared.append((label, kind, path, title, body))
+
     # Build docx
     doc = Document()
     normal = doc.styles["Normal"]
@@ -299,7 +430,7 @@ def main() -> int:
     subtitle = doc.add_paragraph()
     sr = subtitle.add_run(
         f"A study of the Bible's inner-life vocabulary — "
-        f"{cluster_code} cluster · {len(pieces)} sections · "
+        f"{cluster_code} cluster · {len(prepared)} sections · "
         f"compiled {date_str[:4]}-{date_str[4:6]}-{date_str[6:8]}"
     )
     sr.italic = True
@@ -308,16 +439,40 @@ def main() -> int:
         f"Combined draft compiled from "
         f"Sessions/Session_Clusters/{cluster_code}/Published/."
     )
+    doc.add_paragraph()
 
-    # Page break before first piece
+    # TOC on the first page
+    chapter_counter = 0
+    appendix_counter = 0
+    toc_entries: list[tuple[str | int, str, str]] = []
+    for label, kind, _path, title, _body in prepared:
+        if kind == "chapter":
+            chapter_counter += 1
+            toc_entries.append((chapter_counter, title, "chapter"))
+        else:
+            appendix_counter += 1
+            letter = chr(ord("A") + appendix_counter - 1)
+            toc_entries.append((letter, title, "appendix"))
+    add_toc(doc, toc_entries)
+
+    # Page break before first section
     p = doc.add_paragraph()
     p.add_run().add_break(WD_BREAK.PAGE)
 
-    for idx, (label, path) in enumerate(pieces, start=1):
-        md = path.read_text(encoding="utf-8")
-        print(f"{label}: {path.name} ({len(md):,} chars)")
-        render_markdown_to_docx(doc, md)
-        if idx < len(pieces):
+    chapter_counter = 0
+    appendix_counter = 0
+    for idx, (label, kind, path, topical_title, body_md) in enumerate(prepared, start=1):
+        print(f"{label}: {path.name} ({len(body_md):,} chars after preprocessing)")
+        if kind == "chapter":
+            chapter_counter += 1
+            heading_text = f"Chapter {chapter_counter}.  {topical_title}"
+        else:
+            appendix_counter += 1
+            letter = chr(ord("A") + appendix_counter - 1)
+            heading_text = f"Appendix {letter}.  {topical_title}"
+        doc.add_heading(heading_text, level=1)
+        render_markdown_to_docx(doc, body_md)
+        if idx < len(prepared):
             p = doc.add_paragraph()
             p.add_run().add_break(WD_BREAK.PAGE)
 
