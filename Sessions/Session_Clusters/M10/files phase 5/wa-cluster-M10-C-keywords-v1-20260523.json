@@ -1,0 +1,875 @@
+{
+  "_meta": {
+    "model": "claude-sonnet-4-6",
+    "verses": 64,
+    "filled": 64,
+    "batches": 3,
+    "usage_totals": {
+      "input": 10052,
+      "output": 4052,
+      "cache_create": 1161,
+      "cache_read": 2322
+    }
+  },
+  "keywords_by_vc_id": {
+    "19164": {
+      "reference": "Gen 13:13",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "defection habitual",
+        "rebellion disposition",
+        "sin extreme",
+        "character corrupt",
+        "orientation godward opposed"
+      ]
+    },
+    "19165": {
+      "reference": "Num 16:38",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinned",
+      "keywords": [
+        "sin lethal",
+        "defection fatal",
+        "transgression memorialized",
+        "warning inscribed",
+        "presumption costly"
+      ]
+    },
+    "19166": {
+      "reference": "Num 32:14",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinful",
+      "keywords": [
+        "sin generational",
+        "disposition inherited",
+        "rebellion constitutional",
+        "anger intensified",
+        "character dispositional"
+      ]
+    },
+    "19167": {
+      "reference": "1Sa 15:18",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "character corrupt",
+        "sin designating",
+        "moral corruption collective",
+        "judgment deserved",
+        "identity condemned"
+      ]
+    },
+    "19168": {
+      "reference": "1Ki 1:21",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "counted offenders",
+      "keywords": [
+        "status assigned",
+        "offender labeled",
+        "guilt imputed",
+        "identity threatened",
+        "social condemnation"
+      ]
+    },
+    "19169": {
+      "reference": "Psa 1:1",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "influence contagious",
+        "path moral",
+        "company gravitational",
+        "orientation shaped",
+        "will resisting",
+        "contamination social"
+      ]
+    },
+    "19170": {
+      "reference": "Psa 1:5",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "exclusion judgment",
+        "identity disqualifying",
+        "standing forfeited",
+        "character bars",
+        "community righteous denied"
+      ]
+    },
+    "19171": {
+      "reference": "Psa 25:8",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "lostness moral",
+        "disorientation inner",
+        "instruction divine",
+        "redirecting",
+        "teachable potential",
+        "return enabled"
+      ]
+    },
+    "19172": {
+      "reference": "Psa 26:9",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "contamination feared",
+        "identity dangerous",
+        "soul imperiled",
+        "association deadly",
+        "separation sought"
+      ]
+    },
+    "19163": {
+      "reference": "Psa 51:13",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "return possible",
+        "straying reversed",
+        "restoration enabling",
+        "teaching overflow",
+        "repentance modeled",
+        "redirection"
+      ]
+    },
+    "19173": {
+      "reference": "Psa 104:35",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "incompatibility moral",
+        "creation tension",
+        "character defining",
+        "removal desired",
+        "order disrupted"
+      ]
+    },
+    "19174": {
+      "reference": "Pro 1:10",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "enticement active",
+        "will consenting",
+        "consent danger",
+        "solicitation moral",
+        "will refusing",
+        "pressure external"
+      ]
+    },
+    "19175": {
+      "reference": "Pro 13:21",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "consequence tracking",
+        "disaster pursuing",
+        "identity calamitous",
+        "retribution inescapable",
+        "character defining"
+      ]
+    },
+    "19176": {
+      "reference": "Pro 23:17",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "envy heart",
+        "desire misdirected",
+        "prosperity envied",
+        "heart warning",
+        "fear replacing",
+        "reorientation urged"
+      ]
+    },
+    "19177": {
+      "reference": "Isa 1:28",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "rebellion persistent",
+        "forsaking deliberate",
+        "judgment breaking",
+        "defection willful",
+        "destruction deserved"
+      ]
+    },
+    "19178": {
+      "reference": "Isa 13:9",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "wrath divine",
+        "character defining",
+        "judgment consuming",
+        "land defiled",
+        "destruction warranted",
+        "sin collective"
+      ]
+    },
+    "19179": {
+      "reference": "Isa 33:14",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "dread arising",
+        "trembling seized",
+        "conscience awakened",
+        "holiness confronting",
+        "presence unbearable",
+        "fear existential",
+        "standing impossible"
+      ]
+    },
+    "19180": {
+      "reference": "Amo 9:8",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinful",
+      "keywords": [
+        "corruption collective",
+        "scrutiny divine",
+        "gaze God",
+        "judgment warranted",
+        "remnant spared",
+        "grace restraining"
+      ]
+    },
+    "19181": {
+      "reference": "Amo 9:10",
+      "strongs": "H2400",
+      "transliteration": "chat.ta",
+      "span": "sinners",
+      "keywords": [
+        "self-deception",
+        "presumption false",
+        "accountability denied",
+        "conscience suppressed",
+        "delusion inner",
+        "judgment denied"
+      ]
+    },
+    "18779": {
+      "reference": "Mat 9:10",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "exclusion social",
+        "marginalization moral",
+        "belonging sought",
+        "reception unexpected",
+        "identity stigmatized"
+      ]
+    },
+    "18780": {
+      "reference": "Mat 9:11",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "label social",
+        "defilement perceived",
+        "scandal religious",
+        "stigma moral",
+        "separation enforced",
+        "judgment external"
+      ]
+    },
+    "18781": {
+      "reference": "Mat 9:13",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "need inner",
+        "self-sufficiency absent",
+        "call received",
+        "mercy needed",
+        "receptivity",
+        "condition needy"
+      ]
+    },
+    "18782": {
+      "reference": "Mat 11:19",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "association stigmatized",
+        "label accusatory",
+        "lifestyle disqualifying",
+        "criticism external",
+        "friendship redemptive"
+      ]
+    },
+    "18783": {
+      "reference": "Mat 26:45",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "agency evil",
+        "betrayal enacted",
+        "lawlessness active",
+        "power hostile",
+        "hour surrendered",
+        "will complicit"
+      ]
+    },
+    "18784": {
+      "reference": "Mar 2:15",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "marginalization social",
+        "identity disqualifying",
+        "belonging unexpected",
+        "following drawn",
+        "holiness perceived threat",
+        "reception scandalous"
+      ]
+    },
+    "18785": {
+      "reference": "Mar 2:16",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "contamination moral",
+        "avoidance stigma",
+        "character defect",
+        "othering judgment",
+        "purity calculus"
+      ]
+    },
+    "18786": {
+      "reference": "Mar 2:17",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "moral illness",
+        "need interior",
+        "healing reception",
+        "unworthiness recognized",
+        "condition addressed"
+      ]
+    },
+    "18787": {
+      "reference": "Mar 8:38",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinful",
+      "keywords": [
+        "shame felt",
+        "corporate sinfulness",
+        "defection generational",
+        "identity moral",
+        "allegiance denied"
+      ]
+    },
+    "18788": {
+      "reference": "Mar 14:41",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "character oppositional",
+        "violence lawless",
+        "betrayal enacted",
+        "moral opposition",
+        "hostility inner"
+      ]
+    },
+    "18789": {
+      "reference": "Luk 5:8",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinful",
+      "keywords": [
+        "conscience strike",
+        "unworthiness surfacing",
+        "awe overwhelming",
+        "self-recognition spontaneous",
+        "prostration inner",
+        "guilt surfacing"
+      ]
+    },
+    "18790": {
+      "reference": "Luk 5:30",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "contamination feared",
+        "purity calculus",
+        "exclusion social",
+        "judgment external",
+        "stigma moral"
+      ]
+    },
+    "18791": {
+      "reference": "Luk 5:32",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "repentance called",
+        "need moral",
+        "condition targeted",
+        "turning invited",
+        "sinfulness ground"
+      ]
+    },
+    "18792": {
+      "reference": "Luk 6:32",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "reciprocity natural",
+        "love restricted",
+        "transformation absent",
+        "self-interest operating",
+        "moral baseline"
+      ]
+    },
+    "18793": {
+      "reference": "Luk 6:33",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "reciprocity limited",
+        "self-interest operating",
+        "goodness partial",
+        "depravity partial",
+        "transformation absent"
+      ]
+    },
+    "18794": {
+      "reference": "Luk 6:34",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "self-interest calculating",
+        "orientation transactional",
+        "generosity absent",
+        "reciprocity calculated",
+        "other-centeredness lacking"
+      ]
+    },
+    "18795": {
+      "reference": "Luk 7:34",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "contamination feared",
+        "association stigma",
+        "purity calculus",
+        "judgment external",
+        "othering social"
+      ]
+    },
+    "18796": {
+      "reference": "Luk 7:37",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "identity stigmatized",
+        "status public",
+        "boldness unexpected",
+        "approach courageous",
+        "shame overridden"
+      ]
+    },
+    "18797": {
+      "reference": "Luk 7:39",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "contamination moral",
+        "inner verdict",
+        "purity calculus",
+        "detection presumed",
+        "avoidance expected",
+        "judgment private"
+      ]
+    },
+    "18798": {
+      "reference": "Luk 13:2",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "causality assumed",
+        "judgment challenged",
+        "suffering misread",
+        "moral calculus rejected",
+        "assumption corrected"
+      ]
+    },
+    "18799": {
+      "reference": "Luk 15:1",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "openness inner",
+        "receptivity drawing",
+        "stigma transcended",
+        "hunger spiritual",
+        "approach willing"
+      ]
+    },
+    "18800": {
+      "reference": "Luk 15:2",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "contamination feared",
+        "fellowship denied",
+        "judgment external",
+        "corruption perceived",
+        "exclusion moral"
+      ]
+    },
+    "18777": {
+      "reference": "Luk 15:7",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "repentance turning",
+        "joy cosmic",
+        "turning decisive",
+        "moment moral",
+        "restoration celebrated"
+      ]
+    },
+    "18801": {
+      "reference": "Luk 15:10",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "repentance turning",
+        "joy cosmic",
+        "significance inner",
+        "turning celebrated",
+        "moral reversal"
+      ]
+    },
+    "18802": {
+      "reference": "Luk 18:13",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "unworthiness felt",
+        "conscience crushing",
+        "plea mercy",
+        "self-abasement bodily",
+        "guilt acknowledged",
+        "self-justification absent"
+      ]
+    },
+    "18803": {
+      "reference": "Luk 19:7",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "stigma social",
+        "exclusion presumed",
+        "status disqualifying",
+        "judgment crowd",
+        "fellowship contested"
+      ]
+    },
+    "18804": {
+      "reference": "Luk 24:7",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinful",
+      "keywords": [
+        "character oppositional",
+        "violence enacted",
+        "moral agency sinful",
+        "hostility inner",
+        "instrumentality evil"
+      ]
+    },
+    "18805": {
+      "reference": "Joh 9:16",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "status contested",
+        "disqualification assumed",
+        "verdict divided",
+        "sinfulness debated",
+        "evidence resisted"
+      ]
+    },
+    "18806": {
+      "reference": "Joh 9:24",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "verdict imposed",
+        "authority denied",
+        "sinfulness declared",
+        "discrediting intent",
+        "certainty false"
+      ]
+    },
+    "18807": {
+      "reference": "Joh 9:25",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "status uncertain",
+        "experience undeniable",
+        "distinction moral",
+        "honesty epistemic",
+        "knowledge limited",
+        "evidence personal"
+      ]
+    },
+    "18808": {
+      "reference": "Joh 9:31",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "access divine",
+        "sinfulness blocking",
+        "obedience opening",
+        "prayer severed",
+        "responsiveness conditional",
+        "will divine"
+      ]
+    },
+    "18809": {
+      "reference": "Rom 3:7",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "status moral",
+        "condemnation liability",
+        "guilt objective",
+        "deception inner",
+        "judgment deserved"
+      ]
+    },
+    "18810": {
+      "reference": "Rom 5:8",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "condition unredeemed",
+        "righteousness absent",
+        "status worst",
+        "love unmerited",
+        "guilt unmitigated"
+      ]
+    },
+    "18811": {
+      "reference": "Rom 5:19",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "status imputed",
+        "constitution sinful",
+        "disobedience federal",
+        "identity inherited",
+        "participation involuntary"
+      ]
+    },
+    "18812": {
+      "reference": "Rom 7:13",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinful",
+      "keywords": [
+        "sin exposed",
+        "corruption magnified",
+        "nature revealed",
+        "law revealing",
+        "excess sinful",
+        "death producing"
+      ]
+    },
+    "18813": {
+      "reference": "Gal 2:15",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "identity assumed",
+        "status ethnic",
+        "standing presumed",
+        "category social",
+        "otherness moral"
+      ]
+    },
+    "18814": {
+      "reference": "Gal 2:17",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "status discovered",
+        "justification seeking",
+        "union faith",
+        "standing questioned",
+        "guilt apparent"
+      ]
+    },
+    "18815": {
+      "reference": "1Ti 1:9",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "orientation anti-law",
+        "will lawless",
+        "restraint needed",
+        "disposition ungodly",
+        "conscience absent",
+        "defection habitual"
+      ]
+    },
+    "18778": {
+      "reference": "1Ti 1:15",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "guilt self-owned",
+        "foremost sinner",
+        "self-knowledge moral",
+        "humility conscience",
+        "weight sinfulness",
+        "saving target"
+      ]
+    },
+    "18816": {
+      "reference": "Heb 7:26",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "contamination moral",
+        "separation positional",
+        "holiness contrast",
+        "purity absolute",
+        "condition human"
+      ]
+    },
+    "18817": {
+      "reference": "Heb 12:3",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "will hostile",
+        "opposition active",
+        "endurance inner",
+        "weariness resisted",
+        "hostility directed",
+        "defection aggressive"
+      ]
+    },
+    "18818": {
+      "reference": "Jam 4:8",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "heart divided",
+        "cleansing needed",
+        "double-mindedness",
+        "purification inner",
+        "distance closing",
+        "will returning"
+      ]
+    },
+    "18819": {
+      "reference": "Jam 5:20",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "wandering inner",
+        "drift spiritual",
+        "soul endangered",
+        "return possible",
+        "sins accumulated",
+        "death approaching"
+      ]
+    },
+    "18820": {
+      "reference": "1Pe 4:18",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinner",
+      "keywords": [
+        "peril judgment",
+        "standing insecure",
+        "condemnation certain",
+        "contrast righteous",
+        "path absent",
+        "vulnerability moral"
+      ]
+    },
+    "18821": {
+      "reference": "Jude 15",
+      "strongs": "G0268",
+      "transliteration": "hamartōlos",
+      "span": "sinners",
+      "keywords": [
+        "ungodliness pervasive",
+        "speech defiant",
+        "deeds ungodly",
+        "conviction coming",
+        "opposition verbal",
+        "inner corruption expressed"
+      ]
+    }
+  }
+}

@@ -65,17 +65,20 @@ def build_system_prompt(cluster_code: str, cluster_description: str, gloss: str,
             f"The cluster's term set (auto-extracted gloss): {gloss}"
         )
 
-    return f"""You are Claude AI performing Pass A meaning record for Session B cluster analysis under wa-sessionb-cluster-instruction-v2_0-20260515 §5.
+    return f"""You are Claude AI performing Pass A meaning + keyword record for Session B cluster analysis under wa-sessionb-cluster-instruction-v2_0-20260515 §5 (extended 2026-05-23 to emit per-verse inner-being keywords alongside the meaning).
 
 CLUSTER CHARACTERISTIC
 
 {characteristic_block}
 
-YOUR TASK
+YOUR TASK — TWO OUTPUTS PER VERSE
 
-For each verse in the batch, write a one-line meaning answering: **what does this verse say about the inner-being characteristic the term names, in this verse's specific context?**
+For each verse in the batch, produce:
 
-DISCIPLINE — non-negotiable
+  (a) **meaning** — a one-line plain-English meaning answering "what does this verse say about the inner-being characteristic the term names, in this verse's specific context?"
+  (b) **keywords** — 3 to 7 short inner-being keywords/tokens that the meaning evidences.
+
+DISCIPLINE — meaning
 
 1. Read the verse text. Write what *this* verse says about *this* term's inner-being content.
 2. The meaning must be verse-specific — name what is in this verse, not the term's general sense.
@@ -84,7 +87,37 @@ DISCIPLINE — non-negotiable
 5. No back-anchoring — do not validate against any pre-existing structure. The verse and the term are the only inputs that matter.
 6. If the verse genuinely does not evidence inner-being content for this term in this verse, note that briefly in the meaning. Do not omit the row.
 
-T1 FRAMEWORK — what to look for in the verse
+DISCIPLINE — keywords (atomic, compositional, clusterable)
+
+These keywords are aggregated across the whole cluster (hundreds to thousands of verses) to surface inner-being-faculty distinctions that feed Phase 5 sub-group design. For the aggregation to work the keywords MUST be atomic and compositional.
+
+1. **3 to 7 keywords per verse.**
+2. **One word OR a two-word combination.** Two-word combos use a single space (e.g. `conscience violation`, `will refusing`, `guilt surfacing`, `heart hardening`). NEVER hyphenate. NEVER use three or more words per keyword.
+3. **Open-class only.** Verbs, nouns, pronouns. Adjectives where they describe an inner state (`hardened`, `defiant`, `silent`). No adverbs.
+4. **No particles.** Strip every preposition / article / conjunction (`of`, `to`, `as`, `with`, `by`, `the`, `a`, `an`, `in`, `on`, `for`, `from`, `against`, etc).
+5. **No proper names.** Never `Cain`, `Pharaoh`, `Israel`, `Moses`, `David`, place names, etc. Keyword names the *operation* or *faculty*, not the actor.
+6. **No bland gloss labels alone.** `sin`, `transgression`, `guilt`, `wickedness` by themselves are gloss-level — tell us nothing new. Pair them or replace them: `sin objective`, `guilt surfacing`, `transgression unintentional`.
+7. **Reach for the SAME word** across verses when the same inner-being operation is in view — so the clustering works. Don't paraphrase `will refusing` as `will declines` elsewhere if it's the same operation.
+8. **Discriminate.** Two verses about "sin against God" get different keyword sets if the inner mechanism differs (`defection wilful` vs `defection habitual` vs `conscience strike`).
+
+EXAMPLES — keywords (correct form)
+
+  Gen 39:9 (Joseph refusing temptation):
+    keywords: ["conscience naming", "will refusing", "awareness divine", "clarity moral", "pressure resisted"]
+  Exo 9:34 (Pharaoh hardening again):
+    keywords: ["hardening", "will stiffening", "heart closing", "defection repeated", "truth resisted"]
+  Lev 4:2 (inadvertent sin):
+    keywords: ["unintentional", "transgression objective", "violation inadvertent", "ignorance", "sin real"]
+
+EXAMPLES — keywords (incorrect — what NOT to do)
+
+  - `will-insufficient-without-divine-restraint` — too long, sentence-like, particle-laden
+  - `Joseph refusing temptation` — proper name
+  - `of God awareness` — leading particle
+  - `sin` alone — bland gloss label
+  - `the will is hardened` — full clause
+
+T1 FRAMEWORK — what to look for in the verse (informs both meaning and keywords)
 
 A characteristic-bearing verse evidences one or more of:
 - Constitutional location — heart, mind, will, conscience, soul, spirit, body — where in the inner person it sits.
@@ -93,7 +126,7 @@ A characteristic-bearing verse evidences one or more of:
 - Structural opposite — the characteristic implicitly defines its contour by what it stands against.
 - Direction or object — toward what / produced by what / operating against what.
 
-If the verse evidences any of these, your meaning names which one(s) and how.
+If the verse evidences any of these, your meaning names which one(s) and how, and your keywords pick the atomic vocabulary that names the same operations.
 
 OUTPUT FORMAT — strict JSON
 
@@ -102,10 +135,11 @@ Respond with exactly one JSON array. One object per verse, in the same order the
   {{
     "vc_id": <integer — copy from input>,
     "reference": "<string — copy from input>",
-    "meaning": "<one-line plain-English meaning, ~250 chars, verse-specific>"
+    "meaning": "<one-line plain-English meaning, ~250 chars, verse-specific>",
+    "keywords": ["<keyword 1>", "<keyword 2>", "<keyword 3>", ...]
   }}
 
-Do not include any text outside the JSON array. No prose, no preamble, no markdown fence. Just the JSON.
+3–7 keywords per verse. Do not include any text outside the JSON array. No prose, no preamble, no markdown fence. Just the JSON.
 """
 
 
@@ -231,12 +265,24 @@ def build_vcrevise_patch(cluster_code: str, all_verses: list[dict],
         meaning = r.get("meaning", "").strip()
         if not meaning:
             continue
+        kws = r.get("keywords") or []
+        # Normalise: strip blanks, dedupe (preserving order)
+        seen = set()
+        kws_clean = []
+        for kw in kws:
+            kw = (kw or "").strip().lower()
+            if kw and kw not in seen:
+                seen.add(kw)
+                kws_clean.append(kw)
+        set_fields = {"analysis_note": meaning}
+        if kws_clean:
+            set_fields["keywords"] = json.dumps(kws_clean, ensure_ascii=False)
         ops.append({
             "op_id": f"OP-{seq:04d}",
             "table": "verse_context",
             "operation": "update",
             "match": {"id": v["vc_id"], "delete_flagged": 0},
-            "set": {"analysis_note": meaning},
+            "set": set_fields,
             "_reference": v["reference"],
             "_strongs": v["strongs_number"],
         })

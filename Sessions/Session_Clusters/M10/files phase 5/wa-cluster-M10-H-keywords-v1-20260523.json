@@ -1,0 +1,901 @@
+{
+  "_meta": {
+    "model": "claude-sonnet-4-6",
+    "verses": 64,
+    "filled": 64,
+    "batches": 3,
+    "usage_totals": {
+      "input": 10140,
+      "output": 4211,
+      "cache_create": 0,
+      "cache_read": 3483
+    }
+  },
+  "keywords_by_vc_id": {
+    "32895": {
+      "reference": "Exo 23:8",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "subverts",
+      "keywords": [
+        "discernment corrupted",
+        "perception distorted",
+        "judgment subverted",
+        "clarity lost",
+        "will compromised",
+        "bribery corruption"
+      ]
+    },
+    "65869": {
+      "reference": "Lev 18:23",
+      "strongs": "H8397",
+      "transliteration": "te.vel",
+      "span": "perversion",
+      "keywords": [
+        "boundary violated",
+        "order transgressed",
+        "self-defiling",
+        "perversion categorical",
+        "created order broken",
+        "moral corruption"
+      ]
+    },
+    "65870": {
+      "reference": "Lev 20:12",
+      "strongs": "H8397",
+      "transliteration": "te.vel",
+      "span": "perversion",
+      "keywords": [
+        "boundary violated",
+        "guilt shared",
+        "perversion relational",
+        "family order broken",
+        "responsibility mutual",
+        "transgression objective"
+      ]
+    },
+    "32893": {
+      "reference": "Deu 16:19",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "subverts",
+      "keywords": [
+        "discernment corrupted",
+        "judgment subverted",
+        "perception distorted",
+        "wisdom blinded",
+        "justice twisted",
+        "integrity failing"
+      ]
+    },
+    "32906": {
+      "reference": "Deu 32:20",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverse",
+      "keywords": [
+        "loyalty inverted",
+        "faithfulness absent",
+        "character perverted",
+        "generational disposition",
+        "defection habitual",
+        "divine withdrawal"
+      ]
+    },
+    "19464": {
+      "reference": "1Sa 20:30",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "perverse",
+      "keywords": [
+        "character indictment",
+        "loyalty shamed",
+        "orientation inverted",
+        "defection wilful",
+        "shame relational",
+        "will twisted"
+      ]
+    },
+    "19465": {
+      "reference": "2Sa 7:14",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "commits iniquity",
+      "keywords": [
+        "iniquity deviation",
+        "correction fatherly",
+        "discipline received",
+        "relationship preserved",
+        "transgression expected",
+        "restraint divine"
+      ]
+    },
+    "19466": {
+      "reference": "2Sa 19:19",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "wrong",
+      "keywords": [
+        "guilt surfacing",
+        "past wrong",
+        "mercy sought",
+        "conscience appealing",
+        "wrongdoing acknowledged",
+        "heart appealing"
+      ]
+    },
+    "19467": {
+      "reference": "2Sa 24:17",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "done wickedly",
+      "keywords": [
+        "self-indictment",
+        "conscience naming",
+        "guilt intensified",
+        "responsibility owned",
+        "intercession motivated",
+        "wrongdoing acknowledged"
+      ]
+    },
+    "19463": {
+      "reference": "1Ki 8:47",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "acted perversely",
+      "keywords": [
+        "confession layered",
+        "heart turning",
+        "perversion acknowledged",
+        "repentance initiated",
+        "conscience naming",
+        "guilt surfacing"
+      ]
+    },
+    "19468": {
+      "reference": "2Ch 6:37",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "acted perversely",
+      "keywords": [
+        "confession layered",
+        "heart turning",
+        "perversion acknowledged",
+        "repentance initiated",
+        "conscience naming",
+        "distortion owned"
+      ]
+    },
+    "2075": {
+      "reference": "Neh 1:7",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "acted very",
+      "keywords": [
+        "corruption inner",
+        "disobedience habitual",
+        "relationship damaged",
+        "conscience communal",
+        "commandment forsaken",
+        "guilt surfacing"
+      ]
+    },
+    "19469": {
+      "reference": "Est 1:16",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "done wrong",
+      "keywords": [
+        "defiance wilful",
+        "order breached",
+        "wrong social",
+        "authority resisted",
+        "perversion relational",
+        "will asserting"
+      ]
+    },
+    "2072": {
+      "reference": "Job 17:1",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "broken",
+      "keywords": [
+        "spirit broken",
+        "vitality collapsed",
+        "inner ruin",
+        "hope extinguished",
+        "suffering crushing",
+        "desolation inner"
+      ]
+    },
+    "21712": {
+      "reference": "Job 33:27",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "perverted",
+      "keywords": [
+        "confession naming",
+        "rightness perverted",
+        "conscience surfacing",
+        "truth distorted",
+        "guilt acknowledged",
+        "mercy undeserved"
+      ]
+    },
+    "2076": {
+      "reference": "Job 34:31",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "offend",
+      "keywords": [
+        "will resolving",
+        "offense ceasing",
+        "vow penitent",
+        "relationship restoring",
+        "conscience directing",
+        "restraint chosen"
+      ]
+    },
+    "21713": {
+      "reference": "Psa 38:6",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "bowed",
+      "keywords": [
+        "posture crushed",
+        "mourning inward",
+        "spirit bowed",
+        "guilt embodied",
+        "inner collapse",
+        "suffering prolonged"
+      ]
+    },
+    "19470": {
+      "reference": "Psa 106:6",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "committed iniquity",
+      "keywords": [
+        "confession layered",
+        "iniquity communal",
+        "guilt surfacing",
+        "twisting acknowledged",
+        "conscience communal",
+        "perversion owned"
+      ]
+    },
+    "32904": {
+      "reference": "Pro 2:12",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverted",
+      "keywords": [
+        "speech perverted",
+        "truth bent",
+        "wisdom delivering",
+        "corruption verbal",
+        "influence resisted",
+        "discernment protecting"
+      ]
+    },
+    "32907": {
+      "reference": "Pro 2:14",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverseness",
+      "keywords": [
+        "delight perverted",
+        "will oriented evil",
+        "rejoicing inverted",
+        "emotion corrupted",
+        "evil embraced",
+        "moral inversion"
+      ]
+    },
+    "32882": {
+      "reference": "Pro 4:24",
+      "strongs": "H3891",
+      "transliteration": "la.zut",
+      "span": "devious",
+      "keywords": [
+        "speech crooked",
+        "will rejecting",
+        "verbal perversion",
+        "deviousness expelled",
+        "self-command",
+        "corruption verbal"
+      ]
+    },
+    "32902": {
+      "reference": "Pro 6:14",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverted",
+      "keywords": [
+        "heart perverted",
+        "evil devising",
+        "discord sowing",
+        "disposition corrupted",
+        "scheming habitual",
+        "will oriented evil"
+      ]
+    },
+    "32905": {
+      "reference": "Pro 8:13",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverted",
+      "keywords": [
+        "speech perverted",
+        "pride rooted",
+        "wisdom hating",
+        "character departed",
+        "arrogance companion",
+        "corruption verbal"
+      ]
+    },
+    "32910": {
+      "reference": "Pro 10:31",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverse",
+      "keywords": [
+        "tongue perverted",
+        "corruption verbal",
+        "judgment silencing",
+        "wisdom opposed",
+        "moral corruption",
+        "speech corrupted"
+      ]
+    },
+    "32911": {
+      "reference": "Pro 10:32",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverse",
+      "keywords": [
+        "disposition corrupted",
+        "speech perverted",
+        "moral knowing inverted",
+        "will oriented perverse",
+        "corruption verbal",
+        "discernment absent"
+      ]
+    },
+    "21711": {
+      "reference": "Pro 12:8",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "twisted",
+      "keywords": [
+        "mind warped",
+        "moral distortion",
+        "understanding twisted",
+        "contempt earned",
+        "character corrupt"
+      ]
+    },
+    "32896": {
+      "reference": "Pro 13:6",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "overthrows",
+      "keywords": [
+        "sin destabilizing",
+        "will overthrown",
+        "corruption ruinous",
+        "character undermined",
+        "defection consequential"
+      ]
+    },
+    "2073": {
+      "reference": "Pro 13:13",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "himself",
+      "keywords": [
+        "contempt willful",
+        "word rejected",
+        "self-destruction",
+        "authority despised",
+        "ruin invited"
+      ]
+    },
+    "32908": {
+      "reference": "Pro 16:28",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "dishonest",
+      "keywords": [
+        "perversity dispositional",
+        "character corrupt",
+        "strife generating",
+        "relational destruction",
+        "inner bent"
+      ]
+    },
+    "32909": {
+      "reference": "Pro 16:30",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "dishonest things",
+      "keywords": [
+        "evil planned",
+        "will calculating",
+        "perversity deliberate",
+        "scheming inner",
+        "intention corrupt"
+      ]
+    },
+    "32894": {
+      "reference": "Pro 19:3",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "ruin",
+      "keywords": [
+        "folly ruinous",
+        "blame redirected",
+        "heart raging",
+        "self-deception",
+        "anger misdirected",
+        "responsibility denied"
+      ]
+    },
+    "32897": {
+      "reference": "Pro 21:12",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "throws",
+      "keywords": [
+        "judgment divine",
+        "wicked overthrown",
+        "perversity punished",
+        "restraint divine",
+        "ruin deserved"
+      ]
+    },
+    "32898": {
+      "reference": "Pro 22:12",
+      "strongs": "H5557",
+      "transliteration": "sa.laph",
+      "span": "overthrows",
+      "keywords": [
+        "treachery speech",
+        "words perverted",
+        "deception exposed",
+        "divine oversight",
+        "truth guarded"
+      ]
+    },
+    "32903": {
+      "reference": "Pro 23:33",
+      "strongs": "H8419",
+      "transliteration": "tah.pu.khah",
+      "span": "perverse things",
+      "keywords": [
+        "heart corrupted",
+        "perversity verbal",
+        "speech distorted",
+        "inner overflow",
+        "drunkenness corrupting",
+        "heart unguarded"
+      ]
+    },
+    "21714": {
+      "reference": "Isa 21:3",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "bowed down",
+      "keywords": [
+        "anguish overwhelming",
+        "body twisted",
+        "vision distress",
+        "constitution bent",
+        "perception impaired",
+        "suffering visceral"
+      ]
+    },
+    "32859": {
+      "reference": "Isa 29:16",
+      "strongs": "H2017",
+      "transliteration": "ho.phekh",
+      "span": "upside down",
+      "keywords": [
+        "inversion cognitive",
+        "creator denied",
+        "creature defiant",
+        "authority rejected",
+        "mind reversed",
+        "dependence refused"
+      ]
+    },
+    "2074": {
+      "reference": "Isa 32:7",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "ruin",
+      "keywords": [
+        "scheming willed",
+        "destruction planned",
+        "deceit calculated",
+        "disposition evil",
+        "vulnerable targeted",
+        "intention corrupt"
+      ]
+    },
+    "37200": {
+      "reference": "Jer 2:21",
+      "strongs": "H5494",
+      "transliteration": "sur",
+      "span": "degenerate",
+      "keywords": [
+        "nature corrupted",
+        "purity lost",
+        "degeneration inner",
+        "origin betrayed",
+        "transformation moral",
+        "wildness emerging"
+      ]
+    },
+    "21715": {
+      "reference": "Jer 3:21",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "perverted",
+      "keywords": [
+        "way perverted",
+        "God forgotten",
+        "will twisted",
+        "amnesia spiritual",
+        "distress consequential",
+        "direction lost"
+      ]
+    },
+    "19471": {
+      "reference": "Jer 9:5",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "committing iniquity",
+      "keywords": [
+        "tongue trained",
+        "lying habitual",
+        "iniquity cultivated",
+        "perversity willed",
+        "corruption ingrained",
+        "deception practiced"
+      ]
+    },
+    "37201": {
+      "reference": "Jer 17:13",
+      "strongs": "H5494",
+      "transliteration": "sur",
+      "span": "turn away",
+      "keywords": [
+        "defection relational",
+        "forsaking willful",
+        "shame resulting",
+        "hope abandoned",
+        "degeneration departure",
+        "life source rejected"
+      ]
+    },
+    "21716": {
+      "reference": "Lam 3:9",
+      "strongs": "H5753A",
+      "transliteration": "a.vah",
+      "span": "crooked",
+      "keywords": [
+        "path blocked",
+        "way crooked",
+        "disorientation inner",
+        "judgment experienced",
+        "progress denied",
+        "divine constraint"
+      ]
+    },
+    "24220": {
+      "reference": "Eze 9:9",
+      "strongs": "H4297",
+      "transliteration": "mut.teh",
+      "span": "injustice",
+      "keywords": [
+        "injustice pervasive",
+        "conscience suppressed",
+        "divine oversight denied",
+        "moral distortion systemic",
+        "self-deception",
+        "guilt collective"
+      ]
+    },
+    "19472": {
+      "reference": "Dan 9:5",
+      "strongs": "H5753B",
+      "transliteration": "a.vah",
+      "span": "wrong",
+      "keywords": [
+        "moral direction bent",
+        "rebellion layered",
+        "conscience confessing",
+        "commandment abandoned",
+        "wrong compounded",
+        "contrition total"
+      ]
+    },
+    "54678": {
+      "reference": "Hos 2:10",
+      "strongs": "H5040",
+      "transliteration": "nav.lut",
+      "span": "lewdness",
+      "keywords": [
+        "lewdness concealed",
+        "shame exposed",
+        "disposition shameful",
+        "judgment unveiling",
+        "infidelity inner",
+        "abandonment divine"
+      ]
+    },
+    "65871": {
+      "reference": "Mic 2:10",
+      "strongs": "H2254B",
+      "transliteration": "cha.val",
+      "span": "destroys",
+      "keywords": [
+        "uncleanness destructive",
+        "sin corrupting",
+        "belonging lost",
+        "rest denied",
+        "expulsion compelled",
+        "pollution active"
+      ]
+    },
+    "7224": {
+      "reference": "Luk 12:33",
+      "strongs": "G1311",
+      "transliteration": "diaftheirō",
+      "span": "destroys",
+      "keywords": [
+        "treasure earthly",
+        "decay inevitable",
+        "attachment misplaced",
+        "security false",
+        "corruptibility material",
+        "reorientation urged"
+      ]
+    },
+    "7246": {
+      "reference": "Rom 8:21",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "corruption",
+      "keywords": [
+        "bondage corruption",
+        "decay enslaving",
+        "liberation awaited",
+        "creation groaning",
+        "freedom longed",
+        "glory anticipated"
+      ]
+    },
+    "7239": {
+      "reference": "1Cor 3:17",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "destroys",
+      "keywords": [
+        "desecration willful",
+        "holiness violated",
+        "consequence reciprocal",
+        "temple defiled",
+        "destruction invited",
+        "sacred profaned"
+      ]
+    },
+    "7236": {
+      "reference": "1Cor 15:33",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "ruins",
+      "keywords": [
+        "morals corrupted",
+        "influence external",
+        "character ruined",
+        "formation damaged",
+        "association destructive",
+        "deception warned"
+      ]
+    },
+    "7247": {
+      "reference": "1Cor 15:42",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "perishable",
+      "keywords": [
+        "decay bodily",
+        "perishable nature",
+        "transformation awaited",
+        "mortality registered",
+        "body lowly"
+      ]
+    },
+    "7248": {
+      "reference": "1Cor 15:50",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "perishable",
+      "keywords": [
+        "incompatibility recognized",
+        "perishable nature",
+        "body unfit",
+        "transformation required",
+        "mortality barrier"
+      ]
+    },
+    "7223": {
+      "reference": "2Cor 4:16",
+      "strongs": "G1311",
+      "transliteration": "diaftheirō",
+      "span": "wasting away",
+      "keywords": [
+        "outer deteriorating",
+        "inner renewing",
+        "heart persisting",
+        "courage sustained",
+        "renewal daily",
+        "decay resisted"
+      ]
+    },
+    "7237": {
+      "reference": "2Cor 7:2",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "corrupted",
+      "keywords": [
+        "conscience clear",
+        "integrity defended",
+        "harm denied",
+        "character protected",
+        "innocence claimed"
+      ]
+    },
+    "7235": {
+      "reference": "2Cor 11:3",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "led astray",
+      "keywords": [
+        "mind targeted",
+        "devotion threatened",
+        "deception infiltrating",
+        "sincerity eroded",
+        "thought corrupted",
+        "vigilance urged"
+      ]
+    },
+    "7241": {
+      "reference": "Gal 6:8",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "corruption",
+      "keywords": [
+        "orientation fleshly",
+        "desire cultivated",
+        "ruin harvested",
+        "will sowing",
+        "flesh indulged",
+        "decay inevitable"
+      ]
+    },
+    "7234": {
+      "reference": "Eph 4:22",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "corrupt",
+      "keywords": [
+        "desire deceitful",
+        "self old",
+        "corruption progressive",
+        "inner ruined",
+        "identity shedding",
+        "will captive"
+      ]
+    },
+    "7245": {
+      "reference": "Col 2:22",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "perish",
+      "keywords": [
+        "transience material",
+        "value undermined",
+        "perishable nature",
+        "rule external",
+        "worth questioned"
+      ]
+    },
+    "7222": {
+      "reference": "1Ti 6:5",
+      "strongs": "G1311",
+      "transliteration": "diaftheirō",
+      "span": "depraved",
+      "keywords": [
+        "mind depraved",
+        "truth lost",
+        "understanding corrupted",
+        "motive distorted",
+        "godliness twisted",
+        "cognition ruined"
+      ]
+    },
+    "7243": {
+      "reference": "2Pe 1:4",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "corruption",
+      "keywords": [
+        "desire sinful",
+        "corruption escaped",
+        "nature divine",
+        "participation sought",
+        "lust corrupting",
+        "deliverance inner"
+      ]
+    },
+    "7244": {
+      "reference": "2Pe 2:12",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "destroyed",
+      "keywords": [
+        "instinct unreflective",
+        "reason absent",
+        "ruin self-generated",
+        "blasphemy ignorant",
+        "nature corrupted",
+        "destruction inward"
+      ]
+    },
+    "7242": {
+      "reference": "2Pe 2:19",
+      "strongs": "G5356",
+      "transliteration": "fthora",
+      "span": "corruption",
+      "keywords": [
+        "will enslaved",
+        "freedom false",
+        "mastery corruption",
+        "bondage inner",
+        "self deceived",
+        "conquest inner"
+      ]
+    },
+    "7238": {
+      "reference": "Jude 10",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "destroyed",
+      "keywords": [
+        "instinct base",
+        "reason bypassed",
+        "understanding unreflective",
+        "self-destruction",
+        "blasphemy ignorant",
+        "ruin instinctive"
+      ]
+    },
+    "7240": {
+      "reference": "Rev 19:2",
+      "strongs": "G5351",
+      "transliteration": "ftheirō",
+      "span": "corrupted",
+      "keywords": [
+        "agency corrupting",
+        "immorality spreading",
+        "judgment just",
+        "corruption outward",
+        "influence destructive",
+        "justice divine"
+      ]
+    }
+  }
+}
