@@ -1,0 +1,41 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M10b-patch-vcnew-phase3-borderline-disposition-v1-20260525",
+    "cluster_code": "M10b",
+    "session_ref": "M10b Phase 3 borderline-disposition (Ezr 9:11 → relevant, per Phase 3 STAYS verdict on parent term H8441 to.e.vah)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "date": "20260525",
+    "terms_covered": [
+      250
+    ],
+    "input_versions": {
+      "250": 3
+    },
+    "op_count": 1,
+    "source": "Phase 3 constitution-debate output (WA-M10b-phase3-constitution-verdicts-v1-20260525.md) — to.e.vah STAYS; the parked Ezr 9:11 borderline is written as is_relevant=1, consistent with the parent verdict. Verse blends moral abomination + ritual uncleanness language; the M10c cross-register flag on the term captures the dual register.",
+    "provisional_anchor_promotions": [],
+    "provisional_anchor_count": 0
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "_reference": "Ezr 9:11",
+      "_strongs": "H8441",
+      "_note": "Phase 1 borderline (1 of 1) disposed per Phase 3 STAYS verdict on H8441 to.e.vah. M10c cross-register flag noted at term level.",
+      "record": {
+        "verse_record_id": 35,
+        "mti_term_id": 250,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M10b-patch-passa-meanings-borderline-v1-20260525",
+    "cluster_code": "M10b",
+    "session_ref": "M10b Phase 3 borderline-disposition follow-on: Pass A for Ezr 9:11 (the parked borderline verse, now is_relevant=1)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260525",
+    "terms_covered": [
+      250
+    ],
+    "input_versions": {
+      "250": 4
+    },
+    "op_count": 1,
+    "source": "Claude API meaning record (Sonnet 4.6); 1 verses across 1 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66005,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The abominations of the surrounding peoples are portrayed as a pervasive moral contamination that has saturated the land entirely, framing wickedness as a spreading inner-communal corruption that defiles a shared space.",
+        "keywords": "[\"moral contamination\", \"defilement pervasive\", \"corruption spreading\", \"impurity communal\", \"conscience warning\", \"pollution filling\"]"
+      },
+      "_reference": "Ezr 9:11",
+      "_strongs": "H8441"
+    }
+  ]
+}
