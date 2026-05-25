@@ -1,0 +1,272 @@
+{
+  "_meta": {
+    "cluster_code": "M10b",
+    "phase": 5,
+    "date": "2026-05-25",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "total_relevant_verses": 515,
+    "distribution_gate": 206,
+    "sub_groups": [
+      {
+        "code": "M10b-A",
+        "label": "The wicked person — settled inner orientation of wickedness",
+        "characteristic": "Wickedness as settled person-identity",
+        "estimated_verses": 190
+      },
+      {
+        "code": "M10b-B",
+        "label": "Evil as the constitutional nature of the inner person",
+        "characteristic": "Evil as constitutional inner nature",
+        "estimated_verses": 90
+      },
+      {
+        "code": "M10b-C",
+        "label": "Abomination — divine revulsion at corrupt moral character and conduct",
+        "characteristic": "Abomination: divine-revulsion judgment on moral character",
+        "estimated_verses": 65
+      },
+      {
+        "code": "M10b-D",
+        "label": "Idolatrous abomination — will conformed to detestable false devotion",
+        "characteristic": "Idolatrous abomination: the heart devoted to false gods",
+        "estimated_verses": 73
+      },
+      {
+        "code": "M10b-E",
+        "label": "Iniquity — evil as an active inner process of scheming and harm-generation",
+        "characteristic": "Iniquity as active inner scheming and evil generation",
+        "estimated_verses": 98
+      },
+      {
+        "code": "M10b-F",
+        "label": "Blasphemy and defaming evil — wickedness flowing through the instrument of speech",
+        "characteristic": "Evil expressed in speech: blasphemy, defamation, and perverse testimony",
+        "estimated_verses": 17
+      }
+    ]
+  },
+  "_instructions": {
+    "resolution_method": "term_level_with_per_verse_exceptions",
+    "note": "Most terms assign all their verses to one sub-group. Exceptions are listed in per_verse_exceptions. For to.e.vah (mti_id=250) a full per-verse content review is required — use the keyword markers listed in to.e.vah_split_guidance to assign each verse to M10b-C or M10b-D.",
+    "multi_faceted_terms": ["G0946 bdelugma mti_id=12", "H7455 ro.a mti_id=238", "H8441 to.e.vah mti_id=250"],
+    "gate_check_required": "CC runs _validate_cluster_phase5_distribution_v1_20260517.py after applying mapping. All sub-groups expected PASS."
+  },
+  "term_assignments": [
+    {
+      "mti_id": 853,
+      "strongs": "G0093",
+      "translit": "adikia",
+      "total_relevant_verses": 8,
+      "primary_subgroup": "M10b-B",
+      "split": null
+    },
+    {
+      "mti_id": 855,
+      "strongs": "G0824",
+      "translit": "atopos",
+      "total_relevant_verses": 1,
+      "primary_subgroup": "M10b-F",
+      "split": null
+    },
+    {
+      "mti_id": 12,
+      "strongs": "G0946",
+      "translit": "bdelugma",
+      "total_relevant_verses": 6,
+      "primary_subgroup": "M10b-C",
+      "split": {
+        "type": "per_verse_reference",
+        "rules": [
+          {
+            "references": ["Mat 24:15", "Mar 13:14"],
+            "assign_to": "M10b-D",
+            "reason": "Concrete sacrilegious desolation event — idolatrous abomination register"
+          },
+          {
+            "references": ["Luk 16:15", "Rev 17:4", "Rev 17:5", "Rev 21:27"],
+            "assign_to": "M10b-C",
+            "reason": "Moral-character abomination — divine-revulsion judgment on inner corruption"
+          }
+        ]
+      }
+    },
+    {
+      "mti_id": 13,
+      "strongs": "G0947",
+      "translit": "bdeluktos",
+      "total_relevant_verses": 1,
+      "primary_subgroup": "M10b-C",
+      "split": null
+    },
+    {
+      "mti_id": 840,
+      "strongs": "G0987",
+      "translit": "blasfēmeō",
+      "total_relevant_verses": 11,
+      "primary_subgroup": "M10b-F",
+      "split": null
+    },
+    {
+      "mti_id": 841,
+      "strongs": "G2549",
+      "translit": "kakia",
+      "total_relevant_verses": 11,
+      "primary_subgroup": "M10b-B",
+      "split": {
+        "type": "per_verse_reference",
+        "rules": [
+          {
+            "references": ["Mat 6:34"],
+            "assign_to": "M10b-B",
+            "reason": "Outlier trouble/distress register — remains in B (M03 cross-register flag carried at term level; not sufficient volume to warrant separate sub-group)"
+          }
+        ],
+        "note": "All 11 verses assign to M10b-B. Mat 6:34 stays in B with M03 cross-register flag noted; no change to primary sub-group assignment."
+      }
+    },
+    {
+      "mti_id": 839,
+      "strongs": "G2555",
+      "translit": "kakopoios",
+      "total_relevant_verses": 5,
+      "primary_subgroup": "M10b-F",
+      "split": null
+    },
+    {
+      "mti_id": 837,
+      "strongs": "G4189",
+      "translit": "ponēria",
+      "total_relevant_verses": 7,
+      "primary_subgroup": "M10b-B",
+      "split": {
+        "type": "per_verse_reference",
+        "rules": [
+          {
+            "references": ["Eph 6:12"],
+            "assign_to": "M10b-B",
+            "reason": "Cosmic-evil-agent register — remains in B (M27 cross-register flag carried at term level)"
+          }
+        ],
+        "note": "All 7 verses assign to M10b-B. Eph 6:12 stays in B with M27 cross-register flag noted."
+      }
+    },
+    {
+      "mti_id": 832,
+      "strongs": "G4190",
+      "translit": "ponēros",
+      "total_relevant_verses": 63,
+      "primary_subgroup": "M10b-B",
+      "split": null,
+      "phase7_note": "Cosmic-evil-agent sub-corpus (~10-15V including Mat 13:19, Mat 13:38, Joh 17:15, Eph 6:16, 2Th 3:3, 1Jo 2:13, 1Jo 2:14, 1Jo 5:18, 1Jo 5:19, Gal 1:4, Eph 5:16, Eph 6:13) to receive separate VCG at Phase 7 with M27 cross-register flag. All 63V remain in M10b-B."
+    },
+    {
+      "mti_id": 836,
+      "strongs": "G5337",
+      "translit": "faulos",
+      "total_relevant_verses": 1,
+      "primary_subgroup": "M10b-B",
+      "split": null
+    },
+    {
+      "mti_id": 74,
+      "strongs": "H0205G",
+      "translit": "a.ven",
+      "total_relevant_verses": 71,
+      "primary_subgroup": "M10b-E",
+      "split": null,
+      "phase7_note": "Trouble/distress sub-corpus (~18-20V) to receive separate VCG at Phase 7 with M03/M27 cross-register flags. All 71V remain in M10b-E."
+    },
+    {
+      "mti_id": 6650,
+      "strongs": "H4849",
+      "translit": "mir.sha.at",
+      "total_relevant_verses": 1,
+      "primary_subgroup": "M10b-A",
+      "split": null
+    },
+    {
+      "mti_id": 238,
+      "strongs": "H7455",
+      "translit": "ro.a",
+      "total_relevant_verses": 28,
+      "primary_subgroup": "M10b-E",
+      "split": {
+        "type": "per_verse_reference",
+        "rules": [
+          {
+            "references": ["1Sa 17:28"],
+            "assign_to": "M10b-A",
+            "reason": "Evil located in the heart of a specific accused person — wicked-person characteristic"
+          },
+          {
+            "references": ["Neh 2:2", "Ecc 7:3"],
+            "assign_to": "M10b-E",
+            "reason": "Distress/sadness register — assigned to E with M03 cross-register flag; not sufficient to warrant separate sub-group"
+          }
+        ],
+        "note": "1Sa 17:28 → M10b-A; all remaining 27V (including Neh 2:2 and Ecc 7:3 with M03 flag) → M10b-E."
+      }
+    },
+    {
+      "mti_id": 846,
+      "strongs": "H7562",
+      "translit": "re.sha",
+      "total_relevant_verses": 9,
+      "primary_subgroup": "M10b-A",
+      "split": null
+    },
+    {
+      "mti_id": 1223,
+      "strongs": "H7563",
+      "translit": "ra.sha",
+      "total_relevant_verses": 179,
+      "primary_subgroup": "M10b-A",
+      "split": null,
+      "phase7_note": "Forensic-verdict sub-corpus (~5V including Exo 23:7, Deu 25:1, Deu 25:2, 1Ki 8:32, 2Ch 6:23) to receive separate VCG at Phase 7 with M10 cross-register flag. All 179V remain in M10b-A."
+    },
+    {
+      "mti_id": 245,
+      "strongs": "H8251",
+      "translit": "shiq.quts",
+      "total_relevant_verses": 25,
+      "primary_subgroup": "M10b-D",
+      "split": null
+    },
+    {
+      "mti_id": 250,
+      "strongs": "H8441",
+      "translit": "to.e.vah",
+      "total_relevant_verses": 106,
+      "primary_subgroup": "M10b-C",
+      "split": {
+        "type": "per_verse_content_review",
+        "estimated_C": 60,
+        "estimated_D": 46,
+        "C_assign_guidance": {
+          "description": "Moral-character and ethical-behavior abomination sub-corpus — assign to M10b-C",
+          "passage_groups": [
+            "Proverbs ethical-abomination corpus: Pro 3:32, 6:16, 8:7, 11:1, 11:20, 12:22, 13:19, 15:8, 15:9, 15:26, 16:5, 16:12, 17:15, 20:10, 20:23, 21:27, 24:9, 26:25, 28:9, 29:27",
+            "Jer 6:15, Jer 8:12 (conscience silenced — shame absent)",
+            "Eze 9:4 (groaning conscience), Eze 14:6 (will redirected from abominations), Eze 36:31 (self-loathing in memory), Eze 44:6, Eze 44:7, Eze 44:13",
+            "Isa 41:24, Isa 44:19 (idol-folly / absence of discernment — moral character focus)",
+            "Mal 2:11 (faithless mixed devotion as covenant-betrayal)",
+            "General moral-character uses in Ezekiel that name the inner-person's corruption rather than the idol-object itself"
+          ],
+          "keyword_markers": ["divine revulsion", "conscience violated", "holiness violated", "heart crooked", "heart proud", "moral inversion", "divine disgust", "divine rejection"]
+        },
+        "D_assign_guidance": {
+          "description": "Idolatrous-practice and idol-object abomination sub-corpus — assign to M10b-D",
+          "passage_groups": [
+            "Lev 18:22, 18:26, 18:27, 18:29, 18:30, 20:13",
+            "Deu 7:25, 7:26, 12:31, 13:14, 17:1, 17:4, 18:9, 18:12, 20:18, 22:5, 23:18, 24:4, 32:16",
+            "1Ki 14:24; 2Ki 16:3, 21:2, 21:11, 23:13; 2Ch 28:3, 33:2, 34:33, 36:8, 36:14",
+            "Ezr 9:1, 9:14",
+            "Jer 2:7, 7:10, 16:18, 32:35, 44:4, 44:22",
+            "Ezekiel idolatry-abomination driving divine presence away: Eze 5:9, 5:11, 6:9, 6:11, 7:3, 7:4, 7:8, 7:9, 7:20, 8:6, 8:9, 8:13, 8:15, 8:17, 11:18, 11:21, 12:16, 16:2, 16:22, 16:36, 16:43, 16:47, 16:50, 16:51, 16:58, 18:12, 18:13, 18:24, 20:4, 20:30, 22:2, 22:11, 23:36, 33:26, 33:29, 43:8"
+          ],
+          "keyword_markers": ["idol detestable", "worship corrupted", "will conformed", "covenant abandoned", "practices detestable", "defilement inner", "devotion perverted", "sacred violated", "abomination removed", "reform enacted"]
+        }
+      }
+    }
+  ]
+}
