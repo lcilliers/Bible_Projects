@@ -35,7 +35,9 @@ Shared constants for the Session A v9 Automation Engine.
 # UNIQUE; Phase 9 findings authored at characteristic scope, not sub-group, per
 # researcher direction 2026-05-18 — "sub groups is purely a capacity organiser,
 # the evaluating unit is the characteristic").
-EXPECTED_SCHEMA_VERSION = "3.25.0"
+# Bumped 2026-05-25 for M52 (finding_citation table — polymorphic citations from
+# cluster_finding + cluster_observation prose; three types: verse, strongs, cross_char).
+EXPECTED_SCHEMA_VERSION = "3.26.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
