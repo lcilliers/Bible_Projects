@@ -1163,3 +1163,200 @@ VCG-E-03: Mar 3:11 (21286) — unclean spirits recognise and confess superior di
 
 CC: M10c Phase 7 VCG design ready — run §10.9 validation (existence, no double-membership, sum match, anchor in members). PASS → Phase 7 apply directive.
 
+
+---
+
+## Phase 9 session — startup (Characteristic 1: Ritual defilement-state)
+
+### Researcher instruction (verbatim)
+
+[uploaded files: wa-cluster-M10c-phase9-char1-Ritual-defilement-state-brief-v1-20260526.md + wa-cluster-M10c-phase9-char1-Ritual-defilement-state-input-v1-20260526.md]
+[implicit: proceed with Phase 9 Tier T0]
+
+### Documents loaded
+
+1. Phase 9 brief: wa-cluster-M10c-phase9-char1-Ritual-defilement-state-brief-v1-20260526.md — READ IN FULL
+2. Structural input: wa-cluster-M10c-phase9-char1-Ritual-defilement-state-input-v1-20260526.md — READ IN FULL (133 verses across M10c-A and M10c-B, all Pass A meanings, 189 prompts T0–T7)
+
+### Compliance gap note
+
+Governing instruction wa-sessionb-cluster-instruction-v2_9-20260526.md §12 not present. Brief embeds §12 rules (staged execution per tier; self-evaluation gate; parser-safe form). Proceeding on embedded rules.
+
+Science extract Section 4 (Defilement): not uploaded. Will note at T7.3 as a gap.
+
+### Characteristic scope confirmation
+
+Characteristic 1 (Ritual defilement-state) = M10c-A (93V) + M10c-B (40V) = 133V.
+All findings author at characteristic scope. Sub-groups are capacity organisers.
+
+### Carry-forward observation noted
+
+SPLIT_DESIGN_RATIONALE: M10c-A and M10c-B are complementary registers of one characteristic, split for volume only. Phase 9 findings will treat as one inner-being faculty; T1.2.1 sub-group structural descriptions will distinguish mechanisms.
+
+### Procedure
+
+Tier-by-tier staged execution. One tier per response cycle. Self-evaluation gate between tiers. Chain tiers when gate passes; ALERT and stop on failures.
+
+
+---
+
+## Phase 9 Char 1 — outputs written
+
+### File produced
+wa-cluster-M10c-phase9-char1-Ritual-defilement-state-findings-v1_0-20260526.md
+- All 8 tiers completed (T0-T7)
+- 189 prompts answered
+- All tier self-evaluations: PASS
+- Self-check block written
+
+### Key analytical patterns surfaced
+1. Characteristic's primary function: boundary-maintenance for divine-human habitation (Lev 15:31 crystallises)
+2. Will at perimeter of condition (not core) — body generates condition; will determines response to it
+3. Conscience's supplementary role — defilement can precede awareness (Lev 5:2-3)
+4. NT categorical revision (Act 10:28) reveals provisional eschatological character
+5. Discernment-formation role (M10c-B-VCG-01) — characteristic is proactive-formative, not only reactive-regulatory
+
+### Gaps noted
+- Science extract Section 4 not uploaded — T7.3 findings are partial
+
+### Next step
+CC: M10c Char 1 (Ritual defilement-state) Phase 9 findings ready → parse, validate, apply to cluster_finding with characteristic_id=53.
+Then: proceed to Characteristic 2.
+
+
+---
+
+## Phase 9 Char 2 — startup (Moral-inner defilement-state)
+
+### Documents loaded
+1. Brief: wa-cluster-M10c-phase9-char2-Moral-inner-defilement-state-brief-v1-20260526.md — READ IN FULL
+2. Structural input: wa-cluster-M10c-phase9-char2-Moral-inner-defilement-state-input-v1-20260526.md — READ IN FULL
+
+### Corpus
+26 verses, 1 sub-group (M10c-C), 5 VCGs. 6 terms: G0167 akatharsia (10V), H2931 ta.me adj (6V), G0169 akathartos (5V), G3435 molunō (3V), G3436 molusmos (1V), G3394 miasmos (1V). Characteristic_id=54, scope marker [CHAR-2].
+
+### Carry-forward observation
+INTEGRATION_NOTE: Cross-register relational pairs (M10/sin-act, M11/cleansing, M29/desire, M08/pride, M09/consecration) — map explicitly at T6. Flag at end whether confirmed.
+
+
+---
+
+## Phase 9 Char 2 — outputs written
+
+### File produced
+wa-cluster-M10c-phase9-char2-Moral-inner-defilement-state-findings-v1_0-20260526.md
+- All 8 tiers completed (T0-T7), all self-evaluations PASS
+- 189 **[CHAR-2]** prompt markers confirmed
+- Self-check block written
+
+### Carry-forward confirmed
+INTEGRATION_NOTE — all five cross-register pairs mapped at T6: M10/M11/M29/M08/M09 all confirmed in verse evidence.
+
+### Key analytical patterns surfaced
+1. Self-reinforcing conscience-suppression escalation cycle
+2. Bi-constitutional scope (2Cor 7:1 — body and spirit) — deepest constitutional reach in M10c cluster
+3. Will-bondage paradox (slaves to impurity while actively pursuing it)
+4. Affective inversion (distress → appetite)
+5. Theocentric grounding of resolution (2Cor 7:1 — divine promise and fear of God)
+
+### Gap
+Science extract Section 4 not uploaded — T7.3 partial
+
+### Next step
+CC: M10c Char 2 (Moral-inner defilement-state) Phase 9 findings ready → parse, validate, apply with characteristic_id=54.
+Then: Char 3.
+
+---
+
+## Phase 9 Char 3 — startup (Corporate/covenantal defilement)
+
+### Documents loaded
+1. Brief: wa-cluster-M10c-phase9-char3-Corporate-covenantal-defilement-brief-v1-20260526.md — READ IN FULL
+2. Structural input: wa-cluster-M10c-phase9-char3-Corporate-covenantal-defilement-input-v1-20260526.md — READ IN FULL
+
+### Corpus
+83 verses, 1 sub-group (M10c-D), 5 VCGs:
+- VCG-01 (23V): Sexual/covenantal-relational defilement
+- VCG-02 (24V): Idolatrous self-defilement
+- VCG-03 (10V): Sanctuary/sacred-space defilement
+- VCG-04 (9V): Land/communal-space defilement
+- VCG-05 (17V): Exile/judgment/cleansing-promise
+
+3 terms: H2930A ta.me verb (63V), H2931 ta.me adj (11V), H5079 nid.dah (9V). Characteristic_id=55, scope marker [CHAR-3].
+
+### Carry-forward
+INTEGRATION_NOTE: M10b cross-register on Ezekiel idolatry sub-corpus within VCG-02. Map at T6.
+
+
+---
+
+## Phase 9 Char 3 — outputs written
+
+### File produced
+wa-cluster-M10c-phase9-char3-Corporate-covenantal-defilement-findings-v1_0-20260526.md
+- All 8 tiers completed (T0-T7), all self-evaluations PASS
+- Self-check block written
+
+### Carry-forward confirmed
+INTEGRATION_NOTE confirmed — M10b cross-register on Ezekiel idolatry sub-corpus (VCG-02 and VCG-03) mapped at T6.1.1 and T6.3.3. Status: confirmed.
+
+### Key patterns surfaced
+1. Centrifugal movement: will → person → community → land → sanctuary → name → divine presence (withdrawal)
+2. Memory as designed repentance mechanism (Eze 20:43) — distinctive to Char 3
+3. Entirely OT-Hebrew vocabulary — no NT Greek terms in corpus
+4. Reforming king's deliberate defilement of idolatrous sites (2Ki 23) as positive-inverse
+5. Priestly discernment failure (Eze 22:26) as propagation mechanism
+
+### Gap
+Science extract Section 4 not uploaded — T7.3 partial.
+
+### Next step
+CC: M10c Char 3 (Corporate/covenantal defilement) Phase 9 findings ready → parse, validate, apply with characteristic_id=55.
+Then: Char 4.
+
+---
+
+## Phase 9 Char 4 — startup (Defilement by external spiritual agency)
+
+### Documents loaded
+1. Brief: wa-cluster-M10c-phase9-char4-Defilement-by-external-spiritual-agency-brief-v1-20260526.md — READ IN FULL
+2. Structural input: wa-cluster-M10c-phase9-char4-Defilement-by-external-spiritual-agency-input-v1-20260526.md — READ IN FULL
+
+### Corpus
+21 verses, 1 sub-group (M10c-E), 3 VCGs:
+- VCG-01 (8V): Inhabitation and affliction — the possessed person's defilement-state
+- VCG-02 (8V): Expulsion, resistance, and restoration of wholeness
+- VCG-03 (5V): Authority over unclean spirits
+
+All 21V exclusively G0169 akathartos. NT only. Characteristic_id=56, scope marker [CHAR-4].
+
+### Carry-forward
+INTEGRATION_NOTE: M27 cross-register (unclean spirits as cosmic-evil agents). Map at T6.
+
+
+---
+
+## Phase 9 Char 4 — outputs written
+
+### File produced
+wa-cluster-M10c-phase9-char4-Defilement-by-external-spiritual-agency-findings-v1_0-20260526.md
+- All 8 tiers completed (T0-T7), all self-evaluations PASS
+- 189 bold **[CHAR-4]** markers confirmed
+- Self-check block written
+
+### Carry-forward confirmed
+INTEGRATION_NOTE confirmed — M27 cross-register on the unclean-spirits corpus fully mapped at T6.1.1, T6.3.2, T6.3.3, T6.6.1/2, T6.7.1. Characteristic 4 = defilement-condition produced in person; M27 = agent's nature. Shared anchors: Mar 3:11, Mat 10:1. Status: confirmed.
+
+### Key patterns surfaced
+1. Vocabulary describes agent (akathartos) not the person's condition — unique in M10c cluster
+2. Person's inner response structurally inaccessible — only M10c characteristic where this holds
+3. Proxy-mediation pattern: others seek healing on behalf of the possessed (Mar 7:25, Act 5:16)
+4. All human remedies comprehensively fail (Luk 8:29) — divine authority alone effective
+5. No inner-enabling conditions, no moral guilt, no generational deposit — purest external-imposition condition in M10c
+
+### Gap
+Science extract Section 4 not uploaded — T7.3 partial for all four characteristics.
+
+### Next step
+CC: M10c Char 4 (Defilement by external spiritual agency) Phase 9 findings ready → parse, validate, apply with characteristic_id=56.
+All four M10c characteristics now complete. Cluster M10c Phase 9 analysis = DONE.
