@@ -1,0 +1,964 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M10c-patch-vcnew-utreview-api-v1-20260526",
+    "cluster_code": "M10c",
+    "session_ref": "M10c Phase 1 UT review via Claude API (post-split)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "date": "20260526",
+    "terms_covered": [
+      5581,
+      920
+    ],
+    "input_versions": {
+      "5581": 1,
+      "920": 1
+    },
+    "op_count": 58,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "provisional_anchor_promotions": [],
+    "provisional_anchor_count": 0
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170157,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170158,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170159,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170160,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170161,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170179,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170181,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170197,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170202,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170186,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170189,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170192,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170215,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170216,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170108,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170105,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170106,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170107,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170138,
+        "mti_term_id": 5581,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25309,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25310,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25281,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25283,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25284,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25285,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25286,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25274,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25275,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25276,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25277,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a purity-list classification entry naming creatures as unclean with no inner-being state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25278,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25279,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25280,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25288,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25289,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25293,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25294,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25295,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25296,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25297,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25298,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25299,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25302,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25306,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used as a legal category label for vow redemption with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25307,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used as a legal category label for vow-redemption procedure with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25311,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used as a classificatory label in firstborn-redemption law with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25313,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25314,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25317,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170089,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170090,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170093,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170094,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170091,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170092,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.me used in a dietary-list classification entry with no inner-being defilement-state content — outside M10c defilement-state scope."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170095,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 170103,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 25271,
+        "mti_term_id": 920,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    }
+  ]
+}

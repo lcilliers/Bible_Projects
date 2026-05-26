@@ -1,0 +1,3979 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M10c-patch-passa-meanings-v1-20260526",
+    "cluster_code": "M10c",
+    "session_ref": "M10c Phase 2 Pass A meaning record via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260526",
+    "terms_covered": [
+      787,
+      918,
+      919,
+      920,
+      1023,
+      5001,
+      5574,
+      5581
+    ],
+    "input_versions": {
+      "5581": 2,
+      "920": 2,
+      "918": 1,
+      "5574": 1,
+      "919": 1,
+      "5001": 2,
+      "787": 2,
+      "1023": 2
+    },
+    "op_count": 263,
+    "source": "Claude API meaning record (Sonnet 4.6); 263 verses across 8 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21421,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A violent sexual act is named as defilement against a person; the inner impact is felt as violation of a daughter, prompting a father's restrained, simmering awareness of wrong done.",
+        "keywords": "[\"violation bodily\", \"awareness harm\", \"will restrained\", \"honour violated\", \"grievance suppressed\"]"
+      },
+      "_reference": "Gen 34:5",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21422,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The defilement of a sister becomes the moral justification the brothers invoke inwardly to authorize deceit; the sense of violated honour drives a calculated, vengeful will.",
+        "keywords": "[\"violation bodily\", \"honour violated\", \"will avenging\", \"deceit motivated\", \"grievance fuelling\"]"
+      },
+      "_reference": "Gen 34:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21423,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The remembered defilement of a sister is cited as the moral cause that releases extreme retributive violence; the inner engine is a will acting from perceived obligation to avenge violated honour.",
+        "keywords": "[\"violation bodily\", \"honour violated\", \"will avenging\", \"retribution unleashed\", \"grievance acted\"]"
+      },
+      "_reference": "Gen 34:27",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0004",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21548,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Contact with a ritually unclean object transmits an impurity the person may not immediately know; guilt surfaces when awareness arrives, indicating conscience awakening after hidden violation.",
+        "keywords": "[\"impurity contact\", \"violation inadvertent\", \"guilt surfacing\", \"conscience awakening\", \"awareness delayed\", \"ignorance real\"]"
+      },
+      "_reference": "Lev 5:2",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0005",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21424,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Unknowing contact with human uncleanness defiles a person; the guilt becomes real only when the person becomes aware, showing that defilement can precede conscious recognition.",
+        "keywords": "[\"impurity contact\", \"violation inadvertent\", \"guilt surfacing\", \"conscience awakening\", \"awareness delayed\", \"ignorance real\"]"
+      },
+      "_reference": "Lev 5:3",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0006",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66025,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Flesh touching an unclean thing becomes unfit for eating; the unclean state is transferred by contact and excludes from sacred participation, marking a boundary the clean person must guard.",
+        "keywords": "[\"impurity contact\", \"contamination transferred\", \"boundary sacred\", \"exclusion ritual\", \"purity guarded\"]"
+      },
+      "_reference": "Lev 7:19",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0007",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66026,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching any unclean thing and then eating sacred offerings combines two violations; the inner failure to maintain purity results in the severest communal consequence — being cut off.",
+        "keywords": "[\"impurity contact\", \"boundary violated\", \"sacred profaned\", \"exclusion communal\", \"violation compounded\"]"
+      },
+      "_reference": "Lev 7:21",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0008",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21549,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Priests are called to maintain an active inner discernment that distinguishes the unclean from the clean; the faculty required is moral-spiritual perception, not mere ritual habit.",
+        "keywords": "[\"discernment moral\", \"distinction maintained\", \"perception active\", \"boundary sacred\", \"will discriminating\"]"
+      },
+      "_reference": "Lev 10:10",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0009",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66031,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Certain animals are declared inherently unclean; even touching their carcasses transmits impurity, establishing a boundary the person must hold by restraining contact.",
+        "keywords": "[\"impurity inherent\", \"contamination contact\", \"boundary bodily\", \"will restraining\", \"purity guarded\"]"
+      },
+      "_reference": "Lev 11:8",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0010",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21425,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Contact with forbidden carcasses renders a person unclean until evening; the defilement is temporal and bodily, affecting ritual standing through a specific act of touching.",
+        "keywords": "[\"impurity contact\", \"contamination bodily\", \"violation inadvertent\", \"status ritual\", \"boundary bodily\"]"
+      },
+      "_reference": "Lev 11:24",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0011",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21426,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Carrying a forbidden carcass extends defilement to clothing; the impurity spreads through the body's actions and must be addressed by washing, signalling external purification.",
+        "keywords": "[\"impurity contact\", \"contamination spreading\", \"bodily action\", \"purification required\", \"status ritual\"]"
+      },
+      "_reference": "Lev 11:25",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0012",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21427,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching hoofed animals that lack full cloven feet or do not chew cud renders one unclean; the impurity is incurred by contact with what is categorically designated as defiling.",
+        "keywords": "[\"impurity contact\", \"contamination categorical\", \"boundary bodily\", \"violation inadvertent\", \"status ritual\"]"
+      },
+      "_reference": "Lev 11:26",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0013",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66032,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "These animals are declared unclean by category; their inherent impurity status makes them a standing threat to anyone who touches them, defining a class boundary for purity.",
+        "keywords": "[\"impurity inherent\", \"contamination categorical\", \"boundary sacred\", \"status ritual\", \"purity threatened\"]"
+      },
+      "_reference": "Lev 11:26",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0014",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21428,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Animals walking on paws transmit defilement by contact with their carcasses; the person incurs a temporary ritual uncleanness requiring time and washing to resolve.",
+        "keywords": "[\"impurity contact\", \"contamination bodily\", \"status ritual\", \"purification required\", \"boundary bodily\"]"
+      },
+      "_reference": "Lev 11:27",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0015",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66033,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Paw-walking animals are categorically unclean; their status imposes a purity boundary that the person must respect to avoid incurring the same ritual state.",
+        "keywords": "[\"impurity inherent\", \"contamination categorical\", \"boundary sacred\", \"status ritual\", \"will restraining\"]"
+      },
+      "_reference": "Lev 11:27",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0016",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21429,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Carrying the carcass of unclean animals defiles the person's clothes as well as the person; the defilement is resolved only by washing and waiting, requiring active purification response.",
+        "keywords": "[\"impurity contact\", \"contamination spreading\", \"purification required\", \"status ritual\", \"bodily action\"]"
+      },
+      "_reference": "Lev 11:28",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0017",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66034,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "These carcasses are declared unclean to the people; the declaration sets their inherent impurity status as the reason the person carrying them becomes defiled.",
+        "keywords": "[\"impurity inherent\", \"contamination categorical\", \"status ritual\", \"boundary sacred\", \"purity threatened\"]"
+      },
+      "_reference": "Lev 11:28",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0018",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21430,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching dead swarming creatures renders a person unclean until evening; the defilement is tied to death-contact and is temporary, requiring watchfulness over bodily actions.",
+        "keywords": "[\"impurity contact\", \"contamination death\", \"status ritual\", \"boundary bodily\", \"vigilance required\"]"
+      },
+      "_reference": "Lev 11:31",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0019",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66036,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Swarming creatures are declared unclean; their category status creates a field of impurity risk that anyone must avoid to preserve ritual standing.",
+        "keywords": "[\"impurity inherent\", \"contamination categorical\", \"status ritual\", \"boundary sacred\", \"purity threatened\"]"
+      },
+      "_reference": "Lev 11:31",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0020",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66006,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Objects onto which a dead swarming creature falls become unclean; the defilement transfers across material surfaces, demanding purification before those objects can be used.",
+        "keywords": "[\"impurity contact\", \"contamination spreading\", \"purity threatened\", \"purification required\", \"status ritual\"]"
+      },
+      "_reference": "Lev 11:32",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0021",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66007,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "An earthenware vessel whose interior is contaminated by a swarming creature becomes entirely unclean and must be broken; the defilement is irreversible in that material, demanding destruction.",
+        "keywords": "[\"impurity contact\", \"contamination irreversible\", \"purification destruction\", \"status ritual\", \"boundary material\"]"
+      },
+      "_reference": "Lev 11:33",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0022",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66008,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Food and drink that contact water from a defiled vessel become unclean; the impurity transmits through liquid, extending the contamination field to sustenance.",
+        "keywords": "[\"impurity contact\", \"contamination spreading\", \"purity threatened\", \"status ritual\", \"vigilance required\"]"
+      },
+      "_reference": "Lev 11:34",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0023",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66009,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Objects on which carcass parts fall are rendered persistently unclean and must be destroyed; the uncleanness is emphatic and irreversible for these items, requiring radical removal.",
+        "keywords": "[\"impurity contact\", \"contamination persistent\", \"purification destruction\", \"status ritual\", \"boundary material\"]"
+      },
+      "_reference": "Lev 11:35",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0024",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66037,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The ovens and stoves are declared unclean and must remain so until destroyed; their permanent unclean status demands removal rather than restoration, underscoring severity of defilement.",
+        "keywords": "[\"impurity inherent\", \"contamination persistent\", \"status ritual\", \"purification destruction\", \"severity defilement\"]"
+      },
+      "_reference": "Lev 11:35",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0025",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A spring or cistern of water remains clean despite contact with carcasses, but a person who touches that carcass within it becomes unclean; the distinction shows defilement is person-specific, not universal.",
+        "keywords": "[\"impurity contact\", \"contamination personal\", \"status ritual\", \"boundary personal\", \"discernment required\"]"
+      },
+      "_reference": "Lev 11:36",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0026",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66038,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Wet seed that a carcass touches becomes unclean; moisture serves as a conductor of impurity, placing responsibility on the person to guard what they allow contact with their provisions.",
+        "keywords": "[\"impurity contact\", \"contamination conditional\", \"status ritual\", \"vigilance required\", \"boundary material\"]"
+      },
+      "_reference": "Lev 11:38",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0027",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21431,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Even a permitted animal, when dead, defiles by touch; the death-state creates impurity regardless of the animal's clean category, requiring the person to remain alert to death-contact.",
+        "keywords": "[\"impurity contact\", \"contamination death\", \"status ritual\", \"vigilance required\", \"boundary bodily\"]"
+      },
+      "_reference": "Lev 11:39",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0028",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21432,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Eating or carrying a permitted animal's carcass defiles the person and their clothing; the defilement requires washing and waiting, linking bodily action to purity obligation.",
+        "keywords": "[\"impurity contact\", \"contamination bodily\", \"purification required\", \"status ritual\", \"bodily action\"]"
+      },
+      "_reference": "Lev 11:40",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0029",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21433,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Willful defilement through swarming things is addressed as a matter of volitional self-corruption; the person is urged to refuse it, making this a choice of the will concerning personal holiness.",
+        "keywords": "[\"defilement wilful\", \"will refusing\", \"self-corruption\", \"holiness protecting\", \"volition moral\"]"
+      },
+      "_reference": "Lev 11:43",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0030",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21418,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Divine holiness is the explicit ground for refusing self-defilement; the person's will to abstain from defiling contact is tied to imitating the holy character of God.",
+        "keywords": "[\"defilement wilful\", \"will refusing\", \"holiness imitating\", \"divine character\", \"self-corruption refused\"]"
+      },
+      "_reference": "Lev 11:44",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0031",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21550,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The purpose of all purity laws is framed as cultivating active moral discernment — distinguishing clean from unclean is a perceptual and volitional discipline central to covenant life.",
+        "keywords": "[\"discernment moral\", \"distinction maintained\", \"perception active\", \"will discriminating\", \"boundary sacred\"]"
+      },
+      "_reference": "Lev 11:47",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0032",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21434,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Childbirth renders a woman unclean for seven days, analogous to menstrual impurity; the defilement is physiological in origin, not moral fault, producing a temporary ritual status.",
+        "keywords": "[\"impurity physiological\", \"status ritual\", \"contamination bodily\", \"uncleanness temporal\", \"purity cycle\"]"
+      },
+      "_reference": "Lev 12:2",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0033",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21685,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The post-birth state is likened to the niddah condition of menstruation; the bodily discharge defines a periodic impurity cycle tied to the body's reproductive processes.",
+        "keywords": "[\"impurity physiological\", \"discharge bodily\", \"purity cycle\", \"status ritual\", \"uncleanness periodic\"]"
+      },
+      "_reference": "Lev 12:2",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0034",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21435,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A female birth extends the unclean period to two weeks; the duration is doubled, calibrated to bodily process, not moral failure, sustaining the physiological impurity framework.",
+        "keywords": "[\"impurity physiological\", \"status ritual\", \"uncleanness temporal\", \"purity cycle\", \"duration extended\"]"
+      },
+      "_reference": "Lev 12:5",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0035",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21686,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The double-length post-birth impurity is framed in terms of the niddah standard for menstruation; the bodily discharge paradigm governs the categorization of this longer impure period.",
+        "keywords": "[\"impurity physiological\", \"discharge bodily\", \"purity cycle\", \"uncleanness periodic\", \"duration extended\"]"
+      },
+      "_reference": "Lev 12:5",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0036",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21436,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A priestly examination of skin disease results in a pronouncement of uncleanness; the defilement is assessed externally by authority, with the person's bodily state determining ritual standing.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"authority ritual\", \"examination diagnostic\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:3",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0037",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21437,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A spreading skin eruption prompts a priestly verdict of uncleanness; the progressive worsening of a bodily condition escalates the ritual impurity status.",
+        "keywords": "[\"impurity bodily\", \"contamination spreading\", \"status pronounced\", \"authority ritual\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:8",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0038",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21438,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Chronic skin disease results in an immediate unclean verdict without confinement; the persistent, established nature of the disease makes the person's unclean state open and undeniable.",
+        "keywords": "[\"impurity bodily\", \"contamination chronic\", \"status pronounced\", \"exclusion ritual\", \"condition persistent\"]"
+      },
+      "_reference": "Lev 13:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0039",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21551,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The person with chronic skin disease is declared unclean as a settled fact; the unclean status is both a moral-ritual verdict and a social reality that removes him from community.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"exclusion communal\", \"condition persistent\", \"identity ritual\"]"
+      },
+      "_reference": "Lev 13:11",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0040",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21439,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The appearance of raw flesh immediately triggers an unclean verdict; visible bodily deterioration is the direct indicator of an impurity that requires no further discernment.",
+        "keywords": "[\"impurity bodily\", \"status immediate\", \"condition visible\", \"authority ritual\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:14",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0041",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21440,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Raw flesh is inherently unclean and the priest's examination confirms this; the state of the body's surface directly determines ritual standing with no ambiguity.",
+        "keywords": "[\"impurity bodily\", \"contamination inherent\", \"status pronounced\", \"authority ritual\", \"condition visible\"]"
+      },
+      "_reference": "Lev 13:15",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0042",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66039,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Raw flesh is declared unclean as a category; the inherent impurity of exposed diseased flesh defines the ground for the priest's ruling and the person's exclusion.",
+        "keywords": "[\"impurity inherent\", \"contamination categorical\", \"status pronounced\", \"condition visible\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:15",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0043",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21441,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A skin condition in a boil site that meets diagnostic criteria receives an unclean verdict; bodily location and observable symptoms together determine the impurity pronouncement.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"authority ritual\", \"examination diagnostic\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:20",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0044",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21442,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Spreading of a suspicious skin mark leads to a priestly verdict of uncleanness; progressive worsening of a bodily condition confirms and necessitates the impurity declaration.",
+        "keywords": "[\"impurity bodily\", \"contamination spreading\", \"status pronounced\", \"authority ritual\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:22",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0045",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21443,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A burn site showing signs of leprosy results in an unclean verdict; the bodily wound site becomes a locus of impurity assessment, confirming the disease and the person's ritual standing.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"authority ritual\", \"examination diagnostic\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:25",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0046",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21444,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A spreading suspicious spot examined on the seventh day receives an unclean verdict; the temporal re-examination confirms that progressive spread is the decisive indicator of impurity.",
+        "keywords": "[\"impurity bodily\", \"contamination spreading\", \"status pronounced\", \"authority ritual\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:27",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0047",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21445,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A scalp or beard itch with yellow thin hair is declared unclean by the priest; the precise bodily markers on the head or face determine an impurity verdict affecting community standing.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"authority ritual\", \"examination diagnostic\", \"exclusion communal\"]"
+      },
+      "_reference": "Lev 13:30",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0048",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66040,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A spreading itch alone is sufficient to declare a person unclean without waiting for yellow hair; the advanced spread of the condition confirms the unclean status as self-evident.",
+        "keywords": "[\"impurity bodily\", \"contamination spreading\", \"status self-evident\", \"authority ritual\", \"exclusion ritual\"]"
+      },
+      "_reference": "Lev 13:36",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0049",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21446,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man with leprous disease on his head is declared unclean; the priest's pronouncement is both a confirmation and a public verdict that establishes the person's excluded identity.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"exclusion communal\", \"identity ritual\", \"authority ritual\"]"
+      },
+      "_reference": "Lev 13:44",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0050",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21552,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The leprous man's unclean state is declared emphatically, with the disease located on his head; the verdict is total and public, shaping his identity as one excluded from clean community.",
+        "keywords": "[\"impurity bodily\", \"status pronounced\", \"exclusion communal\", \"identity ritual\", \"condition persistent\"]"
+      },
+      "_reference": "Lev 13:44",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0051",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21553,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The person bearing disease must publicly declare their own unclean state — the inner reality of contamination is verbalized outward through ritual cry, marking a condition that isolates the self from the community.",
+        "keywords": "[\"self declaration\", \"contamination named\", \"isolation imposed\", \"identity marked\", \"status announced\"]"
+      },
+      "_reference": "Lev 13:45",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0052",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21447,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The disease renders the person persistently unclean for its entire duration, requiring physical separation from community — uncleanness here is a sustained state that defines social and relational exclusion.",
+        "keywords": "[\"sustained uncleanness\", \"exclusion enforced\", \"separation bodily\", \"duration persistent\", \"community severed\"]"
+      },
+      "_reference": "Lev 13:46",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0053",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21554,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "While the disease persists the person is declared unclean and must dwell apart — the unclean state is ongoing, tied to visible bodily condition, and produces enforced relational isolation.",
+        "keywords": "[\"status ongoing\", \"bodily condition\", \"isolation enforced\", \"exclusion social\", \"duration unclean\"]"
+      },
+      "_reference": "Lev 13:46",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0054",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66041,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A spreading disease in fabric after seven days is declared a persistent leprous defilement — the unclean verdict here attaches to the object's progressive corruption rather than to a person's inner state.",
+        "keywords": "[\"contamination spreading\", \"verdict declared\", \"object defiled\", \"persistence assessed\", \"examination ritual\"]"
+      },
+      "_reference": "Lev 13:51",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0055",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66042,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "An unwashed-looking diseased patch that has not spread still remains unclean and must be burned — the unclean verdict persists even without visible growth, indicating that unchanged corruption is still corruption.",
+        "keywords": "[\"corruption persistent\", \"verdict sustained\", \"appearance assessed\", \"destruction required\", \"impurity unchanged\"]"
+      },
+      "_reference": "Lev 13:55",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0056",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66011,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "This verse summarizes the law for diagnosing leprous disease in fabric — the clean/unclean determination is a juridical outcome of priestly examination, with no direct inner-being content evidenced.",
+        "keywords": "[\"status determined\", \"examination priestly\", \"verdict clean unclean\", \"law summarized\", \"diagnosis ritual\"]"
+      },
+      "_reference": "Lev 13:59",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0057",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66012,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Objects in a diseased house are emptied before priestly inspection to prevent them being declared unclean — the concern is contamination spreading by association before an official verdict, with no direct inner-being content.",
+        "keywords": "[\"contamination spread\", \"verdict preempted\", \"inspection priestly\", \"association impurity\", \"precaution taken\"]"
+      },
+      "_reference": "Lev 14:36",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0058",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66043,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Diseased stones from a house are removed and thrown to an unclean place outside the city — defilement transfers from object to location, quarantining contagion away from inhabited space.",
+        "keywords": "[\"defilement transferred\", \"contagion removed\", \"location contaminated\", \"quarantine spatial\", \"object disposal\"]"
+      },
+      "_reference": "Lev 14:40",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0059",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66044,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Scraped plaster from a diseased house is deposited in an unclean place outside the city — the unclean designation marks a receptacle zone for removed contamination, extending impurity spatially.",
+        "keywords": "[\"contamination deposited\", \"spatial impurity\", \"removal ritual\", \"place designated unclean\", \"defilement contained\"]"
+      },
+      "_reference": "Lev 14:41",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0060",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66045,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A house where disease has spread after repairs is declared persistently unclean — the verdict names the structure itself as the bearer of irreversible defilement requiring demolition.",
+        "keywords": "[\"defilement persistent\", \"spread assessed\", \"structure condemned\", \"verdict irreversible\", \"contamination confirmed\"]"
+      },
+      "_reference": "Lev 14:44",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0061",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66046,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The condemned house and all its materials are carried to an unclean place outside the city — the unclean designation governs the disposal site for what cannot be purified, spatially containing defilement.",
+        "keywords": "[\"defilement spatial\", \"disposal site\", \"contamination contained\", \"structure demolished\", \"removal mandated\"]"
+      },
+      "_reference": "Lev 14:45",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0062",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21448,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anyone who enters a shut-up diseased house becomes unclean until evening — the defilement transfers to the person by mere entry, showing contamination spreads through proximity and contact.",
+        "keywords": "[\"contact defilement\", \"proximity contamination\", \"transfer impurity\", \"person affected\", \"duration temporary\"]"
+      },
+      "_reference": "Lev 14:46",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0063",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66047,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "This verse closes the law on leprous disease by naming its purpose: to instruct when something is unclean versus clean — the unclean category is a legal/ritual determination governing discernment.",
+        "keywords": "[\"discernment clean unclean\", \"law purposive\", \"verdict ritual\", \"determination priestly\", \"status taught\"]"
+      },
+      "_reference": "Lev 14:57",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0064",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21555,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A bodily discharge from a man renders him unclean — the source of uncleanness is a physical emission from the body itself, making the body the locus of the defiled state.",
+        "keywords": "[\"body source\", \"emission unclean\", \"bodily defilement\", \"status conferred\", \"physical locus\"]"
+      },
+      "_reference": "Lev 15:2",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0065",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66013,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Any surface the person with a discharge lies or sits on becomes unclean — defilement transmits from body to object through sustained physical contact, making contamination radiative.",
+        "keywords": "[\"contact transmission\", \"object contaminated\", \"surface defilement\", \"radiative impurity\", \"body transmitting\"]"
+      },
+      "_reference": "Lev 15:4",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0066",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21449,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching the bed of one with a discharge transmits uncleanness requiring washing — secondary contact defiles, and the unclean state persists until evening after ritual cleansing.",
+        "keywords": "[\"secondary contact\", \"defilement transmitted\", \"cleansing required\", \"duration temporary\", \"touch impurity\"]"
+      },
+      "_reference": "Lev 15:5",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0067",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21450,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sitting on any surface used by one with a discharge defiles — contamination spreads through indirect bodily contact with objects, requiring washing and carrying a time-limited unclean state.",
+        "keywords": "[\"indirect contact\", \"surface contaminated\", \"defilement received\", \"washing ritual\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:6",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0068",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21451,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Direct physical touch of the body of one with a discharge transfers uncleanness — the body itself is the agent of defilement, and contact makes the other person ritually unclean until evening.",
+        "keywords": "[\"body contact\", \"defilement transferred\", \"person contaminated\", \"touch transmitting\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0069",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21452,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Even spitting on a clean person by one with a discharge defiles — the contaminating medium here is saliva, extending defilement beyond touch to any bodily fluid contact.",
+        "keywords": "[\"fluid contact\", \"defilement extended\", \"saliva impurity\", \"body fluid transmitting\", \"cleansing required\"]"
+      },
+      "_reference": "Lev 15:8",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0070",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66014,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Any saddle ridden by the person with a discharge becomes unclean — defilement extends to objects used by the body in motion, showing contamination is not limited to direct skin contact.",
+        "keywords": "[\"object contaminated\", \"use defiles\", \"body impurity radiating\", \"saddle unclean\", \"contact indirect\"]"
+      },
+      "_reference": "Lev 15:9",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0071",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21453,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching anything beneath the person with a discharge, or carrying such items, transmits uncleanness — defilement spreads through both contact and transport, making the carrier an agent of impurity.",
+        "keywords": "[\"touch transmitting\", \"carrying defiles\", \"defilement spread\", \"agent impurity\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:10",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0072",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21454,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "If the person with a discharge touches someone without first washing hands, that person becomes unclean — the unwashed hand is the vector; ritual washing could have prevented the transfer.",
+        "keywords": "[\"hand unwashed\", \"defilement vector\", \"prevention failed\", \"contact transmitting\", \"cleansing preventive\"]"
+      },
+      "_reference": "Lev 15:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0073",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21455,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man's seminal emission renders him unclean until evening after bathing — the body's own natural emission creates a temporary defiled state requiring ritual cleansing before restoration.",
+        "keywords": "[\"emission bodily\", \"defilement temporary\", \"cleansing required\", \"body self contaminating\", \"restoration ritual\"]"
+      },
+      "_reference": "Lev 15:16",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0074",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66015,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Garments or skin touched by semen are unclean until evening after washing — the defiling quality of the emission extends to objects it contacts, requiring their ritual washing.",
+        "keywords": "[\"material contaminated\", \"emission contact\", \"object defilement\", \"washing required\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:17",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0075",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21456,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sexual intercourse resulting in emission makes both partners unclean until evening — intimate bodily union shares the defiled state, requiring mutual ritual washing before restoration.",
+        "keywords": "[\"shared defilement\", \"union bodily\", \"mutual impurity\", \"intimacy defiles\", \"cleansing mutual\"]"
+      },
+      "_reference": "Lev 15:18",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0076",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21457,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A menstruating woman is unclean for seven days, and whoever touches her receives the same unclean status — the defilement is body-sourced and transferable through contact, lasting until evening.",
+        "keywords": "[\"body sourced\", \"menstrual defilement\", \"touch transmitting\", \"duration seven days\", \"contact impurity\"]"
+      },
+      "_reference": "Lev 15:19",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0077",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21683,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The woman's menstrual blood discharge places her in a state of impurity — the niddah condition is defined by bodily blood flow, marking a ritual separateness tied to the body's cyclic state.",
+        "keywords": "[\"menstrual impurity\", \"blood discharge\", \"bodily cycle\", \"ritual separateness\", \"niddah state\"]"
+      },
+      "_reference": "Lev 15:19",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0078",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66016,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Everything a menstruating woman lies or sits on during her impurity becomes unclean — the niddah state radiates outward to all surfaces she occupies, extending contamination through use.",
+        "keywords": "[\"menstrual impurity\", \"surface contaminated\", \"impurity radiating\", \"use defiles\", \"niddah extending\"]"
+      },
+      "_reference": "Lev 15:20",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0079",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21687,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The niddah (menstrual impurity) period governs what becomes unclean through her lying or sitting — the impurity is a time-bound bodily state whose contaminating reach covers all surfaces she contacts.",
+        "keywords": "[\"niddah period\", \"bodily impurity\", \"time bound\", \"contamination reach\", \"surface defilement\"]"
+      },
+      "_reference": "Lev 15:20",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0080",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21458,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching her bed during menstrual impurity transmits uncleanness — secondary contact with an object she has used defiles, requiring washing and carrying a temporary unclean state.",
+        "keywords": "[\"secondary touch\", \"defilement transmitted\", \"bed contaminated\", \"washing required\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:21",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0081",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21459,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Touching anything she has sat on while unclean transmits defilement — the impurity travels from person to object to person, requiring ritual washing and carrying a time-limited unclean status.",
+        "keywords": "[\"object transmission\", \"touch defiles\", \"impurity chain\", \"cleansing required\", \"duration temporary\"]"
+      },
+      "_reference": "Lev 15:22",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0082",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66017,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Whether bed or seat, touching any surface she used during impurity defiles until evening — the contamination is consistent across all objects associated with her during the niddah period.",
+        "keywords": "[\"surface defilement\", \"consistent contamination\", \"niddah associated\", \"touch impurity\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:23",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0083",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21460,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man who has intercourse with a menstruating woman takes on her unclean state for seven full days — intimate union transfers the full weight of her niddah condition to him.",
+        "keywords": "[\"niddah transferred\", \"intimate union\", \"defilement received\", \"duration seven days\", \"full contamination\"]"
+      },
+      "_reference": "Lev 15:24",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0084",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21688,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The menstrual impurity (niddah) passes to the man who lies with her, making him unclean seven days — the niddah condition is transmissible through sexual contact, not merely proximity.",
+        "keywords": "[\"niddah transmissible\", \"sexual contact\", \"impurity received\", \"duration seven days\", \"condition transferred\"]"
+      },
+      "_reference": "Lev 15:24",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0085",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21556,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A woman with an abnormal prolonged blood discharge beyond her normal period is unclean for the entire duration — her unclean state is continuous and governed by the ongoing bodily condition, like her normal niddah.",
+        "keywords": "[\"discharge prolonged\", \"uncleanness continuous\", \"duration governed\", \"bodily condition ongoing\", \"niddah extended\"]"
+      },
+      "_reference": "Lev 15:25",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0086",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21689,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The niddah (impurity) category applies to abnormal discharge that extends beyond the regular menstrual time — the concept stretches to cover any period of blood-sourced bodily impurity, not just monthly cycles.",
+        "keywords": "[\"niddah extended\", \"abnormal discharge\", \"impurity category\", \"blood sourced\", \"condition prolonged\"]"
+      },
+      "_reference": "Lev 15:25",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0087",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66048,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Every surface the woman uses during her extended discharge is unclean as during regular menstrual impurity — the contaminating reach of the prolonged discharge mirrors that of the standard niddah state.",
+        "keywords": "[\"surface unclean\", \"discharge extended\", \"niddah mirrored\", \"contamination reaching\", \"impurity consistent\"]"
+      },
+      "_reference": "Lev 15:26",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0088",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21690,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The bed she uses during her extended discharge is treated as her impurity (niddah) bed — the niddah framework governs all bodily-discharge impurity, unifying the category under a single ritual principle.",
+        "keywords": "[\"niddah framework\", \"bed impurity\", \"discharge governed\", \"ritual category\", \"impurity unified\"]"
+      },
+      "_reference": "Lev 15:26",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0089",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21461,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anyone who touches objects used by a woman with extended discharge becomes unclean — the contamination continues to radiate outward to those who contact her objects, requiring washing.",
+        "keywords": "[\"contact defilement\", \"radiating impurity\", \"object transmission\", \"washing required\", \"duration evening\"]"
+      },
+      "_reference": "Lev 15:27",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0090",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21462,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Keeping people separate from their uncleanness prevents death — here defilement is existentially dangerous because it threatens to contaminate the divine dwelling; uncleanliness risks destroying the sacred relationship.",
+        "keywords": "[\"defilement fatal\", \"sacred threatened\", \"separation protective\", \"tabernacle endangered\", \"uncleanness relational cost\"]"
+      },
+      "_reference": "Lev 15:31",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0091",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21463,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "This verse summarizes the law for those rendered unclean by discharge or semen emission — the defiled state is a legal category arising from bodily emissions, closing the code's section on bodily impurity.",
+        "keywords": "[\"law summary\", \"bodily emission\", \"defilement legal\", \"category bodily\", \"status conferred\"]"
+      },
+      "_reference": "Lev 15:32",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0092",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21557,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean category covers the menstruating woman, anyone with a discharge, and the man who lies with an unclean woman — the term gathers all bodily-fluid-related impurity under one legal heading.",
+        "keywords": "[\"impurity category\", \"bodily fluid\", \"woman unclean\", \"man receiving\", \"law comprehensive\"]"
+      },
+      "_reference": "Lev 15:33",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0093",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21691,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Menstrual impurity (niddah) here designates the condition of the unwell woman and governs the broader law — the niddah state is the paradigm case that organizes the entire impurity code for bodily discharge.",
+        "keywords": "[\"niddah paradigm\", \"menstrual condition\", \"law organizing\", \"impurity paradigmatic\", \"bodily unwell\"]"
+      },
+      "_reference": "Lev 15:33",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0094",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21464,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Eating an animal that died naturally or was killed by a predator makes one unclean — defilement enters through ingestion of prohibited food, requiring washing and carrying a time-limited unclean state.",
+        "keywords": "[\"ingestion defiles\", \"food prohibited\", \"defilement received\", \"washing required\", \"duration evening\"]"
+      },
+      "_reference": "Lev 17:15",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0095",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21692,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sexual approach to a menstruating woman is forbidden — the niddah state marks her as ritually set apart, and violation of that boundary constitutes a moral transgression, not merely ritual oversight.",
+        "keywords": "[\"niddah boundary\", \"approach forbidden\", \"moral transgression\", \"sexual violation\", \"boundary set apart\"]"
+      },
+      "_reference": "Lev 18:19",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0096",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21465,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Lying with a neighbor's wife makes oneself unclean — adultery here is named as a self-defiling act; the defilement is morally self-inflicted through a wilful sexual violation of another's covenant bond.",
+        "keywords": "[\"adultery defiles\", \"self inflicted\", \"will choosing\", \"moral defilement\", \"covenant violated\"]"
+      },
+      "_reference": "Lev 18:20",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0097",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21466,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sexual union with an animal is named as self-defilement and perversion — the act corrupts the person inwardly by violating the created order; the defilement is both moral and ontological.",
+        "keywords": "[\"perversion defiles\", \"self corruption\", \"created order violated\", \"moral defilement\", \"will transgressing\"]"
+      },
+      "_reference": "Lev 18:23",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0098",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21467,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The Israelites are commanded not to defile themselves by any of the listed sexual practices — this verse frames all the preceding prohibitions as self-defilement, warning that entire peoples have been corrupted by them.",
+        "keywords": "[\"self defilement\", \"will warned\", \"corporate corruption\", \"sexual practices\", \"defilement cumulative\"]"
+      },
+      "_reference": "Lev 18:24",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0099",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21693,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Taking a brother's wife is named as impurity (niddah) — the term here shifts from bodily discharge to moral-relational violation; the marital transgression is categorized as a defilement of the family bond.",
+        "keywords": "[\"niddah moral\", \"relational violation\", \"family bond defiled\", \"transgression categorized\", \"impurity ethical\"]"
+      },
+      "_reference": "Lev 20:21",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0100",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21558,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Israel is commanded to maintain the distinction between clean and unclean animals — the unclean category here functions as a moral-identity boundary; blurring it by eating unclean creatures renders the person detestable.",
+        "keywords": "[\"distinction maintained\", \"identity boundary\", \"unclean animals\", \"defilement by eating\", \"will choosing clean\"]"
+      },
+      "_reference": "Lev 20:25",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0101",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21559,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A state of ritual uncleanness (from disease, discharge, corpse contact, or semen emission) bars a priest's son from eating holy things until cleansing occurs, treating uncleanness as a condition incompatible with sacred access.",
+        "keywords": "[\"exclusion sacred\", \"body state\", \"purity barrier\", \"contact transmitted\", \"cleansing required\"]"
+      },
+      "_reference": "Lev 22:4",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0102",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21560,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Uncleanness contracted through corpse contact, discharge, or skin disease disqualifies a person from remaining within the community camp, marking uncleanness as a social and sacred boundary condition.",
+        "keywords": "[\"exclusion communal\", \"contact transmitted\", \"boundary sacred\", \"separation enforced\", \"body state\"]"
+      },
+      "_reference": "Num 5:2",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0103",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21468,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defiling persons are removed from the camp precisely because God dwells there, directly linking defilement to incompatibility with divine presence in the inner community space.",
+        "keywords": "[\"presence divine\", \"incompatibility sacred\", \"exclusion enforced\", \"community integrity\", \"dwelling threatened\"]"
+      },
+      "_reference": "Num 5:3",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0104",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21469,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A woman who has secretly committed adultery has defiled herself even without witnesses; the defilement is a moral-relational reality independent of human detection, residing in the act itself.",
+        "keywords": "[\"self defilement\", \"concealment\", \"moral reality\", \"act hidden\", \"conscience concealed\"]"
+      },
+      "_reference": "Num 5:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0105",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21470,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Jealousy aroused in a husband may correspond to actual defilement by his wife or may not; the verse distinguishes the subjective passion of jealousy from the objective fact of defilement.",
+        "keywords": "[\"jealousy aroused\", \"defilement objective\", \"suspicion internal\", \"passion driving\", \"moral fact\"]"
+      },
+      "_reference": "Num 5:14",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0106",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21471,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Going astray from under a husband's authority and lying with another man constitutes self-defilement through betrayal of a covenantal bond, framing defilement as volitional moral defection.",
+        "keywords": "[\"will defecting\", \"covenant betrayed\", \"self corruption\", \"authority violated\", \"volition moral\"]"
+      },
+      "_reference": "Num 5:20",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0107",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21472,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "If the woman truly defiled herself through broken faith, the ordeal water produces physical judgment, showing defilement as a moral-covenantal breach that carries objective consequences in the body.",
+        "keywords": "[\"faith broken\", \"defilement exposed\", \"judgment bodily\", \"covenant violated\", \"consequence objective\"]"
+      },
+      "_reference": "Num 5:27",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0108",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21473,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "If the woman has not defiled herself, she is acquitted and blessed with children, positioning the absence of defilement as moral integrity that results in life and freedom.",
+        "keywords": "[\"innocence moral\", \"integrity vindicated\", \"defilement absent\", \"freedom restored\", \"life blessing\"]"
+      },
+      "_reference": "Num 5:28",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0109",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21474,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "This law governs the case where a wife under authority goes astray and defiles herself, encoding defilement as the inner moral consequence of sexual transgression within a covenantal relationship.",
+        "keywords": "[\"transgression sexual\", \"authority defied\", \"self defilement\", \"covenant inner\", \"straying volitional\"]"
+      },
+      "_reference": "Num 5:29",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0110",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21475,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A Nazirite must not defile himself even for the death of a close family member because his consecration to God overrides natural kinship bonds, placing the will's commitment above emotional impulse.",
+        "keywords": "[\"consecration priority\", \"will committed\", \"kinship bond\", \"loyalty divine\", \"self restraint\"]"
+      },
+      "_reference": "Num 6:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0111",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21476,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sudden accidental proximity to a corpse defiles the Nazirite's consecrated head even without intention, showing that defilement can invade consecration involuntarily, requiring renewed cleansing and rededication.",
+        "keywords": "[\"defilement involuntary\", \"consecration disrupted\", \"accidental contact\", \"cleansing renewed\", \"head consecrated\"]"
+      },
+      "_reference": "Num 6:9",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0112",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21477,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Because the Nazirite's prior period of separation was defiled, it is counted void and must be restarted with a guilt offering, showing that defilement nullifies consecrated inner dedication retroactively.",
+        "keywords": "[\"dedication voided\", \"defilement nullifying\", \"guilt offering\", \"separation broken\", \"consecration lost\"]"
+      },
+      "_reference": "Num 6:12",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0113",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21561,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Men rendered unclean by corpse contact cannot keep the Passover on the appointed day, showing uncleanness as a state that bars participation in communal worship, not a moral failing but a disqualifying condition.",
+        "keywords": "[\"worship excluded\", \"body state\", \"contact transmitted\", \"participation barred\", \"ritual disqualification\"]"
+      },
+      "_reference": "Num 9:6",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0114",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21546,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The men self-identify as unclean through corpse contact and express grief at being excluded from the Lord's offering, showing a desire for worship thwarted by an involuntary impure state.",
+        "keywords": "[\"exclusion grieved\", \"worship desired\", \"body state\", \"involuntary condition\", \"communal longing\"]"
+      },
+      "_reference": "Num 9:7",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0115",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21562,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Provision is made for those unclean through corpse contact or distant travel to still keep Passover at a secondary time, showing accommodation for uncleanness as an involuntary barrier rather than a punishable offense.",
+        "keywords": "[\"accommodation gracious\", \"barrier involuntary\", \"worship deferred\", \"body state\", \"provision alternative\"]"
+      },
+      "_reference": "Num 9:10",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0116",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21478,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Even the priest who performs the purification rite becomes temporarily unclean until evening, showing defilement as a transmissible state that attaches even to those performing holy service.",
+        "keywords": "[\"defilement transmitted\", \"holy service\", \"temporary state\", \"cleansing required\", \"contact contagion\"]"
+      },
+      "_reference": "Num 19:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0117",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21479,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The one who burns the purification heifer also becomes unclean until evening through the burning itself, underscoring that even purification-related actions transmit a temporary unclean state.",
+        "keywords": "[\"defilement transmitted\", \"purification paradox\", \"temporary state\", \"contact contagion\", \"body affected\"]"
+      },
+      "_reference": "Num 19:8",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0118",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21694,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The ashes of the sin-offering heifer are preserved as a resource specifically designated for cleansing impurity, establishing that impurity is a persistent community-wide problem requiring a standing remedy.",
+        "keywords": "[\"impurity persistent\", \"cleansing resource\", \"community provision\", \"sin offering\", \"remedy standing\"]"
+      },
+      "_reference": "Num 19:9",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0119",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21480,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The ash-gatherer also becomes unclean until evening, and this statute applies perpetually to Israelites and sojourners alike, establishing uncleanness as a universal condition requiring ongoing attention.",
+        "keywords": "[\"contact transmitted\", \"universal statute\", \"temporary state\", \"perpetual observance\", \"body affected\"]"
+      },
+      "_reference": "Num 19:10",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0120",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21481,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Any contact with a human corpse renders a person unclean for seven days, establishing death-contact as the primary source of a substantial, time-bound impure state.",
+        "keywords": "[\"death contact\", \"duration seven\", \"body state\", \"defilement source\", \"corpse transmitted\"]"
+      },
+      "_reference": "Num 19:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0121",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21482,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Failure to cleanse after corpse contact not only leaves uncleanness on the person but extends it to defile the tabernacle, making willful non-cleansing an act of communal and sacred corruption deserving excision.",
+        "keywords": "[\"cleansing refused\", \"sanctuary defiled\", \"will neglecting\", \"excision deserved\", \"defilement extending\"]"
+      },
+      "_reference": "Num 19:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0122",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21563,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The person who neglects purification remains in a persistent unclean state—'his uncleanness is still on him'—showing uncleanness as a clinging, unresolved condition when the appointed remedy is bypassed.",
+        "keywords": "[\"uncleanness clinging\", \"remedy bypassed\", \"persistence\", \"will neglecting\", \"state unresolved\"]"
+      },
+      "_reference": "Num 19:13",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0123",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21695,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The water for impurity was the appointed remedy; not having it applied leaves the person's impurity intact, treating impurity as an objective condition that only the designated cleansing can remove.",
+        "keywords": "[\"impurity objective\", \"remedy withheld\", \"cleansing appointed\", \"condition persistent\", \"purity blocked\"]"
+      },
+      "_reference": "Num 19:13",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0124",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21483,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anyone sharing a tent with a corpse becomes unclean for seven days, showing that spatial proximity to death transmits defilement even without direct physical contact.",
+        "keywords": "[\"proximity defilement\", \"death transmitted\", \"space shared\", \"duration seven\", \"contact indirect\"]"
+      },
+      "_reference": "Num 19:14",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0125",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66052,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Any open, uncovered vessel in a tent with a corpse is unclean, extending the principle of impurity to inanimate objects that are vulnerable through lack of covering.",
+        "keywords": "[\"object unclean\", \"vulnerability uncovered\", \"defilement extending\", \"inanimate affected\", \"protection absent\"]"
+      },
+      "_reference": "Num 19:15",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0126",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21484,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Open-field contact with a violent death, natural death, human bones, or a grave all produce the same seven-day uncleanness, showing that any encounter with death's remains defiles equally.",
+        "keywords": "[\"death contact\", \"defilement equal\", \"duration seven\", \"remains defiling\", \"field exposure\"]"
+      },
+      "_reference": "Num 19:16",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0127",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66053,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The purification water is specifically designated for those in an unclean state, confirming uncleanness as the condition that the cleansing rite addresses.",
+        "keywords": "[\"unclean recipient\", \"purification targeted\", \"cleansing rite\", \"state addressed\", \"remedy applied\"]"
+      },
+      "_reference": "Num 19:17",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0128",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21564,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean person receives a double sprinkling on specific days and then washes, showing the process by which an unclean state is progressively resolved through prescribed ritual acts.",
+        "keywords": "[\"unclean resolved\", \"cleansing progressive\", \"ritual prescribed\", \"state transitioning\", \"body cleansed\"]"
+      },
+      "_reference": "Num 19:19",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0129",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21485,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Willful refusal to cleanse oneself after defilement results in being cut off from the assembly because the unclean person has actively defiled the sanctuary, making the will's refusal the decisive moral fault.",
+        "keywords": "[\"will refusing\", \"cleansing rejected\", \"sanctuary defiled\", \"excision consequence\", \"defection wilful\"]"
+      },
+      "_reference": "Num 19:20",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0130",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21565,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The man who is unclean and chooses not to cleanse himself remains unclean and is cut off; the persistence of the unclean state here flows from a deliberate will to remain in it.",
+        "keywords": "[\"uncleanness chosen\", \"will defiant\", \"persistence wilful\", \"exclusion communal\", \"state self-maintained\"]"
+      },
+      "_reference": "Num 19:20",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0131",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21696,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The water for impurity that was not applied is the reason the person's defilement remains and the sanctuary suffers; impurity here is an objective pollution that the ordained remedy alone can neutralize.",
+        "keywords": "[\"impurity persistent\", \"remedy omitted\", \"sanctuary polluted\", \"objective condition\", \"cleansing absent\"]"
+      },
+      "_reference": "Num 19:20",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0132",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66018,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Even those who sprinkle or touch the impurity water become unclean until evening, so the very medium used to remove defilement imparts a lesser temporary defilement to its handlers.",
+        "keywords": "[\"defilement transmitted\", \"purification paradox\", \"contact contagion\", \"temporary state\", \"handler affected\"]"
+      },
+      "_reference": "Num 19:21",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0133",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The impurity water is both the cure for deep uncleanness and a source of minor temporary uncleanness for those who handle it, revealing impurity's power to transmit itself even through cleansing agents.",
+        "keywords": "[\"impurity transmitting\", \"cleansing agent\", \"paradox ritual\", \"contact contagion\", \"purity tension\"]"
+      },
+      "_reference": "Num 19:21",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0134",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66019,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Whatever an unclean person touches becomes unclean, and whoever touches that object also becomes unclean, showing defilement as a cascading, transferable state that spreads through contact chains.",
+        "keywords": "[\"defilement cascading\", \"contact chain\", \"transmission extending\", \"state spreading\", \"touch transferring\"]"
+      },
+      "_reference": "Num 19:22",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0135",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66054,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean person's touch renders objects and subsequent persons unclean until evening, making uncleanness a contagious state that propagates outward from one source through secondary contact.",
+        "keywords": "[\"uncleanness contagious\", \"secondary contact\", \"propagation outward\", \"state spreading\", \"touch transmitting\"]"
+      },
+      "_reference": "Num 19:22",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0136",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21698,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Captured goods must be purified by water for impurity in addition to fire, establishing that impurity requires its own specific purging agent beyond mere physical cleansing.",
+        "keywords": "[\"impurity requiring\", \"purification specific\", \"object cleansed\", \"remedy appointed\", \"defilement material\"]"
+      },
+      "_reference": "Num 31:23",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0137",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21486,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The land must not be defiled because God dwells among the people in it; defilement here is a moral-sacral pollution of shared space that violates divine habitation.",
+        "keywords": "[\"land defiled\", \"presence divine\", \"moral pollution\", \"communal space\", \"sacred habitation\"]"
+      },
+      "_reference": "Num 35:34",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0138",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66055,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "In the context of non-sanctuary slaughter for ordinary eating, both ritually unclean and clean persons may eat alike, showing that uncleanness here does not affect access to non-sacred food.",
+        "keywords": "[\"unclean permitted\", \"sacred distinction\", \"access non-sacred\", \"restriction lifted\", \"ritual boundary\"]"
+      },
+      "_reference": "Deu 12:15",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0139",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66056,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Game animals eaten as ordinary food may be consumed by unclean and clean persons alike, indicating that uncleanness only restricts sacred eating, not common eating.",
+        "keywords": "[\"unclean permitted\", \"common eating\", \"sacred restricted\", \"boundary ritual\", \"distinction lifted\"]"
+      },
+      "_reference": "Deu 12:22",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0140",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66061,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defective animals not suitable for offering may be eaten by unclean and clean alike in ordinary meals, again marking the boundary of uncleanness's restriction as sacred not secular eating.",
+        "keywords": "[\"unclean permitted\", \"secular eating\", \"sacred boundary\", \"restriction limited\", \"distinction ordinary\"]"
+      },
+      "_reference": "Deu 15:22",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0141",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21487,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Leaving an executed body overnight on a tree defiles the land God is giving as inheritance; the command to bury the same day shows that defilement of sacred communal space must be actively prevented.",
+        "keywords": "[\"land defilement\", \"inheritance sacred\", \"exposure prevented\", \"active duty\", \"communal space\"]"
+      },
+      "_reference": "Deu 21:23",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0142",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21488,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A woman who remarries after divorce and whose second husband divorces or dies is considered defiled for her first husband, and returning to him would be abominable and bring sin on the land—linking defilement to moral-relational corruption that contaminates the sacred inheritance.",
+        "keywords": "[\"defilement relational\", \"abomination moral\", \"land corrupted\", \"marriage violated\", \"moral contamination\"]"
+      },
+      "_reference": "Deu 24:4",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0143",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21566,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The worshiper declares he did not remove tithe while in an unclean state, presenting freedom from uncleanness at the time of sacred giving as a matter of personal integrity and obedience.",
+        "keywords": "[\"integrity declared\", \"conscience clear\", \"obedience affirmed\", \"sacred giving\", \"self examination\"]"
+      },
+      "_reference": "Deu 26:14",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0144",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66062,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The eastern tribes' land is characterized as unclean in contrast to the land where the tabernacle stands, treating geographical separation from sacred space as a form of ritual-moral deficiency.",
+        "keywords": "[\"land unclean\", \"sacred absence\", \"geographical deficiency\", \"tabernacle proximity\", \"separation moral\"]"
+      },
+      "_reference": "Jos 22:19",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0145",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66063,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The mother of the consecrated child is commanded to eat nothing unclean, showing that the unclean state must be avoided by those bearing or nurturing a person set apart for God.",
+        "keywords": "[\"consecration guarded\", \"avoidance unclean\", \"will disciplined\", \"purity required\", \"dedication protected\"]"
+      },
+      "_reference": "Judg 13:4",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0146",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66020,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A reforming king deliberately defiles the high places to render them permanently unfit for illicit worship, using ritual defilement as an instrument of iconoclastic purification.",
+        "keywords": "[\"defilement instrumental\", \"idolatry dismantled\", \"will reforming\", \"holy places corrupted\", \"worship destroyed\"]"
+      },
+      "_reference": "2Ki 23:8",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0147",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66021,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The king deliberately defiles the site of child sacrifice to Molech, rendering it permanently unfit for that practice; defilement is wielded intentionally to break a pattern of extreme moral-religious corruption.",
+        "keywords": "[\"defilement deliberate\", \"idolatry broken\", \"will reforming\", \"sacrifice ended\", \"corruption dismantled\"]"
+      },
+      "_reference": "2Ki 23:10",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0148",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66022,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The king defiles the high places built for foreign gods near Jerusalem, demonstrating that reforming will can turn the instrument of defilement against places of accumulated idolatrous moral corruption.",
+        "keywords": "[\"defilement deliberate\", \"idolatry dismantled\", \"will reforming\", \"corruption targeted\", \"foreign worship\"]"
+      },
+      "_reference": "2Ki 23:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0149",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66023,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Burning bones on the altar defiles it according to prophetic word, showing defilement used purposefully as a fulfilment of divine judgment to permanently desecrate a site of false worship.",
+        "keywords": "[\"defilement purposeful\", \"judgment divine\", \"prophecy fulfilled\", \"altar desecrated\", \"will executing\"]"
+      },
+      "_reference": "2Ki 23:16",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0150",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21567,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Gatekeepers are stationed at the temple to bar anyone unclean from entering, showing vigilant institutional will protecting the sacred space from defilement as an ongoing duty.",
+        "keywords": "[\"sacred guarded\", \"exclusion enforced\", \"will vigilant\", \"access restricted\", \"purity institutional\"]"
+      },
+      "_reference": "2Ch 23:19",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0151",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21699,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The call to carry out the filth from the Holy Place frames impurity as a tangible corrupting presence that has accumulated in the sacred space, requiring deliberate inner and outward consecration to remove.",
+        "keywords": "[\"consecration active\", \"purity restoring\", \"defilement accumulated\", \"will mobilized\", \"sacred violated\", \"cleansing required\"]"
+      },
+      "_reference": "2Ch 29:5",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0152",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21489,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Persistent unfaithfulness expressed through following national abominations led the leadership to defile the holy house, showing defilement as the corporate fruit of habitual defection.",
+        "keywords": "[\"defection habitual\", \"heart unfaithful\", \"will following\", \"defilement corporate\", \"sacred desecrated\", \"abomination embraced\"]"
+      },
+      "_reference": "2Ch 36:14",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0153",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21700,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The land is described as saturated with the impurity of its peoples, meaning the surrounding culture has impregnated the moral environment with contagious defilement that threatens those entering it.",
+        "keywords": "[\"impurity contagious\", \"defilement environmental\", \"moral contamination\", \"will warned\", \"conscience alerted\", \"pollution pervasive\"]"
+      },
+      "_reference": "Ezr 9:11",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0154",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21568,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The rhetorical question asserts the utter impossibility of a clean thing arising from what is unclean, pointing to the constitutional condition of the human inner being as inherently compromised.",
+        "keywords": "[\"unclean constitutional\", \"nature defiled\", \"purity impossible\", \"origin corrupt\", \"human condition\", \"cleansing absent\"]"
+      },
+      "_reference": "Job 14:4",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0155",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21490,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Enemy nations have invaded and defiled the holy temple, depicting defilement as an act of violent desecration imposed from outside that destroys the sacred order.",
+        "keywords": "[\"sacred desecrated\", \"defilement imposed\", \"violation violent\", \"holiness destroyed\", \"profanation external\"]"
+      },
+      "_reference": "Psa 79:1",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0156",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21491,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The people became unclean through their own idolatrous acts, with defilement presented as the self-generated consequence of actions that constitute spiritual whoredom.",
+        "keywords": "[\"defilement self-incurred\", \"will acting\", \"idolatry chosen\", \"heart unfaithful\", \"defection spiritual\", \"corruption acquired\"]"
+      },
+      "_reference": "Psa 106:39",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0157",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21569,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean and the clean share the same mortal fate, suggesting that external unclean status does not alter one's existential condition before death, leveling all distinctions.",
+        "keywords": "[\"unclean status\", \"fate shared\", \"distinction dissolved\", \"condition moral\", \"mortality equalizing\", \"purity ineffective\"]"
+      },
+      "_reference": "Ecc 9:2",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0158",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21547,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Confronted by divine holiness, the prophet's conscience names his own lips — the organ of speech and confession — as unclean, revealing inner defilement through self-aware moral collapse.",
+        "keywords": "[\"conscience naming\", \"self-awareness moral\", \"unclean lips\", \"holiness confronting\", \"guilt surfacing\", \"inner being exposed\"]"
+      },
+      "_reference": "Isa 6:5",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0159",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21492,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The will is urged to actively reject and declare the idols defiled, with defilement here becoming a deliberate moral verdict the person passes upon what was previously valued and worshipped.",
+        "keywords": "[\"will rejecting\", \"idols defiled\", \"repudiation active\", \"moral verdict\", \"heart turning\", \"devotion reversed\"]"
+      },
+      "_reference": "Isa 30:22",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0160",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21570,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean are excluded from the holy Way, positioning moral impurity as a state that bars the inner person from the path of holiness and divine restoration.",
+        "keywords": "[\"unclean excluded\", \"holiness bounded\", \"access denied\", \"moral state barring\", \"purity required\", \"restoration conditional\"]"
+      },
+      "_reference": "Isa 35:8",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0161",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21571,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The promise that the uncircumcised and unclean will no longer enter the holy city points to a future where inner and ritual defilement is permanently excluded from God's restored presence.",
+        "keywords": "[\"unclean excluded\", \"future cleansing\", \"defilement permanent\", \"presence guarded\", \"holiness restored\", \"exclusion eschatological\"]"
+      },
+      "_reference": "Isa 52:1",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0162",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21572,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The command to touch no unclean thing and to purify oneself before bearing the sacred vessels demands that the inner person be separated from defilement as an act of deliberate will and consecration.",
+        "keywords": "[\"will separating\", \"defilement avoided\", \"purity demanded\", \"consecration active\", \"conscience engaged\", \"sacred guarded\"]"
+      },
+      "_reference": "Isa 52:11",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0163",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21573,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The corporate confession that all have become like the unclean and that even righteous deeds are polluted garments reveals a total inner defilement that invalidates moral performance before God.",
+        "keywords": "[\"unclean universal\", \"self-confession\", \"righteousness polluted\", \"defilement total\", \"moral failure\", \"conscience corporate\"]"
+      },
+      "_reference": "Isa 64:6",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0164",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21493,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Having received the land as gift, the people's entry brought defilement upon it, showing that inner corruption expressed through abominable practices contaminates even what God consecrated.",
+        "keywords": "[\"defilement spreading\", \"will unfaithful\", \"gift desecrated\", \"ingratitude active\", \"heart corrupting\", \"land polluted\"]"
+      },
+      "_reference": "Jer 2:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0165",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21419,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The denial 'I am not unclean' is challenged by the visible evidence of idolatrous pursuit, exposing a self-deceived will that refuses to acknowledge its own defiled condition.",
+        "keywords": "[\"self-deception\", \"will denying\", \"defilement unacknowledged\", \"conscience resisting\", \"idolatry pursued\", \"guilt denied\"]"
+      },
+      "_reference": "Jer 2:23",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0166",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21494,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Placing detestable idols in the named house of God is framed as a deliberate act of defilement, showing the will purposefully desecrating the sacred space through idolatrous installation.",
+        "keywords": "[\"defilement deliberate\", \"will defiant\", \"sacred desecrated\", \"idols enthroned\", \"heart rebellious\", \"sanctuary violated\"]"
+      },
+      "_reference": "Jer 7:30",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0167",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21574,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Houses where idolatrous offerings were made are declared defiled like Topheth, showing that the idolatrous acts performed in them transfer the unclean status of that most profane place onto the dwelling.",
+        "keywords": "[\"defilement transferred\", \"idolatry practiced\", \"sacred profaned\", \"moral status acquired\", \"dwelling corrupted\", \"judgment declared\"]"
+      },
+      "_reference": "Jer 19:13",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0168",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21495,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Placing abominations in God's house to defile it repeats the pattern of willful desecration of the sacred, underscoring the deliberate and persistent nature of the inner rebellion.",
+        "keywords": "[\"defilement deliberate\", \"will defiant\", \"sacred desecrated\", \"rebellion persistent\", \"heart hardening\", \"idols installed\"]"
+      },
+      "_reference": "Jer 32:34",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0169",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21701,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Jerusalem's designation as a filthy thing among the nations signals that judgment has made the city an object of impurity-revulsion, exposing the corporate inner defilement that brought on divine abandonment.",
+        "keywords": "[\"defilement corporate\", \"judgment expressed\", \"abandonment divine\", \"shame public\", \"impurity status\", \"isolation imposed\"]"
+      },
+      "_reference": "Lam 1:17",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0170",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21575,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The cry 'Unclean! Away!' directed at the exiles treats them as contagiously defiled, showing how inner-moral and social defilement leads to total expulsion and relational severance.",
+        "keywords": "[\"unclean declared\", \"expulsion social\", \"defilement contagious\", \"isolation forced\", \"shame bearing\", \"rejection total\"]"
+      },
+      "_reference": "Lam 4:15",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0171",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21576,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Eating unclean bread in exile among the nations is the divinely ordained consequence of prior defilement, projecting the inner-moral pollution outward into the physical and social condition of the exiles.",
+        "keywords": "[\"defilement consequential\", \"judgment embodied\", \"unclean eating\", \"pollution extended\", \"exile condition\", \"divine sentence\"]"
+      },
+      "_reference": "Eze 4:13",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0172",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21496,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The prophet's protest — that he has never defiled himself with prohibited food — reveals conscience actively defending the inner person's maintained purity as a matter of lifelong personal integrity.",
+        "keywords": "[\"conscience defending\", \"purity maintained\", \"will preserving\", \"defilement resisted\", \"integrity lifelong\", \"protest moral\"]"
+      },
+      "_reference": "Eze 4:14",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0173",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21497,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defiling God's sanctuary with detestable abominations provokes divine withdrawal of compassion, making the defilement of the sacred an act that directly severs the covenantal bond.",
+        "keywords": "[\"sanctuary defiled\", \"covenant severed\", \"divine withdrawal\", \"defilement provocative\", \"will abominable\", \"judgment merited\"]"
+      },
+      "_reference": "Eze 5:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0174",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21702,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Gold and silver become like an unclean thing on the day of wrath because they were the stumbling block of iniquity — wealth that served as the vehicle of spiritual impurity is exposed as worthless and defiling.",
+        "keywords": "[\"wealth defiling\", \"idolatry stumbling\", \"impurity material\", \"desire corrupting\", \"iniquity rooted\", \"judgment revealing\"]"
+      },
+      "_reference": "Eze 7:19",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0175",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21703,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Beautiful ornament turned to prideful idolatry is declared by God to be an unclean thing, showing that pride-driven misuse of the good transforms it into a source of defilement.",
+        "keywords": "[\"pride corrupting\", \"idolatry made\", \"beauty defiled\", \"heart perverted\", \"divine verdict\", \"impurity assigned\"]"
+      },
+      "_reference": "Eze 7:20",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0176",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 66024,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The divine command to defile the house by filling its courts with the slain turns the sacred space into a site of judgment-death, using defilement as the instrument of divine wrath.",
+        "keywords": "[\"defilement commanded\", \"judgment enacted\", \"sacred overturned\", \"wrath active\", \"death filling\", \"holiness withdrawn\"]"
+      },
+      "_reference": "Eze 9:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0177",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21498,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The goal of divine discipline is that the house may cease to go astray and defile themselves with transgressions, framing self-defilement as the inner expression of a will repeatedly straying from God.",
+        "keywords": "[\"self-defilement habitual\", \"will straying\", \"covenant restored\", \"defection repeated\", \"heart returning\", \"defilement ending\"]"
+      },
+      "_reference": "Eze 14:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0178",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21499,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Not defiling a neighbor's wife is listed among the marks of the righteous man, positioning sexual fidelity as an expression of the will's refusal to defile another person and oneself.",
+        "keywords": "[\"will refusing\", \"sexual defilement avoided\", \"fidelity moral\", \"righteousness marked\", \"boundary respected\", \"conscience active\"]"
+      },
+      "_reference": "Eze 18:6",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0179",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21704,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Avoiding approach to a woman in her menstrual impurity is named as part of the righteous man's conduct, with impurity marking a physical-ritual boundary that the disciplined will honors.",
+        "keywords": "[\"impurity boundary\", \"will honoring\", \"ritual restraint\", \"conscience observing\", \"purity respected\", \"righteousness evidenced\"]"
+      },
+      "_reference": "Eze 18:6",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0180",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21500,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The wicked son defiles his neighbor's wife, presenting sexual defilement as a mark of the will's active violation of others, contrasting with the righteous father's restraint.",
+        "keywords": "[\"will violating\", \"defilement sexual\", \"violation active\", \"contrast moral\", \"wickedness chosen\", \"neighbor wronged\"]"
+      },
+      "_reference": "Eze 18:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0181",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21501,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Not defiling a neighbor's wife marks the third-generation righteous man, confirming that personal moral integrity requires the will's consistent refusal of sexual defilement regardless of family heritage.",
+        "keywords": "[\"will refusing\", \"defilement avoided\", \"integrity personal\", \"righteousness sustained\", \"sexual boundary\", \"conscience consistent\"]"
+      },
+      "_reference": "Eze 18:15",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0182",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21502,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The command not to defile themselves with the idols of Egypt calls for an inner rejection of what the eyes feast upon, demanding that desire be redirected away from idolatrous attachment.",
+        "keywords": "[\"desire redirected\", \"will commanded\", \"idolatry rejected\", \"defilement voluntary\", \"eyes guarded\", \"heart loyalty\"]"
+      },
+      "_reference": "Eze 20:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0183",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21503,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The wilderness generation's children are warned not to defile themselves with their fathers' idols, framing defilement by idolatry as an inherited temptation requiring active refusal of the will.",
+        "keywords": "[\"will warned\", \"idolatry inherited\", \"defilement refused\", \"conscience alerted\", \"generational pattern\", \"defection avoided\"]"
+      },
+      "_reference": "Eze 20:18",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0184",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21504,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God himself defiles them through their own gifts by allowing the sacrifice of firstborn, using their defiant self-defilement as a judicial instrument of devastation and revelation of his lordship.",
+        "keywords": "[\"defilement judicial\", \"divine judgment\", \"gifts perverted\", \"heart hardening\", \"sovereignty revealed\", \"devastation through sin\"]"
+      },
+      "_reference": "Eze 20:26",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0185",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21505,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The rhetorical challenge — will you defile yourselves after your fathers' manner? — exposes the temptation of generational repetition and calls the will to break from the inherited pattern of defilement.",
+        "keywords": "[\"will challenged\", \"defilement generational\", \"pattern repeated\", \"defection habitual\", \"conscience provoked\", \"choice confronted\"]"
+      },
+      "_reference": "Eze 20:30",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0186",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21506,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Ongoing self-defilement through idolatry — including child sacrifice — results in God refusing to be inquired of, showing that persistent defilement closes the relational access between the defiled will and God.",
+        "keywords": "[\"defilement ongoing\", \"will persisting\", \"access closed\", \"divine rejection\", \"idolatry active\", \"child sacrifice\"]"
+      },
+      "_reference": "Eze 20:31",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0187",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21420,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Future remembrance of the deeds by which they defiled themselves will produce self-loathing, revealing that the memory of defilement serves as the inner mechanism of repentance and moral grief.",
+        "keywords": "[\"memory activating\", \"self-loathing\", \"repentance inner\", \"defilement remembered\", \"conscience awakening\", \"grief moral\"]"
+      },
+      "_reference": "Eze 20:43",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0188",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21507,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The city makes idols purposefully to defile herself, presenting defilement as a deliberate and self-directed act of the corporate will that hastens its own time of judgment.",
+        "keywords": "[\"defilement self-directed\", \"will deliberate\", \"idolatry made\", \"judgment hastened\", \"self-corruption\", \"heart rebellious\"]"
+      },
+      "_reference": "Eze 22:3",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0189",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21508,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Guilt through bloodshed and defilement through idolatry are paired as the twin results of the city's choices, with defilement marking the moral-spiritual status acquired through those acts.",
+        "keywords": "[\"defilement acquired\", \"guilt paired\", \"blood shed\", \"idols made\", \"moral status\", \"judgment brought near\"]"
+      },
+      "_reference": "Eze 22:4",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0190",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The city's name is declared defiled among the nations, showing that the inner corruption of a community becomes a publicly visible moral identity that invites shame and mockery.",
+        "keywords": "[\"defilement public\", \"shame named\", \"reputation corrupted\", \"moral identity\", \"corporate unclean\", \"judgment visible\"]"
+      },
+      "_reference": "Eze 22:5",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0191",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21578,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Men violating women who are in menstrual impurity compounds sexual defilement by transgressing the boundary the impure state itself defines, intensifying the moral rupture.",
+        "keywords": "[\"violation sexual\", \"impurity boundary\", \"defilement compounded\", \"will transgressing\", \"boundary broken\", \"moral rupture\"]"
+      },
+      "_reference": "Eze 22:10",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0192",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21705,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The menstrual impurity of the women marks a boundary that the violating men cross, making their act a transgression against a boundary defined by the body's own impure state.",
+        "keywords": "[\"impurity boundary\", \"body state\", \"boundary transgressed\", \"violation active\", \"will transgressing\", \"defilement sexual\"]"
+      },
+      "_reference": "Eze 22:10",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0193",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21509,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Multiple acts of sexual defilement — with neighbor's wife, daughter-in-law, and sister — are catalogued together, showing the will's wide-ranging defilement of the nearest relational bonds.",
+        "keywords": "[\"will violating\", \"defilement sexual\", \"relational bonds broken\", \"abomination multiple\", \"conscience absent\", \"lewdness active\"]"
+      },
+      "_reference": "Eze 22:11",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0194",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The priests' failure to teach the distinction between unclean and clean is presented as a collapse of moral-spiritual discernment in those responsible for guarding the community's inner formation.",
+        "keywords": "[\"discernment failed\", \"distinction lost\", \"conscience unformed\", \"priestly failure\", \"moral teaching absent\", \"profaning\"]"
+      },
+      "_reference": "Eze 22:26",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0195",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21510,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "She defiles herself with every idol of those after whom she lusts, showing defilement as the inward consequence of desire-driven idolatrous attachment that the will pursues without restraint.",
+        "keywords": "[\"desire unrestrained\", \"will pursuing\", \"defilement self-incurred\", \"idolatry lusted\", \"attachment corrupting\", \"heart defiled\"]"
+      },
+      "_reference": "Eze 23:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0196",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21511,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God sees that she was defiled and that both sisters walked the same way, revealing defilement as a spiritually observable condition that God discerns and holds as evidence of shared guilt.",
+        "keywords": "[\"defilement observed\", \"divine perception\", \"guilt shared\", \"heart exposed\", \"defection mirrored\", \"condition confirmed\"]"
+      },
+      "_reference": "Eze 23:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0197",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21512,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "External agents defile her through their lust, and having been defiled she turns from them in disgust, showing that defilement can be received through corrupting relations and then generate its own revulsion.",
+        "keywords": "[\"defilement received\", \"lust corrupting\", \"revulsion following\", \"will turning\", \"disgust moral\", \"defilement relational\"]"
+      },
+      "_reference": "Eze 23:17",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0198",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21513,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Playing the whore with the nations and defiling oneself with their idols is named as the direct cause of judgment, linking the will's chosen alliances to the defilement that brought destruction.",
+        "keywords": "[\"will choosing\", \"alliance defiling\", \"idols adopted\", \"self-defilement\", \"judgment caused\", \"heart unfaithful\"]"
+      },
+      "_reference": "Eze 23:30",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0199",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21514,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defiling the sanctuary and profaning the Sabbaths on the same day presents the compound defilement of both sacred space and sacred time as evidence of the full extent of the will's apostasy.",
+        "keywords": "[\"sanctuary defiled\", \"sabbath profaned\", \"defilement compound\", \"will apostate\", \"sacred violated\", \"rebellion full\"]"
+      },
+      "_reference": "Eze 23:38",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0200",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21515,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defiling a neighbor's wife is listed alongside reliance on the sword and abominations as reasons the land cannot be possessed, pairing sexual defilement with the broader pattern of violent moral corruption.",
+        "keywords": "[\"defilement sexual\", \"abomination paired\", \"moral corruption\", \"will violating\", \"possession forfeited\", \"wickedness multiple\"]"
+      },
+      "_reference": "Eze 33:26",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0201",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21516,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The people's habitual conduct defiled the land they lived in, and God perceived their ways as morally repugnant as menstrual impurity — an inner disposition expressed outwardly in persistent corrupting behaviour.",
+        "keywords": "[\"conduct defiling\", \"habit persistent\", \"disposition corrupt\", \"awareness divine\", \"comparison moral\"]"
+      },
+      "_reference": "Eze 36:17",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0202",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21684,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The people's ways before God were compared to menstrual impurity, signalling a state of moral uncleanness that made their conduct utterly repellent to holiness.",
+        "keywords": "[\"impurity moral\", \"state repellent\", \"conduct offensive\", \"holiness violated\", \"comparison ritual\"]"
+      },
+      "_reference": "Eze 36:17",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0203",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21517,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Idolatrous practice defiled the land and provoked divine wrath, showing that inner allegiance given to false worship produced a corrupting contamination of sacred space.",
+        "keywords": "[\"idolatry defiling\", \"allegiance false\", \"wrath provoked\", \"corruption spreading\", \"sacred violated\"]"
+      },
+      "_reference": "Eze 36:18",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0204",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21518,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Future restoration involves the people no longer defiling themselves with idols and transgressions — a promise of inner cleansing that removes habitual corrupting loyalty to false things.",
+        "keywords": "[\"defilement ceased\", \"idolatry abandoned\", \"cleansing promised\", \"loyalty redirected\", \"will turning\", \"habit broken\"]"
+      },
+      "_reference": "Eze 37:23",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0205",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21519,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "In the restored order, the people will no longer defile God's holy name through whoring and association with death — the holy name is vulnerable to defilement by wilful, persistent unfaithfulness.",
+        "keywords": "[\"name defiled\", \"unfaithfulness wilful\", \"holiness proximity\", \"whoring habitual\", \"will restrained future\"]"
+      },
+      "_reference": "Eze 43:7",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0206",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21520,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The people defiled God's holy name by placing their own thresholds adjacent to his, treating the sacred as common through their abominations, a presumptuous violation that consumed them in divine anger.",
+        "keywords": "[\"presumption defiling\", \"sacred profaned\", \"abomination committed\", \"boundary violated\", \"anger divine\"]"
+      },
+      "_reference": "Eze 43:8",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0207",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21580,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Priests are charged to teach the people to discern the unclean from the clean, indicating that moral and ritual discernment is a faculty that must be cultivated through instruction.",
+        "keywords": "[\"discernment taught\", \"distinction moral\", \"instruction required\", \"perception trained\", \"clean unclean\"]"
+      },
+      "_reference": "Eze 44:23",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0208",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21521,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Priests must guard their purity by avoiding contact with the dead, though close family bereavement is an exception — defilement here is a bodily-ritual state with relational and vocational consequences.",
+        "keywords": "[\"contact defiling\", \"bodily state\", \"vocational purity\", \"grief permitted\", \"boundary maintained\"]"
+      },
+      "_reference": "Eze 44:25",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0209",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21522,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God's comprehensive knowledge of the people reveals their defilement as the outcome of spiritual whoredom — the inner state of unfaithfulness is fully visible and produces a corrupt condition.",
+        "keywords": "[\"divine awareness\", \"whoredom inner\", \"defilement resulting\", \"hidden nothing\", \"unfaithfulness known\"]"
+      },
+      "_reference": "Hos 5:3",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0210",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21523,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Widespread whoredom within the covenant community has left the people in a state of defilement, described as a horrible thing perceived by God — inner corruption made visible and morally revolting.",
+        "keywords": "[\"whoredom corrupting\", \"community defiled\", \"horror moral\", \"corruption visible\", \"perception divine\"]"
+      },
+      "_reference": "Hos 6:10",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0211",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Exile from the holy land means eating unclean food in foreign nations — the inner-being here is minimal; the verse primarily describes ritual/categorical uncleanness as a consequence of being removed from sacred space.",
+        "keywords": "[\"exile consequence\", \"unclean food\", \"displacement sacred\", \"ritual state\", \"separation land\"]"
+      },
+      "_reference": "Hos 9:3",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0212",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21524,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Eating bread outside the holy community defiles those who partake, because their worship is cut off — defilement here flows from disconnection from covenant relationship, making even sustenance spiritually contaminating.",
+        "keywords": "[\"worship severed\", \"communion lost\", \"defilement ritual\", \"covenant disconnection\", \"sustenance contaminated\"]"
+      },
+      "_reference": "Hos 9:4",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0213",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21582,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Dying in an unclean land is the judgment pronounced on the one who silenced the prophet — exile to foreign, ritually impure territory is a consequence that marks the condemned as cut off from the holy.",
+        "keywords": "[\"judgment exile\", \"land unclean\", \"separation holy\", \"consequence prophetic\", \"death defiled\"]"
+      },
+      "_reference": "Amo 7:17",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0214",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21525,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The uncleanness attached to the land because of the people's sin makes it no place for rest — moral defilement has a corrosive, destructive force that disqualifies the space for habitation.",
+        "keywords": "[\"defilement destructive\", \"rest disqualified\", \"sin corrupting\", \"space contaminated\", \"moral corrosion\"]"
+      },
+      "_reference": "Mic 2:10",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0215",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21526,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Contact with a corpse-defiled person transmits impurity to whatever they touch — defilement is portrayed as a contagious condition that passes outward from an already unclean person.",
+        "keywords": "[\"defilement contagious\", \"contact transmitting\", \"state spreading\", \"impurity ritual\", \"touch defiling\"]"
+      },
+      "_reference": "Hag 2:13",
+      "_strongs": "H2930A"
+    },
+    {
+      "op_id": "OP-0216",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A person rendered unclean by contact with death carries that state outward to everything touched — the unclean condition is active, communicable, and categorical.",
+        "keywords": "[\"unclean state\", \"contact ritual\", \"death proximity\", \"impurity active\", \"condition communicable\"]"
+      },
+      "_reference": "Hag 2:13",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0217",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The people's inner moral state renders all their offerings unclean before God — the impurity originates within the community and corrupts every act of worship they perform.",
+        "keywords": "[\"inner state corrupting\", \"offering defiled\", \"worship unacceptable\", \"community impure\", \"moral origin\"]"
+      },
+      "_reference": "Hag 2:14",
+      "_strongs": "H2931"
+    },
+    {
+      "op_id": "OP-0218",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21706,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A fountain opened for cleansing will remove sin and impurity, promising that the deep moral uncleanness of the community can be washed away through a divinely provided source of purification.",
+        "keywords": "[\"cleansing promised\", \"impurity removed\", \"purification divine\", \"sin washed\", \"restoration inner\"]"
+      },
+      "_reference": "Zec 13:1",
+      "_strongs": "H5079"
+    },
+    {
+      "op_id": "OP-0219",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21282,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Unclean spirits represent hostile, morally corrupting powers over which authority is granted — the term names a category of spiritual agents that defile and afflict persons.",
+        "keywords": "[\"spirit unclean\", \"authority granted\", \"affliction spiritual\", \"power hostile\", \"defilement external\"]"
+      },
+      "_reference": "Mat 10:1",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0220",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21283,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "An unclean spirit displaced from a person wanders restlessly, seeking re-entry — the spirit's nature is characterized by impurity and by an active drive to inhabit and corrupt a human person.",
+        "keywords": "[\"spirit restless\", \"impurity seeking\", \"re-entry driven\", \"person inhabited\", \"corruption active\"]"
+      },
+      "_reference": "Mat 12:43",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0221",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21270,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The inner life of the hypocrites is full of impurity despite an outwardly attractive appearance — their defilement is located within, hidden from human sight but utterly contrary to genuine holiness.",
+        "keywords": "[\"inner impurity\", \"outward facade\", \"hypocrisy hidden\", \"heart defiled\", \"appearance deceiving\"]"
+      },
+      "_reference": "Mat 23:27",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0222",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21279,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man in the synagogue possessed by an unclean spirit is presented as an inhabited, controlled person whose inner state is defined by the corrupting spiritual presence within him.",
+        "keywords": "[\"possession spiritual\", \"spirit inhabiting\", \"control external\", \"person afflicted\", \"impurity indwelling\"]"
+      },
+      "_reference": "Mar 1:23",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0223",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21284,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean spirit manifests its departure through violent convulsion and outcry, showing that its presence had imposed a controlling, afflicting force on the person's inner and bodily life.",
+        "keywords": "[\"spirit departing\", \"control released\", \"convulsion bodily\", \"affliction ending\", \"impurity expelled\"]"
+      },
+      "_reference": "Mar 1:26",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0224",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21285,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The commanding authority over unclean spirits evokes amazement — the spirits' obedience reveals they are subject to a higher power, highlighting their nature as defiling agents under authoritative restraint.",
+        "keywords": "[\"spirit obedient\", \"authority commanding\", \"defilement restrained\", \"power submitted\", \"amazement witness\"]"
+      },
+      "_reference": "Mar 1:27",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0225",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21286,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Unclean spirits recognize and confess a superior divine identity before they are commanded — their acknowledgment reveals self-awareness alongside their defiling, hostile nature.",
+        "keywords": "[\"spirit recognizing\", \"identity divine\", \"confession compelled\", \"hostility present\", \"defilement subjugated\"]"
+      },
+      "_reference": "Mar 3:11",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0226",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21287,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Opponents attribute Jesus's power to an unclean spirit, a charge that misidentifies divine action as moral corruption — the accusation attempts to locate defilement at the source of his authority.",
+        "keywords": "[\"attribution false\", \"spirit accused\", \"defilement misassigned\", \"conscience blinded\", \"truth rejected\"]"
+      },
+      "_reference": "Mar 3:30",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0227",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21288,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man living among tombs had an unclean spirit — his dwelling in a place of death and his possession together mark him as utterly cut off from clean, communal life.",
+        "keywords": "[\"possession total\", \"death proximity\", \"isolation social\", \"spirit inhabiting\", \"corruption dominating\"]"
+      },
+      "_reference": "Mar 5:2",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0228",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21289,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The direct command to the unclean spirit to leave the man defines the spirit as a distinct, addressable entity whose presence constitutes the man's defilement.",
+        "keywords": "[\"spirit commanded\", \"departure ordered\", \"defilement defined\", \"entity distinct\", \"authority direct\"]"
+      },
+      "_reference": "Mar 5:8",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0229",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21290,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean spirits leave the man and enter a herd of pigs which rush to destruction — their transfer and the resulting death illustrate the destructive, corrupting force of their impurity.",
+        "keywords": "[\"spirit transferring\", \"destruction caused\", \"impurity destructive\", \"possession transferred\", \"corruption fatal\"]"
+      },
+      "_reference": "Mar 5:13",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0230",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21291,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Delegated authority over unclean spirits is given to the twelve — the verse frames unclean spirits as entities that must be actively opposed and overcome, requiring granted power.",
+        "keywords": "[\"authority delegated\", \"spirit opposed\", \"power granted\", \"defilement confronted\", \"mission active\"]"
+      },
+      "_reference": "Mar 6:7",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0231",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21292,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A child afflicted by an unclean spirit drives her mother to seek help — the spirit's presence is experienced as a tormenting, controlling affliction requiring external intervention.",
+        "keywords": "[\"spirit afflicting\", \"child tormented\", \"control unwanted\", \"intervention sought\", \"defilement imposed\"]"
+      },
+      "_reference": "Mar 7:25",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0232",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21293,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean spirit is rebuked and commanded never to re-enter — its capacity to suppress speech and hearing shows it impairs the inner and bodily faculties of the person it inhabits.",
+        "keywords": "[\"spirit rebuked\", \"faculty suppressed\", \"re-entry forbidden\", \"defilement expelled\", \"command permanent\"]"
+      },
+      "_reference": "Mar 9:25",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0233",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21294,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A man in the synagogue had the spirit of an unclean demon — the compound phrase intensifies the defiling, hostile quality of the spiritual presence controlling him.",
+        "keywords": "[\"spirit demonic\", \"defilement intense\", \"control hostile\", \"person possessed\", \"impurity named\"]"
+      },
+      "_reference": "Luk 4:33",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0234",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21295,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Amazement follows the commanding power over unclean spirits — the spirits' compliance underscores that unclean spiritual forces yield to authoritative speech, revealing defilement as ultimately subject to divine power.",
+        "keywords": "[\"spirit yielding\", \"authority verbal\", \"defilement subject\", \"power marvelled\", \"compliance compelled\"]"
+      },
+      "_reference": "Luk 4:36",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0235",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21296,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Those troubled by unclean spirits receive healing — the verse equates being freed from an unclean spirit with a restoration of wholeness, treating spiritual defilement as a form of affliction.",
+        "keywords": "[\"spirit troubling\", \"healing received\", \"affliction spiritual\", \"wholeness restored\", \"defilement removed\"]"
+      },
+      "_reference": "Luk 6:18",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0236",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21297,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean spirit had repeatedly seized the man, overpowering all human restraint — its persistent, irresistible control illustrates total domination of the person's will and bodily agency.",
+        "keywords": "[\"spirit seizing\", \"will dominated\", \"control total\", \"resistance overcome\", \"agency lost\"]"
+      },
+      "_reference": "Luk 8:29",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0237",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21298,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unclean spirit convulses a child until rebuked and expelled — its violent, destructive action against the body evidences its corrupting hold on the person.",
+        "keywords": "[\"spirit convulsing\", \"body afflicted\", \"rebuked expelled\", \"hold violent\", \"defilement bodily\"]"
+      },
+      "_reference": "Luk 9:42",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0238",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21280,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "An unclean spirit driven out seeks rest and plans return — its restless agency and will to re-inhabit a person show it as an active, purposeful defiling force.",
+        "keywords": "[\"spirit restless\", \"will returning\", \"agency purposeful\", \"defilement planned\", \"re-entry intended\"]"
+      },
+      "_reference": "Luk 11:24",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0239",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21299,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "People afflicted with unclean spirits are brought for healing — the verse presents unclean spiritual possession as a condition of suffering that healing reverses.",
+        "keywords": "[\"spirit afflicting\", \"possession healed\", \"suffering caused\", \"restoration received\", \"defilement reversed\"]"
+      },
+      "_reference": "Act 5:16",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0240",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21300,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Unclean spirits cry out as they are expelled from many — their vocal resistance at departure indicates a defiling force that resists removal and has gripped multiple persons.",
+        "keywords": "[\"spirit expelled\", \"resistance vocal\", \"defilement widespread\", \"grip released\", \"impurity departing\"]"
+      },
+      "_reference": "Act 8:7",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0241",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21301,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Peter's refusal to eat anything common or unclean reflects a deeply formed conscience-level conviction about ritual and moral purity that resists the divine vision urging change.",
+        "keywords": "[\"conscience formed\", \"purity conviction\", \"will refusing\", \"vision resisted\", \"identity guarded\"]"
+      },
+      "_reference": "Act 10:14",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0242",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21281,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God's revelation overturns the learned judgment that persons of other nations are unclean — inner categories of who is defiled are shown to be humanly constructed and subject to divine correction.",
+        "keywords": "[\"judgment revised\", \"category human\", \"revelation correcting\", \"person reclassified\", \"prejudice challenged\"]"
+      },
+      "_reference": "Act 10:28",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0243",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21302,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Peter recounts his firm refusal to eat anything common or unclean — the repeated conviction shows a conscience deeply shaped by purity categories that he had never overridden.",
+        "keywords": "[\"conscience firm\", \"purity ingrained\", \"refusal habitual\", \"identity maintained\", \"boundary held\"]"
+      },
+      "_reference": "Act 11:8",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0244",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21269,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God gives people over to the impurity that arises from heart-level lusts — impurity here is the condition to which unchecked desire leads, seated in the heart and expressed in bodily dishonour.",
+        "keywords": "[\"heart lusting\", \"desire unchecked\", \"impurity resulting\", \"body dishonoured\", \"will abandoned\"]"
+      },
+      "_reference": "Rom 1:24",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0245",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21271,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Members once enslaved to impurity and lawlessness are now called to offer themselves to righteousness — impurity is framed as a prior master that directed bodily members toward escalating moral disorder.",
+        "keywords": "[\"slavery impurity\", \"members yielded\", \"lawlessness escalating\", \"will redirected\", \"sanctification replacing\"]"
+      },
+      "_reference": "Rom 6:19",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0246",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21303,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Children of a believer are considered holy rather than unclean because of the sanctifying influence of the believing parent — unclean here refers to a relational, covenantal status rather than personal moral guilt.",
+        "keywords": "[\"status covenantal\", \"unclean relational\", \"holiness transferred\", \"influence sanctifying\", \"identity inherited\"]"
+      },
+      "_reference": "1Cor 7:14",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0247",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9326,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A weak conscience is defiled when someone eats food associated with idols without genuine moral conviction — defilement originates in acting against conscience, not in the food itself.",
+        "keywords": "[\"conscience defiled\", \"weakness moral\", \"conviction absent\", \"defilement inner\", \"action violating conscience\"]"
+      },
+      "_reference": "1Cor 8:7",
+      "_strongs": "G3435"
+    },
+    {
+      "op_id": "OP-0248",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21304,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The call to separation from unclean things is the condition for divine welcome — touching what is unclean is a relational and moral barrier that must be refused for restored communion with God.",
+        "keywords": "[\"separation commanded\", \"touch refused\", \"communion conditional\", \"purity relational\", \"will choosing\"]"
+      },
+      "_reference": "2Cor 6:17",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0249",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9329,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defilement is located in both body and spirit and must be actively cleansed — the call to self-purification treats defilement as penetrating the full inner-outer constitution of the person.",
+        "keywords": "[\"defilement bodily\", \"defilement spiritual\", \"self cleansing\", \"holiness pursued\", \"will active\", \"spirit purified\"]"
+      },
+      "_reference": "2Cor 7:1",
+      "_strongs": "G3436"
+    },
+    {
+      "op_id": "OP-0250",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21272,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Impurity is named alongside sexual immorality and sensuality as sins from which those who practised them have not repented — the impurity is morally chosen, persistent, and unrepented, revealing a hardened will.",
+        "keywords": "[\"impurity unrepented\", \"will hardened\", \"persistence moral\", \"sorrow absent\", \"conscience unresponsive\"]"
+      },
+      "_reference": "2Cor 12:21",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0251",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21273,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Impurity is listed as a visible work of the flesh — an inner impulse of the lower nature that manifests outwardly, sitting alongside sexual immorality and sensuality as a product of unrestrained bodily desire.",
+        "keywords": "[\"flesh impulse\", \"desire unrestrained\", \"nature lower\", \"appetite bodily\", \"will surrendered\"]"
+      },
+      "_reference": "Gal 5:19",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0252",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21274,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Callousness of conscience has led to a willing self-surrender to sensuality, with impurity practiced greedily — showing the will actively pursuing corruption once conscience has been silenced.",
+        "keywords": "[\"conscience silenced\", \"will pursuing\", \"callousness\", \"desire greedy\", \"self surrender\", \"heart hardening\"]"
+      },
+      "_reference": "Eph 4:19",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0253",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21275,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Impurity, alongside sexual immorality and covetousness, must not even be spoken of among those set apart — it is incompatible with a holy inner identity and must be excluded from both conduct and speech.",
+        "keywords": "[\"identity holy\", \"purity demanded\", \"desire excluded\", \"speech reflecting\", \"conduct incompatible\", \"will aligned\"]"
+      },
+      "_reference": "Eph 5:3",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0254",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21305,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Being impure is equated with idolatry and disqualifies a person from divine inheritance — the unclean inner state is a heart allegiance disorder that displaces God with corrupt desire.",
+        "keywords": "[\"heart allegiance\", \"desire displacing\", \"idolatry interior\", \"inheritance forfeited\", \"soul orientation\", \"will corrupted\"]"
+      },
+      "_reference": "Eph 5:5",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0255",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21276,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Impurity is listed among earthly inner drives that must be mortified — it belongs to the old self's passion and desire complex, rooted in the body's earthly orientation and linked to covetousness as idolatry.",
+        "keywords": "[\"earthly orientation\", \"desire mortified\", \"passion complex\", \"will mortifying\", \"body sourced\", \"self old\"]"
+      },
+      "_reference": "Col 3:5",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0256",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21277,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The appeal described here is explicitly not driven by impurity — meaning right motivation before God requires an inner life free from morally corrupt desires contaminating one's motives.",
+        "keywords": "[\"motive pure\", \"desire absent\", \"integrity inner\", \"conscience clean\", \"will uncorrupted\", \"motivation tested\"]"
+      },
+      "_reference": "1Th 2:3",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0257",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21278,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Impurity is the state God's calling opposes — the divine call is directed toward holiness, placing impurity as the contrary inner condition that defines what the redeemed life must leave behind.",
+        "keywords": "[\"calling opposed\", \"holiness contrasted\", \"condition left\", \"inner state opposed\", \"vocation holy\", \"purity demanded\"]"
+      },
+      "_reference": "1Th 4:7",
+      "_strongs": "G0167"
+    },
+    {
+      "op_id": "OP-0258",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 30266,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Defilement here is tied to indulgence in defiling passion combined with contempt for authority — the inner posture is one of bold wilfulness, where desire and pride suppress reverence and restraint.",
+        "keywords": "[\"passion indulged\", \"authority despised\", \"will bold\", \"reverence suppressed\", \"defiance wilful\", \"desire corrupting\", \"restraint absent\"]"
+      },
+      "_reference": "2Pe 2:10",
+      "_strongs": "G3394"
+    },
+    {
+      "op_id": "OP-0259",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9327,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A few have not soiled their garments — meaning they have kept their inner and outward life undefiled amid a compromised community, and this moral integrity is the basis of their worthiness to walk with Christ.",
+        "keywords": "[\"integrity preserved\", \"purity maintained\", \"will holding\", \"worthiness earned\", \"conscience unsoiled\", \"defection resisted\"]"
+      },
+      "_reference": "Rev 3:4",
+      "_strongs": "G3435"
+    },
+    {
+      "op_id": "OP-0260",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9328,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "These have not defiled themselves — their bodies and inner lives have been kept pure, expressing total consecration to the Lamb, with self-denial and devotion as the inner posture that defines their identity.",
+        "keywords": "[\"consecration total\", \"purity bodily\", \"self denial\", \"devotion complete\", \"will yielded\", \"defilement absent\"]"
+      },
+      "_reference": "Rev 14:4",
+      "_strongs": "G3435"
+    },
+    {
+      "op_id": "OP-0261",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21306,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Three unclean spirits emerge from corrupt spiritual sources — the term here marks these as beings whose inner character is morally and spiritually defiled, functioning as agents of deception sourced in darkness.",
+        "keywords": "[\"spirit unclean\", \"origin corrupt\", \"darkness sourced\", \"agency defiled\", \"deception active\"]"
+      },
+      "_reference": "Rev 16:13",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0262",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21307,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The cup held contains impurities of sexual immorality alongside abominations — the inner corruption is displayed externally through seductive beauty, masking a soul saturated with moral filth.",
+        "keywords": "[\"soul saturated\", \"corruption masked\", \"desire abominable\", \"seduction concealing\", \"filth interior\", \"immorality displayed\"]"
+      },
+      "_reference": "Rev 17:4",
+      "_strongs": "G0169"
+    },
+    {
+      "op_id": "OP-0263",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 21308,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The fallen city has become a habitation of every unclean spirit and creature — spiritual and moral uncleanliness is now the defining inner and environmental character of total corruption and ruin.",
+        "keywords": "[\"corruption total\", \"spirit unclean\", \"habitation defiled\", \"ruin moral\", \"character defined\", \"darkness dwelling\"]"
+      },
+      "_reference": "Rev 18:2",
+      "_strongs": "G0169"
+    }
+  ]
+}
