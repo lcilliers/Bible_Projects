@@ -120,6 +120,7 @@ def status_marker(status):
         "Analysis - In Progress": "▶",
         "Data - In Progress": "◐",
         "Not started": "·",
+        "Parked - Methodology Review": "⏸",
     }.get(status, "?")
 
 
@@ -227,11 +228,11 @@ def main():
     lines.append("")
     lines.append("| Status | Count |")
     lines.append("|---|---:|")
-    for s in ("Analysis Completed", "Analysis - In Progress", "Not started"):
+    for s in ("Analysis Completed", "Analysis - In Progress", "Parked - Methodology Review", "Not started"):
         if s in by_status:
             lines.append(f"| {status_marker(s)} {s} | {by_status[s]} |")
     other = {k: v for k, v in by_status.items()
-             if k not in ("Analysis Completed", "Analysis - In Progress", "Not started")}
+             if k not in ("Analysis Completed", "Analysis - In Progress", "Parked - Methodology Review", "Not started")}
     for k, v in sorted(other.items()):
         lines.append(f"| {k} | {v} |")
     lines.append(f"| **Total clusters** | **{len(clusters)}** |")
@@ -249,6 +250,21 @@ def main():
     lines.append(f"- Anchor verses set: **{total_anchors:,}**")
     lines.append(f"- `cluster_finding` rows (active): **{total_findings:,}**")
     lines.append("")
+
+    # Parked-clusters callout
+    parked = [c for c in clusters if c["status"] == "Parked - Methodology Review"]
+    if parked:
+        lines.append("## ⏸ Parked clusters (methodology review)")
+        lines.append("")
+        lines.append("These clusters were started but parked pending researcher review of a methodological question. Phase work is paused; the cluster's DB content (terms, verses, Pass A meanings, keywords) is preserved. See each cluster folder for the park-notice document with the reason for parking and the question to resolve.")
+        lines.append("")
+        lines.append("| Cluster | Short | Description | Park notice |")
+        lines.append("|---|---|---|---|")
+        for c in parked:
+            code = c["cluster_code"]
+            notice = f"Sessions/Session_Clusters/{code}/wa-cluster-{code}-park-notice-v1-*.md"
+            lines.append(f"| `{code}` | {c['short_name'] or ''} | {c['description'] or ''} | `{notice}` |")
+        lines.append("")
 
     # Post-closure-activity callout (table-level, before per-cluster)
     silent_drift = {k: v for k, v in post_closure_changes.items()
@@ -354,7 +370,7 @@ def main():
     # Footer key
     lines.append("## Notation")
     lines.append("")
-    lines.append("- **Status markers:** ✓ completed · ▶ in progress · · not started")
+    lines.append("- **Status markers:** ✓ completed · ▶ in progress · ⏸ parked (methodology review) · · not started")
     lines.append("- **Terms (OT+NT):** active mti_terms split by language (Hebrew + Greek)")
     lines.append("- **Verses:** active `verse_context` rows for terms in this cluster")
     lines.append("- **Anchors:** `verse_context.is_anchor=1` rows in cluster groups")
