@@ -37,7 +37,10 @@ Shared constants for the Session A v9 Automation Engine.
 # the evaluating unit is the characteristic").
 # Bumped 2026-05-25 for M52 (finding_citation table — polymorphic citations from
 # cluster_finding + cluster_observation prose; three types: verse, strongs, cross_char).
-EXPECTED_SCHEMA_VERSION = "3.26.0"
+# Bumped 2026-05-26 for M53 (cluster.char_structure column — flag non-standard
+# clusters like M10 where chars are aspects of one master characteristic;
+# tools doing cross-cluster char-comparison analytics filter on this).
+EXPECTED_SCHEMA_VERSION = "3.27.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
