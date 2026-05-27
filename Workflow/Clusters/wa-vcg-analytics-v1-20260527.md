@@ -1,6 +1,6 @@
 # VCG analytics — what's actually in the database
 
-_Generated: 2026-05-27 06:11 UTC_  
+_Generated: 2026-05-27 07:29 UTC_  
 _Source: `database/bible_research.db` — `verse_context_group` + `vcg_term` + `verse_context.group_id`_
 
 **Purpose:** surface what the VCG layer holds across all clusters so the v3_0 decision (drop VCGs as Phase 7 design layer) can be made with full visibility of what would become legacy.
@@ -32,17 +32,17 @@ Clusters with active VCGs in the DB and their analytical state.
 | **M46** | Analysis Completed | 34 | 197 | 5.8 | 4 | 31 |
 | **TOTAL** | — | **745** | **11,695** | — | — | **946** |
 
-**Orphan VCGs** (active VCG row with zero active is_relevant verses): 413
-- `79-001` (vcg_id=43) — `Term names divine anger as the response to idolatry — the kindling of God's wrat`
-- `79-002` (vcg_id=44) — `Term names divine anger as tempered by steadfast love — the characterisation of `
-- `79-003` (vcg_id=45) — `Term names human anger as the inner response to relational conflict — the kindli`
-- `79-004` (vcg_id=46) — `Term names the mastery of anger as the measure of inner greatness — governing an`
-- `79-005` (vcg_id=47) — `Term names divine anger as the experience of hiddenness — the face turned away a`
+**Orphan VCGs** (active VCG row with zero active is_relevant verses): 255
 - `1430-001` (vcg_id=142) — `Term names the excellent spirit as the seat of extraordinary inner character — w`
 - `1430-002` (vcg_id=143) — `Term names the hardened spirit as the inner seat of pride — the spirit that stif`
 - `1430-003` (vcg_id=144) — `Term names the anxious spirit as the inner reception of divine vision — the spir`
 - `1586-001` (vcg_id=160) — `Term names the inner disposition of kindness toward human persons — benevolent o`
 - `1589-001` (vcg_id=162) — `Term names the inner disposition of kindly consideration toward others — the ori`
+- `4785-001` (vcg_id=259) — `Inner quality of bitter weeping — grief of particular intensity saturated with s`
+- `4448-001` (vcg_id=271) — `Inner quality of confident boldness in apostolic communication — willingness to `
+- `4011-001` (vcg_id=332) — `Term names the deep, intensely felt compassion of God as a character attribute —`
+- `455-001` (vcg_id=365) — `Term names the inward parts as the seat of the innermost self — the deepest laye`
+- `455-002` (vcg_id=366) — `Term names the inward parts as the seat of inner experience — the deepest place `
 
 ---
 
