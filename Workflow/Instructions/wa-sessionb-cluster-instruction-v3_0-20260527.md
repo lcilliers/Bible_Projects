@@ -633,6 +633,7 @@ Each Phase E AI session — per-characteristic tier prose or cluster-synthesis p
 5. **Per-cluster science extract** — mandatory.
 6. **Programme prose** — mandatory.
 7. **Global rules** — mandatory.
+8. **Style and method discipline** — [`wa-sessionc-cluster-style-method-v1_1-20260512.md`](wa-sessionc-cluster-style-method-v1_1-20260512.md) — **mandatory**. Defines voice (essayistic, evidential, reverent-not-devotional, confident-not-hedging), audience (intelligent reader with no project-internal vocabulary), citation discipline (every analytical claim grounded by a quoted verse; verbatim quotation; no project-internal codes), forbidden vocabulary (no "cluster", "sub-group", "VCG", "tier", "T0..T7", "finding", "constitutional location" in published prose — use thematic names), the silence principle (name only meaningful silences), and the closing reverse-audit + self-review (see §9.7).
 
 ### §9.3 Per-characteristic tier prose flow
 
@@ -699,7 +700,35 @@ The ingester uses **body-hash comparison** for idempotency:
 
 This means **Phase E can be re-run safely**. If findings have been updated and the AI re-authors prose, only changed prose creates new rows; unchanged prose stays at its existing version.
 
-### §9.7 Backfill discipline
+### §9.7 Reverse audit + self-review on completion (mandatory)
+
+Per [style/method §10–§11](wa-sessionc-cluster-style-method-v1_1-20260512.md), every Phase E AI session must run two completion checks **before** the file is handed off for CC ingestion. These are non-optional.
+
+**A. Reverse audit** (style/method §10):
+
+1. **Findings coverage.** Walk every finding in the structural-input batch that fell within the tier's scope. For each finding, confirm one of:
+   - The finding's claim is reflected in the tier prose (paraphrased, not necessarily verbatim), OR
+   - The finding is a *routine silent* finding whose omission is justified by the silence principle (style/method §6), OR
+   - The finding was redundant with one already covered.
+   - If none of the three, the finding was missed — add prose that incorporates it.
+2. **Anchor verse coverage.** Walk the tier's anchor verses (per the structural input). Confirm each is quoted *verbatim* at least once. Add a sentence using any missing anchor.
+3. **Lens coverage.** Confirm the tier prose engages the tier's thematic lens (Divine Image / Faculty in Operation / Constitutional Location / Faculties / Relational Interfaces / Transformation / Inter-characteristic / View from outside Scripture — see style/method §5 for the name-only-not-the-code rule).
+
+**B. Self-review pass** (style/method §11):
+
+Read the tier prose end-to-end as a reader would. Correct:
+
+- **Repetition** — same point in two places; pick the better and remove the duplicate.
+- **Overreach** — claims beyond what the cited verses carry; soften or remove rather than propping up.
+- **Padding** — sentences that add words but no content (throat-clearing, signposting, restating the heading).
+- **Tonal drift** — devotional phrasing; first-person plural; hedging; any forbidden vocabulary from style/method §3 that slipped through.
+- **Structural drift** — list-of-findings rather than essayistic prose; missing topic sentences; sentences depending on codes the reader cannot see.
+
+**Order of operations:** write → reverse audit → self-review → return. The returned tier prose is the post-self-review version.
+
+**CC validation hook:** the ingester (`_ingest_phase_e_prose_v1_*.py`) runs forbidden-vocabulary detection (a regex pass for "cluster", "sub-group", "VCG", "T0..T7", "finding-id", VCG codes) and rejects the block if any forbidden token is present. The author must address findings before re-submit.
+
+### §9.8 Backfill discipline
 
 For clusters whose findings exist but lack Phase E prose (pre-v3_0 closed clusters: M01, M02, M05, M06, M15, M20, M26, M39, M46; plus M03 partially):
 
@@ -710,7 +739,7 @@ For clusters whose findings exist but lack Phase E prose (pre-v3_0 closed cluste
 
 See §12 catch-up routine for the operational workflow.
 
-### §9.8 Phase E required-or-not
+### §9.9 Phase E required-or-not
 
 Per researcher direction:
 
@@ -720,13 +749,13 @@ Per researcher direction:
 
 **For pre-v3_0 closed clusters**: Phase E is **deferred and required only when publication is scheduled** — backfilled per §9.7 + §12.
 
-### §9.9 Pre-check
+### §9.10 Pre-check
 
 - Phase D complete: every characteristic has 189 findings; cluster-synthesis has 189 findings.
 - `prose_section_type` rows for `sc_v2_tier_T0..T7` + `sc_v2_synth_*` registered (one-time programme-level setup — done 2026-05-27).
 - `cluster_observation` rows targeting Phase E (if any) surfaced as inputs.
 
-### §9.10 Post-check
+### §9.11 Post-check
 
 - For every characteristic: 8 `prose_section` rows (T0..T7) with `cluster_code={code}`, `characteristic_id={char.id}`, `delete_flagged=0`, current latest version (`superseded_by_id IS NULL`).
 - 3 cluster-synthesis `prose_section` rows (opening, divine_pattern, appendix) with `cluster_code={code}`, `characteristic_id=NULL`.
@@ -734,7 +763,7 @@ Per researcher direction:
 - `prose_section_fts` indexed (trigger fires automatically on INSERT).
 - All Phase E AI files written under `Sessions/Session_Clusters/{code}/`.
 
-### §9.11 Status transition
+### §9.12 Status transition
 
 `Analysis Complete` → `Publication Ready` on Phase E ingest of the full prose set. (For backfill on pre-v3_0 closed clusters, the status may already be `Analysis Complete`; the transition then fires on backfill completion.)
 
@@ -769,7 +798,7 @@ CC runs `scripts/_validate_cluster_closure_v1_{date}.py --cluster {code}` which 
 8. **BOUNDARY clean:** no `BOUNDARY_DECISION_PENDING` flags active.
 9. **Citation traceability:** `finding_citation` rows present (extractor runs automatically; see §10.3).
 10. **FTS in sync:** `prose_section_fts` rebuilt or trigger-synced.
-11. **Status discipline:** cluster.status = `Publication Ready` (set by §9.11) or `Analysis Complete` (if Phase E deferred for backfill); no anomaly.
+11. **Status discipline:** cluster.status = `Publication Ready` (set by §9.12) or `Analysis Complete` (if Phase E deferred for backfill); no anomaly.
 
 Validation report: `WA-{code}-phase-f-validation-v1-{date}.md`. PASS / REVIEW / STOP outcome per check.
 
@@ -835,13 +864,19 @@ Detail in [v3 publication pipeline design](wa-v3-publication-pipeline-design-v1-
 1. CC: scripts/_assemble_cluster_publication_from_db_v1_{date}.py --cluster {code}
    - Resolves latest active version per section (WHERE superseded_by_id IS NULL)
    - Joins per-tier prose into chapter-shaped Markdown per §11.2
-   - Writes combined master document
-2. (Optional) researcher reviews assembled markdown; edits in place or via ingest
+   - Writes combined master document (chapter-form): wa-cluster-{code}-publication-v1-{date}.md
+2. (Optional) researcher reviews assembled chapter-form markdown; edits in place or via ingest
 3. (Optional, if researcher edits) CC: scripts/_ingest_chapter_prose_v1_{date}.py
-   - Inserts revised prose as new version
-   - Old version becomes superseded
-4. CC: regenerate combined output via #1
-5. CC: PDF/DOCX render via scripts/combine_cluster_published_to_docx.py
+   - Inserts revised prose as new version; old version becomes superseded
+4. CC: regenerate chapter-form output via #1
+5. **Integrated-essay form** (single flowing study; M09 precedent):
+   - One AI run synthesises the chapter-form into a single integrated essay for a non-technical reader
+   - Structure: title + subtitle → "What this study is" → "The divine pattern" (cluster-wide T0 spine) → one section per characteristic (using the thematic name, woven across T1–T7) → optional appendix
+   - Style/method §1–§12 govern this run (essayistic prose, no project vocabulary, verbatim citation, silence principle, reverse audit + self-review)
+   - Output: wa-cluster-{code}-essay-v1-{date}.md
+6. CC: PDF/DOCX render via scripts/combine_cluster_published_to_docx.py
+   - Renders the integrated essay (step 5) as the publication artefact: wa-cluster-{code}-essay-v1-{date}.docx
+   - Note: the chapter-form (step 1) is intermediate scaffolding for review; the essay-form (step 5) is the publication target. Both are persisted; only the essay-form is the final user-facing artefact.
 ```
 
 ### §11.4 Backwards compatibility — Session C as historical mode
