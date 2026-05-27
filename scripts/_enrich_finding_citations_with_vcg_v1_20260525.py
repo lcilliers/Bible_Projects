@@ -68,10 +68,38 @@ def delete_existing_vcg(conn: sqlite3.Connection, source_table: str, source_ids:
 
 
 def derive_vcg_rows(conn: sqlite3.Connection, cluster: str) -> list[tuple[str, int, str, int]]:
-    """Return deduped (source_table, source_id, vcg_code, min_position) tuples."""
-    cluster_prefix = f"{cluster}-"  # e.g. 'M10-'
+    """Return deduped (source_table, source_id, vcg_code, min_position) tuples.
+
+    Cluster membership is resolved via the verse→term→cluster_code join, not by
+    a group_code prefix filter. This handles legacy registry-format VCG codes
+    (e.g. `1633-001`) that don't carry a cluster prefix in their name.
+
+    An additional guard restricts citations to those whose source_id belongs to
+    a cluster_finding or cluster_observation in the target cluster — otherwise
+    a verse citation from a different cluster's finding could be assigned to
+    this cluster's VCGs if the same verse appears in both.
+    """
+    fids = [r[0] for r in conn.execute(
+        "SELECT id FROM cluster_finding WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0",
+        (cluster,),
+    ).fetchall()]
+    oids = [r[0] for r in conn.execute(
+        "SELECT id FROM cluster_observation WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0",
+        (cluster,),
+    ).fetchall()]
+    if not fids and not oids:
+        return []
+
+    # Build a UNION of "source rows in scope" for the JOIN
+    f_placeholders = ",".join(["?"] * len(fids)) if fids else "NULL"
+    o_placeholders = ",".join(["?"] * len(oids)) if oids else "NULL"
+    scope_sql = (
+        f"((fc.source_table='cluster_finding' AND fc.source_id IN ({f_placeholders})) "
+        f" OR (fc.source_table='cluster_observation' AND fc.source_id IN ({o_placeholders})))"
+    )
+
     rows = conn.execute(
-        """
+        f"""
         SELECT fc.source_table  AS source_table,
                fc.source_id     AS source_id,
                vcg.group_code   AS vcg_code,
@@ -80,14 +108,17 @@ def derive_vcg_rows(conn: sqlite3.Connection, cluster: str) -> list[tuple[str, i
         FROM finding_citation fc
         JOIN wa_verse_records vr ON vr.reference = fc.citation_value
         JOIN verse_context vc    ON vc.verse_record_id = vr.id
+        JOIN mti_terms mt        ON mt.id = vc.mti_term_id
         JOIN verse_context_group vcg ON vcg.id = vc.group_id
         WHERE fc.citation_type = 'verse'
-          AND vcg.group_code LIKE ?
+          AND mt.cluster_code = ?
+          AND {scope_sql}
           AND COALESCE(vc.delete_flagged, 0) = 0
           AND COALESCE(vcg.delete_flagged, 0) = 0
+          AND COALESCE(mt.delete_flagged, 0) = 0
         GROUP BY fc.source_table, fc.source_id, vcg.group_code
         """,
-        (cluster_prefix + "%",),
+        (cluster, *fids, *oids),
     ).fetchall()
     return [(r["source_table"], r["source_id"], r["vcg_code"], r["min_position"]) for r in rows]
 
