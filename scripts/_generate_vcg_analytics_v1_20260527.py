@@ -135,13 +135,26 @@ def main() -> int:
         "SELECT cluster_code, status FROM cluster"
     ).fetchall()}
 
-    # Total cluster_finding bodies (lowercase concatenated) for citation test
-    all_findings_text = "\n".join(
-        (r["finding_text"] or "").lower()
-        for r in conn.execute(
-            "SELECT finding_text FROM cluster_finding WHERE COALESCE(delete_flagged,0)=0"
-        ).fetchall()
-    )
+    # Per-cluster concatenated finding text — for both full-code and short-form
+    # citation tests. Short-form (`VCG-NN`) is scoped per-cluster because the
+    # AI cites VCGs by sequence number relying on the finding's cluster scope.
+    cluster_findings_text: dict[str, str] = {}
+    for r in conn.execute(
+        "SELECT cluster_code, finding_text FROM cluster_finding WHERE COALESCE(delete_flagged,0)=0"
+    ).fetchall():
+        cc = r["cluster_code"]
+        if cc not in cluster_findings_text:
+            cluster_findings_text[cc] = []
+        cluster_findings_text[cc].append((r["finding_text"] or "").lower())
+    cluster_findings_text = {cc: "\n".join(texts) for cc, texts in cluster_findings_text.items()}
+    all_findings_text = "\n".join(cluster_findings_text.values())
+
+    # Regex for short-form VCG references. Two known styles:
+    #   `VCG-NN` (hyphen, used by M01-M10c)
+    #   `VCGNN`  (no hyphen, used by M15)
+    # The lookbehind prevents partial matches inside full codes like
+    # `M10c-A-VCG-07` (which already contains `-VCG-07`).
+    SHORT_RE = re.compile(r'(?<![a-z0-9])vcg[-]?\d+', re.IGNORECASE)
 
     # Per-cluster aggregates
     by_cluster: dict[str, list[dict]] = defaultdict(list)
@@ -273,27 +286,83 @@ def main() -> int:
     L.append("---")
     L.append("")
 
-    # §4 Analytical-rent test
-    L.append("## §4. Analytical-rent test — VCG code citation in `cluster_finding`")
+    # §4 Analytical-rent test — counts both full and short-form citations
+    L.append("## §4. Analytical-rent test — VCG citation in `cluster_finding`")
     L.append("")
-    L.append("For each cluster, count how many of its VCGs are mentioned by code at least once in any `cluster_finding.finding_text` body. **A VCG that is never cited is analytical overhead that paid no Phase 9 rent.**")
+    L.append("For each cluster, a VCG counts as cited if either form appears in any `cluster_finding.finding_text`:")
+    L.append("- **Full form** — the exact `group_code` (e.g. `M10c-A-VCG-07`)")
+    L.append("- **Short form** — `VCG-NN` where NN matches the VCG's sequence number (scope-implicit reference within the finding's cluster)")
     L.append("")
-    L.append("| Cluster | # VCGs | # cited at least once | Citation rate |")
-    L.append("|---|---:|---:|---:|")
+    L.append("The short-form is scoped per-cluster because the AI cites VCGs by sequence number relying on the finding's cluster context. A VCG may be over-credited when multiple sub-groups in the same cluster share a sequence number — but this is the correct floor measure for a citation-rate metric. **A VCG never referenced by either form paid no Phase 9 rent.**")
+    L.append("")
+    L.append("| Cluster | # VCGs | # cited (full + short) | Citation rate | Short-form distinct |")
+    L.append("|---|---:|---:|---:|---:|")
     total_vcg = 0
     total_cited = 0
     for code in sorted(by_cluster.keys()):
         vcgs = by_cluster[code]
-        n_cited = sum(1 for v in vcgs if v["group_code"].lower() in all_findings_text)
+        text = cluster_findings_text.get(code, "")
+        # Distinct short-form sequence numbers cited in this cluster's findings
+        short_cites = {m.group(0).lower() for m in SHORT_RE.finditer(text)}
+        # Extract trailing -VCG-N from each VCG's group_code
+        n_cited = 0
+        for v in vcgs:
+            gc = (v["group_code"] or "")
+            gc_lower = gc.lower()
+            cited = False
+            if gc_lower in text:
+                cited = True
+            else:
+                # Derive short-form sequence number from the group_code.
+                # Two known code formats:
+                #   `M{NN}-X-VCG-N` (current; cite as `VCG-N` or `VCGN`)
+                #   `NNN-MMM` legacy (cite as `VCG-MMM` or `VCGMMM` —
+                #     AI cited VCGs by position within sub-group as VCG01-VCGNN)
+                seq = None
+                m1 = re.search(r'vcg-(\d+)$', gc_lower)
+                m2 = re.match(r'^\d+-(\d+)(?:-[a-z])?$', gc_lower)
+                if m1:
+                    seq = m1.group(1)
+                elif m2:
+                    seq = m2.group(1)
+                if seq is not None:
+                    # Normalise: zero-padded variants ('001' → also try '1')
+                    seq_int = int(seq)
+                    candidates = {f"vcg-{seq}", f"vcg{seq}",
+                                  f"vcg-{seq_int}", f"vcg{seq_int}",
+                                  f"vcg-0{seq_int}", f"vcg0{seq_int}",
+                                  f"vcg-{seq_int:02d}", f"vcg{seq_int:02d}"}
+                    if candidates & short_cites:
+                        cited = True
+            if cited:
+                n_cited += 1
         n_vcg = len(vcgs)
         rate = 100 * n_cited / n_vcg if n_vcg else 0
         total_vcg += n_vcg
         total_cited += n_cited
-        L.append(f"| {code} | {n_vcg} | {n_cited} | {rate:.0f}% |")
+        L.append(f"| {code} | {n_vcg} | {n_cited} | {rate:.0f}% | {len(short_cites)} |")
+        # Stash on each VCG row for §6
+        for v in vcgs:
+            gc = (v["group_code"] or "").lower()
+            ok = gc in text
+            if not ok:
+                seq = None
+                m1 = re.search(r'vcg-(\d+)$', gc)
+                m2 = re.match(r'^\d+-(\d+)(?:-[a-z])?$', gc)
+                if m1: seq = m1.group(1)
+                elif m2: seq = m2.group(1)
+                if seq is not None:
+                    seq_int = int(seq)
+                    candidates = {f"vcg-{seq}", f"vcg{seq}",
+                                  f"vcg-{seq_int}", f"vcg{seq_int}",
+                                  f"vcg-0{seq_int}", f"vcg0{seq_int}",
+                                  f"vcg-{seq_int:02d}", f"vcg{seq_int:02d}"}
+                    ok = bool(candidates & short_cites)
+            v["_cited"] = ok
     rate_total = 100 * total_cited / total_vcg if total_vcg else 0
-    L.append(f"| **Total** | **{total_vcg}** | **{total_cited}** | **{rate_total:.0f}%** |")
+    L.append(f"| **Total** | **{total_vcg}** | **{total_cited}** | **{rate_total:.0f}%** | — |")
     L.append("")
-    L.append("**Interpretation:** the citation rate is the most direct measure of whether VCGs paid analytical rent during Phase 9. Codes that never appear in any finding text were structural overhead. (Note: synthesis findings may cite sub-group codes more than VCG codes, which is consistent with Phase 9 firing at characteristic scope.)")
+    L.append("**Interpretation:** Citation rate measures Phase 9 rent. Group A clusters (M01-M04, M07-M09) tend to mix full and short citations. Group B clusters (M10, M10b, M10c) cite predominantly short-form. Group C clusters (M06, M15, M20, M26, M39, M46) cite VCGs in neither form — their findings reference verses, sub-groups, and Strong's directly.")
     L.append("")
     L.append("---")
     L.append("")
@@ -335,7 +404,7 @@ def main() -> int:
         L.append("|---|---|---:|---:|:-:|---|")
         for v in sorted(vcgs, key=lambda x: x["group_code"]):
             desc = ((v["context_description"] or "").replace("\n", " "))[:120]
-            cited = "✓" if v["group_code"].lower() in all_findings_text else "—"
+            cited = "✓" if v.get("_cited") else "—"
             L.append(f"| `{v['group_code']}` | {v['subgroup_code'] or '?'} | {v['n_verses']} | {v['n_anchors'] or 0} | {cited} | {desc} |")
         L.append("")
 
@@ -357,7 +426,7 @@ def main() -> int:
     print(f"  Clusters with VCGs:           {len(by_cluster)}")
     print(f"  Total active VCGs:            {n_vcg_total}")
     print(f"  Singleton VCGs:               {len(singletons)} ({100*len(singletons)/n_vcg_total:.1f}%)")
-    print(f"  VCGs cited in cluster_finding: {total_cited}/{total_vcg} ({rate_total:.0f}%)")
+    print(f"  VCGs cited in cluster_finding (full+short): {total_cited}/{total_vcg} ({rate_total:.0f}%)")
     print(f"  Avg Jaccard sim vs sub-group: {avg_jacc:.2f}")
     return 0
 

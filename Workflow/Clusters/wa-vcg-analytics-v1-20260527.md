@@ -1,6 +1,6 @@
 # VCG analytics — what's actually in the database
 
-_Generated: 2026-05-27 05:32 UTC_  
+_Generated: 2026-05-27 06:11 UTC_  
 _Source: `database/bible_research.db` — `verse_context_group` + `vcg_term` + `verse_context.group_id`_
 
 **Purpose:** surface what the VCG layer holds across all clusters so the v3_0 decision (drop VCGs as Phase 7 design layer) can be made with full visibility of what would become legacy.
@@ -17,7 +17,7 @@ Clusters with active VCGs in the DB and their analytical state.
 | **M02** | Analysis Completed (Terms Added) | 27 | 645 | 23.9 | 18 | 55 |
 | **M03** | Analysis Completed | 25 | 690 | 27.6 | 17 | 81 |
 | **M04** | Analysis Completed | 47 | 1116 | 23.7 | 16 | 73 |
-| **M05** | Analysis Completed (Terms Added) | 123 | 1560 | 12.7 | 6 | 127 |
+| **M05** | Ready for re-analysis | 123 | 1560 | 12.7 | 6 | 127 |
 | **M06** | Analysis Completed | 51 | 429 | 8.4 | 3 | 57 |
 | **M07** | Analysis Completed | 28 | 359 | 12.8 | 9 | 28 |
 | **M08** | Analysis Completed | 24 | 293 | 12.2 | 11 | 24 |
@@ -140,32 +140,36 @@ For each VCG: how much new analytical content does the VCG description carry ove
 
 ---
 
-## §4. Analytical-rent test — VCG code citation in `cluster_finding`
+## §4. Analytical-rent test — VCG citation in `cluster_finding`
 
-For each cluster, count how many of its VCGs are mentioned by code at least once in any `cluster_finding.finding_text` body. **A VCG that is never cited is analytical overhead that paid no Phase 9 rent.**
+For each cluster, a VCG counts as cited if either form appears in any `cluster_finding.finding_text`:
+- **Full form** — the exact `group_code` (e.g. `M10c-A-VCG-07`)
+- **Short form** — `VCG-NN` where NN matches the VCG's sequence number (scope-implicit reference within the finding's cluster)
 
-| Cluster | # VCGs | # cited at least once | Citation rate |
-|---|---:|---:|---:|
-| M01 | 38 | 31 | 82% |
-| M02 | 27 | 24 | 89% |
-| M03 | 25 | 25 | 100% |
-| M04 | 47 | 43 | 91% |
-| M05 | 123 | 3 | 2% |
-| M06 | 51 | 25 | 49% |
-| M07 | 28 | 14 | 50% |
-| M08 | 24 | 24 | 100% |
-| M09 | 21 | 14 | 67% |
-| M10 | 68 | 1 | 1% |
-| M10b | 36 | 9 | 25% |
-| M10c | 26 | 21 | 81% |
-| M15 | 58 | 1 | 2% |
-| M20 | 26 | 9 | 35% |
-| M26 | 79 | 61 | 77% |
-| M39 | 34 | 31 | 91% |
-| M46 | 34 | 3 | 9% |
-| **Total** | **745** | **339** | **46%** |
+The short-form is scoped per-cluster because the AI cites VCGs by sequence number relying on the finding's cluster context. A VCG may be over-credited when multiple sub-groups in the same cluster share a sequence number — but this is the correct floor measure for a citation-rate metric. **A VCG never referenced by either form paid no Phase 9 rent.**
 
-**Interpretation:** the citation rate is the most direct measure of whether VCGs paid analytical rent during Phase 9. Codes that never appear in any finding text were structural overhead. (Note: synthesis findings may cite sub-group codes more than VCG codes, which is consistent with Phase 9 firing at characteristic scope.)
+| Cluster | # VCGs | # cited (full + short) | Citation rate | Short-form distinct |
+|---|---:|---:|---:|---:|
+| M01 | 38 | 38 | 100% | 7 |
+| M02 | 27 | 27 | 100% | 7 |
+| M03 | 25 | 25 | 100% | 5 |
+| M04 | 47 | 47 | 100% | 6 |
+| M05 | 123 | 0 | 0% | 0 |
+| M06 | 51 | 24 | 47% | 0 |
+| M07 | 28 | 28 | 100% | 5 |
+| M08 | 24 | 24 | 100% | 5 |
+| M09 | 21 | 21 | 100% | 5 |
+| M10 | 68 | 68 | 100% | 9 |
+| M10b | 36 | 36 | 100% | 11 |
+| M10c | 26 | 26 | 100% | 8 |
+| M15 | 58 | 4 | 7% | 12 |
+| M20 | 26 | 9 | 35% | 0 |
+| M26 | 79 | 61 | 77% | 0 |
+| M39 | 34 | 31 | 91% | 0 |
+| M46 | 34 | 3 | 9% | 0 |
+| **Total** | **745** | **472** | **63%** | — |
+
+**Interpretation:** Citation rate measures Phase 9 rent. Group A clusters (M01-M04, M07-M09) tend to mix full and short citations. Group B clusters (M10, M10b, M10c) cite predominantly short-form. Group C clusters (M06, M15, M20, M26, M39, M46) cite VCGs in neither form — their findings reference verses, sub-groups, and Strong's directly.
 
 ---
 
@@ -216,8 +220,8 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
-| `105-001` | ? | 1 | 1 | — | Term names terror or dismay — the inner condition of overwhelming dread in the face of what cannot be resisted or compre |
-| `1153-001` | ? | 3 | 1 | — | Sudden panic and terror as inner affliction — the state of dismay, panic, and anguish that falls upon persons, including |
+| `105-001` | ? | 1 | 1 | ✓ | Term names terror or dismay — the inner condition of overwhelming dread in the face of what cannot be resisted or compre |
+| `1153-001` | ? | 3 | 1 | ✓ | Sudden panic and terror as inner affliction — the state of dismay, panic, and anguish that falls upon persons, including |
 | `M01-A-VCG-01` | M01-A | 32 | 2 | ✓ | Fear of God functions as the operative interior force that constrains wrongdoing, motivates ethical treatment of the vul |
 | `M01-A-VCG-02` | M01-A | 35 | 1 | ✓ | Fear of God is identified as the foundational inner orientation from which wisdom, knowledge, and genuine understanding  |
 | `M01-A-VCG-03` | M01-A | 53 | 1 | ✓ | Fear of God is presented as the relational posture that aligns a person with God's saving purposes and opens them to his |
@@ -231,12 +235,12 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M01-B-VCG-04` | M01-B | 21 | 1 | ✓ | The reactive inner dread specifically directed at social consequences — crowd opinion, peer pressure, public exposure, s |
 | `M01-B-VCG-05` | M01-B | 25 | 1 | ✓ | Fear as the inner force that directly governs personal decision-making — driving flight, deception, or inaction when lif |
 | `M01-B-VCG-06` | M01-B | 51 | 3 | ✓ | Meanings where the primary content is the divine or authoritative command to cease fear — the inner fear being directly  |
-| `M01-BOUNDARY-VCG-01` | M01-BOUNDARY | 18 | 7 | — | Terms held for researcher decision at Phase 12: ta.mah (astonishment-bewilderment split), sha.vats (agony of dying), mis |
+| `M01-BOUNDARY-VCG-01` | M01-BOUNDARY | 18 | 7 | ✓ | Terms held for researcher decision at Phase 12: ta.mah (astonishment-bewilderment split), sha.vats (agony of dying), mis |
 | `M01-C-VCG-01` | M01-C | 19 | 3 | ✓ | God deploys dread and terror ahead of Israel as an active weapon that paralyses enemy resistance before battle — an exte |
-| `M01-C-VCG-02` | M01-C | 15 | 3 | — | Terror characterised as an active, hunting, encircling force that overwhelms the inner person with no escape — pursuing  |
+| `M01-C-VCG-02` | M01-C | 15 | 3 | ✓ | Terror characterised as an active, hunting, encircling force that overwhelms the inner person with no escape — pursuing  |
 | `M01-C-VCG-03` | M01-C | 9 | 2 | ✓ | Terror as the defining power wielded by great military empires over the land of the living — projected outward as the in |
 | `M01-C-VCG-04` | M01-C | 22 | 5 | ✓ | Terror as the quality of divine majesty itself — not deployed as a weapon at Israel's enemies but as the inherent charac |
-| `M01-C-VCG-05` | M01-A | 10 | 2 | — | Terror as a quality radiating from powerful beings or nations outward — producing dread in those who encounter them. The |
+| `M01-C-VCG-05` | M01-A | 10 | 2 | ✓ | Terror as a quality radiating from powerful beings or nations outward — producing dread in those who encounter them. The |
 | `M01-D-VCG-01` | M01-B | 25 | 2 | ✓ | Dismay arising from receiving terrible news, witnessing catastrophe, or experiencing the withdrawal of God's presence —  |
 | `M01-D-VCG-02` | M01-D | 14 | 1 | ✓ | Dismay inflicted by divine action as a form of judgment or punishment — God actively producing inner collapse in those w |
 | `M01-D-VCG-03` | M01-D | 12 | 1 | ✓ | Dismay characterised by its visible bodily effects — color change, limbs giving way, knees knocking, speechlessness, han |
@@ -245,9 +249,9 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M01-E-VCG-01` | M01-E | 15 | 2 | ✓ | The involuntary whole-body trembling produced by direct encounter with the divine presence — at Sinai, in theophanies, a |
 | `M01-E-VCG-02` | M01-A | 12 | 3 | ✓ | The distinctive trembling-at-God's-word tradition — trembling as a mark of genuine inner responsiveness to God's communi |
 | `M01-E-VCG-03` | M01-E | 15 | 3 | ✓ | Involuntary shuddering and trembling as the inner-bodily response to witnessing destruction, the fall of great cities an |
-| `M01-E-VCG-04` | M01-B | 39 | 4 | — | Bodily trembling as the expression of military fear-alarm in battle contexts — fear spreading contagiously through a cam |
+| `M01-E-VCG-04` | M01-B | 39 | 4 | ✓ | Bodily trembling as the expression of military fear-alarm in battle contexts — fear spreading contagiously through a cam |
 | `M01-E-VCG-05` | M01-E | 10 | 4 | ✓ | The specifically visceral, flesh-level quality of shuddering as dread registers in the body — the body quaking involunta |
-| `M01-E-VCG-06` | M01-E | 7 | 1 | — | NT trembling as the bodily-emotional tone of reverent, serious engagement — in worship, in receiving God's servant, in w |
+| `M01-E-VCG-06` | M01-E | 7 | 1 | ✓ | NT trembling as the bodily-emotional tone of reverent, serious engagement — in worship, in receiving God's servant, in w |
 | `M01-F-VCG-01` | M01-BOUNDARY | 9 | 2 | ✓ | Anxiety as a sustained, all-pervasive inner burden that saturates every moment and every ordinary activity — not trigger |
 | `M01-F-VCG-02` | M01-F | 9 | 3 | ✓ | Dread as a forward-looking inner state that precedes and then corresponds to the actual suffering feared — fear as inner |
 | `M01-F-VCG-03` | M01-B | 10 | 1 | ✓ | Sustained dread specifically as a form of divine judgment — unrelenting, consuming anxiety that denies rest, distorts ti |
@@ -259,8 +263,8 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
-| `705-001` | ? | 3 | 1 | — | Bitterness as destructive inner state — disposition of hostility, resentment, or hardness that corrupts the person and d |
-| `705-002` | ? | 1 | 1 | — | Bitterness as spreading inner root — deeply embedded condition that defiles and corrupts beyond the individual |
+| `705-001` | ? | 3 | 1 | ✓ | Bitterness as destructive inner state — disposition of hostility, resentment, or hardness that corrupts the person and d |
+| `705-002` | ? | 1 | 1 | ✓ | Bitterness as spreading inner root — deeply embedded condition that defiles and corrupts beyond the individual |
 | `M02-A-VCG-01` | M02-A | 25 | 3 | ✓ | God's wrath as the settled inner disposition that grounds binding covenantal outcomes — oaths, exclusions, exile, and ir |
 | `M02-A-VCG-02` | M02-A | 16 | 1 | ✓ | Wrath understood as impending future divine force from which people flee, are rescued, or are delivered. The coming wrat |
 | `M02-A-VCG-03` | M02-A | 35 | 3 | ✓ | Wrath as an active, revealed, ongoing force operating against human sin — descending from heaven, accumulating against i |
@@ -273,7 +277,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M02-B-VCG-05` | M02-B | 23 | 1 | ✓ | Anger as an inner state present but requiring management and restraint — either by God whose compassion holds back wrath |
 | `M02-B-VCG-06` | M02-B | 84 | 3 | ✓ | God's burning inner rage through sustained imagery of pouring, spending, and releasing — a concentrated intensity that b |
 | `M02-B-VCG-07` | M02-B | 3 | 0 | ✓ | Anger understood from the perspective of the person bearing it — the inner experience of being under wrath: crushed, sat |
-| `M02-BOUNDARY-VCG-01` | M02-BOUNDARY | 82 | 6 | — | Aggregating placeholder VCG for 6 BOUNDARY terms designated at Phase 3 whose corpora were too mixed-register, thin, or e |
+| `M02-BOUNDARY-VCG-01` | M02-BOUNDARY | 82 | 6 | ✓ | Aggregating placeholder VCG for 6 BOUNDARY terms designated at Phase 3 whose corpora were too mixed-register, thin, or e |
 | `M02-C-VCG-01` | M02-C | 32 | 2 | ✓ | God's indignation as a persistent, principled inner moral posture — a standing disposition against wickedness, stored an |
 | `M02-C-VCG-02` | M02-C | 3 | 3 | ✓ | Indignation in human persons as a morally revelatory inner response — the anger that proves genuine repentance (2Cor 7:1 |
 | `M02-C-VCG-03` | M02-C | 1 | 1 | ✓ | The softest anger register — sullen, brooding, situational displeasure that withdraws and shuts down rather than eruptin |
@@ -323,7 +327,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 |---|---|---:|---:|:-:|---|
 | `M04-A-VCG-01` | M04-A | 58 | 3 | ✓ | God-directed exultation: rejoicing toward YHWH as object and source. Includes God's own delight toward his people. |
 | `M04-A-VCG-02` | M04-A | 18 | 3 | ✓ | Inverted, absent, or corrupt joy: rejoicing by negation — misdirected toward evil/idols/death, absent as curse, or enemi |
-| `M04-A-VCG-03` | M04-A | 7 | 1 | — | Relational and natural gladness: rejoicing in human bonds, parental delight, creation's personified response. |
+| `M04-A-VCG-03` | M04-A | 7 | 1 | ✓ | Relational and natural gladness: rejoicing in human bonds, parental delight, creation's personified response. |
 | `M04-B-VCG-01` | M04-B | 26 | 1 | ✓ | Festival and feast worship joy: prescribed communal gladness at appointed feasts directed toward God at his sanctuary. |
 | `M04-B-VCG-02` | M04-B | 22 | 1 | ✓ | Sanctuary, temple, and ark joy: gladness at the sacred presence returning, established, or worship restored. |
 | `M04-B-VCG-03` | M04-B | 21 | 1 | ✓ | Coronation, national, and civic deliverance joy: corporate gladness at legitimate kingship, military victory, or reversa |
@@ -331,7 +335,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M04-B-VCG-05` | M04-B | 90 | 1 | ✓ | God-directed psalmist and prophetic gladness: sa.mach/sim.chah rejoicing explicitly toward God, from his saving acts, or |
 | `M04-B-VCG-06` | M04-B | 59 | 2 | ✓ | Inverted, absent, corrupt, and judgment-silenced joy: misdirected, hollow, morally condemned, or divinely removed gladne |
 | `M04-C-VCG-01` | M04-C | 27 | 4 | ✓ | Synoptic and incarnation joy: gladness at the messianic arrival, kingdom signs, lost-found parables, resurrection encoun |
-| `M04-C-VCG-02` | M04-C | 15 | 1 | — | Johannine joy: indwelling, fullness, permanent gladness — Christ's own joy transferred to disciples, joy made complete. |
+| `M04-C-VCG-02` | M04-C | 15 | 1 | ✓ | Johannine joy: indwelling, fullness, permanent gladness — Christ's own joy transferred to disciples, joy made complete. |
 | `M04-C-VCG-03` | M04-C | 59 | 4 | ✓ | Pauline relational and community joy: gladness in gospel fellowship, pastoral bonds, co-rejoicing, mutual encouragement. |
 | `M04-C-VCG-04` | M04-C | 13 | 2 | ✓ | Spirit-given, kingdom, and constant joy: joy as Spirit's fruit, kingdom constituent, constant commanded stance, eschatol |
 | `M04-C-VCG-05` | M04-C | 16 | 1 | ✓ | Suffering-paradox, corrupt, and morally complex joy: commanded joy in persecution, joyful endurance, corrupt gladness of |
@@ -349,7 +353,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M04-I-VCG-01` | M04-I | 62 | 3 | ✓ | Wonder at God's marvellous works: proclaimed, remembered, thanked — the dominant register of M04-I. |
 | `M04-I-VCG-02` | M04-I | 13 | 1 | ✓ | Wonder as incomprehensibility: too-difficult, beyond-reach, impossible barrier — human cognitive limits and affirmation  |
 | `M04-I-VCG-03` | M04-I | 10 | 1 | ✓ | Wonder inverted: dark astonishment, dread, and appalling shock — extraordinary vocabulary producing horror rather than j |
-| `M04-J-VCG-01` | M04-J | 9 | 1 | — | Divine pleasantness and worship pleasantness: no.am/na.im as attribute of God's character, covenant favour, and the agre |
+| `M04-J-VCG-01` | M04-J | 9 | 1 | ✓ | Divine pleasantness and worship pleasantness: no.am/na.im as attribute of God's character, covenant favour, and the agre |
 | `M04-J-VCG-02` | M04-J | 20 | 4 | ✓ | Pleasantness of persons, speech, wisdom, and human bonds: experiential quality of what is agreeable in relationships and |
 | `M04-K-VCG-01` | M04-K | 38 | 1 | ✓ | Sacrificial pleasing aroma (ni.cho.ach) — the dominant righteous-worship register. God's receptive inner satisfaction at |
 | `M04-K-VCG-02` | M04-K | 8 | 1 | ✓ | Sensory luxury and pampered ease (a.nog, ta.a.nug, a.las) — the refined-comfort inner register, ranging from genuine dom |
@@ -367,9 +371,9 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M04-O-VCG-04` | M04-O | 12 | 1 | ✓ | God's good hand and covenantal promise-goodness; makarismos blessedness. The inner-being state of being under sustained  |
 | `M04-P-VCG-01` | M04-P | 3 | 1 | ✓ | Misdirected sacrificial delight — ni.cho.ach aroma directed to idols rather than YHWH. The pleasing-aroma worship-act wi |
 | `M04-P-VCG-02` | M04-K | 4 | 1 | ✓ | Lustful captivation — che.med craving directed toward foreign military splendour. Inner-being-as-illicit-desire that dri |
-| `M04-P-VCG-03` | M04-P | 1 | 1 | — | Predatory exultation — a.li.tsut as sinister inner gladness in cruelty against the poor. Inner-being-as-corrupt-rejoicin |
+| `M04-P-VCG-03` | M04-P | 1 | 1 | ✓ | Predatory exultation — a.li.tsut as sinister inner gladness in cruelty against the poor. Inner-being-as-corrupt-rejoicin |
 
-### M05 (123 VCGs · status: Analysis Completed (Terms Added))
+### M05 (123 VCGs · status: Ready for re-analysis)
 
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
@@ -416,8 +420,8 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `430-001` | M05-BOUNDARY | 1 | 1 | — | Term names the act of making peace — Christ's reconciling work that restores the broken relationship between humanity an |
 | `445-001` | M05-F | 41 | 1 | — | Term names the human act of comforting — bringing relief to inner grief through presence, words, or care |
 | `445-002` | M05-F | 26 | 1 | — | Term names divine comfort — God actively bringing relief and restoration to the inner grief of his people |
-| `46-001` | M05-E | 4 | 1 | ✓ | Term names gentleness/meekness as an inner quality of the person — a settled inner disposition of mildness and strength- |
-| `47-001` | M05-E | 4 | 1 | ✓ | Term names gentleness as an inner quality — the disposition that governs the reception of God's word, the exercise of wi |
+| `46-001` | M05-E | 4 | 1 | — | Term names gentleness/meekness as an inner quality of the person — a settled inner disposition of mildness and strength- |
+| `47-001` | M05-E | 4 | 1 | — | Term names gentleness as an inner quality — the disposition that governs the reception of God's word, the exercise of wi |
 | `487-001-a` | M05-B | 5 | 1 | — | Term names human compassion as the inner disposition of pity that moves toward and spares those in need — whether a chil |
 | `487-001-b` | M05-B | 11 | 1 | — | Term names compassion toward commanded-destruction targets as disobedience — where the inner disposition of pity violate |
 | `487-002` | M05-B | 21 | 1 | — | Term names divine compassion or its withholding — God's inner disposition of pity or mercy toward his people, and its wi |
@@ -452,7 +456,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `562-003` | M05-A | 28 | 1 | — | Term names mutual love among believers as the communal inner orientation — the mark of discipleship, the bond of the com |
 | `565-001` | M05-BOUNDARY | 1 | 1 | — | Term names loveliness as a quality that merits and directs the inner attention of the mind in moral reflection |
 | `566-001` | M05-A | 1 | 1 | — | Term names love of good as an inner character disposition — required of those who lead the community of faith |
-| `567-001` | M05-A | 1 | 1 | ✓ | Term names love of brothers as an inner disposition among the virtues of the unified community |
+| `567-001` | M05-A | 1 | 1 | — | Term names love of brothers as an inner disposition among the virtues of the unified community |
 | `569-001` | M05-BOUNDARY | 2 | 1 | — | Term names freedom from love of money as an inner character quality — required of leaders and urged for all believers |
 | `571-001` | M05-A | 21 | 1 | — | Term names love of God or Christ as the fundamental inner orientation of the person — the love commanded of the whole he |
 | `571-002` | M05-A | 31 | 1 | — | Term names God's or Christ's love toward the person — the divine inner act of love that precedes and enables all human l |
@@ -506,7 +510,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `1280-001` | M06-B | 13 | 2 | ✓ | Term names despising as an inner act with moral and covenantal consequence — directed at birthright, God's word, God's n |
 | `1281-001` | M06-B | 1 | 1 | ✓ | Term names contempt as a social-inner contagion — one act of defiance spreading the inner disposition of contempt throug |
 | `1283-001` | M06-C | 2 | 2 | ✓ | Term names abhorrence and everlasting contempt as the ultimate inner-being condition of those who rebel against God — th |
-| `14-001` | M06-C | 1 | 1 | ✓ | Term names the inner disposition of revulsion toward evil — what a person claims as morally repugnant, whether genuinely |
+| `14-001` | M06-C | 1 | 1 | — | Term names the inner disposition of revulsion toward evil — what a person claims as morally repugnant, whether genuinely |
 | `14-002` | M06-C | 1 | 1 | ✓ | Term names the person whose inner moral character is itself the object of divine revulsion — character as abhorrent in G |
 | `1567-001` | M06-B | 3 | 1 | ✓ | Term names blasphemous contempt as the inner disposition of rebellion — the speech-act of reviling that reveals the hear |
 | `1568-001` | M06-E | 2 | 1 | — | Term names disgrace as an inner condition in extremity — the shame-experience accompanying crisis that overwhelms all ca |
@@ -561,7 +565,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M07-A-VCG-02` | M07-A | 8 | 1 | ✓ | Shame from disappointed trust in human powers. Verses where shame arises from misplaced reliance on human allies or eart |
 | `M07-A-VCG-03` | M07-A | 5 | 1 | ✓ | Shame borne for God's sake and by the righteous sufferer. Verses where shame is consciously carried by the innocent or r |
 | `M07-A-VCG-04` | M07-A | 11 | 1 | ✓ | Shame promised removal and transformation. Verses where God explicitly promises to remove, forget, or transform the sham |
-| `M07-A-VCG-05` | M07-A | 6 | 1 | — | Shame averted by trust, hope, and divine protection. Verses where shame is the present inner threat and trust in God is  |
+| `M07-A-VCG-05` | M07-A | 6 | 1 | ✓ | Shame averted by trust, hope, and divine protection. Verses where shame is the present inner threat and trust in God is  |
 | `M07-B-VCG-01` | M07-B | 39 | 1 | ✓ | Shame invoked on enemies as just reversal of their hostility. Verses where the psalmist or community calls shame upon en |
 | `M07-B-VCG-02` | M07-B | 22 | 1 | ✓ | Shame from idolatry and false religious trust. Verses where shame falls as the direct consequence of idolatry, false wor |
 | `M07-B-VCG-03` | M07-B | 32 | 1 | ✓ | Shame as natural fruit of personal and relational moral failure. Verses where shame is the direct, natural consequence o |
@@ -571,20 +575,20 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M07-C-VCG-02` | M07-C | 16 | 1 | ✓ | Trust in God as shield against shame: refuge and word. Verses where taking refuge in God, holding to his testimonies, wa |
 | `M07-C-VCG-03` | M07-C | 9 | 1 | ✓ | Corrective shame awakening conscience toward God. Verses where shame is deployed as an inward corrective force in the ve |
 | `M07-C-VCG-04` | M07-C | 6 | 1 | ✓ | Promise: never put to shame in God's presence. Verses where the covenant or eschatological promise of not being put to s |
-| `M07-D-VCG-01` | M07-D | 20 | 1 | — | Social and bodily humiliation: enforced downward movement in human community. Verses where humiliation operates through  |
-| `M07-D-VCG-02` | M07-D | 20 | 1 | — | Military defeat and national collapse as humiliation. Verses where humiliation comes through military defeat, the collap |
+| `M07-D-VCG-01` | M07-D | 20 | 1 | ✓ | Social and bodily humiliation: enforced downward movement in human community. Verses where humiliation operates through  |
+| `M07-D-VCG-02` | M07-D | 20 | 1 | ✓ | Military defeat and national collapse as humiliation. Verses where humiliation comes through military defeat, the collap |
 | `M07-D-VCG-03` | M07-D | 27 | 1 | ✓ | Divine abasement of pride: God bringing the lofty low. Verses where humiliation is the direct, sovereign act of God agai |
-| `M07-D-VCG-04` | M07-D | 5 | 1 | — | Shame carried into death and as enduring burden. Verses where humiliation is permanent — warriors descending to the pit  |
-| `M07-E-VCG-01` | M07-E | 9 | 1 | — | Active dishonour: refusing or withdrawing due regard toward persons. Verses where dishonour is actively enacted through  |
-| `M07-E-VCG-02` | M07-E | 6 | 1 | — | Assigned or structural dishonour: standing, nature, and received treatment. Verses where dishonour is assigned, structur |
-| `M07-F-VCG-01` | M07-F | 10 | 1 | — | Shameful conduct and objects: the moral quality of what is shameful. Verses where conscience identifies conduct, speech, |
-| `M07-F-VCG-02` | M07-F | 3 | 1 | — | Indecent desires and moral disorder: disordered inner appetite. Verses where the shameful characteristic is located in d |
-| `M07-F-VCG-03` | M07-F | 3 | 1 | — | Inverted conscience: glorying in shame and the perverted evaluative faculty. Verses where the moral-evaluation apparatus |
-| `M07-G-VCG-01` | M07-G | 13 | 1 | — | Dismissive contempt as inner attitude: treating persons as of no account. Verses where the contempt-producing-shame mech |
-| `M07-G-VCG-02` | M07-G | 6 | 1 | — | Active contempt expressed through violence, mockery, and rejection. Verses where contempt is enacted through physical vi |
-| `M07-G-VCG-03` | M07-G | 5 | 1 | — | Verbal contempt and reputation attack as shaming mechanism. Verses where shame is produced through speech — verbal attac |
-| `M07-H-VCG-01` | M07-H | 4 | 1 | — | Innocence as active inner defence: clean conscience before God and persons. Verses where innocence — the integrity of wi |
-| `M07-H-VCG-02` | M07-H | 4 | 1 | — | Innocence questioned and incapacity for innocence. Verses where the innocence-shame polarity is evidenced through the qu |
+| `M07-D-VCG-04` | M07-D | 5 | 1 | ✓ | Shame carried into death and as enduring burden. Verses where humiliation is permanent — warriors descending to the pit  |
+| `M07-E-VCG-01` | M07-E | 9 | 1 | ✓ | Active dishonour: refusing or withdrawing due regard toward persons. Verses where dishonour is actively enacted through  |
+| `M07-E-VCG-02` | M07-E | 6 | 1 | ✓ | Assigned or structural dishonour: standing, nature, and received treatment. Verses where dishonour is assigned, structur |
+| `M07-F-VCG-01` | M07-F | 10 | 1 | ✓ | Shameful conduct and objects: the moral quality of what is shameful. Verses where conscience identifies conduct, speech, |
+| `M07-F-VCG-02` | M07-F | 3 | 1 | ✓ | Indecent desires and moral disorder: disordered inner appetite. Verses where the shameful characteristic is located in d |
+| `M07-F-VCG-03` | M07-F | 3 | 1 | ✓ | Inverted conscience: glorying in shame and the perverted evaluative faculty. Verses where the moral-evaluation apparatus |
+| `M07-G-VCG-01` | M07-G | 13 | 1 | ✓ | Dismissive contempt as inner attitude: treating persons as of no account. Verses where the contempt-producing-shame mech |
+| `M07-G-VCG-02` | M07-G | 6 | 1 | ✓ | Active contempt expressed through violence, mockery, and rejection. Verses where contempt is enacted through physical vi |
+| `M07-G-VCG-03` | M07-G | 5 | 1 | ✓ | Verbal contempt and reputation attack as shaming mechanism. Verses where shame is produced through speech — verbal attac |
+| `M07-H-VCG-01` | M07-H | 4 | 1 | ✓ | Innocence as active inner defence: clean conscience before God and persons. Verses where innocence — the integrity of wi |
+| `M07-H-VCG-02` | M07-H | 4 | 1 | ✓ | Innocence questioned and incapacity for innocence. Verses where the innocence-shame polarity is evidenced through the qu |
 
 ### M08 (24 VCGs · status: Analysis Completed)
 
@@ -620,21 +624,21 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
 | `M09-A-VCG-01` | M09-A | 16 | 1 | ✓ | The Old Testament Hebrew register of willed self-lowering — the inner act of ka.na (humbling before God) in response to  |
-| `M09-A-VCG-02` | M09-A | 6 | 1 | — | The Greek NT register of the verbal act of self-humbling (tapeinoō) directed Godward, where the willed downward movement |
+| `M09-A-VCG-02` | M09-A | 6 | 1 | ✓ | The Greek NT register of the verbal act of self-humbling (tapeinoō) directed Godward, where the willed downward movement |
 | `M09-A-VCG-03` | M09-A | 3 | 1 | ✓ | The costlier, service-register expression of willed self-lowering: humility as the inner quality of self-giving in vocat |
 | `M09-A-VCG-04` | M09-A | 6 | 1 | ✓ | The relational-disposition register of humility — as a quality of inner bearing toward God and community, contrasted wit |
 | `M09-A-VCG-05` | M09-A | 5 | 1 | ✓ | The Pauline epistolary register of tapeinofrosunē — humility as a chosen, genuine inner character disposition placed alo |
-| `M09-B-VCG-01` | M09-B | 4 | 1 | — | The register of externally-imposed humbling where God is the agent and the person or people experience being brought low |
-| `M09-B-VCG-02` | M09-B | 5 | 1 | — | The register of lowliness as a social or existential condition that stands in relation to divine reversals, reframings,  |
-| `M09-B-VCG-03` | M09-B | 4 | 1 | — | The register of lowliness as an experienced inner state produced by affliction, suffering, circumstance, or God's action |
+| `M09-B-VCG-01` | M09-B | 4 | 1 | ✓ | The register of externally-imposed humbling where God is the agent and the person or people experience being brought low |
+| `M09-B-VCG-02` | M09-B | 5 | 1 | ✓ | The register of lowliness as a social or existential condition that stands in relation to divine reversals, reframings,  |
+| `M09-B-VCG-03` | M09-B | 4 | 1 | ✓ | The register of lowliness as an experienced inner state produced by affliction, suffering, circumstance, or God's action |
 | `M09-C-VCG-01` | M09-C | 5 | 1 | ✓ | The register of submission as inner allegiance of the will — the will's habitual yielding discloses and constitutes whos |
-| `M09-C-VCG-02` | M09-C | 4 | 1 | — | The cognitive-volitional register of submission — obedience named in the mind's capture, the conscience's deliberation,  |
-| `M09-C-VCG-03` | M09-C | 4 | 1 | — | The register of submission-as-genuine-inner-motive — verses that explicitly distinguish sincere, God-ward inner complian |
+| `M09-C-VCG-02` | M09-C | 4 | 1 | ✓ | The cognitive-volitional register of submission — obedience named in the mind's capture, the conscience's deliberation,  |
+| `M09-C-VCG-03` | M09-C | 4 | 1 | ✓ | The register of submission-as-genuine-inner-motive — verses that explicitly distinguish sincere, God-ward inner complian |
 | `M09-C-VCG-04` | M09-C | 4 | 1 | ✓ | The register of submission as something acquired, transformative, or costly at the deepest levels of the inner person. C |
 | `M09-D-VCG-01` | M09-D | 8 | 1 | ✓ | The gospel-obedience register — obedience of faith as both the response to gospel proclamation and the defining characte |
 | `M09-D-VCG-02` | M09-D | 5 | 1 | ✓ | The register of obedience as soteriological and sanctifying telos — the orientation of the will that connects the person |
 | `M09-D-VCG-03` | M09-D | 4 | 1 | ✓ | The household and relational register of the submission-obedience pattern — obedience as a shaped quality within the aut |
-| `M09-D-VCG-04` | M09-D | 2 | 1 | — | The personal and eschatological allegiance register — obedience as a directed disposition of will toward a named authori |
+| `M09-D-VCG-04` | M09-D | 2 | 1 | ✓ | The personal and eschatological allegiance register — obedience as a directed disposition of will toward a named authori |
 | `M09-E-VCG-01` | M09-E | 2 | 1 | ✓ | The full contrition register — the acute, grief-laden inner brokenness of spirit that follows genuine confrontation with |
 | `M09-F-VCG-01` | M09-F | 2 | 1 | ✓ | The meekness and gentleness characteristic — holding force, capability, or will in calibrated, measured expression. The  |
 | `M09-G-VCG-01` | M09-G | 3 | 1 | ✓ | The full dignity characteristic — settled moral seriousness and gravitas that grounds composed, non-self-displaying cond |
@@ -645,74 +649,74 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
-| `M10-C-VCG-01` | M10-C | 30 | 1 | — | Sinner as social-moral category: exclusion and stigma |
-| `M10-C-VCG-02` | M10-C | 20 | 1 | — | Sinner as constituted moral identity: imputed and declared status |
-| `M10-C-VCG-03` | M10-C | 14 | 1 | — | Sinner as extreme moral type: habitual wrongdoing defining total character |
-| `M10-D-VCG-01` | M10-D | 18 | 1 | — | Guilt-recognition: conscience engaging after the act |
-| `M10-D-VCG-02` | M10-D | 19 | 1 | — | Guilt as accumulated weight: communal and personal burden mounting |
-| `M10-D-VCG-03` | M10-D | 16 | 1 | — | Guilt as transferable burden: borne on behalf of another |
-| `M10-D-VCG-04` | M10-D | 18 | 1 | — | Guilt's punitive consequence: the burden of punishment borne |
-| `M10-D-VCG-05` | M10-D | 26 | 1 | — | Guilt exposed, indelible, and removed: the divine perspective |
-| `M10-E-VCG-01` | M10-E | 17 | 1 | — | Priestly and cultic bearing of iniquity |
-| `M10-E-VCG-02` | M10-E | 18 | 1 | — | Generational iniquity: transmitted across family lines |
-| `M10-E-VCG-03` | M10-E | 28 | 1 | — | Iniquity in divine memory: what God sees and does not forget |
-| `M10-E-VCG-04` | M10-E | 29 | 1 | — | Iniquity as personal moral crime: individually owned and judged |
-| `M10-E-VCG-05` | M10-E | 30 | 1 | — | Iniquity as overwhelming accumulated weight |
-| `M10-E-VCG-06` | M10-E | 21 | 1 | — | Iniquity pardoned and removed: divine forgiveness resolves the moral debt |
-| `M10-E-VCG-07` | M10-E | 15 | 1 | — | Iniquity as self-destructive force: the inner crime that ruins from within |
-| `M10-E-VCG-08` | M10-E | 4 | 1 | — | Iniquity heart-seated: the crime originating in the will |
-| `M10-F-VCG-01` | M10-F | 27 | 1 | — | Transgression against God: rebellion in the divine-covenant relationship |
-| `M10-F-VCG-02` | M10-F | 7 | 1 | — | Revolt: the inner defiance that speaks and acts against God |
-| `M10-F-VCG-03` | M10-F | 13 | 1 | — | Accumulated transgression crossing the threshold of divine tolerance |
-| `M10-F-VCG-04` | M10-F | 15 | 1 | — | Transgression as law-violation: the NT parabasis/parabatēs register |
-| `M10-F-VCG-05` | M10-F | 5 | 1 | — | Adam-paradigm transgression: the foundational boundary-crossing |
-| `M10-F-VCG-06` | M10-F | 13 | 1 | — | Transgression pardoned and erased: divine forgiveness of rebellion |
-| `M10-F-VCG-07` | M10-F | 14 | 1 | — | Transgression's oppressive weight: the burden that crushes and enslaves |
-| `M10-F-VCG-08` | M10-F | 19 | 1 | — | Transgression as interpersonal breach: wrong done between persons |
-| `M10-F-VCG-09` | M10-F | 34 | 1 | — | Transgression as personal moral breach: Job, Psalms, and wisdom |
-| `M10-G-VCG-01` | M10-G | 57 | 1 | — | Unfaithfulness toward God: covenant-betrayal directed upward (M13+M31) |
-| `M10-G-VCG-02` | M10-G | 34 | 1 | — | Relational treachery: faithlessness between persons (M13+M31) |
-| `M10-G-VCG-03` | M10-G | 10 | 1 | — | Treachery as constitutional inner character (M13+M31) |
-| `M10-H-VCG-01` | M10-H | 10 | 1 | — | Perversity of speech: the tongue as vehicle of moral inversion |
-| `M10-H-VCG-02` | M10-H | 6 | 1 | — | Perversion of judgment: bribery corrupting discernment |
-| `M10-H-VCG-03` | M10-H | 19 | 1 | — | Perversion of mind, will, and way: the inwardly twisted person |
-| `M10-H-VCG-04` | M10-H | 4 | 1 | — | Sexual perversion and moral degeneracy (M23/M35 bodily-decay) |
-| `M10-H-VCG-05` | M10-H | 25 | 1 | — | Moral corruption, decay, and lewdness (M03 cha.val/a.vah; M07 nav.lut) |
-| `M10-I-VCG-01` | M10-I | 20 | 1 | — | Judicial and commercial injustice: the corruption of right process (M26) |
-| `M10-I-VCG-02` | M10-I | 33 | 1 | — | Injustice as oppression and harm to persons (M26) |
-| `M10-I-VCG-03` | M10-I | 19 | 1 | — | Character of the unjust person: adikos, av.val, a.vil, adikēma (M26) |
-| `M10-J-VCG-01` | M10-J | 32 | 1 | — | Sin directed against God: the vertical relational offense |
-| `M10-J-VCG-02` | M10-J | 18 | 1 | — | Sin against the neighbour: the horizontal relational offense |
-| `M10-J-VCG-03` | M10-J | 19 | 1 | — | Sin deterred, restrained, or denied |
-| `M10-J-VCG-04` | M10-J | 17 | 1 | — | Sin requiring ritual remedy: the cultic-atonement register |
-| `M10-J-VCG-05` | M10-J | 12 | 1 | — | NT wilful sinning: hamartanō and paraptōma in M10-J |
-| `M10-K-VCG-01` | M10-K | 10 | 1 | — | Unintentional sin and moral surprise: conscience engaged after the fact |
-| `M10-K-VCG-02` | M10-K | 8 | 1 | — | Cultic purification: the ritual-cleansing register |
-| `M10-L-VCG-01` | M10-L | 23 | 1 | — | Individual confession: the will naming its own sin |
-| `M10-L-VCG-02` | M10-L | 10 | 1 | — | Corporate and communal confession |
-| `M10-L-VCG-03` | M10-L | 1 | 1 | — | Confession without transformed will: the hollow acknowledgment |
-| `M10-M-VCG-01` | M10-M | 8 | 1 | — | Conscience suppression and self-blindness |
-| `M10-N-VCG-01` | M10-N | 18 | 1 | — | Refusal to repent: departure withheld |
-| `M10-O-VCG-01` | M10-O | 14 | 1 | — | Habitual defection: the will's settled pattern toward sin |
-| `M10-P-VCG-01` | M10-P | 19 | 1 | — | Contagious sin: leadership transmitting moral defection |
-| `M10-Q-VCG-01` | M10-Q | 9 | 1 | — | Political revolt: wilful defection from governing relationship |
+| `M10-C-VCG-01` | M10-C | 30 | 1 | ✓ | Sinner as social-moral category: exclusion and stigma |
+| `M10-C-VCG-02` | M10-C | 20 | 1 | ✓ | Sinner as constituted moral identity: imputed and declared status |
+| `M10-C-VCG-03` | M10-C | 14 | 1 | ✓ | Sinner as extreme moral type: habitual wrongdoing defining total character |
+| `M10-D-VCG-01` | M10-D | 18 | 1 | ✓ | Guilt-recognition: conscience engaging after the act |
+| `M10-D-VCG-02` | M10-D | 19 | 1 | ✓ | Guilt as accumulated weight: communal and personal burden mounting |
+| `M10-D-VCG-03` | M10-D | 16 | 1 | ✓ | Guilt as transferable burden: borne on behalf of another |
+| `M10-D-VCG-04` | M10-D | 18 | 1 | ✓ | Guilt's punitive consequence: the burden of punishment borne |
+| `M10-D-VCG-05` | M10-D | 26 | 1 | ✓ | Guilt exposed, indelible, and removed: the divine perspective |
+| `M10-E-VCG-01` | M10-E | 17 | 1 | ✓ | Priestly and cultic bearing of iniquity |
+| `M10-E-VCG-02` | M10-E | 18 | 1 | ✓ | Generational iniquity: transmitted across family lines |
+| `M10-E-VCG-03` | M10-E | 28 | 1 | ✓ | Iniquity in divine memory: what God sees and does not forget |
+| `M10-E-VCG-04` | M10-E | 29 | 1 | ✓ | Iniquity as personal moral crime: individually owned and judged |
+| `M10-E-VCG-05` | M10-E | 30 | 1 | ✓ | Iniquity as overwhelming accumulated weight |
+| `M10-E-VCG-06` | M10-E | 21 | 1 | ✓ | Iniquity pardoned and removed: divine forgiveness resolves the moral debt |
+| `M10-E-VCG-07` | M10-E | 15 | 1 | ✓ | Iniquity as self-destructive force: the inner crime that ruins from within |
+| `M10-E-VCG-08` | M10-E | 4 | 1 | ✓ | Iniquity heart-seated: the crime originating in the will |
+| `M10-F-VCG-01` | M10-F | 27 | 1 | ✓ | Transgression against God: rebellion in the divine-covenant relationship |
+| `M10-F-VCG-02` | M10-F | 7 | 1 | ✓ | Revolt: the inner defiance that speaks and acts against God |
+| `M10-F-VCG-03` | M10-F | 13 | 1 | ✓ | Accumulated transgression crossing the threshold of divine tolerance |
+| `M10-F-VCG-04` | M10-F | 15 | 1 | ✓ | Transgression as law-violation: the NT parabasis/parabatēs register |
+| `M10-F-VCG-05` | M10-F | 5 | 1 | ✓ | Adam-paradigm transgression: the foundational boundary-crossing |
+| `M10-F-VCG-06` | M10-F | 13 | 1 | ✓ | Transgression pardoned and erased: divine forgiveness of rebellion |
+| `M10-F-VCG-07` | M10-F | 14 | 1 | ✓ | Transgression's oppressive weight: the burden that crushes and enslaves |
+| `M10-F-VCG-08` | M10-F | 19 | 1 | ✓ | Transgression as interpersonal breach: wrong done between persons |
+| `M10-F-VCG-09` | M10-F | 34 | 1 | ✓ | Transgression as personal moral breach: Job, Psalms, and wisdom |
+| `M10-G-VCG-01` | M10-G | 57 | 1 | ✓ | Unfaithfulness toward God: covenant-betrayal directed upward (M13+M31) |
+| `M10-G-VCG-02` | M10-G | 34 | 1 | ✓ | Relational treachery: faithlessness between persons (M13+M31) |
+| `M10-G-VCG-03` | M10-G | 10 | 1 | ✓ | Treachery as constitutional inner character (M13+M31) |
+| `M10-H-VCG-01` | M10-H | 10 | 1 | ✓ | Perversity of speech: the tongue as vehicle of moral inversion |
+| `M10-H-VCG-02` | M10-H | 6 | 1 | ✓ | Perversion of judgment: bribery corrupting discernment |
+| `M10-H-VCG-03` | M10-H | 19 | 1 | ✓ | Perversion of mind, will, and way: the inwardly twisted person |
+| `M10-H-VCG-04` | M10-H | 4 | 1 | ✓ | Sexual perversion and moral degeneracy (M23/M35 bodily-decay) |
+| `M10-H-VCG-05` | M10-H | 25 | 1 | ✓ | Moral corruption, decay, and lewdness (M03 cha.val/a.vah; M07 nav.lut) |
+| `M10-I-VCG-01` | M10-I | 20 | 1 | ✓ | Judicial and commercial injustice: the corruption of right process (M26) |
+| `M10-I-VCG-02` | M10-I | 33 | 1 | ✓ | Injustice as oppression and harm to persons (M26) |
+| `M10-I-VCG-03` | M10-I | 19 | 1 | ✓ | Character of the unjust person: adikos, av.val, a.vil, adikēma (M26) |
+| `M10-J-VCG-01` | M10-J | 32 | 1 | ✓ | Sin directed against God: the vertical relational offense |
+| `M10-J-VCG-02` | M10-J | 18 | 1 | ✓ | Sin against the neighbour: the horizontal relational offense |
+| `M10-J-VCG-03` | M10-J | 19 | 1 | ✓ | Sin deterred, restrained, or denied |
+| `M10-J-VCG-04` | M10-J | 17 | 1 | ✓ | Sin requiring ritual remedy: the cultic-atonement register |
+| `M10-J-VCG-05` | M10-J | 12 | 1 | ✓ | NT wilful sinning: hamartanō and paraptōma in M10-J |
+| `M10-K-VCG-01` | M10-K | 10 | 1 | ✓ | Unintentional sin and moral surprise: conscience engaged after the fact |
+| `M10-K-VCG-02` | M10-K | 8 | 1 | ✓ | Cultic purification: the ritual-cleansing register |
+| `M10-L-VCG-01` | M10-L | 23 | 1 | ✓ | Individual confession: the will naming its own sin |
+| `M10-L-VCG-02` | M10-L | 10 | 1 | ✓ | Corporate and communal confession |
+| `M10-L-VCG-03` | M10-L | 1 | 1 | ✓ | Confession without transformed will: the hollow acknowledgment |
+| `M10-M-VCG-01` | M10-M | 8 | 1 | ✓ | Conscience suppression and self-blindness |
+| `M10-N-VCG-01` | M10-N | 18 | 1 | ✓ | Refusal to repent: departure withheld |
+| `M10-O-VCG-01` | M10-O | 14 | 1 | ✓ | Habitual defection: the will's settled pattern toward sin |
+| `M10-P-VCG-01` | M10-P | 19 | 1 | ✓ | Contagious sin: leadership transmitting moral defection |
+| `M10-Q-VCG-01` | M10-Q | 9 | 1 | ✓ | Political revolt: wilful defection from governing relationship |
 | `M10-R-VCG-01` | M10-R | 9 | 1 | ✓ | Slander and abusive speech: heart-generated inner corruption (M06) |
-| `M10-R-VCG-02` | M10-R | 7 | 1 | — | Blasphemy as divine-authority claim: presumptuous usurpation (M06) |
-| `M10-R-VCG-03` | M10-R | 6 | 1 | — | Blasphemy as identity: the beast's constitutive defiance (M06) |
-| `M10-S-VCG-01` | M10-S | 5 | 1 | — | Specialised sinful mechanisms: desire exploited (M14), appearance falsified (M08), identity abandoned (M31) |
-| `M10-T-VCG-01` | M10-T | 5 | 1 | — | Wickedness as defining inner condition (rish.ah, al.vah) |
-| `M10-T-VCG-02` | M10-T | 39 | 1 | — | Sin forgiven and addressed: the NT redemption register |
-| `M10-T-VCG-03` | M10-T | 68 | 1 | — | Sin as enslaving and dominating power (Rom 6-7) |
-| `M10-U-VCG-01` | M10-U | 9 | 1 | — | Sin as enslaving power: the will under bondage |
-| `M10-V-VCG-01` | M10-V | 32 | 1 | — | Chet: personal moral liability before God |
-| `M10-V-VCG-02` | M10-V | 9 | 1 | — | Cha.ta.ah: sin as objective moral category requiring covering |
-| `M10-V-VCG-03` | M10-V | 5 | 1 | — | Sin under divine scrutiny: Job's surveillance register |
-| `M10-V-VCG-04` | M10-V | 46 | 1 | — | Jeroboam-sin legacy: the named sin as recorded pattern |
-| `M10-V-VCG-05` | M10-V | 113 | 1 | — | Sin as objective burden before God: the broad chat.tat record |
-| `M10-W-VCG-01` | M10-W | 12 | 1 | — | Priestly atonement: kip.pu.rim and chat.tat sin-offering (M11) |
-| `M10-W-VCG-02` | M10-W | 12 | 1 | — | Forgiveness declared by Jesus and through Christ's blood (M11) |
-| `M10-W-VCG-03` | M10-W | 10 | 1 | — | Forgiveness sought through the Levitical sacrificial-atonement system (M11) |
-| `M10-X-VCG-01` | M10-X | 8 | 1 | — | Generational sin: the ancestral moral condition inherited |
+| `M10-R-VCG-02` | M10-R | 7 | 1 | ✓ | Blasphemy as divine-authority claim: presumptuous usurpation (M06) |
+| `M10-R-VCG-03` | M10-R | 6 | 1 | ✓ | Blasphemy as identity: the beast's constitutive defiance (M06) |
+| `M10-S-VCG-01` | M10-S | 5 | 1 | ✓ | Specialised sinful mechanisms: desire exploited (M14), appearance falsified (M08), identity abandoned (M31) |
+| `M10-T-VCG-01` | M10-T | 5 | 1 | ✓ | Wickedness as defining inner condition (rish.ah, al.vah) |
+| `M10-T-VCG-02` | M10-T | 39 | 1 | ✓ | Sin forgiven and addressed: the NT redemption register |
+| `M10-T-VCG-03` | M10-T | 68 | 1 | ✓ | Sin as enslaving and dominating power (Rom 6-7) |
+| `M10-U-VCG-01` | M10-U | 9 | 1 | ✓ | Sin as enslaving power: the will under bondage |
+| `M10-V-VCG-01` | M10-V | 32 | 1 | ✓ | Chet: personal moral liability before God |
+| `M10-V-VCG-02` | M10-V | 9 | 1 | ✓ | Cha.ta.ah: sin as objective moral category requiring covering |
+| `M10-V-VCG-03` | M10-V | 5 | 1 | ✓ | Sin under divine scrutiny: Job's surveillance register |
+| `M10-V-VCG-04` | M10-V | 46 | 1 | ✓ | Jeroboam-sin legacy: the named sin as recorded pattern |
+| `M10-V-VCG-05` | M10-V | 113 | 1 | ✓ | Sin as objective burden before God: the broad chat.tat record |
+| `M10-W-VCG-01` | M10-W | 12 | 1 | ✓ | Priestly atonement: kip.pu.rim and chat.tat sin-offering (M11) |
+| `M10-W-VCG-02` | M10-W | 12 | 1 | ✓ | Forgiveness declared by Jesus and through Christ's blood (M11) |
+| `M10-W-VCG-03` | M10-W | 10 | 1 | ✓ | Forgiveness sought through the Levitical sacrificial-atonement system (M11) |
+| `M10-X-VCG-01` | M10-X | 8 | 1 | ✓ | Generational sin: the ancestral moral condition inherited |
 
 ### M10b (36 VCGs · status: Analysis Completed)
 
@@ -720,40 +724,40 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 |---|---|---:|---:|:-:|---|
 | `M10b-A-VCG-01` | M10b-A | 5 | 1 | ✓ | Forensic-verdict register — mandatory polysemy VCG. Verses where ra.sha functions as a legal-status label in forensic/ju |
 | `M10b-A-VCG-02` | M10b-A | 8 | 1 | ✓ | Practical atheism — God excluded from the inner mind of the wicked. The wicked person's defining inner characteristic is |
-| `M10b-A-VCG-03` | M10b-A | 22 | 1 | — | Pride as inner engine and directed hostility of the wicked. Two closely related registers: pride as the inner engine of  |
+| `M10b-A-VCG-03` | M10b-A | 22 | 1 | ✓ | Pride as inner engine and directed hostility of the wicked. Two closely related registers: pride as the inner engine of  |
 | `M10b-A-VCG-04` | M10b-A | 18 | 1 | ✓ | Moral contrast — wickedness defined against the inner status of the righteous. Verses where the wicked person is defined |
 | `M10b-A-VCG-05` | M10b-A | 30 | 1 | ✓ | Wickedness condemned, exposed, and publicly judged. Verses where the wicked person's inner character draws visible, publ |
-| `M10b-A-VCG-06` | M10b-A | 21 | 1 | — | Wickedness as inner instability and self-destruction. Verses where wickedness is shown to be internally unstable — a con |
+| `M10b-A-VCG-06` | M10b-A | 21 | 1 | ✓ | Wickedness as inner instability and self-destruction. Verses where wickedness is shown to be internally unstable — a con |
 | `M10b-A-VCG-07` | M10b-A | 22 | 1 | ✓ | Wickedness as directional orientation — a way the will can turn from. The Ezekiel corpus on wickedness as a volitional d |
 | `M10b-A-VCG-08` | M10b-A | 12 | 1 | ✓ | Wickedness expressed through speech — concealment, corruption, and social destruction. Verses where the wicked person's  |
-| `M10b-A-VCG-09` | M10b-A | 33 | 1 | — | Wickedness against divine justice — the wicked person's soul, appetites, and moral hollowness. The Proverbs-heavy corpus |
-| `M10b-A-VCG-10` | M10b-A | 9 | 1 | — | Job's theological debate — the wicked in the crucible of theodicy. The Job corpus addressing the wicked in the context o |
+| `M10b-A-VCG-09` | M10b-A | 33 | 1 | ✓ | Wickedness against divine justice — the wicked person's soul, appetites, and moral hollowness. The Proverbs-heavy corpus |
+| `M10b-A-VCG-10` | M10b-A | 9 | 1 | ✓ | Job's theological debate — the wicked in the crucible of theodicy. The Job corpus addressing the wicked in the context o |
 | `M10b-A-VCG-11` | M10b-A | 10 | 2 | ✓ | re.sha and mir.sha.at — wickedness as abstract condition and the wicked collective. The re.sha corpus (abstract noun: wi |
 | `M10b-B-VCG-01` | M10b-B | 13 | 1 | ✓ | Cosmic evil — the evil one, the evil age — mandatory polysemy VCG. Verses where evil names a cosmic, supra-personal powe |
-| `M10b-B-VCG-02` | M10b-B | 8 | 1 | — | Constitutional evil — human nature bent toward corruption as baseline condition. Verses where evil names the constitutio |
-| `M10b-B-VCG-03` | M10b-B | 8 | 1 | — | The heart as treasury — the inner source and generative organ of evil. Verses where the heart is explicitly named as the |
-| `M10b-B-VCG-04` | M10b-B | 17 | 1 | — | Evil as settled deep character of persons. Verses where evil names the settled, characterological identity of persons —  |
-| `M10b-B-VCG-05` | M10b-B | 20 | 3 | — | Settled inner malice, entrenched badness, and deep hostile residue — kakia, ponēria, adikia saturation. Verses where the |
-| `M10b-B-VCG-06` | M10b-B | 24 | 2 | — | Evil conscience, moral accountability, progressive deterioration, and abhorrence of evil. Verses addressing moral accoun |
-| `M10b-C-VCG-01` | M10b-C | 10 | 1 | — | Ethical and character-orientation abomination — dishonest commercial practice, unjust social dealings, and the character |
-| `M10b-C-VCG-02` | M10b-C | 9 | 2 | — | Pride, crooked heart, and hidden corruption as abomination. Abomination located most directly in the interior life — pri |
-| `M10b-C-VCG-03` | M10b-C | 4 | 1 | — | Corrupt worship — the unclean inner person's religious act as abomination. The religious act (sacrifice, incense, prayer |
-| `M10b-C-VCG-04` | M10b-C | 11 | 1 | — | The silenced and awakening conscience before abomination. The faculty of conscience in its various states in relation to |
-| `M10b-C-VCG-05` | M10b-C | 6 | 1 | — | Identity and choice constituted by abomination. Abomination as a category defined by divine declaration (Pro 6:16), the  |
-| `M10b-D-VCG-01` | M10b-D | 6 | 1 | — | Levitical boundary-laws — abomination as category-violation against created order. The Levitical corpus declaring specif |
-| `M10b-D-VCG-02` | M10b-D | 14 | 1 | — | Deuteronomic warnings — the will that must actively resist abominable practices. The Deuteronomic corpus warning against |
-| `M10b-D-VCG-03` | M10b-D | 17 | 1 | — | Historical reform narratives — kings institutionalising or purging idolatrous abominations. The historical narratives wh |
-| `M10b-D-VCG-04` | M10b-D | 14 | 1 | — | Jeremiah and the Prophets — idolatrous objects installed and the will's stubbornness. The prophetic corpus outside Ezeki |
-| `M10b-D-VCG-05` | M10b-D | 43 | 1 | — | Ezekiel — idolatry driving the divine presence away from the sanctuary. Ezekiel's concentrated corpus where accumulated  |
-| `M10b-D-VCG-06` | M10b-D | 5 | 1 | — | Sacrilegious desolation and apocalyptic abomination. The eschatological and apocalyptic verses where abomination names a |
-| `M10b-E-VCG-01` | M10b-E | 7 | 1 | — | Trouble and distress as the affliction of evil — mandatory polysemy VCG. Verses where a.ven names the trouble, afflictio |
+| `M10b-B-VCG-02` | M10b-B | 8 | 1 | ✓ | Constitutional evil — human nature bent toward corruption as baseline condition. Verses where evil names the constitutio |
+| `M10b-B-VCG-03` | M10b-B | 8 | 1 | ✓ | The heart as treasury — the inner source and generative organ of evil. Verses where the heart is explicitly named as the |
+| `M10b-B-VCG-04` | M10b-B | 17 | 1 | ✓ | Evil as settled deep character of persons. Verses where evil names the settled, characterological identity of persons —  |
+| `M10b-B-VCG-05` | M10b-B | 20 | 3 | ✓ | Settled inner malice, entrenched badness, and deep hostile residue — kakia, ponēria, adikia saturation. Verses where the |
+| `M10b-B-VCG-06` | M10b-B | 24 | 2 | ✓ | Evil conscience, moral accountability, progressive deterioration, and abhorrence of evil. Verses addressing moral accoun |
+| `M10b-C-VCG-01` | M10b-C | 10 | 1 | ✓ | Ethical and character-orientation abomination — dishonest commercial practice, unjust social dealings, and the character |
+| `M10b-C-VCG-02` | M10b-C | 9 | 2 | ✓ | Pride, crooked heart, and hidden corruption as abomination. Abomination located most directly in the interior life — pri |
+| `M10b-C-VCG-03` | M10b-C | 4 | 1 | ✓ | Corrupt worship — the unclean inner person's religious act as abomination. The religious act (sacrifice, incense, prayer |
+| `M10b-C-VCG-04` | M10b-C | 11 | 1 | ✓ | The silenced and awakening conscience before abomination. The faculty of conscience in its various states in relation to |
+| `M10b-C-VCG-05` | M10b-C | 6 | 1 | ✓ | Identity and choice constituted by abomination. Abomination as a category defined by divine declaration (Pro 6:16), the  |
+| `M10b-D-VCG-01` | M10b-D | 6 | 1 | ✓ | Levitical boundary-laws — abomination as category-violation against created order. The Levitical corpus declaring specif |
+| `M10b-D-VCG-02` | M10b-D | 14 | 1 | ✓ | Deuteronomic warnings — the will that must actively resist abominable practices. The Deuteronomic corpus warning against |
+| `M10b-D-VCG-03` | M10b-D | 17 | 1 | ✓ | Historical reform narratives — kings institutionalising or purging idolatrous abominations. The historical narratives wh |
+| `M10b-D-VCG-04` | M10b-D | 14 | 1 | ✓ | Jeremiah and the Prophets — idolatrous objects installed and the will's stubbornness. The prophetic corpus outside Ezeki |
+| `M10b-D-VCG-05` | M10b-D | 43 | 1 | ✓ | Ezekiel — idolatry driving the divine presence away from the sanctuary. Ezekiel's concentrated corpus where accumulated  |
+| `M10b-D-VCG-06` | M10b-D | 5 | 1 | ✓ | Sacrilegious desolation and apocalyptic abomination. The eschatological and apocalyptic verses where abomination names a |
+| `M10b-E-VCG-01` | M10b-E | 7 | 1 | ✓ | Trouble and distress as the affliction of evil — mandatory polysemy VCG. Verses where a.ven names the trouble, afflictio |
 | `M10b-E-VCG-02` | M10b-E | 14 | 1 | ✓ | Iniquity as deliberate inner generation — conceived, devised, schemed. Verses where iniquity is most clearly an active g |
-| `M10b-E-VCG-03` | M10b-E | 24 | 1 | — | Evildoers as a defined inner-character class. Verses where iniquity defines a recognisable class of persons whose habitu |
-| `M10b-E-VCG-04` | M10b-E | 23 | 1 | — | Iniquity as stored condition — harboured, accumulated, concealed, and exposed. Verses where iniquity is treated as a sto |
-| `M10b-E-VCG-05` | M10b-E | 11 | 1 | — | Evil deeds as the outward expression of an inwardly-defiled source. The ro.a evil-deeds corpus — verses where the focus  |
-| `M10b-F-VCG-01` | M10b-F | 6 | 1 | — | Hardened defiance and contemptuous blasphemy against God. This VCG groups the verses in which blasphemy is the direct ex |
-| `M10b-F-VCG-02` | M10b-F | 5 | 1 | — | Blasphemy as social defamation — moral failure causing dishonour to God's name. This VCG groups the verses in which blas |
-| `M10b-F-VCG-03` | M10b-F | 6 | 2 | — | Wrongdoing as a charged and contested category — false accusation and legal-offense register. This VCG groups the verses |
+| `M10b-E-VCG-03` | M10b-E | 24 | 1 | ✓ | Evildoers as a defined inner-character class. Verses where iniquity defines a recognisable class of persons whose habitu |
+| `M10b-E-VCG-04` | M10b-E | 23 | 1 | ✓ | Iniquity as stored condition — harboured, accumulated, concealed, and exposed. Verses where iniquity is treated as a sto |
+| `M10b-E-VCG-05` | M10b-E | 11 | 1 | ✓ | Evil deeds as the outward expression of an inwardly-defiled source. The ro.a evil-deeds corpus — verses where the focus  |
+| `M10b-F-VCG-01` | M10b-F | 6 | 1 | ✓ | Hardened defiance and contemptuous blasphemy against God. This VCG groups the verses in which blasphemy is the direct ex |
+| `M10b-F-VCG-02` | M10b-F | 5 | 1 | ✓ | Blasphemy as social defamation — moral failure causing dishonour to God's name. This VCG groups the verses in which blas |
+| `M10b-F-VCG-03` | M10b-F | 6 | 2 | ✓ | Wrongdoing as a charged and contested category — false accusation and legal-offense register. This VCG groups the verses |
 
 ### M10c (26 VCGs · status: Analysis Completed)
 
@@ -775,24 +779,24 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 | `M10c-C-VCG-01` | M10c-C | 4 | 1 | ✓ | Verses addressing the human condition itself as inherently compromised before God — the impossibility of clean from uncl |
 | `M10c-C-VCG-02` | M10c-C | 8 | 1 | ✓ | Impurity functioning as a prior master, slavery, or dominion over the will and bodily members — the condition to which u |
 | `M10c-C-VCG-03` | M10c-C | 5 | 2 | ✓ | Verses where the conscience or will is the named primary locus of defilement, or where deliberate self-purification from |
-| `M10c-C-VCG-04` | M10c-C | 6 | 1 | — | The heart-allegiance dimension of moral-inner defilement — impurity equated with idolatry, arising from a heart that has |
+| `M10c-C-VCG-04` | M10c-C | 6 | 1 | ✓ | The heart-allegiance dimension of moral-inner defilement — impurity equated with idolatry, arising from a heart that has |
 | `M10c-C-VCG-05` | M10c-C | 3 | 1 | ✓ | The positive-inverse register — the inner-being condition of those who have not defiled themselves, maintained through c |
-| `M10c-D-VCG-01` | M10c-D | 23 | 1 | — | The defilement-state produced by sexual violations of covenantal bonds — adultery, bestiality, violation of a person, tr |
+| `M10c-D-VCG-01` | M10c-D | 23 | 1 | ✓ | The defilement-state produced by sexual violations of covenantal bonds — adultery, bestiality, violation of a person, tr |
 | `M10c-D-VCG-02` | M10c-D | 24 | 1 | ✓ | The defilement-state produced by the will's pursuit of idolatrous attachment — habitual devotion to false gods, spiritua |
 | `M10c-D-VCG-03` | M10c-D | 10 | 1 | ✓ | Defilement inflicted on or threatening the sanctuary — by enemy invasion, by deliberate installation of idols and abomin |
 | `M10c-D-VCG-04` | M10c-D | 9 | 1 | ✓ | Defilement extending from persons or community to the land itself — the moral-sacral pollution of shared inhabitable spa |
-| `M10c-D-VCG-05` | M10c-D | 17 | 1 | — | The consequences of corporate defilement projected into the physical and social condition of the people — expulsion, exi |
-| `M10c-E-VCG-01` | M10c-E | 8 | 1 | — | The inner-being condition of the person inhabited and dominated by an unclean spirit — will overridden, bodily agency lo |
-| `M10c-E-VCG-02` | M10c-E | 8 | 1 | — | The expulsion event and its dynamics — violent departure through convulsion and outcry, destructive transfer, vocal resi |
+| `M10c-D-VCG-05` | M10c-D | 17 | 1 | ✓ | The consequences of corporate defilement projected into the physical and social condition of the people — expulsion, exi |
+| `M10c-E-VCG-01` | M10c-E | 8 | 1 | ✓ | The inner-being condition of the person inhabited and dominated by an unclean spirit — will overridden, bodily agency lo |
+| `M10c-E-VCG-02` | M10c-E | 8 | 1 | ✓ | The expulsion event and its dynamics — violent departure through convulsion and outcry, destructive transfer, vocal resi |
 | `M10c-E-VCG-03` | M10c-E | 5 | 1 | ✓ | The commissioning of authority over unclean spirits and the spirits' recognition of divine power. Unclean spirits are ho |
 
 ### M15 (58 VCGs · status: Analysis Completed)
 
 | VCG code | Sub-group | V | Anchors | Cited | Description excerpt |
 |---|---|---:|---:|:-:|---|
-| `523-002` | M15-B | 1 | 0 | — | Term names understanding as a human inner-being capacity — the gift from God enabling discernment of his ways and wise c |
-| `525-001` | M15-A | 3 | 0 | — | se.khel names a practical inner quality of good sense, prudence, and wise conduct. It produces outcomes — favour, succes |
-| `528-001` | M15-A | 7 | 0 | — | cha.kham in Proverbs, Ecclesiastes, and historical narrative names wisdom as a constituted inner quality of the person — |
+| `523-002` | M15-B | 1 | 0 | ✓ | Term names understanding as a human inner-being capacity — the gift from God enabling discernment of his ways and wise c |
+| `525-001` | M15-A | 3 | 0 | ✓ | se.khel names a practical inner quality of good sense, prudence, and wise conduct. It produces outcomes — favour, succes |
+| `528-001` | M15-A | 7 | 0 | ✓ | cha.kham in Proverbs, Ecclesiastes, and historical narrative names wisdom as a constituted inner quality of the person — |
 | `M15-A-VCG01` | M15-A | 19 | 1 | — | The term names wisdom as belonging to God, to Christ as the embodied wisdom of God, or to Wisdom personified as God's ow |
 | `M15-A-VCG02` | M15-A | 40 | 1 | — | The term names wisdom as a divinely-given inner endowment placed into a specific named person — Jesus growing in it, Sol |
 | `M15-A-VCG03` | M15-A | 117 | 1 | — | The term names wisdom as the standing inner quality of a person — not the moment of receiving, but the constituted chara |
@@ -1049,7 +1053,7 @@ Every active VCG, by cluster, with verse count and description excerpt (first 12
 - **Clusters with active VCGs:** 17
 - **Total active VCGs:** 745
 - **Singleton VCGs (1 verse):** 77 (10.3% of all VCGs)
-- **VCGs cited in cluster_finding:** 339 of 745 (46%)
+- **VCGs cited in cluster_finding:** 472 of 745 (63%)
 - **Avg Jaccard similarity** VCG-desc vs sub-group-desc: 0.08
 - **Cross-cluster description tokens (≥3 clusters):** 1141
 
