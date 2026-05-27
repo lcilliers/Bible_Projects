@@ -128,9 +128,9 @@ Mark ✓ as each characteristic's findings file is validated by CC.
 |---:|---|---:|---|---|
 | 4 | Conscience suppression | 8 | [char4-brief](wa-cluster-M10-phase9-char4-Conscience-suppression-brief-v1-20260523.md) | ✅ |
 | 8 | Political revolt | 9 | [char8-brief](wa-cluster-M10-phase9-char8-Political-revolt-brief-v1-20260523.md) | ✅ |
-| 10 | Specialised sinful mechanisms | 5 | [char10-brief](wa-cluster-M10-phase9-char10-Specialised-sinful-mechanisms-brief-v1-20260523.md) | ☐ |
-| 12 | Sin as enslaving power | 9 | [char12-brief](wa-cluster-M10-phase9-char12-Sin-as-enslaving-power-brief-v1-20260523.md) | ☐ |
-| 15 | Generational sin | 8 | [char15-brief](wa-cluster-M10-phase9-char15-Generational-sin-brief-v1-20260523.md) | ☐ |
+| 10 | Specialised sinful mechanisms | 5 | [char10-brief](wa-cluster-M10-phase9-char10-Specialised-sinful-mechanisms-brief-v1-20260523.md) | ✅ |
+| 12 | Sin as enslaving power | 9 | [char12-brief](wa-cluster-M10-phase9-char12-Sin-as-enslaving-power-brief-v1-20260523.md) | ✅ |
+| 15 | Generational sin | 8 | [char15-brief](wa-cluster-M10-phase9-char15-Generational-sin-brief-v1-20260523.md) | ✅ |
 
 ### Small (19–50V)
 
@@ -141,33 +141,33 @@ Mark ✓ as each characteristic's findings file is validated by CC.
 | 5 | Refusal to repent | 18 | [char5-brief](wa-cluster-M10-phase9-char5-Refusal-to-repent-brief-v1-20260523.md) | ✅ |
 | 6 | Habitual defection | 14 | [char6-brief](wa-cluster-M10-phase9-char6-Habitual-defection-brief-v1-20260523.md) | ✅ |
 | 7 | Contagious sin | 19 | [char7-brief](wa-cluster-M10-phase9-char7-Contagious-sin-brief-v1-20260523.md) | ✅ |
-| 9 | Sinful speech | 22 | [char9-brief](wa-cluster-M10-phase9-char9-Sinful-speech-brief-v1-20260523.md) | ☐ |
-| 14 | Forgiveness sought and received | 34 | [char14-brief](wa-cluster-M10-phase9-char14-Forgiveness-sought-and-received-brief-v1-20260523.md) | ☐ |
+| 9 | Sinful speech | 22 | [char9-brief](wa-cluster-M10-phase9-char9-Sinful-speech-brief-v1-20260523.md) | ✅ |
+| 14 | Forgiveness sought and received | 34 | [char14-brief](wa-cluster-M10-phase9-char14-Forgiveness-sought-and-received-brief-v1-20260523.md) | ✅|
 
 ### Medium (51–100V)
 
 | Seq | Characteristic | Verses | Brief | Status |
 |---:|---|---:|---|---|
 | 1 | Wilful sinning | 98 | [char1-brief](wa-cluster-M10-phase9-char1-Wilful-sinning-brief-v1-20260523.md) | ✅ |
-| 16 | The sinner as moral character | 64 | [char16-brief](wa-cluster-M10-phase9-char16-The-sinner-as-moral-character-brief-v1-20260523.md) | ☐ |
-| 17 | Guilt as inner-being state | 97 | [char17-brief](wa-cluster-M10-phase9-char17-Guilt-as-inner-being-state-brief-v1-20260523.md) | ☐ |
-| 21 | Perversion as inner inversion | 64 | [char21-brief](wa-cluster-M10-phase9-char21-Perversion-as-inner-inversion-brief-v1-20260523.md) | ☐ |
-| 22 | Injustice as moral failure of right conduct | 72 | [char22-brief](wa-cluster-M10-phase9-char22-Injustice-as-moral-failure-of-right-conduct-brief-v1-20260523.md) | ☐ |
+| 16 | The sinner as moral character | 64 | [char16-brief](wa-cluster-M10-phase9-char16-The-sinner-as-moral-character-brief-v1-20260523.md) | ✅ |
+| 17 | Guilt as inner-being state | 97 | [char17-brief](wa-cluster-M10-phase9-char17-Guilt-as-inner-being-state-brief-v1-20260523.md) | ✅  |
+| 21 | Perversion as inner inversion | 64 | [char21-brief](wa-cluster-M10-phase9-char21-Perversion-as-inner-inversion-brief-v1-20260523.md) | ✅ |
+| 22 | Injustice as moral failure of right conduct | 72 | [char22-brief](wa-cluster-M10-phase9-char22-Injustice-as-moral-failure-of-right-conduct-brief-v1-20260523.md) | ✅ |
 
 ### Large (101–162V)
 
 | Seq | Characteristic | Verses | Brief | Status |
 |---:|---|---:|---|---|
-| 11 | Sin as universal condition | 112 | [char11-brief](wa-cluster-M10-phase9-char11-Sin-as-universal-condition-brief-v1-20260523.md) | ☐ |
-| 18 | Iniquity as accumulated moral crime | 162 | [char18-brief](wa-cluster-M10-phase9-char18-Iniquity-as-accumulated-moral-crime-brief-v1-20260523.md) | ☐ |
-| 19 | Transgression as deliberate boundary-crossing | 147 | [char19-brief](wa-cluster-M10-phase9-char19-Transgression-as-deliberate-boundary-crossing-brief-v1-20260523.md) | ☐ |
-| 20 | Faithlessness as covenant-breaking sin | 101 | [char20-brief](wa-cluster-M10-phase9-char20-Faithlessness-as-covenant-breaking-sin-brief-v1-20260523.md) | ☐ |
+| 11 | Sin as universal condition | 112 | [char11-brief](wa-cluster-M10-phase9-char11-Sin-as-universal-condition-brief-v1-20260523.md) | ✅ |
+| 18 | Iniquity as accumulated moral crime | 162 | [char18-brief](wa-cluster-M10-phase9-char18-Iniquity-as-accumulated-moral-crime-brief-v1-20260523.md) | ✅ |
+| 19 | Transgression as deliberate boundary-crossing | 147 | [char19-brief](wa-cluster-M10-phase9-char19-Transgression-as-deliberate-boundary-crossing-brief-v1-20260523.md) | ✅ |
+| 20 | Faithlessness as covenant-breaking sin | 101 | [char20-brief](wa-cluster-M10-phase9-char20-Faithlessness-as-covenant-breaking-sin-brief-v1-20260523.md) | ✅ |
 
 ### Very large (>200V)
 
 | Seq | Characteristic | Verses | Brief | Status |
 |---:|---|---:|---|---|
-| 13 | Sin as divine record | **205** | [char13-brief](wa-cluster-M10-phase9-char13-Sin-as-divine-record-brief-v1-20260523.md) | ☐ |
+| 13 | Sin as divine record | **205** | [char13-brief](wa-cluster-M10-phase9-char13-Sin-as-divine-record-brief-v1-20260523.md) | ✅ |
 
 ### Cluster synthesis (final)
 
