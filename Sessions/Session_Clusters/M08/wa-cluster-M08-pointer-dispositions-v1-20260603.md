@@ -1,7 +1,15 @@
 # M08 (Pride) — pointer disposition evaluation (COMMENT_EVALUATION) — FOR RESEARCHER REVIEW
 
 **Date:** 2026-06-03 · **Method:** evaluated on text, not broad `cluster_link`. Same pattern as M06.
-**Nothing applied — mark up "Action", then I generate the apply-spec + run it.**
+
+> **APPLIED 2026-06-03** (dual-cluster rule satisfied — every route candidate inspected for M08/Pride
+> content; none bridge, so single-cluster routes, no dual findings). Spec:
+> `wa-cluster-M08-comment-eval-applyspec-v1-20260603.json`. Result: A6→0, A7→0; 4 set_aside, 3 routed
+> (42→M29, 77→M34, 125→M29), 1 flag re-homed (125→M04), 2 resolved (73, 159), finding 86 → observation
+> 278 (pride dual-register) **and folded**. Backup `bible_research_pre_M08_commenteval_20260603.db`.
+> Remaining M08 gates (Phase-A/B): B1b, B7.
+> *Procedure note:* adopting a finding into an observation requires also folding the source finding
+> (caught by re-audit — A7 was 1 until finding 86 folded).
 
 > **Note:** M08's A6 already dropped 7→3 as a side-effect of the M06 pass — the reg-187 flags
 > (170/171/172/173) are shared and were resolved/re-homed once. Cross-cluster coupling via shared

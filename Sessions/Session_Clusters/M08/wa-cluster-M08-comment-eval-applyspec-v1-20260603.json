@@ -1,0 +1,32 @@
+{
+  "cluster": "M08",
+  "approved": true,
+  "method": "COMMENT_EVALUATION 2026-06-03 — evaluated on text. Dual-cluster rule applied: each route candidate inspected for content bridging M08 (Pride); NONE bridge (77 parresia = godly boldness not self-elevation; 42 hedone = pleasure/will->M29; 125 will->M29), so single-cluster routes, no dual findings. Substantive notes routed to preserve content; superseded structural notes set_aside.",
+  "new_observations": [
+    {
+      "cluster_code": "M08",
+      "observation_type": "structural-insight",
+      "source_phase": "comment-evaluation",
+      "title": "Pride dual-register: human pride and divine majesty share vocabulary",
+      "description": "Registry 123 (pride) carries a dual-register: human pride and divine majesty share the same roots (ga.ah, ga.on, rum, ra.mam); the kauchaomai groups make the structure explicit. Adopted into M08 from A7 finding id 86 (DIMENSION_REVIEW) as a cluster-scope structural observation. The same vocabulary names both an inflated human self-elevation and a legitimate divine exaltation.",
+      "status": "confirmed",
+      "source_file": "wa-cluster-M08-pointer-dispositions-v1-20260603.md"
+    }
+  ],
+  "fold_findings": [
+    {"id": 40,  "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-42 delight-breadth DIMENSION_REVIEW (old registry model); not M08. Inspected — no Pride content."},
+    {"id": 41,  "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-42 cha.phets two-form lexical note; not M08."},
+    {"id": 84,  "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-142 self-control register note; not M08."},
+    {"id": 126, "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-173 halakh inner-movement motif note; not M08."},
+    {"id": 42,  "status": "routed_cluster", "cluster_link": "M29", "resolution_note": "Routed to M29 (Desire): hedone as the competing inner orientation / adversary of the will toward God. Inspected for M08 content — none (pleasure/desire, not pride). Routed to preserve the hedone/delight-tension content."},
+    {"id": 77,  "status": "routed_cluster", "cluster_link": "M34", "resolution_note": "Routed to M34 (Perseverance): parresia boldness tripartite structure (God-ward access / prophetic character / relational openness). Inspected for M08 content — none; this is godly boldness, not self-elevation/pride."},
+    {"id": 125, "status": "routed_cluster", "cluster_link": "M29", "resolution_note": "Routed to M29 (Desire/Will): will-registry dimension spread / volitional taxonomy. Inspected for M08 content — none."}
+  ],
+  "rehome_flags": [
+    {"id": 125, "cluster_link": "M04", "basis": "re-homed from M08 A6 (comment-evaluation): chara (joy) + miph.la.ah (wonder) as goal/completion of inner life — M04 content, not pride. Inspected: no Pride content."}
+  ],
+  "resolve_flags": [
+    {"id": 73,  "resolved_note": "Resolved: PH2_DATA_ERROR extraction-anomaly note — H4100 mah / H0227A az wrongly extracted, already reclassified to delete. Action already taken; not analytical content."},
+    {"id": 159, "resolved_note": "Resolved: DIM-121-SD001 registry-design question (are praise reg-121 and worship reg-176 analytically distinct) — Session-D-moot (06-02 decision); not M08."}
+  ]
+}
