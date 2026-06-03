@@ -20,13 +20,17 @@ so population resolved against the correct post-rescue `mti_terms.cluster_code` 
 - Finding cluster_link distribution (top): M04 1,034 · M05 530 · T2 348 · FLAG 303 · M29 291 · M18 250 · M33 143 · M11 112.
 - Unlinked (cluster_link stays NULL): 846 findings + 168 flags (orphan candidates → next step).
 
-## HELD — orphan set-aside (awaiting explicit go)
-`_repair_setaside_orphan_pointers_v1_20260601.py` dry-run: **30 orphan findings + 72 orphan flags** —
-*exactly* the 06-01 researcher-directed numbers. This step dispositions findings
-(`status='set_aside_non_evidenced'`) and flags (`resolved=1`), so it is held for explicit
-confirmation rather than auto-applied. (Note: 30/72 < the 846/168 NULL above, because the orphan
-test also clears anything carrying a verse ref / catalogue link / SD-ref / Session-C chapter, not
-just cluster_link.)
+## Orphan set-aside — APPLIED (researcher-approved 2026-06-03, "based on the previous findings")
+`_repair_setaside_orphan_pointers_v1_20260601.py --apply` → **30 orphan findings + 72 orphan flags**
+(exactly the 06-01 researcher-directed numbers, reproduced on the clean baseline). Rowcounts
+asserted by the script (30/72) — would roll back on mismatch. Records preserved (not deleted):
+- 30 findings → `status='set_aside_non_evidenced'` + resolution_note.
+- 72 flags → `resolved=1` + resolved_date + resolved_note.
+Post-apply verified: integrity ok; 30 set_aside_non_evidenced findings; 72 flags resolved with the
+non-evidenced note. (30/72 < the 846/168 NULL above, because the orphan test also clears anything
+carrying a verse ref / catalogue link / SD-ref / Session-C chapter, not just cluster_link.)
+
+**`cluster_link` step now fully complete.**
 
 ## Deferred
 Per-cluster A6/A7 COMMENT_EVALUATION remediation (the larger 06-02 redo) is separate and later.
