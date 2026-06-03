@@ -29,4 +29,24 @@ established disposition for legacy `SYNTHESIS_*` findings under the cluster mode
 ## Likely root cause worth noting
 That *all* of M46's pointers/findings are reg-117 peace strongly suggests a **peace term is (mis?)assigned to an M46 sub-group**. Worth checking whether that sub-group membership is correct before routing — if the peace term shouldn't be in M46 at all, the cleaner fix is upstream (term→subgroup), not pointer-routing.
 
-**Held. Nothing applied.** Tell me (a)/(b)/(c) and whether to check the reg-117→M46 sub-group assignment first.
+## This decision is PROGRAMME-WIDE (not just M46)
+The legacy `SYNTHESIS_*` finding pattern affects many clusters' A7, so the (a)/(b)/(c) choice here
+sets the precedent for all of them. Indicative A7 composition (raw, join-inflated, but proportions hold):
+
+| cluster | A7 SYNTHESIS | DIMENSION_REVIEW | other |
+|---|--:|--:|--:|
+| M04 | 420 | 139 | 0 |
+| M39 | 168 | 10 | 596 |
+| M26 | 84 | 39 | 8 |
+| M07 | 84 | 15 | 0 |
+| M09 | 28 | 10 | 151 |
+| M10 | 28 | 96 | 0 |
+| M46 | 28 | 2 | 1 |
+| M15 | 0 | 90 | 140 |
+
+- **SYNTHESIS** rows = legacy v1.8 per-registry synthesis → the (a/b/c) decision.
+- **DIMENSION_REVIEW** = the superseded registry notes already handled by set_aside (M06/M08 precedent).
+- **"other"** (large in M39/M09/M15) = other finding types still to be characterised before those clusters can be dispositioned.
+
+**Held. Nothing applied.** One decision (a/b/c on legacy SYNTHESIS findings) unblocks the synthesis
+portion across all these clusters; I'll then characterise the "other" types per cluster.
