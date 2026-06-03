@@ -1,7 +1,7 @@
 # Database Table Analysis
 
 > Framework B — Soul Word Analysis Programme
-> Schema v3.8.0 | 43 tables | Analysis date: 2026-04-13 | Updated 2026-04-15
+> Schema v3.8.0 | 43 tables | Analysis date: 2026-04-13 | Updated 2026-04-15; 2026-06-01 (term evidence/disposition model)
 
 This document analyses every table in `bible_research.db`: purpose, field inventory with source and status, relationships, and readiness assessment.
 
@@ -11,6 +11,12 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 > - `wa_session_research_flags`: 19 VOLUME_LIMITATION rows consolidated to PH2_VOLUME_LIMITATION
 > - New table: `wa_finding_entity_links` (table count: 42 → 43)
 > See `Logs/wa-session-log-20260415-flag-remediation.md` for full details.
+
+> **2026-06-01 — term evidence & disposition model (integrity correction).** Driven by the deleted-terms integrity work; see `research/investigations/findings-deleted-terms-integrity-20260601.md`.
+> - **Usage truth = `wa_verse_records.span_strong_match = 1`** — the term is genuinely used in the verse (`target_word` present in 99.998% of such rows). This is the only reliable "is the term attested" signal.
+> - **Evidence link = `term_id` (TEXT, 99.99% complete)**, *not* `mti_term_id` (FK, 98% — 5,249 legacy NULLs from pre-MTI-linking imports). **Never judge a term "has no verses / safe to delete" on `mti_term_id` alone** — it silently under-reports legacy-imported usages. Use `term_id` + `span_strong_match`, and active `verse_context`.
+> - **Term disposition rule:** in a real M-cluster → keep; not clustered **and** has active span → `cluster_code='FLAG'` for relevance review (→ cluster or set aside); not clustered **and** no active span → delete. **`delete_flagged` is a *derived* result of this rule, never its input.**
+> - **`mti_terms` is not yet deduped:** 7,571 rows / 3,955 unique Strong's (~3,616 duplicate rows). One-row-per-Strong's is the *target* (OT-DBR-009), not the current state.
 
 **Readiness key:**
 - **Complete** — field is fully populated and actively used
@@ -309,7 +315,7 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 
 **Relations:** FK to `word_registry.id`, `wa_file_index.id`. Parent to `mti_term_cross_refs`, `mti_term_flags`, `verse_context_group`, `verse_context`, `wa_dimension_index`.
 
-**Assessment:** Critical table. The 46% NULL on `owning_registry_fk` is a significant gap from pre-FK-alignment data — these records have `owning_registry` (string) but not the integer FK. The 30% NULL `status` represents terms that audit_word has not classified (no verses or signals to trigger a filter). This is expected state, not missing data. The `word_data_reference`/`word_data_ref_fk` sparseness reflects the same pre-FK-alignment gap.
+**Assessment:** Critical table. The 46% NULL on `owning_registry_fk` is a significant gap from pre-FK-alignment data — these records have `owning_registry` (string) but not the integer FK. The 30% NULL `status` represents terms that audit_word has not classified (no verses or signals to trigger a filter). This is expected state, not missing data. The `word_data_reference`/`word_data_ref_fk` sparseness reflects the same pre-FK-alignment gap. **`delete_flagged` is NOT a reliable evidence signal** — on 2026-06-01 it was found to disagree with actual usage on ~1,146 terms (deleted yet genuinely used); disposition must be judged on span usage (see the 2026-06-01 header note), and `delete_flagged` treated as a derived output. **Duplication:** 7,571 rows vs 3,955 unique Strong's — the "one record per Strong's" purpose above is the target (OT-DBR-009 dedup), not the current state.
 
 ---
 
@@ -382,7 +388,7 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 
 **Relations:** FK to `wa_file_index.id`, `wa_term_inventory.id`, `books.id`. Parent to `wa_verse_term_links`, `verse_context`.
 
-**Assessment:** Largest table and most critical data asset. Core fields (reference, verse_text, book_id, chapter, verse_num) are fully populated. Two fields are **completely unused** (`note`, `claude_output`) — candidates for removal. The `mti_term_id` gap (2.3%) and `context_before/after` gap (16%) are from early imports. The `span_strong_match` field shows all non-NULL values as 1, meaning it effectively functions as a "has been span-checked" boolean rather than a pass/fail indicator.
+**Assessment:** Largest table and most critical data asset. Core fields (reference, verse_text, book_id, chapter, verse_num) are fully populated. Two fields are **completely unused** (`note`, `claude_output`) — candidates for removal. The `mti_term_id` gap (2.3%) and `context_before/after` gap (16%) are from early imports. The `span_strong_match` field shows all non-NULL values as 1, meaning it effectively functions as a "has been span-checked" boolean rather than a pass/fail indicator. **It is the usage-truth signal:** `span_strong_match=1` (226,699 rows) = the term is genuinely used in the verse (`target_word` present in 99.998% of them). For "does this term have live verses," **use `term_id` (TEXT, 99.99%) + `span_strong_match=1` + the record's own `delete_flagged=0`** — NOT `mti_term_id`, whose 5,249 legacy NULLs make it under-report usage (this caused the 2026-06-01 wrongful-deletion incident).
 
 ---
 

@@ -1,0 +1,690 @@
+# Repair: delete_flag desync (reasoned, evidence-safe)
+
+**Mode:** APPLY (written)
+**To flag (`delete_flagged=1`):** 671 terms — `status='delete'`, has reason, no active evidence.
+**Held back (active evidence — NOT flagged):** 8 terms.
+
+## Flagged terms (id · strongs · transliteration · reason)
+
+- 2792 · G0004 · abarēs · abarēs - not burdensome. 2Cor 11:9. No authority content. Bleed from burden family.
+- 2280 · G0037 · hagiazō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2283 · G0039H · hagion · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2279 · G0040H · hagios · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1843 · G0052 · agnoia · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 964 · G0056 · agnōsia · agnōsia ignorance — bleed. No direct heart term.
+- 1849 · G0057 · agnōstos · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 557 · G0080 · adelfos · Bleed from filadelfia/brotherly-love root. Brotherhood kinship vocabulary; primary analysis in community/fellowship registry. Love content adequately covered by G5360 filadelfia (extracted).
+- 2769 · G0101 · adunateō · adunateō - be impossible. Mt 17:20; Lk 1:37. Impossibility. Negation of capacity not authority. Bleed via alpha-privative from dunamis.
+- 696 · G0102 · adunatos · adunatos - unable/impossible. Mt 19:26; Rom 8:3. Impossibility consistently. Bleed.
+- 1686 · G0112 · atheos · Indirect bleed via theomacheō chain. Godless, no fear content.
+- 1985 · G0148 · aischrologia · Confirmed candidate_delete. Bleed or adequately covered.
+- 2033 · G0149 · aischron · Confirmed candidate_delete. Bleed or adequately covered.
+- 1986 · G0151 · aischrotēs · Confirmed candidate_delete. Bleed or adequately covered.
+- 501 · G0154 · aiteō · Bleed vocabulary. G0154 aiteō is general petition/request — pray registry. G0157 aitiama is forensic legal procedure, not inner guilt state.
+- 2132 · G0155 · aitēma · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2425 · G0157 · aitiama · Bleed vocabulary. G0154 aiteō is general petition/request — pray registry. G0157 aitiama is forensic legal procedure, not inner guilt state.
+- 1834 · G0314 · anaginōskō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1850 · G0319 · anagnōrizō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1978 · G0389 · anastenazō · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1987 · G0422 · anepaischuntos · Confirmed candidate_delete. Bleed or adequately covered.
+- 2575 · G0447 · aniēmi · aniēmi: to loosen/leave/abandon (occ=37) — releasing/abandoning. Peripheral to peace vocabulary; the loosening sense does not constitute peace. Bleed from Heb 13:5 'I will never leave you' context.
+- 2390 · G0483 · antilegō · Bleed vocabulary. See bulk note.
+- 2504 · G0530 · hapax · hapax (once, occ=52) — frequency adverb with no patience semantic content. Bleed; likely entered the export through association with the efapax/once-for-all vocabulary in patience contexts. Not patience vocabulary.
+- 2784 · G0536 · aparchē · aparchē - firstfruits. Rom 8:23; 1Cor 15:20-23. Firstfruits of Spirit/resurrection. No authority content. Bleed via archē stem.
+- 2505 · G0537 · hapas · hapas (all/every/whole, occ=99) — totality adverb. No patience semantic content. Bleed.
+- 2393 · G0557 · apelegmos · Bleed vocabulary. See bulk note.
+- 2111 · G0700 · areskō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1695 · G0765 · asebēs · Bleed via sebomai antonym pathway. Ungodly/impious, not a fear term.
+- 2026 · G0807 · aschēmoneō · Confirmed candidate_delete. Bleed or adequately covered.
+- 2027 · G0809 · aschēmōn · Confirmed candidate_delete. Bleed or adequately covered.
+- 2010 · G0820 · atimos · Confirmed candidate_delete. Bleed or adequately covered.
+- 2014 · G0821 · atimoō · Confirmed candidate_delete. Bleed or adequately covered.
+- 2242 · G0852 · afanēs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2238 · G0853 · afanizō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2243 · G0854 · afanismos · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2244 · G0855 · afantos · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2788 · G0916 · bareō · bareō - to burden/weigh down. Verses: heavy eyes; hearts weighed down; ecclesiastical burden. No authority content. Bleed from burden family.
+- 2791 · G0917 · bareōs · bareōs - heavily/with difficulty. Mt 13:15; Acts 28:27. Hearing difficulty. No authority content. Bleed.
+- 2787 · G0922 · baros · baros - burden/weight. Gal 6:2; 2Cor 4:17; 1Th 2:6. Carrying burdens; weight of glory. Metaphorical weight not authority. Bleed.
+- 2796 · G0925 · barunō · barunō - to weigh down. 0 verses. No authority content. Bleed.
+- 2789 · G0926 · barus · barus - weighty/heavy/burdensome. Mt 23:4 heavy burdens; 1Jo 5:3 not burdensome. Moral weight not authority. Bleed.
+- 2793 · G0927 · barutimos · barutimos - expensive/precious. Mt 26:7. No authority content. Bleed.
+- 2794 · G0939 · basis · basis - foot/base. Act 3:7 only (1 of 82 occ). Feet made strong. No authority content. Low ratio bleed.
+- 1832 · G1097 · ginōskō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1837 · G1107 · gnōrizō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 956 · G1108 · gnōsis · gnōsis knowledge — bleed. No direct heart term.
+- 1851 · G1109 · gnōstēs · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1840 · G1110 · gnōstos gnōrimos · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2039 · G1165 · deigmatizō · Confirmed candidate_delete. Bleed or adequately covered.
+- 1680 · G1207 · deuteroprōtos · deuteroprōtos second-first - bleed. No love content.
+- 1852 · G1232 · diagnōrizō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2394 · G1246 · diakatelenchomai · Bleed vocabulary. See bulk note.
+- 2245 · G1307 · diafanēs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2134 · G1331 · dierōtaō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1905 · G1456 · enkainia · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1831 · G1492H · eidō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1836 · G1492I · eidō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1721 · G1620 · ektithēmi · Phonological bleed via ek- prefix (cf. ekfobos). Expose/explain, no fear content.
+- 7546 · G1643 · elaunō · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 2395 · G1649 · elegxis · Bleed vocabulary. See bulk note.
+- 2396 · G1650 · elenchos · Bleed vocabulary. See bulk note.
+- 2388 · G1651 · elenchō · Bleed vocabulary. See bulk note.
+- 2240 · G1717 · emfanēs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2236 · G1718 · emfanizō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2009 · G1784 · entimos · Confirmed candidate_delete. Bleed or adequately covered.
+- 2397 · G1827 · exelenchō · Bleed vocabulary. See bulk note.
+- 2133 · G1905 · eperōtaō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2790 · G1912 · epibareō · epibareō - to burden. 2Cor 2:5; 1Th 2:9; 2Th 3:8. Paul not a burden. No authority content. Bleed.
+- 1092 · G1921 · epiginōskō · epiginōskō to know — bleed from knowledge-of-heart vocabulary. No direct heart term.
+- 957 · G1922 · epignōsis · epignōsis knowledge — bleed. No direct heart term.
+- 2391 · G1951 · epilegō · Bleed vocabulary. See bulk note.
+- 2237 · G2015 · epifaneia · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2246 · G2016 · epifanēs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2574 · G2048 · erēmos · erēmos: deserted/wilderness (occ=396) — wilderness/desert as a place. The desert is a place of solitude and sometimes peace-encounter but erēmos itself is not peace vocabulary. Bleed from quietness/solitude context. Insufficient direct peace semantic content to justify inclusion given volume.
+- 1703 · G2095 · eu · eu well — bleed. No heart content.
+- 2112 · G2101 · euarestos · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1297 · G2129 · eulogia · Phonological bleed via eu- prefix. Praise/blessing, no fear content.
+- 2073 · G21415 · potheinos · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2339 · G2172 · euchomai · euchomai: to pray/wish for (occ=64, v=7) — prayer and wishing vocabulary. Act 26:29 — 'I would that you might become as I am'; 2 Cor 13:7 'we pray to God'. Wishful desire but not joy vocabulary. The joy-adjacent sense (wishing for good outcomes) is too indirect. Delete.
+- 2506 · G2178 · efapax · efapax (once for all, occ=5) — once-for-all theological adverb (Rom 6:10; Heb 7:27; 9:12; 10:10). No patience semantic content. Bleed from association with endurance contexts.
+- 2187 · G2213 · zētēma · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2188 · G2214 · zētēsis · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 764 · G2294 · tharsos · tharsos courage — bleed from tharreō root (already extracted as G2292/G2293). Adequately covered.
+- 1684 · G2299 · thea · theios family bleed. Goddess, no fear content.
+- 1685 · G2304 · theios · theios family bleed. Abstract divinity, no fear content. Entered via G4576 sebomai relatedNos.
+- 1689 · G2313 · theomacheō · theios family bleed. Fighting God, no fear content. Confirm candidate_delete -> delete.
+- 1687 · G2314 · theomachos · theios family bleed. Opposing God, no fear content.
+- 1688 · G2320 · theotēs · theios family bleed. Deity/godhead, no fear content.
+- 2012 · G2472 · isotimos · Confirmed candidate_delete. Bleed or adequately covered.
+- 833 · G2556G · kakos · kakos evil — bleed from heart-is-evil vocabulary. No direct heart term.
+- 1907 · G2556H · kakos · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2185 · G2564H · kaleō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2795 · G2599 · katabareō · katabareō - to burden. 2Cor 12:16. No authority content. Bleed.
+- 2700 · G2620 · katakauchaomai · katakauchaomai: to boast over/triumph over (occ=7, v=3) — Rom 11:18 'do not be arrogant toward the branches'; Jam 2:13 'mercy triumphs over judgment'; Jam 3:14 'do not boast/brag'. The triumph-over sense is more pride/arrogance than joy. Content covered by kauchaomai (G2744, extracted). Delete.
+- 2398 · G2639 · katalegō · Bleed vocabulary. See bulk note.
+- 2801 · G2969 · kōmopolis · kōmopolis - village/town. Mk 1:38. Geographical. No authority content. Bleed via polis stem.
+- 2387 · G3004H · legō · Bleed vocabulary. See bulk note.
+- 2701 · G3166 · megalaucheō · megalaucheō - boast greatly. 0 verses. No authority content. Bleed.
+- 2651 · G3327 · metabainō · metabainō: to depart/leave/move (occ=12) — physical movement from place to place. Jn 5:24 'passed from death to life' is the only repentance-adjacent use. No direct repentance semantic content. Delete.
+- 2659 · G3329 · metagō · metagō: to steer/turn/guide (occ=5) — steering ships and horses (Jam 3:3-4). Physical directional control. The metaphorical potential is present but the actual verse set is mechanical. Delete.
+- 2656 · G3331 · metathesis · metathesis: removal/change/transformation (occ=3) — Heb 7:12 (change in priesthood), 11:5 (Enoch translated), 12:27 (removal of created things). Structural/covenantal change but not repentance. Delete.
+- 2660 · G3332 · metairō · metairō: to depart/move on (occ=8, v=2) — Jesus departing from places (Mat 13:53, 19:1). Physical movement. No repentance content. Delete.
+- 2663 · G3334 · metakineō · metakineō: to shift/be moved (occ=7, v=1 — 14% below HF threshold) — Col 1:23 'not shifting from the hope of the gospel'. The stability of faith is the context but the term itself is a physical displacement metaphor. Thin data. Delete.
+- 2652 · G3335 · metalambanō · metalambanō: to partake/share in (occ=7) — receiving food, sharing in spiritual realities (Act 2:46, 2 Ti 2:6, Heb 6:7). No repentance content. Delete.
+- 2661 · G3337 · metallassō · metallassō: to exchange (occ=4) — Rom 1:25-26: exchanging truth for a lie, natural relations for unnatural. The exchange is the sin, not the repentance. Cross-registry with other moral terms but not repentance vocabulary. Delete.
+- 2657 · G3344 · metastrefō · metastrefō: to pervert/change (occ=21, v=3 — 14% below HF threshold) — Act 2:20 (sun turned to darkness), Gal 1:7 (distorting the gospel), Jam 4:9 (turn laughter to mourning). The distortion/perversion sense is the opposite of repentance. Thin active data. Delete.
+- 1363 · G3345 · metaschēmatizō · metaschēmatizō: to transform/masquerade (occ=5) — 1 Cor 4:6 (applied figuratively), 2 Cor 11:13-15 (false apostles masquerading). The disguise/masquerade sense is contra-repentance — it is the deceptive appearance of transformation without reality. Analytically interesting but the actual verse set is about false transformation. Delete.
+- 2802 · G3390 · mētropolis · mētropolis - capital city. 0 verses. Geographical. No authority content. Bleed via polis stem.
+- 1561 · G3691 · oxus · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2606 · G3784 · ofeilō · ofeilō: to owe/be obligated (occ=50) — debt and obligation vocabulary. No hope semantic content. Bleed from pro- prefix proximity to proelpizō (G4276, already extracted). Delete.
+- 1560 · G3844 · para · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2131 · G3868 · paraiteomai · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 41 · G3949_related · parorgismos · Duplicate entry of G3949 parorgizō (mti_id=40, extracted). del_flag already set.
+- 2309 · G4153 · pneumatikōs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2308 · G4154 · pneō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2629 · G4253 · pro · pro: before/in front of (preposition, occ=245, v=48, 20% — OP-003 note) — Greek preposition 'before' (temporal/spatial). Entered registry as prefix component of proelpizō (G4276: to hope beforehand, already extracted). The bare preposition carries no hope content. Delete.
+- 2392 · G4302 · prolegō · Bleed vocabulary. See bulk note.
+- 1676 · G4409 · prōteuō · prōteuō be first - bleed. No love content.
+- 1675 · G4410 · prōtokathedria · prōtokathedria seat of honor - bleed. No love content.
+- 1673 · G4411 · prōtoklisia · prōtoklisia place of honor - bleed. No love content.
+- 1677 · G4412 · prōton · prōton first - bleed. No love content.
+- 1669 · G4413G · prōtos · prōtos first - bleed from prōtotokos/firstborn. Ordinal adjective, no love content.
+- 1672 · G4413H · prōtos · prōtos first: previous - bleed. No love content.
+- 1674 · G4413I · prōtos · prōtos first: chief - bleed. No love content.
+- 1670 · G4413J · prōtos · prōtos first: best - bleed. No love content.
+- 1678 · G4414 · prōtostatēs · prōtostatēs ringleader - bleed. No love content.
+- 1698 · G4573 · sebazomai · theios family bleed. To worship/venerate, no fear content.
+- 1254 · G4574 · sebasma · theios family bleed. Object of veneration, no fear content.
+- 1818 · G4642 · sklēros · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1819 · G4644 · sklērotrachēlos · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1817 · G4645 · sklērunō · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2871 · G4724 · stellō · stellō - to avoid/withdraw. 2Cor 8:20; 2Th 3:6. No authority content. Bleed.
+- 2144 · G4763 · strēniaō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1853 · G4774 · sungnōmē · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2186 · G4802 · suzēteō · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2189 · G4803 · suzētēsis · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2250 · G4862 · sun · sun: with (preposition, occ=278, v=99 — HF 36%) — the Greek preposition 'with'. Entered registry as prefix component of sunchairō (G4796: rejoice with, already extracted). The bare preposition carries no joy content. Delete.
+- 2007 · G5091 · timaō · Confirmed candidate_delete. Bleed or adequately covered.
+- 2006 · G5092 · timē · Confirmed candidate_delete. Bleed or adequately covered.
+- 2008 · G5093 · timios · Confirmed candidate_delete. Bleed or adequately covered.
+- 2013 · G5094 · timiotēs · Confirmed candidate_delete. Bleed or adequately covered.
+- 2011 · G5097 · timōreō · Confirmed candidate_delete. Bleed or adequately covered.
+- 2043 · G5196 · hubris · Confirmed candidate_delete. Bleed or adequately covered.
+- 2044 · G5197 · hubristēs · Confirmed candidate_delete. Bleed or adequately covered.
+- 2235 · G5318 · faneros · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2234 · G5319 · faneroō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2239 · G5320 · fanerōs · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2241 · G5321 · fanerōsis · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2247 · G5322 · fanos · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2248 · G5324 · fantazō · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2249 · G5325 · fantasia · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1584 · G5376K · filippos · filippos Philippi - bleed from philos. Place name.
+- 1395 · G5590K · psuchē · psuchē:animal — bleed. Primary in soul registry.
+- 2864 · G6094 · aucheō · aucheō - to boast. Jas 3:5. No authority content. Bleed.
+- 2037 · G6396 · apanaischunteō · Confirmed candidate_delete. Bleed or adequately covered.
+- 2080 · G7410 · epithumēma · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2072 · G7411 · epithumētos · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1668 · G7493 · eraō · eraō to love passionately — no STEP verse coverage in this registry. Classical Greek erotic love vocabulary; absent from NT/LXX in STEP extraction.
+- 1980 · G7929 · katastenazō · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 3163 · G8849 · polueleos · LXX-only term. All 8 occurrences are in Greek OT (LXX): Neh 9:17, 9:31; Psa 86:5, 103:8; Joel 2:13; Jon 4:2. Programme corpus is ESV-based; these verses are covered by active Hebrew terms H7349 and H2617A. Zero NT occurrences. Corpus scope exclusion.
+- 2085 · H0016 · e.veh · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1601 · H0156 · a.dash · a.dash to thresh - bleed from a.hav root. No love content.
+- 1598 · H0159 · o.hav · o.hav beloved - borderline; but adequately covered by H0158 a.hav (extracted) and H0160 a.ha.vah (extracted).
+- 1452 · H0226H · ot · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2285 · H0328A · it.ti · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1456 · H0409 · al · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2532 · H0410I · el · el: El [Elohe] compound sub-gloss (occ=1) — specific compound sub-gloss. Covered by Elohim theological anchor. Thin and redundant.
+- 2525 · H0410J · el · el: El [Most High] sub-gloss (occ=5) — covered by H5945B (el.yon Most High, extracted_theological_anchor). Redundant.
+- 2533 · H0430H · e.lo.him · e.lo.him: [LORD]-Elohe compound (occ=1) — specific compound sub-gloss. Thin data; covered by main Elohim theological anchor.
+- 2534 · H0430I · e.lo.him · e.lo.him: [Gibeath]-elohim (occ=1) — place name compound. Geographic bleed.
+- 1457 · H0432 · il.lu · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1504 · H0518H · im · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1505 · H0518I · im · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1507 · H0518J · im · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2322 · H0534 · a.mir · Bleed vocabulary. See bulk note.
+- 2316 · H0561 · e.mer · Bleed vocabulary. See bulk note.
+- 2319 · H0562 · o.mer · Bleed vocabulary. See bulk note.
+- 2318 · H0565A · im.rah · Bleed vocabulary. See bulk note.
+- 2323 · H0565B · em.rah · Bleed vocabulary. See bulk note.
+- 2320 · H0570 · e.mesh · Bleed vocabulary. See bulk note.
+- 1406 · H0600 · a.naph · a.naph Aramaic (face/nose, occ=2) — Aramaic cognate of aph, anatomical sense only. Semantic content covered by H0639G. Bleed.
+- 1407 · H0601 · a.na.phah · a.na.phah (heron, occ=2) — an unclean bird listed in Lev 11 and Deu 14. Etymological bleed from the APH root; zero patience semantic content.
+- 80 · H0639H · aph · aph sub-gloss H (face: nose sense, occ=27) — somatic/anatomical sense of the nose as body part. Semantic content covered analytically by H0639G (anger sense) and the erekh aph patience idiom. Bleed from the polysemous aph root.
+- 81 · H0639I · aph · aph sub-gloss I (face sense, occ=24) — face/countenance meaning with no patience semantic content. Bleed from the polysemous aph root.
+- 2874 · H0697 · ar.beh · arbeh - locust. 24 occ. Plague locust; insect. No authority content. Bleed.
+- 1575 · H0712 · ar.gaz · ra.gaz phonological bleed (ar.gaz/ra.gaz consonants). Box/chest/coffer, no fear content.
+- 2501 · H0724 · a.ru.khah · a.ru.khah (health/restoration/healing, occ=6) — restoration and healing vocabulary (Jer 8:22, 30:17; Isa 58:8). Shares root proximity to AREKH but semantic content is medical/healing, not patience. Bleed.
+- 2503 · H0754 · ar.kha · ar.kha Aramaic (lengthening/prolongation, occ=2) — Aramaic derivative. Thin data; semantic content covered by H0753 (o.rekh: length, already extracted). Bleed.
+- 1448 · H0834B · ba.a.sher · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1449 · H0834C · me.a.sher · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1450 · H0834D · ka.a.sher · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1453 · H0865 · et.mol · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2048 · H0873 · bi.ysh · Confirmed candidate_delete. Bleed or adequately covered.
+- 2046 · H0889 · be.osh · Confirmed candidate_delete. Bleed or adequately covered.
+- 2050 · H0890 · bo.shah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2047 · H0891 · be.u.shim · Confirmed candidate_delete. Bleed or adequately covered.
+- 2051 · H0892 · ba.vah · Confirmed candidate_delete. Bleed or adequately covered.
+- 1991 · H0936 · buz · Confirmed candidate_delete. Bleed or adequately covered.
+- 1992 · H0939 · bu.zah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2139 · H0970 · ba.chur · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2140 · H0972 · ba.chir · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2142 · H0979 · be.chu.rim · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2103 · H0994 · bi · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2219 · H1077 · bal · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1873 · H1080 · be.la · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2223 · H1086 · ba.lah · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2224 · H1087 · ba.leh · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2225 · H1094 · be.lo · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2217 · H1100H · be.liy.ya.al · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2222 · H1107 · bil.a.de · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2218 · H1115 · bil.ti · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2135 · H1158 · ba.ah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2137 · H1159 · ba.u · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2136 · H1169 · be.el · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2138 · H1236 · biq.a · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2190 · H1246 · baq.qa.shah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2191 · H1248 · bar · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2562 · H1290 · be.rekh · be.rekh: knee (occ=28) — anatomical term. Bleed from ba.rakh (to bless) through shared root. No peace semantic content.
+- 2564 · H1294H · be.ra.khah · be.ra.khah: Beracah [Valley] (occ=2) — place name. Geographic bleed from blessing vocabulary. No peace content.
+- 2565 · H1295G · be.re.khah · be.re.khah: [Shelah] Pool (occ=1) — place name/pool. Geographic bleed. No peace content.
+- 2563 · H1295H · be.re.khah · be.re.khah: pool/pond (occ=16) — physical pool. No peace semantic content. Bleed from blessing root.
+- 700 · H1481A · gur · gur root family bleed. Sojourn/dwell, not fear. H1481C gur (to dread) is the legitimate extracted term.
+- 1711 · H1481B · gur · gur root family bleed. Quarrel sub-gloss, not fear.
+- 1070 · H1584 · ga.mar · ga.mar: to cease/complete (occ=5) — cessation vocabulary. Overlaps marginally with completeness but does not contribute to the peace semantic field independently. Content covered by H7999A (to complete) and H8003 (sha.lem).
+- 2580 · H1596 · ge.naz · ge.naz: treasure (Aramaic, occ=3) — treasure/treasury. No peace content.
+- 2581 · H1611 · gaph · gaph: wing (Aramaic, occ=3) — wing of a bird. No peace content. Bleed.
+- 1708 · H1616 · ger · gur root family bleed. Sojourner/foreigner, no fear content. 83 propagated verses all sojourn context.
+- 2582 · H1635 · ge.ram · ge.ram: bone (Aramaic, occ=1) — anatomical term. No peace content.
+- 2579 · H1655 · ge.shem · ge.shem: body (Aramaic, occ=8) — body as physical entity. No peace content.
+- 2209 · H1682 · de.vo.rah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2207 · H1687 · de.vir · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2210 · H1696H · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2205 · H1696I · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2198 · H1697I · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2199 · H1697J · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2200 · H1697K · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2201 · H1697L · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2202 · H1697M · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2203 · H1697N · da.var · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2206 · H1698 · de.ver · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2211 · H1699A · do.ver · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2213 · H1699B · dib.ber · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2208 · H1700 · div.rah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2214 · H1702 · do.ve.rot · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2215 · H1703 · dab.be.ret · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1605 · H1717 · dad · dad breast - bleed from dod/beloved root. Anatomical term, no love content.
+- 2604 · H1724 · da.ham · da.ham: to astonish (occ=1) — astonishment. No peace content.
+- 1604 · H1731 · dud · dud pot - bleed from dod/beloved root. Cooking vessel, no love content.
+- 1607 · H1733 · do.dah · do.dah aunt - bleed from dod root. Kinship term only, primary in family vocabulary.
+- 2703 · H1750 · duts · H1750 (duts: to leap/dance, occ=1, 1 verse — Job 41:22 about Leviathan 'dances') — dancing leap used of a sea creature, not a joy expression. Single occurrence with no joy semantic content. Delete.
+- 2600 · H1818 · dam · dam: blood (occ=363) — blood vocabulary. No peace semantic content despite extensive verse set. Bleed from da.mam root proximity.
+- 2605 · H1822 · dum.mah · dum.mah: destroyed/silenced-by-destruction (occ=1) — destruction/silencing. Not peace vocabulary; contra-pattern at most. Content noted in analysis if needed.
+- 2598 · H1826B · da.mam · da.mam: wail sense (occ=1, contaminated — v=9 shared with sibling sub-glosses). Wailing sense is the opposite of peace-stillness. Contamination noted in OP-003. Delete.
+- 2599 · H1826I · da.mam · da.mam: destroyed/silenced-by-destruction sense (occ=5, contaminated — v=9 shared). Destruction sense not peace vocabulary. Contamination noted OP-003. Delete.
+- 1434 · H1933A · ha.va · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1433 · H1933B · ha.vah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2088 · H1943 · ho.vah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2093 · H1962 · hay.yah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1735 · H2119A · za.chal · Bleed from za.chal root. Physical movement, not inner state. Group J.
+- 1736 · H2120 · zo.che.let · za.chal root bleed. Place name (location near En-rogel), no fear content.
+- 1665 · H2244 · cha.va · cha.va to hide - bleed from cha.vav/chesed root. No love content.
+- 552 · H2245 · cha.vav · chavav to love fervently — single verse (Deu 33:3, God as subject). Adequately covered by H0160 (ahavah) which covers divine love with larger corpus. Deletion confirmed.
+- 1666 · H2247 · cha.vah · cha.vah to hide - bleed from same. No love content.
+- 2690 · H2273 · chav.rah · H2273 (chav.rah: associate, Aramaic, occ=1, 1 verse — Dan 7:20 companions) — companion vocabulary. No joy content. Delete.
+- 7575 · H2275H · chev.ron · Place name (Hebron) — no fellowship meaning
+- 2035 · H2282 · chag · Confirmed candidate_delete. Bleed or adequately covered.
+- 2036 · H2287 · cha.gag · Confirmed candidate_delete. Bleed or adequately covered.
+- 2691 · H2306 · cha.di · H2306 (cha.di: breast/chest, Aramaic, occ=1, 1 verse — Dan 2:32) — anatomical term, no joy content. Root bleed through Aramaic ched.vah family. Delete.
+- 2692 · H2323 · cha.dat · H2323 (cha.dat: new, Aramaic, occ=1, 1 verse — Ezr 6:4) — 'new' adjective. No joy content. Root bleed. Delete.
+- 119 · H2342A · chul · chul: tremble/fear sense (occ=12) — trembling/writhing before danger. The pain-writhing dimension, not hope. Content covered by H2342I (writhe in pain) and H2342K (anticipate anxiously). Delete.
+- 120 · H2342B · chil · chil: be firm (occ=3, contaminated v=10 — cross-sub-gloss bleed, OP-003) — be firm/strong sense of chul. Not hope vocabulary. Contamination noted. Delete.
+- 121 · H2342H · chul · chul: give birth (occ=9) — birthing/travail sense. Pain/labour not hope. Delete.
+- 122 · H2342I · chul · chul: writhe in pain/wound (occ=25) — pain and wounding. Not hope vocabulary. Cross-registry with distress/grief. Delete.
+- 123 · H2342J · chul · chul: dance/shake (occ=10) — dancing/shaking sense of chul. Not hope vocabulary. Delete.
+- 124 · H2342K · chul · chul: anticipate/wait anxiously (occ=8, contaminated v=10, OP-003) — anxious anticipation/writhing with pain. While tangentially related to tense waiting, the semantic weight is anxiety and pain rather than hope. CRL with anguish (005) already noted. Contamination noted. Delete.
+- 1784 · H2344 · chol · chol: sand (occ=23) — sand as a material. No hope content. Root bleed from chul family.
+- 1786 · H2426 · chel · chel: rampart/fortress (occ=9) — military fortification. No hope content. Root bleed from chul.
+- 128 · H2427A · chil · chil: agony/anguish (occ=6) — pain and anguish. Cross-registry with anguish (005) as CRL. Not hope vocabulary in primary sense. Delete.
+- 129 · H2427B · chil · chi.lah: agony (occ=1, contaminated v=6, OP-003) — agony sub-gloss. Contaminated. Delete.
+- 1791 · H2430 · che.lah · che.lah: bulwark/rampart (occ=1) — military fortification. No hope content. Root bleed.
+- 2333 · H2433 · chin · Bleed vocabulary. H2433 chin beauty — peripheral aesthetic sense. H2594 chaninah favour — single occurrence, adequately covered by chen/chanan. H2606 Chananel — proper noun, Tower of Hananel.
+- 1804 · H2436H · cheq · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1805 · H2436I · cheq · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1806 · H2436J · cheq · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 520 · H2449 · cha.kham · cha.kham be wise — bleed. Primary in wisdom registry.
+- 526 · H2451 · chokh.mah · chokh.mah wisdom — bleed via wisdom-in-heart vocabulary. Primary in wisdom registry.
+- 1941 · H2456 · cha.la · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 132 · H2479 · chal.cha.lah · chal.cha.lah: anguish/trembling (occ=4) — anguish and terror. Not hope vocabulary. Cross-registry with anguish.
+- 1871 · H2502A · cha.lats · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1872 · H2502B · cha.lats · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1571 · H2527 · chom · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1412 · H2529A · chem.ah · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1572 · H2553 · cham.man · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2331 · H2606 · cha.nan.el · Bleed vocabulary. H2433 chin beauty — peripheral aesthetic sense. H2594 chaninah favour — single occurrence, adequately covered by chen/chanan. H2606 Chananel — proper noun, Tower of Hananel.
+- 1634 · H2624 · cha.si.dah · cha.si.dah stork - bleed from chasid root. Animal name, no love content.
+- 2778 · H2635 · cha.saph · chasaph (Aramaic) - clay/pottery clay. Dan 2:33-43 iron and clay feet/toes of statue. Clay = material of weakness in divided kingdom symbol. Clay itself is not an authority term; the symbol containing it is. Researcher decision requested: include as part of Daniel authority imagery or delete as symbolic material.
+- 1989 · H2658 · cha.phar · Confirmed candidate_delete. Bleed or adequately covered.
+- 2550 · H2758 · cha.rish · cha.rish: plowing/ploughing time (occ=3) — agricultural ploughing, not silence. Bleed from H2790A (to plow/be silent, already extracted). Ploughing-season meaning has no peace content.
+- 2555 · H2759 · cha.ri.shi · cha.ri.shi: scorching/hot/silent (occ=1) — hot/sultry/silent with uncertain meaning. Thin data; no clear peace semantic content.
+- 2028 · H2778B · cha.raph · Confirmed candidate_delete. Bleed or adequately covered.
+- 2029 · H2778C · cha.raph · Confirmed candidate_delete. Bleed or adequately covered.
+- 2556 · H2791A · che.resh · che.resh: silently/secretly (adverb, occ=1) — thin data; secretive silence not peace silence. Content covered by H2790B (cha.resh: be quiet, already extracted).
+- 2557 · H2791B · che.resh · che.resh: magic art/craftily (occ=2) — magic/craft sense of cha.resh root. No peace content. Bleed.
+- 2551 · H2793H · cho.resh · cho.resh: wood/forest (occ=3) — wooded area. No peace content. Root bleed from cha.rash.
+- 2552 · H2794 · cho.resh · cho.resh: artificer/craftsman (occ=2) — craftsman. No peace content. Root bleed.
+- 2549 · H2795 · che.resh · che.resh: deaf (occ=9) — deafness. No peace content. Root bleed from cha.resh.
+- 2548 · H2796 · cha.rash cha.ra.shim · cha.rash cha.ra.shim: craftsman/artisan (occ=36) — craftsmen/artificers. No peace content. Root bleed.
+- 2553 · H2799 · cha.ro.shet · cha.ro.shet: carving/skilled working (occ=4) — craftsmanship. No peace content. Root bleed.
+- 1659 · H2838 · cha.shuq · cha.shuq ring — bleed from cha.shaq root. No heart content.
+- 1661 · H2839 · chish.shuq · chish.shuq spoke (wheel) — bleed. No heart content.
+- 1593 · H2896B · tov · tov good - bleed. Same reasoning.
+- 636 · H2896C · to.vah · to.vah welfare - bleed. Same reasoning.
+- 1854 · H2902A · tu.ach · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1855 · H2902B · ta.chach · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1856 · H2909 · ta.chah · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1857 · H2915 · ti.ach · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2052 · H3001 · ya.vesh · Confirmed candidate_delete. Bleed or adequately covered.
+- 2054 · H3002 · ya.vesh · Confirmed candidate_delete. Bleed or adequately covered.
+- 2055 · H3003G · ya.vesh · Confirmed candidate_delete. Bleed or adequately covered.
+- 2053 · H3004 · yab.ba.shah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2056 · H3006 · yab.be.shet · Confirmed candidate_delete. Bleed or adequately covered.
+- 2823 · H3027N · yad · yad - hand: penis. Isa 57:8. Anatomical euphemism. No authority content. Bleed.
+- 1608 · H3039B · ya.di.dah · ya.di.dah love - adequately covered by H3039A ya.did beloved (extracted).
+- 1537 · H3049 · yid.de.o.ni · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2091 · H3068H · ye.ho.vah · ye.ho.vah: Jerusalem sub-gloss (occ=1) — geographic location sub-gloss (Jerusalem of the Lord). Not the divine name proper. Bleed.
+- 2092 · H3068I · ye.ho.vah · ye.ho.vah: [Jerusalem of] the Lord sub-gloss (occ=1) — geographic sub-gloss. Not the divine name proper. Bleed.
+- 2089 · H3092K · ye.ho.sha.phat · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2221 · H3276 · ya.al · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1419 · H3282 · ya.an · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2115 · H3423G · ya.rash · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2113 · H3423H · ya.rash · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2119 · H3423I · ya.rash · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2120 · H3424 · ye.re.shah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2117 · H3425 · ye.rush.shah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1454 · H3487 · yat · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 712 · H3513G · ka.ved · ka.ved to honor — bleed from ka.ved/heavy root. Primary in other registries.
+- 148 · H3515 · ka.ved · ka.ved heavy — bleed. No heart content.
+- 1476 · H3588B · ki m · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1488 · H3588C · ki al ken · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1508 · H3589 · kid · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1472 · H3651C · ken · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1490 · H3652 · ken · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2859 · H3658 · kin.nor · kinnor - lyre/harp. 42 occ. Musical instrument. No authority content. Bleed.
+- 2860 · H3672G · kin.ne.ret · Kinnereth - Sea of Galilee toponym. Geographical. No authority content. Bleed.
+- 2861 · H3677 · ke.se · kese - full moon. Ps 81:3; Pro 7:20. Lunar calendar. No authority content. Bleed.
+- 2858 · H3680 · ka.sah · kasah - to cover/conceal. 155 occ. Waters covered mountains; concealing; hiding. No authority content. Bleed.
+- 2622 · H3684 · ke.sil · ke.sil: fool (occ=70) — foolishness. Root bleed from ke.sel/loin/hope family (H3689 already extracted). The fool sense is the negative: the foolish person misplaces confidence. Analytically interesting but not independently part of the hope vocabulary. 70 verses would skew coverage. Delete.
+- 2625 · H3685H · ke.sil · ke.sil: constellation (Orion, occ=1) — astronomical. Root bleed from ke.sel. No hope content.
+- 2626 · H3687 · ke.si.lut · ke.si.lut: stupidity (occ=1) — foolishness noun. Root bleed. No hope content.
+- 2041 · H3701G · ke.seph · Confirmed candidate_delete. Bleed or adequately covered.
+- 2042 · H3701H · ke.seph · Confirmed candidate_delete. Bleed or adequately covered.
+- 150 · H3708A · ka.as · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2834 · H3709I · kaph · kaph - dish/bowl (tabernacle vessel). Exo 25:29; 37:16; Num 4:7. Temple vessel. No authority content. Bleed within kaph family.
+- 7548 · H3713A · ke.phor · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 7549 · H3713B · ke.phor · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 7547 · H3715A · ke.phir · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 7551 · H3715M · ke.phi.rim · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 7550 · H3723H · ka.phar · False positive from H3722 kipper cluster expansion — no reconciliation meaning
+- 3174 · H3724B · ko.pher · Homonymous with H3724A (ransom) via kap.har root. Sense: asphalt/pitch as physical covering material (Gen 6:14). No inner-being content. The covering concept is analytically present in H3722A (kip.per/atone). Corpus scope exclusion.
+- 3172 · H3724C · ko.pher · Homonymous with H3724A (ransom) via kap.har root. Sense: henna plant (Song 1:14, 4:13). No inner-being content. Corpus scope exclusion.
+- 3175 · H3724D · ko.pher · Homonymous with H3724A (ransom) via kap.har root. Sense: village/settlement (topographic). No inner-being content. Corpus scope exclusion.
+- 1445 · H3823B · lib.bev · lib.bev to bake — bleed from la.vav/lev root. Cooking term. No heart content.
+- 1443 · H3834 · le.vi.vah · le.vi.vah cake — bleed from lev root. Food term. No heart content.
+- 2321 · H3982 · ma.a.mar · Bleed vocabulary. See bulk note.
+- 2143 · H4004 · miv.chor · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2141 · H4005 · miv.char · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1988 · H4016 · ma.vosh · Confirmed candidate_delete. Bleed or adequately covered.
+- 1710 · H4033 · ma.gor · gur root family bleed. Sojourning place, distinct from H4032 ma.gor (terror, already extracted).
+- 2212 · H4057A · mid.bar · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2204 · H4057B · mid.bar · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2216 · H4057G · mid.bar · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1740 · H4106 · ma.hir · ma.har root bleed. Adjectival speed, no fear content.
+- 299 · H4116A · ma.har · All 64 verses read. Temporal urgency only, no fear content. Pre-analysis flag 4.
+- 1737 · H4116B · ma.har · ma.har root bleed. Verse set shared from H4116A (brideprice, not fear).
+- 1741 · H4117 · ma.har · ma.har root bleed. Brideprice vocabulary.
+- 1742 · H4118A · ma.her · ma.har root bleed. Adjectival speed, no fear content.
+- 1739 · H4118B · ma.her · ma.har root bleed. Adverbial speed, no fear content.
+- 1738 · H4120 · me.he.rah · ma.har root bleed. Noun of haste, no fear content.
+- 1541 · H4129 · mo.da · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1542 · H4130 · mo.da.at · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1715 · H4171 · mur · mo.rah/mo.rag cluster bleed. To change/exchange, no fear content.
+- 1717 · H4173 · mo.rag · mo.rah/mo.rag cluster bleed. Agricultural implement, no fear content.
+- 2118 · H4181 · mo.ra.shah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1714 · H4185 · mush · mo.rah/mo.rag cluster bleed. To depart/remove, no fear content.
+- 1788 · H4234 · ma.chol · ma.chol: dance (occ=6) — dancing. Root bleed from chul. No hope content.
+- 1785 · H4246 · me.cho.lah · me.cho.lah: dance (occ=8) — dancing. Root bleed from chul. No hope content.
+- 2554 · H4281 · ma.cha.re.shah · ma.cha.re.shah: plowshare (occ=3) — agricultural implement. No peace content. Root bleed from cha.rash.
+- 1557 · H4307H · mat.ta.rah · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 7560 · H4347 · mak.kah · False positive from cluster expansion — no contrition meaning
+- 1712 · H4460 · mam.me.gu.rot · gur->ger->me.gu.rah chain bleed. Granary/storehouse, no fear content.
+- 1750 · H4522 · mas · ma.sas phonological bleed (mas/mas.sas). Taskworker, no fear content.
+- 1752 · H4523 · mas · mas chain bleed from H4522. Despairing — sorrow-register, not fear. Primary in distress/sorrow.
+- 1753 · H4530 · mis.sat · mas cluster bleed. Payment/sufficiency, no fear content.
+- 1754 · H4531A · mas.sah · mas chain bleed from H4549. Despair — sorrow-register, not fear.
+- 1751 · H4531B · mas.sah · mas chain bleed. Testing/trial — distress-register, not fear.
+- 1466 · H4569B · ma.a.va.rah · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1803 · H4579 · ma.ah · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1477 · H4605 · ma.al · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1499 · H4607 · mo.al · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1484 · H4608 · ma.a.leh · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1485 · H4609A · ma.a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1481 · H4609B · ma.a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2058 · H4611 · ma.a.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2371 · H4645 · miph.ga · Bleed vocabulary. See bulk note.
+- 2312 · H4646 · map.pach · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2313 · H4647 · map.pu.ach · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 160 · H4656 · miph.le.tset · Object-focus (Maacah's image 1Ki 15:13), not an inner fear state. Group J.
+- 1517 · H4658 · map.pe.let · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2894 · H4662G · miph.qad · miphqad - Muster Gate (toponym). Neh 3:31. Proper noun place name. No authority content. Bleed.
+- 2607 · H4723A · qo.veh · qo.veh: Kue (place name, occ=4) — geographic location (Egypt/Asia Minor region). Root bleed from miq.veh. No hope content.
+- 1944 · H4753 · mor · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1763 · H4758 · mar.eh · ra.ah root family bleed. Visual appearance, no fear content. 82 propagated verses all 'beautiful in appearance' etc.
+- 1764 · H4759A · mar.ah · ra.ah root family bleed. Prophetic vision, no fear content.
+- 1768 · H4759B · mar.ah · ra.ah root family bleed. Mirror, no fear content.
+- 2880 · H4767 · mir.bah · mirbah - much/great quantity. Eze 23:32. Quantity. No authority content. Bleed.
+- 1951 · H4814 · me.ri.rut · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1952 · H4815 · me.ri.ri · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1961 · H4827 · me.ra · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1953 · H4845 · me.re.rah · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1945 · H4846 · me.ro.rah · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 2163 · H4853A · mas.sa · Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted.
+- 2164 · H4853B · mas.sa · Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted.
+- 2169 · H4856 · mas.so · Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted.
+- 2170 · H4858 · mas.sa.ah · Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted.
+- 2165 · H4864 · mas.et · Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted.
+- 1324 · H4915A · mo.shel · moshel - likeness/comparison. Job 41:33 no creature like Leviathan. Comparison sense of mashal. No authority content. Bleed within mashal family.
+- 1323 · H4932G · mish.neh · mishneh - Second Quarter (Jerusalem toponym). 2Ki 22:14; Zep 1:10. Toponym. No authority content. Bleed.
+- 1591 · H4999 · na.vah · na.vah habitation - bleed from naeh/lovely root. Place name, no love content.
+- 2618 · H5033 · ne.vekh · ne.vekh: spring (occ=1) — spring/water source. No hope content. Bleed.
+- 1278 · H5034A · na.val · na.val be senseless — bleed from na.vel/wither root. Primary in foolishness vocabulary.
+- 1912 · H5035A · ne.vel · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1910 · H5035B · ne.vel · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1911 · H5036 · na.val · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1909 · H5038 · ne.ve.lah · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 2590 · H5183B · na.chat · na.chat: descent/judgment-descent (occ=1, contaminated v=6) — descent of judgment, not peace. Contamination noted OP-003. Peace content covered by H5183A (quietness, extracted).
+- 7561 · H5224H · ne.kho · False positive from cluster expansion — no contrition meaning
+- 2538 · H5251G · nes · nes: Banner [God] sub-gloss (occ=1) — single-occurrence divine-name sub-gloss. Covered by H3071 YHWH-Nissi (restored) and H5251H (nes: ensign, extracted).
+- 2311 · H5306 · no.phekh · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1509 · H5307G · na.phal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1510 · H5307H · na.phal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1511 · H5307I · na.phal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1512 · H5307J · na.phal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1516 · H5308 · ne.phal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2145 · H5375G · na.sa · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2146 · H5375H · na.sa · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2147 · H5375I · na.sa · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2149 · H5375K · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2150 · H5375L · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2151 · H5375M · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2152 · H5375N · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2153 · H5375P · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2154 · H5375Q · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2155 · H5375R · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2156 · H5375S · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2157 · H5375T · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2158 · H5375U · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2159 · H5375V · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2160 · H5375W · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2161 · H5375X · na.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2168 · H5376 · ne.sa · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2171 · H5379 · nis.set · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2172 · H5385 · ne.su.ah · Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006.
+- 2162 · H5387A · na.si · Bleed vocabulary. H5387A na.si leader/prince — political/social term, not guilt vocabulary. H5387B na.si mist — meteorological term, no guilt semantic content.
+- 2167 · H5387B · na.si · Bleed vocabulary. H5387A na.si leader/prince — political/social term, not guilt vocabulary. H5387B na.si mist — meteorological term, no guilt semantic content.
+- 2232 · H5395 · na.sham · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2233 · H5396 · nish.ma · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 876 · H5528 · sa.khal · sa.khal: be foolish (occ=8) — foolishness. Root bleed from ke.sel family. No hope content.
+- 300 · H5590 · sa.ar · Storm/tempest sub-gloss of sa.ar root. Not a fear term. Pre-analysis flag 3.
+- 1067 · H5668 · a.vur · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1458 · H5674A · a.var · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1459 · H5674C · a.var · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1460 · H5674D · a.var · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1465 · H5676G · e.ver · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1463 · H5676H · e.ver · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1645 · H5748 · u.gav · u.gav pipe/flute - bleed from agav/lust root. Musical instrument, no love content.
+- 2526 · H5769I · o.lam · o.lam: any time (occ=5) — temporal 'at any time' sense. Not the everlasting/eternal dimension. Content covered by H5769G (enduring/eternal, extracted_theological_anchor).
+- 2518 · H5769J · o.lam · o.lam: antiquity/old (occ=44) — past-time sense of olam ('from of old'). Distinct from the eternal-peace dimension. Content covered by H5769G.
+- 1423 · H5772 · o.nah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1564 · H5861 · a.yit · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1495 · H5920H · al · al: height (occ=4) — spatial height adverb. No peace content. Root bleed from el.yon family.
+- 1471 · H5921B ·    · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1478 · H5922 · al · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1500 · H5924 · el.la · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1475 · H5927H · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1479 · H5927I · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1487 · H5927J · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1493 · H5927K · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1491 · H5927L · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1492 · H5927M · a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1486 · H5929 · a.leh · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1474 · H5930A · o.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1501 · H5930B · o.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1502 · H5940 · e.li · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1497 · H5942 · il.li · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1482 · H5944 · a.liy.yah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1483 · H5945A · el.yon · el.yon: high (adjective, occ=20) — high/upper in non-divine contexts (upper gate, upper pool). Content covered by H5945B (Most High God, extracted_theological_anchor).
+- 1496 · H5945G · el.yon · el.yon: Upper Beth Horon (place name, occ=3, contaminated v=20). Geographic sub-gloss; contamination noted OP-003. Delete.
+- 1494 · H5945H · el.yon · el.yon: [LORD] Most High sub-gloss (occ=5, contaminated v=20). Covered by H5945B. Contamination noted OP-003. Delete.
+- 2057 · H5949 · a.li.lah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2063 · H5950 · a.li.liy.yah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2059 · H5953A · a.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2061 · H5953B · a.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2064 · H5953C · a.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2065 · H5953D · a.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2060 · H5955 · o.le.lot · Confirmed candidate_delete. Bleed or adequately covered.
+- 1973 · H5998 · a.mal · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1971 · H6001B · a.mel · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1417 · H6030B · a.nah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1420 · H6030C · a.nah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1329 · H6031A · a.nah · a.nah sub-sense A (be occupied/busied, occ=2) — occupational/activity sense with no humility semantic content. Bleed from the polysemous a.nah root. Core humility sense covered by H6031B.
+- 1929 · H6033 · a.na · a.na Aramaic form (occ=1) — thin Aramaic variant. Semantic content covered by H6031B and H6041. Insufficient verse presence for independent analytical contribution.
+- 1930 · H6039 · e.nut · e.nut (affliction, occ=1) — single-occurrence nominal derivative. Semantic content fully covered by o.ni (H6040) and a.ni (H6041). Insufficient independent presence.
+- 1965 · H6087B · a.tsav · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1968 · H6089B · e.tsev · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1969 · H6090B · o.tsev · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1970 · H6092 · a.tsev · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1418 · H6256 · et · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1416 · H6258 · at.tah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1424 · H6261 · it.ti · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2385 · H6282A · a.tar · Bleed vocabulary. See bulk note.
+- 2386 · H6282B · a.tar · Bleed vocabulary. See bulk note.
+- 2370 · H6294 · pe.ga · Bleed vocabulary. See bulk note.
+- 1975 · H6328 · puq · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1705 · H6344 · pa.chad · pa.chad root bleed. Anatomical 'thigh' — no fear content. Group J.
+- 1704 · H6346 · pe.chah · pa.chad root phonological bleed (pe.chah/pa.chad consonants). Governor, no fear content.
+- 1976 · H6375 · piq · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 2343 · H6414 · pa.lil · Bleed vocabulary. See bulk note.
+- 2345 · H6416 · pe.li.li · Bleed vocabulary. See bulk note.
+- 2346 · H6417 · pe.li.liy.yah · Bleed vocabulary. See bulk note.
+- 1529 · H6437G · pa.nah · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1532 · H6437H · pa.nah · Confirmed candidate_delete. Bleed or adequately covered.
+- 1522 · H6440H · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1523 · H6440I · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1524 · H6440J · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1525 · H6440K · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1526 · H6440L · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1527 · H6440M · pa.neh · Confirmed candidate_delete. Bleed or adequately covered.
+- 1528 · H6440N · pa.neh · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1531 · H6441 · pe.ni.mah · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 1530 · H6442 · pe.ni.mi · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2884 · H6485B · pe.qu.dim · pequdim - reckoning. Occ=1 but 88 verses in export matching H6485A verse-set. Possible sub-gloss contamination from H6485A. Researcher review recommended before confirming status.
+- 2888 · H6485L · pa.qad · paqad - to reckon: put. Occ=4 but 88 verses in export matching H6485A. Same contamination pattern as H6485B. Researcher review recommended.
+- 1990 · H6548 · cha.phe.ra · Confirmed candidate_delete. Bleed or adequately covered.
+- 2194 · H6623 · pit.ron · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2519 · H6635H · tsa.va · tsa.va: army: war sense (occ=42) — warfare sub-sense. Covered analytically by H6635B (LORD of Hosts, extracted_theological_anchor) and H6635A (army, extracted_theological_anchor). Delete to avoid duplication.
+- 2523 · H6635I · tsa.va · tsa.va: duty/service sense (occ=13) — service/duty in the tabernacle sense. Covered by H6635A/B. Delete.
+- 2195 · H6640 · tse.vu · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2382 · H6760 · tsa.la · Bleed vocabulary. See bulk note.
+- 2383 · H6761 · tse.la · Bleed vocabulary. See bulk note.
+- 1934 · H6940 · qad.rut · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 2614 · H6957A · qav · qav: cord/measuring-line (occ=12, v=2, below 20% — OP-003 note) — measuring-line sense. Content covered by H8615A (tiq.vah cord, extracted) and H6957B. Low coverage. Delete.
+- 2613 · H6957B · qav · qav: cord/line (occ=13, 13 verses) — measuring-line in architectural/prophetic contexts. The cord sense is covered by H8615A (tiq.vah cord, Rahab narrative). The measuring-line sense (Eze 40 temple measurements, Isa 28:17 plumb line) does not carry hope semantic content independently. Delete.
+- 1994 · H6963A · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 2004 · H6963B · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 1995 · H6963H · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 1998 · H6963I · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 1999 · H6963J · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 2001 · H6963K · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 2002 · H6963L · qol · Confirmed candidate_delete. Bleed or adequately covered.
+- 1338 · H6965A · qa.ma · qa.ma Leb-kamai — place name bleed. No heart content.
+- 1437 · H6965B · qum · qum to arise — bleed. No heart content.
+- 1439 · H6965H · qum · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1438 · H6965I · qum · qum to arise:establish — bleed. No heart content.
+- 1440 · H6965J · qum · qum to arise:attack — bleed. No heart content.
+- 1447 · H6965K · qum · qum to arise:guard — bleed. No heart content.
+- 2615 · H6978 · qav.qav · qav.qav: might (occ=4, v=2) — uncertain meaning, possibly 'might' or a place name. Thin data; no hope content. Delete.
+- 2000 · H7031 · qal · Confirmed candidate_delete. Bleed or adequately covered.
+- 2003 · H7044 · qa.lal · Confirmed candidate_delete. Bleed or adequately covered.
+- 1997 · H7045 · qe.la.lah · Confirmed candidate_delete. Bleed or adequately covered.
+- 2005 · H7052 · qe.lo.qel · Confirmed candidate_delete. Bleed or adequately covered.
+- 1811 · H7126G · qa.rav · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1810 · H7126H · qa.rav · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1004 · H7130G · qe.rev · qe.rev among — bleed from H7130H (extracted). The preposition 'among' sub-gloss has no heart content.
+- 1812 · H7134 · qar.dom · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 303 · H7200B · ra.ah · High-frequency anchor bleed. ra.ah root (to see) entered registry via STEP relatedNos. 425 verses all show 'God saw / they saw' content. No fear content. Pre-analysis flag 1.
+- 1757 · H7200H · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1758 · H7200I · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1759 · H7200J · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1760 · H7200K · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1756 · H7200L · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1761 · H7200M · ra.ah · ra.ah root family bleed. 'To see' sub-gloss. No fear content.
+- 1762 · H7200N · ra.ah · ra.ah: Provider [God] / YHWH-Roeh (occ=1) — the Shepherd divine name sub-gloss. Covered by H3070 (YHWH-Yireh, extracted_theological_anchor). Thin; not a peace-specific divine name.
+- 1769 · H7202 · ra.eh · ra.ah root family bleed. Participial 'seeing', no fear content.
+- 1765 · H7203A · ro.eh · ra.ah root family bleed. Prophetic seer, no fear content.
+- 1770 · H7203B · ro.eh · ra.ah root family bleed. Prophetic vision, no fear content.
+- 1774 · H7207 · ray.yah · ra.ah root family bleed. 'To behold', no fear content. Confirm candidate_delete -> delete.
+- 1771 · H7209 · re.i · ra.ah root family bleed. Mirror, no fear content.
+- 1766 · H7210 · ro.i · ra.ah root family bleed. Sight/spectacle, no fear content.
+- 1772 · H7212 · re.ut · ra.ah root family bleed. Sight, no fear content.
+- 2873 · H7235B · ra.vah · ravah - to shoot (arrows). Same verse-set as H7235A but archery sub-gloss. No authority content. Bleed within ravah family.
+- 1555 · H7271 · re.gal · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2592 · H7280C · ra.ga · ra.ga: to harden (occ=1, contaminated v=6) — hardening sense. Contamination noted OP-003. Peace content covered by H7280A (disturb, extracted) and H7280B (rest, already extracted).
+- 2896 · H7287B · ra.dah · radah - to scrape/tread grapes. Same verse-set as H7287A but grape-treading sub-gloss. No authority content in this sub-gloss. Bleed within radah family.
+- 1767 · H7299 · rev · ra.ah root family bleed (Aramaic). Appearance, no fear content.
+- 793 · H7306 · ri.ach · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 998 · H7307G · ru.ach · xref_spirit — ru.ach (spirit) primary in spirit registry (reg 184)
+- 1426 · H7307H · ru.ach · xref_spirit — ru.ach (spirit: breath) primary in spirit registry
+- 1427 · H7307I · ru.ach · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1428 · H7381 · re.ach · Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content.
+- 2306 · H7382 · re.ach · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2685 · H7443 · re.na.nim · H7443 (re.na.nim: ostrich, occ=1, 1 verse — Job 39:13) — ostrich named for its piercing cry (same root as ra.nan). The animal name is not joy vocabulary. Delete.
+- 1955 · H7451B · ra · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1956 · H7451H · ra · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 1622 · H7462A · bet-e.qed ha.ro.im · bet-e.qed House of Shepherds - bleed from ra.ah root. Place name, no love content.
+- 1618 · H7462B · ra.ah · ra.ah to pasture - bleed from re.a/friend root. Shepherding verb, no love content.
+- 1620 · H7462C · ra.ah · ra.ah to accompany - bleed from re.a root. No primary love content.
+- 1625 · H7462D · ra.ah · ra.ah to befriend - borderline but bleed from re.a root. No independent verse set.
+- 1960 · H7489B · ra.a · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 2286 · H7495 · ra.pha · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2288 · H7497G · re.pha.im · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2289 · H7504 · ra.pheh · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2290 · H7510 · riph.yon · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2116 · H7568 · re.shet · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2105 · H7585 · she.ol · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2358 · H7593 · she.el · Bleed vocabulary. See bulk note.
+- 2106 · H7596 · she.e.lah · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2177 · H7602B · sha.aph · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 811 · H7613 · se.et · Bleed vocabulary. H7613 se.et elevation — majority of verses are skin swellings (Lev 13-14) and divine majesty; Gen 4:7 analytically noted but covered by NASA raise. H7863/H7865 — loftiness and proper noun, no guilt content.
+- 2670 · H7725K · shuv · shuv: pay/repay/reward sense (occ=32) — legal restitution, revenge, reward repayment. The pay-back sense of shuv has no repentance content. Delete.
+- 2674 · H7725L · shuv · shuv: refuse/turn face sense (occ=7) — refusing requests (1 Ki 2:16-17). Physical turning of the face as refusal. No repentance content. Delete.
+- 2671 · H7725M · shuv · shuv: reply/answer sense (occ=29) — verbal reply as 'returning words'. Speech act, not repentance. Delete.
+- 2096 · H7783 · shuq · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 2173 · H7863 · si · Bleed vocabulary. H7613 se.et elevation — majority of verses are skin swellings (Lev 13-14) and divine majesty; Gen 4:7 analytically noted but covered by NASA raise. H7863/H7865 — loftiness and proper noun, no guilt content.
+- 2174 · H7865 · si.on · Bleed vocabulary. H7613 se.et elevation — majority of verses are skin swellings (Lev 13-14) and divine majesty; Gen 4:7 analytically noted but covered by NASA raise. H7863/H7865 — loftiness and proper noun, no guilt content.
+- 2679 · H7870 · shi.vah · shi.vah: captivity/restoration (occ=1, 1 verse — Psa 126:1 'when the Lord restored the fortunes of Zion'). Single occurrence; restoration-from-captivity sense. Content better addressed through H7725H (shuv: rescue/restore, extracted). Delete.
+- 1829 · H7914 · se.khiy.yah · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 1830 · H7915 · sak.kin · Session A relatedNos bleed confirmed in pre-analysis review. No heart content.
+- 395 · H7951 · sha.lah · sha.lah: to prosper/be at ease (occ=5, contaminated v=6, OP-003) — ease and prosperity. This term belongs to the peace registry (117, where it is extracted). It entered the hope registry as bleed from the ease/security proximity. Contamination noted. Delete.
+- 2544 · H7952 · sha.lah · sha.lah: to neglect (occ=2) — negligence sense. No hope content.
+- 2633 · H7954 · she.leh · she.leh: be safe (Aramaic, occ=1) — Aramaic ease/safety. Belongs to peace registry. Delete.
+- 2545 · H7959 · sha.lu · sha.lu: prosperity (occ=1) — ease/prosperity. Belongs to peace registry (117, extracted there). Bleed. Delete.
+- 407 · H7961 · sha.lev · sha.lev: at ease (occ=8) — ease. Belongs to peace registry (117, active there). Bleed. Delete.
+- 2542 · H7962 · shal.vah · shal.vah: ease/prosperity (occ=8) — belongs to peace registry (117, extracted there). Bleed. Delete.
+- 2570 · H7966 · shil.lum · shil.lum: recompense/retribution (occ=3) — retributive payment, not restorative. Mic 7:3; Hos 9:7. Legal penalty sense, not peace vocabulary.
+- 2546 · H7987 · she.li · she.li: quietness (occ=1) — belongs to peace registry (117, extracted there). Bleed. Delete.
+- 414 · H7999A · sha.lam · Consolidated sub-gloss of sha.lem (H7999A). Verse set handled by sha.lem entry (id=416). No separate verse record.
+- 2572 · H8011 · shil.lu.mah · shil.lu.mah: retribution/reward (occ=1) — retributive sense. No peace semantic content. Covered by H8005 if restoration sense needed.
+- 2573 · H8021 · shal.mon · shal.mon: reward/bribe (occ=1) — bribery vocabulary. No peace content.
+- 1544 · H8033H · sham · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2566 · H8036 · shum · shum: name (Aramaic, occ=12) — proper name/noun. No peace content. Bleed from Aramaic vocabulary in the Daniel/Ezra context.
+- 1816 · H8063 · se.mi.khah · H8063 (se.mi.khah: rug/coverlet, occ=1, 1 verse — Judg 4:18) — household object. No joy content. Root bleed. Delete.
+- 1993 · H8102 · she.mets · Confirmed candidate_delete. Bleed or adequately covered.
+- 1983 · H8106B · sha.med · Confirmed candidate_delete. Bleed or adequately covered.
+- 1745 · H8175B · sa.ar · sa.ar root bleed. Storm/sweep away sub-gloss. Distinct from H8175A (shudder, extracted).
+- 1743 · H8175C · sa.ar · sa.ar root bleed. Uncertain meaning; no fear content.
+- 1747 · H8178B · sa.ar · sa.ar root bleed. Storm/tempest noun. Distinct from H8178A (shuddering/terror, extracted).
+- 2226 · H8399 · tav.lit · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2678 · H8421G · tuv · tuv: to return (Aramaic P'al, occ=3, v=2) — Dan 4:34, 36: Nebuchadnezzar's reason returning. General return verb. Nebuchadnezzar's restoration is significant but the specific repentance vocabulary is better addressed through the extracted shuv sub-glosses. Delete.
+- 2680 · H8421H · tuv · tuv: rescue/restore (Aramaic Aphel, occ=1, 1 verse — Ezr 6:5: gold vessels restored to temple). Physical restoration. No repentance content. Delete.
+- 2676 · H8421I · tuv · tuv: reply (Aramaic, occ=4) — returning words/answer in Ezra epistolary contexts. Speech act. No repentance content. Delete.
+- 2844 · H8449 · tor · tor - turtledove. 14 occ. Sacrificial bird. No authority content. Bleed.
+- 2114 · H8492 · ti.rosh · Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms.
+- 1546 · H8536 · tam.mah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1716 · H8545 · te.mu.rah · mo.rah/mo.rag cluster bleed. Exchange/substitute, no fear content.
+- 1947 · H8563 · tam.rur · Confirmed candidate_delete. Bleed or adequately covered by extracted terms.
+- 2231 · H8580 · tin.she.met · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 1489 · H8585A · te.a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 1498 · H8585B · te.a.lah · Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx §3.4.
+- 2062 · H8586 · ta.a.lu.lim · Confirmed candidate_delete. Bleed or adequately covered.
+- 2310 · H8598 · tap.pu.ach · Confirmed candidate_delete. Bleed vocabulary. See individual notes.
+- 2881 · H8635 · tar.but · tarbut - increase/brood. Num 32:14. Increase in sin. No authority content. Bleed.
+- 2875 · H8636 · tar.bit · tarbit - interest on money/usury. Lev 25:36; Eze 18:8. Financial interest. No authority content. Bleed.
+- 2852 · H8638 · tir.gem · tirgem - to translate. Ezr 4:7. Document translation. No authority content. Bleed.
+- 2853 · H8645 · tir.zah · tirzah - cypress tree. Isa 44:14. Tree species. No authority content. Bleed.
+- 2848 · H8650 · to.ren · toren - mast of ship. Isa 30:17; 33:23; Eze 27:5. Ship mast. No authority content. Bleed.
+- 914 · H8655 · te.ra.phim · teraphim - household gods/idols. Gen 31:19; Judg 17:5; 1Sa 19:13. Cult objects. No authority content as primary sense. Bleed.
+- 2845 · H8658 · tar.shish · tarshish - gemstone (beryl/jasper). Exo 28:20; Eze 1:16. Gemstone. No authority content. Bleed.
+- 2842 · H8671 · te.shi.i · teshii - ninth (ordinal). Already noted.
+- 2840 · H8672 · te.sha · tesha - nine. Already noted.
+- 2841 · H8673 · tish.im · tishim - ninety. Already noted.
+
+## Held back — active evidence, require researcher review (NOT flagged)
+
+- 1936 · H2470A · cha.lah · be weak: weak — active_vc=10 active_verses=0
+- 1937 · H2470B · cha.lah · to beg — active_vc=15 active_verses=0
+- 1938 · H2470H · cha.lah · be weak: ill — active_vc=38 active_verses=0
+- 1939 · H4245B · ma.cha.lah · sickness — active_vc=4 active_verses=0
+- 1940 · H4245A · ma.cha.leh · sickness — active_vc=2 active_verses=0
+- 1942 · H4251 · ma.cha.luy · suffering — active_vc=1 active_verses=0
+- 2325 · H2603B · cha.nan · be loathsome — active_vc=72 active_verses=72
+- 2689 · H2269 · cha.var · fellow — active_vc=6 active_verses=0

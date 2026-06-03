@@ -1,0 +1,10 @@
+{
+  "cluster": "M08", "date": "2026-06-02", "approved": true,
+  "method": "D1 disposition: the 4 new terms are not pipeline candidates — set aside + soft-delete per the established no-verse/not-relevant precedent (cf. G9704 charmone / G9706 charopoios 'STEP returned no verses; excluded from MTI'). Clears M08 D1 -> 0.",
+  "exclude_terms": [
+    {"id": 589,  "exclusion_reason": "STEP returned no verses; excluded from MTI. hupselokardios (G9610 'a proud heart') — lexical compound with no linked verses/occurrences; proud-heart concept already carried by M08's main pride vocabulary. Precedent: G9704/G9706."},
+    {"id": 592,  "exclusion_reason": "STEP returned no verses; excluded from MTI. thrasukardios (G7684 'bold-hearted') — lexical compound, occ=2 but no linked verses, no meaning; concept covered by M08 main vocabulary. Precedent: G9704/G9706."},
+    {"id": 4249, "exclusion_reason": "STEP returned no verses; excluded from MTI. megalofron (G8272 'high-minded') — lexical compound, occ=1, no linked verses, no meaning; concept covered by M08 main vocabulary. Precedent: G9704/G9706."},
+    {"id": 6031, "exclusion_reason": "Not characteristic-relevant to M08 (Pride). rom (H7315 'height') — sole verse Hab 3:10 ('the deep lifted its hands on high') is literal elevation, not pride; mis-assigned by root match. Set aside + soft-deleted."}
+  ]
+}

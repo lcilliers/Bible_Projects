@@ -1,7 +1,7 @@
 # File Organisation Rules — Framework B
 
 > Governs where Claude Code and the researcher place files.
-> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2).
+> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`).
 > Read by Claude Code at session start via CLAUDE.md reference.
 
 ---
@@ -186,6 +186,21 @@ Date-stamping and version numbering serve as the version control mechanism for n
 - **New-day revision:** New date, version resets to `v1`
 - **Archiving:** Only the **latest version** of a file remains in its active folder. All prior versions (whether by date or version number) move to the `archive/` subfolder within that directory. Git history preserves the full lineage.
 - **No duplicates:** Two files that differ only by date or version number are the same logical document. Treat them identically for archiving purposes.
+
+> **Applies to *snapshot deliverables*** — reports, extracts, instruction docs, and other artefacts that are produced, referenced, or pinned at a point in time. For continuously-edited *living documents*, use §2.3a instead.
+
+### 2.3a Version Control for Living Documents (metadata + git)
+
+*Added 2026-05-31 (researcher direction).* Continuously-edited working documents — programme registers, design/methodology plans, working notes — are **not** versioned by filename. Filename-versioning them is wasteful (it churns archive copies and breaks every cross-reference on each bump).
+
+Instead:
+
+- **One stable filename, no `-vN` and no date in the name** (e.g. `wa-programme-open-items.md`). Cross-references therefore never break on a revision.
+- **Version lives in the file's metadata header** — a `Doc version:` integer + `Last updated:` date — so a reader can confirm they have the current revision.
+- **Git is the version history and rollback mechanism.** `git log --follow <file>` for lineage; `git show <rev>:<file>` to read or restore a prior state. No `archive/` copies are made.
+- **Increment `Doc version:` + `Last updated:`** on each substantive revision (per review-handback, not per keystroke).
+
+A document is "living" if it is expected to keep changing in place; it is a "snapshot" if its value is being a fixed record of a moment (then §2.3 filename-versioning applies).
 
 ### 2.4 Sort-Friendly Design
 

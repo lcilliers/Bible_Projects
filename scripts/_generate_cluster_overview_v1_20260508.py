@@ -25,24 +25,30 @@ DB_PATH = os.path.join("database", "bible_research.db")
 OUT_DIR = os.path.join("Workflow", "Clusters")
 CLUSTER_FOLDERS = Path("Sessions") / "Session_Clusters"
 SESSION_C_INPUT_COUNT_EXPECTED = 10  # 7 chapters + 3 appendices, per the Session C overview spec
+SC_CHAPTER_CODES = (
+    "sc_v2_ch1", "sc_v2_ch2", "sc_v2_ch3", "sc_v2_ch4",
+    "sc_v2_ch5", "sc_v2_ch6", "sc_v2_ch7",
+)
 
 
-def session_c_status(cluster_code: str, cluster_status: str) -> tuple[str, str]:
+def session_c_status(
+    cluster_code: str,
+    cluster_status: str,
+    chapter_codes_in_db: set[str],
+) -> tuple[str, str]:
     """Return (inputs_marker, published_marker) for a cluster.
 
-    Inputs marker:
+    Inputs marker (filesystem-based):
       ✓  — inputs/ directory exists with the expected 10 per-chapter input files
       ◐  — inputs/ exists but is incomplete (< 10 input files)
       ·  — no inputs/ directory (eligible but not yet generated)
       —  — cluster not yet 'Analysis Completed' (not eligible)
 
-    Published marker (any one signal is sufficient — handles M15's PDF
-    convention AND M03's combined-DOCX convention):
-      ✓  — publication PDF at cluster root, OR combined-draft DOCX/PDF,
-           OR at least 5 of 7 chapter draft files (ch1..ch7) anywhere
-           in the cluster folder (`published/`, `files published/`,
-           or directly under the cluster folder).
-      ·  — eligible (inputs present) but no publication artefact yet
+    Published marker (DB-based: counts active rows in prose_section keyed to
+    the seven chapter section-type codes sc_v2_ch1..ch7):
+      ✓  — all 7 chapter codes have at least one active row in prose_section
+      ◐ N/7 — partial (1..6 chapter codes present)
+      ·  — eligible (inputs present, status completed) but no chapter prose in DB
       —  — not yet eligible (no inputs / cluster not completed)
     """
     folder = CLUSTER_FOLDERS / cluster_code
@@ -64,43 +70,14 @@ def session_c_status(cluster_code: str, cluster_status: str) -> tuple[str, str]:
     else:
         inputs = "·" if eligible else "—"
 
-    # Publication detection — multiple signals (any one is sufficient)
-    pub_signals: list[str] = []
-
-    # Signal 1: M15-style top-level publication PDF
-    if list(folder.glob(f"wa-cluster-{cluster_code}-publication-v*.pdf")):
-        pub_signals.append("publication.pdf")
-
-    # Signal 2: Combined-draft DOCX/PDF (M03's convention) — case-insensitive,
-    # may be at cluster root or in a published/ subfolder
-    for pattern_dir in (folder, folder / "published", folder / "files published"):
-        if not pattern_dir.exists():
-            continue
-        for ext in ("docx", "pdf"):
-            # Match e.g. WA-cluster-M03-Grief-combined-draft-v1-2026-05-17.docx
-            for p in pattern_dir.glob(f"*[Cc]luster-{cluster_code}-*combined-draft*.{ext}"):
-                pub_signals.append(p.name)
-                break
-
-    # Signal 3: presence of chapter drafts (ch1..ch7) somewhere in the cluster folder
-    chapter_drafts_found: set[int] = set()
-    candidate_dirs = [folder]
-    for sub in ("published", "files published"):
-        if (folder / sub).exists():
-            candidate_dirs.append(folder / sub)
-    for d in candidate_dirs:
-        for n in range(1, 8):
-            # Match e.g. WA-M15-ch3-draft-v1-20260512.md OR wa-cluster-M03-ch3-draft-v1-2026-05-17.md
-            found = list(d.glob(f"*ch{n}-draft-*.md"))
-            if found:
-                chapter_drafts_found.add(n)
-    if len(chapter_drafts_found) >= 5:
-        pub_signals.append(f"chapters={sorted(chapter_drafts_found)}")
-
-    if pub_signals:
+    # Publication detection — based on prose_section rows in the DB.
+    n_present = len(chapter_codes_in_db & set(SC_CHAPTER_CODES))
+    if n_present == len(SC_CHAPTER_CODES):
         published = "✓"
+    elif n_present > 0:
+        published = f"◐ {n_present}/{len(SC_CHAPTER_CODES)}"
     else:
-        # If inputs are present (even partial), publication is "pending"
+        # No chapter prose in DB. Pending if inputs are present, else not eligible.
         if inputs.startswith("✓") or inputs.startswith("◐"):
             published = "·"
         else:
@@ -185,6 +162,23 @@ def main():
         " GROUP BY cluster_code, finding_status"
     ):
         finding_counts.setdefault(r["cluster_code"], {})[r["finding_status"]] = r["n"]
+
+    # Per-cluster chapter prose presence (DB-based for SC published column).
+    # Build a dict: cluster_code -> set of sc_v2_ch* codes that have at least
+    # one active (non-deleted) row in prose_section.
+    chapter_codes_by_cluster: dict[str, set[str]] = {}
+    for r in cur.execute(
+        """
+        SELECT DISTINCT ps.cluster_code, pst.code
+        FROM prose_section ps
+        JOIN prose_section_type pst ON pst.id = ps.section_type_id
+        WHERE ps.cluster_code IS NOT NULL
+          AND COALESCE(ps.delete_flagged, 0) = 0
+          AND pst.code IN ('sc_v2_ch1', 'sc_v2_ch2', 'sc_v2_ch3', 'sc_v2_ch4',
+                           'sc_v2_ch5', 'sc_v2_ch6', 'sc_v2_ch7')
+        """
+    ):
+        chapter_codes_by_cluster.setdefault(r["cluster_code"], set()).add(r["code"])
 
     # Post-closure-activity detection: clusters whose mti_terms have
     # last_changed > cluster.last_updated_date — terms moved in/out after closure
@@ -313,7 +307,9 @@ def main():
             f_cell = f"{f_total} ({f_str})"
         else:
             f_cell = "—"
-        sc_in, sc_pub = session_c_status(code, c["status"])
+        sc_in, sc_pub = session_c_status(
+            code, c["status"], chapter_codes_by_cluster.get(code, set())
+        )
         if sc_in.startswith("✓"):
             sc_inputs_total += 1
         if sc_pub == "✓":
@@ -381,10 +377,10 @@ def main():
         f"(✓ = all {SESSION_C_INPUT_COUNT_EXPECTED} present · ◐ = partial · · = eligible but not generated · — = not yet eligible)"
     )
     lines.append(
-        "- **SC published:** any of (a) publication PDF at cluster root, "
-        "(b) `*combined-draft*.{docx,pdf}` (in cluster root or `published/`), "
-        "or (c) ≥5 of 7 chapter draft files (`*ch1-draft*` … `*ch7-draft*.md`). "
-        "(✓ = present · · = eligible but not published · — = not yet eligible)"
+        "- **SC published:** active rows in `prose_section` keyed to the seven "
+        "chapter section-type codes `sc_v2_ch1` … `sc_v2_ch7`. "
+        "(✓ = all 7 chapter codes present · ◐ N/7 = partial · "
+        "· = eligible but no chapter prose in DB · — = not yet eligible)"
     )
     lines.append(
         "- **Post-closure activity callout (⚠):** detects clusters whose `mti_terms.last_changed > cluster.last_updated_date` "

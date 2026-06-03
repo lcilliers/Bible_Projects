@@ -14,7 +14,7 @@ Usage:
 
 Outputs to: Sessions/Session_Clusters/{CODE}/inputs/wa-cluster-{CODE}-ch{N}-input-v1-{date}.md
 """
-import sqlite3, sys, os, argparse
+import sqlite3, sys, os, re, argparse
 from collections import defaultdict
 from datetime import datetime
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -90,13 +90,22 @@ def fetch_sg_vcgs_with_anchors(conn, sg_id, cluster_code):
 
 
 def fetch_findings(conn, cluster_code):
+    # v3_0 model: per-characteristic findings keyed by characteristic_id, mapped
+    # to cluster_subgroup_id via characteristic_subgroup link table.
+    # Legacy model: keyed by cluster_subgroup_id directly.
+    # COALESCE both so per-char and per-sg findings land in the same sg_id-keyed
+    # buckets the rest of the generator expects.
     rows = conn.execute("""
-        SELECT cf.id AS cf_id, cf.cluster_subgroup_id AS sg_id,
+        SELECT cf.id AS cf_id,
+               COALESCE(cf.cluster_subgroup_id, cs.cluster_subgroup_id) AS sg_id,
                cf.finding_status, cf.finding_text, cf.notes,
                q.question_code, q.tier, q.section,
                q.component_code, q.component_title, q.question_text
           FROM cluster_finding cf
           JOIN wa_obs_question_catalogue q ON q.obs_id = cf.obs_id
+          LEFT JOIN characteristic_subgroup cs
+            ON cs.characteristic_id = cf.characteristic_id
+           AND COALESCE(cs.delete_flagged, 0) = 0
          WHERE cf.cluster_code = ?
            AND COALESCE(cf.delete_flagged,0)=0
          ORDER BY q.question_code, cf.id
@@ -228,7 +237,10 @@ def chapter_preamble(cluster, chapter_num, chapter_title, instruction_doc, subgr
     for sg in subgroups:
         if sg["subgroup_code"] == "BOUNDARY":
             continue
-        desc1 = (sg.get("core_description") or "(description pending)").split(".")[0]
+        desc_full = sg.get("core_description") or "(description pending)"
+        # Split at sentence boundary (period+whitespace) — not at every period.
+        # Guards against tokens like "ka.phar" being mistaken for sentence ends.
+        desc1 = re.split(r"\.\s", desc_full, maxsplit=1)[0]
         out.append(f"- **{sg['label']}** — {desc1}.\n")
     out.append("\n---\n\n")
     return "".join(out)

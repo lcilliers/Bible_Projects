@@ -1,0 +1,31 @@
+{
+  "cluster": "M10b",
+  "date": "2026-06-01",
+  "method": "v3_0 §10.1 inherited-finding reconciliation + v2_9 §18 disposition vocab; each item evaluated on content, not marker-flipped. A7 applied; A2 review-only; B7 surfaced as analytical residual (no DB change here).",
+  "dispositions": [
+    {
+      "table": "wa_session_b_findings",
+      "id": 101,
+      "type": "DIMENSION_REVIEW (DIM-57-001, registry 57 'evil')",
+      "action": "set_aside",
+      "evaluation": "DIM-57-001 is a Phase-C dimension note about the OLD registry model: it observes that registry 57 (evil) is the programme's largest (46 groups) and 'functions partly as a container for inner-being framing particles (kol H3605, mi H4310, na H4994, zamam H2161)', and asks Session B to assess whether that breadth is analytically productive. Its own cluster_link is M15,T2 — it surfaces under M10b only because a reg-57 term sits in an M10b sub-group (term to sub-group is non-exclusive). The concern it raises — registry-57 breadth and framing-particle noise — is exactly what the term-anchor re-clustering resolved: registry-57-as-a-unit is no longer an analytical object; its terms are distributed to clusters by characteristic and the framing particles fall to set-aside/T2. The note is therefore superseded and is not a standing analytical finding for M10b (or for M15/T2).",
+      "reason": "Set aside (superseded): registry-scope DIMENSION_REVIEW about the pre-re-clustering registry model; made moot by the term-anchor re-clustering. Same class as M10c finding 55. Valid ground: superseded structural/methodological note, not a forbidden spiritual-framing reason. Set aside globally (status field) — correct, since it is superseded for every cluster it was linked to, not M10b-specific."
+    },
+    {
+      "table": "cluster_finding (A2 advisory-review)",
+      "id": "19474, 19485, 19506, 19626",
+      "type": "nonsense/gap heuristic on cluster_synthesis rows",
+      "action": "review — no action (false positives)",
+      "evaluation": "All four are legitimate cluster_synthesis essays that analytically discuss the cluster's silences and gaps — the synthesis layer's actual job (e.g. 'the cluster is collectively silent on explicit spirit-level location… none of the six characteristics uses ruach vocabulary', 'the five frameworks collectively surface one shared gap: the developmental origins of the six inner-evil forms'). The A2 text-match heuristic over-triggered on silent / gap / has-not-addressed. None is a broken or content-empty row.",
+      "reason": "False positives: substantive cross-characteristic synthesis content, not nonsense. No fix required. (Same auditor refinement noted under M10c: A2 should exclude finding_status='cluster_synthesis' or tighten the gap-pattern.)"
+    },
+    {
+      "table": "verse_context (B7 anchor coverage — analytical residual)",
+      "id": "Hos 10:13 (H7562 resha), 2Ch 24:7 (H4849 mirshaath)",
+      "type": "anchor verses not cited in any M10b finding",
+      "action": "surface — analytical residual (no DB change here; routes to Phase-D analytical handler)",
+      "evaluation": "Both are anchors of VCG M10b-A-VCG-11 / sub-group 156 (M10b-A, 'the wicked person — settled inner orientation of wickedness'), characteristic 47 (seq 1, 'Wickedness as settled person-identity'), and both are genuinely, strongly relevant (is_relevant=1): Hos 10:13 'wickedness is the inward soil that produces injustice and lies… self-trust and reliance on strength rather than God cultivated an inner field of moral corruption'; 2Ch 24:7 (Athaliah, 'that wicked woman') 'a woman whose inner character is defined as wicked had channeled that disposition into desecrating sacred space… wickedness expressed as religious violation'. Neither is cited in any of the ~190 char-47 findings (or anywhere cluster-wide); the citation extractor has already run, so this is not a citation-extract gap. So the analysis designated two valid anchors but no finding actually uses them — a genuine Phase-D coverage gap, not a mechanical-citation matter.",
+      "reason": "Do NOT fabricate a citation (the extractor re-derives finding_citation from finding text; a citation not backed by text would be deleted on the next run). Correct resolution is ANALYTICAL and needs the researcher's call: (a) extend/author the relevant char-47 'settled person-identity' finding to use these two exemplars (preferred — both genuinely evidence the characteristic), or (b) confirm de-anchor (is_anchor=0, keep is_relevant=1) if the VCG's findings legitimately rest on other exemplars. M10b stays OPEN on this single gate item until resolved."
+    }
+  ]
+}

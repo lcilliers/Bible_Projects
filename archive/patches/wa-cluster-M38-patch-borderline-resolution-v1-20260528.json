@@ -1,0 +1,33 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M38-patch-borderline-resolution-v1-20260528",
+    "cluster_code": "M38",
+    "session_ref": "M38 Phase A borderline resolution — Exo 30:10 (ka.phar) set aside as altar-atonement (consistent with 15 other Lev/Eze altar-atonement set-asides). 2Cor 9:15 confirmed as IB-relevant per researcher reasoning (corroborated by Rom 5:15,17; Joh 4:10; Heb 6:4 dōrea = salvation-gift).",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v3_0-20260527",
+    "date": "20260528",
+    "terms_covered": [3173],
+    "input_versions": {"3173": 3},
+    "op_count": 1,
+    "source": "Researcher direction 2026-05-28 + consistency with prior set-aside pattern"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93208,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to the altar's horns (annual atonement of the altar as physical object) — consistent with 15 other Lev/Eze altar-atonement set-asides; outside M38 salvation/atonement/gift scope. Borderline resolution 2026-05-28."
+      }
+    }
+  ]
+}

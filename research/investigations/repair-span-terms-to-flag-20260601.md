@@ -1,0 +1,119 @@
+# Push span terms to FLAG — APPLY
+
+- target Strong's terms (active span, not in a real cluster, not already FLAG/T2): **108**
+- mti_terms rows to update: **207**
+- of those Strong's, currently carrying a deleted row (rescued from delete): 66
+- total active span verses across target: 3680
+
+Action per row: cluster_code='FLAG', delete_flagged=0, exclusion_reason=NULL.
+
+| strongs | active span |
+|---|---:|
+| H5971H | 430 |
+| H5971I | 430 |
+| H0859B | 359 |
+| H6963A | 273 |
+| H6963B | 273 |
+| H6963K | 273 |
+| H6963L | 273 |
+| H0136 | 187 |
+| H2346G | 121 |
+| G3844 | 118 |
+| H6963H | 107 |
+| G4862 | 99 |
+| H3190-ya.tav | 96 |
+| H2603B | 72 |
+| H1168I | 64 |
+| H7706 | 48 |
+| G3958 | 41 |
+| H2470H | 38 |
+| H2796 | 34 |
+| G3804 | 16 |
+| H6087B | 15 |
+| H2470B | 15 |
+| G3077 | 14 |
+| G2165-eufrainō | 13 |
+| H1167K | 13 |
+| H6963I | 13 |
+| H6963J | 13 |
+| H1419J | 12 |
+| H5998 | 11 |
+| H2011H | 10 |
+| H2023G | 10 |
+| H2470A | 10 |
+| H4865 | 9 |
+| H2795 | 9 |
+| H4436G | 8 |
+| H5798G | 8 |
+| H0629 | 7 |
+| H4714J | 6 |
+| H6089B | 6 |
+| H2259 | 5 |
+| H6001B | 5 |
+| H5946 | 4 |
+| H4245B | 4 |
+| H2573 | 3 |
+| H2302-cha.dah | 3 |
+| H6946H | 3 |
+| H3157L | 3 |
+| H4026G | 3 |
+| H0425L | 3 |
+| H2258A | 3 |
+| H2258B | 3 |
+| H2758 | 3 |
+| H2793H | 3 |
+| G2553 | 3 |
+| G3806 | 3 |
+| H6090B | 3 |
+| G_parorgizō | 2 |
+| H5808 | 2 |
+| H5822 | 2 |
+| H2011G | 2 |
+| H2023H | 2 |
+| H1588G | 2 |
+| H2346H | 2 |
+| H6756A | 2 |
+| H2256C | 2 |
+| H2794 | 2 |
+| H2799 | 2 |
+| H4281 | 2 |
+| G3663 | 2 |
+| G4777 | 2 |
+| H6031A | 2 |
+| H4245A | 2 |
+| H1793 | 2 |
+| G_thumoō | 1 |
+| G2174-eupsucheō | 1 |
+| H7067G | 1 |
+| H1180 | 1 |
+| H5769H | 1 |
+| H3678H | 1 |
+| H0197H | 1 |
+| H0197I | 1 |
+| H1286 | 1 |
+| H8400 | 1 |
+| H4941K | 1 |
+| H6944I | 1 |
+| H7851H | 1 |
+| H0206G | 1 |
+| H6697G | 1 |
+| H5796 | 1 |
+| H4714I | 1 |
+| H7433 | 1 |
+| H1588H | 1 |
+| H2574H | 1 |
+| H2579 | 1 |
+| H4026H | 1 |
+| H4026I | 1 |
+| H0436G | 1 |
+| H4192 | 1 |
+| H2260 | 1 |
+| H2759 | 1 |
+| H2791A | 1 |
+| H2791B | 1 |
+| G2552 | 1 |
+| G3805 | 1 |
+| H6033 | 1 |
+| H6039 | 1 |
+| H6092 | 1 |
+| H4251 | 1 |

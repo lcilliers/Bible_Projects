@@ -1,0 +1,899 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M38-patch-utreview-api-v1-20260528",
+    "cluster_code": "M38",
+    "session_ref": "M38 Phase A UT review (rigorous re-classification across cluster + gap verses)",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v3_0-20260527",
+    "date": "20260528",
+    "terms_covered": [
+      6838,
+      6846,
+      3176,
+      3177,
+      991,
+      3166,
+      4986,
+      4988,
+      641,
+      4989,
+      1306,
+      3173,
+      5280
+    ],
+    "input_versions": {
+      "6838": 1,
+      "6846": 1,
+      "3176": 1,
+      "3177": 1,
+      "991": 1,
+      "3166": 1,
+      "4986": 1,
+      "4988": 1,
+      "641": 1,
+      "4989": 1,
+      "1306": 1,
+      "3173": 1,
+      "5280": 1
+    },
+    "op_count": 57,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "stats": {
+      "inserts_relevant": 12,
+      "inserts_set_aside": 23,
+      "updates_to_set_aside": 22,
+      "no_op_existing_relevant": 297,
+      "no_op_existing_set_aside": 0,
+      "borderlines": 2
+    }
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 46332
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term here denotes Paul's ministerial commission/calling rather than salvation received by a person's inner being \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 46333
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term here denotes grace-apportioned ministry gifts for church service, not salvation received by the inner being \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 46340
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "General divine beneficence: every good gift from God above, not specifically salvation, justification, atonement, or any salvific inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29070
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in physical-architectural/descriptive sense referring to the tabernacle furnishing; no inner-being salvific content is engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29072
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used as an interjection ('far be it from you') expressing strong negation, not as propitiation or divine mercy toward iniquity \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9022
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in the sense of physical life-preservation in a Sabbath halakic dispute, not salvific inner-being rescue \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9015
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Verse is external narrative reportage of physical healings with no inner-being state (faith, peace, fear, gratitude) evidenced \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151300,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151302,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151303,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9023
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in the sense of physical life-preservation in a Sabbath halakic dispute, not salvific inner-being rescue \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151296,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Verse is third-party narrative reportage of physical healing/deliverance with no inner-being content evidenced \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151277,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used in the mundane sense of physical recovery from sleep/illness with no inner-being salvation content evidenced \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151266,
+        "mti_term_id": 4986,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used in purely physical-medical healing sense (lame man healed) with no salvation or inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9021
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in physical-medical healing sense (crippled man healed); faith noted but verse describes physical cure only \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9058
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only titular use in epistolary greeting; no inner-being salvific state is named or engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9059
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only appellation contextualizing ethical instruction; no inner-being salvific state named or engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9061
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only titular use within apostolic commission framing; no inner-being salvific state named or developed \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9062
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only use in epistolary salutation; no inner-being salvific state named or engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 151398,
+        "mti_term_id": 4988,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Title-only appellation used as ethical motivation; no inner-being salvific state named or developed \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9067
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only use as authority identifier for recalled commandment; no inner-being salvific state named or engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 9052
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Title-only doxological use; pure glory-ascription without any inner-being salvific state named or engaged \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 218103,
+        "mti_term_id": 641,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Soteria here means physical survival/bodily safety in a shipwreck context, not spiritual salvation \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 55501
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used here in the sense of personal prosperity/dignity, not salvation or rescue with inner-being salvific content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29589
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in its literal 'appease/pacify' sense for a human interpersonal gift transaction, not atonement covering sin \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93206,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied exclusively to purifying/consecrating the altar as a physical object, not to persons \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93207,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to the altar as an object to consecrate it, not to persons' sin or inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29604
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Verse describes procedural ritual rule about where atonement-blood is brought; no person's inner-being state of being atoned/forgiven is named \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29605
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Verse is a procedural rule allocating the guilt offering to the officiating priest; no person's inner-being atonement state is named \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93266,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to consecrating/purifying the altar as a physical object, not to persons \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93235,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to purifying/atoning for a house as a physical structure, not for a person's inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93242,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to purifying the altar as a physical cultic object, not to persons \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93243,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.phar applied to the Holy Place, tent of meeting, and altar as physical objects, not to persons' inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93245,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93279,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29657
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used of cleansing the land of blood-pollution in an eschatological vengeance context; no inner-being state of the people named \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29659
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used in the sense of placating a human ruler's wrath through wise conduct \u2014 secular appeasement with no salvation/atonement/inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 29662
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "Term used of annulling a political/covenantal agreement with death \u2014 metaphor for false security, not atonement covering sin \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93213,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used of ritual purification of the altar as a physical object, not of persons' sin or inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93214,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used of consecrating/purifying the altar as a physical cultic structure, not covering persons' sin \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 93217,
+        "mti_term_id": 3173,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used of making atonement for the temple sanctuary as a physical space defiled by human error, not covering persons' inner-being guilt \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160680,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in purely procedural firstborn-redemption ritual law for animals and sons, no inner-being state evidenced \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160681,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160682,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in a legal slave-release transaction with no salvation or inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160683,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in procedural firstborn-redemption ritual instruction with no inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160695,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in legal adjudication of a slave woman's status, not in a salvation or inner-being sense \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160696,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in cultic valuation/buy-back procedure for dedicated unclean animals, no inner-being state \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160697,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in a cultic-legal prohibition against ransoming devoted persons, no salvation or inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160700,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in priestly procedural law on firstborn redemption with no inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160701,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in specification of redemption price for firstborn sons, purely financial/procedural \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160702,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.dah used in priestly sacrificial instruction for firstborn animals with no inner-being content \u2014 outside M38 salvation/atonement/gift scope."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160676,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160677,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160673,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160669,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160711,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160686,
+        "mti_term_id": 5280,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    }
+  ]
+}

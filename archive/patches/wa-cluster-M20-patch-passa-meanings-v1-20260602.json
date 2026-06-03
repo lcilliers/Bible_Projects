@@ -1,0 +1,995 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M20-patch-passa-meanings-v1-20260602",
+    "cluster_code": "M20",
+    "session_ref": "M20 Phase 2 Pass A meaning record via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260602",
+    "terms_covered": [
+      259,
+      350,
+      394,
+      574,
+      603,
+      808,
+      1288,
+      1398,
+      1403,
+      1700,
+      2078,
+      2591,
+      2707,
+      2709,
+      4198,
+      5034
+    ],
+    "input_versions": {
+      "259": 1,
+      "394": 1,
+      "2707": 1,
+      "2591": 1,
+      "574": 1,
+      "1700": 1,
+      "4198": 1,
+      "2709": 1,
+      "350": 1,
+      "1288": 1,
+      "5034": 1,
+      "603": 1,
+      "808": 1,
+      "2078": 1,
+      "1403": 1,
+      "1398": 1
+    },
+    "op_count": 63,
+    "source": "Claude API meaning record (Sonnet 4.6); 63 verses across 16 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14783,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A father's anxious concern arises when his son is overdue — the mind projects worst-case outcomes for someone loved, generating inner distress about another's welfare.",
+        "keywords": "[\"anxiety relational\", \"mind projecting\", \"concern parental\", \"distress anticipatory\", \"heart troubled\"]"
+      },
+      "_reference": "1Sa 9:5",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14786,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A father's anxiety has shifted from the lost donkeys to his missing son — inner worry transfers its object to a person, expressing itself in helpless questioning.",
+        "keywords": "[\"anxiety transferred\", \"worry parental\", \"mind helpless\", \"concern searching\", \"distress voiced\"]"
+      },
+      "_reference": "1Sa 10:2",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20839,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Despair here is strategic rather than emotional — the plan counts on an enemy giving up pursuit, using his expected loss of hope as a tactical advantage.",
+        "keywords": "[\"despair calculated\", \"will abandoning\", \"hope exhausted\", \"pursuit ceasing\", \"resolve collapsing\"]"
+      },
+      "_reference": "1Sa 27:1",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0004",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 31747,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Disquieting thoughts arise from night visions during deep sleep — the inner person is disturbed by impressions received when conscious defenses are down.",
+        "keywords": "[\"thought disquieting\", \"mind troubled\", \"sleep vulnerability\", \"inner disturbance\", \"vision unsettling\"]"
+      },
+      "_reference": "Job 4:13",
+      "_strongs": "H5587B"
+    },
+    {
+      "op_id": "OP-0005",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20840,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The speech of a despairing man is dismissed as mere wind — despair here empties words of weight, as the sufferer's inner collapse renders his expression valueless to others.",
+        "keywords": "[\"despair voicing\", \"speech emptied\", \"inner collapse\", \"expression devalued\", \"suffering dismissed\"]"
+      },
+      "_reference": "Job 6:26",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0006",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 31746,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Inner disquiet drives an urgent, hasty reply — restless thoughts within the person compel a response they cannot suppress.",
+        "keywords": "[\"thought restless\", \"inner haste\", \"mind driven\", \"disquiet compelling\", \"urgency inner\"]"
+      },
+      "_reference": "Job 20:2",
+      "_strongs": "H5587B"
+    },
+    {
+      "op_id": "OP-0007",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 32701,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term here describes God stilling the sea — this is cosmic power over external chaos, not inner-being content for this cluster characteristic.",
+        "keywords": "[\"power divine\", \"chaos stilled\", \"external disruption\", \"control sovereign\"]"
+      },
+      "_reference": "Job 26:12",
+      "_strongs": "H7280A"
+    },
+    {
+      "op_id": "OP-0008",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14785,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The verse focuses on confession and sorrow for sin rather than directly evidencing anxiety — the inner state here is one of penitent grief, not anxious dread.",
+        "keywords": "[\"sorrow moral\", \"conscience active\", \"guilt acknowledged\", \"penitence inner\", \"heart grieving\"]"
+      },
+      "_reference": "Psa 38:18",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0009",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47867,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The brokenhearted are the victims of relentless pursuit — their disheartened state results from external cruelty that crushed the inner person to the point of death.",
+        "keywords": "[\"heart broken\", \"spirit crushed\", \"vulnerability exploited\", \"inner collapse\", \"disheartened victim\"]"
+      },
+      "_reference": "Psa 109:16",
+      "_strongs": "H3512A"
+    },
+    {
+      "op_id": "OP-0010",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 17222,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The brokenhearted person is hunted to destruction — their disheartened inner state renders them unable to resist, their spirit already defeated by cruelty.",
+        "keywords": "[\"heart broken\", \"spirit defeated\", \"disheartened state\", \"inner weakness\", \"vulnerability fatal\"]"
+      },
+      "_reference": "Psa 109:16",
+      "_strongs": "H3512B"
+    },
+    {
+      "op_id": "OP-0011",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 31748,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The psalmist hates the double-minded — those whose inner allegiance is split between God's law and something else — contrasting them with his own wholehearted love of the law.",
+        "keywords": "[\"double minded\", \"will divided\", \"allegiance split\", \"heart wavering\", \"loyalty incomplete\"]"
+      },
+      "_reference": "Psa 119:113",
+      "_strongs": "H5588"
+    },
+    {
+      "op_id": "OP-0012",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20838,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The heart is deliberately surrendered to despair — the will turns the self over to hopelessness as a conscious response to the futility perceived in all labor.",
+        "keywords": "[\"despair chosen\", \"heart surrendered\", \"will yielding\", \"hope abandoned\", \"futility inner\"]"
+      },
+      "_reference": "Ecc 2:20",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0013",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 32700,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes God stirring the sea — this is external cosmic action, not inner-being content for this cluster characteristic.",
+        "keywords": "[\"power divine\", \"sea stirred\", \"external action\", \"sovereignty displayed\"]"
+      },
+      "_reference": "Isa 51:15",
+      "_strongs": "H7280A"
+    },
+    {
+      "op_id": "OP-0014",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20841,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Despair was available but refused — despite exhaustion, the person did not say 'it is hopeless,' finding renewed strength instead; the will resisted surrender to hopelessness.",
+        "keywords": "[\"despair refused\", \"will persisting\", \"hope renewed\", \"exhaustion resisted\", \"heart resolute\"]"
+      },
+      "_reference": "Isa 57:10",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0015",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14789,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety here is dread and fear of another that led to lying and forgetting God — the inner person's fearful orientation toward others displaced reverence and memory of God.",
+        "keywords": "[\"dread displacing\", \"fear distorting\", \"memory absent\", \"reverence lost\", \"anxiety misdirected\"]"
+      },
+      "_reference": "Isa 57:11",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0016",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20842,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Despair is invoked as a self-justifying declaration — 'it is hopeless' becomes a rationalization for stubborn pursuit of false loves, the will using despair to close off repentance.",
+        "keywords": "[\"despair self justifying\", \"will defiant\", \"hope rejected\", \"repentance refused\", \"desire rationalizing\"]"
+      },
+      "_reference": "Jer 2:25",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0017",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14784,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The God-rooted person does not become anxious even in drought — deep spiritual grounding neutralizes anxiety, preventing fearful inner distress when circumstances threaten.",
+        "keywords": "[\"anxiety absent\", \"rootedness preventing\", \"trust stabilizing\", \"fear overcome\", \"heart secure\"]"
+      },
+      "_reference": "Jer 17:8",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0018",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 20843,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Despair ('it is in vain') is used to dismiss any call to change — the declaration of hopelessness cements the will's stubborn commitment to its own evil inclinations.",
+        "keywords": "[\"despair dismissive\", \"will stubborn\", \"heart hardening\", \"repentance rejected\", \"hope denied\"]"
+      },
+      "_reference": "Jer 18:12",
+      "_strongs": "H2976"
+    },
+    {
+      "op_id": "OP-0019",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 32702,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes God stirring the sea — this is external cosmic action by divine sovereignty, not inner-being content for this cluster characteristic.",
+        "keywords": "[\"power divine\", \"sea stirred\", \"sovereignty cosmic\", \"external action\"]"
+      },
+      "_reference": "Jer 31:35",
+      "_strongs": "H7280A"
+    },
+    {
+      "op_id": "OP-0020",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14787,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The king's anxiety is a specific fear of human enemies — inner dread of personal cruelty at the hands of known opponents paralyzes his will and shapes his decision.",
+        "keywords": "[\"anxiety fear\", \"dread specific\", \"will paralyzed\", \"threat perceived\", \"inner terror\"]"
+      },
+      "_reference": "Jer 38:19",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0021",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 14788,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The sword they already fear will pursue them — their anxiety about the threat does not ward it off but will be fulfilled, showing that dread does not protect.",
+        "keywords": "[\"anxiety futile\", \"fear pursued\", \"dread realized\", \"heart troubled\", \"threat following\"]"
+      },
+      "_reference": "Jer 42:16",
+      "_strongs": "H1672"
+    },
+    {
+      "op_id": "OP-0022",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47868,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "False prophets deliberately disheartened the righteous through lies — their inner spirit of moral courage was crushed by deceitful words, while the wicked were emboldened.",
+        "keywords": "[\"heart disheartened\", \"spirit crushed\", \"courage undermined\", \"deception wounding\", \"will weakened\"]"
+      },
+      "_reference": "Eze 13:22",
+      "_strongs": "H3512A"
+    },
+    {
+      "op_id": "OP-0023",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 17221,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The righteous person's heart was brought low by false prophetic words — their inner moral resolve was broken through deliberate spiritual manipulation.",
+        "keywords": "[\"heart broken\", \"resolve weakened\", \"spirit disheartened\", \"deception crushing\", \"moral courage lost\"]"
+      },
+      "_reference": "Eze 13:22",
+      "_strongs": "H3512B"
+    },
+    {
+      "op_id": "OP-0024",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47869,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Military setback produces fear and withdrawal — the inner person is daunted, and this disheartened state drives a reactive rage and treacherous realignment.",
+        "keywords": "[\"fear disheartening\", \"will retreating\", \"heart daunted\", \"rage reactive\", \"courage failing\"]"
+      },
+      "_reference": "Dan 11:30",
+      "_strongs": "H3512A"
+    },
+    {
+      "op_id": "OP-0025",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 17223,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Being afraid and withdrawing signals an inner state of disheartened defeat that then redirects the will toward violent retaliation and betrayal.",
+        "keywords": "[\"heart disheartened\", \"fear driving\", \"will redirected\", \"courage absent\", \"defeat inner\"]"
+      },
+      "_reference": "Dan 11:30",
+      "_strongs": "H3512B"
+    },
+    {
+      "op_id": "OP-0026",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2679,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about basic physical needs is addressed as a posture of the inner life — the command not to be anxious targets a habitual orientation of worry about survival.",
+        "keywords": "[\"anxiety habitual\", \"worry material\", \"mind preoccupied\", \"soul unsettled\", \"trust absent\"]"
+      },
+      "_reference": "Mat 6:25",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0027",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2680,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety is exposed as powerless — the inner state of worry cannot change a single external outcome, highlighting its futility as a response to life's uncertainties.",
+        "keywords": "[\"anxiety powerless\", \"worry futile\", \"will ineffective\", \"mind straining\", \"control absent\"]"
+      },
+      "_reference": "Mat 6:27",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0028",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2681,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about clothing reflects a mind that over-manages the merely material — the question challenges this inner preoccupation by pointing to creation's untroubled provision.",
+        "keywords": "[\"anxiety material\", \"mind over managing\", \"worry clothing\", \"trust lacking\", \"preoccupation inner\"]"
+      },
+      "_reference": "Mat 6:28",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0029",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2682,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxious questioning about basic needs is a pattern of the inner life to be broken — the repetitive 'what shall we' shows worry cycling through the mind without resolution.",
+        "keywords": "[\"worry cycling\", \"mind questioning\", \"anxiety habitual\", \"trust absent\", \"need preoccupying\"]"
+      },
+      "_reference": "Mat 6:31",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0030",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2683,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Projecting anxiety into tomorrow compounds present trouble — the inner person is called to confine worry to the present day rather than borrowing future distress.",
+        "keywords": "[\"anxiety projecting\", \"worry future\", \"mind borrowing\", \"present sufficiency\", \"trust deficient\"]"
+      },
+      "_reference": "Mat 6:34",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0031",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2688,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about speech under persecution is specifically forbidden — the mind's fearful rehearsal of how to defend itself is to give way to trust in divine provision of words.",
+        "keywords": "[\"anxiety speech\", \"mind rehearsing\", \"fear persecution\", \"trust displacing\", \"worry relinquished\"]"
+      },
+      "_reference": "Mat 10:19",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0032",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2673,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Worldly cares function as inner thorns that choke the word — anxious concern about life's circumstances competes with and ultimately smothers spiritual receptivity.",
+        "keywords": "[\"care choking\", \"concern worldly\", \"word smothered\", \"heart divided\", \"attention consumed\"]"
+      },
+      "_reference": "Mat 13:22",
+      "_strongs": "G3308"
+    },
+    {
+      "op_id": "OP-0033",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 54786,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Doubt arises mid-action as the disciple's faith falters while walking on water — the inner wavering between trust and fear produces the physical sinking.",
+        "keywords": "[\"doubt arising\", \"faith wavering\", \"trust faltering\", \"will oscillating\", \"fear overwhelming\"]"
+      },
+      "_reference": "Mat 14:31",
+      "_strongs": "G1365"
+    },
+    {
+      "op_id": "OP-0034",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 54787,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Even at the resurrection appearance, some doubted — their inner faculty of belief remained split, unable to fully commit despite seeing, worship and doubt coexisting.",
+        "keywords": "[\"doubt persisting\", \"belief divided\", \"will uncommitted\", \"heart split\", \"faith incomplete\"]"
+      },
+      "_reference": "Mat 28:17",
+      "_strongs": "G1365"
+    },
+    {
+      "op_id": "OP-0035",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2674,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Worldly cares enter the heart alongside riches and desires and together choke the word — the inner person is overwhelmed by competing concerns that crowd out spiritual growth.",
+        "keywords": "[\"care competing\", \"heart crowded\", \"concern worldly\", \"word choked\", \"attention divided\"]"
+      },
+      "_reference": "Mar 4:19",
+      "_strongs": "G3308"
+    },
+    {
+      "op_id": "OP-0036",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2675,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Cares of life choke spiritual growth as the person journeys on — ongoing anxiety about earthly circumstances gradually strangles whatever word had taken root.",
+        "keywords": "[\"care strangling\", \"concern life\", \"growth stunted\", \"heart choked\", \"attention earthbound\"]"
+      },
+      "_reference": "Luk 8:14",
+      "_strongs": "G3308"
+    },
+    {
+      "op_id": "OP-0037",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 12075,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Martha's distraction with serving fragments her attention — she is pulled away from the one thing needful by a multiplicity of tasks, her inner focus scattered.",
+        "keywords": "[\"distraction scattering\", \"attention fragmented\", \"focus pulled\", \"mind divided\", \"anxiety serving\"]"
+      },
+      "_reference": "Luk 10:40",
+      "_strongs": "G4049"
+    },
+    {
+      "op_id": "OP-0038",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2687,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety and being troubled about many things is named as Martha's inner condition — the mind's scattering across multiple concerns is identified as her spiritual problem.",
+        "keywords": "[\"anxiety named\", \"mind scattered\", \"worry multiplied\", \"inner trouble\", \"focus absent\"]"
+      },
+      "_reference": "Luk 10:41",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0039",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2689,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about self-defense before authorities is forbidden — the mind's fearful preparation for persecution is to be displaced by trust in divine provision of speech.",
+        "keywords": "[\"anxiety defense\", \"fear authority\", \"mind rehearsing\", \"trust displacing\", \"worry relinquished\"]"
+      },
+      "_reference": "Luk 12:11",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0040",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2684,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about life's basic provisions is directly prohibited — the inner orientation of constant worry about physical sustenance is called out as incompatible with discipleship.",
+        "keywords": "[\"anxiety provision\", \"worry life\", \"mind preoccupied\", \"trust absent\", \"heart unsettled\"]"
+      },
+      "_reference": "Luk 12:22",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0041",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2685,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety is exposed as impotent — the inner straining of worry accomplishes nothing, not even the smallest extension of life, revealing its futility.",
+        "keywords": "[\"anxiety impotent\", \"worry futile\", \"will ineffective\", \"mind straining\", \"control absent\"]"
+      },
+      "_reference": "Luk 12:25",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0042",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2686,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Inability to control even small things makes anxiety about greater things irrational — the inner habit of worry is challenged by pointing to the limits of human agency.",
+        "keywords": "[\"anxiety irrational\", \"worry habit\", \"control limited\", \"mind over reaching\", \"trust deficient\"]"
+      },
+      "_reference": "Luk 12:26",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0043",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47628,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Losing heart is the failure that persistent prayer guards against — the inner person is prone to giving up when prayer seems unanswered, and the parable specifically targets this tendency.",
+        "keywords": "[\"heart failing\", \"will surrendering\", \"persistence absent\", \"prayer sustaining\", \"despair resisted\"]"
+      },
+      "_reference": "Luk 18:1",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0044",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2672,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Worldly cares weigh down the heart alongside dissipation and drunkenness — anxious concern about daily life burdens the inner person and dulls readiness for what is coming.",
+        "keywords": "[\"care weighing\", \"heart burdened\", \"concern dulling\", \"readiness lost\", \"soul weighed down\"]"
+      },
+      "_reference": "Luk 21:34",
+      "_strongs": "G3308"
+    },
+    {
+      "op_id": "OP-0045",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2690,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The unmarried person's anxiety is properly directed toward pleasing the Lord — their undivided concern is oriented to sacred rather than worldly things, making worry itself constructive.",
+        "keywords": "[\"anxiety oriented\", \"concern sacred\", \"mind undivided\", \"devotion focused\", \"worry redirected\"]"
+      },
+      "_reference": "1Cor 7:32",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0046",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2691,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The married man's anxiety is split toward worldly things and his wife — his inner concern is divided between human obligation and divine pleasing.",
+        "keywords": "[\"anxiety divided\", \"concern worldly\", \"mind split\", \"devotion competing\", \"loyalty fragmented\"]"
+      },
+      "_reference": "1Cor 7:33",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0047",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2692,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A married woman's interests are divided between pleasing God and pleasing her husband — inner concern fractures along lines of competing loyalty, contrasting with the undivided devotion of the unmarried.",
+        "keywords": "[\"concern divided\", \"loyalty competing\", \"mind fractured\", \"devotion split\", \"anxiety competing\"]"
+      },
+      "_reference": "1Cor 7:34",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0048",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2693,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Mutual care among body members is described as genuine concern for one another — here anxiety is transformed into positive, outward-directed attentiveness rather than self-focused worry.",
+        "keywords": "[\"care mutual\", \"concern outward\", \"anxiety redirected\", \"attention given\", \"solidarity inner\"]"
+      },
+      "_reference": "1Cor 12:25",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0049",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 11061,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Affliction so extreme that life itself seemed forfeit produced absolute despair — the inner person was crushed beyond all capacity to cope, all resource for survival apparently gone.",
+        "keywords": "[\"despair absolute\", \"soul crushed\", \"strength exhausted\", \"hope extinct\", \"burden overwhelming\"]"
+      },
+      "_reference": "2Cor 1:8",
+      "_strongs": "G1820"
+    },
+    {
+      "op_id": "OP-0050",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47629,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Ministry received through mercy becomes the ground for not losing heart — the inner person resists discouragement by anchoring identity in divine grace rather than personal strength.",
+        "keywords": "[\"heart sustained\", \"will persisting\", \"mercy anchoring\", \"discouragement refused\", \"despair resisted\"]"
+      },
+      "_reference": "2Cor 4:1",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0051",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 11062,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Perplexity and pressure press hard on the inner person, yet do not collapse into full despair — the soul is stretched to the edge but not abandoned to hopelessness.",
+        "keywords": "[\"despair resisted\", \"perplexity inner\", \"soul pressed\", \"hope surviving\", \"limit approached\"]"
+      },
+      "_reference": "2Cor 4:8",
+      "_strongs": "G1820"
+    },
+    {
+      "op_id": "OP-0052",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47630,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Though the body's decay could drain the will, the inner self is daily renewed, so losing heart is refused — renewal of spirit counters the pull toward collapse.",
+        "keywords": "[\"heart losing\", \"inner renewal\", \"will sustained\", \"spirit renewing\", \"decay countered\"]"
+      },
+      "_reference": "2Cor 4:16",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0053",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2677,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Daily pastoral responsibility generates a constant internal pressure of anxious concern — an ongoing burden of care carried in the soul for others' wellbeing.",
+        "keywords": "[\"anxiety daily\", \"burden carried\", \"concern relational\", \"soul weighted\", \"care persistent\"]"
+      },
+      "_reference": "2Cor 11:28",
+      "_strongs": "G3308"
+    },
+    {
+      "op_id": "OP-0054",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47631,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The will is in danger of flagging under sustained effort; losing heart is presented as a real inner risk that must be actively resisted by fixing hope on future harvest.",
+        "keywords": "[\"will flagging\", \"weariness moral\", \"heart giving up\", \"endurance required\", \"hope future\"]"
+      },
+      "_reference": "Gal 6:9",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0055",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47632,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Witnessing another's suffering on one's behalf creates the inner risk of losing heart; the exhortation reframes that suffering as glory to stabilize the soul against collapse.",
+        "keywords": "[\"heart losing\", \"suffering witness\", \"soul destabilized\", \"perspective reframing\", \"courage sustained\"]"
+      },
+      "_reference": "Eph 3:13",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0056",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2694,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Genuine inward concern for others' welfare is presented as a rare quality — an authentic orientation of care directed outward rather than toward self-interest.",
+        "keywords": "[\"concern genuine\", \"care directed\", \"soul oriented\", \"others welfare\", \"inward authenticity\"]"
+      },
+      "_reference": "Phili 2:20",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0057",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2678,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxiety about anything is forbidden as a stance of the inner person; prayer and thanksgiving are given as the redirecting action that displaces anxious worry with trust.",
+        "keywords": "[\"anxiety forbidden\", \"worry displaced\", \"prayer redirecting\", \"trust replacing\", \"inner stance\", \"will redirected\"]"
+      },
+      "_reference": "Phili 4:6",
+      "_strongs": "G3309"
+    },
+    {
+      "op_id": "OP-0058",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 8921,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Parental provocation can crush the child's spirit into discouragement — an externally induced inner deflation that collapses motivation and confidence.",
+        "keywords": "[\"discouragement induced\", \"spirit crushed\", \"motivation collapsed\", \"confidence broken\", \"external provocation\"]"
+      },
+      "_reference": "Col 3:21",
+      "_strongs": "G0120"
+    },
+    {
+      "op_id": "OP-0059",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 46884,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The fainthearted are identified as a distinct inner-need group whose smallness of soul requires encouragement — their diminished courage calls for targeted pastoral support.",
+        "keywords": "[\"fainthearted soul\", \"courage diminished\", \"spirit small\", \"encouragement needed\", \"inner fragility\"]"
+      },
+      "_reference": "1Th 5:14",
+      "_strongs": "G3642"
+    },
+    {
+      "op_id": "OP-0060",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47633,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The will to persist in doing good is liable to fatigue; growing weary is named as the inner drift to be resisted so that good action is not abandoned.",
+        "keywords": "[\"weariness moral\", \"will persisting\", \"fatigue inner\", \"good action sustained\", \"heart steadied\"]"
+      },
+      "_reference": "2Th 3:13",
+      "_strongs": "G1573"
+    },
+    {
+      "op_id": "OP-0061",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 32244,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Double-mindedness produces pervasive inner instability — a divided soul whose wavering between two allegiances makes consistent thought and action impossible.",
+        "keywords": "[\"soul divided\", \"instability pervasive\", \"allegiance split\", \"will wavering\", \"mind double\", \"inner incoherence\"]"
+      },
+      "_reference": "Jam 1:8",
+      "_strongs": "G1374"
+    },
+    {
+      "op_id": "OP-0062",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 32243,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Double-mindedness is located in the heart and paired with moral impurity; cleansing the heart means resolving the split between loyalty to God and loyalty to the world.",
+        "keywords": "[\"heart divided\", \"soul split\", \"loyalty conflicted\", \"purity lacking\", \"will undivided\", \"heart cleansing\"]"
+      },
+      "_reference": "Jam 4:8",
+      "_strongs": "G1374"
+    },
+    {
+      "op_id": "OP-0063",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 2676,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Anxieties are real burdens held within the self; the act of casting them on God is the prescribed inner movement that transfers the weight and rests in his care.",
+        "keywords": "[\"anxiety burden\", \"soul releasing\", \"trust transferring\", \"care divine\", \"weight cast\", \"inner surrender\"]"
+      },
+      "_reference": "1Pe 5:7",
+      "_strongs": "G3308"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M20-patch-passa-meanings-v2-20260602",
+    "cluster_code": "M20",
+    "session_ref": "M20 Phase 2 Pass A meaning record via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260602",
+    "terms_covered": [
+      574
+    ],
+    "input_versions": {
+      "574": 2
+    },
+    "op_count": 1,
+    "source": "Claude API meaning record (Sonnet 4.6); 1 verses across 1 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 47866,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The helpless are crushed and brought low under the oppressor's power, depicting a spirit broken and collapsed — the inner person sinks into utter disheartening through violent domination.",
+        "keywords": "[\"spirit crushed\", \"heart collapsing\", \"helplessness\", \"will broken\", \"disheartening\", \"domination suffered\"]"
+      },
+      "_reference": "Psa 10:10",
+      "_strongs": "H3512A"
+    }
+  ]
+}
