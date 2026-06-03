@@ -25,7 +25,7 @@ render_dispositions = _aud.render_dispositions
 
 DB = os.path.join("database", "bible_research.db")
 OUT_DIR = os.path.join("Workflow", "Programme", "Program_reports")
-OUT = os.path.join(OUT_DIR, "wa-programme-cluster-audit-20260603.md")
+OUT = os.path.join(OUT_DIR, "wa-programme-cluster-audit-v2-20260603.md")
 
 
 def main() -> int:
@@ -40,13 +40,14 @@ def main() -> int:
     L = [
         "# Programme Cluster Audit — all started clusters",
         "",
-        "**Generated:** 2026-06-03 (read-only re-run on the recovered 2026-05-28 DB). "
-        "Engine: `scripts/audit_cluster_v1_20260601.py`. "
+        "**Generated:** 2026-06-03 — **v2** (read-only re-run AFTER the FLAG rescue + cluster_link "
+        "redo). Engine: `scripts/audit_cluster_v1_20260601.py`. "
         "Spec: `Workflow/methodology/wa-cluster-audit-aspect-spec-v1-20260601.md`.",
         "",
-        "> DB = recovered **2026-05-28** snapshot; the June 1–2 remediation is NOT in this DB, "
-        "so gate failures here may reflect that gap rather than original analytical defects. "
-        "See `wa-db-recovery-assessment-20260603.md`.",
+        "> Supersedes v1 (`wa-programme-cluster-audit-v1-20260603.md`, pre-rescue). This run is on the "
+        "DB after: FLAG rescue (126→539), cluster_link schema+populate (D2 cleared), orphan set-aside "
+        "(30 findings + 72 flags). Remaining FAILs are the still-pending per-cluster A6/A7 remediation "
+        "and the B1a/B1b backfill. See `cluster-link-apply-log-20260603.md`.",
         "",
         "GATE failure ⇒ not validly Analysis Complete. STRUCT = structural completeness. "
         "INFO/REVIEW = advisory. INCR = re-submit/clear work.",

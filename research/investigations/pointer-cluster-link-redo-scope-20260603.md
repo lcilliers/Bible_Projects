@@ -3,7 +3,7 @@
 Scoping the "06-01 schema redo" (the audit's `cluster_link` / D2 gap). **Verified against the
 live May-28 DB and the actual 06-01 scripts — no writes performed.** Companion to
 [wa-db-recovery-assessment-20260603.md](../../outputs/markdown/wa-db-recovery-assessment-20260603.md)
-and the [cluster audit](../../Workflow/Programme/Program_reports/wa-programme-cluster-audit-20260603.md).
+and the [cluster audit](../../Workflow/Programme/Program_reports/wa-programme-cluster-audit-v1-20260603.md).
 
 ## Verified finding — the schema redo is NOT a standalone step
 
