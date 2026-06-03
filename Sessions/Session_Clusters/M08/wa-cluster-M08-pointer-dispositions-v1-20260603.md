@@ -1,3 +1,7 @@
+> ⛔ **REVERTED 2026-06-03.** Rolled back (DB restored to `pre_M06` snapshot) — flawed piecemeal
+> cross-cluster re-allocation approach, superseded by the **term-centric, cluster-as-a-whole** method
+> ([[feedback_term_is_the_unit_of_movement]]). DB no longer reflects anything below. Kept for the lesson.
+
 # M08 (Pride) — pointer disposition evaluation (COMMENT_EVALUATION) — FOR RESEARCHER REVIEW
 
 **Date:** 2026-06-03 · **Method:** evaluated on text, not broad `cluster_link`. Same pattern as M06.

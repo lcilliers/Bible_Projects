@@ -1,4 +1,11 @@
-# M46 (Abundance) — pointer disposition evaluation — APPLIED 2026-06-03
+> ⛔ **REVERTED 2026-06-03.** Rolled back (DB restored to `pre_M06` snapshot). The disposition split
+> peace *findings/pointers* off to M33 (Peace) while leaving the peace *terms* in M46 (Abundance) —
+> the incoherent fragmentation that prompted the term-centric correction ([[feedback_term_is_the_unit_of_movement]]).
+> **The ANALYSIS below stands and feeds the redo:** M46 = Abundance (wealth); peace does not belong; M33
+> (Peace) owns the peace terms; the legacy-synthesis pattern is programme-wide. The redo will move the
+> mis-placed peace *terms* (with verses/VCGs/findings) to M33 and reprocess — not shuffle loose pointers.
+
+# M46 (Abundance) — pointer disposition evaluation — ~~APPLIED~~ REVERTED 2026-06-03
 
 > **APPLIED 2026-06-03** (researcher-approved option (a) + confirmation that M46 = Abundance/wealth,
 > peace does not belong, and M33 (Peace) is the proper home — M33 owns 32 of the reg-117 peace terms).

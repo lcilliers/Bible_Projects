@@ -1,3 +1,8 @@
+> ⛔ **REVERTED 2026-06-03.** This disposition was rolled back (DB restored to `pre_M06` snapshot)
+> because it used the flawed *piecemeal cross-cluster pointer/finding re-allocation* approach instead
+> of the correct **term-centric, cluster-as-a-whole** method (see [[feedback_term_is_the_unit_of_movement]]).
+> The DB no longer reflects anything below. Kept for the analysis + the lesson. Re-do term-first.
+
 # M06 (Hate) — pointer disposition evaluation (COMMENT_EVALUATION) — FOR RESEARCHER REVIEW
 
 **Date:** 2026-06-03 · **Method:** each A6 flag / A7 finding evaluated on its **text**, not its
