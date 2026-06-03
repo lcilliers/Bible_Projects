@@ -2,8 +2,13 @@
 
 **Date:** 2026-06-03 · **Method:** each A6 flag / A7 finding evaluated on its **text**, not its
 broad mechanical `cluster_link` (which over-links via Strong's/translit). Precedent: M10c id=55,
-M10b id=101 (superseded registry-scope DIMENSION_REVIEW → set_aside). **Nothing applied — mark up
-the "Action" column, then I generate the apply-spec + run it.**
+M10b id=101 (superseded registry-scope DIMENSION_REVIEW → set_aside).
+
+> **APPLIED 2026-06-03** (researcher-approved; 119/120→M26, 158→M30 route-to-cluster). Spec:
+> `wa-cluster-M06-comment-eval-applyspec-v1-20260603.json`. Result: A6→0, A7→0; 6 findings folded
+> (3 set_aside + 3 routed), 3 flags re-homed (171→M04, 172/173→M23), 4 resolved, 1 M06 observation
+> created (id 277, sin.ah hatred). Backup `bible_research_pre_M06_commenteval_20260603.db`.
+> Remaining M06 gates (separate Phase-A/B work): B1a/B1b, A4, B5, B7.
 
 ## Headline
 Of 13 items surfacing under M06, **only 1 (flag 133, sin.ah) is genuinely M06 content.** The other

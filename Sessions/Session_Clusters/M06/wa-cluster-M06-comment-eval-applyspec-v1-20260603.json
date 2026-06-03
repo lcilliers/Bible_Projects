@@ -1,0 +1,36 @@
+{
+  "cluster": "M06",
+  "approved": true,
+  "method": "COMMENT_EVALUATION 2026-06-03 — each item evaluated on text, not broad cluster_link. Researcher-approved 2026-06-03 (119/120->M26, 158->M30 route-to-cluster).",
+  "new_observations": [
+    {
+      "cluster_code": "M06",
+      "characteristic_id": 84,
+      "observation_type": "anthropological-claim",
+      "source_phase": "comment-evaluation",
+      "title": "Hatred as a constitutive inner orientation (sin.ah)",
+      "description": "sin.ah (hatred) is listed alongside love and envy as a constitutive inner orientation of the person that ceases at death (group 902-003). The pointer makes an anthropological claim: hatred is a fundamental inner capacity defining relational existence. Adopted into M06 (Hatred, char 84) as a cluster observation from gating flag DIM-75-SD001 (id 133).",
+      "status": "confirmed",
+      "source_file": "wa-cluster-M06-pointer-dispositions-v1-20260603.md"
+    }
+  ],
+  "fold_findings": [
+    {"id": 70,  "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-190 contempt-vocab DIMENSION_REVIEW (old registry model); M06's contempt analysis is carried by its char-85 findings, not this note. Made moot by term-anchor re-clustering."},
+    {"id": 80,  "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-65 agathos/goodness DIMENSION_REVIEW; goodness content belongs to M39 via its own findings. Not an M06 finding."},
+    {"id": 118, "status": "set_aside",      "resolution_note": "Set aside (superseded): reg-98 mish.pat 'read both registries together' — a cross-registry methodological instruction made moot by term-anchor re-clustering."},
+    {"id": 119, "status": "routed_cluster", "cluster_link": "M26", "resolution_note": "Routed to M26 (Righteousness): dikaios/dikaiosune righteousness tension (divine act/attribute vs human inner quality) — substantive content for M26, not M06. Surfaced under M06 only via non-exclusive term-subgroup link."},
+    {"id": 120, "status": "routed_cluster", "cluster_link": "M26", "resolution_note": "Routed to M26 (Righteousness): tsedeq/tsadeq fourfold righteousness pattern — substantive M26 content, not M06."},
+    {"id": 158, "status": "routed_cluster", "cluster_link": "M30", "resolution_note": "Routed to M30 (Obedience): a.yil verse (1 Sam 15:22) — obedience and attentive listening greater than sacrifice. Obedience content, not M06."}
+  ],
+  "rehome_flags": [
+    {"id": 171, "cluster_link": "M04", "basis": "re-homed from M06 A6 (comment-evaluation): oikos/oikia household structural metaphor — M04 content, not hate"},
+    {"id": 172, "cluster_link": "M23", "basis": "re-homed from M06 A6 (comment-evaluation): AMTS strength root cognate with CHAZAQ courage family — M23 (Strength) content"},
+    {"id": 173, "cluster_link": "M23", "basis": "re-homed from M06 A6 (comment-evaluation): directional-register pattern in C20 strength vocabulary — M23 (Strength) content"}
+  ],
+  "resolve_flags": [
+    {"id": 59,  "resolved_note": "Resolved: PH2_CROSS_REGISTRY about palal/tepillah prayer carrying a judicial-intercession dimension — about the prayer registry's adequacy, not M06. Session D is moot (06-02 decision); the prayer/justice content is carried by the prayer cluster analysis."},
+    {"id": 149, "resolved_note": "Resolved: ulam (Hall of Justice/Throne) architectural-embodiment-of-justice question — not M06; Session-D-moot."},
+    {"id": 170, "resolved_note": "Resolved: superseded methodological note (STEP treats root suffix-variants as sub-glosses rather than linked related terms) — an extraction-pipeline observation, not analytical content."},
+    {"id": 133, "resolved_note": "Adopted into M06 as a cluster observation (Hatred, char 84) capturing the sin.ah anthropological claim; pointer resolved."}
+  ]
+}
