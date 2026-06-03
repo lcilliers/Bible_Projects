@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-01T12:32:29Z",
+  "generated_at": "2026-06-03T09:07:03Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2091,
-  "total_active": 470,
-  "total_archived": 1621,
+  "total_files": 2092,
+  "total_active": 469,
+  "total_archived": 1623,
   "files": [
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -21981,6 +21981,36 @@
       "modified": "2026-05-08T10:49:12Z"
     },
     {
+      "path": "archive/patches/wa-cluster-M20-patch-passa-meanings-v1-20260602.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-02",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 38612,
+      "modified": "2026-06-02T13:22:44Z"
+    },
+    {
+      "path": "archive/patches/wa-cluster-M20-patch-passa-meanings-v2-20260602.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "2",
+      "date": "2026-06-02",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 1185,
+      "modified": "2026-06-02T13:50:09Z"
+    },
+    {
       "path": "archive/patches/wa-cluster-M20-patch-vcrevise-utreview-v1-20260513.json",
       "category": "patch",
       "type": "patch",
@@ -25281,6 +25311,66 @@
       "modified": "2026-05-06T04:35:42Z"
     },
     {
+      "path": "outputs/markdown/cluster_audit_v1_20260601.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-01",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 51020,
+      "modified": "2026-06-02T14:05:33Z"
+    },
+    {
+      "path": "outputs/markdown/wa-db-loss-incident-20260603.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-03",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5178,
+      "modified": "2026-06-03T04:38:23Z"
+    },
+    {
+      "path": "outputs/markdown/wa-db-recovery-assessment-20260603.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-03",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4591,
+      "modified": "2026-06-03T05:07:37Z"
+    },
+    {
+      "path": "outputs/markdown/wa-session-close-report-20260602.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-02",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7092,
+      "modified": "2026-06-02T14:00:28Z"
+    },
+    {
       "path": "outputs/reports/words/wa-030-contrition-obslog-parse-manifest-v1-20260428.json",
       "category": "report",
       "type": "word-report",
@@ -25654,21 +25744,6 @@
       "archived": false,
       "size_bytes": 5026,
       "modified": "2026-03-28T13:44:49Z"
-    },
-    {
-      "path": "research/discovery/004_anger_step_data_20260323.json",
-      "category": "discovery",
-      "type": "discovery-json",
-      "registry": 4,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-03-23",
-      "ext": ".json",
-      "archived": false,
-      "size_bytes": 22578377,
-      "modified": "2026-03-23T18:27:31Z"
     },
     {
       "path": "research/discovery/004_anger_step_data_20260323.md",
@@ -28806,21 +28881,6 @@
       "modified": "2026-03-28T13:54:50Z"
     },
     {
-      "path": "research/discovery/126_purpose_step_data_20260326.json",
-      "category": "discovery",
-      "type": "discovery-json",
-      "registry": 126,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-03-26",
-      "ext": ".json",
-      "archived": false,
-      "size_bytes": 16097150,
-      "modified": "2026-03-26T11:01:48Z"
-    },
-    {
       "path": "research/discovery/126_purpose_step_data_20260326.md",
       "category": "discovery",
       "type": "discovery-summary",
@@ -29704,21 +29764,6 @@
       "archived": false,
       "size_bytes": 3968,
       "modified": "2026-03-28T13:57:51Z"
-    },
-    {
-      "path": "research/discovery/160_thought_step_data_20260326.json",
-      "category": "discovery",
-      "type": "discovery-json",
-      "registry": 160,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-03-26",
-      "ext": ".json",
-      "archived": false,
-      "size_bytes": 16916480,
-      "modified": "2026-03-26T10:04:46Z"
     },
     {
       "path": "research/discovery/160_thought_step_data_20260326.md",
@@ -31176,21 +31221,6 @@
       "modified": "2026-03-28T14:26:28Z"
     },
     {
-      "path": "research/discovery/211_being_step_data_20260327.json",
-      "category": "discovery",
-      "type": "discovery-json",
-      "registry": 211,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-03-27",
-      "ext": ".json",
-      "archived": false,
-      "size_bytes": 49487588,
-      "modified": "2026-03-27T12:18:02Z"
-    },
-    {
       "path": "research/discovery/211_being_step_data_20260327.md",
       "category": "discovery",
       "type": "discovery-summary",
@@ -31339,21 +31369,6 @@
       "archived": false,
       "size_bytes": 1609,
       "modified": "2026-05-14T14:23:28Z"
-    },
-    {
-      "path": "research/discovery/love_step_data_20260323.json",
-      "category": "discovery",
-      "type": "discovery-json",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-03-23",
-      "ext": ".json",
-      "archived": false,
-      "size_bytes": 17780180,
-      "modified": "2026-03-23T18:16:00Z"
     },
     {
       "path": "research/discovery/love_step_data_20260323.md",
