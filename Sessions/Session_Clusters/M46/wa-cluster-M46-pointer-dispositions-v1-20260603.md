@@ -1,4 +1,16 @@
-# M46 (Abundance) — pointer disposition evaluation — FOR RESEARCHER DECISION (held, not applied)
+# M46 (Abundance) — pointer disposition evaluation — APPLIED 2026-06-03
+
+> **APPLIED 2026-06-03** (researcher-approved option (a) + confirmation that M46 = Abundance/wealth,
+> peace does not belong, and M33 (Peace) is the proper home — M33 owns 32 of the reg-117 peace terms).
+> Spec: `wa-cluster-M46-comment-eval-applyspec-v1-20260603.json`. Result: **A6→0, A7→0**;
+> 19 peace pointers re-homed to M33 (Peace), 30 legacy peace tier-synthesis/DIM findings routed to
+> M33 (secondary cross-cluster links preserved), 2 YHWH data-anomaly flags resolved, finding 39
+> (contentment) adopted into M46-D "inner life beyond material circumstance" as observation 279.
+> Backup `bible_research_pre_M46_commenteval_20260603.db`. Remaining M46 gates (Phase-A/B): B1a/B1b,
+> A4 BOUNDARY, B5 anchorless VCGs, B7, C1 old-format VCG dissolution.
+
+---
+
 
 **Date:** 2026-06-03 · **Method:** evaluated on text. **M46 is NOT a clear-cut case** — surfaced for
 your decision rather than auto-applied, because its A7 is dominated by *substantive legacy peace
