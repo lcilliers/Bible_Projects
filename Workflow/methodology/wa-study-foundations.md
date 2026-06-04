@@ -1,6 +1,6 @@
 # Study foundations — critical re-evaluation
 
-> **Living document · Doc version: 2 · Last updated: 2026-06-04.**
+> **Living document · Doc version: 3 · Last updated: 2026-06-04.** §a–§d review complete.
 > **Purpose:** step back from the machinery and critically re-evaluate the study from first
 > principles, across four areas: (a) the focus of the study, (b) the completeness of the raw data,
 > (c) the fundamental rules for analysis, (d) the end point. The researcher reviews and rewrites
@@ -349,13 +349,52 @@ QA - at this stage all findings are drafts (not necessary to designate them as s
 
 *What is the study producing, and what does "done" mean for a subject that may never be "complete"?*
 
-**Current understanding (to be reviewed):**
-- The intended outputs to date: **cluster essays / publications** (a written account per cluster),
-  word studies, and cross-cluster synthesis — i.e. a readable, evidenced account of the inner life
-  region by region, and ultimately as a whole.
-- **The quality bar is set by the prior studies' two failures (§0):** *comprehensiveness* (no
-  characteristic understated) and *robustness* (findings that withstand deeper questioning, not just a
-  strong first impression). "Done" must be measured against both — not against gate-completion.
+The end point has two parts
+ - a corpus of findings that is materially evidenced, capturing what scripture has to say about the inner being. This will be a judgement call.
+ - The corpus of findings will form the source for a number of end products that could include
+   - Short essays about the inner being
+   - Bible study guides to explore the inner being
+   - EBooks or printed books encapsulating the entire study
+   - Sermon series on the inner being 
+
+The corpus of findings in the DB is the findings - of the parts, and collections of the parts.  The decipline must be maintained during the latter part of the study and during reviews to keep on capturing and enriching the corpus in the database, and to resist making key observations outside of the database
+
+
+**Current understanding (revised against the two-part end point + the QA):**
+- **The end point has two parts.** (1) A **materially-evidenced corpus of findings** — what Scripture
+  says about the inner being — whose completeness is a *judgement call*, not a gate. (2) That corpus is
+  the **source for multiple end products**: short essays, Bible-study guides, ebooks / printed books, and
+  sermon series on the inner being.
+- **The DB findings corpus is the substrate; nothing key is observed outside it.** The corpus holds the
+  findings *of the parts and collections of the parts*; the discipline through the latter study and the
+  reviews is to keep capturing and enriching it **in the database** and resist making key observations
+  anywhere else (reinforces §c's sole-record rule).
+- **Both a reference and narratives** (Q1). The deliverable is a **reference source** — the meaning of
+  the related verses, encapsulated in the findings and substantiated by the raw data — *and* **various
+  narratives** that rework and apply that reference for different audiences. Reference and narrative are
+  different layers of the same product, not alternatives.
+- **Clusters are vehicles, never finished on their own; the final form dissolves them** (Q2). The end
+  product will very likely **re-group across clusters** into thematic accounts — e.g. *how the faculties
+  of the inner being manifest*, *how God's character is reflected in His creation of the human being*,
+  *how the gifts of the Spirit manifest* — and many more. (Sharpens the §c-Q7 implication: synthesis does
+  not just read across cluster lines, it **supersedes** them.)
+- **Whole-study scope: a finding for every verse** (Q3) — the exploration of all defined registry words
+  through their Hebrew and Greek equivalents in Scripture. *("A finding for every verse" is coverage, not
+  a content quota: every verse is brought into view and addressed, and per §c **silence is a valid
+  finding** — so this is the §b "no orphans" discipline, not the forced-completion §0 warns against.)*
+- **Three audiences, served by one groundwork** (Q4). The work is done so the corpus can meet the needs
+  of the **scholar**, the **leader / preacher / teacher**, and the **ordinary person**. The groundwork
+  serves all levels; the *articulation* per audience happens in the narrative layer — so "adequately
+  synthesised" (§c) is judged at the groundwork level audience-neutrally.
+- **Three milestones replace completion-pressure** (Q5) — the enemy is real, so progress is measured by
+  milestone, not gate: **M1** — data complete and captured for all terms (a real achievement and
+  valuable product in itself); **M2** — all clusters analysed → the first complete corpus of findings;
+  **M3** — narratives drawn from the findings gain traction in the public eye. *(M1 is **capture**;
+  soundness of the captured meanings is still earned through the sift + the verse-meaning audit — the
+  agreed next task.)*
+- **The quality bar remains the prior studies' two failures (§0):** *comprehensiveness* (no
+  characteristic understated) and *robustness* (findings that withstand deeper questioning). "Done" is
+  measured against both — and against the milestones above — never against gate-completion.
 
 *Implications carried in from §b's QA:*
 - **The decisive credibility risk is verse-meaning soundness** (§b-Q2). The end product stands or falls
@@ -387,16 +426,29 @@ QA - at this stage all findings are drafts (not necessary to designate them as s
 **Tensions / open questions for critical review:**
 1. Is the deliverable a **reference** (a structured account of the vocabulary and its meanings), a
    **narrative** (an essayed understanding of the inner life), or both at different layers?
+
+QA - the deliverable is both a reference source of the meaning of related verses, as encapsulated in the findings and substantiated by the raw data; and various narratives to various types of audiences that rework and apply the reference source.
+
 2. Can a cluster ever be "finished," or is the right end-state a **faithful, open account** that
    names what is known, what is ambiguous, and what remains open — rather than a closed, gate-clean
    record?
+
+QA - Clusters will never be complete on its own, the clusters are vehicles for analysis.  It is very likely that the end product will desolve the clusters and different cross cluster groupings: e.g. how does the faculties of the inner being manifest itself;  how does the character of God reflects in His creation of the human being; how does the gifts of the holy spirit manifest itself - and many more
+
 3. What is the **whole-study** end point — a synthesis across all clusters of the biblical picture of
    human inner life? At what altitude?
+
+QA - the whole-study is definitively the exploration of all the defined registry words through their greek and hebrew equivalents in scripture. a finding for every verse.
+
 4. Who is the **audience**, and what must the output let them do — and does that change the standard
    for "adequately synthesised" in (c)?
+
+QA  - The work is done at a level that it can meet the needs of a scholar, leader/preacher/teacher, and the ordinary man. This will be expressed in the way the final corpus is articulated. The groundwork will serve all levels.
+
 5. If completion-pressure is the enemy, what replaces it as the **measure of progress** — coverage of
    the data in view? depth and faithfulness of the reading? something else?
 
+QA - this enemy is real.  In a certain way, once the data is complete and captured for all the terms the first milestone will be met.  In itself, it would be a real achievement and a valuable product. The next milestone will be when all the clusters have been analysed and first complete corpus of findings have been achieved.  The third milestone will be when narratives coming from the the findings get traction in the public eye.
 ---
 
 ## Agreed next action (after this document is settled)
@@ -438,5 +490,13 @@ be started until the foundations are settled, so the current work is not deraile
   (not prose) is the product; "adequately synthesised" = rule-floor + sign-off ceiling; no fixed
   characteristic taxonomy at the end; completion presupposes the sift; whole-study synthesis must
   re-cross cluster lines. §d still awaits the researcher's QA.
-  soundness is the decisive credibility risk; whole-study back-track validation as honest completion.
-  §c/§d open questions left for the researcher's QA.
+- _2026-06-04 (CC):_ Researcher completed §d (the end point) — two-part end point + QA on all 5 open
+  questions. CC re-grounded §d "Current understanding": **(1) an evidenced findings corpus → (2) multiple
+  end products** (essays, study guides, ebooks/books, sermons); the DB corpus is the substrate (nothing
+  key observed outside it); deliverable is **both reference and narrative** (Q1); **clusters are vehicles
+  that the final form dissolves into cross-cluster thematic groupings** (Q2 — faculties, God's character
+  in creation, gifts of the Spirit, …); whole-study scope = **a finding for every verse** (Q3, framed as
+  coverage-not-quota with silence valid); **three audiences** served by one groundwork (Q4); **three
+  milestones** replace completion-pressure (Q5 — data captured · clusters analysed · narratives gain
+  traction). **Foundations review §a–§d now complete** (doc v3); the agreed next task — the verse-meaning
+  audit expansion — is unblocked, to start on the researcher's go-ahead.
