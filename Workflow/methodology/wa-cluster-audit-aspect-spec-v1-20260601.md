@@ -1,7 +1,10 @@
 # Cluster audit — aspect specification (the canonical checklist)
 
-**Living document** · **Doc version:** 1 · **2026-06-01** · grounds `scripts/audit_cluster_v1_20260601.py` (the reusable cluster auditor).
+**Living document** · **Doc version:** 2 · **2026-06-04** · grounds `scripts/audit_cluster_v1_20260601.py` (the reusable cluster auditor).
 **Purpose:** the consolidated, well-founded set of aspects a cluster audit checks — synthesised from prior work, not re-imagined. Each aspect cites its source so the audit stays anchored to the methodology.
+
+**v2 (2026-06-04):** added **Group E — Meaning & keyword quality** (E1–E8), the surfacing-now / active-later
+angles emerging from the 2026-06-04 keyword/meaning exploration. Structural Groups A–D unchanged.
 
 **Sources synthesised:**
 - `archive/scripts/_validate_analysis_complete_v1_20260531.py` — the proven two-condition gate that reset the 17 clusters (8 checks).
@@ -74,6 +77,33 @@
 | D2 | Unallocated pointers | findings/flags routed (`cluster_link`) here, not yet adopted into a finding | INCR |
 | D3 | Unresolved boundaries | BOUNDARY_DECISION_PENDING for this cluster (= A5) | INCR |
 | D4 | Old VCGs to dissolve | this cluster's own old VCGs awaiting Phase-C dissolution (= C1) | INCR |
+
+---
+
+## E. Meaning & keyword quality  (source: 2026-06-04 keyword/meaning exploration)
+
+**Sequencing (researcher direction 2026-06-04):** the data is currently **too dirty to trap meaning
+transgressions reliably**. First bank a good set of clusters to **clean** status (Groups A–D); the Group-E
+quality angles then run as a dedicated **meaning–keyword audit phase**. So **E aspects are `INFO`
+(surfacing) for now** and become active checks in that later phase — *not* gates today. They exist here so
+the standard audit *highlights this class of problem routinely* rather than it being hunted ad-hoc.
+Provenance: `research/investigations/anchor-meaning-analytics-20260604.md`,
+`…/keyword-bias-extract-20260604.md`, `…/keyword-analytics-revision-plan-20260604.md`,
+`…/rescue-physical-setaside-20260604.md`. This is the concrete form of the queued
+*verse-meaning corroboration* audit angle.
+
+| ID | Aspect | What it surfaces | Sev |
+|---|---|---|---|
+| E1 | **Keyword well-formedness** | keywords should be the `[faculty/head] [predicate/qualifier]` 2-word form (91% are); flag empty, 1-word, or >3-word / malformed entries | INFO |
+| E2 | **Keyword normalisation duplicates** | the same concept split by hyphen/spacing/stem (`god-saving`=`god saving`; `corrupt`/`corrupted`/`corruption`); flag near-duplicate heads/qualifiers for canonicalisation | INFO |
+| E3 | **Interpretive-label corroboration (QUALIFIER axis)** | loaded/abstract qualifiers (`eschatological`, `corrupted`, `defiled`, `perverted`…) must be warranted by the verse; flag a qualifier asserting a sense the text doesn't carry — esp. a label applied **reflexively across a whole sense** (e.g. `salvation eschatological` on plainly physical/temporal verses: Gen 49:18, Hab 3:8) | INFO |
+| E4 | **Anchor sense-fitness** | an anchor's meaning must read in the **sense the cluster characterises**; flag anchors whose meaning is explicitly a *different* sense (e.g. **physical-rescue σῴζω anchoring inner-being Salvation VCGs** — Mat 14:30, Act 27:20, Heb 11:7) → review for anchor-fitness / set-aside / distinct VCG | INFO |
+| E5 | **Category-slip / scope check** | verses pulled into an inner-being cluster on a category import — demonic "unclean spirit" (*akathartos*) grouped with ritual/moral **defilement** (Mar 3:11, Luk 6:18); involuntary ritual/bodily impurity treated as inner-being moral content (Lev 15) → is the verse genuinely inner-being? | INFO |
+| E6 | **Uniform-lens over-tagging** | the inner-faculty lens applied so uniformly it adds a faculty the verse doesn't state (e.g. `will compromised` on a perception/judgement verse, Exo 23:8); flag mechanical `will`/`heart` tagging | INFO |
+| E7 | **Anchor meaning-coverage** | report % of **anchors** carrying meaning+keywords per cluster (programme-wide only ~5.4% today, concentrated in the M10 family); a clean cluster needs its anchors meaning-enriched (complements B1a/B1b, which gate *is_relevant* coverage, not anchors specifically) | INFO |
+| E8 | **Credit self-limiting meanings** | do **not** penalise meanings that correctly decline inner-being content (Mat 24:40: "no direct inner-being content"); the audit must not pressure every verse into an inner-being reading (silence-valid) | INFO* |
+
+\*E8 is a guard, not a flag: it tells the auditor what *good* looks like so the other E checks don't push toward over-reading.
 
 ---
 
