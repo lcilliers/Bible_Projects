@@ -190,6 +190,31 @@ What survives from the remedial process:
 
    QA What is true is that a single verse can have multiple terms, and a term can impact multiple clusters.  Duplication is only duplication if the same verse within the same context is used for the same purpose.
 
+### Emerging (2026-06-04): the self-critical audit, and verse-meaning corroboration
+
+**The audit is central, and must be self-critical.** The audit step did not exist before; V3 surfaced
+it as one of the most important steps. It must not run as a fixed checklist. It must regularly and
+critically interrogate *itself* — *Am I doing my job? Am I asking the right questions? Am I inspecting
+the data from the right angles? Are there angles I do not cover?* New angles are added to the audit as
+they are recognised; the audit's own coverage is part of what completeness means.
+
+**The first new angle — verse-meaning corroboration (open question, nothing adopted).** Verse meaning
+(Pass A) has so far had only cursory review, with reliance on the *ultimate findings* to expose skew.
+But meaning is the foundation that rules all analytics, and its error rate is high (§b risk) — so
+catching skew only downstream is late, costly, and may never surface at all. The question: *should
+meaning be actively corroborated, and how?* Candidate approaches, for the researcher to weigh:
+- anchor each meaning to its **STEP lexical sense** and to **several translations** of the verse, and
+  flag where the AI reading diverges from both;
+- **surface contested or multiple readings explicitly** in Pass A — the "surface, never hide" rule
+  applied at the meaning layer — each with its evidence;
+- carry a **contestability / confidence marker + lexical basis** on each meaning, so soft meanings are
+  visible to the audit and the analyst;
+- **targeted researcher review** of the highest-leverage meanings (anchors, high-impact verses) that the
+  audit surfaces, rather than uniform review of everything.
+
+If adopted, the audit gains a standing angle: *are the verse meanings corroborated, and are the
+contested ones surfaced?* (Bears directly on §c — how meaning is challenged.)
+
 ---
 
 ## c) The fundamental rules for analysis of the data
