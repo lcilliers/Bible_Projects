@@ -1,6 +1,6 @@
 # Study foundations — critical re-evaluation
 
-> **Living document · Doc version: 1 · Last updated: 2026-06-04.**
+> **Living document · Doc version: 2 · Last updated: 2026-06-04.**
 > **Purpose:** step back from the machinery and critically re-evaluate the study from first
 > principles, across four areas: (a) the focus of the study, (b) the completeness of the raw data,
 > (c) the fundamental rules for analysis, (d) the end point. The researcher reviews and rewrites
@@ -118,7 +118,7 @@ c) all the captured data above is organised in a SQLLite database in a range of 
 d) several attempts to organise and analyse the data resulting in a range of flags and Session B and Session D pointers.  Although some of these have dubious value, there are a number of good observations and reminders for further analysis that comes from it.  this body of observations is now part of the raw data.
 e) clusters were formed using hueristics of the meaning of the gloss of each term. This is regarded as preliminary grouping for the purposes of further analysis.  Every term must be either: set aside (no verses, or no inner being relevance at all), Flagged (unable to allocate), Tier 2 term (a particle or other grammatical form that is not word specific)
 f) the terms in a cluster were then grouped together into sub-groups, to roughly represent "characteristics" or distict behaviours of the inner being.  This grouping mechanism is largely again a process of sub dividing the terms and there verses for analytic purposes. it is already evident that this sub grouping is not a definitive structure and that different terms in different clusters do not all behave the same.  In essence, the subgroup itself does not derive meaning, but it bundles the underlying data to be analysed from where meaning is derived.
-g) the next stage is to focus on the verses associated with the term. Each verse is subject to two processes: describe the meaning in terms of the span in the verse b) isolate keywords in/from the verse.  These elements are then used to group the verses into similar context meaning into a VCG verse context group. Each sub group can have many VCGs
+g) the next stage is to focus on the verses associated with the term. Each verse is subject to two processes: describe the meaning in terms of the span in the verse b) isolate keywords in/from the verse.  These elements are then used to group the verses into similar context meaning into a VCG verse context group. Each sub group can have many VCGs. Verses with similar meaning is grouped together by a Anchor verse and each VCG must have at least 1 Anchor verse.
 h) The main body of data is scripture related.  However, part of the study is to correlate the biblical data with human behavioural sciences.  To this end, AI was used to compile an overview of gloss of each cluster in the light of what science have to say about it, encapsulated in a 2000 word summary.  This raw data element is in a file per cluster.
 
 Raw data completeness is defined as:
@@ -221,23 +221,79 @@ contested ones surfaced?* (Bears directly on §c — how meaning is challenged.)
 
 *By what principles is the data read into understanding?*
 
-**Current understanding (to be reviewed):**
-- **Verse meaning is the data and rules all analytics.** Analysis assesses **meaning in context** —
-  the term's sense within its verse, read against the other members of the cluster.
-- **Content and context lead** — never the mechanical classification.
-- **Multi-belonging is real.** A term or verse can carry meaning in more than one cluster; the same
-  verse legitimately appears in several. Where it does, it is **a finding in each** cluster it
-  genuinely speaks to — not forced into one, not mechanically copied.
-- **Ambiguity and openness are allowed.** Not everything resolves; the analysis may legitimately
-  leave questions open because the subject is open.
-- **All observations, however disjointed, are recorded.** Nothing is discarded for being untidy.
+a) Analysis means pulling together the meaning of each term expressed in the context of verses. 
+b) meaning is derived through 8 different lenses called tiers:
+
+Divine Image and Created Design
+Definition
+Constitutional Location and Boundaries
+The Inner Faculties
+Relational Interfaces
+Formative and Developmental Dimension
+Structural Relationships with Other Characteristics
+Evidential and Methodological Foundation
+
+c) Consistency is driven through a process whereby each sub group us subjected to 189 questions in the 8 tiers.
+
+d) each question and answer, as well as any cluster level or general observations is captured as a finding. Every finding is stored in the database verbatim. The database is the authorative record for all findings for the entire study. No findings or observations should exist outside of the findings table.
+
+e) completeness of finding are driven by 
+ - every find must state their evidence or support
+ - all anchor verses must be covered by a finding
+ - every sub group must have all 189 questions answered, silence on the subject is a valid answer
+
+**Current understanding (revised against the (a)–(e) structure + the QA):**
+- **Verse meaning is the data and rules all analytics.** Analysis pulls together the meaning of each
+  **term in the context of its verses**, read against the other members of the cluster. Content and
+  context lead — never the mechanical classification.
+- **The finding is the universal unit of analytic record.** *Everything* that comes out of analysis —
+  each of the 189 question-answers, every cluster-level or general observation, and the outputs of
+  pointer / flag / synergy work — is captured **as a finding**. The **DB findings table is the single
+  authoritative record for the whole study; no finding or observation exists outside it** (extends the
+  §b "all observations recorded" rule into a hard storage rule).
+- **Eight tiers, 189 questions, applied per sub-group — the consistency mechanism.** Meaning is
+  interrogated through 8 lenses (T0 Divine Image · T1 Definition · T2 Constitutional Location · T3 Inner
+  Faculties · T4 Relational Interfaces · T5 Formative/Developmental · T6 Structural Relationships · T7
+  Evidential/Methodological). These tier names now **match the live catalogue** (`wa_obs_question_catalogue`
+  — the 189-question extract). Each sub-group is run against all 189 so every lens is *asked*; the
+  sub-group bundles the data, the meaning still derives from the verses.
+- **Completeness has a checkable floor — but "silence is a valid answer."** A sub-group is structurally
+  complete when (i) every finding states its evidence/support, (ii) all anchor verses are covered by a
+  finding, (iii) all 189 questions are answered — *and a null/"the text is silent" answer counts*. The
+  silence-valid rule is the release valve that keeps this floor from re-importing completion-pressure:
+  the audit must **accept silence, never chase a fill** (consistent with §0 "no forced structure" and
+  the evidence-flags-are-informational philosophy — absence can itself be significant).
+- **All findings are drafts; robustness is earned by iterative sift, not a gate** (Q1). Anything that
+  passed through analytics enters as a finding without a "draft" label; the study revisits the findings
+  corpus repeatedly to sift out the unsubstantiated, incomplete or thin — **mostly interactive
+  researcher↔AI reading, review and rewriting**, with only light filtering/extraction. A finding earns
+  its standing by **withstanding deeper questioning** (the prior studies' findings "appeared strong but
+  deteriorated under questioning", §0) — not by being entered.
+- **A cluster is finished only by non-mechanical sign-off** (Q2). The **audit verifies compliance to the
+  rules** — an important state — but completion and finalisation come only when the researcher *signs
+  off*, which is a reading judgement, never a gate cleared.
+- **Multi-belonging = a finding in each cluster it genuinely implicates** (Q3). It matters only because
+  the finding bears on *both* clusters. Wording may coincide in the exploratory stage (synergy work not
+  yet done) but is **expected to diverge** as each cluster's detail is explored — so it is not a false copy.
+- **Characteristics follow the evidence; their final form is open** (Q4). They are discovered, not
+  imposed; how they ultimately land and look is undecided and will clarify only as most clusters reach
+  thorough analysis. Sub-groups/characteristics **bundle** data, they don't carry meaning.
+- **Set-aside is reversible and stays in view** (Q5). It removes something from focus as not relevant to
+  the subject; it will be **re-examined** later to test the judgement, and some items are expected to
+  return. It is soft-delete (≈ the delete state today; some deletes are corrected errors) — **nothing is
+  physically removed**, so set-aside remains part of the term's semantic record.
+- **Human leads, AI assists** (Q6). AI is a valued team member with known limitations and quirks; the
+  researcher pushes the boundary to offload work, then **mops up where AI was less reliable**.
+- **Ambiguity and openness are allowed.** Not everything resolves; the analysis may legitimately leave
+  questions open because the subject is open.
 - **The method must compensate for AI's tendencies.** Because AI defaults to framing, filtering,
-  imposing order and choosing the *reasonable* over the *correct* (§0), the rules must build in active
+  imposing order and choosing the *reasonable* over the *correct* (§0), the rules build in active
   counter-measures — critical re-reading, resisting premature closure, surfacing the disconfirming,
   never letting structure substitute for meaning.
-- **Findings must be robust, not merely plausible.** The prior studies' findings "appeared strong but
-  deteriorated under questioning" (§0). A finding earns its place only if it **withstands deeper
-  questioning** against the verse evidence.
+- **The cluster is an accepted working compromise, not a claim** (Q7 — the central unresolved question).
+  The human will not fit a box; the cluster method is judged a good compromise (large enough to drive
+  synergies, small enough for analytic traction). We proceed with it, contending with the "jack jumping
+  out of the box" as it does — real progress made, a long way still to go.
 
 *Implications carried in from §b's QA:*
 - **The gravest risk sits in the verse-meaning layer itself, before any finding** (§b-Q2). Pass A
@@ -255,20 +311,38 @@ contested ones surfaced?* (Bears directly on §c — how meaning is challenged.)
 
 **Tensions / open questions for critical review:**
 1. What makes a **finding** a finding — when does an observation about meaning earn that status?
+
+QA - at this stage all findings are drafts (not necessary to designate them as such) - therefore something that has gone through analytics, either through the catalogue, from the pointers, from flags, or synergy work, all goes into finding. I expect that the study will go through findings time and time again to sift out observations, findings, statements etc. that is not substantiated, complete, or need further work. Most of this review work would be interactive collaborate work between researcher and AI.  although some filtering and extractions will be used, it will mostly be based on reading, reviewing, and re-writing.
+
 2. What does **"adequately synthesised"** mean for a cluster — when has its inner-life region been
    genuinely accounted for (as opposed to box-ticked)? This is the crux the audit should serve.
+
+   QA - Audit will play an important part to verify compliance to the rules. That is a very important state. A cluster will only be completed and all analysis work finalised when it is signed off, and that would not be a mechanical exercise.
+
 3. How is **multi-belonging** expressed without either flattening it or duplicating it falsely?
+   QA - multi-belonging is only relevant because the finding has a implication on both clusters. I don't expect the wording of the finding to be exactly the same when the detail is fully explored - in the exploratory stage, it may be the same because the synergy work is not completed.
+
 4. How do **characteristics** function — are they discovered from the verses, or imposed, and how is
    the difference kept honest?
+
+   QA - the principle is that the characteristics will follow the evidence.  At the moment to verdict of where it will land, and how it will look is still open.  this picture will become clearer when we get nearer to a point where most of the clusters had thorough analysis.
+
 5. What is the role of **set-aside** material — material judged not to bear on a cluster's inner-life
    meaning is still part of the term's semantic record; how is it kept in view, not deleted?
+
+   QA - set aside is used to take something out of focus becuase it is deemed to relevant to subject matter.  However, at a point in future I will work through all the set asides again the discover if earlier judgement calls are still holding.  I expect some items to move out of set aside.  At this stage set asside and deleted is more or less the same, in some cases deleted represent errors.  The project have a policy of soft deleting, nothing is removed from the database completely.
+
 6. Where does **the human analyst** lead and the AI assist — given the AI's demonstrated pull toward
    false completion?
+
+   QA at this stage I am regarding AI as an assistant - with some limitations and quirks. A valued member of the team.  I am pushing the boundaries to take some load off me, but then also realise I need to mop up where AI have been less helpful.
+
 7. **The unit-of-analysis problem (the central unresolved question).** The corpus is too large to read
    at once, so it must be broken into pieces — yet every partition so far has become a distorting
    structure (the "fault lines" of §0). How do we divide the data for digestion **without the division
    itself becoming a false claim** about the subject?
 
+  QA I wish I new the answer.  The further this research goes, the clearer in becomes that the human being is not going to fit in a box, we just need to contend with, and deal with the Jack jumping out of the box every now and then.  I do believe at this stage that the cluster method is a good compromise - it is large enough to drive synergies, and small enough to gain analytic traction. We are moving forward, and have made enormous progress, but there is still a long way to go.
 ---
 
 ## d) The end point
@@ -291,6 +365,24 @@ contested ones surfaced?* (Bears directly on §c — how meaning is challenged.)
 - **A whole-study back-track validation is part of honest completion** (§b-Q3). Near the end, findings
   are reconciled against *all* the data to expose the differential (what was missed); this is costly and
   has downstream knock-on, but surfacing it — rather than silently shipping — is what completion means.
+
+*Implications carried in from §c's QA:*
+- **The findings table is the product; the essays are renderings of it** (§c-d). Since no finding exists
+  outside the DB, "done" is measured on the **findings corpus**, not on the prose — the cluster essays
+  and synthesis are downstream presentations of findings, not a separate source of truth.
+- **"Adequately synthesised" has a floor and a ceiling** (§c-e, §c-Q2). The floor is the checkable rule
+  set (every finding evidenced · all anchor verses covered · all 189 answered, *silence valid*); the
+  ceiling — and the real bar — is the researcher's **non-mechanical sign-off**. Box-ticking the floor is
+  necessary but never sufficient; this is what the audit serves.
+- **The end-state cannot pre-commit to a fixed characteristic taxonomy** (§c-Q4). Characteristics follow
+  the evidence and their final shape is still open, so honest completion **names what is still open**
+  rather than freezing a structure — converging with §d-Q2 ("a faithful, open account").
+- **Completion presupposes the iterative sift has run** (§c-Q1). Findings enter as drafts; the cluster is
+  not "done" until the corpus has been worked over (interactive researcher↔AI review) to remove the
+  unsubstantiated and thin — robustness is *earned across passes*, not asserted at entry.
+- **The whole-study synthesis must re-cross the cluster lines** (§c-Q7). The cluster is an accepted
+  working compromise, not a claim about the subject; so the programme-wide account (§d-Q3) has to read
+  *across* clusters to recover what the partition necessarily split — the "jack out of the box."
 
 **Tensions / open questions for critical review:**
 1. Is the deliverable a **reference** (a structured account of the vocabulary and its meanings), a
@@ -332,5 +424,19 @@ be started until the foundations are settled, so the current work is not deraile
   duplication definition) and **carried the implications into §c and §d**: §c — challenge the *meaning*
   layer first; multi-belonging ≠ duplication (answers §c-Q3); sub-groups/characteristics bundle, don't
   carry, meaning (bears on §c-Q4); reasonability tests / attend to the absent. §d — verse-meaning
+  soundness is the decisive credibility risk; whole-study back-track validation as honest completion.
+  §c/§d open questions left for the researcher's QA.
+- _2026-06-04 (CC):_ Researcher completed §c (analysis rules) — structure (a)–(e) + QA on all 7 open
+  questions. CC re-grounded §c "Current understanding" against it: **the finding is the universal unit;
+  DB findings table is the sole authoritative record (nothing outside it)**; 8 tiers / 189 questions per
+  sub-group as the consistency mechanism (tier names now match the live catalogue); completeness floor
+  (evidence · anchors · all-189-answered) with **"silence is a valid answer"** as the anti-completion
+  valve; **all findings are drafts, robustness earned by iterative researcher↔AI sift, cluster done only
+  by non-mechanical sign-off**; multi-belonging wording diverges as synergy work matures; characteristics
+  follow evidence (final form open); set-aside reversible/soft-delete; cluster = accepted working
+  compromise for the unit-of-analysis problem (Q7). **Carried §c implications into §d**: findings corpus
+  (not prose) is the product; "adequately synthesised" = rule-floor + sign-off ceiling; no fixed
+  characteristic taxonomy at the end; completion presupposes the sift; whole-study synthesis must
+  re-cross cluster lines. §d still awaits the researcher's QA.
   soundness is the decisive credibility risk; whole-study back-track validation as honest completion.
   §c/§d open questions left for the researcher's QA.
