@@ -307,6 +307,12 @@ contested ones surfaced?* (Bears directly on §c — how meaning is challenged.)
 
 ---
 
+## Agreed next action (after this document is settled)
+
+**First task once the foundations review is complete:** re-evaluate how the **audit can surface verses
+for further validation** — i.e. the verse-meaning corroboration angle (§b "Emerging" block; §c). Not to
+be started until the foundations are settled, so the current work is not derailed.
+
 ## Working notes / decisions log
 
 - _2026-06-04:_ Document created. Remedial process closed down (§0). Awaiting researcher's critical
