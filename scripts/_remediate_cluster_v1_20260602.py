@@ -25,6 +25,18 @@ STOP POINTS (researcher confirmation is structural, not optional)
   Re-running picks the next stage from the live audit. Nothing crosses a judgement
   boundary without an approved spec.
 
+EVIDENCE (robust + recoverable; every run, written to the cluster folder)
+  - wa-cluster-{CODE}-audit-v{n}-{date}.md        : the run's audit (baseline + re-audit).
+  - wa-cluster-{CODE}-remediation-log-v{n}-{date}.md : baseline -> plan -> backup ->
+        handlers run (+captured output) -> re-audit -> residuals -> verdict -> next + rollback.
+  - wa-cluster-{CODE}-remediation-state-v{n}-{date}.json : machine-readable run state for recovery.
+  Before any --apply stage the orchestrator takes an off-Drive DB backup and records its
+  path in the log/state, so any run is one copy away from rollback.
+
+  CHANGE 2026-06-04: implemented the auto-filing of audit report + remediation log + state
+  JSON (the design's "Packaged outputs", previously only printed), pre-apply backup, and
+  captured handler output — to make the evidence path robust and easy to recover from.
+
 Usage
   python scripts/_remediate_cluster_v1_20260602.py --cluster M38                  # dry plan
   python scripts/_remediate_cluster_v1_20260602.py --cluster M38 --emit-templates # scaffold specs
@@ -32,7 +44,8 @@ Usage
   python scripts/_remediate_cluster_v1_20260602.py --cluster M38 --apply --stage specs
   python scripts/_remediate_cluster_v1_20260602.py --cluster M38 --apply --stage close
 """
-import argparse, glob, importlib.util, json, os, subprocess, sys
+import argparse, glob, importlib.util, json, os, shutil, subprocess, sys
+from datetime import datetime, timezone
 
 if sys.platform == "win32":
     import io
@@ -45,10 +58,30 @@ aud = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(aud)
 
 PY = sys.executable
 SCRIPTS = os.path.join(REPO, "scripts")
+DB = os.path.join(REPO, "database", "bible_research.db")
+BACKUP_DIR = os.path.join(os.path.expanduser("~"), "db_recovery")   # off-Drive
+DATE = datetime.now().strftime("%Y%m%d")
+TS = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+# --- run-evidence accumulator (filled as the run proceeds, written at the end) ----------
+EV = {"handlers": []}   # captured handler outputs + structured run state
 
 
 def cdir(code):
     return os.path.join(REPO, "Sessions", "Session_Clusters", code)
+
+
+def cluster_name(code):
+    """Full cluster name (short_name) for human-readable reports — never bare codes."""
+    try:
+        c = aud.conn()
+        r = c.execute("SELECT short_name, description FROM cluster WHERE cluster_code=?", (code,)).fetchone()
+        c.close()
+        if r:
+            return r["short_name"] or r["description"] or code
+    except Exception:
+        pass
+    return code
 
 
 def find_spec(code, kind_glob):
@@ -67,9 +100,31 @@ def spec_state(path):
     return ("approved" if d.get("approved") is True else "unapproved"), d
 
 
+def next_ver(code, base):
+    """Next -v{n}- for wa-cluster-{code}-{base}-v{n}-*.* in the cluster folder (same-day bump)."""
+    n = 0
+    for f in glob.glob(os.path.join(cdir(code), f"wa-cluster-{code}-{base}-v*-*")):
+        try:
+            tok = os.path.basename(f).split(f"{base}-v", 1)[1]
+            n = max(n, int(tok.split("-", 1)[0]))
+        except (IndexError, ValueError):
+            continue
+    return n + 1
+
+
+def backup_db(code, stage):
+    """Off-Drive pre-write snapshot; returns its path (recorded for rollback). Best-effort."""
+    try:
+        os.makedirs(BACKUP_DIR, exist_ok=True)
+        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        dest = os.path.join(BACKUP_DIR, f"bible_research_pre_remediate_{code}_{stage}_{stamp}.db")
+        shutil.copy2(DB, dest)
+        return dest
+    except Exception as e:
+        return f"BACKUP-FAILED: {e}"
+
+
 # --- Handler registry -------------------------------------------------------
-# Each step: which audit aspects it clears, its kind, the spec-file glob (SPEC only),
-# the applier command builder, and whether the applier is built yet.
 def _cmd(*parts):
     return [PY, os.path.join(SCRIPTS, parts[0]), *parts[1:]]
 
@@ -77,7 +132,6 @@ MECH = "MECH"
 SPEC = "SPEC"
 NOOP = "NOOP"
 
-# spec_glob, applier(file)->cmd, built?
 DISPOSITIONS = ("pointer-dispositions-v*", lambda f: _cmd("_apply_pointer_dispositions_v1_20260601.py", "--file", f, "--apply"), True)
 EXTENSION    = ("b7-citation-extension-v*", lambda f: _cmd("_apply_finding_citation_extension_v1_20260602.py", "--file", f, "--apply"), True)
 ADOPTION     = ("pointer-adoption-v*",      lambda f: _cmd("_apply_pointer_adoption_v1_20260602.py", "--file", f, "--apply"), False)
@@ -86,33 +140,28 @@ ADOPTION     = ("pointer-adoption-v*",      lambda f: _cmd("_apply_pointer_adopt
 def resolve_plan(R):
     """Map the live audit's failing aspects to ordered remedial steps."""
     by = {r["id"]: r for r in R}
-    def fail(aid):  # gate/struct FAIL, info REVIEW, or incr>0
+    def fail(aid):
         r = by.get(aid)
         return r and (r["status"] == "FAIL" or (r["status"] == "REVIEW") or (r["sev"] == "INCR" and isinstance(r["count"], int) and r["count"] > 0))
 
     steps = []
-    # --- Mechanical: citation extractor clears B6 + the bulk of B7 ---
     if fail("B6") or fail("B7"):
         steps.append({"key": "CITATIONS", "kind": MECH, "aspects": ["B6", "B7"],
                       "desc": "citation extractor — re-derive finding_citation from finding text",
                       "cmd": _cmd("_extract_finding_citations_v1_20260525.py", "--cluster", CODE, "--live"),
                       "built": True})
-    # --- Judgement: A6/A7/A2 dispositions ---
     if fail("A6") or fail("A7") or fail("A2"):
         steps.append({"key": "DISPOSITIONS", "kind": SPEC, "aspects": ["A6", "A7", "A2"],
                       "desc": "pointer/finding dispositions — set_aside / resolve / fold (+ A2 review no-op)",
                       "spec_glob": DISPOSITIONS[0], "applier": DISPOSITIONS[1], "built": DISPOSITIONS[2]})
-    # --- Judgement: B7 residual (genuinely-uncited anchors AFTER the extractor) ---
     if fail("B7"):
         steps.append({"key": "B7_EXTENSION", "kind": SPEC, "aspects": ["B7"], "residual_after": "CITATIONS",
                       "desc": "B7 residual — extend host finding text to cite genuinely-uncited anchors",
                       "spec_glob": EXTENSION[0], "applier": EXTENSION[1], "built": EXTENSION[2]})
-    # --- Judgement: D2 pointer adoption ---
     if fail("D2"):
         steps.append({"key": "ADOPTION", "kind": SPEC, "aspects": ["D2"],
                       "desc": "adopt unallocated pointers into a finding (+ xref + close), else set aside",
                       "spec_glob": ADOPTION[0], "applier": ADOPTION[1], "built": ADOPTION[2]})
-    # --- Aspects with no handler built yet: surface, do not guess ---
     TODO = {"A4": "boundary disposition", "A5": "boundary disposition", "A8": "actionable-obs confirm",
             "B1a": "Phase-A meaning backfill", "B1b": "Phase-A keyword backfill", "B2": "grouping",
             "B3": "char-subgroup link", "B5": "VCG anchor designation", "C1": "old-VCG dissolution (mech)",
@@ -135,6 +184,18 @@ def gate_fails(R):
     return [r for r in R if r["sev"] == "GATE" and r["status"] == "FAIL"]
 
 
+def audit_md(tag, verdict, R):
+    """Markdown lines for one audit snapshot (used in both stdout and the filed report)."""
+    gf = gate_fails(R)
+    L = [f"### {tag} — verdict **{verdict}** · GATE fails {len(gf)}", "",
+         "| ID | Sev | Status | Count | Aspect |", "|---|---|---|--:|---|"]
+    for r in R:
+        det = str(r["count"])
+        L.append(f"| {r['id']} | {r['sev']} | {r['status']} | {det} | {r['name']} |")
+    L.append("")
+    return L
+
+
 def print_audit(tag, verdict, R):
     gf = gate_fails(R)
     print(f"\n[{tag}] verdict={verdict} | GATE fails={len(gf)}")
@@ -148,7 +209,6 @@ def step_status_line(code, st):
         return f"MECH  · runs inline on --apply --stage mechanical · {'ready' if st['built'] else 'NOT BUILT'}"
     if st["kind"] == "TODO":
         return "TODO  · STOP — handler not built (surface, do not guess)"
-    # SPEC
     path = find_spec(code, st["spec_glob"])
     state, _ = spec_state(path)
     if not st["built"]:
@@ -164,20 +224,22 @@ def _short(p):
     try:
         return os.path.relpath(p, REPO) if os.path.isabs(p) else p
     except ValueError:
-        return os.path.basename(p)  # cross-drive (e.g. python on C:, repo on G:)
+        return os.path.basename(p)
 
 
 def run(cmd):
-    print(f"   $ {' '.join(_short(p) for p in cmd)}")
-    r = subprocess.run(cmd, cwd=REPO)
+    """Run a handler, echo + CAPTURE its output for the remediation log."""
+    line = " ".join(_short(p) for p in cmd)
+    print(f"   $ {line}")
+    r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    out = (r.stdout or "") + (("\n[stderr]\n" + r.stderr) if r.stderr else "")
+    print(out)
+    EV["handlers"].append({"cmd": line, "returncode": r.returncode, "output": out.strip()})
     if r.returncode != 0:
         raise SystemExit(f"ABORT: handler exited {r.returncode}")
 
 
 # --- template emission ------------------------------------------------------
-# Each emitted item carries its FULL evaluable text (flags: description; findings:
-# finding) plus context columns, so the item is self-contained for review. The short
-# label (e.g. DIM-180-SD001) is only an ID — the content lives in description/finding.
 def enumerate_dispositions(code):
     c = aud.conn(); cur = c.cursor()
     regs = [r["owning_registry_fk"] for r in cur.execute("SELECT DISTINCT owning_registry_fk FROM mti_terms WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0 AND owning_registry_fk IS NOT NULL", (code,))]
@@ -215,21 +277,21 @@ def enumerate_adoptions(code):
     return items
 
 
-def _has_filled(path, key):
-    """True if an existing spec already has any item with a non-empty action (don't clobber review work)."""
-    if not os.path.exists(path):
-        return False
+def _filled_existing(code, glob_kind, key):
+    """True if any existing spec of this kind already has a filled action (don't clobber review work)."""
+    p = find_spec(code, glob_kind)
+    if not p or not os.path.exists(p):
+        return False, None
     try:
-        d = json.load(open(path, encoding="utf-8"))
+        d = json.load(open(p, encoding="utf-8"))
     except Exception:
-        return True  # unreadable -> be safe, don't overwrite
-    return any(str(it.get("action", "")).strip() for it in d.get(key, []))
+        return True, p
+    return any(str(it.get("action", "")).strip() for it in d.get(key, [])), p
 
 
 def _render_review_md(code, disp, adopt):
-    L = [f"# M{code[1:] if code.startswith('M') else code} remediation — review sheet (judgement items)",
-         "" if False else "",
-         f"**Cluster:** {code} · **2026-06-02** · read-only rendering of the emitted spec(s) for review.",
+    L = [f"# {code} ({cluster_name(code)}) remediation — review sheet (judgement items)", "",
+         f"**Cluster:** {code} ({cluster_name(code)}) · **{DATE}** · read-only rendering of the emitted spec(s) for review.",
          "Full evaluable text is shown per item. Record decisions in the matching JSON "
          "(`action`/`evaluation`/`reason`), then set top-level `\"approved\": true`.", ""]
     def block(title, items, kind):
@@ -261,34 +323,113 @@ def emit_templates(code):
     out = []
     disp = enumerate_dispositions(code)
     if disp:
-        p = os.path.join(cdir(code), f"wa-cluster-{code}-pointer-dispositions-v1-20260602.json")
-        if _has_filled(p, "dispositions"):
-            print(f"   skip (has filled actions — not clobbering): {os.path.basename(p)}")
+        filled, existing = _filled_existing(code, DISPOSITIONS[0], "dispositions")
+        if filled:
+            print(f"   skip (has filled actions — not clobbering): {os.path.basename(existing)}")
+            out.append(existing)
         else:
-            json.dump({"cluster": code, "date": "2026-06-02", "approved": False,
+            p = os.path.join(cdir(code), f"wa-cluster-{code}-pointer-dispositions-v{next_ver(code,'pointer-dispositions')}-{DATE}.json")
+            json.dump({"cluster": code, "cluster_name": cluster_name(code), "date": DATE, "approved": False,
                        "method": "REVIEW REQUIRED: evaluate each item on its full _text (v3_0 §10.1 / v2_9 §18); set action (set_aside|resolve|fold|review) + evaluation + reason. Underscore-prefixed fields are read-only evidence. Set top-level \"approved\": true after researcher review to let the orchestrator apply.",
                        "dispositions": disp}, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
             print(f"   wrote {os.path.basename(p)} ({len(disp)} items, full text) — REQUIRES REVIEW")
-        out.append(p)
+            out.append(p)
     adopt = enumerate_adoptions(code)
     if adopt:
-        p = os.path.join(cdir(code), f"wa-cluster-{code}-pointer-adoption-v1-20260602.json")
-        if _has_filled(p, "adoptions"):
-            print(f"   skip (has filled actions — not clobbering): {os.path.basename(p)}")
+        filled, existing = _filled_existing(code, ADOPTION[0], "adoptions")
+        if filled:
+            print(f"   skip (has filled actions — not clobbering): {os.path.basename(existing)}")
+            out.append(existing)
         else:
-            json.dump({"cluster": code, "date": "2026-06-02", "approved": False,
+            p = os.path.join(cdir(code), f"wa-cluster-{code}-pointer-adoption-v{next_ver(code,'pointer-adoption')}-{DATE}.json")
+            json.dump({"cluster": code, "cluster_name": cluster_name(code), "date": DATE, "approved": False,
                        "method": "REVIEW REQUIRED: for each pointer evaluate _text; set action (adopt|set_aside). adopt -> target_finding_id (existing) or new_finding_text; record reason. Underscore fields are read-only evidence. Applier _apply_pointer_adoption_v1 is TO BUILD.",
                        "adoptions": adopt}, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
             print(f"   wrote {os.path.basename(p)} ({len(adopt)} items, full text) — REQUIRES REVIEW + applier build")
-        out.append(p)
+            out.append(p)
     if disp or adopt:
-        mp = os.path.join(cdir(code), f"wa-cluster-{code}-remediation-review-v1-20260602.md")
+        mp = os.path.join(cdir(code), f"wa-cluster-{code}-remediation-review-v{next_ver(code,'remediation-review')}-{DATE}.md")
         open(mp, "w", encoding="utf-8").write(_render_review_md(code, disp, adopt))
         print(f"   wrote {os.path.basename(mp)} — readable review sheet (full text per item)")
         out.append(mp)
     if not out:
         print("   no judgement aspects require templates.")
     return out
+
+
+# --- evidence writers (robust + recoverable) --------------------------------
+def write_reports(code, mode, stage, base_v, base_R, re_R, steps, backup_path, next_action):
+    """Write the dated audit report, remediation log, and recovery-state JSON to the cluster folder."""
+    name = cluster_name(code)
+    os.makedirs(cdir(code), exist_ok=True)
+    v = next_ver(code, "remediation-log")
+
+    # 1. audit report (baseline + re-audit if present)
+    av = next_ver(code, "audit")
+    ap = os.path.join(cdir(code), f"wa-cluster-{code}-audit-v{av}-{DATE}.md")
+    A = [f"# {code} ({name}) — audit · v{av} · {DATE}", "",
+         f"Generated by the remediation orchestrator ({TS}). Engine: `audit_cluster_v1_20260601.py`.", ""]
+    A += audit_md("BASELINE", base_v, base_R)
+    if re_R is not None:
+        A += audit_md("RE-AUDIT (after this run)", *re_R)
+    open(ap, "w", encoding="utf-8").write("\n".join(A) + "\n")
+
+    # 2. remediation log
+    bf = gate_fails(base_R)
+    plan_lines = []
+    for st in steps:
+        plan_lines.append(f"- **{st['key']}** (aspects {','.join(st['aspects'])}, {st['kind']}): {st['desc']}")
+        plan_lines.append(f"  - {step_status_line(code, st)}")
+    residuals = []
+    final_R = re_R[1] if re_R is not None else base_R
+    for st in steps:
+        ss = step_status_line(code, st)
+        if "STOP" in ss or "NOT BUILT" in ss or st["kind"] == "TODO":
+            residuals.append(f"- **{st['key']}** ({','.join(st['aspects'])}): {ss}")
+    L = [f"# {code} ({name}) — remediation log · v{v} · {DATE}", "",
+         f"**Run:** {TS} · **mode:** {mode}" + (f" · **stage:** {stage}" if stage else "") +
+         " · orchestrator `_remediate_cluster_v1_20260602.py` (v2 reporting).", "",
+         "## Recovery",
+         f"- **Pre-write backup:** `{backup_path}`" if backup_path else "- No write this run (dry) — no backup taken.",
+         f"- **Rollback:** copy that file back to `database/bible_research.db` to undo this run's writes." if backup_path else "",
+         "", "## Baseline audit", ""]
+    L += audit_md("BASELINE", base_v, base_R)
+    L += ["## Remedial plan (this baseline)", ""] + (plan_lines or ["- (no failing aspects)"]) + [""]
+    if EV["handlers"]:
+        L += ["## Handlers run this stage", ""]
+        for h in EV["handlers"]:
+            L += [f"#### `$ {h['cmd']}` → exit {h['returncode']}", "", "```", h["output"][:4000], "```", ""]
+    else:
+        L += ["## Handlers run this stage", "", "_None (dry-run / no applicable handler this stage)._", ""]
+    if re_R is not None:
+        L += ["## Re-audit (after this run)", ""] + audit_md("RE-AUDIT", *re_R)
+        flipped = []
+        bym = {r["id"]: r for r in base_R}
+        for r in re_R[1]:
+            b = bym.get(r["id"])
+            if b and b["status"] != r["status"]:
+                flipped.append(f"- {r['id']}: {b['status']} → {r['status']}")
+        L += ["### Aspects that changed", ""] + (flipped or ["- (none)"]) + [""]
+    L += ["## Residuals (STOP — require input/review/build)", ""] + (residuals or ["- (none — gate-clean or all handled)"]) + [""]
+    L += ["## Verdict & next", "",
+          f"- **GATE fails now:** {len(gate_fails(final_R))}",
+          f"- **Next action:** {next_action}", ""]
+    lp = os.path.join(cdir(code), f"wa-cluster-{code}-remediation-log-v{v}-{DATE}.md")
+    open(lp, "w", encoding="utf-8").write("\n".join(x for x in L if x is not None) + "\n")
+
+    # 3. machine-readable state
+    sp = os.path.join(cdir(code), f"wa-cluster-{code}-remediation-state-v{v}-{DATE}.json")
+    state = {"cluster": code, "cluster_name": name, "run_ts": TS, "date": DATE, "mode": mode, "stage": stage,
+             "baseline_verdict": base_v, "baseline_gate_fails": [r["id"] for r in bf],
+             "plan": [{"key": s["key"], "aspects": s["aspects"], "kind": s["kind"]} for s in steps],
+             "handlers": EV["handlers"],
+             "reaudit_verdict": (re_R[0] if re_R is not None else None),
+             "reaudit_gate_fails": ([r["id"] for r in gate_fails(re_R[1])] if re_R is not None else None),
+             "residuals": residuals, "backup_path": backup_path, "next_action": next_action}
+    json.dump(state, open(sp, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+
+    print(f"\n[evidence] wrote: {os.path.basename(ap)} · {os.path.basename(lp)} · {os.path.basename(sp)}")
+    return ap, lp, sp
 
 
 def main():
@@ -298,11 +439,13 @@ def main():
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--stage", choices=["mechanical", "specs", "close"], default=None)
     ap.add_argument("--emit-templates", action="store_true")
+    ap.add_argument("--no-report", action="store_true", help="skip writing the evidence files (rarely needed)")
     a = ap.parse_args()
     CODE = a.cluster
+    name = cluster_name(CODE)
 
     verdict, R = audit(CODE)
-    print(f"===== remediate {CODE} =====")
+    print(f"===== remediate {CODE} ({name}) =====")
     print_audit("BASELINE", verdict, R)
     steps = resolve_plan(R)
 
@@ -315,16 +458,25 @@ def main():
 
     if a.emit_templates:
         print("\n----- emitting review templates -----")
-        emit_templates(CODE)
+        emitted = emit_templates(CODE)
+        if not a.no_report:
+            write_reports(CODE, "emit-templates", None, None, R, None, steps, None,
+                          "review + fill the emitted spec(s); set \"approved\": true; re-run --apply --stage specs.")
         print("\nSTOP: review + fill the emitted spec(s); set \"approved\": true; then re-run with --apply --stage specs.")
         return
 
     if not a.apply:
-        print("\nDRY-RUN: no writes. Next: --emit-templates (scaffold judgement specs) or "
+        if not a.no_report:
+            write_reports(CODE, "dry-run", None, None, R, None, steps, None,
+                          "--emit-templates (scaffold judgement specs) or --apply --stage mechanical.")
+        print("\nDRY-RUN: no writes to the DB. Next: --emit-templates (scaffold judgement specs) or "
               "--apply --stage mechanical (run the extractor).")
         return
 
     # ---- staged apply (one stage, then STOP) ----
+    backup_path = backup_db(CODE, a.stage or "apply")
+    print(f"\n[backup] pre-write snapshot: {backup_path}")
+    re_R = None; next_action = ""
     if a.stage == "mechanical":
         print("\n----- STAGE mechanical -----")
         ran = False
@@ -333,7 +485,8 @@ def main():
                 run(st["cmd"]); ran = True
         if not ran:
             print("  (no mechanical handlers to run)")
-        v2, R2 = audit(CODE); print_audit("RE-AUDIT", v2, R2)
+        v2, R2 = audit(CODE); print_audit("RE-AUDIT", v2, R2); re_R = (v2, R2)
+        next_action = "--emit-templates for remaining judgement aspects, then review."
         print("\nSTOP: review mechanical result; then --emit-templates for remaining judgement aspects.")
     elif a.stage == "specs":
         print("\n----- STAGE specs (approved only) -----")
@@ -349,19 +502,29 @@ def main():
                 run(st["applier"](path)); applied = True
             else:
                 print(f"  [{st['key']}] STOP — spec {state} (need present + approved)")
-        if not applied:
-            print("  (no approved specs applied)")
+        if applied:
+            run(_cmd("_extract_finding_citations_v1_20260525.py", "--cluster", CODE, "--live"))
         else:
-            run(_cmd("_extract_finding_citations_v1_20260525.py", "--cluster", CODE, "--live"))  # re-derive citations post-extension
-        v2, R2 = audit(CODE); print_audit("RE-AUDIT", v2, R2)
+            print("  (no approved specs applied)")
+        v2, R2 = audit(CODE); print_audit("RE-AUDIT", v2, R2); re_R = (v2, R2)
+        next_action = ("--apply --stage close (gate-clean)" if not gate_fails(R2)
+                       else "address remaining residuals; re-emit/approve specs, then --apply --stage specs.")
         print("\nSTOP: review re-audit; if gate-clean, --apply --stage close.")
     elif a.stage == "close":
         gf = gate_fails(R)
         if gf:
-            print("\nREFUSE close: GATE fails remain:", ", ".join(r["id"] for r in gf)); return
-        run(_cmd("_close_cluster_analysis_v1_20260601.py", "--cluster", CODE, "--apply"))
+            print("\nREFUSE close: GATE fails remain:", ", ".join(r["id"] for r in gf))
+            next_action = "resolve remaining GATE fails before close."
+        else:
+            run(_cmd("_close_cluster_analysis_v1_20260601.py", "--cluster", CODE, "--apply"))
+            v2, R2 = audit(CODE); re_R = (v2, R2)
+            next_action = "cluster closed; proceed to next cluster."
     else:
         print("\n--apply requires --stage {mechanical|specs|close}.")
+        next_action = "re-run with --stage {mechanical|specs|close}."
+
+    if not a.no_report:
+        write_reports(CODE, "apply", a.stage, None, R, re_R, steps, backup_path, next_action)
 
 
 if __name__ == "__main__":
