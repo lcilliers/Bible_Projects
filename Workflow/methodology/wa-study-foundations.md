@@ -39,45 +39,72 @@ d) The end point
 
 The rest of this document is for re-establishing the foundations before any further analytical work.
 
-###############################
-
-
-
-
-
 ---
 
 ## a) The focus of the study
 
 *What, precisely, is this study trying to understand and produce?*
 
-**Current understanding (to be reviewed):**
-- The study examines **the inner life of mankind as disclosed in Scripture**, through the biblical
-  vocabulary for it — ~214 English anchor words, each mapped to its Hebrew (OT) and Greek (NT) terms
-  via Strong's, and grounded in the verses where those terms are used.
-- "Inner being" means the **entire** human inner life — moral, emotional, volitional, relational,
-  vertical and horizontal — with **no theological narrowing** (correction of 2026-05-17). Pure-human
-  inner states are fully in scope.
-- The vocabulary is organised into **clusters** (Fear, Anger, Grief, Joy, Love, Peace, Shame,
-  Righteousness, …), each a region of the inner life described by several **characteristics**.
-- **The distinctive aim is comprehensiveness of characteristics.** The project was born because earlier
-  work *understated* the characteristics of the inner being (§0) — so its defining purpose is to surface
-  and account for the **full range of characteristics**, especially those other treatments miss, in
-  service of the larger questions: *how the inner being works*, and ultimately *how the God–Man reality works*.
+**Current understanding (revised against the existing instructions — programme prose: the "purpose"
+and the nine methodological principles):**
+- **The definition (the "Soul Word Analysis Programme").** It takes the registry of inner-being words —
+  scope defined against a working definition of an inner-being characteristic — and subjects each to
+  systematic examination: *what the term means* across its Hebrew and Greek originals, *how it occurs*
+  across its verses, *what contexts* the occurrences share, and *what it contributes* to the larger
+  account of the inner person. Its outputs have **three orders**: (1) per-word records and written
+  studies; (2) cross-word **syntheses** — relationships and recurrent patterns across the inner-being
+  vocabulary; (3) a programme-wide, **bottom-up account of the human inner being as Scripture reveals
+  it**. So the object of study is not vocabulary *or* the inner life *or* their relationships — the
+  definition **encompasses all three** (resolves Q1; my zoning was the narrowing reflex).
+- **Inner being = the *entire* human inner life** — moral, emotional, volitional, relational, vertical
+  and horizontal — with **no theological narrowing** (2026-05-17). Pure-human inner states are in scope.
+- **The verse rules.** Every characteristic and finding is anchored in the verse where the term occurs;
+  verse context and meaning govern all analytics. A verse's meaning is itself interpretable and may read
+  differently from different perspectives — where so, that is **surfaced, never hidden** (Q3/Q4).
+- **Clusters and characteristics are scaffolding, not reality** (Q2). A disposable reading/analytic aid —
+  proven disposable across the study's iterations (registry → the C-class clusters → the current
+  M-clusters). A *cluster* conveniently groups characteristics and behaviour-aspects that share some
+  synergy; a *characteristic* simply names a behaviour. They carry no ontological claim — and per the
+  documented principle, **words are not forced into preconceived categories; a category that cannot be
+  grounded in verse evidence is not used.**
+- **Synthesis must be founded; guessing is not allowed** (Q4 + the principle *"every finding is
+  substantiated by data — no guessing, no assumptions, no made-up results"*). Synthesis without quoted
+  evidence is not synthesis but guessing; own opinion without cited evidence is not permitted at all.
+  Inconclusive or multiple readings are surfaced, not resolved by fiat.
+- **Two lenses: Scripture primary, science secondary.** The biblical reading is completed first; a
+  **light-touch** engagement with the human sciences follows, governed by the Science Framework /
+  science-topics policy and a per-cluster **science-extract pre-reading** (`Workflow/Sciences/wa-m{NN}-…-scienceextract`).
+- **Comprehensiveness is the objective, with an accepted margin of error** (Q5). The registry is built
+  as complete as the evidence permits and stays **open** to new concepts; the standing question is "is
+  this concept covered — is it in the register, is it covered in the terms?" 100% is neither expected
+  nor claimed (Scripture itself says we will not know everything).
 
 **Tensions / open questions for critical review:**
 1. Is the object of study the **vocabulary**, the **inner life itself**, or the **relationships**
    between inner-life states? These imply different analyses and different outputs.
+
+   QA - get the definition of the study from the existing instructions and place it in here as the answer - you will find it encompass all three.  Not sure why you want to break the study into these zones. maybe because you think there is a desire to narrow the scope.
+
 2. Clusters and characteristics are *our* organising lens. How much weight should they carry, given
    the subject resists partition? Are they scaffolding for reading, or claims about reality?
+
+   QA - these are pure scaffolding for reading and analytics. The study has proven through many iterations of changing the scaffolding (and there were others e.g. registry, the C class clusters).  Clusters is a convenient term to group characteristics and behaviour aspects that have some synergy.  Characteristics is about giving the behaviours a name.
+
 3. Is the aim **descriptive** (faithfully account for what Scripture shows of the inner life),
    **comparative** (how the biblical account relates to other frameworks of human nature), or both?
+
+   QA - again see the definition, I think it answers this.  To avoid operating in a vacuum - we anchored the description in a verse.  So the verse context and meaning rules.  It itself the verse context is interpretable, and may mean different things from different perspectives, this should be highlighted, not hidden away.  Part of the study is to perform a light touch of the concepts with human sciences.  There is a policy document that governs this light touch approach and a prereading for each cluster to aid this process.
+
 4. Where is the line between *what the text says* and *what we synthesise* — and how is that line kept
    honest so synthesis never overwrites the data?
+
+   QA - this is a really important question - and it is not black and white. each interpretation is open for debate, some more than others. where it is inconclusive or there are more than one interpretation, it must surface, not hidden way. synthesis must always be founded.  synthesis without evidence is not synthesis, it is guessing. Guessing is not allowed at all. Own opinions without quoted evidence is not allowed at all.
+
 5. Given the genesis (understated characteristics), is **completeness of characteristic coverage** the
    study's primary success criterion — and how would we ever know a region's characteristics are not
    *still* understated?
 
+   QA. Completeness is an objective.  It is also accepted that there will always be a margin of error. It will never be 100% complete (taking the bible as a yardstick - it clearly say we don't and never will know everything in this world).  The study is constantly asking - is this concept covered, is it included in the register, is it covered in the terms.  In the past new concepts have been added - and the registry is still open for new additions.
 ---
 
 ## b) The completeness of the raw data
