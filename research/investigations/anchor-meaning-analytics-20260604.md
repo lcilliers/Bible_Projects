@@ -148,6 +148,12 @@ first. This is a small, concrete example of the kind of meaning-layer hygiene th
 
 ## By keyword — top 40 tokens (phrases split into words, stopwords removed)
 
+> ⚠️ **Superseded / misleading — do not rely on this table.** Keywords are structured 2-word phrases
+> `[faculty] [predicate]` (91% are exactly two words); splitting them into single tokens pools one word
+> (e.g. `will` = 70) across dozens of *different* claims and destroys the signal. See the rebuild plan:
+> [`keyword-analytics-revision-plan-20260604.md`](keyword-analytics-revision-plan-20260604.md). Use the
+> *phrase* table above, not this token table, until the phrase-aware (HEAD / QUALIFIER) analytics land.
+
 | Token | Count |
 |---|---|
 | will | 70 |
