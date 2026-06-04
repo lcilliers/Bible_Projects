@@ -51,22 +51,112 @@ catalogue, plus the tier-debate logs and tier-definition drafts, are superseded 
 
 ---
 
-## Remaining Workflow subfolders — to process
+## Remaining Workflow subfolders — PROPOSED disposition (awaiting your markup)
 
-Processed one at a time; each gets a section above as it is done.
+> **Important finding:** these ten folders are **not** full of old versions — most hold a *single current
+> version* of each governing doc. What clutters them is **working documents** (design notes, session logs,
+> drafts, one-off analytics) sitting beside the authoritative references. So "archive the rest" is mostly a
+> judgement about *which working docs are spent* — your call, not mine to guess on governing material.
+>
+> **What I auto-executed** (unambiguous only): 4 superseded schema snapshots + a `.bak` (schema/), a `.zip`
+> + an `.html` dump (Sciences/). Everything below is **PROPOSED — nothing moved.** Mark each row
+> `keep` / `archive` / `relocate→…` and I'll sweep them in one pass.
 
-- [ ] `Instructions/`  (the `[current]` governing docs — keep highest version, archive prior)
-- [ ] `Global_rules/`
-- [ ] `Clusters/`
-- [ ] `Sciences/`
-- [ ] `Programme/`
-- [ ] `methodology/`
-- [ ] `reference/`
-- [ ] `registry/`
-- [ ] `schema/`
-- [ ] `Sessionlogs/`  (logs are historical — lighter touch; archive only if explicitly superseded)
+### `schema/`  — DONE (clear) + 2 decisions
+- **KEEP:** `create_tables.sql` · `database-schema-v3.17.0-20260427.json` (newest snapshot on disk).
+- **Archived (clear):** `database-schema-v3.10.0`, `-v3.11.0`, `-v3.14.0` (older snapshots) · `create_tables.sql.pre_DBR_bak`.
+- **DECISION:** `ref-migration-m32-doc-sweep-20260420.md`, `ref-migration-m33-m35-doc-sweep-20260420.md` — historical migration notes. Archive? `____`
+- **Note:** the newest on-disk snapshot is **3.17.0** but the live DB is **3.28.0** — all snapshots are stale. Want me to generate a fresh `database-schema-v3.28.0` snapshot? `____`
+
+### `Sciences/`  — DONE (clear junk) + proposals
+- **KEEP:** the **44** `wa-m{NN}-{word}-scienceextract-*` files (current per-cluster science pre-readings — actively required by Phase 9).
+- **Archived (clear):** `files sience.zip` · `framework-b-discussion-soul-brain-ai.html`.
+- **DECISION (working/log artefacts beside the references):**
+  | File | Proposed | Decision |
+  |---|---|---|
+  | `Framework-B-SessionLog-2026-03-07.md` | archive (old session log) | `____` |
+  | `wa-obslog-sci-extract-v1-20260513.md` | archive (obslog) | `____` |
+  | `wa-sessionlog-sciextract-v1_0-20260513.md` | archive (session log) | `____` |
+  | `wa-sessionlog-sciextract-final-v1_0-20260513.md` | archive (session log) | `____` |
+  | `wa-prose-draft-purp-scienceandbible-v1-20260421.md` | relocate→Programme prose, or archive | `____` |
+  | `wa-prose-draft-science-in-action-v4-20260513.md` | relocate→Programme prose, or archive | `____` |
+
+### `Instructions/`  — mostly KEEP (governing `[current]` docs)
+- **KEEP (authoritative current instructions/templates, per CLAUDE.md §10):** `wa-claudecode-instruction-v4_5` · `wa-patch-instruction-v2_11` · `wa-directive-instruction-v1_4` · `wa-dimensionreview-instruction-v3_3` · `wa-sessionb-analysis-output-v1_8` · `wa-sessionb-analysis-readiness-v1_10` · `wa-sessionb-cluster-instruction-v3_0` (active) · `wa-sessionc-cluster-overview-v1_0` · `wa-sessionc-cluster-ch1..ch7-instruction-v1_0` · `wa-sessionc-cluster-appendices-instruction-v1_0` · `wa-sessionc-cluster-style-method-v1_1` · `wa-cluster-publishing-instruction-v1_0` · `wa-versecontext-instruction-v3_10` · `wa-sessiond-orientation-v3_2` · `wa-sessiona-prose-instruction-v1_0` · `wa-global-readiness-sweep-instruction-v1_0` · `wa-global-sessionc-prose-rule-v1_1` · `wa-word-study-template-v2.1`.
+- **DECISION:**
+  | File | Note | Decision |
+  |---|---|---|
+  | `wa-database-schema-v3.14.0-20260421.json` | stray superseded schema snapshot (dup of the one archived in schema/) | archive `____` |
+  | `wa-programme-prose-extract-20260424.json` | extract, not an instruction; newer `-20260506` lives in `Programme/programme_prose/` | relocate/archive `____` |
+  | `wa-Session-A-Instruction-v8-final.docx` | superseded by the `audit_word` engine model + `wa-sessiona-prose-instruction`? or still the canonical Session A doc | `____` |
+  | `wa-audit-framework-design-v0_1-20260526.md` | early audit design (audit now central in foundations) — live or superseded? | `____` |
+  | `wa-v2_9-vs-v3_0-cycle-comparison-v1-20260527.md` | one-off comparison; v3_0 now active | archive `____` |
+  | `wa-v3-publication-pipeline-design-v1-20260527.md` | design that fed v3_0 | archive `____` |
+  | `wa-v3_0-final-review-v1-20260527.md` | review that led to v3_0 adoption | archive `____` |
+  | `wa-v3_0-phase-b-control-design-v1-20260527.md` | design that fed v3_0 | archive `____` |
+  | `proposals/WA-disposition-catalogue-cluster-centric-proposal-v1-20260516.md` | proposal — adopted or superseded? | `____` |
+
+### `Global_rules/`  — KEEP current
+- **KEEP:** `wa-global-rules-all-v2` · `wa-global-rules-startup-v2` · `wa-global-rules-extract-20260427` (json+md).
+- **DECISION:** `gr-obs-001-consolidation-draft-v3-20260426.md` — draft; consolidated into the rules yet? archive `____`
+
+### `reference/`  — KEEP current snapshots
+- **KEEP:** `wa-file-patterns-extract-20260420` (json+md) · `wa-label-patterns-extract-20260420` (json+md) · `wa-patch-types-extract-20260420` (json+md) · `wa-reference-snapshot-20260421.json`.
+- **DECISION:** `Phase2-Flag-Types-Reference.docx` — superseded by the evidence-flag redesign (M29–M31)? archive `____`
+
+### `registry/`  — KEEP current
+- **KEEP:** `wa-registry-management-guide-v5_10-20260418.md` (governing doc).
+- **DECISION (point-in-time snapshots — DB is the live source):**
+  | File | Decision |
+  |---|---|
+  | `inner-being-words-snapshot-20260425.md` | `____` |
+  | `wa-global-banked-registries-summary-20260420.md` | `____` |
+  | `wa-registry-overview-20260411.json` (stale; newer overviews exist under Programme/) | archive `____` |
+
+### `Clusters/`  — mixed reference + working analytics
+- **KEEP (reference):** `wa-cluster-catalogue-v1-20260505` (json+md) · `wa-cluster-overview-20260530.md` · `wa-cluster-science-topics-v1-20260513.md` · `wa-flag-cluster-classification-v1_0-20260601.json`.
+- **DECISION (working analytics / superseded):**
+  | File | Note | Decision |
+  |---|---|---|
+  | `wa-cluster-status-20260502.md` | superseded by `cluster-overview-20260530`? | archive `____` |
+  | `wa-cluster-observation-resolution-20260527.md` | working output | `____` |
+  | `wa-cross-cluster-gloss-analytics-v1-20260526.md` | working analytics | `____` |
+  | `wa-finding-citation-backfill-20260527.md` | one-off backfill log | archive `____` |
+  | `wa-vcg-analytics-v1-20260527.md` | working analytics | `____` |
+  | `wa-vcg-analytics-m05-deep-dive-v1-20260527.md` | working analytics | `____` |
+  | `wa-vcg-analytics-citation-correction-v1-20260527.md` | one-off correction log | archive `____` |
+
+### `Programme/`  (4 subfolders)
+- **`Corpus_prose/`** — KEEP `wa-corpus-prose-20260428.md` + `-toc-`. (current corpus prose)
+- **`programme_prose/`** — KEEP `wa-programme-prose-extract-20260506` (json+md). (newest)
+- **`Program_reports/`**
+  - **KEEP:** `wa-programme-open-items.md` (the single living register) · `wa-programme-cluster-audit-v3-20260603.md` + `wa-programme-cluster-summary-20260603.md` (latest audit) · `cost management 20260426.md`.
+  - **DECISION:**
+    | File | Note | Decision |
+    |---|---|---|
+    | `wa-programme-cluster-audit-v1` / `-v2-20260603.md` | superseded by v3 same day | archive `____` |
+    | `wa-programme-status-report-20260427.md` | superseded by newer state? | `____` |
+    | `programme-snapshot-20260425.md` | old snapshot | archive `____` |
+    | `wa-registry-overview-20260501.json` | old overview | archive `____` |
+    | `wa-database-integrity-check-20260427.json` | old check | archive `____` |
+    | `wa-global-database-*-20260419` (audit/changeplan/completion/execution/migration-M19-M28/scriptupdates — **6 files**) | spent DB-migration working logs | archive `____` |
+    | `wa-global-dimreview-flag-normalisation-20260419.md` · `wa-global-session5-unblock-sequence-20260419.md` | spent working logs | archive `____` |
+    | `WA-M15-journey-reflection-v2-20260513.docx` · `WA-lessons-learned-v1-20260513.docx` | keep as records? | `____` |
+  - **NOTE:** `Program_reports/` is per filing rules a *reports* folder; many of these are session/working logs that arguably belong in `archive/` or `Sessionlogs/`.
+- **`programme_analysis/`** — appears to be **entirely historical** (status reports 20260330–20260420, dimension/root-family extracts, dir-result analyses, `word_registry.json`/`.csv`). **Proposed: archive the whole folder's contents** except anything you still consult. Mark exceptions: `____`
+
+### `methodology/`  — large mix; KEEP the live foundations doc
+- **KEEP:** `wa-study-foundations.md` (active living doc) · the `wa-v3_0-refinement-{0..4}-*-20260529` set + `wa-v3_0-refinement-discussion-v1` (recent v3_0 refinement — confirm still live `____`) · `wa-cluster-remediation-orchestrator-design-v1-20260602` / `wa-cluster-remediation-playbook-v1-20260601` / `wa-cluster-audit-aspect-spec-v1-20260601` (recent — **but** remediation was closed down 2026-06-04; archive these? `____`).
+- **PROPOSED ARCHIVE (historical — Apr design notes, session logs, obslogs, per-word audit logs, superseded obs-question catalogues):** the `wa-023-compassion-*`, `wa-111/103/067-*`, `WA-obs-question-*-catalogue` (compassion/mercy/love/forgiveness — superseded by the DB catalogue), `wa-dim-*`, `wa-global-*` (Apr session logs/extracts), `WA-SessionLog-*`, `WA-SessionTranscript-*`, `WA-VerticalPass-*`, `*.docx` design notes, `flag-tables-extract-20260414.json`, `framework-b-research-posture-and-pathway.html`, `wa-sessionlog-v1-2026-04-13.md`, etc. — **~45 files.** I'll list each explicitly for your tick once you confirm the approach. Confirm bulk-archive of the April historical set? `____`
+
+### `Sessionlogs/`  — historical logs (lighter touch by rule)
+- Per filing rules §3.12, **logs are historical records and stay** unless explicitly superseded. This folder is ~80 files, almost all April global session logs + a few recent end-of-session logs.
+- **Proposed:** KEEP the recent end-of-session logs (`wa-sessionlog-2026{0513,0514,0517,0526,0528,0601,0604}-*`) and the term-anchor-reset log; **archive the dense April-2026 `wa-global-*` process-log set** (the rules/flags/sessionb redesign logs from 20260414–20260421) into `Sessionlogs/archive/`. Confirm? `____`
+- Also: `PATCH-20260416-GLOBAL-CATALOGUE-POP-V1.json` (a patch, belongs in `Sessions/Patches/archive/`) and two `.zip`/`files.zip` → archive `____`.
 
 ---
 
 ## Working notes
-- _2026-06-04:_ Register created. Tiers/ clear-archives executed; 3 decisions held for researcher markup.
+- _2026-06-04:_ Register created. **Tiers/** clear-archives executed (15 files); 3 decisions held.
+- _2026-06-04:_ Auto-executed unambiguous archives: **schema/** (3 old snapshots + 1 `.bak`), **Sciences/** (`.zip` + `.html`).
+- _2026-06-04:_ Full proposed disposition written for the remaining 8 folders — **nothing else moved**; awaiting researcher markup of the `____` cells. These folders are mostly single-version current docs cluttered by spent *working* documents; the archiving judgement is the researcher's.
