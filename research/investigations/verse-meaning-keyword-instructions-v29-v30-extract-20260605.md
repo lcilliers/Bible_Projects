@@ -252,3 +252,158 @@ and **whether to write the format rules into v3_0 §5.2** so the data is born an
 4. **Length spec** — reconcile v2_9 (~250 chars) vs v3_0 (~30–80 words).
 5. **Surface-contested + name-extra-content** (A, P2) — write the "do not compress for cluster-frame" rule
    into the Pass A rubric explicitly.
+
+---
+
+# DRAFT A — Replacement Phase A instruction for v3_0 §5 (FOR REVIEW — not yet applied)
+
+> Drafted 2026-06-05 by CC for researcher review. This is a **complete replacement** for v3_0 §5, folding in
+> the governing inputs above. **`【DECISION】`** callouts mark choices left open for you. Written against the
+> **live schema** (`analysis_note`, `is_relevant`, `set_aside_reason`, `keywords`); schema-name reconciliations
+> are flagged. Nothing here is applied to the v3_0 instruction yet.
+
+## §5. Phase A — Read + meaning  *(replacement draft)*
+
+**Owner:** CC (programmatic, via API). No AI chat session.
+
+**Purpose:** for every verse in the cluster's term set, decide whether it carries inner-being content and,
+where it does, record (a) a neutral, verse-specific **meaning** and (b) a set of atomic inner-being
+**keywords**. Pass A is the **foundational data layer** — its neutrality and soundness govern everything
+downstream (foundations §c; the meaning rules all analytics).
+
+**Single CC operation, two passes wrapped together.** No inherited structure (group/VCG/sub-group/anchor
+labels) is visible to the model at any point in Phase A (contamination guard).
+
+### §5.1 A.1 — Relevance review (UT)
+
+For each verse-record in the cluster's term set, classify the term-in-this-verse:
+
+- **IB** — the verse evidences inner-being content (any inner-being state — moral, emotional, volitional,
+  relational, sensory, material, illicit, vertical *or* horizontal). → `is_relevant = 1`.
+- **set-aside** — the term here carries no inner-being content. → `is_relevant = 0` with a
+  `set_aside_reason ∈ {no_inner_being | physical_only | spatial_only | unclear}` (the brief-classifier enum;
+  `wrong_face` dropped).
+
+**Inclusion bar (binding — `feedback_inner_being_full_scope`, v2_9 §2.8):** the test is *"is an inner-being
+state evidenced in this verse?"* — **never** *"is it the right kind / does it have a spiritual link?"*. No
+theological narrowing. Pure-human content is in scope.
+
+**Set-aside is not a dismissal (`feedback_setaside_verses_inform_word_meaning`):** write `set_aside_reason`
+as a short **evidence-based, verse-specific** note on what the term *does* mean here (it contributes to the
+term's semantic record), not a curt label.
+
+> 【DECISION】 **Class storage.** v3_0 prose names a `verse_context.ut_class` column with values
+> `{IB, CONTEXTUAL, OUT}`, but **the live schema has no `ut_class`** — relevance is `is_relevant` (1/0) plus
+> the `set_aside_reason` enum. Choose: (i) keep the live mechanism (this draft), or (ii) add a `ut_class`
+> column and migrate. The audit (DRAFT B) is written to whichever you pick.
+
+### §5.2 A.2 — Pass A meaning + keywords
+
+For each `is_relevant = 1` verse, one API call writes two fields:
+
+**(1) Meaning → `verse_context.analysis_note`**  *(live column; v3_0 prose said `meaning_pass_a` — reconcile)*
+
+Rubric:
+- **One neutral, plain-English statement of what *this verse* says about the inner-being content the term
+  carries here** — the sense **in this verse's context**, not the term's whole lexical range
+  (Seven Principles 2: no *illegitimate totality transfer*; no etymologising).
+- **Name *all* the inner-being content evidenced — including content beyond the cluster's characteristic.**
+  Do **not** compress the meaning to the cluster frame (`feedback_two_governing_principles` P2). If the verse
+  also carries a secondary inner-being register or cross-cluster content, say so in the meaning.
+- **Where the verse's meaning is genuinely contested or carries more than one defensible reading, state the
+  readings — do not adjudicate** (Seven Principles 6–7; foundations §c "surface, never hide"). A reflexive
+  single label on a contested verse (e.g. tagging plainly temporal rescue as eschatological) is the failure
+  this rule exists to stop.
+- **No guessing.** Ground every claim in the verse text + the term's span (`wa_verse_records.target_word`) +
+  immediate context. If the inner-being content is thin, say so plainly rather than inflating it.
+- **No inherited-structure markers** (`[A]`, `[CLUSTER]`, VCG/sub-group codes) — sentinel-checked.
+
+> 【DECISION】 **Length.** v2_9 = "1–2 sentences, ~250 chars"; v3_0 = "~30–80 words". Proposed: **≤ ~60 words /
+> ≤ 2 sentences**, with a hard cap, and a *minimum* floor so terse one-word meanings are rejected. Set the
+> numbers.
+>
+> 【DECISION】 **Contestability marker.** Optionally carry a small structured signal on contested meanings
+> (e.g. a `contested` flag or a confidence tag) so the audit and analyst can find soft readings — vs keeping
+> it inside the prose only. Decide whether to add a column or keep prose-only.
+
+**(2) Keywords → `verse_context.keywords`** (JSON list)
+
+Rubric (format discipline from `feedback_keyword_discovery_interim_phase` + `feedback_phase2_passa_emits_keywords`,
+now written into the instruction):
+- **3–7 keywords** naming the inner-being **faculties/states** evidenced and what is predicated of them in
+  **this** verse (sense-in-context, not the term's whole range).
+- **One or two words each; space-separated when paired; NEVER hyphenated.** Lowercase.
+- **Open-class only** (noun, verb, pronoun; adjective only where it names an inner state). **No particles,
+  no proper names, no whole sentences.**
+- **Atomic and compositional — reuse the SAME token across verses when the same operation is in view**, so
+  the cluster's keyword pool aggregates and clusters cleanly.
+
+> 【DECISION】 **Keyword structure & normalisation** (the parked question, `project_keyword_analytics_revision_parked`):
+> (i) Mandate the observed **`[faculty] [predicate]`** two-word shape (head = inner-being faculty/entity;
+> qualifier = predicate), or leave free-form 1–2 words? (ii) Enforce a **controlled vocabulary** at emission
+> (canonical faculty list + governed predicates), or normalise **post-hoc** in analytics? Recommended:
+> free-form-but-disciplined now + post-hoc normalisation; controlled vocabulary later. Your call.
+
+After A.2, CC builds the cluster keyword-analytics report (phrase / HEAD-axis / QUALIFIER-axis / co-occurrence)
+— `wa-cluster-{code}-keyword-analytics-v1-{date}.md`.
+
+### §5.3 Output
+- `verse_context` rows updated: `is_relevant`, `set_aside_reason` (set-aside rows), `analysis_note`, `keywords`.
+- `Sessions-v2/{CODE}-{Name}/wa-cluster-{code}-pass-a-summary-v1-{date}.md` — per-term verse counts, IB / set-aside
+  breakdown, sample meanings. *(Note new home: Sessions-v2, per filing §3.0 — not the old `Sessions/` tree.)*
+- `Sessions-v2/{CODE}-{Name}/wa-cluster-{code}-keyword-analytics-v1-{date}.md`.
+- Applied patch + raw API responses archived under the same cluster folder.
+
+### §5.4 Pre-check
+- `cluster.status ∈ {Not started, Data - In Progress}`.
+- Cluster has terms assigned (`wa_term_inventory` where `cluster_code = ?`).
+- Evidence signal: candidate verses identified via `wa_verse_records.term_id` (99.99% complete) + active
+  `verse_context`, **not** `mti_term_id` alone (`feedback_evidence_signal_completeness`).
+
+### §5.5 Post-check (hard gate before Phase B)
+- Every verse in the term set is classified (`is_relevant` set; set-aside rows have a valid `set_aside_reason`).
+- Every `is_relevant = 1` verse has **non-empty `analysis_note` AND non-empty `keywords`** (the gate; cf. the
+  M01 audit B1b failure: 0/945 keywords).
+- Meaning length within the agreed band; no group-label markers (sentinel).
+- Keyword well-formedness passes (DRAFT B, PA-3/PA-4).
+
+### §5.6 Status transition
+`Not started` / `Data - In Progress` → `Data - In Progress` (formal transition at end of Phase B).
+
+---
+
+# DRAFT B — Phase A audit section (FOR REVIEW — not yet in the script)
+
+> Drafted 2026-06-05 by CC. The checks the cluster auditor (`scripts/audit_cluster_v1_*`) would run for
+> **Phase A meaning + keyword quality**, concretised against DRAFT A and the aspect-spec **Group E**. Read-only.
+> **Not added to the script yet.** Severity: `GATE` (blocks Phase B) · `STRUCT` (structural) · `INFO`
+> (surfacing — lists candidates for human review, cannot be auto-verified).
+
+| ID | Check | DB read / rule | Sev |
+|----|-------|----------------|-----|
+| **PA-1** | Relevance complete | every verse in the term set has `is_relevant ∈ {0,1}` set | GATE |
+| **PA-2** | Meaning coverage | every `is_relevant=1` active row has non-empty `analysis_note` | GATE |
+| **PA-3** | Keyword coverage | every `is_relevant=1` active row has non-empty `keywords` | GATE |
+| **PA-4** | Keyword well-formedness | each `keywords` value parses as a JSON list of **3–7** items; each item is **1–2 words, lowercase, no hyphen, no digits, not a sentence** | STRUCT |
+| **PA-5** | Keyword normalisation duplicates | across the cluster, detect near-duplicate tokens differing only by hyphen/space/stem (`god-saving`≈`god saving`; `corrupt`/`corrupted`) | INFO |
+| **PA-6** | Meaning length band | `analysis_note` length within the agreed band (flag too-terse and over-long) | STRUCT |
+| **PA-7** | No inherited-structure markers | no `analysis_note` contains `[A]`/`[CLUSTER]`/VCG/sub-group codes (sentinel) | GATE |
+| **PA-8** | Set-aside reason quality | set-aside rows (`is_relevant=0`) have a valid enum `set_aside_reason` **and** it is not a terse one-word dismissal (TERSE-SETASIDE) | STRUCT |
+| **PA-9** | Interpretive-label corroboration *(=E3)* | list every meaning/keyword bearing a **high-risk qualifier** (`eschatological`, `corrupted`, `defiled`, `perverted`, …) with its verse, for review — cannot auto-verify against the text | INFO |
+| **PA-10** | Anchor sense-fitness *(=E4)* | list anchors whose `analysis_note` reads in a **different sense** than the cluster characterises (e.g. physical-rescue σῴζω in a salvation cluster) | INFO |
+| **PA-11** | Category-slip / scope *(=E5)* | list `is_relevant=1` verses whose meaning suggests a category import (e.g. demonic "unclean spirit" under ritual defilement; involuntary bodily impurity as inner-being) | INFO |
+| **PA-12** | Anchor meaning-coverage *(=E7)* | report % of anchors carrying meaning+keywords, per cluster (complements PA-2/PA-3 which gate `is_relevant`, not anchors specifically) | INFO |
+| **PA-13** | Self-limiting meanings preserved *(=E8 guard)* | do NOT flag meanings that correctly decline inner-being content; ensure PA-9/10/11 don't push toward over-reading | guard |
+
+**Implementation notes (for when approved):**
+- PA-1/2/3/7 are mechanical and gate Phase B — they extend the existing B1a/B1b.
+- PA-4/5/6/8 are mechanical structural checks (string/JSON rules) — cheap to implement.
+- **PA-9/10/11 are surfacing checks** — the auditor *lists candidates* (verse + meaning + keyword) for
+  researcher review; it does **not** rule. This is the verse-meaning-corroboration angle
+  (`project_next_action_audit_surface_verses`) made concrete and matches the sequencing
+  (`project_audit_sequencing_clusters_then_meaning`: structural first, these in the meaning-keyword audit phase).
+- The **high-risk qualifier list** (PA-9) is itself a maintained artefact — seed it from the QUALIFIER-axis
+  of the keyword analytics, growing it as new loaded labels are recognised (self-critical audit principle).
+
+> 【DECISION】 Which of PA-4/5/6/8 should **gate** vs merely report, and which PA-9/10/11 surfacing checks to
+> run in the structural pass vs defer entirely to the meaning-keyword audit phase. Your review decides.
