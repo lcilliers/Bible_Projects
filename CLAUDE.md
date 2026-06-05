@@ -30,7 +30,9 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 ├── database/
 │   ├── bible_research.db         ← SQLite (~165 MB, NOT in Git)
 │   └── file_manifest.json        ← Machine-readable file index
-├── Sessions/                     ← Session-staged inputs and outputs
+├── Sessions-v2/                  ← **per-cluster working tree (cluster-rework phase from 2026-06-05) — HOME for ALL new cluster output**
+│   └── {CODE}-{Name}/            ← one folder per cluster (M01-Fear … M46-Abundance, FLAG, T2); see README + file-organisation-rules §3.0
+├── Sessions/                     ← Session-staged inputs and outputs (now READ-ONLY cross-reference)
 │   ├── Patches/                  ← JSON patches (per-session-stage); applied → archive/patches/
 │   ├── Session_A/                ← STEP Extracts, terms, Word_Data, registry, Data_Prose
 │   ├── Session_B/                ← 12 numbered sub-stages (01_Verse_Context_Process_input … 12_Session_B_Status)

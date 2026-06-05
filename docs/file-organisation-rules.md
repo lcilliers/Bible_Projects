@@ -1,7 +1,7 @@
 # File Organisation Rules — Framework B
 
 > Governs where Claude Code and the researcher place files.
-> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`).
+> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`). **Updated 2026-06-05: §3.0 — `Sessions-v2/` per-cluster tree is the home for ALL new cluster output (cluster-rework phase); old `Sessions/` tree is read-only cross-reference.**
 > Read by Claude Code at session start via CLAUDE.md reference.
 
 ---
@@ -214,6 +214,20 @@ The naming patterns above are designed so that `ls` or file explorer sorting gro
 ---
 
 ## 3. Folder Rules
+
+### 3.0 `Sessions-v2/` — per-cluster working tree (cluster-rework phase, from 2026-06-05)
+
+The **authoritative home for ALL new cluster output.** From 2026-06-05 the programme reworks every
+cluster M01-upward — each made the best it can be (redone where needed) — and every artefact for a cluster
+is saved under its own folder here.
+
+| What | Where | Naming |
+|------|-------|--------|
+| All new per-cluster output (audits, analysis, briefs, extracts, logs, prose, patches) | `Sessions-v2/{CODE}-{Name}/` (e.g. `Sessions-v2/M01-Fear/`) | `wa-cluster-{CODE}-{kind}-v{n}-{YYYYMMDD}.{ext}` (lowercase prefix, CAPS code) |
+
+- **Folders:** one per cluster, `{CODE}-{Name}` (CAPS code + DB short-name), 48 in total (46 M-clusters incl. the M10b/M10c splits, plus `FLAG-Flag` and `T2-Supplementary`). See `Sessions-v2/README.md`.
+- **The old `Sessions/` tree (incl. `Sessions/Session_Clusters/{CODE}/`, `Session_A…D/`) stays intact and is READ-ONLY cross-reference** — do **not** write new cluster output there.
+- The **database remains the single authoritative record of findings** regardless of folder.
 
 ### 3.1 `data/exports/`
 
