@@ -347,6 +347,28 @@ now written into the instruction):
 After A.2, CC builds the cluster keyword-analytics report (phrase / HEAD-axis / QUALIFIER-axis / co-occurrence)
 — `wa-cluster-{code}-keyword-analytics-v1-{date}.md`.
 
+### §5.2a Span pairing — sibling spans are never silently ignored  *(binding; researcher direction 2026-06-05)*
+
+A verse usually carries **multiple spans** (term occurrences); the meaning is of the **target span**, but the
+siblings must be handled explicitly — never silently dropped. Pass A sees the **full verse + all sibling
+spans**, each classified **T1** (another named cluster — a characteristic), **T2** (supplementary —
+recipient/effect/modifier/particle), or **FLAG** (pending). (`feedback_span_pairing_and_reciprocal_findings`,
+`feedback_t1_vs_t2_ontology`.)
+
+- **T2 siblings are paired into the meaning — explicitly.** A T2 span *expands the definition* of the target
+  span (its object / trigger / locus / qualifier — e.g. fear's object "the Most High", dread's locus "hand").
+  Take the verse's T2 spans into account and **name that expansion in the meaning**. T2 is not a second
+  faculty; it deepens the target characteristic's reading here.
+- **Multi-T1 verses — name the sibling characteristic, both ways.** When the verse also carries a span in
+  another named cluster:
+  - the **meaning AND the keywords** of the cluster under review **name the other T1 span** (the
+    co-occurring characteristic is visible — *do not compress it away*);
+  - *(Phase D consequence)* the **finding** built on this verse **mentions the other span**, and the pipeline
+    **auto-creates a candidate finding in the other cluster(s)** for their consideration (reciprocal
+    cross-cluster finding; the verse is **not moved**). Consistent with `feedback_route_dual_cluster_findings`.
+- **Forbidden:** silently ignoring any sibling span. Every sibling is paired-in (T2) or named +
+  reciprocally-seeded (T1).
+
 ### §5.3 Output
 - `verse_context` rows updated: `is_relevant`, `set_aside_reason` (set-aside rows), `analysis_note`, `keywords`.
 - `Sessions-v2/{CODE}-{Name}/wa-cluster-{code}-pass-a-summary-v1-{date}.md` — per-term verse counts, IB / set-aside
@@ -394,6 +416,9 @@ After A.2, CC builds the cluster keyword-analytics report (phrase / HEAD-axis / 
 | **PA-11** | Category-slip / scope *(=E5)* | list `is_relevant=1` verses whose meaning suggests a category import (e.g. demonic "unclean spirit" under ritual defilement; involuntary bodily impurity as inner-being) | INFO |
 | **PA-12** | Anchor meaning-coverage *(=E7)* | report % of anchors carrying meaning+keywords, per cluster (complements PA-2/PA-3 which gate `is_relevant`, not anchors specifically) | INFO |
 | **PA-13** | Self-limiting meanings preserved *(=E8 guard)* | do NOT flag meanings that correctly decline inner-being content; ensure PA-9/10/11 don't push toward over-reading | guard |
+| **PA-14** | T2 pairing present | for verses with a **T2** sibling span, the target `analysis_note` reflects the T2 expansion (object/trigger/locus) — flag T2 siblings absent from the meaning | INFO |
+| **PA-15** | Multi-T1 sibling named | for **multi-T1** verses, the target meaning **and** keywords name the other named-cluster span — flag any T1 sibling **silently ignored** | STRUCT |
+| **PA-16** | Reciprocal finding exists *(Phase D)* | for a multi-T1 verse cited by a cluster finding, a candidate finding exists in each sibling cluster — flag missing reciprocals | INFO |
 
 **Implementation notes (for when approved):**
 - PA-1/2/3/7 are mechanical and gate Phase B — they extend the existing B1a/B1b.

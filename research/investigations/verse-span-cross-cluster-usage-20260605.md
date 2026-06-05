@@ -128,3 +128,19 @@ check immediately), consider **Option 2** later if verse-level work proliferates
 - **DRAFT B audit** → add a surfacing check **PA-14 cross-cluster co-occurrence**: for each cluster verse,
   list the sibling spans and their cluster homes (from Option-1 view), so multi-belonging is visible and
   the analyst can confirm the target-span meaning didn't absorb a sibling's sense.
+
+## SETTLED — span-handling rule (researcher direction 2026-06-05)
+
+The open question ("should T2 siblings be fed into Pass A?") is **resolved: yes, and more.** The binding rule
+(`feedback_span_pairing_and_reciprocal_findings`; folded into DRAFT A §5.2a + DRAFT B PA-14/15/16):
+
+- **T2 siblings are paired into the target span's meaning explicitly** — they *expand its definition*
+  (object / trigger / locus / qualifier).
+- **Multi-T1 verses:** the cluster under review **names the other T1 span in its meaning AND keywords**; its
+  **finding mentions the other span**; and the **system auto-creates a candidate finding in each sibling
+  cluster** for their consideration (verse not moved — a finding in each cluster it touches).
+- **A sibling span is never silently ignored.**
+
+This makes the **T1/T2 classification of siblings load-bearing** at Pass A (and the Option-1 co-occurrence
+view the means to supply it) — promoting the recommendation for **Option 1** from "nice to have" to
+"required to operate the rule."
