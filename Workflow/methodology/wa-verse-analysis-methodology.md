@@ -1,6 +1,6 @@
 # Verse Analysis Methodology
 
-> **Living document · Doc version: 1 · 2026-06-05 · DRAFT for review.**
+> **Living document · Doc version: 2 · 2026-06-05 · DRAFT for review.**
 > **Purpose:** how a verse is analysed in this study — to produce its **meaning** and **keywords** (Pass A).
 > It combines a **simplified Seven Principles** (operational form of
 > `Workflow/methodology/Seven_Principles_of_Biblical_Interpretation.md`) with the **span-handling rules**.
@@ -28,8 +28,8 @@ The lens. Each principle becomes a question asked *of the span in its verse*.
 |---|-----------|--------------------------|
 | 1 | **Establish the text** | Is the wording of this span secure? (Usually yes — flag only a variant that *changes* the span's sense.) |
 | 2 | **Original language** | What does this term mean **in use here** — its sense in this grammar/syntax? Do **not** import the term's whole range (no etymologising, no totality transfer). |
-| 3 | **Historical context** | What situation / author / audience is this inner-being state arising in? |
-| 4 | **Literary context** | What does the **rest of the verse** (its other spans) do to this span's meaning? A span without its verse is a pretext. |
+| 3 | **Surroundings (context)** | What does the state relate to — its **source (from)** and **object (to)**? Across the relational field: **spirit beings** (Holy Spirit / other spirits — be specific) · **situational** (wars, storms, baptism, anointing) · **other creatures** (animals, humans) · **own inner being** · **own body** · **implied** (not named, but a from/to is evidently present). See Step 4. |
+| 4 | **Literary context (other spans)** | What do the verse's **other spans** do to this span — in **both directions** (what it *receives from* them and *gives to* them)? A span without its verse is a pretext. |
 | 5 | **Genre** | Is this poetry, narrative, law, apocalyptic? — it sets how literal vs figurative the inner-being language is. |
 | 6 | **Canonical / analogy of Scripture** | Where the span is **unclear**, what do the term's **other occurrences** and parallel passages clarify? Where the reading is **contested**, present the options. |
 | 7 | **Meant → means** | Record **what it meant** (the inner-being content evidenced here). *Significance/application is downstream — not Pass A.* |
@@ -48,12 +48,17 @@ gloss/lexical sense *as used here*, not its whole lexical range. This is the cor
 
 **Step 3 — Read the whole verse and pair the siblings.** [P4 + span rules] Read the full verse. Classify
 each **other span** as **T1** (another named cluster — a second characteristic), **T2** (supplementary —
-recipient / object / locus / modifier / particle), or **FLAG** (pending). Then (see §3):
+recipient / object / locus / modifier / particle), or **FLAG** (pending). Observe each sibling in **both
+directions** — what this span **receives from** it and **gives to** it. Then (see §3):
 - **pair the T2 siblings in** — they *expand* this span's meaning (its object, trigger, locus);
 - **name any T1 sibling** — the verse is cross-functional; the other characteristic is named, not ignored.
 
-**Step 4 — Place it: setting & genre.** [P3, P5] Let the historical occasion and the literary genre
-condition the reading (a poetic dread ≠ a legal "fear of the LORD" ≠ a narrative fright).
+**Step 4 — Place it: surroundings, setting & genre.** [P3, P5] Identify the state's **relational field —
+its source (from) and object (to)** — across the typology: **spirit beings** (Holy Spirit / other spirits —
+name which) · **situational** (wars, storms, baptism, anointing) · **other creatures** (animals, humans) ·
+**own inner being** · **own body** · **implied** (not named in the verse, but a from/to is evidently
+present). Then let the **historical occasion** and the **genre** condition the reading (a poetic dread ≠ a
+legal "fear of the LORD" ≠ a narrative fright).
 
 **Step 5 — Clarify the unclear; surface the contested.** [P6] If the span's meaning is **not settled from
 this verse alone**, clarify it from the **term's other occurrences** (where the sense is clearer) and
@@ -94,13 +99,20 @@ named + reciprocally-seeded (T1).
 
 For each **inner-being** span:
 
-- **Meaning** (`verse_context.analysis_note`): one neutral, plain-English statement of what *this span*
-  means here — span-focal, **naming paired T2 expansions and any T1 sibling**, no totality transfer, no
-  guessing, contested readings stated not resolved. *(Length band: ≤ ~60 words / ≤ 2 sentences — confirm.)*
-- **Keywords** (`verse_context.keywords`, JSON list): **3–7**, each **1–2 words, lowercase, never
-  hyphenated**, open-class, no particles/proper-names/sentences; **atomic and reused** across verses for the
-  same operation; include a keyword for a named T1 sibling. *(Keyword structure/normalisation — open
-  decision, `project_keyword_analytics_revision_parked`.)*
+- **Meaning** (`verse_context.analysis_note`): a neutral, plain-English statement of what *this span*
+  means here — span-focal, **naming paired T2 expansions and any T1 sibling**, the surroundings (from/to),
+  no totality transfer, no guessing, contested readings stated not resolved. **No length cap** (at least at
+  the outset) — record what the span needs; concision can come later.
+- **Keywords** (`verse_context.keywords`, JSON list) — **vital input to the next-layer grouping**, so make
+  them rich and disciplined. Each keyword **1–2 words, lowercase, never hyphenated**, open-class, no
+  particles/sentences; **atomic and reused** across verses for the same operation. The set **must include**:
+  - the **gloss of the span's own term**;
+  - the **gloss of *every* T1 sibling term** in the verse (not only this cluster's term);
+  - keywords that **capture the seven principles** as they bear on this verse — the sense-in-use (P2), the
+    surroundings/from-to (P3), the literary relations (P4), the genre note (P5), any clarifying/contested
+    signal (P6).
+  *(Keyword count is therefore not capped at 3–7; structure/normalisation remains an open decision —
+  `project_keyword_analytics_revision_parked`.)*
 
 For a span with **no** inner-being content:
 
@@ -123,6 +135,38 @@ Where Step 5 left something open: record the **clarifying verses** used, and/or 
 
 ---
 
+## 6. Processing in complexity passes (don't run ~80k verses through the full process)
+
+The full process is expensive and most verses don't need all of it. **Triage every verse into one of four
+complexity groups and submit each group to an appropriately-scaled process** — group the verses and run them
+by group, scaling effort to complexity:
+
+1. **Possible set-aside** — the span likely carries no inner-being content. Quick set-aside check (enum +
+   evidence reason); **no further action**.
+2. **Single span** — the verse's only programme span is this T1 (no siblings). **Simplified** process — no
+   multi-term analysis; meaning + keywords from the span in its verse.
+3. **T2 + T1** — the target T1 span plus T2 sibling(s), no other T1. **Get the T2 data, pair it in**, then
+   run the standard process.
+4. **Multi-T1** — two or more T1 spans. **The most complex** (full span-handling + reciprocal findings).
+   **Reuse over redesign:** check whether *this combination of terms* has been analysed before — if so, bring
+   the previous verse's meaning into focus and **compare/adapt**, rather than redesigning from scratch.
+
+---
+
+## 7. Open questions (to resolve)
+
+- **Tier overlay.** How do the **8 tiers** (T0–T7, the 189-question framework) overlay on verse analysis — is
+  there a correlation, and should the **tier dimensions be teased out at the meaning stage** too? Note the
+  apparent correlation already: the **Principle 3 surroundings / from-to** maps closely onto **T4 (Relational
+  Interfaces)**, and the spirit-being / own-body / own-inner-being typology onto **T2 (Constitutional
+  Location)** — so the meaning layer may already be carrying tier signal. Bears directly on the
+  meaning-centric direction (`project_meaning_centric_direction_emerging`).
+- **Keyword structure / normalisation** (`project_keyword_analytics_revision_parked`).
+- **Class storage / field names** — `is_relevant`+`set_aside_reason` vs a `ut_class`; `analysis_note` vs
+  `meaning_pass_a` (the v3 §5 reconciliations).
+
+---
+
 ## Sources
 - `Workflow/methodology/Seven_Principles_of_Biblical_Interpretation.md` (the full scholarly form).
 - `wa-study-foundations.md` §c (the analysis rules); the governing inputs collated in
@@ -130,3 +174,14 @@ Where Step 5 left something open: record the **clarifying verses** used, and/or 
 - `research/investigations/verse-span-cross-cluster-usage-20260605.md` (the span / T1-T2 evidence).
 - Memory: `feedback_span_pairing_and_reciprocal_findings`, `feedback_t1_vs_t2_ontology`,
   `feedback_inner_being_full_scope`, `feedback_two_governing_principles`, `feedback_brief_classifier_pass`.
+
+---
+
+## Changelog
+
+- **v2 (2026-06-05):** folded in researcher notes — Principle 3 expanded to the **surroundings typology +
+  from/to** (Step 4); Principle 4 to **both directions, receive + give** (Step 3); **no length cap**;
+  keyword spec now **includes the span's gloss + every T1 sibling's gloss + 7-principle capture** (vital for
+  grouping); added **§6 complexity passes** (4 groups + multi-T1 reuse) and **§7 open questions**
+  (tier overlay).
+- **v1 (2026-06-05):** initial build — simplified span-focal Seven Principles + span-handling rules.
