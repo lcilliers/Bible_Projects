@@ -80,3 +80,21 @@ affordable.
   read-actual-verses approach.
 - **Open question it raises:** if G-F ("punishment") is not an inner state, does it belong in M10 at all, or
   should the iniquity→punishment sense be its own (non-inner) treatment? A scope decision for the researcher.
+
+## RESOLVED (researcher, 2026-06-05) — G-F is the external pole
+
+See `feedback_external_pole_not_inner_state`. **Punishment is NOT an inner state** — it is the **external
+pole** (an imposed consequence; agent + location outside the person) of a relationship whose **inner pole**
+is conscience / shame / sorrow / repentance / felt guilt. Data confirms it precisely:
+
+- All **18 G-F verses are `H5771I` עָוֹן "iniquity: punishment"** — the external sense of *avon*. The DB
+  already splits the word: `H5771G` crime (162) · `H5771H` guilt (27, **inner**) · `H5771I` punishment (18,
+  **external**). The sub-group re-merged the external pole under "guilt as inner-being state" — the error.
+- **Disposition:** treat G-F as **external-pole — not inner-being core**; **cross-reference** to the inner
+  counterparts (conscience reg 26, shame reg 146, repentance reg 135, sorrow reg TBC — *154 is "stupor", not
+  sorrow*), rather than housing or silently dropping it.
+- **Watch the discipline/correction sub-family** (musar/yasar, paideia) — it **straddles** (external act,
+  inner formative telos) and is a boundary case, not a clean exclusion.
+
+So the read-actual-verses method not only caught the mis-scope — the researcher's external/inner-pole frame
+gives the **principled, reusable resolution** for every "border" consequence-word across the study.
