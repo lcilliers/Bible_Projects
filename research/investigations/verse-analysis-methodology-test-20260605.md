@@ -122,6 +122,52 @@ characteristics, two findings).
      audit, *not* for clustering.
    Folding both into one undifferentiated list looks like the "wrong direction" you sensed.
 
+## Verdicts (researcher grading, 2026-06-05) — and what they reveal
+
+All four CC analyses were graded. **All four were wrong, each in a different way** — and that *is* the finding.
+
+| Verse | Verdict | The error | Which §0 AI-bias it is |
+|---|---|---|---|
+| Deu 1:19 | **FAIL** | Set aside as physical. But *terrifying* **names an inner-being state** (terror); the wilderness is just its **cause/situation (from)**. In scope. | **Narrowing** — treating the grammatical object as making it non-inner |
+| Exo 1:17 | **PARTIAL** | Read as fear "controlling" conduct. But the reverence is **strengthening their resolve** (greater than Pharaoh's threat) — *not* negative, *not* controlling. | **Imposed framing** — defaulting to fear-as-constraint; "reasonable over correct" |
+| Exo 3:6 | **OPEN** | Stated a confident "reverent dread." But it is genuinely unsettled: court **custom** (not looking at a superior)? *frightened* vs *reverent*? | **False confidence** — failing to surface the open questions |
+| Lev 19:3 | **WRONG PAIRING** | Wove M30 obedience into M01's meaning/keywords. But the two spans **do not influence each other** — reverence and sabbath-keeping are independent; clouding M01 with the obedience part is an error. | **Forced structure** — pairing where there is none |
+
+**The four errors are exactly the §0 AI tendencies the foundations named** (narrowing, imposed framing,
+false confidence, forced order). So the test **empirically proved the gravest risk is real**: cold,
+per-verse, in-isolation Pass A reproduces those biases — confidently. The researcher's review caught every
+one, which is itself the foundations' predicted mitigation (researcher review) working.
+
+**The single remedy runs through all four:** the **term's wider use (its corpus)**.
+- Exo 1:17 — compare H3372's other uses to settle **valence**: is fear-of-God positive/negative,
+  controlling/strengthening? (Here: strengthening.)
+- Exo 3:6 — wider use to resolve **sense**: frightened vs reverence/respect; and the cultural custom.
+- Deu 1:19 — the term's range shows *terror* is an inner state regardless of its grammatical object.
+- Lev 19:3 — reading reverence across its corpus shows the obedience span is **independent**, so it
+  flows to M30, it does not cloud M01.
+
+**The span rule is refined by Lev 19:3:** weave a sibling into the target meaning/keywords **only if it
+influences the target span**. Independent siblings are **not silently ignored** — they **flow through to
+their own cluster** (reciprocal finding) — but they do **not cloud** the target. "Never ignore" ≠ "always
+weave in."
+
+## Where this gets us
+
+This is the pivot, not a dead end. Four cheap verses bought three conclusions:
+
+1. **Per-verse-in-isolation Pass A is unreliable** — it produces confident, biased readings (4/4). Reading a
+   verse cold is the problem.
+2. **The term's corpus is the unit that disambiguates** — valence, sense, and the influence test all resolve
+   only by reading the span against the term's *other occurrences*. This is the analogy of Scripture
+   (Principle 6) and the v2_9 "per-term meaning corpus", pulled forward **into the meaning stage**.
+3. **Open questions are first-class output** — where the corpus doesn't settle it (Exo 3:6), Pass A emits the
+   question, it does not invent an answer.
+
+→ **The process should be term-anchored, not verse-cold:** take a term, read its whole corpus together so
+each occurrence is calibrated against the term's range; emit per-verse meaning + open questions from that
+vantage; apply the influence test for siblings. This also reinforces the meaning-centric direction and is
+more efficient (one term, all its verses, read once).
+
 ## Rough extrapolation (~80k verses)
 
 At ~1 API call/verse (~$0.008) a single full pass is on the order of **~$650 + wall-time**, *before*
