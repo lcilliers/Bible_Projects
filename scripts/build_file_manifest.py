@@ -30,11 +30,16 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = PROJECT_ROOT / "database" / "file_manifest.json"
 
-# Directories to scan (relative to PROJECT_ROOT)
+# Directories to scan (relative to PROJECT_ROOT).
+# Updated 2026-06-05: added the post-restructure top-level homes (Workflow, Sessions-v2,
+# research) that the original list pre-dated. NOTE: `Sessions/` (~3.3k files) is deliberately
+# NOT scanned yet — pending researcher decision on indexing the full session tree.
 SCAN_DIRS = [
+    "Workflow",          # programme governance: instructions, methodology, schema, tiers, sciences, sessionlogs
+    "Sessions-v2",       # per-cluster working tree (cluster-rework phase)
+    "research",          # discovery + investigations + notes
     "data/imports",
     "data/exports",
-    "research/discovery",
     "data/schema",
     "archive",
     "outputs",
@@ -146,6 +151,12 @@ def extract_word(filename: str) -> str | None:
 def classify_category(rel_path: str) -> str:
     """Determine the top-level category from the relative path."""
     parts = rel_path.replace("\\", "/").lower()
+    if parts.startswith("sessions-v2"):
+        return "cluster"
+    if parts.startswith("workflow"):
+        return "workflow"
+    if parts.startswith("research/investigations"):
+        return "investigation"
     if parts.startswith("data/imports/wa/patches") or parts.startswith("archive/patches"):
         # Distinguish patches from directives
         if parts.endswith(".json"):
