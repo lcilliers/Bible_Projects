@@ -30,34 +30,59 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = PROJECT_ROOT / "database" / "file_manifest.json"
 
-# Directories to scan (relative to PROJECT_ROOT).
-# Updated 2026-06-05: added the post-restructure top-level homes (Workflow, Sessions-v2,
-# research) that the original list pre-dated. NOTE: `Sessions/` (~3.3k files) is deliberately
-# NOT scanned yet — pending researcher decision on indexing the full session tree.
-SCAN_DIRS = [
-    "Workflow",          # programme governance: instructions, methodology, schema, tiers, sciences, sessionlogs
-    "Sessions-v2",       # per-cluster working tree (cluster-rework phase)
-    "research",          # discovery + investigations + notes
-    "data/imports",
-    "data/exports",
-    "data/schema",
-    "archive",
-    "outputs",
-    "docs",
-    "Logs",
+# Manifest principle (2026-06-05, researcher direction): **every file in the study directory is
+# indexed** — the whole tree is scanned from PROJECT_ROOT, including archives and old reports, because
+# key information there may need retrieval. Only VCS/build/cache machinery is skipped.
+#
+# Each entry carries a `currency` signal (folder status in terms of currency/relevance) so live work
+# is distinguishable from cross-reference, historical, and archived material at a glance.
+
+# Directories to skip entirely (machinery, not study content)
+SKIP_DIRS = {
+    ".git", "__pycache__", "venv", ".venv", "env", "node_modules",
+    ".claude", ".idea", ".vscode", ".pytest_cache", ".mypy_cache", ".ruff_cache",
+}
+
+# File extensions to skip (compiled/transient junk). Everything else is indexed.
+EXCLUDE_EXTS = {".pyc", ".pyo", ".pyd", ".tmp", ".swp", ".lock"}
+
+# ---------------------------------------------------------------------------
+# Folder currency / relevance  (editable — adjust as folders change status)
+# ---------------------------------------------------------------------------
+# Evaluated top-to-bottom; first match wins. An `archive/` segment anywhere overrides to "archived".
+# Values:
+#   current        — live working area (use this)
+#   cross-reference— retained for reference only; do NOT write new work here (old Sessions/ tree)
+#   historical     — historical record (pre-restructure logs)
+#   backup         — database snapshots
+#   archived       — superseded but retained (any archive/ folder)
+#   other          — uncategorised
+CURRENCY_RULES = [
+    ("sessions-v2/",            "current"),
+    ("workflow/",               "current"),
+    ("research/",               "current"),
+    ("docs/",                   "current"),
+    ("outputs/",                "current"),
+    ("scripts/",                "current"),
+    ("engine/",                 "current"),
+    ("database/",               "current"),
+    ("data/",                   "current"),
+    ("sessions/session_clusters", "cross-reference"),
+    ("sessions/",               "cross-reference"),
+    ("logs/",                   "historical"),
+    ("backups/",                "backup"),
 ]
 
-# Directories to skip entirely
-SKIP_DIRS = {
-    ".git", "__pycache__", "venv", ".venv", "node_modules",
-    "backups", ".claude",
-}
 
-# File extensions to include
-INCLUDE_EXTS = {
-    ".md", ".json", ".csv", ".txt", ".docx", ".pdf", ".xlsx",
-    ".html", ".png", ".log", ".sql",
-}
+def compute_currency(rel_path: str) -> str:
+    """Folder status in terms of currency/relevance."""
+    p = rel_path.replace("\\", "/").lower()
+    if p.startswith("archive/") or "/archive/" in p:
+        return "archived"
+    for prefix, status in CURRENCY_RULES:
+        if p.startswith(prefix):
+            return status
+    return "other"
 
 # ---------------------------------------------------------------------------
 # Parsing helpers
@@ -157,6 +182,14 @@ def classify_category(rel_path: str) -> str:
         return "workflow"
     if parts.startswith("research/investigations"):
         return "investigation"
+    if parts.startswith("scripts/"):
+        return "script"
+    if parts.startswith("engine/"):
+        return "code"
+    if parts.startswith("sessions/"):
+        return "session"
+    if parts.startswith("backups/"):
+        return "backup"
     if parts.startswith("data/imports/wa/patches") or parts.startswith("archive/patches"):
         # Distinguish patches from directives
         if parts.endswith(".json"):
@@ -364,49 +397,49 @@ def classify_type(filename: str, category: str, rel_path: str) -> str:
 # ---------------------------------------------------------------------------
 
 def scan_project() -> list[dict]:
-    """Walk SCAN_DIRS and build manifest entries."""
+    """Walk the WHOLE project tree (every file is indexed) and build manifest entries."""
     entries = []
 
-    for scan_dir in SCAN_DIRS:
-        root_dir = PROJECT_ROOT / scan_dir
-        if not root_dir.exists():
-            continue
+    for dirpath, dirnames, filenames in os.walk(PROJECT_ROOT):
+        # Prune skipped machinery directories in place
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
 
-        for dirpath, dirnames, filenames in os.walk(root_dir):
-            # Prune skipped directories
-            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+        for fname in filenames:
+            fpath = Path(dirpath) / fname
+            ext = fpath.suffix.lower()
+            if ext in EXCLUDE_EXTS:
+                continue
 
-            for fname in filenames:
-                fpath = Path(dirpath) / fname
-                ext = fpath.suffix.lower()
-                if ext not in INCLUDE_EXTS:
-                    continue
-
-                rel = fpath.relative_to(PROJECT_ROOT).as_posix()
+            rel = fpath.relative_to(PROJECT_ROOT).as_posix()
+            try:
                 stat = fpath.stat()
+            except OSError:
+                continue
 
-                category = classify_category(rel)
-                file_type = classify_type(fname, category, rel)
-                is_archived = "/archive/" in rel.lower() or rel.lower().startswith("archive/")
+            category = classify_category(rel)
+            file_type = classify_type(fname, category, rel)
+            currency = compute_currency(rel)
+            is_archived = currency == "archived"
 
-                entry = {
-                    "path": rel,
-                    "category": category,
-                    "type": file_type,
-                    "registry": extract_registry(fname),
-                    "word": extract_word(fname),
-                    "cluster": extract_cluster(fname),
-                    "batch": extract_vcb_batch(fname),
-                    "version": extract_version(fname),
-                    "date": extract_date(fname),
-                    "ext": ext,
-                    "archived": is_archived,
-                    "size_bytes": stat.st_size,
-                    "modified": datetime.fromtimestamp(
-                        stat.st_mtime, tz=timezone.utc
-                    ).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                }
-                entries.append(entry)
+            entry = {
+                "path": rel,
+                "category": category,
+                "type": file_type,
+                "currency": currency,
+                "registry": extract_registry(fname),
+                "word": extract_word(fname),
+                "cluster": extract_cluster(fname),
+                "batch": extract_vcb_batch(fname),
+                "version": extract_version(fname),
+                "date": extract_date(fname),
+                "ext": ext,
+                "archived": is_archived,
+                "size_bytes": stat.st_size,
+                "modified": datetime.fromtimestamp(
+                    stat.st_mtime, tz=timezone.utc
+                ).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            }
+            entries.append(entry)
 
     # Sort by path for stable output
     entries.sort(key=lambda e: e["path"])
@@ -434,6 +467,9 @@ def search_manifest(entries: list[dict], query: str) -> list[dict]:
 
         if field == "type":
             return [e for e in entries if value in (e.get("type") or "").lower()]
+
+        if field == "currency":
+            return [e for e in entries if (e.get("currency") or "").lower() == value]
 
         if field == "category":
             return [e for e in entries if value in (e.get("category") or "").lower()]
@@ -531,9 +567,25 @@ def main():
     print("Scanning project tree...")
     entries = scan_project()
 
+    # Folder-currency summary (counts per status) + legend
+    currency_counts = {}
+    for e in entries:
+        currency_counts[e["currency"]] = currency_counts.get(e["currency"], 0) + 1
+
     manifest = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "generator": "scripts/build_file_manifest.py",
+        "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); "
+                     "VCS/build/cache machinery excluded.",
+        "currency_legend": {
+            "current": "live working area — use this",
+            "cross-reference": "retained for reference only; do not write new work here (old Sessions/ tree)",
+            "historical": "historical record (pre-restructure logs)",
+            "backup": "database snapshots",
+            "archived": "superseded but retained (any archive/ folder)",
+            "other": "uncategorised",
+        },
+        "currency_counts": currency_counts,
         "total_files": len(entries),
         "total_active": sum(1 for e in entries if not e["archived"]),
         "total_archived": sum(1 for e in entries if e["archived"]),

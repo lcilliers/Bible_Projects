@@ -456,7 +456,12 @@ Documents that are outdated but contain valuable content are archived, not delet
 
 ## 6. File Manifest
 
-The project maintains a machine-readable file manifest at `database/file_manifest.json`. This indexes every non-code file in the project (including archived files) with structured metadata.
+The project maintains a machine-readable file manifest at `database/file_manifest.json`.
+
+**Principle (2026-06-05, researcher direction): every file in the study directory is indexed** — the
+manifest scans the *whole tree* from the project root, including **archives, old reports and the
+cross-reference `Sessions/` tree**, because key information there may need retrieval. Only VCS/build/cache
+machinery (`.git`, `__pycache__`, venvs, IDE/cache dirs) and transient junk extensions are skipped.
 
 ### 6.1 Purpose
 
@@ -464,6 +469,8 @@ The project maintains a machine-readable file manifest at `database/file_manifes
 - **Stale file detection:** Identify superseded files that haven't been archived
 - **Cross-reference:** All files related to a registry, cluster, or batch
 - **Archive access:** Archived files are indexed and discoverable, not lost
+- **Currency signal:** Every entry carries a `currency` status (see §6.4) so live work is distinguishable
+  from cross-reference / historical / archived material — and searchable (`--search currency:current`).
 
 ### 6.2 Generation
 
@@ -491,8 +498,9 @@ Each entry contains:
 | Field | Description |
 |-------|-------------|
 | `path` | Relative path from project root |
-| `category` | Top-level category (import, export, patch, directive, report, investigation, log, doc, script, discovery) |
+| `category` | Top-level category (workflow, cluster, session, import, export, patch, directive, report, investigation, log, doc, script, code, discovery, other) |
 | `type` | Specific file type (observations, session-log, word-study, patch, extract, etc.) |
+| `currency` | **Folder status:** `current` (live — use this) · `cross-reference` (old `Sessions/`, reference only) · `historical` (pre-restructure logs) · `backup` (DB snapshots) · `archived` (any `archive/` folder) · `other`. Rules are editable in `CURRENCY_RULES` in the builder. |
 | `registry` | Registry number if applicable (null otherwise) |
 | `word` | Word name if applicable |
 | `cluster` | Cluster code if applicable |
