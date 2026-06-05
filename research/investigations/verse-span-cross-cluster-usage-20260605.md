@@ -52,6 +52,37 @@ ORDER BY cluster;
   Paul's catalogue of a repentant church's inner state. But the verse is simultaneously the analytic
   property of seven other clusters via its other spans.
 
+## T1 (cross-functional) vs T2 (supplementary) co-occurrence — the key distinction
+
+Not every co-occurring span means the same thing. The cluster **bucket** encodes the ontology
+(`feedback_t1_vs_t2_ontology`: T1 = the characteristic *in operation*; T2 = recipient / effect / modifier):
+
+| Sibling span's home | Bucket | What it is | Implication for the target verse |
+|---|---|---|---|
+| **another M-cluster** | `NAMED` | **T1** — a second inner-being **characteristic in operation** | **cross-functional** — the verse genuinely evidences *two faculties*; real multi-belonging |
+| **T2** | `SUPPLEMENTARY` | a recipient / object / effect / locus / **particle** — *not a faculty* (948 terms: "lord", "Most High", "hand", "womb", "not", "behold") | **supplementary** — at most **expands / qualifies** the primary characteristic span (its object, trigger, bodily locus); often just grammatical scaffolding. **Never a second faculty.** |
+| **FLAG** | `REVIEW` | unallocated span, not yet classified | **pending** — could resolve to T1 or T2 once allocated |
+
+**So the researcher's expectation holds:** a **T2 co-occurrence expands the definition** of the associated
+characteristic span (or is mere scaffolding); a **T1 multi-span is cross-functional** (two characteristics).
+T2 carries **no** cross-cluster inner-being implication; only T1 does.
+
+**This corrects the headline.** The earlier "84% of M01 verses appear in another cluster" counted T2/FLAG.
+Split properly:
+
+- M01 verses: 834. **M01-exclusive: 136 (16%).**
+- **Genuinely cross-functional (≥1 other NAMED M-cluster / T1 span): 527 (63%).**
+- Supplementary/pending only (T2 or FLAG siblings, no other M-cluster): 171.
+
+So ~**63%** of Fear verses truly evidence a second faculty; the rest are Fear-with-supplementary-context or
+unallocated — still high, but the T1/T2 split is the difference between *cross-functional* and *expansive*.
+
+**Worked T2 examples (M01 fear span + its T2 siblings in the same verse):**
+- *Gen 3:10* — `afraid` (M01) + `sound` ([Obj.]), `naked` (T2): the sound is the **trigger**, nakedness the
+  **reason** — they *expand* the fear, they are not other faculties.
+- *Gen 9:2* — `fear`/`dread` (M01) + `hand` (T2): the **locus/agency** ("into your hand") qualifies the dread.
+- *Gen 15:1* — `Fear` (M01) + `not`, `great` (T2): a particle + the reassurance — scaffolding around "Fear not."
+
 ## What this means for method
 
 1. **Span is the focal point of meaning (Seven Principles augmentation).** The meaning is of the
