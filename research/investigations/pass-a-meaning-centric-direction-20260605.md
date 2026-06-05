@@ -3,6 +3,13 @@
 > **Emerging — 2026-06-05. Not settled.** Captures the researcher's reflection that the span-pairing rule,
 > the Seven-Principles augmentation, and cross-verse clarification together point at a **meaning-centric**
 > shape for the cluster pipeline. For review; nothing changed.
+>
+> **RESOLVED (2026-06-05, after the 4-verse reality test) — see `feedback_phase_a_light_meaning_at_vcg`:**
+> the direction is settled as a **phase inversion**, not "grouping derives from meaning". Deriving meaning
+> *early, per-verse* is the bias source (proved 4/4). So **Phase A becomes a light similarity-only pass**
+> (group verses); **the meaning is derived at the VCG stage by reading the actual grouped verses together**.
+> The deep `wa-verse-analysis-methodology.md` is **VCG-stage work**, not Phase A. The rest of this note is
+> retained as the reasoning that led there.
 
 ## The three observations (researcher, 2026-06-05)
 

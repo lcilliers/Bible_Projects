@@ -1,10 +1,18 @@
 # Verse Analysis Methodology
 
-> **Living document · Doc version: 2 · 2026-06-05 · DRAFT for review.**
-> **Purpose:** how a verse is analysed in this study — to produce its **meaning** and **keywords** (Pass A).
+> **Living document · Doc version: 3 · 2026-06-05 · DRAFT for review.**
+> **Purpose:** how a verse is analysed in this study — to produce its **meaning** and **keywords**.
 > It combines a **simplified Seven Principles** (operational form of
 > `Workflow/methodology/Seven_Principles_of_Biblical_Interpretation.md`) with the **span-handling rules**.
 > Governed by `wa-study-foundations.md` §c and `feedback_span_pairing_and_reciprocal_findings`.
+>
+> **⚠️ WHERE THIS APPLIES (2026-06-05 restructure — `feedback_phase_a_light_meaning_at_vcg`):** this deep
+> analysis is **VCG-stage work on a *group* of actual verses** — **not Phase A**. Lesson from the 4-verse
+> reality test: deriving a full meaning **per verse, early, in isolation** bakes in bias (proved 4/4).
+> So **Phase A is a *light* pass** that only identifies **similarities** to group verses; the meaning is
+> derived **here, at the VCG stage, by reading the actual grouped verses together** — comparing and
+> clarifying each against the others in context. *The data is the application of the term in the verse —
+> read against its similar verses — not a pre-derived per-verse meaning.*
 
 ---
 
@@ -179,6 +187,9 @@ by group, scaling effort to complexity:
 
 ## Changelog
 
+- **v3 (2026-06-05):** **repositioned** — this deep analysis is **VCG-stage work on grouped actual verses**,
+  not Phase A; Phase A is a light similarity-only pass (`feedback_phase_a_light_meaning_at_vcg`). Driven by
+  the 4-verse reality test (cold per-verse meaning was biased 4/4).
 - **v2 (2026-06-05):** folded in researcher notes — Principle 3 expanded to the **surroundings typology +
   from/to** (Step 4); Principle 4 to **both directions, receive + give** (Step 3); **no length cap**;
   keyword spec now **includes the span's gloss + every T1 sibling's gloss + 7-principle capture** (vital for
