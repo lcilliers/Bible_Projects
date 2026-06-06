@@ -1,6 +1,6 @@
 # Verse Analysis Methodology
 
-> **Living document · Doc version: 3 · 2026-06-05 · DRAFT for review.**
+> **Living document · Doc version: 4 · 2026-06-06 · DRAFT for review.**
 > **Purpose:** how a verse is analysed in this study — to produce its **meaning** and **keywords**.
 > It combines a **simplified Seven Principles** (operational form of
 > `Workflow/methodology/Seven_Principles_of_Biblical_Interpretation.md`) with the **span-handling rules**.
@@ -133,7 +133,23 @@ Where Step 5 left something open: record the **clarifying verses** used, and/or 
 
 ---
 
-## 5. What stays OUT of verse analysis
+## 5. Scope — the three poles (classify, don't absorb)
+
+A span's core sense sits at one of three poles; only the first is inner-being *core*
+(`feedback_external_pole_not_inner_state`):
+
+- **Inner-being core** — a disposition / state of the interior life. The real material.
+- **External pole** — an imposed action / consequence (punishment, judgment, vengeance, overthrow);
+  agent + location *outside* the person. **Cross-reference** to its inner counterpart (conscience, shame,
+  sorrow, repentance, felt guilt); do not house as inner.
+- **Physical pole** — bodily / cosmic decay or perishing (perishable flesh, wasting away, creation's
+  "corruption"). Not an inner state (= `physical_only` set-aside).
+
+A single English word ("corruption", *avon*) can span all three — **only the actual verse settles which.**
+The discipline/correction sub-family (*musar/yasar*, *paideia*) **straddles** (external act, inner formative
+telos) — a boundary case.
+
+## 5b. What stays OUT of verse analysis
 
 - **Significance / application** ("what it *means* for us today", Principle 7's second half) — downstream.
 - **Grouping** into sub-groups / VCGs — a *derived* view from the meaning+keyword layer, not authored here
@@ -187,6 +203,9 @@ by group, scaling effort to complexity:
 
 ## Changelog
 
+- **v4 (2026-06-06):** added **§5 the three scope poles** (inner core / external / physical) from the M10-H
+  test; this is the VCG-stage verse-meaning discipline referenced by the phase reshape
+  (`wa-cluster-phase-reshape-v3_1-proposal.md`).
 - **v3 (2026-06-05):** **repositioned** — this deep analysis is **VCG-stage work on grouped actual verses**,
   not Phase A; Phase A is a light similarity-only pass (`feedback_phase_a_light_meaning_at_vcg`). Driven by
   the 4-verse reality test (cold per-verse meaning was biased 4/4).
