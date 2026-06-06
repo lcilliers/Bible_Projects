@@ -288,7 +288,7 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 
 ## 13. Environment
 
-- Windows 11; working directory `C:\Bible_study_projects` (moved off Google Drive 2026-06-03 after a Drive sync event corrupted the DB + `.git`; see `outputs/markdown/wa-db-loss-incident-20260603.md`). Off-Drive backups to NAS `\\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups` (daily scheduled task; `scripts/backup_db_to_nas.py`). Old `G:\My Drive\Bible_study_projects` retained as a fallback only.
+- Windows 11; working directory `C:\Bible_study_projects` (moved off Google Drive 2026-06-03 after a Drive sync event corrupted the DB + `.git`; see `outputs/markdown/wa-db-loss-incident-20260603.md`). Off-Drive backups to NAS `\\LSUK-SYNRACK\HomeMedia\bible_study_projects\`: (a) **DB** → `db_backups\` (daily 18:00 task `BibleResearch DB Backup to NAS`; `scripts/backup_db_to_nas.py`); (b) **full folder + memory mirror** → `mirror\` + `claude-backup\` (daily 18:30 task `BibleResearch Full Mirror to NAS`; `scripts/mirror_to_nas.ps1`, robocopy /MIR). Project memory is also committed to git under `memory/` (mirror of the `.claude` memory). Old `G:\My Drive\Bible_study_projects` retained as a fallback only.
 - Python 3.14.0 · PowerShell 7+ (`$env:PYTHONUTF8="1"`).
 - STEP Bible local server at `http://localhost:8989`.
 - Secrets in `.env` (ZOTERO_API_KEY, ZOTERO_USER_ID, STEP_BASE_URL).
