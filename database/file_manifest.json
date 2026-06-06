@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T04:05:51Z",
+  "generated_at": "2026-06-06T05:39:02Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,12 +13,12 @@
   "currency_counts": {
     "other": 5,
     "historical": 30,
-    "current": 1644,
+    "current": 1665,
     "cross-reference": 3317,
     "archived": 2101
   },
-  "total_files": 7097,
-  "total_active": 4996,
+  "total_files": 7118,
+  "total_active": 5017,
   "total_archived": 2101,
   "files": [
     {
@@ -596,6 +596,38 @@
       "archived": false,
       "size_bytes": 0,
       "modified": "2026-06-05T03:48:55Z"
+    },
+    {
+      "path": "Sessions-v2/M01-Fear/wa-cluster-M01-audit-v1-20260605.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4614,
+      "modified": "2026-06-05T04:46:56Z"
+    },
+    {
+      "path": "Sessions-v2/M01-Fear/wa-cluster-M01-prose-extract-v1-20260605.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 509525,
+      "modified": "2026-06-05T04:46:45Z"
     },
     {
       "path": "Sessions-v2/M02-Anger/.gitkeep",
@@ -59878,6 +59910,22 @@
       "modified": "2026-06-04T18:03:49Z"
     },
     {
+      "path": "Workflow/Sessionlogs/wa-sessionlog-20260606-verse-meaning-reshape-v1.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-06",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6538,
+      "modified": "2026-06-06T05:38:51Z"
+    },
+    {
       "path": "Workflow/Sessionlogs/wa-sessionlog-term-anchor-reset-v1-20260504.md",
       "category": "workflow",
       "type": "other",
@@ -62102,6 +62150,22 @@
       "modified": "2026-06-04T18:02:26Z"
     },
     {
+      "path": "Workflow/methodology/wa-cluster-phase-reshape-v3_1-proposal.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3",
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9626,
+      "modified": "2026-06-06T04:49:13Z"
+    },
+    {
       "path": "Workflow/methodology/wa-cluster-readiness-gate-design.md",
       "category": "workflow",
       "type": "other",
@@ -62148,6 +62212,22 @@
       "archived": false,
       "size_bytes": 4906,
       "modified": "2026-06-01T18:39:08Z"
+    },
+    {
+      "path": "Workflow/methodology/wa-cluster-rollup-design.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 20169,
+      "modified": "2026-06-06T05:29:22Z"
     },
     {
       "path": "Workflow/methodology/wa-cost-review-session-log-v1-2026-04-26.md",
@@ -62708,6 +62788,22 @@
       "archived": false,
       "size_bytes": 25747,
       "modified": "2026-05-29T04:29:38Z"
+    },
+    {
+      "path": "Workflow/methodology/wa-verse-analysis-methodology.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 14322,
+      "modified": "2026-06-06T04:09:27Z"
     },
     {
       "path": "Workflow/methodology/wa-word-study-template-addendum-v1-2026-04-13.md",
@@ -91698,8 +91794,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 1163917,
-      "modified": "2026-06-05T04:00:00Z"
+      "size_bytes": 3213049,
+      "modified": "2026-06-05T04:05:51Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -91986,8 +92082,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 22703,
-      "modified": "2026-06-05T03:54:53Z"
+      "size_bytes": 23564,
+      "modified": "2026-06-05T04:06:31Z"
     },
     {
       "path": "docs/flag-tables-extract-joins-20260415.md",
@@ -100838,6 +100934,86 @@
       "modified": "2026-05-25T05:19:23Z"
     },
     {
+      "path": "research/investigations/m10-h-actual-verses-input-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 14635,
+      "modified": "2026-06-05T17:32:24Z"
+    },
+    {
+      "path": "research/investigations/m10-h-vcg-redo-test-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5208,
+      "modified": "2026-06-05T17:34:13Z"
+    },
+    {
+      "path": "research/investigations/m10-vcg-population-analytics-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3476,
+      "modified": "2026-06-05T15:23:39Z"
+    },
+    {
+      "path": "research/investigations/m10d-actual-verses-input-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 25760,
+      "modified": "2026-06-05T15:28:38Z"
+    },
+    {
+      "path": "research/investigations/m10d-vcg-redo-test-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6931,
+      "modified": "2026-06-05T17:30:05Z"
+    },
+    {
       "path": "research/investigations/m15-doc-comparison-v1-20260530.md",
       "category": "investigation",
       "type": "investigation",
@@ -101444,6 +101620,22 @@
       "archived": false,
       "size_bytes": 4905,
       "modified": "2026-03-19T13:44:24Z"
+    },
+    {
+      "path": "research/investigations/pass-a-meaning-centric-direction-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6557,
+      "modified": "2026-06-05T15:17:38Z"
     },
     {
       "path": "research/investigations/per-bucket-strongs-profile-20260503.md",
@@ -102854,6 +103046,22 @@
       "modified": "2026-04-25T15:08:07Z"
     },
     {
+      "path": "research/investigations/verse-analysis-methodology-test-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 12733,
+      "modified": "2026-06-05T15:03:23Z"
+    },
+    {
       "path": "research/investigations/verse-context-per-verse-walkthrough-20260503.md",
       "category": "investigation",
       "type": "investigation",
@@ -102934,6 +103142,22 @@
       "modified": "2026-05-03T13:29:48Z"
     },
     {
+      "path": "research/investigations/verse-meaning-keyword-instructions-v29-v30-extract-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "29",
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 31043,
+      "modified": "2026-06-05T11:31:50Z"
+    },
+    {
       "path": "research/investigations/verse-meaning-router-results-20260503.json",
       "category": "investigation",
       "type": "investigation",
@@ -102996,6 +103220,22 @@
       "archived": false,
       "size_bytes": 13802,
       "modified": "2026-05-03T15:06:42Z"
+    },
+    {
+      "path": "research/investigations/verse-span-cross-cluster-usage-20260605.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9925,
+      "modified": "2026-06-05T11:32:08Z"
     },
     {
       "path": "research/investigations/verse-term-registry-profile-20260503.md",
@@ -108294,6 +108534,22 @@
       "modified": "2026-06-04T17:21:07Z"
     },
     {
+      "path": "scripts/_exploratory_assemble_verse_packages_v1_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2432,
+      "modified": "2026-06-05T14:27:27Z"
+    },
+    {
       "path": "scripts/_exploratory_brief_meaning_router_v1_20260504.py",
       "category": "script",
       "type": "other",
@@ -108356,6 +108612,38 @@
       "archived": false,
       "size_bytes": 3422,
       "modified": "2026-06-04T17:32:20Z"
+    },
+    {
+      "path": "scripts/_exploratory_m10_vcg_population_analytics_v1_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 4173,
+      "modified": "2026-06-05T15:22:34Z"
+    },
+    {
+      "path": "scripts/_exploratory_m10d_actual_verses_v1_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2536,
+      "modified": "2026-06-05T15:28:31Z"
     },
     {
       "path": "scripts/_exploratory_meaning_only_cluster_v1_20260504.py",
@@ -108422,6 +108710,22 @@
       "modified": "2026-06-04T17:54:53Z"
     },
     {
+      "path": "scripts/_exploratory_select_complexity_group_verses_v1_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2322,
+      "modified": "2026-06-05T14:26:00Z"
+    },
+    {
       "path": "scripts/_exploratory_step_pos_extractor_v1_20260503.py",
       "category": "script",
       "type": "other",
@@ -108436,6 +108740,22 @@
       "archived": false,
       "size_bytes": 10529,
       "modified": "2026-05-03T12:25:57Z"
+    },
+    {
+      "path": "scripts/_exploratory_subgroup_actual_verses_v2_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2824,
+      "modified": "2026-06-05T17:32:16Z"
     },
     {
       "path": "scripts/_exploratory_term_4way_cluster_v1_20260504.py",
@@ -108772,6 +109092,22 @@
       "archived": false,
       "size_bytes": 17094,
       "modified": "2026-05-03T14:02:51Z"
+    },
+    {
+      "path": "scripts/_exploratory_verse_cross_cluster_usage_v1_20260605.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-05",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2971,
+      "modified": "2026-06-05T10:24:44Z"
     },
     {
       "path": "scripts/_exploratory_verse_gap_by_term_v1_20260503.py",
