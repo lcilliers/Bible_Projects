@@ -64,6 +64,14 @@ verse meaning here, late and grounded** — applying the verse-meaning disciplin
      each VCG gets an anchor. (Groups are derived from the reading, then human-confirmed.)
   5. **Derive the verse meaning** (`analysis_note`) **here**, from the actual-verses reading — including the
      paired T2 expansion and any named T1 sibling.
+- **Flags & pointers — surface here, adopt at findings.** The VCG process **surfaces** the cluster's
+  term-anchored pointers/flags for the verses it reads (`SD_POINTER`, `SB_FINDING`, `VERSE_EVIDENCE_*`
+  notes) — never silently ignored (no-orphans) — and **establishes the verse evidence that validates them.**
+  It does **not adopt** them: adoption into a finding (xref + close) or set-aside stays at the **findings
+  stage (Phase D)**, which is the output unit (audit A6/A7/D2 enforce it). Other flag types resolve
+  elsewhere: `PH2_*` data-quality in structural cleanup (Phase C); `BOUNDARY_DECISION_PENDING` in
+  constitution / sub-group design (upstream). *(Flags/pointers are term/registry-anchored via
+  `strongs_reference` + `cluster_link`, not verse-anchored.)*
 - **Complexity triage** (possible-set-aside / single-span / T2+T1 / multi-T1) scales the effort; multi-T1
   reuses a prior combination's meaning rather than redesigning.
 - **Outputs:** VCGs (from actual verses) · the derived meanings · scope-pole classifications + cross-refs ·
