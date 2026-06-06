@@ -1,6 +1,7 @@
 # The Roll-Up — verse relevance to cluster (data-flow & lifecycle design)
 
-> **Living document · Doc version: 1 · 2026-06-06 · DRAFT for review.** Articulates the **roll-up effect**
+> **Living document · Doc version: 2 · 2026-06-06 · DRAFT for review.** *(v2: completeness pass — open-items
+> section expanded from 5 to ~30, themed, after reviewing the session notes/foundations/memory.)* Articulates the **roll-up effect**
 > of the reshaped pipeline, from the first step (establishing verse relevance) up to the cluster, before it
 > is encapsulated in an instruction. Each level is described as **Source → Process → Outcome → Output**, and
 > every **auxiliary table** that is augmented / updated / disposed along the way is mapped. Governed by
@@ -205,12 +206,75 @@ Legend: **C** create · **E** enrich/refine · **U** update/firm · **R** refere
 
 ## Open items surfaced by this design (for the review)
 
-1. **VCG-level observation home** — add `group_id` to `cluster_observation`, or record L4 on
-   `verse_context_group`.
-2. **Open-questions home** — a `verse_context` column vs a `cluster_observation` type vs a flag.
-3. **Phase-A similarity signal** — atomic keywords vs lexical/root features (carried 〔open decision〕).
-4. **B.1 constitution / B.2 sub-group without an early meaning** — still to reshape; note that L5 now has
-   characteristics *emerging*, so "sub-group design" becomes "sub-group/characteristic emergence", not
-   up-front design.
-5. **Field-name reconciliations** — `analysis_note` vs `meaning_pass_a`; relevance via `is_relevant` +
-   `set_aside_reason` vs a `ut_class` column.
+*Expanded 2026-06-06 (completeness pass over the session notes, foundations and memory). Grouped by theme;
+priority in **bold** where it touches the gravest risk or a missing layer.*
+
+### A. Soundness & validation — the gravest risk runs *through* the roll-up
+- **A1 · Verse-meaning corroboration is not yet a roll-up step.** L3 has *clarify-by-corpus* + *open
+  questions*, but **no external corroboration** — anchoring each meaning to its **STEP lexical sense** and
+  to **several translations**, flagging where the AI reading diverges. This is the gravest data risk and the
+  queued audit-expansion (`project_next_action_audit_surface_verses`, foundations §b). *Where/how does
+  corroboration enter L3?*
+- **A2 · Where does the AUDIT sit in the roll-up?** The self-critical audit (aspect-spec Groups A–E + the new
+  PA-1…16) currently runs at end of Phase D before prose (`feedback_audit_before_prose`). Does it gate
+  **per level** (L3 / L5 / L7) or only at the end? The roll-up shows no audit gates.
+- **A3 · Researcher review / sign-off gates are missing.** The roll-up reads mechanical, but findings are
+  **drafts**, sifted iteratively, and a cluster is done only by **non-mechanical sign-off**
+  (foundations §c; `feedback_remediation_stop_points`). *Where are the human stop-points at each level?*
+- **A4 · Finding lifecycle (draft → reviewed → confirmed).** `cluster_finding.finding_status` exists, but the
+  **iterative sift** (foundations §c-Q1) isn't a step in the roll-up. Where is the sift loop?
+
+### B. Cross-cluster & whole-study — the roll-up stops one level too early
+- **B1 · There is no L8.** The roll-up ends at the single cluster (L6/L7), but §d says the end-state
+  **dissolves clusters into cross-cluster groupings**. A **whole-study synthesis level (L8)** is missing —
+  it is where reciprocal findings reconcile and the cross-cluster characteristics form.
+- **B2 · Interdependent clusters finalise together.** `feedback_interdependent_clusters_finalise_together` —
+  synergy-clusters must be signed off **together**, not in isolation; the roll-up treats one cluster alone.
+  *How do their roll-ups coordinate before sign-off?*
+- **B3 · The reciprocal-finding loop has no consumer.** L7 *seeds* a candidate finding in sibling cluster Y;
+  *when/how does Y consume it?* Cross-cluster ordering/dependency is unspecified.
+
+### C. The term-corpus tension — clarification crosses the roll-up's boundaries
+- **C1 · Clarify-by-corpus needs verses the roll-up unit doesn't hold.** L3 reads **this sub-group's**
+  verses, but `feedback_term_corpus_anchors_meaning` says valence/sense is settled by the term's **other
+  occurrences** — which may sit in other sub-groups, other clusters, or set-aside. *How is the term's full
+  corpus surfaced at L3 without re-importing the cross-cluster boundary problem?*
+- **C2 · A reuse / consistency store is implied but undefined.** Multi-T1 "**reuse if the combination was
+  seen before**" (verse-analysis methodology) needs a memo of prior term/combination meanings so L3 reuses
+  rather than redesigns. *Where does that consistency store live?*
+
+### D. Process, ownership & cost
+- **D1 · Owner per level is unspecified.** CC-API vs AI-chat vs researcher (`feedback_cc_only_pipeline_verdict`:
+  prose→chat, findings→CC; `feedback_chat_vs_api_for_classification`). Is the **L3 deep read** an AI-chat
+  analytical session or an API pass? This drives cost *and* quality.
+- **D2 · Cost model at scale.** L3 deep read × sub-groups × 48 clusters, net of the triage savings — needs a
+  rough budget (`feedback_methodology_cycle_cost`).
+- **D3 · The complexity triage as routing.** How do the 4 groups (set-aside / single / T2+T1 / multi-T1)
+  **route** verses through L1–L7? (set-aside stops at L1; single-span takes a light L3; multi-T1 the full path).
+
+### E. Bootstrapping, re-runs & the data model
+- **E1 · L3 population for *fresh* clusters.** A not-started cluster has **no sub-groups** yet — so what is
+  the L3 read-population (the light-similarity groups from L2)? The bootstrapping path differs from re-doing
+  an existing cluster.
+- **E2 · Re-run / idempotency mechanics.** Partial re-run of a level and how upper levels react — the
+  re-open rule is stated, the mechanics aren't.
+- **E3 · What is an *anchor* for now?** We read **all** verses, not just the anchor — so does the anchor
+  still privilege a verse, or is it only a citation seed for L7? Redefine or retire.
+- **E4 · Retire/clarify legacy `verse_context` fields** in the new model: `is_related`, `vertical_pass_flag`
+  (the vertical-pass experiment), and the `is_anchor` semantics (E3).
+- **E5 · BOUNDARY handling.** Where BOUNDARY terms/verses (undecided placement) sit in the roll-up
+  (constitution, upstream) — and how a BOUNDARY resolution re-enters.
+- **E6 (carried) · VCG-level observation home** — `group_id` on `cluster_observation` vs `verse_context_group`.
+- **E7 (carried) · Open-questions home** — column vs observation-type vs flag.
+- **E8 (carried) · Phase-A similarity signal** — atomic keywords vs lexical/root features.
+- **E9 (carried) · Field-name reconciliations** — `analysis_note` vs `meaning_pass_a`; `is_relevant`+
+  `set_aside_reason` vs `ut_class`.
+- **E10 (carried) · B.1 constitution / B.2 sub-group without an early meaning** — and the note that L5 now
+  has characteristics *emerging*, so "design" becomes "emergence".
+
+### F. Adjacent layers (scope boundary — name them so they aren't forgotten)
+- **F1 · The science layer.** Scripture primary, then a **light-touch** correlation with the per-cluster
+  science extract (`Workflow/Sciences/…scienceextract`). *Where does it enter — after L6, as a separate lens?*
+  (`feedback_phase9_science_extract_required`.)
+- **F2 · Findings → prose / publication.** The end products (essays, guides) render from findings (Session C
+  cluster publication) — downstream of L7; note the boundary so the roll-up's output contract is clear.
