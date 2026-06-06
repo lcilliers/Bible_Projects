@@ -81,6 +81,40 @@ verse meaning here, late and grounded** — applying the verse-meaning disciplin
 
 ---
 
+## Emergent aggregate questions — the structured fix for "general observation" drift
+
+**The past failure:** "cluster-level" / "general observation" was an **unstructured catch-all**. An
+observation that belongs to a *collection* (true of the whole, not of any single member) had **no specific
+home** — so it drifted, got mis-assigned, or was lost. This caused many of the historic misses.
+
+**The fix (researcher, 2026-06-06):** ask an explicit **emergent question at each aggregation rung**,
+anchored to that level's members, and record the answer as a **level-anchored observation**:
+
+1. **Verses → VCG:** *What does this collection of verses jointly say about the VCG that no single verse
+   captures?* (not every verse gives the complete picture). → recorded **on the VCG**.
+2. **VCGs → sub-group:** *What do these VCGs jointly say about the sub-group — how do its dimensions operate
+   together?* → recorded at **sub-group** level.
+3. **Sub-groups → cluster:** *What do these sub-groups jointly say about the cluster — how do they operate
+   together?* → recorded at **cluster** level.
+
+Each answer is an **emergent observation** — true of the collection, not reducible to the parts — and now
+has a **definite home** (no drift). The aggregate Q&A runs **up** the ladder as the VCG read completes and
+the structure firms.
+
+**The payoff — characteristics EMERGE.** The sub-group and cluster aggregate questions ("how do these
+operate together") are exactly the questions whose answers *are* the characteristics. So the characteristic
+structure **crystallises bottom-up from the data — discovered, not imposed** (resolves foundations §c-Q4 and
+the forced-structure risk). This is the mechanism by which `feedback_phase5_subgroups_represent_characteristics`
+actually happens, instead of being pre-designed and back-filled.
+
+**Recording surface:** `cluster_observation` already anchors at `cluster_code` / `characteristic_id` /
+`cluster_subgroup_id`, and its existing types (`CLUSTER_SYNTHESIS`, `INTER_RELATIONSHIP`, `INTEGRATION_NOTE`)
+are exactly these emergent observations — they were just **unstructured by level**. The ladder structures
+them.
+> 【DATA GAP】 `cluster_observation` has **no VCG (`group_id`) anchor** — a VCG-level emergent observation
+> needs either a `group_id` column on `cluster_observation` or a home on `verse_context_group`
+> (`context_description` / `notes`). Small schema decision to resolve.
+
 ## Knock-on & open items (for the review)
 
 1. **B.1 constitution debate + B.2 sub-group design** currently consume the **Pass A meaning corpus**
