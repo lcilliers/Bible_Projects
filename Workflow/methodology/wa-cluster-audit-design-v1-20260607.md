@@ -6,8 +6,10 @@
 > **PASS / FAIL**. Remediation is a *separate* act (pointed intervention or a re-run of the v3 instruction).
 > Governed by the v3 roll-up; informed by memory `feedback_audit_must_be_self_critical`,
 > `feedback_audit_before_prose`, `project_v25_audit_tool`. **Each level's audit is derived from that level's
-> rollup pattern** (Needs · Updates → FC · Does → SC · Gate → mop-up). **L1 check spec is complete** (L1
-> design done); L2–L7 specs are stubbed, to be filled as each level's design settles.
+> rollup pattern** (Needs · Updates → FC · Does → SC · Gate → mop-up). **The audit is the *precondition* for
+> the A3 researcher sign-off gate, not a substitute for it.** **L1 check spec is complete** (L1 design done);
+> L2–L8 specs are stubbed (resequenced spine: L2 sub-group formation; L3–L5 per sub-group; L6 cross-sub-group;
+> L7 cluster synthesis; L8 whole-study), to be filled as each level's design settles.
 
 ---
 
@@ -144,10 +146,13 @@ scriptable; only a small stratified sample needs a human/AI read.
 ## 6. Where the audit runs in the roll-up
 
 - **Per-level gate (preferred):** L1 is audited **before** its outputs roll up to L2 — a failing L1 must not
-  feed VCG formation. Likewise each level before the next. This is stricter than the v2_5 model
+  feed sub-group formation. Likewise each level before the next. This is stricter than the v2_5 model
   (`feedback_audit_before_prose`: one audit at end of Phase D) and catches errors at the level they occur.
+- **Audit → A3 sign-off:** a level's **audit PASS is the precondition** for its A3 researcher-review gate. The
+  L1→L2 rule (`wa-cluster-rollup-design.md` §A3): audit clean **and no residue** → researcher review → proceed;
+  audit clean **and residue** → L2 proceeds; audit **FAIL** → remediation (no gate).
 - The end-of-cluster audit becomes the **union** of the per-level passes (no separate late pass needed),
-  with the science (F1) and prose (F2) layers gated on a clean L1–L6.
+  with the science (F1) and prose (F2) layers gated on a clean L1–L7 + cluster sign-off.
 
 ## 7. Relationship to prior audit work
 
@@ -162,28 +167,52 @@ scriptable; only a small stratified sample needs a human/AI read.
 
 Each stub reads straight off the rollup level: **Needs** (precondition = prior level PASSED), **FC** (= its
 `Updates`), **SC** (= its `Does`), **Gate** (= its mop-up). To complete a stub, copy the level's `Updates`
-into FC checks and its `Does` into SC checks.
+into FC checks and its `Does` into SC checks. *(Resequenced spine: L2 = sub-group formation; L3–L5 iterate
+per sub-group; L6 cross-sub-group; L7 cluster synthesis; L8 whole-study.)*
 
-- **L2 (VCG formation + meaning)** · *Needs:* L1 PASS. *FC:* every relevant verse has `group_id`; every VCG
-  has ≥1 anchor and a `group_code`; residue verses have a rich `analysis_note`; residue keywords enriched.
-  *SC:* VCG membership coheres by sense; anchors are apt; open questions recorded; **L1 STEP meaning and L2
-  rich meaning consistent** (dual-meaning, the DIVERGENT surface). *Gate:* every relevant verse in exactly one
-  VCG; pole verses cross-referenced.
-- **L3 (VCG-emergent)** · *Needs:* L2 PASS. *FC:* every VCG has a `context_description` / VCG-emergent
-  observation. *SC:* the emergent statement is genuinely *more than the sum* of the verses. *Gate:* every VCG
-  has an emergent observation; **not duplicated** onto verses (no-overlap).
-- **L4 (sub-group + characteristic)** · *Needs:* L3 PASS. *FC:* every non-BOUNDARY sub-group →
-  `characteristic` + `characteristic_subgroup`; `core_description` firmed. *SC:* the characteristic genuinely
-  *emerges* (not pre-imposed); 1:1 sub-group↔characteristic unless volume forced a split. *Gate:* every VCG in
-  view; characteristic truth not restated on VCGs (no-overlap).
-- **L5 (cluster-emergent)** · *Needs:* L4 PASS. *FC:* `char_structure`/`description` firmed; cluster-level
-  `cluster_observation` present. *SC:* the cluster-emergent statement is supported by the sub-groups. *Gate:*
-  every sub-group accounted for.
-- **L6 (findings)** · *Needs:* L5 PASS. *FC:* every characteristic has `cluster_finding`(s); every anchor has
-  a `finding_citation`; every pointer `resolved`. *SC:* findings are evidenced (not ungrounded); reciprocal
-  findings seeded. *Gate:* every surfaced pointer resolved; no characteristic without findings.
-- **L7 (whole-study)** · *Needs:* the in-scope clusters PASS L6. cross-cluster reconciliation (depends on
-  B2/B3 mechanics).
+- **L2 (sub-group formation — provisional)** · *Needs (PRE-L2 completeness — whole cluster in focus):* L1
+  PASS **and** the full cluster inventory gathered — **terms · verses · flags · pointers · existing VCGs ·
+  previous findings**. *FC:* every relevant verse placed in a provisional `cluster_subgroup`;
+  `mti_term_subgroup` populated. *SC:* the partition is justified by the L1 similarity/keyword signal (not
+  arbitrary). *Gate (post-L2 completeness):* **every in-focus item allocated to a sub-group OR marked
+  cluster-level** (or held for routing/set-aside) — nothing unallocated.
+- **L3 (VCG formation + deep read, per sub-group)** · *Needs:* L2 PASS. *FC:* every sub-group verse has a
+  `group_id`; every VCG has ≥1 anchor and a `group_code`; rich `analysis_note` present. *SC:* VCG membership
+  coheres by sense; anchors apt; **L1 STEP meaning and L3 rich meaning consistent** (dual-meaning, the
+  DIVERGENT surface); reroute/set-aside decisions justified. *Gate:* every sub-group verse in exactly one VCG
+  (or rerouted/set-aside); pole verses cross-referenced.
+- **L4 (VCG-emergent, per sub-group)** · *Needs:* L3 PASS. *FC:* every VCG has a `context_description` /
+  VCG-emergent observation. *SC:* the emergent statement is genuinely *more than the sum* of the verses.
+  *Gate:* every VCG has an emergent observation; **not duplicated** onto verses (no-overlap).
+- **L5 (sub-group-emergent + characteristic + findings, per sub-group)** · *Needs:* L4 PASS + **prior findings
+  for this sub-group**. *FC:* every non-BOUNDARY sub-group → `characteristic` + `characteristic_subgroup`,
+  `core_description` firmed; **every finding has a `finding_type` (tier / cross-VCG…), a scope anchor naming
+  its cluster (+ sub-group/VCG as the type requires), a `finding_citation`, and `finding_status`** (=`draft`
+  at submission); **no finding without a cluster**; pointers routed here `resolved`; prior findings refined.
+  *SC:* the characteristic genuinely *emerges* (not pre-imposed); findings are evidenced and **level-anchored**
+  (the `finding_type` matches the level it emerged at); cross-cluster findings created in the right other
+  cluster. *Gate (A4 sub-group draft-review):* every VCG in view; characteristic assigned (or BOUNDARY);
+  every pointer / prior-finding evaluated; **findings submitted as `draft` for researcher review → `reviewed`
+  before the next sub-group starts.**
+- **L6 (cross-sub-group + closure)** · *Needs:* all sub-groups PASS L5. *FC:* cluster-level
+  `cluster_observation` present; cross-sub-group findings cited; remaining pointers `resolved`. *SC:* the
+  cluster-emergent statement is supported by the sub-groups; cross-sub-group findings genuinely cross-cut.
+  *Gate — VCG-completion cross-check (the closing completeness check):* **(1)** citations cover **all
+  verses** (every verse dealt with — cited / set-aside / rerouted); **(2)** every finding has **≥1 anchor**
+  AND every **anchor used ≥1** (each `is_anchor` verse in ≥1 `finding_citation`); **(3)** **no orphaned VCGs
+  or sub-groups** (every VCG in a sub-group + observed; every sub-group has a characteristic/cluster home);
+  **(4)** **zero orphans overall**.
+- **L7 (cluster synthesis)** · *Needs:* L6 PASS. *FC:* `char_structure`/`description`/`status` firmed;
+  cluster-level findings cited; **every finding typed + cluster-anchored**. *SC:* the synthesis is supported
+  by L6. *Gate (A4 cluster confirmation):* cluster account complete → **all findings submitted as a group →
+  `confirmed`** = the **cluster sign-off**.
+- **L8a (within-cluster cross-cluster finding generation, at cluster close)** · *Needs:* this cluster's
+  findings. *FC:* every finding that implies a cross-cluster finding **has** one (outbound completeness).
+  *SC:* the generated cross-cluster findings land in the correct other cluster. *Gate:* no implied
+  cross-cluster finding missing.
+- **L8b (study-level cross-cluster reconciliation, once all clusters done)** · *Needs:* **all** clusters PASS
+  L7 + L8a. one pass over all cluster-level findings → resolve additional cross-cluster findings / adjustments
+  (depends on B2/B3 mechanics).
 
 ## 9. Open questions
 
