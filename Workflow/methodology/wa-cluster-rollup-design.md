@@ -33,12 +33,12 @@ L5    Sub-group-emergent observation + CHARACTERISTIC + FINDINGS    [VCGs → su
       ▼   (after all sub-groups)
 L6  Cross-sub-group observation + ORPHAN-CHECK closure               [sub-groups → cluster]
       ▼
-L7  Cluster synthesis                                                [cluster]
+L7  Cluster synthesis + SCIENCE layer                                [cluster]
       │   → A4 gate: all findings submitted as a group → CONFIRMED (cluster sign-off)
       ▼
 L8a Cross-cluster finding generation (at each cluster's close)       [cluster → other clusters]
       ▼   (once ALL clusters complete)
-L8b Study-level cross-cluster reconciliation + SCIENCE layer         [clusters → study]
+L8b Study-level cross-cluster reconciliation                         [clusters → study]
 ```
 
 **Unit of work rises one rung at a time:** verse → (provisional sub-group) → VCG → sub-group → cluster →
@@ -56,19 +56,26 @@ whole-study → **L8a/L8b**.
 1. **Meaning is STEP-anchored by construction.** A verse's meaning is *built from* the term's STEP sense-set,
    so it **cannot diverge** from the lexicon. Corroboration is generation, not a later audit. Interpretation
    is spent only where the lexicon runs out.
-2. **Provisional structure, emergent characteristic.** L2 sub-groups are a *provisional* partition (from L1's
+2. **Never force-settle ambiguity — preserve it for deeper investigation.** L1 settles **only the
+   unambiguous** (single-sense terms, and stems that resolve to a single branch). **Anything that could carry
+   a double / alternative meaning is NOT decided at L1** — it is preserved as **residue for the L2 deep
+   read**. *Settling an ambiguous verse mechanically at the start would mean it is never reviewed for its
+   alternative sense — and the discovery (without forcing it) of **truly unique characteristic scenarios** is
+   this research's greatest value.* What is ambiguous is decided by **deeper investigation**, not early; the
+   decision turns on the **downstream risk of mis-interpretation**, which is a judgement, not a mechanism.
+3. **Provisional structure, emergent characteristic.** L2 sub-groups are a *provisional* partition (from L1's
    light signal) that *organises* the read — not a pre-imposed characteristic. The **characteristic emerges**
    at L5; the **boundary is refinable** through L3–L5.
-3. **No overlap — one home, findings level-anchored.** Every statement lives at the level where it *first
+4. **No overlap — one home, findings level-anchored.** Every statement lives at the level where it *first
    becomes true* and is not restated. Findings are submitted at the right level (most L5; some L6/L7-only).
-4. **Mop-up — every member consumed.** At each rung every object below is accounted for; the aggregate
+5. **Mop-up — every member consumed.** At each rung every object below is accounted for; the aggregate
    question forces all members into view; a gate enforces zero left behind. **L6 is the cluster-wide closing
    orphan-check.**
-5. **No orphans — every object reaches a home.** In-scope → its level. Out-of-scope is *named and linked*:
+6. **No orphans — every object reaches a home.** In-scope → its level. Out-of-scope is *named and linked*:
    external/physical pole → cross-reference; no-inner-being → set-aside (still feeds the term's semantic
    record); non-evidenced pointer → set-aside with reason; parked **T2** term → surfaced to a candidate
    cluster.
-6. **Refinement is forward enrichment; prior findings are inputs.** Lower objects are enriched additively.
+7. **Refinement is forward enrichment; prior findings are inputs.** Lower objects are enriched additively.
    **Existing findings from a previous analysis are pulled in for evaluation + refinement** (not discarded).
    A **material change re-opens** the affected level; identity-preserving enrichment does not.
 
@@ -79,7 +86,8 @@ whole-study → **L8a/L8b**.
 ### L1 · Verse establishment (mechanical)
 Replaces old Phase 1 **in full** — retains every Phase-1 step (relevance · **UT-verse classification** ·
 related-pass · light similarity/keyword grouping) and **adds** the A1 mechanical STEP-meaning. **No free AI
-meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated on M01+M02 (the prototype).
+meaning-derivation, and no force-select of ambiguity** (discipline 2). Owner: **CC** (fully mechanical;
+ambiguity deferred to L2). Validated on M01+M02 (the prototype).
 
 - **Needs:** `verse_context` spans · `wa_verse_records` (text, span, context, **STEP morphology**) · the
   term's **STEP sense-set** (`mti_terms.gloss` + `wa_term_inventory` + parsed `wa_meaning_sense`).
@@ -89,11 +97,12 @@ meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated
   2. **Attach** the STEP **sense-set + pole map + STEP-capture keywords**.
   3. **Stem-narrow** — the verse's morphology (binyan/stem) narrows the sense-set to the stem's branch.
      *(Hebrew only; Greek morphology is not sense-branching — Greek multi-sense stays for select/L2.)*
-  4. **Assign / select / flag** — one sense left → **assign**; within-stem multi-sense → **select** (light AI,
-     candidates given); metaphor / novel-combination → **flag residue** for L2.
-     **〔CONSULT〕** the L1-select vs L2-residue boundary: the prototype shows within-stem ambiguity (Qal
-     `ya.re` = fear / awe / reverence) is **~80% of stem-conditioned verses** and often needs verse context.
-     *Decision: does L1 do a light per-verse select on these, or defer them all to the L2 deep read?*
+  4. **Assign-if-unambiguous, else preserve as residue (discipline 2).** Exactly one sense left
+     (single-sense term, or stem resolved to a single branch) → **assign**. **Any residual ambiguity — a
+     within-stem multi-sense (Qal `ya.re` = fear / awe / reverence, ~80% of stem-conditioned verses),
+     metaphor, or potential double meaning — is NOT decided here**; it is **flagged residue for the L2 deep
+     read**. L1 does **no** force-select; preserving the alternative meaning is what allows the unique
+     characteristic scenarios to be discovered later.
 - **Updates:** `verse_context` **C/U** — `is_relevant`, `set_aside_reason`, UT-class / `is_related`,
   `step_meaning_applied` + `sense_id`, `sense_multiplicity`, `step_envelope_note`, `pole`,
   **`pole_is_metaphor`**, `keywords`, `residue_flag`; `analysis_note` **preserved** (dual meaning).
@@ -131,9 +140,9 @@ meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated
 ### L4 · VCG-emergent observation  *(per sub-group)*
 - **Needs:** each VCG + its verses' L3 meanings.
 - **Does:** the **aggregate question** — *what do this VCG's verses jointly say that no single verse captures?*
-- **Updates:** the VCG-emergent observation at the **VCG-group level** (keyed to `verse_context_group`).
-  **〔CONSULT〕 (E6)** *field choice: reuse `context_description`, or a new VCG-group observation field?* —
-  **not** `cluster_observation` (which is cluster-level).
+- **Updates:** the VCG-emergent observation on **`verse_context_group.context_description`** — **reused**
+  (E6): the field already holds per-VCG contextual-meaning descriptions (4155/4155 populated), so the
+  VCG-emergent use is **not in conflict**. **Not** `cluster_observation` (which is cluster-level).
 - **Output→next:** each VCG's emergent meaning. *(→ L5.)*
 - **Gate:** every VCG has an emergent observation; **no-overlap** (not duplicated onto verses).
 
@@ -141,9 +150,9 @@ meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated
 - **Needs:** the sub-group's VCGs + L4 emergent meanings; **prior findings for this sub-group**; pointers
   routed here.
 - **Does:** the **aggregate question** — *what do these VCGs jointly say about the sub-group?* The
-  **characteristic emerges**. **Submit findings (most land here):** answer the **tier questions**
-  **〔CONSULT〕** *(confirm the tier-question framework is retained as-is under V3_2)*; validate/adopt
-  pointers; **evaluate + refine prior findings**; create findings, incl. **into other clusters** (§4-c). Firm
+  **characteristic emerges**. **Submit findings (most land here):** answer the **tier questions** (the
+  tier-question framework is **retained as-is** under V3_2); validate/adopt pointers; **evaluate + refine
+  prior findings**; create findings, incl. **into other clusters** (§4-c). Firm
   / revise the sub-group (provisional → confirmed; may re-allocate).
 - **Updates:** `cluster_subgroup.core_description` **U**; **`characteristic`** **C/E** (emerges);
   **`characteristic_subgroup`** **C**; `cluster_observation` (sub-group) **C**; **`cluster_finding`** **C**
@@ -173,12 +182,15 @@ meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated
   4. **All BOUNDARY terms resolved (E5)** — placed / rerouted / set aside; the audit reveals any orphaned term.
   5. **Zero orphans overall** — every verse / flag / pointer / prior observation / prior finding accounted for.
 
-### L7 · Cluster synthesis
-- **Needs:** L6's cluster-emergent account + all findings + characteristics.
+### L7 · Cluster synthesis (+ science layer)
+- **Needs:** L6's cluster-emergent account + all findings + characteristics + the **per-cluster science
+  extract** (`Workflow/Sciences/…scienceextract`).
 - **Does:** firm the cluster's account; **submit cluster-level-only findings** (`finding_type`=intra-cluster);
-  consolidate the **characteristic structure**.
-- **Updates:** `cluster.description` / `.char_structure` **U**; **`cluster_finding`** **C** (intra-cluster);
-  `cluster.status` **U**.
+  consolidate the **characteristic structure**. **Science layer (F1):** correlate the cluster's findings with
+  the per-cluster science extract (Scripture-primary, **light-touch**) and **develop science-derived
+  findings** here.
+- **Updates:** `cluster.description` / `.char_structure` **U**; **`cluster_finding`** **C** (intra-cluster +
+  science-derived); `cluster.status` **U**.
 - **Output→next:** the firmed cluster account. *(→ L8a.)*
 - **Gate (+ A4 cluster confirmation):** cluster account complete; characteristic structure firmed; **all
   findings submitted as a group → `confirmed`** = the **cluster sign-off**.
@@ -192,15 +204,14 @@ meaning-derivation.** Owner: **CC** (with a light AI select sub-step). Validated
   publication input-folder generation** (F2).
 - **Gate:** no finding implying a cross-cluster finding is left without one.
 
-### L8b · Study-level cross-cluster reconciliation + science  *(once all clusters complete)*
+### L8b · Study-level cross-cluster reconciliation  *(once all clusters complete)*
 - **Needs:** **all clusters'** cluster-level findings + characteristics + every L8a's cross-cluster findings.
 - **Does:** a **single pass over all cluster-level findings** to **resolve additional cross-cluster findings
   / adjustments**; clusters **dissolve into cross-cluster groupings**; **interdependent clusters finalise
-  together (B2)**. **The science layer is introduced here (F1)** — correlate with the per-cluster science
-  extracts and **develop science-derived findings**. **〔CONSULT〕 (B3 / F1)** *the cross-cluster
-  ordering/dependency mechanics and the science-correlation method are the most open part of the design.*
-- **Updates:** cross-cluster grouping / finding structures **C**; finding adjustments **U**; science-derived
-  findings **C** 〔schema TBD — §10〕.
+  together (B2)**. *(Science is at L7, not here.)* **〔CONSULT〕 (B3)** *the cross-cluster ordering /
+  dependency mechanics are the one remaining open part of the design.*
+- **Updates:** cross-cluster grouping / finding structures **C**; finding adjustments **U** 〔schema TBD —
+  §10〕.
 - **Output→next:** the whole-study account → products (F2). *(Terminal.)*
 
 ---
@@ -308,8 +319,8 @@ Legend: **C** create · **E** enrich · **U** firm · **R** reference · — non
 - **Soft-delete only** (`delete_flagged=1`). Superseded VCGs / sub-groups / characteristics are soft-deleted;
   members **re-homed** in the same pass. A material verse-meaning change re-opens the affected level &
   **stales its findings**. Set-aside / external / physical-pole material is **retained and linked**.
-- **Retire `vertical_pass_flag`** (legacy "vertical pass" experiment, VCB-031) — **〔CONSULT〕** confirm
-  soft-retire. `is_related` + UT classification are **retained**.
+- **Retire `vertical_pass_flag`** (legacy "vertical pass" experiment, VCB-031; **confirmed unused — 0 of
+  43,722 `verse_context` rows set**). `is_related` + UT classification are **retained**.
 - **Ownership (D1):** run by **CC with researcher input**, **referring select operations to AI** (API or
   chat — whichever is best). L1 mechanical = CC; L1-select + L3–L5 deep read = AI; findings write = CC;
   gates = researcher.
@@ -323,7 +334,7 @@ New / changed fields the design requires. **〔CONSULT〕** items are design dec
 
 | Table | Field | Purpose | Status |
 |---|---|---|---|
-| `verse_context` | `step_meaning_applied` | the terse STEP-applied meaning (L1) | new **〔CONSULT R3/E9〕** new field vs re-home `analysis_note` |
+| `verse_context` | `step_meaning_applied` | the terse STEP-applied meaning (L1) | **new — a STEP-specific field** (separate from the AI `analysis_note`) |
 | `verse_context` | `sense_id` | which listed STEP sub-sense the verse realises | new |
 | `verse_context` | `sense_multiplicity` | single / multi indicator | new |
 | `verse_context` | `step_envelope_note` | the full STEP sense-set, for further analysis | new |
@@ -331,12 +342,12 @@ New / changed fields the design requires. **〔CONSULT〕** items are design dec
 | `verse_context` | `pole_is_metaphor` | flag heat/tremble/melt metaphor for judgement (R6) | new |
 | `verse_context` | `keywords` | STEP-capture keywords (exists; re-purpose + filters) | change |
 | `verse_context` | `residue_flag` | needs-advanced (within-stem / metaphor / novel) | new |
-| `verse_context` | UT-class field | the retained UT classification | **〔CONSULT E9〕** identify the live field/representation |
+| `verse_context` | (UT — no field) | UT = "Untouched" = **no `verse_context` row exists yet**; L1 creates the row (`is_relevant`/`set_aside_reason`) | no schema change |
 | `verse_context` | `vertical_pass_flag` | legacy | **retire** |
 | `wa_verse_records` | `morph_code` / `stem` | per-verse morphology (R7) | new |
 | `wa_meaning_sense` | `stem_label` / `is_stem_label` | populate the stem→branch map (R7) | populate (cols exist) |
 | `wa_meaning_sense` | homonym / biblical-sense filter | exclude `che.mah`-bottle, `ya.re`-shoot from the sense-set | new |
-| `verse_context_group` | VCG-emergent observation home | the L4 observation (E6) | **〔CONSULT E6〕** `context_description` vs new field |
+| `verse_context_group` | `context_description` | the L4 VCG-emergent observation (E6) | **reuse** (already holds VCG meaning; no conflict) |
 | `cluster_finding` | `finding_type` | tier / cross-VCG / cross-sub-group / intra-cluster / cross-cluster | new |
 | `cluster_finding` | scope anchors | cluster (required) + sub-group / VCG | new/confirm |
 | `cluster_finding` | `needs_research` | open-question findings (E7) | new |
@@ -360,24 +371,32 @@ New / changed fields the design requires. **〔CONSULT〕** items are design dec
   sub-groups. · **E6** VCG-emergent at VCG-group level. · **E7** open questions = `needs_research` findings.
   · **E8** similarity rolled into STEP.
 - **R1–R7** resolved via the M01+M02 L1 prototype (R2 detector + homonym filter; R4 keywords + noise filter;
-  R6 default-inner + `pole_is_metaphor`; R7 morph/stem partial resolver). · **F1** science at L8b. ·
-  **F2** publication input folder after L8a.
+  R6 default-inner + `pole_is_metaphor`; R7 morph/stem partial resolver). · **F1** science at **L7** (with the
+  cluster synthesis). · **F2** publication input folder after L8a.
+
+### Resolved 2026-06-07 (the §12 CONSULT pass)
+- **L1 ambiguity (discipline 2):** L1 **never force-selects** a double meaning — it assigns only the
+  unambiguous and **defers all ambiguity to the L2 deep read**, to protect the discovery of unique
+  characteristic scenarios. (Not a mechanical call — governed by downstream mis-interpretation risk.)
+- **Dual-meaning field:** `step_meaning_applied` is a **new STEP-specific field** (separate from
+  `analysis_note`).
+- **UT:** no field — UT = "Untouched" = no `verse_context` row yet; L1 creates it (no schema change).
+- **VCG-emergent home:** **reuse** `verse_context_group.context_description` (already holds VCG meaning; no
+  conflict).
+- **Tier questions:** **retained** as-is. · **`pole_is_metaphor`:** the prototype recommendation stands. ·
+  **`vertical_pass_flag`:** **retire** (0/43,722 used). · **Science:** at **L7**, not L8.
+- **R5 / existing M01 notes:** **M01 will be re-run completely under V3_2**; the prototype results + notes are
+  **set aside as investigatory work** (not production), so no piecemeal re-home is needed.
 
 ---
 
-## 12. Open questions for the researcher (the 〔CONSULT〕 collection)
+## 12. Open questions for the researcher
 
-1. **L1-select vs L2-residue boundary** (§3 L1) — does L1 do a light per-verse select on within-stem
-   multi-sense (~80% of stem-conditioned verses), or defer them all to the L2 deep read?
-2. **Dual-meaning field** (R3/E9, §10) — new `step_meaning_applied` field, or re-home `analysis_note`?
-3. **UT field** (E9, §10) — identify the live field/representation for the UT classification.
-4. **VCG-emergent observation home** (E6, §3 L4) — reuse `context_description` or a new VCG-group field?
-5. **Tier-question framework** (§3 L5) — confirm it is retained as-is under V3_2.
-6. **`pole_is_metaphor`** (R6, §8) — confirm the default-inner + metaphor-flag approach.
-7. **`vertical_pass_flag` retirement** (E4, §9) — confirm soft-retire.
-8. **L8b cross-cluster mechanics + science (B3 / F1)** (§3 L8b) — the ordering/dependency and
-   science-correlation method (the most open part).
-9. **R5** (§10) — treat existing M01 `analysis_note`s as the L3 rich layer (re-home) vs regenerate terse.
+The nine 〔CONSULT〕 items from the v4 draft are **resolved (2026-06-07)** — see §11 — **except one**:
 
-> **Process note:** with these settled, V3_2 (the instruction) is written from §1–§9, and the schema is
-> migrated per §10.
+1. **L8b cross-cluster ordering / dependency mechanics (B3)** (§3 L8b) — how the study-level pass orders and
+   resolves cross-cluster findings across all clusters. It is a study-level concern that only bites once
+   multiple clusters are complete, so it **does not block V3_2 or the per-cluster roll-up**.
+
+> **Process note:** V3_2 (the instruction) is now writable from §1–§9; the schema migrates per §10 (its one
+> open item is the L8b cross-cluster structures, pending B3).
