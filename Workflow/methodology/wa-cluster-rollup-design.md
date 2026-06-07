@@ -402,10 +402,12 @@ Legend: **C** create · **E** enrich · **U** firm · **R** reference · **X** d
   (L1), and the actual UT-field representation — to be settled with **field-level evidence** in the V3_2
   schema pass (dovetails with R3).
 
-**A1 reframe schema decisions (R1–R7).**
-**Resolution path: a prototyping round on M01** (build the L1 mechanical pipeline, read-only / output to
-files) settles **R2 / R4 / R6 / R7** empirically and informs **R3 / R5 / E9** — the proven A1 pattern —
-**before V3_2 is finalised**.
+**A1 reframe schema decisions (R1–R7) — RESOLVED via the M01+M02 L1 prototype**
+(`research/investigations/wa-l1-prototype-findings-and-r-decisions-v1-20260607.md`). R2 (detector + homonym
+filter), R4 (keywords + noise filter), R6 (default-inner + new **`pole_is_metaphor`** flag — don't
+auto-assign), R7 (capture `morph`/`stem`; a *partial* resolver — settles ~14–22% incl. stem-conditioned
+pole/voice splits, ~80% within-stem residue stays L2) — all settled empirically; **R3 / R5 / E9** informed
+(field list in the findings doc §7). **V3_2 may proceed.** Per-item record:
 - **R1** Confirm the mechanical-L1 reframe (Phase 1 = mechanical STEP-sense application). *(Built on
   throughout; confirm as settled.)*
 - **R2** How is a term mechanically classified **single- vs multi-sense**? (parsed-sense rows undercount;

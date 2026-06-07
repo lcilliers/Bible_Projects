@@ -72,13 +72,37 @@ external; (c) **everything else inner by default**, with **heat/tremble/melt fla
 candidates*** for a light judgement pass — **not** auto-assigned to physical. The metaphor cases are the
 residue, per-verse, at L2/L3 (the `mish.bar` lesson generalises).
 
-## 5. What still needs the morphology pass (R7)
+## 5. R7 — morphology: a PARTIAL mechanical resolver (~14–22% of stem-conditioned verses)
 
-The multi-sense terms classified above are largely **stem-conditioned** (the "N stems" terms). R7 —
-capturing per-verse morphology and narrowing by stem — is what tells us **how much of the 49%/64%
-multi-sense verse load resolves mechanically by stem**, leaving the true within-stem residue for L2. That is
-the next prototype pass (STEP morph for the multi-sense terms of both clusters), and it directly sizes the
-L2 analytical load.
+Ran per-verse STEP morphology for the stem-conditioned Hebrew terms (raw:
+`wa-l1-prototype-r7-morph-m01-m02-v1-20260607.md`). *(Methodology note: a `wa_term_inventory` join fan-out
+inflated the first run; fixed to one inventory row per term — the numbers below are deduplicated. The
+mechanical prototype in §1–4 was not affected.)*
+
+- **M01:** 10 stem-conditioned terms, 506 verb-occurrences, **116 (22%) stem-disambiguated** (moved off the
+  majority stem-branch).
+- **M02:** 7 terms, 227 occurrences, **33 (14%) stem-disambiguated**.
+
+**What the stem resolves — more than sub-senses:**
+- The **off-majority slice (~14–22%)** is settled cleanly by stem, and for several terms the stem resolves
+  the **pole** or **voice**, not just a shade of sense:
+  - **Pole:** `cha.tat` — Qal *"shattered, broken"* (**physical**) vs Niphal *"dismayed"* (**inner**):
+    morphology *resolves the pole split.*
+  - **Voice / causation:** `cha.rad` Qal *"tremble"* vs Hiphil *"drive in terror, rout an army"*; `ka.as`
+    Qal *"be vexed/angry"* (experience) vs Hiphil *"provoke to anger"* (cause it in another).
+- The **majority slice (~80%)** stays in the dominant stem, which often still spans sub-senses (Qal `ya.re`
+  = fear / awe / reverence) → the **within-stem residue** for L2 per-verse select.
+
+**It confirms the R6 metaphor finding:** the burning-anger terms (`cha.rah`) are **Qal-dominant** (the heat
+sits in the majority stem, *not* stem-separated) — so the "burning" is a **dead metaphor**, not a
+stem-conditioned physical pole. Where the physical pole is *real*, it **is** stem-conditioned (`cha.tat`
+Qal) and morphology catches it. So morphology is also an **R6 input**: a stem-separated physical branch =
+likely real pole; an un-separated heat/tremble term = metaphor candidate.
+
+**Conclusion:** morphology is a **valuable *partial* aid** — capture it (R7 schema: `morph_code`/`stem`),
+use it to (a) settle the off-majority slice, (b) resolve stem-conditioned **pole** and **voice** splits, and
+(c) feed R6. It does **not** remove the within-stem select residue (~80% of stem-conditioned verses), which
+stays the L2 analytical load.
 
 ## 6. Recommendations for the R-decisions (for V3_2)
 
@@ -108,8 +132,18 @@ L2 analytical load.
 
 ## Recommendation
 
-The mechanical L1 generalises across both clusters, but the prototype proves **pole (R6) is the part that
-resists pure mechanisation** (metaphor vs literal vs manifestation) and that the **multi-sense load is large
-and cluster-variable** — so L1 mechanises *meaning-anchoring* and *keywords* cleanly, while *pole* and
-*multi-sense selection* stay partly judgement. **Next:** run the R7 morphology pass on both clusters to size
-the stem-resolved fraction, then settle the V3_2 schema against §7. Hold V3_2 until R7 is in.
+The mechanical L1 **generalises across both clusters** and the R-series is now resolved enough to settle
+V3_2. The honest division of labour the prototype establishes:
+
+- **Mechanical at L1 (clean):** meaning-anchoring (corroboration-by-construction), STEP-capture keywords
+  (R4, with noise + homonym filters), single/multi detection (R2), morphology capture + stem-narrow (R7).
+- **Mechanical-but-partial:** the stem settles ~14–22% of stem-conditioned verses (off-majority slice),
+  incl. some pole/voice splits.
+- **Stays judgement (the L2 residue, by design):** within-stem multi-sense **select** (~80% of
+  stem-conditioned verses), and **pole** where it is metaphor (heat/tremble/melt) rather than stem-separated
+  physical (R6 — `pole_is_metaphor` flag).
+
+**V3_2 can now proceed.** Settle the schema against §7 (the field list), encode R6 as *default-inner +
+metaphor-flag + literal/external lexicons*, add the homonym filter to the sense-set, and capture
+morphology/stem. The remaining judgement (within-stem select, metaphor pole) is correctly the L2 analytical
+load — not a gap, but the deliberate boundary between mechanical L1 and analytical L2.
