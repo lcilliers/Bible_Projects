@@ -40,7 +40,10 @@ Shared constants for the Session A v9 Automation Engine.
 # Bumped 2026-05-26 for M53 (cluster.char_structure column — flag non-standard
 # clusters like M10 where chars are aspects of one master characteristic;
 # tools doing cross-cluster char-comparison analytics filter on this).
-EXPECTED_SCHEMA_VERSION = "3.27.0"
+# 2026-06-07 reconciliation: constant lagged the DB by one (M54 set the DB to
+# 3.28.0 but the constant was left at 3.27.0). Realigned to 3.28.0. See
+# research/investigations/wa-migration-control-integrity-v1-20260607.md.
+EXPECTED_SCHEMA_VERSION = "3.28.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"

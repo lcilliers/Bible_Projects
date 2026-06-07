@@ -1851,14 +1851,84 @@ def _m39(conn: sqlite3.Connection) -> None:
     ).rowcount
 
     print(f"     M39: deleted {deleted} strict NULL-skeleton verse_context rows (count pre-delete: {count})")
+    # NOTE (2026-06-07): the original M39 set version_code = '3.16.1' here. That was a
+    # bug — a data-cleanup migration must not bump (let alone *lower*) the schema version,
+    # and the DB has since moved to 3.28.0 via M40–M54. Version-bump removed so M39 is a
+    # pure (idempotent, no-op-today) data cleanup. See
+    # research/investigations/wa-migration-control-integrity-v1-20260607.md.
 
-    now = _now()
-    conn.execute(
-        "UPDATE schema_version SET version_code = ?, applied_at = ? "
-        "WHERE id = (SELECT MAX(id) FROM schema_version)",
-        ("3.16.1", now),
-    )
-    print("     M39: schema_version → 3.16.1")
+
+# ── M40–M54 — registry backfill (2026-06-07 control-system reconciliation) ──────
+#
+# These migrations were applied to the live DB via one-off `_apply_*` scripts /
+# direct ALTERs between 2026-04-27 and 2026-05-27 and recorded in
+# schema_version.migration_history, but were NEVER registered here — the registry
+# froze at M39 (2026-04-28) while the DB moved on to 3.28.0. (M18 is absent from
+# BOTH the registry and the history; its effect, whatever it was, is either present
+# in the schema or was superseded — left as a documented gap.)
+#
+# They are re-registered below as DOCUMENTED, NON-EXECUTING entries so the registry
+# is once again a complete index (registry == history). The history-aware runner
+# SKIPS them (they are in migration_history), so their `pass` bodies never run.
+# Schema presence for all 18 changes was VERIFIED on 2026-06-07 (investigation doc).
+# From-scratch DB builds use create_tables.sql, not this path. Going forward,
+# migrations are registered here again, starting with V3_2 = M55.
+#
+# M16/M17 (2026-03-27/29) are the same case from earlier — applied via one-off
+# scripts, in history, never registered. Backfilled here too (out of chronological
+# position, but the runner skips them so order is immaterial; fresh builds use
+# create_tables.sql). M18 remains a documented gap (in neither registry nor history).
+
+@_register("M16", "v5 impl: cluster_assignment on word_registry + new flag types (SB_FINDING, …) [backfill: 2026-03-27; in history; verified]")
+def _m16(conn): pass
+
+@_register("M17", "Rename source_category → dimensions; drop anchor_verses [backfill: 2026-03-29; in history; verified]")
+def _m17(conn): pass
+
+@_register("M40", "Add verse_context.analysis_note (anchor-verse analytical commentary) [backfill: applied via one-off script 2026-04-27; in history; schema verified]")
+def _m40(conn): pass
+
+@_register("M41", "Create wa_prose_section_citations [backfill: 2026-04-27; in history; verified]")
+def _m41(conn): pass
+
+@_register("M42", "Add wa_obs_question_catalogue.review_note [backfill: 2026-04-27; in history; verified]")
+def _m42(conn): pass
+
+@_register("M43", "Rebuild wa_finding_catalogue_links: finding_id NULL allowed [backfill: 2026-04-27; in history; verified]")
+def _m43(conn): pass
+
+@_register("M44", "Cluster sub-group infrastructure: cluster_subgroup + mti_terms.cluster_code [backfill: 2026-05-06; in history; verified]")
+def _m44(conn): pass
+
+@_register("M45", "Cluster-level findings table (cluster_finding) [backfill: 2026-05-06; in history; verified]")
+def _m45(conn): pass
+
+@_register("M46", "Term-to-sub-group m2m: mti_term_subgroup + verse_context.cluster_subgroup_id [backfill: 2026-05-10; in history; verified]")
+def _m46(conn): pass
+
+@_register("M47", "vcg-to-term m2m: vcg_term; drop verse_context_group.mti_term_id [backfill: 2026-05-10; in history; verified]")
+def _m47(conn): pass
+
+@_register("M48", "Add cluster_finding.vcg_scope + extend UNIQUE [backfill: 2026-05-16; in history; verified]")
+def _m48(conn): pass
+
+@_register("M49", "characteristic + characteristic_subgroup + cluster_observation tables [backfill: 2026-05-18; in history; verified]")
+def _m49(conn): pass
+
+@_register("M50", "Add cluster_finding.characteristic_id + extend UNIQUE [backfill: 2026-05-18; in history; verified]")
+def _m50(conn): pass
+
+@_register("M51", "Add verse_context.keywords (JSON array of inner-being keywords) [backfill: 2026-05-23; in history; verified]")
+def _m51(conn): pass
+
+@_register("M52", "Add finding_citation table (polymorphic) [backfill: 2026-05-25; in history; verified]")
+def _m52(conn): pass
+
+@_register("M53", "Add cluster.char_structure column [backfill: 2026-05-26; in history; verified]")
+def _m53(conn): pass
+
+@_register("M54", "Extend prose_section with cluster_code + characteristic_id + cluster_subgroup_id [backfill: 2026-05-27; in history; verified]")
+def _m54(conn): pass
 
 
 # ── Runner ────────────────────────────────────────────────────────────────────
@@ -1870,18 +1940,47 @@ def check_version(conn) -> tuple[str | None, bool]:
     return ver, ver != EXPECTED_SCHEMA_VERSION
 
 
+def _applied_refs(conn) -> set[str]:
+    """Return the set of migration refs already recorded in migration_history.
+
+    History-awareness (added 2026-06-07): the runner must NOT re-execute
+    migrations that have already been applied. The original runner ran *every*
+    registered migration on each invocation and relied on each being perfectly
+    idempotent — fragile, and actively unsafe on a DB that has moved past the
+    registry via one-off scripts (it would re-run data migrations and reset
+    version_code via the unconditional bumps). See
+    research/investigations/wa-migration-control-integrity-v1-20260607.md.
+    """
+    try:
+        row = conn.execute(
+            "SELECT migration_history FROM schema_version "
+            "WHERE id = (SELECT MAX(id) FROM schema_version)"
+        ).fetchone()
+        if not row or not row[0]:
+            return set()
+        return {e.get("version") for e in json.loads(row[0])}
+    except Exception:
+        return set()
+
+
 def run_migrations(conn, dry_run: bool = False, stop_at: str | None = None,
                    verbose: bool = True) -> list[str]:
-    """Apply all pending migrations. Returns list of applied migration refs."""
+    """Apply pending migrations only (those NOT already in migration_history).
+    Returns the list of refs applied this run."""
     from .db import get_schema_version
 
+    already = _applied_refs(conn)
     applied = []
+    skipped = 0
     for ref, description, fn in _MIGRATIONS:
         if stop_at and ref > stop_at:
             break
+        if ref in already:
+            skipped += 1
+            continue  # history-aware: never re-execute an applied migration
         if dry_run:
             if verbose:
-                print(f"  [DRY-RUN] {ref}: {description}")
+                print(f"  [DRY-RUN — PENDING] {ref}: {description}")
             applied.append(ref)
             continue
         try:
@@ -1895,10 +1994,13 @@ def run_migrations(conn, dry_run: bool = False, stop_at: str | None = None,
             print(f"  ✗ {ref}: {description} — FAILED: {exc}")
             raise
 
+    if verbose:
+        print(f"\n({skipped} already-applied migrations skipped; {len(applied)} "
+              f"{'pending' if dry_run else 'applied'} this run.)")
     if not dry_run and applied:
         ver = get_schema_version(conn)
         if verbose:
-            print(f"\nSchema version now: {ver}")
+            print(f"Schema version now: {ver}")
 
     return applied
 

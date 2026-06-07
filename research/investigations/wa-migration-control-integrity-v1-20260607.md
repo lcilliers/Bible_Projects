@@ -15,7 +15,7 @@
 | `migration_history` entries | **52** (M01–M54, **missing M18, M39**), latest applied **2026-05-27** |
 | `migrate.py` registered | **M01–M17, M19–M39** (38; M18 never registered) — frozen at **M39** |
 | Last edit to `migrate.py` | **2026-04-28** (git) — untouched since |
-| `EXPECTED_SCHEMA_VERSION` (constants) | **3.27.0** | vs DB `version_code` **3.28.0** (constant lags) |
+| `EXPECTED_SCHEMA_VERSION` (constants) | **3.27.0** — lags the DB `version_code` **3.28.0** |
 | M39 (registered, not in history) | "delete NULL-skeleton verse_context rows" — **target = 0 rows today (no-op)** |
 | `_fix_migration_history.py` | a **benign one-time dedup** of history (archived); not a falsification |
 | "m39" name reuse | unrelated `_apply_m39_dir_*` directive scripts (2026-05-14) — **number collision** |
@@ -43,13 +43,31 @@
 numbering) is what broke** — exactly the researcher's concern, validated, but it is a **process** failure,
 not corruption.
 
-## 4. Why NOT to run `--migrate` now
+## 4. The runner flaw (the real root cause)
 
-The engine runner applies *registered* migrations not yet in history. With the current state it would fire
-**M39** (registered, not in history). M39 is a no-op today (0 target rows), so it is low-risk — **but it is
-the wrong path**: running the frozen registry against a DB that moved past it by one-off scripts invites
-exactly the kind of mismatch we are trying to fix. **Adding the V3_2 migration to this frozen registry and
-running `--migrate` would compound the drift.**
+**Correction to the first read:** the original `run_migrations` did **not** skip already-applied
+migrations — it executed **every** registered migration on each invocation, relying on each being perfectly
+idempotent (it only skipped *recording* duplicates, not *executing*). Several migrations carry
+**unconditional `version_code` bumps** (e.g. M39 sets `'3.16.1'`). So running `--migrate` against this DB
+would have **re-run 38 migrations and reset `version_code` 3.28.0 → 3.16.1**, plus re-execute data
+migrations (M15/M19/M23/M29/M39). *This* is the root control flaw — and it explains **why** the team
+abandoned the registry for one-off scripts: the runner was never safe to re-run after the DB diverged.
+
+## 4b. Reconciliation APPLIED (2026-06-07, code-only, no DB writes)
+
+1. **Runner made history-aware** — `run_migrations` now skips any ref already in `migration_history`; it only
+   executes genuinely pending migrations. (Strictly safer: it does *less*.)
+2. **M39 version-bump removed** — a data-cleanup migration must not set `version_code` (let alone lower it).
+   M39 is now a pure idempotent no-op (0 target rows today).
+3. **Registry backfilled** — M16, M17, M40–M54 registered as documented, non-executing (`pass`) entries
+   (they are in history → skipped). **Registry now ⊇ history**; nothing in history is unregistered. M18
+   remains a documented gap (in neither; schema intact regardless).
+4. **`EXPECTED_SCHEMA_VERSION` → 3.28.0** (was 3.27.0, lagging the DB by one — M54).
+5. **Verified:** `--db-status` → version aligned, "Migration needed: no"; only **M39** pending (the no-op),
+   which self-records harmlessly when V3_2/M55 is applied.
+
+The single remaining DB-side reconciliation (recording M39) now rides along with the V3_2 migration —
+**one** backed-up, dry-run-verified `--migrate` instead of two.
 
 ## 5. Recommendation — reconcile before V3_2 (don't plaster)
 
