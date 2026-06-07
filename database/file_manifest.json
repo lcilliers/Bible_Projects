@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T12:52:12Z",
+  "generated_at": "2026-06-07T18:51:56Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,12 +13,12 @@
   "currency_counts": {
     "other": 92,
     "historical": 30,
-    "current": 1676,
+    "current": 1687,
     "cross-reference": 3317,
     "archived": 2101
   },
-  "total_files": 7216,
-  "total_active": 5115,
+  "total_files": 7227,
+  "total_active": 5126,
   "total_archived": 2101,
   "files": [
     {
@@ -56102,6 +56102,22 @@
       "modified": "2026-05-30T05:49:33Z"
     },
     {
+      "path": "Workflow/Instructions/wa-cluster-rollup-instruction-v3_2-DRAFT-20260607.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 11025,
+      "modified": "2026-06-07T16:21:50Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-database-schema-v3.14.0-20260421.json",
       "category": "workflow",
       "type": "other",
@@ -59926,6 +59942,22 @@
       "modified": "2026-06-06T05:38:51Z"
     },
     {
+      "path": "Workflow/Sessionlogs/wa-sessionlog-20260607-v3_2-design-and-control-reconcile-v1.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6624,
+      "modified": "2026-06-07T18:51:29Z"
+    },
+    {
       "path": "Workflow/Sessionlogs/wa-sessionlog-term-anchor-reset-v1-20260504.md",
       "category": "workflow",
       "type": "other",
@@ -62162,8 +62194,8 @@
       "date": "2026-06-07",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 15132,
-      "modified": "2026-06-07T08:24:47Z"
+      "size_bytes": 18373,
+      "modified": "2026-06-07T14:39:32Z"
     },
     {
       "path": "Workflow/methodology/wa-cluster-phase-reshape-v3_1-proposal.md",
@@ -62242,8 +62274,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 19992,
-      "modified": "2026-06-07T08:17:52Z"
+      "size_bytes": 28174,
+      "modified": "2026-06-07T15:43:59Z"
     },
     {
       "path": "Workflow/methodology/wa-cost-review-session-log-v1-2026-04-26.md",
@@ -62822,6 +62854,22 @@
       "modified": "2026-05-29T04:29:38Z"
     },
     {
+      "path": "Workflow/methodology/wa-v3_2-schema-migration-plan-v1-20260607.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7467,
+      "modified": "2026-06-07T16:20:37Z"
+    },
+    {
       "path": "Workflow/methodology/wa-verse-analysis-methodology.md",
       "category": "workflow",
       "type": "other",
@@ -63284,6 +63332,22 @@
       "archived": false,
       "size_bytes": 7710,
       "modified": "2026-04-27T16:52:02Z"
+    },
+    {
+      "path": "Workflow/wa-archive-decisions-for-guidance-v1-20260607.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5436,
+      "modified": "2026-06-07T18:50:33Z"
     },
     {
       "path": "Workflow/wa-workflow-cleanup-register.md",
@@ -91826,8 +91890,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3222409,
-      "modified": "2026-06-06T05:39:03Z"
+      "size_bytes": 3263075,
+      "modified": "2026-06-07T12:52:12Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92338,8 +92402,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4294,
-      "modified": "2026-05-26T05:07:21Z"
+      "size_bytes": 4520,
+      "modified": "2026-06-07T17:25:42Z"
     },
     {
       "path": "engine/db.py",
@@ -92434,8 +92498,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 102772,
-      "modified": "2026-04-27T16:46:50Z"
+      "size_bytes": 108320,
+      "modified": "2026-06-07T17:27:39Z"
     },
     {
       "path": "engine/new_word.py",
@@ -104806,6 +104870,54 @@
       "modified": "2026-04-19T15:21:05Z"
     },
     {
+      "path": "research/investigations/wa-l1-prototype-findings-and-r-decisions-v1-20260607.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9927,
+      "modified": "2026-06-07T15:10:03Z"
+    },
+    {
+      "path": "research/investigations/wa-l1-prototype-m01-m02-comparison-v1-20260607.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 19089,
+      "modified": "2026-06-07T14:49:26Z"
+    },
+    {
+      "path": "research/investigations/wa-l1-prototype-r7-morph-m01-m02-v1-20260607.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5341,
+      "modified": "2026-06-07T15:08:21Z"
+    },
+    {
       "path": "research/investigations/wa-m-tables-dependencies-v1-20260505.md",
       "category": "investigation",
       "type": "investigation",
@@ -104820,6 +104932,22 @@
       "archived": false,
       "size_bytes": 12470,
       "modified": "2026-05-05T08:20:56Z"
+    },
+    {
+      "path": "research/investigations/wa-migration-control-integrity-v1-20260607.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6959,
+      "modified": "2026-06-07T17:28:34Z"
     },
     {
       "path": "research/investigations/wa-prose-store-design-v1-20260419.md",
@@ -104916,6 +105044,22 @@
       "archived": false,
       "size_bytes": 143973,
       "modified": "2026-04-28T14:29:04Z"
+    },
+    {
+      "path": "research/investigations/wa-row-level-completeness-prerebuild-v1-20260607.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4857,
+      "modified": "2026-06-07T18:29:20Z"
     },
     {
       "path": "research/investigations/wa-sessionb-cluster-instruction-v2_5-DRAFT-20260518.md",
@@ -111828,6 +111972,38 @@
       "archived": false,
       "size_bytes": 15430,
       "modified": "2026-04-27T16:46:36Z"
+    },
+    {
+      "path": "scripts/_prototype_l1_mechanical.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 10184,
+      "modified": "2026-06-07T14:49:14Z"
+    },
+    {
+      "path": "scripts/_prototype_l1_morph.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 6878,
+      "modified": "2026-06-07T15:08:04Z"
     },
     {
       "path": "scripts/_realign_meaning_tables.py",
