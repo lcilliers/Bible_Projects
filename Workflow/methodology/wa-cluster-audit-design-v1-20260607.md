@@ -188,7 +188,8 @@ per sub-group; L6 cross-sub-group; L7 cluster synthesis; L8 whole-study.)*
   for this sub-group**. *FC:* every non-BOUNDARY sub-group → `characteristic` + `characteristic_subgroup`,
   `core_description` firmed; **every finding has a `finding_type` (tier / cross-VCG…), a scope anchor naming
   its cluster (+ sub-group/VCG as the type requires), a `finding_citation`, and `finding_status`** (=`draft`
-  at submission); **no finding without a cluster**; pointers routed here `resolved`; prior findings refined.
+  at submission); **no finding without a cluster**; **every open question captured as a finding flagged
+  `needs_research`** (E7); pointers routed here `resolved`; prior findings refined.
   *SC:* the characteristic genuinely *emerges* (not pre-imposed); findings are evidenced and **level-anchored**
   (the `finding_type` matches the level it emerged at); cross-cluster findings created in the right other
   cluster. *Gate (A4 sub-group draft-review):* every VCG in view; characteristic assigned (or BOUNDARY);
@@ -201,7 +202,8 @@ per sub-group; L6 cross-sub-group; L7 cluster synthesis; L8 whole-study.)*
   verses** (every verse dealt with — cited / set-aside / rerouted); **(2)** every finding has **≥1 anchor**
   AND every **anchor used ≥1** (each `is_anchor` verse in ≥1 `finding_citation`); **(3)** **no orphaned VCGs
   or sub-groups** (every VCG in a sub-group + observed; every sub-group has a characteristic/cluster home);
-  **(4)** **zero orphans overall**.
+  **(4)** **all BOUNDARY terms resolved** — placed / rerouted / set aside; **the audit must reveal any
+  orphaned term** (E5); **(5)** **zero orphans overall**.
 - **L7 (cluster synthesis)** · *Needs:* L6 PASS. *FC:* `char_structure`/`description`/`status` firmed;
   cluster-level findings cited; **every finding typed + cluster-anchored**. *SC:* the synthesis is supported
   by L6. *Gate (A4 cluster confirmation):* cluster account complete → **all findings submitted as a group →
