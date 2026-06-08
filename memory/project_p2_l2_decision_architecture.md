@@ -34,3 +34,10 @@ qualifier-attach are STEP-decidable now. `morph_code`/`stem` = **0%** populated 
 backfill) → **S2 sense-resolution (84% of verses) is NOT STEP-automated until a STEP morph backfill runs** —
 the single highest-leverage data task before any L2 build. S5 cross-cluster *relation* is not in STEP → needs
 a read. Refines [[project_a1_resolved_rollup_v3_audit_design]].
+
+**Researcher decisions (2026-06-08):** §6.1 architecture (type→modules→synthesise), §6.2 scenario set
+(S0+S2 added), §6.3 morph-backfill-first — **all AGREED**. §6.4 (is `span_strong_match` equality a sufficient
+signal for qualifier-enhances-this-char, or must M-qual always read?) — **UNSURE, to be tested**; fold the
+span-share measurement into the morph-backfill prototype. **Next prototype = STEP morph backfill** (read STEP
+per verse → populate `wa_verse_records.morph_code`/`stem`, validate on M01), carrying the §6.4 span-attach
+measurement. P1 keyword rebuild can run in parallel (independent).

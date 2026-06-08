@@ -52,6 +52,13 @@ A verse = a reference + its array of in-scope occurrences. Relative to the clust
 | S5 cross-cluster | 597 | 64% |
 | **COMPOUND (>1 decision in one verse)** | **688** | **74%** |
 
+> **Reading the percentages — they do NOT sum to 100.** Each row is *(verses that trigger this scenario) ÷
+> (930 total M01 verses)*, and the scenarios are **non-exclusive**: one verse is counted in every scenario it
+> triggers (e.g. 1Cor 2:3 is counted in S3, S4 *and* S5). So the column overlaps by design; the COMPOUND row
+> (74%) is the measure of that overlap — the share of verses that fall in **more than one** of S2–S5. A verse
+> is therefore **not "settled" by any single module** — it is typed, each applicable module is applied, and
+> the verse contribution is the **synthesis** of all of them. (Only S1, 4%, is mutually exclusive of S2–S5.)
+
 ### Three findings that decide the architecture
 
 1. **Pure-mechanical L1 settles ~4% of verses.** The "apply STEP meaning mechanically" idea is real but
@@ -102,15 +109,17 @@ sense of *ya.re* / *pachad*) becomes mechanical; without it, 84% of verses carry
 Recommend a **STEP morph backfill** as the next prototype (read STEP per verse → populate
 `wa_verse_records.morph_code` / `stem`), validated on M01 before any L2 build.
 
-## 6. Open decisions for the researcher
+## 6. Decisions (researcher, 2026-06-08)
 
-1. **Architecture:** accept "type → modules → synthesise" (not three disjoint passes)? §4.
-2. **Scenario set:** accept S0 + S2 as decisions alongside the named S3/S4/S5? Any scenario still missing?
-3. **Morph backfill first?** Make the STEP morph pull the next prototype, so S2 (84%) is STEP-backed before
-   L2 is built? §5.
-4. **Qualifier-attach test:** is `span_strong_match` equality the right mechanical signal for "the qualifier
-   enhances *this* char" (S4), or must M-qual always read the verse? (Prototype can measure how often the
-   qualifier shares the char's span.)
+1. **Architecture — AGREED.** "Type → modules → synthesise" (not three disjoint passes). §4. Confirmed by the
+   74% reading: a verse must apply S2–S5 as they arise and **does not exit on any single application**.
+2. **Scenario set — AGREED.** S0 + S2 stand as decisions alongside the named S3/S4/S5.
+3. **Morph backfill first — AGREED.** STEP morph pull is the next prototype, so S2 (84%) is STEP-backed
+   before L2 is built. §5.
+4. **Qualifier-attach test — UNSURE, TO BE TESTED.** Whether `span_strong_match` equality is a sufficient
+   mechanical signal for "the qualifier enhances *this* char" (S4), or whether M-qual must always read the
+   verse. → Fold a measurement into the morph-backfill prototype: how often the qualifier shares the char's
+   span, and spot-check whether shared-span actually means enhancement.
 
 ---
 
