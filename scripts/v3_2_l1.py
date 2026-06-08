@@ -85,8 +85,14 @@ def term_profile(c, strongs, gloss):
     terse = " / ".join(dict.fromkeys(filter(None, [
         gloss, inv["step_search_gloss"] if inv else "", inv["short_def_mounce"] if inv else ""])))[:160]
     envelope = (sense_text or full)[:400].replace("\n", " ").strip()
+    # why single/multi (for the residue listing — lets the researcher assess the L1/L2 split)
+    rp = []
+    if len(stems) >= 2: rp.append(f"{len(stems)} stems ({'/'.join(sorted(stems))})")
+    if len(nums) >= 2:  rp.append(f"{len(nums)} numbered senses")
+    if len(poles) >= 2: rp.append("pole-span:" + "/".join(sorted(poles)))
+    reason = "; ".join(rp) if multi else "single sense"
     return dict(multi=multi, pole=pole, metaphor=metaphor, keywords=kw, sense_id=sense_id,
-                terse=terse, envelope=envelope, homonym=homonym)
+                terse=terse, envelope=envelope, homonym=homonym, reason=reason)
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--cluster", required=True); ap.add_argument("--report", required=True)
@@ -98,10 +104,21 @@ def main():
     conn.execute("UPDATE cluster SET status='In Progress', last_updated_date=? WHERE cluster_code=?",
                  (_now(), cc)); conn.commit()
 
+    import collections
     terms=c.execute("SELECT id, strongs_number, transliteration, gloss, language FROM mti_terms "
                     "WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0", (cc,)).fetchall()
     stats=dict(terms=len(terms), single=0, multi=0, assigned=0, residue=0, setaside=0,
                pole={}, metaphor=0, homonym=0, touched=0)
+    assigned_terms=[]   # (translit, gloss, meaning, keywords, [(ref, text)])
+    residue_terms=[]    # (translit, gloss, reason, [(ref, text)])
+    kw_freq=collections.Counter()
+
+    def clean(txt, ref):
+        if not txt: return ""
+        txt=re.sub(r"\s+", " ", txt).strip()
+        if ref and txt.startswith(ref): txt=txt[len(ref):].strip()  # drop leading ref dup
+        return txt[:160]
+
     for t in terms:
         p=term_profile(c, t["strongs_number"], t["gloss"])
         if p["multi"]: stats["multi"]+=1
@@ -109,26 +126,32 @@ def main():
         if p["metaphor"]: stats["metaphor"]+=1
         if p["homonym"]: stats["homonym"]+=1
         kw_json=json.dumps(p["keywords"])
-        rows=c.execute("SELECT id, is_relevant FROM verse_context WHERE mti_term_id=? AND COALESCE(delete_flagged,0)=0",
-                       (t["id"],)).fetchall()
+        rows=c.execute("""SELECT vc.id, vc.is_relevant, vr.reference, vr.verse_text
+            FROM verse_context vc JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+            WHERE vc.mti_term_id=? AND COALESCE(vc.delete_flagged,0)=0
+            ORDER BY vr.book_id, vr.chapter, vr.verse_num""", (t["id"],)).fetchall()
+        a_verses=[]; r_verses=[]
         for r in rows:
             if not r["is_relevant"]:
                 stats["setaside"]+=1; continue
             stats["touched"]+=1
             stats["pole"][p["pole"]]=stats["pole"].get(p["pole"],0)+1
+            vtxt=clean(r["verse_text"], r["reference"])
             if p["multi"]:
-                # discipline 2: defer ALL multi-sense to L2
                 conn.execute("""UPDATE verse_context SET sense_multiplicity='multi', residue_flag=1,
                     pole=?, pole_is_metaphor=?, keywords=?, step_envelope_note=?,
                     step_meaning_applied=NULL, sense_id=NULL WHERE id=?""",
                     (p["pole"], 1 if p["metaphor"] else 0, kw_json, p["envelope"], r["id"]))
-                stats["residue"]+=1
+                stats["residue"]+=1; r_verses.append((r["reference"], vtxt))
             else:
                 conn.execute("""UPDATE verse_context SET sense_multiplicity='single', residue_flag=0,
                     pole=?, pole_is_metaphor=?, keywords=?, step_envelope_note=?,
                     step_meaning_applied=?, sense_id=? WHERE id=?""",
                     (p["pole"], 1 if p["metaphor"] else 0, kw_json, p["envelope"], p["terse"], p["sense_id"], r["id"]))
-                stats["assigned"]+=1
+                stats["assigned"]+=1; a_verses.append((r["reference"], vtxt))
+                for w in p["keywords"]: kw_freq[w]+=1
+        if a_verses: assigned_terms.append((t["transliteration"], t["gloss"], p["terse"], p["keywords"], p["pole"], p["metaphor"], a_verses))
+        if r_verses: residue_terms.append((t["transliteration"], t["gloss"], p["reason"], r_verses))
     conn.commit()
 
     # ---- report ----
@@ -154,6 +177,56 @@ def main():
     L.append("- all → `pole`, `pole_is_metaphor`, `keywords` (STEP-capture JSON), `step_envelope_note`")
     L.append("- `analysis_note` (existing AI/L3 layer) **preserved, untouched**")
     L.append("")
+
+    def esc(s): return (s or "").replace("|", "\\|")
+
+    # a) keyword analysis
+    L.append("## a · Keyword analysis — STEP-capture keywords across assigned verses")
+    L.append("")
+    L.append(f"Distinct keywords on assigned verses: **{len(kw_freq)}**. Top 40 by verse-frequency:")
+    L.append("")
+    L.append("| keyword | verses | keyword | verses | keyword | verses | keyword | verses |")
+    L.append("|---|---|---|---|---|---|---|---|")
+    top = kw_freq.most_common(40)
+    for i in range(0, len(top), 4):
+        cells = []
+        for w, n in top[i:i+4]:
+            cells += [f"`{w}`", str(n)]
+        while len(cells) < 8: cells += ["", ""]
+        L.append("| " + " | ".join(cells) + " |")
+    L.append("")
+
+    # b) assigned verses
+    L.append("## b · Assigned verses (single-sense) — reference · text · STEP-applied meaning")
+    L.append("")
+    L.append(f"{stats['assigned']} verses across {len(assigned_terms)} single-sense terms. "
+             "The **STEP-applied meaning** is the per-term head (the same for each of a term's verses at L1; "
+             "the per-verse contextual reading is L2 work).")
+    L.append("")
+    for translit, gloss, terse, kw, pole, met, verses in sorted(assigned_terms):
+        L.append(f"### {translit} ({gloss}) → **{esc(terse)}**")
+        L.append(f"*pole `{pole}`{' · metaphor-flagged' if met else ''} · keywords {kw[:8]} · {len(verses)} verses*")
+        L.append("")
+        L.append("| ref | verse text |")
+        L.append("|---|---|")
+        for ref, txt in verses: L.append(f"| {ref} | {esc(txt)} |")
+        L.append("")
+
+    # c) residue verses
+    L.append("## c · Postponed to L2 (multi-sense residue) — assess why each is not L1")
+    L.append("")
+    L.append(f"{stats['residue']} verses across {len(residue_terms)} multi-sense terms. Each term shows **why "
+             "it was classified multi-sense** (the signal that triggered the L1→L2 deferral, per discipline 2). "
+             "Read the verses to judge whether the deferral is right.")
+    L.append("")
+    for translit, gloss, reason, verses in sorted(residue_terms):
+        L.append(f"### {translit} ({gloss}) — **multi-sense: {esc(reason)}** · {len(verses)} verses")
+        L.append("")
+        L.append("| ref | verse text |")
+        L.append("|---|---|")
+        for ref, txt in verses: L.append(f"| {ref} | {esc(txt)} |")
+        L.append("")
+
     L.append("## Notes for the L1→L2 gate")
     L.append("")
     L.append("- **Morphology capture deferred to L2.** Since L1 assigns only single-sense (multi → L2), the "
