@@ -85,3 +85,37 @@ angle reports** and **bracketed by two review gates**.
 *Next: fold §3–§4 into the V3_2 instruction/rollup-design at the planned reread→update step. The prototype
 scripts (`_prototype_step_morph` · `_prototype_meaning_run` · `_prototype_p1_keywords` ·
 `_assess_p2_verse_scenarios`) are the seeds of the angle sub-commands.*
+
+---
+
+## 6. Execution strategy — L1 angle-sweep ALL clusters before synthesis (researcher direction 2026-06-08)
+
+**Researcher conviction:** work through **all** clusters to L2 now; a **cross-cluster understanding will
+emerge** that is valuable, and the later **verse-synergy phase may be completely reshaped** by it.
+
+**Reframe (to protect against paying twice):** "bring all clusters to L2" = run the **L1 angle-sweep across
+all 46 clusters** (read-only reports) → a **cross-cluster roll-up**. This brings every cluster to L2's
+*doorstep* — narrowed, each with its residue worklist — which is exactly where the cross-cluster understanding
+emerges. **Full L2 synthesis (+DB writes) is HELD until the roll-up is read**, because the synergy frame the
+researcher expects to be reshaped is *decided by the sweep*; committing per-cluster synthesis first risks
+doing the expensive verse-read judgement in a frame the sweep would change
+([[feedback_no_rework_paid_twice]]).
+
+**Why the data backs it:** M01 alone is **64% cross-cluster (S5)** + **45% qualifier (S4)** — the fabric is
+overwhelmingly cross-cluster; and the study end-point already says **clusters dissolve into cross-cluster
+groupings** ([[reference_study_end_point_and_milestones]]). The cross-cluster map is the right unit to see
+*before* synthesis, not a by-product of it.
+
+**Sequence:**
+1. **Morph backfill — one-time DB write, all clusters.** Populate `wa_verse_records.morph_code`/`stem` from
+   STEP (M01-validated 100%); built with backup + dry-run, validated on M01 then scaled. The enabling step —
+   makes the morph/sense angle a cheap DB read for the whole sweep.
+2. **L1 angle-sweep, all clusters (read-only)** → per-cluster angle reports **+ a CROSS-CLUSTER ROLL-UP**:
+   qualifier map (which qualifiers route where) · cross-cluster co-occurrence matrix · shared-term/homonym
+   index · scenario-type distribution per cluster. Stress-tests + hones the angle scripts across the full
+   variation (the iteration of §1b). *The roll-up is the deliverable; per-cluster reports are backing detail
+   — not 200 disconnected files.*
+3. **Read the cross-cluster roll-up together → decide the synthesis/synergy frame** (per-cluster vs
+   cross-cluster-first), then build/run L2.
+
+**Status:** sequence proposed; awaiting researcher confirm before the morph backfill (the first DB write).
