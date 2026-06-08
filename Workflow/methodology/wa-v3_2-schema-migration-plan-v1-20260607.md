@@ -1,8 +1,12 @@
 # V3_2 schema migration plan
 
 > **Plan · v1 · 2026-06-07 · CC.** The schema changes the V3_2 base design requires (rollup design §10).
-> **PLAN ONLY — no DB writes yet.** Apply only on the researcher's go, after a DB backup. Current schema
-> `version_code = 3.28.0`; `migration_history` records up to **M54**. Source: `engine/migrate.py`.
+> **✅ APPLIED 2026-06-08 as migration M55** (backup `backups/bible_research_pre_v3_2_20260608.db`;
+> dry-run verified; via the history-aware runner). DB now at **`version_code = 3.29.0`**; M39 (no-op) + M55
+> recorded; registry == history (no pending). 12 columns added, `vertical_pass_flag` dropped; integrity ok.
+> CONSULT defaults taken: `sense_id` INTEGER; `vertical_pass_flag` dropped (0 rows); `is_homonym` added
+> (population later). **Population passes (`stem_label`, `morph`/`stem`, `is_homonym`) still pending — run
+> within L1 of the first cluster.** Original plan below.
 
 ---
 

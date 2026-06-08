@@ -43,7 +43,9 @@ Shared constants for the Session A v9 Automation Engine.
 # 2026-06-07 reconciliation: constant lagged the DB by one (M54 set the DB to
 # 3.28.0 but the constant was left at 3.27.0). Realigned to 3.28.0. See
 # research/investigations/wa-migration-control-integrity-v1-20260607.md.
-EXPECTED_SCHEMA_VERSION = "3.28.0"
+# 2026-06-08: M55 applied (V3_2 schema — L1 verse fields, finding typing, morphology,
+# homonym flag; vertical_pass_flag retired). → 3.29.0.
+EXPECTED_SCHEMA_VERSION = "3.29.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"

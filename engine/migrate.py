@@ -1931,6 +1931,38 @@ def _m53(conn): pass
 def _m54(conn): pass
 
 
+@_register("M55", "V3_2: L1 verse fields + finding typing + morphology + homonym flag; retire vertical_pass_flag")
+def _m55(conn: sqlite3.Connection) -> None:
+    """V3_2 schema (wa-v3_2-schema-migration-plan-v1). Additive + 2 confirmed-dead drops.
+    Population (stem_label, morph/stem, is_homonym) runs later, within L1 of the first cluster."""
+    # verse_context — L1 verse-establishment fields
+    _add_column_if_missing(conn, "verse_context", "step_meaning_applied", "TEXT")
+    _add_column_if_missing(conn, "verse_context", "sense_id",             "INTEGER")
+    _add_column_if_missing(conn, "verse_context", "sense_multiplicity",   "TEXT")
+    _add_column_if_missing(conn, "verse_context", "step_envelope_note",   "TEXT")
+    _add_column_if_missing(conn, "verse_context", "pole",                 "TEXT")
+    _add_column_if_missing(conn, "verse_context", "pole_is_metaphor",     "INTEGER DEFAULT 0")
+    _add_column_if_missing(conn, "verse_context", "residue_flag",         "INTEGER DEFAULT 0")
+    # cluster_finding — typing
+    _add_column_if_missing(conn, "cluster_finding", "finding_type",   "TEXT")
+    _add_column_if_missing(conn, "cluster_finding", "needs_research", "INTEGER DEFAULT 0")
+    # wa_verse_records — morphology
+    _add_column_if_missing(conn, "wa_verse_records", "morph_code", "TEXT")
+    _add_column_if_missing(conn, "wa_verse_records", "stem",       "TEXT")
+    # wa_meaning_sense — homonym filter
+    _add_column_if_missing(conn, "wa_meaning_sense", "is_homonym", "INTEGER DEFAULT 0")
+    # retire vertical_pass_flag (confirmed unused — 0 rows; no dependent index)
+    for tbl in ("verse_context", "verse_context_group"):
+        cols = {r[1] for r in conn.execute(f"PRAGMA table_info({tbl})")}
+        if "vertical_pass_flag" in cols:
+            conn.execute(f"ALTER TABLE {tbl} DROP COLUMN vertical_pass_flag")
+            print(f"     M55: dropped {tbl}.vertical_pass_flag")
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.29.0", _now()))
+    print("     M55: V3_2 fields added; schema_version → 3.29.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:
@@ -1987,11 +2019,13 @@ def run_migrations(conn, dry_run: bool = False, stop_at: str | None = None,
             with conn:
                 fn(conn)
             if verbose:
-                print(f"  ✓ {ref}: {description}")
+                print(f"  [OK] {ref}: {description}")
             applied.append(ref)
             _update_migration_history(conn, ref, description)
         except Exception as exc:
-            print(f"  ✗ {ref}: {description} — FAILED: {exc}")
+            # ASCII only — Unicode glyphs crash on the Windows cp1252 console and mask
+            # the real error (2026-06-08). Keep migration runner output ASCII-safe.
+            print(f"  [FAIL] {ref}: {description} -- {exc}")
             raise
 
     if verbose:
@@ -2059,5 +2093,8 @@ def _update_migration_history(conn: sqlite3.Connection, ref: str,
             "UPDATE schema_version SET migration_history = ? WHERE id = ?",
             (json.dumps(history), latest_id),
         )
+        conn.commit()  # 2026-06-08: commit the history record explicitly — otherwise the
+        # LAST migration's history entry is left uncommitted and rolled back on close
+        # (M39 was flushed by M55's transaction; M55's own entry was lost).
     except Exception:
         pass  # Non-critical — migration still succeeded
