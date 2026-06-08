@@ -46,11 +46,45 @@ DB-side-coverage review point between each:
 
 The sweep's **only structural write is done.** Everything from here (layers A–F) is read-only until synthesis.
 
-## Next (this session / next)
+## Full-day arc (after L0)
 
-- **Read-only angle layers A–F** across all clusters → the **cross-cluster roll-up** (qualifier map ·
-  cross-cluster co-occurrence matrix · shared-term/homonym index · scenario-type distribution).
-- Read the roll-up together → decide the synthesis/synergy frame.
+3. **Cross-cluster roll-up (read-only angles 1–5 + correlation).** 44% of verses cross-cluster; every cluster
+   touches 40–45/45. Correlating co-occurrence (contextual) × keyword-Jaccard (semantic) → **three link
+   classes**: SAME-ish (merge) · **RELATIONAL** (co-occur but differ — most strong links, e.g. Life↔Relational
+   211/0.03; Sin→Repentance) · KIN (kin, rarely meet). Strength = connective backbone.
+4. **Ontology reframe (governing).** The **cluster is not the real object**; the unit is **THING_A[type]
+   —relationship[effect]→ THING_B[type]**, verse-anchored; the **differential of impact** is the prize. Things
+   have **types** (status/action/quality, readable from morph). Evidence: Sin(status)←atonement(action);
+   Fear×Strength one link → evocation/opposition/response.
+5. **Corpus keyword map** (preliminary → typed + glue-filtered): 1660 terms, type dist STATUS 46/ACTION 34/
+   QUALITY 18; type signatures read distinctly. **Registry grounding** diagnostic: ~86% of anchors grounded
+   (lexical or cognate-synonym); ~26 genuinely termless (modern abstractions); 4 duplicate registry rows.
+6. **Inner-man systems model** mapped to the data (morph **stem = "method A"**; produces/lacks/transitions =
+   the typed edges). **Web analysis strategy:** the raw web is near-complete → **cover verses, don't chase
+   edges**; the unit is the **verse** (*a finding for every verse*); cluster = entry-batch not boundary;
+   meaningful-absence (KIN-not-met) read against coverage.
+7. **Method checkpoint:** the L1 work does NOT point to a different approach — **build on V3_2, it evolves**;
+   primary output moves to the **typed-relationship finding per verse**; cluster → work-batch + roll-up;
+   relationship layer central. Open: do L2 sub-groups/L6 characteristic stay or become roll-ups — prove on Fear.
+8. **First M01 verse-read (batch 1, 14 verses, read-only).** The typed-relationship finding **works**:
+   differential live (Deu28:66 assurance-absent→dread vs Isa12:2 trust-present→no-fear); fear↔reverence shade
+   resolved at the read; **sub-groups fell out as roll-ups, not imposed** (passes the checkpoint test).
+9. **Scaling design proposal** (`wa-scaling-design-and-layers-v1`): **collapse VCG + pre-sub-group into
+   roll-ups** (verse→finding→roll-up); pipeline **assemble(CC)→read(AI chat)→apply(CC)→roll-up(CC)**,
+   term-batched, cross-cluster de-dup; minimal finding schema; **D1–D5 decisions** for markup.
+
+## State at end of day
+
+- DB: schema 3.29.0; **morph backfilled 100%** (31106/31112 rows); T2 480 active; **no analytical writes** —
+  all afternoon work is read-only reports. All pushed (last commit `4f6b93a`).
+- Backups: `bible_research_pre_l1_sweep_20260608.db` + NAS daily.
+
+## Next (morning)
+
+- Researcher to re-read `wa-scaling-design-and-layers-v1-20260608.md` and **mark up D1–D5**.
+- **CC recommendation: validate on the hard case before building** — run the **`ya.re` slice (194 verses,
+  multi-sense, cross-cluster-heavy)** to confirm the layer-collapse + finding format survive; *then* build the
+  evolved pipeline (finding schema migration → assemble → chat-read → apply → roll-up).
 
 ## Key memories written
 
