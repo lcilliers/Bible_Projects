@@ -27,11 +27,11 @@ L3    VCG formation + DEEP verse reading                            [verses → 
       ▼
 L4    VCG-emergent observation                                      [verses → one VCG]
       ▼
-L5    Sub-group-emergent observation + CHARACTERISTIC + FINDINGS    [VCGs → sub-group]
+L5    Sub-group-emergent observation + FINDINGS                     [VCGs → sub-group]
       │   → A4 gate: sub-group findings submitted DRAFT for review
       └───────────────────── next sub-group ─────────────────────┘
       ▼   (after all sub-groups)
-L6  Cross-sub-group observation + ORPHAN-CHECK closure               [sub-groups → cluster]
+L6  CHARACTERISTIC assessment + cross-sub-group obs + ORPHAN-CHECK   [sub-groups → cluster]
       ▼
 L7  Cluster synthesis + SCIENCE layer                                [cluster]
       │   → A4 gate: all findings submitted as a group → CONFIRMED (cluster sign-off)
@@ -64,8 +64,10 @@ whole-study → **L8a/L8b**.
    this research's greatest value.* What is ambiguous is decided by **deeper investigation**, not early; the
    decision turns on the **downstream risk of mis-interpretation**, which is a judgement, not a mechanism.
 3. **Provisional structure, emergent characteristic.** L2 sub-groups are a *provisional* partition (from L1's
-   light signal) that *organises* the read — not a pre-imposed characteristic. The **characteristic emerges**
-   at L5; the **boundary is refinable** through L3–L5.
+   light signal) that *organises* the read — not a pre-imposed characteristic. Each sub-group's emergent
+   meaning (its *candidate* characteristic) forms at L5; the **characteristic is assessed at L6, after ALL
+   sub-groups** (note 4 — it only emerges true from the full aggregate). The **boundary is refinable**
+   through L3–L5.
 4. **No overlap — one home, findings level-anchored.** Every statement lives at the level where it *first
    becomes true* and is not restated. Findings are submitted at the right level (most L5; some L6/L7-only).
 5. **Mop-up — every member consumed.** At each rung every object below is accounted for; the aggregate
@@ -146,32 +148,40 @@ ambiguity deferred to L2). Validated on M01+M02 (the prototype).
 - **Output→next:** each VCG's emergent meaning. *(→ L5.)*
 - **Gate:** every VCG has an emergent observation; **no-overlap** (not duplicated onto verses).
 
-### L5 · Sub-group-emergent observation + characteristic + findings  *(per sub-group)*
+### L5 · Sub-group-emergent observation + findings  *(per sub-group)*
+*Characteristic assessment is **not** done here — it is deferred to L6, after all sub-groups (note 4,
+2026-06-08): a characteristic only emerges true once the full set of sub-groups is in view.*
 - **Needs:** the sub-group's VCGs + L4 emergent meanings; **prior findings for this sub-group**; pointers
   routed here.
-- **Does:** the **aggregate question** — *what do these VCGs jointly say about the sub-group?* The
-  **characteristic emerges**. **Submit findings (most land here):** answer the **tier questions** (the
-  tier-question framework is **retained as-is** under V3_2); validate/adopt pointers; **evaluate + refine
-  prior findings**; create findings, incl. **into other clusters** (§4-c). Firm
-  / revise the sub-group (provisional → confirmed; may re-allocate).
-- **Updates:** `cluster_subgroup.core_description` **U**; **`characteristic`** **C/E** (emerges);
-  **`characteristic_subgroup`** **C**; `cluster_observation` (sub-group) **C**; **`cluster_finding`** **C**
-  (most — with `finding_type`, scope anchor = cluster+sub-group, `finding_status`=**draft**) +
-  **`finding_citation`** **C**; `wa_session_research_flags.resolved` **U**; prior findings `finding_status`
-  **U** (refined); cross-cluster findings **C** (other clusters).
-- **Output→next:** the sub-group's emergent meaning + **characteristic** + its **findings**. *(→ L6; and to
-  other clusters where routed.)*
-- **Gate (+ A4):** every VCG in view; characteristic assigned (or BOUNDARY); every pointer / prior-finding
-  evaluated; **findings submitted as `draft` for researcher review → `reviewed` before the next sub-group.**
-  **↻ next sub-group → L3.**
+- **Does:** the **aggregate question** — *what do these VCGs jointly say about the sub-group?* → the
+  sub-group's **emergent meaning** (a *candidate* characteristic, not yet firmed). **Submit findings (most
+  land here):** answer the **tier questions** (retained as-is under V3_2); validate/adopt pointers;
+  **evaluate + refine prior findings**; create findings, incl. **into other clusters** (§4-c). Firm / revise
+  the sub-group (provisional → confirmed; may re-allocate).
+- **Updates:** `cluster_subgroup.core_description` **U**; `cluster_observation` (sub-group) **C**;
+  **`cluster_finding`** **C** (most — with `finding_type`, scope anchor = cluster+sub-group,
+  `finding_status`=**draft**) + **`finding_citation`** **C**; `wa_session_research_flags.resolved` **U**;
+  prior findings `finding_status` **U** (refined); cross-cluster findings **C** (other clusters).
+  *(No `characteristic` write here — see L6.)*
+- **Output→next:** the sub-group's **emergent meaning** + its **findings** (+ a candidate-characteristic
+  note). *(→ L6; and to other clusters where routed.)*
+- **Gate (+ A4):** every VCG in view; every pointer / prior-finding evaluated; **findings submitted as
+  `draft` for researcher review → `reviewed` before the next sub-group.** **↻ next sub-group → L3.**
 
-### L6 · Cross-sub-group observation + closure
-- **Needs:** all sub-groups' L5 emergent meanings + characteristics + findings.
-- **Does:** the **aggregate question** — *what do these sub-groups jointly say about the cluster?*
-  (cluster-emergent). **Submit cross-sub-group findings** (true only across sub-groups); adopt remaining
-  pointers; **run the orphan check**.
-- **Updates:** `cluster_observation` (cluster) **C**; **`cluster_finding`** **C** (cross-sub-group);
-  pointers `resolved` **U**.
+### L6 · Characteristic assessment + cross-sub-group observation + closure  *(after ALL sub-groups)*
+- **Needs:** **all** sub-groups' L5 emergent meanings (candidate characteristics) + findings.
+- **Does:**
+  1. **Characteristic assessment (note 4) — done here, once, over the whole set:** map sub-groups →
+     **characteristics** (1:1 default; a split only where forced); name + define each; firm the
+     **characteristic structure**. *(Deferred from L5 so characteristics emerge from the full aggregate, not
+     per-cycle.)*
+  2. **Cross-sub-group observation** — the **aggregate question**: *what do these sub-groups jointly say
+     about the cluster?* **Submit cross-sub-group findings** (true only across sub-groups); adopt remaining
+     pointers.
+  3. **Orphan check** (closing completeness, below).
+- **Updates:** **`characteristic`** **C/E** + **`characteristic_subgroup`** **C** (the assessment);
+  `cluster_observation` (cluster) **C**; **`cluster_finding`** **C** (cross-sub-group); pointers
+  `resolved` **U**.
 - **Output→next:** the cluster-emergent account + cross-sub-group findings; a **clean (no-orphan) cluster**.
   *(→ L7.)*
 - **Gate — closing completeness cross-check (all must hold):**
@@ -236,6 +246,18 @@ Because L2 sub-groups are provisional, L3–L5 is also where the cluster's **bou
 
 ## 5. Sign-off gates & finding lifecycle (A3 + A4)
 
+**Execution & decision-point principle (governing, 2026-06-08).** The process runs as **task-level batches**
+— normally **one engine command per level / per sub-group cycle** — which **performs the whole task, then
+reports the full result**. The researcher **interacts at coarse gate boundaries with proper information**,
+not through a stream of pointed per-item decisions. *A need for fine-grained individual decisions is a smell
+that the design (or the level's task) is not yet robust — fix the design, don't push the decisions onto the
+researcher.* Each level's gate is therefore a **review of a completed task**, not a mid-task interruption.
+
+**The L1 decision structure** (the first decision point): L1 runs as **one command** that builds the verses
+in full (mechanical establishment + flag the residue), then **reports**. **The first decision point is the
+L1→L2 gate** (below). The **"second round" that finalises is L2** — the deep read that resolves the residue.
+L1 is *not* broken into smaller decisions.
+
 Findings are **drafts**; a cluster is done only by **non-mechanical sign-off**. The audit (A2) is the
 **precondition** for sign-off, not a substitute. Lifecycle (`cluster_finding.finding_status`):
 **draft → reviewed → confirmed**.
@@ -285,7 +307,7 @@ Legend: **C** create · **E** enrich · **U** firm · **R** reference · — non
 | `cluster_subgroup` | — | **C** (prov.) | U (revise) | — | **U** (firm) | R | R | R |
 | `mti_term_subgroup` | — | **C** | U (reroute) | — | U | R | — | — |
 | `verse_context_group` (VCG) | — | — | **C** | **E** (VCG-em) | R | R | R | R |
-| `characteristic` / `characteristic_subgroup` | — | — | — | — | **C/E** | U | U | R |
+| `characteristic` / `characteristic_subgroup` | — | — | — | — | — | **C/E** (assessed) | U | R |
 | `cluster_observation` | — | — | — | — | **C** (subgrp) | **C** (cluster) | R | R |
 | `cluster_finding` / `finding_citation` | — | — | — | — | **C** (most) | **C** | **C** | **C** (L8) |
 | `wa_session_research_flags` (pointers) | — | — | surface (R) | — | **U** (adopt) | **U** | R | R |
@@ -387,6 +409,17 @@ New / changed fields the design requires. **〔CONSULT〕** items are design dec
   **`vertical_pass_flag`:** **retire** (0/43,722 used). · **Science:** at **L7**, not L8.
 - **R5 / existing M01 notes:** **M01 will be re-run completely under V3_2**; the prototype results + notes are
   **set aside as investigatory work** (not production), so no piecemeal re-home is needed.
+
+### Resolved 2026-06-08 (from M01 pre-eval researcher notes)
+- **Characteristic timing (note 4):** **characteristic assessment moved from per-sub-group L5 to L6, after
+  ALL sub-groups** — a characteristic only emerges true from the full aggregate. L5 now produces only the
+  sub-group's emergent meaning (a *candidate*) + findings; L6 assesses characteristics + cross-sub-group + closure.
+- **Execution & decision-point principle (§5):** the process runs as **task-level batches** (one engine
+  command per level / cycle) that **perform the task then report**; the researcher interacts at **coarse gate
+  boundaries**, not via pointed per-item decisions (a need for the latter signals an unrobust design). **L1
+  first decision point = the L1→L2 gate; L2 is the "second round" that finalises** the residue.
+- **M01-run process notes** (in the M01 pre-eval §G): status → In Progress at start; **set-aside re-eval is
+  optional + approval-gated**; **per-sub-group VCG side-by-side** (new/changed/set-aside) review surface.
 
 ---
 

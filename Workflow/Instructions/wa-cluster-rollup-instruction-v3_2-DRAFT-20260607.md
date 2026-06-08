@@ -36,6 +36,11 @@ cumulative cost.
 4. **Mop-up + no orphans** — every object consumed or named-and-linked; the L6 orphan-check is the closing
    gate.
 5. **Forward enrichment; prior findings are inputs** — never discard; a material change re-opens the level.
+6. **Task-level execution; coarse decision points.** Run **one command per level / sub-group cycle** that
+   **performs the whole task, then reports the full result**. The researcher interacts at **gate boundaries
+   with proper information**, not via a stream of pointed per-item decisions. *A need for fine-grained
+   decisions signals an unrobust design — fix the design.* (L1 = one command → report → the **L1→L2 gate**
+   is the first decision point; **L2 is the finalising "second round"**.)
 
 ---
 
@@ -94,23 +99,29 @@ open questions → findings (E7). **Clarify-by-corpus across the unit → surfac
 **Writes:** `verse_context_group.context_description` (the VCG-emergent observation — reused field).
 **Gate:** every VCG has an emergent observation; not duplicated onto verses.
 
-### L5 · Sub-group-emergent + characteristic + findings *(per sub-group)* — Owner: AI → researcher gate
+### L5 · Sub-group-emergent + findings *(per sub-group)* — Owner: AI → researcher gate
+*Characteristic is assessed at L6 (after all sub-groups), NOT here (note 4, 2026-06-08).*
 **Inputs:** the sub-group's VCGs + L4 observations + **prior findings for this sub-group** + routed pointers.
-**Procedure:** answer *what do these VCGs jointly say about the sub-group?* → the **characteristic emerges**.
-**Submit findings (most land here):** answer the **tier questions** (framework retained); validate/adopt
-pointers; **evaluate + refine prior findings**; create findings (incl. **into other clusters**).
-**Writes:** `cluster_subgroup.core_description`; `characteristic` + `characteristic_subgroup`;
-`cluster_observation` (sub-group); `cluster_finding` (`finding_type`, scope anchor, `finding_status=draft`,
-`needs_research` for open questions) + `finding_citation`; `wa_session_research_flags.resolved`; prior
-findings refined; cross-cluster findings.
-**Gate (A4):** characteristic assigned (or BOUNDARY); every pointer / prior-finding evaluated; **findings →
-draft, submitted for researcher review → reviewed before the next sub-group.** Mid-cycle, surface specific
-clarifications. **↻ next sub-group → L3.**
+**Procedure:** answer *what do these VCGs jointly say about the sub-group?* → the sub-group's **emergent
+meaning** (a *candidate* characteristic — not firmed here). **Submit findings (most land here):** answer the
+**tier questions** (framework retained); validate/adopt pointers; **evaluate + refine prior findings**;
+create findings (incl. **into other clusters**). **VCG re-evaluation:** compare against existing VCGs and
+present a **side-by-side new/changed/set-aside surface** for the researcher (M01 note 3).
+**Writes:** `cluster_subgroup.core_description`; `cluster_observation` (sub-group); `cluster_finding`
+(`finding_type`, scope anchor, `finding_status=draft`, `needs_research` for open questions) +
+`finding_citation`; `wa_session_research_flags.resolved`; prior findings refined; cross-cluster findings.
+*(No `characteristic` write here.)*
+**Gate (A4):** every pointer / prior-finding evaluated; **findings → draft, submitted for researcher review →
+reviewed before the next sub-group.** **↻ next sub-group → L3.**
 
-### L6 · Cross-sub-group + closure — Owner: AI (observe) + CC (closing checks)
-**Procedure:** answer *what do the sub-groups jointly say about the cluster?*; submit cross-sub-group
-findings; adopt remaining pointers; **run the orphan check**.
-**Writes:** `cluster_observation` (cluster); `cluster_finding` (cross-sub-group); pointers resolved.
+### L6 · Characteristic assessment + cross-sub-group + closure — Owner: AI → researcher
+*(after ALL sub-groups)*
+**Procedure:** **(1) assess characteristics** over the whole set — map sub-groups → characteristics (1:1
+default; split only where forced), name/define, firm the characteristic structure (note 4); **(2)** answer
+*what do the sub-groups jointly say about the cluster?* → submit cross-sub-group findings; adopt remaining
+pointers; **(3) run the orphan check**.
+**Writes:** `characteristic` + `characteristic_subgroup`; `cluster_observation` (cluster); `cluster_finding`
+(cross-sub-group); pointers resolved.
 **Gate — closing cross-check (all hold):** (1) citations cover **all verses**; (2) every finding has ≥1
 anchor & every **anchor used ≥1**; (3) **no orphaned VCGs/sub-groups**; (4) **all BOUNDARY terms resolved**
 (audit reveals any orphaned term); (5) **zero orphans overall**.
