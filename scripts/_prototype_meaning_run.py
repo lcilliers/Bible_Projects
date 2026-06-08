@@ -16,7 +16,8 @@ DB = os.path.join("database", "bible_research.db")
 
 SPAN = re.compile(r"<span\s+morph='([^']*)'\s+strong='([^']*)'>([^<]*)</span>", re.I)
 HEB_STEM = {"q": "Qal", "N": "Niphal", "p": "Piel", "P": "Pual", "h": "Hiphil", "H": "Hophal",
-            "t": "Hithpael", "o": "Polel", "O": "Polal", "r": "Hithpolel", "v": "Hithpael"}
+            "t": "Hithpael", "o": "Polel", "O": "Polal", "r": "Hithpolel", "v": "Hithpael",
+            "c": "Tiphil", "u": "Polpal"}
 STEM_MARK = re.compile(r"\((Qal|Niphal|Piel|Pual|Hiphil|Hophal|Hithpael|Polel|Pilpel|Poel)\)", re.I)
 NUM_MARK = re.compile(r"(?:^|\n)\s*(\d+)\)\s")
 

@@ -29,6 +29,11 @@ scenario-type distribution); also stress-tests/hones the angle scripts across th
 the roll-up → decide the synthesis/synergy frame** (per-cluster vs cross-cluster-first), then build/run L2.
 
 The roll-up is the deliverable; per-cluster reports are backing detail (not 200 disconnected files).
-Implements [[feedback_l1_l2_is_multi_angle_report_then_synthesise]]. **Status: sequence proposed; awaiting
-researcher confirm before the morph backfill (first DB write).** Detail:
+Implements [[feedback_l1_l2_is_multi_angle_report_then_synthesise]]. Detail:
 `research/investigations/wa-v3_2-l1-l2-architecture-synthesis-v1-20260608.md` §6.
+
+**STATUS (2026-06-08): L0 morph backfill COMPLETE** — all 46 clusters, 4 batches with review points,
+**31106/31112 verse-rows (100.0%) carry morph_code/stem** (`scripts/_apply_morph_backfill.py`, matched on
+`(mti_term_id, reference)`; pre-sweep backup `bible_research_pre_l1_sweep_20260608.db`). The sweep's only
+structural write is done; layers A–F are read-only. **Next: run angle layers A–F → cross-cluster roll-up,
+then read it to decide the synthesis/synergy frame.**

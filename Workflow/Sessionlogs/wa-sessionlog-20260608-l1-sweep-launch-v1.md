@@ -33,11 +33,24 @@
 - **Matching key confirmed:** `wa_verse_records.reference` (e.g. `"Gen 43:32"`) == STEP `ref` → backfill
   matches on `(mti_term_id, reference)`.
 
-## Next (this session, continuing)
+## L0 morph backfill — COMPLETE (all 46 clusters)
 
-- **L0 morph backfill:** build `_apply_morph_backfill.py`; dry-run M01 (report ref match-rate); review;
-  live M01; verify; **review point** before scaling batch-by-batch to all clusters.
-- Then read-only layers A–F → cross-cluster roll-up.
+`scripts/_apply_morph_backfill.py`, matched on `(mti_term_id, reference)`. Run in 4 batches with a
+DB-side-coverage review point between each:
+- Batch 1 M01: 1044/1044 · Batch 2 M02–M15: 12509/12512 · Batch 3 M16–M31: 10889/10891 ·
+  Batch 4 M33–M46: 6664/6665.
+- **Full corpus: 31106/31112 verse-rows (100.0%) carry morph.** 6 rows unmatched corpus-wide (negligible).
+- Stem distribution (verbs): Qal 7168 · Hiphil 1816 · Piel 1694 · Niphal 870 · Hithpael 321 · Pual 81 ·
+  Hophal 34. Two rare stems mapped after first pass (Tiphil ×3, Polpal ×2) — stem map fixed in all three
+  scripts; the 5 rows corrected. 0 unmapped stems remain.
+
+The sweep's **only structural write is done.** Everything from here (layers A–F) is read-only until synthesis.
+
+## Next (this session / next)
+
+- **Read-only angle layers A–F** across all clusters → the **cross-cluster roll-up** (qualifier map ·
+  cross-cluster co-occurrence matrix · shared-term/homonym index · scenario-type distribution).
+- Read the roll-up together → decide the synthesis/synergy frame.
 
 ## Key memories written
 
