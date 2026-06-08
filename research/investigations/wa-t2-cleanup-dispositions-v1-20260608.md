@@ -643,3 +643,17 @@
 | H1984A ha.lal | to shine | praise | — | 0.0 | `____` |
 | H5457 se.gid | to do homage | worship | — | 0.0 | `____` |
 | H3516 ka.ved | liver | liver | — | 0.0 | `____` |
+
+---
+
+## Outcomes (2026-06-08)
+
+- **§A — EXECUTED.** 34 terms moved out of T2 to their clusters (M23 +11, M02 +3, M05 +3, M26 +3, M36 +4,
+  M01 +2, M03 +2, M12 +2, M08/M10/M24/M37 +1 each). Backup `backups/bible_research_pre_t2_assign_20260608.db`.
+  T2 active 620 → **586**. Validity is evaluated in-context when each receiving cluster is analysed.
+- **§B — HELD (not disposed).** Researcher will deep-dive *why STEP suggested these* before any soft-delete.
+- **§C / §D — qualifiers → per-verse-occurrence routing (NOT a term move).** Grounded: `ophthalmos` (eye)
+  routes only the 44/85 verses where it combines with a characteristic, across 6+ clusters; §D set = 49% of
+  1,600 occurrences co-occur with a characteristic. **The unit is the verse-occurrence, not the term**
+  (`feedback_qualifier_routes_per_verse_occurrence`). This is the verse-typing / span-pairing (type-b)
+  mechanism — to be built in the P2 verse-aware work, not executed as a term-level cluster change.
