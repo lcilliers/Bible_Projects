@@ -41,3 +41,18 @@ signal for qualifier-enhances-this-char, or must M-qual always read?) — **UNSU
 span-share measurement into the morph-backfill prototype. **Next prototype = STEP morph backfill** (read STEP
 per verse → populate `wa_verse_records.morph_code`/`stem`, validate on M01), carrying the §6.4 span-attach
 measurement. P1 keyword rebuild can run in parallel (independent).
+
+**Prototypes run 2026-06-08 (read-only, both validated):**
+- **STEP morph backfill VIABLE** (`scripts/_prototype_step_morph.py`,
+  `research/investigations/wa-step-morph-viability-M01-v1-20260608.md`): STEP preview HTML carries
+  `morph='...'` per word-span, index-aligned with `strong='...'`. **100% coverage (399/399)** on a
+  representative M01 set; Hebrew verb stems decode cleanly (`ya.re` -> Qal:179/Niphal:11/Piel:4 = the
+  fear/be-feared/terrify sense-split). Greek carries tense/voice/mood not stem (decoder needs Greek tuning,
+  non-blocking). **Ready as a WRITE step (needs approval): populate `morph_code`/`stem`.**
+- **P1 keyword approach VALIDATED** (`scripts/_prototype_p1_keywords.py`,
+  `research/investigations/wa-p1-keyword-rebuild-M01-v1-20260608.md`): whole-word (NO stemming) + named
+  filters that report drops + a self-check -> fixes the 4 original failures by construction; **85/85 PASS**.
+  Surfaced 2 residuals: book-abbrev citation leakage (FIXED via stop-list) and HTML-strip concatenation
+  artifacts `frightenedfrighten`/`eventthing` (FLAGGED suspect -> needs a source-clean in medium-def
+  stripping for the real build). Glue-words from prose defs = a source-scope tuning choice (gloss+senses vs
+  full medium prose).
