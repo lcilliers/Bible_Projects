@@ -56,3 +56,12 @@ measurement. P1 keyword rebuild can run in parallel (independent).
   artifacts `frightenedfrighten`/`eventthing` (FLAGGED suspect -> needs a source-clean in medium-def
   stripping for the real build). Glue-words from prose defs = a source-scope tuning choice (gloss+senses vs
   full medium prose).
+- **Meaning run validated on ya.re** (`scripts/_prototype_meaning_run.py`,
+  `research/investigations/wa-meaning-run-yare-v1-20260608.md`): the morph→sense bridge is a **text-parse of
+  the BDB `(Qal)/(Niphal)/(Piel)` markers embedded in `sense_text`** (`stem_label` column is 0% populated;
+  the whole BDB block sits in one row). Per verse: morph stem → the stem-branch. **Two axes:** morph resolves
+  the **STEM axis** (194/194 ya.re verses: Qal 179/Niphal 11/Piel 4; 1Ch16:25 Niphal="to be feared"
+  correct), but **NOT the within-stem SHADE** (Qal 1a1 fear vs 1a2 awe vs 1a3 reverence/honour — the
+  inner-being-critical fear↔reverence split) → **190/194 verses carry shade-residue → L2 verse read**. Plus
+  a numbered-sense **homonym watch** (ya.re sense 2 "shoot/pour"). This makes the **L1-narrows / L2-decides
+  boundary concrete**: L1 mechanically narrows to the stem branch, L2 resolves the shade per verse.
