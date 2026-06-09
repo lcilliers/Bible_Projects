@@ -1,0 +1,47 @@
+Terms: 1 | mode=DRY
+
+=== TERM pa.chad (H6342, id=291) — 25 verses, 8 pending ===
+  batch 0 [55.7s] 8 verses -> 8 recs | in=2 out=2932 cr=0
+
+----- RAW (first 1800 chars) -----
+@@@ Job 4:14 | pa.chad | vcid=17317
+sense_applied: to cause dread / make tremble (Hiphil: causative dread)
+type: action
+compound: compound:pa.chad+ra.ad+qa.ra+e.tsem
+mode: Hiphil causative — dread came upon and induced trembling
+constitutional_location: body
+origin: received-from-outside
+faculty: affect, perception
+attributed_to_God: no
+purpose_equips: not-stated
+typology_direction: none
+immediate_response: trembling that shook all the bones
+produces_effect: full-body physical shaking (bones tremble)
+relational_implication: an external dread overpowers and seizes the person
+literary_setting: poetry
+MEANING: In Job 4:14 the Hiphil form of pa.chad depicts a causative, overwhelming dread that came upon Eliphaz from outside himself, seizing his body. The dread acted as an agent alongside trembling (ra.ad), and together they produced a physical effect—all his bones shaking—locating the terror squarely in the body. The origin is clearly external (received-from-outside), the faculty engaged is both affect and perception, and the compound interplay of dread, trembling, onset (qa.ra), and bones (e.tsem) underscores that this is not mere emotion but a full-body seizure of terror that overwhelmed him entirely.
+SELFAUDIT: OK
+@@@END
+
+@@@ Deu 28:67 | pa.chad | vcid=17318
+sense_applied: to be in dread (Qal: internal state of dread)
+type: status
+compound: compound:pa.chad+le.vav
+mode: Qal imperfect — ongoing, future-facing dread lodged in the heart
+constitutional_location: heart
+origin: received-from-outside
+faculty: affect, cognition
+attributed_to_God: no
+purpose_equips: not-stated
+typology_direction: none
+immediate_response: compulsive longing to be in a different time of day (morning/evening)
+produces_effect: chronic psychological torment expressed as futile wishing
+relational_impli
+
+  PARSED Job 4:14 pa.chad vcid=17317: 14 fields; meaning=603c; API-selfaudit='OK'; CC-missing=[]
+
+  PARSED Deu 28:67 pa.chad vcid=17318: 14 fields; meaning=632c; API-selfaudit='OK'; CC-missing=['produces_effect']
+
+  PARSED Deu 28:66 pa.chad vcid=17319: 14 fields; meaning=591c; API-selfaudit='compound references chay.yim and a.man; constitutional_location is NONE and noted as not present in verse; OK'; CC-missing=[]
+
+[DRY RUN — no writes] stopping after first batch.
