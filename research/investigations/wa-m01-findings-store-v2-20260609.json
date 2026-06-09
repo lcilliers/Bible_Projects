@@ -1,0 +1,321 @@
+{
+  "_meta": {
+    "prototype": "L2 per-term-per-verse finding store (formulate -> write -> correct)",
+    "grain": "one finding per (term, verse); characteristic = typed term-in-verse",
+    "date": "2026-06-09",
+    "note": "Read-only prototype, NOT the DB. tier values are the answer OR 'stated-silent' (verse does not resolve it) OR 'stated-unresolved' (escalated). Findings are drafts, corrected as evidence/clarifications accumulate.",
+    "tier_keys": "T7.1=lexical, T1.2=kind(type), T1.4=mode(stem), T2=constitutional location, T3=faculty, T1.3=boundary"
+  },
+  "findings": [
+    {
+      "id": "M01-0001",
+      "term": "H6342 pa.chad",
+      "verse": "Deu 28:67",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Qal",
+      "lexical_meaning": "to be in dread",
+      "signals": {
+        "god": false,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "dread / be in dread (Qal)",
+        "T1.2": "action (a verbal operation: dreading)",
+        "T1.4": "Qal -> to be in dread",
+        "T2": "HEART (\"the dread your heart shall feel\")",
+        "T3": "affect",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "mechanical (single-shade context) + T2 locus named in verse",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0002",
+      "term": "H0367 e.mah",
+      "verse": "Deu 32:25",
+      "cluster": "M01",
+      "type": "STATUS",
+      "mode": null,
+      "lexical_meaning": "terror, dread",
+      "signals": {
+        "god": false,
+        "threat": true,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "terror / dread",
+        "T1.2": "status (a state of the person)",
+        "T1.4": "n/a (noun)",
+        "T2": "stated-silent",
+        "T3": "affect",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "mechanical (single-sense noun)",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0003",
+      "term": "H1674 de.a.gah",
+      "verse": "Eze 12:18",
+      "cluster": "M01",
+      "type": "STATUS",
+      "mode": null,
+      "lexical_meaning": "anxiety, anxious care",
+      "signals": {
+        "god": false,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "anxiety / anxious care",
+        "T1.2": "status (a sustained state)",
+        "T1.4": "n/a (noun)",
+        "T2": "stated-silent",
+        "T3": "affect",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "mechanical (single-sense noun)",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0004",
+      "term": "H3372G ya.re",
+      "verse": "1Ch 10:4",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Qal",
+      "lexical_meaning": "to fear / dread",
+      "signals": {
+        "god": false,
+        "threat": true,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "to fear -> dread (Qal; threat-object 'sword' -> dread shade)",
+        "T1.2": "action",
+        "T1.4": "Qal -> dread shade",
+        "T2": "stated-silent",
+        "T3": "affect",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "clarification:threat-object->dread (signal read in verse)",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0005",
+      "term": "H3372G ya.re",
+      "verse": "2Ki 17:36",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Qal",
+      "lexical_meaning": "to fear = revere",
+      "signals": {
+        "god": true,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "to fear -> revere (Qal; covenant-obedience posture 'fear the Lord who brought you out')",
+        "T1.2": "action",
+        "T1.4": "Qal -> reverence shade",
+        "T2": "stated-silent",
+        "T3": "affect + moral-evaluation (reverent posture)",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "clarification:covenant-obedience-posture->reverence (read in verse)",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0006",
+      "term": "H3372G ya.re",
+      "verse": "1Ch 16:25",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Niphal",
+      "lexical_meaning": "to be feared, awesome",
+      "signals": {
+        "god": true,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "Niphal -> to be feared / awesome (God as the feared one, in praise)",
+        "T1.2": "action (passive — being-feared)",
+        "T1.4": "Niphal -> awe/awesome",
+        "T2": "stated-silent",
+        "T3": "affect",
+        "T1.3": "stated-silent"
+      },
+      "triage": "ACCEPT",
+      "provenance": "mechanical (Niphal) + praise-context read",
+      "status": "draft",
+      "corrections": []
+    },
+    {
+      "id": "M01-0007",
+      "term": "H3372G ya.re",
+      "verse": "1Sa 4:7",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Qal",
+      "lexical_meaning": "to fear / dread",
+      "signals": {
+        "god": true,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "to fear -> revere (Qal; god mentioned)",
+        "T1.2": "action",
+        "T1.4": "Qal -> reverence shade",
+        "T2": "stated-silent",
+        "T3": "affect",
+        "T1.3": "stated-silent",
+        "T7": {
+          "1": "to fear -> dread (Qal; fear of God-as-threat, dread/woe posture read in verse)"
+        },
+        "T1": {
+          "4": "Qal -> dread shade"
+        }
+      },
+      "triage": "ACCEPT",
+      "provenance": "clarification:fear-of-God-as-threat->dread (signal read in verse) — supersedes the induced god->reverence",
+      "status": "corrected",
+      "corrections": [
+        {
+          "date": "2026-06-09",
+          "field": "lexical_meaning",
+          "from": "to revere",
+          "to": "to fear / dread",
+          "reason": "FORCED FINDING un-induced: 1Sa 4:7 'the Philistines were afraid ... Woe to us! ... who can deliver us from these mighty gods?' is dread of God-as-threat, not reverence. god-present alone does not resolve the shade; the dread posture, read in the verse, does.",
+          "clarification": "REVOKE god-present->reverence (it INDUCES); apply fear-of-God-as-threat->dread where the verse shows a dread/woe posture"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "tiers.T7.1",
+          "from": null,
+          "to": "to fear -> dread (Qal; fear of God-as-threat, dread/woe posture read in verse)",
+          "reason": "FORCED FINDING un-induced: 1Sa 4:7 'the Philistines were afraid ... Woe to us! ... who can deliver us from these mighty gods?' is dread of God-as-threat, not reverence. god-present alone does not resolve the shade; the dread posture, read in the verse, does.",
+          "clarification": "REVOKE god-present->reverence (it INDUCES); apply fear-of-God-as-threat->dread where the verse shows a dread/woe posture"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "tiers.T1.4",
+          "from": null,
+          "to": "Qal -> dread shade",
+          "reason": "FORCED FINDING un-induced: 1Sa 4:7 'the Philistines were afraid ... Woe to us! ... who can deliver us from these mighty gods?' is dread of God-as-threat, not reverence. god-present alone does not resolve the shade; the dread posture, read in the verse, does.",
+          "clarification": "REVOKE god-present->reverence (it INDUCES); apply fear-of-God-as-threat->dread where the verse shows a dread/woe posture"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "triage",
+          "from": "ACCEPT",
+          "to": "ACCEPT",
+          "reason": "FORCED FINDING un-induced: 1Sa 4:7 'the Philistines were afraid ... Woe to us! ... who can deliver us from these mighty gods?' is dread of God-as-threat, not reverence. god-present alone does not resolve the shade; the dread posture, read in the verse, does.",
+          "clarification": "REVOKE god-present->reverence (it INDUCES); apply fear-of-God-as-threat->dread where the verse shows a dread/woe posture"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "provenance",
+          "from": "clarification:god-present->reverence (INDUCED — flagged for review)",
+          "to": "clarification:fear-of-God-as-threat->dread (signal read in verse) — supersedes the induced god->reverence",
+          "reason": "FORCED FINDING un-induced: 1Sa 4:7 'the Philistines were afraid ... Woe to us! ... who can deliver us from these mighty gods?' is dread of God-as-threat, not reverence. god-present alone does not resolve the shade; the dread posture, read in the verse, does.",
+          "clarification": "REVOKE god-present->reverence (it INDUCES); apply fear-of-God-as-threat->dread where the verse shows a dread/woe posture"
+        }
+      ]
+    },
+    {
+      "id": "M01-0008",
+      "term": "H3372G ya.re",
+      "verse": "1Ki 8:40",
+      "cluster": "M01",
+      "type": "ACTION",
+      "mode": "Qal",
+      "lexical_meaning": "to fear = revere",
+      "signals": {
+        "god": false,
+        "threat": false,
+        "negation": false
+      },
+      "tiers": {
+        "T7.1": "to fear (Qal; shade fear/awe/reverence not settled by mechanical pass)",
+        "T1.2": "action",
+        "T1.4": "Qal -> shade stated-unresolved",
+        "T2": "stated-silent",
+        "T3": "affect + moral-evaluation (reverent obedience posture)",
+        "T1.3": "stated-silent",
+        "T7": {
+          "1": "to fear -> revere (Qal; God as 'you', covenant-obedience-life context)"
+        },
+        "T1": {
+          "4": "Qal -> reverence shade"
+        }
+      },
+      "triage": "ACCEPT",
+      "provenance": "clarification:god-as-you-covenant-life->reverence (resolves prior escalate)",
+      "status": "corrected",
+      "corrections": [
+        {
+          "date": "2026-06-09",
+          "field": "lexical_meaning",
+          "from": "to fear (shade unresolved)",
+          "to": "to fear = revere",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "tiers.T7.1",
+          "from": null,
+          "to": "to fear -> revere (Qal; God as 'you', covenant-obedience-life context)",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "tiers.T1.4",
+          "from": null,
+          "to": "Qal -> reverence shade",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "tiers.T3",
+          "from": "affect",
+          "to": "affect + moral-evaluation (reverent obedience posture)",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "triage",
+          "from": "ESCALATE",
+          "to": "ACCEPT",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        },
+        {
+          "date": "2026-06-09",
+          "field": "provenance",
+          "from": "no object signal (god addressed as 'you' not detected)",
+          "to": "clarification:god-as-you-covenant-life->reverence (resolves prior escalate)",
+          "reason": "ESCALATED then RESOLVED by a new clarification: 1Ki 8:40 'that they may fear you all the days that they live' — God is the object (as 'you'), in a covenant-obedience-life frame -> reverence. The earlier escalate was a detection gap, not genuine silence.",
+          "clarification": "ADD god-addressed-as-'you' counts as a god-object; covenant-obedience-life context ('fear you all the days they live') -> reverence"
+        }
+      ]
+    }
+  ]
+}
