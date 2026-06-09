@@ -21,7 +21,12 @@ THREAT = re.compile(r"\b(enemy|enemies|sword|army|armies|slay|kill|death|die|pur
 NEG = re.compile(r"\b(do not fear|fear not|be not afraid|not be afraid|no fear)\b", re.I)
 LOCUS = [("heart", 267), ("mind", 270), ("bowel", 276), ("kidney", 276), ("inward", 276), ("breast", 276)]
 # tier obs_ids
-T_LEX, T_KIND, T_MODE, T_AFFECT, T_BODY = 395, 239, 245, 300, 276
+T_LEX, T_KIND, T_MODE, T_BODY = 395, 239, 245, 276
+# per-cluster PRIMARY faculty (T3) — only asserted where mapped (v1: don't induce faculty for unmapped clusters)
+CLUSTER_FACULTY = {
+    "M01": (300, "affect (fear engages the affective faculty)"),       # T3.4 Affect
+    "M15": (294, "cognition (wisdom engages the cognitive faculty)"),  # T3.2 Cognition
+}
 
 
 def pos_of(m):
@@ -37,6 +42,7 @@ def main():
     ap.add_argument("--out", required=True); a = ap.parse_args()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; c = conn.cursor(); c2 = conn.cursor()
     now = c.execute("SELECT datetime('now')").fetchone()[0]
+    fac = CLUSTER_FACULTY.get(a.cluster)  # primary faculty (T3); None -> faculty tier not asserted
 
     # term meta + sense branches (sub-shade counts)
     terms = {}
@@ -94,12 +100,13 @@ def main():
         locus = next((lab for (w, oid), lab in [((w, oid), w) for (w, oid) in LOCUS] if re.search(r"\b"+w, txt, re.I)), None)
         # tier findings: (obs_id, value, status)
         tf = [
-            (T_LEX,    lexical or "", lex_status),
-            (T_KIND,   ttype, "ANSWERED"),
-            (T_MODE,   stem if r["stem"] else "n/a (noun)", "ANSWERED" if r["stem"] else "STATED_SILENT"),
-            (T_AFFECT, "affect (fear engages the affective faculty)", "ANSWERED"),
-            (T_BODY,   locus if locus else "no locus named", "ANSWERED" if locus else "STATED_SILENT"),
+            (T_LEX,  lexical or "", lex_status),
+            (T_KIND, ttype, "ANSWERED"),
+            (T_MODE, stem if r["stem"] else "n/a (noun)", "ANSWERED" if r["stem"] else "STATED_SILENT"),
+            (T_BODY, locus if locus else "no locus named", "ANSWERED" if locus else "STATED_SILENT"),
         ]
+        if fac:
+            tf.append((fac[0], fac[1], "ANSWERED"))
         nverse += 1; triage[tri] += 1
         # SB findings anchored here (OPEN)
         sb = c.execute("SELECT COUNT(*) FROM finding f JOIN finding_verse_link l ON l.finding_id=f.id "
