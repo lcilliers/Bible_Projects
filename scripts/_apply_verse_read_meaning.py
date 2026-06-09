@@ -22,8 +22,8 @@ import argparse, os, re, sqlite3, sys, time
 sys.stdout.reconfigure(encoding="utf-8")
 DB = os.path.join("database", "bible_research.db")
 MODEL = "claude-sonnet-4-6"
-MAX_TOKENS = 8000
-BATCH = 8                       # verses per API call
+MAX_TOKENS = 12000
+BATCH = 6                       # verses per API call (verse-complete fans out to ~2.5 terms/verse)
 PROV_TIER = "l2_api"            # provenance for read-field tier findings
 PROV_MEAN = "l2_meaning"        # provenance for the meaning paragraph finding
 
@@ -69,38 +69,51 @@ def fetch_terms(conn, cluster, term_ids):
     return rows
 
 
-def fetch_term_verses(conn, mid):
-    """Verses for a term, with mechanical fields, sense options, morph/stem, and co-occurring terms."""
+def fetch_term_refs(conn, mid):
+    """Distinct verse references where this term has an active occurrence (drives iteration order)."""
+    return [r[0] for r in conn.execute(
+        """SELECT DISTINCT vr.reference FROM verse_context vc JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+           WHERE vc.mti_term_id=? AND COALESCE(vc.delete_flagged,0)=0 ORDER BY vr.id""", (mid,))]
+
+
+def vcid_read(conn, vcid):
+    return conn.execute("SELECT 1 FROM finding WHERE verse_context_id=? AND provenance=? LIMIT 1",
+                        (vcid, PROV_MEAN)).fetchone() is not None
+
+
+def fetch_verse_block(conn, ref):
+    """Verse-complete: the verse text + EVERY in-scope (clustered) term occurrence at this reference that does
+    NOT yet have a meaning finding. Each term carries its own vcid, mti_term_id, cluster, sense options, morph."""
     c = conn.cursor(); c2 = conn.cursor()
-    out = []
-    for r in c.execute("""SELECT vc.id vcid, vc.verse_record_id vrid, vr.reference ref, vr.verse_text vt,
-                                 vr.morph_code morph, vr.stem stem, ti.parsed_meaning_id pmid
+    vt = None; terms = []
+    for r in c.execute("""SELECT vc.id vcid, vr.verse_text vt, vr.morph_code morph, vr.stem stem,
+                                 m.id mid, m.transliteration tl, m.strongs_number sn, m.cluster_code cc,
+                                 ti.parsed_meaning_id pmid
                           FROM verse_context vc
                           JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
-                          LEFT JOIN mti_terms m ON m.id = vc.mti_term_id
-                          LEFT JOIN wa_term_inventory ti ON ti.strongs_number = m.strongs_number AND COALESCE(ti.delete_flagged,0)=0
-                          WHERE vc.mti_term_id=? AND COALESCE(vc.delete_flagged,0)=0
-                          GROUP BY vc.id ORDER BY vc.id""", (mid,)):
-        # sense options for this term
+                          JOIN mti_terms m ON m.id = vc.mti_term_id
+                          LEFT JOIN wa_term_inventory ti ON ti.strongs_number=m.strongs_number AND COALESCE(ti.delete_flagged,0)=0
+                          WHERE vr.reference=? AND m.cluster_code IS NOT NULL AND COALESCE(vc.delete_flagged,0)=0
+                          GROUP BY vc.id""", (ref,)):
+        if vt is None:
+            vt = (r["vt"] or "").strip()
+        if vcid_read(conn, r["vcid"]):
+            continue
         senses = []
         if r["pmid"]:
             senses = [x[0] for x in c2.execute("SELECT sense_text FROM wa_meaning_sense WHERE parsed_meaning_id=? ORDER BY sort_order LIMIT 4", (r["pmid"],))]
-        # co-occurring in-scope terms at this reference (other mti_terms, their cluster)
-        cooc = c2.execute("""SELECT m.transliteration tl, m.strongs_number sn, m.cluster_code cc, vc2.id vcid
-                             FROM verse_context vc2 JOIN wa_verse_records vr2 ON vr2.id=vc2.verse_record_id
-                             JOIN mti_terms m ON m.id=vc2.mti_term_id
-                             WHERE vr2.reference=? AND vc2.mti_term_id<>? AND COALESCE(vc2.delete_flagged,0)=0
-                             AND m.cluster_code IS NOT NULL""", (r["ref"], mid)).fetchall()
-        out.append({"vcid": r["vcid"], "vrid": r["vrid"], "ref": r["ref"], "vt": (r["vt"] or "").strip(),
-                    "morph": r["morph"], "stem": r["stem"], "senses": senses,
-                    "cooc": [(x["tl"], x["sn"], x["cc"]) for x in cooc]})
-    return out
-
-
-def verse_already_read(conn, vrid, mid):
-    return conn.execute("SELECT 1 FROM finding f JOIN verse_context vc ON vc.id=f.verse_context_id "
-                        "WHERE vc.verse_record_id=? AND f.mti_term_id=? AND f.provenance=? LIMIT 1",
-                        (vrid, mid, PROV_MEAN)).fetchone() is not None
+        terms.append({"vcid": r["vcid"], "mid": r["mid"], "cc": r["cc"], "tl": r["tl"], "sn": r["sn"],
+                      "morph": r["morph"], "stem": r["stem"], "senses": senses})
+    if not terms:
+        return None
+    # co-occurring labels (all clustered terms at the ref, for context)
+    cooc = [(x["tl"], x["sn"], x["cc"]) for x in c2.execute(
+        """SELECT DISTINCT m.transliteration tl, m.strongs_number sn, m.cluster_code cc
+           FROM verse_context vc JOIN wa_verse_records vr ON vr.id=vc.verse_record_id JOIN mti_terms m ON m.id=vc.mti_term_id
+           WHERE vr.reference=? AND m.cluster_code IS NOT NULL AND COALESCE(vc.delete_flagged,0)=0""", (ref,))]
+    for t in terms:
+        t["cooc"] = [x for x in cooc if x[1] != t["sn"]]
+    return {"ref": ref, "vt": vt, "terms": terms}
 
 
 SYSTEM_PROMPT = """You are doing VERSE-LEVEL MEANING extraction for an academic study of Scripture's vocabulary for the inner life of mankind. You read one verse at a time and, for each in-scope inner-life TERM in that verse, you extract a structured record and then write a short MEANING PARAGRAPH.
@@ -320,29 +333,29 @@ def main():
 
     tot = {"in": 0, "out": 0, "cr": 0, "verses": 0, "findings": 0, "audit_flags": 0}
     for term in terms:
-        mid = term["id"]; cc = term["cc"]
-        verses = fetch_term_verses(conn, mid)
-        # idempotent: skip verses already read for this term
-        pending = [v for v in verses if args.dry_run or not verse_already_read(conn, v["vrid"], mid)]
+        mid = term["id"]
+        refs = fetch_term_refs(conn, mid)
+        # verse-complete: build a block per ref of its in-scope terms still missing a meaning finding
+        blocks = []
+        for ref in refs:
+            blk = fetch_verse_block(conn, ref)
+            if blk:
+                blocks.append(blk)
         if args.limit_verses:
-            pending = pending[:args.limit_verses]
-        print(f"\n=== TERM {term['tl']} ({term['sn']}, id={mid}) — {len(verses)} verses, {len(pending)} pending ===")
-        if not pending:
-            continue
+            blocks = blocks[:args.limit_verses]
+        nterms = sum(len(b["terms"]) for b in blocks)
+        print(f"\n=== TERM {term['tl']} ({term['sn']}, id={mid}) — {len(refs)} refs, "
+              f"{len(blocks)} verse-blocks / {nterms} term-slots pending ===")
         if args.live:
             now = _now(conn)
             conn.execute("INSERT INTO engine_stream_checkpoint(run_id, stream_name, status, last_strong, started_at) "
                          "VALUES(?,?,?,?,?)", (run_id, f"term:{term['sn']}", "in_progress", term["sn"], now))
             conn.commit()
         written = 0; flags = 0
-        for i in range(0, len(pending), BATCH):
-            batch_v = pending[i:i + BATCH]
-            # each verse: attach the (single) driver term here (verse-complete extension is future)
-            for v in batch_v:
-                v["terms"] = [{"tl": term["tl"], "sn": term["sn"], "vcid": v["vcid"], "senses": v["senses"],
-                               "cooc": v["cooc"], "morph": v["morph"], "stem": v["stem"]}]
-            term_lookup = {v["vcid"]: (mid, cc) for v in batch_v}
-            user_msg = build_user_message(batch_v)
+        for i in range(0, len(blocks), BATCH):
+            batch = blocks[i:i + BATCH]                       # each block already carries ref/vt/terms[]
+            term_lookup = {t["vcid"]: (t["mid"], t["cc"]) for b in batch for t in b["terms"]}
+            user_msg = build_user_message(batch)
             t0 = time.time()
             try:
                 text, usage = call_api(user_msg)
@@ -355,35 +368,42 @@ def main():
                 continue
             for k in usage: tot[k] += usage[k]
             recs = parse_response(text)
-            print(f"  batch {i//BATCH} [{time.time()-t0:.1f}s] {len(batch_v)} verses -> {len(recs)} recs | in={usage['in']} out={usage['out']} cr={usage['cr']}")
+            bterms = sum(len(b["terms"]) for b in batch)
+            print(f"  batch {i//BATCH} [{time.time()-t0:.1f}s] {len(batch)} verses / {bterms} terms -> {len(recs)} recs | in={usage['in']} out={usage['out']} cr={usage['cr']}")
             if args.dry_run:
                 print("\n----- RAW (first 1800 chars) -----\n" + text[:1800])
                 for rec in recs[:3]:
                     miss = audit_paragraph(rec)
                     print(f"\n  PARSED {rec['ref']} {rec['tl']} vcid={rec['vcid']}: {len(rec['fields'])} fields; "
-                          f"meaning={len(rec['meaning'])}c; API-selfaudit={rec['selfaudit']!r}; CC-missing={miss}")
+                          f"meaning={len(rec['meaning'])}c; routed_cluster={term_lookup.get(rec['vcid'])}; "
+                          f"API-selfaudit={rec['selfaudit']!r}; CC-missing={miss}")
                 print("\n[DRY RUN — no writes] stopping after first batch."); conn.close(); return
             for rec in recs:
                 n, st = write_record(conn, rec, term_lookup, _now(conn))
+                if st != "ok":
+                    continue
                 written += n
                 miss = audit_paragraph(rec)
-                # API selfaudit flags only when it does NOT resolve to OK (notes that end in "ok" are benign)
                 api_flag = bool(rec["selfaudit"]) and not rec["selfaudit"].lower().rstrip(". ").endswith("ok")
                 if miss or api_flag:
                     flags += 1
+                    rmid = term_lookup.get(rec["vcid"], (None,))[0]
                     conn.execute("UPDATE finding SET flagged_for_review=1 WHERE verse_context_id=? AND mti_term_id=? AND provenance=?",
-                                 (rec["vcid"], mid, PROV_MEAN))
-            tot["verses"] += len(batch_v)
+                                 (rec["vcid"], rmid, PROV_MEAN))
+            tot["verses"] += len(batch)
             conn.execute("UPDATE engine_stream_checkpoint SET rows_written=COALESCE(rows_written,0)+?, last_strong=? "
                          "WHERE run_id=? AND stream_name=?", (written, term["sn"], run_id, f"term:{term['sn']}"))
             conn.commit()
-        # per-term self-audit
-        processed = sum(1 for v in verses if verse_already_read(conn, v["vrid"], mid))
-        status = "complete" if processed >= len(verses) else "review"
-        detail = f"verses={len(verses)} processed={processed} findings={written} audit_flags={flags}"
-        conn.execute("UPDATE engine_stream_checkpoint SET status=?, completed_at=?, rows_written=?, error_detail=? "
-                     "WHERE run_id=? AND stream_name=?", (status, _now(conn), written, detail, run_id, f"term:{term['sn']}"))
-        conn.commit()
+        # per-term self-audit: all of THIS term's own occurrences have a meaning finding
+        own = conn.execute("SELECT COUNT(*) FROM verse_context WHERE mti_term_id=? AND COALESCE(delete_flagged,0)=0", (mid,)).fetchone()[0]
+        rd = conn.execute("""SELECT COUNT(*) FROM verse_context vc WHERE vc.mti_term_id=? AND COALESCE(vc.delete_flagged,0)=0
+                             AND EXISTS(SELECT 1 FROM finding f WHERE f.verse_context_id=vc.id AND f.provenance=?)""", (mid, PROV_MEAN)).fetchone()[0]
+        status = "complete" if rd >= own else "review"
+        detail = f"own_verses={own} read={rd} findings_written={written} audit_flags={flags}"
+        if args.live:
+            conn.execute("UPDATE engine_stream_checkpoint SET status=?, completed_at=?, rows_written=?, error_detail=? "
+                         "WHERE run_id=? AND stream_name=?", (status, _now(conn), written, detail, run_id, f"term:{term['sn']}"))
+            conn.commit()
         tot["findings"] += written; tot["audit_flags"] += flags
         print(f"  TERM self-audit: {detail} -> {status}")
 
