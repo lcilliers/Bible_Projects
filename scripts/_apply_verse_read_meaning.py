@@ -272,8 +272,9 @@ def write_record(conn, rec, term_lookup, now):
 # CC backstop checks only CONTENT fields (abstract option-fields like type/compound/mode are conceptual,
 # rarely echoed verbatim — the API's semantic SELFAUDIT covers those). Flag only an EGREGIOUS omission:
 # a content field whose value shares NO significant word with the paragraph.
-AUDIT_CONTENT = {"origin", "constitutional_location", "faculty", "immediate_response",
-                 "produces_effect", "relational_implication", "purpose_equips"}
+# Only FREE-TEXT content fields — option-list fields (origin/location/faculty/type/mode…) are conceptual and
+# need not appear verbatim; the API's semantic SELFAUDIT covers them.
+AUDIT_CONTENT = {"immediate_response", "produces_effect", "relational_implication", "purpose_equips"}
 _STOP = {"the", "and", "that", "with", "from", "this", "into", "upon", "have", "been", "which", "their", "person"}
 
 
@@ -366,7 +367,9 @@ def main():
                 n, st = write_record(conn, rec, term_lookup, _now(conn))
                 written += n
                 miss = audit_paragraph(rec)
-                if miss or (rec["selfaudit"] and rec["selfaudit"].lower() != "ok"):
+                # API selfaudit flags only when it does NOT resolve to OK (notes that end in "ok" are benign)
+                api_flag = bool(rec["selfaudit"]) and not rec["selfaudit"].lower().rstrip(". ").endswith("ok")
+                if miss or api_flag:
                     flags += 1
                     conn.execute("UPDATE finding SET flagged_for_review=1 WHERE verse_context_id=? AND mti_term_id=? AND provenance=?",
                                  (rec["vcid"], mid, PROV_MEAN))
