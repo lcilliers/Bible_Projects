@@ -46,6 +46,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--cluster", required=True)
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-run", action="store_true"); g.add_argument("--live", action="store_true")
+    ap.add_argument("--no-faculty", action="store_true", help="skip the per-term faculty tier (held for the read)")
     ap.add_argument("--out", required=True); a = ap.parse_args()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; c = conn.cursor(); c2 = conn.cursor()
     now = c.execute("SELECT datetime('now')").fetchone()[0]
@@ -98,7 +99,7 @@ def main():
         lexical, nsub = seg
         tri = "ACCEPT" if (nsub <= 1 or THREAT.search(txt) or NEG.search(txt)) else "ESCALATE"
         # faculties (term-derived); locations (verse-text)
-        facs = d["facs"]
+        facs = [] if a.no_faculty else d["facs"]
         locs = [oid for oid, kws in LOCATION.items() if any(re.search(r"\b" + k, txt, re.I) for k in kws)]
         tf = [(T_LEX, lexical or "", "STATED_UNRESOLVED" if tri == "ESCALATE" else ("ANSWERED" if lexical else "STATED_UNRESOLVED")),
               (T_KIND, ttype, "ANSWERED"),
