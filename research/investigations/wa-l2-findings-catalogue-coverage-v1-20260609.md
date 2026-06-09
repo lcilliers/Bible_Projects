@@ -60,3 +60,33 @@ feeds the next rung; it is not expected to answer the relational or dynamic tier
 The catalogue questions are **characteristic-level** (universal scope — asked of each word). L2 produces
 **verse-level** findings. So even the DIRECT ones are answered by *aggregating* L2 across the word's verses —
 L2 is the per-verse evidence; the catalogue answer is its roll-up.
+
+---
+
+## Revision — 2026-06-09: "characteristic" redefined → coverage upgraded
+
+> Researcher redefinition ([[feedback_characteristic_is_typed_term_in_verse]]): **"characteristic" now means
+> the typed term-in-verse**, not the cluster. The tier questions are asked at the **typed-term-in-verse**
+> grain. This **dissolves the caveat above** (the grain now matches L2's grain) and **upgrades coverage**.
+
+**L2 output is now the *tier findings per term, per verse*** (the lexically-answerable tiers derived from
+lexical meaning + type), mechanical-first + API where needed. A **multi-term verse is completed in one read**
+— tier findings for *all* in-scope terms, each saved to its own cluster — **augmenting and correcting** the
+clusters' existing findings.
+
+**Re-classification (the identify sub-questions move to DIRECT per-verse):**
+
+| Tier | was | now (term-in-verse grain) |
+|---|---|---|
+| **T7.1 Lexical** (10) | DIRECT | **DIRECT** |
+| **T1.2 Kind**, **T1.4 Modes** (6) | DIRECT | **DIRECT** (type + stem) |
+| **T1.3 Boundary** (3) | EVIDENCE | **DIRECT-ish** (the term's opposite, per verse) |
+| **T2 Constitutional Location** (31) | EVIDENCE | **DIRECT (identify) / synthesis (reveal)** — does *this term* name a locus *here*? answered per verse (silence valid) |
+| **T3 Faculties** (33) | EVIDENCE | **DIRECT (identify) / synthesis (effect)** — which faculty *this term* engages *here* is in the lexical meaning; the *enable/impair* sub-question stays above |
+| **T1.5–1.7 Response/Effect/Conditions** (9) | BEYOND | **BEYOND** (dynamic) |
+| **T4 / T5 / T6 / T0 / T7.3** | BEYOND | **BEYOND** (cross-term · dynamic · theological — the layer above) |
+
+**Net:** under the redefinition, L2 **directly answers the *identification* tier findings** across
+T7.1 · T1.2 · T1.3 · T1.4 · **T2** · **T3** (the `.1` "is it / which is it" sub-questions), per term per verse
+— a large jump from ~17 to **~80** directly-answered question-instances. The **effect / dynamic / cross-term**
+sub-questions (T2/T3 `.2`, T1.5–1.7, T4, T5, T6, T0) remain the **layer above** L2.
