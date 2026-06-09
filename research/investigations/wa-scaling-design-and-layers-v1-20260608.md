@@ -44,12 +44,25 @@ judgement. Pipeline:
 
 ```
 1. ASSEMBLE   (CC, mechanical, done)  — _assess_verse_assembly per term/cluster → typed arrays
-2. READ       (the judgement)         — assembled batch → typed-relationship findings (JSON)
-3. APPLY      (CC, mechanical)        — validate + write findings to DB  [needs finding schema]
-4. ROLL-UP    (CC, derived/read-only) — findings → modes → sub-groups → cluster view
-   + DE-DUP across the whole run: a cross-cluster verse is read ONCE (first batch to reach it); later
-     batches skip it — its finding is already there, co-owned.
+2. MECHANICAL (CC, mechanical)        — sense-branch via morph · type · clear tier identifications →
+                                        candidate per-term findings + complexity signals
+3. TRIAGE     (CC judgement)          — evaluate the mechanical OUTCOME's adequacy:
+                                        · simple/clean    → ACCEPT (no API)            [most verses]
+                                        · clearly inadequate → API read to complete
+                                        · CC can't judge  → RESEARCHER decides (accept / API)
+4. APPLY      (CC, mechanical)        — validate + write findings to DB  [needs finding schema]
+5. ROLL-UP    (CC, derived/read-only) — findings → modes → sub-groups → cluster view
+   + DE-DUP across the whole run: a cross-cluster verse is read ONCE (first to reach it); later batches
+     skip it — its finding is already there, co-owned.
+   + Each verse-read emits per-term findings for ALL in-scope terms, saved to each term's cluster;
+     augments + corrects existing cluster findings ([[feedback_characteristic_is_typed_term_in_verse]]).
 ```
+
+**Triage detail ([[feedback_l2_mechanical_api_triage]]):** the mechanical-vs-API choice is a **judgement on
+the adequacy of the mechanical outcome**, not a fixed input rule — default **mechanical-accept**, API the
+exception, researcher resolves the uncertain middle. First-draft adequacy signals: unresolved multi-sense ·
+within-stem shade ambiguity · relevance/metaphor doubt · interacting multi-term array · morph-type vs
+keyword-type conflict · homonym · sibling-span pairing.
 
 **Read-batch unit = the TERM** (what batch 1 used). A term's verses share its meaning, so reading them
 together gives consistent findings and lets the term's modes surface. Each read still emits the **complete**
