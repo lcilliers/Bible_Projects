@@ -20,5 +20,10 @@ files.** The DB is the single source of truth.
 
 **So the schema must hold everything.** The L2 finding system (proposed migration M56) extends `verse_context`
 (the per-(verse,term) anchor, already carrying `step_meaning_applied`/`pole`/`residue_flag` from M55) and adds
-verse-level tier-finding, clarification-library, and revision tables; `cluster_finding` (existing) is the
-cluster-level roll-up. Design: `research/investigations/wa-l2-finding-schema-design-v1-20260609.md`.
+verse-level finding + revision tables; `cluster_finding` (existing) is the cluster-level roll-up. **Design v2
+(researcher markup D1–D5): `research/investigations/wa-l2-finding-schema-design-v2-20260609.md`** — D3
+reframed: a **clarification is just an OPEN/RESOLVED finding at the correct level**, so there is **no separate
+clarification table**; ONE level-aware `finding` table (level VERSE/TERM/CLUSTER/GLOBAL; `justified_by_finding_id`
+finding↔finding link); D2 finding↔question is M:N via `finding_question_link`; D5 STATE_SILENT recorded
+explicitly (rarity of a positive tier finding across many silent verses is itself significant). Open: legacy
+`cluster_finding`/`wa_session_b_findings` migrate INTO `finding` as a later step (not M56).
