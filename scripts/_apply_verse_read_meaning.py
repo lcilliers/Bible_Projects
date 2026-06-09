@@ -408,9 +408,14 @@ def main():
         print(f"  TERM self-audit: {detail} -> {status}")
 
     if args.live:
+        # supersede old l2_mechanical findings for every verse the verse-read has now covered (reversible)
+        sup = conn.execute("""UPDATE finding SET delete_flagged=1 WHERE provenance='l2_mechanical'
+                              AND COALESCE(delete_flagged,0)=0
+                              AND verse_context_id IN (SELECT DISTINCT verse_context_id FROM finding WHERE provenance='l2_meaning')""").rowcount
         conn.execute("UPDATE engine_run_log SET completed_at=?, outcome=?, total_verses_inserted=? WHERE run_id=?",
                      (_now(conn), "PASS", tot["verses"], run_id))
         conn.commit()
+        print(f"superseded {sup} old l2_mechanical findings (verse-read-covered verses)")
     print(f"\n=== TOTAL: verses={tot['verses']} findings={tot['findings']} audit_flags={tot['audit_flags']} | "
           f"tokens in={tot['in']:,} out={tot['out']:,} cache_read={tot['cr']:,} ===")
     conn.close()
