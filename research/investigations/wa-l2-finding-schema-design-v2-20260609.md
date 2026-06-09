@@ -59,6 +59,29 @@ created_at TEXT, delete_flagged INTEGER
 One finding may answer several tier questions; one question is answered by many findings. (Verse-level analogue
 of the existing cluster-level `wa_finding_catalogue_links`.)
 
+## 3b. `finding_verse_link` — M:N finding ↔ verse — NEW
+A finding (esp. TERM/CLUSTER level, incl. migrated Session B findings) anchors to **many** verses.
+```
+id INTEGER PK
+finding_id INTEGER       → finding.id
+verse_record_id INTEGER  → wa_verse_records.id   (or reference TEXT where no row)
+role TEXT                -- anchor · evidence
+created_at TEXT, delete_flagged INTEGER
+```
+Lets verse-coverage **surface the OPEN findings anchored to the current verse** and resolve them.
+
+## 3c. Session B reconciliation — resolve through L2 ([[feedback_session_b_findings_resolved_through_l2]])
+**All Session B findings must be resolved by a finding.** Migrate `wa_session_b_findings` (2,883 active) into
+`finding` as **TERM/CLUSTER-level** findings:
+- **8** with `related_finding_id` → status **CLOSED** (defer to the related finding).
+- **1,432** verse-anchored, unresolved → status **OPEN**; their `anchor_verses` → `finding_verse_link`. These
+  are **L2 work items**: as each anchor verse is covered, the verse-read **resolves/updates** the SB finding
+  (links via `justified_by_finding_id` / `supersedes_id`; status → RESOLVED).
+- the rest (~1,443, mostly `resolved_qa`, non-verse-anchored) → migrate as TERM/CLUSTER findings but **not**
+  part of the verse process.
+
+This is a **data step after M56** (load SB findings into `finding` + `finding_verse_link`), reversible.
+
 ## 4. `finding_revision` — append-only history (D4) — NEW
 ```
 id INTEGER PK
