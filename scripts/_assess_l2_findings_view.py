@@ -43,6 +43,29 @@ def main():
         tri = {r[0]: r[1] for r in c.execute(f"SELECT triage_status, COUNT(*) FROM verse_context WHERE mti_term_id IN ({qm}) "
                                              f"AND meaning_provenance='l2_mechanical' GROUP BY triage_status", mids)}
         L.append(f"\n## {CL} ({name.get(CL, CL)}) — {tv} term-in-verses · triage {tri}\n")
+        # OLD characteristic-level findings (cluster_finding) for the four tiers, for comparison
+        TIERS = [("T1.2 Kind", ["T1.2"]), ("T1.4 Modes", ["T1.4"]),
+                 ("T2 Constitution/Body", ["T2."]), ("T7.1 Lexical", ["T7.1"])]
+        L.append("### OLD findings (characteristic-level, `cluster_finding`) — for comparison")
+        for tlabel, comps in TIERS:
+            if comps[0].endswith("."):
+                oids = [r[0] for r in c.execute("SELECT obs_id FROM wa_obs_question_catalogue WHERE component_code LIKE ? AND COALESCE(deleted,0)=0", (comps[0] + "%",))]
+            else:
+                oids = [r[0] for r in c.execute("SELECT obs_id FROM wa_obs_question_catalogue WHERE component_code=? AND COALESCE(deleted,0)=0", (comps[0],))]
+            qo = ",".join("?" * len(oids))
+            old = c.execute(f"SELECT q.question_code qc, cf.finding_text ft FROM cluster_finding cf "
+                            f"JOIN wa_obs_question_catalogue q ON q.obs_id=cf.obs_id WHERE cf.cluster_code=? "
+                            f"AND cf.obs_id IN ({qo}) AND COALESCE(cf.delete_flagged,0)=0 "
+                            f"AND cf.finding_text IS NOT NULL", [CL] + oids).fetchall()
+            seen = []
+            for r in old:
+                key = (r["ft"] or "")[:60]
+                if key in seen: continue
+                seen.append(key)
+            L.append(f"- **{tlabel}** ({len(old)} old findings):")
+            for r in old[:4]:
+                L.append(f"    - _{r['qc']}_: {re.sub(chr(10),' ',(r['ft'] or ''))[:150]}")
+        L.append("\n### NEW per-verse findings (L2 mechanical)\n")
         # sample: take some references (ordered) + ensure a couple escalated
         rows = c.execute(f"SELECT vc.id vcid, vc.mti_term_id mid, vc.thing_type tt, vc.triage_status tri, "
                          f"m.transliteration tl, vr.reference ref, vr.verse_text txt, vr.stem stem, vr.morph_code morph "
