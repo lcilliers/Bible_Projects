@@ -1963,6 +1963,84 @@ def _m55(conn: sqlite3.Connection) -> None:
     print("     M55: V3_2 fields added; schema_version → 3.29.0")
 
 
+@_register("M56", "L2 finding system: verse_context finding fields + universal finding / question / verse / revision tables")
+def _m56(conn: sqlite3.Connection) -> None:
+    """L2 per-term-in-verse finding model (schema design v2). Additive. A clarification is a finding at the
+    correct level (D3); finding<->question and finding<->verse are M:N; finding_revision is append-only.
+    Legacy cluster_finding / wa_session_b_findings migrate in as a later reversible data step."""
+    # verse_context — the per-(verse, term) anchor (D1)
+    _add_column_if_missing(conn, "verse_context", "thing_type",         "TEXT")
+    _add_column_if_missing(conn, "verse_context", "triage_status",      "TEXT")
+    _add_column_if_missing(conn, "verse_context", "meaning_provenance", "TEXT")
+    _add_column_if_missing(conn, "verse_context", "flagged_for_review", "INTEGER DEFAULT 0")
+    # finding — one level-aware universal finding table (D3); clarification = OPEN/RESOLVED finding at level
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS finding (
+            id INTEGER PRIMARY KEY,
+            level TEXT NOT NULL,                  -- VERSE | TERM | CLUSTER | GLOBAL
+            verse_context_id INTEGER,             -- level=VERSE   -> verse_context.id
+            mti_term_id INTEGER,                  -- level=TERM    -> mti_terms.id
+            cluster_code TEXT,                    -- level=CLUSTER -> cluster.cluster_code
+            finding_value TEXT,
+            finding_status TEXT,                  -- ANSWERED|STATED_SILENT|STATED_UNRESOLVED|OPEN|RESOLVED|CLOSED
+            provenance TEXT,                      -- mechanical|clarification|api|researcher
+            justified_by_finding_id INTEGER,      -- the clarification (higher-level finding) that justifies this
+            supersedes_id INTEGER,                -- correction / resolution lineage
+            source_legacy_ref TEXT,               -- e.g. wa_session_b_findings.finding_id when migrated
+            flagged_for_review INTEGER DEFAULT 0,
+            created_at TEXT, last_updated_date TEXT,
+            delete_flagged INTEGER DEFAULT 0
+        )""")
+    # finding <-> tier question (M:N) (D2)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS finding_question_link (
+            id INTEGER PRIMARY KEY,
+            finding_id INTEGER NOT NULL,
+            question_id INTEGER NOT NULL,         -- wa_obs_question_catalogue.obs_id
+            coverage TEXT,                        -- full | partial | evidence
+            created_at TEXT,
+            delete_flagged INTEGER DEFAULT 0
+        )""")
+    # finding <-> verse (M:N) — multi-verse-anchored findings incl. migrated Session B
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS finding_verse_link (
+            id INTEGER PRIMARY KEY,
+            finding_id INTEGER NOT NULL,
+            verse_record_id INTEGER,              -- wa_verse_records.id (or reference where no row)
+            reference TEXT,
+            role TEXT,                            -- anchor | evidence
+            created_at TEXT,
+            delete_flagged INTEGER DEFAULT 0
+        )""")
+    # finding_revision — append-only correction history (D4)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS finding_revision (
+            id INTEGER PRIMARY KEY,
+            finding_id INTEGER NOT NULL,
+            field TEXT, value_from TEXT, value_to TEXT,
+            reason TEXT,
+            justified_by_finding_id INTEGER,
+            revised_at TEXT, revised_by TEXT
+        )""")
+    for ddl in (
+        "CREATE INDEX IF NOT EXISTS idx_finding_level ON finding(level)",
+        "CREATE INDEX IF NOT EXISTS idx_finding_vc ON finding(verse_context_id)",
+        "CREATE INDEX IF NOT EXISTS idx_finding_term ON finding(mti_term_id)",
+        "CREATE INDEX IF NOT EXISTS idx_finding_cluster ON finding(cluster_code)",
+        "CREATE INDEX IF NOT EXISTS idx_finding_justified ON finding(justified_by_finding_id)",
+        "CREATE INDEX IF NOT EXISTS idx_fql_finding ON finding_question_link(finding_id)",
+        "CREATE INDEX IF NOT EXISTS idx_fql_question ON finding_question_link(question_id)",
+        "CREATE INDEX IF NOT EXISTS idx_fvl_finding ON finding_verse_link(finding_id)",
+        "CREATE INDEX IF NOT EXISTS idx_fvl_verse ON finding_verse_link(verse_record_id)",
+        "CREATE INDEX IF NOT EXISTS idx_frev_finding ON finding_revision(finding_id)",
+    ):
+        conn.execute(ddl)
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.30.0", _now()))
+    print("     M56: L2 finding system added; schema_version -> 3.30.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

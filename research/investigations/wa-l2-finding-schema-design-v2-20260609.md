@@ -100,7 +100,11 @@ in M56 (a big-bang migration of 23k rows is risky and unrelated to standing up L
 for the evolved verse/term work; legacy migration is a later, separate, reversible step.
 → **Confirm:** new `finding` table now + legacy migrates in later? (recommended) — or extend a legacy table?
 
-## 6. Migration M56 (3.29.0 → 3.30.0)
+## 6. Migration M56 (3.29.0 → 3.30.0) — **APPLIED 2026-06-09**
+> Applied via `engine/migrate.py _m56` (backup `bible_research_pre_m56_20260609.db` → dry-run → live →
+> verified). schema_version = 3.30.0; verse_context +4 cols; `finding` (15) / `finding_question_link` (6) /
+> `finding_verse_link` (7) / `finding_revision` (9) created with indexes.
+
 `engine/migrate.py _m56`: ALTER `verse_context` +4 cols · CREATE `finding`, `finding_question_link`,
 `finding_revision` + indexes (`finding.verse_context_id`, `.level`, `.justified_by_finding_id`;
 `finding_question_link.finding_id`, `.question_id`). Idempotent · own transaction · history-aware (M55

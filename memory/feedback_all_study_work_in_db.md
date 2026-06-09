@@ -27,3 +27,9 @@ clarification table**; ONE level-aware `finding` table (level VERSE/TERM/CLUSTER
 finding↔finding link); D2 finding↔question is M:N via `finding_question_link`; D5 STATE_SILENT recorded
 explicitly (rarity of a positive tier finding across many silent verses is itself significant). Open: legacy
 `cluster_finding`/`wa_session_b_findings` migrate INTO `finding` as a later step (not M56).
+
+**M56 APPLIED 2026-06-09 (schema 3.30.0):** `verse_context` +4 cols (`thing_type`/`triage_status`/
+`meaning_provenance`/`flagged_for_review`); new tables `finding` (level-aware), `finding_question_link`
+(M:N), `finding_verse_link` (M:N), `finding_revision` (append-only). Backup `bible_research_pre_m56_20260609.db`.
+**Next = data steps (need approval/pipeline): migrate SB findings into `finding` (1432 verse-anchored OPEN +
+8 CLOSED); write verse-level findings via the L2 pipeline.**

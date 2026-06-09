@@ -45,7 +45,9 @@ Shared constants for the Session A v9 Automation Engine.
 # research/investigations/wa-migration-control-integrity-v1-20260607.md.
 # 2026-06-08: M55 applied (V3_2 schema — L1 verse fields, finding typing, morphology,
 # homonym flag; vertical_pass_flag retired). → 3.29.0.
-EXPECTED_SCHEMA_VERSION = "3.29.0"
+# 2026-06-09: M56 applied (L2 finding system — verse_context finding fields + universal
+# finding / finding_question_link / finding_verse_link / finding_revision tables). → 3.30.0.
+EXPECTED_SCHEMA_VERSION = "3.30.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
