@@ -136,3 +136,8 @@ Sessions/Session_B/09_Analysis_output_logs/words/*.log
 
 # ── Session-Cluster AI handoff zips (transient — content is unpacked into folders) ─
 Sessions/Session_Clusters/**/*.zip
+
+# CC verse-read transient handshake files
+outputs/cc/cc_packets.md
+outputs/cc/cc_packets.md.map
+outputs/cc/cc_output.md
