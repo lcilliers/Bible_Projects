@@ -144,3 +144,26 @@ RUN (M01)                          → engine_run_log row (mode='verse_read_mean
 
 *This is expected to be the largest single task of the study — the control scaffold is built for scale,
 stall-visibility, and clean resume from the start.*
+
+---
+
+## 8. Term-kind scoping — T2, FLAG, and the participation gate (GOVERNING, 2026-06-10)
+
+The buckets are not characteristics. Handle by **kind of term**, not by cluster code
+([[feedback_t2_reference_flag_reclassify]]).
+
+- **M-clusters = the characteristics (the *what*)** — the only **drivers** of the verse-read.
+- **T2 = a REFERENCE (qualifiers / the *how*)** — **never analysed on its own.** A T2 term is engaged only
+  where an M-cluster verse uses it, and its meaning is **embedded in that cluster term's analysis, NOT
+  recorded as a standalone T2 finding.** → The CC-mode must **not write T2-routed paragraphs**; instead the
+  read must fold the qualifier's implication into the co-occurring characteristic's meaning (co-occurrence
+  array + `compound` field + the prose, as already evidenced bidirectionally). The existing 945 standalone
+  T2 paragraphs are out-of-rule → **retire (reversible) when CC-mode lands.**
+- **Corroboration (verified, 1063/1063).** A T2 term is read **only** in verses that contain an inner-being
+  characteristic; **never** drive T2 to interpret a qualifier's purely-physical verses.
+- **Participation gate.** Within a corroborated verse, persist meanings only for terms that actually
+  participate in the inner-being content; **skip bystander terms** (pure particles `et`; repeated social
+  terms `am`) — ~15% self-declare "no inner faculty engaged."
+- **FLAG = a holding pen, the opposite case.** A FLAG term that **carries inner-being meaning belongs in a
+  CLUSTER** — it is no longer FLAG. Triage each to its home; where **no home exists, open a debate** (the
+  heart/soul/flesh constitutional *seats* likely need a home of their own).
