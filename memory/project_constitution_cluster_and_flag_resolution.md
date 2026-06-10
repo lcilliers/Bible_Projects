@@ -14,14 +14,16 @@ Moved from FLAG: lev/le.vav/kardia (heart), ne.phesh H5315G (soul), ru.ach (spir
 cluster to be analysed in depth** (the seats are genuinely inner-being in most occurrences, unlike T2
 qualifiers) — it will need its own verse-read run to complete (heart alone is ~600+ verses, mostly not yet read).
 
-**Governing principle — FLAG must empty.** Every FLAG term resolves to exactly one of:
-1. **a CLUSTER** to be analysed in depth (→ an M-cluster, existing or new like Constitution), or
-2. **a T2** reference (qualifier/object/intensifier/particle — embedded where used, never standalone), or
-3. **UNDECIDED** (held pending debate).
-**517 FLAG terms remained** after the Constitution move — the cluster/T2/undecided triage of these is the next
-task (informed by glosses + verse-read meanings as they accumulate). Triage sketch in
-`research/investigations/wa-flag-triage-v1-20260610.md`: clear moves (chay.yim→M25 Life), framework/juridical
-(justice/covenant → debate), reference/qualifier (name/mouth/me.od/beloved → T2), noise (am/el/kol/mē/sun → T2).
+**FLAG IS NOW EMPTY (DONE 2026-06-10).** Every FLAG term resolved to a CLUSTER or T2 — **T2 is the catch-all
+reference bucket** (researcher: non-characteristics "do no harm" in T2; only dragged into a verse if they act
+as a qualifier there). Sequence: 8 seats → M47; gloss-classifier moved 116 clear characteristics → their
+M-cluster + 19 particles → T2 (`_apply_flag_triage_moves.py`); then the remaining 382 → 14 borderline
+characteristics → clusters (ka.ved→M22, cha.lah→M21, a.vah→M30, pikros→M03, prauthumos→M09, chaninah→M39,
+diallasso→M33, chovelim→M44, enochos→M10) + 368 (names/objects/generic-verbs + reference-like
+beloved/voice/likeness) → T2 (`_apply_flag_empty_to_t2.py`). **End state: FLAG 0 · T2 867 (was 480) · M47 32 ·
+47 M-clusters.** Cluster assignments are provisional — re-evaluated when each cluster's verse-read runs
+(safety net); all reversible. NOTE: the standalone T2 paragraphs (now larger) remain out-of-rule per
+[[feedback_t2_reference_flag_reclassify]] → retire when CC-mode lands.
 
 **Deferred / noted (not acted on):**
 - **Splitting/grouping clusters** into super-groups (e.g. a Constitution+Life group) — *doesn't matter at this
