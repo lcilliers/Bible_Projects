@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T16:58:40Z",
+  "generated_at": "2026-06-10T17:36:26Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 118,
     "historical": 30,
-    "current": 1713,
+    "current": 1719,
     "cross-reference": 3317,
     "archived": 2223,
-    "backup": 15
+    "backup": 16
   },
-  "total_files": 7416,
-  "total_active": 5193,
+  "total_files": 7423,
+  "total_active": 5200,
   "total_archived": 2223,
   "files": [
     {
@@ -91975,6 +91975,22 @@
       "modified": "2026-06-08T11:17:59Z"
     },
     {
+      "path": "backups/bible_research_pre_migration_v3.30.0.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 318234624,
+      "modified": "2026-06-10T16:56:43Z"
+    },
+    {
       "path": "backups/bible_research_pre_sb_migrate_20260609.db",
       "category": "backup",
       "type": "other",
@@ -92275,8 +92291,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 318234624,
-      "modified": "2026-06-10T16:56:43Z"
+      "size_bytes": 318246912,
+      "modified": "2026-06-10T17:34:25Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92291,8 +92307,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3350971,
-      "modified": "2026-06-10T13:59:58Z"
+      "size_bytes": 3351417,
+      "modified": "2026-06-10T16:58:41Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92803,8 +92819,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4854,
-      "modified": "2026-06-09T04:29:51Z"
+      "size_bytes": 4953,
+      "modified": "2026-06-10T17:34:02Z"
     },
     {
       "path": "engine/db.py",
@@ -92899,8 +92915,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 115692,
-      "modified": "2026-06-09T04:29:28Z"
+      "size_bytes": 118803,
+      "modified": "2026-06-10T17:33:45Z"
     },
     {
       "path": "engine/new_word.py",
@@ -94275,8 +94291,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5129,
-      "modified": "2026-06-10T16:58:39Z"
+      "size_bytes": 6023,
+      "modified": "2026-06-10T17:36:25Z"
     },
     {
       "path": "memory/project_characteristic_backfill_backlog.md",
@@ -95287,6 +95303,22 @@
       "modified": "2026-05-06T04:35:42Z"
     },
     {
+      "path": "outputs/markdown/M02-cluster-gate-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6797,
+      "modified": "2026-06-10T17:04:14Z"
+    },
+    {
       "path": "outputs/markdown/M02-meaning-quality-check-20260610.md",
       "category": "report",
       "type": "report",
@@ -95303,6 +95335,22 @@
       "modified": "2026-06-10T16:57:06Z"
     },
     {
+      "path": "outputs/markdown/M02-tier-wide-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 265889,
+      "modified": "2026-06-10T17:35:24Z"
+    },
+    {
       "path": "outputs/markdown/M02-verse-meanings-20260610.md",
       "category": "report",
       "type": "report",
@@ -95317,6 +95365,22 @@
       "archived": false,
       "size_bytes": 465448,
       "modified": "2026-06-10T16:57:05Z"
+    },
+    {
+      "path": "outputs/markdown/cluster-processing-timing-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2711,
+      "modified": "2026-06-10T17:12:11Z"
     },
     {
       "path": "outputs/markdown/cluster_audit_v1_20260601.md",
@@ -113767,6 +113831,38 @@
       "modified": "2026-05-03T06:03:29Z"
     },
     {
+      "path": "scripts/_explore_cluster_timing.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 7459,
+      "modified": "2026-06-10T17:11:51Z"
+    },
+    {
+      "path": "scripts/_explore_tier_findings.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 7946,
+      "modified": "2026-06-10T17:35:15Z"
+    },
+    {
       "path": "scripts/_export_m10_captured_content_20260526.py",
       "category": "script",
       "type": "other",
@@ -113909,6 +114005,22 @@
       "archived": false,
       "size_bytes": 10614,
       "modified": "2026-05-06T17:24:22Z"
+    },
+    {
+      "path": "scripts/_generate_cluster_gate.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 9471,
+      "modified": "2026-06-10T17:04:06Z"
     },
     {
       "path": "scripts/_generate_cluster_grouped_v1_20260506.py",

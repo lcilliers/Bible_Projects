@@ -45,11 +45,21 @@ enclose-not-hostility. Session log: wa-sessionlog-20260610-M02-cc-verse-read-v2.
 complete (after M01); next: per-cluster gate, then another cluster.**
 
 **Quality-check tooling (read-only):** `scripts/_generate_meaning_quality_check.py` (N random verses × M
-terms: verse + tier findings + meaning) and `scripts/_generate_verse_meanings_export.py` (full l2_meaning
-export by term). **Tier findings are stored POSITIONALLY** (`finding.provenance='l2_api'`, bare value,
-`level='VERSE'`, no field-name column — order = field identity, fragile to multi-select expansion); the
-`l2_meaning` paragraph is self-contained. **Researcher decision: ignore tier sequencing/labels — meaning
-paragraph is the deliverable; no fix.**
+terms: verse + tier findings + meaning); `scripts/_generate_verse_meanings_export.py` (full l2_meaning
+export by term); `scripts/_generate_cluster_gate.py --cluster` (per-cluster gate: coverage + value-classified
+tier profile + flag split + misfit surfacing); `scripts/_explore_tier_findings.py` (wide export / field
+distribution / cross-tab).
+
+**CORRECTION (2026-06-10) — tier findings are NOT positionally lost.** Earlier note said tier findings were
+"stored positionally, no field-name column, ignore labels." That was an UNDER-READING of the schema. Every
+l2_api tier finding IS labelled: `upsert_finding` writes a `finding_question_link(finding_id, question_id)`
+to the obs-catalogue question for that field (FIELD_OBS/FACULTY_OBS/LOCATION_OBS in
+`_apply_verse_read_meaning.py`; idempotency key = (vcid, mid, prov, obs_id)). 100% of 186,455 l2_api findings
+are linked → fully recoverable verse→term→tier-field. Migration **M57 (schema 3.31.0)** adds read-only views
+**`v_l2_tier`** (tier findings, catalogue-labelled with question_code/tier/component_title) and
+**`v_l2_meaning`** (paragraph per verse-term). So verse-level tier data is fully explorable (per-field +
+cross-tab). The researcher's "ignore sequencing" was only ever about the report, not the data — no backfill
+needed. The `l2_meaning` paragraph remains the human deliverable.
 
 **Pending:** retire the existing out-of-rule standalone T2 paragraphs (from earlier API fan-out + the FLAG→T2
 moves) per [[feedback_t2_reference_flag_reclassify]]; finish M02 (~36% left); per-cluster gate before sign-off.

@@ -2041,6 +2041,65 @@ def _m56(conn: sqlite3.Connection) -> None:
     print("     M56: L2 finding system added; schema_version -> 3.30.0")
 
 
+@_register("M57", "Add L2 exploration views: v_l2_tier (tier findings, catalogue-labelled) + v_l2_meaning (paragraph per verse-term)")
+def _m57(conn: sqlite3.Connection) -> None:
+    """Read-only convenience views over the L2 verse-read findings. Each l2_api tier finding is labelled by
+    its observation-catalogue question via finding_question_link; v_l2_tier surfaces that join so the
+    verse -> term -> tier-field data is queryable without knowing obs_ids. v_l2_meaning surfaces the meaning
+    paragraph per (verse, term). Additive and fully reversible (views only; no data change)."""
+    conn.execute("DROP VIEW IF EXISTS v_l2_tier")
+    conn.execute("""
+        CREATE VIEW v_l2_tier AS
+        SELECT
+            f.id                 AS finding_id,
+            f.cluster_code       AS cluster_code,
+            vr.reference         AS verse_ref,
+            f.verse_context_id   AS verse_context_id,
+            f.mti_term_id        AS mti_term_id,
+            mt.transliteration   AS term,
+            mt.strongs_number    AS strongs,
+            l.question_id        AS question_id,
+            q.question_code      AS question_code,
+            q.tier               AS tier,
+            q.component_code     AS component_code,
+            q.component_title    AS field_title,
+            f.finding_value      AS value,
+            f.finding_status     AS status
+        FROM finding f
+        JOIN finding_question_link l       ON l.finding_id = f.id
+        JOIN wa_obs_question_catalogue q   ON q.obs_id = l.question_id
+        LEFT JOIN verse_context vc         ON vc.id = f.verse_context_id
+        LEFT JOIN wa_verse_records vr      ON vr.id = vc.verse_record_id
+        LEFT JOIN mti_terms mt             ON mt.id = f.mti_term_id
+        WHERE f.provenance = 'l2_api' AND f.delete_flagged = 0
+    """)
+    conn.execute("DROP VIEW IF EXISTS v_l2_meaning")
+    conn.execute("""
+        CREATE VIEW v_l2_meaning AS
+        SELECT
+            f.id                 AS finding_id,
+            f.cluster_code       AS cluster_code,
+            vr.reference         AS verse_ref,
+            vr.verse_text        AS verse_text,
+            f.verse_context_id   AS verse_context_id,
+            f.mti_term_id        AS mti_term_id,
+            mt.transliteration   AS term,
+            mt.strongs_number    AS strongs,
+            f.finding_value      AS meaning,
+            f.flagged_for_review AS flagged,
+            f.created_at         AS created_at
+        FROM finding f
+        LEFT JOIN verse_context vc         ON vc.id = f.verse_context_id
+        LEFT JOIN wa_verse_records vr      ON vr.id = vc.verse_record_id
+        LEFT JOIN mti_terms mt             ON mt.id = f.mti_term_id
+        WHERE f.provenance = 'l2_meaning' AND f.delete_flagged = 0
+    """)
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.31.0", _now()))
+    print("     M57: L2 exploration views (v_l2_tier, v_l2_meaning) added; schema_version -> 3.31.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

@@ -47,7 +47,8 @@ Shared constants for the Session A v9 Automation Engine.
 # homonym flag; vertical_pass_flag retired). → 3.29.0.
 # 2026-06-09: M56 applied (L2 finding system — verse_context finding fields + universal
 # finding / finding_question_link / finding_verse_link / finding_revision tables). → 3.30.0.
-EXPECTED_SCHEMA_VERSION = "3.30.0"
+# 2026-06-10: M57 applied (L2 exploration views v_l2_tier + v_l2_meaning; read-only). → 3.31.0.
+EXPECTED_SCHEMA_VERSION = "3.31.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
