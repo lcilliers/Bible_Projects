@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T17:36:26Z",
+  "generated_at": "2026-06-10T18:17:18Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 118,
     "historical": 30,
-    "current": 1719,
+    "current": 1722,
     "cross-reference": 3317,
     "archived": 2223,
     "backup": 16
   },
-  "total_files": 7423,
-  "total_active": 5200,
+  "total_files": 7426,
+  "total_active": 5203,
   "total_archived": 2223,
   "files": [
     {
@@ -60487,6 +60487,22 @@
       "modified": "2026-04-16T07:10:34Z"
     },
     {
+      "path": "Workflow/Tiers/wa-tier-catalogue-restructured-v1-20260610.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 17639,
+      "modified": "2026-06-10T17:50:39Z"
+    },
+    {
       "path": "Workflow/Tiers/wa-tier-questions-extract-v1-20260604.md",
       "category": "workflow",
       "type": "other",
@@ -92307,8 +92323,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3351417,
-      "modified": "2026-06-10T16:58:41Z"
+      "size_bytes": 3354328,
+      "modified": "2026-06-10T17:36:26Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -95397,6 +95413,22 @@
       "archived": false,
       "size_bytes": 51020,
       "modified": "2026-06-02T14:05:33Z"
+    },
+    {
+      "path": "outputs/markdown/ve-by-cluster-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4842,
+      "modified": "2026-06-10T18:16:40Z"
     },
     {
       "path": "outputs/markdown/wa-M01-term-verse-findings-report-v1-20260609.md",
@@ -113861,6 +113893,22 @@
       "archived": false,
       "size_bytes": 7946,
       "modified": "2026-06-10T17:35:15Z"
+    },
+    {
+      "path": "scripts/_explore_ve_by_cluster.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 6686,
+      "modified": "2026-06-10T18:16:26Z"
     },
     {
       "path": "scripts/_export_m10_captured_content_20260526.py",
