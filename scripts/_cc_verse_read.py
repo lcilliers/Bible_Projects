@@ -94,7 +94,19 @@ def emit(conn, cluster, limit, out):
     print(f"emitted {len(blocks)} verses / {nterms} WRITE-terms (M-clusters only; T2 as context) -> {out}")
 
 
+def _find_or_open_run(conn, cluster):
+    r = conn.execute("SELECT run_id FROM engine_run_log WHERE mode='cc_verse_read' AND target_registry_ids=? AND completed_at IS NULL ORDER BY id DESC LIMIT 1", (cluster,)).fetchone()
+    if r:
+        return r["run_id"]
+    now = vrm._now(conn)
+    rid = f"ccvrm_{cluster}_{now}"
+    conn.execute("INSERT INTO engine_run_log(run_id, mode, target_registry_ids, started_at) VALUES(?,?,?,?)", (rid, "cc_verse_read", cluster, now))
+    conn.commit()
+    return rid
+
+
 def ingest(conn, cluster, infile, run_id):
+    t0 = vrm._now(conn)
     text = open(infile, encoding="utf-8").read()
     recs = vrm.parse_response(text)
     # routing map from the emit sidecar (authoritative; only these vcids are writable)
@@ -106,10 +118,13 @@ def ingest(conn, cluster, infile, run_id):
     if side:
         for line in open(side, encoding="utf-8"):
             v, m, cc = line.strip().split("\t"); mp[int(v)] = (int(m), cc)
+    expected = len(mp)
+    seen_vcids = set()
     written = skipped = flags = 0
     for rec in recs:
         if rec["vcid"] not in mp:
             skipped += 1; continue   # T2 / out-of-scope vcid — never write
+        seen_vcids.add(rec["vcid"])
         n, st = vrm.write_record(conn, rec, mp, vrm._now(conn))
         if st != "ok":
             skipped += 1; continue
@@ -119,8 +134,23 @@ def ingest(conn, cluster, infile, run_id):
         if miss or api_flag:
             flags += 1
             conn.execute("UPDATE finding SET flagged_for_review=1 WHERE verse_context_id=? AND provenance=?", (rec["vcid"], PROV_MEAN))
+    # FAULT-LINE CHECK: did CC cover every emitted WRITE-term?
+    missing_vcids = [v for v in mp if v not in seen_vcids]
+    shortfall = len(missing_vcids)
+    # engine logging: one checkpoint per cycle under the open run
+    rid = _find_or_open_run(conn, cluster)
+    done = vrm._now(conn)
+    ncyc = conn.execute("SELECT COUNT(*) FROM engine_stream_checkpoint WHERE run_id=?", (rid,)).fetchone()[0] + 1
+    detail = f"records={len(recs)} expected_terms={expected} covered={len(seen_vcids)} shortfall={shortfall} findings={written} flagged={flags} skipped={skipped}"
+    if missing_vcids:
+        detail += " | MISSING_vcids=" + ",".join(str(v) for v in missing_vcids[:30])
+    conn.execute("""INSERT INTO engine_stream_checkpoint(run_id, stream_name, status, rows_written, rows_filtered, error_detail, started_at, completed_at)
+                    VALUES(?,?,?,?,?,?,?,?)""", (rid, f"cc:{cluster}:cycle{ncyc:03d}", "review" if shortfall else "complete", written, skipped, detail, t0, done))
+    conn.execute("UPDATE engine_run_log SET total_meanings_parsed=COALESCE(total_meanings_parsed,0)+?, total_verses_inserted=COALESCE(total_verses_inserted,0)+? WHERE run_id=?",
+                 (len(recs), len(seen_vcids), rid))
     conn.commit()
-    print(f"ingested {len(recs)} records -> wrote {written} findings, skipped {skipped} (non-M / dup), {flags} flagged")
+    print(f"[cycle {ncyc}] ingested {len(recs)} records -> wrote {written} findings, skipped {skipped}, {flags} flagged "
+          f"| covered {len(seen_vcids)}/{expected}" + (f"  ⚠ SHORTFALL {shortfall}: {missing_vcids[:30]}" if shortfall else ""))
 
 
 def status(conn, cluster):
@@ -128,6 +158,10 @@ def status(conn, cluster):
     rd = conn.execute("""SELECT COUNT(*) FROM verse_context vc JOIN mti_terms m ON m.id=vc.mti_term_id WHERE m.cluster_code=? AND COALESCE(vc.delete_flagged,0)=0
                          AND EXISTS(SELECT 1 FROM finding f WHERE f.verse_context_id=vc.id AND f.provenance=?)""", (cluster, PROV_MEAN)).fetchone()[0]
     print(f"{cluster}: {rd}/{own} own term-in-verses have a meaning ({100*rd/own:.0f}%)" if own else f"{cluster}: no terms")
+    run = conn.execute("SELECT run_id, started_at FROM engine_run_log WHERE mode='cc_verse_read' AND target_registry_ids=? AND completed_at IS NULL ORDER BY id DESC LIMIT 1", (cluster,)).fetchone()
+    if run:
+        ck = conn.execute("SELECT COUNT(*) n, COALESCE(SUM(rows_written),0) f, SUM(status='review') sh FROM engine_stream_checkpoint WHERE run_id=?", (run["run_id"],)).fetchone()
+        print(f"  CC run {run['run_id']} (open since {run['started_at'][:19]}): {ck['n']} cycles, {ck['f']} findings, {ck['sh'] or 0} cycles with shortfall")
 
 
 def main():
