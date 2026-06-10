@@ -24,5 +24,23 @@ automation; for cost AND quality (Opus > Sonnet), CC wins. See [[project_l2_vers
 findings, 0 skipped; verse-complete routing verified (Rom 9:1 → conscience/M47 · spirit/M25 · truth/M13 ·
 holy/M22). M47 → 16%.
 
+**M02 (Anger) run, 2026-06-10 (run `ccvrm_M02_2026-06-10T05:00:27`):** engine run/checkpoint logging IS in CC
+mode (per-cycle: records/expected/covered/shortfall/findings). Processed to **447/703 (64%)**, 55 cycles,
+**10,049 fan-out findings**, only **2 cycles with shortfall — both genuine term-drops I made under load
+(dropped a term mid verse-complete), CAUGHT automatically** by the emit-map vs written-vcids check
+(`missing_vcids`, status→review) and corrected by idempotent re-ingest. The completeness check is proven, not
+theoretical. che.mah/cha.ron/cha.rah complete with full thematic range (judgment-wrath idiom; cup/winepress;
+bounded/turned-away wrath; prophet-as-vessel; deferential "let-not-X-be-angry" formula; righteous human anger;
+self-anger dissolved; non-anger burning-zeal Neh 3:20). OT-DBR homonym artifacts flagged in-place not absorbed.
+Remaining ~36% = za.am/qa.tsaph/qe.tseph/ka.as residue + small Hebrew terms + Greek NT family
+(thumoō/orgizō/parorgizō/pikria…). Session log: wa-sessionlog-20260610-M02-cc-verse-read-v1.
+
+**Quality-check tooling (read-only):** `scripts/_generate_meaning_quality_check.py` (N random verses × M
+terms: verse + tier findings + meaning) and `scripts/_generate_verse_meanings_export.py` (full l2_meaning
+export by term). **Tier findings are stored POSITIONALLY** (`finding.provenance='l2_api'`, bare value,
+`level='VERSE'`, no field-name column — order = field identity, fragile to multi-select expansion); the
+`l2_meaning` paragraph is self-contained. **Researcher decision: ignore tier sequencing/labels — meaning
+paragraph is the deliverable; no fix.**
+
 **Pending:** retire the existing out-of-rule standalone T2 paragraphs (from earlier API fan-out + the FLAG→T2
-moves) per [[feedback_t2_reference_flag_reclassify]]; optional engine-checkpoint logging for CC runs.
+moves) per [[feedback_t2_reference_flag_reclassify]]; finish M02 (~36% left); per-cluster gate before sign-off.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T00:18:44Z",
+  "generated_at": "2026-06-10T13:59:58Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,16 +11,16 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 113,
+    "other": 118,
     "historical": 30,
-    "current": 1695,
+    "current": 1712,
     "cross-reference": 3317,
-    "archived": 2222,
+    "archived": 2223,
     "backup": 15
   },
-  "total_files": 7392,
-  "total_active": 5170,
-  "total_archived": 2222,
+  "total_files": 7415,
+  "total_active": 5192,
+  "total_archived": 2223,
   "files": [
     {
       "path": ".env",
@@ -51,8 +51,8 @@
       "date": null,
       "ext": "",
       "archived": false,
-      "size_bytes": 3937,
-      "modified": "2026-05-17T08:05:33Z"
+      "size_bytes": 4058,
+      "modified": "2026-06-10T04:41:36Z"
     },
     {
       "path": "CLAUDE.md",
@@ -56391,6 +56391,22 @@
       "modified": "2026-05-30T05:13:36Z"
     },
     {
+      "path": "Workflow/Clusters/archive/wa-cluster-overview-20260607.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-07",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 5224,
+      "modified": "2026-06-07T19:23:38Z"
+    },
+    {
       "path": "Workflow/Clusters/archive/wa-cluster-overview-v1-20260505.json",
       "category": "workflow",
       "type": "other",
@@ -56679,7 +56695,7 @@
       "modified": "2026-05-27T07:29:40Z"
     },
     {
-      "path": "Workflow/Clusters/wa-cluster-overview-20260607.md",
+      "path": "Workflow/Clusters/wa-cluster-overview-20260610.md",
       "category": "workflow",
       "type": "other",
       "currency": "current",
@@ -56688,11 +56704,11 @@
       "cluster": null,
       "batch": null,
       "version": null,
-      "date": "2026-06-07",
+      "date": "2026-06-10",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5224,
-      "modified": "2026-06-07T19:23:38Z"
+      "size_bytes": 64618,
+      "modified": "2026-06-10T04:36:50Z"
     },
     {
       "path": "Workflow/Global_rules/gr-obs-001-consolidation-draft-v3-20260426.md",
@@ -60037,6 +60053,22 @@
       "archived": false,
       "size_bytes": 8826,
       "modified": "2026-06-10T00:18:25Z"
+    },
+    {
+      "path": "Workflow/Sessionlogs/wa-sessionlog-20260610-M02-cc-verse-read-v1.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6725,
+      "modified": "2026-06-10T13:59:33Z"
     },
     {
       "path": "Workflow/Sessionlogs/wa-sessionlog-term-anchor-reset-v1-20260504.md",
@@ -92227,8 +92259,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 309993472,
-      "modified": "2026-06-10T00:15:37Z"
+      "size_bytes": 314908672,
+      "modified": "2026-06-10T13:35:54Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92243,8 +92275,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3270036,
-      "modified": "2026-06-07T19:24:15Z"
+      "size_bytes": 3341304,
+      "modified": "2026-06-10T00:18:44Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92947,8 +92979,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 36331,
-      "modified": "2026-06-09T17:22:36Z"
+      "size_bytes": 39820,
+      "modified": "2026-06-10T08:23:34Z"
     },
     {
       "path": "memory/README.md",
@@ -93991,6 +94023,22 @@
       "modified": "2026-06-03T09:06:25Z"
     },
     {
+      "path": "memory/feedback_t2_reference_flag_reclassify.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3435,
+      "modified": "2026-06-10T04:00:16Z"
+    },
+    {
       "path": "memory/feedback_term_corpus_anchors_meaning.md",
       "category": "other",
       "type": "other",
@@ -94119,6 +94167,22 @@
       "modified": "2026-06-09T06:14:39Z"
     },
     {
+      "path": "memory/feedback_verse_meaning_grounded_not_imported.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2907,
+      "modified": "2026-06-10T08:23:34Z"
+    },
+    {
       "path": "memory/feedback_version_discipline.md",
       "category": "other",
       "type": "other",
@@ -94183,6 +94247,22 @@
       "modified": "2026-06-04T18:02:46Z"
     },
     {
+      "path": "memory/project_cc_generation_mode.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2505,
+      "modified": "2026-06-10T04:42:25Z"
+    },
+    {
       "path": "memory/project_characteristic_backfill_backlog.md",
       "category": "other",
       "type": "other",
@@ -94229,6 +94309,22 @@
       "archived": false,
       "size_bytes": 2927,
       "modified": "2026-06-03T09:06:25Z"
+    },
+    {
+      "path": "memory/project_constitution_cluster_and_flag_resolution.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3135,
+      "modified": "2026-06-10T04:32:56Z"
     },
     {
       "path": "memory/project_cross_cluster_three_link_classes.md",
@@ -94517,6 +94613,22 @@
       "archived": false,
       "size_bytes": 997,
       "modified": "2026-06-03T09:06:25Z"
+    },
+    {
+      "path": "memory/project_t2_flag_are_seats_and_qualifiers.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3093,
+      "modified": "2026-06-10T03:40:31Z"
     },
     {
       "path": "memory/project_term_anchor_reset.md",
@@ -94999,6 +95111,54 @@
       "modified": "2026-03-24T05:43:13Z"
     },
     {
+      "path": "outputs/cc/cc_output.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 11190,
+      "modified": "2026-06-10T13:35:41Z"
+    },
+    {
+      "path": "outputs/cc/cc_packets.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 8150,
+      "modified": "2026-06-10T13:34:13Z"
+    },
+    {
+      "path": "outputs/cc/cc_packets.md.map",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".map",
+      "archived": false,
+      "size_bytes": 147,
+      "modified": "2026-06-10T13:34:13Z"
+    },
+    {
       "path": "outputs/docx/.gitkeep",
       "category": "report",
       "type": "report",
@@ -95109,6 +95269,38 @@
       "archived": false,
       "size_bytes": 109267,
       "modified": "2026-05-06T04:35:42Z"
+    },
+    {
+      "path": "outputs/markdown/M02-meaning-quality-check-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 33769,
+      "modified": "2026-06-10T12:41:21Z"
+    },
+    {
+      "path": "outputs/markdown/M02-verse-meanings-20260610.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 300530,
+      "modified": "2026-06-10T13:59:56Z"
     },
     {
       "path": "outputs/markdown/cluster_audit_v1_20260601.md",
@@ -105735,6 +105927,54 @@
       "modified": "2026-05-05T13:37:25Z"
     },
     {
+      "path": "research/investigations/wa-flag-triage-moves-dryrun-v1-20260610.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 15359,
+      "modified": "2026-06-10T04:24:54Z"
+    },
+    {
+      "path": "research/investigations/wa-flag-triage-moves-v1-20260610.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5102,
+      "modified": "2026-06-10T04:26:34Z"
+    },
+    {
+      "path": "research/investigations/wa-flag-triage-v1-20260610.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4004,
+      "modified": "2026-06-10T04:02:38Z"
+    },
+    {
       "path": "research/investigations/wa-global-database-review-design-v1-20260419.md",
       "category": "investigation",
       "type": "investigation",
@@ -106967,6 +107207,22 @@
       "modified": "2026-06-08T06:36:10Z"
     },
     {
+      "path": "research/investigations/wa-t2-flag-sample-v1-20260609.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 27913,
+      "modified": "2026-06-10T03:37:48Z"
+    },
+    {
       "path": "research/investigations/wa-t2-relevance-surface-scan-v1-20260607.md",
       "category": "investigation",
       "type": "investigation",
@@ -107171,8 +107427,8 @@
       "date": "2026-06-09",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9376,
-      "modified": "2026-06-09T09:56:44Z"
+      "size_bytes": 11072,
+      "modified": "2026-06-10T03:59:45Z"
     },
     {
       "path": "research/investigations/wa-verse-read-pilot-dryrun-pachad-v1-20260609.txt",
@@ -107767,6 +108023,22 @@
       "modified": "2026-06-02T13:12:12Z"
     },
     {
+      "path": "scripts/_apply_create_constitution_cluster.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3376,
+      "modified": "2026-06-10T04:13:33Z"
+    },
+    {
       "path": "scripts/_apply_descriptions_patch.py",
       "category": "script",
       "type": "other",
@@ -107813,6 +108085,38 @@
       "archived": false,
       "size_bytes": 3985,
       "modified": "2026-06-02T03:24:28Z"
+    },
+    {
+      "path": "scripts/_apply_flag_empty_to_t2.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3146,
+      "modified": "2026-06-10T04:31:20Z"
+    },
+    {
+      "path": "scripts/_apply_flag_triage_moves.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 11009,
+      "modified": "2026-06-10T04:26:23Z"
     },
     {
       "path": "scripts/_apply_generic_characteristic_backfill_20260527.py",
@@ -112503,6 +112807,22 @@
       "modified": "2026-05-27T10:27:12Z"
     },
     {
+      "path": "scripts/_build_t2_flag_sample.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2402,
+      "modified": "2026-06-10T03:37:37Z"
+    },
+    {
       "path": "scripts/_build_term_verse_findings_report.py",
       "category": "script",
       "type": "other",
@@ -112581,6 +112901,22 @@
       "archived": false,
       "size_bytes": 4074,
       "modified": "2026-05-27T07:08:38Z"
+    },
+    {
+      "path": "scripts/_cc_verse_read.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 11053,
+      "modified": "2026-06-10T04:56:18Z"
     },
     {
       "path": "scripts/_check_doc_versions.py",
@@ -113767,6 +114103,22 @@
       "modified": "2026-05-11T18:57:54Z"
     },
     {
+      "path": "scripts/_generate_meaning_quality_check.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 4977,
+      "modified": "2026-06-10T12:41:21Z"
+    },
+    {
       "path": "scripts/_generate_programme_report.py",
       "category": "script",
       "type": "other",
@@ -113877,6 +114229,22 @@
       "archived": false,
       "size_bytes": 13581,
       "modified": "2026-05-16T05:10:20Z"
+    },
+    {
+      "path": "scripts/_generate_verse_meanings_export.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3742,
+      "modified": "2026-06-10T12:47:46Z"
     },
     {
       "path": "scripts/_ingest_chapter_prose_v1_20260527.py",
