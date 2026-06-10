@@ -5,77 +5,96 @@
 
 ---
 
-## che.mah  (H2534)  —  5 of 111 covered verses shown
+## che.mah  (H2534)  —  5 of 115 covered verses shown
 
 
-### Eze 13:13   *(vcid 596)*
+### Job 6:4   *(vcid 64646)*
 
-> Eze 13:13 Therefore thus says the Lord God : I will make a stormy wind break out in my wrath , and there shall be a deluge of rain in my anger , and great hailstones in wrath to make a full end .
+> Job 6:4 For the arrows of the Almighty are in me; my spirit drinks their poison ; the terrors of God are arrayed against me .
 
-- **sense_applied:** wrath — God's wrath unleashed as destructive storm against the false prophets' wall
+- **sense_applied:** poison / venom — the poison of God's arrows Job's spirit drinks
 - **type:** status
 - **compound:** simple
-- **mode:** noun ("my wrath")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** stormy wind, deluge, and hailstones to make a full end
-- **relational_implication:** the false prophets' whitewashed wall is torn down by the storm of God's wrath
-- **literary_setting:** prophecy
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Eze 13:13 che.mah is God's "wrath" breaking out — "I will make a stormy wind break out in my wrath, and there shall be a deluge of rain in my anger, and great hailstones in wrath to make a full end." Attributed to God, it is the divine fury unleashed as destructive storm against the false prophets and their flimsy "wall" of whitewash; stormy wind, flooding rain, and hailstones are the che.mah's instruments to make a full end, so this wrath is the divine anger that tears down the lie with overwhelming force.
-
-
-### Psa 59:13   *(vcid 64652)*
-
-> Psa 59:13 consume them in wrath ; consume them till they are no more , that they may know that God rules over Jacob to the ends of the earth . Selah
-
-- **sense_applied:** wrath — the divine wrath the psalmist invokes to consume his enemies
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("wrath")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** the enemies consumed till they are no more
-- **relational_implication:** the psalmist asks God to consume his enemies in wrath so that God's rule is known
-- **literary_setting:** poetry
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Psa 59:13 che.mah is the "wrath" invoked to consume — "consume them in wrath; consume them till they are no more." Attributed to God and pleaded by the psalmist, it is the divine anger he asks to fall on his enemies: let God consume them in che.mah till they are gone, that all may know God rules (ma.shal) over Jacob to the ends of the earth; so this wrath is the divine anger the psalmist invokes to annihilate the wicked and vindicate God's sovereign rule.
-
-
-### Jer 6:11   *(vcid 64679)*
-
-> Jer 6:11 Therefore I am full of the wrath of the Lord ; I am weary of holding it in . “Pour it out upon the children in the street , and upon the gatherings of young men , also ; both husband and wife shall be taken , the elderly and the very aged .
-
-- **sense_applied:** wrath — the wrath of the LORD filling the prophet, who is wearied holding it in
-- **type:** status
-- **compound:** simple
-- **mode:** noun construct ("the wrath of the LORD")
+- **mode:** noun ("their poison/venom")
 - **origin:** received-from-outside
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** none
+- **immediate_response:** SILENT
+- **produces_effect:** spreads through Job's spirit as venom
+- **relational_implication:** the venom of God's arrows that Job's spirit absorbs in his affliction — the poison sense, not anger
+- **literary_setting:** poetry
+- **faculty/location:** spirit
+
+**MEANING:** In Job 6:4 che.mah is the "poison" of God's arrows — "the arrows of the Almighty are in me; my spirit drinks their poison." Here che.mah carries its sense of venom/poison, not anger as such: Job feels the Almighty's arrows lodged in him, and his spirit drinks their che.mah — the venom that spreads through him — as the terrors of God array (a.rakh) against him; so this che.mah is the poison of divine affliction Job's inner being absorbs (the venom sense, distinct from the passion of wrath).
+
+
+### Job 19:29   *(vcid 64647)*
+
+> Job 19:29 be afraid of the sword , for wrath brings the punishment of the sword , that you may know there is a judgment .”
+
+- **sense_applied:** wrath, hot displeasure (the burning anger that drives punitive judgment)
+- **type:** status
+- **compound:** simple
+- **origin:** within-person
 - **attributed_to_God:** yes
 - **purpose_equips:** not-stated
 - **typology_direction:** divine->human
-- **immediate_response:** the prophet pours it out on every age
-- **produces_effect:** poured out on children, young men, husband, wife, the aged
-- **relational_implication:** the prophet is filled with the LORD's wrath and wearied restraining it, until commanded to pour it out
+- **immediate_response:** SILENT
+- **produces_effect:** wrath brings/produces the punishments of the sword (ʿavon)
+- **relational_implication:** divine wrath is directed downward toward those who speak wrongly, constituting a threatening relational force
+- **literary_setting:** wisdom
+- **faculty/location:** affect, moral-evaluation
+
+**MEANING:** In Job 19:29, חֵמָה (chemah) denotes the burning wrath that brings "the punishment of the sword." The term is here attributed to God (or to divine justice) as the affective-moral energy driving retributive punishment, engaging both the affective faculty (hot displeasure) and moral-evaluation (righteous indignation against wrongdoing). Its typological direction is divine->human: the divine wrath presses down upon those who speak falsely about Job. Chemah is presented as the mechanism by which ʿavon (punishment/iniquity) is executed through the sword, giving the entire warning its urgency.
+
+
+### Isa 51:22   *(vcid 64672)*
+
+> Isa 51:22 Thus says your Lord , the Lord , your God who pleads the cause of his people : “ Behold , I have taken from your hand the cup of staggering ; the bowl of my wrath you shall drink no more ;
+
+- **sense_applied:** wrath — the cup of God's wrath now removed from Jerusalem
+- **type:** status
+- **compound:** simple
+- **mode:** noun ("the bowl of my wrath")
+- **origin:** within-person
+- **attributed_to_God:** yes
+- **purpose_equips:** not-stated
+- **typology_direction:** divine->human
+- **immediate_response:** SILENT
+- **produces_effect:** the cup taken from Jerusalem; she drinks it no more
+- **relational_implication:** God takes the cup of his wrath from Jerusalem's hand — she will drink it no more (the wrath reversed/removed)
 - **literary_setting:** prophecy
 - **faculty/location:** affect, moral-evaluation
 
-**MEANING:** In Jer 6:11 che.mah is the "wrath of the LORD" filling the prophet — "Therefore I am full of the wrath of the LORD; I am weary of holding it in." Attributed to God yet borne BY Jeremiah, here the divine wrath fills the prophet as a vessel: charged with the LORD's che.mah, he is wearied (la.ah) with restraining it and is told to pour it out on children, young men (sod), and old alike; so this wrath is the divine anger that the prophet carries and can no longer contain — the prophetic burden of being filled with God's wrath until it must be discharged.
+**MEANING:** In Isa 51:22 che.mah is the "wrath" in the cup now removed — "I have taken from your hand the cup of staggering; the bowl of my wrath you shall drink no more." Attributed to God, here the divine wrath is the cup the LORD lifts away from his people: pleading their cause (riv), he removes the bowl of his che.mah from Jerusalem's hand so she drinks it no more; so this wrath is the divine anger now withdrawn from his people — the cup of judgment taken from them (and, in the next verse, handed to their tormentors), the reversal of wrath.
 
 
-### Jer 7:20   *(vcid 64680)*
+### Deu 32:33   *(vcid 64631)*
 
-> Jer 7:20 Therefore thus says the Lord God : Behold , my anger and my wrath will be poured out on this place , upon man and beast , upon the trees of the field and the fruit of the ground ; it will burn and not be quenched .”
+> Deu 32:33 their wine is the poison of serpents and the cruel venom of asps .
 
-- **sense_applied:** wrath — God's wrath poured out on the whole land and its life, unquenchable
+- **sense_applied:** poison / venom — the literal serpent-poison imaging the enemies' wine
+- **type:** status
+- **compound:** simple
+- **mode:** noun ("poison/venom")
+- **origin:** not-stated
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** none
+- **immediate_response:** SILENT
+- **produces_effect:** figures the deadly corruption of the enemies' "wine"
+- **relational_implication:** not-stated — concrete venom imagery, not an inner passion
+- **literary_setting:** poetry
+
+**MEANING:** In Deu 32:33 che.mah is the "poison" of serpents — "their wine is the poison of serpents and the cruel venom of asps." Here the term carries its concrete sense of venom/poison, not the inner-being passion of anger; engaging no inner faculty, it names the literal serpent's poison to which the corrupt "wine" of God's enemies is compared, so this che.mah is the physical "poison/venom" sense (set-aside candidate for inner-being analysis).
+
+
+### Isa 63:6   *(vcid 64676)*
+
+> Isa 63:6 I trampled down the peoples in my anger ; I made them drunk in my wrath , and I poured out their lifeblood on the earth .”
+
+- **sense_applied:** wrath — the divine wrath that tramples and intoxicates the nations
 - **type:** status
 - **compound:** compound (paired with aph "anger")
 - **mode:** noun ("my wrath")
@@ -84,210 +103,41 @@
 - **purpose_equips:** not-stated
 - **typology_direction:** divine->human
 - **immediate_response:** SILENT
-- **produces_effect:** poured on man, beast, trees, and fruit; burns and is not quenched
-- **relational_implication:** the all-encompassing divine anger that consumes the whole land and its life in judgment for idolatry
+- **produces_effect:** the peoples trampled, made drunk, their lifeblood poured out
+- **relational_implication:** the divine fury that both crushes and intoxicates the nations — cup and winepress joined
 - **literary_setting:** prophecy
 - **faculty/location:** affect, moral-evaluation
 
-**MEANING:** In Jer 7:20 che.mah is the "wrath" poured out — "Behold, my anger and my wrath will be poured out on this place, upon man and beast, upon the trees of the field and the fruit of the ground; it will burn and not be quenched." Attributed to God, paired with anger (aph), it is the divine wrath about to fall comprehensively on Judah: the LORD's che.mah will be poured on people, animals, trees, and crops, burning unquenchably; so this wrath is the all-encompassing divine anger that consumes the whole land and its life in judgment for idolatry.
+**MEANING:** In Isa 63:6 che.mah is the "wrath" that intoxicates and tramples — "I trampled down the peoples in my anger; I made them drunk in my wrath, and I poured out their lifeblood on the earth." Attributed to God, paired with anger (aph), it completes the winepress-judgment: the LORD trod the peoples in his anger and made them drunk in his che.mah — reeling under the cup of wrath — pouring their lifeblood to the earth; so this wrath is the divine fury that both crushes and intoxicates the nations, the cup and the winepress joined in God's solitary judgment.
 
 
-### Jer 18:20   *(vcid 64682)*
-
-> Jer 18:20 Should good be repaid with evil ? Yet they have dug a pit for my life . Remember how I stood before you to speak good for them, to turn away your wrath from them.
-
-- **sense_applied:** wrath — the divine wrath Jeremiah had interceded to turn away
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("your wrath")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** deflected from the people by the prophet's intercession
-- **relational_implication:** Jeremiah had stood to turn God's wrath away from the people — now they repay his intercession with treachery
-- **literary_setting:** prophecy
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Jer 18:20 che.mah is the "wrath" Jeremiah turned away — "Remember how I stood before you to speak good for them, to turn away your wrath from them." Attributed to God, here it is the divine anger the prophet had interceded to avert: standing before God, Jeremiah spoke good for the people to turn the LORD's che.mah from them; yet they repay this advocacy by digging a pit for his life (ne.phesh); so this wrath is the divine anger a mediator's intercession had deflected, now thrown into relief by the people's ingratitude.
+## orgE — NOT FOUND in M02
 
 
 ---
 
-## orgē  (G3709)  —  5 of 15 covered verses shown
+## qin.ah  (H7068)  —  5 of 41 covered verses shown
 
 
-### Col 3:8   *(vcid 100)*
+### Num 5:15   *(vcid 64879)*
 
-> Col 3:8 But now you must put them all away : anger , wrath , malice , slander , and obscene talk from your mouth .
+> Num 5:15 then the man shall bring his wife to the priest and bring the offering required of her, a tenth of an ephah of barley flour . He shall pour no oil on it and put no frankincense on it , for it is a grain offering of jealousy , a grain offering of remembrance , bringing iniquity to remembrance .
 
-- **sense_applied:** wrath / anger — sinful anger to be put off with the old self
+- **sense_applied:** jealousy — the jealousy that names and occasions the grain offering
 - **type:** status
 - **compound:** simple
-- **mode:** noun (vice-list, object of "put away")
+- **mode:** noun ("grain offering of jealousy")
 - **origin:** within-person
 - **attributed_to_God:** no
 - **purpose_equips:** not-stated
 - **typology_direction:** none
 - **immediate_response:** SILENT
-- **produces_effect:** must be put off as part of the old self
-- **relational_implication:** sinful anger belongs to the old self to be stripped off — anger renounced in the new life
-- **literary_setting:** epistle
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Col 3:8 orgē is the "anger/wrath" believers "must put… away" — listed with malice (kakia), slander (blasfēmia), and obscene talk. A within-person affective vice engaging affect and moral-evaluation, it belongs to the old self being stripped off; Paul commands its decisive removal as incompatible with the new self renewed in God's image, so orgē here is a garment of the old life to be discarded.
-
-
-### Rom 12:19   *(vcid 64590)*
-
-> Rom 12:19 Beloved , never avenge yourselves , but leave it to the wrath of God, for it is written , “ Vengeance is mine , I will repay , says the Lord .”
-
-- **sense_applied:** wrath of God — the divine wrath to which believers entrust vengeance
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("the wrath of God")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** the just retribution believers leave to God
-- **relational_implication:** divine wrath is the proper executor of vengeance — believers yield the right of retribution to God's orgē
-- **literary_setting:** epistle
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Rom 12:19 orgē is "the wrath of God" to which believers are to "leave" vengeance — "but leave it to the wrath of God." Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the divine anger that will justly execute the retribution ("I will repay") believers must not seize for themselves; entrusting wrongs to God's orgē is the ground of Christian non-retaliation and love of enemies.
-
-
-### 1Ti 2:8   *(vcid 64599)*
-
-> 1Ti 2:8 I desire then that in every place the men should pray , lifting holy hands without anger or quarreling ;
-
-- **sense_applied:** anger, wrath — the emotional disposition that must be absent from prayer
-- **type:** status
-- **compound:** simple
-- **origin:** within-person
-- **attributed_to_God:** no
-- **purpose_equips:** negatively — its absence equips men for pure prayer
-- **typology_direction:** none
-- **immediate_response:** SILENT
-- **produces_effect:** when present, produces a state incompatible with holy, acceptable prayer
-- **relational_implication:** anger fractures both the human-human and the human-divine relational posture required for worship
-- **literary_setting:** epistle
+- **produces_effect:** occasions the offering and its rite
+- **relational_implication:** the husband's jealousy is what the offering is named for — jealousy ritualized into the offering
+- **literary_setting:** law
 - **faculty/location:** affect
 
-**MEANING:** In 1 Tim 2:8 orgē denotes the affective state of anger or wrath that is to be excluded from the act of prayer. Originating within the person, it engages the affective faculty and is here treated as an inner condition that disqualifies worship when present. Paired with dialogismos (dispute), orgē represents the emotional pole of the discord that undermines holy prayer: the affect that accompanies contentious reasoning. Its exclusion is required alongside holy hands, indicating that the inner emotional life of the worshipper is integral to the acceptability of the act before God.
-
-
-### Mat 3:7   *(vcid 64582)*
-
-> Mat 3:7 But when he saw many of the Pharisees and Sadducees coming to his baptism , he said to them , “You brood of vipers ! Who warned you to flee from the wrath to come ?
-
-- **sense_applied:** wrath — the coming divine/eschatological wrath the Pharisees flee
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("the wrath to come")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** the eschatological judgment the religious leaders are warned to flee
-- **relational_implication:** divine wrath is the coming judgment from which repentance offers escape — John warns the complacent leaders
-- **literary_setting:** narrative
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Mat 3:7 orgē is "the wrath to come" — the coming divine judgment from which John asks who warned the Pharisees and Sadducees to flee. Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the eschatological wrath against unrepentant sin; John's sharp "brood of vipers!" exposes the leaders' presumption, since fleeing the coming orgē requires the genuine repentance their pedigree cannot supply.
-
-
-### Eph 5:6   *(vcid 64594)*
-
-> Eph 5:6 Let no one deceive you with empty words , for because of these things the wrath of God comes upon the sons of disobedience .
-
-- **sense_applied:** wrath of God—his righteous, punitive anger toward disobedience
-- **type:** status
-- **compound:** simple
-- **mode:** coming/impending (present tense: "comes upon")
-- **origin:** bestowed-by-God
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** judgment/punishment upon the sons of disobedience
-- **relational_implication:** God-to-human; expresses God's relational opposition to and condemnation of those characterized by *apeitheia*
-- **literary_setting:** epistle
-- **faculty/location:** moral-evaluation
-
-**MEANING:** In Eph 5:6 *orgē* denotes the wrath of God—his active, righteous displeasure that moves outward in punitive judgment toward those whose inner disposition is *apeitheia*. Attributed explicitly to God ("the wrath of God"), it flows divine-to-human in direction and is portrayed as presently operative ("comes upon"), not merely future. The term expresses God's moral-evaluative response to disobedience, functioning as the ultimate relational consequence of the empty-word deception warned against, and serving as the motivation for the imperative that no one be deceived.
-
-
----
-
-## qin.ah  (H7068)  —  5 of 40 covered verses shown
-
-
-### Ecc 9:6   *(vcid 14282)*
-
-> Ecc 9:6 Their love and their hate and their envy have already perished , and forever they have no more share in all that is done under the sun .
-
-- **sense_applied:** envy — the envy of the dead, now perished
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("their envy")
-- **origin:** within-person
-- **attributed_to_God:** no
-- **purpose_equips:** not-stated
-- **typology_direction:** none
-- **immediate_response:** SILENT
-- **produces_effect:** has perished at death; no more share under the sun
-- **relational_implication:** envy ceases at death — named only in its extinction
-- **literary_setting:** wisdom
-- **faculty/location:** affect
-
-**MEANING:** In Ecc 9:6 qin.ah is the "envy" of the dead that "has already perished" — listed with their love (a.ha.vah) and hate (sin.ah). A within-person affective passion engaging affect, the verse states that with death these emotions cease: the envy that once moved them is gone, and "forever they have no more share in all that is done under the sun," so qin.ah here is named precisely in its extinction at death.
-
-
-### Isa 63:15   *(vcid 14300)*
-
-> Isa 63:15 Look down from heaven and see , from your holy and beautiful habitation . Where are your zeal and your might ? The stirring of your inner parts and your compassion are held back from me .
-
-- **sense_applied:** zeal — God's zeal the prophet appeals to as seemingly withheld
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("your zeal")
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** the zeal the prophet asks God to show, now seemingly held back
-- **relational_implication:** the prophet appeals for God's zeal and might, lamenting that his compassion is held back — zeal longed-for in a plea for God to act
-- **literary_setting:** prophecy
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In Isa 63:15 qin.ah is the divine zeal the prophet seeks — "Where are your zeal and your might (ge.vu.rah)?" Attributed to God (divine->human) and engaging affect and moral-evaluation, here it is appealed for as seemingly absent: gazing from God's holy (qo.desh) habitation, the prophet laments that the LORD's zeal, might, and compassion (ra.cha.mim) "are held back from me," so qin.ah is the zealous ardour he pleads God to show again on his people's behalf.
-
-
-### Pro 6:34   *(vcid 14283)*
-
-> Pro 6:34 For jealousy makes a man furious , and he will not spare when he takes revenge .
-
-- **sense_applied:** jealousy — the husband's jealous passion that inflames him to fury
-- **type:** status
-- **compound:** simple
-- **mode:** noun ("jealousy makes a man furious")
-- **origin:** within-person
-- **attributed_to_God:** no
-- **purpose_equips:** not-stated
-- **typology_direction:** none
-- **immediate_response:** SILENT
-- **produces_effect:** furious rage (che.mah) and merciless revenge
-- **relational_implication:** marital jealousy at betrayal is the root passion that ignites the husband's destructive fury
-- **literary_setting:** wisdom
-- **faculty/location:** affect
-
-**MEANING:** In Pro 6:34 qin.ah is the "jealousy" that "makes a man furious" — the husband's jealous passion at his wife's adultery. A within-person affective disposition engaging affect, it is the root that ignites the burning rage (che.mah) of the wronged husband; the proverb presents marital qin.ah as a force that admits no pity (cha.mal) and drives relentless revenge, warning the adulterer of its danger.
+**MEANING:** In Num 5:15 qin.ah is the jealousy naming "a grain offering of jealousy" — the jealous suspicion that occasions the rite. A within-person affective passion engaging affect, the verse attaches the offering to it: the qin.ah is the inner state for which this barley offering, without oil or frankincense, is brought, the jealousy the memorial-offering of iniquity addresses.
 
 
 ### Eze 8:3   *(vcid 14302)*
@@ -309,6 +159,48 @@
 - **faculty/location:** affect, moral-evaluation
 
 **MEANING:** In Eze 8:3 qin.ah is the jealousy named in "the image of jealousy" — the divine covenant jealousy the temple idol provokes. Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the LORD's jealous passion for exclusive worship, roused by the idolatrous image set in his own sanctuary (qa.na, provoking it); the very name of the idol marks it as the affront that ignites God's jealous wrath against his defiled house.
+
+
+### Pro 27:4   *(vcid 14284)*
+
+> Pro 27:4 Wrath is cruel , anger is overwhelming , but who can stand before jealousy ?
+
+- **sense_applied:** jealousy — jealousy, the most irresistible of the passions
+- **type:** status
+- **compound:** simple
+- **mode:** noun ("jealousy")
+- **origin:** within-person
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** none
+- **immediate_response:** SILENT
+- **produces_effect:** irresistible — "who can stand before jealousy?"
+- **relational_implication:** jealousy is named the most overpowering passion — more unstoppable even than cruel wrath
+- **literary_setting:** wisdom
+- **faculty/location:** affect
+
+**MEANING:** In Pro 27:4 qin.ah is the "jealousy" before which "who can stand?" A within-person affective passion engaging affect, the verse climaxes a ranking of fierce emotions — wrath (che.mah) is cruel, anger overwhelming — by naming jealousy as the most irresistible: no one can withstand its force, so qin.ah is here the supremely overpowering passion, more unstoppable even than cruel wrath.
+
+
+### Eze 38:19   *(vcid 14309)*
+
+> Eze 38:19 For in my jealousy and in my blazing wrath I declare , On that day there shall be a great earthquake in the land of Israel .
+
+- **sense_applied:** jealousy — God's jealousy (with blazing wrath) declaring judgment on that day
+- **type:** status
+- **compound:** simple
+- **mode:** noun construct ("my jealousy")
+- **origin:** within-person
+- **attributed_to_God:** yes
+- **purpose_equips:** not-stated
+- **typology_direction:** divine->human
+- **immediate_response:** SILENT
+- **produces_effect:** the declared great earthquake in the land of Israel
+- **relational_implication:** God's jealousy, joined with blazing wrath, speaks the judgment-declaration
+- **literary_setting:** prophecy
+- **faculty/location:** affect, moral-evaluation
+
+**MEANING:** In Eze 38:19 qin.ah is God's jealousy in which he declares — "For in my jealousy and in my blazing wrath I declare." Attributed to God (divine->human) and engaging affect and moral-evaluation, joined with his blazing wrath, it is the passionate divine ardour behind the judgment-word: in this jealousy God announces that "on that day there shall be a great earthquake in the land of Israel," so qin.ah is the jealous fury that grounds the LORD's declaration against Gog.
 
 
 ### Num 5:29   *(vcid 14287)*
@@ -334,27 +226,28 @@
 
 ---
 
-## riv  (H7379)  —  5 of 9 covered verses shown
+## riv  (H7379)  —  5 of 60 covered verses shown
 
 
-### Pro 17:1   *(vcid 13127)*
+### Pro 26:17   *(vcid 13131)*
 
-> Pro 17:1 Better is a dry morsel with quiet than a house full of feasting with strife .
+> Pro 26:17 Whoever meddles in a quarrel not his own is like one who takes a passing dog by the ears .
 
-- **sense_applied:** strife — the strife that spoils a house full of feasting
+- **sense_applied:** quarrel — the quarrel not one's own, perilous to meddle in
 - **type:** status
 - **compound:** simple
-- **mode:** noun ("strife")
-- **origin:** within-person
+- **mode:** noun ("a quarrel not his own")
+- **origin:** received-from-outside
 - **attributed_to_God:** no
 - **purpose_equips:** not-stated
 - **typology_direction:** none
 - **immediate_response:** SILENT
-- **produces_effect:** makes a house of feasting worse than a quiet dry morsel
-- **relational_implication:** strife sours abundance, so peace with little is better than plenty with discord
+- **produces_effect:** the self-inflicted danger of interfering in others' strife
+- **relational_implication:** the quarrel of others that a meddler grasps to his own hurt, like seizing a stray dog's ears
 - **literary_setting:** wisdom
+- **faculty/location:** relational
 
-**MEANING:** In Pro 17:1 riv is the "strife" that ruins abundance — "Better is a dry morsel with quiet than a house full of feasting with strife." Here riv is contentious quarrelling, set against quiet; the proverb judges a meagre meal in peace better (tov) than a feast soured by strife, so this riv is the discord that makes plenty worse than poverty — peace outweighs abundance marred by contention.
+**MEANING:** In Pro 26:17 riv is "a quarrel" — "Whoever meddles in a quarrel not his own is like one who takes a passing dog by the ears." A status-noun for a quarrel / dispute, here other people's: to meddle in a riv — a quarrel — that is not one's own is as foolish and dangerous as grabbing a stray dog by the ears (ozen); so this term names the quarrel of others that a meddler grasps to his own hurt.
 
 
 ### Job 29:16   *(vcid 13140)*
@@ -378,171 +271,168 @@
 **MEANING:** Riv here denotes a legal case or dispute — specifically the cause of someone Job did not personally know. It functions as the object of Job's searching action, engaging his faculties of moral-evaluation and agency as he investigates and advocates in cases beyond his personal acquaintance. The term equips Job's self-description as a champion of justice: he did not limit his legal advocacy to those within his relational network but searched out the claims of unknown strangers. The relational implication is that riv here crosses the boundary of personal knowledge, making justice a universal rather than merely tribal commitment.
 
 
-### Mic 6:2   *(vcid 13161)*
+### Pro 15:18   *(vcid 13126)*
 
-> Mic 6:2 Hear , you mountains , the indictment of the Lord , and you enduring foundations of the earth , for the Lord has an indictment against his people , and he will contend with Israel .
+> Pro 15:18 A hot-tempered man stirs up strife , but he who is slow to anger quiets contention .
 
-- **sense_applied:** indictment / controversy — the LORD's covenant lawsuit against his people
+- **sense_applied:** strife — the strife a hot-tempered man stirs up
 - **type:** status
 - **compound:** simple
-- **mode:** noun ("indictment/controversy")
+- **mode:** noun ("strife")
 - **origin:** within-person
-- **attributed_to_God:** yes
+- **attributed_to_God:** no
 - **purpose_equips:** not-stated
-- **typology_direction:** divine->human
+- **typology_direction:** none
 - **immediate_response:** SILENT
-- **produces_effect:** the LORD will contend with Israel; mountains summoned as witnesses
-- **relational_implication:** the LORD brings a formal indictment against his people and will contend with Israel, calling creation as witnesses
-- **literary_setting:** prophecy
-- **faculty/location:** moral-evaluation
+- **produces_effect:** the social discord that wrath ignites; quieted by the slow-to-anger
+- **relational_implication:** a hot-tempered man stirs up strife; the slow-to-anger quiets it
+- **literary_setting:** wisdom
 
-**MEANING:** In Mic 6:2 riv is "the indictment of the LORD" — "the LORD has an indictment against his people, and he will contend with Israel." A formal controversy/legal case attributed to God (divine->human), it is the covenant lawsuit the LORD brings: he summons the mountains and enduring foundations as witnesses (6:1-2) to hear his riv against his people, so this strife is judicial — God as plaintiff arraigning Israel for covenant breach, not a fit of temper.
-
-
-### Hos 4:1   *(vcid 13159)*
-
-> Hos 4:1 Hear the word of the Lord , O children of Israel , for the Lord has a controversy with the inhabitants of the land . There is no faithfulness or steadfast love , and no knowledge of God in the land ;
-
-- **sense_applied:** controversy, legal dispute (the Lord's case against the land)
-- **type:** action
-- **compound:** simple
-- **origin:** within-person
-- **attributed_to_God:** yes
-- **purpose_equips:** not-stated
-- **typology_direction:** divine->human
-- **immediate_response:** SILENT
-- **produces_effect:** divine-legal confrontation with the inhabitants of the land
-- **relational_implication:** God as prosecuting party in a covenant lawsuit against Israel
-- **literary_setting:** prophecy
-- **faculty/location:** moral-evaluation, relational
-
-**MEANING:** In Hos 4:1, riv designates a formal controversy or lawsuit that the Lord has against the inhabitants of the land. It is directly attributed to God ("the Lord has a controversy"), making the divine the originating party of this legal-relational dispute. The direction is explicitly divine->human, as God brings his case against Israel. The moral-evaluative and relational faculties are engaged, since the grounds of the dispute are Israel's failures in faithfulness, covenant love, and knowledge of God. The term sets the juridical frame for the entire prophetic indictment that follows.
+**MEANING:** In Pro 15:18 riv is the "strife" a hot-tempered man stirs up — "A hot-tempered man stirs up strife, but he who is slow to anger quiets contention." Here riv is hostile interpersonal contention, the quarrel that wrath ignites; the proverb sets the man of heat (che.mah) who provokes riv against the patient man who stills it, so this strife is the social fruit of an angry temper, opposed by slowness to anger.
 
 
-### Jer 50:34   *(vcid 13153)*
+### Pro 30:33   *(vcid 13117)*
 
-> Jer 50:34 Their Redeemer is strong ; the Lord of hosts is his name . He will surely plead their cause , that he may give rest to the earth , but unrest to the inhabitants of Babylon .
+> Pro 30:33 For pressing milk produces curds , pressing the nose produces blood , and pressing anger produces strife .
 
-- **sense_applied:** legal case, dispute brought on behalf of Israel
+- **sense_applied:** strife — the strife that pressing/forcing anger inevitably produces
 - **type:** status
 - **compound:** simple
-- **origin:** not-stated
-- **attributed_to_God:** yes
-- **purpose_equips:** serves as the formal cause that the LORD prosecutes to achieve rest for the earth
-- **typology_direction:** divine->human
+- **mode:** noun ("pressing anger produces strife")
+- **origin:** within-person
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** none
 - **immediate_response:** SILENT
-- **produces_effect:** rest for the earth; unrest for Babylon
-- **relational_implication:** the case/dispute is the ground of God's intervention for Israel against Babylon
-- **literary_setting:** prophecy
-- **faculty/location:** moral-evaluation, relational
+- **produces_effect:** open conflict, as the inevitable product of provoked anger
+- **relational_implication:** the strife that anger, once pressed and provoked, necessarily brings forth
+- **literary_setting:** wisdom
+- **faculty/location:** relational
 
-**MEANING:** In Jer 50:34 *riv* (noun) names the legal case or controversy that the LORD, as strong Redeemer, undertakes on Israel's behalf. It is the formal object of his contending action, morally evaluating Israel's oppression as a matter requiring divine adjudication. The relational implication is that a just cause exists between God-as-advocate and Babylon-as-oppressor, and prosecuting it produces tangible outcomes of rest and unrest. No inner constitutional location is specified; the noun describes the structured dispute itself, fully attributed to God's activity.
+**MEANING:** In Pro 30:33 riv is "strife" — "pressing anger produces strife." A status-noun for strife / quarrel, here a necessary outcome: as pressing milk yields curds and pressing the nose yields blood, so pressing/forcing anger yields riv — strife; so this term names the conflict that provoked anger necessarily brings forth, the proverb's warning against stirring wrath.
+
+
+### Isa 41:11   *(vcid 13133)*
+
+> Isa 41:11 Behold , all who are incensed against you shall be put to shame and confounded ; those who strive against you shall be as nothing and shall perish .
+
+- **sense_applied:** those who strive / contend — the adversaries who strive against God's servant
+- **type:** status
+- **compound:** simple
+- **mode:** noun ("those who strive against you")
+- **origin:** within-person
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** none
+- **immediate_response:** SILENT
+- **produces_effect:** reduced to nothing; they perish
+- **relational_implication:** the contending enemies whose strife God will reduce to nothing
+- **literary_setting:** prophecy
+
+**MEANING:** In Isa 41:11 riv names "those who strive against you" — "those who strive against you shall be as nothing and shall perish." A status of contention/those-who-contend, here it is the adversaries' hostile strife: the men of riv — who contend and quarrel against God's servant Israel — will become nothing and perish, alongside those incensed (cha.rah) against them who are put to shame; so this term names the contending enemies whose strife God will reduce to nothing.
 
 
 ---
 
-## ka.as  (H3707)  —  5 of 14 covered verses shown
+## ka.as  (H3707)  —  5 of 52 covered verses shown
 
 
-### 2Ch 16:10   *(vcid 64824)*
+### 1Ki 14:15   *(vcid 863)*
 
-> 2Ch 16:10 Then Asa was angry with the seer and put him in the stocks in prison , for he was in a rage with him because of this . And Asa inflicted cruelties upon some of the people at the same time .
+> 1Ki 14:15 the Lord will strike Israel as a reed is shaken in the water , and root up Israel out of this good land that he gave to their fathers and scatter them beyond the Euphrates , because they have made their Asherim , provoking the Lord to anger.
 
-- **sense_applied:** to be angry — Asa's anger at the seer
-- **type:** status
-- **compound:** simple
-- **mode:** Qal consecutive — "was angry"
-- **origin:** received-from-outside
-- **attributed_to_God:** no
-- **purpose_equips:** not-stated
-- **typology_direction:** none
-- **immediate_response:** imprisoning the seer
-- **produces_effect:** the seer imprisoned; the people oppressed
-- **relational_implication:** the king's indignation at being confronted issues in wrathful reprisal
-- **literary_setting:** narrative
-- **faculty/location:** affect, moral-evaluation
-
-**MEANING:** In 2Ch 16:10 ka.as is Asa's anger — "Then Asa was angry with the seer." A within-person affective-moral response engaging affect and moral-evaluation, received from outside through the seer's rebuke, it is the king's indignation at being confronted; this anger, with the rage (za.aph) named alongside it, moves Asa to imprison the prophet and oppress the people, the wrathful response of a king unwilling to be reproved.
-
-
-### 2Ki 22:17   *(vcid 64823)*
-
-> 2Ki 22:17 Because they have forsaken me and have made offerings to other gods , that they might provoke me to anger with all the work of their hands , therefore my wrath will be kindled against this place , and it will not be quenched .
-
-- **sense_applied:** to provoke to anger — the people provoking God by idolatry
+- **sense_applied:** to provoke to anger — Israel provoking the LORD by their Asherim
 - **type:** action
 - **compound:** simple
-- **mode:** Hiphil — "provoke (me) to anger"
+- **mode:** Hiphil — "provoking (the LORD) to anger"
 - **origin:** within-person
 - **attributed_to_God:** no
 - **purpose_equips:** not-stated
 - **typology_direction:** human->divine
 - **immediate_response:** SILENT
-- **produces_effect:** kindles God's unquenchable wrath
-- **relational_implication:** the people's idolatry deliberately provokes divine anger
+- **produces_effect:** uprooting from the good land; scattering beyond the Euphrates
+- **relational_implication:** the idolatry that provoked the wrath of exile
 - **literary_setting:** narrative
 
-**MEANING:** In 2Ki 22:17 ka.as (Hiphil) is the provoking — "that they might provoke me to anger with all the work of their hands." A causative action directed human->divine, it is the people's kindling of God's anger by idolatry: forsaking the LORD and serving other gods, they provoke him to anger with their hand-made idols, so his wrath (che.mah) is kindled unquenchably; this ka.as is human idolatry deliberately provoking divine anger.
+**MEANING:** In 1Ki 14:15 ka.as (Hiphil) is the people's "provoking to anger" — "because they have made their Asherim, provoking the LORD to anger." A causative action directed human->divine, it is idolatrous provocation: by making their Asherim, Israel ka.as — provoked the LORD to anger — so that he would strike them like a reed, uproot them from the good land, and scatter them beyond the Euphrates; so this term names the idolatry that provoked the wrath of exile.
 
 
-### Eze 16:42   *(vcid 64843)*
+### Jer 7:19   *(vcid 877)*
 
-> Eze 16:42 So will I satisfy my wrath on you, and my jealousy shall depart from you. I will be calm and will no more be angry .
+> Jer 7:19 Is it I whom they provoke ? declares the Lord . Is it not themselves, to their own shame ?
 
-- **sense_applied:** to be angry — the anger God will no longer feel once his wrath is satisfied
-- **type:** status
+- **sense_applied:** to provoke — the provocation that recoils on the provokers, not on God
+- **type:** action
 - **compound:** simple
-- **mode:** Qal imperfect 1cs (negated) — "I will no more be angry"
+- **mode:** Hiphil — "Is it I whom they provoke?"
+- **origin:** within-person
+- **attributed_to_God:** no
+- **purpose_equips:** not-stated
+- **typology_direction:** human->divine
+- **immediate_response:** SILENT
+- **produces_effect:** self-inflicted shame, not harm to God
+- **relational_implication:** God asks whether the provocation harms him or really themselves — it is to their own shame
+- **literary_setting:** prophecy
+
+**MEANING:** In Jer 7:19 ka.as (Hiphil) is the "provoking" God questions — "Is it I whom they provoke? declares the LORD. Is it not themselves, to their own shame?" A causative action directed human->divine, here turned back on the doers: the LORD asks whether their idolatry truly ka.as — provokes, harms — him, or rather themselves, to their own shame (bo.shet); so this term names the provocation of God that, far from diminishing him, recoils as self-inflicted ruin on the provokers.
+
+
+### Deu 31:29   *(vcid 64814)*
+
+> Deu 31:29 For I know that after my death you will surely act corruptly and turn aside from the way that I have commanded you. And in the days to come evil will befall you, because you will do what is evil in the sight of the Lord , provoking him to anger through the work of your hands .”
+
+- **sense_applied:** to provoke to anger, to vex/irritate (causative)
+- **type:** action
+- **compound:** simple
+- **mode:** Hiphil infinitive construct – expressing purpose/means of offending God
 - **origin:** within-person
 - **attributed_to_God:** yes
 - **purpose_equips:** not-stated
-- **typology_direction:** divine->human
+- **typology_direction:** human->divine
 - **immediate_response:** SILENT
-- **produces_effect:** named in its cessation — God angry no longer
-- **relational_implication:** God lays down his anger after judgment is complete
+- **produces_effect:** God's anger is aroused; divine-human relational rupture
+- **relational_implication:** human action directed upward, assaulting the divine relationship and eliciting wrath
 - **literary_setting:** prophecy
-- **faculty/location:** affect, moral-evaluation
+- **faculty/location:** moral-evaluation, relational
 
-**MEANING:** In Eze 16:42 ka.as is the being "angry" God says he "will no more" be — "I will be calm and will no more be angry." Attributed to God (divine->human) and engaging affect and moral-evaluation, here it is named in its cessation: once the LORD has satisfied his wrath (che.mah) and his jealousy (qin.ah) has departed, he becomes calm (sha.qat) and angry no longer, so ka.as is the anger God lays down after judgment is complete.
+**MEANING:** In Deu 31:29, *ka.as* in the Hiphil describes the people's idolatrous works as "provoking [God] to anger"—a causative action by humans that is directed upward toward God (human->divine typology). The term is explicitly predicated of God as its object: God is the one provoked. The relational implication is severe: the people's bodily actions carry a relational force that wounds the divine-human bond and triggers divine wrath, and the moral-evaluative faculty is engaged in that these acts are judged as culpably antagonistic toward the Lord.
 
 
-### Psa 78:58   *(vcid 64830)*
+### 2Ki 17:11   *(vcid 871)*
 
-> Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols .
+> 2Ki 17:11 and there they made offerings on all the high places , as the nations did whom the Lord carried away before them. And they did wicked things , provoking the Lord to anger,
 
-- **sense_applied:** to provoke to anger — Israel provoking God by high-place worship
+- **sense_applied:** to provoke to anger — the northern kingdom provoking the LORD by high-place idolatry
 - **type:** action
 - **compound:** simple
-- **mode:** Hiphil consecutive 3mp — "they provoked him to anger"
+- **mode:** Hiphil — "provoking the LORD to anger"
 - **origin:** within-person
 - **attributed_to_God:** no
 - **purpose_equips:** not-stated
 - **typology_direction:** human->divine
 - **immediate_response:** SILENT
-- **produces_effect:** kindles divine anger; the judgments recounted in the psalm
-- **relational_implication:** high-place idolatry provokes God's anger — Israel's recurring incitement of divine wrath
-- **literary_setting:** poetry
-- **faculty/location:** moral-evaluation
+- **produces_effect:** brought the Assyrian exile
+- **relational_implication:** the provocation of God by the northern kingdom's idolatry that brought the Assyrian exile
+- **literary_setting:** narrative
 
-**MEANING:** In Psa 78:58 ka.as (Hiphil) is Israel's "provoking him to anger with their high places" — illicit worship inciting the LORD's wrath. A human action engaging moral-evaluation and directed human->divine, it stands parallel to moving God to jealousy (qa.na) with their idols; the psalm's historical recital names this provocation as the people's recurring offence that kindled divine anger and brought the judgments it recounts.
+**MEANING:** In 2Ki 17:11 ka.as (Hiphil) is Israel's "provoking the LORD to anger" — "they did wicked things, provoking the LORD to anger." A causative action directed human->divine, here the cause of exile: making offerings on all the high places as the dispossessed nations had, Israel did wicked things and ka.as — provoked the LORD to anger; so this term names the provocation of God by the northern kingdom's idolatry that brought the Assyrian exile.
 
 
-### Deu 4:25   *(vcid 64812)*
+### 1Ki 16:33   *(vcid 64820)*
 
-> Deu 4:25 “ When you father children and children’s children , and have grown old in the land , and you act corruptly by making a carved image in the form of anything , and by doing what is evil in the sight of the Lord your God , so as to provoke him to anger ,
+> 1Ki 16:33 And Ahab made an Asherah . Ahab did more to provoke the Lord , the God of Israel , to anger than all the kings of Israel who were before him.
 
-- **sense_applied:** to provoke to anger — Israel provoking God's anger by idolatry
+- **sense_applied:** to provoke to anger — Ahab provoking the LORD more than all the kings before him
 - **type:** action
 - **compound:** simple
-- **mode:** Hiphil infinitive construct — "to provoke him to anger"
+- **mode:** Hiphil — "provoke (the LORD) to anger"
 - **origin:** within-person
 - **attributed_to_God:** no
 - **purpose_equips:** not-stated
 - **typology_direction:** human->divine
 - **immediate_response:** SILENT
-- **produces_effect:** kindles the divine anger that brings judgment
-- **relational_implication:** idolatry as deliberate provocation of God — the human act that incites divine wrath
-- **literary_setting:** law
-- **faculty/location:** moral-evaluation
+- **produces_effect:** provocation exceeding every prior king of Israel
+- **relational_implication:** the unrivalled provocation of God by Ahab, the most idolatrous of Israel's kings
+- **literary_setting:** narrative
 
-**MEANING:** In Deu 4:25 ka.as (Hiphil) is the provoking of God "to anger" by idolatry — "doing what is evil in the sight of the LORD your God, so as to provoke him to anger." A human action engaging moral-evaluation and directed human->divine, it names idol-making as the deliberate incitement of divine wrath; Israel's corruption (sha.chat) is the means and the provoked anger of God the consequence, framing the covenant warning.
+**MEANING:** In 1Ki 16:33 ka.as (Hiphil) is Ahab's "provoking to anger" — "Ahab did more to provoke the LORD, the God of Israel, to anger than all the kings of Israel who were before him." A causative action directed human->divine, here at its worst: by making an Asherah and his Baal-worship, Ahab ka.as — provoked the LORD to anger — more than every king before him; so this term names the unrivalled provocation of God by Ahab, the most idolatrous of Israel's kings.

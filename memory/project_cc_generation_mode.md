@@ -24,16 +24,25 @@ automation; for cost AND quality (Opus > Sonnet), CC wins. See [[project_l2_vers
 findings, 0 skipped; verse-complete routing verified (Rom 9:1 → conscience/M47 · spirit/M25 · truth/M13 ·
 holy/M22). M47 → 16%.
 
-**M02 (Anger) run, 2026-06-10 (run `ccvrm_M02_2026-06-10T05:00:27`):** engine run/checkpoint logging IS in CC
-mode (per-cycle: records/expected/covered/shortfall/findings). Processed to **447/703 (64%)**, 55 cycles,
-**10,049 fan-out findings**, only **2 cycles with shortfall — both genuine term-drops I made under load
-(dropped a term mid verse-complete), CAUGHT automatically** by the emit-map vs written-vcids check
-(`missing_vcids`, status→review) and corrected by idempotent re-ingest. The completeness check is proven, not
-theoretical. che.mah/cha.ron/cha.rah complete with full thematic range (judgment-wrath idiom; cup/winepress;
-bounded/turned-away wrath; prophet-as-vessel; deferential "let-not-X-be-angry" formula; righteous human anger;
-self-anger dissolved; non-anger burning-zeal Neh 3:20). OT-DBR homonym artifacts flagged in-place not absorbed.
-Remaining ~36% = za.am/qa.tsaph/qe.tseph/ka.as residue + small Hebrew terms + Greek NT family
-(thumoō/orgizō/parorgizō/pikria…). Session log: wa-sessionlog-20260610-M02-cc-verse-read-v1.
+**M02 (Anger) run COMPLETE 2026-06-10 (run `ccvrm_M02_2026-06-10T05:00:27`):** engine run/checkpoint logging
+IS in CC mode (per-cycle: records/expected/covered/shortfall/findings). **703/703 (100%)**, 97 cycles,
+**17,029 fan-out findings**, **3 cycles with shortfall — all genuine term-drops I made under load (dropped a
+term mid verse-complete), each CAUGHT automatically** by the emit-map vs written-vcids check (`missing_vcids`,
+status→review) and corrected by idempotent re-ingest. The completeness check is proven across a full cluster.
+Full thematic range mapped: wrath-noun/verb families (che.mah/cha.ron/cha.rah — judgment-wrath idiom,
+cup/winepress, bounded/turned-away wrath, prophet-as-vessel, deferential "let-not-X-be-angry", righteous human
+anger, self-anger dissolved, non-anger burning-zeal); jealousy/zeal (qa.na/qin.ah/qan.na "jealous God" + divine
+NAME "Jealous" Exo 34:14); the large **riv** family (strife/quarrel AND forensic "cause/lawsuit/indictment" —
+incl. covenant-lawsuit Hos 12:2/Jer 25:31, "plead my cause" advocacy, Job's pleadings); **tsur** "show
+hostility/besiege" (the Babylonian/Assyrian siege narratives); za.eph "vexed and sullen" (Ahab); zal.a.phah
+"hot indignation"; the Greek tail (eris, logomachia, paroxusmos pos+neg, zestos fervency-not-anger, erethizō,
+thumomacheō, pikria). **Two cluster-quality items flagged in-place for the per-cluster gate:** (a) OT-DBR-009
+homonym artifacts — tsur "bind/bag" (money/hair, 2Ki 12:10, 2Ki 5:23, Deu 14:25, Eze 5:3), che.mah poison/venom,
+chay "as-I-live"/"alive", ka.phar pitch, che.sed reproach — flagged HOMONYM-ARTIFACT, not absorbed; (b) **tsur
+"besiege" = a clustering misfit candidate** — pure military-siege uses carry thin inner-being content (affect
+SILENT); also the enclose-sense (Psa 139:5 God hems-in, Song 8:9 board-up sister) wrongly M02-tagged, flagged
+enclose-not-hostility. Session log: wa-sessionlog-20260610-M02-cc-verse-read-v2. **M02 is the 2nd cluster
+complete (after M01); next: per-cluster gate, then another cluster.**
 
 **Quality-check tooling (read-only):** `scripts/_generate_meaning_quality_check.py` (N random verses × M
 terms: verse + tier findings + meaning) and `scripts/_generate_verse_meanings_export.py` (full l2_meaning

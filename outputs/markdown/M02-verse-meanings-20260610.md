@@ -1,58 +1,118 @@
-# M02 — Verse Meanings (447 verses, 39 terms)
+# M02 — Verse Meanings (703 verses, 47 terms)
 
 > Read-only export. Each verse: reference + text + final meaning paragraph (`l2_meaning`). Generated 2026-06-10.
 
 
 ## Contents
 
-- [a.naph (H0599) — 1](#anaph)
+- [a.naph (H0599) — 14](#anaph)
 - [aganaktēsis (G0024) — 1](#aganaktēsis)
 - [antilogia (G0485) — 4](#antilogia)
 - [be.esh (H0888) — 1](#beesh)
-- [cha.rah (H2734) — 78](#charah)
+- [cha.rah (H2734) — 88](#charah)
 - [cha.ron (H2740) — 40](#charon)
 - [che.ma (H2528) — 2](#chema)
 - [che.mah (H2534) — 115](#chemah)
-- [cho.ri (H2750) — 2](#chori)
-- [erethizō (G2042) — 1](#erethizō)
-- [eris (G2054) — 6](#eris)
+- [cho.ri (H2750) — 6](#chori)
+- [erethizō (G2042) — 2](#erethizō)
+- [eris (G2054) — 9](#eris)
 - [filoneikia (G5379) — 1](#filoneikia)
 - [filoneikos (G5380) — 1](#filoneikos)
-- [ka.a.s (H3708B) — 7](#kaas)
-- [ka.as (H3707) — 15](#kaas)
-- [mats.tsah (H4683) — 2](#matstsah)
+- [ka.a.s (H3708B) — 22](#kaas)
+- [ka.as (H3707) — 52](#kaas)
+- [logomachia (G3055) — 1](#logomachia)
+- [mats.tsah (H4683) — 3](#matstsah)
+- [mats.tsut (H4695) — 1](#matstsut)
 - [me.ri.vah (H4808) — 2](#merivah)
 - [na.phal (H5307K) — 2](#naphal)
+- [orgilos (G3711) — 1](#orgilos)
 - [orgizō (G3710) — 8](#orgizō)
-- [orgē (G3709) — 15](#orgē)
+- [orgē (G3709) — 33](#orgē)
 - [parorgismos (G3950) — 1](#parorgismos)
 - [parorgizō (G3949) — 2](#parorgizō)
 - [paroxunō (G3947) — 2](#paroxunō)
-- [pikria (G4088) — 3](#pikria)
+- [paroxusmos (G3948) — 2](#paroxusmos)
+- [pikria (G4088) — 4](#pikria)
 - [qa.na (H7065) — 29](#qana)
-- [qa.tsaph (H7107) — 10](#qatsaph)
-- [qan.na (H7067H) — 1](#qanna)
-- [qan.no (H7072) — 1](#qanno)
+- [qa.tsaph (H7107) — 32](#qatsaph)
+- [qan.na (H7067H) — 5](#qanna)
+- [qan.no (H7072) — 2](#qanno)
 - [qe.tsaph (H7109) — 1](#qetsaph)
-- [qe.tseph (H7110A) — 10](#qetseph)
-- [qin.ah (H7068) — 40](#qinah)
+- [qe.tseph (H7110A) — 28](#qetseph)
+- [qin.ah (H7068) — 41](#qinah)
 - [re.gaz (H7265) — 1](#regaz)
-- [riv (H7379) — 10](#riv)
+- [riv (H7379) — 60](#riv)
+- [thumomacheō (G2371) — 1](#thumomacheō)
 - [thumoō (G2373) — 1](#thumoō)
+- [tsur (H6696B) — 32](#tsur)
 - [za.am (H2194) — 11](#zaam)
-- [za.am (H2195) — 9](#zaam)
+- [za.am (H2195) — 22](#zaam)
 - [za.aph (H2196) — 4](#zaaph)
 - [za.aph (H2197) — 6](#zaaph)
-- [zal.a.phah (H2152) — 1](#zalaphah)
+- [za.eph (H2198) — 2](#zaeph)
+- [zal.a.phah (H2152) — 3](#zalaphah)
+- [zestos (G2200) — 2](#zestos)
 
 
 ---
 
-## <a id="anaph"></a>a.naph (H0599) — 1 verses
+## <a id="anaph"></a>a.naph (H0599) — 14 verses
+
+**Deu 1:37** — Deu 1:37 Even with me the Lord was angry on your account and said , ‘ You also shall not go in there .
+
+In Deu 1:37 a.naph is the LORD's being "angry" with Moses — "Even with me the LORD was angry on your account and said, 'You also shall not go in there.'" A status of being angry (Hithpael, of God), here at Moses for the people's sake: the LORD a.naph — was angry — with Moses on account of Israel's rebellion, barring even him from entering the land; so this term names the divine anger that fell on the leader because of the people, excluding Moses from the inheritance.
+
+**Deu 4:21** — Deu 4:21 Furthermore, the Lord was angry with me because of you , and he swore that I should not cross the Jordan , and that I should not enter the good land that the Lord your God is giving you for an inheritance .
+
+In Deu 4:21 a.naph is the LORD's being "angry" with Moses — "the LORD was angry with me because of you, and he swore that I should not cross the Jordan." A status of being angry (Hithpael, of God), here barring Moses: the LORD a.naph — was angry — with Moses on the people's account and swore he would not cross into the good (tov) land; so this term names the divine anger by which Moses, on Israel's behalf, was sworn out of the promised inheritance.
+
+**Deu 9:8** — Deu 9:8 Even at Horeb you provoked the Lord to wrath , and the Lord was so angry with you that he was ready to destroy you .
+
+In Deu 9:8 a.naph is the LORD's being "so angry" — "the LORD was so angry with you that he was ready to destroy you." A status of being angry (Hithpael, used always of God's anger), here at Horeb: even there, at the mountain, Israel provoked (qa.tsaph) the LORD, and he a.naph — was so angry — that he was ready to destroy them (only Moses' intercession averting it); so this term names the divine anger, kindled at the golden calf, that nearly consumed Israel at Sinai.
+
+**Deu 9:20** — Deu 9:20 And the Lord was so angry with Aaron that he was ready to destroy him. And I prayed for Aaron also at the same time .
+
+In Deu 9:20 a.naph is the LORD's being "so angry" with Aaron — "And the LORD was so angry with Aaron that he was ready to destroy him." A status of being angry (Hithpael, of God), here at the calf: the LORD a.naph — was so angry — with Aaron (for his part in the golden calf) that he was ready to destroy him, until Moses prayed for him; so this term names the divine anger against Aaron that Moses' intercession averted.
+
+**1Ki 8:46** — 1Ki 8:46 “If they sin against you— for there is no one who does not sin —and you are angry with them and give them to an enemy , so that they are carried away captive to the land of the enemy , far off or near ,
+
+In 1Ki 8:46 a.naph is God's being "angry" — "you are angry with them and give them to an enemy." A status of being angry (Qal, of God), here anticipated: Solomon's prayer foresees that when Israel sins (cha.ta), God will a.naph — be angry — and give them to an enemy (o.yev) for captivity; so this term names the divine anger that, provoked by sin, would hand Israel over to exile — the prayer then pleading for mercy on repentance.
+
+**1Ki 11:9** — 1Ki 11:9 And the Lord was angry with Solomon , because his heart had turned away from the Lord , the God of Israel , who had appeared to him twice
+
+In 1Ki 11:9 a.naph is the LORD's being "angry" — "And the LORD was angry with Solomon, because his heart had turned away." A status of being angry (Hithpael, used of God), here at apostasy: the LORD a.naph — was angry — with Solomon because his heart (le.vav) turned from the God who had appeared to him twice; so this term names the divine anger at Solomon's idolatrous defection, despite his unique privileges.
+
+**2Ki 17:18** — 2Ki 17:18 Therefore the Lord was very angry with Israel and removed them out of his sight . None was left but the tribe of Judah only .
+
+In 2Ki 17:18 a.naph is the LORD's being "very angry" — "Therefore the LORD was very angry with Israel and removed them out of his sight." A status of being angry (Hithpael, of God), here at its height: provoked by the northern kingdom's persistent idolatry, the LORD a.naph — was very angry — and removed (sur) Israel from his sight, leaving only Judah; so this term names the great divine anger that culminated in the Assyrian exile of the ten tribes.
+
+**2Ch 6:36** — 2Ch 6:36 “ If they sin against you— for there is no one who does not sin —and you are angry with them and give them to an enemy , so that they are carried away captive to a land far or near ,
+
+In 2Ch 6:36 a.naph is God's being "angry" — "you are angry with them and give them to an enemy." A status of being angry (Qal, of God), here in Solomon's prayer (the Chronicles parallel): when Israel sins, God will a.naph — be angry — and give them captive to an enemy in a land far or near; so this term names the divine anger at sin that would bring exile, the backdrop to the prayer's appeal for mercy when they repent.
+
+**Ezr 9:14** — Ezr 9:14 shall we break your commandments again and intermarry with the peoples who practice these abominations ? Would you not be angry with us until you consumed us, so that there should be no remnant , nor any to escape ?
+
+In Ezr 9:14 a.naph is the wrath Ezra fears — "Would you not be angry with us until you consumed us, so that there should be no remnant?" A status of being angry (Qal, of God), here dreaded as total: Ezra confesses that to break God's commandments again by intermarrying with the peoples of the abominations (to.e.vah) would make God a.naph — be angry — until he consumed them utterly, leaving no remnant; so this term names the consuming divine wrath Ezra fears renewed sin would finally provoke.
+
+**Psa 2:12** — Psa 2:12 Kiss the Son , lest he be angry , and you perish in the way , for his wrath is quickly kindled . Blessed are all who take refuge in him .
+
+In Psa 2:12 a.naph is the Son's anger to be feared — "Kiss the Son, lest he be angry, and you perish in the way, for his wrath is quickly kindled." A status of being angry (Qal, here of the Son), it is the messianic warning: the rebellious kings are urged to kiss (submit to) the Son lest he a.naph — be angry — and they perish, for his wrath is quickly kindled; so this term names the swiftly-kindled anger of the enthroned Son, escape from which is found only in taking refuge (cha.sah) in him.
+
+**Psa 60:1** — To the choirmaster : according to Shushan Eduth . A Miktam of David ; for instruction ; when he strove with Aram-naharaim and with Aram-zobah , and when Joab on his return struck down twelve thousand of Edom in the Valley of Salt . Psa 60:1 O God , you have rejected us, broken our defenses ; you have been angry ; oh, restore us .
+
+In Psa 60:1 a.naph is God's being "angry" — "O God, you have rejected us, broken our defenses; you have been angry; oh, restore us." A status of being angry (Qal, of God), here felt in defeat: the people lament that God has rejected them and a.naph — been angry — breaking their defenses, and they plead for restoration; so this term names the divine anger experienced as national defeat, the ground of the cry for God to turn and restore.
 
 **Psa 79:5** — Psa 79:5 How long , O Lord ? Will you be angry forever ? Will your jealousy burn like fire ?
 
 In Psa 79:5 a.naph is God's anger the psalmist questions — "How long, O LORD? Will you be angry forever?" Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the divine wrath under which the community suffers; paired with the next line's "Will your jealousy (qin.ah) burn like fire?", the verse laments the seemingly endless duration of God's anger and jealousy, crying out for its limit.
+
+**Psa 85:5** — Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ?
+
+In Psa 85:5 a.naph is the anger the people question — "Will you be angry with us forever? Will you prolong your anger to all generations?" A status of being angry (Qal, of God), here lamented in its duration: the people ask whether the LORD will a.naph — be angry — forever and prolong his anger through all generations; so this term names the divine anger whose feared perpetuity the people plead God to end, seeking revival and steadfast love.
+
+**Isa 12:1** — Isa 12:1 You will say in that day : “I will give thanks to you, O Lord , for though you were angry with me, your anger turned away , that you might comfort me .
+
+In Isa 12:1 a.naph is the anger now "turned away" — "though you were angry with me, your anger turned away, that you might comfort me." A status of being angry (Qal, of God), here past and reversed: the redeemed give thanks because, though the LORD a.naph — was angry — with them, his anger has turned away so that he comforts (na.cham) them; so this term names the divine anger that, in the song of salvation, is graciously turned aside into comfort — wrath giving way to consolation.
 
 
 ---
@@ -96,7 +156,7 @@ In Dan 6:14 be.esh is the king's distress — "when he heard these words, was mu
 
 ---
 
-## <a id="charah"></a>cha.rah (H2734) — 78 verses
+## <a id="charah"></a>cha.rah (H2734) — 88 verses
 
 **Gen 4:5** — Gen 4:5 but for Cain and his offering he had no regard . So Cain was very angry , and his face fell .
 
@@ -189,6 +249,26 @@ In Num 16:15 cha.rah is Moses' being "very angry" — "And Moses was very angry 
 **Num 22:22** — Num 22:22 But God’s anger was kindled because he went , and the angel of the Lord took his stand in the way as his adversary . Now he was riding on the donkey , and his two servants were with him .
 
 In Num 22:22 cha.rah is "God's anger" kindled — "But God's anger was kindled because he went, and the angel of the LORD took his stand in the way as his adversary." A status of burning anger (Qal) attributed to God, it is wrath at Balaam's compromised journey: though permitted to go, Balaam's eagerness for Balak's reward kindled God's cha.rah, so the angel of the LORD blocked his way as an adversary; so this anger is the divine displeasure at Balaam's covetous course, met by the obstructing angel.
+
+**Num 22:27** — Num 22:27 When the donkey saw the angel of the Lord , she lay down under Balaam . And Balaam’s anger was kindled , and he struck the donkey with his staff .
+
+In Num 22:27 cha.rah is Balaam's anger "kindled" — "Balaam's anger was kindled, and he struck the donkey with his staff." A status of burning anger (Qal), here it is blind, ironic fury: when the donkey, seeing the angel of the LORD, lay down to spare Balaam, his anger cha.rah — blazed — and he beat her a third time; so this anger is the seer's irrational rage at the very animal saving his life, exposing his spiritual blindness to the angelic adversary the donkey perceives.
+
+**Num 24:10** — Num 24:10 And Balak’s anger was kindled against Balaam , and he struck his hands together. And Balak said to Balaam , “ I called you to curse my enemies , and behold , you have blessed them these three times .
+
+In Num 24:10 cha.rah is Balak's anger "kindled" — "And Balak's anger was kindled against Balaam, and he struck his hands together." A status of burning anger (Qal), here it is frustrated royal fury: having called (qa.ra) Balaam to curse Israel only to hear him bless (ba.rakh) them three times, Balak cha.rah — burned with anger — clapping his hands in rage and dismissing the seer; so this anger is the king's outrage at the reversal of his purpose by God's overruling word.
+
+**Num 25:3** — Num 25:3 So Israel yoked himself to Baal of Peor . And the anger of the Lord was kindled against Israel .
+
+In Num 25:3 cha.rah is the LORD's anger "kindled" — "So Israel yoked himself to Baal of Peor. And the anger of the LORD was kindled against Israel." A status of burning anger (Qal) attributed to God, it is wrath at idolatry and immorality: when Israel joined themselves to Baal of Peor, the LORD's cha.rah kindled, bringing the plague that Phinehas's zeal would halt; so this anger is the divine wrath at the apostasy of yoking to a foreign god.
+
+**Num 32:10** — Num 32:10 And the Lord’s anger was kindled on that day , and he swore , saying ,
+
+In Num 32:10 cha.rah is the LORD's anger "kindled" — "And the LORD's anger was kindled on that day, and he swore." A status of burning anger (Qal) attributed to God, it is wrath at the faithless generation: at Kadesh, when the people refused to enter the land on the spies' report, the LORD's cha.rah kindled and he swore the oath that barred that generation; so this anger is the divine wrath that, sealed by oath, consigned the unbelieving generation to die in the wilderness.
+
+**Num 32:13** — Num 32:13 And the Lord’s anger was kindled against Israel , and he made them wander in the wilderness forty years , until all the generation that had done evil in the sight of the Lord was gone .
+
+In Num 32:13 cha.rah is the LORD's anger "kindled" — "And the LORD's anger was kindled against Israel, and he made them wander in the wilderness forty years." A status of burning anger (Qal) attributed to God, it is the wrath of the wilderness sentence: provoked by the generation that did evil in his sight, the LORD's cha.rah kindled and he made Israel wander forty years until that generation was gone; so this anger is the divine wrath whose judgment was the forty-year wandering that consumed the faithless generation.
 
 **Deu 6:15** — Deu 6:15 for the Lord your God in your midst is a jealous God — lest the anger of the Lord your God be kindled against you, and he destroy you from off the face of the earth .
 
@@ -370,13 +450,29 @@ In Psa 18:7 *cha.rah* in the Qal describes God's burning anger as the personal, 
 
 In Psa 37:1 cha.rah (Hithpael) is the self-inflaming fret the psalmist forbids — "Fret not yourself because of evildoers." A within-person reflexive agitation engaging affect, it is the heated anger and anxious resentment stirred by the apparent success of the wicked; paired with "be not envious" (qa.na), David counsels against letting evildoers' wrongdoing (av.lah) kindle one's own fretful anger, calling instead for trust in the LORD.
 
+**Psa 37:7** — Psa 37:7 Be still before the Lord and wait patiently for him; fret not yourself over the one who prospers in his way , over the man who carries out evil devices !
+
+In Psa 37:7 cha.rah (Hithpael) is the fretting forbidden — "fret not yourself over the one who prospers in his way." A within-person agitation/heating-up (Hithpael, "do not inflame yourself"), here it is envious vexation at the wicked's success: the psalm bids the godly be still (da.mam) before the LORD and not cha.rah — fret, work themselves up — over the prosperous evildoer; so this fretting is the resentful agitation at the wicked's prosperity that the psalm counsels the faithful to release in patient trust.
+
 **Psa 37:8** — Psa 37:8 Refrain from anger , and forsake wrath ! Fret not yourself; it tends only to evil .
 
 In Psa 37:8 cha.rah is the fretting forbidden — "Fret not yourself; it tends only to evil." A within-person heating/agitation engaging affect (Hithpael, "do not heat yourself"), here it is the agitated resentment the psalmist warns against: he urges refraining from anger and forsaking wrath (che.mah), and not to cha.rah — fret/inflame oneself — over evildoers, since it tends only to evil (ra.a); so this fretting is the inward heating-up against others that the psalm counsels the godly to release.
 
+**Psa 106:40** — Psa 106:40 Then the anger of the Lord was kindled against his people , and he abhorred his heritage ;
+
+In Psa 106:40 cha.rah is the LORD's anger "kindled" — "Then the anger of the LORD was kindled against his people, and he abhorred his heritage." A status of burning anger (Qal) attributed to God, it is the recurrent wrath of the psalm's recital: provoked by Israel's idolatry and defiling deeds, the LORD's cha.rah kindled, and he abhorred (ta.av) his heritage, handing them to their enemies; so this anger is the divine wrath that, again in the nation's history, judged his people's apostasy.
+
+**Psa 124:3** — Psa 124:3 then they would have swallowed us up alive , when their anger was kindled against us ;
+
+In Psa 124:3 cha.rah is the enemies' anger "kindled" — "they would have swallowed us up alive, when their anger was kindled against us." A status of burning anger (Qal), here it is the foes' hostile rage: had the LORD not been on Israel's side, the adversaries whose cha.rah — anger — burned against them would have swallowed them alive (chay); so this anger is the deadly hostility of the enemies, from which only the LORD's help delivered Israel.
+
 **Pro 24:19** — Pro 24:19 Fret not yourself because of evildoers , and be not envious of the wicked ,
 
 In Pro 24:19 cha.rah (Hithpael) is the self-inflaming fret forbidden — "Fret not yourself because of evildoers." A within-person reflexive agitation engaging affect, it is the heated anger and anxious resentment over the wicked's apparent success; paired with not envying (qa.na) the wicked, the proverb (like Psa 37) counsels against both fretful anger and envy, grounding the calm in the certainty that "the evil man has no future; the lamp of the wicked will be put out."
+
+**Song 1:6** — Song 1:6 Do not gaze at me because I am dark , because the sun has looked upon me. My mother’s sons were angry with me; they made me keeper of the vineyards , but my own vineyard I have not kept !
+
+In Song 1:6 cha.rah is the brothers' being "angry" — "My mother's sons were angry with me; they made me keeper of the vineyards." A status of burning anger (Piel here, "were incensed"), it is familial displeasure: the bride's mother's sons cha.rah — were angry — with her and put her to keep (na.tar) the vineyards, so the sun darkened her and she could not tend her own; so this anger is the brothers' harshness that imposed the toil for which she now feels self-conscious before the daughters of Jerusalem.
 
 **Isa 5:25** — Isa 5:25 Therefore the anger of the Lord was kindled against his people , and he stretched out his hand against them and struck them, and the mountains quaked ; and their corpses were as refuse in the midst of the streets . For all this his anger has not turned away , and his hand is stretched out still .
 
@@ -409,6 +505,10 @@ In Jon 4:9 cha.rah is Jonah's anger over the withered plant, which he defiantly 
 **Hab 3:8** — Hab 3:8 Was your wrath against the rivers , O Lord ? Was your anger against the rivers , or your indignation against the sea , when you rode on your horses , on your chariot of salvation ?
 
 In Hab 3:8 cha.rah is the divine "anger" questioned — "Was your anger against the rivers, O LORD?... when you rode on your horses, on your chariot of salvation?" A status of burning anger (Qal) attributed to God, here it is rhetorically probed: the prophet asks whether the LORD's cha.rah was truly aimed at the rivers and sea, the implied answer being no — his wrath in the theophany was not against nature but in the service of his people's salvation (ye.shu.ah); so this anger is divine wrath whose real object is deliverance, the storm-march of the Warrior-Redeemer.
+
+**Zec 10:3** — Zec 10:3 “My anger is hot against the shepherds , and I will punish the leaders ; for the Lord of hosts cares for his flock , the house of Judah , and will make them like his majestic steed in battle .
+
+In Zec 10:3 cha.rah is God's "anger is hot" — "My anger is hot against the shepherds, and I will punish the leaders." A status of burning anger (Qal) attributed to God, it is wrath against false leadership: the LORD's cha.rah burns against the shepherds who misled his flock, and he will punish the leaders; yet this anger is paired with care — for the LORD cares for his flock, Judah, and will make them strong in battle; so this anger is the divine wrath against bad shepherds that is the other face of his care for the sheep.
 
 
 ---
@@ -1056,7 +1156,19 @@ In Zec 8:2 che.mah is the "great wrath" with which God is jealous for Zion — "
 
 ---
 
-## <a id="chori"></a>cho.ri (H2750) — 2 verses
+## <a id="chori"></a>cho.ri (H2750) — 6 verses
+
+**Exo 11:8** — Exo 11:8 And all these your servants shall come down to me and bow down to me, saying , ‘ Get out , you and all the people who follow you.’ And after that I will go out .” And he went out from Pharaoh in hot anger .
+
+In Exo 11:8 cho.ri is Moses' "hot anger" — "And he went out from Pharaoh in hot anger." A status of the heat/burning of anger, here human and righteous: having announced the death of the firstborn, Moses left Pharaoh's presence in cho.ri — hot, burning anger — at the king's obstinate refusal to let Israel go; so this term names the righteous indignation of God's servant at Pharaoh's hardened defiance.
+
+**Deu 29:24** — Deu 29:24 all the nations will say , ‘ Why has the Lord done thus to this land ? What caused the heat of this great anger ?’
+
+In Deu 29:24 cho.ri is "the heat of this great anger" — "all the nations will say... 'What caused the heat of this great anger?'" A status of the heat/burning of anger (here of God), it is the divine wrath whose effects astonish the nations: seeing the devastated land, the nations ask what caused the cho.ri — the heat — of the LORD's great anger; so this term names the fierce divine wrath whose desolating judgment provokes the watching nations to ask its cause (the answer: covenant-forsaking).
+
+**1Sa 20:34** — 1Sa 20:34 And Jonathan rose from the table in fierce anger and ate no food the second day of the month , for he was grieved for David , because his father had disgraced him .
+
+In 1Sa 20:34 cho.ri is Jonathan's "fierce anger" — "And Jonathan rose from the table in fierce anger and ate no food." A status of the heat/burning of anger, here human and grieved: Jonathan rose in cho.ri — fierce, burning anger — refusing to eat, because his father Saul had disgraced (ka.lam) him and he was grieved (a.tsav) for David; so this term names the burning indignation of a loyal friend at his father's shameful, murderous intent toward David.
 
 **2Ch 25:10** — 2Ch 25:10 Then Amaziah discharged the army that had come to him from Ephraim to go home again. And they became very angry with Judah and returned home in fierce anger .
 
@@ -1066,19 +1178,27 @@ In 2Ch 25:10 cho.ri is the "fierce anger" of the dismissed troops — "returned 
 
 In Isa 7:4, *cho.ri* ("burning/fierce anger") describes the intense inner affect of the enemy kings Rezin and the son of Remaliah — it is their heated, consuming rage that constitutes the threat against Ahaz. The term engages the affective faculty, locating the danger not merely in the enemies' military capacity but in the burning intensity of their wrath. This *cho.ri* is the external relational pressure that, if internalized, would produce the fear and faintness of heart that the divine command prohibits. The verse thus positions *cho.ri* as the trigger for the inner struggle Ahaz must resist.
 
+**Lam 2:3** — Lam 2:3 He has cut down in fierce anger all the might of Israel ; he has withdrawn from them his right hand in the face of the enemy ; he has burned like a flaming fire in Jacob , consuming all around .
+
+In Lam 2:3 cho.ri is the LORD's "fierce anger" — "He has cut down in fierce anger all the might of Israel." A status of the heat/burning of anger (here of God), it is the wrath of judgment fallen on Jerusalem: in cho.ri — fierce, burning anger — the LORD cut down every horn (qeren) of Israel's might, withdrew his right hand before the enemy, and burned like a flaming fire consuming Jacob all around; so this term names the divine wrath that turns the LORD himself into Israel's adversary, withdrawing his protecting hand.
+
 
 ---
 
-## <a id="erethizō"></a>erethizō (G2042) — 1 verses
+## <a id="erethizō"></a>erethizō (G2042) — 2 verses
 
 **2Cor 9:2** — 2Cor 9:2 for I know your readiness , of which I boast about you to the people of Macedonia , saying that Achaia has been ready since last year . And your zeal has stirred up most of them.
 
 In 2Cor 9:2 *erethizō* is used in its positive sense of "to incite, stimulate" (distinguished from its negative sense in Col 3:21): the *zēlos* of the Corinthians has "stirred up most of them [the Macedonians]." The action is completed (aorist) with lasting effect, engaging the faculties of affect, agency, and volition — both in the Corinthians who embody the zeal and in the Macedonians who are moved by it. The relational implication is a contagious, outward-directed motivating force: the inner disposition of one community becomes the stimulus that kindles a corresponding disposition in another, demonstrating that inner *zēlos* is not self-contained but socially generative.
 
+**Col 3:21** — Col 3:21 Fathers , do not provoke your children , lest they become discouraged .
+
+In Col 3:21 erethizō is fathers' "provoking" — "Fathers, do not provoke your children, lest they become discouraged." An action of provoking/exasperating, here negated as a household rule: fathers are not to erethizō — irritate, embitter, exasperate — their children, because such provocation makes them lose heart (athumeō); so this term names the parental provocation that dispirits children, forbidden for the harm it does.
+
 
 ---
 
-## <a id="eris"></a>eris (G2054) — 6 verses
+## <a id="eris"></a>eris (G2054) — 9 verses
 
 **Rom 1:29** — Rom 1:29 They were filled with all manner of unrighteousness , evil , covetousness , malice . They are full of envy , murder , strife , deceit , maliciousness . They are gossips ,
 
@@ -1104,6 +1224,18 @@ In 2Cor 12:20, eris denotes quarreling or strife — a disposition of contentiou
 
 In Gal 5:20 eris is "strife" — listed among the works of the flesh (enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions). A status of contentious discord, it stands in the cluster of relational vices Paul opposes to the Spirit's fruit; so this eris is the quarrelsome strife the flesh produces, grouped with enmity, jealousy, and anger.
 
+**Phili 1:15** — Phili 1:15 Some indeed preach Christ from envy and rivalry , but others from good will .
+
+In Phili 1:15 eris is "rivalry / strife" — "Some indeed preach Christ from envy and rivalry." A status-noun for quarrel / strife / contentious rivalry, here a corrupt motive: some preach out of envy (phthonos) and eris — rivalry, contentious strife — seeking to rival Paul; so this term names the contentious rivalry that turns even gospel-preaching into a weapon against Paul.
+
+**1Ti 6:4** — 1Ti 6:4 he is puffed up with conceit and understands nothing . He has an unhealthy craving for controversy and for quarrels about words , which produce envy , dissension , slander , evil suspicions ,
+
+In 1Ti 6:4 eris is "dissension / strife" — "which produce envy, dissension, slander, evil suspicions." A status-noun for quarrel / strife / discord, here a fruit of disputatiousness: the conceited (tufoō) man's craving (noseō) for controversy and word-battles (logomachia) produces eris — strife, dissension — with envy (phthonos) and slander (blasphemia); so this term names the quarrelsome contention bred by an unhealthy appetite for controversy.
+
+**Tit 3:9** — Tit 3:9 But avoid foolish controversies , genealogies , dissensions , and quarrels about the law , for they are unprofitable and worthless .
+
+In Tit 3:9 eris is "dissensions / strife" — "avoid foolish controversies, genealogies, dissensions, and quarrels about the law." A status-noun for quarrel / strife / discord, here to be shunned: Titus must avoid the foolish (mōros) controversies and the eris — dissension, strife — they generate, since they are unprofitable and worthless; so this term names the contentious dissension that foolish disputes breed, to be left alone.
+
 
 ---
 
@@ -1125,27 +1257,83 @@ In 1Cor 11:16 filoneikos is the "contentious" disposition Paul sets aside — "I
 
 ---
 
-## <a id="kaas"></a>ka.a.s (H3708B) — 7 verses
+## <a id="kaas"></a>ka.a.s (H3708B) — 22 verses
+
+**Deu 32:19** — Deu 32:19 “The Lord saw it and spurned them, because of the provocation of his sons and his daughters .
+
+In Deu 32:19 ka.a.s is "the provocation of his sons and his daughters" — "The LORD saw it and spurned them, because of the provocation of his sons and his daughters." A status-noun for provocation/vexation, here Israel's affront: the LORD saw and spurned (na.ats) his people because of the ka.a.s — the provocation — given by his own sons and daughters through their idolatry; so this term names the provoking offense by which God's children stirred his rejection.
 
 **Deu 32:27** — Deu 32:27 had I not feared provocation by the enemy , lest their adversaries should misunderstand , lest they should say , “Our hand is triumphant , it was not the Lord who did all this .”’
 
 In Deu 32:27, כַּעַס (kaʿas) denotes the provocation or vexation that God feared from the enemy — specifically, the enemy's potential boasting and misattribution of Israel's defeat to their own power rather than to God. This provocation engages the faculties of affect and moral-evaluation, as it represents an offensive relational act directed from the human sphere upward toward the divine. The term appears as the object of God's own fear (gur), giving it a remarkable typological weight: God's concern about being vexed by human misunderstanding becomes the very motivation for restraining judgment on Israel.
 
+**1Sa 1:6** — 1Sa 1:6 And her rival used to provoke her grievously to irritate her, because the Lord had closed her womb .
+
+In 1Sa 1:6 ka.a.s is the "irritation/vexation" — "her rival used to provoke her grievously to irritate her." A status-noun for vexation/grief, here the distress inflicted: Peninnah provoked (ka.as) Hannah to bring her to ka.a.s — irritation, vexation, grief — taunting her barrenness; so this term names the vexing distress Peninnah deliberately stirred in Hannah, driving her to weep and not eat.
+
 **1Sa 1:16** — 1Sa 1:16 Do not regard your servant as a worthless woman , for all along I have been speaking out of my great anxiety and vexation .”
 
 In 1Sa 1:16 ka.a.s is Hannah's "great vexation" — "I have been speaking out of my great anxiety and vexation." A within-person affective distress engaging affect, here the noun denotes the grief-laden vexation of her barrenness and the rival's provocation; it is what she has been pouring out in her silent, fervent prayer (si.ach), which Eli mistook for drunkenness, so her vexation is the inner anguish that fuels her petition.
+
+**1Ki 15:30** — 1Ki 15:30 It was for the sins of Jeroboam that he sinned and that he made Israel to sin , and because of the anger to which he provoked the Lord , the God of Israel .
+
+In 1Ki 15:30 ka.a.s is the "anger/provocation" — "because of the anger to which he provoked the LORD." A status-noun for anger/vexation/provocation, here the divine anger Jeroboam stirred: it was the ka.a.s — the provocation-anger — that Jeroboam roused in the LORD by his sins that brought judgment on his dynasty; so this term names the provoked divine anger, the standing charge against Jeroboam's house.
+
+**1Ki 21:22** — 1Ki 21:22 And I will make your house like the house of Jeroboam the son of Nebat , and like the house of Baasha the son of Ahijah , for the anger to which you have provoked me, and because you have made Israel to sin .
+
+In 1Ki 21:22 ka.a.s is the "anger" Ahab provoked — "for the anger to which you have provoked me." A status-noun for anger/provocation, here divine: it is the ka.a.s — the provoked anger — Ahab stirred in the LORD that brings on his house the fate of Jeroboam and Baasha; so this term names the divine anger Ahab's idolatry and sin-leading roused, the ground of his dynasty's ruin.
 
 **2Ki 23:26** — 2Ki 23:26 Still the Lord did not turn from the burning of his great wrath , by which his anger was kindled against Judah , because of all the provocations with which Manasseh had provoked him.
 
 In 2Ki 23:26 ka.a.s is the "provocations" of Manasseh — "all the provocations with which Manasseh had provoked him." A status-noun for vexation/provocation, it is the catalogue of idolatrous affronts: Manasseh's ka.a.s — his provoking offenses — so kindled the LORD's anger that his great wrath (cha.ron) did not turn from Judah; so this term names the accumulated provocations that fixed God's burning anger against the nation.
 
+**Psa 6:7** — Psa 6:7 My eye wastes away because of grief ; it grows weak because of all my foes .
+
+In Psa 6:7 ka.a.s is the "grief" wasting the eye — "My eye wastes away because of grief; it grows weak because of all my foes." A status-noun for grief/vexation, here affliction from enemies: the psalmist's eye is consumed with ka.a.s — grief — worn weak by all his foes; so this term names the wasting sorrow that the suppliant's adversaries inflict, dimming his very sight.
+
+**Psa 10:14** — Psa 10:14 But you do see , for you note mischief and vexation , that you may take it into your hands ; to you the helpless commits himself; you have been the helper of the fatherless .
+
+In Psa 10:14 ka.a.s is the "vexation" God notes — "for you note mischief and vexation, that you may take it into your hands." A status-noun for vexation/grief, here the suffering of the oppressed: the psalmist affirms that God sees the mischief (a.mal) and ka.a.s — vexation, grief — inflicted on the helpless, taking it into his hands to repay; so this term names the affliction the vulnerable endure, which God observes and avenges.
+
+**Psa 31:9** — Psa 31:9 Be gracious to me, O Lord , for I am in distress ; my eye is wasted from grief ; my soul and my body also.
+
+In Psa 31:9 ka.a.s is the "grief" wasting the psalmist — "Be gracious to me, O LORD, for I am in distress; my eye is wasted from grief." A status-noun for grief/sorrow, here consuming distress: the suppliant's eye is wasted from ka.a.s — grief — his soul (ne.phesh) and body failing; so this term names the wearing sorrow that consumes the psalmist as he cries for God's grace (cha.nan).
+
+**Psa 85:4** — Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us !
+
+In Psa 85:4 ka.a.s is God's "indignation" to be put away — "Restore us again, O God of our salvation, and put away your indignation toward us!" A status-noun for indignation/anger (here divine), it is the wrath the people plead God to remove: praying for restoration, they ask the God of their salvation to set aside his ka.a.s — indignation — toward them; so this term names the divine displeasure whose removal the people seek in their plea for renewal.
+
 **Pro 12:16** — Pro 12:16 The vexation of a fool is known at once , but the prudent ignores an insult .
 
 In Pro 12:16 ka.a.s names the inner vexation or anger that arises within the fool. This affective state originates from within the person and, in the fool's case, produces the immediate effect of becoming publicly known—the fool cannot suppress it. The relational implication is that uncontrolled vexation breaches the boundary between inner life and social presentation, identifying the fool as one whose emotional interior is perpetually on display, in contrast to the prudent person who absorbs insult silently.
 
+**Pro 17:25** — Pro 17:25 A foolish son is a grief to his father and bitterness to her who bore him .
+
+In Pro 17:25 ka.a.s is the "grief" a foolish son brings — "A foolish son is a grief to his father and bitterness to her who bore him." A status-noun for grief/vexation, here parental sorrow: a foolish son is a ka.a.s — grief, vexation — to his father and bitterness (me.mer) to his mother; so this term names the heartache that a foolish child inflicts on his parents, the human grief of the wisdom literature.
+
+**Pro 21:19** — Pro 21:19 It is better to live in a desert land than with a quarrelsome and fretful woman .
+
+In Pro 21:19 ka.a.s is the "fretful/contentious" of the woman — "better to live in a desert land than with a quarrelsome and fretful woman." A status-noun for vexation/contention (here characterising a temperament), it is the wearying strife of a contentious wife: it is better (tov) to dwell in a desert than with a woman of ka.a.s — quarreling, fretful vexation; so this term names the perpetual vexatiousness whose company the proverb judges worse than wilderness solitude.
+
+**Pro 27:3** — Pro 27:3 A stone is heavy , and sand is weighty , but a fool’s provocation is heavier than both .
+
+In Pro 27:3 ka.a.s is "a fool's provocation" — "A stone is heavy, and sand is weighty, but a fool's provocation is heavier than both." A status-noun for provocation/vexation, here unbearable: the ka.a.s — provocation, vexation — of a fool (e.vil) outweighs stone and sand in its crushing burden; so this term names the intolerable heaviness of a fool's vexing conduct, harder to bear than the heaviest physical loads.
+
 **Ecc 1:18** — Ecc 1:18 For in much wisdom is much vexation , and he who increases knowledge increases sorrow .
 
 Ka.a.s here means vexation or grief — the painful inner emotional state that wisdom, paradoxically, generates. The verse states a proportional law: "in much wisdom is much vexation," so the affect is not incidental but structurally produced by cognitive accumulation. The faculty engaged is purely affect; the term describes a status of inner distress that arises from within the person as wisdom increases. This aphorism is Qohelet's ironic subversion of the wisdom tradition: knowledge does not bring peace but vexation, pairing with makh.ov (sorrow) to form a doublet of wisdom's painful inner yield.
+
+**Ecc 2:23** — Ecc 2:23 For all his days are full of sorrow , and his work is a vexation . Even in the night his heart does not rest . This also is vanity .
+
+In Ecc 2:23 ka.a.s is the "vexation" of toil — "his work is a vexation. Even in the night his heart does not rest." A status-noun for vexation/grief, here human weariness: the labourer's days are full of sorrow (makh.ov) and his work is ka.a.s — vexation, grief — his heart restless even at night; so this term names the gnawing vexation of toil that the Preacher judges vanity, the human-life pole of the word (not anger but grief/frustration).
+
+**Ecc 5:17** — Ecc 5:17 Moreover , all his days he eats in darkness in much vexation and sickness and anger .
+
+In Ecc 5:17 ka.a.s is the "vexation" of the miserable life — "all his days he eats in darkness in much vexation and sickness and anger." A status-noun for vexation/grief, here human discontent: the Preacher pictures the grasping man eating in darkness, his days full of ka.a.s — vexation, frustration — along with sickness (cho.li) and anger (qe.tseph); so this term names the gnawing vexation that embitters the discontented life under the sun.
+
+**Ecc 7:3** — Ecc 7:3 Sorrow is better than laughter , for by sadness of face the heart is made glad .
+
+In Ecc 7:3 ka.a.s is the "sorrow" better than laughter — "Sorrow is better than laughter, for by sadness of face the heart is made glad." A status-noun for sorrow/grief/vexation, here valued: the Preacher judges ka.a.s — sorrow — better than mirth, for the badness/sadness (ro.a) of face refines and makes the heart truly glad (ya.tav); so this term names the sober grief that does the heart more good than laughter, the wisdom-paradox of refining sorrow.
 
 **Ecc 7:9** — Ecc 7:9 Be not quick in your spirit to become angry , for anger lodges in the heart of fools .
 
@@ -1155,14 +1343,22 @@ Ka.a.s as a noun denotes the settled state of anger or vexation that "lodges in 
 
 In Ecc 11:10 ka.a.s is the "vexation" to be removed from the heart — "Remove vexation from your heart, and put away pain from your body." A within-person affective turmoil located in the heart, it is the anger/grief Qoheleth counsels the young to banish; paired with putting away bodily pain (ra.ah), the wisdom is to release inner vexation while youth's brief, vain season lasts.
 
+**Eze 20:28** — Eze 20:28 For when I had brought them into the land that I swore to give them, then wherever they saw any high hill or any leafy tree , there they offered their sacrifices and there they presented the provocation of their offering ; there they sent up their pleasing aromas , and there they poured out their drink offerings .
+
+In Eze 20:28 ka.a.s is "the provocation of their offering" — "there they presented the provocation of their offering." A status-noun for provocation, here paradoxically of worship: brought into the promised land, Israel on every high hill and under every leafy tree offered sacrifices that were a ka.a.s — a provocation — to God, even as they sent up "pleasing aromas" (ni.cho.ach); so this term names the provoking character of their high-place offerings, idolatry masquerading as worship.
+
 
 ---
 
-## <a id="kaas"></a>ka.as (H3707) — 15 verses
+## <a id="kaas"></a>ka.as (H3707) — 52 verses
 
 **Deu 4:25** — Deu 4:25 “ When you father children and children’s children , and have grown old in the land , and you act corruptly by making a carved image in the form of anything , and by doing what is evil in the sight of the Lord your God , so as to provoke him to anger ,
 
 In Deu 4:25 ka.as (Hiphil) is the provoking of God "to anger" by idolatry — "doing what is evil in the sight of the LORD your God, so as to provoke him to anger." A human action engaging moral-evaluation and directed human->divine, it names idol-making as the deliberate incitement of divine wrath; Israel's corruption (sha.chat) is the means and the provoked anger of God the consequence, framing the covenant warning.
+
+**Deu 9:18** — Deu 9:18 Then I lay prostrate before the Lord as before , forty days and forty nights . I neither ate bread nor drank water , because of all the sin that you had committed , in doing what was evil in the sight of the Lord to provoke him to anger .
+
+In Deu 9:18 ka.as (Hiphil) is the "provoking him to anger" — "in doing what was evil in the sight of the LORD to provoke him to anger." A causative action directed human->divine, here the golden calf: Israel's sin (chat.tat) was done to ka.as — provoke the LORD to anger — driving Moses to lie prostrate forty days; so this term names the provocation of God by the calf that Moses' intercession sought to avert.
 
 **Deu 31:29** — Deu 31:29 For I know that after my death you will surely act corruptly and turn aside from the way that I have commanded you. And in the days to come evil will befall you, because you will do what is evil in the sight of the Lord , provoking him to anger through the work of your hands .”
 
@@ -1176,6 +1372,14 @@ In Deu 32:16 ka.as (Hiphil) is Israel's provoking God "to anger" with abominatio
 
 In Deu 32:21 ka.as (Piel) is Israel's having "provoked me to anger with their idols" — paralleling their making God jealous with no-gods. A human action engaging moral-evaluation and directed human->divine, it draws the symmetrical retribution: "I will provoke them to anger with a foolish nation." The verse sets human provocation and divine recompense in deliberate mirror, the anger Israel incited returning upon them.
 
+**Judg 2:12** — Judg 2:12 And they abandoned the Lord , the God of their fathers , who had brought them out of the land of Egypt . They went after other gods , from among the gods of the peoples who were around them, and bowed down to them. And they provoked the Lord to anger.
+
+In Judg 2:12 ka.as (Hiphil) is Israel's "provoking the LORD to anger" — "They went after other gods... and bowed down to them. And they provoked the LORD to anger." A causative action directed human->divine, here the judges-cycle apostasy: abandoning the LORD who brought them from Egypt, Israel went after the surrounding peoples' gods and ka.as — provoked the LORD to anger; so this term names the provocation of God by the recurring idolatry that opens each cycle of the judges era.
+
+**1Sa 1:6** — 1Sa 1:6 And her rival used to provoke her grievously to irritate her, because the Lord had closed her womb .
+
+In 1Sa 1:6 ka.as (Piel) is Peninnah's "provoking" of Hannah — "And her rival used to provoke her grievously to irritate her, because the LORD had closed her womb." A causative action of provoking/vexing a person (Piel), here cruel rivalry: Peninnah ka.as — provoked, taunted — Hannah severely, to irritate (ka.a.s) her over her childlessness; so this term names the spiteful provocation of one wife by another, the human use of ka.as as person-to-person harassment rather than provoking God.
+
 **1Sa 1:7** — 1Sa 1:7 So it went on year by year . As often as she went up to the house of the Lord , she used to provoke her. Therefore Hannah wept and would not eat .
 
 In 1Sa 1:7 ka.as (Hiphil, habitual) is Peninnah's repeated provoking of Hannah year by year over her childlessness. A within-person action engaging affect and moral-evaluation, it is the rival wife's cruel taunting; its effect is not anger in Hannah but grief — she "wept and would not eat" (ba.khah), so the provocation here produces sorrow rather than retaliatory rage.
@@ -1184,9 +1388,65 @@ In 1Sa 1:7 ka.as (Hiphil, habitual) is Peninnah's repeated provoking of Hannah y
 
 In 1Ki 14:9 ka.as (Hiphil) is Jeroboam's "provoking me [God] to anger" by his other gods and metal images. A human action engaging moral-evaluation and directed human->divine, it names the idolatry that incites the LORD's wrath; coupled with having done evil (ra.a) above all before him and casting God "behind your back," Jeroboam's provocation is the offence that seals the judgment on his house.
 
+**1Ki 14:15** — 1Ki 14:15 the Lord will strike Israel as a reed is shaken in the water , and root up Israel out of this good land that he gave to their fathers and scatter them beyond the Euphrates , because they have made their Asherim , provoking the Lord to anger.
+
+In 1Ki 14:15 ka.as (Hiphil) is the people's "provoking to anger" — "because they have made their Asherim, provoking the LORD to anger." A causative action directed human->divine, it is idolatrous provocation: by making their Asherim, Israel ka.as — provoked the LORD to anger — so that he would strike them like a reed, uproot them from the good land, and scatter them beyond the Euphrates; so this term names the idolatry that provoked the wrath of exile.
+
+**1Ki 15:30** — 1Ki 15:30 It was for the sins of Jeroboam that he sinned and that he made Israel to sin , and because of the anger to which he provoked the Lord , the God of Israel .
+
+In 1Ki 15:30 ka.as (Hiphil) is Jeroboam's "provoking" God — "because of the anger to which he provoked the LORD, the God of Israel." A causative action directed human->divine, it is the standing indictment: Jeroboam, by his sins (chat.tat) that he sinned (cha.ta) and made Israel sin, ka.as — provoked the LORD to anger; so this term names the provocation of God by Jeroboam's idolatry, the cause of his house's destruction.
+
+**1Ki 16:2** — 1Ki 16:2 “ Since I exalted you out of the dust and made you leader over my people Israel , and you have walked in the way of Jeroboam and have made my people Israel to sin , provoking me to anger with their sins ,
+
+In 1Ki 16:2 ka.as (Hiphil) is Baasha's "provoking me to anger" — "you have... made my people Israel to sin, provoking me to anger with their sins." A causative action directed human->divine (the LORD's own word), it is the charge against Baasha: exalted (rum) from the dust to lead Israel, he walked in Jeroboam's way and made Israel sin (cha.ta), ka.as — provoking God to anger — with their sins (chat.tat); so this term names the provocation that turned God against the very king he had raised up.
+
+**1Ki 16:7** — 1Ki 16:7 Moreover , the word of the Lord came by the prophet Jehu the son of Hanani against Baasha and his house , both because of all the evil that he did in the sight of the Lord , provoking him to anger with the work of his hands , in being like the house of Jeroboam , and also because he destroyed it .
+
+In 1Ki 16:7 ka.as (Hiphil) is Baasha's "provoking him to anger" — "all the evil that he did in the sight of the LORD, provoking him to anger with the work of his hands." A causative action directed human->divine, it is the prophet's charge: by the evil (ra.ah) and idol-works of his hands, Baasha ka.as — provoked the LORD to anger — being like the house of Jeroboam; so this term names the provocation by Baasha's idolatrous works that brought the word of judgment on his house.
+
+**1Ki 16:13** — 1Ki 16:13 for all the sins of Baasha and the sins of Elah his son , which they sinned and which they made Israel to sin , provoking the Lord God of Israel to anger with their idols .
+
+In 1Ki 16:13 ka.as (Hiphil) is Baasha and Elah's "provoking to anger" — "provoking the LORD God of Israel to anger with their idols." A causative action directed human->divine, it repeats the indictment: by their sins (chat.tat) that they sinned (cha.ta) and made Israel sin, Baasha and his son ka.as — provoked the LORD to anger with their idols; so this term names the idolatrous provocation that doomed Baasha's house as it had Jeroboam's.
+
+**1Ki 16:26** — 1Ki 16:26 For he walked in all the way of Jeroboam the son of Nebat , and in the sins that he made Israel to sin , provoking the Lord , the God of Israel , to anger by their idols .
+
+In 1Ki 16:26 ka.as (Hiphil) is Omri's "provoking to anger" — "provoking the LORD, the God of Israel, to anger by their idols." A causative action directed human->divine, it repeats the refrain: walking in all Jeroboam's way and his sins (chat.tat) by which he made Israel sin (cha.ta), Omri ka.as — provoked the LORD to anger by their idols; so this term names the idolatrous provocation that marks Omri, like his predecessors, under the standing indictment of the northern kings.
+
+**1Ki 16:33** — 1Ki 16:33 And Ahab made an Asherah . Ahab did more to provoke the Lord , the God of Israel , to anger than all the kings of Israel who were before him.
+
+In 1Ki 16:33 ka.as (Hiphil) is Ahab's "provoking to anger" — "Ahab did more to provoke the LORD, the God of Israel, to anger than all the kings of Israel who were before him." A causative action directed human->divine, here at its worst: by making an Asherah and his Baal-worship, Ahab ka.as — provoked the LORD to anger — more than every king before him; so this term names the unrivalled provocation of God by Ahab, the most idolatrous of Israel's kings.
+
+**1Ki 21:22** — 1Ki 21:22 And I will make your house like the house of Jeroboam the son of Nebat , and like the house of Baasha the son of Ahijah , for the anger to which you have provoked me, and because you have made Israel to sin .
+
+In 1Ki 21:22 ka.as (Hiphil) is Ahab's "provoking me" — "for the anger to which you have provoked me, and because you have made Israel to sin." A causative action directed human->divine (the LORD's word against Ahab), it seals his doom: Ahab ka.as — provoked God to anger (ka.a.s) — and made Israel sin (cha.ta), so his house will become like Jeroboam's and Baasha's; so this term names the provocation that consigned Ahab's dynasty to destruction.
+
+**1Ki 22:53** — 1Ki 22:53 He served Baal and worshiped him and provoked the Lord , the God of Israel , to anger in every way that his father had done .
+
+In 1Ki 22:53 ka.as (Hiphil) is Ahaziah's "provoking to anger" — "provoked the LORD, the God of Israel, to anger in every way that his father had done." A causative action directed human->divine, it continues the family pattern: serving (a.vad) Baal as Ahab had, Ahaziah ka.as — provoked the LORD to anger — in every way his father did; so this term names the inherited provocation of God by which Ahaziah walked in Ahab's idolatrous steps.
+
+**2Ki 17:11** — 2Ki 17:11 and there they made offerings on all the high places , as the nations did whom the Lord carried away before them. And they did wicked things , provoking the Lord to anger,
+
+In 2Ki 17:11 ka.as (Hiphil) is Israel's "provoking the LORD to anger" — "they did wicked things, provoking the LORD to anger." A causative action directed human->divine, here the cause of exile: making offerings on all the high places as the dispossessed nations had, Israel did wicked things and ka.as — provoked the LORD to anger; so this term names the provocation of God by the northern kingdom's idolatry that brought the Assyrian exile.
+
+**2Ki 17:17** — 2Ki 17:17 And they burned their sons and their daughters as offerings and used divination and omens and sold themselves to do evil in the sight of the Lord , provoking him to anger .
+
+In 2Ki 17:17 ka.as (Hiphil) is Israel's "provoking him to anger" — "they burned their sons and their daughters as offerings and used divination and omens... provoking him to anger." A causative action directed human->divine, here at its most heinous: by sacrificing their children and selling themselves to evil through divination, Israel ka.as — provoked the LORD to anger; so this term names the provocation of God by the northern kingdom's most abominable sins.
+
+**2Ki 21:6** — 2Ki 21:6 And he burned his son as an offering and used fortune-telling and omens and dealt with mediums and with necromancers . He did much evil in the sight of the Lord , provoking him to anger .
+
+In 2Ki 21:6 ka.as (Hiphil) is Manasseh's "provoking him to anger" — "He did much evil in the sight of the LORD, provoking him to anger." A causative action directed human->divine, here Manasseh's occult abominations: by burning his son, fortune-telling, omens, mediums, and necromancers, he ka.as — provoked the LORD to anger; so this term names the provocation of God by Manasseh's evil, which the narrative makes the decisive cause of Judah's doom.
+
+**2Ki 21:15** — 2Ki 21:15 because they have done what is evil in my sight and have provoked me to anger , since the day their fathers came out of Egypt , even to this day .”
+
+In 2Ki 21:15 ka.as (Hiphil) is Israel's long "provoking me to anger" — "they have done what is evil in my sight and have provoked me to anger, since the day their fathers came out of Egypt, even to this day." A causative action directed human->divine, here the summary indictment: from the exodus to the present, Israel has continually ka.as — provoked the LORD to anger — by their evil, so judgment now falls; so this term names the centuries-long provocation of God that justifies the impending destruction of Judah.
+
 **2Ki 22:17** — 2Ki 22:17 Because they have forsaken me and have made offerings to other gods , that they might provoke me to anger with all the work of their hands , therefore my wrath will be kindled against this place , and it will not be quenched .
 
 In 2Ki 22:17 ka.as (Hiphil) is the provoking — "that they might provoke me to anger with all the work of their hands." A causative action directed human->divine, it is the people's kindling of God's anger by idolatry: forsaking the LORD and serving other gods, they provoke him to anger with their hand-made idols, so his wrath (che.mah) is kindled unquenchably; this ka.as is human idolatry deliberately provoking divine anger.
+
+**2Ki 23:19** — 2Ki 23:19 And Josiah removed all the shrines also of the high places that were in the cities of Samaria , which kings of Israel had made , provoking the Lord to anger . He did to them according to all that he had done at Bethel .
+
+In 2Ki 23:19 ka.as (Hiphil) is the provocation of the shrines — "the shrines... which kings of Israel had made, provoking the LORD to anger." A causative action directed human->divine, here embodied in idolatrous structures: the high-place shrines the northern kings built to ka.as — provoke the LORD to anger — Josiah removes (sur), destroying them as at Bethel; so this term names the provocation of God enshrined in the high places that the reformer demolished.
 
 **2Ki 23:26** — 2Ki 23:26 Still the Lord did not turn from the burning of his great wrath , by which his anger was kindled against Judah , because of all the provocations with which Manasseh had provoked him.
 
@@ -1196,6 +1456,14 @@ In 2Ki 23:26 ka.as (Hiphil) is Manasseh's provoking — "because of all the prov
 
 In 2Ch 16:10 ka.as is Asa's anger — "Then Asa was angry with the seer." A within-person affective-moral response engaging affect and moral-evaluation, received from outside through the seer's rebuke, it is the king's indignation at being confronted; this anger, with the rage (za.aph) named alongside it, moves Asa to imprison the prophet and oppress the people, the wrathful response of a king unwilling to be reproved.
 
+**2Ch 28:25** — 2Ch 28:25 In every city of Judah he made high places to make offerings to other gods , provoking to anger the Lord , the God of his fathers .
+
+In 2Ch 28:25 ka.as (Hiphil) is Ahaz's "provoking to anger" — "In every city of Judah he made high places to make offerings to other gods, provoking to anger the LORD, the God of his fathers." A causative action directed human->divine, here pervasive idolatry: Ahaz ka.as — provoked the LORD to anger — building high places in every city to sacrifice to other gods; so this term names the provocation of God by Ahaz's systematic idolatry throughout Judah.
+
+**2Ch 33:6** — 2Ch 33:6 And he burned his sons as an offering in the Valley of the Son of Hinnom , and used fortune-telling and omens and sorcery , and dealt with mediums and with necromancers . He did much evil in the sight of the Lord , provoking him to anger .
+
+In 2Ch 33:6 ka.as (Hiphil) is Manasseh's "provoking him to anger" — "He did much evil in the sight of the LORD, provoking him to anger." A causative action directed human->divine, here the gravest provocation: by child-sacrifice, fortune-telling, omens, sorcery, mediums, and necromancers, Manasseh ka.as — provoked the LORD to anger; so this term names the provocation of God by Manasseh's catalogue of occult abominations.
+
 **2Ch 34:25** — 2Ch 34:25 Because they have forsaken me and have made offerings to other gods , that they might provoke me to anger with all the works of their hands , therefore my wrath will be poured out on this place and will not be quenched .
 
 In 2Ch 34:25 ka.as (Hiphil) is the provoking — "that they might provoke me to anger with all the works of their hands." A causative action directed human->divine, it is the people's stirring of God's anger by their idolatry: forsaking the LORD and making offerings to other gods, they provoke him to anger with their hand-made idols, so his wrath (che.mah) is poured out unquenchably; this ka.as is human idolatry deliberately kindling divine anger.
@@ -1204,9 +1472,17 @@ In 2Ch 34:25 ka.as (Hiphil) is the provoking — "that they might provoke me to 
 
 In Neh 4:1 ka.as is the "great rage/vexation" of Sanballat at the wall-building — paired with his burning anger (cha.rah) and intensified ("greatly"). A received-from-outside affective-moral vexation engaging affect and moral-evaluation, it issues in his public jeering at the Jews; ka.as here names the provoked hostility of the enemy toward the restoration of Jerusalem.
 
+**Neh 4:5** — Neh 4:5 Do not cover their guilt , and let not their sin be blotted out from your sight , for they have provoked you to anger in the presence of the builders .
+
+In Neh 4:5 ka.as (Hiphil) is the enemies' "provoking you to anger" — "for they have provoked you to anger in the presence of the builders." A causative action directed human->divine, here by mocking God's work: Sanballat and the adversaries ka.as — provoked the LORD to anger — by jeering at the builders, so Nehemiah prays their guilt (a.von) and sin (chat.tat) not be pardoned; so this term names the provocation of God by those who scorned the rebuilding of Jerusalem.
+
 **Psa 78:58** — Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols .
 
 In Psa 78:58 ka.as (Hiphil) is Israel's "provoking him to anger with their high places" — illicit worship inciting the LORD's wrath. A human action engaging moral-evaluation and directed human->divine, it stands parallel to moving God to jealousy (qa.na) with their idols; the psalm's historical recital names this provocation as the people's recurring offence that kindled divine anger and brought the judgments it recounts.
+
+**Psa 106:29** — Psa 106:29 they provoked the Lord to anger with their deeds , and a plague broke out among them.
+
+In Psa 106:29 ka.as (Hiphil) is Israel's "provoking the LORD to anger" — "they provoked the LORD to anger with their deeds, and a plague broke out among them." A causative action directed human->divine, here at Baal-Peor: by their deeds (yoking to Baal and immorality), Israel ka.as — provoked the LORD to anger — so a plague broke out, halted only by Phinehas's zeal; so this term names the provocation of God whose immediate fruit was the deadly plague at Peor.
 
 **Psa 112:10** — Psa 112:10 The wicked man sees it and is angry ; he gnashes his teeth and melts away ; the desire of the wicked will perish !
 
@@ -1216,22 +1492,108 @@ In Psa 112:10 ka.as is the anger of the wicked man who "sees it and is angry" �
 
 Ka.as (Qal infinitive construct) here describes the act of becoming vexed or angry, explicitly located in the spirit ("quick in your spirit to become angry"). The wisdom instruction addresses the inner affective-moral life: being quick to anger is warned against as characteristic of fools. The moral-evaluation faculty is engaged because the verse makes a value judgment — quick anger is the mark of foolishness lodged in the heart. The relational implication is that one's readiness to be vexed reveals and shapes one's character before others. Though the verse doesn't narrate an immediate effect on the warned person, it implies that anger settling in the heart marks the fool.
 
+**Isa 65:3** — Isa 65:3 a people who provoke me to my face continually , sacrificing in gardens and making offerings on bricks ;
+
+In Isa 65:3 ka.as (Hiphil) is the people's "provoking me to my face continually" — "a people who provoke me to my face continually, sacrificing in gardens and making offerings on bricks." A causative action directed human->divine, here open and persistent: a rebellious people ka.as — provoke the LORD to anger — brazenly "to his face," continually, by their garden-sacrifices and illicit offerings; so this term names the shameless, unceasing provocation of God by a people flaunting their idolatry before him.
+
+**Jer 7:18** — Jer 7:18 The children gather wood , the fathers kindle fire , and the women knead dough , to make cakes for the queen of heaven . And they pour out drink offerings to other gods , to provoke me to anger .
+
+In Jer 7:18 ka.as (Hiphil) is the family-idolatry's "provoking me to anger" — "they pour out drink offerings to other gods, to provoke me to anger." A causative action directed human->divine, here a whole-household cult: children gathering wood, fathers kindling fire, women kneading dough for cakes to the queen of heaven, all pour out offerings to other gods to ka.as — provoke the LORD to anger; so this term names the provocation of God by the domestic, family-wide worship of the queen of heaven.
+
+**Jer 7:19** — Jer 7:19 Is it I whom they provoke ? declares the Lord . Is it not themselves, to their own shame ?
+
+In Jer 7:19 ka.as (Hiphil) is the "provoking" God questions — "Is it I whom they provoke? declares the LORD. Is it not themselves, to their own shame?" A causative action directed human->divine, here turned back on the doers: the LORD asks whether their idolatry truly ka.as — provokes, harms — him, or rather themselves, to their own shame (bo.shet); so this term names the provocation of God that, far from diminishing him, recoils as self-inflicted ruin on the provokers.
+
+**Jer 8:19** — Jer 8:19 Behold , the cry of the daughter of my people from the length and breadth of the land : “Is the Lord not in Zion ? Is her King not in her?” “Why have they provoked me to anger with their carved images and with their foreign idols ?”
+
+In Jer 8:19 ka.as (Hiphil) is the LORD's question "Why have they provoked me to anger" — "Why have they provoked me to anger with their carved images and with their foreign idols?" A causative action directed human->divine, here interjected into the people's lament: as the daughter of Zion cries "Is the LORD not in Zion?", the LORD answers with his own grieved question — why they ka.as — provoked him to anger — with their carved images and foreign idols; so this term names the idolatrous provocation that explains the LORD's apparent absence from Zion in her distress.
+
+**Jer 11:17** — Jer 11:17 The Lord of hosts , who planted you, has decreed disaster against you, because of the evil that the house of Israel and the house of Judah have done , provoking me to anger by making offerings to Baal .”
+
+In Jer 11:17 ka.as (Hiphil) is Israel and Judah's "provoking me to anger" — "because of the evil that the house of Israel and the house of Judah have done, provoking me to anger by making offerings to Baal." A causative action directed human->divine, here through Baal-worship: by their evil (ra.ah) and their Baal-offerings, the two houses ka.as — provoked the LORD to anger — so he decreed disaster (ra.ah) against them; so this term names the provocation of God by Baal-worship that brought the planted people under his decree of ruin.
+
+**Jer 25:6** — Jer 25:6 Do not go after other gods to serve and worship them, or provoke me to anger with the work of your hands . Then I will do you no harm .’
+
+In Jer 25:6 ka.as (Hiphil) is the "provoking me to anger" forbidden — "or provoke me to anger with the work of your hands. Then I will do you no harm." A causative action directed human->divine, here in a conditional appeal: if Israel will not serve (a.vad) other gods nor ka.as — provoke the LORD to anger — with their idol-works, he will do them no harm; so this term names the provocation of God the people are urged to avoid for their own preservation.
+
+**Jer 25:7** — Jer 25:7 Yet you have not listened to me, declares the Lord , that you might provoke me to anger with the work of your hands to your own harm .
+
+In Jer 25:7 ka.as (Hiphil) is the provocation done "to your own harm" — "Yet you have not listened to me... that you might provoke me to anger with the work of your hands to your own harm." A causative action directed human->divine, here self-destructive: refusing to listen, Israel ka.as — provoked the LORD to anger — with their idol-works, and the verse stresses it was "to their own harm"; so this term names the provocation of God that, in spurning his warning, the people turned into their own ruin.
+
+**Jer 32:29** — Jer 32:29 The Chaldeans who are fighting against this city shall come and set this city on fire and burn it, with the houses on whose roofs offerings have been made to Baal and drink offerings have been poured out to other gods , to provoke me to anger .
+
+In Jer 32:29 ka.as (Hiphil) is the rooftop idolatry's "provoking me to anger" — "houses on whose roofs offerings have been made to Baal... to provoke me to anger." A causative action directed human->divine, here through pervasive idolatry: by Baal-offerings and drink-offerings to other gods on their very rooftops, the people ka.as — provoked the LORD to anger — so the Chaldeans will burn the city; so this term names the provocation of God by domestic idolatry that brings Jerusalem's fiery destruction.
+
+**Jer 32:30** — Jer 32:30 For the children of Israel and the children of Judah have done nothing but evil in my sight from their youth . The children of Israel have done nothing but provoke me to anger by the work of their hands , declares the Lord .
+
+In Jer 32:30 ka.as (Hiphil) is Israel's doing "nothing but provoke me to anger" — "The children of Israel have done nothing but provoke me to anger by the work of their hands." A causative action directed human->divine, here total: from their youth the children of Israel and Judah have done only evil, nothing but ka.as — provoke the LORD to anger — with their idol-works; so this term names the unrelieved, lifelong provocation of God that sums up the nation's history.
+
+**Jer 32:32** — Jer 32:32 because of all the evil of the children of Israel and the children of Judah that they did to provoke me to anger — their kings and their officials , their priests and their prophets , the men of Judah and the inhabitants of Jerusalem .
+
+In Jer 32:32 ka.as (Hiphil) is the nation's "provoking me to anger" — "because of all the evil... that they did to provoke me to anger — their kings and their officials, their priests and their prophets, the men of Judah." A causative action directed human->divine, here pervading every class: by all their evil (ra.ah), the whole society — kings, officials, priests, prophets, and people — ka.as — provoked the LORD to anger; so this term names the comprehensive provocation of God by every order of Judah's society.
+
+**Jer 44:3** — Jer 44:3 because of the evil that they committed , provoking me to anger , in that they went to make offerings and serve other gods that they knew not , neither they, nor you, nor your fathers .
+
+In Jer 44:3 ka.as (Hiphil) is the people's "provoking me to anger" — "because of the evil that they committed, provoking me to anger, in that they went to make offerings and serve other gods." A causative action directed human->divine, here by foreign worship: their evil (ra.ah) in serving (a.vad) gods they never knew ka.as — provoked the LORD to anger — bringing the desolation of Judah's cities; so this term names the provocation of God by the worship of strange gods.
+
+**Jer 44:8** — Jer 44:8 Why do you provoke me to anger with the works of your hands , making offerings to other gods in the land of Egypt where you have come to live , so that you may be cut off and become a curse and a taunt among all the nations of the earth ?
+
+In Jer 44:8 ka.as (Hiphil) is the question "Why do you provoke me to anger" — "Why do you provoke me to anger with the works of your hands, making offerings to other gods in the land of Egypt?" A causative action directed human->divine, here remonstrated: the LORD asks why the refugees in Egypt ka.as — provoke him to anger — with their idol-works, self-destructively making themselves a curse and taunt (cher.pah); so this term names the provocation of God by the exiles' continued idolatry in Egypt.
+
+**Eze 8:17** — Eze 8:17 Then he said to me, “Have you seen this, O son of man ? Is it too light a thing for the house of Judah to commit the abominations that they commit here , that they should fill the land with violence and provoke me still further to anger? Behold , they put the branch to their nose .
+
+In Eze 8:17 ka.as (Hiphil) is Judah's "provoking me still further to anger" — "that they should fill the land with violence and provoke me still further to anger." A causative action directed human->divine, here deepening provocation: not content with the abominations (to.e.vah) in the temple, Judah fills the land with violence and ka.as — provokes the LORD still further to anger; so this term names the intensifying provocation of God by Judah's compounded idolatry and violence.
+
+**Eze 16:26** — Eze 16:26 You also played the whore with the Egyptians , your lustful neighbors , multiplying your whoring , to provoke me to anger .
+
+In Eze 16:26 ka.as (Hiphil) is "to provoke me to anger" — "multiplying your whoring, to provoke me to anger." A causative action directed human->divine, here through spiritual adultery: by playing the harlot (za.nah) with Egypt and multiplying (ra.vah) her whoring (taz.nut), Israel ka.as — provoked the LORD to anger; so this term names the provocation of God by Israel's idolatrous alliances, figured as harlotry.
+
 **Eze 16:42** — Eze 16:42 So will I satisfy my wrath on you, and my jealousy shall depart from you. I will be calm and will no more be angry .
 
 In Eze 16:42 ka.as is the being "angry" God says he "will no more" be — "I will be calm and will no more be angry." Attributed to God (divine->human) and engaging affect and moral-evaluation, here it is named in its cessation: once the LORD has satisfied his wrath (che.mah) and his jealousy (qin.ah) has departed, he becomes calm (sha.qat) and angry no longer, so ka.as is the anger God lays down after judgment is complete.
 
+**Eze 32:9** — Eze 32:9 “I will trouble the hearts of many peoples , when I bring your destruction among the nations , into the countries that you have not known .
+
+In Eze 32:9 ka.as (Hiphil) is God's "troubling" of the nations' hearts — "I will trouble the hearts of many peoples, when I bring your destruction among the nations." Here the Hiphil is causative toward others (not provoking God): the LORD will ka.as — trouble, grieve, vex — the hearts of many peoples by bringing news of Egypt's downfall into far countries; so this term names God's stirring of fearful grief in the nations at the spectacle of Egypt's judgment — a distinct sense, God causing vexation in others rather than being provoked.
+
+**Hos 12:14** — Hos 12:14 Ephraim has given bitter provocation ; so his Lord will leave his bloodguilt on him and will repay him for his disgraceful deeds.
+
+In Hos 12:14 ka.as (Hiphil) is Ephraim's "bitter provocation" — "Ephraim has given bitter provocation." A causative action directed human->divine, here intensely embittered: Ephraim ka.as — provoked God bitterly, with bitterness — so that the LORD will leave his bloodguilt on him and repay his disgraceful deeds (cher.pah); so this term names the bitter provocation of God by Ephraim that brings unremitted bloodguilt and recompense.
+
 
 ---
 
-## <a id="matstsah"></a>mats.tsah (H4683) — 2 verses
+## <a id="logomachia"></a>logomachia (G3055) — 1 verses
+
+**1Ti 6:4** — 1Ti 6:4 he is puffed up with conceit and understands nothing . He has an unhealthy craving for controversy and for quarrels about words , which produce envy , dissension , slander , evil suspicions ,
+
+In 1Ti 6:4 logomachia is "quarrels about words" — "an unhealthy craving for controversy and for quarrels about words." A status-noun for contention / strife about words, here the object of a diseased appetite: the conceited (tufoō) man has a craving (noseō) for logomachia — battles over words, unprofitable verbal disputes — which spawn envy (phthonos), strife (eris), and slander (blasphemia); so this term names the trivial word-contention that breeds division.
+
+
+---
+
+## <a id="matstsah"></a>mats.tsah (H4683) — 3 verses
 
 **Pro 13:10** — Pro 13:10 By insolence comes nothing but strife , but with those who take advice is wisdom .
 
 Mats.tsah (strife, contention) here names the relational-social damage that results from za.don (insolence). As a status term engaging the faculties of relational and moral-evaluation, it denotes the broken communal state that pride inevitably generates. The verse makes a causal statement: insolence yields nothing but strife — mats.tsah is the exclusive relational product of za.don. It stands in stark contrast to the wisdom that accompanies those who take counsel, showing that strife and wisdom are the opposing social outcomes of arrogance versus humble receptivity. The term's entire force is relational and sociological: it names the community-fracturing result of refusing advisement.
 
+**Pro 17:19** — Pro 17:19 Whoever loves transgression loves strife ; he who makes his door high seeks destruction .
+
+In Pro 17:19 mats.tsah is "strife" — "Whoever loves transgression loves strife." A status-noun for strife / contention, here yoked to sin: to love transgression (pesha) is to love matstsah — strife, contention — and the proud (ga.vah) man who courts it seeks (baqash) destruction; so this term names the strife bound up with the love of sin and pride, pursued to one's ruin.
+
 **Isa 58:4** — Isa 58:4 Behold , you fast only to quarrel and to fight and to hit with a wicked fist . Fasting like yours this day will not make your voice to be heard on high .
 
 In Isa 58:4 mats.tsah is the "contention/fighting" of their fast — "you fast only to quarrel and to fight." A status of strife/contention, paired with riv, it is the combative wrangling that fills their fast-days; rather than true self-affliction, they contend and strike with a wicked fist, so their fasting goes unheard on high — this mats.tsah is the contention that exposes their fast as empty.
+
+
+---
+
+## <a id="matstsut"></a>mats.tsut (H4695) — 1 verses
+
+**Isa 41:12** — Isa 41:12 You shall seek those who contend with you, but you shall not find them; those who war against you shall be as nothing at all .
+
+In Isa 41:12 mats.tsut is "those who contend / strife" — "You shall seek those who contend with you, but you shall not find them." A status-noun for strife / contention (here those who wage it), it names Israel's foes: she will seek (baqash) her matstsut — her contenders, those who strive against her — and not find them, for those who war against her shall be as nothing; so this term names the contending adversaries whom God brings to nothing.
 
 
 ---
@@ -1258,6 +1620,15 @@ In Gen 4:5 na.phal is the falling of Cain's face — "his face fell" — the dow
 **Jer 3:12** — Jer 3:12 Go , and proclaim these words toward the north , and say , “‘ Return , faithless Israel , declares the Lord . I will not look on you in anger , for I am merciful , declares the Lord ; I will not be angry forever .
 
 In Jer 3:12 na.phal (Hiphil) is God's promise not to make his face fall in anger upon Israel — "I will not look on you in anger" (cause my countenance to fall against you). Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the obverse of the fallen-face anger seen in Cain: here the LORD pledges to withhold the angry countenance from faithless Israel, because he is merciful and will not keep anger forever, so the summons to return is an offer of an unangry divine face.
+
+
+---
+
+## <a id="orgilos"></a>orgilos (G3711) — 1 verses
+
+**Tit 1:7** — Tit 1:7 For an overseer , as God’s steward , must be above reproach . He must not be arrogant or quick-tempered or a drunkard or violent or greedy for gain ,
+
+In Tit 1:7 orgilos is "quick-tempered" — "He must not be arrogant or quick-tempered or a drunkard." A quality of being prone-to-anger/irascible, here disqualifying: an overseer, as God's steward, must not be orgilos — quick-tempered, hot-tempered — nor arrogant (authadēs) or violent; so this term names the irascible, easily-angered disposition that bars a man from the office of elder, the negative human-anger trait of the pastoral qualifications.
 
 
 ---
@@ -1299,7 +1670,7 @@ In Rev 12:17 orgizō is the dragon's fury — "the dragon became furious with th
 
 ---
 
-## <a id="orgē"></a>orgē (G3709) — 15 verses
+## <a id="orgē"></a>orgē (G3709) — 33 verses
 
 **Mat 3:7** — Mat 3:7 But when he saw many of the Pharisees and Sadducees coming to his baptism , he said to them , “You brood of vipers ! Who warned you to flee from the wrath to come ?
 
@@ -1309,9 +1680,17 @@ In Mat 3:7 orgē is "the wrath to come" — the coming divine judgment from whic
 
 In Mar 3:5 orgē is the anger with which Jesus "looked around at them" — his righteous indignation at the Pharisees' hardness of heart (pōrōsis). Predicated of the incarnate Lord (divine->human) and engaging affect and moral-evaluation, it is uniquely fused with grief (sullupeō): Jesus' anger is not vindictive but grieved sorrow at hardened hearts, and it issues not in retaliation but in the merciful healing of the man's withered hand.
 
+**Luk 3:7** — Luk 3:7 He said therefore to the crowds that came out to be baptized by him , “You brood of vipers ! Who warned you to flee from the wrath to come ?
+
+In Luk 3:7 orgē is "the wrath to come" — "You brood of vipers! Who warned you to flee from the wrath to come?" A status-noun for divine wrath (eschatological), it is the coming judgment John warns of: confronting the crowds at his baptism, John asks who warned them to flee the orgē — the coming wrath — calling for fruits of repentance; so this term names the impending divine wrath against unrepentant sin from which only true repentance can deliver.
+
 **Luk 21:23** — Luk 21:23 Alas for women who are pregnant and for those who are nursing infants in those days ! For there will be great distress upon the earth and wrath against this people .
 
 In Luk 21:23, orgē denotes the punitive wrath expressed as vengeance against "this people," signifying a divine judgment of condemnation rather than merely human anger. The term functions as a status descriptor of God's hostile orientation toward a particular people, making its origin bestowed-by-God and its directionality divine->human. It engages the faculty of moral-evaluation insofar as it expresses righteous divine response to disobedience. Paired with anankē, it frames the coming calamity as both experiential human distress and the expression of divine retributive judgment.
+
+**Joh 3:36** — Joh 3:36 Whoever believes in the Son has eternal life ; whoever does not obey the Son shall not see life , but the wrath of God remains on him .
+
+In Joh 3:36 orgē is "the wrath of God" that remains — "whoever does not obey the Son shall not see life, but the wrath of God remains on him." A status-noun for divine wrath, here present and abiding: while the believer (pisteuō) has eternal life, the one who disobeys (apeitheō) the Son shall not see life, for God's orgē — wrath — remains, abides, on him; so this term names the divine wrath that already rests upon the unbelieving and is not lifted apart from faith in the Son.
 
 **Rom 1:18** — Rom 1:18 For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men , who by their unrighteousness suppress the truth .
 
@@ -1321,6 +1700,22 @@ In Rom 1:18 orgē is "the wrath of God [that] is revealed from heaven against al
 
 In Rom 2:5 orgē is the "wrath" the impenitent man is "storing up for yourself on the day of wrath." Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the divine anger that hard-hearted impenitence accumulates like a treasure of judgment; revealed on the day of God's righteous judgment (dikaiokrisia), this orgē is the just eschatological consequence of refusing the repentance God's kindness invites.
 
+**Rom 2:8** — Rom 2:8 but for those who are self-seeking and do not obey the truth , but obey unrighteousness , there will be wrath and fury .
+
+In Rom 2:8 orgē is the "wrath" awaiting the disobedient — "there will be wrath and fury." A status-noun for divine wrath, here paired with fury (thumos): for the self-seeking (eritheia) who disobey (apeitheō) the truth (alētheia) and obey unrighteousness (adikia), there will be orgē — wrath — and fury in the day of judgment; so this term names the divine wrath, doubled with fury, that recompenses the truth-rejecting and unrighteous.
+
+**Rom 4:15** — Rom 4:15 For the law brings wrath , but where there is no law there is no transgression .
+
+In Rom 4:15 orgē is the "wrath" the law brings — "For the law brings wrath, but where there is no law there is no transgression." A status-noun for divine wrath, here the law's effect: the law brings orgē — wrath — by defining and exposing transgression (parabasis), so that promise rests on faith, not law; so this term names the divine wrath that the law, by creating transgression, occasions — Paul's argument that the inheritance comes by grace through faith, not law.
+
+**Rom 5:9** — Rom 5:9 Since , therefore, we have now been justified by his blood , much more shall we be saved by him from the wrath of God.
+
+In Rom 5:9 orgē is "the wrath of God" believers escape — "much more shall we be saved by him from the wrath of God." A status-noun for divine wrath, here the peril removed: justified (dikaioō) by Christ's blood, believers are assured of being saved (sōzō) from the orgē — wrath — of God; so this term names the divine wrath against sin from which the justified are delivered through Christ, the heart of the gospel's "much more" assurance.
+
+**Rom 9:22** — Rom 9:22 What if God , desiring to show his wrath and to make known his power , has endured with much patience vessels of wrath prepared for destruction ,
+
+In Rom 9:22 orgē is the "wrath" God shows — "desiring to show his wrath... vessels of wrath prepared for destruction." A status-noun for divine wrath, here both displayed and embodied: God wills (thelō) to display (endeiknumi) his orgē — wrath — and power (dunatos), having endured (ferō) with much patience (makrothumia) the "vessels of orgē — wrath" fitted for destruction; so this term names the divine wrath whose manifestation God purposes, even while long forbearing those who are its objects.
+
 **Rom 12:19** — Rom 12:19 Beloved , never avenge yourselves , but leave it to the wrath of God, for it is written , “ Vengeance is mine , I will repay , says the Lord .”
 
 In Rom 12:19 orgē is "the wrath of God" to which believers are to "leave" vengeance — "but leave it to the wrath of God." Attributed to God (divine->human) and engaging affect and moral-evaluation, it is the divine anger that will justly execute the retribution ("I will repay") believers must not seize for themselves; entrusting wrongs to God's orgē is the ground of Christian non-retaliation and love of enemies.
@@ -1328,6 +1723,14 @@ In Rom 12:19 orgē is "the wrath of God" to which believers are to "leave" venge
 **Rom 13:4** — Rom 13:4 for he is God’s servant for your good . But if you do wrong , be afraid , for he does not bear the sword in vain . For he is the servant of God , an avenger who carries out God’s wrath on the wrongdoer .
 
 In Rom 13:4, orgē denotes God's active wrath — his strong retributive displeasure toward wrongdoing — which the governing authority executes as his instrument. Attributed explicitly to God, the term situates divine affect and moral-evaluation at the origin of civil punishment, with the direction running from divine to human agency. The governing servant does not act on personal indignation but as the carrier of God's own hostile judgment against sin, making civil punishment an expression of divine moral order. The relational force flows from God outward through authority to wrongdoer.
+
+**Rom 13:5** — Rom 13:5 Therefore one must be in subjection , not only to avoid God’s wrath but also for the sake of conscience .
+
+In Rom 13:5 orgē is "God's wrath" to be avoided — "not only to avoid God's wrath but also for the sake of conscience." A status-noun for divine wrath, here mediated through the state: the governing authority is God's servant who bears the sword to execute orgē — wrath — on wrongdoers, so one submits (hupotassō) to avoid it and for conscience (suneidesis); so this term names the divine wrath, enacted through ordained authority, that the wrongdoer rightly fears.
+
+**Eph 2:3** — Eph 2:3 among whom we all once lived in the passions of our flesh , carrying out the desires of the flesh and the mind , and were by nature children of wrath , like the rest of mankind.
+
+In Eph 2:3 orgē is "wrath" in "children of wrath" — "and were by nature children of wrath, like the rest of mankind." A status-noun for divine wrath, here the universal human condition: living in the flesh's (sarx) passions and the mind's (dianoia) desires, all were "by nature children of orgē — wrath" — liable to God's judgment like the rest of mankind; so this term names the divine wrath under which fallen humanity stands by nature, before the mercy that makes them alive in Christ.
 
 **Eph 4:31** — Eph 4:31 Let all bitterness and wrath and anger and clamor and slander be put away from you , along with all malice .
 
@@ -1337,13 +1740,37 @@ In Eph 4:31 orgē is the "wrath/anger" believers must "put away" — listed amon
 
 In Eph 5:6 *orgē* denotes the wrath of God—his active, righteous displeasure that moves outward in punitive judgment toward those whose inner disposition is *apeitheia*. Attributed explicitly to God ("the wrath of God"), it flows divine-to-human in direction and is portrayed as presently operative ("comes upon"), not merely future. The term expresses God's moral-evaluative response to disobedience, functioning as the ultimate relational consequence of the empty-word deception warned against, and serving as the motivation for the imperative that no one be deceived.
 
+**Col 3:6** — Col 3:6 On account of these the wrath of God is coming .
+
+In Col 3:6 orgē is "the wrath of God" coming — "On account of these the wrath of God is coming." A status-noun for divine wrath, here impending: because of the vices just listed (immorality, covetousness, etc.), the orgē — wrath — of God is coming upon the sons of disobedience; so this term names the divine wrath whose approach motivates the believer to put such sins to death.
+
 **Col 3:8** — Col 3:8 But now you must put them all away : anger , wrath , malice , slander , and obscene talk from your mouth .
 
 In Col 3:8 orgē is the "anger/wrath" believers "must put… away" — listed with malice (kakia), slander (blasfēmia), and obscene talk. A within-person affective vice engaging affect and moral-evaluation, it belongs to the old self being stripped off; Paul commands its decisive removal as incompatible with the new self renewed in God's image, so orgē here is a garment of the old life to be discarded.
 
+**1Th 1:10** — 1Th 1:10 and to wait for his Son from heaven , whom he raised from the dead , Jesus who delivers us from the wrath to come .
+
+In 1Th 1:10 orgē is "the wrath to come" — "Jesus who delivers us from the wrath to come." A status-noun for divine wrath (here eschatological), it is the coming judgment from which Christ rescues: believers wait for God's risen Son from heaven, Jesus, who delivers them from the orgē — the wrath — about to fall on the unrepentant; so this term names the future divine wrath against sin, escape from which is the heart of the believer's hope in Christ.
+
+**1Th 2:16** — 1Th 2:16 by hindering us from speaking to the Gentiles that they might be saved —so as always to fill up the measure of their sins . But wrath has come upon them at last !
+
+In 1Th 2:16 orgē is the "wrath" come at last — "But wrath has come upon them at last!" A status-noun for divine wrath, here fully arrived: by hindering the Gentiles' salvation (sōzō) and filling up their sins (hamartia), the opponents have brought orgē — wrath — upon themselves at last; so this term names the divine wrath that has finally overtaken those who opposed the gospel and heaped up their guilt.
+
+**1Th 5:9** — 1Th 5:9 For God has not destined us for wrath , but to obtain salvation through our Lord Jesus Christ ,
+
+In 1Th 5:9 orgē is the "wrath" believers are not destined for — "For God has not destined us for wrath, but to obtain salvation through our Lord Jesus Christ." A status-noun for divine wrath, here negated of believers: God has appointed his people not to orgē — wrath — but to salvation (soteria) in Christ; so this term names the divine wrath from which believers are exempted, their destiny being deliverance rather than judgment.
+
 **1Ti 2:8** — 1Ti 2:8 I desire then that in every place the men should pray , lifting holy hands without anger or quarreling ;
 
 In 1 Tim 2:8 orgē denotes the affective state of anger or wrath that is to be excluded from the act of prayer. Originating within the person, it engages the affective faculty and is here treated as an inner condition that disqualifies worship when present. Paired with dialogismos (dispute), orgē represents the emotional pole of the discord that undermines holy prayer: the affect that accompanies contentious reasoning. Its exclusion is required alongside holy hands, indicating that the inner emotional life of the worshipper is integral to the acceptability of the act before God.
+
+**Heb 3:11** — Heb 3:11 As I swore in my wrath , ‘They shall not enter my rest .’”
+
+In Heb 3:11 orgē is the "wrath" in which God swore — "As I swore in my wrath, 'They shall not enter my rest.'" A status-noun for divine wrath, here the oath against the unbelieving: provoked by the wilderness generation's rebellion, God swore in his orgē that they would not enter his rest; so this term names the divine wrath that, sworn in oath, barred the faithless generation from the promised rest — a warning to the readers not to harden their hearts.
+
+**Heb 4:3** — Heb 4:3 For we who have believed enter that rest , as he has said , “ As I swore in my wrath , ‘They shall not enter my rest ,’” although his works were finished from the foundation of the world .
+
+In Heb 4:3 orgē is the "wrath" of God's oath — "As I swore in my wrath, 'They shall not enter my rest.'" A status-noun for divine wrath, here cited again: the oath God swore in his orgē barred the unbelieving from rest, contrasted with those who believe (pisteuō) and do enter; so this term names the divine wrath whose sworn sentence excluded the faithless, underscoring that the rest remains open only to faith.
 
 **Jam 1:19** — Jam 1:19 Know this, my beloved brothers : let every person be quick to hear , slow to speak , slow to anger ;
 
@@ -1357,9 +1784,25 @@ In Jam 1:20 orgē is "the anger of man" that "does not produce the righteousness
 
 In Rev 6:16 orgē is "the wrath of the Lamb" — the eschatological judgment from which the kings and people of earth beg the mountains to hide them. Attributed to the Lamb/God (divine->human) and engaging affect and moral-evaluation, it is the terrifying final wrath of the slain-yet-reigning Christ; the paradox of the Lamb's orgē intensifies the dread, as those who rejected his mercy now flee his face and his judgment.
 
+**Rev 6:17** — Rev 6:17 for the great day of their wrath has come , and who can stand ?”
+
+In Rev 6:17 orgē is "the great day of their wrath" — "for the great day of their wrath has come, and who can stand?" A status-noun for divine wrath, here the dreaded day: at the sixth seal, the terrified of earth cry to be hidden from the face of the One on the throne and the Lamb, for the great day of their orgē — wrath — has come, and none can stand; so this term names the climactic day of divine wrath whose arrival fills the wicked with unbearable dread.
+
 **Rev 11:18** — Rev 11:18 The nations raged , but your wrath came , and the time for the dead to be judged , and for rewarding your servants , the prophets and saints , and those who fear your name , both small and great , and for destroying the destroyers of the earth .”
 
 In Rev 11:18 orgē is explicitly attributed to God — "your wrath came" — designating the settled, righteous indignation that is now enacted in eschatological judgment. As a quality arising from within God's own person, it engages moral-evaluative and affective dimensions and moves divine-to-human in its direction of force. The verse frames orgē as the decisive divine response to the nations' enraged hostility (orgizō), creating a pointed contrast: the nations raged, but God's answering wrath is what "came." Its effects are comprehensive: judgment of the dead, reward of servants, and destruction of those who destroy the earth — making orgē the engine of final cosmic justice.
+
+**Rev 14:10** — Rev 14:10 he also will drink the wine of God’s wrath , poured full strength into the cup of his anger , and he will be tormented with fire and sulfur in the presence of the holy angels and in the presence of the Lamb .
+
+In Rev 14:10 orgē is "the cup of his anger" — "he also will drink the wine of God's wrath, poured full strength into the cup of his anger." A status-noun for divine wrath, here the undiluted cup: the beast-worshiper will drink the wine of God's wrath poured full-strength into the cup of his orgē — anger — and be tormented (basanizō) with fire before the Lamb; so this term names the divine wrath imaged as an unmixed cup of judgment poured out on the idolater.
+
+**Rev 16:19** — Rev 16:19 The great city was split into three parts , and the cities of the nations fell , and God remembered Babylon the great , to make her drain the cup of the wine of the fury of his wrath .
+
+In Rev 16:19 orgē is "his wrath" in the cup of fury — "to make her drain the cup of the wine of the fury of his wrath." A status-noun for divine wrath, here the climactic cup: remembering (mnaomai) Babylon, God makes her drain the cup of the wine of the fury of his orgē — wrath — in the final judgment; so this term names the divine wrath, heaped as "fury," that Babylon the great is made to drink to the dregs in her fall.
+
+**Rev 19:15** — Rev 19:15 From his mouth comes a sharp sword with which to strike down the nations , and he will rule them with a rod of iron . He will tread the winepress of the fury of the wrath of God the Almighty .
+
+In Rev 19:15 orgē is "the wrath of God the Almighty" in the winepress — "He will tread the winepress of the fury of the wrath of God the Almighty." A status-noun for divine wrath, here the climactic judgment: the returning Christ, striking the nations with the sword of his mouth, treads the winepress of the fury of the orgē — wrath — of God the pantokratōr (Almighty); so this term names the divine wrath whose full fury Christ executes on the nations, the OT winepress-of-wrath fulfilled in his coming.
 
 
 ---
@@ -1399,7 +1842,24 @@ In 1Cor 13:5 paroxunō is the irritability love does not have — "it is not irr
 
 ---
 
-## <a id="pikria"></a>pikria (G4088) — 3 verses
+## <a id="paroxusmos"></a>paroxusmos (G3948) — 2 verses
+
+**Act 15:39** — Act 15:39 And there arose a sharp disagreement , so that they separated from each other . Barnabas took Mark with him and sailed away to Cyprus ,
+
+In Act 15:39 paroxusmos is the "sharp disagreement" — "there arose a sharp disagreement, so that they separated from each other." A status-noun for an angry dispute / sharp contention, here between Paul and Barnabas over taking Mark: the paroxusmos — the sharp, provoked contention — grew so heated that they parted, Barnabas sailing with Mark to Cyprus; so this term names the angry contention sharp enough to sever two co-workers' partnership. (Contrast the positive sense at Heb 10:24.)
+
+**Heb 10:24** — Heb 10:24 And let us consider how to stir up one another to love and good works ,
+
+In Heb 10:24 paroxusmos is the positive "stirring up" — "let us consider how to stir up one another to love and good works." The same noun that elsewhere means a sharp fit of anger (Act 15:39) is here turned to good: an incitement / provoking that the verse aims at love (agapē) and good works, equipping believers to spur one another on; so this term names a wholesome provoking that drives the community toward love and good deeds — the constructive pole of the word's range.
+
+
+---
+
+## <a id="pikria"></a>pikria (G4088) — 4 verses
+
+**Act 8:23** — Act 8:23 For I see that you are in the gall of bitterness and in the bond of iniquity .”
+
+In Act 8:23 pikria is "bitterness" — "I see that you are in the gall of bitterness and in the bond of iniquity." A status of bitterness (here a poisoned inner condition), it diagnoses Simon's heart after he tried to buy the Spirit: Peter sees him in the gall of pikria — bitterness — and the bond of iniquity; so this term names the bitter, poisoned inner corruption that holds a man in iniquity and alienation from God.
 
 **Rom 3:14** — Rom 3:14 “ Their mouth is full of curses and bitterness .”
 
@@ -1537,7 +1997,15 @@ In Zec 8:2 qa.na is God's being "jealous for Zion with great jealousy" — inten
 
 ---
 
-## <a id="qatsaph"></a>qa.tsaph (H7107) — 10 verses
+## <a id="qatsaph"></a>qa.tsaph (H7107) — 32 verses
+
+**Gen 40:2** — Gen 40:2 And Pharaoh was angry with his two officers , the chief cupbearer and the chief baker ,
+
+In Gen 40:2 qa.tsaph is Pharaoh's being "angry" — "And Pharaoh was angry with his two officers, the chief cupbearer and the chief baker." A status of being wroth/displeased (Qal), here royal displeasure: Pharaoh qa.tsaph — was angry — with his two court officers and put them in custody, where Joseph would interpret their dreams; so this anger is the king's displeasure that lands the officials in the prison, setting the stage for Joseph's rise.
+
+**Gen 41:10** — Gen 41:10 When Pharaoh was angry with his servants and put me and the chief baker in custody in the house of the captain of the guard ,
+
+In Gen 41:10 qa.tsaph is the recalled royal anger — "When Pharaoh was angry with his servants and put me and the chief baker in custody." A status of being wroth/displeased (Qal), here remembered: the cupbearer recounts how Pharaoh qa.tsaph — was angry — with his servants and imprisoned them, where Joseph interpreted their dreams; so this anger is the past royal displeasure the cupbearer recalls to commend Joseph to Pharaoh.
 
 **Exo 16:20** — Exo 16:20 But they did not listen to Moses . Some left part of it till the morning , and it bred worms and stank . And Moses was angry with them.
 
@@ -1563,13 +2031,89 @@ In Num 31:14 qa.tsaph is Moses' anger at the army's commanders returning from th
 
 In Deu 1:34 qa.tsaph is the LORD's anger on hearing Israel's faithless words at Kadesh — "the LORD heard your words and was angered, and he swore." Attributed to God (divine->human) and engaging affect and moral-evaluation, the divine indignation responds to covenant unbelief and issues immediately in a sworn oath of judgment barring the rebellious generation from the promised land; here anger moves directly into irrevocable judicial decree.
 
+**Deu 9:7** — Deu 9:7 Remember and do not forget how you provoked the Lord your God to wrath in the wilderness . From the day you came out of the land of Egypt until you came to this place , you have been rebellious against the Lord .
+
+In Deu 9:7 qa.tsaph (Hiphil) is Israel's "provoking to wrath" — "how you provoked the LORD your God to wrath in the wilderness." A causative action directed human->divine, it is their continual rebellion: from leaving Egypt until reaching this place, Israel qa.tsaph — provoked the LORD to wrath, being persistently rebellious; so this term names the sustained inciting of divine anger that Moses bids them remember (za.khar) against any claim of merit.
+
+**Deu 9:8** — Deu 9:8 Even at Horeb you provoked the Lord to wrath , and the Lord was so angry with you that he was ready to destroy you .
+
+In Deu 9:8 qa.tsaph (Hiphil) is Israel's "provoking to wrath" — "Even at Horeb you provoked the LORD to wrath." A causative action directed human->divine, it is the gravest provocation: at the very mountain of covenant, by the golden calf, Israel qa.tsaph — provoked the LORD to wrath, so that he was angry (a.naph) enough to destroy them; so this term names the people's incitement of divine wrath at Horeb, the climax of Moses' recital of their rebellion.
+
 **Deu 9:19** — Deu 9:19 For I was afraid of the anger and hot displeasure that the Lord bore against you, so that he was ready to destroy you. But the Lord listened to me that time also.
 
 *Qa.tsaph* in Deu 9:19 is a Qal perfect describing the Lord as having been wroth — a completed state of full, intense wrath attributed to God. The term carries both affective and moral-evaluative force: the Lord's wrath is not arbitrary but a response to Israel's covenantal failure, giving it a relational verdict quality that signals breach. This state of wrath is the ground for the destructive intent mentioned in the verse and thus produces the effect of imminent annihilation, which in turn occasions Moses's dread (*ya.gor*). Together with *aph* and *che.mah*, *qa.tsaph* contributes to a dense cluster of terms articulating the full weight of divine displeasure.
 
+**Deu 9:22** — Deu 9:22 “At Taberah also, and at Massah and at Kibroth-hattaavah you provoked the Lord to wrath .
+
+In Deu 9:22 qa.tsaph (Hiphil) is Israel's "provoking to wrath" — "At Taberah also, and at Massah and at Kibroth-hattaavah you provoked the LORD to wrath." A causative action directed human->divine, it is the people's repeated provocation: at these three places of rebellion Israel qa.tsaph — provoked the LORD to wrath; so this term names the inciting of divine anger by their wilderness murmuring, recalled by Moses to humble their presumption.
+
+**Jos 22:18** — Jos 22:18 that you too must turn away this day from following the Lord ? And if you too rebel against the Lord today then tomorrow he will be angry with the whole congregation of Israel .
+
+In Jos 22:18 qa.tsaph is the divine anger feared — "if you too rebel against the LORD today then tomorrow he will be angry with the whole congregation of Israel." A status of being wroth/displeased (Qal) attributed to God, here it warns of corporate liability: should the eastern tribes rebel (ma.rad), the LORD will qa.tsaph — be angry — not just with them but with all Israel; so this anger is the divine wrath whose reach over the whole community the warning invokes to deter the suspected rebellion.
+
+**1Sa 29:4** — 1Sa 29:4 But the commanders of the Philistines were angry with him. And the commanders of the Philistines said to him, “ Send the man back, that he may return to the place to which you have assigned him. He shall not go down with us to battle , lest in the battle he become an adversary to us. For how could this fellow reconcile himself to his lord ? Would it not be with the heads of the men here?
+
+In 1Sa 29:4 qa.tsaph is the commanders' being "angry" — "But the commanders of the Philistines were angry with him." A status of being wroth/displeased (Qal), here it is suspicious indignation: the Philistine commanders qa.tsaph — were angry, displeased — at Achish for bringing David, fearing he would turn adversary in battle and reconcile (ra.tsah) himself to Saul with their heads; so this anger is the commanders' distrustful displeasure that sends David away from the battle.
+
+**2Ki 5:11** — 2Ki 5:11 But Naaman was angry and went away , saying , “ Behold , I thought that he would surely come out to me and stand and call upon the name of the Lord his God , and wave his hand over the place and cure the leper .
+
+In 2Ki 5:11 qa.tsaph is Naaman's being "angry" — "But Naaman was angry and went away." A status of being wroth/displeased (Qal), here it is wounded pride: expecting a dramatic healing ceremony, the Syrian commander qa.tsaph — was angry — when Elisha merely sent word to wash in the Jordan, offended that his dignity was slighted; so this anger is the proud man's indignation at a humble remedy, which nearly cost him his cure until his servants reasoned with him.
+
+**2Ki 13:19** — 2Ki 13:19 Then the man of God was angry with him and said , “You should have struck five or six times ; then you would have struck down Syria until you had made an end of it , but now you will strike down Syria only three times .”
+
+In 2Ki 13:19 qa.tsaph is Elisha's being "angry" — "Then the man of God was angry with him." A status of being wroth/displeased (Qal), here it is prophetic vexation at half-hearted faith: when King Joash struck the ground with the arrows only three times instead of five or six, Elisha qa.tsaph — was angry, displeased — telling him he had thereby limited his victory over Syria to three blows; so this anger is the prophet's frustrated displeasure at the king's lack of zeal, which curtailed the promised deliverance.
+
 **Est 1:12** — Est 1:12 But Queen Vashti refused to come at the king’s command delivered by the eunuchs . At this the king became enraged , and his anger burned within him .
 
 In Est 1:12 qa.tsaph is the king "becoming enraged" at Queen Vashti's refusal to come — paired with the che.mah that burned within him. A received-from-outside affective-moral response engaging affect and moral-evaluation, the royal wrath at her public defiance moves him to summon his counsellors and issue the decree against her, so the king's anger becomes the engine of the chapter's events.
+
+**Est 2:21** — Est 2:21 In those days , as Mordecai was sitting at the king’s gate , Bigthan and Teresh , two of the king’s eunuchs , who guarded the threshold , became angry and sought to lay hands on King Ahasuerus .
+
+In Est 2:21 qa.tsaph is the eunuchs' becoming "angry" — "two of the king's eunuchs, who guarded the threshold, became angry and sought to lay hands on King Ahasuerus." A status of being wroth/displeased (Qal), here it festers into treason: Bigthan and Teresh qa.tsaph — grew angry (at some grievance against the king) — and sought (ba.qash) to assassinate him; so this anger is the resentment that hardened into a regicidal plot, foiled when Mordecai reported it.
+
+**Psa 106:32** — Psa 106:32 They angered him at the waters of Meribah , and it went ill with Moses on their account ,
+
+In Psa 106:32 qa.tsaph (Hiphil) is the people's "angering" God — "They angered him at the waters of Meribah." A causative action directed human->divine, it is their provocation: Israel qa.tsaph — angered, provoked to wrath — the LORD at Meribah by their quarreling for water, and it went ill (ra.a) with Moses on their account; so this term names the people's provocation that kindled God's anger and ensnared even Moses.
+
+**Ecc 5:6** — Ecc 5:6 Let not your mouth lead you into sin , and do not say before the messenger that it was a mistake . Why should God be angry at your voice and destroy the work of your hands ?
+
+In Ecc 5:6 qa.tsaph is the divine anger warned of — "Why should God be angry at your voice and destroy the work of your hands?" A status of being wroth/displeased (Qal) attributed to God, here provoked by careless speech: the Preacher warns that letting the mouth lead into sin (cha.ta) by rash vows gives God cause to qa.tsaph — be angry — at one's voice and ruin (cha.val) the work of one's hands; so this anger is the divine displeasure that thoughtless words before God invite, with destructive consequence.
+
+**Isa 8:21** — Isa 8:21 They will pass through the land, greatly distressed and hungry . And when they are hungry , they will be enraged and will speak contemptuously against their king and their God , and turn their faces upward .
+
+In Isa 8:21 qa.tsaph (Hithpael) is the people's being "enraged" — "when they are hungry, they will be enraged and will speak contemptuously against their king and their God." A status of being-furious (Hithpael), here it curdles into blasphemy: passing through the land distressed and famished, the people qa.tsaph — rage, work themselves into fury — and curse their king and God, turning their faces upward in defiance; so this anger is the embittered rage of the suffering that, instead of repenting, blasphemes God.
+
+**Isa 47:6** — Isa 47:6 I was angry with my people ; I profaned my heritage ; I gave them into your hand ; you showed them no mercy ; on the aged you made your yoke exceedingly heavy .
+
+In Isa 47:6 qa.tsaph is God's being "angry" — "I was angry with my people; I profaned my heritage; I gave them into your hand." A status of being wroth/displeased (Qal) attributed to God, it is the wrath behind the exile: the LORD qa.tsaph — was angry — with his people, profaned his heritage, and gave (na.tan) them to Babylon; yet Babylon's merciless (ra.cha.mim) cruelty exceeded the judgment, so this anger is the divine displeasure that handed Israel over — without licensing the instrument's brutality.
+
+**Isa 54:9** — Isa 54:9 “ This is like the days of Noah to me: as I swore that the waters of Noah should no more go over the earth , so I have sworn that I will not be angry with you, and will not rebuke you .
+
+In Isa 54:9 qa.tsaph is the anger God swears to forgo — "so I have sworn that I will not be angry with you, and will not rebuke you." A status of being wroth/displeased (Qal) attributed to God, here renounced by oath: as the LORD swore the flood-waters would never again cover the earth, so he swears not to qa.tsaph — be angry — with his people or rebuke them; so this anger is the divine wrath bound by covenant oath never to return, the ground of Israel's everlasting comfort.
+
+**Isa 57:16** — Isa 57:16 For I will not contend forever , nor will I always be angry ; for the spirit would grow faint before me, and the breath of life that I made .
+
+In Isa 57:16 qa.tsaph is the anger God will not prolong — "nor will I always be angry; for the spirit would grow faint before me." A status of being wroth/displeased (Qal) attributed to God, here self-limited by compassion: the LORD will not qa.tsaph — be angry — perpetually (ne.tsach), nor contend (riv) forever, because the spirit and breath (ne.sha.mah) he made would faint under it; so this anger is the divine wrath God deliberately bounds, refusing to crush the frail creature he himself fashioned.
+
+**Isa 57:17** — Isa 57:17 Because of the iniquity of his unjust gain I was angry, I struck him; I hid my face and was angry , but he went on backsliding in the way of his own heart .
+
+In Isa 57:17 qa.tsaph is God's being "angry" — "Because of the iniquity of his unjust gain I was angry, I struck him; I hid my face and was angry." A status of being wroth/displeased (Qal) attributed to God, here repeated: provoked by Israel's covetous iniquity (a.von), the LORD qa.tsaph — was angry — struck them and hid his face; yet anger and blows did not turn them, for they kept backsliding in their own heart's (lev) way — so this anger is the divine wrath that judges sin but, by itself, cannot heal the wayward, preparing the turn to mercy that follows.
+
+**Isa 64:5** — Isa 64:5 You meet him who joyfully works righteousness , those who remember you in your ways . Behold , you were angry , and we sinned ; in our sins we have been a long time , and shall we be saved ?
+
+In Isa 64:5 qa.tsaph is the divine anger the people confess — "Behold, you were angry, and we sinned; in our sins we have been a long time." A status of being wroth/displeased (Qal) attributed to God, here it frames their plight: the LORD qa.tsaph — was angry — and they sinned (cha.ta), long continuing in sin, so they wonder whether they can be saved; so this anger is the divine displeasure under which the penitent community confesses its long persistence in sin.
+
+**Isa 64:9** — Isa 64:9 Be not so terribly angry , O Lord , and remember not iniquity forever . Behold , please look , we are all your people .
+
+In Isa 64:9 qa.tsaph is the anger the people beg God to relent from — "Be not so terribly angry, O LORD, and remember not iniquity forever." A status of being wroth/displeased (Qal) attributed to God, here the object of petition: the penitent community asks the LORD not to qa.tsaph — be angry — so terribly, nor remember (za.khar) their iniquity (a.von) forever, pleading "we are all your people"; so this anger is the divine wrath the people implore God to limit by his covenant mercy.
+
+**Jer 37:15** — Jer 37:15 And the officials were enraged at Jeremiah , and they beat him and imprisoned him in the house of Jonathan the secretary , for it had been made a prison .
+
+In Jer 37:15 qa.tsaph is the officials' being "enraged" — "And the officials were enraged at Jeremiah, and they beat him and imprisoned him." A status of being wroth/furious (Qal), here it is hostile persecution: the officials qa.tsaph — were enraged — at Jeremiah (accused of deserting to the Chaldeans), beating him and casting him into a dungeon-prison; so this anger is the rulers' fury at the prophet's unwelcome word, vented in violence against him.
+
+**Lam 5:22** — Lam 5:22 unless you have utterly rejected us, and you remain exceedingly angry with us.
+
+In Lam 5:22 qa.tsaph is God's enduring "anger" — "unless you have utterly rejected us, and you remain exceedingly angry with us." A status of being wroth/displeased (Qal) attributed to God, here it closes the book on a note of unresolved dread: having prayed for restoration, the people end fearing the LORD has utterly rejected them and remains exceedingly qa.tsaph — angry — with them; so this anger is the divine wrath whose seeming permanence leaves Lamentations suspended between plea and despair.
 
 **Zec 1:2** — Zec 1:2 “The Lord was very angry with your fathers .
 
@@ -1579,10 +2123,30 @@ In Zec 1:2 qa.tsaph is the LORD's great anger against the fathers' generation �
 
 In Zec 1:15 qa.tsaph (intensified participle) is God's great anger — "I am exceedingly angry with the nations that are at ease." Attributed to God (divine->human) and engaging affect and moral-evaluation, the divine indignation pivots away from chastened Israel toward the self-secure nations (sha.a.nan) who, while God was "but a little" angry, furthered the disaster; the magnitude ("exceedingly") signals impending judgment on them.
 
+**Zec 8:14** — Zec 8:14 For thus says the Lord of hosts : “ As I purposed to bring disaster to you when your fathers provoked me to wrath , and I did not relent , says the Lord of hosts ,
+
+In Zec 8:14 qa.tsaph (Hiphil) is the fathers' "provoking to wrath" — "when your fathers provoked me to wrath, and I did not relent." A causative action directed human->divine, it recalls past provocation: because the fathers qa.tsaph — provoked the LORD to wrath, he purposed disaster and did not relent (na.cham); so this term names the provocation that brought unrelenting judgment, the dark backdrop to God's renewed purpose of good.
+
 
 ---
 
-## <a id="qanna"></a>qan.na (H7067H) — 1 verses
+## <a id="qanna"></a>qan.na (H7067H) — 5 verses
+
+**Exo 20:5** — Exo 20:5 You shall not bow down to them or serve them, for I the Lord your God am a jealous God , visiting the iniquity of the fathers on the children to the third and fourth generation of those who hate me ,
+
+In Exo 20:5 qan.na is the LORD's being "jealous" — "I the LORD your God am a jealous God, visiting the iniquity of the fathers on the children." A quality of jealousy proper to God alone, here founding the second commandment: because he is qan.na — jealous — Israel must not bow to (shachah) or serve idols; his jealousy visits (paqad) the fathers' iniquity (avon) on the children of those who hate him; so this term names the exclusive jealousy that forbids Israel any rival worship.
+
+**Exo 34:14** — Exo 34:14 ( for you shall worship no other god , for the Lord , whose name is Jealous , is a jealous God ),
+
+In Exo 34:14 qan.na is the LORD being "jealous" — "the LORD, whose name is Jealous, is a jealous God." A quality of jealousy belonging to God alone, here so defining that it is his name: Israel must worship (shachah) no other god, for the LORD is qan.na — jealous; so this term names the exclusive jealousy that brooks no rival, intensified here to the point of being the LORD's own name.
+
+**Deu 4:24** — Deu 4:24 For the Lord your God is a consuming fire , a jealous God .
+
+In Deu 4:24 qan.na is the LORD's being "jealous" — "the LORD your God is a consuming fire, a jealous God." A quality of jealousy predicated only of God, here paired with consuming fire: Israel is warned not to make a graven image because the LORD is qan.na — jealous — and a devouring fire; so this term names the exclusive covenant-jealousy that brooks no rival and burns like fire against idolatry.
+
+**Deu 5:9** — Deu 5:9 You shall not bow down to them or serve them, for I the Lord your God am a jealous God , visiting the iniquity of the fathers on the children to the third and fourth generation of those who hate me ,
+
+In Deu 5:9 qan.na is the LORD's being "jealous" — "I the LORD your God am a jealous God, visiting (paqad) the iniquity of the fathers on the children." A quality of jealousy proper to God alone, here grounding the second commandment: because he is qan.na — jealous — Israel must not bow to (shachah) or serve idols, and his jealousy visits the fathers' iniquity (avon) on those who hate him to the third and fourth generation; so this term names the exclusive jealousy that will not share Israel's worship.
 
 **Deu 6:15** — Deu 6:15 for the Lord your God in your midst is a jealous God — lest the anger of the Lord your God be kindled against you, and he destroy you from off the face of the earth .
 
@@ -1591,7 +2155,11 @@ In Deu 6:15 qan.na is the LORD as a "jealous God" — "the LORD your God in your
 
 ---
 
-## <a id="qanno"></a>qan.no (H7072) — 1 verses
+## <a id="qanno"></a>qan.no (H7072) — 2 verses
+
+**Jos 24:19** — Jos 24:19 But Joshua said to the people , “You are not able to serve the Lord , for he is a holy God . He is a jealous God ; he will not forgive your transgressions or your sins .
+
+In Jos 24:19 qan.no is the LORD being "jealous" — "He is a holy God. He is a jealous God; he will not forgive your transgressions." A quality of jealousy proper to God, here joined to his holiness: Joshua warns the people they are unable to serve (avad) the LORD while keeping idols, for he is qadosh — holy — and qan.no — jealous — and will not forgive their transgression (pesha) or sin (chattat) if they forsake him; so this term names the jealous holiness that makes divided, half-hearted service impossible.
 
 **Nah 1:2** — Nah 1:2 The Lord is a jealous and avenging God ; the Lord is avenging and wrathful ; the Lord takes vengeance on his adversaries and keeps wrath for his enemies .
 
@@ -1609,7 +2177,7 @@ In Ezr 7:23 qe.tsaph is God's "wrath" — "lest his wrath be against the realm o
 
 ---
 
-## <a id="qetseph"></a>qe.tseph (H7110A) — 10 verses
+## <a id="qetseph"></a>qe.tseph (H7110A) — 28 verses
 
 **Num 1:53** — Num 1:53 But the Levites shall camp around the tabernacle of the testimony , so that there may be no wrath on the congregation of the people of Israel . And the Levites shall keep guard over the tabernacle of the testimony .”
 
@@ -1619,13 +2187,69 @@ In Num 1:53 qe.tseph is the divine "wrath" the Levites' encamping around the tab
 
 In Num 16:46 qe.tseph is the divine "wrath [that] has gone out from the LORD" — already active as a plague among the rebellious congregation. Attributed to God (divine->human) and engaging affect and moral-evaluation, it is anger become lethal judgment; the urgency of Moses' command — Aaron must run with atoning incense — shows the wrath as a spreading plague that only kip.per can halt.
 
+**Num 18:5** — Num 18:5 And you shall keep guard over the sanctuary and over the altar , that there may never again be wrath on the people of Israel .
+
+In Num 18:5 qe.tseph is the "wrath" the priestly guard prevents — "you shall keep guard over the sanctuary and over the altar, that there may never again be wrath on the people of Israel." A status-noun for wrath (divine), here to be averted: the priests' careful guard over the holy things is meant so that qe.tseph — wrath — never again breaks out on Israel (as it had when the sanctuary was approached unlawfully); so this term names the divine wrath that faithful priestly guardianship of the holy is appointed to keep from the people.
+
 **Deu 29:28** — Deu 29:28 and the Lord uprooted them from their land in anger and fury and great wrath , and cast them into another land , as they are this day .’
 
 In Deu 29:28 qe.tseph is the "great wrath" of the uprooting — "in anger and fury and great wrath." Attributed to God (divine->human), it is the divine indignation, climaxing the triad with aph (anger) and che.mah (fury), that drives Israel from their land; its "great" intensity marks the severity of covenant judgment, so this qe.tseph is the culminating divine wrath that casts the people into another land.
 
+**Jos 9:20** — Jos 9:20 This we will do to them: let them live , lest wrath be upon us, because of the oath that we swore to them .”
+
+In Jos 9:20 qe.tseph is the "wrath" oath-breaking would bring — "let them live, lest wrath be upon us, because of the oath that we swore to them." A status-noun for wrath (divine), here the sanction of a broken vow: Israel will let the Gibeonites live (cha.yah) rather than violate their sworn oath and incur qe.tseph — wrath — upon themselves; so this term names the divine wrath that breaking a solemn oath sworn in God's name would justly provoke.
+
+**Jos 22:20** — Jos 22:20 Did not Achan the son of Zerah break faith in the matter of the devoted things , and wrath fell upon all the congregation of Israel ? And he did not perish alone for his iniquity .’”
+
+In Jos 22:20 qe.tseph is the "wrath" that fell — "and wrath fell upon all the congregation of Israel." A status-noun for wrath (divine), here corporate: Achan's breach of faith (ma.al) over the devoted things brought qe.tseph — wrath — on the whole congregation, not him alone; so this term names the divine wrath whose fall on all Israel for one man's iniquity (a.von) the eastern tribes cite to dread corporate guilt.
+
+**2Ki 3:27** — 2Ki 3:27 Then he took his oldest son who was to reign in his place and offered him for a burnt offering on the wall . And there came great wrath against Israel . And they withdrew from him and returned to their own land .
+
+In 2Ki 3:27 qe.tseph is the "great wrath" against Israel — "And there came great wrath against Israel. And they withdrew from him and returned to their own land." A status-noun for wrath/fury, here it arises after Mesha king of Moab offers his firstborn on the wall: a great qe.tseph came against Israel, so that they broke off the siege and withdrew; the verse names the wrath's effect (Israel's retreat) without specifying its source, so this term denotes the overwhelming fury or indignation that fell against Israel, compelling their withdrawal.
+
+**1Ch 27:24** — 1Ch 27:24 Joab the son of Zeruiah began to count , but did not finish . Yet wrath came upon Israel for this , and the number was not entered in the chronicles of King David .
+
+In 1Ch 27:24 qe.tseph is the "wrath" that came on Israel — "Yet wrath came upon Israel for this, and the number was not entered in the chronicles." A status-noun for wrath/anger (here divine), it is the judgment on the census: because Joab's numbering of Israel provoked God, qe.tseph — wrath — came upon the nation (the plague), so the count was left unrecorded; so this term names the divine wrath that the unlawful census drew down on Israel.
+
+**2Ch 19:2** — 2Ch 19:2 But Jehu the son of Hanani the seer went out to meet him and said to King Jehoshaphat , “Should you help the wicked and love those who hate the Lord ? Because of this , wrath has gone out against you from the Lord .
+
+In 2Ch 19:2 qe.tseph is the "wrath" gone out — "Because of this, wrath has gone out against you from the LORD." A status-noun for wrath (here divine), it is judgment on a sinful alliance: because Jehoshaphat helped the wicked (ra.sha) and loved those who hate (sa.ne) the LORD, qe.tseph — wrath — has gone out against him from the LORD; so this term names the divine displeasure incurred by allying with God's enemies.
+
+**2Ch 19:10** — 2Ch 19:10 whenever a case comes to you from your brothers who live in their cities , concerning bloodshed , law or commandment , statutes or rules , then you shall warn them, that they may not incur guilt before the Lord and wrath may not come upon you and your brothers . Thus you shall do , and you will not incur guilt .
+
+In 2Ch 19:10 qe.tseph is the "wrath" to be averted — "that they may not incur guilt before the LORD and wrath may not come upon you and your brothers." A status-noun for wrath (here divine), it is the judgment faithful warning prevents: if the judges warn the people rightly, they will not incur guilt (a.sham) and qe.tseph — wrath — will not fall on judges or brothers; so this term names the divine wrath that diligent, faithful justice keeps from the community.
+
+**2Ch 24:18** — 2Ch 24:18 And they abandoned the house of the Lord , the God of their fathers , and served the Asherim and the idols . And wrath came upon Judah and Jerusalem for this guilt of theirs .
+
+In 2Ch 24:18 qe.tseph is the "wrath" that came — "And wrath came upon Judah and Jerusalem for this guilt of theirs." A status-noun for wrath (here divine), it is judgment on apostasy: because Judah forsook the temple to serve idols (a.tsav), their guilt (ash.mah) brought qe.tseph — wrath — upon Judah and Jerusalem; so this term names the divine wrath that idolatrous abandonment of the LORD drew down on the nation.
+
+**2Ch 29:8** — 2Ch 29:8 Therefore the wrath of the Lord came on Judah and Jerusalem , and he has made them an object of horror , of astonishment , and of hissing , as you see with your own eyes .
+
+In 2Ch 29:8 qe.tseph is "the wrath of the LORD" — "Therefore the wrath of the LORD came on Judah and Jerusalem, and he has made them an object of horror." A status-noun for wrath (divine), it is the judgment Hezekiah acknowledges: because the fathers forsook the LORD, his qe.tseph came on Judah, making them a horror, astonishment, and hissing; so this term names the divine wrath whose visible effects move Hezekiah to call for covenant renewal.
+
+**2Ch 32:25** — 2Ch 32:25 But Hezekiah did not make return according to the benefit done to him, for his heart was proud . Therefore wrath came upon him and Judah and Jerusalem .
+
+In 2Ch 32:25 qe.tseph is the "wrath" that came — "Therefore wrath came upon him and Judah and Jerusalem." A status-noun for wrath (divine), it is judgment on pride: because Hezekiah's heart was proud (ga.vah) and ungrateful, qe.tseph — wrath — came upon him and his people; so this term names the divine wrath that the king's pride drew down, until (in the next verse) his humbling averted it.
+
+**2Ch 32:26** — 2Ch 32:26 But Hezekiah humbled himself for the pride of his heart , both he and the inhabitants of Jerusalem , so that the wrath of the Lord did not come upon them in the days of Hezekiah .
+
+In 2Ch 32:26 qe.tseph is the "wrath of the LORD" averted — "so that the wrath of the LORD did not come upon them in the days of Hezekiah." A status-noun for wrath (divine), here turned aside: because Hezekiah and Jerusalem humbled (ka.na) themselves for the pride (go.vah) of his heart, the LORD's qe.tseph did not fall in his days; so this term names the divine wrath that repentant humbling deferred from the king's lifetime.
+
+**Est 1:18** — Est 1:18 This very day the noble women of Persia and Media who have heard of the queen’s behavior will say the same to all the king’s officials , and there will be contempt and wrath in plenty .
+
+In Est 1:18 qe.tseph is the "wrath in plenty" foreseen — "there will be contempt and wrath in plenty." A status-noun for wrath/anger, here human and domestic: Memucan warns that, following Vashti's example, the noble women will treat their husbands with contempt (biz.za.von), producing qe.tseph — wrath — in plenty between spouses; so this term names the marital anger the courtiers fear will spread through Persia if Vashti goes unpunished.
+
 **Psa 38:1** — A Psalm of David , for the memorial offering . Psa 38:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath !
 
 In Psa 38:1 qe.tseph is God's "wrath" in the parallel plea — "nor discipline me in your wrath" — matching the che.mah of the first line. Attributed to God (divine->human) and engaging affect and moral-evaluation, the two terms together intensify the petition: the penitent does not deny he deserves discipline but begs that the LORD's correction not be administered in the heat of divine anger, lest it consume him.
+
+**Psa 102:10** — Psa 102:10 because of your indignation and anger ; for you have taken me up and thrown me down .
+
+In Psa 102:10 qe.tseph is God's "anger" — "because of your indignation and anger; for you have taken me up and thrown me down." A status-noun for wrath/anger (divine), here paired with indignation (za.am): the psalmist traces his affliction to the LORD's qe.tseph — anger — feeling himself raised only to be hurled down; so this term names the divine anger the sufferer experiences as the cause of his ruin.
+
+**Ecc 5:17** — Ecc 5:17 Moreover , all his days he eats in darkness in much vexation and sickness and anger .
+
+In Ecc 5:17 qe.tseph is the "anger" of the miserable life — "all his days he eats in darkness in much vexation and sickness and anger." A status-noun for anger/wrath, here human and embittered: the grasping man's joyless days are full of vexation (ka.a.s), sickness (cho.li), and qe.tseph — anger, irritation; so this term names the chronic resentment that sours the discontented life, the human pole of qe.tseph (not divine wrath).
 
 **Isa 34:2** — Isa 34:2 For the Lord is enraged against all the nations , and furious against all their host ; he has devoted them to destruction , has given them over for slaughter .
 
@@ -1635,6 +2259,14 @@ In Isa 34:2 qe.tseph is the LORD's being "enraged" — "the LORD is enraged agai
 
 In Isa 54:8 qe.tseph is God's "overflowing anger" in which "for a moment I hid my face from you." Attributed to God (divine->human) and engaging affect and moral-evaluation, the divine wrath is explicitly momentary and bounded — set against the "everlasting love" (che.sed) and compassion (ra.cham) that follow: God's anger that hid his face in the exile is a brief overflow soon swallowed by his enduring covenant kindness.
 
+**Isa 60:10** — Isa 60:10 Foreigners shall build up your walls , and their kings shall minister to you; for in my wrath I struck you, but in my favor I have had mercy on you .
+
+In Isa 60:10 qe.tseph is the "wrath" with which God struck — "for in my wrath I struck you, but in my favour I have had mercy on you." A status-noun for wrath (divine), here past and reversed: the LORD struck Zion in his qe.tseph, but now in favour (ra.tson) he has mercy (ra.cham), so the nations rebuild and serve (sha.rat) her; so this wrath is the divine anger of judgment now given way to restoring favour — the wrath bounded and overturned by mercy.
+
+**Jer 10:10** — Jer 10:10 But the Lord is the true God ; he is the living God and the everlasting King . At his wrath the earth quakes , and the nations cannot endure his indignation .
+
+In Jer 10:10 qe.tseph is God's "wrath" that shakes creation — "At his wrath the earth quakes, and the nations cannot endure his indignation." A status-noun for wrath (divine), it conveys cosmic power: at the qe.tseph of the living (chay), true (e.met) God, the earth trembles and no nation can bear his indignation (za.am); so this term names the divine wrath whose terror convulses the earth and overwhelms the nations.
+
 **Jer 21:5** — Jer 21:5 I myself will fight against you with outstretched hand and strong arm , in anger and in fury and in great wrath .
 
 In Jer 21:5 qe.tseph is the "fury" in the triad — "in anger and in fury and in great wrath." Attributed to God, it is the divine wrath, set between anger (aph) and great wrath (che.mah), in which the LORD fights against Jerusalem with outstretched hand and strong arm; the piling of wrath-words conveys the intensity of God turned against his people, so this qe.tseph is the divine fury contributing to the threefold wrath of God's assault on the city.
@@ -1642,6 +2274,10 @@ In Jer 21:5 qe.tseph is the "fury" in the triad — "in anger and in fury and in
 **Jer 32:37** — Jer 32:37 Behold , I will gather them from all the countries to which I drove them in my anger and my wrath and in great indignation . I will bring them back to this place , and I will make them dwell in safety .
 
 In Jer 32:37 qe.tseph is the "great indignation" of the scattering — "in my anger and my wrath and in great indignation." Attributed to God, it climaxes the triad with anger (aph) and wrath (che.mah) in which the LORD drove Israel into exile; yet this indignation too is bounded — the God who scattered in qe.tseph promises to regather and resettle them in safety; so this indignation is the severe divine wrath of the dispersion, now to be followed by gathering and peace.
+
+**Jer 50:13** — Jer 50:13 Because of the wrath of the Lord she shall not be inhabited but shall be an utter desolation ; everyone who passes by Babylon shall be appalled , and hiss because of all her wounds .
+
+In Jer 50:13 qe.tseph is "the wrath of the LORD" on Babylon — "Because of the wrath of the LORD she shall not be inhabited but shall be an utter desolation." A status-noun for wrath (divine), it is the judgment on Babylon: because of the LORD's qe.tseph, the city will be uninhabited, an utter waste at which passers-by are appalled and hiss; so this term names the divine wrath that reduces Babylon to perpetual desolation.
 
 **Zec 1:2** — Zec 1:2 “The Lord was very angry with your fathers .
 
@@ -1651,10 +2287,14 @@ In Zec 1:2 qe.tseph is the "wrath" with which the LORD was angry — the cognate
 
 In Zec 1:15 qe.tseph is the "little" wrath with which God was angry at Israel — "while I was angry but a little, they furthered the disaster." Attributed to God (divine->human) and engaging affect and moral-evaluation, this measured divine anger is set against the nations' excess: they turned God's limited chastening of his people into calamity, so the contrast between his "little" qe.tseph and his now-exceeding qa.tsaph frames the coming reversal.
 
+**Zec 7:12** — Zec 7:12 They made their hearts diamond-hard lest they should hear the law and the words that the Lord of hosts had sent by his Spirit through the former prophets . Therefore great anger came from the Lord of hosts .
+
+In Zec 7:12 qe.tseph is the "great anger" from God — "Therefore great anger came from the LORD of hosts." A status-noun for wrath (divine), it is the response to obstinacy: because the fathers hardened their hearts (lev) like diamond against the LORD's law and prophets, great qe.tseph — anger — came from him; so this term names the divine wrath provoked by the people's deliberate refusal to hear God's word.
+
 
 ---
 
-## <a id="qinah"></a>qin.ah (H7068) — 40 verses
+## <a id="qinah"></a>qin.ah (H7068) — 41 verses
 
 **Num 5:14** — Num 5:14 and if the spirit of jealousy comes over him and he is jealous of his wife who has defiled herself, or if the spirit of jealousy comes over him and he is jealous of his wife , though she has not defiled herself,
 
@@ -1731,6 +2371,10 @@ In Ecc 4:4 qin.ah is "a man's envy of his neighbour" Qoheleth identifies as the 
 **Ecc 9:6** — Ecc 9:6 Their love and their hate and their envy have already perished , and forever they have no more share in all that is done under the sun .
 
 In Ecc 9:6 qin.ah is the "envy" of the dead that "has already perished" — listed with their love (a.ha.vah) and hate (sin.ah). A within-person affective passion engaging affect, the verse states that with death these emotions cease: the envy that once moved them is gone, and "forever they have no more share in all that is done under the sun," so qin.ah here is named precisely in its extinction at death.
+
+**Song 8:6** — Song 8:6 Set me as a seal upon your heart , as a seal upon your arm , for love is strong as death , jealousy is fierce as the grave . Its flashes are flashes of fire , the very flame of the Lord .
+
+In Song 8:6 qin.ah is love's "jealousy" — "jealousy is fierce as the grave. Its flashes are flashes of fire." A status of ardour / jealous passion, here the consuming intensity of love: set as a seal on heart and arm, love is strong as death and its qin.ah — its ardent, possessive jealousy — fierce (qasheh) as Sheol, flashing like fire, the very flame of the LORD; so this term names the possessive ardour by which love lays inescapable claim upon the beloved.
 
 **Isa 9:7** — Isa 9:7 Of the increase of his government and of peace there will be no end , on the throne of David and over his kingdom , to establish it and to uphold it with justice and with righteousness from this time forth and forevermore . The zeal of the Lord of hosts will do this .
 
@@ -1828,15 +2472,123 @@ In Ezr 5:12 re.gaz (Aramaic Aphel) is the fathers' having "angered the God of he
 
 ---
 
-## <a id="riv"></a>riv (H7379) — 10 verses
+## <a id="riv"></a>riv (H7379) — 60 verses
+
+**Gen 13:7** — Gen 13:7 and there was strife between the herdsmen of Abram’s livestock and the herdsmen of Lot’s livestock . At that time the Canaanites and the Perizzites were dwelling in the land .
+
+In Gen 13:7 riv is "strife" — "there was strife between the herdsmen of Abram's livestock and the herdsmen of Lot's livestock." A status-noun for strife / quarrel, here a practical contention: with the land too crowded (the Canaanites and Perizzites also dwelling there), riv — strife — broke out between the two households' herdsmen, prompting Abram to propose they part; so this term names the quarreling between kinsmen's herdsmen that strained the relationship and forced a separation.
+
+**Exo 17:7** — Exo 17:7 And he called the name of the place Massah and Meribah , because of the quarreling of the people of Israel , and because they tested the Lord by saying , “ Is the Lord among us or not ?”
+
+In Exo 17:7 riv is "the quarreling" — "he called the name of the place... Meribah, because of the quarreling of the people of Israel." A status-noun for strife / contention, here directed against God: Israel's riv — their quarreling — at the water-less place, testing whether the LORD was among (qerev) them or not, gives Meribah its name; so this term names the contentious quarreling of Israel against God that doubted his presence in their midst.
+
+**Exo 23:2** — Exo 23:2 You shall not fall in with the many to do evil , nor shall you bear witness in a lawsuit , siding with the many , so as to pervert justice ,
+
+In Exo 23:2 riv is "a lawsuit" — "nor shall you bear witness in a lawsuit, siding with the many, so as to pervert justice." A status-noun for a dispute / case at law, here forensic: in a riv — a lawsuit — one must not testify with the crowd to do evil (ra.ah) and pervert justice; so this term names the lawsuit in which truthful, impartial testimony is commanded. (Legal, not affective.)
+
+**Exo 23:3** — Exo 23:3 nor shall you be partial to a poor man in his lawsuit .
+
+In Exo 23:3 riv is "his lawsuit" — "nor shall you be partial to a poor man in his lawsuit." A status-noun for a dispute / case at law, here forensic: in the poor man's riv — his lawsuit — the judge must not ha.dar (be partial); so this term names the lawsuit in which justice must remain impartial even out of sympathy for the poor. (Legal, not affective.)
+
+**Exo 23:6** — Exo 23:6 “You shall not pervert the justice due to your poor in his lawsuit .
+
+In Exo 23:6 riv is "his lawsuit" — "You shall not pervert the justice due to your poor in his lawsuit." A status-noun for a dispute / case at law, here forensic: in the poor man's riv — his lawsuit — his justice (mishpat) must not be perverted; so this term names the lawsuit in which the poor man's due must be protected. (Legal, not affective.)
+
+**Deu 1:12** — Deu 1:12 How can I bear by myself the weight and burden of you and your strife ?
+
+In Deu 1:12 riv is "your strife" — "How can I bear by myself the weight and burden of you and your strife?" A status-noun for strife / contention, here a burden: Moses recalls that he could not bear alone the weight and burden of the people and their riv — their quarreling, their disputes — which is why he appointed judges; so this term names the contentious quarreling of the people that overwhelmed their leader.
+
+**Deu 17:8** — Deu 17:8 “ If any case arises requiring decision between one kind of homicide and another , one kind of legal right and another , or one kind of assault and another , any case within your towns that is too difficult for you, then you shall arise and go up to the place that the Lord your God will choose .
+
+In Deu 17:8 riv is "case / matter of dispute" — "any case within your towns that is too difficult for you." A status-noun for a dispute / case at law, here forensic: cases of homicide, legal right (din), or assault — riv — that prove too difficult (pala) for local judges must be taken to the place the LORD chooses (bachar); so this term names the legal controversies within the towns requiring higher authoritative judgment. (Legal, not affective.)
+
+**Deu 19:17** — Deu 19:17 then both parties to the dispute shall appear before the Lord , before the priests and the judges who are in office in those days .
+
+In Deu 19:17 riv is "the dispute" — "both parties to the dispute shall appear before the LORD, before the priests and the judges." A status-noun for a dispute / case at law, here forensic (a charge of false witness): the two men in the riv — the lawsuit — must stand before the LORD and his judges; so this term names the legal controversy that summons both parties before God's appointed judicial officers. (Legal, not affective.)
+
+**Deu 21:5** — Deu 21:5 Then the priests , the sons of Levi , shall come forward , for the Lord your God has chosen them to minister to him and to bless in the name of the Lord , and by their word every dispute and every assault shall be settled.
+
+In Deu 21:5 riv is "every dispute" — "by their word every dispute and every assault shall be settled." A status-noun for a dispute / case at law, here forensic: the priests whom God has chosen (bachar) settle by their word every riv — every controversy — and every assault; so this term names the legal controversies whose settlement is committed to the Levites' authoritative word. (Legal, not affective.)
+
+**Deu 25:1** — Deu 25:1 “ If there is a dispute between men and they come into court and the judges decide between them, acquitting the innocent and condemning the guilty ,
+
+In Deu 25:1 riv is "a dispute" — "If there is a dispute between men and they come into court." A status-noun for a dispute / case at law, here forensic: a riv — a controversy — between two men brings them before the judges (shaphat), who acquit (tsadeq) the innocent (tsaddiq) and condemn (rasha) the guilty; so this term names the legal controversy between two men that the court must resolve. (Legal, not affective.)
+
+**Judg 12:2** — Judg 12:2 And Jephthah said to them, “ I and my people had a great dispute with the Ammonites , and when I called you, you did not save me from their hand .
+
+In Judg 12:2 riv is "a great dispute" — "I and my people had a great dispute with the Ammonites." A status-noun for a dispute / conflict, here a war-grievance: Jephthah tells the Ephraimites that he and his people had a great riv — dispute, conflict — with Ammon, and his call (za.aq) for their help went unanswered; so this term names the grave conflict with Ammon that Jephthah and his people bore largely alone.
+
+**1Sa 24:15** — 1Sa 24:15 May the Lord therefore be judge and give sentence between me and you, and see to it and plead my cause and deliver me from your hand .”
+
+In 1Sa 24:15 riv (H7379) is David's "cause" — "plead my cause and deliver me from your hand." A status-noun for a dispute / case at law, here a righteous claim: having refused to harm Saul, David asks the LORD as judge to take up his riv — his cause, his legal case — and vindicate him; so this term names the just cause David commits to God's judgment rather than avenging himself. (Inner affect not in view — a forensic, not an angry, use.)
+
+**1Sa 25:39** — 1Sa 25:39 When David heard that Nabal was dead , he said , “ Blessed be the Lord who has avenged the insult I received at the hand of Nabal , and has kept back his servant from wrongdoing . The Lord has returned the evil of Nabal on his own head .” Then David sent and spoke to Abigail , to take her as his wife .
+
+In 1Sa 25:39 riv (H7379) is David's "cause" — "the LORD who has pleaded the cause of my reproach at the hand of Nabal." A status-noun for a dispute / case, here a grievance of insult: David blesses God for having taken up his riv — the cause of his reproach (cherpah) — against Nabal, vindicating him and keeping him from avenging himself; so this term names the just cause of insult David entrusted to God rather than redressing himself.
+
+**2Sa 15:2** — 2Sa 15:2 And Absalom used to rise early and stand beside the way of the gate . And when any man had a dispute to come before the king for judgment , Absalom would call to him and say , “ From what city are you ?” And when he said , “ Your servant is of such and such a tribe in Israel ,”
+
+In 2Sa 15:2 riv is "a dispute" — "when any man had a dispute to come before the king for judgment." A status-noun for a dispute / cause at law, here forensic: whenever a man brought a riv — a suit, a legal grievance — for the king's judgment, Absalom would call him aside; so this term names the legal grievance brought for royal judgment, which Absalom diverts to himself to steal the people's hearts. (Legal, not affective.)
+
+**2Sa 15:4** — 2Sa 15:4 Then Absalom would say , “ Oh that I were judge in the land ! Then every man with a dispute or cause might come to me, and I would give him justice .”
+
+In 2Sa 15:4 riv is "a dispute" — "every man with a dispute or cause might come to me." A status-noun for a dispute / cause at law, here forensic: Absalom imagines himself judge so that every man with a riv — a suit, a legal cause — would come to him for justice (mishpat) and vindication (tsadeq); so this term names the legal grievance Absalom offers to resolve in each man's favour. (A legal, not an angry, use.)
+
+**2Sa 22:44** — 2Sa 22:44 “You delivered me from strife with my people ; you kept me as the head of the nations ; people whom I had not known served me .
+
+In 2Sa 22:44 riv is "strife" — "You delivered me from strife with my people." A status-noun for strife / contention (here plural, the quarrels and rebellions of David's own people), it names what God overcame: the LORD delivered David from the riv — the strivings, the contentions — of his people and kept him as head of the nations; so this term names the factional strife among his own people that God's deliverance quelled.
+
+**2Ch 19:8** — 2Ch 19:8 Moreover , in Jerusalem Jehoshaphat appointed certain Levites and priests and heads of families of Israel , to give judgment for the Lord and to decide disputed cases . They had their seat at Jerusalem .
+
+In 2Ch 19:8 riv is "disputed cases" — "to give judgment for the LORD and to decide disputed cases." A status-noun for a dispute / case at law, here purely forensic: Jehoshaphat appoints Levites, priests, and family heads to judge for the LORD and to decide riv — disputed cases, legal controversies; so this term names the legal controversies brought for godly judgment under the king's judicial reform. (No inner-affect content — an institutional, legal use.)
+
+**2Ch 19:10** — 2Ch 19:10 whenever a case comes to you from your brothers who live in their cities , concerning bloodshed , law or commandment , statutes or rules , then you shall warn them, that they may not incur guilt before the Lord and wrath may not come upon you and your brothers . Thus you shall do , and you will not incur guilt .
+
+In 2Ch 19:10 riv is the "case" brought for judgment — "whenever a case comes to you from your brothers... concerning bloodshed, law or commandment." A status-noun for a legal dispute/case, here the matter to be judged: any riv — case, controversy — coming from the cities is to be adjudicated by the appointed judges, who must warn the parties lest guilt (a.sham) and wrath (qe.tseph) follow; so this term names the legal cases the judges resolve to keep the people from sin and wrath.
+
+**Job 13:6** — Job 13:6 Hear now my argument and listen to the pleadings of my lips .
+
+In Job 13:6 riv is "the pleadings" — "Hear now my argument and listen to the pleadings of my lips." A status-noun for pleadings / a case at law, here Job's self-defence: Job asks his friends to hear (sha.ma) his argument and attend (qa.shav) to the riv — the pleadings — of his lips; so this term names Job's legal pleadings, the argued case he demands a hearing for.
 
 **Job 29:16** — Job 29:16 I was a father to the needy , and I searched out the cause of him whom I did not know .
 
 Riv here denotes a legal case or dispute — specifically the cause of someone Job did not personally know. It functions as the object of Job's searching action, engaging his faculties of moral-evaluation and agency as he investigates and advocates in cases beyond his personal acquaintance. The term equips Job's self-description as a champion of justice: he did not limit his legal advocacy to those within his relational network but searched out the claims of unknown strangers. The relational implication is that riv here crosses the boundary of personal knowledge, making justice a universal rather than merely tribal commitment.
 
+**Job 31:13** — Job 31:13 “ If I have rejected the cause of my manservant or my maidservant , when they brought a complaint against me ,
+
+In Job 31:13 riv is "a complaint" — "the cause of my manservant or my maidservant, when they brought a complaint against me." A status-noun for a dispute / complaint / cause, here a servant's grievance: Job swears he never rejected his servants' mish.pat (legal right) when they brought a riv — a complaint, a cause — against him; so this term names the servants' grievance against their master, which Job honoured as a real cause rather than despising.
+
+**Job 31:35** — Job 31:35 Oh , that I had one to hear me! ( Here is my signature ! Let the Almighty answer me!) Oh, that I had the indictment written by my adversary !
+
+In Job 31:35 riv is "the indictment" — "Oh, that I had the indictment written by my adversary!" A status-noun for a legal case / indictment, here Job's bold demand: signing his defence (hen, "here is my signature"), Job longs for someone to hear (sha.ma) him and for the written riv — the indictment — of his adversary, that the Almighty might answer; so this term names the formal legal charge Job craves so his cause can be tried before God.
+
+**Psa 18:43** — Psa 18:43 You delivered me from strife with the people ; you made me the head of the nations ; people whom I had not known served me .
+
+In Psa 18:43 riv is "strife" — "You delivered me from strife with the people." A status-noun for strife / contention (here plural, the quarrels and rebellions of David's people), it names what God overcame: the LORD delivered David from the riv — the strivings, contentions — of his people and made him head of the nations, served (a.vad) by peoples he had not known; so this term names the factional strife God's deliverance quelled.
+
+**Psa 31:20** — Psa 31:20 In the cover of your presence you hide them from the plots of men ; you store them in your shelter from the strife of tongues .
+
+In Psa 31:20 riv is "the strife of tongues" — "you store them in your shelter from the strife of tongues." A status-noun for strife / contention, here verbal: in the cover of his presence God hides his own from the plots of men and the riv — the strife — of tongues; so this term names the contentious, slanderous strife of hostile tongues from which God's presence shelters the faithful.
+
+**Psa 35:23** — Psa 35:23 Awake and rouse yourself for my vindication , for my cause , my God and my Lord !
+
+In Psa 35:23 riv is "my cause" — "Awake and rouse yourself for my vindication, for my cause, my God and my Lord!" A status-noun for a cause / case at law, here urgently pressed: David cries for God to wake and contend for his riv — his cause — and his vindication (mishpat); so this term names David's cause pressed before God as his judge and defender against his accusers.
+
+**Psa 43:1** — Psa 43:1 Vindicate me, O God , and defend my cause against an ungodly people , from the deceitful and unjust man deliver me !
+
+In Psa 43:1 riv (H7379) is "my cause" — "defend my cause against an ungodly people." A status-noun for a cause / case at law, here the psalmist's grievance: he asks God to defend (riv H7378) his riv — his cause — against a people that is not godly (chasid) and full of deceit (mirmah) and injustice (avlah); so this term names the psalmist's just cause laid before God.
+
 **Psa 55:9** — Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city .
 
 In Psa 55:9 riv is the "strife" the psalmist sees — "for I see violence and strife in the city." Here riv is destructive civic contention, paired with violence; beset by it, the psalmist cries to the LORD to destroy and divide their tongues, so this riv is the strife pervading the city that drives him to plead for God's confounding intervention.
+
+**Psa 74:22** — Psa 74:22 Arise , O God , defend your cause ; remember how the foolish scoff at you all the day !
+
+In Psa 74:22 riv (H7379) is "your cause" — "Arise, O God, defend your cause." A status-noun for a cause / controversy, here God's own: the psalmist urges God to defend (riv H7378) his riv — his cause — because the foolish scoff (cherpah) at him all day; so this term names God's own cause, bound up with his honour, against those who mock him.
+
+**Psa 119:154** — Psa 119:154 Plead my cause and redeem me; give me life according to your promise !
+
+In Psa 119:154 riv (H7379) is "my cause" — "Plead my cause and redeem me." A status-noun for a cause / case at law, here the psalmist's grievance: he asks God to plead (riv H7378) his riv — his cause — redeem him, and give him life (cha.yah) by his promise; so this term names the psalmist's cause laid before God for advocacy and deliverance.
 
 **Pro 15:18** — Pro 15:18 A hot-tempered man stirs up strife , but he who is slow to anger quiets contention .
 
@@ -1846,21 +2598,109 @@ In Pro 15:18 riv is the "strife" a hot-tempered man stirs up — "A hot-tempered
 
 In Pro 17:1 riv is the "strife" that ruins abundance — "Better is a dry morsel with quiet than a house full of feasting with strife." Here riv is contentious quarrelling, set against quiet; the proverb judges a meagre meal in peace better (tov) than a feast soured by strife, so this riv is the discord that makes plenty worse than poverty — peace outweighs abundance marred by contention.
 
+**Pro 17:14** — Pro 17:14 The beginning of strife is like letting out water , so quit before the quarrel breaks out .
+
+In Pro 17:14 riv is "strife" — "The beginning of strife is like letting out water, so quit before the quarrel breaks out." A status-noun for strife / quarrel, here a proverbial warning: the start of riv — strife — is like a breach that releases water, swelling beyond control, so wisdom abandons it before the quarrel bursts forth; so this term names the strife whose unchecked beginning, like a breached dam, becomes unstoppable.
+
+**Pro 18:6** — Pro 18:6 A fool’s lips walk into a fight , and his mouth invites a beating .
+
+In Pro 18:6 riv is "a fight / strife" — "A fool's lips walk into a fight, and his mouth invites a beating." A status-noun for strife / quarrel, here self-incurred: the fool's lips bring him into riv — strife, a fight — and his mouth calls for (qa.ra) a beating; so this term names the strife the fool's careless speech brings upon himself.
+
+**Pro 18:17** — Pro 18:17 The one who states his case first seems right , until the other comes and examines him .
+
+In Pro 18:17 riv is "his case" — "The one who states his case first seems right." A status-noun for a case / cause at law, here proverbial: the man who first presents his riv — his case — appears in the right (tsaddiq), until his neighbour (rea) comes and examines him; so this term names the legal case whose first, one-sided telling seems convincing until cross-examined.
+
+**Pro 20:3** — Pro 20:3 It is an honor for a man to keep aloof from strife , but every fool will be quarreling .
+
+In Pro 20:3 riv is "strife" — "It is an honor for a man to keep aloof from strife, but every fool will be quarreling." A status-noun for strife / quarrel, here the thing wisdom shuns: to keep clear of riv — strife — is honour (kavod) to a man, while every fool (evil) plunges into quarreling; so this term names the strife whose avoidance honours a man and whose pursuit marks the fool.
+
+**Pro 22:23** — Pro 22:23 for the Lord will plead their cause and rob of life those who rob them.
+
+In Pro 22:23 riv (H7379) is "their cause" — "the LORD will plead their cause." A status-noun for a cause / case at law, here the poor's grievance: warning against robbing the poor, the proverb declares the LORD will plead (riv H7378) their riv — their cause — and rob the robbers of life (nephesh); so this term names the poor's cause that God takes up as his own and vindicates.
+
+**Pro 23:11** — Pro 23:11 for their Redeemer is strong ; he will plead their cause against you .
+
+In Pro 23:11 riv (H7379) is "their cause" — "their Redeemer is strong; he will plead their cause against you." A status-noun for a cause / controversy, here the fatherless one's claim: their strong Redeemer will plead (riv H7378) their riv — their cause — against the one who removes their landmark; so this term names the defenceless one's cause that the strong Redeemer takes up and presses.
+
+**Pro 25:9** — Pro 25:9 Argue your case with your neighbor himself, and do not reveal another’s secret ,
+
+In Pro 25:9 riv is "your case" — "Argue your case with your neighbor himself." A status-noun for a case / dispute, here counselled toward honour: settle your riv — your dispute — directly with your neighbour (rea), without revealing another's secret (sod); so this term names the case to be argued face to face rather than by betraying confidences.
+
+**Pro 26:17** — Pro 26:17 Whoever meddles in a quarrel not his own is like one who takes a passing dog by the ears .
+
+In Pro 26:17 riv is "a quarrel" — "Whoever meddles in a quarrel not his own is like one who takes a passing dog by the ears." A status-noun for a quarrel / dispute, here other people's: to meddle in a riv — a quarrel — that is not one's own is as foolish and dangerous as grabbing a stray dog by the ears (ozen); so this term names the quarrel of others that a meddler grasps to his own hurt.
+
+**Pro 26:21** — Pro 26:21 As charcoal to hot embers and wood to fire , so is a quarrelsome man for kindling strife .
+
+In Pro 26:21 riv is "strife" — "As charcoal to hot embers and wood to fire, so is a quarrelsome man for kindling strife." A status-noun for strife / quarrel, here actively fed: just as fuel feeds fire, a contentious man kindles riv — strife; so this term names the strife a quarrelsome person ignites and sustains, the conflict that flares wherever such a person is.
+
+**Pro 30:33** — Pro 30:33 For pressing milk produces curds , pressing the nose produces blood , and pressing anger produces strife .
+
+In Pro 30:33 riv is "strife" — "pressing anger produces strife." A status-noun for strife / quarrel, here a necessary outcome: as pressing milk yields curds and pressing the nose yields blood, so pressing/forcing anger yields riv — strife; so this term names the conflict that provoked anger necessarily brings forth, the proverb's warning against stirring wrath.
+
+**Isa 1:23** — Isa 1:23 Your princes are rebels and companions of thieves . Everyone loves a bribe and runs after gifts . They do not bring justice to the fatherless , and the widow’s cause does not come to them .
+
+In Isa 1:23 riv is "the widow's cause" — "the widow's cause does not come to them." A status-noun for a cause / case at law, here the plea of the defenceless: Jerusalem's princes, rebels and bribe-lovers, bring no justice (shaphat) to the fatherless, and the widow's riv — her cause — never reaches them; so this term names the widow's just cause that corrupt rulers refuse to hear.
+
+**Isa 34:8** — Isa 34:8 For the Lord has a day of vengeance , a year of recompense for the cause of Zion .
+
+In Isa 34:8 riv is "the cause of Zion" — "the LORD has a day of vengeance, a year of recompense for the cause of Zion." A status-noun for a cause / controversy, here taken up by God for his people: the LORD's day of vengeance answers the riv — the cause — of Zion against her enemies; so this term names Zion's cause that God himself takes up and avenges.
+
 **Isa 41:11** — Isa 41:11 Behold , all who are incensed against you shall be put to shame and confounded ; those who strive against you shall be as nothing and shall perish .
 
 In Isa 41:11 riv names "those who strive against you" — "those who strive against you shall be as nothing and shall perish." A status of contention/those-who-contend, here it is the adversaries' hostile strife: the men of riv — who contend and quarrel against God's servant Israel — will become nothing and perish, alongside those incensed (cha.rah) against them who are put to shame; so this term names the contending enemies whose strife God will reduce to nothing.
+
+**Isa 41:21** — Isa 41:21 Set forth your case , says the Lord ; bring your proofs , says the King of Jacob .
+
+In Isa 41:21 riv is "your case" — "Set forth your case, says the LORD; bring your proofs, says the King of Jacob." A status-noun for a case / controversy, here a courtroom challenge: the LORD summons the idols to present their riv — their case, their legal argument — and their proofs; so this term names the case the idols are challenged to argue before the LORD, who alone can declare what is to come.
 
 **Isa 58:4** — Isa 58:4 Behold , you fast only to quarrel and to fight and to hit with a wicked fist . Fasting like yours this day will not make your voice to be heard on high .
 
 In Isa 58:4 riv is the "quarrel" that corrupts their fast — "you fast only to quarrel and to fight and to hit with a wicked fist." A status of contentious strife, it exposes the hypocrisy of their fasting: instead of humbling the soul, they fast amid quarreling (riv), contention (mats.tsah), and violent blows; the LORD declares such fasting will not make their voice heard on high, so this riv is the strife that voids their religion.
 
+**Jer 11:20** — Jer 11:20 But, O Lord of hosts , who judges righteously , who tests the heart and the mind , let me see your vengeance upon them, for to you have I committed my cause .
+
+In Jer 11:20 riv is "my cause" — "for to you have I committed my cause." A status-noun for a cause / case at law, here entrusted to God: against those plotting his death, Jeremiah commits his riv — his cause — to the LORD of hosts who judges (shaphat) righteously (tsedeq) and tests the heart (lev); so this term names Jeremiah's just cause laid before God rather than avenged by himself.
+
+**Jer 15:10** — Jer 15:10 Woe is me, my mother , that you bore me, a man of strife and contention to the whole land ! I have not lent , nor have I borrowed , yet all of them curse me .
+
+In Jer 15:10 riv is "strife" — "Woe is me... a man of strife and contention to the whole land!" A status-noun for strife / contention, here embodied in the prophet himself: though he has neither lent nor borrowed, Jeremiah is made a man of riv — strife, contention — to the whole land, and all curse (qalal) him; so this term names the strife his faithful word provokes, making him an object of universal enmity and grief.
+
+**Jer 20:12** — Jer 20:12 O Lord of hosts , who tests the righteous , who sees the heart and the mind , let me see your vengeance upon them, for to you have I committed my cause .
+
+In Jer 20:12 riv is "my cause" — "for to you have I committed my cause." A status-noun for a cause / case at law, here entrusted to God: against his persecutors Jeremiah commits his riv — his cause — to the LORD of hosts who tests the righteous (tsaddiq) and sees the heart (lev); so this term names Jeremiah's just cause laid before God to be vindicated, not self-avenged.
+
+**Jer 25:31** — Jer 25:31 The clamor will resound to the ends of the earth , for the Lord has an indictment against the nations ; he is entering into judgment with all flesh , and the wicked he will put to the sword , declares the Lord .’
+
+In Jer 25:31 riv is the LORD's "indictment" — "the LORD has an indictment against the nations; he is entering into judgment with all flesh." A status-noun for a controversy / case at law, here a universal divine lawsuit: the LORD has a riv — an indictment, a controversy — against the nations, enters judgment with all flesh, and gives the wicked (rasha) to the sword; so this term names God's universal legal controversy against the nations, the ground of worldwide judgment.
+
 **Jer 50:34** — Jer 50:34 Their Redeemer is strong ; the Lord of hosts is his name . He will surely plead their cause , that he may give rest to the earth , but unrest to the inhabitants of Babylon .
 
 In Jer 50:34 *riv* (noun) names the legal case or controversy that the LORD, as strong Redeemer, undertakes on Israel's behalf. It is the formal object of his contending action, morally evaluating Israel's oppression as a matter requiring divine adjudication. The relational implication is that a just cause exists between God-as-advocate and Babylon-as-oppressor, and prosecuting it produces tangible outcomes of rest and unrest. No inner constitutional location is specified; the noun describes the structured dispute itself, fully attributed to God's activity.
 
+**Jer 51:36** — Jer 51:36 Therefore thus says the Lord : “ Behold , I will plead your cause and take vengeance for you. I will dry up her sea and make her fountain dry ,
+
+In Jer 51:36 riv (H7379) is "your cause" — "I will plead your cause and take vengeance for you." A status-noun for a cause / controversy, here Israel's grievance against Babylon: the LORD undertakes to plead (riv H7378) the riv — the cause — of his people and avenge them; so this term names Israel's cause that God himself takes up against her oppressor.
+
+**Lam 3:36** — Lam 3:36 to subvert a man in his lawsuit , the Lord does not approve .
+
+In Lam 3:36 riv is "his lawsuit" — "to subvert a man in his lawsuit, the LORD does not approve." A status-noun for a lawsuit / cause at law, here the object of injustice: to subvert a man (adam) in his riv — his lawsuit — is something the LORD does not approve; so this term names the just lawsuit whose perversion God refuses to sanction, part of the poem's confidence in divine justice.
+
+**Lam 3:58** — Lam 3:58 “You have taken up my cause , O Lord ; you have redeemed my life .
+
+In Lam 3:58 riv (H7379) is "my cause" — "You have taken up my cause, O LORD." A status-noun for a cause / controversy (here plural, "the causes of my soul"), it is the grievance God answered: the LORD pleaded (riv H7378) the riv — the causes — of the speaker's soul (nephesh) and redeemed his life (chayyim); so this term names the soul's cause that God himself took up and vindicated.
+
+**Eze 44:24** — Eze 44:24 In a dispute , they shall act as judges , and they shall judge it according to my judgments . They shall keep my laws and my statutes in all my appointed feasts , and they shall keep my Sabbaths holy .
+
+In Eze 44:24 riv is "a dispute" — "In a dispute, they shall act as judges, and they shall judge it according to my judgments." A status-noun for a dispute / case at law, here forensic: in a riv — a controversy — the priests are to act as judges and decide by the LORD's own judgments; so this term names the legal controversy committed to the priests for godly judgment. (Legal, not affective.)
+
 **Hos 4:1** — Hos 4:1 Hear the word of the Lord , O children of Israel , for the Lord has a controversy with the inhabitants of the land . There is no faithfulness or steadfast love , and no knowledge of God in the land ;
 
 In Hos 4:1, riv designates a formal controversy or lawsuit that the Lord has against the inhabitants of the land. It is directly attributed to God ("the Lord has a controversy"), making the divine the originating party of this legal-relational dispute. The direction is explicitly divine->human, as God brings his case against Israel. The moral-evaluative and relational faculties are engaged, since the grounds of the dispute are Israel's failures in faithfulness, covenant love, and knowledge of God. The term sets the juridical frame for the entire prophetic indictment that follows.
+
+**Hos 12:2** — Hos 12:2 The Lord has an indictment against Judah and will punish Jacob according to his ways ; he will repay him according to his deeds .
+
+In Hos 12:2 riv is the LORD's "indictment" — "The LORD has an indictment against Judah and will punish Jacob according to his ways." A status-noun for a controversy / case at law, here a covenant lawsuit of God: the LORD has a riv — a legal indictment, a controversy — against Judah, and will punish (paqad) and repay Jacob according to his deeds; so this term names God's covenant controversy against his people, the ground of their judgment.
 
 **Mic 6:2** — Mic 6:2 Hear , you mountains , the indictment of the Lord , and you enduring foundations of the earth , for the Lord has an indictment against his people , and he will contend with Israel .
 
@@ -1870,6 +2710,19 @@ In Mic 6:2 riv is "the indictment of the LORD" — "the LORD has an indictment a
 
 In Mic 7:9 riv is "my cause" — the legal case God pleads: "until he pleads my cause." Here riv is the litigation/dispute sense (a case at law), not hostile strife; though Micah sinned and bears the LORD's indignation (za.aph), he trusts God to take up his riv, execute judgment (mishpat) for him, and bring him to vindication (tsedaqah), so this riv is the cause the LORD advocates rather than an outburst of anger.
 
+**Hab 1:3** — Hab 1:3 Why do you make me see iniquity , and why do you idly look at wrong ? Destruction and violence are before me; strife and contention arise .
+
+In Hab 1:3 riv is "strife" — "Destruction and violence are before me; strife and contention arise." A status-noun for strife / quarrel, here social collapse: amid the iniquity and wrong (amal) Habakkuk is made to see, riv — strife — and contention rise up everywhere; so this term names the pervasive strife of a society in collapse, part of the disorder grieving the prophet.
+
+
+---
+
+## <a id="thumomacheō"></a>thumomacheō (G2371) — 1 verses
+
+**Act 12:20** — Act 12:20 Now Herod was angry with the people of Tyre and Sidon , and they came to him with one accord , and having persuaded Blastus , the king’s chamberlain , they asked for peace , because their country depended on the king’s country for food .
+
+In Act 12:20 thumomacheō is Herod's being "fiercely angry" — "Now Herod was angry with the people of Tyre and Sidon." An action/status of being fiercely-hostile/enraged (the rare term, here only in the NT), it is the king's bellicose fury: Herod thumomacheō — was enraged, warmly hostile — against Tyre and Sidon, who therefore sought peace (eirēnē) through his chamberlain; so this term names the royal fury that forced the dependent cities to sue for reconciliation.
+
 
 ---
 
@@ -1878,6 +2731,139 @@ In Mic 7:9 riv is "my cause" — the legal case God pleads: "until he pleads my 
 **Mat 2:16** — Mat 2:16 Then Herod , when he saw that he had been tricked by the wise men , became furious , and he sent and killed all the male children in Bethlehem and in all that region who were two years old or under , according to the time that he had ascertained from the wise men .
 
 In Mat 2:16 thumoō (aorist passive) describes Herod inflamed with fury on realizing the magi outwitted him — his rage kindled from outside and seizing him as an overwhelming affective state. Engaging affect and agency, it does not stay internal but discharges immediately into murderous action: the order to kill all Bethlehem's male children. Thumos here is hot, swelling anger converting frustrated control into lethal violence against the innocent — the wrath of a threatened tyrant.
+
+
+---
+
+## <a id="tsur"></a>tsur (H6696B) — 32 verses
+
+**Deu 14:25** — Deu 14:25 then you shall turn it into money and bind up the money in your hand and go to the place that the Lord your God chooses
+
+In Deu 14:25 tsur is "bind up" — "you shall turn it into money and bind up the money in your hand." This is the HOMONYM of tsur meaning to bind up / tie, NOT the M02 sense "to show hostility / besiege": the Israelite tsur — binds up, ties — his tithe-money in his hand to carry to the place (maqom) the LORD chooses (bachar). FLAGGED as an OT-DBR-009-type artifact: the hostility sense does not apply; the genuine sense is the physical binding of money, with no inner-being / anger content, to be set aside from M02.
+
+**Deu 20:12** — Deu 20:12 But if it makes no peace with you, but makes war against you, then you shall besiege it .
+
+In Deu 20:12 tsur is "besiege" — "if it makes no peace with you, but makes war against you, then you shall besiege it." An action of showing hostility / laying siege (Qal), here regulated warfare: if a city rejects peace and wages war, Israel is to tsur — besiege, press hostilely against — it; so this term names the hostile siege warranted against a city that chooses war over the offered peace. (Hostility in the act; no inner-affect stated.)
+
+**Deu 20:19** — Deu 20:19 “When you besiege a city for a long time , making war against it in order to take it, you shall not destroy its trees by wielding an axe against them. You may eat from them, but you shall not cut them down . Are the trees in the field human , that they should be besieged by you ?
+
+In Deu 20:19 tsur is "besiege" — "When you besiege a city for a long time, making war against it... you shall not destroy its trees." An action of showing hostility / laying siege (Qal), here regulated: during a prolonged siege, where Israel tsur — besieges, presses hostilely against — a city, the fruit trees must be spared from destruction (sha.chat); so this term names the hostile siege whose conduct is limited by mercy toward the land. (Hostility in the act; no inner-affect stated.)
+
+**Judg 9:31** — Judg 9:31 And he sent messengers to Abimelech secretly , saying , “Behold, Gaal the son of Ebed and his relatives have come to Shechem , and they are stirring up the city against you .
+
+In Judg 9:31 tsur is "stirring up / turning against" — "they are stirring up the city against you." An action of showing hostility (Qal participle), here civic revolt: Zebul warns Abimelech that Gaal and his relatives tsur — turn the city hostile, set Shechem against — him; so this term names the hostile turning of the city against Abimelech that Gaal foments. (Hostility in the act; no inner-affect stated.)
+
+**1Sa 23:8** — 1Sa 23:8 And Saul summoned all the people to war , to go down to Keilah , to besiege David and his men .
+
+In 1Sa 23:8 tsur is "to besiege" — "to go down to Keilah, to besiege David and his men." An action of showing hostility / laying siege (Qal infinitive), here Saul's murderous intent: having summoned (sha.ma) the army, Saul means to tsur — besiege, hem in — David and his men in Keilah; so this term names Saul's hostile design to trap David by siege. (Hostility in the act; no inner-affect stated.)
+
+**2Sa 11:1** — 2Sa 11:1 , In the spring of the year , the time when kings go out to battle, David sent Joab , and his servants with him, and all Israel . And they ravaged the Ammonites and besieged Rabbah . But David remained at Jerusalem .
+
+In 2Sa 11:1 tsur is "besieged" — "they ravaged the Ammonites and besieged Rabbah. But David remained at Jerusalem." An action of showing hostility / laying siege (Qal), here the campaign David absented himself from: Joab and Israel tsur — besieged, pressed hostilely against — Rabbah while David stayed home; so this term names the hostile siege of Rabbah, the backdrop to David's sin. (Hostility in the act; no inner-affect stated.)
+
+**2Sa 20:15** — 2Sa 20:15 And all the men who were with Joab came and besieged him in Abel of Beth-maacah . They cast up a mound against the city , and it stood against the rampart , and they were battering the wall to throw it down .
+
+In 2Sa 20:15 tsur is "besieged" — "all the men who were with Joab came and besieged him in Abel of Beth-maacah." An action of showing hostility / laying siege (Qal), here pursuit of a rebel: Joab's men tsur — besieged, pressed hostilely against — Abel where Sheba had fled, casting up a mound and battering (sha.chat) the wall; so this term names the hostile siege Joab lays against the city sheltering the rebel. (Hostility in the act; no inner-affect stated.)
+
+**1Ki 15:27** — 1Ki 15:27 Baasha the son of Ahijah , of the house of Issachar , conspired against him. And Baasha struck him down at Gibbethon , which belonged to the Philistines , for Nadab and all Israel were laying siege to Gibbethon .
+
+In 1Ki 15:27 tsur is "laying siege" — "Nadab and all Israel were laying siege to Gibbethon." An action of besieging / showing hostility (Qal participle), here the wartime setting of a coup: as Israel tsur — besieged, pressed against — Philistine Gibbethon, Baasha conspired and struck down Nadab there; so this term names the hostile siege of Gibbethon during which the regicide occurred. (Hostility in the act of war; no inner-affect stated.)
+
+**1Ki 16:17** — 1Ki 16:17 So Omri went up from Gibbethon , and all Israel with him, and they besieged Tirzah .
+
+In 1Ki 16:17 tsur is "besieged" — "Omri went up from Gibbethon, and all Israel with him, and they besieged Tirzah." An action of besieging / showing hostility (Qal), here in a dynastic war: Omri and all Israel tsur — besieged, pressed hostilely against — Tirzah, where Zimri had seized power; so this term names the hostile siege Omri lays against Tirzah in the struggle for the throne. (Hostility in the act of war; no inner-affect stated.)
+
+**1Ki 20:1** — 1Ki 20:1 Ben-hadad the king of Syria gathered all his army together. Thirty-two kings were with him, and horses and chariots . And he went up and closed in on Samaria and fought against it .
+
+In 1Ki 20:1 tsur is "closed in on / besieged" — "he went up and closed in on Samaria and fought against it." An action of besieging / showing hostility (Qal), here a great-coalition assault: Ben-hadad of Syria, with thirty-two kings, went up and tsur — closed in on, besieged — Samaria and fought against it; so this term names the hostile siege Ben-hadad presses against Samaria. (Hostility in the act of war; no inner-affect stated.)
+
+**2Ki 5:23** — 2Ki 5:23 And Naaman said , “Be pleased to accept two talents .” And he urged him and tied up two talents of silver in two bags , with two changes of clothing , and laid them on two of his servants . And they carried them before Gehazi.
+
+In 2Ki 5:23 tsur is "tied up / bagged" — "he... tied up two talents of silver in two bags." This is the HOMONYM of tsur meaning to bind up / tie in a bag, NOT the M02 sense "to show hostility / besiege": Naaman tsur — bound up, bagged — two talents of silver, with two changes (chalifah) of clothing. FLAGGED as an OT-DBR-009-type artifact: the hostility sense does not apply; the genuine sense is the physical binding of silver in bags, with no inner-being / anger content, to be set aside from M02.
+
+**2Ki 6:24** — 2Ki 6:24 Afterward Ben-hadad king of Syria mustered his entire army and went up and besieged Samaria .
+
+In 2Ki 6:24 tsur is "besieged" — "Ben-hadad king of Syria mustered his entire army and went up and besieged Samaria." An action of showing hostility / laying siege (Qal), here a full Syrian assault: Ben-hadad tsur — besieged, pressed hostilely against — Samaria; so this term names the hostile siege he lays against the city, which brings on the famine of the following verses. (Hostility in the act; no inner-affect stated.)
+
+**2Ki 6:25** — 2Ki 6:25 And there was a great famine in Samaria , as they besieged it, until a donkey’s head was sold for eighty shekels of silver , and the fourth part of a kab of dove’s dung for five shekels of silver .
+
+In 2Ki 6:25 tsur is "besieged" — "there was a great famine in Samaria, as they besieged it." An action of showing hostility / laying siege (Qal participle), here with its starving effect: as the Syrians tsur — besieged, pressed hostilely against — Samaria, the famine grew so severe that a donkey's head sold for eighty shekels; so this term names the hostile siege whose pressure starved the city. (Hostility in the act; no inner-affect stated.)
+
+**2Ki 12:10** — 2Ki 12:10 And whenever they saw that there was much money in the chest , the king’s secretary and the high priest came up and they bagged and counted the money that was found in the house of the Lord .
+
+In 2Ki 12:10 tsur is "bagged / tied up" — "they bagged and counted the money that was found in the house of the LORD." This is the HOMONYM of tsur meaning to bind up / tie in a bag, NOT the M02 sense "to show hostility / besiege": the king's secretary and high priest tsur — bound up, bagged — the temple money and counted it. FLAGGED as an OT-DBR-009-type artifact: the hostility sense does not apply here; the genuine sense is the administrative binding of money in bags, which has no inner-being / anger content and should be set aside from M02.
+
+**2Ki 16:5** — 2Ki 16:5 Then Rezin king of Syria and Pekah the son of Remaliah , king of Israel , came up to wage war on Jerusalem , and they besieged Ahaz but could not conquer him.
+
+In 2Ki 16:5 tsur is "besieged" — "they besieged Ahaz but could not conquer him." An action of showing hostility / laying siege (Qal), here the Syro-Ephraimite war: Rezin of Syria and Pekah of Israel came up to wage war on Jerusalem and tsur — besieged, pressed hostilely against — Ahaz, yet could not overcome him; so this term names the hostile siege the allied kings lay against Ahaz. (Hostility in the act; no inner-affect stated.)
+
+**2Ki 17:5** — 2Ki 17:5 Then the king of Assyria invaded all the land and came to Samaria , and for three years he besieged it.
+
+In 2Ki 17:5 tsur is "besieged" — "the king of Assyria invaded all the land and came to Samaria, and for three years he besieged it." An action of showing hostility / laying siege (Qal), here the fatal Assyrian assault: the king of Assyria tsur — besieged, pressed hostilely against — Samaria for three years; so this term names the prolonged hostile siege that brought Samaria down. (Hostility in the act; no inner-affect stated.)
+
+**2Ki 18:9** — 2Ki 18:9 In the fourth year of King Hezekiah , which was the seventh year of Hoshea son of Elah , king of Israel , Shalmaneser king of Assyria came up against Samaria and besieged it ,
+
+In 2Ki 18:9 tsur is "besieged" — "Shalmaneser king of Assyria came up against Samaria and besieged it." An action of showing hostility / laying siege (Qal), here dating the Assyrian assault to Hezekiah's reign: Shalmaneser came up against Samaria and tsur — besieged, pressed hostilely against — it; so this term names the hostile siege Shalmaneser lays against Samaria, the prelude to its capture. (Hostility in the act; no inner-affect stated.)
+
+**2Ki 24:11** — 2Ki 24:11 And Nebuchadnezzar king of Babylon came to the city while his servants were besieging it ,
+
+In 2Ki 24:11 tsur is "besieging" — "Nebuchadnezzar... came to the city while his servants were besieging it." An action of showing hostility / laying siege (Qal participle), here the first Babylonian assault on Jerusalem: as the king's servants tsur — besieged, pressed hostilely against — the city, Nebuchadnezzar himself arrived; so this term names the hostile Babylonian siege closing on Jerusalem. (Hostility in the act; no inner-affect stated.)
+
+**1Ch 20:1** — 1Ch 20:1 In the spring of the year , the time when kings go out to battle , Joab led out the army and ravaged the country of the Ammonites and came and besieged Rabbah . But David remained at Jerusalem . And Joab struck down Rabbah and overthrew it .
+
+In 1Ch 20:1 tsur is "besieged" — "came and besieged Rabbah." An action of showing hostility / laying siege (Qal), here the aggression of war: having ravaged (sha.chat) the land, Joab tsur — besieged, pressed hostilely against — Rabbah and overthrew it; so this term names the hostile siege Joab lays against the Ammonite stronghold. (The hostility is in the act of war; no inner-affect is stated.)
+
+**2Ch 6:28** — 2Ch 6:28 “ If there is famine in the land , if there is pestilence or blight or mildew or locust or caterpillar , if their enemies besiege them in the land at their gates , whatever plague , whatever sickness there is,
+
+In 2Ch 6:28 tsur is "besiege" — "if their enemies besiege them in the land at their gates." An action of showing hostility / laying siege (Hiphil), here one of the calamities of Solomon's prayer: when enemies tsur — besiege, press hostilely against — Israel in the land, amid plague (machalah) and sickness, the people are to pray toward the temple; so this term names the hostile siege by enemies that drives Israel to seek God. (Hostility in the act; no inner-affect stated.)
+
+**Psa 139:5** — Psa 139:5 You hem me in, behind and before , and lay your hand upon me.
+
+In Psa 139:5 this tsur (H6696B, the "show hostility" entry) does NOT carry the hostility sense here: "You hem me in, behind and before." The verse's meaning is God's loving, all-encompassing enclosure of the psalmist (the H6696A "confine/enclose" sense, also tagged on this verse), not an adversarial siege. FLAGGED as a wrong-sense / homonym artifact: the M02 hostility reading does not fit Psa 139's celebration of God's intimate omnipresence; the genuine sense is protective enclosure, to be set aside from M02.
+
+**Song 8:9** — Song 8:9 If she is a wall , we will build on her a battlement of silver , but if she is a door , we will enclose her with boards of cedar .
+
+In Song 8:9 tsur is "enclose / wall" — "if she is a door, we will enclose her with boards of cedar." Here the term carries the enclose / board-up sense, NOT the M02 "show hostility" reading: the brothers say that if their little sister is a wall they will adorn her, but if a door they will tsur — enclose, board up, protect — her with cedar planks. FLAGGED as a wrong-sense / homonym artifact: the verse is about protective enclosure (guarding the sister's chastity), with no inner-being / anger content, to be set aside from M02.
+
+**Isa 21:2** — Isa 21:2 A stern vision is told to me; the traitor betrays , and the destroyer destroys . Go up , O Elam ; lay siege , O Media ; all the sighing she has caused I bring to an end .
+
+In Isa 21:2 tsur is "lay siege" — "Go up, O Elam; lay siege, O Media." An action of showing hostility / laying siege (Qal imperative), here a summons in the vision: Media is commanded to tsur — lay siege, press hostilely against — Babylon, to end the sighing (anachah) she has caused; so this term names the hostile siege Media is called to lay against Babylon. (Hostility in the act; no inner-affect stated.)
+
+**Isa 29:3** — Isa 29:3 And I will encamp against you all around , and will besiege you with towers and I will raise siegeworks against you.
+
+In Isa 29:3 tsur is "besiege" — "I will encamp against you all around, and will besiege you with towers." An action of showing hostility / laying siege (Qal), here remarkably of God against Jerusalem: the LORD declares he will encamp and tsur — besiege, press hostilely against — Ariel with towers and siegeworks; so this term names the hostile siege the LORD himself brings against his own city in judgment. (Hostility in the act; no inner-affect stated.)
+
+**Jer 21:4** — Jer 21:4 ‘ Thus says the Lord , the God of Israel : Behold , I will turn back the weapons of war that are in your hands and with which you are fighting against the king of Babylon and against the Chaldeans who are besieging you outside the walls . And I will bring them together into the midst of this city .
+
+In Jer 21:4 tsur is "besieging" — "the Chaldeans who are besieging you outside the walls." An action of showing hostility / laying siege (Qal participle), here Babylon against Jerusalem: the LORD declares he will turn back Judah's weapons against the Chaldeans who tsur — besiege, press hostilely against — the city, gathering the defenders inside; so this term names the hostile Chaldean siege God will let prevail. (Hostility in the act; no inner-affect stated.)
+
+**Jer 21:9** — Jer 21:9 He who stays in this city shall die by the sword , by famine , and by pestilence , but he who goes out and surrenders to the Chaldeans who are besieging you shall live and shall have his life as a prize of war .
+
+In Jer 21:9 tsur is "besieging" — "he who goes out and surrenders to the Chaldeans who are besieging you shall live." An action of showing hostility / laying siege (Qal participle), here the deadly investment of Jerusalem: those who stay in the city under the Chaldean tsur — siege, hostile pressing — die by sword, famine, and plague, while the one who surrenders to the besiegers shall live (cha.yah) and keep his life (nephesh); so this term names the hostile Chaldean siege whose only escape to life is desertion. (Hostility in the act; no inner-affect stated.)
+
+**Jer 32:2** — Jer 32:2 At that time the army of the king of Babylon was besieging Jerusalem , and Jeremiah the prophet was shut up in the court of the guard that was in the palace of the king of Judah .
+
+In Jer 32:2 tsur is "besieging" — "the army of the king of Babylon was besieging Jerusalem, and Jeremiah the prophet was shut up." An action of showing hostility / laying siege (Qal participle), here the historical setting: as Babylon's army tsur — besieged, pressed hostilely against — Jerusalem, Jeremiah was imprisoned in the court of the guard; so this term names the hostile Babylonian siege that frames Jeremiah's imprisonment. (Hostility in the act; no inner-affect stated.)
+
+**Jer 37:5** — Jer 37:5 The army of Pharaoh had come out of Egypt . And when the Chaldeans who were besieging Jerusalem heard news about them, they withdrew from Jerusalem .
+
+In Jer 37:5 tsur is "besieging" — "the Chaldeans who were besieging Jerusalem heard news about them, they withdrew." An action of showing hostility / laying siege (Qal participle), here briefly interrupted: the Chaldeans who tsur — besieged, pressed hostilely against — Jerusalem withdrew on hearing the report (shema) of Pharaoh's advancing army; so this term names the hostile Chaldean siege temporarily broken off when Egypt marched out. (Hostility in the act; no inner-affect stated.)
+
+**Jer 39:1** — Jer 39:1 In the ninth year of Zedekiah king of Judah , in the tenth month , Nebuchadnezzar king of Babylon and all his army came against Jerusalem and besieged it .
+
+In Jer 39:1 tsur is "besieged" — "Nebuchadnezzar... and all his army came against Jerusalem and besieged it." An action of showing hostility / laying siege (Qal), here the final assault: in Zedekiah's ninth year Babylon's whole army tsur — besieged, pressed hostilely against — Jerusalem; so this term names the hostile Babylonian siege that culminated in the city's fall. (Hostility in the act; no inner-affect stated.)
+
+**Eze 4:3** — Eze 4:3 And you , take an iron griddle , and place it as an iron wall between you and the city ; and set your face toward it, and let it be in a state of siege , and press the siege against it. This is a sign for the house of Israel .
+
+In Eze 4:3 tsur is "press the siege" — "let it be in a state of siege, and press the siege against it." An action of showing hostility / laying siege (Qal), here a prophetic sign-act: Ezekiel sets an iron griddle as a wall and tsur — presses the siege, acts the hostile besieger — against the model city, a sign to the house of Israel of Jerusalem's coming siege; so this term names the hostile siege Ezekiel dramatizes against Jerusalem. (Hostility in the act; no inner-affect stated.)
+
+**Eze 5:3** — Eze 5:3 And you shall take from these a small number and bind them in the skirts of your robe.
+
+In Eze 5:3 tsur is "bind" — "take from these a small number and bind them in the skirts of your robe." This is the HOMONYM of tsur meaning to bind up / tie, NOT the M02 sense "to show hostility / besiege": Ezekiel is to tsur — bind, tie up — a few hairs in the hem of his robe, a sign of a small remnant preserved. FLAGGED as an OT-DBR-009-type artifact: the hostility sense does not apply; the genuine sense is the physical binding of hair in the robe, with no inner-being / anger content, to be set aside from M02.
+
+**Dan 1:1** — Dan 1:1 In the third year of the reign of Jehoiakim king of Judah , Nebuchadnezzar king of Babylon came to Jerusalem and besieged it .
+
+In Dan 1:1 tsur is "besieged" — "Nebuchadnezzar king of Babylon came to Jerusalem and besieged it." An action of showing hostility / laying siege (Qal), here the opening of the exile: Nebuchadnezzar came and tsur — besieged, pressed hostilely against — Jerusalem in Jehoiakim's third year; so this term names the hostile Babylonian siege that begins Daniel's story. (Hostility in the act; no inner-affect stated.)
 
 
 ---
@@ -1931,7 +2917,7 @@ In Mal 1:4 za.am (Qal perfect) is the LORD's permanent indignation against Edom 
 
 ---
 
-## <a id="zaam"></a>za.am (H2195) — 9 verses
+## <a id="zaam"></a>za.am (H2195) — 22 verses
 
 **Psa 38:3** — Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin .
 
@@ -1945,6 +2931,18 @@ In Psa 69:24 za.am is the "indignation" prayed down — "Pour out your indignati
 
 In Psa 78:49 za.am is the "indignation" loosed on Egypt — "He let loose on them his burning anger, wrath, indignation, and distress." A status of fierce indignation, attributed to God, it is one of the stacked wrath-words for the plagues: the LORD let loose his burning anger (cha.ron), wrath, za.am, and distress — a company of destroying (ra) angels — upon Egypt; so this indignation is the divine displeasure unleashed in the judgments on Egypt.
 
+**Psa 102:10** — Psa 102:10 because of your indignation and anger ; for you have taken me up and thrown me down .
+
+In Psa 102:10 za.am is God's "indignation" — "because of your indignation and anger; for you have taken me up and thrown me down." A status of fierce indignation (divine), here felt as personal affliction: the afflicted psalmist attributes his wasting misery to the LORD's za.am — indignation — and anger (qe.tseph), as one lifted up only to be cast down; so this term names the divine displeasure under which the sufferer feels himself crushed.
+
+**Isa 10:5** — Isa 10:5 Woe to Assyria , the rod of my anger ; the staff in their hands is my fury !
+
+In Isa 10:5 za.am is God's "fury" in Assyria's hand — "Woe to Assyria, the rod of my anger; the staff in their hands is my fury!" A status of fierce indignation (divine), here wielded through an instrument: Assyria is the rod of God's anger, and the staff they swing is his za.am — fury — sent against godless Israel; yet (in the surrounding context) the rod that oversteps will itself be judged; so this term names the divine wrath God wields through Assyria, who is but his instrument.
+
+**Isa 10:25** — Isa 10:25 For in a very little while my fury will come to an end , and my anger will be directed to their destruction .
+
+In Isa 10:25 za.am is God's "fury" soon ending — "For in a very little while my fury will come to an end, and my anger will be directed to their destruction." A status of fierce indignation (divine), here time-bounded: the LORD's za.am — fury — against his people will shortly be finished, and his anger will then turn to the destruction of Assyria (the rod he had used); so this term names the divine fury whose limited duration against Israel gives way to judgment on their oppressor.
+
 **Isa 13:5** — Isa 13:5 They come from a distant land , from the end of the heavens , the Lord and the weapons of his indignation , to destroy the whole land .
 
 In Isa 13:5 za.am is God's "indignation" whose "weapons" — the gathered armies from a distant land — come "to destroy the whole land." Attributed to God (divine->human) and engaging affect and moral-evaluation, the divine anger is executed instrumentally: the invading host is the armament of the LORD's indignation in the Day-of-the-LORD oracle against Babylon, so human warfare becomes the means of divine wrath (cha.val, destruction).
@@ -1953,17 +2951,57 @@ In Isa 13:5 za.am is God's "indignation" whose "weapons" — the gathered armies
 
 In Isa 26:20 za.am is the divine "fury/indignation" God's people are told to hide from — "hide yourselves for a little while until the fury has passed by." Attributed to God (divine->human) and engaging affect and moral-evaluation, the indignation is a passing storm of judgment over the earth; the LORD shelters his own in their chambers while his wrath runs its course against the world, so divine anger here both judges and, by its temporariness, spares.
 
+**Isa 30:27** — Isa 30:27 Behold , the name of the Lord comes from afar , burning with his anger , and in thick rising smoke ; his lips are full of fury , and his tongue is like a devouring fire ;
+
+In Isa 30:27 za.am is the "fury" of God's lips — "the name of the LORD comes from afar, burning with his anger... his lips are full of fury, and his tongue is like a devouring fire." A status of fierce indignation (divine), here the terror of the theophany: the Name of the LORD advances burning with anger, his lips full of za.am — fury — his tongue a consuming fire against Assyria; so this term names the divine fury that charges God's approaching, fiery self-manifestation in judgment.
+
+**Jer 10:10** — Jer 10:10 But the Lord is the true God ; he is the living God and the everlasting King . At his wrath the earth quakes , and the nations cannot endure his indignation .
+
+In Jer 10:10 za.am is God's "indignation" the nations cannot bear — "the nations cannot endure his indignation." A status of fierce indignation (divine), it conveys the terror of God's wrath: the LORD, the living (chay) and true (e.met) God, makes the earth quake at his wrath (qe.tseph), and no nation can endure his za.am — indignation; so this term names the overwhelming divine displeasure before which the nations cannot stand.
+
 **Jer 15:17** — Jer 15:17 I did not sit in the company of revelers , nor did I rejoice ; I sat alone , because your hand was upon me, for you had filled me with indignation .
 
 In Jer 15:17 za.am is the indignation God had filled Jeremiah with — "I sat alone… for you had filled me with indignation." Bestowed by God (divine->human) and engaging affect and moral-evaluation, the prophetic indignation against the people's sin isolates Jeremiah: he could not sit among revelers (sod) or rejoice, because God's hand and his imparted anger set him apart, so divine indignation is borne inwardly as the lonely burden of the prophet.
+
+**Jer 50:25** — Jer 50:25 The Lord has opened his armory and brought out the weapons of his wrath , for the Lord God of hosts has a work to do in the land of the Chaldeans .
+
+In Jer 50:25 za.am is "his wrath" whose weapons God brings out — "The LORD has opened his armory and brought out the weapons of his wrath." A status of fierce indignation (divine), here armed for judgment: the LORD opens his armory and brings forth the weapons of his za.am — wrath — for the work he has to do against Babylon; so this term names the divine wrath whose instruments God deploys to execute judgment on the Chaldeans.
+
+**Lam 2:6** — Lam 2:6 He has laid waste his booth like a garden , laid in ruins his meeting place ; the Lord has made Zion forget festival and Sabbath , and in his fierce indignation has spurned king and priest .
+
+In Lam 2:6 za.am is God's "fierce indignation" — "in his fierce indignation has spurned king and priest." A status of fierce indignation (divine), here against his own sanctuary and leaders: the LORD has laid waste his meeting-place, made Zion forget festival and Sabbath, and in his za.am — fierce indignation — spurned (na.ats) both king and priest; so this term names the divine wrath that, in judgment, casts off even the sacred institutions and offices of his people.
+
+**Eze 21:31** — Eze 21:31 And I will pour out my indignation upon you; I will blow upon you with the fire of my wrath , and I will deliver you into the hands of brutish men , skillful to destroy .
+
+In Eze 21:31 za.am is God's "indignation" poured out — "And I will pour out my indignation upon you; I will blow upon you with the fire of my wrath." A status of fierce indignation (divine), here discharged in judgment: the LORD will pour out his za.am and blow on the condemned with the fire of his wrath, delivering them to brutish destroyers (mash.chit); so this term names the divine indignation poured out as consuming fire in judgment.
+
+**Eze 22:24** — Eze 22:24 “ Son of man , say to her, You are a land that is not cleansed or rained upon in the day of indignation .
+
+In Eze 22:24 za.am is "the day of indignation" — "You are a land that is not cleansed or rained upon in the day of indignation." A status of fierce indignation (divine), here a time of judgment: the land is one not cleansed nor rained on in the day of za.am — the LORD's indignation — left dry and defiled under wrath; so this term names the day of divine indignation in which the land lies unblessed and unpurged.
+
+**Eze 22:31** — Eze 22:31 Therefore I have poured out my indignation upon them. I have consumed them with the fire of my wrath . I have returned their way upon their heads , declares the Lord God .”
+
+In Eze 22:31 za.am is God's "indignation" poured out — "Therefore I have poured out my indignation upon them. I have consumed them with the fire of my wrath." A status of fierce indignation (divine), here fully discharged: finding no one to stand in the breach, the LORD poured out his za.am and consumed the people with the fire of his wrath, requiting their ways on their heads; so this term names the divine indignation poured out in consuming judgment on the unsparable nation.
 
 **Dan 8:19** — Dan 8:19 He said , “ Behold , I will make known to you what shall be at the latter end of the indignation , for it refers to the appointed time of the end .
 
 In Dan 8:19 za.am is the divine "indignation" whose "latter end" the angel will make known — "what shall be at the latter end of the indignation, for it refers to the appointed time of the end." Attributed to God (divine->human) and engaging affect and moral-evaluation, the indignation is the determined period of divine wrath in history; the vision discloses that this anger is bounded and purposeful, moving toward its appointed terminus in God's eschatological timetable.
 
+**Dan 11:36** — Dan 11:36 “And the king shall do as he wills . He shall exalt himself and magnify himself above every god , and shall speak astonishing things against the God of gods . He shall prosper till the indignation is accomplished ; for what is decreed shall be done .
+
+In Dan 11:36 za.am is the "indignation" to be accomplished — "He shall prosper till the indignation is accomplished; for what is decreed shall be done." A status of indignation (here the determined divine wrath), it bounds the blasphemous king's success: the self-exalting king will prosper only until the za.am — the appointed indignation — is completed, for what God has decreed shall be done; so this term names the determined divine wrath whose accomplishment marks the limit of the tyrant's prospering.
+
+**Hos 7:16** — Hos 7:16 They return , but not upward ; they are like a treacherous bow ; their princes shall fall by the sword because of the insolence of their tongue . This shall be their derision in the land of Egypt .
+
+In Hos 7:16 za.am is "the insolence of their tongue" — "their princes shall fall by the sword because of the insolence of their tongue." Here za.am denotes human insolence/raging speech, not divine wrath: Israel's princes fall by the sword because of the za.am — the defiant, insolent rage — of their tongue, their proud and treacherous (re.miy.yah) words; so this term names the arrogant insolence of speech that brought the princes' downfall, mocked even in Egypt.
+
 **Nah 1:6** — Nah 1:6 Who can stand before his indignation ? Who can endure the heat of his anger ? His wrath is poured out like fire , and the rocks are broken into pieces by him .
 
 In Nah 1:6 za.am is God's "indignation" — "Who can stand before his indignation?" A status of fierce indignation, attributed to God, it opens the verse's questions of irresistibility: none can stand before the LORD's za.am or endure the heat of his anger (cha.ron); his wrath (che.mah) is poured out like fire and rocks shatter before him; so this indignation is the overwhelming divine displeasure no creature can withstand.
+
+**Hab 3:12** — Hab 3:12 You marched through the earth in fury ; you threshed the nations in anger .
+
+In Hab 3:12 za.am is God's "anger" in which he threshes — "You marched through the earth in fury; you threshed the nations in anger." A status of fierce indignation (divine), here the Warrior's wrath: the LORD marches through the earth in fury and threshes the nations in his za.am — anger, treading them like grain in judgment; so this term names the divine indignation in which God tramples the nations to deliver his people.
 
 **Zep 3:8** — Zep 3:8 “ Therefore wait for me,” declares the Lord , “ for the day when I rise up to seize the prey . For my decision is to gather nations , to assemble kingdoms , to pour out upon them my indignation , all my burning anger ; for in the fire of my jealousy all the earth shall be consumed .
 
@@ -2022,8 +3060,42 @@ In Mic 7:9 za.aph is "the indignation of the LORD" Micah bears — "I will bear 
 
 ---
 
-## <a id="zalaphah"></a>zal.a.phah (H2152) — 1 verses
+## <a id="zaeph"></a>za.eph (H2198) — 2 verses
+
+**1Ki 20:43** — 1Ki 20:43 And the king of Israel went to his house vexed and sullen and came to Samaria .
+
+In 1Ki 20:43 za.eph is "vexed and sullen" — "the king of Israel went to his house vexed and sullen." A status of being angry / out of humour / sullenly displeased, here Ahab's reaction to rebuke: condemned by the prophet for letting Ben-hadad go, the king went home za.eph — vexed, sullen, resentfully angry; so this term names the brooding, resentful anger of a king stung by a word of judgment.
+
+**1Ki 21:4** — 1Ki 21:4 And Ahab went into his house vexed and sullen because of what Naboth the Jezreelite had said to him, for he had said , “I will not give you the inheritance of my fathers .” And he lay down on his bed and turned away his face and would eat no food .
+
+In 1Ki 21:4 za.eph is "vexed and sullen" — "Ahab went into his house vexed and sullen because of what Naboth... had said." A status of being angry / out of humour / sullenly displeased, here Ahab's petulance: denied Naboth's vineyard, Ahab grew za.eph — vexed, sullen — lay on his bed, turned his face away, and refused food; so this term names the petulant, brooding anger of a king denied what he covets, the prelude to Jezebel's plot.
+
+
+---
+
+## <a id="zalaphah"></a>zal.a.phah (H2152) — 3 verses
+
+**Psa 11:6** — Psa 11:6 Let him rain coals on the wicked ; fire and sulfur and a scorching wind shall be the portion of their cup .
+
+In Psa 11:6 zal.a.phah is "scorching wind / burning heat" — "fire and sulfur and a scorching wind shall be the portion of their cup." A status-noun for burning, raging heat, here an instrument of judgment: God rains coals on the wicked (rasha), and a zal.a.phah — a scorching, burning blast — is the portion of their cup; so this term names the scorching heat of divine wrath that is the wicked's appointed portion.
+
+**Psa 119:53** — Psa 119:53 Hot indignation seizes me because of the wicked , who forsake your law .
+
+In Psa 119:53 zal.a.phah is "hot indignation" — "Hot indignation seizes me because of the wicked, who forsake your law." A status-noun for burning, raging heat, here the psalmist's inner fire: a zal.a.phah — a burning indignation, a hot anger — seizes and grips him because of the wicked who forsake God's law; so this term names the psalmist's righteous indignation kindled by the lawlessness of those who abandon God's word — the genuine inner-anger sense of the burning-heat term.
 
 **Lam 5:10** — Lam 5:10 Our skin is hot as an oven with the burning heat of famine .
 
 In Lam 5:10 zal.a.phah is the "burning heat" of famine — "Our skin is hot as an oven with the burning heat of famine." Here the term denotes literal, physical scorching heat (the fever and parching of starvation), not an inner-being passion of anger; engaging no inner faculty, it describes the body's burning under famine's deprivation, so this zal.a.phah is the physical "burning heat" sense (set-aside candidate for inner-being analysis).
+
+
+---
+
+## <a id="zestos"></a>zestos (G2200) — 2 verses
+
+**Rev 3:15** — Rev 3:15 “‘I know your works : you are neither cold nor hot . Would that you were either cold or hot !
+
+In Rev 3:15 zestos is being "hot" — "you are neither cold nor hot. Would that you were either cold or hot!" A quality of boiling-hot fervour, here metaphorical spiritual zeal: the risen Christ judges Laodicea's works and finds them neither cold nor zestos — fervent, glowing with zeal — and declares he would rather (ofelon, the wish) they were one or the other than lukewarm; so this term names the glowing zeal Christ would rather find than the tepidity he condemns. (Not anger but fervency.)
+
+**Rev 3:16** — Rev 3:16 So , because you are lukewarm , and neither hot nor cold , I will spit you out of my mouth .
+
+In Rev 3:16 zestos is again "hot" — "because you are lukewarm, and neither hot nor cold, I will spit you out of my mouth." A quality of boiling fervour, here the zeal the church lacks: being neither cold nor zestos — fervent — but lukewarm, Laodicea is about to (mellō) be spat from Christ's mouth; so this term names the fervency whose absence makes the church nauseating to him. (Fervency, not anger.)
