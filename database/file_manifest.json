@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T18:17:18Z",
+  "generated_at": "2026-06-10T19:27:53Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 118,
     "historical": 30,
-    "current": 1722,
+    "current": 1723,
     "cross-reference": 3317,
     "archived": 2223,
     "backup": 16
   },
-  "total_files": 7426,
-  "total_active": 5203,
+  "total_files": 7427,
+  "total_active": 5204,
   "total_archived": 2223,
   "files": [
     {
@@ -92323,8 +92323,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3354328,
-      "modified": "2026-06-10T17:36:26Z"
+      "size_bytes": 3355592,
+      "modified": "2026-06-10T18:17:18Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107445,6 +107445,22 @@
       "archived": false,
       "size_bytes": 7995,
       "modified": "2026-06-08T10:35:17Z"
+    },
+    {
+      "path": "research/investigations/wa-verse-extraction-gaps-v1-20260610.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-10",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9693,
+      "modified": "2026-06-10T19:27:34Z"
     },
     {
       "path": "research/investigations/wa-verse-level-extraction-spec-v1-20260609.md",
