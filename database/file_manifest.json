@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T03:01:08Z",
+  "generated_at": "2026-06-11T04:33:34Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 119,
+    "other": 124,
     "historical": 30,
-    "current": 1726,
+    "current": 1733,
     "cross-reference": 3317,
     "archived": 2224,
-    "backup": 16
+    "backup": 17
   },
-  "total_files": 7432,
-  "total_active": 5208,
+  "total_files": 7445,
+  "total_active": 5221,
   "total_archived": 2224,
   "files": [
     {
@@ -60087,6 +60087,22 @@
       "modified": "2026-06-10T16:58:30Z"
     },
     {
+      "path": "Workflow/Sessionlogs/wa-sessionlog-20260611-ve-exploration-and-meaning-diagnosis-v1.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-11",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 8162,
+      "modified": "2026-06-11T04:33:14Z"
+    },
+    {
       "path": "Workflow/Sessionlogs/wa-sessionlog-term-anchor-reset-v1-20260504.md",
       "category": "workflow",
       "type": "other",
@@ -91831,6 +91847,22 @@
       "modified": "2026-03-16T16:39:06Z"
     },
     {
+      "path": "backups/bible_research_pre-dropcode-softdelete_20260611.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 318246912,
+      "modified": "2026-06-11T03:13:35Z"
+    },
+    {
       "path": "backups/bible_research_pre_5field_rollout_20260609.db",
       "category": "backup",
       "type": "other",
@@ -92323,8 +92355,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 318246912,
-      "modified": "2026-06-10T17:34:25Z"
+      "size_bytes": 319033344,
+      "modified": "2026-06-11T03:18:48Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92339,8 +92371,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3356911,
-      "modified": "2026-06-11T02:22:14Z"
+      "size_bytes": 3358195,
+      "modified": "2026-06-11T03:01:08Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93043,24 +93075,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 40293,
-      "modified": "2026-06-10T19:29:20Z"
-    },
-    {
-      "path": "memory/README.md",
-      "category": "other",
-      "type": "other",
-      "currency": "other",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".md",
-      "archived": false,
-      "size_bytes": 427,
-      "modified": "2026-06-06T05:51:43Z"
+      "size_bytes": 41648,
+      "modified": "2026-06-11T04:21:28Z"
     },
     {
       "path": "memory/feedback_ai_package_self_declaration.md",
@@ -93092,7 +93108,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3018,
-      "modified": "2026-06-09T04:31:05Z"
+      "modified": "2026-06-09T04:30:52Z"
     },
     {
       "path": "memory/feedback_analytical_phase_vs_editorial_phase.md",
@@ -93188,7 +93204,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2863,
-      "modified": "2026-06-09T06:28:22Z"
+      "modified": "2026-06-09T06:27:37Z"
     },
     {
       "path": "memory/feedback_cc_only_pipeline_verdict.md",
@@ -93220,7 +93236,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3120,
-      "modified": "2026-06-09T03:36:06Z"
+      "modified": "2026-06-09T03:35:19Z"
     },
     {
       "path": "memory/feedback_chat_vs_api_for_classification.md",
@@ -93252,7 +93268,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2901,
-      "modified": "2026-06-09T03:53:51Z"
+      "modified": "2026-06-09T03:53:23Z"
     },
     {
       "path": "memory/feedback_cluster_file_naming_canonical.md",
@@ -93460,7 +93476,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2868,
-      "modified": "2026-06-09T04:56:19Z"
+      "modified": "2026-06-09T04:55:48Z"
     },
     {
       "path": "memory/feedback_findings_marginal_value.md",
@@ -93588,7 +93604,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2582,
-      "modified": "2026-06-08T09:41:05Z"
+      "modified": "2026-06-08T09:40:37Z"
     },
     {
       "path": "memory/feedback_keyword_discovery_interim_phase.md",
@@ -93620,7 +93636,23 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3093,
-      "modified": "2026-06-08T10:23:48Z"
+      "modified": "2026-06-08T10:23:27Z"
+    },
+    {
+      "path": "memory/feedback_l1_must_be_verse_aware.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2560,
+      "modified": "2026-06-08T05:23:12Z"
     },
     {
       "path": "memory/feedback_l2_mechanical_api_triage.md",
@@ -93636,7 +93668,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2574,
-      "modified": "2026-06-09T03:43:04Z"
+      "modified": "2026-06-09T03:42:21Z"
     },
     {
       "path": "memory/feedback_methodology_cycle_cost.md",
@@ -93687,6 +93719,22 @@
       "modified": "2026-06-03T09:06:24Z"
     },
     {
+      "path": "memory/feedback_no_stats_trends_review_fabricated_data.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2021,
+      "modified": "2026-06-11T03:11:23Z"
+    },
+    {
       "path": "memory/feedback_obslog_discipline_for_cc.md",
       "category": "other",
       "type": "other",
@@ -93716,7 +93764,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3518,
-      "modified": "2026-06-08T14:09:37Z"
+      "modified": "2026-06-08T14:09:02Z"
     },
     {
       "path": "memory/feedback_patch_format.md",
@@ -93895,6 +93943,22 @@
       "modified": "2026-06-03T09:06:24Z"
     },
     {
+      "path": "memory/feedback_qualifier_routes_per_verse_occurrence.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2318,
+      "modified": "2026-06-08T06:35:11Z"
+    },
+    {
       "path": "memory/feedback_re_examination_workflow.md",
       "category": "other",
       "type": "other",
@@ -94004,7 +94068,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2215,
-      "modified": "2026-06-09T04:25:19Z"
+      "modified": "2026-06-09T04:24:38Z"
     },
     {
       "path": "memory/feedback_setaside_verses_inform_word_meaning.md",
@@ -94100,7 +94164,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3435,
-      "modified": "2026-06-10T04:00:16Z"
+      "modified": "2026-06-10T03:58:46Z"
     },
     {
       "path": "memory/feedback_term_corpus_anchors_meaning.md",
@@ -94164,7 +94228,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2000,
-      "modified": "2026-06-09T09:14:26Z"
+      "modified": "2026-06-09T09:13:51Z"
     },
     {
       "path": "memory/feedback_two_governing_principles.md",
@@ -94228,7 +94292,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3383,
-      "modified": "2026-06-09T06:14:39Z"
+      "modified": "2026-06-09T06:13:52Z"
     },
     {
       "path": "memory/feedback_verse_meaning_grounded_not_imported.md",
@@ -94244,7 +94308,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2907,
-      "modified": "2026-06-10T08:23:34Z"
+      "modified": "2026-06-10T08:23:00Z"
     },
     {
       "path": "memory/feedback_version_discipline.md",
@@ -94279,6 +94343,22 @@
       "modified": "2026-06-03T09:06:25Z"
     },
     {
+      "path": "memory/project_a1_resolved_rollup_v3_audit_design.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4784,
+      "modified": "2026-06-07T18:52:37Z"
+    },
+    {
       "path": "memory/project_all_clusters_l1_sweep_first.md",
       "category": "other",
       "type": "other",
@@ -94292,7 +94372,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3151,
-      "modified": "2026-06-08T11:18:42Z"
+      "modified": "2026-06-08T11:18:32Z"
     },
     {
       "path": "memory/project_audit_sequencing_clusters_then_meaning.md",
@@ -94324,7 +94404,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 6023,
-      "modified": "2026-06-10T17:36:25Z"
+      "modified": "2026-06-10T17:36:15Z"
     },
     {
       "path": "memory/project_characteristic_backfill_backlog.md",
@@ -94375,6 +94455,22 @@
       "modified": "2026-06-03T09:06:25Z"
     },
     {
+      "path": "memory/project_column_wise_ve_hypothesis.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2975,
+      "modified": "2026-06-11T04:21:15Z"
+    },
+    {
       "path": "memory/project_constitution_cluster_and_flag_resolution.md",
       "category": "other",
       "type": "other",
@@ -94388,7 +94484,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3135,
-      "modified": "2026-06-10T04:32:56Z"
+      "modified": "2026-06-10T04:32:29Z"
     },
     {
       "path": "memory/project_cross_cluster_three_link_classes.md",
@@ -94404,7 +94500,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3273,
-      "modified": "2026-06-08T13:05:12Z"
+      "modified": "2026-06-08T13:04:43Z"
     },
     {
       "path": "memory/project_current_work.md",
@@ -94484,7 +94580,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3003,
-      "modified": "2026-06-09T05:07:22Z"
+      "modified": "2026-06-09T05:06:50Z"
     },
     {
       "path": "memory/project_l2_verse_read_meaning_live.md",
@@ -94500,7 +94596,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3188,
-      "modified": "2026-06-09T15:49:44Z"
+      "modified": "2026-06-09T15:49:11Z"
     },
     {
       "path": "memory/project_l2_writer_verse_complete.md",
@@ -94516,7 +94612,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2360,
-      "modified": "2026-06-09T05:17:49Z"
+      "modified": "2026-06-09T05:17:16Z"
     },
     {
       "path": "memory/project_m04_paused_at_phase9.md",
@@ -94551,6 +94647,22 @@
       "modified": "2026-06-05T13:05:38Z"
     },
     {
+      "path": "memory/project_meaning_duplicates_then_fabricates.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3316,
+      "modified": "2026-06-11T04:20:48Z"
+    },
+    {
       "path": "memory/project_method_checkpoint_v3_2_evolves_not_replaced.md",
       "category": "other",
       "type": "other",
@@ -94564,7 +94676,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3393,
-      "modified": "2026-06-08T15:12:10Z"
+      "modified": "2026-06-08T15:11:42Z"
     },
     {
       "path": "memory/project_next_action_audit_surface_verses.md",
@@ -94612,7 +94724,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 5610,
-      "modified": "2026-06-08T09:47:27Z"
+      "modified": "2026-06-08T09:47:16Z"
     },
     {
       "path": "memory/project_pointer_lifecycle_model.md",
@@ -94644,7 +94756,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3668,
-      "modified": "2026-06-08T14:43:02Z"
+      "modified": "2026-06-08T14:42:31Z"
     },
     {
       "path": "memory/project_remediation_orchestrator_active.md",
@@ -94692,7 +94804,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 3093,
-      "modified": "2026-06-10T03:40:31Z"
+      "modified": "2026-06-10T03:40:04Z"
     },
     {
       "path": "memory/project_term_anchor_reset.md",
@@ -94772,7 +94884,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2496,
-      "modified": "2026-06-10T19:29:20Z"
+      "modified": "2026-06-10T19:28:29Z"
     },
     {
       "path": "memory/project_verse_layer_rollout_before_distill.md",
@@ -94788,7 +94900,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 2468,
-      "modified": "2026-06-09T17:22:36Z"
+      "modified": "2026-06-09T17:22:10Z"
     },
     {
       "path": "memory/reference_analysis_rules_finding_lifecycle.md",
@@ -95477,6 +95589,54 @@
       "archived": false,
       "size_bytes": 1207097,
       "modified": "2026-06-11T03:00:30Z"
+    },
+    {
+      "path": "outputs/markdown/m-vs-r-divergence-20260611.csv",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".csv",
+      "archived": false,
+      "size_bytes": 297391,
+      "modified": "2026-06-11T03:41:21Z"
+    },
+    {
+      "path": "outputs/markdown/m-vs-r-divergence-20260611.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 412168,
+      "modified": "2026-06-11T03:41:21Z"
+    },
+    {
+      "path": "outputs/markdown/m-vs-r-divergence-interpretation-20260611.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3780,
+      "modified": "2026-06-11T03:47:16Z"
     },
     {
       "path": "outputs/markdown/ve-by-cluster-20260610.md",
@@ -105927,6 +106087,22 @@
       "modified": "2026-06-08T12:59:08Z"
     },
     {
+      "path": "research/investigations/wa-column-wise-ve-hypothesis-v1-20260611.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-11",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9173,
+      "modified": "2026-06-11T04:20:16Z"
+    },
+    {
       "path": "research/investigations/wa-corpus-keyword-map-v1-20260608.csv",
       "category": "investigation",
       "type": "investigation",
@@ -108261,6 +108437,22 @@
       "archived": false,
       "size_bytes": 15910,
       "modified": "2026-05-06T18:59:54Z"
+    },
+    {
+      "path": "scripts/_apply_drop_code_softdelete.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 4840,
+      "modified": "2026-06-11T03:18:37Z"
     },
     {
       "path": "scripts/_apply_finding_citation_extension_v1_20260602.py",
@@ -113973,6 +114165,22 @@
       "archived": false,
       "size_bytes": 7221,
       "modified": "2026-06-11T03:00:22Z"
+    },
+    {
+      "path": "scripts/_explore_m_vs_r_divergence.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 7181,
+      "modified": "2026-06-11T03:41:15Z"
     },
     {
       "path": "scripts/_explore_tier_findings.py",
