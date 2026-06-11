@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T02:22:14Z",
+  "generated_at": "2026-06-11T03:01:08Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 119,
     "historical": 30,
-    "current": 1723,
+    "current": 1726,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 16
   },
-  "total_files": 7429,
-  "total_active": 5205,
+  "total_files": 7432,
+  "total_active": 5208,
   "total_archived": 2224,
   "files": [
     {
@@ -60515,8 +60515,8 @@
       "date": "2026-06-11",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 20946,
-      "modified": "2026-06-11T02:21:55Z"
+      "size_bytes": 58655,
+      "modified": "2026-06-11T02:50:24Z"
     },
     {
       "path": "Workflow/Tiers/wa-tier-questions-extract-v1-20260604.md",
@@ -92339,8 +92339,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3356047,
-      "modified": "2026-06-10T19:27:53Z"
+      "size_bytes": 3356911,
+      "modified": "2026-06-11T02:22:14Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -95445,6 +95445,38 @@
       "archived": false,
       "size_bytes": 51020,
       "modified": "2026-06-02T14:05:33Z"
+    },
+    {
+      "path": "outputs/markdown/drop-code-findings-extract-20260611.csv",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".csv",
+      "archived": false,
+      "size_bytes": 1198502,
+      "modified": "2026-06-11T03:00:31Z"
+    },
+    {
+      "path": "outputs/markdown/drop-code-findings-extract-20260611.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-11",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1207097,
+      "modified": "2026-06-11T03:00:30Z"
     },
     {
       "path": "outputs/markdown/ve-by-cluster-20260610.md",
@@ -113925,6 +113957,22 @@
       "archived": false,
       "size_bytes": 7459,
       "modified": "2026-06-10T17:11:51Z"
+    },
+    {
+      "path": "scripts/_explore_drop_code_findings.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 7221,
+      "modified": "2026-06-11T03:00:22Z"
     },
     {
       "path": "scripts/_explore_tier_findings.py",
