@@ -32,6 +32,7 @@ def main():
     c = conn.cursor()
     ph = ','.join('?' * len(DROP_OBS))
 
+    qn = c.execute(f"SELECT COUNT(*) FROM wa_obs_question_catalogue WHERE obs_id IN ({ph}) AND deleted=0", DROP_OBS).fetchone()[0]
     cf = c.execute(f"SELECT COUNT(*) FROM cluster_finding WHERE obs_id IN ({ph}) AND delete_flagged=0", DROP_OBS).fetchone()[0]
     sb = c.execute(f"""SELECT COUNT(DISTINCT sb.id) FROM wa_finding_catalogue_links l
                        JOIN wa_session_b_findings sb ON sb.id=l.finding_id
@@ -39,6 +40,7 @@ def main():
     lk = c.execute(f"SELECT COUNT(*) FROM wa_finding_catalogue_links WHERE question_id IN ({ph}) AND delete_flagged=0", DROP_OBS).fetchone()[0]
 
     print(f"DROP soft-delete scope (active):")
+    print(f"  wa_obs_question_catalogue   : {qn}  (the 16 §3 DROP questions)")
     print(f"  cluster_finding             : {cf}")
     print(f"  wa_session_b_findings       : {sb}  (underlying Session B)")
     print(f"  wa_finding_catalogue_links  : {lk}  (links)")
@@ -50,6 +52,8 @@ def main():
 
     # ---- LIVE ----
     with conn:
+        conn.execute(f"""UPDATE wa_obs_question_catalogue SET deleted=1, status='dropped', review_note=?
+                         WHERE obs_id IN ({ph}) AND deleted=0""", [REASON] + DROP_OBS)
         conn.execute(f"""UPDATE cluster_finding SET delete_flagged=1, last_updated_date=?,
                          notes = COALESCE(notes||' | ','')||? WHERE obs_id IN ({ph}) AND delete_flagged=0""",
                      [now, REASON] + DROP_OBS)
@@ -69,7 +73,8 @@ def main():
                         JOIN wa_session_b_findings sb ON sb.id=l.finding_id
                         WHERE l.question_id IN ({ph}) AND sb.delete_flag=0""", DROP_OBS).fetchone()[0]
     lk2 = c.execute(f"SELECT COUNT(*) FROM wa_finding_catalogue_links WHERE question_id IN ({ph}) AND delete_flagged=0", DROP_OBS).fetchone()[0]
-    print(f"\n[LIVE] soft-deleted. Remaining active DROP refs -> cluster_finding {cf2}, session_b {sb2}, links {lk2} (expect 0/0/0).")
+    qn2 = c.execute(f"SELECT COUNT(*) FROM wa_obs_question_catalogue WHERE obs_id IN ({ph}) AND deleted=0", DROP_OBS).fetchone()[0]
+    print(f"\n[LIVE] soft-deleted. Remaining active DROP refs -> catalogue_questions {qn2}, cluster_finding {cf2}, session_b {sb2}, links {lk2} (expect 0/0/0/0).")
 
 
 if __name__ == '__main__':
