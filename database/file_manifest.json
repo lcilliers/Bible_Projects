@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T18:10:31Z",
+  "generated_at": "2026-06-14T18:59:37Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 132,
+    "other": 133,
     "historical": 30,
-    "current": 1745,
+    "current": 1747,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7480,
-  "total_active": 5241,
+  "total_files": 7483,
+  "total_active": 5244,
   "total_archived": 2239,
   "files": [
     {
@@ -60135,6 +60135,22 @@
       "modified": "2026-06-11T04:33:14Z"
     },
     {
+      "path": "Workflow/Sessionlogs/wa-sessionlog-20260614-l1l2-field-reliability-and-morph-backfill-v1.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7868,
+      "modified": "2026-06-14T18:58:44Z"
+    },
+    {
       "path": "Workflow/Sessionlogs/wa-sessionlog-term-anchor-reset-v1-20260504.md",
       "category": "workflow",
       "type": "other",
@@ -92691,8 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319033344,
-      "modified": "2026-06-14T15:41:28Z"
+      "size_bytes": 319410176,
+      "modified": "2026-06-14T18:56:19Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92707,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3378634,
-      "modified": "2026-06-14T18:02:43Z"
+      "size_bytes": 3379101,
+      "modified": "2026-06-14T18:10:31Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93491,8 +93507,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 23603,
-      "modified": "2026-06-14T06:16:11Z"
+      "size_bytes": 23900,
+      "modified": "2026-06-14T18:59:36Z"
     },
     {
       "path": "memory/README.md",
@@ -95045,6 +95061,22 @@
       "archived": false,
       "size_bytes": 2234,
       "modified": "2026-06-04T17:43:46Z"
+    },
+    {
+      "path": "memory/project_l1l2_field_reliability_direction.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2951,
+      "modified": "2026-06-14T18:59:36Z"
     },
     {
       "path": "memory/project_l2_multicluster_learnings_20260609.md",
@@ -107219,8 +107251,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 13972,
-      "modified": "2026-06-14T18:01:53Z"
+      "size_bytes": 18106,
+      "modified": "2026-06-14T18:42:27Z"
     },
     {
       "path": "research/investigations/wa-l2-finding-schema-design-v1-20260609.md",
@@ -107845,6 +107877,22 @@
       "archived": false,
       "size_bytes": 1783,
       "modified": "2026-06-08T11:16:21Z"
+    },
+    {
+      "path": "research/investigations/wa-morph-backfill-catchup-live-v1-20260614.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2148,
+      "modified": "2026-06-14T18:56:19Z"
     },
     {
       "path": "research/investigations/wa-morph-backfill-gap-programme-wide-v1-20260614.md",
