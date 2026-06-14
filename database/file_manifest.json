@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T15:11:49Z",
+  "generated_at": "2026-06-14T15:24:23Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1741,
+    "current": 1742,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7476,
-  "total_active": 5237,
+  "total_files": 7477,
+  "total_active": 5238,
   "total_archived": 2239,
   "files": [
     {
@@ -60551,6 +60551,22 @@
       "modified": "2026-04-16T07:10:34Z"
     },
     {
+      "path": "Workflow/Tiers/wa-catalogue-extensions-coverage-and-supersession-20260614.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6616,
+      "modified": "2026-06-14T15:23:31Z"
+    },
+    {
       "path": "Workflow/Tiers/wa-catalogue-vs-L1L2-14-points-20260614.md",
       "category": "workflow",
       "type": "other",
@@ -92676,7 +92692,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 319033344,
-      "modified": "2026-06-11T03:18:48Z"
+      "modified": "2026-06-14T15:24:04Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92692,7 +92708,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 3377246,
-      "modified": "2026-06-14T14:56:30Z"
+      "modified": "2026-06-14T15:11:50Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
