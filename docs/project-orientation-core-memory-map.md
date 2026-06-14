@@ -51,6 +51,13 @@
 - `database/file_manifest.json` (+ `scripts/build_file_manifest.py`) — the whole-tree index with a `currency` signal; **the reliable way to locate files** (folders alone are not reliable)
 - ⚠ **The filing guidance is itself partly drifted from the restructured layout** (verified 2026-06-14): §3.9 `data/schema/` is gone (schema now at `Workflow/schema/`); a top-level `data/` exists but is absent from CLAUDE.md §2; exports have two homes (`Sessions/Session_A/STEP Extracts` and `data/exports`). **A filing audit (reconcile rules ↔ actual layout) is an open item** — see 02 and 04.
 
+**Operational & safeguard governance (programme-wide)** — ⚠ **no dedicated instruction doc**; scattered across CLAUDE.md (drift-stale) + scripts + memory (consolidating it is an open item)
+- **Git / commit:** CLAUDE.md §12 — excluded from git (`database/bible_research.db`, `backups/`); commit message `session YYYYMMDD: brief description`; branch `main`; remote `github.com/lcilliers/Bible_Projects`. Discipline: **commit units of work throughout, and commit + push *always* together** (memory: `feedback_commit_incrementally`).
+- **Backups & recovery:** CLAUDE.md §13 — project moved **off Google Drive 2026-06-03** after a Drive sync corrupted the DB + `.git`. NAS: DB backup daily 18:00 (`scripts/backup_db_to_nas.py`, task "BibleResearch DB Backup to NAS"); full folder + memory mirror daily 18:30 (`scripts/mirror_to_nas.ps1`, task "BibleResearch Full Mirror to NAS"); memory also committed to git under `memory/`. Engine keeps rolling-10 DB snapshots (`engine/backup.py`, `BACKUP_RETENTION=10`). Incident + lessons: `outputs/markdown/wa-db-loss-incident-20260603.md`. **Core safeguard rule: all work in the DB and replayable** (memory: `feedback_all_study_work_in_db` — June 1–2 handler work was lost precisely because it wasn't).
+- **Manifest (use of):** `docs/file-organisation-rules.md` §6 + CLAUDE.md §9 #5 — rebuild with `scripts/build_file_manifest.py` after file moves / session-log processing; **locate files via the manifest, not the folders.**
+- **Interaction protocols & cost:** `docs/interaction-preferences.md` + CLAUDE.md §9 — confirm before non-trivial work · all outputs to `.md` with a chat pointer · factual discipline (no guessing) · cost awareness (§9 #6).
+- ⚠ **Gap:** there is **no consolidated governing doc** for this operational/safeguard layer — it depends on CLAUDE.md, which is drift-stale. Consolidating it (a governing doc or DB-resident register) is an **open item**.
+
 ### Tier 2 — Current truth baseline (the 2026-06-14 reconstruction)
 `outputs/markdown/project-reconstruction/`
 | File | What it gives |

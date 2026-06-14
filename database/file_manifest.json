@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T05:39:18Z",
+  "generated_at": "2026-06-14T05:44:42Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 129,
+    "other": 130,
     "historical": 30,
     "current": 1741,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7458,
-  "total_active": 5234,
+  "total_files": 7459,
+  "total_active": 5235,
   "total_archived": 2224,
   "files": [
     {
@@ -92371,8 +92371,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3369001,
-      "modified": "2026-06-14T05:18:32Z"
+      "size_bytes": 3369419,
+      "modified": "2026-06-14T05:39:18Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92739,8 +92739,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7748,
-      "modified": "2026-06-14T05:38:09Z"
+      "size_bytes": 9684,
+      "modified": "2026-06-14T05:43:54Z"
     },
     {
       "path": "docs/prose-store-architecture.md",
@@ -93091,8 +93091,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 42891,
-      "modified": "2026-06-14T05:39:17Z"
+      "size_bytes": 43249,
+      "modified": "2026-06-14T05:44:41Z"
     },
     {
       "path": "memory/README.md",
@@ -95013,6 +95013,22 @@
       "archived": false,
       "size_bytes": 1130,
       "modified": "2026-06-14T05:18:31Z"
+    },
+    {
+      "path": "memory/reference_operational_governance_git_backup_manifest.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2403,
+      "modified": "2026-06-14T05:44:41Z"
     },
     {
       "path": "memory/reference_study_definition_and_nine_principles.md",
