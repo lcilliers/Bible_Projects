@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T17:04:23Z",
+  "generated_at": "2026-06-14T17:43:29Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1743,
+    "current": 1744,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7478,
-  "total_active": 5239,
+  "total_files": 7479,
+  "total_active": 5240,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,8 +92707,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3377702,
-      "modified": "2026-06-14T15:42:03Z"
+      "size_bytes": 3378167,
+      "modified": "2026-06-14T17:04:23Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107191,6 +107191,22 @@
       "modified": "2026-06-08T05:22:20Z"
     },
     {
+      "path": "research/investigations/wa-l1l2-50complex-verses-working-set-20260614.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 49787,
+      "modified": "2026-06-14T17:43:28Z"
+    },
+    {
       "path": "research/investigations/wa-l1l2-field-reliability-measures-v1-20260614.md",
       "category": "investigation",
       "type": "investigation",
@@ -107203,8 +107219,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9441,
-      "modified": "2026-06-14T17:04:09Z"
+      "size_bytes": 10080,
+      "modified": "2026-06-14T17:29:14Z"
     },
     {
       "path": "research/investigations/wa-l2-finding-schema-design-v1-20260609.md",
