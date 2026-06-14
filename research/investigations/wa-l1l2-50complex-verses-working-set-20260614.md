@@ -813,6 +813,7 @@ _Generated 2026-06-14. Top 50 verses by (distinct clusters, distinct terms) amon
 | mind | seat | 1Ch 28:9 "willing mind" |
 | spirit | seat | Isa 61:3 "faint spirit"; Rom 5:5 / Rom 15:13 "Holy Spirit" |
 | conscience | seat | 2Cor 1:12 "testimony of our conscience" |
+| flesh | seat / level | **Gal 5:19-21 "the works of the flesh"** — flesh as the locus of a whole set of inner-being works; Rom 6:19 "your members" |
 | eyes | body | Hab 1:13; Isa 6:10; Eph 1:18 |
 | ears | body | Isa 6:10 "their ears heavy" |
 | neck | body | Neh 9:17 "stiffened their neck" |
@@ -855,3 +856,8 @@ _Generated 2026-06-14. Top 50 verses by (distinct clusters, distinct terms) amon
 - **Attributed-to-God needs pronoun resolution** — "he/you" only counts when the subject is God; that's a small read on the subject, not a free judgment.
 - **Relational overlaps with origin** — "given to / poured into" carries both a direction (#13) and a source (#6); the same node can feed two fields.
 - These are **iteration 1 from 50 verses**; the lists grow as more verses are inspected and the residue (un-signalled cases) is examined.
+
+### Three refinements folded in (2026-06-14)
+- **Flesh is a location** — added above (Gal 5:19-21: flesh as the locus of a whole set of inner-being works). It is a constitutional *level*, not just a body-part.
+- **Every field now carries an `UNRESOLVED` state** — distinct from `NONE`/silent. `NONE` = the signal is legitimately absent; `UNRESOLVED` = a signal was **expected but the run couldn't find or decide it**. The set of `UNRESOLVED` findings is the **backtrack worklist** — where the mechanism hit a gap, not where there's genuinely nothing. (E.g. the 38 morph-less content terms above are `UNRESOLVED`-mode, not blank.)
+- **A signal needs a *list* and a *rule*** — the list is the vocabulary (above); the **rules** are the decision logic (how to go from signals-present to an answer, incl. when to return `UNRESOLVED`). Faculty is the worked example: R1 direct (term *is* a faculty) · R2 indirect (a faculty word co-occurs) · R3 multi · R4 unresolved · R5 none. Full list·rules·states table: `wa-l1l2-field-reliability-measures-v1-20260614.md` §1d.
