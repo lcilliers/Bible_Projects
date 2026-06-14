@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T06:16:36Z",
+  "generated_at": "2026-06-14T06:22:17Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1747,
+    "current": 1748,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7467,
-  "total_active": 5243,
+  "total_files": 7468,
+  "total_active": 5244,
   "total_archived": 2224,
   "files": [
     {
@@ -59831,6 +59831,22 @@
       "modified": "2026-04-16T14:40:56Z"
     },
     {
+      "path": "Workflow/Sessionlogs/wa-session-log-20260614-memory-governance-hardening.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 8505,
+      "modified": "2026-06-14T06:22:03Z"
+    },
+    {
       "path": "Workflow/Sessionlogs/wa-sessionb-analysis-readiness-v1_5-20260416.md",
       "category": "workflow",
       "type": "other",
@@ -92387,8 +92403,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3372751,
-      "modified": "2026-06-14T06:12:17Z"
+      "size_bytes": 3373182,
+      "modified": "2026-06-14T06:16:37Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
