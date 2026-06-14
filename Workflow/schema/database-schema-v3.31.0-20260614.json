@@ -1,0 +1,5921 @@
+{
+  "schema_version": "3.31.0",
+  "exported_date": "2026-06-14",
+  "table_count": 76,
+  "tables": {
+    "book_code_variants": {
+      "sql": "CREATE TABLE book_code_variants (\n        code    TEXT    PRIMARY KEY,\n        book_id INTEGER NOT NULL REFERENCES books(id)\n    )",
+      "columns": [
+        {
+          "name": "code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "book_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_book_code_variants_1",
+          "unique": true
+        }
+      ],
+      "row_count": 112
+    },
+    "books": {
+      "sql": "CREATE TABLE books (\n    id          INTEGER PRIMARY KEY AUTOINCREMENT,\n    name        TEXT    NOT NULL UNIQUE,           -- e.g. \"John\"\n    abbreviation TEXT   NOT NULL UNIQUE,           -- e.g. \"Jn\"\n    testament   TEXT    NOT NULL                   -- \"OT\" or \"NT\"\n                CHECK (testament IN ('OT', 'NT')),\n    book_order  INTEGER NOT NULL UNIQUE            -- canonical order 1–66\n, full_name TEXT, short_code TEXT, verse_count INTEGER NOT NULL DEFAULT 0, last_updated TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')))",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "abbreviation",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "book_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "full_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "short_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "last_updated",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "strftime('%Y-%m-%dT%H:%M:%S','now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "uq_books_short_code",
+          "unique": true
+        },
+        {
+          "name": "sqlite_autoindex_books_3",
+          "unique": true
+        },
+        {
+          "name": "sqlite_autoindex_books_2",
+          "unique": true
+        },
+        {
+          "name": "sqlite_autoindex_books_1",
+          "unique": true
+        }
+      ],
+      "row_count": 66
+    },
+    "characteristic": {
+      "sql": "CREATE TABLE characteristic (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                cluster_code TEXT NOT NULL,\n                char_seq INTEGER NOT NULL,\n                short_name TEXT NOT NULL,\n                definition TEXT NOT NULL,\n                source TEXT,\n                version TEXT DEFAULT 'v1',\n                notes TEXT,\n                delete_flagged INTEGER DEFAULT 0,\n                created_at TEXT NOT NULL,\n                last_updated_date TEXT NOT NULL,\n                UNIQUE(cluster_code, char_seq),\n                UNIQUE(cluster_code, short_name)\n            )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "char_seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "short_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "definition",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "'v1'"
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_characteristic_cluster",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_characteristic_2",
+          "unique": true
+        },
+        {
+          "name": "sqlite_autoindex_characteristic_1",
+          "unique": true
+        }
+      ],
+      "row_count": 128
+    },
+    "characteristic_subgroup": {
+      "sql": "CREATE TABLE characteristic_subgroup (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                characteristic_id INTEGER NOT NULL,\n                cluster_subgroup_id INTEGER NOT NULL,\n                qualifier_note TEXT,\n                is_partial INTEGER DEFAULT 0,\n                partial_register_note TEXT,\n                delete_flagged INTEGER DEFAULT 0,\n                created_at TEXT NOT NULL,\n                last_updated_date TEXT NOT NULL,\n                UNIQUE(characteristic_id, cluster_subgroup_id),\n                FOREIGN KEY (characteristic_id) REFERENCES characteristic(id),\n                FOREIGN KEY (cluster_subgroup_id) REFERENCES cluster_subgroup(id)\n            )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "qualifier_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "is_partial",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "partial_register_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_charsg_sg",
+          "unique": false
+        },
+        {
+          "name": "idx_charsg_char",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_characteristic_subgroup_1",
+          "unique": true
+        }
+      ],
+      "row_count": 146
+    },
+    "cluster": {
+      "sql": "CREATE TABLE cluster (\n                    cluster_code      TEXT PRIMARY KEY,\n                    description       TEXT,\n                    gloss             TEXT NOT NULL,\n                    source            TEXT,\n                    bucket            TEXT,\n                    status            TEXT,\n                    version           TEXT,\n                    last_updated_date TEXT\n                , short_name TEXT, char_structure TEXT)",
+      "columns": [
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "gloss",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "bucket",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "short_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "char_structure",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_cluster_1",
+          "unique": true
+        }
+      ],
+      "row_count": 49
+    },
+    "cluster_finding": {
+      "sql": "CREATE TABLE \"cluster_finding\" (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                obs_id INTEGER NOT NULL\n                    REFERENCES wa_obs_question_catalogue(obs_id),\n                cluster_code TEXT NOT NULL\n                    REFERENCES cluster(cluster_code),\n                characteristic_id INTEGER\n                    REFERENCES characteristic(id),\n                cluster_subgroup_id INTEGER\n                    REFERENCES cluster_subgroup(id),\n                vcg_scope TEXT,\n                finding_status TEXT NOT NULL\n                    CHECK (finding_status IN ('finding','silent','gap','cluster_synthesis')),\n                finding_text TEXT,\n                source_file TEXT,\n                version TEXT,\n                notes TEXT,\n                delete_flagged INTEGER DEFAULT 0,\n                created_at TEXT,\n                last_updated_date TEXT, finding_type TEXT, needs_research INTEGER DEFAULT 0,\n                UNIQUE (obs_id, cluster_code, characteristic_id, cluster_subgroup_id, vcg_scope, version)\n            )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "obs_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "vcg_scope",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "finding_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "needs_research",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_cluster_finding_1",
+          "unique": true
+        }
+      ],
+      "row_count": 19996
+    },
+    "cluster_observation": {
+      "sql": "CREATE TABLE cluster_observation (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                cluster_code TEXT NOT NULL,\n                characteristic_id INTEGER,\n                cluster_subgroup_id INTEGER,\n                source_phase TEXT NOT NULL,\n                observation_type TEXT NOT NULL,\n                target_phase TEXT,\n                title TEXT NOT NULL,\n                description TEXT NOT NULL,\n                status TEXT DEFAULT 'open',\n                resolution_note TEXT,\n                raised_date TEXT NOT NULL,\n                resolved_date TEXT,\n                source_file TEXT,\n                delete_flagged INTEGER DEFAULT 0,\n                created_at TEXT NOT NULL,\n                last_updated_date TEXT NOT NULL,\n                FOREIGN KEY (characteristic_id) REFERENCES characteristic(id),\n                FOREIGN KEY (cluster_subgroup_id) REFERENCES cluster_subgroup(id)\n            )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_phase",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "observation_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "target_phase",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "'open'"
+        },
+        {
+          "name": "resolution_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "resolved_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_obs_char",
+          "unique": false
+        },
+        {
+          "name": "idx_obs_target_open",
+          "unique": false
+        },
+        {
+          "name": "idx_obs_cluster",
+          "unique": false
+        }
+      ],
+      "row_count": 276
+    },
+    "cluster_subgroup": {
+      "sql": "CREATE TABLE cluster_subgroup (\n                    id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n                    cluster_code        TEXT NOT NULL\n                        REFERENCES cluster(cluster_code),\n                    subgroup_code       TEXT NOT NULL,\n                    label               TEXT NOT NULL,\n                    core_description    TEXT,\n                    sort_order          INTEGER DEFAULT 0,\n                    status              TEXT,\n                    version             TEXT,\n                    source              TEXT,\n                    notes               TEXT,\n                    delete_flagged      INTEGER DEFAULT 0,\n                    created_at          TEXT,\n                    last_updated_date   TEXT,\n                    UNIQUE (cluster_code, subgroup_code)\n                )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "subgroup_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "core_description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_cluster_subgroup_cluster_code",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_cluster_subgroup_1",
+          "unique": true
+        }
+      ],
+      "row_count": 175
+    },
+    "engine_run_log": {
+      "sql": "CREATE TABLE engine_run_log (\n            id                   INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id               TEXT    NOT NULL UNIQUE,\n            mode                 TEXT    NOT NULL,\n            target_registry_ids  TEXT,\n            started_at           TEXT    NOT NULL,\n            completed_at         TEXT,\n            outcome              TEXT,\n            words_attempted      INTEGER DEFAULT 0,\n            words_complete       INTEGER DEFAULT 0,\n            words_stopped        INTEGER DEFAULT 0,\n            total_terms_new      INTEGER DEFAULT 0,\n            total_terms_xref     INTEGER DEFAULT 0,\n            total_verses_inserted INTEGER DEFAULT 0,\n            total_verses_filtered INTEGER DEFAULT 0,\n            total_meanings_parsed INTEGER DEFAULT 0,\n            error_detail         TEXT,\n            resume_from          TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "target_registry_ids",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "started_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "completed_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "outcome",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "words_attempted",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "words_complete",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "words_stopped",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_terms_new",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_terms_xref",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_verses_inserted",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_verses_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_meanings_parsed",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "error_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "resume_from",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_engine_run_log_1",
+          "unique": true
+        }
+      ],
+      "row_count": 769
+    },
+    "engine_stream_checkpoint": {
+      "sql": "CREATE TABLE engine_stream_checkpoint (\n            id               INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id           TEXT    NOT NULL REFERENCES engine_run_log(run_id),\n            stream_name      TEXT    NOT NULL,\n            status           TEXT    NOT NULL DEFAULT 'pending',\n            last_registry_id TEXT,\n            last_strong      TEXT,\n            rows_written     INTEGER DEFAULT 0,\n            rows_filtered    INTEGER DEFAULT 0,\n            error_detail     TEXT,\n            started_at       TEXT,\n            completed_at     TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "stream_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'pending'"
+        },
+        {
+          "name": "last_registry_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_strong",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "rows_written",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "rows_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "error_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "started_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "completed_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 1443
+    },
+    "finding": {
+      "sql": "CREATE TABLE finding (\n            id INTEGER PRIMARY KEY,\n            level TEXT NOT NULL,                  -- VERSE | TERM | CLUSTER | GLOBAL\n            verse_context_id INTEGER,             -- level=VERSE   -> verse_context.id\n            mti_term_id INTEGER,                  -- level=TERM    -> mti_terms.id\n            cluster_code TEXT,                    -- level=CLUSTER -> cluster.cluster_code\n            finding_value TEXT,\n            finding_status TEXT,                  -- ANSWERED|STATED_SILENT|STATED_UNRESOLVED|OPEN|RESOLVED|CLOSED\n            provenance TEXT,                      -- mechanical|clarification|api|researcher\n            justified_by_finding_id INTEGER,      -- the clarification (higher-level finding) that justifies this\n            supersedes_id INTEGER,                -- correction / resolution lineage\n            source_legacy_ref TEXT,               -- e.g. wa_session_b_findings.finding_id when migrated\n            flagged_for_review INTEGER DEFAULT 0,\n            created_at TEXT, last_updated_date TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "level",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "verse_context_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_value",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "provenance",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "justified_by_finding_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "supersedes_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_legacy_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flagged_for_review",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_finding_justified",
+          "unique": false
+        },
+        {
+          "name": "idx_finding_cluster",
+          "unique": false
+        },
+        {
+          "name": "idx_finding_term",
+          "unique": false
+        },
+        {
+          "name": "idx_finding_vc",
+          "unique": false
+        },
+        {
+          "name": "idx_finding_level",
+          "unique": false
+        }
+      ],
+      "row_count": 343434
+    },
+    "finding_citation": {
+      "sql": "CREATE TABLE \"finding_citation\" (\n            id                INTEGER PRIMARY KEY AUTOINCREMENT,\n            source_table      TEXT NOT NULL\n                              CHECK (source_table IN ('cluster_finding','cluster_observation')),\n            source_id         INTEGER NOT NULL,\n            citation_type     TEXT NOT NULL\n                              CHECK (citation_type IN ('verse','strongs','cross_char','vcg')),\n            citation_value    TEXT NOT NULL,\n            position          INTEGER,\n            delete_flagged    INTEGER DEFAULT 0,\n            created_at        TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_table",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "citation_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "citation_value",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "position",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_fc_value",
+          "unique": false
+        },
+        {
+          "name": "ix_fc_type_value",
+          "unique": false
+        },
+        {
+          "name": "ix_fc_source",
+          "unique": false
+        }
+      ],
+      "row_count": 51148
+    },
+    "finding_question_link": {
+      "sql": "CREATE TABLE finding_question_link (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            question_id INTEGER NOT NULL,         -- wa_obs_question_catalogue.obs_id\n            coverage TEXT,                        -- full | partial | evidence\n            created_at TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "question_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "coverage",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_fql_question",
+          "unique": false
+        },
+        {
+          "name": "idx_fql_finding",
+          "unique": false
+        }
+      ],
+      "row_count": 332184
+    },
+    "finding_revision": {
+      "sql": "CREATE TABLE finding_revision (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            field TEXT, value_from TEXT, value_to TEXT,\n            reason TEXT,\n            justified_by_finding_id INTEGER,\n            revised_at TEXT, revised_by TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "field",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "value_from",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "value_to",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "justified_by_finding_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "revised_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "revised_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_frev_finding",
+          "unique": false
+        }
+      ],
+      "row_count": 0
+    },
+    "finding_verse_link": {
+      "sql": "CREATE TABLE finding_verse_link (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            verse_record_id INTEGER,              -- wa_verse_records.id (or reference where no row)\n            reference TEXT,\n            role TEXT,                            -- anchor | evidence\n            created_at TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "verse_record_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_fvl_verse",
+          "unique": false
+        },
+        {
+          "name": "idx_fvl_finding",
+          "unique": false
+        }
+      ],
+      "row_count": 3586
+    },
+    "mti_term_cross_refs": {
+      "sql": "CREATE TABLE \"mti_term_cross_refs\" (\n    id                  INTEGER PRIMARY KEY,\n    mti_term_id         INTEGER NOT NULL REFERENCES mti_terms(id) ON DELETE CASCADE,\n    registry            TEXT NOT NULL,\n    registry_fk         INTEGER REFERENCES word_registry(id),\n    word                TEXT,\n    part                TEXT,\n    word_data_reference TEXT,\n    UNIQUE (mti_term_id, registry, word, part)\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "part",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word_data_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_cross_refs_term_id",
+          "unique": false
+        },
+        {
+          "name": "idx_cross_refs_registry",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_mti_term_cross_refs_1",
+          "unique": true
+        }
+      ],
+      "row_count": 462
+    },
+    "mti_term_flags": {
+      "sql": "CREATE TABLE mti_term_flags (\n            mti_term_id INTEGER NOT NULL REFERENCES mti_terms(id),\n            flag_id     INTEGER NOT NULL REFERENCES phase2_flag_types(id),\n            PRIMARY KEY (mti_term_id, flag_id)\n        )",
+      "columns": [
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_mti_term_flags_1",
+          "unique": true
+        }
+      ],
+      "row_count": 1005
+    },
+    "mti_term_subgroup": {
+      "sql": "CREATE TABLE mti_term_subgroup (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            mti_term_id         INTEGER NOT NULL\n                                  REFERENCES mti_terms(id),\n            cluster_subgroup_id INTEGER NOT NULL\n                                  REFERENCES cluster_subgroup(id),\n            placement_note      TEXT,\n            delete_flagged      INTEGER NOT NULL DEFAULT 0,\n            created_at          TEXT NOT NULL,\n            last_updated_date   TEXT NOT NULL,\n            UNIQUE (mti_term_id, cluster_subgroup_id)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "placement_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_mts_subgroup",
+          "unique": false
+        },
+        {
+          "name": "ix_mts_term",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_mti_term_subgroup_1",
+          "unique": true
+        }
+      ],
+      "row_count": 1196
+    },
+    "mti_terms": {
+      "sql": "CREATE TABLE \"mti_terms\" (\n            id                       INTEGER PRIMARY KEY,\n            strongs_number           TEXT,\n            transliteration          TEXT,\n            gloss                    TEXT,\n            language                 TEXT,\n            owning_registry          TEXT,\n            owning_registry_fk       INTEGER REFERENCES word_registry(id),\n            owning_word              TEXT,\n            owning_part              TEXT,\n            word_data_reference      TEXT,\n            word_data_ref_fk         INTEGER,\n            status                   TEXT,\n            exclusion_reason         TEXT,\n            extraction_date          TEXT,\n            strongs_reconciled       INTEGER,\n            anchor_note              TEXT,\n            last_changed             TEXT,\n            delete_flagged           INTEGER,\n            vc_status                TEXT NOT NULL DEFAULT 'not_done',\n            vc_instruction_version   TEXT,\n            vc_status_updated_at     TEXT,\n            vc_status_note           TEXT,\n            md_version               INTEGER NOT NULL DEFAULT 1,\n            cluster_code             TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "language",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "owning_registry",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "owning_registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "owning_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "owning_part",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word_data_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word_data_ref_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "exclusion_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "extraction_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "strongs_reconciled",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "anchor_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "vc_status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'not_done'"
+        },
+        {
+          "name": "vc_instruction_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "vc_status_updated_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "vc_status_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "md_version",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "1"
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_mti_terms_owning_vc_status",
+          "unique": false
+        }
+      ],
+      "row_count": 7581
+    },
+    "phase2_flag_types": {
+      "sql": "CREATE TABLE phase2_flag_types (\n            id          INTEGER PRIMARY KEY AUTOINCREMENT,\n            flag_code   TEXT NOT NULL UNIQUE,\n            description TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_phase2_flag_types_1",
+          "unique": true
+        }
+      ],
+      "row_count": 25
+    },
+    "prose_section": {
+      "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0, cluster_code TEXT, characteristic_id INTEGER, cluster_subgroup_id INTEGER,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "section_type_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "heading",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "body",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "word_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "1"
+        },
+        {
+          "name": "supersedes_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "superseded_by_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "author",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "approved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "approved_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "metadata_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_prose_section_cluster_subgroup_id",
+          "unique": false
+        },
+        {
+          "name": "idx_prose_section_characteristic_id",
+          "unique": false
+        },
+        {
+          "name": "idx_prose_section_cluster_code",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_supersedes",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_status",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_registry_type_current",
+          "unique": false
+        }
+      ],
+      "row_count": 249
+    },
+    "prose_section_dimension_link": {
+      "sql": "CREATE TABLE prose_section_dimension_link (\n            prose_section_id  INTEGER NOT NULL REFERENCES prose_section(id),\n            dimension_id      INTEGER NOT NULL,\n            link_type         TEXT    NOT NULL DEFAULT 'discusses',\n            created_at        TEXT    NOT NULL DEFAULT (datetime('now')),\n            PRIMARY KEY (prose_section_id, dimension_id, link_type)\n        )",
+      "columns": [
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "dimension_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "link_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'discusses'"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_dimension_link_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "prose_section_finding_link": {
+      "sql": "CREATE TABLE prose_section_finding_link (\n            prose_section_id  INTEGER NOT NULL REFERENCES prose_section(id),\n            finding_id        INTEGER NOT NULL REFERENCES wa_session_b_findings(id),\n            link_type         TEXT    NOT NULL DEFAULT 'discusses',\n            created_at        TEXT    NOT NULL DEFAULT (datetime('now')),\n            PRIMARY KEY (prose_section_id, finding_id, link_type)\n        )",
+      "columns": [
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "link_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'discusses'"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_finding_link_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "prose_section_fts": {
+      "sql": "CREATE VIRTUAL TABLE prose_section_fts USING fts5(\n            body,\n            heading,\n            section_type_code UNINDEXED,\n            registry_id UNINDEXED,\n            cluster_code UNINDEXED,\n            characteristic_id UNINDEXED,\n            status UNINDEXED,\n            tokenize='porter unicode61 remove_diacritics 2'\n        )",
+      "columns": [
+        {
+          "name": "body",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "heading",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "section_type_code",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 249
+    },
+    "prose_section_fts_config": {
+      "sql": "CREATE TABLE 'prose_section_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID",
+      "columns": [
+        {
+          "name": "k",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "v",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_fts_config_1",
+          "unique": true
+        }
+      ],
+      "row_count": 1
+    },
+    "prose_section_fts_content": {
+      "sql": "CREATE TABLE 'prose_section_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2, c3, c4, c5, c6)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c0",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c1",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c2",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c3",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c4",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c5",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c6",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 249
+    },
+    "prose_section_fts_data": {
+      "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "block",
+          "type": "BLOB",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 507
+    },
+    "prose_section_fts_docsize": {
+      "sql": "CREATE TABLE 'prose_section_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sz",
+          "type": "BLOB",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 249
+    },
+    "prose_section_fts_idx": {
+      "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
+      "columns": [
+        {
+          "name": "segid",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pgno",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_fts_idx_1",
+          "unique": true
+        }
+      ],
+      "row_count": 704
+    },
+    "prose_section_type": {
+      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source_stage",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "lifecycle_tag",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "chapter_no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "expected_length_min",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "expected_length_max",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_pst_stage_lifecycle",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_prose_section_type_1",
+          "unique": true
+        }
+      ],
+      "row_count": 96
+    },
+    "schema_version": {
+      "sql": "CREATE TABLE \"schema_version\" (\n            id                 INTEGER PRIMARY KEY,\n            version_code       TEXT    NOT NULL,\n            applied_at         TEXT    NOT NULL,\n            migration_history  TEXT,\n            engine_min_version TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "applied_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "migration_history",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "engine_min_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 13
+    },
+    "session_d_observations": {
+      "sql": "CREATE TABLE session_d_observations (\n  id INTEGER PRIMARY KEY,\n  run_id TEXT NOT NULL,\n  observation_id TEXT NOT NULL UNIQUE,\n  observation_type TEXT NOT NULL,\n  registries_implicated TEXT NOT NULL,\n  terms_implicated TEXT,\n  structural_note TEXT,\n  source_refs TEXT,\n  gate TEXT NOT NULL,\n  researcher_flag INTEGER DEFAULT 0,\n  raised_date TEXT NOT NULL\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "observation_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "observation_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registries_implicated",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "terms_implicated",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "structural_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_refs",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "researcher_flag",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_session_d_observations_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "session_d_runs": {
+      "sql": "CREATE TABLE session_d_runs (\n  id INTEGER PRIMARY KEY,\n  run_id TEXT NOT NULL UNIQUE,\n  run_date TEXT NOT NULL,\n  cluster_ref TEXT,\n  registries_in_scope TEXT NOT NULL,\n  registries_completed_at_run INTEGER,\n  session_b_sources TEXT,\n  run_summary TEXT,\n  json_filename TEXT\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "run_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cluster_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registries_in_scope",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registries_completed_at_run",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "session_b_sources",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "json_filename",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_session_d_runs_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "session_d_term_links": {
+      "sql": "CREATE TABLE session_d_term_links (\n  id INTEGER PRIMARY KEY,\n  run_id TEXT NOT NULL,\n  strongs_id TEXT NOT NULL,\n  transliteration TEXT,\n  registry_data TEXT NOT NULL,\n  status_divergence INTEGER DEFAULT 0,\n  gate TEXT NOT NULL,\n  raised_date TEXT NOT NULL\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_data",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "status_divergence",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 0
+    },
+    "session_d_verse_links": {
+      "sql": "CREATE TABLE session_d_verse_links (\n  id INTEGER PRIMARY KEY,\n  run_id TEXT NOT NULL,\n  verse_ref TEXT NOT NULL,\n  registry_ids TEXT NOT NULL,\n  terms_involved TEXT,\n  overlap_count INTEGER,\n  threshold_met INTEGER DEFAULT 0,\n  gate TEXT NOT NULL,\n  raised_date TEXT NOT NULL\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "verse_ref",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_ids",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "terms_involved",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "overlap_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "threshold_met",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 0
+    },
+    "sources": {
+      "sql": "CREATE TABLE sources (\n    id          INTEGER PRIMARY KEY AUTOINCREMENT,\n    zotero_key  TEXT    UNIQUE,                    -- Zotero item key (nullable)\n    title       TEXT    NOT NULL,\n    author      TEXT,\n    year        INTEGER,\n    source_type TEXT                               -- \"commentary\", \"lexicon\", \"paper\", etc.\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "zotero_key",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "author",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_sources_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "sqlite_stat1": {
+      "sql": "CREATE TABLE sqlite_stat1(tbl,idx,stat)",
+      "columns": [
+        {
+          "name": "tbl",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "idx",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "stat",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 64
+    },
+    "term_fetch_log": {
+      "sql": "CREATE TABLE term_fetch_log (\n            id                   INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id               TEXT    NOT NULL REFERENCES engine_run_log(run_id),\n            registry_id          TEXT    NOT NULL,\n            strongs_input        TEXT    NOT NULL,\n            strongs_resolved     TEXT,\n            suffix_resolution    INTEGER DEFAULT 0,\n            vocab_status         TEXT,\n            verse_status         TEXT,\n            verse_count_fetched  INTEGER DEFAULT 0,\n            verse_count_stored   INTEGER DEFAULT 0,\n            verse_count_filtered INTEGER DEFAULT 0,\n            span_conflict        INTEGER DEFAULT 0,\n            api_warnings         TEXT,\n            fetched_at           TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_input",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_resolved",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "suffix_resolution",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "vocab_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_count_fetched",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "verse_count_stored",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "verse_count_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "span_conflict",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "api_warnings",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "fetched_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 2377
+    },
+    "themes": {
+      "sql": "CREATE TABLE themes (\n    id          INTEGER PRIMARY KEY AUTOINCREMENT,\n    name        TEXT    NOT NULL UNIQUE,           -- e.g. \"salvation\"\n    description TEXT\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_themes_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "vcg_term": {
+      "sql": "CREATE TABLE vcg_term (\n            id              INTEGER PRIMARY KEY AUTOINCREMENT,\n            vcg_id          INTEGER NOT NULL\n                              REFERENCES verse_context_group(id),\n            mti_term_id     INTEGER NOT NULL\n                              REFERENCES mti_terms(id),\n            placement_note  TEXT,\n            delete_flagged  INTEGER NOT NULL DEFAULT 0,\n            created_at      TEXT NOT NULL,\n            last_updated_date TEXT NOT NULL,\n            UNIQUE (vcg_id, mti_term_id)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "vcg_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "placement_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_updated_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_vcgt_term",
+          "unique": false
+        },
+        {
+          "name": "ix_vcgt_vcg",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_vcg_term_1",
+          "unique": true
+        }
+      ],
+      "row_count": 5091
+    },
+    "verse_context": {
+      "sql": "CREATE TABLE \"verse_context\" (\n            id                  INTEGER PRIMARY KEY,\n            verse_record_id     INTEGER NOT NULL\n                                  REFERENCES wa_verse_records(id),\n            mti_term_id         INTEGER NOT NULL\n                                  REFERENCES mti_terms(id),\n            group_id            INTEGER REFERENCES verse_context_group(id),\n            cluster_subgroup_id INTEGER REFERENCES cluster_subgroup(id),\n            is_anchor           INTEGER NOT NULL DEFAULT 0,\n            is_relevant         INTEGER NOT NULL DEFAULT 0,\n            is_related          INTEGER NOT NULL DEFAULT 0,\n            notes               TEXT DEFAULT NULL,\n            delete_flagged      INTEGER DEFAULT 0,\n            set_aside_reason    TEXT DEFAULT NULL,\n            analysis_note       TEXT, keywords TEXT, step_meaning_applied TEXT, sense_id INTEGER, sense_multiplicity TEXT, step_envelope_note TEXT, pole TEXT, pole_is_metaphor INTEGER DEFAULT 0, residue_flag INTEGER DEFAULT 0, thing_type TEXT, triage_status TEXT, meaning_provenance TEXT, flagged_for_review INTEGER DEFAULT 0,\n            UNIQUE (verse_record_id, mti_term_id, group_id,\n                    cluster_subgroup_id)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_record_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "group_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "is_anchor",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "is_relevant",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "is_related",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "set_aside_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "analysis_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "keywords",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "step_meaning_applied",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sense_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sense_multiplicity",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "step_envelope_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "pole",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "pole_is_metaphor",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "residue_flag",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "thing_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "triage_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "meaning_provenance",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flagged_for_review",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_vc_cluster_subgroup",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_verse_context_1",
+          "unique": true
+        }
+      ],
+      "row_count": 43722
+    },
+    "verse_context_group": {
+      "sql": "CREATE TABLE \"verse_context_group\" (\n            id                  INTEGER PRIMARY KEY,\n            group_code          TEXT NOT NULL UNIQUE,\n            context_description TEXT NOT NULL,\n            notes               TEXT DEFAULT NULL,\n            delete_flagged      INTEGER DEFAULT 0)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "group_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "context_description",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_verse_context_group_1",
+          "unique": true
+        }
+      ],
+      "row_count": 4155
+    },
+    "wa_addendum_registry": {
+      "sql": "CREATE TABLE wa_addendum_registry (\n            id                INTEGER PRIMARY KEY,\n            item_id           TEXT    NOT NULL UNIQUE,\n            addendum_group    TEXT    NOT NULL,\n            rule_id           TEXT,\n            audit_source      TEXT,\n            subject           TEXT,\n            observation       TEXT,\n            migration_target  TEXT,\n            migration_status  TEXT,\n            researcher_comment TEXT,\n            source_document   TEXT,\n            created_at        TEXT    NOT NULL\n        , obsolete INTEGER NOT NULL DEFAULT 0, obsolete_reason TEXT, last_modified TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "item_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "addendum_group",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "rule_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "audit_source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "subject",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "observation",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "migration_target",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "migration_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "researcher_comment",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_document",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "obsolete",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "obsolete_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_addendum_group",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_addendum_registry_1",
+          "unique": true
+        }
+      ],
+      "row_count": 22
+    },
+    "wa_cross_registry_links": {
+      "sql": "CREATE TABLE wa_cross_registry_links (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            file_id             INTEGER NOT NULL REFERENCES wa_file_index(id),\n            linked_word         TEXT,\n            linked_registry_id  INTEGER REFERENCES word_registry(id),\n            connection_type_id  INTEGER NOT NULL REFERENCES wa_crosslink_type(id),\n            connecting_term     TEXT,\n            note                TEXT,\n            last_changed        TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "linked_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "linked_registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "connection_type_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "connecting_term",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_xrl_linked",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_xrl_file",
+          "unique": false
+        }
+      ],
+      "row_count": 158
+    },
+    "wa_crosslink_type": {
+      "sql": "CREATE TABLE wa_crosslink_type (\n            id          INTEGER PRIMARY KEY AUTOINCREMENT,\n            type_code   TEXT NOT NULL UNIQUE,\n            description TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "type_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_crosslink_type_1",
+          "unique": true
+        }
+      ],
+      "row_count": 11
+    },
+    "wa_data_quality_flags": {
+      "sql": "CREATE TABLE wa_data_quality_flags (\n            id           INTEGER PRIMARY KEY AUTOINCREMENT,\n            file_id      INTEGER NOT NULL REFERENCES wa_file_index(id),\n            term_id      TEXT,\n            flag_id      INTEGER NOT NULL REFERENCES wa_quality_flag_types(id),\n            description  TEXT,\n            last_changed TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wdqf_flag",
+          "unique": false
+        },
+        {
+          "name": "idx_wdqf_file",
+          "unique": false
+        }
+      ],
+      "row_count": 19304
+    },
+    "wa_dim_review_cluster_log": {
+      "sql": "CREATE TABLE wa_dim_review_cluster_log (\n  id INTEGER PRIMARY KEY AUTOINCREMENT,\n  cluster TEXT NOT NULL UNIQUE,\n  completed_date TEXT NOT NULL,\n  instruction_version TEXT NOT NULL,\n  registry_count INTEGER NOT NULL DEFAULT 0,\n  group_count INTEGER NOT NULL DEFAULT 0,\n  anchored_count INTEGER NOT NULL DEFAULT 0,\n  notes TEXT,\n  last_modified TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now'))\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "completed_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "instruction_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "group_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "anchored_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "strftime('%Y-%m-%dT%H:%M:%S','now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_dim_review_cluster_log_1",
+          "unique": true
+        }
+      ],
+      "row_count": 6
+    },
+    "wa_dimension_index": {
+      "sql": "CREATE TABLE wa_dimension_index (\n        id                    INTEGER PRIMARY KEY,\n        verse_context_group_id INTEGER NOT NULL REFERENCES verse_context_group(id),\n        owning_registry_no    INTEGER NOT NULL,\n        cluster_assignment    TEXT,\n        dimension             TEXT,\n        anchor_count          INTEGER DEFAULT 0,\n        related_count         INTEGER DEFAULT 0,\n        set_aside_count       INTEGER DEFAULT 0,\n        total_verse_count     INTEGER DEFAULT 0,\n        delete_flagged        INTEGER DEFAULT 0\n    , dimension_confidence TEXT DEFAULT NULL, manual_override INTEGER DEFAULT 0, notes TEXT DEFAULT NULL, last_modified TEXT DEFAULT NULL, dominant_subject TEXT DEFAULT NULL)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_context_group_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "owning_registry_no",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cluster_assignment",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "dimension",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "anchor_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "related_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "set_aside_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "total_verse_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "dimension_confidence",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "manual_override",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "dominant_subject",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wdi_del",
+          "unique": false
+        },
+        {
+          "name": "idx_wdi_conf",
+          "unique": false
+        },
+        {
+          "name": "idx_dim_index_group",
+          "unique": false
+        },
+        {
+          "name": "idx_dim_index_registry",
+          "unique": false
+        },
+        {
+          "name": "idx_dim_index_dimension",
+          "unique": false
+        }
+      ],
+      "row_count": 3509
+    },
+    "wa_file_index": {
+      "sql": "CREATE TABLE \"wa_file_index\" (\n    id                           INTEGER PRIMARY KEY,\n    filename                     TEXT NOT NULL,\n    registry_id                  TEXT NOT NULL,\n    word_registry_fk             INTEGER REFERENCES word_registry(id) ON DELETE RESTRICT,\n    word                         TEXT NOT NULL,\n    part_number                  INTEGER,\n    total_parts                  INTEGER,\n    is_split                     INTEGER,\n    schema_version               TEXT,\n    phase                        TEXT,\n    produced_date                TEXT,\n    source_file                  TEXT,\n    translation_used             TEXT,\n    specification                TEXT,\n    revision_note                TEXT,\n    source_list                  TEXT,\n    category                     TEXT,\n    testament_coverage           TEXT,\n    root_families_in_prior_parts TEXT,\n    last_changed                 TEXT DEFAULT (datetime('now'))\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "word_registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "part_number",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "total_parts",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "is_split",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "schema_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "produced_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "translation_used",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "specification",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "revision_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "testament_coverage",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "root_families_in_prior_parts",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_fi_reg",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_fi_word",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_fi_wrfk",
+          "unique": false
+        }
+      ],
+      "row_count": 207
+    },
+    "wa_file_name_pattern": {
+      "sql": "CREATE TABLE wa_file_name_pattern (\n            id                        INTEGER PRIMARY KEY,\n            pattern_code              TEXT    NOT NULL UNIQUE,\n            pattern                   TEXT    NOT NULL,\n            scope                     TEXT,\n            description               TEXT,\n            governing_instruction     TEXT,\n            deprecated                INTEGER NOT NULL DEFAULT 0,\n            deprecation_note          TEXT,\n            created_at                TEXT    NOT NULL,\n            last_modified             TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "pattern_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pattern",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "scope",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "governing_instruction",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_file_name_pattern_1",
+          "unique": true
+        }
+      ],
+      "row_count": 23
+    },
+    "wa_finding_catalogue_links": {
+      "sql": "CREATE TABLE \"wa_finding_catalogue_links\" (\n        id              INTEGER  PRIMARY KEY AUTOINCREMENT,\n        finding_id      INTEGER  REFERENCES wa_session_b_findings(id),\n        question_id     INTEGER  NOT NULL REFERENCES wa_obs_question_catalogue(obs_id),\n        coverage        TEXT,\n        status          TEXT     NOT NULL DEFAULT 'suggested',\n        pattern_type    TEXT,\n        mapped_date     TEXT,\n        validated_date  TEXT,\n        validated_by    TEXT,\n        session_b_note  TEXT,\n        delete_flagged  INTEGER  NOT NULL DEFAULT 0,\n        UNIQUE (finding_id, question_id)\n    )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "question_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "coverage",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'suggested'"
+        },
+        {
+          "name": "pattern_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "mapped_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "validated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "validated_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "session_b_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_finding_catalogue_links_1",
+          "unique": true
+        }
+      ],
+      "row_count": 6199
+    },
+    "wa_finding_entity_links": {
+      "sql": "CREATE TABLE wa_finding_entity_links (\n    id              INTEGER PRIMARY KEY,\n    finding_id      INTEGER NOT NULL,\n    entity_type     TEXT NOT NULL,\n    entity_id       INTEGER,\n    entity_strongs  TEXT,\n    raised_date     TEXT NOT NULL, delete_flagged INTEGER NOT NULL DEFAULT 0,\n    FOREIGN KEY (finding_id) REFERENCES wa_session_b_findings(id)\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "entity_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "entity_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "entity_strongs",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wfel_entity",
+          "unique": false
+        },
+        {
+          "name": "idx_wfel_finding_id",
+          "unique": false
+        }
+      ],
+      "row_count": 287
+    },
+    "wa_flag_type_question_link": {
+      "sql": "CREATE TABLE wa_flag_type_question_link (\n            id              INTEGER PRIMARY KEY AUTOINCREMENT,\n            flag_type_id    INTEGER NOT NULL REFERENCES wa_quality_flag_types(id),\n            question_id     INTEGER NOT NULL REFERENCES wa_obs_question_catalogue(obs_id),\n            context_note    TEXT,\n            active          INTEGER NOT NULL DEFAULT 1,\n            created_at      TEXT,\n            UNIQUE (flag_type_id, question_id)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flag_type_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "question_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "context_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "active",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "1"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_flag_type_question_link_question",
+          "unique": false
+        },
+        {
+          "name": "idx_flag_type_question_link_flag",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_flag_type_question_link_1",
+          "unique": true
+        }
+      ],
+      "row_count": 12
+    },
+    "wa_label_pattern": {
+      "sql": "CREATE TABLE wa_label_pattern (\n            id                        INTEGER PRIMARY KEY,\n            pattern_code              TEXT    NOT NULL UNIQUE,\n            pattern                   TEXT    NOT NULL,\n            entity                    TEXT,\n            description               TEXT,\n            governing_instruction     TEXT,\n            deprecated                INTEGER NOT NULL DEFAULT 0,\n            deprecation_note          TEXT,\n            created_at                TEXT    NOT NULL,\n            last_modified             TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "pattern_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pattern",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "entity",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "governing_instruction",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_label_pattern_1",
+          "unique": true
+        }
+      ],
+      "row_count": 11
+    },
+    "wa_lsj_parsed": {
+      "sql": "CREATE TABLE wa_lsj_parsed (\n            id                    INTEGER PRIMARY KEY AUTOINCREMENT,\n            term_inv_id           INTEGER NOT NULL UNIQUE REFERENCES wa_term_inventory(id),\n            raw_lsj               TEXT,\n            lsj_gloss             TEXT,\n            lsj_domains           TEXT,\n            lsj_philosophical_note TEXT,\n            lsj_etymology_note    TEXT,\n            lsj_cognate_forms     TEXT,\n            parsed_at             TEXT    NOT NULL,\n            parse_version         TEXT    NOT NULL\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "raw_lsj",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_domains",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_philosophical_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_etymology_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_cognate_forms",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "parsed_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "parse_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_lsj_parsed_term",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_lsj_parsed_1",
+          "unique": true
+        }
+      ],
+      "row_count": 9
+    },
+    "wa_meaning_parsed": {
+      "sql": "CREATE TABLE wa_meaning_parsed (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            term_inv_id         INTEGER NOT NULL UNIQUE REFERENCES wa_term_inventory(id),\n            strongs_number      TEXT    NOT NULL,\n            language            TEXT    NOT NULL,\n            top_sense_count     INTEGER DEFAULT 0,\n            stem_count          INTEGER DEFAULT 0,\n            has_causative_stem  INTEGER DEFAULT 0,\n            has_domain_tags     INTEGER DEFAULT 0,\n            parsed_at           TEXT    NOT NULL,\n            parse_version       TEXT    NOT NULL,\n            parse_warnings      TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "language",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "top_sense_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "stem_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "has_causative_stem",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "has_domain_tags",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "parsed_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "parse_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "parse_warnings",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_meaning_parsed_term_inv",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_meaning_parsed_1",
+          "unique": true
+        }
+      ],
+      "row_count": 7459
+    },
+    "wa_meaning_sense": {
+      "sql": "CREATE TABLE wa_meaning_sense (\n            id                 INTEGER PRIMARY KEY AUTOINCREMENT,\n            parsed_meaning_id  INTEGER NOT NULL REFERENCES wa_meaning_parsed(id),\n            level_code         TEXT    NOT NULL,\n            level_depth        INTEGER NOT NULL,\n            parent_level_code  TEXT,\n            sense_text         TEXT,\n            is_stem_label      INTEGER DEFAULT 0,\n            stem_label         TEXT,\n            domain_tag         TEXT,\n            sort_order         INTEGER NOT NULL\n        , is_homonym INTEGER DEFAULT 0)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "level_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "level_depth",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "parent_level_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sense_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "is_stem_label",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "stem_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "domain_tag",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "is_homonym",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_meaning_sense_level",
+          "unique": false
+        },
+        {
+          "name": "idx_meaning_sense_parsed",
+          "unique": false
+        }
+      ],
+      "row_count": 16005
+    },
+    "wa_meaning_stem": {
+      "sql": "CREATE TABLE wa_meaning_stem (\n            id                INTEGER PRIMARY KEY AUTOINCREMENT,\n            parsed_meaning_id INTEGER NOT NULL REFERENCES wa_meaning_parsed(id),\n            stem_name         TEXT    NOT NULL,\n            stem_type         TEXT,\n            sense_count       INTEGER DEFAULT 0,\n            top_sense_text    TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "stem_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "stem_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sense_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "top_sense_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_meaning_stem_parsed",
+          "unique": false
+        }
+      ],
+      "row_count": 13
+    },
+    "wa_obs_question_catalogue": {
+      "sql": "CREATE TABLE wa_obs_question_catalogue (\n    obs_id            INTEGER  PRIMARY KEY AUTOINCREMENT,\n    question_code     TEXT     NOT NULL UNIQUE,\n    section           TEXT     NOT NULL,\n    source_word       TEXT,\n    source_registry_no INTEGER  REFERENCES word_registry(id),\n    question_text     TEXT     NOT NULL,\n    pattern_type      TEXT,\n    scope             TEXT     NOT NULL DEFAULT 'universal',\n    status            TEXT     NOT NULL DEFAULT 'active',\n    deleted           INTEGER  NOT NULL DEFAULT 0,\n    date_added        TEXT     NOT NULL,\n    catalogue_version TEXT     NOT NULL\n, review_note TEXT, tier TEXT, component_code TEXT, component_title TEXT, prompt_seq INTEGER)",
+      "columns": [
+        {
+          "name": "obs_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "question_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "section",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_registry_no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "question_text",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pattern_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "scope",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'universal'"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'active'"
+        },
+        {
+          "name": "deleted",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "date_added",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "catalogue_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "review_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "tier",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "component_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "component_title",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "prompt_seq",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_obs_question_catalogue_1",
+          "unique": true
+        }
+      ],
+      "row_count": 412
+    },
+    "wa_patch_type_registry": {
+      "sql": "CREATE TABLE wa_patch_type_registry (\n            id                        INTEGER PRIMARY KEY,\n            type_code                 TEXT    NOT NULL UNIQUE,\n            description               TEXT,\n            session_b_status_exempt   INTEGER NOT NULL DEFAULT 0,\n            governing_instruction     TEXT,\n            schema_affected           TEXT,\n            deprecated                INTEGER NOT NULL DEFAULT 0,\n            deprecation_note          TEXT,\n            created_at                TEXT    NOT NULL,\n            last_modified             TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "type_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "session_b_status_exempt",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "governing_instruction",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "schema_affected",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_patch_type_registry_1",
+          "unique": true
+        }
+      ],
+      "row_count": 20
+    },
+    "wa_prose_section_citations": {
+      "sql": "CREATE TABLE wa_prose_section_citations (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            prose_section_id    INTEGER NOT NULL REFERENCES prose_section(id),\n            cited_finding_id    INTEGER REFERENCES wa_session_b_findings(id),\n            cited_qa_link_id    INTEGER REFERENCES wa_finding_catalogue_links(id),\n            cited_sd_pointer_id INTEGER REFERENCES wa_session_research_flags(id),\n            cited_observation_seq TEXT,                -- e.g. 'OBS-026' as raw token from prose\n            citation_form       TEXT NOT NULL,         -- the literal text in the prose\n            paragraph_no        INTEGER,               -- optional: which paragraph in the section\n            delete_flagged      INTEGER NOT NULL DEFAULT 0,\n            created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "cited_finding_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cited_qa_link_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cited_sd_pointer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cited_observation_seq",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "citation_form",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "paragraph_no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "strftime('%Y-%m-%dT%H:%M:%SZ', 'now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_psc_sd",
+          "unique": false
+        },
+        {
+          "name": "idx_psc_qa",
+          "unique": false
+        },
+        {
+          "name": "idx_psc_finding",
+          "unique": false
+        },
+        {
+          "name": "idx_psc_section",
+          "unique": false
+        }
+      ],
+      "row_count": 562
+    },
+    "wa_quality_flag_types": {
+      "sql": "CREATE TABLE wa_quality_flag_types (\n            id          INTEGER PRIMARY KEY AUTOINCREMENT,\n            flag_group  TEXT NOT NULL,\n            flag_code   TEXT NOT NULL UNIQUE,\n            description TEXT\n        , deprecated INTEGER DEFAULT 0, deprecation_note TEXT, category TEXT, research_actions TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flag_group",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "research_actions",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_quality_flag_types_1",
+          "unique": true
+        }
+      ],
+      "row_count": 29
+    },
+    "wa_rule_registry": {
+      "sql": "CREATE TABLE wa_rule_registry (\n            id              INTEGER PRIMARY KEY,\n            rule_id         TEXT    NOT NULL UNIQUE,\n            category        TEXT    NOT NULL,\n            subject         TEXT,\n            rule_text       TEXT    NOT NULL,\n            example         TEXT,\n            applies_to      TEXT,\n            version         TEXT,\n            added_date      TEXT,\n            last_modified   TEXT,\n            obsolete        INTEGER NOT NULL DEFAULT 0,\n            obsolete_reason TEXT,\n            superseded_by   TEXT,\n            addendum_ref    TEXT,\n            source_document TEXT,\n            created_at      TEXT    NOT NULL\n        , rationale TEXT, application_notes TEXT, examples TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "rule_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "category",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "subject",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "rule_text",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "example",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "applies_to",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "added_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "obsolete",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "obsolete_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "superseded_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "addendum_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_document",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "rationale",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "application_notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "examples",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_rule_category",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_rule_registry_1",
+          "unique": true
+        }
+      ],
+      "row_count": 59
+    },
+    "wa_session_b_dimensions": {
+      "sql": "CREATE TABLE wa_session_b_dimensions (\n  id INTEGER PRIMARY KEY,\n  registry_id INTEGER NOT NULL,\n  file_id INTEGER,\n  relational_environment INTEGER DEFAULT 0,\n  relational_environment_note TEXT,\n  spirit_soul_body INTEGER DEFAULT 0,\n  spirit_soul_body_note TEXT,\n  inner_operations INTEGER DEFAULT 0,\n  inner_operations_note TEXT,\n  being INTEGER DEFAULT 0,\n  being_note TEXT,\n  raised_date TEXT NOT NULL,\n  session_b_instruction TEXT NOT NULL\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "relational_environment",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "relational_environment_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "spirit_soul_body",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "spirit_soul_body_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "inner_operations",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "inner_operations_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "being",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "being_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "session_b_instruction",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 2
+    },
+    "wa_session_b_findings": {
+      "sql": "CREATE TABLE wa_session_b_findings (\n  id INTEGER PRIMARY KEY,\n  finding_id TEXT NOT NULL UNIQUE,\n  registry_id INTEGER NOT NULL,\n  file_id INTEGER,\n  finding_type TEXT NOT NULL,\n  finding TEXT NOT NULL,\n  anchor_verses TEXT,\n  raised_date TEXT NOT NULL,\n  session_b_instruction TEXT NOT NULL\n, pass_ref TEXT, study_segment TEXT, delete_flag INTEGER DEFAULT 0, obsolete_reason TEXT, obsolete_date TEXT, superseded_by_id INTEGER, related_finding_id INTEGER, resolution_note TEXT, thin_evidence INTEGER DEFAULT 0, status TEXT DEFAULT 'pending', term_id INTEGER REFERENCES mti_terms(id) ON DELETE SET NULL, synthesis_outcome TEXT, tiers_engaged TEXT, structural_relationship TEXT, session_c_chapter TEXT, sd_pointer_ref TEXT, cluster_link TEXT, cluster_link_basis TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "finding_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "finding",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "anchor_verses",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "session_b_instruction",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pass_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "study_segment",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flag",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "obsolete_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "obsolete_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "superseded_by_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "related_finding_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "resolution_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "thin_evidence",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "'pending'"
+        },
+        {
+          "name": "term_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "synthesis_outcome",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "tiers_engaged",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "structural_relationship",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "session_c_chapter",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sd_pointer_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_link",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_link_basis",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_session_b_findings_1",
+          "unique": true
+        }
+      ],
+      "row_count": 2883
+    },
+    "wa_session_research_flags": {
+      "sql": "CREATE TABLE wa_session_research_flags (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            registry_id         INTEGER NOT NULL,\n            file_id             INTEGER,\n            flag_code           TEXT    NOT NULL,\n            flag_label          TEXT    NOT NULL UNIQUE,\n            strongs_reference   TEXT,\n            cross_registry_id   INTEGER,\n            priority            TEXT    DEFAULT 'MEDIUM',\n            session_target      TEXT    DEFAULT 'D',\n            description         TEXT    NOT NULL,\n            session_raised      TEXT    NOT NULL,\n            raised_date         TEXT    NOT NULL,\n            resolved            INTEGER NOT NULL DEFAULT 0,\n            resolved_date       TEXT,\n            resolved_note       TEXT, cluster_link TEXT, cluster_link_basis TEXT,\n            FOREIGN KEY (registry_id) REFERENCES word_registry(id),\n            FOREIGN KEY (file_id) REFERENCES wa_file_index(id),\n            FOREIGN KEY (cross_registry_id) REFERENCES word_registry(id)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "flag_label",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cross_registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "priority",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "'MEDIUM'"
+        },
+        {
+          "name": "session_target",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "'D'"
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "session_raised",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "resolved",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "resolved_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "resolved_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_link",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_link_basis",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wsrf_resolved",
+          "unique": false
+        },
+        {
+          "name": "idx_wsrf_registry",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_session_research_flags_1",
+          "unique": true
+        }
+      ],
+      "row_count": 704
+    },
+    "wa_term_inventory": {
+      "sql": "CREATE TABLE \"wa_term_inventory\" (\n    id                          INTEGER PRIMARY KEY,\n    file_id                     INTEGER NOT NULL REFERENCES wa_file_index(id) ON DELETE RESTRICT,\n    language                    TEXT NOT NULL,\n    term_id                     TEXT NOT NULL,\n    strongs_number              TEXT,\n    transliteration             TEXT NOT NULL,\n    step_search_gloss           TEXT,\n    word_analysis_gloss         TEXT,\n    occurrence_count            INTEGER,\n    occurrence_count_qualifier  TEXT,\n    meaning                     TEXT,\n    meaning_numbered            TEXT,\n    also_spelled                TEXT,\n    lsj_entry                   TEXT,\n    testament                   TEXT,\n    causative_form_present      INTEGER DEFAULT 0,\n    last_changed                TEXT DEFAULT (datetime('now')),\n    short_def_mounce            TEXT,\n    parsed_meaning_id           INTEGER\n, delete_flagged INTEGER DEFAULT 0, evidential_status TEXT DEFAULT NULL, retention_note TEXT DEFAULT NULL, term_owner_type TEXT DEFAULT NULL, term_introduction_source TEXT, term_introduction_rationale TEXT, term_introduction_date TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "language",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "step_search_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word_analysis_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "occurrence_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "occurrence_count_qualifier",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "meaning",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "meaning_numbered",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "also_spelled",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "lsj_entry",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "causative_form_present",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "datetime('now')"
+        },
+        {
+          "name": "short_def_mounce",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "evidential_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "retention_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "term_owner_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "term_introduction_source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_introduction_rationale",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_introduction_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_ti_strongs_live",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_strongs_owner",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_del",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_owner",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_strongs",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_lang",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_id",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_ti_file",
+          "unique": false
+        }
+      ],
+      "row_count": 7560
+    },
+    "wa_term_phase2_flags": {
+      "sql": "CREATE TABLE wa_term_phase2_flags (\n            term_inv_id INTEGER NOT NULL REFERENCES wa_term_inventory(id),\n            flag_id     INTEGER NOT NULL REFERENCES phase2_flag_types(id), description TEXT, source TEXT, raised_date TEXT, delete_flagged INTEGER DEFAULT 0, obsolete_reason TEXT,\n            PRIMARY KEY (term_inv_id, flag_id)\n        )",
+      "columns": [
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "obsolete_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_term_phase2_flags_1",
+          "unique": true
+        }
+      ],
+      "row_count": 1570
+    },
+    "wa_term_related_words": {
+      "sql": "CREATE TABLE \"wa_term_related_words\" (\n    id                  INTEGER PRIMARY KEY,\n    term_inv_id         INTEGER NOT NULL REFERENCES wa_term_inventory(id) ON DELETE CASCADE,\n    gloss               TEXT,\n    transliteration     TEXT,\n    strongs_number      TEXT,\n    relationship_note   TEXT\n, delete_flagged INTEGER DEFAULT 0)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "relationship_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_rw",
+          "unique": false
+        }
+      ],
+      "row_count": 101999
+    },
+    "wa_term_root_family": {
+      "sql": "CREATE TABLE \"wa_term_root_family\" (\n    id              INTEGER PRIMARY KEY,\n    term_inv_id     INTEGER NOT NULL REFERENCES wa_term_inventory(id) ON DELETE CASCADE,\n    root_code       TEXT NOT NULL,\n    root_language   TEXT,\n    root_gloss      TEXT,\n    note            TEXT\n, delete_flagged INTEGER DEFAULT 0)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "root_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "root_language",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "root_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_rf",
+          "unique": false
+        }
+      ],
+      "row_count": 2861
+    },
+    "wa_verse_records": {
+      "sql": "CREATE TABLE \"wa_verse_records\" (\n    id                  INTEGER PRIMARY KEY,\n    file_id             INTEGER NOT NULL REFERENCES wa_file_index(id) ON DELETE RESTRICT,\n    term_inv_id         INTEGER REFERENCES wa_term_inventory(id) ON DELETE RESTRICT,\n    term_id             TEXT,\n    transliteration     TEXT,\n    testament           TEXT,\n    reference           TEXT,\n    verse_text          TEXT,\n    last_changed        TEXT DEFAULT (datetime('now')),\n    book_id             INTEGER REFERENCES books(id),\n    chapter             INTEGER,\n    verse_num           INTEGER,\n    translation         TEXT NOT NULL DEFAULT 'ESV',\n    note                TEXT,\n    claude_output       TEXT,\n    created_at          TEXT,\n    updated_at          TEXT,\n    target_word         TEXT,\n    span_strong_match   INTEGER,\n    context_before      TEXT,\n    context_after       TEXT\n, delete_flagged INTEGER DEFAULT 0, mti_term_id INTEGER DEFAULT NULL, morph_code TEXT, stem TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "datetime('now')"
+        },
+        {
+          "name": "book_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "chapter",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_num",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "translation",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'ESV'"
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "claude_output",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "target_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "span_strong_match",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "context_before",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "context_after",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "morph_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "stem",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wa_vr_term_live",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_term_del",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_del",
+          "unique": false
+        },
+        {
+          "name": "idx_wa_vr_term",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_book_ch_v",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_reference",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_term_id",
+          "unique": false
+        },
+        {
+          "name": "idx_wavr_file_term_pos",
+          "unique": false
+        }
+      ],
+      "row_count": 229957
+    },
+    "wa_verse_term_links": {
+      "sql": "CREATE TABLE wa_verse_term_links (\n    id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n    verse_id            INTEGER NOT NULL REFERENCES wa_verse_records(id) ON DELETE CASCADE,\n    term_inv_id         INTEGER NOT NULL REFERENCES wa_term_inventory(id) ON DELETE CASCADE,\n    step_subgloss_code  TEXT,\n    step_subgloss_label TEXT,\n    span_strong_match   INTEGER,\n    target_word         TEXT,\n    created_at          TEXT DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')),\n    UNIQUE (verse_id, term_inv_id)\n)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "verse_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "step_subgloss_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "step_subgloss_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "span_strong_match",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "target_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "strftime('%Y-%m-%dT%H:%M:%S','now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_vtl_term",
+          "unique": false
+        },
+        {
+          "name": "idx_vtl_verse",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_verse_term_links_1",
+          "unique": true
+        }
+      ],
+      "row_count": 226791
+    },
+    "wa_vocab_member": {
+      "sql": "CREATE TABLE wa_vocab_member (\n            id                       INTEGER PRIMARY KEY,\n            set_id                   INTEGER NOT NULL REFERENCES wa_vocab_set(id),\n            value                    TEXT    NOT NULL,\n            label                    TEXT,\n            description              TEXT,\n            sort_order               INTEGER NOT NULL DEFAULT 0,\n            deprecated               INTEGER NOT NULL DEFAULT 0,\n            deprecation_note         TEXT,\n            superseded_by_member_id  INTEGER REFERENCES wa_vocab_member(id),\n            introduced_at            TEXT,\n            created_at               TEXT    NOT NULL,\n            last_modified            TEXT,\n            UNIQUE (set_id, value)\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "set_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "superseded_by_member_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "introduced_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_vocab_member_set",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_vocab_member_1",
+          "unique": true
+        }
+      ],
+      "row_count": 39
+    },
+    "wa_vocab_set": {
+      "sql": "CREATE TABLE wa_vocab_set (\n            id               INTEGER PRIMARY KEY,\n            set_code         TEXT    NOT NULL UNIQUE,\n            name             TEXT    NOT NULL,\n            description      TEXT,\n            governing_doc    TEXT,\n            applies_to       TEXT,\n            deprecated       INTEGER NOT NULL DEFAULT 0,\n            deprecation_note TEXT,\n            created_at       TEXT    NOT NULL,\n            last_modified    TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "set_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "governing_doc",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "applies_to",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "deprecated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "last_modified",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_vocab_set_applies",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_wa_vocab_set_1",
+          "unique": true
+        }
+      ],
+      "row_count": 8
+    },
+    "word_registry": {
+      "sql": "CREATE TABLE word_registry (\n    id              INTEGER PRIMARY KEY,\n    no              INTEGER,\n    word            TEXT NOT NULL,\n    source_list     TEXT,\n    category_hint   TEXT,\n    phase1_input_file  TEXT,\n    phase1_status      TEXT,\n    phase1_output_file TEXT,\n    phase2_datasets    REAL,\n    notes           TEXT\n, automation_eligible INTEGER DEFAULT 1, last_automation_run TEXT, automation_run_id TEXT, phase1_term_count INTEGER, phase1_verse_count INTEGER, strongs_list TEXT, description TEXT, origin TEXT, dimensions TEXT, inference_note TEXT, session_b_status TEXT, cluster_assignment TEXT DEFAULT \"unassigned\", sb_classification TEXT DEFAULT NULL, sb_classification_reasoning TEXT DEFAULT NULL, carry_forward INTEGER DEFAULT 1, unique_term_count INTEGER DEFAULT 0, shared_term_count INTEGER DEFAULT 0, term_sharing_ratio REAL DEFAULT 0.0, verse_context_status TEXT DEFAULT NULL, dim_review_status TEXT DEFAULT NULL, dim_review_version TEXT DEFAULT NULL, word_synopsis TEXT)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "category_hint",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase1_input_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase1_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase1_output_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase2_datasets",
+          "type": "REAL",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "automation_eligible",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "1"
+        },
+        {
+          "name": "last_automation_run",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "automation_run_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase1_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "phase1_verse_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "strongs_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "origin",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "dimensions",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "inference_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "session_b_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_assignment",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "\"unassigned\""
+        },
+        {
+          "name": "sb_classification",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "sb_classification_reasoning",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "carry_forward",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "1"
+        },
+        {
+          "name": "unique_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "shared_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "term_sharing_ratio",
+          "type": "REAL",
+          "notnull": false,
+          "default": "0.0"
+        },
+        {
+          "name": "verse_context_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "dim_review_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "dim_review_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": "NULL"
+        },
+        {
+          "name": "word_synopsis",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_wr_cluster",
+          "unique": false
+        },
+        {
+          "name": "idx_wr_sb_status",
+          "unique": false
+        },
+        {
+          "name": "idx_wr_vc_status",
+          "unique": false
+        },
+        {
+          "name": "idx_wr_no",
+          "unique": false
+        }
+      ],
+      "row_count": 215
+    },
+    "word_run_state": {
+      "sql": "CREATE TABLE word_run_state (\n            id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id              TEXT    NOT NULL REFERENCES engine_run_log(run_id),\n            registry_id         TEXT    NOT NULL,\n            word                TEXT    NOT NULL,\n            phase_reached       TEXT,\n            audit_result        TEXT,\n            audit_detail        TEXT,\n            stop_reason         TEXT,\n            researcher_approved INTEGER DEFAULT 0,\n            approved_by         TEXT,\n            approved_at         TEXT\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "phase_reached",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "audit_result",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "audit_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "stop_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "researcher_approved",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0"
+        },
+        {
+          "name": "approved_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "approved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 438
+    }
+  }
+}

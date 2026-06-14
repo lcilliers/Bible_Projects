@@ -99,7 +99,7 @@ def main():
     )
     parser.add_argument(
         "--output", "-o",
-        help="Output file path. Default: data/schema/database-schema-YYYYMMDD.json",
+        help="Output file path. Default: Workflow/schema/database-schema-vN-YYYYMMDD.json",
     )
     parser.add_argument(
         "--db",

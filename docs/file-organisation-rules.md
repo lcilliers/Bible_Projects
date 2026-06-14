@@ -318,7 +318,7 @@ STEP API discovery output. Paired JSON + markdown files per word. No archiving n
 
 ### 3.9 `Workflow/schema/`
 
-Authoritative DDL and schema-related reports. *(Path corrected 2026-06-14 — was `data/schema/`. Snapshots are stale at ≤ v3.10.0; regenerate to live v3.31.0 with `python scripts/export_database_schema.py`.)*
+Authoritative DDL and schema-related reports. *(Path corrected 2026-06-14 — was `data/schema/`. Snapshot regenerated to live v3.31.0 on 2026-06-14 via `python scripts/export_database_schema.py`.)*
 
 | What goes here | Naming pattern |
 |---------------|----------------|

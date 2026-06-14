@@ -20,7 +20,7 @@ A top-level **`data/`** exists (`data/exports` 10 files, `data/imports/WA` 3 fil
 
 ## Schema-snapshot staleness
 
-The newest on-disk schema snapshot predates the live **3.31.0** (newest found: `Workflow/schema/archive/database-schema-v3.10.0-…`). **Recommendation:** regenerate with `python scripts/export_database_schema.py` to produce a current `Workflow/schema/database-schema-…3.31.0` snapshot.
+The newest on-disk schema snapshot was **v3.29.0** (2026-06-08, in `Workflow/schema/`), behind the live **v3.31.0**. ✅ **Regenerated 2026-06-14** → `Workflow/schema/database-schema-v3.31.0-20260614.json` (via `scripts/export_database_schema.py`, whose default output dir is correctly `Workflow/schema/`; its `--output` help string was also corrected from the stale `data/schema/`). *(Correction: an earlier draft of this audit said "≤ v3.10.0" — that under-counted; a v3.29.0 snapshot existed.)*
 
 ## Other filing hygiene (surfaced by the #6 script registry)
 

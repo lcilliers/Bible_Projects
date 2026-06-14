@@ -1,5 +1,7 @@
 # v3_0 Publication Pipeline — design
 
+> **SUPERSEDED (2026-06-14)** by the v3_2 cluster-rollup model — `wa-cluster-rollup-design.md` / `wa-cluster-rollup-instruction-v3_2-DRAFT-20260607.md`. Retained for reference (v3_0 design phase); see `outputs/markdown/project-reconstruction/04-open-loops-and-incomplete-methodology-20260614.md` §4. Archiving pending the cleanup register.
+
 **Date:** 2026-05-27
 **Status:** Design proposal, partial infrastructure in place
 **Trigger:** Researcher direction — Session C re-reads what Phase 9 just had in memory; use the existing prose store; build for input → output (catch-up + revised publishing).

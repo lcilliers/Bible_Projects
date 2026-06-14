@@ -1,5 +1,7 @@
 # v3_0 Phase B — control design
 
+> **SUPERSEDED (2026-06-14)** by the v3_2 cluster-rollup model — `wa-cluster-rollup-design.md` / `wa-cluster-rollup-instruction-v3_2-DRAFT-20260607.md`. Retained for reference (v3_0 design phase); see `outputs/markdown/project-reconstruction/04-open-loops-and-incomplete-methodology-20260614.md` §4. Archiving pending the cleanup register.
+
 **Date:** 2026-05-27
 **Status:** Addresses procedural anomaly raised by researcher 2026-05-27. Supplements [v3_0 final review](wa-v3_0-final-review-v1-20260527.md) and [cycle comparison](wa-v2_9-vs-v3_0-cycle-comparison-v1-20260527.md).
 **Trigger question:** *"on what basis is it fed into phase B — all the verses together? then phase B reads the terms to decide in the sub groups. All the terms in one go? what is the control to check AI has not gone off the rails. I assume next is to group the sub groups into characteristics? how do we prevent overload when it starts to read the verses to prepare the VCGs?"*

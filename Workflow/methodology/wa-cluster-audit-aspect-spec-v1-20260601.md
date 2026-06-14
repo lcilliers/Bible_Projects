@@ -1,5 +1,7 @@
 # Cluster audit — aspect specification (the canonical checklist)
 
+> **SUPERSEDED (2026-06-14)** by `wa-cluster-audit-design-v1-20260607.md` (the v3_2-integrated audit design). Retained for reference; see reconstruction 04 §4.
+
 **Living document** · **Doc version:** 2 · **2026-06-04** · grounds `scripts/audit_cluster_v1_20260601.py` (the reusable cluster auditor).
 **Purpose:** the consolidated, well-founded set of aspects a cluster audit checks — synthesised from prior work, not re-imagined. Each aspect cites its source so the audit stays anchored to the methodology.
 

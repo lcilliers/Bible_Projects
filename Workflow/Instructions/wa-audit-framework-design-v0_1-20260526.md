@@ -1,5 +1,7 @@
 # Audit framework — design (draft for review)
 
+> **SUPERSEDED (2026-06-14)** by `wa-cluster-audit-design-v1-20260607.md` (the v3_2-integrated audit design). Retained for reference; see reconstruction 04 §4.
+
 **Status:** DRAFT v0.1 — not yet ratified
 **Date:** 2026-05-26
 **Author:** CC

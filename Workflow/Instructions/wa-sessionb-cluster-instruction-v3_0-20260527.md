@@ -1,5 +1,7 @@
 # Session B Cluster Instruction — v3_0
 
+> **SUPERSEDED (2026-06-14)** by the v3_2 cluster-rollup model — `wa-cluster-rollup-design.md` / `wa-cluster-rollup-instruction-v3_2-DRAFT-20260607.md`. Retained for reference (v3_0 design phase); see `outputs/markdown/project-reconstruction/04-open-loops-and-incomplete-methodology-20260614.md` §4. Archiving pending the cleanup register.
+
 **Status:** Active
 **Date:** 2026-05-27
 **Supersedes:** [`wa-sessionb-cluster-instruction-v2_9-20260526.md`](wa-sessionb-cluster-instruction-v2_9-20260526.md)

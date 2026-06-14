@@ -79,6 +79,8 @@ These documents are *replaced* by later ones but carry **no in-document "superse
 | `wa-programme-open-items.md` v8 (2026-06-01) — **publication/generator sections** | The 2026-06-04 reset + verse-read pivot (uncertain extent) | See §0; ⚠ confirm |
 
 > **Recommendation (cheap, high-value):** adopt a one-line header convention — `> **SUPERSEDED** (date) by \`<doc>\`. See <pointer>.` — applied whenever a doc is *replaced* (not merely archived). This makes drift visible instead of silent. Better still per the all-work-in-DB principle: a small DB-resident **supersession ledger** (doc → superseded_by → date → reason).
+>
+> ✅ **Applied 2026-06-14:** SUPERSEDED markers added to the 7 active superseded docs (the 5-doc v3_0 design set + `wa-audit-framework-design-v0_1` + `wa-cluster-audit-aspect-spec-v1`). `WA-tier-framework-definitions-v1_2` intentionally left unmarked (kept as a working reference pending the study-foundations §c rewrite). The 2 remediation docs were already archived. Physical archiving of the marked docs remains the researcher's cleanup-register call.
 
 ---
 

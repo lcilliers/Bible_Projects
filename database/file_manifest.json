@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T06:22:17Z",
+  "generated_at": "2026-06-14T06:25:38Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,14 +13,14 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1748,
+    "current": 1734,
     "cross-reference": 3317,
-    "archived": 2224,
+    "archived": 2239,
     "backup": 17
   },
-  "total_files": 7468,
-  "total_active": 5244,
-  "total_archived": 2224,
+  "total_files": 7469,
+  "total_active": 5230,
+  "total_archived": 2239,
   "files": [
     {
       "path": ".env",
@@ -56867,8 +56867,8 @@
       "date": "2026-05-26",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 22212,
-      "modified": "2026-05-26T05:06:28Z"
+      "size_bytes": 22729,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-claudecode-instruction-v4_5-20260514.md",
@@ -57075,8 +57075,8 @@
       "date": "2026-05-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 78726,
-      "modified": "2026-05-27T17:18:16Z"
+      "size_bytes": 80227,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-sessionc-cluster-appendices-instruction-v1_0-20260512.md",
@@ -57267,8 +57267,8 @@
       "date": "2026-05-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 13779,
-      "modified": "2026-05-27T10:03:59Z"
+      "size_bytes": 14341,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-v3-publication-pipeline-design-v1-20260527.md",
@@ -57283,8 +57283,8 @@
       "date": "2026-05-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 10572,
-      "modified": "2026-05-27T08:08:28Z"
+      "size_bytes": 11133,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-v3_0-final-review-v1-20260527.md",
@@ -57299,8 +57299,8 @@
       "date": "2026-05-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 11047,
-      "modified": "2026-05-27T08:38:17Z"
+      "size_bytes": 11595,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-v3_0-phase-b-control-design-v1-20260527.md",
@@ -57315,8 +57315,8 @@
       "date": "2026-05-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 17939,
-      "modified": "2026-05-27T09:48:55Z"
+      "size_bytes": 18457,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/Instructions/wa-versecontext-instruction-v3_10-20260425.md",
@@ -62995,8 +62995,8 @@
       "date": "2026-06-01",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 10028,
-      "modified": "2026-06-04T18:02:26Z"
+      "size_bytes": 10307,
+      "modified": "2026-06-14T06:25:10Z"
     },
     {
       "path": "Workflow/methodology/wa-cluster-audit-design-v1-20260607.md",
@@ -63541,6 +63541,22 @@
       "archived": false,
       "size_bytes": 167435,
       "modified": "2026-06-08T03:57:30Z"
+    },
+    {
+      "path": "Workflow/schema/database-schema-v3.31.0-20260614.json",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3.31",
+      "date": "2026-06-14",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 176951,
+      "modified": "2026-06-14T06:23:26Z"
     },
     {
       "path": "Workflow/schema/ref-migration-m32-doc-sweep-20260420.md",
@@ -90263,6 +90279,38 @@
       "modified": "2026-03-30T14:26:24Z"
     },
     {
+      "path": "archive/scripts/_tmp_assemble_chapter_prototype.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 11887,
+      "modified": "2026-04-30T18:46:27Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_assemble_chapters_full.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 40199,
+      "modified": "2026-05-01T09:16:43Z"
+    },
+    {
       "path": "archive/scripts/_tmp_book_codes.py",
       "category": "script",
       "type": "other",
@@ -90295,6 +90343,22 @@
       "modified": "2026-03-18T13:58:10Z"
     },
     {
+      "path": "archive/scripts/_tmp_build_R067_resubmission_artefacts.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 23367,
+      "modified": "2026-04-30T12:24:52Z"
+    },
+    {
       "path": "archive/scripts/_tmp_build_c02_grpverify.py",
       "category": "script",
       "type": "other",
@@ -90309,6 +90373,134 @@
       "archived": true,
       "size_bytes": 5794,
       "modified": "2026-04-07T05:40:39Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_cluster_status_report.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 12208,
+      "modified": "2026-05-01T09:32:30Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_goodness_citations.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 17885,
+      "modified": "2026-04-28T15:51:46Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_goodness_data_layer.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 22390,
+      "modified": "2026-04-28T15:16:06Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_goodness_open_flags.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 6616,
+      "modified": "2026-04-28T15:17:00Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_goodness_qa_list.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 11312,
+      "modified": "2026-04-28T16:03:29Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_kindness_crossreg_extract.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 21480,
+      "modified": "2026-05-01T12:11:01Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_resubmission_artefacts.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 28403,
+      "modified": "2026-04-30T13:22:22Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_build_righteousness_audit_v1_20260502.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-05-02",
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 12525,
+      "modified": "2026-05-02T07:54:58Z"
     },
     {
       "path": "archive/scripts/_tmp_build_vcb024.py",
@@ -90471,6 +90663,22 @@
       "modified": "2026-04-09T05:39:27Z"
     },
     {
+      "path": "archive/scripts/_tmp_build_word_data_package.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 37265,
+      "modified": "2026-04-30T06:30:11Z"
+    },
+    {
       "path": "archive/scripts/_tmp_categorise_remaining.py",
       "category": "script",
       "type": "other",
@@ -90485,6 +90693,22 @@
       "archived": true,
       "size_bytes": 6514,
       "modified": "2026-04-02T12:28:15Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_check_v17_stage2b.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 4754,
+      "modified": "2026-05-01T04:29:06Z"
     },
     {
       "path": "archive/scripts/_tmp_classify_dim_label_proposals.py",
@@ -90887,6 +91111,22 @@
       "modified": "2026-03-16T18:06:45Z"
     },
     {
+      "path": "archive/scripts/_tmp_migrate_per_word.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 11850,
+      "modified": "2026-05-01T04:22:55Z"
+    },
+    {
       "path": "archive/scripts/_tmp_null_meaning.py",
       "category": "script",
       "type": "other",
@@ -90901,6 +91141,22 @@
       "archived": true,
       "size_bytes": 700,
       "modified": "2026-03-16T18:10:52Z"
+    },
+    {
+      "path": "archive/scripts/_tmp_parse_ai_second_tier_output.py",
+      "category": "script",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": true,
+      "size_bytes": 24059,
+      "modified": "2026-04-30T06:50:38Z"
     },
     {
       "path": "archive/scripts/_tmp_progress_report.py",
@@ -92403,8 +92659,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3373182,
-      "modified": "2026-06-14T06:16:37Z"
+      "size_bytes": 3373637,
+      "modified": "2026-06-14T06:22:17Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92691,8 +92947,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 24665,
-      "modified": "2026-06-14T06:11:38Z"
+      "size_bytes": 24652,
+      "modified": "2026-06-14T06:24:46Z"
     },
     {
       "path": "docs/filing-audit-20260614.md",
@@ -92707,8 +92963,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 3470,
-      "modified": "2026-06-14T06:10:37Z"
+      "size_bytes": 3685,
+      "modified": "2026-06-14T06:24:40Z"
     },
     {
       "path": "docs/flag-tables-extract-joins-20260415.md",
@@ -95971,8 +96227,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 11320,
-      "modified": "2026-06-14T05:09:19Z"
+      "size_bytes": 11779,
+      "modified": "2026-06-14T06:25:27Z"
     },
     {
       "path": "outputs/markdown/ve-by-cluster-20260610.md",
@@ -116727,246 +116983,6 @@
       "modified": "2026-05-16T13:57:57Z"
     },
     {
-      "path": "scripts/_tmp_assemble_chapter_prototype.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 11887,
-      "modified": "2026-04-30T18:46:27Z"
-    },
-    {
-      "path": "scripts/_tmp_assemble_chapters_full.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 40199,
-      "modified": "2026-05-01T09:16:43Z"
-    },
-    {
-      "path": "scripts/_tmp_build_R067_resubmission_artefacts.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 23367,
-      "modified": "2026-04-30T12:24:52Z"
-    },
-    {
-      "path": "scripts/_tmp_build_cluster_status_report.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 12208,
-      "modified": "2026-05-01T09:32:30Z"
-    },
-    {
-      "path": "scripts/_tmp_build_goodness_citations.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 17885,
-      "modified": "2026-04-28T15:51:46Z"
-    },
-    {
-      "path": "scripts/_tmp_build_goodness_data_layer.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 22390,
-      "modified": "2026-04-28T15:16:06Z"
-    },
-    {
-      "path": "scripts/_tmp_build_goodness_open_flags.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 6616,
-      "modified": "2026-04-28T15:17:00Z"
-    },
-    {
-      "path": "scripts/_tmp_build_goodness_qa_list.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 11312,
-      "modified": "2026-04-28T16:03:29Z"
-    },
-    {
-      "path": "scripts/_tmp_build_kindness_crossreg_extract.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 21480,
-      "modified": "2026-05-01T12:11:01Z"
-    },
-    {
-      "path": "scripts/_tmp_build_resubmission_artefacts.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 28403,
-      "modified": "2026-04-30T13:22:22Z"
-    },
-    {
-      "path": "scripts/_tmp_build_righteousness_audit_v1_20260502.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-05-02",
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 12525,
-      "modified": "2026-05-02T07:54:58Z"
-    },
-    {
-      "path": "scripts/_tmp_build_word_data_package.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 37265,
-      "modified": "2026-04-30T06:30:11Z"
-    },
-    {
-      "path": "scripts/_tmp_check_v17_stage2b.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 4754,
-      "modified": "2026-05-01T04:29:06Z"
-    },
-    {
-      "path": "scripts/_tmp_migrate_per_word.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 11850,
-      "modified": "2026-05-01T04:22:55Z"
-    },
-    {
-      "path": "scripts/_tmp_parse_ai_second_tier_output.py",
-      "category": "script",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".py",
-      "archived": false,
-      "size_bytes": 24059,
-      "modified": "2026-04-30T06:50:38Z"
-    },
-    {
       "path": "scripts/_transform_m15_phase2_patch_v1_20260508.py",
       "category": "script",
       "type": "other",
@@ -118835,8 +118851,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4695,
-      "modified": "2026-04-27T16:46:36Z"
+      "size_bytes": 4702,
+      "modified": "2026-06-14T06:23:14Z"
     },
     {
       "path": "scripts/export_word_json.py",
