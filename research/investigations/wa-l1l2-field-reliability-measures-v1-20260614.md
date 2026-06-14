@@ -16,39 +16,49 @@
 - **Sense-dependent** — derived from the *resolved* sense, so only as reliable as the sense.
 - **Out-of-reach residue** — needs the narrative/passage/canon beyond the local node-graph; the genuinely hard ones.
 
-## 2. The 14 fields
+## 1b. Refinements (working session, 2026-06-14)
 
-> Each is produced per **typed term-in-verse**. "What is needed" names the **measure(s)** that make the finding reliable, tagged with its stratum. "Expected answer" is the value space.
+Four structural points emerged that change the table below:
 
-| # | Field — what it is | What is needed to arrive at the answer (the reliable measure[s]) | Expected answer |
-|---|---|---|---|
-| **1** | **sense_applied** — which STEP sense the term carries *here* | **[node-combination, joint]** the term's STEP **sense-set** (candidate space) **+** the **disambiguating neighbour-nodes** — governing verb, co-occurring terms and their senses, syntactic role, literary setting, sometimes a surrounding verse. Reliable where a neighbour decides; residue where none in reach does | one clean sense phrase from the term's listed senses (or: flagged ambiguous) |
-| **2** | **type** — act / disposition / quality | **[bedrock]** the term's **morphology** (part-of-speech / form): verb→action, abstract noun→quality/status, participle/adjective→status. *(status-vs-quality split may need the resolved sense)* | `action` · `status` · `quality` |
-| **3** | **compound** — simple or made of parts | **[bedrock — lexical]** the term's **lexical/etymological structure** (is the form a compound, e.g. *makros*+*thumos*) — a term property, not verse-specific | `simple` · `compound:<parts>` |
-| **4** | **mode** — operative form + manner here | **[bedrock]** the verse's **morphology** (stem/binyan, voice, tense) for the form; **[node-combination]** the context/direction/level nuance from the verse | short mode phrase (form + manner) |
-| **5** | **constitutional_location** — where it's located here | **[node-combination]** an explicit **seat/body node co-occurring** in the verse (*lev*/heart, *ruach*/spirit, *nephesh*/soul, mind, a named organ); keyword-seeded, read-confirmed; silence = NONE | `spirit · soul · heart · mind · other-soul:<x> · body-part:<x> · NONE` (multi) |
-| **6** | **origin** — where it comes from constitutionally | **[node-combination]** **source cues** in the verse/passage — a giving/sending verb, a divine-source node, a generational marker, an internal-generation cue; absent ⇒ not-stated | `within-person · received-from-outside · bestowed-by-God · carried-generationally · not-stated` |
-| **7** | **faculty** — which inner faculty(ies) it engages | **[sense-dependent]** the term's **resolved sense → a sense→faculty mapping** (fear-sense→affect, know-sense→cognition); per-term from lexical meaning. Only as reliable as the sense | one+ of: perception·cognition·memory·affect·creativity·volition·agency·moral-evaluation·conscience·relational · `NONE` (multi) |
-| **8** | **attributed_to_God** — is it predicated of God here | **[node-combination]** the verse's **subject/possessor node** — is God the one who acts/owns/extends the term (a divine-subject or "of God/LORD" node) | `yes` · `no` (+ how-note) |
-| **9** | **purpose_equips** — what it equips the person to be/do/become | **[residue / passage-dependent]** a **purpose/result clause** in the verse or surrounding passage ("so that / in order to", or the narrative outcome); interpretive; absent ⇒ not-stated | purpose phrase · `not-stated` |
-| **10** | **typology_direction** — typological direction if any | **[residue — canonical]** a **typological signal** (term applied to God vs human as pattern) **+** canonical/theological context beyond the local graph; no signal ⇒ none | `human→divine · divine→human · none` |
-| **11** | **immediate_response** — first inner-being response here | **[passage-dependent / node-combination]** a **response node** in the verse/passage (the reaction shown — a following verb/state); absent ⇒ SILENT | response phrase · `SILENT` |
-| **12** | **produces_effect** — what it produces in the inner being here | **[residue / passage-dependent]** an **effect/result node** — what follows from it in the verse/passage narrative | effect phrase |
-| **13** | **relational_implication** — directional/relational force it carries | **[node-combination]** the **relational structure** in the verse — who/what the term orients toward (subject→object, direction) | relational/directional phrase |
-| **14** | **literary_setting** — the form carrying the verse | **[bedrock + node-combination]** the **book's genre** (from book metadata = definitive) **+** **setting cues** in the passage | `narrative · poetry · law · prophecy · wisdom · epistle · gospel · apocalyptic` (+ setting: judicial/liturgical/covenantal/communal/eschatological) |
+- **A — a Precede ▸ Supersede key.** A field can have a *first-pass* answer from a cheap measure that a *later, better* measure refines. `morphology` precedes **type** (gives act/status/quality); `sense` then **supersedes** it (refines status-vs-quality). So each field names its inputs (precede) and what may overwrite it (supersede). This applies across the table, not just type.
+- **B — predefined signal-lists ("words to look out for").** Several fields are driven by a **predefined dictionary of signal-nodes** — location (seat/body terms), origin (source-cue terms), **faculty** (faculty terms), attributed-to-God (divine-reference terms), relational-implication (directional terms). These are mechanical *lookups*, refined over iterations — not interpretation, not imputation.
+- **C — compound is the web-edge generator.** Compound is **not** just "is the term lexically compound." It splits into **(i) term + T2 qualifier** (the "how") and **(ii) term + another T1 term**, and **auto-creates a compound stub for every co-occurring T1 term** in the verse. That is literally how the component-level web strings get built — and it absorbs the "co-occurrence" field floated earlier.
+- **D — faculty is stated, not imputed.** A faculty surfaces **only** when the verse references one (directly — the term itself is a faculty-word; or indirectly — a faculty word co-occurs). It is **not** inferred from the term's general sense. `NONE`/silent otherwise.
 
-## 3. Strata summary
+## 2. The 14 fields (refined)
+
+> Per **typed term-in-verse**. "What's needed" names the **measure / predefined signal-list**. "Precede ▸ Supersede" is the dependency key. "Expected answer" is the value space.
+
+| # | Field — what it is | What's needed (measure / signal-list) | Precede ▸ Supersede | Expected answer |
+|---|---|---|---|---|
+| **1** | **sense_applied** — which STEP sense the term carries here | the STEP **sense-set** + the **disambiguating neighbour-nodes** (governing verb, co-terms & their senses, role, setting, sometimes a surrounding verse) — *joint* | ▸ inputs: sense-set + neighbours · supersedes: **type, faculty** depend on it | one clean sense phrase (or flagged ambiguous) |
+| **2** | **type** — act / status / quality | **morphology** (POS/form) gives the first answer | morphology ▸ **superseded by sense** (status-vs-quality) | `action · status · quality` |
+| **3** | **compound** — what the term combines with here *(web-edge generator)* | **verse spans** (which T1/T2 terms co-occur) + **qualifier attachment** (which T2 modifies it). **Auto-creates a stub per co-occurring T1 term** | spans ▸ each T1 co-term spawns an edge-stub (→ reciprocal finding) | `{ lexical-parts · T2-qualifier(s) · T1-co-term(s) → one stub each }` |
+| **4** | **mode** — the term's own grammatical realisation *(NOT compound)* | **morphology** (stem/binyan, voice, tense) | bedrock ▸ (none) | short form phrase (stem + voice) |
+| **5** | **constitutional_location** — where located here | **predefined seat/body signal-list** (lev/heart · ruach/spirit · nephesh/soul · mind · organ terms) — surfaces on co-occurrence; silence = NONE | signal-list + spans ▸ (read may confirm) | `spirit · soul · heart · mind · other-soul:<x> · body-part:<x> · NONE` (multi) |
+| **6** | **origin** — where it comes from | **predefined source-cue signal-list** (giving/sending verbs · divine-source markers · generational markers · internal-generation cues); absent ⇒ not-stated | signal-list ▸ (iterative tuning) | `within-person · received-from-outside · bestowed-by-God · carried-generationally · not-stated` |
+| **7** | **faculty** — which faculty the verse *references* *(stated, not imputed)* | **predefined faculty-signal keyword-list** — direct (the term *is* a faculty-word) or indirect (a faculty word co-occurs). **Not** inferred from general sense. `NONE` if unreferenced | signal-list ▸ (none — *not* sense-imputed) | the 10 faculties · `NONE` (multi) |
+| **8** | **attributed_to_God** — predicated of God here | **predefined divine-reference list** (God · LORD · YHWH · divine titles/pronouns · "of God"); i.e. the term's subject/possessor is a divine node | signal-list ▸ (none) | `yes · no` (+ how-note) |
+| **9** | **purpose_equips** | **DEFERRED** — resolve the others first | — | purpose phrase · `not-stated` |
+| **10** | **typology_direction** | **DEFERRED** — resolve the others first | — | `human→divine · divine→human · none` |
+| **11** | **immediate_response** | **OPEN — needs more thinking** | — | response phrase · `SILENT` |
+| **12** | **produces_effect** | **DEFERRED** — resolve the others first | — | effect phrase |
+| **13** | **relational_implication** — directional/relational force | **predefined relational-signal list** (to · toward · from · for · against; give · receive · seek · extend; subject→object direction) | signal-list ▸ (none) | relational/directional phrase |
+| **14** | **literary_setting** — *book-level, not per-verse* | the **book's genre** (book metadata — inherited, *not* extracted per verse); contextual setting (judicial/liturgical) may be passage-specific | inherited from book ▸ (none) | form (from book) + optional passage setting |
+
+## 3. Strata (refined)
 
 | Stratum | Fields | Reliability story |
 |---|---|---|
-| **Bedrock fact** | 2 type · 3 compound · 4 mode (form) · 14 literary-form | definitive now, from one mechanical signal (morphology / lexicon / book) |
-| **Node-combination** | 1 sense · 5 location · 6 origin · 8 attributed-to-God · 13 relational-implication · 14 setting | reliable **where the deciding node is present** in the verse/passage; the node *is* the trace |
-| **Sense-dependent** | 7 faculty | reliable **iff** the sense (field 1) is resolved |
-| **Out-of-reach residue** | 9 purpose · 10 typology · 11 immediate-response · 12 produces-effect | need the narrative/passage/canon beyond the local node-graph — the genuinely hard ones |
+| **Bedrock fact** | 2 type *(pre-sense)* · 4 mode · 14 literary-form *(book-inherited)* | definitive from one mechanical signal (morphology / book) |
+| **Bedrock web-edge** | 3 compound — co-occurring T1/T2 from spans | the literal web strings; auto-generated |
+| **Predefined signal-list** (node-combination by lookup) | 5 location · 6 origin · 7 faculty · 8 attributed-to-God · 13 relational | reliable where a listed signal-node is present; the node *is* the trace; tuned over iterations |
+| **Joint neighbour-inference** | 1 sense | reliable where a deciding neighbour is in reach |
+| **Deferred / open** | 9 purpose · 10 typology · 11 immediate-response · 12 produces-effect | not yet tackled (residue + needs-thinking) |
 
 ## 4. Notes
 
-- **Order matters.** The node-combination and sense-dependent fields presuppose earlier ones: field **1 (sense)** must settle before **7 (faculty)**; the **bedrock** fields (2, 3, 4, 14) are inputs available with no read. A resolution pass should run bedrock → sense → sense-dependent → residue.
-- **The trace is the deliverable.** For every non-bedrock field, the reliable finding must **cite the node(s) that forced it** — that is what makes it back-trackable (the gap the generative meaning had).
-- **Co-occurrence** (the verse's term-array — *which other in-scope terms share the verse*) is a **bedrock web-edge** (definitive from the spans). It is not one of the 14 but is the literal first "web string"; worth carrying as a 15th, since the whole reframe is that meaning rides on such combinations.
-- **The residue is honest residue.** Fields 9–12 are where no local-node measure settles it — flag these as the cases that genuinely need the passage/canon, rather than letting a generative step invent them.
+- **Resolution order** (from the Precede ▸ Supersede key): bedrock (2,4,14) and spans/compound (3) and the predefined-signal fields (5,6,7,8,13) need no read; **sense (1)** is the one joint inference; **sense then supersedes type (2)**; the deferred/open four (9–12) come last.
+- **The trace is the deliverable.** Every non-bedrock finding must **cite the node(s) / signal that forced it** — that is the back-trackability the generative meaning lacked.
+- **Compound builds the web.** Each co-occurring T1 term spawns a stub (reciprocal edge), so the web is assembled mechanically from the spans as a by-product of extraction — not narrated afterward.
+- **Honest residue.** 9–12 are where no local-node measure settles it; flag them rather than let a generative step invent them.
