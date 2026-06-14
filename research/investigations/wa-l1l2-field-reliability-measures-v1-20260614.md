@@ -57,6 +57,27 @@ Sense is **not one reliability** — it is a spectrum, and **most of it is mecha
 
 **So — yes, sense is the right next step after mode, and most of it is mechanical:** mode (bedrock) → **sense** (mostly mechanical from STEP's per-occurrence subgloss; rule/read only for the coarse residue) → then the sense-dependent fields (**type**, **faculty**) that supersede to it.
 
+## 1f. The target — the 14 fields COMPOSE the meaning (2026-06-14)
+
+This is where the field work is heading, and it **inverts the failed approach**:
+
+- **Failed:** narrate the verse meaning as prose → it read well but couldn't be traced back (it was *narrated*, not *derived*).
+- **Target:** derive the 14 fields mechanically (each a traceable finding) → **compose** them into a templated narrative sentence → the meaning is **back-trackable by construction** (every clause maps to a field → finding → verse) and **searchable** (the fields are structured, queryable across clusters and terms).
+
+The meaning sentence is a **deterministic view of the findings, not a new authored artefact** — so it is verifiable (check each clause against its field), reproducible, and can never drift from its evidence.
+
+**Example** (Psa 78:38, *chemah* "rage"):
+> *In Psa 78:38, **chemah** (sense: rage) is a **status** (type), in **noun** form (mode), **attributed to God** who restrains it, directed **toward the people** (relational).*
+
+Each clause ← one field ← one finding ← `(mti_term_id, verse_context_id)`.
+
+**Three terminal states carry through per field:**
+- **resolved** — a value, cited to its measure;
+- **indeterminate** — the verse genuinely does not settle it: a *real finding* ("the text is unclear here"), not a gap;
+- **pending** (`UNRESOLVED`) — the mechanism hasn't reached it; a worklist item, optionally resolved by reading the verse.
+
+**Traceability chain** (every field value): source measure on `wa_verse_records` / `wa_verse_term_links` (keyed `mti_term_id` + `reference`) → `verse_context` (same key) → `finding` (`verse_context_id` + `mti_term_id` + catalogue question). The finding **cites** the measure, so it back-traces to the exact node that forced it — the thing the generated prose never had.
+
 ## 2. The 14 fields (refined)
 
 > Per **typed term-in-verse**. "What's needed" names the **measure / predefined signal-list**. "Precede ▸ Supersede" is the dependency key. "Expected answer" is the value space.
