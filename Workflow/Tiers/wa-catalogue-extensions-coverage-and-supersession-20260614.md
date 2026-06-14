@@ -90,3 +90,15 @@ These touch a tier but add an angle the tier does not ask; kept rather than wron
 ---
 
 > **Reversal:** to undo the supersession, set `deleted=0`, `status='active'` on the §A codes. The element-and-superseding-tier in §A is the audit trail.
+
+---
+
+## E. Tier vs extension separation — the canonical rule (2026-06-14)
+
+So the word-extension questions are **excluded whenever the T0–T7 tier questions come into focus**:
+
+- **Tier-question focus = `wa_obs_question_catalogue WHERE tier IS NOT NULL AND deleted=0`** — the **173** universal T0–T7 questions. This is the canonical selector for any tier-level processing (verse-read / L2 tier findings / catalogue mapping).
+- **Extensions = `tier IS NULL`** (43 active) — a separate, word-originated layer (the kept gaps/partials/word-specific of §B–§D + the 12 reversed in §A). They are handled in their *own* focus, never folded into tier processing.
+- **`v_l2_tier` hardened 2026-06-14** — its `WHERE` now carries `q.tier IS NOT NULL`, so the L2 tier-findings view can **never** surface an extension even if a finding were linked to one. (Row count unchanged at 186,455 — no current finding links to an extension; this is enforcement, not a data change.)
+
+> To reverse the view hardening: recreate `v_l2_tier` without the `AND q.tier IS NOT NULL` clause.
