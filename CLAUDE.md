@@ -1,6 +1,8 @@
 # CLAUDE.md — Claude Code Project Reference
 
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
+>
+> ⚠ **Orientation (2026-06-14):** this file is the entry point but is **drift-stale** on schema/architecture — live schema is **3.31.0** (not the 3.11/3.17 cited below), and the live model is finding-centric (the `finding`/`cluster`/`characteristic` tables). **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)**, which fans out to the current-truth reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (files 01–04). Until this file is refreshed, that reconstruction is the corrected current state.
 
 ---
 

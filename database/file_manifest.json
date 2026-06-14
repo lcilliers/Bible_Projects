@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T05:11:52Z",
+  "generated_at": "2026-06-14T05:18:32Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 125,
+    "other": 128,
     "historical": 30,
-    "current": 1740,
+    "current": 1741,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7453,
-  "total_active": 5229,
+  "total_files": 7457,
+  "total_active": 5233,
   "total_archived": 2224,
   "files": [
     {
@@ -67,8 +67,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 20882,
-      "modified": "2026-06-06T05:57:20Z"
+      "size_bytes": 21507,
+      "modified": "2026-06-14T05:18:19Z"
     },
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -92371,8 +92371,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3366863,
-      "modified": "2026-06-14T04:39:48Z"
+      "size_bytes": 3367335,
+      "modified": "2026-06-14T05:11:52Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92727,6 +92727,22 @@
       "modified": "2026-04-27T16:52:00Z"
     },
     {
+      "path": "docs/project-orientation-core-memory-map.md",
+      "category": "doc",
+      "type": "doc",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6407,
+      "modified": "2026-06-14T05:17:53Z"
+    },
+    {
       "path": "docs/prose-store-architecture.md",
       "category": "doc",
       "type": "architecture",
@@ -93075,8 +93091,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 41648,
-      "modified": "2026-06-11T04:21:28Z"
+      "size_bytes": 42541,
+      "modified": "2026-06-14T05:18:31Z"
     },
     {
       "path": "memory/README.md",
@@ -94135,6 +94151,22 @@
       "modified": "2026-06-03T09:06:25Z"
     },
     {
+      "path": "memory/feedback_source_of_truth_is_written_record.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1624,
+      "modified": "2026-06-14T05:18:31Z"
+    },
+    {
       "path": "memory/feedback_span_pairing_and_reciprocal_findings.md",
       "category": "other",
       "type": "other",
@@ -94759,6 +94791,22 @@
       "modified": "2026-06-03T09:06:25Z"
     },
     {
+      "path": "memory/project_reconstruction_baseline_20260614.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1780,
+      "modified": "2026-06-14T05:18:31Z"
+    },
+    {
       "path": "memory/project_registry_words_not_all_lexically_grounded.md",
       "category": "other",
       "type": "other",
@@ -94933,6 +94981,22 @@
       "archived": false,
       "size_bytes": 3292,
       "modified": "2026-06-04T16:02:29Z"
+    },
+    {
+      "path": "memory/reference_core_memory_orientation_map.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1130,
+      "modified": "2026-06-14T05:18:31Z"
     },
     {
       "path": "memory/reference_study_definition_and_nine_principles.md",

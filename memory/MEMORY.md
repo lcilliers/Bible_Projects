@@ -1,5 +1,8 @@
 # Memory Index
 
+- [reference_core_memory_orientation_map.md](reference_core_memory_orientation_map.md) — START HERE: `docs/project-orientation-core-memory-map.md`; CLAUDE.md is the entry point, fans out to instructions + 2026-06-14 reconstruction + open-items + memory
+- [feedback_source_of_truth_is_written_record.md](feedback_source_of_truth_is_written_record.md) — GOVERNING (2026-06-14): truth = the written record via file_manifest, ascending date; NEVER reconstruct state from the DB (=fabrication) or ask the researcher to re-derive what's written; CLAUDE.md = entry point
+- [project_reconstruction_baseline_20260614.md](project_reconstruction_baseline_20260614.md) — 2026-06-14 reconstruction (outputs/markdown/project-reconstruction/01-04); CLAUDE.md+memory were drift-stale (live schema 3.31, finding-centric, registry=scaffolding, C+M codes coexist); truth baseline until CLAUDE.md refreshed
 - [project_meaning_duplicates_then_fabricates.md](project_meaning_duplicates_then_fabricates.md) — DIAGNOSIS (2026-06-11): the fused verse-read MEANING duplicates the 14 dimensions (~60% of generation) AND fabricates (invents to fill gaps, imports cross-verse synthesis); root of per-read variation (4-month circle). FIX: dimensions PRIMARY/disciplined, meaning DERIVED/cannot-invent; promote meaning-only observations to new dimensions
 - [project_column_wise_ve_hypothesis.md](project_column_wise_ve_hypothesis.md) — HYPOTHESIS (2026-06-11, active): reorganise verse-read ROW-WISE→COLUMN-WISE (each isolable VE question across whole corpus, one rubric). 3 lanes: A mechanical/no-read, B sense spine, C interdependent core (stays grouped — guardrail: never column-split it). Breaks the variation circle; workflow not schema change; prototype faculty pass next
 
