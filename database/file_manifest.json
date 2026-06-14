@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T05:57:36Z",
+  "generated_at": "2026-06-14T06:06:32Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1742,
+    "current": 1743,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7462,
-  "total_active": 5238,
+  "total_files": 7463,
+  "total_active": 5239,
   "total_archived": 2224,
   "files": [
     {
@@ -67,8 +67,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 21507,
-      "modified": "2026-06-14T05:18:19Z"
+      "size_bytes": 24861,
+      "modified": "2026-06-14T06:04:42Z"
     },
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -56983,6 +56983,22 @@
       "modified": "2026-04-27T09:50:26Z"
     },
     {
+      "path": "Workflow/Instructions/wa-operational-governance-v1_0-20260614.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5053,
+      "modified": "2026-06-14T06:05:49Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-patch-instruction-v2_11-20260507.md",
       "category": "workflow",
       "type": "other",
@@ -92371,8 +92387,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3370275,
-      "modified": "2026-06-14T05:48:43Z"
+      "size_bytes": 3371088,
+      "modified": "2026-06-14T05:57:36Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92739,8 +92755,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 11103,
-      "modified": "2026-06-14T05:56:45Z"
+      "size_bytes": 11049,
+      "modified": "2026-06-14T06:06:07Z"
     },
     {
       "path": "docs/prose-store-architecture.md",
@@ -95059,8 +95075,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 2403,
-      "modified": "2026-06-14T05:44:41Z"
+      "size_bytes": 2421,
+      "modified": "2026-06-14T06:06:31Z"
     },
     {
       "path": "memory/reference_reusable_scripts_catalogue.md",
@@ -115075,8 +115091,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 1883,
-      "modified": "2026-04-27T16:46:35Z"
+      "size_bytes": 2039,
+      "modified": "2026-06-14T06:01:27Z"
     },
     {
       "path": "scripts/_keyword_cluster_analysis_v1_20260523.py",

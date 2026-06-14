@@ -12,4 +12,4 @@ REFERENCE (2026-06-14): the programme-wide OPERATIONAL / safeguard governance ha
 - **Manifest (use of):** `docs/file-organisation-rules.md` §6 + CLAUDE.md §9 #5; rebuild `scripts/build_file_manifest.py` after file moves / session-log processing; **locate files via the manifest, not the folders** — [[filing-is-first-class-governance]].
 - **Interaction protocols & cost:** `docs/interaction-preferences.md` + CLAUDE.md §9 — confirm before non-trivial work · all outputs to `.md` with a chat pointer · factual discipline (no guessing) · cost awareness (§9 #6) — [[feedback_interaction_protocols]].
 
-GAP / open item: this operational layer should be consolidated into one governing doc (or DB-resident register); it currently relies on the drift-stale CLAUDE.md. See [[reference-core-memory-orientation-map]] · [[project_reconstruction_baseline_20260614]].
+CONSOLIDATED (2026-06-14): now governed by **`Workflow/Instructions/wa-operational-governance-v1_0-20260614.md`** (the canonical detail; CLAUDE.md §9/§12/§13 = compact summary). See [[reference-core-memory-orientation-map]] · [[project_reconstruction_baseline_20260614]].
