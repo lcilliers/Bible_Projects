@@ -6,7 +6,13 @@
 
 ---
 
-## A. Soft-deleted as SUPERSEDED (22) — element clearly covered by a tier
+## A. Coverage = superseded — split by finding-impact (revised 2026-06-14)
+
+> Finding-impact check after the initial soft-delete: of the 22 clear-coverage items, **12 carry active Session-B findings** and **10 have no findings or links**. **No item had a *live* L2 finding** (`finding_question_link` = 0 for every extension). Per directive:
+> - **Soft-deleted (10 — no findings/links):** `C-004 · C-005 · C-008 · M-001 · M-003 · M-004 · M-005 · M-008 · M-011 · WS-005`
+> - **Reversed → kept active, supersession DEFERRED to the Session-B→L2 finding migration (12 — have Session-B findings):** `F-003 · F-004 · F-005 · F-006 · F-007 · F-009 · F-011 · F-012 · F-014 · L-002 · L-007 · L-009`
+>
+> The table below stays as the element→superseding-tier map (the audit trail; for the 12, it is the **re-point target** when the Session-B findings migrate).
 
 | Code | Element | Superseded by |
 |---|---|---|
