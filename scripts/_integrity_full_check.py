@@ -1,6 +1,7 @@
-import sqlite3, json
+import sqlite3, json, os
 
-DB = r"G:\My Drive\Bible_study_projects\database\bible_research.db"
+# DB path resolved relative to this script (project moved off Google Drive 2026-06-03; see CLAUDE.md §13)
+DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "database", "bible_research.db")
 conn = sqlite3.connect(DB)
 conn.row_factory = sqlite3.Row
 
