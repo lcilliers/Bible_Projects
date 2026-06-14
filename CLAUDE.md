@@ -2,7 +2,7 @@
 
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
-> ⚠ **Orientation (2026-06-14):** this file is the entry point but is **drift-stale** on schema/architecture — live schema is **3.31.0** (not the 3.11/3.17 cited below), and the live model is finding-centric (the `finding`/`cluster`/`characteristic` tables). **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)**, which fans out to the current-truth reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (files 01–04). Until this file is refreshed, that reconstruction is the corrected current state.
+> **Orientation (2026-06-14):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)** — it fans out to instructions, the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04), the reusable-scripts catalogue, and operational governance. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.
 
 ---
 
@@ -63,38 +63,46 @@ For exact file lookup use `python scripts/build_file_manifest.py --search "..."`
 
 ---
 
-## 3. The Database — Schema v3.17.0
+## 3. The Database — Schema v3.31.0
 
 **File:** `database/bible_research.db` (SQLite, ~165 MB, excluded from Git). Connection pattern: `sqlite3.connect('database/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
 
 ### Table Groups
 
+> **Live model (2026-06):** the primary analytical object is the **`finding`** (one typed term-in-verse finding; 343k rows), organised under the **M-code cluster model** (`cluster` → `characteristic` → `cluster_subgroup` → VCG → verse). The registry is the lexical entry point, not the analytical unit. Full current-state + table-relevancy in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01, 03).
+
 | Group | Tables | Purpose |
 | --- | --- | --- |
-| Reference | `books`, `themes`, `sources` | Static (66 books, code aliases) |
-| Registry | `word_registry` | The 214-word anchor; carries `phase1_status`, `verse_context_status`, `session_b_status` |
-| WA core | `wa_file_index`, `wa_term_inventory`, `wa_term_related_words`, `wa_term_root_family` | Per-term metadata; `term_owner_type` = OWNER \| XREF |
-| MTI | `mti_terms`, `mti_term_flags`, `mti_term_cross_refs` | One row per Strong's; `owning_registry_fk` = canonical home |
-| Verse data | `wa_verse_records`, `wa_verse_term_links` | One row per term-in-verse occurrence (~130k active) |
-| Verse Context | `verse_context_group`, `verse_context` | Contextual meaning groups + per-verse classification (M18) |
-| Quality flags | `wa_quality_flag_types`, `wa_data_quality_flags` | Engine-derived; v3.11.0 evidence-flag family |
-| Session research | `wa_session_research_flags` | PH2_*, SB_FINDING, SB_DIMENSION, SD_POINTER |
-| Cross-registry | `wa_crosslink_type`, `wa_cross_registry_links` | Semantic links between registries |
-| Session B | `wa_session_b_dimensions`, `wa_session_b_findings`, `wa_finding_entity_links` | Dimensional profiles + findings |
-| Session D | `session_d_runs`, `session_d_verse_links`, `session_d_term_links`, `session_d_observations` | Cross-registry synthesis |
-| Observation | `wa_obs_question_catalogue`, `wa_finding_catalogue_links`, `wa_flag_type_question_link` | 194 + 12 Q-COV catalogue + flag→question routing (M31) |
-| Prose store | `prose_section_type`, `prose_section`, `prose_section_fts` (FTS5), link tables | DB-canonical prose (M20) |
-| Engine control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Audit trail |
+| **Finding model (LIVE primary)** | `finding`, `finding_question_link`, `finding_citation`, `finding_verse_link`, `finding_revision` | Universal finding store (M55). VERSE-level findings = L2 verse-read tier findings + meaning; the live unit (340k VERSE · 1.9k CLUSTER · 1k GLOBAL) |
+| **Cluster model (M-codes)** | `cluster`, `characteristic`, `characteristic_subgroup`, `cluster_subgroup`, `cluster_finding`, `cluster_observation` | Cluster (M01–M47 + FLAG + T2) → characteristic → sub-group → VCG → verse; `cluster_finding` = catalogue-prompted findings; `cluster_observation` = write-on-discovery |
+| **Term/VCG junctions** | `mti_term_subgroup`, `vcg_term` | M:N (M44/M45) — replaced `mti_terms.cluster_subgroup_id` and `verse_context_group.mti_term_id` |
+| Registry | `word_registry` | Lexical entry point + **C-code dimension anchor** (`cluster_assignment` = C01–C22); scaffolding under the M-code model (C and M coexist). Carries `phase1_status`, `verse_context_status`, `session_b_status` |
+| WA core (term/verse foundation) | `wa_file_index`, `wa_term_inventory`, `wa_term_related_words`, `wa_term_root_family` | Per-term metadata; `term_owner_type` = OWNER \| XREF. Stable foundation (last bulk write 2026-05-14) |
+| MTI | `mti_terms`, `mti_term_flags`, `mti_term_cross_refs` | One row per Strong's; `owning_registry_fk` = canonical home; carries `cluster_code` (M-codes). ⚠ OT-DBR-009 duplication unresolved |
+| Verse data | `wa_verse_records`, `wa_verse_term_links` | One row per term-in-verse (~230k rows); `span_strong_match` = authoritative usage; `morph_code`/`stem` backfilled |
+| Verse Context | `verse_context`, `verse_context_group` | Per-verse classification + groups; `verse_context` carries the L1/L2 fields (`keywords`, `analysis_note`, `pole`, `triage_status`) |
 | Meaning parse | `wa_meaning_parsed`, `wa_meaning_sense`, `wa_meaning_stem`, `wa_lsj_parsed` | Structured meaning text |
-| Metadata | `schema_version` | Migration history |
+| Observation catalogue | `wa_obs_question_catalogue`, `wa_finding_catalogue_links`, `wa_flag_type_question_link` | 189-question catalogue; ⚠ being refactored to the two-layer VE/SYNTH catalogue (not yet in DB) |
+| Prose store | `prose_section_type`, `prose_section`, `prose_section_fts` (FTS5), link tables | DB-canonical prose (publication parked) |
+| Quality / research flags | `wa_quality_flag_types`, `wa_data_quality_flags`, `wa_session_research_flags` | Engine-derived evidence flags + researcher pointers (PH2_*, SD_POINTER) |
+| Reference-as-DB registries | `wa_rule_registry`, `wa_addendum_registry`, `wa_vocab_set`/`_member`, `wa_patch_type_registry`, `wa_file_name_pattern`, `wa_label_pattern` | Governance reference (M32–34). ⚠ stale (last written April) |
+| Engine control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Audit trail |
+| Reference (static) | `books`, `book_code_variants`, `themes`, `sources` | 66 books + aliases; `themes`/`sources` empty |
+| Metadata | `schema_version` | Migration history (→ 3.31.0) |
+| **Legacy / superseded** (retained) | `wa_session_b_dimensions`, `wa_session_b_findings`, `wa_finding_entity_links` (old per-word findings → migrate into `finding`); `wa_dimension_index`, `wa_dim_review_cluster_log` (dimension review, eliminated 2026-05-04); `wa_cross_registry_links`, `wa_crosslink_type` (pre-cluster links); `session_d_*` (Session D, **0 rows**) | Superseded by the cluster/finding model; data retained pending disposition (see reconstruction 03) |
 
 ### Key Relationships
 
 ```text
-word_registry (no = registry_id)
+word_registry (lexical entry point; cluster_assignment = C-code)
   └─ wa_file_index ─ wa_term_inventory ─ wa_verse_records ─ verse_context
-      └─ mti_terms (owning_registry_fk → word_registry.id)
-          └─ verse_context_group (mti_term_id) — group_id consumed by verse_context
+mti_terms (owning_registry_fk → word_registry; cluster_code = M-code)
+  ├─ mti_term_subgroup ─→ cluster_subgroup ─ characteristic_subgroup ─ characteristic
+  └─ vcg_term ─→ verse_context_group
+cluster (M-code) ─ cluster_subgroup ─ characteristic ─ cluster_finding
+finding (LIVE unit; level=VERSE → verse_context_id + mti_term_id + cluster_code)
+  ├─ finding_question_link ─→ wa_obs_question_catalogue
+  └─ finding_citation / finding_verse_link
 ```
 
 ### XREF Architecture
@@ -131,7 +139,7 @@ NEW_WORD and GAP_FILL modes are superseded — AUDIT_WORD handles both paths.
 
 **Common flags:** `--dry-run`, `--force`, `--interactive`, `--skip-span-backpop`, `--extract-file=PATH`.
 
-**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.17.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
+**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.31.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
 
 Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Architecture-*.md`.
 
@@ -214,18 +222,18 @@ Documents in `Workflow/Instructions/`. **All operational cross-references use th
 | wa-versecontext-instruction | Both | Verse Context: batch construction, classification, validation, status advancement |
 | wa-word-study-template | Claude AI | Word study output template |
 
-### Current Programme State (2026-04-26)
+### Current Programme State (2026-06-14)
 
-- Schema **v3.11.0** (M29–M31 evidence-flag redesign applied 2026-04-20).
-- 214 registries · 182 VC Complete · 2 In Progress (grace 68, suffering 214) · 30 NULL (excluded).
-- All clusters C01–C22 dimension-reviewed.
-- 6 registries reset to `Verse Context Reset` (2026-04-19, Q12): compassion (23), fellowship (62), forgiveness (64), grace (68), love (103), mercy (111). Prior Session B narratives retained as historical `.md`.
-- 5 registries BANKED on scorecard v2 (2026-04-20): covetousness (35), fellowship (62), renewal (134), vulnerability (206), blindness spiritual (207).
-- Observation Catalogue: 194 + 12 Q-COV questions (Q-COV-01..12 added 2026-04-20 for evidence-flag routing).
-- Prose store operational (26 seeded section types; FTS5).
-- Evidence flags (informational, never gating): `VERSE_EVIDENCE_MINIMAL` · `_CONCENTRATED` · `_HIGH` · `_BREADTH_NOTE`.
-- FLAG-010: blocking gate — no new word analysis until all instructions audited against GR v2.8+.
-- Open HIGH OT: OT-DBR-009 (mti_terms dedup) — designed (Action R), awaiting approval.
+> ⚠ This compact reference can lag the written record. The **authoritative current state** is the manifest-driven reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01 status · 02 failures · 03 table-relevancy · 04 open-loops) and the fan-out map [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md). Live-model instruction docs (v3_2 rollup, verse-analysis methodology, tier catalogue, study foundations) are listed there.
+
+- Schema **v3.31.0** (live; M55 L2-finding system, 2026-06-08).
+- **Live model:** L1/L2 **"verse-read = meaning"** → `finding` (340k VERSE-level). L3–L8 synthesis/distillation **parked** until more clusters accumulate. The **v3_2 cluster-rollup instruction is DRAFT** (open item B3); the catalogue refit (two-layer VE/SYNTH) is approved but **not yet applied to the DB**.
+- **215 registries** — session_b_status: 160 Verse Context Reset · 12 Analysis Complete · 43 NULL; verse_context_status: 172 Complete · 1 In Progress · 42 NULL.
+- **49 clusters** (M01–M47 + FLAG + T2): 30 Not started · 13 Analysis Completed · 3 Analysis Completed (Terms Added) · 2 Structurally Ready · 1 Ready for re-analysis. M01 (Fear) + M15 (Wisdom) verse-read 100%. **128 characteristics.**
+- **Cluster-rework phase active from 2026-06-05** — new output → `Sessions-v2/{CODE}-{Name}/`; old `Sessions/` read-only cross-reference.
+- **DB loss 2026-06-03** recovered to a 2026-05-28 copy (~6 weeks lost); project off Google Drive, NAS + git backups (§13).
+- Registry/cluster duality: `word_registry.cluster_assignment` = **C-codes** (C01–C22, dimension-review layer, retired but data retained); the live analytical layer is the **M-code `cluster` table**. Both coexist — C-codes are scaffolding, not dead.
+- Open: **OT-DBR-009** (mti_terms dedup) unresolved; `wa-programme-open-items.md` (127 items) currency uncertain post-pivot; science extracts not yet in DB; ~12 docs silently superseded (reconstruction 04 §4).
 
 ---
 
