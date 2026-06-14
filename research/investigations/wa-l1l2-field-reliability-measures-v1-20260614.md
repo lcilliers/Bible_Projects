@@ -42,13 +42,28 @@ Four structural points emerged that change the table below:
 
 > Signal-lists are **iteration 1** (seeded from `wa-l1l2-50complex-verses-working-set-20260614.md`) and grow with more verses. The **rules** are the stable decision logic; the **states** make every field auditable — the `UNRESOLVED` rows are the backtrack worklist.
 
+## 1e. Is sense mechanical? — the grounded answer (resolves the confusion)
+
+Sense is **not one reliability** — it is a spectrum, and **most of it is mechanical.** Measured over the 2,501 active clustered terms and their occurrences:
+
+| stratum | share | how sense is got | reliability |
+|---|---|---|---|
+| **mono-sense term** (1 STEP subgloss) | **79% of occurrences** (6,659 terms) | assign the single subgloss | **fully mechanical** — no read |
+| **poly-sense, STEP discriminates per occurrence** | most of the other 21% (370 terms) | **read STEP's PER-OCCURRENCE subgloss** — STEP already split it per verse (*nephesh* → life · person · appetite · myself · animal · …) | **mechanical field-lookup** — not a read |
+| **poly-sense, STEP too coarse** | a minority of the 370 (theologically-loaded) | STEP's subgloss lumps distinct senses (*pneuma* "spirit" = Holy-Spirit **+** human spirit **+** wind) → needs a **signal-rule** (*pneuma* + "Holy"/"God" → Holy-Spirit) or the read | node-combination / read → else `UNRESOLVED` |
+| **no STEP subgloss source** | 10 terms · 179 occ | nothing mechanical | `UNRESOLVED` until backfilled |
+
+**The correction to the impasse.** The earlier mechanical layer's *"pneuma = wind/breath for all 312 verses (incl. Holy Spirit)"* was reading the term's **uniform gloss** ("spirit/breath") — **not** STEP's per-occurrence subgloss, which already splits `:spirit` (120) from `:breath` (4) per verse. STEP had disambiguated and the run ignored it. So sense is **substantially more mechanical than the impasse implied**: trivially for the mono-sense 79%, and as a field-read of the per-occurrence subgloss for the poly-sense terms STEP discriminates. The genuinely sense-dependent part is the **coarse-ceiling minority** (*pneuma*-type) — bounded, and addressable by **signal-rules** before any narrative read.
+
+**So — yes, sense is the right next step after mode, and most of it is mechanical:** mode (bedrock) → **sense** (mostly mechanical from STEP's per-occurrence subgloss; rule/read only for the coarse residue) → then the sense-dependent fields (**type**, **faculty**) that supersede to it.
+
 ## 2. The 14 fields (refined)
 
 > Per **typed term-in-verse**. "What's needed" names the **measure / predefined signal-list**. "Precede ▸ Supersede" is the dependency key. "Expected answer" is the value space.
 
 | # | Field — what it is | What's needed (measure / signal-list) | Precede ▸ Supersede | Expected answer |
 |---|---|---|---|---|
-| **1** | **sense_applied** — which STEP sense the term carries here | the STEP **sense-set** + the **disambiguating neighbour-nodes** (governing verb, co-terms & their senses, role, setting, sometimes a surrounding verse) — *joint* | ▸ inputs: sense-set + neighbours · supersedes: **type, faculty** depend on it | one clean sense phrase (or flagged ambiguous) |
+| **1** | **sense_applied** — which STEP sense the term carries here | **mechanical floor = STEP's per-occurrence subgloss** (mono → the one subgloss; poly → STEP's per-verse subgloss). Only the **coarse-ceiling residue** (*pneuma*-type) needs disambiguating neighbour-nodes or the read — *joint*. See §1e | ▸ inputs: STEP subgloss ▸ (residue) neighbour-nodes · supersedes: **type, faculty** depend on it | the STEP subgloss · refined sense for the residue · `UNRESOLVED` |
 | **2** | **type** — act / status / quality | **morphology** (POS/form) gives the first answer | morphology ▸ **superseded by sense** (status-vs-quality) | `action · status · quality` |
 | **3** | **compound** — what the term combines with here *(web-edge generator)* | **verse spans** (which T1/T2 terms co-occur) + **qualifier attachment** (which T2 modifies it). **Auto-creates a stub per co-occurring T1 term** | spans ▸ each T1 co-term spawns an edge-stub (→ reciprocal finding) | `{ lexical-parts · T2-qualifier(s) · T1-co-term(s) → one stub each }` |
 | **4** | **mode** — the term's own grammatical realisation *(NOT compound)* | **morphology** (stem/binyan, voice, tense) | bedrock ▸ (none) | short form phrase (stem + voice) |
