@@ -58,6 +58,11 @@
 - **Interaction protocols & cost:** `docs/interaction-preferences.md` + CLAUDE.md §9 — confirm before non-trivial work · all outputs to `.md` with a chat pointer · factual discipline (no guessing) · cost awareness (§9 #6).
 - ⚠ **Gap:** there is **no consolidated governing doc** for this operational/safeguard layer — it depends on CLAUDE.md, which is drift-stale. Consolidating it (a governing doc or DB-resident register) is an **open item**.
 
+**Reusable scripts & report generators** — *reuse these, don't recreate; never silently change a report's shape (comparability)*
+- **`docs/reusable-scripts-catalogue.md`** — the canonical catalogue: programme reports (`generate_programme_snapshot`, `generate_registry_overview`, `_generate_programme_report`); cluster reports/audit (`audit_cluster_v1_20260601` = the reusable auditor, `generate_full_cluster_audit`, `generate_cluster_summary`, `build_cluster_findings_digest`); word/registry extracts (`build_complete_extract`, `word_full_extract`, `_produce_registry_full_extract`, `_produce_vc_word_report`); schema/manifest (`export_database_schema`, `build_file_manifest`); reference-as-DB builders; the verse-read pipeline (`_apply_verse_read_meaning`, `_cc_verse_read`); `apply_session_patch`; backups; and the `scripts/analytics/` library.
+- **Rules:** check the catalogue (+ `python scripts/build_file_manifest.py --search "…"`) *before* writing a new script; if a report's format must change, **version it (`-vN`) and flag it** so prior outputs stay comparable — never mutate a generator in place.
+- ⚠ **Known issues:** `_integrity_full_check.py` points at the **dead Google-Drive DB path** (`G:\My Drive\…` — bug, fix before use); **no canonical script registry** yet (~25 `_generate_cluster_*` + ~40 `_exploratory_*` variants, no superseded markers) — a script registry is an **open item**.
+
 ### Tier 2 — Current truth baseline (the 2026-06-14 reconstruction)
 `outputs/markdown/project-reconstruction/`
 | File | What it gives |

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T05:48:43Z",
+  "generated_at": "2026-06-14T05:57:36Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 131,
+    "other": 132,
     "historical": 30,
-    "current": 1741,
+    "current": 1742,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7460,
-  "total_active": 5236,
+  "total_files": 7462,
+  "total_active": 5238,
   "total_archived": 2224,
   "files": [
     {
@@ -92371,8 +92371,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3369848,
-      "modified": "2026-06-14T05:44:42Z"
+      "size_bytes": 3370275,
+      "modified": "2026-06-14T05:48:43Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92739,8 +92739,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9684,
-      "modified": "2026-06-14T05:43:54Z"
+      "size_bytes": 11103,
+      "modified": "2026-06-14T05:56:45Z"
     },
     {
       "path": "docs/prose-store-architecture.md",
@@ -92757,6 +92757,22 @@
       "archived": false,
       "size_bytes": 18522,
       "modified": "2026-04-27T16:52:00Z"
+    },
+    {
+      "path": "docs/reusable-scripts-catalogue.md",
+      "category": "doc",
+      "type": "doc",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6068,
+      "modified": "2026-06-14T05:56:06Z"
     },
     {
       "path": "docs/rules-update-protocol.md",
@@ -93091,8 +93107,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 43613,
-      "modified": "2026-06-14T05:48:42Z"
+      "size_bytes": 43997,
+      "modified": "2026-06-14T05:57:35Z"
     },
     {
       "path": "memory/README.md",
@@ -95047,6 +95063,22 @@
       "modified": "2026-06-14T05:44:41Z"
     },
     {
+      "path": "memory/reference_reusable_scripts_catalogue.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1834,
+      "modified": "2026-06-14T05:57:35Z"
+    },
+    {
       "path": "memory/reference_study_definition_and_nine_principles.md",
       "category": "other",
       "type": "other",
@@ -95827,8 +95859,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 26741,
-      "modified": "2026-06-14T05:48:03Z"
+      "size_bytes": 28309,
+      "modified": "2026-06-14T05:57:22Z"
     },
     {
       "path": "outputs/markdown/project-reconstruction/03-table-data-relevancy-map-20260614.md",

@@ -66,6 +66,18 @@ Omitted from the first pass — the same blind spot as filing. Programme-wide op
 
 > **Open item:** consolidate the operational/safeguard governance (git, backups & recovery, manifest, interaction, cost) into **one governing doc or DB-resident register**, instead of relying on the drift-stale CLAUDE.md §9/§12/§13.
 
+### Reusable scripts & report generators
+
+Omitted from the first pass — the same blind spot. The non-task-specific tooling that exists to keep outputs **consistent and comparable** was never catalogued; now in `docs/reusable-scripts-catalogue.md` (memory: `reusable-scripts-catalogue`).
+
+| Date | What | Why / reason | Citation |
+|---|---|---|---|
+| 2026-06-14 | **`_integrity_full_check.py` points at the dead Google-Drive DB path** | hardcodes `G:\My Drive\Bible_study_projects\...` (project moved off Drive 2026-06-03); a CLAUDE.md §11 "common operation" that would silently check the stale/abandoned DB copy, not the live one | (scripts/_integrity_full_check.py, verified 2026-06-14) |
+| 2026-06-14 | **No canonical script registry; heavy proliferation** | ~25 `_generate_cluster_*` + ~40 `_exploratory_*` variants, dated, with no "current"/superseded markers — so recreating a script, or silently re-shaping a report, is near-inevitable (researcher's named risks: wasted time, non-comparable reports, errors) | (scripts/ listing, 2026-06-14) |
+| ongoing | **Comparability risk** | multiple dated variants per report type with no canonical marker → a regenerated report can differ in shape from a prior one assumed comparable. Rule: version a generator on change (`-vN`) and flag it; never mutate in place | (docs/reusable-scripts-catalogue.md rule 2) |
+
+> **Open items:** (1) fix the `_integrity_full_check.py` DB path; (2) build a canonical (ideally DB-resident) **script registry**; (3) version report generators so outputs stay comparable across runs.
+
 ---
 
 ## 2026-03 (Foundations)
