@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T04:33:34Z",
+  "generated_at": "2026-06-14T04:39:48Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 124,
+    "other": 125,
     "historical": 30,
-    "current": 1733,
+    "current": 1739,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7445,
-  "total_active": 5221,
+  "total_files": 7452,
+  "total_active": 5228,
   "total_archived": 2224,
   "files": [
     {
@@ -92371,8 +92371,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3358195,
-      "modified": "2026-06-11T03:01:08Z"
+      "size_bytes": 3365019,
+      "modified": "2026-06-14T04:25:12Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93077,6 +93077,22 @@
       "archived": false,
       "size_bytes": 41648,
       "modified": "2026-06-11T04:21:28Z"
+    },
+    {
+      "path": "memory/README.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 432,
+      "modified": "2026-06-11T04:33:50Z"
     },
     {
       "path": "memory/feedback_ai_package_self_declaration.md",
@@ -95637,6 +95653,86 @@
       "archived": false,
       "size_bytes": 3780,
       "modified": "2026-06-11T03:47:16Z"
+    },
+    {
+      "path": "outputs/markdown/patience-full-db-extract-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1630746,
+      "modified": "2026-06-14T03:54:01Z"
+    },
+    {
+      "path": "outputs/markdown/project-reconstruction/00-spine-index-ascending-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 98917,
+      "modified": "2026-06-14T04:26:46Z"
+    },
+    {
+      "path": "outputs/markdown/project-reconstruction/01-project-status-reconstruction-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 11404,
+      "modified": "2026-06-14T04:38:12Z"
+    },
+    {
+      "path": "outputs/markdown/project-reconstruction/02-failures-oversights-rework-log-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 19232,
+      "modified": "2026-06-14T04:37:00Z"
+    },
+    {
+      "path": "outputs/markdown/project-reconstruction/03-table-data-relevancy-map-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 12245,
+      "modified": "2026-06-14T04:39:25Z"
     },
     {
       "path": "outputs/markdown/ve-by-cluster-20260610.md",
@@ -115365,6 +115461,22 @@
       "archived": false,
       "size_bytes": 10551,
       "modified": "2026-04-27T16:46:36Z"
+    },
+    {
+      "path": "scripts/_produce_registry_full_extract.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 8481,
+      "modified": "2026-06-14T03:53:53Z"
     },
     {
       "path": "scripts/_produce_vc_word_report.py",
