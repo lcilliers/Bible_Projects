@@ -41,6 +41,7 @@
 | `export_word_json.py` | Word JSON export |
 | `word_study_extract.py` | STEP pull, no DB write (`--word`, `--anchors`) |
 | `generate_session_a_extract.py` | Session A extract |
+| `build_word_relationship_report.py` | Where a word appears in the DB (table map) + its related-words trail (lexical / root / cross-registry / cluster). `--registry N` |
 
 ## Schema / integrity / manifest
 | Script | Produces |

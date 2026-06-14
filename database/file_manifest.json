@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T06:25:38Z",
+  "generated_at": "2026-06-14T08:08:05Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1734,
+    "current": 1736,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7469,
-  "total_active": 5230,
+  "total_files": 7471,
+  "total_active": 5232,
   "total_archived": 2239,
   "files": [
     {
@@ -92659,8 +92659,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3373637,
-      "modified": "2026-06-14T06:22:17Z"
+      "size_bytes": 3374196,
+      "modified": "2026-06-14T06:25:38Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93091,8 +93091,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6603,
-      "modified": "2026-06-14T06:08:27Z"
+      "size_bytes": 6774,
+      "modified": "2026-06-14T08:07:51Z"
     },
     {
       "path": "docs/rules-update-protocol.md",
@@ -93123,8 +93123,8 @@
       "date": "2026-06-14",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 32113,
-      "modified": "2026-06-14T06:07:49Z"
+      "size_bytes": 31452,
+      "modified": "2026-06-14T08:08:04Z"
     },
     {
       "path": "docs/step_setup.md",
@@ -96133,6 +96133,22 @@
       "archived": false,
       "size_bytes": 3780,
       "modified": "2026-06-11T03:47:16Z"
+    },
+    {
+      "path": "outputs/markdown/patience-db-appearance-and-related-words-20260614.md",
+      "category": "report",
+      "type": "word-report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9560,
+      "modified": "2026-06-14T08:08:04Z"
     },
     {
       "path": "outputs/markdown/patience-full-db-extract-20260614.md",
@@ -118789,6 +118805,22 @@
       "archived": false,
       "size_bytes": 6818,
       "modified": "2026-04-27T16:46:36Z"
+    },
+    {
+      "path": "scripts/build_word_relationship_report.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 11440,
+      "modified": "2026-06-14T08:07:34Z"
     },
     {
       "path": "scripts/classify_term_introduction_source.py",
