@@ -44,6 +44,13 @@
 **Earlier-stage instructions (still referenced; some superseded — see 04 §4)**
 - `wa-versecontext-instruction`, `wa-sessionb-cluster-instruction-v3_0` *(superseded by v3_2)*, `wa-sessiond-orientation`, `wa-dimensionreview-instruction` *(dimension review eliminated 2026-05-04)*, `wa-word-study-template`
 
+**Filing / file-organisation governance** (where files go, how they're named/versioned/archived)
+- **`docs/file-organisation-rules.md`** — the governing filing doc: naming conventions (§2), **snapshot vs living-document versioning** (§2.3 / §2.3a — living docs carry no `-vN`, version in metadata + git), folder rules (§3, incl. §3.0 `Sessions-v2/` = home for all new cluster output), archiving (§4), CC obligations (§5), the manifest (§6)
+- `Workflow/Global_rules/wa-global-rules-all-v2-…` — the **GR-FILE-*** rules (+ GR-PROC/GR-OBS governance)
+- `wa-reference` `[current]` — file-naming patterns + labels; and the **DB-resident pattern registries** `wa_file_name_pattern` / `wa_label_pattern` / `wa_patch_type_registry` (M34)
+- `database/file_manifest.json` (+ `scripts/build_file_manifest.py`) — the whole-tree index with a `currency` signal; **the reliable way to locate files** (folders alone are not reliable)
+- ⚠ **The filing guidance is itself partly drifted from the restructured layout** (verified 2026-06-14): §3.9 `data/schema/` is gone (schema now at `Workflow/schema/`); a top-level `data/` exists but is absent from CLAUDE.md §2; exports have two homes (`Sessions/Session_A/STEP Extracts` and `data/exports`). **A filing audit (reconcile rules ↔ actual layout) is an open item** — see 02 and 04.
+
 ### Tier 2 — Current truth baseline (the 2026-06-14 reconstruction)
 `outputs/markdown/project-reconstruction/`
 | File | What it gives |

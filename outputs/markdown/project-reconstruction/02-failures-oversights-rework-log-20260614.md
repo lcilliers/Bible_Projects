@@ -35,6 +35,25 @@ Two cross-cutting lessons the record keeps re-teaching:
 
 ---
 
+## Filing / file-organisation governance (added 2026-06-14 — omitted from the first pass)
+
+**Meta-omission (my own):** the first pass dropped the filing/file-organisation governance entirely — from the orientation map *and* this failures log — despite filing being a standing researcher concern. Recorded as a failure so it stops recurring (memory: `filing-is-first-class-governance`).
+
+The governing doc is **`docs/file-organisation-rules.md`** (naming §2; snapshot vs living-doc versioning §2.3/§2.3a; folder rules §3; archiving §4; CC obligations §5; manifest §6), reinforced by GR-FILE-* (`Workflow/Global_rules/`), `wa-reference`, and the DB pattern registries (`wa_file_name_pattern`/`wa_label_pattern`). The filing-related failures:
+
+| Date | What | Why / reason | Citation |
+|---|---|---|---|
+| 2026-06-14 | **Documented filing inconsistency** — folders are not a reliable way to locate work | "Your filing is not consistent, so there is no real reliability to try and use the folders. There is a manifest that should be up to date." — drove the manifest-first reconstruction method | (researcher, this session 2026-06-14) |
+| 2026-06-14 | **The filing guidance itself has drifted from the restructured layout** | §3.9 `data/schema/` no longer exists (schema moved to `Workflow/schema/`); top-level `data/` exists but is absent from CLAUDE.md §2 directory map; **exports have two homes** (`Sessions/Session_A/STEP Extracts` *and* `data/exports`) — verified by path check | (docs/file-organisation-rules.md §3.1/§3.9 vs live tree, 2026-06-14) |
+| ongoing | **Silent supersession = a filing-rule breach, not just a metadata gap** | §4 requires superseded docs be moved to `archive/`; the ~12 silently-superseded docs (04 §4, incl. the v3_0 set) sit un-archived in active folders — the rule exists, it wasn't applied | (docs/file-organisation-rules.md §4; 04 §4) |
+| open | **Filing/cleanup not executed** | `wa-workflow-cleanup-register.md` holds ~42 disposition decisions awaiting researcher markup; archiving pending (cross-ref 04 §1a) | (wa-workflow-cleanup-register.md) |
+| Mar–Apr (reframe) | **Naming/format drift = filing-rule violations** | The March MTI format drift, the JSON-schema-generation drift, the `finding_type`/`VOLUME_LIMITATION` naming drift (logged below) are all breaches of the §2 naming standard — they are filing-governance failures, not only data issues | (this log, 2026-03/2026-04 sections) |
+| context | **DB pattern registries (the DB-resident filing rules) are stale** | `wa_file_name_pattern`/`wa_label_pattern`/`wa_patch_type_registry` (M34, "reference-as-DB") last written April; they encode naming/label patterns but haven't tracked the layout changes — a stale single-source-of-truth for filing (see 03 issue #4/#5) | (03 §issues) |
+
+> **Open item:** a **filing audit** — reconcile `docs/file-organisation-rules.md` (+ the DB pattern registries) against the actual restructured tree, fix the `data/` vs `Sessions/`/`database/` ambiguity and the two-home exports, and archive the silently-superseded docs. Until then, **use the manifest, not the folders, to locate work.**
+
+---
+
 ## 2026-03 (Foundations)
 
 | Date | What went wrong | Why / reason for rework | Citation |
