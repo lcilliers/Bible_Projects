@@ -126,3 +126,17 @@ These are the stable substrate the whole pipeline reads. Last bulk write 2026-05
 4. **OT-DBR-009 (`mti_terms` dedup)** sits under the CURRENT-CORE term master — unresolved and affecting ~2,209 verses' findings. It is the one integrity issue inside the live layer.
 
 > Cross-checks: row counts + last-write from live DB forensics (2026-06-14); supersession claims cited in `02-failures-oversights-rework-log-20260614.md`; current read/write usage from the June reader against `wa-cluster-rollup-instruction-v3_2-DRAFT-20260607.md` and `wa-cluster-rollup-design.md`.
+
+---
+
+## Issues surfaced 2026-06-14 (from the open-loops scan — ratify before any CLAUDE.md refresh)
+
+These four change how specific tables should be bucketed; each is a decision for you (see also `04-open-loops-and-incomplete-methodology-20260614.md`).
+
+1. **Catalogue tables are mid-refactor — CURRENT but *unstable*.** `wa_obs_question_catalogue` (412), `finding_question_link` (332,184) and `wa_finding_catalogue_links` (6,199) are tied to the two-layer VE/SYNTH **catalogue refit that is approved on paper but not yet applied to the DB** (the 189 T-questions are being re-dispositioned; 16 DROP soft-deleted). Treat their *current shape as not settled* — they will move when the refit lands. → re-bucket `wa_obs_question_catalogue` from STALE-RELEVANT to **CURRENT-MUTATING**.
+
+2. **C-code layer needs an explicit keep-or-retire decision — the biggest "stale-but-referenced" ambiguity.** `wa_dimension_index` (3,509), `word_registry.cluster_assignment` (C01–C22) and `wa_dim_review_cluster_log` (6) belong to **dimension review, which was eliminated 2026-05-04** — yet the C-codes remain the registry's *only* cluster pointer while the live M-codes live in `cluster`/`mti_terms.cluster_code`. **Two parallel cluster systems, no decision on whether C is retired.** Until decided, these stay 🟡 STALE-RELEVANT; *do not* let the CLAUDE.md refresh imply C is dead (patience = C08 depends on this).
+
+3. **Two prose-citation models, one stale — plus empty link tables.** `wa_prose_section_citations` (562, last write **2026-04-28**) vs the live `finding_citation` (51,148). And `prose_section_finding_link` / `prose_section_dimension_link` are **0 rows** (never used). The prose/citation layer needs reconciliation: confirm `finding_citation` is the live model, retire `wa_prose_section_citations`, and confirm the two empty link tables can be dropped. (Whole prose layer is CURRENT-PARKED — publication is paused.)
+
+4. **The reference-as-DB tables are themselves stale — which defeats their purpose.** `wa_rule_registry` (last write 2026-04-17), `wa_addendum_registry` (all 22 obsolete, M35), `wa_vocab_set`/`wa_vocab_member`, and the `wa_*_pattern` registries were created (M32–M34) to be the **single source of truth** for rules/vocab/patterns — but none has been written since April, while the methodology pivoted hard May–June. **A stale single-source-of-truth is worse than none, because queries trust it.** Decision: refresh them to the current rules/vocab, or formally demote them from "canonical" and point back to the instruction docs. This is a genuine integrity issue, not just housekeeping.

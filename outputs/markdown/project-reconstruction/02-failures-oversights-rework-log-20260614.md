@@ -20,6 +20,21 @@ The recurring failure modes, in the researcher's own record:
 
 ---
 
+## Implications digested (2026-06-14)
+
+The ~55 items are not independent — they compound into two root causes:
+
+1. **Over-structuring an integrated subject.** The organising principle was rebuilt four times — registry → dimension → term-similarity → characteristic — and *each pivot was a correction of imposing too much structure* on an inner life the record itself calls "holistic… resists faculty-decomposition" (M11 analysis, 2026-05-26). The **still-open** M11 park, the un-run architecture probe, and the question "is the inner being too integrated/fluid to force into structures?" are the unresolved tail of this — the deepest live methodology risk, not a settled one.
+2. **Drift between what was decided and what the live artefacts say.** 42 instruction gaps closed on the final day of March; v3_0 still cited as authoritative after v3_2; schema snapshots at 3.17 vs live 3.31; the 2026-06-01 open-items register predating two pivots with no marker. This *is* the reliability concern — and it argues for the single open-items/supersession surface proposed in `04 §5`.
+
+Two cross-cutting lessons the record keeps re-teaching:
+- **AI-as-sole-gate + procedural discretion → fabrication** (March MTI fabricated registry numbers; fellowship's 9 defects; the meaning-duplicates-then-fabricates loop; legacy findings with templated counts). Every fix was the same shape: *remove discretion, mechanical-first, verse-grounded*. Any new automation must inherit that or it will reproduce the loop.
+- **Infrastructure fragility is existential.** The 2026-06-03 DB loss cost ~6 weeks and June 1–2 was unrecoverable *because it was handler-based, not in replayable patches* — which is exactly why the "all work in the DB, replayable" rule exists and is not yet fully realised.
+
+> Net: fix the two roots (stop over-structuring; close the decision↔artefact gap with one live surface) and most of the recurring failure classes below stop recurring.
+
+---
+
 ## 2026-03 (Foundations)
 
 | Date | What went wrong | Why / reason for rework | Citation |

@@ -61,3 +61,20 @@ The project began (March) as a **per-word STEP-extraction engine** producing JSO
 | **Active standing risks** | OT-DBR-009 mti_terms dedup (unfixed); science extracts not in DB; volume-vs-value of per-verse findings; publication parked |
 
 > Key correction to CLAUDE.md: it still presents `word_registry` as "*the* 214-word anchor" and omits the `finding`/`cluster`/`characteristic` architecture entirely. The live primary object is the **finding** (typed term-in-verse); the registry is the lexical entry point and the C-code (dimension-review) anchor — a *parallel* live layer to the M-code clusters, not a dead one.
+
+---
+
+## What is missing or incomplete (methodology — not data) — added 2026-06-14
+
+The narrative above is *what was done*. The equally-important picture is *what remains open* — the incomplete methodology work. **Full register: [04-open-loops-and-incomplete-methodology-20260614.md](04-open-loops-and-incomplete-methodology-20260614.md).** Headlines:
+
+- **A master open-items register already exists** — `Workflow/Programme/Program_reports/wa-programme-open-items.md` (127 items, §A–§Q) — but it predates the 2026-06-03 DB loss + 2026-06-04 reset + verse-read pivot, so its publication/generator half may be stale with no marker. **Confirm its currency** (04 §0).
+- **The live model is not finalised in instruction:** the **v3_2 cluster-rollup instruction is DRAFT** (open item B3 = L8b mechanics); verse-analysis methodology **v4 DRAFT**; phase-reshape **v3_1** and phase-1-mechanical reframe **awaiting approval**.
+- **Catalogue refit** (two-layer VE/SYNTH) approved on paper, **DB not yet modified**.
+- **Filing/cleanup register** awaiting researcher markup; archiving not executed.
+- **BOUNDARY hard-gate backlog:** 17 clusters validated 2026-05-31 → all demoted to "Analysis - In Progress"; none re-closed; the enabling **v2_5 methodology pivot was never drafted**.
+- **Large coverage-gap root cause** (M04/M07/M08/M09 each missing ~1000+ findings) **undiagnosed** — gates downstream publication.
+- **Column-wise + reverse-primacy redesign** (2026-06-11) decided, **not implemented** (needs engine refactor).
+- **~12 documents silently superseded** (the v3_0 design set, remediation set, audit v0_1) with **no marker** — and CLAUDE.md still cites v3_0 as authoritative.
+
+The point: "what is current" is hard to read not only because summaries drifted, but because there is **no single live open-items/supersession surface** — decisions and supersessions are scattered across separately-dated docs.
