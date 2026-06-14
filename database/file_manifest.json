@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T15:42:03Z",
+  "generated_at": "2026-06-14T17:04:23Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1742,
+    "current": 1743,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7477,
-  "total_active": 5238,
+  "total_files": 7478,
+  "total_active": 5239,
   "total_archived": 2239,
   "files": [
     {
@@ -92708,7 +92708,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 3377702,
-      "modified": "2026-06-14T15:36:59Z"
+      "modified": "2026-06-14T15:42:03Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107189,6 +107189,22 @@
       "archived": false,
       "size_bytes": 5384,
       "modified": "2026-06-08T05:22:20Z"
+    },
+    {
+      "path": "research/investigations/wa-l1l2-field-reliability-measures-v1-20260614.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9441,
+      "modified": "2026-06-14T17:04:09Z"
     },
     {
       "path": "research/investigations/wa-l2-finding-schema-design-v1-20260609.md",
