@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T14:21:12Z",
+  "generated_at": "2026-06-14T14:37:08Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1739,
+    "current": 1740,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7474,
-  "total_active": 5235,
+  "total_files": 7475,
+  "total_active": 5236,
   "total_archived": 2239,
   "files": [
     {
@@ -92675,8 +92675,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3375932,
-      "modified": "2026-06-14T14:10:59Z"
+      "size_bytes": 3376372,
+      "modified": "2026-06-14T14:21:12Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -95973,6 +95973,22 @@
       "archived": false,
       "size_bytes": 109267,
       "modified": "2026-05-06T04:35:42Z"
+    },
+    {
+      "path": "outputs/markdown/L1-L2-design-vs-measured-gap-20260614.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7441,
+      "modified": "2026-06-14T14:36:55Z"
     },
     {
       "path": "outputs/markdown/L1-catalogue-signoff-document-index-20260614.md",
