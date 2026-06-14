@@ -9,4 +9,4 @@ REFERENCE (2026-06-14): the non-task-specific **reusable scripts** (report gener
 
 **Rules:** check the catalogue + `build_file_manifest.py --search` BEFORE writing a new script; if a report format must change, version the script `-vN` and flag it — never mutate a generator in place (comparability).
 
-**Known issues:** `_integrity_full_check.py` hardcodes the dead `G:\My Drive\...` DB path (fix); no canonical/DB-resident script registry — heavy proliferation (~25 `_generate_cluster_*`, ~40 `_exploratory_*`) with no superseded markers (open item). Part of the governance-layers checklist — [[check-governance-layers-not-just-pipeline]] · [[reference-core-memory-orientation-map]].
+**Registry:** exhaustive mechanical classification of all 626 scripts in `docs/script-registry-generated-20260614.md` (regen via `scripts/build_script_registry.py`). ✅ `_integrity_full_check.py` Drive-path bug FIXED 2026-06-14. Residual cleanup (open): 15 `_tmp_*` to archive · 13 version-duplicate supersession candidates · 140 off-convention names. Part of the governance-layers checklist — [[check-governance-layers-not-just-pipeline]] · [[reference-core-memory-orientation-map]].

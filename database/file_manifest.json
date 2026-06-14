@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T06:06:32Z",
+  "generated_at": "2026-06-14T06:09:01Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1743,
+    "current": 1745,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7463,
-  "total_active": 5239,
+  "total_files": 7465,
+  "total_active": 5241,
   "total_archived": 2224,
   "files": [
     {
@@ -92387,8 +92387,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3371088,
-      "modified": "2026-06-14T05:57:36Z"
+      "size_bytes": 3371531,
+      "modified": "2026-06-14T06:06:32Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 11049,
-      "modified": "2026-06-14T06:06:07Z"
+      "size_bytes": 11104,
+      "modified": "2026-06-14T06:08:38Z"
     },
     {
       "path": "docs/prose-store-architecture.md",
@@ -92787,8 +92787,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6068,
-      "modified": "2026-06-14T05:56:06Z"
+      "size_bytes": 6603,
+      "modified": "2026-06-14T06:08:27Z"
     },
     {
       "path": "docs/rules-update-protocol.md",
@@ -92805,6 +92805,22 @@
       "archived": false,
       "size_bytes": 5811,
       "modified": "2026-04-27T16:52:00Z"
+    },
+    {
+      "path": "docs/script-registry-generated-20260614.md",
+      "category": "doc",
+      "type": "doc",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 32113,
+      "modified": "2026-06-14T06:07:49Z"
     },
     {
       "path": "docs/step_setup.md",
@@ -95091,8 +95107,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 1834,
-      "modified": "2026-06-14T05:57:35Z"
+      "size_bytes": 1937,
+      "modified": "2026-06-14T06:09:00Z"
     },
     {
       "path": "memory/reference_study_definition_and_nine_principles.md",
@@ -118661,6 +118677,22 @@
       "archived": false,
       "size_bytes": 12289,
       "modified": "2026-04-27T16:46:36Z"
+    },
+    {
+      "path": "scripts/build_script_registry.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 6547,
+      "modified": "2026-06-14T06:07:39Z"
     },
     {
       "path": "scripts/build_session_a_prose.py",
