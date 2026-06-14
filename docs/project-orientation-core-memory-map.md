@@ -49,7 +49,7 @@
 - `Workflow/Global_rules/wa-global-rules-all-v2-…` — the **GR-FILE-*** rules (+ GR-PROC/GR-OBS governance)
 - `wa-reference` `[current]` — file-naming patterns + labels; and the **DB-resident pattern registries** `wa_file_name_pattern` / `wa_label_pattern` / `wa_patch_type_registry` (M34)
 - `database/file_manifest.json` (+ `scripts/build_file_manifest.py`) — the whole-tree index with a `currency` signal; **the reliable way to locate files** (folders alone are not reliable)
-- ⚠ **The filing guidance is itself partly drifted from the restructured layout** (verified 2026-06-14): §3.9 `data/schema/` is gone (schema now at `Workflow/schema/`); a top-level `data/` exists but is absent from CLAUDE.md §2; exports have two homes (`Sessions/Session_A/STEP Extracts` and `data/exports`). **A filing audit (reconcile rules ↔ actual layout) is an open item** — see 02 and 04.
+- ✅ **Filing audit done 2026-06-14** (`docs/filing-audit-20260614.md`): rules-doc path errors corrected (§3.7→`Workflow/Instructions/`, §3.9→`Workflow/schema/`, §3.15→`scripts/analytics/`). **Residual (researcher):** the `data/` vs `Sessions/`/`Workflow/` duality, a schema-snapshot refresh to 3.31.0, and archiving 15 `_tmp_` + ~12 superseded docs.
 
 **Operational & safeguard governance (programme-wide)** — consolidated in **`Workflow/Instructions/wa-operational-governance-v1_0-20260614.md`** (the canonical detail; CLAUDE.md §9/§12/§13 = compact summary)
 - **Git / commit:** CLAUDE.md §12 — excluded from git (`database/bible_research.db`, `backups/`); commit message `session YYYYMMDD: brief description`; branch `main`; remote `github.com/lcilliers/Bible_Projects`. Discipline: **commit units of work throughout, and commit + push *always* together** (memory: `feedback_commit_incrementally`).

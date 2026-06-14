@@ -1,7 +1,7 @@
 # File Organisation Rules — Framework B
 
 > Governs where Claude Code and the researcher place files.
-> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`). **Updated 2026-06-05: §3.0 — `Sessions-v2/` per-cluster tree is the home for ALL new cluster output (cluster-rework phase); old `Sessions/` tree is read-only cross-reference.**
+> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`). **Updated 2026-06-05: §3.0 — `Sessions-v2/` per-cluster tree is the home for ALL new cluster output (cluster-rework phase); old `Sessions/` tree is read-only cross-reference.** **Updated 2026-06-14: §3.7 / §3.9 / §3.15 path corrections to match the restructured layout (governing instructions → `Workflow/Instructions/`; schema → `Workflow/schema/`; analytics → `scripts/analytics/`); top-level `data/` flagged legacy. Full reconciliation: `docs/filing-audit-20260614.md`.**
 > Read by Claude Code at session start via CLAUDE.md reference.
 
 ---
@@ -233,6 +233,8 @@ is saved under its own folder here.
 
 Programme data exported from the database for consumption by Claude AI or the researcher.
 
+> ⚠ **2026-06-14:** `data/` is **legacy** — STEP extracts now live canonically in `Sessions/Session_A/STEP Extracts/` (CLAUDE.md §8), and the `data/exports/Session C`, `/vertical_pass`, `/pool_analysis` subfolders below **no longer exist**. The `data/` vs `Sessions/`/`Workflow/` duality is pending researcher resolution (`docs/filing-audit-20260614.md`). Until then, locate exports via the manifest, not this table.
+
 | Subfolder | What goes here | Naming pattern |
 |-----------|---------------|----------------|
 | `data/exports/` (root) | Only subfolders — no files in root |  |
@@ -306,17 +308,17 @@ Claude AI Session C word study outputs.
 | Session C notes | `wa-{NNN}-{word}-sessionc-note-v{n}-{YYYYMMDD}.md` |
 | Analysis reports | `wa-sessionc-analysis-report-v{n}-{YYYYMMDD}.md` |
 
-### 3.7 `data/imports/WA/Workflow/Framework_B/Session_B/`
+### 3.7 `Workflow/Instructions/`
 
-Governing instruction documents. Only the **current version** lives here. Superseded versions go to the `archive/` subfolder within Session_B.
+Governing instruction documents (`wa-*-instruction-v{n}_{m}-{YYYYMMDD}.md` and related). Only the **current version** lives here; superseded versions go to `Workflow/Instructions/archive/`. *(Path corrected 2026-06-14 — was `data/imports/WA/Workflow/Framework_B/Session_B/`, which no longer exists.)*
 
 ### 3.8 `research/discovery/`
 
 STEP API discovery output. Paired JSON + markdown files per word. No archiving needed — these are source data.
 
-### 3.9 `data/schema/`
+### 3.9 `Workflow/schema/`
 
-Authoritative DDL and schema-related reports.
+Authoritative DDL and schema-related reports. *(Path corrected 2026-06-14 — was `data/schema/`. Snapshots are stale at ≤ v3.10.0; regenerate to live v3.31.0 with `python scripts/export_database_schema.py`.)*
 
 | What goes here | Naming pattern |
 |---------------|----------------|
@@ -412,7 +414,7 @@ Superseded and retired artefacts. Organised by type. **Archive is not dead** —
 |-----------|---------|-------|
 | `backups/` | Engine-managed database backups. Not in Git. Rolling 10. | Managed by `engine/backup.py` |
 | `engine/` | Core Python automation engine modules only | No outputs, no data |
-| `analytics/` | Python library: API clients and DB utilities | No outputs |
+| `scripts/analytics/` | Python library: API/STEP/DB clients and utilities | No outputs *(path corrected 2026-06-14 — was `analytics/`)* |
 | `research/` | Research notes and templates (placeholder) | Available for researcher use |
 
 ---
