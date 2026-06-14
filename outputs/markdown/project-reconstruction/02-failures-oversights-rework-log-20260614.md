@@ -35,11 +35,13 @@ Two cross-cutting lessons the record keeps re-teaching:
 
 ---
 
-## Filing / file-organisation governance (added 2026-06-14 — omitted from the first pass)
+## Governance-layer oversights — my reconstruction omissions (2026-06-14)
 
-**Meta-omission (my own):** the first pass dropped the filing/file-organisation governance entirely — from the orientation map *and* this failures log — despite filing being a standing researcher concern. Recorded as a failure so it stops recurring (memory: `filing-is-first-class-governance`).
+**Recurring meta-pattern (the real oversight): I keep dropping the governance / operational layers.** In a single session the reconstruction had to be corrected for omitting, in turn — (1) the schema/architecture **drift** itself, (2) **filing / file-organisation governance**, and (3) **programme-wide operational & safeguard governance** (git/commit, backups & recovery, manifest). The researcher notes **this is not the first time** — it is a standing tendency to treat the analytical pipeline as "the work" and under-weight the governance that keeps it reliable. Logged as a first-class failure mode so future audits/reconstructions explicitly cover *every* governance layer, not just the pipeline (memory: `check-governance-layers-not-just-pipeline`).
 
-The governing doc is **`docs/file-organisation-rules.md`** (naming §2; snapshot vs living-doc versioning §2.3/§2.3a; folder rules §3; archiving §4; CC obligations §5; manifest §6), reinforced by GR-FILE-* (`Workflow/Global_rules/`), `wa-reference`, and the DB pattern registries (`wa_file_name_pattern`/`wa_label_pattern`). The filing-related failures:
+### Filing / file-organisation
+
+The first pass dropped this entirely — from the orientation map *and* this log — despite filing being a standing researcher concern (memory: `filing-is-first-class-governance`). The governing doc is **`docs/file-organisation-rules.md`** (naming §2; snapshot vs living-doc versioning §2.3/§2.3a; folder rules §3; archiving §4; CC obligations §5; manifest §6), reinforced by GR-FILE-* (`Workflow/Global_rules/`), `wa-reference`, and the DB pattern registries (`wa_file_name_pattern`/`wa_label_pattern`). The filing-related failures:
 
 | Date | What | Why / reason | Citation |
 |---|---|---|---|
@@ -51,6 +53,18 @@ The governing doc is **`docs/file-organisation-rules.md`** (naming §2; snapshot
 | context | **DB pattern registries (the DB-resident filing rules) are stale** | `wa_file_name_pattern`/`wa_label_pattern`/`wa_patch_type_registry` (M34, "reference-as-DB") last written April; they encode naming/label patterns but haven't tracked the layout changes — a stale single-source-of-truth for filing (see 03 issue #4/#5) | (03 §issues) |
 
 > **Open item:** a **filing audit** — reconcile `docs/file-organisation-rules.md` (+ the DB pattern registries) against the actual restructured tree, fix the `data/` vs `Sessions/`/`database/` ambiguity and the two-home exports, and archive the silently-superseded docs. Until then, **use the manifest, not the folders, to locate work.**
+
+### Operational & safeguard governance (git/commit, backups & recovery, manifest)
+
+Omitted from the first pass — the same blind spot as filing. Programme-wide operational governance never appeared in the reconstruction, and verifying it surfaced a structural gap (memory: `operational-governance-git-backup-manifest`).
+
+| Date | What | Why / reason | Citation |
+|---|---|---|---|
+| 2026-06-14 | **Operational/safeguard governance omitted from the reconstruction** | git/commit discipline, backups & recovery, and manifest-use were absent from the orientation map and this log despite being programme-wide governance | (this session, 2026-06-14) |
+| 2026-06-14 | **No consolidated governing doc for the operational layer** | git/backup/manifest/interaction governance lives only in CLAUDE.md §9/§12/§13 (drift-stale) + scripts + scattered memory; no dedicated instruction in `Workflow/Instructions/`; and the global rules (`wa-global-rules-all-v2`) contain **no** GR for git/backup/manifest — both verified | (Workflow/Instructions/ has none; global-rules grep = no match, 2026-06-14) |
+| 2026-06-03 | **The safeguard failure that proves the cost** | the DB loss (Drive sync corruption → off-Drive move, ~6 weeks lost, June 1–2 unrecoverable) is the consequence of weak safeguards + handler work not being replayable; the lessons were documented but the governance was never consolidated | (outputs/markdown/wa-db-loss-incident-20260603.md; see June section below) |
+
+> **Open item:** consolidate the operational/safeguard governance (git, backups & recovery, manifest, interaction, cost) into **one governing doc or DB-resident register**, instead of relying on the drift-stale CLAUDE.md §9/§12/§13.
 
 ---
 
