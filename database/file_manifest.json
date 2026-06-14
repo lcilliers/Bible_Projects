@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T06:12:16Z",
+  "generated_at": "2026-06-14T06:16:36Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 132,
     "historical": 30,
-    "current": 1746,
+    "current": 1747,
     "cross-reference": 3317,
     "archived": 2224,
     "backup": 17
   },
-  "total_files": 7466,
-  "total_active": 5242,
+  "total_files": 7467,
+  "total_active": 5243,
   "total_archived": 2224,
   "files": [
     {
@@ -92387,8 +92387,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3372349,
-      "modified": "2026-06-14T06:09:01Z"
+      "size_bytes": 3372751,
+      "modified": "2026-06-14T06:12:17Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -92725,6 +92725,22 @@
       "archived": false,
       "size_bytes": 1902,
       "modified": "2026-03-27T10:48:31Z"
+    },
+    {
+      "path": "docs/open-items-currency-and-table-disposition-20260614.md",
+      "category": "doc",
+      "type": "doc",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5812,
+      "modified": "2026-06-14T06:14:21Z"
     },
     {
       "path": "docs/pipeline_decisions_20260323.md",
@@ -93155,8 +93171,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 43997,
-      "modified": "2026-06-14T05:57:35Z"
+      "size_bytes": 23603,
+      "modified": "2026-06-14T06:16:11Z"
     },
     {
       "path": "memory/README.md",
