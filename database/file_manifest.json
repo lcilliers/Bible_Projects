@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T06:38:53Z",
+  "generated_at": "2026-06-15T07:34:30Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 136,
     "historical": 30,
-    "current": 1784,
+    "current": 1786,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7524,
-  "total_active": 5285,
+  "total_files": 7526,
+  "total_active": 5287,
   "total_archived": 2239,
   "files": [
     {
@@ -92740,7 +92740,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 321478656,
-      "modified": "2026-06-15T06:38:19Z"
+      "modified": "2026-06-15T07:34:08Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3397763,
-      "modified": "2026-06-15T06:13:07Z"
+      "size_bytes": 3398659,
+      "modified": "2026-06-15T06:38:53Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -109159,6 +109159,22 @@
       "modified": "2026-06-09T11:11:49Z"
     },
     {
+      "path": "research/investigations/wa-verse-uniqueness-cleanup-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 9392,
+      "modified": "2026-06-15T07:34:08Z"
+    },
+    {
       "path": "research/investigations/wa-xref-verse-duplication-blocker-v1-20260615.md",
       "category": "investigation",
       "type": "investigation",
@@ -113253,6 +113269,22 @@
       "archived": false,
       "size_bytes": 23653,
       "modified": "2026-06-09T16:53:36Z"
+    },
+    {
+      "path": "scripts/_apply_verse_uniqueness_cleanup.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 4408,
+      "modified": "2026-06-15T07:33:40Z"
     },
     {
       "path": "scripts/_archive_cluster_prep_v1_20260505.py",
