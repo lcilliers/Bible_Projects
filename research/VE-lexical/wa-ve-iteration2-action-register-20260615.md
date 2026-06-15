@@ -3,6 +3,8 @@
 > **One living register** for the fixes/decisions arising from verse-by-verse review of the mechanical rebuild + narration. Update **in place** (add examples, change status, close items) — do not spawn parallel docs. Detail for the first example is in [wa-ve-narration-feedback-vc1630-20260615.md](wa-ve-narration-feedback-vc1630-20260615.md). Started 2026-06-15 from vc=1630 (2Sa 1:9).
 >
 > Nothing in the data has changed from this review yet — these are queued actions awaiting researcher direction / more examples.
+>
+> **➤ Categorised synthesis (overnight digest, 2026-06-15): [wa-ve-corrective-actions-analysis-20260615.md](wa-ve-corrective-actions-analysis-20260615.md)** — every action sorted into error corrections · rule changes · VE extensions · new VEs (+ data-integrity, study-level), with the meta-pattern, dependency sequence, and the morning's decisions.
 
 ## Status key
 `DECISION` = needs researcher design call · `READY` = agreed, implement on go · `INVESTIGATE` = data check first · `DONE`

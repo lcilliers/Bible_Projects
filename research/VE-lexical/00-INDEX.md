@@ -38,7 +38,7 @@
 - **VE 1,2,3,5,6,7,8,13 REBUILT** (`source_provenance='mechanical_v1'`): 247,899 rows over 40,739 units, strictly per 01b §1d. Attachment proxy = the term neighbourhood; doubt → `UNRESOLVED`. Faculty false-positives fixed.
 - **Templated narration PERSISTED** as the single `l2_meaning` finding (30,571 M-cluster; old prose soft-deleted). Composer = deterministic view.
 - **VE9/10/11/12/14** — read/deferred; not built.
-- **ITERATION-2 review ACTIVE** — verse-by-verse review surfacing fixes (translit+gloss, location-from-seat-term, object/target VE, the "how"/predicate gap, soft-deleted qualifiers). **Living register: [wa-ve-iteration2-action-register-20260615.md](wa-ve-iteration2-action-register-20260615.md)** (+ first example [wa-ve-narration-feedback-vc1630-20260615.md](wa-ve-narration-feedback-vc1630-20260615.md)).
+- **ITERATION-2 review DONE (5 verses); CATEGORISED ANALYSIS READY** — researcher verdict: not one verse-lexical complete. **➤ Work-list: [wa-ve-corrective-actions-analysis-20260615.md](wa-ve-corrective-actions-analysis-20260615.md)** (error corrections · rule changes · VE extensions · new VEs + sequence + decisions). Running log: [wa-ve-iteration2-action-register-20260615.md](wa-ve-iteration2-action-register-20260615.md); first example [wa-ve-narration-feedback-vc1630-20260615.md](wa-ve-narration-feedback-vc1630-20260615.md). Meta-pattern: [[project_ve_proposition_gap]] — the pass captures the term, not the proposition.
 - **Review/dump artefacts (today):** `wa-verse-records-status-by-cluster-20260615.md` · `wa-raw-dump-with-narration-M01-M23-M46-20260615.md` · `wa-ve-rebuild-dryrun-review-20260615.md` · `wa-ve-templated-narration-first-20260615.md`.
 
 ## Related — supporting foundation (left in their integrity context)
