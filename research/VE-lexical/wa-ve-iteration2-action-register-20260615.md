@@ -20,6 +20,7 @@
 | A3 | vc=1630 | relational = bare preposition, no object | VE13 / new VE | per **D-A**: relational = direction + object; drop object-less bare prepositions | DECISION |
 | A4 | vc=1630, 2670 | qualifier/predicate of the term absent — the "how" ("anguish *seized*…") **and** the intensity/"how much" ("cares *are many*") | data + design | per **D-B**: capture the governing predicate + quantifier/intensity qualifiers | DECISION |
 | A5 | vc=1630 | legit T2 qualifier (`od` "still lingers") soft-deleted | data integrity | check why active T2 qualifier occurrences are soft-deleted (od: 170 active / 306 soft-del); is the web being thinned? | INVESTIGATE |
+| A6 | vc=2671 | suspected verse↔term mislink (H8312 "not in" Psa 139:23) | data integrity | **RESOLVED — no mislink.** STEP confirms H8312 in Psa 139:23 + 94:19 (its only 2 occ); ESV renders it "thoughts". Sampled DB-vs-STEP check (25 terms) = **0 db-not-step mismatches**. Sub-finding: some terms show STEP>DB (e.g. blasfēmeō 11 vs 34) = OWNER/XREF soft-delete or coverage gap — opposite direction, lesser; full sweep available on request | VERIFIED |
 
 ## Further verse reviews — add examples here
 
@@ -29,6 +30,7 @@
 |---|---|---|---|
 | 1630 / 2Sa 1:9 | sha.vats "agony" | (the worked example above) | A1–A5 |
 | 2670 / Psa 94:19 | sar.ap.pim "anxiety" | (a) 3 compound co-terms shown without gloss — qe.rev "entrails: inner parts" (T2), sha.a "to delight" (M04), tan.chum "consolation" (M05); (b) "the cares **are many**" — the intensity/quantifier qualifier not captured ("many" is not a tagged term) | A1 (pervasive), A4 (intensity qualifier) |
+| 2671 / Psa 139:23 | sar.ap.pim "anxiety" | suspected mislink: H8312 seemed absent in STEP → **RESOLVED, correctly linked.** STEP confirms H8312 only in Psa 139:23 + 94:19; ESV renders it "thoughts" here. Sampled DB-vs-STEP check (25 terms) found 0 mislinks | A6 (VERIFIED) |
 | | | | |
 
 ## Batching note
