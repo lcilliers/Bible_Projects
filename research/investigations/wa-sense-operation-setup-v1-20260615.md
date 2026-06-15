@@ -23,6 +23,23 @@ There are **two sense vocabularies** that aren't yet reconciled:
 
 Do they map 1:1, partially, or are they orthogonal? The sense operation needs a **reconciliation rule** between them (subgloss → canonical sense), or a decision to treat the STEP subgloss itself as the canonical sense and build `sense_id` off a subgloss inventory. (A per-term check on *nephesh* H5315 was inconclusive — its data is under sub-entries H5315G/H/I/J, a base/sub-entry join detail to handle.)
 
+## The span (the verse-link) + the two-level operation (added 2026-06-15)
+
+**Where the span lives + reliability.** The span is **not** in `verse_context` — it's `span_strong_match` on `wa_verse_records` (and `wa_verse_term_links`), reached from a verse_context row via `verse_record_id`. It is **highly reliable**: `span_strong_match=1` on **61,844/61,846** verse-records and **227,026/227,288** links — **0 zeros**, only a handful NULL. So the term↔verse link (which word in the verse is this term) is authoritative for essentially every occurrence.
+
+**The operation IS two-level — confirmed.** Over the 61,665 active clustered occurrences (span reliable + subgloss present for ~100%):
+
+| level | definition | share |
+|---|---|---|
+| **STRAIGHT-THROUGH** | mono-sense term (one subgloss across its corpus) → span + subgloss resolve the sense **without doubt**; fully mechanical, no read | **51,085 · 83%** |
+| **COMPLEX** | poly-sense term (>1 subgloss) → the per-occurrence subgloss still resolves most, but these need verification (the coarse-ceiling residue) | **10,580 · 17%** |
+
+**The complexity is tiny and bounded:** all 17% comes from just **70 poly-sense terms** (54 with 2 subglosses, 14 with 3, 2 with 4). So the complex level is a *named, small* set — not a diffuse problem.
+
+**→ This is exactly the two-level sense pipeline:**
+1. **Straight-through (83%):** sense = the term's single subgloss (anchored by `span_strong_match=1`). Pure mechanical pass — emit `sense_id` + finding directly.
+2. **Complex (17%, 70 terms):** take the **per-occurrence subgloss** (still mechanical for most); only the coarse-ceiling subset (e.g. *pneuma* "spirit" not separating Holy/human) needs a **signal-rule** or an `indeterminate`/`UNRESOLVED` verdict.
+
 ## Next steps (sense work proper)
 1. Resolve the subgloss↔parsed-sense mapping (pick the canonical sense source + the relation rule), handling sub-entry term keys.
 2. Build the mechanical sense pass: per-occurrence subgloss → canonical `sense_id` on `verse_context` (the 79% mono-sense are trivial; poly-sense read the per-occurrence subgloss; coarse-ceiling residue → signal-rule or `indeterminate`/`UNRESOLVED`).
