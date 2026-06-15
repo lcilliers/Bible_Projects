@@ -28,5 +28,22 @@ The XREF architecture says: a term is OWNER in one registry (verses active) and 
 - Confirms `ve_lexical` / `verse_context` must key on **`verse_context_id`** (unique) — never `(reference, term_id)`.
 - But the duplicate *verse_context* rows that would follow from duplicate *verse_records* must still be grounded, else the analysis is done twice. So: **ground the XREF verses (at least the 933 + the owner_type re-derivation) before generating lexical rows.**
 
-## Recommendation
-Do step 1 (933 clean) now if approved; investigate step 2 (the 1,504, almost certainly a sub-entry match artefact + some mislabels) before deciding; surface step 3 (119) for a call. Then proceed to the VE/lexical build keyed on `verse_context_id`.
+## ROOT IS AT THE TERM LEVEL (2026-06-15) — establish term truth first
+The researcher's call ("don't patch — determine what the truth should be, start with the terms") is correct. The active **terms** are not grounded:
+
+- **active `wa_term_inventory`: 6,846 rows / 3,794 strongs.** owner_type = **OWNER 3,647 · XREF 3,189 · NULL 10** (so NOT all owner).
+- **per Strong's, active OWNER count (truth = exactly 1):** 3,645 have 1 ✓ · **148 have 0 (no canonical home)** · 1 has 2 (G0150).
+- the **148 no-owner** strongs: **123 never had an OWNER** (XREF-only) · 22 OWNER soft-deleted (other cause) · 3 D1 side-effect.
+- `mti_terms` (the canonical 1-per-Strong's table): **30 strongs duplicated** (OT-DBR-009, still open).
+
+**The truth to establish:** every Strong's in active use has **exactly one** canonical OWNER (its single home where lexical analysis runs once); every other active occurrence is an XREF whose verses derive from / are soft-deleted in favour of the OWNER.
+
+**Decisions needed before any fix (researcher):**
+- **D-T1:** for the 123 XREF-only strongs — does an XREF-only term get **promoted to OWNER** in one registry (which?), or is "reference-only, no owner" a legitimate state with its own lexical handling?
+- **D-T2:** the 22 + 3 soft-deleted-OWNER — restore the OWNER, or re-home to an active registry?
+- **D-T3:** dedup the 1 double-OWNER + the 30 `mti_terms` duplicates (OT-DBR-009).
+
+Only once each Strong's has exactly one OWNER does the **verse** owner-status become deterministically derivable (OWNER verses active, XREF soft-deleted) — and only then can the 933/1,504/119 verse split be resolved correctly rather than guessed.
+
+## Recommendation (revised)
+**Do not touch the 933 yet.** Fix the order: (1) establish the term truth — one OWNER per Strong's (D-T1/2/3) — then (2) **re-derive** verse owner-status from that truth (one mechanical pass, not three guesses), then (3) build VE/lexical keyed on `verse_context_id`. Patch-fixing the 933 first would just re-assert a grounding that the terms don't yet have.
