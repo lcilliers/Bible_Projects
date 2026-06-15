@@ -28,13 +28,19 @@ The XREF architecture says: a term is OWNER in one registry (verses active) and 
 - Confirms `ve_lexical` / `verse_context` must key on **`verse_context_id`** (unique) — never `(reference, term_id)`.
 - But the duplicate *verse_context* rows that would follow from duplicate *verse_records* must still be grounded, else the analysis is done twice. So: **ground the XREF verses (at least the 933 + the owner_type re-derivation) before generating lexical rows.**
 
-## ROOT IS AT THE TERM LEVEL (2026-06-15) — establish term truth first
-The researcher's call ("don't patch — determine what the truth should be, start with the terms") is correct. The active **terms** are not grounded:
+## ROOT IS AT THE TERM LEVEL — the CANONICAL list (`mti_terms`), 2026-06-15
+The researcher's call ("don't patch — determine what the truth should be; start with the **canonical** `mti_terms`, not the per-registry `wa_term_inventory`") is correct. Active `mti_terms` is **not grounded**:
 
-- **active `wa_term_inventory`: 6,846 rows / 3,794 strongs.** owner_type = **OWNER 3,647 · XREF 3,189 · NULL 10** (so NOT all owner).
-- **per Strong's, active OWNER count (truth = exactly 1):** 3,645 have 1 ✓ · **148 have 0 (no canonical home)** · 1 has 2 (G0150).
-- the **148 no-owner** strongs: **123 never had an OWNER** (XREF-only) · 22 OWNER soft-deleted (other cause) · 3 D1 side-effect.
-- `mti_terms` (the canonical 1-per-Strong's table): **30 strongs duplicated** (OT-DBR-009, still open).
+- **active `mti_terms`: 2,619 rows / 2,565 strongs** — should be 1 row per Strong's.
+- **a) NOT unique:** **30 strongs have >1 active row (54 duplicate rows)** — OT-DBR-009. Pattern (H5822 *vulture* ×4): 1 owned-but-`excluded` row + 3 orphan copies (`owning_registry_fk` NULL, status NULL).
+- **b) NOT cleanly owned/marked:** **80** rows have NULL `owning_registry_fk` (no home); status = `extracted` 2,143 · `extracted_thin` 306 · **`excluded` 57** · **`candidate_delete` 22** · **None 79** · misc — so **~158 active rows carry a non-canonical status** (excluded/candidate_delete/None) yet are not soft-deleted.
+
+(The earlier `wa_term_inventory` figures — 148 no-OWNER etc. — are the *downstream registry copies*, not the canonical truth; superseded by the above.)
+
+**The canonical truth to establish, in order:**
+1. **Unique:** exactly one active `mti_terms` row per Strong's → dedup the 30 (collapse the orphan copies; keep/define the canonical row).
+2. **Owned:** every canonical row has a valid `owning_registry_fk` → resolve the 80 NULLs.
+3. **Status-consistent:** an active canonical row should not be `excluded`/`candidate_delete`/None → reconcile the ~158 (soft-delete the truly excluded, or correct the status).
 
 **The truth to establish:** every Strong's in active use has **exactly one** canonical OWNER (its single home where lexical analysis runs once); every other active occurrence is an XREF whose verses derive from / are soft-deleted in favour of the OWNER.
 
