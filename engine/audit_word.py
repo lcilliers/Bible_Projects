@@ -783,8 +783,8 @@ def _insert_new_term(conn, jt: dict, file_id: int, str_reg: str,
                    (file_id, language, term_id, strongs_number,
                     transliteration, step_search_gloss, word_analysis_gloss,
                     occurrence_count, meaning, meaning_numbered,
-                    lsj_entry, short_def_mounce, last_changed)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                    lsj_entry, short_def_mounce, word_registry_fk, last_changed)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 file_id, lang, code, code,
                 jt.get("transliteration"), jt.get("gloss"), jt.get("gloss"),
@@ -793,6 +793,7 @@ def _insert_new_term(conn, jt: dict, file_id: int, str_reg: str,
                 1 if jt.get("meaning_numbered") else 0,
                 jt.get("lsj_entry") or None,
                 jt.get("short_def_mounce") or None,
+                registry_id_int,                # bypass FK (registry linkage, not file_index)
                 now,
             ),
         )
@@ -1062,8 +1063,8 @@ def _apply_changes(
                             book_id, reference, chapter, verse_num, testament,
                             translation, verse_text, target_word,
                             span_strong_match, context_before, context_after,
-                            morph_code, stem, created_at)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?, ?, ?)""",
+                            morph_code, stem, word_registry_fk, created_at)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         primary_fid, ti_id,
                         ti.get("term_id") or item["code"],
@@ -1075,6 +1076,7 @@ def _apply_changes(
                         jv.get("span_strong_match"),
                         jv.get("context_before"), jv.get("context_after"),
                         jv.get("morph_code"), jv.get("stem"),          # H4: morph at insert (when extract carries it)
+                        registry_id_int,                               # bypass FK (registry linkage, not file_index)
                         now,
                     ),
                 )
@@ -1633,10 +1635,24 @@ def run_audit_word(
         ).fetchall()
 
     if not fi_rows:
-        return _stop(
-            f"A1: No wa_file_index rows for registry {registry_id}. "
-            "Run --mode=new_word first."
-        )
+        if dry_run:
+            return _stop(
+                f"A1: No wa_file_index for registry {registry_id} (new word). "
+                "Run live (without --dry-run) to create the onboarding stub + bypass FK."
+            )
+        # Onboarding (replaces the retired new_word step): create a file_index STUB — the legacy gate only.
+        # The AUTHORITATIVE registry linkage is the bypass FK word_registry_fk, which verses/terms carry
+        # directly. No manual new_word run, no file_index joins.
+        conn.execute(
+            "INSERT INTO wa_file_index (registry_id, word_registry_fk, word, phase, schema_version, "
+            "produced_date, revision_note, last_changed) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (str(reg_row["id"]), reg_row["id"], word, "Phase 1 (audit_word stub)",
+             EXPECTED_SCHEMA_VERSION, _today(),
+             "auto-stub by audit_word onboarding; bypass FK word_registry_fk is authoritative", _now()))
+        conn.commit()
+        fi_rows = conn.execute(
+            "SELECT id FROM wa_file_index WHERE registry_id = ?", (str(reg_row["id"]),)).fetchall()
+        print(f"     A1: created file_index stub for new word '{word}' (registry {reg_row['id']}) — bypass FK authoritative")
     file_ids = [r["id"] for r in fi_rows]
     print(f"     Word: {word}  |  file_id(s): {file_ids}")
 

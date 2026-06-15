@@ -2100,6 +2100,26 @@ def _m57(conn: sqlite3.Connection) -> None:
     print("     M57: L2 exploration views (v_l2_tier, v_l2_meaning) added; schema_version -> 3.31.0")
 
 
+@_register("M58", "Bypass-FK rollout: add word_registry_fk to wa_verse_records + wa_term_inventory; backfill from wa_file_index (registry linkage without joining the legacy file_index)")
+def _m58(conn: sqlite3.Connection) -> None:
+    """Finish the registry-FK bypass: wa_verse_records and wa_term_inventory carried ONLY file_id -> the
+    legacy wa_file_index for their registry. Add a direct word_registry_fk and backfill it from
+    wa_file_index.word_registry_fk via file_id. file_index becomes a stub; new code must use this FK, not a
+    join through file_index. Additive + reversible (NULL / drop the column)."""
+    for tbl in ("wa_verse_records", "wa_term_inventory"):
+        cols = [r[1] for r in conn.execute(f"PRAGMA table_info({tbl})")]
+        if "word_registry_fk" not in cols:
+            conn.execute(f"ALTER TABLE {tbl} ADD COLUMN word_registry_fk INTEGER")
+        conn.execute(f"""
+            UPDATE {tbl} SET word_registry_fk = (
+                SELECT fi.word_registry_fk FROM wa_file_index fi WHERE fi.id = {tbl}.file_id)
+            WHERE word_registry_fk IS NULL AND file_id IS NOT NULL""")
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.32.0", _now()))
+    print("     M58: word_registry_fk added to wa_verse_records + wa_term_inventory (bypass FK); schema_version -> 3.32.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

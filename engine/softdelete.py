@@ -75,13 +75,11 @@ def cascade_delete_terms(conn, mti_term_ids):
 
 def cascade_delete_registry(conn, registry_id):
     """H1 — soft-delete a registry's ENTIRE downstream: term_inventory, verses(+context+findings),
-    owned mti_terms (+their downstream). For wherever phase1_status becomes 'Excluded'."""
+    owned mti_terms (+their downstream). For wherever phase1_status becomes 'Excluded'.
+    Uses the bypass FKs (word_registry_fk / owning_registry_fk) — NOT a join through legacy wa_file_index."""
     cur = conn.cursor()
-    fids = [r[0] for r in cur.execute("SELECT id FROM wa_file_index WHERE registry_id=?", (registry_id,))]
-    ti, vr = [], []
-    for fid in fids:
-        ti += _active(cur, "wa_term_inventory", "file_id=?", (fid,))
-        vr += _active(cur, "wa_verse_records", "file_id=?", (fid,))
+    ti = _active(cur, "wa_term_inventory", "word_registry_fk=?", (registry_id,))
+    vr = _active(cur, "wa_verse_records", "word_registry_fk=?", (registry_id,))
     mti = _active(cur, "mti_terms", "owning_registry_fk=?", (registry_id,))
     out = cascade_delete_verses(conn, vr)
     out["wa_term_inventory"] = _flag(cur, "wa_term_inventory", ti, 1)
@@ -113,18 +111,14 @@ def integrity_violations(conn, excluded_ids=None):
         excluded_ids = [r[0] for r in cur.execute("SELECT id FROM word_registry WHERE phase1_status='Excluded'")]
     eph = _ph(excluded_ids) if excluded_ids else "NULL"
     v = {}
+    # bypass FK only — no join through legacy wa_file_index
     v["active_verse_null_mti_nonexcluded"] = cur.execute(
-        f"""SELECT COUNT(*) FROM wa_verse_records vr LEFT JOIN wa_file_index fi ON vr.file_id=fi.id
+        f"""SELECT COUNT(*) FROM wa_verse_records vr
             WHERE COALESCE(vr.delete_flagged,0)=0 AND vr.mti_term_id IS NULL
-              AND (fi.registry_id IS NULL OR fi.registry_id NOT IN ({eph}))""", excluded_ids).fetchone()[0]
+              AND (vr.word_registry_fk IS NULL OR vr.word_registry_fk NOT IN ({eph}))""", excluded_ids).fetchone()[0]
     v["status_delete_not_flagged"] = cur.execute(
         "SELECT COUNT(*) FROM mti_terms WHERE status='delete' AND COALESCE(delete_flagged,0)=0").fetchone()[0]
-    if excluded_ids:
-        fids = [r[0] for r in cur.execute(f"SELECT id FROM wa_file_index WHERE registry_id IN ({eph})", excluded_ids)]
-        fph = _ph(fids) if fids else "NULL"
-        v["active_verse_under_excluded"] = cur.execute(
-            f"SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN ({fph}) AND COALESCE(delete_flagged,0)=0",
-            fids).fetchone()[0] if fids else 0
-    else:
-        v["active_verse_under_excluded"] = 0
+    v["active_verse_under_excluded"] = cur.execute(
+        f"SELECT COUNT(*) FROM wa_verse_records WHERE word_registry_fk IN ({eph}) "
+        "AND COALESCE(delete_flagged,0)=0", excluded_ids).fetchone()[0] if excluded_ids else 0
     return v

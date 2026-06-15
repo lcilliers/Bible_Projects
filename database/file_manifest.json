@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T04:40:47Z",
+  "generated_at": "2026-06-15T04:53:39Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 135,
+    "other": 136,
     "historical": 30,
     "current": 1776,
     "cross-reference": 3318,
     "archived": 2239,
-    "backup": 16
+    "backup": 17
   },
-  "total_files": 7514,
-  "total_active": 5275,
+  "total_files": 7516,
+  "total_active": 5277,
   "total_archived": 2239,
   "files": [
     {
@@ -92439,6 +92439,22 @@
       "modified": "2026-06-10T16:56:43Z"
     },
     {
+      "path": "backups/bible_research_pre_migration_v3.31.0.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 319946752,
+      "modified": "2026-06-15T04:33:03Z"
+    },
+    {
       "path": "backups/bible_research_pre_sb_migrate_20260609.db",
       "category": "backup",
       "type": "other",
@@ -92707,8 +92723,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319946752,
-      "modified": "2026-06-15T04:33:03Z"
+      "size_bytes": 321478656,
+      "modified": "2026-06-15T04:53:02Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92739,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3393702,
-      "modified": "2026-06-15T04:34:31Z"
+      "size_bytes": 3394168,
+      "modified": "2026-06-15T04:40:47Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93283,8 +93299,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 100104,
-      "modified": "2026-06-15T04:18:40Z"
+      "size_bytes": 101475,
+      "modified": "2026-06-15T04:52:26Z"
     },
     {
       "path": "engine/backup.py",
@@ -93315,8 +93331,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4953,
-      "modified": "2026-06-10T17:34:02Z"
+      "size_bytes": 5059,
+      "modified": "2026-06-15T04:47:53Z"
     },
     {
       "path": "engine/db.py",
@@ -93411,8 +93427,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 118803,
-      "modified": "2026-06-10T17:33:45Z"
+      "size_bytes": 120234,
+      "modified": "2026-06-15T04:47:39Z"
     },
     {
       "path": "engine/new_word.py",
@@ -93491,8 +93507,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 6049,
-      "modified": "2026-06-15T04:12:28Z"
+      "size_bytes": 5836,
+      "modified": "2026-06-15T04:49:46Z"
     },
     {
       "path": "engine/span_filter.py",
@@ -93523,8 +93539,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 24512,
-      "modified": "2026-06-15T04:34:30Z"
+      "size_bytes": 24794,
+      "modified": "2026-06-15T04:53:39Z"
     },
     {
       "path": "memory/README.md",
@@ -95509,6 +95525,22 @@
       "archived": false,
       "size_bytes": 1130,
       "modified": "2026-06-14T05:18:31Z"
+    },
+    {
+      "path": "memory/reference_file_index_legacy_use_bypass_fks.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2291,
+      "modified": "2026-06-15T04:53:38Z"
     },
     {
       "path": "memory/reference_operational_governance_git_backup_manifest.md",
