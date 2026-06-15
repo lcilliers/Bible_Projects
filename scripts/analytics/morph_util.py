@@ -76,3 +76,21 @@ def morph_readable(mc, stem=None):
     cat = morph_category(mc)
     st = stem if stem is not None else morph_stem(mc)
     return f"{lang} {cat}" + (f" · {st}" if st else "")
+
+
+def term_language(morph_codes):
+    """A term's authoritative language from its occurrences' morph codes — the linguistic fact.
+
+    Returns the dominant 'Hebrew' / 'Aramaic' / 'Greek' across the morph-bearing occurrences.
+    Returns None when NO occurrence carries a morph: we make **no assertion** rather than guess,
+    because the only other signal (the Strong's H/G prefix) is blind to Aramaic (Aramaic words carry
+    H-numbers). The caller leaves such terms' existing language untouched. The morph is the truth;
+    when morph changes, the term language (and stem, and the mode finding) must be re-derived from it.
+    """
+    from collections import Counter
+    c = Counter()
+    for mc in (morph_codes or []):
+        ml = morph_language(mc)
+        if ml in ("Hebrew", "Aramaic", "Greek"):
+            c[ml] += 1
+    return c.most_common(1)[0][0] if c else None

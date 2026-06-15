@@ -235,7 +235,7 @@ def parse_term(vocab: dict) -> dict:
     if not meaning:
         sense_nodes = []
         stem_nodes = []
-    elif language == "Hebrew":
+    elif language in ("Hebrew", "Aramaic"):  # Aramaic is Hebrew-script (OSHB) — parse like Hebrew, not Greek
         if _is_numbered(meaning):
             sense_nodes, stem_nodes, w = _parse_hebrew_numbered(meaning)
             warnings.extend(w)

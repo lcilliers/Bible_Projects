@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T02:27:57Z",
+  "generated_at": "2026-06-15T02:50:23Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 133,
     "historical": 30,
-    "current": 1752,
+    "current": 1754,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7488,
-  "total_active": 5249,
+  "total_files": 7490,
+  "total_active": 5251,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,8 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319410176,
-      "modified": "2026-06-15T02:13:16Z"
+      "size_bytes": 319414272,
+      "modified": "2026-06-15T02:49:10Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3382232,
-      "modified": "2026-06-15T02:21:36Z"
+      "size_bytes": 3382633,
+      "modified": "2026-06-15T02:27:57Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93267,8 +93267,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 21117,
-      "modified": "2026-04-19T19:58:04Z"
+      "size_bytes": 21130,
+      "modified": "2026-06-15T02:46:29Z"
     },
     {
       "path": "engine/audit_word.py",
@@ -93395,8 +93395,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 14295,
-      "modified": "2026-03-18T08:44:08Z"
+      "size_bytes": 14376,
+      "modified": "2026-06-15T02:46:23Z"
     },
     {
       "path": "engine/migrate.py",
@@ -93427,8 +93427,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 35276,
-      "modified": "2026-05-14T14:27:21Z"
+      "size_bytes": 35315,
+      "modified": "2026-06-15T02:46:34Z"
     },
     {
       "path": "engine/register.py",
@@ -96437,6 +96437,22 @@
       "archived": false,
       "size_bytes": 4591,
       "modified": "2026-06-03T05:07:37Z"
+    },
+    {
+      "path": "outputs/markdown/wa-language-derivation-bug-fix-plan-v1-20260615.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6942,
+      "modified": "2026-06-15T02:49:55Z"
     },
     {
       "path": "outputs/markdown/wa-mode-field-visual-20260615.md",
@@ -107683,8 +107699,8 @@
       "date": "2026-06-15",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 4242,
-      "modified": "2026-06-15T02:27:46Z"
+      "size_bytes": 4668,
+      "modified": "2026-06-15T02:50:10Z"
     },
     {
       "path": "research/investigations/wa-link-correlation-v1-20260608.md",
@@ -109445,6 +109461,22 @@
       "archived": false,
       "size_bytes": 10988,
       "modified": "2026-06-09T08:41:01Z"
+    },
+    {
+      "path": "scripts/_apply_language_reconcile.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3470,
+      "modified": "2026-06-15T02:48:35Z"
     },
     {
       "path": "scripts/_apply_m01_dir002_subgroup_assign_20260515.py",
@@ -112371,8 +112403,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 6269,
-      "modified": "2026-06-15T02:13:52Z"
+      "size_bytes": 6852,
+      "modified": "2026-06-15T02:48:55Z"
     },
     {
       "path": "scripts/_apply_orphan_vcg_softdelete_20260527.py",
@@ -117731,8 +117763,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 3748,
-      "modified": "2026-06-15T02:26:54Z"
+      "size_bytes": 4625,
+      "modified": "2026-06-15T02:45:21Z"
     },
     {
       "path": "scripts/analytics/requirements.txt",

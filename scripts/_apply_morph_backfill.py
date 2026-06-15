@@ -117,6 +117,16 @@ def main():
     L.append(f"**{'WROTE morph to '+str(g_written)+' rows.' if a.live else 'DRY-RUN — no writes.'}** "
              "DB-only = rows STEP did not return a morph for (left NULL); STEP-only = STEP verses with no "
              "matching DB row (expected where our corpus is a subset).")
+    if a.live:
+        # language is a derivation OF the morph — re-derive it now that morph has changed.
+        sys.path.insert(0, "scripts")
+        from _apply_language_reconcile import reconcile_language
+        lang_changes = reconcile_language(conn)
+        ex = ", ".join(f"{s}:{o}->{n}" for s, o, n in lang_changes[:5])
+        L.append("")
+        L.append(f"**Language reconciled from morph:** {len(lang_changes)} term(s) relabelled"
+                 + (f" (e.g. {ex})" if ex else "") + ".")
+        print(f"language reconciled from morph: {len(lang_changes)} term(s)")
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     open(a.out, "w", encoding="utf-8").write("\n".join(L))
     print(f"wrote {a.out}")

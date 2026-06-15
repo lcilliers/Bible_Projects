@@ -30,7 +30,9 @@
 - `scripts/analytics/step_client.py:200` **derives** `language` from the Strong's prefix (`G…`→Greek, else Hebrew) on every term sync — so the next `audit_word` would **revert** any Aramaic override.
 - `engine/meaning_parser.py:238` branches on `language == "Hebrew"` for Hebrew-style meaning parsing — Aramaic uses the same script/lexicon, so a relabel would make those terms **fall through and miss parsing**.
 
-The Aramaic distinction is **already precise where it belongs — in the morph code** (the 866 are exactly the A-prefix Dan/Ezr/Jer occurrences). The term-level `language` field is, by design, "Hebrew-script vs Greek", with Aramaic subsumed under Hebrew. **Verdict: not an inconsistency — leave the field; the morph carries Aramaic.** If a *persistent, queryable* term-level Aramaic flag is ever wanted, the safe route is a **separate column** (e.g. `script_language`) derived from the morph — never overwriting the coupled `language`.
+The Aramaic distinction is **already precise where it belongs — in the morph code** (the 866 are exactly the A-prefix Dan/Ezr/Jer occurrences).
+
+**SUPERSEDED (2026-06-15) — root fix done instead of leaving it.** The researcher rightly called the "leave the field" stance a plaster: the real bug is that `language` is **derived from the Strong's prefix** (`step_client.py:200`, `audit_word.py:778`), which is blind to Aramaic. Fixed at the source — language is now **morph-authoritative**, re-derived by `reconcile_language()` after every morph write (wired into `_apply_morph_backfill.py`), and the coupled sites (`meaning_parser`/`audit`/`new_word`) now treat Aramaic as Hebrew-script. Backfill relabelled **121 terms → Aramaic**; language↔morph mismatches **866 → 1** (the lone H3201). The remaining text-less lexicon entries are flagged for the STEP-lexicon-tag job. Full record: `outputs/markdown/wa-language-derivation-bug-fix-plan-v1-20260615.md`.
 
 ## CHECK B — verse testament vs books table
 

@@ -731,8 +731,8 @@ def _run_field_fill(conn, file_id: int, vocab_map: dict) -> None:
         strongs = term["strongs_number"] or term["term_id"]
         ti_id = term["id"]
 
-        # also_spelled — Hebrew only
-        if term["language"] == "Hebrew" and term["also_spelled"] is None:
+        # also_spelled — Hebrew-script only (Hebrew + Aramaic)
+        if term["language"] in ("Hebrew", "Aramaic") and term["also_spelled"] is None:
             gloss = term["step_search_gloss"] or ""
             translit = term["transliteration"] or ""
             print(f"\n  Field-fill: also_spelled")

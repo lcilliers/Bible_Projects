@@ -297,7 +297,7 @@ def _wr13(conn, file_id: int, registry_id: int) -> dict:
     for term in terms:
         strongs = term["strongs_number"] or term["term_id"]
         for field, flag_code in checkable:
-            if field in ("lsj_entry", "short_def_mounce") and term["language"] == "Hebrew":
+            if field in ("lsj_entry", "short_def_mounce") and term["language"] in ("Hebrew", "Aramaic"):
                 continue
             if term[field] is not None:
                 continue
