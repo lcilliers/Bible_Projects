@@ -40,8 +40,20 @@ Do they map 1:1, partially, or are they orthogonal? The sense operation needs a 
 1. **Straight-through (83%):** sense = the term's single subgloss (anchored by `span_strong_match=1`). Pure mechanical pass — emit `sense_id` + finding directly.
 2. **Complex (17%, 70 terms):** take the **per-occurrence subgloss** (still mechanical for most); only the coarse-ceiling subset (e.g. *pneuma* "spirit" not separating Holy/human) needs a **signal-rule** or an `indeterminate`/`UNRESOLVED` verdict.
 
-## Next steps (sense work proper)
-1. Resolve the subgloss↔parsed-sense mapping (pick the canonical sense source + the relation rule), handling sub-entry term keys.
-2. Build the mechanical sense pass: per-occurrence subgloss → canonical `sense_id` on `verse_context` (the 79% mono-sense are trivial; poly-sense read the per-occurrence subgloss; coarse-ceiling residue → signal-rule or `indeterminate`/`UNRESOLVED`).
-3. Emit the sense **finding** referencing `sense_id`.
-4. Then **type (#2)**, which supersedes to sense.
+## CRITICAL: it's a FIX, not a create (2026-06-15)
+
+The sense field is **already populated** — it is the **T7 'Lexical and Semantic Analysis'** finding. Two provenances hold it:
+- **`l2_api`** (where the read ran, M01/M15) — a rich, read-derived contextual sense (e.g. *"astonishment and terror at the miraculous; awe"*). Good.
+- **`l2_mechanical`** (145,720 VERSE findings, the bulk) — uses the **UNIFORM TERM GLOSS**, repeated for every occurrence: H2194 = *"to have indignation, be indignant…"* on every verse. **This is the impasse defect, confirmed in the data.** It ignored the per-occurrence subgloss.
+
+So **"populate sense" = FIX the `l2_mechanical` sense findings** to carry the **per-occurrence subgloss** (`step_subgloss_label`, the real sense), not the uniform gloss — anchored by `span_strong_match=1`. Plus:
+- **35,899** `l2_mechanical` findings **duplicate** an `l2_api` finding (same verse+term) — the read sense already exists there; the mechanical one is redundant and should defer to / be superseded by it.
+
+## The build (sense fix) — proposed, needs sign-off before a large write
+1. **Straight-through (83%):** for `l2_mechanical` sense findings on **mono-sense** terms, set `finding_value` = the per-occurrence `step_subgloss_label`; record/confirm via the gloss tables; set `verse_context.sense_id`.
+2. **Complex (17%, 70 terms):** same per-occurrence subgloss, but flag the coarse-ceiling subset for a signal-rule / `indeterminate`.
+3. **De-duplicate:** where an `l2_api` sense exists, the `l2_mechanical` one defers (soft-delete or mark superseded).
+4. Confirm the subgloss↔canonical-sense (`wa_meaning_sense`) relation for `sense_id` (handle sub-entry term keys).
+5. Then **type (#2)**, which supersedes to sense.
+
+> This is a ~100k+ finding update + de-dup — destructive-ish and reversible-by-design, but it touches the finding model + the catalogue link, so **design sign-off first, dry-run before live**. Do NOT bulk-write sense values blind.
