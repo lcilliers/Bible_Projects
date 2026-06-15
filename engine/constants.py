@@ -49,7 +49,8 @@ Shared constants for the Session A v9 Automation Engine.
 # finding / finding_question_link / finding_verse_link / finding_revision tables). → 3.30.0.
 # 2026-06-10: M57 applied (L2 exploration views v_l2_tier + v_l2_meaning; read-only). → 3.31.0.
 # 2026-06-15: M58 applied (word_registry_fk bypass on wa_verse_records + wa_term_inventory). → 3.32.0.
-EXPECTED_SCHEMA_VERSION = "3.32.0"
+# 2026-06-15: M59 applied (ve_lexical items-in-verse-level table; VE values normalised out of finding). → 3.33.0.
+EXPECTED_SCHEMA_VERSION = "3.33.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"

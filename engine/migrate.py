@@ -2120,6 +2120,34 @@ def _m58(conn: sqlite3.Connection) -> None:
     print("     M58: word_registry_fk added to wa_verse_records + wa_term_inventory (bypass FK); schema_version -> 3.32.0")
 
 
+@_register("M59", "Create ve_lexical (the items-in-verse-level table): normalised VE values, one row per value, keyed on verse_context")
+def _m59(conn: sqlite3.Connection) -> None:
+    """The analytic layer normalised into two tables: verse_context (verse-level, 1:1) + ve_lexical
+    (items, 1:many). ve_lexical holds the VE field VALUES retrofitted out of the finding table — one row
+    per value (no delimited lists), only values actually present. Columns per researcher spec:
+    verse_context_id (key) · ve_nr · ve_label · related_tier · value · notes (+ source_provenance for the
+    later value-rerun, + standard id/delete_flagged/created_at). Additive + reversible (drop the table)."""
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS ve_lexical (
+            id                INTEGER PRIMARY KEY,
+            verse_context_id  INTEGER NOT NULL REFERENCES verse_context(id),
+            ve_nr             INTEGER,
+            ve_label          TEXT,
+            related_tier      TEXT,
+            value             TEXT,
+            notes             TEXT,
+            source_provenance TEXT,
+            delete_flagged    INTEGER NOT NULL DEFAULT 0,
+            created_at        TEXT
+        )""")
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_ve_lexical_vc ON ve_lexical(verse_context_id)")
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_ve_lexical_ve ON ve_lexical(ve_nr)")
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.33.0", _now()))
+    print("     M59: ve_lexical (items-in-verse-level) table created; schema_version -> 3.33.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:
