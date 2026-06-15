@@ -47,9 +47,24 @@ Facts:
 The morph-at-source fix is necessary but **not sufficient** — morph backfill keys on `mti_term_id`, so unlinked verses can't get morph regardless. Add:
 - **A. `audit_word` (+ gap_fill/new_word) populate `mti_term_id` at insert** — match `term_id`→`mti_terms.strongs_number` when the verse is created. This is the missing maintained linkage (parallel to the morph-at-source change). Verses then arrive **linked + morphed**, and stem/language cascade.
 - **B. One-time link backfill** for the **3,636** existing linkable records (set `mti_term_id` from the matching `mti_terms` row), then morph + language cascade over them.
-- **Decision points (researcher — mark in this doc, do not action yet):**
-  - **D1 — Registry 214 'suffering' (Excluded, 907 verses):** link its verses or leave unlinked as out-of-scope?  `**Decision:** ____`
-  - **D2 — 287 unregistered occurrences (22 Strong's, e.g. H0241G *ear*):** register them into `mti_terms` (so they can link), or leave as un-analysed?  `**Decision:** ____`
+## Decisions taken (researcher, 2026-06-15) + exact scope
+
+**D1 — Excluded registry ⇒ soft-delete its entire downstream** (not ignore/filter). General rule, applies to all 42 excluded registries; only **12 have data**. Active downstream to soft-delete (`delete_flagged=1`, reversible):
+- **928** `wa_verse_records` · **169** `wa_term_inventory` · **22** `mti_terms` (owned) · **276** `finding` · + their `verse_context` rows. (`wa_file_index` has no `delete_flagged` — mark via status / leave.)
+- **SAFE: 0 sharing** — none of the 22 owned terms are referenced by active verses in non-excluded registries, so nothing live is harmed.
+- **Engine rule:** when `audit_word`/`new_word` set a registry `Excluded`, cascade the soft-delete (today it just filters — that's the bug).
+
+**D2 — Fix the unlinked records AND make the scripts maintain the field.** After D1, the active set is:
+- **Link 2,731** records (set `mti_term_id` from the matching `mti_terms` row) — mostly **R213 'listen' (2,664)** + R130/R30/R62. Then morph + stem + language cascade.
+- **Register + link 285** records — **21 Strong's** with no `mti_terms` row (H0241G/H/I *ear* 179 · G3775 *ear* 34 · H2266 *join* 25 · …). Create `mti_terms` rows, then link + cascade.
+- **Engine rule:** the create-paths (`audit_word`/`gap_fill`/`new_word`) must **check and populate `mti_term_id`** at insert (match `term_id`→`mti_terms.strongs_number`), so this never recurs.
+
+## Implementation order (all reversible; dry-run before each live step)
+1. **D1 cascade** — reversible soft-delete script across the 5 tables for the 12 excluded registries (dry-run → live).
+2. **D2 link backfill** — set `mti_term_id` for the 2,731 active linkable; **register** the 21 Strong's + link the 285.
+3. **Morph + language cascade** over the newly-linked (run `_apply_morph_backfill` for their clusters/terms → `reconcile_language` auto-runs).
+4. **Engine — source fix** (the original plan §"The fix"): `get_verse_records` returns morph; create-paths write `mti_term_id` + `morph_code` + `stem`; exclusion cascades soft-deletes. Dry-run on one registry.
+5. **Verify** — 0 active mti-NULL in non-excluded registries; excluded downstream fully soft-deleted; a fresh audit produces linked+morphed verses.
 
 ## Recommendation
 Implement 1–6 as the proper generic fix. It is bounded (1 shared parser + 1 fetch change + extract carry + 4 INSERT edits + reconcile wiring) and removes the morph-less-verse class of bug entirely. **Confirm and I'll proceed** — I'll verify the extract-JSON producer first, then implement with a dry-run on one registry.
