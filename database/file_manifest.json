@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T02:16:02Z",
+  "generated_at": "2026-06-15T02:21:36Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 133,
     "historical": 30,
-    "current": 1750,
+    "current": 1751,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7486,
-  "total_active": 5247,
+  "total_files": 7487,
+  "total_active": 5248,
   "total_archived": 2239,
   "files": [
     {
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3380905,
-      "modified": "2026-06-15T02:09:15Z"
+      "size_bytes": 3381762,
+      "modified": "2026-06-15T02:16:02Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107669,6 +107669,22 @@
       "archived": false,
       "size_bytes": 1813,
       "modified": "2026-06-09T05:19:33Z"
+    },
+    {
+      "path": "research/investigations/wa-language-testament-consistency-check-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2912,
+      "modified": "2026-06-15T02:21:26Z"
     },
     {
       "path": "research/investigations/wa-link-correlation-v1-20260608.md",
