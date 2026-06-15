@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T03:23:25Z",
+  "generated_at": "2026-06-15T03:32:39Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 134,
     "historical": 30,
-    "current": 1759,
+    "current": 1763,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7496,
-  "total_active": 5257,
+  "total_files": 7500,
+  "total_active": 5261,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,8 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319479808,
-      "modified": "2026-06-15T03:23:01Z"
+      "size_bytes": 319598592,
+      "modified": "2026-06-15T03:31:56Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3384330,
-      "modified": "2026-06-15T02:57:50Z"
+      "size_bytes": 3386129,
+      "modified": "2026-06-15T03:23:25Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107063,6 +107063,54 @@
       "modified": "2026-06-15T03:23:01Z"
     },
     {
+      "path": "research/investigations/wa-d2a-link-dryrun-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 193,
+      "modified": "2026-06-15T03:31:23Z"
+    },
+    {
+      "path": "research/investigations/wa-d2a-link-live-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 258,
+      "modified": "2026-06-15T03:31:56Z"
+    },
+    {
+      "path": "research/investigations/wa-d2a-link-live-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 21472,
+      "modified": "2026-06-15T03:31:56Z"
+    },
+    {
       "path": "research/investigations/wa-db-architecture-decision-v1-20260505.md",
       "category": "investigation",
       "type": "investigation",
@@ -109573,6 +109621,22 @@
       "archived": false,
       "size_bytes": 3470,
       "modified": "2026-06-15T02:48:35Z"
+    },
+    {
+      "path": "scripts/_apply_link_mti_term_id.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5160,
+      "modified": "2026-06-15T03:30:51Z"
     },
     {
       "path": "scripts/_apply_m01_dir002_subgroup_assign_20260515.py",
