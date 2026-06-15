@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T07:34:30Z",
+  "generated_at": "2026-06-15T07:51:25Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 136,
     "historical": 30,
-    "current": 1786,
+    "current": 1787,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7526,
-  "total_active": 5287,
+  "total_files": 7527,
+  "total_active": 5288,
   "total_archived": 2239,
   "files": [
     {
@@ -92740,7 +92740,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 321478656,
-      "modified": "2026-06-15T07:34:08Z"
+      "modified": "2026-06-15T07:34:53Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3398659,
-      "modified": "2026-06-15T06:38:53Z"
+      "size_bytes": 3399540,
+      "modified": "2026-06-15T07:34:30Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -108151,6 +108151,22 @@
       "modified": "2026-06-09T04:02:49Z"
     },
     {
+      "path": "research/investigations/wa-mar722-g5243-dedup.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 107,
+      "modified": "2026-06-15T07:34:53Z"
+    },
+    {
       "path": "research/investigations/wa-meaning-run-yare-v1-20260608.md",
       "category": "investigation",
       "type": "investigation",
@@ -108995,8 +109011,8 @@
       "date": "2026-06-15",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5606,
-      "modified": "2026-06-15T05:50:12Z"
+      "size_bytes": 7567,
+      "modified": "2026-06-15T07:51:05Z"
     },
     {
       "path": "research/investigations/wa-verse-extraction-gaps-v1-20260610.md",

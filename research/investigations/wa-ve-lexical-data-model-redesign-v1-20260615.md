@@ -65,6 +65,24 @@ The term-in-verse's **primary cluster** is derivable from the term (`mti_terms.c
 3. Fix sense en route (per-occurrence subgloss, per `wa-sense-operation-setup`).
 4. Compose the single meaning finding from the template; retire the scattered tier findings (soft-delete, keep for audit).
 
+## Refinement (researcher, 2026-06-15) — normalise the analytic layer into TWO tables + clean out `finding`
+The analytic layer (`verse_context`) should be **normalised into two tables**, and the VE "findings" **retrofitted into them so only real findings remain in `finding`**:
+
+- **verse-level table** (1:1) = `verse_context` itself, extended with the **1:1 VE columns** (sense, type, origin, attributed-God, typology, response, purpose, literary; mode read-through). One row per term-in-verse.
+- **items-in-verse-level table** (1:many) = **`ve_lexical`** — the multi-valued VE (compound, location, faculty, produces, relational), one row per value.
+
+**The `finding` table today is overloaded (grounded counts, active):**
+
+| content | rows | disposition |
+|---|---|---|
+| VE field-values (`VERSE` `l2_api` 182,176 + `l2_mechanical` 115,920) | **298,096** | **retrofit** → verse-level columns (1:1) + `ve_lexical` rows (1:many), then remove from `finding` |
+| composed meaning (`VERSE` `l2_meaning`) | **8,174** | the **one templated narrative** per term-in-verse (verse-level column or a single kept finding) |
+| **real findings** (`CLUSTER` 1,901 + `GLOBAL` 991) | **2,892** | **STAY** in `finding` |
+
+→ After the retrofit, `finding` holds **only real findings** (~2,892 synthesis/observation rows) instead of ~309k. The VE analytics live as **typed structure** (columns + `ve_lexical`), and the meaning is the composed narrative — exactly the "evidence is structured, the finding is the conclusion" separation.
+
+**Migration shape (M59+):** add the 1:1 columns to `verse_context` + create `ve_lexical` → map the 298,096 VE field-values into them (1:1 tier → column; faculty/location/compound/effect/relational tier → `ve_lexical` rows; drop the `NONE`/boolean spread) → fix sense en route → compose the meaning → soft-delete the migrated VERSE findings, leaving `finding` = real findings only. Keyed on `verse_context_id` (now unique).
+
 ## Open design points for sign-off
 - **mode** on `verse_context`: read-through from `wa_verse_records` vs denormalised column (recommend read-through — single source of truth).
 - **literary_setting (#14)** is verse-level, not term-level — store once per verse, not per term-in-verse?
