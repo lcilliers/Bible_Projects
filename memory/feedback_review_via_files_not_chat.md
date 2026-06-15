@@ -22,4 +22,6 @@ When asking the researcher to review proposals, decisions across multiple items,
 
 **Anti-pattern to avoid:** "Which sub-group should this go to — A or B? Let me know in chat." This forces the researcher into chat for a decision that belongs in a file.
 
+**REINFORCED 2026-06-15 (violated TWICE this session — hard stop):** I fired `AskUserQuestion` twice in one session and was rebuked both times. Second time was worse: the question ("should existing verses be re-run?") was one I could and should have ANSWERED FROM DATA — *"don't give me an AskUserQuestion without properly investigating it and provide me with facts."* So: (a) the `AskUserQuestion` tool is **off-limits, full stop**; (b) before asking ANY question, first determine whether it's answerable by querying the DB / reading the code — if so, investigate and present facts, don't ask. Only genuinely subjective researcher-judgement calls go to a filed `.md` decision doc (in `research/investigations/`, **not** `outputs/markdown/`).
+
 Related: [[feedback-working-style]] (investigate first, show evidence, structured docs, wait for approval).

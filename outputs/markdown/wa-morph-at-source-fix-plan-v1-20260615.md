@@ -31,5 +31,14 @@ So every newly-audited/added word gets verses with **no morph → no stem, no mo
 - `get_verse_records` morph parse must match the backfill's `(strong, base-strong)` span-matching exactly, so new and backfilled morph agree.
 - A fresh `audit_word --dry-run` on one registry to confirm verses arrive with morph + stem + correct language before going live.
 
+## Scope of existing data — investigated (do existing verses need a re-run? **No.**)
+Facts (2026-06-15), so this isn't guessed:
+- **229,957** verse rows → **167,204 soft-deleted (left untouched, as instructed)** → **62,753 active**.
+- Active **with** morph: **58,654**. Active **missing**: **4,099**, all accounted for:
+  - **170 T2 particles** — function words, correctly blank (no morphology to have).
+  - **6 content-cluster strays** — STEP returned no morph for those exact verses (M21/M04/M05/M38/M23). Genuinely un-parseable; not a backfill gap.
+  - **3,923 with `mti_term_id` NULL** — **not linked to the MTI model**, so outside the cluster/finding analytical scope entirely. Concentrated in **registries 213 (2,888) and 214 (907)** — recently-extracted words **not yet processed** into the MTI/cluster model (their term_ids already have 945 active *linked* rows elsewhere). They are **pending processing, not wrong data**.
+- **Conclusion:** the active analytical scope is already correct; **no re-run of existing verses is needed.** The source fix is **forward-looking** — it guarantees verses (e.g. registries 213/214 when they're processed, and every future audit) get morph at creation, so they never land morph-less again. (Side note: 213/214 sitting unlinked is a separate processing-backlog item, not a morph issue.)
+
 ## Recommendation
 Implement 1–6 as the proper generic fix. It is bounded (1 shared parser + 1 fetch change + extract carry + 4 INSERT edits + reconcile wiring) and removes the morph-less-verse class of bug entirely. **Confirm and I'll proceed** — I'll verify the extract-JSON producer first, then implement with a dry-run on one registry.
