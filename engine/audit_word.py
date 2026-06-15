@@ -113,6 +113,7 @@ if _SCRIPTS not in sys.path:
 from .constants import EXPECTED_SCHEMA_VERSION, LOCK_SENTINEL, AUDITED_SENTINEL
 from .db import get_schema_version, get_book_id
 from .audit import run_audit
+from .softdelete import cascade_delete_verses, integrity_violations
 from .flag_engine import run_flag_engine
 from .meaning_parser import run_parser_for_file
 from .run_log import (
@@ -920,6 +921,11 @@ def _apply_changes(
                     "UPDATE wa_term_root_family SET delete_flagged = 1 WHERE term_inv_id = ?",
                     (item["ti_id"],),
                 )
+                # H3 cascade: the term's verses → verse_context → findings (else they orphan)
+                _vrs = [r[0] for r in conn.execute(
+                    "SELECT id FROM wa_verse_records WHERE term_inv_id = ? AND COALESCE(delete_flagged,0)=0",
+                    (item["ti_id"],))]
+                cascade_delete_verses(conn, _vrs)
             except Exception as exc:
                 errors.append(f"DB_ONLY_TERM flag {item['code']}: {exc}")
 
@@ -2028,6 +2034,16 @@ def run_audit_word(
             print(f"  [WARN] Full-word JSON export failed: {exc}")
     else:
         print("\nA11  [SKIP] analytics.word_export not available — JSON export skipped.")
+
+    # ── A12: soft-delete integrity check (read-only warning; H5) ──────────────
+    try:
+        _viol = integrity_violations(conn)
+        if any(_viol.values()):
+            print("\nA12  [INTEGRITY WARNING] " + ", ".join(f"{k}={v}" for k, v in _viol.items() if v))
+        else:
+            print("\nA12  Integrity check: clean.")
+    except Exception as exc:
+        print(f"\nA12  [WARN] integrity check failed: {exc}")
 
     return {
         "outcome":      "COMPLETE",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T03:41:42Z",
+  "generated_at": "2026-06-15T04:12:01Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 134,
     "historical": 30,
-    "current": 1767,
+    "current": 1771,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7504,
-  "total_active": 5265,
+  "total_files": 7508,
+  "total_active": 5269,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,24 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319606784,
-      "modified": "2026-06-15T03:41:07Z"
-    },
-    {
-      "path": "database/bible_research.db-journal",
-      "category": "other",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": null,
-      "ext": ".db-journal",
-      "archived": false,
-      "size_bytes": 172880,
-      "modified": "2026-06-15T03:41:41Z"
+      "size_bytes": 319639552,
+      "modified": "2026-06-15T04:03:53Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92739,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3387886,
-      "modified": "2026-06-15T03:32:39Z"
+      "size_bytes": 3389624,
+      "modified": "2026-06-15T03:41:42Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93299,8 +93283,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 98401,
-      "modified": "2026-04-27T16:46:50Z"
+      "size_bytes": 99293,
+      "modified": "2026-06-15T04:10:27Z"
     },
     {
       "path": "engine/backup.py",
@@ -93493,6 +93477,22 @@
       "archived": false,
       "size_bytes": 6142,
       "modified": "2026-03-18T08:44:04Z"
+    },
+    {
+      "path": "engine/softdelete.py",
+      "category": "code",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5533,
+      "modified": "2026-06-15T04:08:27Z"
     },
     {
       "path": "engine/span_filter.py",
@@ -107143,6 +107143,38 @@
       "modified": "2026-06-15T03:31:56Z"
     },
     {
+      "path": "research/investigations/wa-d2b-a-orphan-softdelete-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 237,
+      "modified": "2026-06-15T04:03:53Z"
+    },
+    {
+      "path": "research/investigations/wa-d2b-a-orphan-softdelete-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 10401,
+      "modified": "2026-06-15T04:03:53Z"
+    },
+    {
       "path": "research/investigations/wa-d2b-unregistered-terms-decision-v1-20260615.md",
       "category": "investigation",
       "type": "investigation",
@@ -108149,6 +108181,22 @@
       "archived": false,
       "size_bytes": 4246,
       "modified": "2026-06-14T18:10:23Z"
+    },
+    {
+      "path": "research/investigations/wa-morph-targeted-newlylinked-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 740,
+      "modified": "2026-06-15T04:02:57Z"
     },
     {
       "path": "research/investigations/wa-mti-duplicate-terms-v1-20260609.md",
@@ -112611,8 +112659,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 6852,
-      "modified": "2026-06-15T02:48:55Z"
+      "size_bytes": 7720,
+      "modified": "2026-06-15T04:02:23Z"
     },
     {
       "path": "scripts/_apply_orphan_vcg_softdelete_20260527.py",
@@ -114485,6 +114533,22 @@
       "archived": false,
       "size_bytes": 4140,
       "modified": "2026-04-27T16:46:35Z"
+    },
+    {
+      "path": "scripts/_check_softdelete_integrity.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2304,
+      "modified": "2026-06-15T04:10:48Z"
     },
     {
       "path": "scripts/_close_cluster_analysis_v1_20260601.py",
