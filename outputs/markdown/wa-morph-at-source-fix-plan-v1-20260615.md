@@ -31,14 +31,25 @@ So every newly-audited/added word gets verses with **no morph → no stem, no mo
 - `get_verse_records` morph parse must match the backfill's `(strong, base-strong)` span-matching exactly, so new and backfilled morph agree.
 - A fresh `audit_word --dry-run` on one registry to confirm verses arrive with morph + stem + correct language before going live.
 
-## Scope of existing data — investigated (do existing verses need a re-run? **No.**)
-Facts (2026-06-15), so this isn't guessed:
-- **229,957** verse rows → **167,204 soft-deleted (left untouched, as instructed)** → **62,753 active**.
-- Active **with** morph: **58,654**. Active **missing**: **4,099**, all accounted for:
-  - **170 T2 particles** — function words, correctly blank (no morphology to have).
-  - **6 content-cluster strays** — STEP returned no morph for those exact verses (M21/M04/M05/M38/M23). Genuinely un-parseable; not a backfill gap.
-  - **3,923 with `mti_term_id` NULL** — **not linked to the MTI model**, so outside the cluster/finding analytical scope entirely. Concentrated in **registries 213 (2,888) and 214 (907)** — recently-extracted words **not yet processed** into the MTI/cluster model (their term_ids already have 945 active *linked* rows elsewhere). They are **pending processing, not wrong data**.
-- **Conclusion:** the active analytical scope is already correct; **no re-run of existing verses is needed.** The source fix is **forward-looking** — it guarantees verses (e.g. registries 213/214 when they're processed, and every future audit) get morph at creation, so they never land morph-less again. (Side note: 213/214 sitting unlinked is a separate processing-backlog item, not a morph issue.)
+## Scope of existing data — investigated, and CORRECTED (2026-06-15)
+
+> An earlier draft called the 3,923 morph-less actives "pending, not wrong." **That was wrong** — investigation (prompted by the researcher) shows most are a genuine broken-link integrity gap that the fix must include.
+
+Facts:
+- **229,957** verse rows → **167,204 soft-deleted (left untouched)** → **62,753 active**.
+- Active missing morph: **4,099** = **170 T2 particles** (correctly blank) + **6 STEP-blank content strays** + **3,923 with `mti_term_id` NULL**.
+- **The 3,923 break down as:**
+  - **3,636 are LINKABLE and SHOULD be linked** — their `term_id` matches an existing `mti_terms.strongs_number`; `mti_term_id` is just NULL. **Broken link, not pending.** Proof: registry **213 'listen' is `phase1=Complete` / cluster C02** (a *processed* word) — its 2,888 verses are simply unlinked. (Registry **214 'suffering' is `phase1=Excluded`** — its 907 are arguably out-of-scope but still unlinked.)
+  - **287 are genuinely unregistered** — 22 Strong's with **no `mti_terms` row** (e.g. H0241G/H/I *ear* sub-entries, G3775 *ear*, H2266/H2267 *join/companion*). A separate registration gap.
+- **Root, one layer below morph:** **nothing writes `wa_verse_records.mti_term_id`** — not `audit_word`, not `migrate.py`, no maintained script (every reference is a read/JOIN). `audit_word`'s INSERT (line 1043) sets `term_id` but leaves **both `mti_term_id` and `morph_code` NULL**. So the create-path leaks *two* downstream values, and the chain is: link (mti_term_id) → morph → stem/language — none wired in.
+
+## The fix must therefore cover linkage too (expanded)
+The morph-at-source fix is necessary but **not sufficient** — morph backfill keys on `mti_term_id`, so unlinked verses can't get morph regardless. Add:
+- **A. `audit_word` (+ gap_fill/new_word) populate `mti_term_id` at insert** — match `term_id`→`mti_terms.strongs_number` when the verse is created. This is the missing maintained linkage (parallel to the morph-at-source change). Verses then arrive **linked + morphed**, and stem/language cascade.
+- **B. One-time link backfill** for the **3,636** existing linkable records (set `mti_term_id` from the matching `mti_terms` row), then morph + language cascade over them.
+- **Decision points (researcher — mark in this doc, do not action yet):**
+  - **D1 — Registry 214 'suffering' (Excluded, 907 verses):** link its verses or leave unlinked as out-of-scope?  `**Decision:** ____`
+  - **D2 — 287 unregistered occurrences (22 Strong's, e.g. H0241G *ear*):** register them into `mti_terms` (so they can link), or leave as un-analysed?  `**Decision:** ____`
 
 ## Recommendation
 Implement 1–6 as the proper generic fix. It is bounded (1 shared parser + 1 fetch change + extract carry + 4 INSERT edits + reconcile wiring) and removes the morph-less-verse class of bug entirely. **Confirm and I'll proceed** — I'll verify the extract-JSON producer first, then implement with a dry-run on one registry.
