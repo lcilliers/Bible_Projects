@@ -63,7 +63,9 @@ For exact file lookup use `python scripts/build_file_manifest.py --search "..."`
 
 ---
 
-## 3. The Database — Schema v3.31.0
+## 3. The Database — Schema v3.33.0
+
+> **2026-06-15 grounding + normalisation (major):** schema → **3.33.0**. (a) **`ve_lexical`** created (M59) = the *items-in-verse-level* table: VE field-VALUES normalised here (one row per value: `verse_context_id · ve_nr · ve_label · related_tier · value · source_provenance`); the `finding` table is now **real findings only** (~11k: synthesis + meanings, was ~309k). (b) **`mti_terms` grounded** — unique per Strong's, status-clean, owned (2,402 active). (c) **`wa_verse_records` unique by `(reference, term_id)`** (58,966 active; XREF dups + orphans cleared). (d) **`word_registry_fk` bypass** (M58) on verse/term tables — **never join through legacy `wa_file_index`**. (e) Mode = `morph_code`/`stem` **columns** (not a finding); language is **morph-authoritative**. See `research/investigations/wa-ve-lexical-*`, `wa-xref-verse-duplication-blocker-*`, and memory `reference_file_index_legacy_use_bypass_fks`, `project_morph_is_source_of_truth`. The VE *values* are migrated as-is — a value rerun/validation is the next phase.
 
 **File:** `database/bible_research.db` (SQLite, ~165 MB, excluded from Git). Connection pattern: `sqlite3.connect('database/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
 
@@ -139,7 +141,7 @@ NEW_WORD and GAP_FILL modes are superseded for **auditing** — AUDIT_WORD handl
 
 **Common flags:** `--dry-run`, `--force`, `--interactive`, `--skip-span-backpop`, `--extract-file=PATH`.
 
-**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.31.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
+**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.33.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
 
 Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Architecture-*.md`.
 
