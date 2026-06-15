@@ -1025,6 +1025,17 @@ def _apply_changes(
 
     # ── Stream 2: MISSING_VERSE insert ────────────────────────────────────────
     if approvals.get("MISSING_VERSE"):
+        _mti_cache: dict = {}
+
+        def _mti_for(strongs):
+            # H4: link the verse to its canonical mti_terms row at creation (was never populated)
+            if strongs not in _mti_cache:
+                row = conn.execute(
+                    "SELECT id FROM mti_terms WHERE strongs_number=? AND COALESCE(delete_flagged,0)=0 "
+                    "AND COALESCE(status,'')<>'delete' ORDER BY id LIMIT 1", (strongs,)).fetchone()
+                _mti_cache[strongs] = row["id"] if row else None
+            return _mti_cache[strongs]
+
         for item in gap["MISSING_VERSE"]:
             jv    = item["verse_rec"]
             ti_id = item["ti_id"] or new_ti_map.get(item["code"])
@@ -1047,21 +1058,23 @@ def _apply_changes(
             try:
                 conn.execute(
                     """INSERT INTO wa_verse_records
-                           (file_id, term_inv_id, term_id, transliteration,
+                           (file_id, term_inv_id, term_id, mti_term_id, transliteration,
                             book_id, reference, chapter, verse_num, testament,
                             translation, verse_text, target_word,
                             span_strong_match, context_before, context_after,
-                            created_at)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?)""",
+                            morph_code, stem, created_at)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         primary_fid, ti_id,
                         ti.get("term_id") or item["code"],
+                        _mti_for(ti.get("term_id") or item["code"]),   # H4: link at insert
                         ti.get("transliteration"),
                         book_id, jv["ref"],
                         jv.get("chapter"), jv.get("verse_num"), jv.get("testament"),
                         jv.get("esv_text", ""), jv.get("target_word"),
                         jv.get("span_strong_match"),
                         jv.get("context_before"), jv.get("context_after"),
+                        jv.get("morph_code"), jv.get("stem"),          # H4: morph at insert (when extract carries it)
                         now,
                     ),
                 )

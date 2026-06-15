@@ -14,6 +14,30 @@ Key gotchas this encodes:
   "Hebrew" there. The Aramaic distinction lives HERE, in the morph code, not in that field.
 """
 
+import re
+
+_SPAN = re.compile(r"<span\s+morph='([^']*)'\s+strong='([^']*)'>([^<]*)</span>", re.I)
+
+
+def _base_strong(code):
+    m = re.match(r"^([HG]\d+)", code or "")
+    return m.group(1) if m else (code or "")
+
+
+def morph_for_span(html, strong):
+    """The morph code for `strong` within STEP preview HTML (the span whose strong matches, exact or base).
+    Canonical parser shared by step_client.get_verse_records and the morph backfill. '' if not found."""
+    want = strong
+    wbase = _base_strong(strong)
+    for ma, sa, _t in _SPAN.findall(html or ""):
+        sc = sa.split()
+        mc = ma.split()
+        for i, s in enumerate(sc):
+            if s == want or _base_strong(s) == wbase:
+                return mc[i] if i < len(mc) else (mc[0] if mc else "")
+    return ""
+
+
 GREEK_INDECL = {"ADV", "CONJ", "COND", "PRT", "PREP", "INJ", "ARAM", "HEB", "N-LI", "N-OI"}
 GREEK_INDECL_CAT = {"ADV": "adverb", "CONJ": "conjunction", "COND": "conditional",
                     "PRT": "particle", "PREP": "preposition", "INJ": "interjection",

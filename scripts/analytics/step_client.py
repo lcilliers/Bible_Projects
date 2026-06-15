@@ -25,6 +25,11 @@ from typing import Optional
 
 import requests
 
+try:  # canonical morph parser (H4: morph at the source) — resolve in both script + engine contexts
+    from morph_util import morph_for_span, morph_stem
+except ImportError:
+    from analytics.morph_util import morph_for_span, morph_stem
+
 try:
     from dotenv import load_dotenv
     _ROOT = os.path.join(os.path.dirname(__file__), "..")
@@ -277,6 +282,7 @@ class StepClient:
             osisid = item["osisId"]
             book_code, chapter, verse_num = self._parse_osisid(osisid)
             testament = "NT" if book_code in _NT_BOOKS else "OT"
+            morph_code = morph_for_span(html, resolved)   # H4: morph parsed at the source, not dropped
             records.append({
                 "osisId":     osisid,
                 "ref":        item["key"],
@@ -286,6 +292,8 @@ class StepClient:
                 "book_code":  book_code,
                 "chapter":    chapter,
                 "verse_num":  verse_num,
+                "morph_code": morph_code,
+                "stem":       morph_stem(morph_code),
             })
 
         records.sort(key=lambda r: r["osisId"])
@@ -357,6 +365,7 @@ class StepClient:
             book_code, chapter, verse_num = self._parse_osisid(osisid)
             testament = "NT" if book_code in _NT_BOOKS else "OT"
             html_map[osisid] = html
+            morph_code = morph_for_span(html, resolved)   # H4: morph at the source (parity with get_verse_records)
             records.append({
                 "osisId":      osisid,
                 "ref":         item["key"],
@@ -366,6 +375,8 @@ class StepClient:
                 "book_code":   book_code,
                 "chapter":     chapter,
                 "verse_num":   verse_num,
+                "morph_code":  morph_code,
+                "stem":        morph_stem(morph_code),
             })
 
         records.sort(key=lambda r: r["osisId"])
