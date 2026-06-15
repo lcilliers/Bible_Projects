@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T03:32:39Z",
+  "generated_at": "2026-06-15T03:41:42Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 134,
     "historical": 30,
-    "current": 1763,
+    "current": 1767,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7500,
-  "total_active": 5261,
+  "total_files": 7504,
+  "total_active": 5265,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,8 +92707,24 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319598592,
-      "modified": "2026-06-15T03:31:56Z"
+      "size_bytes": 319606784,
+      "modified": "2026-06-15T03:41:07Z"
+    },
+    {
+      "path": "database/bible_research.db-journal",
+      "category": "other",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".db-journal",
+      "archived": false,
+      "size_bytes": 172880,
+      "modified": "2026-06-15T03:41:41Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92739,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3386129,
-      "modified": "2026-06-15T03:23:25Z"
+      "size_bytes": 3387886,
+      "modified": "2026-06-15T03:32:39Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -96517,6 +96533,22 @@
       "archived": false,
       "size_bytes": 7092,
       "modified": "2026-06-02T14:00:28Z"
+    },
+    {
+      "path": "outputs/markdown/wa-softdelete-integrity-hardening-plan-v1-20260615.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3794,
+      "modified": "2026-06-15T03:41:17Z"
     },
     {
       "path": "outputs/pdf/.gitkeep",
@@ -107111,6 +107143,22 @@
       "modified": "2026-06-15T03:31:56Z"
     },
     {
+      "path": "research/investigations/wa-d2b-unregistered-terms-decision-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3168,
+      "modified": "2026-06-15T03:35:04Z"
+    },
+    {
       "path": "research/investigations/wa-db-architecture-decision-v1-20260505.md",
       "category": "investigation",
       "type": "investigation",
@@ -112709,6 +112757,22 @@
       "archived": false,
       "size_bytes": 2333,
       "modified": "2026-06-09T15:47:09Z"
+    },
+    {
+      "path": "scripts/_apply_softdelete_orphan_verses.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3501,
+      "modified": "2026-06-15T03:40:17Z"
     },
     {
       "path": "scripts/_apply_stale_archive_bulk_v1_20260426.py",
