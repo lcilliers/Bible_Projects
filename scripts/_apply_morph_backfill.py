@@ -57,25 +57,39 @@ def main():
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--cluster"); g.add_argument("--clusters")
+    g.add_argument("--strongs", help="comma-separated Strong's — morph ONLY these specific terms (targeted, no cluster re-fetch)")
     m = ap.add_mutually_exclusive_group(required=True)
     m.add_argument("--dry-run", action="store_true"); m.add_argument("--live", action="store_true")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
-    clusters = [a.cluster] if a.cluster else [x.strip() for x in a.clusters.split(",") if x.strip()]
+    if a.strongs:
+        snlist = [x.strip() for x in a.strongs.split(",") if x.strip()]
+        units = [("targeted", snlist)]            # (label, strongs-list) — fetch only these terms
+        label = f"strongs:{len(snlist)}"
+    else:
+        clusters = [a.cluster] if a.cluster else [x.strip() for x in a.clusters.split(",") if x.strip()]
+        units = [(cl, None) for cl in clusters]   # (cluster, None) — fetch the cluster's terms
+        label = ", ".join(clusters)
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; c = conn.cursor()
     sc = StepClient()
 
-    L = [f"# L0 morph backfill — {'DRY-RUN' if a.dry_run else 'LIVE'} — {', '.join(clusters)}", ""]
+    L = [f"# L0 morph backfill — {'DRY-RUN' if a.dry_run else 'LIVE'} — {label}", ""]
     L.append("> `scripts/_apply_morph_backfill.py`. Populates `wa_verse_records.morph_code`/`stem` from STEP "
              "per term-occurrence, matched on `(mti_term_id, reference)`. Watch the **match-rate**.")
     L.append("")
     L.append("| Cluster | terms | DB rows | STEP verses | matched | DB-only (no morph) | STEP-only (no row) | match% | stems |")
     L.append("|---|---|---|---|---|---|---|---|---|")
     g_written = 0
-    for CL in clusters:
-        terms = c.execute("SELECT id, strongs_number, transliteration FROM mti_terms "
-                          "WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0 ORDER BY strongs_number",
-                          (CL,)).fetchall()
+    for CL, snlist in units:
+        if snlist is not None:
+            ph = ",".join("?" * len(snlist))
+            terms = c.execute("SELECT id, strongs_number, transliteration FROM mti_terms "
+                              f"WHERE strongs_number IN ({ph}) AND COALESCE(delete_flagged,0)=0 ORDER BY strongs_number",
+                              snlist).fetchall()
+        else:
+            terms = c.execute("SELECT id, strongs_number, transliteration FROM mti_terms "
+                              "WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0 ORDER BY strongs_number",
+                              (CL,)).fetchall()
         db_rows = step_verses = matched = step_only = written = 0
         stemc = {}
         db_refs_all = set()
