@@ -7,7 +7,7 @@ metadata:
   originSessionId: 8a5e10ea-2d9d-4bb9-8ca3-fb979500309e
 ---
 
-GOVERNING (2026-06-15, major restructure). Schema → **3.33.0**.
+GOVERNING (2026-06-15, major restructure). Schema → **3.33.0**. **All VE/lexical files are filed + indexed at `research/VE-lexical/00-INDEX.md` — start there (the old scattered wa-l1l2-*/wa-ve-lexical-* names were moved + renamed 01–12 on 2026-06-15).**
 
 **The analytic-layer normalisation (researcher-directed):**
 - The "14 VE" was a PHANTOM (no real structure) and the `finding` table conflated VE attributes with real findings.
