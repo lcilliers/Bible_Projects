@@ -5,7 +5,9 @@
 ## The model & design (read first)
 | # | file | what it is |
 |---|---|---|
-| 01 | [VE-field-model-and-rules](01-VE-field-model-and-rules.md) | **THE design** — the 14 VE fields, their reliable measures, signal-lists, rules, states (resolved/indeterminate/UNRESOLVED). *(was wa-l1l2-field-reliability-measures-v1)* |
+| **01** | **[THE-VE-DESIGN-spec-lists-rules](01-THE-VE-DESIGN-spec-lists-rules.md)** | **★ THE design doc** — the verse-level extraction record: every VE field with its **explicit option-list** + the **M/R (mechanical vs read) split** + which tier it feeds. This is where the VEs + lists + rules were created. *(was wa-verse-level-extraction-spec-v1)* |
+| 01b | [VE-field-reliability-and-rules](01b-VE-field-reliability-and-rules.md) | the reliability elaboration on 01 — reliable measures, signal-lists, the list/rules/states table, faculty R1–R5. *(was wa-l1l2-field-reliability-measures-v1)* |
+| 13 | [catalogue-refit-principles](13-catalogue-refit-principles.md) | the four governing principles behind the refit (characteristic = typed-term-in-verse, etc.). *(was wa-catalogue-refit-two-layer)* |
 | 02 | [what-is-in-the-database](02-what-is-in-the-database.md) | the record-set model: unit = term-in-verse; bedrock=columns vs interpretive=findings; why mode≠sense storage. *(was wa-finding-recordset-model-orientation)* |
 | 03 | [data-model-redesign](03-data-model-redesign.md) | the normalisation: verse-level (`verse_context`) + items (`ve_lexical`); cardinality split; finding=real-only. *(was wa-ve-lexical-data-model-redesign)* |
 | 04 | [verse-schema-current](04-verse-schema-current.md) | the actual CURRENT schema of all 17 verse-related tables (columns/types/FKs). *(was wa-verse-schema-current)* |
