@@ -9,16 +9,16 @@
 
 ## Open design decisions (block the related actions)
 - **D-A — object/target.** Relational ("directed for …") has no object. Add a **new VE "object/target"** (the node the term acts on), or fold the object into VE13? → *pending*
-- **D-B — the "how"/governing predicate.** The qualifier verb ("seized") isn't stored (only analysed terms get spans). Capture it by (i) re-parsing STEP's full verse HTML for the span's governing verb, (ii) treat as a read field, or (iii) leave `UNRESOLVED`? → *pending*
+- **D-B — the "how"/qualifier-predicate.** Qualifiers of the term that aren't tagged terms are uncaptured — both the **governing predicate / "how"** ("anguish *seized* me") and the **quantifier / intensity / "how much"** ("cares *are many*"). Only analysed terms get spans, so these are absent from the DB. Capture by (i) re-parsing STEP's full verse HTML for the span's governing predicate/modifier, (ii) treat as a read field, or (iii) leave `UNRESOLVED`? → *pending*
 
 ## Action items
 
 | ID | Source | Issue | Class | Action | Status |
 |---|---|---|---|---|---|
-| A1 | vc=1630 | transliteration shown alone (`ne.phesh(M25)`) | render | co-term renders with gloss: `ne.phesh "soul: life" (M25)` — VE3 value + narration + all outputs ([[feedback_translit_always_with_gloss]]) | READY |
+| A1 | vc=1630, 2670 | transliteration shown alone (`ne.phesh(M25)`; `qe.rev`/`sha.a`/`tan.chum`) — **confirmed pervasive** (every multi-compound verse) | render | co-term renders with gloss: `ne.phesh "soul: life" (M25)` — VE3 value + narration + all outputs ([[feedback_translit_always_with_gloss]]) | READY |
 | A2 | vc=1630 | location missed though seat-term present | VE5 logic | VE5 adds co-occurring **constitutional-seat TERMS** as signals (strong's→seat map: H5315/H5315H→soul, H3820/H3824→heart, H7307→spirit, …) | READY |
 | A3 | vc=1630 | relational = bare preposition, no object | VE13 / new VE | per **D-A**: relational = direction + object; drop object-less bare prepositions | DECISION |
-| A4 | vc=1630 | qualifier "agony seized the inner being" absent | data + design | per **D-B**: capture the governing predicate ("how") | DECISION |
+| A4 | vc=1630, 2670 | qualifier/predicate of the term absent — the "how" ("anguish *seized*…") **and** the intensity/"how much" ("cares *are many*") | data + design | per **D-B**: capture the governing predicate + quantifier/intensity qualifiers | DECISION |
 | A5 | vc=1630 | legit T2 qualifier (`od` "still lingers") soft-deleted | data integrity | check why active T2 qualifier occurrences are soft-deleted (od: 170 active / 306 soft-del); is the web being thinned? | INVESTIGATE |
 
 ## Further verse reviews — add examples here
@@ -28,7 +28,7 @@
 | vc / ref | term | observation | maps to action |
 |---|---|---|---|
 | 1630 / 2Sa 1:9 | sha.vats "agony" | (the worked example above) | A1–A5 |
-| | | | |
+| 2670 / Psa 94:19 | sar.ap.pim "anxiety" | (a) 3 compound co-terms shown without gloss — qe.rev "entrails: inner parts" (T2), sha.a "to delight" (M04), tan.chum "consolation" (M05); (b) "the cares **are many**" — the intensity/quantifier qualifier not captured ("many" is not a tagged term) | A1 (pervasive), A4 (intensity qualifier) |
 | | | | |
 
 ## Batching note
