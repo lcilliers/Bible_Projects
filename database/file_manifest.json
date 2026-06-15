@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T05:56:34Z",
+  "generated_at": "2026-06-15T06:13:07Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 136,
     "historical": 30,
-    "current": 1781,
+    "current": 1782,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7521,
-  "total_active": 5282,
+  "total_files": 7522,
+  "total_active": 5283,
   "total_archived": 2239,
   "files": [
     {
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3396867,
-      "modified": "2026-06-15T05:50:25Z"
+      "size_bytes": 3397299,
+      "modified": "2026-06-15T05:56:34Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -109141,6 +109141,22 @@
       "archived": false,
       "size_bytes": 14959,
       "modified": "2026-06-09T11:11:49Z"
+    },
+    {
+      "path": "research/investigations/wa-xref-verse-duplication-blocker-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3461,
+      "modified": "2026-06-15T06:12:54Z"
     },
     {
       "path": "research/investigations/wa_file_index_export.csv",
