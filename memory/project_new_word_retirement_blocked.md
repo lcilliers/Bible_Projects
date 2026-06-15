@@ -16,4 +16,6 @@ FINDING (2026-06-15): the decision to retire `new_word.py` (and `gap_fill.py`) a
 
 **Proper retirement = complete the handoff FIRST:** move `wa_file_index` creation into `audit_word`'s first-time-population path (A2) or into `--register`, validate a brand-new word end-to-end through audit_word, THEN remove the CLI wiring + archive new_word + gap_fill and update the stale "Run --mode=new_word first" messages (audit_word.py:1638, 1698) and CLAUDE.md §4.
 
+**⚠ ADDING A NEW WORD = TREAT WITH CARE (rare but possible).** The from-scratch onboarding path (audit_word stub → extract → insert → link → morph → bypass FK) is wired but NOT yet validated end-to-end on a genuinely new word — only the insert mechanics were proven on an existing word (R211). It happens very infrequently, but when it does: run it carefully (dry-run first where possible), watch the A12 integrity check, and verify the new verses are linked + morphed + carry word_registry_fk before trusting the run. Do not assume it "just works."
+
 **H4 validated 2026-06-15** on a live audit of R211 'being': 497 verses inserted 0 errors, link-at-insert worked (511/572 linked), the H5 integrity check (A12) caught the residual 61 orphans of a dead term, which were then cleaned. See [[project_morph_is_source_of_truth]].
