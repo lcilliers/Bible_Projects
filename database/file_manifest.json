@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T02:57:50Z",
+  "generated_at": "2026-06-15T03:23:25Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 134,
     "historical": 30,
-    "current": 1755,
+    "current": 1759,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7492,
-  "total_active": 5253,
+  "total_files": 7496,
+  "total_active": 5257,
   "total_archived": 2239,
   "files": [
     {
@@ -92707,8 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319414272,
-      "modified": "2026-06-15T02:49:10Z"
+      "size_bytes": 319479808,
+      "modified": "2026-06-15T03:23:01Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3383484,
-      "modified": "2026-06-15T02:50:24Z"
+      "size_bytes": 3384330,
+      "modified": "2026-06-15T02:57:50Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -94499,8 +94499,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 2696,
-      "modified": "2026-06-03T09:06:25Z"
+      "size_bytes": 3446,
+      "modified": "2026-06-15T03:02:58Z"
     },
     {
       "path": "memory/feedback_route_dual_cluster_findings.md",
@@ -96499,8 +96499,8 @@
       "date": "2026-06-15",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 4049,
-      "modified": "2026-06-15T02:57:34Z"
+      "size_bytes": 8611,
+      "modified": "2026-06-15T03:16:43Z"
     },
     {
       "path": "outputs/markdown/wa-session-close-report-20260602.md",
@@ -107015,6 +107015,54 @@
       "modified": "2026-06-08T13:04:16Z"
     },
     {
+      "path": "research/investigations/wa-d1-excluded-cascade-dryrun-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 326,
+      "modified": "2026-06-15T03:21:11Z"
+    },
+    {
+      "path": "research/investigations/wa-d1-excluded-cascade-live-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 457,
+      "modified": "2026-06-15T03:23:01Z"
+    },
+    {
+      "path": "research/investigations/wa-d1-excluded-cascade-live-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 19355,
+      "modified": "2026-06-15T03:23:01Z"
+    },
+    {
       "path": "research/investigations/wa-db-architecture-decision-v1-20260505.md",
       "category": "investigation",
       "type": "investigation",
@@ -109365,6 +109413,22 @@
       "archived": false,
       "size_bytes": 4840,
       "modified": "2026-06-11T03:18:37Z"
+    },
+    {
+      "path": "scripts/_apply_excluded_registry_cascade.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5221,
+      "modified": "2026-06-15T03:21:03Z"
     },
     {
       "path": "scripts/_apply_finding_citation_extension_v1_20260602.py",
