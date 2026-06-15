@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T08:34:59Z",
+  "generated_at": "2026-06-15T09:46:00Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 137,
     "historical": 30,
-    "current": 1789,
+    "current": 1792,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 18
   },
-  "total_files": 7531,
-  "total_active": 5292,
+  "total_files": 7534,
+  "total_active": 5295,
   "total_archived": 2239,
   "files": [
     {
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 348680192,
-      "modified": "2026-06-15T08:31:55Z"
+      "size_bytes": 354766848,
+      "modified": "2026-06-15T09:45:09Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92771,8 +92771,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3401282,
-      "modified": "2026-06-15T08:33:27Z"
+      "size_bytes": 3401706,
+      "modified": "2026-06-15T08:35:00Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -108743,6 +108743,22 @@
       "modified": "2026-06-09T03:42:37Z"
     },
     {
+      "path": "research/investigations/wa-sense-faculty-rerun-for-review-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3753,
+      "modified": "2026-06-15T09:45:40Z"
+    },
+    {
       "path": "research/investigations/wa-sense-operation-setup-v1-20260615.md",
       "category": "investigation",
       "type": "investigation",
@@ -109893,6 +109909,22 @@
       "archived": false,
       "size_bytes": 5221,
       "modified": "2026-06-15T03:21:03Z"
+    },
+    {
+      "path": "scripts/_apply_faculty_rederive_v1.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 6044,
+      "modified": "2026-06-15T09:44:16Z"
     },
     {
       "path": "scripts/_apply_finding_citation_extension_v1_20260602.py",
@@ -113141,6 +113173,22 @@
       "archived": false,
       "size_bytes": 2333,
       "modified": "2026-06-09T15:47:09Z"
+    },
+    {
+      "path": "scripts/_apply_sense_from_subgloss.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2413,
+      "modified": "2026-06-15T09:42:20Z"
     },
     {
       "path": "scripts/_apply_softdelete_excluded_empty_terms.py",
