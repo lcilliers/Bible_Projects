@@ -32,14 +32,14 @@
 |---|---|---|
 | 08 | [working-set-50-verses](08-working-set-50-verses.md) | 50 complex multi-term/cluster verses; mode assessment; signal-list seeds. *(was wa-l1l2-50complex-verses)* |
 
-## Current state of each VE (as of 2026-06-15)
-- **Mode (#4)** = `morph_code`/`stem` **column** — done for ALL verses.
-- **Sense (VE1)** — re-derived to per-occurrence subgloss (analysed set; 725 UNRESOLVED).
-- **Faculty (VE7)** — re-derived v1 against signal-lists (7,694 direct + 17,460 indirect = review).
-- **Type (VE2)** — migrated as-is (bundles type + simple/compound; needs split + morph-derive).
-- **VE3 compound, VE5 location, VE6 origin, VE8 attributed-God** — migrated as-is; mechanical/signal re-derive pending.
-- **VE9 purpose, VE10 typology, VE11 response, VE12 produces** — the **read VEs** (free-text/interpretive); pending.
-- **Coverage:** 30,103 of 41,657 units analysed; the ~2,333 M-cluster gap is M47-heavy; the rest (~9,215) is T2 (correctly not standalone-analysed).
+## Current state of each VE (as of 2026-06-15 — POST WIPE + MECHANICAL REBUILD)
+> The migrated value layer was judged corrupt and **wiped** (237,397 rows hard-deleted), then **rebuilt mechanically per 01b**. Scripts: `_apply_wipe_ve_lexical_v1.py` · `_apply_ve_rebuild_mechanical_v1.py` · `_produce_ve_narration_v1.py` · `_apply_persist_narration_finding_v1.py`.
+- **Mode (#4)** = `morph_code`/`stem` **column** — done for ALL verses (not in ve_lexical).
+- **VE 1,2,3,5,6,7,8,13 REBUILT** (`source_provenance='mechanical_v1'`): 247,899 rows over 40,739 units, strictly per 01b §1d. Attachment proxy = the term neighbourhood; doubt → `UNRESOLVED`. Faculty false-positives fixed.
+- **Templated narration PERSISTED** as the single `l2_meaning` finding (30,571 M-cluster; old prose soft-deleted). Composer = deterministic view.
+- **VE9/10/11/12/14** — read/deferred; not built.
+- **ITERATION-2 review ACTIVE** — verse-by-verse review surfacing fixes (translit+gloss, location-from-seat-term, object/target VE, the "how"/predicate gap, soft-deleted qualifiers). **Living register: [wa-ve-iteration2-action-register-20260615.md](wa-ve-iteration2-action-register-20260615.md)** (+ first example [wa-ve-narration-feedback-vc1630-20260615.md](wa-ve-narration-feedback-vc1630-20260615.md)).
+- **Review/dump artefacts (today):** `wa-verse-records-status-by-cluster-20260615.md` · `wa-raw-dump-with-narration-M01-M23-M46-20260615.md` · `wa-ve-rebuild-dryrun-review-20260615.md` · `wa-ve-templated-narration-first-20260615.md`.
 
 ## Related — supporting foundation (left in their integrity context)
 - Grounding/integrity that made this possible: [`research/investigations/wa-xref-verse-duplication-blocker-v1-20260615.md`](../investigations/wa-xref-verse-duplication-blocker-v1-20260615.md) · [`wa-mode-consistency-check-v1-20260615.md`](../investigations/wa-mode-consistency-check-v1-20260615.md) · [`wa-language-testament-consistency-check-v1-20260615.md`](../investigations/wa-language-testament-consistency-check-v1-20260615.md).
