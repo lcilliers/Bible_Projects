@@ -135,7 +135,7 @@ Invocation: `python -m engine.engine [options]`. Source: `engine/`. Audit pipeli
 | EXPORT | `--export-word --registry=N` | Export full word JSON |
 | EXPORT_REGISTRY | `--export-registry` | Export `word_registry` JSON |
 
-NEW_WORD and GAP_FILL modes are superseded — AUDIT_WORD handles both paths.
+NEW_WORD and GAP_FILL modes are superseded for **auditing** — AUDIT_WORD handles audit + re-sync of new + existing words. **Caveat (2026-06-15):** they are **not yet archivable** — AUDIT_WORD does not create `wa_file_index` (only `new_word`/`gap_fill`/`_repair_03` do), so brand-new word *onboarding* still depends on them. Don't run them for analysis (stale, no H4 link/morph); proper retirement = move file_index creation into AUDIT_WORD/`--register` first. See memory `project_new_word_retirement_blocked`.
 
 **Common flags:** `--dry-run`, `--force`, `--interactive`, `--skip-span-backpop`, `--extract-file=PATH`.
 

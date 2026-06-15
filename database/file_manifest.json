@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T04:14:22Z",
+  "generated_at": "2026-06-15T04:34:31Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 134,
+    "other": 135,
     "historical": 30,
-    "current": 1772,
-    "cross-reference": 3317,
+    "current": 1775,
+    "cross-reference": 3318,
     "archived": 2239,
-    "backup": 17
+    "backup": 16
   },
-  "total_files": 7509,
-  "total_active": 5270,
+  "total_files": 7513,
+  "total_active": 5274,
   "total_archived": 2239,
   "files": [
     {
@@ -67,8 +67,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 24861,
-      "modified": "2026-06-14T06:04:42Z"
+      "size_bytes": 25297,
+      "modified": "2026-06-15T04:34:02Z"
     },
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -2773,6 +2773,22 @@
       "archived": false,
       "size_bytes": 1145376,
       "modified": "2026-04-05T21:34:09Z"
+    },
+    {
+      "path": "Sessions/Session_A/STEP Extracts/being_211_full_20260615_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 211,
+      "word": "being",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1855856,
+      "modified": "2026-06-15T04:31:10Z"
     },
     {
       "path": "Sessions/Session_A/STEP Extracts/bitterness_13_full_20260331_v1.json",
@@ -92199,6 +92215,38 @@
       "modified": "2026-03-16T16:39:06Z"
     },
     {
+      "path": "backups/bible_research_20260615_043111_AUDIT_WORD-reg211_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 211,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 319938560,
+      "modified": "2026-06-15T04:31:10Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260615_043109_AUDIT_WORD-reg211.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 211,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 319639552,
+      "modified": "2026-06-15T04:29:58Z"
+    },
+    {
       "path": "backups/bible_research_pre-dropcode-softdelete_20260611.db",
       "category": "backup",
       "type": "other",
@@ -92229,22 +92277,6 @@
       "archived": false,
       "size_bytes": 255401984,
       "modified": "2026-06-09T08:41:16Z"
-    },
-    {
-      "path": "backups/bible_research_pre_L1_M01_20260608.db",
-      "category": "backup",
-      "type": "other",
-      "currency": "backup",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-06-08",
-      "ext": ".db",
-      "archived": false,
-      "size_bytes": 200609792,
-      "modified": "2026-06-08T04:40:17Z"
     },
     {
       "path": "backups/bible_research_pre_l1_sweep_20260608.db",
@@ -92423,22 +92455,6 @@
       "modified": "2026-06-09T04:36:05Z"
     },
     {
-      "path": "backups/bible_research_pre_t2_assign_20260608.db",
-      "category": "backup",
-      "type": "other",
-      "currency": "backup",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-06-08",
-      "ext": ".db",
-      "archived": false,
-      "size_bytes": 200597504,
-      "modified": "2026-06-08T06:32:46Z"
-    },
-    {
       "path": "backups/bible_research_pre_t2_softdelete_20260608.db",
       "category": "backup",
       "type": "other",
@@ -92453,22 +92469,6 @@
       "archived": false,
       "size_bytes": 220930048,
       "modified": "2026-06-08T08:31:40Z"
-    },
-    {
-      "path": "backups/bible_research_pre_v3_2_20260608.db",
-      "category": "backup",
-      "type": "other",
-      "currency": "backup",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": null,
-      "date": "2026-06-08",
-      "ext": ".db",
-      "archived": false,
-      "size_bytes": 200019968,
-      "modified": "2026-06-08T03:51:57Z"
     },
     {
       "path": "data/exports/dimension_review/wa-dim-C10-existing-pointers-2026-05-02.json",
@@ -92707,8 +92707,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 319639552,
-      "modified": "2026-06-15T04:13:08Z"
+      "size_bytes": 319946752,
+      "modified": "2026-06-15T04:33:03Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3391391,
-      "modified": "2026-06-15T04:12:01Z"
+      "size_bytes": 3391868,
+      "modified": "2026-06-15T04:14:22Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93283,8 +93283,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 99293,
-      "modified": "2026-06-15T04:10:27Z"
+      "size_bytes": 100104,
+      "modified": "2026-06-15T04:18:40Z"
     },
     {
       "path": "engine/backup.py",
@@ -93523,8 +93523,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 24225,
-      "modified": "2026-06-15T02:51:05Z"
+      "size_bytes": 24512,
+      "modified": "2026-06-15T04:34:30Z"
     },
     {
       "path": "memory/README.md",
@@ -95221,6 +95221,22 @@
       "archived": false,
       "size_bytes": 2437,
       "modified": "2026-06-15T02:51:05Z"
+    },
+    {
+      "path": "memory/project_new_word_retirement_blocked.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2213,
+      "modified": "2026-06-15T04:34:30Z"
     },
     {
       "path": "memory/project_next_action_audit_surface_verses.md",
@@ -107335,6 +107351,22 @@
       "modified": "2026-04-19T15:21:05Z"
     },
     {
+      "path": "research/investigations/wa-h2-16anomalies-A.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 109,
+      "modified": "2026-06-15T04:16:27Z"
+    },
+    {
       "path": "research/investigations/wa-h2-delete-marked-cluster-anomalies-decision-v1-20260615.md",
       "category": "investigation",
       "type": "investigation",
@@ -108389,6 +108421,38 @@
       "archived": false,
       "size_bytes": 143973,
       "modified": "2026-04-28T14:29:04Z"
+    },
+    {
+      "path": "research/investigations/wa-r211-orphan-cleanup-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 226,
+      "modified": "2026-06-15T04:33:03Z"
+    },
+    {
+      "path": "research/investigations/wa-r211-orphan-cleanup-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 546,
+      "modified": "2026-06-15T04:33:03Z"
     },
     {
       "path": "research/investigations/wa-read-dedup-estimate-v1-20260609.md",
@@ -118067,8 +118131,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4625,
-      "modified": "2026-06-15T02:45:21Z"
+      "size_bytes": 5411,
+      "modified": "2026-06-15T04:19:08Z"
     },
     {
       "path": "scripts/analytics/requirements.txt",
@@ -118099,8 +118163,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 35967,
-      "modified": "2026-03-24T08:34:19Z"
+      "size_bytes": 36633,
+      "modified": "2026-06-15T04:21:23Z"
     },
     {
       "path": "scripts/analytics/word_export.py",
