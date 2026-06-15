@@ -33,3 +33,8 @@ So the "inconsistency" was in the verification parser, not the stored data. Logg
 
 ## Recommendation
 Coverage and consistency pass. The only action worth taking is the **Aramaic stem back-derivation** (210 rows, in-place from existing morph codes) + the single `D`-binyan lookup — small completeness fixes, not corrections. Optional and low priority; mode is sound for Hebrew + Greek (the bulk).
+
+## Resolution (2026-06-15) — both residues COMPLETE
+- `scripts/_apply_aramaic_stem_backfill_v1_20260615.py` (live) re-derived `stem` in-place from the stored morph codes: **210 Aramaic verbs** stemmed (Peal 133 · Pael 22 · Haphel 20 · Hithpeel 13 · Hithpaal 9 · Peil 8 · Hophal 4 · Hithaphel 1) + **Pro 27:15 → Nithpael** (the `D` code). **0** `?`-prefixed stems remain.
+- The canonical `scripts/_apply_morph_backfill.py` was hardened so future runs handle this natively: added `D`=Nithpael to `HEB_STEM`, added the `ARAMAIC_STEM` map, and made `stem_of()` branch on the `H`/`A` language prefix.
+- Visual of the resulting mode contents: `outputs/markdown/wa-mode-field-visual-20260615.md`.

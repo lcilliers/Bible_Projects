@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T02:09:15Z",
+  "generated_at": "2026-06-15T02:16:02Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 133,
     "historical": 30,
-    "current": 1748,
+    "current": 1750,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7484,
-  "total_active": 5245,
+  "total_files": 7486,
+  "total_active": 5247,
   "total_archived": 2239,
   "files": [
     {
@@ -92708,7 +92708,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 319410176,
-      "modified": "2026-06-14T18:56:19Z"
+      "modified": "2026-06-15T02:13:16Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3380449,
-      "modified": "2026-06-14T18:59:37Z"
+      "size_bytes": 3380905,
+      "modified": "2026-06-15T02:09:15Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -96437,6 +96437,22 @@
       "archived": false,
       "size_bytes": 4591,
       "modified": "2026-06-03T05:07:37Z"
+    },
+    {
+      "path": "outputs/markdown/wa-mode-field-visual-20260615.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4013,
+      "modified": "2026-06-15T02:15:38Z"
     },
     {
       "path": "outputs/markdown/wa-session-close-report-20260602.md",
@@ -107811,8 +107827,8 @@
       "date": "2026-06-15",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 3054,
-      "modified": "2026-06-15T02:09:03Z"
+      "size_bytes": 3756,
+      "modified": "2026-06-15T02:15:51Z"
     },
     {
       "path": "research/investigations/wa-morph-backfill-M01-dryrun-v1-20260608.md",
@@ -108997,6 +109013,22 @@
       "archived": false,
       "size_bytes": 13393,
       "modified": "2026-05-10T15:16:51Z"
+    },
+    {
+      "path": "scripts/_apply_aramaic_stem_backfill_v1_20260615.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2925,
+      "modified": "2026-06-15T02:12:56Z"
     },
     {
       "path": "scripts/_apply_bucket_sweep_v1_20260504.py",
@@ -112323,8 +112355,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 5850,
-      "modified": "2026-06-08T11:17:30Z"
+      "size_bytes": 6269,
+      "modified": "2026-06-15T02:13:52Z"
     },
     {
       "path": "scripts/_apply_orphan_vcg_softdelete_20260527.py",

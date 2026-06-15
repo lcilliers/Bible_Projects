@@ -22,7 +22,11 @@ DB = os.path.join("database", "bible_research.db")
 SPAN = re.compile(r"<span\s+morph='([^']*)'\s+strong='([^']*)'>([^<]*)</span>", re.I)
 HEB_STEM = {"q": "Qal", "N": "Niphal", "p": "Piel", "P": "Pual", "h": "Hiphil", "H": "Hophal",
             "t": "Hithpael", "o": "Polel", "O": "Polal", "r": "Hithpolel", "v": "Hithpael",
-            "c": "Tiphil", "u": "Polpal"}
+            "c": "Tiphil", "u": "Polpal", "D": "Nithpael"}
+# OSHB Aramaic verb-stem codes (q=Peal not Qal, p=Pael not Piel, h=Haphel not Hiphil)
+ARAMAIC_STEM = {"q": "Peal", "Q": "Peil", "u": "Hithpeel", "p": "Pael", "P": "Pual",
+                "M": "Hithpaal", "a": "Aphel", "h": "Haphel", "s": "Saphel", "e": "Shaphel",
+                "H": "Hophal", "i": "Hithaphel", "t": "Hishtaphel"}
 
 
 def base(code):
@@ -40,11 +44,12 @@ def morph_for(html, strong):
 
 
 def stem_of(morph):
-    if not morph or morph[0] != "H":
+    if not morph or morph[0] not in ("H", "A"):
         return ""
     body = morph[1:].lstrip("-")
     if body[:1] == "V" and len(body) > 1:
-        return HEB_STEM.get(body[1], f"?{body[1]}")
+        table = HEB_STEM if morph[0] == "H" else ARAMAIC_STEM
+        return table.get(body[1], f"?{body[1]}")
     return ""
 
 
