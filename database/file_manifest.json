@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T04:34:31Z",
+  "generated_at": "2026-06-15T04:40:47Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 135,
     "historical": 30,
-    "current": 1775,
+    "current": 1776,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 16
   },
-  "total_files": 7513,
-  "total_active": 5274,
+  "total_files": 7514,
+  "total_active": 5275,
   "total_archived": 2239,
   "files": [
     {
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3391868,
-      "modified": "2026-06-15T04:14:22Z"
+      "size_bytes": 3393702,
+      "modified": "2026-06-15T04:34:31Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -107221,6 +107221,22 @@
       "archived": false,
       "size_bytes": 10012,
       "modified": "2026-05-05T08:14:40Z"
+    },
+    {
+      "path": "research/investigations/wa-file-index-onboarding-assessment-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3556,
+      "modified": "2026-06-15T04:40:36Z"
     },
     {
       "path": "research/investigations/wa-finding-lifecycle-run-v1-20260609.md",
