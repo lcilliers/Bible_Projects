@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T05:50:25Z",
+  "generated_at": "2026-06-15T05:56:34Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 136,
     "historical": 30,
-    "current": 1780,
+    "current": 1781,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7520,
-  "total_active": 5281,
+  "total_files": 7521,
+  "total_active": 5282,
   "total_archived": 2239,
   "files": [
     {
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3396403,
-      "modified": "2026-06-15T05:29:09Z"
+      "size_bytes": 3396867,
+      "modified": "2026-06-15T05:50:25Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -96613,6 +96613,22 @@
       "archived": false,
       "size_bytes": 3794,
       "modified": "2026-06-15T03:41:17Z"
+    },
+    {
+      "path": "outputs/markdown/wa-verse-schema-current-20260615.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 14227,
+      "modified": "2026-06-15T05:56:16Z"
     },
     {
       "path": "outputs/pdf/.gitkeep",
