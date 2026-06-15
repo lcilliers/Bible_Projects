@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T02:50:23Z",
+  "generated_at": "2026-06-15T02:57:50Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 133,
+    "other": 134,
     "historical": 30,
-    "current": 1754,
+    "current": 1755,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7490,
-  "total_active": 5251,
+  "total_files": 7492,
+  "total_active": 5253,
   "total_archived": 2239,
   "files": [
     {
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3382633,
-      "modified": "2026-06-15T02:27:57Z"
+      "size_bytes": 3383484,
+      "modified": "2026-06-15T02:50:24Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93507,8 +93507,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 23900,
-      "modified": "2026-06-14T18:59:36Z"
+      "size_bytes": 24225,
+      "modified": "2026-06-15T02:51:05Z"
     },
     {
       "path": "memory/README.md",
@@ -95191,6 +95191,22 @@
       "modified": "2026-06-08T15:11:42Z"
     },
     {
+      "path": "memory/project_morph_is_source_of_truth.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2437,
+      "modified": "2026-06-15T02:51:05Z"
+    },
+    {
       "path": "memory/project_next_action_audit_surface_verses.md",
       "category": "other",
       "type": "other",
@@ -96469,6 +96485,22 @@
       "archived": false,
       "size_bytes": 3821,
       "modified": "2026-06-15T02:27:23Z"
+    },
+    {
+      "path": "outputs/markdown/wa-morph-at-source-fix-plan-v1-20260615.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4049,
+      "modified": "2026-06-15T02:57:34Z"
     },
     {
       "path": "outputs/markdown/wa-session-close-report-20260602.md",
