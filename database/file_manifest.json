@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T06:13:07Z",
+  "generated_at": "2026-06-15T06:38:53Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 136,
     "historical": 30,
-    "current": 1782,
+    "current": 1784,
     "cross-reference": 3318,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7522,
-  "total_active": 5283,
+  "total_files": 7524,
+  "total_active": 5285,
   "total_archived": 2239,
   "files": [
     {
@@ -92740,7 +92740,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 321478656,
-      "modified": "2026-06-15T04:53:02Z"
+      "modified": "2026-06-15T06:38:19Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92755,8 +92755,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3397299,
-      "modified": "2026-06-15T05:56:34Z"
+      "size_bytes": 3397763,
+      "modified": "2026-06-15T06:13:07Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -108791,6 +108791,22 @@
       "modified": "2026-06-08T13:00:41Z"
     },
     {
+      "path": "research/investigations/wa-softdelete-excluded-empty-terms-v1-20260615.md.ids.json",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 43999,
+      "modified": "2026-06-15T06:38:20Z"
+    },
+    {
       "path": "research/investigations/wa-step-morph-viability-M01-v1-20260608.md",
       "category": "investigation",
       "type": "investigation",
@@ -109155,8 +109171,8 @@
       "date": "2026-06-15",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 3461,
-      "modified": "2026-06-15T06:12:54Z"
+      "size_bytes": 6064,
+      "modified": "2026-06-15T06:23:17Z"
     },
     {
       "path": "research/investigations/wa_file_index_export.csv",
@@ -113029,6 +113045,22 @@
       "archived": false,
       "size_bytes": 2333,
       "modified": "2026-06-09T15:47:09Z"
+    },
+    {
+      "path": "scripts/_apply_softdelete_excluded_empty_terms.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3930,
+      "modified": "2026-06-15T06:30:49Z"
     },
     {
       "path": "scripts/_apply_softdelete_orphan_verses.py",
