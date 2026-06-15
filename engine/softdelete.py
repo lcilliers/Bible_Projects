@@ -91,13 +91,19 @@ def cascade_delete_registry(conn, registry_id):
 
 
 def reconcile_delete_flags(conn):
-    """H2 — any mti_terms with status='delete' but delete_flagged=0 are made consistent (flag + cascade).
-    Returns the count of terms reconciled."""
+    """H2 — make status='delete' consistent with delete_flagged (flag + cascade), but ONLY for terms not
+    entangled with active analysis: a delete-marked term that is also a member of an active M-cluster is an
+    anomaly left for review (returned separately), never blindly cascaded. Returns (reconciled, anomalies)."""
     cur = conn.cursor()
-    ids = _active(cur, "mti_terms", "status='delete'", ())
-    if ids:
-        cascade_delete_terms(conn, ids)
-    return len(ids)
+    safe = [r[0] for r in cur.execute(
+        "SELECT id FROM mti_terms WHERE status='delete' AND COALESCE(delete_flagged,0)=0 "
+        "AND (cluster_code IS NULL OR cluster_code='T2')")]
+    anomalies = [r[0] for r in cur.execute(
+        "SELECT id FROM mti_terms WHERE status='delete' AND COALESCE(delete_flagged,0)=0 "
+        "AND cluster_code IS NOT NULL AND cluster_code<>'T2'")]
+    if safe:
+        cascade_delete_terms(conn, safe)
+    return len(safe), anomalies
 
 
 def integrity_violations(conn, excluded_ids=None):

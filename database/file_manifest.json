@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T04:12:01Z",
+  "generated_at": "2026-06-15T04:14:22Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 134,
     "historical": 30,
-    "current": 1771,
+    "current": 1772,
     "cross-reference": 3317,
     "archived": 2239,
     "backup": 17
   },
-  "total_files": 7508,
-  "total_active": 5269,
+  "total_files": 7509,
+  "total_active": 5270,
   "total_archived": 2239,
   "files": [
     {
@@ -92708,7 +92708,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 319639552,
-      "modified": "2026-06-15T04:03:53Z"
+      "modified": "2026-06-15T04:13:08Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -92723,8 +92723,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3389624,
-      "modified": "2026-06-15T03:41:42Z"
+      "size_bytes": 3391391,
+      "modified": "2026-06-15T04:12:01Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -93491,8 +93491,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 5533,
-      "modified": "2026-06-15T04:08:27Z"
+      "size_bytes": 6049,
+      "modified": "2026-06-15T04:12:28Z"
     },
     {
       "path": "engine/span_filter.py",
@@ -107335,6 +107335,22 @@
       "modified": "2026-04-19T15:21:05Z"
     },
     {
+      "path": "research/investigations/wa-h2-delete-marked-cluster-anomalies-decision-v1-20260615.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-15",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2436,
+      "modified": "2026-06-15T04:14:12Z"
+    },
+    {
       "path": "research/investigations/wa-keyword-corpus-assessment-v1-20260608.md",
       "category": "investigation",
       "type": "investigation",
@@ -114547,8 +114563,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 2304,
-      "modified": "2026-06-15T04:10:48Z"
+      "size_bytes": 2519,
+      "modified": "2026-06-15T04:12:40Z"
     },
     {
       "path": "scripts/_close_cluster_analysis_v1_20260601.py",

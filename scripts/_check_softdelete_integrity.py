@@ -31,8 +31,11 @@ def main():
 
     if a.fix and any(v.values()):
         print("\n--fix:")
-        n2 = reconcile_delete_flags(conn)               # H2
-        print(f"  H2 reconcile_delete_flags: {n2} status='delete' term(s) cascaded")
+        n2, anomalies = reconcile_delete_flags(conn)    # H2 (safe subset only)
+        print(f"  H2 reconcile_delete_flags: {n2} safe status='delete' term(s) cascaded")
+        if anomalies:
+            print(f"  H2 ANOMALIES (delete-marked but in an ACTIVE cluster — left for review): {len(anomalies)}")
+            print(f"     mti_term ids: {anomalies}")
         exc = [r[0] for r in conn.execute("SELECT id FROM word_registry WHERE phase1_status='Excluded'")]
         tot = 0
         for rid in exc:                                  # H1
