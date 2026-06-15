@@ -20,9 +20,17 @@
 1. **866 "Hebrew → Aramaic"** are all in **Daniel (738) · Ezra (123) · Jer (5)** — the genuinely Aramaic portions of the OT. They are **correctly Aramaic in morph**, but `mti_terms.language` carries them as **"Hebrew"** because **the language field has only two values — Hebrew and Greek, no "Aramaic"** (Biblical Aramaic words use H-Strong's numbers and are folded under Hebrew). This is a **granularity limitation, not an inconsistency**: the term-level field cannot express Aramaic; the morph-level mode can and does.
 2. **178 "Greek → Aramaic"** were a **false alarm in the checker**, not the data — every one is the Greek morph code **`ADV` / `ADV-C`** (adverb), an all-caps Robinson indeclinable that my prefix test misread as `A`=Aramaic. They are correctly Greek.
 
-**So:** language and mode agree everywhere they can. If you want the field to *distinguish* Aramaic, the clean fix is to add an "Aramaic" value (or derive language from the morph prefix) for the 866 Dan/Ezr/Jer occurrences — optional; nothing is currently wrong.
+**So:** language and mode agree everywhere they can.
 
-> Note: the same all-caps-indeclinable case mislabels Greek adverbs/particles in the readable column of `outputs/markdown/wa-mode-field-visual-20260615.md` (e.g. `ADV` shown as "Aramaic adverb"). The stored `morph_code` is correct; only that display label is affected. Low priority.
+## Resolution (2026-06-15) — fixed the classifier, deliberately NOT the data
+
+**Fixed (code):** built one canonical classifier — `scripts/analytics/morph_util.py` (`morph_language` / `morph_category` / `morph_stem` / `morph_readable`) — so checks and the visual stop re-implementing (and re-bugging) the H / A / Greek discrimination. Re-run with it: term↔morph language now **57,788 direct agree · 866 Aramaic-folded-under-Hebrew (expected) · 0 `ADV` false-alarms**. The mode visual (`outputs/markdown/wa-mode-field-visual-20260615.md`) was regenerated and now labels `ADV`→Greek adverb, `AR`/`AC`→Aramaic preposition/conjunction correctly.
+
+**Deliberately NOT done (data):** overwriting `mti_terms.language='Aramaic'` for the 866 would **create the very "noise later" it was meant to remove**, because the field is coupled to a Hebrew/Greek binary:
+- `scripts/analytics/step_client.py:200` **derives** `language` from the Strong's prefix (`G…`→Greek, else Hebrew) on every term sync — so the next `audit_word` would **revert** any Aramaic override.
+- `engine/meaning_parser.py:238` branches on `language == "Hebrew"` for Hebrew-style meaning parsing — Aramaic uses the same script/lexicon, so a relabel would make those terms **fall through and miss parsing**.
+
+The Aramaic distinction is **already precise where it belongs — in the morph code** (the 866 are exactly the A-prefix Dan/Ezr/Jer occurrences). The term-level `language` field is, by design, "Hebrew-script vs Greek", with Aramaic subsumed under Hebrew. **Verdict: not an inconsistency — leave the field; the morph carries Aramaic.** If a *persistent, queryable* term-level Aramaic flag is ever wanted, the safe route is a **separate column** (e.g. `script_language`) derived from the morph — never overwriting the coupled `language`.
 
 ## CHECK B — verse testament vs books table
 
