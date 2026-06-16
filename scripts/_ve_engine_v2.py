@@ -47,6 +47,26 @@ CAUSAL = {"H3588", "G3754", "G1063", "G1360"}           # ki / hoti / gar / diot
 COORD = {"H9002", "G2532"}                              # waw / kai
 SPIRIT_BEINGS = {"G4151", "G1140", "H7307", "H7700"}    # pneuma / daimonion / ruach / shed
 GRAMMAR = {"article", "preposition", "conjunction", "particle", "suffix"}  # POS that aren't content
+# faculty classified from a TERM's OWN meaning (de-circularised; stems, prefix-boundary matched)
+FACULTY_GLOSS = {
+    "affect": ["fear", "afraid", "dread", "terror", "terrif", "horror", "panic", "anxi", "distress", "timid",
+               "coward", "trembl", "anguish", "grief", "griev", "sorrow", "mourn", "weep", "wept", "joy", "glad",
+               "rejoic", "delight", "love", "compassion", "merc", "hate", "hatred", "anger", "angr", "wrath",
+               "rage", "zeal", "long", "desire", "comfort", "despair", "shame", "dismay", "vex", "pity",
+               "awe", "astonish", "amaze", "wonder", "marvel", "reverent", "revere"],   # awe/wonder = affective response
+    "cognition": ["know", "knowledge", "understand", "consider", "think", "thought", "wisdom", "wise", "counsel",
+                  "discern", "ponder", "prudent", "insight", "meditat", "reason"],
+    "perception": ["see", "saw", "behold", "watch", "perceiv", "sight", "hear", "heard", "listen"],
+    "memory": ["remember", "remembrance", "forget", "forgot", "memorial", "recall", "mindful"],
+    "volition": ["will", "choose", "chose", "decide", "resolve", "determine", "intend", "refuse", "consent", "vow"],
+    "moral_evaluation": ["justice", "judge", "judgment", "righteous", "wicked", "condemn", "upright", "reprove"],
+    "conscience": ["conscience", "integrity", "innocent", "blameless"],
+}
+_FAC_RX = {f: re.compile(r"\b(" + "|".join(re.escape(w) for w in kw) + r")\w*", re.I) for f, kw in FACULTY_GLOSS.items()}
+
+
+def faculty_from_text(text):
+    return [f for f, rx in _FAC_RX.items() if rx.search(text or "")]
 
 
 def base(s):
@@ -140,9 +160,8 @@ def derive(unit, words, step):
     term = find_term(words, unit["strong"])
     ti = term["i"] if term else None
 
-    # 1 sense (target_word + lemma medium_def) [P9 english]
-    md = concise(step.vocab(unit["strong"]).get("medium_def"), unit["gloss"])
-    out.append(("sense", f'{unit["tw"]} (lemma: {md})', "STEP per-occurrence + medium_def"))
+    # 1 sense — per-occurrence target_word (clean; the lemma meaning lives in the lexicon table, not inlined)
+    out.append(("sense", unit["tw"], "STEP per-occurrence subgloss"))
 
     # 2 type (POS)
     pos = term["pos"] if term else None
@@ -153,10 +172,11 @@ def derive(unit, words, step):
     if term:
         out.append(("mode", morph_util.morph_readable(term["m0"]), "morph"))
 
-    # 3 compound (co-terms, gloss, role)
+    # 3 compound — co-occurring term with its gloss + role (M-code demoted to the cite; the co-term's full
+    #   record is resolved by identity in the verse-based extract)
     for tr, gl, cc, st in unit["coterms"]:
-        role = "qualifier" if cc == "T2" else ("shares-seat" if base(st) in SEAT else "partner")
-        out.append(("compound", f'{tr} "{gl}" ({cc}) — role: {role}', "co-occurs in verse"))
+        role = "qualifier" if cc == "T2" else ("co-seated" if base(st) in SEAT else "partner")
+        out.append(("compound", f'{tr} "{gl}" — {role}', f"co-occurs · {st} ({cc})"))
 
     # 5 location (seat lemma in verse, sense-gated; unclear -> UNRESOLVED)
     for w in words:
@@ -170,44 +190,51 @@ def derive(unit, words, step):
                     out.append(("location", lvl, f"seat-term {st} ('{w['text']}')"))
                 break
 
-    # N3 how — the finite verb the TERM is the subject of (agreement); else nearest acting verb (term=object)
+    # N3 how / N1 object / experiencer — gated on whether the TERM is itself a verb
     COPULA = {"G1510", "G1096", "G5225"}
-    gv = None
-    agreeing = []
-    if ti is not None and term:
+    gv = None; agreeing = []; obj = None; exp_p = None
+    if term and term["pos"] == "verb":
+        # the term IS the action: NO separate 'how' (the mode is the how); subject/object from the term's OWN clause
+        gv = term
+        exp_p = term["person"]
+        after = [w for w in words if term["i"] < w["i"] <= term["i"] + 3 and w["i"] != ti
+                 and (w["pos"] == "noun" or re.search(r"S.?[123]", w["m0"]) or (w["lang"] == "Greek" and re.search(r"-A", w["m0"])))]
+        obj = after[0] if after else None
+        if obj:
+            out.append(("object", obj["text"], "object of the term-verb"))
+            ot = obj_type(obj)
+            if ot:
+                out.append(("object-type", ot, "from object lemma/morph"))
+        if exp_p:
+            out.append(("experiencer", {1: "self", 2: "other (addressed)", 3: "other"}[exp_p], f"subject of term-verb · person={exp_p}"))
+    elif ti is not None and term:
+        # noun/adjective term: the governing verb is the 'how'
         tp, tg, tn = agree(term["m0"])
         fins = [w for w in words if w["finite"] and w["i"] != ti and abs(w["i"] - ti) <= 4]
         agreeing = [w for w in fins if agree(w["m0"])[0] == tp and agree(w["m0"])[2] == tn]
         gv = min(agreeing or fins, key=lambda w: abs(w["i"] - ti)) if (agreeing or fins) else None
         if gv and term["pos"] == "adjective" and gv["strongs"][0] in COPULA:
-            gv = None                                       # "were afraid": copula is not a meaningful 'how'
+            gv = None
         if gv:
             kind = "term=subject" if gv in agreeing else "term=object"
             out.append(("how", f'{gv["text"]} ({gv["strongs"][0]})', f"governing verb · {kind}"))
-
-    # N1 object — what the governing verb acts on (only when the term is the verb's subject; not the term) + object-type
-    obj = None
-    if gv is not None and gv in agreeing:
-        after = [w for w in words if gv["i"] < w["i"] <= gv["i"] + 2 and w["i"] != ti and w["text"]]
-        obj = next((w for w in after if re.search(r"S.?[123]", w["m0"]) or w["pos"] in ("noun", "pronoun")
-                    or (w["lang"] == "Greek" and re.search(r"-A", w["m0"]))), None)
-        if obj:
-            out.append(("object", obj["text"], f"object of '{gv['text']}'"))
-            ot = obj_type(obj)
-            if ot:
-                out.append(("object-type", ot, "from object lemma/morph"))
-
-    # experiencer — the bearer: possessive suffix on/adjacent to the term; else the subject of its verb
-    exp_p = None
-    cand_words = ([term] if term else []) + [w for w in words if ti is not None and 0 < abs(w["i"] - ti) <= 1]
-    for w in cand_words:
-        if any(re.search(r"S.?[123]", m) for m in w["morphs"]):
-            exp_p = next(person(m) for m in w["morphs"] if re.search(r"S.?[123]", m))
-            break
-    if exp_p is None and gv is not None and gv in agreeing:
-        exp_p = gv["person"]
-    if exp_p:
-        out.append(("experiencer", {1: "self", 2: "other (addressed)", 3: "other"}[exp_p], f"person={exp_p}"))
+        if gv is not None and gv in agreeing:
+            after = [w for w in words if gv["i"] < w["i"] <= gv["i"] + 2 and w["i"] != ti and w["text"]]
+            obj = next((w for w in after if re.search(r"S.?[123]", w["m0"]) or w["pos"] in ("noun", "pronoun")
+                        or (w["lang"] == "Greek" and re.search(r"-A", w["m0"]))), None)
+            if obj:
+                out.append(("object", obj["text"], f"object of '{gv['text']}'"))
+                ot = obj_type(obj)
+                if ot:
+                    out.append(("object-type", ot, "from object lemma/morph"))
+        cand_words = [term] + [w for w in words if 0 < abs(w["i"] - ti) <= 1]
+        for w in cand_words:
+            if any(re.search(r"S.?[123]", m) for m in w["morphs"]):
+                exp_p = next(person(m) for m in w["morphs"] if re.search(r"S.?[123]", m)); break
+        if exp_p is None and gv is not None and gv in agreeing:
+            exp_p = gv["person"]
+        if exp_p:
+            out.append(("experiencer", {1: "self", 2: "other (addressed)", 3: "other"}[exp_p], f"person={exp_p}"))
 
     # 8 divine involvement (divine lemma -> state role) [C-3/C-5]
     div = next((w for w in words if any(s in DIVINE for s in w["strongs"])), None)
@@ -217,15 +244,13 @@ def derive(unit, words, step):
             role = "agent/subject"
         out.append(("divine-involvement", role, f"divine lemma '{div['text']}'"))
 
-    # 7 faculty (R1 head-term by cluster; R2 indirect by faculty-lemma near term)
+    # 7 faculty — R1: the term's OWN meaning is a faculty (lemma-classified, de-circularised);
+    #             R2: a faculty word in the term's neighbourhood
     fac = []
-    r1 = FACULTY_BY_CLUSTER.get(unit["cluster"])
-    if r1: fac.append((r1, "R1 head-term"))
-    if ti is not None:
-        for w in words:
-            for st in w["strongs"]:
-                if st in FACULTY_LEMMA and abs(w["i"] - ti) <= 3:
-                    fac.append((FACULTY_LEMMA[st], f"R2 '{w['text']}'"))
+    md_full = (unit["gloss"] or "") + " " + (step.vocab(unit["strong"]).get("medium_def") or "")
+    for f in faculty_from_text(md_full):         # faculty = the TERM's OWN intrinsic faculty only (R1).
+        fac.append((f, "R1 term-meaning"))       # the trigger's faculty (e.g. the perception that caused the fear)
+                                                 # belongs to how/cause/compound, NOT to this term.
     seen = set()
     for f, c in fac:
         if f not in seen:
