@@ -64,6 +64,10 @@ These ARE determinable by lexical means (the reaction/result is stated in the ve
 - **VE9 purpose · VE10 typology** — **EXCLUDED.** No clear *lexical* basis (researcher unsure of their objective; if purely conceptual they do not belong in the lexical analysis). Reconsider only if a lexical means of determining them is defined. → synthesis layer.
 - **emergent characteristics** (e.g. "perception of the spiritual") — **PARKED for debate (§8)**; the proposal is that they *emerge* from the mechanical items, not as their own item.
 
+### 4e. Meta item — `lexical_note` (a record, not a derived fact)
+
+- **lexical_note** · free-text note attached to the verse · **NOT mechanically derived** — it *records*, it is not a lexical value · **populated by** (i) the read-back audit (§6b) writing its result/flags, and (ii) the researcher · typed by `source`: **`audit`** (auto) or **`researcher`** · **lifecycle:** `audit` notes are **regenerated with the verse** (wiped + rewritten on whole-verse reset, P6); **`researcher` notes are PRESERVED** — never overwritten by regeneration (researcher-authored) · stored as a `ve_lexical` row (`ve_label='lexical_note'`, `value`=note text in plain English per P9, `source_provenance`=`audit`|`researcher`).
+
 ## 5. Conflict register (rules that could clash) — researcher decisions, 2026-06-16
 
 - **C-1 type.** *Plain meaning of the old wording:* part-of-speech gives type a first answer (verb→action, noun→status, adjective→quality); v1 then let the word's *sense* override that to split "status" vs "quality"; "supersede deferred" meant we would NOT do that override. **DECISION: type = part-of-speech only** (fully mechanical, no sense-override). *(If sense should later refine status-vs-quality, it becomes its own rule.)*
@@ -73,13 +77,13 @@ These ARE determinable by lexical means (the reaction/result is stated in the ve
 
 ## 6. Generation procedure (per verse)
 
-1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. Compose the narration as the deterministic view. 5. **Read-back audit (§6b).** 6. **On any change → reset and re-run the whole verse (P6).**
+1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. **Compose the narration** (the deterministic view) — part of generation, *before* the audit. 5. **Read-back audit (§6b)** — using the narration; record its result in the `lexical_note` item (§4e). 6. **On any change → reset and re-run the whole verse (P6)** — wipe + rebuild all items, the `audit` notes, and the narration, **but preserve `researcher` notes.**
 
 ## 6b. Read-back audit — the closing loop (per verse)
 
-After generation, read the items **back against the verse** and verify. **The audit FLAGS only — it never silently injects or edits a value** (this keeps generation mechanical and every value traceable). Each flag routes to: a rule/list improvement (→ whole-verse regen, P6) · an UNRESOLVED entry · or a researcher decision.
+After generation, read the items **back against the verse** and verify. **The audit reads the narration** (generated at step 4, *before* the audit) against the verse — the narration is the items "read back" in readable form, so it is the primary artefact for the *representative* (a) and *coverage* (c) checks. **The audit FLAGS only — it never silently injects or edits a value** (this keeps generation mechanical and every value traceable). It **writes its result into the `lexical_note` item** (§4e, `source=audit`). Each flag routes to: a rule/list improvement (→ whole-verse regen, P6) · an UNRESOLVED entry · or a researcher decision.
 
-- **(a) Founded & representative.** *Founded* (**mechanical, every verse**): every stored item cites a present measure (P7); any item without a valid citation → flag. *Representative* (**judgement, sampled**): do the items *together* faithfully carry the verse's inner-being content? PASS or flag. **Scope:** the representative judgement runs on a **sample / flagged verses only** — an interpretive read of all ~40k verses would rebuild the cost+drift the reform removed.
+- **(a) Founded & representative.** *Founded* (**mechanical, every verse**): every stored item cites a present measure (P7); any item without a valid citation → flag. *Representative* (**judgement, sampled**): read the **narration** against the verse — does it faithfully carry the verse's inner-being content? PASS or flag. **Scope:** the representative judgement runs on a **sample / flagged verses only** — an interpretive read of all ~40k verses would rebuild the cost+drift the reform removed.
 - **(b) Orphans / superseded** (**mechanical, every verse**): every active `ve_lexical` row for the verse must still trace to a live measure (term active, sense present, source not removed); rows that no longer trace → **soft-delete candidates**.
 - **(c) Missing-but-relevant** (**mechanical coverage + small judgement, every verse**): enumerate the verse's tagged terms / content words (measure layer); each should be accounted for by ≥1 item (head · co-term · object · cause · modifier · location · …). Unaccounted → **coverage-gap note**. This is the **engine that surfaces new rules/list entries** — the systematised form of the manual verse-by-verse review.
 
