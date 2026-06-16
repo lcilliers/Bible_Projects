@@ -13,7 +13,6 @@ the expectation test (silent=NONE, only signal-present-but-unclear=UNRESOLVED).
 """
 import sys, os, re, sqlite3, time
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
-from step_client import StepClient
 import morph_util
 sys.stdout.reconfigure(encoding="utf-8")
 DB = os.path.join("database", "bible_research.db")
@@ -99,36 +98,30 @@ def concise(md, gloss):
     return md[:60]
 
 
-class Step:
-    def __init__(s): s.sc = StepClient(); s.h = {}; s.v = {}
-    def html(s, strong, ref):
-        key = base(strong)
-        if key not in s.h:
-            try:
-                s.h[key] = s.sc.get_verse_records_with_html(key)
-            except Exception:
-                s.h[key] = ([], {})
-        recs, second = s.h[key]
-        osis = next((r.get("osisId") for r in recs if r.get("ref") == ref), None)  # select THIS verse
-        if osis and isinstance(second, dict) and osis in second:
-            return second[osis]
-        return next(iter(second.values())) if isinstance(second, dict) and len(second) == 1 else ""
+class LexDB:
+    """vocab() backed by the persisted `lexicon` table (no live STEP)."""
+    def __init__(s, cur): s.cur = cur; s.c = {}
     def vocab(s, strong):
-        if strong not in s.v:
-            try: s.v[strong] = s.sc.get_vocab_info(base(strong))
-            except Exception: s.v[strong] = {}
-        return s.v[strong]
+        b = base(strong)
+        if b not in s.c:
+            r = s.cur.execute("SELECT medium_def, gloss, transliteration, original_unicode, language, occurrence_count "
+                              "FROM lexicon WHERE strong=?", (b,)).fetchone()
+            s.c[b] = dict(r) if r else {}
+        return s.c[b]
 
 
-def measure_layer(html):
-    """ordered words: {i, text, strongs[], morph, lang, pos, person, finite}."""
+def load_words(cur, verse_id):
+    """ordered words from the persisted measure layer (verse_morphology):
+    {i, text, strongs[], morphs, m0, lang, pos, person, finite}."""
     words = []
-    for i, (morphs, strongs, text) in enumerate(SPAN.findall(html or "")):
-        m0 = morphs.split()[0] if morphs.split() else ""
-        words.append({"i": i, "text": text.strip(), "strongs": [base(x) for x in strongs.split()],
-                      "morphs": morphs.split(), "m0": m0, "lang": morph_util.morph_language(m0),
-                      "pos": morph_util.morph_category(m0), "person": person(m0),
-                      "finite": finite_verb(m0)})
+    for r in cur.execute("SELECT word_index, surface, strongs, morph_code, language, pos, person "
+                         "FROM verse_morphology WHERE verse_id=? ORDER BY word_index", (verse_id,)):
+        morphs = (r["morph_code"] or "").split()
+        m0 = morphs[0] if morphs else ""
+        words.append({"i": r["word_index"], "text": r["surface"] or "",
+                      "strongs": [base(x) for x in (r["strongs"] or "").split()],
+                      "morphs": morphs, "m0": m0, "lang": r["language"], "pos": r["pos"],
+                      "person": r["person"], "finite": (r["pos"] == "verb" and r["person"] is not None)})
     return words
 
 
@@ -338,9 +331,9 @@ def main():
             "2Cor 5:6", "2Cor 7:16", "Exo 27:3", "Deu 31:20", "Psa 20:3", "Pro 11:25"]
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    step = Step()
-    out = ["# VE engine v2 — test run on the reviewed dump verses (DRY, no DB writes) — 2026-06-16", "",
-           "> First build per 01b v2. Iteration-1 seed lists. Compare to `wa-raw-dump-with-narration-M01-M23-M46-20260615.md`.", ""]
+    step = LexDB(cur)
+    out = ["# VE engine v2 — test run on the reviewed dump verses (reads DB measure layer) — 2026-06-16", "",
+           "> Per 01b v2. Measure layer read from `verse_morphology`/`lexicon` (no live STEP). Iteration-1 seed lists.", ""]
     timings = []
     MAX_SEC = float(os.environ.get("VE_MAX_SEC", "30"))
     for ref in refs:
@@ -351,10 +344,10 @@ def main():
             WHERE vr.reference=? AND COALESCE(vc.delete_flagged,0)=0 AND m.cluster_code IN ('M01','M23','M46')""", (ref,)).fetchall()
         if not units: continue
         t0 = time.time()
-        html = step.html(units[0]["strong"], ref)
-        words = measure_layer(html)
+        vrow = cur.execute("SELECT id FROM verse WHERE reference=?", (ref,)).fetchone()
+        words = load_words(cur, vrow["id"]) if vrow else []
         vt = cur.execute("SELECT verse_text FROM wa_verse_records WHERE reference=? LIMIT 1", (ref,)).fetchone()[0]
-        out.append(f"## {ref}\n\n_{vt}_\n")
+        out.append(f"## {ref}  _(measure layer: {len(words)} words from DB)_\n\n_{vt}_\n")
         for u in units:
             coterms = cur.execute("""SELECT DISTINCT vr.transliteration tr, m.gloss gl, m.cluster_code cc, m.strongs_number st
                 FROM verse_context vc2 JOIN wa_verse_records vr ON vr.id=vc2.verse_record_id AND COALESCE(vr.delete_flagged,0)=0

@@ -1,8 +1,8 @@
-# VE engine v2 — test run on the reviewed dump verses (DRY, no DB writes) — 2026-06-16
+# VE engine v2 — test run on the reviewed dump verses (reads DB measure layer) — 2026-06-16
 
-> First build per 01b v2. Iteration-1 seed lists. Compare to `wa-raw-dump-with-narration-M01-M23-M46-20260615.md`.
+> Per 01b v2. Measure layer read from `verse_morphology`/`lexicon` (no live STEP). Iteration-1 seed lists.
 
-## 2Sa 1:9
+## 2Sa 1:9  _(measure layer: 11 words from DB)_
 
 _2Sa 1:9 And he said to me, ‘ Stand beside me and kill me, for anguish has seized me , and yet my life still lingers .’_
 
@@ -22,9 +22,9 @@ _2Sa 1:9 And he said to me, ‘ Stand beside me and kill me, for anguish has sei
 
 **NARRATION:** In 2Sa 1:9, sha.vats ("agony") carries the sense "anguish (lemma: cramp, agony, anguish)", as a status, in Hebrew noun form, located in the soul, borne by self, engaging the affect faculty, operating by seized (H0270), acting on my (person), [cause: UNRESOLVED], combining with ne.phesh "soul: life" (M25) — role: shares-seat.
 
-_⏱ 0.09s · 1 unit(s) · 0.09s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Psa 94:19
+## Psa 94:19  _(measure layer: 7 words from DB)_
 
 _Psa 94:19 When the cares of my heart are many , your consolations cheer my soul ._
 
@@ -45,9 +45,9 @@ _Psa 94:19 When the cares of my heart are many , your consolations cheer my soul
 
 **NARRATION:** In Psa 94:19, sar.ap.pim ("anxiety") carries the sense "cares (lemma: disquieting thoughts, thoughts)", as a status, in Hebrew noun form, located in the soul, borne by self, engaging the affect faculty, operating by cheer (H8173), acting on my (person), combining with qe.rev "entrails: inner parts" (T2) — role: qualifier; sha.a "to delight" (M04) — role: partner; tan.chum "consolation" (M05) — role: partner.
 
-_⏱ 0.10s · 1 unit(s) · 0.10s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Psa 139:23
+## Psa 139:23  _(measure layer: 8 words from DB)_
 
 _Psa 139:23 Search me, O God , and know my heart ! Try me and know my thoughts !_
 
@@ -65,9 +65,9 @@ _Psa 139:23 Search me, O God , and know my heart ! Try me and know my thoughts !
 
 **NARRATION:** In Psa 139:23, sar.ap.pim ("anxiety") carries the sense "thoughts (lemma: disquieting thoughts, thoughts)", as a status, in Hebrew noun form, located in the heart, borne by self, engaging the affect, cognition faculty, operating by know (H3045), combining with le.vav "heart" (M47) — role: shares-seat.
 
-_⏱ 0.02s · 1 unit(s) · 0.02s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Luk 24:5
+## Luk 24:5  _(measure layer: 17 words from DB)_
 
 _Luk 24:5 And as they were frightened and bowed their faces to the ground , the men said to them , “ Why do you seek the living among the dead ?_
 
@@ -82,9 +82,9 @@ _Luk 24:5 And as they were frightened and bowed their faces to the ground , the 
 
 **NARRATION:** In Luk 24:5, emfobos ("afraid") carries the sense "frightened (lemma: afraid, terrified)", as a quality, in Greek adjective form, engaging the affect faculty, issuing in bowed faces, combining with zēteō "to seek" (M41) — role: partner.
 
-_⏱ 0.06s · 1 unit(s) · 0.06s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Luk 24:37
+## Luk 24:37  _(measure layer: 8 words from DB)_
 
 _Luk 24:37 But they were startled and frightened and thought they saw a spirit ._
 
@@ -120,9 +120,9 @@ _Luk 24:37 But they were startled and frightened and thought they saw a spirit .
 
 **NARRATION:** In Luk 24:37, ptoeō ("to frighten") carries the sense "startled (lemma: (passive) to be startled, frightenedfrighten)", as an action, in Greek verb form, [location: UNRESOLVED], borne by other, engaging the affect faculty, operating by thought (G1380), acting on spirit (spiritual-being), caused by spirit (perceived), combining with emfobos "afraid" (M01) — role: partner.
 
-_⏱ 0.03s · 2 unit(s) · 0.01s/unit_
+_⏱ 0.00s · 2 unit(s) · 0.00s/unit_
 
-## 2Cor 5:6
+## 2Cor 5:6  _(measure layer: 11 words from DB)_
 
 _2Cor 5:6 So we are always of good courage . We know that while we are at home in the body we are away from the Lord ,_
 
@@ -139,9 +139,9 @@ _2Cor 5:6 So we are always of good courage . We know that while we are at home i
 
 **NARRATION:** In 2Cor 5:6, tharseō ("take heart") carries the sense "good courage (lemma: to have confidence, be bold be confident)", as an action, in Greek verb form, engaging the affect faculty, [cause: UNRESOLVED], God's role: present, combining with oida "to know" (M15) — role: partner; pantote "always" (T2) — role: qualifier.
 
-_⏱ 0.05s · 1 unit(s) · 0.05s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## 2Cor 7:16
+## 2Cor 7:16  _(measure layer: 6 words from DB)_
 
 _2Cor 7:16 I rejoice , because I have complete confidence in you ._
 
@@ -162,7 +162,7 @@ _2Cor 7:16 I rejoice , because I have complete confidence in you ._
 
 _⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Exo 27:3
+## Exo 27:3  _(measure layer: 11 words from DB)_
 
 _Exo 27:3 You shall make pots for it to receive its ashes , and shovels and basins and forks and fire pans . You shall make all its utensils of bronze ._
 
@@ -177,9 +177,9 @@ _Exo 27:3 You shall make pots for it to receive its ashes , and shovels and basi
 
 **NARRATION:** In Exo 27:3, da.shen ("to prosper") carries the sense "ashes (lemma: to be fat, grow fat, become fat, become prosperous, anoint)", as an action, in Hebrew verb · Piel form, borne by other, operating by make (H6213), issuing in make all.
 
-_⏱ 0.08s · 1 unit(s) · 0.08s/unit_
+_⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Deu 31:20
+## Deu 31:20  _(measure layer: 20 words from DB)_
 
 _Deu 31:20 For when I have brought them into the land flowing with milk and honey , which I swore to give to their fathers , and they have eaten and are full and grown fat , they will turn to other gods and serve them, and despise me and break my covenant ._
 
@@ -198,7 +198,7 @@ _Deu 31:20 For when I have brought them into the land flowing with milk and hone
 
 _⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Psa 20:3
+## Psa 20:3  _(measure layer: 6 words from DB)_
 
 _Psa 20:3 May he remember all your offerings and regard with favor your burnt sacrifices ! Selah_
 
@@ -219,7 +219,7 @@ _Psa 20:3 May he remember all your offerings and regard with favor your burnt sa
 
 _⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
-## Pro 11:25
+## Pro 11:25  _(measure layer: 5 words from DB)_
 
 _Pro 11:25 Whoever brings blessing will be enriched , and one who waters will himself be watered ._
 
@@ -243,17 +243,17 @@ _⏱ 0.00s · 1 unit(s) · 0.00s/unit_
 
 | verse | secs | units | s/unit |
 |---|---|---|---|
-| 2Sa 1:9 | 0.09 | 1 | 0.09 |
-| Psa 94:19 | 0.10 | 1 | 0.10 |
-| Psa 139:23 | 0.02 | 1 | 0.02 |
-| Luk 24:5 | 0.06 | 1 | 0.06 |
-| Luk 24:37 | 0.03 | 2 | 0.01 |
-| 2Cor 5:6 | 0.05 | 1 | 0.05 |
+| 2Sa 1:9 | 0.00 | 1 | 0.00 |
+| Psa 94:19 | 0.00 | 1 | 0.00 |
+| Psa 139:23 | 0.00 | 1 | 0.00 |
+| Luk 24:5 | 0.00 | 1 | 0.00 |
+| Luk 24:37 | 0.00 | 2 | 0.00 |
+| 2Cor 5:6 | 0.00 | 1 | 0.00 |
 | 2Cor 7:16 | 0.00 | 1 | 0.00 |
-| Exo 27:3 | 0.08 | 1 | 0.08 |
+| Exo 27:3 | 0.00 | 1 | 0.00 |
 | Deu 31:20 | 0.00 | 1 | 0.00 |
 | Psa 20:3 | 0.00 | 1 | 0.00 |
 | Pro 11:25 | 0.00 | 1 | 0.00 |
-| **TOTAL** | **0.43** | **12** | **0.04** |
+| **TOTAL** | **0.01** | **12** | **0.00** |
 
-_Circuit-breaker: aborts any verse over **30.0s** (env `VE_MAX_SEC`). At 0.04s/unit a ~40,739-unit bulk run ≈ **0.4h** — STEP fetches dominate; pre-cache the measure layer + vocab before any bulk write._
+_Circuit-breaker: aborts any verse over **30.0s** (env `VE_MAX_SEC`). At 0.00s/unit a ~40,739-unit bulk run ≈ **0.0h** — STEP fetches dominate; pre-cache the measure layer + vocab before any bulk write._

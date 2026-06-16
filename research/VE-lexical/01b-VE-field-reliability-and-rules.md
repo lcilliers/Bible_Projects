@@ -25,6 +25,8 @@ For each verse, ingest the **full-verse original-language morphology** — every
 
 **Why this is the linchpin:** the original language *marks* the predicate-argument structure (Greek case; Hebrew construct/suffix/preposition) that English drops — so object, subject/experiencer, modifier and the governing predicate become **deterministic morphological reads**, satisfying P1. Genuinely ambiguous structure → UNRESOLVED. **[Q1 RESOLVED 2026-06-16]** The full-verse measure layer is **adopted and built**; the lexical items are all mechanically derived and **operate as one coherent collection**. The earlier parking (DI2 and others) is **lifted and superseded** — acquiring this layer is part of the build, not a deferred item.
 
+**PERSISTED 2026-06-16 (M60, schema 3.34.0):** the measure layer now lives **in the DB** — `verse` (canonical, one row per verse) · `verse_morphology` (one row per word: surface · strongs · morph · derived lang/pos/stem/person) · `lexicon` (one row per Strong's: original-language unicode · transliteration · gloss · `medium_def`). The engine **reads these tables, not live STEP** (instant, consistent, auditable). Ingest = `scripts/_apply_ingest_verse_morphology.py` via STEP's direct `getBibleText` endpoint; `wa_verse_records.verse_id` is the FK path. See [[project_measure_layer_persisted]].
+
 ## 3. Resolution order (dependency graph)
 
 `mode (column)` → **1 sense** → **2 type** → **experiencer** → **8 attributed-to-God** → **5 location** → **6 origin** → **7 faculty** → **3 compound** → **N1 object** → **13 relational** → **N3 how** → **N4 intensity** → **N2 cause** → **valence** → **11 immediate-response** → **12 produces-effect**. Each may read earlier items.
@@ -77,7 +79,7 @@ These ARE determinable by lexical means (the reaction/result is stated in the ve
 
 ## 6. Generation procedure (per verse)
 
-1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. **Compose the narration** (the deterministic view) — part of generation, *before* the audit. 5. **Read-back audit (§6b)** — using the narration; record its result in the `lexical_note` item (§4e). 6. **On any change → reset and re-run the whole verse (P6)** — wipe + rebuild all items, the `audit` notes, and the narration, **but preserve `researcher` notes.**
+1. **Read** the measure layer from the DB (`verse_morphology` + `lexicon`, §2; persisted M60 — no live STEP). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. **Compose the narration** (the deterministic view) — part of generation, *before* the audit. 5. **Read-back audit (§6b)** — using the narration; record its result in the `lexical_note` item (§4e). 6. **On any change → reset and re-run the whole verse (P6)** — wipe + rebuild all items, the `audit` notes, and the narration, **but preserve `researcher` notes.**
 
 ## 6b. Read-back audit — the closing loop (per verse)
 
