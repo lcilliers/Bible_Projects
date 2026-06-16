@@ -39,8 +39,8 @@ def main():
                             "notes='resolved by cause read pass', created_at=? WHERE id=?", (cause[:140], STAMP, row["id"]))
         else:
             none += 1
-            if a.live:
-                cur.execute("UPDATE ve_lexical SET delete_flagged=1, notes='read pass: no cause stated' WHERE id=?", (row["id"],))
+            if a.live:   # NONE marker must carry a *_read_api provenance so it SURVIVES engine rebuilds
+                cur.execute("UPDATE ve_lexical SET delete_flagged=1, notes='read pass: NONE', source_provenance='cause_read_api' WHERE id=?", (row["id"],))
     if a.live:
         conn.commit()
     print(f"{'LIVE' if a.live else 'DRY-RUN'}: {len(data):,} API results · resolved {resolved:,} · NONE {none:,} · "

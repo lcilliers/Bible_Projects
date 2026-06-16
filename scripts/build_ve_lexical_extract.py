@@ -83,7 +83,7 @@ def main():
         # lexical items grouped
         lex = {}
         for r in cur.execute("""SELECT ve_label, value FROM ve_lexical WHERE verse_context_id=?
-            AND COALESCE(delete_flagged,0)=0 AND source_provenance='v2_engine_iter1' ORDER BY ve_nr, id""", (u["vcid"],)):
+            AND COALESCE(delete_flagged,0)=0 ORDER BY ve_nr, id""", (u["vcid"],)):   # all active rows: mechanical + *_read_api
             if r["ve_label"] in ("sense", "lexical_note"):
                 continue
             lex.setdefault(r["ve_label"].replace("-", "_"), []).append(r["value"])
