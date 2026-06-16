@@ -11,7 +11,7 @@ the expectation test (silent=NONE, only signal-present-but-unclear=UNRESOLVED).
 
   python scripts/_ve_engine_v2.py            # default: the M01/M23/M46 dump verses
 """
-import sys, os, re, sqlite3
+import sys, os, re, sqlite3, time
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
 from step_client import StepClient
 import morph_util
@@ -48,8 +48,26 @@ def base(s):
 
 
 def person(morph):
-    m = re.search(r"[123]", morph or "")
+    morph = morph or ""
+    if "-" in morph:                          # Greek: person is the digit before S/P (number)
+        m = re.search(r"([123])[SP]", morph)
+        return int(m.group(1)) if m else None
+    m = re.search(r"[123]", morph)            # Hebrew/Aramaic
     return int(m.group(0)) if m else None
+
+
+def agree(morph):
+    """(person, gender, number) — Hebrew verb '3ms'/noun 'ms'(3rd implicit); (None,..) for Greek/unparseable."""
+    morph = morph or ""
+    if "-" in morph:
+        return (None, None, None)
+    m = re.search(r"([123])([mfbc])([sp])", morph)        # verb: person+gender+number
+    if m:
+        return (int(m.group(1)), m.group(2), m.group(3))
+    m = re.search(r"N\w?([mfbc])([sp])", morph)            # noun: 3rd person implicit
+    if m:
+        return (3, m.group(1), m.group(2))
+    return (None, None, None)
 
 
 def finite_verb(morph):
@@ -143,28 +161,37 @@ def derive(unit, words, step):
                     out.append(("location", lvl, f"seat-term {st} ('{w['text']}')"))
                 break
 
-    # N3 how (nearest finite verb to the term)
+    # N3 how — the finite verb the TERM is the subject of (agreement); else nearest acting verb (term=object)
+    COPULA = {"G1510", "G1096", "G5225"}
     gv = None
-    if ti is not None:
-        cands = [w for w in words if w["finite"] and abs(w["i"] - ti) <= 3 and w["i"] != ti]
-        if cands:
-            gv = min(cands, key=lambda w: abs(w["i"] - ti))
-            out.append(("how", f'{gv["text"]} ({gv["strongs"][0]})', f"governing finite verb near term"))
+    agreeing = []
+    if ti is not None and term:
+        tp, tg, tn = agree(term["m0"])
+        fins = [w for w in words if w["finite"] and w["i"] != ti and abs(w["i"] - ti) <= 4]
+        agreeing = [w for w in fins if agree(w["m0"])[0] == tp and agree(w["m0"])[2] == tn]
+        gv = min(agreeing or fins, key=lambda w: abs(w["i"] - ti)) if (agreeing or fins) else None
+        if gv and term["pos"] == "adjective" and gv["strongs"][0] in COPULA:
+            gv = None                                       # "were afraid": copula is not a meaningful 'how'
+        if gv:
+            kind = "term=subject" if gv in agreeing else "term=object"
+            out.append(("how", f'{gv["text"]} ({gv["strongs"][0]})', f"governing verb · {kind}"))
 
-    # N1 object (suffix/pronoun or accusative right after the governing verb)
-    if gv is not None:
-        after = [w for w in words if gv["i"] < w["i"] <= gv["i"] + 2]
-        obj = next((w for w in after if "suffix" in (w["pos"] or "") or "S" in w["m0"][1:2]
-                    or (w["lang"] == "Greek" and "A" in w["m0"])), None)
+    # N1 object — what the governing verb acts on (only when the term is the verb's subject; not the term)
+    if gv is not None and gv in agreeing:
+        after = [w for w in words if gv["i"] < w["i"] <= gv["i"] + 2 and w["i"] != ti and w["text"]]
+        obj = next((w for w in after if re.search(r"S.?[123]", w["m0"]) or w["pos"] in ("noun", "pronoun")
+                    or (w["lang"] == "Greek" and re.search(r"-A", w["m0"]))), None)
         if obj:
-            out.append(("object", f'{obj["text"]}', f"object of '{gv['text']}'"))
+            out.append(("object", obj["text"], f"object of '{gv['text']}'"))
 
-    # experiencer (person of a suffix on the term, else subject person of gov verb)
+    # experiencer — the bearer: possessive suffix on/adjacent to the term; else the subject of its verb
     exp_p = None
-    if term:
-        for m in term["morphs"]:
-            if "Sp" in m: exp_p = person(m)
-    if exp_p is None and gv is not None:
+    cand_words = ([term] if term else []) + [w for w in words if ti is not None and 0 < abs(w["i"] - ti) <= 1]
+    for w in cand_words:
+        if any(re.search(r"S.?[123]", m) for m in w["morphs"]):
+            exp_p = next(person(m) for m in w["morphs"] if re.search(r"S.?[123]", m))
+            break
+    if exp_p is None and gv is not None and gv in agreeing:
         exp_p = gv["person"]
     if exp_p:
         out.append(("experiencer", {1: "self", 2: "other (addressed)", 3: "other"}[exp_p], f"person={exp_p}"))
@@ -250,6 +277,8 @@ def main():
     step = Step()
     out = ["# VE engine v2 — test run on the reviewed dump verses (DRY, no DB writes) — 2026-06-16", "",
            "> First build per 01b v2. Iteration-1 seed lists. Compare to `wa-raw-dump-with-narration-M01-M23-M46-20260615.md`.", ""]
+    timings = []
+    MAX_SEC = float(os.environ.get("VE_MAX_SEC", "30"))
     for ref in refs:
         units = cur.execute("""SELECT vc.id vcid, vr.transliteration translit, m.gloss gloss, m.strongs_number strong,
             m.cluster_code cluster, vr.reference ref, vr.target_word tw
@@ -257,6 +286,7 @@ def main():
             JOIN mti_terms m ON m.id=vc.mti_term_id
             WHERE vr.reference=? AND COALESCE(vc.delete_flagged,0)=0 AND m.cluster_code IN ('M01','M23','M46')""", (ref,)).fetchall()
         if not units: continue
+        t0 = time.time()
         html = step.html(units[0]["strong"], ref)
         words = measure_layer(html)
         vt = cur.execute("SELECT verse_text FROM wa_verse_records WHERE reference=? LIMIT 1", (ref,)).fetchone()[0]
@@ -272,6 +302,21 @@ def main():
             for (it, v, c) in items:
                 out.append(f"- **{it}**: {v}  · _{c}_")
             out.append(f"\n**NARRATION:** {narrate(unit, items)}\n")
+        dt = time.time() - t0
+        timings.append((ref, dt, len(units)))
+        out.append(f"_⏱ {dt:.2f}s · {len(units)} unit(s) · {dt/len(units):.2f}s/unit_\n")
+        if dt > MAX_SEC:
+            out.append(f"\n**⛔ CIRCUIT-BREAKER: {ref} took {dt:.1f}s > {MAX_SEC}s threshold — aborting bulk run.**")
+            print(f"ABORT: {ref} {dt:.1f}s > {MAX_SEC}s"); break
+    if timings:
+        tot = sum(d for _r, d, _n in timings); nu = sum(n for _r, _d, n in timings)
+        out += ["", "## ⏱ Timing monitor", "", "| verse | secs | units | s/unit |", "|---|---|---|---|"]
+        for r, d, n in timings:
+            out.append(f"| {r} | {d:.2f} | {n} | {d/n:.2f} |")
+        out.append(f"| **TOTAL** | **{tot:.2f}** | **{nu}** | **{tot/nu:.2f}** |")
+        out.append(f"\n_Circuit-breaker: aborts any verse over **{MAX_SEC}s** (env `VE_MAX_SEC`). "
+                   f"At {tot/nu:.2f}s/unit a ~40,739-unit bulk run ≈ **{tot/nu*40739/3600:.1f}h** — STEP fetches dominate; "
+                   f"pre-cache the measure layer + vocab before any bulk write._")
     p = "research/VE-lexical/wa-ve-engine-v2-testrun-20260616.md"
     open(p, "w", encoding="utf-8").write("\n".join(out))
     print("WROTE", p)
