@@ -93,9 +93,9 @@ def main():
         if a.live:
             # ve_lexical: hard-replace the MECHANICAL rows, but PRESERVE read-resolved values across the rebuild
             # (a read-resolved or read-NONE'd cause must NOT be reverted to the mechanical 'pending-read').
-            read = cur.execute("""SELECT 1 FROM ve_lexical WHERE verse_context_id=? AND ve_label='cause'
-                AND (source_provenance='cause_read_api' OR notes='read pass: no cause stated') LIMIT 1""", (u["vcid"],)).fetchone()
-            wr = [r for r in rows if not (r[2] == 'cause' and read)]   # skip the mechanical cause if the read decided it
+            read_fields = set(r[0] for r in cur.execute("""SELECT DISTINCT ve_label FROM ve_lexical
+                WHERE verse_context_id=? AND (source_provenance LIKE '%_read_api' OR notes LIKE 'read pass:%')""", (u["vcid"],)))
+            wr = [r for r in rows if r[2] not in read_fields]          # skip the mechanical version of any read-decided field
             cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=? AND source_provenance IN ('v2_engine_iter1','audit')", (u["vcid"],))
             cur.executemany("""INSERT INTO ve_lexical
                 (verse_context_id, ve_nr, ve_label, related_tier, value, notes, source_provenance, delete_flagged, created_at)

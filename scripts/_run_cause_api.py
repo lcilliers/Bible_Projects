@@ -22,23 +22,30 @@ def main():
     ap.add_argument("--input", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--model", default="claude-sonnet-4-6")
+    ap.add_argument("--batch", type=int, default=200, help="items per API call (avoids output truncation)")
     a = ap.parse_args()
     pkg = json.load(open(a.input, encoding="utf-8"))
     prompt = pkg["meta"]["instruction"]
     items = pkg["items"]
-    content = prompt + "\n\nITEMS (resolve every one):\n" + json.dumps(items, ensure_ascii=False)
 
     client = anthropic.Anthropic()
+    results, it, ot = [], 0, 0
     t0 = time.time()
-    resp = client.messages.create(model=a.model, max_tokens=8000,
-                                  messages=[{"role": "user", "content": content}])
+    for i in range(0, len(items), a.batch):
+        chunk = items[i:i + a.batch]
+        content = prompt + "\n\nITEMS (resolve EVERY one):\n" + json.dumps(chunk, ensure_ascii=False)
+        resp = client.messages.create(model=a.model, max_tokens=8000,
+                                      messages=[{"role": "user", "content": content}])
+        text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
+        m = re.search(r"\[.*\]", text, re.S)
+        if m:
+            try:
+                results.extend(json.loads(m.group(0)))
+            except Exception:
+                print(f"  WARN: batch {i//a.batch+1} JSON parse failed ({len(text)} chars)")
+        it += resp.usage.input_tokens; ot += resp.usage.output_tokens
     dt = time.time() - t0
-    text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
-    m = re.search(r"\[.*\]", text, re.S)
-    results = json.loads(m.group(0)) if m else []
     json.dump(results, open(a.out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-
-    it, ot = resp.usage.input_tokens, resp.usage.output_tokens
     ri, ro = RATES.get(a.model, (3.0, 15.0))
     cost = it / 1e6 * ri + ot / 1e6 * ro
     print(f"model: {a.model}")
