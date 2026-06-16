@@ -91,11 +91,15 @@ def main():
         rows = to_rows(u["vcid"], items)
         nrows += len(rows); nunits += 1
         if a.live:
-            # ve_lexical: deterministic + reproducible -> hard-replace (whole-unit reset, P6)
-            cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=?", (u["vcid"],))
+            # ve_lexical: hard-replace the MECHANICAL rows, but PRESERVE read-resolved values across the rebuild
+            # (a read-resolved or read-NONE'd cause must NOT be reverted to the mechanical 'pending-read').
+            read = cur.execute("""SELECT 1 FROM ve_lexical WHERE verse_context_id=? AND ve_label='cause'
+                AND (source_provenance='cause_read_api' OR notes='read pass: no cause stated') LIMIT 1""", (u["vcid"],)).fetchone()
+            wr = [r for r in rows if not (r[2] == 'cause' and read)]   # skip the mechanical cause if the read decided it
+            cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=? AND source_provenance IN ('v2_engine_iter1','audit')", (u["vcid"],))
             cur.executemany("""INSERT INTO ve_lexical
                 (verse_context_id, ve_nr, ve_label, related_tier, value, notes, source_provenance, delete_flagged, created_at)
-                VALUES (?,?,?,?,?,?,?,?,?)""", rows)
+                VALUES (?,?,?,?,?,?,?,?,?)""", wr)
             # narration = the single l2_meaning FINDING (M-cluster only): SOFT-delete the superseded one, insert new
             if u["cluster"] != "T2":
                 narr = eng.narrate(unit, items)
