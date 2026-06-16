@@ -277,14 +277,17 @@ def derive(unit, words, step):
     if v_inh:
         out.append(("valence", v_inh, "term-inherent valence"))
 
-    # N2 cause (expectation test): for an affect, the perceived/conceived object that triggered it
+    # N2 cause — DETECT + POINT (Alt 1; clean resolution is the read = Alt 2)
     facs = [v for (it, v, _c) in out if it == "faculty"]
-    causal_near = ti is not None and any(s in CAUSAL for w in words if abs(w["i"] - ti) <= 2 for s in w["strongs"])
-    if "affect" in facs:
-        if obj is not None and gv is not None and gv["strongs"][0] in PERC_COG:
-            out.append(("cause", f'{obj["text"]} (perceived)', f"object of '{gv['text']}'"))
-        elif causal_near:
-            out.append(("cause", "UNRESOLVED", "causal conjunction near term; cause unclear"))
+    ci = next((w["i"] for w in words if any(s in CAUSAL for s in w["strongs"])), None)  # causal marker (ki/hoti/gar) anywhere
+    if ci is not None:
+        clause = " ".join(w["text"] for w in words if ci < w["i"] <= ci + 8 and w["text"])[:140].strip()
+        out.append(("cause", "pending-read", "causal marker present → clause copied to cause_clause for the read pass"))
+        if clause:
+            out.append(("cause_clause", clause, "clause after the causal marker"))
+    elif "affect" in facs and obj is not None and gv is not None and gv is not term and gv["strongs"][0] in PERC_COG:
+        out.append(("cause", f'{obj["text"]} (perceived)', f"object of '{gv['text']}'"))
+    # else silent -> NONE (expectation test)
 
     # 11 immediate-response (expectation test): the coordinated REACTION after the term (verb incl. participle;
     # not the governing verb, not a perception/cognition verb = that's the cause)
@@ -324,8 +327,8 @@ def narrate(unit, items):
     by = {}
     for (it, v, _c) in items:
         by.setdefault(it, []).append(v)
-    def g(k): return [x for x in by.get(k, []) if x != "UNRESOLVED"]
-    def unr(k): return any(x == "UNRESOLVED" for x in by.get(k, []))
+    def g(k): return [x for x in by.get(k, []) if x not in ("UNRESOLVED", "pending-read")]
+    def unr(k): return any(x in ("UNRESOLVED", "pending-read") for x in by.get(k, []))
     cl = []
     if g("sense"): cl.append(f'carries the sense "{g("sense")[0]}"')
     elif unr("sense"): cl.append("[sense: UNRESOLVED]")

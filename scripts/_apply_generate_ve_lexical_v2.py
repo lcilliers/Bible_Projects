@@ -27,7 +27,7 @@ VE_MAP = {
     "divine-involvement": (8, "T0.1.2"), "immediate-response": (11, "T1.5.1"),
     "relational": (13, "T1.1.3"), "object": (16, "T1.1.4"), "object-type": (16, "T1.1.4"),
     "cause": (17, "T2.9.2"), "how": (18, "T1.4.1"), "intensity": (19, "T1.6.1"),
-    "experiencer": (20, "T2.8.1"), "valence": (21, "T0.3.1"),
+    "experiencer": (20, "T2.8.1"), "valence": (21, "T0.3.1"), "cause_clause": (22, "T2.9.3"),
 }
 
 

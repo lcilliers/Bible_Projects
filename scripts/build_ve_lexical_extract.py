@@ -54,7 +54,7 @@ def main():
 
     # field order for the lexical block
     ORDER = ["type", "mode", "location", "origin", "faculty", "how", "object", "object_type", "cause",
-             "experiencer", "divine-involvement", "intensity", "valence", "immediate-response",
+             "cause_clause", "experiencer", "divine-involvement", "intensity", "valence", "immediate-response",
              "compound", "relational"]
     verses, vmap = [], {}
     for u in units:
