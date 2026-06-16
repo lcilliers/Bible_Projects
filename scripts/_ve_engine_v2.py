@@ -39,6 +39,14 @@ FACULTY_LEMMA = {  # R2 indirect: faculty signal lemmas (Strong's -> faculty)
     "H977": "volition", "G2309": "volition", "H7592": "volition",
 }
 INTENSIFIER = {"H7227": "many", "H7231": "many", "H3966": "very", "H3605": "all", "G4183": "many"}
+FROM_PREP = {"H4480", "G575", "G1537"}                  # min / apo / ek -> received-from-outside
+INHERENT_VALENCE = {"H7451": "sinful", "H7563": "sinful", "H6662": "righteous", "H6666": "righteous"}
+PERCEPTION = {"G3708", "G1492", "G991", "G2334", "H7200", "H2372"}
+COGNITION = {"G1380", "G1097", "H3045"}
+PERC_COG = PERCEPTION | COGNITION
+CAUSAL = {"H3588", "G3754", "G1063", "G1360"}           # ki / hoti / gar / dioti
+COORD = {"H9002", "G2532"}                              # waw / kai
+SPIRIT_BEINGS = {"G4151", "G1140", "H7307", "H7700"}    # pneuma / daimonion / ruach / shed
 GRAMMAR = {"article", "preposition", "conjunction", "particle", "suffix"}  # POS that aren't content
 
 
@@ -68,6 +76,14 @@ def agree(morph):
     if m:
         return (3, m.group(1), m.group(2))
     return (None, None, None)
+
+
+def obj_type(w):
+    if any(s in DIVINE for s in w["strongs"]): return "God"
+    if any(s in SPIRIT_BEINGS for s in w["strongs"]): return "spiritual-being"
+    if re.search(r"S.?[123]", w["m0"]) or w["pos"] == "pronoun": return "person"
+    if w["pos"] == "noun": return "thing/abstract"
+    return None
 
 
 def finite_verb(morph):
@@ -176,13 +192,17 @@ def derive(unit, words, step):
             kind = "term=subject" if gv in agreeing else "term=object"
             out.append(("how", f'{gv["text"]} ({gv["strongs"][0]})', f"governing verb · {kind}"))
 
-    # N1 object — what the governing verb acts on (only when the term is the verb's subject; not the term)
+    # N1 object — what the governing verb acts on (only when the term is the verb's subject; not the term) + object-type
+    obj = None
     if gv is not None and gv in agreeing:
         after = [w for w in words if gv["i"] < w["i"] <= gv["i"] + 2 and w["i"] != ti and w["text"]]
         obj = next((w for w in after if re.search(r"S.?[123]", w["m0"]) or w["pos"] in ("noun", "pronoun")
                     or (w["lang"] == "Greek" and re.search(r"-A", w["m0"]))), None)
         if obj:
             out.append(("object", obj["text"], f"object of '{gv['text']}'"))
+            ot = obj_type(obj)
+            if ot:
+                out.append(("object-type", ot, "from object lemma/morph"))
 
     # experiencer — the bearer: possessive suffix on/adjacent to the term; else the subject of its verb
     exp_p = None
@@ -230,17 +250,47 @@ def derive(unit, words, step):
             if (w["pos"] == "preposition") and abs(w["i"] - ti) <= 1:
                 out.append(("relational", f'{w["text"]}', "preposition adjacent to term"))
 
-    # origin / valence / cause / response / effect — expectation test: silent -> NONE (no row) for now
+    # 6 origin (expectation test): 'from' preposition (min/apo/ek) near term -> received; else silent NONE
+    if ti is not None and any(s in FROM_PREP for w in words if abs(w["i"] - ti) <= 2 for s in w["strongs"]):
+        out.append(("origin", "received-from-outside", "'from' preposition (min/apo/ek) near term"))
+
+    # valence (expectation test): term-inherent moral lemma -> value; else silent NONE (never imputed)
+    v_inh = next((INHERENT_VALENCE[s] for s in (term["strongs"] if term else []) if s in INHERENT_VALENCE), None)
+    if v_inh:
+        out.append(("valence", v_inh, "term-inherent valence"))
+
+    # N2 cause (expectation test): for an affect, the perceived/conceived object that triggered it
+    facs = [v for (it, v, _c) in out if it == "faculty"]
+    causal_near = ti is not None and any(s in CAUSAL for w in words if abs(w["i"] - ti) <= 2 for s in w["strongs"])
+    if "affect" in facs:
+        if obj is not None and gv is not None and gv["strongs"][0] in PERC_COG:
+            out.append(("cause", f'{obj["text"]} (perceived)', f"object of '{gv['text']}'"))
+        elif causal_near:
+            out.append(("cause", "UNRESOLVED", "causal conjunction near term; cause unclear"))
+
+    # 11 immediate-response (expectation test): the coordinated REACTION after the term (verb incl. participle;
+    # not the governing verb, not a perception/cognition verb = that's the cause)
+    if ti is not None:
+        cands = [w for w in words if w["i"] > ti and w["pos"] == "verb" and (gv is None or w["i"] != gv["i"])
+                 and not any(s in PERC_COG for s in w["strongs"])]
+        if cands:
+            cv = min(cands, key=lambda w: w["i"])
+            between = [w for w in words if ti < w["i"] < cv["i"]]
+            if any(s in COORD for w in between for s in w["strongs"]) or any(w["pos"] == "conjunction" for w in between):
+                ro = next((w for w in words if cv["i"] < w["i"] <= cv["i"] + 2 and w["pos"] == "noun"), None)
+                out.append(("immediate-response", cv["text"] + (f' {ro["text"]}' if ro else ""), "coordinated reaction after term"))
 
     # ---- audit (founded + coverage) ----
     founded = all(c for (_i, _v, c) in out)
     content = [w for w in words if w["pos"] not in GRAMMAR and w["text"]]
     named = set()
     if term: named.add(term["i"])
+    cobases = [base(c[3]) for c in unit["coterms"]]
     for w in content:
-        # accounted if it's the term, a co-term strong, a seat, the gov verb, divine, intensifier, faculty
-        acc = (w is term) or (gv and w["i"] == gv["i"]) or any(s in SEAT or s in DIVINE or s in INTENSIFIER or s in FACULTY_LEMMA for s in w["strongs"]) \
-              or any(s in [base(c[3]) for c in unit["coterms"]] for s in w["strongs"])
+        acc = (w is term) or (gv and w["i"] == gv["i"]) \
+            or (ti is not None and w["finite"] and abs(w["i"] - ti) <= 2) \
+            or any(s in SEAT or s in DIVINE or s in INTENSIFIER or s in FACULTY_LEMMA or s in SPIRIT_BEINGS or s in PERC_COG for s in w["strongs"]) \
+            or any(s in cobases for s in w["strongs"])
         if acc: named.add(w["i"])
     gaps = [w["text"] for w in content if w["i"] not in named]
     audit = f"founded={'yes' if founded else 'NO'}; coverage gaps (content words not yet accounted): {gaps if gaps else 'none'}"
@@ -248,25 +298,39 @@ def derive(unit, words, step):
     return out
 
 
+def _art(word):
+    return "an" if word[:1].lower() in "aeiou" else "a"
+
+
 def narrate(unit, items):
     by = {}
     for (it, v, _c) in items:
         by.setdefault(it, []).append(v)
-    def g(k): return by.get(k, [])
-    cl = [f'In {unit["ref"]}, {unit["translit"]} ("{unit["gloss"]}")']
-    if g("sense"): cl.append(f'sense: {g("sense")[0]}')
-    if g("type"): cl.append(f'a {g("type")[0]}')
+    def g(k): return [x for x in by.get(k, []) if x != "UNRESOLVED"]
+    def unr(k): return any(x == "UNRESOLVED" for x in by.get(k, []))
+    cl = []
+    if g("sense"): cl.append(f'carries the sense "{g("sense")[0]}"')
+    elif unr("sense"): cl.append("[sense: UNRESOLVED]")
+    if g("type"): cl.append(f'as {_art(g("type")[0])} {g("type")[0]}')
     if g("mode"): cl.append(f'in {g("mode")[0]} form')
     if g("location"): cl.append("located in the " + ", ".join(g("location")))
-    if g("experiencer"): cl.append(f'experienced by {g("experiencer")[0]}')
+    elif unr("location"): cl.append("[location: UNRESOLVED]")
+    if g("origin"): cl.append("originating " + ", ".join(g("origin")))
+    if g("experiencer"): cl.append("borne by " + ", ".join(g("experiencer")))
     if g("faculty"): cl.append("engaging the " + ", ".join(g("faculty")) + " faculty")
-    if g("how"): cl.append(f'operating by {g("how")[0]}')
-    if g("object"): cl.append("acting on " + ", ".join(g("object")))
-    if g("divine-involvement"): cl.append(f'God: {g("divine-involvement")[0]}')
+    if g("how"): cl.append("operating by " + ", ".join(g("how")))
+    if g("object"):
+        ot = g("object-type")
+        cl.append("acting on " + ", ".join(g("object")) + (f' ({ot[0]})' if ot else ""))
+    if g("cause"): cl.append("caused by " + ", ".join(g("cause")))
+    elif unr("cause"): cl.append("[cause: UNRESOLVED]")
+    if g("divine-involvement"): cl.append("God's role: " + ", ".join(g("divine-involvement")))
+    if g("valence"): cl.append("valence " + ", ".join(g("valence")))
     if g("intensity"): cl.append("intensity " + ", ".join(g("intensity")))
+    if g("immediate-response"): cl.append("issuing in " + ", ".join(g("immediate-response")))
     if g("compound"): cl.append("combining with " + "; ".join(g("compound")))
     if g("relational"): cl.append("directed " + ", ".join(g("relational")))
-    return cl[0] + " — " + ", ".join(cl[1:]) + "."
+    return f'In {unit["ref"]}, {unit["translit"]} ("{unit["gloss"]}") ' + ", ".join(cl) + "."
 
 
 def main():
