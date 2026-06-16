@@ -10,6 +10,28 @@ deterministic restatement of the lexical — redundant + larger for the AI; incl
 import argparse, json, os, re, sqlite3
 DB = os.path.join("database", "bible_research.db")
 
+FIELDS_GUIDE = {
+    "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
+    "lemma_meaning": "the lemma's dictionary meaning (concise)",
+    "type": "action | status | quality — the grammatical kind (from morphology)",
+    "mode": "the term's grammatical realisation: language · part-of-speech · (verb stem)",
+    "faculty": "the inner-being faculty the TERM ITSELF engages (affect/cognition/perception/memory/volition/moral_evaluation/conscience); term-intrinsic; ABSENT if the term is not itself a faculty",
+    "location": "constitutional seat the state is seated in (spirit/soul/heart/mind/flesh/conscience); READ-disambiguated; absent if none",
+    "origin": "where it comes from (within-person/received-from-outside/carried-generationally)",
+    "how": "the governing predicate — how a noun/state term operates; ABSENT for verb-terms (the term IS the action; see mode)",
+    "object": "what the state is directed at / acts on",
+    "object_type": "the object's kind (threat/person/God/spiritual-being/situation/abstract/thing); READ-classified",
+    "cause": "what AROUSES the state; READ-resolved; absent = the verse states no cause",
+    "cause_clause": "mechanical hint only — the raw clause after a 'because/for' marker (superseded by `cause` once read)",
+    "experiencer": "who bears the state: self | other | other (addressed)",
+    "divine_involvement": "GOD's role toward the term (agent/possessor/giver/object/addressee); READ-resolved",
+    "intensity": "quantifier / intensity (e.g. 'many', 'greatly')",
+    "valence": "moral framing in context (righteous/sinful/commanded/forbidden/neutral); READ-resolved",
+    "immediate_response": "the immediate reaction the state produces (e.g. 'bowed faces')",
+    "compound": "co-occurring terms in THIS verse, each as `translit \"gloss\" — role` (partner/qualifier/co-seated). FAN-OUT: every co-term is present as its OWN full record in this verse's term_occurrences — resolve by matching translit/gloss",
+    "relational": "directional / relational force (to, toward, against …)",
+}
+
 
 def base(s):
     m = re.match(r"^([HG]\d+)", s or "")
@@ -93,13 +115,30 @@ def main():
     os.makedirs(odir, exist_ok=True)
     for bi, chunk in enumerate(chunks, 1):
         nocc = sum(len(v["term_occurrences"]) for v in chunk)
-        payload = {"meta": {"focus_cluster": cc, "description": desc, "batch": f"{bi}/{len(chunks)}" if a.batch else "full",
-                            "verses": len(chunk), "occurrences": nocc,
-                            "source": "ve_lexical v2_engine_iter1 + verse_morphology measure layer (schema 3.34.0)",
-                            "layout": "VERSE-based fan-out: each verse lists EVERY term in it (focus_cluster=true marks the cluster of interest); "
-                                      "a term's `compound` references co-terms that are present as full records in the same verse — fan out by matching translit/strong",
-                            "field_note": "per term-in-verse; mechanically derived (01b v2); UNRESOLVED = expected-but-undetermined"},
-                   "data": chunk}
+        payload = {"meta": {
+            "focus_cluster": cc, "description": desc, "batch": f"{bi}/{len(chunks)}" if a.batch else "full",
+            "verses": len(chunk), "occurrences": nocc,
+            "what_this_is": (f"A per-term-in-verse LEXICAL DECOMPOSITION of the inner-being terms in the verses where "
+                             f"cluster {cc} ('{desc}') occurs. Each record shows what a verse says about the inner being, "
+                             f"recorded once per term-occurrence. Mechanically derived (01b v2) over the original-language "
+                             f"morphology; the interpretive fields (cause, location, divine_involvement, object_type, valence) "
+                             f"are resolved by a focused verse-read API pass."),
+            "structure": ("data = array of VERSES. Each verse = {verse:{reference,osis_id,testament,verse_text}, "
+                          "term_occurrences:[ {term:{strong,translit,gloss,language,cluster,focus_cluster}, "
+                          "verse_report:{target_word,morph,stem}, lexical:{...}} ]}."),
+            "layout_fan_out": ("VERSE-based fan-out — each verse lists EVERY term in it, not just the focus cluster's "
+                               "(focus_cluster=true marks the terms of interest). A term's `compound` lists its co-terms, "
+                               "which are present as their OWN full records in the same verse — fan out by matching translit/gloss "
+                               "to analyse synergy without leaving the verse."),
+            "conventions": {
+                "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
+                "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare)",
+                "provenance": "most fields = mechanical (01b v2); cause/location/divine_involvement/object_type/valence = read-resolved (verse-read API, high quality)",
+                "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)",
+            },
+            "fields": FIELDS_GUIDE,
+            "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0)",
+        }, "data": chunk}
         suffix = (f"-b{bi}of{len(chunks)}" if a.batch else "") + ('-narr' if a.with_narration else '')
         out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-20260616{suffix}.json"
         js = json.dumps(payload, ensure_ascii=False, indent=2)
