@@ -73,7 +73,17 @@ These ARE determinable by lexical means (the reaction/result is stated in the ve
 
 ## 6. Generation procedure (per verse)
 
-1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. Compose the narration as the deterministic view. 5. **On any change → reset and re-run the whole verse (P6).**
+1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. Compose the narration as the deterministic view. 5. **Read-back audit (§6b).** 6. **On any change → reset and re-run the whole verse (P6).**
+
+## 6b. Read-back audit — the closing loop (per verse)
+
+After generation, read the items **back against the verse** and verify. **The audit FLAGS only — it never silently injects or edits a value** (this keeps generation mechanical and every value traceable). Each flag routes to: a rule/list improvement (→ whole-verse regen, P6) · an UNRESOLVED entry · or a researcher decision.
+
+- **(a) Founded & representative.** *Founded* (**mechanical, every verse**): every stored item cites a present measure (P7); any item without a valid citation → flag. *Representative* (**judgement, sampled**): do the items *together* faithfully carry the verse's inner-being content? PASS or flag. **Scope:** the representative judgement runs on a **sample / flagged verses only** — an interpretive read of all ~40k verses would rebuild the cost+drift the reform removed.
+- **(b) Orphans / superseded** (**mechanical, every verse**): every active `ve_lexical` row for the verse must still trace to a live measure (term active, sense present, source not removed); rows that no longer trace → **soft-delete candidates**.
+- **(c) Missing-but-relevant** (**mechanical coverage + small judgement, every verse**): enumerate the verse's tagged terms / content words (measure layer); each should be accounted for by ≥1 item (head · co-term · object · cause · modifier · location · …). Unaccounted → **coverage-gap note**. This is the **engine that surfaces new rules/list entries** — the systematised form of the manual verse-by-verse review.
+
+**Convergence:** the coverage gaps and representative-flags feed rule/list refinement; the system is "done" for a cluster when an audit pass surfaces **no new** gaps (loop-until-dry).
 
 ## 7. Clarifications — ALL RESOLVED 2026-06-16
 
