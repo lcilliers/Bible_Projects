@@ -79,7 +79,9 @@ These ARE determinable by lexical means (the reaction/result is stated in the ve
 
 ## 6. Generation procedure (per verse)
 
-1. **Read** the measure layer from the DB (`verse_morphology` + `lexicon`, §2; persisted M60 — no live STEP). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. **Compose the narration** (the deterministic view) — part of generation, *before* the audit. 5. **Read-back audit (§6b)** — using the narration; record its result in the `lexical_note` item (§4e). 6. **On any change → reset and re-run the whole verse (P6)** — wipe + rebuild all items, the `audit` notes, and the narration, **but preserve `researcher` notes.**
+1. **Read** the measure layer from the DB (`verse_morphology` + `lexicon`, §2; persisted M60 — no live STEP). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. **Compose the narration** (the deterministic view) and **persist it as the single `l2_meaning` finding** per term-in-verse (M-cluster). 5. **Read-back audit (§6b)** — using the narration; record its result in the `lexical_note` item (§4e). 6. **On any change → reset and re-run the whole verse (P6)**, preserving `researcher` notes.
+
+**Supersession is AUTOMATIC and built into the generator** (`scripts/_apply_generate_ve_lexical_v2.py`): on (re)generation each unit's old `ve_lexical` is **hard-replaced** (the items are deterministic + reproducible from the measure layer — the pre-run snapshot is the recovery path, so soft-delete would only bloat the table), and its prior `l2_meaning` finding is **SOFT-deleted** (findings are judgement artefacts — keep the audit trail). The narration finding always reflects the current `ve_lexical`. No stale findings or lexical items are left behind.
 
 ## 6b. Read-back audit — the closing loop (per verse)
 

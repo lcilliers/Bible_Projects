@@ -74,8 +74,8 @@ def main():
             shutil.copy2(DB, SNAP); print(f"snapshot: {SNAP}")
 
     wordcache = {}
-    timings, byverse = [], {}
-    nrows = nunits = 0
+    timings = []
+    nrows = nunits = nnarr = 0
     t_verse = time.time(); cur_verse = None
     for u in units:
         if u["verse_id"] not in wordcache:
@@ -91,10 +91,23 @@ def main():
         rows = to_rows(u["vcid"], items)
         nrows += len(rows); nunits += 1
         if a.live:
-            cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=?", (u["vcid"],))   # whole-unit reset (P6)
+            # ve_lexical: deterministic + reproducible -> hard-replace (whole-unit reset, P6)
+            cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=?", (u["vcid"],))
             cur.executemany("""INSERT INTO ve_lexical
                 (verse_context_id, ve_nr, ve_label, related_tier, value, notes, source_provenance, delete_flagged, created_at)
                 VALUES (?,?,?,?,?,?,?,?,?)""", rows)
+            # narration = the single l2_meaning FINDING (M-cluster only): SOFT-delete the superseded one, insert new
+            if u["cluster"] != "T2":
+                narr = eng.narrate(unit, items)
+                cur.execute("DELETE FROM finding WHERE verse_context_id=? AND provenance='l2_meaning' "
+                            "AND delete_flagged=1 AND source_legacy_ref=?", (u["vcid"], "ve-narration-v2-20260616"))
+                cur.execute("UPDATE finding SET delete_flagged=1, last_updated_date=? WHERE verse_context_id=? "
+                            "AND provenance='l2_meaning' AND COALESCE(delete_flagged,0)=0", (STAMP, u["vcid"]))
+                cur.execute("INSERT INTO finding (level, verse_context_id, mti_term_id, cluster_code, finding_value, "
+                            "finding_status, provenance, source_legacy_ref, created_at, last_updated_date, delete_flagged) "
+                            "VALUES ('VERSE', ?, ?, ?, ?, 'ANSWERED', 'l2_meaning', 've-narration-v2-20260616', ?, ?, 0)",
+                            (u["vcid"], u["mti"], u["cluster"], narr, STAMP, STAMP))
+                nnarr += 1
         # per-verse timing (circuit-breaker)
         if cur_verse is None: cur_verse = u["verse_id"]
         if u["verse_id"] != cur_verse:
@@ -110,7 +123,7 @@ def main():
 
     tot = cur.execute("SELECT COUNT(*) FROM ve_lexical WHERE source_provenance=?", (PROV,)).fetchone()[0] if a.live else 0
     print(f"\n{'LIVE' if a.live else 'DRY-RUN'}: {nunits:,} units · {nrows:,} ve_lexical rows"
-          f"{' written ('+format(tot, ',')+' active v2 in table)' if a.live else ' (not written)'}")
+          f"{' written ('+format(tot, ',')+' active v2 in table)' if a.live else ' (not written)'} · {nnarr:,} narration findings")
     if timings:
         import statistics
         print(f"per-verse: mean {statistics.mean(timings)*1000:.1f}ms · max {max(timings)*1000:.0f}ms · circuit-breaker {MAX_SEC}s")
