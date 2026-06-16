@@ -2148,6 +2148,75 @@ def _m59(conn: sqlite3.Connection) -> None:
     print("     M59: ve_lexical (items-in-verse-level) table created; schema_version -> 3.33.0")
 
 
+@_register("M60", "Persisted original-language MEASURE LAYER: canonical verse + verse_morphology + lexicon + raw; wa_verse_records.verse_id FK path")
+def _m60(conn: sqlite3.Connection) -> None:
+    """01b §2 — the verse becomes a first-class canonical entity and its full-verse original-language
+    morphology (every word: morph + Strong's + English surface, from STEP) is persisted, so the lexical
+    rules read the measure layer from the DB instead of fetching STEP live (faster, consistent, auditable).
+    Tables: `verse` (canonical, one row per reference/osis) · `verse_morphology` (one row per word) ·
+    `lexicon` (one row per Strong's: original-language unicode + transliteration + gloss + medium_def —
+    also powers sense) · `verse_morphology_raw` (raw STEP html per verse, for provenance / re-parse).
+    Bypass FK `wa_verse_records.verse_id` -> verse gives the explicit verses<->morphology path. Additive +
+    reversible (drop the tables / column)."""
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS verse (
+            id          INTEGER PRIMARY KEY,
+            osis_id     TEXT UNIQUE,
+            reference   TEXT UNIQUE,
+            book_id     INTEGER,
+            chapter     INTEGER,
+            verse_num   INTEGER,
+            testament   TEXT,
+            verse_text  TEXT,
+            created_at  TEXT
+        )""")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS verse_morphology (
+            id             INTEGER PRIMARY KEY,
+            verse_id       INTEGER NOT NULL REFERENCES verse(id),
+            word_index     INTEGER NOT NULL,
+            surface        TEXT,
+            strongs        TEXT,
+            primary_strong TEXT,
+            morph_code     TEXT,
+            language       TEXT,
+            pos            TEXT,
+            stem           TEXT,
+            person         INTEGER,
+            source         TEXT,
+            fetched_at     TEXT
+        )""")
+    conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS ux_vmorph ON verse_morphology(verse_id, word_index)")
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_vmorph_strong ON verse_morphology(primary_strong)")
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_vmorph_verse ON verse_morphology(verse_id)")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS verse_morphology_raw (
+            verse_id    INTEGER PRIMARY KEY REFERENCES verse(id),
+            html        TEXT,
+            fetched_at  TEXT
+        )""")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS lexicon (
+            strong            TEXT PRIMARY KEY,
+            original_unicode  TEXT,
+            transliteration   TEXT,
+            gloss             TEXT,
+            medium_def        TEXT,
+            language          TEXT,
+            occurrence_count  INTEGER,
+            source            TEXT,
+            fetched_at        TEXT
+        )""")
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(wa_verse_records)")]
+    if "verse_id" not in cols:
+        conn.execute("ALTER TABLE wa_verse_records ADD COLUMN verse_id INTEGER REFERENCES verse(id)")
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_wvr_verse ON wa_verse_records(verse_id)")
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)", ("3.34.0", _now()))
+    print("     M60: verse + verse_morphology + lexicon + raw created; wa_verse_records.verse_id added; schema_version -> 3.34.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:
