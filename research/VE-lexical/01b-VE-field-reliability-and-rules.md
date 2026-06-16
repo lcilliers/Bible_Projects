@@ -1,3 +1,90 @@
+# 01b — Verse Lexical (VE) Generation — CANONICAL RULES (v2 · 2026-06-16)
+
+> **This is the canonical instruction for verse-lexical generation.** Every VE item is produced by the deterministic rules below. The original v1 reliability analysis that motivated this is **retained as Part B** at the foot of the file. **Status: DRAFT for researcher review** — open points are flagged inline as **⚠Cn** and collected in §7; the researcher replies to those before build.
+
+## 1. Governing principles
+
+- **P1 — Mechanical only.** Every item is fixed by deterministic rules over named measures. **No probabilities, no scoring, no "analytics."** If the rules cannot decide → **UNRESOLVED** (a worklist flag), never a guess. Success = the rules are *definitive*.
+- **P2 — Original-language grounded (the error-eliminator).** Signals are read off the **original-language measure layer** (Strong's lemma · morphology · per-occurrence STEP sense · co-occurring tagged terms), **never the English translation string.** Every homograph error (spirit=ghost, will=auxiliary) came from English-string matching; grounding on lemma + morph removes the whole class.
+- **P3 — Simple items.** Each item is one simple value (or NONE/UNRESOLVED). Multiples = multiple rows. No compound or narrative values.
+- **P4 — Rules may reference other VEs.** Items resolve in a fixed order (§3); a rule may condition on an earlier item's value/presence.
+- **P5 — Three states per item:** resolved value · **NONE** (checked, genuinely absent) · **UNRESOLVED** (a value was expected, rules couldn't decide).
+- **P6 — Whole-verse reset.** The unit of (re)generation is the **verse**. If *any* item must be regenerated (error or omission), **all** items for that verse are reset and re-derived together — single-item patching would break verse coherence.
+- **P7 — Citation.** Every resolved value cites the measure/signal that forced it.
+- **P8 — Sense is the spine** — resolved first; sense-dependent items read it.
+
+## 2. The measure layer (acquire FIRST — the prerequisite)
+
+For each verse, ingest the **full-verse original-language morphology** — every word's Strong's + morph code, not just the analysed term (STEP's verse HTML carries this). From it, deterministically read, per term-occurrence:
+
+- lemma · morph → POS · **case/state** · person/number/gender · stem/voice/tense (= mode);
+- per-occurrence **target_word** (ESV) + lemma **medium_def** (= the sense inputs);
+- **argument structure from morphology** — the term's governing verb; its **subject/possessor** (Greek nominative / verb agreement / Hebrew possessive suffix or construct owner); its **object** (Greek accusative / governed noun / prepositional complement); its **modifiers** (agreeing adjective / quantifier); attached prepositions;
+- co-occurring tagged terms (T1/T2) at the reference.
+
+**Why this is the linchpin:** the original language *marks* the predicate-argument structure (Greek case; Hebrew construct/suffix/preposition) that English drops — so object, subject/experiencer, modifier and the governing predicate become **deterministic morphological reads**, satisfying P1. Genuinely ambiguous structure → UNRESOLVED. **⚠C1 — confirm we build this full-verse measure layer (extends the parked DI2); it is the prerequisite for every predicate-argument item (N1–N4, experiencer, attributed).**
+
+## 3. Resolution order (dependency graph)
+
+`mode (column)` → **1 sense** → **2 type** → **experiencer** → **8 attributed-to-God** → **5 location** → **6 origin** → **7 faculty** → **3 compound** → **N1 object** → **13 relational** → **N3 how** → **N4 intensity** → **N2 cause** → **valence** → *(read: response/effect — ⚠C13)*. Each may read earlier items.
+
+## 4. The VE item catalogue
+
+Format — **item · value space · measure · RULE · states · depends-on.** All signal-lists are **original-language lemma/Strong's sets**, not English words.
+
+### 4a. Revised existing items
+
+- **1 sense** · per-occurrence rendering · target_word + lemma medium_def · **RULE:** value = `target_word`; record lemma `medium_def` as the term-level anchor ("both", per D-C). · resolved / UNRESOLVED(no target_word) · — . **⚠C2 — storage of "both": value=target_word (per-occurrence) + medium_def held once at term level? confirm.**
+- **2 type** · {action, status, quality} · morph POS · **RULE:** verb/participle → action; noun → status; adjective → quality; other POS → UNRESOLVED. **Sense-supersede DROPPED** (POS is deterministic; status↔quality refinement deferred — **⚠C3**). · resolved / UNRESOLVED · supersedes: (none now).
+- **3 compound** · co-occurring tagged terms · the reference's active term inventory · **RULE:** one row per active co-occurring term (exclude self), value = `translit "gloss" (cluster)`; T2 → `(T2-qualifier)`. Present-only. The "how"/predicate is **not** here → N3. · resolved / (none→no row) · depends: term inventory (DI1).
+- **5 location** · {spirit·soul·heart·mind·will·conscience·flesh·body-part:x} (multi) · constitutional-seat **terms** (Strong's seat-map) + their per-occurrence sense · **RULE:** for each co-occurring seat-term whose **sense denotes the seat** (sense-gate via item 1), assign that level. **No English-word scan.** Seat-term present but sense not the seat (e.g. pneuma="apparition/wind") → not a location; sense ambiguous → UNRESOLVED. · multi / NONE / UNRESOLVED · depends: 1 sense, seat-map. **⚠C4 — seat-map (Strong's→level) + which senses count as the seat.**
+- **6 origin** · {within-person·received-from-outside·bestowed-by-God·carried-generationally·not-stated} · original-language source cues + item 8 · **RULE:** reflexive/internal morph → within-person; governed "from-source" node → received; divine giver (item 8 = yes) → bestowed-by-God; generational marker → carried; conflict → UNRESOLVED; none → not-stated. · depends: 8. **⚠C5 — original-language cue lemma list.**
+- **7 faculty** · the faculties (multi) · **faculty-lemma sets (Strong's)** · **RULE:** R1 the term's lemma IS a faculty → assign; R2 a faculty-lemma term governs/relates-to the term by morph (neighbourhood + grammatical relation) → assign; R4 faculty present but unattributable → UNRESOLVED; R5 none → NONE. English homographs vanish (we key on the Greek/Hebrew volition lemma, not the word "will"). · multi/NONE/UNRESOLVED. **⚠C6 — rebuild the faculty list as Strong's/lemma sets.**
+- **8 attributed-to-God** · {yes·no·UNRESOLVED} · the term's subject/possessor (morph) vs divine lemmas · **RULE:** term's subject/possessor IS a divine lemma (YHWH/Elohim/Theos/Kyrios…) → yes; divine lemma present but not the subject/possessor → no; subject/possessor unresolved → UNRESOLVED. · depends: measure layer, experiencer.
+- **13 relational** · {direction → object} (multi) · directional prepositions / relational verbs (original-language) + item N1 · **RULE:** a directional/relational node governs the term toward an **object** (N1) → record {direction → object}. **Object-less direction → not recorded (⚠C7: drop vs UNRESOLVED).** · depends: N1.
+
+### 4b. New items (the predicate-argument roles — design as ONE coherent set)
+
+- **N1 object/target** · the node the term acts on/toward · governed object by morph (accusative / direct object / prepositional complement) · **RULE:** record the term's governed object as `translit "gloss"`; sub-attribute **object-type** {person·God·group·thing·abstract·**spiritual-being**} from the object lemma/morph. None → NONE; object position present but unresolved → UNRESOLVED. *(D-A: "may grow its own rules" — object-type is the first such sub-rule.)* **⚠C8 — object-type set + sub-rules.**
+- **N2 cause/elicitor** · the node that triggered the term · causal morphology · **RULE:** where the term is an affect/response, the eliciting node = the subject of the **causal clause** (Hebrew *ki* / Greek *hoti/gar* + subject) or the **object of perception** that precedes it. None → not-stated; clause present but unresolved → UNRESOLVED. · depends: 7 faculty. **⚠C9 — cause is the hardest to mechanise; confirm the deterministic rule (causal conjunction + subject; perception object) or accept a high UNRESOLVED rate.**
+- **N3 how / governing-predicate** · the verb expressing how the term operates · governing finite verb by morph · **RULE:** record the finite verb governing the term's span as `lemma "gloss"` (e.g. *seized*). None → NONE; unresolved → UNRESOLVED. · depends: measure layer.
+- **N4 intensity / quantifier** · "how much" · quantifier/intensifier lemmas agreeing-with/governing the term · **RULE:** record the intensifier (*rab* "many", *me'od* "very", *kol* "all"…) modifying the term. None → NONE. **⚠C10 — intensifier lemma list.**
+- **valence** · {righteous·sinful·commanded·forbidden·neutral·UNRESOLVED} · term-inherent valence + context morph · **RULE:** term-inherent valence (a per-term moral tag for inherently-moral lemmas, e.g. *resha* "wickedness"=sinful) ∪ context (imperative→commanded, prohibition/negation→forbidden); else neutral; undecidable → UNRESOLVED. **⚠C11 — valence is only partly mechanical: confirm the term-inherent-valence list + context rules, OR move valence to synthesis.**
+- **experiencer** · {self·other-person·God·group·named} · the term's possessor/subject (morph) · **RULE:** map the term's possessive suffix person / nominative subject → experiencer ("my anguish"→self; "his"→other; divine owner→God). Unresolved → UNRESOLVED. · depends: measure layer. *(Overlaps item 8 — see C-3.)*
+
+### 4c. Excluded from VE generation (not mechanically derivable → synthesis layer)
+
+- **VE9 purpose · VE10 typology** — require interpretation; **not VE items** under P1. **⚠C14 — confirm exclusion (move to synthesis).**
+- **emergent characteristics** (e.g. "perception of the spiritual") — **PARKED for debate, §8** (per researcher); the proposal is that they *emerge* from the mechanical items, not as their own item.
+- **read: immediate-response / produces-effect** (VE11/12) — borderline: the coordinated/result clause is morphologically reachable (a coordinated finite verb / result conjunction). **⚠C13 — is this mechanical enough to keep as items, or a read?**
+
+## 5. Conflict register (rules that could clash — resolved)
+
+- **C-1 type:** POS vs the old sense-supersede → **resolved: POS-only** (deterministic); supersede deferred.
+- **C-2 location:** English-word scan vs term-sense-gated → **resolved: term-sense-gated only**; delete the English scan (it caused spirit=ghost).
+- **C-3 attributed-to-God vs experiencer:** overlap when experiencer=God → **resolved: distinct roles** — experiencer = *who bears* the term (incl. God); item 8 = the yes/no flag that *God is the subject/possessor/source*; they agree when experiencer=God; keep both.
+- **C-4 N3-how vs faculty-indirect vs compound:** a co-occurring verb may be the governing predicate **and** a faculty signal, but is **not** a compound (compound = co-occurring inventory *terms*). → **resolved: multi-role allowed** — record as N3, and as faculty if its lemma is a faculty; never as compound.
+- **C-5 origin bestowed-by-God vs item 8:** both read the divine subject → **resolved: cross-check** — origin may be `bestowed-by-God` only if item 8 = yes (a divine giver); else not bestowed.
+- **C-6 compound co-term vs object/cause:** a co-occurring term may also be the object (N1) or cause (N2) → **resolved: same node, different roles** — record under each role; no contradiction.
+
+## 6. Generation procedure (per verse)
+
+1. Build the measure layer (§2). 2. Resolve items in order (§3), each by its §4 rule, citing its measure. 3. Write one `ve_lexical` row per resolved value + per UNRESOLVED flag (present-only for NONE). 4. Compose the narration as the deterministic view. 5. **On any change → reset and re-run the whole verse (P6).**
+
+## 7. Emerging clarifications — researcher to reply
+
+⚠C1 measure-layer acquisition (the prerequisite) · ⚠C2 sense "both" storage · ⚠C3 type sense-supersede keep/drop · ⚠C4 seat-map + sense-gate · ⚠C5 origin cue lemmas · ⚠C6 faculty lemma sets · ⚠C7 relational object-less = drop or UNRESOLVED · ⚠C8 N1 object-type sub-rules · ⚠C9 N2 cause deterministic rule vs high-UNRESOLVED · ⚠C10 N4 intensifier lemmas · ⚠C11 valence mechanisable? (term-inherent list) or synthesis · ⚠C13 read response/effect keep as items? · ⚠C14 confirm purpose/typology excluded.
+
+## 8. Emergent character — the debate (not yet an item)
+
+- **For:** "perceiving the spiritual" (Luk 24:37) is a recurring inner-being capability; capturing it would let synthesis aggregate it.
+- **Against (and the mechanical-only principle):** it is interpretive, not derivable from one verse's morphology — making it a VE item violates P1.
+- **Proposed resolution (to debate):** it is **not** a VE item; it **emerges** from the mechanical items — `faculty=perception` **+** `N1 object-type=spiritual-being`. Ensure N1 carries `object-type=spiritual-being`, and let the **synthesis layer** detect the pattern → the characteristic. This honours P1 and still captures it. The researcher's view (errors came from not consulting the original language) supports this: strengthen the mechanical items, let characteristics emerge.
+
+---
+
+# Part B — original design analysis (v1, 2026-06-14, retained as rationale)
+
 # L1/L2 fields — reliable measures, what's needed, expected answer
 
 > **Investigation · v1 · 2026-06-14.** Records the discussion that reframed the L1/L2 reliability problem, then works through each of the 14 verse-extraction fields: *what it is · what is needed to arrive at the answer (its reliable measure[s]) · the expected answer.* Read-only design analysis; no DB change.
