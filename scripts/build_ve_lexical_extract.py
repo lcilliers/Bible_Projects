@@ -38,12 +38,18 @@ def main():
     cc = a.cluster
     desc = (cur.execute("SELECT description FROM cluster WHERE cluster_code=?", (cc,)).fetchone() or [None])[0]
 
+    # fan-out: every term in the cluster's verses (not just the cluster's terms), so each compound node
+    # resolves into the co-term's FULL lexical record inside the same verse payload.
     units = cur.execute("""
         SELECT vc.id vcid, vr.reference ref, m.strongs_number sn, m.transliteration tr, m.gloss gloss,
-               m.language lang, vr.target_word tw, vr.morph_code morph, vr.stem stem
+               m.language lang, m.cluster_code occ_cc, vr.target_word tw, vr.morph_code morph, vr.stem stem
         FROM verse_context vc JOIN wa_verse_records vr ON vr.id=vc.verse_record_id AND COALESCE(vr.delete_flagged,0)=0
         JOIN mti_terms m ON m.id=vc.mti_term_id
-        WHERE m.cluster_code=? AND COALESCE(vc.delete_flagged,0)=0
+        WHERE COALESCE(vc.delete_flagged,0)=0 AND vr.reference IN (
+            SELECT DISTINCT vr2.reference FROM verse_context vc2
+            JOIN wa_verse_records vr2 ON vr2.id=vc2.verse_record_id AND COALESCE(vr2.delete_flagged,0)=0
+            JOIN mti_terms m2 ON m2.id=vc2.mti_term_id
+            WHERE m2.cluster_code=? AND COALESCE(vc2.delete_flagged,0)=0)
         ORDER BY vr.book_id, vr.chapter, vr.verse_num, vc.id""", (cc,)).fetchall()
 
     # field order for the lexical block
@@ -64,7 +70,8 @@ def main():
         lemma = concise((cur.execute("SELECT medium_def FROM lexicon WHERE strong=?", (base(u["sn"]),)).fetchone() or [None])[0])
         au = cur.execute("""SELECT value FROM ve_lexical WHERE verse_context_id=? AND ve_label='lexical_note'
             AND COALESCE(delete_flagged,0)=0""", (u["vcid"],)).fetchone()
-        occ = {"term": {"strong": u["sn"], "translit": u["tr"], "gloss": u["gloss"], "language": u["lang"]},
+        occ = {"term": {"strong": u["sn"], "translit": u["tr"], "gloss": u["gloss"], "language": u["lang"],
+                        "cluster": u["occ_cc"], "focus_cluster": (u["occ_cc"] == cc)},
                "verse_report": {"target_word": u["tw"], "morph": u["morph"], "stem": u["stem"]},
                "lexical": {"sense": u["tw"], "lemma_meaning": lemma, **ordered}}
         if a.with_audit:
@@ -86,10 +93,12 @@ def main():
     os.makedirs(odir, exist_ok=True)
     for bi, chunk in enumerate(chunks, 1):
         nocc = sum(len(v["term_occurrences"]) for v in chunk)
-        payload = {"meta": {"cluster": cc, "description": desc, "batch": f"{bi}/{len(chunks)}" if a.batch else "full",
+        payload = {"meta": {"focus_cluster": cc, "description": desc, "batch": f"{bi}/{len(chunks)}" if a.batch else "full",
                             "verses": len(chunk), "occurrences": nocc,
                             "source": "ve_lexical v2_engine_iter1 + verse_morphology measure layer (schema 3.34.0)",
-                            "field_note": "per term-in-verse; lexical fields are mechanically derived (01b v2); UNRESOLVED = expected-but-undetermined"},
+                            "layout": "VERSE-based fan-out: each verse lists EVERY term in it (focus_cluster=true marks the cluster of interest); "
+                                      "a term's `compound` references co-terms that are present as full records in the same verse — fan out by matching translit/strong",
+                            "field_note": "per term-in-verse; mechanically derived (01b v2); UNRESOLVED = expected-but-undetermined"},
                    "data": chunk}
         suffix = (f"-b{bi}of{len(chunks)}" if a.batch else "") + ('-narr' if a.with_narration else '')
         out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-20260616{suffix}.json"
