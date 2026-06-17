@@ -26,6 +26,8 @@ def main():
     ap.add_argument("--cluster", required=True)
     ap.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
+    if a.cluster == "T2":                                  # 01c §A3/B0: T2 is never read (reference only)
+        raise SystemExit("REFUSED: T2 is a reference cluster — never sent to an API read (01c §A3).")
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     rows = cur.execute("""

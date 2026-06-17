@@ -1,5 +1,7 @@
 # 01b — Verse Lexical (VE) Generation — CANONICAL RULES (v2 · 2026-06-16)
 
+> **Binding companion (2026-06-17):** [01c — T2 treatment & API governance](01c-T2-treatment-and-API-governance.md) fixes (a) the T2 content/grammatical split and its treatment in generation/JSON/reads, and (b) the API governance (batched · ordered · token-minimal · time-monitored with circuit-breaker · self-verified · residue-only — *API never substitutes for a mechanical rule*). Engine alignment + compliance precede any API run.
+>
 > **This is the canonical instruction for verse-lexical generation.** Every VE item is produced by the deterministic rules below. The original v1 reliability analysis that motivated this is **retained as Part B** at the foot of the file. **Status: design SETTLED 2026-06-16** — all open questions (Q1–Q14) and rule conflicts (C-1…C-6) decided (see inline **[Qn RESOLVED]** / §5 / §7). Remaining work is **list-building + build**, not design.
 
 ## 1. Governing principles

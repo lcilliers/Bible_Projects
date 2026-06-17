@@ -75,12 +75,21 @@ def main():
 
     wordcache = {}
     timings = []
-    nrows = nunits = nnarr = 0
+    nrows = nunits = nnarr = nskip_t2 = 0
     t_verse = time.time(); cur_verse = None
     for u in units:
         if u["verse_id"] not in wordcache:
             wordcache[u["verse_id"]] = eng.load_words(cur, u["verse_id"])
         words = wordcache[u["verse_id"]]
+        # 01c §A3/A4: T2-grammatical units (function words: prep/pronoun/particle/adverb/conj/…) are
+        # NOT inner-being terms — generate no lexical for them. T2-content (noun/verb/adjective) is kept as context.
+        if u["cluster"] == "T2":
+            _tw = eng.find_term(words, u["strong"])
+            if _tw is None or _tw["pos"] not in ("noun", "verb", "adjective"):
+                if a.live:   # dispose any stale rows for this now-excluded unit (no rewrite)
+                    cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=? AND source_provenance IN ('v2_engine_iter1','audit')", (u["vcid"],))
+                nskip_t2 += 1
+                continue
         coterms = cur.execute("""SELECT DISTINCT vr.transliteration tr, m.gloss gl, m.cluster_code cc, m.strongs_number st
             FROM verse_context vc2 JOIN wa_verse_records vr ON vr.id=vc2.verse_record_id AND COALESCE(vr.delete_flagged,0)=0
             JOIN mti_terms m ON m.id=vc2.mti_term_id
@@ -127,7 +136,8 @@ def main():
 
     tot = cur.execute("SELECT COUNT(*) FROM ve_lexical WHERE source_provenance=?", (PROV,)).fetchone()[0] if a.live else 0
     print(f"\n{'LIVE' if a.live else 'DRY-RUN'}: {nunits:,} units · {nrows:,} ve_lexical rows"
-          f"{' written ('+format(tot, ',')+' active v2 in table)' if a.live else ' (not written)'} · {nnarr:,} narration findings")
+          f"{' written ('+format(tot, ',')+' active v2 in table)' if a.live else ' (not written)'} · {nnarr:,} narration findings"
+          f" · {nskip_t2:,} T2-grammatical units skipped (01c §A3)")
     if timings:
         import statistics
         print(f"per-verse: mean {statistics.mean(timings)*1000:.1f}ms · max {max(timings)*1000:.0f}ms · circuit-breaker {MAX_SEC}s")

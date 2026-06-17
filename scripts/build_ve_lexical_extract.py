@@ -7,8 +7,11 @@ deterministic restatement of the lexical — redundant + larger for the AI; incl
   python scripts/build_ve_lexical_extract.py --cluster M01
   python scripts/build_ve_lexical_extract.py --cluster M01 --with-narration --out path.json
 """
-import argparse, json, os, re, sqlite3
+import argparse, json, os, re, sqlite3, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
+import morph_util
 DB = os.path.join("database", "bible_research.db")
+T2_CONTENT_POS = {"verb", "noun", "adjective"}  # 01c §A2: T2-content kept as context; grammatical T2 excluded
 
 FIELDS_GUIDE = {
     "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
@@ -79,7 +82,12 @@ def main():
              "cause_clause", "experiencer", "divine-involvement", "intensity", "valence", "immediate-response",
              "compound", "relational"]
     verses, vmap = [], {}
+    nskip_t2 = 0
     for u in units:
+        # 01c §A3: drop T2-grammatical co-terms (function words) from the fan-out — noise + token waste.
+        if u["occ_cc"] == "T2" and morph_util.morph_category(u["morph"]) not in T2_CONTENT_POS:
+            nskip_t2 += 1
+            continue
         # lexical items grouped
         lex = {}
         for r in cur.execute("""SELECT ve_label, value FROM ve_lexical WHERE verse_context_id=?
@@ -144,6 +152,7 @@ def main():
         js = json.dumps(payload, ensure_ascii=False, indent=2)
         open(out, "w", encoding="utf-8").write(js)
         print(f"WROTE {out}  ·  {len(chunk):,} verses · {nocc:,} occ · {len(js):,} chars ≈ {len(js)//4:,} tokens")
+    print(f"(01c §A3: {nskip_t2:,} T2-grammatical co-terms excluded from the fan-out)")
 
 
 if __name__ == "__main__":
