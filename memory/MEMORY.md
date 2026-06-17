@@ -16,6 +16,7 @@
 - [feedback_translit_always_with_gloss](feedback_translit_always_with_gloss.md) — TEMPLATE RULE (2026-06-15): a transliteration is NEVER shown alone — always pair with its gloss (e.g. ne.phesh "soul: life" (M25))
 - [project_ve_proposition_gap](project_ve_proposition_gap.md) — DIAGNOSIS (2026-06-15): VE pass captures the TERM not the PROPOSITION (object/cause/how/effect web); no verse complete; new VEs = argument roles; categorised work-list filed
 - [feedback_lexical_review_is_insight_coverage_not_stats](feedback_lexical_review_is_insight_coverage_not_stats.md) — FEEDBACK (2026-06-16): reviewing a lexical analysis = field-by-field insight-coverage audit across ALL VE fields, not just validating cited counts
+- [reference_canonical_tier_scheme_is_T0_T7](reference_canonical_tier_scheme_is_T0_T7.md) — REFERENCE (2026-06-17): canonical tiers = DB T0–T7 (173 active); T1–T8 framework doc v1_2 SUPERSEDED; M01-c1 used old labels (remap needed)
 - [project_measure_layer_persisted](project_measure_layer_persisted.md) — GOVERNING (2026-06-16, schema 3.34.0/M60): verse is now canonical (23,318); full-verse morphology + lexicon persisted in DB; verse_id FK; wa_verse_records unique by (ref,term_id) NOT ref
 - [project_column_wise_ve_hypothesis](project_column_wise_ve_hypothesis.md) — HYPOTHESIS (2026-06-11, active): reorganise verse-read ROW-WISE→COLUMN-WISE (each isolable VE question…
 
