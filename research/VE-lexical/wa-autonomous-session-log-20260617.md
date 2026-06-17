@@ -29,8 +29,11 @@ Residue at start: cause 7,446 · location 1,084 · divine-involvement 9,944 · o
 - **object-type — PARTIAL** (6,343 of 10,592 done; **4,249 remaining**). ~$3–4.
 - **divine-involvement — NOT STARTED** (9,944 residue).
 
-## ⛔ BLOCKED — Anthropic API credit exhausted (2026-06-17)
-The object-type run failed mid-stream: `400 invalid_request_error — "Your credit balance is too low to access the Anthropic API."` This is a **billing limit**, not a code/data fault. DB integrity `quick_check: ok`; all applied reads committed per-batch and intact; **fully resumable**.
+## ⛔ BLOCKED — API limits (2026-06-17)
+1. **First:** credit balance too low → credits loaded (cleared).
+2. **Then (current):** configured **usage/spend cap** reached — `"You have reached your specified API usage limits. You will regain access on 2026-07-01 at 00:00 UTC."` **Distinct from credits** — raise the limit in the Anthropic Console (Plans & Billing → Usage limits) or wait to 2026-07-01.
+
+object-type advanced to **3,019 M-cluster residue** (from 4,249) before the cap. DB integrity `quick_check: ok`; all applied reads committed per-batch; **fully resumable**.
 
 **To resume once credits are topped up** (no other changes needed — residue-only + resumable):
 ```

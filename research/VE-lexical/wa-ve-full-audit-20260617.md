@@ -6,7 +6,7 @@
 
 ## 0. Verdict
 
-**The database is healthy and internally consistent.** Integrity clean, no orphans, no FK violations, all M01 pilot reads preserved, the day's engine fixes verified on real data. The corpus is in a **known, documented, resumable** state. The only incomplete work is the **two remaining read fields (divine-involvement, object-type)**, halted by an **external API-credit limit** — not a code or data fault. Nothing requires rollback.
+**The database is healthy and internally consistent.** Integrity clean, no orphans, no FK violations, all M01 pilot reads preserved, the day's engine fixes verified on real data. The corpus is in a **known, documented, resumable** state. The only incomplete work is the **two remaining read fields (divine-involvement, object-type ~13k M-cluster items)**, halted by an **API usage cap** (credits were loaded, but a configured spend limit is reached; resets 2026-07-01 or raise it in the Console — §5) — not a code or data fault. Nothing requires rollback.
 
 ---
 
@@ -40,11 +40,11 @@ Residue = items still mechanically unresolved (the read target). **M-cluster** i
 |---|---|---|---|---|
 | **location** | full | **0** | 226 | ✅ DONE (26 spirit-seat · ~1,058 NONE) |
 | **cause** | full | **0** | 1,882 | ✅ DONE (3,253 causes · ~4,193 NONE) |
-| **object-type** | 6,343 | **4,249** | 2,900 | ◍ PARTIAL — blocked |
+| **object-type** | 7,573 | **3,019** | ~2,900 | ◍ PARTIAL — blocked |
 | **divine-involvement** | 256 (M01 only) | **9,944** | 2,900 | ⏸ NOT STARTED — blocked |
 | **valence** | mech only | n/a (no UNRESOLVED token) | — | ⏸ PARKED (your next-cluster eval) |
 
-**True remaining read work (M-cluster): divine 9,944 + object-type 4,249 = 14,193 items**, blocked on API credit. Estimated ~$9–10 to finish.
+**True remaining read work (M-cluster): divine 9,944 + object-type 3,019 = 12,963 items**, blocked on the API usage cap (§5). Estimated ~$8 to finish.
 
 ---
 
@@ -78,7 +78,7 @@ The engine's own **read-back audit (01b §6b — founded + coverage, loop-until-
 
 ## 5. Blocked / outstanding (action needed)
 
-1. **⛔ API credit exhausted** — `400 invalid_request_error: "credit balance is too low"`. Halted object-type mid-run and prevented divine entirely. **Top up credits**, then resume (resumable, residue-only):
+1. **⛔ API usage cap reached** — credits were topped up (that blocker cleared), but a **configured usage/spend limit** is now hit: `400 invalid_request_error: "You have reached your specified API usage limits. You will regain access on 2026-07-01 at 00:00 UTC."` This is **distinct from credits** — it's a spend cap set in the Anthropic Console. **Action: raise the monthly usage limit (Console → Plans & Billing → Usage limits), or wait until 2026-07-01.** Then resume (resumable, residue-only):
    ```text
    python scripts/_run_ve_reads_governed.py --field object-type --live --verses-per-batch 45
    python scripts/_run_ve_reads_governed.py --field divine-involvement --live --verses-per-batch 45
