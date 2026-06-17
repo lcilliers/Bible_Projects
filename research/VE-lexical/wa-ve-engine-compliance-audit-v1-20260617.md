@@ -47,7 +47,7 @@ Status: ✅ to spec · ◐ partial/seed · ⛔ stub or unimplemented.
 | 5 | location | **always** sense-gated (C-2); dedup simple values (P3) | sense-gate **only** G4151/H7307; **no dedup** (triple-heart, ln 182-191) | ◐ I1 + C-2 partial |
 | 6 | origin | within-person · received · generational · **giver→received (C-5)** | **only** 'from'-prep→received (ln 271) | ⛔ 3 of 4 rules + C-5 missing |
 | 7 | faculty | R1 term-lemma **+ R2 co-occurring faculty-lemma** | **R1 only**; `FACULTY_LEMMA` list is **dead code** for assignment (used only in audit, ln 313) | ⛔ R2 unimplemented |
-| 8 | divine-involvement | full role taxonomy: agent·possessor·giver·object·addressee·none (C-3) | **only** `present` / `agent/subject` (ln 239-245) | ⛔ stub — read does the rest |
+| 8 | divine-involvement | full role taxonomy: agent·possessor·giver·object·addressee·none (C-3) | **VALIDATED 2026-06-17:** NONE (no divine) · `object` (adjacency/'et, 92%) · UNRESOLVED (rest→read); old `present` removed | ◐ **resolved-as-designed** — object mechanical; agent/giver/possessor interpretive→read |
 | 11 | immediate-response | coordinated reaction verb | implemented, light (ln 292) | ◐ seed |
 | 12 | **produces-effect** | result-clause effect (Q13, included) | **not emitted — 0 rows in DB** | ⛔ missing entirely |
 | 13 | relational | {direction → object}; expectation test | preposition text only, no object, no NONE/UNRESOLVED (ln 265) | ◐ crude |

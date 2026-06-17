@@ -251,13 +251,19 @@ def derive(unit, words, step):
         if exp_p:
             out.append(("experiencer", {1: "self", 2: "other (addressed)", 3: "other"}[exp_p], f"person={exp_p}"))
 
-    # 8 divine involvement (divine lemma -> state role) [C-3/C-5]
+    # 8 divine involvement (God's role) [C-3]: state the ROLE. VALIDATED (M01, 2026-06-17): only the clean
+    #   OBJECT case is mechanical (divine immediately after the term, or 'et+divine after a verb-term) — 92%
+    #   vs the read. agent/giver/possessor/addressee OVERLAP morphologically (the role is the semantic judgement
+    #   "is God feared/acting/giving") → left UNRESOLVED for the read. No divine lemma → NONE (present-only).
     div = next((w for w in words if any(s in DIVINE for s in w["strongs"])), None)
     if div is not None:
-        role = "agent/subject" if div["finite"] or div["person"] == 3 else "present"
-        if gv is not None and abs(div["i"] - gv["i"]) <= 1:
-            role = "agent/subject"
-        out.append(("divine-involvement", role, f"divine lemma '{div['text']}'"))
+        before = next((w for w in words if w["i"] == div["i"] - 1), None)
+        et_obj = before is not None and "H853" in before["strongs"] and term is not None and term["pos"] == "verb"
+        if (ti is not None and div["i"] == ti + 1) or et_obj:
+            out.append(("divine-involvement", "object", f"divine '{div['text']}' governed as object (adjacency/'et)"))
+        else:
+            out.append(("divine-involvement", "UNRESOLVED",
+                        f"divine '{div['text']}' present; role (agent/giver/possessor/addressee) interpretive → read"))
 
     # 7 faculty — R1: the term's OWN meaning is a faculty (lemma-classified, de-circularised);
     #             R2: a faculty word in the term's neighbourhood
