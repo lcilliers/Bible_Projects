@@ -54,7 +54,8 @@ Status: ✅ to spec · ◐ partial/seed · ⛔ stub or unimplemented.
 | N1 | object/object-type | governed head noun; type incl. **group**; thing/abstract split | raw surface word (determiner leak, I3); type **lumps** thing/abstract (14,055); no group (ln 100-105, 203-229) | ◐ I3 + lump |
 | N2 | cause | causal-clause subject / perception object | detect→`pending-read` (defers to read); perception case only (ln 280) | ◐ detect-and-defer |
 | N4 | intensity | intensifier lemmas | 5-entry seed list (ln 40) | ◐ seed |
-| — | valence | term-inherent ∪ context; **VALIDATED 2026-06-17:** only *prohibition (’al/mē)→forbidden* is mechanical (93%); *commanded/righteous/neutral* are interpretive | now: term-inherent ∪ prohibition→forbidden (added) | ◐ **resolved-as-designed** — forbidden mechanical; rest legitimately read (NOT a stub) |
+| — | valence | term-inherent ∪ context; **VALIDATED 2026-06-17:** prohibition (’al/mē)→forbidden is **~80%** (the *’al-tira* "fear not" reassurance is morphologically identical to a prohibition); commanded/righteous/neutral interpretive | term-inherent ∪ prohibition→forbidden | ◐ forbidden ~80% (flagged for next-cluster eval); rest read |
+| — | **⚠ ZERO-PAD BUG (root cause, fixed 2026-06-17)** | seed lists `H430`/`H408`/`H853` never matched padded DB `H0430`/`H0408`/`H0853` | `_canon()` pads all seed lists | ✅ fixed — re-inflated divine recall, exposed true valence precision; **much of the "stub" appearance was this bug** |
 | — | experiencer | possessor/subject person | implemented (ln 208-237) | ✅ |
 | — | mode | column | emitted, skipped to column | ✅ |
 | — | lexical_note | audit founded+coverage | implemented (ln 304-318) | ✅ |

@@ -18,6 +18,15 @@ sys.stdout.reconfigure(encoding="utf-8")
 DB = os.path.join("database", "bible_research.db")
 SPAN = re.compile(r"<span\s+morph='([^']*)'\s+strong='([^']*)'>([^<]*)</span>", re.I)
 
+
+def _canon(s):
+    """canonical Strong's = zero-pad the numeric part to 4 digits, matching the DB measure layer
+    (H430→H0430, G575→G0575, H853→H0853). FIX 2026-06-17: seed lists used the short form and so
+    never matched the padded measure-layer strongs — silently breaking divine/negation/faculty detection."""
+    m = re.match(r"^([HG])(\d+)([A-Za-z]*)$", s or "")
+    return f"{m.group(1)}{int(m.group(2)):04d}{m.group(3)}" if m else (s or "")
+
+
 # ---- seed lists (Strong's-based; 01b iteration-1; expand later) ----
 SEAT = {  # base Strong's -> constitutional level
     "H5315": "soul", "H5314": "soul", "G5590": "soul",
@@ -47,6 +56,20 @@ PERC_COG = PERCEPTION | COGNITION
 CAUSAL = {"H3588", "G3754", "G1063", "G1360"}           # ki / hoti / gar / dioti
 COORD = {"H9002", "G2532"}                              # waw / kai
 SPIRIT_BEINGS = {"G4151", "G1140", "H7307", "H7700"}    # pneuma / daimonion / ruach / shed
+# normalise every Strong's-keyed seed list to the DB's zero-padded 4-digit form (FIX 2026-06-17)
+SEAT = {_canon(k): v for k, v in SEAT.items()}
+DIVINE = {_canon(s) for s in DIVINE}
+FACULTY_LEMMA = {_canon(k): v for k, v in FACULTY_LEMMA.items()}
+INTENSIFIER = {_canon(k): v for k, v in INTENSIFIER.items()}
+FROM_PREP = {_canon(s) for s in FROM_PREP}
+INHERENT_VALENCE = {_canon(k): v for k, v in INHERENT_VALENCE.items()}
+NEGATION = {_canon(s) for s in NEGATION}
+PERCEPTION = {_canon(s) for s in PERCEPTION}
+COGNITION = {_canon(s) for s in COGNITION}
+PERC_COG = PERCEPTION | COGNITION
+CAUSAL = {_canon(s) for s in CAUSAL}
+COORD = {_canon(s) for s in COORD}
+SPIRIT_BEINGS = {_canon(s) for s in SPIRIT_BEINGS}
 GRAMMAR = {"article", "preposition", "conjunction", "particle", "suffix"}  # POS that aren't content
 # faculty classified from a TERM's OWN meaning (de-circularised; stems, prefix-boundary matched)
 FACULTY_GLOSS = {
@@ -258,7 +281,7 @@ def derive(unit, words, step):
     div = next((w for w in words if any(s in DIVINE for s in w["strongs"])), None)
     if div is not None:
         before = next((w for w in words if w["i"] == div["i"] - 1), None)
-        et_obj = before is not None and "H853" in before["strongs"] and term is not None and term["pos"] == "verb"
+        et_obj = before is not None and _canon("H853") in before["strongs"] and term is not None and term["pos"] == "verb"
         if (ti is not None and div["i"] == ti + 1) or et_obj:
             out.append(("divine-involvement", "object", f"divine '{div['text']}' governed as object (adjacency/'et)"))
         else:
@@ -307,7 +330,7 @@ def derive(unit, words, step):
     volitive = mood in ("imperative", "jussive", "cohortative", "imperfect", "subjunctive")
     # ONLY dedicated prohibition particles — 'al (vetitive) / me. lo'+imperfect is dropped: it is
     # ambiguous between prohibition ("you shall not") and description/promise ("they shall not fear").
-    forbidden = volitive and p in (2, 3) and ("H408" in negs or "G3361" in negs)
+    forbidden = volitive and p in (2, 3) and (_canon("H408") in negs or _canon("G3361") in negs)
     if forbidden:
         out.append(("valence", "forbidden", f"prohibition ({'/'.join(sorted(negs))}) + {mood} on '{term_verb['text']}'"))
     elif v_inh:
