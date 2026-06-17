@@ -24,10 +24,22 @@
 ## API reads (governed; valence parked)
 Residue at start: cause 7,446 · location 1,084 · divine-involvement 9,944 · object-type 10,592 = **29,066 items / 11,800 verses (~$17 est)**.
 
-- **location — DONE** ✓ converged to 0 residue (26 spirit-seat · 1,058 NONE). ~$0.50. Run→re-run-to-converge pattern works (model omits ~20% per pass; re-run mops up).
-- **cause — running** (background, `--verses-per-batch 45`, log `outputs/ve-read-cause-log-20260617.txt`).
-- object-type — queued.
-- divine-involvement — queued.
+- **location — DONE** ✓ 0 residue (26 spirit-seat · 1,058 NONE). ~$0.50.
+- **cause — DONE** ✓ 0 residue (3,253 causes · 4,193 NONE). ~$3.54. Tightened prompt → ~100% in one pass.
+- **object-type — PARTIAL** (6,343 of 10,592 done; **4,249 remaining**). ~$3–4.
+- **divine-involvement — NOT STARTED** (9,944 residue).
+
+## ⛔ BLOCKED — Anthropic API credit exhausted (2026-06-17)
+The object-type run failed mid-stream: `400 invalid_request_error — "Your credit balance is too low to access the Anthropic API."` This is a **billing limit**, not a code/data fault. DB integrity `quick_check: ok`; all applied reads committed per-batch and intact; **fully resumable**.
+
+**To resume once credits are topped up** (no other changes needed — residue-only + resumable):
+```
+python scripts/_run_ve_reads_governed.py --field object-type --live --verses-per-batch 45   # finishes the 4,249
+python scripts/_run_ve_reads_governed.py --field divine-involvement --live --verses-per-batch 45
+# then re-run each once more to converge residue→0, then:
+python scripts/export_ve_status_reports.py
+```
+**Read spend so far ≈ $8** (location + cause + partial object-type). Remaining est ≈ $9–10 (object-type tail + divine). Valence still parked.
 
 ## Next
 Per field: run → re-run to converge (residue→0) → next field. Then regenerate reports A & B with full API coverage.
