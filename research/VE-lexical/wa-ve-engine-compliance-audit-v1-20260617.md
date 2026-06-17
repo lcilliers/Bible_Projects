@@ -54,7 +54,7 @@ Status: ✅ to spec · ◐ partial/seed · ⛔ stub or unimplemented.
 | N1 | object/object-type | governed head noun; type incl. **group**; thing/abstract split | raw surface word (determiner leak, I3); type **lumps** thing/abstract (14,055); no group (ln 100-105, 203-229) | ◐ I3 + lump |
 | N2 | cause | causal-clause subject / perception object | detect→`pending-read` (defers to read); perception case only (ln 280) | ◐ detect-and-defer |
 | N4 | intensity | intensifier lemmas | 5-entry seed list (ln 40) | ◐ seed |
-| — | valence | term-inherent **∪ context (imperative→commanded, prohibition→forbidden)** | term-inherent **only** (4-entry list; no context, ln 275) | ⛔ stub — read does the rest |
+| — | valence | term-inherent ∪ context; **VALIDATED 2026-06-17:** only *prohibition (’al/mē)→forbidden* is mechanical (93%); *commanded/righteous/neutral* are interpretive | now: term-inherent ∪ prohibition→forbidden (added) | ◐ **resolved-as-designed** — forbidden mechanical; rest legitimately read (NOT a stub) |
 | — | experiencer | possessor/subject person | implemented (ln 208-237) | ✅ |
 | — | mode | column | emitted, skipped to column | ✅ |
 | — | lexical_note | audit founded+coverage | implemented (ln 304-318) | ✅ |

@@ -40,6 +40,7 @@ FACULTY_LEMMA = {  # R2 indirect: faculty signal lemmas (Strong's -> faculty)
 INTENSIFIER = {"H7227": "many", "H7231": "many", "H3966": "very", "H3605": "all", "G4183": "many"}
 FROM_PREP = {"H4480", "G575", "G1537"}                  # min / apo / ek -> received-from-outside
 INHERENT_VALENCE = {"H7451": "sinful", "H7563": "sinful", "H6662": "righteous", "H6666": "righteous"}
+NEGATION = {"H3808", "H408", "G3361", "G3756"}          # lo' / 'al / me / ou — prohibition markers
 PERCEPTION = {"G3708", "G1492", "G991", "G2334", "H7200", "H2372"}
 COGNITION = {"G1380", "G1097", "H3045"}
 PERC_COG = PERCEPTION | COGNITION
@@ -95,6 +96,20 @@ def agree(morph):
     if m:
         return (3, m.group(1), m.group(2))
     return (None, None, None)
+
+
+def verb_mood(w):
+    """volitive mood of a verb word from its morph: imperative | jussive | cohortative | imperfect |
+    subjunctive | None. Hebrew/Aramaic: HV{stem}{conj} — conj at index 3 (v=imperative, j=jussive,
+    h=cohortative, i=imperfect). Greek: V-TVM... — mood at index 4 (M=imperative, S=subjunctive)."""
+    if not w:
+        return None
+    m = w.get("m0") or ""
+    if len(m) > 3 and m[0] in ("H", "A") and m[1] == "V":
+        return {"v": "imperative", "j": "jussive", "h": "cohortative", "i": "imperfect"}.get(m[3])
+    if m.startswith("V-") and len(m) > 4:
+        return {"M": "imperative", "S": "subjunctive"}.get(m[4])
+    return None
 
 
 def obj_type(w):
@@ -272,10 +287,27 @@ def derive(unit, words, step):
     if ti is not None and any(s in FROM_PREP for w in words if abs(w["i"] - ti) <= 2 for s in w["strongs"]):
         out.append(("origin", "received-from-outside", "'from' preposition (min/apo/ek) near term"))
 
-    # valence (expectation test): term-inherent moral lemma -> value; else silent NONE (never imputed)
+    # valence [01b §4b]: term-inherent ∪ CONTEXT (imperative→commanded, negation+volitive→forbidden).
+    #   Only the morphologically-decidable slice is mechanical; interpretive commanded/righteous/neutral
+    #   (imperfect/infinitive/noun-duty, fear-of-God=righteous) stay silent → NONE for the read (expectation test, P5).
+    #   A prohibition is ADDRESSED (2nd/3rd person) — '1st-person "I will not fear" = resolve, not forbidden.
+    #   Forbidden needs a true prohibition marker: 'al (vetitive), me (+imperative/subjunctive), or lo'+2/3-person volitive.
+    term_verb = term if (term and term["pos"] == "verb") else gv
+    mood = verb_mood(term_verb)
+    p = person(term_verb["m0"]) if term_verb else None
+    negs = ({s for w in words if abs(w["i"] - term_verb["i"]) <= 3 for s in w["strongs"] if s in NEGATION}
+            if term_verb else set())
     v_inh = next((INHERENT_VALENCE[s] for s in (term["strongs"] if term else []) if s in INHERENT_VALENCE), None)
-    if v_inh:
+    volitive = mood in ("imperative", "jussive", "cohortative", "imperfect", "subjunctive")
+    # ONLY dedicated prohibition particles — 'al (vetitive) / me. lo'+imperfect is dropped: it is
+    # ambiguous between prohibition ("you shall not") and description/promise ("they shall not fear").
+    forbidden = volitive and p in (2, 3) and ("H408" in negs or "G3361" in negs)
+    if forbidden:
+        out.append(("valence", "forbidden", f"prohibition ({'/'.join(sorted(negs))}) + {mood} on '{term_verb['text']}'"))
+    elif v_inh:
         out.append(("valence", v_inh, "term-inherent valence"))
+    # else: silent → NONE. NOTE: 'commanded' is NOT mechanised — an imperative ("fear the LORD") is BOTH
+    #   commanded and (the fear) righteous; the choice is interpretive (validated ~50% precise) → routed to the read.
 
     # N2 cause — DETECT + POINT (Alt 1; clean resolution is the read = Alt 2)
     facs = [v for (it, v, _c) in out if it == "faculty"]
