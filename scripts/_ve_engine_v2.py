@@ -216,15 +216,20 @@ def derive(unit, words, step):
         role = "qualifier" if cc == "T2" else ("co-seated" if base(st) in SEAT else "partner")
         out.append(("compound", f'{tr} "{gl}" — {role}', f"co-occurs · {st} ({cc})"))
 
-    # 5 location (seat lemma in verse, sense-gated; unclear -> UNRESOLVED)
+    # 5 location (seat lemma in verse, sense-gated; unclear -> UNRESOLVED). I1 FIX 2026-06-17: de-dup —
+    #   one row per distinct level even if several seat-words of the same level co-occur (no 'triple-heart').
+    seen_loc = set()
     for w in words:
         for st in w["strongs"]:
             if st in SEAT:
                 lvl = SEAT[st]
                 gloss = (step.vocab(st).get("medium_def") or "")
-                if st in ("G4151", "H7307") and SEAT_NONSEAT_SENSE.search(w["text"] + " " + gloss):
-                    out.append(("location", "UNRESOLVED", f"seat-term {st} present but sense may be non-seat ('{w['text']}')"))
-                else:
+                if st in (_canon("G4151"), _canon("H7307")) and SEAT_NONSEAT_SENSE.search(w["text"] + " " + gloss):
+                    if "UNRESOLVED" not in seen_loc:
+                        seen_loc.add("UNRESOLVED")
+                        out.append(("location", "UNRESOLVED", f"seat-term {st} present but sense may be non-seat ('{w['text']}')"))
+                elif lvl not in seen_loc:
+                    seen_loc.add(lvl)
                     out.append(("location", lvl, f"seat-term {st} ('{w['text']}')"))
                 break
 
