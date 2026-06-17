@@ -8,53 +8,53 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 
 | cluster | cause | location | divine-involvement | object-type | valence |
 |---|---|---|---|---|---|
-| M01 | 1/178/0 | 100/2/0 | 104/256/76 | 110/431/0 | 0/1033/0 |
-| M02 | 2/111/0 | 49/0/0 | 323/0/286 | 101/229/50 | 28/0/0 |
-| M03 | 1/202/0 | 138/0/0 | 271/0/268 | 110/254/66 | 164/0/0 |
-| M04 | 2/254/0 | 156/0/0 | 470/0/435 | 177/261/84 | 18/0/0 |
-| M05 | 1/158/0 | 141/0/0 | 672/0/604 | 330/170/213 | 25/0/0 |
-| M06 | 0/72/0 | 59/0/0 | 141/0/127 | 79/162/25 | 5/0/0 |
-| M07 | 1/78/0 | 26/0/0 | 106/0/101 | 80/103/48 | 14/0/0 |
-| M08 | 0/54/0 | 79/0/0 | 235/0/212 | 138/179/83 | 18/0/0 |
-| M09 | 0/17/0 | 19/0/0 | 46/0/45 | 28/28/20 | 1/0/0 |
-| M10 | 0/166/0 | 160/0/0 | 528/0/478 | 240/284/134 | 29/0/0 |
-| M10b | 0/37/0 | 66/0/0 | 161/0/142 | 51/79/33 | 188/0/0 |
-| M10c | 0/44/0 | 52/0/0 | 56/0/53 | 51/84/36 | 6/0/0 |
-| M11 | 0/43/0 | 29/0/0 | 112/0/106 | 87/99/56 | 3/0/0 |
-| M12 | 0/60/0 | 100/0/0 | 290/0/267 | 97/244/52 | 8/0/0 |
-| M13 | 1/28/0 | 64/0/0 | 239/0/220 | 68/93/37 | 11/0/0 |
-| M14 | 0/19/0 | 53/0/0 | 98/0/94 | 39/70/27 | 10/0/0 |
-| M15 | 0/159/0 | 221/0/0 | 482/0/438 | 325/549/179 | 32/0/0 |
-| M16 | 0/21/0 | 23/0/0 | 30/0/29 | 13/24/10 | 6/0/0 |
-| M17 | 0/13/0 | 27/0/0 | 92/0/78 | 47/45/21 | 5/0/0 |
-| M18 | 0/52/0 | 32/0/0 | 78/0/70 | 67/49/34 | 2/0/0 |
-| M19 | 0/49/0 | 44/0/0 | 152/0/125 | 71/89/22 | 13/0/0 |
-| M20 | 0/11/0 | 12/0/0 | 5/0/3 | 18/6/12 | 6/0/0 |
-| M21 | 0/55/0 | 29/0/0 | 195/0/144 | 184/82/89 | 5/0/0 |
-| M22 | 6/117/0 | 89/0/0 | 535/0/424 | 204/194/98 | 10/0/0 |
-| M23 | 0/139/0 | 131/2/0 | 561/0/513 | 381/308/291 | 31/0/0 |
-| M24 | 0/78/0 | 88/0/0 | 170/0/165 | 101/176/62 | 13/0/0 |
-| M25 | 0/100/0 | 443/23/0 | 502/0/468 | 109/232/55 | 17/0/0 |
-| M26 | 0/100/0 | 112/0/0 | 502/0/466 | 236/251/148 | 349/0/0 |
-| M27 | 0/55/0 | 54/0/0 | 155/0/148 | 62/143/32 | 165/0/0 |
-| M28 | 0/42/0 | 68/0/0 | 78/0/76 | 75/94/51 | 6/0/0 |
-| M29 | 1/26/0 | 32/0/0 | 100/0/77 | 67/33/35 | — |
-| M30 | 0/61/0 | 115/0/0 | 305/0/274 | 139/399/66 | 17/0/0 |
-| M31 | 0/30/0 | 19/0/0 | 84/0/75 | 106/0/86 | 13/0/0 |
-| M33 | 0/60/0 | 48/1/0 | 196/0/185 | 79/118/46 | 18/0/0 |
-| M34 | 0/21/0 | 17/0/0 | 51/0/48 | 27/20/22 | 2/0/0 |
-| M35 | 0/40/0 | 11/0/0 | 40/0/40 | 62/0/48 | 4/0/0 |
-| M36 | 0/48/0 | 35/0/0 | 223/0/179 | 136/109/36 | 3/0/0 |
-| M37 | 0/124/0 | 52/0/0 | 455/0/426 | 219/658/123 | 5/0/0 |
-| M38 | 0/46/0 | 40/0/0 | 150/0/136 | 89/91/54 | 1/0/0 |
-| M39 | 0/96/0 | 85/0/0 | 375/0/272 | 185/268/37 | 5/0/0 |
-| M41 | 0/140/0 | 158/0/0 | 518/0/418 | 315/590/135 | 24/0/0 |
-| M42 | 0/67/0 | 42/0/0 | 189/0/172 | 115/170/55 | 8/0/0 |
-| M43 | 0/7/0 | 6/0/0 | 25/0/24 | 18/7/15 | 4/0/0 |
-| M44 | 0/35/0 | 119/0/0 | 366/0/338 | 82/204/41 | 6/0/0 |
-| M45 | 0/27/0 | 12/0/0 | 67/0/67 | 65/36/57 | 4/0/0 |
-| M46 | 0/16/0 | 21/0/0 | 63/0/61 | 30/43/21 | 5/0/0 |
-| M47 | 0/75/0 | 1392/0/0 | 508/0/491 | 163/246/74 | 37/0/0 |
+| M01 | 1/178/0 | 100/2/0 | 28/278/0 | 110/431/0 | 0/1033/0 |
+| M02 | 2/111/0 | 49/0/0 | 37/187/0 | 51/279/0 | 28/0/0 |
+| M03 | 1/202/0 | 138/0/0 | 3/72/0 | 44/320/0 | 164/0/0 |
+| M04 | 2/254/0 | 156/0/0 | 35/126/0 | 93/345/0 | 18/0/0 |
+| M05 | 1/158/0 | 141/0/0 | 68/285/0 | 117/383/0 | 25/0/0 |
+| M06 | 0/72/0 | 59/0/0 | 14/35/0 | 54/187/0 | 5/0/0 |
+| M07 | 1/78/0 | 26/0/0 | 5/14/0 | 32/151/0 | 14/0/0 |
+| M08 | 0/54/0 | 79/0/0 | 23/46/0 | 55/262/0 | 18/0/0 |
+| M09 | 0/17/0 | 19/0/0 | 1/9/0 | 8/48/0 | 1/0/0 |
+| M10 | 0/166/0 | 160/0/0 | 50/47/0 | 106/418/0 | 29/0/0 |
+| M10b | 0/37/0 | 66/0/0 | 19/6/0 | 18/112/0 | 188/0/0 |
+| M10c | 0/44/0 | 52/0/0 | 3/1/0 | 15/120/0 | 6/0/0 |
+| M11 | 0/43/0 | 29/0/0 | 6/58/0 | 31/155/0 | 3/0/0 |
+| M12 | 0/60/0 | 100/0/0 | 23/100/0 | 45/296/0 | 8/0/0 |
+| M13 | 1/28/0 | 64/0/0 | 19/44/0 | 31/130/0 | 11/0/0 |
+| M14 | 0/19/0 | 53/0/0 | 4/20/0 | 12/97/0 | 10/0/0 |
+| M15 | 0/159/0 | 221/0/0 | 44/143/0 | 146/728/0 | 32/0/0 |
+| M16 | 0/21/0 | 23/0/0 | 1/3/0 | 3/34/0 | 6/0/0 |
+| M17 | 0/13/0 | 27/0/0 | 14/28/0 | 26/66/0 | 5/0/0 |
+| M18 | 0/52/0 | 32/0/0 | 8/20/0 | 33/83/0 | 2/0/0 |
+| M19 | 0/49/0 | 44/0/0 | 27/45/0 | 49/111/0 | 13/0/0 |
+| M20 | 0/11/0 | 12/0/0 | 2/0/0 | 6/18/0 | 6/0/0 |
+| M21 | 0/55/0 | 29/0/0 | 51/83/0 | 95/171/0 | 5/0/0 |
+| M22 | 6/117/0 | 89/0/0 | 111/209/0 | 106/292/0 | 10/0/0 |
+| M23 | 0/139/0 | 131/2/0 | 48/162/0 | 90/599/0 | 31/0/0 |
+| M24 | 0/78/0 | 88/0/0 | 5/29/0 | 39/238/0 | 13/0/0 |
+| M25 | 0/100/0 | 443/23/0 | 34/131/0 | 54/287/0 | 17/0/0 |
+| M26 | 0/100/0 | 112/0/0 | 36/186/0 | 88/399/0 | 349/0/0 |
+| M27 | 0/55/0 | 54/0/0 | 7/46/0 | 30/175/0 | 165/0/0 |
+| M28 | 0/42/0 | 68/0/0 | 2/7/0 | 24/145/0 | 6/0/0 |
+| M29 | 1/26/0 | 32/0/0 | 23/34/0 | 32/68/0 | — |
+| M30 | 0/61/0 | 115/0/0 | 31/64/0 | 73/465/0 | 17/0/0 |
+| M31 | 0/30/0 | 19/0/0 | 9/13/0 | 20/86/0 | 13/0/0 |
+| M33 | 0/60/0 | 48/1/0 | 11/87/0 | 33/164/0 | 18/0/0 |
+| M34 | 0/21/0 | 17/0/0 | 3/9/0 | 5/42/0 | 2/0/0 |
+| M35 | 0/40/0 | 11/0/0 | 0/11/0 | 14/48/0 | 4/0/0 |
+| M36 | 0/48/0 | 35/0/0 | 44/50/0 | 100/145/0 | 3/0/0 |
+| M37 | 0/124/0 | 52/0/0 | 29/207/0 | 96/781/0 | 5/0/0 |
+| M38 | 0/46/0 | 40/0/0 | 14/59/0 | 35/145/0 | 1/0/0 |
+| M39 | 0/96/0 | 85/0/0 | 103/176/0 | 148/305/0 | 5/0/0 |
+| M41 | 0/140/0 | 158/0/0 | 100/168/0 | 180/725/0 | 24/0/0 |
+| M42 | 0/67/0 | 42/0/0 | 17/54/0 | 60/225/0 | 8/0/0 |
+| M43 | 0/7/0 | 6/0/0 | 1/7/0 | 3/22/0 | 4/0/0 |
+| M44 | 0/35/0 | 119/0/0 | 28/126/0 | 41/245/0 | 6/0/0 |
+| M45 | 0/27/0 | 12/0/0 | 0/21/0 | 8/93/0 | 4/0/0 |
+| M46 | 0/16/0 | 21/0/0 | 2/18/0 | 9/64/0 | 5/0/0 |
+| M47 | 0/75/0 | 1392/0/0 | 17/145/0 | 89/320/0 | 37/0/0 |
 | T2 | 1884/0/1882 | 1047/0/226 | 3140/0/2900 | 3453/0/2900 | 113/0/0 |
 
 ## Full breakdown — every (cluster, VE item)
@@ -64,7 +64,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M01 | cause | 1 | 178 | 0 | 179 |
 | M01 | cause_clause | 293 | 0 | 0 | 293 |
 | M01 | compound | 2,060 | 0 | 0 | 2,060 |
-| M01 | divine-involvement | 104 | 256 | 76 | 360 |
+| M01 | divine-involvement | 28 | 278 | 0 | 306 |
 | M01 | experiencer | 732 | 0 | 0 | 732 |
 | M01 | faculty | 1,085 | 0 | 0 | 1,085 |
 | M01 | how | 276 | 0 | 0 | 276 |
@@ -82,7 +82,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M02 | cause | 2 | 111 | 0 | 113 |
 | M02 | cause_clause | 177 | 0 | 0 | 177 |
 | M02 | compound | 1,298 | 0 | 0 | 1,298 |
-| M02 | divine-involvement | 323 | 0 | 286 | 323 |
+| M02 | divine-involvement | 37 | 187 | 0 | 224 |
 | M02 | experiencer | 521 | 0 | 0 | 521 |
 | M02 | faculty | 617 | 0 | 0 | 617 |
 | M02 | how | 327 | 0 | 0 | 327 |
@@ -91,7 +91,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M02 | lexical_note | 703 | 0 | 0 | 703 |
 | M02 | location | 49 | 0 | 0 | 49 |
 | M02 | object | 337 | 0 | 0 | 337 |
-| M02 | object-type | 101 | 229 | 50 | 330 |
+| M02 | object-type | 51 | 279 | 0 | 330 |
 | M02 | origin | 12 | 0 | 0 | 12 |
 | M02 | relational | 163 | 0 | 0 | 163 |
 | M02 | sense | 703 | 0 | 0 | 703 |
@@ -100,7 +100,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M03 | cause | 1 | 202 | 0 | 203 |
 | M03 | cause_clause | 262 | 0 | 0 | 262 |
 | M03 | compound | 1,884 | 0 | 0 | 1,884 |
-| M03 | divine-involvement | 271 | 0 | 268 | 271 |
+| M03 | divine-involvement | 3 | 72 | 0 | 75 |
 | M03 | experiencer | 665 | 0 | 0 | 665 |
 | M03 | faculty | 1,050 | 0 | 0 | 1,050 |
 | M03 | how | 515 | 0 | 0 | 515 |
@@ -109,7 +109,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M03 | lexical_note | 936 | 0 | 0 | 936 |
 | M03 | location | 138 | 0 | 0 | 138 |
 | M03 | object | 382 | 0 | 0 | 382 |
-| M03 | object-type | 110 | 254 | 66 | 364 |
+| M03 | object-type | 44 | 320 | 0 | 364 |
 | M03 | origin | 14 | 0 | 0 | 14 |
 | M03 | relational | 160 | 0 | 0 | 160 |
 | M03 | sense | 936 | 0 | 0 | 936 |
@@ -118,7 +118,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M04 | cause | 2 | 254 | 0 | 256 |
 | M04 | cause_clause | 349 | 0 | 0 | 349 |
 | M04 | compound | 2,518 | 0 | 0 | 2,518 |
-| M04 | divine-involvement | 470 | 0 | 435 | 470 |
+| M04 | divine-involvement | 35 | 126 | 0 | 161 |
 | M04 | experiencer | 784 | 0 | 0 | 784 |
 | M04 | faculty | 1,625 | 0 | 0 | 1,625 |
 | M04 | how | 486 | 0 | 0 | 486 |
@@ -127,7 +127,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M04 | lexical_note | 1,236 | 0 | 0 | 1,236 |
 | M04 | location | 156 | 0 | 0 | 156 |
 | M04 | object | 464 | 0 | 0 | 464 |
-| M04 | object-type | 177 | 261 | 84 | 438 |
+| M04 | object-type | 93 | 345 | 0 | 438 |
 | M04 | origin | 21 | 0 | 0 | 21 |
 | M04 | relational | 213 | 0 | 0 | 213 |
 | M04 | sense | 1,236 | 0 | 0 | 1,236 |
@@ -136,7 +136,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M05 | cause | 1 | 158 | 0 | 159 |
 | M05 | cause_clause | 431 | 0 | 0 | 431 |
 | M05 | compound | 4,034 | 0 | 0 | 4,034 |
-| M05 | divine-involvement | 672 | 0 | 604 | 672 |
+| M05 | divine-involvement | 68 | 285 | 0 | 353 |
 | M05 | experiencer | 1,133 | 0 | 0 | 1,133 |
 | M05 | faculty | 1,236 | 0 | 0 | 1,236 |
 | M05 | how | 805 | 0 | 0 | 805 |
@@ -145,7 +145,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M05 | lexical_note | 1,725 | 0 | 0 | 1,725 |
 | M05 | location | 141 | 0 | 0 | 141 |
 | M05 | object | 666 | 0 | 0 | 666 |
-| M05 | object-type | 330 | 170 | 213 | 500 |
+| M05 | object-type | 117 | 383 | 0 | 500 |
 | M05 | origin | 35 | 0 | 0 | 35 |
 | M05 | relational | 562 | 0 | 0 | 562 |
 | M05 | sense | 1,725 | 0 | 0 | 1,725 |
@@ -154,7 +154,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M06 | cause | 0 | 72 | 0 | 72 |
 | M06 | cause_clause | 117 | 0 | 0 | 117 |
 | M06 | compound | 927 | 0 | 0 | 927 |
-| M06 | divine-involvement | 141 | 0 | 127 | 141 |
+| M06 | divine-involvement | 14 | 35 | 0 | 49 |
 | M06 | experiencer | 258 | 0 | 0 | 258 |
 | M06 | faculty | 441 | 0 | 0 | 441 |
 | M06 | how | 134 | 0 | 0 | 134 |
@@ -163,7 +163,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M06 | lexical_note | 448 | 0 | 0 | 448 |
 | M06 | location | 59 | 0 | 0 | 59 |
 | M06 | object | 243 | 0 | 0 | 243 |
-| M06 | object-type | 79 | 162 | 25 | 241 |
+| M06 | object-type | 54 | 187 | 0 | 241 |
 | M06 | origin | 7 | 0 | 0 | 7 |
 | M06 | relational | 56 | 0 | 0 | 56 |
 | M06 | sense | 448 | 0 | 0 | 448 |
@@ -172,7 +172,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M07 | cause | 1 | 78 | 0 | 79 |
 | M07 | cause_clause | 104 | 0 | 0 | 104 |
 | M07 | compound | 855 | 0 | 0 | 855 |
-| M07 | divine-involvement | 106 | 0 | 101 | 106 |
+| M07 | divine-involvement | 5 | 14 | 0 | 19 |
 | M07 | experiencer | 293 | 0 | 0 | 293 |
 | M07 | faculty | 413 | 0 | 0 | 413 |
 | M07 | how | 98 | 0 | 0 | 98 |
@@ -181,7 +181,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M07 | lexical_note | 374 | 0 | 0 | 374 |
 | M07 | location | 26 | 0 | 0 | 26 |
 | M07 | object | 194 | 0 | 0 | 194 |
-| M07 | object-type | 80 | 103 | 48 | 183 |
+| M07 | object-type | 32 | 151 | 0 | 183 |
 | M07 | origin | 4 | 0 | 0 | 4 |
 | M07 | relational | 81 | 0 | 0 | 81 |
 | M07 | sense | 374 | 0 | 0 | 374 |
@@ -190,7 +190,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M08 | cause | 0 | 54 | 0 | 54 |
 | M08 | cause_clause | 137 | 0 | 0 | 137 |
 | M08 | compound | 1,292 | 0 | 0 | 1,292 |
-| M08 | divine-involvement | 235 | 0 | 212 | 235 |
+| M08 | divine-involvement | 23 | 46 | 0 | 69 |
 | M08 | experiencer | 456 | 0 | 0 | 456 |
 | M08 | faculty | 72 | 0 | 0 | 72 |
 | M08 | how | 209 | 0 | 0 | 209 |
@@ -199,7 +199,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M08 | lexical_note | 679 | 0 | 0 | 679 |
 | M08 | location | 79 | 0 | 0 | 79 |
 | M08 | object | 344 | 0 | 0 | 344 |
-| M08 | object-type | 138 | 179 | 83 | 317 |
+| M08 | object-type | 55 | 262 | 0 | 317 |
 | M08 | origin | 17 | 0 | 0 | 17 |
 | M08 | relational | 147 | 0 | 0 | 147 |
 | M08 | sense | 679 | 0 | 0 | 679 |
@@ -208,7 +208,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M09 | cause | 0 | 17 | 0 | 17 |
 | M09 | cause_clause | 33 | 0 | 0 | 33 |
 | M09 | compound | 253 | 0 | 0 | 253 |
-| M09 | divine-involvement | 46 | 0 | 45 | 46 |
+| M09 | divine-involvement | 1 | 9 | 0 | 10 |
 | M09 | experiencer | 87 | 0 | 0 | 87 |
 | M09 | faculty | 49 | 0 | 0 | 49 |
 | M09 | how | 26 | 0 | 0 | 26 |
@@ -217,7 +217,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M09 | lexical_note | 131 | 0 | 0 | 131 |
 | M09 | location | 19 | 0 | 0 | 19 |
 | M09 | object | 63 | 0 | 0 | 63 |
-| M09 | object-type | 28 | 28 | 20 | 56 |
+| M09 | object-type | 8 | 48 | 0 | 56 |
 | M09 | origin | 2 | 0 | 0 | 2 |
 | M09 | relational | 48 | 0 | 0 | 48 |
 | M09 | sense | 131 | 0 | 0 | 131 |
@@ -226,7 +226,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10 | cause | 0 | 166 | 0 | 166 |
 | M10 | cause_clause | 411 | 0 | 0 | 411 |
 | M10 | compound | 3,352 | 0 | 0 | 3,352 |
-| M10 | divine-involvement | 528 | 0 | 478 | 528 |
+| M10 | divine-involvement | 50 | 47 | 0 | 97 |
 | M10 | experiencer | 1,044 | 0 | 0 | 1,044 |
 | M10 | faculty | 460 | 0 | 0 | 460 |
 | M10 | how | 799 | 0 | 0 | 799 |
@@ -235,7 +235,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10 | lexical_note | 1,487 | 0 | 0 | 1,487 |
 | M10 | location | 160 | 0 | 0 | 160 |
 | M10 | object | 558 | 0 | 0 | 558 |
-| M10 | object-type | 240 | 284 | 134 | 524 |
+| M10 | object-type | 106 | 418 | 0 | 524 |
 | M10 | origin | 32 | 0 | 0 | 32 |
 | M10 | relational | 257 | 0 | 0 | 257 |
 | M10 | sense | 1,487 | 0 | 0 | 1,487 |
@@ -244,7 +244,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10b | cause | 0 | 37 | 0 | 37 |
 | M10b | cause_clause | 109 | 0 | 0 | 109 |
 | M10b | compound | 1,187 | 0 | 0 | 1,187 |
-| M10b | divine-involvement | 161 | 0 | 142 | 161 |
+| M10b | divine-involvement | 19 | 6 | 0 | 25 |
 | M10b | experiencer | 288 | 0 | 0 | 288 |
 | M10b | faculty | 536 | 0 | 0 | 536 |
 | M10b | how | 366 | 0 | 0 | 366 |
@@ -253,7 +253,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10b | lexical_note | 537 | 0 | 0 | 537 |
 | M10b | location | 66 | 0 | 0 | 66 |
 | M10b | object | 143 | 0 | 0 | 143 |
-| M10b | object-type | 51 | 79 | 33 | 130 |
+| M10b | object-type | 18 | 112 | 0 | 130 |
 | M10b | origin | 24 | 0 | 0 | 24 |
 | M10b | relational | 87 | 0 | 0 | 87 |
 | M10b | sense | 537 | 0 | 0 | 537 |
@@ -262,7 +262,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10c | cause | 0 | 44 | 0 | 44 |
 | M10c | cause_clause | 66 | 0 | 0 | 66 |
 | M10c | compound | 400 | 0 | 0 | 400 |
-| M10c | divine-involvement | 56 | 0 | 53 | 56 |
+| M10c | divine-involvement | 3 | 1 | 0 | 4 |
 | M10c | experiencer | 199 | 0 | 0 | 199 |
 | M10c | how | 107 | 0 | 0 | 107 |
 | M10c | immediate-response | 54 | 0 | 0 | 54 |
@@ -270,7 +270,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M10c | lexical_note | 275 | 0 | 0 | 275 |
 | M10c | location | 52 | 0 | 0 | 52 |
 | M10c | object | 137 | 0 | 0 | 137 |
-| M10c | object-type | 51 | 84 | 36 | 135 |
+| M10c | object-type | 15 | 120 | 0 | 135 |
 | M10c | origin | 8 | 0 | 0 | 8 |
 | M10c | relational | 65 | 0 | 0 | 65 |
 | M10c | sense | 275 | 0 | 0 | 275 |
@@ -279,7 +279,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M11 | cause | 0 | 43 | 0 | 43 |
 | M11 | cause_clause | 73 | 0 | 0 | 73 |
 | M11 | compound | 669 | 0 | 0 | 669 |
-| M11 | divine-involvement | 112 | 0 | 106 | 112 |
+| M11 | divine-involvement | 6 | 58 | 0 | 64 |
 | M11 | experiencer | 219 | 0 | 0 | 219 |
 | M11 | faculty | 48 | 0 | 0 | 48 |
 | M11 | how | 9 | 0 | 0 | 9 |
@@ -288,7 +288,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M11 | lexical_note | 289 | 0 | 0 | 289 |
 | M11 | location | 29 | 0 | 0 | 29 |
 | M11 | object | 212 | 0 | 0 | 212 |
-| M11 | object-type | 87 | 99 | 56 | 186 |
+| M11 | object-type | 31 | 155 | 0 | 186 |
 | M11 | origin | 4 | 0 | 0 | 4 |
 | M11 | relational | 112 | 0 | 0 | 112 |
 | M11 | sense | 289 | 0 | 0 | 289 |
@@ -297,7 +297,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M12 | cause | 0 | 60 | 0 | 60 |
 | M12 | cause_clause | 139 | 0 | 0 | 139 |
 | M12 | compound | 1,439 | 0 | 0 | 1,439 |
-| M12 | divine-involvement | 290 | 0 | 267 | 290 |
+| M12 | divine-involvement | 23 | 100 | 0 | 123 |
 | M12 | experiencer | 420 | 0 | 0 | 420 |
 | M12 | faculty | 233 | 0 | 0 | 233 |
 | M12 | how | 231 | 0 | 0 | 231 |
@@ -306,7 +306,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M12 | lexical_note | 741 | 0 | 0 | 741 |
 | M12 | location | 100 | 0 | 0 | 100 |
 | M12 | object | 350 | 0 | 0 | 350 |
-| M12 | object-type | 97 | 244 | 52 | 341 |
+| M12 | object-type | 45 | 296 | 0 | 341 |
 | M12 | origin | 20 | 0 | 0 | 20 |
 | M12 | relational | 118 | 0 | 0 | 118 |
 | M12 | sense | 741 | 0 | 0 | 741 |
@@ -315,7 +315,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M13 | cause | 1 | 28 | 0 | 29 |
 | M13 | cause_clause | 139 | 0 | 0 | 139 |
 | M13 | compound | 1,289 | 0 | 0 | 1,289 |
-| M13 | divine-involvement | 239 | 0 | 220 | 239 |
+| M13 | divine-involvement | 19 | 44 | 0 | 63 |
 | M13 | experiencer | 328 | 0 | 0 | 328 |
 | M13 | faculty | 526 | 0 | 0 | 526 |
 | M13 | how | 314 | 0 | 0 | 314 |
@@ -324,7 +324,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M13 | lexical_note | 593 | 0 | 0 | 593 |
 | M13 | location | 64 | 0 | 0 | 64 |
 | M13 | object | 170 | 0 | 0 | 170 |
-| M13 | object-type | 68 | 93 | 37 | 161 |
+| M13 | object-type | 31 | 130 | 0 | 161 |
 | M13 | origin | 11 | 0 | 0 | 11 |
 | M13 | relational | 97 | 0 | 0 | 97 |
 | M13 | sense | 593 | 0 | 0 | 593 |
@@ -333,7 +333,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M14 | cause | 0 | 19 | 0 | 19 |
 | M14 | cause_clause | 86 | 0 | 0 | 86 |
 | M14 | compound | 809 | 0 | 0 | 809 |
-| M14 | divine-involvement | 98 | 0 | 94 | 98 |
+| M14 | divine-involvement | 4 | 20 | 0 | 24 |
 | M14 | experiencer | 223 | 0 | 0 | 223 |
 | M14 | faculty | 76 | 0 | 0 | 76 |
 | M14 | how | 226 | 0 | 0 | 226 |
@@ -342,7 +342,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M14 | lexical_note | 372 | 0 | 0 | 372 |
 | M14 | location | 53 | 0 | 0 | 53 |
 | M14 | object | 115 | 0 | 0 | 115 |
-| M14 | object-type | 39 | 70 | 27 | 109 |
+| M14 | object-type | 12 | 97 | 0 | 109 |
 | M14 | origin | 7 | 0 | 0 | 7 |
 | M14 | relational | 52 | 0 | 0 | 52 |
 | M14 | sense | 372 | 0 | 0 | 372 |
@@ -351,7 +351,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M15 | cause | 0 | 159 | 0 | 159 |
 | M15 | cause_clause | 480 | 0 | 0 | 480 |
 | M15 | compound | 3,402 | 0 | 0 | 3,402 |
-| M15 | divine-involvement | 482 | 0 | 438 | 482 |
+| M15 | divine-involvement | 44 | 143 | 0 | 187 |
 | M15 | experiencer | 1,091 | 0 | 0 | 1,091 |
 | M15 | faculty | 2,730 | 0 | 0 | 2,730 |
 | M15 | how | 424 | 0 | 0 | 424 |
@@ -360,7 +360,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M15 | lexical_note | 1,715 | 0 | 0 | 1,715 |
 | M15 | location | 221 | 0 | 0 | 221 |
 | M15 | object | 940 | 0 | 0 | 940 |
-| M15 | object-type | 325 | 549 | 179 | 874 |
+| M15 | object-type | 146 | 728 | 0 | 874 |
 | M15 | origin | 29 | 0 | 0 | 29 |
 | M15 | relational | 329 | 0 | 0 | 329 |
 | M15 | sense | 1,715 | 0 | 0 | 1,715 |
@@ -369,7 +369,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M16 | cause | 0 | 21 | 0 | 21 |
 | M16 | cause_clause | 41 | 0 | 0 | 41 |
 | M16 | compound | 330 | 0 | 0 | 330 |
-| M16 | divine-involvement | 30 | 0 | 29 | 30 |
+| M16 | divine-involvement | 1 | 3 | 0 | 4 |
 | M16 | experiencer | 81 | 0 | 0 | 81 |
 | M16 | faculty | 51 | 0 | 0 | 51 |
 | M16 | how | 91 | 0 | 0 | 91 |
@@ -378,7 +378,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M16 | lexical_note | 165 | 0 | 0 | 165 |
 | M16 | location | 23 | 0 | 0 | 23 |
 | M16 | object | 38 | 0 | 0 | 38 |
-| M16 | object-type | 13 | 24 | 10 | 37 |
+| M16 | object-type | 3 | 34 | 0 | 37 |
 | M16 | origin | 2 | 0 | 0 | 2 |
 | M16 | relational | 28 | 0 | 0 | 28 |
 | M16 | sense | 165 | 0 | 0 | 165 |
@@ -387,7 +387,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M17 | cause | 0 | 13 | 0 | 13 |
 | M17 | cause_clause | 66 | 0 | 0 | 66 |
 | M17 | compound | 486 | 0 | 0 | 486 |
-| M17 | divine-involvement | 92 | 0 | 78 | 92 |
+| M17 | divine-involvement | 14 | 28 | 0 | 42 |
 | M17 | experiencer | 185 | 0 | 0 | 185 |
 | M17 | faculty | 180 | 0 | 0 | 180 |
 | M17 | how | 159 | 0 | 0 | 159 |
@@ -396,7 +396,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M17 | lexical_note | 254 | 0 | 0 | 254 |
 | M17 | location | 27 | 0 | 0 | 27 |
 | M17 | object | 103 | 0 | 0 | 103 |
-| M17 | object-type | 47 | 45 | 21 | 92 |
+| M17 | object-type | 26 | 66 | 0 | 92 |
 | M17 | origin | 23 | 0 | 0 | 23 |
 | M17 | relational | 76 | 0 | 0 | 76 |
 | M17 | sense | 254 | 0 | 0 | 254 |
@@ -405,7 +405,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M18 | cause | 0 | 52 | 0 | 52 |
 | M18 | cause_clause | 83 | 0 | 0 | 83 |
 | M18 | compound | 464 | 0 | 0 | 464 |
-| M18 | divine-involvement | 78 | 0 | 70 | 78 |
+| M18 | divine-involvement | 8 | 20 | 0 | 28 |
 | M18 | experiencer | 186 | 0 | 0 | 186 |
 | M18 | faculty | 88 | 0 | 0 | 88 |
 | M18 | how | 65 | 0 | 0 | 65 |
@@ -414,7 +414,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M18 | lexical_note | 267 | 0 | 0 | 267 |
 | M18 | location | 32 | 0 | 0 | 32 |
 | M18 | object | 147 | 0 | 0 | 147 |
-| M18 | object-type | 67 | 49 | 34 | 116 |
+| M18 | object-type | 33 | 83 | 0 | 116 |
 | M18 | origin | 12 | 0 | 0 | 12 |
 | M18 | relational | 73 | 0 | 0 | 73 |
 | M18 | sense | 267 | 0 | 0 | 267 |
@@ -423,7 +423,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M19 | cause | 0 | 49 | 0 | 49 |
 | M19 | cause_clause | 77 | 0 | 0 | 77 |
 | M19 | compound | 668 | 0 | 0 | 668 |
-| M19 | divine-involvement | 152 | 0 | 125 | 152 |
+| M19 | divine-involvement | 27 | 45 | 0 | 72 |
 | M19 | experiencer | 211 | 0 | 0 | 211 |
 | M19 | faculty | 65 | 0 | 0 | 65 |
 | M19 | how | 78 | 0 | 0 | 78 |
@@ -432,7 +432,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M19 | lexical_note | 329 | 0 | 0 | 329 |
 | M19 | location | 44 | 0 | 0 | 44 |
 | M19 | object | 169 | 0 | 0 | 169 |
-| M19 | object-type | 71 | 89 | 22 | 160 |
+| M19 | object-type | 49 | 111 | 0 | 160 |
 | M19 | relational | 78 | 0 | 0 | 78 |
 | M19 | sense | 329 | 0 | 0 | 329 |
 | M19 | type | 329 | 0 | 1 | 329 |
@@ -440,7 +440,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M20 | cause | 0 | 11 | 0 | 11 |
 | M20 | cause_clause | 15 | 0 | 0 | 15 |
 | M20 | compound | 110 | 0 | 0 | 110 |
-| M20 | divine-involvement | 5 | 0 | 3 | 5 |
+| M20 | divine-involvement | 2 | 0 | 0 | 2 |
 | M20 | experiencer | 40 | 0 | 0 | 40 |
 | M20 | faculty | 73 | 0 | 0 | 73 |
 | M20 | how | 4 | 0 | 0 | 4 |
@@ -449,7 +449,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M20 | lexical_note | 67 | 0 | 0 | 67 |
 | M20 | location | 12 | 0 | 0 | 12 |
 | M20 | object | 30 | 0 | 0 | 30 |
-| M20 | object-type | 18 | 6 | 12 | 24 |
+| M20 | object-type | 6 | 18 | 0 | 24 |
 | M20 | origin | 3 | 0 | 0 | 3 |
 | M20 | relational | 40 | 0 | 0 | 40 |
 | M20 | sense | 67 | 0 | 0 | 67 |
@@ -458,7 +458,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M21 | cause | 0 | 55 | 0 | 55 |
 | M21 | cause_clause | 103 | 0 | 0 | 103 |
 | M21 | compound | 676 | 0 | 0 | 676 |
-| M21 | divine-involvement | 195 | 0 | 144 | 195 |
+| M21 | divine-involvement | 51 | 83 | 0 | 134 |
 | M21 | experiencer | 357 | 0 | 0 | 357 |
 | M21 | faculty | 247 | 0 | 0 | 247 |
 | M21 | how | 88 | 0 | 0 | 88 |
@@ -467,7 +467,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M21 | lexical_note | 512 | 0 | 0 | 512 |
 | M21 | location | 29 | 0 | 0 | 29 |
 | M21 | object | 328 | 0 | 0 | 328 |
-| M21 | object-type | 184 | 82 | 89 | 266 |
+| M21 | object-type | 95 | 171 | 0 | 266 |
 | M21 | origin | 12 | 0 | 0 | 12 |
 | M21 | relational | 193 | 0 | 0 | 193 |
 | M21 | sense | 512 | 0 | 0 | 512 |
@@ -476,7 +476,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M22 | cause | 6 | 117 | 0 | 123 |
 | M22 | cause_clause | 226 | 0 | 0 | 226 |
 | M22 | compound | 1,910 | 0 | 0 | 1,910 |
-| M22 | divine-involvement | 535 | 0 | 424 | 535 |
+| M22 | divine-involvement | 111 | 209 | 0 | 320 |
 | M22 | experiencer | 659 | 0 | 0 | 659 |
 | M22 | faculty | 404 | 0 | 0 | 404 |
 | M22 | how | 501 | 0 | 0 | 501 |
@@ -485,7 +485,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M22 | lexical_note | 1,071 | 0 | 0 | 1,071 |
 | M22 | location | 89 | 0 | 0 | 89 |
 | M22 | object | 441 | 0 | 0 | 441 |
-| M22 | object-type | 204 | 194 | 98 | 398 |
+| M22 | object-type | 106 | 292 | 0 | 398 |
 | M22 | origin | 16 | 0 | 0 | 16 |
 | M22 | relational | 254 | 0 | 0 | 254 |
 | M22 | sense | 1,071 | 0 | 0 | 1,071 |
@@ -494,7 +494,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M23 | cause | 0 | 139 | 0 | 139 |
 | M23 | cause_clause | 386 | 0 | 0 | 386 |
 | M23 | compound | 2,971 | 0 | 0 | 2,971 |
-| M23 | divine-involvement | 561 | 0 | 513 | 561 |
+| M23 | divine-involvement | 48 | 162 | 0 | 210 |
 | M23 | experiencer | 1,109 | 0 | 0 | 1,109 |
 | M23 | faculty | 367 | 0 | 0 | 367 |
 | M23 | how | 569 | 0 | 0 | 569 |
@@ -503,7 +503,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M23 | lexical_note | 1,585 | 0 | 0 | 1,585 |
 | M23 | location | 131 | 2 | 0 | 133 |
 | M23 | object | 810 | 0 | 0 | 810 |
-| M23 | object-type | 381 | 308 | 291 | 689 |
+| M23 | object-type | 90 | 599 | 0 | 689 |
 | M23 | origin | 35 | 0 | 0 | 35 |
 | M23 | relational | 462 | 0 | 0 | 462 |
 | M23 | sense | 1,585 | 0 | 0 | 1,585 |
@@ -512,7 +512,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M24 | cause | 0 | 78 | 0 | 78 |
 | M24 | cause_clause | 161 | 0 | 0 | 161 |
 | M24 | compound | 1,249 | 0 | 0 | 1,249 |
-| M24 | divine-involvement | 170 | 0 | 165 | 170 |
+| M24 | divine-involvement | 5 | 29 | 0 | 34 |
 | M24 | experiencer | 395 | 0 | 0 | 395 |
 | M24 | faculty | 170 | 0 | 0 | 170 |
 | M24 | how | 236 | 0 | 0 | 236 |
@@ -521,7 +521,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M24 | lexical_note | 626 | 0 | 0 | 626 |
 | M24 | location | 88 | 0 | 0 | 88 |
 | M24 | object | 293 | 0 | 0 | 293 |
-| M24 | object-type | 101 | 176 | 62 | 277 |
+| M24 | object-type | 39 | 238 | 0 | 277 |
 | M24 | origin | 26 | 0 | 0 | 26 |
 | M24 | relational | 146 | 0 | 0 | 146 |
 | M24 | sense | 626 | 0 | 0 | 626 |
@@ -530,7 +530,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M25 | cause | 0 | 100 | 0 | 100 |
 | M25 | cause_clause | 372 | 0 | 0 | 372 |
 | M25 | compound | 3,227 | 0 | 0 | 3,227 |
-| M25 | divine-involvement | 502 | 0 | 468 | 502 |
+| M25 | divine-involvement | 34 | 131 | 0 | 165 |
 | M25 | experiencer | 823 | 0 | 0 | 823 |
 | M25 | faculty | 672 | 0 | 0 | 672 |
 | M25 | how | 764 | 0 | 0 | 764 |
@@ -539,7 +539,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M25 | lexical_note | 1,324 | 0 | 0 | 1,324 |
 | M25 | location | 443 | 23 | 0 | 466 |
 | M25 | object | 359 | 0 | 0 | 359 |
-| M25 | object-type | 109 | 232 | 55 | 341 |
+| M25 | object-type | 54 | 287 | 0 | 341 |
 | M25 | origin | 26 | 0 | 0 | 26 |
 | M25 | relational | 148 | 0 | 0 | 148 |
 | M25 | sense | 1,324 | 0 | 0 | 1,324 |
@@ -548,7 +548,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M26 | cause | 0 | 100 | 0 | 100 |
 | M26 | cause_clause | 348 | 0 | 0 | 348 |
 | M26 | compound | 3,320 | 0 | 0 | 3,320 |
-| M26 | divine-involvement | 502 | 0 | 466 | 502 |
+| M26 | divine-involvement | 36 | 186 | 0 | 222 |
 | M26 | experiencer | 899 | 0 | 0 | 899 |
 | M26 | faculty | 1,637 | 0 | 0 | 1,637 |
 | M26 | how | 753 | 0 | 0 | 753 |
@@ -557,7 +557,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M26 | lexical_note | 1,426 | 0 | 0 | 1,426 |
 | M26 | location | 112 | 0 | 0 | 112 |
 | M26 | object | 541 | 0 | 0 | 541 |
-| M26 | object-type | 236 | 251 | 148 | 487 |
+| M26 | object-type | 88 | 399 | 0 | 487 |
 | M26 | origin | 41 | 0 | 0 | 41 |
 | M26 | relational | 288 | 0 | 0 | 288 |
 | M26 | sense | 1,426 | 0 | 0 | 1,426 |
@@ -566,7 +566,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M27 | cause | 0 | 55 | 0 | 55 |
 | M27 | cause_clause | 112 | 0 | 0 | 112 |
 | M27 | compound | 750 | 0 | 0 | 750 |
-| M27 | divine-involvement | 155 | 0 | 148 | 155 |
+| M27 | divine-involvement | 7 | 46 | 0 | 53 |
 | M27 | experiencer | 267 | 0 | 0 | 267 |
 | M27 | faculty | 491 | 0 | 0 | 491 |
 | M27 | how | 176 | 0 | 0 | 176 |
@@ -575,7 +575,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M27 | lexical_note | 393 | 0 | 0 | 393 |
 | M27 | location | 54 | 0 | 0 | 54 |
 | M27 | object | 210 | 0 | 0 | 210 |
-| M27 | object-type | 62 | 143 | 32 | 205 |
+| M27 | object-type | 30 | 175 | 0 | 205 |
 | M27 | origin | 10 | 0 | 0 | 10 |
 | M27 | relational | 62 | 0 | 0 | 62 |
 | M27 | sense | 393 | 0 | 0 | 393 |
@@ -584,7 +584,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M28 | cause | 0 | 42 | 0 | 42 |
 | M28 | cause_clause | 99 | 0 | 0 | 99 |
 | M28 | compound | 819 | 0 | 0 | 819 |
-| M28 | divine-involvement | 78 | 0 | 76 | 78 |
+| M28 | divine-involvement | 2 | 7 | 0 | 9 |
 | M28 | experiencer | 231 | 0 | 0 | 231 |
 | M28 | faculty | 236 | 0 | 0 | 236 |
 | M28 | how | 141 | 0 | 0 | 141 |
@@ -593,7 +593,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M28 | lexical_note | 374 | 0 | 0 | 374 |
 | M28 | location | 68 | 0 | 0 | 68 |
 | M28 | object | 176 | 0 | 0 | 176 |
-| M28 | object-type | 75 | 94 | 51 | 169 |
+| M28 | object-type | 24 | 145 | 0 | 169 |
 | M28 | origin | 13 | 0 | 0 | 13 |
 | M28 | relational | 68 | 0 | 0 | 68 |
 | M28 | sense | 374 | 0 | 0 | 374 |
@@ -602,7 +602,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M29 | cause | 1 | 26 | 0 | 27 |
 | M29 | cause_clause | 85 | 0 | 0 | 85 |
 | M29 | compound | 518 | 0 | 0 | 518 |
-| M29 | divine-involvement | 100 | 0 | 77 | 100 |
+| M29 | divine-involvement | 23 | 34 | 0 | 57 |
 | M29 | experiencer | 225 | 0 | 0 | 225 |
 | M29 | faculty | 530 | 0 | 0 | 530 |
 | M29 | how | 90 | 0 | 0 | 90 |
@@ -611,7 +611,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M29 | lexical_note | 296 | 0 | 0 | 296 |
 | M29 | location | 32 | 0 | 0 | 32 |
 | M29 | object | 150 | 0 | 0 | 150 |
-| M29 | object-type | 67 | 33 | 35 | 100 |
+| M29 | object-type | 32 | 68 | 0 | 100 |
 | M29 | origin | 7 | 0 | 0 | 7 |
 | M29 | relational | 88 | 0 | 0 | 88 |
 | M29 | sense | 296 | 0 | 0 | 296 |
@@ -619,7 +619,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M30 | cause | 0 | 61 | 0 | 61 |
 | M30 | cause_clause | 151 | 0 | 0 | 151 |
 | M30 | compound | 1,201 | 0 | 0 | 1,201 |
-| M30 | divine-involvement | 305 | 0 | 274 | 305 |
+| M30 | divine-involvement | 31 | 64 | 0 | 95 |
 | M30 | experiencer | 462 | 0 | 0 | 462 |
 | M30 | faculty | 766 | 0 | 0 | 766 |
 | M30 | how | 43 | 0 | 0 | 43 |
@@ -628,7 +628,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M30 | lexical_note | 648 | 0 | 0 | 648 |
 | M30 | location | 115 | 0 | 0 | 115 |
 | M30 | object | 544 | 0 | 0 | 544 |
-| M30 | object-type | 139 | 399 | 66 | 538 |
+| M30 | object-type | 73 | 465 | 0 | 538 |
 | M30 | origin | 28 | 0 | 0 | 28 |
 | M30 | relational | 105 | 0 | 0 | 105 |
 | M30 | sense | 648 | 0 | 0 | 648 |
@@ -637,7 +637,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M31 | cause | 0 | 30 | 0 | 30 |
 | M31 | cause_clause | 86 | 0 | 0 | 86 |
 | M31 | compound | 557 | 0 | 0 | 557 |
-| M31 | divine-involvement | 84 | 0 | 75 | 84 |
+| M31 | divine-involvement | 9 | 13 | 0 | 22 |
 | M31 | experiencer | 204 | 0 | 0 | 204 |
 | M31 | faculty | 121 | 0 | 0 | 121 |
 | M31 | how | 106 | 0 | 0 | 106 |
@@ -646,7 +646,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M31 | lexical_note | 313 | 0 | 0 | 313 |
 | M31 | location | 19 | 0 | 0 | 19 |
 | M31 | object | 145 | 0 | 0 | 145 |
-| M31 | object-type | 106 | 0 | 86 | 106 |
+| M31 | object-type | 20 | 86 | 0 | 106 |
 | M31 | origin | 21 | 0 | 0 | 21 |
 | M31 | relational | 214 | 0 | 0 | 214 |
 | M31 | sense | 313 | 0 | 0 | 313 |
@@ -655,7 +655,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M33 | cause | 0 | 60 | 0 | 60 |
 | M33 | cause_clause | 116 | 0 | 0 | 116 |
 | M33 | compound | 1,007 | 0 | 0 | 1,007 |
-| M33 | divine-involvement | 196 | 0 | 185 | 196 |
+| M33 | divine-involvement | 11 | 87 | 0 | 98 |
 | M33 | experiencer | 411 | 0 | 0 | 411 |
 | M33 | faculty | 106 | 0 | 0 | 106 |
 | M33 | how | 277 | 0 | 0 | 277 |
@@ -664,7 +664,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M33 | lexical_note | 545 | 0 | 0 | 545 |
 | M33 | location | 48 | 1 | 0 | 49 |
 | M33 | object | 213 | 0 | 0 | 213 |
-| M33 | object-type | 79 | 118 | 46 | 197 |
+| M33 | object-type | 33 | 164 | 0 | 197 |
 | M33 | origin | 24 | 0 | 0 | 24 |
 | M33 | relational | 138 | 0 | 0 | 138 |
 | M33 | sense | 545 | 0 | 0 | 545 |
@@ -673,7 +673,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M34 | cause | 0 | 21 | 0 | 21 |
 | M34 | cause_clause | 39 | 0 | 0 | 39 |
 | M34 | compound | 359 | 0 | 0 | 359 |
-| M34 | divine-involvement | 51 | 0 | 48 | 51 |
+| M34 | divine-involvement | 3 | 9 | 0 | 12 |
 | M34 | experiencer | 102 | 0 | 0 | 102 |
 | M34 | faculty | 42 | 0 | 0 | 42 |
 | M34 | how | 66 | 0 | 0 | 66 |
@@ -682,7 +682,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M34 | lexical_note | 170 | 0 | 0 | 170 |
 | M34 | location | 17 | 0 | 0 | 17 |
 | M34 | object | 66 | 0 | 0 | 66 |
-| M34 | object-type | 27 | 20 | 22 | 47 |
+| M34 | object-type | 5 | 42 | 0 | 47 |
 | M34 | origin | 1 | 0 | 0 | 1 |
 | M34 | relational | 73 | 0 | 0 | 73 |
 | M34 | sense | 170 | 0 | 0 | 170 |
@@ -691,7 +691,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M35 | cause | 0 | 40 | 0 | 40 |
 | M35 | cause_clause | 58 | 0 | 0 | 58 |
 | M35 | compound | 317 | 0 | 0 | 317 |
-| M35 | divine-involvement | 40 | 0 | 40 | 40 |
+| M35 | divine-involvement | 0 | 11 | 0 | 11 |
 | M35 | experiencer | 117 | 0 | 0 | 117 |
 | M35 | faculty | 33 | 0 | 0 | 33 |
 | M35 | how | 41 | 0 | 0 | 41 |
@@ -700,7 +700,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M35 | lexical_note | 181 | 0 | 0 | 181 |
 | M35 | location | 11 | 0 | 0 | 11 |
 | M35 | object | 97 | 0 | 0 | 97 |
-| M35 | object-type | 62 | 0 | 48 | 62 |
+| M35 | object-type | 14 | 48 | 0 | 62 |
 | M35 | origin | 6 | 0 | 0 | 6 |
 | M35 | relational | 94 | 0 | 0 | 94 |
 | M35 | sense | 181 | 0 | 0 | 181 |
@@ -709,7 +709,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M36 | cause | 0 | 48 | 0 | 48 |
 | M36 | cause_clause | 88 | 0 | 0 | 88 |
 | M36 | compound | 640 | 0 | 0 | 640 |
-| M36 | divine-involvement | 223 | 0 | 179 | 223 |
+| M36 | divine-involvement | 44 | 50 | 0 | 94 |
 | M36 | experiencer | 249 | 0 | 0 | 249 |
 | M36 | how | 69 | 0 | 0 | 69 |
 | M36 | immediate-response | 73 | 0 | 0 | 73 |
@@ -717,7 +717,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M36 | lexical_note | 362 | 0 | 0 | 362 |
 | M36 | location | 35 | 0 | 0 | 35 |
 | M36 | object | 251 | 0 | 0 | 251 |
-| M36 | object-type | 136 | 109 | 36 | 245 |
+| M36 | object-type | 100 | 145 | 0 | 245 |
 | M36 | origin | 9 | 0 | 0 | 9 |
 | M36 | relational | 57 | 0 | 0 | 57 |
 | M36 | sense | 362 | 0 | 0 | 362 |
@@ -726,7 +726,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M37 | cause | 0 | 124 | 0 | 124 |
 | M37 | cause_clause | 242 | 0 | 0 | 242 |
 | M37 | compound | 1,467 | 0 | 0 | 1,467 |
-| M37 | divine-involvement | 455 | 0 | 426 | 455 |
+| M37 | divine-involvement | 29 | 207 | 0 | 236 |
 | M37 | experiencer | 796 | 0 | 0 | 796 |
 | M37 | faculty | 778 | 0 | 0 | 778 |
 | M37 | how | 4 | 0 | 0 | 4 |
@@ -735,7 +735,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M37 | lexical_note | 1,063 | 0 | 0 | 1,063 |
 | M37 | location | 52 | 0 | 0 | 52 |
 | M37 | object | 909 | 0 | 0 | 909 |
-| M37 | object-type | 219 | 658 | 123 | 877 |
+| M37 | object-type | 96 | 781 | 0 | 877 |
 | M37 | origin | 22 | 0 | 0 | 22 |
 | M37 | relational | 213 | 0 | 0 | 213 |
 | M37 | sense | 1,063 | 0 | 0 | 1,063 |
@@ -744,7 +744,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M38 | cause | 0 | 46 | 0 | 46 |
 | M38 | cause_clause | 90 | 0 | 0 | 90 |
 | M38 | compound | 738 | 0 | 0 | 738 |
-| M38 | divine-involvement | 150 | 0 | 136 | 150 |
+| M38 | divine-involvement | 14 | 59 | 0 | 73 |
 | M38 | experiencer | 239 | 0 | 0 | 239 |
 | M38 | faculty | 140 | 0 | 0 | 140 |
 | M38 | how | 73 | 0 | 0 | 73 |
@@ -753,7 +753,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M38 | lexical_note | 355 | 0 | 0 | 355 |
 | M38 | location | 40 | 0 | 0 | 40 |
 | M38 | object | 207 | 0 | 0 | 207 |
-| M38 | object-type | 89 | 91 | 54 | 180 |
+| M38 | object-type | 35 | 145 | 0 | 180 |
 | M38 | origin | 14 | 0 | 0 | 14 |
 | M38 | relational | 128 | 0 | 0 | 128 |
 | M38 | sense | 355 | 0 | 0 | 355 |
@@ -762,7 +762,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M39 | cause | 0 | 96 | 0 | 96 |
 | M39 | cause_clause | 171 | 0 | 0 | 171 |
 | M39 | compound | 1,367 | 0 | 0 | 1,367 |
-| M39 | divine-involvement | 375 | 0 | 272 | 375 |
+| M39 | divine-involvement | 103 | 176 | 0 | 279 |
 | M39 | experiencer | 507 | 0 | 0 | 507 |
 | M39 | faculty | 507 | 0 | 0 | 507 |
 | M39 | how | 147 | 0 | 0 | 147 |
@@ -771,7 +771,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M39 | lexical_note | 743 | 0 | 0 | 743 |
 | M39 | location | 85 | 0 | 0 | 85 |
 | M39 | object | 480 | 0 | 0 | 480 |
-| M39 | object-type | 185 | 268 | 37 | 453 |
+| M39 | object-type | 148 | 305 | 0 | 453 |
 | M39 | origin | 10 | 0 | 0 | 10 |
 | M39 | relational | 122 | 0 | 0 | 122 |
 | M39 | sense | 743 | 0 | 0 | 743 |
@@ -780,7 +780,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M41 | cause | 0 | 140 | 0 | 140 |
 | M41 | cause_clause | 296 | 0 | 0 | 296 |
 | M41 | compound | 2,261 | 0 | 0 | 2,261 |
-| M41 | divine-involvement | 518 | 0 | 418 | 518 |
+| M41 | divine-involvement | 100 | 168 | 0 | 268 |
 | M41 | experiencer | 875 | 0 | 0 | 875 |
 | M41 | faculty | 2,257 | 0 | 0 | 2,257 |
 | M41 | how | 64 | 0 | 0 | 64 |
@@ -789,7 +789,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M41 | lexical_note | 1,165 | 0 | 0 | 1,165 |
 | M41 | location | 158 | 0 | 0 | 158 |
 | M41 | object | 932 | 0 | 0 | 932 |
-| M41 | object-type | 315 | 590 | 135 | 905 |
+| M41 | object-type | 180 | 725 | 0 | 905 |
 | M41 | origin | 14 | 0 | 0 | 14 |
 | M41 | relational | 171 | 0 | 0 | 171 |
 | M41 | sense | 1,165 | 0 | 0 | 1,165 |
@@ -798,7 +798,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M42 | cause | 0 | 67 | 0 | 67 |
 | M42 | cause_clause | 96 | 0 | 0 | 96 |
 | M42 | compound | 703 | 0 | 0 | 703 |
-| M42 | divine-involvement | 189 | 0 | 172 | 189 |
+| M42 | divine-involvement | 17 | 54 | 0 | 71 |
 | M42 | experiencer | 327 | 0 | 0 | 327 |
 | M42 | faculty | 84 | 0 | 0 | 84 |
 | M42 | how | 70 | 0 | 0 | 70 |
@@ -807,7 +807,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M42 | lexical_note | 422 | 0 | 0 | 422 |
 | M42 | location | 42 | 0 | 0 | 42 |
 | M42 | object | 293 | 0 | 0 | 293 |
-| M42 | object-type | 115 | 170 | 55 | 285 |
+| M42 | object-type | 60 | 225 | 0 | 285 |
 | M42 | origin | 7 | 0 | 0 | 7 |
 | M42 | relational | 108 | 0 | 0 | 108 |
 | M42 | sense | 422 | 0 | 0 | 422 |
@@ -816,7 +816,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M43 | cause | 0 | 7 | 0 | 7 |
 | M43 | cause_clause | 17 | 0 | 0 | 17 |
 | M43 | compound | 159 | 0 | 0 | 159 |
-| M43 | divine-involvement | 25 | 0 | 24 | 25 |
+| M43 | divine-involvement | 1 | 7 | 0 | 8 |
 | M43 | experiencer | 57 | 0 | 0 | 57 |
 | M43 | faculty | 17 | 0 | 0 | 17 |
 | M43 | how | 52 | 0 | 0 | 52 |
@@ -824,7 +824,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M43 | lexical_note | 89 | 0 | 0 | 89 |
 | M43 | location | 6 | 0 | 0 | 6 |
 | M43 | object | 33 | 0 | 0 | 33 |
-| M43 | object-type | 18 | 7 | 15 | 25 |
+| M43 | object-type | 3 | 22 | 0 | 25 |
 | M43 | origin | 1 | 0 | 0 | 1 |
 | M43 | relational | 38 | 0 | 0 | 38 |
 | M43 | sense | 89 | 0 | 0 | 89 |
@@ -833,7 +833,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M44 | cause | 0 | 35 | 0 | 35 |
 | M44 | cause_clause | 195 | 0 | 0 | 195 |
 | M44 | compound | 1,854 | 0 | 0 | 1,854 |
-| M44 | divine-involvement | 366 | 0 | 338 | 366 |
+| M44 | divine-involvement | 28 | 126 | 0 | 154 |
 | M44 | experiencer | 349 | 0 | 0 | 349 |
 | M44 | faculty | 45 | 0 | 0 | 45 |
 | M44 | how | 339 | 0 | 0 | 339 |
@@ -842,7 +842,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M44 | lexical_note | 728 | 0 | 0 | 728 |
 | M44 | location | 119 | 0 | 0 | 119 |
 | M44 | object | 292 | 0 | 0 | 292 |
-| M44 | object-type | 82 | 204 | 41 | 286 |
+| M44 | object-type | 41 | 245 | 0 | 286 |
 | M44 | origin | 7 | 0 | 0 | 7 |
 | M44 | relational | 106 | 0 | 0 | 106 |
 | M44 | sense | 728 | 0 | 0 | 728 |
@@ -851,7 +851,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M45 | cause | 0 | 27 | 0 | 27 |
 | M45 | cause_clause | 44 | 0 | 0 | 44 |
 | M45 | compound | 446 | 0 | 0 | 446 |
-| M45 | divine-involvement | 67 | 0 | 67 | 67 |
+| M45 | divine-involvement | 0 | 21 | 0 | 21 |
 | M45 | experiencer | 125 | 0 | 0 | 125 |
 | M45 | faculty | 137 | 0 | 0 | 137 |
 | M45 | how | 33 | 0 | 0 | 33 |
@@ -860,7 +860,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M45 | lexical_note | 182 | 0 | 0 | 182 |
 | M45 | location | 12 | 0 | 0 | 12 |
 | M45 | object | 111 | 0 | 0 | 111 |
-| M45 | object-type | 65 | 36 | 57 | 101 |
+| M45 | object-type | 8 | 93 | 0 | 101 |
 | M45 | origin | 10 | 0 | 0 | 10 |
 | M45 | relational | 77 | 0 | 0 | 77 |
 | M45 | sense | 182 | 0 | 0 | 182 |
@@ -869,7 +869,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M46 | cause | 0 | 16 | 0 | 16 |
 | M46 | cause_clause | 54 | 0 | 0 | 54 |
 | M46 | compound | 610 | 0 | 0 | 610 |
-| M46 | divine-involvement | 63 | 0 | 61 | 63 |
+| M46 | divine-involvement | 2 | 18 | 0 | 20 |
 | M46 | experiencer | 175 | 0 | 0 | 175 |
 | M46 | faculty | 35 | 0 | 0 | 35 |
 | M46 | how | 167 | 0 | 0 | 167 |
@@ -878,7 +878,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M46 | lexical_note | 291 | 0 | 0 | 291 |
 | M46 | location | 21 | 0 | 0 | 21 |
 | M46 | object | 89 | 0 | 0 | 89 |
-| M46 | object-type | 30 | 43 | 21 | 73 |
+| M46 | object-type | 9 | 64 | 0 | 73 |
 | M46 | origin | 6 | 0 | 0 | 6 |
 | M46 | relational | 59 | 0 | 0 | 59 |
 | M46 | sense | 291 | 0 | 0 | 291 |
@@ -887,7 +887,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M47 | cause | 0 | 75 | 0 | 75 |
 | M47 | cause_clause | 320 | 0 | 0 | 320 |
 | M47 | compound | 3,165 | 0 | 0 | 3,165 |
-| M47 | divine-involvement | 508 | 0 | 491 | 508 |
+| M47 | divine-involvement | 17 | 145 | 0 | 162 |
 | M47 | experiencer | 1,048 | 0 | 0 | 1,048 |
 | M47 | faculty | 3,693 | 0 | 0 | 3,693 |
 | M47 | how | 1,044 | 0 | 0 | 1,044 |
@@ -896,7 +896,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 | M47 | lexical_note | 1,348 | 0 | 0 | 1,348 |
 | M47 | location | 1,392 | 0 | 0 | 1,392 |
 | M47 | object | 437 | 0 | 0 | 437 |
-| M47 | object-type | 163 | 246 | 74 | 409 |
+| M47 | object-type | 89 | 320 | 0 | 409 |
 | M47 | origin | 41 | 0 | 0 | 41 |
 | M47 | relational | 339 | 0 | 0 | 339 |
 | M47 | sense | 1,348 | 0 | 0 | 1,348 |

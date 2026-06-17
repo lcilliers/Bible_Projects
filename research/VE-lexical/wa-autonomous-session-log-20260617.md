@@ -25,15 +25,16 @@
 Residue at start: cause 7,446 · location 1,084 · divine-involvement 9,944 · object-type 10,592 = **29,066 items / 11,800 verses (~$17 est)**.
 
 - **location — DONE** ✓ 0 residue (26 spirit-seat · 1,058 NONE). ~$0.50.
-- **cause — DONE** ✓ 0 residue (3,253 causes · 4,193 NONE). ~$3.54. Tightened prompt → ~100% in one pass.
-- **object-type — PARTIAL** (6,343 of 10,592 done; **4,249 remaining**). ~$3–4.
-- **divine-involvement — NOT STARTED** (9,944 residue).
+- **cause — DONE** ✓ 0 residue (3,253 causes · 4,193 NONE). ~$3.54.
+- **object-type — DONE** ✓ 0 residue (abstract 3,835 · person 3,537 · situation 1,360 · thing 1,151 · God 952 · spiritual-being 147 · threat 41). ~$6.
+- **divine-involvement — DONE** ✓ 0 residue (agent 1,667 · possessor 626 · object 545 · addressee 482 · giver 349). ~$4.3.
+- **valence — PARKED** (your next-cluster eval).
+- **READ PASS COMPLETE** — accuracy spot-check passed; reports regenerated (31,182 read-API rows). Total read spend ≈ **$14**.
 
-## ⛔ BLOCKED — API limits (2026-06-17)
-1. **First:** credit balance too low → credits loaded (cleared).
-2. **Then (current):** configured **usage/spend cap** reached — `"You have reached your specified API usage limits. You will regain access on 2026-07-01 at 00:00 UTC."` **Distinct from credits** — raise the limit in the Anthropic Console (Plans & Billing → Usage limits) or wait to 2026-07-01.
-
-object-type advanced to **3,019 M-cluster residue** (from 4,249) before the cap. DB integrity `quick_check: ok`; all applied reads committed per-batch; **fully resumable**.
+## API-limit history (both RESOLVED)
+1. Credit balance too low → credits loaded.
+2. Console usage/spend cap reached (would have reset 2026-07-01) → limit raised in Console.
+After both, object-type + divine ran to 0 residue. DB integrity `quick_check: ok` throughout; per-batch commits; was fully resumable.
 
 **To resume once credits are topped up** (no other changes needed — residue-only + resumable):
 ```

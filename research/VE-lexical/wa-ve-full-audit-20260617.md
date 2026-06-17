@@ -6,7 +6,9 @@
 
 ## 0. Verdict
 
-**The database is healthy and internally consistent.** Integrity clean, no orphans, no FK violations, all M01 pilot reads preserved, the day's engine fixes verified on real data. The corpus is in a **known, documented, resumable** state. The only incomplete work is the **two remaining read fields (divine-involvement, object-type ~13k M-cluster items)**, halted by an **API usage cap** (credits were loaded, but a configured spend limit is reached; resets 2026-07-01 or raise it in the Console — §5) — not a code or data fault. Nothing requires rollback.
+**The database is healthy, internally consistent, and the read pass is COMPLETE.** Integrity clean, no orphans, no FK violations, all M01 pilot reads preserved, the day's engine fixes verified on real data. **All four read fields converged to 0 M-cluster residue** (location · cause · object-type · divine-involvement); **valence parked** for your next-cluster evaluation. A sampled accuracy spot-check **passed** (read values correct and context-sensible). **31,182 read-API rows** in the corpus. Nothing requires rollback.
+
+> **UPDATE 2026-06-17 (final):** the API usage-cap blocker was cleared (you raised the Console limit); object-type + divine-involvement reads ran to completion. This audit now reflects the **completed** state.
 
 ---
 
@@ -40,11 +42,11 @@ Residue = items still mechanically unresolved (the read target). **M-cluster** i
 |---|---|---|---|---|
 | **location** | full | **0** | 226 | ✅ DONE (26 spirit-seat · ~1,058 NONE) |
 | **cause** | full | **0** | 1,882 | ✅ DONE (3,253 causes · ~4,193 NONE) |
-| **object-type** | 7,573 | **3,019** | ~2,900 | ◍ PARTIAL — blocked |
-| **divine-involvement** | 256 (M01 only) | **9,944** | 2,900 | ⏸ NOT STARTED — blocked |
+| **object-type** | full | **0** | ~2,900 | ✅ DONE (abstract 3,835 · person 3,537 · situation 1,360 · thing 1,151 · God 952 · spiritual-being 147 · threat 41) |
+| **divine-involvement** | full | **0** | 2,900 | ✅ DONE (agent 1,667 · possessor 626 · object 545 · addressee 482 · giver 349) |
 | **valence** | mech only | n/a (no UNRESOLVED token) | — | ⏸ PARKED (your next-cluster eval) |
 
-**True remaining read work (M-cluster): divine 9,944 + object-type 3,019 = 12,963 items**, blocked on the API usage cap (§5). Estimated ~$8 to finish.
+**Read pass COMPLETE — 0 M-cluster residue across all four fields.** T2 residue is intentional (T2 never read by design). Total read spend across the session ≈ **$14** (location $0.5 · cause $3.5 · object-type ~$6 · divine $4.3).
 
 ---
 
@@ -78,13 +80,7 @@ The engine's own **read-back audit (01b §6b — founded + coverage, loop-until-
 
 ## 5. Blocked / outstanding (action needed)
 
-1. **⛔ API usage cap reached** — credits were topped up (that blocker cleared), but a **configured usage/spend limit** is now hit: `400 invalid_request_error: "You have reached your specified API usage limits. You will regain access on 2026-07-01 at 00:00 UTC."` This is **distinct from credits** — it's a spend cap set in the Anthropic Console. **Action: raise the monthly usage limit (Console → Plans & Billing → Usage limits), or wait until 2026-07-01.** Then resume (resumable, residue-only):
-   ```text
-   python scripts/_run_ve_reads_governed.py --field object-type --live --verses-per-batch 45
-   python scripts/_run_ve_reads_governed.py --field divine-involvement --live --verses-per-batch 45
-   # re-run each once more to converge → 0, then regenerate reports:
-   python scripts/export_ve_status_reports.py
-   ```
+1. **✅ RESOLVED — reads complete.** (History: credit-balance blocker → topped up; then a Console usage/spend cap → raised. object-type + divine then ran to 0 residue.) No outstanding read work except the parked valence.
 2. **Valence** — parked for your next-cluster evaluation (forbidden ~80% ceiling; commanded/righteous/neutral interpretive).
 3. **T2 interpretive fields** — cause/divine/object-type residue on T2-content is by design (T2 never analysed standalone). Confirm this is the intended permanent disposition, or decide a future treatment.
 
@@ -93,7 +89,7 @@ The engine's own **read-back audit (01b §6b — founded + coverage, loop-until-
 ## 6. Risks / researcher attention
 
 - **Read-rule validation scope.** The mechanical rules (valence, divine) were validated against the read on **M01 only**. They're applied corpus-wide via the base rerun. The next-cluster evaluation (esp. valence) is the check on generalisation.
-- **Reads are the trusted interpretive layer**, mechanical the cheap floor — both confirmed reliable in their lane, but the corpus reads (location, cause, partial object-type) have **not been spot-audited for accuracy** beyond the driver's self-verify (completeness, not correctness). A sampled accuracy read-back is advisable.
+- **Reads are the trusted interpretive layer**, mechanical the cheap floor. A **sampled accuracy spot-check passed** (Gen-1 samples: divine `agent`, object-type `thing`, cause "God's observation of…" — all correct). The check was a small sample, not exhaustive; a broader accuracy read-back per cluster is still worthwhile (folds into the 01b §6b read-back acceptance gate). Note also: some clustered terms are membership-questionable (e.g. Gen 1 "living creatures" = animals) — a *cluster-scope* question, separate from read accuracy.
 - **Cross-cutting zero-pad risk** — other scripts that compare Strong's to hardcoded short literals may carry the same latent bug (memory `reference_strongs_zero_padded_4digit_in_db`).
 
 ---
