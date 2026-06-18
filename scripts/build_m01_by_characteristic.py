@@ -89,11 +89,16 @@ for u in units:
             records[cid].append(rec)
             assigned_vcids.add(u["vcid"])
 
-unassigned = []
+# unassigned = focus units not matched to any characteristic in the v1.0 doc lists — kept as their own group
+unassigned_records = []
+unassigned_strongs = set()
 for u in units:
     if u["vcid"] not in assigned_vcids:
-        unassigned.append({"reference": u["ref"], "strong": u["strong"], "translit": u["translit"],
-                           "gloss": u["gloss"], "target_word": u["tw"]})
+        unassigned_strongs.add(u["strong"])
+        unassigned_records.append({"reference": u["ref"],
+                                   "term": {"strong": u["strong"], "translit": u["translit"], "gloss": u["gloss"], "language": u["lang"]},
+                                   "verse_report": {"target_word": u["tw"], "morph": u["morph"], "stem": u["stem"]},
+                                   "lexical": lexical_for(u["vcid"], u["strong"])})
 
 out = {
     "meta": {
@@ -111,19 +116,25 @@ out = {
             "object TEXT is mechanical (~13% imprecise); object_type is read-authoritative — trust object_type on disagreement.",
             "valence: mechanical + M01-pilot read only (corpus valence read PARKED).",
         ],
-        "totals": {"focus_units": len(units), "assigned_units": len(assigned_vcids), "unassigned_units": len(unassigned)},
+        "totals": {"focus_units": len(units), "assigned_units": len(assigned_vcids), "unassigned_units": len(unassigned_records)},
     },
     "characteristics": [
         {"id": cid, "name": name, "description": desc, "strongs": strs,
          "occurrence_count": len(records[cid]), "verse_records": records[cid]}
         for cid, name, desc, strs in CHARS
+    ] + [
+        {"id": "unassigned", "name": "Unassigned (M01 terms not mapped to any v1.0 characteristic)",
+         "description": "Focus terms present in M01 but absent from every characteristic's lemma list in "
+                        "WA-m01-characteristics-v1.0 — a coverage gap to fold into the right characteristic.",
+         "strongs": sorted(unassigned_strongs),
+         "occurrence_count": len(unassigned_records), "verse_records": unassigned_records},
     ],
-    "unassigned_focus_units": unassigned,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 js = json.dumps(out, ensure_ascii=False, indent=2)
 open(OUT, "w", encoding="utf-8").write(js)
 print(f"WROTE {OUT}  ·  {len(js):,} chars ≈ {len(js)//4:,} tokens")
-print(f"focus units {len(units)} · assigned {len(assigned_vcids)} · unassigned {len(unassigned)}")
+print(f"focus units {len(units)} · assigned {len(assigned_vcids)} · unassigned {len(unassigned_records)}")
 for cid, name, _d, _s in CHARS:
     print(f"  {cid:4} n={len(records[cid]):4}  {name}")
+print(f"  {'unassigned':4} n={len(unassigned_records):4}  {sorted(unassigned_strongs)}")
