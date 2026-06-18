@@ -270,6 +270,17 @@ def derive(unit, words, step):
                 ot = obj_type(obj)
                 if ot:
                     out.append(("object-type", ot, "from object lemma/morph"))
+        # construct genitive: "fear OF <X>" — a construct-state noun-term takes the following noun as its object.
+        #   Catches "fear of the LORD" -> object=YHWH -> object_type=God (was None on construct forms). [AI feedback]
+        if obj is None and term["pos"] == "noun" and term["m0"][:1] in ("H", "A") and term["m0"].endswith("c"):
+            g = next((w for w in words if w["i"] == ti + 1 and (w["pos"] in ("noun", "pronoun")
+                      or any(s in DIVINE for s in w["strongs"]))), None)
+            if g:
+                obj = g
+                out.append(("object", g["text"], "construct genitive (term-of-<obj>)"))
+                ot = obj_type(g)
+                if ot:
+                    out.append(("object-type", ot, "from construct genitive"))
         cand_words = [term] + [w for w in words if 0 < abs(w["i"] - ti) <= 1]
         for w in cand_words:
             if any(re.search(r"S.?[123]", m) for m in w["morphs"]):
@@ -292,6 +303,15 @@ def derive(unit, words, step):
         else:
             out.append(("divine-involvement", "UNRESOLVED",
                         f"divine '{div['text']}' present; role (agent/giver/possessor/addressee) interpretive → read"))
+    else:
+        # FIX 2026-06-18: no divine LEMMA word, but the term is DIRECTED at an object — either a pronominal suffix
+        #   ON the term ("fear me/him/your", suffix strong H90[2-4]x) or a governed object (N1). The object's
+        #   identity may be God ("those who fear him", "fear your name") and is expected-but-unresolved → read,
+        #   NOT silent None. This makes divine-involvement=None trustworthy (= genuinely undirected). [AI feedback]
+        suffix = term is not None and any(re.match(r"^H90[2-4]\d$", s) for s in term["strongs"])
+        if obj is not None or suffix:
+            out.append(("divine-involvement", "UNRESOLVED",
+                        "term directed at an object (suffix/governed) with no explicit divine lemma — divine identity unresolved → read"))
 
     # 7 faculty — R1: the term's OWN meaning is a faculty (lemma-classified, de-circularised);
     #             R2: a faculty word in the term's neighbourhood
