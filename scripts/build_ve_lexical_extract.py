@@ -192,7 +192,11 @@ def main():
         vmap[u["ref"]]["term_occurrences"].append(occ)
 
     chunks = [verses] if not a.batch else [verses[i:i + a.batch] for i in range(0, len(verses), a.batch)]
-    odir = "research/VE-lexical/extracts"
+    # write the per-cluster DATA into the cluster's Sessions-v2 Data/ folder (resolve {CODE}-* exactly once);
+    # fall back to the methodology extracts dir for clusters without a Sessions-v2 home.
+    import glob as _glob
+    _cl = _glob.glob(f"Sessions-v2/{cc}-*/")
+    odir = os.path.join(_cl[0], "Data") if len(_cl) == 1 else "research/VE-lexical/extracts"
     os.makedirs(odir, exist_ok=True)
     for bi, chunk in enumerate(chunks, 1):
         nocc = sum(len(v["term_occurrences"]) for v in chunk)

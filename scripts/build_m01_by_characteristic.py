@@ -5,7 +5,7 @@ Read-only. Output: Sessions-v2/M01-Fear/Analysis/wa-m01-by-characteristic-verse-
 """
 import json, os, re, sqlite3
 DB = os.path.join("database", "bible_research.db")
-OUT = "Sessions-v2/M01-Fear/Analysis/wa-m01-by-characteristic-verse-records-20260618.json"
+OUT = "Sessions-v2/M01-Fear/Data/wa-m01-by-characteristic-verse-records-20260618.json"
 
 
 def canon(s):
