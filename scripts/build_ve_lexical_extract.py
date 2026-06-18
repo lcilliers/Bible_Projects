@@ -35,6 +35,79 @@ FIELDS_GUIDE = {
     "relational": "directional / relational force (to, toward, against …)",
 }
 
+# summary of the engine-driven data changes behind THIS extract (2026-06-17 session)
+ENGINE_CHANGES = {
+    "zero_pad_fix": "FOUNDATIONAL: Strong's seed lists were short-form (H430/H408/H853) but the DB measure layer is "
+                    "zero-padded 4-digit (H0430/H0408/H0853) — so every <4-digit Hebrew lemma silently failed to match "
+                    "(Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type "
+                    "detection; much of the prior 'thin' output was this bug.",
+    "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); "
+               "commanded/righteous/neutral are interpretive -> verse-read. (Corpus valence read is PARKED pending "
+               "researcher evaluation — valence values here are mechanical-only + the earlier M01 pilot read.)",
+    "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); "
+                          "agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. "
+                          "The old meaningless 'present' value is gone.",
+    "location_dedup": "one location row per DISTINCT constitutional seat-level even when several same-level seat-words "
+                      "co-occur (no 'triple-heart'); spirit/breath (ruach/pneuma) sense-gated, ambiguity read-disambiguated.",
+    "t2_treatment": "T2 = reference/qualifier terms, never analysed standalone. T2-GRAMMATICAL (function words: prepositions, "
+                    "pronouns, particles, the object-marker 'et) are EXCLUDED from generation/this extract/reads. T2-CONTENT "
+                    "(noun/verb/adjective) stay as co-term context only.",
+    "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical "
+                  "units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
+    "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, "
+                      "circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement all to "
+                      "0 M-cluster residue. divine role + object-type split are now fully populated by the read.",
+}
+
+# WHY each lexical element is derived — the measure + rule that FORCES it (traceability), and its provenance.
+DERIVATION = {
+    "_principle": "Every value is DERIVED from a named original-language measure (lemma · morphology · per-occurrence "
+                  "STEP sense · co-occurring tagged terms) — never from the English string. 'Mechanical' = fixed by rule "
+                  "over the measure layer; 'read' = the verse was read by API where the rule cannot be decisive (clarify/"
+                  "enrich only, never an opt-out). Silence = NONE (never imputed).",
+    "sense": "measure: per-occurrence ESV target_word (wa_verse_records) + the lemma's medium_def (lexicon, shown as "
+             "lemma_meaning). Mechanical — the sense the term carries HERE, not a uniform gloss.",
+    "type": "measure: part-of-speech (morphology). Rule: verb/participle->action, noun->status, adjective->quality. Mechanical (POS-only).",
+    "mode": "measure: morph stem/voice/form. The term's own grammatical realisation (language · POS · stem). Mechanical bedrock.",
+    "faculty": "measure: the TERM's own lemma meaning, classified to a faculty (R1 term-intrinsic). Why term-intrinsic: the "
+               "trigger's faculty (e.g. the perception that caused fear) belongs to cause/compound, not to this term. "
+               "Mechanical. (R2 = co-occurring faculty-lemma assignment is a known not-yet-implemented extension.)",
+    "location": "measure: a constitutional-seat lemma (Strong's seat-map: heart/soul/spirit/mind/flesh) present in the verse, "
+                "SENSE-GATED for spirit/breath (ruach/pneuma may be wind/disposition, not the seat). De-duplicated per level. "
+                "Mechanical floor + READ for the spirit/breath ambiguity. Absent = not located.",
+    "origin": "measure: a 'from'-source preposition (min/apo/ek) governing the term -> received-from-outside; else absent. "
+              "Mechanical (partial — within-person/generational/giver-source rules are not yet implemented).",
+    "how": "measure: the governing finite verb of a NOUN/adjective term (the predicate the state operates BY, e.g. 'seized'). "
+           "Mechanical. ABSENT for verb-terms — the term IS the action (see mode).",
+    "object / object-type": "measure: the term's governed object (noun/pronoun after the term or its governing verb; 'et marks "
+                            "the accusative). object-type classifies it: God/spiritual-being/person are mechanical (divine/"
+                            "spirit-being lemma, or person morph); thing/abstract/situation/threat are READ-classified (the "
+                            "mechanical 'thing/abstract' lump is split by the verse-read). ⚠ CAVEAT: the `object` TEXT is a "
+                            "MECHANICAL best-guess and is imprecise in ~13% of cases (it can grab a determiner/pronoun like "
+                            "'every'/'his'/'the', or the addressee). `object_type` is READ-derived and AUTHORITATIVE — when the "
+                            "two disagree, trust `object_type` and treat `object` text as a hint only.",
+    "cause": "measure: a causal marker (ki/hoti/gar) -> the eliciting clause, READ-resolved to the actual cause; OR the object "
+             "of a perception verb for an affect term (mechanical). Else NONE (most verses state no cause). Why read: the cause "
+             "is the verse's argument, not a single lemma.",
+    "cause_clause": "mechanical HINT only — the raw clause after the 'because/for' marker; superseded by `cause` once read.",
+    "experiencer": "measure: the term's possessive-suffix person / nominative subject (morphology) -> self | other | "
+                   "other(addressed). Mechanical.",
+    "divine_involvement": "measure: a divine lemma (YHWH/Elohim/…) and its grammatical relation to the term. object (adjacent / "
+                          "'et-marked) is mechanical; agent/possessor/giver/addressee are READ-resolved (these roles overlap "
+                          "morphologically — the role is the semantic judgement 'is God feared, acting, or giving'). No divine lemma -> NONE.",
+    "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
+    "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a "
+               "2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/"
+               "neutral are interpretive -> read. NOTE: corpus valence read is PARKED — values here are mechanical-only + M01 pilot.",
+    "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first "
+                          "response). Mechanical (light). Expectation test: silent -> NONE.",
+    "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the "
+                  "{direction->object} pairing is a not-yet-implemented extension).",
+    "compound": "measure: the verse's OTHER active tagged terms (the reference's term inventory), each with its role to the head "
+                "term (partner = co-T1 · qualifier = T2 · co-seated = shares a constitutional seat). This is the synergy web; "
+                "fan out to each co-term's own full record by translit/gloss.",
+}
+
 
 def base(s):
     m = re.match(r"^([HG]\d+)", s or "")
@@ -140,15 +213,17 @@ def main():
                                "to analyse synergy without leaving the verse."),
             "conventions": {
                 "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
-                "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare)",
-                "provenance": "most fields = mechanical (01b v2); cause/location/divine_involvement/object_type/valence = read-resolved (verse-read API, high quality)",
+                "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
+                "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type = READ-resolved corpus-wide (verse-read API); valence = mechanical + M01-pilot read only (corpus valence read PARKED)",
                 "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)",
             },
+            "engine_changes_20260617": ENGINE_CHANGES,
+            "why_each_element_is_derived": DERIVATION,
             "fields": FIELDS_GUIDE,
-            "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0)",
+            "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0); regenerated 2026-06-18",
         }, "data": chunk}
         suffix = (f"-b{bi}of{len(chunks)}" if a.batch else "") + ('-narr' if a.with_narration else '')
-        out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-20260616{suffix}.json"
+        out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-20260618{suffix}.json"
         js = json.dumps(payload, ensure_ascii=False, indent=2)
         open(out, "w", encoding="utf-8").write(js)
         print(f"WROTE {out}  ·  {len(chunk):,} verses · {nocc:,} occ · {len(js):,} chars ≈ {len(js)//4:,} tokens")
