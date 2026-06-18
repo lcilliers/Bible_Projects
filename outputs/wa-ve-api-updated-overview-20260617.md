@@ -2,15 +2,15 @@
 
 > Every `ve_lexical` row resolved by an **API read pass** (`source_provenance LIKE '%_read_api'`). Read-only snapshot; regenerate with `python scripts/export_ve_status_reports.py`.
 
-**Total API-updated rows:** 46,894
+**Total API-updated rows:** 46,889
 
 ## By VE item × provenance
 
 | VE item | provenance | rows | clusters |
 |---|---|---:|---:|
-| valence | valence_read_api | 26,790 | 47 |
-| object-type | object_type_read_api | 12,104 | 47 |
-| divine-involvement | divine_involvement_read_api | 4,541 | 46 |
+| valence | valence_read_api | 26,788 | 47 |
+| object-type | object_type_read_api | 12,102 | 47 |
+| divine-involvement | divine_involvement_read_api | 4,540 | 46 |
 | cause | cause_read_api | 3,431 | 47 |
 | location | location_read_api | 28 | 4 |
 
@@ -24,7 +24,7 @@
 | M10 | 2,246 | 4 |
 | M26 | 2,143 | 4 |
 | M41 | 2,109 | 4 |
-| M01 | 1,970 | 5 |
+| M01 | 1,965 | 5 |
 | M37 | 1,923 | 4 |
 | M04 | 1,871 | 4 |
 | M47 | 1,850 | 4 |
@@ -70,6 +70,6 @@
 
 **cause** — godly grief=7 · committing abomination=6 · Pharaoh's authority invoked as oath=6 · God's sovereign act=6 · the Lord calling Samuel by name=5 · wrongdoing=4 · what God creates=4 · the boy's maturation/coming of age=4 · the Lord comforting Zion's waste places, making wilderness like Eden=4 · taskmasters oppressing Israel=4 · taking refuge in God=4 · sound of the trumpet and alarm of war=4
 **location** — spirit=28
-**divine-involvement** — agent=2119 · possessor=793 · object=612 · addressee=590 · giver=427
-**object-type** — abstract=4128 · person=3889 · situation=1468 · thing=1257 · God=1164 · spiritual-being=151 · threat=47
-**valence** — neutral=10502 · righteous=7424 · sinful=5750 · commanded=2544 · forbidden=570
+**divine-involvement** — agent=2119 · possessor=793 · object=611 · addressee=590 · giver=427
+**object-type** — abstract=4128 · person=3889 · situation=1468 · thing=1256 · God=1163 · spiritual-being=151 · threat=47
+**valence** — neutral=10504 · righteous=7421 · sinful=5749 · commanded=2544 · forbidden=570

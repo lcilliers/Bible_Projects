@@ -8,7 +8,7 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 
 | cluster | cause | location | divine-involvement | object-type | valence |
 |---|---|---|---|---|---|
-| M01 | 1/178/0 | 100/2/0 | 28/309/0 | 143/448/0 | 0/1033/0 |
+| M01 | 1/178/0 | 100/2/0 | 28/308/0 | 143/446/0 | 0/1031/0 |
 | M02 | 2/111/0 | 47/0/0 | 37/236/0 | 70/326/0 | 0/602/0 |
 | M03 | 2/202/0 | 133/0/0 | 3/89/0 | 47/365/0 | 0/743/0 |
 | M04 | 2/254/0 | 150/0/0 | 35/146/0 | 98/370/0 | 0/1101/0 |
@@ -63,22 +63,22 @@ Legend: a high **p** means that field still needs a read for that cluster. **r>0
 |---|---|---:|---:|---:|---:|
 | M01 | cause | 1 | 178 | 0 | 179 |
 | M01 | cause_clause | 293 | 0 | 0 | 293 |
-| M01 | compound | 2,060 | 0 | 0 | 2,060 |
-| M01 | divine-involvement | 28 | 309 | 0 | 337 |
+| M01 | compound | 2,056 | 0 | 0 | 2,056 |
+| M01 | divine-involvement | 28 | 308 | 0 | 336 |
 | M01 | experiencer | 732 | 0 | 0 | 732 |
-| M01 | faculty | 1,085 | 0 | 0 | 1,085 |
+| M01 | faculty | 1,083 | 0 | 0 | 1,083 |
 | M01 | how | 276 | 0 | 0 | 276 |
 | M01 | immediate-response | 176 | 0 | 0 | 176 |
 | M01 | intensity | 144 | 0 | 0 | 144 |
-| M01 | lexical_note | 1,036 | 0 | 0 | 1,036 |
+| M01 | lexical_note | 1,034 | 0 | 0 | 1,034 |
 | M01 | location | 100 | 2 | 0 | 102 |
-| M01 | object | 622 | 0 | 0 | 622 |
-| M01 | object-type | 143 | 448 | 0 | 591 |
+| M01 | object | 620 | 0 | 0 | 620 |
+| M01 | object-type | 143 | 446 | 0 | 589 |
 | M01 | origin | 23 | 0 | 0 | 23 |
-| M01 | relational | 188 | 0 | 0 | 188 |
-| M01 | sense | 1,036 | 0 | 0 | 1,036 |
-| M01 | type | 1,036 | 0 | 3 | 1,036 |
-| M01 | valence | 0 | 1,033 | 0 | 1,033 |
+| M01 | relational | 187 | 0 | 0 | 187 |
+| M01 | sense | 1,034 | 0 | 0 | 1,034 |
+| M01 | type | 1,034 | 0 | 3 | 1,034 |
+| M01 | valence | 0 | 1,031 | 0 | 1,031 |
 | M02 | cause | 2 | 111 | 0 | 113 |
 | M02 | cause_clause | 177 | 0 | 0 | 177 |
 | M02 | compound | 1,298 | 0 | 0 | 1,298 |
