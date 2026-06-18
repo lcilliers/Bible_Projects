@@ -28,7 +28,8 @@ foreach ($j in $jobs) {
     }
     $parts = (Get-Content $f -Raw).Trim().Split('|')
     $status = $parts[0]
-    $ts = $null; [void][datetimeoffset]::TryParse($parts[1], [ref]$ts)
+    $ts = $null
+    try { $ts = [datetimeoffset]::Parse($parts[1]) } catch { }
     $ageHrs = if ($ts) { [math]::Round(((Get-Date) - $ts.LocalDateTime).TotalHours, 1) } else { 9999 }
     if ($status -ne 'OK') {
         $problems += "$($j.Label): last status FAIL ($($parts[2])) at $($parts[1])"
