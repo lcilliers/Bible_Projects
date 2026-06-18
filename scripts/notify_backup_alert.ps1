@@ -72,8 +72,11 @@ try {
             $msg.Subject = $subject
             $msg.Body = $body
             $smtp = New-Object System.Net.Mail.SmtpClient($cfg['SMTP_HOST'], [int]$cfg['SMTP_PORT'])
-            $smtp.EnableSsl = $true   # STARTTLS on 587
-            $smtp.Credentials = New-Object System.Net.NetworkCredential($cfg['SMTP_USER'], $cfg['SMTP_PASSWORD'])
+            $smtp.EnableSsl = $true            # STARTTLS on 587
+            $smtp.DeliveryMethod = [System.Net.Mail.SmtpDeliveryMethod]::Network
+            $smtp.UseDefaultCredentials = $false   # MUST precede Credentials, else .NET drops them (AUTH never sent)
+            $pw = ($cfg['SMTP_PASSWORD'] -replace '\s', '')   # Gmail shows app pwd as 4 space-separated groups; strip spaces
+            $smtp.Credentials = New-Object System.Net.NetworkCredential($cfg['SMTP_USER'], $pw)
             $smtp.Send($msg)
             Write-Output "  alert e-mail sent to $($cfg['ALERT_EMAIL_TO'])"
         } else { Write-Output "  (e-mail disabled or SMTP_PASSWORD blank — local alerts only)" }
