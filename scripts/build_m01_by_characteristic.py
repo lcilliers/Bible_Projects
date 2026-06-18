@@ -49,10 +49,12 @@ CHAR_SET = {cid: {canon(s) for s in strs} for cid, _n, _d, strs in CHARS}
 c = sqlite3.connect(DB); c.row_factory = sqlite3.Row
 units = c.execute("""
     SELECT vc.id vcid, vr.reference ref, m.strongs_number strong, vr.transliteration translit,
-           m.gloss gloss, m.language lang, vr.target_word tw, vr.morph_code morph, vr.stem stem
+           m.gloss gloss, m.language lang, vr.target_word tw, vr.morph_code morph, vr.stem stem,
+           COALESCE(v.verse_text, vr.verse_text) verse_text
     FROM verse_context vc
     JOIN wa_verse_records vr ON vr.id=vc.verse_record_id AND COALESCE(vr.delete_flagged,0)=0
     JOIN mti_terms m ON m.id=vc.mti_term_id
+    LEFT JOIN verse v ON v.reference=vr.reference
     WHERE COALESCE(vc.delete_flagged,0)=0 AND m.cluster_code='M01'
     ORDER BY vr.book_id, vr.chapter, vr.verse_num""").fetchall()
 
@@ -83,6 +85,7 @@ for u in units:
         if cs in codes:
             if rec is None:
                 rec = {"reference": u["ref"],
+                       "verse_text": u["verse_text"],
                        "term": {"strong": u["strong"], "translit": u["translit"], "gloss": u["gloss"], "language": u["lang"]},
                        "verse_report": {"target_word": u["tw"], "morph": u["morph"], "stem": u["stem"]},
                        "lexical": lexical_for(u["vcid"], u["strong"])}
@@ -96,6 +99,7 @@ for u in units:
     if u["vcid"] not in assigned_vcids:
         unassigned_strongs.add(u["strong"])
         unassigned_records.append({"reference": u["ref"],
+                                   "verse_text": u["verse_text"],
                                    "term": {"strong": u["strong"], "translit": u["translit"], "gloss": u["gloss"], "language": u["lang"]},
                                    "verse_report": {"target_word": u["tw"], "morph": u["morph"], "stem": u["stem"]},
                                    "lexical": lexical_for(u["vcid"], u["strong"])})
