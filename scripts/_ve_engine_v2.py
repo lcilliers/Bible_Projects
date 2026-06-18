@@ -27,14 +27,32 @@ def _canon(s):
     return f"{m.group(1)}{int(m.group(2)):04d}{m.group(3)}" if m else (s or "")
 
 
-# ---- seed lists (Strong's-based; 01b iteration-1; expand later) ----
+# ---- constitutional-seat map (FULL inventory; wa-location-seat-map-proposal-v1-20260618) ----
+#   FIX 2026-06-18: was an 8-lemma stub ("expand later") gated on the lemma's DICTIONARY GLOSS — which lists
+#   every sense, so ruach/pneuma self-tripped the wind/breath gate on every occurrence and spirit was never
+#   assigned. Now the full seat vocabulary, gated on the PER-OCCURRENCE SURFACE (the ESV word in this verse).
 SEAT = {  # base Strong's -> constitutional level
+    # soul
     "H5315": "soul", "H5314": "soul", "G5590": "soul",
-    "H3820": "heart", "H3824": "heart", "G2588": "heart",
-    "H7307": "spirit", "G4151": "spirit",   # G4151/H7307 sense-gated below
-    "H1320": "flesh", "G4561": "flesh",
+    # heart — Hebrew leb/lebab + Aramaic libbah H3826 (mind+will+emotion; Hebrew has no separate 'mind'); Greek kardia
+    "H3820": "heart", "H3824": "heart", "H3826": "heart", "G2588": "heart",
+    # spirit — ruach / Aramaic ruach H7308 ('seat of the mind') / neshamah (breath-of-life) / pneuma — surface-gated
+    "H7307": "spirit", "H7308": "spirit", "H5397": "spirit", "G4151": "spirit",
+    # flesh — basar / Aramaic besar / she'er H7607 / sarx — light surface gate (meat/kin ≠ seat)
+    "H1320": "flesh", "H1321": "flesh", "H7607": "flesh", "G4561": "flesh",
+    # mind — Greek only (Hebrew 'mind' is leb → heart)
+    "G3563": "mind", "G1271": "mind", "G5424": "mind",
+    # conscience — Greek suneidesis; Hebrew kidneys/'reins' kilyah = the inner self God searches/tests (Ps 7:9; Jer 11:20)
+    "G4893": "conscience", "H3629": "conscience",
+    # inward-parts (viscera) — qereb / bowels me'eh / splanchna / liver kabed — seat of churning affect & compassion
+    "H7130": "inward-parts", "H4578": "inward-parts", "G4698": "inward-parts", "H3516": "inward-parts",
 }
-SEAT_NONSEAT_SENSE = re.compile(r"\b(wind|breath|ghost|apparition|spirit\b.*dead|life)\b", re.I)  # gate hints
+# per-occurrence SURFACE (verse_morphology.surface = the ESV rendering in THIS verse) decides the ambiguous
+# lemmas — never the dictionary gloss. Decisive non-seat surface -> NONE; genuinely ambiguous -> UNRESOLVED (read).
+SPIRIT_NONSEAT = re.compile(r"\b(wind|winds|breath|air|side|quarter|blast)\b", re.I)   # ruach/pneuma non-seat senses
+QEREB_SEAT     = re.compile(r"\b(within|inward|inmost|inner)\b", re.I)                 # qereb-as-inner vs locative 'among/midst'
+FLESH_NONSEAT  = re.compile(r"\b(meat|food|kin|kinsman|kinsmen|relative|relatives|mankind|creature|animal)\b", re.I)
+VISCERA_LITERAL = re.compile(r"\b(entrails|intestines|carcass)\b", re.I)              # me'eh literal anatomy ≠ seat
 DIVINE = {"H3068", "H430", "H410", "H136", "H113", "H7706", "G2316", "G2962", "G2962"}
 FACULTY_BY_CLUSTER = {  # R1 head-term faculty seed (cluster ~ characteristic)
     "M01": "affect", "M15": "cognition", "M23": "affect",
@@ -70,6 +88,31 @@ PERC_COG = PERCEPTION | COGNITION
 CAUSAL = {_canon(s) for s in CAUSAL}
 COORD = {_canon(s) for s in COORD}
 SPIRIT_BEINGS = {_canon(s) for s in SPIRIT_BEINGS}
+SEAT = {_canon(k): v for k, v in SEAT.items()}                    # re-canon after the full-inventory rewrite
+SPIRIT_LEMMAS = {_canon("H7307"), _canon("H7308"), _canon("G4151"), _canon("H5397")}
+QEREB = _canon("H7130"); MEEH = _canon("H4578")
+FLESH_LEMMAS = {_canon("H1320"), _canon("H1321"), _canon("H7607"), _canon("G4561")}
+
+
+def seat_level(st, surface):
+    """resolve a seat lemma to its constitutional level USING THE PER-OCCURRENCE SURFACE (the ESV word in
+    THIS verse), not the lemma's sense-neutral dictionary gloss. Returns a level, 'UNRESOLVED' (genuinely
+    ambiguous -> route to the read), or None (decisive non-seat surface -> NONE, no row)."""
+    lvl = SEAT.get(st)
+    if lvl is None:
+        return None
+    s = surface or ""
+    if st in SPIRIT_LEMMAS:
+        return None if SPIRIT_NONSEAT.search(s) else lvl        # 'wind'/'breath' -> not the seat
+    if st == QEREB:
+        return lvl if QEREB_SEAT.search(s) else "UNRESOLVED"    # 'within me' -> seat; 'in the midst of [camp]' -> read
+    if st == MEEH:
+        return None if VISCERA_LITERAL.search(s) else lvl       # literal entrails -> not the seat
+    if st in FLESH_LEMMAS:
+        return None if FLESH_NONSEAT.search(s) else lvl         # meat/kin -> not the seat
+    return lvl                                                  # heart/soul/mind/conscience/etc. -> unambiguous
+
+
 GRAMMAR = {"article", "preposition", "conjunction", "particle", "suffix"}  # POS that aren't content
 # faculty classified from a TERM's OWN meaning (de-circularised; stems, prefix-boundary matched)
 FACULTY_GLOSS = {
@@ -216,21 +259,20 @@ def derive(unit, words, step):
         role = "qualifier" if cc == "T2" else ("co-seated" if base(st) in SEAT else "partner")
         out.append(("compound", f'{tr} "{gl}" — {role}', f"co-occurs · {st} ({cc})"))
 
-    # 5 location (seat lemma in verse, sense-gated; unclear -> UNRESOLVED). I1 FIX 2026-06-17: de-dup —
-    #   one row per distinct level even if several seat-words of the same level co-occur (no 'triple-heart').
+    # 5 location — constitutional seat present in the verse, resolved on the PER-OCCURRENCE SURFACE
+    #   (the ESV word in THIS verse) via seat_level(), NOT the dictionary gloss. FIX 2026-06-18: full seat
+    #   inventory (heart/soul/spirit/flesh/mind/conscience/inward-parts) + surface gate (was 8-lemma + gloss
+    #   gate that self-tripped spirit). de-dup: one row per distinct level (no 'triple-heart').
     seen_loc = set()
     for w in words:
         for st in w["strongs"]:
             if st in SEAT:
-                lvl = SEAT[st]
-                gloss = (step.vocab(st).get("medium_def") or "")
-                if st in (_canon("G4151"), _canon("H7307")) and SEAT_NONSEAT_SENSE.search(w["text"] + " " + gloss):
-                    if "UNRESOLVED" not in seen_loc:
-                        seen_loc.add("UNRESOLVED")
-                        out.append(("location", "UNRESOLVED", f"seat-term {st} present but sense may be non-seat ('{w['text']}')"))
-                elif lvl not in seen_loc:
+                lvl = seat_level(st, w["text"])
+                if lvl is not None and lvl not in seen_loc:
                     seen_loc.add(lvl)
-                    out.append(("location", lvl, f"seat-term {st} ('{w['text']}')"))
+                    cite = (f"seat-term {st} ('{w['text']}')" if lvl != "UNRESOLVED"
+                            else f"seat-term {st} ('{w['text']}') — surface sense ambiguous → read")
+                    out.append(("location", lvl, cite))
                 break
 
     # N3 how / N1 object / experiencer — gated on whether the TERM is itself a verb
