@@ -22,14 +22,15 @@ Settled design, model, mapping and audit results.
 | [04 — verse-schema-current](findings/04-verse-schema-current.md) | the verse-related schema (tables/columns/FKs). |
 | [05 — sense-operation](findings/05-sense-operation.md) | how sense works: subgloss floor; straight-through vs complex. |
 | [06 — migration-to-ve-lexical](findings/06-migration-to-ve-lexical.md) | the VE→ve_lexical migration record. |
-| [10 — catalogue-to-14-points](findings/10-catalogue-to-14-points.md) | catalogue questions ↔ the 14 VE points. |
-| [11 — tier-catalogue-v3](findings/11-tier-catalogue-v3.md) | restructured T0–T7 tier catalogue (question-led). *(canonical tier docs live in `Workflow/Tiers/`)* |
-| [12 — catalogue-extensions](findings/12-catalogue-extensions.md) | word-extension questions: coverage vs tiers + supersession. |
-| [13 — catalogue-refit-principles](findings/13-catalogue-refit-principles.md) | the four governing refit principles. |
 | [wa-ve-engine-compliance-audit-v1](findings/wa-ve-engine-compliance-audit-v1-20260617.md) | engine vs 01b spec — the compliance matrix. |
 | [wa-ve-full-audit](findings/wa-ve-full-audit-20260617.md) | complete VE/engine/reads audit (integrity, coverage, outstanding items). |
 | [wa-compound-and-cause-analysis](findings/wa-compound-and-cause-analysis-20260616.md) | compound + cause design analysis. |
 | [wa-ve-templated-narration-first](findings/wa-ve-templated-narration-first-20260615.md) | the deterministic narration view (01b §1f). |
+
+## Tier / catalogue work → `Workflow/Tiers/`
+All tier and observation-catalogue documents live with the tiers, not here:
+- `WA-tier-catalogue-current-state-v1` (canonical T0–T7) · `wa-tier-catalogue-restructured-v2` (pending refit)
+- `10-catalogue-to-14-points` (catalogue ↔ the 14 VE points) · `11-tier-catalogue-v3` (question-led restructure) · `12-catalogue-extensions` · `13-catalogue-refit-principles`
 
 ## Exploratory / working → `exploratory/`
 Reviews, dumps, logs, registers, test-runs, dry-runs — transient process artefacts.
