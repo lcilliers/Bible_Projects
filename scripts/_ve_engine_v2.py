@@ -308,10 +308,13 @@ def derive(unit, words, step):
         #   ON the term ("fear me/him/your", suffix strong H90[2-4]x) or a governed object (N1). The object's
         #   identity may be God ("those who fear him", "fear your name") and is expected-but-unresolved → read,
         #   NOT silent None. This makes divine-involvement=None trustworthy (= genuinely undirected). [AI feedback]
-        suffix = term is not None and any(re.match(r"^H90[2-4]\d$", s) for s in term["strongs"])
-        if obj is not None or suffix:
+        def _suffixed(w):  # carries a pronominal suffix (his/your/me/him…) — an ambiguous referent that may be God
+            return w is not None and any(re.match(r"^H90[2-4]\d$", s) for s in w["strongs"])
+        if _suffixed(term) or _suffixed(obj):
             out.append(("divine-involvement", "UNRESOLVED",
-                        "term directed at an object (suffix/governed) with no explicit divine lemma — divine identity unresolved → read"))
+                        "term/object carries a pronominal suffix (ambiguous referent, possibly God) with no explicit "
+                        "divine lemma — divine identity unresolved → read"))
+        # a NAMED/explicit non-divine object (no suffix) → genuinely not Godward → NONE (no row).
 
     # 7 faculty — R1: the term's OWN meaning is a faculty (lemma-classified, de-circularised);
     #             R2: a faculty word in the term's neighbourhood
