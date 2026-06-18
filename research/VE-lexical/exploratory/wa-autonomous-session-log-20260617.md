@@ -47,3 +47,12 @@ python scripts/export_ve_status_reports.py
 
 ## Next
 Per field: run → re-run to converge (residue→0) → next field. Then regenerate reports A & B with full API coverage.
+
+---
+
+## 2026-06-18 — rule fixes + valence unpark (AI feedback round)
+- **divine-involvement fix:** no divine-lemma word + pronominal-suffix referent (term/object, "fear me/him/your") → UNRESOLVED→read, not silent None. Corpus rerun applied; residue read = **872 Godward, 3,064 read-confirmed not-Godward** → `None` now trustworthy. ($1.85)
+- **object-type fix:** construct "fear of the LORD" → object=YHWH → object_type=God. Residue read 1,081, 0 left. ($0.55)
+- **valence UNPARKED** — corpus read launched (29,535 units). **~89% applied (24,473 active resolved + NONE markers; read spread: neutral 10,015 · righteous 6,460 · sinful 5,317 · commanded 2,161 · forbidden 520)** before hitting the **API usage cap again** (resets 2026-07-01 or raise in Console). **3,132 units remain.** Upsert verified clean (0 duplicate valence rows).
+- read_api total now **63,292**. Reports regenerated. Integrity quick_check ok.
+- **PENDING (cap-blocked):** finish the last 3,132 valence units, then a final base rerun to refresh narration with all reads.
