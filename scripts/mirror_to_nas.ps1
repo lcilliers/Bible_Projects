@@ -40,4 +40,12 @@ $summary = "{0}  project rc={1} ({2})  memory rc={3} ({4})" -f (Get-Date -Format
 $summary | Out-File $log -Append -Encoding utf8
 Write-Output $summary
 
-if ($ok1 -and $ok2) { exit 0 } else { exit 1 }
+# raise/clear the alert (local status file always; e-mail + toast + event log on failure)
+$notify = Join-Path $PSScriptRoot 'notify_backup_alert.ps1'
+if ($ok1 -and $ok2) {
+    & $notify -Job mirror -Status OK
+    exit 0
+} else {
+    & $notify -Job mirror -Status FAIL -Detail "robocopy failed: project rc=$rc1, memory rc=$rc2 (>=8 = serious error, e.g. NAS unreachable)"
+    exit 1
+}

@@ -30,6 +30,7 @@ import hashlib
 import os
 import shutil
 import sqlite3
+import subprocess
 import sys
 import tempfile
 from datetime import datetime, timezone
@@ -47,6 +48,38 @@ KEEP_DAILY = 30    # newest backup of each of the last D calendar days (UTC)
 KEEP_WEEKLY = 26   # newest backup of each of the last W ISO weeks
 
 MIN_PLAUSIBLE_BYTES = 50 * 1024 * 1024  # a real DB is >> 50 MB; guard against stubs
+
+# Local (off-NAS) status + alert. The normal backup_log.txt lives ON the NAS, so when
+# the NAS is down the failure leaves no local trace — this writes one and raises alerts.
+_STATUS_DIR = Path(r"C:\Users\lerouxc\nas_mirror_logs")
+_RC_DETAIL = {
+    0: "OK",
+    2: "source DB not found",
+    3: "source DB implausibly small (possible corruption) — backup refused",
+    4: "source DB failed integrity_check — backup refused",
+    5: "NAS target unreachable",
+    6: "snapshot failed integrity_check",
+    7: "NAS copy hash mismatch",
+}
+
+
+def _notify(rc: int) -> None:
+    """Write a LOCAL status file and (on failure) raise the rich alert channels."""
+    status = "OK" if rc == 0 else "FAIL"
+    detail = _RC_DETAIL.get(rc, f"unknown failure rc={rc}")
+    try:
+        _STATUS_DIR.mkdir(parents=True, exist_ok=True)
+        (_STATUS_DIR / "status_dbbackup.txt").write_text(
+            f"{status}|{datetime.now().astimezone().isoformat()}|{detail}", encoding="utf-8")
+    except OSError:
+        pass
+    helper = _ROOT / "scripts" / "notify_backup_alert.ps1"
+    try:
+        subprocess.run(["pwsh", "-NoProfile", "-File", str(helper),
+                        "-Job", "dbbackup", "-Status", status, "-Detail", detail],
+                       capture_output=True, timeout=120)
+    except Exception:
+        pass
 
 
 def _ts() -> str:
@@ -221,4 +254,7 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    rc = main()
+    if "--dry-run" not in sys.argv:   # don't let a dry-run overwrite the real status
+        _notify(rc)
+    sys.exit(rc)
