@@ -56,3 +56,8 @@ Per field: run → re-run to converge (residue→0) → next field. Then regener
 - **valence UNPARKED** — corpus read launched (29,535 units). **~89% applied (24,473 active resolved + NONE markers; read spread: neutral 10,015 · righteous 6,460 · sinful 5,317 · commanded 2,161 · forbidden 520)** before hitting the **API usage cap again** (resets 2026-07-01 or raise in Console). **3,132 units remain.** Upsert verified clean (0 duplicate valence rows).
 - read_api total now **63,292**. Reports regenerated. Integrity quick_check ok.
 - **PENDING (cap-blocked):** finish the last 3,132 valence units, then a final base rerun to refresh narration with all reads.
+
+### 2026-06-18 (cont.) — COMPLETE
+- Usage cap raised again → valence finished. **All 5 read fields now corpus-complete** (0 active M-cluster residue): valence 30,571 · divine 14,212 · object-type 12,104 · cause 7,743 · location 1,105 = **65,735 read_api rows**.
+- Final base rerun: narration refreshed to reflect every read. quick_check ok. Reports regenerated (46,894 active API-updated rows).
+- Divine `None` is now read-confirmed-trustworthy; valence is unparked + fully read. Snapshots: pre-baserun2, pre-finalrerun.

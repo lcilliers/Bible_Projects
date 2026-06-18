@@ -2,13 +2,13 @@
 
 > Every `ve_lexical` row resolved by an **API read pass** (`source_provenance LIKE '%_read_api'`). Read-only snapshot; regenerate with `python scripts/export_ve_status_reports.py`.
 
-**Total API-updated rows:** 44,577
+**Total API-updated rows:** 46,894
 
 ## By VE item × provenance
 
 | VE item | provenance | rows | clusters |
 |---|---|---:|---:|
-| valence | valence_read_api | 24,473 | 47 |
+| valence | valence_read_api | 26,790 | 47 |
 | object-type | object_type_read_api | 12,104 | 47 |
 | divine-involvement | divine_involvement_read_api | 4,541 | 46 |
 | cause | cause_read_api | 3,431 | 47 |
@@ -18,53 +18,53 @@
 
 | cluster | API rows | VE items touched |
 |---|---:|---:|
-| M15 | 2,482 | 4 |
-| M10 | 2,177 | 4 |
-| M05 | 2,114 | 4 |
-| M23 | 2,065 | 5 |
-| M41 | 2,063 | 4 |
-| M26 | 2,050 | 4 |
+| M15 | 2,575 | 4 |
+| M05 | 2,390 | 4 |
+| M23 | 2,250 | 5 |
+| M10 | 2,246 | 4 |
+| M26 | 2,143 | 4 |
+| M41 | 2,109 | 4 |
 | M01 | 1,970 | 5 |
-| M37 | 1,885 | 4 |
-| M04 | 1,795 | 4 |
-| M47 | 1,765 | 4 |
-| M22 | 1,607 | 4 |
-| M25 | 1,585 | 5 |
-| M03 | 1,369 | 4 |
-| M39 | 1,278 | 4 |
-| M02 | 1,239 | 4 |
-| M30 | 1,220 | 4 |
-| M12 | 1,138 | 4 |
-| M44 | 975 | 4 |
-| M08 | 962 | 4 |
-| M24 | 870 | 4 |
-| M33 | 738 | 5 |
-| M42 | 737 | 4 |
-| M06 | 729 | 4 |
-| M13 | 716 | 4 |
-| M21 | 691 | 4 |
-| M10b | 689 | 4 |
-| M27 | 636 | 4 |
-| M36 | 567 | 4 |
-| M07 | 542 | 4 |
-| M28 | 526 | 4 |
-| M38 | 518 | 4 |
-| M11 | 517 | 4 |
-| M14 | 505 | 4 |
-| M19 | 503 | 4 |
-| M10c | 414 | 4 |
-| M31 | 385 | 4 |
-| M29 | 374 | 4 |
-| M18 | 353 | 4 |
-| M46 | 330 | 4 |
-| M17 | 307 | 4 |
-| M45 | 285 | 4 |
-| M16 | 205 | 4 |
-| M35 | 196 | 4 |
-| M34 | 166 | 4 |
-| M09 | 161 | 4 |
-| M43 | 95 | 4 |
-| M20 | 83 | 3 |
+| M37 | 1,923 | 4 |
+| M04 | 1,871 | 4 |
+| M47 | 1,850 | 4 |
+| M22 | 1,711 | 4 |
+| M25 | 1,591 | 5 |
+| M03 | 1,399 | 4 |
+| M39 | 1,296 | 4 |
+| M02 | 1,275 | 4 |
+| M30 | 1,238 | 4 |
+| M12 | 1,186 | 4 |
+| M44 | 1,001 | 4 |
+| M08 | 992 | 4 |
+| M24 | 903 | 4 |
+| M13 | 810 | 4 |
+| M33 | 801 | 5 |
+| M21 | 772 | 4 |
+| M42 | 747 | 4 |
+| M10b | 733 | 4 |
+| M06 | 732 | 4 |
+| M27 | 648 | 4 |
+| M36 | 611 | 4 |
+| M28 | 590 | 4 |
+| M38 | 586 | 4 |
+| M07 | 566 | 4 |
+| M19 | 533 | 4 |
+| M11 | 529 | 4 |
+| M14 | 522 | 4 |
+| M10c | 426 | 4 |
+| M31 | 424 | 4 |
+| M29 | 411 | 4 |
+| M18 | 405 | 4 |
+| M46 | 366 | 4 |
+| M17 | 333 | 4 |
+| M45 | 317 | 4 |
+| M35 | 261 | 4 |
+| M34 | 228 | 4 |
+| M16 | 211 | 4 |
+| M09 | 198 | 4 |
+| M43 | 123 | 4 |
+| M20 | 92 | 3 |
 
 ## Read-resolved value distributions (per read field)
 
@@ -72,4 +72,4 @@
 **location** — spirit=28
 **divine-involvement** — agent=2119 · possessor=793 · object=612 · addressee=590 · giver=427
 **object-type** — abstract=4128 · person=3889 · situation=1468 · thing=1257 · God=1164 · spiritual-being=151 · threat=47
-**valence** — neutral=10015 · righteous=6460 · sinful=5317 · commanded=2161 · forbidden=520
+**valence** — neutral=10502 · righteous=7424 · sinful=5750 · commanded=2544 · forbidden=570
