@@ -29,10 +29,12 @@ Never again let a backup fail silently. Catch **both** failure modes: (A) a job 
 ## Status — done vs pending
 **Done:** all five scripts written + syntax-checked; both backup jobs wired to the sink; local-status mechanism verified via a test alert; `.env` extended with `SMTP_*` / `ALERT_EMAIL_*`.
 
+**E-mail transport — RESOLVED 2026-06-18.** Outlook abandoned (Microsoft disabled basic-auth SMTP, `535 5.7.139`). Now sends via a **Gmail app password** (`smtp.gmail.com:587`, creds in `.env`); test send to leroux@cilliers.co.uk delivered + confirmed received. Helper fixes: `UseDefaultCredentials=$false` set before `Credentials` (else AUTH never sent → `5.7.0`); app-password whitespace stripped (Gmail shows it as 4×4 groups; must be 16 chars).
+
 **Pending:**
-1. **E-mail transport.** `lerouxcilliers@outlook.com` cannot send — Microsoft disabled basic-auth SMTP for personal Outlook (`535 5.7.139 ... basic authentication is disabled`). Fix = point `.env` at a basic-auth-capable SMTP: **Gmail app password** (`SMTP_HOST=smtp.gmail.com`, change user+password — recommended, no code change) or an **SMTP relay** (Brevo/SendGrid/Mailgun). Then re-test.
-2. **Install the watchdog task** (elevated): `pwsh -File scripts/install_backup_watchdog_task.ps1` — could not be registered from the non-elevated session ("Access is denied").
-3. **Close the backup gap** once the NAS is back (run both jobs manually; confirm green).
+1. **Install the watchdog task** (elevated): `pwsh -File scripts/install_backup_watchdog_task.ps1` — could not be registered from the non-elevated session ("Access is denied").
+2. **Close the backup gap** once the NAS is back (run both jobs manually; confirm green).
+3. *(optional)* Create the `BibleResearchBackup` Event Log source once from an elevated shell so that channel works (harmless if skipped).
 
 ## Notes / limitations
 - Watchdog runs as the interactive user (so toast/sentinel show); it fires at logon + daily 19:00. It does **not** run when logged off — but the in-job e-mail alerts (fired during the unattended 18:00/18:30 runs) cover that window once e-mail works. Switch the task to a run-when-logged-off principal later if desired.
