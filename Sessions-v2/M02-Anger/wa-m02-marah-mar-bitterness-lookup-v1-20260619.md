@@ -39,3 +39,12 @@ H4751 *mar* (12) + H4843 *ma.rar* (13) + H4786/4787 *morah* across the OT — th
   "bitterness" spans both; the DB already splits them by that sense.
 
 *(This is the data for the C7 decision; the decision itself remains with the researcher.)*
+
+## Follow-up — H4843 *ma.rar* in M02 (2026-06-19)
+
+Checked whether the M02 H4843 rows should move to M03. **They carry nothing to move:** the 3 M02 H4843 rows
+(ids 4606, 4775, 5144) have **0 verses, 0 ve_lexical, 0 findings, 0 vcg/subgroup links** — empty duplicate
+shells (OT-DBR-009). The verse-bearing H4843 (13 verses, 139 lexical rows) is **already in M03** (id 166,
+registry 71 "anguish"). The 3 M02 shells were **already soft-deleted** (`delete_flagged=1`, since 2026-03-28);
+on 2026-06-19 their `exclusion_reason` was documented (was NULL). **Active H4843 is now M03-only** — no move
+made (a move would only have added empty duplicates to M03).
