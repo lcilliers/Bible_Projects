@@ -30,9 +30,9 @@ The read-resolved fields live in **`ve_lexical`** (schema 3.34.0) as one row per
   occurrences carry `experiencer='other'` ("the LORD's anger was kindled against [other]"). So `other` already *is*
   the value consistent with God-as-subject across C2; changing it would have made these two inconsistent with the
   rest. Directive intent (consistency) met without a change.
-- **valence set to `neutral` (the directive's tabled target).** All 6 verses arguably frame the wrath as
-  **`righteous`** (God's just anger at named sin — sinful men / forsaking / provocations / not speaking right).
-  Per the directive's allowance, **flagged for your/AI review** if you'd prefer `righteous` over `neutral` for any/all.
+- **valence set to `neutral` (the directive's tabled target), then switched to `righteous`.** All 6 verses
+  frame the wrath as God's just anger at named sin (sinful men / forsaking / provocations / not speaking right).
+  **Researcher decision 2026-06-19: all 6 → `righteous`** (applied; notes updated to record the decision).
 - **Insert provenance:** the new divine-involvement rows use the corpus-canonical `divine_involvement_read_api`
   (matching the 4,597 existing active rows); the prior `UNRESOLVED` read rows for these verses are soft-deleted
   (not active) — exactly one active divine-involvement row per verse.
