@@ -42,8 +42,9 @@ ENGINE_CHANGES = {
                     "(Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type "
                     "detection; much of the prior 'thin' output was this bug.",
     "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); "
-               "commanded/righteous/neutral are interpretive -> verse-read. (Corpus valence read is PARKED pending "
-               "researcher evaluation — valence values here are mechanical-only + the earlier M01 pilot read.)",
+               "commanded/righteous/neutral are interpretive -> verse-read. UNPARKED 2026-06-18: the corpus valence "
+               "read is now COMPLETE (verse-read API, 0 active residue) — valence here is READ-resolved, same status "
+               "as cause/divine/object-type.",
     "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); "
                           "agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. "
                           "The old meaningless 'present' value is gone.",
@@ -55,8 +56,9 @@ ENGINE_CHANGES = {
     "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical "
                   "units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
     "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, "
-                      "circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement all to "
-                      "0 M-cluster residue. divine role + object-type split are now fully populated by the read.",
+                      "circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement, AND "
+                      "valence (unparked + read 2026-06-18) all to 0 M-cluster residue. divine role + object-type split "
+                      "+ valence are now fully populated by the read.",
     "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, "
                       "cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps "
                       "(DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; "
@@ -104,7 +106,7 @@ DERIVATION = {
     "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
     "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a "
                "2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/"
-               "neutral are interpretive -> read. NOTE: corpus valence read is PARKED — values here are mechanical-only + M01 pilot.",
+               "neutral are interpretive -> read. Corpus valence read COMPLETE (unparked 2026-06-18) — values here are READ-resolved.",
     "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first "
                           "response). Mechanical (light). Expectation test: silent -> NONE.",
     "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the "
@@ -225,7 +227,7 @@ def main():
             "conventions": {
                 "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
                 "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
-                "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type = READ-resolved corpus-wide (verse-read API); valence = mechanical + M01-pilot read only (corpus valence read PARKED)",
+                "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
                 "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)",
             },
             "engine_changes_20260617": ENGINE_CHANGES,
