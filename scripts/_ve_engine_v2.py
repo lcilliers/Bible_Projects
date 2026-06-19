@@ -54,7 +54,8 @@ QEREB_SEAT     = re.compile(r"\b(within|inward|inmost|inner)\b", re.I)          
 CHEQ_SEAT      = re.compile(r"\b(bosom|breast|chest|within|heart)\b", re.I)            # cheq-as-seat vs physical lap/arms/cloak
 FLESH_NONSEAT  = re.compile(r"\b(meat|food|kin|kinsman|kinsmen|relative|relatives|mankind|creature|animal)\b", re.I)
 VISCERA_LITERAL = re.compile(r"\b(entrails|intestines|carcass)\b", re.I)              # me'eh literal anatomy ≠ seat
-DIVINE = {"H3068", "H430", "H410", "H136", "H113", "H7706", "G2316", "G2962", "G2962"}
+DIVINE = {"H3068", "H3069", "H430", "H433", "H410", "H136", "H113", "H7706", "H3050", "H5945",  # +YHWH-var/Eloah/Yah/Elyon (2026-06-19 audit)
+          "G2316", "G2962", "G5547"}                                                              # +Christos
 FACULTY_BY_CLUSTER = {  # R1 head-term faculty seed (cluster ~ characteristic)
     "M01": "affect", "M15": "cognition", "M23": "affect",
 }
@@ -65,12 +66,12 @@ FACULTY_LEMMA = {  # R2 indirect: faculty signal lemmas (Strong's -> faculty)
     "H3372": "affect", "G5399": "affect", "H8055": "affect", "G5463": "affect",
     "H977": "volition", "G2309": "volition", "H7592": "volition",
 }
-INTENSIFIER = {"H7227": "many", "H7231": "many", "H3966": "very", "H3605": "all", "G4183": "many"}
+INTENSIFIER = {"H7227": "many", "H7231": "many", "H3966": "very", "H3605": "all", "H1419": "great", "G4183": "many"}
 FROM_PREP = {"H4480", "G575", "G1537"}                  # min / apo / ek -> received-from-outside
 INHERENT_VALENCE = {"H7451": "sinful", "H7563": "sinful", "H6662": "righteous", "H6666": "righteous"}
 NEGATION = {"H3808", "H408", "G3361", "G3756"}          # lo' / 'al / me / ou — prohibition markers
-PERCEPTION = {"G3708", "G1492", "G991", "G2334", "H7200", "H2372"}
-COGNITION = {"G1380", "G1097", "H3045"}
+PERCEPTION = {"G3708", "G1492", "G991", "G2334", "H7200", "H2372", "H8085", "H5027", "H238"}  # +shama/nabat/azan (2026-06-19 audit)
+COGNITION = {"G1380", "G1097", "H3045", "H995"}                                                # +bin (understand)
 PERC_COG = PERCEPTION | COGNITION
 CAUSAL = {"H3588", "G3754", "G1063", "G1360"}           # ki / hoti / gar / dioti
 COORD = {"H9002", "G2532"}                              # waw / kai
