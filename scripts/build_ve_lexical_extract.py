@@ -57,6 +57,12 @@ ENGINE_CHANGES = {
     "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, "
                       "circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement all to "
                       "0 M-cluster residue. divine role + object-type split are now fully populated by the read.",
+    "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, "
+                      "cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps "
+                      "(DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; "
+                      "INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only "
+                      "(+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). "
+                      "0 active readable non-T2 residue remains.",
 }
 
 # WHY each lexical element is derived — the measure + rule that FORCES it (traceability), and its provenance.
@@ -129,6 +135,7 @@ def main():
     ap.add_argument("--with-narration", action="store_true")
     ap.add_argument("--with-audit", action="store_true")
     ap.add_argument("--batch", type=int, default=0, help="max verses per output file (split a big cluster)")
+    ap.add_argument("--date", default="20260618", help="date stamp in the output filename (bump when regenerating)")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
@@ -227,7 +234,7 @@ def main():
             "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0); regenerated 2026-06-18",
         }, "data": chunk}
         suffix = (f"-b{bi}of{len(chunks)}" if a.batch else "") + ('-narr' if a.with_narration else '')
-        out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-20260618{suffix}.json"
+        out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-{a.date}{suffix}.json"
         js = json.dumps(payload, ensure_ascii=False, indent=2)
         open(out, "w", encoding="utf-8").write(js)
         print(f"WROTE {out}  ·  {len(chunk):,} verses · {nocc:,} occ · {len(js):,} chars ≈ {len(js)//4:,} tokens")

@@ -67,10 +67,22 @@ this rerun — left as-is.
 except divine 14212→14644. Integrity `ok`. Reads run sequentially (SQLite single-writer);
 logs `outputs/ve-read-<field>-rerun-20260619.txt`.
 
-## 6. Close-out checklist
+## 6. Downstream extract regeneration
+
+The rerun re-derived the mechanical base + narration for every cluster, so cluster deliverables predate it.
+**M01 deliverables are intentionally NOT revisited** (researcher direction 2026-06-19).
+
+**M02 (Anger) ve-lexical extracts regenerated** (`build_ve_lexical_extract.py --cluster M02 --batch 160
+--date 20260619`; added a `--date` arg so the refresh is a new dated version, not an in-place overwrite).
+4 batches → `Sessions-v2/M02-Anger/Data/wa-ve-lexical-extract-M02-20260619-b{1..4}of4.json` (634 verses,
+1,683 occ). Superseded 06-18 batches → `…/Data/archive/`. Field-population deltas vs 06-18 confirm the
+refresh is substantive: **intensity +31** (new `gadol` "great" intensifier), immediate_response +3,
+divine_involvement +1, location −11 (seat-gate refinement).
+
+## 7. Close-out checklist
 
 - [x] signal-list audit script + engine expansion
 - [x] base rerun (live) + read_api preservation verified + integrity ok
-- [ ] residue reads complete for all five fields → 0 active residue
-- [ ] `type` UNRESOLVED (129) handling decided
-- [ ] reports regenerated · quick_check · commit
+- [x] residue reads complete for all five fields → 0 active readable non-T2 residue
+- [x] M02 extracts regenerated (M01 left as-is per researcher direction)
+- [ ] `type` UNRESOLVED (129) handling decided (deferred — pre-existing, not new)
