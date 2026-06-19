@@ -24,9 +24,12 @@ SPECS = {
         "For EACH term, state what AROUSES / elicits the inner-being state it names in THIS verse (the cause). "
         "A short phrase. If the verse states no cause, value=\"NONE\"."),
     "location": ("UNRESOLVED",
-        "Each verse contains a spirit/breath word (ruach/pneuma). For EACH term decide whether that word is the human "
-        "inner-being SEAT (the spirit as a constitutional seat) -> \"spirit\"; if it is the divine Spirit, a disposition, "
-        "wind, or breath (NOT the seat) -> \"NONE\"."),
+        "Each verse contains an inner-being seat word whose sense is ambiguous (usually qereb 'inward part / midst', "
+        "sometimes ruach/pneuma 'spirit/wind/breath'). For EACH term decide whether that word denotes the human inner "
+        "being as a CONSTITUTIONAL SEAT in THIS verse: answer \"inward-parts\" (qereb = a person's innermost being, "
+        "e.g. 'within me', 'my heart within me') or \"spirit\" (ruach/pneuma = the human spirit-seat). If instead it is "
+        "a LOCATIVE 'in the midst of / among' a place/people/group, or the divine Spirit, a disposition, wind, or "
+        "breath (NOT a seat of the person) -> \"NONE\"."),
     "divine-involvement": ("UNRESOLVED",
         "For EACH term, state GOD's role toward the inner-being term in THIS verse — EXACTLY one of: "
         "agent | possessor | giver | object | addressee | none."),

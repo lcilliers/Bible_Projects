@@ -34,8 +34,8 @@ def _canon(s):
 SEAT = {  # base Strong's -> constitutional level
     # soul
     "H5315": "soul", "H5314": "soul", "G5590": "soul",
-    # heart — Hebrew leb/lebab + Aramaic libbah H3826 (mind+will+emotion; Hebrew has no separate 'mind'); Greek kardia
-    "H3820": "heart", "H3824": "heart", "H3826": "heart", "G2588": "heart",
+    # heart — Hebrew leb/lebab + Aramaic libbah H3826 + cheq H2436 'bosom' (harboured affect, Ecc 7:9); Greek kardia
+    "H3820": "heart", "H3824": "heart", "H3826": "heart", "H2436": "heart", "G2588": "heart",
     # spirit — ruach / Aramaic ruach H7308 ('seat of the mind') / neshamah (breath-of-life) / pneuma — surface-gated
     "H7307": "spirit", "H7308": "spirit", "H5397": "spirit", "G4151": "spirit",
     # flesh — basar / Aramaic besar / she'er H7607 / sarx — light surface gate (meat/kin ≠ seat)
@@ -51,6 +51,7 @@ SEAT = {  # base Strong's -> constitutional level
 # lemmas — never the dictionary gloss. Decisive non-seat surface -> NONE; genuinely ambiguous -> UNRESOLVED (read).
 SPIRIT_NONSEAT = re.compile(r"\b(wind|winds|breath|air|side|quarter|blast)\b", re.I)   # ruach/pneuma non-seat senses
 QEREB_SEAT     = re.compile(r"\b(within|inward|inmost|inner)\b", re.I)                 # qereb-as-inner vs locative 'among/midst'
+CHEQ_SEAT      = re.compile(r"\b(bosom|breast|chest|within|heart)\b", re.I)            # cheq-as-seat vs physical lap/arms/cloak
 FLESH_NONSEAT  = re.compile(r"\b(meat|food|kin|kinsman|kinsmen|relative|relatives|mankind|creature|animal)\b", re.I)
 VISCERA_LITERAL = re.compile(r"\b(entrails|intestines|carcass)\b", re.I)              # me'eh literal anatomy ≠ seat
 DIVINE = {"H3068", "H430", "H410", "H136", "H113", "H7706", "G2316", "G2962", "G2962"}
@@ -90,7 +91,7 @@ COORD = {_canon(s) for s in COORD}
 SPIRIT_BEINGS = {_canon(s) for s in SPIRIT_BEINGS}
 SEAT = {_canon(k): v for k, v in SEAT.items()}                    # re-canon after the full-inventory rewrite
 SPIRIT_LEMMAS = {_canon("H7307"), _canon("H7308"), _canon("G4151"), _canon("H5397")}
-QEREB = _canon("H7130"); MEEH = _canon("H4578")
+QEREB = _canon("H7130"); MEEH = _canon("H4578"); CHEQ = _canon("H2436")
 FLESH_LEMMAS = {_canon("H1320"), _canon("H1321"), _canon("H7607"), _canon("G4561")}
 
 
@@ -106,6 +107,8 @@ def seat_level(st, surface):
         return None if SPIRIT_NONSEAT.search(s) else lvl        # 'wind'/'breath' -> not the seat
     if st == QEREB:
         return lvl if QEREB_SEAT.search(s) else "UNRESOLVED"    # 'within me' -> seat; 'in the midst of [camp]' -> read
+    if st == CHEQ:
+        return lvl if CHEQ_SEAT.search(s) else None             # 'bosom'/'breast' -> seat; 'lap'/'arms'/'cloak' -> NONE
     if st == MEEH:
         return None if VISCERA_LITERAL.search(s) else lvl       # literal entrails -> not the seat
     if st in FLESH_LEMMAS:
