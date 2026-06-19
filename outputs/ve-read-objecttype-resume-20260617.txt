@@ -1,0 +1,45 @@
+[object-type] residue: 4241 items across 3181 verses · cap $30.0 · model claude-sonnet-4-6
+  round 1/71: 13.4s · 45 verses · set 67 NONE 0 · tok 5000/1083 · cum $0.031 · mean 13.4s
+  round 2/71: 13.2s · 45 verses · set 65 NONE 0 · tok 4896/1051 · cum $0.062 · mean 13.3s
+  round 3/71: 11.6s · 45 verses · set 59 NONE 0 · tok 4872/955 · cum $0.091 · mean 12.7s
+  round 4/71: 13.8s · 45 verses · set 71 NONE 0 · tok 5409/1147 · cum $0.124 · mean 13.0s
+  round 5/71: 14.8s · 45 verses · set 75 NONE 0 · tok 5407/1213 · cum $0.158 · mean 13.3s
+  round 6/71: 13.5s · 45 verses · set 71 NONE 0 · tok 5250/1149 · cum $0.191 · mean 13.4s
+  round 7/71: 13.3s · 45 verses · set 67 NONE 0 · tok 5054/1087 · cum $0.223 · mean 13.4s
+  round 8/71: 12.5s · 45 verses · set 61 NONE 0 · tok 4860/988 · cum $0.252 · mean 13.2s
+  round 9/71: 10.7s · 45 verses · set 56 NONE 0 · tok 4682/905 · cum $0.280 · mean 13.0s
+  round 10/71: 14.4s · 45 verses · set 68 NONE 0 · tok 5168/1101 · cum $0.312 · mean 13.1s
+  round 11/71: 12.4s · 45 verses · set 60 NONE 0 · tok 5095/971 · cum $0.342 · mean 13.0s
+  round 12/71: 13.1s · 45 verses · set 65 NONE 0 · tok 5158/1053 · cum $0.373 · mean 13.1s
+  round 13/71: 11.0s · 45 verses · set 56 NONE 0 · tok 4946/907 · cum $0.402 · mean 12.9s
+  round 14/71: 13.2s · 45 verses · set 64 NONE 0 · tok 5257/1037 · cum $0.433 · mean 12.9s
+  round 15/71: 12.2s · 45 verses · set 53 NONE 0 · tok 4978/858 · cum $0.461 · mean 12.9s
+  round 16/71: 11.9s · 45 verses · set 61 NONE 0 · tok 4989/991 · cum $0.491 · mean 12.8s
+  round 17/71: 16.4s · 45 verses · set 74 NONE 0 · tok 5333/1194 · cum $0.524 · mean 13.0s
+  round 18/71: 14.2s · 45 verses · set 70 NONE 0 · tok 4869/1131 · cum $0.556 · mean 13.1s
+  round 19/71: 13.5s · 45 verses · set 59 NONE 0 · tok 4964/958 · cum $0.585 · mean 13.1s
+Traceback (most recent call last):
+  File "C:\Bible_study_projects\scripts\_run_ve_reads_governed.py", line 143, in <module>
+    main()
+    ~~~~^^
+  File "C:\Bible_study_projects\scripts\_run_ve_reads_governed.py", line 93, in main
+    resp = client.messages.create(model=a.model, max_tokens=8000,
+                                  messages=[{"role": "user", "content": content}])
+  File "C:\Users\lerouxc\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 268, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\lerouxc\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 991, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\lerouxc\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lerouxc\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-07-01 at 00:00 UTC.'}, 'request_id': 'req_011Cc98UeQbCdwKAGAXbHf7G'}
