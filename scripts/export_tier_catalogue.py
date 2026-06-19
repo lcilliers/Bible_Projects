@@ -16,9 +16,9 @@ TIER_TITLES = {
 }
 
 
-def to_markdown(tier_list, total):
+def to_markdown(tier_list, total, version="v1", asof="2026-06-17"):
     L = []
-    L.append("# WA Tier Catalogue — CURRENT STATE (as held in the database) — v1 — 2026-06-17")
+    L.append(f"# WA Tier Catalogue — CURRENT STATE (as held in the database) — {version} — {asof}")
     L.append("")
     L.append("> **THIS IS THE AUTHORITATIVE, CURRENT REPRESENTATION OF THE TIER SYSTEM.** Generated directly from "
              "`wa_obs_question_catalogue` (`deleted=0 AND tier IS NOT NULL`). It cannot drift from the DB — "
@@ -26,7 +26,7 @@ def to_markdown(tier_list, total):
              "*design/refit history*, not the current state (see Provenance).")
     L.append("")
     L.append(f"**Scheme:** T0–T7 · **Active tiered questions:** {total} · **Source:** `wa_obs_question_catalogue` · "
-             "**As of:** 2026-06-17")
+             f"**As of:** {asof}")
     L.append("")
     L.append("## Scheme overview (T0–T7)")
     L.append("")
@@ -67,8 +67,11 @@ def to_markdown(tier_list, total):
     L.append("- **Pending design:** `wa-tier-catalogue-restructured-v2-20260611.md` (VE/SYNTH two-layer refit — not yet applied).")
     L.append("- **Superseded (archived):** `WA-tier-framework-definitions-v1_2-2026-04-29.md` (T1–T8 prose framework), "
              "`wa-tier-questions-extract-v1-20260604.md` (flat extract), and the prior debate/draft logs in `archive/`.")
-    L.append("- **16 questions soft-deleted** from the documented 189 = the agreed DROP list (T1.8, T1.2.3, T2.8, T5.7, "
-             "T6.6, T6.7); 189 − 16 = " + str(total) + " active.")
+    L.append("- **v2_1 de-bias refit applied 2026-06-19** (`wa-tier-catalogue-cc-update-v1_0-20260619.md`): 126 keep-codes "
+             "rewritten to de-biased form + 47 obsolete codes soft-deleted (folded into a named primary; fold target in "
+             "`review_note`). This took the active tiered count 173 → " + str(total) + ". No inserts, no renumber, no hard delete.")
+    L.append("- **Earlier:** 16 questions soft-deleted from the documented 189 = the agreed DROP list (T1.8, T1.2.3, T2.8, "
+             "T5.7, T6.6, T6.7).")
     return "\n".join(L)
 
 
@@ -78,6 +81,8 @@ def main():
     ap.add_argument("--canonical", action="store_true",
                     help="the canonical tier catalogue only: deleted=0 AND tier set (T0-T7); excludes legacy untiered flag questions")
     ap.add_argument("--md", action="store_true", help="emit the current-state markdown doc (forces --canonical scope)")
+    ap.add_argument("--version", default="v1", help="version label in the current-state doc header (bump on regenerate)")
+    ap.add_argument("--asof", default="2026-06-17", help="as-of date in the current-state doc header")
     ap.add_argument("--out", default="outputs/tier-catalogue-extract-20260617.json")
     a = ap.parse_args()
     if a.md:
@@ -145,9 +150,9 @@ def main():
         "tiers": tier_list,
     }
     if a.md:
-        out = a.out if a.out.endswith(".md") else "Workflow/Tiers/WA-tier-catalogue-current-state-v1-20260617.md"
+        out = a.out if a.out.endswith(".md") else f"Workflow/Tiers/WA-tier-catalogue-current-state-{a.version}-{a.asof.replace('-','')}.md"
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        md = to_markdown(tier_list, len(rows))
+        md = to_markdown(tier_list, len(rows), a.version, a.asof)
         open(out, "w", encoding="utf-8").write(md)
         print(f"WROTE {out} · {len(rows)} questions · {len(tier_list)} tiers · {len(md):,} chars")
         return

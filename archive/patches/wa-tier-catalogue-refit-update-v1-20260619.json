@@ -1,0 +1,1970 @@
+{
+ "_patch_meta": {
+  "patch_id": "wa-tier-catalogue-refit-update-v1-20260619",
+  "registry_id": null,
+  "word": "global",
+  "produced_date": "20260619",
+  "produced_by": "wa-tier-catalogue-cc-update-v1_0-20260619 (companion: v2_1 rewrite)",
+  "patch_type": "CATALOGUE_UPDATE",
+  "session_b_status": null,
+  "description": "Tier-catalogue refit: 126 keep-code question_text rewrites (de-biased v2_1) + 47 obsolete-code soft-deletes (deleted=1, fold target in review_note). No inserts, no renumber, no hard delete. Operates on the 173 active tiered codes; post-run active tiered = 126."
+ },
+ "operations": [
+  {
+   "op_id": "OP-001",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.1.1"
+   },
+   "set": {
+    "question_text": "In this verse, is the characteristic predicated of God or otherwise related to God; if so, in what relation (God as the one who bears it, acts, gives it, or is its object)? Record the relation, or record that it is not related to God here."
+   }
+  },
+  {
+   "op_id": "OP-002",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.1.2"
+   },
+   "set": {
+    "question_text": "Across the characteristic's verses, is it ever borne by God himself or only by the creature, and what does that pattern of presence or absence indicate for its place in the human person and in the divine image?"
+   }
+  },
+  {
+   "op_id": "OP-003",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.2.1"
+   },
+   "set": {
+    "question_text": "Does this verse state any purpose, role, or effect the characteristic serves in the person — what it leads the person to be, do, or become? Record it if stated; otherwise record none."
+   }
+  },
+  {
+   "op_id": "OP-004",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.2.2"
+   },
+   "set": {
+    "question_text": "Across the evidence, does the characteristic's role read as belonging to created design, to the fallen condition, to both, or as not determinable?"
+   }
+  },
+  {
+   "op_id": "OP-005",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.2.3"
+   },
+   "set": {
+    "question_text": "Across the evidence, is there any orientation toward a future fullness — something the person moves toward, not only what they currently are? Record it, or record none."
+   }
+  },
+  {
+   "op_id": "OP-006",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.3.1"
+   },
+   "set": {
+    "question_text": "From the characteristic's God-relation (T0.1) and its role (T0.2), what aspect of the divine likeness, if any, does it instantiate in the person? Record the aspect, or record none."
+   }
+  },
+  {
+   "op_id": "OP-007",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.3.2"
+   },
+   "set": {
+    "question_text": "Across the evidence, is the characteristic shared between God and the person, or an exclusively creaturely analogue to something in God?"
+   }
+  },
+  {
+   "op_id": "OP-008",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.3.3"
+   },
+   "set": {
+    "question_text": "Where the characteristic is present or absent in a person, what does that indicate about the condition of the divine image in them — or is no such indication evidenced?"
+   }
+  },
+  {
+   "op_id": "OP-009",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.4.1"
+   },
+   "set": {
+    "question_text": "Does this verse use the characteristic typologically — pointing beyond the immediate to a covenantal, eschatological, or christological reality; if so, which, and in which direction (the divine instance establishing the pattern, or the human pointing toward the divine)? Record the use and direction, or record none."
+   }
+  },
+  {
+   "op_id": "OP-010",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.1.1"
+   },
+   "set": {
+    "question_text": "What is the characteristic called in the programme, and what does the name signal about its essential nature?"
+   }
+  },
+  {
+   "op_id": "OP-011",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.1.2"
+   },
+   "set": {
+    "question_text": "What do the primary Hebrew and Greek terms show at the definitional level?"
+   }
+  },
+  {
+   "op_id": "OP-012",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.1.3"
+   },
+   "set": {
+    "question_text": "What directional, relational, or constitutional implication does the name carry?"
+   }
+  },
+  {
+   "op_id": "OP-013",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.2.1"
+   },
+   "set": {
+    "question_text": "What kind of inner-being phenomenon is the characteristic — an act, a disposition, a condition/status, a quality, or something else?"
+   }
+  },
+  {
+   "op_id": "OP-014",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.2.2"
+   },
+   "set": {
+    "question_text": "Is the characteristic simple in structure, or does it combine constituent elements; if compound, which?"
+   }
+  },
+  {
+   "op_id": "OP-015",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.3.1"
+   },
+   "set": {
+    "question_text": "What stands against the characteristic as its structural opposite — the inner-being reality that excludes it?"
+   }
+  },
+  {
+   "op_id": "OP-016",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.3.2"
+   },
+   "set": {
+    "question_text": "What does the characteristic exclude or resist at its edge?"
+   }
+  },
+  {
+   "op_id": "OP-017",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.3.3"
+   },
+   "set": {
+    "question_text": "Where does the characteristic end and another thing begin — what is it not?"
+   }
+  },
+  {
+   "op_id": "OP-018",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.4.1"
+   },
+   "set": {
+    "question_text": "In what distinct mode(s) does the characteristic operate within the inner person in this verse — including its grammatical/stem form and the manner of functioning?"
+   }
+  },
+  {
+   "op_id": "OP-019",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.4.2"
+   },
+   "set": {
+    "question_text": "Does the mode of operation vary by context, direction, or constitutional level; if so, how?"
+   }
+  },
+  {
+   "op_id": "OP-020",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.4.3"
+   },
+   "set": {
+    "question_text": "Does the characteristic operate through a communicative or speech-based mode (commanded, addressed, spoken); if so, how? Record it, or record none."
+   }
+  },
+  {
+   "op_id": "OP-021",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.5.1"
+   },
+   "set": {
+    "question_text": "What first or most immediate inner-being response does this verse show following the characteristic? Record it, or record none."
+   }
+  },
+  {
+   "op_id": "OP-022",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.5.2"
+   },
+   "set": {
+    "question_text": "Across the verses, is that immediate response consistent or varied?"
+   }
+  },
+  {
+   "op_id": "OP-023",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.6.1"
+   },
+   "set": {
+    "question_text": "What does the characteristic produce in the inner being over time in this verse — what states, qualities, capacities, or orientations does it establish? Record it, or record none."
+   }
+  },
+  {
+   "op_id": "OP-024",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.6.3"
+   },
+   "set": {
+    "question_text": "How does the sustained effect differ from the immediate response (T1.5)?"
+   }
+  },
+  {
+   "op_id": "OP-025",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.7.1"
+   },
+   "set": {
+    "question_text": "Under what inner conditions does the characteristic take hold or operate rightly?"
+   }
+  },
+  {
+   "op_id": "OP-026",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.7.2"
+   },
+   "set": {
+    "question_text": "Under what inner conditions is the characteristic blocked, distorted, resisted, or not taken up — including, where the evidence shows it, distortion or interference by another spirit (adversarial or angelic)?"
+   }
+  },
+  {
+   "op_id": "OP-027",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.7.3"
+   },
+   "set": {
+    "question_text": "What is the inner-being state of the person in whom the characteristic is present but does not take hold?"
+   }
+  },
+  {
+   "op_id": "OP-028",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.1.1"
+   },
+   "set": {
+    "question_text": "At which constitutional level(s) does this verse locate the characteristic — from {spirit, soul, heart, mind, other soul-subset, a named body part} — and how is each engaged? Record every level evidenced, or none."
+   }
+  },
+  {
+   "op_id": "OP-029",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.1.2"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engaged and absent levels indicate — the characteristic's depth and seat, the levels it never engages, and (for any body link) whether the link is emphatic, functional, expressive, indicative, or mediating?"
+   }
+  },
+  {
+   "op_id": "OP-030",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.10.1"
+   },
+   "set": {
+    "question_text": "Does the characteristic move across constitutional levels (spirit→soul→body), or onto the person from an external source — including another spirit (angelic or adversarial) — or in another direction; and if so in what sequence or pattern? If no movement, record none."
+   }
+  },
+  {
+   "op_id": "OP-031",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.7.1"
+   },
+   "set": {
+    "question_text": "Where a body link exists (from the T2.1.1 audit), in which direction does it run — soul/spirit expressing through the body, the body feeding back to the soul, or both — and what follows from that direction? If no body link, record none."
+   }
+  },
+  {
+   "op_id": "OP-032",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.9.1"
+   },
+   "set": {
+    "question_text": "Where does this verse say the characteristic originates — generated within the person, received from another person, bestowed by God, carried generationally, introduced by another spirit (angelic or adversarial), or not stated?"
+   }
+  },
+  {
+   "op_id": "OP-033",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.9.2"
+   },
+   "set": {
+    "question_text": "Across the verses, is the origin single or multiple, and does it change with context?"
+   }
+  },
+  {
+   "op_id": "OP-034",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.1.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the perceptive faculty — the inner senses (hearing, sight, taste, touch, smell) and spiritual discernment — and if so, which inner sense and how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-035",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.1.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect perception in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-036",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.1.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with perception indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-037",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.10.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage conscientiousness — the integrated response of moral awareness, volition, and action — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-038",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.10.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect conscientiousness in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-039",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.10.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with conscientiousness indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-040",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.11.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the relational capacity — the constitutional equipment for genuine connection with another person — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-041",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.11.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect relational capacity in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-042",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.11.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with relational capacity indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-043",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.2.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the cognitive faculty — knowing, understanding, discerning — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-044",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.2.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect cognition in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-045",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.2.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with cognition indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-046",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.3.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the memory faculty — the holding and retrieving of inner-being reality across time — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-047",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.3.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect memory in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-048",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.3.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with memory indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-049",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.4.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the affective faculty — feeling and emotional experience — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-050",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.4.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect the affective faculty in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-051",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.4.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with affect indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-052",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.5.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the creative faculty — imagination and the capacity to originate — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-053",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.5.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect creativity in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-054",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.5.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with creativity indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-055",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.6.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the volitional faculty — the capacity to choose — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-056",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.6.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect volition in the person here — including its capacity, its interaction with other characteristics, and the constraints under which it operates — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-057",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.6.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with volition indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-058",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.7.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the agency faculty — the capacity to act, initiate, and make happen — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-059",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.7.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect agency in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-060",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.7.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with agency indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-061",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.8.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the moral-evaluation faculty — the capacity to assess against a standard of right, wrong, good, and true — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-062",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.8.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect moral evaluation in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-063",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.8.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with moral evaluation indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-064",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.9.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic engage the conscience — the acute inner witness of sin, guilt, and conviction — and if so, how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-065",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.9.2"
+   },
+   "set": {
+    "question_text": "How does the characteristic affect conscience in the person here — and record no effect if none is evidenced."
+   }
+  },
+  {
+   "op_id": "OP-066",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T3.9.3"
+   },
+   "set": {
+    "question_text": "Across the verses, what does the pattern of engagement and non-engagement with conscience indicate about the characteristic's nature?"
+   }
+  },
+  {
+   "op_id": "OP-067",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.1.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic operate from God toward the human person, and if so how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-068",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.1.2"
+   },
+   "set": {
+    "question_text": "On what basis does God extend the characteristic — conditional, unconditional, covenantal, or responsive — as the evidence shows?"
+   }
+  },
+  {
+   "op_id": "OP-069",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.1.3"
+   },
+   "set": {
+    "question_text": "What does God's extension of the characteristic show about his disposition toward the human person?"
+   }
+  },
+  {
+   "op_id": "OP-070",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.2.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic operate in the person's movement toward God — seeking, supplication, worship, covenant — and if so how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-071",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.2.2"
+   },
+   "set": {
+    "question_text": "What inner posture does this movement require, as the evidence shows?"
+   }
+  },
+  {
+   "op_id": "OP-072",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.2.3"
+   },
+   "set": {
+    "question_text": "What does the human-to-God direction of the characteristic show about the person's relationship with God?"
+   }
+  },
+  {
+   "op_id": "OP-073",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.3.1"
+   },
+   "set": {
+    "question_text": "In this verse, is the characteristic extended by one person toward another, and if so how does it operate in that extension? Record none if it is not."
+   }
+  },
+  {
+   "op_id": "OP-074",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.3.2"
+   },
+   "set": {
+    "question_text": "What inner conditions or orientations in the giver accompany genuine extension of the characteristic?"
+   }
+  },
+  {
+   "op_id": "OP-075",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.3.3"
+   },
+   "set": {
+    "question_text": "What does the evidence show a person must have received or become before they extend the characteristic?"
+   }
+  },
+  {
+   "op_id": "OP-076",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.4.1"
+   },
+   "set": {
+    "question_text": "In this verse, is the characteristic taken up by a person from another, and if so how does it operate in that uptake? Record none if it is not."
+   }
+  },
+  {
+   "op_id": "OP-077",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.4.2"
+   },
+   "set": {
+    "question_text": "What inner conditions accompany or block uptake of the characteristic from another person?"
+   }
+  },
+  {
+   "op_id": "OP-078",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.4.3"
+   },
+   "set": {
+    "question_text": "What is the inner-being state of the person who meets the characteristic from another but does not take it up?"
+   }
+  },
+  {
+   "op_id": "OP-079",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.5.1"
+   },
+   "set": {
+    "question_text": "Does the evidence show the characteristic operating differently within existing relational bonds versus across relational distance or difference; if so, how?"
+   }
+  },
+  {
+   "op_id": "OP-080",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.5.2"
+   },
+   "set": {
+    "question_text": "Does the characteristic operate within covenantal contexts only, or does it cross covenantal boundaries, as the evidence shows?"
+   }
+  },
+  {
+   "op_id": "OP-081",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.5.3"
+   },
+   "set": {
+    "question_text": "What does the evidence show about the relational scope of the characteristic — who is included and who is not?"
+   }
+  },
+  {
+   "op_id": "OP-082",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.6.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic operate in relation to other spiritual beings — angelic or adversarial — and if so how? Record none if it does not."
+   }
+  },
+  {
+   "op_id": "OP-083",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.6.2"
+   },
+   "set": {
+    "question_text": "Is the characteristic a site of adversarial activity — something that can be attacked, distorted, or weaponised by adversarial powers — as the evidence shows?"
+   }
+  },
+  {
+   "op_id": "OP-084",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.6.3"
+   },
+   "set": {
+    "question_text": "Is the characteristic communicated, strengthened, or mediated through angelic ministry in the evidence?"
+   }
+  },
+  {
+   "op_id": "OP-085",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.1.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic produce transformation in the person, and if so does it change the person's condition, their orientation to their condition, or both? Record none if no transformation is shown."
+   }
+  },
+  {
+   "op_id": "OP-086",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.1.2"
+   },
+   "set": {
+    "question_text": "Is the transformation reversible or irreversible in the evidence?"
+   }
+  },
+  {
+   "op_id": "OP-087",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.2.1"
+   },
+   "set": {
+    "question_text": "Does this verse describe a sequence of inner states the characteristic moves the person through — a before, during, and after — and what are those states? Record none if no sequence is shown."
+   }
+  },
+  {
+   "op_id": "OP-088",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.3.1"
+   },
+   "set": {
+    "question_text": "In this verse, by what mechanism does the characteristic produce change — discipline, encounter, gradual formation, sudden transformation, or other? Record none if no mechanism is shown."
+   }
+  },
+  {
+   "op_id": "OP-089",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.3.2"
+   },
+   "set": {
+    "question_text": "Does the mechanism differ across contexts in the evidence; if so, how?"
+   }
+  },
+  {
+   "op_id": "OP-090",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.4.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic operate in relation to suffering or affliction — as a response to it, a product of it, or a context for it? Record none if no such relation is shown."
+   }
+  },
+  {
+   "op_id": "OP-091",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.4.2"
+   },
+   "set": {
+    "question_text": "What does the evidence show suffering doing to the characteristic in the person — and record no such effect if none is shown."
+   }
+  },
+  {
+   "op_id": "OP-092",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.5.1"
+   },
+   "set": {
+    "question_text": "In this verse, does the characteristic participate in the longer arc of character formation and sanctification — shaping the person over time — and what does the evidence show of its role in that arc? Record none if no such participation is shown."
+   }
+  },
+  {
+   "op_id": "OP-093",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.6.1"
+   },
+   "set": {
+    "question_text": "In this verse, is the characteristic oriented toward an eschatological fullness — a future state toward which its present operation points — and what does its present experience anticipate of that fullness? Record none if no such orientation is shown."
+   }
+  },
+  {
+   "op_id": "OP-094",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.1.1"
+   },
+   "set": {
+    "question_text": "Which adjacent characteristics appear alongside this one in the verse evidence, and how frequently? Record none if no significant co-occurrence appears."
+   }
+  },
+  {
+   "op_id": "OP-095",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.1.2"
+   },
+   "set": {
+    "question_text": "What does the co-occurrence pattern show about this characteristic's place in the inner-being landscape?"
+   }
+  },
+  {
+   "op_id": "OP-096",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.2.1"
+   },
+   "set": {
+    "question_text": "Does the evidence show this characteristic consistently preceding, following, or accompanying another in a sequence; if so, which and how? Record none if no sequence appears."
+   }
+  },
+  {
+   "op_id": "OP-097",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.2.2"
+   },
+   "set": {
+    "question_text": "What does the sequence show — is the relationship causal, developmental, or correlational?"
+   }
+  },
+  {
+   "op_id": "OP-098",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.3.1"
+   },
+   "set": {
+    "question_text": "Does this characteristic produce another in the evidence, and if so which, and by what mechanism? Record none if none is shown."
+   }
+  },
+  {
+   "op_id": "OP-099",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.3.2"
+   },
+   "set": {
+    "question_text": "Is this characteristic produced by another, and if so which?"
+   }
+  },
+  {
+   "op_id": "OP-100",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.3.3"
+   },
+   "set": {
+    "question_text": "Is this characteristic a constituent element of another, or another a constituent of this one?"
+   }
+  },
+  {
+   "op_id": "OP-101",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.4.1"
+   },
+   "set": {
+    "question_text": "Which vocabulary terms, if any, does this characteristic share with other characteristics in the programme? Record none if none is shown."
+   }
+  },
+  {
+   "op_id": "OP-102",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.4.2"
+   },
+   "set": {
+    "question_text": "Does the sharing extend to root-level architecture — a shared root generating terms across two or more characteristics?"
+   }
+  },
+  {
+   "op_id": "OP-103",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.4.3"
+   },
+   "set": {
+    "question_text": "What does the vocabulary sharing show about the conceptual relationship between the characteristics?"
+   }
+  },
+  {
+   "op_id": "OP-104",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.5.1"
+   },
+   "set": {
+    "question_text": "Which adjacent characteristic most closely resembles this one, and what precisely distinguishes them?"
+   }
+  },
+  {
+   "op_id": "OP-105",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.5.2"
+   },
+   "set": {
+    "question_text": "Where the evidence shows apparent overlap, what is the precise boundary?"
+   }
+  },
+  {
+   "op_id": "OP-106",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.5.3"
+   },
+   "set": {
+    "question_text": "Is the distinction from the nearest neighbour one of degree, kind, direction, or constitutional level?"
+   }
+  },
+  {
+   "op_id": "OP-107",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.1"
+   },
+   "set": {
+    "question_text": "What are the primary Hebrew and Greek terms for this characteristic, and what do their root meanings show?"
+   }
+  },
+  {
+   "op_id": "OP-108",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.10"
+   },
+   "set": {
+    "question_text": "What does the full vocabulary arc show about the characteristic's complete semantic range?"
+   }
+  },
+  {
+   "op_id": "OP-109",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.2"
+   },
+   "set": {
+    "question_text": "What is the grammatical range of the primary term (noun, verb, adjective, participle), and what does that range show about how the characteristic operates?"
+   }
+  },
+  {
+   "op_id": "OP-110",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.3"
+   },
+   "set": {
+    "question_text": "What is the semantic range of the primary term — across what breadth of meaning does it operate?"
+   }
+  },
+  {
+   "op_id": "OP-111",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.4"
+   },
+   "set": {
+    "question_text": "Does the vocabulary include terms distinguishing distinct aspects — disposition versus act, received versus given, condition versus quality? Record which, or none."
+   }
+  },
+  {
+   "op_id": "OP-112",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.5"
+   },
+   "set": {
+    "question_text": "Does the vocabulary include a term for the structural opposite or absence of this characteristic? Record it, or none."
+   }
+  },
+  {
+   "op_id": "OP-113",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.6"
+   },
+   "set": {
+    "question_text": "Does the vocabulary include a person-type term — one for the person who habitually possesses or exercises this characteristic? Record it, or none."
+   }
+  },
+  {
+   "op_id": "OP-114",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.7"
+   },
+   "set": {
+    "question_text": "Does the vocabulary include a supplication or seeking term — one for the act of seeking this characteristic from another? Record it, or none."
+   }
+  },
+  {
+   "op_id": "OP-115",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.8"
+   },
+   "set": {
+    "question_text": "What does the relationship between the OT Hebrew and NT Greek vocabulary show about continuity or development of the characteristic across the Testaments?"
+   }
+  },
+  {
+   "op_id": "OP-116",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.1.9"
+   },
+   "set": {
+    "question_text": "Is there a term newly coined in the NT period for this characteristic; if so, what does the coinage show? Record it, or none."
+   }
+  },
+  {
+   "op_id": "OP-117",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.1"
+   },
+   "set": {
+    "question_text": "What is the function of the primary term within its primary verse — what role does it play in the sentence and argument?"
+   }
+  },
+  {
+   "op_id": "OP-118",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.2"
+   },
+   "set": {
+    "question_text": "What literary form carries the primary verse evidence (narrative, psalm, wisdom, prophecy, epistle, apocalyptic), and what does that form require for responsible interpretation?"
+   }
+  },
+  {
+   "op_id": "OP-119",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.3"
+   },
+   "set": {
+    "question_text": "What is the logical structure of the key arguments in the verse evidence — premises and conclusions?"
+   }
+  },
+  {
+   "op_id": "OP-120",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.4"
+   },
+   "set": {
+    "question_text": "What contextual setting carries the primary verse evidence (judicial, liturgical, covenantal, communal, eschatological), and what does that setting show?"
+   }
+  },
+  {
+   "op_id": "OP-121",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.5"
+   },
+   "set": {
+    "question_text": "Does any verse function as the primary anchor — the one most fully and directly expressing the characteristic's essential character? Record it, or none."
+   }
+  },
+  {
+   "op_id": "OP-122",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.2.6"
+   },
+   "set": {
+    "question_text": "What does the primary anchor verse show that no other verse shows?"
+   }
+  },
+  {
+   "op_id": "OP-123",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.3.1"
+   },
+   "set": {
+    "question_text": "Which human-science framework (psychology, moral philosophy, developmental psychology, sociology, anthropology, or other) serves as the most useful interpretive lens for this characteristic?"
+   }
+  },
+  {
+   "op_id": "OP-124",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.3.2"
+   },
+   "set": {
+    "question_text": "Where the framework illuminates the verse evidence — making a finding more coherent or complete — what does it show?"
+   }
+  },
+  {
+   "op_id": "OP-125",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.3.3"
+   },
+   "set": {
+    "question_text": "Where the verse evidence and the framework diverge, what does the divergence show?"
+   }
+  },
+  {
+   "op_id": "OP-126",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T7.3.4"
+   },
+   "set": {
+    "question_text": "Does the framework surface any aspect of the characteristic the verse evidence has not yet addressed, and does that absence call for further verse investigation?"
+   }
+  },
+  {
+   "op_id": "OP-127",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.1.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T0.1.2 · tier-catalogue v2_1 refit 2026-06-19 · silence first-class (God-possession silence read in the presence/absence pattern)"
+   }
+  },
+  {
+   "op_id": "OP-128",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.4.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T0.4.1 · tier-catalogue v2_1 refit 2026-06-19 · typological direction folded into the typology question"
+   }
+  },
+  {
+   "op_id": "OP-129",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T0.4.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T0.4.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note none\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-130",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.5.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T1.5.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-131",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T1.6.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T1.6.1 · tier-catalogue v2_1 refit 2026-06-19 · states/qualities-established merged into what-it-produces"
+   }
+  },
+  {
+   "op_id": "OP-132",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.1.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · spirit-level \"reveal\" folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-133",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.1.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · spirit-level \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-134",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.10.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.10.1 · tier-catalogue v2_1 refit 2026-06-19 · movement sequence/pattern folded into the movement question"
+   }
+  },
+  {
+   "op_id": "OP-135",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.10.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.10.1 · tier-catalogue v2_1 refit 2026-06-19 · movement \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-136",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.2.1"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · soul-level presence folded into consolidated location question"
+   }
+  },
+  {
+   "op_id": "OP-137",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.2.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · soul-level \"reveal\" folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-138",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.2.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · soul-level \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-139",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.3.1"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · heart presence folded into consolidated location question"
+   }
+  },
+  {
+   "op_id": "OP-140",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.3.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · heart-function \"reveal\" folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-141",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.3.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · heart \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-142",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.4.1"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · mind presence folded into consolidated location question"
+   }
+  },
+  {
+   "op_id": "OP-143",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.4.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · mind-function \"reveal\" folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-144",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.4.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · mind \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-145",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.5.1"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · other-subset presence folded into consolidated location question"
+   }
+  },
+  {
+   "op_id": "OP-146",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.5.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · other-subset \"reveal\" folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-147",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.5.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · other-subset \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-148",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.6.1"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · body-part presence folded into consolidated location question"
+   }
+  },
+  {
+   "op_id": "OP-149",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.6.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.2 · tier-catalogue v2_1 refit 2026-06-19 · body-link function (\"reveal\") folded into location synthesis"
+   }
+  },
+  {
+   "op_id": "OP-150",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.6.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.1.1 · tier-catalogue v2_1 refit 2026-06-19 · body-part \"note silence\" absorbed by answer-set audit"
+   }
+  },
+  {
+   "op_id": "OP-151",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.7.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.7.1 · tier-catalogue v2_1 refit 2026-06-19 · body-direction consequence folded into the direction question"
+   }
+  },
+  {
+   "op_id": "OP-152",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.7.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.7.1 · tier-catalogue v2_1 refit 2026-06-19 · body-direction \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-153",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T2.9.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T2.9.2 · tier-catalogue v2_1 refit 2026-06-19 · origin context-variation folded into single/multiple question"
+   }
+  },
+  {
+   "op_id": "OP-154",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.1.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.1.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-155",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.2.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.2.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-156",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.3.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.3.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-157",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.4.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.4.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-158",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.5.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.5.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-159",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T4.6.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T4.6.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-160",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.1.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.1.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-161",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.2.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.2.1 · tier-catalogue v2_1 refit 2026-06-19 · states-and-what-the-sequence-reveals folded into the sequence question"
+   }
+  },
+  {
+   "op_id": "OP-162",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.2.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.2.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-163",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.3.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.3.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-164",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.4.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.4.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-165",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.5.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.5.1 · tier-catalogue v2_1 refit 2026-06-19 · role-in-arc folded into the participation question"
+   }
+  },
+  {
+   "op_id": "OP-166",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.5.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.5.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-167",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.6.2"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.6.1 · tier-catalogue v2_1 refit 2026-06-19 · anticipation folded into the orientation question"
+   }
+  },
+  {
+   "op_id": "OP-168",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T5.6.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T5.6.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-169",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.1.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T6.1.1 · tier-catalogue v2_1 refit 2026-06-19 · \"no significant pattern\" note — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-170",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.2.3"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T6.2.1 · tier-catalogue v2_1 refit 2026-06-19 · \"no pattern\" note — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-171",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.3.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T6.3.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-172",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.4.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T6.4.1 · tier-catalogue v2_1 refit 2026-06-19 · \"note silence\" — silence first-class"
+   }
+  },
+  {
+   "op_id": "OP-173",
+   "operation": "update",
+   "table": "wa_obs_question_catalogue",
+   "match": {
+    "question_code": "T6.5.4"
+   },
+   "set": {
+    "deleted": 1,
+    "review_note": "folded_into=T6.5.1 · tier-catalogue v2_1 refit 2026-06-19 · \"no distinction work required\" note — silence first-class"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "text_updates": 126,
+  "soft_deletes": 47,
+  "total_ops": 173,
+  "expected_post_run_active_tiered": 126
+ }
+}

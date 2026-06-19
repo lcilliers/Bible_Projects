@@ -1599,6 +1599,24 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         first_code = rows_list[0].get("question_code", "?") if rows_list else "?"
         print(f"  {op_id}: wa_obs_question_catalogue INSERT {inserted} row(s) ({first_code})")
 
+    elif table == "wa_obs_question_catalogue" and operation == "update":
+        # Catalogue text-update / soft-delete (tier-catalogue refit). match on question_code,
+        # set question_text / deleted / review_note. Strict: each match must hit exactly one row.
+        match = dict(op["match"])
+        set_vals = dict(op["set"])
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        where_clauses = " AND ".join(f"{k} = ?" for k in match)
+        params = list(set_vals.values()) + list(match.values())
+        rc = _exec_update_strict(
+            conn,
+            f"UPDATE wa_obs_question_catalogue SET {set_clauses} WHERE {where_clauses}",
+            params,
+            op_id,
+            "wa_obs_question_catalogue",
+        )
+        counts["catalogue_updated"] = counts.get("catalogue_updated", 0) + 1
+        print(f"  {op_id}: wa_obs_question_catalogue UPDATE match={match} set={list(set_vals)} rows={rc}")
+
     elif table == "wa_finding_catalogue_links" and operation == "insert":
         # Supports both single-record and rows-array format
         rows_list = op.get("rows", [])
