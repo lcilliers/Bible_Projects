@@ -56,3 +56,18 @@ sources and removable. Pre-run snapshot retained.
 For prose generation, the DB now holds the NEW findings as searchable, cluster/characteristic-tagged
 `prose_section` documents (the prose-foundation), the OLD findings are retained-but-hidden, and the verse-read
 grounding stays live. Remaining: the two HELD scoping decisions above.
+
+## UPDATE 2026-06-19 — Stage C REVERSED (researcher: too early to disassemble)
+
+Researcher reconsidered: it is too early to tell what of the previous structure will be reused, so the OLD
+structure should NOT be broken apart yet. **Stage C was fully reversed** (`_reverse_findings_stageC_restrict_20260619.py`):
+1,168 rows un-restricted (cluster_finding 1118 · finding 37 · characteristic 13), marker stripped, integrity ok.
+**The old structure is intact and visible again.**
+
+Current state = the researcher's **alternative #1**: the NEW analysis is captured in a *new* construct
+(`prose_section`, additive — Stages A+B remain) **without** breaking the old structures apart. Stages A (18 new
+characteristics) and B (22 prose_section file-findings) are additive and fully reversible if **alternative #2**
+(leave findings in files, defer capture until analytics run through more clusters) is preferred — that would
+remove the 22 prose_section rows + 18 new characteristics, returning to a zero-DB-footprint defer.
+
+**Open:** keep alternative #1 (additive capture, old intact) or switch to alternative #2 (reverse A+B, defer)?
