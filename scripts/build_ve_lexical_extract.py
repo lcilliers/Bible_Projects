@@ -9,9 +9,27 @@ deterministic restatement of the lexical — redundant + larger for the AI; incl
 """
 import argparse, json, os, re, sqlite3, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
+sys.path.insert(0, os.path.dirname(__file__))
 import morph_util
+import _ve_engine_v2 as eng
 DB = os.path.join("database", "bible_research.db")
 T2_CONTENT_POS = {"verb", "noun", "adjective"}  # 01c §A2: T2-content kept as context; grammatical T2 excluded
+# meaningful-qualifier signal union (base strongs): a T2 occurrence is kept ONLY if it serves a recognised
+# inner-being qualifier role (seat · intensifier · faculty · perception/cognition · divine · spirit-being ·
+# valence). Other T2 content-words (e.g. "seed", "to sow", "hand", "name") have no bearing on the inner-being
+# characteristic and are set aside as noise (researcher direction 2026-06-20).
+QUAL_KEEP = {eng.base(s) for s in (set(eng.SEAT) | set(eng.DIVINE) | set(eng.INTENSIFIER) | set(eng.FACULTY_LEMMA)
+                                   | set(eng.SPIRIT_BEINGS) | set(eng.PERCEPTION) | set(eng.COGNITION)
+                                   | set(eng.INHERENT_VALENCE))}
+
+
+def _t2_noise(occ_cc, strong, morph):
+    """A T2 occurrence with no inner-being qualifier bearing (grammatical, or content-word not in QUAL_KEEP)."""
+    if occ_cc != "T2":
+        return False
+    if morph_util.morph_category(morph) not in T2_CONTENT_POS:
+        return True   # grammatical T2 function word
+    return eng.base(strong) not in QUAL_KEEP   # content T2 that is not a recognised qualifier
 
 FIELDS_GUIDE = {
     "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
@@ -165,9 +183,16 @@ def main():
              "compound", "relational"]
     verses, vmap = [], {}
     nskip_t2 = 0
+    # per-verse set of dropped (noise-T2) transliterations, so kept terms' `compound` lists can drop them too.
+    drop_tr = {}
     for u in units:
-        # 01c §A3: drop T2-grammatical co-terms (function words) from the fan-out — noise + token waste.
-        if u["occ_cc"] == "T2" and morph_util.morph_category(u["morph"]) not in T2_CONTENT_POS:
+        if _t2_noise(u["occ_cc"], u["sn"], u["morph"]):
+            drop_tr.setdefault(u["ref"], set()).add(u["tr"])
+    for u in units:
+        # 01c §A3 + 2026-06-20: drop T2 co-terms that carry no inner-being qualifier bearing (grammatical
+        # function words, and content-words not in the qualifier signal union) — noise that cannot connect
+        # to a character term. Genuine T2 qualifiers (seats/intensifiers/perception/divine/…) are kept.
+        if _t2_noise(u["occ_cc"], u["sn"], u["morph"]):
             nskip_t2 += 1
             continue
         # lexical items grouped
@@ -177,6 +202,12 @@ def main():
             if r["ve_label"] in ("sense", "lexical_note"):
                 continue
             lex.setdefault(r["ve_label"].replace("-", "_"), []).append(r["value"])
+        # drop noise-T2 co-terms from the `compound` list (their standalone records are excluded above)
+        if "compound" in lex and drop_tr.get(u["ref"]):
+            _dt = drop_tr[u["ref"]]
+            lex["compound"] = [e for e in lex["compound"] if e.split(' "')[0].strip() not in _dt]
+            if not lex["compound"]:
+                del lex["compound"]
         lex = {k: (v[0] if len(v) == 1 else v) for k, v in lex.items()}
         ordered = {k.replace("-", "_"): lex[k.replace("-", "_")] for k in ORDER if k.replace("-", "_") in lex}
         lemma = concise((cur.execute("SELECT medium_def FROM lexicon WHERE strong=?", (base(u["sn"]),)).fetchone() or [None])[0])
