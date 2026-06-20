@@ -170,11 +170,14 @@ def main():
                m.language lang, m.cluster_code occ_cc, vr.target_word tw, vr.morph_code morph, vr.stem stem
         FROM verse_context vc JOIN wa_verse_records vr ON vr.id=vc.verse_record_id AND COALESCE(vr.delete_flagged,0)=0
         JOIN mti_terms m ON m.id=vc.mti_term_id
-        WHERE COALESCE(vc.delete_flagged,0)=0 AND vr.reference IN (
+        WHERE COALESCE(vc.delete_flagged,0)=0
+          AND vc.set_aside_reason IS NULL AND m.cluster_code IS NOT NULL  -- honour DB set-asides (occurrence + term-level)
+          AND vr.reference IN (
             SELECT DISTINCT vr2.reference FROM verse_context vc2
             JOIN wa_verse_records vr2 ON vr2.id=vc2.verse_record_id AND COALESCE(vr2.delete_flagged,0)=0
             JOIN mti_terms m2 ON m2.id=vc2.mti_term_id
-            WHERE m2.cluster_code=? AND COALESCE(vc2.delete_flagged,0)=0)
+            WHERE m2.cluster_code=? AND COALESCE(vc2.delete_flagged,0)=0
+              AND vc2.set_aside_reason IS NULL)   -- verse-set = verses with a LIVE (non-set-aside) focus term
         ORDER BY vr.book_id, vr.chapter, vr.verse_num, vc.id""", (cc,)).fetchall()
 
     # field order for the lexical block
