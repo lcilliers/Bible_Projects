@@ -1,5 +1,5 @@
 <#
-backup_watchdog.ps1 — independent staleness check for the NAS backup jobs.
+backup_watchdog.ps1 - independent staleness check for the NAS backup jobs.
 
 The on-failure alerts inside mirror_to_nas.ps1 / backup_db_to_nas.py only fire when those
 scripts RUN. This watchdog catches the cases they can't: the task was disabled, the PC was
@@ -34,7 +34,7 @@ foreach ($j in $jobs) {
     if ($status -ne 'OK') {
         $problems += "$($j.Label): last status FAIL ($($parts[2])) at $($parts[1])"
     } elseif ($ageHrs -gt $maxAgeHrs) {
-        $problems += "$($j.Label): last SUCCESS was $ageHrs h ago (>$maxAgeHrs h) — job may not be running"
+        $problems += "$($j.Label): last SUCCESS was $ageHrs h ago (>$maxAgeHrs h) - job may not be running"
     }
 }
 
