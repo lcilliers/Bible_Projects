@@ -149,3 +149,7 @@ Sessions-v2/*/Data/wa-ve-lexical-extract-*.json
 Sessions-v2/*/Data/archive/wa-ve-lexical-extract-*.json
 Sessions-v2/*/Data/cause-api-*.json
 Sessions-v2/*/Data/field-api-*.json
+
+# Sessions-v2 AI handoff zips (transient — unpacked into folders)
+Sessions-v2/**/*.zip
+database/*.db-journal

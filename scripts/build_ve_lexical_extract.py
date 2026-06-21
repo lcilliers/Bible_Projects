@@ -83,7 +83,18 @@ ENGINE_CHANGES = {
                       "INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only "
                       "(+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). "
                       "0 active readable non-T2 residue remains.",
+    "t2_noise_filter_20260620": "a T2 content-word occurrence is now kept ONLY if its base Strong's serves a "
+                      "recognised inner-being qualifier role (seat · intensifier · faculty · perception/cognition · "
+                      "divine · spirit-being · inherent-valence); other T2 content (e.g. seed, hand, name) is dropped "
+                      "as noise from the fan-out (researcher direction).",
+    "set_aside_honoured_20260620": "occurrences with verse_context.set_aside_reason set, and terms with "
+                      "cluster_code=NULL, are EXCLUDED from the extract — so the JSON honours the DB set-aside state "
+                      "rather than re-presenting out-of-scope/homonym verses.",
 }
+
+# Declared format/derivation version of THIS extract (bump when the generator's selection or
+# field-derivation logic changes). Distinct from the filename date stamp.
+EXTRACT_VERSION = "v1_0"
 
 # WHY each lexical element is derived — the measure + rule that FORCES it (traceability), and its provenance.
 DERIVATION = {
@@ -155,7 +166,8 @@ def main():
     ap.add_argument("--with-narration", action="store_true")
     ap.add_argument("--with-audit", action="store_true")
     ap.add_argument("--batch", type=int, default=0, help="max verses per output file (split a big cluster)")
-    ap.add_argument("--date", default="20260618", help="date stamp in the output filename (bump when regenerating)")
+    ap.add_argument("--date", default=__import__("datetime").date.today().strftime("%Y%m%d"),
+                    help="date stamp in the output filename (defaults to today)")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
@@ -264,10 +276,12 @@ def main():
                 "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
                 "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)",
             },
-            "engine_changes_20260617": ENGINE_CHANGES,
+            "extract_version": EXTRACT_VERSION,
+            "generated": f"{a.date[:4]}-{a.date[4:6]}-{a.date[6:]}",
+            "engine_changes": ENGINE_CHANGES,
             "why_each_element_is_derived": DERIVATION,
             "fields": FIELDS_GUIDE,
-            "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0); regenerated 2026-06-18",
+            "source": "ve_lexical (v2_engine_iter1 mechanical + verse-read API resolution) + verse_morphology measure layer (schema 3.34.0)",
         }, "data": chunk}
         suffix = (f"-b{bi}of{len(chunks)}" if a.batch else "") + ('-narr' if a.with_narration else '')
         out = a.out if (a.out and not a.batch) else f"{odir}/wa-ve-lexical-extract-{cc}-{a.date}{suffix}.json"
