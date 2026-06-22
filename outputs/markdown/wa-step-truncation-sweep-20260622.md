@@ -62,3 +62,20 @@ _Read-only. STEP true total (oracle) vs DB; suspects confirmed by the chapter-cu
 | H2930A | ta.me (to defile) | M10c | 142 | 128 | 14 | Lev: DB ch18 vs STEP ch22 (no clean cutoff) |
 | H2416A | chay (alive) | M25 | 220 | 207 | 13 | Gen: DB ch46 vs STEP ch46 (no clean cutoff) |
 | H6662 | tsad.diq (righteous) | M26 | 197 | 184 | 13 | Pro: DB ch28 vs STEP ch29 (no clean cutoff) |
+---
+
+## Recovery executed (2026-06-22)
+
+**M47 seat-words — RECOVERED cleanly** (separate additional JSON `Sessions-v2/M47-Constitution/Data/wa-ve-lexical-extract-M47-additional-truncation-recovery-20260622-b{1,2}of2.json`, gitignored):
+- **ne.phesh H5315G (soul)**: +50 Psalms-tail verses (1 within-range excluded) → active 179→**229**.
+- **lev H3820A (heart)**: +219 across 12 books, **0 within-range = pure truncation** → active 331→**550**.
+- Added 1 active row per recovered ref (no new duplicates; OT-DBR-009 flagged dupes untouched); measure layer + ve_lexical generated; 272 soul/heart nodes all carry lexicals. integrity ok.
+- These were safe because the seat-words are studied in **every** book — every absent verse is genuine truncation (within-range≈0).
+
+**Remaining 4 — NOT clean targeted-recoveries (scope-entangled).** The "beyond-DB-reach = truncation" rule only holds for comprehensively-studied terms. For polysemous, scope-limited terms the absent set is mostly legitimate **scope/span-filter**, not truncation:
+- **na.tan H5414G (give, M12)**: tail=943 across *every* book — overwhelmingly scope (M12 studies only inner-being giving, 242). Blind recovery would wrongly add ~900 literal-"give" verses. **Do NOT targeted-recover.**
+- **pisteuō G4100 (believe, M31)**: scope-entangled (gap mixes faith-in-God vs general belief).
+- **o.yev H0341 (enemy, M44)**: +30 (Psa/Chron tail) — small, plausibly truncation, needs scope check.
+- **kaleō G2564G (call, M37)**: +23 (Acts/Luke, within-range 0) — small, plausibly truncation, needs scope check.
+
+**Proper mechanism for the remaining 4** = engine `audit_word` per registry (re-pull via the fixed client + re-apply the span-filter to select only authoritative in-scope occurrences) — NOT the blind targeted-ingest used for the seat-words. na.tan's truncation portion is small relative to its scope gap; o.yev/kaleō are small. Recommend doing these via the engine, cluster-by-cluster, with researcher scope review — or deferring (lower value than the M47 seat-words).

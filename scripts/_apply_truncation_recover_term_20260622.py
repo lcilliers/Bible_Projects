@@ -58,7 +58,9 @@ def main():
             continue
         b = ref.split()[0]
         (tail if (b not in dbmax or ch_of(ref) > dbmax[b]) else within).append(ref)
-    tail.sort(key=lambda r: (r.split()[0], ch_of(r), int(re.search(r":(\d+)", r).group(1))))
+    def vs_of(r):
+        m = re.search(r":(\d+)", r); return int(m.group(1)) if m else (int(r.split()[-1]) if r.split()[-1].isdigit() else 0)
+    tail.sort(key=lambda r: (r.split()[0], ch_of(r), vs_of(r)))
     from collections import Counter
     print(f"STEP={len(step)} active={len(active)} | truncation-tail to add={len(tail)} {dict(Counter(r.split()[0] for r in tail))}"
           f" | within-range EXCLUDED={len(within)} {within if within else ''}")
