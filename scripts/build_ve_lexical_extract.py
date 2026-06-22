@@ -169,7 +169,12 @@ def main():
     ap.add_argument("--date", default=__import__("datetime").date.today().strftime("%Y%m%d"),
                     help="date stamp in the output filename (defaults to today)")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--only-refs", default="", help="restrict to these references (comma-list or @file) — e.g. a delta/top-up extract")
     a = ap.parse_args()
+    only_refs = set()
+    if a.only_refs:
+        raw = open(a.only_refs[1:], encoding="utf-8").read() if a.only_refs.startswith("@") else a.only_refs
+        only_refs = {x.strip() for x in raw.replace("\n", ",").split(",") if x.strip()}
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cc = a.cluster
@@ -191,6 +196,9 @@ def main():
             WHERE m2.cluster_code=? AND COALESCE(vc2.delete_flagged,0)=0
               AND vc2.set_aside_reason IS NULL)   -- verse-set = verses with a LIVE (non-set-aside) focus term
         ORDER BY vr.book_id, vr.chapter, vr.verse_num, vc.id""", (cc,)).fetchall()
+    if only_refs:
+        units = [u for u in units if u["ref"] in only_refs]
+        print(f"--only-refs: restricted to {len({u['ref'] for u in units})} of {len(only_refs)} requested references")
 
     # field order for the lexical block
     ORDER = ["type", "mode", "location", "origin", "faculty", "how", "object", "object_type", "cause",

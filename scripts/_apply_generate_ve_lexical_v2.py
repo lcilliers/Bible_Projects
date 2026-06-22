@@ -48,7 +48,12 @@ def main():
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-run", action="store_true"); g.add_argument("--live", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--vcids", default="", help="restrict to these verse_context ids (comma-list or @file) — targeted top-up")
     a = ap.parse_args()
+    only_vcids = set()
+    if a.vcids:
+        raw = open(a.vcids[1:], encoding="utf-8").read() if a.vcids.startswith("@") else a.vcids
+        only_vcids = {int(x) for x in raw.replace("\n", ",").split(",") if x.strip()}
     MAX_SEC = float(os.environ.get("VE_MAX_SEC", "30"))
     conn = sqlite3.connect(DB, timeout=600); conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -63,6 +68,9 @@ def main():
         JOIN verse v ON v.reference = vr.reference
         WHERE COALESCE(vc.delete_flagged,0)=0 AND m.cluster_code IS NOT NULL
         ORDER BY v.id, vc.id""").fetchall()
+    if only_vcids:
+        units = [u for u in units if u["vcid"] in only_vcids]
+        print(f"scoped to --vcids: {len(units)} of {len(only_vcids)} requested units")
     if a.limit:
         units = units[:a.limit]
     print(f"units to generate: {len(units):,}{' (DRY-RUN)' if a.dry_run else ''}")

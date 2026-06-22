@@ -20,6 +20,7 @@ Non-canonical STEP Strong's (G9559, G9073, G6347, H9001, H9002 etc.):
 
 import os
 import re
+import sys
 from html import unescape
 from typing import Optional
 
@@ -56,6 +57,22 @@ _CANON_SUBSPLITS: dict[str, list[tuple[str, str]]] = {
     "Prophets": [("Prophets_A", "Isa.1.1-Dan.12.13"),    ("Prophets_B", "Hos.1.1-Mal.4.6")],
     "NT":       [("NT_A",       "Matt.1.1-Acts.28.31"),  ("NT_B",       "Rom.1.1-Rev.22.21")],
 }
+
+# Canonical OSIS book order (Gen→Rev). Drives cap-proof forward-walk pagination
+# (_paginate_all): the *order* is all that's needed to find the frontier verse —
+# no per-book chapter/verse counts required. Validated against STEP's reported total.
+_OSIS_ORDER = [
+    "Gen", "Exod", "Lev", "Num", "Deut", "Josh", "Judg", "Ruth",
+    "1Sam", "2Sam", "1Kgs", "2Kgs", "1Chr", "2Chr", "Ezra", "Neh", "Esth",
+    "Job", "Ps", "Prov", "Eccl", "Song",
+    "Isa", "Jer", "Lam", "Ezek", "Dan", "Hos", "Joel", "Amos", "Obad",
+    "Jonah", "Mic", "Nah", "Hab", "Zeph", "Hag", "Zech", "Mal",
+    "Matt", "Mark", "Luke", "John", "Acts",
+    "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col",
+    "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm",
+    "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev",
+]
+_OSIS_IDX = {name: i for i, name in enumerate(_OSIS_ORDER)}
 
 # OSIS book codes that belong to the New Testament.
 _NT_BOOKS = frozenset([
@@ -139,6 +156,62 @@ class StepClient:
         if ref_range:
             query += f"|reference={ref_range}"
         return self._get_json(f"rest/search/masterSearch/{query}")
+
+    @staticmethod
+    def _canon_key(osis_id: str) -> tuple:
+        """Canonical sort key (book_order, chapter, verse) parsed from an osisId
+        like 'Prov.28.1' (sub-verse markers such as '!a' are tolerated)."""
+        parts = osis_id.split(".")
+        book = parts[0]
+        ch = int(re.sub(r"\D.*", "", parts[1]) or 0) if len(parts) > 1 else 0
+        vs = int(re.sub(r"\D.*", "", parts[2]) or 0) if len(parts) > 2 else 0
+        return (_OSIS_IDX.get(book, 999), ch, vs)
+
+    def _paginate_all(self, search_fn, query: str) -> list[dict]:
+        """Cap-proof pagination over STEP's 60-result limit, for any masterSearch.
+
+        `search_fn(query, ref_range=None)` is `_search_range` (Strong's) or
+        `_text_search_range` (English text). STEP caps every response at 60 rows
+        but reports the true `total`. We forward-walk the canon: query
+        `<frontier>-Rev.22.21`, absorb the (≤60) rows, then advance the frontier to
+        the canonically-last verse seen and repeat until the remaining total fits
+        one page. The frontier only needs canonical *order* (no versification map).
+
+        Replaces the old fixed section/sub-section split, which silently truncated
+        any section-half that itself exceeded 60 (e.g. rāšāʿ H7563: Psalms cut
+        34/80, Proverbs 60/77, Ecclesiastes 0/6). Self-validates against `total`
+        and warns on any shortfall so truncation can never again be silent.
+        """
+        first = search_fn(query)
+        total = first.get("total", 0)
+        if total == 0:
+            return []
+        if total <= 60:
+            return first.get("results", [])
+        seen: dict[str, dict] = {}
+        start, end = "Gen.1.1", "Rev.22.21"
+        for _ in range(400):  # safety bound; ~total/59 iterations in practice
+            d = search_fn(query, f"{start}-{end}")
+            rows = d.get("results", [])
+            remaining_total = d.get("total", 0)
+            if not rows:
+                break
+            for it in rows:
+                osis = it.get("osisId") or it.get("key", "")
+                if osis and osis not in seen:
+                    seen[osis] = it
+            if remaining_total <= len(rows):
+                break  # everything from `start` onward fits this page
+            frontier = max(rows, key=lambda it: self._canon_key(it.get("osisId") or it.get("key", "")))
+            nxt = (frontier.get("osisId") or "").split("!")[0]
+            if not nxt or nxt == start:
+                break  # no forward progress — stop rather than loop
+            start = nxt
+        if len(seen) < total:
+            print(f"[step_client] WARNING: pagination collected {len(seen)} of "
+                  f"{total} reported results for {query!r} — possible truncation.",
+                  file=sys.stderr)
+        return list(seen.values())
 
     def _resolved_strong(self, strong: str) -> str:
         """Return the Strong's number STEP actually uses for verse tagging.
@@ -256,25 +329,7 @@ class StepClient:
         if total == 0:
             return []
 
-        if total <= 60:
-            raw_results = first.get("results", [])
-        else:
-            seen: dict[str, dict] = {}
-            for section, ref_range in _CANON_RANGES:
-                d = self._search_range(resolved, ref_range)
-                section_total = d.get("total", 0)
-                if section_total > 60:
-                    # Layer 2: halve the section
-                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
-                        sd = self._search_range(resolved, subrange)
-                        for item in sd.get("results", []):
-                            if item["osisId"] not in seen:
-                                seen[item["osisId"]] = item
-                else:
-                    for item in d.get("results", []):
-                        if item["osisId"] not in seen:
-                            seen[item["osisId"]] = item
-            raw_results = list(seen.values())
+        raw_results = self._paginate_all(self._search_range, resolved)
 
         records = []
         for item in raw_results:
@@ -338,24 +393,7 @@ class StepClient:
         if total == 0:
             return [], {}
 
-        if total <= 60:
-            raw_results = first.get("results", [])
-        else:
-            seen: dict[str, dict] = {}
-            for section, ref_range in _CANON_RANGES:
-                d = self._search_range(resolved, ref_range)
-                section_total = d.get("total", 0)
-                if section_total > 60:
-                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
-                        sd = self._search_range(resolved, subrange)
-                        for item in sd.get("results", []):
-                            if item["osisId"] not in seen:
-                                seen[item["osisId"]] = item
-                else:
-                    for item in d.get("results", []):
-                        if item["osisId"] not in seen:
-                            seen[item["osisId"]] = item
-            raw_results = list(seen.values())
+        raw_results = self._paginate_all(self._search_range, resolved)
 
         records = []
         html_map = {}
@@ -420,21 +458,11 @@ class StepClient:
                 if osis not in seen:
                     seen[osis] = item.get("preview", "")
 
-        # Same two-level pagination as get_verse_records.
-        first = self._text_search_range(english_word)
-        total = first.get("total", 0)
-
-        if total <= 60:
-            _collect(first)
-        else:
-            for section, ref_range in _CANON_RANGES:
-                d = self._text_search_range(english_word, ref_range)
-                section_total = d.get("total", 0)
-                if section_total > 60:
-                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
-                        _collect(self._text_search_range(english_word, subrange))
-                else:
-                    _collect(d)
+        # Cap-proof pagination (shared with the Strong's-based searches).
+        for item in self._paginate_all(self._text_search_range, english_word):
+            osis = item.get("osisId") or item.get("key", "")
+            if osis and osis not in seen:
+                seen[osis] = item.get("preview", "")
 
         # Count how many verses tag the English word with each base Strong's.
         tally: dict[str, int] = {}
@@ -486,20 +514,11 @@ class StepClient:
                 if osis not in seen:
                     seen[osis] = item
 
-        first = self._text_search_range(english_word)
-        total = first.get("total", 0)
-
-        if total <= 60:
-            _collect(first)
-        else:
-            for section, ref_range in _CANON_RANGES:
-                d = self._text_search_range(english_word, ref_range)
-                section_total = d.get("total", 0)
-                if section_total > 60:
-                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
-                        _collect(self._text_search_range(english_word, subrange))
-                else:
-                    _collect(d)
+        # Cap-proof pagination (shared with the Strong's-based searches).
+        for item in self._paginate_all(self._text_search_range, english_word):
+            osis = item.get("osisId") or item.get("key", "")
+            if osis and osis not in seen:
+                seen[osis] = item
 
         records = []
         for osisid, item in seen.items():
