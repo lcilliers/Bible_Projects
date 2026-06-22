@@ -1,0 +1,10068 @@
+{
+ "_meta": {
+  "description": "M10 first-level collections = LEMMA (lexeme), keyed by transliteration; folds Strong sense-suffixes and verb/noun pairs into one lemma per researcher direction (lemma only, no other breakouts). lemma_meaning from lexicon.",
+  "source": "wa-ve-lexical-extract-M10-20260621-b1..8of8.json (extract v1_0)",
+  "produced": "2026-06-21",
+  "version": "v2_0",
+  "supersedes": "wa-m10-behaviour-map-v1_0 / wa-m10-collection-members-v1_0 (behaviour-first approach withdrawn)",
+  "total_occurrences": 1462,
+  "lemma_collections": 54
+ },
+ "lemmas": [
+  {
+   "lemma": "chat.tat",
+   "language": "Hebrew",
+   "strongs": [
+    "H2403B",
+    "H2403H",
+    "H2403I"
+   ],
+   "lemma_meaning": [
+    "sin, sinful thing"
+   ],
+   "occurrences": 272,
+   "testament": {
+    "OT": 272
+   },
+   "sense_spread": {
+    "sin": 92,
+    "sin offering": 102,
+    "sins": 67,
+    "punish": 1,
+    "sinful": 1,
+    "wrong": 1,
+    "sin offerings": 4,
+    "sinned": 1,
+    "wicked": 1,
+    "punishment": 2
+   },
+   "members": [
+    {
+     "ref": "Gen 4:7",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gen 18:20",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gen 31:36",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gen 50:17",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 10:17",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 29:14",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Exo 29:36",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Exo 30:10",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Exo 32:30",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 32:32",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 32:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 34:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:3",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:8",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:14",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:20",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:21",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:23",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:24",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:26",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:28",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 4:29",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:32",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:33",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:34",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 4:35",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 5:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 5:6",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 5:7",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 5:8",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 5:9",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 5:10",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 5:11",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 5:12",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 5:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 6:17",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 6:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 6:30",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 7:7",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 7:37",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 8:2",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 8:14",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:2",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:3",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:7",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:8",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:10",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:15",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 9:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 10:16",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 10:17",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 10:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 10:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 12:6",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 12:8",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 14:13",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 14:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 14:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 14:31",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 15:15",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 15:30",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:3",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:5",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:6",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:9",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:11",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:15",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 16:21",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 16:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:27",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 16:30",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 16:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 19:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 23:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Lev 26:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 26:21",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 26:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 26:28",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Num 5:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Num 5:7",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 6:11",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 6:14",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 6:16",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:16",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:28",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:34",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:40",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:46",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:52",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:58",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:64",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:70",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:76",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:82",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 7:87",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 8:8",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 8:12",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 12:11",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "punish"
+    },
+    {
+     "ref": "Num 15:24",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 15:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 15:27",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 16:26",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Num 18:9",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 19:9",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 19:17",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 28:15",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 28:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:5",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:11",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:16",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:28",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:31",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:34",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 29:38",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Num 32:23",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 9:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 9:21",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Deu 9:27",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 19:15",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Jos 24:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Sa 2:17",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 12:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Sa 14:38",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 15:23",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 15:25",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 20:1",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Sa 12:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 8:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 8:35",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 8:36",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 12:30",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 13:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 14:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 14:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 15:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 15:26",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 15:30",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 15:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 16:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 16:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 16:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 16:26",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 16:31",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 3:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 10:31",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 12:16",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offerings"
+    },
+    {
+     "ref": "2Ki 13:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 13:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 13:11",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 14:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 15:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 15:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 15:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 15:28",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 17:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 21:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 21:17",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 24:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ch 6:25",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ch 6:26",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ch 6:27",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ch 7:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ch 28:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ch 29:21",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "2Ch 29:23",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "2Ch 29:24",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "2Ch 33:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Ezr 8:35",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Neh 1:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Neh 4:5",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Neh 9:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Neh 9:37",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Neh 10:33",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offerings"
+    },
+    {
+     "ref": "Job 10:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 13:23",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Job 14:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 34:37",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 35:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 25:7",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Psa 25:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Psa 32:5",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 38:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 38:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 51:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 51:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 59:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 59:12",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 79:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Psa 85:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 109:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 5:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 10:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 13:6",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "wicked"
+    },
+    {
+     "ref": "Pro 14:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 20:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 21:4",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 24:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 3:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 6:7",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 27:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 30:1",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 40:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 43:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 43:25",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 44:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 58:1",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 59:2",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 59:12",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 5:25",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 14:10",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 15:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 16:10",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 16:18",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 17:1",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 17:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 18:23",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 30:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 30:15",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Jer 31:34",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 36:3",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 50:20",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lam 4:6",
+     "strong": "H2403I",
+     "gloss": "sin: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Lam 4:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lam 4:22",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 3:20",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Eze 16:51",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 16:52",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 18:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 18:21",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 18:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Eze 21:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 33:10",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 33:14",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Eze 33:16",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 40:39",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 42:13",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 43:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 43:21",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 43:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 43:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 44:27",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 44:29",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 45:17",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offerings"
+    },
+    {
+     "ref": "Eze 45:19",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 45:22",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 45:23",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Eze 45:25",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offerings"
+    },
+    {
+     "ref": "Eze 46:20",
+     "strong": "H2403H",
+     "gloss": "sin: sin offering",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Dan 9:20",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Dan 9:24",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Hos 4:8",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Hos 8:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Hos 9:9",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Hos 10:8",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Hos 13:12",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Amo 5:12",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mic 1:5",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mic 1:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mic 3:8",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mic 6:7",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mic 6:13",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mic 7:19",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Zec 13:1",
+     "strong": "H2403B",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Zec 14:19",
+     "strong": "H2403I",
+     "gloss": "sin: punishment",
+     "sense": "punishment"
+    }
+   ]
+  },
+  {
+   "lemma": "cha.ta",
+   "language": "Hebrew",
+   "strongs": [
+    "H2398"
+   ],
+   "lemma_meaning": [
+    "to sin, miss, miss the way, go wrong, incur guilt, forfeit, purify fro"
+   ],
+   "occurrences": 213,
+   "testament": {
+    "OT": 213
+   },
+   "sense_spread": {
+    "sinning": 3,
+    "sinned": 79,
+    "loss": 1,
+    "sin": 51,
+    "committed an offense": 1,
+    "blame": 2,
+    "fault": 1,
+    "purify": 5,
+    "sins": 17,
+    "committed": 19,
+    "done amiss": 1,
+    "offers": 1,
+    "purified": 3,
+    "cleansing": 1,
+    "cleanse": 5,
+    "miss": 2,
+    "made them commit": 1,
+    "done wrong": 1,
+    "beside": 1,
+    "Purge": 1,
+    "fails": 1,
+    "sinner": 6,
+    "sinner’s": 1,
+    "way": 1,
+    "forfeits": 1,
+    "a sinner": 1,
+    "sinful": 1,
+    "offender": 1,
+    "sinner a": 1,
+    "done": 1,
+    "purifying": 1,
+    "forfeited": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 20:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "Gen 20:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Gen 31:39",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "loss"
+    },
+    {
+     "ref": "Gen 39:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gen 40:1",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed an offense"
+    },
+    {
+     "ref": "Gen 42:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gen 43:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "blame"
+    },
+    {
+     "ref": "Gen 44:32",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "blame"
+    },
+    {
+     "ref": "Exo 5:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "fault"
+    },
+    {
+     "ref": "Exo 9:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Exo 9:34",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Exo 10:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Exo 20:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 23:33",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 29:36",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purify"
+    },
+    {
+     "ref": "Exo 32:30",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Exo 32:31",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Exo 32:33",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Lev 4:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 4:3",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 4:14",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 4:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 4:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 4:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 4:28",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 4:35",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:1",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 5:5",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 5:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Lev 5:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 5:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "done amiss"
+    },
+    {
+     "ref": "Lev 5:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 6:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Lev 6:3",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 6:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Lev 6:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "offers"
+    },
+    {
+     "ref": "Lev 8:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purified"
+    },
+    {
+     "ref": "Lev 9:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 14:49",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleansing"
+    },
+    {
+     "ref": "Lev 14:52",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleanse"
+    },
+    {
+     "ref": "Lev 19:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Num 6:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 8:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 12:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 14:40",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 15:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Num 15:28",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Num 16:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 19:12",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleanse"
+    },
+    {
+     "ref": "Num 19:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleanse"
+    },
+    {
+     "ref": "Num 19:19",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleanse"
+    },
+    {
+     "ref": "Num 19:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "cleanse"
+    },
+    {
+     "ref": "Num 21:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 22:34",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 31:19",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purify"
+    },
+    {
+     "ref": "Num 31:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purify"
+    },
+    {
+     "ref": "Num 31:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purified"
+    },
+    {
+     "ref": "Num 32:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Deu 1:41",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Deu 9:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Deu 9:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Deu 19:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Deu 20:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 24:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jos 7:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jos 7:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Judg 10:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Judg 10:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Judg 11:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Judg 20:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "miss"
+    },
+    {
+     "ref": "1Sa 2:25",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Sa 7:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Sa 12:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Sa 12:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 14:33",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Sa 14:34",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 15:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Sa 15:30",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Sa 19:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 19:5",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Sa 24:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Sa 26:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "2Sa 12:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "2Sa 19:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "2Sa 24:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "2Sa 24:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 8:31",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ki 8:33",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 8:35",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 8:46",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 8:47",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 8:50",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 14:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 14:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "1Ki 15:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 15:30",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 15:34",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 16:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 16:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 16:19",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "1Ki 16:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 18:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ki 21:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ki 22:52",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 3:3",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 10:29",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 10:31",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 13:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 13:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 13:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 14:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 15:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 15:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 15:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 15:28",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 17:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "2Ki 17:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "made them commit"
+    },
+    {
+     "ref": "2Ki 18:14",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "done wrong"
+    },
+    {
+     "ref": "2Ki 21:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 21:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 21:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "2Ki 23:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ch 21:8",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Ch 21:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Neh 1:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Neh 6:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Neh 9:29",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Neh 13:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 1:5",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Job 1:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 2:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 5:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "miss"
+    },
+    {
+     "ref": "Job 7:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 8:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Job 10:14",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 24:19",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Job 31:30",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Job 33:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Job 35:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Job 41:25",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "beside"
+    },
+    {
+     "ref": "Psa 4:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 39:1",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 41:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 51:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 51:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "Purge"
+    },
+    {
+     "ref": "Psa 78:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 78:32",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 106:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Psa 119:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Pro 8:36",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "fails"
+    },
+    {
+     "ref": "Pro 11:31",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Pro 13:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner’s"
+    },
+    {
+     "ref": "Pro 14:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Pro 19:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "way"
+    },
+    {
+     "ref": "Pro 20:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "forfeits"
+    },
+    {
+     "ref": "Ecc 2:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Ecc 5:6",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Ecc 7:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Ecc 7:26",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Ecc 8:12",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "a sinner"
+    },
+    {
+     "ref": "Ecc 9:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Ecc 9:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Isa 1:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Isa 29:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "offender"
+    },
+    {
+     "ref": "Isa 42:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Isa 43:27",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Isa 64:5",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Isa 65:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinner a"
+    },
+    {
+     "ref": "Jer 2:35",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 3:25",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 8:14",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 14:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 14:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 16:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Jer 32:35",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 33:8",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jer 37:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "done"
+    },
+    {
+     "ref": "Jer 40:3",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 44:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 50:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Jer 50:14",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Lam 1:8",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Lam 5:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Lam 5:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Eze 3:21",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Eze 14:13",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 16:51",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Eze 18:4",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 18:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 18:24",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Eze 28:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Eze 33:12",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 33:16",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "committed"
+    },
+    {
+     "ref": "Eze 37:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Eze 43:20",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purify"
+    },
+    {
+     "ref": "Eze 43:22",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purified"
+    },
+    {
+     "ref": "Eze 43:23",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purifying"
+    },
+    {
+     "ref": "Eze 45:18",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "purify"
+    },
+    {
+     "ref": "Dan 9:5",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Dan 9:8",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Dan 9:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Dan 9:15",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Hos 4:7",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Hos 8:11",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "Hos 10:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Hos 13:2",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mic 7:9",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Hab 2:10",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "forfeited"
+    },
+    {
+     "ref": "Zep 1:17",
+     "strong": "H2398",
+     "gloss": "to sin",
+     "sense": "sinned"
+    }
+   ]
+  },
+  {
+   "lemma": "a.von",
+   "language": "Hebrew",
+   "strongs": [
+    "H5771G",
+    "H5771H",
+    "H5771I"
+   ],
+   "lemma_meaning": [
+    "crime"
+   ],
+   "occurrences": 207,
+   "testament": {
+    "OT": 207
+   },
+   "sense_spread": {
+    "punishment": 16,
+    "iniquity": 115,
+    "guilt": 28,
+    "iniquities": 39,
+    "crime": 1,
+    "sin": 3,
+    "fault": 2,
+    "guilty": 1,
+    "chastisement": 1,
+    "your iniquity": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 4:13",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Gen 15:16",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Gen 19:15",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Gen 44:16",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Exo 20:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Exo 28:38",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Exo 28:43",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Exo 34:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Exo 34:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 5:1",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 5:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 7:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 10:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 16:21",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Lev 16:22",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Lev 17:16",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 18:25",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 19:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 20:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 20:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 22:16",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 26:39",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 26:40",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 26:41",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lev 26:43",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 5:15",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 5:31",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 14:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 14:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 14:34",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 15:31",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 18:1",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 18:23",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Num 30:15",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Deu 5:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Deu 19:15",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "crime"
+    },
+    {
+     "ref": "Jos 22:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "sin"
+    },
+    {
+     "ref": "Jos 22:20",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "1Sa 3:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "1Sa 3:14",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "1Sa 14:41",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "guilt"
+    },
+    {
+     "ref": "1Sa 20:1",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "1Sa 20:8",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "1Sa 25:24",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "1Sa 28:10",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "2Sa 3:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "fault"
+    },
+    {
+     "ref": "2Sa 14:9",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "2Sa 14:32",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "2Sa 19:19",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilty"
+    },
+    {
+     "ref": "2Sa 22:24",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "guilt"
+    },
+    {
+     "ref": "2Sa 24:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "1Ki 17:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 7:9",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "1Ch 21:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Ezr 9:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Ezr 9:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Ezr 9:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Neh 4:5",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Neh 9:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Job 7:21",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 10:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 10:14",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 11:6",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Job 13:23",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Job 13:26",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Job 14:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 15:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 19:29",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Job 20:27",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 22:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Job 31:11",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 31:28",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 31:33",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 33:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 18:23",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Psa 25:11",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Psa 31:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 32:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 32:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 36:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 38:4",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 38:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 39:11",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 40:12",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 49:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 51:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 51:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 51:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 59:4",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "fault"
+    },
+    {
+     "ref": "Psa 65:3",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 69:27",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Psa 78:38",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 79:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 85:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 89:32",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 90:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 103:3",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 103:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 106:43",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 107:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 109:14",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 130:3",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Psa 130:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Pro 5:22",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Pro 16:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 1:4",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 5:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 6:7",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Isa 13:11",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 14:21",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Isa 22:14",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 26:21",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 27:9",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Isa 30:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 33:24",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 40:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 43:24",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 50:1",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 53:5",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 53:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 53:11",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 57:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 59:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 59:3",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 59:12",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 64:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 64:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Isa 64:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Isa 65:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Jer 2:22",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 3:13",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 5:25",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Jer 11:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Jer 13:22",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 14:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Jer 14:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 14:20",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 16:10",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 16:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 16:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 18:23",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 25:12",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 30:14",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 30:15",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 31:30",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 31:34",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 32:18",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 33:8",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 36:3",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 36:31",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 50:20",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Jer 51:6",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Lam 2:14",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Lam 4:6",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "chastisement"
+    },
+    {
+     "ref": "Lam 4:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Lam 4:22",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "your iniquity"
+    },
+    {
+     "ref": "Lam 5:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Eze 3:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 3:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 4:4",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 4:5",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 4:6",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 4:17",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 7:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 7:16",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 7:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 9:9",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Eze 14:3",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 14:4",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 14:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 14:10",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 16:49",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Eze 18:17",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 18:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 18:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 18:20",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 18:30",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 21:23",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Eze 21:24",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Eze 21:25",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 21:29",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 24:23",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Eze 28:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Eze 29:16",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 32:27",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Eze 33:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 33:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Eze 35:5",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 44:10",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "punishment"
+    },
+    {
+     "ref": "Eze 44:12",
+     "strong": "H5771I",
+     "gloss": "iniquity: punishment",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 4:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 5:5",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Hos 7:1",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 8:13",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 9:7",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 9:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 10:10",
+     "strong": "H5771H",
+     "gloss": "iniquity: guilt",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 12:8",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 13:12",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 14:1",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hos 14:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Amo 3:2",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Mic 7:18",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Mic 7:19",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquities"
+    },
+    {
+     "ref": "Zec 3:4",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Zec 3:9",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Mal 2:6",
+     "strong": "H5771G",
+     "gloss": "iniquity: crime",
+     "sense": "iniquity"
+    }
+   ]
+  },
+  {
+   "lemma": "hamartia",
+   "language": "Greek",
+   "strongs": [
+    "G0266"
+   ],
+   "lemma_meaning": [
+    "sin, wrongdoing"
+   ],
+   "occurrences": 105,
+   "testament": {
+    "NT": 105
+   },
+   "sense_spread": {
+    "sins": 48,
+    "sin": 54,
+    "guilt": 1,
+    "sinful": 2
+   },
+   "members": [
+    {
+     "ref": "Mat 1:21",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 3:6",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 9:2",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 9:5",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 9:6",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 12:31",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mat 26:28",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 1:4",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 1:5",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 2:5",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 2:7",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 2:9",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 2:10",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 1:77",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 3:3",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 5:20",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 5:21",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 5:23",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 5:24",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 7:47",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 7:48",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 7:49",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 11:4",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 24:47",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Joh 1:29",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 8:21",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 8:24",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Joh 8:34",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 8:46",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 9:34",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 9:41",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Joh 15:22",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 15:24",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 16:8",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 16:9",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 19:11",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 20:23",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 2:38",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 3:19",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 5:31",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 7:60",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Act 10:43",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 13:38",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 22:16",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Act 26:18",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Rom 3:9",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 3:20",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 4:7",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Rom 4:8",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 5:12",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 5:13",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 5:20",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 5:21",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:1",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:2",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:6",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:7",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:10",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:11",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:12",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:13",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:14",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:16",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:17",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:18",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:20",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:22",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:23",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:5",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Rom 7:7",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:8",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:9",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:11",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:13",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:14",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:17",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:20",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:23",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 7:25",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 8:2",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 8:3",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Rom 8:10",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 11:27",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Rom 14:23",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Cor 15:3",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Cor 15:17",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Cor 15:56",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Cor 5:21",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Cor 11:7",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gal 1:4",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Gal 2:17",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Gal 3:22",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Eph 2:1",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Col 1:14",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Th 2:16",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ti 5:22",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Ti 5:24",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ti 3:6",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Heb 1:3",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Heb 2:17",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Heb 3:13",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Heb 4:15",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Heb 5:1",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Heb 5:3",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Heb 7:27",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins"
+    }
+   ]
+  },
+  {
+   "lemma": "pe.sha",
+   "language": "Hebrew",
+   "strongs": [
+    "H6588"
+   ],
+   "lemma_meaning": [
+    "transgression, rebellion"
+   ],
+   "occurrences": 90,
+   "testament": {
+    "OT": 90
+   },
+   "sense_spread": {
+    "offense": 3,
+    "transgression": 33,
+    "trust": 1,
+    "transgressions": 45,
+    "treason": 1,
+    "trespass": 1,
+    "rebellion": 1,
+    "Transgression": 1,
+    "sinful ways": 1,
+    "offenses": 1,
+    "transgresses": 2
+   },
+   "members": [
+    {
+     "ref": "Gen 31:36",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "offense"
+    },
+    {
+     "ref": "Gen 50:17",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Exo 22:9",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "trust"
+    },
+    {
+     "ref": "Exo 23:21",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Exo 34:7",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Lev 16:16",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Lev 16:21",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Num 14:18",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Jos 24:19",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "1Sa 24:11",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "treason"
+    },
+    {
+     "ref": "1Sa 25:28",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "trespass"
+    },
+    {
+     "ref": "1Ki 8:50",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Job 7:21",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 8:4",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 13:23",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 14:17",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 31:33",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Job 33:9",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 34:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Job 34:37",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "Job 35:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Job 36:9",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 5:10",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 19:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Psa 25:7",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 32:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Psa 32:5",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 36:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "Transgression"
+    },
+    {
+     "ref": "Psa 39:8",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 51:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 51:3",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 59:3",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Psa 65:3",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 89:32",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Psa 103:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Psa 107:17",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "sinful ways"
+    },
+    {
+     "ref": "Pro 10:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "offenses"
+    },
+    {
+     "ref": "Pro 10:19",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 12:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 17:9",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "offense"
+    },
+    {
+     "ref": "Pro 17:19",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 19:11",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "offense"
+    },
+    {
+     "ref": "Pro 28:2",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgresses"
+    },
+    {
+     "ref": "Pro 28:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Pro 28:24",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 29:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 29:16",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Pro 29:22",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Isa 24:20",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Isa 43:25",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Isa 44:22",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Isa 50:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Isa 53:5",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Isa 53:8",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Isa 57:4",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Isa 58:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Isa 59:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Isa 59:20",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Jer 5:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Lam 1:5",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Lam 1:14",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Lam 1:22",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 14:11",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 18:22",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 18:28",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 18:30",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 18:31",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 21:24",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 33:10",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 33:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgresses"
+    },
+    {
+     "ref": "Eze 37:23",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Eze 39:24",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Dan 8:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Dan 8:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Dan 9:24",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Amo 1:3",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 1:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 1:9",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 1:11",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 1:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 2:1",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 2:4",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 2:6",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 3:14",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Amo 5:12",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Mic 1:5",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Mic 1:13",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "Mic 3:8",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Mic 6:7",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Mic 7:18",
+     "strong": "H6588",
+     "gloss": "transgression",
+     "sense": "transgression"
+    }
+   ]
+  },
+  {
+   "lemma": "ma.al",
+   "language": "Hebrew",
+   "strongs": [
+    "H4603",
+    "H4604"
+   ],
+   "lemma_meaning": [
+    "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "unfaithful or treacherous act, trespass"
+   ],
+   "occurrences": 62,
+   "testament": {
+    "OT": 62
+   },
+   "sense_spread": {
+    "faith": 10,
+    "commits": 2,
+    "treachery": 5,
+    "committed": 5,
+    "breaking": 1,
+    "breaks": 1,
+    "broken": 1,
+    "treacherously": 3,
+    "broke faith": 1,
+    "broke": 2,
+    "breach of faith": 3,
+    "breach": 2,
+    "unfaithful": 6,
+    "done wrong": 1,
+    "very": 1,
+    "faithless": 2,
+    "faithless to": 1,
+    "faithlessness": 4,
+    "exceedingly": 1,
+    "broken faith": 2,
+    "act treacherously": 1,
+    "faithlessly": 2,
+    "acting": 1,
+    "acted": 1,
+    "guilty": 1,
+    "dealing": 1,
+    "practiced": 1
+   },
+   "members": [
+    {
+     "ref": "Lev 5:15",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Lev 5:15",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "commits"
+    },
+    {
+     "ref": "Lev 6:2",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Lev 6:2",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "commits"
+    },
+    {
+     "ref": "Lev 26:40",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treachery"
+    },
+    {
+     "ref": "Lev 26:40",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "committed"
+    },
+    {
+     "ref": "Num 5:6",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Num 5:6",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "breaking"
+    },
+    {
+     "ref": "Num 5:12",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Num 5:12",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "breaks"
+    },
+    {
+     "ref": "Num 5:27",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Num 5:27",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broken"
+    },
+    {
+     "ref": "Num 31:16",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treacherously"
+    },
+    {
+     "ref": "Deu 32:51",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broke faith"
+    },
+    {
+     "ref": "Jos 7:1",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Jos 7:1",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broke"
+    },
+    {
+     "ref": "Jos 22:16",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "breach of faith"
+    },
+    {
+     "ref": "Jos 22:16",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "committed"
+    },
+    {
+     "ref": "Jos 22:20",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "Jos 22:20",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "faith"
+    },
+    {
+     "ref": "Jos 22:22",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "breach of faith"
+    },
+    {
+     "ref": "Jos 22:31",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "breach of faith"
+    },
+    {
+     "ref": "Jos 22:31",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "committed"
+    },
+    {
+     "ref": "1Ch 2:7",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broke"
+    },
+    {
+     "ref": "1Ch 5:25",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "faith"
+    },
+    {
+     "ref": "1Ch 9:1",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "breach"
+    },
+    {
+     "ref": "1Ch 10:13",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faith"
+    },
+    {
+     "ref": "1Ch 10:13",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "breach"
+    },
+    {
+     "ref": "2Ch 12:2",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "2Ch 26:16",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "2Ch 26:18",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "done wrong"
+    },
+    {
+     "ref": "2Ch 28:19",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "very"
+    },
+    {
+     "ref": "2Ch 28:19",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "2Ch 28:22",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "faithless"
+    },
+    {
+     "ref": "2Ch 29:6",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "2Ch 29:19",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithless"
+    },
+    {
+     "ref": "2Ch 30:7",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "faithless to"
+    },
+    {
+     "ref": "2Ch 33:19",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessness"
+    },
+    {
+     "ref": "2Ch 36:14",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "exceedingly"
+    },
+    {
+     "ref": "2Ch 36:14",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "Ezr 9:2",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessness"
+    },
+    {
+     "ref": "Ezr 9:4",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessness"
+    },
+    {
+     "ref": "Ezr 10:2",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broken faith"
+    },
+    {
+     "ref": "Ezr 10:6",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessness"
+    },
+    {
+     "ref": "Ezr 10:10",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "broken faith"
+    },
+    {
+     "ref": "Neh 1:8",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "unfaithful"
+    },
+    {
+     "ref": "Neh 13:27",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "act treacherously"
+    },
+    {
+     "ref": "Eze 14:13",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessly"
+    },
+    {
+     "ref": "Eze 14:13",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "acting"
+    },
+    {
+     "ref": "Eze 15:8",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "faithlessly"
+    },
+    {
+     "ref": "Eze 15:8",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "acted"
+    },
+    {
+     "ref": "Eze 17:20",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treachery"
+    },
+    {
+     "ref": "Eze 17:20",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "committed"
+    },
+    {
+     "ref": "Eze 18:24",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treachery"
+    },
+    {
+     "ref": "Eze 18:24",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "guilty"
+    },
+    {
+     "ref": "Eze 20:27",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treacherously"
+    },
+    {
+     "ref": "Eze 20:27",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "dealing"
+    },
+    {
+     "ref": "Eze 39:23",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "treacherously"
+    },
+    {
+     "ref": "Eze 39:26",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "practiced"
+    },
+    {
+     "ref": "Eze 39:26",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "treachery"
+    },
+    {
+     "ref": "Dan 9:7",
+     "strong": "H4604",
+     "gloss": "unfaithfulness",
+     "sense": "treachery"
+    },
+    {
+     "ref": "Dan 9:7",
+     "strong": "H4603",
+     "gloss": "be unfaithful",
+     "sense": "committed"
+    }
+   ]
+  },
+  {
+   "lemma": "hamartōlos",
+   "language": "Greek",
+   "strongs": [
+    "G0268"
+   ],
+   "lemma_meaning": [
+    "(a.) sinful, as an absolute moral failure"
+   ],
+   "occurrences": 45,
+   "testament": {
+    "NT": 45
+   },
+   "sense_spread": {
+    "sinners": 29,
+    "sinful": 4,
+    "sinner": 12
+   },
+   "members": [
+    {
+     "ref": "Mat 9:10",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mat 9:11",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mat 9:13",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mat 11:19",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mat 26:45",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mar 2:15",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mar 2:16",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mar 2:17",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Mar 8:38",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Mar 14:41",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 5:8",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Luk 5:30",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 5:32",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 6:32",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 6:33",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 6:34",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 7:34",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 7:37",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 7:39",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 13:2",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 15:1",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 15:2",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Luk 15:7",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 15:10",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 18:13",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 19:7",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Luk 24:7",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Joh 9:16",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Joh 9:24",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Joh 9:25",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Joh 9:31",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Rom 3:7",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Rom 5:8",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Rom 5:19",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Rom 7:13",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Gal 2:15",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Gal 2:17",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "1Ti 1:9",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "1Ti 1:15",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Heb 7:26",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Heb 12:3",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Jam 4:8",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Jam 5:20",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "1Pe 4:18",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner"
+    },
+    {
+     "ref": "Jude 15",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners"
+    }
+   ]
+  },
+  {
+   "lemma": "a.sham",
+   "language": "Hebrew",
+   "strongs": [
+    "H0816",
+    "H0817"
+   ],
+   "lemma_meaning": [
+    "to offend, be guilty, trespass",
+    "guilt, offense, guiltiness"
+   ],
+   "occurrences": 40,
+   "testament": {
+    "OT": 40
+   },
+   "sense_spread": {
+    "guilt": 19,
+    "realizes": 1,
+    "indeed": 1,
+    "wrong": 1,
+    "guilty": 3,
+    "guilt offering": 5,
+    "incur guilt": 1,
+    "condemned": 2,
+    "guilty ways": 1,
+    "held guilty": 1,
+    "ruined": 1,
+    "become guilty": 2,
+    "grievously": 1,
+    "go unpunished": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 26:10",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 4:13",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 4:22",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 4:27",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 5:2",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 5:3",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 5:4",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "realizes"
+    },
+    {
+     "ref": "Lev 5:5",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 5:17",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 5:19",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "indeed"
+    },
+    {
+     "ref": "Lev 6:4",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Num 5:6",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Num 5:7",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Judg 21:22",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilty"
+    },
+    {
+     "ref": "1Sa 6:3",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt offering"
+    },
+    {
+     "ref": "1Sa 6:4",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt offering"
+    },
+    {
+     "ref": "1Sa 6:8",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt offering"
+    },
+    {
+     "ref": "1Sa 6:17",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt offering"
+    },
+    {
+     "ref": "2Ch 19:10",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "incur guilt"
+    },
+    {
+     "ref": "Psa 5:10",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Psa 34:21",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "condemned"
+    },
+    {
+     "ref": "Psa 34:22",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "condemned"
+    },
+    {
+     "ref": "Psa 68:21",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilty ways"
+    },
+    {
+     "ref": "Pro 14:9",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt offering"
+    },
+    {
+     "ref": "Pro 30:10",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "held guilty"
+    },
+    {
+     "ref": "Isa 24:6",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Isa 53:10",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 2:3",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Jer 50:7",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilty"
+    },
+    {
+     "ref": "Jer 51:5",
+     "strong": "H0817",
+     "gloss": "guilt [offering]",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Eze 6:6",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "ruined"
+    },
+    {
+     "ref": "Eze 22:4",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "become guilty"
+    },
+    {
+     "ref": "Eze 25:12",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "grievously"
+    },
+    {
+     "ref": "Hos 4:15",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "become guilty"
+    },
+    {
+     "ref": "Hos 5:15",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Hos 10:2",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Hos 13:1",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Hos 13:16",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Hab 1:11",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "guilty"
+    },
+    {
+     "ref": "Zec 11:5",
+     "strong": "H0816",
+     "gloss": "be guilty",
+     "sense": "go unpunished"
+    }
+   ]
+  },
+  {
+   "lemma": "ba.gad",
+   "language": "Hebrew",
+   "strongs": [
+    "H0898"
+   ],
+   "lemma_meaning": [
+    "to act treacherously, deceitfully, deal treacherously"
+   ],
+   "occurrences": 39,
+   "testament": {
+    "OT": 39
+   },
+   "sense_spread": {
+    "faith with": 1,
+    "dealt treacherously": 3,
+    "treacherously": 2,
+    "treacherous": 10,
+    "betrayed": 1,
+    "acted treacherously": 1,
+    "faithless": 2,
+    "traitor": 5,
+    "traitors": 3,
+    "treacherous man": 1,
+    "surely deal": 1,
+    "utterly": 1,
+    "treacherous men": 1,
+    "are": 1,
+    "faithlessly with": 2,
+    "we": 1,
+    "been faithless": 1,
+    "be": 1,
+    "be faithless": 1
+   },
+   "members": [
+    {
+     "ref": "Exo 21:8",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "faith with"
+    },
+    {
+     "ref": "Judg 9:23",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "dealt treacherously"
+    },
+    {
+     "ref": "1Sa 14:33",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherously"
+    },
+    {
+     "ref": "Job 6:15",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Psa 25:3",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Psa 59:5",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherously"
+    },
+    {
+     "ref": "Psa 73:15",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "betrayed"
+    },
+    {
+     "ref": "Psa 78:57",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "acted treacherously"
+    },
+    {
+     "ref": "Psa 119:158",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "faithless"
+    },
+    {
+     "ref": "Pro 2:22",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Pro 11:3",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Pro 11:6",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Pro 13:2",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Pro 13:15",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Pro 21:18",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitor"
+    },
+    {
+     "ref": "Pro 22:12",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitor"
+    },
+    {
+     "ref": "Pro 23:28",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitors"
+    },
+    {
+     "ref": "Pro 25:19",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous man"
+    },
+    {
+     "ref": "Isa 21:2",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitor"
+    },
+    {
+     "ref": "Isa 24:16",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitors"
+    },
+    {
+     "ref": "Isa 33:1",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitor"
+    },
+    {
+     "ref": "Isa 48:8",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "surely deal"
+    },
+    {
+     "ref": "Jer 3:8",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Jer 3:11",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Jer 3:20",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous"
+    },
+    {
+     "ref": "Jer 5:11",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "utterly"
+    },
+    {
+     "ref": "Jer 9:2",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "treacherous men"
+    },
+    {
+     "ref": "Jer 12:1",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "are"
+    },
+    {
+     "ref": "Jer 12:6",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "dealt treacherously"
+    },
+    {
+     "ref": "Lam 1:2",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "dealt treacherously"
+    },
+    {
+     "ref": "Hos 5:7",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "faithlessly with"
+    },
+    {
+     "ref": "Hos 6:7",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "faithlessly with"
+    },
+    {
+     "ref": "Hab 1:13",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitors"
+    },
+    {
+     "ref": "Hab 2:5",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "traitor"
+    },
+    {
+     "ref": "Mal 2:10",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "we"
+    },
+    {
+     "ref": "Mal 2:11",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "faithless"
+    },
+    {
+     "ref": "Mal 2:14",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "been faithless"
+    },
+    {
+     "ref": "Mal 2:15",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "be"
+    },
+    {
+     "ref": "Mal 2:16",
+     "strong": "H0898",
+     "gloss": "to act treacherously",
+     "sense": "be faithless"
+    }
+   ]
+  },
+  {
+   "lemma": "pa.sha",
+   "language": "Hebrew",
+   "strongs": [
+    "H6586"
+   ],
+   "lemma_meaning": [
+    "to rebel, transgress, revolt"
+   ],
+   "occurrences": 37,
+   "testament": {
+    "OT": 37
+   },
+   "sense_spread": {
+    "committed": 2,
+    "rebellion": 3,
+    "rebelled": 9,
+    "revolted": 4,
+    "transgressed": 6,
+    "transgressors": 6,
+    "offended": 1,
+    "wrong": 1,
+    "rebels": 1,
+    "rebel": 1,
+    "transgressing": 1,
+    "transgress": 2
+   },
+   "members": [
+    {
+     "ref": "1Ki 8:50",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "committed"
+    },
+    {
+     "ref": "1Ki 12:19",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "2Ki 1:1",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "2Ki 3:5",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "2Ki 3:7",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "2Ki 8:20",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "revolted"
+    },
+    {
+     "ref": "2Ki 8:22",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "revolted"
+    },
+    {
+     "ref": "2Ch 10:19",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "2Ch 21:8",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "revolted"
+    },
+    {
+     "ref": "2Ch 21:10",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "revolted"
+    },
+    {
+     "ref": "Ezr 10:13",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Psa 37:38",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Psa 51:13",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Pro 18:19",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "offended"
+    },
+    {
+     "ref": "Pro 28:21",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Isa 1:2",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "Isa 1:28",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebels"
+    },
+    {
+     "ref": "Isa 43:27",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Isa 46:8",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Isa 48:8",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebel"
+    },
+    {
+     "ref": "Isa 53:12",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Isa 59:13",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressing"
+    },
+    {
+     "ref": "Isa 66:24",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "Jer 2:8",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Jer 2:29",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Jer 3:13",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "Jer 33:8",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "Lam 3:42",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Eze 2:3",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressed"
+    },
+    {
+     "ref": "Eze 18:31",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "committed"
+    },
+    {
+     "ref": "Eze 20:38",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgress"
+    },
+    {
+     "ref": "Dan 8:23",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Hos 7:13",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "Hos 8:1",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    },
+    {
+     "ref": "Hos 14:9",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Amo 4:4",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "transgress"
+    },
+    {
+     "ref": "Zep 3:11",
+     "strong": "H6586",
+     "gloss": "to transgress",
+     "sense": "rebelled"
+    }
+   ]
+  },
+  {
+   "lemma": "hamartanō",
+   "language": "Greek",
+   "strongs": [
+    "G0264"
+   ],
+   "lemma_meaning": [
+    "to sin, do wrong"
+   ],
+   "occurrences": 37,
+   "testament": {
+    "NT": 37
+   },
+   "sense_spread": {
+    "sins": 4,
+    "sin": 10,
+    "sinned": 12,
+    "Sin": 1,
+    "offense": 1,
+    "sinning": 8,
+    "sinful": 1
+   },
+   "members": [
+    {
+     "ref": "Mat 18:15",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mat 18:21",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Mat 27:4",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Luk 15:18",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Luk 15:21",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Luk 17:3",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Luk 17:4",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Joh 5:14",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "Sin"
+    },
+    {
+     "ref": "Joh 8:11",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Joh 9:2",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Joh 9:3",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Act 25:8",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "offense"
+    },
+    {
+     "ref": "Rom 2:12",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Rom 3:23",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Rom 5:12",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Rom 5:14",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "Rom 5:16",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 6:15",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Cor 6:18",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Cor 7:28",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Cor 7:36",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Cor 8:12",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Cor 15:34",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "Eph 4:26",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Ti 5:20",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Tit 3:11",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Heb 3:17",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Heb 10:26",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Pe 2:20",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Pe 2:4",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Jo 1:10",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned"
+    },
+    {
+     "ref": "1Jo 2:1",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Jo 3:6",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Jo 3:8",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Jo 3:9",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    },
+    {
+     "ref": "1Jo 5:16",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "1Jo 5:18",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning"
+    }
+   ]
+  },
+  {
+   "lemma": "chet",
+   "language": "Hebrew",
+   "strongs": [
+    "H2399"
+   ],
+   "lemma_meaning": [
+    "sin"
+   ],
+   "occurrences": 33,
+   "testament": {
+    "OT": 33
+   },
+   "sense_spread": {
+    "offenses": 2,
+    "sin": 18,
+    "offense": 2,
+    "crime": 1,
+    "sins": 7,
+    "sinfully": 1,
+    "grievously": 1,
+    "penalty": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 41:9",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "offenses"
+    },
+    {
+     "ref": "Lev 19:17",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 20:20",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 22:9",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lev 24:15",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 9:13",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 18:22",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 18:32",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Num 27:3",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 15:9",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 19:15",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "offense"
+    },
+    {
+     "ref": "Deu 21:22",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "crime"
+    },
+    {
+     "ref": "Deu 22:26",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "offense"
+    },
+    {
+     "ref": "Deu 23:21",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 23:22",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 24:15",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Deu 24:16",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 10:29",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ki 14:6",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ch 25:4",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 51:5",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 51:9",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Psa 103:10",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Ecc 10:4",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "offenses"
+    },
+    {
+     "ref": "Isa 1:18",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 31:7",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sinfully"
+    },
+    {
+     "ref": "Isa 38:17",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Isa 53:12",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Lam 1:8",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "grievously"
+    },
+    {
+     "ref": "Lam 3:39",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Eze 23:49",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "penalty"
+    },
+    {
+     "ref": "Dan 9:16",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Hos 12:8",
+     "strong": "H2399",
+     "gloss": "sin",
+     "sense": "sin"
+    }
+   ]
+  },
+  {
+   "lemma": "av.lah",
+   "language": "Hebrew",
+   "strongs": [
+    "H5766B"
+   ],
+   "lemma_meaning": [
+    "injustice, unrighteousness"
+   ],
+   "occurrences": 32,
+   "testament": {
+    "OT": 32
+   },
+   "sense_spread": {
+    "wicked": 2,
+    "violent": 2,
+    "injustice": 12,
+    "falsely": 1,
+    "wickedness": 3,
+    "falsehood": 1,
+    "wrong": 5,
+    "wrongdoers": 1,
+    "unjust": 1,
+    "wrongs": 1,
+    "unrighteousness": 1,
+    "iniquity": 2
+   },
+   "members": [
+    {
+     "ref": "2Sa 3:34",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wicked"
+    },
+    {
+     "ref": "2Sa 7:10",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "violent"
+    },
+    {
+     "ref": "1Ch 17:9",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "violent"
+    },
+    {
+     "ref": "2Ch 19:7",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 5:16",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 6:29",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 6:30",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 11:14",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 13:7",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "falsely"
+    },
+    {
+     "ref": "Job 15:16",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 22:23",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Job 24:20",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wickedness"
+    },
+    {
+     "ref": "Job 27:4",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "falsehood"
+    },
+    {
+     "ref": "Job 36:23",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Psa 37:1",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrongdoers"
+    },
+    {
+     "ref": "Psa 43:1",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "unjust"
+    },
+    {
+     "ref": "Psa 58:2",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrongs"
+    },
+    {
+     "ref": "Psa 64:6",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Psa 89:22",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wicked"
+    },
+    {
+     "ref": "Psa 92:15",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "unrighteousness"
+    },
+    {
+     "ref": "Psa 107:42",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wickedness"
+    },
+    {
+     "ref": "Psa 119:3",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Psa 125:3",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Pro 22:8",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Isa 59:3",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wickedness"
+    },
+    {
+     "ref": "Isa 61:8",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Hos 10:13",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Mic 3:10",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Hab 2:12",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Zep 3:5",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Zep 3:13",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Mal 2:6",
+     "strong": "H5766B",
+     "gloss": "injustice",
+     "sense": "wrong"
+    }
+   ]
+  },
+  {
+   "lemma": "a.vel",
+   "language": "Hebrew",
+   "strongs": [
+    "H5766A"
+   ],
+   "lemma_meaning": [
+    "injustice, unrighteousness"
+   ],
+   "occurrences": 20,
+   "testament": {
+    "OT": 20
+   },
+   "sense_spread": {
+    "injustice": 8,
+    "wrong": 4,
+    "dishonestly": 1,
+    "iniquity": 3,
+    "unjustly": 1,
+    "unjust": 1,
+    "till unrighteousness": 1,
+    "unrighteousness": 1
+   },
+   "members": [
+    {
+     "ref": "Lev 19:15",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Lev 19:35",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Deu 25:16",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "dishonestly"
+    },
+    {
+     "ref": "Deu 32:4",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Job 34:10",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Job 34:32",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 7:3",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Psa 53:1",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "iniquity"
+    },
+    {
+     "ref": "Psa 82:2",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "unjustly"
+    },
+    {
+     "ref": "Pro 29:27",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "unjust"
+    },
+    {
+     "ref": "Jer 2:5",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "wrong"
+    },
+    {
+     "ref": "Eze 3:20",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 18:8",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 18:24",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 18:26",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 28:15",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "till unrighteousness"
+    },
+    {
+     "ref": "Eze 28:18",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "unrighteousness"
+    },
+    {
+     "ref": "Eze 33:13",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 33:15",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    },
+    {
+     "ref": "Eze 33:18",
+     "strong": "H5766A",
+     "gloss": "injustice",
+     "sense": "injustice"
+    }
+   ]
+  },
+  {
+   "lemma": "chat.ta",
+   "language": "Hebrew",
+   "strongs": [
+    "H2400"
+   ],
+   "lemma_meaning": [
+    "sinners"
+   ],
+   "occurrences": 19,
+   "testament": {
+    "OT": 19
+   },
+   "sense_spread": {
+    "sinners": 15,
+    "sinned": 1,
+    "sinful": 2,
+    "counted offenders": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 13:13",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Num 16:38",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinned"
+    },
+    {
+     "ref": "Num 32:14",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinful"
+    },
+    {
+     "ref": "1Sa 15:18",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "1Ki 1:21",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "counted offenders"
+    },
+    {
+     "ref": "Psa 1:1",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Psa 1:5",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Psa 25:8",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Psa 26:9",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Psa 51:13",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Psa 104:35",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Pro 1:10",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Pro 13:21",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Pro 23:17",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Isa 1:28",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Isa 13:9",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Isa 33:14",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    },
+    {
+     "ref": "Amo 9:8",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinful"
+    },
+    {
+     "ref": "Amo 9:10",
+     "strong": "H2400",
+     "gloss": "sinner",
+     "sense": "sinners"
+    }
+   ]
+  },
+  {
+   "lemma": "blasfēmia",
+   "language": "Greek",
+   "strongs": [
+    "G0988"
+   ],
+   "lemma_meaning": [
+    "blasphemy, slander, malicious talk"
+   ],
+   "occurrences": 18,
+   "testament": {
+    "NT": 18
+   },
+   "sense_spread": {
+    "blasphemy": 4,
+    "slander": 6,
+    "blaspheming": 1,
+    "blasphemies": 2,
+    "blasphemous": 3,
+    "blasphemous words": 1,
+    "utter blasphemies": 1
+   },
+   "members": [
+    {
+     "ref": "Mat 12:31",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemy"
+    },
+    {
+     "ref": "Mat 15:19",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "Mat 26:65",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemy"
+    },
+    {
+     "ref": "Mar 2:7",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blaspheming"
+    },
+    {
+     "ref": "Mar 3:28",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemies"
+    },
+    {
+     "ref": "Mar 7:22",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "Mar 14:64",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemy"
+    },
+    {
+     "ref": "Luk 5:21",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemies"
+    },
+    {
+     "ref": "Joh 10:33",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemy"
+    },
+    {
+     "ref": "Eph 4:31",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "Col 3:8",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "1Ti 6:4",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "Jude 9",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemous"
+    },
+    {
+     "ref": "Rev 2:9",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "slander"
+    },
+    {
+     "ref": "Rev 13:1",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemous"
+    },
+    {
+     "ref": "Rev 13:5",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemous words"
+    },
+    {
+     "ref": "Rev 13:6",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "utter blasphemies"
+    },
+    {
+     "ref": "Rev 17:3",
+     "strong": "G0988",
+     "gloss": "blasphemy",
+     "sense": "blasphemous"
+    }
+   ]
+  },
+  {
+   "lemma": "ash.mah",
+   "language": "Hebrew",
+   "strongs": [
+    "H0819"
+   ],
+   "lemma_meaning": [
+    "guiltiness, guilt, offense, sin, wrong-doing"
+   ],
+   "occurrences": 17,
+   "testament": {
+    "OT": 17
+   },
+   "sense_spread": {
+    "guilt": 12,
+    "thereby become": 1,
+    "guilt of theirs": 1,
+    "sins": 1,
+    "done": 1,
+    "Guilt": 1
+   },
+   "members": [
+    {
+     "ref": "Lev 4:3",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 6:5",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Lev 6:7",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "thereby become"
+    },
+    {
+     "ref": "Lev 22:16",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "1Ch 21:3",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "2Ch 24:18",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt of theirs"
+    },
+    {
+     "ref": "2Ch 28:10",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "sins"
+    },
+    {
+     "ref": "2Ch 28:13",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "2Ch 33:23",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 9:6",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 9:7",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 9:13",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 9:15",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 10:10",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Ezr 10:19",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "guilt"
+    },
+    {
+     "ref": "Psa 69:5",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "done"
+    },
+    {
+     "ref": "Amo 8:14",
+     "strong": "H0819",
+     "gloss": "guiltiness",
+     "sense": "Guilt"
+    }
+   ]
+  },
+  {
+   "lemma": "a.vah",
+   "language": "Hebrew",
+   "strongs": [
+    "H5753A",
+    "H5753B"
+   ],
+   "lemma_meaning": [
+    "to bend, twist, distort"
+   ],
+   "occurrences": 16,
+   "testament": {
+    "OT": 16
+   },
+   "sense_spread": {
+    "perverse": 1,
+    "commits iniquity": 1,
+    "wrong": 2,
+    "done wickedly": 1,
+    "acted perversely": 2,
+    "done wrong": 1,
+    "perverted": 2,
+    "bowed": 1,
+    "committed iniquity": 1,
+    "twisted": 1,
+    "bowed down": 1,
+    "committing iniquity": 1,
+    "crooked": 1
+   },
+   "members": [
+    {
+     "ref": "1Sa 20:30",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "perverse"
+    },
+    {
+     "ref": "2Sa 7:14",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "commits iniquity"
+    },
+    {
+     "ref": "2Sa 19:19",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "wrong"
+    },
+    {
+     "ref": "2Sa 24:17",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "done wickedly"
+    },
+    {
+     "ref": "1Ki 8:47",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "acted perversely"
+    },
+    {
+     "ref": "2Ch 6:37",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "acted perversely"
+    },
+    {
+     "ref": "Est 1:16",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "done wrong"
+    },
+    {
+     "ref": "Job 33:27",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "perverted"
+    },
+    {
+     "ref": "Psa 38:6",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "bowed"
+    },
+    {
+     "ref": "Psa 106:6",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "committed iniquity"
+    },
+    {
+     "ref": "Pro 12:8",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "twisted"
+    },
+    {
+     "ref": "Isa 21:3",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "bowed down"
+    },
+    {
+     "ref": "Jer 3:21",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "perverted"
+    },
+    {
+     "ref": "Jer 9:5",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "committing iniquity"
+    },
+    {
+     "ref": "Lam 3:9",
+     "strong": "H5753A",
+     "gloss": "to twist",
+     "sense": "crooked"
+    },
+    {
+     "ref": "Dan 9:5",
+     "strong": "H5753B",
+     "gloss": "to pervert",
+     "sense": "wrong"
+    }
+   ]
+  },
+  {
+   "lemma": "paraptōma",
+   "language": "Greek",
+   "strongs": [
+    "G3900"
+   ],
+   "lemma_meaning": [
+    "trespass, transgression, sin against, to sin as a moral failure to kee"
+   ],
+   "occurrences": 14,
+   "testament": {
+    "NT": 14
+   },
+   "sense_spread": {
+    "trespasses": 7,
+    "trespass": 6,
+    "transgression": 1
+   },
+   "members": [
+    {
+     "ref": "Rom 4:25",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Rom 5:15",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "Rom 5:16",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Rom 5:17",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "Rom 5:18",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "Rom 5:20",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "Rom 11:11",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "Rom 11:12",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespass"
+    },
+    {
+     "ref": "2Cor 5:19",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Gal 6:1",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Eph 1:7",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Eph 2:1",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Eph 2:5",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    },
+    {
+     "ref": "Col 2:13",
+     "strong": "G3900",
+     "gloss": "trespass",
+     "sense": "trespasses"
+    }
+   ]
+  },
+  {
+   "lemma": "mash.chit",
+   "language": "Hebrew",
+   "strongs": [
+    "H4889"
+   ],
+   "lemma_meaning": [
+    "ruin, destruction"
+   ],
+   "occurrences": 12,
+   "testament": {
+    "OT": 12
+   },
+   "sense_spread": {
+    "destroy": 4,
+    "corruption": 1,
+    "undoing": 1,
+    "destroys": 1,
+    "trap": 1,
+    "destroying": 1,
+    "destruction": 1,
+    "outright": 1,
+    "fearfully": 1
+   },
+   "members": [
+    {
+     "ref": "Exo 12:13",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroy"
+    },
+    {
+     "ref": "2Ki 23:13",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "corruption"
+    },
+    {
+     "ref": "2Ch 20:23",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroy"
+    },
+    {
+     "ref": "2Ch 22:4",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "undoing"
+    },
+    {
+     "ref": "Pro 18:9",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroys"
+    },
+    {
+     "ref": "Jer 5:26",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "trap"
+    },
+    {
+     "ref": "Jer 51:25",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroying"
+    },
+    {
+     "ref": "Eze 5:16",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destruction"
+    },
+    {
+     "ref": "Eze 9:6",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "outright"
+    },
+    {
+     "ref": "Eze 21:31",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroy"
+    },
+    {
+     "ref": "Eze 25:15",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "destroy"
+    },
+    {
+     "ref": "Dan 10:8",
+     "strong": "H4889",
+     "gloss": "destruction",
+     "sense": "fearfully"
+    }
+   ]
+  },
+  {
+   "lemma": "adikos",
+   "language": "Greek",
+   "strongs": [
+    "G0094"
+   ],
+   "lemma_meaning": [
+    "unjust judge, unrighteous"
+   ],
+   "occurrences": 11,
+   "testament": {
+    "NT": 11
+   },
+   "sense_spread": {
+    "unjust": 4,
+    "dishonest": 1,
+    "unrighteous": 6
+   },
+   "members": [
+    {
+     "ref": "Mat 5:45",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unjust"
+    },
+    {
+     "ref": "Luk 16:10",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "dishonest"
+    },
+    {
+     "ref": "Luk 16:11",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Luk 18:11",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unjust"
+    },
+    {
+     "ref": "Act 24:15",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unjust"
+    },
+    {
+     "ref": "Rom 3:5",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "1Cor 6:1",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "1Cor 6:9",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Heb 6:10",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unjust"
+    },
+    {
+     "ref": "1Pe 3:18",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "2Pe 2:9",
+     "strong": "G0094",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    }
+   ]
+  },
+  {
+   "lemma": "tah.pu.khah",
+   "language": "Hebrew",
+   "strongs": [
+    "H8419"
+   ],
+   "lemma_meaning": [
+    "perversity, perverse thing"
+   ],
+   "occurrences": 10,
+   "testament": {
+    "OT": 10
+   },
+   "sense_spread": {
+    "perverse": 3,
+    "perverted": 3,
+    "perverseness": 1,
+    "dishonest": 1,
+    "dishonest things": 1,
+    "perverse things": 1
+   },
+   "members": [
+    {
+     "ref": "Deu 32:20",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverse"
+    },
+    {
+     "ref": "Pro 2:12",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverted"
+    },
+    {
+     "ref": "Pro 2:14",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverseness"
+    },
+    {
+     "ref": "Pro 6:14",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverted"
+    },
+    {
+     "ref": "Pro 8:13",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverted"
+    },
+    {
+     "ref": "Pro 10:31",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverse"
+    },
+    {
+     "ref": "Pro 10:32",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverse"
+    },
+    {
+     "ref": "Pro 16:28",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "dishonest"
+    },
+    {
+     "ref": "Pro 16:30",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "dishonest things"
+    },
+    {
+     "ref": "Pro 23:33",
+     "strong": "H8419",
+     "gloss": "perversity",
+     "sense": "perverse things"
+    }
+   ]
+  },
+  {
+   "lemma": "cha.ta.ah",
+   "language": "Hebrew",
+   "strongs": [
+    "H2401"
+   ],
+   "lemma_meaning": [
+    "sin, sin offering"
+   ],
+   "occurrences": 8,
+   "testament": {
+    "OT": 8
+   },
+   "sense_spread": {
+    "sin": 7,
+    "sin offering": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 20:9",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 32:21",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 32:30",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Exo 32:31",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "2Ki 17:21",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 32:1",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Psa 40:6",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin offering"
+    },
+    {
+     "ref": "Psa 109:7",
+     "strong": "H2401",
+     "gloss": "sin",
+     "sense": "sin"
+    }
+   ]
+  },
+  {
+   "lemma": "kip.pu.rim",
+   "language": "Hebrew",
+   "strongs": [
+    "H3725"
+   ],
+   "lemma_meaning": [
+    "atonement"
+   ],
+   "occurrences": 8,
+   "testament": {
+    "OT": 8
+   },
+   "sense_spread": {
+    "atonement": 5,
+    "Atonement": 3
+   },
+   "members": [
+    {
+     "ref": "Exo 29:36",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "atonement"
+    },
+    {
+     "ref": "Exo 30:10",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "atonement"
+    },
+    {
+     "ref": "Exo 30:16",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "atonement"
+    },
+    {
+     "ref": "Lev 23:27",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "Atonement"
+    },
+    {
+     "ref": "Lev 23:28",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "Atonement"
+    },
+    {
+     "ref": "Lev 25:9",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "Atonement"
+    },
+    {
+     "ref": "Num 5:8",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "atonement"
+    },
+    {
+     "ref": "Num 29:11",
+     "strong": "H3725",
+     "gloss": "atonement",
+     "sense": "atonement"
+    }
+   ]
+  },
+  {
+   "lemma": "sa.rah",
+   "language": "Hebrew",
+   "strongs": [
+    "H5627"
+   ],
+   "lemma_meaning": [
+    "apostasy, defection, turning aside, withdrawal"
+   ],
+   "occurrences": 8,
+   "testament": {
+    "OT": 8
+   },
+   "sense_spread": {
+    "rebellion": 3,
+    "wrongdoing": 1,
+    "rebel": 1,
+    "blows": 1,
+    "revolted": 1,
+    "revolt": 1
+   },
+   "members": [
+    {
+     "ref": "Deu 13:5",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "Deu 19:16",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "wrongdoing"
+    },
+    {
+     "ref": "Isa 1:5",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "rebel"
+    },
+    {
+     "ref": "Isa 14:6",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "blows"
+    },
+    {
+     "ref": "Isa 31:6",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "revolted"
+    },
+    {
+     "ref": "Isa 59:13",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "revolt"
+    },
+    {
+     "ref": "Jer 28:16",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "rebellion"
+    },
+    {
+     "ref": "Jer 29:32",
+     "strong": "H5627",
+     "gloss": "revolt",
+     "sense": "rebellion"
+    }
+   ]
+  },
+  {
+   "lemma": "fthora",
+   "language": "Greek",
+   "strongs": [
+    "G5356"
+   ],
+   "lemma_meaning": [
+    "perishableness, destruction, corruption"
+   ],
+   "occurrences": 8,
+   "testament": {
+    "NT": 8
+   },
+   "sense_spread": {
+    "corruption": 4,
+    "perishable": 2,
+    "perish": 1,
+    "destroyed": 1
+   },
+   "members": [
+    {
+     "ref": "Rom 8:21",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "corruption"
+    },
+    {
+     "ref": "1Cor 15:42",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "perishable"
+    },
+    {
+     "ref": "1Cor 15:50",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "perishable"
+    },
+    {
+     "ref": "Gal 6:8",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "corruption"
+    },
+    {
+     "ref": "Col 2:22",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "perish"
+    },
+    {
+     "ref": "2Pe 1:4",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "corruption"
+    },
+    {
+     "ref": "2Pe 2:12",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "destroyed"
+    },
+    {
+     "ref": "2Pe 2:19",
+     "strong": "G5356",
+     "gloss": "corruption",
+     "sense": "corruption"
+    }
+   ]
+  },
+  {
+   "lemma": "parabasis",
+   "language": "Greek",
+   "strongs": [
+    "G3847"
+   ],
+   "lemma_meaning": [
+    "transgression, breaking, violation"
+   ],
+   "occurrences": 7,
+   "testament": {
+    "NT": 7
+   },
+   "sense_spread": {
+    "breaking": 1,
+    "transgression": 3,
+    "transgressions": 2,
+    "transgressor": 1
+   },
+   "members": [
+    {
+     "ref": "Rom 2:23",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "breaking"
+    },
+    {
+     "ref": "Rom 4:15",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Rom 5:14",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Gal 3:19",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    },
+    {
+     "ref": "1Ti 2:14",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgressor"
+    },
+    {
+     "ref": "Heb 2:2",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgression"
+    },
+    {
+     "ref": "Heb 9:15",
+     "strong": "G3847",
+     "gloss": "transgression",
+     "sense": "transgressions"
+    }
+   ]
+  },
+  {
+   "lemma": "ftheirō",
+   "language": "Greek",
+   "strongs": [
+    "G5351"
+   ],
+   "lemma_meaning": [
+    "to destroy, corrupt"
+   ],
+   "occurrences": 7,
+   "testament": {
+    "NT": 7
+   },
+   "sense_spread": {
+    "destroys": 1,
+    "ruins": 1,
+    "corrupted": 2,
+    "led astray": 1,
+    "corrupt": 1,
+    "destroyed": 1
+   },
+   "members": [
+    {
+     "ref": "1Cor 3:17",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "destroys"
+    },
+    {
+     "ref": "1Cor 15:33",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "ruins"
+    },
+    {
+     "ref": "2Cor 7:2",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "corrupted"
+    },
+    {
+     "ref": "2Cor 11:3",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "led astray"
+    },
+    {
+     "ref": "Eph 4:22",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "corrupt"
+    },
+    {
+     "ref": "Jude 10",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "destroyed"
+    },
+    {
+     "ref": "Rev 19:2",
+     "strong": "G5351",
+     "gloss": "to destroy",
+     "sense": "corrupted"
+    }
+   ]
+  },
+  {
+   "lemma": "sa.laph",
+   "language": "Hebrew",
+   "strongs": [
+    "H5557"
+   ],
+   "lemma_meaning": [
+    "to twist, pervert, distort, overturn, ruin"
+   ],
+   "occurrences": 6,
+   "testament": {
+    "OT": 6
+   },
+   "sense_spread": {
+    "subverts": 2,
+    "overthrows": 2,
+    "ruin": 1,
+    "throws": 1
+   },
+   "members": [
+    {
+     "ref": "Exo 23:8",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "subverts"
+    },
+    {
+     "ref": "Deu 16:19",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "subverts"
+    },
+    {
+     "ref": "Pro 13:6",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "overthrows"
+    },
+    {
+     "ref": "Pro 19:3",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "ruin"
+    },
+    {
+     "ref": "Pro 21:12",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "throws"
+    },
+    {
+     "ref": "Pro 22:12",
+     "strong": "H5557",
+     "gloss": "to pervert",
+     "sense": "overthrows"
+    }
+   ]
+  },
+  {
+   "lemma": "cha.val",
+   "language": "Hebrew",
+   "strongs": [
+    "H2254B"
+   ],
+   "lemma_meaning": [
+    "to bind"
+   ],
+   "occurrences": 6,
+   "testament": {
+    "OT": 6
+   },
+   "sense_spread": {
+    "acted very": 1,
+    "broken": 1,
+    "offend": 1,
+    "himself": 1,
+    "ruin": 1,
+    "destroys": 1
+   },
+   "members": [
+    {
+     "ref": "Neh 1:7",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "acted very"
+    },
+    {
+     "ref": "Job 17:1",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "broken"
+    },
+    {
+     "ref": "Job 34:31",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "offend"
+    },
+    {
+     "ref": "Pro 13:13",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "himself"
+    },
+    {
+     "ref": "Isa 32:7",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "ruin"
+    },
+    {
+     "ref": "Mic 2:10",
+     "strong": "H2254B",
+     "gloss": "to destroy",
+     "sense": "destroys"
+    }
+   ]
+  },
+  {
+   "lemma": "av.val",
+   "language": "Hebrew",
+   "strongs": [
+    "H5767"
+   ],
+   "lemma_meaning": [
+    "unjust one, perverse one, unrighteous one"
+   ],
+   "occurrences": 5,
+   "testament": {
+    "OT": 5
+   },
+   "sense_spread": {
+    "unrighteous": 4,
+    "unjust": 1
+   },
+   "members": [
+    {
+     "ref": "Job 18:21",
+     "strong": "H5767",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Job 27:7",
+     "strong": "H5767",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Job 29:17",
+     "strong": "H5767",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Job 31:3",
+     "strong": "H5767",
+     "gloss": "unjust",
+     "sense": "unrighteous"
+    },
+    {
+     "ref": "Zep 3:5",
+     "strong": "H5767",
+     "gloss": "unjust",
+     "sense": "unjust"
+    }
+   ]
+  },
+  {
+   "lemma": "parabatēs",
+   "language": "Greek",
+   "strongs": [
+    "G3848"
+   ],
+   "lemma_meaning": [
+    "transgressor"
+   ],
+   "occurrences": 5,
+   "testament": {
+    "NT": 5
+   },
+   "sense_spread": {
+    "break": 2,
+    "transgressor": 2,
+    "transgressors": 1
+   },
+   "members": [
+    {
+     "ref": "Rom 2:25",
+     "strong": "G3848",
+     "gloss": "transgressor",
+     "sense": "break"
+    },
+    {
+     "ref": "Rom 2:27",
+     "strong": "G3848",
+     "gloss": "transgressor",
+     "sense": "break"
+    },
+    {
+     "ref": "Gal 2:18",
+     "strong": "G3848",
+     "gloss": "transgressor",
+     "sense": "transgressor"
+    },
+    {
+     "ref": "Jam 2:9",
+     "strong": "G3848",
+     "gloss": "transgressor",
+     "sense": "transgressors"
+    },
+    {
+     "ref": "Jam 2:11",
+     "strong": "G3848",
+     "gloss": "transgressor",
+     "sense": "transgressor"
+    }
+   ]
+  },
+  {
+   "lemma": "rish.ah",
+   "language": "Hebrew",
+   "strongs": [
+    "H7564"
+   ],
+   "lemma_meaning": [
+    "wickedness, guilt"
+   ],
+   "occurrences": 4,
+   "testament": {
+    "OT": 4
+   },
+   "sense_spread": {
+    "wickedness": 1,
+    "wicked": 1,
+    "Evildoers": 1,
+    "evildoers": 1
+   },
+   "members": [
+    {
+     "ref": "Isa 9:18",
+     "strong": "H7564",
+     "gloss": "wickedness",
+     "sense": "wickedness"
+    },
+    {
+     "ref": "Mal 1:4",
+     "strong": "H7564",
+     "gloss": "wickedness",
+     "sense": "wicked"
+    },
+    {
+     "ref": "Mal 3:15",
+     "strong": "H7564",
+     "gloss": "wickedness",
+     "sense": "Evildoers"
+    },
+    {
+     "ref": "Mal 4:1",
+     "strong": "H7564",
+     "gloss": "wickedness",
+     "sense": "evildoers"
+    }
+   ]
+  },
+  {
+   "lemma": "parabainō",
+   "language": "Greek",
+   "strongs": [
+    "G3845"
+   ],
+   "lemma_meaning": [
+    "to break, transgress"
+   ],
+   "occurrences": 4,
+   "testament": {
+    "NT": 4
+   },
+   "sense_spread": {
+    "break": 2,
+    "turned aside": 1,
+    "goes on ahead": 1
+   },
+   "members": [
+    {
+     "ref": "Mat 15:2",
+     "strong": "G3845",
+     "gloss": "to transgress",
+     "sense": "break"
+    },
+    {
+     "ref": "Mat 15:3",
+     "strong": "G3845",
+     "gloss": "to transgress",
+     "sense": "break"
+    },
+    {
+     "ref": "Act 1:25",
+     "strong": "G3845",
+     "gloss": "to transgress",
+     "sense": "turned aside"
+    },
+    {
+     "ref": "2Jo 9",
+     "strong": "G3845",
+     "gloss": "to transgress",
+     "sense": "goes on ahead"
+    }
+   ]
+  },
+  {
+   "lemma": "hamartēma",
+   "language": "Greek",
+   "strongs": [
+    "G0265"
+   ],
+   "lemma_meaning": [
+    "sin, wrongdoing"
+   ],
+   "occurrences": 4,
+   "testament": {
+    "NT": 4
+   },
+   "sense_spread": {
+    "sins": 2,
+    "sin": 2
+   },
+   "members": [
+    {
+     "ref": "Mar 3:28",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "Mar 3:29",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Rom 3:25",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sins"
+    },
+    {
+     "ref": "1Cor 6:18",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sin"
+    }
+   ]
+  },
+  {
+   "lemma": "blasfēmos",
+   "language": "Greek",
+   "strongs": [
+    "G0989"
+   ],
+   "lemma_meaning": [
+    "blasphemous, slanderous, abusive, evil, hurtful (speech)"
+   ],
+   "occurrences": 4,
+   "testament": {
+    "NT": 4
+   },
+   "sense_spread": {
+    "blasphemous": 2,
+    "blasphemer": 1,
+    "abusive": 1
+   },
+   "members": [
+    {
+     "ref": "Act 6:11",
+     "strong": "G0989",
+     "gloss": "blasphemous",
+     "sense": "blasphemous"
+    },
+    {
+     "ref": "1Ti 1:13",
+     "strong": "G0989",
+     "gloss": "blasphemous",
+     "sense": "blasphemer"
+    },
+    {
+     "ref": "2Ti 3:2",
+     "strong": "G0989",
+     "gloss": "blasphemous",
+     "sense": "abusive"
+    },
+    {
+     "ref": "2Pe 2:11",
+     "strong": "G0989",
+     "gloss": "blasphemous",
+     "sense": "blasphemous"
+    }
+   ]
+  },
+  {
+   "lemma": "a.shem",
+   "language": "Hebrew",
+   "strongs": [
+    "H0818"
+   ],
+   "lemma_meaning": [
+    "guilty, faulty (and obliged to offer a guilt-offering)"
+   ],
+   "occurrences": 3,
+   "testament": {
+    "OT": 3
+   },
+   "sense_spread": {
+    "guilty": 1,
+    "convicts": 1,
+    "guilt offering": 1
+   },
+   "members": [
+    {
+     "ref": "Gen 42:21",
+     "strong": "H0818",
+     "gloss": "guilty",
+     "sense": "guilty"
+    },
+    {
+     "ref": "2Sa 14:13",
+     "strong": "H0818",
+     "gloss": "guilty",
+     "sense": "convicts"
+    },
+    {
+     "ref": "Ezr 10:19",
+     "strong": "H0818",
+     "gloss": "guilty",
+     "sense": "guilt offering"
+    }
+   ]
+  },
+  {
+   "lemma": "diaftheirō",
+   "language": "Greek",
+   "strongs": [
+    "G1311"
+   ],
+   "lemma_meaning": [
+    "to destroy, corrupt"
+   ],
+   "occurrences": 3,
+   "testament": {
+    "NT": 3
+   },
+   "sense_spread": {
+    "destroys": 1,
+    "wasting away": 1,
+    "depraved": 1
+   },
+   "members": [
+    {
+     "ref": "Luk 12:33",
+     "strong": "G1311",
+     "gloss": "to destroy",
+     "sense": "destroys"
+    },
+    {
+     "ref": "2Cor 4:16",
+     "strong": "G1311",
+     "gloss": "to destroy",
+     "sense": "wasting away"
+    },
+    {
+     "ref": "1Ti 6:5",
+     "strong": "G1311",
+     "gloss": "to destroy",
+     "sense": "depraved"
+    }
+   ]
+  },
+  {
+   "lemma": "adikēma",
+   "language": "Greek",
+   "strongs": [
+    "G0092"
+   ],
+   "lemma_meaning": [
+    "crime, unrighteous or unjust act"
+   ],
+   "occurrences": 3,
+   "testament": {
+    "NT": 3
+   },
+   "sense_spread": {
+    "wrongdoing": 2,
+    "iniquities": 1
+   },
+   "members": [
+    {
+     "ref": "Act 18:14",
+     "strong": "G0092",
+     "gloss": "crime",
+     "sense": "wrongdoing"
+    },
+    {
+     "ref": "Act 24:20",
+     "strong": "G0092",
+     "gloss": "crime",
+     "sense": "wrongdoing"
+    },
+    {
+     "ref": "Rev 18:5",
+     "strong": "G0092",
+     "gloss": "crime",
+     "sense": "iniquities"
+    }
+   ]
+  },
+  {
+   "lemma": "deleazō",
+   "language": "Greek",
+   "strongs": [
+    "G1185"
+   ],
+   "lemma_meaning": [
+    "to entice, seduce, lure"
+   ],
+   "occurrences": 3,
+   "testament": {
+    "NT": 3
+   },
+   "sense_spread": {
+    "enticed": 1,
+    "entice": 2
+   },
+   "members": [
+    {
+     "ref": "Jam 1:14",
+     "strong": "G1185",
+     "gloss": "to entice",
+     "sense": "enticed"
+    },
+    {
+     "ref": "2Pe 2:14",
+     "strong": "G1185",
+     "gloss": "to entice",
+     "sense": "entice"
+    },
+    {
+     "ref": "2Pe 2:18",
+     "strong": "G1185",
+     "gloss": "to entice",
+     "sense": "entice"
+    }
+   ]
+  },
+  {
+   "lemma": "chat.ta.ah",
+   "language": "Hebrew",
+   "strongs": [
+    "H2403A"
+   ],
+   "lemma_meaning": [
+    "sin, sinful thing"
+   ],
+   "occurrences": 2,
+   "testament": {
+    "OT": 2
+   },
+   "sense_spread": {
+    "sin": 2
+   },
+   "members": [
+    {
+     "ref": "Exo 34:7",
+     "strong": "H2403A",
+     "gloss": "sin",
+     "sense": "sin"
+    },
+    {
+     "ref": "Isa 5:18",
+     "strong": "H2403A",
+     "gloss": "sin",
+     "sense": "sin"
+    }
+   ]
+  },
+  {
+   "lemma": "te.vel",
+   "language": "Hebrew",
+   "strongs": [
+    "H8397"
+   ],
+   "lemma_meaning": [
+    "confusion (violation of nature or divine order)"
+   ],
+   "occurrences": 2,
+   "testament": {
+    "OT": 2
+   },
+   "sense_spread": {
+    "perversion": 2
+   },
+   "members": [
+    {
+     "ref": "Lev 18:23",
+     "strong": "H8397",
+     "gloss": "perversion",
+     "sense": "perversion"
+    },
+    {
+     "ref": "Lev 20:12",
+     "strong": "H8397",
+     "gloss": "perversion",
+     "sense": "perversion"
+    }
+   ]
+  },
+  {
+   "lemma": "sur",
+   "language": "Hebrew",
+   "strongs": [
+    "H5494"
+   ],
+   "lemma_meaning": [
+    "degenerate"
+   ],
+   "occurrences": 2,
+   "testament": {
+    "OT": 2
+   },
+   "sense_spread": {
+    "degenerate": 1,
+    "turn away": 1
+   },
+   "members": [
+    {
+     "ref": "Jer 2:21",
+     "strong": "H5494",
+     "gloss": "degenerate",
+     "sense": "degenerate"
+    },
+    {
+     "ref": "Jer 17:13",
+     "strong": "H5494",
+     "gloss": "degenerate",
+     "sense": "turn away"
+    }
+   ]
+  },
+  {
+   "lemma": "ma.she.chat",
+   "language": "Hebrew",
+   "strongs": [
+    "H4893B"
+   ],
+   "lemma_meaning": [
+    "disfigurement (of face)"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "mutilation": 1
+   },
+   "members": [
+    {
+     "ref": "Lev 22:25",
+     "strong": "H4893B",
+     "gloss": "corruption",
+     "sense": "mutilation"
+    }
+   ]
+  },
+  {
+   "lemma": "pu.qah",
+   "language": "Hebrew",
+   "strongs": [
+    "H6330"
+   ],
+   "lemma_meaning": [
+    "tottering, staggering, stumbling"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "grief": 1
+   },
+   "members": [
+    {
+     "ref": "1Sa 25:31",
+     "strong": "H6330",
+     "gloss": "staggering",
+     "sense": "grief"
+    }
+   ]
+  },
+  {
+   "lemma": "a.vil",
+   "language": "Hebrew",
+   "strongs": [
+    "H5760"
+   ],
+   "lemma_meaning": [
+    "perverse one, unjust one"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "ungodly": 1
+   },
+   "members": [
+    {
+     "ref": "Job 16:11",
+     "strong": "H5760",
+     "gloss": "unjust one",
+     "sense": "ungodly"
+    }
+   ]
+  },
+  {
+   "lemma": "la.zut",
+   "language": "Hebrew",
+   "strongs": [
+    "H3891"
+   ],
+   "lemma_meaning": [
+    "deviation, perversity, crookedness"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "devious": 1
+   },
+   "members": [
+    {
+     "ref": "Pro 4:24",
+     "strong": "H3891",
+     "gloss": "perversity",
+     "sense": "devious"
+    }
+   ]
+  },
+  {
+   "lemma": "ho.phekh",
+   "language": "Hebrew",
+   "strongs": [
+    "H2017"
+   ],
+   "lemma_meaning": [
+    "(Qal) perverseness, perversity"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "upside down": 1
+   },
+   "members": [
+    {
+     "ref": "Isa 29:16",
+     "strong": "H2017",
+     "gloss": "perversity",
+     "sense": "upside down"
+    }
+   ]
+  },
+  {
+   "lemma": "mash.chet",
+   "language": "Hebrew",
+   "strongs": [
+    "H4892"
+   ],
+   "lemma_meaning": [
+    "ruin, destruction"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "destroying": 1
+   },
+   "members": [
+    {
+     "ref": "Eze 9:1",
+     "strong": "H4892",
+     "gloss": "destruction",
+     "sense": "destroying"
+    }
+   ]
+  },
+  {
+   "lemma": "mut.teh",
+   "language": "Hebrew",
+   "strongs": [
+    "H4297"
+   ],
+   "lemma_meaning": [
+    "a perversion, that which is perverted or warped, perverted"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "injustice": 1
+   },
+   "members": [
+    {
+     "ref": "Eze 9:9",
+     "strong": "H4297",
+     "gloss": "perversion",
+     "sense": "injustice"
+    }
+   ]
+  },
+  {
+   "lemma": "nav.lut",
+   "language": "Hebrew",
+   "strongs": [
+    "H5040"
+   ],
+   "lemma_meaning": [
+    "immodesty, shamelessness, lewdness, pudenda (of female)"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "lewdness": 1
+   },
+   "members": [
+    {
+     "ref": "Hos 2:10",
+     "strong": "H5040",
+     "gloss": "lewdness",
+     "sense": "lewdness"
+    }
+   ]
+  },
+  {
+   "lemma": "al.vah",
+   "language": "Hebrew",
+   "strongs": [
+    "H5932"
+   ],
+   "lemma_meaning": [],
+   "occurrences": 1,
+   "testament": {
+    "OT": 1
+   },
+   "sense_spread": {
+    "unjust": 1
+   },
+   "members": [
+    {
+     "ref": "Hos 10:9",
+     "strong": "H5932",
+     "gloss": "iniquity",
+     "sense": "unjust"
+    }
+   ]
+  },
+  {
+   "lemma": "apostasia",
+   "language": "Greek",
+   "strongs": [
+    "G0646"
+   ],
+   "lemma_meaning": [
+    "turning away, rebellion, abandonment, apostasy"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "NT": 1
+   },
+   "sense_spread": {
+    "forsake": 1
+   },
+   "members": [
+    {
+     "ref": "Act 21:21",
+     "strong": "G0646",
+     "gloss": "apostasy",
+     "sense": "forsake"
+    }
+   ]
+  },
+  {
+   "lemma": "sunupokrinomai",
+   "language": "Greek",
+   "strongs": [
+    "G4942"
+   ],
+   "lemma_meaning": [
+    "to join in one’s hypocrisy be hypocritical"
+   ],
+   "occurrences": 1,
+   "testament": {
+    "NT": 1
+   },
+   "sense_spread": {
+    "acted hypocritically": 1
+   },
+   "members": [
+    {
+     "ref": "Gal 2:13",
+     "strong": "G4942",
+     "gloss": "to join hypocrisy",
+     "sense": "acted hypocritically"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4617 @@
+{
+ "_meta": {
+  "description": "M10 Ring 1 EVIDENCE collection v1_1 — adds verse_report (target_word/morph/stem) previously not digested. Every occurrence: all lexical fields + grammatical morph/stem + verse text + touch points. Evidence only.",
+  "ring": "R1",
+  "occurrences": 137,
+  "produced": "2026-06-22",
+  "version": "v1_1",
+  "supersedes": "wa-m10-ring1-evidence-v1_0",
+  "source": "wa-ve-lexical-extract-M10-20260621-b1..8of8.json"
+ },
+ "by_lemma": {
+  "ba.gad": [
+   {
+    "ref": "Exo 21:8",
+    "testament": "OT",
+    "verse_text": "Exo 21:8 If she does not please her master , who has designated her for himself, then he shall let her be redeemed . He shall have no right to sell her to a foreign people , since he has broken faith with her .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "faith with",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "faith with",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "relational": "her",
+    "touch_points": [
+     {
+      "lemma": "ma.shal",
+      "gloss": "to rule",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "pa.dah",
+      "gloss": "to ransom",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Judg 9:23",
+    "testament": "OT",
+    "verse_text": "Judg 9:23 And God sent an evil spirit between Abimelech and the leaders of Shechem , and the leaders of Shechem dealt treacherously with Abimelech ,",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "dealt treacherously",
+    "morph": "HVqw3mp",
+    "stem": "Qal",
+    "sense": "dealt treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Abimelech",
+    "object_type": "person",
+    "experiencer": "other",
+    "touch_points": []
+   },
+   {
+    "ref": "1Sa 14:33",
+    "testament": "OT",
+    "verse_text": "1Sa 14:33 Then they told Saul , “ Behold , the people are sinning against the Lord by eating with the blood .” And he said , “You have dealt treacherously ; roll a great stone to me here .”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherously",
+    "morph": "HVqp2mp",
+    "stem": "Qal",
+    "sense": "treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "stone",
+    "object_type": "abstract",
+    "experiencer": "other (addressed)",
+    "intensity": "great (great)",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Job 6:15",
+    "testament": "OT",
+    "verse_text": "Job 6:15 My brothers are treacherous as a torrent-bed , as torrential streams that pass away ,",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "torrent-bed",
+    "object_type": "person",
+    "experiencer": "other",
+    "relational": "as",
+    "touch_points": [
+     {
+      "lemma": "ke.mo",
+      "gloss": "like",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 25:3",
+    "testament": "OT",
+    "verse_text": "Psa 25:3 Indeed , none who wait for you shall be put to shame ; they shall be ashamed who are wantonly treacherous .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "qa.vah",
+      "gloss": "to await",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "bosh",
+      "gloss": "be ashamed",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "gam",
+      "gloss": "also",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 59:5",
+    "testament": "OT",
+    "verse_text": "Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherously",
+    "morph": "HVqrmpc",
+    "stem": "Qal",
+    "sense": "treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "evil",
+    "object_type": "abstract",
+    "intensity": "all (treacherously)",
+    "touch_points": [
+     {
+      "lemma": "cha.nan",
+      "gloss": "be gracious",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.ven",
+      "gloss": "evil: trouble",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 73:15",
+    "testament": "OT",
+    "verse_text": "Psa 73:15 If I had said , “I will speak thus ,” I would have betrayed the generation of your children .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "betrayed",
+    "morph": "HVqp1cs",
+    "stem": "Qal",
+    "sense": "betrayed",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "generation",
+    "object_type": "person",
+    "experiencer": "self",
+    "relational": "thus",
+    "touch_points": [
+     {
+      "lemma": "hin.neh",
+      "gloss": "behold",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 78:57",
+    "testament": "OT",
+    "verse_text": "Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "acted treacherously",
+    "morph": "HVqw3mp",
+    "stem": "Qal",
+    "sense": "acted treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "fathers",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "re.miy.yah",
+      "gloss": "deceit",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "re.miy.yah",
+      "gloss": "slackness",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 119:158",
+    "testament": "OT",
+    "verse_text": "Psa 119:158 I look at the faithless with disgust , because they do not keep your commands .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "faithless",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "faithless",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "sha.mar",
+      "gloss": "to keep: obey",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 2:22",
+    "testament": "OT",
+    "verse_text": "Pro 2:22 but the wicked will be cut off from the land , and the treacherous will be rooted out of it .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "origin": "received-from-outside",
+    "object": "it",
+    "object_type": "person",
+    "touch_points": [
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 11:3",
+    "testament": "OT",
+    "verse_text": "Pro 11:3 The integrity of the upright guides them, but the crookedness of the treacherous destroys them .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "se.leph",
+      "gloss": "crookedness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tum.mah",
+      "gloss": "integrity",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.shar",
+      "gloss": "upright:right",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 11:6",
+    "testament": "OT",
+    "verse_text": "Pro 11:6 The righteousness of the upright delivers them, but the treacherous are taken captive by their lust .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "lust",
+    "object_type": "person",
+    "touch_points": [
+     {
+      "lemma": "hav.vah",
+      "gloss": "desire",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.shar",
+      "gloss": "upright:right",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 13:2",
+    "testament": "OT",
+    "verse_text": "Pro 13:2 From the fruit of his mouth a man eats what is good , but the desire of the treacherous is for violence .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "violence",
+    "object_type": "abstract",
+    "touch_points": [
+     {
+      "lemma": "ne.phesh",
+      "gloss": "soul: appetite",
+      "role": "co-seated",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 13:15",
+    "testament": "OT",
+    "verse_text": "Pro 13:15 Good sense wins favor , but the way of the treacherous is their ruin .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "se.khel",
+      "gloss": "understanding",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "e.tan",
+      "gloss": "strong",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tov",
+      "gloss": "pleasant",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "chen",
+      "gloss": "favor",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 21:18",
+    "testament": "OT",
+    "verse_text": "Pro 21:18 The wicked is a ransom for the righteous , and the traitor for the upright .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitor",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "traitor",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.shar",
+      "gloss": "upright:right",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 22:12",
+    "testament": "OT",
+    "verse_text": "Pro 22:12 The eyes of the Lord keep watch over knowledge , but he overthrows the words of the traitor .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitor",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "traitor",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "da.at",
+      "gloss": "knowledge",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "sa.laph",
+      "gloss": "to pervert",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 23:28",
+    "testament": "OT",
+    "verse_text": "Pro 23:28 She lies in wait like a robber and increases the traitors among mankind .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitors",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "traitors",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "mankind",
+    "object_type": "abstract",
+    "touch_points": []
+   },
+   {
+    "ref": "Pro 25:19",
+    "testament": "OT",
+    "verse_text": "Pro 25:19 Trusting in a treacherous man in time of trouble is like a bad tooth or a foot that slips .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous man",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "treacherous man",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "time",
+    "object_type": "person",
+    "touch_points": [
+     {
+      "lemma": "tsa.rah",
+      "gloss": "distress",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "miv.tach",
+      "gloss": "confidence",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 21:2",
+    "testament": "OT",
+    "verse_text": "Isa 21:2 A stern vision is told to me; the traitor betrays , and the destroyer destroys . Go up , O Elam ; lay siege , O Media ; all the sighing she has caused I bring to an end .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitor",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "traitor",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "a.na.chah",
+      "gloss": "sighing",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "qa.sheh",
+      "gloss": "severe",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsur",
+      "gloss": "to provoke",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 24:16",
+    "testament": "OT",
+    "verse_text": "Isa 24:16 From the ends of the earth we hear songs of praise , of glory to the Righteous One . But I say , “I waste away , I waste away . Woe is me! For the traitors have betrayed , with betrayal the traitors have betrayed .”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitors",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "traitors",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "relational": "For",
+    "touch_points": [
+     {
+      "lemma": "za.mir",
+      "gloss": "song",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "sha.ma",
+      "gloss": "to hear: hear",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "be.ged",
+      "gloss": "treachery",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 33:1",
+    "testament": "OT",
+    "verse_text": "Isa 33:1 Ah , you destroyer , who yourself have not been destroyed , you traitor , whom none has betrayed ! When you have ceased to destroy , you will be destroyed ; and when you have finished betraying , they will betray you .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitor",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "traitor",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "immediate_response": "betrayed",
+    "touch_points": []
+   },
+   {
+    "ref": "Isa 48:8",
+    "testament": "OT",
+    "verse_text": "Isa 48:8 You have never heard , you have never known , from of old your ear has not been opened . For I knew that you would surely deal treacherously , and that from before birth you were called a rebel .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "surely deal",
+    "morph": "HVqaa",
+    "stem": "Qal",
+    "sense": "surely deal",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "birth",
+    "object_type": "abstract",
+    "cause_clause": "knew surely deal treacherously from birth you called rebel",
+    "touch_points": [
+     {
+      "lemma": "ya.da",
+      "gloss": "to know",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "pa.sha",
+      "gloss": "to transgress",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "sha.ma",
+      "gloss": "to hear: hear",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "gam",
+      "gloss": "also",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "qa.ra",
+      "gloss": "to call: call by",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 3:8",
+    "testament": "OT",
+    "verse_text": "Jer 3:8 She saw that for all the adulteries of that faithless one, Israel , I had sent her away with a decree of divorce . Yet her treacherous sister Judah did not fear , but she too went and played the whore .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrfsa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "sister",
+    "object_type": "abstract",
+    "cause_clause": "for all adulteries faithless Israel away with decree",
+    "immediate_response": "fear",
+    "touch_points": [
+     {
+      "lemma": "gam",
+      "gloss": "also",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "za.nah",
+      "gloss": "to fornicate",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.re",
+      "gloss": "to fear: revere",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 3:11",
+    "testament": "OT",
+    "verse_text": "Jer 3:11 And the Lord said to me, “ Faithless Israel has shown herself more righteous than treacherous Judah .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqrfsa",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "Judah",
+    "object_type": "person",
+    "relational": "than",
+    "touch_points": [
+     {
+      "lemma": "tsa.deq",
+      "gloss": "to justify",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ne.phesh",
+      "gloss": "soul: myself",
+      "role": "co-seated",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 3:20",
+    "testament": "OT",
+    "verse_text": "Jer 3:20 Surely , as a treacherous wife leaves her husband , so have you been treacherous to me, O house of Israel , declares the Lord .’”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous",
+    "morph": "HVqp3fs",
+    "stem": "Qal",
+    "sense": "treacherous",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "wife",
+    "object_type": "God",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "Jer 5:11",
+    "testament": "OT",
+    "verse_text": "Jer 5:11 For the house of Israel and the house of Judah have been utterly treacherous to me, declares the Lord .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "utterly",
+    "morph": "HVqaa",
+    "stem": "Qal",
+    "sense": "utterly",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "declares",
+    "object_type": "God",
+    "cause_clause": "house Israel house Judah utterly treacherous declares Lord",
+    "touch_points": []
+   },
+   {
+    "ref": "Jer 9:2",
+    "testament": "OT",
+    "verse_text": "Jer 9:2 Oh that I had in the desert a travelers ’ lodging place , that I might leave my people and go away from them! For they are all adulterers , a company of treacherous men .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "treacherous men",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "treacherous men",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "cause_clause": "all adulterers company treacherous men",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "mi",
+      "gloss": "who?",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.tsa.rah",
+      "gloss": "assembly",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 12:1",
+    "testament": "OT",
+    "verse_text": "Jer 12:1 Righteous are you , O Lord , when I complain to you; yet I would plead my case before you. Why does the way of the wicked prosper ? Why do all who are treacherous thrive ?",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "are",
+    "morph": "HVqrmpc",
+    "stem": "Qal",
+    "sense": "are",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "treacherous",
+    "object_type": "abstract",
+    "cause_clause": "complain yet case Why way wicked prosper all",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "mish.pat",
+      "gloss": "justice: judgement",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "be.ged",
+      "gloss": "treachery",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "riv",
+      "gloss": "to contend",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "mad.du.a",
+      "gloss": "why?",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 12:6",
+    "testament": "OT",
+    "verse_text": "Jer 12:6 For even your brothers and the house of your father , even they have dealt treacherously with you; they are in full cry after you; do not believe them, though they speak friendly words to you.”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "dealt treacherously",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "dealt treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "cause": "brothers and father's house acting treacherously",
+    "cause_clause": "even brothers house father even they dealt treacherously full",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "a.man",
+      "gloss": "be faithful",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "al",
+      "gloss": "not",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "gam",
+      "gloss": "also",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "qa.ra",
+      "gloss": "to call: call out",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Lam 1:2",
+    "testament": "OT",
+    "verse_text": "Lam 1:2 She weeps bitterly in the night , with tears on her cheeks ; among all her lovers she has none to comfort her; all her friends have dealt treacherously with her; they have become her enemies .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "dealt treacherously",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "dealt treacherously",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "other",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "na.cham",
+      "gloss": "to be sorry: comfort",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ba.khah",
+      "gloss": "to weep",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "dim.ah",
+      "gloss": "tears",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "o.yev",
+      "gloss": "enemy",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Hos 5:7",
+    "testament": "OT",
+    "verse_text": "Hos 5:7 They have dealt faithlessly with the Lord ; for they have borne alien children . Now the new moon shall devour them with their fields .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "faithlessly with",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "faithlessly with",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "cause_clause": "new moon devour their fields",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "Hos 6:7",
+    "testament": "OT",
+    "verse_text": "Hos 6:7 But like Adam they transgressed the covenant ; there they dealt faithlessly with me .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "faithlessly with",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "faithlessly with",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "other",
+    "relational": "me",
+    "touch_points": [
+     {
+      "lemma": "be.rit",
+      "gloss": "covenant",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Hab 1:13",
+    "testament": "OT",
+    "verse_text": "Hab 1:13 You who are of purer eyes than to see evil and cannot look at wrong , why do you idly look at traitors and remain silent when the wicked swallows up the man more righteous than he ?",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitors",
+    "morph": "HVqrmpa",
+    "stem": "Qal",
+    "sense": "traitors",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "wicked",
+    "object_type": "abstract",
+    "touch_points": [
+     {
+      "lemma": "a.mal",
+      "gloss": "trouble",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.ah",
+      "gloss": "to see: see",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.khol",
+      "gloss": "be able",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.resh",
+      "gloss": "be quiet",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "na.vat",
+      "gloss": "to look",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "te.hor",
+      "gloss": "pureness",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Hab 2:5",
+    "testament": "OT",
+    "verse_text": "Hab 2:5 “ Moreover , wine is a traitor , an arrogant man who is never at rest . His greed is as wide as Sheol ; like death he has never enough . He gathers for himself all nations and collects as his own all peoples .”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "traitor",
+    "morph": "HVqrmsa",
+    "stem": "Qal",
+    "sense": "traitor",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "man",
+    "object_type": "person",
+    "cause": "wine",
+    "cause_clause": "traitor arrogant man never rest greed wide Sheol",
+    "immediate_response": "rest greed",
+    "touch_points": [
+     {
+      "lemma": "ra.chav",
+      "gloss": "to enlarge",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ne.phesh",
+      "gloss": "soul: appetite",
+      "role": "co-seated",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Mal 2:10",
+    "testament": "OT",
+    "verse_text": "Mal 2:10 Have we not all one Father ? Has not one God created us? Why then are we faithless to one another , profaning the covenant of our fathers ?",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "we",
+    "morph": "HVqi1cp",
+    "stem": "Qal",
+    "sense": "we",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "one",
+    "object_type": "person",
+    "experiencer": "self",
+    "intensity": "all (God)",
+    "touch_points": [
+     {
+      "lemma": "be.rit",
+      "gloss": "covenant",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "el",
+      "gloss": "God",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "mad.du.a",
+      "gloss": "why?",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Mal 2:11",
+    "testament": "OT",
+    "verse_text": "Mal 2:11 Judah has been faithless , and abomination has been committed in Israel and in Jerusalem . For Judah has profaned the sanctuary of the Lord , which he loves , and has married the daughter of a foreign god .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "faithless",
+    "morph": "HVqp3fs",
+    "stem": "Qal",
+    "sense": "faithless",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "abomination",
+    "object_type": "abstract",
+    "cause": "profaning the sanctuary by marrying a foreign god's daughter",
+    "cause_clause": "sanctuary Lord which loves married daughter foreign god",
+    "experiencer": "other",
+    "immediate_response": "committed Israel",
+    "touch_points": [
+     {
+      "lemma": "to.e.vah",
+      "gloss": "abomination",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Mal 2:14",
+    "testament": "OT",
+    "verse_text": "Mal 2:14 But you say , “ Why does he not?” Because the Lord was witness between you and the wife of your youth , to whom you have been faithless , though she is your companion and your wife by covenant .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "been faithless",
+    "morph": "HVqp2ms",
+    "stem": "Qal",
+    "sense": "been faithless",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "sinful",
+    "object": "is your companion",
+    "object_type": "person",
+    "cause": "breaking the marriage covenant",
+    "cause_clause": "Lord witness between wife youth you been faithless she",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "be.rit",
+      "gloss": "covenant",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Mal 2:15",
+    "testament": "OT",
+    "verse_text": "Mal 2:15 Did he not make them one , with a portion of the Spirit in their union? And what was the one God seeking ? Godly offspring . So guard yourselves in your spirit , and let none of you be faithless to the wife of your youth .",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "be",
+    "morph": "HVqj3ms",
+    "stem": "Qal",
+    "sense": "be",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "forbidden",
+    "object": "wife",
+    "object_type": "person",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ba.qash",
+      "gloss": "to seek",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "al",
+      "gloss": "not",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "sha.mar",
+      "gloss": "to keep: guard",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Mal 2:16",
+    "testament": "OT",
+    "verse_text": "Mal 2:16 “For the man who does not love his wife but divorces her, says the Lord , the God of Israel , covers his garment with violence , says the Lord of hosts . So guard yourselves in your spirit , and do not be faithless .”",
+    "strong": "H0898",
+    "lemma": "ba.gad",
+    "gloss": "to act treacherously",
+    "target_word": "be faithless",
+    "morph": "HVqi2mp",
+    "stem": "Qal",
+    "sense": "be faithless",
+    "lemma_meaning": "to act treacherously, deceitfully, deal treacherously",
+    "type": "action",
+    "valence": "forbidden",
+    "cause": "divorcing one's wife",
+    "cause_clause": "divorces says Lord God Israel covers garment violence",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "sa.ne",
+      "gloss": "to hate",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "sha.mar",
+      "gloss": "to keep: guard",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ],
+  "sa.laph": [
+   {
+    "ref": "Exo 23:8",
+    "testament": "OT",
+    "verse_text": "Exo 23:8 And you shall take no bribe , for a bribe blinds the clear-sighted and subverts the cause of those who are in the right .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "subverts",
+    "morph": "HVpu3ms",
+    "stem": "Piel",
+    "sense": "subverts",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "sinful",
+    "object": "cause",
+    "object_type": "abstract",
+    "cause": "accepting a bribe",
+    "cause_clause": "blinds clear-sighted subverts cause right",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Deu 16:19",
+    "testament": "OT",
+    "verse_text": "Deu 16:19 You shall not pervert justice . You shall not show partiality , and you shall not accept a bribe , for a bribe blinds the eyes of the wise and subverts the cause of the righteous .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "subverts",
+    "morph": "HVpu3ms",
+    "stem": "Piel",
+    "sense": "subverts",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "forbidden",
+    "object": "cause",
+    "object_type": "abstract",
+    "cause": "Accepting a bribe",
+    "cause_clause": "bribe blinds eyes wise subverts cause righteous",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "cha.kham",
+      "gloss": "wise",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "mish.pat",
+      "gloss": "justice",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 13:6",
+    "testament": "OT",
+    "verse_text": "Pro 13:6 Righteousness guards him whose way is blameless , but sin overthrows the wicked .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "overthrows",
+    "morph": "HVpi3fs",
+    "stem": "Piel",
+    "sense": "overthrows",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "sinful",
+    "object": "wicked",
+    "object_type": "person",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tom",
+      "gloss": "integrity",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 19:3",
+    "testament": "OT",
+    "verse_text": "Pro 19:3 When a man’s folly brings his way to ruin , his heart rages against the Lord .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "ruin",
+    "morph": "HVpi3fs",
+    "stem": "Piel",
+    "sense": "ruin",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "object": "his",
+    "object_type": "person",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "za.aph",
+      "gloss": "to enrage",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "iv.ve.let",
+      "gloss": "folly",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 21:12",
+    "testament": "OT",
+    "verse_text": "Pro 21:12 The Righteous One observes the house of the wicked ; he throws the wicked down to ruin .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "throws",
+    "morph": "HVprmsa",
+    "stem": "Piel",
+    "sense": "throws",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "sinful",
+    "object": "wicked",
+    "object_type": "person",
+    "touch_points": [
+     {
+      "lemma": "sa.khal",
+      "gloss": "be prudent",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 22:12",
+    "testament": "OT",
+    "verse_text": "Pro 22:12 The eyes of the Lord keep watch over knowledge , but he overthrows the words of the traitor .",
+    "strong": "H5557",
+    "lemma": "sa.laph",
+    "gloss": "to pervert",
+    "target_word": "overthrows",
+    "morph": "HVpw3ms",
+    "stem": "Piel",
+    "sense": "overthrows",
+    "lemma_meaning": "to twist, pervert, distort, overturn, ruin",
+    "type": "action",
+    "valence": "sinful",
+    "object": "words",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "divine_involvement": "agent",
+    "touch_points": [
+     {
+      "lemma": "ba.gad",
+      "gloss": "to act treacherously",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "da.at",
+      "gloss": "knowledge",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ],
+  "ma.al": [
+   {
+    "ref": "Lev 5:15",
+    "testament": "OT",
+    "verse_text": "Lev 5:15 “If anyone commits a breach of faith and sins unintentionally in any of the holy things of the Lord , he shall bring to the Lord as his compensation , a ram without blemish out of the flock , valued in silver shekels , according to the shekel of the sanctuary , for a guilt offering .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "location": "soul",
+    "how": "commits (H4603)",
+    "cause": "sinning unintentionally in holy things",
+    "cause_clause": "faith sins unintentionally holy things Lord bring Lord compensation",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ta.mim",
+      "gloss": "unblemished",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Lev 5:15",
+    "testament": "OT",
+    "verse_text": "Lev 5:15 “If anyone commits a breach of faith and sins unintentionally in any of the holy things of the Lord , he shall bring to the Lord as his compensation , a ram without blemish out of the flock , valued in silver shekels , according to the shekel of the sanctuary , for a guilt offering .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "commits",
+    "morph": "HVqi3fs",
+    "stem": "Qal",
+    "sense": "commits",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "faith",
+    "object_type": "God",
+    "cause": "sinning unintentionally in holy things",
+    "cause_clause": "faith sins unintentionally holy things Lord bring Lord compensation",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ta.mim",
+      "gloss": "unblemished",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Lev 6:2",
+    "testament": "OT",
+    "verse_text": "Lev 6:2 “If anyone sins and commits a breach of faith against the Lord by deceiving his neighbor in a matter of deposit or security , or through robbery , or if he has oppressed his neighbor",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "location": "soul",
+    "how": "commits (H4603)",
+    "object": "Lord",
+    "object_type": "God",
+    "cause": "deceiving a neighbor or committing robbery",
+    "cause_clause": "sins commits faith Lord deceiving neighbor deposit security",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Lev 6:2",
+    "testament": "OT",
+    "verse_text": "Lev 6:2 “If anyone sins and commits a breach of faith against the Lord by deceiving his neighbor in a matter of deposit or security , or through robbery , or if he has oppressed his neighbor",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "commits",
+    "morph": "HVqq3fs",
+    "stem": "Qal",
+    "sense": "commits",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "faith",
+    "object_type": "God",
+    "cause": "deceiving a neighbor or committing robbery",
+    "cause_clause": "sins commits faith Lord deceiving neighbor deposit security",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Lev 26:40",
+    "testament": "OT",
+    "verse_text": "Lev 26:40 “But if they confess their iniquity and the iniquity of their fathers in their treachery that they committed against me , and also in walking contrary to me,",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treachery",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "treachery",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "committed (H4603)",
+    "experiencer": "other",
+    "immediate_response": "walking contrary",
+    "touch_points": [
+     {
+      "lemma": "a.von",
+      "gloss": "iniquity: crime",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ya.dah",
+      "gloss": "to give thanks",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Lev 26:40",
+    "testament": "OT",
+    "verse_text": "Lev 26:40 “But if they confess their iniquity and the iniquity of their fathers in their treachery that they committed against me , and also in walking contrary to me,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "committed",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "committed",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "me",
+    "object_type": "person",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "immediate_response": "walking contrary",
+    "relational": "against",
+    "touch_points": [
+     {
+      "lemma": "a.von",
+      "gloss": "iniquity: crime",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ya.dah",
+      "gloss": "to give thanks",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:6",
+    "testament": "OT",
+    "verse_text": "Num 5:6 “ Speak to the people of Israel , When a man or woman commits any of the sins that people commit by breaking faith with the Lord , and that person realizes his guilt ,",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "location": "soul",
+    "how": "guilt (H0816)",
+    "cause": "breaking faith with the Lord",
+    "cause_clause": "man or woman any sins people commit breaking",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "a.sham",
+      "gloss": "be guilty",
+      "role": "partner",
+      "ring": "R2"
+     },
+     {
+      "lemma": "el",
+      "gloss": "to[wards]",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:6",
+    "testament": "OT",
+    "verse_text": "Num 5:6 “ Speak to the people of Israel , When a man or woman commits any of the sins that people commit by breaking faith with the Lord , and that person realizes his guilt ,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "breaking",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "breaking",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "location": "soul",
+    "object": "faith",
+    "object_type": "God",
+    "cause": "breaking faith with the Lord",
+    "cause_clause": "man or woman any sins people commit breaking",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "a.sham",
+      "gloss": "be guilty",
+      "role": "partner",
+      "ring": "R2"
+     },
+     {
+      "lemma": "el",
+      "gloss": "to[wards]",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:12",
+    "testament": "OT",
+    "verse_text": "Num 5:12 “ Speak to the people of Israel , If any man’s wife goes astray and breaks faith with him,",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "breaks (H4603)",
+    "cause": "wife going astray",
+    "cause_clause": "breaks faith",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "el",
+      "gloss": "to[wards]",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:12",
+    "testament": "OT",
+    "verse_text": "Num 5:12 “ Speak to the people of Israel , If any man’s wife goes astray and breaks faith with him,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "breaks",
+    "morph": "HVqq3fs",
+    "stem": "Qal",
+    "sense": "breaks",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faith",
+    "object_type": "person",
+    "cause": "wife going astray",
+    "cause_clause": "breaks faith",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "el",
+      "gloss": "to[wards]",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:27",
+    "testament": "OT",
+    "verse_text": "Num 5:27 And when he has made her drink the water , then, if she has defiled herself and has broken faith with her husband , the water that brings the curse shall enter into her and cause bitter pain , and her womb shall swell , and her thigh shall fall away , and the woman shall become a curse among her people .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "broken (H4603)",
+    "object": "husband",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ta.me",
+      "gloss": "to defile",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Num 5:27",
+    "testament": "OT",
+    "verse_text": "Num 5:27 And when he has made her drink the water , then, if she has defiled herself and has broken faith with her husband , the water that brings the curse shall enter into her and cause bitter pain , and her womb shall swell , and her thigh shall fall away , and the woman shall become a curse among her people .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broken",
+    "morph": "HVqw3fs",
+    "stem": "Qal",
+    "sense": "broken",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faith",
+    "object_type": "person",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ta.me",
+      "gloss": "to defile",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Num 31:16",
+    "testament": "OT",
+    "verse_text": "Num 31:16 Behold , these , on Balaam’s advice , caused the people of Israel to act treacherously against the Lord in the incident of Peor , and so the plague came among the congregation of the Lord .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treacherously",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "treacherously",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "caused (H1961)",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "Deu 32:51",
+    "testament": "OT",
+    "verse_text": "Deu 32:51 because you broke faith with me in the midst of the people of Israel at the waters of Meribah-kadesh , in the wilderness of Zin , and because you did not treat me as holy in the midst of the people of Israel .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broke faith",
+    "morph": "HVqp2mp",
+    "stem": "Qal",
+    "sense": "broke faith",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "midst",
+    "object_type": "God",
+    "experiencer": "other (addressed)",
+    "divine_involvement": "object",
+    "relational": "because",
+    "touch_points": [
+     {
+      "lemma": "qa.dash",
+      "gloss": "to consecrate: consecate",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 7:1",
+    "testament": "OT",
+    "verse_text": "Jos 7:1 But the people of Israel broke faith in regard to the devoted things , for Achan the son of Carmi , son of Zabdi , son of Zerah , of the tribe of Judah , took some of the devoted things . And the anger of the Lord burned against the people of Israel .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "broke (H4603)",
+    "touch_points": [
+     {
+      "lemma": "cha.rah",
+      "gloss": "to be incensed",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 7:1",
+    "testament": "OT",
+    "verse_text": "Jos 7:1 But the people of Israel broke faith in regard to the devoted things , for Achan the son of Carmi , son of Zabdi , son of Zerah , of the tribe of Judah , took some of the devoted things . And the anger of the Lord burned against the people of Israel .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broke",
+    "morph": "HVqw3mp",
+    "stem": "Qal",
+    "sense": "broke",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faith",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "cha.rah",
+      "gloss": "to be incensed",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:16",
+    "testament": "OT",
+    "verse_text": "Jos 22:16 “ Thus says the whole congregation of the Lord , ‘What is this breach of faith that you have committed against the God of Israel in turning away this day from following the Lord by building yourselves an altar this day in rebellion against the Lord ?",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "breach of faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "breach of faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "committed (H4603)",
+    "intensity": "all (congregation)",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ma.rad",
+      "gloss": "to rebel",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:16",
+    "testament": "OT",
+    "verse_text": "Jos 22:16 “ Thus says the whole congregation of the Lord , ‘What is this breach of faith that you have committed against the God of Israel in turning away this day from following the Lord by building yourselves an altar this day in rebellion against the Lord ?",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "committed",
+    "morph": "HVqp2mp",
+    "stem": "Qal",
+    "sense": "committed",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "God",
+    "object_type": "God",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ma.rad",
+      "gloss": "to rebel",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:20",
+    "testament": "OT",
+    "verse_text": "Jos 22:20 Did not Achan the son of Zerah break faith in the matter of the devoted things , and wrath fell upon all the congregation of Israel ? And he did not perish alone for his iniquity .’”",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "devoted things",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "qe.tseph",
+      "gloss": "wrath",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.von",
+      "gloss": "iniquity: crime",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:20",
+    "testament": "OT",
+    "verse_text": "Jos 22:20 Did not Achan the son of Zerah break faith in the matter of the devoted things , and wrath fell upon all the congregation of Israel ? And he did not perish alone for his iniquity .’”",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "faith",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "faith",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "devoted things",
+    "object_type": "God",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "qe.tseph",
+      "gloss": "wrath",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.von",
+      "gloss": "iniquity: crime",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:22",
+    "testament": "OT",
+    "verse_text": "Jos 22:22 “The Mighty One , God , the Lord ! The Mighty One , God , the Lord ! He knows ; and let Israel itself know ! If it was in rebellion or in breach of faith against the Lord , do not spare us today",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "breach of faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "breach of faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "know (H3045)",
+    "object": "rebellion",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "me.red",
+      "gloss": "rebellion",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ya.da",
+      "gloss": "to know",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:31",
+    "testament": "OT",
+    "verse_text": "Jos 22:31 And Phinehas the son of Eleazar the priest said to the people of Reuben and the people of Gad and the people of Manasseh , “ Today we know that the Lord is in our midst , because you have not committed this breach of faith against the Lord . Now you have delivered the people of Israel from the hand of the Lord .”",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "breach of faith",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "breach of faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "committed (H4603)",
+    "cause_clause": "not committed breach of faith Lord Now delivered people Israel",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ya.da",
+      "gloss": "to know",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jos 22:31",
+    "testament": "OT",
+    "verse_text": "Jos 22:31 And Phinehas the son of Eleazar the priest said to the people of Reuben and the people of Gad and the people of Manasseh , “ Today we know that the Lord is in our midst , because you have not committed this breach of faith against the Lord . Now you have delivered the people of Israel from the hand of the Lord .”",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "committed",
+    "morph": "HVqp2mp",
+    "stem": "Qal",
+    "sense": "committed",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "breach of faith",
+    "object_type": "God",
+    "cause_clause": "not committed breach of faith Lord Now delivered people Israel",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ya.da",
+      "gloss": "to know",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "1Ch 2:7",
+    "testament": "OT",
+    "verse_text": "1Ch 2:7 The son of Carmi : Achan , the troubler of Israel , who broke faith in the matter of the devoted thing;",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broke",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "broke",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "devoted",
+    "object_type": "thing",
+    "experiencer": "other",
+    "touch_points": []
+   },
+   {
+    "ref": "1Ch 5:25",
+    "testament": "OT",
+    "verse_text": "1Ch 5:25 But they broke faith with the God of their fathers , and whored after the gods of the peoples of the land , whom God had destroyed before them.",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "faith",
+    "morph": "HVqw3mp",
+    "stem": "Qal",
+    "sense": "faith",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "God",
+    "object_type": "God",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "za.nah",
+      "gloss": "to fornicate",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "1Ch 9:1",
+    "testament": "OT",
+    "verse_text": "1Ch 9:1 So all Israel was recorded in genealogies , and these are written in the Book of the Kings of Israel . And Judah was taken into exile in Babylon because of their breach of faith.",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "breach",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "breach",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "exile (H1540)",
+    "experiencer": "other",
+    "touch_points": []
+   },
+   {
+    "ref": "1Ch 10:13",
+    "testament": "OT",
+    "verse_text": "1Ch 10:13 So Saul died for his breach of faith. He broke faith with the Lord in that he did not keep the command of the Lord , and also consulted a medium , seeking guidance.",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faith",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "faith",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "breach (H4603)",
+    "object": "Lord",
+    "object_type": "God",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "sha.mar",
+      "gloss": "to keep: obey",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "da.rash",
+      "gloss": "to seek",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "1Ch 10:13",
+    "testament": "OT",
+    "verse_text": "1Ch 10:13 So Saul died for his breach of faith. He broke faith with the Lord in that he did not keep the command of the Lord , and also consulted a medium , seeking guidance.",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "breach",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "breach",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faith",
+    "object_type": "God",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "sha.mar",
+      "gloss": "to keep: obey",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "da.rash",
+      "gloss": "to seek",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 12:2",
+    "testament": "OT",
+    "verse_text": "2Ch 12:2 In the fifth year of King Rehoboam , because they had been unfaithful to the Lord , Shishak king of Egypt came up against Jerusalem",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "cause_clause": "unfaithful Lord Shishak king Egypt came up against Jerusalem",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "2Ch 26:16",
+    "testament": "OT",
+    "verse_text": "2Ch 26:16 But when he was strong , he grew proud , to his destruction . For he was unfaithful to the Lord his God and entered the temple of the Lord to burn incense on the altar of incense .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqw3ms",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "object": "Lord",
+    "object_type": "God",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "ga.vah",
+      "gloss": "to exult",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "chez.qah",
+      "gloss": "strength",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "sha.chat",
+      "gloss": "to ruin",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 26:18",
+    "testament": "OT",
+    "verse_text": "2Ch 26:18 and they withstood King Uzziah and said to him, “It is not for you, Uzziah , to burn incense to the Lord , but for the priests , the sons of Aaron , who are consecrated to burn incense . Go out of the sanctuary , for you have done wrong , and it will bring you no honor from the Lord God .”",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "done wrong",
+    "morph": "HVqp2ms",
+    "stem": "Qal",
+    "sense": "done wrong",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "origin": "received-from-outside",
+    "object": "honor",
+    "object_type": "God",
+    "cause": "unlawfully burning incense in the sanctuary",
+    "cause_clause": "sons Aaron consecrated burn incense Go out of sanctuary done wrong",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "ka.vod",
+      "gloss": "glory",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "qa.dash",
+      "gloss": "to consecrate: consecate",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 28:19",
+    "testament": "OT",
+    "verse_text": "2Ch 28:19 For the Lord humbled Judah because of Ahaz king of Israel , for he had made Judah act sinfully and had been very unfaithful to the Lord .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "very",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "very",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "cause_clause": "Judah because Ahaz king Israel Judah act sinfully very",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ka.na",
+      "gloss": "be humble",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 28:19",
+    "testament": "OT",
+    "verse_text": "2Ch 28:19 For the Lord humbled Judah because of Ahaz king of Israel , for he had made Judah act sinfully and had been very unfaithful to the Lord .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqaa",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "cause": "Ahaz making Judah act sinfully",
+    "cause_clause": "Judah because Ahaz king Israel Judah act sinfully very",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "ka.na",
+      "gloss": "be humble",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 28:22",
+    "testament": "OT",
+    "verse_text": "2Ch 28:22 In the time of his distress he became yet more faithless to the Lord —this same King Ahaz .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "faithless",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "faithless",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "2Ch 29:6",
+    "testament": "OT",
+    "verse_text": "2Ch 29:6 For our fathers have been unfaithful and have done what was evil in the sight of the Lord our God . They have forsaken him and have turned away their faces from the habitation of the Lord and turned their backs .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "sight",
+    "object_type": "God",
+    "cause_clause": "done evil sight Lord God forsaken turned away faces",
+    "experiencer": "other",
+    "touch_points": []
+   },
+   {
+    "ref": "2Ch 29:19",
+    "testament": "OT",
+    "verse_text": "2Ch 29:19 All the utensils that King Ahaz discarded in his reign when he was faithless , we have made ready and consecrated , and behold , they are before the altar of the Lord .”",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithless",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "faithless",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "discarded (H2186)",
+    "object": "reign",
+    "object_type": "God",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "qa.dash",
+      "gloss": "to consecrate: consecate",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 30:7",
+    "testament": "OT",
+    "verse_text": "2Ch 30:7 Do not be like your fathers and your brothers , who were faithless to the Lord God of their fathers , so that he made them a desolation , as you see .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "faithless to",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "faithless to",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "Lord",
+    "object_type": "God",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": []
+   },
+   {
+    "ref": "2Ch 33:19",
+    "testament": "OT",
+    "verse_text": "2Ch 33:19 And his prayer , and how God was moved by his entreaty , and all his sin and his faithlessness , and the sites on which he built high places and set up the Asherim and the images , before he humbled himself, behold , they are written in the Chronicles of the Seers .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessness",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "faithlessness",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "built (H1129)",
+    "object": "high places",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "intensity": "all (all)",
+    "immediate_response": "set up Asherim",
+    "touch_points": [
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "a.tar",
+      "gloss": "to pray",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ka.na",
+      "gloss": "be humble",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 36:14",
+    "testament": "OT",
+    "verse_text": "2Ch 36:14 All the officers of the priests and the people likewise were exceedingly unfaithful , following all the abominations of the nations . And they polluted the house of the Lord that he had made holy in Jerusalem .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "exceedingly",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "exceedingly",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "to.e.vah",
+      "gloss": "abomination",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.vah",
+      "gloss": "to multiply",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "qa.dash",
+      "gloss": "to consecrate: consecate",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ta.me",
+      "gloss": "to defile",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 36:14",
+    "testament": "OT",
+    "verse_text": "2Ch 36:14 All the officers of the priests and the people likewise were exceedingly unfaithful , following all the abominations of the nations . And they polluted the house of the Lord that he had made holy in Jerusalem .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "all",
+    "object_type": "God",
+    "divine_involvement": "object",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "to.e.vah",
+      "gloss": "abomination",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.vah",
+      "gloss": "to multiply",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "qa.dash",
+      "gloss": "to consecrate: consecate",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ta.me",
+      "gloss": "to defile",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Ezr 9:2",
+    "testament": "OT",
+    "verse_text": "Ezr 9:2 For they have taken some of their daughters to be wives for themselves and for their sons , so that the holy race has mixed itself with the peoples of the lands . And in this faithlessness the hand of the officials and chief men has been foremost .”",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessness",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faithlessness",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "mixed (H6148)",
+    "cause": "intermarriage with peoples of the lands",
+    "cause_clause": "taken some daughters sons holy race mixed peoples",
+    "touch_points": [
+     {
+      "lemma": "qo.desh",
+      "gloss": "holiness",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Ezr 9:4",
+    "testament": "OT",
+    "verse_text": "Ezr 9:4 Then all who trembled at the words of the God of Israel , because of the faithlessness of the returned exiles , gathered around me while I sat appalled until the evening sacrifice .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessness",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "faithlessness",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "gathered (H0622)",
+    "object": "exiles",
+    "object_type": "abstract",
+    "immediate_response": "sat",
+    "relational": "because",
+    "touch_points": [
+     {
+      "lemma": "cha.red",
+      "gloss": "trembling",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.ni",
+      "gloss": "I",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Ezr 10:2",
+    "testament": "OT",
+    "verse_text": "Ezr 10:2 And Shecaniah the son of Jehiel , of the sons of Elam , addressed Ezra : “ We have broken faith with our God and have married foreign women from the peoples of the land , but even now there is hope for Israel in spite of this .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broken faith",
+    "morph": "HVqp1cp",
+    "stem": "Qal",
+    "sense": "broken faith",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "God",
+    "object_type": "God",
+    "experiencer": "self",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "miq.veh",
+      "gloss": "hope",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Ezr 10:6",
+    "testament": "OT",
+    "verse_text": "Ezr 10:6 Then Ezra withdrew from before the house of God and went to the chamber of Jehohanan the son of Eliashib , where he spent the night , neither eating bread nor drinking water , for he was mourning over the faithlessness of the exiles .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessness",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "faithlessness",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "object": "exiles",
+    "object_type": "abstract",
+    "cause": "faithlessness of the exiles",
+    "cause_clause": "mourning over faithlessness exiles",
+    "relational": "over",
+    "touch_points": [
+     {
+      "lemma": "a.val",
+      "gloss": "to mourn",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Ezr 10:10",
+    "testament": "OT",
+    "verse_text": "Ezr 10:10 And Ezra the priest stood up and said to them, “ You have broken faith and married foreign women , and so increased the guilt of Israel .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "broken faith",
+    "morph": "HVqp2mp",
+    "stem": "Qal",
+    "sense": "broken faith",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "women",
+    "object_type": "abstract",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "ash.mah",
+      "gloss": "guiltiness",
+      "role": "partner",
+      "ring": "R2"
+     }
+    ]
+   },
+   {
+    "ref": "Neh 1:8",
+    "testament": "OT",
+    "verse_text": "Neh 1:8 Remember the word that you commanded your servant Moses , saying , ‘If you are unfaithful , I will scatter you among the peoples ,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "unfaithful",
+    "morph": "HVqi2mp",
+    "stem": "Qal",
+    "sense": "unfaithful",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "among the peoples",
+    "object_type": "abstract",
+    "experiencer": "other (addressed)",
+    "touch_points": [
+     {
+      "lemma": "et",
+      "gloss": "[Obj.]",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.ni",
+      "gloss": "I",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "za.khar",
+      "gloss": "to remember",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Neh 13:27",
+    "testament": "OT",
+    "verse_text": "Neh 13:27 Shall we then listen to you and do all this great evil and act treacherously against our God by marrying foreign women ?”",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "act treacherously",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "act treacherously",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "God",
+    "object_type": "God",
+    "divine_involvement": "object",
+    "intensity": "great (great)",
+    "touch_points": [
+     {
+      "lemma": "sha.ma",
+      "gloss": "to hear: hear",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.ah",
+      "gloss": "distress: evil",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 14:13",
+    "testament": "OT",
+    "verse_text": "Eze 14:13 “ Son of man , when a land sins against me by acting faithlessly , and I stretch out my hand against it and break its supply of bread and send famine upon it, and cut off from it man and beast ,",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessly",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faithlessly",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "sins (H2398)",
+    "cause": "sinning against God by acting faithlessly",
+    "cause_clause": "land sins by acting faithlessly stretch out hand against",
+    "experiencer": "self",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 14:13",
+    "testament": "OT",
+    "verse_text": "Eze 14:13 “ Son of man , when a land sins against me by acting faithlessly , and I stretch out my hand against it and break its supply of bread and send famine upon it, and cut off from it man and beast ,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "acting",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "acting",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faithlessly",
+    "object_type": "God",
+    "cause": "sinning against God",
+    "cause_clause": "land sins by acting faithlessly stretch out hand against",
+    "divine_involvement": "object",
+    "relational": "by",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 15:8",
+    "testament": "OT",
+    "verse_text": "Eze 15:8 And I will make the land desolate , because they have acted faithlessly , declares the Lord God .”",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "faithlessly",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "faithlessly",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "acted (H4603)",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 15:8",
+    "testament": "OT",
+    "verse_text": "Eze 15:8 And I will make the land desolate , because they have acted faithlessly , declares the Lord God .”",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "acted",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "acted",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "faithlessly",
+    "object_type": "God",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 17:20",
+    "testament": "OT",
+    "verse_text": "Eze 17:20 I will spread my net over him, and he shall be taken in my snare , and I will bring him to Babylon and enter into judgment with him there for the treachery he has committed against me .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treachery",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "treachery",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "enter into judgment (H8199)",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 17:20",
+    "testament": "OT",
+    "verse_text": "Eze 17:20 I will spread my net over him, and he shall be taken in my snare , and I will bring him to Babylon and enter into judgment with him there for the treachery he has committed against me .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "committed",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "committed",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "UNRESOLVED",
+    "valence": "sinful",
+    "how": "enter into judgment (H8199)",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "relational": "me",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 18:24",
+    "testament": "OT",
+    "verse_text": "Eze 18:24 But when a righteous person turns away from his righteousness and does injustice and does the same abominations that the wicked person does , shall he live ? None of the righteous deeds that he has done shall be remembered ; for the treachery of which he is guilty and the sin he has committed , for them he shall die .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treachery",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "treachery",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "done (H6213)",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "to.e.vah",
+      "gloss": "abomination",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "shuv",
+      "gloss": "to return: repent",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "za.khar",
+      "gloss": "to remember",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "cha.yah",
+      "gloss": "to live",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.vel",
+      "gloss": "injustice",
+      "role": "partner",
+      "ring": "R2"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 18:24",
+    "testament": "OT",
+    "verse_text": "Eze 18:24 But when a righteous person turns away from his righteousness and does injustice and does the same abominations that the wicked person does , shall he live ? None of the righteous deeds that he has done shall be remembered ; for the treachery of which he is guilty and the sin he has committed , for them he shall die .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "guilty",
+    "morph": "HVqp3ms",
+    "stem": "Qal",
+    "sense": "guilty",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "sin",
+    "object_type": "God",
+    "experiencer": "other",
+    "immediate_response": "committed",
+    "touch_points": [
+     {
+      "lemma": "to.e.vah",
+      "gloss": "abomination",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "shuv",
+      "gloss": "to return: repent",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "chat.tat",
+      "gloss": "sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "za.khar",
+      "gloss": "to remember",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "cha.yah",
+      "gloss": "to live",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "tsad.diq",
+      "gloss": "righteous",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.vel",
+      "gloss": "injustice",
+      "role": "partner",
+      "ring": "R2"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 20:27",
+    "testament": "OT",
+    "verse_text": "Eze 20:27 “ Therefore , son of man , speak to the house of Israel and say to them, Thus says the Lord God : In this also your fathers blasphemed me, by dealing treacherously with me.",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treacherously",
+    "morph": "HNcmsa",
+    "stem": null,
+    "sense": "treacherously",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "blasphemed (H1442)",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 20:27",
+    "testament": "OT",
+    "verse_text": "Eze 20:27 “ Therefore , son of man , speak to the house of Israel and say to them, Thus says the Lord God : In this also your fathers blasphemed me, by dealing treacherously with me.",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "dealing",
+    "morph": "HVqcc",
+    "stem": "Qal",
+    "sense": "dealing",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "treacherously",
+    "object_type": "God",
+    "divine_involvement": "object",
+    "touch_points": [
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 39:23",
+    "testament": "OT",
+    "verse_text": "Eze 39:23 And the nations shall know that the house of Israel went into captivity for their iniquity , because they dealt so treacherously with me that I hid my face from them and gave them into the hand of their adversaries , and they all fell by the sword .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "treacherously",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "treacherously",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "face",
+    "object_type": "God",
+    "cause_clause": "house Israel captivity iniquity because treacherously hid face",
+    "experiencer": "other",
+    "relational": "because",
+    "touch_points": []
+   },
+   {
+    "ref": "Eze 39:26",
+    "testament": "OT",
+    "verse_text": "Eze 39:26 They shall forget their shame and all the treachery they have practiced against me, when they dwell securely in their land with none to make them afraid ,",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "practiced",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "practiced",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "treachery (H4603)",
+    "experiencer": "other",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "ke.lim.mah",
+      "gloss": "shame",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.rad",
+      "gloss": "to tremble",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "be.tach",
+      "gloss": "security",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Eze 39:26",
+    "testament": "OT",
+    "verse_text": "Eze 39:26 They shall forget their shame and all the treachery they have practiced against me, when they dwell securely in their land with none to make them afraid ,",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "treachery",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "treachery",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "object": "practiced",
+    "object_type": "God",
+    "experiencer": "other",
+    "intensity": "all (all)",
+    "touch_points": [
+     {
+      "lemma": "ke.lim.mah",
+      "gloss": "shame",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.rad",
+      "gloss": "to tremble",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "be.tach",
+      "gloss": "security",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Dan 9:7",
+    "testament": "OT",
+    "verse_text": "Dan 9:7 To you, O Lord , belongs righteousness , but to us open shame , as at this day , to the men of Judah , to the inhabitants of Jerusalem , and to all Israel , those who are near and those who are far away , in all the lands to which you have driven them, because of the treachery that they have committed against you .",
+    "strong": "H4604",
+    "lemma": "ma.al",
+    "gloss": "unfaithfulness",
+    "target_word": "treachery",
+    "morph": "HNcmsc",
+    "stem": null,
+    "sense": "treachery",
+    "lemma_meaning": "unfaithful or treacherous act, trespass",
+    "type": "status",
+    "valence": "sinful",
+    "how": "driven (H5080)",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "bo.shet",
+      "gloss": "shame",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "be unfaithful",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Dan 9:7",
+    "testament": "OT",
+    "verse_text": "Dan 9:7 To you, O Lord , belongs righteousness , but to us open shame , as at this day , to the men of Judah , to the inhabitants of Jerusalem , and to all Israel , those who are near and those who are far away , in all the lands to which you have driven them, because of the treachery that they have committed against you .",
+    "strong": "H4603",
+    "lemma": "ma.al",
+    "gloss": "be unfaithful",
+    "target_word": "committed",
+    "morph": "HVqp3cp",
+    "stem": "Qal",
+    "sense": "committed",
+    "lemma_meaning": "to act unfaithfully, act treacherously, transgress, commit a trespass",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "other",
+    "divine_involvement": "object",
+    "relational": "you",
+    "touch_points": [
+     {
+      "lemma": "bo.shet",
+      "gloss": "shame",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.al",
+      "gloss": "unfaithfulness",
+      "role": "partner",
+      "ring": "R1"
+     },
+     {
+      "lemma": "tse.da.qah",
+      "gloss": "righteousness",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ],
+  "sa.rah": [
+   {
+    "ref": "Deu 13:5",
+    "testament": "OT",
+    "verse_text": "Deu 13:5 But that prophet or that dreamer of dreams shall be put to death , because he has taught rebellion against the Lord your God , who brought you out of the land of Egypt and redeemed you out of the house of slavery , to make you leave the way in which the Lord your God commanded you to walk . So you shall purge the evil from your midst .",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "rebellion",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "rebellion",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "how": "taught (H1696)",
+    "cause": "The prophet's teaching against the Lord",
+    "cause_clause": "taught rebellion against Lord God brought you out land Egypt",
+    "experiencer": "other",
+    "relational": "against",
+    "touch_points": [
+     {
+      "lemma": "pa.dah",
+      "gloss": "to ransom",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Deu 19:16",
+    "testament": "OT",
+    "verse_text": "Deu 19:16 If a malicious witness arises to accuse a person of wrongdoing ,",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "wrongdoing",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "wrongdoing",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "how": "arises (H6965)",
+    "object": "person",
+    "object_type": "abstract",
+    "cause": "malicious witness arising to accuse",
+    "cause_clause": "malicious witness arises accuse person wrongdoing",
+    "experiencer": "other",
+    "touch_points": []
+   },
+   {
+    "ref": "Isa 1:5",
+    "testament": "OT",
+    "verse_text": "Isa 1:5 Why will you still be struck down ? Why will you continue to rebel ? The whole head is sick , and the whole heart faint .",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "rebel",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "rebel",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "location": "heart",
+    "how": "struck down (H5221)",
+    "intensity": "all (whole)",
+    "touch_points": [
+     {
+      "lemma": "cho.li",
+      "gloss": "sickness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "le.vav",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "kol",
+      "gloss": "all",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "dav.va",
+      "gloss": "faint",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 14:6",
+    "testament": "OT",
+    "verse_text": "Isa 14:6 that struck the peoples in wrath with unceasing blows , that ruled the nations in anger with unrelenting persecution .",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "blows",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "blows",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "ra.dah",
+      "gloss": "to rule",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 31:6",
+    "testament": "OT",
+    "verse_text": "Isa 31:6 Turn to him from whom people have deeply revolted , O children of Israel .",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "revolted",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "revolted",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "how": "deeply (H6009)",
+    "touch_points": []
+   },
+   {
+    "ref": "Isa 59:13",
+    "testament": "OT",
+    "verse_text": "Isa 59:13 transgressing , and denying the Lord , and turning back from following our God , speaking oppression and revolt , conceiving and uttering from the heart lying words .",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "revolt",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "revolt",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "location": "heart",
+    "touch_points": [
+     {
+      "lemma": "she.qer",
+      "gloss": "deception",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "pa.sha",
+      "gloss": "to transgress",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "ha.gah",
+      "gloss": "to mutter",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 28:16",
+    "testament": "OT",
+    "verse_text": "Jer 28:16 Therefore thus says the Lord : ‘ Behold , I will remove you from the face of the earth . This year you shall die , because you have uttered rebellion against the Lord .’”",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "rebellion",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "rebellion",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "how": "uttered (H1696)",
+    "cause_clause": "uttered rebellion against Lord",
+    "relational": "against",
+    "touch_points": []
+   },
+   {
+    "ref": "Jer 29:32",
+    "testament": "OT",
+    "verse_text": "Jer 29:32 therefore thus says the Lord : Behold , I will punish Shemaiah of Nehelam and his descendants . He shall not have anyone living among this people , and he shall not see the good that I will do to my people , declares the Lord , for he has spoken rebellion against the Lord .’”",
+    "strong": "H5627",
+    "lemma": "sa.rah",
+    "gloss": "revolt",
+    "target_word": "rebellion",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "rebellion",
+    "lemma_meaning": "apostasy, defection, turning aside, withdrawal",
+    "type": "status",
+    "valence": "sinful",
+    "how": "spoken (H1696)",
+    "cause_clause": "spoken rebellion against Lord",
+    "experiencer": "other",
+    "relational": "against",
+    "touch_points": []
+   }
+  ],
+  "a.vah": [
+   {
+    "ref": "1Sa 20:30",
+    "testament": "OT",
+    "verse_text": "1Sa 20:30 Then Saul’s anger was kindled against Jonathan , and he said to him, “You son of a perverse , rebellious woman, do I not know that you have chosen the son of Jesse to your own shame , and to the shame of your mother’s nakedness ?",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "perverse",
+    "morph": "HVNrfsc",
+    "stem": "Niphal",
+    "sense": "perverse",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "object": "rebellious",
+    "object_type": "person",
+    "cause_clause": "chosen son Jesse shame shame your mother’s nakedness",
+    "touch_points": [
+     {
+      "lemma": "bo.shet",
+      "gloss": "shame",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.rah",
+      "gloss": "to be incensed",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ba.char",
+      "gloss": "to choose",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "mar.dut",
+      "gloss": "rebellious",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Sa 7:14",
+    "testament": "OT",
+    "verse_text": "2Sa 7:14 I will be to him a father , and he shall be to me a son . When he commits iniquity , I will discipline him with the rod of men , with the stripes of the sons of men ,",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "commits iniquity",
+    "morph": "HVhcc",
+    "stem": "Hiphil",
+    "sense": "commits iniquity",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "object": "rod",
+    "object_type": "abstract",
+    "touch_points": [
+     {
+      "lemma": "a.ni",
+      "gloss": "I",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Sa 19:19",
+    "testament": "OT",
+    "verse_text": "2Sa 19:19 and said to the king , “Let not my lord hold me guilty or remember how your servant did wrong on the day my lord the king left Jerusalem . Do not let the king take it to heart .",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "wrong",
+    "morph": "HVhp3ms",
+    "stem": "Hiphil",
+    "sense": "wrong",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "object": "day",
+    "object_type": "abstract",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "a.von",
+      "gloss": "iniquity: guilt",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "za.khar",
+      "gloss": "to remember",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.shav",
+      "gloss": "to devise: count",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Sa 24:17",
+    "testament": "OT",
+    "verse_text": "2Sa 24:17 Then David spoke to the Lord when he saw the angel who was striking the people , and said , “Behold, I ^ have sinned , and I have done wickedly . But these sheep , what have they done ? Please let your hand be against me and against my father’s house .”",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "done wickedly",
+    "morph": "HVhp1cs",
+    "stem": "Hiphil",
+    "sense": "done wickedly",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "object": "sheep",
+    "object_type": "abstract",
+    "experiencer": "self",
+    "immediate_response": "done hand",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "1Ki 8:47",
+    "testament": "OT",
+    "verse_text": "1Ki 8:47 yet if they turn their heart in the land to which they have been carried captive , and repent and plead with you in the land of their captors , saying , ‘We have sinned and have acted perversely and wickedly ,’",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "acted perversely",
+    "morph": "HVhp1cp",
+    "stem": "Hiphil",
+    "sense": "acted perversely",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "experiencer": "self",
+    "touch_points": [
+     {
+      "lemma": "shuv",
+      "gloss": "to return: recall",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "shuv",
+      "gloss": "to return: repent",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "cha.nan",
+      "gloss": "be gracious",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "be wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Ch 6:37",
+    "testament": "OT",
+    "verse_text": "2Ch 6:37 yet if they turn their heart in the land to which they have been carried captive , and repent and plead with you in the land of their captivity , saying , ‘We have sinned and have acted perversely and wickedly ,’",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "acted perversely",
+    "morph": "HVhp1cp",
+    "stem": "Hiphil",
+    "sense": "acted perversely",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "experiencer": "self",
+    "touch_points": [
+     {
+      "lemma": "shuv",
+      "gloss": "to return: recall",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "shuv",
+      "gloss": "to return: repent",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.nan",
+      "gloss": "be gracious",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "be wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Est 1:16",
+    "testament": "OT",
+    "verse_text": "Est 1:16 Then Memucan said in the presence of the king and the officials , “Not only against the king has Queen Vashti done wrong , but also against all the officials and all the peoples who are in all the provinces of King Ahasuerus .",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "done wrong",
+    "morph": "HVqp3fs",
+    "stem": "Qal",
+    "sense": "done wrong",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "object": "all",
+    "object_type": "person",
+    "cause_clause": "officials all peoples who all provinces King Ahasuerus",
+    "experiencer": "other",
+    "intensity": "all (all)",
+    "relational": "against",
+    "touch_points": []
+   },
+   {
+    "ref": "Job 33:27",
+    "testament": "OT",
+    "verse_text": "Job 33:27 He sings before men and says : ‘I sinned and perverted what was right , and it was not repaid to me .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "perverted",
+    "morph": "HVhp1cs",
+    "stem": "Hiphil",
+    "sense": "perverted",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "self",
+    "immediate_response": "repaid",
+    "touch_points": [
+     {
+      "lemma": "ya.shar",
+      "gloss": "upright:right",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 38:6",
+    "testament": "OT",
+    "verse_text": "Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "bowed",
+    "morph": "HVNp1cs",
+    "stem": "Niphal",
+    "sense": "bowed",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "neutral",
+    "object": "all",
+    "object_type": "person",
+    "experiencer": "self",
+    "intensity": [
+     "very (utterly)",
+     "all (all)"
+    ],
+    "touch_points": [
+     {
+      "lemma": "me.od",
+      "gloss": "much",
+      "role": "qualifier",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Psa 106:6",
+    "testament": "OT",
+    "verse_text": "Psa 106:6 Both we and our fathers have sinned ; we have committed iniquity ; we have done wickedness .",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "committed iniquity",
+    "morph": "HVhp1cp",
+    "stem": "Hiphil",
+    "sense": "committed iniquity",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "self",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "be wicked",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Pro 12:8",
+    "testament": "OT",
+    "verse_text": "Pro 12:8 A man is commended according to his good sense , but one of twisted mind is despised .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "twisted",
+    "morph": "HVNrmsc",
+    "stem": "Niphal",
+    "sense": "twisted",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "location": "heart",
+    "object": "mind",
+    "object_type": "abstract",
+    "touch_points": [
+     {
+      "lemma": "buz",
+      "gloss": "contempt",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "se.khel",
+      "gloss": "understanding",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "ha.lal",
+      "gloss": "to boast: praise",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Isa 21:3",
+    "testament": "OT",
+    "verse_text": "Isa 21:3 Therefore my loins are filled with anguish ; pangs have seized me, like the pangs of a woman in labor ; I am bowed down so that I cannot hear ; I am dismayed so that I cannot see .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "bowed down",
+    "morph": "HVNp1cs",
+    "stem": "Niphal",
+    "sense": "bowed down",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "neutral",
+    "experiencer": "self",
+    "relational": "cannot",
+    "touch_points": [
+     {
+      "lemma": "ba.hal",
+      "gloss": "to dismay",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.ah",
+      "gloss": "to see: see",
+      "role": "qualifier",
+      "ring": "external"
+     },
+     {
+      "lemma": "sha.ma",
+      "gloss": "to hear: hear",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 3:21",
+    "testament": "OT",
+    "verse_text": "Jer 3:21 A voice on the bare heights is heard , the weeping and pleading of Israel’s sons because they have perverted their way ; they have forgotten the Lord their God .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "perverted",
+    "morph": "HVhp3cp",
+    "stem": "Hiphil",
+    "sense": "perverted",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "object": "way",
+    "object_type": "abstract",
+    "cause_clause": "perverted way they forgotten Lord God",
+    "experiencer": "other",
+    "touch_points": [
+     {
+      "lemma": "ta.cha.nun",
+      "gloss": "supplication",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "be.khi",
+      "gloss": "weeping",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Jer 9:5",
+    "testament": "OT",
+    "verse_text": "Jer 9:5 Everyone deceives his neighbor , and no one speaks the truth ; they have taught their tongue to speak lies ; they weary themselves committing iniquity .",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "committing iniquity",
+    "morph": "HVhaa",
+    "stem": "Hiphil",
+    "sense": "committing iniquity",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "touch_points": [
+     {
+      "lemma": "la.ah",
+      "gloss": "be weary",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "she.qer",
+      "gloss": "deception",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "e.met",
+      "gloss": "truth: true",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "Lam 3:9",
+    "testament": "OT",
+    "verse_text": "Lam 3:9 he has blocked my ways with blocks of stones ; he has made my paths crooked .",
+    "strong": "H5753A",
+    "lemma": "a.vah",
+    "gloss": "to twist",
+    "target_word": "crooked",
+    "morph": "HVpp3ms",
+    "stem": "Piel",
+    "sense": "crooked",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "neutral",
+    "experiencer": "other",
+    "divine_involvement": "agent",
+    "touch_points": []
+   },
+   {
+    "ref": "Dan 9:5",
+    "testament": "OT",
+    "verse_text": "Dan 9:5 we have sinned and done wrong and acted wickedly and rebelled , turning aside from your commandments and rules .",
+    "strong": "H5753B",
+    "lemma": "a.vah",
+    "gloss": "to pervert",
+    "target_word": "wrong",
+    "morph": "HVqp1cp",
+    "stem": "Qal",
+    "sense": "wrong",
+    "lemma_meaning": "to bend, twist, distort",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "self",
+    "touch_points": [
+     {
+      "lemma": "cha.ta",
+      "gloss": "to sin",
+      "role": "partner",
+      "ring": "CORE"
+     },
+     {
+      "lemma": "mish.pat",
+      "gloss": "justice: judgement",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ma.rad",
+      "gloss": "to rebel",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "ra.sha",
+      "gloss": "be wicked",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "sur",
+      "gloss": "to turn aside: turn aside",
+      "role": "partner",
+      "ring": "R2"
+     }
+    ]
+   }
+  ],
+  "pu.qah": [
+   {
+    "ref": "1Sa 25:31",
+    "testament": "OT",
+    "verse_text": "1Sa 25:31 my lord shall have no cause of grief or pangs of conscience for having shed blood without cause or for my lord working salvation himself. And when the Lord has dealt well with my lord , then remember your servant .”",
+    "strong": "H6330",
+    "lemma": "pu.qah",
+    "gloss": "staggering",
+    "target_word": "grief",
+    "morph": "HNcfsa",
+    "stem": null,
+    "sense": "grief",
+    "lemma_meaning": "tottering, staggering, stumbling",
+    "type": "status",
+    "faculty": "conscience",
+    "valence": "sinful",
+    "location": "heart",
+    "experiencer": "other (addressed)",
+    "immediate_response": "shed blood",
+    "touch_points": [
+     {
+      "lemma": "ya.tav",
+      "gloss": "be good",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "lev",
+      "gloss": "heart",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "za.khar",
+      "gloss": "to remember",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ],
+  "apostasia": [
+   {
+    "ref": "Act 21:21",
+    "testament": "NT",
+    "verse_text": "Act 21:21 and they have been told about you that you teach all the Jews who are among the Gentiles to forsake Moses , telling them not to circumcise their children or walk according to our customs .",
+    "strong": "G0646",
+    "lemma": "apostasia",
+    "gloss": "apostasy",
+    "target_word": "forsake",
+    "morph": "N-ASF",
+    "stem": null,
+    "sense": "forsake",
+    "lemma_meaning": "turning away, rebellion, abandonment, apostasy",
+    "type": "status",
+    "valence": "sinful",
+    "origin": "received-from-outside",
+    "cause": "reports that Paul teaches Jews to forsake Moses",
+    "cause_clause": "teach all Jews among Gentiles to forsake Moses",
+    "relational": "to",
+    "touch_points": []
+   }
+  ],
+  "sunupokrinomai": [
+   {
+    "ref": "Gal 2:13",
+    "testament": "NT",
+    "verse_text": "Gal 2:13 And the rest of the Jews acted hypocritically along with him , so that even Barnabas was led astray by their hypocrisy .",
+    "strong": "G4942",
+    "lemma": "sunupokrinomai",
+    "gloss": "to join hypocrisy",
+    "target_word": "acted hypocritically",
+    "morph": "V-API-3P",
+    "stem": null,
+    "sense": "acted hypocritically",
+    "lemma_meaning": "to join in one’s hypocrisy be hypocritical",
+    "type": "action",
+    "valence": "sinful",
+    "experiencer": "other",
+    "immediate_response": "led astray hypocrisy",
+    "touch_points": [
+     {
+      "lemma": "hupokrisis",
+      "gloss": "hypocrisy",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ],
+  "deleazō": [
+   {
+    "ref": "Jam 1:14",
+    "testament": "NT",
+    "verse_text": "Jam 1:14 But each person is tempted when he is lured and enticed by his own desire .",
+    "strong": "G1185",
+    "lemma": "deleazō",
+    "gloss": "to entice",
+    "target_word": "enticed",
+    "morph": "V-PPP-NSM",
+    "stem": null,
+    "sense": "enticed",
+    "lemma_meaning": "to entice, seduce, lure",
+    "type": "action",
+    "valence": "sinful",
+    "object": "desire",
+    "object_type": "person",
+    "relational": "by",
+    "touch_points": [
+     {
+      "lemma": "epithumia",
+      "gloss": "desire",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "peirazō",
+      "gloss": "to test/tempt: tempt",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Pe 2:14",
+    "testament": "NT",
+    "verse_text": "2Pe 2:14 They have eyes full of adultery , insatiable for sin . They entice unsteady souls . They have hearts trained in greed . Accursed children !",
+    "strong": "G1185",
+    "lemma": "deleazō",
+    "gloss": "to entice",
+    "target_word": "entice",
+    "morph": "V-PAP-NPM",
+    "stem": null,
+    "sense": "entice",
+    "lemma_meaning": "to entice, seduce, lure",
+    "type": "action",
+    "valence": "sinful",
+    "location": [
+     "soul",
+     "heart"
+    ],
+    "object": "unsteady",
+    "touch_points": [
+     {
+      "lemma": "psuchē",
+      "gloss": "soul",
+      "role": "co-seated",
+      "ring": "external"
+     },
+     {
+      "lemma": "pleonexia",
+      "gloss": "greediness",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "gumnazō",
+      "gloss": "to train",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   },
+   {
+    "ref": "2Pe 2:18",
+    "testament": "NT",
+    "verse_text": "2Pe 2:18 For , speaking loud boasts of folly , they entice by sensual passions of the flesh those who are barely escaping from those who live in error .",
+    "strong": "G1185",
+    "lemma": "deleazō",
+    "gloss": "to entice",
+    "target_word": "entice",
+    "morph": "V-PAI-3P",
+    "stem": null,
+    "sense": "entice",
+    "lemma_meaning": "to entice, seduce, lure",
+    "type": "action",
+    "valence": "sinful",
+    "location": "flesh",
+    "object": "passions",
+    "object_type": "person",
+    "cause": "loud boasts of folly by false teachers",
+    "cause_clause": "speaking loud boasts folly entice by passions flesh those",
+    "experiencer": "other",
+    "relational": "by",
+    "touch_points": [
+     {
+      "lemma": "epithumia",
+      "gloss": "desire",
+      "role": "partner",
+      "ring": "external"
+     },
+     {
+      "lemma": "aselgeia",
+      "gloss": "debauchery",
+      "role": "partner",
+      "ring": "external"
+     }
+    ]
+   }
+  ]
+ }
+}
