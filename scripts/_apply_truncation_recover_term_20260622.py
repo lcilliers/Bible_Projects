@@ -25,6 +25,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--strong", required=True)
     ap.add_argument("--mti", type=int, required=True)
+    ap.add_argument("--full", action="store_true",
+                    help="recover ALL absent occurrences (not just the truncation-tail) — needed so the "
+                         "term is picked up as a CO-TERM in other clusters' verse fan-outs")
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-run", action="store_true"); g.add_argument("--live", action="store_true")
     ap.add_argument("--vcids-out", default="outputs/_tmp_recover_vcids.txt")
@@ -60,16 +63,18 @@ def main():
         (tail if (b not in dbmax or ch_of(ref) > dbmax[b]) else within).append(ref)
     def vs_of(r):
         m = re.search(r":(\d+)", r); return int(m.group(1)) if m else (int(r.split()[-1]) if r.split()[-1].isdigit() else 0)
-    tail.sort(key=lambda r: (r.split()[0], ch_of(r), vs_of(r)))
+    recover = (tail + within) if a.full else tail        # --full: all absent (co-term coverage); else tail only
+    recover.sort(key=lambda r: (r.split()[0], ch_of(r), vs_of(r)))
     from collections import Counter
-    print(f"STEP={len(step)} active={len(active)} | truncation-tail to add={len(tail)} {dict(Counter(r.split()[0] for r in tail))}"
-          f" | within-range EXCLUDED={len(within)} {within if within else ''}")
+    mode = "FULL (all absent — co-term coverage)" if a.full else "truncation-tail only"
+    print(f"STEP={len(step)} active={len(active)} | mode={mode} · to add={len(recover)} {dict(Counter(r.split()[0] for r in recover))}"
+          f" | (truncation-tail={len(tail)} within-range={len(within)}{'' if a.full else ' EXCLUDED'})")
 
     if a.dry_run:
         print("[DRY-RUN] no changes."); return 0
 
     new_vcids = []
-    for ref in tail:
+    for ref in recover:
         r = step[ref]; b3 = ref.split()[0]; bid = bmap.get(b3)
         if bid is None:
             print("  no book_id for", ref); continue

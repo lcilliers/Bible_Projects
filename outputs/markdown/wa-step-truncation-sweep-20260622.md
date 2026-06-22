@@ -79,3 +79,20 @@ _Read-only. STEP true total (oracle) vs DB; suspects confirmed by the chapter-cu
 - **kaleō G2564G (call, M37)**: +23 (Acts/Luke, within-range 0) — small, plausibly truncation, needs scope check.
 
 **Proper mechanism for the remaining 4** = engine `audit_word` per registry (re-pull via the fixed client + re-apply the span-filter to select only authoritative in-scope occurrences) — NOT the blind targeted-ingest used for the seat-words. na.tan's truncation portion is small relative to its scope gap; o.yev/kaleō are small. Recommend doing these via the engine, cluster-by-cluster, with researcher scope review — or deferring (lower value than the M47 seat-words).
+
+## Full recovery executed for the remaining 4 (2026-06-22, researcher direction "full recovery + co-term pickup")
+
+Researcher clarified the goal: recover **all** occurrences (not just each term's own truncation-tail) so the term is picked up as a **co-term** in OTHER clusters' verse fan-outs — the lexical fan-out only includes a co-term that has an active verse_context row in that verse, and truncation had removed those rows. Added `--full` mode to the recover script (all absent occurrences, active, not set-aside).
+
+| Term | cluster | recovered | active now | separate JSON |
+|---|---|---|---|---|
+| na.tan H5414G (give) | M12 Purity | +945 | 242→**1187** | 6 batches |
+| pisteuō G4100 (believe) | M31 Faith | +98 | 120→**218** | 1 batch |
+| o.yev H0341 (enemy) | M44 Relational | +32 | 244→**276** | 1 batch |
+| kaleō G2564G (call) | M37 Calling | +23 | 110→**133** | 1 batch |
+
+All at full STEP coverage, 0 duplicate-ref groups, all verse_id + ve_lexical set, integrity ok. **Co-term pickup verified**: na.tan's recovered Eze 22:31 co-occurs with za.am (M02) and o.yev's Psa 138:7 with tsa.rah (M03) — both now appear as co-terms with lexicals in those verses' fan-outs. Separate additional JSONs in each cluster's Data/ (gitignored).
+
+**Note on home-cluster scope:** these terms are polysemous, so `--full` brings *all* occurrences active into the home cluster's focus verse-set too (na.tan especially — M12 grows by 945, mostly literal "give"). That is the trade-off the co-term requirement entails: keeping the occurrences active (not set-aside) is what makes them visible as co-terms. The home cluster's distillation reviews focus-relevance; set-aside there would also remove co-term visibility (a fan-out design point to revisit if that conflict matters).
+
+**All 6 confirmed truncations now recovered** (rāšāʿ/M10b + ne.phesh+lev/M47 + na.tan/pisteuō/o.yev/kaleō). The 56 scope/span-filter suspects are legitimate (not truncation). The fixed client prevents recurrence.
