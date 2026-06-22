@@ -210,16 +210,17 @@ The single most important methodological finding of the whole run:
 
 ---
 
-## 10. Missing asset — flag for the researcher
+## 10. The read-surface — present on disk
 
-- **`_corpus_store.json`** (the 1,904-verse deduped single read-surface, named by the final log as a key reusable asset) **is not in the repo** — it stayed in the Chat sandbox (`/home/claude/…`) and was lost when the session ended. **It is reconstructable from the DB / the `Data/` lexical extracts** (M10 8 batches + M10b 4 + additional + M10c 2), so this is not a true loss — but the convenience read-surface must be **rebuilt** before the per-verse pass. CC can regenerate it from the extracts on request.
+- The 1,904-verse deduped single read-surface (the "corpus store" the final log named as a key reusable asset) **is on disk** as **`wa-m10-corpus-1904verses-v1_0-20260622.json`** (~4 MB) — built from all 15 source extracts (M10 ×8, M10b ×5, M10c ×2), one entry per unique verse reference, each retaining its **full `term_occurrences`** (term · verse_report · lexical) exactly as in source. The original sandbox filename (`_corpus_store.json`) was not preserved, but the asset itself was — **nothing is lost.**
+- **Before the per-verse pass:** run the coverage-verification (§8.1) against STEP per focus lemma, and confirm the corpus reflects the post-recovery extracts (it was built 2026-06-22, so it should already include the +69 ra'sha recovery and the other truncation fixes — verify the ra'sha count = 248/249). If any extract has since changed, CC can rebuild this file from the `Data/` folder.
 
 ---
 
 ## 11. Forward path (disciplined — no analytics until evidence complete)
 
 1. **Lock the per-verse method on ONE verse first.** Take the §7.3 schema, run it on a single multi-term verse, get researcher sign-off on the exact output shape — *then* scale. (Directly answers the §4 failure mode.)
-2. **Rebuild the read-surface.** CC regenerates `_corpus_store.json` (1,904 unique verses, full term inventory + lexical) from the `Data/` extracts. Coverage-verify every focus lemma's count against STEP first (§8.1).
+2. **Use the existing read-surface** `wa-m10-corpus-1904verses-v1_0-20260622.json` (1,904 unique verses, full term inventory + lexical — already on disk, §10). Coverage-verify every focus lemma's count against STEP first (§8.1); rebuild from `Data/` only if an extract has since changed.
 3. **Evidence-gather the gaps, verse-by-verse, neutrally:**
    - **M10 CORE (1,072)** — the definitional pillar; coverage-checked anchors first.
    - **M10c (263)** — fresh, clean (discard the scratch files).
@@ -251,7 +252,7 @@ The single most important methodological finding of the whole run:
 | `wa-m10-read-batch1-*`, `wa-m10-provisional-structure`, `wa-m10-behaviour-map`, `wa-m10-collection-members` | REF/SCRATCH | Withdrawn early planning. |
 | `wa-m10-sessionlog-handoff-v1_0`, `wa-m10-sessionlog-final-v1_0`, `wa-obslog-m10-distill-v1` | REF | Superseded by this collation (see §5.1 reconciliation). |
 | `_completeness_tracker.json` | REF | Per-lemma done-flags (reflects the per-verse redesign; only ~6 scratch lemmas flagged done). |
-| `_corpus_store.json` | GONE | Rebuild from `Data/` extracts (§10). |
+| `wa-m10-corpus-1904verses-v1_0-20260622.json` | EVIDENCE (source) | The 1,904-verse deduped read-surface (§10) — use for the per-verse pass. |
 | `Data/wa-ve-lexical-extract-{M10 b1–b8, M10b b1–b4 + additional-h7563, M10c b1–b2}.json` | EVIDENCE (source) | The raw verse-fan-out extracts — the read-surface source. |
 
 ---
