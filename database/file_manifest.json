@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T19:48:18Z",
+  "generated_at": "2026-06-22T20:03:17Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2390,
+    "current": 2391,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 35
   },
-  "total_files": 8177,
-  "total_active": 5915,
+  "total_files": 8178,
+  "total_active": 5916,
   "total_archived": 2262,
   "files": [
     {
@@ -7653,6 +7653,22 @@
       "archived": false,
       "size_bytes": 31435,
       "modified": "2026-06-22T19:48:10Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-family-logical-units-framework-v1_0-20260622.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-22",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 14239,
+      "modified": "2026-06-22T20:03:03Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-lemma-batch-entity-v1_0-20260622.json",
@@ -101379,8 +101395,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3689596,
-      "modified": "2026-06-22T19:31:34Z"
+      "size_bytes": 3690499,
+      "modified": "2026-06-22T19:48:18Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
