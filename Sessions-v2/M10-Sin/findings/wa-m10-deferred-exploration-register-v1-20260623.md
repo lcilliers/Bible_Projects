@@ -58,9 +58,9 @@
 
 ---
 
-## §DB — Proposed DB capture (Session D pointers) — awaiting go-ahead
-- **Mechanism:** `wa_session_research_flags`, `flag_code='SD_POINTER'`, `session_target='D'`, `priority`, `description`, `cluster_link` (the clusters each item reaches), `resolved=0`, `raised_date`, `session_raised='M10-observations-2026-06-23'`.
-- **One open design choice:** existing SD_POINTERs are **registry-scoped** (`registry_id` set). These items are **programme-level themes**, not registry-scoped. Options: (a) anchor `registry_id` to the M10 "sin" registry with `cluster_link` listing the reach; (b) leave `registry_id` NULL; (c) add a variant `flag_code='SD_THEME'`. **Recommend (a)** (keeps them in the existing SD pipeline, discoverable, with cluster_link carrying the cross-cluster scope).
-- **On go-ahead** I will mirror SDX-01…08 into `wa_session_research_flags` (snapshot + dry-run), keeping this .md as the readable companion. The two stay in sync (the .md links each item to its flag_label).
+## §DB — DB capture DONE (2026-06-23)
+- **Anchored** as Session D pointers in `wa_session_research_flags` — `flag_code='SD_POINTER'`, `session_target='D'`, `registry_id=147` (the M10 'sin' registry, option (a)), `cluster_link` carrying the cross-cluster reach, `resolved=0`, `session_raised='M10-observations-2026-06-23'`. Script `scripts/_apply_m10_sdx_session_d_flags_20260623.py` (snapshot `backups/bible_research_pre-sdx-flags_20260623.db`).
+- **flag_labels = the SDX IDs:** `M10-SDX-01` … `M10-SDX-08` (this .md and the DB rows share the IDs — kept in sync). SDX-01/02/03/04 = HIGH; 05–08 = MEDIUM.
+- This .md remains the **readable companion**; new items are added here and mirrored to a new `M10-SDX-NN` flag.
 
 *Living register. Add items as they surface; never resolve here. DB capture pending confirmation.*
