@@ -80,6 +80,9 @@ Per the researcher's forward direction, for each cluster CC will, **by unit**:
 4. **Synthesise** units → groups → cluster, using the hybrids/gradients (§2) and hypotheses (§3) to relate them.
 > This typology is the **classifier** for step 2 — the reason to have it *before* M11. It will be **refined** as each cluster tests it (especially the non-sin clusters, where CHARACTERISTIC should dominate — the inverse of M10).
 
+## Refinements from later clusters
+- **(A refinement) CHARACTERISTIC may be BILATERAL / God-borne.** M10's characteristics were all-human; M11 #4 Repentance showed the *same* characteristic borne by God (na.cham = divine **relenting**, divine_involvement=agent on the larger half) and by the creature (human contrition/turning). So kind A must allow a characteristic that is **God-borne and human-reflected** (split by `experiencer`/`divine_involvement`), not human-only. (Source: `wa-m11-unit-04-repentance-tieranalysis-v1_0`.)
+
 ## Candidate additions from later clusters (the typology evolving)
 - **(9?) STATE / OUTCOME — a *positive* relational state** (e.g. reconciliation, M11 #5: faculty-empty, all-positive valence, the status-noun outcome). The **sin-cluster could not surface this** (M10 had only negative/neutral states); M11 forced it. Distinguish from CONDITION (B): a *condition* is a mode one is *in/under* (often involuntary/negative); an *outcome-state* is a *restored* relational result. **Candidate 9th kind — held open**, surfaced by M11's grounded application (`wa-m11-unit-index-and-lens-result-v1`). Confirms the §G prediction that the typology evolves on contact with non-sin clusters.
 
