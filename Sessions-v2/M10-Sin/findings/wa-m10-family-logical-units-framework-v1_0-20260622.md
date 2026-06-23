@@ -9,6 +9,7 @@
 > 2. **§6 recode executed** — the mis-migrated session-B findings have been moved off M10 (see §6).
 > 3. **§4 resolved:** output = a **separate `.md` ledger** that indexes the DB (no new DB rows yet); **keep the 32 units.**
 > 4. **New pre-synthesis task flagged (§10):** before any synthesis, **define what a "characteristic" vs a "status" is — and whether there are other object-kinds (or hybrids).**
+> 5. **MERGED 2026-06-23:** M10b + M10c dissolved into **M10**, single **1–32** numbering (the §5 tables below are per-cluster/historical — old M10b #1–6 → #23–28, M10c #1–4 → #29–32; crosswalk + #→files in `wa-m10-unit-index-1to32-v1-20260623.md`).
 
 ---
 

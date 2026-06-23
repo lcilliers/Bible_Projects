@@ -4,6 +4,8 @@
 - **What this is:** the **assembly of everything currently known about the M10 family, organised by logical unit** (one section per the 32 DB characteristics). It **indexes** existing material — the DB verse-findings + the Chat evidence digests — it does **not** create new findings and does **not** synthesize. Companion: the **gap register** (`wa-m10-family-logical-units-gap-register-v1-20260623.md`) tracks each unit through evidence-gathering → synthesis.
 - **Governed by:** `wa-m10-family-logical-units-framework-v1_0-20260622.md` (design + §5 facts + §10 pre-synthesis gate) and `wa-m10-family-collation-v1_0-20260622.md` (state-of-work).
 
+> **MERGED 2026-06-23 — single 1–32 numbering.** M10b/M10c are dissolved into **M10**. The section headers below still read `[M10 #n]`, `[M10b #n]`, `[M10c #n]` (historical) — resolve them via the crosswalk in **`wa-m10-unit-index-1to32-v1-20260623.md`** (M10b #1–6 → #23–28; M10c #1–4 → #29–32). The unit index is the authoritative #→files map; this ledger is the assembled evidence.
+
 ## How to read a unit
 ```
 [cluster #seq]  short_name
