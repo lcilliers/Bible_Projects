@@ -58,6 +58,12 @@
 
 ---
 
+### SDX-09 — Atonement/redemption OT→NT vocabulary migration + missing redemption terms (coverage)
+- **Question:** the atonement concept is **fragmented across clusters** — M10 keeps only the OT cultic remnant (chat.tat sin-offering, kippurim), while the OT cover-verb (kaphar) and the NT development (propitiation→M38, reconciliation→M05/M11, forgiveness→M11, ransom→M38/T2) live elsewhere. **And key redemption terms are unregistered** (apolutrōsis, lutron "ransom", gaal kinsman-redeemer). Is redemption deliberately out-of-scope (a divine/external act, not inner-being), or a **coverage gap**? Can the programme speak to the OT→NT atonement development at all?
+- **Grounded so far:** the cluster-location table (`wa-m10-observations-coverage-sin-and-atonement-ot-nt-v1`); M10 OT/NT split 1495/409; NT-sin span-filter (hamartia 105 vs ~173 — confirm not wrongly excluded).
+- **Needs:** **M38 (Salvation/Redemption), M11 (Forgiveness), M05** analysed + a **registry-scope decision** on redemption vocabulary; the NT-sin coverage confirmation.
+- **Source:** researcher observation 2026-06-23. **Status: OPEN.** (Extends SDX-02.)
+
 ## §DB — DB capture DONE (2026-06-23)
 - **Anchored** as Session D pointers in `wa_session_research_flags` — `flag_code='SD_POINTER'`, `session_target='D'`, `registry_id=147` (the M10 'sin' registry, option (a)), `cluster_link` carrying the cross-cluster reach, `resolved=0`, `session_raised='M10-observations-2026-06-23'`. Script `scripts/_apply_m10_sdx_session_d_flags_20260623.py` (snapshot `backups/bible_research_pre-sdx-flags_20260623.db`).
 - **flag_labels = the SDX IDs:** `M10-SDX-01` … `M10-SDX-08` (this .md and the DB rows share the IDs — kept in sync). SDX-01/02/03/04 = HIGH; 05–08 = MEDIUM.
