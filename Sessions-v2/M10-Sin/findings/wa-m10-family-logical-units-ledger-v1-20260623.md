@@ -16,7 +16,7 @@ X-REG      conceptual cross-coverage flagged in the DB definition (terms still o
 GAP        what evidence is still missing for this unit
 ```
 
-> **Two standing facts** (from §5): (1) **every unit's terms are owned by the M10 family** — lexically at home here. (2) **CORE read status (updated 2026-06-23):** the M10 CORE has now been freshly read under the neutral method in 4 group digests — **HA** ḥāṭāʾ (`wa-m10-core-hata-evidence-digest`), **AV** a.von (`…-avon-…`), **PE** pešaʿ (`…-pesha-…`), **HM** NT hamart- (`…-hamart-…`). So every M10 unit's terms are now read (core + rings). **M10c remains the only evidence gap** (scratch-only). The per-unit CHAT/GAP notes below predate the core read — the gap register (`…-gap-register`) carries the current per-unit status; the 4 core digests carry the detail.
+> **Two standing facts** (from §5): (1) **every unit's terms are owned by the M10 family** — lexically at home here. (2) **CORE read status (updated 2026-06-23):** the M10 CORE has now been freshly read under the neutral method in 4 group digests — **HA** ḥāṭāʾ (`wa-m10-core-hata-evidence-digest`), **AV** a.von (`…-avon-…`), **PE** pešaʿ (`…-pesha-…`), **HM** NT hamart- (`…-hamart-…`). So every M10 unit's terms are now read (core + rings). **M10c has also now been freshly read** — **MC** (`wa-m10-core-m10c-evidence-digest`, 4 mechanisms), superseding the scratch files. **Evidence-gathering for all 32 units is COMPLETE** (gap register roll-up). The per-unit CHAT/GAP notes below predate these reads — the gap register (`…-gap-register`) carries the current per-unit status; the 4 core digests carry the detail.
 >
 > **Seating note (family-level, held open):** co-seated index = **245 in M10** (nephesh 104 · lev+levav 81 · sarx+basar+she'er 25 · pneuma 11 · psuchē 8 · kardia 7 · nous 7 · suneidesis 2; ≈140 genuine after discounting the nephesh-person idiom) and **52 in M10b** (heart-family 27 · nephesh 19 mostly idiom · suneidesis 2). `location`/`faculty` are unreliable; seating reads from `co-seated`.
 
@@ -173,7 +173,7 @@ GAP        what evidence is still missing for this unit
 
 # M10c — Defilement and Impurity
 
-> **Whole-cluster gap:** M10c was **not properly evidence-gathered** — only ~31 verses read as *scratch* (niddah + the small NT-defilement lemmas) in the wrong format. All four units rest on the **DB l2_meaning layer** plus scratch. M10c is the highest-priority evidence-gathering target alongside the M10 core.
+> **Whole-cluster status (updated 2026-06-23):** M10c has now been **freshly read** under the neutral method — `wa-m10-core-m10c-evidence-digest` (**MC**), 226 occ / 203 verses, organised by the four mechanisms below (superseding the scratch files). Headline evidence finding: defilement is **largely a STATE, not a moral act** (valence neutral 84 vs sinful 96) and the **pneuma co-seated (16) is mostly the *unclean spirit* as external agent, not a human spirit-seat** — genuine inner seats are only ~5 (sarx/kardia/conscience, all in mechanism (b)). M10c is the prime **§10 "other object-kind"** test case.
 
 ## [M10c #1] Ritual defilement-state
 - **DEF:** The inner-being condition of ritual uncleanness — being unclean as it bears on sacred participation, communal life, and conscience. Acquired by two mechanisms (bodily contact with a defiling agent; authoritative verdict/categorical designation). Inner content: awareness of contamination, watchful restraint, distress at worship-exclusion, conscience formed by purity categories, duty not to transmit. Structural opposite: M12.

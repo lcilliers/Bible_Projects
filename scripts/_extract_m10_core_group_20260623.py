@@ -22,6 +22,7 @@ GROUPS = {
     'avon':  {'H5771G','H5771H','H5771I'},                                            # a.von
     'pesha': {'H6588','H6586'},                                                       # pe.sha + pa.sha
     'hamart':{'G0266','G0264','G0265','G0268'},                                       # NT hamart-
+    'm10c':  {'H2930A','H2931','H5079','G0169','G0167','G3435','G3436','G3394'},       # M10c defilement/impurity
 }
 
 # canonical book order for the spread report

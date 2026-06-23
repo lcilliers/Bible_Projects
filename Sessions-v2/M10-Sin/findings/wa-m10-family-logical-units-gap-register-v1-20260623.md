@@ -32,7 +32,7 @@
 | **AV** | `wa-m10-core-avon-evidence-digest-v1_0-20260623.md` (a.von; + assembly) — CORE read 2026-06-23 |
 | **PE** | `wa-m10-core-pesha-evidence-digest-v1_0-20260623.md` (pe.sha+pa.sha; + assembly) — CORE read 2026-06-23 |
 | **HM** | `wa-m10-core-hamart-evidence-digest-v1_0-20260623.md` (NT hamart-; + assembly) — CORE read 2026-06-23 |
-| _(pending)_ | M10c clean read files — to be created and recorded here as they land |
+| **MC** | `wa-m10-core-m10c-evidence-digest-v1_0-20260623.md` (M10c defilement, 4 mechanisms; + assembly) — clean read 2026-06-23 (supersedes scratch Pn/Pd) |
 
 ## Programme-level gaps (the big rocks)
 1. **M10 CORE not re-read** (13 lemmas, ~1,072 occ: ḥāṭāʾ family, a'von, pe'sha, hamart-) — the definitional pillar; blocks every core-anchored unit. **Top priority.**
@@ -82,18 +82,20 @@
 ## Tracker — M10c Defilement, Impurity
 | # | Unit | (A) | Evidence file(s) | (B) | Synthesis file(s) | Key remaining gap |
 |---|---|---|---|---|---|---|
-| 1 | Ritual defilement-state | SCRATCH | DB, Pn, Pd | NOT STARTED | — | largest M10c unit unread; ta.me verb/adj split |
-| 2 | Moral-inner defilement-state | SCRATCH | DB, Pd | NOT STARTED | — | redo clean; inner-moral core; link M10 #12 |
-| 3 | Corporate/covenantal defilement | DB-ONLY | DB | NOT STARTED | — | unread; corporate = data-shape; M10b bridge |
-| 4 | Defilement by external agency | DB-ONLY | DB (+ finding #108) | NOT STARTED | — | unread; external-agent object-kind (§10) |
+| 1 | Ritual defilement-state | COMPLETE | DB, MC | NOT STARTED | — | ritual STATE (neutral valence); ta.me verb/adj split read |
+| 2 | Moral-inner defilement-state | COMPLETE | DB, MC | NOT STARTED | — | inner-moral core read (sarx/kardia/conscience seats); link M10 #12 |
+| 3 | Corporate/covenantal defilement | COMPLETE | DB, MC | NOT STARTED | — | corporate read; data-shape tail; M10b bridge |
+| 4 | Defilement by external agency | COMPLETE | DB, MC (+ finding #108) | NOT STARTED | — | external-agent object-kind (§10 test case) |
 
 ---
 
-## Status roll-up (2026-06-23, after the M10 CORE read)
-- **(A) Evidence:** COMPLETE **28** (all M10 ×22 + all M10b ×6) · SCRATCH 2 (M10c #1/#2) · DB-ONLY 2 (M10c #3/#4).
+## Status roll-up (2026-06-23, after the M10 CORE + M10c reads)
+- **(A) Evidence: COMPLETE 32/32** — all M10 ×22 + M10b ×6 + M10c ×4 freshly read under the neutral method. **Evidence-gathering for the family is COMPLETE.**
 - **(B) Synthesis:** NOT STARTED 32/32 (gated behind §10).
-- **What's left for (A):** only **M10c** (4 units, ~263 occ) — the clean read (discard scratch). Then the family's evidence-gathering is complete.
-- **Residual within the COMPLETE M10 units (not lexical gaps — different kinds):** (i) **data-shape** items needing a verse-narrative pass (over-time #6, lineage #15, transmission #7); (ii) **home calls** for the conceptually-shared units (#9/#20/#22/#10/#14 → M06/M13/M31/M26/M11) — a §10/synthesis decision, not more reading; (iii) flagged hygiene items (cha.val re-gloss; valence over-tag on political-revolt/sin-offering).
-- **Next:** finish **M10c clean read** → then the **§10 gate** (define characteristic/status/other) → then unlock (B) by-unit synthesis.
+- **Residual within the COMPLETE units (NOT lexical gaps — different kinds, handled at/with synthesis):**
+  - (i) **data-shape** items needing a verse-narrative pass, not more lexical reading (over-time #M10-6, lineage #M10-15, transmission #M10-7, corporate #M10c-3).
+  - (ii) **home calls** for conceptually-shared units (M10 #9/#20/#22/#10/#14 → M06/M13/M31/M26/M11; M10c all → opposite M12) — a §10/synthesis decision.
+  - (iii) flagged hygiene items: cha.val re-gloss; valence over-tag (political-revolt pešaʿ; chat.tat sin-offering; M10c neutral ritual-state is correct); the M10c **pneuma = unclean-spirit-agent** caution (not an inner seat); hamart- **volition** faculty tag (cross-language).
+- **NEXT (the gate):** the **§10 definitional exploration** — *what is a characteristic vs a status vs an other-object/hybrid?* Now armed with concrete test cases from the evidence: chat.tat's sin/sin-offering seam · a.von's crime/guilt/punishment tri-fold · pešaʿ status/action split · hamart- `volition` tag · M10c's ritual-state and external-agency object-kinds. **No (B) synthesis until this gate is passed.**
 
 *Living document — on completion of any evidence or synthesis file, record its filename in the relevant unit row and update the status column.*

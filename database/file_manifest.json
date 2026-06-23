@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T04:11:15Z",
+  "generated_at": "2026-06-23T04:25:32Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2403,
+    "current": 2405,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 36
   },
-  "total_files": 8191,
-  "total_active": 5929,
+  "total_files": 8193,
+  "total_active": 5931,
   "total_archived": 2262,
   "files": [
     {
@@ -7703,6 +7703,38 @@
       "modified": "2026-06-23T04:08:52Z"
     },
     {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-m10c-assembly-v1_0-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 172342,
+      "modified": "2026-06-23T04:20:55Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-m10c-evidence-digest-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 17448,
+      "modified": "2026-06-23T04:23:55Z"
+    },
+    {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-pesha-assembly-v1_0-20260623.json",
       "category": "cluster",
       "type": "other",
@@ -7811,8 +7843,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9659,
-      "modified": "2026-06-23T04:10:47Z"
+      "size_bytes": 10241,
+      "modified": "2026-06-23T04:25:03Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-family-logical-units-ledger-v1-20260623.md",
@@ -7827,8 +7859,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 27755,
-      "modified": "2026-06-23T04:11:05Z"
+      "size_bytes": 28208,
+      "modified": "2026-06-23T04:25:25Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-lemma-batch-entity-v1_0-20260622.json",
@@ -101571,8 +101603,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3692753,
-      "modified": "2026-06-23T03:38:52Z"
+      "size_bytes": 3696827,
+      "modified": "2026-06-23T04:11:15Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -126099,8 +126131,8 @@
       "date": "2026-06-23",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 5532,
-      "modified": "2026-06-23T04:02:22Z"
+      "size_bytes": 5646,
+      "modified": "2026-06-23T04:20:42Z"
     },
     {
       "path": "scripts/_generate_cluster_catalogue_v1_20260505.py",
