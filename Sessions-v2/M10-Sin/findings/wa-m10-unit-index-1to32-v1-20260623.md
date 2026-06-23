@@ -29,7 +29,17 @@ Each unit file = **(A) general / non-verse observations** (collated from sources
 | M10b #5 | **#27** | | |
 | M10b #6 | **#28** | | |
 
-## The 32 units → evidence files
+## Per-unit evidence files — BUILD PROGRESS (the canonical homes)
+> As each is built it becomes the canonical evidence home; the source digests below are then provenance-only. Build in progress.
+
+| Unit(s) | Evidence-home file | Pattern |
+|---|---|---|
+| #8 Political revolt | `wa-m10-unit-08-political-revolt-v1-20260623.md` | distinctive-term (exemplar) |
+| #29–32 Defilement family | `wa-m10-units-29to32-defilement-family-v1-20260623.md` | family (MC digest superseded) |
+| _#1–7,#15 (ḥāṭāʾ sin-act family)_ | _pending_ | family |
+| _#9–14,#16–28 (distinctive-term units)_ | _pending_ | distinctive-term |
+
+## The 32 units → source-evidence files (until per-unit homes are built)
 > Source: **core** = sin-core (was M10) · **wick** = wickedness-family (was M10b) · **defi** = defilement-family (was M10c). File codes resolve in the legend below. **DB** = `finding` table (level=VERSE, l2_meaning), not a file.
 
 | # | Unit | Source | Evidence files |

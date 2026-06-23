@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T06:15:17Z",
+  "generated_at": "2026-06-23T07:39:06Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2412,
+    "current": 2414,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 37
   },
-  "total_files": 8201,
-  "total_active": 5939,
+  "total_files": 8203,
+  "total_active": 5941,
   "total_archived": 2262,
   "files": [
     {
@@ -8339,8 +8339,24 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6258,
-      "modified": "2026-06-23T06:15:08Z"
+      "size_bytes": 6435,
+      "modified": "2026-06-23T07:36:04Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-unit-file-structure-proposal-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4693,
+      "modified": "2026-06-23T07:12:38Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-unit-index-1to32-v1-20260623.md",
@@ -8355,8 +8371,24 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7253,
-      "modified": "2026-06-23T05:54:21Z"
+      "size_bytes": 9458,
+      "modified": "2026-06-23T07:38:53Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-units-29to32-defilement-family-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 93721,
+      "modified": "2026-06-23T07:38:32Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-verse-workthrough-plan-v1_0-20260621.md",
@@ -101683,8 +101715,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3700403,
-      "modified": "2026-06-23T06:03:18Z"
+      "size_bytes": 3701284,
+      "modified": "2026-06-23T06:15:17Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
