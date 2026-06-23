@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T16:56:25Z",
+  "generated_at": "2026-06-23T18:36:53Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2455,
+    "current": 2457,
     "archived": 2262,
     "cross-reference": 3318,
-    "backup": 40
+    "backup": 41
   },
-  "total_files": 8247,
-  "total_active": 5985,
+  "total_files": 8250,
+  "total_active": 5988,
   "total_archived": 2262,
   "files": [
     {
@@ -7811,8 +7811,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9415,
-      "modified": "2026-06-23T15:08:42Z"
+      "size_bytes": 9751,
+      "modified": "2026-06-23T18:36:41Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-escaped-evidence-audit-v1_0-20260621.md",
@@ -8547,8 +8547,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 10218,
-      "modified": "2026-06-23T16:56:13Z"
+      "size_bytes": 10748,
+      "modified": "2026-06-23T18:34:55Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-sessionlog-final-v1_0-20260622.md",
@@ -9735,6 +9735,22 @@
       "modified": "2026-06-23T16:38:26Z"
     },
     {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-cluster-synthesis-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6649,
+      "modified": "2026-06-23T18:36:12Z"
+    },
+    {
       "path": "Sessions-v2/M11-Repentance/findings/wa-m11-kickoff-objectkinds-lens-v1-20260623.md",
       "category": "cluster",
       "type": "other",
@@ -9797,6 +9813,22 @@
       "archived": false,
       "size_bytes": 114037,
       "modified": "2026-06-23T16:54:01Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-04-repentance-tieranalysis-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 48368,
+      "modified": "2026-06-23T18:33:46Z"
     },
     {
       "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-04-repentance-turning-v1-20260623.md",
@@ -101815,6 +101847,22 @@
       "modified": "2026-06-23T05:52:27Z"
     },
     {
+      "path": "backups/bible_research_pre-sdx02-close_20260623.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-23",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 515821568,
+      "modified": "2026-06-23T15:08:59Z"
+    },
+    {
       "path": "backups/bible_research_pre-sdx09_20260623.db",
       "category": "backup",
       "type": "other",
@@ -102388,7 +102436,7 @@
       "ext": ".db",
       "archived": false,
       "size_bytes": 515821568,
-      "modified": "2026-06-23T15:08:59Z"
+      "modified": "2026-06-23T18:36:31Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -102403,8 +102451,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3719136,
-      "modified": "2026-06-23T16:37:57Z"
+      "size_bytes": 3722346,
+      "modified": "2026-06-23T16:56:26Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",

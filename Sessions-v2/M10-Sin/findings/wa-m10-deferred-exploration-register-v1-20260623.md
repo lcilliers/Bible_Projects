@@ -19,7 +19,7 @@
 - **Question:** atonement is a central biblical concept but is **not encapsulated in any unit** — it is scattered across chat.tat "sin-offering" (#14), kip.pu.rim (#14), and M10c purification (#29–31). Is it its own unit, a cross-cutting layer, or primarily another cluster's?
 - **Grounded so far:** the atonement/remedy seam (#14 §; defilement-cleansing #29–31); bonds M11(83)/M38(51)/M12 dominate the forgiveness unit.
 - **Needs:** **M11 (Repentance/Forgiveness/Restoration), M38 (Salvation), M12 (Purity)** analysed.
-- **Source:** `wa-m10-family-evidence-exploration-threads-v1` (Thread 1). **Status: OPEN.**
+- **Source:** `wa-m10-family-evidence-exploration-threads-v1` (Thread 1). **Status: ✅ CLOSED (2026-06-23, by M11).** Atonement home = **M11 #1 (kip.per)** + the cross-cluster remedy apparatus (M11 forgiveness/release + M38 salvation + M12 purity); M10 kept only the OT cultic remnant. See `Sessions-v2/M11-Repentance/findings/wa-m11-cluster-synthesis-v1-20260623.md`. (DB flag resolved=1.) — *first M11→M10 loop closure.*
 
 ### SDX-03 — Does the OBJECT-KIND typology generalise programme-wide?
 - **Question:** M10 holds several object-kinds beyond "characteristic" — **status/condition · record/liability · identity · expression · mechanism · remedy · external-agency**. Do these kinds recur across all clusters (i.e. is this the programme's real ontology), or is M10 special?
