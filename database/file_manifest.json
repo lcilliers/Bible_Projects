@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T16:37:57Z",
+  "generated_at": "2026-06-23T16:56:25Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2448,
+    "current": 2455,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 40
   },
-  "total_files": 8240,
-  "total_active": 5978,
+  "total_files": 8247,
+  "total_active": 5985,
   "total_archived": 2262,
   "files": [
     {
@@ -8019,8 +8019,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5034,
-      "modified": "2026-06-23T16:13:50Z"
+      "size_bytes": 6126,
+      "modified": "2026-06-23T16:44:11Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-observations-01-identity-group-v1-20260623.md",
@@ -8547,8 +8547,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9533,
-      "modified": "2026-06-23T16:34:43Z"
+      "size_bytes": 10218,
+      "modified": "2026-06-23T16:56:13Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-sessionlog-final-v1_0-20260622.md",
@@ -9719,6 +9719,22 @@
       "modified": "2026-06-05T03:48:55Z"
     },
     {
+      "path": "Sessions-v2/M11-Repentance/Data/wa-ve-lexical-extract-M11-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 867250,
+      "modified": "2026-06-23T16:38:26Z"
+    },
+    {
       "path": "Sessions-v2/M11-Repentance/findings/wa-m11-kickoff-objectkinds-lens-v1-20260623.md",
       "category": "cluster",
       "type": "other",
@@ -9733,6 +9749,102 @@
       "archived": false,
       "size_bytes": 6317,
       "modified": "2026-06-23T16:37:42Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-01-atonement-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 151371,
+      "modified": "2026-06-23T16:52:04Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-02-divine-forgiveness-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 95812,
+      "modified": "2026-06-23T16:52:57Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-03-release-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 114037,
+      "modified": "2026-06-23T16:54:01Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-04-repentance-turning-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 73167,
+      "modified": "2026-06-23T16:52:55Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-05-reconciliation-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 20492,
+      "modified": "2026-06-23T16:54:17Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-unit-index-and-lens-result-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4572,
+      "modified": "2026-06-23T16:55:58Z"
     },
     {
       "path": "Sessions-v2/M11-Repentance/wa-m11-repentance-scienceextract-v1_0-20260513.md",
@@ -102291,8 +102403,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3718204,
-      "modified": "2026-06-23T16:31:20Z"
+      "size_bytes": 3719136,
+      "modified": "2026-06-23T16:37:57Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -125539,8 +125651,8 @@
       "date": "2026-06-23",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4211,
-      "modified": "2026-06-23T08:26:31Z"
+      "size_bytes": 4473,
+      "modified": "2026-06-23T16:47:06Z"
     },
     {
       "path": "scripts/_build_m10b_characteristic_phase9_package_20260525.py",

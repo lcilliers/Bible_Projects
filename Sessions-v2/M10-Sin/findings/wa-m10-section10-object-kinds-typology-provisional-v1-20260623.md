@@ -80,6 +80,9 @@ Per the researcher's forward direction, for each cluster CC will, **by unit**:
 4. **Synthesise** units → groups → cluster, using the hybrids/gradients (§2) and hypotheses (§3) to relate them.
 > This typology is the **classifier** for step 2 — the reason to have it *before* M11. It will be **refined** as each cluster tests it (especially the non-sin clusters, where CHARACTERISTIC should dominate — the inverse of M10).
 
+## Candidate additions from later clusters (the typology evolving)
+- **(9?) STATE / OUTCOME — a *positive* relational state** (e.g. reconciliation, M11 #5: faculty-empty, all-positive valence, the status-noun outcome). The **sin-cluster could not surface this** (M10 had only negative/neutral states); M11 forced it. Distinguish from CONDITION (B): a *condition* is a mode one is *in/under* (often involuntary/negative); an *outcome-state* is a *restored* relational result. **Candidate 9th kind — held open**, surfaced by M11's grounded application (`wa-m11-unit-index-and-lens-result-v1`). Confirms the §G prediction that the typology evolves on contact with non-sin clusters.
+
 ## §G — Bias-guard / status
 - **PROVISIONAL.** Built from **one cluster** (M10), which is *status-heavy by nature* — so the kinds C/D/E/F/G/H are well-evidenced here, but **CHARACTERISTIC (A) is under-tested in M10** (only #27 clean). The first **characteristic-heavy cluster** (e.g. a virtue cluster) will be the real test of A and of H1. *Expect the typology to evolve.*
 - The eight kinds are **candidate**, not closed; the gradients (§2) warn against hard bins. The hypotheses (§3) are **to test**, not assert.

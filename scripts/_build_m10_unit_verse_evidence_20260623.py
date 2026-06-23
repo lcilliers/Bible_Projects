@@ -61,13 +61,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--strongs', required=True, help='comma-separated Strong\'s')
     ap.add_argument('--refs', default='', help='optional comma-separated ref allow-list')
+    ap.add_argument('--corpus', default=CORPUS, help='corpus/extract JSON (default: M10 corpus)')
     a = ap.parse_args()
     strongs = set(s.strip() for s in a.strongs.split(','))
     reflist = set(r.strip() for r in a.refs.split(',') if r.strip()) if a.refs else None
 
-    corpus = json.load(open(CORPUS, encoding='utf-8'))
+    corpus = json.load(open(a.corpus, encoding='utf-8'))
+    verses = corpus['verses'] if isinstance(corpus, dict) and 'verses' in corpus \
+        else corpus['data'] if isinstance(corpus, dict) and 'data' in corpus else corpus
     rows = []
-    for V in corpus['verses']:
+    for V in verses:
         ref = V['verse']['reference']
         if reflist is not None and ref not in reflist:
             continue
