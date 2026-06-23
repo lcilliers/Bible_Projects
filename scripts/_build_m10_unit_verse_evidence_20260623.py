@@ -29,6 +29,34 @@ def fld(lx, k):
     v = lx.get(k)
     return v if v not in (None, '') else None
 
+LEX_ORDER = ['sense','lemma_meaning','type','faculty','location','origin','how','object',
+             'object_type','cause','cause_clause','experiencer','divine_involvement',
+             'intensity','valence','immediate_response','relational']
+
+def emit_term(o, is_focus):
+    """Full record for one term occurrence (self-standing)."""
+    t = o.get('term', {}); vr = o.get('verse_report', {}) or {}; lx = o.get('lexical', {}) or {}
+    head = f"**{t.get('translit')} ({t.get('strong')})** — {t.get('gloss')}"
+    meta = [t.get('language'), t.get('cluster')]
+    if is_focus: meta.append('**FOCUS**')
+    mm = []
+    if vr.get('morph'): mm.append(f"morph={vr['morph']}")
+    if vr.get('stem'): mm.append(f"stem={vr['stem']}")
+    if vr.get('target_word'): mm.append(f"target=“{vr['target_word']}”")
+    line = f"- {head}  [{' · '.join(str(m) for m in meta if m)}]"
+    if mm: line += '  ' + ' · '.join(mm)
+    print(line)
+    bits = []
+    for k in LEX_ORDER:
+        v = fld(lx, k)
+        if v is not None: bits.append(f"{k}={v}")
+    if bits:
+        print('  - ' + ' · '.join(bits))
+    comp = lx.get('compound')
+    comp = [comp] if isinstance(comp, str) else (comp or [])
+    if comp:
+        print('  - compound: ' + '; '.join(comp))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--strongs', required=True, help='comma-separated Strong\'s')
@@ -55,22 +83,13 @@ def main():
     for ref, text, foci, allocc in rows:
         print(f'#### {ref}')
         print(f'> {text}')
+        # focus term(s) first (full record), then every co-term (full record) — self-standing
         for o in foci:
-            t = o['term']; lx = o.get('lexical', {})
-            bits = []
-            for k in ('sense','type','faculty','object','object_type','valence','how','experiencer','cause','intensity','divine_involvement','location'):
-                v = fld(lx, k)
-                if v: bits.append(f'{k}={v}')
-            print(f"- **{t.get('translit')} ({t.get('strong')})** — {t.get('gloss')}: " + ' · '.join(bits))
-            comp = lx.get('compound')
-            comp = [comp] if isinstance(comp, str) else (comp or [])
-            if comp:
-                print(f"  - compound: {'; '.join(comp)}")
-        # co-terms (non-focus) with cluster tags
-        co = [o for o in allocc if o not in foci]
-        if co:
-            tags = ', '.join(f"{o['term'].get('translit')}[{o['term'].get('cluster')}]" for o in co)
-            print(f"  - co-terms: {tags}")
+            emit_term(o, True)
+        for o in allocc:
+            if o in foci:
+                continue
+            emit_term(o, False)
         print()
 
 if __name__ == '__main__':

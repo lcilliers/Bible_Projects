@@ -32,51 +32,68 @@
 
 ## B. Per-verse structured evidence
 
-_Per-verse structured evidence — 9 verses; Strong's ['H6586']; ref-filtered to the political subset. From the corpus; evidence only._
+_Per-verse structured evidence — 9 verses; Strong's ['H6586']; ref-filtered to 9. From the corpus; evidence only._
 
 #### 1Ki 12:19
-> 1Ki 12:19 So Israel has been in rebellion against the house of David to this day.
-- **pa.sha (H6586)** — to transgress: sense=rebellion · type=action · object=house · object_type=person · valence=sinful · experiencer=other
+> 1Ki 12:19 So Israel has been in rebellion against the house of David to this day .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3mp · stem=Qal · target=“rebellion”
+  - sense=rebellion · lemma_meaning=to rebel, transgress, revolt · type=action · object=house · object_type=person · experiencer=other · valence=sinful
 
 #### 2Ki 1:1
-> 2Ki 1:1 After the death of Ahab, Moab rebelled against Israel.
-- **pa.sha (H6586)** — to transgress: sense=rebelled · type=action · object=Israel · object_type=person · valence=neutral · experiencer=other
+> 2Ki 1:1 After the death of Ahab , Moab rebelled against Israel .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3ms · stem=Qal · target=“rebelled”
+  - sense=rebelled · lemma_meaning=to rebel, transgress, revolt · type=action · object=Israel · object_type=person · experiencer=other · valence=neutral
 
 #### 2Ki 3:5
-> 2Ki 3:5 But when Ahab died, the king of Moab rebelled against the king of Israel.
-- **pa.sha (H6586)** — to transgress: sense=rebelled · type=action · object=king · object_type=person · valence=neutral · experiencer=other
+> 2Ki 3:5 But when Ahab died , the king of Moab rebelled against the king of Israel .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3ms · stem=Qal · target=“rebelled”
+  - sense=rebelled · lemma_meaning=to rebel, transgress, revolt · type=action · object=king · object_type=person · experiencer=other · valence=neutral
 
 #### 2Ki 3:7
-> 2Ki 3:7 …"The king of Moab has rebelled against me. Will you go with me to battle against Moab?"…
-- **pa.sha (H6586)** — to transgress: sense=rebelled · type=action · object=battle · object_type=person · valence=neutral · experiencer=other
+> 2Ki 3:7 And he went and sent word to Jehoshaphat king of Judah : “The king of Moab has rebelled against me. Will you go with me to battle against Moab ?” And he said , “I will go . I am as you are, my people as your people , my horses as your horses .”
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqp3ms · stem=Qal · target=“rebelled”
+  - sense=rebelled · lemma_meaning=to rebel, transgress, revolt · type=action · object=battle · object_type=person · experiencer=other · valence=neutral
 
 #### 2Ki 8:20
-> 2Ki 8:20 In his days Edom revolted from the rule of Judah and set up a king of their own.
-- **pa.sha (H6586)** — to transgress: sense=revolted · type=action · object=rule · object_type=person · valence=sinful · experiencer=other
+> 2Ki 8:20 In his days Edom revolted from the rule of Judah and set up a king of their own .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqp3ms · stem=Qal · target=“revolted”
+  - sense=revolted · lemma_meaning=to rebel, transgress, revolt · type=action · object=rule · object_type=person · experiencer=other · valence=sinful
   - compound: yad "hand: owner" — partner
-  - co-terms: yad[M23]
+- **yad (H3027W)** — hand: owner  [Hebrew · M23]  morph=HNcbsc · target=“rule”
+  - sense=rule · lemma_meaning=hand/arm[anatomy] · type=status · how=revolted (H6586) · object=Judah · object_type=person · experiencer=other
+  - compound: pa.sha "to transgress" — partner
 
 #### 2Ki 8:22
-> 2Ki 8:22 So Edom revolted from the rule of Judah to this day. Then Libnah revolted at the same time.
-- **pa.sha (H6586)** — to transgress: sense=revolted · type=action · object=from · object_type=person · valence=sinful · experiencer=other
+> 2Ki 8:22 So Edom revolted from the rule of Judah to this day . Then Libnah revolted at the same time .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3ms · stem=Qal · target=“revolted”
+  - sense=revolted · lemma_meaning=to rebel, transgress, revolt · type=action · object=from · object_type=person · experiencer=other · valence=sinful
   - compound: yad "hand: owner" — partner
-  - co-terms: yad[M23]
+- **yad (H3027W)** — hand: owner  [Hebrew · M23]  morph=HNcbsc · target=“rule”
+  - sense=rule · lemma_meaning=hand/arm[anatomy] · type=status · how=revolted (H6586) · object=from · object_type=person · experiencer=other
+  - compound: pa.sha "to transgress" — partner
 
 #### 2Ch 10:19
-> 2Ch 10:19 So Israel has been in rebellion against the house of David to this day.
-- **pa.sha (H6586)** — to transgress: sense=rebellion · type=action · object=house · object_type=person · valence=sinful · experiencer=other
+> 2Ch 10:19 So Israel has been in rebellion against the house of David to this day .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3mp · stem=Qal · target=“rebellion”
+  - sense=rebellion · lemma_meaning=to rebel, transgress, revolt · type=action · object=house · object_type=person · experiencer=other · valence=sinful
 
 #### 2Ch 21:8
-> 2Ch 21:8 In his days Edom revolted from the rule of Judah and set up a king of their own.
-- **pa.sha (H6586)** — to transgress: sense=revolted · type=action · object=from · object_type=situation · valence=sinful · experiencer=other
+> 2Ch 21:8 In his days Edom revolted from the rule of Judah and set up a king of their own .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqp3ms · stem=Qal · target=“revolted”
+  - sense=revolted · lemma_meaning=to rebel, transgress, revolt · type=action · object=from · object_type=situation · experiencer=other · valence=sinful
   - compound: yad "hand: owner" — partner
-  - co-terms: yad[M23]
+- **yad (H3027W)** — hand: owner  [Hebrew · M23]  morph=HNcbsc · target=“rule”
+  - sense=rule · lemma_meaning=hand/arm[anatomy] · type=status · how=revolted (H6586) · object=from · object_type=person · experiencer=other
+  - compound: pa.sha "to transgress" — partner
 
 #### 2Ch 21:10
-> 2Ch 21:10 So Edom revolted from the rule of Judah to this day. At that time Libnah also revolted from his rule, because he had forsaken the Lord, the God of his fathers.
-- **pa.sha (H6586)** — to transgress: sense=revolted · type=action · object=rule · object_type=situation · valence=sinful · experiencer=other · cause=Jehoram forsaking the Lord
+> 2Ch 21:10 So Edom revolted from the rule of Judah to this day . At that time Libnah also revolted from his rule , because he had forsaken the Lord , the God of his fathers .
+- **pa.sha (H6586)** — to transgress  [Hebrew · M10 · **FOCUS**]  morph=HVqw3ms · stem=Qal · target=“revolted”
+  - sense=revolted · lemma_meaning=to rebel, transgress, revolt · type=action · object=rule · object_type=situation · cause=Jehoram forsaking the Lord · cause_clause=forsaken Lord God his fathers · experiencer=other · valence=sinful · relational=from
   - compound: yad "hand: owner" — partner
-  - co-terms: yad[M23]
+- **yad (H3027W)** — hand: owner  [Hebrew · M23]  morph=HNcbsc · target=“rule”
+  - sense=rule · lemma_meaning=hand/arm[anatomy] · type=status · how=revolted (H6586) · object=Judah · object_type=person · cause_clause=forsaken Lord God his fathers · experiencer=other · relational=from
+  - compound: pa.sha "to transgress" — partner
 
----
-*Unit evidence file (exemplar). General section copied from PE digest; per-verse from corpus. No synthesis; held open pending §10.*
+
+*Unit evidence file. General copied from PE digest; per-verse full-lexical (all terms) from corpus. No synthesis; held open pending §10.*
