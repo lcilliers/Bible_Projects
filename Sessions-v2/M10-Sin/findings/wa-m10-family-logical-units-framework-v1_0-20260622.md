@@ -1,8 +1,14 @@
 # WA M10-family — Logical-units capture framework + first-pass typing (PROPOSAL, for sign-off)
 
 - **File:** wa-m10-family-logical-units-framework-v1_0-20260622.md · **Version:** v1_0 · **Date:** 2026-06-22
-- **Author:** Claude Code · **Status:** **PROPOSAL — awaiting researcher sign-off before the full build.**
+- **Author:** Claude Code · **Status:** **APPROVED with changes (2026-06-23). Built out in `wa-m10-family-logical-units-ledger-v1-20260623.md` + gap register `…-gap-register-v1-20260623.md`.**
 - **Companion:** `wa-m10-family-collation-v1_0-20260622.md` (the state-of-work collation). This document is the *capture plan* that builds on it.
+
+> **Decisions applied (researcher, 2026-06-23):**
+> 1. **§5 `KIND` column removed.** Whether a unit is a status, a characteristic, a hybrid, or some *other* object is **at the heart of the synthesis, is not settled, and must flow from the evidence — not be imputed.** §5 now carries instead the **factual owner-cluster of each unit's Strong's** (from `mti_terms`).
+> 2. **§6 recode executed** — the mis-migrated session-B findings have been moved off M10 (see §6).
+> 3. **§4 resolved:** output = a **separate `.md` ledger** that indexes the DB (no new DB rows yet); **keep the 32 units.**
+> 4. **New pre-synthesis task flagged (§10):** before any synthesis, **define what a "characteristic" vs a "status" is — and whether there are other object-kinds (or hybrids).**
 
 ---
 
@@ -62,61 +68,78 @@ UNIT  [cluster #seq]  short_name
 
 ---
 
-## 5. First-pass typing of all 32 units (FOR YOUR CORRECTION — not a verdict)
+## 5. The 32 units — factual signals only (no imputed kind)
 
-> KIND from the definition's own framing. HOME from the cross-register flags + whether the unit's substance is the *sin-field itself* (home here) or a *named inner-life phenomenon with its own cluster* (likely elsewhere). DB = attributable verse-findings.
+> **`KIND` removed by direction** — status/characteristic/other is a *synthesis outcome*, to flow from evidence (see §10). The two columns below are **facts**, not judgements: **Owner** = the cluster(s) that *own the unit's Strong's* (`mti_terms.cluster_code`); **Cross-register flags** = the other clusters named *in the unit's own DB definition*; **DB** = attributable verse-findings.
+>
+> **Finding:** **every unit's terms are owned by its own M10-family cluster** (no term is owned elsewhere). So lexically these all sit *at home* in the M10 family — the "covered elsewhere" question is about **conceptual** coverage (the cross-register flags), **not** term ownership. A concept can be flagged to M11/M06/etc. while its *words* live here.
 
 ### M10 — Sin, Guilt, Transgression
-| # | Unit | KIND | HOME (candidate) | DB |
+| # | Unit | Owner | Cross-register flags (from DB definition) | DB |
 |---|---|---|---|---|
-| 1 | Wilful sinning | CHARACTERISTIC | this-cluster (the core sin-act) | 264 |
-| 2 | Unintentional sinning | CHARACTERISTIC | this-cluster | 213 |
-| 3 | Confession | CHARACTERISTIC | **likely → M11** (Repentance/Forgiveness) | 250 |
-| 4 | Conscience suppression | CHARACTERISTIC | shared (conscience seat → M47?) | 250 |
-| 5 | Refusal to repent | CHARACTERISTIC | **likely → M11** | 410 |
-| 6 | Habitual defection | HYBRID (pattern→status) | this-cluster | 250 |
-| 7 | Contagious sin | CHARACTERISTIC | this-cluster | 213 |
-| 8 | Political revolt (pa.sha) | CHARACTERISTIC | shared (submission/authority) | 37 |
-| 9 | Sinful speech | CHARACTERISTIC | **shared → M06** (flagged) | 22 |
-| 10 | Specialised sinful mechanisms | CHARACTERISTIC | **shared → M14/M08/M31** (flagged) | 5 |
-| 11 | **Sin as universal condition** | **STATUS** | **this-cluster (primary)** | 321 |
-| 12 | **Sin as enslaving power** | **STATUS** | **this-cluster (primary)** | 142 |
-| 13 | **Sin as divine record** | **STATUS** | **this-cluster (primary)** | 528 |
-| 14 | Forgiveness sought & received | CHARACTERISTIC | **→ M11** (flagged) | 409 |
-| 15 | Generational sin | STATUS | this-cluster | 213 |
-| 16 | **The sinner as moral character** | **STATUS** | **this-cluster (primary)** | 64 |
-| 17 | Guilt as inner-being state | STATUS | this-cluster (cross→M03 pu.qah) | 98 |
-| 18 | Iniquity as accumulated moral crime | STATUS | this-cluster | 162 |
-| 19 | Transgression as boundary-crossing | HYBRID | this-cluster | 165 |
-| 20 | Faithlessness as covenant-breaking | CHARACTERISTIC | **shared → M13/M31** (flagged) | 103 |
-| 21 | Perversion as inner inversion | CHARACTERISTIC | **shared → M03/M07/M23/M35** (flagged) | 73 |
-| 22 | Injustice as moral failure | CHARACTERISTIC | **shared → M26** (flagged) | 72 |
+| 1 | Wilful sinning | M10 | — | 264 |
+| 2 | Unintentional sinning | M10 | — | 213 |
+| 3 | Confession | M10 | — | 250 |
+| 4 | Conscience suppression | M10 | — | 250 |
+| 5 | Refusal to repent | M10 | — | 410 |
+| 6 | Habitual defection | M10 | — | 250 |
+| 7 | Contagious sin | M10 | — | 213 |
+| 8 | Political revolt (pa.sha) | M10 | — | 37 |
+| 9 | Sinful speech | M10 | **M06** | 22 |
+| 10 | Specialised sinful mechanisms | M10 | **M14, M08, M31** | 5 |
+| 11 | Sin as universal condition | M10 | — | 321 |
+| 12 | Sin as enslaving power | M10 | — | 142 |
+| 13 | Sin as divine record | M10 | — | 528 |
+| 14 | Forgiveness sought & received | M10 | **M11** | 409 |
+| 15 | Generational sin | M10 | — | 213 |
+| 16 | The sinner as moral character | M10 | — | 64 |
+| 17 | Guilt as inner-being state | M10 | **M03** (pu.qah) | 98 |
+| 18 | Iniquity as accumulated moral crime | M10 | — | 162 |
+| 19 | Transgression as boundary-crossing | M10 | — | 165 |
+| 20 | Faithlessness as covenant-breaking | M10 | **M13, M31** | 103 |
+| 21 | Perversion as inner inversion | M10 | **M03, M07, M23, M35** | 73 |
+| 22 | Injustice as moral failure | M10 | **M26** | 72 |
 
 ### M10b — Wickedness, Evil, Abomination
-| # | Unit | KIND | HOME (candidate) | DB |
+| # | Unit | Owner | Cross-register flags (from DB definition) | DB |
 |---|---|---|---|---|
-| 1 | **Wickedness as settled person-identity** | **STATUS** | this-cluster (cross→M26 tsaddiq antithesis) | 278 |
-| 2 | **Evil as constitutional inner nature** | **STATUS** | this-cluster | 99 |
-| 3 | Abomination — divine revulsion | STATUS (verdict-category) | this-cluster (cross→M10c defile) | 119 |
-| 4 | Idolatrous abomination | HYBRID | shared (idolatry register) | 144 |
-| 5 | Iniquity as active inner scheming | CHARACTERISTIC | this-cluster | 85 |
-| 6 | Evil expressed through speech | CHARACTERISTIC | **shared → M06** | 18 |
+| 1 | Wickedness as settled person-identity | M10b | (antithesis with M26 righteous, in text) | 278 |
+| 2 | Evil as constitutional inner nature | M10b | — | 99 |
+| 3 | Abomination — divine revulsion | M10b | — | 119 |
+| 4 | Idolatrous abomination | M10b | — | 144 |
+| 5 | Iniquity as active inner scheming | M10b | — | 85 |
+| 6 | Evil expressed through speech | M10b | (slander/blasphemy — cf. M06) | 18 |
 
 ### M10c — Defilement, Impurity
-| # | Unit | KIND | HOME (candidate) | DB |
+| # | Unit | Owner | Cross-register flags (from DB definition) | DB |
 |---|---|---|---|---|
-| 1 | **Ritual defilement-state** | **STATUS** | this-cluster (opposite M12) | 260 |
-| 2 | **Moral-inner defilement-state** | **STATUS** | this-cluster (opposite M12) | 123 |
-| 3 | **Corporate/covenantal defilement** | **STATUS** | this-cluster (opposite M12) | 230 |
-| 4 | Defilement by external spiritual agency | STATUS | shared (spiritual-agency register) | 30 |
+| 1 | Ritual defilement-state | M10c | **M12** (structural opposite) | 260 |
+| 2 | Moral-inner defilement-state | M10c | **M12** (structural opposite) | 123 |
+| 3 | Corporate/covenantal defilement | M10c | **M12** (structural opposite) | 230 |
+| 4 | Defilement by external spiritual agency | M10c | **M12** (structural opposite) | 30 |
 
-**First-pass tallies:** ~13 STATUS · ~14 CHARACTERISTIC · ~4 HYBRID. **Likely-elsewhere candidates (your call):** Confession & Refusal-to-repent & Forgiveness → **M11**; Sinful-speech & Evil-through-speech → **M06**; Faithlessness → **M13/M31**; Injustice → **M26**; Perversion → **M03/M07/M23/M35**; Specialised-mechanisms → **M14/M08/M31**. The **status units cluster cleanly in this cluster** — consistent with your "the main focus is the sin status."
+**Conceptual cross-coverage to weigh at synthesis (from the flags, not a verdict):** Sinful-speech & Evil-through-speech ↔ **M06**; Forgiveness ↔ **M11**; Faithlessness ↔ **M13/M31**; Injustice ↔ **M26**; Perversion ↔ **M03/M07/M23/M35**; Specialised-mechanisms ↔ **M14/M08/M31**; Guilt(pu.qah) ↔ **M03**; all M10c defilement ↔ **M12** (opposite). All terms remain **owned by the M10 family.**
 
 ---
 
-## 6. Note on the DB cluster-findings (don't be misled)
+## 6. DB cluster-findings recode — EXECUTED 2026-06-23
 
-The 12 "OPEN" M10 cluster-level findings are **session_b migration artefacts mis-tagged to M10** — their content is about *faith* (#129), *vulnerability/Gen 3:10* (#167), *crushing* (#821), *contrition* (#840, #1772), *goodness* (#1129), *mercy seat* (#1450), *covenant* (#2229/2230/2351), *attachment* (#2371). Only #2351 touches "abomination." **Recommendation:** exclude them from the capture (flag for re-tagging/cleanup separately). The genuine DB contribution is the **2,368 verse-level findings.**
+The 12 "OPEN" M10 cluster-level findings were **session_b migration artefacts mis-tagged to M10** (registry-scoped findings about faith, vulnerability, contrition, goodness, mercy, covenant). Recoded off M10 to each finding's **registry-home cluster** (dominant live `mti_terms.cluster_code`), via `scripts/_apply_recode_sessionb_m10_findings_20260623.py` (snapshot `backups/bible_research_pre-recode-sessionb-m10_20260623.db`):
+
+| Finding(s) | Registry | → recoded to |
+|---|---|---|
+| #129 | faith (59) | **M31** Faith, Belief and Unbelief |
+| #821, #840, #1772 | contrition (30) | **M24** Weakness, Vulnerability and Suffering |
+| #1450 | mercy (111) | **M05** Love, Compassion and Kindness |
+| #2229, #2230, #2351, #2371 | covenant (34) | **M44** Relational Disposition |
+
+**Left on M10 — flagged for your decision (no clean home; not guessed):**
+- **#167** (vulnerability reg 206) — terms owned T2/M15; candidate **M24** (cluster name = "…Vulnerability…") or **M07** (shame sequence). 
+- **#1098, #1129** (goodness reg 67) — registry terms split 3-way **M04 / M05 / M39**; pick one.
+
+(Separately, **#108** on M10c — *akathartos* unclean-spirit — was left in place: it is on-topic for M10c #4 "Defilement by external spiritual agency" and is already CLOSED/superseded.)
+
+The genuine DB contribution to the M10 family remains the **2,368 verse-level findings.**
 
 ---
 
@@ -162,4 +185,16 @@ The 12 "OPEN" M10 cluster-level findings are **session_b migration artefacts mis
 
 ---
 
-*Proposal only. No meaning derived; the status-vs-characteristic question and all interactions remain open.*
+## 10. Pre-synthesis exploration (flagged by researcher, 2026-06-23) — REQUIRED before any synthesis
+
+Before by-unit synthesis begins, run an explicit definitional exploration:
+
+> **What is the definition of a "characteristic", and what is the definition of a "status"? Are there other "objects" that are neither — or hybrids?**
+
+- This is the question the `KIND` column was removed to protect (§5): the kind of each unit must be **derived from the gathered evidence**, against clear definitions, not imputed up front.
+- It is a **gate** on synthesis: the gap register (`…-gap-register-v1-…`) tracks each unit through *evidence-gathering → (this definitional gate) → by-unit synthesis*.
+- Likely inputs: the existing programme notion of "characteristic" (the cluster model) vs the emerging "status" framing the M10 family forced; the M10/M10b/M10c evidence itself (e.g. ra'sha's five faces, the defilement-states, the generative *a'ven*) as test cases for the typology.
+
+---
+
+*Capture framework. No meaning derived; the status-vs-characteristic-vs-other question and all interactions remain open until §10 + evidence.*
