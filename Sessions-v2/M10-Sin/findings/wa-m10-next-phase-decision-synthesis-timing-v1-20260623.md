@@ -47,11 +47,13 @@ M10 is parked, but **not frozen** — working the partner clusters will **reach 
 - **Accrue M11-derived observations back into the M10 story base** — into the relevant M10 unit/family file (or a running "M10 story-base" accrual), tagged with the source cluster, so M10's evidence grows as partners are read.
 - **The SDX register is the ledger of this loop** — each partner cluster's analysis checks the register for M10 points it can close.
 
-## NARRATIVE STRATEGY — cross-cluster, not per-cluster (researcher, 2026-06-23)
-**Narratives are not produced per cluster.** Neither M10 nor M11 gets a standalone cluster narrative/essay. Instead:
-- Each cluster produces **evidence + synthesis** (the analytical integration — e.g. `wa-m11-cluster-synthesis-v1`), which is **input**, not a product.
-- On completion of **all** (related) clusters, **M10 + M11 + the other related clusters are considered as a whole** to prepare the narrative — **largely around how *sin and salvation* impact the inner-being system**.
-- So the deferral (above) is not only of M10's *synthesis* but of the **narrative**, which is a **cross-cluster thematic assembly** at the end. The "sin-and-salvation" group (M10 sin · M11 resolution · M12 purity · M38 salvation · M26 righteousness · M45 renewal · …) is one such narrative grouping.
-- Implication: per-cluster work optimises for **feeding the joint narrative** (clean evidence, synthesis, closed SDX points, the M10 story base), not for a self-contained essay. (Consistent with the §d end-point: an evidenced findings corpus → multiple products, reference + narrative.)
+## NARRATIVE STRATEGY (researcher, 2026-06-23; refined 2026-06-23)
+Narrative treatment depends on the **object-kind** of the cluster/unit (the §10 lens drives it):
 
-*Decision record — defer M10 *full* synthesis AND narrative; narratives are cross-cluster (the sin-and-salvation assembly); M10 parked but fed incrementally via the M11→M10 loop; §10-typology timing is the open sub-question.*
+- **(a) A cluster WHOLLY regarded as non-characteristics (e.g. M10 sin)** → **no per-cluster narrative.** It produces evidence + synthesis (input only); its content feeds a **cross-cluster** narrative assembled at the end — **M10 + M11 + M12 + M38 + M26 + M45 + …** considered as a whole, **largely around how *sin and salvation* impact the inner-being system.** (So the deferral covers the *narrative*, not just the synthesis.)
+- **(b) A CHARACTERISTIC unit — even inside a mixed cluster (e.g. M11 #4 Repentance, a likely HYBRID)** → goes through the **tier system** (done) **AND warrants its OWN unit-level narrative** — *but that is a **unit** narrative, NOT a **cluster** narrative.*
+- **(c) ⚠ OPEN — MIXED-object-kind clusters (M11 = characteristics + remedy + state).** How to treat a cluster whose units are different object-kinds — which units get a unit-narrative (the characteristics), which feed the joint cross-cluster narrative (the non-characteristic objects), and how the cluster itself is represented — is **not yet settled (researcher working it out).** The §10 lens classification per unit is the input to that decision (characteristic→tier+unit-narrative; non-char object→object-kinds work→feed joint).
+
+**Correction note:** an earlier draft over-generalised "no cluster gets a standalone narrative." Refined: the *cluster*-narrative point holds for **wholly-non-characteristic** clusters; **characteristic units do get a unit-narrative**; mixed clusters are open (c).
+
+*Decision record — defer M10 full synthesis AND its (cross-cluster) narrative; characteristic units (e.g. M11 #4) get a unit-narrative; mixed-cluster treatment OPEN; M10 parked but fed via the M11→M10 loop; §10-typology timing open.*
