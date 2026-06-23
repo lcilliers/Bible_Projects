@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T04:25:32Z",
+  "generated_at": "2026-06-23T04:55:21Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2405,
+    "current": 2406,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 36
   },
-  "total_files": 8193,
-  "total_active": 5931,
+  "total_files": 8194,
+  "total_active": 5932,
   "total_archived": 2262,
   "files": [
     {
@@ -7813,6 +7813,22 @@
       "archived": false,
       "size_bytes": 31435,
       "modified": "2026-06-22T19:48:10Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-family-evidence-exploration-threads-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7508,
+      "modified": "2026-06-23T04:55:13Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-family-logical-units-framework-v1_0-20260622.md",
@@ -101603,8 +101619,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3696827,
-      "modified": "2026-06-23T04:11:15Z"
+      "size_bytes": 3697740,
+      "modified": "2026-06-23T04:25:32Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
