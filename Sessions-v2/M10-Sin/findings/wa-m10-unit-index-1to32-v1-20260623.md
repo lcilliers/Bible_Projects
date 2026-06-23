@@ -29,20 +29,30 @@ Each unit file = **(A) general / non-verse observations** (collated from sources
 | M10b #5 | **#27** | | |
 | M10b #6 | **#28** | | |
 
-## Per-unit evidence files — BUILD PROGRESS (the canonical homes)
-> As each is built it becomes the canonical evidence home; the source digests below are then provenance-only. Build in progress.
+## Per-unit evidence files — the canonical homes (ALL 32 BUILT, 2026-06-23)
+> Each unit's evidence-home file is self-standing (general+flags + full-lexical per-verse). The source digests are now **provenance-only** (their content migrated). Find a unit → open its file here.
 
-| Unit(s) | Evidence-home file | Pattern |
-|---|---|---|
-| #1–7,#15 ḥāṭāʾ sin-act family | `wa-m10-units-01to07-15-hatat-sinact-family-v1-20260623.md` | family (HA/HM *partially* migrated — nouns pending) |
-| #8 Political revolt | `wa-m10-unit-08-political-revolt-v1-20260623.md` | distinctive-term |
-| #9 Sinful speech | `wa-m10-unit-09-sinful-speech-v1-20260623.md` | distinctive-term |
-| #20 Faithlessness | `wa-m10-unit-20-faithlessness-v1-20260623.md` | distinctive-term |
-| #22 Injustice | `wa-m10-unit-22-injustice-v1-20260623.md` | distinctive-term |
-| #23 Wickedness (person-identity) | `wa-m10-unit-23-wickedness-person-identity-v1-20260623.md` | distinctive-term (B1 migrated) |
-| #27 Iniquity (active scheming) | `wa-m10-unit-27-iniquity-active-scheming-v1-20260623.md` | distinctive-term (B3 migrated) |
-| #29–32 Defilement family | `wa-m10-units-29to32-defilement-family-v1-20260623.md` | family (MC migrated) |
-| _PENDING:_ #11–14 sin-noun family · #17–18 a.von family · #25–26 abomination pair · #10,#16,#19,#21,#24,#28 distinctive | _pending_ | — |
+| Unit(s) | Evidence-home file |
+|---|---|
+| #1–7, #15 (ḥāṭāʾ sin-act family) | `wa-m10-units-01to07-15-hatat-sinact-family-v1-20260623.md` |
+| #8 Political revolt | `wa-m10-unit-08-political-revolt-v1-20260623.md` |
+| #9 Sinful speech | `wa-m10-unit-09-sinful-speech-v1-20260623.md` |
+| #10 Specialised mechanisms | `wa-m10-unit-10-specialised-mechanisms-v1-20260623.md` |
+| #11–14 (sin-noun family: condition/power/record/forgiveness) | `wa-m10-units-11to14-sin-noun-family-v1-20260623.md` |
+| #16 The sinner as moral character | `wa-m10-unit-16-sinner-moral-character-v1-20260623.md` |
+| #17–18 (a.von family: guilt + accumulated crime) | `wa-m10-units-17-18-avon-family-v1-20260623.md` |
+| #19 Transgression (boundary-crossing) | `wa-m10-unit-19-transgression-boundary-crossing-v1-20260623.md` |
+| #20 Faithlessness | `wa-m10-unit-20-faithlessness-v1-20260623.md` |
+| #21 Perversion (inner inversion) | `wa-m10-unit-21-perversion-inner-inversion-v1-20260623.md` |
+| #22 Injustice | `wa-m10-unit-22-injustice-v1-20260623.md` |
+| #23 Wickedness (person-identity) | `wa-m10-unit-23-wickedness-person-identity-v1-20260623.md` |
+| #24 Evil (constitutional nature) | `wa-m10-unit-24-evil-constitutional-nature-v1-20260623.md` |
+| #25–26 (abomination family: moral-revulsion + idolatrous) | `wa-m10-units-25-26-abomination-family-v1-20260623.md` |
+| #27 Iniquity (active scheming) | `wa-m10-unit-27-iniquity-active-scheming-v1-20260623.md` |
+| #28 Evil through speech | `wa-m10-unit-28-evil-through-speech-v1-20260623.md` |
+| #29–32 (defilement family) | `wa-m10-units-29to32-defilement-family-v1-20260623.md` |
+
+> **⚠ Corpus-coverage flag (surfaced by the build):** 2Co 11:3 (ftheirō "thoughts led astray", a #21 must-capture) is **not in the 1,904-verse corpus** — its evidence is preserved in #21 §A from the R3 digest; a corpus-coverage check is owed.
 
 ## The 32 units → source-evidence files (until per-unit homes are built)
 > Source: **core** = sin-core (was M10) · **wick** = wickedness-family (was M10b) · **defi** = defilement-family (was M10c). File codes resolve in the legend below. **DB** = `finding` table (level=VERSE, l2_meaning), not a file.
