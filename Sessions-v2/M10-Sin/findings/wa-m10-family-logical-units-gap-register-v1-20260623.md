@@ -93,7 +93,7 @@
 **Bond highlights (held open):** **M26 Righteousness** = pervasive antithesis (peaks #23, 81); **M11 + M38 + M12** = the remedy/atonement web (peaks #14 — corroborates exploration Thread 1); **M12 Purity** = the structural opposite for all defilement units (#29/#31); **M47 Constitution** = where sin touches the inner being; **M41 Remembrance** = guilt/record units. **⚠ M27 "Evil, Wickedness and Abomination"** = the **characteristic-view** counterpart of the wickedness units (#23–28) per the dual-view reflection (not a duplication).
 
 ## Status roll-up (2026-06-23, post-merge + post-evidence)
-- **(A) Evidence: COMPLETE 32/32.** Evidence-gathering for the cluster is COMPLETE.
+- **(A) Evidence: COMPLETE 32/32.** Evidence-gathering for the cluster is COMPLETE. **Per-unit evidence-home files built 2026-06-23** (self-standing, full-lexical, flagged) — see `wa-m10-unit-index-1to32-v1-20260623.md`; source digests now provenance-only. **These unit files are the sole input to synthesis.**
 - **(B) Synthesis: NOT STARTED 32/32** (gated behind §10).
 - **Residual (not lexical gaps):** (i) data-shape items needing a verse-narrative pass (#6,#7,#15,#31); (ii) home-calls for conceptually-shared units (#9/#20/#22/#10/#14 → M06/M13/M31/M26/M11; defilement → opposite M12); (iii) hygiene flags (cha.val re-gloss; valence over-tag on political-revolt & sin-offering; M10c pneuma = unclean-spirit-agent not a seat; hamart- volition tag).
 - **OPEN exploration threads (researcher-led, evidence layer):** atonement (Thread 1), a.von-as-process, pešaʿ split, hamart deepening — see `…-exploration-threads…`.
