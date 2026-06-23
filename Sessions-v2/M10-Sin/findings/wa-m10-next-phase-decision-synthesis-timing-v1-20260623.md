@@ -41,4 +41,10 @@ The **§10 definitional gate** (define characteristic vs status vs condition vs 
 2. **Decide separately on §10:** draft a *provisional* object-kind typology now as a programme lens (my lean), or defer it with the synthesis.
 3. **Proceed to the next cluster** in the rework queue (M11 is the natural next — it is both the next cluster *and* M10's primary resolution-partner, which directly feeds the eventual M10 return).
 
-*Decision record — recommendation to defer; M10 parked clean; §10-typology timing is the open sub-question.*
+## M11 → M10 FEEDBACK LOOP (researcher, 2026-06-23)
+M10 is parked, but **not frozen** — working the partner clusters will **reach back into M10 incrementally**: add observations, **close Session-D (SDX) points**, and **build out the M10 story base**. So the "return for synthesis" is fed continuously, not all-at-once. **Operationalise:**
+- **Close SDX points as partners resolve them.** When M11 (etc.) answers an SDX item, set the DB flag `resolved=1` + `resolved_date` + `resolved_note` (the `M10-SDX-NN` rows in `wa_session_research_flags`), and mark it resolved in the register `.md`. *(M11 is poised to close **SDX-02** atonement-home and contribute to **SDX-09** OT→NT.)*
+- **Accrue M11-derived observations back into the M10 story base** — into the relevant M10 unit/family file (or a running "M10 story-base" accrual), tagged with the source cluster, so M10's evidence grows as partners are read.
+- **The SDX register is the ledger of this loop** — each partner cluster's analysis checks the register for M10 points it can close.
+
+*Decision record — defer M10 *full* synthesis; M10 parked but fed incrementally via the M11→M10 loop; §10-typology timing is the open sub-question.*
