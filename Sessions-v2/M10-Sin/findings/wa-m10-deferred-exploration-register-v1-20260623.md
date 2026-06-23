@@ -64,6 +64,12 @@
 - **Needs:** **M38 (Salvation/Redemption), M11 (Forgiveness), M05** analysed + a **registry-scope decision** on redemption vocabulary; the NT-sin coverage confirmation.
 - **Source:** researcher observation 2026-06-23. **Status: OPEN.** (Extends SDX-02.)
 
+### SDX-10 — The Fall / Adamic origin of sin (origin & anthropology strand)
+- **Question:** the **origin** of sin — the Fall (Adam), "fall into sin" (piptō/paraptōma), inherited/innate sinfulness — is **foregrounded in the reference scholarship** (White, Sigrist) but **under-carried in the M10 evidence** (paraptōma "dead in trespasses" is present; the Adamic origin and the "evil impulse" duality are not developed). Does the programme capture the *origin/anthropology* of sin (where sin comes from) at all, or is it out of the inner-being focus?
+- **Grounded so far:** paraptōma (Rom 5:12–21 Adam) in #11/#19; Psa 51:5 "conceived in sin" (#11); the Logos weave §3 (piptō/paraptōma "fall into sin"; the yetser duality).
+- **Needs:** Rom 5 (Adam) + the origin/anthropology texts (largely outside M10's focus set); a registry-scope decision on origin vocabulary. Surfaced by the Logos cross-check (`Logos Exported notes.md` §3–4).
+- **Source:** Logos study cross-check 2026-06-23. **Status: OPEN.**
+
 ## §DB — DB capture DONE (2026-06-23)
 - **Anchored** as Session D pointers in `wa_session_research_flags` — `flag_code='SD_POINTER'`, `session_target='D'`, `registry_id=147` (the M10 'sin' registry, option (a)), `cluster_link` carrying the cross-cluster reach, `resolved=0`, `session_raised='M10-observations-2026-06-23'`. Script `scripts/_apply_m10_sdx_session_d_flags_20260623.py` (snapshot `backups/bible_research_pre-sdx-flags_20260623.db`).
 - **flag_labels = the SDX IDs:** `M10-SDX-01` … `M10-SDX-08` (this .md and the DB rows share the IDs — kept in sync). SDX-01/02/03/04 = HIGH; 05–08 = MEDIUM.
