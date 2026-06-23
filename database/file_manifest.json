@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T03:38:52Z",
+  "generated_at": "2026-06-23T04:11:15Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2394,
+    "current": 2403,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 36
   },
-  "total_files": 8182,
-  "total_active": 5920,
+  "total_files": 8191,
+  "total_active": 5929,
   "total_archived": 2262,
   "files": [
     {
@@ -7591,6 +7591,38 @@
       "modified": "2026-06-22T19:30:52Z"
     },
     {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-avon-assembly-v1_0-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 200493,
+      "modified": "2026-06-23T04:04:37Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-avon-evidence-digest-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 13178,
+      "modified": "2026-06-23T04:08:33Z"
+    },
+    {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-fanout-architecture-v1_0-20260621.md",
       "category": "cluster",
       "type": "other",
@@ -7605,6 +7637,102 @@
       "archived": false,
       "size_bytes": 5502,
       "modified": "2026-06-22T19:30:52Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-hamart-assembly-v1_0-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 159949,
+      "modified": "2026-06-23T04:04:37Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-hamart-evidence-digest-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 14757,
+      "modified": "2026-06-23T04:08:21Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-hata-assembly-v1_0-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 476174,
+      "modified": "2026-06-23T04:04:36Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-hata-evidence-digest-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 13342,
+      "modified": "2026-06-23T04:08:52Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-pesha-assembly-v1_0-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 126116,
+      "modified": "2026-06-23T04:02:28Z"
+    },
+    {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-core-pesha-evidence-digest-v1_0-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6537,
+      "modified": "2026-06-23T04:04:21Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-corpus-1904verses-v1_0-20260622.json",
@@ -7683,8 +7811,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6054,
-      "modified": "2026-06-23T03:38:38Z"
+      "size_bytes": 9659,
+      "modified": "2026-06-23T04:10:47Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-family-logical-units-ledger-v1-20260623.md",
@@ -7699,8 +7827,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 27451,
-      "modified": "2026-06-23T03:37:47Z"
+      "size_bytes": 27755,
+      "modified": "2026-06-23T04:11:05Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-lemma-batch-entity-v1_0-20260622.json",
@@ -101443,8 +101571,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3690961,
-      "modified": "2026-06-22T20:03:17Z"
+      "size_bytes": 3692753,
+      "modified": "2026-06-23T03:38:52Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -125957,6 +126085,22 @@
       "archived": false,
       "size_bytes": 11600,
       "modified": "2026-05-25T05:10:20Z"
+    },
+    {
+      "path": "scripts/_extract_m10_core_group_20260623.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-23",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5532,
+      "modified": "2026-06-23T04:02:22Z"
     },
     {
       "path": "scripts/_generate_cluster_catalogue_v1_20260505.py",

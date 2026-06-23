@@ -16,7 +16,7 @@ X-REG      conceptual cross-coverage flagged in the DB definition (terms still o
 GAP        what evidence is still missing for this unit
 ```
 
-> **Two standing facts** (from §5): (1) **every unit's terms are owned by the M10 family** — lexically at home here. (2) The **CORE sin lemmas were NOT re-read** under the 2026-06 neutral pass, so core-anchored units rest on the **DB l2_meaning layer only** (a known, uniform gap). The Rings (M10), all M10b batches, and the co-seated index *were* freshly read; M10c was only scratch-read.
+> **Two standing facts** (from §5): (1) **every unit's terms are owned by the M10 family** — lexically at home here. (2) **CORE read status (updated 2026-06-23):** the M10 CORE has now been freshly read under the neutral method in 4 group digests — **HA** ḥāṭāʾ (`wa-m10-core-hata-evidence-digest`), **AV** a.von (`…-avon-…`), **PE** pešaʿ (`…-pesha-…`), **HM** NT hamart- (`…-hamart-…`). So every M10 unit's terms are now read (core + rings). **M10c remains the only evidence gap** (scratch-only). The per-unit CHAT/GAP notes below predate the core read — the gap register (`…-gap-register`) carries the current per-unit status; the 4 core digests carry the detail.
 >
 > **Seating note (family-level, held open):** co-seated index = **245 in M10** (nephesh 104 · lev+levav 81 · sarx+basar+she'er 25 · pneuma 11 · psuchē 8 · kardia 7 · nous 7 · suneidesis 2; ≈140 genuine after discounting the nephesh-person idiom) and **52 in M10b** (heart-family 27 · nephesh 19 mostly idiom · suneidesis 2). `location`/`faculty` are unreliable; seating reads from `co-seated`.
 

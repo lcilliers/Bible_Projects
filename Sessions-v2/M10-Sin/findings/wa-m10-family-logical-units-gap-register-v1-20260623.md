@@ -28,7 +28,11 @@
 | **Bsum** | `wa-m10b-complete-summary-evidence-digest-v1_0-20260622.md` (M10b overview) |
 | **Pn** | `wa-m10-perverse-niddah-v1_0-20260622.md` — **SCRATCH** (wrong format) |
 | **Pd** | `wa-m10-perverse-nt-defilement-v1_0-20260622.md` — **SCRATCH** (wrong format) |
-| _(pending)_ | CORE neutral read + M10c clean read files — to be created and recorded here as they land |
+| **HA** | `wa-m10-core-hata-evidence-digest-v1_0-20260623.md` (ḥāṭāʾ family; + `…-hata-assembly-…json`) — CORE read 2026-06-23 |
+| **AV** | `wa-m10-core-avon-evidence-digest-v1_0-20260623.md` (a.von; + assembly) — CORE read 2026-06-23 |
+| **PE** | `wa-m10-core-pesha-evidence-digest-v1_0-20260623.md` (pe.sha+pa.sha; + assembly) — CORE read 2026-06-23 |
+| **HM** | `wa-m10-core-hamart-evidence-digest-v1_0-20260623.md` (NT hamart-; + assembly) — CORE read 2026-06-23 |
+| _(pending)_ | M10c clean read files — to be created and recorded here as they land |
 
 ## Programme-level gaps (the big rocks)
 1. **M10 CORE not re-read** (13 lemmas, ~1,072 occ: ḥāṭāʾ family, a'von, pe'sha, hamart-) — the definitional pillar; blocks every core-anchored unit. **Top priority.**
@@ -42,28 +46,28 @@
 ## Tracker — M10 Sin, Guilt, Transgression
 | # | Unit | (A) | Evidence file(s) | (B) | Synthesis file(s) | Key remaining gap |
 |---|---|---|---|---|---|---|
-| 1 | Wilful sinning | PARTIAL | DB, R2p | NOT STARTED | — | core cha.ta/hamartanō unread; intent-marker |
-| 2 | Unintentional sinning | DB-ONLY | DB | NOT STARTED | — | core unread; intent/awareness distinction |
-| 3 | Confession | DB-ONLY | DB | NOT STARTED | — | core unread; shared w/ M11 |
-| 4 | Conscience suppression | DB-ONLY | DB | NOT STARTED | — | core unread; conscience-seat thin |
-| 5 | Refusal to repent | DB-ONLY | DB | NOT STARTED | — | core unread; M11 seam |
-| 6 | Habitual defection | DB-ONLY | DB | NOT STARTED | — | core unread; over-time = data-shape |
-| 7 | Contagious sin | DB-ONLY | DB | NOT STARTED | — | core unread; relational transmission |
-| 8 | Political revolt | DB-ONLY | DB | NOT STARTED | — | pa.sha core unread; political vs moral (#19) |
-| 9 | Sinful speech | RINGS | DB, R2p | NOT STARTED | — | reconcile w/ M10b #6 (verb); M06 |
-| 10 | Specialised mechanisms | RINGS | DB, R1 | NOT STARTED | — | tiny corpus; M14/M08/M31 home calls |
-| 11 | Sin as universal condition | PARTIAL | DB, R2p | NOT STARTED | — | hamartia core unread (status-candidate) |
-| 12 | Sin as enslaving power | DB-ONLY | DB | NOT STARTED | — | hamartia core (Rom 6–7) unread |
-| 13 | Sin as divine record | DB-ONLY | DB | NOT STARTED | — | largest DB (528); core nouns — top priority |
-| 14 | Forgiveness sought/received | PARTIAL | DB, R4 | NOT STARTED | — | core nouns unread; split w/ M11 |
-| 15 | Generational sin | DB-ONLY | DB | NOT STARTED | — | core unread; lineage = data-shape |
-| 16 | The sinner as moral character | DB-ONLY | DB | NOT STARTED | — | core unread; pair w/ M10b #1 |
-| 17 | Guilt as inner-being state | PARTIAL | DB, R2g, R1 | NOT STARTED | — | a'von core unread; M03 (pu.qah) |
-| 18 | Iniquity as accumulated crime | PARTIAL | DB | NOT STARTED | — | a'von (207) core unread; accumulation = data-shape |
-| 19 | Transgression boundary-crossing | PARTIAL | DB, R2p, R1 | NOT STARTED | — | pe'sha/pa'sha core unread |
-| 20 | Faithlessness | RINGS | DB, R1 | NOT STARTED | — | M13/M31 home call |
-| 21 | Perversion as inner inversion | RINGS | DB, R1, R2p, R3 | NOT STARTED | — | R3 heterogeneous; cha.val re-gloss; M03/M07/M23/M35 |
-| 22 | Injustice | RINGS | DB, R2p | NOT STARTED | — | M26 home call |
+| 1 | Wilful sinning | COMPLETE | DB, HA, HM, R2p | NOT STARTED | — | intent-marker per-occurrence (lexical read done) |
+| 2 | Unintentional sinning | COMPLETE | DB, HA | NOT STARTED | — | intent/awareness distinction (Lev "if anyone sins" read) |
+| 3 | Confession | COMPLETE | DB, HA, HM | NOT STARTED | — | shared w/ M11 (home call) |
+| 4 | Conscience suppression | COMPLETE | DB, HA, HM | NOT STARTED | — | conscience-seat thin (read confirms) |
+| 5 | Refusal to repent | COMPLETE | DB, HA, HM | NOT STARTED | — | M11 seam |
+| 6 | Habitual defection | COMPLETE | DB, HA, HM | NOT STARTED | — | over-time = data-shape (narrative read still owed) |
+| 7 | Contagious sin | COMPLETE | DB, HA | NOT STARTED | — | relational transmission = data-shape |
+| 8 | Political revolt | COMPLETE | DB, PE | NOT STARTED | — | political vs God-ward rebellion split (§10) |
+| 9 | Sinful speech | COMPLETE | DB, R2p | NOT STARTED | — | reconcile w/ M10b #6 (verb); M06 |
+| 10 | Specialised mechanisms | COMPLETE | DB, R1 | NOT STARTED | — | tiny corpus; M14/M08/M31 home calls |
+| 11 | Sin as universal condition | COMPLETE | DB, HM, HA, R2p | NOT STARTED | — | status-candidate flagship |
+| 12 | Sin as enslaving power | COMPLETE | DB, HM | NOT STARTED | — | Romans dominion register read (HM face a) |
+| 13 | Sin as divine record | COMPLETE | DB, HA, AV | NOT STARTED | — | largest DB (528); written/recorded register read |
+| 14 | Forgiveness sought/received | COMPLETE | DB, HA, HM, R4 | NOT STARTED | — | chat.tat sin-offering + kip.pu.rim read; split w/ M11 |
+| 15 | Generational sin | COMPLETE | DB, HA, AV | NOT STARTED | — | lineage/visiting-iniquity read; over-time = data-shape |
+| 16 | The sinner as moral character | COMPLETE | DB, HM, HA | NOT STARTED | — | pair w/ M10b #1 (hamartōlos/chat.ta read) |
+| 17 | Guilt as inner-being state | COMPLETE | DB, AV, R2g, R1 | NOT STARTED | — | a'von guilt-sense read; M03 (pu.qah) |
+| 18 | Iniquity as accumulated crime | COMPLETE | DB, AV | NOT STARTED | — | accumulation/measure register read; data-shape tail |
+| 19 | Transgression boundary-crossing | COMPLETE | DB, PE, R2p, R1 | NOT STARTED | — | pe'sha/pa'sha read; status/action split (§10) |
+| 20 | Faithlessness | COMPLETE | DB, R1 | NOT STARTED | — | M13/M31 home call |
+| 21 | Perversion as inner inversion | COMPLETE | DB, R1, R2p, R3 | NOT STARTED | — | R3 heterogeneous; cha.val re-gloss; M03/M07/M23/M35 |
+| 22 | Injustice | COMPLETE | DB, R2p | NOT STARTED | — | M26 home call |
 
 ## Tracker — M10b Wickedness, Evil, Abomination
 | # | Unit | (A) | Evidence file(s) | (B) | Synthesis file(s) | Key remaining gap |
@@ -85,9 +89,11 @@
 
 ---
 
-## Status roll-up (2026-06-23)
-- **(A) Evidence:** COMPLETE 6 (all M10b) · RINGS 5 · PARTIAL 6 · DB-ONLY 13 · SCRATCH 2.
-- **(B) Synthesis:** NOT STARTED 32/32 (gated).
-- **To move the needle:** the **M10 core read** flips 13 DB-ONLY + 6 PARTIAL toward COMPLETE; the **M10c clean read** flips its 4; the **§10 gate** then unlocks (B) for the 6 already-COMPLETE M10b units first.
+## Status roll-up (2026-06-23, after the M10 CORE read)
+- **(A) Evidence:** COMPLETE **28** (all M10 ×22 + all M10b ×6) · SCRATCH 2 (M10c #1/#2) · DB-ONLY 2 (M10c #3/#4).
+- **(B) Synthesis:** NOT STARTED 32/32 (gated behind §10).
+- **What's left for (A):** only **M10c** (4 units, ~263 occ) — the clean read (discard scratch). Then the family's evidence-gathering is complete.
+- **Residual within the COMPLETE M10 units (not lexical gaps — different kinds):** (i) **data-shape** items needing a verse-narrative pass (over-time #6, lineage #15, transmission #7); (ii) **home calls** for the conceptually-shared units (#9/#20/#22/#10/#14 → M06/M13/M31/M26/M11) — a §10/synthesis decision, not more reading; (iii) flagged hygiene items (cha.val re-gloss; valence over-tag on political-revolt/sin-offering).
+- **Next:** finish **M10c clean read** → then the **§10 gate** (define characteristic/status/other) → then unlock (B) by-unit synthesis.
 
 *Living document — on completion of any evidence or synthesis file, record its filename in the relevant unit row and update the status column.*

@@ -1,0 +1,6257 @@
+{
+ "_meta": {
+  "source": "Sessions-v2\\M10-Sin\\findings\\wa-m10-corpus-1904verses-v1_0-20260622.json",
+  "built": "2026-06-23",
+  "note": "mechanical assembly for CC evidence reading; no conclusions"
+ },
+ "summary": {
+  "group": "hamart",
+  "strongs": [
+   "G0264",
+   "G0265",
+   "G0266",
+   "G0268"
+  ],
+  "focus_occ": 191,
+  "unique_verses": 187,
+  "book_spread": {
+   "Mat": 15,
+   "Mar": 13,
+   "Luk": 32,
+   "Joh": 21,
+   "Act": 9,
+   "Rom": 48,
+   "Gal": 4,
+   "Eph": 2,
+   "Col": 1,
+   "1Th": 1,
+   "1Ti": 5,
+   "2Ti": 1,
+   "Tit": 1,
+   "Heb": 11,
+   "1Pe": 2,
+   "2Pe": 1,
+   "1Jo": 7
+  },
+  "type": {
+   "status": 109,
+   "quality": 45,
+   "action": 37
+  },
+  "sense_top": {
+   "sin": 66,
+   "sins": 54,
+   "sinners": 29,
+   "sinned": 12,
+   "sinner": 12,
+   "sinning": 8,
+   "sinful": 7,
+   "Sin": 1,
+   "guilt": 1,
+   "offense": 1
+  },
+  "faculty": {
+   "volition": 191
+  },
+  "valence": {
+   "sinful": 183,
+   "forbidden": 5,
+   "neutral": 3
+  },
+  "object_type": {
+   "(none)": 154,
+   "abstract": 27,
+   "person": 7,
+   "God": 3
+  },
+  "compound_roles": {
+   "partner": 256,
+   "qualifier": 30,
+   "co-seated": 13
+  },
+  "co_seated_tally": {
+   "pneuma": 4,
+   "sarx": 3,
+   "nous": 2,
+   "psuchē": 2,
+   "kardia": 1,
+   "suneidesis": 1
+  }
+ },
+ "verses": [
+  {
+   "ref": "Mat 1:21",
+   "text": "Mat 1:21 She will bear a son , and you shall call his name Jesus , for he will save his people from their sins .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "kaleō \"to call: call\" — partner",
+      "sōzō \"to save\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    },
+    {
+     "translit": "sōzō",
+     "gloss": "to save",
+     "cluster": "M38",
+     "strong": "G4982"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 3:6",
+   "text": "Mat 3:6 and they were baptized by him in the river Jordan , confessing their sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mat 9:2",
+   "text": "Mat 9:2 And behold , some people brought to him a paralytic , lying on a bed . And when Jesus saw their faith , he said to the paralytic , “Take heart , my son ; your sins are forgiven .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "pistis \"faith\" — partner",
+      "tharseō \"take heart\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "tharseō",
+     "gloss": "take heart",
+     "cluster": "M23",
+     "strong": "G2293"
+    },
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 9:5",
+   "text": "Mat 9:5 For which is easier , to say , ‘Your sins are forgiven ,’ or to say , ‘ Rise and walk ’?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 9:6",
+   "text": "Mat 9:6 But that you may know that the Son of Man has authority on earth to forgive sins ” —he then said to the paralytic — “ Rise , pick up your bed and go home .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "said (G3004)",
+     "object": "Rise",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "exousia \"authority\" — partner",
+      "afiēmi \"to release: forgive\" — partner",
+      "echō \"to have/be\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "exousia",
+     "gloss": "authority",
+     "cluster": "M23",
+     "strong": "G1849"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 9:10",
+   "text": "Mat 9:10 And as Jesus reclined at table in the house , behold , many tax collectors and sinners came and were reclining with Jesus and his disciples .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "reclining (G4873)",
+     "object": "Jesus",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mat 9:11",
+   "text": "Mat 9:11 And when the Pharisees saw this, they said to his disciples , “ Why does your teacher eat with tax collectors and sinners ?”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "eat (G2068)",
+     "object": "tax collectors",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mat 9:13",
+   "text": "Mat 9:13 Go and learn what this means : ‘I desire mercy , and not sacrifice .’ For I came not to call the righteous , but sinners .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "thelō \"to will/desire\" — partner",
+      "eleos \"mercy\" — partner",
+      "dikaios \"just\" — partner",
+      "kaleō \"to call: call\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    },
+    {
+     "translit": "thelō",
+     "gloss": "to will/desire",
+     "cluster": "M29",
+     "strong": "G2309"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    },
+    {
+     "translit": "eleos",
+     "gloss": "mercy",
+     "cluster": "M05",
+     "strong": "G1656"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 11:19",
+   "text": "Mat 11:19 The Son of Man came eating and drinking , and they say , ‘ Look at him ! A glutton and a drunkard , a friend of tax collectors and sinners !’ Yet wisdom is justified by her deeds .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "justified (G1344)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "sofia \"wisdom\" — partner",
+      "filos \"friendly/friend\" — partner",
+      "dikaioō \"to justify\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaioō",
+     "gloss": "to justify",
+     "cluster": "M26",
+     "strong": "G1344"
+    },
+    {
+     "translit": "filos",
+     "gloss": "friendly/friend",
+     "cluster": "M05",
+     "strong": "G5384"
+    },
+    {
+     "translit": "sofia",
+     "gloss": "wisdom",
+     "cluster": "M15",
+     "strong": "G4678"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 12:31",
+   "text": "Mat 12:31 Therefore I tell you , every sin and blasphemy will be forgiven people , but the blasphemy against the Spirit will not be forgiven .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "tell (G3004)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "pneuma \"spirit/breath: breath\" — co-seated",
+      "afiēmi \"to release: forgive\" — partner",
+      "blasfēmia \"blasphemy\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "blasfēmia",
+     "gloss": "blasphemy",
+     "cluster": "M10",
+     "strong": "G0988"
+    },
+    {
+     "translit": "pneuma",
+     "gloss": "spirit/breath: breath",
+     "cluster": "M25",
+     "strong": "G4151G"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 18:15",
+   "text": "Mat 18:15 “ If your brother sins against you , go and tell him his fault , between you and him alone . If he listens to you , you have gained your brother .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mat 18:21",
+   "text": "Mat 18:21 Then Peter came up and said to him , “ Lord , how often will my brother sin against me , and I forgive him ? As many as seven times ?”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 26:28",
+   "text": "Mat 26:28 for this is my blood of the covenant , which is poured out for many for the forgiveness of sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "diathēkē \"covenant\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "diathēkē",
+     "gloss": "covenant",
+     "cluster": "M44",
+     "strong": "G1242"
+    },
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 26:45",
+   "text": "Mat 26:45 Then he came to the disciples and said to them , “ Sleep and take your rest later on . See , the hour is at hand , and the Son of Man is betrayed into the hands of sinners .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "betrayed (G3860)",
+     "object": "hands",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mat 27:4",
+   "text": "Mat 27:4 saying , “I have sinned by betraying innocent blood .” They said , “ What is that to us ? See to it yourself .”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "innocent",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mar 1:4",
+   "text": "Mar 1:4 John appeared , baptizing in the wilderness and proclaiming a baptism of repentance for the forgiveness of sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 1:5",
+   "text": "Mar 1:5 And all the country of Judea and all Jerusalem were going out to him and were being baptized by him in the river Jordan , confessing their sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mar 2:5",
+   "text": "Mar 2:5 And when Jesus saw their faith , he said to the paralytic , “ Son , your sins are forgiven .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "pistis \"faith\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 2:7",
+   "text": "Mar 2:7 “ Why does this man speak like that? He is blaspheming ! Who can forgive sins but God alone ?”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "can (G1410)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "afiēmi \"to release: forgive\" — partner",
+      "blasfēmia \"blasphemy\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "blasfēmia",
+     "gloss": "blasphemy",
+     "cluster": "M10",
+     "strong": "G0988"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 2:9",
+   "text": "Mar 2:9 Which is easier , to say to the paralytic , ‘ Your sins are forgiven ,’ or to say , ‘ Rise , take up your bed and walk ’?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 2:10",
+   "text": "Mar 2:10 But that you may know that the Son of Man has authority on earth to forgive sins ” —he said to the paralytic —",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "said (G3004)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "exousia \"authority\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "exousia",
+     "gloss": "authority",
+     "cluster": "M23",
+     "strong": "G1849"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 2:15",
+   "text": "Mar 2:15 And as he reclined at table in his house , many tax collectors and sinners were reclining with Jesus and his disciples , for there were many who followed him .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mar 2:16",
+   "text": "Mar 2:16 And the scribes of the Pharisees , when they saw that he was eating with sinners and tax collectors , said to his disciples , “ Why does he eat with tax collectors and sinners ?”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "eating (G2068)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Mar 2:17",
+   "text": "Mar 2:17 And when Jesus heard it, he said to them , “Those who are well have no need of a physician , but those who are sick . I came not to call the righteous , but sinners .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "dikaios \"just\" — partner",
+      "kaleō \"to call: call\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 3:28",
+   "text": "Mar 3:28 “ Truly , I say to you , all sins will be forgiven the children of man , and whatever blasphemies they utter ,",
+   "focus": [
+    {
+     "translit": "hamartēma",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": "children",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "afiēmi \"to release: forgive\" — partner",
+      "blasfēmia \"blasphemy\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "blasfēmia",
+     "gloss": "blasphemy",
+     "cluster": "M10",
+     "strong": "G0988"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 3:29",
+   "text": "Mar 3:29 but whoever blasphemes against the Holy Spirit never has forgiveness , but is guilty of an eternal sin ” —",
+   "focus": [
+    {
+     "translit": "hamartēma",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "is (G1510)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "hagios \"holy\" — partner",
+      "pneuma \"spirit/breath: breath\" — co-seated",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "hagios",
+     "gloss": "holy",
+     "cluster": "M22",
+     "strong": "G0040G"
+    },
+    {
+     "translit": "pneuma",
+     "gloss": "spirit/breath: breath",
+     "cluster": "M25",
+     "strong": "G4151G"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 8:38",
+   "text": "Mar 8:38 For whoever is ashamed of me and of my words in this adulterous and sinful generation , of him will the Son of Man also be ashamed when he comes in the glory of his Father with the holy angels .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "hagios \"holy\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "hagios",
+     "gloss": "holy",
+     "cluster": "M22",
+     "strong": "G0040G"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 14:41",
+   "text": "Mar 14:41 And he came the third time and said to them , “Are you still sleeping and taking your rest ? It is enough ; the hour has come . The Son of Man is betrayed into the hands of sinners .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "betrayed (G3860)",
+     "object": "hands",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 1:77",
+   "text": "Luk 1:77 to give knowledge of salvation to his people in the forgiveness of their sins ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "afesis \"forgiveness\" — partner",
+      "sōtēria \"salvation\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "soteria",
+     "gloss": "salvation",
+     "cluster": "M38",
+     "strong": "G4991"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 3:3",
+   "text": "Luk 3:3 And he went into all the region around the Jordan , proclaiming a baptism of repentance for the forgiveness of sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 5:8",
+   "text": "Luk 5:8 But when Simon Peter saw it, he fell down at Jesus ’ knees , saying , “ Depart from me , for I am a sinful man , O Lord .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 5:20",
+   "text": "Luk 5:20 And when he saw their faith , he said , “ Man , your sins are forgiven you .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "pistis \"faith\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 5:21",
+   "text": "Luk 5:21 And the scribes and the Pharisees began to question , saying , “ Who is this who speaks blasphemies ? Who can forgive sins but God alone ?”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "can (G1410)",
+     "object": "forgive",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "dialogizomai \"to discuss\" — partner",
+      "archō \"be first\" — partner",
+      "afiēmi \"to release: forgive\" — partner",
+      "blasfēmia \"blasphemy\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "dialogizomai",
+     "gloss": "to discuss",
+     "cluster": "M15",
+     "strong": "G1260"
+    },
+    {
+     "translit": "blasfēmia",
+     "gloss": "blasphemy",
+     "cluster": "M10",
+     "strong": "G0988"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 5:23",
+   "text": "Luk 5:23 Which is easier , to say , ‘ Your sins are forgiven you ,’ or to say , ‘ Rise and walk ’?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 5:24",
+   "text": "Luk 5:24 But that you may know that the Son of Man has authority on earth to forgive sins ” —he said to the man who was paralyzed — “I say to you , rise , pick up your bed and go home.”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "said (G2036)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "exousia \"authority\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "exousia",
+     "gloss": "authority",
+     "cluster": "M23",
+     "strong": "G1849"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 5:30",
+   "text": "Luk 5:30 And the Pharisees and their scribes grumbled at his disciples , saying , “ Why do you eat and drink with tax collectors and sinners ?”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "drink (G4095)",
+     "object": "tax collectors",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 5:32",
+   "text": "Luk 5:32 I have not come to call the righteous but sinners to repentance .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "come (G2064)",
+     "object": "call",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "dikaios \"just\" — partner",
+      "kaleō \"to call: call\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 6:32",
+   "text": "Luk 6:32 “ If you love those who love you , what benefit is that to you ? For even sinners love those who love them .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "love (G0025)",
+     "object": "them",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "agapaō \"to love\" — partner",
+      "charis \"grace\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "agapaō",
+     "gloss": "to love",
+     "cluster": "M05",
+     "strong": "G0025"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 6:33",
+   "text": "Luk 6:33 And if you do good to those who do good to you , what benefit is that to you ? For even sinners do the same .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "do (G4160)",
+     "object": "same",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "agathopoieō \"to do good\" — partner",
+      "charis \"grace\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "agathopoieō",
+     "gloss": "to do good",
+     "cluster": "M05",
+     "strong": "G0015"
+    },
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 6:34",
+   "text": "Luk 6:34 And if you lend to those from whom you expect to receive , what credit is that to you ? Even sinners lend to sinners , to get back the same amount .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "lend (G1155)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "elpizo \"to hope/expect\" — partner",
+      "charis \"grace\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "elpizo",
+     "gloss": "to hope/expect",
+     "cluster": "M18",
+     "strong": "G1679"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 7:34",
+   "text": "Luk 7:34 The Son of Man has come eating and drinking , and you say , ‘ Look at him ! A glutton and a drunkard , a friend of tax collectors and sinners !’",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "filos \"friendly/friend\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "filos",
+     "gloss": "friendly/friend",
+     "cluster": "M05",
+     "strong": "G5384"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 7:37",
+   "text": "Luk 7:37 And behold , a woman of the city , who was a sinner , when she learned that he was reclining at table in the Pharisee’s house , brought an alabaster flask of ointment ,",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 7:39",
+   "text": "Luk 7:39 Now when the Pharisee who had invited him saw this, he said to himself , “ If this man were a prophet , he would have known who and what sort of woman this is who is touching him , for she is a sinner .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "kaleō \"to call: call\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 7:47",
+   "text": "Luk 7:47 Therefore I tell you , her sins , which are many , are forgiven — for she loved much . But he who is forgiven little , loves little .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "tell (G3004)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "agapaō \"to love\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "agapaō",
+     "gloss": "to love",
+     "cluster": "M05",
+     "strong": "G0025"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 7:48",
+   "text": "Luk 7:48 And he said to her , “ Your sins are forgiven .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgiven (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 7:49",
+   "text": "Luk 7:49 Then those who were at table with him began to say among themselves , “ Who is this , who even forgives sins ?”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgives (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "archō \"be first\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 11:4",
+   "text": "Luk 11:4 and forgive us our sins , for we ourselves forgive everyone who is indebted to us . And lead us not into temptation .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgive (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "afiēmi \"to release: forgive\" — partner",
+      "peirasmos \"temptation/testing: temptation\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "peirasmos",
+     "gloss": "temptation/testing: temptation",
+     "cluster": "M35",
+     "strong": "G3986G"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 13:2",
+   "text": "Luk 13:2 And he answered them , “Do you think that these Galileans were worse sinners than all the other Galileans , because they suffered in this way ?",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 15:1",
+   "text": "Luk 15:1 Now the tax collectors and sinners were all drawing near to hear him .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 15:2",
+   "text": "Luk 15:2 And the Pharisees and the scribes grumbled , saying , “This man receives sinners and eats with them .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "receives (G4327)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 15:7",
+   "text": "Luk 15:7 Just so , I tell you , there will be more joy in heaven over one sinner who repents than over ninety-nine righteous persons who need no repentance .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "metanoeo \"to repent\" — partner",
+      "chara \"joy\" — partner",
+      "dikaios \"just\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "chara",
+     "gloss": "joy",
+     "cluster": "M04",
+     "strong": "G5479"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 15:10",
+   "text": "Luk 15:10 Just so , I tell you , there is joy before the angels of God over one sinner who repents .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoeo \"to repent\" — partner",
+      "chara \"joy\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "chara",
+     "gloss": "joy",
+     "cluster": "M04",
+     "strong": "G5479"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 15:18",
+   "text": "Luk 15:18 I will arise and go to my father , and I will say to him , “ Father , I have sinned against heaven and before you .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "heaven",
+     "object_type": "God",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 15:21",
+   "text": "Luk 15:21 And the son said to him , ‘ Father , I have sinned against heaven and before you . I am no longer worthy to be called your son .’",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "heaven",
+     "object_type": "God",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "kaleō \"to call: call\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 17:3",
+   "text": "Luk 17:3 Pay attention to yourselves ! If your brother sins , rebuke him , and if he repents , forgive him ,",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "rebuke",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "metanoeo \"to repent\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 17:4",
+   "text": "Luk 17:4 and if he sins against you seven times in the day , and turns to you seven times , saying , ‘I repent ,’ you must forgive him .”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "metanoeo \"to repent\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 18:13",
+   "text": "Luk 18:13 But the tax collector , standing far off , would not even lift up his eyes to heaven , but beat his breast , saying , ‘ God , be merciful to me , a sinner !’",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "merciful (G2433)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": "hilaskomai \"to propitiate\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "hilaskomai",
+     "gloss": "to propitiate",
+     "cluster": "M38",
+     "strong": "G2433"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 19:7",
+   "text": "Luk 19:7 And when they saw it, they all grumbled , “He has gone in to be the guest of a man who is a sinner .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "in (G1525)",
+     "object": "guest",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 24:7",
+   "text": "Luk 24:7 that the Son of Man must be delivered into the hands of sinful men and be crucified and on the third day rise .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "must (G1163)",
+     "object": "delivered",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Luk 24:47",
+   "text": "Luk 24:47 and that repentance for the forgiveness of sins should be proclaimed in his name to all nations , beginning from Jerusalem .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 1:29",
+   "text": "Joh 1:29 The next day he saw Jesus coming toward him , and said , “ Behold , the Lamb of God , who takes away the sin of the world !",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 5:14",
+   "text": "Joh 5:14 Afterward Jesus found him in the temple and said to him , “ See , you are well ! Sin no more , that nothing worse may happen to you .”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "Sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "forbidden",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 8:11",
+   "text": "Joh 8:11 She said , “ No one , Lord .” And Jesus said , “ Neither do I condemn you ; go , and from now on sin no more .” ]]",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "forbidden",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "kurios \"lord: master\" — partner",
+      "katakrinō \"to condemn\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "katakrinō",
+     "gloss": "to condemn",
+     "cluster": "M26",
+     "strong": "G2632"
+    },
+    {
+     "translit": "kurios",
+     "gloss": "lord: master",
+     "cluster": "M23",
+     "strong": "G2962H"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 8:21",
+   "text": "Joh 8:21 So he said to them again , “ I am going away , and you will seek me , and you will die in your sin . Where I am going , you cannot come .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "die (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 8:24",
+   "text": "Joh 8:24 I told you that you would die in your sins , for unless you believe that I am he you will die in your sins .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "die (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 8:34",
+   "text": "Joh 8:34 Jesus answered them , “ Truly , truly , I say to you , everyone who practices sin is a slave to sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "is (G1510)",
+     "object": "slave",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 8:46",
+   "text": "Joh 8:46 Which one of you convicts me of sin ? If I tell the truth , why do you not believe me ?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "convicts (G1651)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "alētheia \"truth\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "alētheia",
+     "gloss": "truth",
+     "cluster": "M13",
+     "strong": "G0225"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 9:2",
+   "text": "Joh 9:2 And his disciples asked him , “ Rabbi , who sinned , this man or his parents , that he was born blind ?”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "man",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "tuflos \"blind\" — partner",
+      "erōtaō \"to ask\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "erōtaō",
+     "gloss": "to ask",
+     "cluster": "M21",
+     "strong": "G2065"
+    },
+    {
+     "translit": "tuflos",
+     "gloss": "blind",
+     "cluster": "M24",
+     "strong": "G5185"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 9:3",
+   "text": "Joh 9:3 Jesus answered , “It was not that this man sinned , or his parents , but that the works of God might be displayed in him .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "parents",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 9:16",
+   "text": "Joh 9:16 Some of the Pharisees said , “ This man is not from God , for he does not keep the Sabbath .” But others said , “ How can a man who is a sinner do such signs ?” And there was a division among them .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "can (G1410)",
+     "object": "man",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 9:24",
+   "text": "Joh 9:24 So for the second time they called the man who had been blind and said to him , “ Give glory to God . We know that this man is a sinner .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "tuflos \"blind\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "tuflos",
+     "gloss": "blind",
+     "cluster": "M24",
+     "strong": "G5185"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 9:25",
+   "text": "Joh 9:25 He answered , “ Whether he is a sinner I do not know . One thing I do know , that though I was blind , now I see .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "tuflos \"blind\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "tuflos",
+     "gloss": "blind",
+     "cluster": "M24",
+     "strong": "G5185"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 9:31",
+   "text": "Joh 9:31 We know that God does not listen to sinners , but if anyone is a worshiper of God and does his will , God listens to him .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "listen (G0191)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "theosebes \"godly\" — partner",
+      "thelēma \"will/desire\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "thelēma",
+     "gloss": "will/desire",
+     "cluster": "M29",
+     "strong": "G2307"
+    },
+    {
+     "translit": "theosebēs",
+     "gloss": "godly",
+     "cluster": "M21",
+     "strong": "G2318"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 9:34",
+   "text": "Joh 9:34 They answered him , “ You were born in utter sin , and would you teach us ?” And they cast him out .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "born (G1080)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 9:41",
+   "text": "Joh 9:41 Jesus said to them , “ If you were blind , you would have no guilt ; but now that you say , ‘We see ,’ your guilt remains .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "guilt",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "have (G2192)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": "tuflos \"blind\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "tuflos",
+     "gloss": "blind",
+     "cluster": "M24",
+     "strong": "G5185"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 15:22",
+   "text": "Joh 15:22 If I had not come and spoken to them , they would not have been guilty of sin , but now they have no excuse for their sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "guilty (G2192)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 15:24",
+   "text": "Joh 15:24 If I had not done among them the works that no one else did , they would not be guilty of sin , but now they have seen and hated both me and my Father .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "guilty (G2192)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 16:8",
+   "text": "Joh 16:8 And when he comes , he will convict the world concerning sin and righteousness and judgment :",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "convict (G1651)",
+     "object": "world",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "dikaiosunē \"righteousness\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 16:9",
+   "text": "Joh 16:9 concerning sin , because they do not believe in me ;",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "believe (G4100)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Joh 19:11",
+   "text": "Joh 19:11 Jesus answered him, “You would have no authority over me at all unless it had been given you from above . Therefore he who delivered me over to you has the greater sin .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "has (G2192)",
+     "object": "greater",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "exousia \"authority\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "exousia",
+     "gloss": "authority",
+     "cluster": "M23",
+     "strong": "G1849"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 20:23",
+   "text": "Joh 20:23 If you forgive the sins of any , they are forgiven them ; if you withhold forgiveness from any , it is withheld .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "forgive (G0863)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": "afiēmi \"to release: forgive\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    }
+   ]
+  },
+  {
+   "ref": "Act 2:38",
+   "text": "Act 2:38 And Peter said to them , “ Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins , and you will receive the gift of the Holy Spirit .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "receive (G2983)",
+     "object": "gift",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "metanoeo \"to repent\" — partner",
+      "hagios \"holy\" — partner",
+      "afesis \"forgiveness\" — partner",
+      "dōrea \"free gift\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    },
+    {
+     "translit": "dōrea",
+     "gloss": "free gift",
+     "cluster": "M38",
+     "strong": "G1431"
+    },
+    {
+     "translit": "hagios",
+     "gloss": "holy",
+     "cluster": "M22",
+     "strong": "G0040G"
+    }
+   ]
+  },
+  {
+   "ref": "Act 3:19",
+   "text": "Act 3:19 Repent therefore , and turn back , that your sins may be blotted out ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "turn back (G1994)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "metanoeo \"to repent\" — partner",
+      "exaleifō \"to blot out\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "exaleifō",
+     "gloss": "to blot out",
+     "cluster": "M11",
+     "strong": "G1813"
+    },
+    {
+     "translit": "metanoeo",
+     "gloss": "to repent",
+     "cluster": "M45",
+     "strong": "G3340"
+    }
+   ]
+  },
+  {
+   "ref": "Act 5:31",
+   "text": "Act 5:31 God exalted him at his right hand as Leader and Savior , to give repentance to Israel and forgiveness of sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "metanoia \"repentance\" — partner",
+      "sōtēr \"savior\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sōtēr",
+     "gloss": "savior",
+     "cluster": "M38",
+     "strong": "G4990"
+    },
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "metanoia",
+     "gloss": "repentance",
+     "cluster": "M45",
+     "strong": "G3341"
+    }
+   ]
+  },
+  {
+   "ref": "Act 7:60",
+   "text": "Act 7:60 And falling to his knees he cried out with a loud voice , “ Lord , do not hold this sin against them .” And when he had said this , he fell asleep .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "hold (G2476)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Act 10:43",
+   "text": "Act 10:43 To him all the prophets bear witness that everyone who believes in him receives forgiveness of sins through his name .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "afesis \"forgiveness\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    }
+   ]
+  },
+  {
+   "ref": "Act 13:38",
+   "text": "Act 13:38 Let it be known to you therefore , brothers , that through this man forgiveness of sins is proclaimed to you ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "proclaimed (G2605)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "afesis \"forgiveness\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    }
+   ]
+  },
+  {
+   "ref": "Act 22:16",
+   "text": "Act 22:16 And now why do you wait ? Rise and be baptized and wash away your sins , calling on his name .’",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "wash away (G0628)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Act 25:8",
+   "text": "Act 25:8 Paul argued in his defense , “ Neither against the law of the Jews , nor against the temple , nor against Caesar have I committed any offense .”",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "offense",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Act 26:18",
+   "text": "Act 26:18 to open their eyes , so that they may turn from darkness to light and from the power of Satan to God , that they may receive forgiveness of sins and a place among those who are sanctified by faith in me .’",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "exousia \"authority\" — partner",
+      "pistis \"faith\" — partner",
+      "afesis \"forgiveness\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    },
+    {
+     "translit": "exousia",
+     "gloss": "authority",
+     "cluster": "M23",
+     "strong": "G1849"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 2:12",
+   "text": "Rom 2:12 For all who have sinned without the law will also perish without the law , and all who have sinned under the law will be judged by the law .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "kai \"and\" — qualifier",
+      "krinō \"to judge\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "krinō",
+     "gloss": "to judge",
+     "cluster": "M26",
+     "strong": "G2919"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 3:7",
+   "text": "Rom 3:7 But if through my lie God’s truth abounds to his glory , why am I still being condemned as a sinner ?",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "condemned (G2919)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "alētheia \"truth\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "alētheia",
+     "gloss": "truth",
+     "cluster": "M13",
+     "strong": "G0225"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 3:9",
+   "text": "Rom 3:9 What then ? Are we Jews any better off? No , not at all . For we have already charged that all, both Jews and Greeks , are under sin ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "kai \"and\" — qualifier"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 3:20",
+   "text": "Rom 3:20 For by works of the law no human being will be justified in his sight , since through the law comes knowledge of sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "ek \"out from\" — qualifier",
+      "dikaioō \"to justify\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaioō",
+     "gloss": "to justify",
+     "cluster": "M26",
+     "strong": "G1344"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 3:23",
+   "text": "Rom 3:23 for all have sinned and fall short of the glory of God ,",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "glory",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "kai \"and\" — qualifier",
+      "doxa \"glory\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "doxa",
+     "gloss": "glory",
+     "cluster": "M22",
+     "strong": "G1391"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 3:25",
+   "text": "Rom 3:25 whom God put forward as a propitiation by his blood , to be received by faith . This was to show God’s righteousness , because in his divine forbearance he had passed over former sins .",
+   "focus": [
+    {
+     "translit": "hamartēma",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "pistis \"faith\" — partner",
+      "dikaiosunē \"righteousness\" — partner",
+      "hilastērios \"propitiation\" — partner",
+      "protithēmi \"to plan/present\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    },
+    {
+     "translit": "hilastērios",
+     "gloss": "propitiation",
+     "cluster": "M38",
+     "strong": "G2435"
+    },
+    {
+     "translit": "protithēmi",
+     "gloss": "to plan/present",
+     "cluster": "M15",
+     "strong": "G4388"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 4:7",
+   "text": "Rom 4:7 “ Blessed are those whose lawless deeds are forgiven , and whose sins are covered ;",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "covered (G1943)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "kai \"and\" — qualifier",
+      "anomia \"lawlessness\" — partner",
+      "afiēmi \"to release: forgive\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afiēmi",
+     "gloss": "to release: forgive",
+     "cluster": "M11",
+     "strong": "G0863H"
+    },
+    {
+     "translit": "anomia",
+     "gloss": "lawlessness",
+     "cluster": "M30",
+     "strong": "G0458"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 4:8",
+   "text": "Rom 4:8 blessed is the man against whom the Lord will not count his sin .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "count (G3049)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "logizomai \"to count\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "logizomai",
+     "gloss": "to count",
+     "cluster": "M26",
+     "strong": "G3049"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:8",
+   "text": "Rom 5:8 but God shows his love for us in that while we were still sinners , Christ died for us .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "died (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "agapē \"love\" — partner",
+      "de \"then\" — qualifier",
+      "christos \"Christ\" — qualifier"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "christos",
+     "gloss": "Christ",
+     "cluster": "T2",
+     "strong": "G5547"
+    },
+    {
+     "translit": "agapē",
+     "gloss": "love",
+     "cluster": "M05",
+     "strong": "G0026"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:12",
+   "text": "Rom 5:12 Therefore , just as sin came into the world through one man , and death through sin , and so death spread to all men because all sinned —",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "came (G1525)",
+     "object": "world",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "hamartanō \"to sin\" — partner"
+    },
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "hamartia \"sin\" — partner"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 5:13",
+   "text": "Rom 5:13 for sin indeed was in the world before the law was given, but sin is not counted where there is no law .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "de \"then\" — qualifier"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 5:14",
+   "text": "Rom 5:14 Yet death reigned from Adam to Moses , even over those whose sinning was not like the transgression of Adam , who was a type of the one who was to come .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "transgression",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "parabasis \"transgression\" — partner",
+      "basileuō \"to reign\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "parabasis",
+     "gloss": "transgression",
+     "cluster": "M10",
+     "strong": "G3847"
+    },
+    {
+     "translit": "basileuō",
+     "gloss": "to reign",
+     "cluster": "M23",
+     "strong": "G0936"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:16",
+   "text": "Rom 5:16 And the free gift is not like the result of that one man’s sin . For the judgment following one trespass brought condemnation , but the free gift following many trespasses brought justification .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "judgment",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "de \"then\" — qualifier",
+      "dikaiōma \"righteous act\" — partner",
+      "ek \"out from\" — qualifier",
+      "paraptōma \"trespass\" — partner",
+      "charisma \"gift\" — partner",
+      "dōrēma \"free gift\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaiōma",
+     "gloss": "righteous act",
+     "cluster": "M26",
+     "strong": "G1345"
+    },
+    {
+     "translit": "paraptōma",
+     "gloss": "trespass",
+     "cluster": "M10",
+     "strong": "G3900"
+    },
+    {
+     "translit": "dōrēma",
+     "gloss": "free gift",
+     "cluster": "M38",
+     "strong": "G1434"
+    },
+    {
+     "translit": "charisma",
+     "gloss": "gift",
+     "cluster": "M39",
+     "strong": "G5486"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:19",
+   "text": "Rom 5:19 For as by the one man’s disobedience the many were made sinners , so by the one man’s obedience the many will be made righteous .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "made (G2525)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "parakoē \"disobedience\" — partner",
+      "hupakoē \"obedience\" — partner",
+      "dikaios \"just\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "parakoē",
+     "gloss": "disobedience",
+     "cluster": "M30",
+     "strong": "G3876"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    },
+    {
+     "translit": "hupakoē",
+     "gloss": "obedience",
+     "cluster": "M09",
+     "strong": "G5218"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:20",
+   "text": "Rom 5:20 Now the law came in to increase the trespass , but where sin increased , grace abounded all the more ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "increased (G4121)",
+     "object": "grace",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "de \"then\" — qualifier",
+      "charis \"grace\" — partner",
+      "paraptōma \"trespass\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "paraptōma",
+     "gloss": "trespass",
+     "cluster": "M10",
+     "strong": "G3900"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 5:21",
+   "text": "Rom 5:21 so that , as sin reigned in death , grace also might reign through righteousness leading to eternal life through Jesus Christ our Lord .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "reigned (G0936)",
+     "object": "death",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "charis \"grace\" — partner",
+      "dikaiosunē \"righteousness\" — partner",
+      "basileuō \"to reign\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    },
+    {
+     "translit": "basileuō",
+     "gloss": "to reign",
+     "cluster": "M23",
+     "strong": "G0936"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:1",
+   "text": "Rom 6:1 What shall we say then ? Are we to continue in sin that grace may abound ?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "continue (G1961)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "charis \"grace\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:2",
+   "text": "Rom 6:2 By no means ! How can we who died to sin still live in it ?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "died (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 6:6",
+   "text": "Rom 6:6 We know that our old self was crucified with him in order that the body of sin might be brought to nothing , so that we would no longer be enslaved to sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "brought to nothing (G2673)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "douleuō \"be a slave\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "douleuō",
+     "gloss": "be a slave",
+     "cluster": "M36",
+     "strong": "G1398"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:7",
+   "text": "Rom 6:7 For one who has died has been set free from sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "set free (G1344)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "dikaioō \"to justify\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaioō",
+     "gloss": "to justify",
+     "cluster": "M26",
+     "strong": "G1344"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:10",
+   "text": "Rom 6:10 For the death he died he died to sin , once for all, but the life he lives he lives to God .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "died (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "de \"then\" — qualifier"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 6:11",
+   "text": "Rom 6:11 So you also must consider yourselves dead to sin and alive to God in Christ Jesus .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "consider (G3049)",
+     "object": "dead",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "de \"then\" — qualifier",
+      "logizomai \"to count\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "logizomai",
+     "gloss": "to count",
+     "cluster": "M26",
+     "strong": "G3049"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:12",
+   "text": "Rom 6:12 Let not sin therefore reign in your mortal body , to make you obey its passions .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "reign (G0936)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "epithumia \"desire\" — partner",
+      "basileuō \"to reign\" — partner",
+      "hupakouō \"to obey\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "epithumia",
+     "gloss": "desire",
+     "cluster": "M28",
+     "strong": "G1939"
+    },
+    {
+     "translit": "basileuō",
+     "gloss": "to reign",
+     "cluster": "M23",
+     "strong": "G0936"
+    },
+    {
+     "translit": "hupakouō",
+     "gloss": "to obey",
+     "cluster": "M09",
+     "strong": "G5219"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:13",
+   "text": "Rom 6:13 Do not present your members to sin as instruments for unrighteousness , but present yourselves to God as those who have been brought from death to life , and your members to God as instruments for righteousness .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "present (G3936)",
+     "object": "members",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "adikia \"unrighteousness\" — partner",
+      "dikaiosunē \"righteousness\" — partner",
+      "ek \"out from\" — qualifier"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "adikia",
+     "gloss": "unrighteousness",
+     "cluster": "M10b",
+     "strong": "G0093"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:14",
+   "text": "Rom 6:14 For sin will have no dominion over you , since you are not under law but under grace .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "dominion (G2961)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "charis \"grace\" — partner",
+      "kurieuō \"to lord over\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "kurieuō",
+     "gloss": "to lord over",
+     "cluster": "M23",
+     "strong": "G2961"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:15",
+   "text": "Rom 6:15 What then ? Are we to sin because we are not under law but under grace ? By no means !",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "forbidden",
+     "experiencer": "self",
+     "compound": "charis \"grace\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:16",
+   "text": "Rom 6:16 Do you not know that if you present yourselves to anyone as obedient slaves , you are slaves of the one whom you obey , either of sin , which leads to death , or of obedience , which leads to righteousness ?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "obey (G5219)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "dikaiosunē \"righteousness\" — partner",
+      "oida \"to know\" — partner",
+      "hupakoē \"obedience\" — partner",
+      "doulos \"slave\" — partner",
+      "hupakouō \"to obey\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "doulos",
+     "gloss": "slave",
+     "cluster": "M36",
+     "strong": "G1401"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    },
+    {
+     "translit": "oida",
+     "gloss": "to know",
+     "cluster": "M15",
+     "strong": "G6063"
+    },
+    {
+     "translit": "hupakoē",
+     "gloss": "obedience",
+     "cluster": "M09",
+     "strong": "G5218"
+    },
+    {
+     "translit": "hupakouō",
+     "gloss": "to obey",
+     "cluster": "M09",
+     "strong": "G5219"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:17",
+   "text": "Rom 6:17 But thanks be to God , that you who were once slaves of sin have become obedient from the heart to the standard of teaching to which you were committed ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "become obedient (G5219)",
+     "object": "heart",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "kardia \"heart\" — co-seated",
+      "de \"then\" — qualifier",
+      "charis \"grace\" — partner",
+      "ek \"out from\" — qualifier",
+      "doulos \"slave\" — partner",
+      "hupakouō \"to obey\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "doulos",
+     "gloss": "slave",
+     "cluster": "M36",
+     "strong": "G1401"
+    },
+    {
+     "translit": "charis",
+     "gloss": "grace",
+     "cluster": "M39",
+     "strong": "G5485"
+    },
+    {
+     "translit": "kardia",
+     "gloss": "heart",
+     "cluster": "M47",
+     "strong": "G2588"
+    },
+    {
+     "translit": "hupakouō",
+     "gloss": "to obey",
+     "cluster": "M09",
+     "strong": "G5219"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:18",
+   "text": "Rom 6:18 and, having been set free from sin , have become slaves of righteousness .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "become slaves (G1402)",
+     "object": "righteousness",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "de \"then\" — qualifier",
+      "dikaiosunē \"righteousness\" — partner",
+      "douloō \"to enslave\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "douloō",
+     "gloss": "to enslave",
+     "cluster": "M36",
+     "strong": "G1402"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:20",
+   "text": "Rom 6:20 For when you were slaves of sin , you were free in regard to righteousness .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "were (G1510)",
+     "object": "righteousness",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "dikaiosunē \"righteousness\" — partner",
+      "doulos \"slave\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "doulos",
+     "gloss": "slave",
+     "cluster": "M36",
+     "strong": "G1401"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:22",
+   "text": "Rom 6:22 But now that you have been set free from sin and have become slaves of God , the fruit you get leads to sanctification and its end , eternal life .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "de \"then\" — qualifier",
+      "hagiasmos \"holiness\" — partner",
+      "douloō \"to enslave\" — partner",
+      "echō \"to have/be\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "douloō",
+     "gloss": "to enslave",
+     "cluster": "M36",
+     "strong": "G1402"
+    },
+    {
+     "translit": "hagiasmos",
+     "gloss": "holiness",
+     "cluster": "M22",
+     "strong": "G0038"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:23",
+   "text": "Rom 6:23 For the wages of sin is death , but the free gift of God is eternal life in Christ Jesus our Lord .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "de \"then\" — qualifier",
+      "charisma \"gift\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "charisma",
+     "gloss": "gift",
+     "cluster": "M39",
+     "strong": "G5486"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:5",
+   "text": "Rom 7:5 For while we were living in the flesh , our sinful passions , aroused by the law , were at work in our members to bear fruit for death .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sinful",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "were (G1510)",
+     "object": "flesh",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "sarx \"flesh\" — co-seated",
+      "energeō \"be active\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "energeō",
+     "gloss": "be active",
+     "cluster": "M23",
+     "strong": "G1754"
+    },
+    {
+     "translit": "sarx",
+     "gloss": "flesh",
+     "cluster": "M47",
+     "strong": "G4561"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:7",
+   "text": "Rom 7:7 What then shall we say ? That the law is sin ? By no means ! Yet if it had not been for the law , I would not have known sin . For I would not have known what it is to covet if the law had not said , “You shall not covet .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "say (G4483)",
+     "object": "law",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "epithumia \"desire\" — partner",
+      "epithumeō \"to long for\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "epithumeō",
+     "gloss": "to long for",
+     "cluster": "M18",
+     "strong": "G1937"
+    },
+    {
+     "translit": "epithumia",
+     "gloss": "desire",
+     "cluster": "M28",
+     "strong": "G1939"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:8",
+   "text": "Rom 7:8 But sin , seizing an opportunity through the commandment , produced in me all kinds of covetousness . For apart from the law , sin lies dead .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "epithumia \"desire\" — partner",
+      "de \"then\" — qualifier"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "epithumia",
+     "gloss": "desire",
+     "cluster": "M28",
+     "strong": "G1939"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:9",
+   "text": "Rom 7:9 I was once alive apart from the law , but when the commandment came , sin came alive and I died .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "came alive (G0326)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "de \"then\" — qualifier"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 7:11",
+   "text": "Rom 7:11 For sin , seizing an opportunity through the commandment , deceived me and through it killed me.",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 7:13",
+   "text": "Rom 7:13 Did that which is good , then, bring death to me ? By no means ! It was sin , producing death in me through what is good , in order that sin might be shown to be sin , and through the commandment might become sinful beyond measure .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinful",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "agathos \"good\" — partner",
+      "hamartia \"sin\" — partner"
+     ]
+    },
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "bring (G1096)",
+     "object": "death",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "agathos \"good\" — partner",
+      "hamartōlos \"sinful\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "agathos",
+     "gloss": "good",
+     "cluster": "M05",
+     "strong": "G0018"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:14",
+   "text": "Rom 7:14 For we know that the law is spiritual , but I am of the flesh , sold under sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "am (G1510)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "sarkikos \"fleshly\" — partner",
+      "de \"then\" — qualifier",
+      "oida \"to know\" — partner",
+      "pneumatikos \"spiritual\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "oida",
+     "gloss": "to know",
+     "cluster": "M15",
+     "strong": "G6063"
+    },
+    {
+     "translit": "pneumatikos",
+     "gloss": "spiritual",
+     "cluster": "M43",
+     "strong": "G4152"
+    },
+    {
+     "translit": "sarkikos",
+     "gloss": "fleshly",
+     "cluster": "M28",
+     "strong": "G4559"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:17",
+   "text": "Rom 7:17 So now it is no longer I who do it , but sin that dwells within me .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "do (G2716)",
+     "object": "it",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "de \"then\" — qualifier"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Rom 7:20",
+   "text": "Rom 7:20 Now if I do what I do not want , it is no longer I who do it , but sin that dwells within me .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "do (G2716)",
+     "object": "it",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "de \"then\" — qualifier",
+      "thelō \"to will/desire\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "thelō",
+     "gloss": "to will/desire",
+     "cluster": "M29",
+     "strong": "G2309"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:23",
+   "text": "Rom 7:23 but I see in my members another law waging war against the law of my mind and making me captive to the law of sin that dwells in my members .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "de \"then\" — qualifier",
+      "nous \"mind\" — co-seated"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "nous",
+     "gloss": "mind",
+     "cluster": "M47",
+     "strong": "G3563"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 7:25",
+   "text": "Rom 7:25 Thanks be to God through Jesus Christ our Lord ! So then , I myself serve the law of God with my mind , but with my flesh I serve the law of sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "sarx \"flesh\" — co-seated",
+      "de \"then\" — qualifier",
+      "nous \"mind\" — co-seated",
+      "douleuō \"be a slave\" — partner",
+      "eucharisteō \"to thank\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "douleuō",
+     "gloss": "be a slave",
+     "cluster": "M36",
+     "strong": "G1398"
+    },
+    {
+     "translit": "eucharisteō",
+     "gloss": "to thank",
+     "cluster": "M21",
+     "strong": "G2168"
+    },
+    {
+     "translit": "nous",
+     "gloss": "mind",
+     "cluster": "M47",
+     "strong": "G3563"
+    },
+    {
+     "translit": "sarx",
+     "gloss": "flesh",
+     "cluster": "M47",
+     "strong": "G4561"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 8:2",
+   "text": "Rom 8:2 For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "pneuma \"spirit/breath: breath\" — co-seated",
+      "christos \"Christ\" — qualifier"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "christos",
+     "gloss": "Christ",
+     "cluster": "T2",
+     "strong": "G5547"
+    },
+    {
+     "translit": "pneuma",
+     "gloss": "spirit/breath: breath",
+     "cluster": "M25",
+     "strong": "G4151G"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 8:3",
+   "text": "Rom 8:3 For God has done what the law , weakened by the flesh , could not do . By sending his own Son in the likeness of sinful flesh and for sin , he condemned sin in the flesh ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sinful",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "condemned (G2632)",
+     "object": "sin",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "sarx \"flesh\" — co-seated",
+      "katakrinō \"to condemn\" — partner",
+      "astheneō \"be weak: weak\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "katakrinō",
+     "gloss": "to condemn",
+     "cluster": "M26",
+     "strong": "G2632"
+    },
+    {
+     "translit": "astheneō",
+     "gloss": "be weak: weak",
+     "cluster": "M24",
+     "strong": "G0770G"
+    },
+    {
+     "translit": "sarx",
+     "gloss": "flesh",
+     "cluster": "M47",
+     "strong": "G4561"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 8:10",
+   "text": "Rom 8:10 But if Christ is in you , although the body is dead because of sin , the Spirit is life because of righteousness .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "pneuma \"spirit/breath: breath\" — co-seated",
+      "de \"then\" — qualifier",
+      "dikaiosunē \"righteousness\" — partner",
+      "christos \"Christ\" — qualifier"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "christos",
+     "gloss": "Christ",
+     "cluster": "T2",
+     "strong": "G5547"
+    },
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    },
+    {
+     "translit": "pneuma",
+     "gloss": "spirit/breath: breath",
+     "cluster": "M25",
+     "strong": "G4151G"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 11:27",
+   "text": "Rom 11:27 “ and this will be my covenant with them when I take away their sins .”",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "take away (G0851)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "diathēkē \"covenant\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "diathēkē",
+     "gloss": "covenant",
+     "cluster": "M44",
+     "strong": "G1242"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 14:23",
+   "text": "Rom 14:23 But whoever has doubts is condemned if he eats , because the eating is not from faith . For whatever does not proceed from faith is sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "does (G1510)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "pistis \"faith\" — partner",
+      "ek \"out from\" — qualifier",
+      "diakrinō \"to judge/doubt\" — partner",
+      "katakrinō \"to condemn\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "katakrinō",
+     "gloss": "to condemn",
+     "cluster": "M26",
+     "strong": "G2632"
+    },
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "diakrinō",
+     "gloss": "to judge/doubt",
+     "cluster": "M15",
+     "strong": "G1252"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 6:18",
+   "text": "1Cor 6:18 Flee from sexual immorality . Every other sin a person commits is outside the body , but the sexually immoral person sins against his own body .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sins",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "own",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "hamartēma \"sin\" — partner"
+    },
+    {
+     "translit": "hamartēma",
+     "strong": "G0265",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "commits (G4160)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "hamartanō \"to sin\" — partner"
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Cor 7:28",
+   "text": "1Cor 7:28 But if you do marry , you have not sinned , and if a betrothed woman marries , she has not sinned . Yet those who marry will have worldly troubles , and I would spare you that.",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "betrothed woman",
+     "object_type": "abstract",
+     "valence": "neutral",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "thlipsis \"pressure\" — partner",
+      "echō \"to have/be\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "thlipsis",
+     "gloss": "pressure",
+     "cluster": "M24",
+     "strong": "G2347"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 7:36",
+   "text": "1Cor 7:36 If anyone thinks that he is not behaving properly toward his betrothed , if his passions are strong, and it has to be , let him do as he wishes : let them marry —it is no sin .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "neutral",
+     "experiencer": "other",
+     "compound": "thelō \"to will/desire\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "thelō",
+     "gloss": "to will/desire",
+     "cluster": "M29",
+     "strong": "G2309"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 8:12",
+   "text": "1Cor 8:12 Thus , sinning against your brothers and wounding their conscience when it is weak , you sin against Christ .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "brothers",
+     "object_type": "God",
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "suneidesis \"conscience\" — co-seated",
+      "astheneō \"be weak: weak\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "suneidesis",
+     "gloss": "conscience",
+     "cluster": "M47",
+     "strong": "G4893"
+    },
+    {
+     "translit": "astheneō",
+     "gloss": "be weak: weak",
+     "cluster": "M24",
+     "strong": "G0770G"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 15:3",
+   "text": "1Cor 15:3 For I delivered to you as of first importance what I also received : that Christ died for our sins in accordance with the Scriptures ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "died (G0599)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Cor 15:17",
+   "text": "1Cor 15:17 And if Christ has not been raised , your faith is futile and you are still in your sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "are (G1510)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": "pistis \"faith\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 15:34",
+   "text": "1Cor 15:34 Wake up from your drunken stupor, as is right , and do not go on sinning . For some have no knowledge of God . I say this to your shame .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "forbidden",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "entropē \"shame\" — partner",
+      "echō \"to have/be\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "entropē",
+     "gloss": "shame",
+     "cluster": "M07",
+     "strong": "G1791"
+    },
+    {
+     "translit": "echō",
+     "gloss": "to have/be",
+     "cluster": "M23",
+     "strong": "G2192"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 15:56",
+   "text": "1Cor 15:56 The sting of death is sin , and the power of sin is the law .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "dunamis \"power\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dunamis",
+     "gloss": "power",
+     "cluster": "M23",
+     "strong": "G1411"
+    }
+   ]
+  },
+  {
+   "ref": "2Cor 5:21",
+   "text": "2Cor 5:21 For our sake he made him to be sin who knew no sin , so that in him we might become the righteousness of God .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "made (G4160)",
+     "object": "who",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "dikaiosunē \"righteousness\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaiosunē",
+     "gloss": "righteousness",
+     "cluster": "M26",
+     "strong": "G1343"
+    }
+   ]
+  },
+  {
+   "ref": "2Cor 11:7",
+   "text": "2Cor 11:7 Or did I commit a sin in humbling myself so that you might be exalted , because I preached God’s gospel to you free of charge ?",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "neutral",
+     "experiencer": null,
+     "compound": "tapeinoō \"to humble\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "tapeinoō",
+     "gloss": "to humble",
+     "cluster": "M09",
+     "strong": "G5013"
+    }
+   ]
+  },
+  {
+   "ref": "Gal 1:4",
+   "text": "Gal 1:4 who gave himself for our sins to deliver us from the present evil age , according to the will of our God and Father ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "deliver (G1807)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "ponēros \"evil/bad\" — partner",
+      "thelēma \"will/desire\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "thelēma",
+     "gloss": "will/desire",
+     "cluster": "M29",
+     "strong": "G2307"
+    },
+    {
+     "translit": "ponēros",
+     "gloss": "evil/bad",
+     "cluster": "M10b",
+     "strong": "G4190"
+    }
+   ]
+  },
+  {
+   "ref": "Gal 2:15",
+   "text": "Gal 2:15 We ourselves are Jews by birth and not Gentile sinners ;",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Gal 2:17",
+   "text": "Gal 2:17 But if , in our endeavor to be justified in Christ , we too were found to be sinners , is Christ then a servant of sin ? Certainly not !",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "found (G2147)",
+     "object": "Christ",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": [
+      "zēteō \"to seek\" — partner",
+      "hamartia \"sin\" — partner",
+      "dikaioō \"to justify\" — partner"
+     ]
+    },
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "Certainly (G1096)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "zēteō \"to seek\" — partner",
+      "hamartōlos \"sinful\" — partner",
+      "dikaioō \"to justify\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "zēteō",
+     "gloss": "to seek",
+     "cluster": "M41",
+     "strong": "G2212"
+    },
+    {
+     "translit": "dikaioō",
+     "gloss": "to justify",
+     "cluster": "M26",
+     "strong": "G1344"
+    }
+   ]
+  },
+  {
+   "ref": "Gal 3:22",
+   "text": "Gal 3:22 But the Scripture imprisoned everything under sin , so that the promise by faith in Jesus Christ might be given to those who believe .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "imprisoned (G4788)",
+     "object": "everything",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "pistis \"faith\" — partner",
+      "pisteuō \"to trust (in)\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistis",
+     "gloss": "faith",
+     "cluster": "M31",
+     "strong": "G4102G"
+    },
+    {
+     "translit": "pisteuō",
+     "gloss": "to trust (in)",
+     "cluster": "M31",
+     "strong": "G4100"
+    }
+   ]
+  },
+  {
+   "ref": "Eph 2:1",
+   "text": "Eph 2:1 And you were dead in the trespasses and sins",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "paraptōma \"trespass\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "paraptōma",
+     "gloss": "trespass",
+     "cluster": "M10",
+     "strong": "G3900"
+    }
+   ]
+  },
+  {
+   "ref": "Eph 4:26",
+   "text": "Eph 4:26 Be angry and do not sin ; do not let the sun go down on your anger ,",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "sun",
+     "object_type": "abstract",
+     "valence": "forbidden",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "orgizō \"to anger\" — partner",
+      "parorgismos \"anger\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "orgizō",
+     "gloss": "to anger",
+     "cluster": "M02",
+     "strong": "G3710"
+    },
+    {
+     "translit": "parorgismos",
+     "gloss": "anger",
+     "cluster": "M02",
+     "strong": "G3950"
+    }
+   ]
+  },
+  {
+   "ref": "Col 1:14",
+   "text": "Col 1:14 in whom we have redemption , the forgiveness of sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "have (G2192)",
+     "object": "redemption",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": "afesis \"forgiveness\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "afesis",
+     "gloss": "forgiveness",
+     "cluster": "M11",
+     "strong": "G0859"
+    }
+   ]
+  },
+  {
+   "ref": "1Th 2:16",
+   "text": "1Th 2:16 by hindering us from speaking to the Gentiles that they might be saved —so as always to fill up the measure of their sins . But wrath has come upon them at last !",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "come (G5348)",
+     "object": "them",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "orgē \"wrath\" — partner",
+      "sōzō \"to save\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sōzō",
+     "gloss": "to save",
+     "cluster": "M38",
+     "strong": "G4982"
+    },
+    {
+     "translit": "orgē",
+     "gloss": "wrath",
+     "cluster": "M02",
+     "strong": "G3709"
+    }
+   ]
+  },
+  {
+   "ref": "1Ti 1:9",
+   "text": "1Ti 1:9 understanding this , that the law is not laid down for the just but for the lawless and disobedient , for the ungodly and sinners , for the unholy and profane , for those who strike their fathers and mothers , for murderers ,",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "anosios \"unholy\" — partner",
+      "dikaios \"just\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    },
+    {
+     "translit": "anosios",
+     "gloss": "unholy",
+     "cluster": "M12",
+     "strong": "G0462"
+    }
+   ]
+  },
+  {
+   "ref": "1Ti 1:15",
+   "text": "1Ti 1:15 The saying is trustworthy and deserving of full acceptance , that Christ Jesus came into the world to save sinners , of whom I am the foremost .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "pistos \"faithful\" — partner",
+      "sōzō \"to save\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sōzō",
+     "gloss": "to save",
+     "cluster": "M38",
+     "strong": "G4982"
+    },
+    {
+     "translit": "pistos",
+     "gloss": "faithful",
+     "cluster": "M13",
+     "strong": "G4103"
+    }
+   ]
+  },
+  {
+   "ref": "1Ti 5:20",
+   "text": "1Ti 5:20 As for those who persist in sin , rebuke them in the presence of all , so that the rest may stand in fear .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "fobos \"fear\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "fobos",
+     "gloss": "fear",
+     "cluster": "M01",
+     "strong": "G5401"
+    }
+   ]
+  },
+  {
+   "ref": "1Ti 5:22",
+   "text": "1Ti 5:22 Do not be hasty in the laying on of hands , nor take part in the sins of others ; keep yourself pure .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "take part (G2841)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": "hagnos \"pure\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "hagnos",
+     "gloss": "pure",
+     "cluster": "M12",
+     "strong": "G0053"
+    }
+   ]
+  },
+  {
+   "ref": "1Ti 5:24",
+   "text": "1Ti 5:24 The sins of some people are conspicuous , going before them to judgment , but the sins of others appear later .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "are (G1526)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "2Ti 3:6",
+   "text": "2Ti 3:6 For among them are those who creep into households and capture weak women , burdened with sins and led astray by various passions ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "epithumia \"desire\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "epithumia",
+     "gloss": "desire",
+     "cluster": "M28",
+     "strong": "G1939"
+    }
+   ]
+  },
+  {
+   "ref": "Tit 3:11",
+   "text": "Tit 3:11 knowing that such a person is warped and sinful ; he is self-condemned .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinful",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "autokatakritos \"self-condemned\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "autokatakritos",
+     "gloss": "self-condemned",
+     "cluster": "M26",
+     "strong": "G0843"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 1:3",
+   "text": "Heb 1:3 He is the radiance of the glory of God and the exact imprint of his nature , and he upholds the universe by the word of his power . After making purification for sins , he sat down at the right hand of the Majesty on high ,",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "sat down (G2523)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "ferō \"to bear/lead\" — partner",
+      "dunamis \"power\" — partner",
+      "hupsēlos \"high\" — partner",
+      "katharismos \"cleansing\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "katharismos",
+     "gloss": "cleansing",
+     "cluster": "M12",
+     "strong": "G2512"
+    },
+    {
+     "translit": "ferō",
+     "gloss": "to bear/lead",
+     "cluster": "M23",
+     "strong": "G5342"
+    },
+    {
+     "translit": "dunamis",
+     "gloss": "power",
+     "cluster": "M23",
+     "strong": "G1411"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 2:17",
+   "text": "Heb 2:17 Therefore he had to be made like his brothers in every respect, so that he might become a merciful and faithful high priest in the service of God , to make propitiation for the sins of the people .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "pistos \"faithful\" — partner",
+      "eleēmōn \"merciful\" — partner",
+      "hilaskomai \"to propitiate\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "pistos",
+     "gloss": "faithful",
+     "cluster": "M13",
+     "strong": "G4103"
+    },
+    {
+     "translit": "eleēmōn",
+     "gloss": "merciful",
+     "cluster": "M05",
+     "strong": "G1655"
+    },
+    {
+     "translit": "hilaskomai",
+     "gloss": "to propitiate",
+     "cluster": "M38",
+     "strong": "G2433"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 3:13",
+   "text": "Heb 3:13 But exhort one another every day , as long as it is called “ today ,” that none of you may be hardened by the deceitfulness of sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "hardened (G4645)",
+     "object": "deceitfulness",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "kaleō \"to call: call\" — partner",
+      "apatē \"deceit\" — partner",
+      "parakaleō \"to plead/comfort\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "kaleō",
+     "gloss": "to call: call",
+     "cluster": "M37",
+     "strong": "G2564G"
+    },
+    {
+     "translit": "apatē",
+     "gloss": "deceit",
+     "cluster": "M14",
+     "strong": "G0539"
+    },
+    {
+     "translit": "parakaleō",
+     "gloss": "to plead/comfort",
+     "cluster": "M05",
+     "strong": "G3870"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 3:17",
+   "text": "Heb 3:17 And with whom was he provoked for forty years ? Was it not with those who sinned , whose bodies fell in the wilderness ?",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "bodies",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Heb 4:15",
+   "text": "Heb 4:15 For we do not have a high priest who is unable to sympathize with our weaknesses , but one who in every respect has been tempted as we are , yet without sin .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sin",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "sumpatheō \"to sympathize\" — partner",
+      "astheneia \"weakness: weak\" — partner",
+      "peirazō \"to test/tempt: tempt\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sumpatheō",
+     "gloss": "to sympathize",
+     "cluster": "M05",
+     "strong": "G4834"
+    },
+    {
+     "translit": "peirazō",
+     "gloss": "to test/tempt: tempt",
+     "cluster": "M35",
+     "strong": "G3985G"
+    },
+    {
+     "translit": "astheneia",
+     "gloss": "weakness: weak",
+     "cluster": "M24",
+     "strong": "G0769G"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 5:1",
+   "text": "Heb 5:1 For every high priest chosen from among men is appointed to act on behalf of men in relation to God , to offer gifts and sacrifices for sins .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "dōron \"gift\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "dōron",
+     "gloss": "gift",
+     "cluster": "M39",
+     "strong": "G1435"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 5:3",
+   "text": "Heb 5:3 Because of this he is obligated to offer sacrifice for his own sins just as he does for those of the people .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "obligated (G3784)",
+     "object": "his",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Heb 7:26",
+   "text": "Heb 7:26 For it was indeed fitting that we should have such a high priest , holy , innocent , unstained , separated from sinners , and exalted above the heavens .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "hupsēlos \"high\" — partner",
+      "akakos \"innocent\" — partner",
+      "hosios \"sacred\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "akakos",
+     "gloss": "innocent",
+     "cluster": "M12",
+     "strong": "G0172"
+    },
+    {
+     "translit": "hosios",
+     "gloss": "sacred",
+     "cluster": "M12",
+     "strong": "G3741"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 7:27",
+   "text": "Heb 7:27 He has no need , like those high priests , to offer sacrifices daily , first for his own sins and then for those of the people , since he did this once for all when he offered up himself .",
+   "focus": [
+    {
+     "translit": "hamartia",
+     "strong": "G0266",
+     "gloss": "sin",
+     "sense": "sins",
+     "lemma_meaning": "sin, wrongdoing",
+     "type": "status",
+     "faculty": "volition",
+     "how": "did (G4160)",
+     "object": "this",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "Heb 10:26",
+   "text": "Heb 10:26 For if we go on sinning deliberately after receiving the knowledge of the truth , there no longer remains a sacrifice for sins ,",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "alētheia \"truth\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "alētheia",
+     "gloss": "truth",
+     "cluster": "M13",
+     "strong": "G0225"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 12:3",
+   "text": "Heb 12:3 Consider him who endured from sinners such hostility against himself , so that you may not grow weary or fainthearted .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "Consider (G0357)",
+     "object": "endured",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "hupomenō \"to remain/endure\" — partner",
+      "antilogia \"dispute\" — partner",
+      "psuchē \"soul\" — co-seated"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "hupomenō",
+     "gloss": "to remain/endure",
+     "cluster": "M34",
+     "strong": "G5278"
+    },
+    {
+     "translit": "antilogia",
+     "gloss": "dispute",
+     "cluster": "M02",
+     "strong": "G0485"
+    },
+    {
+     "translit": "psuchē",
+     "gloss": "soul",
+     "cluster": "M47",
+     "strong": "G5590G"
+    }
+   ]
+  },
+  {
+   "ref": "Jam 4:8",
+   "text": "Jam 4:8 Draw near to God , and he will draw near to you . Cleanse your hands , you sinners , and purify your hearts , you double-minded .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "Cleanse (G2511)",
+     "object": "hands",
+     "object_type": "person",
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "dipsuchos \"double-minded\" — partner",
+      "katharizō \"to clean\" — partner",
+      "hagnizō \"to purify\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "katharizō",
+     "gloss": "to clean",
+     "cluster": "M12",
+     "strong": "G2511"
+    },
+    {
+     "translit": "dipsuchos",
+     "gloss": "double-minded",
+     "cluster": "M20",
+     "strong": "G1374"
+    },
+    {
+     "translit": "hagnizō",
+     "gloss": "to purify",
+     "cluster": "M12",
+     "strong": "G0048"
+    }
+   ]
+  },
+  {
+   "ref": "Jam 5:20",
+   "text": "Jam 5:20 let him know that whoever brings back a sinner from his wandering will save his soul from death and will cover a multitude of sins .",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "know (G1097)",
+     "object": "brings back",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "psuchē \"soul\" — co-seated",
+      "sōzō \"to save\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sōzō",
+     "gloss": "to save",
+     "cluster": "M38",
+     "strong": "G4982"
+    },
+    {
+     "translit": "psuchē",
+     "gloss": "soul",
+     "cluster": "M47",
+     "strong": "G5590G"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 2:20",
+   "text": "1Pe 2:20 For what credit is it if , when you sin and are beaten for it, you endure ? But if when you do good and suffer for it you endure , this is a gracious thing in the sight of God .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": [
+      "hupomenō \"to remain/endure\" — partner",
+      "agathopoieō \"to do good\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "agathopoieō",
+     "gloss": "to do good",
+     "cluster": "M05",
+     "strong": "G0015"
+    },
+    {
+     "translit": "hupomenō",
+     "gloss": "to remain/endure",
+     "cluster": "M34",
+     "strong": "G5278"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 4:18",
+   "text": "1Pe 4:18 And “ If the righteous is scarcely saved , what will become of the ungodly and the sinner ?”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinner",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "become (G5316)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": [
+      "dikaios \"just\" — partner",
+      "sōzō \"to save\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "sōzō",
+     "gloss": "to save",
+     "cluster": "M38",
+     "strong": "G4982"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    }
+   ]
+  },
+  {
+   "ref": "2Pe 2:4",
+   "text": "2Pe 2:4 For if God did not spare angels when they sinned , but cast them into hell and committed them to chains of gloomy darkness to be kept until the judgment ;",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "hell",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Jo 1:10",
+   "text": "1Jo 1:10 If we say we have not sinned , we make him a liar , and his word is not in us .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinned",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "him",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "self",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Jo 2:1",
+   "text": "1Jo 2:1 My little children , I am writing these things to you so that you may not sin . But if anyone does sin , we have an advocate with the Father , Jesus Christ the righteous .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other (addressed)",
+     "compound": [
+      "dikaios \"just\" — partner",
+      "paraklētos \"counsellor\" — partner"
+     ]
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "paraklētos",
+     "gloss": "counsellor",
+     "cluster": "M17",
+     "strong": "G3875"
+    },
+    {
+     "translit": "dikaios",
+     "gloss": "just",
+     "cluster": "M26",
+     "strong": "G1342"
+    }
+   ]
+  },
+  {
+   "ref": "1Jo 3:6",
+   "text": "1Jo 3:6 No one who abides in him keeps on sinning ; no one who keeps on sinning has either seen him or known him .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Jo 3:8",
+   "text": "1Jo 3:8 Whoever makes a practice of sinning is of the devil , for the devil has been sinning from the beginning . The reason the Son of God appeared was to destroy the works of the devil .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "beginning",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "archē \"beginning\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "archē",
+     "gloss": "beginning",
+     "cluster": "M17",
+     "strong": "G0746"
+    }
+   ]
+  },
+  {
+   "ref": "1Jo 3:9",
+   "text": "1Jo 3:9 No one born of God makes a practice of sinning , for God’s seed abides in him , and he cannot keep on sinning , because he has been born of God .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": null
+    }
+   ],
+   "coterms": []
+  },
+  {
+   "ref": "1Jo 5:16",
+   "text": "1Jo 5:16 If anyone sees his brother committing a sin not leading to death , he shall ask , and God will give him life —to those who commit sins that do not lead to death . There is sin that leads to death ; I do not say that one should pray for that .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sin",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "death",
+     "object_type": "abstract",
+     "valence": "sinful",
+     "experiencer": null,
+     "compound": "erōtaō \"to ask\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "erōtaō",
+     "gloss": "to ask",
+     "cluster": "M21",
+     "strong": "G2065"
+    }
+   ]
+  },
+  {
+   "ref": "1Jo 5:18",
+   "text": "1Jo 5:18 We know that everyone who has been born of God does not keep on sinning , but he who was born of God protects him , and the evil one does not touch him .",
+   "focus": [
+    {
+     "translit": "hamartanō",
+     "strong": "G0264",
+     "gloss": "to sin",
+     "sense": "sinning",
+     "lemma_meaning": "to sin, do wrong",
+     "type": "action",
+     "faculty": "volition",
+     "how": null,
+     "object": "born",
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "ponēros \"evil/bad\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "ponēros",
+     "gloss": "evil/bad",
+     "cluster": "M10b",
+     "strong": "G4190"
+    }
+   ]
+  },
+  {
+   "ref": "Jude 15",
+   "text": "Jude 15 to execute judgment on all and to convict all the ungodly of all their deeds of ungodliness that they have committed in such an ungodly way, and of all the harsh things that ungodly sinners have spoken against him .”",
+   "focus": [
+    {
+     "translit": "hamartōlos",
+     "strong": "G0268",
+     "gloss": "sinful",
+     "sense": "sinners",
+     "lemma_meaning": "(a.) sinful, as an absolute moral failure",
+     "type": "quality",
+     "faculty": "volition",
+     "how": "spoken (G2980)",
+     "object": null,
+     "object_type": null,
+     "valence": "sinful",
+     "experiencer": "other",
+     "compound": "krisis \"judgment\" — partner"
+    }
+   ],
+   "coterms": [
+    {
+     "translit": "krisis",
+     "gloss": "judgment",
+     "cluster": "M26",
+     "strong": "G2920"
+    }
+   ]
+  }
+ ]
+}
