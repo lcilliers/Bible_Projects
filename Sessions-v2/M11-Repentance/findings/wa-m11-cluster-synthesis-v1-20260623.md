@@ -52,7 +52,7 @@ This is the resolution side M10 was parked awaiting — **fed back into the M10 
 
 ## Next
 - **Record the M11 feedback into the M10 story base** (the §4 pole-pairs + the resolution sequence + atonement-home) — accrue into the relevant M10 unit/family files, tagged source=M11.
-- M11 publication/essay (later, with the cluster-rework cadence).
-- Continue the rework queue (M12 Purity is the next natural partner — completes the defilement↔purity pole and the cleansing side of atonement).
+- **NO standalone M11 narrative** (researcher, 2026-06-23). M11 gets this *synthesis* (the analytical integration) but **not a per-cluster narrative/essay**. Narratives are **cross-cluster**: on completion of all clusters, **M10 + M11 + the other related clusters are considered as a whole** to prepare the narrative — *largely around how **sin and salvation** impact the inner-being system*. M11's synthesis here is **input to that joint narrative**, not a product in itself.
+- Continue the rework queue (M12 Purity is the next natural partner — completes the defilement↔purity pole and the cleansing side of atonement), each feeding the same joint sin-and-salvation narrative.
 
 *M11 cluster synthesis — the resolution of sin; SDX-02 closed; M10 fed; lens validated + evolved. Grounded; held open where flagged.*

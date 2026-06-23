@@ -47,4 +47,11 @@ M10 is parked, but **not frozen** — working the partner clusters will **reach 
 - **Accrue M11-derived observations back into the M10 story base** — into the relevant M10 unit/family file (or a running "M10 story-base" accrual), tagged with the source cluster, so M10's evidence grows as partners are read.
 - **The SDX register is the ledger of this loop** — each partner cluster's analysis checks the register for M10 points it can close.
 
-*Decision record — defer M10 *full* synthesis; M10 parked but fed incrementally via the M11→M10 loop; §10-typology timing is the open sub-question.*
+## NARRATIVE STRATEGY — cross-cluster, not per-cluster (researcher, 2026-06-23)
+**Narratives are not produced per cluster.** Neither M10 nor M11 gets a standalone cluster narrative/essay. Instead:
+- Each cluster produces **evidence + synthesis** (the analytical integration — e.g. `wa-m11-cluster-synthesis-v1`), which is **input**, not a product.
+- On completion of **all** (related) clusters, **M10 + M11 + the other related clusters are considered as a whole** to prepare the narrative — **largely around how *sin and salvation* impact the inner-being system**.
+- So the deferral (above) is not only of M10's *synthesis* but of the **narrative**, which is a **cross-cluster thematic assembly** at the end. The "sin-and-salvation" group (M10 sin · M11 resolution · M12 purity · M38 salvation · M26 righteousness · M45 renewal · …) is one such narrative grouping.
+- Implication: per-cluster work optimises for **feeding the joint narrative** (clean evidence, synthesis, closed SDX points, the M10 story base), not for a self-contained essay. (Consistent with the §d end-point: an evidenced findings corpus → multiple products, reference + narrative.)
+
+*Decision record — defer M10 *full* synthesis AND narrative; narratives are cross-cluster (the sin-and-salvation assembly); M10 parked but fed incrementally via the M11→M10 loop; §10-typology timing is the open sub-question.*
