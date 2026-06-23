@@ -34,10 +34,15 @@ Each unit file = **(A) general / non-verse observations** (collated from sources
 
 | Unit(s) | Evidence-home file | Pattern |
 |---|---|---|
-| #8 Political revolt | `wa-m10-unit-08-political-revolt-v1-20260623.md` | distinctive-term (exemplar) |
-| #29–32 Defilement family | `wa-m10-units-29to32-defilement-family-v1-20260623.md` | family (MC digest superseded) |
-| _#1–7,#15 (ḥāṭāʾ sin-act family)_ | _pending_ | family |
-| _#9–14,#16–28 (distinctive-term units)_ | _pending_ | distinctive-term |
+| #1–7,#15 ḥāṭāʾ sin-act family | `wa-m10-units-01to07-15-hatat-sinact-family-v1-20260623.md` | family (HA/HM *partially* migrated — nouns pending) |
+| #8 Political revolt | `wa-m10-unit-08-political-revolt-v1-20260623.md` | distinctive-term |
+| #9 Sinful speech | `wa-m10-unit-09-sinful-speech-v1-20260623.md` | distinctive-term |
+| #20 Faithlessness | `wa-m10-unit-20-faithlessness-v1-20260623.md` | distinctive-term |
+| #22 Injustice | `wa-m10-unit-22-injustice-v1-20260623.md` | distinctive-term |
+| #23 Wickedness (person-identity) | `wa-m10-unit-23-wickedness-person-identity-v1-20260623.md` | distinctive-term (B1 migrated) |
+| #27 Iniquity (active scheming) | `wa-m10-unit-27-iniquity-active-scheming-v1-20260623.md` | distinctive-term (B3 migrated) |
+| #29–32 Defilement family | `wa-m10-units-29to32-defilement-family-v1-20260623.md` | family (MC migrated) |
+| _PENDING:_ #11–14 sin-noun family · #17–18 a.von family · #25–26 abomination pair · #10,#16,#19,#21,#24,#28 distinctive | _pending_ | — |
 
 ## The 32 units → source-evidence files (until per-unit homes are built)
 > Source: **core** = sin-core (was M10) · **wick** = wickedness-family (was M10b) · **defi** = defilement-family (was M10c). File codes resolve in the legend below. **DB** = `finding` table (level=VERSE, l2_meaning), not a file.
