@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T16:31:20Z",
+  "generated_at": "2026-06-23T16:37:57Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2446,
+    "current": 2448,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 40
   },
-  "total_files": 8238,
-  "total_active": 5976,
+  "total_files": 8240,
+  "total_active": 5978,
   "total_archived": 2262,
   "files": [
     {
@@ -8535,6 +8535,22 @@
       "modified": "2026-06-22T19:30:52Z"
     },
     {
+      "path": "Sessions-v2/M10-Sin/findings/wa-m10-section10-object-kinds-typology-provisional-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9533,
+      "modified": "2026-06-23T16:34:43Z"
+    },
+    {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-sessionlog-final-v1_0-20260622.md",
       "category": "cluster",
       "type": "other",
@@ -9701,6 +9717,22 @@
       "archived": false,
       "size_bytes": 0,
       "modified": "2026-06-05T03:48:55Z"
+    },
+    {
+      "path": "Sessions-v2/M11-Repentance/findings/wa-m11-kickoff-objectkinds-lens-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6317,
+      "modified": "2026-06-23T16:37:42Z"
     },
     {
       "path": "Sessions-v2/M11-Repentance/wa-m11-repentance-scienceextract-v1_0-20260513.md",
@@ -102259,8 +102291,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3709097,
-      "modified": "2026-06-23T08:46:37Z"
+      "size_bytes": 3718204,
+      "modified": "2026-06-23T16:31:20Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
