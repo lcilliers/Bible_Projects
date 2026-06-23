@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T19:03:40Z",
+  "generated_at": "2026-06-23T19:51:54Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2459,
+    "current": 2460,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 41
   },
-  "total_files": 8252,
-  "total_active": 5990,
+  "total_files": 8253,
+  "total_active": 5991,
   "total_archived": 2262,
   "files": [
     {
@@ -10023,6 +10023,22 @@
       "modified": "2026-06-22T08:32:09Z"
     },
     {
+      "path": "Sessions-v2/M12-Purity/findings/wa-m12-draft-units-from-lexical-read-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6826,
+      "modified": "2026-06-23T19:51:44Z"
+    },
+    {
       "path": "Sessions-v2/M12-Purity/findings/wa-m12-kickoff-and-provisional-units-v1-20260623.md",
       "category": "cluster",
       "type": "other",
@@ -10035,8 +10051,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6649,
-      "modified": "2026-06-23T19:03:30Z"
+      "size_bytes": 7497,
+      "modified": "2026-06-23T19:48:15Z"
     },
     {
       "path": "Sessions-v2/M12-Purity/wa-m12-purity-scienceextract-v1_0-20260513.md",
@@ -102483,8 +102499,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3723701,
-      "modified": "2026-06-23T18:36:53Z"
+      "size_bytes": 3724613,
+      "modified": "2026-06-23T19:03:40Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -127075,8 +127091,8 @@
       "date": "2026-06-23",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 5646,
-      "modified": "2026-06-23T04:20:42Z"
+      "size_bytes": 6480,
+      "modified": "2026-06-23T19:49:19Z"
     },
     {
       "path": "scripts/_generate_cluster_catalogue_v1_20260505.py",

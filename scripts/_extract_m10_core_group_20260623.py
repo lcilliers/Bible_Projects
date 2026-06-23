@@ -36,10 +36,24 @@ def book_of(ref):
     return ref.split()[0] if ' ' in ref else ref[:3]
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('--group', required=True, choices=GROUPS)
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--group', choices=GROUPS, help='predefined M10 group')
+    ap.add_argument('--corpus', default=CORPUS, help='extract/corpus JSON (any cluster)')
+    ap.add_argument('--strongs', help='comma-separated Strong\'s (override --group)')
+    ap.add_argument('--label', help='batch label for the output filename (with --strongs)')
+    ap.add_argument('--outdir', default=OUTDIR, help='output dir')
     a = ap.parse_args()
-    strongs = GROUPS[a.group]
-    corpus = json.load(open(CORPUS, encoding='utf-8'))
+    if a.strongs:
+        strongs = set(s.strip() for s in a.strongs.split(','))
+        a.group = a.label or 'batch'
+    elif a.group:
+        strongs = GROUPS[a.group]
+    else:
+        ap.error('need --group or --strongs')
+    corpus = json.load(open(a.corpus, encoding='utf-8'))
+    corpus = {'verses': corpus['verses'] if isinstance(corpus, dict) and 'verses' in corpus
+              else corpus['data'] if isinstance(corpus, dict) and 'data' in corpus else corpus}
+    global OUTDIR; OUTDIR = a.outdir
 
     out_verses = []
     sense_c, type_c, fac_c, val_c, objt_c = Counter(), Counter(), Counter(), Counter(), Counter()
@@ -98,7 +112,8 @@ def main():
     out = {'_meta': {'source': CORPUS, 'built': '2026-06-23',
                      'note': 'mechanical assembly for CC evidence reading; no conclusions'},
            'summary': summary, 'verses': out_verses}
-    path = os.path.join(OUTDIR, f'wa-m10-core-{a.group}-assembly-v1_0-20260623.json')
+    stem = f'{a.label}-lexbatch' if a.label else f'm10-core-{a.group}-assembly'
+    path = os.path.join(OUTDIR, f'wa-{stem}-v1_0-20260623.json')
     json.dump(out, open(path,'w',encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'wrote {path}')
     print(json.dumps(summary, ensure_ascii=False, indent=1))

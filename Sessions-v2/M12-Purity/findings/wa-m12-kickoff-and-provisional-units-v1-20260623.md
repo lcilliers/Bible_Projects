@@ -9,7 +9,10 @@
 - **Extract built:** `Data/wa-ve-lexical-extract-M12-20260623.json` — **1,552 verses · 3,247 occ** (large; ~832k tokens). The evidence layer is in place.
 - **SD/SB flags:** 3 SD_POINTER + 1 SB_INNER_BEING (to route per unit in the build).
 
-## 2. Provisional unit derivation (from the ~48 terms, via §10) — TO CONFIRM
+## ⚠ SEQUENCE CORRECTION (researcher, 2026-06-23)
+§2 below derived units **from term-glosses** — a **premature shortcut** that skips the grounded steps. The correct sequence is: (1) lexicals verse-by-verse [done — the extract] → (2) **batch the lexicals** → (3) **read the lexicals to determine the draft grouping/units** → (4) apply the **object-structure (§10) screening** → (5) **deep-dive evidence/data by unit** → (6) decide which are **statuses needing different treatment.** **§2 is therefore SUPERSEDED** — kept only as a rough orientation; the real units come from the batched-lexical READ (`wa-m12-lexical-batches-*` → `wa-m12-draft-units-from-read-*`), not from glosses. Likewise §3–§5's classification is provisional-from-glosses, to be re-derived from the read.
+
+## 2. Provisional unit derivation (from the ~48 terms, via §10) — ⚠ SUPERSEDED (glosses-shortcut; see correction above)
 Grouping the terms by semantics + object-kind:
 
 | Prov. unit | Terms (sample) | §10 kind (provisional) |
