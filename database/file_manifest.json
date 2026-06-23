@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T18:36:53Z",
+  "generated_at": "2026-06-23T19:03:40Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 142,
     "historical": 30,
-    "current": 2457,
+    "current": 2459,
     "archived": 2262,
     "cross-reference": 3318,
     "backup": 41
   },
-  "total_files": 8250,
-  "total_active": 5988,
+  "total_files": 8252,
+  "total_active": 5990,
   "total_archived": 2262,
   "files": [
     {
@@ -8019,8 +8019,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6126,
-      "modified": "2026-06-23T16:44:11Z"
+      "size_bytes": 7893,
+      "modified": "2026-06-23T18:57:18Z"
     },
     {
       "path": "Sessions-v2/M10-Sin/findings/wa-m10-observations-01-identity-group-v1-20260623.md",
@@ -9747,8 +9747,8 @@
       "date": "2026-06-23",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6649,
-      "modified": "2026-06-23T18:36:12Z"
+      "size_bytes": 7668,
+      "modified": "2026-06-23T18:57:39Z"
     },
     {
       "path": "Sessions-v2/M11-Repentance/findings/wa-m11-kickoff-objectkinds-lens-v1-20260623.md",
@@ -9911,6 +9911,22 @@
       "modified": "2026-06-05T03:48:55Z"
     },
     {
+      "path": "Sessions-v2/M12-Purity/Data/wa-ve-lexical-extract-M12-20260623.json",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-23",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 3447988,
+      "modified": "2026-06-23T19:02:07Z"
+    },
+    {
       "path": "Sessions-v2/M12-Purity/Data/wa-ve-lexical-extract-M12-additional-truncation-recovery-20260622-b1of6.json",
       "category": "cluster",
       "type": "other",
@@ -10005,6 +10021,22 @@
       "archived": false,
       "size_bytes": 329087,
       "modified": "2026-06-22T08:32:09Z"
+    },
+    {
+      "path": "Sessions-v2/M12-Purity/findings/wa-m12-kickoff-and-provisional-units-v1-20260623.md",
+      "category": "cluster",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-23",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6649,
+      "modified": "2026-06-23T19:03:30Z"
     },
     {
       "path": "Sessions-v2/M12-Purity/wa-m12-purity-scienceextract-v1_0-20260513.md",
@@ -102451,8 +102483,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3722346,
-      "modified": "2026-06-23T16:56:26Z"
+      "size_bytes": 3723701,
+      "modified": "2026-06-23T18:36:53Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
