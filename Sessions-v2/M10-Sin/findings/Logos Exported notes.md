@@ -130,6 +130,7 @@ R.E.O. White, “Sin,” in Baker Encyclopedia of the Bible (Grand Rapids, MI: B
 
 sin in OT v NT
 
+
 is sin seen differently in the old testament versus the new testament
 
 The biblical understanding of sin shows meaningful continuity between testaments, though with a significant shift in focus.
@@ -177,3 +178,45 @@ Sin can appear as a habitual state, a specific act, or an evil force operating i
 4. 4
     
     David Walls and Max Anders, *[I & II Peter, I, II & III John, Jude](https://ref.ly/res/LLS:HNTC81PE/2015-06-30T16:30:53Z/424205?len=130)*, Holman New Testament Commentary (Nashville, TN: Broadman & Holman Publishers, 1999), [11:191](https://ref.ly/res/LLS%3AHNTC81PE/2015-06-30T16%3A30%3A53Z/424205?len=130).
+---
+---
+
+# WEAVE — cross-check of our M10 evidence-pass findings against this Logos study (2026-06-23, CC)
+
+> The four scholarly extracts above (Sigrist · White · the OT-vs-NT Q&A · the definition Q&A) are **external reference scholarship**. Below, our **evidence-derived** findings (the observation pass, groups 1–8 + the coverage check) are cross-checked against them. **Discipline:** our object-kinds were built bottom-up from the verse evidence *before* this study was consulted — so the convergence below is a **bias-guard** (independent corroboration), not a borrowing. Where the scholarship *adds* something our M10 evidence under-carries, it is flagged.
+
+## 1. Verdict — the scholarship CORROBORATES the evidence-derived object-kinds
+The reference works independently describe sin as **multi-faceted, not one thing** — Sigrist: "a habitual **state**, specific **act**, or an evil **force** in and of itself"; the definition Q&A: "legal violation, relational damage, spiritual corruption, and existential misdirection **simultaneously**"; M'Clintock/Strong: sin "**distorts human nature… internal discord among the faculties**." This is exactly our pass's core result: M10 is **several object-kinds**, not a single characteristic. Our bottom-up object-kinds map onto their categories cleanly (§2).
+
+## 2. Mapping — Logos scholarship ↔ our object-kinds / units
+| Logos statement | Our object-kind / unit | Status |
+|---|---|---|
+| "habitual **state**" (Sigrist); sin "a force… **law** ruling within men" (White, Rom 5:21;7:23;8:2) | **CONDITION/STATE** — esp. #12 enslaving-power, #11 universal-condition, #24 constitutional-nature | confirms |
+| sin "an **evil force** in and of itself" (Rom 7:8); Paul: sin a **power** | **CONDITION (bondage) ↔ AGENCY gradient** (#12 → the evil one #24/#32) | confirms O4 (G4/G8) |
+| "specific **act**… of commission (Matt 15:19) or omission" | the **act-modes** (#1–7) + **EXPRESSION** (#9/#28 "out of the heart… slander", Matt 15:19) | confirms |
+| ʿāwōn "refers to **both the deed and its consequences or guilt itself**" (Gen 15:16; Gen 4:13) | **RECORD/LIABILITY** tri-fold — #18 crime / #17 guilt / (H5771I) punishment | strong confirm of the a.von tri-fold (G5) |
+| sin as "**debt**, an unpaid obligation to God" (White, Mt 6:12) | **RECORD/LIABILITY** as an accounting object (#13) | strong confirm (G5 O1) |
+| tôʿēbâ "**repulsive**… God or people **abhor**" | **#25/#26 abomination** (divine revulsion) | confirms |
+| ʾāšām = guilt **and** the reparation **offering** (Lev 5); ḥāṭāʾ "**atoning** for uncleanness in cultic contexts" | **REMEDY/ATONEMENT** (#14) + the **atonement↔defilement** nexus | confirms G6 + SDX-02 |
+| pāšaʿ "violating a known relationship… **occasion for war** (2 Kgs 1:1)… **Israel's secession** (1 Kgs 12:19)"; maʿal = treachery/faithlessness | **#8 political revolt + #19 transgression + #20 faithlessness** | confirms (incl. the #8 political/God-ward split) |
+| sárx "**domination by sin**" (Rom 7:5); ḥēṭĕʾ "punishment for sin / guilt over sin" | the **flesh-seat of sin** (#12 seats); the record/penalty span | confirms |
+| White: "**demonic invasion**… the 'prince of this world'" | **EXTERNAL AGENCY** (#24 "the evil one" / #32 unclean spirit) | confirms G8 |
+| White: intentional sins "**sear the conscience**… **hardening**… the unforgivable sin against the Spirit" | **#4 conscience-suppression + #9 unforgivable-blasphemy seam** | confirms |
+| Wisdom school: "**sin is folly**" | the sin↔folly cross-register (M16/M15 bonds) | confirms |
+
+## 3. What the study ADDS to our M10 evidence (the enrichments)
+- **★ The NT RESOLUTION of sin — the missing piece of Group 7.** White lays out what our M10 focus-set under-carries (because the vocabulary migrated, SDX-09): the NT resolution is **Christ's expiation + the believer's death-with-Christ to sin + the Spirit "transforming life from within"** (Paul, Rom 6;8); John = "the Lamb… bears away the sin of the world" + the sin of **refusing the light**; 1 John = "Christ atones and intercedes." The OT-vs-NT Q&A names the **Christological reframing** — sin defined against **Jesus as the standard** and as **broken communion**, collapsing ritual/moral categories. **This is the broader context Group 7 (the characteristic trio) was declared incomplete without** — it lives in **M11/M38/M45 + the unregistered redemption terms (SDX-09)**.
+- **The Fall / Adamic origin (piptō / paraptōma "fall into sin", Rom 5:12–21).** Our M10 evidence carries paraptōma ("dead in trespasses") but **under-develops the Adamic origin-of-sin** dimension the scholarship foregrounds. Candidate new register strand (SDX-10).
+- **The OT's own internal trajectory** (Deut/Jer/Ezek: "the Law a motive force **within** personality"; the new-covenant inner-inscription) — corroborates our inner-being framing and the OT→NT continuity-with-shift (SDX-09).
+- **The "evil impulse" (yetser) duality** — a frame for #24 (the heart as evil-treasury) and #27 (devising) worth holding for synthesis.
+
+## 4. Register impact (no resolutions — pointers)
+- **Group 7** (#20/#21/#27 characteristics) — formally gated on the **NT-resolution context** now supplied here; resolution-home = M11/M38/M45 (+ SDX-09 redemption terms). Recorded.
+- **SDX-02 / SDX-09** — corroborated: atonement/resolution is cross-cluster; the NT carries it on migrated + (partly) unregistered vocabulary.
+- **SDX-01** (expression/manifestness) — White's "**sins of omission** / good left undone" widens the question: sin includes the **un-done** — strengthens SDX-01 ("can sin exist unexpressed"; omission = a non-act still counted sin).
+- **NEW candidate — SDX-10: the Fall / Adamic origin of sin** (piptō/paraptōma; Rom 5:12–21; Psa 51:5 "conceived in sin") — under-carried in M10; needs the origin/anthropology strand. *(Add to register + DB on confirmation.)*
+
+## 5. Grounding note
+This is **secondary reference literature** cross-checked against our **primary verse evidence** — the convergence validates the object-kinds but does **not** replace the verse-grounding. Where the scholarship and our evidence differ in emphasis (the Adamic origin; the NT resolution) the gap is a **coverage/scope matter** (the vocabulary lives in other clusters), **not a contradiction**. Our findings stay anchored in the per-verse evidence files; this study is corroboration + the NT-resolution context for Group 7.
+
+*Weave v1 — cross-check + integration; held open; feeds Group 7, SDX-01/02/09, and candidate SDX-10.*
