@@ -17,16 +17,16 @@
 
 **Structural signature (this subset):** type=**action** (the act of rebelling) throughout; faculty=none (pešaʿ is term-intrinsically faculty-less); object_type = person/situation (the authority revolted against); experiencer=other (reported of nations/kings, not first-person inner state). No inner-being seating in this subset.
 
-**Field hygiene / CC verify-list (from PE §3):**
-- **valence over-tag:** several political-revolt occurrences read as **descriptive/civil**, not moral sin — 2Ki 1:1; 3:5; 3:7 carry `neutral`, but 2Ki 8:20,22; 1Ki 12:19; 2Ch 10:19; 21:8,10 carry `sinful`. The valence is **inconsistent** across the same political register — flag (do not assume political revolt = `sinful`).
-- object text vs object_type: trust object_type.
+**Field hygiene (from PE §3):**
+- **⚠ HYGIENE — valence inconsistency:** structurally-identical political revolts are tagged inconsistently — 2Ki 1:1; 3:5; 3:7 = `neutral`, but 2Ki 8:20,22; 1Ki 12:19; 2Ch 10:19; 21:8,10 = `sinful`. Do not assume political revolt = `sinful`. (surface; reading question, not resolved.)
+- **⚠ HYGIENE — object vs object_type:** trust object_type (object text e.g. "from"/"battle" is imprecise).
 
-**Cross-cluster bonds (from the gap register):** M23 (Strength/Power/Dominion — the *yad* "hand/rule" partner recurs), M11 (Repentance), M41 (Remembrance), M47 (Constitution). The dominant partner is **yad "hand/rule" [M23]** — revolt is *against a ruling hand*.
+**↔ BOND (cross-cluster, from the bonds run):** **M23** Strength/Power/Dominion (the *yad* "hand/rule" partner recurs — revolt is *against a ruling hand*), M11 Repentance, M41 Remembrance, M47 Constitution.
 
-**Held open (no conclusions):**
-- Whether "political revolt" is a distinct unit, or one face of a single boundary-breach concept shared with God-ward rebellion (#19) — pa.sha carries both with the same form (a **§10 test case**).
-- The valence inconsistency (neutral vs sinful) on structurally-identical political revolts — a reading question.
-- 2Ch 21:10 alone gives a **cause** ("because he had forsaken the Lord") — linking political revolt to covenant defection; the others are bare political fact.
+**Flags requiring deeper synthesis (surfaced, NOT resolved):**
+- **⚖ BORDER — unit boundary:** is "political revolt" a distinct unit, or one face of a single boundary-breach concept shared with God-ward rebellion (#19)? pa.sha carries both with the same form. **§10 test case.**
+- **⚑ SYNTH — covenant link:** 2Ch 21:10 alone gives a **cause** ("because he had forsaken the Lord") — linking political revolt to covenant defection; the other 8 are bare political fact. Worth synthesising whether political revolt is ever framed as God-ward sin.
+- **⚑ SYNTH — valence axis:** the neutral↔sinful split may track *who narrates* (a neutral political report vs a theological verdict) — surface for the synthesis to test.
 
 ---
 

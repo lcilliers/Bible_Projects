@@ -6,6 +6,18 @@
 
 > **Merge note (2026-06-23):** M10b and M10c are dissolved into **M10** (the three-way split was an artificial linear-partition; it is one sin operation). All 32 units now live under M10 with a single 1–32 numbering. **Evidence filenames still carry `m10b`/`m10c`/`ring`/`core` tags — these are historical provenance, not separate clusters.** Use the unit number, not the filename, as the identifier.
 
+## Evidence-file method (GOVERNING — applies to every unit file)
+The per-unit evidence files are the **canonical, self-contained home** of the evidence. **Synthesis will read ONLY the unit files** — so each must be **complete**: every noteworthy element from the source documents (the core/ring/batch digests, bonds, exploration threads, architecture reflection, held-open items) is **migrated into the relevant unit file(s)**. *Nothing of note is left behind in a source document.* Once migration is complete, source digests are marked "migrated → unit files" (superseded as evidence homes, retained as provenance).
+
+**Highlight, do not resolve.** Items are *surfaced and flagged*, never silently parked or quietly dropped. Consistent inline markers (scan for them):
+- **⚑ SYNTH** — needs deeper synthesis (e.g. the atonement seam, a.von act/guilt/punishment, dual-view) — surfaced, not resolved.
+- **⚖ BORDER** — a borderline unit-boundary / consolidation / per-occurrence-classification call.
+- **❓ CLARIFY** — an ambiguity or mis-gloss to confirm.
+- **⚠ HYGIENE** — a data-quality flag (valence over-tag, object vs object_type, mis-gloss, idiom).
+- **↔ BOND** — a cross-cluster bond relevant to synthesis.
+
+Each unit file = **(A) general / non-verse observations** (collated from sources, flagged) + **(B) per-verse structured evidence**. Shared-substrate units are grouped into a **family file** (substrate once; units as sub-sections) — overlap across units is expected and "washes out in analysis".
+
 ## Crosswalk (old per-cluster # → new global #)
 | Old | New | Old | New |
 |---|---|---|---|
