@@ -1,4 +1,6 @@
-# 01b — Verse Lexical (VE) Generation — CANONICAL RULES (v2 · 2026-06-16)
+# 01b — Verse Lexical (VE) Generation — CANONICAL RULES (v3 · 2026-06-24)
+
+> **v3 (2026-06-24):** added **Part C — the COLLECTION layer** (object_type + the deep-dive understanding captured at term scope, for re-use; resolves Part A §8). Part A (per-verse, v2) is unchanged. See Part C foot for status (tested M12/M13/M14/M16; six object-types stable).
 
 > **Binding companion (2026-06-17):** [01c — T2 treatment & API governance](01c-T2-treatment-and-API-governance.md) fixes (a) the T2 content/grammatical split and its treatment in generation/JSON/reads, and (b) the API governance (batched · ordered · token-minimal · time-monitored with circuit-breaker · self-verified · residue-only — *API never substitutes for a mechanical rule*). Engine alignment + compliance precede any API run.
 >
@@ -232,3 +234,54 @@ Each clause ← one field ← one finding ← `(mti_term_id, verse_context_id)`.
 - **The trace is the deliverable.** Every non-bedrock finding must **cite the node(s) / signal that forced it** — that is the back-trackability the generative meaning lacked.
 - **Compound builds the web.** Each co-occurring T1 term spawns a stub (reciprocal edge), so the web is assembled mechanically from the spans as a by-product of extraction — not narrated afterward.
 - **Honest residue.** 9–12 are where no local-node measure settles it; flag them rather than let a generative step invent them.
+
+---
+
+# Part C — the COLLECTION layer (deep-dive extension) · v3 · 2026-06-24
+
+> **Status:** added 2026-06-24 from the deep-dive refinement (M12 + the tamim/cleanness test + M13/M14/M16). Part A (per-verse VE) is unchanged and remains the mechanical base. Part C adds the **collection scope** — the lexical of a **term across its verses** — which is where the deep-dive understanding is captured **for re-use**. **This RESOLVES Part A §8** (emergent character): the kinds emerge from the mechanical items as `object_type`. Provenance + evidence: `outputs/markdown/validation/wa-lexical-extension-*` + `wa-lexical-discovery-register-v1`. Items marked **[prov]** are grounded on 1–2 clusters and confirm as more run. Tested on M12/M13/M14/M16 — the six object-types are **stable (no 7th needed)**; ~79–81% of collection values are mechanical (regenerate).
+
+## C.1 Two scopes
+- **Per-verse lexical** = Part A items (per term-in-verse), unchanged.
+- **Collection lexical** = a term/unit **across its verses** (one record per owned term/sense-family). A value may be sourced from an **adjacent verse / the passage**, not only the head verse — **cite the source verse** (extends P7). Per-verse **silence is expected** (P5); the collection answers what no single verse does. **Group units by SEMANTIC SENSE, never by owning-registry** (registry = provenance, not meaning).
+
+## C.2 `object_type` — the emergent kind (new universal collection item)
+- **value space** {**characteristic** · **state/condition** · **expression** · **qualifier** · **identity** · **bivalent-faculty**} · **emergent — derived from per-verse-VARYING evidence + grammatical type**, NEVER from a lemma-constant (type/faculty as a per-verse claim — the M10/M11 validation failure).
+- **RULE:** grammatical `type=status` + **valence varies across the term's verses** → state (or **bivalent-faculty** if a faculty is present and valence flips good/evil by verse — the **object devised/aimed-at IS the discriminator**); `how`-predicate of the person acting from a faculty → characteristic; `type=action` + a **binding** (manner-term / co-expressed characteristic) → expression; **always modifies a host** → qualifier; a **person-verdict** (object_type=person) → identity.
+- **`asah`-deed override [prov]:** a status-POS noun governed by a do/commit verb (e.g. ne.va.lah "outrage", how=*asah*) → **expression**, not state (POS alone does not fix object_type).
+- **A1 bearer-class sub-tag** {human-faculty · divine · object/thing/way}: human-faculty-bearer → characteristic; divine/object/way-bearer → **quality** (same lemma splits by bearer, read per verse — e.g. tamim "be blameless" vs "his way is perfect"; "foolishness of God"). Bivalence is **by bearer and by valence.**
+- **A2 intrinsic-faculty escape:** a characteristic's REQUIRED faculty may be the lemma's **intrinsic faculty** declared once at collection scope (`derivation=intrinsic`) — **not** a per-verse seat claim (per-verse seat still needs co-seating evidence).
+- **`membership_scope` [prov]** {lemma · per-occurrence}: a bivalent term is a **per-occurrence** member (it belongs to the cluster only at its relevant valence — the flip is the cluster boundary).
+- **states:** resolved / UNRESOLVED (never NONE — every analysed term has a kind).
+
+## C.3 Type-conditioned expectedness (the LRT, made canonical)
+P5's expectation test, **conditioned by object_type** — this is what makes a blank a *gap* vs a legitimate *silence*. Run the LRT (`scripts/_lexical_revelation_test_*`) per unit before conclusions.
+
+| object_type | EXPECTED answers (empty-where-expected = LRT gap → locate/UNRESOLVED/remediation) |
+|---|---|
+| **characteristic** | faculty (REQUIRED; A2) · how-it-operates · directed-at-what *(only if `transitivity=transitive` [prov] — intransitive dispositions legitimately have object=NONE)* · whose · intensity |
+| **state/condition** | of-what (bearer) · who-set-it · **mutability** (can it change) · **transition-trigger** (what changes it) · valence-register · **realm** · pole-opposite |
+| **expression** | the act · the **manner** · **what it expresses** (the bound characteristic) · acted-on-what · who-acts |
+| **identity** | classified-as-what · **classifier** [prov] (who gives the verdict) · basis (← cause) · settled-or-reversible |
+| **qualifier** | what-it-modifies (host) · the modification (un-X / intensify) · **of-what-property** [prov] · (never standalone) |
+| **bivalent-faculty** | the faculty (neutral) · the per-occurrence **valence** (the discriminator) · what-directs-it (object/aim) |
+
+## C.4 New collection items
+- **mutability** {fixed · changeable · UNRESOLVED} — does any verse show the state set/removed/reversed (e.g. clean↔unclean, innocent↔guilty).
+- **transition-trigger** (+ **`.manner`** sub-slot {inner · ceremonial/bound-rite · **juridical/forensic-covenantal** · **corrective/disciplinary** · **divine-affliction** · NONE}) — the act/agent that moves the bearer between the state and its pole; the manner sub-slot **homes the act-lemma how-gap** (a value, not a gap). [manner vocab extended from M13/M16]
+- **binding** (extends Part A item 3 compound) — for an expression, the manner-term + the characteristic it expresses; **A5 — compound/binding is a per-verse role field** {partner · qualifier · object · cause · manner · expresses · seat · pole-opposite · unmarked} (replaces the coarse 94%-"partner" default — *this is a build prerequisite; the live field is still flat*).
+- **pole-relation** — the term's inverse/axis-partner (within- or cross-cluster), from co-seating + cross-ownership. **Pole-paired clusters are assembled together** (M13↔M14, M12↔its-defilement-pole, M16↔M15).
+- **realm** {ritual/bodily · inner/moral · **forensic/covenantal** · eschatological · **social/communal**} — a per-verse sub-register (generalises beyond states; vocab grows per cluster). [extended from M13/M16]
+- **role-in-cluster** [prov] {member · pole-anchor · qualifier-import} — lets a pole/leakage term (e.g. sha.qar "lie" owned in Truth) be retained as a *cited pole* without being analysed as a positive member.
+- **person↔condition link** [prov] — a cognate marker between an IDENTITY unit and the STATE of the same root ("the fool is his folly"); not a new type.
+
+## C.5 Re-run / regeneration (R1–R6, governing)
+**R1** every collection value is tagged `derivation` {mechanical · read · researcher}: mechanical re-derives (regenerates), read/researcher are **preserved** (never overwritten — cf. §4e). Maximise the mechanical share (≈80% achieved). **R2** three reset scopes: per-verse (P6) → re-derive the term's collection layer; term change → re-derive across its verses; **model change → programme-wide migration**. **R3** stamp each value with `model_version`; a model change is a **re-assess-with-DIFF** (what reclassified), not a silent rewrite. **R4** re-running unchanged inputs at an unchanged model must be **idempotent** — a non-reproducible mechanical value is a **judgement leak** to fix (re-run = drift-detector). **R5** parked/old clusters (M01/M02/M07/M10/M11) re-enter via the **same pipeline** at the live model version. **R6** the LRT "fill-the-blank" recovery is a **rule** where possible (scan passage/bound term); only genuine reads are captured.
+
+## C.6 Storage (in `ve_lexical`, at term scope)
+The collection record is a set of `ve_lexical` rows at **term scope** (not verse scope), `ve_label` ∈ {`object_type`, `object_type.bearer`, `mutability`, `transition_trigger`, `transition_trigger.manner`, `realm`, `pole_relation`, `binding`, `classifier`, `role_in_cluster`, `membership_scope`, `transitivity`, `person_condition_link`}, each row carrying `value` (English per P9), `derivation` {mechanical·read·researcher}, `model_version`, and `source_ref` (the verse it was sourced from, incl. adjacency). Regenerable from the per-verse rows + the C.2–C.4 rules; `researcher` rows preserved (§4e lifecycle).
+
+## C.7 Status & open items
+- **Tested:** M12 (full) + tamim/cleanness test + M13/M14/M16 (collection-lexical built). Six object-types **stable**; ~79–81% mechanical; A1/A2/A3/A4/A5 confirmed; bivalent-faculty + identity validated.
+- **Open / [prov] to confirm:** classifier · transitivity · role-in-cluster · membership_scope · person↔condition-link · asah-deed override (each grounded on 1–2 clusters); the **enriched per-verse compound field (A5)** is the main build prerequisite (live field still coarse); realm/manner vocabularies grow per cluster (converge them).
+- **Build path:** enrich compound (A5) → build the collection-lexical generator (`object_type` + C.4 items from the per-verse rows + cross-verse rules) → run across clusters → fold convergent [prov] items to firm.
