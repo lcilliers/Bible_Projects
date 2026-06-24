@@ -35,8 +35,21 @@
 | D1-12 | QUALIFIER expected-set complete? | Add **"of-what-property"** (M13 ametameletos "irrevocable" rides a host) to the QUALIFIER expected answers. | folding → model v3 |
 | D1-13 | A5 enriched compound — in the data yet? | **No** — live field still ~90% flat "partner" across all clusters. **Prerequisite build item** (validated by-hand). Re-deep-dive driver. | open (build) |
 
-## Folded-into-01b log
-*(when an answer is promoted into the canonical guide 01b → v3, record it here with the section)*
-- _pending the v3 edit pass_
+## Round 2 — M19 (Trust) / M20 (Doubt) — [prov] item confirmation
+
+| # | Q | A (grounded) | status |
+|---|---|---|---|
+| D2-1 | Do M19/M20 need a 7th type? | **No** — six stable now across SIX clusters (M12/13/14/16/19/20). | firmed |
+| D2-2 | Is `transitivity` real/load-bearing? | **CONFIRMED + load-bearing — it PREDICTS bivalence:** a faculty that takes an object → the object-class sets valence → bivalent (trust); intransitive → univalent (self-control, refuge-seek). | firmed → 01b |
+| D2-3 | `membership_scope` (bivalent = per-occurrence)? | CONFIRMED clean (ba.tach bivalent=per-occ; cha.sah univalent=lemma; M20 anxiety/doubt per-occ). | firmed → 01b |
+| D2-4 | `role-in-cluster` enough values? | CONFIRMED + **needs a 4th value `alien`** — a provenance-intruder (self-control/zeal mis-owned in Trust) marked for route-out, distinct from pole-anchor. | firmed + `alien` → 01b |
+| D2-5 | Is bivalent-faculty robust + how decided? | **Richest cases yet** (trust, anxiety, doubt). **The object/aim IS the discriminator** (trust God→righteous vs wealth/self→sinful) — mechanical via valence-variance + object-class. | firmed → 01b |
+| D2-6 | person↔condition link — does it generalise? | **Yes → `cognate-link`**: act/EXPRESSION ↔ resulting STATE ↔ IDENTITY of one root (ba.tach act ↔ be.tach state; the-fool ↔ folly). | firmed (generalised) → 01b |
+| D2-7 | classifier / asah-override confirmed? | **Not exercised** — no IDENTITY unit in M19/M20; no deed-noun. Stay [prov] until an identity/deed cluster runs. | open [prov] |
+| D2-8 | Does the model refine an OLD cluster? | **Yes** — M20 old 4 chars: held 3/4, **split the 4th** (Doubt+Indecision → Doubt[trust-axis bivalent] + Perplexity[cognition, off-axis]). | evidence of value |
+
+## Folded-into-01b log (v3, Part C)
+- **2026-06-24 — Part C added to 01b** (v2→v3): two scopes · `object_type` (6 types, resolves §8) · A1 bearer-class · A2 intrinsic-faculty · type-conditioned expectedness (C.3, = the LRT) · collection items mutability/transition-trigger+manner/binding+roles/pole-relation/realm/classifier/role-in-cluster · re-run R1–R6 · ve_lexical term-scope storage (C.6).
+- **2026-06-24 — Round-2 firm-ups into Part C:** transitivity (load-bearing) · membership_scope · role-in-cluster (+`alien`) · bivalent-object-discriminator · cognate-link · realm/manner vocab extensions. Remaining [prov]: classifier, asah-override.
 
 *Living register — Round 0 (M12 + test) folded into model v2; Round 1 (M13/M14/M16) to follow; promotions to 01b v3 logged at the foot.*
