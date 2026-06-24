@@ -41,11 +41,12 @@ Per the method (characteristics → tier-questions + unit-narrative; statuses/ot
   - **U2-cleansing** — the REMEDY arm (cleansing side of atonement) → joins the cross-cluster atonement apparatus (M11 #1 + M38 + M12).
 - **→ QUALIFIER (cross-cutting):** sincerity — recorded as the authenticity facet of U2 + a modifier of M05/M13/M15; no separate treatment.
 
-## §4. Hygiene / edge outcomes (recommended; NOT executed)
+## §4. Hygiene / edge outcomes (⚠ SUPERSEDED 2026-06-24 — M10-lens bias)
 
-- **⚠ na.tan H5414G "give" (1,065 occ) — EXCLUDE from M12.** Purity-relevant ≈ **0**: pure transfer-field ("give/gave/given"), valence empty 91%, **1,054/1,065 contain no other M12 term**; the one "dedicated" is pagan (2Ki 23:11). It is ≈33% of M12's focus occurrences and pure noise. *Flag for an ownership fix — do not action in this step.*
-- **⚖ negation-pole (tum.ah / miainō / anosios)** — genuine M10c **defilement vocabulary**, owned here as the deliberate **contrast pole** (10/34 verses pair it with a positive purity term in-verse). Recommend: keep only as a *referenced* contrast; substantive home = M10c.
-- **Edge terms** — none are positive-purity objects: me.tom "soundness" → **M24**; morfoō "form" → **M11/M38/M45 renewal**; enchriō/epichriō = physical anointing; tikh.lah "perfection" → M13/M15-adjacent. **tsur H6696C + mikh.lah H4357 have ZERO occurrences in the extract** — drop from the family list (named in the draft, absent in data).
+> **This section was wrong** — it *exported* deliberate M12 content under the M10 sin-lens. See `wa-m12-reorientation-understand-in-cluster-v1`. Corrections: **na.tan H5414G** is deliberately M12-owned & sense-curated (a candidate GIVING characteristic, heart/soul-seated) — **not noise, do not exclude** (re-read R1). **morfoō + tsur "to form"** are two deliberate M12 forming verbs — **do not export to renewal** (re-read R2). **tum.ah/miainō/anosios** are M12's own registry words (impurity/passion/mercy) — **M12 content, not M10c borrowings** (re-read R4). Only me.tom (→M24) and the genuinely zero-occurrence terms remain candidate drops, to confirm in-cluster. The original (wrong) text is struck below for provenance.
+- ~~**⚠ na.tan H5414G "give" — EXCLUDE from M12.**~~ **FALSE** — curated M12 content; read in-cluster (R1).
+- ~~**⚖ negation-pole = M10c defilement vocabulary; substantive home = M10c.**~~ **FALSE** — M12's own content (R4).
+- ~~**Edge terms** … morfoō "form" → M11/M38/M45 renewal …~~ **morfoō + tsur are M12 forming verbs (R2).** me.tom→M24 stands (confirm); zero-occurrence terms drop on a presence check.
 
 ## §5. What M12 contributes back (cross-cluster + §10)
 

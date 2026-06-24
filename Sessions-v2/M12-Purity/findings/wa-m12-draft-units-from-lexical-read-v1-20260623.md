@@ -43,8 +43,9 @@
 → **M12 = positive-STATE-dominated (U1/U2/U4/U6) + CHARACTERISTIC (U3-act, U5) + the negation contrast-pole.** Confirms positive STATE as a major §10 kind; adds a **conscience-seated forensic-positive state** (innocence) as the precise inverse of M10 guilt.
 
 ## §G — Hygiene / flags (from the read)
-- **⚠ na.tan H5414G "give" (1,069 occ) is MIS-OWNED noise in M12.** All literal give/gave/given, valence none — not purity/consecration. (It landed in M12 from the truncation `--full` co-term recovery, where its home was tagged M12.) **It bloats the M12 fan-out and must be excluded from the purity units** — flag for an ownership fix; do NOT treat as an M12 object. *(This is exactly what reading the lexicals caught that the gloss-grouping missed.)*
-- **⚠ negation-pole (tum.ah/miainō/anosios)** = M10c defilement vocabulary; here as the **contrast pole**, not a positive M12 unit — confirm whether owned here deliberately or cross-ref to M10c.
+> **⚠ CORRECTED 2026-06-24 — these two flags were WRONG (M10-lens bias; see `wa-m12-reorientation-understand-in-cluster-v1`).** na.tan is **deliberately M12-owned** (H5414G "give", active, sense-curated, registry "faithfulness"; the other 10 senses deleted) — **not noise, not a recovery artifact**; it is a candidate GIVING characteristic (heart/soul-seated, nephesh ×46/lev ×27) to be read in-cluster (re-read R1). The negation-pole terms are **M12's own registry words** (tum.ah←impurity, miainō←passion, anosios←mercy) — M12 content to analyse here (R4), not M10c borrowings. The "export" instinct below is the bias being corrected.
+- ~~**⚠ na.tan H5414G "give" (1,069 occ) is MIS-OWNED noise in M12.**~~ **SUPERSEDED — false** (see banner). na.tan is curated M12 content; read it in-cluster as a giving characteristic (R1).
+- ~~**⚠ negation-pole (tum.ah/miainō/anosios)** = M10c defilement vocabulary~~ **SUPERSEDED** — they are M12's own (impurity/passion/mercy registries); analyse as M12 content (R4).
 - **U1↔U2 split** (ritual vs inner purity) is grounded in the **conscience-seatedness** signal, mirroring the M10c ritual-vs-moral defilement split — a real pole-symmetry, not imposed.
 - perfection/soundness (me.tom etc.) reads as **bodily soundness** (Psa 38 "no soundness in my flesh") → likely M24 (weakness/suffering), not purity — confirm.
 
