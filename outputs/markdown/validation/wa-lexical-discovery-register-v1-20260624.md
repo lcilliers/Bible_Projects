@@ -48,6 +48,14 @@
 | D2-7 | classifier / asah-override confirmed? | **Not exercised** — no IDENTITY unit in M19/M20; no deed-noun. Stay [prov] until an identity/deed cluster runs. | open [prov] |
 | D2-8 | Does the model refine an OLD cluster? | **Yes** — M20 old 4 chars: held 3/4, **split the 4th** (Doubt+Indecision → Doubt[trust-axis bivalent] + Perplexity[cognition, off-axis]). | evidence of value |
 
+## LOOKOUT register (directive b) — uncaptured considerations surfaced per verse
+
+> Per `wa-lexical-analysis-rules-reset-v1` §5: every verse analysis runs the lookout — *"what does this verse state or imply about the inner being that the current considerations do NOT capture?"* Each surfaced point lands here, is triaged, and — if adopted — becomes a new consideration applied to ALL verses (back-propagated). Populated as analyses run under the reset.
+
+| # | Verse(s) | What was noticed (uncaptured) | Why current considerations miss it | Proposed consideration | Status (open / adopted → §3-4 / dropped) |
+|---|---|---|---|---|---|
+| _to be populated by verse analyses under the reset_ | | | | | |
+
 ## Folded-into-01b log (v3, Part C)
 - **2026-06-24 — Part C added to 01b** (v2→v3): two scopes · `object_type` (6 types, resolves §8) · A1 bearer-class · A2 intrinsic-faculty · type-conditioned expectedness (C.3, = the LRT) · collection items mutability/transition-trigger+manner/binding+roles/pole-relation/realm/classifier/role-in-cluster · re-run R1–R6 · ve_lexical term-scope storage (C.6).
 - **2026-06-24 — Round-2 firm-ups into Part C:** transitivity (load-bearing) · membership_scope · role-in-cluster (+`alien`) · bivalent-object-discriminator · cognate-link · realm/manner vocab extensions. Remaining [prov]: classifier, asah-override.

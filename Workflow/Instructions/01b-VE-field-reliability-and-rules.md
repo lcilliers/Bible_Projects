@@ -1,5 +1,7 @@
 # 01b — Verse Lexical (VE) Generation — CANONICAL RULES (v3 · 2026-06-24)
 
+> **⚠ FRAMING RESET (2026-06-24):** the *framing* of this document — the object-type grid (Part C) and the intrinsic-faculty field, the "type=characteristic/state" bins, "logical units" as the organising move — is **superseded by `wa-lexical-analysis-rules-reset-v1`** (process/functional reframe: analyse *what the verse does*, let patterns emerge, faculty→"does the verse address a faculty"). The **observable bedrock here (measure layer §2, sense, mode)** and the deterministic mechanics are **retained and referenced** by the reset. Read the reset first; use this for the bedrock detail.
+
 > **v3 (2026-06-24):** added **Part C — the COLLECTION layer** (object_type + the deep-dive understanding captured at term scope, for re-use; resolves Part A §8). Part A (per-verse, v2) is unchanged. See Part C foot for status (tested M12/M13/M14/M16; six object-types stable).
 
 > **Binding companion (2026-06-17):** [01c — T2 treatment & API governance](01c-T2-treatment-and-API-governance.md) fixes (a) the T2 content/grammatical split and its treatment in generation/JSON/reads, and (b) the API governance (batched · ordered · token-minimal · time-monitored with circuit-breaker · self-verified · residue-only — *API never substitutes for a mechanical rule*). Engine alignment + compliance precede any API run.
