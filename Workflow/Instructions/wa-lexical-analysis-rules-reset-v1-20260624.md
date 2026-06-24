@@ -1,6 +1,8 @@
 # Lexical Analysis — RULES RESET (process/functional reframe) · v1 · 2026-06-24
 
 > **This resets the framing of lexical analysis.** It supersedes the *taxonomic* framing of `01b-VE-field-reliability-and-rules` (Part A's part-list and Part C's object-type grid) and reframes how we arrive at each value. The **observable bedrock** of 01b (the measure layer, sense, mode) is retained and referenced. Rationale: `Workflow/methodology/inner-being-behavioural-science-discussion.md`.
+>
+> **Hand-in-glove pair:** this is the **decomposition** half. Its **assembly** half is `wa-synthesis-B-spec-reset-v1` — the two are designed together so the lexical produces exactly what synthesis consumes. **One requirement synthesis-B places on this dissection:** cause / effect / transition must be recorded in a **joinable** form (the node + its kind), not free text, so movements can be assembled across verses (the antecedent in one verse, the effect in another).
 
 ## 0. Why the reset
 
