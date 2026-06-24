@@ -140,6 +140,24 @@ def faculty_from_text(text):
     return [f for f, rx in _FAC_RX.items() if rx.search(text or "")]
 
 
+# R1 faculty is now read from the curated Strong's->faculty MAP (P2-compliant, replaces gloss-stem).
+# Built by scripts/_apply_faculty_map_rederive_20260624.py from the classified inventory.
+_FACULTY_MAP = None
+def faculty_map():
+    global _FACULTY_MAP
+    if _FACULTY_MAP is None:
+        _FACULTY_MAP = {}
+        try:
+            import sqlite3
+            cc = sqlite3.connect(os.path.join("database", "bible_research.db"))
+            for s, f in cc.execute("select strongs_number, faculty from lemma_faculty_map"):
+                _FACULTY_MAP[s] = [x for x in (f or "").split(",") if x]
+            cc.close()
+        except Exception:
+            _FACULTY_MAP = {}
+    return _FACULTY_MAP
+
+
 def base(s):
     m = re.match(r"^([HG]\d+)", s or "")
     return m.group(1) if m else (s or "")
@@ -366,9 +384,15 @@ def derive(unit, words, step):
     #             R2: a faculty word in the term's neighbourhood
     fac = []
     md_full = (unit["gloss"] or "") + " " + (step.vocab(unit["strong"]).get("medium_def") or "")
-    for f in faculty_from_text(md_full):         # faculty = the TERM's OWN intrinsic faculty only (R1).
-        fac.append((f, "R1 term-meaning"))       # the trigger's faculty (e.g. the perception that caused the fear)
-                                                 # belongs to how/cause/compound, NOT to this term.
+    _fmap = faculty_map()
+    if unit["strong"] in _fmap:                  # R1: curated lemma->faculty MAP (canonical, P2-compliant)
+        for f in _fmap[unit["strong"]]:
+            fac.append((f, "R1 lemma-faculty-map"))
+    else:                                         # transitional fallback for unmapped terms (e.g. new/non-clustered)
+        for f in faculty_from_text(md_full):
+            fac.append((f, "R1 gloss-fallback (term not in lemma_faculty_map)"))
+        # faculty = the TERM's OWN intrinsic faculty only (R1). The trigger's faculty (e.g. the
+        # perception that caused the fear) belongs to how/cause/compound, NOT to this term.
     seen = set()
     for f, c in fac:
         if f not in seen:
