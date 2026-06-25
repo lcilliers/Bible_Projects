@@ -52,9 +52,12 @@
 
 > Per `wa-lexical-analysis-rules-reset-v1` §5: every verse analysis runs the lookout — *"what does this verse state or imply about the inner being that the current considerations do NOT capture?"* Each surfaced point lands here, is triaged, and — if adopted — becomes a new consideration applied to ALL verses (back-propagated). Populated as analyses run under the reset.
 
-| # | Verse(s) | What was noticed (uncaptured) | Why current considerations miss it | Proposed consideration | Status (open / adopted → §3-4 / dropped) |
+| # | Verse(s) | What was noticed (uncaptured) | Why current considerations miss it | Proposed consideration | Status |
 |---|---|---|---|---|---|
-| _to be populated by verse analyses under the reset_ | | | | | |
+| L-1 | Psa 24:4 | "clean hands" — naqi's **bearer** (hands) not captured | the engine records an adjective's head-noun only as a weak "qualifier" compound | **quality-bearer**: for a quality/adjective term, capture the noun it modifies as its bearer/subject (clean→hands, pure→heart) | adopted → delta (researcher 2026-06-25) |
+| L-2 | Psa 24:4 | "clean hands" is **figurative** — conduct/inner showing nothing unclean, not literal hands | the dissection reads the surface body-part, not the figurative inner referent | **somatic-metaphor / figurative-inner**: flag body-part terms (hand/eye/lip/neck…) used figuratively for conduct/the inner; record the inner referent (read-resolved where not mechanical) — a core, pervasive inner-being lens | adopted → delta (significant; partly a read) |
+| L-3 | Psa 24:4 → 24:5-6 | the **movement spans verses** — the outcome (blessing, righteousness, seeking God) is in the following verses, cut off at the verse boundary | the engine is verse-bounded; effect/cause aren't reached in adjacent verses, and aren't joinable | **immediate-context / cross-verse**: reach the immediate context for effect/continuation (cite the source verse); + cause/effect **joinable** so synthesis assembles the full movement across verses | adopted → delta (reinforces D-cause-joinable) |
+| L-4 | Psa 24:4 | the **four parallel clauses** (clean hands · pure heart · soul-not-to-false · no deceitful swearing) are **one composite portrait** of the blameless person; the dissection fragmented them | no consideration recognises Hebrew **parallelism** as one movement/picture | **parallelism-as-composite**: detect parallel members and record them as one composite movement, not isolated fragments | open (candidate) |
 
 ## D3 occurrence log (assembly model — IN EVALUATION, synthesis-B §X)
 
