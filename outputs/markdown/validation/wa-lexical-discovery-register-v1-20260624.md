@@ -51,6 +51,8 @@
 ## LOOKOUT register (directive b) — uncaptured considerations surfaced per verse
 
 > Per `wa-lexical-analysis-rules-reset-v1` §5: every verse analysis runs the lookout — *"what does this verse state or imply about the inner being that the current considerations do NOT capture?"* Each surfaced point lands here, is triaged, and — if adopted — becomes a new consideration applied to ALL verses (back-propagated). Populated as analyses run under the reset.
+>
+> **Two resolution routes:** (a) *mechanical* flags → a new lexical consideration (back-propagated); (b) *interpretive* flags (figurative/somatic-metaphor, distributed-movement, heavy-UNRESOLVED, theologically-loaded — e.g. L-2, L-3) → the **L1.5 full-exegesis (Logos) GATE** (`wa-synthesis-B-spec-reset-v1 §2b`), done after lexical analysis + before synthesis; result lands in the DB (read/exegesis-provenance). The flagged verse is **not eligible for L2** until its exegesis is done (pending → done → released).
 
 | # | Verse(s) | What was noticed (uncaptured) | Why current considerations miss it | Proposed consideration | Status |
 |---|---|---|---|---|---|

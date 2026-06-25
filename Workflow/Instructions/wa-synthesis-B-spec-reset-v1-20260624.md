@@ -22,6 +22,7 @@
 | Level | Scope | Stage | Produces |
 |---|---|---|---|
 | **L1 — in-verse** | one verse (+ context) | **the lexical record** | the verse's composed movement; the edges |
+| **L1.5 — full exegesis (GATE, flagged verses only)** | a verse + its passage | **Logos exegesis** | interpretive resolution of the figurative/distributed/loaded content the mechanical pass cannot settle — **lands in the DB; GATES L2** (§2b) |
 | **L2 — collection of similar verses** | verses sharing a shape | **Session B** | the emergent movements (the unit first appears) |
 | **L3 — cluster** | one cluster | **Session B** | the cluster's movements — ⟐ **a way-station: inputs to L4, not standalone "cluster findings"** (the cluster carries no meaning, §2a) |
 | **L4 — cross-cluster** | across clusters | **Session D** (B+D pointers, §5a) | **findings about the inner being as a whole** — the goal |
@@ -34,6 +35,21 @@
 - **C1 — A cluster is an operational partition, not an ontological claim.** The 47 clusters are how the corpus is sliced so L1–L4 are tractable. A boundary **carries no embedded meaning**; nothing about the inner being is asserted by where a verse is filed. A cluster is a *starting neighbourhood for attention*.
 - **C2 — How a cluster is formed (established practice).** ~3,500 Greek/Hebrew STEP terms (each with its verses) are **loosely coupled by gloss** into 47 clusters — a batching device. Two mechanics keep it provisional: **term mobility** (a term can be moved to a better-placed cluster; the gloss-coupling is correctable) and **focus-time boundary-collapse** (a verse is analysed when its cluster comes into focus, and *at that moment its lexical analysis binds it to other clusters, collapsing the boundaries for that verse*). *Consistency:* coupling by **gloss** (the English surface P2 forbids for analysis) is safe **only because the cluster carries no analytical weight** — it gathers verses, it does not claim anything about them.
 - **C3 — Boundary-permeability (the founding insight, one level up).** The focus-time collapse is driven by the **binding-web** field (lexical reset §3): per verse, the co-occurring inner-being terms + their relation — and those co-terms routinely belong to *other* clusters. So the partition is **provisional and porous by construction**; a verse's **home cluster is one fact about it, its edges to other clusters equally real facts**; the inner-being picture is assembled **across** clusters (L4).
+
+## 2b. L1.5 — the FULL-EXEGESIS GATE (Logos), for flagged verses *(researcher, 2026-06-25)*
+
+The mechanical lexical pass (L1) does the **breadth** and **flags what it cannot resolve**. Some verses carry meaning the mechanical edges cannot settle — and these **must get a full exegesis (using Logos) AFTER the lexical analysis and BEFORE the next phase (L2 movement-assembly) starts.** It is a **gate**, not an afterthought: L2 cannot begin for a verse/cluster until its flagged verses have been exegeted.
+
+- **What triggers it (from the L1 record + discovery-lookout):**
+  - **figurative / somatic-metaphor** — a body-part or image standing for conduct/the inner ("clean hands" = blameless conduct; "lift up the soul"); the inner referent needs exegesis.
+  - **distributed movement** — the antecedent/effect spans the passage, not the verse (Psa 24:4 → 5–6); the movement needs the passage read.
+  - **heavy UNRESOLVED** — divine-involvement / cause / object left UNRESOLVED by the mechanical rules.
+  - **theologically loaded / lookup-flagged** — the discovery-lookout surfaced significant content the edges don't carry.
+- **How:** a full exegesis using **Logos** (commentaries, lexica, the passage in context) — **researcher-led, AI-assisted** (AI structures/integrates the Logos material; the researcher confirms). This is the disciplined form of the reset's "the read."
+- **Where it lands (all-in-DB):** the exegesis **resolves the flagged considerations into the DB** — the figurative inner-referent recorded, the cross-verse effect captured with citation, the divine role settled — as **read-resolved/exegesis-provenance** values, **preserved** across any mechanical re-derive (the §4e read/researcher lifecycle). The Logos source is cited (P5/P7).
+- **The gate:** a flagged verse is **not eligible for L2** until its exegesis is done. Tracking: the flag → the discovery/lookout register → exegesis status (pending / done) → released to L2.
+
+> *Rationale.* Psa 24:4 proved the case: "clean hands" is figurative (conduct, not hands) and its movement runs into vv5–6 — neither resolvable mechanically. Pretending the mechanical pass settles such verses is the eisegesis trap; sending them through a real exegesis before synthesis is the honest path. **The mechanical pass is breadth; the Logos exegesis is depth-on-demand for the flagged minority.**
 
 ## 3. The AREAS TO COVER (reframed from the Tiers, recentred on the movement)
 
