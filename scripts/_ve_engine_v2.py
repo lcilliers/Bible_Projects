@@ -67,7 +67,8 @@ FACULTY_LEMMA = {  # R2 indirect: faculty signal lemmas (Strong's -> faculty)
     "H977": "volition", "G2309": "volition", "H7592": "volition",
 }
 INTENSIFIER = {"H7227": "many", "H7231": "many", "H3966": "very", "H3605": "all", "H1419": "great", "G4183": "many"}
-FROM_PREP = {"H4480", "G575", "G1537"}                  # min / apo / ek -> received-from-outside
+FROM_PREP = {"H4480", "H9006", "G575", "G1537"}         # min (+ OSHB min-prefix H9006) / apo / ek -> received-from-outside
+SPEECH = {"H559", "H1696", "H6030", "H7121", "G3004", "G2036", "G2980", "G611"}  # amar/dabar/anah/qara/lego/eipon/laleo/apokrinomai — narrative speech, not lived conduct
 INHERENT_VALENCE = {"H7451": "sinful", "H7563": "sinful", "H6662": "righteous", "H6666": "righteous"}
 NEGATION = {"H3808", "H408", "G3361", "G3756"}          # lo' / 'al / me / ou — prohibition markers
 PERCEPTION = {"G3708", "G1492", "G991", "G2334", "H7200", "H2372", "H8085", "H5027", "H238"}  # +shama/nabat/azan (2026-06-19 audit)
@@ -82,6 +83,7 @@ DIVINE = {_canon(s) for s in DIVINE}
 FACULTY_LEMMA = {_canon(k): v for k, v in FACULTY_LEMMA.items()}
 INTENSIFIER = {_canon(k): v for k, v in INTENSIFIER.items()}
 FROM_PREP = {_canon(s) for s in FROM_PREP}
+SPEECH = {_canon(s) for s in SPEECH}
 INHERENT_VALENCE = {_canon(k): v for k, v in INHERENT_VALENCE.items()}
 NEGATION = {_canon(s) for s in NEGATION}
 PERCEPTION = {_canon(s) for s in PERCEPTION}
@@ -210,6 +212,25 @@ def obj_type(w):
 
 def finite_verb(morph):
     return morph_util.morph_category(morph) == "verb" and person(morph) is not None
+
+
+# ---- RESET fidelity helpers (2026-06-25) ----
+QUANT_SURF = {"all", "every", "each", "any", "many", "much", "whole", "some", "most", "few", "both",
+              "one", "two", "three", "four", "five", "six", "seven", "ten", "great", "very", "more", "entire"}
+
+def tense_of(morph):
+    """coarse tense/aspect from a morph code — Greek (V-T..) reliably; Hebrew/Aramaic (HV<stem><conj>) best-effort."""
+    if not morph:
+        return None
+    m = morph.strip()
+    gm = re.match(r"V-([PIFARYL])", m, re.I)            # Greek: V-<tense><voice><mood>
+    if gm:
+        return {"P": "present", "I": "imperfect(past)", "F": "future", "A": "aorist(past)",
+                "R": "perfect", "Y": "pluperfect", "L": "pluperfect"}.get(gm.group(1).upper())
+    if re.match(r"[HA]V", m) and len(m) >= 4:           # Hebrew/Aramaic: H/A · V · stem · conj
+        return {"p": "perfect", "q": "perfect", "i": "imperfect", "w": "wayyiqtol(narrative-past)",
+                "v": "imperative", "a": "infinitive", "c": "infinitive", "r": "participle"}.get(m[3].lower())
+    return None
 
 
 def concise(md, gloss):
@@ -459,6 +480,69 @@ def derive(unit, words, step):
             if any(s in COORD for w in between for s in w["strongs"]) or any(w["pos"] == "conjunction" for w in between):
                 ro = next((w for w in words if cv["i"] < w["i"] <= cv["i"] + 2 and w["pos"] == "noun"), None)
                 out.append(("immediate-response", cv["text"] + (f' {ro["text"]}' if ro else ""), "coordinated reaction after term"))
+
+    # ===== RESET FIXES (2026-06-25): fidelity + key deltas baked in from the pilot review =====
+    def _word_text(txt):
+        return next((w for w in words if w["text"] == txt), None)
+    def _next_noun(after_i, within=3):
+        return next((w for w in words if after_i < w["i"] <= after_i + within and w["pos"] == "noun"
+                     and w["text"] and w["text"].lower() not in QUANT_SURF), None)
+    # (L-6) object-fidelity: a captured object that is a bare quantifier → advance to the head noun
+    for k, (it, val, cite) in enumerate(out):
+        if it == "object" and (val or "").lower() in QUANT_SURF:
+            wq = _word_text(val); head = _next_noun(wq["i"]) if wq else None
+            if head:
+                out[k] = ("object", head["text"], f"head noun (was quantifier '{val}')")
+                ot = obj_type(head)
+                if ot and not any(i == "object-type" for i, _v, _c in out):
+                    out.append(("object-type", ot, "from head object noun"))
+            break
+    # (L-6) from-source / content: the noun governed by a 'from' preposition (cleansed FROM idols/uncleannesses)
+    seen_fs = set()
+    for w in words:
+        if any(s in FROM_PREP for s in w["strongs"]):
+            head = _next_noun(w["i"])
+            if head and head["text"] not in seen_fs:
+                seen_fs.add(head["text"])
+                out.append(("from-source", head["text"], "noun governed by 'from' (source/content acted-from)"))
+    # (L-1) quality-bearer: for an adjective term, the IMMEDIATELY-adjacent noun it describes (clean→hands, pure→heart).
+    #   ±1 only + skip quantifiers + skip prefix-prep nouns (panim/'before' carries an H900x prep marker) → avoids
+    #   firing on a predicate adjective with no bearer (Gen 17:1 'be blameless') or on a prepositional noun.
+    PREP_PREFIX = {"H9003", "H9004", "H9005", "H9006"}
+    if term and term["pos"] == "adjective" and ti is not None:
+        bearer = next((w for w in words if abs(w["i"] - ti) == 1 and w["pos"] == "noun" and w["text"]
+                       and w["text"].lower() not in QUANT_SURF
+                       and not any(_canon(s) in PREP_PREFIX for s in w["strongs"])), None)
+        if bearer:
+            out.append(("quality-bearer", bearer["text"], "the immediately-adjacent noun the quality describes"))
+    # (§2) operation / lived-conduct verb: only when the term is a QUALITY asserted with a copula ('be blameless').
+    #   Prefer the imperative (walk), skip narrative speech-verbs (said), perception, copula, and negated-pole verbs.
+    COPULA = {_canon("H1961"), "G1510", "G1096", "G5225"}
+    gv_copula = gv is not None and any(_canon(s) in COPULA for s in gv["strongs"])
+    if term and term["pos"] != "verb" and gv_copula and ti is not None:
+        def _negated(w):  # verb preceded within 2 by a negation particle
+            return any(any(_canon(s) in NEGATION for s in p["strongs"]) for p in words if 0 < w["i"] - p["i"] <= 2)
+        cands = [w for w in words if w["pos"] == "verb" and w["i"] != ti
+                 and not any(_canon(s) in COPULA for s in w["strongs"])
+                 and not any(_canon(s) in PERC_COG for s in w["strongs"])
+                 and not any(_canon(s) in SPEECH for s in w["strongs"])
+                 and not _negated(w)]
+        # prefer imperative, then non-narrative (not wayyiqtol), then nearest to the term
+        cands.sort(key=lambda w: (tense_of(w["m0"]) != "imperative",
+                                  str(tense_of(w["m0"])).startswith("wayyiqtol"),
+                                  abs(w["i"] - ti)))
+        if cands:
+            liv = cands[0]
+            out.append(("operation", f'{liv["text"]} ({liv["strongs"][0]})',
+                        "lived-conduct verb (quality asserted with a copula; imperative/non-narrative preferred)"))
+    # (L-5) tense fidelity: annotate captured effect/response/cause verbs with their morph tense (never flatten)
+    for k, (it, val, cite) in enumerate(out):
+        if it in ("immediate-response", "cause", "cause_clause") and val and val != "pending-read":
+            vw = next((w for w in words if w["pos"] == "verb" and w["text"] and w["text"] in val), None)
+            t = tense_of(vw["m0"]) if vw else None
+            if t and f"[{t}]" not in val:
+                out[k] = (it, f"{val} [{t}]", cite + f"; tense={t}")
+    # ===== end reset fixes =====
 
     # ---- audit (founded + coverage) ----
     founded = all(c for (_i, _v, c) in out)

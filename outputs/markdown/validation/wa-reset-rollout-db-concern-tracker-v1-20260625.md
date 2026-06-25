@@ -25,6 +25,7 @@ span_strong_match_null 3258 · target_word_null 3198
 |---|---|---|---|---|---|
 | 2026-06-25 | before start (baseline) | 231890 | 0 | — | healthy |
 | 2026-06-25 | (c) L1-reset increment 1: `discovery` field added to engine + piloted M12 (read-only) | unchanged | — | — | no DB write (pilot via derive() print); engine confirmed functional + lookout surfaces gaps |
+| 2026-06-25 | (c) L1-reset increment 2: **fidelity fixes baked** into `_ve_engine_v2.derive()` (object-fidelity · from-source incl. `H9006` · tense · quality-bearer · operation) + read-only before/after validation on 6 reviewed + 5 new verses (`_read_ve_pilot_compare_20260625.py`) | unchanged | — | — | **no DB write** (engine code + read-only compare only); 6 reviewed errors corrected (2 new mis-fires caught + fixed in 2nd pass); validation: `wa-ve-reset-fidelity-fixes-validation-v1-20260625.md` |
 
 ## Concern register
 > Any anomaly, unexpected delta, or risk surfaced during the roll-out. Each: concern · when · severity · status.
