@@ -473,6 +473,11 @@ def derive(unit, words, step):
             or any(s in cobases for s in w["strongs"])
         if acc: named.add(w["i"])
     gaps = [w["text"] for w in content if w["i"] not in named]
+    # discovery-lookout (reset rules §5): the mechanical coverage-gap = content words not accounted for by
+    #   any item = candidate UNCAPTURED considerations, surfaced for investigation. 'none' proves it was
+    #   looked for (not skipped). The interpretive "what's implied but uncaptured" is added by the read.
+    out.append(("discovery", ("coverage-gap: " + "; ".join(gaps)) if gaps else "none",
+                "mechanical lookout — content words unaccounted; candidate uncaptured considerations"))
     audit = f"founded={'yes' if founded else 'NO'}; coverage gaps (content words not yet accounted): {gaps if gaps else 'none'}"
     out.append(("lexical_note", f"[audit] {audit}", "read-back audit"))
     return out
