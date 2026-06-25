@@ -48,8 +48,19 @@ Each consideration is an **observation of the verse**, arrived at as stated, wit
 | **transition / becomes** | what it **turns into / moves between** (its movement) | a verse (or adjacent verse) showing the state set, removed, reversed, or transformed; the trigger of the change |
 | **relational web / binding** | what it **moves with** | the co-occurring tagged inner-being terms + the **relation** each holds to the head (partner · object · cause · manner · expresses · seat · pole-opposite) — read per verse |
 | **direction** | **toward / from whom** | directional/relational morphology governing the term toward an object |
+| **adjacency / read-with** *(2026-06-25)* | is the verse **isolable**, and if not, **which adjacent verse-lexicals must it be read with** | the **adjacency-checker** (below) |
 
 > These are the same "edges" the project always needed; the reset makes them **primary**. Most verses will be legitimately NONE on several (e.g. cause/effect) — that is expected (P4), not a gap.
+
+### 3a. The adjacency-checker — *no verse read in isolation* (researcher, 2026-06-25)
+
+The lexical pass runs an **adjacency-checker** and records, on the verse:
+- **`isolable`** = yes / **no** — a marker that the verse's inner-being movement is **not self-contained**;
+- **`read_with`** = the **adjacent verse-lexical reference(s)** (verse_context id / reference) it must be read with, each with **direction** (`prev` = antecedent/referent · `next` = effect/continuation · `both`) and the **trigger** signal.
+
+**Triggers** (mechanical-ish + read): a **boundary conjunction** continuing the thought ("**for** they shall see God"; "**because**…"); an **incomplete-in-verse movement** (an expected cause/effect signalled but absent → it is in the neighbour); a **referent resolved next door**; **poetic run-on / parallelism** across the boundary; the **discovery cross-verse flag**.
+
+**Effect:** when a verse is pulled (by the session / synthesis / the exegesis gate) it **brings its `read_with` neighbours** — *it is never considered in isolation.* `isolable=no` is also a **trigger for the L1.5 exegesis gate** (the span is confirmed by the read where it exceeds the obvious ±1, e.g. Psa 24:4→5–6). This is the **automatic, immediate, adjacent** complement to the (manual, deferred, cross-cluster) B/D pointer.
 
 ## 4. The OBSERVABLE references (reframed from ontology to observation)
 
