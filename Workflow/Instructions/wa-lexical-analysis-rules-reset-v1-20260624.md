@@ -1,4 +1,6 @@
-# Lexical Analysis — RULES RESET (process/functional reframe) · v1 · 2026-06-24
+# Lexical Analysis — RULES RESET (process/functional reframe) · v1.1 · 2026-06-25
+
+> **v1.1 (2026-06-25)** folds in `Workflow/methodology/wa-reset-amendments-v1-20260625.md`: **P0** (measurement informs, never decides — §1); the **singleton rule** (a movement of one is a movement — §6); **cluster-as-porous-workspace** + patterns assemble *across* clusters (§6, full detail in synthesis-B §2a); and the **lookout→B/D-pointer** integration with **batched growth cycles** (§5).
 
 > **This resets the framing of lexical analysis.** It supersedes the *taxonomic* framing of `01b-VE-field-reliability-and-rules` (Part A's part-list and Part C's object-type grid) and reframes how we arrive at each value. The **observable bedrock** of 01b (the measure layer, sense, mode) is retained and referenced. Rationale: `Workflow/methodology/inner-being-behavioural-science-discussion.md`.
 >
@@ -14,6 +16,7 @@ So the **"faculties / object-types / units"** lens was *miscalibrated* — those
 
 ## 1. Governing principles
 
+- **P0 — Measurement informs the eye; it never makes the decision.** *(2026-06-25, shared with synthesis-B.)* Count, co-occurrence, distribution, association strength are **descriptive/revelatory only** — they surface candidates and show shape; they **never gate existence, inclusion, exclusion, or validity.** A phenomenon attested **once exists** (the singleton rule, §6); a consideration is never recorded *because* it is frequent nor dropped *because* it is rare. Measurement is a lens held to the data, never a sieve laid over it.
 - **P1 — Observe, don't impose.** Record what the verse *states or implies*; never sort into a pre-decided category. Mechanical/deterministic where the measure layer allows; else a grounded read; else UNRESOLVED.
 - **P2 — Original-language grounded.** Every signal is read off the lemma + morphology + co-occurring tagged terms — **never the English string** (the homograph error-class).
 - **P3 — Functional-first.** The primary record is **what the word does** (its relations and movements, §3), not what it *is* (its category). Categories are outcomes (§6), never inputs.
@@ -61,15 +64,18 @@ After recording §2–§4, every analysis MUST run the **lookout**:
 
 - Look for: a movement, relation, cause, effect, condition, or nuance the schema has **no consideration for**; something **implied** (in the term, the clause, the adjacent context) but unrecorded; anything noteworthy about how the inner being works here that would otherwise be lost.
 - **Surface each as a DISCOVERY-FLAG** — recorded (a) as a `lexical_note` typed `discovery` on the verse, and (b) in the **lexical-discovery register** (`outputs/markdown/validation/wa-lexical-discovery-register-*`), with: the verse, what was noticed, why the current considerations miss it, and a proposed consideration-name.
-- **Triage + propagation:** a flag that **recurs / is adopted** becomes a **new consideration** in §3/§4 — and is then **applied to ALL verses** (back-propagation: prior verses are re-examined for it; the re-derive is idempotent). *This is how the schema grows from the material rather than from a fixed upfront grid — directive (b).*
+- **Triage + propagation:** a flag that **recurs / is adopted** becomes a **new consideration** in §3/§4 — and is then **applied to ALL verses** (back-propagation: prior verses are re-examined for it; the re-derive is idempotent). *This is how the schema grows from the material rather than from a fixed upfront grid — directive (b).* **Batch adopted flags into versioned growth cycles** — not a programme-wide re-derive per flag (early on, when discoveries recur most, per-flag churn would be wasteful).
+- **A lookout flag that references another cluster/verse is raised as a B/D pointer** (`wa-synthesis-B-spec-reset-v1 §5a`, established practice): a deferred observation recorded in the DB that re-surfaces when that verse/cluster next comes into focus. The lookout is the **raiser**; the pointer is the **carrier**; focus is the **trigger**. This is how a cross-cluster tie noticed here is carried into synthesis without holding the whole web at once.
 - The lookout is **a standing field of every analysis**, not optional. A verse with nothing to flag records "discovery: none" (so we know it was looked for, not skipped).
 
 ## 6. Patterns emerge — NOT categories imposed (synthesis, post-hoc)
 
 "States" and "characteristics" are **not inputs**. They are **recurring functional patterns** that surface *from* the §3 record — *attractors*: a cause→operation→effect shape (or a stable condition) that repeats across many verses. They are:
-- **named only when observed** (the data shows the recurrence), held loosely, revisable;
+- **named when attested** (a single verse suffices — *a movement of one is a movement*; cardinality is recorded as spread/emphasis, never required for naming, P0/singleton rule), held loosely, revisable;
 - allowed to **shade into one another** (no sealed boundaries) — the text often lets them;
 - never the grid we start from. The old object-types (characteristic / state / expression / identity / qualifier / bivalent) may **re-appear here as observed patterns** — but only if the functional record earns them, and they carry no authority as pre-set bins.
+
+> The **act of synthesis** — how these patterns are assembled across verses and clusters, the *movement* (not the term) as its unit, and the four-level cascade (in-verse → similar-verses → cluster → cross-cluster) — is specified in **`wa-synthesis-B-spec-reset-v1`** (the assembly half). Note also: the **cluster is a porous workspace, not a meaning** (coupled by gloss for batching only; boundaries collapse at focus via the binding-web) — so patterns assemble *across* clusters, never within one (synthesis-B §2a). This reset produces the edges; synthesis-B assembles them.
 
 ## 7. Carried-forward mechanics (unchanged)
 

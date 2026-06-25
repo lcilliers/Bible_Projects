@@ -1,88 +1,122 @@
-# Synthesis-B — SPEC (the assembly half), hand-in-glove with the lexical reset · v1 · 2026-06-24
+# Synthesis-B — SPEC (the assembly half), hand-in-glove with the lexical reset · v2 · 2026-06-25
 
-> **The second half of the reset.** `wa-lexical-analysis-rules-reset-v1` specifies the **decomposition** (per-verse functional edges). This specifies the **assembly** — how those edges become synthesized findings about the inner being. Built at the same time so the two **fit hand in glove**: the lexical produces exactly what synthesis consumes (researcher directive). Addresses the documented failure seam — *recomposition*, not decomposition (01b Part B) — and the evaluation in `wa-reset-evaluation-and-synthesis-gap-v1`.
+> **The second half of the reset.** `wa-lexical-analysis-rules-reset-v1` specifies the **decomposition** (per-verse functional edges). This specifies the **assembly** — how those edges become synthesized findings about the inner being. Built hand-in-glove so the lexical produces exactly what synthesis consumes. Addresses the documented failure seam — *recomposition*, not decomposition (01b Part B).
+>
+> **v2 (2026-06-25)** folds in `Workflow/methodology/wa-reset-amendments-v1-20260625.md` (P0 measurement-informs-never-decides · the singleton rule · cluster-as-workspace · related-verses + the established B+D pointer mechanism · measurement instruments · embedded evaluation points) **+ four CC refinements** (marked ⟐): singleton↔relation interlock · L3 as way-station · D3 resolution · validity-read-must-be-grounded.
+>
+> **Through-line:** the founding insight — *boundaries won't hold; meaning lives on the edges* — carried **one level up**: words were nodes with meaning on their edges; now **clusters are nodes and the inner-being picture lives on the edges between them.**
 
-## 1. The governing decisions (from the evaluation)
+## 1. The governing principles
 
-- **The unit of synthesis is the MOVEMENT, not the term.** A movement = a recurring functional shape — *antecedent → operation → object → effect → transition* (or a stable condition) — that is **term-independent** (many words participate in one movement). Synthesis anchored on the term yields a per-word lexicon; anchored on the movement, it yields **findings about the inner being** (the actual goal). *(Meaning lives on the edges, not the nodes — applied to synthesis.)*
-- **Synthesis is a QUERY over structured, cited edges — not a narrative pass.** This is the wager that makes recomposition tractable where Part B failed: the fragments are structured observations, so assembling them is a grouping/aggregation over `ve_lexical`, not "holding the web in one pass."
-- **Bottom-up, emergence-tested.** Movements are *clustered out of* the edge-data; the retired object-types/tiers are used **only as a post-hoc comparison, never a template.** Success test: the pass must surface **≥ some movements the old taxonomy had no name for** — else the grid is still steering the eye.
-- **Traceable by construction (P5/P7).** Every named movement/finding walks back down to the verses and considerations that forced it — the fix for "read well because it was narrated, not derived."
+- **P0 — Measurement informs the eye; it never makes the decision.** Count, co-occurrence, distribution, association strength are **descriptive/revelatory only**. They surface candidates and show shape; they **never gate existence, inclusion, exclusion, or validity.** (Parent of the singleton rule and the instruments. Measurement is a lens held to the data, never a sieve laid over it.)
+- **The unit of synthesis is the MOVEMENT, not the term.** A movement = a recurring functional shape — *antecedent → operation → object → effect → transition* (or a stable condition) — **term-independent**. Anchored on the term, synthesis yields a per-word lexicon; anchored on the movement, **findings about the inner being** (the goal). *(Meaning on the edges, not the nodes.)*
+- **A movement of one is a movement (singleton rule).** A shape is named **when attested — a single verse suffices**; recurrence is recorded as **spread/emphasis metadata**, never required for naming. Cardinality is a property *of* a movement, not the criterion *for* it. *(B1.)*
+- **Synthesis is a QUERY over structured, cited edges — not a narrative pass.** The fragments are structured observations, so assembly is a grouping/traversal over `ve_lexical`, not "holding the web in one pass" (the Part B failure). The traversal is **across time, on focus** (the pointer mechanism, §5a), not simultaneous.
+- **Bottom-up, doubly-tested.** Movements are clustered *out of* the edge-data; the retired object-types/tiers are a **post-hoc comparison, never a template**. Two standing tests (§5): **emergence** (≥ some movements the old taxonomy can't name — else the grid is steering) and **validity** (each candidate is a real inner-being dynamic, not a syntax/genre artifact — read qualitatively, **never on count**).
+- **Frequency-neutral gating** *(B3):* **attestation includes · validity excludes · frequency does neither.** A rare shape that reads as a real dynamic is kept; a frequent shape that reads as a linguistic artifact is discarded.
+- **Traceable by construction (P5/P7).** Every named movement walks down to the verses and considerations that forced it — including the **validity verdict**, which ⟐ must itself **cite why** a discarded shape is an artifact (construct grammar / parallelism / genre), never a bare judgement.
 
-## 2. The synthesis CASCADE (researcher's four levels → programme stages)
+## 2. The synthesis CASCADE (four levels → programme stages)
 
-Synthesis is not one operation; it is a cascade, each level rolling up the one below, the **movement** the unit at every level.
-
-| Level | Scope | Programme stage | What it produces |
+| Level | Scope | Stage | Produces |
 |---|---|---|---|
-| **L1 — in-verse** | one verse (+ immediate context) | **the lexical record** (`wa-lexical-analysis-rules-reset-v1`) | the verse's composed functional movement (the narration view); the edges |
-| **L2 — collection of similar verses** | verses sharing a movement-shape | **Session B** | the **emergent movements** — recurring shapes clustered bottom-up from L1 edges (this is where the unit first appears) |
-| **L3 — cluster** | one cluster | **Session B** | the cluster's characteristic movements + how they relate; the cluster's contribution to the inner-being picture |
-| **L4 — cross-cluster** | across clusters | **Session D** (driven by SD pointers) | **findings about the inner being as a whole** — movements that span clusters; the dynamics of the whole inner life |
+| **L1 — in-verse** | one verse (+ context) | **the lexical record** | the verse's composed movement; the edges |
+| **L2 — collection of similar verses** | verses sharing a shape | **Session B** | the emergent movements (the unit first appears) |
+| **L3 — cluster** | one cluster | **Session B** | the cluster's movements — ⟐ **a way-station: inputs to L4, not standalone "cluster findings"** (the cluster carries no meaning, §2a) |
+| **L4 — cross-cluster** | across clusters | **Session D** (B+D pointers, §5a) | **findings about the inner being as a whole** — the goal |
 
-- **L1 → L2 is the critical, previously-failed seam.** It is done by **grouping verses by shared functional shape** (the bottom-up clustering over the edge-fields), NOT by grouping words into units. A movement is named when the shape recurs; it is held loosely and may shade into neighbours.
-- **L4 is the goal** — "findings for the inner being" — and it is **cross-cluster by nature** (the inner being isn't one cluster). SD pointers are the existing carrier.
+- **L1 → L2** is the previously-failed seam: done by **grouping verses by shared shape, bottom-up** (not grouping words into units).
+- **L4 is the goal and is cross-cluster by nature** — the inner being is not one cluster; the picture is assembled *between* clusters.
+
+## 2a. CLUSTER FORMATION & STATUS — the partition is a workspace, not a meaning *(amendment C)*
+
+- **C1 — A cluster is an operational partition, not an ontological claim.** The 47 clusters are how the corpus is sliced so L1–L4 are tractable. A boundary **carries no embedded meaning**; nothing about the inner being is asserted by where a verse is filed. A cluster is a *starting neighbourhood for attention*.
+- **C2 — How a cluster is formed (established practice).** ~3,500 Greek/Hebrew STEP terms (each with its verses) are **loosely coupled by gloss** into 47 clusters — a batching device. Two mechanics keep it provisional: **term mobility** (a term can be moved to a better-placed cluster; the gloss-coupling is correctable) and **focus-time boundary-collapse** (a verse is analysed when its cluster comes into focus, and *at that moment its lexical analysis binds it to other clusters, collapsing the boundaries for that verse*). *Consistency:* coupling by **gloss** (the English surface P2 forbids for analysis) is safe **only because the cluster carries no analytical weight** — it gathers verses, it does not claim anything about them.
+- **C3 — Boundary-permeability (the founding insight, one level up).** The focus-time collapse is driven by the **binding-web** field (lexical reset §3): per verse, the co-occurring inner-being terms + their relation — and those co-terms routinely belong to *other* clusters. So the partition is **provisional and porous by construction**; a verse's **home cluster is one fact about it, its edges to other clusters equally real facts**; the inner-being picture is assembled **across** clusters (L4).
 
 ## 3. The AREAS TO COVER (reframed from the Tiers, recentred on the movement)
 
-The Tiers (T0–T7, `WA-tier-catalogue-current-state-v2`) already enumerate the areas — but characteristic-centric and faculty-heavy. Reframed onto the movement, the areas a synthesized finding must cover are:
+A **completeness checklist** for describing a movement — ⟐ **not** classification bins *(F3: if every emergent movement maps cleanly to an old tier, the checklist is steering — re-run the emergence test)*:
 
-| Area (synth) | The question, recentred on the movement | From tier |
-|---|---|---|
-| **Definition / shape** | what *is* this movement — its recurring antecedent→operation→effect form | T1.1–1.2 |
-| **Boundary / opposite** | what stands against it (its pole), where it ends, what it is not | T1.3 |
-| **Modes** | the distinct modes/manners in which it runs | T1.4 |
-| **Immediate response & sustained effect** | what it yields at once, and over time | T1.5–1.6 |
-| **Conditions / antecedents** | what brings it about, what it needs | T1.7, T0.2 |
-| **Faculty/seat addressed** | which faculties/seats the verses *address* when this movement runs (observation, not ontology) | T2, T3 (reframed) |
-| **Relational interfaces** | who/what it is directed to/from; how it runs between persons / toward God | T4, T0.1 |
-| **Formation / movement-over-time** | how it develops, transforms, reverses (the transition edge aggregated) | T5 |
-| **Structural relations** | how it binds to / triggers / opposes other movements (the cross-movement web) | T6 |
-| **Evidential** | the verses that force it; its strength, spread, silences | T7 |
-| **God-relation / design** | whether borne by God / the creature; its place in the design | T0 |
-
-> The faculty-heavy T3 collapses into a single **observation** area ("which faculties/seats do the verses address when this movement runs"), per the reset — not a parts-anatomy. The characteristic-centric framing is replaced by **the movement** as the thing each area describes.
+Definition/shape · Boundary/opposite · Modes · Immediate-response & sustained-effect · Conditions/antecedents · **Faculty/seat addressed** (the *observable* "which faculties the verses address," not an ontology — collapses the old faculty-heavy T3) · Relational interfaces · Formation/movement-over-time · Structural relations (cross-movement web) · Evidential (the verses, spread, silences) · God-relation/design.
 
 ## 4. Hand-in-glove map — lexical consideration → synthesis area
 
-This is the fit-check (and the validator of the dissection): every synthesis area must be **fed by** named lexical considerations; every lexical consideration must **feed** something. If an area has no lexical feeder, the dissection is missing a field (→ add it); if a consideration feeds nothing, question it.
+Every synthesis area must be fed by named lexical considerations; every consideration must feed something (the dissection-validator).
 
-| Lexical consideration (reset §3/§4) | Feeds synthesis area(s) |
+| Lexical consideration | Feeds |
 |---|---|
-| antecedent / cause | Conditions / antecedents |
-| operation / how | Definition/shape · Modes |
-| object / target (+ observed object kind) | Definition/shape · Relational interfaces |
-| manner / intensity | Modes |
-| produces / effect · immediate-response | Immediate response & sustained effect |
-| transition / becomes | Formation / movement-over-time · Boundary (the pole it moves to) |
-| relational web / binding | Structural relations · Relational interfaces |
+| antecedent/cause | Conditions/antecedents |
+| operation/how | Definition/shape · Modes |
+| object/target (+ object kind) | Definition/shape · Relational interfaces |
+| manner/intensity | Modes |
+| produces/effect · immediate-response | Response & sustained-effect |
+| transition/becomes | Formation · Boundary (the pole it moves to) |
+| relational web/binding | Structural relations · Relational interfaces |
 | direction | Relational interfaces |
 | faculty/seat addressed | Faculty/seat addressed |
-| valence / moral colour | Boundary/opposite · God-relation/design |
+| valence/moral colour | Boundary/opposite · God-relation |
 | sense, mode (bedrock) | Definition/shape |
-| **discovery-lookout flags (§5)** | **new areas** (an adopted flag can add a synthesis area, not just a lexical field) |
+| **discovery-lookout flags** | **new areas** (an adopted flag can add an area) — and ⟐ a lookout flag referencing another cluster is **raised as a B/D pointer** (§5a) |
 
-→ **Coverage check both ways passes** on the current reset fields, with one watch item: **cause↔effect must be *linkable across verses*** (the antecedent in one verse, the effect in another) for L2 movement-detection — so the lexical must record cause/effect in a **joinable** form (the node + its kind), not just free text. *(This is the concrete thing to fix in the dissection so it feeds synthesis.)*
+→ **Coverage passes both ways** on the current reset fields, with the standing requirement: **cause / effect / transition must be recorded in a *joinable* form** (the node + its kind, not free text), so movements assemble across verses.
 
-## 5. Method (per level)
+## 5. Method (per level), with the embedded evaluation points
 
-- **L2 (the engine):** over a cluster's L1 edge-records, **cluster by shared shape** — verses whose (operation, object-kind, effect, transition, valence) configuration co-recurs form a candidate movement. Name it from the recurrence, cite its verses, record its areas (§3). Run the **emergence test** (some movements must not map to the old six). Bottom-up; the old taxonomy compared *after*.
-- **L3:** assemble the cluster's movements; record how they relate (bind/trigger/oppose — from the binding edges); the cluster's net contribution.
-- **L4:** across clusters, find movements that **recur cross-cluster** (the SD-pointer web is the seed); these are the inner-being findings. Same areas, same traceability.
-- **Discovery-lookout at every level** (reset §5 generalised): *"what does this collection / cluster / cross-cluster show about the inner being that our areas do NOT capture?"* → flag → adopted flags add an area (§3) applied at all levels.
+- **L2 (the engine):** over a cluster's L1 edge-records, **group by shared shape** — verses are grouped by their (operation, object-kind, effect, transition, valence) configuration; **each distinct configuration is a candidate movement, cardinality 1..n; no group is dropped for low cardinality** *(B2)*. Then per candidate:
+  - ⟐ **weave, don't isolate:** a singleton (or sparse) candidate that shares a **D1 relation signal** (§5a) with a richer movement **attaches** to it as a variant/instance; the genuinely *isolated* singleton (no D1 tie) stands and is **flagged as a rare standalone** for study. So the output = **valid movements + their attached instances + the rare isolated singletons** — not a flat list of every shape.
+  - **validity gate** *(F2, named step):* is this a real inner-being dynamic or a syntax/genre artifact? — qualitative, **frequency-neutral**, and ⟐ **grounded** (cite the artifact reason if discarded).
+  - ⟐ **F1 — cluster on the DENSE fields** (operation, object-kind — populated on most verses); let the **sparse** fields (effect, transition) **subdivide/enrich** a candidate only where present. **Never group verses on shared *absence*** (NONE-effect + NONE-transition is not a similarity).
+  - **emergence test:** the pass must surface ≥ some movements the old six can't name.
+- **L3:** assemble the cluster's movements; record how they bind/trigger/oppose (from the binding edges) — ⟐ as **inputs to L4**, not as a cluster-level claim.
+- **L4:** across clusters, the movements that **recur cross-cluster** (the B+D pointer web, §5a, is the carrier) — the inner-being findings. Same areas, same traceability.
+- **Discovery-lookout at every level:** *"what does this collection/cluster/cross-cluster show that our areas do NOT capture?"* → flag → (if it ties to another cluster) a pointer; adopted flags add an area applied at all levels.
+
+## 5a. RELATED VERSES + the B+D pointer mechanism *(amendment D)*
+
+- **D1 — Related ≠ frequent.** A verse is *related* to a movement by a **relation signal read off the L1 edge-record**, not by frequency:
+
+  | Relation signal | L1 source | Relates |
+  |---|---|---|
+  | shared shape | (operation, object-kind, effect, transition, valence) | verses enacting the same movement, any cluster |
+  | binding-web tie | relational web/binding | verses whose term co-occurs/binds with the focus |
+  | shared object-kind | object/target | verses directed at the same kind of object |
+  | pole-opposition | transition; binding (pole-opposite) | verses naming the movement's opposite |
+  | shared seat addressed | faculty/seat addressed | verses addressing the same seat |
+  | cognate/root tie | bedrock lemma + family | act↔state↔identity of one root across clusters |
+
+- **D2 — The B+D pointer mechanism (established practice).** A **pointer is a deferred observation recorded in the DB against a verse or cluster, that re-surfaces when that verse/cluster next comes into focus**, to be resolved then. This is how the web is traversed **across time, on focus** — the direct answer to "can't hold it all at once." A pointer records: the observation + the **D1 signal** that occasioned it + its origin (verse/cluster/movement), so it is actionable + traceable on re-surfacing. **B-pointers** (L2/L3, Session B) re-surface at cluster scope; **D-pointers** (L4, Session D) re-surface at cross-cluster focus. **Open-ended:** any noticed relation — including a discovery-lookout flag — can raise a pointer, so the set **grows as analysis proceeds**; **L4 is not bounded by any prior framing** (new cross-cluster ties become new D-pointers as seen). *(Integration: the lookout raises · the pointer carries · focus triggers · the D1 signals are the vocabulary.)*
+- **D3 — Assembly model.** ⟐ **Resolved (proposed):** default to **(i) recognise-then-attach** — recognise a movement from verses rich enough to show its shape, then **attach** sparser single-edge verses to the *named* movement by their D1 signal (each verse preserved; nothing force-merged; consistent with the singleton rule). Permit **(ii) fragment-stitch** — reconstruct a movement never wholly present in one verse — **only** when (a) the movement is genuinely *inherently distributed* (no verse shows it whole, so (i) would miss it) **and** (b) the join key is an explicit **D1 signal, never the lemma** (else the term silently re-becomes the unit). A sparse verse **joins** a movement; it is **never deleted for being sparse.**
+
+## 5b. MEASUREMENT INSTRUMENTS — revealing lenses, non-deciding *(amendment E, governed by P0)*
+
+| Instrument | Reveals | At | Non-deciding constraint |
+|---|---|---|---|
+| Co-occurrence heat-map (term×term/cluster, shape×cluster) | graded association density | L2/L3 | a cold cell never excludes; a hot cell never auto-includes |
+| Association/affinity matrix (movement×movement) | how movements bind/trigger/oppose | L3/L4 | strength shown, not thresholded into membership |
+| Distribution histogram (term/shape/movement × books/genres/clusters) | spread & concentration (emphasis, not validity) | all | a tall bar = emphasis; a single bar = a **singleton kept** |
+| Edge/network view (nodes=terms/movements, weighted edges=co-occurrence) | **emergent areas without hard lines** — density as topology | L3/L4 | dense regions are *observed*, never drawn as boundaries |
+
+**E2 — Bias-guard.** No instrument output is ever stored as a finding or a membership. Its only outputs: a **candidate** related-verse set (→ §5a), a **candidate** movement-association (→ L3/L4 web), or a **spread description recorded on** a movement. The finding is always the **read**, walkable to verses.
 
 ## 6. Storage & traceability
 
-- A **movement layer** (distinct from the term-profile layer): one record per movement, at its level (L2/L3/L4), carrying its shape, its areas (§3), and its **cited verse-set**. Term-profiles (the §7 term-scope store of the reset) remain a *by-product*, not the goal.
-- Every movement-finding is **walkable down** to its verses → considerations → measures (P5/P7). No finding without a trace.
-- Re-derive: L1 changes → re-cluster affected L2 movements → roll up. Versioned growth cycles (batched), not per-flag churn.
+- A **movement layer** (distinct from the term-profile by-product): one record per movement, at its level, carrying its shape, its areas (§3), its **cited verse-set**, and its **spread/cardinality metadata** (never a gate).
+- **B+D pointers** are a regenerable view over the L1 edges + D1 signals — re-derived as analysis proceeds; researcher-raised pointers preserved.
+- Every finding **walks down** to verses → considerations → measures (P5/P7); the validity verdict carries its grounds.
+- Re-derive in **versioned growth cycles** (batched), not a programme-wide re-derive per discovery.
 
 ## 7. What this guarantees about the key question
 
-*Will the dissection provide the data to assemble inner-being findings?* — **Yes, IF** the dissection's edges are **joinable across verses** (§4 watch item) and synthesis is run as **bottom-up movement-clustering with the movement as the unit** (§1, §5). The two specs together close both halves: the lexical produces the cited edges; synthesis-B assembles them into traceable cross-cluster movements — the inner being described by *what it does*, not by a parts-list.
+*Will the dissection provide the data to assemble inner-being findings?* — **Yes, IF** the edges are **joinable across verses** (§4) and synthesis runs **movement-first, bottom-up, frequency-neutral** (§1, §5), traversing the web **on focus via pointers** (§5a). The two specs together close both halves: the lexical produces cited edges; synthesis-B assembles them into traceable cross-cluster movements — the inner being described by *what it does*.
+
+## §X — Open RESEARCHER DECISIONS
+
+1. **D3 assembly model** — ⟐ I propose it is **resolved**: default (i) recognise-then-attach; (ii) fragment-stitch only for inherently-distributed movements with a declared **non-lemma D1 join key**. *Confirm, or keep (i)-only.* (Cluster formation §2a and the B+D pointers §5a are confirmed established practice — no longer open.)
 
 ## §G — bias-guard
-- The retired tiers/object-types are **inputs to nothing**; they appear only as a §3 area-checklist (reframed) and a §1 post-hoc comparison. The emergence test (§1) is the enforceable guard against the grid re-steering.
-- This is a **spec**, designed alongside the lexical reset to fit it; building (the L2 clustering engine, the movement store) follows confirmation. The one concrete dissection change it demands: **make cause/effect/transition joinable across verses** (§4).
+- The retired tiers/object-types are inputs to nothing — only a §3 area-checklist (reframed) and a §1 post-hoc comparison; the emergence + validity tests are the enforceable guards.
+- ⟐ The **validity gate is the one place judgement re-enters** — held in check by being **frequency-neutral and grounded** (cite the artifact reason), traceable like every other finding.
+- This is a **spec**; building (the L2 grouping engine, the movement store, the pointer view, the instruments) follows confirmation of §X.
 
-*Synthesis-B — the assembly half: unit = the movement (not the term); a four-level cascade (in-verse → similar-verses → cluster → cross-cluster = lexical record → Session B → Session B → Session D); areas reframed from the Tiers onto the movement; bottom-up + emergence-tested + traceable; fed hand-in-glove by the reset's functional edges. Designed to make recomposition a query, not a narrative.*
+*Synthesis-B v2 — measurement informs but never decides; a movement of one is a movement (attestation includes, validity excludes, frequency does neither); clusters are a porous workspace; related verses are data-derived edges carried by the established B+D pointers, traversed on focus across time; instruments reveal areas without drawing boundaries. Unit = the movement; goal = the inner being across clusters.*
