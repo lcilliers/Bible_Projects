@@ -47,7 +47,11 @@ Your read of one verse surfaced four more — the discovery-lookout working in y
 - **D-cause/effect joinable + immediate-context:** record cause/effect as **node + kind**, and **reach the adjacent verse** for the effect/continuation (cite it). *(L-3 + synthesis-B requirement.)*
 - **D-adjacency-checker:** emit `isolable` + `read_with` (adjacent verse-lexical refs) so a verse is **never pulled in isolation**. *(L-3.)*
 - **D-temporality/tense fidelity:** the cause/effect/response capture must carry the verb's **tense/voice/mood from `morph_code`** (Mat 5:8 "shall see" = FUTURE), never flatten to the surface — a **fidelity bug** that would otherwise silently drop every future-reward/aorist-accomplishment corpus-wide. *(L-5; the "ultimate reward" reading → exegesis gate.)*
+- **D-object-fidelity:** the object-grab must select the **meaningful head noun**, never the adjacent **quantifier/intensifier** (Eze 36:25 grabbed "all" not "idols"). *(L-6.)*
+- **D-from-source/content:** capture the **"from X"** (what is acted-from / a defilement's content — "from idols/uncleannesses") as a relation + object — and the **object/source disambiguates realm/sense** (idols→moral, not physical). *(L-6; realm-read → gate.)*
 - *(faculty→observable and transition remain on the list, lower-bite.)*
+
+> **A class of fidelity bug (L-5 + L-6):** the mechanical grab keeps taking the *shallow/adjacent* token — the bare surface ("see"), the quantifier ("all") — instead of the *meaningful head* (the tensed verb, the noun, the source). These would corrupt the baseline corpus-wide, silently. **They must be fixed (and scoped) before any sweep.** And the inner-being payoff: the right object/source/tense is often **what disambiguates the inner meaning** (cleansed-from-idols=moral; shall-see=reward) — fidelity here is not cosmetic.
 
 **Interpretive — handled by the L1.5 exegesis GATE, not mechanised (§4):**
 - **figurative / somatic-metaphor** (clean hands = conduct) *(L-2)* — the mechanical pass **flags** a body-part-in-inner-context; the **Logos exegesis resolves the inner referent**.
