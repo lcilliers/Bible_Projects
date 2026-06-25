@@ -217,6 +217,7 @@ def finite_verb(morph):
 # ---- RESET fidelity helpers (2026-06-25) ----
 QUANT_SURF = {"all", "every", "each", "any", "many", "much", "whole", "some", "most", "few", "both",
               "one", "two", "three", "four", "five", "six", "seven", "ten", "great", "very", "more", "entire"}
+POSSESSIVE_SURF = {"my", "your", "his", "her", "our", "their", "its", "thy", "mine", "thine"}  # possessive → head noun follows
 
 def tense_of(morph):
     """coarse tense/aspect from a morph code — Greek (V-T..) reliably; Hebrew/Aramaic (HV<stem><conj>) best-effort."""
@@ -231,6 +232,12 @@ def tense_of(morph):
         return {"p": "perfect", "q": "perfect", "i": "imperfect", "w": "wayyiqtol(narrative-past)",
                 "v": "imperative", "a": "infinitive", "c": "infinitive", "r": "participle"}.get(m[3].lower())
     return None
+
+def is_infinitive(morph):
+    """infinitive mood — Greek V-<t><v>N (mood letter N) or Hebrew infinitive construct/absolute."""
+    if not morph:
+        return False
+    return bool(re.match(r"V-[A-Z][A-Z]N", morph.strip(), re.I)) or tense_of(morph) == "infinitive"
 
 
 def concise(md, gloss):
@@ -487,12 +494,27 @@ def derive(unit, words, step):
     def _next_noun(after_i, within=3):
         return next((w for w in words if after_i < w["i"] <= after_i + within and w["pos"] == "noun"
                      and w["text"] and w["text"].lower() not in QUANT_SURF), None)
-    # (L-6) object-fidelity: a captured object that is a bare quantifier → advance to the head noun
+    def _gov(w, prepset):
+        # the noun a preposition governs — handles BOTH tokenizations: a separate prep token (Greek apo/dia,
+        # Hebrew split min) governs the FOLLOWING noun; a Hebrew prefix inline on a noun (be-/le-/min- as a
+        # secondary strong on the noun itself) means the governed noun is THAT word.
+        if not any(_canon(s) in prepset for s in w["strongs"]):
+            return None
+        if w["pos"] == "preposition":
+            return _next_noun(w["i"])
+        if w["pos"] == "noun":   # Hebrew prefix inline on the noun — but if that noun is itself a quantifier/possessive
+            if w["text"] and w["text"].lower() in (QUANT_SURF | POSSESSIVE_SURF):
+                return _next_noun(w["i"])   # ('from all my sins' → skip 'all' → the head noun)
+            return w
+        return None
+    # (L-6) object-fidelity: a captured object that is a bare quantifier ('all') or possessive ('my') → advance to
+    #   the head noun IF a noun follows it (possessive 'my heart' → heart; object pronoun 'cleanse me' → keep 'me').
     for k, (it, val, cite) in enumerate(out):
-        if it == "object" and (val or "").lower() in QUANT_SURF:
+        if it == "object" and (val or "").lower() in (QUANT_SURF | POSSESSIVE_SURF):
             wq = _word_text(val); head = _next_noun(wq["i"]) if wq else None
+            kind = "quantifier" if (val or "").lower() in QUANT_SURF else "possessive"
             if head:
-                out[k] = ("object", head["text"], f"head noun (was quantifier '{val}')")
+                out[k] = ("object", head["text"], f"head noun (was {kind} '{val}')")
                 ot = obj_type(head)
                 if ot and not any(i == "object-type" for i, _v, _c in out):
                     out.append(("object-type", ot, "from head object noun"))
@@ -500,11 +522,53 @@ def derive(unit, words, step):
     # (L-6) from-source / content: the noun governed by a 'from' preposition (cleansed FROM idols/uncleannesses)
     seen_fs = set()
     for w in words:
-        if any(s in FROM_PREP for s in w["strongs"]):
-            head = _next_noun(w["i"])
-            if head and head["text"] not in seen_fs:
-                seen_fs.add(head["text"])
-                out.append(("from-source", head["text"], "noun governed by 'from' (source/content acted-from)"))
+        head = _gov(w, FROM_PREP)
+        if head and head["text"] not in seen_fs and (ti is None or head["i"] != ti):
+            seen_fs.add(head["text"])
+            out.append(("from-source", head["text"], "noun governed by 'from' (source/content acted-from)"))
+    # (residual) intransitive-stative object suppression: for "be clean FROM X", the captured 'object' is really the
+    #   from-source (no true object on a stative) → drop the object row (+ its orphaned object-type). from-source keeps it.
+    if seen_fs and any(it == "object" and val in seen_fs for it, val, _c in out):
+        out[:] = [(it, val, cite) for (it, val, cite) in out
+                  if not (it in ("object", "object-type") and val in seen_fs)]
+        if not any(it == "object" for it, _v, _c in out):   # no object left → drop any orphaned object-type
+            out[:] = [(it, val, cite) for (it, val, cite) in out if it != "object-type"]
+    # (D-binding) instrument / agent: a noun governed by an UNAMBIGUOUS instrumental preposition (Greek dia 'through').
+    #   en/be- are dropped — too polysemous (locative/temporal) to mechanise cleanly (→ left for the read/gate).
+    INSTR_PREP = {_canon("G1223")}   # dia 'through' — the binding/means
+    seen_inst = set()
+    for w in words:
+        head = _gov(w, INSTR_PREP)
+        if head and head["text"] not in seen_inst and (ti is None or head["i"] != ti):
+            seen_inst.add(head["text"])
+            out.append(("instrument", head["text"], f"noun governed by instrumental '{w['text']}' (dia/through — the binding/means)"))
+    # (D-purpose) purpose / telos: an infinitive-of-purpose after the term, or a noun/verb governed by eis/hina/le-.
+    PURPOSE_MARK = {_canon("G1519"), _canon("G2443"), _canon("G4314")}  # eis / hina / pros
+    if ti is not None:
+        pv = next((w for w in words if w["i"] > ti and w["pos"] == "verb"
+                   and is_infinitive(w["m0"])
+                   and not any(_canon(s) in PERC_COG for s in w["strongs"])), None)
+        if pv:
+            ro = _next_noun(pv["i"], within=2)
+            out.append(("purpose", f'{pv["text"]}' + (f' {ro["text"]}' if ro else ""), "infinitive-of-purpose after the term"))
+        else:
+            pm = next((w for w in words if any(_canon(s) in PURPOSE_MARK for s in w["strongs"])
+                       and (ti is None or w["i"] > ti)), None)
+            if pm:
+                ph = _next_noun(pm["i"], within=2)
+                if ph:
+                    out.append(("purpose", ph["text"], f"governed by purpose marker '{pm['text']}' (eis/hina/pros)"))
+    # (D-transition) NOT baked as a lexical field — the "from X → state Y" movement is an INFERENCE assembled in
+    #   synthesis-B from the per-verse facts (from-source · sense · tense · immediate-response), per the reset
+    #   principle that movements EMERGE at synthesis, not in the mechanical per-verse record.
+    # (D-adjacency) isolable / read_with: a verse that OPENS with a causal/coordinating conjunction depends on the
+    #   preceding verse → must not be read in isolation. (The exact adjacent verse-lexical ref is filled by the runner,
+    #   which knows verse order; here we emit the in-verse signal + direction.)
+    content = [w for w in words if w["pos"] not in ("particle",) and w["text"]]
+    if content:
+        first = content[0]
+        if any(_canon(s) in (CAUSAL | COORD) for s in first["strongs"]):
+            out.append(("isolable", "no", f"opens with '{first['text']}' (causal/coordinating) → read WITH the preceding verse"))
     # (L-1) quality-bearer: for an adjective term, the IMMEDIATELY-adjacent noun it describes (clean→hands, pure→heart).
     #   ±1 only + skip quantifiers + skip prefix-prep nouns (panim/'before' carries an H900x prep marker) → avoids
     #   firing on a predicate adjective with no bearer (Gen 17:1 'be blameless') or on a prepositional noun.

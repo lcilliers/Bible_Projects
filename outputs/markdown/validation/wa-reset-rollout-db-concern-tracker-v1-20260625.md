@@ -26,6 +26,7 @@ span_strong_match_null 3258 · target_word_null 3198
 | 2026-06-25 | before start (baseline) | 231890 | 0 | — | healthy |
 | 2026-06-25 | (c) L1-reset increment 1: `discovery` field added to engine + piloted M12 (read-only) | unchanged | — | — | no DB write (pilot via derive() print); engine confirmed functional + lookout surfaces gaps |
 | 2026-06-25 | (c) L1-reset increment 2: **fidelity fixes baked** into `_ve_engine_v2.derive()` (object-fidelity · from-source incl. `H9006` · tense · quality-bearer · operation) + read-only before/after validation on 6 reviewed + 5 new verses (`_read_ve_pilot_compare_20260625.py`) | unchanged | — | — | **no DB write** (engine code + read-only compare only); 6 reviewed errors corrected (2 new mis-fires caught + fixed in 2nd pass); validation: `wa-ve-reset-fidelity-fixes-validation-v1-20260625.md` |
+| 2026-06-25 | (c) L1-reset increment 3: **remaining mechanical deltas baked** (possessive-object · intransitive-stative suppression · instrument/dia · purpose/telos · adjacency-isolable; transition deliberately NOT baked → synthesis). Crash-tested over **all 1,686 M12 units → 0 errors** | unchanged | 0 | — | **no DB write** (read-only derive + harness); several mis-fires caught+fixed (inline-prefix `_gov`, degenerate transition); validation §5 updated. **Next = wire runner to persist new fields + isolable adjacent-ref, then gated sweep** |
 
 ## Concern register
 > Any anomaly, unexpected delta, or risk surfaced during the roll-out. Each: concern · when · severity · status.

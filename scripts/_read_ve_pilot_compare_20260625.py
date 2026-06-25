@@ -16,8 +16,10 @@ DB = os.path.join("database", "bible_research.db")
 
 # fields worth foregrounding for the review (the ones the fixes touch)
 FOCUS = ["sense", "object", "object-type", "from-source", "quality-bearer", "operation",
+         "instrument", "purpose", "transition", "isolable",
          "how", "location", "immediate-response", "cause", "cause_clause", "compound",
          "relational", "experiencer", "valence", "discovery"]
+NEWFIX = {"object", "from-source", "quality-bearer", "operation", "instrument", "purpose", "transition", "isolable"}
 
 
 def main():
@@ -81,12 +83,12 @@ def main():
             for it in order:
                 for (value, cite) in ad[it]:
                     flag = ""
-                    if it in ("object", "from-source", "quality-bearer", "operation"):
+                    if it in NEWFIX:
                         flag = "  ◀ FIX"
                     if it in ("immediate-response", "cause", "cause_clause") and "[" in str(value):
                         flag = "  ◀ tense"
                     print(f"      {it:18} = {value}{flag}")
-                    if cite and it in ("object", "from-source", "quality-bearer", "operation"):
+                    if cite and it in NEWFIX:
                         print(f"      {'':18}   ({cite})")
 
 

@@ -1,6 +1,7 @@
 # VE reset — fidelity fixes baked into the engine: validation + 5 new verses for review
 
-- **File:** wa-ve-reset-fidelity-fixes-validation-v1-20260625.md · **v1 · 2026-06-25 · Author:** Claude Code.
+- **File:** wa-ve-reset-fidelity-fixes-validation-v1-20260625.md · **v1.1 · 2026-06-25 · Author:** Claude Code.
+- **v1.1 update:** adds **§5 — increment 3** (the next mechanical-delta batch baked: possessive-object · intransitive-stative suppression · instrument/binding · purpose/telos · adjacency/isolable; transition deliberately **not** baked). Crash-tested over all 1,686 M12 units (0 errors). Decision: **build all mechanical deltas, then ONE sweep** (read-only validation per delta makes mid-sweeps wasteful).
 - **What this is:** the researcher approved baking the pilot-review findings into the build. This records (1) **my assessment**, (2) the **before/after full lexical** for the six reviewed verses — validating the errors are corrected, (3) **5 new verses** for the next review pass. **Read-only** throughout (engine code changed; no DB write — the corpus sweep is a later, gated step).
 - **Engine changed:** `scripts/_ve_engine_v2.py` `derive()` — a new **RESET FIXES** block + helpers (`tense_of`, `QUANT_SURF`, `SPEECH`, `H9006` added to `FROM_PREP`). Harness: `scripts/_read_ve_pilot_compare_20260625.py` (read-only before/after).
 
@@ -93,3 +94,34 @@ What is now **baked in** (all six reviewed errors corrected — §2):
 - **Your steer:** sign off the 5-new (and the possessive-object bake), and tell me whether to (i) do the next mechanical-delta increment now (binding/agent · purpose · parallel-verb · stative-object · possessive-object) before the sweep, or (ii) sweep on the current confirmed set and carry the rest as gate/next-increment.
 
 *Fidelity fixes validated on six reviewed verses (all errors corrected, two new mis-fires caught and fixed in a second pass — the case for reviewing before sweeping); five new verses surface two more gate lenses, one mechanical residual, and a real cross-verse movement. No DB write; engine code only.*
+
+---
+
+## 5. Increment 3 — the next mechanical-delta batch (baked + validated)
+
+Per your steer ("proceed to 1 — build all known mechanical areas before the sweep"), the remaining cleanly-mechanical deltas are now in `derive()`. **Crash-tested over all 1,686 M12 units → 0 errors.** Each validated read-only (no DB write).
+
+| Delta | What it does | Validated |
+|---|---|---|
+| **possessive-object** | object that is a bare possessive ("my") → advance to the head noun *if a noun follows* (object pronoun "cleanse me" kept) | Pro 20:9 *my → (then suppressed, see below)*; 1Ch 28:5 *all → sons* |
+| **intransitive-stative suppression** | "be clean **from** X" has no object — drop the object row when its value is a from-source noun (+ orphaned object-type) | Eze 36:25 *ta.her*; Pro 20:9 (object dropped — it's "clean from sin") |
+| **instrument / binding** | noun governed by an **unambiguous** instrumental (Greek *dia* "through") | Heb 9:14 *Spirit* (en/Hebrew be- dropped — too polysemous → gate) |
+| **purpose / telos** | infinitive-of-purpose after the term (Greek inf. mood `N`; Hebrew inf.), or eis/hina/pros + noun | Heb 9:14 *serve God*; 261 across M12 |
+| **adjacency / isolable** | a verse OPENING with a causal/coordinating conjunction depends on the prior verse → `isolable=no` (must not be read alone) | 1Ch 28:5; 189 across M12 |
+| **transition** | **deliberately NOT baked** — the "from X → state Y" movement is an *inference*; per the reset it is assembled at **synthesis-B** from the per-verse facts (from-source · sense · tense), not mechanised. (It mis-fired on non-cleansing terms — "all → given" — confirming it is not a per-verse fact.) | removed |
+
+**Mis-fires caught and fixed during this increment** (again, the value of validating before sweeping):
+- `instrument = Lord` (Mal 3:3) — Hebrew prefix-prep is **inline on the noun**, not a separate token; `_gov()` now handles both tokenizations, and `be-`/`en` were dropped as too ambiguous. Now correctly silent there.
+- duplicate `from-source`, orphaned `object-type` after suppression — fixed.
+- degenerate `transition` ("uncleanness → uncleanness", "all → given") — led to the decision to **not** bake transition at all.
+- `from-source = all` (1Ch 28:5) — `_gov()` now skips a quantifier/possessive even in the inline-prefix case → *sons*.
+
+**Field coverage across all 1,686 M12 units:** object 1170 · from-source 514 · purpose 261 · isolable 189 · quality-bearer 156 · operation 23 · instrument 3 · discovery 1686 (every verse). Conservative where it should be (operation/instrument fire rarely and only on clean signals).
+
+### Still open (by design)
+- **Mechanical, deferred:** Hebrew/`en` instrument + **agent-as-subject** ("the blood … purify") — needs subject detection, risk of noise; left for a later pass or the read.
+- **→ L1.5 exegesis gate (interpretive):** figurative/somatic-metaphor (clean hands), **metaphor vehicle-vs-tenor** (Mal 3:3 silver vs sons of Levi), **rhetorical-impossibility** (Pro 20:9), parallelism-as-composite, the "ultimate-reward" reading.
+- **→ synthesis-B:** transition/becomes, faculty-as-observable (the seats are already captured via `location`; the lemma-intrinsic `faculty` field is a model decision, not a fidelity fix).
+
+### Recommendation
+The mechanical fidelity layer is now **comprehensive and stable** (0 errors over the full M12 corpus). I recommend: **one more thing to confirm with you, then the single gated sweep** — namely whether the deferred **agent-as-subject** is worth a noisy mechanical attempt now or left to the read. If you're content to leave it to the read, we are **ready to sweep**: wire the runner to also persist the new fields + the runner-side adjacent verse-lexical ref for `isolable`, `--dry-run` → inspect → `--live`, integrity check after (per the tracker). The interpretive lenses go to the gate either way.
