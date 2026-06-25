@@ -1,5 +1,7 @@
 # Project Orientation — Core Memory Map
 
+> **★ METHOD RESET 2026-06-25 — "Characteristics → Movements."** The study's object changed: no longer naming/describing individual *characteristics*, now analysing the **movements, associations, emergence** of the inner being (process/web, not parts-list). **Live method = the two reset specs** (`Workflow/Instructions/wa-lexical-analysis-rules-reset-v1` + `wa-synthesis-B-spec-reset-v1`); **milestone = `Workflow/methodology/wa-RESET-baseline-review-and-changeover-v1`**. The characteristic/object-type/faculty-ontology/tier-grid/unit framing is **closed (provenance-only)**; all prior lexical + M01–M11 "completed" + in-progress work is **legacy to be revisited**. Read everything below as the *pre-reset* map (the legacy substrate). To brief Claude AI: `Workflow/methodology/wa-RESET-briefing-for-Claude-AI-v1-20260625.md`.
+>
 > **Start here every session.** This is the map of the guides and documents that direct continued work on this project. **CLAUDE.md is the core entry point; from there it fans out** (instructions → current-truth reconstruction → open-items → memory). Created 2026-06-14.
 >
 > ⚠ **Standing caveat:** CLAUDE.md (last refresh 2026-04-27) is currently **drift-stale** on schema version and architecture. It says schema v3.11/3.17 — the live DB is **3.31.0** — and it omits the finding-centric model. Until CLAUDE.md is refreshed, treat the **2026-06-14 reconstruction (Tier 2)** as the corrected current truth.
