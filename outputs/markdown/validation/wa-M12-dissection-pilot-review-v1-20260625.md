@@ -45,6 +45,8 @@ Your read of one verse surfaced four more — the discovery-lookout working in y
 - **D-quality-bearer:** for a quality/adjective term, capture **what it describes** (clean→hands, pure→heart). *(L-1)*
 - **D-binding/agent:** capture the **agent/instrument** ("by the blood", "through faith") — the inner content of an expression. (Folds into compound-enrichment A5.)
 - **D-cause/effect joinable + immediate-context:** record cause/effect as **node + kind**, and **reach the adjacent verse** for the effect/continuation (cite it). *(L-3 + synthesis-B requirement.)*
+- **D-adjacency-checker:** emit `isolable` + `read_with` (adjacent verse-lexical refs) so a verse is **never pulled in isolation**. *(L-3.)*
+- **D-temporality/tense fidelity:** the cause/effect/response capture must carry the verb's **tense/voice/mood from `morph_code`** (Mat 5:8 "shall see" = FUTURE), never flatten to the surface — a **fidelity bug** that would otherwise silently drop every future-reward/aorist-accomplishment corpus-wide. *(L-5; the "ultimate reward" reading → exegesis gate.)*
 - *(faculty→observable and transition remain on the list, lower-bite.)*
 
 **Interpretive — handled by the L1.5 exegesis GATE, not mechanised (§4):**
