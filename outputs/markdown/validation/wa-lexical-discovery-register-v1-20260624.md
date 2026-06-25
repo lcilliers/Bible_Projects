@@ -56,6 +56,22 @@
 |---|---|---|---|---|---|
 | _to be populated by verse analyses under the reset_ | | | | | |
 
+## D3 occurrence log (assembly model — IN EVALUATION, synthesis-B §X)
+
+> D3 is resolved *in situ*: every fragment-stitch (ii) use and every borderline attach is logged here; the (i)/(ii) line is calibrated from the cases. Populated as L2 runs.
+
+| # | Movement / verses | Model used (i/ii) | Join key (must be non-lemma for ii) | Forced or safe? | What's at stake (lost under the other model) |
+|---|---|---|---|---|---|
+| _to be populated by L2 assembly_ | | | | | |
+
+## Discard↔Include calibration log (synthesis-B §1)
+
+> The balance is under calibration: every **discard** (validity-gate exclusion) and every **borderline include** is logged, with its grounds, so the rare-real-dynamic ↔ artifact line is learned from cases. Bias toward keeping while immature (a wrongly-kept candidate is visible; a wrongly-discarded one is lost).
+
+| # | Candidate (verses/shape) | Decision (discard / include / borderline) | Grounds (cited — why artifact, or why real) | Spread (metadata, non-deciding) |
+|---|---|---|---|---|
+| _to be populated by the validity gate_ | | | | |
+
 ## Folded-into-01b log (v3, Part C)
 - **2026-06-24 — Part C added to 01b** (v2→v3): two scopes · `object_type` (6 types, resolves §8) · A1 bearer-class · A2 intrinsic-faculty · type-conditioned expectedness (C.3, = the LRT) · collection items mutability/transition-trigger+manner/binding+roles/pole-relation/realm/classifier/role-in-cluster · re-run R1–R6 · ve_lexical term-scope storage (C.6).
 - **2026-06-24 — Round-2 firm-ups into Part C:** transitivity (load-bearing) · membership_scope · role-in-cluster (+`alien`) · bivalent-object-discriminator · cognate-link · realm/manner vocab extensions. Remaining [prov]: classifier, asah-override.
