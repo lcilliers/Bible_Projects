@@ -16,11 +16,13 @@ sys.path.insert(0, os.path.dirname(__file__))
 import _ve_engine_v2 as eng
 sys.stdout.reconfigure(encoding="utf-8")
 DB = os.path.join("database", "bible_research.db")
-SNAP = os.path.join("backups", "bible_research_pre-ve_lexical-v2_20260616.db")
-PROV = "v2_engine_iter1"
-STAMP = "2026-06-16T00:00:00Z"
+SNAP = os.path.join("backups", "bible_research_pre-reset-sweep_20260626.db")
+PROV = "v2_engine_iter1"          # kept stable so the delete/replace stays clean + read-API overlays preserved
+STAMP = "2026-06-26T00:00:00Z"    # RESET sweep run (reset fidelity fixes + 7 new fields baked 2026-06-25)
 
 # engine item label -> (ve_nr, related_tier).  'mode' is skipped (it is a column); lexical_note handled separately.
+# ve_nr 23-29 = the 2026-06-25 RESET additions (tiers are best-fit to the existing T-catalogue, PROVISIONAL
+# pending researcher confirmation; from-source≈origin family, instrument/operation≈how/means, etc.).
 VE_MAP = {
     "sense": (1, "T7.1.3"), "type": (2, "T1.2.1"), "compound": (3, "T6.1.1"),
     "location": (5, "T2"), "origin": (6, "T2.9.1"), "faculty": (7, "T3"),
@@ -28,6 +30,14 @@ VE_MAP = {
     "relational": (13, "T1.1.3"), "object": (16, "T1.1.4"), "object-type": (16, "T1.1.4"),
     "cause": (17, "T2.9.2"), "how": (18, "T1.4.1"), "intensity": (19, "T1.6.1"),
     "experiencer": (20, "T2.8.1"), "valence": (21, "T0.3.1"), "cause_clause": (22, "T2.9.3"),
+    # ---- RESET additions (2026-06-25) ----
+    "from-source": (23, "T2.9.1"),     # source/content acted-from ("cleansed FROM idols")
+    "instrument": (24, "T1.4.1"),      # means/binding ("through faith", dia)
+    "purpose": (25, "T2.9.2"),         # telos ("in order to…") — provisional tier
+    "quality-bearer": (26, "T1.1.4"),  # the noun a quality describes (clean→hands, pure→heart)
+    "operation": (27, "T1.4.1"),       # lived-conduct verb when the quality is asserted with a copula
+    "isolable": (28, None),            # META: read-with adjacency signal (no tier)
+    "discovery": (29, None),           # META: discovery-lookout coverage-gap (no tier)
 }
 
 
@@ -110,8 +120,12 @@ def main():
         if a.live:
             # ve_lexical: hard-replace the MECHANICAL rows, but PRESERVE read-resolved values across the rebuild
             # (a read-resolved or read-NONE'd cause must NOT be reverted to the mechanical 'pending-read').
+            # PRESERVE owned/overlay fields across the rebuild: read-API resolutions, read-pass notes, AND the
+            # curated faculty-map layer (faculty-map-v1-*, applied 2026-06-24) — derive() now emits faculty from the
+            # same map, so skip its mechanical version to avoid duplicating the owned faculty rows.
             read_fields = set(r[0] for r in cur.execute("""SELECT DISTINCT ve_label FROM ve_lexical
-                WHERE verse_context_id=? AND (source_provenance LIKE '%_read_api' OR notes LIKE 'read pass:%')""", (u["vcid"],)))
+                WHERE verse_context_id=? AND (source_provenance LIKE '%_read_api'
+                      OR source_provenance LIKE 'faculty-map%' OR notes LIKE 'read pass:%')""", (u["vcid"],)))
             wr = [r for r in rows if r[2] not in read_fields]          # skip the mechanical version of any read-decided field
             cur.execute("DELETE FROM ve_lexical WHERE verse_context_id=? AND source_provenance IN ('v2_engine_iter1','audit')", (u["vcid"],))
             cur.executemany("""INSERT INTO ve_lexical
