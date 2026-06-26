@@ -33,9 +33,19 @@ Engine-derived items (`sense, type, object, experiencer, how, from-source, cause
 2. **Reverse the evaluative bulk, re-derive grounded deontic.** Remove righteous/sinful/neutral + ungrounded commanded; keep/re-derive only `forbidden`/`commanded` where the inner-being TERM itself stands in an imperative/prohibition (e.g. "Fear not" → fear forbidden). Smaller grounded remnant; needs a derivation pass.
 3. **Quarantine, don't delete.** Move valence to a clearly-labelled `valence-interpretive` provenance so it never reads as verse-evidence, pending a later decision.
 
-**Recommendation:** option 1 — valence as stored is not verse-grounded and doesn't even track grammar; reverse it out now (reversible), and if a moral/deontic signal is wanted later, build it as a grammar-grounded field (option 2's remnant) from scratch. Awaiting your call before touching 26.8k rows.
+**DECISION (researcher 2026-06-26): QUARANTINE (option 3).** Done — 26,993 active valence rows snapshotted to `ve_lexical_valence_quarantine_20260626`, `delete_flagged=1` + QUARANTINE note (excluded from active reads, retained, recoverable). DB backup `bible_research_pre-valence-quarantine_20260626.db`.
 
-## 4. Still open
+### Root-cause insight (researcher, 2026-06-26)
+**Valence was a clustering driver in the previous work** — so its interpretive bias was not confined to a field; it shaped the cluster (M-code) structure itself. This is a likely root cause of the bias/diversions in the prior clustering, and reinforces why the RESET treats the clusters as scaffolding/legacy (`project_RESET_characteristics_to_movements_changeover`). Any future clustering must be driven by verse-grounded signals only, never an interpretive overlay.
+
+## 4. Remaining identified fixes (valence is NOT the last)
+- 🔴 **origin** — single value `received-from-outside` (2,707 rows excl T2), 100% constant; carries no information. The clearest faculty-style non-sense still outstanding. Decide: complete (contrasting verse-grounded values) or retire.
+- 🟠 **object-type taxonomy remap** — redundant overlapping buckets `thing` / `abstract` / `thing/abstract`; collapse to one clean scheme (ungrounded reversal done, the remap is not).
+- **divine-involvement rule (b)** — role-clarity on the 5,187 grounded rows: mention true, role only if clear, else mark unclear.
+- **faculty `…-inferred-seat` tier** (1,492) — re-check under rule (b) for over-stated proximity binding.
+- (Known backlog, not new: divine-involvement ~46% UNRESOLVED.)
+
+## 5. Still open
 - divine-involvement **rule (b)** role-clarity on the 5,187 grounded rows (mention true, role only if clear).
 - faculty `…-inferred-seat` tier (1,492) — re-check under (b) for over-stated binding.
 - Provenance/repro: scripts `_apply_divine_involvement_reverse_ungrounded_v1_20260626.py`, `_apply_reverse_ungrounded_overlays_v1_20260626.py`; divine audit `wa-divine-involvement-grounding-audit-v1-20260626.md`.
