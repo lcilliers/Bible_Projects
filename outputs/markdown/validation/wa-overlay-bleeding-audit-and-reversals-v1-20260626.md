@@ -38,12 +38,13 @@ Engine-derived items (`sense, type, object, experiencer, how, from-source, cause
 ### Root-cause insight (researcher, 2026-06-26)
 **Valence was a clustering driver in the previous work** — so its interpretive bias was not confined to a field; it shaped the cluster (M-code) structure itself. This is a likely root cause of the bias/diversions in the prior clustering, and reinforces why the RESET treats the clusters as scaffolding/legacy (`project_RESET_characteristics_to_movements_changeover`). Any future clustering must be driven by verse-grounded signals only, never an interpretive overlay.
 
-## 4. Remaining identified fixes (valence is NOT the last)
-- 🔴 **origin** — single value `received-from-outside` (2,707 rows excl T2), 100% constant; carries no information. The clearest faculty-style non-sense still outstanding. Decide: complete (contrasting verse-grounded values) or retire.
-- 🟠 **object-type taxonomy remap** — redundant overlapping buckets `thing` / `abstract` / `thing/abstract`; collapse to one clean scheme (ungrounded reversal done, the remap is not).
-- **divine-involvement rule (b)** — role-clarity on the 5,187 grounded rows: mention true, role only if clear, else mark unclear.
-- **faculty `…-inferred-seat` tier** (1,492) — re-check under rule (b) for over-stated proximity binding.
-- (Known backlog, not new: divine-involvement ~46% UNRESOLVED.)
+## 4. Remaining identified fixes — ALL CLEARED 2026-06-26 (verse is king)
+Script `_apply_clear_remaining_lexical_fixes_v1_20260626.py`; backup `bible_research_pre-remaining-fixes_20260626.db`; per-fix snapshots. All reversible.
+- 🔴 **origin** — ✅ QUARANTINED (3,623 rows → `ve_lexical_origin_quarantine_20260626`, flagged out). Single non-grounded interpretive stamp.
+- 🟠 **object-type taxonomy** — ✅ REMAPPED. `{thing, abstract, thing/abstract}` (9,534) → `impersonal`. Clean vocab now: impersonal · person · God · situation · spiritual-being · threat. Snapshot `ve_lexical_objtype_premap_20260626`. (Residual: some person-objects under the old engine hedge remain coarsely typed — accuracy, not grounding; future re-derive from the object noun.)
+- **divine-involvement rule (b)** — ✅ DONE. 5,187 grounded roles demoted to `present` (mention is verse-true; role not mechanically clear). Roles preserved in `ve_lexical_divinv_roles_premap_20260626`. UNRESOLVED (5,140) untouched.
+- **faculty `…-inferred-seat`** — ✅ REVERSED. 1,492 proximity-inferred seat faculties soft-deleted (`ve_lexical_faculty_seat_reverse_20260626`); faculty now purely explicit faculty-words (20,636). Seats get a faculty only where the verse names one.
+- (Known backlog, not a grounding fix: divine-involvement ~46% UNRESOLVED.)
 
 ## 5. Still open
 - divine-involvement **rule (b)** role-clarity on the 5,187 grounded rows (mention true, role only if clear).
