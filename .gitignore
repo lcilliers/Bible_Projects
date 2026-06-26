@@ -142,6 +142,9 @@ outputs/cc/cc_packets.md
 outputs/cc/cc_packets.md.map
 outputs/cc/cc_output.md
 
+# Verse-span-lexical master index (large ~237MB, regenerable from _build_verse_span_lexical_index_*.py; kept on disk + NAS-mirrored)
+outputs/wa-verse-span-lexical-index-*.json
+
 # VE-lexical AI extracts (regenerable, large)
 research/VE-lexical/extracts/
 # per-cluster regenerable VE data (extracts + read-payloads; large). by-characteristic JSON stays tracked.
