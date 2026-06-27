@@ -17,6 +17,7 @@
 | **D9** | Coupling / relation | *What binds with it?* | relations to other operations / terms (in-verse + corpus) |
 | **D10** | Colour / valence | *What moral register — where the verse evidences it?* | moral colour, only where stated/mechanical; never imported |
 | **D11** | Discovery | *What do the current dimensions not capture?* | the emergence slot — feeds new dimensions back |
+| **D12** | Hidden meaning | *What latent / non-obvious IB implication does the verse carry?* | a deeper meaning to investigate further — e.g. `abad` = the same word for *enslave* and for *serve/worship God* |
 
 **Completeness of an operation** = every dimension swept (a value, or `silent`) + D11 checked. **Complete ≠ resolved.**
 
@@ -31,3 +32,4 @@ One **thought** per observation — a narrative coded to a dimension. A dimensio
 - **provenance** — `mechanical` / `researcher` / `logos` / `claude-chat` / `scholarship`
 - **basis** — the citation / morphology / contributor it rests on
 - **operation** — the IB operation / track it belongs to
+- **raw_file** — the raw source-collection file the observation was drawn from (provenance trace back to the source material)
