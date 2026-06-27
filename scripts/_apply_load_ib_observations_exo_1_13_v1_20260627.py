@@ -5,12 +5,12 @@ Canonical source of the Exo 1:13 observation records."""
 import sqlite3, os
 RAW='wa-exo-1-13-fanout-v1-20260627.md'
 c=sqlite3.connect(os.path.join('database','bible_research.db')); c.row_factory=sqlite3.Row; cur=c.cursor()
-cur.execute("DROP TABLE IF EXISTS ib_observation")
-cur.execute("""CREATE TABLE ib_observation(
+cur.execute("""CREATE TABLE IF NOT EXISTS ib_observation(
   id INTEGER PRIMARY KEY, operation TEXT, dimension TEXT, narrative TEXT,
   term_anchor TEXT NOT NULL, origin_verse TEXT, origin_verse_id INTEGER,
   reconsider_at TEXT, status TEXT, provenance TEXT, basis TEXT, raw_file TEXT,
   created TEXT DEFAULT (datetime('now')))""")
+cur.execute("DELETE FROM ib_observation WHERE origin_verse IN ('Exo 1:13','Exo 1:14')")  # additive: only own rows
 # (operation, dim, narrative, term_anchor, origin_ref, reconsider_at, status, provenance, basis)
 O=[
 ('ruthlessness','D1',"Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another.",'H6531','Exo 1:13','perek (H6531) — the 6 occurrences','resolved','mechanical','perek lemma; manner-noun'),
