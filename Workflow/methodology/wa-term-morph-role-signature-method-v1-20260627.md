@@ -36,6 +36,24 @@ python -X utf8 scripts/_explore_term_morph_roles_v1_20260627.py --word grace
 ```
 Output → `outputs/markdown/validation/wa-term-morph-roles-<key>-<date>.md`: per term, the **role repertoire** (collapsed) + a foldable full morphology list, each decoded.
 
+## 6b. CAVEATS — what this does NOT do (researcher critique, 2026-06-27)
+Three honest limits the first write glossed over:
+
+1. **"Family of the term" was determined WRONGLY (by English gloss).** The `--word` resolver matched the lexicon *gloss* ("grace"/"favour") — which is the **English-string error P2 forbids**, and it polluted the set: it pulled `qiqalon` "disgrace" (M07) and `hileōs` "propitious" (M38) into "grace." **The real, grounded family is the CLUSTER** (grace = **M39**: charis/chen/chanan/charizō/charitoō…), assigned from original-language analysis — plus the **registry word** (the 215 canonical words), **`wa_term_root_family`** (Hebrew/Greek roots), and **`wa_term_related_words`**. *Fix: key the tool on `cluster_code`/registry, never gloss.*
+
+2. **Collapsing to the role axis DROPS interpretively-live content.** The stem/case summary is a **lens, not the term's full meaning.** Collapsing a verb to its stem discards **person/number** (WHO — God-3ms vs "I"-1cs vs "you"-2ms = the experiencer/agent identity), **suffixes** (the object/possessor — "be gracious to ME", "YOUR grace"), **tense/aspect** (when/how it unfolds), and the **attached particles** (which ARE the relation-edges). These are preserved in the full list (not deleted), but the collapse must **never be mistaken for the content** — it answers one question (what role), not all of them.
+
+3. **It is SINGLE-TERM. It does not surface terms operating TOGETHER.** See §6c.
+
+## 6c. The interweaving — where grace+mercy operating together is captured (NOT here)
+The per-term signature is a **building block**, not the analysis. By itself it **cannot** see grace and mercy operating together — and they do: grace (**M39**) and mercy (**M05**) are **separate clusters**, yet **89 verses have both**, and "merciful and gracious" (rachum + channun, Exo 34:6 / Psa 103:8) is a recurrent paired inner-being movement.
+
+**If the per-term / per-cluster lens were treated as THE analysis, it WOULD filter out the interweaving** — reproducing the parts-inventory failure the RESET diagnosed. The web is captured at two levels *above* the signature:
+- **The per-verse meaning graph** — when two primary terms co-occur, they are **both nodes**, joined by a **binding edge** (coordinate pair / one as the manner-or-ground of the other). The graph is *built* for inter-term operation.
+- **The cross-cluster synthesis** — RESET makes clusters **porous workspaces** (patterns assemble *across* clusters, never within one; `wa-synthesis-B-spec-reset-v1` §2a). A grace+mercy movement spanning M39 and M05 is assembled there, not lost in silos.
+
+**So the architecture must be:** term-signature (shared building block) → per-verse graph (binds co-occurring terms) → cross-cluster synthesis (assembles the web). The signature **feeds** the web; it must never **replace** it.
+
 ## 6. To build further on (open threads)
 - **Cross with sense:** add the per-occurrence STEP sense so the repertoire is morphology × sense (does the Dative-charis carry a different sense than Nominative-charis?).
 - **Cross with co-term:** which role correlates with which binding partner (grace-as-means co-occurs with what?).
