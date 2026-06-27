@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T20:39:45Z",
+  "generated_at": "2026-06-27T20:55:54Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 148,
-    "historical": 30,
+    "other": 150,
+    "historical": 31,
     "current": 2585,
     "archived": 2265,
     "cross-reference": 3318,
     "backup": 48
   },
-  "total_files": 8394,
-  "total_active": 6129,
+  "total_files": 8397,
+  "total_active": 6132,
   "total_archived": 2265,
   "files": [
     {
@@ -549,6 +549,22 @@
       "archived": false,
       "size_bytes": 7964,
       "modified": "2026-04-15T06:12:23Z"
+    },
+    {
+      "path": "Logs/wa-session-log-20260627-exo-1-13-fanout-and-filing.md",
+      "category": "log",
+      "type": "session-log",
+      "currency": "historical",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2669,
+      "modified": "2026-06-27T20:55:46Z"
     },
     {
       "path": "README.md",
@@ -103427,8 +103443,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3770783,
-      "modified": "2026-06-26T12:50:39Z"
+      "size_bytes": 3788065,
+      "modified": "2026-06-27T20:39:46Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -134263,6 +134279,22 @@
       "modified": "2026-06-27T20:38:48Z"
     },
     {
+      "path": "verse-analysis/Exo/wa-exo-001-013-unresolved-worklist-v1-20260627.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 1,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4308,
+      "modified": "2026-06-27T20:43:31Z"
+    },
+    {
       "path": "verse-analysis/Gen/wa-gen-006-005-fanout-v1-20260627.md",
       "category": "other",
       "type": "other",
@@ -134293,6 +134325,22 @@
       "archived": false,
       "size_bytes": 4291,
       "modified": "2026-06-27T20:38:48Z"
+    },
+    {
+      "path": "verse-analysis/Lev/wa-lev-025-043-assessment-v1-20260627.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 25,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4471,
+      "modified": "2026-06-27T20:48:58Z"
     },
     {
       "path": "verse-analysis/README.md",
