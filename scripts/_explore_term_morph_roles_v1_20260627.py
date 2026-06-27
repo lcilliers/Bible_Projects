@@ -80,18 +80,24 @@ def role_axis(morph):
         return ('pos', GK_POS.get(parts[0][0],parts[0]))
 
 def resolve(c, args):
+    """Family is GROUNDED (not by English gloss): --strong direct; --word via the
+    registry (owning_registry_fk = the canonical inner-being word); --cluster via cluster_code."""
     if args.strong:
         return [s.strip().upper() for s in args.strong.split(',')]
-    # --word : study-term strongs whose gloss/translit matches
-    w=args.word.lower()
-    rows=c.execute("""SELECT DISTINCT m.strongs_number s FROM mti_terms m JOIN lexicon l ON
-        REPLACE(REPLACE(l.strong,'H0','H'),'G0','G')=REPLACE(REPLACE(m.strongs_number,'H0','H'),'G0','G')
-        WHERE (lower(l.gloss) LIKE ? OR lower(l.transliteration) LIKE ?)
-          AND m.cluster_code IS NOT NULL AND COALESCE(m.delete_flagged,0)=0""",(f'%{w}%',f'%{w}%')).fetchall()
+    if args.cluster:
+        rows=c.execute("SELECT strongs_number s FROM mti_terms WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0",(args.cluster,)).fetchall()
+        return sorted(set(re.sub(r'[A-Z]$','',r['s']) for r in rows))
+    # --word : the registry word's OWNED terms (original-language grounded, NOT the gloss)
+    reg=c.execute("SELECT id, word FROM word_registry WHERE lower(word)=? LIMIT 1",(args.word.lower(),)).fetchone()
+    if not reg:
+        print(f'  no registry word \"{args.word}\" — use exact registry word, or --strong/--cluster'); return []
+    print(f'  registry word \"{reg[\"word\"]}\" (id {reg[\"id\"]}) -> owned terms:')
+    rows=c.execute("SELECT strongs_number s, cluster_code FROM mti_terms WHERE owning_registry_fk=? AND COALESCE(delete_flagged,0)=0",(reg['id'],)).fetchall()
+    for r in rows: print(f'     {r[\"s\"]} (cluster {r[\"cluster_code\"]})')
     return sorted(set(re.sub(r'[A-Z]$','',r['s']) for r in rows))
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--strong'); ap.add_argument('--word')
+    ap=argparse.ArgumentParser(); ap.add_argument('--strong'); ap.add_argument('--word'); ap.add_argument('--cluster')
     a=ap.parse_args()
     c=sqlite3.connect(DB); c.row_factory=sqlite3.Row
     strongs=resolve(c,a)
