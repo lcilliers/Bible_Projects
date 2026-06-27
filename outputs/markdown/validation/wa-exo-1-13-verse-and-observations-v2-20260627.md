@@ -1,6 +1,6 @@
 # Exo 1:13 — verse + observations (focused extract)
 
-- File: wa-exo-1-13-verse-and-observations-v2-20260627.md · 2026-06-27 · live from `ib_observation`. (v2: numeric dimension order + readable layout.)
+- File: wa-exo-1-13-verse-and-observations-v2-20260627.md · 2026-06-27 · live from `ib_observation`. (v2: numeric dimension order + readable layout; re-exported after #51 reconsider_at fix.)
 - **Raw data (source collection):** `outputs/markdown/validation/wa-exo-1-13-fanout-v1-20260627.md`
 - **Status key:** `resolved` = converged · `needs-corroboration` = open thread · `open` = discovery to test · `silent` = nothing in-verse.
 
@@ -48,7 +48,7 @@
   · **anchor** H6531 · **open** · reconsider at: other inner-cruelty terms  _(#50)_
 ### D12 · Hidden meaning
 - HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43-46; Eze 34:4  _(#51)_
+  · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43; 25:46; 25:53; Eze 34:4  _(#51)_
 
 
 ---
