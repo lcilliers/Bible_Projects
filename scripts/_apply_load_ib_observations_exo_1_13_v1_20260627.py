@@ -3,7 +3,7 @@ term_anchor NOT NULL (no phantoms). raw_file = provenance to the raw source coll
 Dimensions per catalogue D1-D12 (D12 = Hidden meaning). Reversible: DROP TABLE.
 Canonical source of the Exo 1:13 observation records."""
 import sqlite3, os
-RAW='wa-exo-1-13-fanout-v1-20260627.md'
+RAW='wa-exo-001-013-fanout-v1-20260627.md'
 c=sqlite3.connect(os.path.join('database','bible_research.db')); c.row_factory=sqlite3.Row; cur=c.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS ib_observation(
   id INTEGER PRIMARY KEY, operation TEXT, dimension TEXT, narrative TEXT,

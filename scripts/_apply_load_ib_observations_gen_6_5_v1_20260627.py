@@ -2,7 +2,7 @@
 Creates table IF NOT EXISTS (does NOT drop other verses); deletes only Gen 6:5/6:6 rows then re-inserts.
 term_anchor NOT NULL (no phantoms)."""
 import sqlite3, os
-RAW='wa-gen-6-5-fanout-v1-20260627.md'
+RAW='wa-gen-006-005-fanout-v1-20260627.md'
 c=sqlite3.connect(os.path.join('database','bible_research.db')); c.row_factory=sqlite3.Row; cur=c.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS ib_observation(
   id INTEGER PRIMARY KEY, operation TEXT, dimension TEXT, narrative TEXT,

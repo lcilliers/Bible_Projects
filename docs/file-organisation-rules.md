@@ -1,7 +1,7 @@
 # File Organisation Rules — Framework B
 
 > Governs where Claude Code and the researcher place files.
-> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`). **Updated 2026-06-05: §3.0 — `Sessions-v2/` per-cluster tree is the home for ALL new cluster output (cluster-rework phase); old `Sessions/` tree is read-only cross-reference.** **Updated 2026-06-14: §3.7 / §3.9 / §3.15 path corrections to match the restructured layout (governing instructions → `Workflow/Instructions/`; schema → `Workflow/schema/`; analytics → `scripts/analytics/`); top-level `data/` flagged legacy. Full reconciliation: `docs/filing-audit-20260614.md`.**
+> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2). Updated 2026-05-31: §2.3a living-document versioning (metadata + git, no filename `-vN`). **Updated 2026-06-05: §3.0 — `Sessions-v2/` per-cluster tree is the home for ALL new cluster output (cluster-rework phase); old `Sessions/` tree is read-only cross-reference.** **Updated 2026-06-14: §3.7 / §3.9 / §3.15 path corrections to match the restructured layout (governing instructions → `Workflow/Instructions/`; schema → `Workflow/schema/`; analytics → `scripts/analytics/`); top-level `data/` flagged legacy. Full reconciliation: `docs/filing-audit-20260614.md`.** **Updated 2026-06-27: §3.0b — new `verse-analysis/` per-verse tree is the home for ALL verse-fanout method output; DB (`ib_observation`, `verse_analysis_progress`) remains the source of truth.**
 > Read by Claude Code at session start via CLAUDE.md reference.
 
 ---
@@ -214,6 +214,22 @@ The naming patterns above are designed so that `ls` or file explorer sorting gro
 ---
 
 ## 3. Folder Rules
+
+### 3.0b `verse-analysis/` — per-verse working tree (verse-fanout method, from 2026-06-27)
+
+The **home for ALL verse-fanout method output** (the method that superseded the cluster model). Organised verse-centrically, flat within each book.
+
+| What | Where | Naming |
+|------|-------|--------|
+| Raw source collection (input — incl. researcher Logos/Claude material) | `verse-analysis/{Book}/` | `wa-{book}-{ccc}-{vvv}-fanout-v{n}-{YYYYMMDD}.md` |
+| Verse + observations extract (regenerable from `ib_observation`) | `verse-analysis/{Book}/` | `wa-{book}-{ccc}-{vvv}-observations-v{n}-{YYYYMMDD}.md` |
+| Cross-verse roll-ups (progress, worklist, anchor design) | `verse-analysis/_reports/` | `wa-verse-analysis-{topic}-v{n}-{YYYYMMDD}.md` |
+
+- **`{Book}`** = DB `books.short_code` (Gen, Exo, Lev, Psa, Mar…). **Chapter and verse zero-padded to 3 digits** (`Exo-001-013`, `Psa-119-176`) so the whole canon sorts; the DB reference (`Exo 1:13`) stays canonical.
+- **Flat within the book folder** — no per-verse subfolder. A file appears only when its verse is actually worked.
+- **The DB is the single source of truth** for findings: observations → `ib_observation`; progress → `verse_analysis_progress`. Files here are **inputs** (raw collections) or **regenerable exports** (extracts) — never the record of findings.
+- **Method/governance docs are NOT here** — they stay in `Workflow/methodology/` and `Workflow/Catalogue/`. See `verse-analysis/README.md`.
+- The old `Sessions/` and `Sessions-v2/` trees remain read-only cross-reference.
 
 ### 3.0 `Sessions-v2/` — per-cluster working tree (cluster-rework phase, from 2026-06-05)
 

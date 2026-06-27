@@ -1,7 +1,7 @@
 # Exo 1:13 — verse + observations (focused extract)
 
-- File: wa-exo-1-13-verse-and-observations-v2-20260627.md · 2026-06-27 · live from `ib_observation`. (v2: numeric dimension order + readable layout; re-exported after #51 reconsider_at fix.)
-- **Raw data (source collection):** `outputs/markdown/validation/wa-exo-1-13-fanout-v1-20260627.md`
+- File: wa-exo-001-013-observations-v2-20260627.md · 2026-06-27 · live from `ib_observation`. (v2: numeric dimension order + readable layout; re-exported after #51 reconsider_at fix.)
+- **Raw data (source collection):** `verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md`
 - **Status key:** `resolved` = converged · `needs-corroboration` = open thread · `open` = discovery to test · `silent` = nothing in-verse.
 
 ## The verse (with neighbours)

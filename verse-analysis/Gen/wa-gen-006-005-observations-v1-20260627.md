@@ -1,6 +1,6 @@
 # Gen 6:5 — IB observations (captured against the dimension catalogue)
 
-- File: wa-gen-6-5-ib-observations-v1-20260627.md · 2026-06-27 · export of `ib_observation` (origin Gen 6:5/6:6).
+- File: wa-gen-006-005-observations-v1-20260627.md · 2026-06-27 · export of `ib_observation` (origin Gen 6:5/6:6).
 - Streams (operations): heart · wickedness · evil. One thought per observation, coded to D1–D12, term-anchored.
 
 ## Operation: HEART
