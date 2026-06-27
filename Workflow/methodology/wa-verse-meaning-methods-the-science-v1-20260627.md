@@ -96,3 +96,30 @@ The big idea behind all of it: **meaning is structured, not a bag of words.** A 
 The "methods" aren't competing exotic theories — they're four layers of one well-established science of sentence meaning: **a predicate, its participants in named roles, the background frame that says which roles matter, and the event-shape that says how states change** — assembled into **one graph per verse**. Tested on five verses spanning our hardest cases, the hybrid of these wins every time, and — importantly — it *structurally prevents* the bias we spent today removing.
 
 **Next:** if you're satisfied the hybrid is the winner, the step after is to define it precisely (the edge types, the core-slot inventory that emerges from verses, the transition kinds) and pilot the *build* on one cluster — still verse-led, still flagging the read. Your call on when to cross from experiment to build.
+
+---
+
+# PART 5 — Three questions: Greek, what STEP includes, and using every span
+
+### (a) Does it work for Greek?
+**Yes — and for *roles*, arguably better than Hebrew, because Greek marks the role on the word itself, in its CASE ending.** From Heb 9:14's real morphology:
+- `conscience` = **N-A**SF (Accusative) → that *is* the **object/patient** of "purify."
+- `blood` = N-**N**SN (Nominative) → the **agent/subject**.
+- `Spirit` = N-**G**SN (Genitive) + "through" → the **means**.
+- `works` = N-**G**PN (Genitive) + "from" → the **source**.
+- `God` = N-**D**SM (Dative) → the **recipient/goal**.
+- `purify` = V-**FAI**-3S (Future Active Indicative); `serve` = V-PA**N** (Present Active **iNfinitive**) → a **purpose** clause.
+
+So in Greek the role-edges come from **case** (nominative=agent, accusative=patient, genitive=source/possession, dative=recipient/instrument) — explicit, mechanical, in `morph_code`. **The difference from Hebrew:** Hebrew marks *causation* in the **stem** (Hiphil) — we used that for Eze 36:26; Greek has no stem system, so its event-shape/"morphing" signal is **voice + tense-aspect** (aorist/present/perfect; active/middle/passive) and lexical causatives instead. The **graph/frame model itself is language-neutral** (that's the whole point of a meaning representation — the same meaning graph for a Hebrew or Greek verse); only the *signals that feed it* are language-specific (Hebrew: stem + construct + word-order; Greek: case + voice + aspect).
+
+### (b) How does STEP decide what span to include?
+From our data: **STEP doesn't pre-filter — it tags every word of the verse.** Heb 9:14 = 22 words, 22 tagged; Gen 6:5 = 14 words, 14 tagged. A **span = one STEP morphological token.** Words that carry a dictionary lemma get a lexical Strong's (G2511 purify, H3820 heart); grammatical words still get a code — Greek function words are real Strong's (G0575 "from", G1519 "to", G1223 "through"), Hebrew particles get the `H9xxx` grammatical codes (conjunction/article/preposition/suffix) which have **no lexicon gloss** (confirmed: H9005/H9006 = "(none — grammatical)"). One surface word can carry **several** tokens (e.g. "evil" = H7451H + H9005, the adjective + an attached particle). So STEP offers the **complete, fully-tagged verse** — nothing is left out; the granularity is the morphological token. *(Characterised from our stored data, which came from STEP — not from STEP's internal source.)*
+
+### (c) Do the methods use just the span — and ALL the spans STEP offers?
+**They use the span as the atom, enriched — and they use *every* span, but in different jobs. No span is wasted.** This is the precise version of your "every span is relevant":
+- A span is never used *bare* — it's the span **+ its lexicon meaning + its morphology (case/stem/voice)**. The span is the anchor; meaning and role are read off it.
+- **Every span gets a job in the graph — one of three:**
+  1. **Content word with a role in the movement → a NODE** (blood, Spirit, conscience, purify, serve, heart, evil).
+  2. **Function word → an EDGE.** Prepositions/case/conjunctions/particles are *not discarded* — they are the **signals that build the relations**: "from" (G0575) = the **source** edge; "to" (G1519) = the **purpose** edge; "through" (G1223) = the **means** edge; Hebrew `H9006` "from" = a source edge; the construct state = a possession edge. Function-word spans have no dictionary meaning, but they carry the **grammatical** meaning — the structure.
+  3. **Content word present but filling no role in the *inner-being* movement → background** (e.g. "earth" in Gen 6:5) — a node in the verse's full meaning, but peripheral to the inner-being graph specifically.
+- So the earlier word "scenery" was too blunt: it conflated (2) function-words-as-edges with (3) peripheral-content. The honest picture is **three fates, all used** — node, edge, or background — and **every STEP span is placed**, which is exactly the completeness you insisted on. Where today's flat model *drops* the function-word and peripheral spans (they get no lexical, so they vanish from the analysis), the graph model **consumes them as the edges**, which is why it can see the structure the flat model can't.
