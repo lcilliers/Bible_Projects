@@ -9,12 +9,19 @@ This tree holds **all work products of the verse-fanout method** — the method 
 - **NOT here — the source of truth is the DB:** observations live in `ib_observation`; analysis progress in `verse_analysis_progress`. Files are inputs or exports, never the record of findings.
 - **NOT here — method/governance docs** live in `Workflow/` (see Method docs below).
 
+## Two layers (2026-06-28)
+- **RAW (per-verse):** `{Book}/wa-{book}-{ccc}-{vvv}-fanout-*.md` — the verse's inputs (morphology, spiderweb, Logos/Claude extracts, the full-window read). Preserve.
+- **WORKED (cross-verse):** `_tracks/{cluster}/wa-track-{operation}-{anchor}.md` — one doc per **track** (an inner-being operation), accumulating **every verse in that track** + its observations. A track is the **focus-point-in-construction**. Observations live in `ib_observation` (keyed by `operation` = the track); the track doc presents + synthesises them across verses.
+- A verse "opens" one or more tracks; a track collects many verses. (Design: `_reports/wa-fanout-track-structure-proposal-v1-20260628.md`.)
+
 ## Structure
 ```
 verse-analysis/
   README.md                 ← this file
-  _reports/                 ← cross-verse roll-ups (progress, worklist, anchor design)
-  {Book}/                   ← one folder per book, DB short_code (Gen, Exo, Lev, Psa, Mar …)
+  _reports/                 ← cross-verse roll-ups (progress, worklist, anchor + structure design)
+  _tracks/{M-cluster}/      ← WORKED layer: one doc per operation, cross-verse
+    wa-track-{operation}-{anchor}.md     e.g. _tracks/M06/wa-track-ruthlessness-H6531.md
+  {Book}/                   ← RAW layer: one folder per book, DB short_code (Gen, Exo, Lev …)
     wa-{book}-{ccc}-{vvv}-fanout-v{n}-{date}.md        ← RAW source collection (input — preserve)
     wa-{book}-{ccc}-{vvv}-observations-v{n}-{date}.md  ← verse + observations extract (regenerable)
 ```
