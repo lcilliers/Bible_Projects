@@ -1645,10 +1645,11 @@ def run_audit_word(
         # Onboarding (replaces the retired new_word step): create a file_index STUB — the legacy gate only.
         # The AUTHORITATIVE registry linkage is the bypass FK word_registry_fk, which verses/terms carry
         # directly. No manual new_word run, no file_index joins.
+        _stub_filename = f"WA-{str(reg_row['id']).zfill(3)}-{word.lower().replace(' ', '_')}-audit_word_stub-{_today()}.json"
         conn.execute(
-            "INSERT INTO wa_file_index (registry_id, word_registry_fk, word, phase, schema_version, "
-            "produced_date, revision_note, last_changed) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-            (str(reg_row["id"]), reg_row["id"], word, "Phase 1 (audit_word stub)",
+            "INSERT INTO wa_file_index (registry_id, word_registry_fk, word, filename, phase, schema_version, "
+            "produced_date, revision_note, last_changed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (str(reg_row["id"]), reg_row["id"], word, _stub_filename, "Phase 1 (audit_word stub)",
              EXPECTED_SCHEMA_VERSION, _today(),
              "auto-stub by audit_word onboarding; bypass FK word_registry_fk is authoritative", _now()))
         conn.commit()
