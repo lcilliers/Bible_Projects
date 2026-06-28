@@ -35,3 +35,18 @@
 - Tier 2 is the genuine judgement call — `qasheh` (harsh) is the strongest candidate to add, since it is the *harshness* applied in the very Exodus passage.
 - Tier 3 terms are related but belong to **violence / oppression / anger** — better as their own future registry words than folded into Ruthlessness (folding would repeat the over-broad-cluster problem). Some may warrant **XREF** links once their own registries exist.
 - After you mark `include?`, the included Strong's become the Phase-2 extraction set (Stage A4 apply → A5 extract).
+
+
+Researcher comments:
+a) I assume you checked that none of the terms is already in the database
+b) Tier 1 - add all
+Tier 2 - when the term is used as a qualifier for a Tier 1 term (e.g. harsh) then it should be added
+c) how did you arrive at Tier 3? I would have thought some of these would already exist, if not then there is a serious issue
+d) The STEP extract should pull through all the related terms. We are not pulling individual terms by selection, we use STEP to service the terms.
+
+mar (מַר H4751) 39 x bitter  
+az (עַז H5794) 24 x strong  
+a.rits (עָרִיץ H6184) 20 x ruthless  
+cha.mats (חָמַץ H2556C) 1 x - to oppress  
+pe.rekh (פֶּ֫רֶךְ H6531) 6 x severity  
+cha.mal (חָמַל H2550) 41 x to spare  
