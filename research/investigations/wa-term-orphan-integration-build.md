@@ -59,18 +59,32 @@ Every term needs an `owning_registry_fk` (lexical home). Two routes per term:
 5. **Full ve-lexical per verse** — generate the normalised lexical values (method = §5.3).
 6. **Verify** — structural-completeness check per term (researcher step e).
 
-## 5. Decisions needed before bulk execution
-1. **Unmapped cluster** for oppression (`yanah`,`lachats`) + violence (`chamas`) — M27 / M06 / new? *(lean: M27 Evil for violence; oppression M06 or M27.)*
-2. **Owner-registry** — confirm "new registry word only where no existing concept fits" (step 0 lookup); OK to create new words (e.g. Violence, Oppression) as needed?
-3. **ve-lexical method** — generate via the existing generator (`_apply_generate_ve_lexical_v2.py` / `build_ve_lexical_extract.py`) in the **legacy VE** form (to match existing rows like Lev 25:43), or the **reset lexical**? (Affects consistency.)
-4. **Batch order** — propose by cluster, starting **M06 (cruelty+hatred: perek, miseo)** building on reg216, then M24 weariness (largest), etc. OK?
+## 5. Decisions — RESOLVED (researcher, 2026-06-28)
+1. **Unmapped cluster** — oppression (`yanah`,`lachats`) + violence (`chamas`) → **M27 Evil.** ✓
+2. **Owner-registry** — **new registry word only where no existing concept fits** (per-term step-0 lookup); create new words (e.g. Violence, Oppression) as needed. ✓
+3. **ve-lexical method** — **RESET** = the v2 engine generator (`_apply_generate_ve_lexical_v2.py`, `source_provenance='v2_engine_iter1'`, incl. the RESET fields ve_nr 23-29). ✓ **Mechanical, not hand-analysis.**
+4. **Batch order** — no preference → proceed cluster-by-cluster, **M06 first**. ✓ **Include the borderline kin** (rather include than exclude). ✓
+
+## 5a. Scale + the de-risking finding
+- **Integration set = 61 terms** (39 primaries + 22 kin incl. borderline) across **440 distinct corpus verses**; 5 terms have 0 corpus verses (need a STEP verse pull).
+- **The reset ve-lexical is generated MECHANICALLY** by `_apply_generate_ve_lexical_v2.py` over the measure layer (verse_morphology + lexicon). So once a term's verses + morphology + verse_context units exist, the lexical is an **engine run** — the 440 verses are not a manual campaign.
+
+## 5b. Refined per-term pipeline (mostly scriptable)
+1. STEP pull (`get_vocab_info` + `get_verse_records`).
+2. **Owner registry** — step-0 lookup; attach to existing registry word, or create a new one (Decision 2).
+3. **Owner term** — `mti_terms` OWNER (cluster_code = target M-cluster) + `wa_term_inventory` + file_index stub (engine `--register`/`audit_word`).
+4. **Cluster assign** — into the existing characteristic.
+5. **Verses** — `wa_verse_records` + `verse` link + `verse_context` units. (Most verses already in corpus; the 5 zero-verse terms + any new verses need morphology ingest via `getBibleText`.)
+6. **Reset ve-lexical** — run `_apply_generate_ve_lexical_v2.py` (mechanical).
+7. **Verify** — structural-completeness check (researcher step e).
 
 ## 6. Decision log
 | date | decision | status |
 |---|---|---|
-| 2026-06-28 | Integrate the curated IB-orphans as OWNER terms into existing clusters + full ve-lexical (researcher directive) | accepted; planning |
-| 2026-06-28 | 39 curated orphans → cluster mapping (§1) | drafted; 36 clear, 3 unmapped |
-| — | unmapped cluster · owner-registry · ve-lexical method · batch order (§5) | **PENDING** |
+| 2026-06-28 | Integrate curated IB-orphans as OWNER terms into existing clusters + full (reset) ve-lexical | accepted |
+| 2026-06-28 | 61 terms (39 primaries + 22 kin) → cluster mapping (§1, §1b) | done |
+| 2026-06-28 | Unmapped → **M27**; owner-reg = new-only-if-needed; ve-lexical = **reset/v2 engine**; **M06 first**; **include borderline** | RESOLVED |
+| — | **NEXT:** execute batch 1 = M06 (perek + miseo + mockery/abhorrence kin) — single-term pilot (perek) end-to-end first, with backup + dry-run | pending go |
 
 researcher comments
 
