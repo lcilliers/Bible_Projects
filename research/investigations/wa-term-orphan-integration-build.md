@@ -97,7 +97,19 @@ Inspected the template (`arits` H6184, M06 owner): dual `mti_terms` rows, owner+
 | 2026-06-28 | Integrate curated IB-orphans as OWNER terms into existing clusters + full (reset) ve-lexical | accepted |
 | 2026-06-28 | 61 terms (39 primaries + 22 kin) → cluster mapping (§1, §1b) | done |
 | 2026-06-28 | Unmapped → **M27**; owner-reg = new-only-if-needed; ve-lexical = **reset/v2 engine**; **M06 first**; **include borderline** | RESOLVED |
-| — | **NEXT:** execute batch 1 = M06 (perek + miseo + mockery/abhorrence kin) — single-term pilot (perek) end-to-end first, with backup + dry-run | pending go |
+| 2026-06-28 | **PEREK PILOT — term layer DONE + verified.** Onboarded via engine audit_word (reg216); set status=extracted, cluster=M06, owner_type=OWNER. Controls: exactly +1 term, +1 owner, +6 verses, M06 +1, **no new invariant breach, no contamination**. | ✅ |
+| 2026-06-28 | **Two engine onboarding bugs FIXED en route** (the recurring trip-up): (a) `audit_word --fetch-step` now auto-generates the Step-1 extract from STEP; (b) the file_index stub INSERT was missing NOT NULL `filename` → fixed. New-word onboarding now works end-to-end. | ✅ |
+| 2026-06-28 | Triage gate proven: auto-fetch include_codes had `H6531`+`H6532` (curtain homonym) → curated to perek-only before live write (prevented contamination). | ✅ |
+| — | **NEXT for perek:** verse_context units for its 6 verses → reset ve-lexical (mechanical `_apply_generate_ve_lexical_v2`) → link M06 char Cruelty/Ruthlessness. Then scale batch 1 to `miseo` + M06 kin. | pending |
+
+## 9. Perek pilot — outcome (the validated template)
+The end-to-end controlled path that now works for every term:
+1. `audit_word --registry=N --fetch-step --anchors <codes>` → STEP extract auto-generated.
+2. **Curate** the extract include_codes (drop relatedNos homonyms — e.g. curtain). *(integrity gate)*
+3. Live `audit_word --registry=N` → onboards term + verses (creates file_index stub, mti, inventory, verse_records).
+4. Set finishing fields: `mti_terms.status='extracted'`, `cluster_code=<M>`, `wa_term_inventory.term_owner_type='OWNER'`.
+5. verse_context units → `_apply_generate_ve_lexical_v2.py` (reset ve-lexical, mechanical).
+6. **Control gate each step:** `_check_integrity_controls.py --snapshot` pre/post + `--compare` → deltas == predicted, no new invariant breach, else rollback from backup.
 
 researcher comments
 
