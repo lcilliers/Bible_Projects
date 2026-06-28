@@ -42,6 +42,25 @@ M01-A already grounds the restraint-on-mistreatment companions. The Lev 25 refra
 | **D11** | Fear-of-God is a **GOVERNING operation** — no act of its own; governs the inner being's whole conduct toward others, surfacing as the motive behind humane law. | open | Lev 25:17/36; 91 verses |
 | D12 | The safety of the vulnerable is located in the **perpetrator's vertical relationship** (fear of God), not the victim's protection or external enforcement — anchored from within, by reverence. | needs-corrob | Lev 25:17; 25:36 |
 
+## Researcher-curated fan-out — *fear of God vs oppression of the dependent* (2026-06-28)
+*Contributor: researcher. A curated passage set that places the fear of God in its correct light relative to ruthless/oppressive treatment — the governing thesis of this track. Registered as Lev 25:43 fan-out (`verse_analysis_progress`, ref_by_obs='fear-of-god'). Read together; each tests D7/D11/D12.*
+
+| verse | what it contributes to the thesis | already in study |
+|---|---|---|
+| **Exo 1:13–14** | the archetype — Egypt **ruthlessly** enslaves; the cruelty the law will forbid | M06 ruthlessness + M36 enslavement tracks |
+| **Lev 25:17** | "you shall not **wrong** one another, but **fear your God**" — fair dealing | xref'd |
+| **Lev 25:36** | "take no **interest**… but **fear your God**, that your brother may live" — merciful lending | xref'd |
+| **Lev 25:46** | over **brothers** you shall **not rule ruthlessly** — the kin boundary | M06 track |
+| **Lev 25:53** | hired-worker status; **not ruled ruthlessly** "in your sight" | M06 track |
+| **Isa 47:6** | Babylon showed **no mercy**, laid the yoke **heavy on the aged** — oppression of the weak as the charge | new (fan-out) |
+| **Isa 58:3** | fasting while you **oppress your workers** — religion without the fear that governs treatment | new (fan-out) |
+| **Eze 34:4** | shepherds ruled "with **force and harshness**" — `perek` turned **inward** on Israel's own | M06 track |
+| **Mal 3:5** | **linchpin** — oppress the hired worker, widow, fatherless… "**and do not fear me**": absence of the fear of God *is* the root of oppression | new (fan-out) |
+| **Eph 6:9** | masters, stop threatening — "**he who is both their Master and yours is in heaven**" | new (NT) |
+| **Col 4:1** | masters, treat bondservants justly — "**you also have a Master in heaven**" | new (NT) |
+
+> **The set's spine:** Mal 3:5 states the thesis negatively (no fear of God → oppression); Lev 25:17/36/43 state it positively (fear of God → humane treatment); Eph 6:9 / Col 4:1 carry it into the NT — the master is restrained by **his own** submission to a heavenly Master. **Fear of God is the inner governor of how power treats the powerless.** This is the D7/D11/D12 governing-operation reading, now corroborated across both Testaments.
+
 ## Cross-verse synthesis (emerging focus point)
 - **The governing insight (Lev 25):** the fear of God is the **inner anchor of a whole humane regime**. In one chapter it motivates fair dealing (v.17), merciful lending (v.36), and non-ruthless rule (v.43) alike. The vulnerable person's safety rests not on their own power or on enforcement but on **the powerful person's God-ward posture**. This is fear-of-God as **governance**, not as a single brake.
 - **Researcher note (2026-06-28):** reading Lev 25:43 as merely "fear restrains ruthlessness" understates fear's reach. The chapter is about *the treatment of people sold into servitude*; fear of God governs the **whole** of that treatment.
@@ -49,9 +68,13 @@ M01-A already grounds the restraint-on-mistreatment companions. The Lev 25 refra
 
 ## Track worklist (the fan-out)
 1. **Lev 25:17** (no wronging) + **Lev 25:36** (no usury) — close D7/D8/D9: show fear governing the *whole* Lev 25 regime, not just v.43.
-2. **Gen 20:11 · Deut 25:18 · Ps 36:1** — the **absence** portrait (brake removed → the weak are wronged); corroborates D11/D12.
-3. **Lev 19:14** (deaf/blind) — fear-of-God protecting the defenceless; M01-A companion.
-4. Sample the 91 `yare`+`elohim` verses for the governing-vs-affective split (this track = the *governing* sense).
+2. **Mal 3:5** — the linchpin: oppression named **because** "they do not fear me." Read first; it states the thesis. Then **Eph 6:9 · Col 4:1** (NT masters under a heavenly Master) — extend D7/D11/D12 across both Testaments.
+3. **Isa 47:6 · Isa 58:3** — oppression of the aged / the worker as the charge where the fear of God is absent.
+4. **Gen 20:11 · Deut 25:18 · Ps 36:1** — the **absence** portrait (brake removed → the weak are wronged); corroborates D11/D12.
+5. **Lev 19:14** (deaf/blind) — fear-of-God protecting the defenceless; M01-A companion.
+6. Sample the 91 `yare`+`elohim` verses for the governing-vs-affective split (this track = the *governing* sense).
+
+*(Items 2–3 = the researcher-curated set above, registered in `verse_analysis_progress` as Lev 25:43 fan-out.)*
 
 ## Note
 This track sits opposite the **dominion** (M23, `radah`) and **ruthlessness** (M06, `perek`) tracks: at Lev 25:43 the three meet — fear-of-God **governs**, dominion is the **impulse**, ruthlessness its forbidden **manner**. See `_tracks/M23/wa-track-dominion-H7287.md` and `_tracks/M06/wa-track-ruthlessness-H6531.md`.
