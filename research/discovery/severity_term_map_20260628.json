@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "english_anchor": "severity",
+    "generated": "2026-06-28",
+    "step_version": "ESV_th",
+    "primary_codes_found": 2,
+    "total_codes_in_map": 4,
+    "total_sub_gloss_codes": 0,
+    "total_related_codes": 2
+  },
+  "primary_tally": [
+    {
+      "strong": "G0663",
+      "count": 2
+    },
+    {
+      "strong": "G0857",
+      "count": 1
+    }
+  ],
+  "clusters": [
+    {
+      "english_anchor_code": "G0663",
+      "english_anchor_count": 2,
+      "cluster": {
+        "primary_code": "G0663",
+        "primary_vocab": {
+          "strong_number": "G0663",
+          "language": "Greek",
+          "hebrew_unicode": "ἀποτομία",
+          "transliteration": "apotomia",
+          "gloss": "severity",
+          "occurrence_count": 2,
+          "medium_def": "sternness, severity \nprimarily abruptness; metaphorically severity, sterness, rigor, Rom. 11:22 (2x)*",
+          "meaning_numbered": false,
+          "causative_form_present": false,
+          "lsj_entry": "ἀποτομ-ία, ἡ, \nseverity, νόμων[Refs 1st c.BC+]; ἐπιτιμημάτων[Refs 4th c.BC+]; of tortures, [Refs 1st c.AD+]\n__II cutting off, [Refs 1st c.AD+]\n__III sheer madness, [Refs 3rd c.AD+]",
+          "short_def_mounce": "sternness, severity",
+          "related_words": [
+            {
+              "strong": "G0664",
+              "form": "ἀποτόμως",
+              "gloss": "severely",
+              "translit": "apotomōs"
+            }
+          ],
+          "raw_related_numbers": "G0664",
+          "freq_list": "2@1;2@1;2@1;1;2@1;2@1;2@1;2@1;2@1;2@1;2@1;2@1;;2@1;;;;;2@1;2@1;2@1;2@1;2@1;2@1;2@1;2@1;;;2@1;;2@1",
+          "verse_count": 1
+        },
+        "sub_glosses": [],
+        "related_terms": [
+          {
+            "code": "G0664",
+            "gloss": "severely",
+            "transliteration": "apotomōs",
+            "script_form": "ἀποτόμως",
+            "vocab_count": 2,
+            "verse_count": 2,
+            "medium_def": "harshly, sharply, severely, rigorously \nsharply, severely, harshly, rigorously 2Cor. 13:10; Tit. 1:13*",
+            "is_sub_gloss": false,
+            "is_proper_noun": false,
+            "notes": []
+          }
+        ],
+        "all_codes": [
+          "G0663",
+          "G0664"
+        ]
+      }
+    },
+    {
+      "english_anchor_code": "G0857",
+      "english_anchor_count": 1,
+      "cluster": {
+        "primary_code": "G0857",
+        "primary_vocab": {
+          "strong_number": "G0857",
+          "language": "Greek",
+          "hebrew_unicode": "ἀφειδία",
+          "transliteration": "afeidia",
+          "gloss": "unsparing",
+          "occurrence_count": 1,
+          "medium_def": "harsh treatment, unsparing \nprimarily the disposition of one who is ἀφειδής, unsparing; hence, in NT unsparingness in the way of rigorous treatment, non-indulgence, harsh-treatment Col. 2:23*",
+          "meaning_numbered": false,
+          "causative_form_present": false,
+          "lsj_entry": "ἀφειδ-ία, ἡ, \ngenerosity, liberality, [Refs 5th c.BC+]\n__2 unsparing treatment, σώματος[NT]",
+          "short_def_mounce": "harsh treatment, unsparing",
+          "related_words": [
+            {
+              "strong": "G5339",
+              "form": "φείδομαι",
+              "gloss": "to spare",
+              "translit": "feidomai"
+            }
+          ],
+          "raw_related_numbers": "G5339",
+          "freq_list": "1;1;2@1;1;1;;1;1;1;1;2@1;1;;1;;;;;1;1;1;1;1;1;1;1;;;1;;1",
+          "verse_count": 1
+        },
+        "sub_glosses": [],
+        "related_terms": [
+          {
+            "code": "G5339",
+            "gloss": "to spare",
+            "transliteration": "feidomai",
+            "script_form": "φείδομαι",
+            "vocab_count": 85,
+            "verse_count": 9,
+            "medium_def": "to spare, refrain from \nto spare; to be tender of, Rom. 8:32; to spare, in respect of hard dealing, Acts 20:29; Rom. 11:21; 1Cor. 7:28; 2Cor. 1:23; 13:2; 2Pet. 2:4, 5; absolute to forbear, abstain, refrain 2Cor. 12:6*",
+            "is_sub_gloss": false,
+            "is_proper_noun": false,
+            "notes": []
+          }
+        ],
+        "all_codes": [
+          "G0857",
+          "G5339"
+        ]
+      }
+    }
+  ]
+}
