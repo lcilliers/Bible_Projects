@@ -147,14 +147,18 @@ Two contrasting books, into a **segregated** table `verse_coverage_morphology` (
 
 | book | canon | in study | missing | coverage spans | new-to-audit orphans* | **IB-semantic** |
 |---|---|---|---|---|---|---|
-| Leviticus (law/ritual) | 859 | 688 | 171 | 1,496 | 17 | **0** |
-| Proverbs (IB-dense) | 915 | 839 | 76 | 551 | 11 | **0** |
+| Leviticus (OT law/ritual) | 859 | 688 | 171 | 1,496 | 17 | **0** |
+| Proverbs (OT wisdom, IB-dense) | 915 | 839 | 76 | 551 | 11 | **0** |
+| Romans (NT doctrinal) | 432 | 410 | 23 | 222 | — | — |
+| Galatians (NT) | 149 | 110 | 39 | 437 | — | — |
+| Ephesians (NT ethical) | 155 | 137 | 18 | 171 | — | — |
+| **Rom+Gal+Eph combined** | 736 | 657 | 80 | 830 | 29 | **~0** (3 borderline) |
 
-*orphan AND appearing only in missing verses (never in any study span).
+*orphan AND appearing only in missing verses (never in any study span). **NT challenge (researcher):** tested per your suggestion. The 29 NT new-to-audit orphans are **Romans-16 greeting names** (Asyncritus, Hermas, Rufus, Tertius, Sosipater…), numbers, and concrete words. **3 slipped the filter but are mildly IB-adjacent** — `phrenapatao` "deceives" (G5422, Gal 6:3), `kubeia` "cunning/trickery" (G2940, Eph 4:14), `mukterizo` "mocked" (G3456, Gal 6:7) — and even these belong to **concepts the study already covers** (deceit, mockery in M06): the same *term-orphan-within-a-covered-concept* pattern as `miseo`, not a missing concept.
 
 **Volume:** ~0.09–0.12 MB per book → full-Bible ≈ **65k spans / ~4 MB** in the segregated table (the 677 MB DB is mostly raw HTML in `verse_morphology`, which coverage does NOT store). Negligible; physically separate; study searches never touch it. **Volume concern resolved.**
 
-**Yield — the decisive finding:** the never-pulled verses yield **zero new IB content** in both a law book and an IB-dense book. They are animal taxonomies, ritual/physical-defect laws, concrete nouns (hearth, ostrich, lizard, testicles…). And IB-dense Proverbs was already **92% pulled**. So:
+**Yield — the decisive finding (now tested across 5 books, both testaments):** the never-pulled verses yield **≈zero new IB content** — confirmed in OT law (Leviticus), OT wisdom (Proverbs), and NT epistles (Romans/Galatians/Ephesians, per researcher challenge). The missing verses are animal taxonomies, ritual/physical-defect laws, concrete nouns, numbers, and **proper names** (the Romans-16 greeting list). The handful of borderline NT terms (deceives/cunning/mocked) belong to **concepts already in the study**. IB-dense books are already ~90%+ pulled. So:
 - **The term-pull missed IB *words* (inside pulled verses) — not IB *verses*.** IB content co-occurs with already-pulled terms.
 - The real IB-discovery gap is the **~45 term-orphans in the existing corpus** (`perek`, `miseo`, …) — surfaced by the first audit — **not** the missing verses.
 
@@ -168,3 +172,7 @@ Two contrasting books, into a **segregated** table `verse_coverage_morphology` (
 ## Decisions
 1. **Full whole-Bible coverage extraction** — run it (cheap, for corpus-completeness/integrity), or skip (since IB-yield ≈ 0)? *(My lean: run it once for completeness + a complete orphan audit, then leave the coverage layer segregated.)*
 2. **IB-discovery proper:** proceed to the **~45 term-orphans** (the actual gap) — promote via the reg216 seed path / a coverage-gap register?
+
+researcher comment
+
+If I understand correctly, you came to the conclusion on the basis of a deep pilot on two old testament books.  I suggest you do the same on Romans, Galatians, and Effisians
