@@ -13,6 +13,7 @@ Working the Lev 25:43 fan-out, `perek` (H6531, "ruthlessly") was central to the 
 - `perek` H6531 has **zero trace** as a study term (not in `mti_terms`/inventory/root-family) — never extracted.
 - The 215-word registry has **no anchor word for cruelty/ruthlessness/harshness/severity** (it has anger, wrath, bitterness, malice, contempt, pride; and strength/power/authority/dominion — but not cruelty).
 - So `perek` had no English home → never pulled → survives only as a ride-along span.
+- **Method-integrity validation of *why* the cascade missed it:** `wa-term-coverage-method-integrity.md` — the registry→terms→related-terms cascade is an expansion tool over a human-seeded English list + a shallow/leaky STEP `relatedNos` graph (perek's only STEP relation is the homonym "curtain"). It is an *index*, not a *census*; blind spots are structural. The verse-fanout is the coverage guarantor.
 
 **Researcher note (foundational):** the registry development notes/history already recognise that IB-relevant words may surface mid-study that aren't in the registry, and map a path to add them and bring the study up to date. Since then, **new constructs** (clusters, ve_lexical, spans…) have developed that the original registry-management notes don't cover — so the add-path must be **updated to populate those too**, and the registry-management guide updated accordingly.
 
