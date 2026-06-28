@@ -27,12 +27,13 @@
 | D8 | Produced state is **twofold** — 'enslaved' (subjugation) + 'bitter' (the affective fruit, Exo 1:14). | H5647 | resolved | H4843 marar |
 | D8 | **Bitterness** (marar, Piel/factitive) is an affective inner state CAUSED in the enslaved — the inner fruit of oppression. | H4843 | resolved | marar occurrences |
 | D9 | Couples to **ruthlessness** as its manner; ruthless-enslavement is rare (3 verses) — Egypt's act, forbidden to Israel. | H5647 | resolved | → ruthlessness track (H6531); Lev 25:46 |
-| D10 | Cause-to-serve is morally **NEUTRAL** — oppressive (Exo 1:13), devotional (2Ch 34:33), inversion (Isa 43:23-24). | H5647 | needs-corrob | 2Ch 34:33; Isa 43:23-24 |
-| D11 | The SAME operation **inverts in valence** across the corpus — valence is object+manner, not intrinsic. | H5647 | open | abad-Hiphil verses; other neutral ops |
-| D12 | HIDDEN: `abad` is the SAME word for being **enslaved** and for **serving/worshipping God** — the inner being is constitutionally a servant; bondage vs worship is set entirely by **who is served and how**. | H5647 | open | 2Ch 34:33; Isa 43:23; the abad spread |
+| D10 | In Exo 1:13 the enslavement is **OPPRESSIVE / evil** — forced service imposed ruthlessly (`be-perek`) and embittering (v.14). The verse's valence is unambiguously negative. *(Corrected 2026-06-28: was wrongly read "morally neutral" — a lemma-range abstraction imported from `abad`'s other uses, not this verse.)* | H5647 | resolved | Exo 1:14; be-perek |
+| D11 | The lemma `abad` **spans bondage (Exo 1:13) and worship** (serving God) — but that does **not** make any instance neutral; here it is evil. **Open question:** is "serving" one operation whose moral weight is set by whom-served + manner, or distinct operations sharing a lemma? | H5647 | open | 2Ch 34:33; Isa 43:23-24; the abad spread |
+| D12 | HIDDEN: `abad` is the SAME word for being **enslaved** and for **serving/worshipping God** — the inner being is constitutionally a servant; the question Scripture presses is **whom** it serves and **how**. *(The lemma's dual use — not a claim that Exo 1:13's bondage is neutral.)* | H5647 | open | 2Ch 34:33; Isa 43:23; the abad spread |
 
 ## Cross-verse synthesis (emerging focus point)
-- The operation's **neutrality** is the spine: cause-to-serve is one movement; what changes is the **master** and the **manner**. Hence the D12 insight — the inner being never serves *no one*; the question Scripture presses is *whom*. (The Exodus turns on it: "let my people go that they may serve me".)
+- **In Exo 1:13 the enslavement is evil** — forced, ruthless (`be-perek`), embittering. That is the verse's reading and it is not in doubt.
+- **The spine is the dual use of the lemma, not "neutrality":** `abad` is the same word for being enslaved *and* for serving/worshipping God. That raises the inner-being question — the inner being never serves *no one*; the question Scripture presses is **whom**, and **how** (the Exodus turns on it: "let my people go that they may serve me"). But the lemma's range must **not** be collapsed into "the operation is morally neutral" — each instance carries its own valence, and Exo 1:13's is oppressive. *(Open: is "serving" one operation or several sharing a word? — D11.)*
 - The **bitterness** (marar, v.14) is the affective fruit when the master is an oppressor and the manner is `perek` — the point where this track **couples** to the ruthlessness track.
 
 ## Contributor evidence (raw — in the Exo 1:13 raw collection)

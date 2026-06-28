@@ -2,6 +2,7 @@
 
 - File: wa-exo-001-013-observations-v2-20260627.md · updated 2026-06-28 · live from `ib_observation`. (v2: numeric dimension order + readable layout.)
 - **2026-06-28 — Lev 25:43 convergence applied:** #41 (fear-of-God restraint) **resolved + stance widened** — fear of God governs the *whole* treatment of the powerless, not a brake; #49 (condemned) **resolved**.
+- **2026-06-28 — #59 corrected (researcher):** "morally NEUTRAL" was an error — Exo 1:13's enslavement is **oppressive/evil**; the lemma-range insight (abad = bondage *and* worship) relocated to #60/#61 as discovery-to-test.
 - **Raw data (source collection):** `verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md`
 - **Status key:** `resolved` = converged · `needs-corroboration` = open thread · `open` = discovery to test · `silent` = nothing in-verse.
 
@@ -77,13 +78,13 @@
 - Enslavement couples to ruthlessness (its manner here); ruthless-enslavement is a rare dynamic (3 verses) — Egypt's act, forbidden to Israel (Lev 25:46).
   · **anchor** H5647 · **resolved** · reconsider at: Lev 25:46; H6531  _(#58)_
 ### D10 · Colour / valence
-- Cause-to-serve is morally NEUTRAL as an operation — oppressive (Exo 1:13), devotional (2Ch 34:33), inversion (Isa 43:23-24). Valence set by who-serves-whom and the manner.
-  · **anchor** H5647 · **needs-corroboration** · reconsider at: 2Ch 34:33; Isa 43:23-24  _(#59)_
+- In Exo 1:13 the enslavement is **OPPRESSIVE / evil** — forced service imposed ruthlessly (be-perek) and embittering (v.14). The verse's valence is unambiguously negative. _(Corrected 2026-06-28: prior "morally NEUTRAL" reading was a lemma-range abstraction about abad, imported from its other uses — not this verse.)_
+  · **anchor** H5647 · **resolved** · reconsider at: Exo 1:14; be-perek  _(#59)_
 ### D11 · Discovery
-- The SAME operation inverts in valence across the corpus — valence is not intrinsic to the operation but to its object+manner. Reconsider for other neutral operations.
-  · **anchor** H5647 · **open** · reconsider at: abad-Hiphil verses; other neutral operations  _(#60)_
+- The lemma abad **spans bondage (Exo 1:13) and worship** (serving God) — but that does NOT make any instance neutral; here it is evil. Open question: is "serving" one operation whose moral weight is set by whom-served + manner, or distinct operations sharing a lemma?
+  · **anchor** H5647 · **open** · reconsider at: 2Ch 34:33; Isa 43:23-24; the abad spread  _(#60)_
 ### D12 · Hidden meaning
-- HIDDEN: abad is the SAME word for being enslaved (forced service) AND for serving/worshipping God — the inner being's 'serving' is one operation; bondage vs worship is set entirely by WHO is served and HOW. Implication: the inner being is constitutionally a servant, never master-less — the only question is the master.
+- HIDDEN: abad is the SAME word for being enslaved (forced service) AND for serving/worshipping God — the inner being is constitutionally a servant, never master-less; the question Scripture presses is WHOM it serves and HOW. _(The lemma's dual use — not a claim that Exo 1:13's bondage is neutral; here it is evil.)_
   · **anchor** H5647 · **open** · reconsider at: 2Ch 34:33 (serve LORD); Isa 43:23; the abad spread  _(#61)_
 
 ---
