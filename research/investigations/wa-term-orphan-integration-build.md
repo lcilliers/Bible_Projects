@@ -78,6 +78,19 @@ Every term needs an `owning_registry_fk` (lexical home). Two routes per term:
 6. **Reset ve-lexical** — run `_apply_generate_ve_lexical_v2.py` (mechanical).
 7. **Verify** — structural-completeness check (researcher step e).
 
+## 7. Integrity anchors & controls (researcher priority)
+Built the reusable anchor `scripts/_check_integrity_controls.py` (READ-ONLY): **snapshot** control totals + invariants → json; **compare** two snapshots → exact deltas. Run before/after every batch so we see *only* the expected change.
+- **Control totals (anchors):** active counts per key table (mti, inventory owner/xref, verse_records, verse_context, ve_lexical, verse, span_index, registry) + **per-cluster member counts** (so we see which cluster grew).
+- **Invariants (must stay 0):** duplicate OWNER per Strong's · verse_records orphan term_inv/book · verse_context orphan mti/verse_record · ve_lexical orphan verse_context.
+- **Baseline (`snap-pre-perek`, 2026-06-28):** invariants CLEAN except **`dup_owner_strong=1` → `G0150`** — a **pre-existing** breach (OT-DBR-009), not from this build. Control = perek must **not increase** it.
+- **Per-batch gate:** backup → snapshot pre → write → snapshot post → `--compare` (deltas == predicted, no new invariant breach, study tables untouched, coverage layer unchanged) → else rollback.
+- **Reversibility:** DB backup per batch + documented per-term rollback (delete the term's rows across mti/inventory/verse_records/verse_context/ve_lexical).
+
+## 8. Onboarding mechanics — use the engine, NOT a hand-script (template finding)
+Inspected the template (`arits` H6184, M06 owner): dual `mti_terms` rows, owner+xref `wa_term_inventory`, `wa_file_index` stub, `word_registry_fk`, 40 verse_records, 20 verse_context, 226 ve_lexical. **Hand-scripting perek to match this legacy wiring risks an inconsistent/contaminating record.** → Onboard via the **canonical engine path** (`--register` done for reg216; `audit_word` creates the consistent record incl. file_index stub).
+- **Batch 1 scope is naturally just `perek`:** the other reg216 cruelty terms (`arits`, `akzar`*, `aneleemon`) **already exist** (owned elsewhere) → they become **XREF** to reg216, not new owners. So reg216's only NEW owner = `perek`.
+- **Open mechanic to confirm before the write:** `audit_word --registry=216` needs a Step-1 JSON extract containing `perek`; the discovery `term_map` is a different format. Resolve the extract path (build the Step-1 extract, or the minimal controlled insert that exactly replicates the template), then: backup → dry-run → snapshot/compare → live.
+
 ## 6. Decision log
 | date | decision | status |
 |---|---|---|
