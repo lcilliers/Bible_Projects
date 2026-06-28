@@ -23,6 +23,25 @@
 
 *0 corpus verses = appears only in coverage/missing verses (Gal/Eph) — needs its own verse pull.
 
+## 1b. Related-term clusters serviced (the family — researcher: "STEP services the terms")
+Servicing each of the 39 primaries' STEP related clusters surfaced **62 further terms**. Triaged — **include the IB-kin, exclude homonym/proper-noun noise** (the leaky-relatedNos finding in action):
+
+**INCLUDE — genuine IB-kin (~19), added to the integration set by cluster:**
+- **M06 Hate:** `G1701` jeering · `G1703` a mocker · `H3934` mocking · `H7047`/`H7048` derision · `H1604` loathing · `G4767` hated
+- **M24 Weakness:** `H3018`/`H3022` toil · `H3023` weary · `H3024` weariness · `G1587` to fail
+- **M05 Love:** `H7391` tenderness (noun) · `G0857` unsparing · `G5340` sparingly
+- **M16 Folly:** `G0181` disorder · `G3152` futile
+- **M02 Anger:** `G1031` to gnash
+- **M01 Fear:** `H7494` quaking
+- **M30 Obedience:** `H5620` stubborn
+- **Violence (unmapped):** `H2554` to injure  ·  **Oppression (unmapped):** `H3906` oppression (noun)
+
+**EXCLUDE — noise (~37):** proper nouns (Delilah, Orpah, Goah, Nod, Yob, Joha, Ladan, the Ir-/City-of-Salt names…) and homonyms/concrete (`H6532` curtain via perek, `H8464` ostrich via chamas, `H2022` mountain, `H3938` to eat, `H5638` winter, `H1803` hair, `H4595` overtunic, `H5067` heap…). These are the relatedNos leaks — do not pull.
+
+**BORDERLINE (researcher decide):** `H6202` to break-the-neck (kin to stiff-necked H6203?) · `H1800` poor · `H5112` wandering (via `nud` grief) · `H4816` weakness · `G0413` inexhaustible / `G3089` to loose (via `ekkakeo`).
+
+→ **Integration set now ≈ 39 primaries + ~19 kin ≈ 58 terms** (plus borderlines if confirmed). The pipeline (§4) applies to all; servicing-then-triage is the rule, not primaries-only.
+
 ## 2. The 3 unmapped — need a cluster decision (§5.1)
 No dedicated **oppression** or **violence** cluster exists. Options: (a) **M27 Evil** (violence/oppression as wickedness); (b) **M06 Hate** (the cruelty/hostility neighbour); (c) **M24 Weakness** (the *suffering* side — but these are the *act*, not the state); (d) **new cluster(s)**. *(My lean: `chamas` violence + `yanah`/`lachats` oppress are the *acts* of harm → M27 Evil or M06; not M24. Decide.)*
 
@@ -52,3 +71,26 @@ Every term needs an `owning_registry_fk` (lexical home). Two routes per term:
 | 2026-06-28 | Integrate the curated IB-orphans as OWNER terms into existing clusters + full ve-lexical (researcher directive) | accepted; planning |
 | 2026-06-28 | 39 curated orphans → cluster mapping (§1) | drafted; 36 clear, 3 unmapped |
 | — | unmapped cluster · owner-registry · ve-lexical method · batch order (§5) | **PENDING** |
+
+researcher comments
+
+addtional research
+
+cha.mas (חָמַס H2554) 8 x to injure  
+cha.mas (חָמָס H2555) 60 x violence  
+cha.mats (חָמַץ H2556*) 8 x - to leaven (3 forms)
+cha.mash (חָמַשׁ H2567) 1 x to take the fifth part  
+
+
+a.nah (אֲנָה H0576*) etc. 1248 x - me (4 forms)
+a.nah (אָנָה H0578) 2 x to lament  
+a.nah (אָנָה H0579) 4 x to meet  
+a.nach (אָנַח H0584) 13 x to sigh  
+ya.nah (יָנָה H3238) 20 x to oppress  
+ya.a.nah (יַעֲנָה H3284) 8 x ostrich  
+na.ah (נָאָה H4998) 3 x be lovely  
+a.nah (עָנָה H6030*) etc. 362 x - to answer (4 forms)
+a.nah (עָנָה H6031*) 83 x - to afflict (3 forms)
+
+la.chats (לָחַץ H3905) 19 x to oppress  
+la.chats (לַ֫חַץ H3906) 12 x oppression  
