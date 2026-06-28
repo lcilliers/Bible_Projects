@@ -24,7 +24,7 @@
 |---|---|---|---|---|
 | D1 | Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another. | H6531 | resolved | the 6 perek occurrences |
 | D2 | It springs from the Egyptians' **dread** of Israel — fear of a perceived threat to power. | H6531 | needs-corrob | Exo 1:12; Gen 20:11; Deut 25:18 |
-| D2 | Its **restraint is the fear of God**; its absence removes the brake. | H6531 | needs-corrob | Lev 25:43; Deut 25:18; Ps 36:1 |
+| D2 | Its **restraint is the fear of God** — *not a narrow brake but the GOVERNING reverence over the whole treatment of the powerless* (Lev 25:17/36/43; Mal 3:5 "they do not fear me"; Eph 6:9; Col 4:1). Egypt, ungoverned, treats Israel ruthlessly. | H6531 | **resolved** (stance widened 2026-06-28) | Mal 3:5; Lev 25:17/36; Eph 6:9; Col 4:1 |
 | D2 | Beneath the trigger, the deeper wellspring of cruelty is the **HEART** ('only evil', Gen 6:5; evil from within, Mark 7:21-23). | H3820 | needs-corrob | Gen 6:5; Jer 17:9; Mark 7:21-23 |
 | D2 | **Anger/wrath** produces cruelty ('their wrath, for it is cruel', Gen 49:7; Pro 27:4). | H0639 | needs-corrob | Gen 49:7; Pro 27:4 |
 | D2 | **Power without restraint** enables cruelty (Eccl 8:9) — having the power becomes the justification. | H6531 | needs-corrob | Eccl 8:9 |
@@ -32,7 +32,7 @@
 | D3 | Borne by the actor (the Egyptians); no inner seat named in-verse. | H6531 | silent | verses where a cruelty term names a seat |
 | D5 | Its object is always a **weaker party** — perek is exercised over the subjugated. | H6531 | needs-corrob | the 6 perek verses |
 | D9 | It **couples to enslavement as its MANNER** (be-perek modifies the Hiphil abad). | H6531 | resolved | → enslavement track (H5647); 3-verse coupling |
-| D10 | **Condemned** — the Levitical law forbids ruling perek over a brother. | H6531 | needs-corrob | Lev 25:43; 25:46; 25:53 |
+| D10 | **Condemned** — the Levitical law forbids ruling perek over a brother. | H6531 | **resolved** (Lev 25:43 read = the prohibition) | 25:46; 25:53 (siblings) |
 | D11 | Ruthlessness is a **MANNER-operation** — no act of its own, only the cruel quality of another. Do all inner-cruelty terms behave so? | H6531 | open | other inner-cruelty terms |
 | D12 | HIDDEN: the cruelty-word Egypt used becomes the word Israel is **forbidden** to use (Lev 25); Eze 34:4 turns it inward — the oppressed must not become the oppressor. | H6531 | needs-corrob | Lev 25:43;46;53; Eze 34:4 |
 

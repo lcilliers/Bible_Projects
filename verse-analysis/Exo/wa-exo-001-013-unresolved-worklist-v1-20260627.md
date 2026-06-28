@@ -1,8 +1,9 @@
 # Exo 1:13 — unresolved-observation control list (fan-out worklist)
 
-- File: wa-exo-001-013-unresolved-worklist-v1-20260627.md · 2026-06-27 · live from `ib_observation`.
-- **23 observations total · 9 resolved · 14 to work.** Work order: corroborate → test discoveries → check silents.
+- File: wa-exo-001-013-unresolved-worklist-v1-20260627.md · updated 2026-06-28 · live from `ib_observation`.
+- **21 observations · 9 resolved · 8 needs-corroboration · 3 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
 - Each row: the claim · where to go (reconsider-at) · tick when closed.
+- **2026-06-28 — Lev 25:43 now READ** (3 streams). Convergence applied: **#41 resolved** (fear-of-God stance *widened* — governs the whole treatment, not a brake) · **#49 resolved** (Lev 25:43 *is* the prohibition) · **#51 / #50 strengthened** (still open pending Eze 34:4 / other cruelty terms).
 
 
 ## NEEDS CORROBORATION — go to the cross-referenced verses and test the claim
@@ -13,9 +14,9 @@
 - [ ] **#40 · ruthlessness/D2 Source**
     - claim: It springs from the Egyptians' dread of Israel — fear of a perceived threat to power.
     - anchor H6531 · **go to:** Exo 1:12; fear->cruelty (Gen 20:11; Deut 25:18)
-- [ ] **#41 · ruthlessness/D2 Source**
-    - claim: Its restraint is the fear of God; its absence removes the brake.
-    - anchor H6531 · **go to:** Lev 25:43; Deut 25:18; Ps 36:1
+- [x] **#41 · ruthlessness/D2 Source — RESOLVED 2026-06-28 (stance widened)**
+    - claim (revised): Its restraint is the fear of God — **not a narrow brake on cruelty but the GOVERNING reverence over the whole treatment of the powerless** (Lev 25:17/36/43); oppression arises precisely where "they do not fear me" (Mal 3:5); masters checked by their own heavenly Master (Eph 6:9; Col 4:1). Egypt, ungoverned, treats Israel ruthlessly — the absence removes the whole governance, not one brake.
+    - anchor H6531 · resolved via Lev 25:43 read + the curated fear-of-God set (Mal 3:5 / Eph 6:9 / Col 4:1 registered, still to read).
 - [ ] **#42 · ruthlessness/D2 Source**
     - claim: Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intention of the heart 'only evil' (Gen 6:5); evil comes from within (Mark 7:21-23).
     - anchor H3820 · **go to:** Gen 6:5; Jer 17:9; Mark 7:21-23
@@ -31,12 +32,12 @@
 - [ ] **#47 · ruthlessness/D5 Object**
     - claim: Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
     - anchor H6531 · **go to:** the 6 perek verses (all = rule-over)
-- [ ] **#49 · ruthlessness/D10 Valence**
+- [x] **#49 · ruthlessness/D10 Valence — RESOLVED 2026-06-28**
     - claim: It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
-    - anchor H6531 · **go to:** Lev 25:43; 25:46; 25:53
-- [ ] **#51 · ruthlessness/D12 Hidden**
+    - anchor H6531 · Lev 25:43 **read** — it *is* the prohibition. (25:46/53 siblings still to read, but the condemnation is established.)
+- [ ] **#51 · ruthlessness/D12 Hidden — strengthened 2026-06-28 (still open)**
     - claim: HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
-    - anchor H6531 · **go to:** Lev 25:43; 25:46; 25:53; Eze 34:4
+    - anchor H6531 · Lev 25:43 read (the kin prohibition confirmed); **go to:** 25:46; 25:53; **Eze 34:4** (the inward-turn — still pending).
 
 ## OPEN (discovery) — test whether the generalisation holds
 
@@ -46,9 +47,9 @@
 - [ ] **#61 · enslavement/D12 Hidden**
     - claim: HIDDEN: abad is the SAME word for being enslaved (forced service) AND for serving/worshipping God — the inner being's 'serving' is one operation; bondage vs worship is set entirely by WHO is served and HOW. Implication: the inner being is constitutionally a servant, never master-less — the only question is the master.
     - anchor H5647 · **go to:** 2Ch 34:33 (serve LORD); Isa 43:23; the abad spread
-- [ ] **#50 · ruthlessness/D11 Discovery**
+- [ ] **#50 · ruthlessness/D11 Discovery — strengthened 2026-06-28 (still open)**
     - claim: Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
-    - anchor H6531 · **go to:** other inner-cruelty terms
+    - anchor H6531 · Lev 25:43 read — perek confirmed as a manner on a **second** host verb (`radah`, vs `abad` at Exo 1:13), so it is not bound to one act. Open question (do *all* cruelty terms behave so) still needs **other cruelty terms** (arits, akzar).
 
 ## SILENT — nothing in Exo 1:13; check whether other verses fill it
 

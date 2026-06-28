@@ -1,6 +1,7 @@
 # Exo 1:13 — verse + observations (focused extract)
 
-- File: wa-exo-001-013-observations-v2-20260627.md · 2026-06-27 · live from `ib_observation`. (v2: numeric dimension order + readable layout; re-exported after #51 reconsider_at fix.)
+- File: wa-exo-001-013-observations-v2-20260627.md · updated 2026-06-28 · live from `ib_observation`. (v2: numeric dimension order + readable layout.)
+- **2026-06-28 — Lev 25:43 convergence applied:** #41 (fear-of-God restraint) **resolved + stance widened** — fear of God governs the *whole* treatment of the powerless, not a brake; #49 (condemned) **resolved**.
 - **Raw data (source collection):** `verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md`
 - **Status key:** `resolved` = converged · `needs-corroboration` = open thread · `open` = discovery to test · `silent` = nothing in-verse.
 
@@ -21,8 +22,8 @@
 ### D2 · Source / antecedent
 - It springs from the Egyptians' dread of Israel — fear of a perceived threat to power.
   · **anchor** H6531 · **needs-corroboration** · reconsider at: Exo 1:12; fear->cruelty (Gen 20:11; Deut 25:18)  _(#40)_
-- Its restraint is the fear of God; its absence removes the brake.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43; Deut 25:18; Ps 36:1  _(#41)_
+- Its restraint is the fear of God — **not a narrow brake on cruelty but the GOVERNING reverence over the whole treatment of the powerless** (Lev 25:17/36/43); oppression arises precisely where "they do not fear me" (Mal 3:5); masters checked by their own heavenly Master (Eph 6:9; Col 4:1). Egypt, ungoverned by the fear of God, treats Israel ruthlessly — its absence removes the whole governance, not one brake.
+  · **anchor** H6531 · **resolved** _(stance widened 2026-06-28)_ · reconsider at: Mal 3:5; Lev 25:17/36/43 (read); Eph 6:9; Col 4:1  _(#41)_
 - Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intention of the heart 'only evil' (Gen 6:5); evil comes from within (Mark 7:21-23).
   · **anchor** H3820 · **needs-corroboration** · reconsider at: Gen 6:5; Jer 17:9; Mark 7:21-23  _(#42)_
 - Anger/wrath produces cruelty — 'their wrath, for it is cruel' (Gen 49:7); 'wrath is cruel' (Pro 27:4).
@@ -42,7 +43,7 @@
   · **anchor** H6531 · **resolved** · reconsider at: H5647; coupling 3 verses  _(#48)_
 ### D10 · Colour / valence
 - It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43; 25:46; 25:53  _(#49)_
+  · **anchor** H6531 · **resolved** _(Lev 25:43 read = the prohibition; 2026-06-28)_ · reconsider at: 25:46; 25:53 (siblings)  _(#49)_
 ### D11 · Discovery
 - Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
   · **anchor** H6531 · **open** · reconsider at: other inner-cruelty terms  _(#50)_
