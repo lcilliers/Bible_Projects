@@ -1,3 +1,7 @@
+> ## ⚠ SUPERSEDED — 2026-06-28
+> This assessment was built on **incomplete raw data** (surface text + morphology only) and re-derived findings the study already held. The fear-of-God-as-restraint reading it presents as "discovered" was **already in the DB** — in two `verse_context` analysis-notes and verbatim in the **M01-A characteristic definition** ("restraining force on cruelty and injustice (Lev 19:14; 25:17; 25:43)").
+> **Use the full raw extract instead:** `wa-lev-025-043-fanout-v1-20260628.md`. The proper reading will be redone from that.
+
 # Lev 25:43 — verse assessment (read in its own right)
 
 - **File:** wa-lev-025-043-assessment-v1-20260627.md · 2026-06-27 · Author: Claude Code.
