@@ -165,14 +165,19 @@ Two contrasting books, into a **segregated** table `verse_coverage_morphology` (
 **Therefore — implications:**
 1. **Whole-Bible extraction is cheap, safe, non-contaminating, and completes the verse index to the full canon** (fan-out reach + a defensible "every verse touched" anchor) — worth doing for **completeness/integrity**, kept in the segregated coverage layer.
 2. **But it does NOT meaningfully narrow the IB-discovery gap** — that was the hope; the evidence says the gap is term-identity, not missing verses.
-3. **"Surface more first" is largely answered:** the missing-verse route is low-yield; the ~45 already-found term-orphans are essentially the IB-orphan set (modulo the surface-keyword filter's limits + books beyond these two — a fuller run would confirm).
+3. **"Surface more first" is answered (5 books, both testaments):** the missing-verse route is low-yield; the ~45 already-found term-orphans are essentially the IB-orphan set (modulo the surface-keyword filter's limits; a full canon-wide audit after the coverage extraction would give the complete set).
 
-**Pilot data:** Lev + Pro coverage (247 verses, ~2,047 spans) sits in `verse_coverage_morphology` (segregated). Harmless; extends if the full run proceeds, droppable otherwise.
+**Pilot data:** Lev + Pro + Rom + Gal + Eph coverage = **327 verses, 2,877 spans** in `verse_coverage_morphology` (segregated). Harmless; extends if the full run proceeds, droppable otherwise.
 
 ## Decisions
 1. **Full whole-Bible coverage extraction** — run it (cheap, for corpus-completeness/integrity), or skip (since IB-yield ≈ 0)? *(My lean: run it once for completeness + a complete orphan audit, then leave the coverage layer segregated.)*
-2. **IB-discovery proper:** proceed to the **~45 term-orphans** (the actual gap) — promote via the reg216 seed path / a coverage-gap register?
+2. **IB-discovery proper:** proceed to the term-orphans (the actual gap). **Researcher directive 2026-06-28: integrate the 39 curated orphans as OWNER terms into existing clusters + full ve-lexical per verse.** → build plan lives in `wa-term-orphan-integration-build.md` (subsumes reg216/perek). Awaiting its §5 decisions.
 
 researcher comment
 
 If I understand correctly, you came to the conclusion on the basis of a deep pilot on two old testament books.  I suggest you do the same on Romans, Galatians, and Effisians
+
+you have not recorded the findings in this .md - fix it.  
+
+the 45 terms can be pulled from STEP with their verses and integrate into existing clusters.  Do a full ve-lexical for each verse. I assume these terms will all become owner terms.
+
