@@ -42,7 +42,9 @@ verse-analysis/
 - `Workflow/Catalogue/wa-IB-verse-dimensions-catalogue-v1-*.md` — D1–D12 controlled codes.
 - `Workflow/methodology/wa-verse-meaning-fanout-index-design-v1-*.md` — the verse↔evidence spiderweb index.
 
-## Current contents (2026-06-27)
+## Current contents (2026-06-28)
 - **Exo/** — Exo 1:13 (analysis in progress; fanout + observations).
+- **Lev/** — Lev 25:43 (analysed; 3 streams — fear-of-god/dominion/ruthlessness; fanout + observations).
 - **Gen/** — Gen 6:5 (partial; fanout + observations).
-- **_reports/** — verse-analysis progress anchor design.
+- **_tracks/** — `M01/` fear-of-god (`yare` H3372) · `M06/` ruthlessness (`perek` H6531) · `M23/` dominion (`radah` H7287) · `M36/` enslavement (`abad` H5647).
+- **_reports/** — verse-analysis progress anchor design + fan-out track-structure proposal.

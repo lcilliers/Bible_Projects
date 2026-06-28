@@ -180,4 +180,3 @@ If I understand correctly, you came to the conclusion on the basis of a deep pil
 you have not recorded the findings in this .md - fix it.  
 
 the 45 terms can be pulled from STEP with their verses and integrate into existing clusters.  Do a full ve-lexical for each verse. I assume these terms will all become owner terms.
-
