@@ -100,3 +100,38 @@ Action steps
 1. Coverage audit + report here — **DONE** (above).
 2. Continue reg216 build-out in a separate md — **NEXT** → `wa-ruthlessness-investigation.md` (awaits the §5 confirmations there: perek→M06, re-home?, violence gap?).
 3. Memory + study instructions up to date — **memory: done** ([[feedback_term_coverage_cascade_is_index_not_census]]); **registry-management guide update: queued** (re-frame registry as seed-list; add coverage-audit + newer-constructs catch-up).
+
+researcher observations
+That is a really great find.  These 45 terms must find there way into the study.
+It is noticable that the majority of the words have a negative/sinful/'bad' connotation; very few positive/'good'/'God-like' terms emerged - this may because all the good words are already covered, or because the verses are predominantly about the 'bad' side of IB.
+Is it possible to extract all span from STEP for the whole bible, and do a similar excercise.
+Before we proceed with adding the discovered terms, lets try and surface some more.
+
+---
+
+## Whole-Bible span extraction — feasibility & plan (researcher observation 3)
+**Is it possible? YES — confirmed 2026-06-28.** STEP's `/rest/bible/getBibleText/{VER}/{ref}` returns full morphology (`<span morph=… strong=…>` per word) for **any** reference, independent of Strong's search. Proven on **Lev 25:44** (not in our corpus): it returned `H5650` (ebed), `H0519` (amah), `H7069` (qanah)… Our span index is term-bounded **only because the morphology-ingest loop iterated over existing `verse` rows** (the ~76% term-pulled subset), not because STEP lacks the rest.
+
+**Why this matters:** the current orphan audit ran against the **partial** corpus. A whole-Bible morphology pull would (a) surface orphan terms that occur **only in never-pulled verses** (currently invisible), and (b) **complete the verse index to the full canon** — closing the 76%-subset gap identified earlier.
+
+**Plan (resumable, idempotent — reuses `_apply_ingest_verse_morphology.py`):**
+1. Enumerate the full canonical reference list (~31,102 verses / 1,189 chapters). Pull **per-chapter** via `getBibleText` (~1,189 calls, far fewer than per-verse).
+2. Add the ~7,500 missing canonical verses to the `verse` table.
+3. Ingest their morphology → `verse_morphology` (circuit-breaker + resume already built in).
+4. Rebuild `verse_span_index` over the complete set.
+5. **Re-run the orphan audit** against the now-complete morphology → the fuller IB-orphan list.
+6. **THEN** triage + add the discovered terms (the 45 + any new) — per researcher: surface more *first*.
+
+**Integrity note:** this changes the corpus baseline (extends `verse` + `verse_morphology` + `verse_span_index`). Recommend a **pilot** first (one book, e.g. the missing verses of a sampled book) to validate the pipeline and show the orphan-delta, then the full run — with a DB backup before the first write.
+
+## Negative-skew observation (researcher observation 2)
+The ~45 IB-orphans skew **negative/sinful** (cruelty, violence, oppression, mockery, arrogance, rebellion); few positive/'good'/'God-like' terms. Two hypotheses, not yet resolved:
+- (a) **positive concepts are already well-covered** — the study has registries for love/compassion/kindness (M05), mercy, peace, hope, joy, etc., so few positive orphans remain; vs
+- (b) **the corpus verses are predominantly about the 'bad' side** of the inner being.
+The **complete** orphan audit (after whole-Bible extraction) will test this — a complete orphan set lets us compare the positive/negative balance of orphans against the balance of *known* terms. Recorded for that check; not resolved now.
+
+## Action-step status (updated)
+1. Coverage audit (partial corpus) — **DONE**.
+2. reg216 build-out — **DEFERRED** behind "surface more first" (whole-Bible extraction → complete re-audit → then add terms).
+3. Memory done; registry-guide update queued.
+4. **NEXT:** whole-Bible morphology extraction (pilot → full) — awaiting researcher go-ahead on the plan above.
