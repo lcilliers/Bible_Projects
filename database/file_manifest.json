@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T05:35:52Z",
+  "generated_at": "2026-06-28T06:26:43Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 152,
     "historical": 31,
-    "current": 2600,
+    "current": 2601,
     "archived": 2269,
     "cross-reference": 3318,
     "backup": 48
   },
-  "total_files": 8418,
-  "total_active": 6149,
+  "total_files": 8419,
+  "total_active": 6150,
   "total_archived": 2269,
   "files": [
     {
@@ -103443,8 +103443,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3789377,
-      "modified": "2026-06-27T20:55:54Z"
+      "size_bytes": 3798736,
+      "modified": "2026-06-28T05:35:52Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -121491,8 +121491,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6639,
-      "modified": "2026-06-28T05:35:37Z"
+      "size_bytes": 7050,
+      "modified": "2026-06-28T05:48:20Z"
     },
     {
       "path": "research/investigations/wa-sb-finding-migration-v1-20260609.md",
@@ -121749,6 +121749,22 @@
       "archived": false,
       "size_bytes": 3932,
       "modified": "2026-06-07T19:27:24Z"
+    },
+    {
+      "path": "research/investigations/wa-term-coverage-method-integrity.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 10960,
+      "modified": "2026-06-28T06:23:38Z"
     },
     {
       "path": "research/investigations/wa-term-type-classification-v1-2026-05-04.json",
