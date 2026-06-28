@@ -29,3 +29,13 @@
 ## Related
 - The `ebed` lesson (role-noun ≠ operation) — opposite case: `ebed` correctly excluded; `perek` wrongly absent. The test is whether the word names an **inner-being operation/disposition** (cruelty = yes).
 - Links to the broader term-anchoring limitation: the registry boundary determines what the cluster method can see.
+
+Researcher comments:
+
+This discovery goes to the fundamental heart of the study - if you go back into the notes and history of the Registry development, you will note that it is recognised that during the study words or terms may surface that is IB relevant, but is not included in the registry. It also maps a clear path for adding it to the registery and bringing the study up to date.  Since then, several new constructs have been developed that may not be present in the original notes regarding registry management, these new constructs (e.g. clusters and others) and the population of these framework to ensure the new word becomes visible in the study should also be addressed.
+
+Steps:a) reread the instructions for the registry - new word discovery is still very relevant for the study
+b) Add Ruthless to the register - follow all the steps from the instructions
+c) I expect several new terms to emerge, new verses to be added, new relationships to be build (e.g. assignment to cluster)
+d) catch-up with constructs e.g. ve-lexicals, spans, gloss words
+e) confirm that all the structural data components of the terms added has been completed.
