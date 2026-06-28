@@ -135,3 +135,36 @@ The **complete** orphan audit (after whole-Bible extraction) will test this — 
 2. reg216 build-out — **DEFERRED** behind "surface more first" (whole-Bible extraction → complete re-audit → then add terms).
 3. Memory done; registry-guide update queued.
 4. **NEXT:** whole-Bible morphology extraction (pilot → full) — awaiting researcher go-ahead on the plan above.
+
+researcher comments:
+a) extracting all the verses, and using the span to its full extent sounds very enticing - if we add it to the DB, then we must be very clear to not contaminate our verses that is relevant to the study.  We do not want to expand the dataset to such an extent that it slows down and complicates every search and discovery in the future.  It can however narrow the potential gap of discovery of IB related operations in scripture.
+go ahead with pilot, and think through the implication of and volume of the data.
+
+---
+
+## Whole-Bible extraction — PILOT RESULTS (2026-06-28)
+Two contrasting books, into a **segregated** table `verse_coverage_morphology` (parsed spans only, no HTML; study tables untouched — non-contaminating by construction). Script: `_apply_pilot_canon_coverage_leviticus_v1_20260628.py`.
+
+| book | canon | in study | missing | coverage spans | new-to-audit orphans* | **IB-semantic** |
+|---|---|---|---|---|---|---|
+| Leviticus (law/ritual) | 859 | 688 | 171 | 1,496 | 17 | **0** |
+| Proverbs (IB-dense) | 915 | 839 | 76 | 551 | 11 | **0** |
+
+*orphan AND appearing only in missing verses (never in any study span).
+
+**Volume:** ~0.09–0.12 MB per book → full-Bible ≈ **65k spans / ~4 MB** in the segregated table (the 677 MB DB is mostly raw HTML in `verse_morphology`, which coverage does NOT store). Negligible; physically separate; study searches never touch it. **Volume concern resolved.**
+
+**Yield — the decisive finding:** the never-pulled verses yield **zero new IB content** in both a law book and an IB-dense book. They are animal taxonomies, ritual/physical-defect laws, concrete nouns (hearth, ostrich, lizard, testicles…). And IB-dense Proverbs was already **92% pulled**. So:
+- **The term-pull missed IB *words* (inside pulled verses) — not IB *verses*.** IB content co-occurs with already-pulled terms.
+- The real IB-discovery gap is the **~45 term-orphans in the existing corpus** (`perek`, `miseo`, …) — surfaced by the first audit — **not** the missing verses.
+
+**Therefore — implications:**
+1. **Whole-Bible extraction is cheap, safe, non-contaminating, and completes the verse index to the full canon** (fan-out reach + a defensible "every verse touched" anchor) — worth doing for **completeness/integrity**, kept in the segregated coverage layer.
+2. **But it does NOT meaningfully narrow the IB-discovery gap** — that was the hope; the evidence says the gap is term-identity, not missing verses.
+3. **"Surface more first" is largely answered:** the missing-verse route is low-yield; the ~45 already-found term-orphans are essentially the IB-orphan set (modulo the surface-keyword filter's limits + books beyond these two — a fuller run would confirm).
+
+**Pilot data:** Lev + Pro coverage (247 verses, ~2,047 spans) sits in `verse_coverage_morphology` (segregated). Harmless; extends if the full run proceeds, droppable otherwise.
+
+## Decisions
+1. **Full whole-Bible coverage extraction** — run it (cheap, for corpus-completeness/integrity), or skip (since IB-yield ≈ 0)? *(My lean: run it once for completeness + a complete orphan audit, then leave the coverage layer segregated.)*
+2. **IB-discovery proper:** proceed to the **~45 term-orphans** (the actual gap) — promote via the reg216 seed path / a coverage-gap register?
