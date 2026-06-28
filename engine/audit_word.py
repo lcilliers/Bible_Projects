@@ -1520,6 +1520,8 @@ def run_audit_word(
     interactive: bool = False,
     extract_file: str | None = None,
     skip_span_backpop: bool = False,   # deprecated; retained for CLI compat
+    fetch_step: bool = False,          # auto-generate the Step 1 extract from STEP if absent
+    anchors: str | None = None,        # anchor Strong's passed to the auto-extract
 ) -> dict:
     """Execute AUDIT_WORD mode for a single registry entry.
 
@@ -1721,11 +1723,23 @@ def run_audit_word(
     else:
         # reg_row["id"] is the registry number used in filenames
         json_path = _find_latest_extract(reg_row["id"], word)
+        # Self-contained onboarding: if no Step 1 extract exists, generate it from STEP.
+        if (not json_path or not os.path.exists(json_path)) and fetch_step:
+            import subprocess, sys as _sys
+            cmd = [_sys.executable, os.path.join("scripts", "word_study_extract.py"), "--word", word]
+            if anchors:
+                cmd += ["--anchors", anchors]
+            print(f"A3  No Step 1 extract — auto-fetching from STEP: {' '.join(cmd)}")
+            rc = subprocess.run(cmd).returncode
+            if rc != 0:
+                return _stop(f"A3: auto --fetch-step (word_study_extract) failed (exit {rc}) for {word!r}")
+            json_path = _find_latest_extract(reg_row["id"], word)
 
     if not json_path or not os.path.exists(json_path):
         return _stop(
             f"A3: Step 1 JSON not found for {word!r}. "
             f'Run: python scripts/word_study_extract.py --word "{word}"'
+            + ("" if fetch_step else "  — or re-run --mode=audit_word with --fetch-step to auto-generate it")
         )
 
     try:

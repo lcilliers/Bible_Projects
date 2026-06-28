@@ -126,6 +126,10 @@ def _build_parser() -> argparse.ArgumentParser:
                     help="Enable per-category approve/skip gate in --mode=audit_word")
     ap.add_argument("--extract-file", metavar="PATH",
                     help="Explicit Step 1 JSON path for --mode=audit_word (default: auto-select latest)")
+    ap.add_argument("--fetch-step", action="store_true",
+                    help="If no Step 1 JSON exists, auto-generate it from STEP (word_study_extract) for --mode=audit_word — self-contained onboarding")
+    ap.add_argument("--anchors", metavar="H1234,G5678",
+                    help="Anchor Strong's passed to the auto --fetch-step extract")
 
     # ── --register options ────────────────────────────────────────────────────
     ap.add_argument("--word",     metavar="\"sorrow\"",
@@ -352,6 +356,8 @@ def main() -> int:
                 dry_run=args.dry_run,
                 interactive=getattr(args, "interactive", False),
                 extract_file=getattr(args, "extract_file", None),
+                fetch_step=getattr(args, "fetch_step", False),
+                anchors=getattr(args, "anchors", None),
             )
             if not args.dry_run and result["outcome"] == "COMPLETE":
                 post_run_backup(f"AUDIT_WORD-reg{args.registry}")
