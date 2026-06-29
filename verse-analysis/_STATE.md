@@ -4,45 +4,54 @@
 
 ## Headline
 - **81 observations** across **9 analysed verses** and **8 tracks**.
-- status: **52 resolved** · **18 needs-corroboration** · **9 open** · **2 silent**
-- **27 OPEN THREADS** to resolve · **0 stale** (open ≥7d — revisit risk).
+- status: **55 resolved** · **15 needs-corroboration** · **9 open** · **2 silent**
+- **24 OPEN THREADS** to resolve · **0 stale** (open ≥7d — revisit risk).
 
 ## ▶ FAN-OUT PLAN — read these next (each closes the listed open threads)
 *The single most useful view: what to do next, and why. Ranked by how many open threads it touches.*
 
 | read this verse | closes / advances | tracks |
 |---|---|---|
-| **Eze 34:4** | #51 D12 Hidden, #108 D13 Cohabitation, #99 D11 Discovery, #100 D12 Hidden, #106 D12 Hidden | dominion, ruthlessness |
+| **Eze 34:4** | #51 D12 Hidden, #108 D13 Cohabitation, #106 D12 Hidden, #99 D11 Discovery, #100 D12 Hidden | cruelty, dominion, ruthlessness |
 | **Mark 7:21** | #108 D13 Cohabitation, #64 D4 Operation, #65 D7 Process | heart, ruthlessness |
 | **Mat 15:18** | #64 D4 Operation, #65 D7 Process, #119 D12 Hidden | heart |
 | **Lev 25:17** | #87 D11 Discovery, #88 D12 Hidden, #84 D8 Impact | fear-of-god |
 | **Isa 43:23** | #60 D11 Discovery, #61 D12 Hidden | enslavement |
-| **Jer 17:9** | #109 D2 Source, #110 D2 Source | ruthlessness |
 | **Gen 8:21** | #76 D12 Hidden, #69 D7 Process | evil, heart |
 | **Gen 1:26** | #99 D11 Discovery, #100 D12 Hidden | dominion |
 | **Exo 1:13** | #95 D7 Process, #96 D8 Impact | dominion |
 | **Mal 3:5** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
 | **Eph 6:9** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
 | **Col 4:1** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
-| **Lev 25:43** | #51 D12 Hidden | ruthlessness |
+| **Lev 25:43** | #51 D12 Hidden | cruelty |
 | **Gen 20:11** | #108 D13 Cohabitation | ruthlessness |
 | **Deut 25:18** | #108 D13 Cohabitation | ruthlessness |
-| **Hos 6:8** | #109 D2 Source | ruthlessness |
 | **Pro 27:4** | #43 D2 Source | cruelty |
 | **Isa 26:3** | #69 D7 Process | heart |
 | **Isa 63:10** | #67 D12 Hidden | heart |
 | **Eph 4:30** | #67 D12 Hidden | heart |
+| **Ezek 36:26** | #111 D1 Identity | heart |
+| **Gen 6:5** | #111 D1 Identity | heart |
 
 ## OPEN THREADS — by track
 *Every unresolved observation, **full text**. `→ go to` = where to go to resolve it.*
 
-### cruelty (2 open)
+### cruelty (5 open)
 - **#44 · D2 Source** · _needs-corroboration_ · origin Ecc 8:9 · 2d
   - [Re-homed off Exo 1:13 2026-06-29: a CRUELTY-genus source, not ruthlessness — researcher review.] Power without restraint enables cruelty — man had power (shalat) over man to his hurt (Ecc 8:9); having the power becomes the justification.
   - **→ go to:** Ecc 8:9 context; the akzar cruelty family
+- **#51 · D12 Hidden** · _needs-corroboration_ · origin Exo 1:13 · 2d
+  - HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
+  - **→ go to:** Lev 25:43; 25:46; 25:53; Eze 34:4
 - **#43 · D2 Source** · _needs-corroboration_ · origin Gen 49:7 · 2d
   - [Re-homed off Exo 1:13 2026-06-29: a CRUELTY-genus source, not ruthlessness — researcher review of the verses.] Anger/wrath produces cruelty — 'their anger, for it is fierce, and their wrath, for it is cruel (qashah)' (Gen 49:7); 'wrath is cruel (akzeriyut)' (Pro 27:4).
   - **→ go to:** Pro 27:4 (akzeriyut); the akzar cruelty family
+- **#106 · D12 Hidden** · _needs-corroboration_ · origin Lev 25:43 · 1d
+  - HIDDEN: the cruelty-word Egypt used (Exo 1) becomes the word Israel is FORBIDDEN to use against a brother (Lev 25); here its restraint is named outright — the fear of God. Eze 34:4 turns it inward on Israel's shepherds.
+  - **→ go to:** Lev 25:46; 25:53; Eze 34:4
+- **#50 · D11 Discovery** · _open_ · origin Exo 1:13 · 2d
+  - Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
+  - **→ go to:** other inner-cruelty terms
 
 ### dominion (4 open)
 - **#100 · D12 Hidden** · _needs-corroboration_ · origin Lev 25:43 · 1d
@@ -108,25 +117,7 @@
   - COHABITATION: the catalogue is a co-occurring family proceeding from ONE source (the heart); the study already records them as 'partners' (7:22). NOTABLE (researcher): ruthlessness (perek) is NOT in this list, though 'evil thoughts' IS — Mark 7 is a SPECIFIC grouping of the heart's evil OUTPUTS, distinct from the no-fear-of-God family of #108. Ruthlessness links to the evil heart via the thought-path, not as a peer. Significance: open.
   - **→ go to:** #108; #42; the no-fear-of-God set
 
-### ruthlessness (7 open)
-- **#51 · D12 Hidden** · _needs-corroboration_ · origin Exo 1:13 · 2d
-  - HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
-  - **→ go to:** Lev 25:43; 25:46; 25:53; Eze 34:4
-- **#47 · D5 Object** · _needs-corroboration_ · origin Exo 1:13 · 2d
-  - Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
-  - **→ go to:** the 6 perek verses (all = rule-over)
-- **#106 · D12 Hidden** · _needs-corroboration_ · origin Lev 25:43 · 1d
-  - HIDDEN: the cruelty-word Egypt used (Exo 1) becomes the word Israel is FORBIDDEN to use against a brother (Lev 25); here its restraint is named outright — the fear of God. Eze 34:4 turns it inward on Israel's shepherds.
-  - **→ go to:** Lev 25:46; 25:53; Eze 34:4
-- **#109 · D2 Source** · _needs-corroboration_ · origin Exo 1:13 · 0d
-  - The heart's DECEIT / slyness (a.qov H6121A — 'the heart is deceitful above all things', Jer 17:9) creates the GROUND from which ruthlessness emerges — distinct from #42 (the heart's evil THOUGHTS as direct source, Gen 6:5). The WORD-SELECTION is deliberate and significant: a.qov literally = crooked / uneven / foot-tracked ground (the heel/supplanter root, cf. Jacob), so the deceitful heart is depicted as treacherous, slippery terrain — the OPPOSITE of the 'steadfast / established' heart (Ps 57:7; 112:7). Ruthlessness takes root in this slippery ground. (reg217 'Slyness' now owns the sly/cunning aqv root family: a.qov H6121A insidious [Hos 6:8; Jer 17:9] + oqvah H6122 cunning [2Ki 10:19]; M14 Deceit.)
-  - **→ go to:** Jer 17:9; Hos 6:8; M14 deceit; steadfast-heart contrast (Ps 57:7; 112:7)
-- **#110 · D2 Source** · _needs-corroboration_ · origin Exo 1:13 · 0d
-  - A further STATE of the heart grounding ruthlessness: it is INCURABLY SICK (anash H0605, Jer 17:9 'the heart is deceitful... and desperately sick'). Beyond deceit/slyness (#109), the heart is diagnosed as beyond self-cure — a corruption that cannot heal itself, only deepen. The deceitful + incurably-sick heart is the soil ruthlessness grows from.
-  - **→ go to:** Jer 17:9; the anash verses; M24
-- **#50 · D11 Discovery** · _open_ · origin Exo 1:13 · 2d
-  - Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
-  - **→ go to:** other inner-cruelty terms
+### ruthlessness (1 open)
 - **#108 · D13 Cohabitation** · _open_ · origin Exo 1:13 · 0d
   - Ruthlessness COHABITS with other inner-being evils — it does not stand alone. The absence of the fear of God is a common root that lets a FAMILY emerge together. COHABITANT LIST so far: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); ruthless enslavement amid scheming/oppression (Exo 1:9-14). NOTABLE (researcher, Mark 7): Mark 7:21-23's catalogue of heart-evils (murder, adultery, theft, coveting, wickedness, deceit, sensuality, envy, slander, pride, foolishness, evil-thoughts) names NEITHER ruthlessness NOR these cohabitants — but it DOES name 'evil thoughts'. So ruthlessness/its cohorts reach the evil heart via the THOUGHT-PATH (products of 'evil thoughts'), not as members of Mark 7's grouping. TWO distinct groupings: the no-fear-of-God family (ruthlessness's) vs the heart's evil-output catalogue (Mark 7's). Whether the non-overlap is significant: OPEN.
   - **→ go to:** Gen 20:11; Deut 25:18; Eze 34:4; Mark 7:21-23 (non-overlap); the no-fear-of-God set
@@ -134,13 +125,13 @@
 ## BY TRACK — rollup (all observations)
 | track | resolved | open/needs-corrob | silent | total |
 |---|---|---|---|---|
-| cruelty | 0 | 2 | 0 | 2 |
+| cruelty | 0 | 5 | 0 | 5 |
 | dominion | 7 | 4 | 1 | 12 |
 | enslavement | 8 | 2 | 0 | 10 |
 | evil | 2 | 1 | 0 | 3 |
 | fear-of-god | 9 | 3 | 0 | 12 |
 | heart | 12 | 8 | 0 | 20 |
-| ruthlessness | 12 | 7 | 1 | 20 |
+| ruthlessness | 15 | 1 | 1 | 17 |
 | wickedness | 2 | 0 | 0 | 2 |
 
 ## BY ORIGIN VERSE — every analysed verse + its observations
@@ -148,13 +139,13 @@
 | verse | tracks opened | resolved | open/needs-corrob | silent | total |
 |---|---|---|---|---|---|
 | **Ecc 8:9** | cruelty | 0 | 1 | 0 | 1 |
-| **Exo 1:13** | enslavement, ruthlessness | 13 | 8 | 1 | 22 |
+| **Exo 1:13** | cruelty, enslavement, ruthlessness | 16 | 5 | 1 | 22 |
 | **Exo 1:14** | enslavement | 2 | 0 | 0 | 2 |
 | **Gen 49:7** | cruelty | 0 | 1 | 0 | 1 |
 | **Gen 6:5** | evil, heart, wickedness | 9 | 5 | 0 | 14 |
 | **Gen 6:6** | heart | 0 | 1 | 0 | 1 |
 | **Jer 17:9** | heart | 0 | 1 | 0 | 1 |
-| **Lev 25:43** | dominion, fear-of-god, ruthlessness | 21 | 8 | 1 | 30 |
+| **Lev 25:43** | cruelty, dominion, fear-of-god, ruthlessness | 21 | 8 | 1 | 30 |
 | **Mark 7:21-23** | heart | 7 | 2 | 0 | 9 |
 
 ## VERSE PROGRESS (verse_analysis_progress)
@@ -162,6 +153,8 @@
 - **Cross-referenced (pulled into focus, pending):** 31 verses.
 
 ## RECENTLY RESOLVED (spot-check for wrong closures)
+- #109 [ruthlessness/D2 Source] The heart's DECEIT / slyness (a.qov H6121A — 'the heart is deceitful above all t…
+- #110 [ruthlessness/D2 Source] A further STATE of the heart grounding ruthlessness: it is INCURABLY SICK (anash…
 - #107 [ruthlessness/D7 Process] Ruthlessness is EMERGENT, not instantaneous — it GREW as an outcome and escalate…
 - #112 [heart/D1 Identity] The HEART (kardia) is the inner SOURCE — 'from within, out of the heart of man, …
 - #118 [heart/D10 Valence] 'All these EVIL things' (ponera) — the catalogue's unifying valence is EVIL; the…
@@ -170,8 +163,6 @@
 - #115 [heart/D6 Manner] From WITHIN (esothen) — the origin is internal, not external; the manner of emer…
 - #116 [heart/D7 Process] The THOUGHT-PATH: 'evil thoughts' (dialogismoi poneroi) HEAD the list — the hear…
 - #117 [heart/D8 Impact] These DEFILE (koinoo) the person — the heart's output is what makes one unclean;…
-- #89 [dominion/D1 Identity] Dominion/rule (radah) exercised over another — the will to rule; here over a bro…
-- #98 [dominion/D10 Valence] radah is itself valence-NEUTRAL — only the ruthless manner over a brother is for…
 
 ---
 _To act: pick the top FAN-OUT PLAN verse → prepare it (`_assess_verse_raw_data.py --ref ...`) → read → capture to `ib_observation`. Re-run this page to see the threads close._

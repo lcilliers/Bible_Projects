@@ -1,7 +1,8 @@
 # Exo 1:13 — unresolved-observation control list (fan-out worklist)
 
 - File: wa-exo-001-013-unresolved-worklist-v1-20260627.md · updated 2026-06-28 · live from `ib_observation`.
-- **22 observations · 13 resolved · 4 needs-corroboration · 4 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
+- **Exo 1:13 RUTHLESSNESS stream essentially complete** (2026-06-29): 10 resolved · 1 open (#108 cohabitation) · 1 silent (#46). **Enslavement:** 6 resolved · 2 open (#60/#61). Re-homed to **cruelty**: #43, #44, #50, #51 (+ Lev 25:43's #106). **Withdrawn:** #45.
+- **The live control surface is now `verse-analysis/_STATE.md`** (generated from `ib_observation`); this worklist is the Exo 1:13 review log (kept for the decision trail).
 - **2026-06-29 — #45 WITHDRAWN** (researcher): the "severed-memory → ruthlessness" jump is not evidenced in Exo 1:8 (no change of heart / causal link stated). Deleted. Exo 1:13 ruthlessness sources now all verse-founded (#40,#41,#42,#109,#110).
 - **2026-06-29 — #43 & #44 RE-HOMED off Exo 1:13** (researcher: not supported from a ruthlessness perspective) → **cruelty** stream (#43→Gen 49:7, #44→Ecc 8:9). They were *cruelty-genus* sources, not Exo 1:13 ruthlessness sources. The cruelty↔ruthlessness link itself is content-inference, not verse-founded (see M06 track).
 - Each row: the claim · where to go (reconsider-at) · tick when closed.
@@ -27,15 +28,11 @@
 - [x] **#43 · RE-HOMED off Exo 1:13 2026-06-29** (researcher: not supported from a ruthlessness perspective) → now a **cruelty**-stream observation, origin **Gen 49:7** (anchor H7185 qashah), reconsider Pro 27:4. Anger/wrath → cruelty is a *cruelty-genus* source, not an Exo 1:13 ruthlessness source.
 - [x] **#44 · RE-HOMED off Exo 1:13 2026-06-29** (same) → **cruelty** stream, origin **Ecc 8:9** (anchor H7980 shalat). Power-without-restraint → cruelty; not an Exo 1:13 ruthlessness source.
 - [x] **#45 · WITHDRAWN 2026-06-29 — unsupported** (researcher). ~~Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).~~ Exo 1:8 states only that a new king arose who did not know Joseph — **no change of heart, no causal link to the ruthlessness** is stated. *"Possible — maybe; evidenced in these verses — No."* An unsupported inference with no valid home (unlike #43/#44). **Deleted from `ib_observation`.**
-- [ ] **#47 · ruthlessness/D5 Object** — *reviewable: object across all 6 perek verses*
-    - claim: Its object is always a weaker party — perek is exercised over the subjugated.
-    - anchor H6531 · **go to (the 6, with object):** Exo 1:13 + 1:14 (Israel, enslaved) · Lev 25:43 (the impoverished brother) · Lev 25:46 (your brothers / fellow Israelites) · Lev 25:53 (the hired bondservant) · Eze 34:4 (the flock — weak/sick/injured/strayed/lost). **All 6 = a weaker/subordinate party → claim holds (verse-founded).** Object review tabled in `_tracks/M06/wa-track-ruthlessness-H6531.md`.
+- [x] **#47 · ruthlessness/D5 Object — RESOLVED 2026-06-29 (researcher: corroborated, no further work).** Object is a weaker/subordinate party in all 6: Exo 1:13+1:14 (Israel) · Lev 25:43 (impoverished brother) · 25:46 (fellow Israelites) · 25:53 (hired bondservant) · Eze 34:4 (the flock). Object review tabled in the fanout (raw evidence) + `_tracks/M06/`.
 - [x] **#49 · ruthlessness/D10 Valence — RESOLVED 2026-06-28**
     - claim: It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
     - anchor H6531 · Lev 25:43 **read** — it *is* the prohibition. (25:46/53 siblings still to read, but the condemnation is established.)
-- [ ] **#51 · ruthlessness/D12 Hidden — strengthened 2026-06-28 (still open)**
-    - claim: HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
-    - anchor H6531 · Lev 25:43 read (the kin prohibition confirmed); **go to:** 25:46; 25:53; **Eze 34:4** (the inward-turn — still pending).
+- [x] **#51 · MOVED to cruelty stream 2026-06-29** (researcher: a cruelty statement, not ruthlessness). The "cruelty-word / oppressed-must-not-become-oppressor" hidden insight → `cruelty` operation. *(See flag in chat: #51/#106 are perek-content; confirm cruelty is the right home or redirect.)*
 
 ## OPEN (discovery) — test whether the generalisation holds
 
@@ -45,9 +42,7 @@
 - [ ] **#61 · enslavement/D12 Hidden**
     - claim: HIDDEN: abad is the SAME word for being enslaved (forced service) AND for serving/worshipping God — the inner being's 'serving' is one operation; bondage vs worship is set entirely by WHO is served and HOW. Implication: the inner being is constitutionally a servant, never master-less — the only question is the master.
     - anchor H5647 · **go to:** 2Ch 34:33 (serve LORD); Isa 43:23; the abad spread
-- [ ] **#50 · ruthlessness/D11 Discovery — strengthened 2026-06-28 (still open)**
-    - claim: Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
-    - anchor H6531 · Lev 25:43 read — perek confirmed as a manner on a **second** host verb (`radah`, vs `abad` at Exo 1:13), so it is not bound to one act. Open question (do *all* cruelty terms behave so) still needs **other cruelty terms** (arits, akzar).
+- [x] **#50 · MOVED to cruelty stream 2026-06-29** (researcher: a cruelty-family discovery — "do all inner-cruelty terms behave as manners?" — not ruthlessness-specific). → `cruelty` operation.
 - [ ] **#108 · ruthlessness/D13 Cohabitation — NEW 2026-06-29 (open) · seed of dimension D13**
     - claim: Ruthlessness **cohabits** with a family of evils sharing the *no-fear-of-God* root — killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18). It does not stand alone; one member of a co-occurring family whose **root (the evil one / "evil") is to emerge**. *(Reframes the focus point: the unit may be "what the absence of the fear of God lets emerge.")*
     - anchor H6531 · **go to:** Eze 34:4; the no-fear-of-God set (test the family + surface its root).

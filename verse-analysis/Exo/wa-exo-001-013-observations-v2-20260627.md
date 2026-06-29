@@ -16,7 +16,7 @@
 
 ---
 
-## RUTHLESSNESS (perek H6531) — 12 observations (#43,#44 re-homed to cruelty; #45 withdrawn)
+## RUTHLESSNESS (perek H6531) — 12 obs (10 resolved · 1 open #108 · 1 silent). #43/44/50/51 → cruelty; #45 withdrawn; #109/110 added
 
 ### D1 · Identity
 - Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another.
@@ -28,14 +28,18 @@
   · **anchor** H6531 · **resolved** _(stance widened 2026-06-28)_ · reconsider at: Mal 3:5; Lev 25:17/36/43 (read); Eph 6:9; Col 4:1  _(#41)_
 - The deeper wellspring is the heart's evil **THOUGHTS / intentions** (machashavah H4284; the formed inclination yetser H3336) — the heart's CONTENT, not the container. Gen 6:5 ('every intention of the thoughts… only evil'); Mark 7:21-23 (evils from within, headed by 'evil thoughts'); ruthlessness emerges downstream via the thought-path.
   · **anchor** H4284 · **resolved** _(reworded 2026-06-29; Gen 6:5 + Mark 7:21-23 worked)_ · reconsider at: Gen 6:5 (worked); Mark 7:21-23 (worked)  _(#42)_
+- The heart's DECEIT / slyness (a.qov H6121A — Jer 17:9) creates the GROUND from which ruthlessness emerges (distinct from #42's direct source). Word-selection significant: a.qov = crooked/foot-tracked ground vs the 'steadfast' heart.
+  · **anchor** H6121A · **resolved** _(Jer 17:9 split + review 2026-06-29)_ · reconsider at: Jer 17:9; Hos 6:8; M14 deceit  _(#109)_
+- A further STATE of the heart grounding ruthlessness: it is INCURABLY SICK (anash H0605 — Jer 17:9 'desperately sick'); corruption past self-cure.
+  · **anchor** H0605 · **resolved** _(Jer 17:9 review 2026-06-29)_ · reconsider at: Jer 17:9; the anash verses  _(#110)_
 - _**#43 & #44 RE-HOMED off Exo 1:13 (2026-06-29)** — researcher: anger→cruelty (Gen 49:7) and power→cruelty (Ecc 8:9) are **cruelty-genus** sources, not Exo 1:13 ruthlessness sources. Moved to the `cruelty` stream at their own verses._
 - _**#45 WITHDRAWN (2026-06-29)** — researcher: "severed-memory → ruthlessness" is not evidenced in Exo 1:8 (a new king who did not know Joseph; no change of heart / causal link stated). Unsupported inference, deleted._
 ### D3 · Seat / bearer
 - It is borne by the actor (the Egyptians); no inner seat (heart/spirit) is named in the verse.
   · **anchor** H6531 · **silent** · reconsider at: verses where a cruelty term names a seat  _(#46)_
 ### D5 · Object / target
-- Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Exo 1:13; 1:14; Lev 25:43; 25:46; 25:53; Eze 34:4 (object = Israel / brother / servant / flock — all weaker)  _(#47)_
+- Its object is always a weaker party — perek is exercised over the subjugated.
+  · **anchor** H6531 · **resolved** _(2026-06-29: corroborated across all 6 — object = Israel / brother / servant / flock, all weaker)_ · reconsider at: Exo 1:13; 1:14; Lev 25:43; 25:46; 25:53; Eze 34:4  _(#47)_
 ### D7 · Process / unfolding
 - **EMERGENT, not instantaneous** — ruthlessness *grew*: shrewd scheme (v10) → hard labour/burdens (v11) → forced enslavement (v13) → total oppression (v14). As the perceived threat grew, the harshness grew. Rooted in **trust in their own power** rather than the fear of God, whose absence was the condition under which it grew.
   · **anchor** H6531 · **resolved** _(researcher, Exo 1:10-14; 2026-06-29)_ · reconsider at: Exo 1:10-14; other emergent-cruelty arcs  _(#107)_
@@ -46,11 +50,9 @@
 - It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
   · **anchor** H6531 · **resolved** _(Lev 25:43 read = the prohibition; 2026-06-28)_ · reconsider at: 25:46; 25:53 (siblings)  _(#49)_
 ### D11 · Discovery
-- Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
-  · **anchor** H6531 · **open** · reconsider at: other inner-cruelty terms  _(#50)_
+- _**#50 MOVED to the `cruelty` stream (2026-06-29)** — researcher: "do all inner-cruelty terms behave as manners?" is a cruelty-family discovery, not ruthlessness-specific._
 ### D12 · Hidden meaning
-- HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43; 25:46; 25:53; Eze 34:4  _(#51)_
+- _**#51 MOVED to the `cruelty` stream (2026-06-29)** — researcher: the "cruelty-word / oppressed-must-not-become-oppressor" hidden insight is a cruelty statement, not ruthlessness. (Flag: it is perek-content — confirm cruelty is the right home.)_
 ### D13 · Cohabitation
 - **COHABITS with a family of evils** sharing the *no-fear-of-God* root — does not stand alone: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); in Exo 1:9-14 amid scheming + oppression. One member of a co-occurring family whose **root (the evil one / "evil") is to emerge**.
   · **anchor** H6531 · **open** _(researcher, Gen 20:11 + Deu 25:18; 2026-06-29 — the seed of dimension D13)_ · reconsider at: Eze 34:4; the no-fear-of-God set  _(#108)_
