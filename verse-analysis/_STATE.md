@@ -4,34 +4,34 @@
 
 ## Headline
 - **81 observations** across **9 analysed verses** and **8 tracks**.
-- status: **55 resolved** · **15 needs-corroboration** · **9 open** · **2 silent**
-- **24 OPEN THREADS** to resolve · **0 stale** (open ≥7d — revisit risk).
+- status: **56 resolved** · **15 needs-corroboration** · **8 open** · **2 silent**
+- **23 OPEN THREADS** to resolve · **0 stale** (open ≥7d — revisit risk).
 
 ## ▶ FAN-OUT PLAN — read these next (each closes the listed open threads)
 *The single most useful view: what to do next, and why. Ranked by how many open threads it touches.*
 
 | read this verse | closes / advances | tracks |
 |---|---|---|
-| **Eze 34:4** | #51 D12 Hidden, #108 D13 Cohabitation, #106 D12 Hidden, #99 D11 Discovery, #100 D12 Hidden | cruelty, dominion, ruthlessness |
-| **Mark 7:21** | #108 D13 Cohabitation, #64 D4 Operation, #65 D7 Process | heart, ruthlessness |
+| **Eze 34:4** | #51 D12 Hidden, #106 D12 Hidden, #99 D11 Discovery, #100 D12 Hidden | cruelty, dominion |
 | **Mat 15:18** | #64 D4 Operation, #65 D7 Process, #119 D12 Hidden | heart |
 | **Lev 25:17** | #87 D11 Discovery, #88 D12 Hidden, #84 D8 Impact | fear-of-god |
 | **Isa 43:23** | #60 D11 Discovery, #61 D12 Hidden | enslavement |
 | **Gen 8:21** | #76 D12 Hidden, #69 D7 Process | evil, heart |
+| **Mark 7:21** | #64 D4 Operation, #65 D7 Process | heart |
 | **Gen 1:26** | #99 D11 Discovery, #100 D12 Hidden | dominion |
 | **Exo 1:13** | #95 D7 Process, #96 D8 Impact | dominion |
 | **Mal 3:5** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
 | **Eph 6:9** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
 | **Col 4:1** | #87 D11 Discovery, #88 D12 Hidden | fear-of-god |
 | **Lev 25:43** | #51 D12 Hidden | cruelty |
-| **Gen 20:11** | #108 D13 Cohabitation | ruthlessness |
-| **Deut 25:18** | #108 D13 Cohabitation | ruthlessness |
 | **Pro 27:4** | #43 D2 Source | cruelty |
 | **Isa 26:3** | #69 D7 Process | heart |
 | **Isa 63:10** | #67 D12 Hidden | heart |
 | **Eph 4:30** | #67 D12 Hidden | heart |
 | **Ezek 36:26** | #111 D1 Identity | heart |
 | **Gen 6:5** | #111 D1 Identity | heart |
+| **Lev 25:46** | #106 D12 Hidden | cruelty |
+| **Isa 14:2** | #99 D11 Discovery | dominion |
 
 ## OPEN THREADS — by track
 *Every unresolved observation, **full text**. `→ go to` = where to go to resolve it.*
@@ -117,11 +117,6 @@
   - COHABITATION: the catalogue is a co-occurring family proceeding from ONE source (the heart); the study already records them as 'partners' (7:22). NOTABLE (researcher): ruthlessness (perek) is NOT in this list, though 'evil thoughts' IS — Mark 7 is a SPECIFIC grouping of the heart's evil OUTPUTS, distinct from the no-fear-of-God family of #108. Ruthlessness links to the evil heart via the thought-path, not as a peer. Significance: open.
   - **→ go to:** #108; #42; the no-fear-of-God set
 
-### ruthlessness (1 open)
-- **#108 · D13 Cohabitation** · _open_ · origin Exo 1:13 · 0d
-  - Ruthlessness COHABITS with other inner-being evils — it does not stand alone. The absence of the fear of God is a common root that lets a FAMILY emerge together. COHABITANT LIST so far: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); ruthless enslavement amid scheming/oppression (Exo 1:9-14). NOTABLE (researcher, Mark 7): Mark 7:21-23's catalogue of heart-evils (murder, adultery, theft, coveting, wickedness, deceit, sensuality, envy, slander, pride, foolishness, evil-thoughts) names NEITHER ruthlessness NOR these cohabitants — but it DOES name 'evil thoughts'. So ruthlessness/its cohorts reach the evil heart via the THOUGHT-PATH (products of 'evil thoughts'), not as members of Mark 7's grouping. TWO distinct groupings: the no-fear-of-God family (ruthlessness's) vs the heart's evil-output catalogue (Mark 7's). Whether the non-overlap is significant: OPEN.
-  - **→ go to:** Gen 20:11; Deut 25:18; Eze 34:4; Mark 7:21-23 (non-overlap); the no-fear-of-God set
-
 ## BY TRACK — rollup (all observations)
 | track | resolved | open/needs-corrob | silent | total |
 |---|---|---|---|---|
@@ -131,7 +126,7 @@
 | evil | 2 | 1 | 0 | 3 |
 | fear-of-god | 9 | 3 | 0 | 12 |
 | heart | 12 | 8 | 0 | 20 |
-| ruthlessness | 15 | 1 | 1 | 17 |
+| ruthlessness | 16 | 0 | 1 | 17 |
 | wickedness | 2 | 0 | 0 | 2 |
 
 ## BY ORIGIN VERSE — every analysed verse + its observations
@@ -139,7 +134,7 @@
 | verse | tracks opened | resolved | open/needs-corrob | silent | total |
 |---|---|---|---|---|---|
 | **Ecc 8:9** | cruelty | 0 | 1 | 0 | 1 |
-| **Exo 1:13** | cruelty, enslavement, ruthlessness | 16 | 5 | 1 | 22 |
+| **Exo 1:13** | cruelty, enslavement, ruthlessness | 17 | 4 | 1 | 22 |
 | **Exo 1:14** | enslavement | 2 | 0 | 0 | 2 |
 | **Gen 49:7** | cruelty | 0 | 1 | 0 | 1 |
 | **Gen 6:5** | evil, heart, wickedness | 9 | 5 | 0 | 14 |
@@ -153,6 +148,7 @@
 - **Cross-referenced (pulled into focus, pending):** 31 verses.
 
 ## RECENTLY RESOLVED (spot-check for wrong closures)
+- #108 [ruthlessness/D13 Cohabitation] Ruthlessness COHABITS with other inner-being evils — it does not stand alone. Th…
 - #109 [ruthlessness/D2 Source] The heart's DECEIT / slyness (a.qov H6121A — 'the heart is deceitful above all t…
 - #110 [ruthlessness/D2 Source] A further STATE of the heart grounding ruthlessness: it is INCURABLY SICK (anash…
 - #107 [ruthlessness/D7 Process] Ruthlessness is EMERGENT, not instantaneous — it GREW as an outcome and escalate…
@@ -162,7 +158,6 @@
 - #114 [heart/D5 Object] Its output is a CATALOGUE of ~13 evils: evil thoughts, sexual immorality, theft,…
 - #115 [heart/D6 Manner] From WITHIN (esothen) — the origin is internal, not external; the manner of emer…
 - #116 [heart/D7 Process] The THOUGHT-PATH: 'evil thoughts' (dialogismoi poneroi) HEAD the list — the hear…
-- #117 [heart/D8 Impact] These DEFILE (koinoo) the person — the heart's output is what makes one unclean;…
 
 ---
 _To act: pick the top FAN-OUT PLAN verse → prepare it (`_assess_verse_raw_data.py --ref ...`) → read → capture to `ib_observation`. Re-run this page to see the threads close._
