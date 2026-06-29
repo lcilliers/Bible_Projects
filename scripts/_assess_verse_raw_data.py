@@ -71,7 +71,7 @@ def main():
     spans = c.execute("""SELECT word_index, surface, strongs, primary_strong, morph_code, stem, language
         FROM verse_span_index WHERE reference=? ORDER BY word_index""", (ref,)).fetchall()
     allmti, allmti_base = {}, {}
-    for m in c.execute("SELECT strongs_number,transliteration,gloss,cluster_code,owning_registry,status,language FROM mti_terms WHERE delete_flagged=0"):
+    for m in c.execute("SELECT strongs_number,transliteration,gloss,cluster_code,owning_registry,status,language FROM mti_terms WHERE delete_flagged=0 OR delete_flagged IS NULL"):
         allmti.setdefault(canon(m['strongs_number']), m)
         allmti_base.setdefault(base(m['strongs_number']), m)
     vcs = c.execute("""SELECT vc.id, vc.mti_term_id, m.strongs_number, m.transliteration, m.gloss, m.cluster_code,
@@ -199,10 +199,25 @@ def main():
     w("_End raw extract. Reading (observations) is the next step, built on this._")
 
     out="\n".join(L)
+    MARK = "_End raw extract. Reading (observations) is the next step, built on this._"
     if a.out:
+        preserved = ""
+        # On refresh, preserve anything the researcher appended after the end-marker
+        # (researcher comments, [Actioned] notes, D6 cross-references).
+        if os.path.exists(a.out):
+            prior = open(a.out, encoding='utf-8').read()
+            idx = prior.rfind(MARK)
+            if idx >= 0:
+                tail = prior[idx+len(MARK):]
+                if tail.strip():
+                    preserved = tail.rstrip() + "\n"
+        if preserved:
+            out = out + "\n" + preserved
         os.makedirs(os.path.dirname(a.out), exist_ok=True)
         with open(a.out,'w',encoding='utf-8') as fh: fh.write(out)
-        print(f"wrote {a.out} ({len(vcs)} vc rows, {len(spans)} spans, {len(gaps)} coverage gaps)")
+        msg = f"wrote {a.out} ({len(vcs)} vc rows, {len(spans)} spans, {len(gaps)} coverage gaps)"
+        if preserved: msg += " [+preserved researcher tail]"
+        print(msg)
     else:
         print(out)
     conn.close()
