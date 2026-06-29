@@ -9,6 +9,12 @@
 - **Identity:** an **inner cruelty** — a hard, crushing disposition exercised by an actor over another. Realised *through* another act (a **manner-operation**), not standalone.
 - **Study home:** OWNER term reg216 "Ruthlessness", cluster **M06**, characteristic Cruelty/Ruthlessness (char 4/106). Integrated 2026-06-28 (perek pilot).
 
+## Cruelty vs Ruthlessness — the relation (researcher Q, 2026-06-29)
+- **Cruelty = the GENUS:** the disposition/act of inflicting suffering on another — hardness/indifference toward another's pain, the will-to-harm.
+- **Ruthlessness (`perek`) = a SPECIES / grade of cruelty:** cruelty exercised **without pity or relent** — *"ruth-less" = pity-less*. `perek` = harsh, crushing rigor (the "with harshness" of Exo 1:13). Cruelty **intensified by the absence of mercy/restraint** (#39: "a grade/particular type within the cruelty family"). The M06 characteristic "Cruelty/Ruthlessness" (char 4/106) holds both: cruelty the broad category, ruthlessness the pitiless grade.
+- **So the D2 Source observations (#42–#45) are sources of the GENUS (cruelty); ruthlessness is the SPECIES that emerges when that cruelty is pitiless/relentless.** That is why #43 reads "anger → **cruelty**", not "anger → ruthlessness" directly: anger produces cruelty (genus); when fierce/unrelenting (Gen 49:7: "**fierce**" `ezuz` + "**cruel**" `qashah`, and they "killed men") it reaches the ruthless grade. Consistent with the emergence reading (#107): ruthlessness **grew** from these roots.
+- **Precision going forward:** read #42–#45 as *"sources of cruelty (the genus), inherited by ruthlessness as a grade."* The fan-out verses (Gen 49:7, Pro 27:4, Eccl 8:9, Exo 1:8) attest **cruel anger / harsh power**, i.e. the genus; the Exo 1:13 species is the specific pitiless form.
+
 ## The track's verses (the 6 `perek` occurrences) + status
 | verse | role | status |
 |---|---|---|
