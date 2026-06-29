@@ -32,19 +32,38 @@ TOTALS={
 }
 # per-cluster member counts (so we see exactly which cluster grew)
 CLUSTER="SELECT cluster_code, COUNT(*) FROM mti_terms WHERE cluster_code IS NOT NULL GROUP BY cluster_code"
-# INVARIANTS — must all be 0
+# INVARIANTS — must all be 0. Two classes:
+#   (a) STRUCTURAL — FK orphans + duplicate owners (a row pointing to a missing/duplicate parent).
+#   (b) FIELD-HYGIENE — required fields left unset (e.g. engine-onboarding leaving delete_flagged NULL).
 INV={
+ # (a) structural
  "dup_owner_strong":"SELECT COUNT(*) FROM (SELECT strongs_number FROM wa_term_inventory WHERE term_owner_type='OWNER' AND (delete_flagged=0 OR delete_flagged IS NULL) GROUP BY strongs_number HAVING COUNT(*)>1)",
  "vr_orphan_term_inv":"SELECT COUNT(*) FROM wa_verse_records vr LEFT JOIN wa_term_inventory ti ON vr.term_inv_id=ti.id WHERE vr.term_inv_id IS NOT NULL AND ti.id IS NULL",
  "vr_orphan_book":"SELECT COUNT(*) FROM wa_verse_records vr LEFT JOIN books b ON vr.book_id=b.id WHERE vr.book_id IS NOT NULL AND b.id IS NULL",
  "vc_orphan_mti":"SELECT COUNT(*) FROM verse_context vc LEFT JOIN mti_terms m ON vc.mti_term_id=m.id WHERE vc.mti_term_id IS NOT NULL AND m.id IS NULL",
  "vc_orphan_vrec":"SELECT COUNT(*) FROM verse_context vc LEFT JOIN wa_verse_records vr ON vc.verse_record_id=vr.id WHERE vc.verse_record_id IS NOT NULL AND vr.id IS NULL",
  "velex_orphan_vc":"SELECT COUNT(*) FROM ve_lexical x LEFT JOIN verse_context vc ON x.verse_context_id=vc.id WHERE vc.id IS NULL",
+ # (b) field-hygiene — engine onboarding left these unset; queries filtering '=0' then silently drop the term
+ "mti_delete_flag_null":"SELECT COUNT(*) FROM mti_terms WHERE delete_flagged IS NULL",
+ "inv_delete_flag_null":"SELECT COUNT(*) FROM wa_term_inventory WHERE delete_flagged IS NULL",
+}
+# COMPLETENESS — NOT required-0 (legitimately non-zero during in-progress work), but SURFACED so an
+# onboarded-but-incomplete term can never hide again. The ve-lexical gap lived exactly here: structurally
+# valid rows (no orphans) but missing children. A rising count after an onboarding = uncaptured work.
+COMPLETE={
+ # active terms that HAVE verses but NO verse_context built (the ve-lexical-gap precursor; link by mti_term_id)
+ "active_term_verses_no_vc":"""SELECT COUNT(DISTINCT m.id) FROM mti_terms m
+     WHERE (m.status NOT IN ('delete','candidate_delete','excluded') OR m.status IS NULL) AND (m.delete_flagged=0 OR m.delete_flagged IS NULL)
+       AND EXISTS (SELECT 1 FROM wa_verse_records vr WHERE vr.mti_term_id=m.id AND (vr.delete_flagged=0 OR vr.delete_flagged IS NULL))
+       AND NOT EXISTS (SELECT 1 FROM verse_context vc WHERE vc.mti_term_id=m.id AND (vc.delete_flagged=0 OR vc.delete_flagged IS NULL))""",
+ # active verse_context rows with NO ve_lexical generated
+ "vc_active_no_velex":"""SELECT COUNT(*) FROM verse_context vc WHERE (vc.delete_flagged=0 OR vc.delete_flagged IS NULL)
+       AND NOT EXISTS (SELECT 1 FROM ve_lexical x WHERE x.verse_context_id=vc.id AND (x.delete_flagged=0 OR x.delete_flagged IS NULL))""",
 }
 
 def capture():
     c=sqlite3.connect(DB); c.row_factory=sqlite3.Row
-    snap={"totals":{}, "clusters":{}, "invariants":{}}
+    snap={"totals":{}, "clusters":{}, "invariants":{}, "completeness":{}}
     for k,q in TOTALS.items():
         try: snap["totals"][k]=c.execute(q).fetchone()[0]
         except Exception as e: snap["totals"][k]=f"ERR {e}"
@@ -52,6 +71,9 @@ def capture():
     for k,q in INV.items():
         try: snap["invariants"][k]=c.execute(q).fetchone()[0]
         except Exception as e: snap["invariants"][k]=f"ERR {e}"
+    for k,q in COMPLETE.items():
+        try: snap["completeness"][k]=c.execute(q).fetchone()[0]
+        except Exception as e: snap["completeness"][k]=f"ERR {e}"
     return snap
 
 def main():
@@ -65,6 +87,7 @@ def main():
         bad={k:v for k,v in snap["invariants"].items() if v}
         print(f"snapshot '{a.label}' -> {p}")
         print("  invariants:", "ALL CLEAN (0)" if not bad else f"⚠ BREACH {bad}")
+        print("  completeness:", {k:v for k,v in snap["completeness"].items()})
     elif a.compare:
         pre=json.load(open(os.path.join(OUT,f"snap-{a.compare[0]}.json")))
         post=json.load(open(os.path.join(OUT,f"snap-{a.compare[1]}.json")))
@@ -80,6 +103,11 @@ def main():
         print("INVARIANTS (post):")
         bad={k:v for k,v in post["invariants"].items() if v}
         print("   ALL CLEAN (0)" if not bad else f"   ⚠ BREACH {bad}")
+        print("COMPLETENESS (pre -> post; surfaced, not required-0):")
+        for k in post.get("completeness",{}):
+            pv=pre.get("completeness",{}).get(k,"?"); pov=post["completeness"][k]
+            d=(pov-pv) if isinstance(pv,int) and isinstance(pov,int) else "?"
+            print(f"   {k:<22} {pv} -> {pov}  ({'+' if isinstance(d,int) and d>0 else ''}{d})")
     else: ap.print_help()
 
 if __name__=="__main__": main()
