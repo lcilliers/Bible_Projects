@@ -105,6 +105,24 @@ def main():
         w(f"| {op} | {r} | {op_} | {s} | {len(g)} |")
     w()
 
+    # BY ORIGIN VERSE — every verse that has observations (so any verse is findable)
+    w("## BY ORIGIN VERSE — every analysed verse + its observations")
+    w("*Each verse that has captured observations, with status counts and the tracks it opened.*")
+    w("| verse | tracks opened | resolved | open/needs-corrob | silent | total |")
+    w("|---|---|---|---|---|---|")
+    verses_obs = {}
+    for o in obs: verses_obs.setdefault(o['origin_verse'], []).append(o)
+    def vkey(ref):  # rough canonical sort: book order unknown, so sort by ref text
+        return ref
+    for v_ in sorted(verses_obs, key=vkey):
+        g = verses_obs[v_]
+        trk = ", ".join(sorted(set(o['operation'] for o in g)))
+        r = sum(1 for o in g if o['status']=='resolved')
+        op_ = sum(1 for o in g if o['status'] in ('open','needs-corroboration'))
+        s = sum(1 for o in g if o['status']=='silent')
+        w(f"| **{v_}** | {trk} | {r} | {op_} | {s} | {len(g)} |")
+    w()
+
     # VERSE PROGRESS
     w("## VERSE PROGRESS (verse_analysis_progress)")
     rows=c.execute("SELECT reference,marker,xref_verse,ref_by_obs,ref_dims FROM verse_analysis_progress ORDER BY marker DESC, reference").fetchall()

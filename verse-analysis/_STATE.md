@@ -30,7 +30,7 @@
 | **Jer 17:9** | #42 D2 Source | ruthlessness |
 | **Gen 49:7** | #43 D2 Source | ruthlessness |
 | **Pro 27:4** | #43 D2 Source | ruthlessness |
-| **Eccl 8:9** | #44 D2 Source | ruthlessness |
+| **Ecc 8:9** | #44 D2 Source | ruthlessness |
 | **Exo 1:8** | #45 D2 Source | ruthlessness |
 
 ## OPEN THREADS — by track
@@ -75,9 +75,9 @@
 | # | dimension | claim | go to (reconsider_at) | origin | age |
 |---|---|---|---|---|---|
 | #51 | D12 Hidden | HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to u… | Lev 25:43; 25:46; 25:53; Eze 34:4 | Exo 1:13 | 2d |
-| #42 | D2 Source | Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intenti… | Gen 6:5; Jer 17:9; Mark 7:21-23 | Exo 1:13 | 2d |
+| #42 | D2 Source | Beneath the trigger (dread), the deeper wellspring is the heart's evil THOUGHTS / intentio… | Gen 6:5; Jer 17:9; Mark 7:21-23 | Exo 1:13 | 2d |
 | #43 | D2 Source | Anger/wrath produces cruelty — 'their wrath, for it is cruel' (Gen 49:7); 'wrath is cruel'… | Gen 49:7; Pro 27:4 | Exo 1:13 | 2d |
-| #44 | D2 Source | Power without restraint enables cruelty — man has power over man to his hurt (Eccl 8:9); h… | Eccl 8:9 | Exo 1:13 | 2d |
+| #44 | D2 Source | Power without restraint enables cruelty — man has power over man to his hurt (Eccl 8:9); h… | Ecc 8:9 | Exo 1:13 | 2d |
 | #45 | D2 Source | Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who … | Exo 1:8 | Exo 1:13 | 2d |
 | #47 | D5 Object | Its object is always a weaker party (here Israel) — perek is exercised over the subjugated… | the 6 perek verses (all = rule-over) | Exo 1:13 | 2d |
 | #106 | D12 Hidden | HIDDEN: the cruelty-word Egypt used (Exo 1) becomes the word Israel is FORBIDDEN to use ag… | Lev 25:46; 25:53; Eze 34:4 | Lev 25:43 | 1d |
@@ -94,6 +94,16 @@
 | heart | 5 | 5 | 0 | 10 |
 | ruthlessness | 11 | 9 | 1 | 21 |
 | wickedness | 2 | 0 | 0 | 2 |
+
+## BY ORIGIN VERSE — every analysed verse + its observations
+*Each verse that has captured observations, with status counts and the tracks it opened.*
+| verse | tracks opened | resolved | open/needs-corrob | silent | total |
+|---|---|---|---|---|---|
+| **Exo 1:13** | enslavement, ruthlessness | 12 | 10 | 1 | 23 |
+| **Exo 1:14** | enslavement | 2 | 0 | 0 | 2 |
+| **Gen 6:5** | evil, heart, wickedness | 9 | 5 | 0 | 14 |
+| **Gen 6:6** | heart | 0 | 1 | 0 | 1 |
+| **Lev 25:43** | dominion, fear-of-god, ruthlessness | 21 | 8 | 1 | 30 |
 
 ## VERSE PROGRESS (verse_analysis_progress)
 - **Focus verses (analysis in progress):** Exo 1:13, Lev 25:43
