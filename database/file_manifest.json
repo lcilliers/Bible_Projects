@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T06:26:43Z",
+  "generated_at": "2026-06-29T04:40:11Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,16 +11,16 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 152,
+    "other": 160,
     "historical": 31,
-    "current": 2601,
-    "archived": 2269,
-    "cross-reference": 3318,
-    "backup": 48
+    "current": 2612,
+    "archived": 2271,
+    "cross-reference": 3319,
+    "backup": 53
   },
-  "total_files": 8419,
-  "total_active": 6150,
-  "total_archived": 2269,
+  "total_files": 8446,
+  "total_active": 6175,
+  "total_archived": 2271,
   "files": [
     {
       "path": ".env",
@@ -12181,6 +12181,22 @@
       "archived": false,
       "size_bytes": 76507,
       "modified": "2026-04-20T09:25:01Z"
+    },
+    {
+      "path": "Sessions/Session_A/STEP Extracts/Ruthlessness_216_full_20260628_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 17456,
+      "modified": "2026-06-28T13:54:36Z"
     },
     {
       "path": "Sessions/Session_A/STEP Extracts/Soul_182_final_20260328_v1.json",
@@ -65831,7 +65847,7 @@
       "modified": "2026-04-15T12:10:19Z"
     },
     {
-      "path": "Workflow/Catalogue/wa-IB-verse-dimensions-catalogue-v1-20260627.md",
+      "path": "Workflow/Catalogue/wa-IB-verse-dimensions-catalogue-v2-20260629.md",
       "category": "workflow",
       "type": "other",
       "currency": "current",
@@ -65839,12 +65855,12 @@
       "word": null,
       "cluster": null,
       "batch": null,
-      "version": "1",
-      "date": "2026-06-27",
+      "version": "2",
+      "date": "2026-06-29",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 3375,
-      "modified": "2026-06-27T16:09:03Z"
+      "size_bytes": 5227,
+      "modified": "2026-06-29T04:37:22Z"
     },
     {
       "path": "Workflow/Clusters/archive/wa-cluster-catalogue-v1-20260505.json",
@@ -70743,6 +70759,38 @@
       "modified": "2026-04-09T16:44:26Z"
     },
     {
+      "path": "Workflow/archive/wa-IB-verse-dimensions-catalogue-v1-20260627.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-27",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 3375,
+      "modified": "2026-06-27T16:09:03Z"
+    },
+    {
+      "path": "Workflow/archive/wa-IB-verse-dimensions-definition-v1-20260627.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-27",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 7445,
+      "modified": "2026-06-27T13:29:49Z"
+    },
+    {
       "path": "Workflow/archive/wa-Session-C-Instruction-v1_3-2026-04-11.md",
       "category": "workflow",
       "type": "other",
@@ -73015,7 +73063,7 @@
       "modified": "2026-06-24T19:44:31Z"
     },
     {
-      "path": "Workflow/methodology/wa-IB-verse-dimensions-definition-v1-20260627.md",
+      "path": "Workflow/methodology/wa-IB-verse-dimensions-definition-v2-20260629.md",
       "category": "workflow",
       "type": "other",
       "currency": "current",
@@ -73023,12 +73071,12 @@
       "word": null,
       "cluster": null,
       "batch": null,
-      "version": "1",
-      "date": "2026-06-27",
+      "version": "2",
+      "date": "2026-06-29",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7445,
-      "modified": "2026-06-27T13:29:49Z"
+      "size_bytes": 8309,
+      "modified": "2026-06-29T04:38:05Z"
     },
     {
       "path": "Workflow/methodology/wa-METHOD-SYNTHESIS-verse-fanout-multicontributor-v1-20260627.md",
@@ -102439,6 +102487,22 @@
       "modified": "2026-06-15T04:31:10Z"
     },
     {
+      "path": "backups/bible_research_20260628_135436_AUDIT_WORD-reg216_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 677343232,
+      "modified": "2026-06-28T13:54:36Z"
+    },
+    {
       "path": "backups/bible_research_KEEP-RESET-baseline-changeover_20260625.db",
       "category": "backup",
       "type": "other",
@@ -102487,6 +102551,54 @@
       "modified": "2026-06-19T03:36:53Z"
     },
     {
+      "path": "backups/bible_research_backup_20260628_135326_AUDIT_WORD-reg216.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 677343232,
+      "modified": "2026-06-28T13:51:48Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260628_135424_AUDIT_WORD-reg216.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 677343232,
+      "modified": "2026-06-28T13:53:27Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260628_135436_AUDIT_WORD-reg216.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 677343232,
+      "modified": "2026-06-28T13:54:35Z"
+    },
+    {
       "path": "backups/bible_research_pre-baserun-20260617.db",
       "category": "backup",
       "type": "other",
@@ -102517,6 +102629,22 @@
       "archived": false,
       "size_bytes": 500355072,
       "modified": "2026-06-18T06:04:56Z"
+    },
+    {
+      "path": "backups/bible_research_pre-canon-coverage-pilot_20260628.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 677138432,
+      "modified": "2026-06-28T06:54:34Z"
     },
     {
       "path": "backups/bible_research_pre-divinv-reverse_20260626.db",
@@ -103427,8 +103555,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 677138432,
-      "modified": "2026-06-28T05:04:27Z"
+      "size_bytes": 677367808,
+      "modified": "2026-06-29T04:38:19Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -103443,8 +103571,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 3798736,
-      "modified": "2026-06-28T05:35:52Z"
+      "size_bytes": 3799182,
+      "modified": "2026-06-28T06:26:44Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -104019,8 +104147,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 101475,
-      "modified": "2026-06-15T04:52:26Z"
+      "size_bytes": 102650,
+      "modified": "2026-06-28T13:54:16Z"
     },
     {
       "path": "engine/backup.py",
@@ -104083,8 +104211,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 19533,
-      "modified": "2026-04-27T16:42:22Z"
+      "size_bytes": 20009,
+      "modified": "2026-06-28T13:51:08Z"
     },
     {
       "path": "engine/flag_engine.py",
@@ -106981,6 +107109,70 @@
       "archived": false,
       "size_bytes": 109267,
       "modified": "2026-05-06T04:35:42Z"
+    },
+    {
+      "path": "outputs/integrity/snap-post-perek-complete.json",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1315,
+      "modified": "2026-06-28T13:55:59Z"
+    },
+    {
+      "path": "outputs/integrity/snap-post-perek-failed.json",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1315,
+      "modified": "2026-06-28T13:53:42Z"
+    },
+    {
+      "path": "outputs/integrity/snap-post-perek.json",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1315,
+      "modified": "2026-06-28T13:54:49Z"
+    },
+    {
+      "path": "outputs/integrity/snap-pre-perek.json",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1315,
+      "modified": "2026-06-28T13:40:26Z"
     },
     {
       "path": "outputs/markdown/L1-L2-design-vs-measured-gap-20260614.md",
@@ -115639,6 +115831,38 @@
       "modified": "2026-05-14T14:23:28Z"
     },
     {
+      "path": "research/discovery/216_ruthlessness_step_data_20260628.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 55002,
+      "modified": "2026-06-28T13:53:17Z"
+    },
+    {
+      "path": "research/discovery/216_ruthlessness_step_data_20260628.md",
+      "category": "discovery",
+      "type": "discovery-summary",
+      "currency": "current",
+      "registry": 216,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 748,
+      "modified": "2026-06-28T13:52:29Z"
+    },
+    {
       "path": "research/discovery/cruel_term_map_20260628.json",
       "category": "discovery",
       "type": "discovery-json",
@@ -121763,8 +121987,24 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 10960,
-      "modified": "2026-06-28T06:23:38Z"
+      "size_bytes": 19626,
+      "modified": "2026-06-28T17:37:48Z"
+    },
+    {
+      "path": "research/investigations/wa-term-orphan-integration-build.md",
+      "category": "investigation",
+      "type": "investigation",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 13075,
+      "modified": "2026-06-28T13:56:35Z"
     },
     {
       "path": "research/investigations/wa-term-type-classification-v1-2026-05-04.json",
@@ -123093,6 +123333,22 @@
       "archived": false,
       "size_bytes": 3470,
       "modified": "2026-06-15T02:48:35Z"
+    },
+    {
+      "path": "scripts/_apply_lev_025_043_observations_v1_20260628.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": 25,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 9699,
+      "modified": "2026-06-28T17:33:50Z"
     },
     {
       "path": "scripts/_apply_link_mti_term_id.py",
@@ -126407,6 +126663,22 @@
       "modified": "2026-05-19T07:33:39Z"
     },
     {
+      "path": "scripts/_apply_pilot_canon_coverage_leviticus_v1_20260628.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-06-28",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3143,
+      "modified": "2026-06-28T06:55:50Z"
+    },
+    {
       "path": "scripts/_apply_pointer_dispositions_v1_20260601.py",
       "category": "script",
       "type": "other",
@@ -127349,6 +127621,22 @@
       "archived": false,
       "size_bytes": 7985,
       "modified": "2026-06-07T06:16:52Z"
+    },
+    {
+      "path": "scripts/_assess_verse_raw_data.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 10692,
+      "modified": "2026-06-29T03:41:55Z"
     },
     {
       "path": "scripts/_assign_m01_missing_verses_to_vcgs_20260516.py",
@@ -128373,6 +128661,22 @@
       "archived": false,
       "size_bytes": 2057,
       "modified": "2026-03-19T14:04:45Z"
+    },
+    {
+      "path": "scripts/_check_integrity_controls.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5260,
+      "modified": "2026-06-28T13:40:20Z"
     },
     {
       "path": "scripts/_check_m05_dir012_confirmations_v1_20260508.py",
@@ -134567,6 +134871,38 @@
       "modified": "2026-04-28T10:33:29Z"
     },
     {
+      "path": "verse-analysis/Deu/wa-deu-025-018-fanout-v1-20260629.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 25,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-29",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7041,
+      "modified": "2026-06-29T04:23:58Z"
+    },
+    {
+      "path": "verse-analysis/Exo/wa-exo-001-012-fanout-v1-20260629.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 1,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-29",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5661,
+      "modified": "2026-06-29T04:24:05Z"
+    },
+    {
       "path": "verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md",
       "category": "other",
       "type": "other",
@@ -134579,8 +134915,8 @@
       "date": "2026-06-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 33773,
-      "modified": "2026-06-27T20:38:48Z"
+      "size_bytes": 34768,
+      "modified": "2026-06-28T15:06:03Z"
     },
     {
       "path": "verse-analysis/Exo/wa-exo-001-013-observations-v2-20260627.md",
@@ -134595,8 +134931,8 @@
       "date": "2026-06-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7029,
-      "modified": "2026-06-27T20:38:48Z"
+      "size_bytes": 9640,
+      "modified": "2026-06-29T04:39:12Z"
     },
     {
       "path": "verse-analysis/Exo/wa-exo-001-013-unresolved-worklist-v1-20260627.md",
@@ -134611,8 +134947,8 @@
       "date": "2026-06-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 4308,
-      "modified": "2026-06-27T20:43:31Z"
+      "size_bytes": 7420,
+      "modified": "2026-06-29T04:38:46Z"
     },
     {
       "path": "verse-analysis/Gen/wa-gen-006-005-fanout-v1-20260627.md",
@@ -134645,6 +134981,22 @@
       "archived": false,
       "size_bytes": 4291,
       "modified": "2026-06-27T20:38:48Z"
+    },
+    {
+      "path": "verse-analysis/Gen/wa-gen-020-011-fanout-v1-20260629.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 20,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-29",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 8989,
+      "modified": "2026-06-29T04:24:09Z"
     },
     {
       "path": "verse-analysis/Lev/wa-lev-025-043-assessment-v1-20260627.md",
@@ -134691,8 +135043,8 @@
       "date": "2026-06-28",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7876,
-      "modified": "2026-06-28T04:41:20Z"
+      "size_bytes": 11709,
+      "modified": "2026-06-28T17:34:53Z"
     },
     {
       "path": "verse-analysis/README.md",
@@ -134707,8 +135059,24 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 2961,
-      "modified": "2026-06-27T20:39:12Z"
+      "size_bytes": 4234,
+      "modified": "2026-06-29T04:39:26Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-fanout-track-structure-proposal-v1-20260628.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-28",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3749,
+      "modified": "2026-06-28T14:59:45Z"
     },
     {
       "path": "verse-analysis/_reports/wa-verse-analysis-progress-anchor-proposal-v1-20260627.md",
@@ -134725,6 +135093,70 @@
       "archived": false,
       "size_bytes": 4387,
       "modified": "2026-06-27T20:10:01Z"
+    },
+    {
+      "path": "verse-analysis/_tracks/M01/wa-track-fear-of-god-H3372.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9260,
+      "modified": "2026-06-28T17:44:50Z"
+    },
+    {
+      "path": "verse-analysis/_tracks/M06/wa-track-ruthlessness-H6531.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 10214,
+      "modified": "2026-06-29T04:38:36Z"
+    },
+    {
+      "path": "verse-analysis/_tracks/M23/wa-track-dominion-H7287.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5808,
+      "modified": "2026-06-28T17:36:15Z"
+    },
+    {
+      "path": "verse-analysis/_tracks/M36/wa-track-enslavement-H5647.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5472,
+      "modified": "2026-06-28T18:11:35Z"
     }
   ]
 }

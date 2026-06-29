@@ -52,9 +52,9 @@
 - [ ] **#50 · ruthlessness/D11 Discovery — strengthened 2026-06-28 (still open)**
     - claim: Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
     - anchor H6531 · Lev 25:43 read — perek confirmed as a manner on a **second** host verb (`radah`, vs `abad` at Exo 1:13), so it is not bound to one act. Open question (do *all* cruelty terms behave so) still needs **other cruelty terms** (arits, akzar).
-- [ ] **#108 · ruthlessness/D9 Coupling — NEW 2026-06-29 (open)**
-    - claim: Ruthlessness **cohabits** with a family of evils sharing the *no-fear-of-God* root — killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18). It does not stand alone; one member of a co-occurring family. *(Reframes the focus point: the unit may be "what the absence of the fear of God lets emerge.")*
-    - anchor H6531 · **go to:** Eze 34:4; the no-fear-of-God set (test the family across more contexts).
+- [ ] **#108 · ruthlessness/D13 Cohabitation — NEW 2026-06-29 (open) · seed of dimension D13**
+    - claim: Ruthlessness **cohabits** with a family of evils sharing the *no-fear-of-God* root — killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18). It does not stand alone; one member of a co-occurring family whose **root (the evil one / "evil") is to emerge**. *(Reframes the focus point: the unit may be "what the absence of the fear of God lets emerge.")*
+    - anchor H6531 · **go to:** Eze 34:4; the no-fear-of-God set (test the family + surface its root).
 
 ## SILENT — nothing in Exo 1:13; check whether other verses fill it
 

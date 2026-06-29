@@ -46,8 +46,6 @@
 ### D9 · Coupling / relation
 - It couples to enslavement as its MANNER (be-perek modifies the Hiphil abad) — realised through the act it qualifies, not standalone.
   · **anchor** H6531 · **resolved** · reconsider at: H5647; coupling 3 verses  _(#48)_
-- **COHABITS with a family of evils** sharing the *no-fear-of-God* root — does not stand alone: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); in Exo 1:9-14 amid scheming + oppression. One member of a co-occurring family.
-  · **anchor** H6531 · **open** _(researcher, Gen 20:11 + Deu 25:18; 2026-06-29)_ · reconsider at: Eze 34:4; the no-fear-of-God set  _(#108)_
 ### D10 · Colour / valence
 - It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
   · **anchor** H6531 · **resolved** _(Lev 25:43 read = the prohibition; 2026-06-28)_ · reconsider at: 25:46; 25:53 (siblings)  _(#49)_
@@ -57,7 +55,9 @@
 ### D12 · Hidden meaning
 - HIDDEN: the same cruelty-word (perek) Egypt used becomes the word Israel is FORBIDDEN to use on its own (Lev 25); Eze 34:4 turns it inward on Israel's leaders — the oppressed must not become the oppressor.
   · **anchor** H6531 · **needs-corroboration** · reconsider at: Lev 25:43; 25:46; 25:53; Eze 34:4  _(#51)_
-
+### D13 · Cohabitation
+- **COHABITS with a family of evils** sharing the *no-fear-of-God* root — does not stand alone: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); in Exo 1:9-14 amid scheming + oppression. One member of a co-occurring family whose **root (the evil one / "evil") is to emerge**.
+  · **anchor** H6531 · **open** _(researcher, Gen 20:11 + Deu 25:18; 2026-06-29 — the seed of dimension D13)_ · reconsider at: Eze 34:4; the no-fear-of-God set  _(#108)_
 
 ---
 

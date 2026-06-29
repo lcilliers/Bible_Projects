@@ -38,8 +38,8 @@ verse-analysis/
 ## Method docs (governance — in `Workflow/`)
 - `Workflow/methodology/wa-METHOD-SYNTHESIS-verse-fanout-multicontributor-v1-*.md` — master synthesis (read first).
 - `Workflow/methodology/wa-verse-fanout-operating-model-v1-*.md` — the operating model.
-- `Workflow/methodology/wa-IB-verse-dimensions-definition-v1-*.md` — dimension definitions.
-- `Workflow/Catalogue/wa-IB-verse-dimensions-catalogue-v1-*.md` — D1–D12 controlled codes.
+- `Workflow/methodology/wa-IB-verse-dimensions-definition-*.md` — dimension definitions ([current] = v2).
+- `Workflow/Catalogue/wa-IB-verse-dimensions-catalogue-*.md` — **D1–D13** controlled codes ([current] = v2; D13 Cohabitation added 2026-06-29).
 - `Workflow/methodology/wa-verse-meaning-fanout-index-design-v1-*.md` — the verse↔evidence spiderweb index.
 
 ## Current contents (2026-06-28)
