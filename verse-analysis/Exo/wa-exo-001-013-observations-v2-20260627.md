@@ -26,8 +26,8 @@
   · **anchor** H6531 · **resolved** _(Exo 1:12 read 2026-06-29)_ · reconsider at: Exo 1:10-12; quts H6973  _(#40)_
 - Its restraint is the fear of God — **not a narrow brake on cruelty but the GOVERNING reverence over the whole treatment of the powerless** (Lev 25:17/36/43); oppression arises precisely where "they do not fear me" (Mal 3:5); masters checked by their own heavenly Master (Eph 6:9; Col 4:1). Egypt, ungoverned by the fear of God, treats Israel ruthlessly — its absence removes the whole governance, not one brake.
   · **anchor** H6531 · **resolved** _(stance widened 2026-06-28)_ · reconsider at: Mal 3:5; Lev 25:17/36/43 (read); Eph 6:9; Col 4:1  _(#41)_
-- Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intention of the heart 'only evil' (Gen 6:5); evil comes from within (Mark 7:21-23).
-  · **anchor** H3820 · **needs-corroboration** · reconsider at: Gen 6:5; Jer 17:9; Mark 7:21-23  _(#42)_
+- The deeper wellspring is the heart's evil **THOUGHTS / intentions** (machashavah H4284; the formed inclination yetser H3336) — the heart's CONTENT, not the container. Gen 6:5 ('every intention of the thoughts… only evil'); Mark 7:21-23 (evils from within, headed by 'evil thoughts'); ruthlessness emerges downstream via the thought-path.
+  · **anchor** H4284 · **resolved** _(reworded 2026-06-29; Gen 6:5 + Mark 7:21-23 worked)_ · reconsider at: Gen 6:5 (worked); Mark 7:21-23 (worked)  _(#42)_
 - _**#43 & #44 RE-HOMED off Exo 1:13 (2026-06-29)** — researcher: anger→cruelty (Gen 49:7) and power→cruelty (Ecc 8:9) are **cruelty-genus** sources, not Exo 1:13 ruthlessness sources. Moved to the `cruelty` stream at their own verses._
 - Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).
   · **anchor** H3045 · **needs-corroboration** · reconsider at: Exo 1:8  _(#45)_
