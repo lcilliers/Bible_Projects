@@ -56,8 +56,16 @@ COMPLETE={
      WHERE (m.status NOT IN ('delete','candidate_delete','excluded') OR m.status IS NULL) AND (m.delete_flagged=0 OR m.delete_flagged IS NULL)
        AND EXISTS (SELECT 1 FROM wa_verse_records vr WHERE vr.mti_term_id=m.id AND (vr.delete_flagged=0 OR vr.delete_flagged IS NULL))
        AND NOT EXISTS (SELECT 1 FROM verse_context vc WHERE vc.mti_term_id=m.id AND (vc.delete_flagged=0 OR vc.delete_flagged IS NULL))""",
- # active verse_context rows with NO ve_lexical generated
- "vc_active_no_velex":"""SELECT COUNT(*) FROM verse_context vc WHERE (vc.delete_flagged=0 OR vc.delete_flagged IS NULL)
+ # active verse_context with NO ve_lexical, for a CLUSTERED IB term (cluster_code NOT NULL, not T2) — the
+ # ACTIONABLE backlog. (T2 reference terms only get ve-lexical when in a verse with a tracked term, and
+ # cluster-deferred/NULL terms wait for their cluster — so neither counts as "missing".)
+ "vc_no_velex_clustered":"""SELECT COUNT(*) FROM verse_context vc
+       JOIN mti_terms m ON m.id=vc.mti_term_id
+       WHERE (vc.delete_flagged=0 OR vc.delete_flagged IS NULL)
+         AND m.cluster_code IS NOT NULL AND m.cluster_code<>'T2'
+         AND NOT EXISTS (SELECT 1 FROM ve_lexical x WHERE x.verse_context_id=vc.id AND (x.delete_flagged=0 OR x.delete_flagged IS NULL))""",
+ # raw count (all VC incl. T2/NULL) — informational context only, NOT the actionable number
+ "vc_no_velex_all":"""SELECT COUNT(*) FROM verse_context vc WHERE (vc.delete_flagged=0 OR vc.delete_flagged IS NULL)
        AND NOT EXISTS (SELECT 1 FROM ve_lexical x WHERE x.verse_context_id=vc.id AND (x.delete_flagged=0 OR x.delete_flagged IS NULL))""",
 }
 

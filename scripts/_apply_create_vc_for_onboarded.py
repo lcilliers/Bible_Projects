@@ -31,6 +31,10 @@ def main():
         WHERE vr.word_registry_fk IN ({','.join('?'*len(regs))})
           AND vr.mti_term_id IS NOT NULL
           AND (vr.delete_flagged=0 OR vr.delete_flagged IS NULL)
+          -- only IN-CORPUS verses: the ve-lexical generator derives from the measure layer, which only
+          -- exists for verses in the canonical `verse` table (~76% of canon). STEP returns full-Bible
+          -- occurrences, so a term's verse_records can point outside the corpus (e.g. anash 2Sa 12:15).
+          AND EXISTS (SELECT 1 FROM verse v WHERE v.reference=vr.reference)
           AND NOT EXISTS (SELECT 1 FROM verse_context vc
                           WHERE vc.verse_record_id=vr.id AND vc.mti_term_id=vr.mti_term_id
                           AND (vc.delete_flagged=0 OR vc.delete_flagged IS NULL))
