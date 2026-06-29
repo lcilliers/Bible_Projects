@@ -4,7 +4,7 @@
     "generated": "2026-06-29",
     "step_version": "ESV_th",
     "anchor_codes": [
-      "H6121A"
+      "H6122"
     ],
     "particle_ceiling": 1000,
     "total_terms_evaluated": 12,
@@ -14,18 +14,13 @@
       "G2r": 4
     },
     "include_codes": [
-      "H6121A"
+      "H6122"
     ],
     "exclude_codes": [
       "H3290",
-      "H3291",
-      "H6117",
-      "H6118",
-      "H6119",
-      "H6121B",
-      "H6122",
-      "H6126G",
       "H6126H",
+      "H3291",
+      "H6126G",
       "H6126I",
       "H6126J"
     ],
@@ -33,24 +28,24 @@
       "id": 217,
       "no": 217,
       "word": "Slyness",
-      "source_list": "verse-fanout orphan (Jer 17:9 a.qov H6121A; insidious/sly deceit)",
+      "source_list": "verse-fanout orphan (Jer 17:9 a.qov H6121A insidious deceit)",
       "category_hint": null,
       "phase1_input_file": null,
-      "phase1_status": "Pending",
+      "phase1_status": "Complete",
       "phase1_output_file": null,
       "phase2_datasets": null,
-      "notes": null,
+      "notes": "[AUDIT 2026-06-29] result=REVIEW  terms=1  verses=2  run_id=RUN-20260629_065329-AUDIT_WORD",
       "automation_eligible": 1,
-      "last_automation_run": null,
-      "automation_run_id": null,
-      "phase1_term_count": null,
-      "phase1_verse_count": null,
-      "strongs_list": null,
+      "last_automation_run": "AUDITED",
+      "automation_run_id": "RUN-20260629_065329-AUDIT_WORD",
+      "phase1_term_count": 1,
+      "phase1_verse_count": 2,
+      "strongs_list": "[{\"strong\": \"H6121A\", \"count\": 2}]",
       "description": null,
       "origin": null,
       "dimensions": null,
       "inference_note": null,
-      "session_b_status": null,
+      "session_b_status": "Ready for Analysis",
       "cluster_assignment": "unassigned",
       "sb_classification": null,
       "sb_classification_reasoning": null,
@@ -63,17 +58,17 @@
       "dim_review_version": null,
       "word_synopsis": null
     },
-    "curation_note": "curated 2026-06-29: include H6121A (insidious, IB) only; family H6117/H6118/H6119/H6121B/H6122 excluded (relatedNos cascade, non-IB)"
+    "curation_note": "curated 2026-06-29 (cunning): include H6122 only; a.qov H6121A already onboarded; rest excluded"
   },
   "terms": [
     {
-      "code": "H6121A",
-      "gloss": "insidious",
-      "transliteration": "a.qov",
-      "script_form": "עָקֹב",
+      "code": "H6122",
+      "gloss": "cunning",
+      "transliteration": "oq.vah",
+      "script_form": "עׇקְבָה",
       "language": "Hebrew",
-      "vocab_count": 2,
-      "medium_def": "1) deceitful, sly, insidious\n1a) deceitful, sly, insidious, slippery\n1b) foot-tracked",
+      "vocab_count": 1,
+      "medium_def": "subtlety, insidiousness, craftiness",
       "lsj_entry": "",
       "short_def_mounce": "",
       "related_words": [
@@ -108,16 +103,16 @@
           "translit": "a.qev"
         },
         {
+          "strong": "H6121A",
+          "form": "עָקֹב",
+          "gloss": "insidious",
+          "translit": "a.qov"
+        },
+        {
           "strong": "H6121B",
           "form": "עָקֹב",
           "gloss": "steep",
           "translit": "a.qov"
-        },
-        {
-          "strong": "H6122",
-          "form": "עׇקְבָה",
-          "gloss": "cunning",
-          "translit": "oq.vah"
         },
         {
           "strong": "H6126G",
@@ -144,56 +139,43 @@
           "translit": "aq.quv"
         }
       ],
-      "raw_related_numbers": "H6119, H6117, H6120, H6121, H6122, H6118, H6126, H6126, H6126, H6126, H3290, H3291, H6121",
-      "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;1;2;2;2;;",
+      "raw_related_numbers": "H6119, H6117, H6120, H6121, H6121, H6118, H6126, H6126, H6126, H6126, H3290, H3291",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
       "is_proper_noun": false,
       "is_sub_gloss": false,
       "step_parent_code": "H6121A",
-      "step_section_type": "primary",
-      "decision_group": "G1",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
       "action": "include",
-      "decision_reason": "F4: parent H6121A in anchor list, section_type=primary",
+      "decision_reason": "F5b: parent H6121A in anchor list, section_type=related_term, root NOT confirmed",
       "verses_fetched": true,
-      "verse_count": 2,
+      "verse_count": 1,
       "testament_coverage": "OT_only",
-      "meaning_numbered": true,
+      "meaning_numbered": false,
       "causative_form_present": false,
-      "data_quality_flags": [],
-      "quality_flag_detail": {},
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H6122 ('cunning') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
       "verses": [
         {
-          "osisId": "Hos.6.8",
-          "ref": "Hos 6:8",
-          "book_code": "Hos",
-          "chapter": 6,
-          "verse_num": 8,
-          "esv_text": "Hos 6:8 Gilead is a city of evildoers , tracked with blood .",
-          "target_word": "tracked",
+          "osisId": "2Kgs.10.19",
+          "ref": "2Ki 10:19",
+          "book_code": "2Kgs",
+          "chapter": 10,
+          "verse_num": 19,
+          "esv_text": "2Ki 10:19 Now therefore call to me all the prophets of Baal , all his worshipers and all his priests . Let none be missing , for I have a great sacrifice to offer to Baal . Whoever is missing shall not live .” But Jehu did it with cunning in order to destroy the worshipers of Baal .",
+          "target_word": "cunning",
           "testament": "OT",
-          "fetched_under_code": "H6121A",
-          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Hos.6.8' class='verseLink'><span class='verseNumber'>Hos 6:8</span></a> <span class='level1'></span> <span morph='HNpl' strong='H1568G'>Gilead</span> is a <span morph='HNcfsc' strong='H7151'>city</span> of <span morph='HVqrmpc HNcmsa' strong='H6466 H0205G'>evildoers</span>,<br /><span class='level2'></span> <span morph='HNcfsa' strong='H6121A'>tracked</span> with <span morph='HNcmsa HR' strong='H1818 H9006'>blood</span>.<br /></span> </div>",
+          "fetched_under_code": "H6122",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Kgs.10.19' class='verseLink'><span class='verseNumber'>2Ki 10:19</span></a> <span morph='HD HC' strong='H6258 H9002'>Now</span> therefore <span morph='HVqv2mp HSp3ms' strong='H7121G H9023'>call</span> to me <span morph='HNcmsc' strong='H3605'>all</span> the  <span morph='HNcmpc' strong='H5030'>prophets</span> of <span morph='HNtmsa HTd' strong='H1168A H9009'>Baal</span>, <span morph='HNcmsc' strong='H3605'>all</span> his <span morph='HVqrmpc' strong='H5647H'>worshipers</span> and all his <span morph='HNcmpc' strong='H3548'>priests</span>. Let <span morph='HTn HR HSp1bs HNcmsa' strong='H0408 H0413 H9030 H0376I'>none</span> be <span morph='HVNj3ms' strong='H6485K'>missing</span>, <span morph='HTc' strong='H3588A'>for</span> I have a <span morph='HAamsa' strong='H1419A'>great</span> <span morph='HNcmsa' strong='H2077'>sacrifice to offer</span> to <span morph='HNtmsa HR HRd HSp1bs' strong='H1168A H9005 H9005 H9030'>Baal</span>. <span morph='HNcmsc HC HSp3ms HTr' strong='H3605 H9002 H9033 H0834A'>Whoever</span> is <span morph='HVNi3ms HNcmsa' strong='H6485K H3605'>missing</span> shall <span morph='HTn' strong='H3808'>not</span> <span morph='HVqi3ms' strong='H2421'>live</span>.” But <span morph='HNpm HC' strong='H3058H H9002'>Jehu</span> <span morph='HVqp3ms' strong='H6213A'>did</span> it with <span morph='HNcfsa HR' strong='H6122 H9003'>cunning</span> in <span morph='HTc' strong='H4616'>order</span> to <span morph='HVhcc' strong='H0006'>destroy</span> the <span morph='HVqrmpc HTo' strong='H5647H H0853'>worshipers</span> of <span morph='HNtmsa HTd' strong='H1168A H9009'>Baal</span>.</span> </div>",
           "span_strong_match": 1,
-          "span_code_found": "H6121A",
-          "span_label_found": "insidious",
-          "context_before": "a city of evildoers ,",
-          "context_after": "with blood ."
-        },
-        {
-          "osisId": "Jer.17.9",
-          "ref": "Jer 17:9",
-          "book_code": "Jer",
-          "chapter": 17,
-          "verse_num": 9,
-          "esv_text": "Jer 17:9 The heart is deceitful above all things, and desperately sick ; who can understand it ?",
-          "target_word": "deceitful",
-          "testament": "OT",
-          "fetched_under_code": "H6121A",
-          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.17.9' class='verseLink'><span class='verseNumber'>Jer 17:9</span></a> <span class='level1'></span>The <span morph='HNcmsa HTd' strong='H3820A H9009'>heart</span> is <span morph='HNcmsa' strong='H6121A'>deceitful</span> above <span morph='HNcmsa HR' strong='H3605 H9006'>all</span> things,<br /><span class='level2'></span>and <span morph='HAamsa' strong='H0605'>desperately sick</span>;<br /><span class='level2'></span><span morph='HPi HPp3ms' strong='H4310 H1931'>who</span> <span morph='HVqi3ms' strong='H3045'>can understand</span> <span morph='HSp3ms' strong='H9033'>it</span>?<br /></span> </div>",
-          "span_strong_match": 1,
-          "span_code_found": "H6121A",
-          "span_label_found": "insidious",
-          "context_before": "Jer 17:9 The heart is",
-          "context_after": "above all things, and desperately"
+          "span_code_found": "H6122",
+          "span_label_found": "cunning",
+          "context_before": "But Jehu did it with",
+          "context_after": "in order to destroy the"
         }
       ]
     }
