@@ -42,6 +42,13 @@ Servicing each of the 39 primaries' STEP related clusters surfaced **62 further 
 
 → **Integration set now ≈ 39 primaries + ~19 kin ≈ 58 terms** (plus borderlines if confirmed). The pipeline (§4) applies to all; servicing-then-triage is the rule, not primaries-only.
 
+## 1c. Newly discovered during fan-out (additions to the backlog)
+Orphans surfaced by the verse-fanout method *after* the original audit — same treatment (onboard as OWNER into the target cluster, reset ve-lexical). The fan-out is now an active orphan-discovery channel (per `feedback_term_coverage_cascade_is_index_not_census`).
+
+| term | strong | gloss | target cluster | IB occurrences | note |
+|---|---|---|---|---|---|
+| `a.qov` | **H6121** | deceitful / sly / insidious | **M14 Deceit** | **Jer 17:9 only** (1 of 3) | found via Jer 17:9 fan-out (Exo 1:13 #109). Hos 6:8 ("footprinted") + Isa 40:4 ("uneven ground") are **physical, non-IB** — onboard the **Jer 17:9 sense only** (contextual-capture caution). 3 corpus occurrences. |
+
 ## 2. The 3 unmapped — need a cluster decision (§5.1)
 No dedicated **oppression** or **violence** cluster exists. Options: (a) **M27 Evil** (violence/oppression as wickedness); (b) **M06 Hate** (the cruelty/hostility neighbour); (c) **M24 Weakness** (the *suffering* side — but these are the *act*, not the state); (d) **new cluster(s)**. *(My lean: `chamas` violence + `yanah`/`lachats` oppress are the *acts* of harm → M27 Evil or M06; not M24. Decide.)*
 
