@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "english_anchor": "slyness",
+    "generated": "2026-06-29",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "H6121A"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 12,
+    "summary_by_group": {
+      "G1": 2,
+      "G3": 6,
+      "G2r": 4
+    },
+    "include_codes": [
+      "H6121A"
+    ],
+    "exclude_codes": [
+      "H3290",
+      "H3291",
+      "H6117",
+      "H6118",
+      "H6119",
+      "H6121B",
+      "H6122",
+      "H6126G",
+      "H6126H",
+      "H6126I",
+      "H6126J"
+    ],
+    "registry": {
+      "id": 217,
+      "no": 217,
+      "word": "Slyness",
+      "source_list": "verse-fanout orphan (Jer 17:9 a.qov H6121A; insidious/sly deceit)",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": null,
+      "automation_eligible": 1,
+      "last_automation_run": null,
+      "automation_run_id": null,
+      "phase1_term_count": null,
+      "phase1_verse_count": null,
+      "strongs_list": null,
+      "description": null,
+      "origin": null,
+      "dimensions": null,
+      "inference_note": null,
+      "session_b_status": null,
+      "cluster_assignment": "unassigned",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1,
+      "unique_term_count": 0,
+      "shared_term_count": 0,
+      "term_sharing_ratio": 0.0,
+      "verse_context_status": null,
+      "dim_review_status": null,
+      "dim_review_version": null,
+      "word_synopsis": null
+    },
+    "curation_note": "curated 2026-06-29: include H6121A (insidious, IB) only; family H6117/H6118/H6119/H6121B/H6122 excluded (relatedNos cascade, non-IB)"
+  },
+  "terms": [
+    {
+      "code": "H6121A",
+      "gloss": "insidious",
+      "transliteration": "a.qov",
+      "script_form": "עָקֹב",
+      "language": "Hebrew",
+      "vocab_count": 2,
+      "medium_def": "1) deceitful, sly, insidious\n1a) deceitful, sly, insidious, slippery\n1b) foot-tracked",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H3290",
+          "form": "יַעֲקֹב",
+          "gloss": "Jacob",
+          "translit": "ya.a.qov"
+        },
+        {
+          "strong": "H3291",
+          "form": "יַעֲקֹ֫בָה",
+          "gloss": "Jaakobah",
+          "translit": "ya.a.qo.vah"
+        },
+        {
+          "strong": "H6117",
+          "form": "עָקַב",
+          "gloss": "to assail",
+          "translit": "a.qav"
+        },
+        {
+          "strong": "H6118",
+          "form": "עֵ֫קֶב",
+          "gloss": "consequence",
+          "translit": "e.qev"
+        },
+        {
+          "strong": "H6119",
+          "form": "עָקֵב",
+          "gloss": "heel",
+          "translit": "a.qev"
+        },
+        {
+          "strong": "H6121B",
+          "form": "עָקֹב",
+          "gloss": "steep",
+          "translit": "a.qov"
+        },
+        {
+          "strong": "H6122",
+          "form": "עׇקְבָה",
+          "gloss": "cunning",
+          "translit": "oq.vah"
+        },
+        {
+          "strong": "H6126G",
+          "form": "עַקּוּב",
+          "gloss": "Akkub",
+          "translit": "aq.quv"
+        },
+        {
+          "strong": "H6126H",
+          "form": "עַקּוּב",
+          "gloss": "Akkub",
+          "translit": "aq.quv"
+        },
+        {
+          "strong": "H6126I",
+          "form": "עַקּוּב",
+          "gloss": "Akkub",
+          "translit": "aq.quv"
+        },
+        {
+          "strong": "H6126J",
+          "form": "עַקּוּב",
+          "gloss": "Akkub",
+          "translit": "aq.quv"
+        }
+      ],
+      "raw_related_numbers": "H6119, H6117, H6120, H6121, H6122, H6118, H6126, H6126, H6126, H6126, H3290, H3291, H6121",
+      "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;1;2;2;2;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H6121A",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H6121A in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 2,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Hos.6.8",
+          "ref": "Hos 6:8",
+          "book_code": "Hos",
+          "chapter": 6,
+          "verse_num": 8,
+          "esv_text": "Hos 6:8 Gilead is a city of evildoers , tracked with blood .",
+          "target_word": "tracked",
+          "testament": "OT",
+          "fetched_under_code": "H6121A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Hos.6.8' class='verseLink'><span class='verseNumber'>Hos 6:8</span></a> <span class='level1'></span> <span morph='HNpl' strong='H1568G'>Gilead</span> is a <span morph='HNcfsc' strong='H7151'>city</span> of <span morph='HVqrmpc HNcmsa' strong='H6466 H0205G'>evildoers</span>,<br /><span class='level2'></span> <span morph='HNcfsa' strong='H6121A'>tracked</span> with <span morph='HNcmsa HR' strong='H1818 H9006'>blood</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H6121A",
+          "span_label_found": "insidious",
+          "context_before": "a city of evildoers ,",
+          "context_after": "with blood ."
+        },
+        {
+          "osisId": "Jer.17.9",
+          "ref": "Jer 17:9",
+          "book_code": "Jer",
+          "chapter": 17,
+          "verse_num": 9,
+          "esv_text": "Jer 17:9 The heart is deceitful above all things, and desperately sick ; who can understand it ?",
+          "target_word": "deceitful",
+          "testament": "OT",
+          "fetched_under_code": "H6121A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.17.9' class='verseLink'><span class='verseNumber'>Jer 17:9</span></a> <span class='level1'></span>The <span morph='HNcmsa HTd' strong='H3820A H9009'>heart</span> is <span morph='HNcmsa' strong='H6121A'>deceitful</span> above <span morph='HNcmsa HR' strong='H3605 H9006'>all</span> things,<br /><span class='level2'></span>and <span morph='HAamsa' strong='H0605'>desperately sick</span>;<br /><span class='level2'></span><span morph='HPi HPp3ms' strong='H4310 H1931'>who</span> <span morph='HVqi3ms' strong='H3045'>can understand</span> <span morph='HSp3ms' strong='H9033'>it</span>?<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H6121A",
+          "span_label_found": "insidious",
+          "context_before": "Jer 17:9 The heart is",
+          "context_after": "above all things, and desperately"
+        }
+      ]
+    }
+  ]
+}

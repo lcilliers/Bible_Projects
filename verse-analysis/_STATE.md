@@ -81,7 +81,7 @@
 | #45 | D2 Source | Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who … | Exo 1:8 | Exo 1:13 | 2d |
 | #47 | D5 Object | Its object is always a weaker party (here Israel) — perek is exercised over the subjugated… | the 6 perek verses (all = rule-over) | Exo 1:13 | 2d |
 | #106 | D12 Hidden | HIDDEN: the cruelty-word Egypt used (Exo 1) becomes the word Israel is FORBIDDEN to use ag… | Lev 25:46; 25:53; Eze 34:4 | Lev 25:43 | 1d |
-| #109 | D2 Source | The heart's DECEIT / slyness (a.qov H6121 — 'the heart is deceitful above all things', Jer… | Jer 17:9; M14 deceit; a.qov H6121 (pending onboarding) | Exo 1:13 | 0d |
+| #109 | D2 Source | The heart's DECEIT / slyness (a.qov H6121A — 'the heart is deceitful above all things', Je… | Jer 17:9; Hos 6:8; M14 deceit; steadfast-heart contrast (Ps 57:7; 112:7) | Exo 1:13 | 0d |
 | #50 | D11 Discovery | Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another … | other inner-cruelty terms | Exo 1:13 | 2d |
 | #108 | D13 Cohabitation | Ruthlessness COHABITS with other inner-being evils — it does not stand alone. The absence … | Gen 20:11; Deut 25:18; Eze 34:4; the no-fear-of-God set | Exo 1:13 | 0d |
 

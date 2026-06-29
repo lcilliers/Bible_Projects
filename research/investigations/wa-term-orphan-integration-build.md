@@ -47,7 +47,7 @@ Orphans surfaced by the verse-fanout method *after* the original audit — same 
 
 | term | strong | gloss | target cluster | IB occurrences | note |
 |---|---|---|---|---|---|
-| `a.qov` | **H6121** | deceitful / sly / insidious | **M14 Deceit** | **Jer 17:9 only** (1 of 3) | found via Jer 17:9 fan-out (Exo 1:13 #109). Hos 6:8 ("footprinted") + Isa 40:4 ("uneven ground") are **physical, non-IB** — onboard the **Jer 17:9 sense only** (contextual-capture caution). 3 corpus occurrences. |
+| `a.qov` | **H6121A** | insidious / sly / deceitful | **M14 Deceit** | Hos 6:8 + Jer 17:9 (the *insidious* sense) | ✅ **ONBOARDED 2026-06-29** — OWNER reg217 "Slyness", status=extracted. Integrity: exactly +1 term, +2 verses, +1 registry, M14+1, no new breach. The physical "steep" sense (H6121B, Isa 40:4) correctly **excluded**. Found via Jer 17:9 fan-out (Exo 1:13 #109). |
 
 ## 2. The 3 unmapped — need a cluster decision (§5.1)
 No dedicated **oppression** or **violence** cluster exists. Options: (a) **M27 Evil** (violence/oppression as wickedness); (b) **M06 Hate** (the cruelty/hostility neighbour); (c) **M24 Weakness** (the *suffering* side — but these are the *act*, not the state); (d) **new cluster(s)**. *(My lean: `chamas` violence + `yanah`/`lachats` oppress are the *acts* of harm → M27 Evil or M06; not M24. Decide.)*
@@ -108,6 +108,8 @@ Inspected the template (`arits` H6184, M06 owner): dual `mti_terms` rows, owner+
 | 2026-06-28 | **Two engine onboarding bugs FIXED en route** (the recurring trip-up): (a) `audit_word --fetch-step` now auto-generates the Step-1 extract from STEP; (b) the file_index stub INSERT was missing NOT NULL `filename` → fixed. New-word onboarding now works end-to-end. | ✅ |
 | 2026-06-28 | Triage gate proven: auto-fetch include_codes had `H6531`+`H6532` (curtain homonym) → curated to perek-only before live write (prevented contamination). | ✅ |
 | — | **NEXT for perek:** verse_context units for its 6 verses → reset ve-lexical (mechanical `_apply_generate_ve_lexical_v2`) → link M06 char Cruelty/Ruthlessness. Then scale batch 1 to `miseo` + M06 kin. | pending |
+| 2026-06-29 | **`a.qov` H6121A ONBOARDED** — OWNER reg217 "Slyness", M14 Deceit, status=extracted, 2 verses (Hos 6:8, Jer 17:9). Integrity compare = exactly +1 term/+2 verses/+1 reg/M14+1, no new breach. (term layer; verse_context + reset ve-lexical pending, as for perek.) | ✅ |
+| 2026-06-29 | **Curation mechanism CLARIFIED (the recurring trip-up).** `audit_word` onboards from the extract's **`terms` array**, NOT `meta.include_codes` (include_codes only steers the gap report). `--fetch-step` fetches *and* ingests in one pass → relatedNos cascade onboards immediately (a.qov pulled the whole H6117-H6122 heel/footprint family). **Correct gate:** `word_study_extract` → **trim the `terms` array to the wanted code(s)** → `audit_word --extract-file`. Rolled back twice before getting this right; backup+snapshot+compare caught it both times. | ✅ |
 
 ## 9. Perek pilot — outcome (the validated template)
 The end-to-end controlled path that now works for every term:
