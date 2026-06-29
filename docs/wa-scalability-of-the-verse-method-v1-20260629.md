@@ -52,5 +52,19 @@ If the residual error is low, it scales. If it is still high, the discipline-enc
   - **D-scale-2** — run the **pilot** on one IB-dense batch to measure the residual error rate? *(needs opt-in for multi-agent orchestration.)*
   - **D-scale-3** — build the **corpus triage** (IB-dense vs the rest) so we only fan out where there is something to find?
 
+## 8. Researcher objections (2026-06-29) — the proposal is NOT accepted as-is
+The researcher rejected the optimism of §4. The objections are largely correct and must reshape any plan:
+1. **Fanout completeness is unproven.** The fanout is not demonstrably *complete* or *representative*, so it is not a solid enough grounding for observations. (Consistent with the earlier finding: the term cascade is an *index, not a census*.) We cannot currently prove a fanout has captured the relevant evidence.
+2. **AI cannot reliably SELECT the right elements** of the fanout to turn into observations. The judgement of *what matters* is the hard part, and this session is the evidence against AI doing it unaided.
+3. **The hardest + most valuable work is reading for what is NOT there** — absences, gaps, unsupported jumps, missing dimensions. *These discoveries were the most prevalent this session.* Adversarial *AI-verifies-AI* (§4.3) does **not** solve this: two AIs share the blind spot — both confirm a plausible-but-imported claim; neither asks "is this even in the verse?" **This is the decisive weakness of the §4 bet.**
+4. **Most of the 24h work is in documents, not the DB** — text-based, and it **goes stale rapidly** (observations-v2 lost #109/#110; worklists drift). The canonical intellectual record is thin; the rich reasoning rots in markdown.
+5. **Error-handling derails the assistant.** Discovering/fixing data errors mid-task repeatedly broke the assistant's focus ("you lose your track time and time again").
+
+### What this forces (honest re-framing — to discuss, not yet a plan)
+- **Two kinds of "absence" — only one is automatable.** (a) *Mechanical* absences — untracked terms, out-of-corpus refs, missing ve-lexical, coverage gaps — **were caught by the controls/puller this session** (the scalable part, proven). (b) *Judgement* absences — is the connection verse-founded? is the claim supported? is a dimension missing? — are **human and do not scale by AI verification.** AI's honest role shrinks to: mechanical substrate + detectable-gap controls + drafting + keeping the record solid. Selection, completeness-judgement, absence-finding, synthesis stay **human**.
+- **The record problem is the most fixable** and should come first: capture the *work* (decisions, corrections, rationale) as **structured DB records**, with docs **generated** — so nothing the researcher does rots in text.
+- **The goal may be wrong, not just the throughput.** The RESET method is about *emergent focus points*, not an exhaustive verse catalogue. "Finish every verse" may be both infeasible *and* unnecessary; "build the focus points from the IB-dense core, solidly grounded" may be the achievable end. Completeness then means *enough representative evidence per focus point*, not every verse.
+
 ## Decision log
-- 2026-06-29 — raised by researcher (lifetime concern). Proposal drafted. The session's corrections analysed into 5 teachable types; the lever is the human's *role*, not more diligence. Awaiting D-scale-1/2/3.
+- 2026-06-29 — raised by researcher (lifetime concern). Proposal §4 drafted.
+- 2026-06-29 — **researcher rejected §4's optimism** (objections §8): fanout completeness unproven; AI can't select; AI can't find absences (the most valuable work); work rots in docs not DB; error-handling derails the assistant. The AI-verifies-AI lever is the decisive weakness. Re-framing toward: AI = toil + mechanical-gap controls + solid record only; human owns judgement; goal = focus points from the IB-dense core, not every verse. No plan adopted; awaiting researcher direction.
