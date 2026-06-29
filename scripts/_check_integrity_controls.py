@@ -51,6 +51,14 @@ INV={
 # onboarded-but-incomplete term can never hide again. The ve-lexical gap lived exactly here: structurally
 # valid rows (no orphans) but missing children. A rising count after an onboarding = uncaptured work.
 COMPLETE={
+ # verse_records pointing OUTSIDE the corpus — a reference with no row in the canonical `verse` table
+ # (the study's verse index, ~76% of canon). STEP returns full-Bible occurrences, so onboarding a term
+ # can create verse_records for verses the study does not carry (no spans, no measure layer → no ve-lexical
+ # possible). This is the 2Sa 12:15 class. Surfaced so it can never recur unseen; a rise after an onboard
+ # flags occurrences that need a decision (add the verse to the corpus, or accept as an un-analysable pointer).
+ "vr_out_of_corpus":"""SELECT COUNT(*) FROM wa_verse_records vr
+     WHERE (vr.delete_flagged=0 OR vr.delete_flagged IS NULL)
+       AND NOT EXISTS (SELECT 1 FROM verse v WHERE v.reference=vr.reference)""",
  # active terms that HAVE verses but NO verse_context built (the ve-lexical-gap precursor; link by mti_term_id)
  "active_term_verses_no_vc":"""SELECT COUNT(DISTINCT m.id) FROM mti_terms m
      WHERE (m.status NOT IN ('delete','candidate_delete','excluded') OR m.status IS NULL) AND (m.delete_flagged=0 OR m.delete_flagged IS NULL)
