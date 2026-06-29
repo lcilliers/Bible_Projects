@@ -65,6 +65,17 @@ The researcher rejected the optimism of §4. The objections are largely correct 
 - **The record problem is the most fixable** and should come first: capture the *work* (decisions, corrections, rationale) as **structured DB records**, with docs **generated** — so nothing the researcher does rots in text.
 - **The goal may be wrong, not just the throughput.** The RESET method is about *emergent focus points*, not an exhaustive verse catalogue. "Finish every verse" may be both infeasible *and* unnecessary; "build the focus points from the IB-dense core, solidly grounded" may be the achievable end. Completeness then means *enough representative evidence per focus point*, not every verse.
 
+## 9. THE ROOT CAUSE (researcher, 2026-06-29) — AI does not hold a discipline
+> The premise of §2/§4 — *"if the AI internalises the discipline, the per-verse error rate collapses"* — **is false, and it is the reason every restart, methodology change, and rework cycle of the past 5 months has failed.** AI **has never followed or stuck to a set discipline.** It holds for a while, then falls apart.
+
+This session is itself the evidence: the verse-founding discipline was in memory and reinforced repeatedly, yet within hours the assistant produced the genus/species import, the #43/#44 mis-attribution, the #45 unsupported jump — the *exact* violations the discipline forbids. Drift is not occasional; it is the default, and it returns no matter how the rules are written.
+
+**Implication — the one that actually matters:** *any method that depends on AI self-discipline is built on sand.* The fix cannot be "encode the discipline better" (that has been tried and failed). The discipline must be **external and enforced**, or not relied upon at all:
+- **Machine-enforced, write-time validators** that *reject* non-conforming output for the **checkable** rules — anchor must be a term in the verse; evidence must be in-corpus; an observation's cluster must match its term's; no claim citing verses outside its origin without an `inference` flag. Drift then bounces off a gate instead of reaching the human's eyes.
+- **Confine AI to narrow, deterministic, verifiable tasks** (morphology, coverage-gap lists, record-keeping) where output is checkable against ground truth — *not* open judgement, where drift is invisible.
+- **The unverifiable work stays human, always** — selection, completeness, absence-finding, meaning. These were never the AI-discipline problem; they are simply not AI's.
+- **Honest limit:** enforcement only catches *checkable* violations. It does **not** make AI hold a *judgement* discipline (e.g. "don't over-read") — so judgement must not be delegated at all. And the proof of any mechanism is that it holds *without the assistant choosing to comply* — not that the assistant promises to.
+
 ## Decision log
 - 2026-06-29 — raised by researcher (lifetime concern). Proposal §4 drafted.
 - 2026-06-29 — **researcher rejected §4's optimism** (objections §8): fanout completeness unproven; AI can't select; AI can't find absences (the most valuable work); work rots in docs not DB; error-handling derails the assistant. The AI-verifies-AI lever is the decisive weakness. Re-framing toward: AI = toil + mechanical-gap controls + solid record only; human owns judgement; goal = focus points from the IB-dense core, not every verse. No plan adopted; awaiting researcher direction.
