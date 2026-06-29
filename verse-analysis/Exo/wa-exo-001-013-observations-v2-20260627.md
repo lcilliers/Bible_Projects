@@ -16,7 +16,7 @@
 
 ---
 
-## RUTHLESSNESS (perek H6531) — 13 observations (#43,#44 re-homed to the cruelty stream)
+## RUTHLESSNESS (perek H6531) — 12 observations (#43,#44 re-homed to cruelty; #45 withdrawn)
 
 ### D1 · Identity
 - Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another.
@@ -29,8 +29,7 @@
 - The deeper wellspring is the heart's evil **THOUGHTS / intentions** (machashavah H4284; the formed inclination yetser H3336) — the heart's CONTENT, not the container. Gen 6:5 ('every intention of the thoughts… only evil'); Mark 7:21-23 (evils from within, headed by 'evil thoughts'); ruthlessness emerges downstream via the thought-path.
   · **anchor** H4284 · **resolved** _(reworded 2026-06-29; Gen 6:5 + Mark 7:21-23 worked)_ · reconsider at: Gen 6:5 (worked); Mark 7:21-23 (worked)  _(#42)_
 - _**#43 & #44 RE-HOMED off Exo 1:13 (2026-06-29)** — researcher: anger→cruelty (Gen 49:7) and power→cruelty (Ecc 8:9) are **cruelty-genus** sources, not Exo 1:13 ruthlessness sources. Moved to the `cruelty` stream at their own verses._
-- Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).
-  · **anchor** H3045 · **needs-corroboration** · reconsider at: Exo 1:8  _(#45)_
+- _**#45 WITHDRAWN (2026-06-29)** — researcher: "severed-memory → ruthlessness" is not evidenced in Exo 1:8 (a new king who did not know Joseph; no change of heart / causal link stated). Unsupported inference, deleted._
 ### D3 · Seat / bearer
 - It is borne by the actor (the Egyptians); no inner seat (heart/spirit) is named in the verse.
   · **anchor** H6531 · **silent** · reconsider at: verses where a cruelty term names a seat  _(#46)_

@@ -1,7 +1,8 @@
 # Exo 1:13 — unresolved-observation control list (fan-out worklist)
 
 - File: wa-exo-001-013-unresolved-worklist-v1-20260627.md · updated 2026-06-28 · live from `ib_observation`.
-- **23 observations · 13 resolved · 5 needs-corroboration · 4 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
+- **22 observations · 13 resolved · 4 needs-corroboration · 4 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
+- **2026-06-29 — #45 WITHDRAWN** (researcher): the "severed-memory → ruthlessness" jump is not evidenced in Exo 1:8 (no change of heart / causal link stated). Deleted. Exo 1:13 ruthlessness sources now all verse-founded (#40,#41,#42,#109,#110).
 - **2026-06-29 — #43 & #44 RE-HOMED off Exo 1:13** (researcher: not supported from a ruthlessness perspective) → **cruelty** stream (#43→Gen 49:7, #44→Ecc 8:9). They were *cruelty-genus* sources, not Exo 1:13 ruthlessness sources. The cruelty↔ruthlessness link itself is content-inference, not verse-founded (see M06 track).
 - Each row: the claim · where to go (reconsider-at) · tick when closed.
 - **2026-06-28 — Lev 25:43 now READ** (3 streams). Convergence applied: **#41 resolved** (fear-of-God stance *widened* — governs the whole treatment, not a brake) · **#49 resolved** (Lev 25:43 *is* the prohibition) · **#51 / #50 strengthened** (still open pending Eze 34:4 / other cruelty terms).
@@ -25,9 +26,7 @@
     - anchor H3820 · **go to:** Gen 6:5; Jer 17:9; Mark 7:21-23
 - [x] **#43 · RE-HOMED off Exo 1:13 2026-06-29** (researcher: not supported from a ruthlessness perspective) → now a **cruelty**-stream observation, origin **Gen 49:7** (anchor H7185 qashah), reconsider Pro 27:4. Anger/wrath → cruelty is a *cruelty-genus* source, not an Exo 1:13 ruthlessness source.
 - [x] **#44 · RE-HOMED off Exo 1:13 2026-06-29** (same) → **cruelty** stream, origin **Ecc 8:9** (anchor H7980 shalat). Power-without-restraint → cruelty; not an Exo 1:13 ruthlessness source.
-- [ ] **#45 · ruthlessness/D2 Source**
-    - claim: Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).
-    - anchor H3045 · **go to:** Exo 1:8
+- [x] **#45 · WITHDRAWN 2026-06-29 — unsupported** (researcher). ~~Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).~~ Exo 1:8 states only that a new king arose who did not know Joseph — **no change of heart, no causal link to the ruthlessness** is stated. *"Possible — maybe; evidenced in these verses — No."* An unsupported inference with no valid home (unlike #43/#44). **Deleted from `ib_observation`.**
 - [ ] **#47 · ruthlessness/D5 Object**
     - claim: Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
     - anchor H6531 · **go to:** the 6 perek verses (all = rule-over)
