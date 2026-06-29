@@ -52,11 +52,11 @@ Open threads **grow** when a new verse is read but **contract** when convergence
 3. **Work top-down the FAN-OUT PLAN** — pick the verse that closes the most, prepare it (`_assess_verse_raw_data.py`), read it, capture, re-generate. Watch the open count fall.
 4. **Clear STALE** periodically — the oldest open threads first, before they become entrenched misconceptions.
 
-## 5b. Contributor capture — Logos (researcher, 2026-06-29)
-Logos is used more and more to work through elements as needs arise; its **interface is poor**, and a Logos output typically holds **many segments that play into different parts of the study at once** (several verses, tracks, dimensions). It needs a way to be **captured in context** and its segments **routed** to where they belong — without losing the original or its provenance.
+## 5b. Contributor capture — Logos **and AI Chat** (researcher, 2026-06-29)
+Logos is used more and more to work through elements as needs arise; its **interface is poor**, and a Logos output typically holds **many segments that play into different parts of the study at once** (several verses, tracks, dimensions). It needs a way to be **captured in context** and its segments **routed** to where they belong — without losing the original or its provenance. **The same mechanism serves AI-Chat sessions** (Claude Chat used to clarify/investigate) — same shape, different `provenance` (`aichat`). Both are contributor sources; one capture pattern covers both.
 
-This is **contributor evidence** (provenance = `logos`), exactly the multi-contributor model — a conceptual-synthesis contributor whose claims are grounded to verses and tagged `STATED` / `INFERRED`. The pattern that fits is **capture once → route many**:
-1. **Capture (verbatim, once).** Paste the raw Logos block + a one-line topic/question + date. Stored as a **contributor source** record — recommended home: a `prose_section` of a new type `src_logos` (DB-canonical, full-text searchable, versioned, linkable) so it is never lost and is findable later. *(Consistent with "all study work in the DB".)*
+This is **contributor evidence** (provenance = `logos` | `aichat`), exactly the multi-contributor model — a conceptual-synthesis contributor whose claims are grounded to verses and tagged `STATED` / `INFERRED`. The pattern that fits is **capture once → route many**:
+1. **Capture (verbatim, once).** Paste the raw block + a one-line topic/question + date. Stored as a **contributor source** record — recommended home: a `prose_section` of a new type `src_logos` / `src_aichat` (DB-canonical, full-text searchable, versioned, linkable) so it is never lost and is findable later. *(Consistent with "all study work in the DB".)*
 2. **Segment → route.** Each useful segment is routed to where it belongs — becomes or supports an **observation** in `ib_observation` (`provenance=logos`, `basis` = the source id + segment), and/or feeds the **story** (`prose_section`). One source → many routed segments (handles the "many segments → various parts" reality). **Claude Code does the segmenting/routing; the researcher approves** — which offloads the bad Logos interface.
 3. **Provenance trace.** Every routed observation cites the source, so it always traces back to the Logos block; context preserved, nothing orphaned.
 
@@ -64,11 +64,11 @@ This is the **same three layers**: the Logos capture is a *source* that feeds *a
 
 ## 6. Decisions for you
 - **D1 — Adopt `_STATE.md` as the single CONTROL surface?** (built; open `verse-analysis/_STATE.md` and react to its structure/readability before committing.)
-- **D2 — Revive `prose_section` as the STORY layer?** Add new section types (focus-point/track narrative · verse reading) and write the emerging story there, in the DB — versioned, searchable, the place you *read to digest* and where contextual/floating thoughts get a home. *(This replaces the earlier "hand-authored synthesis in .md" idea — the story goes in the DB, not loose files.)*
+- **D2 — Revive `prose_section` as the STORY layer? → DEFERRED 2026-06-29** ("first do more work using `_STATE`"). Mechanism confirmed sound (assessment: `docs/wa-prose-section-status-assessment-v1-20260629.md`). Re-open at the **convergence trigger** — when the first focus point (candidate: ruthlessness) is ready to be *narrated*. Add new types (track narrative · verse reading · `src_logos` · `src_aichat`) then; leave legacy prose untouched as a mineable asset.
 - **D3 — Make the derived `.md` (worklist / observation tables) generated renders?** Stops drift + multiplication.
 - **D4 — A home for floating/contextual thoughts:** inside the track's prose story (narrative context), or a discrete "parking-lot note" capture too? (What feels natural to you?)
 - **D5 — STALE cadence:** keep 7 days, or other?
-- **D6 — Logos capture:** confirm the *capture once → route many* approach (§5b), with the raw block stored as a `src_logos` prose section and Claude Code doing the segment-routing for your approval? (Designed after D2.)
+- **D6 — Contributor capture (Logos + AI Chat):** confirm the *capture once → route many* approach (§5b), one mechanism for both (`provenance` = `logos` | `aichat`), Claude Code doing the segment-routing for your approval? (Designed after D2.)
 
 ## Open question to resolve next
 The story layer (D2) is the bigger build and the one that answers "digest in readable format" + the floating-thought gap. Recommended sequence: **confirm `_STATE.md` (D1) first** (cheap, built), then **design the two new prose section types and revive the store (D2)** as the next focused piece — one at a time, so we don't add complexity while trying to reduce it.
@@ -76,7 +76,8 @@ The story layer (D2) is the bigger build and the one that answers "digest in rea
 ## Decision log
 - 2026-06-29 — proposal raised; `_STATE.md` generator built as a working first cut.
 - 2026-06-29 — researcher comments folded in: (i) revive `prose_section` as the readable STORY layer; (ii) the method is an *emerging story, many parts WIP at once*; (iii) `_STATE` promising but to be judged on the real file; (iv) **correction** — not every thought is captured; contextual/floating observations have no home in the dimension structure → the story layer is that home. Architecture reframed to **3 canonical layers (atoms / story / control)**.
-- 2026-06-29 — **D1 ACCEPTED** ("do D1, let me look at it"): `_STATE.md` adopted as the control surface, regenerated for review. **D6 added** — Logos contributor capture (*capture once → route many*, §5b). Awaiting researcher's read of `_STATE.md` + D2–D6.
+- 2026-06-29 — **D1 ACCEPTED** ("do D1, let me look at it"): `_STATE.md` adopted as the control surface, regenerated for review. **D6 added** — contributor capture (*capture once → route many*, §5b).
+- 2026-06-29 — `_STATE.md` judged **useful** ("we are more organised than I thought"). **D6 generalised** to AI Chat (`src_aichat`) as well as Logos. **D2 DEFERRED** — keep working with `_STATE` first; prose assessment filed (`docs/wa-prose-section-status-assessment-v1-20260629.md`): mechanism sound, content all legacy, revive at the convergence trigger. Resuming research (#42, the heart).
 
 researcher comments
 
