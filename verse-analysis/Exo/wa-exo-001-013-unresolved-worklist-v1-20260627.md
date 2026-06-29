@@ -27,9 +27,9 @@
 - [x] **#43 · RE-HOMED off Exo 1:13 2026-06-29** (researcher: not supported from a ruthlessness perspective) → now a **cruelty**-stream observation, origin **Gen 49:7** (anchor H7185 qashah), reconsider Pro 27:4. Anger/wrath → cruelty is a *cruelty-genus* source, not an Exo 1:13 ruthlessness source.
 - [x] **#44 · RE-HOMED off Exo 1:13 2026-06-29** (same) → **cruelty** stream, origin **Ecc 8:9** (anchor H7980 shalat). Power-without-restraint → cruelty; not an Exo 1:13 ruthlessness source.
 - [x] **#45 · WITHDRAWN 2026-06-29 — unsupported** (researcher). ~~Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).~~ Exo 1:8 states only that a new king arose who did not know Joseph — **no change of heart, no causal link to the ruthlessness** is stated. *"Possible — maybe; evidenced in these verses — No."* An unsupported inference with no valid home (unlike #43/#44). **Deleted from `ib_observation`.**
-- [ ] **#47 · ruthlessness/D5 Object**
-    - claim: Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
-    - anchor H6531 · **go to:** the 6 perek verses (all = rule-over)
+- [ ] **#47 · ruthlessness/D5 Object** — *reviewable: object across all 6 perek verses*
+    - claim: Its object is always a weaker party — perek is exercised over the subjugated.
+    - anchor H6531 · **go to (the 6, with object):** Exo 1:13 + 1:14 (Israel, enslaved) · Lev 25:43 (the impoverished brother) · Lev 25:46 (your brothers / fellow Israelites) · Lev 25:53 (the hired bondservant) · Eze 34:4 (the flock — weak/sick/injured/strayed/lost). **All 6 = a weaker/subordinate party → claim holds (verse-founded).** Object review tabled in `_tracks/M06/wa-track-ruthlessness-H6531.md`.
 - [x] **#49 · ruthlessness/D10 Valence — RESOLVED 2026-06-28**
     - claim: It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
     - anchor H6531 · Lev 25:43 **read** — it *is* the prohibition. (25:46/53 siblings still to read, but the condemnation is established.)

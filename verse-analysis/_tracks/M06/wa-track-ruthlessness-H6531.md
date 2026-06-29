@@ -27,6 +27,17 @@
 | **Lev 25:53** | of a hired/bondservant — forbidden | pending |
 | **Eze 34:4** | Israel's shepherds ruled "with force and harshness" — turned inward | pending |
 
+### D5 Object across the 6 verses (the #47 review)
+In every `perek` verse the object is a **weaker / subordinate party** → #47 ("object is always a weaker party") is **verse-founded across all 6**:
+
+| verse | object of `perek` |
+|---|---|
+| Exo 1:13 / 1:14 | the people of Israel (enslaved) |
+| Lev 25:43 | "him" — the impoverished brother (v.39) |
+| Lev 25:46 | "your brothers the people of Israel" |
+| Lev 25:53 | "him" — the hired bondservant |
+| Eze 34:4 | "them" — the flock (weak / sick / injured / strayed / lost) |
+
 ## Observations — Exo 1:13 (origin), by dimension
 | dim | observation | anchor | status | reconsider at |
 |---|---|---|---|---|

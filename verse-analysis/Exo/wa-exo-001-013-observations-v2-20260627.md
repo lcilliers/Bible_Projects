@@ -35,7 +35,7 @@
   · **anchor** H6531 · **silent** · reconsider at: verses where a cruelty term names a seat  _(#46)_
 ### D5 · Object / target
 - Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: the 6 perek verses (all = rule-over)  _(#47)_
+  · **anchor** H6531 · **needs-corroboration** · reconsider at: Exo 1:13; 1:14; Lev 25:43; 25:46; 25:53; Eze 34:4 (object = Israel / brother / servant / flock — all weaker)  _(#47)_
 ### D7 · Process / unfolding
 - **EMERGENT, not instantaneous** — ruthlessness *grew*: shrewd scheme (v10) → hard labour/burdens (v11) → forced enslavement (v13) → total oppression (v14). As the perceived threat grew, the harshness grew. Rooted in **trust in their own power** rather than the fear of God, whose absence was the condition under which it grew.
   · **anchor** H6531 · **resolved** _(researcher, Exo 1:10-14; 2026-06-29)_ · reconsider at: Exo 1:10-14; other emergent-cruelty arcs  _(#107)_
