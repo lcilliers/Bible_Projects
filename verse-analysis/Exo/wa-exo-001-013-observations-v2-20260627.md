@@ -3,6 +3,7 @@
 - File: wa-exo-001-013-observations-v2-20260627.md · updated 2026-06-28 · live from `ib_observation`. (v2: numeric dimension order + readable layout.)
 - **2026-06-28 — Lev 25:43 convergence applied:** #41 (fear-of-God restraint) **resolved + stance widened** — fear of God governs the *whole* treatment of the powerless, not a brake; #49 (condemned) **resolved**.
 - **2026-06-28 — #59 corrected (researcher):** "morally NEUTRAL" was an error — Exo 1:13's enslavement is **oppressive/evil**; the lemma-range insight (abad = bondage *and* worship) relocated to #60/#61 as discovery-to-test.
+- **2026-06-29 — Exo 1:12 / Gen 20:11 / Deu 25:18 read (researcher):** #40 **resolved** (dread of an *unreal* perceived threat; conceived in shrewdness). **+2 new:** **#107 D7** ruthlessness is **emergent/escalating** (resolved); **#108 D9** ruthlessness **cohabits** with a no-fear-of-God family of evils (open).
 - **Raw data (source collection):** `verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md`
 - **Status key:** `resolved` = converged · `needs-corroboration` = open thread · `open` = discovery to test · `silent` = nothing in-verse.
 
@@ -15,14 +16,14 @@
 
 ---
 
-## RUTHLESSNESS (perek H6531) — 13 observations
+## RUTHLESSNESS (perek H6531) — 15 observations
 
 ### D1 · Identity
 - Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another.
   · **anchor** H6531 · **resolved** · reconsider at: perek (H6531) — the 6 occurrences  _(#39)_
 ### D2 · Source / antecedent
-- It springs from the Egyptians' dread of Israel — fear of a perceived threat to power.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Exo 1:12; fear->cruelty (Gen 20:11; Deut 25:18)  _(#40)_
+- It springs from the Egyptians' **dread of a perceived threat** to their power (vv10-12; `quts` H6973, untracked) — **a threat that did not actually exist** (Israel did not threaten Egypt). Conceived in **shrewdness** ("deal shrewdly", v10), architected as self-protection against an unreal danger.
+  · **anchor** H6531 · **resolved** _(Exo 1:12 read 2026-06-29)_ · reconsider at: Exo 1:10-12; quts H6973  _(#40)_
 - Its restraint is the fear of God — **not a narrow brake on cruelty but the GOVERNING reverence over the whole treatment of the powerless** (Lev 25:17/36/43); oppression arises precisely where "they do not fear me" (Mal 3:5); masters checked by their own heavenly Master (Eph 6:9; Col 4:1). Egypt, ungoverned by the fear of God, treats Israel ruthlessly — its absence removes the whole governance, not one brake.
   · **anchor** H6531 · **resolved** _(stance widened 2026-06-28)_ · reconsider at: Mal 3:5; Lev 25:17/36/43 (read); Eph 6:9; Col 4:1  _(#41)_
 - Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intention of the heart 'only evil' (Gen 6:5); evil comes from within (Mark 7:21-23).
@@ -39,9 +40,14 @@
 ### D5 · Object / target
 - Its object is always a weaker party (here Israel) — perek is exercised over the subjugated.
   · **anchor** H6531 · **needs-corroboration** · reconsider at: the 6 perek verses (all = rule-over)  _(#47)_
+### D7 · Process / unfolding
+- **EMERGENT, not instantaneous** — ruthlessness *grew*: shrewd scheme (v10) → hard labour/burdens (v11) → forced enslavement (v13) → total oppression (v14). As the perceived threat grew, the harshness grew. Rooted in **trust in their own power** rather than the fear of God, whose absence was the condition under which it grew.
+  · **anchor** H6531 · **resolved** _(researcher, Exo 1:10-14; 2026-06-29)_ · reconsider at: Exo 1:10-14; other emergent-cruelty arcs  _(#107)_
 ### D9 · Coupling / relation
 - It couples to enslavement as its MANNER (be-perek modifies the Hiphil abad) — realised through the act it qualifies, not standalone.
   · **anchor** H6531 · **resolved** · reconsider at: H5647; coupling 3 verses  _(#48)_
+- **COHABITS with a family of evils** sharing the *no-fear-of-God* root — does not stand alone: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18); in Exo 1:9-14 amid scheming + oppression. One member of a co-occurring family.
+  · **anchor** H6531 · **open** _(researcher, Gen 20:11 + Deu 25:18; 2026-06-29)_ · reconsider at: Eze 34:4; the no-fear-of-God set  _(#108)_
 ### D10 · Colour / valence
 - It is condemned — the Levitical law forbids ruling perek over a brother (Lev 25:43,46,53).
   · **anchor** H6531 · **resolved** _(Lev 25:43 read = the prohibition; 2026-06-28)_ · reconsider at: 25:46; 25:53 (siblings)  _(#49)_

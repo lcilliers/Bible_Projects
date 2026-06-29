@@ -1,10 +1,11 @@
 # Exo 1:13 — unresolved-observation control list (fan-out worklist)
 
 - File: wa-exo-001-013-unresolved-worklist-v1-20260627.md · updated 2026-06-28 · live from `ib_observation`.
-- **21 observations · 10 resolved · 7 needs-corroboration · 3 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
+- **23 observations · 12 resolved · 6 needs-corroboration · 4 open · 1 silent.** Work order: corroborate → test discoveries → check silents.
 - Each row: the claim · where to go (reconsider-at) · tick when closed.
 - **2026-06-28 — Lev 25:43 now READ** (3 streams). Convergence applied: **#41 resolved** (fear-of-God stance *widened* — governs the whole treatment, not a brake) · **#49 resolved** (Lev 25:43 *is* the prohibition) · **#51 / #50 strengthened** (still open pending Eze 34:4 / other cruelty terms).
 - **2026-06-28 — #59 CORRECTED** (researcher): "morally neutral" was an error — the verse's enslavement is **oppressive/evil**; the lemma-range insight relocated to #60/#61 as discovery.
+- **2026-06-29 — Exo 1:12 / Gen 20:11 / Deu 25:18 read** (researcher comments). #40 **resolved** (dread of an unreal perceived threat; conceived in shrewdness). **Two NEW observations:** **#107 ruthlessness/D7** = ruthlessness is **emergent/escalating** (it *grew*; resolved); **#108 ruthlessness/D9** = ruthlessness **cohabits** with a family of evils sharing the *no-fear-of-God* root (killing, exploiting the weak; open).
 
 
 ## NEEDS CORROBORATION — go to the cross-referenced verses and test the claim
@@ -12,9 +13,9 @@
 - [x] **#59 · enslavement/D10 Valence — CORRECTED + RESOLVED 2026-06-28**
     - ~~claim: Cause-to-serve is morally NEUTRAL…~~ **ERROR** (researcher): the verse is the opposite — in Exo 1:13 enslavement is **oppressive / evil** (forced, ruthless `be-perek`, embittering v.14). "Neutral" was a *lemma-range* abstraction about the word `abad`, imported from its other uses — not this verse's reading. The cross-refs (2Ch/Isa) don't belong on a verse-valence dimension.
     - anchor H5647 · resolved (verse-grounded). The lemma-range insight relocated to #60/#61 as discovery-to-test.
-- [ ] **#40 · ruthlessness/D2 Source**
-    - claim: It springs from the Egyptians' dread of Israel — fear of a perceived threat to power.
-    - anchor H6531 · **go to:** Exo 1:12; fear->cruelty (Gen 20:11; Deut 25:18)
+- [x] **#40 · ruthlessness/D2 Source — RESOLVED 2026-06-29 (Exo 1:12 read)**
+    - claim (enriched): springs from the Egyptians' **dread of a perceived threat** (`quts` H6973, untracked) that **did not actually exist**; conceived in **shrewdness** (v10), architected as self-protection against an unreal danger.
+    - anchor H6531 · resolved via the Exo 1:12 raw extract + researcher reading of vv10-13.
 - [x] **#41 · ruthlessness/D2 Source — RESOLVED 2026-06-28 (stance widened)**
     - claim (revised): Its restraint is the fear of God — **not a narrow brake on cruelty but the GOVERNING reverence over the whole treatment of the powerless** (Lev 25:17/36/43); oppression arises precisely where "they do not fear me" (Mal 3:5); masters checked by their own heavenly Master (Eph 6:9; Col 4:1). Egypt, ungoverned, treats Israel ruthlessly — the absence removes the whole governance, not one brake.
     - anchor H6531 · resolved via Lev 25:43 read + the curated fear-of-God set (Mal 3:5 / Eph 6:9 / Col 4:1 registered, still to read).
@@ -51,6 +52,9 @@
 - [ ] **#50 · ruthlessness/D11 Discovery — strengthened 2026-06-28 (still open)**
     - claim: Ruthlessness is a MANNER-operation — no act of its own, only the cruel quality of another operation. Reconsider whether all inner-cruelty terms behave as manners.
     - anchor H6531 · Lev 25:43 read — perek confirmed as a manner on a **second** host verb (`radah`, vs `abad` at Exo 1:13), so it is not bound to one act. Open question (do *all* cruelty terms behave so) still needs **other cruelty terms** (arits, akzar).
+- [ ] **#108 · ruthlessness/D9 Coupling — NEW 2026-06-29 (open)**
+    - claim: Ruthlessness **cohabits** with a family of evils sharing the *no-fear-of-God* root — killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18). It does not stand alone; one member of a co-occurring family. *(Reframes the focus point: the unit may be "what the absence of the fear of God lets emerge.")*
+    - anchor H6531 · **go to:** Eze 34:4; the no-fear-of-God set (test the family across more contexts).
 
 ## SILENT — nothing in Exo 1:13; check whether other verses fill it
 

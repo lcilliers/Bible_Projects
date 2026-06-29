@@ -23,7 +23,7 @@
 | dim | observation | anchor | status | reconsider at |
 |---|---|---|---|---|
 | D1 | Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another. | H6531 | resolved | the 6 perek occurrences |
-| D2 | It springs from the Egyptians' **dread** of Israel — fear of a perceived threat to power. | H6531 | needs-corrob | Exo 1:12; Gen 20:11; Deut 25:18 |
+| D2 | It springs from the Egyptians' **dread of a perceived threat** to their power (vv10-12; `quts` H6973, untracked) — *a threat that did not actually exist*. Conceived in **shrewdness** (v10), architected as self-protection against an unreal danger. | H6531 | **resolved** (Exo 1:12 read) | Exo 1:10-12; quts H6973 |
 | D2 | Its **restraint is the fear of God** — *not a narrow brake but the GOVERNING reverence over the whole treatment of the powerless* (Lev 25:17/36/43; Mal 3:5 "they do not fear me"; Eph 6:9; Col 4:1). Egypt, ungoverned, treats Israel ruthlessly. | H6531 | **resolved** (stance widened 2026-06-28) | Mal 3:5; Lev 25:17/36; Eph 6:9; Col 4:1 |
 | D2 | Beneath the trigger, the deeper wellspring of cruelty is the **HEART** ('only evil', Gen 6:5; evil from within, Mark 7:21-23). | H3820 | needs-corrob | Gen 6:5; Jer 17:9; Mark 7:21-23 |
 | D2 | **Anger/wrath** produces cruelty ('their wrath, for it is cruel', Gen 49:7; Pro 27:4). | H0639 | needs-corrob | Gen 49:7; Pro 27:4 |
@@ -31,7 +31,9 @@
 | D2 | Enabled by a **severed relationship / lost covenant memory** — a king who did not know Joseph (Exo 1:8). | H3045 | needs-corrob | Exo 1:8 |
 | D3 | Borne by the actor (the Egyptians); no inner seat named in-verse. | H6531 | silent | verses where a cruelty term names a seat |
 | D5 | Its object is always a **weaker party** — perek is exercised over the subjugated. | H6531 | needs-corrob | the 6 perek verses |
+| **D7** | **EMERGENT, not instantaneous** — ruthlessness *grew*: shrewd scheme (v10) → hard labour/burdens (v11) → forced enslavement (v13) → total oppression (v14). As the perceived threat grew, the harshness grew. Rooted in **trust in their own power** rather than the fear of God, whose absence let it grow. *(#107, researcher)* | H6531 | resolved | Exo 1:10-14; other emergent-cruelty arcs |
 | D9 | It **couples to enslavement as its MANNER** (be-perek modifies the Hiphil abad). | H6531 | resolved | → enslavement track (H5647); 3-verse coupling |
+| **D9** | **COHABITS with a family of evils** sharing the *no-fear-of-God* root — it does not stand alone: ruthless enslavement amid scheming/oppression (Exo 1:9-14); killing/destruction (Gen 20:11); attacking/exploiting the weak (Deu 25:18). One member of a co-occurring family. *(#108, researcher)* | H6531 | open | Gen 20:11; Deut 25:18; Eze 34:4; the no-fear-of-God set |
 | D10 | **Condemned** — the Levitical law forbids ruling perek over a brother. | H6531 | **resolved** (Lev 25:43 read = the prohibition) | 25:46; 25:53 (siblings) |
 | D11 | Ruthlessness is a **MANNER-operation** — no act of its own, only the cruel quality of another. Do all inner-cruelty terms behave so? | H6531 | open | other inner-cruelty terms |
 | D12 | HIDDEN: the cruelty-word Egypt used becomes the word Israel is **forbidden** to use (Lev 25); Eze 34:4 turns it inward — the oppressed must not become the oppressor. | H6531 | needs-corrob | Lev 25:43;46;53; Eze 34:4 |
@@ -53,6 +55,15 @@
 ## Cross-verse synthesis (emerging focus point — refine as verses are added)
 - Cruelty appears as a **manner** imposed by a stronger party on a weaker (Exo 1; the Lev 25 prohibitions; Eze 34). Its **restraint** is named: the fear of God (Lev 25:43) — see the Lev 25:43 assessment, which the study (M01-A) independently grounds as "a restraining force on cruelty."
 - The **theological shape** (Claude): Egypt's defining cruelty (perek) becomes precisely what redeemed Israel is forbidden to do to its own (Lev 25), and what its leaders are later indicted for (Eze 34) — *the oppressed must not become the oppressor.*
+- **Emergence (researcher, Exo 1:12 / 2026-06-29):** ruthlessness is not a fixed state but an **emergent, escalating outcome** — it *grew* from a shrewd scheme against a **perceived (unreal) threat** (vv10-12) into total oppression (v13-14). Its enabling condition is the **absence of the fear of God** + **trust in one's own power**. *(D7 #107.)*
+- **Cohabitation (researcher, Gen 20:11 + Deu 25:18):** ruthlessness **does not stand alone** — the *same* no-fear-of-God root releases a **family** of co-occurring evils: killing/destruction (Gen 20:11), attacking/exploiting the weak (Deu 25:18). Ruthlessness is one member of that family. This reframes the focus point: the unit may be less "perek the manner" and more **"what the absence of the fear of God lets emerge."** *(D9 #108 — open; test across the no-fear-of-God set.)*
+
+### Corroborating (non-perek) fan-out verses
+| verse | contributes | raw extract |
+|---|---|---|
+| Exo 1:12 (+10,11) | the **emergence/escalation** + the unreal perceived threat (#40, #107) | `verse-analysis/Exo/wa-exo-001-012-fanout-v1-20260629.md` |
+| Gen 20:11 | no-fear-of-God → **killing** emerges (cohabitation #108) | `verse-analysis/Gen/wa-gen-020-011-fanout-v1-20260629.md` |
+| Deu 25:18 | no-fear-of-God → **exploiting the weak** emerges (cohabitation #108) | `verse-analysis/Deu/wa-deu-025-018-fanout-v1-20260629.md` |
 
 ## Contributor evidence (raw — in the Exo 1:13 raw collection)
 The cruelty-themed Logos + Claude-Chat extracts (where ruthlessness occurs across Scripture; what *causes* ruthlessness — heart/fear-of-God-absent/anger/greed/pride; the perek lexical shape) are preserved verbatim in `verse-analysis/Exo/wa-exo-001-013-fanout-v1-20260627.md` (Researcher comments → "From logos" / "extract from Claude Chat"). They feed the D2 (source) and D12 (hidden) observations above.
