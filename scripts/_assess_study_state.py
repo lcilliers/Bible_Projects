@@ -24,6 +24,10 @@ VERSE_RE = re.compile(r'\b([1-3]?[A-Z][a-z]{2,3})\s+(\d+):(\d+)\b')
 
 def dlabel(code): return f"{code} {DIM.get(code, '?')}"
 
+def cell(s):
+    """Sanitize a value for a markdown table cell: escape pipes, flatten newlines."""
+    return (s or '').replace('\n', ' ').replace('\r', ' ').replace('|', '\\|')
+
 def age_days(ts, today):
     if not ts: return None
     try: return (today - datetime.date.fromisoformat(str(ts)[:10])).days
@@ -80,18 +84,17 @@ def main():
 
     # OPEN THREADS grouped by track (operation)
     w("## OPEN THREADS — by track")
-    w("*Every unresolved observation. The claim is truncated; full text in `ib_observation`.*")
+    w("*Every unresolved observation, **full text**. `→ go to` = where to go to resolve it.*")
     w()
     ops = sorted(set(o['operation'] for o in openobs))
     for op in ops:
         group = [o for o in openobs if o['operation']==op]
         w(f"### {op} ({len(group)} open)")
-        w("| # | dimension | claim | go to (reconsider_at) | origin | age |")
-        w("|---|---|---|---|---|---|")
         for o in sorted(group, key=lambda o:(o['status']!='needs-corroboration', -(age_days(o['created'],today) or 0))):
-            claim = (o['narrative'] or '')[:90].replace('\n',' ')
-            ad = age_days(o['created'], today); agetag = f"{ad}d" + ("⚠" if ad and ad>=STALE_DAYS else "") if ad is not None else ""
-            w(f"| #{o['id']} | {dlabel(o['dimension'])} | {claim}… | {o['reconsider_at'] or '—'} | {o['origin_verse']} | {agetag} |")
+            ad = age_days(o['created'], today); agetag = f"{ad}d" + (" ⚠" if ad and ad>=STALE_DAYS else "") if ad is not None else ""
+            w(f"- **#{o['id']} · {dlabel(o['dimension'])}** · _{o['status']}_ · origin {o['origin_verse']} · {agetag}")
+            w(f"  - {(o['narrative'] or '').strip()}")
+            w(f"  - **→ go to:** {o['reconsider_at'] or '—'}")
         w()
 
     # BY TRACK rollup (all observations, resolved+open)
