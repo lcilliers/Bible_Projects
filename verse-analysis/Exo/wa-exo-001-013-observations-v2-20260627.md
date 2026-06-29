@@ -16,7 +16,7 @@
 
 ---
 
-## RUTHLESSNESS (perek H6531) — 15 observations
+## RUTHLESSNESS (perek H6531) — 13 observations (#43,#44 re-homed to the cruelty stream)
 
 ### D1 · Identity
 - Ruthlessness (perek) is an inner cruelty — a hard, crushing disposition exercised by an actor over another.
@@ -28,10 +28,7 @@
   · **anchor** H6531 · **resolved** _(stance widened 2026-06-28)_ · reconsider at: Mal 3:5; Lev 25:17/36/43 (read); Eph 6:9; Col 4:1  _(#41)_
 - Beneath the trigger (dread), the deeper wellspring of cruelty is the HEART — every intention of the heart 'only evil' (Gen 6:5); evil comes from within (Mark 7:21-23).
   · **anchor** H3820 · **needs-corroboration** · reconsider at: Gen 6:5; Jer 17:9; Mark 7:21-23  _(#42)_
-- Anger/wrath produces cruelty — 'their wrath, for it is cruel' (Gen 49:7); 'wrath is cruel' (Pro 27:4).
-  · **anchor** H0639 · **needs-corroboration** · reconsider at: Gen 49:7; Pro 27:4  _(#43)_
-- Power without restraint enables cruelty — man has power over man to his hurt (Eccl 8:9); having the power becomes the justification.
-  · **anchor** H6531 · **needs-corroboration** · reconsider at: Eccl 8:9  _(#44)_
+- _**#43 & #44 RE-HOMED off Exo 1:13 (2026-06-29)** — researcher: anger→cruelty (Gen 49:7) and power→cruelty (Ecc 8:9) are **cruelty-genus** sources, not Exo 1:13 ruthlessness sources. Moved to the `cruelty` stream at their own verses._
 - Ruthlessness is enabled by a severed relationship / lost covenant memory — a new king who did not know (yada) Joseph (Exo 1:8).
   · **anchor** H3045 · **needs-corroboration** · reconsider at: Exo 1:8  _(#45)_
 ### D3 · Seat / bearer
