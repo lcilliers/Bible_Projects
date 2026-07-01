@@ -135,3 +135,21 @@ Passage boundaries **cannot** be detected from verse openers. Reliable sources, 
 
 ### Status of the build sequence
 Step 0 (fix the passage layer) is confirmed as the true blocker and is **bigger than a detector tweak** — it needs a real boundary source + researcher curation. The item-derivation rules (rounds 2-4) are ready to run **once passages are trustworthy**. Nothing downstream is safe until then.
+
+---
+
+## Round 6 — passage = CONSECUTIVE RUN (researcher, definitive; supersedes rounds 3-5 boundary work)
+
+**The passage is purely mechanical:** sort the DB verses by book, chapter, verse_num; any maximal run of consecutive verse numbers (length >= 2) is a passage. No `isolable`, no openers, no paragraph markers, no semantic detection, **no reading to establish boundaries**. Runs break at chapter boundaries. Context verses without terms may sit in a run — fine, since each term is evaluated by itself.
+
+**Rebuilt** (`_apply_rebuild_passages_consecutive_v2_20260701.py`, DB backed up): **3,650 passages, 22,209 verses linked, 3,650 anchors** over the master `verse` index. `verse.passage_id` (members; NULL=singleton), `verse.is_passage_anchor` (1=first/anchor, 0=member).
+
+**This captures Exo 1:13 for free:** its run = **Exo 1:7-14** (verses 6 and 15 aren't in the DB), so processing 1:13 loads 1:14 forward + 1:10-12 back — exactly the unit the isolable marker missed.
+
+### Consequences (big simplification)
+- **Validator A collapses to a lookup:** passage membership = the consecutive run (`verse.passage_id`); anchor = first verse. No forward/backward walk, no confirmed-vs-candidate, no review queue for boundaries.
+- **Rounds 3-5 boundary machinery is superseded:** the opener heuristic (over-generated) and the isolable-based passage build are dropped. The **process marker + Validator B (spans-in-DB) + anchor-on-first-verse** design stays; only Validator A's source changes to the passage_id lookup.
+- **No upfront passage phase.** Passages exist the moment verses are ingested. The researcher read is for term meaning during the verse-read, not for boundaries.
+
+### Where the build stands now
+Step 0 (passage layer) is **done and trustworthy**. Remaining: wire the round-2/3 derivation rules onto (anchor -> load passage morphology -> derive), refine effect/process/source/target on a wider sample, then convert old->new schema and rerun.
