@@ -65,3 +65,28 @@ Architecture per researcher direction: **read once** (one batch query each for s
 
 ### Read
 The **read-once + per-item-rule architecture is right** and each rule is now revisable in isolation. Three items fixed in one round on the reworked rules; three precise defects remain, each with a known fix. This is the iterate-to-correct loop the researcher expected — round 3 targets source/target/operation + T2-skip, re-tested on these 4 + a wider sample.
+
+---
+
+## Round 3 — PASSAGE-AWARE (researcher correction: Exo 1:13 must be read as its passage)
+
+Harness: `scripts/_probe_lexical_derivation_harness_v2_passage_20260701.py`. Loads the whole passage once, derives across the combined span-set anchored on the first verse (the stated processing algorithm).
+
+**Demo passage: Exo 1:11-14** (the oppression pericope). *Note: the DB only flags 1:11-12 as a passage — the `isolable` marker MISSED 1:13-14, though perek + abad repeat and "and made their lives bitter" plainly continues 1:13. Marker under-detection = a real gap to fix before passages can drive analysis.*
+
+### Ruthlessness (perek H6531) — isolated vs passage
+| item | isolated 1:13 | passage 1:11-14 |
+|---|---|---|
+| source (D2) | NONE | **dread (H6973) @1:12** ✓ |
+| effect (D8) | NONE | **bitter (marar Piel) @1:14** (rule picked the operation verb; fix: pick the produced-state) |
+| process (D7) | not captured | **set→afflict→oppressed→dread→enslave→bitter→slaves** ✓ (the escalation) |
+| manner | "work" only | **ruthlessly frames 1:13 + 1:14** (perek 2×) ✓ |
+| target (D5) | NONE/wrong | **people of Israel** ✓ |
+
+### What this proves
+1. **Passage scope is mandatory, not optional.** `source`, `effect`, `process` **do not exist** at single-verse scope — isolated evaluation is systematically impoverished. Every analysis must run on the passage.
+2. **The passage layer must be corrected first.** The auto-marker missed 1:13-14; a passage-driven analysis on the current layer would wrongly treat 1:13 as isolated. → improve passage detection (forward links, not just backward `isolable`) + manual adjustment, before the lexical build.
+3. **Round-3 refinements:** `effect` must skip the operation verb and take the produced-state (marar); `process` should filter to IB-relevant operations (drop "built/multiplied/spread" = the Israelites' response, keep afflict/oppress/dread/enslave/embitter).
+
+### Consequence for the build order
+Add a step **0** before the item build: **fix the passage layer** (detector + manual review), because the lexical is prepared per-passage. Sequence becomes: fix passages → settle per-item rules (passage-aware) → convert old→new schema → rerun all.
