@@ -307,3 +307,20 @@ Researcher comments 2
 ve-id->verse_record_id"A verse_record_id can have multiple term_index" — ⚠️ Naming correction. A verse_record_id (a wa_verse_records row) IS one term — it cannot hold multiple terms. The thing that holds multiple terms is the verse (reference / verse_id). So the sentence is true if you read it as "a verse has multiple terms" — confirmed, 1–16 per verse. verse_record_id = the term level, not the verse level.
 
 ve-id -> term_id -
+---
+
+## 7.7 Baseline verification (a–d, 2026-07-01)
+
+Researcher-requested checks against the DB.
+
+**(a) Chain + cardinality — CONFIRMED (with naming).** Live example: `ve_id 2351222 → verse_context 15145 → verse_record 60883 → verse_id 84 (1Ch 16:25)`, term `mti=298` consistent on both. Corrected chain: **`ve_lexical (ve-id) → verse_context (the term-in-verse "index") → wa_verse_records (verse_record_id, per-term) → verse_id (the verse)`**. A `verse_id` carries multiple terms (1–16); *only OWNER-term contexts carry ve-lexical* — confirmed (§7.6, and (c) below).
+
+**(b) The 4 blocked verses — all `arar` (H0779) fanout onboards.** `2Sa 12:15`, `Deu 28:17`, `Deu 28:18`, `Gen 9:25` each carry the recently-onboarded term **H0779 (arar, "curse")**, `verse_id` NULL, and **0 ve_lexical rows** (not yet analysed). None are in the `verse` master index (not by reference nor by book/ch/vs) — the verses were never ingested into the measure layer. **Fix = ingest these 4 verses** (`scripts/_apply_ingest_verse_morphology.py`) → then verse_id fills and lexical can generate. Low urgency (no lexical hangs on them yet).
+
+**(c) OWNER/XREF + term identity.**
+- Post-cleanup: ve-lexical-bearing verse_contexts = **40,235 OWNER + 236 (null owner_type), 0 XREF, 0 on delete_flagged.** Clean.
+- **Term identity** (`verse_context.mti_term_id` vs `wa_verse_records.mti_term_id`): **40,463 of 40,471 agree; 8 mismatch** — all homonym sub-entries (`H2803I/J`, `H3772H`) at `2Ch 21:7`, `Isa 29:17`, `Psa 40:17`, `41:7`, `52:2`. A tiny grounding inconsistency (likely OT-DBR-009 mti dedup); flagged, not fixed.
+
+**(d) Anchor — NOT universal.** Of ve-lexical-bearing OWNER-active contexts: `is_anchor=1` = **3,934**, `is_anchor=0` = **36,301**. Of **2,185** OWNER terms carrying ve-lexical, **273 have no `is_anchor=1` verse_context at all.** So "each owner term has an anchor verse" does **not** hold today. ⚠ Open question: is `is_anchor` still load-bearing under the fanout model, or a legacy of the verse_context_group era? Needs a researcher decision before treating the 273 as a defect.
+
+> **The D1–D14 → ve-lexical catalogue design** (item e) is in [wa-ve-lexical-dimension-catalogue-design-v1-20260701.md](wa-ve-lexical-dimension-catalogue-design-v1-20260701.md).
