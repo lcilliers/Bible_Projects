@@ -111,3 +111,27 @@ Researcher requirement: before any work the script must run two startup validato
 2. Anchor moved to 1:10 via *candidate* links — decide whether ve-records anchor on the **confirmed** boundary until candidates are reviewed, or on the proposed boundary (current).
 
 Startup flow now built into the script: **Validator A → Validator B → anchor → read-all-morphology-together → start work** (derivation reuses the round-2/3 rules over the loaded passage spans).
+
+---
+
+## Round 5 — process marker + batch resilience (`_apply_passage_process_markers_v1_20260701.py`)
+
+Built to spec: two verse-level fields — `verse.process_marker` and `verse.is_passage_anchor` — and a batch loop that, per verse: runs Validator A (fwd+back) then B (spans-in-DB), and **on failure writes the marker + moves on**; on pass sets the **anchor (first verse only)** with the full passage ref, members marked non-anchor.
+
+Marker outcomes: `ANCHOR:<full passage ref>` · `MEMBER:<anchor ref>` · `A-REVIEW:<n>v-candidate-boundary` · `B-BLOCKED:<refs>`.
+
+### Finding (dry-run on Exodus 1) — the boundary SIGNAL is the real problem
+**14 of 16 verses → `A-REVIEW`; only 2 anchored.** Cause: the continuation-opener heuristic ("and/so/but/therefore") fires on almost every verse, because **Hebrew narrative uses waw ("and") as the default connector** — it is *not* a passage-boundary signal. So mechanical passage detection over-generates massively; nearly everything defers to review.
+
+**Held live-write** — writing 14/16 "review" markers is not useful state until the boundary signal is fixed.
+
+### Design correction (the gating problem, restated)
+Passage boundaries **cannot** be detected from verse openers. Reliable sources, in order of preference:
+1. **`isolable='no'` (confirmed)** — meaningful but **sparse / under-detects** (missed Exo 1:13-14).
+2. **Paragraph markers** — Hebrew *setumah/petuchah* (§/¶), or STEP/scholarly pericope divisions, if fetchable.
+3. **Researcher pericope divisions** — a manual/curated passage table (most reliable; the study's own boundaries).
+
+**Recommendation:** drop the opener heuristic; drive passages from **isolable (confirmed) + a real paragraph/pericope source**, and treat the passage layer as a **curated** artefact the researcher confirms — not a naive mechanical guess. The process-marker + anchor + validator architecture (this round) is correct and stays; only the **boundary signal feeding Validator A** must be replaced.
+
+### Status of the build sequence
+Step 0 (fix the passage layer) is confirmed as the true blocker and is **bigger than a detector tweak** — it needs a real boundary source + researcher curation. The item-derivation rules (rounds 2-4) are ready to run **once passages are trustworthy**. Nothing downstream is safe until then.
