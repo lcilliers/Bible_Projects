@@ -90,3 +90,24 @@ Harness: `scripts/_probe_lexical_derivation_harness_v2_passage_20260701.py`. Loa
 
 ### Consequence for the build order
 Add a step **0** before the item build: **fix the passage layer** (detector + manual review), because the lexical is prepared per-passage. Sequence becomes: fix passages → settle per-item rules (passage-aware) → convert old→new schema → rerun all.
+
+---
+
+## Round 4 — the two STARTUP VALIDATORS built into the script (`_probe_lexical_derivation_harness_v3_startup_20260701.py`)
+
+Researcher requirement: before any work the script must run two startup validators, then pick the anchor, read all passage morphology together, and start.
+
+**Validator A — passage membership, forward + backward.** Walks both directions from the start verse; classifies each link as **confirmed** (backward `isolable='no'`) or **candidate** (a continuation opener "So/therefore/and/…" or wayyiqtol) → candidates are **flagged for review** (never silently trusted, since the marker is backward-only + under-detects).
+
+**Validator B — all relative spans in the DB.** Every passage verse must have `verse_morphology`; a missing verse is a BLOCKER.
+
+**Demo — start `Exo 1:13`:**
+- Validator A → passage **Exo 1:10–1:14**; 1 confirmed link (`1:11↔1:12`), 3 candidate links (`1:12↔1:13`, `1:10↔1:11`, `1:13↔1:14`) flagged for review. *(Fixes the earlier miss — 1:14 forward + 1:10-12 backward now pulled in.)*
+- Validator B → all 5 verses present (13/11/8/5/13 spans); not blocked.
+- Anchor = **Exo 1:10** (first verse, ve-records attach here). Loaded 50 spans across 5 verses in one batch → ready to derive.
+
+**Open design points flagged:**
+1. Continuation heuristic can over-extend ("and…" chains) → candidate links are review-gated; may want a paragraph/setumah bound.
+2. Anchor moved to 1:10 via *candidate* links — decide whether ve-records anchor on the **confirmed** boundary until candidates are reviewed, or on the proposed boundary (current).
+
+Startup flow now built into the script: **Validator A → Validator B → anchor → read-all-morphology-together → start work** (derivation reuses the round-2/3 rules over the loaded passage spans).
