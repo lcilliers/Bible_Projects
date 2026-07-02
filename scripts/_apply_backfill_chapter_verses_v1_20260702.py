@@ -16,7 +16,7 @@ Usage:
   python scripts/_apply_backfill_chapter_verses_v1_20260702.py --book=Psa --chapter=2
   python scripts/_apply_backfill_chapter_verses_v1_20260702.py --book=Psa --chapter=2 --live
 """
-import os, re, sqlite3, sys, shutil, argparse
+import os, re, sqlite3, sys, shutil, argparse, html as _html
 from datetime import datetime, timezone
 import requests
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
@@ -47,12 +47,53 @@ def parse_words(html, vid):
                      morph_util.morph_stem(m0), person(m0), "STEP", NOW))
     return rows
 
+def clean_verse_text(raw_html, ref):
+    """FULL readable verse text from the STEP interlinear HTML.
+    The interlinear wraps only morph-tagged words in <span morph=... strong=...>; untagged words and
+    punctuation sit BETWEEN the spans. Joining only the tagged spans (the old bug) dropped the glue and
+    produced fragments (e.g. 'put flight you aim their faces bows'). Stripping ALL tags keeps the full text.
+    Prefixes the reference to match the existing corpus convention (every verse_text contains its ref)."""
+    s=raw_html or ""
+    s=re.sub(r"<h2\b[^>]*>.*?</h2>"," ",s,flags=re.S|re.I)   # drop the 'Psalms 22:7' heading
+    s=re.sub(r"<br\s*/?>"," ",s,flags=re.I)                   # line breaks -> space
+    s=re.sub(r"<[^>]+>","",s)                                 # strip all remaining tags
+    s=_html.unescape(s)                                       # &#xNNNN; entities
+    s=s.replace("‏"," ").replace("‎"," ")          # bidi marks
+    s=re.sub(r"\s+"," ",s).strip()                           # collapse whitespace
+    s=re.sub(r"\s+([;:,.!?])",r"\1",s)                       # tidy space-before-punctuation
+    if s and ref and ref not in s: s=f"{ref} {s}"            # prefix ref (corpus convention)
+    return s
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("--book",required=True); ap.add_argument("--chapter",type=int,required=True)
+    ap.add_argument("--book",required=True); ap.add_argument("--chapter",type=int,default=None)
     ap.add_argument("--maxverse",type=int,default=200); ap.add_argument("--live",action="store_true")
+    ap.add_argument("--repair",action="store_true",
+                    help="Rebuild fragmentary verse_text from stored verse_morphology_raw (no STEP fetch). "
+                         "Scans --book (optionally --chapter) for verses whose verse_text lacks its own reference.")
     a=ap.parse_args()
     conn=sqlite3.connect(DB,timeout=600); conn.row_factory=sqlite3.Row; cur=conn.cursor()
+
+    if a.repair:
+        q=("""SELECT v.id id, v.reference ref, r.html html FROM verse v
+               JOIN verse_morphology_raw r ON r.verse_id=v.id
+               JOIN books b ON b.id=v.book_id
+               WHERE b.short_code=? AND (v.verse_text IS NULL OR instr(v.verse_text, v.reference)=0)""")
+        params=[a.book]
+        if a.chapter is not None: q+=" AND v.chapter=?"; params.append(a.chapter)
+        rows=cur.execute(q+" ORDER BY v.chapter, v.verse_num",params).fetchall()
+        fixes=[(clean_verse_text(r['html'],r['ref']), r['id'], r['ref']) for r in rows]
+        fixes=[f for f in fixes if f[0] and f[2] in f[0]]   # only keep well-formed rebuilds
+        print("repair: %d verse(s) with fragmentary/ref-less verse_text (raw available) in %s%s"
+              %(len(fixes),a.book,(" ch%d"%a.chapter) if a.chapter is not None else ""))
+        for t,_id,ref in fixes[:60]: print("   %-12s -> %s"%(ref,t[:96]))
+        if not fixes: print("nothing to repair."); return
+        if not a.live: print("\nDRY-RUN. Re-run with --repair --live to write."); return
+        shutil.copy2(DB,os.path.join('backups','bible_research.pre-repair.%s.db'%datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')))
+        cur.executemany("UPDATE verse SET verse_text=? WHERE id=?",[(t,i) for t,i,_ in fixes])
+        conn.commit(); print("repaired %d verse_text values."%len(fixes)); return
+
+    if a.chapter is None: print("--chapter is required unless --repair is used."); return
     meta=cur.execute("SELECT MIN(book_id) bid, MIN(testament) tst FROM verse WHERE reference LIKE ?||' %'",(a.book,)).fetchone()
     if not meta or meta['bid'] is None: print("unknown book '%s'"%a.book); return
     bid=meta['bid']; tst=meta['tst']
@@ -83,7 +124,7 @@ def main():
     built=0
     for vn,ref,osis,html in tobuild:
         words=parse_words(html,None)
-        vtext=" ".join(w[2] for w in words)
+        vtext=clean_verse_text(html, ref)
         cur.execute("""INSERT INTO verse (osis_id,reference,book_id,chapter,verse_num,testament,verse_text,created_at,genre)
             VALUES (?,?,?,?,?,?,?,?,?)""",(osis,ref,bid,a.chapter,vn,tst,vtext,NOW,genre))
         vid=cur.lastrowid
