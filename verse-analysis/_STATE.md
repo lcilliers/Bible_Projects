@@ -6,14 +6,14 @@
 
 ## Headline
 - **290 verses analysed** (Phase-1 marked) across **21 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
-- **20 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
+- **21 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
 - **0 blocked** (⚠ spans missing) · **0 needing review** (◐).
 - **8811 `ve_lexical` rows** — 2475 gate-1 (tagged term) · 6336 gate-2 (relevant content span).
 
 ## ▶ NEXT ACTION
 *Derived from state — Phase-1 chapters whose Phase-2 reading is not yet filed, and any blocked verses.*
 
-- **Psa 21** — Phase-1 complete, **Phase-2 reading pending** → write `wa-psalm21-inner-being-reading-*.md`, then file (`_apply_file_chapter_lexical_prose_v1_...`).
+- No Phase-1 chapter is waiting on its Phase-2 reading.
 
 ## Poetic chapter-driven pipeline
 *The live Psalter work. Phase-1 = per-verse lexical marked; Phase-2 = whole-chapter reading filed.*
@@ -40,7 +40,7 @@
 | Psa | 18 | 50/50 | ✓ | ✓ (416) |  |
 | Psa | 19 | 14/14 | ✓ | ✓ (417) |  |
 | Psa | 20 | 9/9 | ✓ | ✓ (418) |  |
-| Psa | 21 | 13/13 | ✓ | ⬜ pending |  |
+| Psa | 21 | 13/13 | ✓ | ✓ (419) |  |
 
 ## Per-verse markers (analysed verses)
 *One line per analysed chapter — the marker beside every verse present in the DB.*
@@ -65,7 +65,7 @@
 - **Psa 18** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ 21✓ 22✓ 23✓ 24✓ 25✓ 26✓ 27✓ 28✓ 29✓ 30✓ 31✓ 32✓ 33✓ 34✓ 35✓ 36✓ 37✓ 38✓ 39✓ 40✓ 41✓ 42✓ 43✓ 44✓ 45✓ 46✓ 47✓ 48✓ 49✓ 50✓ · Phase 2: ✓ (416)
 - **Psa 19** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ · Phase 2: ✓ (417)
 - **Psa 20** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ · Phase 2: ✓ (418)
-- **Psa 21** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ · Phase 2: ⬜ pending
+- **Psa 21** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ · Phase 2: ✓ (419)
 
 ## Prose term-driven pipeline
 *Verses marked by the prose (term-driven) build, grouped by track.*

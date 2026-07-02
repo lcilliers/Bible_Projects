@@ -31,8 +31,11 @@
 | 16 | 414 | God as the soul's portion; "no good apart from you"; whole-person joy; fullness of joy in presence |
 | 17 | 415 | night-tested purposed heart; apple of eye/shadow of wings; two satisfactions (this-life portion vs "satisfied with your likeness") |
 | 18 | 416 | deliverance (50v, sectioned); "I love you"; the reciprocity MIRROR (God met per the disposition brought); gentleness made me great |
+| 19 | 417 | two revelations (heavens + word); the word revives/rejoices/enlightens the inner being; hidden faults vs presumptuous sins; "meditation of my heart" |
+| 20 | 418 | royal/corporate; what you trust defines & decides you (name vs chariots); the heart's desire brought to God, not grasped |
+| 21 | 419 | royal thanksgiving — the ANSWER to Ps 20; the trusting heart is a RECEIVING heart; joy wholly derivative; heart's desire granted; "not moved" rests on trust met by steadfast love; gifts terminate in the Presence |
 
-**Next: Psalm 19.**
+**Next: Psalm 22.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
@@ -42,7 +45,11 @@
 - **Speech reveals the inner being** — Ps 5, 10, 12 (made the whole subject).
 - **Being heard** — pleaded (Ps 5) → grasped (Ps 6).
 - **Right self-sizing (enosh)** — Ps 8 ("what is man"), 9 ("but men").
-- **Behold God's face / satisfaction in presence** — Ps 11:7, 16:11 (fullness of joy), 17:15 ("satisfied with your likeness").
+- **Behold God's face / satisfaction in presence** — Ps 11:7, 16:11 (fullness of joy), 17:15 ("satisfied with your likeness"), 21:6 (the gifts terminate in "the joy of your presence").
+- **What you trust defines & decides you** — Ps 20:7 (name vs chariots), 21:7 (the king trusts → not moved); trust as the inner posture that receives (21) and stands (20). Ties to the "not moved" thread (Ps 15:5, 16:8).
+- **The heart's desire brought to God, then granted** — Ps 20:4 (petition: "may he grant you your heart's desire") → 21:2 (answer: "you have given him his heart's desire"); the inner longing entrusted, not grasped, and answered/exceeded (21:4).
+- **The word/law acts on the inner being** — Ps 19:7–8 (revives the soul, rejoices the heart, enlightens the eyes); 12:6 (the sevenfold-refined word); inner light rekindled (13:3, 18:28).
+- **Hidden vs presumptuous sin; the inner watch on the self** — Ps 19:12–14 ("hidden faults", "presumptuous sins", "the meditation of my heart"); self-examination (Ps 4:4, 17:3).
 - **God as portion / supreme good vs earthly portion** — Ps 16 ("no good apart from you", "my portion"), 17:14–15 (portion in this life vs God's face).
 - **The heart quoted / practical atheism** — Ps 10:4,11 (wicked's heart), 14:1 (fool's "no God"), inverted in 16:7 (heart instructs by night), 4:4 (ponder in your heart).
 - **God met per the disposition brought (reciprocity mirror)** — Ps 18:25–27.
