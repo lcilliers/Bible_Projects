@@ -1,0 +1,39 @@
+# Psalm 35 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 35:1–28 (chapter-driven poetic build; roles sanity-checked). Complete chapter (vv.17–21 backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **A long imprecatory lament — honestly scoped.** Most of it (the "contend/fight/let them be put to shame," vv.1–8, 17, 19–26) is the *arena* of hostile enemies. The inner-being findings are concentrated where the psalm turns to what happened *inside*: the **wound of betrayed reciprocity** — a soul *bereaved* by evil-for-good (v.12), sharpened by the memory of its own **empathetic identification** with the now-hostile (vv.13–14). Around this: the need for an inner word (v.3), the whole-person turn to praise (vv.9–10), and a contrast of two *delights* — where desire is aimed (vv.25, 27).
+
+## The reading
+
+**I. The need for a word spoken *into* the soul (v.3).**
+"**Say** to my **soul** (H5315, the seat — M47), 'I am your salvation!'" (v.3). Amid the plea for external rescue, one request is directed **inward**: the inner being asks for a word **addressed to it directly** — not merely to be delivered, but to *hear* the assurance spoken into the soul *(stated)*. The operation: the inner being seeks an **internal word of reassurance**, something said *to* it, as its steadying *(inferred: the request is specifically "say *to my soul*")*.
+
+**II. The wound of betrayed reciprocity — the bereaved soul (vv.11–12).**
+"Malicious witnesses rise up… They **repay** me **evil** (H7451, M27) for **good** (H2896); my **soul** (H5315, M47) is **bereft** (H7908, *shekol* — bereavement, the loss of a child)" (vv.11–12). The precise inner-being injury: the return of **evil for good** strikes the soul as a **bereavement** — the word is the one used for losing a child *(stated: my soul is bereaved)*. The finding: the inner being registers **unrequited kindness not as mere disappointment but as a *loss of something it had birthed*** — the good it gave, killed in the giving-back of evil *(inferred: shekol frames the betrayed good as a bereavement)*.
+
+**III. The operation of empathy — and its betrayal (vv.13–16).**
+Why the wound cuts so deep is now disclosed: "But I, when **they** were sick — I wore sackcloth; I **afflicted** (H6031, M24, *anah*) **myself** (H5315, the soul — M47) with fasting… I went about as though I **grieved for my friend or my brother**; as one who **laments his mother**, I bowed down in **mourning** (H0057, M03)" (vv.13–14). The operation: the inner being had **identified with its now-enemies as with closest family** — grieving for them, afflicting its own soul on their behalf, mourning their sickness as a son mourns a mother *(stated)*. Then the betrayal: "But at my **stumbling** they **rejoiced** (H8055, M04) and gathered… they **gnash at me with their teeth**" (vv.15–16). The finding is the **asymmetry**: the inner being that *mourned-with* is met by those who *rejoice-at* — deep prior identification answered by visceral hostility *(inferred: the "But I… / But at my stumbling they…" sets the two dispositions against each other)*.
+
+**IV. The soul's turn to rejoicing — whole-person praise (vv.9–10).**
+Against the wound, the anticipated inner turn: "Then my **soul** (H5315, M47) will **rejoice** (H1523, M04) in the LORD, **exulting** (H7797, M04) in his salvation. **All my bones** shall say, 'O LORD, who is like you…?'" (vv.9–10). The operation: the inner being's joy is **total** — not only the soul rejoices, but "**all my bones**" speak; the whole person is drawn into the praise *(stated)*. The finding: praise, when it comes, **integrates the whole self** — even the skeletal frame is enlisted; the inner being's worship is not partial but bodily-entire *(inferred: "all my bones shall say")*.
+
+**V. Two *delights* — where desire is aimed (vv.25, 27).**
+The enemies' inner life is exposed by its object: "Let them not say in their **hearts** (H3820, M47), 'Aha, our **heart's desire** (H5315, the soul's want — M47)!'… 'We have **swallowed him up**'" (v.25). Their soul's *desire* is **his ruin** — the malicious inner being finds its fulfilment in another's destruction *(stated)*. Set against this: "Let those who **delight** (H2655, M04, *chaphets*) in my righteousness shout for joy… 'Great is the LORD, who **delights** (H2655, M04) in the **welfare** (H7965, M33, *shalom*) of his servant!'" (v.27). The finding is the **contrast of aimed delight**: the wicked's desire is set on ruin; the LORD's delight (and the righteous') is set on **shalom, the servant's welfare** *(stated)*. The same faculty — delight/desire — is defined by **what it is aimed at**; ruin or peace *(inferred: chaphets recurs, aimed oppositely)*.
+
+**VI. The vindicated tongue (v.28).**
+"Then my **tongue** shall tell of your **righteousness** and of your **praise** all the day long" (v.28). The wound-to-praise arc closes in the inner being's **speech**: the tongue that was the enemies' weapon (gnashing, "Aha") becomes, in the vindicated self, the organ of continual praise *(stated; the speech-reveals-the-inner-being thread)*.
+
+## What Psalm 35 says about the inner being
+- **The inner being seeks a word spoken *into* it (v.3).** Beyond deliverance, it wants the assurance *addressed to the soul* — "say to my soul, 'I am your salvation.'"
+- **Betrayed reciprocity wounds the soul as a *bereavement* (v.12).** Evil returned for good is registered not as disappointment but as the loss of something birthed — the good, killed in the giving-back.
+- **The wound's depth is the depth of prior empathy (vv.13–16).** The inner being had identified with its now-enemies as with friend, brother, mother — afflicting its own soul for them. That mourning-with, answered by rejoicing-at, is the asymmetry that cuts.
+- **Praise integrates the *whole* self (vv.9–10).** When joy comes, not only the soul rejoices — "all my bones" speak. The inner being's worship is bodily-entire, not partial.
+- **Delight is defined by its object (vv.25, 27).** The wicked's soul-desire is another's ruin; the LORD's (and the righteous') delight is the servant's *shalom*. The same faculty is malice or love depending on where it is aimed.
+- **The vindicated inner being's tongue turns to praise (v.28).** The speech-organ that was the enemies' weapon becomes, in the delivered self, the instrument of continual praise.
+
+## Honest notes
+- **Scope honesty:** the imprecation (vv.1–8, 17, 19–26) is the arena of the hostile — external pole (memory `feedback_external_pole_not_inner_state`), read for the enemies' *disposition* (malicious joy, the heart's desire for ruin) rather than mined as the psalmist's own inner process.
+- **Systemic Phase-1 residuals** (prohibition over-stamp across the "let them not…" jussives, vv.11,15,19,24,25; bearer=LORD bleed; backfilled vv.17–21 now full-text via the fix; intensity *all*) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **v.12 "bereft" (H7908, *shekol*)** captured gate-2 standalone; the inner-being force (soul-bereavement) is read from the noun. Candidate to note *shekol-of-soul* as an inner-state.
+- **Characteristics (sanity-checked):** *soul* (H5315, M47, vv.3,9,12,13,17,25); *rejoice/exulting* (H1523/H7797/H8055, M04, vv.9,15,27); *evil/calamity* (H7451, M27/M03, vv.12,26); *afflicted* (H6031, M24, v.13); *mourning* (H0057, M03, v.14); *hearts* (H3820, M47, v.25); *put-to-shame/disappointed/shame/dishonor* (H0954/H2659/H1322/H3639, M07, vv.4,26); *delight/delights* (H2655, M04, v.27); *welfare/shalom* (H7965, M33, v.27); *righteousness* (H6664, M26, vv.27,28).
