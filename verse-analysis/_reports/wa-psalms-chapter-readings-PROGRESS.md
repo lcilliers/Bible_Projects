@@ -26,8 +26,13 @@
 | 11 | 409 | trust as refusing to flee; the sight thread → behold his face |
 | 12 | 410 | double heart vs sevenfold-refined word; speech = outflow of inner being |
 | 13 | 411 | lament in miniature; fourfold "how long"; pivot on "but I have trusted" |
+| 14 | 412 | fool's "no God" as heart posture corrupting conduct; God scans for seekers; universal turning-aside |
+| 15 | 413 | entrance liturgy; integrity = truth in the heart, oath kept to own hurt, so never moved |
+| 16 | 414 | God as the soul's portion; "no good apart from you"; whole-person joy; fullness of joy in presence |
+| 17 | 415 | night-tested purposed heart; apple of eye/shadow of wings; two satisfactions (this-life portion vs "satisfied with your likeness") |
+| 18 | 416 | deliverance (50v, sectioned); "I love you"; the reciprocity MIRROR (God met per the disposition brought); gentleness made me great |
 
-**Next: Psalm 14.**
+**Next: Psalm 19.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
@@ -37,6 +42,11 @@
 - **Speech reveals the inner being** — Ps 5, 10, 12 (made the whole subject).
 - **Being heard** — pleaded (Ps 5) → grasped (Ps 6).
 - **Right self-sizing (enosh)** — Ps 8 ("what is man"), 9 ("but men").
+- **Behold God's face / satisfaction in presence** — Ps 11:7, 16:11 (fullness of joy), 17:15 ("satisfied with your likeness").
+- **God as portion / supreme good vs earthly portion** — Ps 16 ("no good apart from you", "my portion"), 17:14–15 (portion in this life vs God's face).
+- **The heart quoted / practical atheism** — Ps 10:4,11 (wicked's heart), 14:1 (fool's "no God"), inverted in 16:7 (heart instructs by night), 4:4 (ponder in your heart).
+- **God met per the disposition brought (reciprocity mirror)** — Ps 18:25–27.
+- **The inner light rekindled** — Ps 13:3 ("light up my eyes"), 18:28 ("you light my lamp").
 
 ## Learned rules now in the Phase-1 script (continuous learning)
 - **Role rule:** gate-1 tagged term functioning adverbially (manner/coupling) → process-qualifier, not characteristic.
