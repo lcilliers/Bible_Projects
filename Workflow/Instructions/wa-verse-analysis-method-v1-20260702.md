@@ -101,3 +101,20 @@ The lexical build **starts from `verse_span_index` (every span)**, not from a pr
 **Storage (schema 3.36.0, M62):** `ve_lexical` is now **span-keyable** — `verse_context_id` nullable + `verse_span_id`→`verse_span_index` + `gate`. Gate-1 rows carry both; gate-2 rows carry `verse_span_id` only.
 
 **Proof (ruthlessness passages):** content-span coverage rose from **14% → 94%** (197/210 content spans; 52 function words skipped). The earlier build skipped ~86% of spans incl. `dread`, `deal-shrewdly` (deceit), `taskmasters` — all now lexicalised. Writer: `_apply_write_ruthlessness_index_driven_v3_20260702.py`; coverage check: `wa-span-index-coverage-5passages-20260702.md`.
+
+---
+
+## 13. SANITY CHECK + role-based rollup (researcher, 2026-07-02)
+The index-driven initial build (§12) is a **fast mechanical DRAFT — not trusted**. The A/B/C classification noise proved it: derive-fast without evaluation produces mis-derived bearer/target, spurious source, and mis-classified roles. Two governing rules:
+
+**13a. SANITY CHECK — mandatory post-build gate.** After the initial build, every span's derived values are **evaluated against the verse** for correctness/sensibility → corrected, or flagged in **D11**. Each span is assigned a **ROLE**. Only then is the lexical trusted / rolled up. ("Derive fast, THEN evaluate" — the read-back loop as a distinct gate, not an afterthought.)
+
+**13b. Rollup scope is by ROLE, not every span.**
+- **characteristic** (the focus disposition, e.g. ruthlessness) → full term-driven rollup (all its verses → story, §8).
+- **qualifier / process-element** that binds to a characteristic → gives **value/context to the binding pair in place**; **does NOT get its own verse rollup**.
+- **standalone** → no rollup.
+- **exception (later circles):** a qualifier whose *usage varies across contexts* may earn its own verses — surfaced in subsequent **refinement circles**, not the initial build.
+
+So "pull all the term's verses" (§8.3) is a **characteristic** operation. This settles abad/radah: `abad` (enslave) serves the ruthlessness pair as its bound action — no own-verse rollup needed *for ruthlessness*; only its own variation (a later circle) would earn one.
+
+**Consequence for the build order:** initial index-driven build → **sanity check (evaluate + assign role)** → rollup **characteristics** only → story → (later) refinement circles for context-varying qualifiers. The role assignment is a candidate for a stored **role** lexical item (so it isn't re-derived).
