@@ -79,7 +79,13 @@
 | 60 | 458 | (national lament, scoped) judgment DESTABILISES the inner being — made to REEL as from wine (v.3, loss of inner footing); human help recognised as VAIN (shav) and valour RELOCATED to God ("with God we shall do valiantly", vv.11-12) |
 | 61 | 459 | the FAINT heart reaching for a ground HIGHER than itself — "lead me to the rock that is higher than I" (v.2): the overwhelmed self seeks a refuge EXCEEDING its own reach, LED to not climbed to; refuge-longing is to DWELL/abide, not merely shelter (tent forever, under the wings, v.4) |
 
-**Next: Psalm 62.**
+| 62 | 460 | the soul's SILENT, EXCLUSIVE waiting for God ALONE — a POSITIVE silence (vs guilty 32/dreaded 28), self-commanded ("O my soul, wait in silence", v.5); silence + heart-OUTPOURING coexist (v.8, a focusing not a muteness); the heart's ATTACHMENT-faculty governed ("set not your heart on riches", v.10, grounded by re-sizing man as breath, v.9) |
+| 63 | 461 | thirst → satisfaction → CLINGING (a worked exemplar of an inner movement) — whole-being THIRST (soul + flesh faint, v.1); chesed valued ABOVE LIFE (v.3); thirst resolves into SATISFACTION as at a feast (v.5); night-MEDITATION on the bed turned God-ward (v.6); the soul CLINGS (dabaq, the Gen 2:24 cleaving-word) while God upholds (v.8) |
+| 64 | 462 | the DEPTH of the heart as a hiding-place — "the inward mind & heart of a man are DEEP" (v.6), trusted as unsearchable ("who can see them?", v.5); the will HOLDS FAST (chazaq) to an evil purpose (v.5); sod (confidential counsel) turned CONSPIRATORIAL (v.2); the deep heart hidden from MEN not God — the arrow reaches it (v.7) |
+| 65 | 463 | (creation psalm, scoped) praise as a SILENT WAITING (dumiyah, v.1); iniquities OVERPOWER the self (gabar), covered by God's ATONEMENT from outside not self-effort (v.3); the blessed self CHOSEN → brought NEAR → SATISFIED, God-initiated (v.4) |
+| 66 | 464 | the self REFINED through trial (tested/smelted like SILVER, tsaraph, through fire/water → abundance — affliction as purposive refining, vv.10-12); being-heard CONDITIONAL on the heart — CHERISHED iniquity (ra'ah = harboured/regarded, not mere having) BLOCKS the prayer (v.18); a mechanism of communion |
+
+**Next: Psalm 67.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
