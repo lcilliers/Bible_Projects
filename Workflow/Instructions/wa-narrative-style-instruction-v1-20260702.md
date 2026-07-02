@@ -10,11 +10,14 @@
 ## 2. The voice (researcher exemplar)
 > "Ruthlessness is the act of one human being to treat another being with exceptional harshness, to the point of enslaving and even death. It finds its source in the thoughts of a heart that is filled with evil, driven by perceived threat and deceit, without any regard and fear of God, who holds all power. Ruthlessness does not operate on its own but lives with scheming, lies, oppression…"
 
-## 3. Structure — the fixed order (every story)
+## 3. Structure — the fixed order
+### 3a. Single-term story (built from the term's lexicals ONLY — no old fanout, no old findings)
 1. **The act / identity** — what the operation *is*, defined plainly (the operation as the grammatical subject). *"X is the act of…"*
-2. **The impact** — what it *does* / where it goes (its escalation, its produced state, its extremity).
-3. **The source** — where it comes from: the seat/heart, the driver, and the moral condition (e.g. absence or presence of the fear of God).
-4. **The cohabitation / company** — what it does *not* operate alone with; the family it travels in and the root that company reveals.
+2. **The impact** — what it *does* / where it goes (its produced state / extremity), **as far as the lexicals show**.
+3. **The source & moral condition** — the driver where the text names one; the **restraint** (e.g. the fear of God) and its absence; the moral verdict (condemned / commanded) where the lexical shows it.
+
+### 3b. Cohabitation — DEFERRED to the CROSS-TERM story (not single-term)
+**The company an operation keeps, and the shared root that company reveals, is NOT evident in a single term's lexicals nor in its rollup across its own verses.** It becomes evident only when **cross-term** stories are built (relating one operation's story to others). So the single-term story does **not** assert cohabitation; that section is added later, at the cross-term layer. (memory: cohabitation is a cross-term synthesis output, not a per-verse or per-term item.)
 
 ## 4. Rules of the voice
 - **Present tense, definitional then dynamic** ("X is… it finds its source… it does not operate on its own but lives with…").
@@ -30,8 +33,10 @@
 - The **lexical basis** (which ve-lexical item forced it) is recorded in the story's metadata / prose-citation link, not in the prose line — the reader sees verse refs; the trace to `ve_lexical` rows is in the prose_section citations.
 - **A claim with no citable ground is not written.**
 
-## 6. Worked example — ruthlessness, cited (the template)
-> Ruthlessness is the act of one human being treating another with exceptional harshness — to the point of enslaving them (Exo 1:13), and even to death (Gen 20:11; Deu 25:18; Eze 34:4). It never stands as an act on its own: it is the **manner** in which a person exercises dominion — how he rules (Lev 25:43,46,53; Eze 34:4), how he enslaves (Exo 1:13-14). Its source is a heart whose every intention is only evil (Gen 6:5), driven by dread of a perceived threat (Exo 1:10-12) and conceived in shrewd deceit (Exo 1:10). It operates only where there is no regard or fear of God (Gen 20:11; Deu 25:18) — the God who holds all power — for the fear of God is its one restraint (Lev 25:43); where that fear is present, the hand is stayed. Where that restraint is absent, ruthlessness does not travel alone: it keeps company with scheming (Exo 1:10), oppression (Exo 1:11-12), the embittering of life (Exo 1:14), and the shedding of blood (Gen 20:11; Deu 25:18).
+## 6. Worked example — ruthlessness, single-term, FROM THE LEXICALS ONLY (the template)
+> Ruthlessness (perek; also rendered "harshness") is not an act in its own right — in every occurrence it is a **status, a manner**, never a standalone deed. It is the **manner in which dominion is carried out**: it welds itself to the act of **enslaving** a people (Exo 1:13-14) or **ruling** a servant or a flock (Lev 25:43,46,53; Eze 34:4), qualifying *how* one being subjects another — reaching, where intensified, into the whole of that servitude (Exo 1:14). Where a driver is named, it springs from **dread** — the dread of a perceived threat (Exo 1:12). It is **condemned** wherever it is weighed — forbidden in the law and indicted in the prophet (Lev 25:43,53; Eze 34:4). And it has one named **restraint**: the **fear of God** — where a man fears God he does not rule ruthlessly (Lev 25:43).
+
+*(No cohabitation clause: that is added later at the cross-term layer. The earlier fanout-rich draft is retained only as a contrast in the ruthlessness synthesis report.)*
 
 ## 7. Storage
 The finished story is saved to the **prose tables** (`prose_section` with a term-synthesis section type; `wa_prose_section_citations` links it to the verses / findings / ve_lexical rows that ground it). One story per owner term, versioned; regenerated if the underlying lexicals change.

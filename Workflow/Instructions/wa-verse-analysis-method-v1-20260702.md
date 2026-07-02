@@ -52,9 +52,9 @@ The end-to-end pipeline for one OWNER term. Per-verse lexical is the substrate; 
 1. **Select the owner term → its ANCHOR verse.**
 2. **Build the anchor ve-lexical** — process the anchor verse's passage (all D1–D14), read back, mark complete.
 3. **Select all the term's related verses → build ve-lexical for each** (each verse via its passage; genre-aware; term-driven, one by one; completion-marked). *This completes the term's per-verse substrate.*
-4. **SYNTHESIS (a task that runs only AFTER all the term's verses are complete):** collate all the term's verse-lexicals and **synthesise across them** — the recurring operations, the movement, the source, the cohabitation family + connected-verse fanout (this is where D13-cohabitation and the fanout return, as the cross-verse *read*, not per-verse items).
+4. **SYNTHESIS (a task that runs only AFTER all the term's verses are complete):** collate the term's verse-lexicals and **synthesise across them** — the recurring operations, the movement, the source, the moral condition. **Inputs = the LEXICALS ONLY** (researcher, 2026-07-02): **no old fanout** (not pursued going forward) and **no old findings/`ib_observation`**. The aim is to see what story the lexicals alone yield. **Cohabitation is NOT part of the single-term synthesis** — it is not evident in the lexicals nor in the single-term rollup; it emerges only at the **cross-term** story layer (§9).
 5. **Correction loop:** if the synthesis finds issues in individual verse-lexicals (a mis-derivation, an over-read, an inconsistency), **update/correct the individual lexicals** and re-collate. Synthesis and lexical are kept consistent.
-6. **On synthesis completion → BUILD THE STORY:** narrate the operation in the researcher's voice per `wa-narrative-style-instruction-v1-20260702.md` (act → impact → source → cohabitation), **with citations**.
+6. **On synthesis completion → BUILD THE STORY:** narrate the operation in the researcher's voice per `wa-narrative-style-instruction-v1-20260702.md` — single-term order **act → impact → source/moral-condition** (NO cohabitation; that is cross-term, §9), **with citations**.
 7. **Save the story in the PROSE TABLES** (`prose_section` term-synthesis type + `wa_prose_section_citations` linking verses/findings/ve_lexical). One story per term, versioned; regenerated if the lexicals change.
 
 **Ordering rule:** the story is an OUTPUT of the synthesis; the synthesis is a POST-COMPLETION task (never run mid-term). The per-verse lexical never waits on the synthesis; the synthesis never runs before the verses are done.
@@ -62,3 +62,11 @@ The end-to-end pipeline for one OWNER term. Per-verse lexical is the substrate; 
 ### Build status of the pipeline (2026-07-02)
 - Steps 1–3 (per-verse lexical, term-driven, marked): **built + validated** (ruthlessness: 6 OT verses written, `prov=lexical-model-2026`).
 - Steps 4–7 (synthesis task → story → prose): **designed, not yet built** — the story voice + citations are set (style instruction + worked ruthlessness exemplar); the synthesis operation and the prose-save are the next build.
+
+---
+
+## 9. The CROSS-TERM story layer (where cohabitation lives) — researcher, 2026-07-02
+Cohabitation — the company an operation keeps and the shared root that company reveals — is **not** derivable from a single term's lexicals, nor from that term's rollup across its own verses. It becomes evident **only when cross-term stories are built**: relating one operation's story to others (which operations recur together, in the same passages/contexts, toward a common root). So:
+- **Single-term synthesis (§8.4)** → the story of one operation, from its lexicals only. **No cohabitation.**
+- **Cross-term synthesis (later, separate layer)** → compares/relates the completed single-term stories → **cohabitation** and the emergent root appear here. This is the natural home of the (dropped-as-a-per-verse-item) D13.
+- **Old fanout / old findings are not inputs** at either layer going forward (avoided where possible).

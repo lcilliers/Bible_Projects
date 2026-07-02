@@ -2,8 +2,24 @@
 
 **The test (researcher):** the value of the lexical is whether it can tell the *story* of the inner-being operation and its impact — in a grounded, testimony voice. Below: the story, then a clause-by-clause grounding to the DB analysis, then an honest verdict.
 
-## 1. The story of ruthlessness (grounded synthesis — cited, per `wa-narrative-style-instruction-v1`)
-> Ruthlessness is the act of one human being treating another with exceptional harshness — to the point of enslaving them (Exo 1:13), and even to death (Gen 20:11; Deu 25:18; Eze 34:4). It never stands as an act on its own: it is the **manner** in which a person exercises dominion — how he rules (Lev 25:43,46,53; Eze 34:4), how he enslaves (Exo 1:13-14). Its **source** is a heart whose every intention is only evil (Gen 6:5), **driven by dread of a perceived threat (Exo 1:10-12) and conceived in shrewd deceit (Exo 1:10)**. It operates only where there is **no regard or fear of God** (Gen 20:11; Deu 25:18) — the God who holds all power — for the fear of God is its one restraint (Lev 25:43); where that fear is present, the hand is stayed. Where that restraint is absent, ruthlessness does not travel alone: it **keeps company with scheming (Exo 1:10), oppression (Exo 1:11-12), the embittering of life (Exo 1:14), and the shedding of blood (Gen 20:11; Deu 25:18).**
+## 1. The story of ruthlessness — FROM THE LEXICALS ONLY (researcher scope, 2026-07-02)
+> **Scope:** built **only** from the ruthlessness (perek H6531) verse-lexicals in the DB — **no old fanout, no old findings, no cohabitation** (cohabitation is not evident in the lexicals nor in the single-term rollup; it belongs to the later **cross-term** story layer).
+
+> Ruthlessness (perek; also rendered "harshness") is not an act in its own right — in every occurrence it is a **status, a manner**, never a standalone deed. It is the **manner in which dominion is carried out**: it welds itself to the act of **enslaving** a people (Exo 1:13-14) or **ruling** a servant or a flock (Lev 25:43,46,53; Eze 34:4), qualifying *how* one being subjects another — and, where the text intensifies it, it reaches into the whole of that servitude (Exo 1:14). Where a driver is named, it springs from **dread** — the dread of a perceived threat (Exo 1:12). It is **condemned** wherever it is weighed — forbidden in the law and indicted in the prophet (Lev 25:43,53; Eze 34:4). And it has one named **restraint**: the **fear of God** — where a man fears God he does not rule ruthlessly; where that fear is named, the hand is stayed (Lev 25:43).
+
+*Every clause above rests on a `ve_lexical` row for perek (manner/coupling → enslave/rule; source → dread; intensity → all; prohibition; discovery → restrained-by fear-of-God). Nothing is imported.*
+
+### 1a. What the lexicals could NOT give (and where it belongs)
+- **Impact beyond the act** (the *embittering* of life, Exo 1:14) sits on the **co-term** (`abad`→`marar`), not on perek's own rows — it would enter if single-term synthesis pulls the **passage co-terms' lexicals** (a scope decision, §4).
+- **Death, the evil heart, deceit** — these came from the **old fanout / connected verses** and are **now out of scope**.
+- **Cohabitation** (the company ruthlessness keeps, the shared root) — **not derivable here**; a **cross-term** layer.
+
+---
+
+## 1-OLD. (SUPERSEDED) Fanout-rich version — retained for reference only
+> ⚠ The version below drew on the **old fanout** (Gen 20:11, Deu 25:18, Gen 6:5) and **cohabitation** — **now out of scope** per the researcher (2026-07-02). Kept only to show the contrast with the pure-lexical story above.
+
+> Ruthlessness is the act of one human being treating another with exceptional harshness — to the point of enslaving them (Exo 1:13), and even to death (Gen 20:11; Deu 25:18; Eze 34:4). … Its source is a heart whose every intention is only evil (Gen 6:5) … it keeps company with scheming, oppression, the embittering of life, and the shedding of blood.
 
 ## 2. Clause → grounding (traceability — every phrase rests on data)
 | clause | grounded in | source |
