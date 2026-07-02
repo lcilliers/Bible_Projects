@@ -79,3 +79,12 @@ The synthesis (§8.4-6) is split into two parts so it **scales to any number of 
 2. **SYNTHESISE (the reading/inference):** read the digest → the narrative, through the lens *"what does it say about the inner being"*, in the set voice (`wa-narrative-style-instruction-v1`), grounded + cited, tagging stated vs inferred.
 
 **Regeneration rule:** the narrative is **always regenerated from the FULL current digest — never patched.** Adding verses = write their lexicals (§8.1-3) → re-collate (automatic) → re-synthesise the **whole** set. The narrative therefore always reflects **all** current evidence, consistently. The evidence layer is the term's verse-lexicals; the narrative is a lens over that evidence, re-derivable at will.
+
+---
+
+## 11. The GRAIN is the rollup unit (researcher, 2026-07-02) — supersedes "lemma"
+A "term" for rollup is a **GRAIN** — a per-occurrence STEP sub-gloss — **not the bare lemma/Strong's**. The **grain index = `wa_verse_term_links`** (keyed to `wa_verse_records`; `step_subgloss_code` = the grain). Reader: `_produce_grain_index_v1_20260702.py`.
+- **§8.1/8.3 restated:** "select the owner term → all its verses" = **select the owner GRAIN → all the grain's verses** (index lookup). Mono-grain lemmas (perek "severity", radah) are unchanged; polysemous lemmas (abad = serve/minister/labour/burden) roll up **per grain** — never aggregated across grains.
+- **"Related verses" = same-grain occurrences** (not same-Strong's).
+- **Cross-ref mappings carry the span (`strong@verse`)**, which resolves to a grain via the index — fix any bare-Strong's mapping (e.g. `coupling`) to `strong@verse`.
+- **`mti_terms.owning_word` is NOT authoritative for sense** (e.g. "worship" mislabels the H5647G "to serve" grain); use the grain code.

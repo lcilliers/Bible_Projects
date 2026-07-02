@@ -25,3 +25,16 @@
 
 ## Status
 Diagnostic only — no change made. Confirms a real grain error: the pipeline rolls up and maps by **lemma** where it must do so by **sense/span**. Decision needed on: (a) sense-level rollup unit + a sense index; (b) fixing cross-ref mappings to span/sense; (c) the enslave→worship grounding fix. These are prerequisites before processing polysemous terms like `abad`.
+
+---
+
+## RESOLUTION (2026-07-02) — the grain index exists: `wa_verse_term_links`
+The sense/grain index is **`wa_verse_term_links`** (227,358 rows, keyed to `wa_verse_records`; each row = a term-in-verse + its STEP `step_subgloss_code`/`_label` = **the grain**). Reader: `scripts/_produce_grain_index_v1_20260702.py`.
+
+**So the fix is direct — roll up / relate / map by GRAIN, not lemma:**
+- **Grains confirmed:** perek H6531 = **1 grain** ("severity", 6v) → mono-grain, unchanged. abad H5647 = **4 grains** (to serve:minister 142 · to serve 88 · to serve:labour 29 · to serve:burden 2).
+- **The enslave thread = the grain `H5647G` "to serve" (88v)** — read directly from the index — *not* the 261-verse lemma. (e.g. Gen 15:13 "serve them 400 years").
+- **Correction to the earlier point:** the misleading label was the **mti `owning_word`** ("worship" for H5647G), NOT the grain — the grain (subgloss) is "to serve". So grounding uses the **grain code**, and the mti owning_word label is not authoritative for sense.
+- **Rollup unit = the grain** (`step_subgloss_code`); **related verses = same grain** (index lookup); **cross-ref mappings = the span (strong@verse), which resolves to a grain** via the index (fix `coupling`'s bare-Strong's to `strong@verse`).
+
+**Status:** grain issue RESOLVED at the index level — the term-driven rollup is now defined by grain. Ready to pick the next term/grain and process it grain-first.
