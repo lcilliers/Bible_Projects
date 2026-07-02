@@ -5,10 +5,10 @@
 **Marker legend:** `✓` analysed · `⚠` B-BLOCKED (spans missing) · `◐` A-REVIEW (needs review) · `○` present, unmarked.
 
 ## Headline
-- **979 verses analysed** (Phase-1 marked) across **66 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
-- **66 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
+- **986 verses analysed** (Phase-1 marked) across **67 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
+- **67 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
 - **0 blocked** (⚠ spans missing) · **0 needing review** (◐).
-- **28182 `ve_lexical` rows** — 8240 gate-1 (tagged term) · 19942 gate-2 (relevant content span).
+- **28357 `ve_lexical` rows** — 8307 gate-1 (tagged term) · 20050 gate-2 (relevant content span).
 
 ## ▶ NEXT ACTION
 *Derived from state — Phase-1 chapters whose Phase-2 reading is not yet filed, and any blocked verses.*
@@ -86,6 +86,7 @@
 | Psa | 64 | 10/10 | ✓ | ✓ (462) |  |
 | Psa | 65 | 13/13 | ✓ | ✓ (463) |  |
 | Psa | 66 | 20/20 | ✓ | ✓ (464) |  |
+| Psa | 67 | 7/7 | ✓ | ✓ (465) |  |
 
 ## Per-verse markers (analysed verses)
 *One line per analysed chapter — the marker beside every verse present in the DB.*
@@ -156,6 +157,7 @@
 - **Psa 64** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ · Phase 2: ✓ (462)
 - **Psa 65** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ · Phase 2: ✓ (463)
 - **Psa 66** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ · Phase 2: ✓ (464)
+- **Psa 67** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ · Phase 2: ✓ (465)
 
 ## Prose term-driven pipeline
 *Verses marked by the prose (term-driven) build, grouped by track.*
