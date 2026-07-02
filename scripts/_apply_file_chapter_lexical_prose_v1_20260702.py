@@ -40,7 +40,7 @@ def main():
         LEFT JOIN mti_terms mt ON w.mti_term_id=mt.id
         WHERE v.book_id=? AND v.chapter=? AND role.ve_label='role' AND role.value='characteristic'
           AND role.source_provenance='lexical-model-2026' AND COALESCE(role.delete_flagged,0)=0""",(bid['book_id'],CHAP)).fetchall()
-    charlist=sorted({(r['primary_strong'],r['cluster_code']) for r in chars})
+    charlist=sorted({(r['primary_strong'] or '', r['cluster_code'] or '') for r in chars})
     t=cur.execute("SELECT id FROM prose_section_type WHERE code=?",(TYPE_CODE,)).fetchone(); tid=t['id'] if t else None
     prev=cur.execute("""SELECT id,version FROM prose_section WHERE section_type_id=? AND json_extract(metadata_json,'$.book')=? AND json_extract(metadata_json,'$.chapter')=?
         AND COALESCE(delete_flagged,0)=0 ORDER BY version DESC LIMIT 1""",(tid,BOOK,CHAP)).fetchone() if tid else None
