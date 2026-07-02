@@ -115,7 +115,13 @@
 | 90 | 488 | **★ numbering days for wisdom** (opens Book IV) — the CONCEALED self exposed (secret sins/alum in God's light, v.8, w/ 26:4); the whole life a SIGH (v.9); WISDOM is the fruit of NUMBERING the days, and God must TEACH the counting (v.12, w/ 39); the short life redeemed by MORNING SATISFACTION with chesed, turning toil to gladness (v.14) |
 | 91 | 489 | ABIDING in God as HOME (dwell/lodge/dwelling-place, not momentary shelter, vv.1-2,9) + naming him so (trust a speech-act); the dwelling dissolves FEAR (vv.5-6); God's ANSWER drawn by the self's devoted CLINGING (chashaq), KNOWING the name, & CALLING (vv.14-16) — the holding MUTUAL |
 
-**★ RUN COMPLETE (2026-07-02): Psalms 1–91 (Books I–III + Book IV opening). Next: Psalm 92.**
+| 92 | 490 | (Sabbath song, scoped) contemplating God's WORKS makes the self GLAD, drawn to their unfathomable depth (vv.4-5); the God-PLANTED self FLOURISHES into old age — ever green, fruitful in age, opposite the withering grass (vv.12-14, flourishing thread w/ 1/84/71) |
+| 93 | 491 | (brief kingship hymn, thin) one resonance — against the roaring chaos-floods, God's TRUSTWORTHY DECREES are the stable ground (v.5); no explicit inner-being operation, read as resonance |
+| 94 | 492 | the 'GOD DOESN'T SEE' self-deception REFUTED by the MAKER OF EYE & EAR (vv.7-9, w/ 10:11/50:21); DISCIPLINE received as BLESSING (v.12); the MULTIPLIED CARES of the heart answered by God's CONSOLATIONS that CHEER the soul (vv.18-19); steadfast love HOLDS UP the self at the point of slipping |
+| 95 | 493 | the FORK at hearing God's voice — heed or HARDEN the heart, the refusal to be moved by the word just heard ('today', vv.7-8, w/ 81/85); the ERRING heart ('go astray in their heart') forfeits the knowledge of God's ways & his rest (vv.10-11) |
+| 96 | 494 | (kingship/missions hymn, scoped; ~Ps 29) worship as ASCRIPTION — rendering the glory DUE his name with trembling awe, not augmenting God (vv.7-9, restated from 29:1-2) |
+
+**★ RUN COMPLETE (2026-07-02): Psalms 1–96. Next: Psalm 97.**
 
 ## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
 The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
