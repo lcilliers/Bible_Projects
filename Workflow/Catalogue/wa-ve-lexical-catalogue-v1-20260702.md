@@ -47,3 +47,8 @@ The lexical is **verse-first**: a verse yields a **list of terms** (each with a 
 - **Convert `ib_observation`** (81 rows) into this shape, then **retire** the table.
 - Allocate final `ve_nr`s for the new items (`process`, `genre`) — keep old numbers, add new (researcher).
 - **Bearer (D3)** derivation; **source** driver/restraint split; **target** word-order; the **AFFECT/VICE cluster set** (seed) to firm.
+
+## 7. Legacy handling (researcher, 2026-07-02)
+Legacy is **left in place, not migrated, not retired** — cleaned up only after the verse analysis is done. It is **filterable / ignorable** now:
+- **New-model `ve_lexical` rows** carry the pair columns (`pair_kind` / `resolution` NOT NULL) + a new-model `source_provenance` tag → reports select the new model by `pair_kind IS NOT NULL`; **legacy = the rest** (`v2_engine_iter1`, `*_read_api`, etc.).
+- **`ib_observation`** is **completely ignored** — never joined in reports; converted nowhere; removed later with the rest of the redundant material.
