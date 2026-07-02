@@ -39,8 +39,13 @@
 | 24 | 422 | entrance liturgy — who may ascend + the King of glory; presses past deeds to the SOUL'S AIM ("does not lift his soul to what is false"); righteousness RECEIVED; the face-SEEKER; nasa wordplay (don't lift soul to vanity → lift head to the King) |
 | 25 | 423 | acrostic — taught/forgiven/delivered, held by trust + WAITING (qavah); "I lift my soul to you" (counterpoint to 24:4); threefold "remember"; "pardon my guilt FOR IT IS GREAT"; the sod/FRIENDSHIP of the LORD (fear → intimacy); eyes ever toward while heart's troubles ENLARGE |
 | 26 | 424 | the inner being that OFFERS ITSELF to be tested ("test my heart and my mind"); confidence grounded in chesed before the eyes, NOT self-righteousness — resolves into "redeem me, be gracious to me" (v.11); company defines the self; love of God's house; the two assemblies frame it |
+| 27 | 425 | the ONE THING & the seeking face; fearless confidence + urgent plea held by one desire — "to gaze upon the beauty of the LORD" (v.4); the heart's dialogue "Seek my face"/"Your face I seek" (v.8, desire awakened by God's call); longing & dread of the same face; belief = assurance of future seeing; self commands its own heart to wait |
+| 28 | 426 | the dread of divine SILENCE ("if you be silent, I become like those who go down to the pit") answered by "he has HEARD" (v.6); the wicked's split — peace on lips, evil in heart (v.3); the heart's cycle trusts→helped→exults→gives thanks (v.7); personal strength widens to the people's |
+| 29 | 427 | storm theophany (least introspective; honestly scoped); worship as ASCRIBING glory/strength; the awed cry "Glory!" (v.9, Ps 8's self-sizing); the gem — power that shatters cedars GIVES the people strength & PEACE (v.11); storm outside → peace inside |
+| 30 | 428 | the humbled heart; "not moved" as PRESUMPTION (self-claimed, v.6) vs gift (16:8/21:7) — exposed by the hidden face → dismay (v.7, disciplinary); anger-moment/favor-lifetime, weeping-night/joy-morning (v.5); life is FOR praise (v.9); mourning→dancing, "that my glory may not be silent" (v.12) |
+| 31 | 429 | ENTRUSTMENT — "into your hand I commit my spirit" (v.5) + "my times are in your hand" (v.15); two-hands motif (God's vs enemy's); joy grounded in being SEEN & KNOWN (v.7); social death (broken vessel); "But I trust… You are my God" (v.14); hidden IN God's presence from the strife of tongues (v.20); panic-verdict "I am cut off" overturned by "you heard" (v.22); named by all three seats (spirit/soul/heart) |
 
-**Next: Psalm 27.**
+**Next: Psalm 32.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
@@ -62,7 +67,15 @@
 - **The soul's *aim* / what it lifts itself toward** — Ps 24:4 ("does not lift his soul to what is false") vs 25:1 ("to you I lift up my soul"); the direction of longing defines the inner being (nasa nephesh).
 - **Company/"sitting" shapes the inner being** — Ps 1:1 (seat of scoffers), 26:4–5 ("I do not sit with men of falsehood… the assembly of evildoers"); vs the "great assembly" of blessing (26:12).
 - **Deliverance is generative; private rescue → public/universal worship** — Ps 22:22–31 ("from you comes my praise"; the afflicted satisfied; ends of the earth turn; "he has done it").
-- **Love/longing for God's dwelling-place** — Ps 26:8 ("I love the habitation of your house… where your glory dwells"); anticipates the "one thing" of Ps 27:4.
+- **Love/longing for God's dwelling-place** — Ps 26:8 ("I love the habitation of your house… where your glory dwells"); 27:4 ("one thing… to dwell in the house of the LORD… to gaze upon the beauty of the LORD") — the peak; 31:20 (hidden IN the cover of God's presence).
+- **The seeking/beholding of God's face — its peak & its dread** — Ps 27:4 ("gaze upon the beauty"), 27:8 (the heart's dialogue "Seek my face"/"Your face I seek"); the FACE dreaded hidden (27:9, 30:7) and pleaded to SHINE (31:16, the Aaronic light); the panic "I am cut off from your sight" overturned (31:22).
+- **"He has heard" — the dread of silence answered** — Ps 22:24, 28:6 ("he has heard"), 28:1 (dread of God's silence = the pit); the panic-verdict corrected by "you heard" (31:22).
+- **"Not moved" — gift vs presumption** — grounded in trust (16:8, 21:7 GIFT) vs self-claimed complacency (30:6 PRESUMPTION), exposed by the hidden face → dismay (30:7).
+- **The inner being commits itself / its times into God's hand** — Ps 31:5 ("into your hand I commit my spirit") + 31:15 ("my times are in your hand"); the two-hands motif (God's keeping vs the enemy's grip).
+- **Life is FOR praise; the self restored to sing / not be silent** — Ps 30:9,12 ("will the dust praise you?"→"that my glory may not be silent"); 28's non-silence vs God's dreaded silence.
+- **The self / community exhorted to be strong, take courage, WAIT** — Ps 27:14 (self-address) → 31:24 (to all the saints); waiting words qavah (25,27) / yachal (31); the heart taking courage.
+- **God SEES/KNOWS the inner being's distress — the ground of joy** — Ps 31:7 ("you have known the distress of my soul"); with the God-sees thread (7,10,11).
+- **Storm/majesty contemplated → not terror but strength & peace** — Ps 29:11 (the voice that shatters cedars blesses with shalom); 8 (majesty → right self-sizing).
 - **God as portion / supreme good vs earthly portion** — Ps 16 ("no good apart from you", "my portion"), 17:14–15 (portion in this life vs God's face).
 - **The heart quoted / practical atheism** — Ps 10:4,11 (wicked's heart), 14:1 (fool's "no God"), inverted in 16:7 (heart instructs by night), 4:4 (ponder in your heart).
 - **God met per the disposition brought (reciprocity mirror)** — Ps 18:25–27.
