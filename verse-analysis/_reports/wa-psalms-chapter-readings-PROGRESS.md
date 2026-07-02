@@ -61,7 +61,13 @@
 | 45 | 443 | (encomium, scoped) heart OVERFLOWS (rachash) into speech — eloquence as the heart's abundance spilling into the tongue (v.1); LOVE & HATE rightly AIMED = ordered character, producing gladness (v.7); REORIENTATION of belonging (forget the father's house, vv.10-11). aheb catch recurs |
 | 46 | 444 | FEARLESSNESS decoupled from the world's stability — the self unafraid though the earth is unmade (vv.1-3), NOT MOVED while the mountains move (v.5, stability from an INDWELLING); "be STILL" (raphah = let go/cease striving) as the precondition of KNOWING God — stop → know (v.10) |
 
-**Next: Psalm 47.**
+| 47 | 445 | (brief enthronement hymn, scoped) JOY enacted through body & voice (clap/shout/sing x5, vv.1,6); a CONFERRED exaltation ("pride of Jacob", gaon) grounded in being LOVED (v.4) — dignity received, not self-generated |
+| 48 | 446 | (Zion hymn, scoped) knowledge matures from HEARD to SEEN (v.8); CONTEMPLATION of steadfast love as a temple practice (damah, v.9); considered OBSERVATION oriented to TRANSMISSION (vv.12-14) |
+| 49 | 447 | the UN-RANSOMABLE soul — understanding is the OUTPUT of the heart's meditation (vv.3-4); no wealth buys back a life; the fool's trust has no purchase on the inner being's fate (vv.7-9); self-DECEIVES about mortality (false permanence, v.11, inverse of 39); UNDERSTANDING = the beast/man divider (vv.12,20); God RANSOMS the soul wealth could not (v.15) |
+| 50 | 448 | true worship & the PROJECTED God — true offering = a POSTURE (thanksgiving + calling/dependence), not provision (vv.14-15,23); the wicked LIKENS God to itself (damah, "you thought I was one like yourself", v.21) — projecting its indifference, misreading silence as likeness; enabled by DISCARDING the word (vv.16-17); corrupt speech follows |
+| 51 | 449 | **★ cornerstone** — the RE-CREATION of the inner being's core: sin owned to its ORIGIN (from birth, vv.3-5); God delights in TRUTH in the HIDDEN parts / teaches wisdom in the secret heart (v.6); CREATE (bara) a clean heart — the core cannot be self-repaired, only re-made (v.10); the spirit worked on 3 registers (holy/willing-nadib/broken, vv.11-12,17); the BROKEN & CONTRITE heart is the offering God RECEIVES (vv.16-17, w/ 34:18); re-created joy overflows into teaching/praise (vv.12-15) |
+
+**Next: Psalm 52.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
