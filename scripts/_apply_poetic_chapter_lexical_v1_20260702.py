@@ -30,6 +30,13 @@ NOW=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 SEATS={'H3820':'heart','H3824':'heart','H5315':'soul','H7307':'spirit','H1320':'flesh'}
 NEG={'H3808','H0408'}; INTENS={'H3966':'very','H7227':'many','H3605':'all'}
 FUNCTION={'particle','preposition','conjunction','suffix','pronoun'}
+# Sanity-check stop-lists (learned Psa 1-3): a gate-1 tagged term in these is NEVER an inner-being
+# characteristic. GENRE_LABEL = superscription metadata (mizmor/shir); EXTERNAL_ENTITY = adversary-PERSONS
+# (not inner states — cf. external-pole principle). Lemma-level (M44 Relational is mixed, so no cluster rule).
+# Extend by adding verified lemmas; keep it data, not logic.
+GENRE_LABEL={'H4210','H7892','H5329'}         # Psalm(mizmor), Song(shir), choirmaster(menatseach)
+EXTERNAL_ENTITY={'H0341','H6862'}             # enemy, foe/adversary
+STOPLIST_NOT_CHARACTERISTIC=GENRE_LABEL|EXTERNAL_ENTITY
 DIMS={'sense':(101,'value'),'type':(102,'value'),'source':(103,'pair'),'seat':(104,'pair'),'bearer':(105,'pair'),
       'operation':(106,'event'),'target':(107,'pair'),'manner':(108,'pair'),'intensity':(109,'value'),
       'effect':(111,'pair'),'coupling':(112,'pair'),'prohibition':(113,'flag'),'discovery':(114,'note'),'role':(115,'value')}
@@ -81,15 +88,17 @@ def derive(spans, tstr, s):
     if any(x['strong'] in NEG and abs(x['g']-g)<=3 for x in spans): add('prohibition','forbidden (neg particle)')
     return rows
 
-def role_of(gate, rows):
-    """Sanity-check role (per-occurrence). Learned rule (Psalm 1, 2026-07-02):
-       a gate-1 tagged term that itself functions ADVERBIALLY (derived a manner/coupling on a verb —
-       i.e. a prep-marked noun qualifying the predicate) is a PROCESS-QUALIFIER in this occurrence,
-       not the verse's characteristic (e.g. Psa 1:1 'in the counsel of', 1:5 'in the judgment').
-       Role is per-span/per-occurrence, so the same lemma can be a characteristic elsewhere.
+def role_of(gate, rows, strong):
+    """Sanity-check role (per-occurrence). Learned rules (Psalm 1-3, 2026-07-02):
+       (a) a gate-1 term in STOPLIST_NOT_CHARACTERISTIC (genre-label metadata / external-entity adversary)
+           is never an inner-being characteristic -> standalone (Psa 3 mizmor; Psa 2-3 foes/enemies).
+       (b) a gate-1 term that itself functions ADVERBIALLY (derived a manner/coupling on a verb — a
+           prep-marked noun qualifying the predicate) is a PROCESS-QUALIFIER (Psa 1:1 counsel, 1:5 judgment).
+       Role is per-occurrence, so the same lemma can be a characteristic elsewhere.
        gate-2 content span = process-qualifier if it binds, else standalone."""
     labels={r[0] for r in rows}
     if gate=='1-primary':
+        if strong in STOPLIST_NOT_CHARACTERISTIC: return 'standalone'
         if labels & {'manner','coupling'}: return 'process-qualifier'
         return 'characteristic'
     if labels & {'manner','coupling','target','seat'}: return 'process-qualifier'
@@ -119,7 +128,7 @@ def main():
             gate='1-primary' if tg else '2-relevant'
             cc=tg[0] if tg else None; vcid=tg[1] if tg else None
             rows=derive(spans,tstr,s)
-            if rows: plan.append((s,gate,cc,vcid,rows,role_of(gate,rows)))
+            if rows: plan.append((s,gate,cc,vcid,rows,role_of(gate,rows,s['strong'])))
     g1=sum(1 for p in plan if p[1]=='1-primary'); g2=len(plan)-g1
     nrows=sum(len(p[4])+1 for p in plan)  # +1 for role
     print("%s %d: verses=%d spans=%d (gate1=%d gate2=%d) rows(incl role)=%d"%(BOOK,CHAP,len(verses),len(plan),g1,g2,nrows))

@@ -5,7 +5,7 @@
 
 ## Psa 3:1
 
-- **Psalm** `H4210` [1/M22] **role=characteristic** — sense=Psalm; type=status
+- **Psalm** `H4210` [1/M22] **role=standalone** — sense=Psalm; type=status
 - **David** `H1732` [2] **role=process-qualifier** — sense=David; type=status; operation=(qualifies) fled; manner=manner-of fled; coupling=welds fled
 - **fled** `H1272` [2] **role=standalone** — sense=fled; type=action; operation=fled; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **from** `H6440` [2] **role=process-qualifier** — sense=from; type=status; operation=(qualifies) fled; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); manner=manner-of fled; coupling=welds fled
@@ -14,7 +14,7 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status; bearer=Absalom; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
 - **how** `H7231` [2] **role=standalone** — sense=how; type=action; operation=how; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
 - **many** `H7227` [2] **role=standalone** — sense=many; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
-- **foes** `H6862` [1/M44] **role=characteristic** — sense=foes; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
+- **foes** `H6862` [1/M44] **role=standalone** — sense=foes; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
 - **rising** `H6965` [2] **role=standalone** — sense=rising; type=action; operation=rising; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=many
 
 ## Psa 3:2
@@ -63,7 +63,7 @@
 - **God** `H0430` [2] **role=standalone** — sense=God; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **strike** `H5221` [2] **role=process-qualifier** — sense=strike; type=action; operation=strike; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=all; intensity=all
 - **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
-- **enemies** `H0341` [1/M44] **role=characteristic** — sense=enemies; type=action; operation=enemies; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=all; intensity=all
+- **enemies** `H0341` [1/M44] **role=standalone** — sense=enemies; type=action; operation=enemies; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=all; intensity=all
 - **cheek** `H3895` [2] **role=standalone** — sense=cheek; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **break** `H7665` [2] **role=process-qualifier** — sense=break; type=action; operation=break; target=all; intensity=all
 - **teeth** `H8127` [2] **role=standalone** — sense=teeth; type=status
