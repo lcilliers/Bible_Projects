@@ -55,7 +55,13 @@
 | 40 | 438 | the RECEPTIVE & UN-CONCEALING inner being — sustained (doubled qavah) waiting → a GIVEN new song that propagates trust (vv.1-3); the "dug" EAR (God-worked receptivity) → delight-in-will + internalised LAW over sacrifice (vv.6-8); UN-concealing the good in the heart (fourfold, vv.9-10, inverse of guilty concealment); heart FORSAKES the self under iniquity (azab, v.12) |
 | 41 | 439 | REGARD & BETRAYAL (closes Book I) — the blessed op of DISCERNING attention to the weak (sakal, v.1); the mask — heart GATHERS iniquity behind empty words (v.6, inverse of un-concealing); betrayal wounds in proportion to prior TRUST (the shared-bread friend, v.9); inferring God's DELIGHT from circumstance ("by this I know", v.11); integrity → set in the presence (v.12) |
 
-**Next: Psalm 42.** *(Book II begins.)*
+| 42 | 440 | the DIALOGICAL inner being — an "I" stands apart from & addresses "my soul" ("why are you cast down… hope in God", vv.5,11), honest self-government (names the state, doesn't deny it); THIRST = appetitive God-desire (vv.1-2); POUR OUT the soul (self-emptying fuelled by memory, v.4); grief COMPOUNDS ("deep calls to deep", v.7); song-in-the-night coexists with the downcast state (v.8) |
+| 43 | 441 | resolves 42 — the disoriented self is LED, not self-navigating (light+truth SENT as guides home, v.3); God as EXCEEDING JOY (simchat gili, the gladness of my rejoicing, v.4); the self-government refrain resolved on a destination |
+| 44 | 442 | the DECOUPLING of suffering from guilt (corporate lament, scoped) — the FAITHFUL heart ("not turned back", vv.17-19) that suffers anyway [inverts penitential 32/38]; appeal to God's reading of the heart's SECRETS as vindication (v.21); soul bowed to the dust (v.25); protest unresolved = innocent suffering |
+| 45 | 443 | (encomium, scoped) heart OVERFLOWS (rachash) into speech — eloquence as the heart's abundance spilling into the tongue (v.1); LOVE & HATE rightly AIMED = ordered character, producing gladness (v.7); REORIENTATION of belonging (forget the father's house, vv.10-11). aheb catch recurs |
+| 46 | 444 | FEARLESSNESS decoupled from the world's stability — the self unafraid though the earth is unmade (vv.1-3), NOT MOVED while the mountains move (v.5, stability from an INDWELLING); "be STILL" (raphah = let go/cease striving) as the precondition of KNOWING God — stop → know (v.10) |
+
+**Next: Psalm 47.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
