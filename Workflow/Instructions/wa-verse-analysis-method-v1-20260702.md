@@ -118,3 +118,21 @@ The index-driven initial build (§12) is a **fast mechanical DRAFT — not trust
 So "pull all the term's verses" (§8.3) is a **characteristic** operation. This settles abad/radah: `abad` (enslave) serves the ruthlessness pair as its bound action — no own-verse rollup needed *for ruthlessness*; only its own variation (a later circle) would earn one.
 
 **Consequence for the build order:** initial index-driven build → **sanity check (evaluate + assign role)** → rollup **characteristics** only → story → (later) refinement circles for context-varying qualifiers. The role assignment is a candidate for a stored **role** lexical item (so it isn't re-derived).
+
+---
+
+## 14. POETIC BOOKS — chapter-driven method (researcher, 2026-07-02)
+The **specialised (poetic/wisdom) books — Psalms then Proverbs — are done first, chapter by chapter.** Governing question per chapter: **"what do these verses tell us about the inner being?"** Two differences from the prose/term-driven pipeline (§8, §12):
+
+**Driver = the CHAPTER, not a term; passage process does NOT apply.**
+- **Phase 1 — base lexical, verse by verse (independently).** Each verse of the chapter is built on its **own spans only** — no adjacent-verse load, **cross-verse items OFF** (source-across-verses / effect / process would be noise between poetic lines). Within-verse items stay on (sense, type, operation, seat, bearer, target, manner, coupling, intensity, prohibition). Two gates as §12. Sanity-check + `role` per §13. Marks `verse.process_marker`.
+- **Phase 2 — evaluate the chapter as a whole.** Read all verses' lexicals together and tease out the inner-being characteristics. Unlike the single-term rollup this is **multi-characteristic and multi-perspective** — a poem presents several characteristics at once (Psalm 1: *delight* M04, *meditation* M42, the *righteous/wicked* moral poles M26/M10, *rootedness* via the tree/chaff simile) and frames them from different angles (antithesis, simile, progression, destiny). Phase 2 names the **set**, grounds each, and produces the chapter reading (every inference tagged stated|inferred). Filed to prose type **`lexical_prose_chapter`** (one per book+chapter).
+
+**Reusable engine scripts (not one-off):** `scripts/_apply_poetic_chapter_lexical_v1_20260702.py --book --chapter [--live]` (Phase 1) and `scripts/_apply_file_chapter_lexical_prose_v1_20260702.py --book --chapter --story [--live]` (Phase 2 filing). New scenarios = new **parameters**, never edits.
+
+**Learnings captured this run (Psalm 1 — continuous-improvement loop):**
+- **Role rule refinement (learned, in the script):** a **gate-1 tagged term that itself functions adverbially** (derived a `manner`/`coupling` on a verb — a prep-marked noun qualifying the predicate) is a **process-qualifier** in that occurrence, **not** the verse's characteristic. Role is **per-occurrence**, so the same lemma can be a characteristic elsewhere. (Psa 1:1 *counsel* "in the counsel of the wicked", 1:5 *judgment* "stand in the judgment" → process-qualifier; *delight*/*meditation*/*wicked*/*righteous* → characteristic.)
+- **Simile detection is unreliable mechanically here:** the comparative *kaf* ("like") is **fused** into the vehicle noun's morph as a generic `HR` preposition (Psa 1:3 tree, 1:4 chaff), not a separable segment — so simile vehicles cannot be auto-flagged from morph. The tree-simile predicates (*yields*, *does-not-wither*) are therefore **kept as characteristics** and read in Phase 2 as the righteous's fruitfulness/stability (the simile's tenor), not force-reclassified.
+- **A reusable build immediately caught a real bug** a one-off would have hidden: an inner `cur.execute` inside the tagged-term loop repositioned the shared cursor and truncated capture to the **first tagged term per verse** (fix = `.fetchall()` first). Validates the "reusable + read-back" discipline.
+
+**Exemplar outputs:** Phase-1 view `verse-analysis/_reports/wa-psa1-phase1-lexical-view-20260702.md`; Phase-2 reading `wa-psalm1-inner-being-reading-20260702.md` (prose_section id 399); plan/method `wa-poetic-chapter-method-and-psalm1-plan-v1-20260702.md`.

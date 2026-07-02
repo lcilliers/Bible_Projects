@@ -82,10 +82,16 @@ def derive(spans, tstr, s):
     return rows
 
 def role_of(gate, rows):
-    """Sanity-check DRAFT role. gate-1 tagged term = characteristic candidate; gate-2 content span =
-       process-qualifier if it binds (manner/coupling/target/seat), else standalone."""
+    """Sanity-check role (per-occurrence). Learned rule (Psalm 1, 2026-07-02):
+       a gate-1 tagged term that itself functions ADVERBIALLY (derived a manner/coupling on a verb —
+       i.e. a prep-marked noun qualifying the predicate) is a PROCESS-QUALIFIER in this occurrence,
+       not the verse's characteristic (e.g. Psa 1:1 'in the counsel of', 1:5 'in the judgment').
+       Role is per-span/per-occurrence, so the same lemma can be a characteristic elsewhere.
+       gate-2 content span = process-qualifier if it binds, else standalone."""
     labels={r[0] for r in rows}
-    if gate=='1-primary': return 'characteristic'
+    if gate=='1-primary':
+        if labels & {'manner','coupling'}: return 'process-qualifier'
+        return 'characteristic'
     if labels & {'manner','coupling','target','seat'}: return 'process-qualifier'
     return 'standalone'
 
