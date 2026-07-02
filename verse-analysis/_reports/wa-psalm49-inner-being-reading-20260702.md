@@ -1,0 +1,39 @@
+# Psalm 49 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 49:1–20 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.4 backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **A wisdom meditation on the soul and wealth.** Psalm 49's findings turn on what wealth *cannot* do to the inner being and what *understanding* does for it: the heart's **meditation producing understanding** (vv.3–4); the **un-ransomable soul** — wealth has no purchase on the inner being's ultimate fate (vv.7–9); the fool's **self-deceiving inner conviction of permanence** (v.11); **understanding as the beast/man divider** (the refrain, vv.12, 20); and the soul **ransomed by God** where wealth failed (v.15).
+
+## The reading
+
+**I. The heart's meditation produces understanding (vv.3–4).**
+"My mouth shall speak **wisdom** (H2451); the **meditation** (H1900, M15, *hagut*, seat=heart) of my **heart** (H3820, the seat — M47) shall be **understanding** (H8394, M15, *tevunah*). I will **incline my ear** to a **proverb** (H4912); I will solve my riddle" (vv.3–4). The operation: **understanding is the *output* of the heart's meditation** — the inner being *ponders* (hagut) and thereby *understands* *(stated: the heart's meditation *shall be* understanding)*. The finding: wisdom is **worked inwardly** — the inner being inclines its ear, dwells on a riddle, and the heart's meditation *becomes* insight *(inferred: the meditation and the understanding are equated — the process yields the faculty)*.
+
+**II. The un-ransomable soul — wealth's impotence over the inner being's fate (vv.5–9).**
+"Why should I **fear** (H3372, M01)… when the iniquity of those who cheat me surrounds me — those who **trust** (H0982, M19) in their **wealth** (H2428, M23) and **boast** (H1984, M08) of their riches? Truly no man can **ransom** (H6299, M38, *padah*) another… for the **ransom** (H6306, *pidyon*, seat=soul) of their **life/soul** (H5315, M47) is **costly and can never suffice**, that he should live on forever" (vv.5–9). The gem-finding: **the soul cannot be bought back** — the ransom-price of a life is beyond any payment *(stated: the ransom of the soul is costly and can never suffice)*. The operation: the misplaced **trust in wealth is exposed by its total impotence over the soul's ultimate fate** — the very thing the fool leans on **has no purchase on death** *(inferred: those who *trust in wealth* are answered by wealth's inability to ransom a soul)*. And so the inner being need not *fear* the wealthy cheat — his riches cannot secure even his own life *(inferred: the "why should I fear" of v.5 is answered by vv.7–9's un-ransomable soul)*.
+
+**III. The self-deceiving inner conviction of permanence (v.11).**
+"Their **inward thought** (*qereb* — inner part) is that their houses **endure forever**… they called lands by their own names" (v.11). The operation: the fool harbours a **false inner conviction of his own permanence** — the self *telling itself* it will last *(stated: their inward thought is that their houses endure forever)*. The finding: the inner being can **deceive itself about its mortality** — an interior belief in permanence held *against* the reality of death *(inferred: the "inward thought" is a self-generated conviction contradicted by v.12)*. This is the exact inverse of Ps 39's *grasping* of finitude — here the inner being *refuses* to grasp it.
+
+**IV. Understanding as the beast/man divider (vv.12, 20).**
+The refrain, twice: "Man in his **pomp** (H3366) will not remain; he is like the **beasts** (H0929) that perish" (v.12), sharpened at the close: "Man in his pomp **yet without understanding** (H0995, M15, *bin*) is like the beasts that perish" (v.20). The gem-finding: what distinguishes man from beast is **understanding** — the man who has pomp *but lacks understanding* is **reduced to the animal level** *(stated: pomp *without understanding* = like the beasts)*. The operation: **understanding is the inner faculty that raises the inner being above the perishing beasts** — and wealth/pomp cannot substitute for it *(inferred: the added "without understanding" in v.20 names the missing faculty as the difference between man and beast)*.
+
+**V. God ransoms the soul that wealth could not (v.15).**
+"**But God will ransom** (H6299, M38, *padah*) **my soul** (H5315, M47) from the power of Sheol, for he will **receive** (H3947, *laqach* — take) me" (v.15). The gem-contrast: what **no wealth could do** (ransom a soul, vv.7–9), **God does** — "God will ransom *my* soul" *(stated)*. The finding: the inner being's redemption from death, **impossible by any payment it could make**, is **accomplished by God as gift** — "he will *receive/take* me" *(inferred: the same *padah* that "can never suffice" from man is done by God)*. The whole psalm turns here: the un-ransomable-by-wealth soul is *ransomed-by-God*.
+
+**VI. The self not intimidated by wealth (vv.16–17).**
+"**Be not afraid** (H3372, M01) when a man becomes rich… For when he dies he will carry **nothing** away; his glory will not go down after him" (vv.16–17). The operation, echoing Ps 37's "fret not": the inner being is **commanded not to be intimidated or envious of wealth** — grounded in the truth that riches **do not follow into death** *(stated)*. The finding: the self-management of not-fearing-the-rich rests on the same insight as the whole psalm — wealth has no power past the grave *(inferred)*.
+
+## What Psalm 49 says about the inner being
+- **Understanding is the *output* of the heart's meditation (vv.3–4).** Wisdom is worked inwardly — the inner being ponders a riddle and the heart's meditation *becomes* insight.
+- **The soul is un-ransomable by wealth (vv.7–9).** No payment can buy back a life; the very thing the fool trusts (wealth) has no purchase on the inner being's ultimate fate — so the self need not fear the rich cheat.
+- **The inner being can deceive itself about its mortality (v.11).** A false inner conviction of permanence, self-generated and held against the reality of death — the inverse of grasping one's finitude (Ps 39).
+- **Understanding is the beast/man divider (vv.12, 20).** What raises the inner being above the perishing beasts is *understanding*, not pomp; wealth cannot substitute for the missing faculty.
+- **God ransoms the soul that wealth could not (v.15).** The redemption impossible by any payment the self could make is accomplished by God as gift — the psalm's turn.
+- **The self need not be intimidated by wealth (vv.16–17).** Not-fearing-the-rich rests on wealth's impotence past the grave — the same insight as the whole psalm.
+
+## Honest notes
+- **The two *ransom* words** (*padah* H6299, the act; *pidyon* H6306, the price, seat=soul) frame the finding — man's *pidyon* "can never suffice" (v.8), God's *padah* does (v.15). The lexical captured both; the contrast is the psalm's spine.
+- **"inward thought" (v.11, *qereb*)** captured via gate-2; the self-deception-about-permanence operation read from the phrase. Candidate for a self-deception inner mechanism (cf. Ps 36:2's self-flattery).
+- **Systemic Phase-1 residuals** (prohibition over-stamp at vv.7, 16, 20; bearer=Korah/LORD bleed via superscription; backfilled v.4 now full-text) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **Characteristics (sanity-checked):** *meditation/understanding* (H1900/H8394/H0995, M15, vv.3,20); *heart* (H3820, M47, v.3); *fear/afraid* (H3372, M01, vv.5,16); *trust* (H0982, M19, v.6); *wealth* (H2428, M23, vv.6,10); *boast* (H1984, M08, v.6); *ransom* (H6299, M38, vv.7,15); *soul/life* (H5315, M47, vv.8,15,18–19).
