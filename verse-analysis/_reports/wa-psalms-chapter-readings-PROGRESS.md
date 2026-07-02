@@ -91,7 +91,13 @@
 | 70 | 468 | (~Ps 40:13-17) URGENCY itself discloses an inner being at the limit ("make haste x3… do not delay", the timing the burden — same plea 40 framed with patient waiting); the self appeals from acknowledged LACK ("poor and needy", v.5) |
 | 71 | 469 | (old age) LIFELONG continuous leaning — samak on God from womb→youth→old age (vv.5-6, the self leans / God upholds); dependence INTENSIFIES as strength fails + the desire to TRANSMIT to the next generation (vv.9,18); hope that INCREASES "yet more and more" (v.14); expects REVIVAL "again" — the remembered down-then-up cycle (vv.20-21) |
 
-**Next: Psalm 72.**
+| 72 | 470 | (royal, closes Book II, scoped) just rule flows from an INNER DISPOSITION — the ruler PITIES (chus) the weak & holds the vulnerable's life PRECIOUS 'in his sight' (vv.12-14); justice lodged in how he REGARDS the powerless (w/ 41:1 sakal) |
+| 73 | 471 | **★ cornerstone crisis-anatomy** — ENVY at the wicked's prosperity nearly TOPPLES the self (feet slip, vv.2-3, qana/M02); bitterness REDUCES it to a BRUTE (soured soul loses understanding, vv.21-22, w/ 49:20); RESOLVED by a SHIFT OF VANTAGE in the sanctuary — discerning the END, perception reframed not reasoned (vv.16-17); the PIVOT — re-ordered desire, God himself the supreme desire + PORTION + strength of the heart when it FAILS (vv.23-26); the good RE-DEFINED as NEARNESS (v.28). destabilised→brutish→re-seeing→re-valuing→nearness |
+| 74 | 472 | (community lament, scoped) NOT KNOWING how long is its own torment (no prophetic word, vv.9-10, cf. 13); the self ANCHORS on remembered ANCIENT faith ('yet God my King is from of old', v.12); names its own DEFENCELESSNESS (the soul of a dove among beasts, v.19) |
+| 75 | 473 | (judgment psalm, scoped) the FUTILITY of SELF-EXALTATION — 'lift up your horn, haughty neck' (vv.4-5) is futile; 'lifting up' comes from GOD alone (vv.6-7); self-raised horn CUT OFF, the righteous' (not self-raised) LIFTED UP by God (v.10) |
+| 76 | 474 | (victory hymn, scoped) God's roused power reduces the self to FEARFUL STILLNESS — cannot stand, 'the earth feared and was still' (vv.7-8, awe as a silenced hush); man's WRATH turned to God's PRAISE — the opposing passion overruled & co-opted, its remnant restrained (v.10) |
+
+**Next: Psalm 77.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
