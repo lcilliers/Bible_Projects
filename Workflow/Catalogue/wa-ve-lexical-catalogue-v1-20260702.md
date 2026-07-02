@@ -42,11 +42,12 @@ The lexical is **verse-first**: a verse yields a **list of terms** (each with a 
 - **Verse-level:** `verse.passage_id · is_passage_anchor · process_marker · genre`; `passage` table.
 - **Measure layer (source of all derivation):** `verse_morphology` (spans) · `lexicon` · `verse`.
 
-## 6. Pending (not yet built — need the finalised derivation)
-- Physically **converge** the legacy items (col. "converges legacy") into the new pair items, with a per-pair convergence rule + old↔new result-parity check.
-- **Convert `ib_observation`** (81 rows) into this shape, then **retire** the table.
-- Allocate final `ve_nr`s for the new items (`process`, `genre`) — keep old numbers, add new (researcher).
-- **Bearer (D3)** derivation; **source** driver/restraint split; **target** word-order; the **AFFECT/VICE cluster set** (seed) to firm.
+## 6. Pending
+> Dimension statuses in §2 are pre-v8; the **authoritative current verdict is `verse-analysis/_reports/wa-lexical-14dim-validation-final-20260702.md`** — for Hebrew, D1–D14 are validated solid (D2 driver/restraint split ✅, D3 bearer ✅ approximate, D5 target ✅ conservative).
+- **GREEK/NT parser** — the morph parser is Hebrew-only; Greek gets D1 only. Needs a case-based argument-structure parser (nominative/accusative/dative/prepositions). *Substantial, not yet built.*
+- **Poetic phase-2** — exercise the whole-poem enrichment end-to-end on a Psalms/Proverbs term.
+- **Legacy** — left in place, **not converged, not retired** (see §7). Allocate final `ve_nr`s for the new items (`process`, `genre`) when the writer is built (keep old numbers, add new).
+- Firm the **AFFECT/VICE cluster set** (seed); bearer subject-agreement; target suffix-object.
 
 ## 7. Legacy handling (researcher, 2026-07-02)
 Legacy is **left in place, not migrated, not retired** — cleaned up only after the verse analysis is done. It is **filterable / ignorable** now:
