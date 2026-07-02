@@ -73,7 +73,13 @@
 | 55 | 453 | the overwhelmed inner being between FLIGHT & CASTING — a fourfold flood of dread → the escape-impulse ("wings like a dove, I would fly away", vv.4-8); the deepest wound = BETRAYAL BY THE INTIMATE who shared the SOD (v.14, = 25:14's friendship word); the heart at WAR behind smooth speech (v.21); CAST the burden (yehav) on God who sustains (v.22) — escape vs transfer |
 | 56 | 454 | TRUSTING WHILE AFRAID — "when I am afraid, I put my trust in you" (vv.3-4), the mechanism afraid→trust→not-afraid; fear the OCCASION for trust, not obstacle; trust RE-SIZES the threat ("what can flesh do to me?", vv.4,11); grief tenderly RECORDED — tossings counted, tears bottled, all booked (v.8); rescue is FOR the presence-walk in the light of life (v.13) |
 
-**Next: Psalm 57.**
+| 57 | 455 | bowed soul → STEADFAST heart — refuge as a temporal sheltering "till the storm passes" (v.1); soul BOWED DOWN → heart FIXED/nakon (doubled, vv.6-7), the settled core as the ground of song; "AWAKE, my glory!" — the inner being ROUSING ITSELF to praise (v.8, self-address positive mode, cf. 42) |
+| 58 | 456 | the wicked MANUFACTURED from origin & self-sealed — the HEART is the WORKSHOP of injustice (devised before the hands deal out, v.2); disorder from the WOMB (v.3, the depth 51:5 owns of itself); the inner being makes itself DEAF — the adder stopping its own ear (vv.4-5, inverse of 40's dug ear); venom = chemah (stored WRATH) |
+| 59 | 457 | God as the self's OWN strength — WATCHES for God (shamar, v.9, the watching the enemies aim lethally, turned Godward); "O my Strength" — strength located in God not intrinsic (vv.9,17); disposition shows in the inner being's RHYTHM — wicked prowl never-filled at evening vs the self's satisfied MORNING-song (vv.6,14-16) |
+| 60 | 458 | (national lament, scoped) judgment DESTABILISES the inner being — made to REEL as from wine (v.3, loss of inner footing); human help recognised as VAIN (shav) and valour RELOCATED to God ("with God we shall do valiantly", vv.11-12) |
+| 61 | 459 | the FAINT heart reaching for a ground HIGHER than itself — "lead me to the rock that is higher than I" (v.2): the overwhelmed self seeks a refuge EXCEEDING its own reach, LED to not climbed to; refuge-longing is to DWELL/abide, not merely shelter (tent forever, under the wings, v.4) |
+
+**Next: Psalm 62.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
