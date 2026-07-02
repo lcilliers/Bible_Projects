@@ -53,3 +53,10 @@ The lexical is **verse-first**: a verse yields a **list of terms** (each with a 
 Legacy is **left in place, not migrated, not retired** — cleaned up only after the verse analysis is done. It is **filterable / ignorable** now:
 - **New-model `ve_lexical` rows** carry the pair columns (`pair_kind` / `resolution` NOT NULL) + a new-model `source_provenance` tag → reports select the new model by `pair_kind IS NOT NULL`; **legacy = the rest** (`v2_engine_iter1`, `*_read_api`, etc.).
 - **`ib_observation`** is **completely ignored** — never joined in reports; converted nowhere; removed later with the rest of the redundant material.
+
+## 8. `role` — the sanity-check classification (added 2026-07-02)
+A per-span **role**, assigned at the **sanity-check** gate (method §13a), stored as a ve-lexical item. Not derived at initial build — it is the *evaluated* classification.
+| item | ve_nr | shape | values | definition |
+|---|--:|---|---|---|
+| **role** | 115 | value | `characteristic` · `process-qualifier` · `standalone` · `uncertain` | **characteristic** = the inner-being disposition the passage turns on (gets its own verse rollup); **process-qualifier** = binds to / gives value+context to a characteristic's pair, served in place (no own rollup unless later-circle variation); **standalone** = binds to nothing; **uncertain** = evaluation could not decide → D11 note. |
+Rollup scope keys on `role` (method §13b). Role supersedes the crude mechanical A/B/C guess — it is set by the sanity-check evaluation (AI-drafted, researcher-confirmed), not by gate+type alone.
