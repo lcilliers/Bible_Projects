@@ -1,0 +1,31 @@
+# Psalm 44 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 44:1–26 (chapter-driven poetic build; roles sanity-checked). Complete chapter (vv.13–14 backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **A corporate lament — honestly scoped.** Its bulk (the historical recital, the national defeat, the "Awake! why do you sleep?") is the *arena* of communal disaster. Its distinctive inner-being finding is the **decoupling of suffering from guilt**: the **faithful** inner being ("our heart has not turned back") that suffers *anyway*, and its appeal to **God's knowledge of the heart's secrets** as vindication (vv.17–21). This inverts the penitential psalms (32, 38), where suffering *was* the weight of sin.
+
+## The reading
+
+**I. Where confidence is placed — not in the weapon (vv.6, 8).**
+"For **not in my bow do I trust** (H0982, M19), nor can my sword save me… In God we have **boasted** (H1984, M08, *halal*) continually" (vv.6, 8). The operation, familiar from the confidence-placement thread (Ps 20:7, 33:16): the inner being **locates its trust away from the tangible weapon and in God**, and its **boasting-faculty is aimed at God** (the *halal* that is pride when self-aimed, here God-aimed) *(stated)*. This makes the later bewilderment sharper: the self that trusted *rightly* is defeated *(inferred: the right placement of confidence in vv.6–8 sets up the protest of vv.9ff)*.
+
+**II. The decoupling of suffering from guilt — the faithful heart that suffers (vv.17–19).**
+"All this has come upon us, **though we have not forgotten** (H7911) you, and we have **not been false** (H8266, M13, *shaqar*) to your covenant. **Our heart** (H3820, the seat — M47) **has not turned back** (H5472, *sug*), nor have our steps departed from your way; **yet** you have **broken** us" (vv.17–19). The gem-finding: the inner being **maintains its fidelity** — "our heart has not turned back" — **while suffering without the usual cause** *(stated)*. This **decouples affliction from guilt**: unlike Ps 38 (where the crushing weight *was* iniquity), here the heart is *faithful* and still broken *(inferred: the "though… not forgotten… not turned back… yet you have broken us" explicitly denies sin as the cause)*. The finding is the **disorientation of righteous suffering** — the collapse of the expected cause-and-effect (fidelity → wellbeing) that the inner being must now hold *(inferred)*.
+
+**III. The appeal to God's reading of the heart's *secrets* (vv.20–21).**
+"If we had forgotten the name of our God or spread out our hands to a foreign god, **would not God discover this? For he knows the secrets** (H8587, *ta'alumot*, seat=heart) **of the heart** (H3820, M47)" (vv.20–21). The operation: the inner being stakes its vindication on **God's own reading of its hidden depths** — "he knows the secrets of the heart" *(stated)*. The finding: the heart has **secrets** — depths hidden even from the community's own account of itself — and the inner being **appeals to the divine heart-reading as its arbiter**: *if* there were hidden apostasy, God would have found it; since he has not, the integrity stands *(inferred: the rhetorical "would not God discover this?" makes God's knowledge of the heart's secrets the court of appeal)*. The self trusts its case to the One who reads what it cannot fully see in itself (cf. Ps 7:9, 139:23).
+
+**IV. The soul bowed to the dust (v.25).**
+"For our **soul** (H5315, the seat — M47) is **bowed down** (H7743, *shachach*) to the **dust**; our belly clings to the ground" (v.25). The finding: the inner being **pressed flat to the earth** — total abasement, the soul brought as low as the ground *(stated)*. The operation is the physical enactment of the disorientation: the faithful self, unaccountably crushed, lies in the dust and can only plead "**Redeem us for the sake of your steadfast love** (H2617, M05)" (v.26) *(inferred: the abasement and the appeal to chesed close the unresolved protest)*.
+
+## What Psalm 44 says about the inner being
+- **Confidence rightly placed does not guarantee wellbeing (vv.6–8).** The inner being trusts God, not the weapon, and boasts in God — yet is defeated. Right placement of trust and present suffering coexist.
+- **Suffering can be *decoupled from guilt* (vv.17–19).** The faithful heart — "not turned back" — suffers anyway. Unlike the penitential psalms, affliction here is *not* the weight of sin; the inner being must hold the collapse of the fidelity-blessing expectation.
+- **The heart has *secrets*, and the inner being appeals to God's reading of them (vv.20–21).** Its vindication is staked on the divine heart-knowledge — "he knows the secrets of the heart"; the self trusts its case to the One who reads what it cannot fully see in itself.
+- **The soul can be bowed flat to the dust (v.25).** Total abasement — the faithful, crushed self lies in the ground and pleads chesed, the protest left unresolved.
+
+## Honest notes
+- **Scope honesty:** vv.1–5, 9–16, 22–24 (historical recital, national defeat, "Awake!") are the corporate/external arena; read for the inner-being moments (vv.6, 8, 17–21, 25), not mined verse-by-verse. The unresolved protest (no confession, no turn) is itself the finding — this is a psalm of *innocent* suffering.
+- **"secrets of the heart" (H8587, v.21)** captured seat=heart gate-2; the appeal-to-divine-heart-reading operation is read from the rhetorical question. Ties to the God-knows-the-heart thread (Ps 7:9, 139).
+- **Systemic Phase-1 residuals** (heavy prohibition over-stamp across the many "not"s in vv.3,6,17–18,20 — these *are* the integrity protest, descriptive negations; bearer bleed; backfilled vv.13–14 now full-text) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **Characteristics (sanity-checked):** *trust* (H0982, M19, v.6); *boasted* (H1984, M08, v.8); *false* (H8266, M13, v.17); *covenant* (H1285, M44, v.17); *heart* (H3820, M47, vv.18,21); *soul* (H5315, M47, v.25); *steadfast-love* (H2617, M05, v.26).
