@@ -73,6 +73,14 @@
 - **Stop-list (`STOPLIST_NOT_CHARACTERISTIC`):** superscription metadata (*mizmor* H4210, *shir* H7892, *menatseach* H5329) + external-entity adversaries (*enemy* H0341, *foe* H6862) → standalone. Lemma-level (M44 is mixed). Extend as verified lemmas appear.
 - **Recurring sanity-check reclassification (NOT rule-ified):** "holy of place" (*holy* H6944 modifying hill/temple) → standalone; left to sanity-check because *holy* can be a genuine inner-being quality elsewhere.
 
+## ⚠ Known Phase-1 residuals (pending script fixes — flagged Ps 21–26, do NOT re-flag from scratch each psalm)
+- **`prohibition=forbidden` over-stamp** — fires on *any* negated clause, conflating four cases: plain **negation** ("you do not answer"), **descriptive** ("without wavering"), **habitual resolve** ("I do not sit"), and **jussive-petition** ("remember not"). None but a true imperative-prohibition should set it. **Fix:** gate on verb mood, not the neg particle. (Rule-adjustment candidate.)
+- **`bearer=LORD/David` bleed (D11)** — nearest-proper-noun heuristic mis-assigns the bearer to the closest proper noun (usually the LORD) when the true bearer is the speaker/enemy/congregation. Pervasive; subject-agreement not parsed. Readings take bearers from the text.
+- **Backfill fragmentary `verse_text`** — Phase-0 backfilled verses store `verse_text` as space-joined word-fragments (Ps 21:12, 22:7/12/21, 24:2, 25:4). Spans intact → readings unaffected, but the verse rows should be repaired (backfill verse_text assembly). Also stray footnote markers (e.g. "^" in 25:21).
+- **`nasa` (H5375) grain blur** — single M19 tag spans distinct senses: *lift the soul* (long/aim), *receive/carry*, *lift the head*. Grain-split candidate (memory `project_term_is_sense_not_lemma`).
+- **Intensity over-stamp** — *all*/*many*/*very* auto-stamped from quantifier spans; cosmetic.
+- **Genuine per-psalm sanity catches still ARE flagged** (e.g. Ps 26:8 *love/aheb* mis-tagged standalone → should be a characteristic). The list above is only the *systemic* residuals to reference compactly, not repeat in full.
+
 ## ⚠ SPECIAL HANDLING — Psalm 119 (watch out)
 176 verses, 22 acrostic stanzas (8 verses each), the Bible's longest chapter. **Do NOT run the standard single-pass reading.** Plan: backfill + Phase 1 as normal (the mechanical steps scale), but the **Phase-2 reading must be stanza-aware** — read the 22 stanzas (aleph…taw), each turning on the Torah/word vocabulary (law, testimonies, precepts, statutes, commandments, word, promise), and produce a **structured reading** (per-stanza movements → the whole), not one flat essay. Flag to researcher before doing it. Other long psalms to note: Ps 78 (72v), 89 (52v), 105/106/107 (~40+v), 18/104/144 (long).
 
