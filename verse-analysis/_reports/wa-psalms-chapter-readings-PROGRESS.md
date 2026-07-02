@@ -44,8 +44,13 @@
 | 29 | 427 | storm theophany (least introspective; honestly scoped); worship as ASCRIBING glory/strength; the awed cry "Glory!" (v.9, Ps 8's self-sizing); the gem — power that shatters cedars GIVES the people strength & PEACE (v.11); storm outside → peace inside |
 | 30 | 428 | the humbled heart; "not moved" as PRESUMPTION (self-claimed, v.6) vs gift (16:8/21:7) — exposed by the hidden face → dismay (v.7, disciplinary); anger-moment/favor-lifetime, weeping-night/joy-morning (v.5); life is FOR praise (v.9); mourning→dancing, "that my glory may not be silent" (v.12) |
 | 31 | 429 | ENTRUSTMENT — "into your hand I commit my spirit" (v.5) + "my times are in your hand" (v.15); two-hands motif (God's vs enemy's); joy grounded in being SEEN & KNOWN (v.7); social death (broken vessel); "But I trust… You are my God" (v.14); hidden IN God's presence from the strife of tongues (v.20); panic-verdict "I am cut off" overturned by "you heard" (v.22); named by all three seats (spirit/soul/heart) |
+| 32 | 430 | **[process lens on]** the MECHANICS of concealed vs confessed guilt — silence corrodes the inner being (bones waste, vv.3-4), UNcovering reverses it (you must uncover what you want God to cover, v.5); environment flips (heavy hand → surrounded by chesed); mode of guidance keyed to UNDERSTANDING (counsel vs bit-and-bridle, vv.8-9) |
+| 33 | 431 | where the inner being LOCATES confidence (hymn, honestly scoped) — the heart FASHIONED & observed (yatsar+bin, v.15); misplaced confidence in strength = "false hope"/lie (vv.16-17); gladness PRODUCED by trust in the name, not the might (vv.20-22) |
+| 34 | 432 | experiential knowing & the shattered inner being (acrostic) — TASTING = knowing by participation (v.8); LOOKING re-forms the face (radiant, v.5); seeking dissolves the inner being's fears (v.4); broken heart/crushed spirit = the LOCUS of nearness (v.18); boasting-faculty redirected (v.2); learnable fear driven by native desire for life (vv.11-12) |
+| 35 | 433 | the wound of betrayed RECIPROCITY (imprecation as arena) — evil-for-good registered as a BEREAVEMENT of the soul (shekol, v.12); its depth = prior EMPATHY (mourned for the now-hostile as friend/brother/mother, vv.13-14) → rejoicing-at (asymmetry); praise INTEGRATES the whole self ("all my bones", v.10); two delights defined by object (ruin vs the servant's shalom, vv.25,27) |
+| 36 | 434 | two inner ECONOMIES — self-enclosed wicked (transgression ORACLES in the heart v.1; self-flattery "in his own eyes" v.2; the lost "no"/rejecting-faculty gone v.4) vs open-and-fed (fountain of life outside the self; "in your light we see light" — perception DERIVATIVE, vv.7-9); self-lit vs light-receiving sight |
 
-**Next: Psalm 32.**
+**Next: Psalm 37.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
@@ -76,6 +81,17 @@
 - **The self / community exhorted to be strong, take courage, WAIT** — Ps 27:14 (self-address) → 31:24 (to all the saints); waiting words qavah (25,27) / yachal (31); the heart taking courage.
 - **God SEES/KNOWS the inner being's distress — the ground of joy** — Ps 31:7 ("you have known the distress of my soul"); with the God-sees thread (7,10,11).
 - **Storm/majesty contemplated → not terror but strength & peace** — Ps 29:11 (the voice that shatters cedars blesses with shalom); 8 (majesty → right self-sizing).
+- **[PROCESS LENS from Ps 32]** — the inner-being OPERATION is the finding, God-relation the arena (memory `feedback_lens_is_inner_being_process_not_god_relation`). Operations catalogued so far:
+- **Concealment corrodes; uncovering releases** — Ps 32:3-5 (silence → bones waste; you must UNcover what you want covered); the mechanics of suppressed vs confessed guilt.
+- **Where the inner being LOCATES confidence determines its state** — Ps 33:16-22 (external strength = "false hope"; gladness produced by trust in the NAME), 20:7, 31:6; misplaced vs relocated confidence.
+- **Experiential knowing — the inner being verifies by participation** — Ps 34:8 ("taste and see"); knowing-by-tasting grounds knowing-about.
+- **The gaze/attention has a visible output** — Ps 34:5 (looking → radiant face); the direction of attention lights the countenance; sight self-enclosed (36:2 "his own eyes") vs received (36:9 "in your light we see light").
+- **The heart is a space that is ADDRESSED; the "no" can be lost** — Ps 36:1 (transgression oracles in the heart where the fear of God should speak), 36:4 (the rejecting-faculty gone, "does not reject evil"); corruption as a SUBTRACTED refusal.
+- **The shattered inner being is the LOCUS of nearness** — Ps 34:18 (broken heart/crushed spirit drawn near), with 51:17 (coming); brokenness not distance.
+- **Empathy and its betrayal; reciprocity betrayed wounds as bereavement** — Ps 35:12-16 (mourned for the now-hostile as family → rejoicing-at; evil-for-good = shekol of the soul).
+- **Delight/desire is defined by its object** — Ps 35:25,27 (soul-desire for ruin vs the LORD's delight in the servant's shalom); 37:4 (coming).
+- **Praise integrates the WHOLE self** — Ps 35:10 ("all my bones"), 34 (whole-person); worship not partial.
+- **The inner being is fed from OUTSIDE itself** — Ps 36:8-9 (fountain of life, river of delights; life-source external), 23 (led/restored); vs the self-enclosed wicked.
 - **God as portion / supreme good vs earthly portion** — Ps 16 ("no good apart from you", "my portion"), 17:14–15 (portion in this life vs God's face).
 - **The heart quoted / practical atheism** — Ps 10:4,11 (wicked's heart), 14:1 (fool's "no God"), inverted in 16:7 (heart instructs by night), 4:4 (ponder in your heart).
 - **God met per the disposition brought (reciprocity mirror)** — Ps 18:25–27.
