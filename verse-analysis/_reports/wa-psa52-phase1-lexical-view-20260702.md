@@ -35,7 +35,7 @@
 
 ## Psa 52:3
 
-- **love** `H0157` [2] **role=standalone** — sense=love; type=action; operation=love
+- **love** `H0157` [2] **role=characteristic** — sense=love; type=action; operation=love
 - **evil** `H7451` [2] **role=standalone** — sense=evil; type=quality
 - **good** `H2896` [2] **role=standalone** — sense=good; type=quality
 - **lying** `H8267` [1/M14] **role=characteristic** — sense=lying; type=status
@@ -44,7 +44,7 @@
 
 ## Psa 52:4
 
-- **love** `H0157` [2] **role=standalone** — sense=love; type=action; operation=love; intensity=all
+- **love** `H0157` [2] **role=characteristic** — sense=love; type=action; operation=love; intensity=all
 - **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all
 - **words** `H1697` [2] **role=standalone** — sense=words; type=status; intensity=all
 - **devour** `H1105` [2] **role=standalone** — sense=devour; type=status; intensity=all

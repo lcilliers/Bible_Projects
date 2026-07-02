@@ -37,6 +37,12 @@ FUNCTION={'particle','preposition','conjunction','suffix','pronoun'}
 GENRE_LABEL={'H4210','H7892','H5329'}         # Psalm(mizmor), Song(shir), choirmaster(menatseach)
 EXTERNAL_ENTITY={'H0341','H6862'}             # enemy, foe/adversary
 STOPLIST_NOT_CHARACTERISTIC=GENRE_LABEL|EXTERNAL_ENTITY
+# INVERSE of the stop-list (learned Psa 26-81, 2026-07-02): gate-2 content spans whose lemma IS a genuine
+# inner-being characteristic (a real affection/operation), promoted to role=characteristic even when
+# untagged. aheb recurred ~8x under-tagged as standalone across Ps 26:8/31:23/34:12/45:7/47:4/52:3-4/70:4,
+# sometimes the CENTRAL finding (Psa 52 "you love evil"). Its object sets the valence; the love itself is
+# always the inner-being characteristic. Keep data, not logic; extend by adding verified lemmas.
+PROMOTE_CHARACTERISTIC={'H0157'}              # aheb (love/affection)
 DIMS={'sense':(101,'value'),'type':(102,'value'),'source':(103,'pair'),'seat':(104,'pair'),'bearer':(105,'pair'),
       'operation':(106,'event'),'target':(107,'pair'),'manner':(108,'pair'),'intensity':(109,'value'),
       'effect':(111,'pair'),'coupling':(112,'pair'),'prohibition':(113,'flag'),'discovery':(114,'note'),'role':(115,'value')}
@@ -97,6 +103,10 @@ def role_of(gate, rows, strong):
        Role is per-occurrence, so the same lemma can be a characteristic elsewhere.
        gate-2 content span = process-qualifier if it binds, else standalone."""
     labels={r[0] for r in rows}
+    # (c) inner-being lemmas in PROMOTE_CHARACTERISTIC are a characteristic at ANY gate (unless functioning
+    #     adverbially) — e.g. aheb (love), whose object sets the valence but which is itself the characteristic.
+    if strong in PROMOTE_CHARACTERISTIC:
+        return 'process-qualifier' if labels & {'manner','coupling'} else 'characteristic'
     if gate=='1-primary':
         if strong in STOPLIST_NOT_CHARACTERISTIC: return 'standalone'
         if labels & {'manner','coupling'}: return 'process-qualifier'
