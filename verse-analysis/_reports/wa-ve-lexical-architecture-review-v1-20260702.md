@@ -1,6 +1,8 @@
 # ve_lexical — architecture review (redundancy & performance) — v1, 2026-07-02
 
-> Requested by the researcher after the ruthlessness first-tier story was accepted: *"my impression is that there are a huge number of duplications or unnecessary records… look at database design for the lexicals to optimise it, reduce redundancy, and improve performance."* This is a **design review, not a build** — nothing here has been executed. All figures are read live from `database/bible_research.db` (2026-07-02).
+> Requested by the researcher after the ruthlessness first-tier story was accepted: *"my impression is that there are a huge number of duplications or unnecessary records… look at database design for the lexicals to optimise it, reduce redundancy, and improve performance."* All figures are read live from `database/bible_research.db` (2026-07-02).
+>
+> **STATUS 2026-07-02 — Phase 1 EXECUTED (researcher approved a+b).** M63 / schema **3.37.0**: 507,651 legacy rows moved to `ve_lexical_legacy`; `ve_lexical` now **1,990 live rows**; duplicate index `ix_velex_vc` dropped; VACUUM reclaimed **129 MB** (769.7 → 640.5 MB). Script: `scripts/_apply_ve_lexical_phase1_archive_legacy_20260702.py`. **Phase 2 held** (pair-table normalisation + `from_span`/`to_span` FK-ising) until the model is proven across ~10 terms / both genres.
 
 ## 0. Verdict in one line
 The impression is **correct**, but the redundancy is **not in the live model** — it is **legacy accretion**. The live lexical (`lexical-model-2026`) is **1,007 rows**; it shares one physical table with **424,408 rows of pre-reset legacy** that the new model never reads. The table is **99.76 % dead weight** to current work.
