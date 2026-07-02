@@ -121,15 +121,10 @@
 - [feedback_characteristic_is_typed_term_in_verse](feedback_characteristic_is_typed_term_in_verse.md) — "characteristic" = typed term-in-verse (pre-RESET).
 - [feedback_ontology_typed_relationships](feedback_ontology_typed_relationships.md) — cluster = scaffolding; typed relationships.
 - [feedback_faculty_must_be_per_term_not_per_cluster](feedback_faculty_must_be_per_term_not_per_cluster.md) — faculty per-term not per-cluster.
-- [feedback_l1_l2_is_multi_angle_report_then_synthesise](feedback_l1_l2_is_multi_angle_report_then_synthesise.md) — L1/L2 = multi-angle then synthesise.
-- [feedback_l2_mechanical_api_triage](feedback_l2_mechanical_api_triage.md) — L2 mechanical-vs-API = outcome adequacy.
-- [feedback_clarifications_reusable_but_state_not_induce](feedback_clarifications_reusable_but_state_not_induce.md) — clarifications: state, don't induce.
-- [feedback_session_b_findings_resolved_through_l2](feedback_session_b_findings_resolved_through_l2.md) — Session B findings resolved by a finding.
 - [feedback_patch_format](feedback_patch_format.md) — enforce patch spec strictly.
 - [feedback_version_discipline](feedback_version_discipline.md) — bump minor version on every instruction edit.
-- [feedback_rule_extract_obsolete_default](feedback_rule_extract_obsolete_default.md) — rule-registry extracts default obsolete=0.
 - [project_meaning_duplicates_then_fabricates](project_meaning_duplicates_then_fabricates.md) — fused verse-read duplicated then fabricated.
-- [project_ve_proposition_gap](project_ve_proposition_gap.md) — VE captured the term not the proposition.
-- [project_verse_extraction_cause_side_gap](project_verse_extraction_cause_side_gap.md) — verse read captured effect not cause.
 - [project_constitution_cluster_and_flag_resolution](project_constitution_cluster_and_flag_resolution.md) — created M47 Constitution (seats & faculties).
 - [project_db_loss_blocker_20260603](project_db_loss_blocker_20260603.md) — DB loss resolved; NAS backups live.
+
+<!-- unindexed (files retained, recoverable): feedback_l1_l2_is_multi_angle_report_then_synthesise, feedback_l2_mechanical_api_triage, feedback_clarifications_reusable_but_state_not_induce, feedback_session_b_findings_resolved_through_l2, feedback_rule_extract_obsolete_default, project_ve_proposition_gap, project_verse_extraction_cause_side_gap -->
