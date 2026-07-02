@@ -85,7 +85,13 @@
 | 65 | 463 | (creation psalm, scoped) praise as a SILENT WAITING (dumiyah, v.1); iniquities OVERPOWER the self (gabar), covered by God's ATONEMENT from outside not self-effort (v.3); the blessed self CHOSEN → brought NEAR → SATISFIED, God-initiated (v.4) |
 | 66 | 464 | the self REFINED through trial (tested/smelted like SILVER, tsaraph, through fire/water → abundance — affliction as purposive refining, vv.10-12); being-heard CONDITIONAL on the heart — CHERISHED iniquity (ra'ah = harboured/regarded, not mere having) BLOCKS the prayer (v.18); a mechanism of communion |
 
-**Next: Psalm 67.**
+| 67 | 465 | (short blessing psalm, scoped) blessing received is CENTRIFUGAL — "bless us THAT your way may be known" (vv.1-4), given to flow outward, not terminate in the self; the blessed self under the SHINING face (v.1) |
+| 68 | 466 | (long procession, scoped) God SETTLES THE SOLITARY in a home — the isolated/fatherless given belonging (v.6, w/ 25:16/27:10); God DAILY BEARS the self up (amas — the self's weight loaded onto him continually, v.19); joy COMPOUNDED (glad/exult/jubilant, v.3) |
+| 69 | 467 | the CONSUMED self — prolonged WAITING fatigues ("eyes grow dim with waiting", vv.1-3); ZEAL (qinah, M02) CONSUMES (eaten) & ISOLATES the self from kin (vv.8-9); the heart BROKEN by reproach into despair, DOUBLED by the absent COMFORTER (v.20); heart broken → REVIVED in the seeking humble (v.32) |
+| 70 | 468 | (~Ps 40:13-17) URGENCY itself discloses an inner being at the limit ("make haste x3… do not delay", the timing the burden — same plea 40 framed with patient waiting); the self appeals from acknowledged LACK ("poor and needy", v.5) |
+| 71 | 469 | (old age) LIFELONG continuous leaning — samak on God from womb→youth→old age (vv.5-6, the self leans / God upholds); dependence INTENSIFIES as strength fails + the desire to TRANSMIT to the next generation (vv.9,18); hope that INCREASES "yet more and more" (v.14); expects REVIVAL "again" — the remembered down-then-up cycle (vv.20-21) |
+
+**Next: Psalm 72.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.

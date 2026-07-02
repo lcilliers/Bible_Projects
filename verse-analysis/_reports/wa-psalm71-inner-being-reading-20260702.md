@@ -1,0 +1,31 @@
+# Psalm 71 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 71:1–24 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.12 + others backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **The psalm of old age — lifelong leaning and growing hope.** Psalm 71's findings: the inner being's **lifelong, continuous dependence** — leaning on God from the womb through youth into old age (vv.5–6); the **aging self's vulnerability** as strength fails, and its desire to *transmit* to the next generation (vv.9, 18); **hope that *increases*** "yet more and more" (v.14); and the expectation of **revival — brought up *again*** from the depths (vv.20–21).
+
+## The reading
+
+**I. Lifelong leaning — dependence across the whole lifespan (vv.5–6).**
+"For you, O Lord, are my **hope** (H8615, M18), my **trust** (H4009, M19), from my **youth**. Upon you I have **leaned** (H5564, *samak* — propped myself) from before my birth; you are he who took me from my mother's womb" (vv.5–6). The gem-finding: the inner being's dependence is **continuous across the entire lifespan** — *from the womb, from youth*, and (vv.9, 18) *into old age* *(stated)*. The operation: the self has **leaned** on God — *samak*, propping its whole weight — **as a single unbroken posture from before birth onward** *(inferred: "leaned… from before my birth… from my youth" makes the dependence one continuous lean, not a series of episodes; cf. Ps 22:9–10)*. The same verb (*samak*) that named God *upholding* the self in Ps 54:4 is here the self's *leaning* — the two sides of one relation *(inferred)*.
+
+**II. The aging self's vulnerability — and its desire to transmit (vv.9, 18).**
+"**Do not cast me off** in the time of **old age** (H2209); **forsake me not** when my **strength** (H3581, M23) is **spent**… So even to old age and gray hairs, O God, do not forsake me, **until I proclaim your might to another generation**" (vv.9, 18). The finding: the aging inner being's specific fear is that **as its strength fails, it may be abandoned** *(stated)*. The operation: the self **at the end of its own strength** seeks *continued holding* — dependence intensifies precisely as self-sufficiency runs out *(inferred: "forsake me not when my strength is spent" ties the plea to the failure of the self's own resources)*. And it has a **forward aim**: the old self wants to *last long enough to* **transmit** — "until I proclaim your might to *another generation*" — its remaining desire is **handing on** what it knows before it goes *(stated; cf. Ps 48:13's observe-to-tell)*.
+
+**III. Hope that increases (v.14).**
+"But I will **hope** (H3176, M18, *yachal*) continually and will praise you **yet more and more**" (v.14). The finding: the inner being's hope is **not static but *growing*** — "yet more and more" *(stated)*. The operation: hope **accumulates and increases** — the aging self's hope is *larger*, not smaller, with the years; it grows rather than wears out *(inferred: "hope continually… yet more and more" makes hope an increasing quantity, gaining across a lifetime of proof)*.
+
+**IV. Revival — brought up *again* from the depths (vv.20–21).**
+"You who have made me see many troubles and calamities **will revive me again** (H2421, M25, *chayah*); from the **depths of the earth** you will **bring me up again**. You will **increase** my greatness and **comfort me again**" (vv.20–21). The gem-finding: the inner being, brought low through many troubles, expects to be **revived *again*** — the word *again* tolls three times *(stated)*. The operation: the self reads a **repeating pattern — down, then up; brought low, then revived** — and expects its recurrence *(inferred: "revive me *again*… bring me up *again*… comfort me *again*" makes the down-then-up a known cycle the self trusts will repeat)*. Hope's confidence rests on the **remembered pattern** of God's past revivals *(inferred)*. And it terminates in the soul: "my **soul** (H5315, M25/M47) also, **which you have redeemed**" (v.23) — the inner being, redeemed, joins the praise *(stated)*.
+
+## What Psalm 71 says about the inner being
+- **Dependence is *lifelong and continuous* (vv.5–6).** The inner being leans on God as one unbroken posture — from the womb, through youth, into old age. The self's *leaning* (*samak*) answers God's *upholding* (*samak*, Ps 54:4).
+- **The aging self's dependence *intensifies* as strength fails (vv.9, 18).** Its specific fear is being cast off when it can no longer sustain itself; and its forward desire is to *last long enough to transmit* — to hand on what it knows to another generation before it goes.
+- **Hope *increases* with the years (v.14).** "Yet more and more" — the inner being's hope grows rather than wears out, larger across a lifetime of proof.
+- **The self expects *revival — again* (vv.20–21).** Brought low, it trusts to be brought up *again*; hope rests on the remembered pattern of God's past revivals — a known cycle of down-then-up.
+
+## Honest notes
+- **"leaned" (H5564, *samak*, v.6)** captured gate-2 standalone; the *lifelong-leaning* operation read from the verb — the same *samak* that is God's *upholding* in Ps 54:4. A clean two-sided datum (the self leans / God upholds).
+- **The "again" pattern (vv.20–21)** — revive/bring-up/comfort *again* — captured across gate-2 spans; the down-then-up cycle read from the repetition. Candidate for a *revival-again / remembered-pattern* inner datum (hope grounded in God's past cycle).
+- **Systemic Phase-1 residuals** (prohibition over-stamp at vv.9, 18; bearer=LORD bleed; backfilled vv. now full-text; two trust/hope words — *mivtach* M19, *tiqvah*/*yachal* M18) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **Characteristics (sanity-checked):** *take-refuge* (H2620, M19, v.1); *hope/trust* (H8615/H4009/H3176, M18/M19, vv.5,14); *strength* (H3581, M23, v.9); *revive* (H2421, M25, v.20); *soul* (H5315, M47, v.23); *joy* (H7442, M42, v.23). *leaned/old-age/spent/again* captured gate-2 — the lifelong leaning, aging vulnerability, and revival read from these.
