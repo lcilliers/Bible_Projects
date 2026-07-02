@@ -43,3 +43,22 @@ Before analysis, for each verse: **verse → spans** (`verse_span_index`) → is
 - **Solid:** per-verse items across genres; narrative cross-verse movement (source/manner/effect/process); passage layer (3,650 consecutive-run passages); term-driven order + markers.
 - **Open (tracked in the catalogue §6 + validation reports):** source driver/restraint split; bearer (D3); target word-order; the poetic two-phase (to exercise on a Psalms/Proverbs term); item convergence + `ib_observation` retirement (pending finalised derivation).
 - **Trials/harnesses:** `_probe_lexical_derivation_all14_v6_20260701.py` (14-item genre-aware) · `_apply_term_driven_lexical_ruthlessness_v7_20260702.py` (term-driven) · results in `verse-analysis/_reports/wa-lexical-*`, `wa-term-driven-ruthlessness-trial-20260702.md`.
+
+---
+
+## 8. The full term pipeline (researcher, 2026-07-02)
+The end-to-end pipeline for one OWNER term. Per-verse lexical is the substrate; the **story** is a synthesis pass on top; both are grounded and traceable.
+
+1. **Select the owner term → its ANCHOR verse.**
+2. **Build the anchor ve-lexical** — process the anchor verse's passage (all D1–D14), read back, mark complete.
+3. **Select all the term's related verses → build ve-lexical for each** (each verse via its passage; genre-aware; term-driven, one by one; completion-marked). *This completes the term's per-verse substrate.*
+4. **SYNTHESIS (a task that runs only AFTER all the term's verses are complete):** collate all the term's verse-lexicals and **synthesise across them** — the recurring operations, the movement, the source, the cohabitation family + connected-verse fanout (this is where D13-cohabitation and the fanout return, as the cross-verse *read*, not per-verse items).
+5. **Correction loop:** if the synthesis finds issues in individual verse-lexicals (a mis-derivation, an over-read, an inconsistency), **update/correct the individual lexicals** and re-collate. Synthesis and lexical are kept consistent.
+6. **On synthesis completion → BUILD THE STORY:** narrate the operation in the researcher's voice per `wa-narrative-style-instruction-v1-20260702.md` (act → impact → source → cohabitation), **with citations**.
+7. **Save the story in the PROSE TABLES** (`prose_section` term-synthesis type + `wa_prose_section_citations` linking verses/findings/ve_lexical). One story per term, versioned; regenerated if the lexicals change.
+
+**Ordering rule:** the story is an OUTPUT of the synthesis; the synthesis is a POST-COMPLETION task (never run mid-term). The per-verse lexical never waits on the synthesis; the synthesis never runs before the verses are done.
+
+### Build status of the pipeline (2026-07-02)
+- Steps 1–3 (per-verse lexical, term-driven, marked): **built + validated** (ruthlessness: 6 OT verses written, `prov=lexical-model-2026`).
+- Steps 4–7 (synthesis task → story → prose): **designed, not yet built** — the story voice + citations are set (style instruction + worked ruthlessness exemplar); the synthesis operation and the prose-save are the next build.
