@@ -70,3 +70,12 @@ Cohabitation — the company an operation keeps and the shared root that company
 - **Single-term synthesis (§8.4)** → the story of one operation, from its lexicals only. **No cohabitation.**
 - **Cross-term synthesis (later, separate layer)** → compares/relates the completed single-term stories → **cohabitation** and the emergent root appear here. This is the natural home of the (dropped-as-a-per-verse-item) D13.
 - **Old fanout / old findings are not inputs** at either layer going forward (avoided where possible).
+
+---
+
+## 10. Evidence → narrative: a SCALABLE, REPEATABLE operation (researcher, 2026-07-02)
+The synthesis (§8.4-6) is split into two parts so it **scales to any number of verses** (5 today, 15 later — same operation):
+1. **COLLATE (mechanical, scales trivially):** `_produce_term_evidence_digest_v1_20260702.py --strong <S>` assembles the **evidence digest** — every new-model verse-lexical for the term + its passage co-terms, ordered by passage/verse, the term marked `<TERM>`. This is the **synthesis input**, not the narrative.
+2. **SYNTHESISE (the reading/inference):** read the digest → the narrative, through the lens *"what does it say about the inner being"*, in the set voice (`wa-narrative-style-instruction-v1`), grounded + cited, tagging stated vs inferred.
+
+**Regeneration rule:** the narrative is **always regenerated from the FULL current digest — never patched.** Adding verses = write their lexicals (§8.1-3) → re-collate (automatic) → re-synthesise the **whole** set. The narrative therefore always reflects **all** current evidence, consistently. The evidence layer is the term's verse-lexicals; the narrative is a lens over that evidence, re-derivable at will.
