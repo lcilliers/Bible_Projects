@@ -22,6 +22,7 @@
 - [feedback_two_governing_principles](feedback_two_governing_principles.md) — verse meaning is the data and rules all analytics; capture all observations.
 - [feedback_interaction_protocols](feedback_interaction_protocols.md) — confirm before acting; write workings to files; no guessing.
 - [feedback_reusable_engine_scripts_and_continuous_learning](feedback_reusable_engine_scripts_and_continuous_learning.md) — scripts are REUSABLE parameter-driven engine components, never one-off; read back, update rules, re-run earlier work.
+- [feedback_each_chapter_first_principles_find_the_gems](feedback_each_chapter_first_principles_find_the_gems.md) — analyse every psalm/chapter AS IF THE FIRST; no shortcuts/templating. Each has its own slant/key; rich with deep HIDDEN GEMS the reading must dig for. Depth over throughput.
 - [feedback_name_dimensions_not_just_codes](feedback_name_dimensions_not_just_codes.md) — always write a dimension's NAME with its code ("D2 Source").
 - [feedback_review_via_files_not_chat](feedback_review_via_files_not_chat.md) — decisions/options as filed .md, not chat; avoid AskUserQuestion.
 - [feedback_integrity_and_intent_first](feedback_integrity_and_intent_first.md) — ask intent/integrity BEFORE acting; never act on unverified data.
