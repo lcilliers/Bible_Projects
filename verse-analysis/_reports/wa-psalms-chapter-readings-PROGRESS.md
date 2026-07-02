@@ -121,7 +121,13 @@
 | 95 | 493 | the FORK at hearing God's voice — heed or HARDEN the heart, the refusal to be moved by the word just heard ('today', vv.7-8, w/ 81/85); the ERRING heart ('go astray in their heart') forfeits the knowledge of God's ways & his rest (vv.10-11) |
 | 96 | 494 | (kingship/missions hymn, scoped; ~Ps 29) worship as ASCRIPTION — rendering the glory DUE his name with trembling awe, not augmenting God (vv.7-9, restated from 29:1-2) |
 
-**★ RUN COMPLETE (2026-07-02): Psalms 1–96. Next: Psalm 97.**
+| 97 | 495 | (kingship hymn, scoped; aheb-fix confirmed) loving the LORD ENTAILS hating evil — a paired love-and-hate, one ordered disposition (v.10, w/ 45:7); LIGHT & joy SOWN for the upright in heart — a seed for a future harvest (v.11) |
+| 98 | 496 | (praise hymn, thin, ~96) fresh divine work calls forth FRESH PRAISE — a NEW SONG because God has done something new (v.1, new-song thread w/ 33:3/40:3/96:1) |
+| 99 | 497 | (holiness hymn, thin) God's HOLINESS draws the self to TREMBLING WORSHIP & self-abasement at the footstool (vv.1,5,9); the one who CALLS is ANSWERED by a God both forgiving & holding to account (vv.6,8) |
+| 100 | 498 | (thanksgiving, scoped) service rendered IN GLADNESS, not grudging (v.2); the self MADE BY God & BELONGING to him — 'we are his', not self-owned (v.3, w/ 24:1/95:7/139) |
+| 101 | 499 | the inner being's active SELF-GOVERNANCE for integrity across 3 gates — integrity of heart in the PRIVATE sphere ('within my house', v.2); governing the EYE-GATE (not setting the worthless before the eyes, v.3, w/ 119:37); DISTANCING the perverse heart & refusing to KNOW evil (v.4); CURATING company as the heart's integrity externalised (vv.5-7, w/ 26:4-5/1:1) |
+
+**★ RUN COMPLETE (2026-07-02): Psalms 1–101. Next: Psalm 102.**
 
 ## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
 The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
