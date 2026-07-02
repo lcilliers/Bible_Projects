@@ -67,7 +67,13 @@
 | 50 | 448 | true worship & the PROJECTED God — true offering = a POSTURE (thanksgiving + calling/dependence), not provision (vv.14-15,23); the wicked LIKENS God to itself (damah, "you thought I was one like yourself", v.21) — projecting its indifference, misreading silence as likeness; enabled by DISCARDING the word (vv.16-17); corrupt speech follows |
 | 51 | 449 | **★ cornerstone** — the RE-CREATION of the inner being's core: sin owned to its ORIGIN (from birth, vv.3-5); God delights in TRUTH in the HIDDEN parts / teaches wisdom in the secret heart (v.6); CREATE (bara) a clean heart — the core cannot be self-repaired, only re-made (v.10); the spirit worked on 3 registers (holy/willing-nadib/broken, vv.11-12,17); the BROKEN & CONTRITE heart is the offering God RECEIVES (vv.16-17, w/ 34:18); re-created joy overflows into teaching/praise (vv.12-15) |
 
-**Next: Psalm 52.**
+| 52 | 450 | mis-ordered LOVE vs flourishing trust — character is the DIRECTION of the love-faculty (the evildoer loves evil/lying, vv.3-4, inverse of 45:7); the aimed love arms the tongue; two REFUGES/trees — trust in riches → uprooted (v.5), trust in chesed → a green olive tree (v.8) |
+| 53 | 451 | (~Ps 14) practical atheism as a HEART-POSTURE ("no God" in the heart → corrupt conduct, v.1); God SCANS for the inner faculties of understanding + seeking (v.2); distinctive — the God-denying heart seized by GROUNDLESS terror ("where there is no terror", v.5) |
+| 54 | 452 | "SETTING God before oneself" as a governing disposition — the wicked's root failure is NOT setting God before them (v.3, inverse of 16:8), source of ruthlessness; God as the UPHOLDER of the soul (samak, v.4); gratitude as a FREEWILL offering (nedabah, v.6) |
+| 55 | 453 | the overwhelmed inner being between FLIGHT & CASTING — a fourfold flood of dread → the escape-impulse ("wings like a dove, I would fly away", vv.4-8); the deepest wound = BETRAYAL BY THE INTIMATE who shared the SOD (v.14, = 25:14's friendship word); the heart at WAR behind smooth speech (v.21); CAST the burden (yehav) on God who sustains (v.22) — escape vs transfer |
+| 56 | 454 | TRUSTING WHILE AFRAID — "when I am afraid, I put my trust in you" (vv.3-4), the mechanism afraid→trust→not-afraid; fear the OCCASION for trust, not obstacle; trust RE-SIZES the threat ("what can flesh do to me?", vv.4,11); grief tenderly RECORDED — tossings counted, tears bottled, all booked (v.8); rescue is FOR the presence-walk in the light of life (v.13) |
+
+**Next: Psalm 57.**
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
@@ -126,6 +132,7 @@
 - **`nasa` (H5375) grain blur** — single M19 tag spans distinct senses: *lift the soul* (long/aim), *receive/carry*, *lift the head*. Grain-split candidate (memory `project_term_is_sense_not_lemma`).
 - **Intensity over-stamp** — *all*/*many*/*very* auto-stamped from quantifier spans; cosmetic.
 - **Genuine per-psalm sanity catches still ARE flagged** (e.g. Ps 26:8 *love/aheb* mis-tagged standalone → should be a characteristic). The list above is only the *systemic* residuals to reference compactly, not repeat in full.
+- **★ CONFIRMED RULE-FIX (action pending) — `aheb` (H0157, love) must be a characteristic.** Recurred **7×** across the run gate-2/standalone (Ps 26:8, 31:23, 34:12, 45:7, 47:4, 52:3-4 [central], 55 n/a) — including where it is the psalm's *core* inner-being finding (52: "you love evil more than good"). *aheb* toward any object is a genuine inner-being characteristic; its **object sets the valence** (love of God/righteousness = ordered; love of evil = disordered). **Add H0157 to the Phase-1 characteristic set** (not the stop-list). No longer a candidate — a decided fix.
 
 ## ⚠ SPECIAL HANDLING — Psalm 119 (watch out)
 176 verses, 22 acrostic stanzas (8 verses each), the Bible's longest chapter. **Do NOT run the standard single-pass reading.** Plan: backfill + Phase 1 as normal (the mechanical steps scale), but the **Phase-2 reading must be stanza-aware** — read the 22 stanzas (aleph…taw), each turning on the Torah/word vocabulary (law, testimonies, precepts, statutes, commandments, word, promise), and produce a **structured reading** (per-stanza movements → the whole), not one flat essay. Flag to researcher before doing it. Other long psalms to note: Ps 78 (72v), 89 (52v), 105/106/107 (~40+v), 18/104/144 (long).
