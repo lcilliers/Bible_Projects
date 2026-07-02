@@ -4,13 +4,13 @@
 
 ## ★ Foundational — always apply
 
-- [project_focus_points_scripture_as_data_source](project_focus_points_scripture_as_data_source.md) — study = how SCRIPTURE expresses the inner being; unit = FOCUS POINT (latent, known via operations); INFER don't extract.
+- [project_focus_points_scripture_as_data_source](project_focus_points_scripture_as_data_source.md) — study = how SCRIPTURE expresses the inner being; unit = FOCUS POINT; INFER don't extract.
 - [project_multi_contributor_spiderweb](project_multi_contributor_spiderweb.md) — evidence bound to a verse by MULTIPLE contributors; tag provenance + STATED/INFERRED; convergence = validity.
-- [project_verse_fanout_operating_model](project_verse_fanout_operating_model.md) — unit of work = a VERSE; fan out to all evidence → digest into OBSERVATIONS; mechanical = substrate, never meaning.
-- [project_inner_being_reading_questions_first](project_inner_being_reading_questions_first.md) — IB meaning is INFERRED (driver behind the act); surface unanswered QUESTIONS first; study = continuing debate.
-- [project_term_is_sense_not_lemma](project_term_is_sense_not_lemma.md) — a lexical "term" = a SPAN/SENSE not the lemma; rollup/related/xref must be sense-level (polysemous abad wrongly aggregates).
-- [project_term_driven_genre_aware_lexical_method](project_term_driven_genre_aware_lexical_method.md) — lexical per PASSAGE, genre-aware, TERM-DRIVEN order; read-back + adjust rules vital; source rule splits DRIVER vs RESTRAINT.
-- [project_ve_lexical_is_verse_first](project_ve_lexical_is_verse_first.md) — ve-lexical is VERSE-FIRST; verse → terms + verse-level elements; passage anchored on first verse; two-gate index-driven build.
+- [project_verse_fanout_operating_model](project_verse_fanout_operating_model.md) — unit of work = a VERSE; fan out → digest into OBSERVATIONS; mechanical = substrate not meaning.
+- [project_inner_being_reading_questions_first](project_inner_being_reading_questions_first.md) — IB meaning is INFERRED; surface unanswered QUESTIONS first; study = continuing debate.
+- [project_term_is_sense_not_lemma](project_term_is_sense_not_lemma.md) — a lexical "term" = a SPAN/SENSE not the lemma; rollup/related/xref sense-level (polysemous abad).
+- [project_term_driven_genre_aware_lexical_method](project_term_driven_genre_aware_lexical_method.md) — lexical per PASSAGE, genre-aware, TERM-DRIVEN; read-back + adjust rules; source splits DRIVER vs RESTRAINT.
+- [project_ve_lexical_is_verse_first](project_ve_lexical_is_verse_first.md) — ve-lexical is VERSE-FIRST; verse → terms + verse-level elements; two-gate index-driven build.
 - [feedback_verse_raw_data_must_pull_all_study_evidence](feedback_verse_raw_data_must_pull_all_study_evidence.md) — a verse's RAW data = ALL evidence the study holds, RETRIEVED not re-derived; reading comes after.
 - [feedback_term_coverage_cascade_is_index_not_census](feedback_term_coverage_cascade_is_index_not_census.md) — registry→terms→relatedNos = INDEX not census; registry = seed not boundary; use span-orphan audit.
 - [feedback_lexical_strictly_verse_bounded_no_implied_evidence](feedback_lexical_strictly_verse_bounded_no_implied_evidence.md) — lexical captures ONLY what THE VERSE says; no-basis value = ERROR → reverse out.
@@ -50,8 +50,8 @@
 
 ## Active state
 
-- [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — METHOD (2026-07-02): poetic books (Psalms→Proverbs) FIRST, chapter by chapter; chapter-driven (passage off); Phase 1 per-verse (cross-verse off) + Phase 2 whole-chapter MULTI-characteristic reading → prose type lexical_prose_chapter. Psalm 1 done (id 399).
-- [project_lexical_prose_endpoint_and_ve_lexical_phase1](project_lexical_prose_endpoint_and_ve_lexical_phase1.md) — STATE (2026-07-02): per-term pipeline ENDPOINT = story → prose type 'lexical_prose' (ruthlessness id 398). ve_lexical Phase 1 (M63, schema 3.37.0): legacy → ve_lexical_legacy; live table = live model only; Phase 2 held.
+- [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — poetic books first, chapter-driven; Phase 1 per-verse (cross-verse off) + Phase 2 whole-chapter multi-characteristic reading → prose type lexical_prose_chapter. Psalm 1 done.
+- [project_lexical_prose_endpoint_and_ve_lexical_phase1](project_lexical_prose_endpoint_and_ve_lexical_phase1.md) — per-term endpoint = story → prose type 'lexical_prose'. ve_lexical Phase 1 (M63, schema 3.37.0): legacy → ve_lexical_legacy; live table = live model only; Phase 2 held.
 - [project_ib_observation_folds_into_ve_lexical](project_ib_observation_folds_into_ve_lexical.md) — ib_observation transitional; dimensions become ve_lexical items; table dropped later. Don't link the two stores.
 - [project_m10_family_status_primary_logical_units](project_m10_family_status_primary_logical_units.md) — M10 family = STATUS-primary, 32 logical-units; next = §10 define.
 - [project_findings_audit_gate_live](project_findings_audit_gate_live.md) — run findings audit BEFORE capture + essay, M07-on.
@@ -98,37 +98,37 @@
 
 ## Legacy principles — pre-RESET (provenance; transferable value)
 
-- [feedback_term_corpus_anchors_meaning](feedback_term_corpus_anchors_meaning.md) — term corpus anchors meaning; cold isolation unreliable.
-- [feedback_no_forced_structure_audit_surfaces_analysis_compensates](feedback_no_forced_structure_audit_surfaces_analysis_compensates.md) — don't force tidy structure on a variable subject.
+- [feedback_term_corpus_anchors_meaning](feedback_term_corpus_anchors_meaning.md) — corpus anchors meaning; cold isolation unreliable.
+- [feedback_no_forced_structure_audit_surfaces_analysis_compensates](feedback_no_forced_structure_audit_surfaces_analysis_compensates.md) — don't force tidy structure.
 - [feedback_verse_change_revalidation](feedback_verse_change_revalidation.md) — verse changes stale findings; cluster resets.
-- [feedback_audit_must_be_self_critical](feedback_audit_must_be_self_critical.md) — the audit self-interrogates its coverage/angles.
-- [feedback_boundary_resolution_required](feedback_boundary_resolution_required.md) — BOUNDARY-pending ≠ closure; three valid resolutions.
+- [feedback_audit_must_be_self_critical](feedback_audit_must_be_self_critical.md) — audit self-interrogates coverage/angles.
+- [feedback_boundary_resolution_required](feedback_boundary_resolution_required.md) — BOUNDARY-pending ≠ closure.
 - [feedback_setaside_verses_inform_word_meaning](feedback_setaside_verses_inform_word_meaning.md) — set-aside verses still inform meaning.
-- [feedback_findings_marginal_value](feedback_findings_marginal_value.md) — Q&A findings = registry-scope shotgun; limited applicability.
-- [feedback_coverage_flags_philosophy](feedback_coverage_flags_philosophy.md) — coverage flags informational not gating; volume≠value.
-- [feedback_no_rework_paid_twice](feedback_no_rework_paid_twice.md) — pivots re-align existing structures, don't rebuild.
-- [feedback_route_dual_cluster_findings](feedback_route_dual_cluster_findings.md) — a finding referring to both clusters routes to both.
-- [feedback_cross_cluster_co_occurrence](feedback_cross_cluster_co_occurrence.md) — assess secondary role before routing a verse.
-- [feedback_re_examination_workflow](feedback_re_examination_workflow.md) — closed clusters with new verses re-examined.
-- [feedback_remediation_is_analysis_not_reassignment](feedback_remediation_is_analysis_not_reassignment.md) — remediation = analysis, not reassignment/hacks.
+- [feedback_findings_marginal_value](feedback_findings_marginal_value.md) — Q&A findings = shotgun; limited value.
+- [feedback_coverage_flags_philosophy](feedback_coverage_flags_philosophy.md) — coverage flags informational not gating.
+- [feedback_no_rework_paid_twice](feedback_no_rework_paid_twice.md) — pivots re-align, don't rebuild.
+- [feedback_route_dual_cluster_findings](feedback_route_dual_cluster_findings.md) — dual-cluster finding routes to both.
+- [feedback_cross_cluster_co_occurrence](feedback_cross_cluster_co_occurrence.md) — assess secondary role before routing.
+- [feedback_re_examination_workflow](feedback_re_examination_workflow.md) — closed clusters + new verses re-examined.
+- [feedback_remediation_is_analysis_not_reassignment](feedback_remediation_is_analysis_not_reassignment.md) — remediation = analysis, not hacks.
 - [feedback_interdependent_clusters_finalise_together](feedback_interdependent_clusters_finalise_together.md) — interdependent clusters finalise together.
-- [feedback_external_pole_not_inner_state](feedback_external_pole_not_inner_state.md) — punishment/judgment = external pole, not inner-being.
-- [feedback_emergent_aggregate_questions](feedback_emergent_aggregate_questions.md) — ask an explicit emergent question at each rung.
-- [feedback_span_pairing_and_reciprocal_findings](feedback_span_pairing_and_reciprocal_findings.md) — sibling spans paired into the T1 meaning, never ignored.
-- [feedback_qualifier_routes_per_verse_occurrence](feedback_qualifier_routes_per_verse_occurrence.md) — a qualifier routes per verse-occurrence, not per term.
-- [feedback_transitive_faculty_verb_is_qualifier](feedback_transitive_faculty_verb_is_qualifier.md) — a transitive faculty-verb routes as qualifier.
+- [feedback_external_pole_not_inner_state](feedback_external_pole_not_inner_state.md) — punishment/judgment = external pole.
+- [feedback_emergent_aggregate_questions](feedback_emergent_aggregate_questions.md) — ask an emergent question at each rung.
+- [feedback_span_pairing_and_reciprocal_findings](feedback_span_pairing_and_reciprocal_findings.md) — sibling spans paired, never ignored.
+- [feedback_qualifier_routes_per_verse_occurrence](feedback_qualifier_routes_per_verse_occurrence.md) — qualifier routes per occurrence.
+- [feedback_transitive_faculty_verb_is_qualifier](feedback_transitive_faculty_verb_is_qualifier.md) — transitive faculty-verb = qualifier.
 - [feedback_t1_vs_t2_ontology](feedback_t1_vs_t2_ontology.md) — T1 = faculty in operation; T2/FLAG = recipient/effect.
 - [feedback_characteristic_is_typed_term_in_verse](feedback_characteristic_is_typed_term_in_verse.md) — "characteristic" = typed term-in-verse (pre-RESET).
-- [feedback_ontology_typed_relationships](feedback_ontology_typed_relationships.md) — cluster is scaffolding; typed relationships.
+- [feedback_ontology_typed_relationships](feedback_ontology_typed_relationships.md) — cluster = scaffolding; typed relationships.
 - [feedback_faculty_must_be_per_term_not_per_cluster](feedback_faculty_must_be_per_term_not_per_cluster.md) — faculty per-term not per-cluster.
-- [feedback_l1_l2_is_multi_angle_report_then_synthesise](feedback_l1_l2_is_multi_angle_report_then_synthesise.md) — L1/L2 = multi-angle report then synthesise.
-- [feedback_l2_mechanical_api_triage](feedback_l2_mechanical_api_triage.md) — L2 mechanical-vs-API = judgement on outcome adequacy.
+- [feedback_l1_l2_is_multi_angle_report_then_synthesise](feedback_l1_l2_is_multi_angle_report_then_synthesise.md) — L1/L2 = multi-angle then synthesise.
+- [feedback_l2_mechanical_api_triage](feedback_l2_mechanical_api_triage.md) — L2 mechanical-vs-API = outcome adequacy.
 - [feedback_clarifications_reusable_but_state_not_induce](feedback_clarifications_reusable_but_state_not_induce.md) — clarifications: state, don't induce.
 - [feedback_session_b_findings_resolved_through_l2](feedback_session_b_findings_resolved_through_l2.md) — Session B findings resolved by a finding.
 - [feedback_patch_format](feedback_patch_format.md) — enforce patch spec strictly.
-- [feedback_version_discipline](feedback_version_discipline.md) — bump minor version on every instruction-doc edit.
+- [feedback_version_discipline](feedback_version_discipline.md) — bump minor version on every instruction edit.
 - [feedback_rule_extract_obsolete_default](feedback_rule_extract_obsolete_default.md) — rule-registry extracts default obsolete=0.
-- [project_meaning_duplicates_then_fabricates](project_meaning_duplicates_then_fabricates.md) — fused verse-read meaning duplicated dimensions then fabricated.
+- [project_meaning_duplicates_then_fabricates](project_meaning_duplicates_then_fabricates.md) — fused verse-read duplicated then fabricated.
 - [project_ve_proposition_gap](project_ve_proposition_gap.md) — VE captured the term not the proposition.
 - [project_verse_extraction_cause_side_gap](project_verse_extraction_cause_side_gap.md) — verse read captured effect not cause.
 - [project_constitution_cluster_and_flag_resolution](project_constitution_cluster_and_flag_resolution.md) — created M47 Constitution (seats & faculties).
