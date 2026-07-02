@@ -97,7 +97,16 @@
 | 75 | 473 | (judgment psalm, scoped) the FUTILITY of SELF-EXALTATION — 'lift up your horn, haughty neck' (vv.4-5) is futile; 'lifting up' comes from GOD alone (vv.6-7); self-raised horn CUT OFF, the righteous' (not self-raised) LIFTED UP by God (v.10) |
 | 76 | 474 | (victory hymn, scoped) God's roused power reduces the self to FEARFUL STILLNESS — cannot stand, 'the earth feared and was still' (vv.7-8, awe as a silenced hush); man's WRATH turned to God's PRAISE — the opposing passion overruled & co-opted, its remnant restrained (v.10) |
 
-**Next: Psalm 77.**
+| 77 | 475 | the inconsolable soul resolved by the WILLED REDIRECTION of memory — the soul REFUSES comfort (v.2); at the crisis, remember/meditate AGGRAVATE ('I meditate & my spirit faints', v.3, aimed at the present); RESOLVED by 'I WILL remember/ponder/meditate' redirecting the SAME faculties to God's ANCIENT deeds (vv.10-12). The meditative faculty is neutral; its OBJECT sets its effect |
+| 78 | 476 | (72v history, scoped) rebellion is an UNSTEADY heart — not FIXED (nakon), spirit not FAITHFUL (vv.8,37, vs 57:7/112:7); MOUTH flatters while heart unfixed (vv.36-37); CRAVING (ta'avah) turns to TESTING God (v.18); God ACCOUNTS for the self's FRAILTY — 'he remembered they were but flesh' (v.39, w/ 103:14); HOPE+MEMORY transmitted (vv.7-8) vs the shepherd's UPRIGHT heart (v.72) |
+| 79 | 477 | (community lament, scoped) the self appeals to be MET by compassion, not remembered by its iniquities ('let your compassion come to MEET us', v.8, prevenient w/ 21:3); grounds the plea on its own LOWNESS & God's NAME, not merit (vv.8-9, w/ 25:7/65:3) |
+| 80 | 478 | (community lament, scoped) RESTORATION comes through God's SHINING FACE ('let your face shine, that we may be saved', threefold refrain vv.3,7,19, the face-shine the MEANS; w/ 4:6/31:16/67:1); GRIEF becomes the self's FOOD & DRINK — the bread of tears (v.5, w/ 42:3) |
+| 81 | 479 | the LISTENING self vs the one GIVEN OVER — refusal to listen → handed back to one's OWN STUBBORN HEART, 'to follow their own counsels' (vv.11-12, abandonment to the self as the judgment); RECEPTIVITY met by filling — 'open your mouth wide & I will fill it' (v.10, inverse of the closed heart, w/ 40:6); not-listening FORFEITS the waiting good — the finest wheat, honey from the rock (vv.13,16) |
+
+**★ RUN COMPLETE (2026-07-02): Psalms 1–81 read (Books I–II + Ps 72–81 of Book III's opening). Next: Psalm 82.**
+
+## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
+The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
 
 ## Cross-psalm threads emerging (for a later cross-chapter reading)
 - **Refuge** as the inner being's safety — Ps 2, 3, 5, 7, 11.
