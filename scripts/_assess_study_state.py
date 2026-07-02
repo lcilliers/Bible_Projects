@@ -1,161 +1,199 @@
-"""Read-only: render the ENTIRE live state of the verse-fanout study to ONE page.
+"""Read-only: render the live state of the verse-lexical study to ONE page (verse-analysis/_STATE.md).
 
-The "mission control" view — generated from the DB (ib_observation + verse_analysis_progress),
-so it is always current and can never drift or be forgotten. Read this instead of re-reading
-the sprawl. Run anytime:
+Aligned to the LIVE lexical-analysis method (2026-07-02, method doc
+`Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`): the page is driven by
+`verse.process_marker` (Phase-1 completion markers), `ve_lexical` (the lexical store) and the
+`lexical_prose_chapter` prose sections (Phase-2 chapter readings) — NOT the retired fan-out
+(`ib_observation`), which is demoted to a one-line legacy pointer (memory
+`project_ib_observation_folds_into_ve_lexical`).
 
     python scripts/_assess_study_state.py            # -> verse-analysis/_STATE.md
     python scripts/_assess_study_state.py --stdout    # print instead
 
-Sections: headline counts · FAN-OUT PLAN (what to read next & what it closes) ·
-OPEN THREADS by track · STALE (open & not revisited) · BY TRACK rollup · RECENTLY RESOLVED.
+Marker legend: ✓ analysed (process_marker set) · ⚠ B-BLOCKED (spans missing) ·
+◐ A-REVIEW (processed, needs review) · ○ present but unmarked.
+Do not hand-edit the output — re-run to refresh.
 """
-import sqlite3, os, argparse, re, datetime
+import sqlite3, os, argparse, json, datetime, re
 
 DB = os.path.join('database', 'bible_research.db')
 OUT = os.path.join('verse-analysis', '_STATE.md')
-STALE_DAYS = 7
 
-DIM = {  # code -> name (from wa-IB-verse-dimensions-catalogue-[current])
- 'D1':'Identity','D2':'Source','D3':'Seat/bearer','D4':'Operation','D5':'Object','D6':'Manner',
- 'D7':'Process','D8':'Impact','D9':'Coupling','D10':'Valence','D11':'Discovery','D12':'Hidden','D13':'Cohabitation'}
+POETIC_TAG = 'poetic-lexical'   # marker substring identifying the poetic chapter-driven pipeline
 
-VERSE_RE = re.compile(r'\b([1-3]?[A-Z][a-z]{2,3})\s+(\d+):(\d+)\b')
 
-def dlabel(code): return f"{code} {DIM.get(code, '?')}"
+def marker_state(pm):
+    """Classify a process_marker into a single-char state + kind."""
+    if pm is None:
+        return '○', 'unmarked'
+    if pm.startswith('B-BLOCKED'):
+        return '⚠', 'blocked'
+    if pm.startswith('A-REVIEW'):
+        return '◐', 'review'
+    return '✓', 'analysed'
 
-def cell(s):
-    """Sanitize a value for a markdown table cell: escape pipes, flatten newlines."""
-    return (s or '').replace('\n', ' ').replace('\r', ' ').replace('|', '\\|')
 
-def age_days(ts, today):
-    if not ts: return None
-    try: return (today - datetime.date.fromisoformat(str(ts)[:10])).days
-    except Exception: return None
+def term_of(pm):
+    """The track label for a prose (non-poetic) marker, e.g. 'ruthlessness-sanitychecked-2026' -> 'ruthlessness'."""
+    if not pm:
+        return '(unmarked)'
+    # strip a trailing ISO-ish date, then take the leading token
+    base = re.sub(r'-?\d{6,8}$', '', pm)
+    return base.split('-')[0] or pm
+
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--stdout', action='store_true'); a = ap.parse_args()
     today = datetime.date.today()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row; c = conn.cursor()
-    L=[]
+    L = []
     def w(s=''): L.append(s)
 
-    obs = c.execute("SELECT * FROM ib_observation ORDER BY origin_verse, operation, dimension").fetchall()
-    openobs = [o for o in obs if o['status'] in ('open','needs-corroboration')]
-    by_status = {}
-    for o in obs: by_status[o['status']] = by_status.get(o['status'],0)+1
+    # ---- Phase-2 map: (book_short, chapter) -> prose_section id --------------------------------
+    phase2 = {}
+    for r in c.execute("""SELECT ps.id id, ps.heading heading, ps.metadata_json md
+                          FROM prose_section ps JOIN prose_section_type t ON t.id = ps.section_type_id
+                          WHERE t.code = 'lexical_prose_chapter' AND COALESCE(ps.delete_flagged,0) = 0
+                          ORDER BY ps.id""").fetchall():
+        book = chap = None
+        try:
+            m = json.loads(r['md'] or '{}'); book = m.get('book'); chap = m.get('chapter')
+        except Exception:
+            pass
+        if book is None or chap is None:  # fall back to parsing "Psalm N" from the heading
+            mm = re.search(r'Psalm\s+(\d+)', r['heading'] or '')
+            if mm: book, chap = 'Psa', int(mm.group(1))
+        if book is not None and chap is not None:
+            phase2[(book, int(chap))] = r['id']
 
-    w(f"# STUDY STATE — verse-fanout (generated {today.isoformat()})")
+    # ---- all marked verses (Phase-1) ----------------------------------------------------------
+    rows = c.execute("""SELECT v.reference ref, v.verse_num vn, v.chapter ch, v.genre genre,
+                               v.process_marker pm, b.short_code book, b.name book_name, b.book_order bo
+                        FROM verse v JOIN books b ON b.id = v.book_id
+                        WHERE v.process_marker IS NOT NULL
+                        ORDER BY b.book_order, v.chapter, v.verse_num""").fetchall()
+
+    poetic = [r for r in rows if r['pm'] and POETIC_TAG in r['pm']]
+    prose  = [r for r in rows if not (r['pm'] and POETIC_TAG in r['pm'])]
+
+    n_analysed = sum(1 for r in rows if marker_state(r['pm'])[1] == 'analysed')
+    n_blocked  = sum(1 for r in rows if marker_state(r['pm'])[1] == 'blocked')
+    n_review   = sum(1 for r in rows if marker_state(r['pm'])[1] == 'review')
+    chapters   = sorted(set((r['book'], r['ch']) for r in poetic))
+    books_seen = sorted(set(r['book_name'] for r in rows))
+
+    ve_total = c.execute("SELECT count(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0").fetchone()[0]
+    ve_g1 = c.execute("SELECT count(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0 AND gate='1-primary'").fetchone()[0]
+    ve_g2 = c.execute("SELECT count(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0 AND gate='2-relevant'").fetchone()[0]
+
+    # ---- header + headline --------------------------------------------------------------------
+    w(f"# STUDY STATE — verse-lexical (generated {today.isoformat()})")
     w()
     w("> Generated by `scripts/_assess_study_state.py` from the DB (the single source of truth). "
-      "Do not hand-edit. Re-run to refresh. **This page replaces re-reading the sprawl.**")
+      "Driven by the **live lexical method** — `verse.process_marker` (Phase-1), `ve_lexical` (the "
+      "lexical store) and `lexical_prose_chapter` prose (Phase-2 chapter readings). "
+      "Do not hand-edit; re-run to refresh.")
     w()
-    # headline
-    verses = c.execute("SELECT count(DISTINCT origin_verse) n FROM ib_observation").fetchone()['n']
-    tracks = c.execute("SELECT count(DISTINCT operation) n FROM ib_observation").fetchone()['n']
+    w("**Marker legend:** `✓` analysed · `⚠` B-BLOCKED (spans missing) · `◐` A-REVIEW (needs review) · `○` present, unmarked.")
+    w()
     w("## Headline")
-    w(f"- **{len(obs)} observations** across **{verses} analysed verses** and **{tracks} tracks**.")
-    w(f"- status: " + " · ".join(f"**{by_status.get(s,0)} {s}**" for s in ['resolved','needs-corroboration','open','silent']))
-    stale = [o for o in openobs if (age_days(o['created'], today) or 0) >= STALE_DAYS]
-    w(f"- **{len(openobs)} OPEN THREADS** to resolve · **{len(stale)} stale** (open ≥{STALE_DAYS}d — revisit risk).")
+    w(f"- **{n_analysed} verses analysed** (Phase-1 marked) across **{len(chapters)} chapters** and "
+      f"**{len(books_seen)} books** ({', '.join(books_seen)}).")
+    w(f"- **{len(phase2)} chapter readings filed** (Phase-2, `lexical_prose_chapter`).")
+    w(f"- **{n_blocked} blocked** (⚠ spans missing) · **{n_review} needing review** (◐).")
+    w(f"- **{ve_total} `ve_lexical` rows** — {ve_g1} gate-1 (tagged term) · {ve_g2} gate-2 (relevant content span).")
     w()
 
-    # FAN-OUT PLAN — aggregate reconsider_at verse targets -> what each closes
-    w("## ▶ FAN-OUT PLAN — read these next (each closes the listed open threads)")
-    w("*The single most useful view: what to do next, and why. Ranked by how many open threads it touches.*")
+    # ---- NEXT ACTION (derived) ----------------------------------------------------------------
+    w("## ▶ NEXT ACTION")
+    w("*Derived from state — Phase-1 chapters whose Phase-2 reading is not yet filed, and any blocked verses.*")
     w()
-    targets = {}  # ref -> list of (id, operation, dim)
-    for o in openobs:
-        for m in VERSE_RE.finditer(o['reconsider_at'] or ''):
-            ref = f"{m.group(1)} {m.group(2)}:{m.group(3)}"
-            if ref == o['origin_verse']: continue
-            targets.setdefault(ref, []).append(o)
-    ranked = sorted(targets.items(), key=lambda kv: -len(kv[1]))
-    if ranked:
-        w("| read this verse | closes / advances | tracks |")
-        w("|---|---|---|")
-        for ref, os_ in ranked[:20]:
-            ids = ", ".join(f"#{o['id']} {dlabel(o['dimension'])}" for o in os_[:6])
-            trks = ", ".join(sorted(set(o['operation'] for o in os_)))
-            w(f"| **{ref}** | {ids} | {trks} |")
+    pending = []
+    for (bk, ch) in chapters:
+        cv = [r for r in poetic if r['book'] == bk and r['ch'] == ch]
+        blocked = sum(1 for r in cv if marker_state(r['pm'])[1] == 'blocked')
+        if (bk, ch) not in phase2 and blocked == 0:
+            pending.append((bk, ch))
+    if pending:
+        for bk, ch in pending:
+            w(f"- **{bk} {ch}** — Phase-1 complete, **Phase-2 reading pending** → write "
+              f"`wa-psalm{ch}-inner-being-reading-*.md`, then file (`_apply_file_chapter_lexical_prose_v1_...`).")
     else:
-        w("_no verse-specific reconsider targets among open threads._")
+        w("- No Phase-1 chapter is waiting on its Phase-2 reading.")
+    blocked_refs = [r['ref'] for r in rows if marker_state(r['pm'])[1] == 'blocked']
+    if blocked_refs:
+        w(f"- **Blocked (backfill needed):** {', '.join(blocked_refs)}")
     w()
 
-    # OPEN THREADS grouped by track (operation)
-    w("## OPEN THREADS — by track")
-    w("*Every unresolved observation, **full text**. `→ go to` = where to go to resolve it.*")
+    # ---- POETIC chapter-driven grid -----------------------------------------------------------
+    w("## Poetic chapter-driven pipeline")
+    w("*The live Psalter work. Phase-1 = per-verse lexical marked; Phase-2 = whole-chapter reading filed.*")
     w()
-    ops = sorted(set(o['operation'] for o in openobs))
-    for op in ops:
-        group = [o for o in openobs if o['operation']==op]
-        w(f"### {op} ({len(group)} open)")
-        for o in sorted(group, key=lambda o:(o['status']!='needs-corroboration', -(age_days(o['created'],today) or 0))):
-            ad = age_days(o['created'], today); agetag = f"{ad}d" + (" ⚠" if ad and ad>=STALE_DAYS else "") if ad is not None else ""
-            w(f"- **#{o['id']} · {dlabel(o['dimension'])}** · _{o['status']}_ · origin {o['origin_verse']} · {agetag}")
-            w(f"  - {(o['narrative'] or '').strip()}")
-            w(f"  - **→ go to:** {o['reconsider_at'] or '—'}")
-        w()
-
-    # BY TRACK rollup (all observations, resolved+open)
-    w("## BY TRACK — rollup (all observations)")
-    w("| track | resolved | open/needs-corrob | silent | total |")
-    w("|---|---|---|---|---|")
-    alltr = sorted(set(o['operation'] for o in obs))
-    for op in alltr:
-        g=[o for o in obs if o['operation']==op]
-        r=sum(1 for o in g if o['status']=='resolved'); op_=sum(1 for o in g if o['status'] in ('open','needs-corroboration')); s=sum(1 for o in g if o['status']=='silent')
-        w(f"| {op} | {r} | {op_} | {s} | {len(g)} |")
-    w()
-
-    # BY ORIGIN VERSE — every verse that has observations (so any verse is findable)
-    w("## BY ORIGIN VERSE — every analysed verse + its observations")
-    w("*Each verse that has captured observations, with status counts and the tracks it opened.*")
-    w("| verse | tracks opened | resolved | open/needs-corrob | silent | total |")
+    w("| Book | Ch | verses marked | Phase 1 | Phase 2 (prose id) | blocked |")
     w("|---|---|---|---|---|---|")
-    verses_obs = {}
-    for o in obs: verses_obs.setdefault(o['origin_verse'], []).append(o)
-    def vkey(ref):  # rough canonical sort: book order unknown, so sort by ref text
-        return ref
-    for v_ in sorted(verses_obs, key=vkey):
-        g = verses_obs[v_]
-        trk = ", ".join(sorted(set(o['operation'] for o in g)))
-        r = sum(1 for o in g if o['status']=='resolved')
-        op_ = sum(1 for o in g if o['status'] in ('open','needs-corroboration'))
-        s = sum(1 for o in g if o['status']=='silent')
-        w(f"| **{v_}** | {trk} | {r} | {op_} | {s} | {len(g)} |")
+    for (bk, ch) in chapters:
+        cv = [r for r in poetic if r['book'] == bk and r['ch'] == ch]
+        marked = sum(1 for r in cv if marker_state(r['pm'])[1] == 'analysed')
+        blocked = sum(1 for r in cv if marker_state(r['pm'])[1] == 'blocked')
+        p2 = phase2.get((bk, ch))
+        p1cell = '✓' if marked and not blocked else ('⚠' if blocked else '—')
+        p2cell = f"✓ ({p2})" if p2 else "⬜ pending"
+        w(f"| {bk} | {ch} | {marked}/{len(cv)} | {p1cell} | {p2cell} | {blocked or ''} |")
     w()
 
-    # VERSE PROGRESS
-    w("## VERSE PROGRESS (verse_analysis_progress)")
-    rows=c.execute("SELECT reference,marker,xref_verse,ref_by_obs,ref_dims FROM verse_analysis_progress ORDER BY marker DESC, reference").fetchall()
-    focus=[r for r in rows if r['marker'] and 'progress' in r['marker'].lower()]
-    w(f"- **Focus verses (analysis in progress):** " + (", ".join(r['reference'] for r in focus) or "—"))
-    w(f"- **Cross-referenced (pulled into focus, pending):** {sum(1 for r in rows if r['xref_verse'])} verses.")
+    # ---- PER-VERSE marker tick-lines ----------------------------------------------------------
+    w("## Per-verse markers (analysed verses)")
+    w("*One line per analysed chapter — the marker beside every verse present in the DB.*")
+    w()
+    for (bk, ch) in chapters:
+        cv = sorted([r for r in poetic if r['book'] == bk and r['ch'] == ch], key=lambda r: r['vn'])
+        ticks = " ".join(f"{r['vn']}{marker_state(r['pm'])[0]}" for r in cv)
+        p2 = phase2.get((bk, ch))
+        p2note = f"Phase 2: ✓ ({p2})" if p2 else "Phase 2: ⬜ pending"
+        w(f"- **{bk} {ch}** — {ticks} · {p2note}")
     w()
 
-    # STALE
-    if stale:
-        w(f"## ⚠ STALE — open ≥{STALE_DAYS}d, not revisited (misconception risk)")
-        for o in sorted(stale, key=lambda o:-(age_days(o['created'],today) or 0)):
-            w(f"- #{o['id']} [{o['operation']}/{dlabel(o['dimension'])}] {age_days(o['created'],today)}d — {(o['narrative'] or '')[:80]}…  → {o['reconsider_at']}")
+    # ---- PROSE term-driven pipeline -----------------------------------------------------------
+    if prose:
+        w("## Prose term-driven pipeline")
+        w("*Verses marked by the prose (term-driven) build, grouped by track.*")
+        w()
+        by_term = {}
+        for r in prose:
+            by_term.setdefault(term_of(r['pm']), []).append(r)
+        for term in sorted(by_term):
+            g = sorted(by_term[term], key=lambda r: (r['bo'], r['ch'], r['vn']))
+            refs = ", ".join(f"{r['ref']}{marker_state(r['pm'])[0]}" for r in g)
+            w(f"- **{term}** ({len(g)} verses) — {refs}")
         w()
 
-    # RECENTLY RESOLVED (sanity check)
-    w("## RECENTLY RESOLVED (spot-check for wrong closures)")
-    rr=[o for o in obs if o['status']=='resolved']
-    rr=sorted(rr, key=lambda o:str(o['created'] or ''), reverse=True)[:10]
-    for o in rr:
-        w(f"- #{o['id']} [{o['operation']}/{dlabel(o['dimension'])}] {(o['narrative'] or '')[:80]}…")
-    w()
-    w("---")
-    w("_To act: pick the top FAN-OUT PLAN verse → prepare it (`_assess_verse_raw_data.py --ref ...`) → read → capture to `ib_observation`. Re-run this page to see the threads close._")
+    # ---- LEGACY fan-out pointer ---------------------------------------------------------------
+    try:
+        obs_n = c.execute("SELECT count(*) FROM ib_observation").fetchone()[0]
+        obs_open = c.execute("SELECT count(*) FROM ib_observation WHERE status IN ('open','needs-corroboration')").fetchone()[0]
+        w("## Legacy — retired fan-out")
+        w(f"- `ib_observation` holds **{obs_n} observations** ({obs_open} open/needs-corroboration) from the "
+          "retired D1–D13 verse-fan-out. **Transitional** — folding into `ve_lexical` "
+          "(memory `project_ib_observation_folds_into_ve_lexical`); not the live tracker. "
+          "Prior generator output is in git history if the detail is needed.")
+        w()
+    except sqlite3.OperationalError:
+        pass
 
-    out="\n".join(L)
-    if a.stdout: print(out)
+    w("---")
+    w("_Method: `Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`. "
+      "Poetic pipeline tracker: `verse-analysis/_reports/wa-psalms-chapter-readings-PROGRESS.md`._")
+
+    out = "\n".join(L)
+    if a.stdout:
+        print(out)
     else:
-        with open(OUT,'w',encoding='utf-8') as fh: fh.write(out)
-        print(f"wrote {OUT} — {len(obs)} obs, {len(openobs)} open, {len(stale)} stale, {len(ranked)} fan-out targets")
+        with open(OUT, 'w', encoding='utf-8') as fh:
+            fh.write(out)
+        print(f"wrote {OUT} — {n_analysed} analysed verses, {len(chapters)} chapters, "
+              f"{len(phase2)} Phase-2 readings, {n_blocked} blocked")
     conn.close()
 
-if __name__=='__main__': main()
+
+if __name__ == '__main__':
+    main()
