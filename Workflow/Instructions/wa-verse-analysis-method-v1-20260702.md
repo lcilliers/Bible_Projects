@@ -88,3 +88,16 @@ A "term" for rollup is a **GRAIN** — a per-occurrence STEP sub-gloss — **not
 - **"Related verses" = same-grain occurrences** (not same-Strong's).
 - **Cross-ref mappings carry the span (`strong@verse`)**, which resolves to a grain via the index — fix any bare-Strong's mapping (e.g. `coupling`) to `strong@verse`.
 - **`mti_terms.owning_word` is NOT authoritative for sense** (e.g. "worship" mislabels the H5647G "to serve" grain); use the grain code.
+
+---
+
+## 12. The build is INDEX-DRIVEN — the two gates (fix, 2026-07-02)
+The lexical build **starts from `verse_span_index` (every span)**, not from a pre-tagged term list. Two gates per content span:
+- **Gate 1 — primary term:** the span is a tagged non-T2 term (has a `verse_context`) → lexicalise + link `verse_context_id`.
+- **Gate 2 — relevant, not yet a term:** the span is a **content word not yet tagged** → lexicalise anyway, keyed on **`verse_span_id`** (`gate='2-relevant'`, relevance = candidate for confirmation). *Content words carry the IB impact; skipping them guts the lexical.*
+- **Function words** (particle/preposition/conjunction/suffix/pronoun) are skipped.
+- **T2** stays excluded from standalone analysis.
+
+**Storage (schema 3.36.0, M62):** `ve_lexical` is now **span-keyable** — `verse_context_id` nullable + `verse_span_id`→`verse_span_index` + `gate`. Gate-1 rows carry both; gate-2 rows carry `verse_span_id` only.
+
+**Proof (ruthlessness passages):** content-span coverage rose from **14% → 94%** (197/210 content spans; 52 function words skipped). The earlier build skipped ~86% of spans incl. `dread`, `deal-shrewdly` (deceit), `taskmasters` — all now lexicalised. Writer: `_apply_write_ruthlessness_index_driven_v3_20260702.py`; coverage check: `wa-span-index-coverage-5passages-20260702.md`.
