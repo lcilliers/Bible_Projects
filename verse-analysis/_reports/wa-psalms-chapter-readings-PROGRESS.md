@@ -103,7 +103,13 @@
 | 80 | 478 | (community lament, scoped) RESTORATION comes through God's SHINING FACE ('let your face shine, that we may be saved', threefold refrain vv.3,7,19, the face-shine the MEANS; w/ 4:6/31:16/67:1); GRIEF becomes the self's FOOD & DRINK — the bread of tears (v.5, w/ 42:3) |
 | 81 | 479 | the LISTENING self vs the one GIVEN OVER — refusal to listen → handed back to one's OWN STUBBORN HEART, 'to follow their own counsels' (vv.11-12, abandonment to the self as the judgment); RECEPTIVITY met by filling — 'open your mouth wide & I will fill it' (v.10, inverse of the closed heart, w/ 40:6); not-listening FORFEITS the waiting good — the finest wheat, honey from the rock (vv.13,16) |
 
-**★ RUN COMPLETE (2026-07-02): Psalms 1–81 read (Books I–II + Ps 72–81 of Book III's opening). Next: Psalm 82.**
+| 82 | 480 | (divine-council, scoped) injustice rooted in INNER BLINDNESS — 'neither knowledge nor understanding, they walk about in darkness' (v.5), the darkened un-understanding self the root (w/ 14:2, 36:1-4) |
+| 83 | 481 | (imprecatory, scoped) hostility as a UNITED HEART — the wicked 'conspire with one heart' (v.5); SHAME aimed at SEEKING — the imprecation's redemptive purpose, 'that they may seek your name' (v.16) |
+| 84 | 482 | WHOLE-BEING longing for God's dwelling — soul faints while heart+flesh SING (ache & joy at once, v.2); the pilgrim-ROADS carried WITHIN the heart (interiorised pilgrimage, v.5); the journey ACCUMULATES strength ('strength to strength', Baca→springs, vv.6-7); nearness RE-VALUED over quantity/rank (a day/doorkeeper > a thousand/dwelling, v.10) |
+| 85 | 483 | (restoration, scoped) the LISTENING posture — 'let me hear what God will speak', quieting & attending, expecting PEACE (v.8, opposite Ps 81's non-listening heart; guarded against relapse to folly) |
+| 86 | 484 | **★ the DIVIDED heart made ONE** — 'unite (yachad) my heart to fear your name' (v.11) presupposes a scattered heart & asks GOD to gather it into a single focus (the self can't unify itself); the united heart issues in WHOLE-hearted thanks (v.12); the soul LIFTED to God (v.4). Key datum: the heart's fragmentation & its unification |
+
+**★ RUN COMPLETE (2026-07-02): Psalms 1–86. Next: Psalm 87.**
 
 ## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
 The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
