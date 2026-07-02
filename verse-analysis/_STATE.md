@@ -5,10 +5,10 @@
 **Marker legend:** `✓` analysed · `⚠` B-BLOCKED (spans missing) · `◐` A-REVIEW (needs review) · `○` present, unmarked.
 
 ## Headline
-- **1889 verses analysed** (Phase-1 marked) across **111 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
-- **111 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
+- **1953 verses analysed** (Phase-1 marked) across **116 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
+- **116 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
 - **0 blocked** (⚠ spans missing) · **0 needing review** (◐).
-- **52016 `ve_lexical` rows** — 14059 gate-1 (tagged term) · 37957 gate-2 (relevant content span).
+- **53540 `ve_lexical` rows** — 14461 gate-1 (tagged term) · 39079 gate-2 (relevant content span).
 
 ## ▶ NEXT ACTION
 *Derived from state — Phase-1 chapters whose Phase-2 reading is not yet filed, and any blocked verses.*
@@ -131,6 +131,11 @@
 | Psa | 109 | 31/31 | ✓ | ✓ (507) |  |
 | Psa | 110 | 7/7 | ✓ | ✓ (508) |  |
 | Psa | 111 | 10/10 | ✓ | ✓ (509) |  |
+| Psa | 112 | 10/10 | ✓ | ✓ (510) |  |
+| Psa | 113 | 9/9 | ✓ | ✓ (511) |  |
+| Psa | 114 | 8/8 | ✓ | ✓ (512) |  |
+| Psa | 115 | 18/18 | ✓ | ✓ (513) |  |
+| Psa | 116 | 19/19 | ✓ | ✓ (514) |  |
 
 ## Per-verse markers (analysed verses)
 *One line per analysed chapter — the marker beside every verse present in the DB.*
@@ -246,6 +251,11 @@
 - **Psa 109** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ 21✓ 22✓ 23✓ 24✓ 25✓ 26✓ 27✓ 28✓ 29✓ 30✓ 31✓ · Phase 2: ✓ (507)
 - **Psa 110** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ · Phase 2: ✓ (508)
 - **Psa 111** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ · Phase 2: ✓ (509)
+- **Psa 112** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ · Phase 2: ✓ (510)
+- **Psa 113** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ · Phase 2: ✓ (511)
+- **Psa 114** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ · Phase 2: ✓ (512)
+- **Psa 115** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ · Phase 2: ✓ (513)
+- **Psa 116** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ · Phase 2: ✓ (514)
 
 ## Prose term-driven pipeline
 *Verses marked by the prose (term-driven) build, grouped by track.*
