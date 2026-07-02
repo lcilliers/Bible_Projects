@@ -5,10 +5,10 @@
 **Marker legend:** `✓` analysed · `⚠` B-BLOCKED (spans missing) · `◐` A-REVIEW (needs review) · `○` present, unmarked.
 
 ## Headline
-- **2237 verses analysed** (Phase-1 marked) across **131 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
-- **131 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
+- **2372 verses analysed** (Phase-1 marked) across **141 chapters** and **4 books** (Exodus, Ezekiel, Leviticus, Psalms).
+- **141 chapter readings filed** (Phase-2, `lexical_prose_chapter`).
 - **0 blocked** (⚠ spans missing) · **0 needing review** (◐).
-- **59712 `ve_lexical` rows** — 16281 gate-1 (tagged term) · 43431 gate-2 (relevant content span).
+- **63279 `ve_lexical` rows** — 16924 gate-1 (tagged term) · 46355 gate-2 (relevant content span).
 
 ## ▶ NEXT ACTION
 *Derived from state — Phase-1 chapters whose Phase-2 reading is not yet filed, and any blocked verses.*
@@ -151,6 +151,16 @@
 | Psa | 129 | 8/8 | ✓ | ✓ (527) |  |
 | Psa | 130 | 8/8 | ✓ | ✓ (528) |  |
 | Psa | 131 | 3/3 | ✓ | ✓ (529) |  |
+| Psa | 132 | 18/18 | ✓ | ✓ (530) |  |
+| Psa | 133 | 3/3 | ✓ | ✓ (531) |  |
+| Psa | 134 | 3/3 | ✓ | ✓ (532) |  |
+| Psa | 135 | 21/21 | ✓ | ✓ (533) |  |
+| Psa | 136 | 26/26 | ✓ | ✓ (534) |  |
+| Psa | 137 | 9/9 | ✓ | ✓ (535) |  |
+| Psa | 138 | 8/8 | ✓ | ✓ (536) |  |
+| Psa | 139 | 24/24 | ✓ | ✓ (537) |  |
+| Psa | 140 | 13/13 | ✓ | ✓ (538) |  |
+| Psa | 141 | 10/10 | ✓ | ✓ (539) |  |
 
 ## Per-verse markers (analysed verses)
 *One line per analysed chapter — the marker beside every verse present in the DB.*
@@ -286,6 +296,16 @@
 - **Psa 129** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ · Phase 2: ✓ (527)
 - **Psa 130** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ · Phase 2: ✓ (528)
 - **Psa 131** — 1✓ 2✓ 3✓ · Phase 2: ✓ (529)
+- **Psa 132** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ · Phase 2: ✓ (530)
+- **Psa 133** — 1✓ 2✓ 3✓ · Phase 2: ✓ (531)
+- **Psa 134** — 1✓ 2✓ 3✓ · Phase 2: ✓ (532)
+- **Psa 135** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ 21✓ · Phase 2: ✓ (533)
+- **Psa 136** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ 21✓ 22✓ 23✓ 24✓ 25✓ 26✓ · Phase 2: ✓ (534)
+- **Psa 137** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ · Phase 2: ✓ (535)
+- **Psa 138** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ · Phase 2: ✓ (536)
+- **Psa 139** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ 14✓ 15✓ 16✓ 17✓ 18✓ 19✓ 20✓ 21✓ 22✓ 23✓ 24✓ · Phase 2: ✓ (537)
+- **Psa 140** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ 11✓ 12✓ 13✓ · Phase 2: ✓ (538)
+- **Psa 141** — 1✓ 2✓ 3✓ 4✓ 5✓ 6✓ 7✓ 8✓ 9✓ 10✓ · Phase 2: ✓ (539)
 
 ## Prose term-driven pipeline
 *Verses marked by the prose (term-driven) build, grouped by track.*

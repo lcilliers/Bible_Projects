@@ -163,6 +163,19 @@
 
 **★ RUN COMPLETE (2026-07-02): Psalms 107-131 (batches 16-20; ids 505-529). Songs of Ascents through 131. Cornerstones this run: 103, 106, 111:10, 115:8, 118:8, the whole of 119, 125:1, 126:5-6, 130, 131. Next: Psalm 132 (Ascents continue: 132-134, then 135-150 close the Psalter).**
 
+| 132 | 530 | (Davidic/Zion covenant, scoped) the self WHOLLY BENT on one God-ward purpose - David's vow denies house/bed/sleep 'until I find a place for the LORD' (vv.3-5, devotion subordinating self-comfort, w/ 69:9) |
+| 133 | 531 | (wisdom song, thin) the self DELIGHTS IN & prizes UNITY as 'good and pleasant' - relational harmony savoured not merely approved (v.1, w/ 122) |
+| 134 | 532 | (closing Ascent, arena-only) NO distinct inner-being finding; the night-watch 'stand by night' hints only at steadfast unseen devotion. Honest arena-only marker |
+| 135 | 533 | (Hallel, re-attestations) praise as PLEASANT (v.3); YOU BECOME WHAT YOU TRUST re-attested verbatim (v.18 = 115:8, formation-law corroborated across 2 psalms) |
+| 136 | 534 | (Great Hallel litany, arena/formation) the 26x refrain TRAINS the self to read all history + its own low estate through God's steadfast love - formation by repetition (throughout). Only inner-being payload; content is arena |
+| 137 | 535 | ★ (exile, cornerstone of grief) real GRIEF suspends song & refuses to FAKE joy - hung-up harps, 'how shall we sing in a foreign land' (vv.1-4, integrity of sorrow); the self BINDS its own memory by vow & ORDERS its affections - 'if I forget you... above my highest joy' (vv.5-6, memory as willed fidelity, love as ranking, anti-type of 106) |
+| 138 | 536 | ★ answered prayer STRENGTHENS THE SOUL WITHIN - 'my strength of soul you increased', the answer works INWARD (v.3, w/ Eph 3:16/Isa 40:31); lowliness = posture God draws near to (v.6); settled confidence in God's COMPLETING purpose (v.8, w/ Phil 1:6); whole-heart thanks (v.1) |
+| 139 | 537 | ★★ MAJOR cornerstone - the self coram Deo. EXHAUSTIVELY KNOWN from within, thoughts discerned from afar (vv.1-6); cannot FLEE God, never alone (vv.7-12); FORMED & FOREKNOWN before birth, 'fearfully & wonderfully made' (vv.13-16); ★ the fully-known self INVITES the searching - arc from 'you have searched me' (v.1) to 'SEARCH me' (v.23) - transparency embraced not resented; prime datum on being-known-before-God |
+| 140 | 538 | (lament, scoped) the self ANCHORS in allegiance amid danger - 'You are my God' precedes the plea (v.6, w/ 31:14); rests on a SETTLED KNOWING of God's justice for the afflicted - 'I know' (v.12, conviction on God's character) |
+| 141 | 539 | the self asks God to GUARD its HEART'S INCLINATION - 'do not let my heart incline to evil', distrusting its own reliability, self-suspicion turned to a plea for keeping (vv.3-4, w/ 19:13/119:36); eyes toward God for refuge (v.8) |
+
+**★ Book V in progress (2026-07-02): through Psalm 141 (139 = major cornerstone). Next: Psalm 142 (then the final Hallel 146-150 closes the Psalter).**
+
 ## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
 The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
 
