@@ -186,6 +186,16 @@
 
 **★★ THE PSALTER IS COMPLETE (2026-07-02): all 150 psalms read (Phase 1 + Phase 2), ids 419-548 this arc. Book V + final Hallel done. Cornerstones this run (batches 21-22): 137, 138, 139 (major), 143, 145. Next phase: CROSS-CHAPTER SYNTHESIS (see session-end doc - a per-characteristic summary is the proposed shape) + the deferred RE-ALIGNMENT SWEEP (Ps 1-81 aheb re-run + process-lens re-frame of Ps 1-31).**
 
+---
+
+## ★ RE-ALIGNMENT SWEEP + SYNTHESIS (2026-07-03)
+
+- **Part A — aheb Phase-1 re-run:** re-ran the 15 aheb chapters that predate the H0157 PROMOTE_CHARACTERISTIC fix (Ps 4,5,11,26,31,33,34,37,38,40,45,47,69,70,78; 52 already done). Verified all active H0157 spans now tag `role=characteristic` (0 non-characteristic remaining). Script idempotent (soft-delete + reinsert). Commit d905498.
+- **Part B — Ps 1-31 process-lens re-frame:** all 31 early readings (pre-Ps-32 lens correction) re-filed as prose_section **version 2** (ids 549-579). Verified header-by-header as already operation-focused → the re-frame added the explicit **Lens bullet** for consistency, flipped one God-headlined section (Ps 3 §II), and folded in aheb corrections (Ps 5 v.11 "those who love your name" surfaced fresh; Ps 26/31 catch-notes marked RESOLVED). 31/31 at v2; 150/150 chapters still have exactly one active reading. Commit a71b973.
+- **Part C — cross-chapter synthesis (per characteristic):** grounded harvest (`_harvest_characteristic_evidence_v1`) → **~18 emergent movements in 4 families**, filed DB-canonical as **prose_section id 580** (type `lexical_synthesis_psalter`, 3207 words): [`wa-psalter-synthesis-per-characteristic-v1-20260703.md`](wa-psalter-synthesis-per-characteristic-v1-20260703.md). Two master-data flagged for investigation: the **formation-law** (115:8/135:18 "you become what you trust") and the self **inviting its own searching** (139). Harvest grid: [`wa-characteristic-harvest-20260703.md`](wa-characteristic-harvest-20260703.md).
+
+**★ The Psalter is now COMPLETE, ALIGNED, and SYNTHESISED.** Next: investigate the two master-data; finer taxonomy; sweep the 9 harvest-unmatched psalms; extend the method to Proverbs.
+
 ## ⚠ Operational note (2026-07-02) — `backups/` disk pressure
 The backfill/repair scripts snapshot the DB (~640 MB) to `backups/` before each write. Across this session that dir hit **157 GB** and filled the disk (Ps 73 Phase-1 failed on a full disk, re-run OK). This session's throwaway `pre-backfill`/`pre-repair` copies were pruned as we went. **`backups/` is oversized (~130 GB of older snapshots remain) on a 475 GB disk running ~97% full — needs researcher pruning** (the NAS holds the daily snapshots per CLAUDE.md §13). Consider: (a) capping local snapshot retention, or (b) having the poetic scripts skip the per-run DB backup for read-mostly Phase-1 (the ve_lexical writes are re-derivable and git-tracked as prose).
 
