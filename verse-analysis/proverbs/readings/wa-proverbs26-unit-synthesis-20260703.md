@@ -1,0 +1,14 @@
+# Proverbs 26 — inner-being unit readings (Phase-2 meaning synthesis)
+
+- **Source:** `lexical-model-2026` Phase-1 (v1.1 enriched) for Pro 26, per `segment_unit`. Grounded; *stated* | *inferred*. Lens: the inner-being **operation**.
+
+---
+
+**PRO-26-wise-own-eyes · 26:12 · [S] — self-conceit worse than folly.** "**Do you see a man who is wise in his own eyes? There is more hope for a fool than for him**" (v.12). Finding: **self-conceit is more hopeless than folly** — the self certain of its own wisdom cannot be helped *(stated; the self-certainty thread, cross-book w/ 3:7, 12:15, Ps 36:2)*. *Surfaced:* self-conceit as the most hopeless closure (★ shared thread, sharpened).
+
+**PRO-26-sluggard · 26:13,14,15,16 · [T, multi] — the self-justifying sloth.** "The sluggard says, '**There is a lion in the road!**'… As a **door turns on its hinges, so the sluggard on his bed**… The sluggard is **wiser in his own eyes than seven men** who can answer sensibly" (vv.13,14,16). Finding: sloth **manufactures excuses** (a lion!), turns endlessly without progress, and is *self-certain* about its own sense *(stated)*. Operation: **the self-justifying inertia** — the slothful interior *rationalises* its inaction and cannot see itself *(inferred; sloth + self-conceit joined)*. *Hidden:* **sloth's self-justification** (excuse-making as an inner operation). *Surfaced:* self-justifying sloth (new — sloth wedded to self-conceit).
+
+**PRO-26-concealing-heart · 26:23,24,25,26 · [T, multi] — the masking self exposed.** "**Fervent lips with an evil heart** are like the **glaze covering an earthen vessel**… whoever **hates disguises himself with his lips and harbors deceit in his heart**; when he **speaks graciously, believe him not, for there are seven abominations in his heart**; though his hatred be **covered with deception**, his wickedness will be **exposed**" (vv.23–26). Finding — a cornerstone of the masking self: the wicked **coats an evil heart with gracious speech** (glaze over cheap clay), *disguising hatred with the lips* — but the concealment *fails*, the heart is exposed *(stated)*. Operation: **the split between mouth and heart made into a strategy** — the self deliberately *masks* its interior with fair speech, and the reading's warning is *not to believe the surface*; yet the hidden heart is finally *uncoverable to God/the assembly* *(inferred; the masking-self thread at its fullest, cross-book w/ Ps 28:3 "who speak peace… while evil is in their hearts", 55:21, 62:4)*. *Hidden:* **concealment as a *deliberate craft*** (the glaze) — and its ultimate failure. *Surfaced:* the masking/concealing heart (★ cornerstone, cross-book w/ Ps 28/55); "believe not the fair surface."
+
+---
+**Chapter notes.** **Cornerstone:** the masking/concealing heart (★ 26:24–26, w/ Ps 28/55). **New:** self-justifying sloth. **Shared:** self-conceit ("wise in his own eyes").
