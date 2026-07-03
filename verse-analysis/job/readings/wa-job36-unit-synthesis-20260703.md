@@ -1,0 +1,47 @@
+# Job 36 — inner-being unit readings (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals for Job 36:1–33, read per `segment_unit` (provenance `job-segmentation-v1-20260703`). Complete chapter. Cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the inner-being **operation**; Elihu's final argument and the storm-prelude.
+
+---
+
+## JOB-36-A · Job 36:1–15 · [D, multi, thread] — affliction that opens the ear; discipline toward return
+
+**The reading.** Elihu's finest inner-being insight: God "does not withdraw his eyes from the **righteous**" (v.7); when they are "**bound in chains** and caught in the cords of **affliction**," then "he **declares to them their work**… he **opens their ears to instruction** and commands that they **return from iniquity**" (vv.8–10). And the gem, stated twice: "he **delivers the afflicted by their affliction** and **opens their ear by adversity**" (v.15). The finding is **affliction as the very instrument that opens the deaf ear and turns the self back** — suffering not as punishment but as the tool that makes the interior *hear* *(stated)*. The operation is **the self's ear unstopped by adversity — pain as the means of a hearing that prosperity could not give** *(inferred: this is Elihu's deepest contribution and one of the book's real insights — "he delivers the afflicted BY their affliction and opens their ear BY adversity" (v.15): the suffering is not merely permitted but *instrumental*, the very thing that opens an ear deaf in comfort; the finding is that pain can be *revelatory* — it makes the self *listen* (to "instruction", v.10) in a way ease never could (cf. Ps 119:71 "it is good that I was afflicted, that I might learn"); this is truer than the friends' retribution (suffering ≠ punishment here but *pedagogy*) and closer to the book's own resolution — Job's affliction does finally open his ear/eye (42:5); yet, as with all Elihu's insight, it is a real function of *some* suffering, not the full account of Job's, whose ordeal the prologue frames as a contest, not a correction)*.
+
+**Lexical validation (read-back).** *knowledge* (H1843/H1844/H1847, dea), *ascribe* (H5414), *righteousness* (H6664), *strength* (H3581), *understanding* (H3820, leb), *wicked* (H7563), *afflicted* (H6041, ani), *right* (H4941, mishpat), *affliction* (H6040, oni — twice), *transgressions* (H6588), *arrogantly* (H1396, gabar), *listen* (H8085, twice), *pleasantness* (H5273, na'im), *heart* (H3820, leb), *life* (H5315, nephesh) carried. *oni* (affliction, the instrument) + "opens their ear" (patach ozen) carry the reading's gem; *shama* (listen) frames the response; correctly tagged. Sound.
+
+**Hidden / less-obvious characteristics isolated.** **Affliction as the ear-opener (pain as revelatory pedagogy)** — "he delivers the afflicted by their affliction and opens their ear by adversity" (v.15): the finding that suffering can be the very *instrument* that unstops a deaf interior — making the self *hear* what comfort never could (cf. Ps 119:71). Elihu's finest insight and the book's closest approach to the truth (Job's affliction does finally open his eye, 42:5), yet still a function of *some* suffering, not the full frame of Job's contest-ordeal. The inner-being datum: adversity has a *hearing-giving* power — a real, if partial, redemption of pain.
+
+**Characteristics surfaced:** *affliction as the ear-opener (pain as revelatory pedagogy)* (thread — the discipline-thread's summit, w/ 5:17, 33:16, Ps 119:71); *the deaf interior unstopped by adversity* (new); *suffering as instrument of return, not punishment* (thread — Elihu's advance).
+
+---
+
+## JOB-36-B · Job 36:16–25 · [D, multi] — the warning not to turn to iniquity under pressure
+
+**The reading.** Elihu warns Job against a specific danger of suffering: "**beware lest wrath entice you into scoffing**" (v.18); "**take care; do not turn to iniquity**, for this you have **chosen rather than affliction**" (v.21). The finding is **the temptation, under suffering, to turn bitter or cynical — a danger the sufferer must guard against** *(stated)*. The operation is **the self warned that pain can lure it into scoffing or iniquity** *(inferred: this is a genuine inner-being caution — suffering *tempts* (v.18, "lest wrath entice you into scoffing"); the danger is not the pain itself but the *bitterness* it can breed, the turn toward cynicism or resentment ("do not turn to iniquity", v.21); the finding is that affliction is a *moral test* as well as a burden — the sufferer can emerge purified (36:15) or embittered (36:18), and the choice is real ("this you have chosen"); Elihu, though he wrongly suspects Job is failing this test, names a true peril — the temptation to let pain harden into scoffing; the mature response is to be "delivered by affliction" (v.15), not enticed by wrath into iniquity (v.18))*.
+
+**Lexical validation (read-back).** *cramping* (H4164), *judgment* (H1779, din), *wicked* (H7563), *justice* (H4941, mishpat), *wrath* (H2534, chemah), *avail* (H6186), *strength* (H3581), *long* (H7602), *Take care* (H8104, shamar), *iniquity* (H0205, aven), *chosen* (H0977, bachar), *affliction* (H6040, oni), *Remember* (H2142) carried. *chemah* (wrath enticing) + *bachar* (chosen iniquity over affliction) carry the warning; correctly tagged. Sound.
+
+**Hidden / less-obvious characteristics isolated.** **Suffering as a moral test (the temptation to bitterness)** — "beware lest wrath entice you into scoffing… do not turn to iniquity" (vv.18,21): the finding that affliction is not only a burden but a *test* — it can lure the self toward cynicism, scoffing, or resentment; the danger is the *bitterness* pain breeds, not the pain itself. The inner-being datum: the sufferer can be purified by affliction (v.15) *or* embittered by it (v.18), and the choice is real ("this you have chosen") — the mature interior guards against letting wrath harden into iniquity.
+
+**Characteristics surfaced:** *suffering as a moral test (the temptation to bitterness/scoffing)* (new — affliction as trial, not just burden); *guarding against the turn to cynicism under pain* (new).
+
+---
+
+## JOB-36-C · Job 36:26–33 · [D, multi, thread] — awe rising before the storm; God great beyond knowing
+
+**The reading.** Elihu's argument dissolves into awe as a storm gathers: "**God is great, and we know him not**; the number of his years is unsearchable" (v.26); he draws up the rain, spreads the clouds, "**scatters his lightning**… by these he **judges peoples**" (vv.27–31). The finding is **the shift from argument to wonder — God great beyond the interior's knowing, approaching in the storm** *(stated)*. The operation is **the self's posture changing from explanation to awe as God's greatness looms** *(inferred: this is the hinge into the theophany — Elihu, who has argued so much, ends "God is great, and we know him not" (v.26), the same humility as Job's "outskirts of his ways… a small whisper" (26:14); the finding is that before the actual approach of God (the gathering storm, vv.27–33), *argument gives way to awe* — the interior stops explaining and starts trembling; and it is significant that the human word (even Elihu's) trails off into the description of the storm out of which God will speak (38:1) — the finding is that the fitting end of all the words is not a conclusion but *wonder*, the self silenced before a greatness it cannot compass)*.
+
+**Lexical validation (read-back).** *know* (H3045), *understand* (H0995, bin), *judges* (H1777, din), *gives* (H5414) carried. The awe/greatness sits in content; the reading rests on "God is great, and we know him not" — the argument dissolving into wonder. Sound (sparse substrate).
+
+**Hidden / less-obvious characteristics isolated.** **Argument dissolving into awe** — "God is great, and we know him not" (v.26): the finding that as God's actual greatness looms (the gathering storm), *explanation gives way to wonder* — the interior stops arguing and starts trembling. The inner-being datum: the fitting end of all the words (even Elihu's) is not a tidy conclusion but *awe* — and the human voice trails into the description of the storm out of which God himself will speak (38:1). The self is being readied to be silenced before a greatness beyond its knowing.
+
+**Characteristics surfaced:** *argument dissolving into awe (wonder as the fitting end of words)* (thread — w/ Job's own 26:14; readies the theophany); *God great beyond the interior's knowing* (thread — the unsearchable God, 11:7, 26:14).
+
+---
+
+## Chapter-level notes
+- **Validation summary:** substrate strong at 36:1–21; the affliction-gem (*oni* + "opens their ear", 36:8–15) and the wrath/chosen-iniquity warning (*chemah/bachar*, 36:18–21) cleanly carried; the storm-prelude (36:26) is sparse, read structurally. No new residuals.
+- **New characteristics:** *affliction as the ear-opener*; *the deaf interior unstopped by adversity*; *suffering as a moral test*; *guarding against cynicism under pain*; *argument dissolving into awe*. **Shared:** *the discipline-thread (5:17, 33:16)*; *the unsearchable God (26:14)*.
+- **Threads:** *affliction as ear-opener* (36:15) — the discipline-thread's finest form, closest to the book's resolution (42:5); *argument → awe* (36:26) hinges into the whirlwind; *suffering as moral test* (36:18) names the peril Job has so far resisted (he has not "cursed God"). Elihu's voice ends in the gathering storm.
