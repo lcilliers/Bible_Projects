@@ -1,5 +1,7 @@
 # Book coverage in the corpus — next full-book candidates (2026-07-03)
 
+> **★ STATUS UPDATE (2026-07-03, end of day):** the **wisdom/poetry corpus is COMPLETE** — Psalms (150), Proverbs (31), **Ecclesiastes (12, ids 624-635)**, **Job (42, ids 636-677)**, **Lamentations (5, ids 678-682)** all through the full pipeline (backfill → Phase-1 → segmentation → Phase-2), DB-canonical + reproducible. Song of Songs remains **held** (LOW coverage — investigate what-it-indexes before treating). **Next tranche = the well-covered prophets** (Isaiah 95 · Hosea 97 · the Twelve) **and Pauline epistles** (Romans 95 · Ephesians 88 · Colossians 85), with a method note that oracle/argument genres differ from poetry (the segmentation-first variant, method §15, should transfer). See `project_poetic_chapter_driven_method` (memory) and `Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md` §15.
+
 > Researcher: freeze the characteristic list (provisional; can rebuild from the corpus anytime) and go to the next phase — analysing more books. Question: *which other books are largely covered in the corpus, so we can use the full-book coverage on them?* Measure: verses present in the `verse` table (study-term-touched) ÷ the book's true length.
 
 ## Finding — coverage is broad
