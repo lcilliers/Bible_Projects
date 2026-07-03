@@ -1,6 +1,6 @@
 # Pro 7 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 152 spans, 594 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 152 spans, 617 rows.
 
 
 ## Pro 7:1
@@ -16,7 +16,7 @@
 - **keep** `H8104` [1/M30] **role=characteristic** — sense=keep; type=action; operation=keep
 - **commandments** `H4687` [2] **role=standalone** — sense=commandments; type=status
 - **live** `H2421` [1/M25] **role=characteristic** — sense=live; type=action; operation=live
-- **teaching** `H8451` [2] **role=standalone** — sense=teaching; type=status
+- **teaching** `H8451` [2] **role=standalone** — sense=teaching; type=status; specifier=of apple
 - **apple** `H0380` [2] **role=process-qualifier** — sense=apple; type=status; operation=(qualifies) live; manner=manner-of live; coupling=welds live
 - **eye** `H5869` [2] **role=standalone** — sense=eye; type=status
 
@@ -40,7 +40,7 @@
 ## Pro 7:5
 
 - **keep** `H8104` [1/M30] **role=characteristic** — sense=keep; type=action; operation=keep
-- **forbidden** `H2114` [2] **role=standalone** — sense=forbidden; type=action; operation=forbidden
+- **forbidden** `H2114` [2] **role=standalone** — sense=forbidden; type=action; operation=forbidden; target=woman; discovery=target positional (unmarked adjacent object; unverified)
 - **woman** `H0802` [2] **role=standalone** — sense=woman; type=status
 - **adulteress** `H5237` [2] **role=standalone** — sense=adulteress; type=quality
 - **smooth** `H2505` [2] **role=standalone** — sense=smooth; type=action; operation=smooth
@@ -48,7 +48,7 @@
 
 ## Pro 7:6
 
-- **window** `H2474` [2] **role=process-qualifier** — sense=window; type=status; operation=(qualifies) looked out; manner=manner-of looked out; coupling=welds looked out
+- **window** `H2474` [2] **role=process-qualifier** — sense=window; type=status; operation=(qualifies) looked out; specifier=of house; manner=manner-of looked out; coupling=welds looked out
 - **house** `H1004` [2] **role=standalone** — sense=house; type=status
 - **looked out** `H8259` [2] **role=standalone** — sense=looked out; type=action; operation=looked out
 - **through** `H1157` [2] **role=standalone** — sense=through; type=quality
@@ -68,10 +68,10 @@
 
 - **passing along** `H5674` [2] **role=standalone** — sense=passing along; type=action; operation=passing along
 - **street** `H7784` [2] **role=process-qualifier** — sense=street; type=status; operation=(qualifies) passing along; manner=manner-of passing along; coupling=welds passing along
-- **near** `H0681` [2] **role=standalone** — sense=near; type=status
+- **near** `H0681` [2] **role=standalone** — sense=near; type=status; specifier=of corner
 - **corner** `H6438` [2] **role=standalone** — sense=corner; type=status
 - **taking** `H6805` [2] **role=standalone** — sense=taking; type=action; operation=taking
-- **road** `H1870` [2] **role=standalone** — sense=road; type=status
+- **road** `H1870` [2] **role=standalone** — sense=road; type=status; specifier=of house
 - **house** `H1004` [2] **role=standalone** — sense=house; type=status
 
 ## Pro 7:9
@@ -79,7 +79,7 @@
 - **twilight** `H5399` [2] **role=standalone** — sense=twilight; type=status
 - **evening** `H6153` [2] **role=standalone** — sense=evening; type=status
 - **time** `H3117` [2] **role=standalone** — sense=time; type=status
-- **night** `H0380` [2] **role=standalone** — sense=night; type=status
+- **night** `H0380` [2] **role=standalone** — sense=night; type=status; specifier=of darkness
 - **darkness** `H0653` [2] **role=standalone** — sense=darkness; type=status
 
 ## Pro 7:10
@@ -88,7 +88,7 @@
 - **meets** `H7122` [1/M37] **role=characteristic** — sense=meets; type=action; operation=meets
 - **dressed** `H7897` [2] **role=standalone** — sense=dressed; type=status
 - **prostitute** `H2181` [1/M28] **role=characteristic** — sense=prostitute; type=action; operation=prostitute
-- **wily** `H5341` [2] **role=standalone** — sense=wily; type=action; operation=wily
+- **wily** `H5341` [2] **role=standalone** — sense=wily; type=action; operation=wily; target=heart; discovery=target positional (unmarked adjacent object; unverified)
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 
 ## Pro 7:11
@@ -104,8 +104,8 @@
 - **street** `H2351` [2] **role=standalone** — sense=street; type=status
 - **now** `H6471` [2] **role=standalone** — sense=now; type=status; intensity=all
 - **market** `H7339` [2] **role=standalone** — sense=market; type=status; intensity=all
-- **and** `H0681` [2] **role=standalone** — sense=and; type=status; intensity=all
-- **every** `H3605` [2] **role=standalone** — sense=every; type=status; intensity=all
+- **and** `H0681` [2] **role=standalone** — sense=and; type=status; specifier=of every; intensity=all
+- **every** `H3605` [2] **role=standalone** — sense=every; type=status; specifier=of corner; intensity=all
 - **corner** `H6438` [2] **role=standalone** — sense=corner; type=status; intensity=all
 - **wait** `H0693` [2] **role=standalone** — sense=wait; type=action; operation=wait; intensity=all
 
@@ -119,7 +119,7 @@
 
 ## Pro 7:14
 
-- **offer** `H2077` [2] **role=standalone** — sense=offer; type=status
+- **offer** `H2077` [2] **role=standalone** — sense=offer; type=status; specifier=of sacrifices
 - **sacrifices** `H8002` [2] **role=standalone** — sense=sacrifices; type=status
 - **today** `H3117` [2] **role=process-qualifier** — sense=today; type=status; operation=(qualifies) paid; manner=manner-of paid; coupling=welds paid
 - **paid** `H7999` [2] **role=standalone** — sense=paid; type=action; operation=paid
@@ -134,7 +134,7 @@
 ## Pro 7:16
 
 - **spread** `H7234` [2] **role=standalone** — sense=spread; type=action; operation=spread
-- **couch** `H6210` [2] **role=standalone** — sense=couch; type=status
+- **couch** `H6210` [2] **role=standalone** — sense=couch; type=status; specifier=of coverings
 - **coverings** `H4765` [2] **role=standalone** — sense=coverings; type=status
 - **colored linens** `H2405` [2] **role=standalone** — sense=colored linens; type=action; operation=colored linens
 - **Egyptian** `H4714` [2] **role=standalone** — sense=Egyptian; type=status
@@ -143,7 +143,7 @@
 ## Pro 7:17
 
 - **perfumed** `H5130` [2] **role=standalone** — sense=perfumed; type=action; operation=perfumed
-- **bed** `H4904` [2] **role=standalone** — sense=bed; type=status
+- **bed** `H4904` [2] **role=standalone** — sense=bed; type=status; specifier=of myrrh
 - **myrrh** `H4753` [2] **role=standalone** — sense=myrrh; type=status
 - **aloes** `H0174` [2] **role=standalone** — sense=aloes; type=status
 - **cinnamon** `H7076` [2] **role=standalone** — sense=cinnamon; type=status
@@ -151,7 +151,7 @@
 ## Pro 7:18
 
 - **Come** `H1980` [2] **role=standalone** — sense=Come; type=action; operation=Come
-- **fill** `H7301` [2] **role=standalone** — sense=fill; type=action; operation=fill
+- **fill** `H7301` [2] **role=standalone** — sense=fill; type=action; operation=fill; target=love; discovery=target positional (unmarked adjacent object; unverified)
 - **morning** `H1242` [2] **role=standalone** — sense=morning; type=status
 - **delight** `H5965` [1/M04] **role=characteristic** — sense=delight; type=action; operation=delight
 - **love** `H0159` [2] **role=process-qualifier** — sense=love; type=status; operation=(qualifies) delight; manner=manner-of delight; coupling=welds delight
@@ -159,7 +159,7 @@
 ## Pro 7:19
 
 - **husband** `H0376` [2] **role=standalone** — sense=husband; type=status
-- **not** `H0369` [2] **role=standalone** — sense=not; type=status
+- **not** `H0369` [2] **role=standalone** — sense=not; type=status; specifier=of home
 - **home** `H1004` [2] **role=process-qualifier** — sense=home; type=status; operation=(qualifies) gone; manner=manner-of gone; coupling=welds gone
 - **gone** `H1980` [2] **role=standalone** — sense=gone; type=action; operation=gone
 - **long** `H7350` [2] **role=standalone** — sense=long; type=quality
@@ -169,17 +169,17 @@
 
 - **took** `H3947` [2] **role=standalone** — sense=took; type=action; operation=took
 - **money** `H3701` [2] **role=standalone** — sense=money; type=status
-- **at** `H3117` [2] **role=process-qualifier** — sense=at; type=status; operation=(qualifies) come; manner=manner-of come; coupling=welds come
+- **at** `H3117` [2] **role=process-qualifier** — sense=at; type=status; operation=(qualifies) come; specifier=of full moon; manner=manner-of come; coupling=welds come
 - **full moon** `H3677` [2] **role=standalone** — sense=full moon; type=status
 - **come** `H0935` [2] **role=standalone** — sense=come; type=action; operation=come
 - **home** `H1004` [2] **role=standalone** — sense=home; type=status
 
 ## Pro 7:21
 
-- **much** `H7230` [2] **role=standalone** — sense=much; type=status
+- **much** `H7230` [2] **role=standalone** — sense=much; type=status; specifier=of seductive speech
 - **seductive speech** `H3948` [2] **role=standalone** — sense=seductive speech; type=status
 - **persuades** `H5186` [2] **role=standalone** — sense=persuades; type=action; operation=persuades
-- **smooth** `H2506` [2] **role=process-qualifier** — sense=smooth; type=status; operation=(qualifies) persuades; manner=manner-of persuades; coupling=welds persuades
+- **smooth** `H2506` [2] **role=process-qualifier** — sense=smooth; type=status; operation=(qualifies) persuades; specifier=of talk; manner=manner-of persuades; coupling=welds persuades
 - **talk** `H8193` [2] **role=standalone** — sense=talk; type=status
 - **compels** `H5080` [2] **role=standalone** — sense=compels; type=action; operation=compels
 
@@ -230,8 +230,8 @@
 
 ## Pro 7:27
 
-- **house** `H1004` [2] **role=standalone** — sense=house; type=status
-- **way** `H1870` [2] **role=standalone** — sense=way; type=status
+- **house** `H1004` [2] **role=standalone** — sense=house; type=status; specifier=of way
+- **way** `H1870` [2] **role=standalone** — sense=way; type=status; specifier=of Sheol
 - **Sheol** `H7585` [2] **role=standalone** — sense=Sheol; type=status
 - **down** `H3381` [2] **role=standalone** — sense=down; type=action; operation=down
-- **chambers** `H2315` [2] **role=standalone** — sense=chambers; type=status
+- **chambers** `H2315` [2] **role=standalone** — sense=chambers; type=status; specifier=of death

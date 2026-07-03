@@ -24,6 +24,7 @@ def arg(name,default=None):
         if a.startswith('--%s='%name): return a.split('=',1)[1]
     return default
 LIVE='--live' in sys.argv
+NO_BACKUP='--no-backup' in sys.argv   # skip the per-run DB snapshot (for mass re-runs; DB is backed up daily to NAS)
 BOOK=arg('book','Psa'); CHAP=int(arg('chapter','1'))
 PROV='lexical-model-2026'; MARKER='%s-%d-poetic-lexical-%s'%(BOOK,CHAP,datetime.now(timezone.utc).strftime('%Y%m%d'))
 NOW=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -45,6 +46,7 @@ STOPLIST_NOT_CHARACTERISTIC=GENRE_LABEL|EXTERNAL_ENTITY
 PROMOTE_CHARACTERISTIC={'H0157'}              # aheb (love/affection)
 DIMS={'sense':(101,'value'),'type':(102,'value'),'source':(103,'pair'),'seat':(104,'pair'),'bearer':(105,'pair'),
       'operation':(106,'event'),'target':(107,'pair'),'manner':(108,'pair'),'intensity':(109,'value'),
+      'specifier':(110,'pair'),  # construct-chain genitive: "X of Y" — Y specifies the construct head X (added v1.1, 2026-07-03)
       'effect':(111,'pair'),'coupling':(112,'pair'),'prohibition':(113,'flag'),'discovery':(114,'note'),'role':(115,'value')}
 def canon(s):
     m=re.match(r'^([HG])(\d+)',s or ''); return m.group(1)+m.group(2).zfill(4) if m else s
@@ -79,13 +81,30 @@ def derive(spans, tstr, s):
         for j in range(g+1,min(g+3,len(spans))):
             if spans[j]['strong'] in SEATS: seat=SEATS[spans[j]['strong']]; break
     if seat: add('seat',seat,fr=seat,to=s['strong'],res='span')
+    # construct-chain specifier (v1.1, 2026-07-03): a construct-state noun + the immediately-following noun is its
+    # genitive — "X of Y", where Y specifies the construct head X. The dominant qualifier structure in Proverbs
+    # (mouth-of-the-righteous, fear-of-the-LORD) and common in the Psalter. Recorded as a pair on the HEAD; does NOT
+    # change roles (Y keeps its own role — a genitive can be a genuine characteristic, e.g. "the-righteous").
+    if f['n'] and f['state']=='construct' and g+1<len(spans) and spans[g+1]['feat']['n']:
+        gn=spans[g+1]; add('specifier','of %s'%gn['surface'],fr=s['strong'],to=gn['strong'],res='span')
     ag=[x for x in spans if x['feat']['proper'] and x['g']<g and g-x['g']<=6]
     if ag:
         add('bearer', ag[-1]['surface'], fr=ag[-1]['strong'], to=s['strong'], res='span')
         add('discovery','bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)')
     if f['v']:
         objs=[x for x in spans if x['feat']['obj'] and x['feat']['n'] and not x['feat']['prep'] and x['g']!=g]
-        if objs: o=min(objs,key=lambda x:abs(x['g']-g)); add('target',o['surface'],fr=s['strong'],to=o['strong'],res='span')
+        if objs:
+            o=min(objs,key=lambda x:abs(x['g']-g)); add('target',o['surface'],fr=s['strong'],to=o['strong'],res='span')
+        elif g+1<len(spans):
+            # positional object inference (v1.1, 2026-07-03): the object-marker et (HTo) is largely omitted in
+            # poetry/Proverbs, so most verb->object links carry no marker. CONSERVATIVE rule: only the IMMEDIATELY-
+            # following span (g+1), and only if it is a non-prep, non-proper noun (Hebrew VO adjacency). This grabs the
+            # true adjacent object ("destroy [his] neighbour", "keep the commandment") but NOT the next antithetical
+            # clause's subject (which sits after an intervening pronoun/particle). Flagged UNVERIFIED (not parsed).
+            nx=spans[g+1]
+            if nx['feat']['n'] and not nx['feat']['prep'] and not nx['feat']['proper'] and nx['feat']['state']!='construct':
+                add('target',nx['surface'],fr=s['strong'],to=nx['strong'],res='span')
+                add('discovery','target positional (unmarked adjacent object; unverified)')
     if manner_noun and vb:
         add('manner','manner-of %s'%vb['surface'],fr=s['strong'],to='%s@%s'%(vb['strong'],vb['ref']),res='span')
         if vb['strong'] in tstr: add('coupling','welds %s'%vb['surface'],fr=s['strong'],to=vb['strong'],res='span')
@@ -111,7 +130,9 @@ def role_of(gate, rows, strong):
         if strong in STOPLIST_NOT_CHARACTERISTIC: return 'standalone'
         if labels & {'manner','coupling'}: return 'process-qualifier'
         return 'characteristic'
-    if labels & {'manner','coupling','target','seat'}: return 'process-qualifier'
+    # (v1.1, 2026-07-03) 'target' dropped from the flip set: target lands on a VERB (which carries 'operation'),
+    # and a verb acting on an object is an operation (standalone/characteristic), not a qualifier of something else.
+    if labels & {'manner','coupling','seat'}: return 'process-qualifier'
     return 'standalone'
 
 def main():
@@ -155,7 +176,8 @@ def main():
     print("inspection view ->",rep)
     if not LIVE:
         print("DRY-RUN. Inspect the view, then re-run with --live."); return
-    shutil.copy2(DB,os.path.join('backups','bible_research.pre-%s%d-poetic.%s.db'%(BOOK.lower(),CHAP,datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))))
+    if not NO_BACKUP:
+        shutil.copy2(DB,os.path.join('backups','bible_research.pre-%s%d-poetic.%s.db'%(BOOK.lower(),CHAP,datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))))
     refset=[v['reference'] for v in verses]
     for ref in refset:
         cur.execute("""UPDATE ve_lexical SET delete_flagged=1 WHERE source_provenance=? AND (

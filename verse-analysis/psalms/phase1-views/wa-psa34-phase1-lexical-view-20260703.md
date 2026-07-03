@@ -1,21 +1,21 @@
 # Psa 34 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 132 spans, 627 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 132 spans, 651 rows.
 
 
 ## Psa 34:1
 
 - **David** `H1732` [2] **role=process-qualifier** — sense=David; type=status; operation=(qualifies) changed; manner=manner-of changed; coupling=welds changed
-- **changed** `H8138` [2] **role=process-qualifier** — sense=changed; type=action; operation=changed; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=behavior
-- **before** `H6440` [2] **role=process-qualifier** — sense=before; type=status; operation=(qualifies) changed; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); manner=manner-of changed; coupling=welds changed
+- **changed** `H8138` [2] **role=standalone** — sense=changed; type=action; operation=changed; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=behavior
+- **before** `H6440` [2] **role=process-qualifier** — sense=before; type=status; operation=(qualifies) changed; specifier=of Abimelech; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); manner=manner-of changed; coupling=welds changed
 - **Abimelech** `H0040` [2] **role=standalone** — sense=Abimelech; type=status; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **drove him out** `H1644` [2] **role=process-qualifier** — sense=drove him out; type=action; operation=drove him out; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=behavior
-- **went away** `H1980` [2] **role=process-qualifier** — sense=went away; type=action; operation=went away; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord
+- **drove him out** `H1644` [2] **role=standalone** — sense=drove him out; type=action; operation=drove him out; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=behavior
+- **went away** `H1980` [2] **role=standalone** — sense=went away; type=action; operation=went away; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord
 - **bless** `H1288` [1/M39] **role=characteristic** — sense=bless; type=action; operation=bless; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord; intensity=all
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status; bearer=Abimelech; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of times; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **times** `H6256` [2] **role=standalone** — sense=times; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
-- **praise** `H8416` [1/M22] **role=characteristic** — sense=praise; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **praise** `H8416` [1/M22] **role=characteristic** — sense=praise; type=status; specifier=of continually; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **continually** `H8548` [2] **role=standalone** — sense=continually; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **mouth** `H6310` [2] **role=standalone** — sense=mouth; type=status
 
@@ -37,9 +37,9 @@
 
 - **sought** `H1875` [1/M41] **role=characteristic** — sense=sought; type=action; operation=sought; target=Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
-- **answered** `H6030` [2] **role=process-qualifier** — sense=answered; type=action; operation=answered; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord
-- **delivered** `H5337` [2] **role=process-qualifier** — sense=delivered; type=action; operation=delivered; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord; intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **answered** `H6030` [2] **role=standalone** — sense=answered; type=action; operation=answered; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord
+- **delivered** `H5337` [2] **role=standalone** — sense=delivered; type=action; operation=delivered; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=Lord; intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of fears; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **fears** `H4034` [1/M01] **role=characteristic** — sense=fears; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 
 ## Psa 34:5
@@ -55,14 +55,14 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **heard** `H8085` [1/M41] **role=characteristic** — sense=heard; type=action; operation=heard; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **saved** `H3467` [2] **role=standalone** — sense=saved; type=action; operation=saved; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of troubles; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **troubles** `H6869` [1/M03] **role=characteristic** — sense=troubles; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 
 ## Psa 34:7
 
-- **angel** `H4397` [2] **role=standalone** — sense=angel; type=status
+- **angel** `H4397` [2] **role=standalone** — sense=angel; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
-- **encamps** `H2583` [2] **role=standalone** — sense=encamps; type=action; operation=encamps; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **encamps** `H2583` [2] **role=standalone** — sense=encamps; type=action; operation=encamps; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=around; discovery=target positional (unmarked adjacent object; unverified)
 - **around** `H5439` [2] **role=standalone** — sense=around; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **fear** `H3373` [1/M01] **role=characteristic** — sense=fear; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **delivers** `H2502` [2] **role=standalone** — sense=delivers; type=action; operation=delivers; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -73,7 +73,7 @@
 - **see** `H7200` [2] **role=standalone** — sense=see; type=action; operation=see
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **good** `H2896` [1/M04] **role=characteristic** — sense=good; type=action; operation=good; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **Blessed** `H0835` [2] **role=standalone** — sense=Blessed; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **Blessed** `H0835` [2] **role=standalone** — sense=Blessed; type=status; specifier=of man; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **refuge** `H2620` [1/M19] **role=characteristic** — sense=refuge; type=action; operation=refuge; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Psa 34:9
@@ -82,7 +82,7 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **saints** `H6918` [1/M12] **role=characteristic** — sense=saints; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **fear** `H3373` [1/M01] **role=characteristic** — sense=fear; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **no** `H0369` [2] **role=standalone** — sense=no; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **no** `H0369` [2] **role=standalone** — sense=no; type=status; specifier=of lack; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **lack** `H4270` [2] **role=standalone** — sense=lack; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Psa 34:10
@@ -97,11 +97,11 @@
 
 ## Psa 34:11
 
-- **Come** `H1980` [2] **role=standalone** — sense=Come; type=action; operation=Come
+- **Come** `H1980` [2] **role=standalone** — sense=Come; type=action; operation=Come; target=children; discovery=target positional (unmarked adjacent object; unverified)
 - **children** `H1121` [2] **role=standalone** — sense=children; type=status
 - **listen** `H8085` [1/M41] **role=characteristic** — sense=listen; type=action; operation=listen
 - **teach** `H3925` [2] **role=standalone** — sense=teach; type=action; operation=teach
-- **fear** `H3374` [1/M01] **role=process-qualifier** — sense=fear; type=status; operation=(qualifies) teach; manner=manner-of teach; coupling=welds teach
+- **fear** `H3374` [1/M01] **role=process-qualifier** — sense=fear; type=status; operation=(qualifies) teach; specifier=of Lord; manner=manner-of teach; coupling=welds teach
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 
 ## Psa 34:12
@@ -109,7 +109,7 @@
 - **man** `H0376` [2] **role=standalone** — sense=man; type=status
 - **desires** `H2655` [1/M04] **role=characteristic** — sense=desires; type=quality
 - **life** `H2416` [1/M25] **role=characteristic** — sense=life; type=status
-- **loves** `H0157` [2] **role=characteristic** — sense=loves; type=action; operation=loves
+- **loves** `H0157` [2] **role=characteristic** — sense=loves; type=action; operation=loves; target=days; discovery=target positional (unmarked adjacent object; unverified)
 - **days** `H3117` [2] **role=standalone** — sense=days; type=status
 - **see** `H7200` [2] **role=standalone** — sense=see; type=action; operation=see
 - **good** `H2896` [2] **role=standalone** — sense=good; type=quality
@@ -120,7 +120,7 @@
 - **tongue** `H3956` [2] **role=standalone** — sense=tongue; type=status
 - **evil** `H7451` [2] **role=standalone** — sense=evil; type=quality
 - **lips** `H8193` [2] **role=standalone** — sense=lips; type=status
-- **speaking** `H1696` [2] **role=standalone** — sense=speaking; type=action; operation=speaking
+- **speaking** `H1696` [2] **role=standalone** — sense=speaking; type=action; operation=speaking; target=deceit; discovery=target positional (unmarked adjacent object; unverified)
 - **deceit** `H4820` [1/M14] **role=characteristic** — sense=deceit; type=status
 
 ## Psa 34:14
@@ -129,13 +129,13 @@
 - **evil** `H7451` [2] **role=standalone** — sense=evil; type=quality
 - **do** `H6213` [2] **role=standalone** — sense=do; type=action; operation=do
 - **good** `H2896` [2] **role=standalone** — sense=good; type=quality
-- **seek** `H1245` [1/M41] **role=characteristic** — sense=seek; type=action; operation=seek
+- **seek** `H1245` [1/M41] **role=characteristic** — sense=seek; type=action; operation=seek; target=peace; discovery=target positional (unmarked adjacent object; unverified)
 - **peace** `H7965` [1/M33] **role=characteristic** — sense=peace; type=status
 - **pursue** `H7291` [2] **role=standalone** — sense=pursue; type=action; operation=pursue
 
 ## Psa 34:15
 
-- **eyes** `H5869` [2] **role=standalone** — sense=eyes; type=status
+- **eyes** `H5869` [2] **role=standalone** — sense=eyes; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **righteous** `H6662` [1/M26] **role=characteristic** — sense=righteous; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **ears** `H0241` [2] **role=standalone** — sense=ears; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -143,7 +143,7 @@
 
 ## Psa 34:16
 
-- **face** `H6440` [2] **role=standalone** — sense=face; type=status
+- **face** `H6440` [2] **role=standalone** — sense=face; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **do** `H6213` [2] **role=standalone** — sense=do; type=action; operation=do; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **evil** `H7451` [2] **role=standalone** — sense=evil; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -156,7 +156,7 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **hears** `H8085` [1/M41] **role=characteristic** — sense=hears; type=action; operation=hears; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **delivers** `H5337` [2] **role=standalone** — sense=delivers; type=action; operation=delivers; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of troubles; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **troubles** `H6869` [1/M03] **role=characteristic** — sense=troubles; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 
 ## Psa 34:18
@@ -180,7 +180,7 @@
 ## Psa 34:20
 
 - **keeps** `H8104` [1/M30] **role=characteristic** — sense=keeps; type=action; operation=keeps; intensity=all; prohibition=forbidden (neg particle)
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all; prohibition=forbidden (neg particle)
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of bones; intensity=all; prohibition=forbidden (neg particle)
 - **one** `H0259` [2] **role=standalone** — sense=one; type=status; intensity=all; prohibition=forbidden (neg particle)
 - **broken** `H7665` [2] **role=standalone** — sense=broken; type=action; operation=broken; prohibition=forbidden (neg particle)
 
@@ -196,7 +196,7 @@
 
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **redeems** `H6299` [1/M38] **role=characteristic** — sense=redeems; type=action; operation=redeems; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
-- **life** `H5315` [1/M25] **role=characteristic** — sense=life; type=status; seat=soul; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
+- **life** `H5315` [1/M25] **role=characteristic** — sense=life; type=status; seat=soul; specifier=of servants; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
 - **servants** `H5650` [2] **role=standalone** — sense=servants; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
 - **take refuge** `H2620` [1/M19] **role=characteristic** — sense=take refuge; type=action; operation=take refuge; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
 - **condemned** `H0816` [1/M10] **role=characteristic** — sense=condemned; type=action; operation=condemned; prohibition=forbidden (neg particle)

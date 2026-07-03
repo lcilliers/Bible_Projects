@@ -1,6 +1,6 @@
 # Psa 5 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 83 spans, 364 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 83 spans, 378 rows.
 
 
 ## Psa 5:1
@@ -10,7 +10,7 @@
 - **Psalm** `H4210` [1/M22] **role=standalone** — sense=Psalm; type=status
 - **David** `H1732` [2] **role=process-qualifier** — sense=David; type=status; operation=(qualifies) Give ear; manner=manner-of Give ear; coupling=welds Give ear
 - **Give ear** `H0238` [1/M41] **role=characteristic** — sense=Give ear; type=action; operation=Give ear; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **words** `H0561` [2] **role=standalone** — sense=words; type=status; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **words** `H0561` [2] **role=standalone** — sense=words; type=status; specifier=of Lord; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **consider** `H0995` [1/M15] **role=characteristic** — sense=consider; type=action; operation=consider; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **groaning** `H1901` [1/M15] **role=characteristic** — sense=groaning; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -19,7 +19,7 @@
 
 - **Give attention** `H7181` [1/M41] **role=characteristic** — sense=Give attention; type=action; operation=Give attention
 - **cry** `H7773` [2] **role=standalone** — sense=cry; type=status
-- **King** `H4428` [2] **role=standalone** — sense=King; type=status
+- **King** `H4428` [2] **role=standalone** — sense=King; type=status; specifier=of God
 - **God** `H0430` [2] **role=standalone** — sense=God; type=status
 - **pray** `H6419` [2] **role=standalone** — sense=pray; type=action; operation=pray
 
@@ -53,21 +53,21 @@
 ## Psa 5:6
 
 - **destroy** `H0006` [2] **role=standalone** — sense=destroy; type=action; operation=destroy
-- **speak** `H1696` [2] **role=standalone** — sense=speak; type=action; operation=speak
+- **speak** `H1696` [2] **role=standalone** — sense=speak; type=action; operation=speak; target=lies; discovery=target positional (unmarked adjacent object; unverified)
 - **lies** `H3577` [2] **role=standalone** — sense=lies; type=status
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
-- **abhors** `H8581` [1/M06] **role=characteristic** — sense=abhors; type=action; operation=abhors; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **abhors** `H8581` [1/M06] **role=characteristic** — sense=abhors; type=action; operation=abhors; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); target=bloodthirsty; discovery=target positional (unmarked adjacent object; unverified)
 - **bloodthirsty** `H1818` [2] **role=standalone** — sense=bloodthirsty; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **deceitful** `H4820` [1/M14] **role=characteristic** — sense=deceitful; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **man** `H0376` [2] **role=standalone** — sense=man; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Psa 5:7
 
-- **abundance** `H7230` [2] **role=process-qualifier** — sense=abundance; type=status; operation=(qualifies) enter; manner=manner-of enter; coupling=welds enter
+- **abundance** `H7230` [2] **role=process-qualifier** — sense=abundance; type=status; operation=(qualifies) enter; specifier=of steadfast love; manner=manner-of enter; coupling=welds enter
 - **steadfast love** `H2617` [1/M05] **role=characteristic** — sense=steadfast love; type=status
 - **enter** `H0935` [2] **role=standalone** — sense=enter; type=action; operation=enter
 - **house** `H1004` [2] **role=standalone** — sense=house; type=status
-- **holy** `H6944` [1/M22] **role=characteristic** — sense=holy; type=status
+- **holy** `H6944` [1/M22] **role=characteristic** — sense=holy; type=status; specifier=of temple
 - **temple** `H1964` [2] **role=process-qualifier** — sense=temple; type=status; operation=(qualifies) bow down; manner=manner-of bow down; coupling=welds bow down
 - **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status
 
@@ -84,21 +84,21 @@
 
 - **no** `H0369` [2] **role=standalone** — sense=no; type=status
 - **truth** `H3559` [2] **role=standalone** — sense=truth; type=action; operation=truth
-- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) truth; manner=manner-of truth; coupling=welds truth
+- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) truth; specifier=of inmost; manner=manner-of truth; coupling=welds truth
 - **destruction** `H1942` [1/M28] **role=characteristic** — sense=destruction; type=status
 - **throat** `H1627` [2] **role=standalone** — sense=throat; type=status
-- **open** `H6605` [2] **role=standalone** — sense=open; type=action; operation=open
+- **open** `H6605` [2] **role=standalone** — sense=open; type=action; operation=open; target=grave; discovery=target positional (unmarked adjacent object; unverified)
 - **grave** `H6913` [2] **role=standalone** — sense=grave; type=status
 - **flatter** `H2505` [2] **role=standalone** — sense=flatter; type=action; operation=flatter
 - **tongue** `H3956` [2] **role=standalone** — sense=tongue; type=status
 
 ## Psa 5:10
 
-- **guilt** `H0816` [1/M10] **role=characteristic** — sense=guilt; type=action; operation=guilt
+- **guilt** `H0816` [1/M10] **role=characteristic** — sense=guilt; type=action; operation=guilt; target=God; discovery=target positional (unmarked adjacent object; unverified)
 - **God** `H0430` [2] **role=standalone** — sense=God; type=status
 - **fall** `H5307` [2] **role=standalone** — sense=fall; type=action; operation=fall
 - **counsels** `H4156` [1/M17] **role=process-qualifier** — sense=counsels; type=status; operation=(qualifies) fall; manner=manner-of fall; coupling=welds fall
-- **abundance** `H7230` [2] **role=standalone** — sense=abundance; type=status
+- **abundance** `H7230` [2] **role=standalone** — sense=abundance; type=status; specifier=of transgressions
 - **transgressions** `H6588` [1/M10] **role=characteristic** — sense=transgressions; type=status
 - **cast** `H5080` [2] **role=standalone** — sense=cast; type=action; operation=cast
 - **rebelled** `H4784` [2] **role=standalone** — sense=rebelled; type=action; operation=rebelled

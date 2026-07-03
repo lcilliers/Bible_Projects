@@ -1,6 +1,6 @@
 # Pro 9 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 102 spans, 394 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 102 spans, 413 rows.
 
 
 ## Pro 9:1
@@ -26,7 +26,7 @@
 - **out** `H7971` [2] **role=standalone** — sense=out; type=action; operation=out
 - **young women** `H5291` [2] **role=standalone** — sense=young women; type=status
 - **call** `H7121` [1/M37] **role=characteristic** — sense=call; type=action; operation=call
-- **highest places** `H4791` [1/M08] **role=characteristic** — sense=highest places; type=status
+- **highest places** `H4791` [1/M08] **role=characteristic** — sense=highest places; type=status; specifier=of town
 - **town** `H7176` [2] **role=standalone** — sense=town; type=status
 
 ## Pro 9:4
@@ -48,11 +48,11 @@
 
 ## Pro 9:6
 
-- **Leave** `H5800` [2] **role=standalone** — sense=Leave; type=action; operation=Leave
+- **Leave** `H5800` [2] **role=standalone** — sense=Leave; type=action; operation=Leave; target=ways; discovery=target positional (unmarked adjacent object; unverified)
 - **ways** `H6612` [2] **role=standalone** — sense=ways; type=status
 - **live** `H2421` [1/M25] **role=characteristic** — sense=live; type=action; operation=live
 - **walk** `H0833` [2] **role=standalone** — sense=walk; type=action; operation=walk
-- **way** `H1870` [2] **role=process-qualifier** — sense=way; type=status; operation=(qualifies) walk; manner=manner-of walk; coupling=welds walk
+- **way** `H1870` [2] **role=process-qualifier** — sense=way; type=status; operation=(qualifies) walk; specifier=of insight; manner=manner-of walk; coupling=welds walk
 - **insight** `H0998` [1/M15] **role=characteristic** — sense=insight; type=status
 
 ## Pro 9:7
@@ -82,14 +82,14 @@
 - **wiser** `H2449` [2] **role=standalone** — sense=wiser; type=action; operation=wiser
 - **teach** `H3045` [1/M15] **role=characteristic** — sense=teach; type=action; operation=teach
 - **righteous** `H6662` [1/M26] **role=characteristic** — sense=righteous; type=quality
-- **increase** `H3254` [2] **role=standalone** — sense=increase; type=action; operation=increase
+- **increase** `H3254` [2] **role=standalone** — sense=increase; type=action; operation=increase; target=learning; discovery=target positional (unmarked adjacent object; unverified)
 - **learning** `H3948` [2] **role=standalone** — sense=learning; type=status
 
 ## Pro 9:10
 
-- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status
+- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
-- **beginning** `H8462` [2] **role=standalone** — sense=beginning; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **beginning** `H8462` [2] **role=standalone** — sense=beginning; type=status; specifier=of wisdom; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **wisdom** `H2451` [2] **role=standalone** — sense=wisdom; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **knowledge** `H1847` [1/M15] **role=characteristic** — sense=knowledge; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **Holy One** `H6918` [1/M22] **role=characteristic** — sense=Holy One; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -100,7 +100,7 @@
 - **days** `H3117` [2] **role=standalone** — sense=days; type=status
 - **multiplied** `H7235` [1/M23] **role=characteristic** — sense=multiplied; type=action; operation=multiplied
 - **years** `H8141` [2] **role=process-qualifier** — sense=years; type=status; operation=(qualifies) multiplied; manner=manner-of multiplied; coupling=welds multiplied
-- **added** `H3254` [2] **role=standalone** — sense=added; type=action; operation=added
+- **added** `H3254` [2] **role=standalone** — sense=added; type=action; operation=added; target=life; discovery=target positional (unmarked adjacent object; unverified)
 - **life** `H2416` [1/M25] **role=characteristic** — sense=life; type=status
 
 ## Pro 9:12
@@ -113,18 +113,18 @@
 
 ## Pro 9:13
 
-- **woman** `H0802` [2] **role=standalone** — sense=woman; type=status
+- **woman** `H0802` [2] **role=standalone** — sense=woman; type=status; specifier=of Folly
 - **Folly** `H3687` [2] **role=standalone** — sense=Folly; type=status
-- **loud** `H1993` [2] **role=standalone** — sense=loud; type=action; operation=loud
+- **loud** `H1993` [2] **role=standalone** — sense=loud; type=action; operation=loud; target=seductive; discovery=target positional (unmarked adjacent object; unverified)
 - **seductive** `H6615` [2] **role=standalone** — sense=seductive; type=status
 - **knows** `H3045` [1/M15] **role=characteristic** — sense=knows; type=action; operation=knows
 
 ## Pro 9:14
 
 - **sits** `H3427` [2] **role=standalone** — sense=sits; type=action; operation=sits
-- **door** `H6607` [2] **role=process-qualifier** — sense=door; type=status; operation=(qualifies) sits; manner=manner-of sits; coupling=welds sits
+- **door** `H6607` [2] **role=process-qualifier** — sense=door; type=status; operation=(qualifies) sits; specifier=of house; manner=manner-of sits; coupling=welds sits
 - **house** `H1004` [2] **role=standalone** — sense=house; type=status
-- **highest places** `H4791` [1/M08] **role=characteristic** — sense=highest places; type=status
+- **highest places** `H4791` [1/M08] **role=characteristic** — sense=highest places; type=status; specifier=of town
 - **town** `H7176` [2] **role=standalone** — sense=town; type=status
 
 ## Pro 9:15
@@ -143,10 +143,10 @@
 
 ## Pro 9:17
 
-- **Stolen** `H1589` [2] **role=standalone** — sense=Stolen; type=action; operation=Stolen
+- **Stolen** `H1589` [2] **role=standalone** — sense=Stolen; type=action; operation=Stolen; target=water is; discovery=target positional (unmarked adjacent object; unverified)
 - **water is** `H4325` [2] **role=standalone** — sense=water is; type=status
 - **sweet** `H4985` [2] **role=standalone** — sense=sweet; type=action; operation=sweet
-- **bread** `H3899` [2] **role=standalone** — sense=bread; type=status
+- **bread** `H3899` [2] **role=standalone** — sense=bread; type=status; specifier=of secret
 - **secret** `H5643` [2] **role=standalone** — sense=secret; type=status
 - **pleasant** `H5276` [1/M04] **role=characteristic** — sense=pleasant; type=action; operation=pleasant
 
@@ -156,5 +156,5 @@
 - **dead** `H7496` [1/M27] **role=characteristic** — sense=dead; type=status; prohibition=forbidden (neg particle)
 - **there** `H8033` [2] **role=standalone** — sense=there; type=quality
 - **guests** `H7121` [1/M37] **role=characteristic** — sense=guests; type=action; operation=guests
-- **depths** `H6012` [2] **role=process-qualifier** — sense=depths; type=status; operation=(qualifies) guests; manner=manner-of guests; coupling=welds guests
+- **depths** `H6012` [2] **role=process-qualifier** — sense=depths; type=status; operation=(qualifies) guests; specifier=of Sheol; manner=manner-of guests; coupling=welds guests
 - **Sheol** `H7585` [2] **role=standalone** — sense=Sheol; type=status

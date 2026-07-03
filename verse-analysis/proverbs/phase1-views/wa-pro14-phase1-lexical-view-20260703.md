@@ -1,6 +1,6 @@
 # Pro 14 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 214 spans, 790 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 214 spans, 837 rows.
 
 
 ## Pro 14:1
@@ -8,7 +8,7 @@
 - **wisest** `H2450` [1/M15] **role=characteristic** — sense=wisest; type=quality
 - **women** `H0802` [2] **role=standalone** — sense=women; type=status
 - **builds** `H1129` [2] **role=standalone** — sense=builds; type=action; operation=builds
-- **house** `H1004` [2] **role=standalone** — sense=house; type=status
+- **house** `H1004` [2] **role=standalone** — sense=house; type=status; specifier=of folly
 - **folly** `H0200` [1/M16] **role=characteristic** — sense=folly; type=status
 - **tears it down** `H2040` [2] **role=standalone** — sense=tears it down; type=action; operation=tears it down
 
@@ -26,7 +26,7 @@
 
 - **mouth** `H6310` [2] **role=standalone** — sense=mouth; type=status
 - **fool** `H0191` [1/M16] **role=characteristic** — sense=fool; type=quality
-- **rod** `H2415` [2] **role=standalone** — sense=rod; type=status
+- **rod** `H2415` [2] **role=standalone** — sense=rod; type=status; specifier=of back
 - **back** `H1346` [1/M08] **role=characteristic** — sense=back; type=status
 - **lips** `H8193` [2] **role=standalone** — sense=lips; type=status
 - **wise** `H2450` [1/M15] **role=characteristic** — sense=wise; type=quality
@@ -34,13 +34,13 @@
 
 ## Pro 14:4
 
-- **no** `H0369` [2] **role=standalone** — sense=no; type=status
+- **no** `H0369` [2] **role=standalone** — sense=no; type=status; specifier=of oxen
 - **oxen** `H0504` [2] **role=standalone** — sense=oxen; type=status
 - **manger** `H0018` [2] **role=standalone** — sense=manger; type=status
 - **clean** `H1249` [2] **role=standalone** — sense=clean; type=status
-- **abundant** `H7230` [2] **role=standalone** — sense=abundant; type=status
+- **abundant** `H7230` [2] **role=standalone** — sense=abundant; type=status; specifier=of crops
 - **crops** `H8393` [2] **role=standalone** — sense=crops; type=status
-- **strength** `H3581` [1/M23] **role=characteristic** — sense=strength; type=status
+- **strength** `H3581` [1/M23] **role=characteristic** — sense=strength; type=status; specifier=of ox
 - **ox** `H7794` [2] **role=standalone** — sense=ox; type=status
 
 ## Pro 14:5
@@ -54,7 +54,7 @@
 ## Pro 14:6
 
 - **scoffer** `H3887` [2] **role=standalone** — sense=scoffer; type=quality
-- **seeks** `H1245` [1/M41] **role=characteristic** — sense=seeks; type=action; operation=seeks
+- **seeks** `H1245` [1/M41] **role=characteristic** — sense=seeks; type=action; operation=seeks; target=wisdom; discovery=target positional (unmarked adjacent object; unverified)
 - **wisdom** `H2451` [2] **role=standalone** — sense=wisdom; type=status
 - **vain** `H0369` [2] **role=standalone** — sense=vain; type=status
 - **knowledge** `H1847` [1/M15] **role=characteristic** — sense=knowledge; type=status
@@ -66,7 +66,7 @@
 - **presence** `H5048` [2] **role=standalone** — sense=presence; type=quality
 - **fool** `H0376` [2] **role=process-qualifier** — sense=fool; type=status; operation=(qualifies) Leave; manner=manner-of Leave; coupling=welds Leave
 - **meet** `H3045` [1/M15] **role=characteristic** — sense=meet; type=action; operation=meet
-- **words** `H8193` [2] **role=standalone** — sense=words; type=status
+- **words** `H8193` [2] **role=standalone** — sense=words; type=status; specifier=of knowledge
 - **knowledge** `H1847` [1/M15] **role=characteristic** — sense=knowledge; type=status
 
 ## Pro 14:8
@@ -74,7 +74,7 @@
 - **wisdom** `H2451` [2] **role=standalone** — sense=wisdom; type=status
 - **prudent** `H6175` [1/M15] **role=characteristic** — sense=prudent; type=quality
 - **discern** `H0995` [1/M15] **role=characteristic** — sense=discern; type=action; operation=discern
-- **way** `H1870` [2] **role=standalone** — sense=way; type=status
+- **way** `H1870` [2] **role=standalone** — sense=way; type=status; specifier=of folly
 - **folly** `H0200` [1/M16] **role=characteristic** — sense=folly; type=status
 - **fools** `H3684` [2] **role=standalone** — sense=fools; type=quality
 - **deceiving** `H4820` [1/M14] **role=characteristic** — sense=deceiving; type=status
@@ -82,7 +82,7 @@
 ## Pro 14:9
 
 - **Fools** `H0191` [1/M16] **role=characteristic** — sense=Fools; type=quality
-- **mock** `H3887` [2] **role=standalone** — sense=mock; type=action; operation=mock
+- **mock** `H3887` [2] **role=standalone** — sense=mock; type=action; operation=mock; target=guilt offering; discovery=target positional (unmarked adjacent object; unverified)
 - **guilt offering** `H0817` [1/M10] **role=characteristic** — sense=guilt offering; type=status
 - **upright** `H3477` [1/M13] **role=characteristic** — sense=upright; type=quality
 - **enjoy acceptance** `H7522` [1/M29] **role=characteristic** — sense=enjoy acceptance; type=status
@@ -91,7 +91,7 @@
 
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 - **knows** `H3045` [1/M15] **role=characteristic** — sense=knows; type=action; operation=knows; prohibition=forbidden (neg particle)
-- **own** `H5315` [1/M47] **role=characteristic** — sense=own; type=status; seat=soul; prohibition=forbidden (neg particle)
+- **own** `H5315` [1/M47] **role=characteristic** — sense=own; type=status; seat=soul; specifier=of bitterness; prohibition=forbidden (neg particle)
 - **bitterness** `H4787` [1/M03] **role=characteristic** — sense=bitterness; type=status; prohibition=forbidden (neg particle)
 - **stranger** `H2114` [2] **role=standalone** — sense=stranger; type=quality; prohibition=forbidden (neg particle)
 - **shares** `H6148` [2] **role=standalone** — sense=shares; type=action; operation=shares; prohibition=forbidden (neg particle)
@@ -99,7 +99,7 @@
 
 ## Pro 14:11
 
-- **house** `H1004` [2] **role=standalone** — sense=house; type=status
+- **house** `H1004` [2] **role=standalone** — sense=house; type=status; specifier=of wicked
 - **wicked** `H7563` [1/M10] **role=characteristic** — sense=wicked; type=status
 - **destroyed** `H8045` [2] **role=standalone** — sense=destroyed; type=action; operation=destroyed
 - **tent** `H0168` [2] **role=standalone** — sense=tent; type=status
@@ -111,23 +111,23 @@
 - **is** `H3426` [2] **role=standalone** — sense=is; type=quality
 - **way** `H1870` [2] **role=standalone** — sense=way; type=status
 - **right** `H3477` [1/M13] **role=characteristic** — sense=right; type=quality
-- **to** `H6440` [2] **role=standalone** — sense=to; type=status
+- **to** `H6440` [2] **role=standalone** — sense=to; type=status; specifier=of man
 - **man** `H0376` [2] **role=standalone** — sense=man; type=status
-- **end** `H0319` [2] **role=standalone** — sense=end; type=status
-- **way** `H1870` [2] **role=standalone** — sense=way; type=status
+- **end** `H0319` [2] **role=standalone** — sense=end; type=status; specifier=of way
+- **way** `H1870` [2] **role=standalone** — sense=way; type=status; specifier=of death
 
 ## Pro 14:13
 
 - **laughter** `H7814` [2] **role=process-qualifier** — sense=laughter; type=status; operation=(qualifies) ache; manner=manner-of ache; coupling=welds ache
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 - **ache** `H3510` [1/M03] **role=characteristic** — sense=ache; type=action; operation=ache
-- **end** `H0319` [2] **role=standalone** — sense=end; type=status
+- **end** `H0319` [2] **role=standalone** — sense=end; type=status; specifier=of joy
 - **joy** `H8057` [1/M04] **role=characteristic** — sense=joy; type=status
 - **grief** `H8424` [1/M03] **role=characteristic** — sense=grief; type=status
 
 ## Pro 14:14
 
-- **backslider** `H5472` [2] **role=standalone** — sense=backslider; type=action; operation=backslider
+- **backslider** `H5472` [2] **role=standalone** — sense=backslider; type=action; operation=backslider; target=heart; discovery=target positional (unmarked adjacent object; unverified)
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 - **filled** `H7646` [2] **role=standalone** — sense=filled; type=action; operation=filled
 - **ways** `H1870` [2] **role=standalone** — sense=ways; type=status
@@ -155,9 +155,9 @@
 
 ## Pro 14:17
 
-- **acts** `H6213` [2] **role=standalone** — sense=acts; type=action; operation=acts
+- **acts** `H6213` [2] **role=standalone** — sense=acts; type=action; operation=acts; target=foolishly; discovery=target positional (unmarked adjacent object; unverified)
 - **foolishly** `H0200` [1/M16] **role=characteristic** — sense=foolishly; type=status
-- **man** `H0376` [2] **role=standalone** — sense=man; type=status
+- **man** `H0376` [2] **role=standalone** — sense=man; type=status; specifier=of evil devices
 - **evil devices** `H4209` [2] **role=standalone** — sense=evil devices; type=status
 - **hated** `H8130` [1/M06] **role=characteristic** — sense=hated; type=action; operation=hated
 
@@ -166,7 +166,7 @@
 - **simple** `H6612` [2] **role=standalone** — sense=simple; type=status
 - **folly** `H0200` [1/M16] **role=characteristic** — sense=folly; type=status
 - **prudent** `H6175` [1/M15] **role=characteristic** — sense=prudent; type=quality
-- **crowned** `H3803` [2] **role=standalone** — sense=crowned; type=action; operation=crowned
+- **crowned** `H3803` [2] **role=standalone** — sense=crowned; type=action; operation=crowned; target=knowledge; discovery=target positional (unmarked adjacent object; unverified)
 - **knowledge** `H1847` [1/M15] **role=characteristic** — sense=knowledge; type=status
 
 ## Pro 14:19
@@ -207,9 +207,9 @@
 
 ## Pro 14:23
 
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of toil; intensity=all
 - **toil** `H6089` [1/M03] **role=characteristic** — sense=toil; type=status; intensity=all
-- **is** `H1961` [2] **role=standalone** — sense=is; type=action; operation=is; intensity=all
+- **is** `H1961` [2] **role=standalone** — sense=is; type=action; operation=is; target=profit; discovery=target positional (unmarked adjacent object; unverified); intensity=all
 - **profit** `H4195` [2] **role=standalone** — sense=profit; type=status; intensity=all
 - **mere talk** `H1697` [2] **role=standalone** — sense=mere talk; type=status
 - **only** `H0389` [2] **role=standalone** — sense=only; type=quality
@@ -219,7 +219,7 @@
 
 - **crown** `H5850` [2] **role=standalone** — sense=crown; type=status
 - **wise** `H2450` [1/M15] **role=characteristic** — sense=wise; type=quality
-- **wealth** `H6239` [1/M46] **role=characteristic** — sense=wealth; type=status
+- **wealth** `H6239` [1/M46] **role=characteristic** — sense=wealth; type=status; specifier=of folly
 - **folly** `H0200` [1/M16] **role=characteristic** — sense=folly; type=status
 - **fools** `H3684` [2] **role=standalone** — sense=fools; type=quality
 - **folly** `H0200` [1/M16] **role=characteristic** — sense=folly; type=status
@@ -227,36 +227,36 @@
 ## Pro 14:25
 
 - **truthful** `H0571` [1/M13] **role=characteristic** — sense=truthful; type=status
-- **saves** `H5337` [2] **role=standalone** — sense=saves; type=action; operation=saves
+- **saves** `H5337` [2] **role=standalone** — sense=saves; type=action; operation=saves; target=lives; discovery=target positional (unmarked adjacent object; unverified)
 - **lives** `H5315` [1/M25] **role=characteristic** — sense=lives; type=status; seat=soul
-- **breathes out** `H6315` [2] **role=standalone** — sense=breathes out; type=action; operation=breathes out
+- **breathes out** `H6315` [2] **role=standalone** — sense=breathes out; type=action; operation=breathes out; target=lies; discovery=target positional (unmarked adjacent object; unverified)
 - **lies** `H3577` [2] **role=standalone** — sense=lies; type=status
 - **deceitful** `H4820` [1/M14] **role=characteristic** — sense=deceitful; type=status
 
 ## Pro 14:26
 
-- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status
+- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **strong** `H5797` [1/M23] **role=characteristic** — sense=strong; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **confidence** `H4009` [1/M19] **role=characteristic** — sense=confidence; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **children** `H1121` [2] **role=standalone** — sense=children; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **confidence** `H4009` [1/M19] **role=characteristic** — sense=confidence; type=status; specifier=of children; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **children** `H1121` [2] **role=standalone** — sense=children; type=status; specifier=of refuge; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **refuge** `H4268` [1/M19] **role=characteristic** — sense=refuge; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Pro 14:27
 
-- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status
+- **fear** `H3374` [1/M01] **role=characteristic** — sense=fear; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
-- **fountain** `H4726` [2] **role=standalone** — sense=fountain; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **fountain** `H4726` [2] **role=standalone** — sense=fountain; type=status; specifier=of life; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **life** `H2416` [1/M25] **role=characteristic** — sense=life; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **turn away** `H5493` [1/M30] **role=characteristic** — sense=turn away; type=action; operation=turn away; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **snares** `H4170` [2] **role=standalone** — sense=snares; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **snares** `H4170` [2] **role=standalone** — sense=snares; type=status; specifier=of death; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Pro 14:28
 
-- **multitude** `H7230` [2] **role=standalone** — sense=multitude; type=status
-- **glory** `H1927` [1/M22] **role=characteristic** — sense=glory; type=status
+- **multitude** `H7230` [2] **role=standalone** — sense=multitude; type=status; specifier=of people
+- **glory** `H1927` [1/M22] **role=characteristic** — sense=glory; type=status; specifier=of king
 - **king** `H4428` [2] **role=standalone** — sense=king; type=status
-- **without** `H0657` [2] **role=standalone** — sense=without; type=status
+- **without** `H0657` [2] **role=standalone** — sense=without; type=status; specifier=of people
 - **people** `H3816` [2] **role=standalone** — sense=people; type=status
 - **prince** `H7333` [2] **role=standalone** — sense=prince; type=status
 - **ruined** `H4288` [1/M01] **role=characteristic** — sense=ruined; type=status
@@ -271,8 +271,8 @@
 ## Pro 14:30
 
 - **tranquil** `H4832` [2] **role=standalone** — sense=tranquil; type=status
-- **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
-- **life** `H2416` [1/M25] **role=characteristic** — sense=life; type=status; seat=flesh
+- **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart; specifier=of life
+- **life** `H2416` [1/M25] **role=characteristic** — sense=life; type=status; seat=flesh; specifier=of flesh
 - **flesh** `H1320` [1/M47] **role=characteristic** — sense=flesh; type=status; seat=flesh
 - **envy** `H7068` [1/M02] **role=characteristic** — sense=envy; type=status
 - **rot** `H7538` [2] **role=standalone** — sense=rot; type=status
@@ -310,14 +310,14 @@
 - **Righteousness** `H6666` [1/M26] **role=characteristic** — sense=Righteousness; type=status
 - **nation** `H1471` [2] **role=standalone** — sense=nation; type=status
 - **sin** `H2403` [1/M10] **role=characteristic** — sense=sin; type=status
-- **reproach** `H2617` [2] **role=standalone** — sense=reproach; type=status
+- **reproach** `H2617` [2] **role=standalone** — sense=reproach; type=status; specifier=of people
 - **people** `H3816` [2] **role=standalone** — sense=people; type=status
 
 ## Pro 14:35
 
 - **servant** `H5650` [2] **role=process-qualifier** — sense=servant; type=status; operation=(qualifies) deals wisely; manner=manner-of deals wisely; coupling=welds deals wisely
-- **deals wisely** `H7919` [1/M15] **role=characteristic** — sense=deals wisely; type=action; operation=deals wisely
+- **deals wisely** `H7919` [1/M15] **role=characteristic** — sense=deals wisely; type=action; operation=deals wisely; target=king’s; discovery=target positional (unmarked adjacent object; unverified)
 - **king’s** `H4428` [2] **role=standalone** — sense=king’s; type=status
-- **favor** `H7522` [1/M29] **role=characteristic** — sense=favor; type=status
+- **favor** `H7522` [1/M29] **role=characteristic** — sense=favor; type=status; specifier=of wrath
 - **wrath** `H5678` [2] **role=standalone** — sense=wrath; type=status
 - **acts shamefully** `H0954` [1/M07] **role=characteristic** — sense=acts shamefully; type=action; operation=acts shamefully

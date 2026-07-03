@@ -1,6 +1,6 @@
 # Psa 26 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 63 spans, 289 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 63 spans, 299 rows.
 
 
 ## Psa 26:1
@@ -20,7 +20,7 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **try** `H5254` [2] **role=standalone** — sense=try; type=action; operation=try; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **test** `H6884` [2] **role=standalone** — sense=test; type=action; operation=test; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart; specifier=of mind; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 
 ## Psa 26:3
 
@@ -33,7 +33,7 @@
 ## Psa 26:4
 
 - **sit** `H3427` [2] **role=standalone** — sense=sit; type=action; operation=sit; prohibition=forbidden (neg particle)
-- **men** `H4962` [2] **role=standalone** — sense=men; type=status; prohibition=forbidden (neg particle)
+- **men** `H4962` [2] **role=standalone** — sense=men; type=status; specifier=of falsehood; prohibition=forbidden (neg particle)
 - **falsehood** `H7723` [2] **role=standalone** — sense=falsehood; type=status; prohibition=forbidden (neg particle)
 - **consort** `H0935` [2] **role=standalone** — sense=consort; type=action; operation=consort; prohibition=forbidden (neg particle)
 - **hypocrites** `H5956` [1/M14] **role=characteristic** — sense=hypocrites; type=action; operation=hypocrites; prohibition=forbidden (neg particle)
@@ -48,15 +48,15 @@
 
 ## Psa 26:6
 
-- **wash** `H7364` [2] **role=process-qualifier** — sense=wash; type=action; operation=wash; target=altar
+- **wash** `H7364` [2] **role=standalone** — sense=wash; type=action; operation=wash; target=altar
 - **innocence** `H5356` [1/M07] **role=process-qualifier** — sense=innocence; type=status; operation=(qualifies) go around; manner=manner-of go around; coupling=welds go around
-- **go around** `H5437` [2] **role=process-qualifier** — sense=go around; type=action; operation=go around; target=altar
-- **altar** `H4196` [2] **role=standalone** — sense=altar; type=status
+- **go around** `H5437` [2] **role=standalone** — sense=go around; type=action; operation=go around; target=altar
+- **altar** `H4196` [2] **role=standalone** — sense=altar; type=status; specifier=of Lord
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 
 ## Psa 26:7
 
-- **proclaiming** `H8085` [1/M41] **role=characteristic** — sense=proclaiming; type=action; operation=proclaiming
+- **proclaiming** `H8085` [1/M41] **role=characteristic** — sense=proclaiming; type=action; operation=proclaiming; target=thanksgiving; discovery=target positional (unmarked adjacent object; unverified)
 - **thanksgiving** `H8426` [1/M22] **role=characteristic** — sense=thanksgiving; type=status; intensity=all
 - **telling** `H5608` [2] **role=standalone** — sense=telling; type=action; operation=telling; intensity=all
 - **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all
@@ -66,9 +66,9 @@
 
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status
 - **love** `H0157` [2] **role=characteristic** — sense=love; type=action; operation=love; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **habitation** `H4583` [2] **role=standalone** — sense=habitation; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **house** `H1004` [2] **role=standalone** — sense=house; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
-- **glory** `H3519` [1/M22] **role=characteristic** — sense=glory; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **habitation** `H4583` [2] **role=standalone** — sense=habitation; type=status; specifier=of house; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **house** `H1004` [2] **role=standalone** — sense=house; type=status; specifier=of place; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **glory** `H3519` [1/M22] **role=characteristic** — sense=glory; type=status; specifier=of dwells; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **dwells** `H4908` [2] **role=standalone** — sense=dwells; type=status
 
 ## Psa 26:9
@@ -84,7 +84,7 @@
 
 - **evil** `H2154` [2] **role=standalone** — sense=evil; type=status
 - **right hands** `H3225` [2] **role=standalone** — sense=right hands; type=status
-- **full** `H4390` [2] **role=standalone** — sense=full; type=action; operation=full
+- **full** `H4390` [2] **role=standalone** — sense=full; type=action; operation=full; target=bribes; discovery=target positional (unmarked adjacent object; unverified)
 - **bribes** `H7810` [2] **role=standalone** — sense=bribes; type=status
 
 ## Psa 26:11

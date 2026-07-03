@@ -1,11 +1,11 @@
 # Psa 40 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 138 spans, 628 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 138 spans, 650 rows.
 
 
 ## Psa 40:1
 
-- **choirmaster** `H5329` [1/M22] **role=standalone** — sense=choirmaster; type=action; operation=choirmaster
+- **choirmaster** `H5329` [1/M22] **role=standalone** — sense=choirmaster; type=action; operation=choirmaster; target=Psalm; discovery=target positional (unmarked adjacent object; unverified)
 - **Psalm** `H4210` [1/M22] **role=standalone** — sense=Psalm; type=status
 - **David** `H1732` [2] **role=process-qualifier** — sense=David; type=status; operation=(qualifies) waited; manner=manner-of waited; coupling=welds waited
 - **waited** `H6960` [1/M17] **role=characteristic** — sense=waited; type=action; operation=waited; bearer=David; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
@@ -18,7 +18,7 @@
 ## Psa 40:2
 
 - **drew** `H5927` [2] **role=standalone** — sense=drew; type=action; operation=drew
-- **pit** `H0953` [2] **role=process-qualifier** — sense=pit; type=status; operation=(qualifies) drew; manner=manner-of drew; coupling=welds drew
+- **pit** `H0953` [2] **role=process-qualifier** — sense=pit; type=status; operation=(qualifies) drew; specifier=of destruction; manner=manner-of drew; coupling=welds drew
 - **destruction** `H7588` [2] **role=standalone** — sense=destruction; type=status
 - **miry** `H3121` [2] **role=standalone** — sense=miry; type=status
 - **bog** `H2916` [2] **role=process-qualifier** — sense=bog; type=status; operation=(qualifies) set; manner=manner-of set; coupling=welds set
@@ -32,7 +32,7 @@
 - **put** `H5414` [2] **role=standalone** — sense=put; type=action; operation=put
 - **new** `H2319` [2] **role=standalone** — sense=new; type=quality
 - **song** `H7892` [2] **role=standalone** — sense=song; type=status
-- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) put; manner=manner-of put; coupling=welds put; intensity=many
+- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) put; specifier=of praise; manner=manner-of put; coupling=welds put; intensity=many
 - **praise** `H8416` [1/M22] **role=characteristic** — sense=praise; type=status; intensity=many
 - **God** `H0430` [2] **role=process-qualifier** — sense=God; type=status; operation=(qualifies) see; manner=manner-of see; coupling=welds see; intensity=many
 - **Many** `H7227` [2] **role=standalone** — sense=Many; type=quality; intensity=many
@@ -43,7 +43,7 @@
 
 ## Psa 40:4
 
-- **Blessed** `H0835` [2] **role=standalone** — sense=Blessed; type=status
+- **Blessed** `H0835` [2] **role=standalone** — sense=Blessed; type=status; specifier=of man
 - **makes** `H7760` [2] **role=standalone** — sense=makes; type=action; operation=makes; prohibition=forbidden (neg particle)
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status; prohibition=forbidden (neg particle)
 - **trust** `H4009` [1/M19] **role=characteristic** — sense=trust; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
@@ -78,21 +78,21 @@
 
 - **said** `H0559` [2] **role=standalone** — sense=said; type=action; operation=said
 - **come** `H0935` [2] **role=standalone** — sense=come; type=action; operation=come
-- **scroll** `H4039` [2] **role=standalone** — sense=scroll; type=status
+- **scroll** `H4039` [2] **role=standalone** — sense=scroll; type=status; specifier=of book
 - **book** `H5612` [2] **role=standalone** — sense=book; type=status
 - **written** `H3789` [2] **role=standalone** — sense=written; type=action; operation=written
 
 ## Psa 40:8
 
 - **do** `H6213` [2] **role=standalone** — sense=do; type=action; operation=do
-- **will** `H7522` [1/M29] **role=characteristic** — sense=will; type=status
-- **God** `H0430` [2] **role=standalone** — sense=God; type=status
-- **law** `H8451` [2] **role=standalone** — sense=law; type=status
+- **will** `H7522` [1/M29] **role=characteristic** — sense=will; type=status; specifier=of God
+- **God** `H0430` [2] **role=standalone** — sense=God; type=status; specifier=of law
+- **law** `H8451` [2] **role=standalone** — sense=law; type=status; specifier=of within
 - **within** `H8432` [2] **role=standalone** — sense=within; type=status
 
 ## Psa 40:9
 
-- **glad news** `H1319` [2] **role=standalone** — sense=glad news; type=action; operation=glad news; intensity=many
+- **glad news** `H1319` [2] **role=standalone** — sense=glad news; type=action; operation=glad news; target=deliverance; discovery=target positional (unmarked adjacent object; unverified); intensity=many
 - **deliverance** `H6664` [1/M26] **role=characteristic** — sense=deliverance; type=status; intensity=many
 - **great** `H7227` [2] **role=standalone** — sense=great; type=quality; intensity=many; prohibition=forbidden (neg particle)
 - **congregation** `H6951` [2] **role=process-qualifier** — sense=congregation; type=status; operation=(qualifies) glad news; manner=manner-of glad news; coupling=welds glad news; intensity=many; prohibition=forbidden (neg particle)
@@ -104,14 +104,14 @@
 ## Psa 40:10
 
 - **hidden** `H3680` [2] **role=standalone** — sense=hidden; type=action; operation=hidden; prohibition=forbidden (neg particle)
-- **deliverance** `H6666` [1/M26] **role=characteristic** — sense=deliverance; type=status; seat=heart; prohibition=forbidden (neg particle)
-- **within** `H8432` [2] **role=process-qualifier** — sense=within; type=status; operation=(qualifies) hidden; seat=heart; manner=manner-of hidden; coupling=welds hidden; prohibition=forbidden (neg particle)
+- **deliverance** `H6666` [1/M26] **role=characteristic** — sense=deliverance; type=status; seat=heart; specifier=of within; prohibition=forbidden (neg particle)
+- **within** `H8432` [2] **role=process-qualifier** — sense=within; type=status; operation=(qualifies) hidden; seat=heart; specifier=of heart; manner=manner-of hidden; coupling=welds hidden; prohibition=forbidden (neg particle)
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 - **spoken** `H0559` [2] **role=standalone** — sense=spoken; type=action; operation=spoken; prohibition=forbidden (neg particle)
-- **faithfulness** `H0530` [1/M13] **role=characteristic** — sense=faithfulness; type=status; prohibition=forbidden (neg particle)
+- **faithfulness** `H0530` [1/M13] **role=characteristic** — sense=faithfulness; type=status; specifier=of salvation; prohibition=forbidden (neg particle)
 - **salvation** `H8668` [2] **role=standalone** — sense=salvation; type=status; prohibition=forbidden (neg particle)
 - **concealed** `H3582` [2] **role=standalone** — sense=concealed; type=action; operation=concealed; intensity=many; prohibition=forbidden (neg particle)
-- **steadfast love** `H2617` [1/M05] **role=characteristic** — sense=steadfast love; type=status; intensity=many; prohibition=forbidden (neg particle)
+- **steadfast love** `H2617` [1/M05] **role=characteristic** — sense=steadfast love; type=status; specifier=of faithfulness; intensity=many; prohibition=forbidden (neg particle)
 - **faithfulness** `H0571` [1/M13] **role=characteristic** — sense=faithfulness; type=status; intensity=many; prohibition=forbidden (neg particle)
 - **great** `H7227` [2] **role=standalone** — sense=great; type=quality; intensity=many
 - **congregation** `H6951` [2] **role=standalone** — sense=congregation; type=status; intensity=many
@@ -121,8 +121,8 @@
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status; prohibition=forbidden (neg particle)
 - **restrain** `H3607` [2] **role=standalone** — sense=restrain; type=action; operation=restrain; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
 - **mercy** `H7356` [1/M05] **role=characteristic** — sense=mercy; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
-- **steadfast love** `H2617` [1/M05] **role=process-qualifier** — sense=steadfast love; type=status; operation=(qualifies) restrain; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); manner=manner-of restrain; coupling=welds restrain
-- **faithfulness** `H0571` [1/M13] **role=characteristic** — sense=faithfulness; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
+- **steadfast love** `H2617` [1/M05] **role=process-qualifier** — sense=steadfast love; type=status; operation=(qualifies) restrain; specifier=of faithfulness; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); manner=manner-of restrain; coupling=welds restrain
+- **faithfulness** `H0571` [1/M13] **role=characteristic** — sense=faithfulness; type=status; specifier=of ever; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
 - **ever** `H8548` [2] **role=standalone** — sense=ever; type=status
 - **preserve** `H5341` [2] **role=standalone** — sense=preserve; type=action; operation=preserve
 
@@ -135,7 +135,7 @@
 - **overtaken** `H5381` [2] **role=standalone** — sense=overtaken; type=action; operation=overtaken
 - **cannot** `H3201` [2] **role=standalone** — sense=cannot; type=action; operation=cannot
 - **see** `H7200` [2] **role=standalone** — sense=see; type=action; operation=see
-- **hairs** `H8185` [2] **role=standalone** — sense=hairs; type=status
+- **hairs** `H8185` [2] **role=standalone** — sense=hairs; type=status; specifier=of head
 - **head** `H7218` [2] **role=process-qualifier** — sense=head; type=status; seat=heart
 - **heart** `H3820` [1/M47] **role=characteristic** — sense=heart; type=status; seat=heart
 - **fails** `H5800` [2] **role=standalone** — sense=fails; type=action; operation=fails
@@ -156,7 +156,7 @@
 - **seek** `H1245` [1/M41] **role=characteristic** — sense=seek; type=action; operation=seek
 - **snatch** `H5595` [2] **role=standalone** — sense=snatch; type=action; operation=snatch
 - **life** `H5315` [1/M25] **role=characteristic** — sense=life; type=status; seat=soul
-- **turned** `H5472` [2] **role=standalone** — sense=turned; type=action; operation=turned
+- **turned** `H5472` [2] **role=standalone** — sense=turned; type=action; operation=turned; target=back; discovery=target positional (unmarked adjacent object; unverified)
 - **back** `H0268` [2] **role=standalone** — sense=back; type=status
 - **brought to dishonor** `H3637` [1/M07] **role=characteristic** — sense=brought to dishonor; type=action; operation=brought to dishonor
 - **delight** `H2655` [1/M04] **role=characteristic** — sense=delight; type=quality
@@ -176,7 +176,7 @@
 - **glad** `H8055` [1/M04] **role=characteristic** — sense=glad; type=action; operation=glad; intensity=all
 - **love** `H0157` [2] **role=characteristic** — sense=love; type=action; operation=love
 - **salvation** `H8668` [2] **role=standalone** — sense=salvation; type=status
-- **say** `H0559` [2] **role=standalone** — sense=say; type=action; operation=say
+- **say** `H0559` [2] **role=standalone** — sense=say; type=action; operation=say; target=continually; discovery=target positional (unmarked adjacent object; unverified)
 - **continually** `H8548` [2] **role=standalone** — sense=continually; type=status
 - **Great** `H1431` [1/M22] **role=characteristic** — sense=Great; type=action; operation=Great
 - **Lord** `H3068` [2] **role=standalone** — sense=Lord; type=status

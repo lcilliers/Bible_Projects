@@ -1,6 +1,6 @@
 # Psa 38 — Phase-1 per-verse lexical (DB-derived draft) — 2026-07-03
 
-> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 126 spans, 533 rows.
+> Chapter-driven poetic build; within-verse items only; role = sanity-check DRAFT. 126 spans, 555 rows.
 
 
 ## Psa 38:1
@@ -22,12 +22,12 @@
 
 ## Psa 38:3
 
-- **no** `H0369` [2] **role=process-qualifier** — sense=no; type=status; seat=flesh
+- **no** `H0369` [2] **role=process-qualifier** — sense=no; type=status; seat=flesh; specifier=of soundness
 - **soundness** `H4974` [1/M12] **role=characteristic** — sense=soundness; type=status
-- **flesh** `H1320` [1/M47] **role=characteristic** — sense=flesh; type=status; seat=flesh
-- **because** `H6440` [2] **role=standalone** — sense=because; type=status
-- **indignation** `H2195` [1/M02] **role=characteristic** — sense=indignation; type=status
-- **no** `H0369` [2] **role=standalone** — sense=no; type=status
+- **flesh** `H1320` [1/M47] **role=characteristic** — sense=flesh; type=status; seat=flesh; specifier=of because
+- **because** `H6440` [2] **role=standalone** — sense=because; type=status; specifier=of indignation
+- **indignation** `H2195` [1/M02] **role=characteristic** — sense=indignation; type=status; specifier=of no
+- **no** `H0369` [2] **role=standalone** — sense=no; type=status; specifier=of health
 - **health** `H7965` [1/M33] **role=characteristic** — sense=health; type=status
 - **because** `H6440` [2] **role=standalone** — sense=because; type=status
 - **sin** `H2403` [1/M10] **role=characteristic** — sense=sin; type=status
@@ -53,7 +53,7 @@
 
 - **bowed** `H5753` [1/M10] **role=characteristic** — sense=bowed; type=action; operation=bowed; intensity=all, very
 - **down** `H7817` [2] **role=standalone** — sense=down; type=action; operation=down; intensity=all, very
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all, very
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of day; intensity=all, very
 - **day** `H3117` [2] **role=standalone** — sense=day; type=status; intensity=all
 - **go** `H1980` [2] **role=standalone** — sense=go; type=action; operation=go; intensity=all
 
@@ -62,7 +62,7 @@
 - **sides** `H3689` [2] **role=standalone** — sense=sides; type=status
 - **filled** `H4390` [2] **role=standalone** — sense=filled; type=action; operation=filled
 - **burning** `H7033` [2] **role=standalone** — sense=burning; type=action; operation=burning
-- **no** `H0369` [2] **role=standalone** — sense=no; type=status
+- **no** `H0369` [2] **role=standalone** — sense=no; type=status; specifier=of soundness
 - **soundness** `H4974` [1/M12] **role=characteristic** — sense=soundness; type=status
 - **flesh** `H1320` [1/M47] **role=characteristic** — sense=flesh; type=status; seat=flesh
 
@@ -76,7 +76,7 @@
 ## Psa 38:9
 
 - **Lord** `H0136` [2] **role=standalone** — sense=Lord; type=status; intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of longing; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **longing** `H8378` [1/M28] **role=characteristic** — sense=longing; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all
 - **before** `H5048` [2] **role=standalone** — sense=before; type=quality; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); intensity=all; prohibition=forbidden (neg particle)
 - **sighing** `H0585` [1/M03] **role=characteristic** — sense=sighing; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed); prohibition=forbidden (neg particle)
@@ -88,7 +88,7 @@
 - **throbs** `H5503` [2] **role=standalone** — sense=throbs; type=action; operation=throbs
 - **strength** `H3581` [1/M23] **role=characteristic** — sense=strength; type=status
 - **fails** `H5800` [2] **role=standalone** — sense=fails; type=action; operation=fails
-- **light** `H0216` [2] **role=standalone** — sense=light; type=status
+- **light** `H0216` [2] **role=standalone** — sense=light; type=status; specifier=of eyes
 - **eyes** `H5869` [2] **role=standalone** — sense=eyes; type=status
 - **gone** `H0369` [2] **role=standalone** — sense=gone; type=status
 
@@ -109,11 +109,11 @@
 - **lay their snares** `H5367` [2] **role=standalone** — sense=lay their snares; type=action; operation=lay their snares
 - **seek** `H1875` [1/M41] **role=characteristic** — sense=seek; type=action; operation=seek
 - **hurt** `H7451` [1/M03] **role=characteristic** — sense=hurt; type=status
-- **speak** `H1696` [2] **role=standalone** — sense=speak; type=action; operation=speak
+- **speak** `H1696` [2] **role=standalone** — sense=speak; type=action; operation=speak; target=ruin; discovery=target positional (unmarked adjacent object; unverified)
 - **ruin** `H1942` [1/M28] **role=characteristic** — sense=ruin; type=status; intensity=all
-- **meditate** `H1897` [1/M42] **role=characteristic** — sense=meditate; type=action; operation=meditate; intensity=all
+- **meditate** `H1897` [1/M42] **role=characteristic** — sense=meditate; type=action; operation=meditate; target=treachery; discovery=target positional (unmarked adjacent object; unverified); intensity=all
 - **treachery** `H4820` [1/M14] **role=characteristic** — sense=treachery; type=status; intensity=all
-- **all** `H3605` [2] **role=standalone** — sense=all; type=status; intensity=all
+- **all** `H3605` [2] **role=standalone** — sense=all; type=status; specifier=of day; intensity=all
 - **day** `H3117` [2] **role=standalone** — sense=day; type=status; intensity=all
 
 ## Psa 38:13
@@ -129,7 +129,7 @@
 - **become** `H1961` [2] **role=standalone** — sense=become; type=action; operation=become; prohibition=forbidden (neg particle)
 - **man** `H0376` [2] **role=process-qualifier** — sense=man; type=status; operation=(qualifies) become; manner=manner-of become; coupling=welds become; prohibition=forbidden (neg particle)
 - **hear** `H8085` [1/M41] **role=characteristic** — sense=hear; type=action; operation=hear; prohibition=forbidden (neg particle)
-- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) hear; manner=manner-of hear; coupling=welds hear; prohibition=forbidden (neg particle)
+- **mouth** `H6310` [2] **role=process-qualifier** — sense=mouth; type=status; operation=(qualifies) hear; specifier=of rebukes; manner=manner-of hear; coupling=welds hear; prohibition=forbidden (neg particle)
 - **rebukes** `H8433` [2] **role=standalone** — sense=rebukes; type=status; prohibition=forbidden (neg particle)
 
 ## Psa 38:15
@@ -151,7 +151,7 @@
 
 - **ready** `H3559` [2] **role=standalone** — sense=ready; type=action; operation=ready
 - **fall** `H6761` [2] **role=process-qualifier** — sense=fall; type=status; operation=(qualifies) ready; manner=manner-of ready; coupling=welds ready
-- **pain** `H4341` [1/M03] **role=characteristic** — sense=pain; type=status
+- **pain** `H4341` [1/M03] **role=characteristic** — sense=pain; type=status; specifier=of ever
 - **ever** `H8548` [2] **role=standalone** — sense=ever; type=status
 - **before** `H5048` [2] **role=standalone** — sense=before; type=quality
 
@@ -167,14 +167,14 @@
 - **foes** `H0341` [1/M44] **role=standalone** — sense=foes; type=action; operation=foes
 - **vigorous** `H2416` [1/M44] **role=characteristic** — sense=vigorous; type=quality
 - **many** `H7231` [2] **role=standalone** — sense=many; type=action; operation=many
-- **hate** `H8130` [1/M06] **role=characteristic** — sense=hate; type=action; operation=hate
+- **hate** `H8130` [1/M06] **role=characteristic** — sense=hate; type=action; operation=hate; target=wrongfully; discovery=target positional (unmarked adjacent object; unverified)
 - **wrongfully** `H8267` [1/M14] **role=characteristic** — sense=wrongfully; type=status
 
 ## Psa 38:20
 
-- **render** `H7999` [2] **role=standalone** — sense=render; type=action; operation=render
+- **render** `H7999` [2] **role=standalone** — sense=render; type=action; operation=render; target=evil; discovery=target positional (unmarked adjacent object; unverified)
 - **evil** `H7451` [1/M27] **role=characteristic** — sense=evil; type=status
-- **for** `H8478` [2] **role=standalone** — sense=for; type=status
+- **for** `H8478` [2] **role=standalone** — sense=for; type=status; specifier=of good
 - **good** `H2896` [1/M04] **role=characteristic** — sense=good; type=status
 - **accuse** `H7853` [2] **role=standalone** — sense=accuse; type=action; operation=accuse
 - **because** `H8478` [2] **role=standalone** — sense=because; type=status
@@ -191,6 +191,6 @@
 ## Psa 38:22
 
 - **Make haste** `H2363` [2] **role=standalone** — sense=Make haste; type=action; operation=Make haste
-- **help** `H5833` [2] **role=process-qualifier** — sense=help; type=status; operation=(qualifies) Make haste; manner=manner-of Make haste; coupling=welds Make haste
+- **help** `H5833` [2] **role=process-qualifier** — sense=help; type=status; operation=(qualifies) Make haste; specifier=of Lord; manner=manner-of Make haste; coupling=welds Make haste
 - **Lord** `H0136` [2] **role=standalone** — sense=Lord; type=status
 - **salvation** `H8668` [2] **role=standalone** — sense=salvation; type=status; bearer=Lord; discovery=bearer unreliable (nearest-proper heuristic; subject-agreement not parsed)
