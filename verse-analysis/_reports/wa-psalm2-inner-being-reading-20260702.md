@@ -1,6 +1,7 @@
 # Psalm 2 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 2:1–12 (chapter-driven poetic build; roles sanity-checked). **Complete chapter** — verses 3–4 were absent from the corpus and were **backfilled** (measure-layer ingest) before this reading. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). §II (the LORD's derision/wrath) is the *arena* — the drama's counter-voice — not itself a human inner-being finding; the findings are the human movements (defiant desire, glad awe, sheltering refuge). *Part B re-alignment sweep; findings unchanged.*
 - **Multi-characteristic**, and structured as a **four-voice drama** — the nations, the LORD, the Anointed, and the psalmist's closing counsel — each disclosing a different movement of the inner being: **defiant desire, holy wrath, derision, and the fear/refuge that is the only safety.**
 
 ## The reading

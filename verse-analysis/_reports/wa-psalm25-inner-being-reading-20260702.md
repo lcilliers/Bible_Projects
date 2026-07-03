@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 25:1–22 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.4 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **An acrostic** (each verse begins with a successive Hebrew letter). The form is not a linear argument but a **comprehensive, A-to-Z circling** of the soul's postures before God — so the reading names the *recurring postures* rather than forcing a progression. Three intertwined needs braid through it — to be **taught**, to be **forgiven**, to be **delivered** — all carried by **trust** and **waiting** (*qavah*, which brackets the psalm at vv.3, 5, 21), and all grounded in God's *chesed*, name, and goodness, never the pleader's merit.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

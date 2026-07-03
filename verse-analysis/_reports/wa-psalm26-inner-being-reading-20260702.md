@@ -3,6 +3,8 @@
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 26:1–12 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of the inner being that offers itself to be tested.** "Prove me… try me… test my heart and my mind" (v.2). Read first-principles, its own key is a **tension held rightly**: the bold appeal for vindication ("I have walked in my integrity") is **not** self-righteousness in the psalm's own frame, because it is (a) grounded in God's *steadfast love kept before the eyes* (v.3), (b) worked out in *disassociation* from falsehood and *love for God's house* (vv.4–8), and (c) resolved into a plea for **grace** — "redeem me, and be gracious to me" (v.11). **The integrous inner being does not trust its integrity; it can invite testing precisely because its confidence rests on *chesed*, not on its own record.**
 
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep; already operation-focused (the self offered for assay; integrity resolved into grace). Aheb-fix substrate now applied — the v.8 "love the habitation" mis-tag flagged below is **RESOLVED** (H0157 now tags characteristic). Findings unchanged.*
+
 ## The reading
 
 **I. The self offered for assay — "test my heart and my mind" (vv.1–2).**
@@ -35,7 +37,7 @@ Over against the assembly he shuns stands the place he loves: "I **wash** my han
 - **The tested heart ends on *level ground* and in *public blessing* (v.12).** The self that submitted to assay stands firm; private integrity overflows into blessing God in the great assembly.
 
 ## Honest notes
-- **SANITY-CHECK CATCH — "love" (H0157, *aheb*, v.8) mis-tagged standalone.** The Phase-1 build marked *love* as `role=standalone` [gate-2], but "I **love** the habitation of your house" is a genuine **inner-being characteristic** (the affection/desire of the inner being, God-ward). Should be reclassified to a characteristic (love/affection cluster). **Correction candidate** for the lexical.
+- **SANITY-CHECK CATCH — "love" (H0157, *aheb*, v.8) — ✓ RESOLVED (2026-07-03).** The original Phase-1 build marked *love* as `role=standalone` [gate-2]; this reading flagged it as a mis-tag (it is a genuine **inner-being characteristic** — affection/desire directed God-ward). The **aheb re-run** (PROMOTE_CHARACTERISTIC = {H0157}, Part A of the re-alignment sweep) has now corrected the substrate: v.8 "love" tags `role=characteristic`. The reading anticipated the fix; substrate and reading now agree.
 - **"prohibition=forbidden (neg particle)" over-stamp (residual/D11).** Fired at vv.1, 4, 5, 9 — a mix the flag conflates: *descriptive* ("without wavering", v.1), *habitual resolve* ("I do not sit", vv.4–5), and *petition* ("do not sweep", v.9). None are prohibitions. Same over-stamp flagged Psa 22–25; **rule-adjustment candidate** (distinguish descriptive / resolve / jussive-petition / prohibition).
 - **bearer=LORD bleed (D11-flagged):** pervasive (vv.1, 2, 8) via the nearest-proper heuristic; the reading takes bearers from the text (the speaker, not the LORD, walks in integrity and loves the house).
 - **v.2 "mind" (kilyah, kidneys)** not separately surfaced in the lexical (only *heart* H3820 tagged); read from the text as the paired inmost organ. Minor coverage gap.

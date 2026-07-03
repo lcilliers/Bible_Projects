@@ -1,6 +1,7 @@
 # Psalm 4 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 4:1–8 (chapter-driven poetic build; roles sanity-checked). Complete chapter — v.6 ("Who will show us some good?") was **backfilled** before this reading. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep. Aheb-fix substrate now applied: v.2 "**love** vanity" (H0157) tags characteristic — the assailants' **misdirected affection** (love aimed at emptiness), the foil to the settled soul's God-anchored joy; the reading already read it as such. Findings unchanged.*
 - **Multi-characteristic and dense.** Psalm 4 is the evening companion to Psalm 3: it moves from **appeal**, through a **summons to inner self-examination**, to two settled inner goods — **joy greater than plenty** and **peace that sleeps in safety**.
 
 ## The reading

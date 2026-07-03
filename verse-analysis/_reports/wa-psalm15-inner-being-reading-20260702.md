@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 15:1–5 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **An entrance liturgy.** It asks who may dwell with God and answers with a **portrait of integrity** — its own key is that the qualification is not ritual but a whole inner being that is *true all the way through*, and therefore **unmovable**.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 15 poses a question at the sanctuary gate and answers it by describing a *person*, not a rite.

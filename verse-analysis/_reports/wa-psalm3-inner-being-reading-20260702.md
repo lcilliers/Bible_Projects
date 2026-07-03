@@ -1,6 +1,7 @@
 # Psalm 3 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 3:1–8 (chapter-driven poetic build; roles sanity-checked). Complete chapter (no backfill needed). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep; §II re-headed to lead with the inner-being effect (dignity restored) rather than God-as-actor; findings unchanged.*
 - **The movement** is a single arc from **encirclement to rest**: from an assault that targets not just the body but *hope* itself, to a settled confidence in God that shows itself as a **lifted head, peaceful sleep, and fearlessness**.
 
 ## The reading
@@ -9,8 +10,8 @@ Psalm 3 (David fleeing Absalom, per the superscription in v.1) reads the inner b
 **I. The assault reaches the soul (vv.1–2).**
 The opening is pressure: "how **many** are my **foes** (H6862, M44 Relational), many are **rising** against me" (v.1) — the intensity marker *many* is stamped on nearly every span, the felt weight of being outnumbered *(inferred from the repetition)*. But the sharpest blow is not physical: "many are **saying** of my **soul** (H5315, M47 Constitution — the seat), 'There is no **salvation** for him in God'" (v.2). The attack is aimed **at the inner being** — at hope — trying to sever the sufferer from his God *(stated: they speak against the soul)*.
 
-**II. The turn — God as shield, glory, and the lifter of the head (v.3).**
-Against that, a threefold confession: "But you, O LORD, are a shield about me, my **glory** (H3519, M22 Praise), and the **lifter of my head**." The inner being's dignity is **restored from outside itself** — where the foes said *no salvation*, God is named as the very **honour and raised head** of the one they mock *(inferred: the lifted head answers the assault on hope)*.
+**II. The turn — dignity restored from outside the self; the lifted head (v.3).**
+The operation here is the inner being's **dignity being restored from beyond itself** (God the arena of that restoration). Against the assault, a threefold confession: "But you, O LORD, are a shield about me, my **glory** (H3519, M22 Praise), and the **lifter of my head**." The inner being's dignity is **restored from outside itself** — where the foes said *no salvation*, God is named as the very **honour and raised head** of the one they mock *(inferred: the lifted head answers the assault on hope)*.
 
 **III. Crying and being answered (v.4).**
 "I **cried** aloud (H7121, M37 Calling) to the LORD, and he **answered** me from his holy hill." The inner posture is **appeal** — the calling-out that expects response *(holy here qualifies the hill, a place → sanity-checked standalone)*.

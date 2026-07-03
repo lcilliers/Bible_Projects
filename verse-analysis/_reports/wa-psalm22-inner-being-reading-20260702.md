@@ -3,6 +3,7 @@
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 22:1–31 (chapter-driven poetic build; roles sanity-checked). Complete chapter (vv.7, 12, 21 backfilled — see notes). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of the forsaken sufferer.** A single 31-verse arc from the cry of dereliction (vv.1–21) to widening praise (vv.22–31). Its inner-being spine is **trust** (*batach*) — trust *remembered*, trust *constituted from the womb*, trust *mocked at its root*, and finally trust *vindicated*. The distinctive key: the sufferer feels **forsaken and unanswered**, yet the turn (v.24) discloses that God "has **not** hidden his face… **has heard**" — the felt-abandonment was real as experience but not final as reality.
 - **A note on restraint:** this psalm is deeply resonant elsewhere in Scripture; the reading below stays with **the inner being the text itself discloses** — the sufferer's trust and dereliction — and does not build on imported meaning (memory `feedback_verse_meaning_grounded_not_imported`).
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

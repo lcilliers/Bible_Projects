@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 29:1–11 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.6 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **A storm theophany — the least introspective psalm of this run.** Its centre (vv.3–9) is a seven-fold hymn to "the voice of the LORD" over the waters, breaking cedars, flashing fire, shaking the wilderness — **overwhelmingly about God, not the inner being.** Read honestly, the psalm discloses the inner being at exactly three points, and they form its **frame**: the summons to **ascribe** glory and strength (vv.1–2), the awed cry "**Glory!**" (v.9), and — the gem — the same overwhelming power that shatters cedars turned into the people's **strength and peace** (v.11). *(Scope note: this reading is deliberately shorter and does not force inner-being content onto the theophany verses; memory `feedback_no_stats_trends_review_fabricated_data`, `feedback_each_chapter_first_principles_find_the_gems`.)*
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

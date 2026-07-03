@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 9:1–20 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.1 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The first acrostic** (aleph-bet; continues into Psalm 10). Its own key is **memory and judgment**: it reads the inner being through *who is remembered and who is forgotten* — God holds the afflicted in mind while the wicked's very name is erased.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 9 is a thanksgiving, but its deep subject is **memory** — divine and human — running in both directions.

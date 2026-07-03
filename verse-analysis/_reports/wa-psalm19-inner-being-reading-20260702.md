@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 19:1–14 (chapter-driven poetic build; roles sanity-checked). Complete chapter (2 verses backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of two revelations.** Its own key is a movement **from the vast to the intimate**: the heavens' wordless speech to all the earth (vv.1–6), the perfect Torah that acts *on the inner being* (vv.7–11), and the response that ends at "the meditation of my heart" (vv.12–14).
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

@@ -1,6 +1,7 @@
 # Psalm 8 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 8:1–9 (chapter-driven poetic build; roles sanity-checked). Complete chapter — vv.7–8 (the animals of land, air, sea) were **backfilled** before this reading. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep; already operation-focused (self-knowledge by contemplation; dignity conferred; humility-and-dignity fused). The transience-and-regard datum re-attests at Ps 144:3. Findings unchanged.*
 - **A different key entirely.** No enemy at the gate, no lament — this is a **contemplative hymn**, and it reads the inner being not under threat but under the night sky: **wonder, the question of human worth, and a dignity that is conferred, not owned.**
 
 ## The reading

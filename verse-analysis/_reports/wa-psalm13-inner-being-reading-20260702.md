@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 13:1–6 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.1 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The whole lament in miniature** — six verses that carry the inner being from the churning "how long?" of felt abandonment to a settled "but I have trusted," with **nothing in the circumstances changed between them**.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 13 is the shortest complete arc of the inner life in the Psalter: complaint, petition, trust — and its gem is the *hinge* between the last two.

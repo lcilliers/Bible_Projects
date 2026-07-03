@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 21:1–13 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **A royal thanksgiving** — the companion and answer to Psalm 20. Where Ps 20 *asked* ("may he grant you your heart's desire", 20:4), Ps 21 *reports the giving* ("you have given him his heart's desire", 21:2). Its inner-being disclosure is not petition but **reception**: the trusting heart is a **receiving** heart, and everything it holds — joy, honour, life, security — it holds *derivatively*, from God.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 21 divides cleanly: the king's joy in what God has **given** (vv.1–7), the rout of the enemy (vv.8–12, largely the external pole), and a closing doxology (v.13). The inner-being weight is almost all in the first movement, and it turns on one word in v.7.

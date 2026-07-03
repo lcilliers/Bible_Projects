@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 28:1–9 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of the dread of divine silence — answered by "he has heard."** Its spine: the inner being **cannot live if God is deaf** ("if you be silent to me, I become like those who go down to the pit," v.1); the whole psalm pivots on being **heard** (v.6, *"he has heard the voice of my pleas"*), and the answered cry issues in a heart that **trusts → is helped → exults** (v.7). Around this run two further disclosures: the wicked whose *lips and heart contradict* (v.3), and the personal rescue that **widens to the whole people** (vv.8–9).
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

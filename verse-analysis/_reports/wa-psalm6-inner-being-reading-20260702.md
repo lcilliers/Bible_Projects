@@ -1,6 +1,7 @@
 # Psalm 6 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 6:1–10 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep; Lens bullet added; this reading was already operation-focused (the self undone; the one fact grasped). Findings unchanged.*
 - **The first penitential psalm** — a lament that reads the inner being in **anguish**, then in the **sudden turn to confidence that God has heard**.
 
 ## The reading

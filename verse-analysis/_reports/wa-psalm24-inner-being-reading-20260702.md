@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 24:1–10 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.2 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **An entrance liturgy in two panels:** *who may approach* God (vv.3–6) and *who is approached* (vv.7–10, the King of glory), framed by the LORD's ownership of the whole earth (vv.1–2). The inner-being weight is the middle panel. Its own key — over against Ps 15, the other entrance liturgy — is that it presses past *deeds* to the **soul's aim**: the qualified worshipper is one who "does not **lift up his soul** to what is false," and the qualified are named as **seekers of God's face**.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

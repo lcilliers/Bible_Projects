@@ -1,6 +1,7 @@
 # Psalm 7 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 7:1–17 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). The finding in §II is the self **offering its integrity for examination / its transparency before God** (God's testing is the arena) — the "inner being examined/tested" thread that culminates in Ps 139. *Part B re-alignment sweep; findings unchanged.*
 - **A plea for vindication under false accusation.** It reads the inner being through **the God who tests hearts**, the **integrity offered for examination**, and the **self-destroying structure of evil conceived within**.
 
 ## The reading

@@ -1,6 +1,7 @@
 # Psalm 11 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 11:1–7 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). §II–III describe *God's* discriminating inner life (arena); the human findings are trust-that-stays-put, the self steadied by being watched, and the telos of beholding God's face. *Part B re-alignment sweep. Aheb-fix substrate now applied: v.5 "one who **loves** violence" (H0157) tags characteristic — the wicked's **misdirected affection** (love aimed at violence, cf. Ps 4:2 "love vanity"), a human inner-being datum; v.7 "he **loves** righteous deeds" is God's love (arena). Findings otherwise unchanged.*
 - **A short psalm of steadfast trust under the counsel of fear.** Its own key is **sight**: it moves from *"flee to your mountain"* (v.1) to *"the upright shall behold his face"* (v.7) — and the hinge between them is that **God sees and tests** from his throne.
 
 ## The reading

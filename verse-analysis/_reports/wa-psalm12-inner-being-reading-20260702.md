@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 12:1–8 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.1 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **A psalm about words.** Its own key is the contrast between the **double heart** that produces lies (v.2) and the **sevenfold-refined word** of God (v.6) — speech as the outflow of the inner being, human duplicity set against divine purity.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 12 looks at a society where integrity has drained away, and finds the crisis located in *speech* — because speech is where the inner being shows.

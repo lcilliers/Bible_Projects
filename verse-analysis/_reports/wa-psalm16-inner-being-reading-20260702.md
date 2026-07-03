@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 16:1–11 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of God as the soul's supreme good.** Its own key is **portion**: the inner being that has consolidated all its good in God, and finds from that a contentment, stability, and whole-person joy that culminate in *fullness of joy in God's presence*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 16 is not wrung from distress like the laments; it is the settled voice of an inner being that has found where its good lies — and traces everything back to that one discovery.

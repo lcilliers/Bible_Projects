@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 18:1–50 (chapter-driven poetic build; roles sanity-checked). Complete chapter (10 verses backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The great deliverance psalm** (50 verses) — read here by **movement**, not verse-by-verse, tracing the inner being's arc from *love* through *rescue* to the psalm's deepest disclosure: **God is met according to the disposition one brings him.**
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

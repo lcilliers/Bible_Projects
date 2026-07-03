@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 23:1–6 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The inner being at rest in the shepherd's keeping.** Six verses, one settled confidence. Read first-principles (not through its familiarity), the psalm's own key is a **movement of the inner being**: *want stilled* → *rest given and soul restored* → *fear answered by presence* → *honoured amid enemies* → *pursued by steadfast love into settled dwelling*. Its distinctive disclosures cluster on **what the shepherd does to the inner being**: he *makes* it rest, *restores* the soul, and — at the darkest point — the speech turns from *about* him to *to* him.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

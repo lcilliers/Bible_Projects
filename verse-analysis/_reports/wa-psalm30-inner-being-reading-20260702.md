@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 30:1–12 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.2 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The thanksgiving of the humbled heart.** A rescue-from-death psalm whose inner-being spine is a **confession of presumption**: the self grew complacent in ease ("I said… 'I shall never be moved'"), God **hid his face**, and the false security collapsed into **dismay** — until "you have turned my mourning into dancing." Its own key is the lesson the inner being learns: **its stability was never its own but God's favour.** The distinctive counter-note to the wider cluster: the "not moved" that was a *gift* in Ps 16:8 and 21:7 here becomes *presumption* (30:6) when the self claims it — and is exposed by the hidden face.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 31:1–24 (chapter-driven poetic build; roles sanity-checked). Complete chapter. Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of entrustment.** A long lament-to-trust that oscillates between the depths (social death, whole-person wasting, "terror on every side") and renewed trust — held together by its signature act: **"Into your hand I commit my spirit" (v.5), "My times are in your hand" (v.15).** The inner being **deposits itself and its whole life-span into God's hand** rather than the enemy's. Its two peaks are that **entrustment** and the **panic-verdict overturned** — "I had said in my alarm, 'I am cut off from your sight.' But you heard" (v.22). Across it, the inner being is named by all three of its seats — **spirit** (v.5), **soul** (vv.7, 9), **heart** (v.24).
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep; already operation-focused (entrustment; trust at the lowest point). Aheb-fix substrate now applied — the v.23 "Love the LORD" mis-tag flagged below is **RESOLVED** (H0157 now tags characteristic). Findings unchanged.*
 
 ## The reading
 
@@ -37,7 +38,7 @@ Against all of it: "**But I trust** (H0982, M19) in you, O LORD; I **say**, 'You
 - **The inner being names itself by all three seats — spirit, soul, heart (vv.5, 7, 24)** — and, having learned to wait, calls others' hearts to strength and courage.
 
 ## Honest notes
-- **SANITY-CHECK CATCH (repeat) — "love" (H0157, *aheb*, v.23) tagged qualifier/standalone.** As at Ps 26:8, "**Love** the LORD" is a genuine inner-being characteristic (the commanded affection), not a mere qualifier. Reinforces the **aheb-reclassification candidate** — *aheb toward God* should be a characteristic wherever it appears.
+- **SANITY-CHECK CATCH (repeat) — "love" (H0157, *aheb*, v.23) — ✓ RESOLVED (2026-07-03).** As at Ps 26:8, "**Love** the LORD" is a genuine inner-being characteristic (the commanded affection). The **aheb re-run** (PROMOTE_CHARACTERISTIC = {H0157}, Part A of the re-alignment sweep) has corrected the substrate: v.23 "Love" now tags `role=characteristic`. The reading anticipated the fix; substrate and reading now agree.
 - **Three seat-terms in one psalm:** *ruach* (spirit, v.5, seat=spirit), *nephesh* (soul, vv.7, 9, seat=soul), *lebab* (heart, v.24, seat=heart) — the lexical captured all three seats; worth noting the inner being is addressed under each.
 - **Systemic Phase-1 residuals** (prohibition over-stamp at vv.1, 8, 17 — petition/descriptive; bearer=LORD bleed pervasive; intensity *all/very/many*) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
 - **v.17 "go" (H1826, *damam*, M33)** = "let them go *silently* to Sheol" — the wicked *silenced* (external pole/imprecation, vv.17–18); read as the counter to the psalmist's own vow of praise, not inner-being disclosure of the self.

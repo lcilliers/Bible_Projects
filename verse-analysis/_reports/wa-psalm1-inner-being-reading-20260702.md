@@ -1,6 +1,7 @@
 # Psalm 1 — what it tells us about the inner being (Phase-2 chapter reading)
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 1:1–6 (chapter-driven poetic build; roles sanity-checked). Lexicals only; cited; grounded in the verses. Every inference tagged *stated* | *inferred*.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B of the re-alignment sweep — process-lens re-frame + Lens bullet added; findings unchanged (this reading was already operation-focused).*
 - **The chapter is multi-characteristic** (as expected for a poem): it works by **two ways** set in antithesis, and reads the inner being from several perspectives at once — **desire, cognition, moral condition, rootedness, and destiny**.
 
 ## The reading

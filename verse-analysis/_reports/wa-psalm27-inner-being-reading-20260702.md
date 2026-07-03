@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 27:1–14 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.10 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **The psalm of the "one thing" and the seeking face.** Two movements that feel almost opposite — fearless confidence (vv.1–6) and urgent, exposed plea (vv.7–14) — are held together by **a single consuming desire**: to dwell with God and **gaze on his beauty** (v.4). Its two peaks are the *consolidation of all desire into one* (v.4) and the *heart's dialogue with God* (v.8, "Seek my face" / "Your face I seek"). The very face the inner being longs to gaze on (v.4) is the face it dreads to lose (v.9) — longing and dread of the same thing.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 

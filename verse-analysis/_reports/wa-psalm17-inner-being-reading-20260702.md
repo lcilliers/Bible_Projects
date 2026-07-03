@@ -2,6 +2,7 @@
 
 - **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 17:1–15 (chapter-driven poetic build; roles sanity-checked). Complete chapter (vv.13–14 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
 - **A prayer for vindication that ends in a longing to see God.** Its own key is **two satisfactions**: the world satisfied with its earthly portion, and the inner being that will only be satisfied "with your likeness" when it awakes.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
 
 ## The reading
 Psalm 17 opens as a plea from a clear conscience and closes on the one thing that conscience most wants.
