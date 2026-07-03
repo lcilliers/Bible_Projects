@@ -1,0 +1,27 @@
+# Book coverage in the corpus — next full-book candidates (2026-07-03)
+
+> Researcher: freeze the characteristic list (provisional; can rebuild from the corpus anytime) and go to the next phase — analysing more books. Question: *which other books are largely covered in the corpus, so we can use the full-book coverage on them?* Measure: verses present in the `verse` table (study-term-touched) ÷ the book's true length.
+
+## Finding — coverage is broad
+**~34 books sit at ≥80% verse coverage.** The ~214 inner-life words touch verses densely across most of the Bible, so many books are near-complete and (like Ps/Pro) can be backfilled to 100% for full-book treatment.
+
+### Remaining WISDOM / POETRY books — the natural continuation (proven method)
+| book | coverage | why next |
+|---|---|---|
+| **Ecclesiastes** | **91%** | direct wisdom sibling to Proverbs; home of the insatiable, vanity, weariness, *"the inner life beyond material circumstance"* (M46) — extends the desire/appetite + contentment threads we just mapped |
+| **Job** | **90%** | the deepest inner-being book — the tested/afflicted self, grief, voiced complaint, integrity-under-suffering, the argument with God |
+| **Lamentations** | **87%** | concentrated grief/lament (five acrostic poems) — sibling to the Psalter's laments |
+| Song of Songs | **LOW (<25%)** | ⚠ under-covered — the love-poetry book scarcely registers in the inner-life vocabulary. *Interesting datum for the cross-book reflection:* the Song may express love sensuously/relationally rather than in the "inner-life word" register the study indexes. Investigate before treating. |
+
+### Well-covered non-poetic books (method needs light adaptation for oracle / narrative / argument)
+- **Prophets:** Hosea 97 · Isaiah 95 · Micah 95 · Habakkuk 95 · Malachi 95 · Nahum 91 · Zephaniah 91 · Haggai 92 · Joel 81 · Amos 84 · Zechariah 82 · Jeremiah 85 · Daniel 91 · Ezekiel 71
+- **Torah / history:** Deuteronomy 85 · Genesis 82 · Leviticus 80 · Ruth 85 · Esther 81 · Numbers 78
+- **NT:** Romans 95 · Ephesians 88 · Colossians 85 · 2 Peter 90 · 1 Peter 86 · 1 Thess 82 · 2 Thess 81 · 2 Timothy 80 · (Hebrews ~78)
+
+## Recommendation
+Complete the **poetic/wisdom corpus** next — the chapter-driven + segmentation method is proven there — in this order: **Ecclesiastes → Job → Lamentations.** Start with **Ecclesiastes**: it is the direct sibling to Proverbs, its coverage is 91% (small backfill to 100%), and its themes pick up exactly where Proverbs left off (the never-satisfied eye, contentment, the heart under vanity, the inner life beyond circumstance). Then Job (the giant of inner-being suffering), then Lamentations. Song of Songs is held pending a coverage/what-it-indexes check.
+
+After the poetic corpus, the well-covered **prophets** (Isaiah, Hosea, the Twelve) and **Pauline epistles** (Romans, Ephesians, Colossians) are the next tranches — with a method note that oracle/argument genres differ from poetry.
+
+## Data-quality flag (minor)
+`book_id 58` (Hebrews) contains a stray mis-filed verse "1Pe 4:11", which collided a coverage label (showed an impossible 224% for "1Pe"). One mis-assigned verse; worth a cleanup pass but does not affect the assessment (real 1 Peter = book_id 60, 86%).
