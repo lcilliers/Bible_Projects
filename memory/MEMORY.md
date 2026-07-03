@@ -14,6 +14,7 @@
 - [feedback_verse_raw_data_must_pull_all_study_evidence](feedback_verse_raw_data_must_pull_all_study_evidence.md) — a verse's RAW data = ALL evidence the study holds, RETRIEVED not re-derived; reading comes after.
 - [feedback_term_coverage_cascade_is_index_not_census](feedback_term_coverage_cascade_is_index_not_census.md) — registry→terms→relatedNos = INDEX not census; registry = seed not boundary; use span-orphan audit.
 - [feedback_lexical_strictly_verse_bounded_no_implied_evidence](feedback_lexical_strictly_verse_bounded_no_implied_evidence.md) — lexical captures ONLY what THE VERSE says; no-basis value = ERROR → reverse out.
+- [feedback_characteristic_list_validates_not_imputes](feedback_characteristic_list_validates_not_imputes.md) — the characteristic list VALIDATES (verse→list, catch misses), never imputes (list→verse); values come from the verse alone.
 - [feedback_verify_contributor_reference_text_first](feedback_verify_contributor_reference_text_first.md) — a cited reference (esp. out-of-corpus) verified against the verse TEXT before loading.
 - [feedback_verse_meaning_grounded_not_imported](feedback_verse_meaning_grounded_not_imported.md) — verse-meaning grounded in the verse, never imported/theological.
 - [feedback_all_study_work_in_db](feedback_all_study_work_in_db.md) — ALL study work in the DB (single source of truth); no parallel docs.
@@ -23,6 +24,7 @@
 - [feedback_interaction_protocols](feedback_interaction_protocols.md) — confirm before acting; write workings to files; no guessing.
 - [feedback_reusable_engine_scripts_and_continuous_learning](feedback_reusable_engine_scripts_and_continuous_learning.md) — scripts are REUSABLE parameter-driven engine components, never one-off; read back, update rules, re-run earlier work.
 - [feedback_each_chapter_first_principles_find_the_gems](feedback_each_chapter_first_principles_find_the_gems.md) — analyse every psalm/chapter AS IF THE FIRST; no shortcuts/templating. Each has its own slant/key; rich with deep HIDDEN GEMS the reading must dig for. Depth over throughput.
+- [feedback_lens_is_inner_being_process_not_god_relation](feedback_lens_is_inner_being_process_not_god_relation.md) — keep the lens on inner-being PROCESSES/operations (the finding); God-interaction is the arena, not the point. Lens shifts easily.
 - [feedback_name_dimensions_not_just_codes](feedback_name_dimensions_not_just_codes.md) — always write a dimension's NAME with its code ("D2 Source").
 - [feedback_review_via_files_not_chat](feedback_review_via_files_not_chat.md) — decisions/options as filed .md, not chat; avoid AskUserQuestion.
 - [feedback_integrity_and_intent_first](feedback_integrity_and_intent_first.md) — ask intent/integrity BEFORE acting; never act on unverified data.
@@ -51,7 +53,8 @@
 
 ## Active state
 
-- [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — poetic books first, chapter-driven; Phase 1 per-verse (cross-verse off) + Phase 2 whole-chapter multi-characteristic reading → prose type lexical_prose_chapter. Psalm 1 done.
+- [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — poetic books first, chapter-driven; Phase 1 per-verse (cross-verse off) + Phase 2 whole-chapter multi-characteristic reading → prose type lexical_prose_chapter. ★ WHOLE PSALTER COMPLETE (2026-07-02, all 150, ids 399+419-548).
+- [project_cross_chapter_synthesis_per_characteristic](project_cross_chapter_synthesis_per_characteristic.md) — NEXT PHASE: cross-chapter = a summary PER CHARACTERISTIC/movement (emergent), harvest→cluster→summarise→new prose_section type. Do re-alignment sweep first.
 - [project_lexical_prose_endpoint_and_ve_lexical_phase1](project_lexical_prose_endpoint_and_ve_lexical_phase1.md) — per-term endpoint = story → prose type 'lexical_prose'. ve_lexical Phase 1 (M63, schema 3.37.0): legacy → ve_lexical_legacy; live table = live model only; Phase 2 held.
 - [project_ib_observation_folds_into_ve_lexical](project_ib_observation_folds_into_ve_lexical.md) — ib_observation transitional; dimensions become ve_lexical items; table dropped later. Don't link the two stores.
 - [project_m10_family_status_primary_logical_units](project_m10_family_status_primary_logical_units.md) — M10 family = STATUS-primary, 32 logical-units; next = §10 define.
