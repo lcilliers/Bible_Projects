@@ -1,0 +1,35 @@
+# Job 29 — inner-being unit readings (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals for Job 29:1–25, read per `segment_unit` (provenance `job-segmentation-v1-20260703`). Complete chapter. Cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the inner-being **operation**; Job's summation, remembering his former life, is the arena.
+
+---
+
+## JOB-29-A · Job 29:1–11 · [D, multi, thread] — the lost intimacy with God; the friendship of God
+
+**The reading.** Job's final defence opens not with wealth or honour but with a lost *nearness*: "oh, that I were as in the **months of old**, as in the days when **God watched over me**… when the **friendship of God** was upon my tent" (vv.2,4). The finding is **the ache for a lost intimacy with God — named as friendship** — what Job most mourns is not his possessions but God's *companionship* *(stated)*. The operation is **the self remembering, above all else, the felt presence and friendship of God** *(inferred: it is deeply revealing that when Job lists what he has lost (and he had lost children, wealth, health, honour), the *first* and framing loss is relational — "when God watched over me… the friendship (sod — intimate counsel/confidence) of God was upon my tent" (vv.2,4); the finding is that the deepest good of Job's former life, in his own accounting, was *intimacy with God* — and its withdrawal (the hidden face, 13:24, 23:8) is his deepest wound; "sod" is the word for the close confidence shared between friends, so Job mourns having been *taken into God's confidence* and now shut out; the honour and blessing that follow (vv.7–11) are secondary to this lost friendship)*.
+
+**Lexical validation (read-back).** *watched over* (H8104, shamar), *friendship* (H5475, sod — intimate counsel/confidence), *refrained* (H6113), *heard* (H8085), *approved* (H5749) carried. *sod* (friendship/intimate confidence of God) is the reading's spine — the relational loss Job names first; correctly tagged. Sound.
+
+**Hidden / less-obvious characteristics isolated.** **The friendship of God as the chief lost good** — "when the friendship (sod) of God was upon my tent" (v.4): the finding that Job's deepest loss, in his own reckoning, is *intimacy with God* — being in God's confidence — placed *first*, before wealth and honour. The inner-being datum: the highest good of a life is relational nearness to God, and its withdrawal is the core of Job's suffering (the hidden face, 13:24, 23:8). This reframes the whole book — Job's real hunger is not for restored fortune but for restored *friendship*, which is why "now my eye sees you" (42:5) will be the true resolution.
+
+**Characteristics surfaced:** *the friendship of God as the chief good (sod — lost intimacy)* (thread — the hidden face, 13:24, 23:8; resolved at 42:5); *the self mourning relational nearness above possessions* (new — a reframing datum); *God's watchful presence remembered* (new).
+
+---
+
+## JOB-29-B · Job 29:12–25 · [D, multi] — the remembered life of active compassion; honour founded on mercy
+
+**The reading.** Job recalls the *substance* of his former standing — not privilege but mercy: "I **delivered the poor** who cried for help, and the fatherless… I caused the **widow's heart to sing for joy**" (vv.12–13); "I put on **righteousness**, and it clothed me; my **justice** was like a robe" (v.14); "I was **eyes to the blind** and **feet to the lame**; I was a **father to the needy**" (vv.15–16). His honour flowed from this: men "**listened** and **waited**… kept silence for my counsel" (vv.21–22). The finding is **an interior life expressed as active compassion and justice, and an honour rooted in mercy** *(stated)*. The operation is **the self whose righteousness was outward-turned — clothing itself in the care of the vulnerable** *(inferred: the portrait exactly refutes Eliphaz's fabricated charges (22:6–9, "you stripped the naked, sent widows away empty") — Job did the *opposite*: eyes to the blind, father to the needy, the widow's heart singing; the finding is that Job's integrity was not private piety but *enacted mercy* — "righteousness clothed me" (v.14), worn like a garment, visible in deeds; and his honour (vv.21–25) was *earned by* this compassion, not by power — the young withdrew, the nobles hushed, because he "delivered the poor"; the inner-being lesson: true righteousness is outward-turned care, and honour rightly rests on mercy, not might; this is the interior the friends could not see)*.
+
+**Lexical validation (read-back).** *poor* (H6041, ani), *blessing* (H1293), *heart* (H3820, leb — "the widow's heart to sing for joy"), *sing for joy* (H7442, ranan), *righteousness* (H6664, tsedeq), *justice* (H4941, mishpat), *cause* (H7379, rib), *waited* (H3176, yachal — twice), *kept silence* (H1826), *counsel* (H6098), *confidence* (H0539), *comforts* (H5162, nacham — "one who comforts mourners"), *mourners* (H0057) carried. *tsedeq*/*mishpat* (righteousness/justice worn as clothing) and *ranan* (the widow's heart singing) carry the enacted-compassion finding; and *nacham* (Job comforted mourners — the very thing his friends fail to do for him) is a poignant echo. Sound.
+
+**Hidden / less-obvious characteristics isolated.** (1) **Righteousness as worn, enacted mercy** — "I put on righteousness, and it clothed me… I was eyes to the blind, feet to the lame" (vv.14–15): the finding that Job's integrity was *outward-turned care*, visible in deeds, not private piety — directly refuting the friends' invented charges (22:6–9). (2) **Honour founded on mercy, not power** — men hushed before Job because he "delivered the poor" (vv.12,21): the finding that his standing rested on compassion, an honour rightly grounded. (3) **Job the comforter of mourners** (v.25, nacham) — the bitter irony that the man who once "comforted mourners" now gets only "miserable comforters" (16:2).
+
+**Characteristics surfaced:** *righteousness as worn, enacted mercy (compassion as the interior's expression)* (new — refutes 22:6–9); *honour founded on mercy not power* (new); *Job the comforter now uncomforted (nacham irony)* (thread w/ 16:2, 2:11); *the widow's heart made to sing (ranan)* (new).
+
+---
+
+## Chapter-level notes
+- **Validation summary:** substrate strong; *sod* (friendship of God, 29:4), *tsedeq/mishpat* (righteousness/justice worn, 29:14), *ranan* (the widow's joy, 29:13), and *nacham* (Job comforting mourners, 29:25) all cleanly carried. Job's self-portrait directly refutes Eliphaz's fabrications (22:6–9). No new residuals.
+- **New characteristics:** *the friendship of God as chief good (sod)*; *the self mourning relational nearness above possessions*; *righteousness as worn, enacted mercy*; *honour founded on mercy*; *Job the comforter now uncomforted*. **Shared:** *the hidden face (13:24)*; *comfort (nacham)*.
+- **Threads:** *the friendship of God* (29:4) reframes the book — Job's core loss is relational, resolved only at 42:5 ("now my eye sees you"); *enacted mercy* (29:12–16) refutes 22:6–9; the *comforter-comforted* irony (29:25 vs 16:2). Job's summation begins by naming what he truly misses: God's nearness.
