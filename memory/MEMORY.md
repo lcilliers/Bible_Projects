@@ -84,6 +84,7 @@
 - [feedback_enumerate_link_tables_first](feedback_enumerate_link_tables_first.md) — enumerate every junction before calling a record orphaned.
 - [feedback_heredoc_only_in_powershell](feedback_heredoc_only_in_powershell.md) — @'…'@ here-strings only in the PowerShell tool, not Bash.
 - [project_backup_alerting_and_outlook_smtp_block](project_backup_alerting_and_outlook_smtp_block.md) — NAS backups alert on failure; Outlook SMTP blocked, use Gmail/relay.
+- [feedback_pre_op_db_snapshots_prune_or_skip](feedback_pre_op_db_snapshots_prune_or_skip.md) — _apply_* scripts snapshot the ~670MB DB per run; loops fill the disk. Prune transient pre-* snapshots or use --no-backup; keep milestone-named only.
 
 ## Orientation / reference
 
