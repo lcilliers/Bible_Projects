@@ -13,7 +13,7 @@
 | **Ecclesiastes** | **91%** | direct wisdom sibling to Proverbs; home of the insatiable, vanity, weariness, *"the inner life beyond material circumstance"* (M46) — extends the desire/appetite + contentment threads we just mapped |
 | **Job** | **90%** | the deepest inner-being book — the tested/afflicted self, grief, voiced complaint, integrity-under-suffering, the argument with God |
 | **Lamentations** | **87%** | concentrated grief/lament (five acrostic poems) — sibling to the Psalter's laments |
-| Song of Songs | **LOW (<25%)** | ⚠ under-covered — the love-poetry book scarcely registers in the inner-life vocabulary. *Interesting datum for the cross-book reflection:* the Song may express love sensuously/relationally rather than in the "inner-life word" register the study indexes. Investigate before treating. |
+| Song of Songs | ~~**LOW (<25%)**~~ **CORRECTED 2026-07-04: 79.5% (93/117)** | ⚠ **The <25% figure here was WRONG.** A live DB re-check (`wa-verse-record-coverage-20260704.md`) shows Song of Solomon at **79.5%** in both the verse-record and verse-table stores — well-covered, a normal full-book candidate. Disregard the "held pending" note. |
 
 ### Well-covered non-poetic books (method needs light adaptation for oracle / narrative / argument)
 - **Prophets:** Hosea 97 · Isaiah 95 · Micah 95 · Habakkuk 95 · Malachi 95 · Nahum 91 · Zephaniah 91 · Haggai 92 · Joel 81 · Amos 84 · Zechariah 82 · Jeremiah 85 · Daniel 91 · Ezekiel 71
