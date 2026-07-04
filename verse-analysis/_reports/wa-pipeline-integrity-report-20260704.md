@@ -1,6 +1,6 @@
 # Pipeline-integrity diagnostic — verse-analysis chain (live from DB)
 
-> Read-only trace generated 2026-07-04 04:28 UTC by `scripts/_assess_pipeline_integrity_v1_20260704.py`. Scope: the 5 wisdom/poetry books. Tracks issues across `verse → morphology/span-index → ve_lexical → segment_unit → lexical_prose_chapter` + the parallel `wa_verse_records`. **A clean line = 0.** Bold non-zero = rows to chase (examples capped at 25).
+> Read-only trace generated 2026-07-04 05:37 UTC by `scripts/_assess_pipeline_integrity_v1_20260704.py`. Scope: the 5 wisdom/poetry books. Tracks issues across `verse → morphology/span-index → ve_lexical → segment_unit → lexical_prose_chapter` + the parallel `wa_verse_records`. **A clean line = 0.** Bold non-zero = rows to chase (examples capped at 25).
 
 ## 0. Lexical→verse→prose funnel (per book)
 `present/canon`=verse rows vs canonical · `Ph1`=process_marker set · `has_lex`=≥1 ve_lexical · `in_unit`=covered by a segment_unit (Psalms = chapter-driven, no units) · `ch_prose`=chapters with a filed reading · `v→noProse`=verses whose chapter has no reading.
@@ -8,7 +8,7 @@
 | Book | present/canon | Ph1 | has_lex | in_unit | ch_prose | v→noProse |
 |---|---|---|---|---|---|---|
 | Psalms | 2461/2461 | 2461 | 2461 | — (chapter-driven) | 150 | 0 |
-| Proverbs | 915/915 | 915 | 915 | 597 | 31 | 0 |
+| Proverbs | 915/915 | 915 | 915 | 857 | 31 | 0 |
 | Ecclesiastes | 222/222 | 222 | 222 | 221 | 12 | 0 |
 | Job | 1070/1070 | 1070 | 1070 | 1070 | 42 | 0 |
 | Lamentations | 154/154 | 154 | 154 | 154 | 5 | 0 |
@@ -85,7 +85,7 @@ A verse with 0 spans **cannot be lexicalised**. `span≠morph` = span-index and 
 ### 4b. Verses covered by NO segment_unit (segmented books; Psalms excluded)
 Expected non-zero only for intended skips (bare superscriptions, e.g. `Job 1:1`, `Ecc 1:1`). Anything else = a missed verse.
 
-- **Proverbs** — 318 verse(s) in no unit: Pro 3:19, Pro 3:20, Pro 3:32, Pro 3:33, Pro 3:34, Pro 3:35, Pro 6:1, Pro 6:2, Pro 6:3, Pro 6:4, Pro 6:5, Pro 8:22, Pro 8:23, Pro 8:24, Pro 8:25, Pro 8:26, Pro 8:27, Pro 8:28, Pro 8:29, Pro 8:30, Pro 8:31, Pro 10:1, Pro 11:1, Pro 16:4, Pro 16:7 … (+293 more)
+- **Proverbs** — 58 verse(s) in no unit: Pro 6:1, Pro 6:2, Pro 6:5, Pro 8:22, Pro 8:23, Pro 8:25, Pro 8:26, Pro 8:27, Pro 8:29, Pro 17:6, Pro 17:24, Pro 18:16, Pro 20:1, Pro 20:13, Pro 20:20, Pro 20:30, Pro 22:26, Pro 22:27, Pro 22:28, Pro 22:29, Pro 23:10, Pro 23:13, Pro 23:21, Pro 24:27, Pro 24:28 … (+33 more)
 - **Ecclesiastes** — 1 verse(s) in no unit: Ecc 1:1
 
 ### 4c. Prose chapters with NO Phase-1 verses (reverse orphan)
