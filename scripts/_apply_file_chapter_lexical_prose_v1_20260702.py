@@ -16,9 +16,24 @@ Usage:
       --story=verse-analysis/_reports/wa-psalm1-inner-being-reading-20260702.md \
       --heading="Psalm 1 - inner-being reading" [--live]
 """
-import sqlite3, os, sys, shutil, json
+import sqlite3, os, sys, shutil, json, glob
 from datetime import datetime, timezone
 DB=os.path.join('database','bible_research.db')
+NO_BACKUP='--no-backup' in sys.argv
+
+def snapshot_db(prune_keep=3):
+    """Copy the live DB to a pre-chapprose snapshot, then prune old auto-snapshots
+    to `prune_keep` most-recent (these full-DB copies are ~670MB each and pile up
+    fast when filing many chapters; the real safety net is the milestone-named
+    backups + NAS daily backup + git mirror)."""
+    if NO_BACKUP:
+        print(" [--no-backup: skipping pre-chapprose snapshot]"); return
+    dst=os.path.join('backups','bible_research.pre-chapprose.%s.db'%datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
+    shutil.copy2(DB,dst)
+    snaps=sorted(glob.glob(os.path.join('backups','bible_research.pre-chapprose.*.db')))
+    for old in snaps[:-prune_keep]:
+        try: os.remove(old)
+        except OSError: pass
 def arg(n,d=None):
     for a in sys.argv[1:]:
         if a.startswith('--%s='%n): return a.split('=',1)[1]
@@ -53,7 +68,7 @@ def main():
     print(" prior chapter reading:", dict(prev) if prev else None, "-> version", new_ver, "| body words:", wc)
     if not LIVE:
         print("\nDRY-RUN. Re-run with --live."); return
-    shutil.copy2(DB,os.path.join('backups','bible_research.pre-chapprose.%s.db'%datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')))
+    snapshot_db()
     if not tid:
         msort=cur.execute("SELECT COALESCE(MAX(sort_order),200)+1 s FROM prose_section_type").fetchone()['s']
         cur.execute("""INSERT INTO prose_section_type (code,label,source_stage,chapter_no,description,sort_order,delete_flagged,created_at)
