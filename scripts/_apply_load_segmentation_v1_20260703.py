@@ -40,6 +40,29 @@ def expand(verses):
         else: out.append(int(v))
     return out
 
+def expand_refs(verse_refs):
+    """Cross-chapter unit support (prophetic oracles). Each entry is 'ch:vn' or 'ch:a-b'
+    (range within one chapter). Yields (chapter, verse_num) tuples in order."""
+    out = []
+    for r in verse_refs:
+        ch_s, v_s = str(r).split(':')
+        ch = int(ch_s)
+        if '-' in v_s:
+            a, b = v_s.split('-'); out += [(ch, n) for n in range(int(a), int(b)+1)]
+        else:
+            out.append((ch, int(v_s)))
+    return out
+
+def unit_pairs(u):
+    """(anchor_chapter, [(chapter,verse_num),...]) for a unit - supports single-chapter
+    (chapter+verses) and cross-chapter (verse_refs) forms."""
+    if u.get('verse_refs'):
+        pairs = expand_refs(u['verse_refs'])
+        anchor = u.get('chapter') or (pairs[0][0] if pairs else None)
+        return anchor, pairs
+    ch = u['chapter']
+    return ch, [(ch, vn) for vn in expand(u['verses'])]
+
 def main():
     src = arg('in'); LIVE = '--live' in sys.argv
     if not src: print("need --in"); return
@@ -52,8 +75,10 @@ def main():
     problems = []
     resolved = []  # (unit, [(verse_id, ref, seq)])
     for u in units:
-        ch = u['chapter']; vids = []
-        for seq, vn in enumerate(expand(u['verses'])):
+        anchor, pairs = unit_pairs(u)
+        u['_anchor'] = anchor
+        vids = []
+        for seq, (ch, vn) in enumerate(pairs):
             r = cur.execute("SELECT id, reference FROM verse WHERE book_id=? AND chapter=? AND verse_num=?",
                             (bid, ch, vn)).fetchone()
             if not r: problems.append(f"{u['code']} {book} {ch}:{vn} not found"); continue
@@ -65,7 +90,7 @@ def main():
         print("DRY-RUN. Re-run with --live."); return
     # idempotent per SECTION: soft-delete prior units only for the CHAPTERS present in this file
     # (so incremental section loads don't clobber other sections of the same book+provenance)
-    chs = sorted({u['chapter'] for u in units})
+    chs = sorted({u['_anchor'] for u in units})
     qmarks = ",".join("?" for _ in chs)
     cur.execute(f"UPDATE segment_unit SET delete_flagged=1 WHERE book=? AND source_provenance=? AND chapter IN ({qmarks})",
                 (book, prov, *chs))
@@ -74,9 +99,9 @@ def main():
         cur.execute("""INSERT INTO segment_unit
             (book,chapter,unit_code,unit_type,characteristics,multi,is_thread,gist,verse_ref_summary,source_provenance,delete_flagged,created_at)
             VALUES (?,?,?,?,?,?,?,?,?,?,0,?)""",
-            (book, u['chapter'], u['code'], u['type'], u.get('characteristics',''),
+            (book, u['_anchor'], u['code'], u['type'], u.get('characteristics',''),
              1 if u.get('multi') else 0, 1 if u.get('is_thread') else 0, u.get('gist',''),
-             u.get('ref_summary') or ','.join(str(x) for x in u['verses']), prov, NOW))
+             u.get('ref_summary') or (','.join(str(x) for x in u['verse_refs']) if u.get('verse_refs') else ','.join(str(x) for x in u['verses'])), prov, NOW))
         uid = cur.lastrowid
         for vid, ref, seq in vids:
             cur.execute("INSERT OR REPLACE INTO segment_unit_verse (unit_id,verse_id,reference,seq) VALUES (?,?,?,?)",
