@@ -16,7 +16,7 @@ Usage:
   python scripts/_apply_backfill_chapter_verses_v1_20260702.py --book=Psa --chapter=2
   python scripts/_apply_backfill_chapter_verses_v1_20260702.py --book=Psa --chapter=2 --live
 """
-import os, re, sqlite3, sys, shutil, argparse, html as _html
+import os, re, sqlite3, sys, shutil, argparse, glob, html as _html
 from datetime import datetime, timezone
 import requests
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "analytics"))
@@ -64,8 +64,23 @@ def clean_verse_text(raw_html, ref):
     if s and ref and ref not in s: s=f"{ref} {s}"            # prefix ref (corpus convention)
     return s
 
+NO_BACKUP='--no-backup' in sys.argv
+
+def snapshot_db(tag, prune_keep=2):
+    """Snapshot the DB unless --no-backup. Self-prunes transient snapshots of this
+    tag to the newest `prune_keep`, so per-invocation loops can't fill the disk."""
+    if NO_BACKUP:
+        return
+    dst=os.path.join('backups','bible_research.%s.%s.db'%(tag,datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')))
+    shutil.copy2(DB,dst)
+    snaps=sorted(glob.glob(os.path.join('backups','bible_research.%s.*.db'%tag)))
+    for old in snaps[:-prune_keep]:
+        try: os.remove(old)
+        except OSError: pass
+
 def main():
     ap=argparse.ArgumentParser()
+    ap.add_argument("--no-backup",action="store_true",help="skip the pre-op DB snapshot (loops)")
     ap.add_argument("--book",required=True); ap.add_argument("--chapter",type=int,default=None)
     ap.add_argument("--maxverse",type=int,default=200); ap.add_argument("--live",action="store_true")
     ap.add_argument("--repair",action="store_true",
@@ -89,7 +104,7 @@ def main():
         for t,_id,ref in fixes[:60]: print("   %-12s -> %s"%(ref,t[:96]))
         if not fixes: print("nothing to repair."); return
         if not a.live: print("\nDRY-RUN. Re-run with --repair --live to write."); return
-        shutil.copy2(DB,os.path.join('backups','bible_research.pre-repair.%s.db'%datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')))
+        snapshot_db('pre-repair')
         cur.executemany("UPDATE verse SET verse_text=? WHERE id=?",[(t,i) for t,i,_ in fixes])
         conn.commit(); print("repaired %d verse_text values."%len(fixes)); return
 
@@ -120,7 +135,7 @@ def main():
     if not tobuild: print("nothing to backfill."); return
     if not a.live:
         print("\nDRY-RUN. Re-run with --live."); return
-    shutil.copy2(DB,os.path.join('backups','bible_research.pre-backfill.%s.db'%datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')))
+    snapshot_db('pre-backfill')
     built=0
     for vn,ref,osis,html in tobuild:
         words=parse_words(html,None)
