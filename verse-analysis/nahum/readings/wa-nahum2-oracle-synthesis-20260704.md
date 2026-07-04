@@ -1,0 +1,17 @@
+# Nahum 2 — inner-being oracle reading (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals per oracle unit (provenance `nahum-oracle-segmentation-v1-20260704`). Cited; grounded; *stated* | *inferred*. (Chs 2–3 are largely *external-pole* battle imagery; the inner-being yield lies in the exposure of the predatory security.)
+
+---
+
+## NAHUM-fall-predator · Nahum 2:1–13 · [D, multi] — the plundering predator's den emptied; the melting heart of terror
+
+**The reading.** The siege of Nineveh unfolds in flashing chariots and breached gates until "**the palace melts away**" (v.6) and terror seizes every interior: "**Hearts melt and knees tremble; anguish is in all loins; all faces grow pale**" (v.10). Then the taunt aimed at the city's self-image as an unassailable predator: "**Where is the lions' den, the feeding place of the young lions… The lion tore enough for his cubs and strangled prey for his lionesses; he filled his caves with prey and his dens with torn flesh**" (vv.11–12). The verdict: "**Behold, I am against you, declares the LORD of hosts**" (v.13). The finding is **the *predatory security* — a nation that lived by devouring, its "caves filled with prey" — *emptied and terrified*, its confident heart now "melting"** *(stated)*. The operation is **the exposure of a self built on *predation*: Nineveh imagined itself the untouchable lion, filling its den by tearing others — and that whole security collapses into a *melting heart* the moment God declares himself "against" it; the interior that fed on others' ruin is left with nothing but its own dread** *(inferred: the lion imagery (vv.11–12) is the inner-being key — Nineveh's self-understanding was that of the *apex predator*, "the lion tore enough… strangled prey… filled his caves with prey"; the finding is that a life (or nation) built on *devouring others* creates a false sense of unassailable strength — the full den, the cowed neighbours, "with none to disturb"; but this predatory security is hollow: when God turns "**I am against you**" (v.13), the same city dissolves into "**hearts melt and knees tremble… all faces grow pale**" (v.10) — the terror it inflicted now inflicted on it; the finding is that the interior that secures itself by preying on others has no resource when the predation is turned back — its whole confidence was in its power to devour, and when that fails, only the melting heart remains; strength built on others' ruin cannot hold)*.
+
+**Characteristics surfaced:** *predatory security exposed as hollow (the lion's den "filled with prey" emptied — the strength built on devouring others has no resource when turned back)* (thread — a gem: the false confidence of a life built on predation, w/ 2:11-13, Hab 2:9-12, Ps 10:9); *the melting heart of terror (the confident interior dissolved — "hearts melt, all faces grow pale")* (thread — the loss of all inner firmness under dread, w/ 2:10, Isa 13:7-8, Nah 1:6 inverted); *"I am against you" (the security that collapses the moment God turns against it)* (new — w/ 2:13, 3:5).
+
+---
+
+## Chapter-level notes
+- **Surfaced:** predatory security exposed as hollow; the melting heart of terror; "I am against you". Chapter 2's inner-being note is the collapse of a *predatory* confidence — the lion whose den was full of prey, emptied and terrified once God is "against" it.
+- **Threads:** predatory security / built on others' ruin (w/ Hab 2:9-12); the melting heart (← 1:6; Isa 13:7-8); "I am against you" (→ 3:5).
