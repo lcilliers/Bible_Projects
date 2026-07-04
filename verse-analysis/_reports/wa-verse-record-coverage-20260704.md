@@ -1,8 +1,46 @@
 # Verse-record coverage by book (> 75%), excluding the 5 completed — 2026-07-04
 
-> Measure: **distinct verses in `wa_verse_records` (active) ÷ the book's canonical verse count.** Live from DB. Excludes the 5 completed wisdom books (Psalms, Proverbs, Ecclesiastes, Job, Lamentations). Cross-checked: `wa_verse_records` and the `verse` (measure) table agree verse-for-verse on the books sampled, so the figure is consistent across both stores.
+> Measure: **distinct verses in `wa_verse_records` (active) ÷ the book's canonical verse count.** Live from DB. Excludes the 5 completed wisdom books.
 
-## Answer: **42 books** sit above 75% verse-record coverage.
+## ★ CORRECTED FOR PURE-T2 VERSES (researcher, 2026-07-04)
+**T2 = reference/qualifier terms (never analysed standalone).** A verse present in `wa_verse_records` *only* because of a T2 term is not genuine inner-being content — counting it inflates coverage, badly, in proper-noun-heavy books. Re-measured as **distinct verses with ≥1 non-T2 term ÷ canonical**:
+
+- **Only 20 books remain > 75%** (down from 42 on the raw count).
+- The skew is huge in narrative: Genesis **81.5% → 52.4%** (446 pure-T2 verses), Numbers **78.3% → 44.1%** (441), Judges **90.0% → 57.4%** (201), Ruth **84.7% → 52.9%**, Song of Solomon **79.5% → 49.6%** (35 pure-T2).
+- The high-coverage field is now dominated by the **epistles** and a few **prophets** — genres that argue/exhort about the inner life rather than narrate.
+
+### The 20 books > 75% by GENUINE (non-T2) coverage
+| Book | genuine % | (raw %) | pure-T2 |
+|---|---|---|---|
+| Titus | 93.5 | 97.8 | 2 |
+| Jude | 92.0 | 100.0 | 2 |
+| Romans | 87.1 | 94.7 | 33 |
+| 2 Corinthians | 86.8 | 89.9 | 8 |
+| Malachi | 85.5 | 94.5 | 5 |
+| 2 John | 84.6 | 84.6 | 0 |
+| 2 Peter | 83.6 | 90.2 | 4 |
+| Colossians | 82.1 | 85.3 | 3 |
+| 1 Peter | 81.9 | 85.7 | 4 |
+| Philippians | 81.7 | 86.5 | 5 |
+| Hosea | 81.2 | 97.0 | 31 |
+| Ephesians | 79.4 | 88.4 | 14 |
+| 1 Corinthians | 78.3 | 89.0 | 47 |
+| Isaiah | 77.9 | 94.7 | 216 |
+| 1 Thessalonians | 77.5 | 82.0 | 4 |
+| Zephaniah | 77.4 | 90.6 | 7 |
+| Micah | 77.1 | 95.2 | 19 |
+| 2 Thessalonians | 76.6 | 80.9 | 2 |
+| James | 75.9 | 83.3 | 8 |
+| 2 Timothy | 75.9 | 79.5 | 3 |
+
+### Borderline (73–75% genuine)
+Jonah 75.0 · Habakkuk 75.0 · Deuteronomy 73.5
+
+### ⚠ Song of Solomon — correction retracted
+My earlier note called the "<25%" figure wrong and Song "well-covered." **Half-right:** the raw figure is 79.5%, but **genuine (non-T2) coverage is only 49.6%** — Song is thick with proper nouns and geography (35 of 93 verse-record verses are pure-T2). So the *original instinct to hold Song was sound* — its genuine inner-being-term density (~50%) is well below the real candidates (76–94%). The specific "<25%" number was wrong, but Song is genuinely under-covered in the IB register. **Keep Song on hold / treat as a special case.**
+
+---
+## (superseded) Raw answer: 42 books > 75% on the un-corrected count
 The ~214 inner-life words touch verses densely across almost the whole canon; only the narrative-heavy history books fall below 75%.
 
 ### Prophets (15)
