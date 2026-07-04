@@ -1,6 +1,6 @@
 # Pipeline-integrity diagnostic — verse-analysis chain (live from DB)
 
-> Read-only trace generated 2026-07-04 05:37 UTC by `scripts/_assess_pipeline_integrity_v1_20260704.py`. Scope: the 5 wisdom/poetry books. Tracks issues across `verse → morphology/span-index → ve_lexical → segment_unit → lexical_prose_chapter` + the parallel `wa_verse_records`. **A clean line = 0.** Bold non-zero = rows to chase (examples capped at 25).
+> Read-only trace generated 2026-07-04 05:42 UTC by `scripts/_assess_pipeline_integrity_v1_20260704.py`. Scope: the 5 wisdom/poetry books. Tracks issues across `verse → morphology/span-index → ve_lexical → segment_unit → lexical_prose_chapter` + the parallel `wa_verse_records`. **A clean line = 0.** Bold non-zero = rows to chase (examples capped at 25).
 
 ## 0. Lexical→verse→prose funnel (per book)
 `present/canon`=verse rows vs canonical · `Ph1`=process_marker set · `has_lex`=≥1 ve_lexical · `in_unit`=covered by a segment_unit (Psalms = chapter-driven, no units) · `ch_prose`=chapters with a filed reading · `v→noProse`=verses whose chapter has no reading.
@@ -59,13 +59,13 @@ A verse with 0 spans **cannot be lexicalised**. `span≠morph` = span-index and 
 ### 3b. Dimension (ve_nr) coverage per book — thin or absent items
 `·` = 0 rows. Cross-verse items (`source` D2, `effect`) are OFF by design in poetic mode → expect ~0. Dropped-by-design (**D10 valence, D12 hidden, D13 cohabitation, related_tier**) are absent programme-wide — correct. A *core* item (`sense`/`type`/`role`) going thin would be a real failure.
 
-| Book | sense​(101) | type​(102) | source​(103) | seat​(104) | bearer​(105) | operation​(106) | target​(107) | manner​(108) | intensity​(109) | specifier​(110) | effect​(111) | coupling​(112) | prohibition​(113) | discovery​(114) | role​(115) |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Psalms | 14974 | 14974 | · | 401 | 3170 | 7187 | 986 | 1784 | 1860 | 1821 | · | 1784 | 1262 | 3887 | 14974 |
-| Proverbs | 5610 | 5610 | · | 206 | 264 | 2249 | 461 | 461 | 412 | 584 | · | 461 | 698 | 694 | 5610 |
-| Ecclesiastes | 2063 | 2063 | · | 104 | 11 | 830 | 273 | 195 | 427 | 229 | · | 195 | 250 | 121 | 2063 |
-| Job | 5450 | 5450 | · | 131 | 381 | 2789 | 416 | 597 | 280 | 505 | · | 597 | 858 | 719 | 5450 |
-| Lamentations | 1175 | 1175 | · | 28 | 253 | 548 | 79 | 117 | 184 | 169 | · | 117 | 156 | 308 | 1175 |
+| Book | sense​(101) | type​(102) | source​(103) | seat​(104) | bearer​(105) | operation​(106) | target​(107) | manner​(108) | intensity​(109) | specifier​(110) | effect​(111) | coupling​(112) | prohibition​(113) | discovery​(114) | role​(115) | locus​(116) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Psalms | 14974 | 14974 | · | 401 | 3170 | 7187 | 986 | 1784 | 1860 | 1821 | · | 1784 | 1262 | 3887 | 14974 | 4156 |
+| Proverbs | 5610 | 5610 | · | 206 | 264 | 2249 | 461 | 461 | 412 | 584 | · | 461 | 698 | 694 | 5610 | 725 |
+| Ecclesiastes | 2063 | 2063 | · | 104 | 11 | 830 | 273 | 195 | 427 | 229 | · | 195 | 250 | 121 | 2063 | 284 |
+| Job | 5450 | 5450 | · | 131 | 381 | 2789 | 416 | 597 | 280 | 505 | · | 597 | 858 | 719 | 5450 | 797 |
+| Lamentations | 1175 | 1175 | · | 28 | 253 | 548 | 79 | 117 | 184 | 169 | · | 117 | 156 | 308 | 1175 | 332 |
 
 ### 3c. Gate-1 tagged terms missing a CORE item (sense/type/role expected on every tagged term)
 

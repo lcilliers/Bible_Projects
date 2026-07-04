@@ -103,7 +103,13 @@ Alternatively, accept the current design (arena captured only in prose) if cross
 
 **Recommendation:** do **A (locus derivation)** first — cheap, mechanical, non-destructive, and it already recovers the *externally-directed* half (fear→God, hope→act, etc.). Then decide on **B** separately — it is the half that truly needs a re-read, and its value (purely-externally-induced characteristics) should be weighed against the re-analysis cost. **Both are additive backfills — they add a dimension, they do not alter existing lexical or prose, so there is no destructive impact.**
 
-## §4b — proceeding with the Proverbs 16–30 catch-up (researcher: "proceed").
+## §4b — Proverbs catch-up (researcher: "proceed") — ✅ COMPLETE
+All **260 loose study-term verses** (chs 3–30) bound to `segment_unit`s across 6 batches (101 catch-up units, provenance `proverbs-catchup-v1-20260704`), new readings appended and chapters re-filed v2. Proverbs verse→unit coverage **597 → 857/915**; **0 uncovered study-term verses** remain (the residual 58 are gate-2-only context verses with no study term, legitimately unbound, like Ecc 1:1).
+
+## RESOLUTIONS EXECUTED (2026-07-04)
+- **§1 — verse-record traceability: ✅ DONE.** Added `analysis_marker` + `incorporated_in` to `wa_verse_records` (`_apply_verse_record_traceability_v1_20260704.py`), back-filled 11,676 rows (5 books, 100%); `analysis_marker` ← `verse.process_marker`, `incorporated_in` ← the `segment_unit` code(s) or `chapter-driven` (Psalms). Plus `ix_wavr_verse_marker`. Indexed path verse-record→unit→lexical now runs in ~0.16s. The control table now carries the explicit analysed-marker and the passage/unit link that were skipped.
+- **§3b backfill A — locus derivation: ✅ DONE.** New dimension **`ve_nr 116 locus`** (`_apply_locus_dimension_v1_20260704.py`), classifying every `target`/`bearer` span IB-internal vs external from morphology + lemma tables. 6,294 spans classified (external: thing 3292 · god 504 · proper 469 · adversary 30; internal: ib-state 1701 · seat 167 · body 131). **Restores the IB→external half as queryable** — e.g. *praise→God, bless→God, fear→God, seek→God* now surface directly. High confidence for god/adversary/proper; `external:thing` (default bucket, 52%) is lower confidence and a candidate for the read-back/refine loop. Additive, non-destructive, idempotent; runs on the 5 wisdom books (`--` extendable programme-wide).
+- **§3b backfill B — inducement (external→IB): DECISION PENDING.** Recovering *"which characteristics are **purely externally induced**"* still needs a **re-read** (the `source` dimension cannot be derived mechanically — it is not in the spans). This is the costlier half; flagged for the researcher to weigh (a targeted re-read pass vs accepting inducement-in-prose-only). Backfill A already delivers the *externally-directed* half.
 
 ---
 
