@@ -1,0 +1,17 @@
+# Isaiah 17 — inner-being oracle reading (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals per oracle unit (provenance `isaiah-oracle-segmentation-batch2-v1-20260704`). Cited; grounded; *stated* | *inferred*.
+
+---
+
+## ISA-damascus-lookmaker · Isa 17:1–14 · [D, multi] — looking to the Maker vs the work of one's hands; the forgotten Rock
+
+**The reading.** The Damascus/Ephraim oracle turns, mid-judgment, into one of Isaiah's clearest statements of where the gaze belongs: "**In that day man will look to his Maker, and his eyes will look on the Holy One of Israel. He will not look to the altars, the work of his hands, and he will not look on what his own fingers have made**" (vv.7–8). And the diagnosis of the fall: "**For you have forgotten the God of your salvation and have not remembered the Rock of your refuge; therefore, though you plant pleasant plants… the harvest will flee away in a day of grief**" (vv.10–11). The finding is **the *gaze* as the index of the interior — turned rightly to "his Maker" and away from "the work of his hands" — and the root failure named as *forgetting* the God of salvation and *not remembering* the Rock of refuge** *(stated)*. The operation is **the interior's orientation figured as a *look*: to be whole is to look to one's Maker (the eyes lifted off self-made securities); to be lost is to have *forgotten* the Rock — memory and attention are the faculties by which the self either rests on God or drifts to idols** *(inferred: the pivot is the double "**look**" of vv.7–8 — "man will **look to his Maker**… he will **not look** to… what his own fingers have made": the finding is that the direction of the gaze *is* the state of the soul — the healthy interior looks *up and out* to its Maker, the corrupt one looks to the "work of his hands" (the idols, but also every self-constructed security); and the counterpart is *memory* — the fall is because "**you have forgotten** the God of your salvation and **have not remembered** the Rock of your refuge" (v.10): the finding is that idolatry and ruin begin as a failure of *remembrance* — the self forgets the Rock it once knew and, forgetting, transfers its trust to what it can make and plant; the "pleasant plants" that yield only "grief" (v.11) are the harvest of a forgotten God — self-made cultivation that cannot save because the Maker was let slip from memory)*.
+
+**Characteristics surfaced:** *the gaze as the index of the interior (looking to the Maker vs the work of one's hands — the direction of the look is the state of the soul)* (thread — a gem: attention as orientation, w/ 45:22, Ps 123:1-2, Heb 12:2); *forgetting the God of salvation / not remembering the Rock (ruin as a failure of remembrance)* (new — a gem: idolatry begins in forgetting, w/ Deut 8:11-14, 32:18, Ps 106:21); *self-made cultivation that yields only grief (the harvest of a forgotten God flees away)* (thread — self-constructed security cannot save, w/ 22:11, Jer 2:13).
+
+---
+
+## Chapter-level notes
+- **Surfaced:** the gaze as the index of the interior; forgetting the Rock; self-made cultivation that fails. Chapter 17's contribution is the *look/forget* pairing — the soul is oriented by where it looks and what it remembers; to look to the Maker and remember the Rock is health, to look to one's own hands and forget God is ruin.
+- **Threads:** looking to the Maker not the hands (← 2:8; → 22:11, 31:1, 45:22); remembering/forgetting God (→ 44:21, 46:8-9, 51:13); the Rock of refuge (→ 26:4, "an everlasting rock").
