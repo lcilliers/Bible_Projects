@@ -54,6 +54,7 @@
 
 ## Active state
 
+- [project_passage_reading_checkback_gate](project_passage_reading_checkback_gate.md) — MANDATORY per-passage CHECK-BACK gate (scripts/_check_passage_reading_coverage) regulating bias + theme-building/detail-skipping; run, fix misses, re-file until clean. Caught lumping in GEN-01.
 - [project_prophets_wisdom_read_at_movement_depth_debt](project_prophets_wisdom_read_at_movement_depth_debt.md) — filed prophet/wisdom readings are MOVEMENT-depth not span-depth (cite 8-28% of verses, don't distinguish repeats); additive depth-DEBT, re-align not rebuild.
 - [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — poetic books first, chapter-driven; Phase 1 per-verse (cross-verse off) + Phase 2 whole-chapter multi-characteristic reading → prose type lexical_prose_chapter. ★ WHOLE PSALTER COMPLETE (2026-07-02, all 150, ids 399+419-548).
 - [project_cross_chapter_synthesis_per_characteristic](project_cross_chapter_synthesis_per_characteristic.md) — NEXT PHASE: cross-chapter = a summary PER CHARACTERISTIC/movement (emergent), harvest→cluster→summarise→new prose_section type. Do re-alignment sweep first.
