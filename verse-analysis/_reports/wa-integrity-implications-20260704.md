@@ -1,0 +1,72 @@
+# Pipeline-integrity — implications & decisions (2026-07-04)
+
+> Follow-up to `wa-pipeline-integrity-report-20260704.md`. Each finding below is **evidenced from the DB** (probe queries), then interpreted, with a decision flagged where one is needed.
+
+## §1 — the 541 verses analysed but not in `wa_verse_records`
+
+### 1a. Are they filler (no study term), or significant content the read surfaced but the core missed?
+**Evidence:** of the 541 excluded verses, **0 carry a gate-1 (study-term) span**. Every one is **gate-2-only** (relevant *content* spans, no primary study term). Breakdown: Psa 317 · Job 108 · Pro 76 · Ecc 20 · Lam 20 — all gate-2-only, none with zero lexical.
+
+**Interpretation:** they are **filler in the study-term sense** — no registered inner-life Strong's tags them, which is exactly *why* they were term-sparse, got STEP-backfilled, and never entered the term-verse store (`wa_verse_records` is a *term*-in-verse store: no term → no row). The full Phase-1 read *did* process them (gate-2 content) so the chapters read whole and the Phase-2 prose could use them as context — but **nothing study-significant (no term/span) was lost from the core.** ✔ No enrichment gap on the term side.
+
+**BUT one structural consequence to note:** the Phase-2 **prose readings** can, and sometimes do, surface an inner-being *finding* anchored on a gate-2-only verse (a verse with no study term but real IB content). That **finding lives in `prose_section`**, anchored to a verse **not in `wa_verse_records`**. So the *finding* store (prose) and the *term* store (verse-record) legitimately **diverge by the backfilled set**. That is coherent by design (prose = findings; verse-record = terms) — but it means "all inner-being content" is *not* recoverable from `wa_verse_records` alone.
+
+### 1b. Are analysed verses marked as such *in the verse-record table*?
+**Evidence:** `wa_verse_records` has **no analysis-status column**. The nearest candidates (`claude_output`, `note`) are **0 % populated** for these books. Analysis state lives **only on `verse.process_marker`**.
+
+**Interpretation:** the two stores are **not cross-linked by an analysis flag** — you cannot tell from `wa_verse_records` whether a verse has been lexically analysed / read; you must join to `verse`. Not a data-loss, but a **traceability gap**.
+
+### 1c. Any verse-record verse with no analysis marker (for the fully-covered books)?
+**Evidence:** **0** across all 5 books. Every distinct `verse_id` in `wa_verse_records` (Psa 2144 · Pro 839 · Job 962 · Ecc 202 · Lam 134) **is Phase-1 marked**; 0 unresolved verse_ids.
+
+**Interpretation:** the verse-record subset sits **entirely inside** the analysed set. Combined with 1a, the whole picture is consistent: **analysed = (verse-record verses, all marked) + (backfilled filler, marked, no study term, correctly absent from verse-record).** ✔
+
+### §1 decisions
+1. **Do we back-populate `wa_verse_records` for the 541 analysed-but-absent verses?** Recommendation: **no** by default — they have no study term, so a term-in-verse record would be empty/artificial. *Unless* we want `wa_verse_records` to be a complete verse index (not just term-verse), in which case backfill it with a `no-study-term` flag.
+2. **Cross-link the two stores?** Recommendation: **yes, cheaply** — either (a) treat `verse.process_marker` as the single source of analysis state (already true; just document it), or (b) add a generated view joining `wa_verse_records` → `verse.process_marker` so verse-record queries can see analysis state. No new column needed.
+
+---
+
+## §3b — did we lose the boundary-crossing data (external→IB, IB→external)?
+
+This is the substantive one. **Short answer: one direction is structurally lost, the other is captured-but-unflagged.**
+
+**Evidence (rows programme-wide):**
+- `source` (D2 / D103) — where a movement *originates*: **7 rows total, ALL from Exodus** (the prose trial: "source=dread@Exo 1:12"). **Zero in Ps/Pro/Ecc/Job/Lam** — because it is a *cross-verse* item and cross-verse items are OFF in poetic mode.
+- `effect` (D111) — a movement's downstream *impact*: **43 rows total**, also cross-verse, near-zero in the wisdom corpus.
+- `target` (D107) — the object an operation acts on **within the verse**: **2,228 rows**, healthy. Sampled values include **external** targets (Job 42:9 →*prayer*, Psa 53:2 →*God*, Job 38:10 →*bars*, Psa 147:14 →*peace*).
+- **No inside/outside-IB flag exists anywhere.** `type` (D102) = only `status`/`action`/`quality`; the ve_label set has no `arena`/`external`/`locus`/`boundary` dimension. `discovery` notes mention external/outside/arena **0** times.
+
+**Interpretation — the two crossings the researcher named:**
+
+| Crossing | Captured? | Where |
+|---|---|---|
+| **external source → IB** ("a movement originates outside the IB") | **NOT structurally captured** in the wisdom corpus | `source` (D2) is cross-verse + off → 7 rows, all Exodus prose. Origination is present only **narratively in the Phase-2 prose** ("the enemy triggers the dread", the *arena* language), not as a queryable field. |
+| **IB → external target** ("a movement impacts a target outside the IB") | **Captured within-verse, but NOT flagged** internal-vs-external | `target` (D107) records the object (2,228 rows, incl. external ones) — but you cannot query "IB movements that act on something outside the person" without reading each value. Cross-verse/downstream `effect` (D111) is off → lost. |
+
+**So:** refocusing the lens on the IB (finding = the inner operation; God/enemy/circumstance = the *arena*) was deliberate and right — but it means the **structured, queryable capture of the IB's boundary with the outside world is now thin**: origination-from-outside is essentially absent, and impact-on-outside is recorded but not distinguishable from IB-internal targets. **The information is not gone from the corpus** — the prose readings articulate the arena for every unit — but it is **no longer in the lexical layer**, so cross-corpus questions like *"what external sources most often trigger fear?"* or *"what does hope most often move the self to do in the world?"* cannot be answered by querying `ve_lexical`.
+
+**The hook already exists:** the Phase-1 engine has `EXTERNAL_ENTITY = {'H0341','H6862'}` (enemy, foe) — but it is used only to **stoplist** those from being characteristics (the external-pole principle), i.e. to *exclude*, not to *flag a crossing*.
+
+### §3b recommendation
+Add a **lightweight `locus` / boundary flag** to the lexical — a single classification on `bearer` / `target` / (within-verse) `source` spans: **IB-internal vs external** (person-external: God, enemy, circumstance, world). This:
+- restores both crossings as **queryable** (external→IB and IB→external) without re-enabling the noisy *cross-verse* source/effect items;
+- builds directly on the existing `EXTERNAL_ENTITY` detection (extend from 2 adversary lemmas to a proper external-vs-internal test — proper nouns, deity, adversary-persons, place/thing);
+- is a **Phase-1 rule addition** (new `ve_nr`, e.g. `116 locus`), re-runnable over the finished corpus via the existing `--no-backup` mass re-run, and read back per the self-checking loop.
+
+Alternatively, accept the current design (arena captured only in prose) if cross-corpus boundary queries are not a research goal. **This is a researcher decision.**
+
+---
+
+## §4b — Proverbs verse→unit coverage (the "catch-up tidying")
+
+**Evidence:** 318 Proverbs verses are in no `segment_unit`. Of these, **260 carry a gate-1 study term** (real inner-being verses that should likely be in a unit); only 58 are context-only. The 260 are concentrated in the **sentence-proverb collections, chs 16–30** (e.g. ch17: 19, ch19: 22, ch20: 22, ch21: 20, ch28: 22, ch29: 19).
+
+**Interpretation:** confirmed — this is **real tidying**, not noise. The Proverbs segmentation covered chs 1–9 (the discourses) well but treated chs 10–30 (disconnected one-line sayings) **thematically / by representative sampling**, leaving ~260 study-term-bearing verses unbound to a unit. They *did* reach chapter-level prose (all 31 chapters have readings), but not the per-unit meaning-synthesis. **Task:** a second Proverbs segmentation pass over chs 16–30 to bind the loose sentence-proverbs into units (single-saying `S` or thematic `T` threads), then Phase-2 those units. ~260 verses.
+
+---
+
+## Summary of decisions to make
+1. **§1** — leave `wa_verse_records` term-only (recommended) or backfill filler with a flag; document `verse.process_marker` as the single analysis-state source (or add a join-view). *Low urgency — the data is coherent.*
+2. **§3b** — add a `locus` (IB-internal / external) flag to restore boundary-crossing queryability (recommended), or accept arena-in-prose-only. *This is the one with research-validity weight.*
+3. **§4b** — second Proverbs segmentation pass over chs 16–30 (~260 verses). *Mechanical catch-up.*
