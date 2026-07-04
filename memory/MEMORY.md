@@ -25,6 +25,7 @@
 - [feedback_reusable_engine_scripts_and_continuous_learning](feedback_reusable_engine_scripts_and_continuous_learning.md) — scripts are REUSABLE parameter-driven engine components, never one-off; read back, update rules, re-run earlier work.
 - [feedback_each_chapter_first_principles_find_the_gems](feedback_each_chapter_first_principles_find_the_gems.md) — analyse every psalm/chapter AS IF THE FIRST; no shortcuts/templating. Each has its own slant/key; rich with deep HIDDEN GEMS the reading must dig for. Depth over throughput.
 - [feedback_lens_is_inner_being_process_not_god_relation](feedback_lens_is_inner_being_process_not_god_relation.md) — keep the lens on inner-being PROCESSES/operations (the finding); God-interaction is the arena, not the point. Lens shifts easily.
+- [feedback_resist_grouping_preserve_distinctions](feedback_resist_grouping_preserve_distinctions.md) — RESIST grouping/summarising/generalising; same-gloss/repeated spans are NOT one operation — the DIFFERENCE between them is the finding. Read the operation off the verse, never the gloss.
 - [feedback_name_dimensions_not_just_codes](feedback_name_dimensions_not_just_codes.md) — always write a dimension's NAME with its code ("D2 Source").
 - [feedback_review_via_files_not_chat](feedback_review_via_files_not_chat.md) — decisions/options as filed .md, not chat; avoid AskUserQuestion.
 - [feedback_integrity_and_intent_first](feedback_integrity_and_intent_first.md) — ask intent/integrity BEFORE acting; never act on unverified data.
