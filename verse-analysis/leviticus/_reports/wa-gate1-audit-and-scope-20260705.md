@@ -85,6 +85,21 @@ REDEEM axis: 3 → **19 spans**. Total Leviticus coding rows: 6,839 → **7,142*
 
 ---
 
+## 3b. Leviticus Gate-1 round 2 (2026-07-05) — the reusable-scanner pass
+
+The first Leviticus fix (§3) used a *keyword-heuristic* filter (46 gloss-candidates → 13). Re-running the **reusable scanner** (`_probe_gate1_span_orphans_v1`) surfaced genuine inner-being terms that heuristic had missed — most importantly a **homonym trap**: the first pass recovered `gaal` **H1350 "redeem"** but *not* its homonym `ga'al` **H1602 "abhor"** (the divine-soul revulsion verb, 26:11,15,30,43,44). Six terms coded (24… ve_lexical rows, distinct provenance `leviticus-lexical-v1-gate1r2` so purely additive — the main coding on shared verses untouched):
+
+| Term | where | note |
+|---|---|---|
+| `ga'al` H1602 — **ABHOR** | 26:11,15,30,43,44 | the two souls' mutual recoil (God's / the people's) — the homonym the first pass missed |
+| `chayah` — **LIVE** | 18:5; 25:35,36 | "he shall **live** by them" (life through obedience); the poor brother kept alive |
+| `kaved` — be **HONORED** | 10:3 | "I will be glorified" — God's self-honouring through holiness |
+| `mukh` — become **POOR** | 25:35,39,47; 27:8 | the impoverished brother — Jubilee/charity subject |
+| `yada` — to **KNOW** | 4:14–5:18; 23:43 | the awareness that activates moral guilt (the ch4–5 "comes to know" pattern) |
+| `yiddeoni` — **SPIRITIST** | 19:31; 20:6,27 | the soul's forbidden turning to spirits |
+
+Coverage held; total Leviticus `ve_lexical` ≈ 7,272 rows. Folded into the synthesis §7c. **Lesson banked:** a keyword heuristic is not a substitute for the full index scan — homonyms and low-frequency terms slip a gloss-filter. The reusable scanner is now the standard tool.
+
 ## 4. Recommendations
 
 1. **Genesis and Exodus need a Gate-1 pass.** The narrative readings were built from the same curated subset; a `verse_span_index`-vs-`wa_verse_records` diff (as run here) should be done for both, the missed inner-being terms identified, and the affected readings revised. `ahev` "love" alone will touch many passages. **This is a real debt, flagged for the researcher's decision** (it is a revision of already-filed readings).

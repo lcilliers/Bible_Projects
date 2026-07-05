@@ -7,6 +7,8 @@ metadata:
   originSessionId: 92aed34e-8a28-44a4-8d9d-4bdf6df70a12
 ---
 
+**★ GATE-1 REMEDIATION applied to Gen+Exod (2026-07-05):** the span-depth readings were built off the `wa_verse_records` SEED and so silently missed inner-being words never registered as terms (`ahev` LOVE, `gaal` REDEEM, `lachats` OPPRESS, `avaq` WRESTLE...). Fixed: reusable scanner `scripts/_probe_gate1_span_orphans_v1_20260705.py`; 27 terms onboarded to mti_terms; recovered vocab folded into all 6 primary syntheses; 6 spine-level readings revised in place (v2, gate-clean: JAC-15 avaq, JAC-08 neder, JOS-01 ahev, EXO-01 chakham/quts, EXO-05 lachats, EXO-09 gaal, EXO-19 yasha). Method rule now `Workflow/Instructions/wa-gate1-span-orphan-audit-method-rule-v1-20260705.md`. **⚠ NUMBERS & DEUTERONOMY have NO gate-1 — run the span-orphan scan FIRST when reached, before reading from the seed.** See [[project_leviticus_terminology_study]] + [[feedback_term_coverage_cascade_is_index_not_census]].
+
 **Narrative inner-being reading at span depth** — the method the researcher confirmed 2026-07-04 (span-lexical is the unit not the plot; individual + INTERACTIVE operations; never lump repeated/same-gloss spans, never over-read genealogies; story instrumental). Full method: `verse-analysis/_methodology/wa-ot-narrative-inner-being-method-proposal-20260704.md` + worked example `wa-narrative-method-worked-example-gen3-20260704.md`. Governed by [[feedback_resist_grouping_preserve_distinctions]], [[project_passage_reading_checkback_gate]], [[feedback_each_chapter_first_principles_find_the_gems]].
 
 **Progress (GENESIS 1-50 FULLY COMPLETE):**
