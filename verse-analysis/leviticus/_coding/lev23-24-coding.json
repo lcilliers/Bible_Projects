@@ -2,77 +2,851 @@
   "provenance": "leviticus-lexical-v1",
   "batch": "Leviticus 23-24 - feasts calendar + lampstand/showbread/blasphemer/lex talionis (Phase A pure coding)",
   "occurrences": [
-    {"ref":"23:2","strong":"H7121","note":"qara = the appointed feasts you shall PROCLAIM as holy convocations","dims":{"axis":"OTHER","sense":"proclaim-feast","role":"festival-calendar","coverage":"ib-coded"}},
-    {"ref":"23:2","strong":"H4744","note":"miqra = holy CONVOCATIONS (sacred assemblies)","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:3","strong":"H4744","note":"miqra = the sabbath a holy convocation of solemn rest","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:4","strong":"H7121","note":"qara = proclaim these feasts at their times","dims":{"axis":"OTHER","sense":"proclaim-feast","role":"festival-calendar","coverage":"ib-coded"}},
-    {"ref":"23:4","strong":"H4744","note":"miqra = holy convocations","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:7","strong":"H4744","note":"miqra = first day a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:7","strong":"H5656","note":"avodah = do no ordinary/servile WORK (festival rest)","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:8","strong":"H4744","note":"miqra = seventh day a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:8","strong":"H5656","note":"avodah = do no servile work","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:10","strong":"H5414","note":"natan = when you reap the land I GIVE you, bring the firstfruits sheaf","dims":{"axis":"OTHER","sense":"give-land","role":"promise","coverage":"ib-coded"}},
-    {"ref":"23:11","strong":"H7522","note":"ratson = the priest waves the sheaf for your ACCEPTANCE","dims":{"axis":"ATONE_COVER","type":"status","sense":"acceptance","bearer":"offering","effect":"accepted-before-God","purpose":"access-enable","coverage":"ib-coded"}},
-    {"ref":"23:12","strong":"H8549","note":"tamim = an unblemished lamb offered with the sheaf","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"23:13","strong":"H5207","note":"nichoach = a pleasing aroma","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"23:14","note":"T2-only (eat no bread until the offering)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"23:15","strong":"H8549","note":"tamim = count seven COMPLETE/full sabbaths","dims":{"axis":"OTHER","sense":"complete-full","role":"time-referent","coverage":"ib-coded"}},
-    {"ref":"23:17","note":"T2-only (two loaves of firstfruits)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"23:18","strong":"H8549","note":"tamim = seven unblemished lambs","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"23:18","strong":"H5207","note":"nichoach = a pleasing aroma","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"23:19","strong":"H2403","note":"chattat = a goat for a sin offering at Weeks","dims":{"axis":"SIN_GUILT","type":"status","sense":"sin-offering","source_domain":"cultic","reset":"sin-offering","coverage":"ib-coded"}},
-    {"ref":"23:21","strong":"H7121","note":"qara = proclaim a holy convocation (Weeks)","dims":{"axis":"OTHER","sense":"proclaim-feast","role":"festival-calendar","coverage":"ib-coded"}},
-    {"ref":"23:21","strong":"H4744","note":"miqra = a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:21","strong":"H5656","note":"avodah = do no servile work","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:22","strong":"H6041","note":"ani = leave the gleanings for the POOR and the sojourner","dims":{"axis":"OTHER","sense":"the-poor","role":"social-vulnerable","coverage":"ib-coded"}},
-    {"ref":"23:24","strong":"H4744","note":"miqra = a holy convocation (trumpet blast, 7th month)","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:25","strong":"H5656","note":"avodah = do no servile work","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:27","strong":"H5315","note":"nephesh = the Day of Atonement; AFFLICT your souls","dims":{"axis":"SELF","sense":"soul-self","bearer":"person","role":"the-worshipper","coverage":"ib-coded"}},
-    {"ref":"23:27","strong":"H3725","note":"kippurim = it is the Day of ATONEMENT","dims":{"axis":"ATONE_COVER","type":"status","sense":"atonement","bearer":"congregation","temporal":"recurring","coverage":"ib-coded"}},
-    {"ref":"23:27","strong":"H4744","note":"miqra = a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:27","strong":"H6031","note":"anah = you shall AFFLICT yourselves (self-denial on the Day)","dims":{"axis":"SELF","type":"operation","sense":"afflict-soul","operation":"self-afflict","bearer":"person","driver":"command","person_role":"active","effect":"self-denial","coverage":"ib-coded"}},
-    {"ref":"23:28","strong":"H3722","note":"kipper = to make ATONEMENT for you before the LORD","dims":{"axis":"ATONE_COVER","type":"operation","sense":"atone-cover","operation":"atone","bearer":"congregation","reset":"atone-cover","temporal":"recurring","coverage":"ib-coded"}},
-    {"ref":"23:28","strong":"H3725","note":"kippurim = a day of atonement","dims":{"axis":"ATONE_COVER","type":"status","sense":"atonement","bearer":"congregation","coverage":"ib-coded"}},
-    {"ref":"23:29","strong":"H5315","note":"nephesh = anyone who does not afflict himself is cut off","dims":{"axis":"SELF","sense":"soul-self","bearer":"person","effect":"cut-off","coverage":"ib-coded"}},
-    {"ref":"23:29","strong":"H6031","note":"anah = whoever does not AFFLICT himself that day is cut off (the affliction is mandatory)","dims":{"axis":"SELF","type":"operation","sense":"afflict-soul","operation":"self-afflict","bearer":"person","driver":"command","person_role":"active","coverage":"ib-coded"}},
-    {"ref":"23:30","strong":"H5315","note":"nephesh = anyone who works that day - I will destroy that soul","dims":{"axis":"SELF","sense":"soul-self","bearer":"person","effect":"cut-off","coverage":"ib-coded"}},
-    {"ref":"23:30","strong":"H5315","note":"nephesh = that person destroyed from among his people","dims":{"axis":"SELF","sense":"soul-person","bearer":"person","effect":"cut-off","coverage":"ib-coded"}},
-    {"ref":"23:32","strong":"H5315","note":"nephesh = afflict your souls; a sabbath of solemn rest","dims":{"axis":"SELF","sense":"soul-self","bearer":"person","role":"the-worshipper","coverage":"ib-coded"}},
-    {"ref":"23:32","strong":"H6031","note":"anah = AFFLICT yourselves from evening to evening","dims":{"axis":"SELF","type":"operation","sense":"afflict-soul","operation":"self-afflict","bearer":"person","driver":"command","person_role":"active","temporal":"permanent","coverage":"ib-coded"}},
-    {"ref":"23:35","strong":"H4744","note":"miqra = first day of Booths a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:35","strong":"H5656","note":"avodah = do no servile work","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:36","strong":"H4744","note":"miqra = the eighth day a holy convocation","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:36","strong":"H6116","note":"atsarah = a solemn ASSEMBLY on the eighth day","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"solemn-assembly","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:36","strong":"H5656","note":"avodah = do no servile work","dims":{"axis":"OTHER","sense":"servile-work-rest","role":"festival-rest","coverage":"ib-coded"}},
-    {"ref":"23:37","strong":"H7121","note":"qara = these are the feasts you proclaim as holy convocations","dims":{"axis":"OTHER","sense":"proclaim-feast","role":"festival-calendar","coverage":"ib-coded"}},
-    {"ref":"23:37","strong":"H4744","note":"miqra = holy convocations","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"holy-convocation","bearer":"congregation","role":"festival-assembly","coverage":"ib-coded"}},
-    {"ref":"23:38","strong":"H5414","note":"natan = besides your gifts and freewill offerings you GIVE (mechanical)","dims":{"axis":"OTHER","sense":"give-offering","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"23:40","strong":"H8055","note":"samach = you shall REJOICE before the LORD your God seven days (worship joy)","dims":{"axis":"SELF","type":"operation","sense":"rejoice","operation":"rejoice-before-God","bearer":"congregation","driver":"command","person_role":"active","effect":"joy","role":"worship-response","coverage":"ib-coded"}},
-    {"ref":"23:40","strong":"H1926","note":"hadar = take the fruit of SPLENDID/beautiful trees (aesthetic splendor for the feast)","dims":{"axis":"OTHER","sense":"splendor-beauty","role":"aesthetic","coverage":"ib-coded"}},
-    {"ref":"23:41","note":"T2-only (keep the feast 7 days yearly)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"23:43","note":"T2-only (dwelt in booths at the exodus)","dims":{"coverage":"ritual-no-ib-span"}},
-
-    {"ref":"24:2","note":"T2-only (pure oil for the lamp)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:3","strong":"H6186","note":"arakh = Aaron shall ARRANGE the lamps regularly (ritual mechanical)","dims":{"axis":"OTHER","sense":"arrange-lamps","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"24:4","strong":"H2889","note":"tahor = the PURE (gold) lampstand","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"pure","bearer":"object","role":"material-purity","coverage":"ib-coded"}},
-    {"ref":"24:4","strong":"H6186","note":"arakh = arrange the lamps on the pure lampstand (mechanical)","dims":{"axis":"OTHER","sense":"arrange-lamps","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"24:5","note":"T2-only (bake twelve loaves)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:6","strong":"H2889","note":"tahor = set the bread on the PURE table before the LORD","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"pure","bearer":"object","role":"material-purity","coverage":"ib-coded"}},
-    {"ref":"24:7","note":"T2-only (frankincense on the bread)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:8","strong":"H1285","note":"berit = the showbread set out as a perpetual COVENANT","dims":{"axis":"OTHER","sense":"covenant-showbread","role":"covenant-marker","coverage":"ib-coded"}},
-    {"ref":"24:8","strong":"H6186","note":"arakh = arrange the bread every sabbath (mechanical)","dims":{"axis":"OTHER","sense":"arrange-bread","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"24:9","strong":"H6918","note":"qadosh = the bread is MOST HOLY for Aaron and his sons","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"most-holy","bearer":"offering","coverage":"ib-coded"}},
-    {"ref":"24:10","strong":"H5327","note":"natsah = a fight/STRUGGLE broke out in the camp (the blasphemy incident)","dims":{"axis":"SELF","type":"operation","sense":"struggle-fight","operation":"quarrel-fight","bearer":"person","source_domain":"moral","coverage":"ib-coded"}},
-    {"ref":"24:11","note":"T2-only (the blasphemer named)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:12","strong":"H5117","note":"nuach = they put him in custody / LEFT him till the LORD's will was made clear","dims":{"axis":"OTHER","sense":"custody-await","role":"procedural","coverage":"ib-coded"}},
-    {"ref":"24:14","note":"T2-only (stone the blasphemer)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:15","strong":"H2399","note":"chet = whoever curses/blasphemes God shall bear his SIN","dims":{"axis":"SIN_GUILT","polarity":"guilty","type":"status","sense":"sin","bearer":"person","source":"blasphemy-cursing-God","source_domain":"moral","coverage":"ib-coded"}},
-    {"ref":"24:17","strong":"H5315","note":"nephesh = whoever kills a PERSON (a life) shall be put to death","dims":{"axis":"SELF","type":"status","sense":"life-of-a-person","bearer":"person","role":"value-of-life","coverage":"ib-coded"}},
-    {"ref":"24:18","strong":"H5315","note":"nephesh = whoever kills a beast makes it good, LIFE for life","dims":{"axis":"SELF","type":"status","sense":"life-for-life","bearer":"animal","role":"value-of-life","coverage":"ib-coded"}},
-    {"ref":"24:20","strong":"H7667","note":"shever = FRACTURE for fracture, eye for eye (lex talionis)","dims":{"axis":"OTHER","sense":"fracture-lex-talionis","role":"proportional-justice","coverage":"ib-coded"}},
-    {"ref":"24:20","strong":"H5414","note":"natan = as he has injured, so shall be GIVEN to him (retribution)","dims":{"axis":"OTHER","sense":"give-retribution","role":"proportional-justice","coverage":"ib-coded"}},
-    {"ref":"24:21","note":"T2-only (kills beast repays; kills man dies)","dims":{"coverage":"ritual-no-ib-span"}},
-    {"ref":"24:22","strong":"H4941","note":"mishpat = one RULE for sojourner and native alike","dims":{"axis":"OTHER","sense":"one-rule-impartial","role":"legal-manner","coverage":"ib-coded"}},
-    {"ref":"24:23","note":"T2-only (they stoned the blasphemer)","dims":{"coverage":"ritual-no-ib-span"}}
+    {
+      "ref": "23:2",
+      "strong": "H7121",
+      "note": "qara = the appointed feasts you shall PROCLAIM as holy convocations",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "proclaim-feast",
+        "role": "festival-calendar",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:2",
+      "strong": "H4744",
+      "note": "miqra = holy CONVOCATIONS (sacred assemblies)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:3",
+      "strong": "H4744",
+      "note": "miqra = the sabbath a holy convocation of solemn rest",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:4",
+      "strong": "H7121",
+      "note": "qara = proclaim these feasts at their times",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "proclaim-feast",
+        "role": "festival-calendar",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:4",
+      "strong": "H4744",
+      "note": "miqra = holy convocations",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:7",
+      "strong": "H4744",
+      "note": "miqra = first day a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:7",
+      "strong": "H5656",
+      "note": "avodah = do no ordinary/servile WORK (festival rest)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:8",
+      "strong": "H4744",
+      "note": "miqra = seventh day a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:8",
+      "strong": "H5656",
+      "note": "avodah = do no servile work",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:10",
+      "strong": "H5414",
+      "note": "natan = when you reap the land I GIVE you, bring the firstfruits sheaf",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-land",
+        "role": "promise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:11",
+      "strong": "H7522",
+      "note": "ratson = the priest waves the sheaf for your ACCEPTANCE",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "acceptance",
+        "bearer": "offering",
+        "effect": "accepted-before-God",
+        "purpose": "access-enable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:12",
+      "strong": "H8549",
+      "note": "tamim = an unblemished lamb offered with the sheaf",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:13",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:14",
+      "note": "T2-only (eat no bread until the offering)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "23:15",
+      "strong": "H8549",
+      "note": "tamim = count seven COMPLETE/full sabbaths",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "complete-full",
+        "role": "time-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:17",
+      "note": "T2-only (two loaves of firstfruits)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "23:18",
+      "strong": "H8549",
+      "note": "tamim = seven unblemished lambs",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:18",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:19",
+      "strong": "H2403",
+      "note": "chattat = a goat for a sin offering at Weeks",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "sin-offering",
+        "source_domain": "cultic",
+        "reset": "sin-offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:21",
+      "strong": "H7121",
+      "note": "qara = proclaim a holy convocation (Weeks)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "proclaim-feast",
+        "role": "festival-calendar",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:21",
+      "strong": "H4744",
+      "note": "miqra = a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:21",
+      "strong": "H5656",
+      "note": "avodah = do no servile work",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:22",
+      "strong": "H6041",
+      "note": "ani = leave the gleanings for the POOR and the sojourner",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "the-poor",
+        "role": "social-vulnerable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:24",
+      "strong": "H4744",
+      "note": "miqra = a holy convocation (trumpet blast, 7th month)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:25",
+      "strong": "H5656",
+      "note": "avodah = do no servile work",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:27",
+      "strong": "H5315",
+      "note": "nephesh = the Day of Atonement; AFFLICT your souls",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-self",
+        "bearer": "person",
+        "role": "the-worshipper",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:27",
+      "strong": "H3725",
+      "note": "kippurim = it is the Day of ATONEMENT",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "atonement",
+        "bearer": "congregation",
+        "temporal": "recurring",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:27",
+      "strong": "H4744",
+      "note": "miqra = a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:27",
+      "strong": "H6031",
+      "note": "anah = you shall AFFLICT yourselves (self-denial on the Day)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "afflict-soul",
+        "operation": "self-afflict",
+        "bearer": "person",
+        "driver": "command",
+        "person_role": "active",
+        "effect": "self-denial",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:28",
+      "strong": "H3722",
+      "note": "kipper = to make ATONEMENT for you before the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "atone-cover",
+        "operation": "atone",
+        "bearer": "congregation",
+        "reset": "atone-cover",
+        "temporal": "recurring",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:28",
+      "strong": "H3725",
+      "note": "kippurim = a day of atonement",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "atonement",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:29",
+      "strong": "H5315",
+      "note": "nephesh = anyone who does not afflict himself is cut off",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-self",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:29",
+      "strong": "H6031",
+      "note": "anah = whoever does not AFFLICT himself that day is cut off (the affliction is mandatory)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "afflict-soul",
+        "operation": "self-afflict",
+        "bearer": "person",
+        "driver": "command",
+        "person_role": "active",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:30",
+      "strong": "H5315",
+      "note": "nephesh = anyone who works that day - I will destroy that soul",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-self",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:30",
+      "strong": "H5315",
+      "note": "nephesh = that person destroyed from among his people",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-person",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:32",
+      "strong": "H5315",
+      "note": "nephesh = afflict your souls; a sabbath of solemn rest",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-self",
+        "bearer": "person",
+        "role": "the-worshipper",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:32",
+      "strong": "H6031",
+      "note": "anah = AFFLICT yourselves from evening to evening",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "afflict-soul",
+        "operation": "self-afflict",
+        "bearer": "person",
+        "driver": "command",
+        "person_role": "active",
+        "temporal": "permanent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:35",
+      "strong": "H4744",
+      "note": "miqra = first day of Booths a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:35",
+      "strong": "H5656",
+      "note": "avodah = do no servile work",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:36",
+      "strong": "H4744",
+      "note": "miqra = the eighth day a holy convocation",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:36",
+      "strong": "H6116",
+      "note": "atsarah = a solemn ASSEMBLY on the eighth day",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "solemn-assembly",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:36",
+      "strong": "H5656",
+      "note": "avodah = do no servile work",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "servile-work-rest",
+        "role": "festival-rest",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:37",
+      "strong": "H7121",
+      "note": "qara = these are the feasts you proclaim as holy convocations",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "proclaim-feast",
+        "role": "festival-calendar",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:37",
+      "strong": "H4744",
+      "note": "miqra = holy convocations",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy-convocation",
+        "bearer": "congregation",
+        "role": "festival-assembly",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:38",
+      "strong": "H5414",
+      "note": "natan = besides your gifts and freewill offerings you GIVE (mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-offering",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:40",
+      "strong": "H8055",
+      "note": "samach = you shall REJOICE before the LORD your God seven days (worship joy)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "rejoice",
+        "operation": "rejoice-before-God",
+        "bearer": "congregation",
+        "driver": "command",
+        "person_role": "active",
+        "effect": "joy",
+        "role": "worship-response",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:40",
+      "strong": "H1926",
+      "note": "hadar = take the fruit of SPLENDID/beautiful trees (aesthetic splendor for the feast)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "splendor-beauty",
+        "role": "aesthetic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "23:41",
+      "note": "T2-only (keep the feast 7 days yearly)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "23:43",
+      "note": "T2-only (dwelt in booths at the exodus)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:2",
+      "note": "T2-only (pure oil for the lamp)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:3",
+      "strong": "H6186",
+      "note": "arakh = Aaron shall ARRANGE the lamps regularly (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-lamps",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:4",
+      "strong": "H2889",
+      "note": "tahor = the PURE (gold) lampstand",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "pure",
+        "bearer": "object",
+        "role": "material-purity",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:4",
+      "strong": "H6186",
+      "note": "arakh = arrange the lamps on the pure lampstand (mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-lamps",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:5",
+      "note": "T2-only (bake twelve loaves)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:6",
+      "strong": "H2889",
+      "note": "tahor = set the bread on the PURE table before the LORD",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "pure",
+        "bearer": "object",
+        "role": "material-purity",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:7",
+      "note": "T2-only (frankincense on the bread)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:8",
+      "strong": "H1285",
+      "note": "berit = the showbread set out as a perpetual COVENANT",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "covenant-showbread",
+        "role": "covenant-marker",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:8",
+      "strong": "H6186",
+      "note": "arakh = arrange the bread every sabbath (mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-bread",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:9",
+      "strong": "H6918",
+      "note": "qadosh = the bread is MOST HOLY for Aaron and his sons",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "most-holy",
+        "bearer": "offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:10",
+      "strong": "H5327",
+      "note": "natsah = a fight/STRUGGLE broke out in the camp (the blasphemy incident)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "struggle-fight",
+        "operation": "quarrel-fight",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:11",
+      "note": "T2-only (the blasphemer named)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:12",
+      "strong": "H5117",
+      "note": "nuach = they put him in custody / LEFT him till the LORD's will was made clear",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "custody-await",
+        "role": "procedural",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:14",
+      "note": "T2-only (stone the blasphemer)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:15",
+      "strong": "H2399",
+      "note": "chet = whoever curses/blasphemes God shall bear his SIN",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "person",
+        "source": "blasphemy-cursing-God",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:17",
+      "strong": "H5315",
+      "note": "nephesh = whoever kills a PERSON (a life) shall be put to death",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "life-of-a-person",
+        "bearer": "person",
+        "role": "value-of-life",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:18",
+      "strong": "H5315",
+      "note": "nephesh = whoever kills a beast makes it good, LIFE for life",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "life-for-life",
+        "bearer": "animal",
+        "role": "value-of-life",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:20",
+      "strong": "H7667",
+      "note": "shever = FRACTURE for fracture, eye for eye (lex talionis)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fracture-lex-talionis",
+        "role": "proportional-justice",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:20",
+      "strong": "H5414",
+      "note": "natan = as he has injured, so shall be GIVEN to him (retribution)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-retribution",
+        "role": "proportional-justice",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:21",
+      "note": "T2-only (kills beast repays; kills man dies)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "24:22",
+      "strong": "H4941",
+      "note": "mishpat = one RULE for sojourner and native alike",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "one-rule-impartial",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "24:23",
+      "note": "T2-only (they stoned the blasphemer)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "23:31",
+      "note": "T2-only (do no work; a statute forever)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    }
   ]
 }
