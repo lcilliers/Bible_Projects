@@ -1,0 +1,34 @@
+# Exodus 39:1–43 — inner-being passage reading (CON-04-garments-made-as-commanded)
+
+- **Source:** verse-first lexicals over the passage (provenance `exodus-construction-v1-20260705`). The priestly garments are **made** (fulfilling ch28) — mostly *construction*. The genuine note is **structural**, not in a single span: the relentless refrain *"as the LORD had commanded Moses"* (≈8×) and the climax (39:42–43) — **the exact obedience** that answers the golden calf. Read honestly off the *work completed as commanded* (avodah 39:32, 42), with the construction captured and not forced. **Interior in view:** **Israel** (restored fidelity), **Moses** (who sees, and blesses).
+- **Check-back:** gate run post-draft; every non-T2 verse/gloss engaged; the construction repeats (chashav ×2, tahor ×4, avodah ×3) noted honestly.
+
+---
+
+## CON-04-garments-made-as-commanded · Exodus 39:1–43 · [the exact obedience; the work done "as the LORD commanded"] — the garments made, and "Moses blessed them"
+
+**The passage.** The garments made "as the LORD commanded" (39:1); the ephod in **skilled** (chashav) design (39:3); the breastpiece in **skilled** (chashav) work (39:8); **pure** (tahor) gold chains (39:15), bells (39:25); the plate "**Holy** (qodesh) to the LORD" of **pure** (tahor) gold (39:30); "thus all the **work** (avodah) was finished; the people did according to all the LORD commanded" (39:32); the **pure** (tahor) lampstand (39:37), all the utensils for the **service** (avodah, 39:40); "according to all the LORD commanded, so they had done all the **work** (avodah)" (39:42); "Moses saw all the work… as the LORD commanded, so had they done it; then Moses blessed them" (39:43).
+
+### The operations (the genuine note is structural)
+
+- **avodah (work) — the *exact obedience: the work done as commanded* (39:32, 39:42).** "'thus all the **work** (avodah) was finished; the people did according to all that the LORD had commanded Moses'" (39:32); "'according to all the LORD commanded, so they had done all the **work** (avodah)'" (39:42) *(stated)*. **avodah** — *work/labor*: the gem is not a single word but the *structure the word closes* — the chapter's **refrain**, *"as the LORD had commanded Moses"*, sounds ≈8 times (39:1, 5, 7, 21, 26, 29, 31, 42), and the *work* is *twice* declared *done exactly as commanded*. The interior finding: **the restored fidelity** — *the same people who at the calf made what THEY wanted* (*"these are your gods"*, 32:4) now make *exactly what GOD commanded*, in *precise obedience*; the *self-willed making* of ch32 answered by the *God-directed making* of ch39. Obedience *rebuilt* after the breach *(inferred: avodah = the exact obedience — the work done precisely as commanded, the self-willed calf answered by God-directed fidelity)*.
+- **avodah (service) — the *utensils for the service* (39:40).** *avodah distinct from 39:32:* "'all the utensils for the **service** (avodah) of the tabernacle'" *(stated)* — here avodah is the *functional service* the equipment enables (the tabernacle's *use*); the interior-context of *the completed provision for worship* *(inferred: avodah = the service the completed work enables)*.
+- **chashav (skilled design) — the *skill enacted in the garments* (39:3, 39:8).** "'in **skilled** (chashav) design'" (39:3); "the breastpiece in **skilled** (chashav) work" (39:8) *(stated)* — chashav, *devise/design*: the *design-skill* enacted (← 28:6, 15; the Bezalel skill-thread); the interior-context of *the gifted skill carried through to the finish* *(inferred: chashav = the skill enacted in the garments)*.
+- **qodesh (Holy) + tahor (pure) — the *consecrated crown* (39:30).** "'the plate of the **holy** (qodesh) crown of **pure** (tahor) gold: "Holy to the LORD"'" *(stated)* — the *"Holy to the LORD"* plate made (← 28:36); the interior-context of *the consecrated identity worn* (noted; the reading was at 28:36) *(inferred: qodesh/tahor = the consecrated crown — "Holy to the LORD" made)*.
+
+### Construction detail (surfaced honestly, not read)
+
+- **tahor (pure gold)** 39:15, 39:25, 39:37 — the material spec for the chains, bells, and lampstand. Construction.
+- The garment-making (39:2–29) largely carries no non-T2 spans — the ephod, breastpiece, robe, coats, turban made (fulfilling ch28), pure making-detail.
+
+### The web (interactive)
+
+The chapter's genuine movement is *structural and clear*: **the work was done exactly as the LORD commanded** — the refrain drives it home eight times, and the *work* is twice declared *finished as commanded*. And it closes with a deliberate echo: *"Moses saw all the work, and behold, they had done it… then Moses blessed them"* (39:43) — the language of *creation* (*"God saw all that he had made, and behold, it was very good"*, Gen 1:31; the *blessing*). The interior finding: **restored obedience** — the people who *broke faith* at the calf now render *precise fidelity*, and the mediator, *seeing* it complete, *blesses* them.
+
+---
+
+## Chapter-level notes
+- **Surfaced:** **avodah (the *exact obedience* — the work done precisely "as the LORD commanded"; the refrain ≈8×; the self-willed calf answered by God-directed fidelity)**; avodah (the *service* the work enables); chashav (the *skill enacted* in the garments); qodesh/tahor (the *"Holy to the LORD"* crown made). Construction (tahor "pure gold" ×3, the garment-making) noted, not read.
+- **Whose interior:** **Israel** — *restored fidelity* (the precise obedience that answers the calf's self-willed making); **Moses** — who *sees* the completed work and *blesses* the people (the creation-echo). The genuine note is the *exact obedience*, carried by the chapter's structure more than by any single span.
+- **Threads:** **the exact obedience** (39:32, 42 — "as the LORD commanded" ≈8× → the contrast to the calf, 32:4 "these are your gods"; the *self-willed* making answered by *God-directed* making — obedience rebuilt after the breach); **the creation-echo** (39:43 "Moses saw… and behold… and blessed" ← Gen 1:31; 2:3 — the tabernacle a *new creation* / *ordered cosmos*, the maker *seeing* and *blessing*); **the skill-thread** (chashav 39:3,8 ← 28:6; 31:4; 35:35 — enacted to the finish); **the consecrated crown** (qodesh 39:30 ← 28:36 — "Holy to the LORD").
+- **Guarded against:** over-reading the garment-construction (39:2–29) into meaning when it is fulfilment-detail; forcing *tahor* "pure gold" into interior purity; **letting the genuine finding be the *structural* one (the exact obedience, the refrain) without pretending a single span carries it** — the honest reading names *where* the content lives (the repeated "as the LORD commanded" + the closing blessing), anchored on the *work done as commanded* (avodah); not importing the creation-typology as the chapter's *meaning* (the echo flagged, the finding kept to the restored obedience the verses show).
