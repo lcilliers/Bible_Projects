@@ -94,13 +94,6 @@
       }
     },
     {
-      "ref": "25:14",
-      "note": "T2-only (buying/selling to neighbor)",
-      "dims": {
-        "coverage": "ritual-no-ib-span"
-      }
-    },
-    {
       "ref": "25:16",
       "strong": "H7230",
       "note": "rov = the price is by the ABUNDANCE of years (more years, higher price)",
@@ -655,6 +648,52 @@
         "sense": "redemption-price",
         "bearer": "person",
         "role": "redemption-payment",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:10",
+      "strong": "H1865",
+      "note": "deror = proclaim LIBERTY throughout the land (the Jubilee liberty-word, was missed)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "liberty-release",
+        "bearer": "congregation",
+        "effect": "liberty",
+        "role": "jubilee-liberty",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:14",
+      "strong": "H3238",
+      "note": "yanah = do not OPPRESS/wrong one another in trade",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "oppress",
+        "operation": "oppress",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:17",
+      "strong": "H3238",
+      "note": "yanah = do not OPPRESS one another, but fear your God",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "oppress",
+        "operation": "oppress",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
         "coverage": "ib-coded"
       }
     }

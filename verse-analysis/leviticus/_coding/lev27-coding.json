@@ -64,13 +64,6 @@
       }
     },
     {
-      "ref": "27:8",
-      "note": "T2-only (poor person valued by priest)",
-      "dims": {
-        "coverage": "ritual-no-ib-span"
-      }
-    },
-    {
       "ref": "27:9",
       "strong": "H5414",
       "note": "natan = an animal vowed and GIVEN to the LORD becomes holy",
@@ -470,6 +463,34 @@
         "operation": "no-redemption-tithe",
         "bearer": "animal",
         "effect": "irredeemable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:2",
+      "strong": "H5088",
+      "note": "neder = a special VOW (dedicating persons to the LORD)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vow",
+        "operation": "make-vow",
+        "bearer": "person",
+        "role": "volitional-commitment",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:8",
+      "strong": "H5087",
+      "note": "nadar = the VOWER valued by the priest per his means",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vow",
+        "operation": "make-vow",
+        "bearer": "person",
+        "role": "volitional-commitment",
         "coverage": "ib-coded"
       }
     }

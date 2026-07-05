@@ -142,13 +142,6 @@
       }
     },
     {
-      "ref": "18:17",
-      "note": "T2-only",
-      "dims": {
-        "coverage": "ritual-no-ib-span"
-      }
-    },
-    {
       "ref": "18:18",
       "strong": "H2416",
       "note": "chayyim = do not take a wife's sister as a rival during her LIFE",
@@ -1447,17 +1440,166 @@
       }
     },
     {
-      "ref": "19:4",
+      "ref": "19:9",
       "note": "T2-only verse - no inner-being span",
       "dims": {
         "coverage": "ritual-no-ib-span"
       }
     },
     {
-      "ref": "19:9",
-      "note": "T2-only verse - no inner-being span",
+      "ref": "18:17",
+      "strong": "H2154",
+      "note": "zimmah = taking a woman and her daughter is DEPRAVITY/lewdness",
       "dims": {
-        "coverage": "ritual-no-ib-span"
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "lewdness-depravity",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:18",
+      "strong": "H0157",
+      "note": "ahev = you shall LOVE your neighbor as yourself (THE great neighbour-command - was entirely missed)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "love-neighbor",
+        "operation": "love",
+        "bearer": "person",
+        "target": "neighbor",
+        "source_domain": "moral",
+        "driver": "command",
+        "person_role": "active",
+        "effect": "love",
+        "role": "the-great-command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:18",
+      "strong": "H5358",
+      "note": "naqam = you shall not take VENGEANCE (paired with grudge + the love-command)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vengeance",
+        "operation": "avenge-forbidden",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H2666",
+      "note": "chaphash = a betrothed slave woman not yet set FREE",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "freedom-liberty",
+        "bearer": "person",
+        "role": "freedom-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H2668",
+      "note": "chuphshah = FREEDOM not yet given her",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "freedom-liberty",
+        "bearer": "person",
+        "role": "freedom-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:29",
+      "strong": "H2154",
+      "note": "zimmah = lest the land fall to DEPRAVITY (prostituting the daughter)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "lewdness-depravity",
+        "bearer": "land",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:4",
+      "strong": "H6437",
+      "note": "panah = do not TURN to idols (interior turning to idolatry)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-idols",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry",
+        "source_domain": "cultic",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:31",
+      "strong": "H6437",
+      "note": "panah = do not TURN to mediums/necromancers",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-occult",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:6",
+      "strong": "H6437",
+      "note": "panah = the person who TURNS to mediums/necromancers",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-occult",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:17",
+      "strong": "H2617",
+      "note": "chesed(homonym) = incest is a DISGRACE/reproach (here chesed=shame, NOT steadfast-love; Leviticus has NO chesed=steadfast-love)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "disgrace-reproach",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "role": "chesed-homonym-shame",
+        "coverage": "ib-coded"
       }
     }
   ]
