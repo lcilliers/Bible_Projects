@@ -54,6 +54,7 @@
 - [project_cluster_review_backlog_and_m12_method_20260624](project_cluster_review_backlog_and_m12_method_20260624.md) — review-backlog M07/M10/M11/M01/M02; continue M12.
 
 ## Active state
+- [project_leviticus_terminology_study](project_leviticus_terminology_study.md) — Leviticus as TERMINOLOGY study, corpus-native in DB (ve_lexical coding + evidenced findings + catalogue Qs); infra+pilot done.
 
 - [project_genesis_narrative_span_depth_progress](project_genesis_narrative_span_depth_progress.md) — ★ ACTIVE: OT narratives at SPAN DEPTH. Genesis 1-36 (ps916-967) + EXODUS Block 1 (ps968-987) COMPLETE. NEXT = Exodus Block 2 OR parked Joseph. Hardening-ledger + multi-interior lens = standing tools.
 - [project_passage_reading_checkback_gate](project_passage_reading_checkback_gate.md) — MANDATORY per-passage GATE (scripts/_check_passage_reading_coverage); fix, re-file until clean.
