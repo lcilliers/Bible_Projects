@@ -69,4 +69,8 @@ Read together, the cycle is the **schooling of a believing interior**: *called* 
 
 ---
 
-*Filed 2026-07-04. Harvested from the 18 span-depth Abraham readings (prose_section 931–948). Verse-bounded; every movement traceable to named spans. The discipleship-by-revisited-failure spine and the faith-believed-then-proved keystone were surfaced by refusing to lump repeated operations across passages — not imposed.*
+---
+
+*Gate-1 recovery note (2026-07-05):* a span-orphan scan of the Abraham cycle against the full `verse_span_index` found this synthesis **substantially clean** — the two words the scan flags for other cycles were already carried here: **`aheb` LOVE** is named at both the surrendered love of the Aqedah (22:2) and the consoling love of Isaac and Rebekah (24:67, movement 9), and **`chesed` steadfast-love** is a whole movement (5). The one genuine addition is **`avah` — be WILLING (24:5,8):** the servant's twice-raised condition — *"perhaps the woman will not **be willing** (`avah`) to follow me"* — which names the *bride's consent as a real contingency* the mission hangs on, and which movement 8 had carried only through Rebekah's later *"I will go"* (24:58). The willing interior is thus in view from the outset as something that *may or may not consent*, not a foregone yielding. No other genuine inner-being term was missed in this cycle.
+
+*Filed 2026-07-04. Harvested from the 18 span-depth Abraham readings (prose_section 931–948). Verse-bounded; every movement traceable to named spans. The discipleship-by-revisited-failure spine and the faith-believed-then-proved keystone were surfaced by refusing to lump repeated operations across passages — not imposed. **Reviewed 2026-07-05 (Gate-1 recovery):** confirmed clean apart from `avah` (willing), added above.*

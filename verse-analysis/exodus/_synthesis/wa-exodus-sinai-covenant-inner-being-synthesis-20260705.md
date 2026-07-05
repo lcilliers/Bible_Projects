@@ -74,6 +74,19 @@ And the seal is *wholehearted assent* — *"all the LORD has spoken we will do a
 
 ---
 
+## Spine 5 — the recovered vocabulary (Gate-1): love, freedom, and the value of a life
+
+A Gate-1 span-orphan scan (run after the fact, the reading having drawn only on the curated term-seed) recovered several inner-being words the covenant code turns on but the first pass carried only by concept — now onboarded and coded. They cluster, tellingly, around the same seam Spine 4 opened (service chosen in love):
+
+- **`ahev` — LOVE (20:6; 21:5).** The Decalogue grounds covenant loyalty in *love*: God shows steadfast love *"to thousands of those who **love** (`ahev`) me and keep my commandments"* (20:6) — obedience is *love's* expression, not fear's alone (the complement to Spine 2's reverent fear). And the freed slave's choice (Spine 4) is literally an `ahev`-confession: *"I **love** (`ahev`) my master, my wife, my children; I will not go out free"* (21:5) — the synthesis had the *scene* but not its *word*. Naming `ahev` binds the two: the slave who *loves* his master and stays is the interior-mirror of Israel commanded to *love* the God who freed it.
+- **`chophshi` — FREE (21:2,5,26,27).** The counterpoint to the love-choice: the Hebrew slave *"shall go out **free** (`chophshi`)"* in the seventh year (21:2), the very freedom the loving slave *renounces* (21:5), and the freedom *granted* to the slave maimed in eye or tooth (21:26–27). Freedom is the covenant's *default* for the enslaved interior — which makes the love that stays a *chosen* servitude, not a coerced one. (`chophshi` sits on the same REDEEM axis as `gaal`/`yasha` from Block 1 — Exodus's liberty-vocabulary, now registered.)
+- **`naqam` — AVENGE / be-avenged (21:20,21).** The value of the enslaved life named: if a master strikes his slave dead, *"he shall surely be **avenged** (`naqam`)"* (21:20). The covenant sets a *retributive floor* under even the lowest interior — the slave is not property beyond justice; his life is *avenged*. (The same `naqam` that entered as Cain's protection and Lamech's boast in the primeval history, now a *statute protecting the vulnerable*.)
+- **`barak` — BLESS (20:11; 23:25)** and **`shevuah` — OATH (22:11).** Two more: God *"**blessed** (`barak`) the Sabbath day"* (20:11, the creation-blessing carried into the covenant) and promises *"he will **bless** your bread and water"* for undivided service (23:25); and the trust-dispute over a neighbour's goods is settled by *"an **oath** (`shevuah`) before the LORD"* (22:11) — the interior's word *sworn Godward* where evidence fails. And the specific referent-words for *the vulnerable* — `evyon` (needy, 23:6), `dal` (poor, 23:3), `yatom` (orphan) and `almanah` (widow, 22:22) — the objects of the compassion Spine 3(c) traced, are now registered alongside the `anah`/`ani` (afflict/afflicted) the synthesis already carried.
+
+None of these overturns the block's shape; each supplies, in the word that bears it, the *love* that grounds obedience, the *freedom* that makes love a choice, and the *avenging* that dignifies even a slave's life — the covenant reaching, again, past the deed to the interior.
+
+---
+
 ## Threads carried forward / backward
 
 - **The testing arc** (Marah 15:24 → manna 16 → Massah 17:7): the freed interior's trust-failure — *the song fades fast* — carried from the sea's murmuring (14:11) into the wilderness rebellions (Num); *"do not harden as at Meribah"* (Ps 95:8).
@@ -86,4 +99,4 @@ And the seal is *wholehearted assent* — *"all the LORD has spoken we will do a
 
 ---
 
-*Filed as a cross-passage synthesis (.md only, per the primeval/Abraham/Jacob/Joseph and Block-1 precedent — the per-passage readings EXS-01…10 are the DB record, type 108, prose_section 1005–1014).*
+*Filed as a cross-passage synthesis (.md only, per the primeval/Abraham/Jacob/Joseph and Block-1 precedent — the per-passage readings EXS-01…10 are the DB record, type 108, prose_section 1005–1014). **Revised 2026-07-05 (Gate-1 recovery, Spine 5):** the first pass worked only from the curated `wa_verse_records` term-seed and never named `ahev` (love, 20:6; 21:5), `chophshi` (free, 21:2–27), `naqam` (avenge, 21:20), `barak` (bless, 20:11; 23:25), `shevuah` (oath, 22:11), or the vulnerable referent-words (`evyon`/`dal`/`yatom`/`almanah`); all recovered via the `verse_span_index` span-orphan scan, onboarded to `mti_terms`, and folded in.*

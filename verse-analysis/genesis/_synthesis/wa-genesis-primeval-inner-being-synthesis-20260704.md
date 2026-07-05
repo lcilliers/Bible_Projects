@@ -60,6 +60,15 @@ Mortality becomes the interior's *world*: the Sethite formula tolls "**and he di
 ### 10. Self-securing grasp vs God-ward dependence
 The two postures the whole block sets against each other: the self *builds and names* to secure itself (Cain's city, Babel's tower-and-name) and *boasts* (Lamech) — and is *scattered*; over against the interior that *calls on the Name* (4:26), *names its hope in God's appointing* (Seth, 4:25), *waits with hope* (`yachal`, 8:12), and is *remembered* and *kept in covenant*. Self-security produces the dispersion it feared; God-ward dependence is met by God's remembering.
 
+### 11. The recovered vocabulary (Gate-1) — the Spirit that animates, the vengeance that enters
+
+A Gate-1 span-orphan scan (run after the fact, the reading having drawn only on the curated term-seed) recovered two inner-being words the first pass missed, both now onboarded and coded:
+
+- **`ruach` — SPIRIT (1:2; 6:3; 7:15,22; 8:1).** Movement 1 built the interior's constitution on `neshamah` (breath) and `nephesh` (soul) but never named **`ruach`** — though the block opens on it: *"the **Spirit** (`ruach`) of God was hovering over the face of the waters"* (1:2), the divine animating presence before a word is spoken. It returns as the life-breath *in all flesh* (`ruach chayyim`, 7:15,22), as the **wind** God sends to abate the flood (8:1, welded to his *remembering*), and — most pointedly for the interior — as the limit God sets on human life: *"My **Spirit** shall not abide in man forever… his days shall be 120 years"* (6:3). So the human interior is not only *dust + in-breathing*; it is *held in being by God's `ruach`*, and its mortality is that Spirit's withdrawal. This deepens the "reign of death" (movement 9): death is `ruach` no longer abiding.
+- **`naqam` — VENGEANCE (4:15,24).** Movement 5 read Lamech's boast as *self-conscription of an audience*, but the boast's engine is **vengeance**: God first sets a protective **`naqam`** on Cain — *"whoever kills Cain, **vengeance** shall be taken sevenfold"* (4:15), a *restraint* on blood-feud — which Lamech then *seizes and inflates* into a *charter for retaliation* — *"if Cain is **avenged** sevenfold, truly Lamech seventy-sevenfold"* (4:24). Vengeance thus *enters the human interior* in the primeval history as a divine limit *perverted into human boast* — the first appearance of the retributive impulse the later corpus will everywhere regulate. (Jesus' "seventy times seven," Matt 18:22, is the deliberate reversal of Lamech's 4:24.)
+
+Neither word changes the reading's shape; each names a datum the first pass carried only implicitly — the Spirit that constitutes and limits the interior, and the vengeance that enters it.
+
 ---
 
 ## The shape of the primeval interior
@@ -68,4 +77,4 @@ Read together, Genesis 1–11 gives the interior's *origin and fault-line*: **co
 
 ---
 
-*Filed 2026-07-04. Harvested from the 15 span-depth primeval readings (prose_section 915–930). Verse-bounded; every movement traceable to named spans in the readings. The emergent inversion/reversion spine and the two-hearts keystone were surfaced by refusing to lump repeated operations — not imposed.*
+*Filed 2026-07-04. Harvested from the 15 span-depth primeval readings (prose_section 915–930). Verse-bounded; every movement traceable to named spans in the readings. The emergent inversion/reversion spine and the two-hearts keystone were surfaced by refusing to lump repeated operations — not imposed. **Revised 2026-07-05 (Gate-1 recovery, §11):** the first pass worked only from the curated `wa_verse_records` term-seed and missed `ruach` (Spirit/animating breath, 1:2; 6:3) and `naqam` (vengeance, 4:15,24); both recovered via the `verse_span_index` span-orphan scan, onboarded to `mti_terms`, and folded in.*
