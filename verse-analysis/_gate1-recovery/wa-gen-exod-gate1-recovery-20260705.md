@@ -55,11 +55,19 @@
 
 ---
 
-## Execution order (this remediation)
+## Execution order (this remediation) — STATUS
 
-1. **Onboard** all recovered terms into `mti_terms` so they are registered for every book (durable fix — prevents recurrence).
-2. **Re-run the syntheses** (Genesis primeval/Abraham/Jacob/Joseph; Exodus blocks) to fold the recovered terms into the synergies — highest value.
-3. **Revise the specific affected readings** at span-depth (the ~25–30 listed above) — the prose rewrite.
-4. **Method rule:** the Gate-1 span-orphan scan is now step 1 of every book's reading (documented).
+1. ✅ **Onboarded** 27 recovered terms into `mti_terms` (`scripts/_apply_gate1_term_onboard_v1_20260705.py`) — LOVE/redeem/save/free/wrestle/vow/oppress/avenge/bless/sing/the-vulnerable, each assigned to its cluster. Registered for **every book** now.
+2. ✅ **Syntheses re-run** — the synergies. Recovered vocab folded into all 4 Genesis cycle syntheses (Jacob §10, primeval §11, Joseph §10, Abraham reviewed-clean+avah) and both primary Exodus syntheses (deliverance §8, sinai-covenant Spine 5). The 3 remaining Exodus syntheses (tabernacle/construction/goldencalf) were **scanned and confirmed already clean** (they name Spirit-of-wisdom, willing offering, blessing, love).
+3. ◑ **Readings revised at span depth** — the **6 spine-level readings** (where the recovered term is *central to the passage*) were revised in place and re-filed to DB (version 2) + gate-checked CLEAN:
+   - **JAC-15 Peniel** — added `avaq` "wrestle" (the passage's own governing verb, previously unspanned) → prose_section 1033
+   - **JAC-08 Bethel** — added `nadar`/`neder` "vow" → 1037
+   - **JOS-01 favour** — added `ahev` "love" (37:3,4, the cycle's first cause) → 1035
+   - **EXO-01 bondage** — added `chakham` "shrewd" (1:10) + `quts` "dread" (1:12) → 1034
+   - **EXO-05 burning bush** — added `lachats` "oppression" (3:9) → 1039
+   - **EXO-09 I-AM** — added `gaal` "redeem" (6:6) → 1038
+   - **EXO-19 Red Sea** — added `yasha` "saved" (14:30) → 1036
+   - **Remaining readings** (where a recovered term appears as a *secondary occurrence* — e.g. `ahev` at 25:28/29:18 in other Jacob readings, `ruach` at 41:38/45:27, `barak`/`naqam` scattered in the covenant code): these are **captured at synthesis level** (step 2) and by this work-list, and their terms are now registered. In-place per-reading codas for these are a **tracked, lower-priority follow-up** — the central inner-being reading of each affected *passage* is sound; the additions would be secondary mentions. Flagged for optional completion on request.
+4. ✅ **Method rule filed** — `Workflow/Instructions/wa-gate1-span-orphan-audit-method-rule-v1-20260705.md`: the Gate-1 span-orphan scan is now **step 1** of every book's span-depth work. Numbers/Deuteronomy must get it *first* when reached.
 
-*Filed 2026-07-05.*
+*Filed 2026-07-05; status updated same day after execution.*
