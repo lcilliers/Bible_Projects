@@ -2,40 +2,488 @@
   "provenance": "leviticus-lexical-v1",
   "batch": "Leviticus 1-3 - burnt, grain, peace offerings (Phase A pure coding)",
   "occurrences": [
-    {"ref":"1:1","strong":"H7121","note":"the LORD CALLED Moses (narrative frame)","dims":{"axis":"OTHER","sense":"called","role":"narrative-frame","coverage":"ib-coded"}},
-    {"ref":"1:3","strong":"H7522","note":"ratson = a male without blemish, that he may be ACCEPTED before the LORD","dims":{"axis":"ATONE_COVER","type":"status","sense":"acceptance","bearer":"person","effect":"accepted-before-God","purpose":"access-enable","driver":"command","coverage":"ib-coded"}},
-    {"ref":"1:3","strong":"H8549","note":"tamim = the burnt offering must be UNBLEMISHED (offering quality)","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","driver":"command","coverage":"ib-coded"}},
-    {"ref":"1:4","strong":"H7521","note":"ratsah = laying hands on it, it shall be ACCEPTED to make atonement for him","dims":{"axis":"ATONE_COVER","type":"operation","sense":"be-accepted","operation":"accepted","bearer":"person","effect":"accepted-before-God","purpose":"access-enable","coverage":"ib-coded"}},
-    {"ref":"1:4","strong":"H3722","note":"the burnt offering makes ATONEMENT for him (kipper/kaphar)","dims":{"axis":"ATONE_COVER","type":"operation","sense":"atone-cover","operation":"atone","bearer":"person","reset":"atone-cover","driver":"divine-initiative","person_role":"passive","coverage":"ib-coded"}},
-    {"ref":"1:7","strong":"H6186","note":"arakh = arrange the wood on the fire (ritual mechanical)","dims":{"axis":"OTHER","sense":"arrange-wood","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"1:8","strong":"H6186","note":"arakh = arrange the pieces on the wood (ritual mechanical)","dims":{"axis":"OTHER","sense":"arrange-pieces","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"1:9","strong":"H5207","note":"nichoach = a PLEASING AROMA to the LORD (God's pleasure in the offering)","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"1:10","strong":"H8549","note":"tamim = a male without blemish (offering quality)","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"1:10","strong":"H0176","note":"MISTAG: o = conjunction or","dims":{"axis":"OTHER","sense":"conjunction-or","role":"mistag-not-ib","coverage":"ib-coded"}},
-    {"ref":"1:12","strong":"H6186","note":"arakh = arrange the pieces (ritual mechanical)","dims":{"axis":"OTHER","sense":"arrange-pieces","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"1:13","strong":"H5207","note":"nichoach = a pleasing aroma to the LORD","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"1:14","strong":"H0176","note":"MISTAG: o = conjunction or","dims":{"axis":"OTHER","sense":"conjunction-or","role":"mistag-not-ib","coverage":"ib-coded"}},
-    {"ref":"1:16","strong":"H5493","note":"sur = remove the crop with its contents (ritual mechanical)","dims":{"axis":"OTHER","sense":"remove-crop","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"1:17","strong":"H5207","note":"nichoach = a pleasing aroma to the LORD","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-
-    {"ref":"2:1","strong":"H5315","note":"nephesh = when ANYONE (a person) brings a grain offering (the offerer)","dims":{"axis":"SELF","sense":"soul-person","bearer":"person","role":"offerer","coverage":"ib-coded"}},
-    {"ref":"2:2","strong":"H5207","note":"nichoach = a pleasing aroma to the LORD (memorial portion)","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"2:3","strong":"H6944","note":"qodesh = the rest of the grain offering is MOST HOLY","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"most-holy","bearer":"offering","coverage":"ib-coded"}},
-    {"ref":"2:9","strong":"H5207","note":"nichoach = a pleasing aroma to the LORD","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"2:9","strong":"H7311","note":"rum = the memorial portion lifted/taken up (ritual mechanical)","dims":{"axis":"OTHER","sense":"lift-memorial","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"2:10","strong":"H6944","note":"qodesh = most holy (the priests' portion)","dims":{"axis":"HOLY_PROFANE","polarity":"holy","type":"status","sense":"most-holy","bearer":"offering","coverage":"ib-coded"}},
-    {"ref":"2:12","strong":"H5207","note":"nichoach = firstfruits not burned as a pleasing aroma on the altar","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"2:13","strong":"H1285","note":"berit = the SALT OF THE COVENANT on every grain offering","dims":{"axis":"OTHER","sense":"covenant-salt","role":"covenant-marker","coverage":"ib-coded"}},
-
-    {"ref":"3:1","strong":"H8549","note":"tamim = peace offering without blemish (offering quality)","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"3:4","strong":"H5493","note":"sur = remove the fat/kidneys (ritual mechanical)","dims":{"axis":"OTHER","sense":"remove-fat","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"3:5","strong":"H5207","note":"nichoach = a pleasing aroma to the LORD","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}},
-    {"ref":"3:6","strong":"H8549","note":"tamim = without blemish (offering quality)","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"3:6","strong":"H0176","note":"MISTAG: o = conjunction or","dims":{"axis":"OTHER","sense":"conjunction-or","role":"mistag-not-ib","coverage":"ib-coded"}},
-    {"ref":"3:9","strong":"H8549","note":"tamim (complete) = the whole fat tail removed entire (offering quality/completeness)","dims":{"axis":"CLEAN_UNCLEAN","polarity":"clean","type":"status","sense":"unblemished-complete","bearer":"animal","role":"offering-quality","coverage":"ib-coded"}},
-    {"ref":"3:9","strong":"H5493","note":"sur = remove the fat (ritual mechanical)","dims":{"axis":"OTHER","sense":"remove-fat","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"3:10","strong":"H5493","note":"sur = remove the kidneys/fat (ritual mechanical)","dims":{"axis":"OTHER","sense":"remove-fat","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"3:15","strong":"H5493","note":"sur = remove the fat (ritual mechanical)","dims":{"axis":"OTHER","sense":"remove-fat","role":"ritual-mechanical","coverage":"ib-coded"}},
-    {"ref":"3:16","strong":"H5207","note":"nichoach = a pleasing aroma; all fat is the LORD's","dims":{"axis":"ATONE_COVER","type":"status","sense":"pleasing-aroma","bearer":"offering","effect":"divine-pleasure","coverage":"ib-coded"}}
+    {
+      "ref": "1:1",
+      "strong": "H7121",
+      "note": "the LORD CALLED Moses (narrative frame)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "called",
+        "role": "narrative-frame",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:3",
+      "strong": "H7522",
+      "note": "ratson = a male without blemish, that he may be ACCEPTED before the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "acceptance",
+        "bearer": "person",
+        "effect": "accepted-before-God",
+        "purpose": "access-enable",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:3",
+      "strong": "H8549",
+      "note": "tamim = the burnt offering must be UNBLEMISHED (offering quality)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:4",
+      "strong": "H7521",
+      "note": "ratsah = laying hands on it, it shall be ACCEPTED to make atonement for him",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "be-accepted",
+        "operation": "accepted",
+        "bearer": "person",
+        "effect": "accepted-before-God",
+        "purpose": "access-enable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:4",
+      "strong": "H3722",
+      "note": "the burnt offering makes ATONEMENT for him (kipper/kaphar)",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "atone-cover",
+        "operation": "atone",
+        "bearer": "person",
+        "reset": "atone-cover",
+        "driver": "divine-initiative",
+        "person_role": "passive",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:7",
+      "strong": "H6186",
+      "note": "arakh = arrange the wood on the fire (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-wood",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:8",
+      "strong": "H6186",
+      "note": "arakh = arrange the pieces on the wood (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-pieces",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:9",
+      "strong": "H5207",
+      "note": "nichoach = a PLEASING AROMA to the LORD (God's pleasure in the offering)",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:10",
+      "strong": "H8549",
+      "note": "tamim = a male without blemish (offering quality)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:10",
+      "strong": "H0176",
+      "note": "MISTAG: o = conjunction or",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "conjunction-or",
+        "role": "mistag-not-ib",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:12",
+      "strong": "H6186",
+      "note": "arakh = arrange the pieces (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "arrange-pieces",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:13",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma to the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:14",
+      "strong": "H0176",
+      "note": "MISTAG: o = conjunction or",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "conjunction-or",
+        "role": "mistag-not-ib",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:16",
+      "strong": "H5493",
+      "note": "sur = remove the crop with its contents (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "remove-crop",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:17",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma to the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:1",
+      "strong": "H5315",
+      "note": "nephesh = when ANYONE (a person) brings a grain offering (the offerer)",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-person",
+        "bearer": "person",
+        "role": "offerer",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:2",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma to the LORD (memorial portion)",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:3",
+      "strong": "H6944",
+      "note": "qodesh = the rest of the grain offering is MOST HOLY",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "most-holy",
+        "bearer": "offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:9",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma to the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:9",
+      "strong": "H7311",
+      "note": "rum = the memorial portion lifted/taken up (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "lift-memorial",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:10",
+      "strong": "H6944",
+      "note": "qodesh = most holy (the priests' portion)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "most-holy",
+        "bearer": "offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:12",
+      "strong": "H5207",
+      "note": "nichoach = firstfruits not burned as a pleasing aroma on the altar",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "2:13",
+      "strong": "H1285",
+      "note": "berit = the SALT OF THE COVENANT on every grain offering",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "covenant-salt",
+        "role": "covenant-marker",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:1",
+      "strong": "H8549",
+      "note": "tamim = peace offering without blemish (offering quality)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:4",
+      "strong": "H5493",
+      "note": "sur = remove the fat/kidneys (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "remove-fat",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:5",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma to the LORD",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:6",
+      "strong": "H8549",
+      "note": "tamim = without blemish (offering quality)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:6",
+      "strong": "H0176",
+      "note": "MISTAG: o = conjunction or",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "conjunction-or",
+        "role": "mistag-not-ib",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:9",
+      "strong": "H8549",
+      "note": "tamim (complete) = the whole fat tail removed entire (offering quality/completeness)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "unblemished-complete",
+        "bearer": "animal",
+        "role": "offering-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:9",
+      "strong": "H5493",
+      "note": "sur = remove the fat (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "remove-fat",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:10",
+      "strong": "H5493",
+      "note": "sur = remove the kidneys/fat (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "remove-fat",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:15",
+      "strong": "H5493",
+      "note": "sur = remove the fat (ritual mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "remove-fat",
+        "role": "ritual-mechanical",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "3:16",
+      "strong": "H5207",
+      "note": "nichoach = a pleasing aroma; all fat is the LORD's",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "divine-pleasure",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "1:2",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:4",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:5",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:6",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:7",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:15",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "2:16",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "3:3",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "3:14",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "3:17",
+      "note": "T2-only verse (offering procedure) - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    }
   ]
 }
