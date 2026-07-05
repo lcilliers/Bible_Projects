@@ -1,6 +1,6 @@
 ---
 name: project_genesis_narrative_span_depth_progress
-description: "ACTIVE WORK (2026-07-04): reading the OT NARRATIVES for the inner being at SPAN DEPTH (verse-first, span-by-span, gate-checked) - the new narrative/passage-driven method. GENESIS 1-36 COMPLETE (primeval 15 + Abraham 18 + Jacob 19 = 52 readings, prose_section 916-967 type 108, 0 non-T2 gaps, 3 syntheses). NEXT: the Joseph cycle, Gen 37-50."
+description: "ACTIVE WORK (2026-07-05): reading the OT NARRATIVES for the inner being at SPAN DEPTH (verse-first, span-by-span, gate-checked). GENESIS 1-36 COMPLETE (52 readings ps 916-967). EXODUS Block 1 (1:1-15:21) COMPLETE (20 readings EXO-01..20, ps 968-987, provenance exodus-deliverance-v1-20260705, 0 gaps, synthesis). NEXT options: Exodus Block 2 (15:22-24 wilderness+Sinai) OR the parked Joseph cycle (Gen 37-50)."
 metadata: 
   node_type: memory
   type: project
@@ -16,12 +16,22 @@ metadata:
 - 52 readings, ~77,300 words, type 108 `lexical_prose_passage`, every reading GATE-checked.
 - Genesis text fully backfilled (1533/1533). NOTE: cross-passage SYNTHESES are .md-only (git), NOT DB-filed (per primeval/Abraham precedent); the per-passage READINGS are the DB record (type 108). Syntheses in `verse-analysis/genesis/_synthesis/`.
 
+**Progress (EXODUS Block 1 COMPLETE, 2026-07-05):**
+- Ex 1:1-15:21 (Bondage->Call->Deliverance): 20 passages EXO-01..20 (prose_section 968-987, provenance `exodus-deliverance-v1-20260705`), 0 non-T2 gaps, synthesis filed. ~32,950 words.
+- Backfill needed (Ex was 793/1213; backfilled 1-15 via STEP). Exodus text NOT complete beyond ch15 - later blocks need backfill (STEP must be up).
+- **Method additions this block (researcher-steered):** (1) **hardening-ledger** = an empirical per-motif trajectory analysis (`verse-analysis/exodus/_reports/wa-exodus-hardening-trajectory-analysis-20260705.md`) built BEFORE the readings, tabulating every occurrence's AGENT/verb/trigger - answered "why the hardening switched" (self->God at 9:12 AFTER settled self-hardening + counterfeit collapse; relief-triggers-hardening 8:15/9:34; confession-without-fear 9:27->30->34). Reusable pattern for any recurring motif. (2) **multi-interior lens** = read the ADVERSARY's IB (Pharaoh) and the protagonist people's IB (Israel) as DISTINCT contrary arcs, never merged (Pharaoh hardens->judgment; Israel groan->fear/faith->song). Both now standing method for narratives with an antagonist.
+- Exodus block plan (5 blocks): 1 done (1-15:21); 2 wilderness+Sinai (15:22-24); 3 tabernacle-instructions THIN (25-31); 4 golden calf+renewal (32-34); 5 tabernacle-construction THIN (35-40). Block plan + density scan: `verse-analysis/exodus/_seg/wa-exodus-passage-set-block1-*` + `_reports/wa-exodus-density-readiness-scan-*`.
+
 **Tooling (reusable, all built/proven this work):**
 - Filer: `scripts/_apply_file_passage_lexical_prose_v1_20260704.py --book --unit-code --story --live --no-backup` (one reading per unit_code, type 108).
 - Gate (MANDATORY): `scripts/_check_passage_reading_coverage_v1_20260704.py --unit-code=X [--story=path]`.
 - Segmentation loader: `scripts/_apply_load_segmentation_v1_20260703.py --in <json> --live` (idempotent per provenance).
 - Backfill (if a book lacks context verses): `scripts/_apply_backfill_chapter_verses_v1_20260702.py --book --chapter --live --no-backup`.
 
-**NEXT (resume here):** the **Joseph cycle, Gen 37-50** (Joseph sold, Judah/Tamar ch38, Potiphar, dreams/prison, the reconciliation, Jacob's blessing of the sons ch49, the deaths). Same workflow: per-chapter non-T2 density scan (`scripts/_probe...` / the density script pattern in scratchpad) -> cast passages by operation-web -> segmentation JSON (provenance `genesis-joseph-v1-<date>`) -> load -> verify 0 non-T2 gaps -> read passage-by-passage with the gate -> commit every 2-3 -> synthesis (.md). Watch (let emerge): the DEFERRED RECKONINGS land in Gen 49 (Jacob's deathbed words on Reuben/Simeon/Levi ← the silences JAC-17/18); Judah's transformation (ch38 -> ch44 the substitute); Joseph's providence-reading ("you meant evil, God meant good" 50:20 - the natan/God-gave theology matured); dreams; forgiveness. Reusable probe: `scripts/_probe_passage_material_v1_20260704.py --unit-code=X`. Full resumption guide: `verse-analysis/genesis/_reports/wa-session-log-20260704-genesis-narrative-span-depth.md` (update it for Joseph).
+**NEXT (resume here) - two open fronts, ask researcher which:**
+- **(A) Exodus Block 2, Gen... Ex 15:22-24** (Marah/manna/water/Amalek/Jethro; Sinai theophany; the Decalogue; the Book of the Covenant; covenant ratified). Backfill Ex 16-24 first (STEP up). Watch: Israel's IB continues (the murmuring/testing arc past the sea - the song fades fast at Marah 15:24); the LAW as inner-being (coveting 20:17; "you know the heart of a sojourner" 23:9; the fear-of-God at Sinai). Then Block 4 (golden calf 32-34, narrative-rich) is the next gem; Blocks 3+5 (tabernacle) THIN.
+- **(B) the parked Joseph cycle, Gen 37-50** (never done - researcher jumped Genesis->Exodus). Watch: DEFERRED RECKONINGS land Gen 49 (Jacob on Reuben/Simeon/Levi ← silences JAC-17/18); Judah's transformation (ch38->ch44); Joseph's providence-reading "you meant evil, God meant good" 50:20 (the natan/God-gave theology matured); dreams; forgiveness.
+
+Same workflow either way: density scan (scratchpad `exodus_readiness.py`/`exodus_spans.py` patterns, or the genesis density pattern) -> cast passages -> segmentation JSON -> load -> verify 0 gaps -> read with the gate (+ hardening-ledger-style motif analysis + multi-interior lens where an antagonist exists) -> commit every 2-3 -> synthesis (.md). Reusable probe: `scripts/_probe_passage_material_v1_20260704.py --unit-code=X`. Exodus resumption guide/log: `verse-analysis/exodus/_synthesis/wa-exodus-deliverance-inner-being-synthesis-20260705.md` + the block-1 review doc.
 
 **Related open loop:** [[project_prophets_wisdom_read_at_movement_depth_debt]] - the poetic/prophetic chapter readings need an additive span-depth pass later (parked).
