@@ -39,7 +39,23 @@ Counting `ve_lexical.gate='1-primary'` spans per book (where the real Gate-1 ind
 - **Exodus** narrative readings (type 108) — same. **Gate 1 not in operation.**
 - **Leviticus** terminology study (ve_lexical) — built from `wa_verse_records`. **Gate 1 not in operation** (now fixed — see §3).
 
-So the honest answer: **for the entire span-depth programme to date (Genesis, Exodus, Leviticus), Gate 1 was not in operation.** Un-registered inner-being terms could have been missed in all three. `ahev` "love" is the clearest example — it is un-registered, and it appears not only in Lev 19:18 (the neighbour-command, which my Leviticus study missed) but pervasively in Genesis and Exodus ("Isaac loved… Jacob loved Rachel… you shall love the LORD") — so the Genesis/Exodus readings are exposed to the same gap.
+So the honest answer: **for my span-depth work in the TORAH (Genesis, Exodus narrative; Leviticus terminology), Gate 1 was not in operation** — all three were built from the curated `wa_verse_records` seed.
+
+### Were the prophets skipped? — NO (verified)
+
+I checked, rather than assumed. Gate 1 (the `lexical-model-2026` index scan) **ran** on the Wisdom/Poetry/Prophets, and the recovered vocabulary **is** captured there — e.g. `ahev` "love" is coded **207×** in Psalms, 150× in Proverbs, 53× in Isaiah, 86× in Hosea, drawn straight from the index (Psalms `wa_verse_records` registers `ahev` only once, so the gate demonstrably caught the orphans). And my **poetic/prophetic reading method itself queries `verse_span_index`** (the full word index), not just the seed. So the prophets/wisdom were **index-driven and are sound** at the lexical level. (Their *prose* was written at movement-depth; a span-depth pass for them is a separately-logged debt — `project_prophets_wisdom_read_at_movement_depth_debt` — but that is a granularity choice, not a missing-word gap.)
+
+### The actual blast radius (quantified)
+
+The gap is therefore confined to the **Torah narrative + Leviticus.** Running the same span-orphan candidate scan:
+
+| Book | status | genuine missed inner-being terms | headline misses |
+|---|---|---|---|
+| **Genesis** | span-depth read | ~6–8 (of 31 candidates) | **`ahev` LOVE (14 tokens** — Isaac/Esau, Jacob/Rachel, Israel/Joseph), `ruach` spirit (10), `abaq` **wrestle** (Peniel!), forget, be-willing |
+| **Exodus** | span-depth read | ~6–8 (of 38 candidates) | `barak` **bless** (6), `ashaq` **oppress** (3 — the bondage), `chamad` desire (3), `chuphshah` free, `ruach` spirit-of-wisdom |
+| **Leviticus** | FIXED | 13 recovered, coded | love, liberty, vow, redeem, oppress… (see §3) |
+
+So it is **bounded and specific** — a handful of genuine terms per book, concentrated in identifiable passages (love in the patriarchal narratives; oppression in the bondage; wrestle at Peniel; spirit-of-wisdom in the tabernacle) — **not "all the prose."**
 
 ---
 
