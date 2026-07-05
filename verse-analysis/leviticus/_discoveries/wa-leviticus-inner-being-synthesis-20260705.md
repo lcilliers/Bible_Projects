@@ -52,6 +52,8 @@ The driver-coding is stark: cleanness is **never** driven by the self's own desi
 
 Everywhere else the ritual acts on the self from *outside*; here the self acts. **These two moments — affliction and the confessing, humbled heart — are the inner being in operation at its fullest, and they are the hinge on which mercy swings.**
 
+*Correction (Gate-1 recovery):* an initial pass, working only from the curated term-index, had missed the book's **volitional and relational vocabulary** because those words were never registered as terms. A span-orphan scan recovered them, and they enlarge this picture decisively: the self is not only *positioned* and *acted-upon* — it is **summoned to LOVE** (`ahev`, "love your neighbour as yourself," 19:18; "love the sojourner," 19:34), **freed into LIBERTY** (`deror`, the Jubilee proclamation, 25:10) and **freedom** (`chuphshah`, 19:20), and **binds itself by VOW** (`neder`, the will's self-commitment to God). So alongside affliction and repentance, three more genuinely *active* movements of the inner being stand in Leviticus — **loving, being freed, and vowing** — the relational and volitional life the first pass had dropped. (Note: `chesed` "steadfast-love" does not occur in Leviticus; its lone instance, 20:17, is the homonym "disgrace.")
+
 ---
 
 ## 7. The mechanism: atonement by a life
