@@ -49,12 +49,16 @@ def _wr01(conn, file_id: int, registry_id: int) -> dict:
 def _wr02(conn, file_id: int, registry_id: int) -> dict:
     """wa_file_index single row for v9 words (is_split = 0). Legacy split words exempt."""
     rows = conn.execute(
-        "SELECT id, is_split FROM wa_file_index WHERE registry_id = ?",
+        "SELECT id, is_split, phase FROM wa_file_index WHERE registry_id = ?",
         (str(registry_id),),
     ).fetchall()
     # If any row is a legacy split word (is_split != 0), exempt from single-row check.
     if any(r["is_split"] not in (0, None) for r in rows):
         return _pass("WR-02", "legacy split word — multi-row exempt")
+    # Additive onboarding (audit_word --add-terms) creates a separate isolated file per
+    # batch — a legitimate multi-file registry, exempt from the single-row check.
+    if any("add-terms" in (r["phase"] or "") for r in rows):
+        return _pass("WR-02", "additive onboarding file(s) present — multi-row exempt")
     if len(rows) == 1:
         return _pass("WR-02")
     return _fail_stop("WR-02", f"Expected 1 wa_file_index row, found {len(rows)}")

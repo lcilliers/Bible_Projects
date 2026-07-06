@@ -1522,6 +1522,9 @@ def run_audit_word(
     skip_span_backpop: bool = False,   # deprecated; retained for CLI compat
     fetch_step: bool = False,          # auto-generate the Step 1 extract from STEP if absent
     anchors: str | None = None,        # anchor Strong's passed to the auto-extract
+    add_terms: bool = False,           # ADDITIVE mode: onboard the extract's terms into an EXISTING
+                                       # registry via a fresh ISOLATED file, leaving existing terms
+                                       # untouched (no whole-registry re-audit / delete-flagging)
 ) -> dict:
     """Execute AUDIT_WORD mode for a single registry entry.
 
@@ -1619,45 +1622,74 @@ def run_audit_word(
             print(f"  │  {ln}")
         print(f"  └──────────────────────────────────────────────────────────\n")
 
-    # Look up file_index: try registry_id (as used by import) first, then id FK
-    fi_rows = conn.execute(
-        "SELECT id FROM wa_file_index WHERE registry_id = ?",
-        (str(registry_id),),
-    ).fetchall()
-    if not fi_rows:
-        fi_rows = conn.execute(
-            "SELECT id FROM wa_file_index WHERE word_registry_fk = ?",
-            (reg_row["id"],),
-        ).fetchall()
-    if not fi_rows:
-        # Also try with the word_registry.id value in case no/id differ
-        fi_rows = conn.execute(
-            "SELECT id FROM wa_file_index WHERE registry_id = ?",
-            (str(reg_row["id"]),),
-        ).fetchall()
-
-    if not fi_rows:
+    if add_terms:
+        # ── ADDITIVE onboarding ──────────────────────────────────────────────
+        # Create a FRESH, ISOLATED file for the extract's terms and scope the whole
+        # audit to it. Because every downstream stream (gap/A6/A7/A8/A9) is scoped to
+        # file_ids, the registry's EXISTING files/terms are never in scope — so no
+        # DB_ONLY_TERM delete-flagging and no A8 churn on existing terms. The new terms
+        # still carry owning_registry_fk = this registry (line ~823), so they belong to it.
         if dry_run:
             return _stop(
-                f"A1: No wa_file_index for registry {registry_id} (new word). "
-                "Run live (without --dry-run) to create the onboarding stub + bypass FK."
+                "A1(--add-terms): additive onboarding needs a live run to create the "
+                "isolated additions file. Re-run without --dry-run (integrity-gated)."
             )
-        # Onboarding (replaces the retired new_word step): create a file_index STUB — the legacy gate only.
-        # The AUTHORITATIVE registry linkage is the bypass FK word_registry_fk, which verses/terms carry
-        # directly. No manual new_word run, no file_index joins.
-        _stub_filename = f"WA-{str(reg_row['id']).zfill(3)}-{word.lower().replace(' ', '_')}-audit_word_stub-{_today()}.json"
+        _add_fn = (f"WA-{str(reg_row['id']).zfill(3)}-{word.lower().replace(' ', '_')}"
+                   f"-gate1_add-{run_id}.json")
         conn.execute(
             "INSERT INTO wa_file_index (registry_id, word_registry_fk, word, filename, phase, schema_version, "
             "produced_date, revision_note, last_changed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (str(reg_row["id"]), reg_row["id"], word, _stub_filename, "Phase 1 (audit_word stub)",
+            (str(reg_row["id"]), reg_row["id"], word, _add_fn, "Phase 1 (audit_word add-terms)",
              EXPECTED_SCHEMA_VERSION, _today(),
-             "auto-stub by audit_word onboarding; bypass FK word_registry_fk is authoritative", _now()))
+             "additive onboarding file (audit_word --add-terms); isolated scope; bypass FK authoritative", _now()))
         conn.commit()
         fi_rows = conn.execute(
-            "SELECT id FROM wa_file_index WHERE registry_id = ?", (str(reg_row["id"]),)).fetchall()
-        print(f"     A1: created file_index stub for new word '{word}' (registry {reg_row['id']}) — bypass FK authoritative")
-    file_ids = [r["id"] for r in fi_rows]
-    print(f"     Word: {word}  |  file_id(s): {file_ids}")
+            "SELECT id FROM wa_file_index WHERE filename = ?", (_add_fn,)).fetchall()
+        if not fi_rows:
+            return _stop("A1(--add-terms): failed to create/find the additions file")
+        file_ids = [r["id"] for r in fi_rows]
+        print(f"     [ADD-TERMS] isolated additions file_id: {file_ids}  "
+              f"(existing registry {reg_row['id']} files left untouched)")
+    else:
+        # Look up file_index: try registry_id (as used by import) first, then id FK
+        fi_rows = conn.execute(
+            "SELECT id FROM wa_file_index WHERE registry_id = ?",
+            (str(registry_id),),
+        ).fetchall()
+        if not fi_rows:
+            fi_rows = conn.execute(
+                "SELECT id FROM wa_file_index WHERE word_registry_fk = ?",
+                (reg_row["id"],),
+            ).fetchall()
+        if not fi_rows:
+            # Also try with the word_registry.id value in case no/id differ
+            fi_rows = conn.execute(
+                "SELECT id FROM wa_file_index WHERE registry_id = ?",
+                (str(reg_row["id"]),),
+            ).fetchall()
+
+        if not fi_rows:
+            if dry_run:
+                return _stop(
+                    f"A1: No wa_file_index for registry {registry_id} (new word). "
+                    "Run live (without --dry-run) to create the onboarding stub + bypass FK."
+                )
+            # Onboarding (replaces the retired new_word step): create a file_index STUB — the legacy gate only.
+            # The AUTHORITATIVE registry linkage is the bypass FK word_registry_fk, which verses/terms carry
+            # directly. No manual new_word run, no file_index joins.
+            _stub_filename = f"WA-{str(reg_row['id']).zfill(3)}-{word.lower().replace(' ', '_')}-audit_word_stub-{_today()}.json"
+            conn.execute(
+                "INSERT INTO wa_file_index (registry_id, word_registry_fk, word, filename, phase, schema_version, "
+                "produced_date, revision_note, last_changed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (str(reg_row["id"]), reg_row["id"], word, _stub_filename, "Phase 1 (audit_word stub)",
+                 EXPECTED_SCHEMA_VERSION, _today(),
+                 "auto-stub by audit_word onboarding; bypass FK word_registry_fk is authoritative", _now()))
+            conn.commit()
+            fi_rows = conn.execute(
+                "SELECT id FROM wa_file_index WHERE registry_id = ?", (str(reg_row["id"]),)).fetchall()
+            print(f"     A1: created file_index stub for new word '{word}' (registry {reg_row['id']}) — bypass FK authoritative")
+        file_ids = [r["id"] for r in fi_rows]
+        print(f"     Word: {word}  |  file_id(s): {file_ids}")
 
     if interactive:
         confirm = input(
@@ -1868,6 +1900,22 @@ def run_audit_word(
     upsert_checkpoint(conn, run_id, "FLAG_STREAM", "complete", rows_written=flag_ct)
     print(f"     A8: {flag_ct} quality flag(s) written.  Phase 2 flags NOT touched.")
 
+    # ── A8b: ADD-TERMS finishing fields (new terms only) ──────────────────────
+    if add_terms:
+        conn.execute(
+            f"UPDATE wa_term_inventory SET term_owner_type = COALESCE(term_owner_type, 'OWNER') "
+            f"WHERE file_id IN ({fid_ph})", file_ids)
+        _codes = [t.get("code") for t in include_terms if t.get("code")]
+        if _codes:
+            _cph = ",".join("?" * len(_codes))
+            conn.execute(
+                f"UPDATE mti_terms SET status = COALESCE(status, 'extracted'), delete_flagged = 0 "
+                f"WHERE owning_registry_fk = ? AND strongs_number IN ({_cph})",
+                [reg_row["id"], *_codes])
+        conn.commit()
+        print("     A8b: [ADD-TERMS] OWNER / status=extracted / delete_flagged=0 set on new terms "
+              "(cluster_code left NULL — assign per mapping)")
+
     # ── A9: Audit checks ──────────────────────────────────────────────────────
     print("\nA9  Running audit checks (WR-01–WR-20)...")
     audit_result = run_audit(conn, file_ids[0], registry_id)
@@ -1931,13 +1979,25 @@ def run_audit_word(
             (_cov(testaments), fid),
         )
 
+    # Count scope: in ADD-TERMS mode the registry totals must reflect ALL its files
+    # (existing + the new isolated additions file), else they'd be clobbered with just
+    # the added terms. Normal mode counts over the audited file_ids as before.
+    if add_terms:
+        _all_fi = conn.execute(
+            "SELECT id FROM wa_file_index WHERE registry_id = ? OR word_registry_fk = ?",
+            (str(reg_row["id"]), reg_row["id"])).fetchall()
+        count_fids = sorted({r["id"] for r in _all_fi} | set(file_ids))
+    else:
+        count_fids = list(file_ids)
+    count_ph = ",".join("?" * len(count_fids))
+
     # strongs_list: sorted by verse count desc
     sl_rows = conn.execute(
         f"SELECT term_id, COUNT(*) AS cnt FROM wa_verse_records "
-        f"WHERE file_id IN ({fid_ph}) AND span_strong_match = 1 "
+        f"WHERE file_id IN ({count_ph}) AND span_strong_match = 1 "
         f"AND (delete_flagged = 0 OR delete_flagged IS NULL) "
         f"GROUP BY term_id ORDER BY cnt DESC",
-        file_ids,
+        count_fids,
     ).fetchall()
     strongs_list = json.dumps(
         [{"strong": r["term_id"], "count": r["cnt"]} for r in sl_rows]
@@ -1946,15 +2006,15 @@ def run_audit_word(
     # Counts (active only)
     verse_count = conn.execute(
         f"SELECT COUNT(*) AS c FROM wa_verse_records "
-        f"WHERE file_id IN ({fid_ph}) AND span_strong_match = 1 "
+        f"WHERE file_id IN ({count_ph}) AND span_strong_match = 1 "
         f"AND (delete_flagged = 0 OR delete_flagged IS NULL)",
-        file_ids,
+        count_fids,
     ).fetchone()["c"]
     term_count = conn.execute(
         f"SELECT COUNT(*) AS c FROM wa_term_inventory "
-        f"WHERE file_id IN ({fid_ph}) "
+        f"WHERE file_id IN ({count_ph}) "
         f"AND (delete_flagged = 0 OR delete_flagged IS NULL)",
-        file_ids,
+        count_fids,
     ).fetchone()["c"]
 
     # Notes: append audit summary (do not replace existing notes)
@@ -1982,27 +2042,42 @@ def run_audit_word(
     # Set session_b_status to 'Ready for Analysis' if audit passed/reviewed
     sb_status = "Ready for Analysis" if final_status == "Complete" else None
 
-    conn.execute(
-        """UPDATE word_registry SET
-               phase1_status       = ?,
-               phase1_term_count   = ?,
-               phase1_verse_count  = ?,
-               last_automation_run = ?,
-               automation_run_id   = ?,
-               strongs_list        = ?,
-               notes               = ?,
-               session_b_status    = COALESCE(session_b_status, ?)
-           WHERE no = ?""",
-        (
-            final_status, term_count, verse_count,
-            AUDITED_SENTINEL,    # ← 'AUDITED' sentinel, not a datetime
-            run_id,
-            strongs_list,
-            new_notes,
-            sb_status,
-            registry_id,
-        ),
-    )
+    if add_terms:
+        # ADD-TERMS: refresh counts/strongs_list/notes only — PRESERVE the existing
+        # phase1_status and session_b_status of the (already-worked) registry.
+        conn.execute(
+            """UPDATE word_registry SET
+                   phase1_term_count   = ?,
+                   phase1_verse_count  = ?,
+                   last_automation_run = ?,
+                   automation_run_id   = ?,
+                   strongs_list        = ?,
+                   notes               = ?
+               WHERE no = ?""",
+            (term_count, verse_count, AUDITED_SENTINEL, run_id, strongs_list, new_notes, registry_id),
+        )
+    else:
+        conn.execute(
+            """UPDATE word_registry SET
+                   phase1_status       = ?,
+                   phase1_term_count   = ?,
+                   phase1_verse_count  = ?,
+                   last_automation_run = ?,
+                   automation_run_id   = ?,
+                   strongs_list        = ?,
+                   notes               = ?,
+                   session_b_status    = COALESCE(session_b_status, ?)
+               WHERE no = ?""",
+            (
+                final_status, term_count, verse_count,
+                AUDITED_SENTINEL,    # ← 'AUDITED' sentinel, not a datetime
+                run_id,
+                strongs_list,
+                new_notes,
+                sb_status,
+                registry_id,
+            ),
+        )
     conn.commit()
 
     counts["words_complete"] = 1

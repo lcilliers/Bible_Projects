@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "english_anchor": "corruption",
+    "generated": "2026-07-06",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "H0444"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 3,
+    "summary_by_group": {
+      "G1": 1,
+      "G3": 2
+    },
+    "include_codes": [
+      "H0444"
+    ],
+    "exclude_codes": [
+      "H0473G",
+      "H0473H"
+    ],
+    "registry": {
+      "id": 31,
+      "no": 31,
+      "word": "corruption",
+      "source_list": "High Confidence",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=18  verses=319  run_id=RUN-20260328_140517-AUDIT_WORD",
+      "automation_eligible": 1,
+      "last_automation_run": "AUDITED",
+      "automation_run_id": "RUN-20260328_140517-AUDIT_WORD",
+      "phase1_term_count": 18,
+      "phase1_verse_count": 319,
+      "strongs_list": "[{\"strong\": \"H7843\", \"count\": 135}, {\"strong\": \"H7585\", \"count\": 64}, {\"strong\": \"H7848\", \"count\": 28}, {\"strong\": \"H7845G\", \"count\": 13}, {\"strong\": \"G1067\", \"count\": 12}, {\"strong\": \"H4889\", \"count\": 12}, {\"strong\": \"G0086\", \"count\": 10}, {\"strong\": \"H7845H\", \"count\": 10}, {\"strong\": \"G5356\", \"count\": 8}, {\"strong\": \"G5351\", \"count\": 7}, {\"strong\": \"G1312\", \"count\": 6}, {\"strong\": \"G1311\", \"count\": 5}, {\"strong\": \"H0516\", \"count\": 4}, {\"strong\": \"G5020\", \"count\": 1}, {\"strong\": \"H4892\", \"count\": 1}, {\"strong\": \"H4893A\", \"count\": 1}, {\"strong\": \"H4893B\", \"count\": 1}, {\"strong\": \"H7851H\", \"count\": 1}]",
+      "description": "Corruption is the process by which something good decays from the inside — not destroyed from without but rotting from within. The Hebrew and Greek vocabulary covers physical decay (the body returning to dust, the pit) and moral corruption (the inner person becoming rotten, perverted, given over to evil). The body's corruption is one of Paul's key images for what the resurrection reverses. Moral corruption is the steady undoing of the image of God in a person through persistent sin.",
+      "origin": "original_list",
+      "dimensions": "Moral/Conscience",
+      "inference_note": null,
+      "session_b_status": "Verse Context Reset",
+      "cluster_assignment": "C11",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1,
+      "unique_term_count": 17,
+      "shared_term_count": 1,
+      "term_sharing_ratio": 0.056,
+      "verse_context_status": "Complete",
+      "dim_review_status": null,
+      "dim_review_version": null,
+      "word_synopsis": null
+    }
+  },
+  "terms": [
+    {
+      "code": "H0444",
+      "gloss": "to corrupt",
+      "transliteration": "a.lach",
+      "script_form": "אָלַח",
+      "language": "Hebrew",
+      "vocab_count": 3,
+      "medium_def": "(Niphal) to be corrupt morally, tainted",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H0473G",
+          "form": "אֱלִישָׁה",
+          "gloss": "Elishah",
+          "translit": "e.li.shah"
+        },
+        {
+          "strong": "H0473H",
+          "form": "אֱלִישָׁה",
+          "gloss": "Elishah",
+          "translit": "e.li.shah"
+        }
+      ],
+      "raw_related_numbers": "H0473, H0473",
+      "freq_list": "3;3;4@3;3;3;2;2;2;3;3;5@3;3;;3;3;3;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H0444",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H0444 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 3,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Job.15.16",
+          "ref": "Job 15:16",
+          "book_code": "Job",
+          "chapter": 15,
+          "verse_num": 16,
+          "esv_text": "Job 15:16 how much less one who is abominable and corrupt , a man who drinks injustice like water !",
+          "target_word": "corrupt",
+          "testament": "OT",
+          "fetched_under_code": "H0444",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.15.16' class='verseLink'><span class='verseNumber'>Job 15:16</span></a> <span class='level1'></span> <span morph='HTj' strong='H0637'>how</span> much <span morph='HTc' strong='H3588A'>less</span> one who is <span morph='HVNrmsa' strong='H8581'>abominable</span> and  <span morph='HVNrmsa' strong='H0444'>corrupt</span>,<br /><span class='level2'></span>a <span morph='HNcmsa' strong='H0376G'>man</span> who  <span morph='HVqrmsa' strong='H8354'>drinks</span> <span morph='HNcfsa' strong='H5766B'>injustice</span> like <span morph='HNcmpa HRd' strong='H4325G H9004'>water</span>!<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H0444",
+          "span_label_found": "to corrupt",
+          "context_before": "one who is abominable and",
+          "context_after": ", a man who drinks"
+        },
+        {
+          "osisId": "Ps.14.3",
+          "ref": "Psa 14:3",
+          "book_code": "Ps",
+          "chapter": 14,
+          "verse_num": 3,
+          "esv_text": "Psa 14:3 They have all turned aside ; together they have become corrupt; there is none who does good , not even one .",
+          "target_word": "become",
+          "testament": "OT",
+          "fetched_under_code": "H0444",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.14.3' class='verseLink'><span class='verseNumber'>Psa 14:3</span></a> <span class='level1'></span>They have <span morph='HNcmsa HTd' strong='H3605 H9009'>all</span> <span morph='HVqp3ms' strong='H5493I'>turned aside</span>; <span morph='HD' strong='H3162B'>together</span> they have <span morph='HVNp3cp' strong='H0444'>become</span>  corrupt;<br /><span class='level2'></span>there is none who <span morph='HVqrmsc HNcmsc' strong='H6213A H0369'>does</span> <span morph='HAamsa' strong='H2896B'>good</span>,<br /><span class='level2'></span><span morph='HNcmsc' strong='H0369'>not</span> even <span morph='HNcfsa HD' strong='H0259 H1571'>one</span>.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H0444",
+          "span_label_found": "to corrupt",
+          "context_before": "aside ; together they have",
+          "context_after": "corrupt; there is none who"
+        },
+        {
+          "osisId": "Ps.53.3",
+          "ref": "Psa 53:3",
+          "book_code": "Ps",
+          "chapter": 53,
+          "verse_num": 3,
+          "esv_text": "Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one .",
+          "target_word": "become corrupt",
+          "testament": "OT",
+          "fetched_under_code": "H0444",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.53.3' class='verseLink'><span class='verseNumber'>Psa 53:3</span></a> <span class='level1'></span>They have <span morph='HNcmsc' strong='H3605'>all</span> <span morph='HVqp3ms HSp3ms' strong='H5472 H9023'>fallen away</span>;<br /><span class='level2'></span><span morph='HD' strong='H3162B'>together</span> they have <span morph='HVNp3cp' strong='H0444'>become corrupt</span>;<br /><span class='level1'></span>there is <span morph='HNcmsc' strong='H0369'>none</span> who <span morph='HVqrmsc' strong='H6213A'>does</span> <span morph='HAamsa' strong='H2896B'>good</span>,<br /><span class='level2'></span><span morph='HNcmsc' strong='H0369'>not</span> <span morph='HD' strong='H1571'>even</span> <span morph='HNcfsa' strong='H0259'>one</span>.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H0444",
+          "span_label_found": "to corrupt",
+          "context_before": "away ; together they have",
+          "context_after": "; there is none who"
+        }
+      ]
+    },
+    {
+      "code": "H0473G",
+      "gloss": "Elishah",
+      "transliteration": "e.li.shah",
+      "script_form": "אֱלִישָׁה",
+      "language": "Hebrew",
+      "vocab_count": 2,
+      "medium_def": "A man of the Greeks living at the time of the Patriarchs, first mentioned at Gen.10.4; \nonly referred to as Elishah (אֱלִישָׁה); \nson of Javan; \na brother of Tarshish, Kittim and Dodanim. § descendant of Noah, son of Javan; perhaps ancestor of the Aeolians",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [],
+      "raw_related_numbers": "",
+      "freq_list": "2;2;2;2;2;2;2;2;2;2;2;2;;2;2;2;1;1",
+      "is_proper_noun": true,
+      "is_sub_gloss": false,
+      "step_parent_code": "H0444",
+      "step_section_type": "related_term",
+      "decision_group": "G3",
+      "action": "exclude",
+      "decision_reason": "F1: is_proper_noun=true",
+      "verses_fetched": false,
+      "verse_count": null,
+      "testament_coverage": null,
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": []
+    },
+    {
+      "code": "H0473H",
+      "gloss": "Elishah",
+      "transliteration": "e.li.shah",
+      "script_form": "אֱלִישָׁה",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "A location in Cyprus first mentioned at Num.24.24; \nreferred to as Cyprus or Kittim (KJV= Chittim, NIV= Cyprus) or Kittim (KJV= Chittim, NIV= \"western coastlands\") (כִּתִּי), or Elishah (אֱלִישָׁה), or Cyprus (Κύπριος), or Cyprus (Κύπρος). § descendant of Noah, son of Javan; perhaps ancestor of the Aeolians",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "G2953",
+          "form": "Κύπριος",
+          "gloss": "Cyprus",
+          "translit": "kuprios"
+        },
+        {
+          "strong": "G2954",
+          "form": "Κύπρος",
+          "gloss": "Cyprus",
+          "translit": "kupros"
+        },
+        {
+          "strong": "H0473G",
+          "form": "אֱלִישָׁה",
+          "gloss": "Elishah",
+          "translit": "e.li.shah"
+        },
+        {
+          "strong": "H3794G",
+          "form": "כִּתִּי",
+          "gloss": "Kittim",
+          "translit": "kit.ti"
+        },
+        {
+          "strong": "H3794H",
+          "form": "כִּתִּי",
+          "gloss": "Cyprus",
+          "translit": "kit.ti"
+        }
+      ],
+      "raw_related_numbers": "H3794, H3794, G2953, G2954, H0473, ",
+      "freq_list": "1;1;1;1;1;1;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": true,
+      "is_sub_gloss": false,
+      "step_parent_code": "H0444",
+      "step_section_type": "related_term",
+      "decision_group": "G3",
+      "action": "exclude",
+      "decision_reason": "F1: is_proper_noun=true",
+      "verses_fetched": false,
+      "verse_count": null,
+      "testament_coverage": null,
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": []
+    }
+  ]
+}

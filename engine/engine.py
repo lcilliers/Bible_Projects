@@ -130,6 +130,10 @@ def _build_parser() -> argparse.ArgumentParser:
                     help="If no Step 1 JSON exists, auto-generate it from STEP (word_study_extract) for --mode=audit_word — self-contained onboarding")
     ap.add_argument("--anchors", metavar="H1234,G5678",
                     help="Anchor Strong's passed to the auto --fetch-step extract")
+    ap.add_argument("--add-terms", action="store_true",
+                    help="ADDITIVE mode for --mode=audit_word: onboard the extract's terms into an "
+                         "EXISTING registry via a fresh isolated file, leaving existing terms untouched "
+                         "(no whole-registry re-audit / delete-flagging)")
 
     # ── --register options ────────────────────────────────────────────────────
     ap.add_argument("--word",     metavar="\"sorrow\"",
@@ -358,6 +362,7 @@ def main() -> int:
                 extract_file=getattr(args, "extract_file", None),
                 fetch_step=getattr(args, "fetch_step", False),
                 anchors=getattr(args, "anchors", None),
+                add_terms=getattr(args, "add_terms", False),
             )
             if not args.dry_run and result["outcome"] == "COMPLETE":
                 post_run_backup(f"AUDIT_WORD-reg{args.registry}")
