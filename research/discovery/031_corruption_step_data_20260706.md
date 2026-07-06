@@ -1,29 +1,28 @@
 # Word Study Extract — "corruption"
 
 Generated: 2026-07-06  |  STEP version: `ESV_th`
-Anchors: H0444
-Total terms evaluated: 3
+Anchors: H7810
+Total terms evaluated: 2
 
 ## Summary by decision group
 
 | Group | Action | Count |
 |-------|--------|-------|
 | G1 | include | 1 |
-| G3 | exclude | 2 |
+| G2r | include | 1 |
 
 ## Include codes
 
-`H0444`
+`H7810`, `H7809`
 
 ## Exclude codes
 
-`H0473G`, `H0473H`
+_(none)_
 
 ## Term table
 
 | code | lang | section_type | parent | group | action | gloss | verse_count | testament | flags |
 |------|------|-------------|--------|-------|--------|-------|------------|-----------|-------|
-| H0444 | Hebrew | primary | H0444 | G1 | include | to corrupt | 3 | OT_only |  |
-| H0473G | Hebrew | related_term | H0444 | G3 | exclude | Elishah | — | — |  |
-| H0473H | Hebrew | related_term | H0444 | G3 | exclude | Elishah | — | — |  |
+| H7810 | Hebrew | primary | H7810 | G1 | include | bribe | 21 | OT_only |  |
+| H7809 | Hebrew | related_term | H7810 | G2r | include | to bribe | 2 | OT_only | NOTE_ON_ROOT_FAMILY |
 

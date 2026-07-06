@@ -1,7 +1,7 @@
-# Word Study Extract — "praise"
+# Word Study Extract — "comfort"
 
 Generated: 2026-07-06  |  STEP version: `ESV_th`
-Anchors: H7891
+Anchors: H7309
 Total terms evaluated: 3
 
 ## Summary by decision group
@@ -13,7 +13,7 @@ Total terms evaluated: 3
 
 ## Include codes
 
-`H7891`, `H7892A`, `H7892B`
+`H7309`, `H7304`, `H7305`
 
 ## Exclude codes
 
@@ -23,7 +23,7 @@ _(none)_
 
 | code | lang | section_type | parent | group | action | gloss | verse_count | testament | flags |
 |------|------|-------------|--------|-------|--------|-------|------------|-----------|-------|
-| H7891 | Hebrew | primary | H7891 | G1 | include | to sing | 79 | OT_only |  |
-| H7892A | Hebrew | related_term | H7891 | G2r | include | song | 77 | OT_only | NOTE_ON_ROOT_FAMILY |
-| H7892B | Hebrew | related_term | H7891 | G2r | include | song | 10 | OT_only | NOTE_ON_ROOT_FAMILY |
+| H7309 | Hebrew | primary | H7309 | G1 | include | relief | 2 | OT_only |  |
+| H7304 | Hebrew | related_term | H7309 | G2r | include | be wide | 3 | OT_only | NOTE_ON_ROOT_FAMILY |
+| H7305 | Hebrew | related_term | H7309 | G2r | include | space | 2 | OT_only | NOTE_ON_ROOT_FAMILY |
 

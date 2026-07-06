@@ -79,6 +79,13 @@ WORK = {
  # ── Group A (OT-DBR-009 over-deleted mti+verses; empty shell delete-flagged; re-pull into SAME home) ──
  'H2898':('love',None),'H3684':('hope','M16'),'H5036':('heart','M16'),'H5949':('shame',None),
  'H6039':('gentleness','M24'),'H6962':('distress','M06'),'H7045':('shame',None),'H8444':('surrender',None),
+ # ── Second orphan set (27; 2026-07-05 span-orphan stubs) — clean 22 fresh-onboard (cluster deferred) ──
+ 'H0833':('blessing',None),'H2449':('wisdom',None),'H7891':('praise',None),'H3467':('salvation',None),
+ 'H1350':('salvation',None),'H5382':('memory',None),'H7911':('memory',None),'H5678':('wrath',None),
+ 'H5358':('wrath',None),'H7810':('corruption',None),'H7309':('comfort',None),'H5087':('commitment',None),
+ 'H5088':('commitment',None),'H3238':('wickedness',None),'H3905':('wickedness',None),'H3906':('wickedness',None),
+ 'H0079':('strife',None),'H5319':('strife',None),'H2670':('salvation',None),
+ 'H0490':('the afflicted',None),'H1800':('the afflicted',None),'H3490':('the afflicted',None),
 }
 
 # Sub-entry resolutions: intended base strong -> explicit STEP sub-entry code (IB sense).
@@ -100,6 +107,7 @@ RESOLVE = {
  'H5848':'H5848C',  # enfeeble/faint = weakness (vs turn-aside/envelop)
  'H4148':'H4148G',  # discipline/chastening (vs instruction/bonds)
  'H2556':'H2556A',  # to leaven/be sour = embittered (vs red/oppress)
+ 'H1350':'H1350A',  # to redeem / kinsman-redeemer (vs sub-senses)
 }
 
 def sh(cmd):
@@ -132,10 +140,18 @@ def process_registry(regword, terms, dry_curate=False):
     r = sh(['python','scripts/word_study_extract.py','--word',regword,'--anchors',','.join(intended)])
     if r.returncode!=0:
         return {'reg':regword,'status':'EXTRACT_FAIL','err':r.stderr[-500:]}
-    # find newest extract for this registry
-    cand=sorted(glob.glob(f'research/discovery/{rno:03d}_{regword.lower().replace(" ","_")}_step_data_*.json'))
+    # find newest fresh extract for this registry (exclude curated/addterms derivatives; match space OR underscore)
+    def _fresh(pats):
+        out=[]
+        for p in pats:
+            out += [f for f in glob.glob(p) if 'curated' not in f and 'addterms' not in f]
+        return sorted(out)
+    wlow=regword.lower()
+    cand=_fresh([f'research/discovery/{rno:03d}_{wlow}_step_data_*.json',
+                 f'research/discovery/{rno:03d}_{wlow.replace(" ","_")}_step_data_*.json'])
     if not cand:
-        cand=sorted(glob.glob(f'research/discovery/*{regword.lower().replace(" ","_")}_step_data_*.json'))
+        cand=_fresh([f'research/discovery/*{wlow}_step_data_*.json',
+                     f'research/discovery/*{wlow.replace(" ","_")}_step_data_*.json'])
     ext=json.load(open(cand[-1],encoding='utf-8'))
     codes={t['code']:t for t in ext['terms']}
     # 2. curate: match each intended to a code (exact, else unique base-match)
