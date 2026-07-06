@@ -1,8 +1,10 @@
 ---
 name: feedback_t2_reference_flag_reclassify
-description: GOVERNING (2026-06-10). T2 is a REFERENCE vocabulary (qualifiers / the "how"), NEVER analysed on its own. A T2 term is engaged only where a CLUSTER's verse uses it, and then its analysis is EMBEDDED in the cluster term's meaning — NOT recorded as a standalone T2 finding. So: no T2-routed paragraphs; the qualifier's implication lives inside the co-occurring M-cluster term's meaning (verified bidirectional). Corroboration holds: T2 read only where it co-occurs with an inner-being characteristic (1063/1063, 0 uncorroborated). Participation gate: within a corroborated verse skip bystander terms (15% self-declare no-inner-content). FLAG is DIFFERENT: a FLAG term that carries inner-being meaning must MOVE to a cluster (it is no longer FLAG); if no home exists, DEBATE where it fits.
-metadata:
+description: "GOVERNING (2026-06-10). T2 is a REFERENCE vocabulary (qualifiers / the \"how\"), NEVER analysed on its own. A T2 term is engaged only where a CLUSTER's verse uses it, and then its analysis is EMBEDDED in the cluster term's meaning — NOT recorded as a standalone T2 finding. So: no T2-routed paragraphs; the qualifier's implication lives inside the co-occurring M-cluster term's meaning (verified bidirectional). Corroboration holds: T2 read only where it co-occurs with an inner-being characteristic (1063/1063, 0 uncorroborated). Participation gate: within a corroborated verse skip bystander terms (15% self-declare no-inner-content). FLAG is DIFFERENT: a FLAG term that carries inner-being meaning must MOVE to a cluster (it is no longer FLAG); if no home exists, DEBATE where it fits."
+metadata: 
+  node_type: memory
   type: feedback
+  originSessionId: d51a2ae4-3564-40b3-84fd-2dc7fed902d8
 ---
 
 **Researcher governing decision (2026-06-10), after interrogating how T2 spans are handled in the verse-read.**
@@ -30,6 +32,8 @@ in the inner-being content; **skip bystander terms** (pure particles like `et`, 
 certainly belongs in a CLUSTER — it is no longer FLAG.** Move it to its home; **where no home exists, open a
 debate** on where it fits (e.g. the heart/soul/flesh constitutional *seats* may need a home of their own).
 Distinct from T2 (which is a reference, not a homeless characteristic).
+
+**Extract-level filter (2026-06-20, researcher direction).** `build_ve_lexical_extract.py` now sets aside non-inner-being T2 co-terms FROM THE START: a T2 occurrence is kept ONLY if its base-strong is in the meaningful-qualifier signal union (`SEAT ∪ DIVINE ∪ INTENSIFIER ∪ FACULTY_LEMMA ∪ SPIRIT_BEINGS ∪ PERCEPTION ∪ COGNITION ∪ INHERENT_VALENCE`); all other T2 (grammatical function-words + content-words like seed/sow/hand/name/terebinth/oil/death) are excluded — they cannot connect to a character term and are pure noise. Their refs are also stripped from kept terms' `compound`. Match on **`base()` not `_canon()`** (occurrence strongs carry sub-entry suffixes H7200G/H0410G that must match base H7200/H0410). M04: 3128→2719 occ (−409 noise). Applies to all future extracts.
 
 **Implementation (pending):** the verse-read CC-mode must (a) scope to M-clusters as drivers, (b) embed T2
 qualifier implications in the cluster term's meaning rather than write T2 paragraphs, (c) apply the
