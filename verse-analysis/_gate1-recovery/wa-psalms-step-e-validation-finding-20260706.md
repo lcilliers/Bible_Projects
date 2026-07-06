@@ -36,3 +36,23 @@ The compliant onboarding (STEP-based) is correct but **cannot by itself close Ga
 **My recommendation: Option 1** — it's the real fix for the "zero verse-records" problem, uses the authoritative source, and is reusable per book. But it's a new phase (a master-index → verse-record backfill), so I'm surfacing it rather than launching it unilaterally.
 
 *Filed 2026-07-06. Gate-1 orphan onboarding (the 97) is complete and correct; this is the next layer the validation exposes.*
+
+---
+
+## RESOLUTION (2026-07-06) — Option 1 executed: master-index backfill
+
+Researcher chose Option 1 ("the master index is supposed to pull everything together"). Built `scripts/_apply_master_index_backfill_v1_20260706.py` — creates **fully-scaffolded** `wa_verse_records` from `verse_span_index` (term_inv_id + word_registry_fk + mti_term_id + **verse_span_id** link), for every registered OWNER-term occurrence lacking one. Per-book, integrity-gated.
+
+**Psalms result — characteristic-span miss 1082 → 172:**
+| pass | records | char miss after |
+|---|---:|---:|
+| v1 unambiguous (single OWNER) | +2,888 | 286 |
+| ambiguous tier (dominant-sense: OWNER sub-entry with most records; e.g. H2617→H2617A *kindness*) | +381 | **172** |
+
+**+3,269 records total; no new invariant breach; all in-corpus.** ✅
+
+### The residual 172 = a SECOND orphan set (27 stub terms)
+The 172 remaining characteristic spans map to **27 legacy span-orphan stub `mti_terms`** created 2026-07-05 (`anchor_note='Gate-1 recovery 2026-07-05: span-orphan inner-being term…'`) — **NULL registry, no inventory**, survived the rollback. They are a *second* orphan set beyond the 97:
+`H0157 love · H1350 redeem · H3467 save · H5382/H7911 forget · H7307 spirit · H5087/H5088 vow · H5358 avenge · H2449 be-wise · H7891 sing · H3238/H3905/H3906 oppress · H5678 fury · H6973 loathe · H0014 be-willing · H2670 free · H7309 relief · H7810 bribe · H0079/H5319 wrestle · H0034 needy · H1800 poor · H0490 widow · H3490 orphan · H0833 bless`
+
+**Next step (needs your steer):** these 27 need the **same gate-1 treatment** — registry assignment (the analytical call, as with the 97) → `audit_word --add-terms` → then re-run the backfill to close the last 172 spans. Some are clearly IB (love, save, forget, spirit, vow); a few are social-category third parties (widow, orphan, needy, poor) that may be reference/qualifier like Satan. I've stopped here to bring you the 27-term registry mapping for review rather than impute it.
