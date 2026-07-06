@@ -40,6 +40,8 @@ def main():
     ap.add_argument('--book',type=int,required=True)
     g=ap.add_mutually_exclusive_group(required=True); g.add_argument('--dry-run',action='store_true'); g.add_argument('--live',action='store_true')
     ap.add_argument('--limit',type=int)
+    ap.add_argument('--with-ambiguous',action='store_true',
+                    help='resolve multi-OWNER-sub-entry bases to the dominant sense (most existing verse-records)')
     a=ap.parse_args()
     c=sqlite3.connect(DB); c.row_factory=sqlite3.Row
     now=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -52,6 +54,15 @@ def main():
         AND ti.term_owner_type='OWNER' AND COALESCE(ti.delete_flagged,0)=0
       WHERE COALESCE(mt.delete_flagged,0)=0'''):
         owners.setdefault(base(r['strongs_number']),[]).append(dict(r))
+
+    # dominant-sense picker for ambiguous bases: OWNER sub-entry with most existing active verse-records
+    def dominant(cands):
+        best=None; bestn=-1
+        for o in cands:
+            n=c.execute("SELECT COUNT(*) FROM wa_verse_records WHERE mti_term_id=? AND COALESCE(delete_flagged,0)=0",(o['mti_id'],)).fetchone()[0]
+            if n>bestn or (n==bestn and o['strongs_number']<best['strongs_number']):
+                best=o; bestn=n
+        return best
 
     have=set()
     for r in c.execute('SELECT verse_id, term_id FROM wa_verse_records WHERE book_id=? AND COALESCE(delete_flagged,0)=0',(a.book,)):
@@ -67,8 +78,11 @@ def main():
         if (sp['verse_id'], b) in have: already+=1; continue
         o=owners.get(b)
         if not o: noown+=1; continue
-        if len(o)>1: amb+=1; continue
-        ow=o[0]
+        if len(o)>1:
+            if not a.with_ambiguous: amb+=1; continue
+            ow=dominant(o)
+        else:
+            ow=o[0]
         before,after=ctx(sp['verse_text'], sp['surface'])
         to_write.append((sp,ow,before,after))
         have.add((sp['verse_id'],b))  # dedupe within this run (multiple spans same verse+strong)
