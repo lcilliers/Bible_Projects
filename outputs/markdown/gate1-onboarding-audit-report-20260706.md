@@ -7,18 +7,18 @@
 | metric | baseline | live | delta |
 |---|---:|---:|---:|
 | word_registry | 219 | 220 | +1 |
-| file_index | 211 | 268 | +57 |
-| mti_active | 2437 | 2533 | +96 |
-| mti_all | 7616 | 7704 | +88 |
-| inv_owner | 3648 | 3735 | +87 |
-| inv_active | 6851 | 6938 | +87 |
-| vr_active | 60472 | 63051 | +2579 |
-| vc_active | 43155 | 50542 | +7387 |
-| gate1_stamped | 0 | 96 | +96 |
+| file_index | 211 | 269 | +58 |
+| mti_active | 2437 | 2534 | +97 |
+| mti_all | 7616 | 7705 | +89 |
+| inv_owner | 3648 | 3736 | +88 |
+| inv_active | 6851 | 6939 | +88 |
+| vr_active | 60472 | 63074 | +2602 |
+| vc_active | 43155 | 50563 | +7408 |
+| gate1_stamped | 0 | 97 | +97 |
 
 ## Collateral check (existing data integrity)
 
-- gate1-stamped active terms (live): **96**
+- gate1-stamped active terms (live): **97**
 - non-gate1 active terms (live): 2437  vs baseline active 2437  →  **delta +0**
 - ✅ NO collateral — existing terms preserved
 
@@ -26,7 +26,7 @@
 
 - ✅ no existing registry lost active terms
 
-## Additions itemised — 96 terms across 52 registries
+## Additions itemised — 97 terms across 53 registries
 
 | registry | strong | gloss | cluster | status | active? | verse-records |
 |---|---|---|---|---|---|---:|
@@ -101,6 +101,7 @@
 | salvation (220) | H8668G | deliverance: salvation | M38 | extracted | yes | 21 |
 | shame (146) | H5949 | wantonness | — | delete | yes | 24 |
 | shame (146) | H7045 | curse | — | delete | yes | 33 |
+| spiritual powers (195) | H7854 | Satan | — | extracted | yes | 23 |
 | strife (152) | H4066 | strife | M02 | extracted | yes | 10 |
 | strife (152) | H7283 | to throng | — | extracted | yes | 1 |
 | strife (152) | H7853 | to oppose | M06 | extracted | yes | 6 |
@@ -127,4 +128,4 @@
 | wrath (178) | H5359 | vengeance | M02 | extracted | yes | 17 |
 | wrath (178) | H5360 | vengeance | M02 | extracted | yes | 22 |
 
-**Totals:** 96 terms, 2579 verse-records.
+**Totals:** 97 terms, 2602 verse-records.

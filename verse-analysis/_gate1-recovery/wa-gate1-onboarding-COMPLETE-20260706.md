@@ -6,12 +6,14 @@
 
 | | count |
 |---|---:|
-| **Terms onboarded** (stamped `anchor_note='gate1-onboard-2026'`) | **96** |
+| **Terms onboarded** (stamped `anchor_note='gate1-onboard-2026'`) | **97** |
 | — Group C (fresh onboard, existing/new registries) | 80 |
 | — Group B (XREF → OWNER promotion) | 8 |
 | — Group A (OT-DBR-009 over-deleted; mti+verses re-pulled into same home) | 8 |
-| Excluded (proper noun / third party) | 1 (H7854 *Satan*) |
+| — H7854 *Satan* → `spiritual powers` (third-party evil agent, forced include, role=reference, cluster NULL) | 1 |
 | **Total accounted** | **97** ✓ |
+
+**H7854 update (researcher directive):** Satan (the evil one / evil spirits) is a **third party with major influence on the inner being** and MUST be included. STEP auto-excludes it as a proper noun, so it was force-onboarded (`scripts/_onboard_satan_h7854_v1_20260706.py`) into `spiritual powers` — 23 verse-records, role=reference, `cluster_code` NULL. All 97 now onboarded; collateral still +0.
 
 **Additions:** +96 active mti, +87 OWNER inventory, **+2,579 verse-records**, +7,387 verse_context, +1 registry (`salvation`), across **52 registries**.
 
