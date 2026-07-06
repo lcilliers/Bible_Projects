@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "english_anchor": "grief",
+  "generated": "2026-07-06",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H8428"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 8,
+  "summary_by_group": {
+   "G1": 1,
+   "G2r": 5,
+   "G3": 2
+  },
+  "include_codes": [
+   "H8428"
+  ],
+  "exclude_codes": [
+   "H8430",
+   "H8459"
+  ],
+  "registry": {
+   "id": 71,
+   "no": 71,
+   "word": "grief",
+   "source_list": "High Confidence",
+   "category_hint": null,
+   "phase1_input_file": "word grief.md",
+   "phase1_status": "Complete",
+   "phase1_output_file": "WA-071-grief-data-part1-2026-03-08-updated.json, WA-071-grief-data-part2-2026-03-08-updated.json, WA-071-grief-data-part3-2026-03-08-updated.json",
+   "phase2_datasets": 3.0,
+   "notes": "60 terms (60 extracted). 3 parts. Session A Instruction v5. MTI: extracted.\n[AUDIT 2026-03-25] result=REVIEW  terms=87  verses=479  run_id=RUN-20260325_054839-AUDIT_WORD\n[AUDIT 2026-07-06] result=REVIEW  terms=87  verses=213  run_id=RUN-20260706_161712-AUDIT_WORD",
+   "automation_eligible": 1,
+   "last_automation_run": "AUDITED",
+   "automation_run_id": "RUN-20260706_161712-AUDIT_WORD",
+   "phase1_term_count": 87,
+   "phase1_verse_count": 213,
+   "strongs_list": "[{\"strong\": \"H0056\", \"count\": 38}, {\"strong\": \"H6040\", \"count\": 36}, {\"strong\": \"H2483\", \"count\": 22}, {\"strong\": \"H6937\", \"count\": 17}, {\"strong\": \"H4341\", \"count\": 15}, {\"strong\": \"H4843\", \"count\": 13}, {\"strong\": \"H2470I\", \"count\": 12}, {\"strong\": \"G3996\", \"count\": 10}, {\"strong\": \"H3510\", \"count\": 8}, {\"strong\": \"H3013\", \"count\": 8}, {\"strong\": \"H0057\", \"count\": 8}, {\"strong\": \"G4727\", \"count\": 6}, {\"strong\": \"H6094\", \"count\": 5}, {\"strong\": \"H8424\", \"count\": 4}, {\"strong\": \"H6001A\", \"count\": 4}, {\"strong\": \"G3997\", \"count\": 4}, {\"strong\": \"H8428\", \"count\": 1}, {\"strong\": \"H6330\", \"count\": 1}, {\"strong\": \"H4786\", \"count\": 1}]",
+   "description": "Grief is the inner response to genuine loss — the pain of bereavement, devastation, and the experience of something or someone precious being gone. The Hebrew vocabulary is among the richest in the corpus, spanning the darkness of mourning, the bitterness of affliction, and the sorrow of a broken heart. God himself grieves in Scripture: he is grieved by the wickedness of humanity (Genesis 6), the breaking of the relationship he made. Grief is honoured in the Bible rather than suppressed; it is the appropriate inner response to a world where real loss happens.",
+   "origin": "original_list",
+   "dimensions": "Affective/Emotional",
+   "inference_note": null,
+   "session_b_status": "Verse Context Reset",
+   "cluster_assignment": "C05",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 6,
+   "shared_term_count": 80,
+   "term_sharing_ratio": 0.93,
+   "verse_context_status": "Complete",
+   "dim_review_status": null,
+   "dim_review_version": null,
+   "word_synopsis": null
+  },
+  "curated_note": "gate1 add-terms: grief"
+ },
+ "terms": [
+  {
+   "code": "H8428",
+   "gloss": "to wound",
+   "transliteration": "ta.vah",
+   "script_form": "תָּוָה",
+   "language": "Hebrew",
+   "vocab_count": 1,
+   "medium_def": "1) (Hiphil) to pain, wound, trouble, cause pain\n1a) meaning probable",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H8427",
+     "form": "תָּוָה",
+     "gloss": "to mark",
+     "translit": "ta.vah"
+    },
+    {
+     "strong": "H8429",
+     "form": "תְּוַהּ",
+     "gloss": "be startled",
+     "translit": "te.vah"
+    },
+    {
+     "strong": "H8430",
+     "form": "תּוֹחַ",
+     "gloss": "Toah",
+     "translit": "to.ach"
+    },
+    {
+     "strong": "H8432",
+     "form": "תָּ֫וֶךְ",
+     "gloss": "midst",
+     "translit": "ta.vekh"
+    },
+    {
+     "strong": "H8437",
+     "form": "תּוֹלָל",
+     "gloss": "tormentor",
+     "translit": "to.lal"
+    },
+    {
+     "strong": "H8459",
+     "form": "תֹּחוּ",
+     "gloss": "Tohu",
+     "translit": "to.chu"
+    },
+    {
+     "strong": "H8484",
+     "form": "תִּיכוֹן",
+     "gloss": "middle",
+     "translit": "ti.khon"
+    }
+   ],
+   "raw_related_numbers": "H8427, H8429, H8430, H8459, H8432, H8484, H8437",
+   "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H8428",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H8428 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 1,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": true,
+   "causative_form_present": true,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Ps.78.41",
+     "ref": "Psa 78:41",
+     "book_code": "Ps",
+     "chapter": 78,
+     "verse_num": 41,
+     "esv_text": "Psa 78:41 They tested God again and again and provoked the Holy One of Israel .",
+     "target_word": "provoked",
+     "testament": "OT",
+     "fetched_under_code": "H8428",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.78.41' class='verseLink'><span class='verseNumber'>Psa 78:41</span></a> <span class='level1'></span>They  <span morph='HVpw3mp' strong='H5254G'>tested</span> <span morph='HNcmsa' strong='H0410G'>God</span> again and <span morph='HVqw3mp' strong='H7725J'>again</span><br /><span class='level2'></span>and <span morph='HVhp3cp' strong='H8428'>provoked</span>  the <span morph='HAamsc HC' strong='H6918G H9002'>Holy One</span> of <span morph='HNpl' strong='H3478'>Israel</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H8428",
+     "span_label_found": "to wound",
+     "context_before": "God again and again and",
+     "context_after": "the Holy One of Israel"
+    }
+   ]
+  }
+ ]
+}

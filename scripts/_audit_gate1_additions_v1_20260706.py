@@ -33,8 +33,8 @@ def census(db):
         'vc_active':   one("SELECT COUNT(*) FROM verse_context WHERE COALESCE(delete_flagged,0)=0") if _has(c,'verse_context','delete_flagged') else one("SELECT COUNT(*) FROM verse_context"),
         'word_registry': one("SELECT COUNT(*) FROM word_registry"),
         'file_index':  one("SELECT COUNT(*) FROM wa_file_index"),
-        # gate1 stamped already present in this db (baseline should be ~0)
-        'gate1_stamped': one("SELECT COUNT(*) FROM mti_terms WHERE anchor_note=?", (STAMP,)),
+        # gate1 stamped ACTIVE terms (baseline should be 0)
+        'gate1_stamped': one("SELECT COUNT(*) FROM mti_terms WHERE anchor_note=? AND COALESCE(delete_flagged,0)=0", (STAMP,)),
     }
     # per-registry active OWNER-term count (to detect collateral flagging in existing registries)
     cen['per_reg_terms'] = {str(r['owning_registry_fk']): r['n'] for r in c.execute(

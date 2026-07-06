@@ -1,0 +1,163 @@
+{
+ "meta": {
+  "english_anchor": "mourning",
+  "generated": "2026-07-06",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H7908"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 5,
+  "summary_by_group": {
+   "G1": 1,
+   "G2r": 4
+  },
+  "include_codes": [
+   "H7908"
+  ],
+  "exclude_codes": [],
+  "registry": {
+   "id": 113,
+   "no": 113,
+   "word": "mourning",
+   "source_list": "High Confidence",
+   "category_hint": null,
+   "phase1_input_file": null,
+   "phase1_status": "Complete",
+   "phase1_output_file": null,
+   "phase2_datasets": null,
+   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=16  verses=170  run_id=RUN-20260328_141004-AUDIT_WORD\n[AUDIT 2026-07-06] result=REVIEW  terms=17  verses=63  run_id=RUN-20260706_161724-AUDIT_WORD",
+   "automation_eligible": 1,
+   "last_automation_run": "AUDITED",
+   "automation_run_id": "RUN-20260706_161724-AUDIT_WORD",
+   "phase1_term_count": 17,
+   "phase1_verse_count": 63,
+   "strongs_list": "[{\"strong\": \"H5594\", \"count\": 29}, {\"strong\": \"H4553\", \"count\": 14}, {\"strong\": \"G2799\", \"count\": 8}, {\"strong\": \"H7908\", \"count\": 3}, {\"strong\": \"H8386\", \"count\": 2}, {\"strong\": \"G2875\", \"count\": 2}, {\"strong\": \"H6969\", \"count\": 1}, {\"strong\": \"H6941\", \"count\": 1}, {\"strong\": \"H4798\", \"count\": 1}, {\"strong\": \"H1899\", \"count\": 1}, {\"strong\": \"G3602\", \"count\": 1}]",
+   "description": "Mourning is the outward expression of inner grief — the practices, gestures, and sounds through which sorrow makes itself known in the world. The Hebrew vocabulary here covers sitting in ashes, tearing garments, wailing, and the professional mourning practices of the ancient world. Mourning is honoured in Scripture as the appropriate response to real loss: Jesus mourns, the psalmists mourn, Lamentations is an entire book of mourning. The Beatitudes name the mourning as those who will be comforted. Mourning is not the failure of faith but its expression.",
+   "origin": "original_list",
+   "dimensions": "Affective/Emotional",
+   "inference_note": null,
+   "session_b_status": "Verse Context Reset",
+   "cluster_assignment": "C05",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 6,
+   "shared_term_count": 10,
+   "term_sharing_ratio": 0.625,
+   "verse_context_status": "Complete",
+   "dim_review_status": "Complete",
+   "dim_review_version": null,
+   "word_synopsis": null
+  },
+  "curated_note": "gate1 add-terms: mourning"
+ },
+ "terms": [
+  {
+   "code": "H7908",
+   "gloss": "bereavement",
+   "transliteration": "she.khol",
+   "script_form": "שְׁכוֹל",
+   "language": "Hebrew",
+   "vocab_count": 3,
+   "medium_def": "bereavement, loss of children",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H7909",
+     "form": "שַׁכּוּל",
+     "gloss": "childless",
+     "translit": "shak.kul"
+    },
+    {
+     "strong": "H7921A",
+     "form": "שָׁכֹל",
+     "gloss": "be bereaved",
+     "translit": "sha.khol"
+    },
+    {
+     "strong": "H7921C",
+     "form": "מְשַׁכֶּ֫לֶת",
+     "gloss": "barrenness",
+     "translit": "me.shak.ke.let"
+    },
+    {
+     "strong": "H7923",
+     "form": "שִׁכֻּלִים",
+     "gloss": "bereavement",
+     "translit": "shik.ku.lim"
+    }
+   ],
+   "raw_related_numbers": "H7921, H7921, H7921, H7909, H7923, ",
+   "freq_list": "3;3;7@3;3;3;;3;3;3;3;5@3;3;;3;3;3;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H7908",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H7908 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 3,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Isa.47.8",
+     "ref": "Isa 47:8",
+     "book_code": "Isa",
+     "chapter": 47,
+     "verse_num": 8,
+     "esv_text": "Isa 47:8 Now therefore hear this , you lover of pleasures , who sit securely , who say in your heart , “ I am, and there is no one besides me; I shall not sit as a widow or know the loss of children ”:",
+     "target_word": "children",
+     "testament": "OT",
+     "fetched_under_code": "H7908",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.47.8' class='verseLink'><span class='verseNumber'>Isa 47:8</span></a> <span class='level1'></span><span morph='HD HC' strong='H6258 H9002'>Now</span> therefore <span morph='HVqv2fs' strong='H8085G'>hear</span> <span morph='HTm' strong='H2063'>this</span>, <span class='normal'></span> you lover of <span morph='HAafsa' strong='H5719'>pleasures</span>,<br /><span class='level2'></span> who <span morph='HVqrfsa HTd' strong='H3427 H9009'>sit</span> <span morph='HNcmsa HR' strong='H0983 H9005'>securely</span>,<br /><span class='level1'></span>who <span morph='HVqrfsa HTd' strong='H0559 H9009'>say</span> in your <span morph='HNcmsc HR' strong='H3824 H9003'>heart</span>,<br /><span class='level2'></span> “<span morph='HPp1bs HSp3fs' strong='H0589 H9024'>I</span> am, and there is no <span morph='HNcmsc HC HSp1bs' strong='H0657A H9002 H9040'>one</span> <span morph='HAcmsa' strong='H5750'>besides</span> me;<br /><span class='level1'></span> I shall <span morph='HTn' strong='H3808'>not</span> <span morph='HVqi1cs' strong='H3427'>sit</span> as a <span morph='HNcfsa' strong='H0490'>widow</span><br /><span class='level2'></span><span morph='HTn HC' strong='H3808 H9002'>or</span> <span morph='HVqi1cs' strong='H3045'>know</span> the loss of <span morph='HNcmsa' strong='H7908'>children</span>”:<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H7908",
+     "span_label_found": "bereavement",
+     "context_before": "or know the loss of",
+     "context_after": "”:"
+    },
+    {
+     "osisId": "Isa.47.9",
+     "ref": "Isa 47:9",
+     "book_code": "Isa",
+     "chapter": 47,
+     "verse_num": 9,
+     "esv_text": "Isa 47:9 These two things shall come to you in a moment , in one day ; the loss of children and widowhood shall come upon you in full measure , in spite of your many sorceries and the great power of your enchantments .",
+     "target_word": "children",
+     "testament": "OT",
+     "fetched_under_code": "H7908",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.47.9' class='verseLink'><span class='verseNumber'>Isa 47:9</span></a> <span class='level1'></span> <span morph='HTm' strong='H0428'>These</span> <span morph='HAcfdc HR HSp2fs' strong='H8147 H9005 H9032'>two</span> things shall <span morph='HVqu3fp' strong='H0935G'>come</span> to you<br /><span class='level2'></span>in a <span morph='HNcmsa' strong='H7281'>moment</span>, <span class='normal'></span> in <span morph='HAcfsa' strong='H0259'>one</span> <span morph='HNcmsa HR' strong='H3117G H9003'>day</span>;<br /><span class='level1'></span>the loss of <span morph='HNcmsa' strong='H7908'>children</span> and <span morph='HNcmsa HC' strong='H0489 H9002'>widowhood</span><br /><span class='level2'></span>shall <span morph='HVqp3cp HSp3mp' strong='H0935G H9028'>come</span> <span morph='HR' strong='H5921A'>upon</span> you in <span morph='HNcmsc HR' strong='H8537 H9004'>full measure</span>,<br /><span class='level1'></span> <span morph='HR' strong='H9003'>in</span> spite of your <span morph='HNcmsc HSp2fs' strong='H7230 H9032'>many</span> <span morph='HNcmpc' strong='H3785'>sorceries</span><br /><span class='level2'></span>and the <span morph='HAcmsa HSp2fs' strong='H3966 H9022'>great</span> <span morph='HNcfsc HR HSp2fs' strong='H6109 H9003 H9022'>power</span> of your <span morph='HNcmpc' strong='H2267'>enchantments</span>.<br /><span class='endLineGroup'></span></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H7908",
+     "span_label_found": "bereavement",
+     "context_before": "day ; the loss of",
+     "context_after": "and widowhood shall come upon"
+    },
+    {
+     "osisId": "Ps.35.12",
+     "ref": "Psa 35:12",
+     "book_code": "Ps",
+     "chapter": 35,
+     "verse_num": 12,
+     "esv_text": "Psa 35:12 They repay me evil for good ; my soul is bereft .",
+     "target_word": "bereft",
+     "testament": "OT",
+     "fetched_under_code": "H7908",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.35.12' class='verseLink'><span class='verseNumber'>Psa 35:12</span></a> <span class='level1'></span> They <span morph='HVpi3mp' strong='H7999A'>repay</span> me <span morph='HNcfsa HSp1bs' strong='H7451I H9030'>evil</span> for <span morph='HNcfsa HNcmsc' strong='H2896C H8478H'>good</span>;<br /><span class='level2'></span><span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcfsc HR' strong='H5315G H9005'>soul</span> is <span morph='HNcmsa' strong='H7908'>bereft</span>. <br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H7908",
+     "span_label_found": "bereavement",
+     "context_before": "good ; my soul is",
+     "context_after": "."
+    }
+   ]
+  }
+ ]
+}

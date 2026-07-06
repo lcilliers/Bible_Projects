@@ -1,0 +1,2321 @@
+{
+  "meta": {
+    "english_anchor": "purity",
+    "generated": "2026-07-06",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "H1249",
+      "H2135"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 12,
+    "summary_by_group": {
+      "G1": 2,
+      "G2r": 10
+    },
+    "include_codes": [
+      "H1249",
+      "H1305",
+      "H1250A",
+      "H1252",
+      "H1253",
+      "H1287",
+      "H1250B",
+      "H1257",
+      "H2135",
+      "H2141",
+      "H2136",
+      "H2137"
+    ],
+    "exclude_codes": [],
+    "registry": {
+      "id": 125,
+      "no": 125,
+      "word": "purity",
+      "source_list": "Missing Inner Being Words",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=12  verses=206  run_id=RUN-20260328_141121-AUDIT_WORD",
+      "automation_eligible": 1,
+      "last_automation_run": "AUDITED",
+      "automation_run_id": "RUN-20260328_141121-AUDIT_WORD",
+      "phase1_term_count": 12,
+      "phase1_verse_count": 206,
+      "strongs_list": "[{\"strong\": \"H2889\", \"count\": 87}, {\"strong\": \"H2891\", \"count\": 79}, {\"strong\": \"H2893\", \"count\": 11}, {\"strong\": \"G0053\", \"count\": 8}, {\"strong\": \"G0048\", \"count\": 7}, {\"strong\": \"H2892A\", \"count\": 4}, {\"strong\": \"H2892B\", \"count\": 4}, {\"strong\": \"G0047\", \"count\": 2}, {\"strong\": \"G0049\", \"count\": 1}, {\"strong\": \"G0054\", \"count\": 1}, {\"strong\": \"G0055\", \"count\": 1}, {\"strong\": \"H2890\", \"count\": 1}]",
+      "description": "Purity is the quality of being unmixed — single, uncontaminated, devoted to one thing without internal division or compromise. The Hebrew and Greek vocabulary covers both the ritual purity required for approach to God and the moral-inner purity that makes a person's motives and desires clean. Jesus radically internalises purity: blessed are the pure in heart. Purity of heart in the biblical sense is not innocence of experience but the absence of duplicity — wanting one thing, being directed toward one end.",
+      "origin": "original_list",
+      "dimensions": "Moral/Conscience",
+      "inference_note": null,
+      "session_b_status": "Verse Context Reset",
+      "cluster_assignment": "C10",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1,
+      "unique_term_count": 12,
+      "shared_term_count": 0,
+      "term_sharing_ratio": 0.0,
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete",
+      "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418",
+      "word_synopsis": null
+    }
+  },
+  "terms": [
+    {
+      "code": "H1249",
+      "gloss": "pure",
+      "transliteration": "bar",
+      "script_form": "בַּר",
+      "language": "Hebrew",
+      "vocab_count": 7,
+      "medium_def": "adj\n1) pure, clear, sincere\n2) clean, empty\nadv\n3) purely",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1305, H1250, H1250, H1253, H1252, H1287, H1257",
+      "freq_list": "7;7;7;7;7;;7;7;7;7;8@7;7;1;7;7;7;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H1249 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 7,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Job.11.4",
+          "ref": "Job 11:4",
+          "book_code": "Job",
+          "chapter": 11,
+          "verse_num": 4,
+          "esv_text": "Job 11:4 For you say , ‘My doctrine is pure , and I am clean in God’s eyes .’",
+          "target_word": "clean",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.11.4' class='verseLink'><span class='verseNumber'>Job 11:4</span></a> <span class='level1'></span>For  you <span morph='HVqw2ms' strong='H0559'>say</span>, ‘My  <span morph='HNcmsc' strong='H3948'>doctrine</span> is <span morph='HAamsa' strong='H2134'>pure</span>,<br /><span class='level2'></span>and I am <span morph='HAamsa HC HSp1bs' strong='H1249 H9002 H9020'>clean</span> in God’s  <span morph='HNcfdc HR HSp2ms HVqp1cs' strong='H5869A H9003 H9021 H1961'>eyes</span>.’<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "pure , and I am",
+          "context_after": "in God’s eyes .’"
+        },
+        {
+          "osisId": "Prov.14.4",
+          "ref": "Pro 14:4",
+          "book_code": "Prov",
+          "chapter": 14,
+          "verse_num": 4,
+          "esv_text": "Pro 14:4 Where there are no oxen , the manger is clean , but abundant crops come by the strength of the ox .",
+          "target_word": "clean",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.14.4' class='verseLink'><span class='verseNumber'>Pro 14:4</span></a> <span class='level1'></span>Where there are <span morph='HNcmsc HR' strong='H0369 H9003'>no</span> <span morph='HNcmpa' strong='H0504'>oxen</span>, the <span morph='HNcmsa' strong='H0018'>manger</span> is <span morph='HNcmsa' strong='H1249'>clean</span>,<br /><span class='level2'></span>but <span morph='HNcmsc HC' strong='H7230 H9002'>abundant</span> <span morph='HNcfpa' strong='H8393'>crops</span> come by the <span morph='HNcmsc HR' strong='H3581B H9003'>strength</span> of the <span morph='HNcmsa' strong='H7794'>ox</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "oxen , the manger is",
+          "context_after": ", but abundant crops come"
+        },
+        {
+          "osisId": "Ps.19.8",
+          "ref": "Psa 19:8",
+          "book_code": "Ps",
+          "chapter": 19,
+          "verse_num": 8,
+          "esv_text": "Psa 19:8 the precepts of the Lord are right , rejoicing the heart ; the commandment of the Lord is pure , enlightening the eyes ;",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.19.8' class='verseLink'><span class='verseNumber'>Psa 19:8</span></a> <span class='level1'></span> the <span morph='HNcmpc' strong='H6490'>precepts</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> are <span morph='HAampa' strong='H3477G'>right</span>,<br /><span class='level2'></span><span morph='HVprmpc' strong='H8055'>rejoicing</span> the <span morph='HNcmsa' strong='H3820A'>heart</span>;<br /><span class='level1'></span>the <span morph='HNcfsc' strong='H4687'>commandment</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> is  <span morph='HAafsa' strong='H1249'>pure</span>,<br /><span class='level2'></span> <span morph='HVhrfsc' strong='H0215'>enlightening</span> the <span morph='HNcfda' strong='H5869A'>eyes</span>;<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "commandment of the Lord is",
+          "context_after": ", enlightening the eyes ;"
+        },
+        {
+          "osisId": "Ps.24.4",
+          "ref": "Psa 24:4",
+          "book_code": "Ps",
+          "chapter": 24,
+          "verse_num": 4,
+          "esv_text": "Psa 24:4 He who has clean hands and a pure heart , who does not lift up his soul to what is false and does not swear deceitfully .",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.24.4' class='verseLink'><span class='verseNumber'>Psa 24:4</span></a> <span class='level1'></span> He who has  <span morph='HAamsc' strong='H5355A'>clean</span> <span morph='HNcfda' strong='H3709G'>hands</span> and  a <span morph='HAamsc HC' strong='H1249 H9002'>pure</span> <span morph='HNcmsa' strong='H3824'>heart</span>,<br /><span class='level2'></span><span morph='HTr' strong='H0834A'>who</span> does <span morph='HTn' strong='H3808'>not</span>  <span morph='HVqp3ms' strong='H5375O'>lift up</span> his <span morph='HNcfsc' strong='H5315G'>soul</span> to  what is <span morph='HNcmsa HRd' strong='H7723G H9005'>false</span><br /><span class='level2'></span>and does <span morph='HTn HC HSp1bs' strong='H3808 H9002 H9020'>not</span> <span morph='HVNp3ms' strong='H7650'>swear</span> <span morph='HNcfsa HR' strong='H4820 H9005'>deceitfully</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "has clean hands and a",
+          "context_after": "heart , who does not"
+        },
+        {
+          "osisId": "Ps.73.1",
+          "ref": "Psa 73:1",
+          "book_code": "Ps",
+          "chapter": 73,
+          "verse_num": 1,
+          "esv_text": "A Psalm of Asaph . Psa 73:1 Truly God is good to Israel , to those who are pure in heart .",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><h3 class='psalmHeading'>A <span morph='HNcmsa' strong='H4210'>Psalm</span> of  <span morph='HNpm HR' strong='H0623G H9005'>Asaph</span>.</h3><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.73.1' class='verseLink'><span class='verseNumber'>Psa 73:1</span></a> <span class='level1'></span>Truly <span morph='HNcmpa' strong='H0430G'>God</span> is <span morph='HAamsa HD' strong='H2896A H0389'>good</span> to  <span morph='HNpl HR' strong='H3478 H9005'>Israel</span>,<br /><span class='level2'></span><span morph='HR' strong='H9005'>to</span> those who are  <span morph='HAampc' strong='H1249'>pure</span> in <span morph='HNcmsa' strong='H3824'>heart</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": ", to those who are",
+          "context_after": "in heart ."
+        },
+        {
+          "osisId": "Song.6.10",
+          "ref": "Song 6:10",
+          "book_code": "Song",
+          "chapter": 6,
+          "verse_num": 10,
+          "esv_text": "Song 6:10 “ Who is this who looks down like the dawn , beautiful as the moon , bright as the sun , awesome as an army with banners ?”",
+          "target_word": "bright",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Song.6.10' class='verseLink'><span class='verseNumber'>Song 6:10</span></a> <span class='level1'></span> “<span morph='HPi' strong='H4310'>Who</span> is <span morph='HTm' strong='H2063'>this</span> who <span morph='HVNrfsa HTd' strong='H8259 H9009'>looks down</span> like the <span morph='HNcmsa HR' strong='H7837 H3644G'>dawn</span>,<br /><span class='level2'></span><span morph='HAafsa' strong='H3303'>beautiful</span> as the <span morph='HNcfsa HRd' strong='H3842 H9004'>moon</span>, <span morph='HAafsa' strong='H1249'>bright</span> as the <span morph='HNcfsa HRd' strong='H2535 H9004'>sun</span>,<br /><span class='level2'></span> <span morph='HAafsa' strong='H0366'>awesome</span> as an army with <span morph='HVNrfpa HRd' strong='H1713B H9004'>banners</span>?”<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "beautiful as the moon ,",
+          "context_after": "as the sun , awesome"
+        },
+        {
+          "osisId": "Song.6.9",
+          "ref": "Song 6:9",
+          "book_code": "Song",
+          "chapter": 6,
+          "verse_num": 9,
+          "esv_text": "Song 6:9 My dove , my perfect one , is the only one , the only one of her mother , pure to her who bore her. The young women saw her and called her blessed ; the queens and concubines also, and they praised her .",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H1249",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Song.6.9' class='verseLink'><span class='verseNumber'>Song 6:9</span></a> <span class='level1'></span>My  <span morph='HNcfsc HPp3fs' strong='H3123 H1931'>dove</span>, my  <span morph='HAafsc HSp1bs' strong='H8535 H9020'>perfect one</span>, is the only <span morph='HAcfsa' strong='H0259'>one</span>,<br /><span class='level2'></span>the only <span morph='HAcfsa HSp1bs' strong='H0259 H9020'>one</span> of her <span morph='HNcfsc HR HPp3fs' strong='H0517 H9005 H1931'>mother</span>,<br /><span class='level2'></span><span morph='HAafsa HSp3fs' strong='H1249 H9024'>pure</span> to  her who <span morph='HVqrfsc HR HPp3fs' strong='H3205 H9005 H1931'>bore</span> her.<br /><span class='level1'></span> The <span morph='HNcfpa HSp3fs' strong='H1323G H9034'>young women</span> <span morph='HVqp3cp HSp3fs' strong='H7200G H9034'>saw</span> her and <span morph='HVpw3mp' strong='H0833'>called her blessed</span>;<br /><span class='level2'></span> the <span morph='HNcfpa HSp3fs' strong='H4436H H9034'>queens</span> and  <span morph='HNcmpa HC' strong='H6370 H9002'>concubines</span> also, and they <span morph='HVpw3mp' strong='H1984B'>praised</span> <span morph='HSp3fs' strong='H9034'>her</span>.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1249",
+          "span_label_found": "pure",
+          "context_before": "one of her mother ,",
+          "context_after": "to her who bore her."
+        }
+      ]
+    },
+    {
+      "code": "H1305",
+      "gloss": "to purify",
+      "transliteration": "ba.rar",
+      "script_form": "בָּרַר",
+      "language": "Hebrew",
+      "vocab_count": 18,
+      "medium_def": "1) to purify, select, polish, choose, purge, cleanse or make bright, test or prove\n1a) (Qal)\n1a1) to purge, purge out, purify\n1a2) to choose, select\n1a3) to cleanse, make shining, polish\n1a4) to test, prove\n1b) (Niphal) to purify oneself\n1c) (Piel) to purify\n1d) (Hiphil)\n1d1) to purify\n1d2) to polish arrows\n1e) (Hithpael)\n1e1) to purify oneself\n1e2) to show oneself pure, just, kind",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1262",
+          "form": "בָּרָה",
+          "gloss": "to eat",
+          "translit": "ba.rah"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        }
+      ],
+      "raw_related_numbers": "H1262, H1249, H1250, H1250, H1253, H1252, H1287, H1257",
+      "freq_list": "18@16;18@16;20@16;16;18@16;;18@16;18@16;18@16;18@16;20@16;18@16;3;18@16;18@16;18@16;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 16,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": true,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1305 ('to purify') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "1Chr.16.41",
+          "ref": "1Ch 16:41",
+          "book_code": "1Chr",
+          "chapter": 16,
+          "verse_num": 41,
+          "esv_text": "1Ch 16:41 With them were Heman and Jeduthun and the rest of those chosen and expressly named to give thanks to the Lord , for his steadfast love endures forever .",
+          "target_word": "chosen",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Chr.16.41' class='verseLink'><span class='verseNumber'>1Ch 16:41</span></a> <span morph='HR HC' strong='H5973A H9002'>With</span> them were  <span morph='HNpm HSp3mp' strong='H1968I H9038'>Heman</span> and <span morph='HNpm HC' strong='H3038G H9002'>Jeduthun</span>  and the <span morph='HNcmsa HC' strong='H7605 H9002'>rest</span> of those <span morph='HVqsmpa HTd' strong='H1305 H9009'>chosen</span> and  <span morph='HVNp3cp HTr' strong='H5344A H0834A'>expressly</span> <span morph='HNcfpa HR' strong='H8034 H9003'>named</span> to <span morph='HVhcc HR' strong='H3034 H9005'>give thanks</span> to the <span class='small-caps'><span morph='HNpt HR' strong='H3068G H9005'>Lord</span></span>, <span class='normal'></span> <span morph='HTc' strong='H3588A'>for</span> <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HNcmsc' strong='H2617A'>steadfast love</span> endures <span morph='HNcmsa HR' strong='H5769G H9005'>forever</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "and the rest of those",
+          "context_after": "and expressly named to give"
+        },
+        {
+          "osisId": "1Chr.7.40",
+          "ref": "1Ch 7:40",
+          "book_code": "1Chr",
+          "chapter": 7,
+          "verse_num": 40,
+          "esv_text": "1Ch 7:40 All of these were men of Asher , heads of fathers ’ houses , approved , mighty warriors , chiefs of the princes . Their number enrolled by genealogies , for service in war , was 26,000 men .",
+          "target_word": "approved",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Chr.7.40' class='verseLink'><span class='verseNumber'>1Ch 7:40</span></a> <span morph='HNcmsc' strong='H3605'>All</span> of <span morph='HTm' strong='H0428'>these</span> were <span morph='HNcmpc' strong='H1121G'>men</span> of <span morph='HNpm' strong='H0836'>Asher</span>, <span morph='HNcmpc' strong='H7218H'>heads</span> of <span morph='HNcfpa HTd' strong='H0001G H9009'>fathers</span>’ <span morph='HNcmsc' strong='H1004M'>houses</span>, <span morph='HVqsmpa' strong='H1305'>approved</span>, <span morph='HNcmpc' strong='H1368'>mighty</span> <span morph='HNcmpa' strong='H2428A'>warriors</span>, <span morph='HNcmpc' strong='H7218H'>chiefs</span> of the <span morph='HNcmpa HTd' strong='H5387A H9009'>princes</span>. Their <span morph='HNcmsc' strong='H4557'>number</span> enrolled by <span morph='HVtcc' strong='H3187'>genealogies</span>, for <span morph='HNcmsa HRd HSp3mp' strong='H6635I H9003 H9048'>service</span> in <span morph='HNcfsa HRd' strong='H4421 H9003'>war</span>, was <span morph='HNcmpa HNcbsa HC HNcbsa' strong='H6242 H8337 H9002 H0505G'>26,000</span> <span morph='HNcmpa HSp3mp' strong='H0582 H9028'>men</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "of fathers ’ houses ,",
+          "context_after": ", mighty warriors , chiefs"
+        },
+        {
+          "osisId": "1Chr.9.22",
+          "ref": "1Ch 9:22",
+          "book_code": "1Chr",
+          "chapter": 9,
+          "verse_num": 22,
+          "esv_text": "1Ch 9:22 All these, who were chosen as gatekeepers at the thresholds , were 212 . They were enrolled by genealogies in their villages . David and Samuel the seer established them in their office of trust .",
+          "target_word": "chosen",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Chr.9.22' class='verseLink'><span class='verseNumber'>1Ch 9:22</span></a> <span morph='HNcmsc' strong='H3605'>All</span> these, who were <span morph='HVqsmpa HTd HSp3mp' strong='H1305 H9009 H9028'>chosen</span> as <span morph='HNcmpa HR' strong='H7778 H9005'>gatekeepers</span> at the <span morph='HNcmpa HRd' strong='H5592B H9003'>thresholds</span>, were <span morph='HNcfda HNcbda HNcbsa' strong='H3967 H8147 H6240'>212</span>. They were enrolled by <span morph='HVtcc HSp3mp' strong='H3187 H9028'>genealogies</span> in their <span morph='HNcmpc HR' strong='H2691B H9003'>villages</span>. <span class='normal'></span> <span morph='HNpm' strong='H1732'>David</span> and <span morph='HNpm HC' strong='H8050G H9002'>Samuel</span>  the <span morph='HNcmsa HTd' strong='H7203A H9009'>seer</span> <span morph='HVpp3ms HSp3mp HPp3mp' strong='H3245 H9048 H1992'>established</span> <span morph='HPp3mp HC' strong='H1992 H9002'>them</span> in <span morph='HSp3mp' strong='H9028'>their</span> office of <span morph='HNcfsc HR' strong='H0530 H9003'>trust</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "9:22 All these, who were",
+          "context_after": "as gatekeepers at the thresholds"
+        },
+        {
+          "osisId": "2Sam.22.27",
+          "ref": "2Sa 22:27",
+          "book_code": "2Sam",
+          "chapter": 22,
+          "verse_num": 27,
+          "esv_text": "2Sa 22:27 with the purified you deal purely , and with the crooked you make yourself seem tortuous .",
+          "target_word": "purified",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Sam.22.27' class='verseLink'><span class='verseNumber'>2Sa 22:27</span></a> <span class='level1'></span><span morph='HR' strong='H5973A'>with</span> the <span morph='HVNrmsa' strong='H1305'>purified</span> you <span morph='HVti2ms' strong='H1305'>deal purely</span>,<br /><span class='level2'></span>and <span morph='HR HC' strong='H5973A H9002'>with</span> the <span morph='HAamsa' strong='H6141'>crooked</span> you make yourself <span morph='HVti2ms' strong='H6617'>seem tortuous</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "2Sa 22:27 with the",
+          "context_after": "you deal purely , and"
+        },
+        {
+          "osisId": "Dan.11.35",
+          "ref": "Dan 11:35",
+          "book_code": "Dan",
+          "chapter": 11,
+          "verse_num": 35,
+          "esv_text": "Dan 11:35 and some of the wise shall stumble , so that they may be refined , purified , and made white , until the time of the end , for it still awaits the appointed time .",
+          "target_word": "purified",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Dan.11.35' class='verseLink'><span class='verseNumber'>Dan 11:35</span></a> and <span morph='HR HC' strong='H4480A H9002'>some</span> of the <span morph='HVhrmpa HTd' strong='H7919A H9009'>wise</span> shall <span morph='HVNi3mp' strong='H3782'>stumble</span>, so that they may be <span morph='HVqcc HR' strong='H6884 H9005'>refined</span>, <span class='normal'></span> <span morph='HVpcc HR HC HR HSp3mp' strong='H1305 H9005 H9002 H9003 H9038'>purified</span>, and  <span morph='HVhcc HC HR' strong='H3835A H9002 H9005'>made white</span>, <span morph='HR' strong='H5704'>until</span>  the <span morph='HNcbsc' strong='H6256'>time</span> of the <span morph='HNcmsa' strong='H7093'>end</span>, <span class='normal'></span> <span morph='HTc' strong='H3588A'>for</span> it <span morph='HAcmsa' strong='H5750'>still</span> awaits the <span morph='HNcmsa HRd' strong='H4150G H9005'>appointed time</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "they may be refined ,",
+          "context_after": ", and made white ,"
+        },
+        {
+          "osisId": "Dan.12.10",
+          "ref": "Dan 12:10",
+          "book_code": "Dan",
+          "chapter": 12,
+          "verse_num": 10,
+          "esv_text": "Dan 12:10 Many shall purify themselves and make themselves white and be refined , but the wicked shall act wickedly . And none of the wicked shall understand , but those who are wise shall understand .",
+          "target_word": "purify",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Dan.12.10' class='verseLink'><span class='verseNumber'>Dan 12:10</span></a>  <span morph='HAampa' strong='H7227A'>Many</span> shall <span morph='HVti3mp' strong='H1305'>purify</span> themselves and make themselves <span morph='HVtu3mp' strong='H3835A'>white</span> and be <span morph='HVNu3mp' strong='H6884'>refined</span>, but  the <span morph='HNcmpa' strong='H7563'>wicked</span> shall act <span morph='HVhq3cp' strong='H7561'>wickedly</span>. And <span morph='HTn HC HNcmsc' strong='H3808 H9002 H3605'>none</span> of the <span morph='HNcmpa' strong='H7563'>wicked</span> shall <span morph='HVqi3mp' strong='H0995'>understand</span>, <span class='normal'></span> but those who <span morph='HVhrmpa HC HTd' strong='H7919A H9002 H9009'>are wise</span> shall <span morph='HVqi3mp' strong='H0995'>understand</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "Dan 12:10 Many shall",
+          "context_after": "themselves and make themselves white"
+        },
+        {
+          "osisId": "Eccl.3.18",
+          "ref": "Ecc 3:18",
+          "book_code": "Eccl",
+          "chapter": 3,
+          "verse_num": 18,
+          "esv_text": "Ecc 3:18 I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts .",
+          "target_word": "testing",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Eccl.3.18' class='verseLink'><span class='verseNumber'>Ecc 3:18</span></a> <span morph='HPp1bs' strong='H0589'>I</span> <span morph='HVqp1cs' strong='H0559'>said</span> in my <span morph='HNcmsc HR' strong='H3820A H9003'>heart</span> <span morph='HR HSp1bs' strong='H5921A H9020'>with</span> <span morph='HNcfsc' strong='H1700'>regard</span> to the <span morph='HNcmpc' strong='H1121A'>children</span> of <span morph='HNcmsa HTd' strong='H0120G H9009'>man</span> that <span morph='HNcmpa HTd HSp3mp' strong='H0430G H9009 H9038'>God</span> is <span morph='HVqcc HR' strong='H1305 H9005'>testing</span> them that they may <span morph='HVqcc HC HR' strong='H7200G H9002 H9005'>see</span> that <span morph='HPp3mp' strong='H1992'>they</span> <span morph='HPp3mp HTr HRd HSp3mp' strong='H1992 H9007 H9005 H9038'>themselves</span> are but  <span morph='HNcfsa' strong='H0929'>beasts</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "of man that God is",
+          "context_after": "them that they may see"
+        },
+        {
+          "osisId": "Ezek.20.38",
+          "ref": "Eze 20:38",
+          "book_code": "Ezek",
+          "chapter": 20,
+          "verse_num": 38,
+          "esv_text": "Eze 20:38 I will purge out the rebels from among you, and those who transgress against me. I will bring them out of the land where they sojourn , but they shall not enter the land of Israel . Then you will know that I am the Lord .",
+          "target_word": "purge out",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ezek.20.38' class='verseLink'><span class='verseNumber'>Eze 20:38</span></a>  I will <span morph='HVqq1cs' strong='H1305'>purge out</span> the <span morph='HVqrmpa HTd HR HSp2mp' strong='H4775 H9009 H9006 H9036'>rebels</span> from among you, and those who <span morph='HVqrmpa HC HTd' strong='H6586 H9002 H9009'>transgress</span> against me.  I will <span morph='HVhi1cs HSp3mp' strong='H3318H H9028'>bring them out</span> of the <span morph='HNcfsc HR HR HSp1bs' strong='H0776G H9006 H9003 H9030'>land</span> where they <span morph='HNcmpc' strong='H4033'>sojourn</span>, <span class='normal'></span> but they shall <span morph='HTn' strong='H3808'>not</span> <span morph='HVqi3ms' strong='H0935G'>enter</span> the <span morph='HNcfsc HTo HSp3mp HR HC' strong='H0127G H0853 H9038 H0413 H9002'>land</span> of <span morph='HNpl' strong='H3478'>Israel</span>. <span class='normal'></span> Then you will <span morph='HVqq2mp' strong='H3045'>know</span> <span morph='HTc' strong='H3588A'>that</span> <span morph='HPp1bs' strong='H0589'>I</span> am the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "Eze 20:38 I will",
+          "context_after": "the rebels from among you,"
+        },
+        {
+          "osisId": "Isa.49.2",
+          "ref": "Isa 49:2",
+          "book_code": "Isa",
+          "chapter": 49,
+          "verse_num": 2,
+          "esv_text": "Isa 49:2 He made my mouth like a sharp sword ; in the shadow of his hand he hid me; he made me a polished arrow ; in his quiver he hid me away.",
+          "target_word": "polished",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.49.2' class='verseLink'><span class='verseNumber'>Isa 49:2</span></a> <span class='level1'></span> He <span morph='HVqw3ms' strong='H7760A'>made</span> my <span morph='HNcmsc' strong='H6310G'>mouth</span> like a <span morph='HAafsa' strong='H2299'>sharp</span> <span morph='HNcfsa HR HSp1bs' strong='H2719 H9004 H9020'>sword</span>;<br /><span class='level2'></span> <span morph='HR' strong='H9003'>in</span> the <span morph='HNcmsc' strong='H6738'>shadow</span> of his <span morph='HNcbsc' strong='H3027G'>hand</span> he <span morph='HVhp3ms HSp3ms' strong='H2244 H9023'>hid</span> me;<br /><span class='level1'></span>he <span morph='HVqw3ms HSp1bs' strong='H7760A H9030'>made</span> me a <span morph='HVqsmsa' strong='H1305'>polished</span> <span morph='HNcmsa HR HSp1bs' strong='H2671 H9005 H9030'>arrow</span>;<br /><span class='level2'></span><span morph='HR' strong='H9003'>in</span> his <span morph='HNcfsc' strong='H0827'>quiver</span> he <span morph='HVhp3ms HSp3ms' strong='H5641 H9023'>hid</span> <span morph='HSp1bs' strong='H9030'>me</span> away.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "me; he made me a",
+          "context_after": "arrow ; in his quiver"
+        },
+        {
+          "osisId": "Isa.52.11",
+          "ref": "Isa 52:11",
+          "book_code": "Isa",
+          "chapter": 52,
+          "verse_num": 11,
+          "esv_text": "Isa 52:11 Depart , depart , go out from there ; touch no unclean thing; go out from the midst of her; purify yourselves, you who bear the vessels of the Lord .",
+          "target_word": "purify",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.52.11' class='verseLink'><span class='verseNumber'>Isa 52:11</span></a> <span class='level1'></span> <span morph='HVqv2mp' strong='H5493H'>Depart</span>, <span morph='HVqv2mp' strong='H5493H'>depart</span>, <span morph='HVqv2mp' strong='H3318G'>go out</span> <span morph='HR' strong='H9006'>from</span> <span morph='HD' strong='H8033G'>there</span>;<br /><span class='level2'></span><span morph='HVqj2mp' strong='H5060'>touch</span> <span morph='HTn' strong='H0408'>no</span> <span morph='HAamsa' strong='H2931'>unclean</span> thing;<br /><span class='level1'></span><span morph='HVqv2mp' strong='H3318G'>go out</span> <span morph='HR' strong='H9006'>from</span> the <span morph='HNcmsc' strong='H8432'>midst</span> of her; <span morph='HVNv2mp HSp3fs' strong='H1305 H9024'>purify</span> yourselves,<br /><span class='level2'></span> you who <span morph='HVqrmpc' strong='H5375H'>bear</span> the <span morph='HNcmpc' strong='H3627'>vessels</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "from the midst of her;",
+          "context_after": "yourselves, you who bear the"
+        },
+        {
+          "osisId": "Jer.4.11",
+          "ref": "Jer 4:11",
+          "book_code": "Jer",
+          "chapter": 4,
+          "verse_num": 11,
+          "esv_text": "Jer 4:11 At that time it will be said to this people and to Jerusalem , “A hot wind from the bare heights in the desert toward the daughter of my people , not to winnow or cleanse ,",
+          "target_word": "cleanse",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.4.11' class='verseLink'><span class='verseNumber'>Jer 4:11</span></a> <span morph='HRd' strong='H9003'>At</span> that <span morph='HNcbsa' strong='H6256'>time</span> <span morph='HPp3fs' strong='H1931'>it</span> will be <span morph='HVNi3ms HTd' strong='H0559 H9009'>said</span> to <span morph='HTm HTd' strong='H2088 H9009'>this</span> <span morph='HNcmsa HRd' strong='H5971A H9005'>people</span> and to <span morph='HNpl HC HR' strong='H3389 H9002 H9005'>Jerusalem</span>, “A <span morph='HAamsc' strong='H6703'>hot</span> <span morph='HNcfsc' strong='H7307H'>wind</span> from  the <span morph='HNcmpa' strong='H8205'>bare heights</span> in the <span morph='HNcmsa HRd' strong='H4057B H9003'>desert</span> <span morph='HNcbsc' strong='H1870J'>toward</span> the <span morph='HNcfsc' strong='H1323G'>daughter</span> of my <span morph='HNcmsc' strong='H5971A'>people</span>, <span morph='HTn HSp1bs' strong='H3808 H9020'>not</span> to <span morph='HVqcc HR' strong='H2219 H9005'>winnow</span> <span morph='HTn HC' strong='H3808 H9002'>or</span> <span morph='HVhcc HR' strong='H1305 H9005'>cleanse</span>,</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": ", not to winnow or",
+          "context_after": ","
+        },
+        {
+          "osisId": "Jer.51.11",
+          "ref": "Jer 51:11",
+          "book_code": "Jer",
+          "chapter": 51,
+          "verse_num": 11,
+          "esv_text": "Jer 51:11 “ Sharpen the arrows ! Take up the shields ! The Lord has stirred up the spirit of the kings of the Medes , because his purpose concerning Babylon is to destroy it, for that is the vengeance of the Lord , the vengeance for his temple .",
+          "target_word": "Sharpen",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.51.11' class='verseLink'><span class='verseNumber'>Jer 51:11</span></a> <span class='level1'></span> “<span morph='HVhv2mp' strong='H1305'>Sharpen</span> the <span morph='HNcmpa HTd' strong='H2671 H9009'>arrows</span>!<br /><span class='level2'></span><span morph='HVqv2mp' strong='H4390'>Take up</span> the <span morph='HNcmpa HTd' strong='H7982 H9009'>shields</span>!<br /><span class='endLineGroup'></span><p></p> The <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> has <span morph='HVhp3ms' strong='H5782'>stirred up</span> the <span morph='HNcfsc HTo' strong='H7307G H0853'>spirit</span> of the <span morph='HNcmpc' strong='H4428G'>kings</span> of  the <span morph='HNpl' strong='H4074I'>Medes</span>, <span morph='HTc' strong='H3588A'>because</span>  his <span morph='HNcfsc' strong='H4209'>purpose</span> <span morph='HR' strong='H5921A'>concerning</span> <span morph='HNpl' strong='H0894'>Babylon</span> is to <span morph='HVhcc HR HSp3ms' strong='H7843 H9005 H9023'>destroy</span> it,  <span morph='HTc HSp3fs' strong='H3588A H9034'>for</span> that is the <span morph='HNcfsc' strong='H5360'>vengeance</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>, the <span morph='HNcfsc HPp3fs' strong='H5360 H1931'>vengeance</span> for  <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HNcmsc' strong='H1964G'>temple</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "Jer 51:11 “",
+          "context_after": "the arrows ! Take up"
+        },
+        {
+          "osisId": "Job.33.3",
+          "ref": "Job 33:3",
+          "book_code": "Job",
+          "chapter": 33,
+          "verse_num": 3,
+          "esv_text": "Job 33:3 My words declare the uprightness of my heart , and what my lips know they speak sincerely .",
+          "target_word": "speak sincerely",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.33.3' class='verseLink'><span class='verseNumber'>Job 33:3</span></a> <span class='level1'></span><span morph='HSp1bs' strong='H9020'>My</span> <span morph='HNcmpc' strong='H0561'>words</span> <span morph='HVpp3cp' strong='H4448A'>declare</span> the <span morph='HNcmsc' strong='H3476'>uprightness</span> of my <span morph='HNcmsc' strong='H3820A'>heart</span>,<br /><span class='level2'></span>and what my <span morph='HNcmpc' strong='H8193G'>lips</span> <span morph='HNcfsc HC HSp1bs' strong='H1847 H9002 H9020'>know</span> they <span morph='HAamsa HSp1bs' strong='H1305 H9020'>speak sincerely</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "what my lips know they",
+          "context_after": "."
+        },
+        {
+          "osisId": "Neh.5.18",
+          "ref": "Neh 5:18",
+          "book_code": "Neh",
+          "chapter": 5,
+          "verse_num": 18,
+          "esv_text": "Neh 5:18 Now what was prepared at my expense for each day was one ox and six choice sheep and birds , and every ten days all kinds of wine in abundance . Yet for all this I did not demand the food allowance of the governor , because the service was too heavy on this people .",
+          "target_word": "choice",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Neh.5.18' class='verseLink'><span class='verseNumber'>Neh 5:18</span></a>  Now <span morph='HTr HC' strong='H0834A H9002'>what</span> <span morph='HVqp3ms' strong='H1961'>was</span> <span morph='HVNrmsa HVNp3cp' strong='H6213A H6213A'>prepared</span> at my expense  for each <span morph='HNcmsa HR' strong='H3117G H9005'>day</span> was <span morph='HAcfsa' strong='H0259'>one</span> <span morph='HNcmsa' strong='H7794'>ox</span> and <span morph='HAcbsa' strong='H8337'>six</span> <span morph='HVqsfpa' strong='H1305'>choice</span> <span morph='HNcbsa HAcfsa' strong='H6629G H0259'>sheep</span> and <span morph='HNcbpa HC' strong='H6833 H9002'>birds</span>, and <span morph='HAcmsc HC HR HSp1bs' strong='H0996G H9002 H9005 H9030'>every</span> <span morph='HNcfsc' strong='H6235'>ten</span> <span morph='HNcmpa' strong='H3117G'>days</span> <span morph='HNcmsc HR' strong='H3605 H9003'>all</span> kinds of <span morph='HNcmsa' strong='H3196'>wine</span> in <span morph='HVhaa HR' strong='H7235A H9005'>abundance</span>. Yet for <span morph='HR HC' strong='H5973A H9002'>all</span> <span morph='HTm' strong='H2088'>this</span>  I did <span morph='HTn' strong='H3808'>not</span> <span morph='HVpp1cs' strong='H1245'>demand</span> the food <span morph='HNcmsc' strong='H3899I'>allowance</span> of the <span morph='HNcfsa HTd' strong='H6346 H9009'>governor</span>, <span morph='HTc' strong='H3588A'>because</span> the <span morph='HNcfsa HTd' strong='H5656G H9009'>service</span> was too <span morph='HVqp3fs' strong='H3513H'>heavy</span> <span morph='HR' strong='H5921A'>on</span> <span morph='HTm HTd' strong='H2088 H9009'>this</span> <span morph='HNcmsa HTd' strong='H5971A H9009'>people</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "was one ox and six",
+          "context_after": "sheep and birds , and"
+        },
+        {
+          "osisId": "Ps.18.26",
+          "ref": "Psa 18:26",
+          "book_code": "Ps",
+          "chapter": 18,
+          "verse_num": 26,
+          "esv_text": "Psa 18:26 with the purified you show yourself pure ; and with the crooked you make yourself seem tortuous .",
+          "target_word": "purified",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.18.26' class='verseLink'><span class='verseNumber'>Psa 18:26</span></a> <span class='level1'></span><span morph='HR' strong='H5973A'>with</span> the <span morph='HVNrmsa' strong='H1305'>purified</span> you show yourself <span morph='HVti2ms' strong='H1305'>pure</span>;<br /><span class='level2'></span>and <span morph='HR HC' strong='H5973A H9002'>with</span>  the <span morph='HAamsa' strong='H6141'>crooked</span> you make yourself seem <span morph='HVti2ms' strong='H6617'>tortuous</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "Psa 18:26 with the",
+          "context_after": "you show yourself pure ;"
+        },
+        {
+          "osisId": "Zeph.3.9",
+          "ref": "Zep 3:9",
+          "book_code": "Zeph",
+          "chapter": 3,
+          "verse_num": 9,
+          "esv_text": "Zep 3:9 “ For at that time I will change the speech of the peoples to a pure speech , that all of them may call upon the name of the Lord and serve him with one accord .",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H1305",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Zeph.3.9' class='verseLink'><span class='verseNumber'>Zep 3:9</span></a> <span class='level1'></span>“<span morph='HTc' strong='H3588A'>For</span> at that <span morph='HD' strong='H0227A'>time</span> I will <span morph='HVqi1cs' strong='H2015'>change</span> the speech of the <span morph='HNcmpa HR' strong='H5971A H0413'>peoples</span><br /><span class='level2'></span>to  a <span morph='HVqsfsa' strong='H1305'>pure</span> <span morph='HNcfsa' strong='H8193H'>speech</span>,<br /><span class='level1'></span>that <span morph='HNcmsc' strong='H3605'>all</span> of them may <span morph='HVqcc HR' strong='H7121G H9005'>call</span> upon the <span morph='HNcmsc HR HSp3mp' strong='H8034 H9003 H9028'>name</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span><br /><span class='level2'></span>and <span morph='HVqcc HR' strong='H5647H H9005'>serve</span> him with <span morph='HAcfsa' strong='H0259'>one</span> <span morph='HNcmsa HSp3ms' strong='H7926 H9033'>accord</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1305",
+          "span_label_found": "to purify",
+          "context_before": "of the peoples to a",
+          "context_after": "speech , that all of"
+        }
+      ]
+    },
+    {
+      "code": "H1250A",
+      "gloss": "grain",
+      "transliteration": "bar",
+      "script_form": "בַּר",
+      "language": "Hebrew",
+      "vocab_count": 13,
+      "medium_def": "corn, grain",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1251",
+          "form": "בַּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1262",
+          "form": "בָּרָה",
+          "gloss": "to eat",
+          "translit": "ba.rah"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1251, H1262, H1305, H1249, H1253, H1252, H1287, H1250, H1257, H1250",
+      "freq_list": "13;13;13;13;13;;14;13;13;13;13;13;2;13;13;13;6;6",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 13,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1250A ('grain') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Amos.5.11",
+          "ref": "Amo 5:11",
+          "book_code": "Amos",
+          "chapter": 5,
+          "verse_num": 11,
+          "esv_text": "Amo 5:11 Therefore because you trample on the poor and you exact taxes of grain from him, you have built houses of hewn stone , but you shall not dwell in them; you have planted pleasant vineyards , but you shall not drink their wine .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.5.11' class='verseLink'><span class='verseNumber'>Amo 5:11</span></a> <span class='level1'></span><span morph='HD HR' strong='H3651C H9005'>Therefore</span> <span morph='HC' strong='H3282'>because</span> you  <span morph='HVqcc' strong='H1318'>trample</span> on  the <span morph='HAamsa HSp2mp HR' strong='H1800 H9046 H5921A'>poor</span><br /><span class='level2'></span>and you <span morph='HVqi2mp' strong='H3947G'>exact</span> <span morph='HNcfsc HC' strong='H4864 H9002'>taxes</span> of <span morph='HNcmsa' strong='H1250A'>grain</span> from him,<br /><span class='level1'></span> you have <span morph='HVqp2mp' strong='H1129'>built</span> <span morph='HNcmpc HR HSp3ms' strong='H1004B H4480A H9033'>houses</span> of <span morph='HNcfsa' strong='H1496'>hewn stone</span>,<br /><span class='level2'></span>but you shall <span morph='HTn HC' strong='H3808 H9002'>not</span> <span morph='HVqi2mp' strong='H3427'>dwell</span> in them;<br /><span class='level1'></span> you have <span morph='HVqp2mp' strong='H5193'>planted</span> <span morph='HNcmsa' strong='H2531'>pleasant</span> <span morph='HNcmpc HR HSp3mp' strong='H3754 H9003 H9038'>vineyards</span>,<br /><span class='level2'></span>but you shall <span morph='HTn HC' strong='H3808 H9002'>not</span> <span morph='HVqi2mp' strong='H8354'>drink</span> <span morph='HSp3mp' strong='H9028'>their</span> <span morph='HNcmsc HTo' strong='H3196 H0853'>wine</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "and you exact taxes of",
+          "context_after": "from him, you have built"
+        },
+        {
+          "osisId": "Amos.8.5",
+          "ref": "Amo 8:5",
+          "book_code": "Amos",
+          "chapter": 8,
+          "verse_num": 5,
+          "esv_text": "Amo 8:5 saying , “ When will the new moon be over , that we may sell grain ? And the Sabbath , that we may offer wheat for sale, that we may make the ephah small and the shekel great and deal deceitfully with false balances ,",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.8.5' class='verseLink'><span class='verseNumber'>Amo 8:5</span></a> <span class='level1'></span><span morph='HVqcc HR' strong='H0559 H9005'>saying</span>, “<span morph='HTi' strong='H4970'>When</span> will  the <span morph='HNcmsa HTd' strong='H2320H H9009'>new moon</span> be <span morph='HVqi3ms' strong='H5674A'>over</span>,<br /><span class='level2'></span>that we may <span morph='HVhc1cp' strong='H7666'>sell</span> <span morph='HNcmsa' strong='H7668'>grain</span>?<br /><span class='level1'></span>And  the <span morph='HNcfsa HC HTd' strong='H7676 H9002 H9009'>Sabbath</span>,<br /><span class='level2'></span>that we may <span morph='HVqc1cp' strong='H6605A'>offer</span> <span morph='HNcmsa' strong='H1250A'>wheat</span> for sale,<br /><span class='level1'></span>that we may make  the <span morph='HNcfsa' strong='H0374'>ephah</span> <span morph='HVhcc HR' strong='H6994 H9005'>small</span> and the <span morph='HNcmsa' strong='H8255'>shekel</span>   <span morph='HVhcc HC HR' strong='H1431 H9002 H9005'>great</span><br /><span class='level2'></span>and <span morph='HVpcc HC HR' strong='H5791 H9002 H9005'>deal</span> deceitfully with <span morph='HNcfsa' strong='H4820'>false</span> <span morph='HNcmdc' strong='H3976'>balances</span>,<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": ", that we may offer",
+          "context_after": "for sale, that we may"
+        },
+        {
+          "osisId": "Amos.8.6",
+          "ref": "Amo 8:6",
+          "book_code": "Amos",
+          "chapter": 8,
+          "verse_num": 6,
+          "esv_text": "Amo 8:6 that we may buy the poor for silver and the needy for a pair of sandals and sell the chaff of the wheat ?”",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.8.6' class='verseLink'><span class='verseNumber'>Amo 8:6</span></a> <span class='level1'></span><span morph='HR' strong='H9005'>that</span> we may <span morph='HVqcc' strong='H7069'>buy</span> the <span morph='HAampa' strong='H1800'>poor</span> for  <span morph='HNcmsa HRd' strong='H3701G H9003'>silver</span><br /><span class='level2'></span>and the <span morph='HAamsa HC' strong='H0034 H9002'>needy</span> for a pair of <span morph='HNcfda HNcmsc HR' strong='H5275 H5668 H9003'>sandals</span><br /><span class='level2'></span>and <span morph='HVhi1cp' strong='H7666'>sell</span> the <span morph='HNcmsc HC' strong='H4651 H9002'>chaff</span> of the <span morph='HNcmsa' strong='H1250A'>wheat</span>?”<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "sell the chaff of the",
+          "context_after": "?”"
+        },
+        {
+          "osisId": "Gen.41.35",
+          "ref": "Gen 41:35",
+          "book_code": "Gen",
+          "chapter": 41,
+          "verse_num": 35,
+          "esv_text": "Gen 41:35 And let them gather all the food of these good years that are coming and store up grain under the authority of Pharaoh for food in the cities , and let them keep it.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.41.35' class='verseLink'><span class='verseNumber'>Gen 41:35</span></a> And  let them <span morph='HVqu3mp' strong='H6908'>gather</span> <span morph='HNcmsc HTo' strong='H3605 H0853'>all</span> the <span morph='HNcmsc' strong='H0400'>food</span> of <span morph='HTm HTd' strong='H0428 H9009'>these</span> <span morph='HAafpa HTd' strong='H2896A H9009'>good</span> <span morph='HNcmpa HTd' strong='H8141 H9009'>years</span> that are <span morph='HVqrfpa HTd' strong='H0935G H9009'>coming</span> and <span morph='HVqu3mp' strong='H6651'>store up</span> <span morph='HNcmsa' strong='H1250A'>grain</span> <span morph='HNcmsc' strong='H8478I'>under</span> the <span morph='HNcbsc' strong='H3027H'>authority</span> of <span morph='HNtmsa' strong='H6547H'>Pharaoh</span> for <span morph='HNcmsa' strong='H0400'>food</span> in the <span morph='HNcmpa HRd' strong='H5892B H9003'>cities</span>, and let them <span morph='HVqq3cp' strong='H8104H'>keep</span> it.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "are coming and store up",
+          "context_after": "under the authority of Pharaoh"
+        },
+        {
+          "osisId": "Gen.41.49",
+          "ref": "Gen 41:49",
+          "book_code": "Gen",
+          "chapter": 41,
+          "verse_num": 49,
+          "esv_text": "Gen 41:49 And Joseph stored up grain in great abundance , like the sand of the sea , until he ceased to measure it, for it could not be measured .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.41.49' class='verseLink'><span class='verseNumber'>Gen 41:49</span></a> And <span morph='HNpm' strong='H3130G'>Joseph</span> <span morph='HVqw3ms' strong='H6651'>stored</span> up <span morph='HNcmsa' strong='H1250A'>grain</span> in <span morph='HAcmsa' strong='H3966'>great</span> <span morph='HVhaa' strong='H7235A'>abundance</span>, <span class='normal'></span> <span morph='HR' strong='H9004'>like</span> the <span morph='HNcmsc' strong='H2344'>sand</span> of the <span morph='HNcmsa HTd' strong='H3220G H9009'>sea</span>, <span morph='HR' strong='H5704'>until</span> he <span morph='HVqp3ms HTc' strong='H2308 H3588A'>ceased</span> to <span morph='HVqcc HR' strong='H5608A H9005'>measure</span> it, for it could <span morph='HNcmsc HTc' strong='H0369 H3588A'>not</span> be <span morph='HNcmsa' strong='H4557'>measured</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "41:49 And Joseph stored up",
+          "context_after": "in great abundance , like"
+        },
+        {
+          "osisId": "Gen.42.25",
+          "ref": "Gen 42:25",
+          "book_code": "Gen",
+          "chapter": 42,
+          "verse_num": 25,
+          "esv_text": "Gen 42:25 And Joseph gave orders to fill their bags with grain , and to replace every man’s money in his sack , and to give them provisions for the journey . This was done for them.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.42.25' class='verseLink'><span class='verseNumber'>Gen 42:25</span></a>  And <span morph='HNpm' strong='H3130G'>Joseph</span> <span morph='HVpw3ms' strong='H6680'>gave orders</span> to <span morph='HVpw3mp' strong='H4390'>fill</span> their <span morph='HNcmpc HTo' strong='H3627 H0853'>bags</span> with <span morph='HNcmsa HSp3mp' strong='H1250A H9028'>grain</span>, and to <span morph='HVhcc HC HR' strong='H7725G H9002 H9005'>replace</span> every <span morph='HNcmsa HSp3mp' strong='H0376I H9028'>man’s</span> <span morph='HNcmpc' strong='H3701G'>money</span> in his <span morph='HNcmsc HR' strong='H8242 H0413'>sack</span>, and to <span morph='HVqcc HR HC HSp3ms' strong='H5414G H9005 H9002 H9023'>give</span> them <span morph='HNcfsa HRd HSp3mp' strong='H6720 H9005 H9038'>provisions</span> for the <span morph='HNcbsa HRd' strong='H1870L H9005'>journey</span>. <span morph='HD HRd HSp3mp' strong='H3651C H9005 H9038'>This</span> was <span morph='HVqw3ms' strong='H6213A'>done</span> for them.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "to fill their bags with",
+          "context_after": ", and to replace every"
+        },
+        {
+          "osisId": "Gen.42.3",
+          "ref": "Gen 42:3",
+          "book_code": "Gen",
+          "chapter": 42,
+          "verse_num": 3,
+          "esv_text": "Gen 42:3 So ten of Joseph’s brothers went down to buy grain in Egypt .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.42.3' class='verseLink'><span class='verseNumber'>Gen 42:3</span></a> So <span morph='HNcfsa' strong='H6235'>ten</span> of <span morph='HNpm' strong='H3130G'>Joseph’s</span> <span morph='HNcmpc' strong='H0251G'>brothers</span> <span morph='HVqw3mp' strong='H3381'>went down</span> to <span morph='HVqcc HR' strong='H7666 H9005'>buy</span> <span morph='HNcmsa' strong='H1250A'>grain</span> in <span morph='HNpl HR' strong='H4714G H9006'>Egypt</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "brothers went down to buy",
+          "context_after": "in Egypt ."
+        },
+        {
+          "osisId": "Gen.45.23",
+          "ref": "Gen 45:23",
+          "book_code": "Gen",
+          "chapter": 45,
+          "verse_num": 23,
+          "esv_text": "Gen 45:23 To his father he sent as follows : ten donkeys loaded with the good things of Egypt , and ten female donkeys loaded with grain , bread , and provision for his father on the journey .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.45.23' class='verseLink'><span class='verseNumber'>Gen 45:23</span></a> <span morph='HR' strong='H9005'>To</span> his <span morph='HNcmsc HC' strong='H0001G H9002'>father</span> he <span morph='HVqp3ms HSp3ms' strong='H7971G H9023'>sent</span> as <span morph='HTm HR' strong='H2063 H9004'>follows</span>: <span morph='HNcfsa' strong='H6235'>ten</span> <span morph='HNcfpa' strong='H0860'>donkeys</span> <span morph='HVqrmpa' strong='H5375H'>loaded</span> with the <span morph='HNcmsc HR' strong='H2898 H9006'>good things</span> of <span morph='HNpl' strong='H4714G'>Egypt</span>, and <span morph='HNcmsc HC' strong='H6235 H9002'>ten</span> female <span morph='HNcbpa' strong='H2543'>donkeys</span> <span morph='HVqrfpa' strong='H5375H'>loaded</span> with <span morph='HNcmsa' strong='H1250A'>grain</span>, <span morph='HNcmsa HC' strong='H3899H H9002'>bread</span>, and <span morph='HNcmsa HC' strong='H4202 H9002'>provision</span> for his <span morph='HNcmsc HR' strong='H0001G H9005'>father</span> on the <span morph='HNcbsa HRd HSp3ms' strong='H1870L H9005 H9023'>journey</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "ten female donkeys loaded with",
+          "context_after": ", bread , and provision"
+        },
+        {
+          "osisId": "Jer.23.28",
+          "ref": "Jer 23:28",
+          "book_code": "Jer",
+          "chapter": 23,
+          "verse_num": 28,
+          "esv_text": "Jer 23:28 Let the prophet who has a dream tell the dream , but let him who has my word speak my word faithfully . What has straw in common with wheat ? declares the Lord .",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.23.28' class='verseLink'><span class='verseNumber'>Jer 23:28</span></a>  Let the <span morph='HNcmsa HTd' strong='H5030 H9009'>prophet</span> <span morph='HTr' strong='H0834A'>who</span> has a <span morph='HNcmsa HRd HSp3ms' strong='H2472 H0854 H9033'>dream</span>  <span morph='HVpi3ms' strong='H5608A'>tell</span> the <span morph='HNcmsa' strong='H2472'>dream</span>, but let him <span morph='HTr HC' strong='H0834A H9002'>who</span> <span morph='HNcmsc' strong='H1697G'>has</span> my <span morph='HNcmsc' strong='H1697G'>word</span> <span morph='HVpi3ms HSp1bs HRd HSp3ms' strong='H1696G H9020 H0854 H9033'>speak</span> my word <span morph='HNcfsa HSp1bs' strong='H0571G H9020'>faithfully</span>. <span class='normal'></span> <span morph='HPi' strong='H4100'>What</span> has <span morph='HNcmsa HRd' strong='H8401 H9005'>straw</span> in common <span morph='HR' strong='H0854'>with</span> <span morph='HNcmsa HTd' strong='H1250A H9009'>wheat</span>? <span morph='HNcmsc' strong='H5002'>declares</span> the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "has straw in common with",
+          "context_after": "? declares the Lord ."
+        },
+        {
+          "osisId": "Joel.2.24",
+          "ref": "Joe 2:24",
+          "book_code": "Joel",
+          "chapter": 2,
+          "verse_num": 24,
+          "esv_text": "Joe 2:24 “The threshing floors shall be full of grain ; the vats shall overflow with wine and oil .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Joel.2.24' class='verseLink'><span class='verseNumber'>Joe 2:24</span></a> <span class='level1'></span>“The <span morph='HNcfpa HTd' strong='H1637 H9009'>threshing</span> floors shall be <span morph='HVqq3cp' strong='H4390'>full</span> of <span morph='HNcmsa' strong='H1250A'>grain</span>;<br /><span class='level2'></span>the <span morph='HNcmpa HTd' strong='H3342 H9009'>vats</span> shall <span morph='HVhq3cp' strong='H7783'>overflow</span> with <span morph='HNcmsa' strong='H8492'>wine</span> and <span morph='HNcmsa HC' strong='H3323 H9002'>oil</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "floors shall be full of",
+          "context_after": "; the vats shall overflow"
+        },
+        {
+          "osisId": "Prov.11.26",
+          "ref": "Pro 11:26",
+          "book_code": "Prov",
+          "chapter": 11,
+          "verse_num": 26,
+          "esv_text": "Pro 11:26 The people curse him who holds back grain , but a blessing is on the head of him who sells it.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.11.26' class='verseLink'><span class='verseNumber'>Pro 11:26</span></a> <span class='level1'></span> The <span morph='HNcmsa HSp3ms' strong='H3816 H9033'>people</span> <span morph='HVqi3mp' strong='H6895'>curse</span> him who <span morph='HVqrmsa' strong='H4513'>holds back</span> <span morph='HNcmsa' strong='H1250A'>grain</span>,<br /><span class='level2'></span>but  a <span morph='HNcfsa HC' strong='H1293 H9002'>blessing</span> is on the <span morph='HNcmsa HR' strong='H7218A H9005'>head</span> of him who  <span morph='HVhrmsa' strong='H7666'>sells</span> it.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "curse him who holds back",
+          "context_after": ", but a blessing is"
+        },
+        {
+          "osisId": "Ps.65.13",
+          "ref": "Psa 65:13",
+          "book_code": "Ps",
+          "chapter": 65,
+          "verse_num": 13,
+          "esv_text": "Psa 65:13 the meadows clothe themselves with flocks , the valleys deck themselves with grain , they shout and sing together for joy.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.65.13' class='verseLink'><span class='verseNumber'>Psa 65:13</span></a> <span class='level1'></span> the <span morph='HNcmpa' strong='H3733B'>meadows</span> <span morph='HVqp3cp' strong='H3847'>clothe</span> themselves with <span morph='HNcbsa HTd' strong='H6629G H9009'>flocks</span>,<br /><span class='level2'></span>the <span morph='HNcmpa HC' strong='H6010R H9002'>valleys</span> <span morph='HVqi3mp' strong='H5848B'>deck</span> themselves with <span morph='HNcmsa' strong='H1250A'>grain</span>,<br /><span class='level2'></span>they  <span morph='HVti3mp' strong='H7321'>shout</span> and <span morph='HVqi3mp HTj' strong='H7891 H0637'>sing</span> together for joy.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "the valleys deck themselves with",
+          "context_after": ", they shout and sing"
+        },
+        {
+          "osisId": "Ps.72.16",
+          "ref": "Psa 72:16",
+          "book_code": "Ps",
+          "chapter": 72,
+          "verse_num": 16,
+          "esv_text": "Psa 72:16 May there be abundance of grain in the land ; on the tops of the mountains may it wave ; may its fruit be like Lebanon ; and may people blossom in the cities like the grass of the field !",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.72.16' class='verseLink'><span class='verseNumber'>Psa 72:16</span></a> <span class='level1'></span>May there <span morph='HVqj3ms' strong='H1961'>be</span> <span morph='HNcfsc' strong='H6451'>abundance</span> of <span morph='HNcmsa' strong='H1250A'>grain</span> in the <span morph='HNcfsa HRd' strong='H0776G H9003'>land</span>;<br /><span class='level2'></span><span morph='HR' strong='H9003'>on</span> the <span morph='HNcmsc' strong='H7218I'>tops</span> of the <span morph='HNcmpa' strong='H2022G'>mountains</span> may it <span morph='HVqi3ms' strong='H7493'>wave</span>;<br /><span class='level2'></span>may its <span morph='HNcmsc' strong='H6529'>fruit</span> be like <span morph='HNpl HRd' strong='H3844G H9004'>Lebanon</span>;<br /><span class='level1'></span>and may <span morph='HVhu3mp HSp3ms' strong='H6692A H9023'>people</span>  blossom in the <span morph='HNcfsa HR' strong='H5892B H9006'>cities</span><br /><span class='level2'></span><span morph='HR' strong='H9004'>like</span> the  <span morph='HNcmsc' strong='H6212'>grass</span> of the <span morph='HNcfsa HTd' strong='H0776G H9009'>field</span>!<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "May there be abundance of",
+          "context_after": "in the land ; on"
+        }
+      ]
+    },
+    {
+      "code": "H1252",
+      "gloss": "cleanness",
+      "transliteration": "bor",
+      "script_form": "בֹּר",
+      "language": "Hebrew",
+      "vocab_count": 5,
+      "medium_def": "cleanness, pureness",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1305, H1249, H1250, H1250, H1253, H1287, H1257",
+      "freq_list": "5;6;5;6;5;;6;6;5;5;5;6;;5;5;5;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 5,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1252 ('cleanness') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "2Sam.22.21",
+          "ref": "2Sa 22:21",
+          "book_code": "2Sam",
+          "chapter": 22,
+          "verse_num": 21,
+          "esv_text": "2Sa 22:21 “The Lord dealt with me according to my righteousness ; according to the cleanness of my hands he rewarded me .",
+          "target_word": "cleanness",
+          "testament": "OT",
+          "fetched_under_code": "H1252",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Sam.22.21' class='verseLink'><span class='verseNumber'>2Sa 22:21</span></a> <span class='level1'></span>“The <span class='small-caps'><span morph='HNpt HSp1bs' strong='H3068G H9030'>Lord</span></span>  <span morph='HVqi3ms' strong='H1580'>dealt</span> with me according to my <span morph='HNcfsc HR' strong='H6666 H9004'>righteousness</span>;<br /><span class='level2'></span><span morph='HR' strong='H9004'>according</span> to the  <span morph='HNcmsc HSp1bs' strong='H1252 H9020'>cleanness</span> of my <span morph='HNcbdc' strong='H3027G'>hands</span> he <span morph='HVhi3ms HSp1bs' strong='H7725K H9020'>rewarded</span> <span morph='HRd HSp1bs' strong='H9005 H9030'>me</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1252",
+          "span_label_found": "cleanness",
+          "context_before": "righteousness ; according to the",
+          "context_after": "of my hands he rewarded"
+        },
+        {
+          "osisId": "2Sam.22.25",
+          "ref": "2Sa 22:25",
+          "book_code": "2Sam",
+          "chapter": 22,
+          "verse_num": 25,
+          "esv_text": "2Sa 22:25 And the Lord has rewarded me according to my righteousness , according to my cleanness in his sight .",
+          "target_word": "cleanness",
+          "testament": "OT",
+          "fetched_under_code": "H1252",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Sam.22.25' class='verseLink'><span class='verseNumber'>2Sa 22:25</span></a> <span class='level1'></span> And the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> has <span morph='HVhw3ms' strong='H7725K'>rewarded</span> me according to my <span morph='HNcfsc HR HRd HSp1bs' strong='H6666 H9004 H9005 H9030'>righteousness</span>,<br /><span class='level2'></span><span morph='HR' strong='H9004'>according</span> to my <span morph='HNcmsc HSp1bs' strong='H1252 H9020'>cleanness</span> in <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HAcmsc HR HSp1bs HNcfdc' strong='H5048 H9005 H9020 H5869A'>sight</span>.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1252",
+          "span_label_found": "cleanness",
+          "context_before": "righteousness , according to my",
+          "context_after": "in his sight ."
+        },
+        {
+          "osisId": "Job.22.30",
+          "ref": "Job 22:30",
+          "book_code": "Job",
+          "chapter": 22,
+          "verse_num": 30,
+          "esv_text": "Job 22:30 He delivers even the one who is not innocent , who will be delivered through the cleanness of your hands .”",
+          "target_word": "cleanness",
+          "testament": "OT",
+          "fetched_under_code": "H1252",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.22.30' class='verseLink'><span class='verseNumber'>Job 22:30</span></a> <span class='level1'></span>He  <span morph='HVpi3ms' strong='H4422'>delivers</span> even the one who is <span morph='HTi' strong='H0336'>not</span> <span morph='HAamsa' strong='H5355A'>innocent</span>,<br /><span class='level2'></span>who will be <span morph='HVNq3ms' strong='H4422'>delivered</span> through  the <span morph='HNcmsc HR' strong='H1252 H9003'>cleanness</span> of <span morph='HSp2ms' strong='H9021'>your</span> <span morph='HNcfdc' strong='H3709G'>hands</span>.”<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1252",
+          "span_label_found": "cleanness",
+          "context_before": "will be delivered through the",
+          "context_after": "of your hands .”"
+        },
+        {
+          "osisId": "Ps.18.20",
+          "ref": "Psa 18:20",
+          "book_code": "Ps",
+          "chapter": 18,
+          "verse_num": 20,
+          "esv_text": "Psa 18:20 The Lord dealt with me according to my righteousness ; according to the cleanness of my hands he rewarded me .",
+          "target_word": "cleanness",
+          "testament": "OT",
+          "fetched_under_code": "H1252",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.18.20' class='verseLink'><span class='verseNumber'>Psa 18:20</span></a> <span class='level1'></span>The <span class='small-caps'><span morph='HNpt HSp1bs' strong='H3068G H9030'>Lord</span></span> <span morph='HVqi3ms' strong='H1580'>dealt</span> with me  <span morph='HR' strong='H9004'>according</span> to my <span morph='HNcmsc' strong='H6664G'>righteousness</span>;<br /><span class='level2'></span><span morph='HR' strong='H9004'>according</span> to  the <span morph='HNcmsc HSp1bs' strong='H1252 H9020'>cleanness</span> of my <span morph='HNcbdc' strong='H3027G'>hands</span> he <span morph='HVhi3ms HSp1bs' strong='H7725K H9020'>rewarded</span> <span morph='HR HSp1bs' strong='H9005 H9030'>me</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1252",
+          "span_label_found": "cleanness",
+          "context_before": "righteousness ; according to the",
+          "context_after": "of my hands he rewarded"
+        },
+        {
+          "osisId": "Ps.18.24",
+          "ref": "Psa 18:24",
+          "book_code": "Ps",
+          "chapter": 18,
+          "verse_num": 24,
+          "esv_text": "Psa 18:24 So the Lord has rewarded me according to my righteousness , according to the cleanness of my hands in his sight .",
+          "target_word": "cleanness",
+          "testament": "OT",
+          "fetched_under_code": "H1252",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.18.24' class='verseLink'><span class='verseNumber'>Psa 18:24</span></a> <span class='level1'></span>So the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> has <span morph='HVhw3ms' strong='H7725K'>rewarded</span> me according to my <span morph='HNcmsc HR HR HSp1bs' strong='H6664G H9004 H9005 H9030'>righteousness</span>,<br /><span class='level2'></span><span morph='HR' strong='H9004'>according</span> to the <span morph='HNcmsc HSp1bs' strong='H1252 H9020'>cleanness</span> of my <span morph='HNcbdc' strong='H3027G'>hands</span> in <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HNcfdc HSp1bs HAcmsc HR' strong='H5869H H9020 H5048 H9005'>sight</span>.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1252",
+          "span_label_found": "cleanness",
+          "context_before": "righteousness , according to the",
+          "context_after": "of my hands in his"
+        }
+      ]
+    },
+    {
+      "code": "H1253",
+      "gloss": "lye",
+      "transliteration": "bor",
+      "script_form": "בֹּר",
+      "language": "Hebrew",
+      "vocab_count": 2,
+      "medium_def": "lye, potash, alkali used in smelting metal",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1305, H1249, H1250, H1250, H1252, H1287, H1257",
+      "freq_list": "2;2;2;1;2;;1;1;2;2;2;2;;2;2;2;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 2,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1253 ('lye') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Isa.1.25",
+          "ref": "Isa 1:25",
+          "book_code": "Isa",
+          "chapter": 1,
+          "verse_num": 25,
+          "esv_text": "Isa 1:25 I will turn my hand against you and will smelt away your dross as with lye and remove all your alloy .",
+          "target_word": "lye",
+          "testament": "OT",
+          "fetched_under_code": "H1253",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.1.25' class='verseLink'><span class='verseNumber'>Isa 1:25</span></a> <span class='level1'></span> I will <span morph='HVhc1cs' strong='H7725G'>turn</span> my <span morph='HNcbsc' strong='H3027G'>hand</span> <span morph='HR HSp1bs' strong='H5921A H9020'>against</span> you<br /><span class='level2'></span>and will <span morph='HVqu1cs HSp2fs' strong='H6884 H9032'>smelt</span> away your  <span morph='HNcmpc' strong='H5509'>dross</span> as with <span morph='HNcmsa HRd' strong='H1253 H9004'>lye</span><br /><span class='level2'></span>and <span morph='HVhc1cs HSp2fs' strong='H5493G H9022'>remove</span> <span morph='HNcmsc' strong='H3605'>all</span> <span morph='HSp2fs' strong='H9022'>your</span> <span morph='HNcmpc' strong='H0913'>alloy</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1253",
+          "span_label_found": "lye",
+          "context_before": "away your dross as with",
+          "context_after": "and remove all your alloy"
+        },
+        {
+          "osisId": "Job.9.30",
+          "ref": "Job 9:30",
+          "book_code": "Job",
+          "chapter": 9,
+          "verse_num": 30,
+          "esv_text": "Job 9:30 If I wash myself with snow and cleanse my hands with lye ,",
+          "target_word": "lye",
+          "testament": "OT",
+          "fetched_under_code": "H1253",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.9.30' class='verseLink'><span class='verseNumber'>Job 9:30</span></a> <span class='level1'></span>If I <span morph='HVtp1cs HTc' strong='H7364 H0518A'>wash</span> myself with <span morph='HNcmsa' strong='H7950'>snow</span><br /><span class='level2'></span>and  <span morph='HNcmpc HR' strong='H4325G H9003'>cleanse</span> <span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcfdc' strong='H3709G'>hands</span> with <span morph='HNcmsa HR HVhq1cs' strong='H1253 H9003 H2141'>lye</span>,<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1253",
+          "span_label_found": "lye",
+          "context_before": "and cleanse my hands with",
+          "context_after": ","
+        }
+      ]
+    },
+    {
+      "code": "H1287",
+      "gloss": "lye",
+      "transliteration": "bo.rit",
+      "script_form": "בֹּרִית",
+      "language": "Hebrew",
+      "vocab_count": 2,
+      "medium_def": "lye, potash, soap, alkali (used in washing)",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1305, H1249, H1250, H1250, H1253, H1252, H1257",
+      "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;2;2;2;2;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 2,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1287 ('lye') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Jer.2.22",
+          "ref": "Jer 2:22",
+          "book_code": "Jer",
+          "chapter": 2,
+          "verse_num": 22,
+          "esv_text": "Jer 2:22 Though you wash yourself with lye and use much soap , the stain of your guilt is still before me, declares the Lord God .",
+          "target_word": "soap",
+          "testament": "OT",
+          "fetched_under_code": "H1287",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.2.22' class='verseLink'><span class='verseNumber'>Jer 2:22</span></a> <span class='level1'></span><span morph='HTc HTc' strong='H3588A H0518A'>Though</span> you <span morph='HVpi2fs' strong='H3526H'>wash yourself</span> with <span morph='HNcmsa HRd' strong='H5427 H9003'>lye</span><br /><span class='level2'></span>and use <span morph='HVhu2fs' strong='H7235A'>much</span> <span morph='HNcfsa HRd HSp2fs' strong='H1287 H9005 H9032'>soap</span>,<br /><span class='level2'></span> the stain of your <span morph='HNcmsc' strong='H5771H'>guilt</span> is <span morph='HVNrmsa' strong='H3799'>still</span> <span morph='HNcmpc HR HSp2fs' strong='H6440G H9005 H9022'>before</span> me,<br /><br /><span class='level1'></span><span morph='HNcmsc HSp1bs' strong='H5002 H9020'>declares</span> the <span morph='HNpt' strong='H0136'>Lord</span> <span class='small-caps'><span morph='HNpt' strong='H3069'>God</span></span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1287",
+          "span_label_found": "lye",
+          "context_before": "with lye and use much",
+          "context_after": ", the stain of your"
+        },
+        {
+          "osisId": "Mal.3.2",
+          "ref": "Mal 3:2",
+          "book_code": "Mal",
+          "chapter": 3,
+          "verse_num": 2,
+          "esv_text": "Mal 3:2 But who can endure the day of his coming , and who can stand when he appears ? For he is like a refiner’s fire and like fullers ’ soap .",
+          "target_word": "soap",
+          "testament": "OT",
+          "fetched_under_code": "H1287",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Mal.3.2' class='verseLink'><span class='verseNumber'>Mal 3:2</span></a> But  <span morph='HPi HC' strong='H4310 H9002'>who</span> <span morph='HVprmsa' strong='H3557'>can endure</span> the <span morph='HNcmsc HTo' strong='H3117G H0853'>day</span> of his <span morph='HVqcc' strong='H0935G'>coming</span>, and <span morph='HPi HC HSp3ms' strong='H4310 H9002 H9043'>who</span> can <span morph='HVqrmsa HTd' strong='H5975G H9009'>stand</span> when he <span morph='HVNcc HR' strong='H7200G H9003'>appears</span>? <span morph='HTc HSp3ms' strong='H3588A H9043'>For</span>  he is <span morph='HVprmsa' strong='H6884'>like a refiner’s</span> <span morph='HNcbsa HR HPp3ms' strong='H0784 H9004 H1931'>fire</span> and like <span morph='HVprmpa' strong='H3526H'>fullers</span>’ <span morph='HNcfsa HC HR' strong='H1287 H9002 H9004'>soap</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1287",
+          "span_label_found": "lye",
+          "context_before": "fire and like fullers ’",
+          "context_after": "."
+        }
+      ]
+    },
+    {
+      "code": "H1250B",
+      "gloss": "field",
+      "transliteration": "bar",
+      "script_form": "בָּר",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "field (Aramaic usage)\nAramaic equivalent: bar (בַּר \"field\" H1251)",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1251",
+          "form": "בַּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1257",
+          "form": "בַּרְבֻּרִים",
+          "gloss": "fowl",
+          "translit": "bar.bu.rim"
+        },
+        {
+          "strong": "H1262",
+          "form": "בָּרָה",
+          "gloss": "to eat",
+          "translit": "ba.rah"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1251, H1262, H1305, H1249, H1253, H1252, H1287, H1257, H1250, ",
+      "freq_list": "1;1;2@1;1;1;;1;1;1;1;2@1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 13,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1250B ('field') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Amos.5.11",
+          "ref": "Amo 5:11",
+          "book_code": "Amos",
+          "chapter": 5,
+          "verse_num": 11,
+          "esv_text": "Amo 5:11 Therefore because you trample on the poor and you exact taxes of grain from him, you have built houses of hewn stone , but you shall not dwell in them; you have planted pleasant vineyards , but you shall not drink their wine .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.5.11' class='verseLink'><span class='verseNumber'>Amo 5:11</span></a> <span class='level1'></span><span morph='HD HR' strong='H3651C H9005'>Therefore</span> <span morph='HC' strong='H3282'>because</span> you  <span morph='HVqcc' strong='H1318'>trample</span> on  the <span morph='HAamsa HSp2mp HR' strong='H1800 H9046 H5921A'>poor</span><br /><span class='level2'></span>and you <span morph='HVqi2mp' strong='H3947G'>exact</span> <span morph='HNcfsc HC' strong='H4864 H9002'>taxes</span> of <span morph='HNcmsa' strong='H1250A'>grain</span> from him,<br /><span class='level1'></span> you have <span morph='HVqp2mp' strong='H1129'>built</span> <span morph='HNcmpc HR HSp3ms' strong='H1004B H4480A H9033'>houses</span> of <span morph='HNcfsa' strong='H1496'>hewn stone</span>,<br /><span class='level2'></span>but you shall <span morph='HTn HC' strong='H3808 H9002'>not</span> <span morph='HVqi2mp' strong='H3427'>dwell</span> in them;<br /><span class='level1'></span> you have <span morph='HVqp2mp' strong='H5193'>planted</span> <span morph='HNcmsa' strong='H2531'>pleasant</span> <span morph='HNcmpc HR HSp3mp' strong='H3754 H9003 H9038'>vineyards</span>,<br /><span class='level2'></span>but you shall <span morph='HTn HC' strong='H3808 H9002'>not</span> <span morph='HVqi2mp' strong='H8354'>drink</span> <span morph='HSp3mp' strong='H9028'>their</span> <span morph='HNcmsc HTo' strong='H3196 H0853'>wine</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "and you exact taxes of",
+          "context_after": "from him, you have built"
+        },
+        {
+          "osisId": "Amos.8.5",
+          "ref": "Amo 8:5",
+          "book_code": "Amos",
+          "chapter": 8,
+          "verse_num": 5,
+          "esv_text": "Amo 8:5 saying , “ When will the new moon be over , that we may sell grain ? And the Sabbath , that we may offer wheat for sale, that we may make the ephah small and the shekel great and deal deceitfully with false balances ,",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.8.5' class='verseLink'><span class='verseNumber'>Amo 8:5</span></a> <span class='level1'></span><span morph='HVqcc HR' strong='H0559 H9005'>saying</span>, “<span morph='HTi' strong='H4970'>When</span> will  the <span morph='HNcmsa HTd' strong='H2320H H9009'>new moon</span> be <span morph='HVqi3ms' strong='H5674A'>over</span>,<br /><span class='level2'></span>that we may <span morph='HVhc1cp' strong='H7666'>sell</span> <span morph='HNcmsa' strong='H7668'>grain</span>?<br /><span class='level1'></span>And  the <span morph='HNcfsa HC HTd' strong='H7676 H9002 H9009'>Sabbath</span>,<br /><span class='level2'></span>that we may <span morph='HVqc1cp' strong='H6605A'>offer</span> <span morph='HNcmsa' strong='H1250A'>wheat</span> for sale,<br /><span class='level1'></span>that we may make  the <span morph='HNcfsa' strong='H0374'>ephah</span> <span morph='HVhcc HR' strong='H6994 H9005'>small</span> and the <span morph='HNcmsa' strong='H8255'>shekel</span>   <span morph='HVhcc HC HR' strong='H1431 H9002 H9005'>great</span><br /><span class='level2'></span>and <span morph='HVpcc HC HR' strong='H5791 H9002 H9005'>deal</span> deceitfully with <span morph='HNcfsa' strong='H4820'>false</span> <span morph='HNcmdc' strong='H3976'>balances</span>,<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": ", that we may offer",
+          "context_after": "for sale, that we may"
+        },
+        {
+          "osisId": "Amos.8.6",
+          "ref": "Amo 8:6",
+          "book_code": "Amos",
+          "chapter": 8,
+          "verse_num": 6,
+          "esv_text": "Amo 8:6 that we may buy the poor for silver and the needy for a pair of sandals and sell the chaff of the wheat ?”",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Amos.8.6' class='verseLink'><span class='verseNumber'>Amo 8:6</span></a> <span class='level1'></span><span morph='HR' strong='H9005'>that</span> we may <span morph='HVqcc' strong='H7069'>buy</span> the <span morph='HAampa' strong='H1800'>poor</span> for  <span morph='HNcmsa HRd' strong='H3701G H9003'>silver</span><br /><span class='level2'></span>and the <span morph='HAamsa HC' strong='H0034 H9002'>needy</span> for a pair of <span morph='HNcfda HNcmsc HR' strong='H5275 H5668 H9003'>sandals</span><br /><span class='level2'></span>and <span morph='HVhi1cp' strong='H7666'>sell</span> the <span morph='HNcmsc HC' strong='H4651 H9002'>chaff</span> of the <span morph='HNcmsa' strong='H1250A'>wheat</span>?”<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "sell the chaff of the",
+          "context_after": "?”"
+        },
+        {
+          "osisId": "Gen.41.35",
+          "ref": "Gen 41:35",
+          "book_code": "Gen",
+          "chapter": 41,
+          "verse_num": 35,
+          "esv_text": "Gen 41:35 And let them gather all the food of these good years that are coming and store up grain under the authority of Pharaoh for food in the cities , and let them keep it.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.41.35' class='verseLink'><span class='verseNumber'>Gen 41:35</span></a> And  let them <span morph='HVqu3mp' strong='H6908'>gather</span> <span morph='HNcmsc HTo' strong='H3605 H0853'>all</span> the <span morph='HNcmsc' strong='H0400'>food</span> of <span morph='HTm HTd' strong='H0428 H9009'>these</span> <span morph='HAafpa HTd' strong='H2896A H9009'>good</span> <span morph='HNcmpa HTd' strong='H8141 H9009'>years</span> that are <span morph='HVqrfpa HTd' strong='H0935G H9009'>coming</span> and <span morph='HVqu3mp' strong='H6651'>store up</span> <span morph='HNcmsa' strong='H1250A'>grain</span> <span morph='HNcmsc' strong='H8478I'>under</span> the <span morph='HNcbsc' strong='H3027H'>authority</span> of <span morph='HNtmsa' strong='H6547H'>Pharaoh</span> for <span morph='HNcmsa' strong='H0400'>food</span> in the <span morph='HNcmpa HRd' strong='H5892B H9003'>cities</span>, and let them <span morph='HVqq3cp' strong='H8104H'>keep</span> it.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "are coming and store up",
+          "context_after": "under the authority of Pharaoh"
+        },
+        {
+          "osisId": "Gen.41.49",
+          "ref": "Gen 41:49",
+          "book_code": "Gen",
+          "chapter": 41,
+          "verse_num": 49,
+          "esv_text": "Gen 41:49 And Joseph stored up grain in great abundance , like the sand of the sea , until he ceased to measure it, for it could not be measured .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.41.49' class='verseLink'><span class='verseNumber'>Gen 41:49</span></a> And <span morph='HNpm' strong='H3130G'>Joseph</span> <span morph='HVqw3ms' strong='H6651'>stored</span> up <span morph='HNcmsa' strong='H1250A'>grain</span> in <span morph='HAcmsa' strong='H3966'>great</span> <span morph='HVhaa' strong='H7235A'>abundance</span>, <span class='normal'></span> <span morph='HR' strong='H9004'>like</span> the <span morph='HNcmsc' strong='H2344'>sand</span> of the <span morph='HNcmsa HTd' strong='H3220G H9009'>sea</span>, <span morph='HR' strong='H5704'>until</span> he <span morph='HVqp3ms HTc' strong='H2308 H3588A'>ceased</span> to <span morph='HVqcc HR' strong='H5608A H9005'>measure</span> it, for it could <span morph='HNcmsc HTc' strong='H0369 H3588A'>not</span> be <span morph='HNcmsa' strong='H4557'>measured</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "41:49 And Joseph stored up",
+          "context_after": "in great abundance , like"
+        },
+        {
+          "osisId": "Gen.42.25",
+          "ref": "Gen 42:25",
+          "book_code": "Gen",
+          "chapter": 42,
+          "verse_num": 25,
+          "esv_text": "Gen 42:25 And Joseph gave orders to fill their bags with grain , and to replace every man’s money in his sack , and to give them provisions for the journey . This was done for them.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.42.25' class='verseLink'><span class='verseNumber'>Gen 42:25</span></a>  And <span morph='HNpm' strong='H3130G'>Joseph</span> <span morph='HVpw3ms' strong='H6680'>gave orders</span> to <span morph='HVpw3mp' strong='H4390'>fill</span> their <span morph='HNcmpc HTo' strong='H3627 H0853'>bags</span> with <span morph='HNcmsa HSp3mp' strong='H1250A H9028'>grain</span>, and to <span morph='HVhcc HC HR' strong='H7725G H9002 H9005'>replace</span> every <span morph='HNcmsa HSp3mp' strong='H0376I H9028'>man’s</span> <span morph='HNcmpc' strong='H3701G'>money</span> in his <span morph='HNcmsc HR' strong='H8242 H0413'>sack</span>, and to <span morph='HVqcc HR HC HSp3ms' strong='H5414G H9005 H9002 H9023'>give</span> them <span morph='HNcfsa HRd HSp3mp' strong='H6720 H9005 H9038'>provisions</span> for the <span morph='HNcbsa HRd' strong='H1870L H9005'>journey</span>. <span morph='HD HRd HSp3mp' strong='H3651C H9005 H9038'>This</span> was <span morph='HVqw3ms' strong='H6213A'>done</span> for them.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "to fill their bags with",
+          "context_after": ", and to replace every"
+        },
+        {
+          "osisId": "Gen.42.3",
+          "ref": "Gen 42:3",
+          "book_code": "Gen",
+          "chapter": 42,
+          "verse_num": 3,
+          "esv_text": "Gen 42:3 So ten of Joseph’s brothers went down to buy grain in Egypt .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.42.3' class='verseLink'><span class='verseNumber'>Gen 42:3</span></a> So <span morph='HNcfsa' strong='H6235'>ten</span> of <span morph='HNpm' strong='H3130G'>Joseph’s</span> <span morph='HNcmpc' strong='H0251G'>brothers</span> <span morph='HVqw3mp' strong='H3381'>went down</span> to <span morph='HVqcc HR' strong='H7666 H9005'>buy</span> <span morph='HNcmsa' strong='H1250A'>grain</span> in <span morph='HNpl HR' strong='H4714G H9006'>Egypt</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "brothers went down to buy",
+          "context_after": "in Egypt ."
+        },
+        {
+          "osisId": "Gen.45.23",
+          "ref": "Gen 45:23",
+          "book_code": "Gen",
+          "chapter": 45,
+          "verse_num": 23,
+          "esv_text": "Gen 45:23 To his father he sent as follows : ten donkeys loaded with the good things of Egypt , and ten female donkeys loaded with grain , bread , and provision for his father on the journey .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.45.23' class='verseLink'><span class='verseNumber'>Gen 45:23</span></a> <span morph='HR' strong='H9005'>To</span> his <span morph='HNcmsc HC' strong='H0001G H9002'>father</span> he <span morph='HVqp3ms HSp3ms' strong='H7971G H9023'>sent</span> as <span morph='HTm HR' strong='H2063 H9004'>follows</span>: <span morph='HNcfsa' strong='H6235'>ten</span> <span morph='HNcfpa' strong='H0860'>donkeys</span> <span morph='HVqrmpa' strong='H5375H'>loaded</span> with the <span morph='HNcmsc HR' strong='H2898 H9006'>good things</span> of <span morph='HNpl' strong='H4714G'>Egypt</span>, and <span morph='HNcmsc HC' strong='H6235 H9002'>ten</span> female <span morph='HNcbpa' strong='H2543'>donkeys</span> <span morph='HVqrfpa' strong='H5375H'>loaded</span> with <span morph='HNcmsa' strong='H1250A'>grain</span>, <span morph='HNcmsa HC' strong='H3899H H9002'>bread</span>, and <span morph='HNcmsa HC' strong='H4202 H9002'>provision</span> for his <span morph='HNcmsc HR' strong='H0001G H9005'>father</span> on the <span morph='HNcbsa HRd HSp3ms' strong='H1870L H9005 H9023'>journey</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "ten female donkeys loaded with",
+          "context_after": ", bread , and provision"
+        },
+        {
+          "osisId": "Jer.23.28",
+          "ref": "Jer 23:28",
+          "book_code": "Jer",
+          "chapter": 23,
+          "verse_num": 28,
+          "esv_text": "Jer 23:28 Let the prophet who has a dream tell the dream , but let him who has my word speak my word faithfully . What has straw in common with wheat ? declares the Lord .",
+          "target_word": "wheat",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Jer.23.28' class='verseLink'><span class='verseNumber'>Jer 23:28</span></a>  Let the <span morph='HNcmsa HTd' strong='H5030 H9009'>prophet</span> <span morph='HTr' strong='H0834A'>who</span> has a <span morph='HNcmsa HRd HSp3ms' strong='H2472 H0854 H9033'>dream</span>  <span morph='HVpi3ms' strong='H5608A'>tell</span> the <span morph='HNcmsa' strong='H2472'>dream</span>, but let him <span morph='HTr HC' strong='H0834A H9002'>who</span> <span morph='HNcmsc' strong='H1697G'>has</span> my <span morph='HNcmsc' strong='H1697G'>word</span> <span morph='HVpi3ms HSp1bs HRd HSp3ms' strong='H1696G H9020 H0854 H9033'>speak</span> my word <span morph='HNcfsa HSp1bs' strong='H0571G H9020'>faithfully</span>. <span class='normal'></span> <span morph='HPi' strong='H4100'>What</span> has <span morph='HNcmsa HRd' strong='H8401 H9005'>straw</span> in common <span morph='HR' strong='H0854'>with</span> <span morph='HNcmsa HTd' strong='H1250A H9009'>wheat</span>? <span morph='HNcmsc' strong='H5002'>declares</span> the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "has straw in common with",
+          "context_after": "? declares the Lord ."
+        },
+        {
+          "osisId": "Joel.2.24",
+          "ref": "Joe 2:24",
+          "book_code": "Joel",
+          "chapter": 2,
+          "verse_num": 24,
+          "esv_text": "Joe 2:24 “The threshing floors shall be full of grain ; the vats shall overflow with wine and oil .",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Joel.2.24' class='verseLink'><span class='verseNumber'>Joe 2:24</span></a> <span class='level1'></span>“The <span morph='HNcfpa HTd' strong='H1637 H9009'>threshing</span> floors shall be <span morph='HVqq3cp' strong='H4390'>full</span> of <span morph='HNcmsa' strong='H1250A'>grain</span>;<br /><span class='level2'></span>the <span morph='HNcmpa HTd' strong='H3342 H9009'>vats</span> shall <span morph='HVhq3cp' strong='H7783'>overflow</span> with <span morph='HNcmsa' strong='H8492'>wine</span> and <span morph='HNcmsa HC' strong='H3323 H9002'>oil</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "floors shall be full of",
+          "context_after": "; the vats shall overflow"
+        },
+        {
+          "osisId": "Prov.11.26",
+          "ref": "Pro 11:26",
+          "book_code": "Prov",
+          "chapter": 11,
+          "verse_num": 26,
+          "esv_text": "Pro 11:26 The people curse him who holds back grain , but a blessing is on the head of him who sells it.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.11.26' class='verseLink'><span class='verseNumber'>Pro 11:26</span></a> <span class='level1'></span> The <span morph='HNcmsa HSp3ms' strong='H3816 H9033'>people</span> <span morph='HVqi3mp' strong='H6895'>curse</span> him who <span morph='HVqrmsa' strong='H4513'>holds back</span> <span morph='HNcmsa' strong='H1250A'>grain</span>,<br /><span class='level2'></span>but  a <span morph='HNcfsa HC' strong='H1293 H9002'>blessing</span> is on the <span morph='HNcmsa HR' strong='H7218A H9005'>head</span> of him who  <span morph='HVhrmsa' strong='H7666'>sells</span> it.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "curse him who holds back",
+          "context_after": ", but a blessing is"
+        },
+        {
+          "osisId": "Ps.65.13",
+          "ref": "Psa 65:13",
+          "book_code": "Ps",
+          "chapter": 65,
+          "verse_num": 13,
+          "esv_text": "Psa 65:13 the meadows clothe themselves with flocks , the valleys deck themselves with grain , they shout and sing together for joy.",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.65.13' class='verseLink'><span class='verseNumber'>Psa 65:13</span></a> <span class='level1'></span> the <span morph='HNcmpa' strong='H3733B'>meadows</span> <span morph='HVqp3cp' strong='H3847'>clothe</span> themselves with <span morph='HNcbsa HTd' strong='H6629G H9009'>flocks</span>,<br /><span class='level2'></span>the <span morph='HNcmpa HC' strong='H6010R H9002'>valleys</span> <span morph='HVqi3mp' strong='H5848B'>deck</span> themselves with <span morph='HNcmsa' strong='H1250A'>grain</span>,<br /><span class='level2'></span>they  <span morph='HVti3mp' strong='H7321'>shout</span> and <span morph='HVqi3mp HTj' strong='H7891 H0637'>sing</span> together for joy.<br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "the valleys deck themselves with",
+          "context_after": ", they shout and sing"
+        },
+        {
+          "osisId": "Ps.72.16",
+          "ref": "Psa 72:16",
+          "book_code": "Ps",
+          "chapter": 72,
+          "verse_num": 16,
+          "esv_text": "Psa 72:16 May there be abundance of grain in the land ; on the tops of the mountains may it wave ; may its fruit be like Lebanon ; and may people blossom in the cities like the grass of the field !",
+          "target_word": "grain",
+          "testament": "OT",
+          "fetched_under_code": "H1250B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.72.16' class='verseLink'><span class='verseNumber'>Psa 72:16</span></a> <span class='level1'></span>May there <span morph='HVqj3ms' strong='H1961'>be</span> <span morph='HNcfsc' strong='H6451'>abundance</span> of <span morph='HNcmsa' strong='H1250A'>grain</span> in the <span morph='HNcfsa HRd' strong='H0776G H9003'>land</span>;<br /><span class='level2'></span><span morph='HR' strong='H9003'>on</span> the <span morph='HNcmsc' strong='H7218I'>tops</span> of the <span morph='HNcmpa' strong='H2022G'>mountains</span> may it <span morph='HVqi3ms' strong='H7493'>wave</span>;<br /><span class='level2'></span>may its <span morph='HNcmsc' strong='H6529'>fruit</span> be like <span morph='HNpl HRd' strong='H3844G H9004'>Lebanon</span>;<br /><span class='level1'></span>and may <span morph='HVhu3mp HSp3ms' strong='H6692A H9023'>people</span>  blossom in the <span morph='HNcfsa HR' strong='H5892B H9006'>cities</span><br /><span class='level2'></span><span morph='HR' strong='H9004'>like</span> the  <span morph='HNcmsc' strong='H6212'>grass</span> of the <span morph='HNcfsa HTd' strong='H0776G H9009'>field</span>!<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1250A",
+          "span_label_found": "grain",
+          "context_before": "May there be abundance of",
+          "context_after": "in the land ; on"
+        }
+      ]
+    },
+    {
+      "code": "H1257",
+      "gloss": "fowl",
+      "transliteration": "bar.bu.rim",
+      "script_form": "בַּרְבֻּרִים",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "1) (CLBL) fowl, birds\n2) (BDB/TWOT) birds fattened for table of Solomon",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H1249",
+          "form": "בַּר",
+          "gloss": "pure",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250A",
+          "form": "בַּר",
+          "gloss": "grain",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1250B",
+          "form": "בָּר",
+          "gloss": "field",
+          "translit": "bar"
+        },
+        {
+          "strong": "H1252",
+          "form": "בֹּר",
+          "gloss": "cleanness",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1253",
+          "form": "בֹּר",
+          "gloss": "lye",
+          "translit": "bor"
+        },
+        {
+          "strong": "H1287",
+          "form": "בֹּרִית",
+          "gloss": "lye",
+          "translit": "bo.rit"
+        },
+        {
+          "strong": "H1305",
+          "form": "בָּרַר",
+          "gloss": "to purify",
+          "translit": "ba.rar"
+        }
+      ],
+      "raw_related_numbers": "H1305, H1249, H1250, H1250, H1253, H1252, H1287, ",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H1249",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H1249 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H1257 ('fowl') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "1Kgs.4.23",
+          "ref": "1Ki 4:23",
+          "book_code": "1Kgs",
+          "chapter": 4,
+          "verse_num": 23,
+          "esv_text": "1Ki 4:23 ten fat oxen , and twenty pasture-fed cattle , a hundred sheep , besides deer , gazelles , roebucks , and fattened fowl .",
+          "target_word": "fowl",
+          "testament": "OT",
+          "fetched_under_code": "H1257",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Kgs.4.23' class='verseLink'><span class='verseNumber'>1Ki 4:23</span></a> <span morph='HNcfsa' strong='H6235'>ten</span> <span morph='HAampa' strong='H1277'>fat</span> <span morph='HNcbsa' strong='H1241'>oxen</span>, and <span morph='HNcmpa HC' strong='H6242 H9002'>twenty</span> <span morph='HNcmsa' strong='H7471'>pasture-fed</span> <span morph='HNcbsa' strong='H1241'>cattle</span>, a <span morph='HNcfsa HC' strong='H3967 H9002'>hundred</span> <span morph='HNcbsa' strong='H6629G'>sheep</span>, <span morph='HNcmsc HR' strong='H0905H H9005'>besides</span> <span morph='HNcmsa HR' strong='H0354 H9006'>deer</span>, <span morph='HNcmsa HC' strong='H6643B H9002'>gazelles</span>, <span morph='HNcmsa HC' strong='H3180 H9002'>roebucks</span>, and <span morph='HVqsmpa' strong='H0075'>fattened</span> <span morph='HNcmpa HC' strong='H1257 H9002'>fowl</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H1257",
+          "span_label_found": "fowl",
+          "context_before": ", roebucks , and fattened",
+          "context_after": "."
+        }
+      ]
+    },
+    {
+      "code": "H2135",
+      "gloss": "to clean",
+      "transliteration": "za.khah",
+      "script_form": "זָכָה",
+      "language": "Hebrew",
+      "vocab_count": 8,
+      "medium_def": "1) to be clean, be pure, be clear\n1a) (Qal)\n1a1) to be clean, be pure\n1a2) to be clear, be justified\n1b) (Piel)\n1b1) to make clean, make pure, keep clean, keep pure\n1c) (Hithpael)\n1c1) to cleanse\n1c2) to make yourself clean, purify oneself",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H2136",
+          "form": "זָכוּ",
+          "gloss": "innocence",
+          "translit": "za.khu"
+        },
+        {
+          "strong": "H2137",
+          "form": "זְכוּכִית",
+          "gloss": "glass",
+          "translit": "ze.khu.khit"
+        },
+        {
+          "strong": "H2141",
+          "form": "זָכַךְ",
+          "gloss": "be clean",
+          "translit": "za.khakh"
+        }
+      ],
+      "raw_related_numbers": "H2136, H2137, H2141, ",
+      "freq_list": "8;8;13@8;8;8;;9@8;8;8;8;11@8;8;;8;8;8;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H2135",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H2135 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 8,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": true,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Isa.1.16",
+          "ref": "Isa 1:16",
+          "book_code": "Isa",
+          "chapter": 1,
+          "verse_num": 16,
+          "esv_text": "Isa 1:16 Wash yourselves ; make yourselves clean ; remove the evil of your deeds from before my eyes ; cease to do evil ,",
+          "target_word": "clean",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Isa.1.16' class='verseLink'><span class='verseNumber'>Isa 1:16</span></a> <span class='level1'></span> <span morph='HVqv2mp' strong='H7364'>Wash yourselves</span>; make yourselves <span morph='HVtv2mp' strong='H2135'>clean</span>;<br /><span class='level2'></span><span morph='HVhv2mp' strong='H5493G'>remove</span> the <span morph='HNcmsc' strong='H7455'>evil</span> of your <span morph='HNcmpc' strong='H4611'>deeds</span> <span morph='HR HSp2mp' strong='H9006 H9026'>from</span> <span morph='HAcmsc' strong='H5048'>before</span> my <span morph='HNcfdc' strong='H5869A'>eyes</span>;<br /><span class='level1'></span> <span morph='HVqv2mp HSp1bs' strong='H2308 H9020'>cease</span> to do <span morph='HVhcc' strong='H7489A'>evil</span>,<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "Wash yourselves ; make yourselves",
+          "context_after": "; remove the evil of"
+        },
+        {
+          "osisId": "Job.15.14",
+          "ref": "Job 15:14",
+          "book_code": "Job",
+          "chapter": 15,
+          "verse_num": 14,
+          "esv_text": "Job 15:14 What is man , that he can be pure ? Or he who is born of a woman , that he can be righteous ?",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.15.14' class='verseLink'><span class='verseNumber'>Job 15:14</span></a> <span class='level1'></span> <span morph='HPi' strong='H4100'>What</span> is <span morph='HNcmsa' strong='H0582'>man</span>, <span class='normal'></span> that he can be <span morph='HVqi3ms HTc' strong='H2135 H3588A'>pure</span>?<br /><span class='level2'></span>Or he who is  <span morph='HVqsmsc' strong='H3205'>born</span> of a <span morph='HNcfsa' strong='H0802G'>woman</span>, that he can be <span morph='HVqi3ms HTc HC' strong='H6663 H3588A H9002'>righteous</span>?<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": ", that he can be",
+          "context_after": "? Or he who is"
+        },
+        {
+          "osisId": "Job.25.4",
+          "ref": "Job 25:4",
+          "book_code": "Job",
+          "chapter": 25,
+          "verse_num": 4,
+          "esv_text": "Job 25:4 How then can man be in the right before God ? How can he who is born of woman be pure ?",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.25.4' class='verseLink'><span class='verseNumber'>Job 25:4</span></a> <span class='level1'></span><span morph='HPi HC' strong='H4100 H9002'>How</span> then can <span morph='HNcmsa' strong='H0582'>man</span> be  in the <span morph='HVqi3ms' strong='H6663'>right</span> <span morph='HR' strong='H5973A'>before</span> <span morph='HNcmsa' strong='H0410G'>God</span>?<br /><span class='level2'></span><span morph='HPi HC' strong='H4100 H9002'>How</span> can he who is  <span morph='HVqsmsc' strong='H3205'>born</span> of <span morph='HNcfsa' strong='H0802G'>woman</span> be  <span morph='HVqi3ms' strong='H2135'>pure</span>?<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "is born of woman be",
+          "context_after": "?"
+        },
+        {
+          "osisId": "Mic.6.11",
+          "ref": "Mic 6:11",
+          "book_code": "Mic",
+          "chapter": 6,
+          "verse_num": 11,
+          "esv_text": "Mic 6:11 Shall I acquit the man with wicked scales and with a bag of deceitful weights ?",
+          "target_word": "acquit",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Mic.6.11' class='verseLink'><span class='verseNumber'>Mic 6:11</span></a> <span class='level1'></span>Shall I <span morph='HVqi1cs HTi' strong='H2135 H9008'>acquit</span> the man  with <span morph='HNcmsa' strong='H7562'>wicked</span> <span morph='HNcmdc HR' strong='H3976 H9003'>scales</span><br /><span class='level2'></span>and with a <span morph='HNcmsc HC HR' strong='H3599 H9002 H9003'>bag</span> of <span morph='HNcfsa' strong='H4820'>deceitful</span> <span morph='HNcmpc' strong='H0068H'>weights</span>?<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "Mic 6:11 Shall I",
+          "context_after": "the man with wicked scales"
+        },
+        {
+          "osisId": "Prov.20.9",
+          "ref": "Pro 20:9",
+          "book_code": "Prov",
+          "chapter": 20,
+          "verse_num": 9,
+          "esv_text": "Pro 20:9 Who can say , “I have made my heart pure ; I am clean from my sin ”?",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.20.9' class='verseLink'><span class='verseNumber'>Pro 20:9</span></a> <span class='level1'></span> <span morph='HPi' strong='H4310'>Who</span> can <span morph='HVqi3ms' strong='H0559'>say</span>, “I have made my <span morph='HNcmsc' strong='H3820A'>heart</span> <span morph='HVpp1cs' strong='H2135'>pure</span>;<br /><span class='level2'></span><span morph='HSp1bs' strong='H9020'>I</span> am <span morph='HVqp1cs' strong='H2891'>clean</span> <span morph='HR' strong='H9006'>from</span> <span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcfsc' strong='H2403B'>sin</span>”?<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "“I have made my heart",
+          "context_after": "; I am clean from"
+        },
+        {
+          "osisId": "Ps.119.9",
+          "ref": "Psa 119:9",
+          "book_code": "Ps",
+          "chapter": 119,
+          "verse_num": 9,
+          "esv_text": "Beth Psa 119:9 How can a young man keep his way pure ? By guarding it according to your word .",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><h3 class='canonicalHeading acrostic'>Beth</h3><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.119.9' class='verseLink'><span class='verseNumber'>Psa 119:9</span></a> <span class='level1'></span><span morph='HPi HR' strong='H4100 H9003'>How</span> can  a <span morph='HNcmsa' strong='H5288'>young man</span> keep his <span morph='HNcmsc HTo' strong='H0734 H0853'>way</span> <span morph='HVpi3ms' strong='H2135'>pure</span>?<br /><span class='level2'></span><span morph='HR' strong='H9005'>By</span> <span morph='HVqcc HSp3ms' strong='H8104H H9023'>guarding</span> it according to <span morph='HSp2ms' strong='H9021'>your</span> <span morph='HNcmsc HR' strong='H1697G H9004'>word</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "young man keep his way",
+          "context_after": "? By guarding it according"
+        },
+        {
+          "osisId": "Ps.51.4",
+          "ref": "Psa 51:4",
+          "book_code": "Ps",
+          "chapter": 51,
+          "verse_num": 4,
+          "esv_text": "Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment .",
+          "target_word": "blameless",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.51.4' class='verseLink'><span class='verseNumber'>Psa 51:4</span></a> <span class='level1'></span> <span morph='HR' strong='H9005'>Against</span> you, you <span morph='HNcmsc HR HSp2ms' strong='H0905H H9005 H9031'>only</span>, have I <span morph='HVqp1cs HSp2ms' strong='H2398 H9031'>sinned</span><br /><span class='level2'></span>and <span morph='HVqp1cs HSp2ms' strong='H6213A H9021'>done</span> what is <span morph='HAamsa HC HTd' strong='H7451H H9002 H9009'>evil</span>  <span morph='HR' strong='H9003'>in</span> your <span morph='HNcfdc' strong='H5869H'>sight</span>,<br /><span class='level1'></span> so <span morph='HTc' strong='H4616'>that</span> you may be <span morph='HVqj2ms' strong='H6663'>justified</span> in your <span morph='HVqcc HR' strong='H1696I H9003'>words</span><br /><span class='level2'></span>and <span morph='HVqi2ms HSp2ms' strong='H2135 H9041'>blameless</span> in <span morph='HSp2ms' strong='H9041'>your</span> <span morph='HVqcc HR' strong='H8199 H9003'>judgment</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "justified in your words and",
+          "context_after": "in your judgment ."
+        },
+        {
+          "osisId": "Ps.73.13",
+          "ref": "Psa 73:13",
+          "book_code": "Ps",
+          "chapter": 73,
+          "verse_num": 13,
+          "esv_text": "Psa 73:13 All in vain have I kept my heart clean and washed my hands in innocence .",
+          "target_word": "clean",
+          "testament": "OT",
+          "fetched_under_code": "H2135",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.73.13' class='verseLink'><span class='verseNumber'>Psa 73:13</span></a> <span class='level1'></span>All in <span morph='HNcmsa HD' strong='H7385 H0389'>vain</span> have I  kept my <span morph='HNcmsc' strong='H3824'>heart</span> <span morph='HVpp1cs' strong='H2135'>clean</span><br /><span class='level2'></span>and  <span morph='HVqw1cs HSp1bs' strong='H7364 H9020'>washed</span> <span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcfdc' strong='H3709G'>hands</span> in <span morph='HNcmsa HR' strong='H5356A H9003'>innocence</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2135",
+          "span_label_found": "to clean",
+          "context_before": "have I kept my heart",
+          "context_after": "and washed my hands in"
+        }
+      ]
+    },
+    {
+      "code": "H2141",
+      "gloss": "be clean",
+      "transliteration": "za.khakh",
+      "script_form": "זָכַךְ",
+      "language": "Hebrew",
+      "vocab_count": 4,
+      "medium_def": "1) to be pure, be bright, be clean, be bright, clean\n1a) (Qal)\n1a1) to be bright, be shining\n1a2) to be clean, be pure\n1b) (Hiphil) to cleanse, make cleanse, make clean",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H2134",
+          "form": "זַךְ",
+          "gloss": "pure",
+          "translit": "zakh"
+        },
+        {
+          "strong": "H2135",
+          "form": "זָכָה",
+          "gloss": "to clean",
+          "translit": "za.khah"
+        },
+        {
+          "strong": "H2137",
+          "form": "זְכוּכִית",
+          "gloss": "glass",
+          "translit": "ze.khu.khit"
+        },
+        {
+          "strong": "H2140",
+          "form": "זַכַּי",
+          "gloss": "Zaccai",
+          "translit": "zak.kay"
+        }
+      ],
+      "raw_related_numbers": "H2135, H2134, H2137, H2140",
+      "freq_list": "4;4;4;4;4;;4;4;4;4;4;4;;4;4;4;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H2135",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H2135 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 4,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": true,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H2141 ('be clean') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Job.15.15",
+          "ref": "Job 15:15",
+          "book_code": "Job",
+          "chapter": 15,
+          "verse_num": 15,
+          "esv_text": "Job 15:15 Behold , God puts no trust in his holy ones , and the heavens are not pure in his sight ;",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2141",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.15.15' class='verseLink'><span class='verseNumber'>Job 15:15</span></a> <span class='level1'></span><span morph='HTj' strong='H2005'>Behold</span>, God   puts <span morph='HTn' strong='H3808'>no</span> <span morph='HVhi3ms HSp3ms' strong='H0539 H9023'>trust</span> in his  <span morph='HAampc HR' strong='H6918G H9003'>holy ones</span>,<br /><span class='level2'></span>and the <span morph='HNcmpa HC' strong='H8064 H9002'>heavens</span> are <span morph='HTn' strong='H3808'>not</span> <span morph='HVqp3cp' strong='H2141'>pure</span> in <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HNcfdc HR' strong='H5869H H9003'>sight</span>;<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2141",
+          "span_label_found": "be clean",
+          "context_before": "and the heavens are not",
+          "context_after": "in his sight ;"
+        },
+        {
+          "osisId": "Job.25.5",
+          "ref": "Job 25:5",
+          "book_code": "Job",
+          "chapter": 25,
+          "verse_num": 5,
+          "esv_text": "Job 25:5 Behold , even the moon is not bright , and the stars are not pure in his eyes ;",
+          "target_word": "pure",
+          "testament": "OT",
+          "fetched_under_code": "H2141",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.25.5' class='verseLink'><span class='verseNumber'>Job 25:5</span></a> <span class='level1'></span><span morph='HTj' strong='H2005'>Behold</span>, even the <span morph='HNcmsa HR' strong='H3394 H5704'>moon</span> is <span morph='HTn HC' strong='H3808 H9002'>not</span> <span morph='HVhi3ms' strong='H0166'>bright</span>,<br /><span class='level2'></span>and the <span morph='HNcmpa HC' strong='H3556 H9002'>stars</span> are <span morph='HTn' strong='H3808'>not</span> <span morph='HVqp3cp' strong='H2141'>pure</span> in <span morph='HSp3ms' strong='H9023'>his</span> <span morph='HNcfdc HR' strong='H5869A H9003'>eyes</span>;<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2141",
+          "span_label_found": "be clean",
+          "context_before": "and the stars are not",
+          "context_after": "in his eyes ;"
+        },
+        {
+          "osisId": "Job.9.30",
+          "ref": "Job 9:30",
+          "book_code": "Job",
+          "chapter": 9,
+          "verse_num": 30,
+          "esv_text": "Job 9:30 If I wash myself with snow and cleanse my hands with lye ,",
+          "target_word": "lye",
+          "testament": "OT",
+          "fetched_under_code": "H2141",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.9.30' class='verseLink'><span class='verseNumber'>Job 9:30</span></a> <span class='level1'></span>If I <span morph='HVtp1cs HTc' strong='H7364 H0518A'>wash</span> myself with <span morph='HNcmsa' strong='H7950'>snow</span><br /><span class='level2'></span>and  <span morph='HNcmpc HR' strong='H4325G H9003'>cleanse</span> <span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcfdc' strong='H3709G'>hands</span> with <span morph='HNcmsa HR HVhq1cs' strong='H1253 H9003 H2141'>lye</span>,<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2141",
+          "span_label_found": "be clean",
+          "context_before": "and cleanse my hands with",
+          "context_after": ","
+        },
+        {
+          "osisId": "Lam.4.7",
+          "ref": "Lam 4:7",
+          "book_code": "Lam",
+          "chapter": 4,
+          "verse_num": 7,
+          "esv_text": "Lam 4:7 Her princes were purer than snow , whiter than milk ; their bodies were more ruddy than coral , the beauty of their form was like sapphire .",
+          "target_word": "purer",
+          "testament": "OT",
+          "fetched_under_code": "H2141",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Lam.4.7' class='verseLink'><span class='verseNumber'>Lam 4:7</span></a> <span class='level1'></span>Her <span morph='HNcmpc' strong='H5139'>princes</span> were <span morph='HVqp3cp' strong='H2141'>purer</span> <span morph='HR HSp3fs' strong='H9006 H9024'>than</span> <span morph='HNcmsa' strong='H7950'>snow</span>,<br /><span class='level2'></span><span morph='HVqp3cp' strong='H6705'>whiter</span> <span morph='HR' strong='H9006'>than</span> <span morph='HNcmsa' strong='H2461'>milk</span>;<br /><span class='level1'></span>their <span morph='HNcfsa' strong='H6106I'>bodies</span> were <span morph='HVqp3cp' strong='H0119'>more ruddy</span> <span morph='HR' strong='H9006'>than</span> <span morph='HNcmpa' strong='H6443'>coral</span>,<br /><span class='level2'></span>the beauty of their <span morph='HNcfsc HSp3mp' strong='H1508 H9028'>form</span>   was like <span morph='HNcmsa' strong='H5601'>sapphire</span>. <br /><span class='endLineGroup'></span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2141",
+          "span_label_found": "be clean",
+          "context_before": "Lam 4:7 Her princes were",
+          "context_after": "than snow , whiter than"
+        }
+      ]
+    },
+    {
+      "code": "H2136",
+      "gloss": "innocence",
+      "transliteration": "za.khu",
+      "script_form": "זָכוּ",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "purity, innocence, innocence (in God's sight)",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H2112",
+          "form": "זוּעַ",
+          "gloss": "to tremble",
+          "translit": "zu.a"
+        },
+        {
+          "strong": "H2122",
+          "form": "זִיו",
+          "gloss": "splendor",
+          "translit": "ziv"
+        },
+        {
+          "strong": "H2135",
+          "form": "זָכָה",
+          "gloss": "to clean",
+          "translit": "za.khah"
+        },
+        {
+          "strong": "H2148A",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148B",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148C",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148D",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148E",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148F",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148G",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148H",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148I",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148J",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148L",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148M",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148N",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148O",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148P",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148Q",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148R",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148S",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148T",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148U",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148V",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148W",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148X",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148Y",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        },
+        {
+          "strong": "H2148z",
+          "form": "זְכַרְיָהוּ",
+          "gloss": "Zechariah",
+          "translit": "ze.khar.ya.hu"
+        }
+      ],
+      "raw_related_numbers": "H2135, H2112, H2122, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148, H2148",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H2135",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H2135 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H2136 ('innocence') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Dan.6.22",
+          "ref": "Dan 6:22",
+          "book_code": "Dan",
+          "chapter": 6,
+          "verse_num": 22,
+          "esv_text": "Dan 6:22 My God sent his angel and shut the lions ’ mouths , and they have not harmed me, because I was found blameless before him; and also before you, O king , I have done no harm .”",
+          "target_word": "blameless",
+          "testament": "OT",
+          "fetched_under_code": "H2136",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Dan.6.22' class='verseLink'><span class='verseNumber'>Dan 6:22</span></a> My <span morph='ANcbsc' strong='H0426'>God</span>  <span morph='AVqp3ms ASp1bs' strong='H7972 H9020'>sent</span> his <span morph='ANcbsc' strong='H4398'>angel</span>  and <span morph='AVqp3ms ASp3ms' strong='H5463 H9023'>shut</span> the <span morph='ANcfsd' strong='H0744'>lions</span>’ <span morph='ANcbsc' strong='H6433'>mouths</span>, and they have <span morph='ATn AC ATa' strong='H3809 H9002 H9010'>not</span> <span morph='AVpp3mp' strong='H2255'>harmed</span> me, <span morph='ANcbsa AR AR ASp1bs' strong='H6903H H9005 H9004 H9030'>because</span> I was <span morph='AVup3fs' strong='H7912'>found</span> <span morph='ANcbsa ASp3bs' strong='H2136 H9033'>blameless</span>  <span morph='ANcmpc AC' strong='H6925 H1768'>before</span> him;  and <span morph='AD AC AR ASp1bs' strong='H0638 H9002 H9005 H9030'>also</span> <span morph='ANcbsc' strong='H6925'>before</span> you, O <span morph='ANcbsd ASp2ms' strong='H4430 H9031'>king</span>, I have <span morph='AVqp1cs' strong='H5648'>done</span> <span morph='ATn' strong='H3809'>no</span> <span morph='ANcfsa ATa' strong='H2248 H9010'>harm</span>.”</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2136",
+          "span_label_found": "innocence",
+          "context_before": "me, because I was found",
+          "context_after": "before him; and also before"
+        }
+      ]
+    },
+    {
+      "code": "H2137",
+      "gloss": "glass",
+      "transliteration": "ze.khu.khit",
+      "script_form": "זְכוּכִית",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "glass, crystal, fine glass",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H2134",
+          "form": "זַךְ",
+          "gloss": "pure",
+          "translit": "zakh"
+        },
+        {
+          "strong": "H2135",
+          "form": "זָכָה",
+          "gloss": "to clean",
+          "translit": "za.khah"
+        },
+        {
+          "strong": "H2140",
+          "form": "זַכַּי",
+          "gloss": "Zaccai",
+          "translit": "zak.kay"
+        },
+        {
+          "strong": "H2141",
+          "form": "זָכַךְ",
+          "gloss": "be clean",
+          "translit": "za.khakh"
+        }
+      ],
+      "raw_related_numbers": "H2135, H2141, H2134, H2140",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H2135",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent H2135 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of H2137 ('glass') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Job.28.17",
+          "ref": "Job 28:17",
+          "book_code": "Job",
+          "chapter": 28,
+          "verse_num": 17,
+          "esv_text": "Job 28:17 Gold and glass cannot equal it, nor can it be exchanged for jewels of fine gold .",
+          "target_word": "glass",
+          "testament": "OT",
+          "fetched_under_code": "H2137",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.28.17' class='verseLink'><span class='verseNumber'>Job 28:17</span></a> <span class='level1'></span><span morph='HNcmsa HSp3fs' strong='H2091 H9034'>Gold</span> and <span morph='HNcfsa HC' strong='H2137 H9002'>glass</span> <span morph='HTn' strong='H3808'>cannot</span> <span morph='HVqi3ms' strong='H6186A'>equal</span> it,<br /><span class='level2'></span>nor can it be <span morph='HNcfsc HC' strong='H8545 H9002'>exchanged</span> for <span morph='HNcmsc HSp3fs' strong='H3627 H9024'>jewels</span> of <span morph='HNcmsa' strong='H6337'>fine gold</span>.<br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H2137",
+          "span_label_found": "glass",
+          "context_before": "Job 28:17 Gold and",
+          "context_after": "cannot equal it, nor can"
+        }
+      ]
+    }
+  ]
+}

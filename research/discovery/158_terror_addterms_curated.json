@@ -1,0 +1,150 @@
+{
+ "meta": {
+  "english_anchor": "terror",
+  "generated": "2026-07-06",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H1161"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 5,
+  "summary_by_group": {
+   "G1": 1,
+   "G2r": 2,
+   "G3": 2
+  },
+  "include_codes": [
+   "H1161"
+  ],
+  "exclude_codes": [
+   "H1209G",
+   "H1209H"
+  ],
+  "registry": {
+   "id": 158,
+   "no": 158,
+   "word": "terror",
+   "source_list": "Missing Inner Being Words",
+   "category_hint": null,
+   "phase1_input_file": null,
+   "phase1_status": "Complete",
+   "phase1_output_file": null,
+   "phase2_datasets": null,
+   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=40  verses=1963  run_id=RUN-20260328_141501-AUDIT_WORD\n[AUDIT 2026-07-06] result=REVIEW  terms=37  verses=78  run_id=RUN-20260706_161742-AUDIT_WORD",
+   "automation_eligible": 1,
+   "last_automation_run": "AUDITED",
+   "automation_run_id": "RUN-20260706_161742-AUDIT_WORD",
+   "phase1_term_count": 37,
+   "phase1_verse_count": 78,
+   "strongs_list": "[{\"strong\": \"H7535\", \"count\": 24}, {\"strong\": \"H8047G\", \"count\": 15}, {\"strong\": \"H4288\", \"count\": 11}, {\"strong\": \"H2851\", \"count\": 8}, {\"strong\": \"H1091\", \"count\": 6}, {\"strong\": \"H2189\", \"count\": 4}, {\"strong\": \"H0928\", \"count\": 3}, {\"strong\": \"H1205\", \"count\": 2}, {\"strong\": \"H1161\", \"count\": 2}, {\"strong\": \"H2847\", \"count\": 1}, {\"strong\": \"H2283\", \"count\": 1}, {\"strong\": \"H2113\", \"count\": 1}]",
+   "description": "Terror is the most extreme form of fear — the inner state produced by a threat so overwhelming that it shatters the capacity for rational response. The Hebrew vocabulary here is exceptionally rich: terror, trembling, dismay, shuddering, and the particular phrase terror on every side that appears in Jeremiah. Terror has a theological dimension: the Day of the Lord is described in terror vocabulary, and the enemies of God's people are struck with terror before them. It is the appropriate response of the creature to unconstrained power.",
+   "origin": "original_list",
+   "dimensions": "Affective/Emotional",
+   "inference_note": null,
+   "session_b_status": "Verse Context Reset",
+   "cluster_assignment": "C06",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 6,
+   "shared_term_count": 30,
+   "term_sharing_ratio": 0.833,
+   "verse_context_status": "Complete",
+   "dim_review_status": null,
+   "dim_review_version": null,
+   "word_synopsis": null
+  },
+  "curated_note": "gate1 add-terms: terror"
+ },
+ "terms": [
+  {
+   "code": "H1161",
+   "gloss": "terror",
+   "transliteration": "bi.u.tim",
+   "script_form": "בִּעוּתִים",
+   "language": "Hebrew",
+   "vocab_count": 2,
+   "medium_def": "terrors, alarms (occasioned by God)",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H1204",
+     "form": "בָּעַת",
+     "gloss": "to terrify",
+     "translit": "ba.at"
+    },
+    {
+     "strong": "H1205",
+     "form": "בְּעָתָה",
+     "gloss": "terror",
+     "translit": "be.a.tah"
+    },
+    {
+     "strong": "H1209G",
+     "form": "בֵּצָ֑י",
+     "gloss": "Bezai",
+     "translit": "be.tsa"
+    },
+    {
+     "strong": "H1209H",
+     "form": "בֵּצָ֑י",
+     "gloss": "Bezai",
+     "translit": "be.tsa"
+    }
+   ],
+   "raw_related_numbers": "H1204, H1205, H1209, H1209",
+   "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;;2;2;2;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H1161",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H1161 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 2,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Job.6.4",
+     "ref": "Job 6:4",
+     "book_code": "Job",
+     "chapter": 6,
+     "verse_num": 4,
+     "esv_text": "Job 6:4 For the arrows of the Almighty are in me; my spirit drinks their poison ; the terrors of God are arrayed against me .",
+     "target_word": "terrors",
+     "testament": "OT",
+     "fetched_under_code": "H1161",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.6.4' class='verseLink'><span class='verseNumber'>Job 6:4</span></a> <span class='level1'></span>For  the <span morph='HNcmpc HTc' strong='H2671 H3588A'>arrows</span> of the <span morph='HNpt' strong='H7706'>Almighty</span> are <span morph='HR' strong='H5978'>in</span> me;<br /><span class='level2'></span>my <span morph='HNcbsc' strong='H7307G'>spirit</span> <span morph='HVqrfsa HSp3mp' strong='H8354 H9028'>drinks</span> their <span morph='HNcfsc HSp1bs HTr' strong='H2534 H9030 H0834A'>poison</span>;<br /><span class='level2'></span>the <span morph='HNcmpc HSp1fs' strong='H1161 H9020'>terrors</span> of <span morph='HNcmsa' strong='H0433'>God</span> are <span morph='HVqi3mp' strong='H6186A'>arrayed</span> against <span morph='HSp1bs' strong='H9030'>me</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H1161",
+     "span_label_found": "terror",
+     "context_before": "drinks their poison ; the",
+     "context_after": "of God are arrayed against"
+    },
+    {
+     "osisId": "Ps.88.16",
+     "ref": "Psa 88:16",
+     "book_code": "Ps",
+     "chapter": 88,
+     "verse_num": 16,
+     "esv_text": "Psa 88:16 Your wrath has swept over me; your dreadful assaults destroy me .",
+     "target_word": "dreadful assaults",
+     "testament": "OT",
+     "fetched_under_code": "H1161",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.88.16' class='verseLink'><span class='verseNumber'>Psa 88:16</span></a> <span class='level1'></span>Your <span morph='HNcmpc' strong='H2740'>wrath</span> has swept <span morph='HVqp3cp HR HSp1bs' strong='H5674A H5921A H9030'>over</span> me;<br /><span class='level2'></span><span morph='HSp2ms' strong='H9021'>your</span>  <span morph='HNcmpc' strong='H1161'>dreadful assaults</span> <span morph='HVpp3cp HSp2ms' strong='H6789 H9021'>destroy</span> <span morph='HSp1bs' strong='H9030'>me</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H1161",
+     "span_label_found": "terror",
+     "context_before": "has swept over me; your",
+     "context_after": "destroy me ."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,287 @@
+{
+ "meta": {
+  "english_anchor": "longing",
+  "generated": "2026-07-06",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H3642",
+   "H6165",
+   "H8373"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 10,
+  "summary_by_group": {
+   "G1": 3,
+   "G3": 4,
+   "G2r": 3
+  },
+  "include_codes": [
+   "H3642",
+   "H6165",
+   "H8373"
+  ],
+  "exclude_codes": [
+   "H3645",
+   "H3643",
+   "H6166A",
+   "H6166B"
+  ],
+  "registry": {
+   "id": 102,
+   "no": 102,
+   "word": "longing",
+   "source_list": "High Confidence",
+   "category_hint": null,
+   "phase1_input_file": null,
+   "phase1_status": "Complete",
+   "phase1_output_file": null,
+   "phase2_datasets": null,
+   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=24  verses=708  run_id=RUN-20260328_140929-AUDIT_WORD",
+   "automation_eligible": 1,
+   "last_automation_run": "AUDITED",
+   "automation_run_id": "RUN-20260328_140929-AUDIT_WORD",
+   "phase1_term_count": 24,
+   "phase1_verse_count": 708,
+   "strongs_list": "[{\"strong\": \"H3627\", \"count\": 225}, {\"strong\": \"H0176A\", \"count\": 175}, {\"strong\": \"H3615G\", \"count\": 103}, {\"strong\": \"H3615H\", \"count\": 53}, {\"strong\": \"H3615J\", \"count\": 37}, {\"strong\": \"H0183\", \"count\": 26}, {\"strong\": \"H8378\", \"count\": 20}, {\"strong\": \"H3617\", \"count\": 19}, {\"strong\": \"H3615I\", \"count\": 10}, {\"strong\": \"G1971\", \"count\": 9}, {\"strong\": \"H0185\", \"count\": 7}, {\"strong\": \"H8264\", \"count\": 6}, {\"strong\": \"H8503\", \"count\": 5}, {\"strong\": \"G1972\", \"count\": 2}, {\"strong\": \"H3631\", \"count\": 2}, {\"strong\": \"G0603\", \"count\": 1}, {\"strong\": \"G1973\", \"count\": 1}, {\"strong\": \"G1974\", \"count\": 1}, {\"strong\": \"H3616\", \"count\": 1}, {\"strong\": \"H3970\", \"count\": 1}, {\"strong\": \"H4357\", \"count\": 1}, {\"strong\": \"H4944\", \"count\": 1}, {\"strong\": \"H8375\", \"count\": 1}, {\"strong\": \"H8502\", \"count\": 1}]",
+   "description": "Longing is the acute, aching desire for something not yet possessed or not yet reached — a desire too strong to be satisfied by substitutes. The Hebrew and Greek vocabulary here covers yearning and eager, almost straining expectation. Longing appears in the psalms as the deep thirst for God himself (as the deer pants for water); it appears in Paul as the groaning of creation and the eager expectation of glory. Longing is the inner posture of the person who knows what they were made for and has not yet arrived there.",
+   "origin": "original_list",
+   "dimensions": "Affective/Emotional",
+   "inference_note": null,
+   "session_b_status": "Verse Context Reset",
+   "cluster_assignment": "C04",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 14,
+   "shared_term_count": 10,
+   "term_sharing_ratio": 0.417,
+   "verse_context_status": "Complete",
+   "dim_review_status": null,
+   "dim_review_version": null,
+   "word_synopsis": null
+  },
+  "curated_note": "gate1 add-terms: longing"
+ },
+ "terms": [
+  {
+   "code": "H3642",
+   "gloss": "to pine",
+   "transliteration": "ka.mah",
+   "script_form": "כָּמַהּ",
+   "language": "Hebrew",
+   "vocab_count": 1,
+   "medium_def": "(Qal) to long for, faint, faint with longing",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H3643",
+     "form": "כִּמְהָם",
+     "gloss": "Chimham",
+     "translit": "kim.ham"
+    },
+    {
+     "strong": "H3645",
+     "form": "כְּמוֹשׁ",
+     "gloss": "Chemosh",
+     "translit": "ke.mosh"
+    }
+   ],
+   "raw_related_numbers": "H3643, H3645",
+   "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;1;1;1;1;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H3642",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H3642 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 1,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Ps.63.1",
+     "ref": "Psa 63:1",
+     "book_code": "Ps",
+     "chapter": 63,
+     "verse_num": 1,
+     "esv_text": "A Psalm of David , when he was in the wilderness of Judah . Psa 63:1 O God , you are my God ; earnestly I seek you; my soul thirsts for you; my flesh faints for you, as in a dry and weary land where there is no water .",
+     "target_word": "faints",
+     "testament": "OT",
+     "fetched_under_code": "H3642",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><h3 class='psalmHeading'>A <span morph='HNcmsa' strong='H4210'>Psalm</span> of <span morph='HNpm HR' strong='H1732 H9005'>David</span>, <span class='normal'></span> <span morph='HR' strong='H9003'>when</span> he <span morph='HVqcc' strong='H1961'>was</span> in the <span morph='HNcmsc HSp3ms HR' strong='H4057A H9043 H9003'>wilderness</span> of <span morph='HNpl' strong='H3063G'>Judah</span>.</h3><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.63.1' class='verseLink'><span class='verseNumber'>Psa 63:1</span></a> <span class='level1'></span>O <span morph='HNcmpa' strong='H0430G'>God</span>, you are my <span morph='HNcmsc' strong='H0410G'>God</span>; <span class='normal'></span> earnestly I <span morph='HVpi1cs HSp1bs HPp2ms' strong='H7836 H9020 H0859A'>seek</span> you;<br /><span class='level2'></span> my <span morph='HNcfsc HR HSp2ms' strong='H5315G H9005 H9031'>soul</span> <span morph='HVqp3fs HSp2ms' strong='H6770 H9031'>thirsts</span> for you;<br /><span class='level1'></span>my <span morph='HNcmsc HR HSp2ms' strong='H1320 H9005 H9031'>flesh</span> <span morph='HVqp3ms HSp1bs' strong='H3642 H9020'>faints</span> for you,<br /><span class='level2'></span>as in  a <span morph='HNcfsa' strong='H6723'>dry</span> and <span morph='HAamsa HC' strong='H5889 H9002'>weary</span> <span morph='HNcfsc HR HSp1bs' strong='H0776G H9003 H9020'>land</span> where there is <span morph='HNcmsc' strong='H1097'>no</span> <span morph='HNcmpa' strong='H4325G'>water</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H3642",
+     "span_label_found": "to pine",
+     "context_before": "thirsts for you; my flesh",
+     "context_after": "for you, as in a"
+    }
+   ]
+  },
+  {
+   "code": "H6165",
+   "gloss": "to long for",
+   "transliteration": "a.rag",
+   "script_form": "עָרַג",
+   "language": "Hebrew",
+   "vocab_count": 3,
+   "medium_def": "(Qal) to long for, pant after",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H6166A",
+     "form": "עֲרָד",
+     "gloss": "Arad",
+     "translit": "a.rad"
+    },
+    {
+     "strong": "H6166B",
+     "form": "עֲרָד",
+     "gloss": "Arad",
+     "translit": "a.rad"
+    },
+    {
+     "strong": "H6170",
+     "form": "עֲרוּגָה",
+     "gloss": "bed",
+     "translit": "a.ru.gah"
+    }
+   ],
+   "raw_related_numbers": "H6170, H6166, H6166, ",
+   "freq_list": "3@2;3@2;3@2;2;3@2;;3@2;3@2;3@2;3@2;3@2;3@2;;3@2;3@2;3@2;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H6165",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H6165 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 2,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Joel.1.20",
+     "ref": "Joe 1:20",
+     "book_code": "Joel",
+     "chapter": 1,
+     "verse_num": 20,
+     "esv_text": "Joe 1:20 Even the beasts of the field pant for you because the water brooks are dried up , and fire has devoured the pastures of the wilderness .",
+     "target_word": "pant",
+     "testament": "OT",
+     "fetched_under_code": "H6165",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Joel.1.20' class='verseLink'><span class='verseNumber'>Joe 1:20</span></a> <span class='level1'></span>Even the <span morph='HNcfpc HD' strong='H0929 H1571'>beasts</span> of the <span morph='HNcmsa' strong='H7704G'>field</span>  <span morph='HVqi3fs' strong='H6165'>pant</span> for you<br /><span class='level2'></span>because the <span morph='HNcmpa' strong='H4325G'>water</span> <span morph='HNcmpc' strong='H0650'>brooks</span> are <span morph='HVqp3cp HR HSp2ms HTc' strong='H3001 H0413 H9031 H3588A'>dried up</span>,<br /><span class='level1'></span> and <span morph='HNcbsa HC' strong='H0784 H9002'>fire</span> has <span morph='HVqp3fs' strong='H0398'>devoured</span><br /><span class='level2'></span>the <span morph='HNcfpc' strong='H4999'>pastures</span> of the <span morph='HNcmsa HTd' strong='H4057B H9009'>wilderness</span>.<br /><span class='endLineGroup'></span></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H6165",
+     "span_label_found": "to long for",
+     "context_before": "the beasts of the field",
+     "context_after": "for you because the water"
+    },
+    {
+     "osisId": "Ps.42.1",
+     "ref": "Psa 42:1",
+     "book_code": "Ps",
+     "chapter": 42,
+     "verse_num": 1,
+     "esv_text": "To the choirmaster . A Maskil of the Sons of Korah . Psa 42:1 As a deer pants for flowing streams , so pants my soul for you, O God .",
+     "target_word": "pants",
+     "testament": "OT",
+     "fetched_under_code": "H6165",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><h3 class='psalmHeading'>To the <span morph='HVprmsa HRd' strong='H5329 H9005'>choirmaster</span>. A <span morph='HNtmsa' strong='H4905'>Maskil</span>   of  the <span morph='HNcmpc HR' strong='H1121A H9005'>Sons</span> of <span morph='HNpm' strong='H7141G'>Korah</span>.</h3><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.42.1' class='verseLink'><span class='verseNumber'>Psa 42:1</span></a> <span class='level1'></span> <span morph='HR' strong='H9004'>As</span> a <span morph='HNcmsa' strong='H0354'>deer</span> <span morph='HVqi3fs' strong='H6165'>pants</span> for <span morph='HNcmpa' strong='H4325G'>flowing</span> <span morph='HNcmpc HR' strong='H0650 H5921A'>streams</span>,<br /><span class='level2'></span>so <span morph='HVqi3fs HSp1bs' strong='H6165 H9020'>pants</span> my <span morph='HNcfsc HD' strong='H5315G H3651C'>soul</span> for you, O <span morph='HNcmpa HRd HSp2ms' strong='H0430G H0413 H9031'>God</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H6165",
+     "span_label_found": "to long for",
+     "context_before": "Psa 42:1 As a deer",
+     "context_after": "for flowing streams , so"
+    }
+   ]
+  },
+  {
+   "code": "H8373",
+   "gloss": "to long for",
+   "transliteration": "ta.av",
+   "script_form": "תָּאַב",
+   "language": "Hebrew",
+   "vocab_count": 2,
+   "medium_def": "(Qal) to long for",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H8374",
+     "form": "תָּאַב",
+     "gloss": "to loathe",
+     "translit": "ta.av"
+    },
+    {
+     "strong": "H8375",
+     "form": "תַּאֲבָה",
+     "gloss": "longing",
+     "translit": "ta.a.vah"
+    }
+   ],
+   "raw_related_numbers": "H8374, H8375",
+   "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;;2;2;2;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H8373",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H8373 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 2,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Ps.119.174",
+     "ref": "Psa 119:174",
+     "book_code": "Ps",
+     "chapter": 119,
+     "verse_num": 174,
+     "esv_text": "Psa 119:174 I long for your salvation , O Lord , and your law is my delight .",
+     "target_word": "long",
+     "testament": "OT",
+     "fetched_under_code": "H8373",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.119.174' class='verseLink'><span class='verseNumber'>Psa 119:174</span></a> <span class='level1'></span>I  <span morph='HVqp1cs' strong='H8373'>long</span> for your <span morph='HNcfsc HR' strong='H3444 H9005'>salvation</span>, O <span class='small-caps'><span morph='HNpt HSp2ms' strong='H3068G H9021'>Lord</span></span>,<br /><span class='level2'></span>and your <span morph='HNcfsc HC' strong='H8451 H9002'>law</span> is my  <span morph='HNcmpc HSp1bs HSp2ms' strong='H8191 H9020 H9021'>delight</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H8373",
+     "span_label_found": "to long for",
+     "context_before": "Psa 119:174 I",
+     "context_after": "for your salvation , O"
+    },
+    {
+     "osisId": "Ps.119.40",
+     "ref": "Psa 119:40",
+     "book_code": "Ps",
+     "chapter": 119,
+     "verse_num": 40,
+     "esv_text": "Psa 119:40 Behold , I long for your precepts ; in your righteousness give me life !",
+     "target_word": "long",
+     "testament": "OT",
+     "fetched_under_code": "H8373",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.119.40' class='verseLink'><span class='verseNumber'>Psa 119:40</span></a> <span class='level1'></span><span morph='HTj' strong='H2009'>Behold</span>, I  <span morph='HVqp1cs' strong='H8373'>long</span> for your <span morph='HNcmpc HR' strong='H6490 H9005'>precepts</span>;<br /><span class='level2'></span> <span morph='HR' strong='H9003'>in</span> your <span morph='HNcfsc HSp2ms' strong='H6666 H9021'>righteousness</span> <span morph='HVpv2ms HSp1bs HSp2ms' strong='H2421 H9030 H9021'>give me life</span>!<br /><span class='endLineGroup'></span></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H8373",
+     "span_label_found": "to long for",
+     "context_before": "Psa 119:40 Behold , I",
+     "context_after": "for your precepts ; in"
+    }
+   ]
+  }
+ ]
+}

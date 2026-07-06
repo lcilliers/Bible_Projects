@@ -1,0 +1,135 @@
+{
+ "meta": {
+  "english_anchor": "spiritual powers",
+  "generated": "2026-07-06",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H7854"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 8,
+  "summary_by_group": {
+   "G3": 6,
+   "G2r": 2
+  },
+  "include_codes": [
+   "H7854"
+  ],
+  "exclude_codes": [
+   "H7854",
+   "G4567",
+   "H1100G",
+   "G0954",
+   "G0955",
+   "G4566"
+  ],
+  "registry": {
+   "id": 195,
+   "no": 195,
+   "word": "spiritual powers",
+   "source_list": "Programme Addition",
+   "category_hint": "Spiritual/External Operator — Cross-Registry Synthesis",
+   "phase1_input_file": null,
+   "phase1_status": "Excluded",
+   "phase1_output_file": null,
+   "phase2_datasets": null,
+   "notes": "SPECIAL HANDLING — Exclusion validated 2026-04-06. Spiritual powers is a cross-registry synthesis placeholder — the non-human spiritual beings (angels, demons, principalities, powers) that populate the biblical world and affect the inner life of the human person. No single Hebrew or Greek term covers this category: it emerges from the synthesis of the power/authority/might/dominion/energy cluster (C20, registries #196–200) through Session D analysis. Understanding the inner life of the human person requires understanding the spiritual environment within which that person exists, including the beings that can affect, inhabit, or oppose them. Session D will address this synthesis question once C20 cluster Session B work is complete. No Session A run required. Strongs_list correctly empty. Source: Session-A-v9-Empty-Words-Analysis-20260318.",
+   "automation_eligible": 0,
+   "last_automation_run": "2026-03-18T13:41:48",
+   "automation_run_id": "RUN-20260318_134133-BULK_GAP_FILL",
+   "phase1_term_count": 0,
+   "phase1_verse_count": 0,
+   "strongs_list": "[]",
+   "description": "Spiritual powers is a placeholder category for the non-human spiritual beings described in Scripture — angels, demons, principalities, powers, and the various named beings that populate the biblical world. This category does not have its own Hebrew or Greek term but is a synthesis point for the programme: understanding the inner life of the human person requires understanding the spiritual environment within which that person exists, including the beings that can affect, inhabit, or oppose them. [Special handling — cross-registry synthesis placeholder.]",
+   "origin": "programme_addition",
+   "dimensions": "Spiritual/God-ward",
+   "inference_note": null,
+   "session_b_status": null,
+   "cluster_assignment": "C20",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 0,
+   "shared_term_count": 0,
+   "term_sharing_ratio": 0.0,
+   "verse_context_status": null,
+   "dim_review_status": null,
+   "dim_review_version": null,
+   "word_synopsis": null
+  }
+ },
+ "terms": [
+  {
+   "code": "H7854",
+   "gloss": "Satan",
+   "transliteration": "sa.tan",
+   "script_form": "שָׂטָן",
+   "language": "Hebrew",
+   "vocab_count": 27,
+   "medium_def": "An angel in the Old Testament; \ncalled Satan or \"accuser\" (KJV= Satan) (שָׂטָן); or \"worthless\" (KJV= Belial; NIV= \"troublemakers\") or \"worthless\" (KJV= Belial; NIV= \"wicked\") or \"worthless\" (KJV= Belial; NIV= \"evil\") or \"worthless\" (KJV= Belial; NIV= \"scoundrel\") or \"scoundrel\" (KJV= Belial) (בְּלִיַּ֫עַל); or Beelzebul (KJV= Beelzebub) (Βεελζεβούλ); or Belial (Βελίαλ); or Satan (Σατάν); or [ ] (KJV= Satan) or Satan (Σατανᾶς) § \nThis name means adversary, one who withstands\n1a) adversary (in general-personal or national)\n♣2) superhuman adversary\n2a) Satan (as noun pr)",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "G0954",
+     "form": "Βεελζεβούλ",
+     "gloss": "Beelzebul",
+     "translit": "beelzeboul"
+    },
+    {
+     "strong": "G0955",
+     "form": "Βελίαλ",
+     "gloss": "Belial",
+     "translit": "belial"
+    },
+    {
+     "strong": "G4566",
+     "form": "Σατάν",
+     "gloss": "Satan",
+     "translit": "satan"
+    },
+    {
+     "strong": "G4567",
+     "form": "Σατανᾶς",
+     "gloss": "Satan",
+     "translit": "satanas"
+    },
+    {
+     "strong": "H1100G",
+     "form": "בְּלִיַּ֫עַל",
+     "gloss": "Belial",
+     "translit": "be.liy.ya.al"
+    },
+    {
+     "strong": "H1100H",
+     "form": "בְּלִיַּ֫עַל",
+     "gloss": "Belial: destruction",
+     "translit": "be.liy.ya.al"
+    },
+    {
+     "strong": "H1100I",
+     "form": "בְּלִיַּ֫עַל",
+     "gloss": "Belial: worthless",
+     "translit": "be.liy.ya.al"
+    }
+   ],
+   "raw_related_numbers": "H1100, H1100, H1100, G0954, G0955, G4566, G4567, ",
+   "freq_list": "27@23;27@23;27@23;23;27@23;;27@23;27@23;27@23;27@23;27@23;27@23;;27@23;27@23;27@23;2;2",
+   "is_proper_noun": true,
+   "is_sub_gloss": false,
+   "step_parent_code": "H7854",
+   "step_section_type": "primary",
+   "decision_group": "G3",
+   "action": "exclude",
+   "decision_reason": "F1: is_proper_noun=true",
+   "verses_fetched": false,
+   "verse_count": null,
+   "testament_coverage": null,
+   "meaning_numbered": true,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": []
+  }
+ ]
+}
