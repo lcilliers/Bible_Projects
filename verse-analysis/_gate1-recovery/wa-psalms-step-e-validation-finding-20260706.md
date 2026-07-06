@@ -56,3 +56,18 @@ The 172 remaining characteristic spans map to **27 legacy span-orphan stub `mti_
 `H0157 love · H1350 redeem · H3467 save · H5382/H7911 forget · H7307 spirit · H5087/H5088 vow · H5358 avenge · H2449 be-wise · H7891 sing · H3238/H3905/H3906 oppress · H5678 fury · H6973 loathe · H0014 be-willing · H2670 free · H7309 relief · H7810 bribe · H0079/H5319 wrestle · H0034 needy · H1800 poor · H0490 widow · H3490 orphan · H0833 bless`
 
 **Next step (needs your steer):** these 27 need the **same gate-1 treatment** — registry assignment (the analytical call, as with the 97) → `audit_word --add-terms` → then re-run the backfill to close the last 172 spans. Some are clearly IB (love, save, forget, spirit, vow); a few are social-category third parties (widow, orphan, needy, poor) that may be reference/qualifier like Satan. I've stopped here to bring you the 27-term registry mapping for review rather than impute it.
+
+---
+
+## CLOSED (2026-07-06) — Psalms Step (e) COMPLETE: characteristic-span miss = 0
+
+Researcher approved the 27-term mapping (`wa-second-orphan-set-27-registry-proposal-20260706.md`) "all registries as suggested" + social quartet as **third party**.
+
+- **New registry `the afflicted`** (id 221) REGISTERed for the third-party vulnerable (widow/orphan/needy/poor); role=reference.
+- **22 clean stubs** onboarded fresh via `audit_word --add-terms` into their proposed homes; **5 tangled** (already-owned: H0157→love, H7307→anger, H0014→desire, H6973→distress, H0034→desire) reconciled to existing owners (no re-assign).
+- **Master-index backfill re-run** (+178) then a **targeted H7307 fix** (+39; its OWNER inventory is H7307H/I sub-entries, base-mismatch to the mti).
+- **Result: Psalms characteristic spans 3810 / covered 3810 / MISS 0.** Official probe `_probe_psalms_gate1_validate_v1` → **ALL PASS ✓**. No new invariant breach (dup_owner_strong=1 baseline). All 27 NULL-registry stubs cleared.
+
+**Total this phase:** ~3,486 fully-scaffolded verse-records added from the master index across the three backfill passes + H7307. **Psalms corrective pipeline steps (a)–(e) are all complete.**
+
+*Known minor: the backfill owner-join is exact-strong; base-vs-sub-entry mismatches (like H7307) need the targeted path or a base-matching owner resolver in a future v2 — noted for the next book.*
