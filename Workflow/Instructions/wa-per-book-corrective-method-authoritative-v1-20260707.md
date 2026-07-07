@@ -33,4 +33,11 @@ The researcher will not trust my memory and will not let me drift far before spo
 4. **No cross-book operations.** Index-based tracking only.
 5. Every write is **integrity-gated**, and every completeness/correctness claim must be **independently (non-circular) verifiable** — I will not report existence as correctness (see `wa-backfill-completeness-claim-CORRECTION-20260706.md`).
 
+## Marker convention — `SPAN_UNRESOLVED` (step-b residual that step-c MUST resolve)
+When a verse-record's link to its master-index span is **ambiguous** (the term repeats in the verse with differing forms and nothing — including `target_word` — singles out the occurrence), step (b) does **not** guess. Instead it marks the record and **both/all** candidate spans, deferring resolution to the step-c lexical read:
+- **`wa_verse_records.analysis_marker = 'SPAN_UNRESOLVED'`** on the record (its `verse_span_id` stays NULL).
+- **`ve_lexical.notes` contains `SPAN_UNRESOLVED_VR:<record_id>`** on every ve_lexical item of **each candidate span** — because if the right span is unknown, **all candidates need revision**.
+
+**Step (c) obligation:** when the role/lexical of a marked span is (re)assessed, the process MUST (1) revise the candidate spans' lexical, (2) bind each `SPAN_UNRESOLVED` verse-record to the correct span (set `verse_span_id`), and (3) clear both markers. Until then these records trace to a passage (verse_id set) but not to the master index — a known, tracked residual, never silently linked. (First applied to Proverbs' 34 residuals, 2026-07-07.)
+
 *Recorded 2026-07-07. This is the reference to read before any corrective work on any book.*
