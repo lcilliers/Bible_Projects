@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T20:19:04Z",
+  "generated_at": "2026-07-07T04:29:46Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1806,
+    "other": 1809,
     "historical": 31,
-    "current": 2899,
+    "current": 2900,
     "archived": 2275,
     "cross-reference": 3396,
     "backup": 79
   },
-  "total_files": 10486,
-  "total_active": 8211,
+  "total_files": 10490,
+  "total_active": 8215,
   "total_archived": 2275,
   "files": [
     {
@@ -68071,6 +68071,22 @@
       "modified": "2026-05-07T05:07:28Z"
     },
     {
+      "path": "Workflow/Instructions/wa-per-book-corrective-method-authoritative-v1-20260707.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-07",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3957,
+      "modified": "2026-07-07T04:28:30Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md",
       "category": "workflow",
       "type": "other",
@@ -105379,8 +105395,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4204248,
-      "modified": "2026-07-03T19:21:07Z"
+      "size_bytes": 4713708,
+      "modified": "2026-07-06T20:19:05Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -142311,6 +142327,22 @@
       "modified": "2026-07-06T16:08:35Z"
     },
     {
+      "path": "verse-analysis/_gate1-recovery/wa-backfill-completeness-claim-CORRECTION-20260706.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-06",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4310,
+      "modified": "2026-07-06T20:25:30Z"
+    },
+    {
       "path": "verse-analysis/_gate1-recovery/wa-db-integrity-completion-overnight-20260705.md",
       "category": "other",
       "type": "other",
@@ -146407,6 +146439,22 @@
       "modified": "2026-07-04T20:45:39Z"
     },
     {
+      "path": "verse-analysis/_reports/wa-session-log-20260706-07-gate1-onboarding-backfill-and-method-reset.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-06",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 10492,
+      "modified": "2026-07-07T04:29:36Z"
+    },
+    {
       "path": "verse-analysis/_reports/wa-session-log-20260706-psalms-corrective-and-gate1-rework.md",
       "category": "other",
       "type": "other",
@@ -146501,6 +146549,22 @@
       "archived": false,
       "size_bytes": 3020,
       "modified": "2026-07-04T10:35:22Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-user-verbatim-messages-20260706.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-06",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 24459,
+      "modified": "2026-07-07T03:42:23Z"
     },
     {
       "path": "verse-analysis/_reports/wa-ve-lexical-architecture-review-v1-20260702.md",
