@@ -21,6 +21,8 @@
 
 ## Supporting principles the researcher has stated (hold these)
 - A word's **role** is assessed in the context of the verse/passage, in strict order: **characteristic → else qualifier (operates with a characteristic) → else standalone**. "the order of evaluation is important."
+- **Qualifier is RELATIONAL** (refined 2026-07-07): a word is a **qualifier** if it **strengthens the understanding of an associated characteristic** in the verse — its object, manner, instrument, sphere, movement-toward, or outcome. It is decided by the word's **morphology/grammatical relationship**, not the word in isolation. **Standalone only if the word relates to NO characteristic.**
+- **When in doubt, lean CHARACTERISTIC** (be conservative toward inclusion) rather than exclude a word.
 - **`mti_terms` is NOT the definition of primary inner-being.** It is a record of terms already in the study and is **incomplete by definition**. A word is characteristic by its **use and meaning in the context of the verse/passage** and that it does/says something about the inner being — never by a lookup table.
 - Tracking is by **index/FK, forward and backward**; **text-scanning is discouraged**.
 - Fixes are **strictly per book; nothing across books.**
