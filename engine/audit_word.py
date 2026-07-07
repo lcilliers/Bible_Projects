@@ -1037,6 +1037,26 @@ def _apply_changes(
                 _mti_cache[strongs] = row["id"] if row else None
             return _mti_cache[strongs]
 
+        def _verse_and_span(reference, strongs):
+            # Link the new verse-record to the verse row and its master-index span.
+            # (Historically omitted — the deprecated span-backpop was meant to do this; it never
+            # ran, leaving verse_id/verse_span_id NULL. Set them at insert instead. 2026-07-07.)
+            if not reference:
+                return None, None
+            v = conn.execute("SELECT id FROM verse WHERE reference = ?", (reference,)).fetchone()
+            if not v:
+                return None, None
+            vid = v["id"]
+            b = strongs[:-1] if (strongs and len(strongs) > 1 and strongs[-1].isalpha() and strongs[0] in "HG") else strongs
+            sp = conn.execute(
+                "SELECT id FROM verse_span_index WHERE verse_id=? AND primary_strong=? ORDER BY word_index LIMIT 1",
+                (vid, strongs)).fetchone()
+            if not sp:
+                sp = conn.execute(
+                    "SELECT id FROM verse_span_index WHERE verse_id=? AND substr(primary_strong,1,5)=? ORDER BY word_index LIMIT 1",
+                    (vid, b)).fetchone()
+            return vid, (sp["id"] if sp else None)
+
         for item in gap["MISSING_VERSE"]:
             jv    = item["verse_rec"]
             ti_id = item["ti_id"] or new_ti_map.get(item["code"])
@@ -1056,6 +1076,8 @@ def _apply_changes(
                     f"MISSING_VERSE: unknown book {jv.get('book_code')!r} ({item['ref']})"
                 )
                 continue
+            _strong = ti.get("term_id") or item["code"]
+            _vid, _vspan = _verse_and_span(jv["ref"], _strong)   # link to verse row + master-index span at insert
             try:
                 conn.execute(
                     """INSERT INTO wa_verse_records
@@ -1063,12 +1085,12 @@ def _apply_changes(
                             book_id, reference, chapter, verse_num, testament,
                             translation, verse_text, target_word,
                             span_strong_match, context_before, context_after,
-                            morph_code, stem, word_registry_fk, created_at)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                            morph_code, stem, word_registry_fk, verse_id, verse_span_id, created_at)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         primary_fid, ti_id,
-                        ti.get("term_id") or item["code"],
-                        _mti_for(ti.get("term_id") or item["code"]),   # H4: link at insert
+                        _strong,
+                        _mti_for(_strong),   # H4: link at insert
                         ti.get("transliteration"),
                         book_id, jv["ref"],
                         jv.get("chapter"), jv.get("verse_num"), jv.get("testament"),
@@ -1077,6 +1099,7 @@ def _apply_changes(
                         jv.get("context_before"), jv.get("context_after"),
                         jv.get("morph_code"), jv.get("stem"),          # H4: morph at insert (when extract carries it)
                         registry_id_int,                               # bypass FK (registry linkage, not file_index)
+                        _vid, _vspan,                                  # verse row + master-index span link (2026-07-07)
                         now,
                     ),
                 )

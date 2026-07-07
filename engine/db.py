@@ -63,3 +63,28 @@ def get_book_id(conn, book_code: str) -> int | None:
         "SELECT book_id FROM book_code_variants WHERE code = ?", (book_code,)
     ).fetchone()
     return row["book_id"] if row else None
+
+
+def resolve_verse_and_span(conn, reference: str, strongs: str):
+    """Resolve (verse_id, verse_span_id) for a new verse-record from its reference + strong.
+
+    verse_id from the `verse` row; verse_span_id from the master-index (`verse_span_index`) span
+    for that verse+strong — exact strong first, else base strong; first occurrence (lowest
+    word_index). Returns (None, None)/(vid, None) when nothing resolves. Added 2026-07-07 to fix
+    the omission that left onboarded verse-records unlinked to the verse/master index.
+    """
+    if not reference:
+        return None, None
+    v = conn.execute("SELECT id FROM verse WHERE reference = ?", (reference,)).fetchone()
+    if not v:
+        return None, None
+    vid = v["id"]
+    b = strongs[:-1] if (strongs and len(strongs) > 1 and strongs[-1].isalpha() and strongs[0] in "HG") else strongs
+    sp = conn.execute(
+        "SELECT id FROM verse_span_index WHERE verse_id=? AND primary_strong=? ORDER BY word_index LIMIT 1",
+        (vid, strongs)).fetchone()
+    if not sp:
+        sp = conn.execute(
+            "SELECT id FROM verse_span_index WHERE verse_id=? AND substr(primary_strong,1,5)=? ORDER BY word_index LIMIT 1",
+            (vid, b)).fetchone()
+    return vid, (sp["id"] if sp else None)

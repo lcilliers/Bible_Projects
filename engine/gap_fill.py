@@ -37,7 +37,7 @@ from .constants import (
     LOCK_SENTINEL,
     SPECIFICATION,
 )
-from .db import get_max_id, get_book_id, get_schema_version
+from .db import get_max_id, get_book_id, get_schema_version, resolve_verse_and_span
 from .audit import run_audit
 from .flag_engine import run_flag_engine
 from .meaning_parser import run_parser_for_file
@@ -231,13 +231,15 @@ def run_gap_fill(conn, registry_id: int,
                         errors.append(f"S3: Unknown book code {rec['book_code']!r}")
                         continue
                     vr_id = get_max_id(conn, "wa_verse_records") + 1
+                    _vid, _vspan = resolve_verse_and_span(conn, rec["ref"], strongs)
                     conn.execute(
                         """INSERT INTO wa_verse_records
                                (id, file_id, term_inv_id, term_id, transliteration,
                                 book_id, reference, chapter, verse_num, testament,
                                 translation, verse_text, target_word,
-                                span_strong_match, context_before, context_after)
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL)""",
+                                span_strong_match, context_before, context_after,
+                                verse_id, verse_span_id)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL, ?, ?)""",
                         (
                             vr_id, file_id, ti_id, strongs,
                             ti_row["transliteration"] or "",
@@ -247,6 +249,7 @@ def run_gap_fill(conn, registry_id: int,
                             rec["esv_text"],
                             rec.get("target_word", ""),
                             rec.get("span_strong_match", 1),
+                            _vid, _vspan,
                         ),
                     )
                     s3_inserted += 1
@@ -831,13 +834,15 @@ def run_bulk_gap_fill(conn,
                         errors.append(f"S3: unknown book {rec['book_code']!r}")
                         continue
                     vr_id = get_max_id(conn, "wa_verse_records") + 1
+                    _vid, _vspan = resolve_verse_and_span(conn, rec["ref"], strongs)
                     conn.execute(
                         """INSERT INTO wa_verse_records
                                (id, file_id, term_inv_id, term_id, transliteration,
                                 book_id, reference, chapter, verse_num, testament,
                                 translation, verse_text, target_word,
-                                span_strong_match, context_before, context_after)
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL)""",
+                                span_strong_match, context_before, context_after,
+                                verse_id, verse_span_id)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL, ?, ?)""",
                         (
                             vr_id, file_id, ti_id, strongs,
                             row["transliteration"] or "",
@@ -847,6 +852,7 @@ def run_bulk_gap_fill(conn,
                             rec["esv_text"],
                             rec.get("target_word", ""),
                             rec.get("span_strong_match", 1),
+                            _vid, _vspan,
                         ),
                     )
                     s3_inserted += 1
