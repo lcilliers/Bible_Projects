@@ -27,7 +27,10 @@ The reset doc was pulled from Batch B and investigated (see chat + docs). Outcom
 - **`wa-lexical-analysis-rules-reset-v1` → CLOSED & ARCHIVED** (content morphed into current docs; provenance banner added). Moved to `Workflow/Instructions/archive/`.
 - **`wa-synthesis-B-spec-reset-v1` → KEEP** (researcher: still relevant, albeit stale) — the assembly half. Removed from any archive consideration.
 
-## Batch B — RECOMMEND ARCHIVE (needs your confirmation)
+## Batch B — ✅ ARCHIVED 2026-07-08 (researcher approved: "yes Batch B can be archived")
+All 20 files below moved to `Workflow/Instructions/archive/`. The three caution-flagged docs (`wa-sessionc-cluster-overview`, `wa-findings-audit-spec`, `wa-word-study-template`) were archived **with caution** per explicit blanket approval — recoverable in one `git mv` from archive if any proves still-live. Active Instructions folder now holds **only Batch C** (13 docs). Archive holds 35.
+
+## Batch B — the archived set (was: recommend-archive)
 Made legacy by the **2026-06-25 RESET** (characteristics→movements) and the **2026-07-02 verse-first / 2026-07-08 authoritative-cycle** shift, which closed the characteristic/faculty/tier/logical-unit framing and the Session A/B/C/D + cluster-publication pipeline. They are **not** self-declared superseded and some are still name-referenced in the (lagging) CLAUDE.md §10, so I have not moved them.
 
 | file | why legacy | caution |
