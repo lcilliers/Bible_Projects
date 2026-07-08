@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T19:04:34Z",
+  "generated_at": "2026-07-08T19:39:49Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1825,
+    "other": 1829,
     "historical": 31,
-    "current": 2897,
+    "current": 2898,
     "archived": 2308,
     "cross-reference": 3396,
     "backup": 96
   },
-  "total_files": 10553,
-  "total_active": 8245,
+  "total_files": 10558,
+  "total_active": 8250,
   "total_archived": 2308,
   "files": [
     {
@@ -105715,8 +105715,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4742929,
-      "modified": "2026-07-08T16:02:51Z"
+      "size_bytes": 4743089,
+      "modified": "2026-07-08T19:04:34Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -136215,6 +136215,22 @@
       "modified": "2026-07-04T14:23:55Z"
     },
     {
+      "path": "scripts/_check_proverbs_reread_measures_v1_20260708.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-08",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 8670,
+      "modified": "2026-07-08T19:36:40Z"
+    },
+    {
       "path": "scripts/_check_softdelete_integrity.py",
       "category": "script",
       "type": "other",
@@ -146951,6 +146967,54 @@
       "modified": "2026-07-04T12:35:25Z"
     },
     {
+      "path": "verse-analysis/_reports/wa-proverbs-reread-BASELINE-20260708.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-08",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4242,
+      "modified": "2026-07-08T19:38:14Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-proverbs-reread-success-criteria-20260708.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-08",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9784,
+      "modified": "2026-07-08T19:30:44Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-proverbs-segment-vs-candidate-digestion-analysis-20260708.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-08",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3899,
+      "modified": "2026-07-08T19:15:37Z"
+    },
+    {
       "path": "verse-analysis/_reports/wa-psalms-chapter-readings-PROGRESS.md",
       "category": "other",
       "type": "other",
@@ -147189,6 +147253,22 @@
       "archived": false,
       "size_bytes": 6817,
       "modified": "2026-07-02T04:33:45Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-session-close-and-startup-20260708-to-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-08",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6477,
+      "modified": "2026-07-08T19:39:12Z"
     },
     {
       "path": "verse-analysis/_reports/wa-session-end-20260702-psalter-complete.md",
