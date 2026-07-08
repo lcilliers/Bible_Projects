@@ -1,6 +1,8 @@
 # Cycle instruction — DB updates, index maintenance, transition & passage cross-reference (analysis)
 
-> Investigation feeding the additions to `Workflow/Instructions/wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md`. Answers the researcher's four asks: (1) transition processes, (2) does the cycle update all indexes, (3) other related DB updates, (4) cross-reference the passage instruction and make the two work together. **Contains decisions that must be resolved before the instruction is finalised.** 2026-07-08.
+> Investigation feeding the additions to `Workflow/Instructions/wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md`. Answers the researcher's four asks: (1) transition processes, (2) does the cycle update all indexes, (3) other related DB updates, (4) cross-reference the passage instruction and make the two work together. 2026-07-08.
+>
+> **✅ RESOLVED & APPLIED 2026-07-08.** The researcher decided all three §6 decisions and the instruction is finalised: **(1)** `verse_evidence_index.lexical` = **deprecated/defunct** (option A). **(2)** read-vs-legacy roles marked by **`role_provenance = 'read-2026'`** (yes) — column already exists on the master (M64). **(3)** passage scope = **candidate characteristic** (the heart), verse-record = entry/anchor; and — stronger than the "union" proposed in §4 — **a `char_candidate` span with no verse-record is a DB integrity violation** that must be repaired (verse-record + term + relations) *before* the passage is read, not a scope union. Applied to: **§4A / §7A / §7B** of the cycle instruction, and **`wa-passage-completeness-rule-v2-20260708.md`** (supersedes v1). §2–§4 below record the original options; §6 is now closed.
 
 ---
 

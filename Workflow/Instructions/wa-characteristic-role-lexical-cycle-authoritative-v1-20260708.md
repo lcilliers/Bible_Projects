@@ -1,6 +1,8 @@
 # Characteristic → Candidate → Role → Lexical — AUTHORITATIVE CYCLE INSTRUCTION (v1)
 
 > **Status: AUTHORITATIVE. This is the single governing instruction for how the study determines characteristics, seeds candidates, sets roles, and generates lexicals.** It **supersedes all prior attempts** at this sub-process — including the qualifier-as-a-role framing, the per-span role-reassessment method, the strongs-list / 277-table candidate attempts, and any earlier "characteristic determination" notes. Where any older document conflicts with this on *characteristic identity, role, candidacy, or lexical generation*, **this document wins.** It does **not** replace the study's foundations (scripture-as-data, the master-index architecture, the dimension catalogue mechanics) — it sits on top of them and makes the cycle unambiguous. Set 2026-07-08.
+>
+> **Amendment 2026-07-08 (same-day completion).** Three sections added to finalise the cycle: **§4A Stage 0 — Passage prerequisite** (no verse read outside a passage; passage driven by the candidate characteristic; whole-book layout precomputed), **§7A DB updates & index maintenance** (the per-verse write ledger; the candidate⇒verse-record integrity invariant; `verse_evidence_index` deprecated for lexicals), and **§7B Transition & changeover** (`role_provenance` two-state model). Resolves the three open decisions in `verse-analysis/_reports/wa-cycle-db-updates-indexes-transition-passage-analysis-20260708.md`: (1) `verse_evidence_index.lexical` = **deprecated/defunct**; (2) read-vs-legacy marked by **`role_provenance = 'read-2026'`**; (3) passage scope = **candidate characteristic**, with candidate-without-verse-record treated as an **integrity violation to repair**, not a scope union. Companion passage rule bumped to `wa-passage-completeness-rule-v2-20260708.md`.
 
 ---
 
@@ -53,6 +55,15 @@ Method (three layers, in order; only meaning-based routes are permitted):
 
 Output: the lemma-inventory JSON (`char_matched` = registry/synonym; `ib_candidate` = judged) and the **`char_candidate` flag stamped on the master** (`verse_span_index.char_candidate` / `char_candidate_tag`), non-destructive (leaves `role` intact).
 
+## 4A. STAGE 0 — Passage prerequisite (per book, before any read)
+**No lexical is generated or updated outside the context of a passage.** Between the seed (§4, corpus-wide) and the read (§5, per verse) sits Stage 0: build the book's passages. Governed by **`wa-passage-completeness-rule-v2-20260708.md`** — read it as part of this cycle. Its essentials:
+
+- **The candidate characteristic span is the heart of the passage.** IB-relevance is `char_candidate = 1` on the master, **not** the verse-record. A verse with no candidate carries nothing to read — it is outside every passage and is **never read**. We do not read whole chapters.
+- **A passage = a maximal run of consecutive candidate-bearing verses.** It grows from the heart verse through its pre- and post- neighbours for as long as each neighbour also carries a candidate; the first non-candidate verse closes it. Anchor = first verse.
+- **The verse-record is the entry/anchor, not the scope test.** A book is swept from its first verse-record verse; the passage then grows by candidate adjacency; then the sweep moves to the next unpassaged verse-record verse.
+- **Integrity invariant (see §7A): every `char_candidate` span must have a verse-record.** A candidate without one is a **DB integrity violation** — restore the verse-record and its relations **first**, then passage and read.
+- **The whole-book passage layout is designed up front, before any lexical read** — the passage ↔ verse-record ↔ master relationship is deterministic once `char_candidate` is stamped. Stage 0 outputs the complete start/finish list for the book; §5 then walks it, pulling the morphology of each whole passage before reading.
+
 ## 5. STAGE 2 — Building the lexical (the read; role is fixed inside it)
 Stage 1 has flagged which lemmas *could* be characteristics. Stage 2 resolves each flagged occurrence by reading the verse, and in doing so produces the lexical. Role is not settled beforehand and is not a separate step: it is dimension 115, fixed **as the decomposition is made**. This is one stage, not two.
 
@@ -85,6 +96,35 @@ A verse is complete when every real-strong span carries exactly one of the four 
 **Write-back (the completeness ledger).** On completion of the lexical generation/revision, the role of **every span in the verse** is written back to the master (`verse_span_index.role`) — not only the characteristics but **all** four states: `characteristic`, `qualifier`, `standalone`, `undecided`. This is what makes the work **auditable and back-trackable from the master alone**: because every element of a read verse carries a role, any span still `role IS NULL` marks a verse (or a span within it) not yet accounted for. The read-derived role **supersedes** the legacy backfill; `char_candidate` is left in place as the seed provenance, so the master shows both what was *flagged* (`char_candidate`) and what the read *decided* (`role`).
 
 **Feedback / self-learning.** Every read that finds a seed miss (a discovered characteristic, §5) or a false positive updates the curated dictionary / IB set, re-matches the seed JSON, and **re-stamps** the master `char_candidate`. Record the change. The cycle is self-correcting — the seed tightens with each pass, and the master stays a complete, queryable account of every span.
+
+## 7A. DB updates & index maintenance (the integrity ledger)
+**There are no triggers on `ve_lexical`, `verse_span_index`, `verse`, or `verse_evidence_index` — every table update is manual and is the read's responsibility.** A verse read is not complete until all of these are written. This is the concrete form of "all related tables updated, DB integrity maintained".
+
+| # | table · column | what the read writes | when |
+|---|---|---|---|
+| 1 | `ve_lexical` (`verse_span_id` → master, `ve_nr` 101–116, pairs) | create/revise the 16-dimension rows for each characteristic + its pairs | core of the read (§5) |
+| 2 | `verse_span_index.role` (+ `role_provenance`, `role_set_at`, `role_source_ve_id`) | write back **every** span's role — all four states | on completion (§7) |
+| 3 | `verse.process_marker` | mark the verse read (completion ledger) | on completion |
+| 4 | `verse_span_index.char_candidate` / `char_candidate_tag` | re-stamp on self-learning (seed change) | Stage 3 feedback (§7) |
+| 5 | `verse.passage_id` / `is_passage_anchor` / `genre` | **prerequisite** — set by Stage 0 *before* the read | Stage 0 (§4A) |
+| — | `verse_term_index`, `verse_morphology`, `verse_span_index` *rows* | **not written** — derived from morphology, upstream of this cycle | — |
+
+**The integrity invariant (candidate ⇒ verse-record).** Every `char_candidate = 1` master span **must** resolve to an active `wa_verse_records` (via `verse_span_id`) with its term (`mti_terms`) and links intact. A candidate **without** a verse-record is a **DB integrity violation**, not a coverage gap: **halt the passage, restore the verse-record and all its relations first** (engine onboarding / per-book gate-1 corrective path), then read. This is the invariant Stage 0 (§4A) enforces before passaging.
+
+**Keys and propagation.** Everything joins on the **master span `id`** (equivalently `verse_id,word_index`), **never on the strong** (the strong repeats within a verse and across the corpus). The passage is carried **only** by `verse.passage_id`; `ve_lexical` / `wa_verse_records` / `verse_span_index` carry no passage column and inherit it automatically — so a passage change never needs a downstream rewrite.
+
+**`verse_evidence_index` is deprecated for lexicals (Decision 1).** Its `lexical` entries are 100% stale (they point at pre-M63 archived `ve_lexical` ids; 0 resolve to a live row). This cycle **does not read or maintain it** — forward/back tracking is done directly on the master (`role`, `char_candidate`, `verse_span_id`) and `ve_lexical`. If it is ever to become the canonical evidence ledger it needs a separate rebuild; that is out of scope here.
+
+## 7B. Transition & changeover (legacy → read-derived)
+Two legacy layers coexist with the read output and must change over cleanly, **per book**:
+- **Roles:** `verse_span_index.role` currently holds the **M64 backfill** (old `ve_nr=115` roles, ~50% wrong). The read **overwrites** these verse-by-verse (§7).
+- **Lexicals:** live `ve_lexical` holds the mechanical/legacy rows (incl. the NULL-pair mechanical pass); `ve_lexical_legacy` is the archived pre-M63 set. The read **revises** the live rows for a characteristic, or builds them where missing.
+
+**Two-state model.** A span/verse is in exactly one of two states: **legacy (untrusted)** until its verse is read, or **read-derived (authoritative)** once its lexical is built, roles are written back, and `verse.process_marker` is set. Mark the change on the master with **`role_provenance = 'read-2026'`** (Decision 2) so a query can always separate trusted read-derived roles from the untrusted backfill during the multi-book changeover. `char_candidate` is left in place as seed provenance — the master then shows both what was *flagged* (`char_candidate`) and what the read *decided* (`role` + `role_provenance`).
+
+**The completeness ledger.** `role IS NULL` on any real-strong span ⇒ that verse is not yet read. Combined with `role_provenance`, the master alone answers "what is done, and is it trusted?" — no side ledger needed.
+
+**Changeover order.** Per book, never across books; mark each read verse `role_provenance = 'read-2026'`. First tranche: **Psalms + Proverbs 1–6** (already partly worked), then outward by book.
 
 ## 8. THE WORKLIST — how to scope work per book (critical)
 **The raw "missing lexical" count is NOT the worklist — it massively overstates the work.** Most missing-lexical spans are function words (need nothing) or objects (captured by a characteristic's dimensions). The worklist is defined on **candidates**:

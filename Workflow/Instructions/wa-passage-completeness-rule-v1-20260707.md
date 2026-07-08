@@ -1,5 +1,7 @@
 # Passage completeness rule (reading-unit repair) — REUSABLE per book (v1)
 
+> **⚠ SUPERSEDED 2026-07-08 by `wa-passage-completeness-rule-v2-20260708.md`.** v1 scoped passages by **verse-record**; v2 scopes them by **candidate characteristic** (the seed on the master) and makes candidate-without-verse-record a **DB integrity violation to repair**. Retained for provenance only — do not use for new work.
+>
 > Deterministic rule for step (b) of the per-book corrective method (`wa-per-book-corrective-method-authoritative-v1-20260707.md`): confirm/rework the passage reading units so every IB-relevant verse is captured, with no semantic guessing. Approved by the researcher 2026-07-07 (proven on Proverbs). **Use this same rule for every book.**
 
 ## Principle
