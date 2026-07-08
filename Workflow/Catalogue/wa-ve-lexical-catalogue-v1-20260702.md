@@ -60,3 +60,27 @@ A per-span **role**, assigned at the **sanity-check** gate (method §13a), store
 |---|--:|---|---|---|
 | **role** | 115 | value | `characteristic` · `process-qualifier` · `standalone` · `uncertain` | **characteristic** = the inner-being disposition the passage turns on (gets its own verse rollup); **process-qualifier** = binds to / gives value+context to a characteristic's pair, served in place (no own rollup unless later-circle variation); **standalone** = binds to nothing; **uncertain** = evaluation could not decide → D11 note. |
 Rollup scope keys on `role` (method §13b). Role supersedes the crude mechanical A/B/C guess — it is set by the sanity-check evaluation (AI-drafted, researcher-confirmed), not by gate+type alone.
+
+## 9. The ve_nr master list (101–116) — the definitive per-item numbering (reconciled 2026-07-08)
+> This section makes the catalogue the **complete authority** on the per-span numbering. `ve_nr` (101–116) is the storage key in `ve_lexical`; the `D` label is the conceptual grouping used in §2–§3. The characteristic→role→lexical cycle instruction (`wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md` §3) mirrors this list and must stay in step with it. Two items — **specifier (110)** and **locus (116)** — were added after v1 (07-03 / 07-04) and are folded in here.
+
+| ve_nr | item | D | shape | note |
+|--:|---|---|---|---|
+| 101 | sense | D1 | value | per-occurrence sense (STEP subgloss) |
+| 102 | type | D1 | value | action / status / quality |
+| 103 | source | D2 | pair | driver/antecedent → term (distinguish DRIVER vs RESTRAINT) |
+| 104 | seat | D3 | pair | constitutional seat → term (construct-gated) |
+| 105 | bearer | D3 | pair | experiencer/subject → term |
+| 106 | operation | D4 | event | governing predicate (the act) |
+| 107 | target | D5 | pair | term → object (+ object-type) |
+| 108 | manner | D6 | pair | prep-marked adverbial qualifier → term |
+| 109 | intensity | D6 | pair/flag | me'od / kol amount (split from manner) |
+| **110** | **specifier** | D5/D6 | pair | **construct-chain genitive specifying the term (added 2026-07-03)** |
+| 111 | effect | D8 | pair | term → produced-state (result verb, prose) |
+| 112 | coupling | D9 | pair | morphological weld only (construct/prep) |
+| 113 | prohibition | D10 | flag | mechanical negation/prohibition particle |
+| 114 | discovery | D11 | note | uncertainty / discovery-lookout channel |
+| 115 | role | — | value | sanity-check classification (§8) |
+| **116** | **locus** | D5/D3 | value | **target/bearer entity classified IB-internal vs external (god·adversary·proper·thing / seat·ib-state·body); mechanical from morphology+lemma (added 2026-07-04)** |
+
+Verse-level (not per-`ve_nr`): **D14 passage** (`verse.passage_id`), **D7 process** (passage-level; ve_nr pending per §6), **genre** (`verse.genre`).

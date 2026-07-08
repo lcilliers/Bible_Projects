@@ -27,6 +27,8 @@ Everything in this cycle is one of two independent questions. Do not conflate th
 A word can be **both** — e.g. "he set his heart on *wisdom*": *wisdom* is a characteristic **and** the target of the heart-setting. Axis A candidacy never overrides Axis B; Axis B never rewrites Axis A. `char_candidate` and `role` are **different columns for different questions**.
 
 ## 3. The 16 dimensions (per-span) and what morphology can give
+> **Authoritative dimension source:** the **VE-lexical catalogue** — `Workflow/Catalogue/wa-ve-lexical-catalogue-v1-20260702.md` — defines each dimension's shape, derivation rule, resolution states and D↔ve_nr numbering. The table below is the **ve_nr summary** for this cycle and must stay in step with the catalogue; on any conflict the catalogue wins for *dimension definition*, this instruction wins for *how the cycle uses them*.
+
 Every span is described across the 16 per-span dimensions (`ve_lexical`, `ve_nr` 101–116). A dimension value is a **VALUE**, a **PAIR** (`from_span → to_span`, with `resolution`), an **EVENT**, or a **FLAG**. **Relational person/thing words (objects/sources/seats) live here as pair members — that is why they need no separate lexical.**
 
 | ve_nr | dim | from morphology? |
@@ -39,6 +41,17 @@ Every span is described across the 16 per-span dimensions (`ve_lexical`, `ve_nr`
 | 114 discovery | note | n/a (uncertainty channel, written during read-back) |
 
 **Consequence:** a morphology pass can honestly build **8 dimensions reliably and approximate 6 more**, but it **cannot assign role or identify the characteristic**. Morphology gives the mechanical substrate; **meaning gives the characteristic and the role.**
+
+## 3A. Derivation principles (how every dimension value is arrived at)
+*(Absorbed 2026-07-08 from the retired `wa-lexical-analysis-rules-reset-v1` — the "parts → process" reframe that these dimensions obey. The reset is closed; these principles are its surviving core and are authoritative here.)* Every dimension value below is produced under these rules:
+
+- **P0 — Measurement informs the eye; it never decides.** Count, co-occurrence, distribution and association strength surface candidates and show shape — they **never** gate a value's existence, inclusion, exclusion or validity. A phenomenon attested **once exists** (the singleton rule); nothing is recorded *because* it is frequent nor dropped *because* it is rare.
+- **P1 — Observe, don't impose.** Record what the verse **states or implies**; never sort a span into a pre-decided category. Mechanical where the measure layer allows; else a grounded read; else `unresolved`.
+- **Functional-first.** The primary record is **what the word DOES** in the verse (its relations and movements — cause, operation, object, manner, effect, transition, binding, direction), not what it *is*. Categories/patterns are **outcomes**, never inputs.
+- **P4 — Three states per dimension** (= the catalogue's resolution states): **resolved** (a value the verse gives) · **none / silent** (the verse says nothing about it → **never impute**) · **unresolved** (the verse signals a value is expected but it can't be settled → goes to the worklist / discovery). **Silence ≠ unresolved.**
+- **P5 — Citation.** Every resolved value cites the measure / word / clause that forced it — back-traceable by construction (aligns with §2 original-language grounding: read off lemma + morphology + tagged co-terms, never the English string).
+- **P7 — Patterns emerge, held loosely.** Recurring functional shapes are named **when observed**, revisable, never a pre-set grid imposed up front.
+- **P8 — Discovery-lookout is mandatory** (the emergence engine, dimension 114). Every read runs: *"what does this verse state or imply about the inner being that the current dimensions do NOT capture?"* A verse with nothing to flag records **discovery: none** (so we know it was looked for, not skipped). A flag that recurs becomes a new dimension and is **back-propagated** to all verses (§7 feedback). A flag pointing at an unseeded inner-being operation triggers the §5 discovery/promotion path.
 
 ## 4. STAGE 1 — Candidate seeding (Axis A, lemma-level, corpus-wide)
 Purpose: **isolate the lemmas that *could* be a characteristic**, to seed the verse read. **Over-inclusive and non-exhaustive by design.**

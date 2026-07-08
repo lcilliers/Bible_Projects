@@ -20,6 +20,13 @@ These need no judgement — the documents (or a present successor) explicitly re
 | `wa-sessionc-cluster-ch7-instruction-v1_0-20260512.md` | " |
 | `wa-sessionc-cluster-appendices-instruction-v1_0-20260512.md` | retired by `wa-cluster-publishing-instruction-v1_0` §9 |
 
+## Dimension-authority resolution (2026-07-08, researcher-decided)
+The reset doc was pulled from Batch B and investigated (see chat + docs). Outcome:
+- **Authoritative dimension source = `wa-ve-lexical-catalogue-v1-20260702`** (07-02 catalogue) + the 07-02 method that drives it. Not the reset.
+- **Option (A) taken:** the cycle §3 now **cites** the catalogue; the catalogue gained a **ve_nr master list (§9)** completing it with `specifier(110)` + `locus(116)`; the reset's governing **principles P0–P8 + discovery-lookout** were folded into the cycle as **§3A**.
+- **`wa-lexical-analysis-rules-reset-v1` → CLOSED & ARCHIVED** (content morphed into current docs; provenance banner added). Moved to `Workflow/Instructions/archive/`.
+- **`wa-synthesis-B-spec-reset-v1` → KEEP** (researcher: still relevant, albeit stale) — the assembly half. Removed from any archive consideration.
+
 ## Batch B — RECOMMEND ARCHIVE (needs your confirmation)
 Made legacy by the **2026-06-25 RESET** (characteristics→movements) and the **2026-07-02 verse-first / 2026-07-08 authoritative-cycle** shift, which closed the characteristic/faculty/tier/logical-unit framing and the Session A/B/C/D + cluster-publication pipeline. They are **not** self-declared superseded and some are still name-referenced in the (lagging) CLAUDE.md §10, so I have not moved them.
 

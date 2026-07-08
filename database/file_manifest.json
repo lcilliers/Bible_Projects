@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T15:47:47Z",
+  "generated_at": "2026-07-08T16:02:51Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,14 +13,14 @@
   "currency_counts": {
     "other": 1825,
     "historical": 31,
-    "current": 2918,
-    "archived": 2287,
+    "current": 2917,
+    "archived": 2288,
     "cross-reference": 3396,
     "backup": 96
   },
   "total_files": 10553,
-  "total_active": 8266,
-  "total_archived": 2287,
+  "total_active": 8265,
+  "total_archived": 2288,
   "files": [
     {
       "path": ".env",
@@ -67,8 +67,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 29086,
-      "modified": "2026-07-02T03:34:07Z"
+      "size_bytes": 30132,
+      "modified": "2026-07-08T16:02:26Z"
     },
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -67107,8 +67107,8 @@
       "date": "2026-07-02",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 7417,
-      "modified": "2026-07-02T06:15:27Z"
+      "size_bytes": 9552,
+      "modified": "2026-07-08T16:01:16Z"
     },
     {
       "path": "Workflow/Clusters/archive/wa-cluster-catalogue-v1-20260505.json",
@@ -67783,6 +67783,22 @@
       "modified": "2026-04-21T06:55:33Z"
     },
     {
+      "path": "Workflow/Instructions/archive/wa-lexical-analysis-rules-reset-v1-20260624.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "archived",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-06-24",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 15998,
+      "modified": "2026-07-08T16:01:27Z"
+    },
+    {
       "path": "Workflow/Instructions/archive/wa-passage-completeness-rule-v1-20260707.md",
       "category": "workflow",
       "type": "other",
@@ -68035,8 +68051,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 29476,
-      "modified": "2026-07-08T15:36:10Z"
+      "size_bytes": 32370,
+      "modified": "2026-07-08T16:00:52Z"
     },
     {
       "path": "Workflow/Instructions/wa-claudecode-instruction-v4_5-20260514.md",
@@ -68197,22 +68213,6 @@
       "archived": false,
       "size_bytes": 14215,
       "modified": "2026-04-27T09:50:26Z"
-    },
-    {
-      "path": "Workflow/Instructions/wa-lexical-analysis-rules-reset-v1-20260624.md",
-      "category": "workflow",
-      "type": "other",
-      "currency": "current",
-      "registry": null,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": "1",
-      "date": "2026-06-24",
-      "ext": ".md",
-      "archived": false,
-      "size_bytes": 15269,
-      "modified": "2026-06-25T14:22:27Z"
     },
     {
       "path": "Workflow/Instructions/wa-narrative-style-instruction-v1-20260702.md",
@@ -105715,8 +105715,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4715535,
-      "modified": "2026-07-07T04:29:46Z"
+      "size_bytes": 4742921,
+      "modified": "2026-07-08T15:47:47Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -112067,8 +112067,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6642,
-      "modified": "2026-07-08T15:47:28Z"
+      "size_bytes": 7535,
+      "modified": "2026-07-08T16:01:49Z"
     },
     {
       "path": "outputs/markdown/wa-isa43-1-2-ve-lexical-morphology-dump-20260705.md",
