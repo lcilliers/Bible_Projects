@@ -67,6 +67,8 @@ Output: the lemma-inventory JSON (`char_matched` = registry/synonym; `ib_candida
 ## 5. STAGE 2 — Building the lexical (the read; role is fixed inside it)
 Stage 1 has flagged which lemmas *could* be characteristics. Stage 2 resolves each flagged occurrence by reading the verse, and in doing so produces the lexical. Role is not settled beforehand and is not a separate step: it is dimension 115, fixed **as the decomposition is made**. This is one stage, not two.
 
+**Precondition (hard).** No verse is read until its passage exists (Stage 0, §4A) and every candidate in that passage has a verse-record (the integrity invariant, §7A). The read walks the passage list Stage 0 produced; it never starts a passage that is unbuilt or that still has an unresolved candidate-without-record.
+
 **Unit and reading frame.** The unit of work is a single candidate char-lemma in a single verse. A verse carrying several candidate char-lemmas is worked once per char-lemma and yields one lexical each (§0). The verse is always read together with its passage — the surrounding run of consecutive verses, treated according to genre — because source, target, bearer and the wider movement resolve only in that context, not in the clause alone.
 
 **Procedure, for each candidate char-lemma:**
@@ -125,6 +127,37 @@ Two legacy layers coexist with the read output and must change over cleanly, **p
 **The completeness ledger.** `role IS NULL` on any real-strong span ⇒ that verse is not yet read. Combined with `role_provenance`, the master alone answers "what is done, and is it trusted?" — no side ledger needed.
 
 **Changeover order.** Per book, never across books; mark each read verse `role_provenance = 'read-2026'`. First tranche: **Psalms + Proverbs 1–6** (already partly worked), then outward by book.
+
+## 7C. Pipeline dependencies, DB updates per intervention, and the definition of completion
+**The ordered pipeline (each step gates the next).**
+`Stage 1 seed (corpus-wide) → Stage 0 passage build (per book) ─[integrity gate: verse-record fix]→ Stage 2 lexical read (per passage) → Stage 3 write-back → completion verify`.
+No step may begin before its predecessor is complete for that scope: no passage is built on an unstamped seed; no verse is read until its passages are built **and** every candidate in it has a verse-record; no verse is marked complete until Stage 3 write-back is done. The four interventions below are exactly the points where the DB changes.
+
+**(a) Verse-record fix — integrity repair, triggered inside Stage 0 when a candidate has no verse-record.**
+Trigger: a `char_candidate = 1` master span with no active `wa_verse_records` (via `verse_span_id`). Restore via the engine onboarding / per-book gate-1 corrective path. Expected DB end-state:
+- `mti_terms` — the term exists, status-clean, owned (`owning_registry_fk` set); created/restored where OT-DBR-009 over-deleted it.
+- `wa_term_inventory` — the term-in-file row exists with `term_owner_type` (OWNER/XREF).
+- `wa_verse_records` — an **active** row (`delete_flagged = 0`) for the (reference, term) with `verse_span_id` → master span, plus `verse_id`, `mti_term_id`/`term_id`, `word_registry_fk`, `span_strong_match` set.
+- master `verse_span_index` rows are **not** created here — they are morphology-derived; the fix links a record *to* an existing span.
+Gate: 0 candidates in the passage without a verse-record. Only then does the passage proceed.
+
+**(b) Passage preparation — Stage 0, per book, precomputed (passage rule v2).**
+Writes: `passage` (one row per reading unit — `anchor_verse_id`, `start_*`/`end_*`, `ref`, `verse_count`, `source='passage-build-2026'`); `verse.passage_id` for every verse in each run; `verse.is_passage_anchor` on each anchor; `verse.genre` set/confirmed.
+Not written: `ve_lexical`, `wa_verse_records`, `verse_span_index` — no passage column; they inherit via `verse.passage_id`.
+Gate: 0 candidate-bearing verses with `passage_id IS NULL`; 0 `char_candidate` without a verse-record (all (a) fixes done).
+
+**(c) Lexical completion — Stage 2 read + Stage 3 write-back, per verse in the passage.**
+Writes: `ve_lexical` — 16-dimension rows (`ve_nr` 101–116) for each characteristic + its pairs (`from_span/to_span/resolution/pair_kind`), `verse_span_id` → master, `delete_flagged=0` (legacy rows revised or superseded); `verse_span_index.role` (+ `role_provenance='read-2026'`, `role_set_at`, `role_source_ve_id`) for **every** real-strong span (all four states); `verse.process_marker` set when the verse is done; `verse_span_index.char_candidate`/`char_candidate_tag` re-stamped **only** on self-learning, then re-match the seed JSON.
+
+**(d) Definition of completion, and how it is verified.** Completion is defined and checked at three nested levels; each is an integrity-gated **query**, never a judgement:
+
+| level | complete when (all hold) | verification |
+|---|---|---|
+| **verse** | every real-strong span has exactly one `role`; every characteristic span has its full `ve_lexical`; every qualifier is a pair member in ≥1 lexical; `process_marker` set; roles carry `role_provenance='read-2026'` | no span in the verse with `role IS NULL`; each `role='characteristic'` span has ≥1 active `ve_lexical` row |
+| **passage** | every verse in it is verse-complete; every candidate in it has a verse-record | verse-incomplete count = 0; `char_candidate` without verse-record = 0 |
+| **book** | every candidate-bearing verse is in a passage; every passage complete | `char_candidate=1 AND passage_id IS NULL` = 0; `char_candidate=1 AND` no-verse-record = 0; any candidate-bearing verse holding a `role IS NULL` span = 0 |
+
+Governance: every intervention is backed up and integrity-gated (`_check_integrity_controls --snapshot` pre → apply → post → `--compare`); the **book-level** checks are the changeover **acceptance test** — a book is not marked read until all three of its counts are 0.
 
 ## 8. THE WORKLIST — how to scope work per book (critical)
 **The raw "missing lexical" count is NOT the worklist — it massively overstates the work.** Most missing-lexical spans are function words (need nothing) or objects (captured by a characteristic's dimensions). The worklist is defined on **candidates**:
