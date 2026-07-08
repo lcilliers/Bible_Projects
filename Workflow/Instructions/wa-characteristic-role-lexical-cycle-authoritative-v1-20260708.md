@@ -5,12 +5,15 @@
 ---
 
 ## 0. Why this exists
-The characteristic/role/lexical question has been mis-understood and re-attempted many times, each partial, each drifting. The recurring errors were: (a) treating a *role* as a fourth thing ("qualifier") when it is really a dimension; (b) matching candidates on incidental association (co-occurring strongs, phrasal characteristic-names) instead of meaning; (c) treating raw "missing lexical" counts as the worklist; (d) letting the seed act as a verdict instead of a filter; (e) trying to derive *role* from morphology. This instruction fixes all five and defines the cycle end-to-end.
+The characteristic/role/lexical question has been mis-understood and re-attempted many times, each partial, each drifting. The recurring errors were: (a) treating a *qualifier* as span requiring a lexical or characteristic when it is really part of dimension on a characteristic; (b) matching candidates on incidental association (co-occurring strongs, phrasal characteristic-names) instead of meaning; (c) treating raw "missing lexical" counts as the worklist; (d) letting the seed act as a verdict instead of a filter; (e) trying to derive *role* from morphology. This instruction fixes all five and defines the cycle end-to-end.
+
+Putting it in perspective - The ultimate goal of the study is to document and describe how the characteristics of the Inner Being work, based on the verses in the bible. This is derived by dissecting the morphology of each verse and via the lemma do a provisional assessment of the lemma to set it as a candidate characteristic. Every verse with a lemma that have a candidate characteristic is then read in the context of the passage around the verse to create a lexical decomposition around 16 dimensions. Verses with multiple lemmas as candidate characteristic will have a lexical analysis for each char-lemma.  This forms the basis of further analysis and synergies accross lexicals and passages to describe how to characteristics operate in the inner being.
 
 ## 1. The object and the definitions (fixed vocabulary)
+- **Lemma** = the meaning in english of the word in the context of the verse.  The Lemma is interchangeably referred to the *span* of the word.
 - **Characteristic** = an inner-being disposition/faculty/operation that the verse (in its passage) *turns on* — decided by the **use and meaning of the span in the verse/passage**, and that it does/says something about the inner being. **Never** by a lookup table; the registry/lists only *validate* (verse→list), they never *impute*.
 - **Master index** (`verse_span_index`) = the term-verse-span substrate: one row per morphological word, built 1:1 from `verse_morphology`. A span is **uniquely** identified by its `id` (equivalently `verse_id,word_index`). **The strong is NOT unique** — it repeats within a verse and across the corpus — so everything keys on the **span id**, never on the strong.
-- **Role** — the per-span classification, restricted to **exactly**: `characteristic` · `standalone` · `uncertain`. **"qualifier" is RETIRED as a role.** A word that elaborates, qualifies, or names an object/source is **not a characteristic and gets no role** — it is carried by its **dimension** (§3). `uncertain` = the read could not decide (write the reason to the discovery dimension).
+- **Role** — The role is one of the dimensions of the lexical analysis and is assigned/confirmed when the lexical for the lemma in the verse is processed. It is the per-span classification, restricted to **exactly**: `characteristic` · `standalone` · `qualifier` · `undecided`. A word that elaborates, qualifies, or names an object/source is **not a characteristic and is assigned the role of qualifier**, it does not get a separate lexical analysis and it application is carried by the associated characteristic's **dimensions** (§3). `undecided` = the read could not decide (write the reason to the discovery dimension of the associated characteristic).
 - **Standalone** = a span that is neither a characteristic nor a dimensional member of any characteristic in its verse (binds to nothing). Function words (particles, prepositions, connectives, pronouns) are standalone.
 
 ## 2. The TWO ORTHOGONAL AXES (the distinction that removes the confusion)
@@ -22,7 +25,7 @@ Everything in this cycle is one of two independent questions. Do not conflate th
 A word can be **both** — e.g. "he set his heart on *wisdom*": *wisdom* is a characteristic **and** the target of the heart-setting. Axis A candidacy never overrides Axis B; Axis B never rewrites Axis A. `char_candidate` and `role` are **different columns for different questions**.
 
 ## 3. The 16 dimensions (per-span) and what morphology can give
-Every span is described across the 16 per-span dimensions (`ve_lexical`, `ve_nr` 101–116). A dimension value is a **VALUE**, a **PAIR** (`from_span → to_span`, with `resolution`), an **EVENT**, or a **FLAG**. **Relational person/thing words (objects/sources/seats) live here as pair members — that is why they need no role.**
+Every span is described across the 16 per-span dimensions (`ve_lexical`, `ve_nr` 101–116). A dimension value is a **VALUE**, a **PAIR** (`from_span → to_span`, with `resolution`), an **EVENT**, or a **FLAG**. **Relational person/thing words (objects/sources/seats) live here as pair members — that is why they need no separate lexical.**
 
 | ve_nr | dim | from morphology? |
 |--:|---|---|
@@ -42,31 +45,46 @@ Method (three layers, in order; only meaning-based routes are permitted):
 1. **Registry direct match** — the lemma's English **gloss** equals a `word_registry` inner-being word (221 words), stemmed/normalised.
 2. **Curated synonyms** — the gloss equals a **curated synonym** of a registry word (`outputs/data/registry-synonyms-curated-*.json`, reviewable/editable — the "dictionary"). Domain-curated, not generic thesaurus.
 3. **IB judgement** — a broad inner-being semantic net over the still-unmatched lemmas, then a **manual accept/reject** (physical/object/agent/adverb false positives rejected; genuine inner-being lemmas accepted).
+4. **Discovery** - is it likely that further characteristic seeding my be discovered when a verse is read and the lexical is built. This is a deliberate additional objective of a verse read when the lexical is revised or created. It will become evident when the different dimensions is being built in it is evident that the span is qualifying another IB phenomena that is not included as a candidate characteristic. This must not be confused with trying to elevate a qualifier to a characteristic. A word that operates as a qualifier is not a characteristic, but the discovery that the qualifies a IB related operation that is not set as a candidate in the morphology triggers a discovery and must elevated **Self-Learning**.
+
+**Self-learning (mandatory):** when a verse read discovers a real characteristic the seed missed (e.g. *hear*→listen, H8085), or a false positive, **feed it back** — add the synonym / IB lemma (or prune it) in the curated dictionary, re-match the JSON, and **re-stamp the master**. The seed improves every cycle; it is never frozen.
 
 **REJECTED routes (never use):** the registry `strongs_list` (matches every *co-occurring* strong — LORD→lust), and the 277 `characteristic` table (phrasal short_names → incidental-word noise — dwell→Security). Both match on **association, not meaning**.
 
 Output: the lemma-inventory JSON (`char_matched` = registry/synonym; `ib_candidate` = judged) and the **`char_candidate` flag stamped on the master** (`verse_span_index.char_candidate` / `char_candidate_tag`), non-destructive (leaves `role` intact).
 
-**Self-learning (mandatory):** when a verse read discovers a real characteristic the seed missed (e.g. *hear*→listen, H8085), or a false positive, **feed it back** — add the synonym / IB lemma (or prune it) in the curated dictionary, re-match the JSON, and **re-stamp the master**. The seed improves every cycle; it is never frozen.
+## 5. STAGE 2 — Building the lexical (the read; role is fixed inside it)
+Stage 1 has flagged which lemmas *could* be characteristics. Stage 2 resolves each flagged occurrence by reading the verse, and in doing so produces the lexical. Role is not settled beforehand and is not a separate step: it is dimension 115, fixed **as the decomposition is made**. This is one stage, not two.
 
-## 5. STAGE 2 — Role determination (Axis B, per-verse, in the read)
-Done **only by reading the verse and its passage** (genre-aware; a passage = a maximal run of consecutive verses). For each candidate span, and with freedom to look beyond the candidates:
-- **Confirm** → `role = characteristic` (the span is the operative inner-being disposition here), **or**
-- **Demote** → `role = standalone` (in this verse it is an object/source/manner of something else, or binds to nothing), **or**
-- **`uncertain`** → could not decide; record why in the discovery dimension.
+**Unit and reading frame.** The unit of work is a single candidate char-lemma in a single verse. A verse carrying several candidate char-lemmas is worked once per char-lemma and yields one lexical each (§0). The verse is always read together with its passage — the surrounding run of consecutive verses, treated according to genre — because source, target, bearer and the wider movement resolve only in that context, not in the clause alone.
 
-Two overrides the read **must** be free to make (the seed is a filter, not a verdict):
-- **Upward** — mark a characteristic the seed did **not** flag (then feed it back, §4).
-- **Downward** — demote a seeded candidate that is an object/source in this verse.
+**Procedure, for each candidate char-lemma:**
+1. Establish what the lemma *does* in this verse. Read the clause within its passage and decide whether the lemma here expresses an inner-being operation (it does or says something about the inner being itself), or only names/qualifies the object, source or circumstance of some *other* operation, or stands clear of any inner-being operation. This settles its role:
+   - operative inner-being operation → **characteristic** — go to step 2;
+   - relational to another operation → **qualifier** — no lexical of its own; it will be captured under the characteristic it serves (step 2 of that characteristic); move to the next char-lemma;
+   - clear of any operation → **standalone** — no lexical; move on;
+   - genuinely undecidable → **undecided** — record why in the discovery dimension and leave it on the worklist.
+2. For a confirmed characteristic, decompose it across the sixteen dimensions (§3). Take the mechanical dimensions from the morphology — building them where the span has no lexical yet, correcting them where it carries a legacy one — and read the relational dimensions (source, target with object-type, bearer, seat, manner, intensity, coupling, effect, specifier, locus, prohibition) from the verse and passage. Wherever a dimension's value is another span in the verse, store it as a pair (`from_span → to_span`); that span is now a member of this characteristic's lexical.
+3. Let the other spans' roles follow from step 2. Any span drawn into this characteristic as one of its dimensions is a **qualifier** of it. Once every characteristic in the verse is decomposed, any real-strong span not drawn into any of them is **standalone**. Roles are the by-product of the decomposition, never a separate labelling pass.
 
-## 6. STAGE 3 — Lexical generation (only for confirmed characteristics)
-- **Only a characteristic gets its own lexical.** Standalone spans and function words get **no lexical**.
-- A characteristic's lexical is the **dimensional read**: build D1 (mechanical, from morphology) and then the pairs — **source, target (with object-type), seat, bearer, manner, intensity, coupling, effect, prohibition** — by reading the verse/passage.
-- **Relational person/thing words are captured *here*, as the `to_span`/`from_span` of the characteristic's pairs** — not as their own lexical, and **never ignored.** "Doesn't need its own lexical" must never become "dropped." If a nearby object binds to *no* characteristic, only then is it standalone.
-- Morphology seeds the mechanical layer; the **read** supplies role, the characteristic identity, and the pair bindings.
+**Two departures from the seed the read must make** (the seed guides, it does not decide):
+- *Discovery (§4.4).* If a qualifier is found to qualify an inner-being operation that is **not** among the seeded candidates, that operation is a characteristic the seed missed: raise it to a characteristic, build its lexical, and return the lemma to the seed (§7). This does **not** promote the qualifier — the qualifier remains a qualifier; it is the *operation it points at* that is now recognised.
+- *Demotion.* A seeded candidate that proves, in this verse, to be only relational is set to qualifier or standalone. Being flagged by the seed never forces a span to characteristic.
 
-## 7. STAGE 4 — Feedback & re-stamp
-Every read that finds a seed miss or false positive updates the curated dictionary / IB set, re-matches the JSON, and re-stamps the master `char_candidate`. Record the change. The cycle is **self-correcting**.
+## 6. Where each role lives, and when a verse is complete
+*(the second half of STAGE 2)* The four roles are not interchangeable; each has one home in the data, and producing all four correctly is what "the verse is done" means.
+
+- **characteristic** — holds a full sixteen-dimension lexical. It keeps this role even when it also appears as a dimension of another characteristic; it remains a characteristic in its own right and is nobody's qualifier (the two-axes rule, §2: in "he set his heart on wisdom", *wisdom* has its own lexical **and** is the target within the heart-setting's decomposition).
+- **qualifier** — holds no lexical of its own. It exists only *inside* the characteristic it serves, as the span on the far side of a dimension pair — that characteristic's object, source, seat, bearer, manner, instrument or outcome. It is fully recorded there and stays traceable; giving it no lexical never means discarding it. A relational-looking span that attaches to no characteristic in the verse is standalone, not qualifier.
+- **standalone** — holds nothing: no lexical, no dimensional membership. Function words, and any span no characteristic in the verse reaches.
+- **undecided** — holds no lexical yet; its reason sits in the discovery dimension and it stays on the worklist for a later read.
+
+A verse is complete when every real-strong span carries exactly one of the four roles, every characteristic carries its full lexical, and every qualifier is captured as a pair member within at least one of those lexicals — with nothing the read touched left unassigned. Each span's role is then written back to the master (§7), which is what makes this completeness auditable. A verse may hold several characteristics, and one span may be captured within more than one of their lexicals.
+
+## 7. STAGE 3 — Write-back, feedback & re-stamp
+**Write-back (the completeness ledger).** On completion of the lexical generation/revision, the role of **every span in the verse** is written back to the master (`verse_span_index.role`) — not only the characteristics but **all** four states: `characteristic`, `qualifier`, `standalone`, `undecided`. This is what makes the work **auditable and back-trackable from the master alone**: because every element of a read verse carries a role, any span still `role IS NULL` marks a verse (or a span within it) not yet accounted for. The read-derived role **supersedes** the legacy backfill; `char_candidate` is left in place as the seed provenance, so the master shows both what was *flagged* (`char_candidate`) and what the read *decided* (`role`).
+
+**Feedback / self-learning.** Every read that finds a seed miss (a discovered characteristic, §5) or a false positive updates the curated dictionary / IB set, re-matches the seed JSON, and **re-stamps** the master `char_candidate`. Record the change. The cycle is self-correcting — the seed tightens with each pass, and the master stays a complete, queryable account of every span.
 
 ## 8. THE WORKLIST — how to scope work per book (critical)
 **The raw "missing lexical" count is NOT the worklist — it massively overstates the work.** Most missing-lexical spans are function words (need nothing) or objects (captured by a characteristic's dimensions). The worklist is defined on **candidates**:
@@ -89,8 +107,8 @@ Drive the per-book pass off these two, **never** off raw span counts.
 
 ## 11. The non-negotiable rules (the "do-not-mess-up" checklist)
 1. Characteristic by **meaning in the verse**, never by lookup. Lists **validate**, never impute.
-2. Role ∈ {characteristic, standalone, uncertain}. **No "qualifier" role.**
-3. Relational words (object/source/seat/manner) are **dimensions, not roles** — and are **captured, never dropped**.
+2. Role ∈ {characteristic, qualifier,standalone, uncertain}. **qualifiers always pair with a characteristic**
+3. Relational words (object/source/seat/manner) are **qualifiers** — and are **captured, never dropped**.
 4. Seed = Axis A (lemma, over-inclusive, corpus-wide); role/dimension = Axis B (per-verse). **Never conflate.**
 5. Seed is a **filter, not a verdict** — the read overrides it **both** ways, and misses feed back.
 6. **Only characteristics get their own lexical.** Function words get nothing.

@@ -392,7 +392,6 @@
    "insolence",
    "loftiness",
    "lofty",
-   "vanity",
    "vainglory"
   ],
   "purity": [
@@ -657,5 +656,20 @@
   ]
  },
  "round2_note": "2026-07-08: extended with Psalms-discovered synonyms; pruned enduring->endurance homograph.",
- "round2b_note": "2026-07-08: added hear/hearken/heed -> listen (Reg 213); H8085 to hear now a characteristic candidate."
+ "round2b_note": "2026-07-08: added hear/hearken/heed -> listen (Reg 213); H8085 to hear now a characteristic candidate.",
+ "hard_exclude": {
+  "H7901": "lie down (recline) matched deceit via \"lie\"",
+  "H7198": "bow (the weapon) matched worship via \"bow\"",
+  "H7941": "strong drink matched strength via \"strong\"",
+  "H4327": "kind (species) matched kindness via \"kind\"",
+  "H1998": "sound (noise) matched integrity via \"sound\"",
+  "H5050": "to shine (physical light) matched praise via \"shine\"",
+  "H3313": "to shine forth (light) matched praise via \"shine\"",
+  "H7160": "to shine/horn matched praise via \"shine\"",
+  "H2094": "zahar = warn/teach (glossed \"shine\") matched praise",
+  "H0166": "to shine (light) matched praise via \"shine\"",
+  "H5264": "to shine (light) matched praise via \"shine\"",
+  "H5340": "to shine (light) matched praise via \"shine\""
+ },
+ "seed_adjust_note": "2026-07-08 (a): pruned vanity->pride; hard-excluded 12 homograph strongs; candidates reset."
 }

@@ -2264,10 +2264,7 @@
    "pos": "verb",
    "gloss": "to lie down: lay down",
    "transliteration": "sha.khav",
-   "count": 165,
-   "char_matched": [
-    "Reg 40 deceit"
-   ]
+   "count": 165
   },
   {
    "strong": "H8193",
@@ -5128,10 +5125,7 @@
    "pos": "noun",
    "gloss": "vanity",
    "transliteration": "he.vel",
-   "count": 72,
-   "char_matched": [
-    "Reg 123 pride"
-   ]
+   "count": 72
   },
   {
    "strong": "H2114",
@@ -5793,10 +5787,7 @@
    "pos": "noun",
    "gloss": "bow",
    "transliteration": "qe.shet",
-   "count": 62,
-   "char_matched": [
-    "Reg 176 worship"
-   ]
+   "count": 62
   },
   {
    "strong": "G1163",
@@ -6954,10 +6945,7 @@
    "pos": "noun",
    "gloss": "vanity: false",
    "transliteration": "shav",
-   "count": 52,
-   "char_matched": [
-    "Reg 123 pride"
-   ]
+   "count": 52
   },
   {
    "strong": "H3407",
@@ -14141,10 +14129,7 @@
    "pos": "noun",
    "gloss": "strong drink",
    "transliteration": "she.khar",
-   "count": 22,
-   "char_matched": [
-    "Reg 187 strength"
-   ]
+   "count": 22
   },
   {
    "strong": "H5526",
@@ -14176,10 +14161,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "za.har",
-   "count": 22,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 22
   },
   {
    "strong": "H3518",
@@ -16026,10 +16008,7 @@
    "pos": "noun",
    "gloss": "kind",
    "transliteration": "min",
-   "count": 19,
-   "char_matched": [
-    "Reg 99 kindness"
-   ]
+   "count": 19
   },
   {
    "strong": "H6718",
@@ -28367,10 +28346,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "ya.pha",
-   "count": 8,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 8
   },
   {
    "strong": "H3369",
@@ -38313,10 +38289,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "na.gah",
-   "count": 5,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 5
   },
   {
    "strong": "H6155",
@@ -42409,10 +42382,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "qa.ran",
-   "count": 4,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 4
   },
   {
    "strong": "H2799",
@@ -77935,10 +77905,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "na.tsats",
-   "count": 1,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 1
   },
   {
    "strong": "H1117",
@@ -81744,10 +81711,7 @@
    "pos": "noun",
    "gloss": "sound",
    "transliteration": "hem.yah",
-   "count": 1,
-   "char_matched": [
-    "Reg 92 integrity"
-   ]
+   "count": 1
   },
   {
    "strong": "H2944",
@@ -84946,10 +84910,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "a.hal",
-   "count": 1,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 1
   },
   {
    "strong": "H2328",
@@ -95993,10 +95954,7 @@
    "pos": "verb",
    "gloss": "to shine",
    "transliteration": "na.sas",
-   "count": 1,
-   "char_matched": [
-    "Reg 121 praise"
-   ]
+   "count": 1
   },
   {
    "strong": "H4389",
@@ -98809,8 +98767,8 @@
   }
  ],
  "registry_match": {
-  "method": "round2: registry direct + extended curated synonyms; peace-offering excluded; enduring homograph pruned.",
-  "ot_candidate_lemmas": 961
+  "method": "seed-adjust (a): pruned homographs, HARD_EXCLUDE applied",
+  "ot_candidate_lemmas": 949
  },
  "ib_judgement": {
   "method": "broad IB semantic net over unmatched OT lemmas + manual reject of physical/object/agent false positives. ib_candidate=true added.",
