@@ -74,7 +74,10 @@ def main():
                  VALUES (?,?,?,?,?,?,0,?,?,?,?,?)''',
                 (vcid.get(sid), int(sid), d['n'], d['l'], d.get('v'), prov, NOW,
                  d.get('from'), d.get('to'), d.get('res'), KMAP[d['k']]))
-    cur.executemany('UPDATE verse SET process_marker=? WHERE id=?', [(prov, v) for v in vids])
+    # mark process_marker only on the verses actually read (the spans in this JSON) — supports partial-chapter (stanza) applies
+    marked = sorted({c.execute('SELECT verse_id FROM verse_span_index WHERE id=?', (int(sid),)).fetchone()[0] for sid in spans})
+    cur.executemany('UPDATE verse SET process_marker=? WHERE id=?', [(prov, v) for v in marked])
+    print(f"process_marker set on {len(marked)} verse(s) actually read")
     c.commit()
     post = cur.execute('SELECT COUNT(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0').fetchone()[0]
     print(f"applied. active ve_lexical {pre} -> {post} (net {post-pre}). committed.")
