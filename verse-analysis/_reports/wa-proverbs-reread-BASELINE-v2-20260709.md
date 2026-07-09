@@ -11,20 +11,22 @@ Every gate counts **violations**, so **target 0 = "zero problems", not "zero dat
 Per-span `ve_nr` present in Proverbs: 101,102,104,105,106,107,108,109,110,112,113,114,115,116 — **note 103 (source) and 111 (effect) are entirely absent.**
 
 ## Corrected gate results
-| gate | measure | baseline | target | status |
+*Columns: **failing now** = current count of violating items (the number to correct) · **pass at** = the threshold to pass (always 0 violations) · **status** = ❌ when "failing now" > 0, ✅ when it is 0, ⏸ when not yet measurable.*
+
+| gate | measure | failing now (to fix) | pass at | status |
 |---|---|--:|--:|:--:|
 | **G0** | units > 12 char-spans | 36 (worst PRO-14-F=129) | 0 | ❌ |
-| **G1** | candidate spans undecided / verses unprocessed | 40 / 0 | 0/0 | ❌ |
-| **G2** | chars: no lexical / no operation(106) | 0 / 1,139 | 0/0 | ❌ |
-| **G3** | ungrounded **pairs** / over-calls | **0 / 0** | 0/0 | ✅ |
+| **G1** | candidate spans undecided / verses unprocessed | 40 / 0 | 0 | ❌ |
+| **G2** | chars: no lexical / no operation(106) | 0 / 1,139 | 0 | ❌ |
+| **G3** | ungrounded **pairs** / over-calls | 0 / 0 | 0 | ✅ |
 | **G4** | recurring terms flattened | 0 | 0 | ✅ |
-| **G5** | cohesive units read in isolation | **N/A** (Strong's endpoints) | 0 | ⏸ |
+| **G5** | cohesive units read in isolation | N/A (Strong's endpoints) | 0 | ⏸ |
 | **G6** | candidate verses with no discovery | 438 | 0 | ❌ |
 | **G7** | content items with null value (silent blanks) | 0 | 0 | ✅ |
-| **G9** | (a) orphan qual / (b) malformed / (c) dangling | N/A / **0** / N/A | 0/0/0 | ⏸ / ✅ / ⏸ |
-| **G10** | chars missing ≥1 mandatory dimension | **1,708** (all) | 0 | ❌ |
+| **G9** | (a) orphan qual / (b) malformed / (c) dangling | N/A / 0 / N/A | 0 | ⏸/✅/⏸ |
+| **G10** | chars missing ≥1 mandatory dimension | 1,708 (all) | 0 | ❌ |
 
-**Corrected score: 3 measurable gates pass (G3, G4, G7) + G9(b). G5, G9(a), G9(c) not measurable on the old encoding. G10 fails on every characteristic.**
+**Corrected score: 3 measurable gates pass (G3, G4, G7) + G9(b). G5, G9(a), G9(c) not measurable on the old encoding. G10 fails on every characteristic.** *(❌ rows fail because "failing now" is > 0 — 36, 40, 1,139, 438, 1,708 items respectively need correcting; the "pass at" column is the goal of 0, not the current state.)*
 
 ## G10 detail — the completeness gap, by dimension (chars with NO explicit entry)
 source(103): **1,708 (ALL)** · effect(111): **1,708 (ALL)** · manner(108): 1,686 · coupling(112): 1,686 · bearer(105): 1,617 · seat(104): 1,568 · target(107): 1,564 · operation(106): 1,139 · sense(101): 1 · type(102): 1.
