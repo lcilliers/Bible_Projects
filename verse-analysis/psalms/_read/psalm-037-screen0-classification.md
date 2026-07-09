@@ -4,8 +4,14 @@
 
 ## Demoted (God's own attribute/action → NOT a characteristic)
 
-These become **standalone** (God's act, serving no human char in the verse) or **qualifier**
-(where they serve a human char as source/target). Each carries a note: *God's act — screened out (arena).*
+**All become QUALIFIERS (never standalone).** A qualifier operates *on* a characteristic, so each
+God-act is attached as the **source (D3)** grounding the human IB char it impacts (found across the
+passage). Encoded as a `source` pair (`char → God-act span`, res=span) so the apply derives
+`role='qualifier'` for the God-act span. Mapping (God-act → the IB char it grounds):
+v13 laughs → the righteous's security · v18 knows / v28 forsake / v33 abandon → the saints'/blameless's
+security · v22 blessed / v34 exalt → the inheriting/waiting · v23 delights → the man's established steps ·
+v25 forsaken → the righteous's provision · v28 loves → the saints' preservation · v33 condemned → trial-confidence ·
+v39 salvation / v40 helps / saves → grounds "take refuge in him" (v40).
 
 | span | verse | surface | why demoted |
 |---|---|---|---|
