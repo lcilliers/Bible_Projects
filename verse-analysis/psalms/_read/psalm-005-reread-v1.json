@@ -1,0 +1,170 @@
+{
+  "book": "Psa", "book_id": 19, "chapter": 5,
+  "provenance": "reread-psalms-2026",
+  "note": "Char-driven re-read of Psalm 5 (21 chars). God-portrait (delights-not/hate/abhor) vs wicked (boastful/deceit/inmost-destruction/rebel); rov chesed v7 vs rov pesha v10; joy-cluster; aheb love God's name. Poetic ledger; span-id pairs; source/effect Phase-2.",
+  "spans": {
+    "280696": {"gloss":"pray (v2, 'to you do I pray')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"pray / intercede (palal)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":280696,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"pray"},{"n":107,"l":"target","k":"pair","v":"you (my King and my God)","from":280696,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":114,"l":"discovery","k":"note","v":"prayer (palal) to 'my King and my God' — the morning approach; the whole psalm framed as prayer to the sovereign"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280705": {"gloss":"delights (v4, 'not a God who delights in wickedness')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"delight / take pleasure (chaphets)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":280705,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"wickedness (delight in it — negated)","from":280705,"to":280706,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":113,"l":"prohibition","k":"flag","v":"negated ('not a God who delights in wickedness')"},{"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God does NOT DELIGHT (chaphets) in wickedness — the divine character defined negatively; same delight-root as Ps1:2 (delight in law): God's pleasure is incompatible with evil"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280706": {"gloss":"wickedness (v4)", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"wickedness (resha)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"object God will not delight in","from":280706,"to":280705,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:thing"},
+      {"n":114,"l":"discovery","k":"note","v":"wickedness (resha) as what God cannot delight in / evil that 'may not dwell' with him — the moral reality excluded from the divine presence"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280710": {"gloss":"boastful (v5, 'the boastful shall not stand before your eyes')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"boastful / arrogant (halal = boast here)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the boastful class)","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:thing"},
+      {"n":114,"l":"discovery","k":"note","v":"the BOASTFUL (holelim) cannot stand before God — arrogance/self-exaltation shut out of the divine presence; halal here = boast (distinct from Ps78:63 marriage-song and from praise-halal)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280716": {"gloss":"hate (v5, 'you hate all evildoers')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"hate (sane)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":280716,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"all evildoers","from":280716,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God HATES (sane) all evildoers — active divine antipathy to evil, not neutrality; God's inner-being response to wickedness (part of the vv4-6 portrait)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280723": {"gloss":"abhors (v6, 'the LORD abhors the bloodthirsty and deceitful')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"abhor / detest (ta'av)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":280723,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"abhor"},{"n":107,"l":"target","k":"pair","v":"the bloodthirsty and deceitful man","from":280723,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"the LORD ABHORS (ta'av) the violent-deceitful — stronger than hate; divine loathing of bloodshed and treachery; the climax of the God-portrait (destroys liars, abhors murderers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280725": {"gloss":"deceitful (v6)", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"deceit / treachery (mirmah)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the deceitful man)","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:thing"},
+      {"n":114,"l":"discovery","k":"note","v":"deceit (mirmah) paired with bloodthirst as what God abhors — treachery a defining mark of the wicked, the opposite of the truth God requires (cf v9 'no truth in their mouth')"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280729": {"gloss":"steadfast love (v7, 'the abundance of your steadfast love')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"steadfast love / covenant mercy (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your chesed)","to":280729,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"in abundance (rov)","to":280729,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God's ABUNDANT chesed as the GROUND of access — 'through the abundance (rov) of your steadfast love I will enter your house'; not merit but covenant love grants entry. Pairs antithetically with 'abundance (rov) of their transgressions' (v10)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280736": {"gloss":"fear (v7, 'bow down... in the fear of you')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"reverent fear / awe (yirah)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":280736,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the register of bowing (bow in fear)","from":280736,"to":280732,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"worship 'in the FEAR of you' (yirah) — reverent awe as the posture of entering God's house; same reverent-fear as Ps2:11 (serve with fear); access by chesed met by reverence, not presumption"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280739": {"gloss":"righteousness (v8, 'lead me in your righteousness')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah — God's)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your righteousness)","to":280739,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God's RIGHTEOUSNESS as the PATH — 'lead me in your righteousness because of my enemies'; asked to be guided in God's own right way (cf Ps23:3 paths of righteousness); a straight way against the enemies' crookedness"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280750": {"gloss":"destruction (v9, 'their inmost self is destruction')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"destruction / engulfing ruin (havvot)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies (their inmost self)","to":280750,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"striking INTERIOR reading: the enemies' INMOST SELF is DESTRUCTION (havvot) — their inner being is ruin/engulfing calamity, matching the lying mouth / open-grave throat / flattering tongue; the outside speech reveals the inside"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280661": {"gloss":"guilt (v10, 'make them bear their guilt')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"bear guilt / be held guilty (asham)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":280661,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"bear guilt (imprecation to God)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":114,"l":"discovery","k":"note","v":"the imprecation 'make them BEAR their GUILT' (asham) — appeal for God's just condemnation of the deceitful; guilt as the deserved verdict on their rebellion"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280667": {"gloss":"transgressions (v10, 'the abundance of their transgressions')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"transgression / revolt (pesha)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies (their transgressions)","to":280667,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"in abundance (rov)","to":280667,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:thing"},
+      {"n":114,"l":"discovery","k":"note","v":"the ABUNDANCE (rov) of their transgressions (pesha, willful revolt) justifying their casting out — ANTITHESIS to v7 'abundance (rov) of your steadfast love': the two 'abundances' are the psalm's poles, chesed vs pesha"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280669": {"gloss":"rebelled (v10, 'they have rebelled against you')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"rebel (marah)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":280669,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"rebel"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":280669,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":114,"l":"discovery","k":"note","v":"rebellion (marah) against GOD as the root of guilt — 'they have rebelled against YOU'; the offense is ultimately against God, not just the psalmist (marah, the wilderness-rebellion lemma, cf Ps78)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280672": {"gloss":"take refuge (v11, 'all who take refuge in you')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all the refuge-seekers","to":280672,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":280672,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"joined to 'rejoice'","from":280672,"to":280673,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"taking REFUGE (chasah) in God — same lemma as Ps2:12 ('blessed who take refuge in him'); the refuge-seekers rejoice, the exact opposite of the cast-out rebels (v10). Refuge vs rebellion"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280673": {"gloss":"rejoice (v11)", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"rejoice / be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280673,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"rejoice"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with take-refuge / sing-for-joy","from":280673,"to":280675,"res":"span"},
+      {"n":114,"l":"discovery","k":"note","v":"the refuge-seekers REJOICE (samach) — joy as response to God's protection; part of the closing joy-cluster (rejoice/sing/exult), the glad opposite of the destroyed enemies"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280675": {"gloss":"sing for joy (v11, 'let them ever sing for joy')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"sing / shout for joy (ranan)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280675,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"sing for joy"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"forever (ever)","from":280674,"to":280675,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"with rejoice","from":280675,"to":280673,"res":"span"},
+      {"n":114,"l":"discovery","k":"note","v":"singing for joy (ranan) FOREVER — sustained jubilation of the protected; ranan here = the worshipers' joy-cry (cf Ps78:65 God's battle-shout, different bearer); enduring praise as the fruit of refuge"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280677": {"gloss":"love (v11, 'those who love your name')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"love (aheb)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280677,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"your name","from":280677,"to":280679,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"those who LOVE (aheb) God's NAME — rightly-ordered love directed to God (contrast Ps4:2 'love vanity'; cf Ps78:68 God's love for Zion); the object (God's name) sets the valence; love as the mark of the blessed"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280680": {"gloss":"exult (v11, 'may exult in you')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"exult / rejoice (alats)"},{"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who love God's name","to":280680,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"exult"},{"n":107,"l":"target","k":"pair","v":"in you (God)","from":280680,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"issues from love","from":280680,"to":280677,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"exulting (alats) IN God — the culmination of the joy-cluster; the God-lovers' exultation terminates on God himself, not merely his gifts"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280683": {"gloss":"righteous (v12, 'you bless the righteous')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the righteous class)","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"the RIGHTEOUS (tsaddiq) whom God BLESSES — the closing assurance; righteousness the disposition God favors (cf Ps1:5-6), the blessed opposite of the abhorred wicked (vv4-6)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "280687": {"gloss":"favor (v12, 'you cover him with favor as with a shield')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"favor / goodwill / acceptance (ratson)"},{"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your favor)","to":280687,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God's FAVOR (ratson) as a surrounding SHIELD — the righteous encircled with divine goodwill; favor as protection (cf Ps3:3 shield); the psalm closes with enveloping favor answering the enemies' hostility"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]}
+  }
+}
