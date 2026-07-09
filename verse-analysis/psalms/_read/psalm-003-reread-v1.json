@@ -1,0 +1,123 @@
+{
+  "book": "Psa", "book_id": 19, "chapter": 3,
+  "provenance": "reread-psalms-2026",
+  "note": "Char-driven re-read of Psalm 3 (9 chars). nefesh=self(taunt); yeshuah inclusio v2/v8; kavod God-my-glory; yare fearlessness (cf Ps23). Poetic ledger; span-id pairs; source/effect Phase-2.",
+  "spans": {
+    "278156": {"gloss":"soul (v2, 'many are saying of my soul')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"self / life (nefesh — the whole self, target of the taunt)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"self (nefesh as the seat)","to":278156,"res":"span"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (my soul)","to":278156,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none (spoken about, not acting)","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"internal:seat"},
+      {"n":114,"l":"discovery","k":"note","v":"nefesh here = the SELF as target of the enemies' taunt ('of my soul: no salvation for him') — the whole life declared beyond rescue; a distinct nefesh sense (cf Ps78 appetite/life); the self under despair-inducing assault"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278158": {"gloss":"salvation (v2, 'no salvation for him in God')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"salvation / deliverance (yeshuah)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"none (God's salvation, here denied)","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"negated existence ('no salvation')","from":278158,"to":278157,"res":"span"},
+      {"n":113,"l":"prohibition","k":"flag","v":"denied ('there is no salvation for him')"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"salvation (yeshuah) DENIED by the enemies — the taunt attacks the psalmist's hope in God; yeshuah the contested reality, reversed in v8 ('salvation belongs to the LORD'). Inclusio v2/v8"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278164": {"gloss":"glory (v3, 'you, O LORD, are... my glory')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"glory / honour / dignity (kavod)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (my glory)","to":278164,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"the LORD as 'my GLORY' (kavod) — God himself is the psalmist's honour/dignity, restored against the taunt; contrast Ps4:2 kavod (honour turned to shame): here the dignity is secure because sourced in God"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278165": {"gloss":"lifter (v3, 'the lifter of my head')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"lift up / raise (rum hiphil)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the LORD (you are the lifter)","to":278165,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"lift up / raise"},
+      {"n":107,"l":"target","k":"pair","v":"my head","from":278165,"to":278167,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"the LORD as LIFTER of the head (rum) — raising the bowed head of the despairing; the reversal of dejection, God restoring confidence and lifting what the taunt (v2) cast down"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278168": {"gloss":"cried (v4, 'I cried aloud to the LORD')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"cry / call out (qara)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":278168,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"cry out / call"},
+      {"n":107,"l":"target","k":"pair","v":"the LORD","from":278168,"to":278171,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"aloud (with the voice)","from":278169,"to":278168,"res":"span"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":114,"l":"discovery","k":"note","v":"crying ALOUD to the LORD (qara) — the vocal appeal in distress, answered 'from his holy hill'; the decisive turn from despair (v1-2) to prayer that is heard"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278184": {"gloss":"afraid (v6, 'I will not be afraid of many thousands')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"fear / be afraid (yare)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":278184,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"fear (negated — 'I will not be afraid')"},
+      {"n":107,"l":"target","k":"pair","v":"many thousands (the surrounding host)","from":278184,"to":278185,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":113,"l":"prohibition","k":"flag","v":"negated ('not afraid')"},
+      {"n":114,"l":"discovery","k":"note","v":"fearlessness before overwhelming odds (yare negated) — the fear renounced because of God's sustaining (v5) and shielding (v3); echoes Ps23:4 'fear no evil' (same lemma yare): confidence grounded in God, not in odds"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278193": {"gloss":"Save (v7, 'Save me, O my God!')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"save / deliver (yasha)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"God (the addressee)","to":278193,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"save (imperative plea)"},
+      {"n":107,"l":"target","k":"pair","v":"me (the psalmist)","from":278193,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"paired with 'Arise'","from":278193,"to":278191,"res":"span"},
+      {"n":114,"l":"discovery","k":"note","v":"the plea SAVE me (yasha, imperative) — the active appeal calling God to act ('Arise... Save'); confidence issues in bold petition, then the assurance of God striking the enemies (v7b)"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278202": {"gloss":"Salvation (v8, 'Salvation belongs to the LORD')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"salvation (yeshuah)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the LORD (salvation belongs to him)","to":278202,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"'to the LORD' (belongs to)","from":278202,"to":278203,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"the confession 'SALVATION belongs to the LORD' (yeshuah) — the direct REVERSAL of the enemies' taunt (v2 'no salvation for him in God'); the psalm resolves: deliverance is God's alone. yeshuah inclusio v2(denied)/v8(affirmed)"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "278205": {"gloss":"blessing (v8, 'your blessing be on your people')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"blessing (berakah)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"God's (your blessing)","to":278205,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"your people","from":278205,"to":278207,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"the closing intercession: 'your BLESSING (berakah) on your people' — personal deliverance WIDENS to communal blessing; the individual's rescue opens into a prayer for all God's people"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]}
+  }
+}
