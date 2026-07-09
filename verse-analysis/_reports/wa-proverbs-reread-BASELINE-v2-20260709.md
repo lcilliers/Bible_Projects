@@ -3,8 +3,11 @@
 > Corrected baseline for the Proverbs re-read. Supersedes the 2026-07-08 v1 baseline, which had a **false result** (G3). Adds gates **G9** (pair/qualifier integrity) and **G10** (completeness ledger), and records a structural finding: **pair endpoints are Strong's-encoded, not span-ids.**
 > **Runner:** `python scripts/_check_proverbs_reread_measures_v2_20260709.py --label baseline` (read-only).
 
+## How to read this (targets are violation-counts, NOT data-counts)
+Every gate counts **violations**, so **target 0 = "zero problems", not "zero data".** Proverbs currently holds **24,260 active `ve_lexical` rows across 5,825 spans** — the data is *valuable but incomplete against the new bar* (e.g. Pro 1:10 "consent" correctly carries sense/type/operation/prohibition/role but no source/target). The re-read **revises** this surface and supplies the missing dimensions; it does **not** start from zero, and the old rows are the **G8 "before"** (never hard-delete — soft-delete-and-rebuild or revise-in-place; rows preserved either way).
+
 ## Structure
-915 verses · 2,124 candidate char-spans · 800 candidate verses · 1,708 characteristic-role spans · 251 active segment units.
+915 verses · 2,124 candidate char-spans · 800 candidate verses · 1,708 characteristic-role spans · **24,260 active lexical rows / 5,825 spans** · 251 active segment units.
 Per-span `ve_nr` present in Proverbs: 101,102,104,105,106,107,108,109,110,112,113,114,115,116 — **note 103 (source) and 111 (effect) are entirely absent.**
 
 ## Corrected gate results
