@@ -84,6 +84,12 @@ Stage 1 has flagged which lemmas *could* be characteristics. Stage 2 resolves ea
 
 **Unit and reading frame.** The unit of work is a single candidate char-lemma in a single verse. A verse carrying several candidate char-lemmas is worked once per char-lemma and yields one lexical each (§0). The verse is always read together with its passage — the surrounding run of consecutive verses, treated according to genre — because source, target, bearer and the wider movement resolve only in that context, not in the clause alone.
 
+**Reading discipline — CHAR-DRIVEN, not span-sweep (authoritative, 2026-07-09).** Whether the reading unit is a passage (collection of verses) or a genre-unit (a whole poem), the discipline is the same:
+1. **The characteristic is the lens.** Work **one char at a time** — take the char and read *for it*.
+2. **Resolve that char's pairs by reading across the passage/section, using the morphology of the related verses.** The char's counterparts (its object/target, source, bearer, seat, manner, coupling…) are found by reading the passage *for this char*, grounded in the related verses' morphology.
+3. **It is NOT** a general decomposition of all the spans of all the verses followed by pairing them up. Pairs are **read for the char**, never auto-assembled by proximity from a span-sweep. (A span-sweep + proximity-pairing is precisely what produced the earlier defective auto-pairs.)
+Every pair endpoint is a **span-id** (§7A), resolved by this char-driven read.
+
 **Procedure, for each candidate char-lemma:**
 1. Establish what the lemma *does* in this verse. Read the clause within its passage and decide whether the lemma here expresses an inner-being operation (it does or says something about the inner being itself), or only names/qualifies the object, source or circumstance of some *other* operation, or stands clear of any inner-being operation. This settles its role:
    - operative inner-being operation → **characteristic** — go to step 2;
