@@ -40,8 +40,8 @@ def ib_screen(c, book_id, ch, prov):
         JOIN verse v ON v.id=sp.verse_id
         WHERE v.book_id=? AND v.chapter=? AND x.ve_nr=105 AND x.delete_flagged=0
           AND x.source_provenance=?
-          AND (x.value LIKE '%LORD%' OR x.value LIKE 'God%' OR x.value LIKE 'the Most High%'
-               OR x.value LIKE '%(his %' OR x.value='the LORD')
+          AND (x.value LIKE 'God%' OR x.value LIKE 'the LORD%' OR x.value LIKE 'the Most High%'
+               OR x.value LIKE 'the Almighty%' OR x.value='LORD')
         ORDER BY v.verse_num""",(book_id,ch,prov)).fetchall()
     return rows
 
