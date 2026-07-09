@@ -1,0 +1,27 @@
+{
+  "book": "Psa", "book_id": 19, "chapter": 8,
+  "provenance": "reread-psalms-2026",
+  "note": "Char-driven re-read of Psalm 8 (5 chars). Three majesty lemmas hod(God)/kavod(man)/hadar(man); zakar mindful + paqad care of frail man. Poetic ledger; span-id pairs; source/effect Phase-2.",
+  "spans": {
+    "284905": {"gloss":"glory (v1, 'you have set your glory above the heavens')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"splendour / majesty (hod — God's; distinct from kavod)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your glory)","to":284905,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God's HOD (splendour/majesty) set above the heavens — the cosmic glory of the majestic name (inclusio v1/v9); hod = royal splendour, distinct from kavod; the transcendent majesty against which man's smallness is measured (v4)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "284919": {"gloss":"mindful (v4, 'that you are mindful of him')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"remember / be mindful (zakar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":284919,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be mindful / remember"},{"n":107,"l":"target","k":"pair","v":"man","from":284919,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"parallel with 'care'","from":284919,"to":284922,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God is MINDFUL (zakar) of man — the wonder that the God of cosmic majesty (v1,3) remembers/regards small frail man; zakar (God's remembering, cf Ps78:39 'he remembered they were flesh') — here astonishment at his mindful attention"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "284922": {"gloss":"care (v4, 'that you care for him')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"care for / visit / attend (paqad)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":284922,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"care for / attend to"},{"n":107,"l":"target","k":"pair","v":"the son of man","from":284922,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"parallel with 'mindful'","from":284922,"to":284919,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},
+      {"n":114,"l":"discovery","k":"note","v":"God CARES FOR (paqad — visits/attends) the son of man — the parallel to 'mindful'; active divine attention/visitation of humanity; the intimate regard doubling the wonder of v4"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "284929": {"gloss":"glory (v5, 'crowned him with glory and honor')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"glory / honour (kavod — man's, conferred)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"man (crowned with it)","to":284929,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with honour (glory AND honour)","from":284929,"to":284930,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"man CROWNED with kavod (glory) — human dignity as GOD-GIVEN: a little lower than the heavenly beings yet crowned with glory; kavod here = the royal honour conferred on humanity (derivative, granted — contrast God's own hod v1)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "284930": {"gloss":"honor (v5, 'glory and honor')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"honour / majesty (hadar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"man (crowned with it)","to":284930,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with glory","from":284930,"to":284929,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"hadar (honour/majesty) paired with kavod as man's CROWN — 'glory and honour'; a kingly dignity conferred on humanity over creation (v6). THREE majesty-lemmas in the psalm: hod (God, v1), kavod + hadar (man, v5) — kept distinct"},{"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]}
+  }
+}
