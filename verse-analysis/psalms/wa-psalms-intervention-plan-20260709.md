@@ -25,11 +25,11 @@ For each psalm (chapter), in canonical order:
 - Every write **backed up + integrity-gated** (`_check_integrity_controls --snapshot` pre → apply → post → `--compare`). Per chapter, never cross-book.
 - Legacy sound rows are **revised/augmented in place** (not deleted); superseded values soft-deleted with provenance.
 
-## 4. Decisions needed before execution (your call)
-1. **G0 for poetic** — adopt the poetic reinterpretation: measure digestion **per verse** (Phase-1 focus), and mark the passage-level G0 **N/A for poetic books**? *(Recommend yes — whole-chapter reading is the method, not a defect.)*
-2. **Pair-endpoint migration (Strong's → span-id)** — two-track: **(a)** mechanically resolve endpoints that are unambiguous (`Hxxxx@ref` where that strong occurs once in the referenced verse) → span-id; **(b)** re-read the ambiguous ones (strong repeats in the verse) during Phase 1. *(Recommend this two-track; I'll dry-run the mechanical resolvability first to size (a) vs (b).)*
-3. **Pilot chapter first** — run the full intervention on **Psalm 1** (6 verses, foundational, small), re-measure, and file a pilot delta for your review **before** rolling to the rest of the Psalter. *(Recommend yes — proves the method + the gate-delta on a small unit before 150 chapters.)*
-4. **Augment-in-place confirmed** (not rebuild)? *(Recommend yes — Psalms' core is sound.)*
+## 4. Decisions — RESOLVED (researcher, 2026-07-09)
+1. **G0 stays a valid gate — NOT N/A.** The measure judges the **effectiveness and sound construction of the read unit**, whether that unit is the whole poem (poetic Phase 2) or an associated-verse sub-passage. A large psalm (e.g. 65 char-spans) is a real signal to read it in **focused units** (stanza / associated-verse passages, or the per-verse Phase-1 step) so each read is sound. G0 is satisfied by focused reading, never waived.
+2. **Pair migration — two-track confirmed.** Judge that each pair makes sense: **mechanical span-id resolution where it satisfies the requirement**, else **resolve by reading the context**. (Dry-run resolvability first to size mechanical vs read.)
+3. **Pilots = Psalm 4, 23, 78** (small · famous/medium · large historical — spans the size range incl. the large-poem G0 case).
+4. **Augment-in-place** (not rebuild). **After the three pilots complete, proceed to complete the entire book autonomously — no per-step approval.** Rules are stable; if one is genuinely unclear, fix it once and record it, do not re-litigate.
 
 ## 5. Sequence
 (a) baseline ✅ filed → (b) **this plan → approval** → (c) **pilot Psalm 1**: intervene, re-measure, file pilot delta → review → (d) roll out by chapter, re-measuring at each close; at book close run the **25-unit read-back audit** + compute the full delta vs baseline → success report. Iterate any chapter that doesn't reach pass.

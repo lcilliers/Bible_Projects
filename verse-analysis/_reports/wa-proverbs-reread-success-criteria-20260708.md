@@ -183,7 +183,7 @@ Runner: **`scripts/_check_proverbs_reread_measures_v2_20260709.py`** (supersedes
 | 17 | process | passage-level check / audit |
 | 18 | genre | **G0** precondition (must be set) |
 *(The 201-series — axis/polarity/source_domain… — is **Leviticus-only**, out of scope for Proverbs.)*
-**Mandatory ledger set M = 101,102,103,104,105,106,107,108,111,112.**
+**Mandatory ledger set M — GENRE-AWARE** *(rule fix 2026-07-09, pilot-surfaced):* `source(103)`/`effect(111)` are **cross-verse Phase-2** items (poetic/prophetic Phase-1 reads verses independently, cross-verse OFF). **Narrative** (law/narrative, narrative, gospel-narrative, epistle): `M = 101,102,103,104,105,106,107,108,111,112`. **Poetic/wisdom & prophetic**: `M = 101,102,104,105,106,107,108,112` (source/effect recorded at chapter/Phase-2, not per-span). Runner `_check_reread_measures_v3` selects M by the book's `verse.genre`.
 
 ### G3 stays; refinements to G3/G4/G7 (v1 false-result fixes)
 - **G3** unchanged in intent, but grounding (resolution state) applies to **pairs only** (`pair_kind='pair'`). v1 wrongly flagged value/event/flag items → false 21,823; true value = pairs without resolution.

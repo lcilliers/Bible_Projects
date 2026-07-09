@@ -18,7 +18,13 @@ No writes.
 import sqlite3, os, argparse
 DB = os.path.join('database', 'bible_research.db')
 BUDGET = 12
-MANDATORY = (101, 102, 103, 104, 105, 106, 107, 108, 111, 112)
+# genre-aware mandatory ledger: source(103)/effect(111) are CROSS-VERSE (Phase-2) items.
+# Per-span mandatory ONLY for narrative (cross-verse read within passage); for poetic/wisdom &
+# prophetic the poetic Phase-1 method reads verses independently (cross-verse OFF) so 103/111 are
+# recorded at chapter/Phase-2 level, not per-span.
+NARRATIVE_GENRES = {'law/narrative', 'narrative', 'gospel-narrative', 'epistle'}
+MANDATORY_NARRATIVE = (101, 102, 103, 104, 105, 106, 107, 108, 111, 112)
+MANDATORY_POETIC = (101, 102, 104, 105, 106, 107, 108, 112)
 
 def main():
     ap = argparse.ArgumentParser()
@@ -118,8 +124,12 @@ def main():
     print('(b) malformed pairs:', one("SELECT COUNT(*) FROM ve_lexical l JOIN verse_span_index s ON s.id=l.verse_span_id JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND l.pair_kind='pair' AND COALESCE(l.delete_flagged,0)=0 AND (l.from_span IS NULL OR l.to_span IS NULL OR l.resolution IS NULL)", BID))
     print("(a)/(c): %s" % ('computed below' if SPANIDS else "N/A (Strong's endpoints)"))
 
-    # G10 completeness ledger
+    # G10 completeness ledger (genre-aware)
     hdr('G10 completeness ledger  PASS=0')
+    gen = one("SELECT genre FROM verse WHERE book_id=? AND genre IS NOT NULL GROUP BY genre ORDER BY COUNT(*) DESC LIMIT 1", BID)
+    CROSSVERSE = gen in NARRATIVE_GENRES
+    MANDATORY = MANDATORY_NARRATIVE if CROSSVERSE else MANDATORY_POETIC
+    print(f'genre={gen} -> mandatory set ({"narrative incl source/effect" if CROSSVERSE else "poetic/prophetic: source(103)/effect(111) are Phase-2, excluded per-span"}): {MANDATORY}')
     nchar = one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'", BID)
     inlist = ','.join(str(d) for d in MANDATORY)
     anymiss = one('''SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'

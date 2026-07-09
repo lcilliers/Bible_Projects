@@ -21,10 +21,12 @@ Per-span `ve_nr` present: 101,102,104,105,106,107,108,109,110,112,113,114,115 �
 | **G6** | candidate verses with no discovery | **976** | 0 | ❌ |
 | **G7** | content items with null value | 0 | 0 | ✅ |
 | **G9** | (a) orphan qual / (b) malformed / (c) dangling | N/A‡ / **0** / N/A‡ | 0 | ⏸/✅/⏸ |
-| **G10** | chars missing ≥1 mandatory dimension | **3,810 (all)** | 0 | ❌ |
-| **G10** | mandatory dims with ZERO rows | **103 (source), 111 (effect)** | — | ❌ |
+| **G10** | chars missing ≥1 mandatory dimension (genre-aware set) | **3,810 (all)** | 0 | ❌ |
+| **G10** | mandatory dims with ZERO rows | **none** | — | ✅ |
 
-**Score: G1, G3, G7 pass (+G9b). G0 genre-caveated. G2, G4, G6, G10 fail. G5/G9(a,c) unmeasurable until span-id encoding.**
+**Score: G1, G3, G7 pass (+G9b). G0 measured (focused reading needed for large psalms). G2, G4, G6, G10 fail. G5/G9(a,c) unmeasurable until span-id encoding.**
+
+> **Rule fix (2026-07-09, pilot-surfaced): the completeness ledger is GENRE-AWARE.** `source(103)` and `effect(111)` are **cross-verse Phase-2** items — the poetic Phase-1 method reads verses independently (cross-verse OFF), so for **poetic/wisdom & prophetic** books they are recorded at chapter level, **not per-span mandatory**. So Psalms' mandatory per-span set = `101,102,104,105,106,107,108,112` (the within-verse core); their absence is **not** a gap (this corrects the earlier "103/111 zero rows = fail" reading). G10 still fails because the within-verse ledger is incomplete (no explicit `none`, and operation/seat/target/manner/coupling missing on many chars). For **narrative** books source/effect remain per-span mandatory.
 
 † **G0 genre caveat.** For Psalms a "passage" is a whole psalm/chapter, and the poetic method (§14) deliberately reads the whole chapter (Phase 2). So 150 "over budget" is largely *by design* — the per-verse focus is Phase 1, not a small unit. **G0's 12-char-span budget is not the right gate for poetic books** — the intervention plan proposes a poetic reinterpretation (per-verse Phase-1 focus; G0 measured per-verse or marked N/A). Not a true failure.
 ‡ **G5/G9(a,c) N/A.** Pair endpoints in the current data are **Strong's-encoded** (`H0693@ref`), not span-ids — the corpus-wide defect (violates key-on-span-id). These gates become measurable only after the intervention writes span-id endpoints.
