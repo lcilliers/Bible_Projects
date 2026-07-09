@@ -59,3 +59,16 @@ The digestion fix was **proposed but not yet approved**: *split the 6 F-frame se
 - The measures script measures **active current state** (provenance-agnostic) so the same run gives before/after.
 
 *Filed 2026-07-08 eve. Resume at PART 2 → FIRST.*
+
+---
+
+## UPDATE 2026-07-09 (morning) — gates hardened + two findings before the read
+The success gates were reviewed and strengthened (researcher: do dimensions get measured for completeness, not just fidelity?):
+- **Added G9** (pair & qualifier integrity) + **G10** (completeness ledger — every mandatory dimension explicitly stated; `none` written not omitted). **Kept G3.** Full 18-dimension → gate map in the criteria amendment.
+- **Dimension model = 18**: 16 per-span (101–116, incl. 109 intensity / 110 specifier) + process + genre. The **201-series is Leviticus-only** (out of scope).
+- **Two findings from the corrected baseline (v2):**
+  1. **G3 v1 was a false result** (21,823 → 0): resolution states apply to pairs only. Script refined → `_check_proverbs_reread_measures_v2_20260709.py` (v1 retired).
+  2. **Pair endpoints are Strong's-encoded, not span-ids** (0/2,437 Pro pairs resolve to a span id) — violates the "key on span id" rule. **RE-READ REQUIREMENT: write integer span-id endpoints.** Until then G5/G9(a)/G9(c) are N/A.
+- **Corrected baseline: `wa-proverbs-reread-BASELINE-v2-20260709.md`** — 3 gates pass (G3,G4,G7)+G9(b); G10 fails on all 1,708 chars; **source(103) & effect(111) never recorded** in prior Proverbs data.
+
+**FIRST action unchanged** (confirm F-frame per-proverb split), then the re-read must additionally: emit explicit `none` rows (G10) and span-id pair endpoints (G9).

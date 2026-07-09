@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T19:39:49Z",
+  "generated_at": "2026-07-09T04:35:21Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1829,
+    "other": 1831,
     "historical": 31,
     "current": 2898,
     "archived": 2308,
     "cross-reference": 3396,
     "backup": 96
   },
-  "total_files": 10558,
-  "total_active": 8250,
+  "total_files": 10560,
+  "total_active": 8252,
   "total_archived": 2308,
   "files": [
     {
@@ -105715,8 +105715,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4743089,
-      "modified": "2026-07-08T19:04:34Z"
+      "size_bytes": 4745318,
+      "modified": "2026-07-08T19:39:49Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -136215,7 +136215,7 @@
       "modified": "2026-07-04T14:23:55Z"
     },
     {
-      "path": "scripts/_check_proverbs_reread_measures_v1_20260708.py",
+      "path": "scripts/_check_proverbs_reread_measures_v2_20260709.py",
       "category": "script",
       "type": "other",
       "currency": "current",
@@ -136224,11 +136224,11 @@
       "cluster": null,
       "batch": null,
       "version": null,
-      "date": "2026-07-08",
+      "date": "2026-07-09",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 8670,
-      "modified": "2026-07-08T19:36:40Z"
+      "size_bytes": 11126,
+      "modified": "2026-07-09T04:31:58Z"
     },
     {
       "path": "scripts/_check_softdelete_integrity.py",
@@ -146967,6 +146967,22 @@
       "modified": "2026-07-04T12:35:25Z"
     },
     {
+      "path": "verse-analysis/_reports/wa-proverbs-gates-completeness-gap-and-additions-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 7029,
+      "modified": "2026-07-09T04:03:10Z"
+    },
+    {
       "path": "verse-analysis/_reports/wa-proverbs-reread-BASELINE-20260708.md",
       "category": "other",
       "type": "other",
@@ -146979,8 +146995,24 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 4242,
-      "modified": "2026-07-08T19:38:14Z"
+      "size_bytes": 4562,
+      "modified": "2026-07-09T04:33:57Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-proverbs-reread-BASELINE-v2-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "2",
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3301,
+      "modified": "2026-07-09T04:34:24Z"
     },
     {
       "path": "verse-analysis/_reports/wa-proverbs-reread-success-criteria-20260708.md",
@@ -146995,8 +147027,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 9784,
-      "modified": "2026-07-08T19:30:44Z"
+      "size_bytes": 12839,
+      "modified": "2026-07-09T04:33:39Z"
     },
     {
       "path": "verse-analysis/_reports/wa-proverbs-segment-vs-candidate-digestion-analysis-20260708.md",
@@ -147267,8 +147299,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6477,
-      "modified": "2026-07-08T19:39:12Z"
+      "size_bytes": 7905,
+      "modified": "2026-07-09T04:34:45Z"
     },
     {
       "path": "verse-analysis/_reports/wa-session-end-20260702-psalter-complete.md",

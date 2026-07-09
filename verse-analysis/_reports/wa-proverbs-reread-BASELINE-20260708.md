@@ -1,5 +1,7 @@
 # Proverbs re-read — BASELINE (the starting point to beat), 2026-07-08
 
+> **⚠ SUPERSEDED 2026-07-09 by `wa-proverbs-reread-BASELINE-v2-20260709.md`.** This v1 baseline contained a **false result** (G3 = 21,823 "ungrounded" was an artifact — resolution states apply to pairs only) and predates gates G9/G10 and the Strong's-endpoint finding. Kept for provenance. **Use the v2 baseline.**
+
 > The nine success gates (from `wa-proverbs-reread-success-criteria-20260708.md`) run against Proverbs **as it stands now** — the compromised prior read (provenances `lexical-model-2026` / `role-reassess-2026` / `locus-derivation-v1-20260704`). This is the "before". Tomorrow's re-read, re-measured with the same script, must move each gate to its pass value; the delta is the demonstrated improvement.
 >
 > **Reproduce:** `python scripts/_check_proverbs_reread_measures_v1_20260708.py --label baseline` (read-only).

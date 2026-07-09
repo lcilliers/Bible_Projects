@@ -158,6 +158,48 @@ Queries prove *presence, grounding-state, and coverage*; they cannot prove the r
 - **Threshold:** ≥ 90% of sampled units "sound", **and zero "wrong" on fidelity** (an imported/fabricated warrant is a critical error → fix + re-audit the whole affected chapter).
 
 ## The one-line definition of "done"
-Every hard gate G0–G8 returns its pass value, the audit clears 90% sound with zero fidelity failures, and the G8 delta is positive — then Proverbs is successfully re-read.
+Every hard gate returns its pass value, the audit clears 90% sound with zero fidelity failures, and the G8 delta is positive — then Proverbs is successfully re-read.
 
-*Filed 2026-07-08. The queries are the acceptance test; run them at chapter close and at book close.*
+---
+
+## AMENDMENT 2026-07-09 — dimension completeness gates + refinements (researcher-approved)
+Runner: **`scripts/_check_proverbs_reread_measures_v2_20260709.py`** (supersedes v1).
+
+### The dimension model — 18 dimensions (all must be gate-covered)
+16 per-span (`ve_nr` 101–116) + 2 verse-level (`process`, `genre`). Each maps to a gate so **no dimension is an unmeasured gap**:
+| # | dim (ve_nr) | gate that ensures it |
+|---|---|---|
+| 1–2 | sense 101 · type 102 | G10 (mandatory ledger) |
+| 3 | source 103 | G10 + driver/restraint audit |
+| 4–5 | seat 104 · bearer 105 | G10 |
+| 6 | operation 106 | G10 + G2 |
+| 7–8 | target 107 · manner 108 | G10 |
+| 9–10 | intensity 109 · specifier 110 | G10 (optional — none allowed) |
+| 11–12 | effect 111 · coupling 112 | G10 |
+| 13 | prohibition 113 | G10 (optional) |
+| 14 | discovery 114 | **G6** |
+| 15 | role 115 | **G1** |
+| 16 | locus 116 | G10 (optional, mechanical) |
+| 17 | process | passage-level check / audit |
+| 18 | genre | **G0** precondition (must be set) |
+*(The 201-series — axis/polarity/source_domain… — is **Leviticus-only**, out of scope for Proverbs.)*
+**Mandatory ledger set M = 101,102,103,104,105,106,107,108,111,112.**
+
+### G3 stays; refinements to G3/G4/G7 (v1 false-result fixes)
+- **G3** unchanged in intent, but grounding (resolution state) applies to **pairs only** (`pair_kind='pair'`). v1 wrongly flagged value/event/flag items → false 21,823; true value = pairs without resolution.
+- **G4** signature uses **content items only** (`pair_kind IN value/event/flag`) so pair span-refs don't distort.
+- **G7** silent-blank scoped to **content items** with a NULL value; pairs are checked by G9.
+
+### NEW G9 — pair & qualifier integrity (PASS = 0/0/0)
+(a) orphan qualifiers (a qualifier-roled span bound to no pair); (b) malformed pairs (endpoint or resolution missing); (c) dangling endpoints (a pair endpoint that is not a real in-scope span). **Requires span-id endpoints** (see below).
+
+### NEW G10 — completeness ledger (PASS = 0) — the answer to "missing = deliberate"
+Every characteristic must carry an **explicit** entry for each mandatory dimension M; an *absent* dimension fails; **`none` must be written, not omitted.** This is what makes an unrecorded dimension a *deliberate* decision rather than a silent gap.
+
+### RE-READ REQUIREMENT — pair endpoints must be span ids
+The current data encodes `from_span`/`to_span` as **Strong's strings** (e.g. `H0693@Pro 1:11`), not master span ids — which **violates the cycle's "key on span id, never strong" rule** (§7A). The re-read **must write integer span-id endpoints**. Until it does, G5/G9(a)/G9(c) are **not measurable** (they read as false-universal-fails on the old encoding and are reported `N/A`).
+
+### Audit rubric additions (judgment layer)
+`none`-call correctness (was a pair/qualifier *missed*?) · pair sensibility (direction/kind/resolution) · standalone-vs-qualifier correctness · qualifier hidden/figurative sense (logged in discovery 114). A missed pair on a `none`-call = a fidelity failure.
+
+*Filed 2026-07-08; amended 2026-07-09. Run v2 at chapter close and book close.*
