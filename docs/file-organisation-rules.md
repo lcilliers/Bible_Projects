@@ -225,7 +225,7 @@ The **home for ALL verse-fanout method output** (the method that superseded the 
 | Verse + observations extract (regenerable from `ib_observation`) | `verse-analysis/{Book}/` | `wa-{book}-{ccc}-{vvv}-observations-v{n}-{YYYYMMDD}.md` |
 | Cross-verse roll-ups (progress, worklist, anchor design) | `verse-analysis/_reports/` | `wa-verse-analysis-{topic}-v{n}-{YYYYMMDD}.md` |
 
-- **`{Book}`** = DB `books.short_code` (Gen, Exo, Lev, Psa, Mar…). **Chapter and verse zero-padded to 3 digits** (`Exo-001-013`, `Psa-119-176`) so the whole canon sorts; the DB reference (`Exo 1:13`) stays canonical.
+- **`{Book}`** = the **full lowercase book name** (`genesis`, `exodus`, `leviticus`, `psalms`, `proverbs`, `isaiah`, `mark`…). *(Convention corrected 2026-07-09: the earlier short-code form (`Gen`, `Exo`, `Psa`) was superseded in practice — the full-name folders held ~99% of the work — so the short-code stubs were consolidated into the full-name folders and this rule updated to match.)* **Chapter and verse zero-padded to 3 digits** in filenames (`exodus-001-013`, `psalms-119-176`) so the book's files sort; the DB reference (`Exo 1:13`) stays canonical.
 - **Flat within the book folder** — no per-verse subfolder. A file appears only when its verse is actually worked.
 - **The DB is the single source of truth** for findings: observations → `ib_observation`; progress → `verse_analysis_progress`. Files here are **inputs** (raw collections) or **regenerable exports** (extracts) — never the record of findings.
 - **Method/governance docs are NOT here** — they stay in `Workflow/methodology/` and `Workflow/Catalogue/`. See `verse-analysis/README.md`.
