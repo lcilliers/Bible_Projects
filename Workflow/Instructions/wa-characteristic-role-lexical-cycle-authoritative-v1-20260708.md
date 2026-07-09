@@ -90,7 +90,15 @@ Stage 1 has flagged which lemmas *could* be characteristics. Stage 2 resolves ea
 3. **It is NOT** a general decomposition of all the spans of all the verses followed by pairing them up. Pairs are **read for the char**, never auto-assembled by proximity from a span-sweep. (A span-sweep + proximity-pairing is precisely what produced the earlier defective auto-pairs.)
 Every pair endpoint is a **span-id** (§7A), resolved by this char-driven read.
 
-**Procedure, for each candidate char-lemma:**
+**Screen 0 — IB-relevance (mandatory, BEFORE role; God is the arena, not the subject) (authoritative, 2026-07-09).** The lens is the **human inner being**. Before deciding a candidate's role, ask the prior question: *is this span about the human inner being at all?* God's own **attributes, qualities and actions are not characteristics** — his `chesed`, `emunah`, `kavod`/`hadar`, his righteousness/goodness, his wrath (`aph`), his saving/redeeming/judging acts. God enters analysis only as a **source (D3)**, a **target (D7)**, or a **quality/manner** bearing on a human char. So:
+
+- span whose bearer/subject is a **human** inner faculty, state, disposition or inner-driven act (the psalmist, the wicked, mankind) → passes the screen → proceed to the role test (step 1);
+- span that is **wholly God's** (his attribute/quality/action, no human inner content) → **fails the screen → qualifier**. It carries no lexical of its own; it is captured as the source/target/quality of the human char it serves. Where a verse has **no** human char, its God-content is pure context and the verse yields **no characteristic** — that is correct and expected. Many verses (whole hymnic passages) will have no IB char; **we do not manufacture one for God.**
+- the human's **response to God** (trust, fear, hope, love, take-refuge, rejoice, cry, wait; the soul/heart/spirit) **is** IB — it passes, with God as its target/source.
+
+Consequence for scope: after Screen 0, the reading is anchored on the surviving **human** IB chars only. Build each such char's **passage** (its related verses) and read *those together* (§4A) — **never** the whole chapter or a chapter-block. A candidate that fails Screen 0 is demoted (§ *Demotion* below), not read as a characteristic.
+
+**Procedure, for each candidate char-lemma that passes Screen 0:**
 1. Establish what the lemma *does* in this verse. Read the clause within its passage and decide whether the lemma here expresses an inner-being operation (it does or says something about the inner being itself), or only names/qualifies the object, source or circumstance of some *other* operation, or stands clear of any inner-being operation. This settles its role:
    - operative inner-being operation → **characteristic** — go to step 2;
    - relational to another operation → **qualifier** — no lexical of its own; it will be captured under the characteristic it serves (step 2 of that characteristic); move to the next char-lemma;
@@ -198,6 +206,7 @@ Drive the per-book pass off these two, **never** off raw span counts.
 - Scripts: `_apply_add_role_to_master_index_*` (role column), `_apply_stamp_char_candidate_on_master_*` (seed → master; idempotent, re-run after any seed change).
 
 ## 11. The non-negotiable rules (the "do-not-mess-up" checklist)
+0. **Screen 0 first (§5): the lens is the HUMAN inner being. God is arena, not subject.** God's own attribute/quality/action → **qualifier** (source/target/quality), never a characteristic. A verse of pure God-content yields **no** characteristic — do not manufacture one. Anchor on human IB chars and read each char's **passage** — never a whole chapter or chapter-block.
 1. Characteristic by **meaning in the verse**, never by lookup. Lists **validate**, never impute.
 2. Role ∈ {characteristic, qualifier,standalone, uncertain}. **qualifiers always pair with a characteristic**
 3. Relational words (object/source/seat/manner) are **qualifiers** — and are **captured, never dropped**.

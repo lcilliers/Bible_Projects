@@ -56,6 +56,9 @@ Legacy is **left in place, not migrated, not retired** — cleaned up only after
 
 ## 8. `role` — the sanity-check classification (added 2026-07-02)
 A per-span **role**, assigned at the **sanity-check** gate (method §13a), stored as a ve-lexical item. Not derived at initial build — it is the *evaluated* classification.
+
+> **Screen 0 — IB-relevance, BEFORE role (added 2026-07-09).** The lens is the **human inner being**; God is the **arena, not the subject**. A span is a `characteristic` only if it passes the prior test *is this about the human inner being?* God's own attribute/quality/action (`chesed`, `kavod`, his wrath, "God saves") **fails** the screen → it is a **qualifier** feeding a human char's **source/target/quality**, never a characteristic; a pure God-content verse yields **no** characteristic. See cycle instruction §5 (Screen 0) + §11 rule 0 and memory `feedback_ib_screen_first_god_is_arena`.
+
 | item | ve_nr | shape | values | definition |
 |---|--:|---|---|---|
 | **role** | 115 | value | `characteristic` · `process-qualifier` · `standalone` · `uncertain` | **characteristic** = the inner-being disposition the passage turns on (gets its own verse rollup); **process-qualifier** = binds to / gives value+context to a characteristic's pair, served in place (no own rollup unless later-circle variation); **standalone** = binds to nothing; **uncertain** = evaluation could not decide → D11 note. |

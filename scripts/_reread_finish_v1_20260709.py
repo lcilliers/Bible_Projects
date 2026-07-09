@@ -28,6 +28,23 @@ def gates(c, book_id, ch):
             g6.append(c.execute("SELECT verse_num FROM verse WHERE id=?",(vid,)).fetchone()[0])
     return g10,g6
 
+def ib_screen(c, book_id, ch, prov):
+    """Screen 0 regression check: a role='characteristic' span whose bearer (D5=105)
+    names God/LORD is a likely mis-classification — God is arena, not subject, so it
+    should be a qualifier. Loud (lists them); non-blocking (bearer strings can be edge
+    cases). Zero is the expected state once Screen 0 is applied."""
+    rows=c.execute("""
+        SELECT v.verse_num vn, sp.surface, x.value bearer
+        FROM ve_lexical x
+        JOIN verse_span_index sp ON sp.id=x.verse_span_id AND sp.role='characteristic'
+        JOIN verse v ON v.id=sp.verse_id
+        WHERE v.book_id=? AND v.chapter=? AND x.ve_nr=105 AND x.delete_flagged=0
+          AND x.source_provenance=?
+          AND (x.value LIKE '%LORD%' OR x.value LIKE 'God%' OR x.value LIKE 'the Most High%'
+               OR x.value LIKE '%(his %' OR x.value='the LORD')
+        ORDER BY v.verse_num""",(book_id,ch,prov)).fetchall()
+    return rows
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--chapter',type=int,required=True)
@@ -53,6 +70,12 @@ def main():
     if g10 or g6:
         print(f"GATE FAIL ch{ch}: g10_verses={g10} g6_verses={g6}  (fix discoveries, re-run finish)")
         sys.exit(1)
+    # Screen 0 (IB-relevance) regression check — loud, non-blocking
+    ibr=ib_screen(c,a.book_id,ch,a.prov)
+    if ibr:
+        print(f"IB-SCREEN WARNING ch{ch}: {len(ibr)} characteristic(s) have God as bearer (should be qualifier):")
+        for r in ibr[:12]:
+            print(f"    v{r[0]} {str(r[1])[:16]} | bearer={r[2]}")
     # commit
     subprocess.run(["git","add","-A"],capture_output=True,text=True)
     cm=subprocess.run(["git","commit","-q","-m",f"session 20260709: Psalm {ch} COMPLETE ({a.chars} chars) - {a.msg}\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"],capture_output=True,text=True)
