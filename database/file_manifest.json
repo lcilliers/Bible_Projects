@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T05:52:20Z",
+  "generated_at": "2026-07-09T05:54:36Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1832,
+    "other": 1834,
     "historical": 31,
     "current": 2388,
     "archived": 2819,
     "cross-reference": 3396,
     "backup": 96
   },
-  "total_files": 10562,
-  "total_active": 7743,
+  "total_files": 10564,
+  "total_active": 7745,
   "total_archived": 2819,
   "files": [
     {
@@ -113619,8 +113619,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4747467,
-      "modified": "2026-07-09T05:38:40Z"
+      "size_bytes": 4751606,
+      "modified": "2026-07-09T05:52:20Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -168661,6 +168661,38 @@
       "archived": false,
       "size_bytes": 3425,
       "modified": "2026-07-02T19:32:50Z"
+    },
+    {
+      "path": "verse-analysis/psalms/wa-psalms-intervention-plan-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5169,
+      "modified": "2026-07-09T05:54:25Z"
+    },
+    {
+      "path": "verse-analysis/psalms/wa-psalms-reread-baseline-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4064,
+      "modified": "2026-07-09T05:53:31Z"
     },
     {
       "path": "verse-analysis/zechariah/_seg/zechariah-segmentation-oracles-20260704.json",
