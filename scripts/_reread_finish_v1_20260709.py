@@ -76,6 +76,14 @@ def main():
         print(f"IB-SCREEN WARNING ch{ch}: {len(ibr)} characteristic(s) have God as bearer (should be qualifier):")
         for r in ibr[:12]:
             print(f"    v{r[0]} {str(r[1])[:16]} | bearer={r[2]}")
+    # Completeness (§7C): every candidate span in this chapter should carry a read-2026 role.
+    unroled=c.execute("""SELECT v.verse_num vn, s.surface FROM verse_span_index s JOIN verse v ON v.id=s.verse_id
+        WHERE v.book_id=? AND v.chapter=? AND s.char_candidate=1
+          AND (s.role_provenance IS NULL OR s.role_provenance<>'read-2026') ORDER BY v.verse_num""",(a.book_id,ch)).fetchall()
+    if unroled:
+        print(f"CANDIDATE-ROLE WARNING ch{ch}: {len(unroled)} candidate span(s) not roled by the read (pair them or mark standalone):")
+        for r in unroled[:12]:
+            print(f"    v{r[0]} {str(r[1])[:16]}")
     # commit
     subprocess.run(["git","add","-A"],capture_output=True,text=True)
     cm=subprocess.run(["git","commit","-q","-m",f"session 20260709: Psalm {ch} COMPLETE ({a.chars} chars) - {a.msg}\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"],capture_output=True,text=True)
