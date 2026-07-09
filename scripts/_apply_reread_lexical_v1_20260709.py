@@ -66,14 +66,40 @@ def main():
         shutil.copy2(DB, bpath); print('backup:', bpath)
     cur = c.cursor()
     pre = cur.execute('SELECT COUNT(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0').fetchone()[0]
+    # role write-back accumulators (§7A row 2): role from ve_nr=115; qualifiers derived from span-id pair endpoints
+    role_of = {}          # span_id(int) -> role string  (from the JSON 115 value)
+    role_srcid = {}       # span_id(int) -> ve_lexical id of its 115 row (role_source_ve_id)
+    endpoint_ids = set()  # span-ids appearing as the OTHER end of a real span-id pair (=> qualifiers, unless themselves a char)
     for sid, obj in spans.items():
-        cur.execute('UPDATE ve_lexical SET delete_flagged=1 WHERE verse_span_id=? AND COALESCE(delete_flagged,0)=0', (int(sid),))
+        s = int(sid)
+        cur.execute('UPDATE ve_lexical SET delete_flagged=1 WHERE verse_span_id=? AND COALESCE(delete_flagged,0)=0', (s,))
         for d in obj['dims']:
             cur.execute('''INSERT INTO ve_lexical (verse_context_id, verse_span_id, ve_nr, ve_label, value,
                  source_provenance, delete_flagged, created_at, from_span, to_span, resolution, pair_kind)
                  VALUES (?,?,?,?,?,?,0,?,?,?,?,?)''',
-                (vcid.get(sid), int(sid), d['n'], d['l'], d.get('v'), prov, NOW,
+                (vcid.get(sid), s, d['n'], d['l'], d.get('v'), prov, NOW,
                  d.get('from'), d.get('to'), d.get('res'), KMAP[d['k']]))
+            if d['n'] == 115 and d.get('v'):
+                role_of[s] = d['v']; role_srcid[s] = cur.lastrowid
+            # collect real span-id pair endpoints (res='span') that point at a DIFFERENT span => qualifiers
+            if d.get('res') == 'span':
+                for ep in (d.get('from'), d.get('to')):
+                    if ep and int(ep) != s:
+                        endpoint_ids.add(int(ep))
+    # derive qualifier roles for endpoints that are not themselves a characteristic/standalone in this JSON
+    char_or_standalone = set(role_of.keys())
+    for ep in endpoint_ids:
+        if ep not in char_or_standalone:
+            role_of.setdefault(ep, 'qualifier')
+    # write roles to the master (role + provenance + set_at + source_ve_id); read-derived = 'read-2026'
+    ROLEPROV = 'read-2026'
+    rc = {}
+    for s, rl in role_of.items():
+        cur.execute('''UPDATE verse_span_index
+             SET role=?, role_provenance=?, role_set_at=?, role_source_ve_id=?
+             WHERE id=?''', (rl, ROLEPROV, NOW, role_srcid.get(s), s))
+        rc[rl] = rc.get(rl, 0) + 1
+    print(f"master roles written (read-2026): {rc}")
     # mark process_marker only on the verses actually read (the spans in this JSON) — supports partial-chapter (stanza) applies
     marked = sorted({c.execute('SELECT verse_id FROM verse_span_index WHERE id=?', (int(sid),)).fetchone()[0] for sid in spans})
     cur.executemany('UPDATE verse SET process_marker=? WHERE id=?', [(prov, v) for v in marked])
