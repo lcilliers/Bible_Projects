@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:35:21Z",
+  "generated_at": "2026-07-09T05:19:52Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1831,
+    "other": 1832,
     "historical": 31,
     "current": 2898,
     "archived": 2308,
     "cross-reference": 3396,
     "backup": 96
   },
-  "total_files": 10560,
-  "total_active": 8252,
+  "total_files": 10561,
+  "total_active": 8253,
   "total_archived": 2308,
   "files": [
     {
@@ -105715,8 +105715,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4745318,
-      "modified": "2026-07-08T19:39:49Z"
+      "size_bytes": 4746219,
+      "modified": "2026-07-09T04:35:21Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -136215,7 +136215,7 @@
       "modified": "2026-07-04T14:23:55Z"
     },
     {
-      "path": "scripts/_check_proverbs_reread_measures_v2_20260709.py",
+      "path": "scripts/_check_reread_measures_v3_20260709.py",
       "category": "script",
       "type": "other",
       "currency": "current",
@@ -136227,8 +136227,8 @@
       "date": "2026-07-09",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 11126,
-      "modified": "2026-07-09T04:31:58Z"
+      "size_bytes": 10585,
+      "modified": "2026-07-09T05:12:35Z"
     },
     {
       "path": "scripts/_check_softdelete_integrity.py",
@@ -147011,8 +147011,8 @@
       "date": "2026-07-09",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 3301,
-      "modified": "2026-07-09T04:34:24Z"
+      "size_bytes": 4390,
+      "modified": "2026-07-09T04:51:58Z"
     },
     {
       "path": "verse-analysis/_reports/wa-proverbs-reread-success-criteria-20260708.md",
@@ -147173,6 +147173,22 @@
       "archived": false,
       "size_bytes": 3736,
       "modified": "2026-06-30T15:24:58Z"
+    },
+    {
+      "path": "verse-analysis/_reports/wa-reread-measures-interpretation-guidance-and-crossbook-baseline-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6935,
+      "modified": "2026-07-09T05:19:22Z"
     },
     {
       "path": "verse-analysis/_reports/wa-ruthlessness-deeper-reading-20260702.md",
