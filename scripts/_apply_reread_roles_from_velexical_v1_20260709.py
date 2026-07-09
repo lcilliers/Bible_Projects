@@ -40,7 +40,9 @@ def main():
                           WHERE delete_flagged=0 AND source_provenance=? AND resolution='span'
                             AND from_span IS NOT NULL AND to_span IS NOT NULL AND from_span<>to_span""",(prov,)):
         for ep in (r['from_span'], r['to_span']):
-            if ep is not None and ep not in role_of:
+            if ep is None: continue
+            ep = int(ep)   # from_span/to_span are TEXT in ve_lexical; cast so keys match the int sids
+            if ep not in role_of:
                 role_of[ep]='qualifier'
     derived=len(role_of)-explicit
     # tally + how many differ from current master
