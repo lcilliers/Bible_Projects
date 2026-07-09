@@ -1,0 +1,98 @@
+{
+  "book": "Psa", "book_id": 19, "chapter": 23,
+  "provenance": "reread-psalms-2026",
+  "note": "Char-driven re-read of Psalm 23 (7 characteristics). Poetic ledger; span-id pairs; source/effect Phase-2.",
+  "spans": {
+    "275819": {"gloss":"soul (v3, 'he restores my soul')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"soul / self / vitality (nefesh)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"soul (self — this span is the constitutional seat)","to":275819,"res":"span"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'my soul')","to":275819,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"none (the soul is restored, not acting)","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"object of 'restores' (nafshi yeshovev — the self God revives)","from":275819,"to":275818,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"internal:seat"},
+      {"n":114,"l":"discovery","k":"note","v":"the soul as the restorable self — the whole vitality God revives (yeshovev = brings back); the recipient/seat of restoration, not an agent here"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275822": {"gloss":"righteousness (v3, 'paths of righteousness')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"righteousness / rightness (tsedeq)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":110,"l":"specifier","k":"pair","v":"specifies the paths (construct 'paths of righteousness')","from":275822,"to":275821,"res":"span"},
+      {"n":112,"l":"coupling","k":"pair","v":"welded (construct) to paths","from":275822,"to":275821,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+      {"n":114,"l":"discovery","k":"note","v":"righteousness as the character of the God-led way ('paths of righteousness for his name's sake') — the rightness is God's, the leading is grace, not the psalmist's own attainment"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275829": {"gloss":"fear (v4, 'I will fear no evil')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"fear / be afraid (yare)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'I will fear')","to":275829,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"fear (negated — 'I will NOT fear')"},
+      {"n":107,"l":"target","k":"pair","v":"evil / harm (the object of the renounced fear)","from":275829,"to":275831,"res":"span"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":113,"l":"prohibition","k":"flag","v":"negated (lo ira — 'I will not fear')"},
+      {"n":114,"l":"discovery","k":"note","v":"fear RENOUNCED in the presence of God ('for you are with me') — the absence of fear grounded in God's presence, not the absence of danger (walked through the valley of death's shadow)"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275831": {"gloss":"evil (v4, 'no evil')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"evil / harm / calamity (ra)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
+      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
+      {"n":116,"l":"locus","k":"value","v":"external:thing"},
+      {"n":114,"l":"discovery","k":"note","v":"ROLE RECONSIDERATION: 'evil' here = external calamity, the OBJECT of the renounced fear (captured as fear's target) — it functions as a qualifier of fear, not a standalone inner-being characteristic; flagged for role review (recorded minimally)"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275838": {"gloss":"comfort (v4, 'your rod and staff, they comfort me')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"comfort / console (nacham)"},
+      {"n":102,"l":"type","k":"value","v":"action"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (the one comforted / experiencer, 'comfort me')","to":275838,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"comfort / console"},
+      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
+      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
+      {"n":112,"l":"coupling","k":"pair","v":"by the rod & staff (instrument of the comforting)","from":275838,"to":275835,"res":"span"},
+      {"n":114,"l":"discovery","k":"note","v":"comfort mediated by the shepherd's rod & staff (governance + protection) — God's comfort felt precisely in the valley; the instruments of discipline are experienced as consolation"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275852": {"gloss":"goodness (v6, 'goodness shall follow me')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"goodness / benevolence (tov)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"God's (goodness personified as God's own, the pursuer)","to":275852,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"follow / pursue (radaph — goodness is the subject that pursues)"},
+      {"n":107,"l":"target","k":"pair","v":"the psalmist (1cs 'follow me')","from":275852,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"all the days of my life (temporal extent)","from":275852,"to":275856,"res":"span"},
+      {"n":112,"l":"coupling","k":"pair","v":"compound subject of 'follow' (welded to radaph)","from":275852,"to":275854,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:god (God's goodness)"},
+      {"n":114,"l":"discovery","k":"note","v":"God's goodness PERSONIFIED as pursuer — not the psalmist chasing good (cf Ps 4:6 'who will show us good?') but good hunting HIM down, all his days"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]},
+    "275853": {"gloss":"mercy (v6, 'and mercy shall follow me')", "dims": [
+      {"n":101,"l":"sense","k":"value","v":"steadfast love / covenant mercy (chesed)"},
+      {"n":102,"l":"type","k":"value","v":"status"},
+      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
+      {"n":105,"l":"bearer","k":"pair","v":"God's (chesed — God's covenant loyalty)","to":275853,"res":"inferred"},
+      {"n":106,"l":"operation","k":"event","v":"follow / pursue (radaph — mercy is the second compound subject)"},
+      {"n":107,"l":"target","k":"pair","v":"the psalmist (1cs 'follow me')","from":275853,"res":"inferred"},
+      {"n":108,"l":"manner","k":"pair","v":"all the days of my life (temporal extent)","from":275853,"to":275856,"res":"span"},
+      {"n":112,"l":"coupling","k":"pair","v":"welded with goodness as the compound subject of 'follow'","from":275853,"to":275852,"res":"span"},
+      {"n":116,"l":"locus","k":"value","v":"external:god (God's chesed)"},
+      {"n":114,"l":"discovery","k":"note","v":"chesed (covenant steadfast love) twinned with goodness as God's twin pursuers — the covenant faithfulness that hounds the psalmist with good, culminating in dwelling in God's house forever"},
+      {"n":115,"l":"role","k":"value","v":"characteristic"}
+    ]}
+  }
+}
