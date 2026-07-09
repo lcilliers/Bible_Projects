@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T06:34:06Z",
+  "generated_at": "2026-07-09T07:42:49Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1836,
+    "other": 1839,
     "historical": 31,
-    "current": 2389,
+    "current": 2390,
     "archived": 2819,
     "cross-reference": 3396,
     "backup": 97
   },
-  "total_files": 10568,
-  "total_active": 7749,
+  "total_files": 10572,
+  "total_active": 7753,
   "total_archived": 2819,
   "files": [
     {
@@ -113619,8 +113619,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 778711040,
-      "modified": "2026-07-09T06:33:18Z"
+      "size_bytes": 778743808,
+      "modified": "2026-07-09T07:41:59Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113635,8 +113635,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4752476,
-      "modified": "2026-07-09T06:14:46Z"
+      "size_bytes": 4754186,
+      "modified": "2026-07-09T06:34:06Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138083,8 +138083,8 @@
       "date": "2026-07-09",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 4893,
-      "modified": "2026-07-09T06:31:11Z"
+      "size_bytes": 5227,
+      "modified": "2026-07-09T07:40:59Z"
     },
     {
       "path": "scripts/_apply_reset_l2_meaning_flags.py",
@@ -139429,6 +139429,22 @@
       "archived": false,
       "size_bytes": 5527,
       "modified": "2026-07-04T14:23:55Z"
+    },
+    {
+      "path": "scripts/_check_psalms_reread_progress_v1_20260709.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 2804,
+      "modified": "2026-07-09T07:33:56Z"
     },
     {
       "path": "scripts/_check_reread_measures_v3_20260709.py",
@@ -159111,6 +159127,38 @@
       "modified": "2026-07-09T06:30:18Z"
     },
     {
+      "path": "verse-analysis/psalms/_read/psalm-023-reread-v1.json",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 23,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 8220,
+      "modified": "2026-07-09T07:38:07Z"
+    },
+    {
+      "path": "verse-analysis/psalms/_read/psalm-078-reread-v1-sec1-vv3-8.json",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 78,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 10511,
+      "modified": "2026-07-09T07:41:50Z"
+    },
+    {
       "path": "verse-analysis/psalms/_roles/ps001-roles.json",
       "category": "other",
       "type": "other",
@@ -168741,6 +168789,22 @@
       "archived": false,
       "size_bytes": 5400,
       "modified": "2026-07-09T06:21:14Z"
+    },
+    {
+      "path": "verse-analysis/psalms/wa-psalms-pilots-validation-and-scale-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2736,
+      "modified": "2026-07-09T07:42:40Z"
     },
     {
       "path": "verse-analysis/psalms/wa-psalms-reread-baseline-20260709.md",
