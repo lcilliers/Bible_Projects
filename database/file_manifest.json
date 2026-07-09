@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T06:14:46Z",
+  "generated_at": "2026-07-09T06:34:06Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 1834,
+    "other": 1836,
     "historical": 31,
-    "current": 2388,
+    "current": 2389,
     "archived": 2819,
     "cross-reference": 3396,
-    "backup": 96
+    "backup": 97
   },
-  "total_files": 10564,
-  "total_active": 7745,
+  "total_files": 10568,
+  "total_active": 7749,
   "total_archived": 2819,
   "files": [
     {
@@ -68339,8 +68339,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 32370,
-      "modified": "2026-07-08T16:00:52Z"
+      "size_bytes": 33344,
+      "modified": "2026-07-09T06:20:53Z"
     },
     {
       "path": "Workflow/Instructions/wa-claudecode-instruction-v4_5-20260514.md",
@@ -113367,6 +113367,22 @@
       "modified": "2026-06-08T08:31:40Z"
     },
     {
+      "path": "backups/bible_research_prereread_Psa_ch4_20260709063134.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 778682368,
+      "modified": "2026-07-08T08:16:07Z"
+    },
+    {
       "path": "data/exports/dimension_review/wa-dim-C10-existing-pointers-2026-05-02.json",
       "category": "export",
       "type": "dim-pointers-extract",
@@ -113603,8 +113619,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 778682368,
-      "modified": "2026-07-08T08:16:07Z"
+      "size_bytes": 778711040,
+      "modified": "2026-07-09T06:33:18Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113620,7 +113636,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 4752476,
-      "modified": "2026-07-09T05:54:36Z"
+      "modified": "2026-07-09T06:14:46Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138055,6 +138071,22 @@
       "modified": "2026-03-20T04:14:59Z"
     },
     {
+      "path": "scripts/_apply_reread_lexical_v1_20260709.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 4893,
+      "modified": "2026-07-09T06:31:11Z"
+    },
+    {
       "path": "scripts/_apply_reset_l2_meaning_flags.py",
       "category": "script",
       "type": "other",
@@ -159063,6 +159095,22 @@
       "modified": "2026-07-03T04:55:03Z"
     },
     {
+      "path": "verse-analysis/psalms/_read/psalm-004-reread-v1.json",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 4,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 16555,
+      "modified": "2026-07-09T06:30:18Z"
+    },
+    {
       "path": "verse-analysis/psalms/_roles/ps001-roles.json",
       "category": "other",
       "type": "other",
@@ -168663,6 +168711,22 @@
       "modified": "2026-07-02T19:32:50Z"
     },
     {
+      "path": "verse-analysis/psalms/wa-psalm-004-pilot-delta-20260709.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": 4,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-09",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2961,
+      "modified": "2026-07-09T06:33:54Z"
+    },
+    {
       "path": "verse-analysis/psalms/wa-psalms-intervention-plan-20260709.md",
       "category": "other",
       "type": "other",
@@ -168675,8 +168739,8 @@
       "date": "2026-07-09",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5218,
-      "modified": "2026-07-09T06:07:15Z"
+      "size_bytes": 5400,
+      "modified": "2026-07-09T06:21:14Z"
     },
     {
       "path": "verse-analysis/psalms/wa-psalms-reread-baseline-20260709.md",
