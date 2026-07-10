@@ -74,11 +74,24 @@ def main():
         s = int(sid)
         cur.execute('UPDATE ve_lexical SET delete_flagged=1 WHERE verse_span_id=? AND COALESCE(delete_flagged,0)=0', (s,))
         for d in obj['dims']:
+            fr = d.get('from'); to = d.get('to'); res = d.get('res')
+            # pair_kind derivation: a genuine cross-span PAIR requires res='span' with BOTH
+            # endpoints. A relational dim tagged k='pair' but unresolved (res none/inferred) is
+            # a FLAG, not a pair - tagging it 'pair' pollutes pair analytics and fails G9b.
+            if d['k'] == 'pair':
+                if res == 'span':
+                    if to is not None and fr is None: fr = s   # owner span is the 'from'
+                    if fr is not None and to is None: to = s
+                    pk = 'pair'
+                else:
+                    pk = 'flag'                                 # res in (none, inferred)
+            else:
+                pk = KMAP[d['k']]
             cur.execute('''INSERT INTO ve_lexical (verse_context_id, verse_span_id, ve_nr, ve_label, value,
                  source_provenance, delete_flagged, created_at, from_span, to_span, resolution, pair_kind)
                  VALUES (?,?,?,?,?,?,0,?,?,?,?,?)''',
                 (vcid.get(sid), s, d['n'], d['l'], d.get('v'), prov, NOW,
-                 d.get('from'), d.get('to'), d.get('res'), KMAP[d['k']]))
+                 fr, to, res, pk))
             if d['n'] == 115 and d.get('v'):
                 role_of[s] = d['v']; role_srcid[s] = cur.lastrowid
             # collect real span-id pair endpoints (res='span') that point at a DIFFERENT span => qualifiers
