@@ -1,5 +1,7 @@
 # Corrected char-arc book re-read — REPEATABLE PROCESS (v1)
 
+> **⚠ SUBORDINATE / WORKED-EXAMPLE NOTES ONLY (2026-07-11).** The single authoritative end-to-end spec is **`wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md`** — read that, not this, for the method. This doc's reading discipline is already §5 there; it is kept only as Psalms worked-example notes (the issue-prevention table §4 is its remaining unique value). Do not use it as a parallel process.
+>
 > **Status:** authoritative for *execution*, **subordinate** to `wa-per-book-corrective-method-authoritative-v1-20260707.md` (the b→c→d→e frame set by the researcher). This document does not change that method; it operationalizes its **step (c)** — the role/lexical char-arc read — into a concrete, repeatable pipeline, **proven end-to-end on Psalms** (150/150 psalms + the Book I remediation, all gate-clean, 2026-07-10/11). Where this and the authoritative frame ever conflict, the frame wins.
 >
 > **Purpose:** so the next book is read the same way, first-time-right, and **every issue hit during Psalms is expressly prevented, not re-encountered.** Read this before starting the char-arc read of any book.

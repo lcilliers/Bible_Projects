@@ -3,6 +3,21 @@
 > **Status: AUTHORITATIVE. This is the single governing instruction for how the study determines characteristics, seeds candidates, sets roles, and generates lexicals.** It **supersedes all prior attempts** at this sub-process — including the qualifier-as-a-role framing, the per-span role-reassessment method, the strongs-list / 277-table candidate attempts, and any earlier "characteristic determination" notes. Where any older document conflicts with this on *characteristic identity, role, candidacy, or lexical generation*, **this document wins.** It does **not** replace the study's foundations (scripture-as-data, the master-index architecture, the dimension catalogue mechanics) — it sits on top of them and makes the cycle unambiguous. Set 2026-07-08.
 >
 > **Amendment 2026-07-08 (same-day completion).** Three sections added to finalise the cycle: **§4A Stage 0 — Passage prerequisite** (no verse read outside a passage; passage driven by the candidate characteristic; whole-book layout precomputed), **§7A DB updates & index maintenance** (the per-verse write ledger; the candidate⇒verse-record integrity invariant; `verse_evidence_index` deprecated for lexicals), and **§7B Transition & changeover** (`role_provenance` two-state model). Resolves the three open decisions in `verse-analysis/_reports/wa-cycle-db-updates-indexes-transition-passage-analysis-20260708.md`: (1) `verse_evidence_index.lexical` = **deprecated/defunct**; (2) read-vs-legacy marked by **`role_provenance = 'read-2026'`**; (3) passage scope = **candidate characteristic**, with candidate-without-verse-record treated as an **integrity violation to repair**, not a scope union. Companion passage rule bumped to `wa-passage-completeness-rule-v2-20260708.md`.
+>
+> ---
+> ## ★ THIS IS THE SINGLE ENTRY POINT — read this before any book work (consolidated 2026-07-11)
+> **One process, one set of tables, one set of validations. Do NOT create parallel scripts or side docs for any part of it.** This doc owns the end-to-end process; four sub-domain docs own their detail and nothing else (no overlap). Everything below is *this* set:
+>
+> | domain | THE authoritative doc | used by |
+> |---|---|---|
+> | **The end-to-end cycle (process)** | **this doc** — Stages 0→3, §7A tables, §7C completion | the whole per-book run |
+> | **Adding/updating a term** (register→extract→audit_word; every field) | `wa-term-add-update-AUTHORITATIVE-pipeline-v1-20260711.md` | §7C(a) verse-record fix / onboarding |
+> | **Passage build** (incl. single-verse passages) | `wa-passage-completeness-rule-v2-20260708.md` | §4A Stage 0 |
+> | **DB integrity — the validations (I1–I11)** | `wa-db-integrity-definition-authoritative-v1-20260711.md` | §7C(d) completion = these checks |
+>
+> **Superseded / do not use as a parallel spec:** `wa-corrected-charac-arc-reread-repeatable-process-v1` (its reading discipline is already §5 here; kept only as worked-example notes), any per-session `_apply_*` one-offs (`_apply_charfix_master`, `_apply_build_ib_char_index`, `_apply_stamp_char_candidate…`) — these are the **implementation** of the steps below, not a second method. If a step is unclear, the answer is in **this doc + its four sub-docs**, never in a new structure.
+>
+> **Amendment 2026-07-11.** Folded in three settled items: **single-verse passages** (§4A / passage-rule-v2 — an isolated char stands as its own passage); the **char-on-master write** (`verse_span_index.characteristic` = the read char in words — §7A row 6, §7C(c)/(d)); and the **`ib_characteristic` normalised index** (one record per characteristic word, every char-span linked via `verse_span_index.ib_char_id` — §7A row 7, new §7D, §7C(d) book-level). Integrity is now the **I1–I11** set in the integrity doc; §7C(d)'s queries are those invariants.
 
 ---
 
@@ -136,6 +151,8 @@ A verse is complete when every real-strong span carries exactly one of the four 
 | 3 | `verse.process_marker` | mark the verse read (completion ledger) | on completion |
 | 4 | `verse_span_index.char_candidate` / `char_candidate_tag` | re-stamp on self-learning (seed change) | Stage 3 feedback (§7) |
 | 5 | `verse.passage_id` / `is_passage_anchor` / `genre` | **prerequisite** — set by Stage 0 *before* the read | Stage 0 (§4A) |
+| 6 | `verse_span_index.characteristic` | write the **read char in words** onto the master (the `ve_nr=101 sense` value) for every `role='characteristic'` span — the char lives on the master, not only in the lexical (integrity I11) | on completion (§7) |
+| 7 | `verse_span_index.ib_char_id` | link every char-span to its normalised `ib_characteristic` record (§7D; integrity I7) | Stage 3, on book close |
 | — | `verse_term_index`, `verse_morphology`, `verse_span_index` *rows* | **not written** — derived from morphology, upstream of this cycle | — |
 
 **The integrity invariant (candidate ⇒ verse-record).** Every `char_candidate = 1` master span **must** resolve to an active `wa_verse_records` (via `verse_span_id`) with its term (`mti_terms`) and links intact. A candidate **without** a verse-record is a **DB integrity violation**, not a coverage gap: **halt the passage, restore the verse-record and all its relations first** (engine onboarding / per-book gate-1 corrective path), then read. This is the invariant Stage 0 (§4A) enforces before passaging.
@@ -184,7 +201,16 @@ Writes: `ve_lexical` — 16-dimension rows (`ve_nr` 101–116) for each characte
 | **passage** | every verse in it is verse-complete; every candidate in it has a verse-record | verse-incomplete count = 0; `char_candidate` without verse-record = 0 |
 | **book** | every candidate-bearing verse is in a passage; every passage complete | `char_candidate=1 AND passage_id IS NULL` = 0; `char_candidate=1 AND` no-verse-record = 0; any candidate-bearing verse holding a `role IS NULL` span = 0 |
 
-Governance: every intervention is backed up and integrity-gated (`_check_integrity_controls --snapshot` pre → apply → post → `--compare`); the **book-level** checks are the changeover **acceptance test** — a book is not marked read until all three of its counts are 0.
+Governance: every intervention is backed up and integrity-gated (`_check_integrity_controls --snapshot` pre → apply → post → `--compare`); the **book-level** checks are the changeover **acceptance test** — a book is not marked read until all its counts are 0.
+
+**The validations are the I1–I11 set** in `wa-db-integrity-definition-authoritative-v1-20260711.md` — that is the *one* validation set; the queries above are those invariants. Book-close must pass **all of I1–I11**, which includes, beyond the verse/passage checks above: **I2** every char-span has a `wa_verse_records`; **I7** every char-span has an `ib_char_id`; **I10** every `role='characteristic'` span has `char_candidate=1`; **I11** every char-span has `verse_span_index.characteristic` populated.
+
+## 7D. STAGE 3 (book close) — the normalised characteristic index (`ib_characteristic`)
+After a book's verses are read and written back, build/refresh the normalised index so the many per-span characteristic instances roll up to the recurring characteristics they belong to:
+- **Grain:** one `ib_characteristic` record per distinct characteristic (lemma-grain: base Strong's), gathering all its char-spans. Columns: `char_key` · `key_word` · `key_span_id` · `operation` · `ledger` (full description, aggregated from the spans' sense/operation) · `instance_count` · `family` (nullable — the later cross-characteristic grouping) · `status` · `provenance` · `book_scope`.
+- **Link:** set `verse_span_index.ib_char_id` on every char-span to its record (integrity **I7**).
+- **Source:** built **from the master + the lexical** (no new reading) — `verse_span_index.characteristic` + `ve_lexical` sense/operation. Legacy pre-read `ib_characteristic` rows are archived to `ib_characteristic_legacy`, not carried.
+- **Runs on every book**, idempotent per `book_scope`.
 
 ## 8. THE WORKLIST — how to scope work per book (critical)
 **The raw "missing lexical" count is NOT the worklist — it massively overstates the work.** Most missing-lexical spans are function words (need nothing) or objects (captured by a characteristic's dimensions). The worklist is defined on **candidates**:
@@ -200,10 +226,11 @@ Drive the per-book pass off these two, **never** off raw span counts.
 - Existing roles/lexicals are the **known-imperfect legacy** (~50% of old roles wrong) — a working surface, overwritten by this cycle's read, never trusted as-is.
 
 ## 10. Data & schema anchors
-- Master: `verse_span_index` — `role` (M64), `char_candidate`/`char_candidate_tag` (M65).
+- Master: `verse_span_index` — `role` (M64), `char_candidate`/`char_candidate_tag` (M65), **`characteristic`** = read char in words + **`ib_char_id`** = link to the normalised index (M66).
 - Per-span lexical: `ve_lexical` (`ve_nr` 101–116; pair columns `from_span/to_span/resolution/pair_kind`).
-- Seed artefacts (`outputs/data/`): `lemma-inventory-master-no-particles-*.json` (the seed), `registry-synonyms-curated-*.json` (the dictionary — reviewable), `ib-judgement-*`.
-- Scripts: `_apply_add_role_to_master_index_*` (role column), `_apply_stamp_char_candidate_on_master_*` (seed → master; idempotent, re-run after any seed change).
+- Normalised index: **`ib_characteristic`** (§7D) — one record per characteristic word; `ib_characteristic_legacy` = archived pre-read rows.
+- Seed artefacts (`outputs/data/`): `lemma-inventory-master-no-particles-*.json` (the seed), `registry-synonyms-curated-*.json` (the dictionary — reviewable), `ib-judgement-*`, `char-seed-extension-read-emergent-*.json` (self-learning feedback record, §7).
+- Master-index → term/verse-record onboarding: see `wa-term-add-update-AUTHORITATIVE-pipeline-v1` (the ONLY way to add/update a term). Retired: `new_word.py` (deleted). Validations: `wa-db-integrity-definition-authoritative-v1` (I1–I11).
 
 ## 11. The non-negotiable rules (the "do-not-mess-up" checklist)
 0. **Screen 0 first (§5): the lens is the HUMAN inner being. God is arena, not subject.** God's own attribute/quality/action → **qualifier** (source/target/quality), never a characteristic. **A qualifier operates ON a characteristic — so a God-qualifier is never standalone; the human IB char it works on must be found (read across the passage).** A verse of pure God-content yields **no** characteristic of its own — do not manufacture one — but its God-span still attaches as a qualifier to the IB char of its passage. Anchor on human IB chars and read each char's **passage** — never a whole chapter or chapter-block.
