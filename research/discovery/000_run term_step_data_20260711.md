@@ -1,4 +1,4 @@
-# Word Study Extract — "read-surfaced characteristics"
+# Word Study Extract — "run term"
 
 Generated: 2026-07-11  |  STEP version: `ESV_th`
 Anchors: H7323G
