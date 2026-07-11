@@ -1,0 +1,555 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "confession-forgiveness"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'confession-forgiveness': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 3,
+   "instances": 3,
+   "passages": 3
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1614": {
+   "passage_ref": "Psa 25:5-22",
+   "verse_refs": [
+    "Psa 25:5",
+    "Psa 25:6",
+    "Psa 25:7",
+    "Psa 25:8",
+    "Psa 25:9",
+    "Psa 25:10",
+    "Psa 25:11",
+    "Psa 25:12",
+    "Psa 25:13",
+    "Psa 25:14",
+    "Psa 25:15",
+    "Psa 25:16",
+    "Psa 25:17",
+    "Psa 25:18",
+    "Psa 25:19",
+    "Psa 25:20",
+    "Psa 25:21",
+    "Psa 25:22"
+   ],
+   "text": "Psa 25:5 Lead me in your truth and teach me, for you are the God of my salvation ; for you I wait all the day long. Psa 25:6 Remember your mercy , O Lord , and your steadfast love , for they have been from of old . Psa 25:7 Remember not the sins of my youth or my transgressions ; according to your steadfast love remember me, for the sake of your goodness , O Lord ! Psa 25:8 Good and upright is the Lord ; therefore he instructs sinners in the way . Psa 25:9 He leads the humble in what is right , and teaches the humble his way . Psa 25:10 All the paths of the Lord are steadfast love and faithfulness , for those who keep his covenant and his testimonies . Psa 25:11 For your name’s sake , O Lord , pardon my guilt , for it is great . Psa 25:12 Who is the man who fears the Lord ? Him will he instruct in the way that he should choose . Psa 25:13 His soul shall abide in well-being , and his offspring shall inherit the land . Psa 25:14 The friendship of the Lord is for those who fear him, and he makes known to them his covenant . Psa 25:15 My eyes are ever toward the Lord , for he will pluck my feet out of the net . Psa 25:16 Turn to me and be gracious to me, for I am lonely and afflicted . Psa 25:17 The troubles of my heart are enlarged ; bring me out of my distresses . Psa 25:18 Consider my affliction and my trouble , and forgive all my sins . Psa 25:19 Consider how many are my foes , and with what violent hatred they hate me . Psa 25:20 Oh, guard my soul , and deliver me! Let me not be put to shame , for I take refuge in you . Psa 25:21 May integrity and uprightness preserve me, for I wait for you ^ . Psa 25:22 Redeem Israel , O God , out of all his troubles ."
+  },
+  "1623": {
+   "passage_ref": "Psa 32:1-11",
+   "verse_refs": [
+    "Psa 32:1",
+    "Psa 32:2",
+    "Psa 32:3",
+    "Psa 32:4",
+    "Psa 32:5",
+    "Psa 32:6",
+    "Psa 32:7",
+    "Psa 32:8",
+    "Psa 32:9",
+    "Psa 32:10",
+    "Psa 32:11"
+   ],
+   "text": "A Maskil of David . Psa 32:1 Blessed is the one whose transgression is forgiven , whose sin is covered . Psa 32:2 Blessed is the man against whom the Lord counts no iniquity , and in whose spirit there is no deceit . Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long. Psa 32:4 For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer . Selah Psa 32:5 I acknowledged my sin to you, and I did not cover my iniquity ; I said , “I will confess my transgressions to the Lord ,” and you forgave the iniquity of my sin . Selah Psa 32:6 Therefore let everyone who is godly offer prayer to you at a time when you may be found ; surely in the rush of great waters , they shall not reach him. Psa 32:7 You are a hiding place for me; you preserve me from trouble ; you surround me with shouts of deliverance . Selah Psa 32:8 I will instruct you and teach you in the way you should go ; I will counsel you with my eye upon you. Psa 32:9 Be not like a horse or a mule , without understanding , which must be curbed with bit and bridle , or it will not stay near you . Psa 32:10 Many are the sorrows of the wicked , but steadfast love surrounds the one who trusts in the Lord . Psa 32:11 Be glad in the Lord , and rejoice , O righteous , and shout for joy , all you upright in heart !"
+  },
+  "1635": {
+   "passage_ref": "Psa 38:1-20",
+   "verse_refs": [
+    "Psa 38:1",
+    "Psa 38:2",
+    "Psa 38:3",
+    "Psa 38:4",
+    "Psa 38:5",
+    "Psa 38:6",
+    "Psa 38:7",
+    "Psa 38:8",
+    "Psa 38:9",
+    "Psa 38:10",
+    "Psa 38:11",
+    "Psa 38:12",
+    "Psa 38:13",
+    "Psa 38:14",
+    "Psa 38:15",
+    "Psa 38:16",
+    "Psa 38:17",
+    "Psa 38:18",
+    "Psa 38:19",
+    "Psa 38:20",
+    "Psa 38:22"
+   ],
+   "text": "A Psalm of David , for the memorial offering . Psa 38:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath ! Psa 38:2 For your arrows have sunk into me, and your hand has come down on me. Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin . Psa 38:4 For my iniquities have gone over my head ; like a heavy burden , they are too heavy for me . Psa 38:5 My wounds stink and fester because of my foolishness , Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning . Psa 38:7 For my sides are filled with burning , and there is no soundness in my flesh . Psa 38:8 I am feeble and crushed ; I groan because of the tumult of my heart . Psa 38:9 O Lord , all my longing is before you; my sighing is not hidden from you. Psa 38:10 My heart throbs ; my strength fails me, and the light of my eyes — it also has gone from me . Psa 38:11 My friends and companions stand aloof from my plague , and my nearest kin stand far off. Psa 38:12 Those who seek my life lay their snares ; those who seek my hurt speak of ruin and meditate treachery all day long. Psa 38:13 But I am like a deaf man; I do not hear , like a mute man who does not open his mouth . Psa 38:14 I have become like a man who does not hear , and in whose mouth are no rebukes . Psa 38:15 But for you, O Lord , do I wait ; it is you, O Lord my God , who will answer . Psa 38:16 For I said , “Only let them not rejoice over me, who boast against me when my foot slips !” Psa 38:17 For I am ready to fall , and my pain is ever before me. Psa 38:18 I confess my iniquity ; I am sorry for my sin . Psa 38:19 But my foes are vigorous , they are mighty , and many are those who hate me wrongfully . Psa 38:20 Those who render me evil for good accuse me because I follow after good . Psa 38:22 Make haste to help me, O Lord, my salvation!"
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H3034:confes",
+   "meaning": "confess",
+   "lemma": "H3034",
+   "cluster": {
+    "code": "M22",
+    "name": "Praise",
+    "all_candidates": "M22(Praise)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'confession-forgiveness' expects cluster M11(Repentance), but the term-cluster is M22(Praise)",
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhi1cs",
+    "esv_words": "confess",
+    "lexical_gloss": "to give thanks",
+    "read_sense_variants": "I confessed and did not cover it"
+   },
+   "instances": [
+    {
+     "span_id": 276927,
+     "reference": "Psa 32:5",
+     "hebrew_surface": "confess",
+     "esv_word": "confess",
+     "morphology": {
+      "morph_code": "HVhi1cs",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "I confessed and did not cover it",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1623,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 32:5 I acknowledged my sin to you, and I did not cover my iniquity ; I said , “I will confess my transgressions to the Lord ,” and you forgave the iniquity of my sin . Selah",
+     "passage_id": 1623,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I confessed and did not cover it",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self acknowledged its sin, did not cover its iniquity, resolved to confess - and God forgave - the decisive turn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "confessing-turn",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "acknowledge-confess",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'I ACKNOWLEDGED my sin to you, and I did not COVER my iniquity... I will CONFESS my transgressions, and you FORGAVE the iniquity of my sin' - the operation is the hinge of the psalm: the interior stops hiding and speaks, and forgiveness follows at once.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276927",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276927",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276927",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5046:confes",
+   "meaning": "confess",
+   "lemma": "H5046",
+   "cluster": {
+    "code": "M42",
+    "name": "Speech",
+    "all_candidates": "M42(Speech)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'confession-forgiveness' expects cluster M11(Repentance), but the term-cluster is M42(Speech)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "confess",
+    "lexical_gloss": "to tell",
+    "read_sense_variants": "I confess my iniquity, I am sorry for my sin"
+   },
+   "instances": [
+    {
+     "span_id": 277935,
+     "reference": "Psa 38:18",
+     "hebrew_surface": "confess",
+     "esv_word": "confess",
+     "morphology": {
+      "morph_code": "HVhi1cs",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "I confess my iniquity, I am sorry for my sin",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1635,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 38:18 I confess my iniquity ; I am sorry for my sin .",
+     "passage_id": 1635,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I confess my iniquity, I am sorry for my sin",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "cognition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self confesses its iniquity and is sorry for its sin - penitence spoken and felt",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "penitence",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "confess-and-sorry",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v18: 'I CONFESS my iniquity; I am SORRY for my sin' - the operation is the penitent turn: the interior names its guilt and grieves it, not merely its consequences.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277935",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277935",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277935",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5545:pardon",
+   "meaning": "pardon",
+   "lemma": "H5545",
+   "cluster": {
+    "code": "M11",
+    "name": "Repentance",
+    "all_candidates": "M11(Repentance)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqq2ms",
+    "esv_words": "pardon",
+    "lexical_gloss": "to forgive",
+    "read_sense_variants": "pardon my guilt, for it is great"
+   },
+   "instances": [
+    {
+     "span_id": 275962,
+     "reference": "Psa 25:11",
+     "hebrew_surface": "pardon",
+     "esv_word": "pardon",
+     "morphology": {
+      "morph_code": "HVqq2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "pardon my guilt, for it is great",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1614,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 25:11 For your name’s sake , O Lord , pardon my guilt , for it is great .",
+     "passage_id": 1614,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pardon my guilt, for it is great",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "cognition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self asks pardon for its guilt, honestly owning that it is great - confession without minimising",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "honest-confession",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "pardon-great-guilt",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'For your name's sake, O LORD, PARDON my GUILT, for it is GREAT' - the operation is unflinching confession: the interior does not shrink the sin but names it great and appeals to God's name.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275962",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275962",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275962",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

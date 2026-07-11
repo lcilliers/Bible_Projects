@@ -1,0 +1,6542 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "deceit-falsehood"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'deceit-falsehood': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 29,
+   "instances": 45,
+   "passages": 31
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1578": {
+   "passage_ref": "Psa 4:7-8",
+   "verse_refs": [
+    "Psa 4:7",
+    "Psa 4:8"
+   ],
+   "text": "Psa 4:7 You have put more joy in my heart than they have when their grain and wine abound . Psa 4:8 In peace I will both lie down and sleep ; for you alone , O Lord , make me dwell in safety ."
+  },
+  "1592": {
+   "passage_ref": "Psa 15:1-5",
+   "verse_refs": [
+    "Psa 15:1",
+    "Psa 15:2",
+    "Psa 15:3",
+    "Psa 15:4",
+    "Psa 15:5"
+   ],
+   "text": "A Psalm of David . Psa 15:1 O Lord , who shall sojourn in your tent ? Who shall dwell on your holy hill ? Psa 15:2 He who walks blamelessly and does what is right and speaks truth in his heart ; Psa 15:3 who does not slander with his tongue and does no evil to his neighbor , nor takes up a reproach against his friend ; Psa 15:4 in whose eyes a vile person is despised , but who honors those who fear the Lord ; who swears to his own hurt and does not change ; Psa 15:5 who does not put out his money at interest and does not take a bribe against the innocent . He who does these things shall never be moved ."
+  },
+  "1632": {
+   "passage_ref": "Psa 36:1-12",
+   "verse_refs": [
+    "Psa 36:1",
+    "Psa 36:2",
+    "Psa 36:3",
+    "Psa 36:4",
+    "Psa 36:5",
+    "Psa 36:6",
+    "Psa 36:7",
+    "Psa 36:8",
+    "Psa 36:9",
+    "Psa 36:10",
+    "Psa 36:11",
+    "Psa 36:12"
+   ],
+   "text": "To the choirmaster . Of David , the servant of the Lord . Psa 36:1 Transgression speaks to the wicked deep in his heart ; there is no fear of God before his eyes . Psa 36:2 For he flatters himself in his own eyes that his iniquity cannot be found out and hated . Psa 36:3 The words of his mouth are trouble and deceit ; he has ceased to act wisely and do good . Psa 36:4 He plots trouble while on his bed ; he sets himself in a way that is not good ; he does not reject evil . Psa 36:5 Your steadfast love , O Lord , extends to the heavens , your faithfulness to the clouds . Psa 36:6 Your righteousness is like the mountains of God ; your judgments are like the great deep ; man and beast you save , O Lord . Psa 36:7 How precious is your steadfast love , O God ! The children of mankind take refuge in the shadow of your wings . Psa 36:8 They feast on the abundance of your house , and you give them drink from the river of your delights . Psa 36:9 For with you is the fountain of life ; in your light do we see light . Psa 36:10 Oh, continue your steadfast love to those who know you, and your righteousness to the upright of heart ! Psa 36:11 Let not the foot of arrogance come upon me, nor the hand of the wicked drive me away. Psa 36:12 There the evildoers lie fallen ; they are thrust down , unable to rise ."
+  },
+  "1640": {
+   "passage_ref": "Psa 43:1-5",
+   "verse_refs": [
+    "Psa 43:1",
+    "Psa 43:2",
+    "Psa 43:3",
+    "Psa 43:4",
+    "Psa 43:5"
+   ],
+   "text": "Psa 43:1 Vindicate me, O God , and defend my cause against an ungodly people , from the deceitful and unjust man deliver me ! Psa 43:2 For you are the God in whom I take refuge ; why have you rejected me? Why do I go about mourning because of the oppression of the enemy ? Psa 43:3 Send out your light and your truth ; let them lead me; let them bring me to your holy hill and to your dwelling ! Psa 43:4 Then I will go to the altar of God , to God my exceeding joy , and I will praise you with the lyre , O God , my God . Psa 43:5 Why are you cast down , O my soul , and why are you in turmoil within me? Hope in God ; for I shall again praise him, my salvation and my God ."
+  },
+  "1643": {
+   "passage_ref": "Psa 44:15-26",
+   "verse_refs": [
+    "Psa 44:15",
+    "Psa 44:16",
+    "Psa 44:17",
+    "Psa 44:18",
+    "Psa 44:19",
+    "Psa 44:20",
+    "Psa 44:21",
+    "Psa 44:22",
+    "Psa 44:23",
+    "Psa 44:24",
+    "Psa 44:25",
+    "Psa 44:26"
+   ],
+   "text": "Psa 44:15 All day long my disgrace is before me, and shame has covered my face Psa 44:16 at the sound of the taunter and reviler , at the sight of the enemy and the avenger . Psa 44:17 All this has come upon us, though we have not forgotten you, and we have not been false to your covenant . Psa 44:18 Our heart has not turned back , nor have our steps departed from your way ; Psa 44:19 yet you have broken us in the place of jackals and covered us with the shadow of death . Psa 44:20 If we had forgotten the name of our God or spread out our hands to a foreign god , Psa 44:21 would not God discover this ? For he knows the secrets of the heart . Psa 44:22 Yet for your sake we are killed all the day long; we are regarded as sheep to be slaughtered . Psa 44:23 Awake ! Why are you sleeping , O Lord ? Rouse yourself! Do not reject us forever ! Psa 44:24 Why do you hide your face ? Why do you forget our affliction and oppression ? Psa 44:25 For our soul is bowed down to the dust ; our belly clings to the ground . Psa 44:26 Rise up ; come to our help ! Redeem us for the sake of your steadfast love !"
+  },
+  "1656": {
+   "passage_ref": "Psa 50:13-23",
+   "verse_refs": [
+    "Psa 50:13",
+    "Psa 50:14",
+    "Psa 50:15",
+    "Psa 50:16",
+    "Psa 50:17",
+    "Psa 50:18",
+    "Psa 50:19",
+    "Psa 50:20",
+    "Psa 50:21",
+    "Psa 50:22",
+    "Psa 50:23"
+   ],
+   "text": "Psa 50:13 Do I eat the flesh of bulls or drink the blood of goats ? Psa 50:14 Offer to God a sacrifice of thanksgiving , and perform your vows to the Most High , Psa 50:15 and call upon me in the day of trouble ; I will deliver you, and you shall glorify me .” Psa 50:16 But to the wicked God says : “ What right have you to recite my statutes or take my covenant on your lips ? Psa 50:17 For you hate discipline , and you cast my words behind you . Psa 50:18 If you see a thief , you are pleased with him, and you keep company with adulterers . Psa 50:19 “You give your mouth free rein for evil , and your tongue frames deceit . Psa 50:20 You sit and speak against your brother ; you slander your own mother’s son . Psa 50:21 These things you have done , and I have been silent ; you thought that I was one like yourself. But now I rebuke you and lay the charge before you. Psa 50:22 “ Mark this , then , you who forget God , lest I tear you apart , and there be none to deliver ! Psa 50:23 The one who offers thanksgiving as his sacrifice glorifies me; to one who orders his way rightly I will show the salvation of God !”"
+  },
+  "1658": {
+   "passage_ref": "Psa 52:1-9",
+   "verse_refs": [
+    "Psa 52:1",
+    "Psa 52:2",
+    "Psa 52:3",
+    "Psa 52:4",
+    "Psa 52:5",
+    "Psa 52:6",
+    "Psa 52:7",
+    "Psa 52:8",
+    "Psa 52:9"
+   ],
+   "text": "To the choirmaster . A Maskil of David , when Doeg , the Edomite , came and told Saul , “ David has come to the house of Ahimelech .” Psa 52:1 Why do you boast of evil , O mighty man ? The steadfast love of God endures all the day . Psa 52:2 Your tongue plots destruction , like a sharp razor , you worker of deceit . Psa 52:3 You love evil more than good , and lying more than speaking what is right . Selah Psa 52:4 You love all words that devour , O deceitful tongue . Psa 52:5 But God will break you down forever ; he will snatch and tear you from your tent ; he will uproot you from the land of the living . Selah Psa 52:6 The righteous shall see and fear , and shall laugh at him, saying, Psa 52:7 “ See the man who would not make God his refuge , but trusted in the abundance of his riches and sought refuge in his own destruction !” Psa 52:8 But I am like a green olive tree in the house of God . I trust in the steadfast love of God forever and ever . Psa 52:9 I will thank you forever , because you have done it. I will wait for your name , for it is good , in the presence of the godly ."
+  },
+  "1662": {
+   "passage_ref": "Psa 55:9-23",
+   "verse_refs": [
+    "Psa 55:8",
+    "Psa 55:9",
+    "Psa 55:10",
+    "Psa 55:11",
+    "Psa 55:12",
+    "Psa 55:13",
+    "Psa 55:14",
+    "Psa 55:15",
+    "Psa 55:16",
+    "Psa 55:17",
+    "Psa 55:18",
+    "Psa 55:19",
+    "Psa 55:20",
+    "Psa 55:21",
+    "Psa 55:22",
+    "Psa 55:23"
+   ],
+   "text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you ."
+  },
+  "1665": {
+   "passage_ref": "Psa 58:1-5",
+   "verse_refs": [
+    "Psa 58:1",
+    "Psa 58:2",
+    "Psa 58:3",
+    "Psa 58:4",
+    "Psa 58:5",
+    "Psa 58:7"
+   ],
+   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David . Psa 58:1 Do you indeed decree what is right , you gods ? Do you judge the children of man uprightly ? Psa 58:2 No , in your hearts you devise wrongs ; your hands deal out violence on earth . Psa 58:3 The wicked are estranged from the womb ; they go astray from birth , speaking lies . Psa 58:4 They have venom like the venom of a serpent , like the deaf adder that stops its ear , Psa 58:5 so that it does not hear the voice of charmers or of the cunning enchanter . Psa 58:7 Let them vanish like water that runs away; when he aims his arrows, let them be blunted."
+  },
+  "1667": {
+   "passage_ref": "Psa 59:1-5",
+   "verse_refs": [
+    "Psa 59:1",
+    "Psa 59:2",
+    "Psa 59:3",
+    "Psa 59:4",
+    "Psa 59:5"
+   ],
+   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah"
+  },
+  "1668": {
+   "passage_ref": "Psa 59:7-13",
+   "verse_refs": [
+    "Psa 59:7",
+    "Psa 59:8",
+    "Psa 59:9",
+    "Psa 59:10",
+    "Psa 59:11",
+    "Psa 59:12",
+    "Psa 59:13"
+   ],
+   "text": "Psa 59:7 There they are , bellowing with their mouths with swords in their lips — for “ Who ,” they think, “will hear us?” Psa 59:8 But you , O Lord , laugh at them; you hold all the nations in derision . Psa 59:9 O my Strength , I will watch for you, for you, O God , are my fortress . Psa 59:10 My God in his steadfast love will meet me; God will let me look in triumph on my enemies . Psa 59:11 Kill them not , lest my people forget ; make them totter by your power and bring them down , O Lord , our shield ! Psa 59:12 For the sin of their mouths , the words of their lips , let them be trapped in their pride . For the cursing and lies that they utter , Psa 59:13 consume them in wrath ; consume them till they are no more , that they may know that God rules over Jacob to the ends of the earth . Selah"
+  },
+  "1675": {
+   "passage_ref": "Psa 62:4-12",
+   "verse_refs": [
+    "Psa 62:4",
+    "Psa 62:5",
+    "Psa 62:6",
+    "Psa 62:7",
+    "Psa 62:8",
+    "Psa 62:9",
+    "Psa 62:10",
+    "Psa 62:11",
+    "Psa 62:12"
+   ],
+   "text": "Psa 62:4 They only plan to thrust him down from his high position . They take pleasure in falsehood . They bless with their mouths , but inwardly they curse . Selah Psa 62:5 For God alone , O my soul , wait in silence , for my hope is from him. Psa 62:6 He only is my rock and my salvation , my fortress ; I shall not be shaken . Psa 62:7 On God rests my salvation and my glory ; my mighty rock , my refuge is God . Psa 62:8 Trust in him at all times , O people ; pour out your heart before him; God is a refuge for us. Selah Psa 62:9 Those of low estate are but a breath ; those of high estate are a delusion ; in the balances they go up ; they are together lighter than a breath . Psa 62:10 Put no trust in extortion ; set no vain hopes on robbery ; if riches increase , set not your heart on them. Psa 62:11 Once God has spoken ; twice have I heard this : that power belongs to God , Psa 62:12 and that to you, O Lord , belongs steadfast love . For you will render to a man according to his work ."
+  },
+  "1688": {
+   "passage_ref": "Psa 69:3-7",
+   "verse_refs": [
+    "Psa 69:1",
+    "Psa 69:3",
+    "Psa 69:4",
+    "Psa 69:5",
+    "Psa 69:6",
+    "Psa 69:7"
+   ],
+   "text": "To the choirmaster : according to Lilies . Of David . Psa 69:1 Save me, O God ! For the waters have come up to my neck . Psa 69:3 I am weary with my crying out ; my throat is parched . My eyes grow dim with waiting for my God . Psa 69:4 More in number than the hairs of my head are those who hate me without cause ; mighty are those who would destroy me, those who attack me with lies . What I did not steal must I now restore ? Psa 69:5 O God , you know my folly ; the wrongs I have done are not hidden from you. Psa 69:6 Let not those who hope in you be put to shame through me, O Lord God of hosts ; let not those who seek you be brought to dishonor through me, O God of Israel . Psa 69:7 For it is for your sake that I have borne reproach , that dishonor has covered my face ."
+  },
+  "1702": {
+   "passage_ref": "Psa 73:15-18",
+   "verse_refs": [
+    "Psa 73:15",
+    "Psa 73:16",
+    "Psa 73:17",
+    "Psa 73:18",
+    "Psa 73:19"
+   ],
+   "text": "Psa 73:15 If I had said , “I will speak thus ,” I would have betrayed the generation of your children . Psa 73:16 But when I thought how to understand this , it seemed to me a wearisome task, Psa 73:17 until I went into the sanctuary of God ; then I discerned their end . Psa 73:18 Truly you set them in slippery places ; you make them fall to ruin . Psa 73:19 How they are destroyed in a moment, swept away utterly by terrors!"
+  },
+  "1718": {
+   "passage_ref": "Psa 78:29-35",
+   "verse_refs": [
+    "Psa 78:29",
+    "Psa 78:30",
+    "Psa 78:31",
+    "Psa 78:32",
+    "Psa 78:33",
+    "Psa 78:34",
+    "Psa 78:35",
+    "Psa 78:36"
+   ],
+   "text": "Psa 78:29 And they ate and were well filled , for he gave them what they craved . Psa 78:30 But before they had satisfied their craving , while the food was still in their mouths , Psa 78:31 the anger of God rose against them, and he killed the strongest of them and laid low the young men of Israel . Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe . Psa 78:33 So he made their days vanish like a breath , and their years in terror . Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly. Psa 78:35 They remembered that God was their rock , the Most High God their redeemer . Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues."
+  },
+  "1720": {
+   "passage_ref": "Psa 78:48-59",
+   "verse_refs": [
+    "Psa 78:48",
+    "Psa 78:49",
+    "Psa 78:50",
+    "Psa 78:51",
+    "Psa 78:52",
+    "Psa 78:53",
+    "Psa 78:54",
+    "Psa 78:55",
+    "Psa 78:56",
+    "Psa 78:57",
+    "Psa 78:58",
+    "Psa 78:59"
+   ],
+   "text": "Psa 78:48 He gave over their cattle to the hail and their flocks to thunderbolts . Psa 78:49 He let loose on them his burning anger , wrath , indignation , and distress , a company of destroying angels . Psa 78:50 He made a path for his anger ; he did not spare them from death , but gave their lives over to the plague . Psa 78:51 He struck down every firstborn in Egypt , the firstfruits of their strength in the tents of Ham . Psa 78:52 Then he led out his people like sheep and guided them in the wilderness like a flock . Psa 78:53 He led them in safety , so that they were not afraid , but the sea overwhelmed their enemies . Psa 78:54 And he brought them to his holy land , to the mountain which his right hand had won . Psa 78:55 He drove out nations before them; he apportioned them for a possession and settled the tribes of Israel in their tents . Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies , Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow . Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols . Psa 78:59 When God heard , he was full of wrath, and he utterly rejected Israel ."
+  },
+  "1733": {
+   "passage_ref": "Psa 81:14-16",
+   "verse_refs": [
+    "Psa 81:14",
+    "Psa 81:15",
+    "Psa 81:16"
+   ],
+   "text": "Psa 81:14 I would soon subdue their enemies and turn my hand against their foes . Psa 81:15 Those who hate the Lord would cringe toward him, and their fate would last forever . Psa 81:16 But he would feed you with the finest of the wheat , and with honey from the rock I would satisfy you .”"
+  },
+  "1747": {
+   "passage_ref": "Psa 89:28-52",
+   "verse_refs": [
+    "Psa 89:28",
+    "Psa 89:29",
+    "Psa 89:30",
+    "Psa 89:31",
+    "Psa 89:32",
+    "Psa 89:33",
+    "Psa 89:34",
+    "Psa 89:35",
+    "Psa 89:36",
+    "Psa 89:37",
+    "Psa 89:38",
+    "Psa 89:39",
+    "Psa 89:40",
+    "Psa 89:41",
+    "Psa 89:42",
+    "Psa 89:43",
+    "Psa 89:44",
+    "Psa 89:45",
+    "Psa 89:46",
+    "Psa 89:47",
+    "Psa 89:48",
+    "Psa 89:49",
+    "Psa 89:50",
+    "Psa 89:51",
+    "Psa 89:52"
+   ],
+   "text": "Psa 89:28 My steadfast love I will keep for him forever , and my covenant will stand firm for him . Psa 89:29 I will establish his offspring forever and his throne as the days of the heavens . Psa 89:30 If his children forsake my law and do not walk according to my rules , Psa 89:31 if they violate my statutes and do not keep my commandments , Psa 89:32 then I will punish their transgression with the rod and their iniquity with stripes , Psa 89:33 but I will not remove from him my steadfast love or be false to my faithfulness . Psa 89:34 I will not violate my covenant or alter the word that went forth from my lips . Psa 89:35 Once for all I have sworn by my holiness ; I will not lie to David . Psa 89:36 His offspring shall endure forever , his throne as long as the sun before me . Psa 89:37 Like the moon it shall be established forever , a faithful witness in the skies .” Selah Psa 89:38 But now you have cast off and rejected ; you are full of wrath against your anointed . Psa 89:39 You have renounced the covenant with your servant ; you have defiled his crown in the dust . Psa 89:40 You have breached all his walls ; you have laid his strongholds in ruins . Psa 89:41 All who pass by plunder him; he has become the scorn of his neighbors . Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice . Psa 89:43 You have also turned back the edge of his sword , and you have not made him stand in battle . Psa 89:44 You have made his splendor to cease and cast his throne to the ground . Psa 89:45 You have cut short the days of his youth ; you have covered him with shame . Selah Psa 89:46 How long, O Lord ? Will you hide yourself forever ? How long will your wrath burn like fire ? Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man ! Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah Psa 89:49 Lord , where is your steadfast love of old , which by your faithfulness you swore to David ? Psa 89:50 Remember , O Lord , how your servants are mocked , and how I bear in my heart the insults of all the many nations , Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed . Psa 89:52 Blessed be the Lord forever ! Amen and Amen . Book Four"
+  },
+  "1768": {
+   "passage_ref": "Psa 101:1-8",
+   "verse_refs": [
+    "Psa 101:1",
+    "Psa 101:2",
+    "Psa 101:3",
+    "Psa 101:4",
+    "Psa 101:5",
+    "Psa 101:6",
+    "Psa 101:7",
+    "Psa 101:8"
+   ],
+   "text": "A Psalm of David . Psa 101:1 I will sing of steadfast love and justice ; to you, O Lord , I will make music . Psa 101:2 I will ponder the way that is blameless . Oh when will you come to me? I will walk with integrity of heart within my house ; Psa 101:3 I will not set before my eyes anything that is worthless . I hate the work of those who fall away ; it shall not cling to me . Psa 101:4 A perverse heart shall be far from me; I will know nothing of evil . Psa 101:5 Whoever slanders his neighbor secretly I will destroy . Whoever has a haughty look and an arrogant heart I will not endure . Psa 101:6 I will look with favor on the faithful in the land , that they may dwell with me; he who walks in the way that is blameless shall minister to me . Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes . Psa 101:8 Morning by morning I will destroy all the wicked in the land , cutting off all the evildoers from the city of the Lord ."
+  },
+  "1799": {
+   "passage_ref": "Psa 108:11-13",
+   "verse_refs": [
+    "Psa 108:11",
+    "Psa 108:12",
+    "Psa 108:13"
+   ],
+   "text": "Psa 108:11 Have you not rejected us, O God ? You do not go out , O God , with our armies . Psa 108:12 Oh grant us help against the foe , for vain is the salvation of man ! Psa 108:13 With God we shall do valiantly ; it is he who will tread down our foes ."
+  },
+  "1800": {
+   "passage_ref": "Psa 109:1-8",
+   "verse_refs": [
+    "Psa 109:1",
+    "Psa 109:2",
+    "Psa 109:3",
+    "Psa 109:4",
+    "Psa 109:5",
+    "Psa 109:6",
+    "Psa 109:7",
+    "Psa 109:8",
+    "Psa 109:9",
+    "Psa 109:10",
+    "Psa 109:12",
+    "Psa 109:13"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 109:1 Be not silent , O God of my praise ! Psa 109:2 For wicked and deceitful mouths are opened against me, speaking against me with lying tongues . Psa 109:3 They encircle me with words of hate , and attack me without cause . Psa 109:4 In return for my love they accuse me, but I give myself to prayer . Psa 109:5 So they reward me evil for good , and hatred for my love . Psa 109:6 Appoint a wicked man against him; let an accuser stand at his right hand . Psa 109:7 When he is tried , let him come forth guilty ; let his prayer be counted as sin ! Psa 109:8 May his days be few ; may another take his office ! Psa 109:9 May his children be fatherless and his wife a widow! Psa 109:10 May his children wander about and beg , seeking food far from the ruins they inhabit ! Psa 109:12 Let there be none to extend kindness to him, nor any to pity his fatherless children ! Psa 109:13 May his posterity be cut off; may his name be blotted out in the second generation!"
+  },
+  "1812": {
+   "passage_ref": "Psa 116:1-10",
+   "verse_refs": [
+    "Psa 116:1",
+    "Psa 116:2",
+    "Psa 116:3",
+    "Psa 116:4",
+    "Psa 116:5",
+    "Psa 116:6",
+    "Psa 116:7",
+    "Psa 116:8",
+    "Psa 116:9",
+    "Psa 116:10",
+    "Psa 116:11"
+   ],
+   "text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”"
+  },
+  "1822": {
+   "passage_ref": "Psa 119:27-32",
+   "verse_refs": [
+    "Psa 119:27",
+    "Psa 119:28",
+    "Psa 119:29",
+    "Psa 119:30",
+    "Psa 119:31",
+    "Psa 119:32"
+   ],
+   "text": "Psa 119:27 Make me understand the way of your precepts , and I will meditate on your wondrous works . Psa 119:28 My soul melts away for sorrow ; strengthen me according to your word ! Psa 119:29 Put false ways far from me and graciously teach me your law ! Psa 119:30 I have chosen the way of faithfulness ; I set your rules before me. Psa 119:31 I cling to your testimonies , O Lord ; let me not be put to shame ! Psa 119:32 I will run in the way of your commandments when you enlarge my heart !"
+  },
+  "1825": {
+   "passage_ref": "Psa 119:66-82",
+   "verse_refs": [
+    "Psa 119:65",
+    "Psa 119:66",
+    "Psa 119:67",
+    "Psa 119:68",
+    "Psa 119:69",
+    "Psa 119:70",
+    "Psa 119:71",
+    "Psa 119:72",
+    "Psa 119:73",
+    "Psa 119:74",
+    "Psa 119:75",
+    "Psa 119:76",
+    "Psa 119:77",
+    "Psa 119:78",
+    "Psa 119:79",
+    "Psa 119:80",
+    "Psa 119:81",
+    "Psa 119:82",
+    "Psa 119:83"
+   ],
+   "text": "Psa 119:65 TethYou have dealt well with your servant, O Lord, according to your word. Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments . Psa 119:67 Before I was afflicted I went astray , but now I keep your word . Psa 119:68 You are good and do good ; teach me your statutes . Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ; Psa 119:70 their heart is unfeeling like fat , but I delight in your law . Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes . Psa 119:72 The law of your mouth is better to me than thousands of gold and silver pieces. Yodh Psa 119:73 Your hands have made and fashioned me; give me understanding that I may learn your commandments . Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word . Psa 119:75 I know , O Lord , that your rules are righteous , and that in faithfulness you have afflicted me . Psa 119:76 Let your steadfast love comfort me according to your promise to your servant . Psa 119:77 Let your mercy come to me, that I may live ; for your law is my delight . Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts . Psa 119:79 Let those who fear you turn to me, that they may know your testimonies . Psa 119:80 May my heart be blameless in your statutes , that I may not be put to shame ! Kaph Psa 119:81 My soul longs for your salvation ; I hope in your word . Psa 119:82 My eyes long for your promise ; I ask , “ When will you comfort me ?” Psa 119:83 For I have become like a wineskin in the smoke, yet I have not forgotten your statutes."
+  },
+  "1826": {
+   "passage_ref": "Psa 119:84-102",
+   "verse_refs": [
+    "Psa 119:84",
+    "Psa 119:85",
+    "Psa 119:86",
+    "Psa 119:87",
+    "Psa 119:88",
+    "Psa 119:89",
+    "Psa 119:90",
+    "Psa 119:91",
+    "Psa 119:92",
+    "Psa 119:93",
+    "Psa 119:94",
+    "Psa 119:95",
+    "Psa 119:96",
+    "Psa 119:97",
+    "Psa 119:98",
+    "Psa 119:99",
+    "Psa 119:100",
+    "Psa 119:101",
+    "Psa 119:102"
+   ],
+   "text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me ."
+  },
+  "1827": {
+   "passage_ref": "Psa 119:104-116",
+   "verse_refs": [
+    "Psa 119:104",
+    "Psa 119:105",
+    "Psa 119:106",
+    "Psa 119:107",
+    "Psa 119:108",
+    "Psa 119:109",
+    "Psa 119:110",
+    "Psa 119:111",
+    "Psa 119:112",
+    "Psa 119:113",
+    "Psa 119:114",
+    "Psa 119:115",
+    "Psa 119:116",
+    "Psa 119:117"
+   ],
+   "text": "Psa 119:104 Through your precepts I get understanding ; therefore I hate every false way . Nun Psa 119:105 Your word is a lamp to my feet and a light to my path . Psa 119:106 I have sworn an oath and confirmed it, to keep your righteous rules . Psa 119:107 I am severely afflicted ; give me life , O Lord , according to your word ! Psa 119:108 Accept my freewill offerings of praise , O Lord , and teach me your rules . Psa 119:109 I hold my life in my hand continually , but I do not forget your law . Psa 119:110 The wicked have laid a snare for me, but I do not stray from your precepts . Psa 119:111 Your testimonies are my heritage forever , for they are the joy of my heart . Psa 119:112 I incline my heart to perform your statutes forever , to the end . Samekh Psa 119:113 I hate the double-minded , but I love your law . Psa 119:114 You are my hiding place and my shield ; I hope in your word . Psa 119:115 Depart from me, you evildoers , that I may keep the commandments of my God . Psa 119:116 Uphold me according to your promise , that I may live , and let me not be put to shame in my hope ! Psa 119:117 Hold me up, that I may be safe and have regard for your statutes continually!"
+  },
+  "1828": {
+   "passage_ref": "Psa 119:118-123",
+   "verse_refs": [
+    "Psa 119:118",
+    "Psa 119:119",
+    "Psa 119:120",
+    "Psa 119:121",
+    "Psa 119:122",
+    "Psa 119:123",
+    "Psa 119:124",
+    "Psa 119:125"
+   ],
+   "text": "Psa 119:118 You spurn all who go astray from your statutes , for their cunning is in vain . Psa 119:119 All the wicked of the earth you discard like dross , therefore I love your testimonies . Psa 119:120 My flesh trembles for fear of you, and I am afraid of your judgments . Ayin Psa 119:121 I have done what is just and right ; do not leave me to my oppressors . Psa 119:122 Give your servant a pledge of good ; let not the insolent oppress me. Psa 119:123 My eyes long for your salvation and for the fulfillment of your righteous promise. Psa 119:124 Deal with your servant according to your steadfast love, and teach me your statutes. Psa 119:125 I am your servant ; give me understanding , that I may know your testimonies !"
+  },
+  "1829": {
+   "passage_ref": "Psa 119:128-134",
+   "verse_refs": [
+    "Psa 119:127",
+    "Psa 119:128",
+    "Psa 119:129",
+    "Psa 119:130",
+    "Psa 119:131",
+    "Psa 119:132",
+    "Psa 119:133",
+    "Psa 119:134"
+   ],
+   "text": "Psa 119:127 Therefore I love your commandments above gold, above fine gold. Psa 119:128 Therefore I consider all your precepts to be right ; I hate every false way . Pe Psa 119:129 Your testimonies are wonderful ; therefore my soul keeps them. Psa 119:130 The unfolding of your words gives light ; it imparts understanding to the simple . Psa 119:131 I open my mouth and pant , because I long for your commandments . Psa 119:132 Turn to me and be gracious to me, as is your way with those who love your name . Psa 119:133 Keep steady my steps according to your promise , and let no iniquity get dominion over me. Psa 119:134 Redeem me from man’s oppression , that I may keep your precepts ."
+  },
+  "1831": {
+   "passage_ref": "Psa 119:151-176",
+   "verse_refs": [
+    "Psa 119:151",
+    "Psa 119:152",
+    "Psa 119:153",
+    "Psa 119:154",
+    "Psa 119:155",
+    "Psa 119:156",
+    "Psa 119:157",
+    "Psa 119:158",
+    "Psa 119:159",
+    "Psa 119:160",
+    "Psa 119:161",
+    "Psa 119:162",
+    "Psa 119:163",
+    "Psa 119:164",
+    "Psa 119:165",
+    "Psa 119:166",
+    "Psa 119:167",
+    "Psa 119:168",
+    "Psa 119:169",
+    "Psa 119:170",
+    "Psa 119:171",
+    "Psa 119:172",
+    "Psa 119:173",
+    "Psa 119:174",
+    "Psa 119:175",
+    "Psa 119:176"
+   ],
+   "text": "Psa 119:151 But you are near , O Lord , and all your commandments are true . Psa 119:152 Long have I known from your testimonies that you have founded them forever . Resh Psa 119:153 Look on my affliction and deliver me, for I do not forget your law . Psa 119:154 Plead my cause and redeem me; give me life according to your promise ! Psa 119:155 Salvation is far from the wicked , for they do not seek your statutes . Psa 119:156 Great is your mercy , O Lord ; give me life according to your rules . Psa 119:157 Many are my persecutors and my adversaries , but I do not swerve from your testimonies . Psa 119:158 I look at the faithless with disgust , because they do not keep your commands . Psa 119:159 Consider how I love your precepts ! Give me life , O Lord , according to your steadfast love . Psa 119:160 The sum of your word is truth , and every one of your righteous rules endures forever . Sin and Shin Psa 119:161 Princes persecute me without cause , but my heart stands in awe of your words . Psa 119:162 I rejoice at your word like one who finds great spoil . Psa 119:163 I hate and abhor falsehood , but I love your law . Psa 119:164 Seven times a day I praise you for your righteous rules . Psa 119:165 Great peace have those who love your law ; nothing can make them stumble . Psa 119:166 I hope for your salvation , O Lord , and I do your commandments . Psa 119:167 My soul keeps your testimonies ; I love them exceedingly . Psa 119:168 I keep your precepts and testimonies , for all my ways are before you . Taw Psa 119:169 Let my cry come before you, O Lord ; give me understanding according to your word ! Psa 119:170 Let my plea come before you; deliver me according to your word . Psa 119:171 My lips will pour forth praise , for you teach me your statutes . Psa 119:172 My tongue will sing of your word , for all your commandments are right . Psa 119:173 Let your hand be ready to help me, for I have chosen your precepts . Psa 119:174 I long for your salvation , O Lord , and your law is my delight . Psa 119:175 Let my soul live and praise you, and let your rules help me . Psa 119:176 I have gone astray like a lost sheep ; seek your servant , for I do not forget your commandments ."
+  },
+  "1832": {
+   "passage_ref": "Psa 120:1-3",
+   "verse_refs": [
+    "Psa 120:1",
+    "Psa 120:2",
+    "Psa 120:3"
+   ],
+   "text": "A Song of Ascents . Psa 120:1 In my distress I called to the Lord , and he answered me . Psa 120:2 Deliver me , O Lord , from lying lips , from a deceitful tongue . Psa 120:3 What shall be given to you, and what more shall be done to you, you deceitful tongue ?"
+  },
+  "1842": {
+   "passage_ref": "Psa 127:1-3",
+   "verse_refs": [
+    "Psa 127:1",
+    "Psa 127:2",
+    "Psa 127:3",
+    "Psa 127:5"
+   ],
+   "text": "A Song of Ascents . Of Solomon . Psa 127:1 Unless the Lord builds the house , those who build it labor in vain . Unless the Lord watches over the city , the watchman stays awake in vain . Psa 127:2 It is in vain that you rise up early and go late to rest, eating the bread of anxious toil; for he gives to his beloved sleep . Psa 127:3 Behold , children are a heritage from the Lord , the fruit of the womb a reward . Psa 127:5 Blessed is the man who fills his quiver with them! He shall not be put to shame when he speaks with his enemies in the gate ."
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H7723:vain",
+   "meaning": "vain",
+   "lemma": "H7723",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 4,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa, HNcmsa HC",
+    "esv_words": "vain",
+    "lexical_gloss": "vanity: false",
+    "read_sense_variants": "vain (shav)"
+   },
+   "instances": [
+    {
+     "span_id": 270096,
+     "reference": "Psa 108:12",
+     "hebrew_surface": "vain",
+     "esv_word": "vain",
+     "morphology": {
+      "morph_code": "HNcmsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "vain (shav)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1799,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 108:12 Oh grant us help against the foe , for vain is the salvation of man !",
+     "passage_id": 1799,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "vain (shav)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "reckon human help vain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God's",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'for VAIN (shav) is the salvation of man' - the reckoning that human help is worthless, confidence turned from man to God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with doing valiantly through God",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270096",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270096",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270096",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272606,
+     "reference": "Psa 127:1",
+     "hebrew_surface": "vain",
+     "esv_word": "vain",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "vain (shav)",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1842,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "A Song of Ascents . Of Solomon . Psa 127:1 Unless the Lord builds the house , those who build it labor in vain . Unless the Lord watches over the city , the watchman stays awake in vain .",
+     "passage_id": 1842,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "vain (shav)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the builders",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "labour in vain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "without God's building",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'Unless the LORD builds the house, those who build it labour in VAIN (shav)' - the operation of futility: human building without God is effort spent on nothing, the work undone before it stands.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the watchman's vain vigil",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272606",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272606",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272606",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272613,
+     "reference": "Psa 127:1",
+     "hebrew_surface": "vain",
+     "esv_word": null,
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "vain (shav)",
+     "position": {
+      "word_index": 16,
+      "passage_id": 1842,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "A Song of Ascents . Of Solomon . Psa 127:1 Unless the Lord builds the house , those who build it labor in vain . Unless the Lord watches over the city , the watchman stays awake in vain .",
+     "passage_id": 1842,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "vain (shav)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the watchman",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "keep watch in vain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "without God's keeping",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'Unless the LORD watches over the city, the watchman stays awake in VAIN (shav)' - the futility of the vigil: the guard's wakefulness is useless if God does not keep the city.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the builders' vain toil",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272613",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272613",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272613",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272614,
+     "reference": "Psa 127:2",
+     "hebrew_surface": "vain",
+     "esv_word": "vain",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "vain (shav)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1842,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 127:2 It is in vain that you rise up early and go late to rest, eating the bread of anxious toil; for he gives to his beloved sleep .",
+     "passage_id": 1842,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "vain (shav)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the toiler",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "toil anxiously in vain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from dawn to dark",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'It is in VAIN (shav) that you rise up early and go late to rest' - the futility of frantic self-effort: the anxious lengthening of the workday earns nothing that God does not give.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the anxious bread and God's gift of sleep",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272614",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272614",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272614",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4820:deceitful",
+   "meaning": "deceitful",
+   "lemma": "H4820",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "deceitful",
+    "lexical_gloss": "deceit",
+    "read_sense_variants": "deceit / treachery (mirmah - the deceitful man) | deceit / treachery (mirmah - deceitful tongue) | deceitful (mirmah)"
+   },
+   "instances": [
+    {
+     "span_id": 270230,
+     "reference": "Psa 109:2",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa HNcmsc HC",
+      "stem": ""
+     },
+     "read_characteristic": "deceitful (mirmah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1800,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:2 For wicked and deceitful mouths are opened against me, speaking against me with lying tongues .",
+     "passage_id": 1800,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceitful (mirmah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be deceitful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in speech",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'wicked and DECEITFUL (mirmah) mouths are opened against me' - the treachery of the enemies' speech.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the wicked and lying mouths",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270230",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270230",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270230",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 278631,
+     "reference": "Psa 43:1",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceit / treachery (mirmah - the deceitful man)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1640,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 43:1 Vindicate me, O God , and defend my cause against an ungodly people , from the deceitful and unjust man deliver me !",
+     "passage_id": 1640,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceit / treachery (mirmah - the deceitful man)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the deceitful man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the unjust man",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'from the DECEITFUL (mirmah) and unjust man deliver me!' — the foe defined by his inner treachery; mirmah (recurs Ps24,41) the guile of the ungodly man from whom David begs deliverance",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278631",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "278631",
+       "to_span": "278632",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 279825,
+     "reference": "Psa 52:4",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceit / treachery (mirmah - deceitful tongue)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1658,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 52:4 You love all words that devour , O deceitful tongue .",
+     "passage_id": 1658,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceit / treachery (mirmah - deceitful tongue)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the tongue",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the tyrant",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the deceit worked in v2 (remiyyah)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'O DECEITFUL (mirmah) tongue' — the character of the organ that plots and devours; mirmah (deceit/fraud) naming the tongue itself — the whole man summed in his lying speech, the deceit worked (v2) now his very name",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279825",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279825",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279825",
+       "to_span": "279811",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7423:deceitful",
+   "meaning": "deceitful",
+   "lemma": "H7423",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "deceitful",
+    "lexical_gloss": "deceit; slackness",
+    "read_sense_variants": "deceitful (remiyah) | be deceitful (remiyah)"
+   },
+   "instances": [
+    {
+     "span_id": 272308,
+     "reference": "Psa 120:2",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceitful (remiyah)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1832,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 120:2 Deliver me , O Lord , from lying lips , from a deceitful tongue .",
+     "passage_id": 1832,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceitful (remiyah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "with the tongue",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'from a DECEITFUL (remiyah) tongue' - the treacherous speech the psalmist would be freed from.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the lying lips",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272308",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272308",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272308",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272314,
+     "reference": "Psa 120:3",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceitful (remiyah)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1832,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 120:3 What shall be given to you, and what more shall be done to you, you deceitful tongue ?",
+     "passage_id": 1832,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceitful (remiyah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the deceitful tongue",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'What shall be done to you, you DECEITFUL (remiyah) tongue?' - the treacherous tongue addressed, its recompense weighed.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the judgment it invites",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272314",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272314",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272314",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283335,
+     "reference": "Psa 78:57",
+     "hebrew_surface": "deceitful",
+     "esv_word": "deceitful",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "be deceitful (remiyah)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1720,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow .",
+     "passage_id": 1720,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be deceitful (remiyah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "prove false",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "like a slack bow",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the treachery",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they twisted like a DECEITFUL (remiyah) bow' - treachery imaged as a warped bow that fails its aim.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283335",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283335",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283335",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8267:fals",
+   "meaning": "false",
+   "lemma": "H8267",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "false",
+    "lexical_gloss": "deception",
+    "read_sense_variants": "falsehood / false way (sheqer)"
+   },
+   "instances": [
+    {
+     "span_id": 271239,
+     "reference": "Psa 119:104",
+     "hebrew_surface": "false",
+     "esv_word": "false",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1827,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:104 Through your precepts I get understanding ; therefore I hate every false way .",
+     "passage_id": 1827,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v104: 'Through your precepts I get understanding; therefore I hate every FALSE way' - the false way hated as the fruit of understanding.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271239",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271239",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271239",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 271379,
+     "reference": "Psa 119:128",
+     "hebrew_surface": "false",
+     "esv_word": "false",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1829,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:128 Therefore I consider all your precepts to be right ; I hate every false way .",
+     "passage_id": 1829,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v128: 'I consider all your precepts to be right; I hate every FALSE way' - the false way hated as the counterpart to esteeming the precepts.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271379",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271379",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271379",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 271765,
+     "reference": "Psa 119:29",
+     "hebrew_surface": "false",
+     "esv_word": "false",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1822,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:29 Put false ways far from me and graciously teach me your law !",
+     "passage_id": 1822,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v29: 'Put FALSE ways far from me and graciously teach me your law!' - the false way the psalmist begs God to remove.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271765",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271765",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271765",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8267:falsehood",
+   "meaning": "falsehood",
+   "lemma": "H8267",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "falsehood",
+    "lexical_gloss": "deception",
+    "read_sense_variants": "falsehood / false way (sheqer)"
+   },
+   "instances": [
+    {
+     "span_id": 271609,
+     "reference": "Psa 119:163",
+     "hebrew_surface": "falsehood",
+     "esv_word": "falsehood",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1831,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:163 I hate and abhor falsehood , but I love your law .",
+     "passage_id": 1831,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v163: 'I hate and abhor FALSEHOOD, but I love your law' - falsehood abhorred, set against love of the law.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271609",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271609",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271609",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272084,
+     "reference": "Psa 119:78",
+     "hebrew_surface": "falsehood",
+     "esv_word": "falsehood",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1825,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts .",
+     "passage_id": 1825,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v78: 'Let the insolent be put to shame, because they have wronged me with FALSEHOOD' - the lie by which the foes wronged him.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272084",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272084",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272084",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272135,
+     "reference": "Psa 119:86",
+     "hebrew_surface": "falsehood",
+     "esv_word": "falsehood",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1826,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me !",
+     "passage_id": 1826,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v86: 'All your commandments are sure; they persecute me with FALSEHOOD; help me!' - the lying persecution against which he cries for help.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272135",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272135",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272135",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8267:lie",
+   "meaning": "lies",
+   "lemma": "H8267",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmpa, HNcmsa",
+    "esv_words": "lies",
+    "lexical_gloss": "deception",
+    "read_sense_variants": "lies / falsehood (sheqer - those who attack me with lies) | lies (sheqer) | falsehood / false way (sheqer)"
+   },
+   "instances": [
+    {
+     "span_id": 268873,
+     "reference": "Psa 101:7",
+     "hebrew_surface": "lies",
+     "esv_word": "lies",
+     "morphology": {
+      "morph_code": "HNcmpa",
+      "stem": ""
+     },
+     "read_characteristic": "lies (sheqer)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1768,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes .",
+     "passage_id": 1768,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lies (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the liar",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "utter lies",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before the king",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'no one who utters LIES (sheqer) shall continue before my eyes' - the falsehood the king will not let stand.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the deceit expelled",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268873",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268873",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268873",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272012,
+     "reference": "Psa 119:69",
+     "hebrew_surface": "lies",
+     "esv_word": "lies",
+     "morphology": {
+      "morph_code": "HNcmsa HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1825,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ;",
+     "passage_id": 1825,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v69: 'The insolent smear me with lies (FALSEHOOD), but with my whole heart I keep your precepts' - the slander of the proud.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272012",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272012",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272012",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 281869,
+     "reference": "Psa 69:4",
+     "hebrew_surface": "lies",
+     "esv_word": "lies",
+     "morphology": {
+      "morph_code": "HNcmsa HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "lies / falsehood (sheqer - those who attack me with lies)",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1688,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 69:4 More in number than the hairs of my head are those who hate me without cause ; mighty are those who would destroy me, those who attack me with lies . What I did not steal must I now restore ?",
+     "passage_id": 1688,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lies / falsehood (sheqer - those who attack me with lies)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "attack with",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the causeless hatred",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'mighty are those who would destroy me, those who attack me with LIES (sheqer)' — false accusation as the enemies' weapon; sheqer here the lies with which the mighty foes assail him, demanding he restore what he never stole (v4) — falsehood pressed as if it were justice",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281869",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281869",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281869",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281869",
+       "to_span": "281864",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8267:lying",
+   "meaning": "lying",
+   "lemma": "H8267",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "lying",
+    "lexical_gloss": "deception",
+    "read_sense_variants": "lying (sheqer) | lying / falsehood (sheqer - lying more than speaking right)"
+   },
+   "instances": [
+    {
+     "span_id": 270235,
+     "reference": "Psa 109:2",
+     "hebrew_surface": "lying",
+     "esv_word": "lying",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "lying (sheqer)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1800,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:2 For wicked and deceitful mouths are opened against me, speaking against me with lying tongues .",
+     "passage_id": 1800,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lying (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "speak lies",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'speaking against me with LYING (sheqer) tongues' - the falsehood of the foes' accusations.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the deceit",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270235",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270235",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270235",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272305,
+     "reference": "Psa 120:2",
+     "hebrew_surface": "lying",
+     "esv_word": "lying",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "lying (sheqer)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1832,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 120:2 Deliver me , O Lord , from lying lips , from a deceitful tongue .",
+     "passage_id": 1832,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lying (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'from LYING (sheqer) lips' - the falsehood of the foes from which the psalmist begs deliverance.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the deceitful tongue",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272305",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272305",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272305",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 279816,
+     "reference": "Psa 52:3",
+     "hebrew_surface": "lying",
+     "esv_word": "lying",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "lying / falsehood (sheqer - lying more than speaking right)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1658,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 52:3 You love evil more than good , and lying more than speaking what is right . Selah",
+     "passage_id": 1658,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lying / falsehood (sheqer - lying more than speaking right)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the tyrant",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "loved / preferred",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "more than speaking righteousness",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with loving evil over good",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and LYING (sheqer) more than speaking what is right' — the love of falsehood over truth; sheqer here the lie the tyrant prefers to righteous speech — the verbal face of his inverted loves, deceit chosen for its own sake",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279816",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279816",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "pair",
+       "from_span": "279816",
+       "to_span": "279819",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279816",
+       "to_span": "279812",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7423:deceit",
+   "meaning": "deceit",
+   "lemma": "H7423",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "deceit",
+    "lexical_gloss": "deceit; slackness",
+    "read_sense_variants": "deceit / treachery (remiyyah - working deceit) | deceit (remiyah)"
+   },
+   "instances": [
+    {
+     "span_id": 268867,
+     "reference": "Psa 101:7",
+     "hebrew_surface": "deceit",
+     "esv_word": "deceit",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceit (remiyah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1768,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes .",
+     "passage_id": 1768,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceit (remiyah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the deceitful",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "practise deceit",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in the king's house",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'No one who practises DECEIT (remiyah) shall dwell in my house' - the treachery the king bars from his presence.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the liar expelled",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268867",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268867",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268867",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 279811,
+     "reference": "Psa 52:2",
+     "hebrew_surface": "deceit",
+     "esv_word": "deceit",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceit / treachery (remiyyah - working deceit)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1658,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 52:2 Your tongue plots destruction , like a sharp razor , you worker of deceit .",
+     "passage_id": 1658,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceit / treachery (remiyyah - working deceit)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the tyrant",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "work / practise",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the deceitfulness voiced by the deceitful tongue (v4)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'working DECEIT (remiyyah)' — the treacherous falseness that is the tyrant's trade; remiyyah (slackness/treachery) the deceit he practises, twin of the 'deceitful tongue' (mirmah, v4) — a life built on lies",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279811",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279811",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279811",
+       "to_span": "279825",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8581:abhor",
+   "meaning": "abhor",
+   "lemma": "H8581",
+   "cluster": {
+    "code": "M06",
+    "name": "Hate",
+    "all_candidates": "M06(Hate)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpc1cs",
+    "esv_words": "abhor",
+    "lexical_gloss": "to abhor",
+    "read_sense_variants": "abhor (taab)"
+   },
+   "instances": [
+    {
+     "span_id": 271608,
+     "reference": "Psa 119:163",
+     "hebrew_surface": "abhor",
+     "esv_word": "abhor",
+     "morphology": {
+      "morph_code": "HVpc1cs",
+      "stem": "Piel"
+     },
+     "read_characteristic": "abhor (taab)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1831,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:163 I hate and abhor falsehood , but I love your law .",
+     "passage_id": 1831,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "abhor (taab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "abhor falsehood",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v163: 'I hate and ABHOR falsehood, but I love your law' - the abhorrence of falsehood joined to hatred of it.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271608",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271608",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271608",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0898:actedtreacherously",
+   "meaning": "acted treacherously",
+   "lemma": "H0898",
+   "cluster": {
+    "code": "M10",
+    "name": "Sin",
+    "all_candidates": "M10(Sin)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqw3mp",
+    "esv_words": "acted treacherously",
+    "lexical_gloss": "to act treacherously",
+    "read_sense_variants": "act treacherously (bagad)"
+   },
+   "instances": [
+    {
+     "span_id": 283331,
+     "reference": "Psa 78:57",
+     "hebrew_surface": "acted treacherously",
+     "esv_word": "acted treacherously",
+     "morphology": {
+      "morph_code": "HVqw3mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "act treacherously (bagad)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1720,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow .",
+     "passage_id": 1720,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "act treacherously (bagad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "betray / deal faithlessly",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "with God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with turning away",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and ACTED TREACHEROUSLY (bagad) like their fathers' - the faithless betrayal, family likeness of sin.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283331",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283331",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283331",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0898:betray",
+   "meaning": "betrayed",
+   "lemma": "H0898",
+   "cluster": {
+    "code": "M10",
+    "name": "Sin",
+    "all_candidates": "M10(Sin)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp1cs",
+    "esv_words": "betrayed",
+    "lexical_gloss": "to act treacherously",
+    "read_sense_variants": "betray / deal faithlessly (bagad - I would have betrayed the generation of your children)"
+   },
+   "instances": [
+    {
+     "span_id": 282391,
+     "reference": "Psa 73:15",
+     "hebrew_surface": "betrayed",
+     "esv_word": "betrayed",
+     "morphology": {
+      "morph_code": "HVqp1cs HSp2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "betray / deal faithlessly (bagad - I would have betrayed the generation of your children)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1702,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 73:15 If I had said , “I will speak thus ,” I would have betrayed the generation of your children .",
+     "passage_id": 1702,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "betray / deal faithlessly (bagad - I would have betrayed the generation of your children)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist (which he refrained from)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "betray (hypothetically, avoided)",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the generation of God's children",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "by voicing his doubt aloud",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the restraint that held him back from speaking his doubt",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'If I had said, I will speak thus, I would have BETRAYED (bagad) the generation of your children' — the restraint of a man who will not spread his doubt; bagad here the faithlessness to God's people he refused to commit - loving the community enough to hold his tongue while he wrestled, not scattering others' faith with his own crisis",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282391",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "282391",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282391",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282391",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282391",
+       "to_span": "282394",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3584:cring",
+   "meaning": "cringe",
+   "lemma": "H3584",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "cringe",
+    "lexical_gloss": "to deceive",
+    "read_sense_variants": "cringe (kachash)"
+   },
+   "instances": [
+    {
+     "span_id": 283817,
+     "reference": "Psa 81:15",
+     "hebrew_surface": "cringe",
+     "esv_word": "cringe",
+     "morphology": {
+      "morph_code": "HVpi3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "cringe (kachash)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1733,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:15 Those who hate the Lord would cringe toward him, and their fate would last forever .",
+     "passage_id": 1733,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "cringe (kachash)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the haters",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "cringe / feign submission",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the hatred",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v15: 'would CRINGE (kachash) before him' - the forced, feigned submission of the cowed foe, homage without love.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283817",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283817",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283817",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4820:deceit",
+   "meaning": "deceit",
+   "lemma": "H4820",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "deceit",
+    "lexical_gloss": "deceit",
+    "read_sense_variants": "deceit (mirmah - tongue frames it)"
+   },
+   "instances": [
+    {
+     "span_id": 279552,
+     "reference": "Psa 50:19",
+     "hebrew_surface": "deceit",
+     "esv_word": "deceit",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "deceit (mirmah - tongue frames it)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1656,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 50:19 “You give your mouth free rein for evil , and your tongue frames deceit .",
+     "passage_id": 1656,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deceit (mirmah - tongue frames it)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked (his tongue)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "frame / harness",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the mouth given to evil",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and your tongue frames DECEIT (mirmah)' — the tongue harnessed to lies; mirmah (recurs widely) the deceit the wicked's tongue weaves, slandering his brother and mother's son (v20)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279552",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279552",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279552",
+       "to_span": "279549",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8266:fals",
+   "meaning": "false",
+   "lemma": "H8266",
+   "cluster": {
+    "code": "M13",
+    "name": "Truth",
+    "all_candidates": "M13(Truth)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'deceit-falsehood' expects cluster M14(Deceit), but the term-cluster is M13(Truth)",
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpp1cp",
+    "esv_words": "false",
+    "lexical_gloss": "to deal",
+    "read_sense_variants": "be false / deal falsely (shaqar - to your covenant, negated)"
+   },
+   "instances": [
+    {
+     "span_id": 278742,
+     "reference": "Psa 44:17",
+     "hebrew_surface": "false",
+     "esv_word": "false",
+     "morphology": {
+      "morph_code": "HVpp1cp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "be false / deal falsely (shaqar - to your covenant, negated)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1643,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 44:17 All this has come upon us, though we have not forgotten you, and we have not been false to your covenant .",
+     "passage_id": 1643,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be false / deal falsely (shaqar - to your covenant, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the nation",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be false (negated)",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "your covenant",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not forgetting",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "value": "negated ('we have NOT been false to your covenant')",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and we have not been FALSE (shaqar) to your covenant' — covenant fidelity maintained under affliction; shaqar negated, the nation's faithfulness to God's covenant, the ground of its bewildered protest",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278742",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "278742",
+       "to_span": "278744",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "278742",
+       "to_span": "278740",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3577:falsehood",
+   "meaning": "falsehood",
+   "lemma": "H3577",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "falsehood",
+    "lexical_gloss": "lie",
+    "read_sense_variants": "falsehood / lie (kazab - pleasure in falsehood)"
+   },
+   "instances": [
+    {
+     "span_id": 280957,
+     "reference": "Psa 62:4",
+     "hebrew_surface": "falsehood",
+     "esv_word": "falsehood",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / lie (kazab - pleasure in falsehood)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1675,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 62:4 They only plan to thrust him down from his high position . They take pleasure in falsehood . They bless with their mouths , but inwardly they curse . Selah",
+     "passage_id": 1675,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / lie (kazab - pleasure in falsehood)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "delighted in",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the object of their pleasure; expressed in the false blessing",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they take pleasure in FALSEHOOD (kazab)' — the lie that is the enemies' delight; kazab (deception) the falsehood they love — which shows in blessing with the mouth while cursing within",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280957",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280957",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280957",
+       "to_span": "280959",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6601:flatter",
+   "meaning": "flattered",
+   "lemma": "H6601",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "flattered",
+    "lexical_gloss": "to entice",
+    "read_sense_variants": "flatter / deceive (pathah)"
+   },
+   "instances": [
+    {
+     "span_id": 306806,
+     "reference": "Psa 78:36",
+     "hebrew_surface": "flattered",
+     "esv_word": "flattered",
+     "morphology": {
+      "morph_code": "HVpw3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "flatter / deceive (pathah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1718,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues.",
+     "passage_id": 1718,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "flatter / deceive (pathah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "flatter / coax",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God with their mouths",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the lying tongue and unsteady heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'But they FLATTERED (pathah) him with their mouths' - the hollow, coaxing words masking an unchanged heart.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306806",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306806",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306806",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2505:flatter",
+   "meaning": "flatters",
+   "lemma": "H2505",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhp3ms HTc",
+    "esv_words": "flatters",
+    "lexical_gloss": "to divide; to smooth",
+    "read_sense_variants": "he flatters himself about his sin"
+   },
+   "instances": [
+    {
+     "span_id": 277520,
+     "reference": "Psa 36:2",
+     "hebrew_surface": "flatters",
+     "esv_word": "flatters",
+     "morphology": {
+      "morph_code": "HVhp3ms HTc",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "he flatters himself about his sin",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1632,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 36:2 For he flatters himself in his own eyes that his iniquity cannot be found out and hated .",
+     "passage_id": 1632,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "he flatters himself about his sin",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "cognition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "he flatters himself in his own eyes that his iniquity cannot be found out and hated - self-deception about guilt",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "self-flattery",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "flatter-himself",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'For he FLATTERS himself in his own eyes that his INIQUITY cannot be found out and HATED' - the operation is self-deceit: the interior tells itself its sin is invisible and unhateable.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277520",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277520",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277520",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4820:fraud",
+   "meaning": "fraud",
+   "lemma": "H4820",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "fraud",
+    "lexical_gloss": "deceit",
+    "read_sense_variants": "fraud / deceit (mirmah - oppression and fraud)"
+   },
+   "instances": [
+    {
+     "span_id": 280044,
+     "reference": "Psa 55:11",
+     "hebrew_surface": "fraud",
+     "esv_word": "fraud",
+     "morphology": {
+      "morph_code": "HNcfsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "fraud / deceit (mirmah - oppression and fraud)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1662,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace .",
+     "passage_id": 1662,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "fraud / deceit (mirmah - oppression and fraud)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the city's wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same mirmah as the betrayer's treachery (v23)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'oppression and FRAUD (mirmah) do not depart' — the deceit that pervades the marketplace; mirmah (fraud/treachery) the lying that props up the oppression — the same word that names the betrayer's own treachery (v23), the city and the friend of one cloth",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280044",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280044",
+       "to_span": "280161",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3576:liar",
+   "meaning": "liars",
+   "lemma": "H3576",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "liars",
+    "lexical_gloss": "to lie",
+    "read_sense_variants": "liars (kazab)"
+   },
+   "instances": [
+    {
+     "span_id": 307629,
+     "reference": "Psa 116:11",
+     "hebrew_surface": "liars",
+     "esv_word": "liars",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "liars (kazab)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1812,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 116:11 I said in my alarm, “All mankind are liars.”",
+     "passage_id": 1812,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "liars (kazab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all mankind",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be liars",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "untrustworthy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'All mankind are LIARS (kazab)' - the verdict of the alarmed, human faithlessness weighed against God's truth.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the alarm",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307629",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307629",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307629",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7901:liedown",
+   "meaning": "lie down",
+   "lemma": "H7901",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "lie down",
+    "lexical_gloss": "to lie down: lay down; to lie down: sleep; to lie down: have sex; to lie down: be dead",
+    "read_sense_variants": "in peace lie down and sleep"
+   },
+   "instances": [
+    {
+     "span_id": 279472,
+     "reference": "Psa 4:8",
+     "hebrew_surface": "lie down",
+     "esv_word": "lie down",
+     "morphology": {
+      "morph_code": "HVqc1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "in peace lie down and sleep",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1578,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 4:8 In peace I will both lie down and sleep ; for you alone , O Lord , make me dwell in safety .",
+     "passage_id": 1578,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "in peace lie down and sleep",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self lies down and sleeps in peace, God alone making it dwell in safety - rest as trust's fruit",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "peaceful-rest",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "sleep-in-safety",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'In PEACE I will both lie down and SLEEP; for you alone, O LORD, make me dwell in safety' - the evening closes as Ps 3's morning did: sleep is the body's confession of security in God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279472",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279472",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279472",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3576:lied",
+   "meaning": "lied",
+   "lemma": "H3576",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "lied",
+    "lexical_gloss": "to lie",
+    "read_sense_variants": "lie (kazab)"
+   },
+   "instances": [
+    {
+     "span_id": 306809,
+     "reference": "Psa 78:36",
+     "hebrew_surface": "lied",
+     "esv_word": "lied",
+     "morphology": {
+      "morph_code": "HVpi3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "lie (kazab)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1718,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues.",
+     "passage_id": 1718,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lie (kazab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God with their tongues",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the flattering mouth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and LIED (kazab) to him with their tongues' - the falsehood of a repentance not seated in the heart.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306809",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306809",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306809",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3577:lie",
+   "meaning": "lies",
+   "lemma": "H3577",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "lies",
+    "lexical_gloss": "lie",
+    "read_sense_variants": "lies / falsehood (kazab - speaking lies)"
+   },
+   "instances": [
+    {
+     "span_id": 280491,
+     "reference": "Psa 58:3",
+     "hebrew_surface": "lies",
+     "esv_word": "lies",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "lies / falsehood (kazab - speaking lies)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1665,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 58:3 The wicked are estranged from the womb ; they go astray from birth , speaking lies .",
+     "passage_id": 1665,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lies / falsehood (kazab - speaking lies)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "speak",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the immediate fruit of going astray from birth",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they go astray from birth, speaking LIES (kazab)' — falsehood as the native tongue of the wicked; kazab (lies/deception) the speech that betrays their inborn estrangement — untruth issuing from a heart astray from the start",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280491",
+       "to_span": "280487",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3585:lie",
+   "meaning": "lies",
+   "lemma": "H3585",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "lies",
+    "lexical_gloss": "lie",
+    "read_sense_variants": "lies / deceit (kachash - the lies they utter)"
+   },
+   "instances": [
+    {
+     "span_id": 280556,
+     "reference": "Psa 59:12",
+     "hebrew_surface": "lies",
+     "esv_word": "lies",
+     "morphology": {
+      "morph_code": "HNcmsa HC HR",
+      "stem": ""
+     },
+     "read_characteristic": "lies / deceit (kachash - the lies they utter)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1668,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 59:12 For the sin of their mouths , the words of their lips , let them be trapped in their pride . For the cursing and lies that they utter ,",
+     "passage_id": 1668,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lies / deceit (kachash - the lies they utter)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the mouth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "utter",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the cursing they utter",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'the cursing and LIES (kachash) that they utter' — the falsehood of the wicked's speech; kachash (lying/deception) the deceit twinned with cursing — the mouth's sin that, with their pride, brings God's consuming wrath",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280556",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280556",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280556",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280556",
+       "to_span": "280555",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7270:slander",
+   "meaning": "slander",
+   "lemma": "H7270",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3ms",
+    "esv_words": "slander",
+    "lexical_gloss": "to spy",
+    "read_sense_variants": "refuses to slander"
+   },
+   "instances": [
+    {
+     "span_id": 274626,
+     "reference": "Psa 15:3",
+     "hebrew_surface": "slander",
+     "esv_word": "slander",
+     "morphology": {
+      "morph_code": "HVqp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "refuses to slander",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1592,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 15:3 who does not slander with his tongue and does no evil to his neighbor , nor takes up a reproach against his friend ;",
+     "passage_id": 1592,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "refuses to slander",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the righteous",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "he does not slander with his tongue, does no evil to a neighbour, takes up no reproach against a friend - restrained speech that protects others",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "tongue-restraint",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "no-slander",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'who does not SLANDER with his tongue and does no EVIL to his neighbour' - the operation is the governed tongue: the interior refuses to trade in others' reputations.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274626",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274626",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274626",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3960:slander",
+   "meaning": "slanders",
+   "lemma": "H3960",
+   "cluster": {
+    "code": "M42",
+    "name": "Speech",
+    "all_candidates": "M42(Speech)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'deceit-falsehood' expects cluster M14(Deceit), but the term-cluster is M42(Speech)",
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVprmsa",
+    "esv_words": "slanders",
+    "lexical_gloss": "to slander",
+    "read_sense_variants": "slander (lashan)"
+   },
+   "instances": [
+    {
+     "span_id": 268844,
+     "reference": "Psa 101:5",
+     "hebrew_surface": "slanders",
+     "esv_word": "slanders",
+     "morphology": {
+      "morph_code": "HVprmsa",
+      "stem": "Piel"
+     },
+     "read_characteristic": "slander (lashan)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1768,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 101:5 Whoever slanders his neighbor secretly I will destroy . Whoever has a haughty look and an arrogant heart I will not endure .",
+     "passage_id": 1768,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "slander (lashan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the slanderer",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "slander secretly",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "his neighbour",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Whoever SLANDERS (lashan) his neighbour secretly I will destroy' - the secret defamer, the vice the king will not tolerate.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being destroyed by the king",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268844",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268844",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268844",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0898:treacherously",
+   "meaning": "treacherously",
+   "lemma": "H0898",
+   "cluster": {
+    "code": "M10",
+    "name": "Sin",
+    "all_candidates": "M10(Sin)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmpc",
+    "esv_words": "treacherously",
+    "lexical_gloss": "to act treacherously",
+    "read_sense_variants": "deal treacherously (bagad - those who treacherously plot evil)"
+   },
+   "instances": [
+    {
+     "span_id": 280630,
+     "reference": "Psa 59:5",
+     "hebrew_surface": "treacherously",
+     "esv_word": "treacherously",
+     "morphology": {
+      "morph_code": "HVqrmpc HNcmsc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "deal treacherously (bagad - those who treacherously plot evil)",
+     "position": {
+      "word_index": 12,
+      "passage_id": 1667,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah",
+     "passage_id": 1667,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deal treacherously (bagad - those who treacherously plot evil)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the treacherous enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "act treacherously / plot",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "evil",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the evil they plot",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'spare none of those who TREACHEROUSLY (bagad) plot evil' — the faithless, deceitful malice of the foes; bagad (to act treacherously/betray) the covenant-breaking wickedness that God is asked not to spare — treachery joined to evil design",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280630",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "280630",
+       "to_span": "280631",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280630",
+       "to_span": "280631",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4820:treachery",
+   "meaning": "treachery",
+   "lemma": "H4820",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "treachery",
+    "lexical_gloss": "deceit",
+    "read_sense_variants": "treachery / deceit (mirmah - men of blood and treachery)"
+   },
+   "instances": [
+    {
+     "span_id": 280161,
+     "reference": "Psa 55:23",
+     "hebrew_surface": "treachery",
+     "esv_word": "treachery",
+     "morphology": {
+      "morph_code": "HNcfsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "treachery / deceit (mirmah - men of blood and treachery)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1662,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you .",
+     "passage_id": 1662,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "treachery / deceit (mirmah - men of blood and treachery)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the men of blood",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same mirmah as the city's fraud (v11) and betrayer's ways",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'men of blood and TREACHERY (mirmah) shall not live out half their days' — the deceit that marks the doomed; mirmah (treachery/fraud) the defining trait of the bloody men, the same word as the city's fraud (v11) — their treachery cuts short their own days",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280161",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280161",
+       "to_span": "280044",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8267:vain",
+   "meaning": "vain",
+   "lemma": "H8267",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "vain",
+    "lexical_gloss": "deception",
+    "read_sense_variants": "falsehood / false way (sheqer)"
+   },
+   "instances": [
+    {
+     "span_id": 271326,
+     "reference": "Psa 119:118",
+     "hebrew_surface": "vain",
+     "esv_word": "vain",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "falsehood / false way (sheqer)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1828,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:118 You spurn all who go astray from your statutes , for their cunning is in vain .",
+     "passage_id": 1828,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "falsehood / false way (sheqer)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the foes / the false way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "lie / deceive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist and the truth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole FALSEHOOD arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v118: 'You spurn all who go astray from your statutes, for their cunning is in vain (FALSEHOOD)' - the vain deceit of the strayers.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271326",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271326",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271326",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7723:vanity",
+   "meaning": "vanity",
+   "lemma": "H7723",
+   "cluster": {
+    "code": "M14",
+    "name": "Deceit",
+    "all_candidates": "M14(Deceit)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "vanity",
+    "lexical_gloss": "vanity: false",
+    "read_sense_variants": "vanity (shav)"
+   },
+   "instances": [
+    {
+     "span_id": 284803,
+     "reference": "Psa 89:47",
+     "hebrew_surface": "vanity",
+     "esv_word": "vanity",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "vanity (shav)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1747,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man !",
+     "passage_id": 1747,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "vanity (shav)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all mankind",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be created in vanity",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "transient",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the reflection on mortality",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v47: 'For what VANITY (shav) you have created all mankind!' - the frailty and fleetingness of human life, the ground of the plea to remember.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284803",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284803",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284803",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

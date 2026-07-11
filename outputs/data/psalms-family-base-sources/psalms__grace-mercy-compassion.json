@@ -1,0 +1,2420 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "grace-mercy-compassion"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'grace-mercy-compassion': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 11,
+   "instances": 16,
+   "passages": 13
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1634": {
+   "passage_ref": "Psa 37:14-40",
+   "verse_refs": [
+    "Psa 37:14",
+    "Psa 37:15",
+    "Psa 37:16",
+    "Psa 37:17",
+    "Psa 37:18",
+    "Psa 37:19",
+    "Psa 37:20",
+    "Psa 37:21",
+    "Psa 37:22",
+    "Psa 37:23",
+    "Psa 37:24",
+    "Psa 37:25",
+    "Psa 37:26",
+    "Psa 37:27",
+    "Psa 37:28",
+    "Psa 37:29",
+    "Psa 37:30",
+    "Psa 37:31",
+    "Psa 37:32",
+    "Psa 37:33",
+    "Psa 37:34",
+    "Psa 37:35",
+    "Psa 37:36",
+    "Psa 37:37",
+    "Psa 37:38",
+    "Psa 37:39",
+    "Psa 37:40"
+   ],
+   "text": "Psa 37:14 The wicked draw the sword and bend their bows to bring down the poor and needy , to slay those whose way is upright ; Psa 37:15 their sword shall enter their own heart , and their bows shall be broken . Psa 37:16 Better is the little that the righteous has than the abundance of many wicked . Psa 37:17 For the arms of the wicked shall be broken , but the Lord upholds the righteous . Psa 37:18 The Lord knows the days of the blameless , and their heritage will remain forever ; Psa 37:19 they are not put to shame in evil times ; in the days of famine they have abundance . Psa 37:20 But the wicked will perish ; the enemies of the Lord are like the glory of the pastures ; they vanish —like smoke they vanish away. Psa 37:21 The wicked borrows but does not pay back, but the righteous is generous and gives ; Psa 37:22 for those blessed by the Lord shall inherit the land , but those cursed by him shall be cut off . Psa 37:23 The steps of a man are established by the Lord , when he delights in his way ; Psa 37:24 though he fall , he shall not be cast headlong, for the Lord upholds his hand . Psa 37:25 I have been young , and now am old , yet I have not seen the righteous forsaken or his children begging for bread . Psa 37:26 He is ever lending generously , and his children become a blessing . Psa 37:27 Turn away from evil and do good ; so shall you dwell forever . Psa 37:28 For the Lord loves justice ; he will not forsake his saints . They are preserved forever , but the children of the wicked shall be cut off. Psa 37:29 The righteous shall inherit the land and dwell upon it forever . Psa 37:30 The mouth of the righteous utters wisdom , and his tongue speaks justice . Psa 37:31 The law of his God is in his heart ; his steps do not slip . Psa 37:32 The wicked watches for the righteous and seeks to put him to death . Psa 37:33 The Lord will not abandon him to his power or let him be condemned when he is brought to trial . Psa 37:34 Wait for the Lord and keep his way , and he will exalt you to inherit the land ; you will look on when the wicked are cut off . Psa 37:35 I have seen a wicked , ruthless man, spreading himself like a green laurel tree. Psa 37:36 But he passed away, and behold , he was no more ; though I sought him, he could not be found . Psa 37:37 Mark the blameless and behold the upright , for there is a future for the man of peace . Psa 37:38 But transgressors shall be altogether destroyed ; the future of the wicked shall be cut off. Psa 37:39 The salvation of the righteous is from the Lord ; he is their stronghold in the time of trouble . Psa 37:40 The Lord helps them and delivers them; he delivers them from the wicked and saves them, because they take refuge in him ."
+  },
+  "1644": {
+   "passage_ref": "Psa 45:1-15",
+   "verse_refs": [
+    "Psa 45:1",
+    "Psa 45:2",
+    "Psa 45:3",
+    "Psa 45:4",
+    "Psa 45:5",
+    "Psa 45:6",
+    "Psa 45:7",
+    "Psa 45:8",
+    "Psa 45:9",
+    "Psa 45:10",
+    "Psa 45:11",
+    "Psa 45:12",
+    "Psa 45:13",
+    "Psa 45:14",
+    "Psa 45:15",
+    "Psa 45:17"
+   ],
+   "text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever ."
+  },
+  "1661": {
+   "passage_ref": "Psa 55:1-5",
+   "verse_refs": [
+    "Psa 55:1",
+    "Psa 55:2",
+    "Psa 55:3",
+    "Psa 55:4",
+    "Psa 55:5"
+   ],
+   "text": "To the choirmaster : with stringed instruments . A Maskil of David . Psa 55:1 Give ear to my prayer , O God , and hide not yourself from my plea for mercy ! Psa 55:2 Attend to me, and answer me; I am restless in my complaint and I moan , Psa 55:3 because of the noise of the enemy , because of the oppression of the wicked . For they drop trouble upon me, and in anger they bear a grudge against me . Psa 55:4 My heart is in anguish within me; the terrors of death have fallen upon me . Psa 55:5 Fear and trembling come upon me, and horror overwhelms me."
+  },
+  "1698": {
+   "passage_ref": "Psa 72:13-15",
+   "verse_refs": [
+    "Psa 72:11",
+    "Psa 72:12",
+    "Psa 72:13",
+    "Psa 72:14",
+    "Psa 72:15"
+   ],
+   "text": "Psa 72:11 May all kings fall down before him, all nations serve him ! Psa 72:12 For he delivers the needy when he calls, the poor and him who has no helper. Psa 72:13 He has pity on the weak and the needy , and saves the lives of the needy . Psa 72:14 From oppression and violence he redeems their life , and precious is their blood in his sight . Psa 72:15 Long may he live ; may gold of Sheba be given to him! May prayer be made for him continually , and blessings invoked for him all the day !"
+  },
+  "1771": {
+   "passage_ref": "Psa 102:12-16",
+   "verse_refs": [
+    "Psa 102:12",
+    "Psa 102:13",
+    "Psa 102:14",
+    "Psa 102:15",
+    "Psa 102:16",
+    "Psa 102:17"
+   ],
+   "text": "Psa 102:12 But you , O Lord , are enthroned forever ; you are remembered throughout all generations . Psa 102:13 You will arise and have pity on Zion ; it is the time to favor her; the appointed time has come . Psa 102:14 For your servants hold her stones dear and have pity on her dust . Psa 102:15 Nations will fear the name of the Lord , and all the kings of the earth will fear your glory . Psa 102:16 For the Lord builds up Zion ; he appears in his glory ; Psa 102:17 he regards the prayer of the destitute and does not despise their prayer."
+  },
+  "1774": {
+   "passage_ref": "Psa 103:8-14",
+   "verse_refs": [
+    "Psa 103:8",
+    "Psa 103:9",
+    "Psa 103:10",
+    "Psa 103:11",
+    "Psa 103:12",
+    "Psa 103:13",
+    "Psa 103:14"
+   ],
+   "text": "Psa 103:8 The Lord is merciful and gracious , slow to anger and abounding in steadfast love . Psa 103:9 He will not always chide , nor will he keep his anger forever . Psa 103:10 He does not deal with us according to our sins , nor repay us according to our iniquities . Psa 103:11 For as high as the heavens are above the earth , so great is his steadfast love toward those who fear him; Psa 103:12 as far as the east is from the west , so far does he remove our transgressions from us. Psa 103:13 As a father shows compassion to his children , so the Lord shows compassion to those who fear him. Psa 103:14 For he knows our frame ; he remembers that we are dust ."
+  },
+  "1800": {
+   "passage_ref": "Psa 109:1-8",
+   "verse_refs": [
+    "Psa 109:1",
+    "Psa 109:2",
+    "Psa 109:3",
+    "Psa 109:4",
+    "Psa 109:5",
+    "Psa 109:6",
+    "Psa 109:7",
+    "Psa 109:8",
+    "Psa 109:9",
+    "Psa 109:10",
+    "Psa 109:12",
+    "Psa 109:13"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 109:1 Be not silent , O God of my praise ! Psa 109:2 For wicked and deceitful mouths are opened against me, speaking against me with lying tongues . Psa 109:3 They encircle me with words of hate , and attack me without cause . Psa 109:4 In return for my love they accuse me, but I give myself to prayer . Psa 109:5 So they reward me evil for good , and hatred for my love . Psa 109:6 Appoint a wicked man against him; let an accuser stand at his right hand . Psa 109:7 When he is tried , let him come forth guilty ; let his prayer be counted as sin ! Psa 109:8 May his days be few ; may another take his office ! Psa 109:9 May his children be fatherless and his wife a widow! Psa 109:10 May his children wander about and beg , seeking food far from the ruins they inhabit ! Psa 109:12 Let there be none to extend kindness to him, nor any to pity his fatherless children ! Psa 109:13 May his posterity be cut off; may his name be blotted out in the second generation!"
+  },
+  "1801": {
+   "passage_ref": "Psa 109:14-22",
+   "verse_refs": [
+    "Psa 109:14",
+    "Psa 109:15",
+    "Psa 109:16",
+    "Psa 109:17",
+    "Psa 109:18",
+    "Psa 109:19",
+    "Psa 109:20",
+    "Psa 109:21",
+    "Psa 109:22"
+   ],
+   "text": "Psa 109:14 May the iniquity of his fathers be remembered before the Lord , and let not the sin of his mother be blotted out ! Psa 109:15 Let them be before the Lord continually , that he may cut off the memory of them from the earth ! Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death . Psa 109:17 He loved to curse ; let curses come upon him! He did not delight in blessing ; may it be far from him ! Psa 109:18 He clothed himself with cursing as his coat ; may it soak into his body like water , like oil into his bones ! Psa 109:19 May it be like a garment that he wraps around him , like a belt that he puts on every day ! Psa 109:20 May this be the reward of my accusers from the Lord , of those who speak evil against my life ! Psa 109:21 But you , O God my Lord , deal on my behalf for your name’s sake ; because your steadfast love is good , deliver me ! Psa 109:22 For I am poor and needy , and my heart is stricken within me."
+  },
+  "1806": {
+   "passage_ref": "Psa 112:1-10",
+   "verse_refs": [
+    "Psa 112:1",
+    "Psa 112:2",
+    "Psa 112:3",
+    "Psa 112:4",
+    "Psa 112:5",
+    "Psa 112:6",
+    "Psa 112:7",
+    "Psa 112:8",
+    "Psa 112:9",
+    "Psa 112:10"
+   ],
+   "text": "Psa 112:1 Praise the Lord ! Blessed is the man who fears the Lord , who greatly delights in his commandments ! Psa 112:2 His offspring will be mighty in the land ; the generation of the upright will be blessed . Psa 112:3 Wealth and riches are in his house , and his righteousness endures forever . Psa 112:4 Light dawns in the darkness for the upright ; he is gracious , merciful , and righteous . Psa 112:5 It is well with the man who deals generously and lends ; who conducts his affairs with justice . Psa 112:6 For the righteous will never be moved ; he will be remembered forever . Psa 112:7 He is not afraid of bad news ; his heart is firm , trusting in the Lord . Psa 112:8 His heart is steady ; he will not be afraid , until he looks in triumph on his adversaries . Psa 112:9 He has distributed freely; he has given to the poor ; his righteousness endures forever ; his horn is exalted in honor . Psa 112:10 The wicked man sees it and is angry ; he gnashes his teeth and melts away ; the desire of the wicked will perish !"
+  },
+  "1812": {
+   "passage_ref": "Psa 116:1-10",
+   "verse_refs": [
+    "Psa 116:1",
+    "Psa 116:2",
+    "Psa 116:3",
+    "Psa 116:4",
+    "Psa 116:5",
+    "Psa 116:6",
+    "Psa 116:7",
+    "Psa 116:8",
+    "Psa 116:9",
+    "Psa 116:10",
+    "Psa 116:11"
+   ],
+   "text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”"
+  },
+  "1847": {
+   "passage_ref": "Psa 130:1-8",
+   "verse_refs": [
+    "Psa 130:1",
+    "Psa 130:2",
+    "Psa 130:3",
+    "Psa 130:4",
+    "Psa 130:5",
+    "Psa 130:6",
+    "Psa 130:7",
+    "Psa 130:8"
+   ],
+   "text": "A Song of Ascents . Psa 130:1 Out of the depths I cry to you, O Lord ! Psa 130:2 O Lord , hear my voice ! Let your ears be attentive to the voice of my pleas for mercy ! Psa 130:3 If you, O Lord , should mark iniquities , O Lord , who could stand ? Psa 130:4 But with you there is forgiveness , that you may be feared . Psa 130:5 I wait for the Lord , my soul waits , and in his word I hope ; Psa 130:6 my soul waits for the Lord more than watchmen for the morning , more than watchmen for the morning . Psa 130:7 O Israel , hope in the Lord ! For with the Lord there is steadfast love , and with him is plentiful redemption . Psa 130:8 And he will redeem Israel from all his iniquities ."
+  },
+  "1869": {
+   "passage_ref": "Psa 140:1-9",
+   "verse_refs": [
+    "Psa 140:1",
+    "Psa 140:2",
+    "Psa 140:3",
+    "Psa 140:4",
+    "Psa 140:5",
+    "Psa 140:6",
+    "Psa 140:7",
+    "Psa 140:8",
+    "Psa 140:9"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 140:1 Deliver me, O Lord , from evil men ; preserve me from violent men , Psa 140:2 who plan evil things in their heart and stir up wars continually . Psa 140:3 They make their tongue sharp as a serpent’s , and under their lips is the venom of asps . Selah Psa 140:4 Guard me, O Lord , from the hands of the wicked ; preserve me from violent men , who have planned to trip up my feet . Psa 140:5 The arrogant have hidden a trap for me, and with cords they have spread a net ; beside the way they have set snares for me. Selah Psa 140:6 I say to the Lord , You are my God ; give ear to the voice of my pleas for mercy , O Lord ! Psa 140:7 O Lord , my Lord , the strength of my salvation , you have covered my head in the day of battle . Psa 140:8 Grant not , O Lord , the desires of the wicked ; do not further their evil plot , or they will be exalted ! Selah Psa 140:9 As for the head of those who surround me, let the mischief of their lips overwhelm them !"
+  },
+  "1872": {
+   "passage_ref": "Psa 141:4-10",
+   "verse_refs": [
+    "Psa 141:4",
+    "Psa 141:5",
+    "Psa 141:6",
+    "Psa 141:7",
+    "Psa 141:8",
+    "Psa 141:9",
+    "Psa 141:10"
+   ],
+   "text": "Psa 141:4 Do not let my heart incline to any evil , to busy myself with wicked deeds in company with men who work iniquity , and let me not eat of their delicacies ! Psa 141:5 Let a righteous man strike me—it is a kindness ; let him rebuke me—it is oil for my head ; let my head not refuse it. Yet my prayer is continually against their evil deeds . Psa 141:6 When their judges are thrown over the cliff , then they shall hear my words , for they are pleasant . Psa 141:7 As when one plows and breaks up the earth , so shall our bones be scattered at the mouth of Sheol . Psa 141:8 But my eyes are toward you, O God , my Lord ; in you I seek refuge ; leave me not defenseless ! Psa 141:9 Keep me from the trap that they have laid for me and from the snares of evildoers ! Psa 141:10 Let the wicked fall into their own nets , while I pass by safely ."
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H2617:kindnes",
+   "meaning": "kindness",
+   "lemma": "H2617",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "kindness",
+    "lexical_gloss": "kindness; shame",
+    "read_sense_variants": "kindness (chesed) | rebuke received as kindness"
+   },
+   "instances": [
+    {
+     "span_id": 270172,
+     "reference": "Psa 109:12",
+     "hebrew_surface": "kindness",
+     "esv_word": "kindness",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "kindness (chesed)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1800,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:12 Let there be none to extend kindness to him, nor any to pity his fatherless children !",
+     "passage_id": 1800,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kindness (chesed)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "no one",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "extend kindness",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'Let there be none to extend KINDNESS (chesed) to him' - the wish that the merciless man find no mercy.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with none to pity his children",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270197,
+     "reference": "Psa 109:16",
+     "hebrew_surface": "kindness",
+     "esv_word": "kindness",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "kindness (chesed)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death .",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kindness (chesed)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to show kindness",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to the afflicted",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'did not remember to show KINDNESS (chesed)' - the mercy the enemy withheld, the root of his condemnation.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the failure to remember",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 273722,
+     "reference": "Psa 141:5",
+     "hebrew_surface": "kindness",
+     "esv_word": "kindness",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "rebuke received as kindness",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1872,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 141:5 Let a righteous man strike me—it is a kindness ; let him rebuke me—it is oil for my head ; let my head not refuse it. Yet my prayer is continually against their evil deeds .",
+     "passage_id": 1872,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebuke received as kindness",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "a righteous man's blow/rebuke is welcomed as kindness, oil for the head - correction embraced",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "embrace-correction",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "rebuke-is-kindness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Let a righteous man strike me - it is a KINDNESS; let him rebuke me - it is oil for my head' - the operation is rare: the interior wants to be corrected, receiving reproof as care.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8469:pleasformercy",
+   "meaning": "pleas for mercy",
+   "lemma": "H8469",
+   "cluster": {
+    "code": "M21",
+    "name": "Prayer",
+    "all_candidates": "M21(Prayer)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmpc",
+    "esv_words": "pleas for mercy",
+    "lexical_gloss": "supplication",
+    "read_sense_variants": "pleas for mercy (tachanun) | pleas for mercy voiced"
+   },
+   "instances": [
+    {
+     "span_id": 270926,
+     "reference": "Psa 116:1",
+     "hebrew_surface": "pleas for mercy",
+     "esv_word": "pleas for mercy",
+     "morphology": {
+      "morph_code": "HNcmpc HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "pleas for mercy (tachanun)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1812,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy .",
+     "passage_id": 1812,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy (tachanun)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for mercy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'he has heard my voice and my PLEAS FOR MERCY (tachanun)' - the supplications God heard, the cry that drew forth love.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the love and calling",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272809,
+     "reference": "Psa 130:2",
+     "hebrew_surface": "pleas for mercy",
+     "esv_word": "pleas for mercy",
+     "morphology": {
+      "morph_code": "HNcmpc",
+      "stem": ""
+     },
+     "read_characteristic": "pleas for mercy (tachanun)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1847,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 130:2 O Lord , hear my voice ! Let your ears be attentive to the voice of my pleas for mercy !",
+     "passage_id": 1847,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy (tachanun)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for mercy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'be attentive to the voice of my PLEAS FOR MERCY (tachanun)!' - the supplication, the cry sharpened into a plea for grace.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the cry",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 273653,
+     "reference": "Psa 140:6",
+     "hebrew_surface": "pleas for mercy",
+     "esv_word": "pleas for mercy",
+     "morphology": {
+      "morph_code": "HNcmpc",
+      "stem": ""
+     },
+     "read_characteristic": "pleas for mercy voiced",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1869,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 140:6 I say to the Lord , You are my God ; give ear to the voice of my pleas for mercy , O Lord !",
+     "passage_id": 1869,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy voiced",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the psalmist lifts a crying voice of supplication, the cry as the counter-move to the schemes",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "crying-out",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "voice-pleas",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'give ear to the voice of my PLEAS for mercy' - against the silent scheming, the psalmist's interior goes vocal, appealing upward.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2603:pity",
+   "meaning": "pity",
+   "lemma": "H2603",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel, Qal",
+    "morph_codes": "HVpi3mp, HVqrmsa",
+    "esv_words": "pity",
+    "lexical_gloss": "be gracious; be loathsome",
+    "read_sense_variants": "pity (chanan)"
+   },
+   "instances": [
+    {
+     "span_id": 268928,
+     "reference": "Psa 102:14",
+     "hebrew_surface": "pity",
+     "esv_word": "pity",
+     "morphology": {
+      "morph_code": "HVpi3mp HSp3fs",
+      "stem": "Piel"
+     },
+     "read_characteristic": "pity (chanan)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1771,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:14 For your servants hold her stones dear and have pity on her dust .",
+     "passage_id": 1771,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity (chanan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the servants (of God)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have pity / affection",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "for Zion's dust",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v14: 'and have PITY (chanan) on her dust' - the tender regard of the servants for ruined Zion, love for her very dust.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with holding her stones dear",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270174,
+     "reference": "Psa 109:12",
+     "hebrew_surface": "pity",
+     "esv_word": "pity",
+     "morphology": {
+      "morph_code": "HVqrmsa HVqj3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "pity (chanan)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1800,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:12 Let there be none to extend kindness to him, nor any to pity his fatherless children !",
+     "passage_id": 1800,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity (chanan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "no one",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "pity",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the enemy's fatherless children",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'nor any to PITY (chanan) his fatherless children' - the wish that the pitiless find no pity for his own.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the kindness withheld",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2603:dealsgenerously",
+   "meaning": "deals generously",
+   "lemma": "H2603",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmsa",
+    "esv_words": "deals generously",
+    "lexical_gloss": "be gracious; be loathsome",
+    "read_sense_variants": "deal generously (chanan)"
+   },
+   "instances": [
+    {
+     "span_id": 270684,
+     "reference": "Psa 112:5",
+     "hebrew_surface": "deals generously",
+     "esv_word": "deals generously",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "deal generously (chanan)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1806,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 112:5 It is well with the man who deals generously and lends ; who conducts his affairs with justice .",
+     "passage_id": 1806,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deal generously (chanan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deal generously",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "and lend",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'It is well with the man who DEALS GENEROUSLY (chanan) and lends' - the open-handed generosity of the God-fearer.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with conducting affairs with justice",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2603:generou",
+   "meaning": "generous",
+   "lemma": "H2603",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmsa",
+    "esv_words": "generous",
+    "lexical_gloss": "be gracious; be loathsome",
+    "read_sense_variants": "the righteous is generous and gives"
+   },
+   "instances": [
+    {
+     "span_id": 277679,
+     "reference": "Psa 37:21",
+     "hebrew_surface": "generous",
+     "esv_word": "generous",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "the righteous is generous and gives",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1634,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 37:21 The wicked borrows but does not pay back, but the righteous is generous and gives ;",
+     "passage_id": 1634,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the righteous is generous and gives",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the righteous",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the wicked borrows and does not repay, but the righteous is generous and gives - open-handedness as a mark of the righteous interior",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "generosity",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "generous-and-gives",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v21: 'the RIGHTEOUS is GENEROUS and gives' - the operation is open-handed giving; the righteous interior is marked by a freedom to give that the grasping wicked lacks.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2580:grac",
+   "meaning": "grace",
+   "lemma": "H2580",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "grace",
+    "lexical_gloss": "favor",
+    "read_sense_variants": "grace / charm (chen - on your lips)"
+   },
+   "instances": [
+    {
+     "span_id": 278942,
+     "reference": "Psa 45:2",
+     "hebrew_surface": "grace",
+     "esv_word": "grace",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "grace / charm (chen - on your lips)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1644,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever .",
+     "passage_id": 1644,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "grace / charm (chen - on your lips)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "poured on his lips",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the graciousness for which God blessed him",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'GRACE (chen) is poured upon your lips' — the king's gracious, winsome speech; chen = favour/charm, the gracious character expressed in his words, for which God has blessed him forever (the blessing = qualifier)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278942",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278942",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "278942",
+       "to_span": "278947",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2587:graciou",
+   "meaning": "gracious",
+   "lemma": "H2587",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa",
+    "esv_words": "gracious",
+    "lexical_gloss": "gracious",
+    "read_sense_variants": "gracious (chanun)"
+   },
+   "instances": [
+    {
+     "span_id": 270679,
+     "reference": "Psa 112:4",
+     "hebrew_surface": "gracious",
+     "esv_word": "gracious",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "gracious (chanun)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1806,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 112:4 Light dawns in the darkness for the upright ; he is gracious , merciful , and righteous .",
+     "passage_id": 1806,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "gracious (chanun)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be gracious",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to others",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'he is GRACIOUS (chanun), merciful, and righteous' - the God-fearer mirrors God's own grace toward others.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being merciful and righteous",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7349:merciful",
+   "meaning": "merciful",
+   "lemma": "H7349",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa",
+    "esv_words": "merciful",
+    "lexical_gloss": "compassionate",
+    "read_sense_variants": "merciful (rachum)"
+   },
+   "instances": [
+    {
+     "span_id": 270680,
+     "reference": "Psa 112:4",
+     "hebrew_surface": "merciful",
+     "esv_word": "merciful",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "merciful (rachum)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1806,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 112:4 Light dawns in the darkness for the upright ; he is gracious , merciful , and righteous .",
+     "passage_id": 1806,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "merciful (rachum)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be merciful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to others",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'gracious, MERCIFUL (rachum), and righteous' - the compassion of the God-fearer, God's mercy reflected in the man.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being gracious",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8467:mercy",
+   "meaning": "mercy",
+   "lemma": "H8467",
+   "cluster": {
+    "code": "M21",
+    "name": "Prayer",
+    "all_candidates": "M21(Prayer)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsc",
+    "esv_words": "mercy",
+    "lexical_gloss": "supplication",
+    "read_sense_variants": "plea for grace / supplication (techinnah)"
+   },
+   "instances": [
+    {
+     "span_id": 280032,
+     "reference": "Psa 55:1",
+     "hebrew_surface": "mercy",
+     "esv_word": "mercy",
+     "morphology": {
+      "morph_code": "HNcfsc HR",
+      "stem": ""
+     },
+     "read_characteristic": "plea for grace / supplication (techinnah)",
+     "position": {
+      "word_index": 10,
+      "passage_id": 1661,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "To the choirmaster : with stringed instruments . A Maskil of David . Psa 55:1 Give ear to my prayer , O God , and hide not yourself from my plea for mercy !",
+     "passage_id": 1661,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "plea for grace / supplication (techinnah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for favour",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "twinned with the prayer",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'hide not yourself from my SUPPLICATION (techinnah)' — the plea for grace the psalmist casts on God; techinnah (appeal for favour) the humbled cry that expects nothing by right, only mercy — the posture beneath the prayer",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280032",
+       "to_span": "280027",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2347:pity",
+   "meaning": "pity",
+   "lemma": "H2347",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqi3ms",
+    "esv_words": "pity",
+    "lexical_gloss": "to pity",
+    "read_sense_variants": "pity / have compassion (chus - he has pity on the weak)"
+   },
+   "instances": [
+    {
+     "span_id": 282244,
+     "reference": "Psa 72:13",
+     "hebrew_surface": "pity",
+     "esv_word": "pity",
+     "morphology": {
+      "morph_code": "HVqi3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "pity / have compassion (chus - he has pity on the weak)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1698,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 72:13 He has pity on the weak and the needy , and saves the lives of the needy .",
+     "passage_id": 1698,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity / have compassion (chus - he has pity on the weak)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have pity / compassion",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the weak and needy",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with saving their lives",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'He has PITY (chus) on the weak and the needy' — the tenderness of the just king; chus here the compassion that spares and cares for the weak - the inward mercy behind the king's saving acts, kingship marked by pity, not merely power",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282244",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "282244",
+       "to_span": "282246",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282244",
+       "to_span": "282248",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7355:showscompassion",
+   "meaning": "shows compassion",
+   "lemma": "H7355",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpcc",
+    "esv_words": "shows compassion",
+    "lexical_gloss": "to have compassion",
+    "read_sense_variants": "show compassion (racham)"
+   },
+   "instances": [
+    {
+     "span_id": 269084,
+     "reference": "Psa 103:13",
+     "hebrew_surface": "shows compassion",
+     "esv_word": "shows compassion",
+     "morphology": {
+      "morph_code": "HVpcc HR",
+      "stem": "Piel"
+     },
+     "read_characteristic": "show compassion (racham)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1774,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 103:13 As a father shows compassion to his children , so the Lord shows compassion to those who fear him.",
+     "passage_id": 1774,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "show compassion (racham)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "a father",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "show compassion",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to his children",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'As a father SHOWS COMPASSION (racham) to his children' - the tender pity of a human father, the analogy for God's mercy.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with God's compassion on those who fear him",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

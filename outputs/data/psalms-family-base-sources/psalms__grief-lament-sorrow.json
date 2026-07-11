@@ -1,0 +1,4705 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "grief-lament-sorrow"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'grief-lament-sorrow': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 22,
+   "instances": 31,
+   "passages": 29
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1579": {
+   "passage_ref": "Psa 5:1-12",
+   "verse_refs": [
+    "Psa 5:1",
+    "Psa 5:2",
+    "Psa 5:3",
+    "Psa 5:4",
+    "Psa 5:5",
+    "Psa 5:6",
+    "Psa 5:7",
+    "Psa 5:8",
+    "Psa 5:9",
+    "Psa 5:10",
+    "Psa 5:11",
+    "Psa 5:12"
+   ],
+   "text": "To the choirmaster : for the flutes . A Psalm of David . Psa 5:1 Give ear to my words , O Lord ; consider my groaning . Psa 5:2 Give attention to the sound of my cry , my King and my God , for to you do I pray . Psa 5:3 O Lord , in the morning you hear my voice ; in the morning I prepare a sacrifice for you and watch . Psa 5:4 For you are not a God who delights in wickedness ; evil may not dwell with you. Psa 5:5 The boastful shall not stand before your eyes ; you hate all evildoers . Psa 5:6 You destroy those who speak lies ; the Lord abhors the bloodthirsty and deceitful man . Psa 5:7 But I , through the abundance of your steadfast love , will enter your house . I will bow down toward your holy temple in the fear of you. Psa 5:8 Lead me, O Lord , in your righteousness because of my enemies ; make your way straight before me. Psa 5:9 For there is no truth in their mouth ; their inmost self is destruction ; their throat is an open grave ; they flatter with their tongue . Psa 5:10 Make them bear their guilt , O God ; let them fall by their own counsels ; because of the abundance of their transgressions cast them out, for they have rebelled against you . Psa 5:11 But let all who take refuge in you rejoice ; let them ever sing for joy , and spread your protection over them, that those who love your name may exult in you. Psa 5:12 For you bless the righteous , O Lord ; you cover him with favor as with a shield ."
+  },
+  "1580": {
+   "passage_ref": "Psa 6:1-10",
+   "verse_refs": [
+    "Psa 6:1",
+    "Psa 6:2",
+    "Psa 6:3",
+    "Psa 6:4",
+    "Psa 6:5",
+    "Psa 6:6",
+    "Psa 6:7",
+    "Psa 6:8",
+    "Psa 6:9",
+    "Psa 6:10"
+   ],
+   "text": "To the choirmaster : with stringed instruments ; according to The Sheminith . A Psalm of David . Psa 6:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath . Psa 6:2 Be gracious to me, O Lord , for I am languishing ; heal me, O Lord , for my bones are troubled . Psa 6:3 My soul also is greatly troubled . But you , O Lord — how long ? Psa 6:4 Turn , O Lord , deliver my life ; save me for the sake of your steadfast love . Psa 6:5 For in death there is no remembrance of you; in Sheol who will give you praise ? Psa 6:6 I am weary with my moaning ; every night I flood my bed with tears; I drench my couch with my weeping . Psa 6:7 My eye wastes away because of grief ; it grows weak because of all my foes . Psa 6:8 Depart from me, all you workers of evil , for the Lord has heard the sound of my weeping . Psa 6:9 The Lord has heard my plea ; the Lord accepts my prayer . Psa 6:10 All my enemies shall be ashamed and greatly troubled ; they shall turn back and be put to shame in a moment ."
+  },
+  "1588": {
+   "passage_ref": "Psa 12:1-4",
+   "verse_refs": [
+    "Psa 12:1",
+    "Psa 12:2",
+    "Psa 12:3",
+    "Psa 12:4",
+    "Psa 12:5"
+   ],
+   "text": "To the choirmaster : according to The Sheminith . A Psalm of David . Psa 12:1 Save , O Lord , for the godly one is gone ; for the faithful have vanished from among the children of man . Psa 12:2 Everyone utters lies to his neighbor ; with flattering lips and a double heart they speak . Psa 12:3 May the Lord cut off all flattering lips , the tongue that makes great boasts, Psa 12:4 those who say , “ With our tongue we will prevail , our lips are with us; who is master over us ?” Psa 12:5 “Because the poor are plundered, because the needy groan, I will now arise,” says the Lord; “I will place him in the safety for which he longs.”"
+  },
+  "1621": {
+   "passage_ref": "Psa 30:3-12",
+   "verse_refs": [
+    "Psa 30:1",
+    "Psa 30:2",
+    "Psa 30:3",
+    "Psa 30:4",
+    "Psa 30:5",
+    "Psa 30:6",
+    "Psa 30:7",
+    "Psa 30:8",
+    "Psa 30:9",
+    "Psa 30:10",
+    "Psa 30:11",
+    "Psa 30:12"
+   ],
+   "text": "A Psalm of David . A song at the dedication of the temple . Psa 30:1 I will extol you, O Lord , for you have drawn me up and have not let my foes rejoice over me . Psa 30:2 O Lord my God, I cried to you for help, and you have healed me. Psa 30:3 O Lord , you have brought up my soul from Sheol ; you restored me to life from among those who go down to the pit . Psa 30:4 Sing praises to the Lord , O you his saints , and give thanks to his holy name . Psa 30:5 For his anger is but for a moment , and his favor is for a lifetime . Weeping may tarry for the night , but joy comes with the morning . Psa 30:6 As for me , I said in my prosperity , “I shall never be moved .” Psa 30:7 By your favor , O Lord , you made my mountain stand strong ; you hid your face ; I was dismayed . Psa 30:8 To you, O Lord , I cry , and to the Lord I plead for mercy: Psa 30:9 “What profit is there in my death , if I go down to the pit ? Will the dust praise you? Will it tell of your faithfulness ? Psa 30:10 Hear , O Lord , and be merciful to me! O Lord , be my helper !” Psa 30:11 You have turned for me my mourning into dancing ; you have loosed my sackcloth and clothed me with gladness , Psa 30:12 that my glory may sing your praise and not be silent . O Lord my God , I will give thanks to you forever !"
+  },
+  "1623": {
+   "passage_ref": "Psa 32:1-11",
+   "verse_refs": [
+    "Psa 32:1",
+    "Psa 32:2",
+    "Psa 32:3",
+    "Psa 32:4",
+    "Psa 32:5",
+    "Psa 32:6",
+    "Psa 32:7",
+    "Psa 32:8",
+    "Psa 32:9",
+    "Psa 32:10",
+    "Psa 32:11"
+   ],
+   "text": "A Maskil of David . Psa 32:1 Blessed is the one whose transgression is forgiven , whose sin is covered . Psa 32:2 Blessed is the man against whom the Lord counts no iniquity , and in whose spirit there is no deceit . Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long. Psa 32:4 For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer . Selah Psa 32:5 I acknowledged my sin to you, and I did not cover my iniquity ; I said , “I will confess my transgressions to the Lord ,” and you forgave the iniquity of my sin . Selah Psa 32:6 Therefore let everyone who is godly offer prayer to you at a time when you may be found ; surely in the rush of great waters , they shall not reach him. Psa 32:7 You are a hiding place for me; you preserve me from trouble ; you surround me with shouts of deliverance . Selah Psa 32:8 I will instruct you and teach you in the way you should go ; I will counsel you with my eye upon you. Psa 32:9 Be not like a horse or a mule , without understanding , which must be curbed with bit and bridle , or it will not stay near you . Psa 32:10 Many are the sorrows of the wicked , but steadfast love surrounds the one who trusts in the Lord . Psa 32:11 Be glad in the Lord , and rejoice , O righteous , and shout for joy , all you upright in heart !"
+  },
+  "1629": {
+   "passage_ref": "Psa 35:9-15",
+   "verse_refs": [
+    "Psa 35:7",
+    "Psa 35:8",
+    "Psa 35:9",
+    "Psa 35:10",
+    "Psa 35:11",
+    "Psa 35:12",
+    "Psa 35:13",
+    "Psa 35:14",
+    "Psa 35:15",
+    "Psa 35:16"
+   ],
+   "text": "Psa 35:7 For without cause they hid their net for me; without cause they dug a pit for my life . Psa 35:8 Let destruction come upon him when he does not know it! And let the net that he hid ensnare him; let him fall into it—to his destruction! Psa 35:9 Then my soul will rejoice in the Lord , exulting in his salvation . Psa 35:10 All my bones shall say , “O Lord , who is like you, delivering the poor from him who is too strong for him, the poor and needy from him who robs him ?” Psa 35:11 Malicious witnesses rise up ; they ask me of things that I do not know . Psa 35:12 They repay me evil for good ; my soul is bereft . Psa 35:13 But I, when they were sick — I wore sackcloth ; I afflicted myself with fasting ; I prayed with head bowed on my chest . Psa 35:14 I went about as though I grieved for my friend or my brother ; as one who laments his mother , I bowed down in mourning . Psa 35:15 But at my stumbling they rejoiced and gathered ; they gathered together against me; wretches whom I did not know tore at me without ceasing ; Psa 35:16 like profane mockers at a feast, they gnash at me with their teeth."
+  },
+  "1635": {
+   "passage_ref": "Psa 38:1-20",
+   "verse_refs": [
+    "Psa 38:1",
+    "Psa 38:2",
+    "Psa 38:3",
+    "Psa 38:4",
+    "Psa 38:5",
+    "Psa 38:6",
+    "Psa 38:7",
+    "Psa 38:8",
+    "Psa 38:9",
+    "Psa 38:10",
+    "Psa 38:11",
+    "Psa 38:12",
+    "Psa 38:13",
+    "Psa 38:14",
+    "Psa 38:15",
+    "Psa 38:16",
+    "Psa 38:17",
+    "Psa 38:18",
+    "Psa 38:19",
+    "Psa 38:20",
+    "Psa 38:22"
+   ],
+   "text": "A Psalm of David , for the memorial offering . Psa 38:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath ! Psa 38:2 For your arrows have sunk into me, and your hand has come down on me. Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin . Psa 38:4 For my iniquities have gone over my head ; like a heavy burden , they are too heavy for me . Psa 38:5 My wounds stink and fester because of my foolishness , Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning . Psa 38:7 For my sides are filled with burning , and there is no soundness in my flesh . Psa 38:8 I am feeble and crushed ; I groan because of the tumult of my heart . Psa 38:9 O Lord , all my longing is before you; my sighing is not hidden from you. Psa 38:10 My heart throbs ; my strength fails me, and the light of my eyes — it also has gone from me . Psa 38:11 My friends and companions stand aloof from my plague , and my nearest kin stand far off. Psa 38:12 Those who seek my life lay their snares ; those who seek my hurt speak of ruin and meditate treachery all day long. Psa 38:13 But I am like a deaf man; I do not hear , like a mute man who does not open his mouth . Psa 38:14 I have become like a man who does not hear , and in whose mouth are no rebukes . Psa 38:15 But for you, O Lord , do I wait ; it is you, O Lord my God , who will answer . Psa 38:16 For I said , “Only let them not rejoice over me, who boast against me when my foot slips !” Psa 38:17 For I am ready to fall , and my pain is ever before me. Psa 38:18 I confess my iniquity ; I am sorry for my sin . Psa 38:19 But my foes are vigorous , they are mighty , and many are those who hate me wrongfully . Psa 38:20 Those who render me evil for good accuse me because I follow after good . Psa 38:22 Make haste to help me, O Lord, my salvation!"
+  },
+  "1639": {
+   "passage_ref": "Psa 42:1-11",
+   "verse_refs": [
+    "Psa 42:1",
+    "Psa 42:2",
+    "Psa 42:3",
+    "Psa 42:4",
+    "Psa 42:5",
+    "Psa 42:6",
+    "Psa 42:7",
+    "Psa 42:8",
+    "Psa 42:9",
+    "Psa 42:10",
+    "Psa 42:11"
+   ],
+   "text": "To the choirmaster . A Maskil of the Sons of Korah . Psa 42:1 As a deer pants for flowing streams , so pants my soul for you, O God . Psa 42:2 My soul thirsts for God , for the living God . When shall I come and appear before God ? Psa 42:3 My tears have been my food day and night , while they say to me all the day long , “Where is your God ?” Psa 42:4 These things I remember , as I pour out my soul : how I would go with the throng and lead them in procession to the house of God with glad shouts and songs of praise, a multitude keeping festival . Psa 42:5 Why are you cast down, O my soul , and why are you in turmoil within me? Hope in God ; for I shall again praise him, my salvation Psa 42:6 and my God . My soul is cast down within me; therefore I remember you from the land of Jordan and of Hermon , from Mount Mizar . Psa 42:7 Deep calls to deep at the roar of your waterfalls ; all your breakers and your waves have gone over me. Psa 42:8 By day the Lord commands his steadfast love , and at night his song is with me, a prayer to the God of my life . Psa 42:9 I say to God , my rock : “ Why have you forgotten me? Why do I go mourning because of the oppression of the enemy ?” Psa 42:10 As with a deadly wound in my bones , my adversaries taunt me, while they say to me all the day long, “ Where is your God ?” Psa 42:11 Why are you cast down, O my soul , and why are you in turmoil within me? Hope in God ; for I shall again praise him, my salvation and my God ."
+  },
+  "1640": {
+   "passage_ref": "Psa 43:1-5",
+   "verse_refs": [
+    "Psa 43:1",
+    "Psa 43:2",
+    "Psa 43:3",
+    "Psa 43:4",
+    "Psa 43:5"
+   ],
+   "text": "Psa 43:1 Vindicate me, O God , and defend my cause against an ungodly people , from the deceitful and unjust man deliver me ! Psa 43:2 For you are the God in whom I take refuge ; why have you rejected me? Why do I go about mourning because of the oppression of the enemy ? Psa 43:3 Send out your light and your truth ; let them lead me; let them bring me to your holy hill and to your dwelling ! Psa 43:4 Then I will go to the altar of God , to God my exceeding joy , and I will praise you with the lyre , O God , my God . Psa 43:5 Why are you cast down , O my soul , and why are you in turmoil within me? Hope in God ; for I shall again praise him, my salvation and my God ."
+  },
+  "1661": {
+   "passage_ref": "Psa 55:1-5",
+   "verse_refs": [
+    "Psa 55:1",
+    "Psa 55:2",
+    "Psa 55:3",
+    "Psa 55:4",
+    "Psa 55:5"
+   ],
+   "text": "To the choirmaster : with stringed instruments . A Maskil of David . Psa 55:1 Give ear to my prayer , O God , and hide not yourself from my plea for mercy ! Psa 55:2 Attend to me, and answer me; I am restless in my complaint and I moan , Psa 55:3 because of the noise of the enemy , because of the oppression of the wicked . For they drop trouble upon me, and in anger they bear a grudge against me . Psa 55:4 My heart is in anguish within me; the terrors of death have fallen upon me . Psa 55:5 Fear and trembling come upon me, and horror overwhelms me."
+  },
+  "1662": {
+   "passage_ref": "Psa 55:9-23",
+   "verse_refs": [
+    "Psa 55:8",
+    "Psa 55:9",
+    "Psa 55:10",
+    "Psa 55:11",
+    "Psa 55:12",
+    "Psa 55:13",
+    "Psa 55:14",
+    "Psa 55:15",
+    "Psa 55:16",
+    "Psa 55:17",
+    "Psa 55:18",
+    "Psa 55:19",
+    "Psa 55:20",
+    "Psa 55:21",
+    "Psa 55:22",
+    "Psa 55:23"
+   ],
+   "text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you ."
+  },
+  "1663": {
+   "passage_ref": "Psa 56:1-13",
+   "verse_refs": [
+    "Psa 56:1",
+    "Psa 56:2",
+    "Psa 56:3",
+    "Psa 56:4",
+    "Psa 56:5",
+    "Psa 56:6",
+    "Psa 56:7",
+    "Psa 56:8",
+    "Psa 56:9",
+    "Psa 56:10",
+    "Psa 56:11",
+    "Psa 56:12",
+    "Psa 56:13"
+   ],
+   "text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life ."
+  },
+  "1677": {
+   "passage_ref": "Psa 64:1-6",
+   "verse_refs": [
+    "Psa 64:1",
+    "Psa 64:2",
+    "Psa 64:3",
+    "Psa 64:4",
+    "Psa 64:5",
+    "Psa 64:6"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 64:1 Hear my voice , O God , in my complaint ; preserve my life from dread of the enemy . Psa 64:2 Hide me from the secret plots of the wicked , from the throng of evildoers , Psa 64:3 who whet their tongues like swords , who aim bitter words like arrows , Psa 64:4 shooting from ambush at the blameless , shooting at him suddenly and without fear . Psa 64:5 They hold fast to their evil purpose ; they talk of laying snares secretly , thinking , “ Who can see them ?” Psa 64:6 They search out injustice , saying, “We have accomplished a diligent search .” For the inward mind and heart of a man are deep ."
+  },
+  "1689": {
+   "passage_ref": "Psa 69:9-10",
+   "verse_refs": [
+    "Psa 69:9",
+    "Psa 69:10"
+   ],
+   "text": "Psa 69:9 For zeal for your house has consumed me, and the reproaches of those who reproach you have fallen on me . Psa 69:10 When I wept and humbled my soul with fasting , it became my reproach ."
+  },
+  "1712": {
+   "passage_ref": "Psa 77:1-3",
+   "verse_refs": [
+    "Psa 77:1",
+    "Psa 77:2",
+    "Psa 77:3",
+    "Psa 77:4"
+   ],
+   "text": "To the choirmaster : according to Jeduthun . A Psalm of Asaph . Psa 77:1 I cry aloud to God , aloud to God , and he will hear me . Psa 77:2 In the day of my trouble I seek the Lord ; in the night my hand is stretched out without wearying ; my soul refuses to be comforted . Psa 77:3 When I remember God , I moan ; when I meditate , my spirit faints . Selah Psa 77:4 You hold my eyelids open; I am so troubled that I cannot speak."
+  },
+  "1713": {
+   "passage_ref": "Psa 77:5-18",
+   "verse_refs": [
+    "Psa 77:5",
+    "Psa 77:6",
+    "Psa 77:7",
+    "Psa 77:8",
+    "Psa 77:9",
+    "Psa 77:10",
+    "Psa 77:11",
+    "Psa 77:12",
+    "Psa 77:13",
+    "Psa 77:14",
+    "Psa 77:15",
+    "Psa 77:16",
+    "Psa 77:17",
+    "Psa 77:18"
+   ],
+   "text": "Psa 77:5 I consider the days of old , the years long ago . Psa 77:6 I said, “Let me remember my song in the night ; let me meditate in my heart .” Then my spirit made a diligent search : Psa 77:7 “Will the Lord spurn forever , and never again be favorable ? Psa 77:8 Has his steadfast love forever ceased ? Are his promises at an end for all time ? Psa 77:9 Has God forgotten to be gracious ? Has he in anger shut up his compassion ?” Selah Psa 77:10 Then I said , “I will appeal to this, to the years of the right hand of the Most High .” Psa 77:11 I will remember the deeds of the Lord ; yes , I will remember your wonders of old . Psa 77:12 I will ponder all your work , and meditate on your mighty deeds . Psa 77:13 Your way , O God , is holy . What god is great like our God ? Psa 77:14 You are the God who works wonders ; you have made known your might among the peoples . Psa 77:15 You with your arm redeemed your people , the children of Jacob and Joseph . Selah Psa 77:16 When the waters saw you, O God , when the waters saw you, they were afraid ; indeed , the deep trembled . Psa 77:17 The clouds poured out water ; the skies gave forth thunder ; your arrows flashed on every side . Psa 77:18 The crash of your thunder was in the whirlwind ; your lightnings lighted up the world ; the earth trembled and shook ."
+  },
+  "1719": {
+   "passage_ref": "Psa 78:37-46",
+   "verse_refs": [
+    "Psa 78:37",
+    "Psa 78:38",
+    "Psa 78:39",
+    "Psa 78:40",
+    "Psa 78:41",
+    "Psa 78:42",
+    "Psa 78:43",
+    "Psa 78:44",
+    "Psa 78:45",
+    "Psa 78:46"
+   ],
+   "text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant . Psa 78:38 Yet he , being compassionate , atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath . Psa 78:39 He remembered that they were but flesh , a wind that passes and comes not again. Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert ! Psa 78:41 They tested God again and again and provoked the Holy One of Israel . Psa 78:42 They did not remember his power or the day when he redeemed them from the foe , Psa 78:43 when he performed his signs in Egypt and his marvels in the fields of Zoan . Psa 78:44 He turned their rivers to blood , so that they could not drink of their streams . Psa 78:45 He sent among them swarms of flies , which devoured them, and frogs , which destroyed them . Psa 78:46 He gave their crops to the destroying locust and the fruit of their labor to the locust ."
+  },
+  "1725": {
+   "passage_ref": "Psa 79:11-13",
+   "verse_refs": [
+    "Psa 79:10",
+    "Psa 79:11",
+    "Psa 79:12",
+    "Psa 79:13"
+   ],
+   "text": "Psa 79:10 Why should the nations say, “Where is their God?” Let the avenging of the outpoured blood of your servants be known among the nations before our eyes! Psa 79:11 Let the groans of the prisoners come before you; according to your great power , preserve those doomed to die ! Psa 79:12 Return sevenfold into the lap of our neighbors the taunts with which they have taunted you, O Lord ! Psa 79:13 But we your people , the sheep of your pasture , will give thanks to you forever ; from generation to generation we will recount your praise ."
+  },
+  "1727": {
+   "passage_ref": "Psa 80:4-7",
+   "verse_refs": [
+    "Psa 80:4",
+    "Psa 80:5",
+    "Psa 80:6",
+    "Psa 80:7"
+   ],
+   "text": "Psa 80:4 O Lord God of hosts , how long will you be angry with your people’s prayers ? Psa 80:5 You have fed them with the bread of tears and given them tears to drink in full measure . Psa 80:6 You make us an object of contention for our neighbors , and our enemies laugh among themselves . Psa 80:7 Restore us, O God of hosts ; let your face shine , that we may be saved !"
+  },
+  "1742": {
+   "passage_ref": "Psa 88:7-12",
+   "verse_refs": [
+    "Psa 88:7",
+    "Psa 88:8",
+    "Psa 88:9",
+    "Psa 88:10",
+    "Psa 88:11",
+    "Psa 88:12",
+    "Psa 88:13"
+   ],
+   "text": "Psa 88:7 Your wrath lies heavy upon me, and you overwhelm me with all your waves . Selah Psa 88:8 You have caused my companions to shun me; you have made me a horror to them. I am shut in so that I cannot escape ; Psa 88:9 my eye grows dim through sorrow . Every day I call upon you, O Lord ; I spread out my hands to you. Psa 88:10 Do you work wonders for the dead ? Do the departed rise up to praise you? Selah Psa 88:11 Is your steadfast love declared in the grave , or your faithfulness in Abaddon ? Psa 88:12 Are your wonders known in the darkness , or your righteousness in the land of forgetfulness ? Psa 88:13 But I, O Lord, cry to you; in the morning my prayer comes before you."
+  },
+  "1769": {
+   "passage_ref": "Psa 102:1-5",
+   "verse_refs": [
+    "Psa 102:1",
+    "Psa 102:2",
+    "Psa 102:3",
+    "Psa 102:4",
+    "Psa 102:5"
+   ],
+   "text": "A Prayer of one afflicted , when he is faint and pours out his complaint before the Lord . Psa 102:1 Hear my prayer , O Lord ; let my cry come to you! Psa 102:2 Do not hide your face from me in the day of my distress ! Incline your ear to me; answer me speedily in the day when I call ! Psa 102:3 For my days pass away like smoke , and my bones burn like a furnace . Psa 102:4 My heart is struck down like grass and has withered ; I forget to eat my bread . Psa 102:5 Because of my loud groaning my bones cling to my flesh ."
+  },
+  "1770": {
+   "passage_ref": "Psa 102:8-10",
+   "verse_refs": [
+    "Psa 102:8",
+    "Psa 102:9",
+    "Psa 102:10",
+    "Psa 102:11"
+   ],
+   "text": "Psa 102:8 All the day my enemies taunt me; those who deride me use my name for a curse . Psa 102:9 For I eat ashes like bread and mingle tears with my drink , Psa 102:10 because of your indignation and anger ; for you have taken me up and thrown me down . Psa 102:11 My days are like an evening shadow; I wither away like grass."
+  },
+  "1772": {
+   "passage_ref": "Psa 102:18-23",
+   "verse_refs": [
+    "Psa 102:18",
+    "Psa 102:19",
+    "Psa 102:20",
+    "Psa 102:21",
+    "Psa 102:22",
+    "Psa 102:23",
+    "Psa 102:26"
+   ],
+   "text": "Psa 102:18 Let this be recorded for a generation to come , so that a people yet to be created may praise the Lord : Psa 102:19 that he looked down from his holy height ; from heaven the Lord looked at the earth , Psa 102:20 to hear the groans of the prisoners , to set free those who were doomed to die , Psa 102:21 that they may declare in Zion the name of the Lord , and in Jerusalem his praise , Psa 102:22 when peoples gather together , and kingdoms , to worship the Lord . Psa 102:23 He has broken my strength in midcourse ; he has shortened my days . Psa 102:26 They will perish , but you will remain ; they will all wear out like a garment . You will change them like a robe , and they will pass away ,"
+  },
+  "1790": {
+   "passage_ref": "Psa 106:22-32",
+   "verse_refs": [
+    "Psa 106:22",
+    "Psa 106:23",
+    "Psa 106:24",
+    "Psa 106:25",
+    "Psa 106:26",
+    "Psa 106:27",
+    "Psa 106:28",
+    "Psa 106:29",
+    "Psa 106:30",
+    "Psa 106:31",
+    "Psa 106:32",
+    "Psa 106:33"
+   ],
+   "text": "Psa 106:22 wondrous works in the land of Ham , and awesome deeds by the Red Sea . Psa 106:23 Therefore he said he would destroy them— had not Moses , his chosen one , stood in the breach before him, to turn away his wrath from destroying them . Psa 106:24 Then they despised the pleasant land , having no faith in his promise . Psa 106:25 They murmured in their tents , and did not obey the voice of the Lord . Psa 106:26 Therefore he raised his hand and swore to them that he would make them fall in the wilderness , Psa 106:27 and would make their offspring fall among the nations , scattering them among the lands . Psa 106:28 Then they yoked themselves to the Baal of Peor , and ate sacrifices offered to the dead ; Psa 106:29 they provoked the Lord to anger with their deeds , and a plague broke out among them. Psa 106:30 Then Phinehas stood up and intervened , and the plague was stayed . Psa 106:31 And that was counted to him as righteousness from generation to generation forever . Psa 106:32 They angered him at the waters of Meribah , and it went ill with Moses on their account , Psa 106:33 for they made his spirit bitter, and he spoke rashly with his lips."
+  },
+  "1797": {
+   "passage_ref": "Psa 107:37-43",
+   "verse_refs": [
+    "Psa 107:36",
+    "Psa 107:37",
+    "Psa 107:38",
+    "Psa 107:39",
+    "Psa 107:40",
+    "Psa 107:41",
+    "Psa 107:42",
+    "Psa 107:43"
+   ],
+   "text": "Psa 107:36 And there he lets the hungry dwell, and they establish a city to live in; Psa 107:37 they sow fields and plant vineyards and get a fruitful yield . Psa 107:38 By his blessing they multiply greatly , and he does not let their livestock diminish . Psa 107:39 When they are diminished and brought low through oppression , evil , and sorrow , Psa 107:40 he pours contempt on princes and makes them wander in trackless wastes ; Psa 107:41 but he raises up the needy out of affliction and makes their families like flocks . Psa 107:42 The upright see it and are glad , and all wickedness shuts its mouth . Psa 107:43 Whoever is wise , let him attend to these things; let them consider the steadfast love of the Lord ."
+  },
+  "1812": {
+   "passage_ref": "Psa 116:1-10",
+   "verse_refs": [
+    "Psa 116:1",
+    "Psa 116:2",
+    "Psa 116:3",
+    "Psa 116:4",
+    "Psa 116:5",
+    "Psa 116:6",
+    "Psa 116:7",
+    "Psa 116:8",
+    "Psa 116:9",
+    "Psa 116:10",
+    "Psa 116:11"
+   ],
+   "text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”"
+  },
+  "1841": {
+   "passage_ref": "Psa 126:5-6",
+   "verse_refs": [
+    "Psa 126:5",
+    "Psa 126:6"
+   ],
+   "text": "Psa 126:5 Those who sow in tears shall reap with shouts of joy ! Psa 126:6 He who goes out weeping , bearing the seed for sowing , shall come home with shouts of joy , bringing his sheaves with him."
+  },
+  "1862": {
+   "passage_ref": "Psa 137:6-7",
+   "verse_refs": [
+    "Psa 137:1",
+    "Psa 137:3",
+    "Psa 137:4",
+    "Psa 137:5",
+    "Psa 137:6",
+    "Psa 137:7",
+    "Psa 137:8",
+    "Psa 137:9"
+   ],
+   "text": "Psa 137:1 By the waters of Babylon , there we sat down and wept , when we remembered Zion . Psa 137:3 For there our captors required of us songs , and our tormentors , mirth , saying, “ Sing us one of the songs of Zion !” Psa 137:4 How shall we sing the Lord’s song in a foreign land? Psa 137:5 If I forget you, O Jerusalem, let my right hand forget its skill! Psa 137:6 Let my tongue stick to the roof of my mouth , if I do not remember you, if I do not set Jerusalem above my highest joy ! Psa 137:7 Remember , O Lord , against the Edomites the day of Jerusalem , how they said , “Lay it bare , lay it bare , down to its foundations !” Psa 137:8 O daughter of Babylon, doomed to be destroyed, blessed shall he be who repays you with what you have done to us! Psa 137:9 Blessed shall he be who takes your little ones and dashes them against the rock!"
+  },
+  "1868": {
+   "passage_ref": "Psa 139:21-24",
+   "verse_refs": [
+    "Psa 139:21",
+    "Psa 139:22",
+    "Psa 139:23",
+    "Psa 139:24"
+   ],
+   "text": "Psa 139:21 Do I not hate those who hate you, O Lord ? And do I not loathe those who rise up against you? Psa 139:22 I hate them with complete hatred ; I count them my enemies . Psa 139:23 Search me, O God , and know my heart ! Try me and know my thoughts ! Psa 139:24 And see if there be any grievous way in me, and lead me in the way everlasting !"
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H1832:tear",
+   "meaning": "tears",
+   "lemma": "H1832",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa, HNcfsc",
+    "esv_words": "tears",
+    "lexical_gloss": "tears",
+    "read_sense_variants": "tears (dimah) | tears / weeping (dimah) | tears (dimah - put my tears in your bottle)"
+   },
+   "instances": [
+    {
+     "span_id": 271014,
+     "reference": "Psa 116:8",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcfsa HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "tears (dimah)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1812,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ;",
+     "passage_id": 1812,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears (dimah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "then be delivered",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'my eyes from TEARS (dimah)' - the weeping God turned back, grief dried by deliverance.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the delivered soul",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271014",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271014",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271014",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272582,
+     "reference": "Psa 126:5",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcfsa HR",
+      "stem": ""
+     },
+     "read_characteristic": "tears (dimah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1841,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 126:5 Those who sow in tears shall reap with shouts of joy !",
+     "passage_id": 1841,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears (dimah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the sowers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "while sowing",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Those who sow in TEARS (dimah) shall reap with shouts of joy!' - the operation of grief that seeds joy: weeping labour is not wasted but is the very seed of the coming harvest of joy.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with reaping in joy",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272582",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272582",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272582",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 278543,
+     "reference": "Psa 42:3",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcfsc HVqp3fs HR HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "tears / weeping (dimah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1639,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 42:3 My tears have been my food day and night , while they say to me all the day long , “Where is your God ?”",
+     "passage_id": 1639,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears / weeping (dimah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "David",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "his food day and night",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'My TEARS (dimah) have been my food day and night' — weeping so constant it replaces bread; dimah (recurs Ps39:12) the tears that feed the grief while the foes taunt 'Where is your God?'",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278543",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278543",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 280318,
+     "reference": "Psa 56:8",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcfsc HSh",
+      "stem": ""
+     },
+     "read_characteristic": "tears (dimah - put my tears in your bottle)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1663,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ?",
+     "passage_id": 1663,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears (dimah - put my tears in your bottle)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "God puts them in his bottle, counts them (v8)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "wept / shed",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "kept by God in his bottle / book",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the restless tossings",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'put my TEARS (dimah) in your bottle. Are they not in your book?' — the weeping God treasures; dimah the psalmist's tears, which God gathers (the qualifier) as precious and records — grief not wasted but kept, the tenderest image of divine care in the psalm",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "280318",
+       "to_span": "280317",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280318",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280318",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280318",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280318",
+       "to_span": "280316",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 283769,
+     "reference": "Psa 80:5",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "tears (dimah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1727,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 80:5 You have fed them with the bread of tears and given them tears to drink in full measure .",
+     "passage_id": 1727,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears (dimah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in grief",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the tears given as drink",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'You have fed them with the bread of TEARS (dimah)' - the people's weeping become their very sustenance; grief so constant it is eaten as bread.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283769",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283769",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283769",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0603:groan",
+   "meaning": "groans",
+   "lemma": "H0603",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsc, HNcfsc HR, HNcfsc HSp2ms",
+    "esv_words": "groans, groan",
+    "lexical_gloss": "groaning",
+    "read_sense_variants": "the needy groan | groans (anaqah) | groans (enqah)"
+   },
+   "instances": [
+    {
+     "span_id": 268981,
+     "reference": "Psa 102:20",
+     "hebrew_surface": "groans",
+     "esv_word": "groans",
+     "morphology": {
+      "morph_code": "HNcfsc",
+      "stem": ""
+     },
+     "read_characteristic": "groans (enqah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1772,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:20 to hear the groans of the prisoners , to set free those who were doomed to die ,",
+     "passage_id": 1772,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "groans (enqah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the prisoners",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "groan",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v20: 'to hear the GROANS (enqah) of the prisoners' - the sighing of the captives that God stoops to hear.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being set free",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268981",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268981",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268981",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283471,
+     "reference": "Psa 79:11",
+     "hebrew_surface": "groans",
+     "esv_word": "groans",
+     "morphology": {
+      "morph_code": "HNcfsc HSp2ms",
+      "stem": ""
+     },
+     "read_characteristic": "groans (anaqah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1725,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 79:11 Let the groans of the prisoners come before you; according to your great power , preserve those doomed to die !",
+     "passage_id": 1725,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "groans (anaqah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the prisoners",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "groan in captivity",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the plea to preserve those doomed to die",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'Let the GROANS (anaqah) of the prisoners come before you' - the anguished sighing of the captives, the sound of suffering lifted to God as its own petition.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283471",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283471",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283471",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306021,
+     "reference": "Psa 12:5",
+     "hebrew_surface": "groan",
+     "esv_word": "groan",
+     "morphology": {
+      "morph_code": "HNcfsc HR",
+      "stem": ""
+     },
+     "read_characteristic": "the needy groan",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1588,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 12:5 “Because the poor are plundered, because the needy groan, I will now arise,” says the Lord; “I will place him in the safety for which he longs.”",
+     "passage_id": 1588,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the needy groan",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the poor / needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "because the poor are plundered and the needy groan, God rises to act - the inarticulate groan that summons rescue",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "groaning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "needy-groan",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Because the poor are plundered, because the needy GROAN, I will now arise, says the LORD' - the interior of the crushed is a groan; it is precisely this sound that moves God to rise.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306021",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306021",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306021",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1993:moan",
+   "meaning": "moan",
+   "lemma": "H1993",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "moan",
+    "lexical_gloss": "to roar",
+    "read_sense_variants": "moan / murmur (hamah - and moan) | moan / murmur (hamah - I moan)"
+   },
+   "instances": [
+    {
+     "span_id": 280095,
+     "reference": "Psa 55:17",
+     "hebrew_surface": "moan",
+     "esv_word": "moan",
+     "morphology": {
+      "morph_code": "HVqu1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "moan / murmur (hamah - and moan)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1662,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice .",
+     "passage_id": 1662,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "moan / murmur (hamah - and moan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "moan / groan",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the complaint",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'I utter my complaint and MOAN (hamah)' — the groaning that accompanies the prayer; hamah (to murmur/be in commotion, cf v2) the sound of the heart's tumult, kept up before the God who hears",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280095",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280095",
+       "to_span": "280094",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 282961,
+     "reference": "Psa 77:3",
+     "hebrew_surface": "moan",
+     "esv_word": "moan",
+     "morphology": {
+      "morph_code": "HVqu1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "moan / murmur (hamah - I moan)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1712,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 77:3 When I remember God , I moan ; when I meditate , my spirit faints . Selah",
+     "passage_id": 1712,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "moan / murmur (hamah - I moan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "moan / groan",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "in remembrance of God",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with remembering God",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'I remember God, and I MOAN (hamah)' - the audible groan of the troubled heart; hamah here the low murmur of distress, grief given voice as the mind dwells on God in the dark",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282961",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "pair",
+       "from_span": "282961",
+       "to_span": "282959",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282961",
+       "to_span": "282959",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6937:mourn",
+   "meaning": "mourning",
+   "lemma": "H6937",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmsa",
+    "esv_words": "mourning",
+    "lexical_gloss": "be dark",
+    "read_sense_variants": "mourn / go about darkly (qadar)"
+   },
+   "instances": [
+    {
+     "span_id": 278619,
+     "reference": "Psa 42:9",
+     "hebrew_surface": "mourning",
+     "esv_word": "mourning",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "mourn / go about darkly (qadar)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1639,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 42:9 I say to God , my rock : “ Why have you forgotten me? Why do I go mourning because of the oppression of the enemy ?”",
+     "passage_id": 1639,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "mourn / go about darkly (qadar)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "the felt divine forgetting + enemy oppression (v9)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "David",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "mourn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "because of the enemy's oppression",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Why do I go MOURNING (qadar) because of the oppression of the enemy?' — the dark grief of feeling forgotten by God; qadar (recurs Ps35:14, 38:6) the mourning-blackness, its cause the felt divine forgetting (v9 qualifier) and the foe's oppression",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "278619",
+       "to_span": "278616",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278619",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278619",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 278644,
+     "reference": "Psa 43:2",
+     "hebrew_surface": "mourning",
+     "esv_word": "mourning",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "mourn / go about darkly (qadar)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1640,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 43:2 For you are the God in whom I take refuge ; why have you rejected me? Why do I go about mourning because of the oppression of the enemy ?",
+     "passage_id": 1640,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "mourn / go about darkly (qadar)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "the felt divine rejection + enemy oppression (v2)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "David",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "mourn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "because of the enemy's oppression",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Why do I go about MOURNING (qadar) because of the oppression of the enemy?' — the dark grief of the seemingly-rejected (verbatim from Ps42:9); qadar the mourning-blackness whose cause is the felt divine rejection (v2 qualifier) and the foe's oppression",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "278644",
+       "to_span": "278641",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278644",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278644",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1058:wept",
+   "meaning": "wept",
+   "lemma": "H1058",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp1cp, HVqw1cs",
+    "esv_words": "wept",
+    "lexical_gloss": "to weep",
+    "read_sense_variants": "weep (bakah - when I wept and humbled my soul with fasting) | weep (bakah)"
+   },
+   "instances": [
+    {
+     "span_id": 273270,
+     "reference": "Psa 137:1",
+     "hebrew_surface": "wept",
+     "esv_word": "wept",
+     "morphology": {
+      "morph_code": "HVqp1cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "weep (bakah)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1862,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 137:1 By the waters of Babylon , there we sat down and wept , when we remembered Zion .",
+     "passage_id": 1862,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "weep (bakah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the exiles",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at the memory of Zion",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'there we WEPT (bakah), when we remembered Zion' - the operation of grief triggered by memory: the sight of Babylon's rivers loosing tears for the lost city.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with remembering Zion",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273270",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273270",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273270",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 281705,
+     "reference": "Psa 69:10",
+     "hebrew_surface": "wept",
+     "esv_word": "wept",
+     "morphology": {
+      "morph_code": "HVqw1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "weep (bakah - when I wept and humbled my soul with fasting)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1689,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 69:10 When I wept and humbled my soul with fasting , it became my reproach .",
+     "passage_id": 1689,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "weep (bakah - when I wept and humbled my soul with fasting)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the soul",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep and humble the soul (with fasting)",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "with fasting",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the mourning that became his reproach",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'When I WEPT (bakah) and humbled my soul with fasting, it became my reproach' — piety itself turned into an occasion for mockery; bakah here the weeping and fasting of true devotion, which the scoffers twist into a byword - his very humbling before God used against him",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281706",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281705",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281705",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281705",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281705",
+       "to_span": "281709",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1065:weep",
+   "meaning": "Weeping",
+   "lemma": "H1065",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "Weeping",
+    "lexical_gloss": "weeping",
+    "read_sense_variants": "weeping tarries the night, joy at morning"
+   },
+   "instances": [
+    {
+     "span_id": 276619,
+     "reference": "Psa 30:5",
+     "hebrew_surface": "Weeping",
+     "esv_word": "Weeping",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "weeping tarries the night, joy at morning",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1621,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 30:5 For his anger is but for a moment , and his favor is for a lifetime . Weeping may tarry for the night , but joy comes with the morning .",
+     "passage_id": 1621,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "weeping tarries the night, joy at morning",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "cognition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self reflects that God's anger is momentary but his favour lifelong; weeping may tarry for the night, but joy comes with the morning - a hard-won reading of grief's arc",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "grief's-arc",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "weeping-to-joy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'WEEPING may tarry for the night, but JOY comes with the morning' - the operation is a settled insight: the interior learns that sorrow is temporary and joy is the sure dawn.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276619",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276619",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276619",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2470:appeal",
+   "meaning": "appeal",
+   "lemma": "H2470",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpcc",
+    "esv_words": "appeal",
+    "lexical_gloss": "be weak: grieved; be weak: weak; to beg; be weak: ill",
+    "read_sense_variants": "grief / my appeal (challothi - this is my grief)"
+   },
+   "instances": [
+    {
+     "span_id": 282871,
+     "reference": "Psa 77:10",
+     "hebrew_surface": "appeal",
+     "esv_word": "appeal",
+     "morphology": {
+      "morph_code": "HVpcc",
+      "stem": "Piel"
+     },
+     "read_characteristic": "grief / my appeal (challothi - this is my grief)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1713,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 77:10 Then I said , “I will appeal to this, to the years of the right hand of the Most High .”",
+     "passage_id": 1713,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "grief / my appeal (challothi - this is my grief)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "name the grief / resolve to appeal",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the changed right hand of the Most High",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "the turning-point of the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the resolve to remember God's deeds (v11)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Then I said, This is my GRIEF (challothi): that the right hand of the Most High has changed' - the hinge of the psalm, where the sufferer names his wound and, in naming it, pivots from questioning God's silence toward remembering his deeds; grief spoken becomes the doorway to hope",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282871",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282871",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282871",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282871",
+       "to_span": "282875",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4751:bitter",
+   "meaning": "bitter",
+   "lemma": "H4751",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa",
+    "esv_words": "bitter",
+    "lexical_gloss": "bitter",
+    "read_sense_variants": "bitter (mar - aim bitter words like arrows)"
+   },
+   "instances": [
+    {
+     "span_id": 281117,
+     "reference": "Psa 64:3",
+     "hebrew_surface": "bitter",
+     "esv_word": "bitter",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "bitter (mar - aim bitter words like arrows)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1677,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 64:3 who whet their tongues like swords , who aim bitter words like arrows ,",
+     "passage_id": 1677,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bitter (mar - aim bitter words like arrows)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the tongue",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "aim (like arrows)",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the blameless",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "like arrows, tongues whetted like swords",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the venom of the secret plots",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'who whet their tongues like swords, who aim BITTER (mar) words like arrows' — the venomous speech that is the enemies' weapon; mar here the bitterness of their words, tongues sharpened to wound — malice loaded and aimed, shot from ambush at the blameless",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281117",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281117",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281117",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281117",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281117",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281117",
+       "to_span": "281107",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4784:bitter",
+   "meaning": "bitter",
+   "lemma": "H4784",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'grief-lament-sorrow' expects cluster M03(Grief), but the term-cluster is M30(Obedience)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "bitter",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "bitter (marah)"
+   },
+   "instances": [
+    {
+     "span_id": 307464,
+     "reference": "Psa 106:33",
+     "hebrew_surface": "bitter",
+     "esv_word": "bitter",
+     "morphology": {
+      "morph_code": "HVhp3cp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "bitter (marah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1790,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:33 for they made his spirit bitter, and he spoke rashly with his lips.",
+     "passage_id": 1790,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bitter (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "Moses",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be embittered",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in spirit",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v33: 'they made his spirit BITTER (marah)' - the embittering of Moses, provocation working inward.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the spirit and rash words",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307464",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307464",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307464",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6087:griev",
+   "meaning": "grieved",
+   "lemma": "H6087",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhi3mp",
+    "esv_words": "grieved",
+    "lexical_gloss": "to hurt; to shape",
+    "read_sense_variants": "grieve / pain (atsab)"
+   },
+   "instances": [
+    {
+     "span_id": 283211,
+     "reference": "Psa 78:40",
+     "hebrew_surface": "grieved",
+     "esv_word": "grieved",
+     "morphology": {
+      "morph_code": "HVhi3mp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "grieve / pain (atsab)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1719,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert !",
+     "passage_id": 1719,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "grieve / pain (atsab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "grieve / cause pain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the rebelling",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and GRIEVED (atsab) him in the desert' - the pain their rebellion inflicted on God himself.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283211",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283211",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283211",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6090:grievou",
+   "meaning": "grievous",
+   "lemma": "H6090",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "grievous",
+    "lexical_gloss": "pain; idol",
+    "read_sense_variants": "grievous (otseb) way in me"
+   },
+   "instances": [
+    {
+     "span_id": 273492,
+     "reference": "Psa 139:24",
+     "hebrew_surface": "grievous",
+     "esv_word": "grievous",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "grievous (otseb) way in me",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1868,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 139:24 And see if there be any grievous way in me, and lead me in the way everlasting !",
+     "passage_id": 1868,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "grievous (otseb) way in me",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "cognition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self invites detection of any idolatrous/hurtful way within, wanting it found and led out",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "self-audit",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "find-the-wrong",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v24: 'see if there be any GRIEVOUS (hurtful/idolatrous) way in me' - the operation is a requested interior audit: expose the wrong so it can be replaced by the everlasting way.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273492",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273492",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273492",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7580:groan",
+   "meaning": "groan",
+   "lemma": "H7580",
+   "cluster": {
+    "code": "M42",
+    "name": "Speech",
+    "all_candidates": "M42(Speech)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'grief-lament-sorrow' expects cluster M03(Grief), but the term-cluster is M42(Speech)",
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp1cs",
+    "esv_words": "groan",
+    "lexical_gloss": "to roar",
+    "read_sense_variants": "I groan from the tumult of my heart"
+   },
+   "instances": [
+    {
+     "span_id": 277999,
+     "reference": "Psa 38:8",
+     "hebrew_surface": "groan",
+     "esv_word": "groan",
+     "morphology": {
+      "morph_code": "HVqp1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "I groan from the tumult of my heart",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1635,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 38:8 I am feeble and crushed ; I groan because of the tumult of my heart .",
+     "passage_id": 1635,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I groan from the tumult of my heart",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self is feeble and crushed; it groans because of the tumult of its heart - inner uproar breaking out as groaning",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "inner-tumult",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "groan-heart-tumult",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'I am feeble and crushed; I GROAN because of the TUMULT of my HEART' - the operation is the heart in uproar forcing itself out as a groan; the interior's turmoil is audible.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277999",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277999",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277999",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0585:groan",
+   "meaning": "groaning",
+   "lemma": "H0585",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsc",
+    "esv_words": "groaning",
+    "lexical_gloss": "sighing",
+    "read_sense_variants": "groaning (anachah)"
+   },
+   "instances": [
+    {
+     "span_id": 269033,
+     "reference": "Psa 102:5",
+     "hebrew_surface": "groaning",
+     "esv_word": "groaning",
+     "morphology": {
+      "morph_code": "HNcfsc",
+      "stem": ""
+     },
+     "read_characteristic": "groaning (anachah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1769,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:5 Because of my loud groaning my bones cling to my flesh .",
+     "passage_id": 1769,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "groaning (anachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "groan aloud",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in affliction",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Because of my loud GROANING (anachah) my bones cling to my flesh' - the constant groaning of the sufferer, grief worn into the body.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the wasted flesh",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269033",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269033",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269033",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1901:groan",
+   "meaning": "groaning",
+   "lemma": "H1901",
+   "cluster": {
+    "code": "M15",
+    "name": "Wisdom",
+    "all_candidates": "M15(Wisdom)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'grief-lament-sorrow' expects cluster M03(Grief), but the term-cluster is M15(Wisdom)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsc",
+    "esv_words": "groaning",
+    "lexical_gloss": "meditation",
+    "read_sense_variants": "groaning God is asked to consider"
+   },
+   "instances": [
+    {
+     "span_id": 280660,
+     "reference": "Psa 5:1",
+     "hebrew_surface": "groaning",
+     "esv_word": "groaning",
+     "morphology": {
+      "morph_code": "HNcmsc HSp1bs HSh",
+      "stem": ""
+     },
+     "read_characteristic": "groaning God is asked to consider",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1579,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "To the choirmaster : for the flutes . A Psalm of David . Psa 5:1 Give ear to my words , O Lord ; consider my groaning .",
+     "passage_id": 1579,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "groaning God is asked to consider",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self brings a groaning too deep for words, asking God to give heed to it - pre-verbal distress",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "groaning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "consider-my-groaning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'Give ear to my words, O LORD; consider my GROANING' - the interior's first offering is not eloquence but a groan; it asks to be understood beneath the words.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280660",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280660",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280660",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3513:heavy",
+   "meaning": "heavy",
+   "lemma": "H3513",
+   "cluster": {
+    "code": "M22",
+    "name": "Praise",
+    "all_candidates": "M22(Praise)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'grief-lament-sorrow' expects cluster M03(Grief), but the term-cluster is M22(Praise)",
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqi3fs",
+    "esv_words": "heavy",
+    "lexical_gloss": "to honor: honour; to honor: heavy; to honor: dull; to honor: many",
+    "read_sense_variants": "your hand was heavy on me"
+   },
+   "instances": [
+    {
+     "span_id": 276913,
+     "reference": "Psa 32:4",
+     "hebrew_surface": "heavy",
+     "esv_word": "heavy",
+     "morphology": {
+      "morph_code": "HVqi3fs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "your hand was heavy on me",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1623,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 32:4 For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer . Selah",
+     "passage_id": 1623,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "your hand was heavy on me",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "day and night God's hand was heavy on the self; its strength dried up as by summer heat - the felt pressure of conviction",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "conviction's-weight",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "heavy-hand",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'For day and night your HAND was HEAVY upon me; my strength was DRIED UP as by the heat of summer' - the operation is the crushing weight of unrelieved guilt; the interior is pressed dry until it must confess.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276913",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276913",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276913",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6937:lament",
+   "meaning": "laments",
+   "lemma": "H6937",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmsa",
+    "esv_words": "laments",
+    "lexical_gloss": "be dark",
+    "read_sense_variants": "I mourned for them as for kin"
+   },
+   "instances": [
+    {
+     "span_id": 277341,
+     "reference": "Psa 35:14",
+     "hebrew_surface": "laments",
+     "esv_word": "laments",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "I mourned for them as for kin",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1629,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 35:14 I went about as though I grieved for my friend or my brother ; as one who laments his mother , I bowed down in mourning .",
+     "passage_id": 1629,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I mourned for them as for kin",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self went about as though grieving for a friend or brother, bowed in mourning as for its mother - identifying with the enemies' suffering",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "kinship-grief",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "mourn-as-for-kin",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v14: 'I went about as though I grieved for my friend or my brother; as one who LAMENTS his mother, I bowed down in MOURNING' - distinct from the fasting: this is the depth of felt grief, the interior mourning enemies as its closest family.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277341",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277341",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277341",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1949:moan",
+   "meaning": "moan",
+   "lemma": "H1949",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "moan",
+    "lexical_gloss": "to make noise",
+    "read_sense_variants": "moan / be in commotion (hum - I moan)"
+   },
+   "instances": [
+    {
+     "span_id": 280125,
+     "reference": "Psa 55:2",
+     "hebrew_surface": "moan",
+     "esv_word": "moan",
+     "morphology": {
+      "morph_code": "HVhc1cs HSp1bs",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "moan / be in commotion (hum - I moan)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1661,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 55:2 Attend to me, and answer me; I am restless in my complaint and I moan ,",
+     "passage_id": 1661,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "moan / be in commotion (hum - I moan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "moan / groan",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with restlessness",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and I MOAN (hum)' — the wordless groaning of anguish; hum (to murmur/be in tumult) the inarticulate sound of a heart in commotion, beneath the spoken complaint — distress that overflows speech",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280125",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280125",
+       "to_span": "280122",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3015:sorrow",
+   "meaning": "sorrow",
+   "lemma": "H3015",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "sorrow",
+    "lexical_gloss": "sorrow",
+    "read_sense_variants": "sorrow (yagon)"
+   },
+   "instances": [
+    {
+     "span_id": 270010,
+     "reference": "Psa 107:39",
+     "hebrew_surface": "sorrow",
+     "esv_word": "sorrow",
+     "morphology": {
+      "morph_code": "HNcmsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "sorrow (yagon)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1797,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:39 When they are diminished and brought low through oppression , evil , and sorrow ,",
+     "passage_id": 1797,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "sorrow (yagon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "suffer sorrow",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in their affliction",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v39: 'through oppression, evil, and SORROW (yagon)' - the grief of the afflicted, the low estate of the humbled.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being brought low",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270010",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270010",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270010",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6040:sorrow",
+   "meaning": "sorrow",
+   "lemma": "H6040",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "sorrow",
+    "lexical_gloss": "affliction",
+    "read_sense_variants": "sorrow (oni)"
+   },
+   "instances": [
+    {
+     "span_id": 284514,
+     "reference": "Psa 88:9",
+     "hebrew_surface": "sorrow",
+     "esv_word": "sorrow",
+     "morphology": {
+      "morph_code": "HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "sorrow (oni)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1742,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 88:9 my eye grows dim through sorrow . Every day I call upon you, O Lord ; I spread out my hands to you.",
+     "passage_id": 1742,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "sorrow (oni)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "suffer sorrow",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "daily",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the dimming eye",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'my eye grows dim through SORROW (oni)' - the affliction that dims the eyes, unrelenting grief.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284514",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284514",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284514",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1065:tear",
+   "meaning": "tears",
+   "lemma": "H1065",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa",
+    "esv_words": "tears",
+    "lexical_gloss": "weeping",
+    "read_sense_variants": "tears (beki)"
+   },
+   "instances": [
+    {
+     "span_id": 269049,
+     "reference": "Psa 102:9",
+     "hebrew_surface": "tears",
+     "esv_word": "tears",
+     "morphology": {
+      "morph_code": "HNcmsa HR HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "tears (beki)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1770,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:9 For I eat ashes like bread and mingle tears with my drink ,",
+     "passage_id": 1770,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "tears (beki)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "weep",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "mingling tears with drink",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'and mingle TEARS (beki) with my drink' - the weeping that fills the sufferer's cup, grief drunk with the water.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with eating ashes",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269049",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269049",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269049",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1058:weep",
+   "meaning": "weeping",
+   "lemma": "H1058",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqaa",
+    "esv_words": "weeping",
+    "lexical_gloss": "to weep",
+    "read_sense_variants": "weeping (bakah)"
+   },
+   "instances": [
+    {
+     "span_id": 272587,
+     "reference": "Psa 126:6",
+     "hebrew_surface": "weeping",
+     "esv_word": "weeping",
+     "morphology": {
+      "morph_code": "HVqaa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "weeping (bakah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1841,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 126:6 He who goes out weeping , bearing the seed for sowing , shall come home with shouts of joy , bringing his sheaves with him.",
+     "passage_id": 1841,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "weeping (bakah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the sower",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "go out weeping",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "bearing seed",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'He who goes out WEEPING (bakah), bearing the seed for sowing' - the operation begun in grief: the sower sets out in tears, the loss of the buried seed felt as sorrow.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with coming home in joy",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272587",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272587",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272587",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1832:weep",
+   "meaning": "weeping",
+   "lemma": "H1832",
+   "cluster": {
+    "code": "M03",
+    "name": "Grief",
+    "all_candidates": "M03(Grief)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsc",
+    "esv_words": "weeping",
+    "lexical_gloss": "tears",
+    "read_sense_variants": "nightly weeping floods the bed"
+   },
+   "instances": [
+    {
+     "span_id": 281971,
+     "reference": "Psa 6:6",
+     "hebrew_surface": "weeping",
+     "esv_word": "weeping",
+     "morphology": {
+      "morph_code": "HNcfsc HR HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "nightly weeping floods the bed",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1580,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 6:6 I am weary with my moaning ; every night I flood my bed with tears; I drench my couch with my weeping .",
+     "passage_id": 1580,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "nightly weeping floods the bed",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "every night the self floods its bed and drenches its couch with tears - grief overflowing in the dark hours",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "weeping",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "flood-the-bed",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'every night I flood my bed with tears; I DRENCH my couch with my WEEPING' - read distinct from weariness: this is the active overflow, the measurable flood of grief through the night.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281971",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281971",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281971",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

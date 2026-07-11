@@ -1,0 +1,5645 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "humility-lowliness-contrition"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'humility-lowliness-contrition': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 21,
+   "instances": 39,
+   "passages": 27
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1599": {
+   "passage_ref": "Psa 18:27-28",
+   "verse_refs": [
+    "Psa 18:27",
+    "Psa 18:28"
+   ],
+   "text": "Psa 18:27 For you save a humble people, but the haughty eyes you bring down. Psa 18:28 For it is you who light my lamp ; the Lord my God lightens my darkness ."
+  },
+  "1614": {
+   "passage_ref": "Psa 25:5-22",
+   "verse_refs": [
+    "Psa 25:5",
+    "Psa 25:6",
+    "Psa 25:7",
+    "Psa 25:8",
+    "Psa 25:9",
+    "Psa 25:10",
+    "Psa 25:11",
+    "Psa 25:12",
+    "Psa 25:13",
+    "Psa 25:14",
+    "Psa 25:15",
+    "Psa 25:16",
+    "Psa 25:17",
+    "Psa 25:18",
+    "Psa 25:19",
+    "Psa 25:20",
+    "Psa 25:21",
+    "Psa 25:22"
+   ],
+   "text": "Psa 25:5 Lead me in your truth and teach me, for you are the God of my salvation ; for you I wait all the day long. Psa 25:6 Remember your mercy , O Lord , and your steadfast love , for they have been from of old . Psa 25:7 Remember not the sins of my youth or my transgressions ; according to your steadfast love remember me, for the sake of your goodness , O Lord ! Psa 25:8 Good and upright is the Lord ; therefore he instructs sinners in the way . Psa 25:9 He leads the humble in what is right , and teaches the humble his way . Psa 25:10 All the paths of the Lord are steadfast love and faithfulness , for those who keep his covenant and his testimonies . Psa 25:11 For your name’s sake , O Lord , pardon my guilt , for it is great . Psa 25:12 Who is the man who fears the Lord ? Him will he instruct in the way that he should choose . Psa 25:13 His soul shall abide in well-being , and his offspring shall inherit the land . Psa 25:14 The friendship of the Lord is for those who fear him, and he makes known to them his covenant . Psa 25:15 My eyes are ever toward the Lord , for he will pluck my feet out of the net . Psa 25:16 Turn to me and be gracious to me, for I am lonely and afflicted . Psa 25:17 The troubles of my heart are enlarged ; bring me out of my distresses . Psa 25:18 Consider my affliction and my trouble , and forgive all my sins . Psa 25:19 Consider how many are my foes , and with what violent hatred they hate me . Psa 25:20 Oh, guard my soul , and deliver me! Let me not be put to shame , for I take refuge in you . Psa 25:21 May integrity and uprightness preserve me, for I wait for you ^ . Psa 25:22 Redeem Israel , O God , out of all his troubles ."
+  },
+  "1627": {
+   "passage_ref": "Psa 34:1-22",
+   "verse_refs": [
+    "Psa 34:1",
+    "Psa 34:2",
+    "Psa 34:3",
+    "Psa 34:4",
+    "Psa 34:5",
+    "Psa 34:6",
+    "Psa 34:7",
+    "Psa 34:8",
+    "Psa 34:9",
+    "Psa 34:10",
+    "Psa 34:11",
+    "Psa 34:12",
+    "Psa 34:13",
+    "Psa 34:14",
+    "Psa 34:15",
+    "Psa 34:16",
+    "Psa 34:17",
+    "Psa 34:18",
+    "Psa 34:19",
+    "Psa 34:20",
+    "Psa 34:21",
+    "Psa 34:22"
+   ],
+   "text": "Of David , when he changed his behavior before Abimelech , so that he drove him out , and he went away . Psa 34:1 I will bless the Lord at all times ; his praise shall continually be in my mouth . Psa 34:2 My soul makes its boast in the Lord ; let the humble hear and be glad . Psa 34:3 Oh, magnify the Lord with me, and let us exalt his name together ! Psa 34:4 I sought the Lord , and he answered me and delivered me from all my fears . Psa 34:5 Those who look to him are radiant , and their faces shall never be ashamed . Psa 34:6 This poor man cried , and the Lord heard him and saved him out of all his troubles . Psa 34:7 The angel of the Lord encamps around those who fear him, and delivers them . Psa 34:8 Oh, taste and see that the Lord is good ! Blessed is the man who takes refuge in him ! Psa 34:9 Oh, fear the Lord , you his saints , for those who fear him have no lack ! Psa 34:10 The young lions suffer want and hunger ; but those who seek the Lord lack no good thing. Psa 34:11 Come , O children , listen to me; I will teach you the fear of the Lord . Psa 34:12 What man is there who desires life and loves many days , that he may see good ? Psa 34:13 Keep your tongue from evil and your lips from speaking deceit . Psa 34:14 Turn away from evil and do good ; seek peace and pursue it . Psa 34:15 The eyes of the Lord are toward the righteous and his ears toward their cry . Psa 34:16 The face of the Lord is against those who do evil , to cut off the memory of them from the earth . Psa 34:17 When the righteous cry for help , the Lord hears and delivers them out of all their troubles . Psa 34:18 The Lord is near to the brokenhearted and saves the crushed in spirit . Psa 34:19 Many are the afflictions of the righteous , but the Lord delivers him out of them all . Psa 34:20 He keeps all his bones ; not one of them is broken . Psa 34:21 Affliction will slay the wicked , and those who hate the righteous will be condemned . Psa 34:22 The Lord redeems the life of his servants ; none of those who take refuge in him will be condemned ."
+  },
+  "1633": {
+   "passage_ref": "Psa 37:1-12",
+   "verse_refs": [
+    "Psa 37:1",
+    "Psa 37:2",
+    "Psa 37:3",
+    "Psa 37:4",
+    "Psa 37:5",
+    "Psa 37:6",
+    "Psa 37:7",
+    "Psa 37:8",
+    "Psa 37:9",
+    "Psa 37:10",
+    "Psa 37:11",
+    "Psa 37:12"
+   ],
+   "text": "Of David . Psa 37:1 Fret not yourself because of evildoers ; be not envious of wrongdoers ! Psa 37:2 For they will soon fade like the grass and wither like the green herb . Psa 37:3 Trust in the Lord , and do good ; dwell in the land and befriend faithfulness . Psa 37:4 Delight yourself in the Lord , and he will give you the desires of your heart . Psa 37:5 Commit your way to the Lord ; trust in him , and he will act . Psa 37:6 He will bring forth your righteousness as the light , and your justice as the noonday . Psa 37:7 Be still before the Lord and wait patiently for him; fret not yourself over the one who prospers in his way , over the man who carries out evil devices ! Psa 37:8 Refrain from anger , and forsake wrath ! Fret not yourself; it tends only to evil . Psa 37:9 For the evildoers shall be cut off , but those who wait for the Lord shall inherit the land . Psa 37:10 In just a little while , the wicked will be no more ; though you look carefully at his place , he will not be there. Psa 37:11 But the meek shall inherit the land and delight themselves in abundant peace . Psa 37:12 The wicked plots against the righteous and gnashes his teeth at him,"
+  },
+  "1637": {
+   "passage_ref": "Psa 40:1-17",
+   "verse_refs": [
+    "Psa 40:1",
+    "Psa 40:2",
+    "Psa 40:3",
+    "Psa 40:4",
+    "Psa 40:5",
+    "Psa 40:6",
+    "Psa 40:7",
+    "Psa 40:8",
+    "Psa 40:9",
+    "Psa 40:10",
+    "Psa 40:11",
+    "Psa 40:12",
+    "Psa 40:13",
+    "Psa 40:14",
+    "Psa 40:15",
+    "Psa 40:16",
+    "Psa 40:17"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 40:1 I waited patiently for the Lord ; he inclined to me and heard my cry . Psa 40:2 He drew me up from the pit of destruction , out of the miry bog , and set my feet upon a rock , making my steps secure . Psa 40:3 He put a new song in my mouth , a song of praise to our God . Many will see and fear , and put their trust in the Lord . Psa 40:4 Blessed is the man who makes the Lord his trust , who does not turn to the proud , to those who go astray after a lie ! Psa 40:5 You have multiplied , O Lord my God , your wondrous deeds and your thoughts toward us; none can compare with you! I will proclaim and tell of them, yet they are more than can be told . Psa 40:6 In sacrifice and offering you have not delighted , but you have given me an open ear . Burnt offering and sin offering you have not required . Psa 40:7 Then I said , “ Behold , I have come ; in the scroll of the book it is written of me : Psa 40:8 I delight to do your will , O my God ; your law is within my heart .” Psa 40:9 I have told the glad news of deliverance in the great congregation ; behold , I have not restrained my lips , as you know , O Lord . Psa 40:10 I have not hidden your deliverance within my heart ; I have spoken of your faithfulness and your salvation ; I have not concealed your steadfast love and your faithfulness from the great congregation . Psa 40:11 As for you , O Lord , you will not restrain your mercy from me; your steadfast love and your faithfulness will ever preserve me ! Psa 40:12 For evils have encompassed me beyond number ; my iniquities have overtaken me, and I cannot see ; they are more than the hairs of my head ; my heart fails me . Psa 40:13 Be pleased , O Lord , to deliver me! O Lord , make haste to help me! Psa 40:14 Let those be put to shame and disappointed altogether who seek to snatch away my life ; let those be turned back and brought to dishonor who delight in my hurt ! Psa 40:15 Let those be appalled because of their shame who say to me, “ Aha , Aha !” Psa 40:16 But may all who seek you rejoice and be glad in you; may those who love your salvation say continually , “ Great is the Lord !” Psa 40:17 As for me , I am poor and needy , but the Lord takes thought for me. You are my help and my deliverer ; do not delay , O my God !"
+  },
+  "1644": {
+   "passage_ref": "Psa 45:1-15",
+   "verse_refs": [
+    "Psa 45:1",
+    "Psa 45:2",
+    "Psa 45:3",
+    "Psa 45:4",
+    "Psa 45:5",
+    "Psa 45:6",
+    "Psa 45:7",
+    "Psa 45:8",
+    "Psa 45:9",
+    "Psa 45:10",
+    "Psa 45:11",
+    "Psa 45:12",
+    "Psa 45:13",
+    "Psa 45:14",
+    "Psa 45:15",
+    "Psa 45:17"
+   ],
+   "text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever ."
+  },
+  "1657": {
+   "passage_ref": "Psa 51:1-19",
+   "verse_refs": [
+    "Psa 51:1",
+    "Psa 51:2",
+    "Psa 51:3",
+    "Psa 51:4",
+    "Psa 51:5",
+    "Psa 51:6",
+    "Psa 51:7",
+    "Psa 51:8",
+    "Psa 51:9",
+    "Psa 51:10",
+    "Psa 51:11",
+    "Psa 51:12",
+    "Psa 51:13",
+    "Psa 51:14",
+    "Psa 51:15",
+    "Psa 51:16",
+    "Psa 51:17",
+    "Psa 51:18",
+    "Psa 51:19"
+   ],
+   "text": "To the choirmaster . A Psalm of David , when Nathan the prophet went to him, after he had gone in to Bathsheba . Psa 51:1 Have mercy on me, O God , according to your steadfast love ; according to your abundant mercy blot out my transgressions . Psa 51:2 Wash me thoroughly from my iniquity , and cleanse me from my sin ! Psa 51:3 For I know my transgressions , and my sin is ever before me. Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment . Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me. Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart . Psa 51:7 Purge me with hyssop , and I shall be clean ; wash me, and I shall be whiter than snow . Psa 51:8 Let me hear joy and gladness ; let the bones that you have broken rejoice . Psa 51:9 Hide your face from my sins , and blot out all my iniquities . Psa 51:10 Create in me a clean heart , O God , and renew a right spirit within me. Psa 51:11 Cast me not away from your presence , and take not your Holy Spirit from me . Psa 51:12 Restore to me the joy of your salvation , and uphold me with a willing spirit . Psa 51:13 Then I will teach transgressors your ways , and sinners will return to you. Psa 51:14 Deliver me from bloodguiltiness , O God , O God of my salvation , and my tongue will sing aloud of your righteousness . Psa 51:15 O Lord , open my lips , and my mouth will declare your praise . Psa 51:16 For you will not delight in sacrifice , or I would give it; you will not be pleased with a burnt offering . Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise . Psa 51:18 Do good to Zion in your good pleasure ; build up the walls of Jerusalem ; Psa 51:19 then will you delight in right sacrifices , in burnt offerings and whole burnt offerings; then bulls will be offered on your altar ."
+  },
+  "1692": {
+   "passage_ref": "Psa 69:26-32",
+   "verse_refs": [
+    "Psa 69:26",
+    "Psa 69:27",
+    "Psa 69:28",
+    "Psa 69:29",
+    "Psa 69:30",
+    "Psa 69:31",
+    "Psa 69:32",
+    "Psa 69:33",
+    "Psa 69:34",
+    "Psa 69:35",
+    "Psa 69:36"
+   ],
+   "text": "Psa 69:26 For they persecute him whom you have struck down , and they recount the pain of those you have wounded . Psa 69:27 Add to them punishment upon punishment ; may they have no acquittal from you. Psa 69:28 Let them be blotted out of the book of the living ; let them not be enrolled among the righteous . Psa 69:29 But I am afflicted and in pain ; let your salvation , O God , set me on high ! Psa 69:30 I will praise the name of God with a song ; I will magnify him with thanksgiving . Psa 69:31 This will please the Lord more than an ox or a bull with horns and hoofs . Psa 69:32 When the humble see it they will be glad ; you who seek God , let your hearts revive . Psa 69:33 For the Lord hears the needy and does not despise his own people who are prisoners. Psa 69:34 Let heaven and earth praise him, the seas and everything that moves in them . Psa 69:35 For God will save Zion and build up the cities of Judah, and people shall dwell there and possess it; Psa 69:36 the offspring of his servants shall inherit it, and those who love his name shall dwell in it ."
+  },
+  "1693": {
+   "passage_ref": "Psa 70:1-5",
+   "verse_refs": [
+    "Psa 70:1",
+    "Psa 70:2",
+    "Psa 70:3",
+    "Psa 70:4",
+    "Psa 70:5"
+   ],
+   "text": "To the choirmaster . Of David , for the memorial offering . Psa 70:1 Make haste, O God , to deliver me! O Lord , make haste to help me! Psa 70:2 Let them be put to shame and confusion who seek my life ! Let them be turned back and brought to dishonor who delight in my hurt ! Psa 70:3 Let them turn back because of their shame who say , “ Aha , Aha !” Psa 70:4 May all who seek you rejoice and be glad in you! May those who love your salvation say evermore , “ God is great !” Psa 70:5 But I am poor and needy ; hasten to me, O God ! You are my help and my deliverer ; O Lord , do not delay !"
+  },
+  "1707": {
+   "passage_ref": "Psa 74:17-23",
+   "verse_refs": [
+    "Psa 74:17",
+    "Psa 74:18",
+    "Psa 74:19",
+    "Psa 74:20",
+    "Psa 74:21",
+    "Psa 74:22",
+    "Psa 74:23"
+   ],
+   "text": "Psa 74:17 You have fixed all the boundaries of the earth ; you have made summer and winter . Psa 74:18 Remember this , O Lord , how the enemy scoffs , and a foolish people reviles your name . Psa 74:19 Do not deliver the soul of your dove to the wild beasts ; do not forget the life of your poor forever . Psa 74:20 Have regard for the covenant , for the dark places of the land are full of the habitations of violence . Psa 74:21 Let not the downtrodden turn back in shame ; let the poor and needy praise your name . Psa 74:22 Arise , O God , defend your cause ; remember how the foolish scoff at you all the day ! Psa 74:23 Do not forget the clamor of your foes , the uproar of those who rise against you, which goes up continually !"
+  },
+  "1711": {
+   "passage_ref": "Psa 76:7-12",
+   "verse_refs": [
+    "Psa 76:7",
+    "Psa 76:8",
+    "Psa 76:9",
+    "Psa 76:10",
+    "Psa 76:11",
+    "Psa 76:12"
+   ],
+   "text": "Psa 76:7 But you , you are to be feared ! Who can stand before you when once your anger is roused ? Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still , Psa 76:9 when God arose to establish judgment , to save all the humble of the earth . Selah Psa 76:10 Surely the wrath of man shall praise you; the remnant of wrath you will put on like a belt . Psa 76:11 Make your vows to the Lord your God and perform them; let all around him bring gifts to him who is to be feared , Psa 76:12 who cuts off the spirit of princes , who is to be feared by the kings of the earth ."
+  },
+  "1732": {
+   "passage_ref": "Psa 81:11-12",
+   "verse_refs": [
+    "Psa 81:11",
+    "Psa 81:12",
+    "Psa 81:13"
+   ],
+   "text": "Psa 81:11 “But my people did not listen to my voice ; Israel would not submit to me . Psa 81:12 So I gave them over to their stubborn hearts , to follow their own counsels . Psa 81:13 Oh, that my people would listen to me, that Israel would walk in my ways!"
+  },
+  "1734": {
+   "passage_ref": "Psa 82:1-8",
+   "verse_refs": [
+    "Psa 82:1",
+    "Psa 82:2",
+    "Psa 82:3",
+    "Psa 82:4",
+    "Psa 82:5",
+    "Psa 82:6",
+    "Psa 82:7",
+    "Psa 82:8"
+   ],
+   "text": "A Psalm of Asaph . Psa 82:1 God has taken his place in the divine council ; in the midst of the gods he holds judgment : Psa 82:2 “ How long will you judge unjustly and show partiality to the wicked ? Selah Psa 82:3 Give justice to the weak and the fatherless ; maintain the right of the afflicted and the destitute . Psa 82:4 Rescue the weak and the needy ; deliver them from the hand of the wicked .” Psa 82:5 They have neither knowledge nor understanding , they walk about in darkness ; all the foundations of the earth are shaken . Psa 82:6 I said , “You are gods , sons of the Most High , all of you; Psa 82:7 nevertheless , like men you shall die , and fall like any prince .” Psa 82:8 Arise , O God , judge the earth ; for you shall inherit all the nations !"
+  },
+  "1739": {
+   "passage_ref": "Psa 86:2-7",
+   "verse_refs": [
+    "Psa 86:1",
+    "Psa 86:2",
+    "Psa 86:3",
+    "Psa 86:4",
+    "Psa 86:5",
+    "Psa 86:6",
+    "Psa 86:7"
+   ],
+   "text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me ."
+  },
+  "1743": {
+   "passage_ref": "Psa 88:14-18",
+   "verse_refs": [
+    "Psa 88:14",
+    "Psa 88:15",
+    "Psa 88:16",
+    "Psa 88:17",
+    "Psa 88:18"
+   ],
+   "text": "Psa 88:14 O Lord , why do you cast my soul away? Why do you hide your face from me ? Psa 88:15 Afflicted and close to death from my youth up, I suffer your terrors ; I am helpless . Psa 88:16 Your wrath has swept over me; your dreadful assaults destroy me . Psa 88:17 They surround me like a flood all day long ; they close in on me together . Psa 88:18 You have caused my beloved and my friend to shun me; my companions have become darkness ."
+  },
+  "1746": {
+   "passage_ref": "Psa 89:16-24",
+   "verse_refs": [
+    "Psa 89:16",
+    "Psa 89:17",
+    "Psa 89:18",
+    "Psa 89:19",
+    "Psa 89:20",
+    "Psa 89:21",
+    "Psa 89:22",
+    "Psa 89:23",
+    "Psa 89:24",
+    "Psa 89:26"
+   ],
+   "text": "Psa 89:16 who exult in your name all the day and in your righteousness are exalted . Psa 89:17 For you are the glory of their strength ; by your favor our horn is exalted . Psa 89:18 For our shield belongs to the Lord , our king to the Holy One of Israel . Psa 89:19 Of old you spoke in a vision to your godly one , and said : “I have granted help to one who is mighty ; I have exalted one chosen from the people . Psa 89:20 I have found David , my servant ; with my holy oil I have anointed him , Psa 89:21 so that my hand shall be established with him; my arm also shall strengthen him . Psa 89:22 The enemy shall not outwit him; the wicked shall not humble him . Psa 89:23 I will crush his foes before him and strike down those who hate him. Psa 89:24 My faithfulness and my steadfast love shall be with him, and in my name shall his horn be exalted . Psa 89:26 He shall cry to me, ‘You are my Father , my God , and the Rock of my salvation .’"
+  },
+  "1748": {
+   "passage_ref": "Psa 90:5-17",
+   "verse_refs": [
+    "Psa 90:1",
+    "Psa 90:2",
+    "Psa 90:3",
+    "Psa 90:5",
+    "Psa 90:6",
+    "Psa 90:7",
+    "Psa 90:8",
+    "Psa 90:9",
+    "Psa 90:10",
+    "Psa 90:11",
+    "Psa 90:12",
+    "Psa 90:13",
+    "Psa 90:14",
+    "Psa 90:15",
+    "Psa 90:16",
+    "Psa 90:17"
+   ],
+   "text": "Psa 90:1 A Prayer of Moses, the man of God.Lord, you have been our dwelling place in all generations. Psa 90:2 Before the mountains were brought forth , or ever you had formed the earth and the world , from everlasting to everlasting you are God . Psa 90:3 You return man to dust and say, “Return, O children of man!” Psa 90:5 You sweep them away as with a flood ; they are like a dream , like grass that is renewed in the morning : Psa 90:6 in the morning it flourishes and is renewed ; in the evening it fades and withers . Psa 90:7 For we are brought to an end by your anger ; by your wrath we are dismayed . Psa 90:8 You have set our iniquities before you, our secret sins in the light of your presence . Psa 90:9 For all our days pass away under your wrath ; we bring our years to an end like a sigh . Psa 90:10 The years of our life are seventy , or even by reason of strength eighty ; yet their span is but toil and trouble ; they are soon gone , and we fly away . Psa 90:11 Who considers the power of your anger , and your wrath according to the fear of you? Psa 90:12 So teach us to number our days that we may get a heart of wisdom . Psa 90:13 Return , O Lord ! How long ? Have pity on your servants ! Psa 90:14 Satisfy us in the morning with your steadfast love , that we may rejoice and be glad all our days . Psa 90:15 Make us glad for as many days as you have afflicted us, and for as many years as we have seen evil . Psa 90:16 Let your work be shown to your servants , and your glorious power to their children . Psa 90:17 Let the favor of the Lord our God be upon us, and establish the work of our hands upon us; yes, establish the work of our hands !"
+  },
+  "1771": {
+   "passage_ref": "Psa 102:12-16",
+   "verse_refs": [
+    "Psa 102:12",
+    "Psa 102:13",
+    "Psa 102:14",
+    "Psa 102:15",
+    "Psa 102:16",
+    "Psa 102:17"
+   ],
+   "text": "Psa 102:12 But you , O Lord , are enthroned forever ; you are remembered throughout all generations . Psa 102:13 You will arise and have pity on Zion ; it is the time to favor her; the appointed time has come . Psa 102:14 For your servants hold her stones dear and have pity on her dust . Psa 102:15 Nations will fear the name of the Lord , and all the kings of the earth will fear your glory . Psa 102:16 For the Lord builds up Zion ; he appears in his glory ; Psa 102:17 he regards the prayer of the destitute and does not despise their prayer."
+  },
+  "1791": {
+   "passage_ref": "Psa 106:38-48",
+   "verse_refs": [
+    "Psa 106:36",
+    "Psa 106:38",
+    "Psa 106:39",
+    "Psa 106:40",
+    "Psa 106:41",
+    "Psa 106:42",
+    "Psa 106:43",
+    "Psa 106:44",
+    "Psa 106:45",
+    "Psa 106:46",
+    "Psa 106:47",
+    "Psa 106:48"
+   ],
+   "text": "Psa 106:36 They served their idols , which became a snare to them. Psa 106:38 they poured out innocent blood , the blood of their sons and daughters , whom they sacrificed to the idols of Canaan , and the land was polluted with blood . Psa 106:39 Thus they became unclean by their acts , and played the whore in their deeds . Psa 106:40 Then the anger of the Lord was kindled against his people , and he abhorred his heritage ; Psa 106:41 he gave them into the hand of the nations , so that those who hated them ruled over them . Psa 106:42 Their enemies oppressed them, and they were brought into subjection under their power . Psa 106:43 Many times he delivered them, but they were rebellious in their purposes and were brought low through their iniquity . Psa 106:44 Nevertheless, he looked upon their distress , when he heard their cry . Psa 106:45 For their sake he remembered his covenant , and relented according to the abundance of his steadfast love . Psa 106:46 He caused them to be pitied by all those who held them captive . Psa 106:47 Save us, O Lord our God , and gather us from among the nations , that we may give thanks to your holy name and glory in your praise . Psa 106:48 Blessed be the Lord , the God of Israel , from everlasting to everlasting ! And let all the people say , “ Amen !” Praise the Lord ! Book Five"
+  },
+  "1797": {
+   "passage_ref": "Psa 107:37-43",
+   "verse_refs": [
+    "Psa 107:36",
+    "Psa 107:37",
+    "Psa 107:38",
+    "Psa 107:39",
+    "Psa 107:40",
+    "Psa 107:41",
+    "Psa 107:42",
+    "Psa 107:43"
+   ],
+   "text": "Psa 107:36 And there he lets the hungry dwell, and they establish a city to live in; Psa 107:37 they sow fields and plant vineyards and get a fruitful yield . Psa 107:38 By his blessing they multiply greatly , and he does not let their livestock diminish . Psa 107:39 When they are diminished and brought low through oppression , evil , and sorrow , Psa 107:40 he pours contempt on princes and makes them wander in trackless wastes ; Psa 107:41 but he raises up the needy out of affliction and makes their families like flocks . Psa 107:42 The upright see it and are glad , and all wickedness shuts its mouth . Psa 107:43 Whoever is wise , let him attend to these things; let them consider the steadfast love of the Lord ."
+  },
+  "1801": {
+   "passage_ref": "Psa 109:14-22",
+   "verse_refs": [
+    "Psa 109:14",
+    "Psa 109:15",
+    "Psa 109:16",
+    "Psa 109:17",
+    "Psa 109:18",
+    "Psa 109:19",
+    "Psa 109:20",
+    "Psa 109:21",
+    "Psa 109:22"
+   ],
+   "text": "Psa 109:14 May the iniquity of his fathers be remembered before the Lord , and let not the sin of his mother be blotted out ! Psa 109:15 Let them be before the Lord continually , that he may cut off the memory of them from the earth ! Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death . Psa 109:17 He loved to curse ; let curses come upon him! He did not delight in blessing ; may it be far from him ! Psa 109:18 He clothed himself with cursing as his coat ; may it soak into his body like water , like oil into his bones ! Psa 109:19 May it be like a garment that he wraps around him , like a belt that he puts on every day ! Psa 109:20 May this be the reward of my accusers from the Lord , of those who speak evil against my life ! Psa 109:21 But you , O God my Lord , deal on my behalf for your name’s sake ; because your steadfast love is good , deliver me ! Psa 109:22 For I am poor and needy , and my heart is stricken within me."
+  },
+  "1803": {
+   "passage_ref": "Psa 109:28-31",
+   "verse_refs": [
+    "Psa 109:27",
+    "Psa 109:28",
+    "Psa 109:29",
+    "Psa 109:30",
+    "Psa 109:31"
+   ],
+   "text": "Psa 109:27 Let them know that this is your hand; you, O Lord, have done it! Psa 109:28 Let them curse , but you will bless ! They arise and are put to shame , but your servant will be glad ! Psa 109:29 May my accusers be clothed with dishonor ; may they be wrapped in their own shame as in a cloak ! Psa 109:30 With my mouth I will give great thanks to the Lord ; I will praise him in the midst of the throng . Psa 109:31 For he stands at the right hand of the needy one , to save him from those who condemn his soul to death."
+  },
+  "1807": {
+   "passage_ref": "Psa 113:1-9",
+   "verse_refs": [
+    "Psa 113:1",
+    "Psa 113:2",
+    "Psa 113:3",
+    "Psa 113:4",
+    "Psa 113:5",
+    "Psa 113:6",
+    "Psa 113:7",
+    "Psa 113:8",
+    "Psa 113:9"
+   ],
+   "text": "Psa 113:1 Praise the Lord ! Praise , O servants of the Lord , praise the name of the Lord ! Psa 113:2 Blessed be the name of the Lord from this time forth and forevermore ! Psa 113:3 From the rising of the sun to its setting , the name of the Lord is to be praised ! Psa 113:4 The Lord is high above all nations , and his glory above the heavens ! Psa 113:5 Who is like the Lord our God , who is seated on high , Psa 113:6 who looks far down on the heavens and the earth? Psa 113:7 He raises the poor from the dust and lifts the needy from the ash heap , Psa 113:8 to make them sit with princes , with the princes of his people . Psa 113:9 He gives the barren woman a home , making her the joyous mother of children . Praise the Lord !"
+  },
+  "1850": {
+   "passage_ref": "Psa 132:4-14",
+   "verse_refs": [
+    "Psa 132:4",
+    "Psa 132:5",
+    "Psa 132:6",
+    "Psa 132:7",
+    "Psa 132:8",
+    "Psa 132:9",
+    "Psa 132:10",
+    "Psa 132:11",
+    "Psa 132:12",
+    "Psa 132:13",
+    "Psa 132:14",
+    "Psa 132:15"
+   ],
+   "text": "Psa 132:4 I will not give sleep to my eyes or slumber to my eyelids , Psa 132:5 until I find a place for the Lord , a dwelling place for the Mighty One of Jacob .” Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar . Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !” Psa 132:8 Arise , O Lord , and go to your resting place , you and the ark of your might . Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy . Psa 132:10 For the sake of your servant David , do not turn away the face of your anointed one. Psa 132:11 The Lord swore to David a sure oath from which he will not turn back : “One of the sons of your body I will set on your throne . Psa 132:12 If your sons keep my covenant and my testimonies that I shall teach them, their sons also forever shall sit on your throne .” Psa 132:13 For the Lord has chosen Zion ; he has desired it for his dwelling place : Psa 132:14 “ This is my resting place forever ; here I will dwell , for I have desired it . Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread."
+  },
+  "1864": {
+   "passage_ref": "Psa 138:5-8",
+   "verse_refs": [
+    "Psa 138:5",
+    "Psa 138:6",
+    "Psa 138:7",
+    "Psa 138:8"
+   ],
+   "text": "Psa 138:5 and they shall sing of the ways of the Lord , for great is the glory of the Lord . Psa 138:6 For though the Lord is high , he regards the lowly , but the haughty he knows from afar . Psa 138:7 Though I walk in the midst of trouble , you preserve my life ; you stretch out your hand against the wrath of my enemies , and your right hand delivers me. Psa 138:8 The Lord will fulfill his purpose for me; your steadfast love , O Lord , endures forever . Do not forsake the work of your hands ."
+  },
+  "1880": {
+   "passage_ref": "Psa 147:3-7",
+   "verse_refs": [
+    "Psa 147:1",
+    "Psa 147:3",
+    "Psa 147:4",
+    "Psa 147:5",
+    "Psa 147:6",
+    "Psa 147:7"
+   ],
+   "text": "Psa 147:1 Praise the Lord ! For it is good to sing praises to our God ; for it is pleasant , and a song of praise is fitting . Psa 147:3 He heals the brokenhearted and binds up their wounds . Psa 147:4 He determines the number of the stars ; he gives to all of them their names . Psa 147:5 Great is our Lord , and abundant in power ; his understanding is beyond measure . Psa 147:6 The Lord lifts up the humble ; he casts the wicked to the ground . Psa 147:7 Sing to the Lord with thanksgiving ; make melody to our God on the lyre !"
+  },
+  "1885": {
+   "passage_ref": "Psa 149:1-6",
+   "verse_refs": [
+    "Psa 149:1",
+    "Psa 149:2",
+    "Psa 149:3",
+    "Psa 149:4",
+    "Psa 149:5",
+    "Psa 149:6",
+    "Psa 149:7",
+    "Psa 149:8",
+    "Psa 149:9"
+   ],
+   "text": "Psa 149:1 Praise the Lord ! Sing to the Lord a new song , his praise in the assembly of the godly ! Psa 149:2 Let Israel be glad in his Maker ; let the children of Zion rejoice in their King ! Psa 149:3 Let them praise his name with dancing , making melody to him with tambourine and lyre ! Psa 149:4 For the Lord takes pleasure in his people ; he adorns the humble with salvation . Psa 149:5 Let the godly exult in glory ; let them sing for joy on their beds . Psa 149:6 Let the high praises of God be in their throats and two-edged swords in their hands , Psa 149:7 to execute vengeance on the nations and punishments on the peoples, Psa 149:8 to bind their kings with chains and their nobles with fetters of iron, Psa 149:9 to execute on them the judgment written ! This is honor for all his godly ones . Praise the Lord !"
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H0034:needy",
+   "meaning": "needy",
+   "lemma": "H0034",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 8,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampa HR, HAamsa, HAamsa HC, HAamsa HC HNcmsa, HAamsc HC",
+    "esv_words": "needy",
+    "lexical_gloss": "needy",
+    "read_sense_variants": "needy (ebyon) | needy / poor (ebyon - the LORD hears the needy) | needy (ebyon - poor and needy)"
+   },
+   "instances": [
+    {
+     "span_id": 270026,
+     "reference": "Psa 107:41",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1797,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:41 but he raises up the needy out of affliction and makes their families like flocks .",
+     "passage_id": 1797,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be raised",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "out of affliction",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v41: 'but he raises up the NEEDY (ebyon) out of affliction' - the poor God exalts, the great reversal of the coda.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with affliction",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270026",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270026",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270026",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270200,
+     "reference": "Psa 109:16",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa HC HNcmsa",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death .",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be pursued",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'the poor and NEEDY (ebyon)' - the destitute the enemy persecuted.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the poor",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270200",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270200",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270200",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270260,
+     "reference": "Psa 109:22",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:22 For I am poor and needy , and my heart is stricken within me.",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be needy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v22: 'For I am poor and NEEDY (ebyon)' - the destitution the psalmist pleads.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being poor",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270260",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270260",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270260",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270767,
+     "reference": "Psa 113:7",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1807,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 113:7 He raises the poor from the dust and lifts the needy from the ash heap ,",
+     "passage_id": 1807,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be lifted",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from the ash heap by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'and lifts the NEEDY (ebyon) from the ash heap' - the destitute God raises to sit with princes.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the poor raised from the dust",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270767",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270767",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270767",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 282030,
+     "reference": "Psa 70:5",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsc HC",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon - poor and needy)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1693,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 70:5 But I am poor and needy ; hasten to me, O God ! You are my help and my deliverer ; O Lord , do not delay !",
+     "passage_id": 1693,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon - poor and needy)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "whom God his help and deliverer must hasten to save (v5)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be needy",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "pleading God's haste",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being poor",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'I am poor and NEEDY (ebyon); hasten to me, O God! You are my help and my deliverer' — the destitution that casts itself wholly on God; ebyon here the needy psalmist whose only recourse is God his help and deliverer (the qualifiers), pleading he not delay - urgency born of utter dependence",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "282030",
+       "to_span": "282031",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282030",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "282030",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282030",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282030",
+       "to_span": "282029",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 283907,
+     "reference": "Psa 82:4",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1734,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 82:4 Rescue the weak and the needy ; deliver them from the hand of the wicked .”",
+     "passage_id": 1734,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "need deliverance",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from the wicked's hand",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the weak",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'the weak and the NEEDY (ebyon)' - the destitute whose deliverance is the judges' abandoned duty.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283907",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283907",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283907",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306604,
+     "reference": "Psa 69:33",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAampa HR",
+      "stem": ""
+     },
+     "read_characteristic": "needy / poor (ebyon - the LORD hears the needy)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1692,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 69:33 For the Lord hears the needy and does not despise his own people who are prisoners.",
+     "passage_id": 1692,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy / poor (ebyon - the LORD hears the needy)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "whom the LORD hears and does not despise (v33)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy / God's afflicted people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "heard by God",
+       "item_type": "event",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "not despised, though prisoners",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'For the LORD hears the NEEDY (ebyon) and does not despise his own people who are prisoners' — the poor and imprisoned whom God attends; ebyon here the destitute, assured that God hears them (the qualifier) and never scorns his captive people - the ground of hope for all the afflicted",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "306604",
+       "to_span": "306603",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306604",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": "306604",
+       "to_span": "306603",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306604",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306976,
+     "reference": "Psa 86:1",
+     "hebrew_surface": "needy",
+     "esv_word": "needy",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "needy (ebyon)",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1739,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy.",
+     "passage_id": 1739,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be needy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being poor",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'for I am poor and NEEDY (ebyon)' - the destitution that casts him wholly on God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306976",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306976",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306976",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6041:poor",
+   "meaning": "poor",
+   "lemma": "H6041",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 6,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa, HAamsa HC",
+    "esv_words": "poor",
+    "lexical_gloss": "afflicted",
+    "read_sense_variants": "poor (ani) | I am poor and needy, but the Lord takes thought for me | poor / afflicted (ani - but I am poor and needy) | poor / afflicted (ani - let the poor and needy praise your name)"
+   },
+   "instances": [
+    {
+     "span_id": 270199,
+     "reference": "Psa 109:16",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "poor (ani)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death .",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor (ani)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the poor",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be pursued",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'pursued the POOR (ani)' - the afflicted victim the enemy hounded.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the needy and brokenhearted",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270199",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270199",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270199",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270259,
+     "reference": "Psa 109:22",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "poor (ani)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:22 For I am poor and needy , and my heart is stricken within me.",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor (ani)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be poor",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v22: 'For I am POOR (ani) and needy' - the psalmist's lowliness, his plea's ground, set against his powerful foes.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being needy and the stricken heart",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270259",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270259",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270259",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 278295,
+     "reference": "Psa 40:17",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "I am poor and needy, but the Lord takes thought for me",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1637,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 40:17 As for me , I am poor and needy , but the Lord takes thought for me. You are my help and my deliverer ; do not delay , O my God !",
+     "passage_id": 1637,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I am poor and needy, but the Lord takes thought for me",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self is poor and needy, but the Lord takes thought for it; he is its help and deliverer - lowliness confident of God's attention",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "confident-lowliness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "poor-but-thought-of",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v17: 'As for me, I am POOR and NEEDY, but the Lord takes THOUGHT for me. You are my help and my deliverer' - the operation holds together weakness and confidence: the interior owns its poverty yet rests in being remembered by God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278295",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278295",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278295",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 282029,
+     "reference": "Psa 70:5",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "poor / afflicted (ani - but I am poor and needy)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1693,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 70:5 But I am poor and needy ; hasten to me, O God ! You are my help and my deliverer ; O Lord , do not delay !",
+     "passage_id": 1693,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor / afflicted (ani - but I am poor and needy)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be poor / afflicted",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being needy",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'But I am POOR (ani) and needy; hasten to me, O God!' — the lowly self-estimate that grounds the plea; ani here the psalmist's affliction and poverty, the very estate God is quick to hear (cf Ps69:33) - weakness owned as the ground of urgent appeal",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282029",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "282029",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282029",
+       "to_span": "282030",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 282622,
+     "reference": "Psa 74:21",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "poor / afflicted (ani - let the poor and needy praise your name)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1707,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 74:21 Let not the downtrodden turn back in shame ; let the poor and needy praise your name .",
+     "passage_id": 1707,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor / afflicted (ani - let the poor and needy praise your name)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the poor and needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "praise God's name",
+       "item_type": "event",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the downtrodden; issues in praise",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'let the POOR (ani) and needy praise your name' — the afflicted whose deliverance would turn to praise; ani here the poor of God's people, for whom the psalmist prays that God's rescue may put praise in their mouths instead of shame - the goal of the lament is worship restored",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282622",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": "282622",
+       "to_span": "282624",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282622",
+       "to_span": "282624",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 306975,
+     "reference": "Psa 86:1",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "poor (ani)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1739,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy.",
+     "passage_id": 1739,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor (ani)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be poor / afflicted",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being needy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'answer me, for I am POOR (ani) and needy' - the lowly estate David pleads as his claim on God, humility the ground of the appeal.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306975",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306975",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306975",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6035:humbl",
+   "meaning": "humble",
+   "lemma": "H6035",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampa, HAampc",
+    "esv_words": "humble",
+    "lexical_gloss": "poor",
+    "read_sense_variants": "the humble God leads | humble / afflicted (anav - when the humble see it they will be glad) | humble / afflicted (anav - all the humble of the earth) | the humble lifted up | the humble adorned"
+   },
+   "instances": [
+    {
+     "span_id": 274349,
+     "reference": "Psa 147:6",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAampa",
+      "stem": ""
+     },
+     "read_characteristic": "the humble lifted up",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1880,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 147:6 The Lord lifts up the humble ; he casts the wicked to the ground .",
+     "passage_id": 1880,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the humble lifted up",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the humble are the ones God lifts up while casting the wicked to the ground",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "humility",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "humble-lifted",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'The LORD LIFTS UP the HUMBLE; he casts the wicked to the ground' - the interior lowliness is what God raises; humility is the posture met with lifting.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274349",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274349",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274349",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 274480,
+     "reference": "Psa 149:4",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAampa",
+      "stem": ""
+     },
+     "read_characteristic": "the humble adorned",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1885,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 149:4 For the Lord takes pleasure in his people ; he adorns the humble with salvation .",
+     "passage_id": 1885,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the humble adorned",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the humble are the ones God beautifies with salvation - lowliness crowned",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "humility",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "humble-adorned",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'he ADORNS the HUMBLE with salvation' - the interior lowliness is what God delights in and dresses with rescue.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274480",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274480",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274480",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 276100,
+     "reference": "Psa 25:9",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAampa",
+      "stem": ""
+     },
+     "read_characteristic": "the humble God leads",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1614,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 25:9 He leads the humble in what is right , and teaches the humble his way .",
+     "passage_id": 1614,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the humble God leads",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "God leads the humble in what is right and teaches them his way - lowliness as the teachable condition",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "humility",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "humble-led",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'He LEADS the HUMBLE in what is right, and teaches the humble his way' - the operation names the interior God can guide: only the humble are teachable, and they are led.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276100",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276100",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276100",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 281838,
+     "reference": "Psa 69:32",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAampa",
+      "stem": ""
+     },
+     "read_characteristic": "humble / afflicted (anav - when the humble see it they will be glad)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1692,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 69:32 When the humble see it they will be glad ; you who seek God , let your hearts revive .",
+     "passage_id": 1692,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "humble / afflicted (anav - when the humble see it they will be glad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "see and be glad",
+       "item_type": "event",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with their gladness and the seekers' reviving",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'When the HUMBLE (anav) see it they will be glad' — the lowly encouraged by the sufferer's deliverance; anav here the humble/afflicted who take heart at God's rescue of one like them - the psalmist's testimony reviving the hearts of the God-seekers",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281838",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": "281838",
+       "to_span": "281840",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281838",
+       "to_span": "281840",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 282853,
+     "reference": "Psa 76:9",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAampc",
+      "stem": ""
+     },
+     "read_characteristic": "humble / afflicted (anav - all the humble of the earth)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1711,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 76:9 when God arose to establish judgment , to save all the humble of the earth . Selah",
+     "passage_id": 1711,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "humble / afflicted (anav - all the humble of the earth)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble / oppressed of the earth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be saved (by God)",
+       "item_type": "event",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the object of God's saving judgment",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'when God arose to judgment, to save all the HUMBLE (anav) of the earth' - the afflicted, the lowly oppressed; anav here the meek whose vindication is the very aim of God's rising - the humble are saved where the proud princes are cut off (v12)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282853",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": "282853",
+       "to_span": "282851",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282853",
+       "to_span": "282849",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7665:broken",
+   "meaning": "broken",
+   "lemma": "H7665",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNrfsa",
+    "esv_words": "broken",
+    "lexical_gloss": "to break",
+    "read_sense_variants": "broken / shattered (shabar - a broken spirit) | broken (shabar - a broken and contrite heart)"
+   },
+   "instances": [
+    {
+     "span_id": 279698,
+     "reference": "Psa 51:17",
+     "hebrew_surface": "broken",
+     "esv_word": "broken",
+     "morphology": {
+      "morph_code": "HVNrfsa",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "broken / shattered (shabar - a broken spirit)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1657,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise .",
+     "passage_id": 1657,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "broken / shattered (shabar - a broken spirit)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the spirit",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be broken / shattered",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "qualifies the spirit that is God's true sacrifice",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'The sacrifices of God are a BROKEN (shabar) spirit' — the shattering that makes the spirit acceptable; shabar here the breaking-force on the inner disposition, the crushed condition (paralleling the bones broken v8) that God receives as offering",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:spirit",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "279698",
+       "to_span": "279699",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279698",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279698",
+       "to_span": "279699",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 279700,
+     "reference": "Psa 51:17",
+     "hebrew_surface": "broken",
+     "esv_word": null,
+     "morphology": {
+      "morph_code": "HVNrmsa",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "broken (shabar - a broken and contrite heart)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1657,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise .",
+     "passage_id": 1657,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "broken (shabar - a broken and contrite heart)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the heart",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be broken",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with 'contrite' as the state of the accepted heart",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'a BROKEN (shabar) and contrite heart, O God, you will not despise' — the breaking that, with contrition, God will not spurn; shabar here the heart shattered — twinned with dakah (crushed) — the one approach the holy God receives",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:heart",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "279700",
+       "to_span": "279702",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279700",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279700",
+       "to_span": "279701",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7665:brokenheart",
+   "meaning": "brokenhearted",
+   "lemma": "H7665",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal, Qal",
+    "morph_codes": "HVNrmpc HR HNcmsa, HVqsmpc HR HNcmsa",
+    "esv_words": "brokenhearted",
+    "lexical_gloss": "to break",
+    "read_sense_variants": "the LORD near the brokenhearted | the brokenhearted healed"
+   },
+   "instances": [
+    {
+     "span_id": 274329,
+     "reference": "Psa 147:3",
+     "hebrew_surface": "brokenhearted",
+     "esv_word": "brokenhearted",
+     "morphology": {
+      "morph_code": "HVqsmpc HR HNcmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "the brokenhearted healed",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1880,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 147:3 He heals the brokenhearted and binds up their wounds .",
+     "passage_id": 1880,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the brokenhearted healed",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wounded",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the broken heart and its wounds are the object of God's healing - inner injury bound up",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "heart-woundedness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "brokenhearted-healed",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'He HEALS the BROKENHEARTED and binds up their wounds' - the interior wound (a shattered heart) is named as what God mends; the inner injury is real and addressed.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274329",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274329",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274329",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 277202,
+     "reference": "Psa 34:18",
+     "hebrew_surface": "brokenhearted",
+     "esv_word": "brokenhearted",
+     "morphology": {
+      "morph_code": "HVNrmpc HR HNcmsa",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "the LORD near the brokenhearted",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1627,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 34:18 The Lord is near to the brokenhearted and saves the crushed in spirit .",
+     "passage_id": 1627,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the LORD near the brokenhearted",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the brokenhearted",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the LORD is near to the brokenhearted and saves the crushed in spirit - the shattered interior is where God draws closest",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "brokenness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "brokenhearted-near",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v18: 'The LORD is NEAR to the BROKENHEARTED and saves the CRUSHED in SPIRIT' - the operation names the crushed interior not as abandoned but as the very place of God's nearness.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277202",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277202",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277202",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3512:brokenheart",
+   "meaning": "brokenhearted",
+   "lemma": "H3512",
+   "cluster": {
+    "code": "M20",
+    "name": "Doubt",
+    "all_candidates": "M20(Doubt)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'humility-lowliness-contrition' expects cluster M09(Humility), but the term-cluster is M20(Doubt)",
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNrmsc",
+    "esv_words": "brokenhearted",
+    "lexical_gloss": "be disheartened; disheartened",
+    "read_sense_variants": "brokenhearted (kaah)"
+   },
+   "instances": [
+    {
+     "span_id": 270201,
+     "reference": "Psa 109:16",
+     "hebrew_surface": "brokenhearted",
+     "esv_word": "brokenhearted",
+     "morphology": {
+      "morph_code": "HVNrmsc HNcmsa",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "brokenhearted (kaah)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1801,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death .",
+     "passage_id": 1801,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "brokenhearted (kaah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the brokenhearted",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be pursued to death",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'and the BROKENHEARTED (kaah), to death' - the crushed in spirit the enemy hounded to the grave.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the poor and needy",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270201",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270201",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270201",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1794:contrit",
+   "meaning": "contrite",
+   "lemma": "H1794",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNrmsa",
+    "esv_words": "contrite",
+    "lexical_gloss": "to crush",
+    "read_sense_variants": "crushed / contrite (dakah - a broken and contrite heart)"
+   },
+   "instances": [
+    {
+     "span_id": 279701,
+     "reference": "Psa 51:17",
+     "hebrew_surface": "contrite",
+     "esv_word": "contrite",
+     "morphology": {
+      "morph_code": "HVNrmsa",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "crushed / contrite (dakah - a broken and contrite heart)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1657,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise .",
+     "passage_id": 1657,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "crushed / contrite (dakah - a broken and contrite heart)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "such a heart God will not despise (v17)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the heart",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "crushed / made contrite",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "broken and crushed",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the broken spirit",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'a broken and CONTRITE (dakah) heart, O God, you will not despise' — the crushed heart God receives; dakah (crushed to dust, cf the bones broken v8) the shattered inner core that, far from being spurned, is precisely what God will not despise (the qualifier) — brokenness as the one acceptable approach",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:heart",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "279701",
+       "to_span": "279705",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "279701",
+       "to_span": "279702",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279701",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279701",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279701",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279701",
+       "to_span": "279699",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7326:destitut",
+   "meaning": "destitute",
+   "lemma": "H7326",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "destitute",
+    "lexical_gloss": "be poor",
+    "read_sense_variants": "destitute (rush)"
+   },
+   "instances": [
+    {
+     "span_id": 283904,
+     "reference": "Psa 82:3",
+     "hebrew_surface": "destitute",
+     "esv_word": "destitute",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "destitute (rush)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1734,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 82:3 Give justice to the weak and the fatherless ; maintain the right of the afflicted and the destitute .",
+     "passage_id": 1734,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "destitute (rush)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the destitute",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be left in want",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the court",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the afflicted",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'the afflicted and the DESTITUTE (rush)' - the utterly poor, whose want cries against corrupt power.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283904",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283904",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283904",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6199:destitut",
+   "meaning": "destitute",
+   "lemma": "H6199",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "destitute",
+    "lexical_gloss": "destitute",
+    "read_sense_variants": "destitute (arar)"
+   },
+   "instances": [
+    {
+     "span_id": 307204,
+     "reference": "Psa 102:17",
+     "hebrew_surface": "destitute",
+     "esv_word": "destitute",
+     "morphology": {
+      "morph_code": "HNcmsa HTd",
+      "stem": ""
+     },
+     "read_characteristic": "destitute (arar)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1771,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:17 he regards the prayer of the destitute and does not despise their prayer.",
+     "passage_id": 1771,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "destitute (arar)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the destitute",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be stripped bare",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "yet heard by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v17: 'He regards the prayer of the DESTITUTE (arar)' - the utterly poor, whose very destitution God honours with regard.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with their prayer regarded",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307204",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307204",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307204",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1793:dust",
+   "meaning": "dust",
+   "lemma": "H1793",
+   "cluster": {
+    "code": "M11",
+    "name": "Repentance",
+    "all_candidates": "M11(Repentance)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'humility-lowliness-contrition' expects cluster M09(Humility), but the term-cluster is M11(Repentance)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcmsa HR",
+    "esv_words": "dust",
+    "lexical_gloss": "contrite; dust",
+    "read_sense_variants": "return to dust (dakka)"
+   },
+   "instances": [
+    {
+     "span_id": 307067,
+     "reference": "Psa 90:3",
+     "hebrew_surface": "dust",
+     "esv_word": "dust",
+     "morphology": {
+      "morph_code": "HNcmsa HR",
+      "stem": ""
+     },
+     "read_characteristic": "return to dust (dakka)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1748,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 90:3 You return man to dust and say, “Return, O children of man!”",
+     "passage_id": 1748,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "return to dust (dakka)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "man / mankind",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be turned back to dust",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with God's word 'Return'",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'You return man to DUST (dakka)' - the creatureliness and mortality of man, dust to which he is turned back at God's word.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307067",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307067",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307067",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6323:helples",
+   "meaning": "helpless",
+   "lemma": "H6323",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "helpless",
+    "lexical_gloss": "to distract",
+    "read_sense_variants": "helpless (pun)"
+   },
+   "instances": [
+    {
+     "span_id": 284445,
+     "reference": "Psa 88:15",
+     "hebrew_surface": "helpless",
+     "esv_word": "helpless",
+     "morphology": {
+      "morph_code": "HVqc1cs HSp2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "helpless (pun)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1743,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 88:15 Afflicted and close to death from my youth up, I suffer your terrors ; I am helpless .",
+     "passage_id": 1743,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "helpless (pun)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be helpless / distracted",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "under terror",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the suffering",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v15: 'I am HELPLESS (pun)' - the paralysis of the terrified, undone and without recourse.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284445",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284445",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284445",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6041:humbl",
+   "meaning": "humble",
+   "lemma": "H6041",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa",
+    "esv_words": "humble",
+    "lexical_gloss": "afflicted",
+    "read_sense_variants": "the humble God saves"
+   },
+   "instances": [
+    {
+     "span_id": 275028,
+     "reference": "Psa 18:27",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "the humble God saves",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1599,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 18:27 For you save a humble people, but the haughty eyes you bring down.",
+     "passage_id": 1599,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the humble God saves",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the humble",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "God saves a humble people but brings down haughty eyes - lowliness as the saved condition",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "humility",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "humble-saved",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v27: 'For you SAVE a HUMBLE people, but the HAUGHTY eyes you bring down' - the operation contrasts two interiors: the humble are rescued, the proud abased; the psalmist reads himself among the former.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275028",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275028",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275028",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6031:humbl",
+   "meaning": "humble",
+   "lemma": "H6031",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpi3ms",
+    "esv_words": "humble",
+    "lexical_gloss": "be occupied; to afflict",
+    "read_sense_variants": "humble / afflict (anah)"
+   },
+   "instances": [
+    {
+     "span_id": 284632,
+     "reference": "Psa 89:22",
+     "hebrew_surface": "humble",
+     "esv_word": "humble",
+     "morphology": {
+      "morph_code": "HVpi3ms",
+      "stem": "Piel"
+     },
+     "read_characteristic": "humble / afflict (anah)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1746,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 89:22 The enemy shall not outwit him; the wicked shall not humble him .",
+     "passage_id": 1746,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "humble / afflict (anah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "seek to humble",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the king",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the enemy's scheming",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v22: 'the wicked shall not HUMBLE (anah) him' - the wicked's oppression of the anointed, thwarted by God's covenant.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284632",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284632",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284632",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8217:lowly",
+   "meaning": "lowly",
+   "lemma": "H8217",
+   "cluster": {
+    "code": "M09",
+    "name": "Humility",
+    "all_candidates": "M09(Humility)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "lowly",
+    "lexical_gloss": "low",
+    "read_sense_variants": "lowly (shaphal)"
+   },
+   "instances": [
+    {
+     "span_id": 273351,
+     "reference": "Psa 138:6",
+     "hebrew_surface": "lowly",
+     "esv_word": "lowly",
+     "morphology": {
+      "morph_code": "HAamsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "lowly (shaphal)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1864,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 138:6 For though the Lord is high , he regards the lowly , but the haughty he knows from afar .",
+     "passage_id": 1864,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "lowly (shaphal)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the lowly",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be regarded",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'For though the LORD is high, he regards the LOWLY (shaphal)' - the operation of divine attention inverting rank: the high God draws near to the low, not the great.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the haughty God knows from afar",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273351",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273351",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273351",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6035:meek",
+   "meaning": "meek",
+   "lemma": "H6035",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampa",
+    "esv_words": "meek",
+    "lexical_gloss": "poor",
+    "read_sense_variants": "the meek delight in abundant peace"
+   },
+   "instances": [
+    {
+     "span_id": 277600,
+     "reference": "Psa 37:11",
+     "hebrew_surface": "meek",
+     "esv_word": "meek",
+     "morphology": {
+      "morph_code": "HAampa HC",
+      "stem": ""
+     },
+     "read_characteristic": "the meek delight in abundant peace",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1633,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 37:11 But the meek shall inherit the land and delight themselves in abundant peace .",
+     "passage_id": 1633,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the meek delight in abundant peace",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the meek",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the meek shall inherit the land and delight themselves in abundant peace - lowliness rewarded with peace-filled joy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "meek-peace",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "meek-delight-in-peace",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'the MEEK shall inherit the land and DELIGHT themselves in abundant PEACE' - the operation is the interior contentment of the lowly; meekness ends not in loss but in a peace it delights in.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277600",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277600",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277600",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6037:meeknes",
+   "meaning": "meekness",
+   "lemma": "H6037",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'humility-lowliness-contrition' expects cluster M09(Humility), but the term-cluster is M05(Love)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "meekness",
+    "lexical_gloss": "gentleness",
+    "read_sense_variants": "meekness / humility (anvah)"
+   },
+   "instances": [
+    {
+     "span_id": 278962,
+     "reference": "Psa 45:4",
+     "hebrew_surface": "meekness",
+     "esv_word": "meekness",
+     "morphology": {
+      "morph_code": "HNcfsa HC",
+      "stem": ""
+     },
+     "read_characteristic": "meekness / humility (anvah)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1644,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds !",
+     "passage_id": 1644,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "meekness / humility (anvah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king (his cause)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with truth and righteousness",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'the cause of truth and MEEKNESS (anvah) and righteousness' — humility as a royal virtue the king advances; anvah (recurs Ps18:35 'your gentleness') here the meekness/gentleness the warrior-king rides for, the surprising heart of true kingship",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278962",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "278962",
+       "to_span": "278961",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0034:needyon",
+   "meaning": "needy one",
+   "lemma": "H0034",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAamsa",
+    "esv_words": "needy one",
+    "lexical_gloss": "needy",
+    "read_sense_variants": "needy one (ebyon)"
+   },
+   "instances": [
+    {
+     "span_id": 270312,
+     "reference": "Psa 109:31",
+     "hebrew_surface": "needy one",
+     "esv_word": "needy one",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "needy one (ebyon)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1803,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 109:31 For he stands at the right hand of the needy one , to save him from those who condemn his soul to death.",
+     "passage_id": 1803,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "needy one (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the needy one",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be defended",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God at his right hand",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v31: 'For he stands at the right hand of the NEEDY ONE (ebyon)' - the poor whom God defends, standing where the accuser stood (v6).",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the soul saved",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270312",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270312",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270312",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1800:poor",
+   "meaning": "poor",
+   "lemma": "H1800",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "poor",
+    "lexical_gloss": "poor",
+    "read_sense_variants": "poor (dal)"
+   },
+   "instances": [
+    {
+     "span_id": 270763,
+     "reference": "Psa 113:7",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "poor (dal)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1807,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 113:7 He raises the poor from the dust and lifts the needy from the ash heap ,",
+     "passage_id": 1807,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor (dal)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the poor",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be raised",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from the dust by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'He raises the POOR (dal) from the dust' - the lowly whom God lifts, the first object of his great reversal.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the needy lifted from the ash heap",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270763",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270763",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270763",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0034:poor",
+   "meaning": "poor",
+   "lemma": "H0034",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampc",
+    "esv_words": "poor",
+    "lexical_gloss": "needy",
+    "read_sense_variants": "poor (ebyon)"
+   },
+   "instances": [
+    {
+     "span_id": 307869,
+     "reference": "Psa 132:15",
+     "hebrew_surface": "poor",
+     "esv_word": "poor",
+     "morphology": {
+      "morph_code": "HAampc",
+      "stem": ""
+     },
+     "read_characteristic": "poor (ebyon)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1850,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread.",
+     "passage_id": 1850,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "poor (ebyon)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the poor of Zion",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be satisfied",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "with bread by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v15: 'I will satisfy her POOR (ebyon) with bread' - the needy of Zion, whom God fills; the low lifted at the place of his rest.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with God satisfying them",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307869",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307869",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307869",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3665:subjection",
+   "meaning": "subjection",
+   "lemma": "H3665",
+   "cluster": {
+    "code": "M09",
+    "name": "Humility",
+    "all_candidates": "M09(Humility)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNw3mp",
+    "esv_words": "subjection",
+    "lexical_gloss": "be humble",
+    "read_sense_variants": "subjection (kana)"
+   },
+   "instances": [
+    {
+     "span_id": 269764,
+     "reference": "Psa 106:42",
+     "hebrew_surface": "subjection",
+     "esv_word": "subjection",
+     "morphology": {
+      "morph_code": "HVNw3mp HSp3mp",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "subjection (kana)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1791,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:42 Their enemies oppressed them, and they were brought into subjection under their power .",
+     "passage_id": 1791,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "subjection (kana)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be brought into subjection",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "under the enemies' power",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v42: 'and they were brought into SUBJECTION (kana) under their power' - the humbling of Israel, abased beneath their foes.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the oppression",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269764",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269764",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269764",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0014:submit",
+   "meaning": "submit",
+   "lemma": "H0014",
+   "cluster": {
+    "code": "M29",
+    "name": "Desire",
+    "all_candidates": "M29(Desire)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'humility-lowliness-contrition' expects cluster M09(Humility), but the term-cluster is M29(Desire)",
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3ms",
+    "esv_words": "submit",
+    "lexical_gloss": "be willing",
+    "read_sense_variants": "submit / be willing (abah, failed)"
+   },
+   "instances": [
+    {
+     "span_id": 283800,
+     "reference": "Psa 81:11",
+     "hebrew_surface": "submit",
+     "esv_word": "submit",
+     "morphology": {
+      "morph_code": "HVqp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "submit / be willing (abah, failed)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1732,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:11 “But my people did not listen to my voice ; Israel would not submit to me .",
+     "passage_id": 1732,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "submit / be willing (abah, failed)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "Israel",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "refuse to submit",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the failed listening",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'Israel would not SUBMIT (abah) to me' - the unwilling heart, obedience declined.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283800",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283800",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283800",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

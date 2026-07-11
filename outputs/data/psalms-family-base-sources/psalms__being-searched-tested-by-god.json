@@ -1,0 +1,2173 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "being-searched-tested-by-god"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'being-searched-tested-by-god': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 7,
+   "instances": 14,
+   "passages": 13
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1615": {
+   "passage_ref": "Psa 26:1-12",
+   "verse_refs": [
+    "Psa 26:1",
+    "Psa 26:2",
+    "Psa 26:3",
+    "Psa 26:4",
+    "Psa 26:5",
+    "Psa 26:6",
+    "Psa 26:7",
+    "Psa 26:8",
+    "Psa 26:9",
+    "Psa 26:10",
+    "Psa 26:11",
+    "Psa 26:12"
+   ],
+   "text": "Of David . Psa 26:1 Vindicate me, O Lord , for I have walked in my integrity , and I have trusted in the Lord without wavering . Psa 26:2 Prove me, O Lord , and try me; test my heart and my mind . Psa 26:3 For your steadfast love is before my eyes , and I walk in your faithfulness . Psa 26:4 I do not sit with men of falsehood , nor do I consort with hypocrites . Psa 26:5 I hate the assembly of evildoers , and I will not sit with the wicked . Psa 26:6 I wash my hands in innocence and go around your altar , O Lord , Psa 26:7 proclaiming thanksgiving aloud , and telling all your wondrous deeds . Psa 26:8 O Lord , I love the habitation of your house and the place where your glory dwells . Psa 26:9 Do not sweep my soul away with sinners , nor my life with bloodthirsty men , Psa 26:10 in whose hands are evil devices, and whose right hands are full of bribes . Psa 26:11 But as for me , I shall walk in my integrity ; redeem me, and be gracious to me . Psa 26:12 My foot stands on level ground ; in the great assembly I will bless the Lord ."
+  },
+  "1660": {
+   "passage_ref": "Psa 54:1-7",
+   "verse_refs": [
+    "Psa 54:1",
+    "Psa 54:2",
+    "Psa 54:3",
+    "Psa 54:4",
+    "Psa 54:5",
+    "Psa 54:6",
+    "Psa 54:7"
+   ],
+   "text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies ."
+  },
+  "1668": {
+   "passage_ref": "Psa 59:7-13",
+   "verse_refs": [
+    "Psa 59:7",
+    "Psa 59:8",
+    "Psa 59:9",
+    "Psa 59:10",
+    "Psa 59:11",
+    "Psa 59:12",
+    "Psa 59:13"
+   ],
+   "text": "Psa 59:7 There they are , bellowing with their mouths with swords in their lips — for “ Who ,” they think, “will hear us?” Psa 59:8 But you , O Lord , laugh at them; you hold all the nations in derision . Psa 59:9 O my Strength , I will watch for you, for you, O God , are my fortress . Psa 59:10 My God in his steadfast love will meet me; God will let me look in triumph on my enemies . Psa 59:11 Kill them not , lest my people forget ; make them totter by your power and bring them down , O Lord , our shield ! Psa 59:12 For the sin of their mouths , the words of their lips , let them be trapped in their pride . For the cursing and lies that they utter , Psa 59:13 consume them in wrath ; consume them till they are no more , that they may know that God rules over Jacob to the ends of the earth . Selah"
+  },
+  "1676": {
+   "passage_ref": "Psa 63:1-11",
+   "verse_refs": [
+    "Psa 63:1",
+    "Psa 63:2",
+    "Psa 63:3",
+    "Psa 63:4",
+    "Psa 63:5",
+    "Psa 63:6",
+    "Psa 63:7",
+    "Psa 63:8",
+    "Psa 63:9",
+    "Psa 63:10",
+    "Psa 63:11"
+   ],
+   "text": "A Psalm of David , when he was in the wilderness of Judah . Psa 63:1 O God , you are my God ; earnestly I seek you; my soul thirsts for you; my flesh faints for you, as in a dry and weary land where there is no water . Psa 63:2 So I have looked upon you in the sanctuary , beholding your power and glory . Psa 63:3 Because your steadfast love is better than life , my lips will praise you . Psa 63:4 So I will bless you as long as I live ; in your name I will lift up my hands . Psa 63:5 My soul will be satisfied as with fat and rich food , and my mouth will praise you with joyful lips , Psa 63:6 when I remember you upon my bed , and meditate on you in the watches of the night ; Psa 63:7 for you have been my help , and in the shadow of your wings I will sing for joy . Psa 63:8 My soul clings to you; your right hand upholds me. Psa 63:9 But those who seek to destroy my life shall go down into the depths of the earth ; Psa 63:10 they shall be given over to the power of the sword ; they shall be a portion for jackals . Psa 63:11 But the king shall rejoice in God ; all who swear by him shall exult , for the mouths of liars will be stopped ."
+  },
+  "1677": {
+   "passage_ref": "Psa 64:1-6",
+   "verse_refs": [
+    "Psa 64:1",
+    "Psa 64:2",
+    "Psa 64:3",
+    "Psa 64:4",
+    "Psa 64:5",
+    "Psa 64:6"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 64:1 Hear my voice , O God , in my complaint ; preserve my life from dread of the enemy . Psa 64:2 Hide me from the secret plots of the wicked , from the throng of evildoers , Psa 64:3 who whet their tongues like swords , who aim bitter words like arrows , Psa 64:4 shooting from ambush at the blameless , shooting at him suddenly and without fear . Psa 64:5 They hold fast to their evil purpose ; they talk of laying snares secretly , thinking , “ Who can see them ?” Psa 64:6 They search out injustice , saying, “We have accomplished a diligent search .” For the inward mind and heart of a man are deep ."
+  },
+  "1681": {
+   "passage_ref": "Psa 66:1-9",
+   "verse_refs": [
+    "Psa 66:1",
+    "Psa 66:2",
+    "Psa 66:3",
+    "Psa 66:4",
+    "Psa 66:5",
+    "Psa 66:6",
+    "Psa 66:7",
+    "Psa 66:8",
+    "Psa 66:9",
+    "Psa 66:10",
+    "Psa 66:11"
+   ],
+   "text": "To the choirmaster . A Song . A Psalm . Psa 66:1 Shout for joy to God , all the earth ; Psa 66:2 sing the glory of his name ; give to him glorious praise ! Psa 66:3 Say to God , “ How awesome are your deeds ! So great is your power that your enemies come cringing to you. Psa 66:4 All the earth worships you and sings praises to you; they sing praises to your name .” Selah Psa 66:5 Come and see what God has done: he is awesome in his deeds toward the children of man . Psa 66:6 He turned the sea into dry land ; they passed through the river on foot . There did we rejoice in him , Psa 66:7 who rules by his might forever , whose eyes keep watch on the nations — let not the rebellious exalt themselves. Selah Psa 66:8 Bless our God , O peoples ; let the sound of his praise be heard , Psa 66:9 who has kept our soul among the living and has not let our feet slip . Psa 66:10 For you, O God, have tested us; you have tried us as silver is tried. Psa 66:11 You brought us into the net ; you laid a crushing burden on our backs ;"
+  },
+  "1713": {
+   "passage_ref": "Psa 77:5-18",
+   "verse_refs": [
+    "Psa 77:5",
+    "Psa 77:6",
+    "Psa 77:7",
+    "Psa 77:8",
+    "Psa 77:9",
+    "Psa 77:10",
+    "Psa 77:11",
+    "Psa 77:12",
+    "Psa 77:13",
+    "Psa 77:14",
+    "Psa 77:15",
+    "Psa 77:16",
+    "Psa 77:17",
+    "Psa 77:18"
+   ],
+   "text": "Psa 77:5 I consider the days of old , the years long ago . Psa 77:6 I said, “Let me remember my song in the night ; let me meditate in my heart .” Then my spirit made a diligent search : Psa 77:7 “Will the Lord spurn forever , and never again be favorable ? Psa 77:8 Has his steadfast love forever ceased ? Are his promises at an end for all time ? Psa 77:9 Has God forgotten to be gracious ? Has he in anger shut up his compassion ?” Selah Psa 77:10 Then I said , “I will appeal to this, to the years of the right hand of the Most High .” Psa 77:11 I will remember the deeds of the Lord ; yes , I will remember your wonders of old . Psa 77:12 I will ponder all your work , and meditate on your mighty deeds . Psa 77:13 Your way , O God , is holy . What god is great like our God ? Psa 77:14 You are the God who works wonders ; you have made known your might among the peoples . Psa 77:15 You with your arm redeemed your people , the children of Jacob and Joseph . Selah Psa 77:16 When the waters saw you, O God , when the waters saw you, they were afraid ; indeed , the deep trembled . Psa 77:17 The clouds poured out water ; the skies gave forth thunder ; your arrows flashed on every side . Psa 77:18 The crash of your thunder was in the whirlwind ; your lightnings lighted up the world ; the earth trembled and shook ."
+  },
+  "1716": {
+   "passage_ref": "Psa 78:17-22",
+   "verse_refs": [
+    "Psa 78:17",
+    "Psa 78:18",
+    "Psa 78:19",
+    "Psa 78:20",
+    "Psa 78:21",
+    "Psa 78:22"
+   ],
+   "text": "Psa 78:17 Yet they sinned still more against him, rebelling against the Most High in the desert . Psa 78:18 They tested God in their heart by demanding the food they craved . Psa 78:19 They spoke against God , saying , “ Can God spread a table in the wilderness ? Psa 78:20 He struck the rock so that water gushed out and streams overflowed . Can he also give bread or provide meat for his people ?” Psa 78:21 Therefore , when the Lord heard , he was full of wrath ; a fire was kindled against Jacob ; his anger rose against Israel , Psa 78:22 because they did not believe in God and did not trust his saving power ."
+  },
+  "1719": {
+   "passage_ref": "Psa 78:37-46",
+   "verse_refs": [
+    "Psa 78:37",
+    "Psa 78:38",
+    "Psa 78:39",
+    "Psa 78:40",
+    "Psa 78:41",
+    "Psa 78:42",
+    "Psa 78:43",
+    "Psa 78:44",
+    "Psa 78:45",
+    "Psa 78:46"
+   ],
+   "text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant . Psa 78:38 Yet he , being compassionate , atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath . Psa 78:39 He remembered that they were but flesh , a wind that passes and comes not again. Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert ! Psa 78:41 They tested God again and again and provoked the Holy One of Israel . Psa 78:42 They did not remember his power or the day when he redeemed them from the foe , Psa 78:43 when he performed his signs in Egypt and his marvels in the fields of Zoan . Psa 78:44 He turned their rivers to blood , so that they could not drink of their streams . Psa 78:45 He sent among them swarms of flies , which devoured them, and frogs , which destroyed them . Psa 78:46 He gave their crops to the destroying locust and the fruit of their labor to the locust ."
+  },
+  "1720": {
+   "passage_ref": "Psa 78:48-59",
+   "verse_refs": [
+    "Psa 78:48",
+    "Psa 78:49",
+    "Psa 78:50",
+    "Psa 78:51",
+    "Psa 78:52",
+    "Psa 78:53",
+    "Psa 78:54",
+    "Psa 78:55",
+    "Psa 78:56",
+    "Psa 78:57",
+    "Psa 78:58",
+    "Psa 78:59"
+   ],
+   "text": "Psa 78:48 He gave over their cattle to the hail and their flocks to thunderbolts . Psa 78:49 He let loose on them his burning anger , wrath , indignation , and distress , a company of destroying angels . Psa 78:50 He made a path for his anger ; he did not spare them from death , but gave their lives over to the plague . Psa 78:51 He struck down every firstborn in Egypt , the firstfruits of their strength in the tents of Ham . Psa 78:52 Then he led out his people like sheep and guided them in the wilderness like a flock . Psa 78:53 He led them in safety , so that they were not afraid , but the sea overwhelmed their enemies . Psa 78:54 And he brought them to his holy land , to the mountain which his right hand had won . Psa 78:55 He drove out nations before them; he apportioned them for a possession and settled the tribes of Israel in their tents . Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies , Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow . Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols . Psa 78:59 When God heard , he was full of wrath, and he utterly rejected Israel ."
+  },
+  "1758": {
+   "passage_ref": "Psa 95:4-11",
+   "verse_refs": [
+    "Psa 95:4",
+    "Psa 95:5",
+    "Psa 95:6",
+    "Psa 95:7",
+    "Psa 95:8",
+    "Psa 95:9",
+    "Psa 95:10",
+    "Psa 95:11"
+   ],
+   "text": "Psa 95:4 In his hand are the depths of the earth ; the heights of the mountains are his also. Psa 95:5 The sea is his , for he made it, and his hands formed the dry land . Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker ! Psa 95:7 For he is our God , and we are the people of his pasture , and the sheep of his hand . Today , if you hear his voice , Psa 95:8 do not harden your hearts , as at Meribah , as on the day at Massah in the wilderness , Psa 95:9 when your fathers put me to the test and put me to the proof , though they had seen my work . Psa 95:10 For forty years I loathed that generation and said , “They are a people who go astray in their heart , and they have not known my ways .” Psa 95:11 Therefore I swore in my wrath , “They shall not enter my rest .”"
+  },
+  "1788": {
+   "passage_ref": "Psa 106:10-16",
+   "verse_refs": [
+    "Psa 106:10",
+    "Psa 106:11",
+    "Psa 106:12",
+    "Psa 106:13",
+    "Psa 106:14",
+    "Psa 106:15",
+    "Psa 106:16"
+   ],
+   "text": "Psa 106:10 So he saved them from the hand of the foe and redeemed them from the power of the enemy . Psa 106:11 And the waters covered their adversaries ; not one of them was left . Psa 106:12 Then they believed his words ; they sang his praise . Psa 106:13 But they soon forgot his works ; they did not wait for his counsel . Psa 106:14 But they had a wanton craving in the wilderness , and put God to the test in the desert ; Psa 106:15 he gave them what they asked , but sent a wasting disease among them . Psa 106:16 When men in the camp were jealous of Moses and Aaron , the holy one of the Lord ,"
+  },
+  "1795": {
+   "passage_ref": "Psa 107:24-26",
+   "verse_refs": [
+    "Psa 107:24",
+    "Psa 107:25",
+    "Psa 107:26",
+    "Psa 107:27"
+   ],
+   "text": "Psa 107:24 they saw the deeds of the Lord , his wondrous works in the deep . Psa 107:25 For he commanded and raised the stormy wind , which lifted up the waves of the sea. Psa 107:26 They mounted up to heaven ; they went down to the depths ; their courage melted away in their evil plight ; Psa 107:27 they reeled and staggered like drunken men and were at their wits’ end."
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H5254:test",
+   "meaning": "tested",
+   "lemma": "H5254",
+   "cluster": {
+    "code": "M35",
+    "name": "Testing",
+    "all_candidates": "M35(Testing)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "tested, test",
+    "lexical_gloss": "to test",
+    "read_sense_variants": "test (nasah) | test / put to proof (nasah)"
+   },
+   "instances": [
+    {
+     "span_id": 269613,
+     "reference": "Psa 106:14",
+     "hebrew_surface": "test",
+     "esv_word": "test",
+     "morphology": {
+      "morph_code": "HVpw3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "test (nasah)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1788,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:14 But they had a wanton craving in the wilderness , and put God to the test in the desert ;",
+     "passage_id": 1788,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "test (nasah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "test / put to proof",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God in the desert",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v14: 'and put God to the TEST (nasah) in the desert' - the presumptuous trying of God born of appetite.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the craving",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269613",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269613",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269613",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283050,
+     "reference": "Psa 78:18",
+     "hebrew_surface": "tested",
+     "esv_word": "tested",
+     "morphology": {
+      "morph_code": "HVpw3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "test / put to proof (nasah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1716,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:18 They tested God in their heart by demanding the food they craved .",
+     "passage_id": 1716,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "test / put to proof (nasah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "test / try",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the heart and the craving",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'They TESTED (nasah) God in their heart by demanding the food they craved' - the presumptuous trying of God born of appetite.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283050",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283050",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283050",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283213,
+     "reference": "Psa 78:41",
+     "hebrew_surface": "tested",
+     "esv_word": "tested",
+     "morphology": {
+      "morph_code": "HVpw3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "test (nasah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1719,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:41 They tested God again and again and provoked the Holy One of Israel .",
+     "passage_id": 1719,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "test (nasah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "test again and again",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with provoking the Holy One",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'They TESTED (nasah) God again and again' - the repeated presumption, testing turned habitual.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283213",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283213",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283213",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283323,
+     "reference": "Psa 78:56",
+     "hebrew_surface": "tested",
+     "esv_word": "tested",
+     "morphology": {
+      "morph_code": "HVpw3mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "test (nasah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1720,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies ,",
+     "passage_id": 1720,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "test (nasah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "test",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the Most High God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with rebelling and not keeping",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Yet they TESTED (nasah) and rebelled against the Most High God' - the testing renewed even in the promised land.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283323",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283323",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283323",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285517,
+     "reference": "Psa 95:9",
+     "hebrew_surface": "test",
+     "esv_word": "test",
+     "morphology": {
+      "morph_code": "HVpp3cp HTr",
+      "stem": "Piel"
+     },
+     "read_characteristic": "test (nasah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:9 when your fathers put me to the test and put me to the proof , though they had seen my work .",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "test (nasah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "test / put to proof",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'when your fathers put me to the TEST (nasah)' - the presumptuous testing of God in the wilderness, unbelief made trial.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with putting God to the proof",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285517",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285517",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285517",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7200:look",
+   "meaning": "looked",
+   "lemma": "H7200",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil, Qal",
+    "morph_codes": "HVhi3ms, HVqcc HR HSp2ms, HVqp3fs HSp1bs",
+    "esv_words": "looked, look",
+    "lexical_gloss": "to see: seer; to see: see; to see: examine; to see: behold!; to see: select; to see: enjoy; to see: approach; Provider [God]",
+    "read_sense_variants": "look (in triumph) (raah - my eye has looked on my enemies) | look (in triumph) (raah - look on my enemies) | look / gaze (raah - I have looked upon you in the sanctuary)"
+   },
+   "instances": [
+    {
+     "span_id": 280020,
+     "reference": "Psa 54:7",
+     "hebrew_surface": "looked",
+     "esv_word": "looked",
+     "morphology": {
+      "morph_code": "HVqp3fs HSp1bs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "look (in triumph) (raah - my eye has looked on my enemies)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1660,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies .",
+     "passage_id": 1660,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "look (in triumph) (raah - my eye has looked on my enemies)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "because God put an end to the enemies (v5)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the eye",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "look in triumph / gaze",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "on my enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "in triumph / vindication",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the fruit of God's deliverance",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'my eye has LOOKED (raah) in triumph on my enemies' — the vindicated gaze of the delivered; raah here the psalmist's own eye beholding the downfall of those who sought his life — not gloating cruelty but the settled assurance of God's justice done (cf the righteous laughing, Ps52:6)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "280020",
+       "to_span": "280004",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280020",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280020",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280020",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280020",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280020",
+       "to_span": "280015",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 280535,
+     "reference": "Psa 59:10",
+     "hebrew_surface": "look",
+     "esv_word": "look",
+     "morphology": {
+      "morph_code": "HVhi3ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "look (in triumph) (raah - look on my enemies)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1668,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 59:10 My God in his steadfast love will meet me; God will let me look in triumph on my enemies .",
+     "passage_id": 1668,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "look (in triumph) (raah - look on my enemies)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the eye",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "look in triumph",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "on my enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "in triumph, by God's grant",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "granted by the God who meets him in love",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'God will let me LOOK (raah) in triumph on my enemies' — the vindicated gaze the delivered psalmist expects; raah here the confident looking on the defeat of the foes (cf Ps54:7) — not gloating but the assurance of God's steadfast love meeting him",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280535",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280535",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280535",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280535",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280535",
+       "to_span": "280532",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281041,
+     "reference": "Psa 63:2",
+     "hebrew_surface": "looked",
+     "esv_word": "looked",
+     "morphology": {
+      "morph_code": "HVqcc HR HSp2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "look / gaze (raah - I have looked upon you in the sanctuary)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1676,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 63:2 So I have looked upon you in the sanctuary , beholding your power and glory .",
+     "passage_id": 1676,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "look / gaze (raah - I have looked upon you in the sanctuary)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "look upon / gaze",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God (his power and glory), in the sanctuary",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "beholding his power and glory",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the vision that answers the thirst",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'So I have LOOKED (raah) upon you in the sanctuary, beholding your power and glory' — the contemplation of God that answers the desert-thirst; raah here the gazing on God's power and glory (the qualifiers) remembered from the sanctuary — the vision the longing soul feeds on even in the wilderness",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281041",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "281041",
+       "to_span": "281044",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281041",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281041",
+       "to_span": "281016",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7200:see",
+   "meaning": "see",
+   "lemma": "H7200",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqi3ms, HVqv2mp",
+    "esv_words": "see",
+    "lexical_gloss": "to see: seer; to see: see; to see: examine; to see: behold!; to see: select; to see: enjoy; to see: approach; Provider [God]",
+    "read_sense_variants": "see (raah - Who can see them?) | see / behold (raah - Come and see what God has done)"
+   },
+   "instances": [
+    {
+     "span_id": 281135,
+     "reference": "Psa 64:5",
+     "hebrew_surface": "see",
+     "esv_word": "see",
+     "morphology": {
+      "morph_code": "HVqi3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "see (raah - Who can see them?)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1677,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 64:5 They hold fast to their evil purpose ; they talk of laying snares secretly , thinking , “ Who can see them ?”",
+     "passage_id": 1677,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "see (raah - Who can see them?)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked (presuming)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "presume none can see",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the presumption behind the secret snares",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they talk of laying snares secretly, thinking, Who can SEE (raah) them?' — the presumption that their scheming is unobserved; raah here the seeing they deny - the same godless confidence as 'who will hear us?' (Ps59:7) - not reckoning that God sees and searches the deepest heart (v6-7)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281135",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281135",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281135",
+       "to_span": "281107",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281350,
+     "reference": "Psa 66:5",
+     "hebrew_surface": "see",
+     "esv_word": "see",
+     "morphology": {
+      "morph_code": "HVqv2mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "see / behold (raah - Come and see what God has done)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1681,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 66:5 Come and see what God has done: he is awesome in his deeds toward the children of man .",
+     "passage_id": 1681,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "see / behold (raah - Come and see what God has done)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "for God is awesome in his deeds (v5)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all who are summoned",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "come and see / behold",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "what God has done",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paralleled by the summons to come and hear (v16)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Come and SEE (raah) what God has done' — the summons to witness God's works; raah here the invitation to behold the awesome deeds of God (the qualifier) - the corporate counterpart to 'come and hear' (v16), calling all to look on his acts",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "281350",
+       "to_span": "281353",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281350",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281350",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281350",
+       "to_span": "281284",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0974:proof",
+   "meaning": "proof",
+   "lemma": "H0974",
+   "cluster": {
+    "code": "M35",
+    "name": "Testing",
+    "all_candidates": "M35(Testing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "proof",
+    "lexical_gloss": "to test",
+    "read_sense_variants": "put to proof (bachan)"
+   },
+   "instances": [
+    {
+     "span_id": 285518,
+     "reference": "Psa 95:9",
+     "hebrew_surface": "proof",
+     "esv_word": "proof",
+     "morphology": {
+      "morph_code": "HVqp3cp HSp2mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "put to proof (bachan)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:9 when your fathers put me to the test and put me to the proof , though they had seen my work .",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "put to proof (bachan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "put to the proof",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'and put me to the PROOF (bachan), though they had seen my work' - the demand for proof despite the works already seen.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the testing",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285518",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285518",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285518",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7200:saw",
+   "meaning": "saw",
+   "lemma": "H7200",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3cp",
+    "esv_words": "saw",
+    "lexical_gloss": "to see: seer; to see: see; to see: examine; to see: behold!; to see: select; to see: enjoy; to see: approach; Provider [God]",
+    "read_sense_variants": "see (raah)"
+   },
+   "instances": [
+    {
+     "span_id": 269939,
+     "reference": "Psa 107:24",
+     "hebrew_surface": "saw",
+     "esv_word": "saw",
+     "morphology": {
+      "morph_code": "HVqp3cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "see (raah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1795,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:24 they saw the deeds of the Lord , his wondrous works in the deep .",
+     "passage_id": 1795,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "see (raah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the sailors",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "see",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the deeds of the LORD in the deep",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v24: 'they SAW (raah) the deeds of the LORD, his wondrous works in the deep' - the sailors' witness of God's power on the sea.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the storm that follows",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269939",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269939",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269939",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2664:search",
+   "meaning": "search",
+   "lemma": "H2664",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "search",
+    "lexical_gloss": "to search",
+    "read_sense_variants": "search out (chaphas - a diligent search)"
+   },
+   "instances": [
+    {
+     "span_id": 282978,
+     "reference": "Psa 77:6",
+     "hebrew_surface": "search",
+     "esv_word": "search",
+     "morphology": {
+      "morph_code": "HVpw3ms",
+      "stem": "Piel"
+     },
+     "read_characteristic": "search out (chaphas - a diligent search)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1713,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 77:6 I said, “Let me remember my song in the night ; let me meditate in my heart .” Then my spirit made a diligent search :",
+     "passage_id": 1713,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "search out (chaphas - a diligent search)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the spirit (ruach)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "search / examine thoroughly",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the questions of v7-9",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "diligent, thorough",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the spirit that performs it",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'my spirit made a diligent SEARCH (chaphas)' - the thorough probing that issues in the six anxious questions of v7-9; chaphas here the deep self-searching, the mind ransacking itself: has God forever spurned, forgotten, shut up his compassion?",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "282978",
+       "to_span": "282977",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282978",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "282978",
+       "to_span": "282980",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282978",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282978",
+       "to_span": "282977",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6884:test",
+   "meaning": "test",
+   "lemma": "H6884",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "test",
+    "lexical_gloss": "to refine",
+    "read_sense_variants": "invite God to test the heart"
+   },
+   "instances": [
+    {
+     "span_id": 276139,
+     "reference": "Psa 26:2",
+     "hebrew_surface": "test",
+     "esv_word": "test",
+     "morphology": {
+      "morph_code": "HVqv2ms HSp1bs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "invite God to test the heart",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1615,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 26:2 Prove me, O Lord , and try me; test my heart and my mind .",
+     "passage_id": 1615,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "invite God to test the heart",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self invites God to prove, try and test its heart and mind - a confidence willing to be assayed",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "confident-self-submission",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "test-my-heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'PROVE me, O LORD, and try me; TEST my HEART and my mind' - the operation offers the inmost self for examination; only an integrity sure of itself asks to be tested.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276139",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276139",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276139",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

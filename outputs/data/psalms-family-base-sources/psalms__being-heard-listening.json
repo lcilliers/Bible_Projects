@@ -1,0 +1,2848 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "being-heard-listening"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'being-heard-listening': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 6,
+   "instances": 20,
+   "passages": 16
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1606": {
+   "passage_ref": "Psa 21:1-11",
+   "verse_refs": [
+    "Psa 21:1",
+    "Psa 21:2",
+    "Psa 21:3",
+    "Psa 21:4",
+    "Psa 21:5",
+    "Psa 21:6",
+    "Psa 21:7",
+    "Psa 21:8",
+    "Psa 21:9",
+    "Psa 21:10",
+    "Psa 21:11",
+    "Psa 21:13"
+   ],
+   "text": "To the choirmaster . A Psalm of David . Psa 21:1 O Lord , in your strength the king rejoices , and in your salvation how greatly he exults ! Psa 21:2 You have given him his heart’s desire and have not withheld the request of his lips . Selah Psa 21:3 For you meet him with rich blessings ; you set a crown of fine gold upon his head . Psa 21:4 He asked life of you; you gave it to him, length of days forever and ever . Psa 21:5 His glory is great through your salvation ; splendor and majesty you bestow on him . Psa 21:6 For you make him most blessed forever ; you make him glad with the joy of your presence . Psa 21:7 For the king trusts in the Lord , and through the steadfast love of the Most High he shall not be moved . Psa 21:8 Your hand will find out all your enemies ; your right hand will find out those who hate you . Psa 21:9 You will make them as a blazing oven when you appear . The Lord will swallow them up in his wrath , and fire will consume them. Psa 21:10 You will destroy their descendants from the earth , and their offspring from among the children of man . Psa 21:11 Though they plan evil against you, though they devise mischief , they will not succeed . Psa 21:13 Be exalted , O Lord , in your strength ! We will sing and praise your power ."
+  },
+  "1635": {
+   "passage_ref": "Psa 38:1-20",
+   "verse_refs": [
+    "Psa 38:1",
+    "Psa 38:2",
+    "Psa 38:3",
+    "Psa 38:4",
+    "Psa 38:5",
+    "Psa 38:6",
+    "Psa 38:7",
+    "Psa 38:8",
+    "Psa 38:9",
+    "Psa 38:10",
+    "Psa 38:11",
+    "Psa 38:12",
+    "Psa 38:13",
+    "Psa 38:14",
+    "Psa 38:15",
+    "Psa 38:16",
+    "Psa 38:17",
+    "Psa 38:18",
+    "Psa 38:19",
+    "Psa 38:20",
+    "Psa 38:22"
+   ],
+   "text": "A Psalm of David , for the memorial offering . Psa 38:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath ! Psa 38:2 For your arrows have sunk into me, and your hand has come down on me. Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin . Psa 38:4 For my iniquities have gone over my head ; like a heavy burden , they are too heavy for me . Psa 38:5 My wounds stink and fester because of my foolishness , Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning . Psa 38:7 For my sides are filled with burning , and there is no soundness in my flesh . Psa 38:8 I am feeble and crushed ; I groan because of the tumult of my heart . Psa 38:9 O Lord , all my longing is before you; my sighing is not hidden from you. Psa 38:10 My heart throbs ; my strength fails me, and the light of my eyes — it also has gone from me . Psa 38:11 My friends and companions stand aloof from my plague , and my nearest kin stand far off. Psa 38:12 Those who seek my life lay their snares ; those who seek my hurt speak of ruin and meditate treachery all day long. Psa 38:13 But I am like a deaf man; I do not hear , like a mute man who does not open his mouth . Psa 38:14 I have become like a man who does not hear , and in whose mouth are no rebukes . Psa 38:15 But for you, O Lord , do I wait ; it is you, O Lord my God , who will answer . Psa 38:16 For I said , “Only let them not rejoice over me, who boast against me when my foot slips !” Psa 38:17 For I am ready to fall , and my pain is ever before me. Psa 38:18 I confess my iniquity ; I am sorry for my sin . Psa 38:19 But my foes are vigorous , they are mighty , and many are those who hate me wrongfully . Psa 38:20 Those who render me evil for good accuse me because I follow after good . Psa 38:22 Make haste to help me, O Lord, my salvation!"
+  },
+  "1657": {
+   "passage_ref": "Psa 51:1-19",
+   "verse_refs": [
+    "Psa 51:1",
+    "Psa 51:2",
+    "Psa 51:3",
+    "Psa 51:4",
+    "Psa 51:5",
+    "Psa 51:6",
+    "Psa 51:7",
+    "Psa 51:8",
+    "Psa 51:9",
+    "Psa 51:10",
+    "Psa 51:11",
+    "Psa 51:12",
+    "Psa 51:13",
+    "Psa 51:14",
+    "Psa 51:15",
+    "Psa 51:16",
+    "Psa 51:17",
+    "Psa 51:18",
+    "Psa 51:19"
+   ],
+   "text": "To the choirmaster . A Psalm of David , when Nathan the prophet went to him, after he had gone in to Bathsheba . Psa 51:1 Have mercy on me, O God , according to your steadfast love ; according to your abundant mercy blot out my transgressions . Psa 51:2 Wash me thoroughly from my iniquity , and cleanse me from my sin ! Psa 51:3 For I know my transgressions , and my sin is ever before me. Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment . Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me. Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart . Psa 51:7 Purge me with hyssop , and I shall be clean ; wash me, and I shall be whiter than snow . Psa 51:8 Let me hear joy and gladness ; let the bones that you have broken rejoice . Psa 51:9 Hide your face from my sins , and blot out all my iniquities . Psa 51:10 Create in me a clean heart , O God , and renew a right spirit within me. Psa 51:11 Cast me not away from your presence , and take not your Holy Spirit from me . Psa 51:12 Restore to me the joy of your salvation , and uphold me with a willing spirit . Psa 51:13 Then I will teach transgressors your ways , and sinners will return to you. Psa 51:14 Deliver me from bloodguiltiness , O God , O God of my salvation , and my tongue will sing aloud of your righteousness . Psa 51:15 O Lord , open my lips , and my mouth will declare your praise . Psa 51:16 For you will not delight in sacrifice , or I would give it; you will not be pleased with a burnt offering . Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise . Psa 51:18 Do good to Zion in your good pleasure ; build up the walls of Jerusalem ; Psa 51:19 then will you delight in right sacrifices , in burnt offerings and whole burnt offerings; then bulls will be offered on your altar ."
+  },
+  "1665": {
+   "passage_ref": "Psa 58:1-5",
+   "verse_refs": [
+    "Psa 58:1",
+    "Psa 58:2",
+    "Psa 58:3",
+    "Psa 58:4",
+    "Psa 58:5",
+    "Psa 58:7"
+   ],
+   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David . Psa 58:1 Do you indeed decree what is right , you gods ? Do you judge the children of man uprightly ? Psa 58:2 No , in your hearts you devise wrongs ; your hands deal out violence on earth . Psa 58:3 The wicked are estranged from the womb ; they go astray from birth , speaking lies . Psa 58:4 They have venom like the venom of a serpent , like the deaf adder that stops its ear , Psa 58:5 so that it does not hear the voice of charmers or of the cunning enchanter . Psa 58:7 Let them vanish like water that runs away; when he aims his arrows, let them be blunted."
+  },
+  "1668": {
+   "passage_ref": "Psa 59:7-13",
+   "verse_refs": [
+    "Psa 59:7",
+    "Psa 59:8",
+    "Psa 59:9",
+    "Psa 59:10",
+    "Psa 59:11",
+    "Psa 59:12",
+    "Psa 59:13"
+   ],
+   "text": "Psa 59:7 There they are , bellowing with their mouths with swords in their lips — for “ Who ,” they think, “will hear us?” Psa 59:8 But you , O Lord , laugh at them; you hold all the nations in derision . Psa 59:9 O my Strength , I will watch for you, for you, O God , are my fortress . Psa 59:10 My God in his steadfast love will meet me; God will let me look in triumph on my enemies . Psa 59:11 Kill them not , lest my people forget ; make them totter by your power and bring them down , O Lord , our shield ! Psa 59:12 For the sin of their mouths , the words of their lips , let them be trapped in their pride . For the cursing and lies that they utter , Psa 59:13 consume them in wrath ; consume them till they are no more , that they may know that God rules over Jacob to the ends of the earth . Selah"
+  },
+  "1675": {
+   "passage_ref": "Psa 62:4-12",
+   "verse_refs": [
+    "Psa 62:4",
+    "Psa 62:5",
+    "Psa 62:6",
+    "Psa 62:7",
+    "Psa 62:8",
+    "Psa 62:9",
+    "Psa 62:10",
+    "Psa 62:11",
+    "Psa 62:12"
+   ],
+   "text": "Psa 62:4 They only plan to thrust him down from his high position . They take pleasure in falsehood . They bless with their mouths , but inwardly they curse . Selah Psa 62:5 For God alone , O my soul , wait in silence , for my hope is from him. Psa 62:6 He only is my rock and my salvation , my fortress ; I shall not be shaken . Psa 62:7 On God rests my salvation and my glory ; my mighty rock , my refuge is God . Psa 62:8 Trust in him at all times , O people ; pour out your heart before him; God is a refuge for us. Selah Psa 62:9 Those of low estate are but a breath ; those of high estate are a delusion ; in the balances they go up ; they are together lighter than a breath . Psa 62:10 Put no trust in extortion ; set no vain hopes on robbery ; if riches increase , set not your heart on them. Psa 62:11 Once God has spoken ; twice have I heard this : that power belongs to God , Psa 62:12 and that to you, O Lord , belongs steadfast love . For you will render to a man according to his work ."
+  },
+  "1681": {
+   "passage_ref": "Psa 66:1-9",
+   "verse_refs": [
+    "Psa 66:1",
+    "Psa 66:2",
+    "Psa 66:3",
+    "Psa 66:4",
+    "Psa 66:5",
+    "Psa 66:6",
+    "Psa 66:7",
+    "Psa 66:8",
+    "Psa 66:9",
+    "Psa 66:10",
+    "Psa 66:11"
+   ],
+   "text": "To the choirmaster . A Song . A Psalm . Psa 66:1 Shout for joy to God , all the earth ; Psa 66:2 sing the glory of his name ; give to him glorious praise ! Psa 66:3 Say to God , “ How awesome are your deeds ! So great is your power that your enemies come cringing to you. Psa 66:4 All the earth worships you and sings praises to you; they sing praises to your name .” Selah Psa 66:5 Come and see what God has done: he is awesome in his deeds toward the children of man . Psa 66:6 He turned the sea into dry land ; they passed through the river on foot . There did we rejoice in him , Psa 66:7 who rules by his might forever , whose eyes keep watch on the nations — let not the rebellious exalt themselves. Selah Psa 66:8 Bless our God , O peoples ; let the sound of his praise be heard , Psa 66:9 who has kept our soul among the living and has not let our feet slip . Psa 66:10 For you, O God, have tested us; you have tried us as silver is tried. Psa 66:11 You brought us into the net ; you laid a crushing burden on our backs ;"
+  },
+  "1682": {
+   "passage_ref": "Psa 66:14-20",
+   "verse_refs": [
+    "Psa 66:13",
+    "Psa 66:14",
+    "Psa 66:15",
+    "Psa 66:16",
+    "Psa 66:17",
+    "Psa 66:18",
+    "Psa 66:19",
+    "Psa 66:20"
+   ],
+   "text": "Psa 66:13 I will come into your house with burnt offerings; I will perform my vows to you, Psa 66:14 that which my lips uttered and my mouth promised when I was in trouble . Psa 66:15 I will offer to you burnt offerings of fattened animals , with the smoke of the sacrifice of rams ; I will make an offering of bulls and goats . Selah Psa 66:16 Come and hear , all you who fear God , and I will tell what he has done for my soul . Psa 66:17 I cried to him with my mouth , and high praise was on my tongue . Psa 66:18 If I had cherished iniquity in my heart , the Lord would not have listened . Psa 66:19 But truly God has listened ; he has attended to the voice of my prayer . Psa 66:20 Blessed be God , because he has not rejected my prayer or removed his steadfast love from me !"
+  },
+  "1714": {
+   "passage_ref": "Psa 78:4-6",
+   "verse_refs": [
+    "Psa 78:1",
+    "Psa 78:3",
+    "Psa 78:4",
+    "Psa 78:5",
+    "Psa 78:6",
+    "Psa 78:7"
+   ],
+   "text": "A Maskil of Asaph . Psa 78:1 Give ear , O my people , to my teaching ; incline your ears to the words of my mouth ! Psa 78:3 things that we have heard and known, that our fathers have told us. Psa 78:4 We will not hide them from their children , but tell to the coming generation the glorious deeds of the Lord , and his might , and the wonders that he has done . Psa 78:5 He established a testimony in Jacob and appointed a law in Israel , which he commanded our fathers to teach to their children , Psa 78:6 that the next generation might know them, the children yet unborn , and arise and tell them to their children , Psa 78:7 so that they should set their hope in God and not forget the works of God, but keep his commandments;"
+  },
+  "1731": {
+   "passage_ref": "Psa 81:4-9",
+   "verse_refs": [
+    "Psa 81:4",
+    "Psa 81:5",
+    "Psa 81:6",
+    "Psa 81:7",
+    "Psa 81:8",
+    "Psa 81:9"
+   ],
+   "text": "Psa 81:4 For it is a statute for Israel , a rule of the God of Jacob . Psa 81:5 He made it a decree in Joseph when he went out over the land of Egypt . I hear a language I had not known : Psa 81:6 “I relieved your shoulder of the burden ; your hands were freed from the basket . Psa 81:7 In distress you called , and I delivered you; I answered you in the secret place of thunder ; I tested you at the waters of Meribah . Selah Psa 81:8 Hear , O my people , while I admonish you! O Israel , if you would but listen to me ! Psa 81:9 There shall be no strange god among you; you shall not bow down to a foreign god ."
+  },
+  "1732": {
+   "passage_ref": "Psa 81:11-12",
+   "verse_refs": [
+    "Psa 81:11",
+    "Psa 81:12",
+    "Psa 81:13"
+   ],
+   "text": "Psa 81:11 “But my people did not listen to my voice ; Israel would not submit to me . Psa 81:12 So I gave them over to their stubborn hearts , to follow their own counsels . Psa 81:13 Oh, that my people would listen to me, that Israel would walk in my ways!"
+  },
+  "1738": {
+   "passage_ref": "Psa 85:1-13",
+   "verse_refs": [
+    "Psa 85:1",
+    "Psa 85:2",
+    "Psa 85:3",
+    "Psa 85:4",
+    "Psa 85:5",
+    "Psa 85:6",
+    "Psa 85:7",
+    "Psa 85:8",
+    "Psa 85:9",
+    "Psa 85:10",
+    "Psa 85:11",
+    "Psa 85:12",
+    "Psa 85:13"
+   ],
+   "text": "To the choirmaster . A Psalm of the Sons of Korah . Psa 85:1 Lord , you were favorable to your land ; you restored the fortunes of Jacob . Psa 85:2 You forgave the iniquity of your people ; you covered all their sin . Selah Psa 85:3 You withdrew all your wrath ; you turned from your hot anger . Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us ! Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ? Psa 85:6 Will you not revive us again , that your people may rejoice in you ? Psa 85:7 Show us your steadfast love , O Lord , and grant us your salvation . Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly . Psa 85:9 Surely his salvation is near to those who fear him, that glory may dwell in our land . Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. Psa 85:11 Faithfulness springs up from the ground , and righteousness looks down from the sky . Psa 85:12 Yes , the Lord will give what is good , and our land will yield its increase . Psa 85:13 Righteousness will go before him and make his footsteps a way ."
+  },
+  "1752": {
+   "passage_ref": "Psa 92:1-12",
+   "verse_refs": [
+    "Psa 92:1",
+    "Psa 92:2",
+    "Psa 92:3",
+    "Psa 92:4",
+    "Psa 92:5",
+    "Psa 92:6",
+    "Psa 92:7",
+    "Psa 92:8",
+    "Psa 92:9",
+    "Psa 92:10",
+    "Psa 92:11",
+    "Psa 92:12"
+   ],
+   "text": "A Psalm . A Song for the Sabbath . Psa 92:1 It is good to give thanks to the Lord , to sing praises to your name , O Most High ; Psa 92:2 to declare your steadfast love in the morning , and your faithfulness by night , Psa 92:3 to the music of the lute and the harp , to the melody of the lyre . Psa 92:4 For you, O Lord , have made me glad by your work ; at the works of your hands I sing for joy . Psa 92:5 How great are your works , O Lord ! Your thoughts are very deep ! Psa 92:6 The stupid man cannot know ; the fool cannot understand this : Psa 92:7 that though the wicked sprout like grass and all evildoers flourish , they are doomed to destruction forever ; Psa 92:8 but you, O Lord , are on high forever . Psa 92:9 For behold , your enemies , O Lord , for behold , your enemies shall perish ; all evildoers shall be scattered . Psa 92:10 But you have exalted my horn like that of the wild ox ; you have poured over me fresh oil . Psa 92:11 My eyes have seen the downfall of my enemies ; my ears have heard the doom of my evil assailants . Psa 92:12 The righteous flourish like the palm tree and grow like a cedar in Lebanon ."
+  },
+  "1758": {
+   "passage_ref": "Psa 95:4-11",
+   "verse_refs": [
+    "Psa 95:4",
+    "Psa 95:5",
+    "Psa 95:6",
+    "Psa 95:7",
+    "Psa 95:8",
+    "Psa 95:9",
+    "Psa 95:10",
+    "Psa 95:11"
+   ],
+   "text": "Psa 95:4 In his hand are the depths of the earth ; the heights of the mountains are his also. Psa 95:5 The sea is his , for he made it, and his hands formed the dry land . Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker ! Psa 95:7 For he is our God , and we are the people of his pasture , and the sheep of his hand . Today , if you hear his voice , Psa 95:8 do not harden your hearts , as at Meribah , as on the day at Massah in the wilderness , Psa 95:9 when your fathers put me to the test and put me to the proof , though they had seen my work . Psa 95:10 For forty years I loathed that generation and said , “They are a people who go astray in their heart , and they have not known my ways .” Psa 95:11 Therefore I swore in my wrath , “They shall not enter my rest .”"
+  },
+  "1762": {
+   "passage_ref": "Psa 97:5-12",
+   "verse_refs": [
+    "Psa 97:5",
+    "Psa 97:6",
+    "Psa 97:7",
+    "Psa 97:8",
+    "Psa 97:9",
+    "Psa 97:10",
+    "Psa 97:11",
+    "Psa 97:12"
+   ],
+   "text": "Psa 97:5 The mountains melt like wax before the Lord , before the Lord of all the earth . Psa 97:6 The heavens proclaim his righteousness , and all the peoples see his glory . Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods ! Psa 97:8 Zion hears and is glad , and the daughters of Judah rejoice , because of your judgments , O Lord . Psa 97:9 For you , O Lord , are most high over all the earth ; you are exalted far above all gods . Psa 97:10 O you who love the Lord , hate evil ! He preserves the lives of his saints ; he delivers them from the hand of the wicked . Psa 97:11 Light is sown for the righteous , and joy for the upright in heart . Psa 97:12 Rejoice in the Lord , O you righteous , and give thanks to his holy name !"
+  },
+  "1850": {
+   "passage_ref": "Psa 132:4-14",
+   "verse_refs": [
+    "Psa 132:4",
+    "Psa 132:5",
+    "Psa 132:6",
+    "Psa 132:7",
+    "Psa 132:8",
+    "Psa 132:9",
+    "Psa 132:10",
+    "Psa 132:11",
+    "Psa 132:12",
+    "Psa 132:13",
+    "Psa 132:14",
+    "Psa 132:15"
+   ],
+   "text": "Psa 132:4 I will not give sleep to my eyes or slumber to my eyelids , Psa 132:5 until I find a place for the Lord , a dwelling place for the Mighty One of Jacob .” Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar . Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !” Psa 132:8 Arise , O Lord , and go to your resting place , you and the ark of your might . Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy . Psa 132:10 For the sake of your servant David , do not turn away the face of your anointed one. Psa 132:11 The Lord swore to David a sure oath from which he will not turn back : “One of the sons of your body I will set on your throne . Psa 132:12 If your sons keep my covenant and my testimonies that I shall teach them, their sons also forever shall sit on your throne .” Psa 132:13 For the Lord has chosen Zion ; he has desired it for his dwelling place : Psa 132:14 “ This is my resting place forever ; here I will dwell , for I have desired it . Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread."
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H8085:hear",
+   "meaning": "hear",
+   "lemma": "H8085",
+   "cluster": {
+    "code": "M41",
+    "name": "Remembrance",
+    "all_candidates": "M41(Remembrance)"
+   },
+   "instance_count": 10,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil, Qal",
+    "morph_codes": "HVhi2ms, HVqc1cs, HVqi1cs, HVqi2mp HSp3ms, HVqi3ms, HVqp3fs, HVqrmsa, HVqv2mp, HVqv2ms",
+    "esv_words": "hear, Hear, hears",
+    "lexical_gloss": "to hear: hear; to hear: obey; to hear: proclaim; to hear: understand; to hear: judge; to hear: welcome",
+    "read_sense_variants": "hear (shama) | hear (shama - let me hear joy and gladness) | hear / heed (shama - does not hear the charmers) | hear (shama - Who will hear us?) | hear (shama - Come and hear, all you who fear God) | listen (shama)"
+   },
+   "instances": [
+    {
+     "span_id": 279771,
+     "reference": "Psa 51:8",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVhi2ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "hear (shama - let me hear joy and gladness)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1657,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 51:8 Let me hear joy and gladness ; let the bones that you have broken rejoice .",
+     "passage_id": 1657,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama - let me hear joy and gladness)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "long to hear",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "joy and gladness",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the broken bones rejoicing",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Let me HEAR (shama) joy and gladness' — the longing for restored gladness after crushing; shama here the plea to be told the word of pardon that brings back joy, so the bones God broke may rejoice — sorrow turning toward hope",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279771",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "279771",
+       "to_span": "279772",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279771",
+       "to_span": "279776",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 280502,
+     "reference": "Psa 58:5",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqi3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear / heed (shama - does not hear the charmers)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1665,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 58:5 so that it does not hear the voice of charmers or of the cunning enchanter .",
+     "passage_id": 1665,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear / heed (shama - does not hear the charmers)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked (like the deaf adder)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "refuse to hear / heed",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the voice of charmers / the cunning enchanter",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "stopping its ear, willfully deaf",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the incorrigibility of their venom",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'so that it does not HEAR (shama) the voice of charmers' — the willful, self-stopped deafness of the wicked; shama here refused, the adder stopping its own ear against any charm — the wicked's incorrigibility, deaf to all correction and appeal (contrast the fearless who hear God's word, Ps56)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280502",
+       "to_span": "280492",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 280640,
+     "reference": "Psa 59:7",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama - Who will hear us?)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1668,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 59:7 There they are , bellowing with their mouths with swords in their lips — for “ Who ,” they think, “will hear us?”",
+     "passage_id": 1668,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama - Who will hear us?)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies (presuming)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "presume none hears",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "answered by God's mocking laughter (v8)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'for Who, they think, will HEAR (shama) us?' — the brazen presumption of the wicked, that no one (not even God) marks their words; shama here the hearing they deny — practical atheism (cf the fool, Ps53), which God answers with derisive laughter (v8, the qualifier)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280640",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280640",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "280640",
+       "to_span": "280643",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281284,
+     "reference": "Psa 66:16",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqv2mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama - Come and hear, all you who fear God)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1682,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 66:16 Come and hear , all you who fear God , and I will tell what he has done for my soul .",
+     "passage_id": 1682,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama - Come and hear, all you who fear God)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all who fear God (summoned)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "come and hear",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "what God has done for the psalmist's soul",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the God-fearers summoned; parallels come-and-see (v5)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Come and HEAR (shama), all you who fear God, and I will tell what he has done for my soul' - the summons to hear personal testimony; shama here the invitation to the God-fearing to listen to what God did for one soul - private mercy made public witness, the 'come and see' (v5) now 'come and hear'",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281284",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281284",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281284",
+       "to_span": "281286",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 283847,
+     "reference": "Psa 81:5",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqi1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1731,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:5 He made it a decree in Joseph when he went out over the land of Egypt . I hear a language I had not known :",
+     "passage_id": 1731,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist / Israel",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear / receive",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "a voice/language not known",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the oracle that follows",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'I HEAR (shama) a language I had not known' - the prophetic receiving of God's voice, the hinge where the psalm turns to divine speech.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283847",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283847",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283847",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283868,
+     "reference": "Psa 81:8",
+     "hebrew_surface": "Hear",
+     "esv_word": "Hear",
+     "morphology": {
+      "morph_code": "HVqv2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1731,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:8 Hear , O my people , while I admonish you! O Israel , if you would but listen to me !",
+     "passage_id": 1731,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "my people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear / attend",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's admonition",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the plea to listen",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'HEAR (shama), O my people, while I admonish you!' - the summoned attention, God pleading to be heard.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283868",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283868",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283868",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283873,
+     "reference": "Psa 81:8",
+     "hebrew_surface": "listen",
+     "esv_word": null,
+     "morphology": {
+      "morph_code": "HVqi2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "listen (shama)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1731,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:8 Hear , O my people , while I admonish you! O Israel , if you would but listen to me !",
+     "passage_id": 1731,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "listen (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "Israel",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "listen / heed",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the summons to hear",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'O Israel, if you would but LISTEN (shama) to me!' - the wistful conditional, the whole tragedy hangs on this heeding.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283873",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283873",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283873",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 284224,
+     "reference": "Psa 85:8",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqc1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1738,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly .",
+     "passage_id": 1738,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear / listen",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to what God will speak",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the peace God speaks",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'Let me HEAR (shama) what God the LORD will speak' - the posture of attentive faith, waiting on God's word of peace.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284224",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284224",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284224",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285506,
+     "reference": "Psa 95:7",
+     "hebrew_surface": "hear",
+     "esv_word": "hear",
+     "morphology": {
+      "morph_code": "HVqi2mp HSp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 10,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:7 For he is our God , and we are the people of his pasture , and the sheep of his hand . Today , if you hear his voice ,",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear / heed",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's voice today",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'Today, if you HEAR (shama) his voice' - the summons to heed God now, the hinge from praise to warning.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with not hardening the heart",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285506",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285506",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285506",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285696,
+     "reference": "Psa 97:8",
+     "hebrew_surface": "hears",
+     "esv_word": "hears",
+     "morphology": {
+      "morph_code": "HVqp3fs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1762,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 97:8 Zion hears and is glad , and the daughters of Judah rejoice , because of your judgments , O Lord .",
+     "passage_id": 1762,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "Zion",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "of God's judgments",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'Zion HEARS (shama) and is glad' - the holy city receiving news of God's just reign, hearing that gladdens.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being glad",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285696",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285696",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285696",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8085:heard",
+   "meaning": "heard",
+   "lemma": "H8085",
+   "cluster": {
+    "code": "M41",
+    "name": "Remembrance",
+    "all_candidates": "M41(Remembrance)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil, Qal",
+    "morph_codes": "HVhv2mp HSp1bp, HVqi3fp, HVqp1cp, HVqp1cs",
+    "esv_words": "heard",
+    "lexical_gloss": "to hear: hear; to hear: obey; to hear: proclaim; to hear: understand; to hear: judge; to hear: welcome",
+    "read_sense_variants": "hear (shama) | hear / receive (shama - twice have I heard this) | be heard / make heard (shama - let the sound of his praise be heard) | hear / receive (shama)"
+   },
+   "instances": [
+    {
+     "span_id": 272972,
+     "reference": "Psa 132:6",
+     "hebrew_surface": "heard",
+     "esv_word": "heard",
+     "morphology": {
+      "morph_code": "HVqp1cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1850,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar .",
+     "passage_id": 1850,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear of the ark",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "and seek it",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'We HEARD (shama) of it in Ephrathah' - the people's report of the ark, the hearing that moves them to seek and worship.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with going to worship",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272972",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272972",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272972",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 280933,
+     "reference": "Psa 62:11",
+     "hebrew_surface": "heard",
+     "esv_word": "heard",
+     "morphology": {
+      "morph_code": "HVqp1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear / receive (shama - twice have I heard this)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1675,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 62:11 Once God has spoken ; twice have I heard this : that power belongs to God ,",
+     "passage_id": 1675,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear / receive (shama - twice have I heard this)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear / take in",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "that power and steadfast love belong to God",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "once God spoke, twice heard",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Once God has spoken; twice have I HEARD (shama) this: that power belongs to God, and that to you belongs steadfast love' — the attentive reception of God's twofold word; shama here the taking-in of the two great truths that ground all trust - power AND steadfast love both belong to God (the qualifiers), so the soul may safely be silent before him",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280933",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "280933",
+       "to_span": "280935",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "pair",
+       "from_span": "280933",
+       "to_span": "280931",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281382,
+     "reference": "Psa 66:8",
+     "hebrew_surface": "heard",
+     "esv_word": "heard",
+     "morphology": {
+      "morph_code": "HVhv2mp HSp1bp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "be heard / make heard (shama - let the sound of his praise be heard)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1681,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 66:8 Bless our God , O peoples ; let the sound of his praise be heard ,",
+     "passage_id": 1681,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be heard / make heard (shama - let the sound of his praise be heard)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the peoples",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "make heard / cause to resound",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the sound of God's praise",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with blessing God",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'let the sound of his praise be HEARD (shama)' — the making-audible of God's praise; shama here the peoples causing his praise to be heard abroad - the public voicing of blessing, praise carried to all ears",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281382",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "281382",
+       "to_span": "281381",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281382",
+       "to_span": "281376",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 285174,
+     "reference": "Psa 92:11",
+     "hebrew_surface": "heard",
+     "esv_word": "heard",
+     "morphology": {
+      "morph_code": "HVqi3fp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear (shama)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1752,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 92:11 My eyes have seen the downfall of my enemies ; my ears have heard the doom of my evil assailants .",
+     "passage_id": 1752,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "hear",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the doom of his evil assailants",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'my ears have HEARD (shama) the doom of my evil assailants' - the hearing of the wicked's judgment, vindication confirmed to the senses.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with seeing their downfall",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285174",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285174",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285174",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306759,
+     "reference": "Psa 78:3",
+     "hebrew_surface": "heard",
+     "esv_word": "heard",
+     "morphology": {
+      "morph_code": "HVqp1cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "hear / receive (shama)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1714,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:3 things that we have heard and known, that our fathers have told us.",
+     "passage_id": 1714,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hear / receive (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "we (the psalmist's generation)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "receive by hearing",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the things heard and known",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with knowing and the fathers' telling",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'things that we have HEARD (shama) and known, that our fathers have told us' - tradition taken in by hearing, faith received before it is understood.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306759",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306759",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306759",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8085:listen",
+   "meaning": "listen",
+   "lemma": "H8085",
+   "cluster": {
+    "code": "M41",
+    "name": "Remembrance",
+    "all_candidates": "M41(Remembrance)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3ms, HVqrmsa HSp1bs",
+    "esv_words": "listen",
+    "lexical_gloss": "to hear: hear; to hear: obey; to hear: proclaim; to hear: understand; to hear: judge; to hear: welcome",
+    "read_sense_variants": "listen (shama, failed) | listen (shama)"
+   },
+   "instances": [
+    {
+     "span_id": 283796,
+     "reference": "Psa 81:11",
+     "hebrew_surface": "listen",
+     "esv_word": "listen",
+     "morphology": {
+      "morph_code": "HVqp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "listen (shama, failed)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1732,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:11 “But my people did not listen to my voice ; Israel would not submit to me .",
+     "passage_id": 1732,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "listen (shama, failed)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "my people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to listen",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God's voice",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the refusal to submit",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'But my people did not LISTEN (shama) to my voice' - the tragic refusal, the summons of v8 met with deafness.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283796",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283796",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283796",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306919,
+     "reference": "Psa 81:13",
+     "hebrew_surface": "listen",
+     "esv_word": "listen",
+     "morphology": {
+      "morph_code": "HVqrmsa HSp1bs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "listen (shama)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1732,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:13 Oh, that my people would listen to me, that Israel would walk in my ways!",
+     "passage_id": 1732,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "listen (shama)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "my people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "listen / heed",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with walking in his ways",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'Oh, that my people would LISTEN (shama) to me' - the divine longing, grief and love in one breath.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306919",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306919",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306919",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0238:giveear",
+   "meaning": "Give ear",
+   "lemma": "H0238",
+   "cluster": {
+    "code": "M41",
+    "name": "Remembrance",
+    "all_candidates": "M41(Remembrance)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhv2ms",
+    "esv_words": "Give ear",
+    "lexical_gloss": "to listen",
+    "read_sense_variants": "give ear / attend (azan)"
+   },
+   "instances": [
+    {
+     "span_id": 283001,
+     "reference": "Psa 78:1",
+     "hebrew_surface": "Give ear",
+     "esv_word": "Give ear",
+     "morphology": {
+      "morph_code": "HVhv2ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "give ear / attend (azan)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1714,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "A Maskil of Asaph . Psa 78:1 Give ear , O my people , to my teaching ; incline your ears to the words of my mouth !",
+     "passage_id": 1714,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "give ear / attend (azan)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "my people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "attend / give ear",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the teaching that rehearses God's deeds",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the received tradition (v3)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'GIVE EAR (azan), O my people, to my teaching' - the summoned attention of the people to the instruction that will hand on God's deeds; the opening call to receive.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283001",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283001",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283001",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7592:ask",
+   "meaning": "asked",
+   "lemma": "H7592",
+   "cluster": {
+    "code": "M21",
+    "name": "Prayer",
+    "all_candidates": "M21(Prayer)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3ms",
+    "esv_words": "asked",
+    "lexical_gloss": "to ask",
+    "read_sense_variants": "asked life, received it"
+   },
+   "instances": [
+    {
+     "span_id": 275515,
+     "reference": "Psa 21:4",
+     "hebrew_surface": "asked",
+     "esv_word": "asked",
+     "morphology": {
+      "morph_code": "HVqp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "asked life, received it",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1606,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 21:4 He asked life of you; you gave it to him, length of days forever and ever .",
+     "passage_id": 1606,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "asked life, received it",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "he asked life of God, who gave it - length of days forever - a request answered beyond measure",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "asking-and-receiving",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "asked-life",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'He ASKED LIFE of you; you gave it to him, length of days forever and ever' - the operation is a specific petition (life) met with abundance; the interior's request overfulfilled.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275515",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275515",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275515",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2795:deaf",
+   "meaning": "deaf",
+   "lemma": "H2795",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "deaf",
+    "lexical_gloss": "deaf",
+    "read_sense_variants": "like a deaf, mute man I do not answer"
+   },
+   "instances": [
+    {
+     "span_id": 277903,
+     "reference": "Psa 38:13",
+     "hebrew_surface": "deaf",
+     "esv_word": null,
+     "morphology": {
+      "morph_code": "HAamsa HR HC",
+      "stem": ""
+     },
+     "read_characteristic": "like a deaf, mute man I do not answer",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1635,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 38:13 But I am like a deaf man; I do not hear , like a mute man who does not open his mouth .",
+     "passage_id": 1635,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "like a deaf, mute man I do not answer",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self becomes like a deaf man who does not hear, a mute who does not open his mouth - a deliberate silence before accusers",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "chosen-silence",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "deaf-and-mute",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13-14: 'But I am like a DEAF man; I do not hear, like a MUTE man who does not open his mouth' - the operation is a chosen refusal to answer: the interior, though slandered, keeps silence and leaves its case to God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277903",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277903",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277903",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

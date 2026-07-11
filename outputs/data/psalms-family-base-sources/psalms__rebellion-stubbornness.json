@@ -1,0 +1,4656 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "rebellion-stubbornness"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'rebellion-stubbornness': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 20,
+   "instances": 31,
+   "passages": 27
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1573": {
+   "passage_ref": "Psa 1:1-6",
+   "verse_refs": [
+    "Psa 1:1",
+    "Psa 1:2",
+    "Psa 1:3",
+    "Psa 1:4",
+    "Psa 1:5",
+    "Psa 1:6"
+   ],
+   "text": "Psa 1:1 Blessed is the man who walks not in the counsel of the wicked , nor stands in the way of sinners , nor sits in the seat of scoffers ; Psa 1:2 but his delight is in the law of the Lord , and on his law he meditates day and night . Psa 1:3 He is like a tree planted by streams of water that yields its fruit in its season , and its leaf does not wither . In all that he does , he prospers . Psa 1:4 The wicked are not so , but are like chaff that the wind drives away. Psa 1:5 Therefore the wicked will not stand in the judgment , nor sinners in the congregation of the righteous ; Psa 1:6 for the Lord knows the way of the righteous , but the way of the wicked will perish ."
+  },
+  "1579": {
+   "passage_ref": "Psa 5:1-12",
+   "verse_refs": [
+    "Psa 5:1",
+    "Psa 5:2",
+    "Psa 5:3",
+    "Psa 5:4",
+    "Psa 5:5",
+    "Psa 5:6",
+    "Psa 5:7",
+    "Psa 5:8",
+    "Psa 5:9",
+    "Psa 5:10",
+    "Psa 5:11",
+    "Psa 5:12"
+   ],
+   "text": "To the choirmaster : for the flutes . A Psalm of David . Psa 5:1 Give ear to my words , O Lord ; consider my groaning . Psa 5:2 Give attention to the sound of my cry , my King and my God , for to you do I pray . Psa 5:3 O Lord , in the morning you hear my voice ; in the morning I prepare a sacrifice for you and watch . Psa 5:4 For you are not a God who delights in wickedness ; evil may not dwell with you. Psa 5:5 The boastful shall not stand before your eyes ; you hate all evildoers . Psa 5:6 You destroy those who speak lies ; the Lord abhors the bloodthirsty and deceitful man . Psa 5:7 But I , through the abundance of your steadfast love , will enter your house . I will bow down toward your holy temple in the fear of you. Psa 5:8 Lead me, O Lord , in your righteousness because of my enemies ; make your way straight before me. Psa 5:9 For there is no truth in their mouth ; their inmost self is destruction ; their throat is an open grave ; they flatter with their tongue . Psa 5:10 Make them bear their guilt , O God ; let them fall by their own counsels ; because of the abundance of their transgressions cast them out, for they have rebelled against you . Psa 5:11 But let all who take refuge in you rejoice ; let them ever sing for joy , and spread your protection over them, that those who love your name may exult in you. Psa 5:12 For you bless the righteous , O Lord ; you cover him with favor as with a shield ."
+  },
+  "1607": {
+   "passage_ref": "Psa 22:1-6",
+   "verse_refs": [
+    "Psa 22:1",
+    "Psa 22:2",
+    "Psa 22:3",
+    "Psa 22:4",
+    "Psa 22:5",
+    "Psa 22:6",
+    "Psa 22:7"
+   ],
+   "text": "To the choirmaster : according to The Doe of the Dawn . A Psalm of David . Psa 22:1 My God , my God , why have you forsaken me? Why are you so far from saving me, from the words of my groaning ? Psa 22:2 O my God , I cry by day , but you do not answer , and by night , but I find no rest . Psa 22:3 Yet you are holy , enthroned on the praises of Israel . Psa 22:4 In you our fathers trusted ; they trusted , and you delivered them . Psa 22:5 To you they cried and were rescued ; in you they trusted and were not put to shame . Psa 22:6 But I am a worm and not a man , scorned by mankind and despised by the people . Psa 22:7 All who see me mock me; they make mouths at me; they wag their heads;"
+  },
+  "1633": {
+   "passage_ref": "Psa 37:1-12",
+   "verse_refs": [
+    "Psa 37:1",
+    "Psa 37:2",
+    "Psa 37:3",
+    "Psa 37:4",
+    "Psa 37:5",
+    "Psa 37:6",
+    "Psa 37:7",
+    "Psa 37:8",
+    "Psa 37:9",
+    "Psa 37:10",
+    "Psa 37:11",
+    "Psa 37:12"
+   ],
+   "text": "Of David . Psa 37:1 Fret not yourself because of evildoers ; be not envious of wrongdoers ! Psa 37:2 For they will soon fade like the grass and wither like the green herb . Psa 37:3 Trust in the Lord , and do good ; dwell in the land and befriend faithfulness . Psa 37:4 Delight yourself in the Lord , and he will give you the desires of your heart . Psa 37:5 Commit your way to the Lord ; trust in him , and he will act . Psa 37:6 He will bring forth your righteousness as the light , and your justice as the noonday . Psa 37:7 Be still before the Lord and wait patiently for him; fret not yourself over the one who prospers in his way , over the man who carries out evil devices ! Psa 37:8 Refrain from anger , and forsake wrath ! Fret not yourself; it tends only to evil . Psa 37:9 For the evildoers shall be cut off , but those who wait for the Lord shall inherit the land . Psa 37:10 In just a little while , the wicked will be no more ; though you look carefully at his place , he will not be there. Psa 37:11 But the meek shall inherit the land and delight themselves in abundant peace . Psa 37:12 The wicked plots against the righteous and gnashes his teeth at him,"
+  },
+  "1653": {
+   "passage_ref": "Psa 49:5-20",
+   "verse_refs": [
+    "Psa 49:5",
+    "Psa 49:6",
+    "Psa 49:7",
+    "Psa 49:8",
+    "Psa 49:9",
+    "Psa 49:10",
+    "Psa 49:11",
+    "Psa 49:12",
+    "Psa 49:13",
+    "Psa 49:14",
+    "Psa 49:15",
+    "Psa 49:16",
+    "Psa 49:17",
+    "Psa 49:18",
+    "Psa 49:19",
+    "Psa 49:20"
+   ],
+   "text": "Psa 49:5 Why should I fear in times of trouble , when the iniquity of those who cheat me surrounds me , Psa 49:6 those who trust in their wealth and boast of the abundance of their riches ? Psa 49:7 Truly no man can ransom another , or give to God the price of his life , Psa 49:8 for the ransom of their life is costly and can never suffice , Psa 49:9 that he should live on forever and never see the pit . Psa 49:10 For he sees that even the wise die ; the fool and the stupid alike must perish and leave their wealth to others . Psa 49:11 Their graves are their homes forever , their dwelling places to all generations , though they called lands by their own names . Psa 49:12 Man in his pomp will not remain ; he is like the beasts that perish . Psa 49:13 This is the path of those who have foolish confidence; yet after them people approve of their boasts . Selah Psa 49:14 Like sheep they are appointed for Sheol ; death shall be their shepherd , and the upright shall rule over them in the morning . Their form shall be consumed in Sheol , with no place to dwell . Psa 49:15 But God will ransom my soul from the power of Sheol , for he will receive me. Selah Psa 49:16 Be not afraid when a man becomes rich , when the glory of his house increases . Psa 49:17 For when he dies he will carry nothing away; his glory will not go down after him. Psa 49:18 For though, while he lives , he counts himself blessed — and though you get praise when you do well for yourself — Psa 49:19 his soul will go to the generation of his fathers , who will never again see light . Psa 49:20 Man in his pomp yet without understanding is like the beasts that perish ."
+  },
+  "1681": {
+   "passage_ref": "Psa 66:1-9",
+   "verse_refs": [
+    "Psa 66:1",
+    "Psa 66:2",
+    "Psa 66:3",
+    "Psa 66:4",
+    "Psa 66:5",
+    "Psa 66:6",
+    "Psa 66:7",
+    "Psa 66:8",
+    "Psa 66:9",
+    "Psa 66:10",
+    "Psa 66:11"
+   ],
+   "text": "To the choirmaster . A Song . A Psalm . Psa 66:1 Shout for joy to God , all the earth ; Psa 66:2 sing the glory of his name ; give to him glorious praise ! Psa 66:3 Say to God , “ How awesome are your deeds ! So great is your power that your enemies come cringing to you. Psa 66:4 All the earth worships you and sings praises to you; they sing praises to your name .” Selah Psa 66:5 Come and see what God has done: he is awesome in his deeds toward the children of man . Psa 66:6 He turned the sea into dry land ; they passed through the river on foot . There did we rejoice in him , Psa 66:7 who rules by his might forever , whose eyes keep watch on the nations — let not the rebellious exalt themselves. Selah Psa 66:8 Bless our God , O peoples ; let the sound of his praise be heard , Psa 66:9 who has kept our soul among the living and has not let our feet slip . Psa 66:10 For you, O God, have tested us; you have tried us as silver is tried. Psa 66:11 You brought us into the net ; you laid a crushing burden on our backs ;"
+  },
+  "1684": {
+   "passage_ref": "Psa 68:1-7",
+   "verse_refs": [
+    "Psa 68:1",
+    "Psa 68:2",
+    "Psa 68:3",
+    "Psa 68:4",
+    "Psa 68:5",
+    "Psa 68:6",
+    "Psa 68:7"
+   ],
+   "text": "To the choirmaster . A Psalm of David . A Song . Psa 68:1 God shall arise , his enemies shall be scattered ; and those who hate him shall flee before him! Psa 68:2 As smoke is driven away , so you shall drive them away ; as wax melts before fire , so the wicked shall perish before God ! Psa 68:3 But the righteous shall be glad ; they shall exult before God ; they shall be jubilant with joy ! Psa 68:4 Sing to God , sing praises to his name ; lift up a song to him who rides through the deserts ; his name is the Lord ; exult before him! Psa 68:5 Father of the fatherless and protector of widows is God in his holy habitation . Psa 68:6 God settles the solitary in a home ; he leads out the prisoners to prosperity , but the rebellious dwell in a parched land . Psa 68:7 O God , when you went out before your people , when you marched through the wilderness , Selah"
+  },
+  "1686": {
+   "passage_ref": "Psa 68:16-21",
+   "verse_refs": [
+    "Psa 68:16",
+    "Psa 68:17",
+    "Psa 68:18",
+    "Psa 68:19",
+    "Psa 68:20",
+    "Psa 68:21"
+   ],
+   "text": "Psa 68:16 Why do you look with hatred , O many-peaked mountain , at the mount that God desired for his abode , yes , where the Lord will dwell forever ? Psa 68:17 The chariots of God are twice ten thousand , thousands upon thousands ; the Lord is among them; Sinai is now in the sanctuary . Psa 68:18 You ascended on high , leading a host of captives in your train and receiving gifts among men , even among the rebellious , that the Lord God may dwell there. Psa 68:19 Blessed be the Lord , who daily bears us up ; God is our salvation . Selah Psa 68:20 Our God is a God of salvation , and to God , the Lord , belong deliverances from death . Psa 68:21 But God will strike the heads of his enemies , the hairy crown of him who walks in his guilty ways ."
+  },
+  "1705": {
+   "passage_ref": "Psa 74:6-11",
+   "verse_refs": [
+    "Psa 74:6",
+    "Psa 74:7",
+    "Psa 74:8",
+    "Psa 74:9",
+    "Psa 74:10",
+    "Psa 74:11",
+    "Psa 74:12"
+   ],
+   "text": "Psa 74:6 And all its carved wood they broke down with hatchets and hammers . Psa 74:7 They set your sanctuary on fire ; they profaned the dwelling place of your name , bringing it down to the ground . Psa 74:8 They said to themselves , “We will utterly subdue them”; they burned all the meeting places of God in the land . Psa 74:9 We do not see our signs ; there is no longer any prophet , and there is none among us who knows how long . Psa 74:10 How long , O God , is the foe to scoff ? Is the enemy to revile your name forever ? Psa 74:11 Why do you hold back your hand , your right hand ? Take it from the fold of your garment and destroy them! Psa 74:12 Yet God my King is from of old, working salvation in the midst of the earth."
+  },
+  "1712": {
+   "passage_ref": "Psa 77:1-3",
+   "verse_refs": [
+    "Psa 77:1",
+    "Psa 77:2",
+    "Psa 77:3",
+    "Psa 77:4"
+   ],
+   "text": "To the choirmaster : according to Jeduthun . A Psalm of Asaph . Psa 77:1 I cry aloud to God , aloud to God , and he will hear me . Psa 77:2 In the day of my trouble I seek the Lord ; in the night my hand is stretched out without wearying ; my soul refuses to be comforted . Psa 77:3 When I remember God , I moan ; when I meditate , my spirit faints . Selah Psa 77:4 You hold my eyelids open; I am so troubled that I cannot speak."
+  },
+  "1714": {
+   "passage_ref": "Psa 78:4-6",
+   "verse_refs": [
+    "Psa 78:1",
+    "Psa 78:3",
+    "Psa 78:4",
+    "Psa 78:5",
+    "Psa 78:6",
+    "Psa 78:7"
+   ],
+   "text": "A Maskil of Asaph . Psa 78:1 Give ear , O my people , to my teaching ; incline your ears to the words of my mouth ! Psa 78:3 things that we have heard and known, that our fathers have told us. Psa 78:4 We will not hide them from their children , but tell to the coming generation the glorious deeds of the Lord , and his might , and the wonders that he has done . Psa 78:5 He established a testimony in Jacob and appointed a law in Israel , which he commanded our fathers to teach to their children , Psa 78:6 that the next generation might know them, the children yet unborn , and arise and tell them to their children , Psa 78:7 so that they should set their hope in God and not forget the works of God, but keep his commandments;"
+  },
+  "1715": {
+   "passage_ref": "Psa 78:8-13",
+   "verse_refs": [
+    "Psa 78:8",
+    "Psa 78:9",
+    "Psa 78:10",
+    "Psa 78:11",
+    "Psa 78:12",
+    "Psa 78:13"
+   ],
+   "text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God . Psa 78:9 The Ephraimites , armed with the bow , turned back on the day of battle . Psa 78:10 They did not keep God’s covenant , but refused to walk according to his law . Psa 78:11 They forgot his works and the wonders that he had shown them . Psa 78:12 In the sight of their fathers he performed wonders in the land of Egypt , in the fields of Zoan . Psa 78:13 He divided the sea and let them pass through it, and made the waters stand like a heap ."
+  },
+  "1716": {
+   "passage_ref": "Psa 78:17-22",
+   "verse_refs": [
+    "Psa 78:17",
+    "Psa 78:18",
+    "Psa 78:19",
+    "Psa 78:20",
+    "Psa 78:21",
+    "Psa 78:22"
+   ],
+   "text": "Psa 78:17 Yet they sinned still more against him, rebelling against the Most High in the desert . Psa 78:18 They tested God in their heart by demanding the food they craved . Psa 78:19 They spoke against God , saying , “ Can God spread a table in the wilderness ? Psa 78:20 He struck the rock so that water gushed out and streams overflowed . Can he also give bread or provide meat for his people ?” Psa 78:21 Therefore , when the Lord heard , he was full of wrath ; a fire was kindled against Jacob ; his anger rose against Israel , Psa 78:22 because they did not believe in God and did not trust his saving power ."
+  },
+  "1719": {
+   "passage_ref": "Psa 78:37-46",
+   "verse_refs": [
+    "Psa 78:37",
+    "Psa 78:38",
+    "Psa 78:39",
+    "Psa 78:40",
+    "Psa 78:41",
+    "Psa 78:42",
+    "Psa 78:43",
+    "Psa 78:44",
+    "Psa 78:45",
+    "Psa 78:46"
+   ],
+   "text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant . Psa 78:38 Yet he , being compassionate , atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath . Psa 78:39 He remembered that they were but flesh , a wind that passes and comes not again. Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert ! Psa 78:41 They tested God again and again and provoked the Holy One of Israel . Psa 78:42 They did not remember his power or the day when he redeemed them from the foe , Psa 78:43 when he performed his signs in Egypt and his marvels in the fields of Zoan . Psa 78:44 He turned their rivers to blood , so that they could not drink of their streams . Psa 78:45 He sent among them swarms of flies , which devoured them, and frogs , which destroyed them . Psa 78:46 He gave their crops to the destroying locust and the fruit of their labor to the locust ."
+  },
+  "1720": {
+   "passage_ref": "Psa 78:48-59",
+   "verse_refs": [
+    "Psa 78:48",
+    "Psa 78:49",
+    "Psa 78:50",
+    "Psa 78:51",
+    "Psa 78:52",
+    "Psa 78:53",
+    "Psa 78:54",
+    "Psa 78:55",
+    "Psa 78:56",
+    "Psa 78:57",
+    "Psa 78:58",
+    "Psa 78:59"
+   ],
+   "text": "Psa 78:48 He gave over their cattle to the hail and their flocks to thunderbolts . Psa 78:49 He let loose on them his burning anger , wrath , indignation , and distress , a company of destroying angels . Psa 78:50 He made a path for his anger ; he did not spare them from death , but gave their lives over to the plague . Psa 78:51 He struck down every firstborn in Egypt , the firstfruits of their strength in the tents of Ham . Psa 78:52 Then he led out his people like sheep and guided them in the wilderness like a flock . Psa 78:53 He led them in safety , so that they were not afraid , but the sea overwhelmed their enemies . Psa 78:54 And he brought them to his holy land , to the mountain which his right hand had won . Psa 78:55 He drove out nations before them; he apportioned them for a possession and settled the tribes of Israel in their tents . Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies , Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow . Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols . Psa 78:59 When God heard , he was full of wrath, and he utterly rejected Israel ."
+  },
+  "1732": {
+   "passage_ref": "Psa 81:11-12",
+   "verse_refs": [
+    "Psa 81:11",
+    "Psa 81:12",
+    "Psa 81:13"
+   ],
+   "text": "Psa 81:11 “But my people did not listen to my voice ; Israel would not submit to me . Psa 81:12 So I gave them over to their stubborn hearts , to follow their own counsels . Psa 81:13 Oh, that my people would listen to me, that Israel would walk in my ways!"
+  },
+  "1747": {
+   "passage_ref": "Psa 89:28-52",
+   "verse_refs": [
+    "Psa 89:28",
+    "Psa 89:29",
+    "Psa 89:30",
+    "Psa 89:31",
+    "Psa 89:32",
+    "Psa 89:33",
+    "Psa 89:34",
+    "Psa 89:35",
+    "Psa 89:36",
+    "Psa 89:37",
+    "Psa 89:38",
+    "Psa 89:39",
+    "Psa 89:40",
+    "Psa 89:41",
+    "Psa 89:42",
+    "Psa 89:43",
+    "Psa 89:44",
+    "Psa 89:45",
+    "Psa 89:46",
+    "Psa 89:47",
+    "Psa 89:48",
+    "Psa 89:49",
+    "Psa 89:50",
+    "Psa 89:51",
+    "Psa 89:52"
+   ],
+   "text": "Psa 89:28 My steadfast love I will keep for him forever , and my covenant will stand firm for him . Psa 89:29 I will establish his offspring forever and his throne as the days of the heavens . Psa 89:30 If his children forsake my law and do not walk according to my rules , Psa 89:31 if they violate my statutes and do not keep my commandments , Psa 89:32 then I will punish their transgression with the rod and their iniquity with stripes , Psa 89:33 but I will not remove from him my steadfast love or be false to my faithfulness . Psa 89:34 I will not violate my covenant or alter the word that went forth from my lips . Psa 89:35 Once for all I have sworn by my holiness ; I will not lie to David . Psa 89:36 His offspring shall endure forever , his throne as long as the sun before me . Psa 89:37 Like the moon it shall be established forever , a faithful witness in the skies .” Selah Psa 89:38 But now you have cast off and rejected ; you are full of wrath against your anointed . Psa 89:39 You have renounced the covenant with your servant ; you have defiled his crown in the dust . Psa 89:40 You have breached all his walls ; you have laid his strongholds in ruins . Psa 89:41 All who pass by plunder him; he has become the scorn of his neighbors . Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice . Psa 89:43 You have also turned back the edge of his sword , and you have not made him stand in battle . Psa 89:44 You have made his splendor to cease and cast his throne to the ground . Psa 89:45 You have cut short the days of his youth ; you have covered him with shame . Selah Psa 89:46 How long, O Lord ? Will you hide yourself forever ? How long will your wrath burn like fire ? Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man ! Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah Psa 89:49 Lord , where is your steadfast love of old , which by your faithfulness you swore to David ? Psa 89:50 Remember , O Lord , how your servants are mocked , and how I bear in my heart the insults of all the many nations , Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed . Psa 89:52 Blessed be the Lord forever ! Amen and Amen . Book Four"
+  },
+  "1768": {
+   "passage_ref": "Psa 101:1-8",
+   "verse_refs": [
+    "Psa 101:1",
+    "Psa 101:2",
+    "Psa 101:3",
+    "Psa 101:4",
+    "Psa 101:5",
+    "Psa 101:6",
+    "Psa 101:7",
+    "Psa 101:8"
+   ],
+   "text": "A Psalm of David . Psa 101:1 I will sing of steadfast love and justice ; to you, O Lord , I will make music . Psa 101:2 I will ponder the way that is blameless . Oh when will you come to me? I will walk with integrity of heart within my house ; Psa 101:3 I will not set before my eyes anything that is worthless . I hate the work of those who fall away ; it shall not cling to me . Psa 101:4 A perverse heart shall be far from me; I will know nothing of evil . Psa 101:5 Whoever slanders his neighbor secretly I will destroy . Whoever has a haughty look and an arrogant heart I will not endure . Psa 101:6 I will look with favor on the faithful in the land , that they may dwell with me; he who walks in the way that is blameless shall minister to me . Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes . Psa 101:8 Morning by morning I will destroy all the wicked in the land , cutting off all the evildoers from the city of the Lord ."
+  },
+  "1785": {
+   "passage_ref": "Psa 105:24-27",
+   "verse_refs": [
+    "Psa 105:24",
+    "Psa 105:25",
+    "Psa 105:26",
+    "Psa 105:27",
+    "Psa 105:28"
+   ],
+   "text": "Psa 105:24 And the Lord made his people very fruitful and made them stronger than their foes . Psa 105:25 He turned their hearts to hate his people , to deal craftily with his servants . Psa 105:26 He sent Moses , his servant , and Aaron , whom he had chosen . Psa 105:27 They performed his signs among them and miracles in the land of Ham . Psa 105:28 He sent darkness, and made the land dark; they did not rebel against his words."
+  },
+  "1787": {
+   "passage_ref": "Psa 106:1-8",
+   "verse_refs": [
+    "Psa 106:1",
+    "Psa 106:2",
+    "Psa 106:3",
+    "Psa 106:4",
+    "Psa 106:5",
+    "Psa 106:6",
+    "Psa 106:7",
+    "Psa 106:8"
+   ],
+   "text": "Psa 106:1 Praise the Lord ! Oh give thanks to the Lord , for he is good , for his steadfast love endures forever ! Psa 106:2 Who can utter the mighty deeds of the Lord , or declare all his praise ? Psa 106:3 Blessed are they who observe justice , who do righteousness at all times ! Psa 106:4 Remember me, O Lord , when you show favor to your people ; help me when you save them , Psa 106:5 that I may look upon the prosperity of your chosen ones , that I may rejoice in the gladness of your nation , that I may glory with your inheritance . Psa 106:6 Both we and our fathers have sinned ; we have committed iniquity ; we have done wickedness . Psa 106:7 Our fathers , when they were in Egypt , did not consider your wondrous works ; they did not remember the abundance of your steadfast love , but rebelled by the sea , at the Red Sea . Psa 106:8 Yet he saved them for his name’s sake, that he might make known his mighty power ."
+  },
+  "1790": {
+   "passage_ref": "Psa 106:22-32",
+   "verse_refs": [
+    "Psa 106:22",
+    "Psa 106:23",
+    "Psa 106:24",
+    "Psa 106:25",
+    "Psa 106:26",
+    "Psa 106:27",
+    "Psa 106:28",
+    "Psa 106:29",
+    "Psa 106:30",
+    "Psa 106:31",
+    "Psa 106:32",
+    "Psa 106:33"
+   ],
+   "text": "Psa 106:22 wondrous works in the land of Ham , and awesome deeds by the Red Sea . Psa 106:23 Therefore he said he would destroy them— had not Moses , his chosen one , stood in the breach before him, to turn away his wrath from destroying them . Psa 106:24 Then they despised the pleasant land , having no faith in his promise . Psa 106:25 They murmured in their tents , and did not obey the voice of the Lord . Psa 106:26 Therefore he raised his hand and swore to them that he would make them fall in the wilderness , Psa 106:27 and would make their offspring fall among the nations , scattering them among the lands . Psa 106:28 Then they yoked themselves to the Baal of Peor , and ate sacrifices offered to the dead ; Psa 106:29 they provoked the Lord to anger with their deeds , and a plague broke out among them. Psa 106:30 Then Phinehas stood up and intervened , and the plague was stayed . Psa 106:31 And that was counted to him as righteousness from generation to generation forever . Psa 106:32 They angered him at the waters of Meribah , and it went ill with Moses on their account , Psa 106:33 for they made his spirit bitter, and he spoke rashly with his lips."
+  },
+  "1791": {
+   "passage_ref": "Psa 106:38-48",
+   "verse_refs": [
+    "Psa 106:36",
+    "Psa 106:38",
+    "Psa 106:39",
+    "Psa 106:40",
+    "Psa 106:41",
+    "Psa 106:42",
+    "Psa 106:43",
+    "Psa 106:44",
+    "Psa 106:45",
+    "Psa 106:46",
+    "Psa 106:47",
+    "Psa 106:48"
+   ],
+   "text": "Psa 106:36 They served their idols , which became a snare to them. Psa 106:38 they poured out innocent blood , the blood of their sons and daughters , whom they sacrificed to the idols of Canaan , and the land was polluted with blood . Psa 106:39 Thus they became unclean by their acts , and played the whore in their deeds . Psa 106:40 Then the anger of the Lord was kindled against his people , and he abhorred his heritage ; Psa 106:41 he gave them into the hand of the nations , so that those who hated them ruled over them . Psa 106:42 Their enemies oppressed them, and they were brought into subjection under their power . Psa 106:43 Many times he delivered them, but they were rebellious in their purposes and were brought low through their iniquity . Psa 106:44 Nevertheless, he looked upon their distress , when he heard their cry . Psa 106:45 For their sake he remembered his covenant , and relented according to the abundance of his steadfast love . Psa 106:46 He caused them to be pitied by all those who held them captive . Psa 106:47 Save us, O Lord our God , and gather us from among the nations , that we may give thanks to your holy name and glory in your praise . Psa 106:48 Blessed be the Lord , the God of Israel , from everlasting to everlasting ! And let all the people say , “ Amen !” Praise the Lord ! Book Five"
+  },
+  "1793": {
+   "passage_ref": "Psa 107:4-13",
+   "verse_refs": [
+    "Psa 107:4",
+    "Psa 107:5",
+    "Psa 107:6",
+    "Psa 107:7",
+    "Psa 107:8",
+    "Psa 107:9",
+    "Psa 107:10",
+    "Psa 107:11",
+    "Psa 107:12",
+    "Psa 107:13",
+    "Psa 107:15"
+   ],
+   "text": "Psa 107:4 Some wandered in desert wastes , finding no way to a city to dwell in; Psa 107:5 hungry and thirsty , their soul fainted within them. Psa 107:6 Then they cried to the Lord in their trouble , and he delivered them from their distress . Psa 107:7 He led them by a straight way till they reached a city to dwell in . Psa 107:8 Let them thank the Lord for his steadfast love , for his wondrous works to the children of man ! Psa 107:9 For he satisfies the longing soul , and the hungry soul he fills with good things . Psa 107:10 Some sat in darkness and in the shadow of death , prisoners in affliction and in irons , Psa 107:11 for they had rebelled against the words of God , and spurned the counsel of the Most High . Psa 107:12 So he bowed their hearts down with hard labor ; they fell down , with none to help . Psa 107:13 Then they cried to the Lord in their trouble , and he delivered them from their distress . Psa 107:15 Let them thank the Lord for his steadfast love , for his wondrous works to the children of man !"
+  },
+  "1824": {
+   "passage_ref": "Psa 119:42-63",
+   "verse_refs": [
+    "Psa 119:42",
+    "Psa 119:43",
+    "Psa 119:44",
+    "Psa 119:45",
+    "Psa 119:46",
+    "Psa 119:47",
+    "Psa 119:48",
+    "Psa 119:49",
+    "Psa 119:50",
+    "Psa 119:51",
+    "Psa 119:52",
+    "Psa 119:53",
+    "Psa 119:54",
+    "Psa 119:55",
+    "Psa 119:56",
+    "Psa 119:57",
+    "Psa 119:58",
+    "Psa 119:59",
+    "Psa 119:60",
+    "Psa 119:61",
+    "Psa 119:62",
+    "Psa 119:63",
+    "Psa 119:64"
+   ],
+   "text": "Psa 119:42 then shall I have an answer for him who taunts me, for I trust in your word . Psa 119:43 And take not the word of truth utterly out of my mouth , for my hope is in your rules . Psa 119:44 I will keep your law continually , forever and ever , Psa 119:45 and I shall walk in a wide place , for I have sought your precepts . Psa 119:46 I will also speak of your testimonies before kings and shall not be put to shame , Psa 119:47 for I find my delight in your commandments , which I love . Psa 119:48 I will lift up my hands toward your commandments , which I love , and I will meditate on your statutes . Zayin Psa 119:49 Remember your word to your servant , in which you have made me hope . Psa 119:50 This is my comfort in my affliction , that your promise gives me life . Psa 119:51 The insolent utterly deride me, but I do not turn away from your law . Psa 119:52 When I think of your rules from of old , I take comfort , O Lord . Psa 119:53 Hot indignation seizes me because of the wicked , who forsake your law . Psa 119:54 Your statutes have been my songs in the house of my sojourning . Psa 119:55 I remember your name in the night , O Lord , and keep your law . Psa 119:56 This blessing has fallen to me, that I have kept your precepts . Heth Psa 119:57 The Lord is my portion ; I promise to keep your words . Psa 119:58 I entreat your favor with all my heart ; be gracious to me according to your promise . Psa 119:59 When I think on my ways , I turn my feet to your testimonies ; Psa 119:60 I hasten and do not delay to keep your commandments . Psa 119:61 Though the cords of the wicked ensnare me, I do not forget your law . Psa 119:62 At midnight I rise to praise you, because of your righteous rules . Psa 119:63 I am a companion of all who fear you, of those who keep your precepts . Psa 119:64 The earth, O Lord, is full of your steadfast love; teach me your statutes!"
+  },
+  "1826": {
+   "passage_ref": "Psa 119:84-102",
+   "verse_refs": [
+    "Psa 119:84",
+    "Psa 119:85",
+    "Psa 119:86",
+    "Psa 119:87",
+    "Psa 119:88",
+    "Psa 119:89",
+    "Psa 119:90",
+    "Psa 119:91",
+    "Psa 119:92",
+    "Psa 119:93",
+    "Psa 119:94",
+    "Psa 119:95",
+    "Psa 119:96",
+    "Psa 119:97",
+    "Psa 119:98",
+    "Psa 119:99",
+    "Psa 119:100",
+    "Psa 119:101",
+    "Psa 119:102"
+   ],
+   "text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me ."
+  },
+  "1830": {
+   "passage_ref": "Psa 119:136-149",
+   "verse_refs": [
+    "Psa 119:136",
+    "Psa 119:137",
+    "Psa 119:138",
+    "Psa 119:139",
+    "Psa 119:140",
+    "Psa 119:141",
+    "Psa 119:142",
+    "Psa 119:143",
+    "Psa 119:144",
+    "Psa 119:145",
+    "Psa 119:146",
+    "Psa 119:147",
+    "Psa 119:148",
+    "Psa 119:149",
+    "Psa 119:150"
+   ],
+   "text": "Psa 119:136 My eyes shed streams of tears , because people do not keep your law . Tsadhe Psa 119:137 Righteous are you , O Lord , and right are your rules . Psa 119:138 You have appointed your testimonies in righteousness and in all faithfulness . Psa 119:139 My zeal consumes me, because my foes forget your words . Psa 119:140 Your promise is well tried , and your servant loves it . Psa 119:141 I am small and despised , yet I do not forget your precepts . Psa 119:142 Your righteousness is righteous forever , and your law is true . Psa 119:143 Trouble and anguish have found me out , but your commandments are my delight . Psa 119:144 Your testimonies are righteous forever ; give me understanding that I may live . Qoph Psa 119:145 With my whole heart I cry ; answer me, O Lord ! I will keep your statutes . Psa 119:146 I call to you; save me, that I may observe your testimonies . Psa 119:147 I rise before dawn and cry for help ; I hope in your words . Psa 119:148 My eyes are awake before the watches of the night , that I may meditate on your promise . Psa 119:149 Hear my voice according to your steadfast love ; O Lord , according to your justice give me life . Psa 119:150 They draw near who persecute me with evil purpose; they are far from your law."
+  },
+  "3687": {
+   "passage_ref": "Psa 27:10",
+   "verse_refs": [
+    "Psa 27:10"
+   ],
+   "text": "Psa 27:10 For my father and my mother have forsaken me, but the Lord will take me in."
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H4784:rebell",
+   "meaning": "rebelled",
+   "lemma": "H4784",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "rebelled, rebelling",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "rebel (marah) | the enemies have rebelled"
+   },
+   "instances": [
+    {
+     "span_id": 269848,
+     "reference": "Psa 106:7",
+     "hebrew_surface": "rebelled",
+     "esv_word": "rebelled",
+     "morphology": {
+      "morph_code": "HVhw3mp HSp2ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebel (marah)",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1787,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:7 Our fathers , when they were in Egypt , did not consider your wondrous works ; they did not remember the abundance of your steadfast love , but rebelled by the sea , at the Red Sea .",
+     "passage_id": 1787,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God at the sea",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'but REBELLED (marah) by the sea, at the Red Sea' - the first act of the catalogue, defiance at the very edge of deliverance.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the failure to remember",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269848",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269848",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269848",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 269871,
+     "reference": "Psa 107:11",
+     "hebrew_surface": "rebelled",
+     "esv_word": "rebelled",
+     "morphology": {
+      "morph_code": "HVhp3cp HTc",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebel (marah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1793,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:11 for they had rebelled against the words of God , and spurned the counsel of the Most High .",
+     "passage_id": 1793,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the prisoners",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the words of God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'for they had REBELLED (marah) against the words of God' - the defiance that earned the chains, affliction as the fruit of rebellion.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with spurning his counsel",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269871",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269871",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269871",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 280669,
+     "reference": "Psa 5:10",
+     "hebrew_surface": "rebelled",
+     "esv_word": "rebelled",
+     "morphology": {
+      "morph_code": "HVqp3cp HSp3mp HTc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "the enemies have rebelled",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1579,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 5:10 Make them bear their guilt , O God ; let them fall by their own counsels ; because of the abundance of their transgressions cast them out, for they have rebelled against you .",
+     "passage_id": 1579,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the enemies have rebelled",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "they have rebelled against God, so the self asks God to let them fall by their own counsels - revolt as their bent",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "rebellion",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "rebelled-against-God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'cast them out, for they have REBELLED against you' - beneath the deceit the deeper diagnosis: their interior is set against God himself; their treachery to the psalmist is really revolt against God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280669",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280669",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280669",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283047,
+     "reference": "Psa 78:17",
+     "hebrew_surface": "rebelling",
+     "esv_word": "rebelling",
+     "morphology": {
+      "morph_code": "HVhcc HR HR HSp3ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebel (marah)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1716,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:17 Yet they sinned still more against him, rebelling against the Most High in the desert .",
+     "passage_id": 1716,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the Most High",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the sinning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'REBELLING (marah) against the Most High in the desert' - defiance in the very place of God's provision.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283047",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283047",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283047",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283209,
+     "reference": "Psa 78:40",
+     "hebrew_surface": "rebelled",
+     "esv_word": "rebelled",
+     "morphology": {
+      "morph_code": "HVhi3mp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebel (marah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1719,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert !",
+     "passage_id": 1719,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God in the wilderness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with grieving him",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'How often they REBELLED (marah) against him in the wilderness' - the recurring, wearying defiance.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283209",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283209",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283209",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5800:forsaken",
+   "meaning": "forsaken",
+   "lemma": "H5800",
+   "cluster": {
+    "code": "M20",
+    "name": "Doubt",
+    "all_candidates": "M20(Doubt)"
+   },
+   "instance_count": 3,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'rebellion-stubbornness' expects cluster M10(Sin), but the term-cluster is M20(Doubt)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "forsaken",
+    "lexical_gloss": "to leave: forsake",
+    "read_sense_variants": "why have you forsaken me | though parents forsake, God takes me in | forsake (azab, negated)"
+   },
+   "instances": [
+    {
+     "span_id": 272143,
+     "reference": "Psa 119:87",
+     "hebrew_surface": "forsaken",
+     "esv_word": "forsaken",
+     "morphology": {
+      "morph_code": "HVqp1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "forsake (azab, negated)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1826,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts .",
+     "passage_id": 1826,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "forsake (azab, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "not forsake",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v87: 'They had almost made an end of me... but I have not FORSAKEN your precepts' - holding to the precepts though nearly destroyed.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272143",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272143",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272143",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 275573,
+     "reference": "Psa 22:1",
+     "hebrew_surface": "forsaken",
+     "esv_word": "forsaken",
+     "morphology": {
+      "morph_code": "HVqp2ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "why have you forsaken me",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1607,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "To the choirmaster : according to The Doe of the Dawn . A Psalm of David . Psa 22:1 My God , my God , why have you forsaken me? Why are you so far from saving me, from the words of my groaning ?",
+     "passage_id": 1607,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "why have you forsaken me",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self cries out that God has forsaken it and is far from saving, far from the words of its groaning - the extremity of felt abandonment",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "forsakenness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "why-forsaken",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'My God, my God, why have you FORSAKEN me? Why are you so far from saving me, from the words of my GROANING?' - the operation is the interior's rawest desolation: not doubt that God exists but the agony of his felt absence.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275573",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275573",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275573",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 306194,
+     "reference": "Psa 27:10",
+     "hebrew_surface": "forsaken",
+     "esv_word": "forsaken",
+     "morphology": {
+      "morph_code": "HVqp3cp HSp1bs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "though parents forsake, God takes me in",
+     "position": {
+      "word_index": 2,
+      "passage_id": 3687,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 27:10 For my father and my mother have forsaken me, but the Lord will take me in.",
+     "passage_id": 3687,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "though parents forsake, God takes me in",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "even if father and mother forsake it, the self is confident the LORD will take it up - security beyond the closest human bonds",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "abandonment-answered",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "God-takes-me-in",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'For my father and my mother have FORSAKEN me, but the LORD will take me IN' - the operation is trust that outlasts the failure of the deepest human belonging; the interior rests where even parents cannot be relied on.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306194",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306194",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "306194",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5637:rebelliou",
+   "meaning": "rebellious",
+   "lemma": "H5637",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "rebellious",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "rebellious / stubborn (sarar - let not the rebellious exalt themselves) | rebellious / stubborn (sarar - even among the rebellious, that God may dwell) | rebellious / stubborn (sarar - the rebellious dwell in a parched land)"
+   },
+   "instances": [
+    {
+     "span_id": 281373,
+     "reference": "Psa 66:7",
+     "hebrew_surface": "rebellious",
+     "esv_word": "rebellious",
+     "morphology": {
+      "morph_code": "HVqrmpa HTd",
+      "stem": "Qal"
+     },
+     "read_characteristic": "rebellious / stubborn (sarar - let not the rebellious exalt themselves)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1681,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 66:7 who rules by his might forever , whose eyes keep watch on the nations — let not the rebellious exalt themselves. Selah",
+     "passage_id": 1681,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebellious / stubborn (sarar - let not the rebellious exalt themselves)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "watched by God's eyes on the nations (v7)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the rebellious",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "exalt themselves",
+       "item_type": "event",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with their self-exalting",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'let not the REBELLIOUS (sarar) exalt themselves' — the defiant whom God's watching eyes restrain; sarar here the stubborn rebels, warned not to lift themselves up against the God who rules the nations and keeps watch (v7, the qualifier)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "281373",
+       "to_span": "281370",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281373",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": "281373",
+       "to_span": "281374",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281373",
+       "to_span": "281374",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281491,
+     "reference": "Psa 68:18",
+     "hebrew_surface": "rebellious",
+     "esv_word": "rebellious",
+     "morphology": {
+      "morph_code": "HVqrmpa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "rebellious / stubborn (sarar - even among the rebellious, that God may dwell)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1686,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 68:18 You ascended on high , leading a host of captives in your train and receiving gifts among men , even among the rebellious , that the Lord God may dwell there.",
+     "passage_id": 1686,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebellious / stubborn (sarar - even among the rebellious, that God may dwell)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the rebellious",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "receive gifts (even they), that God may dwell",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the rebellious among whom God nonetheless dwells",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'you received gifts among men, even among the REBELLIOUS (sarar), that the LORD God may dwell there' — grace reaching even the defiant; sarar here the rebels among whom the ascended God chooses to dwell — the marvel that his victory-gifts extend even to former enemies",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281491",
+       "to_span": "281483",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 281676,
+     "reference": "Psa 68:6",
+     "hebrew_surface": "rebellious",
+     "esv_word": "rebellious",
+     "morphology": {
+      "morph_code": "HVqrmpa HD",
+      "stem": "Qal"
+     },
+     "read_characteristic": "rebellious / stubborn (sarar - the rebellious dwell in a parched land)",
+     "position": {
+      "word_index": 7,
+      "passage_id": 1684,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 68:6 God settles the solitary in a home ; he leads out the prisoners to prosperity , but the rebellious dwell in a parched land .",
+     "passage_id": 1684,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebellious / stubborn (sarar - the rebellious dwell in a parched land)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the rebellious",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "dwell in a parched land",
+       "item_type": "event",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "in a sun-scorched land",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "set against the solitary God settles and the prisoners he leads out (v6)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'but the REBELLIOUS (sarar) dwell in a parched land' — the defiant left in barren exile; sarar here the stubborn, contrasted with the lonely God gives a home and the prisoners he frees (v6) — rebellion's reward is a scorched, homeless waste",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281676",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 106,
+       "label": "operation",
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281676",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281676",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281676",
+       "to_span": "281673",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5800:forsak",
+   "meaning": "forsake",
+   "lemma": "H5800",
+   "cluster": {
+    "code": "M20",
+    "name": "Doubt",
+    "all_candidates": "M20(Doubt)"
+   },
+   "instance_count": 2,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'rebellion-stubbornness' expects cluster M10(Sin), but the term-cluster is M20(Doubt)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "forsake",
+    "lexical_gloss": "to leave: forsake",
+    "read_sense_variants": "forsake (azab)"
+   },
+   "instances": [
+    {
+     "span_id": 271916,
+     "reference": "Psa 119:53",
+     "hebrew_surface": "forsake",
+     "esv_word": "forsake",
+     "morphology": {
+      "morph_code": "HVqrmpc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "forsake (azab)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1824,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:53 Hot indignation seizes me because of the wicked , who forsake your law .",
+     "passage_id": 1824,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "forsake (azab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "forsake the law",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v53: 'Hot indignation seizes me because of the wicked, who FORSAKE your law' - the wicked's forsaking of the law that fires his indignation.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271916",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271916",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271916",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 284674,
+     "reference": "Psa 89:30",
+     "hebrew_surface": "forsake",
+     "esv_word": "forsake",
+     "morphology": {
+      "morph_code": "HVqi3mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "forsake (azab)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1747,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 89:30 If his children forsake my law and do not walk according to my rules ,",
+     "passage_id": 1747,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "forsake (azab)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "David's children",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "forsake",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's law",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not walking in his rules",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v30: 'If his children FORSAKE (azab) my law' - the apostasy of the sons, abandonment of God's covenant word.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284674",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284674",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284674",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4784:rebelliou",
+   "meaning": "rebellious",
+   "lemma": "H4784",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "rebellious",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "be rebellious (marah) | rebellious (marah)"
+   },
+   "instances": [
+    {
+     "span_id": 269772,
+     "reference": "Psa 106:43",
+     "hebrew_surface": "rebellious",
+     "esv_word": "rebellious",
+     "morphology": {
+      "morph_code": "HVhi3mp HSp3mp HC",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebellious (marah)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1791,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:43 Many times he delivered them, but they were rebellious in their purposes and were brought low through their iniquity .",
+     "passage_id": 1791,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebellious (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be rebellious",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in their purposes",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v43: 'but they were REBELLIOUS (marah) in their purposes' - the persistent defiance, deliverance met again with rebellion.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with their self-willed counsel",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269772",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269772",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269772",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283443,
+     "reference": "Psa 78:8",
+     "hebrew_surface": "rebellious",
+     "esv_word": "rebellious",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "be rebellious (marah)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1715,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God .",
+     "passage_id": 1715,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be rebellious (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel / defy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with stubbornness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'a stubborn and REBELLIOUS (marah) generation' - the ingrained defiance that marked the wilderness fathers.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283443",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283443",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283443",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3985:refus",
+   "meaning": "refuses",
+   "lemma": "H3985",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "refuses, refused",
+    "lexical_gloss": "to refuse",
+    "read_sense_variants": "refuse (maen - refuses to be comforted) | refuse (maen)"
+   },
+   "instances": [
+    {
+     "span_id": 282950,
+     "reference": "Psa 77:2",
+     "hebrew_surface": "refuses",
+     "esv_word": "refuses",
+     "morphology": {
+      "morph_code": "HVpp3fs",
+      "stem": "Piel"
+     },
+     "read_characteristic": "refuse (maen - refuses to be comforted)",
+     "position": {
+      "word_index": 12,
+      "passage_id": 1712,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 77:2 In the day of my trouble I seek the Lord ; in the night my hand is stretched out without wearying ; my soul refuses to be comforted .",
+     "passage_id": 1712,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "refuse (maen - refuses to be comforted)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "the soul (nephesh)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "refuse / decline",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "comfort",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "resolute inconsolability",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the soul and the comfort refused",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'my soul REFUSES (maen) to be comforted' - the active turning-away from consolation; maen here the grief so deep it declines to be eased, a refusal that measures the weight of the distress",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "282950",
+       "to_span": "282949",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282950",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "282950",
+       "to_span": "282951",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282950",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282950",
+       "to_span": "282949",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 283013,
+     "reference": "Psa 78:10",
+     "hebrew_surface": "refused",
+     "esv_word": "refused",
+     "morphology": {
+      "morph_code": "HVpp3cp HSp3ms",
+      "stem": "Piel"
+     },
+     "read_characteristic": "refuse (maen)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1715,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:10 They did not keep God’s covenant , but refused to walk according to his law .",
+     "passage_id": 1715,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "refuse (maen)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "refuse",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to walk according to his law",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the covenant unkept",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and REFUSED (maen) to walk according to his law' - the willed rejection of obedience.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283013",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283013",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283013",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7503:refrain",
+   "meaning": "Refrain",
+   "lemma": "H7503",
+   "cluster": {
+    "code": "M24",
+    "name": "Weakness",
+    "all_candidates": "M24(Weakness)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'rebellion-stubbornness' expects cluster M10(Sin), but the term-cluster is M24(Weakness)",
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhv2ms",
+    "esv_words": "Refrain",
+    "lexical_gloss": "to slacken",
+    "read_sense_variants": "refrain from anger, forsake wrath"
+   },
+   "instances": [
+    {
+     "span_id": 277849,
+     "reference": "Psa 37:8",
+     "hebrew_surface": "Refrain",
+     "esv_word": "Refrain",
+     "morphology": {
+      "morph_code": "HVhv2ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "refrain from anger, forsake wrath",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1633,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 37:8 Refrain from anger , and forsake wrath ! Fret not yourself; it tends only to evil .",
+     "passage_id": 1633,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "refrain from anger, forsake wrath",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the hearer",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self is told to refrain from anger and forsake wrath, for fretting tends only to evil - the deliberate release of anger",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "anger-release",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "refrain-from-anger",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'REFRAIN from ANGER, and forsake WRATH! Fret not yourself; it tends only to evil' - the operation is the letting-go of anger; the interior is warned that nursed wrath breeds only harm.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277849",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277849",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277849",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3988:despis",
+   "meaning": "despised",
+   "lemma": "H3988",
+   "cluster": {
+    "code": "M06",
+    "name": "Hate",
+    "all_candidates": "M06(Hate)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "despised",
+    "lexical_gloss": "to reject",
+    "read_sense_variants": "despise (maas)"
+   },
+   "instances": [
+    {
+     "span_id": 269666,
+     "reference": "Psa 106:24",
+     "hebrew_surface": "despised",
+     "esv_word": "despised",
+     "morphology": {
+      "morph_code": "HVqw3mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "despise (maas)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1790,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:24 Then they despised the pleasant land , having no faith in his promise .",
+     "passage_id": 1790,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "despise (maas)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "despise",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the pleasant land",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v24: 'Then they DESPISED (maas) the pleasant land' - the scorn of Canaan at Kadesh, rejecting God's gift.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with having no faith",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269666",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269666",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269666",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0959:despis",
+   "meaning": "despised",
+   "lemma": "H0959",
+   "cluster": {
+    "code": "M06",
+    "name": "Hate",
+    "all_candidates": "M06(Hate)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNrmsa HPp1bs",
+    "esv_words": "despised",
+    "lexical_gloss": "to despise",
+    "read_sense_variants": "be despised (bazah)"
+   },
+   "instances": [
+    {
+     "span_id": 271469,
+     "reference": "Psa 119:141",
+     "hebrew_surface": "despised",
+     "esv_word": "despised",
+     "morphology": {
+      "morph_code": "HVNrmsa HPp1bs",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "be despised (bazah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1830,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:141 I am small and despised , yet I do not forget your precepts .",
+     "passage_id": 1830,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be despised (bazah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be small and despised",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v141: 'I am small and DESPISED, yet I do not forget your precepts' - the low, despised estate held with unbroken memory.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271469",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271469",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271469",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7846:fallaway",
+   "meaning": "fall away",
+   "lemma": "H7846",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "fall away",
+    "lexical_gloss": "rebellion",
+    "read_sense_variants": "fall away (set)"
+   },
+   "instances": [
+    {
+     "span_id": 268833,
+     "reference": "Psa 101:3",
+     "hebrew_surface": "fall away",
+     "esv_word": "fall away",
+     "morphology": {
+      "morph_code": "HNcmpa",
+      "stem": ""
+     },
+     "read_characteristic": "fall away (set)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1768,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 101:3 I will not set before my eyes anything that is worthless . I hate the work of those who fall away ; it shall not cling to me .",
+     "passage_id": 1768,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "fall away (set)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the crooked",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fall away / turn aside",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from God's way",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'the work of those who FALL AWAY (set)' - the turncoats whose deeds David hates, the apostates he will not let cling to him.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the hated work",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268833",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268833",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268833",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3582:hide",
+   "meaning": "hide",
+   "lemma": "H3582",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "hide",
+    "lexical_gloss": "to hide",
+    "read_sense_variants": "hide (kachad, refused)"
+   },
+   "instances": [
+    {
+     "span_id": 283197,
+     "reference": "Psa 78:4",
+     "hebrew_surface": "hide",
+     "esv_word": "hide",
+     "morphology": {
+      "morph_code": "HVpi1cp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "hide (kachad, refused)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1714,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:4 We will not hide them from their children , but tell to the coming generation the glorious deeds of the Lord , and his might , and the wonders that he has done .",
+     "passage_id": 1714,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "hide (kachad, refused)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "we",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "refuse to conceal",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's deeds from the children",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the resolve to tell",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'We will not HIDE (kachad) them from their children' - the resolve NOT to conceal God's deeds from the young, transmission as duty.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283197",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283197",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283197",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5800:leav",
+   "meaning": "leave",
+   "lemma": "H5800",
+   "cluster": {
+    "code": "M20",
+    "name": "Doubt",
+    "all_candidates": "M20(Doubt)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'rebellion-stubbornness' expects cluster M10(Sin), but the term-cluster is M20(Doubt)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "leave",
+    "lexical_gloss": "to leave: forsake",
+    "read_sense_variants": "leave / abandon (azab - wealth to others)"
+   },
+   "instances": [
+    {
+     "span_id": 279279,
+     "reference": "Psa 49:10",
+     "hebrew_surface": "leave",
+     "esv_word": "leave",
+     "morphology": {
+      "morph_code": "HVqq3cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "leave / abandon (azab - wealth to others)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1653,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 49:10 For he sees that even the wise die ; the fool and the stupid alike must perish and leave their wealth to others .",
+     "passage_id": 1653,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "leave / abandon (azab - wealth to others)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the dying (wise and fool)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "leave behind",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "their wealth (to others)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and LEAVE (azab) their wealth to others' — the futility of hoarding; azab here the forced abandonment of wealth at death, the riches passing to strangers — possessions that cannot follow",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279279",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279279",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4784:rebel",
+   "meaning": "rebel",
+   "lemma": "H4784",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "rebel",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "rebel (marah, negated)"
+   },
+   "instances": [
+    {
+     "span_id": 307393,
+     "reference": "Psa 105:28",
+     "hebrew_surface": "rebel",
+     "esv_word": "rebel",
+     "morphology": {
+      "morph_code": "HVqp3cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "rebel (marah, negated)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1785,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 105:28 He sent darkness, and made the land dark; they did not rebel against his words.",
+     "passage_id": 1785,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "Moses and Aaron",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "not rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God's words",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v28: 'they did not REBEL (marah) against his words' - the obedience of Moses and Aaron, faithful agents who did not resist God's commission.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with performing the signs",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307393",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307393",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307393",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H4784:rebelledagainst",
+   "meaning": "rebelled against",
+   "lemma": "H4784",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "rebelled against",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "rebel (marah)"
+   },
+   "instances": [
+    {
+     "span_id": 283324,
+     "reference": "Psa 78:56",
+     "hebrew_surface": "rebelled against",
+     "esv_word": "rebelled against",
+     "morphology": {
+      "morph_code": "HVhw3mp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "rebel (marah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1720,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies ,",
+     "passage_id": 1720,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebel (marah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "rebel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the Most High",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the testing",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and REBELLED (marah) against the Most High God' - defiance persisting into settled possession.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283324",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283324",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283324",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5006:revil",
+   "meaning": "revile",
+   "lemma": "H5006",
+   "cluster": {
+    "code": "M06",
+    "name": "Hate",
+    "all_candidates": "M06(Hate)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Piel",
+    "morph_codes": "HVpi3ms",
+    "esv_words": "revile",
+    "lexical_gloss": "to spurn",
+    "read_sense_variants": "revile / spurn (naats - is the enemy to revile your name forever?)"
+   },
+   "instances": [
+    {
+     "span_id": 282534,
+     "reference": "Psa 74:10",
+     "hebrew_surface": "revile",
+     "esv_word": "revile",
+     "morphology": {
+      "morph_code": "HVpi3ms",
+      "stem": "Piel"
+     },
+     "read_characteristic": "revile / spurn (naats - is the enemy to revile your name forever?)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1705,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 74:10 How long , O God , is the foe to scoff ? Is the enemy to revile your name forever ?",
+     "passage_id": 1705,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "revile / spurn (naats - is the enemy to revile your name forever?)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemy",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "revile / spurn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's name, forever",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "forever",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the scoffing",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Is the enemy to REVILE (naats) your name forever?' — the contempt of God's name that the psalmist cannot bear; naats here the spurning of God's very name by the foe - blasphemy that God is implored to answer, the enemy's insult to God the heart of the crisis",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282534",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "pair",
+       "from_span": "282534",
+       "to_span": "282535",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 108,
+       "label": "manner",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282534",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "282534",
+       "to_span": "282532",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3427:sit",
+   "meaning": "sits",
+   "lemma": "H3427",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3ms",
+    "esv_words": "sits",
+    "lexical_gloss": "to dwell",
+    "read_sense_variants": "sits not in scoffers' seat"
+   },
+   "instances": [
+    {
+     "span_id": 275352,
+     "reference": "Psa 1:1",
+     "hebrew_surface": "sits",
+     "esv_word": "sits",
+     "morphology": {
+      "morph_code": "HVqp3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "sits not in scoffers' seat",
+     "position": {
+      "word_index": 11,
+      "passage_id": 1573,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 1:1 Blessed is the man who walks not in the counsel of the wicked , nor stands in the way of sinners , nor sits in the seat of scoffers ;",
+     "passage_id": 1573,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "sits not in scoffers' seat",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the blessed man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the third, deepest refusal: he does not sit in the seat of scoffers - declining the settled fellowship of scorn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "refusal-3",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "sit-not",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'nor SITS in the seat of scoffers' - the climax of the descent refused: sitting is permanent belonging, and the company is now the most corrosive (scoffers). The triad walk->stand->sit maps the whole slide the interior declines.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275352",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275352",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275352",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5006:spurn",
+   "meaning": "spurned",
+   "lemma": "H5006",
+   "cluster": {
+    "code": "M06",
+    "name": "Hate",
+    "all_candidates": "M06(Hate)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqp3cp",
+    "esv_words": "spurned",
+    "lexical_gloss": "to spurn",
+    "read_sense_variants": "spurn (naats)"
+   },
+   "instances": [
+    {
+     "span_id": 269874,
+     "reference": "Psa 107:11",
+     "hebrew_surface": "spurned",
+     "esv_word": "spurned",
+     "morphology": {
+      "morph_code": "HVqp3cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "spurn (naats)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1793,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:11 for they had rebelled against the words of God , and spurned the counsel of the Most High .",
+     "passage_id": 1793,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "spurn (naats)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the prisoners",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "spurn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the counsel of the Most High",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'and SPURNED (naats) the counsel of the Most High' - the contempt for God's counsel behind the imprisonment.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with rebelling",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269874",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269874",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269874",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5637:stubborn",
+   "meaning": "stubborn",
+   "lemma": "H5637",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "stubborn",
+    "lexical_gloss": "to rebel",
+    "read_sense_variants": "be stubborn (sarar)"
+   },
+   "instances": [
+    {
+     "span_id": 283442,
+     "reference": "Psa 78:8",
+     "hebrew_surface": "stubborn",
+     "esv_word": "stubborn",
+     "morphology": {
+      "morph_code": "HVqrmsa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "be stubborn (sarar)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1715,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God .",
+     "passage_id": 1715,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be stubborn (sarar)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be obstinate",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with rebelliousness and the unsteady heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'that they should not be like their fathers, a STUBBORN (sarar) and rebellious generation' - the obstinacy the young are warned not to inherit.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283442",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283442",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283442",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8307:stubborn",
+   "meaning": "stubborn",
+   "lemma": "H8307",
+   "cluster": {
+    "code": "M30",
+    "name": "Obedience",
+    "all_candidates": "M30(Obedience)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsc",
+    "esv_words": "stubborn",
+    "lexical_gloss": "stubbornness",
+    "read_sense_variants": "stubborn (sheriruth)"
+   },
+   "instances": [
+    {
+     "span_id": 283803,
+     "reference": "Psa 81:12",
+     "hebrew_surface": "stubborn",
+     "esv_word": "stubborn",
+     "morphology": {
+      "morph_code": "HNcfsc HR HSp3ms",
+      "stem": ""
+     },
+     "read_characteristic": "stubborn (sheriruth)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1732,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:12 So I gave them over to their stubborn hearts , to follow their own counsels .",
+     "passage_id": 1732,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "stubborn (sheriruth)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "my people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be stubborn",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with their own counsels",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'So I gave them over to their STUBBORN (sheriruth) hearts' - the obstinacy God finally left them to, judgment by abandonment.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283803",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283803",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283803",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H8438:worm",
+   "meaning": "worm",
+   "lemma": "H8438",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "worm",
+    "lexical_gloss": "worm",
+    "read_sense_variants": "I am a worm, not a man"
+   },
+   "instances": [
+    {
+     "span_id": 275781,
+     "reference": "Psa 22:6",
+     "hebrew_surface": "worm",
+     "esv_word": "worm",
+     "morphology": {
+      "morph_code": "HNcfsc HC",
+      "stem": ""
+     },
+     "read_characteristic": "I am a worm, not a man",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1607,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 22:6 But I am a worm and not a man , scorned by mankind and despised by the people .",
+     "passage_id": 1607,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I am a worm, not a man",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self reckons itself a worm and not a man, scorned and despised by all - self-estimate crushed below humanity",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "self-abasement",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "worm-not-man",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'But I am a WORM and not a man, SCORNED by mankind and DESPISED by the people' - the operation is a collapse of self-worth: mockery has driven the interior below the human.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275781",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275781",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275781",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

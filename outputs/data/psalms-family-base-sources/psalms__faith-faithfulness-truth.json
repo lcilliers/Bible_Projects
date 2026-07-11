@@ -1,0 +1,3616 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "faith-faithfulness-truth"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'faith-faithfulness-truth': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 10,
+   "instances": 25,
+   "passages": 24
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1588": {
+   "passage_ref": "Psa 12:1-4",
+   "verse_refs": [
+    "Psa 12:1",
+    "Psa 12:2",
+    "Psa 12:3",
+    "Psa 12:4",
+    "Psa 12:5"
+   ],
+   "text": "To the choirmaster : according to The Sheminith . A Psalm of David . Psa 12:1 Save , O Lord , for the godly one is gone ; for the faithful have vanished from among the children of man . Psa 12:2 Everyone utters lies to his neighbor ; with flattering lips and a double heart they speak . Psa 12:3 May the Lord cut off all flattering lips , the tongue that makes great boasts, Psa 12:4 those who say , “ With our tongue we will prevail , our lips are with us; who is master over us ?” Psa 12:5 “Because the poor are plundered, because the needy groan, I will now arise,” says the Lord; “I will place him in the safety for which he longs.”"
+  },
+  "1617": {
+   "passage_ref": "Psa 27:11-14",
+   "verse_refs": [
+    "Psa 27:11",
+    "Psa 27:12",
+    "Psa 27:13",
+    "Psa 27:14"
+   ],
+   "text": "Psa 27:11 Teach me your way , O Lord , and lead me on a level path because of my enemies . Psa 27:12 Give me not up to the will of my adversaries ; for false witnesses have risen against me, and they breathe out violence . Psa 27:13 I believe that I shall look upon the goodness of the Lord in the land of the living ! Psa 27:14 Wait for the Lord ; be strong , and let your heart take courage ; wait for the Lord !"
+  },
+  "1644": {
+   "passage_ref": "Psa 45:1-15",
+   "verse_refs": [
+    "Psa 45:1",
+    "Psa 45:2",
+    "Psa 45:3",
+    "Psa 45:4",
+    "Psa 45:5",
+    "Psa 45:6",
+    "Psa 45:7",
+    "Psa 45:8",
+    "Psa 45:9",
+    "Psa 45:10",
+    "Psa 45:11",
+    "Psa 45:12",
+    "Psa 45:13",
+    "Psa 45:14",
+    "Psa 45:15",
+    "Psa 45:17"
+   ],
+   "text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever ."
+  },
+  "1654": {
+   "passage_ref": "Psa 50:3-7",
+   "verse_refs": [
+    "Psa 50:1",
+    "Psa 50:3",
+    "Psa 50:4",
+    "Psa 50:5",
+    "Psa 50:6",
+    "Psa 50:7"
+   ],
+   "text": "A Psalm of Asaph . Psa 50:1 The Mighty One , God the Lord , speaks and summons the earth from the rising of the sun to its setting . Psa 50:3 Our God comes ; he does not keep silence ; before him is a devouring fire , around him a mighty tempest . Psa 50:4 He calls to the heavens above and to the earth , that he may judge his people : Psa 50:5 “ Gather to me my faithful ones , who made a covenant with me by sacrifice !” Psa 50:6 The heavens declare his righteousness , for God himself is judge ! Selah Psa 50:7 “ Hear , O my people , and I will speak ; O Israel , I will testify against you. I am God , your God ."
+  },
+  "1657": {
+   "passage_ref": "Psa 51:1-19",
+   "verse_refs": [
+    "Psa 51:1",
+    "Psa 51:2",
+    "Psa 51:3",
+    "Psa 51:4",
+    "Psa 51:5",
+    "Psa 51:6",
+    "Psa 51:7",
+    "Psa 51:8",
+    "Psa 51:9",
+    "Psa 51:10",
+    "Psa 51:11",
+    "Psa 51:12",
+    "Psa 51:13",
+    "Psa 51:14",
+    "Psa 51:15",
+    "Psa 51:16",
+    "Psa 51:17",
+    "Psa 51:18",
+    "Psa 51:19"
+   ],
+   "text": "To the choirmaster . A Psalm of David , when Nathan the prophet went to him, after he had gone in to Bathsheba . Psa 51:1 Have mercy on me, O God , according to your steadfast love ; according to your abundant mercy blot out my transgressions . Psa 51:2 Wash me thoroughly from my iniquity , and cleanse me from my sin ! Psa 51:3 For I know my transgressions , and my sin is ever before me. Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment . Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me. Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart . Psa 51:7 Purge me with hyssop , and I shall be clean ; wash me, and I shall be whiter than snow . Psa 51:8 Let me hear joy and gladness ; let the bones that you have broken rejoice . Psa 51:9 Hide your face from my sins , and blot out all my iniquities . Psa 51:10 Create in me a clean heart , O God , and renew a right spirit within me. Psa 51:11 Cast me not away from your presence , and take not your Holy Spirit from me . Psa 51:12 Restore to me the joy of your salvation , and uphold me with a willing spirit . Psa 51:13 Then I will teach transgressors your ways , and sinners will return to you. Psa 51:14 Deliver me from bloodguiltiness , O God , O God of my salvation , and my tongue will sing aloud of your righteousness . Psa 51:15 O Lord , open my lips , and my mouth will declare your praise . Psa 51:16 For you will not delight in sacrifice , or I would give it; you will not be pleased with a burnt offering . Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise . Psa 51:18 Do good to Zion in your good pleasure ; build up the walls of Jerusalem ; Psa 51:19 then will you delight in right sacrifices , in burnt offerings and whole burnt offerings; then bulls will be offered on your altar ."
+  },
+  "1658": {
+   "passage_ref": "Psa 52:1-9",
+   "verse_refs": [
+    "Psa 52:1",
+    "Psa 52:2",
+    "Psa 52:3",
+    "Psa 52:4",
+    "Psa 52:5",
+    "Psa 52:6",
+    "Psa 52:7",
+    "Psa 52:8",
+    "Psa 52:9"
+   ],
+   "text": "To the choirmaster . A Maskil of David , when Doeg , the Edomite , came and told Saul , “ David has come to the house of Ahimelech .” Psa 52:1 Why do you boast of evil , O mighty man ? The steadfast love of God endures all the day . Psa 52:2 Your tongue plots destruction , like a sharp razor , you worker of deceit . Psa 52:3 You love evil more than good , and lying more than speaking what is right . Selah Psa 52:4 You love all words that devour , O deceitful tongue . Psa 52:5 But God will break you down forever ; he will snatch and tear you from your tent ; he will uproot you from the land of the living . Selah Psa 52:6 The righteous shall see and fear , and shall laugh at him, saying, Psa 52:7 “ See the man who would not make God his refuge , but trusted in the abundance of his riches and sought refuge in his own destruction !” Psa 52:8 But I am like a green olive tree in the house of God . I trust in the steadfast love of God forever and ever . Psa 52:9 I will thank you forever , because you have done it. I will wait for your name , for it is good , in the presence of the godly ."
+  },
+  "1715": {
+   "passage_ref": "Psa 78:8-13",
+   "verse_refs": [
+    "Psa 78:8",
+    "Psa 78:9",
+    "Psa 78:10",
+    "Psa 78:11",
+    "Psa 78:12",
+    "Psa 78:13"
+   ],
+   "text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God . Psa 78:9 The Ephraimites , armed with the bow , turned back on the day of battle . Psa 78:10 They did not keep God’s covenant , but refused to walk according to his law . Psa 78:11 They forgot his works and the wonders that he had shown them . Psa 78:12 In the sight of their fathers he performed wonders in the land of Egypt , in the fields of Zoan . Psa 78:13 He divided the sea and let them pass through it, and made the waters stand like a heap ."
+  },
+  "1716": {
+   "passage_ref": "Psa 78:17-22",
+   "verse_refs": [
+    "Psa 78:17",
+    "Psa 78:18",
+    "Psa 78:19",
+    "Psa 78:20",
+    "Psa 78:21",
+    "Psa 78:22"
+   ],
+   "text": "Psa 78:17 Yet they sinned still more against him, rebelling against the Most High in the desert . Psa 78:18 They tested God in their heart by demanding the food they craved . Psa 78:19 They spoke against God , saying , “ Can God spread a table in the wilderness ? Psa 78:20 He struck the rock so that water gushed out and streams overflowed . Can he also give bread or provide meat for his people ?” Psa 78:21 Therefore , when the Lord heard , he was full of wrath ; a fire was kindled against Jacob ; his anger rose against Israel , Psa 78:22 because they did not believe in God and did not trust his saving power ."
+  },
+  "1718": {
+   "passage_ref": "Psa 78:29-35",
+   "verse_refs": [
+    "Psa 78:29",
+    "Psa 78:30",
+    "Psa 78:31",
+    "Psa 78:32",
+    "Psa 78:33",
+    "Psa 78:34",
+    "Psa 78:35",
+    "Psa 78:36"
+   ],
+   "text": "Psa 78:29 And they ate and were well filled , for he gave them what they craved . Psa 78:30 But before they had satisfied their craving , while the food was still in their mouths , Psa 78:31 the anger of God rose against them, and he killed the strongest of them and laid low the young men of Israel . Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe . Psa 78:33 So he made their days vanish like a breath , and their years in terror . Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly. Psa 78:35 They remembered that God was their rock , the Most High God their redeemer . Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues."
+  },
+  "1719": {
+   "passage_ref": "Psa 78:37-46",
+   "verse_refs": [
+    "Psa 78:37",
+    "Psa 78:38",
+    "Psa 78:39",
+    "Psa 78:40",
+    "Psa 78:41",
+    "Psa 78:42",
+    "Psa 78:43",
+    "Psa 78:44",
+    "Psa 78:45",
+    "Psa 78:46"
+   ],
+   "text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant . Psa 78:38 Yet he , being compassionate , atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath . Psa 78:39 He remembered that they were but flesh , a wind that passes and comes not again. Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert ! Psa 78:41 They tested God again and again and provoked the Holy One of Israel . Psa 78:42 They did not remember his power or the day when he redeemed them from the foe , Psa 78:43 when he performed his signs in Egypt and his marvels in the fields of Zoan . Psa 78:44 He turned their rivers to blood , so that they could not drink of their streams . Psa 78:45 He sent among them swarms of flies , which devoured them, and frogs , which destroyed them . Psa 78:46 He gave their crops to the destroying locust and the fruit of their labor to the locust ."
+  },
+  "1722": {
+   "passage_ref": "Psa 79:1-2",
+   "verse_refs": [
+    "Psa 79:1",
+    "Psa 79:2"
+   ],
+   "text": "A Psalm of Asaph . Psa 79:1 O God , the nations have come into your inheritance ; they have defiled your holy temple ; they have laid Jerusalem in ruins . Psa 79:2 They have given the bodies of your servants to the birds of the heavens for food , the flesh of your faithful to the beasts of the earth ."
+  },
+  "1738": {
+   "passage_ref": "Psa 85:1-13",
+   "verse_refs": [
+    "Psa 85:1",
+    "Psa 85:2",
+    "Psa 85:3",
+    "Psa 85:4",
+    "Psa 85:5",
+    "Psa 85:6",
+    "Psa 85:7",
+    "Psa 85:8",
+    "Psa 85:9",
+    "Psa 85:10",
+    "Psa 85:11",
+    "Psa 85:12",
+    "Psa 85:13"
+   ],
+   "text": "To the choirmaster . A Psalm of the Sons of Korah . Psa 85:1 Lord , you were favorable to your land ; you restored the fortunes of Jacob . Psa 85:2 You forgave the iniquity of your people ; you covered all their sin . Selah Psa 85:3 You withdrew all your wrath ; you turned from your hot anger . Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us ! Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ? Psa 85:6 Will you not revive us again , that your people may rejoice in you ? Psa 85:7 Show us your steadfast love , O Lord , and grant us your salvation . Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly . Psa 85:9 Surely his salvation is near to those who fear him, that glory may dwell in our land . Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. Psa 85:11 Faithfulness springs up from the ground , and righteousness looks down from the sky . Psa 85:12 Yes , the Lord will give what is good , and our land will yield its increase . Psa 85:13 Righteousness will go before him and make his footsteps a way ."
+  },
+  "1739": {
+   "passage_ref": "Psa 86:2-7",
+   "verse_refs": [
+    "Psa 86:1",
+    "Psa 86:2",
+    "Psa 86:3",
+    "Psa 86:4",
+    "Psa 86:5",
+    "Psa 86:6",
+    "Psa 86:7"
+   ],
+   "text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me ."
+  },
+  "1762": {
+   "passage_ref": "Psa 97:5-12",
+   "verse_refs": [
+    "Psa 97:5",
+    "Psa 97:6",
+    "Psa 97:7",
+    "Psa 97:8",
+    "Psa 97:9",
+    "Psa 97:10",
+    "Psa 97:11",
+    "Psa 97:12"
+   ],
+   "text": "Psa 97:5 The mountains melt like wax before the Lord , before the Lord of all the earth . Psa 97:6 The heavens proclaim his righteousness , and all the peoples see his glory . Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods ! Psa 97:8 Zion hears and is glad , and the daughters of Judah rejoice , because of your judgments , O Lord . Psa 97:9 For you , O Lord , are most high over all the earth ; you are exalted far above all gods . Psa 97:10 O you who love the Lord , hate evil ! He preserves the lives of his saints ; he delivers them from the hand of the wicked . Psa 97:11 Light is sown for the righteous , and joy for the upright in heart . Psa 97:12 Rejoice in the Lord , O you righteous , and give thanks to his holy name !"
+  },
+  "1768": {
+   "passage_ref": "Psa 101:1-8",
+   "verse_refs": [
+    "Psa 101:1",
+    "Psa 101:2",
+    "Psa 101:3",
+    "Psa 101:4",
+    "Psa 101:5",
+    "Psa 101:6",
+    "Psa 101:7",
+    "Psa 101:8"
+   ],
+   "text": "A Psalm of David . Psa 101:1 I will sing of steadfast love and justice ; to you, O Lord , I will make music . Psa 101:2 I will ponder the way that is blameless . Oh when will you come to me? I will walk with integrity of heart within my house ; Psa 101:3 I will not set before my eyes anything that is worthless . I hate the work of those who fall away ; it shall not cling to me . Psa 101:4 A perverse heart shall be far from me; I will know nothing of evil . Psa 101:5 Whoever slanders his neighbor secretly I will destroy . Whoever has a haughty look and an arrogant heart I will not endure . Psa 101:6 I will look with favor on the faithful in the land , that they may dwell with me; he who walks in the way that is blameless shall minister to me . Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes . Psa 101:8 Morning by morning I will destroy all the wicked in the land , cutting off all the evildoers from the city of the Lord ."
+  },
+  "1788": {
+   "passage_ref": "Psa 106:10-16",
+   "verse_refs": [
+    "Psa 106:10",
+    "Psa 106:11",
+    "Psa 106:12",
+    "Psa 106:13",
+    "Psa 106:14",
+    "Psa 106:15",
+    "Psa 106:16"
+   ],
+   "text": "Psa 106:10 So he saved them from the hand of the foe and redeemed them from the power of the enemy . Psa 106:11 And the waters covered their adversaries ; not one of them was left . Psa 106:12 Then they believed his words ; they sang his praise . Psa 106:13 But they soon forgot his works ; they did not wait for his counsel . Psa 106:14 But they had a wanton craving in the wilderness , and put God to the test in the desert ; Psa 106:15 he gave them what they asked , but sent a wasting disease among them . Psa 106:16 When men in the camp were jealous of Moses and Aaron , the holy one of the Lord ,"
+  },
+  "1790": {
+   "passage_ref": "Psa 106:22-32",
+   "verse_refs": [
+    "Psa 106:22",
+    "Psa 106:23",
+    "Psa 106:24",
+    "Psa 106:25",
+    "Psa 106:26",
+    "Psa 106:27",
+    "Psa 106:28",
+    "Psa 106:29",
+    "Psa 106:30",
+    "Psa 106:31",
+    "Psa 106:32",
+    "Psa 106:33"
+   ],
+   "text": "Psa 106:22 wondrous works in the land of Ham , and awesome deeds by the Red Sea . Psa 106:23 Therefore he said he would destroy them— had not Moses , his chosen one , stood in the breach before him, to turn away his wrath from destroying them . Psa 106:24 Then they despised the pleasant land , having no faith in his promise . Psa 106:25 They murmured in their tents , and did not obey the voice of the Lord . Psa 106:26 Therefore he raised his hand and swore to them that he would make them fall in the wilderness , Psa 106:27 and would make their offspring fall among the nations , scattering them among the lands . Psa 106:28 Then they yoked themselves to the Baal of Peor , and ate sacrifices offered to the dead ; Psa 106:29 they provoked the Lord to anger with their deeds , and a plague broke out among them. Psa 106:30 Then Phinehas stood up and intervened , and the plague was stayed . Psa 106:31 And that was counted to him as righteousness from generation to generation forever . Psa 106:32 They angered him at the waters of Meribah , and it went ill with Moses on their account , Psa 106:33 for they made his spirit bitter, and he spoke rashly with his lips."
+  },
+  "1812": {
+   "passage_ref": "Psa 116:1-10",
+   "verse_refs": [
+    "Psa 116:1",
+    "Psa 116:2",
+    "Psa 116:3",
+    "Psa 116:4",
+    "Psa 116:5",
+    "Psa 116:6",
+    "Psa 116:7",
+    "Psa 116:8",
+    "Psa 116:9",
+    "Psa 116:10",
+    "Psa 116:11"
+   ],
+   "text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”"
+  },
+  "1813": {
+   "passage_ref": "Psa 116:13-15",
+   "verse_refs": [
+    "Psa 116:13",
+    "Psa 116:14",
+    "Psa 116:15"
+   ],
+   "text": "Psa 116:13 I will lift up the cup of salvation and call on the name of the Lord , Psa 116:14 I will pay my vows to the Lord in the presence of all his people . Psa 116:15 Precious in the sight of the Lord is the death of his saints ."
+  },
+  "1825": {
+   "passage_ref": "Psa 119:66-82",
+   "verse_refs": [
+    "Psa 119:65",
+    "Psa 119:66",
+    "Psa 119:67",
+    "Psa 119:68",
+    "Psa 119:69",
+    "Psa 119:70",
+    "Psa 119:71",
+    "Psa 119:72",
+    "Psa 119:73",
+    "Psa 119:74",
+    "Psa 119:75",
+    "Psa 119:76",
+    "Psa 119:77",
+    "Psa 119:78",
+    "Psa 119:79",
+    "Psa 119:80",
+    "Psa 119:81",
+    "Psa 119:82",
+    "Psa 119:83"
+   ],
+   "text": "Psa 119:65 TethYou have dealt well with your servant, O Lord, according to your word. Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments . Psa 119:67 Before I was afflicted I went astray , but now I keep your word . Psa 119:68 You are good and do good ; teach me your statutes . Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ; Psa 119:70 their heart is unfeeling like fat , but I delight in your law . Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes . Psa 119:72 The law of your mouth is better to me than thousands of gold and silver pieces. Yodh Psa 119:73 Your hands have made and fashioned me; give me understanding that I may learn your commandments . Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word . Psa 119:75 I know , O Lord , that your rules are righteous , and that in faithfulness you have afflicted me . Psa 119:76 Let your steadfast love comfort me according to your promise to your servant . Psa 119:77 Let your mercy come to me, that I may live ; for your law is my delight . Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts . Psa 119:79 Let those who fear you turn to me, that they may know your testimonies . Psa 119:80 May my heart be blameless in your statutes , that I may not be put to shame ! Kaph Psa 119:81 My soul longs for your salvation ; I hope in your word . Psa 119:82 My eyes long for your promise ; I ask , “ When will you comfort me ?” Psa 119:83 For I have become like a wineskin in the smoke, yet I have not forgotten your statutes."
+  },
+  "1831": {
+   "passage_ref": "Psa 119:151-176",
+   "verse_refs": [
+    "Psa 119:151",
+    "Psa 119:152",
+    "Psa 119:153",
+    "Psa 119:154",
+    "Psa 119:155",
+    "Psa 119:156",
+    "Psa 119:157",
+    "Psa 119:158",
+    "Psa 119:159",
+    "Psa 119:160",
+    "Psa 119:161",
+    "Psa 119:162",
+    "Psa 119:163",
+    "Psa 119:164",
+    "Psa 119:165",
+    "Psa 119:166",
+    "Psa 119:167",
+    "Psa 119:168",
+    "Psa 119:169",
+    "Psa 119:170",
+    "Psa 119:171",
+    "Psa 119:172",
+    "Psa 119:173",
+    "Psa 119:174",
+    "Psa 119:175",
+    "Psa 119:176"
+   ],
+   "text": "Psa 119:151 But you are near , O Lord , and all your commandments are true . Psa 119:152 Long have I known from your testimonies that you have founded them forever . Resh Psa 119:153 Look on my affliction and deliver me, for I do not forget your law . Psa 119:154 Plead my cause and redeem me; give me life according to your promise ! Psa 119:155 Salvation is far from the wicked , for they do not seek your statutes . Psa 119:156 Great is your mercy , O Lord ; give me life according to your rules . Psa 119:157 Many are my persecutors and my adversaries , but I do not swerve from your testimonies . Psa 119:158 I look at the faithless with disgust , because they do not keep your commands . Psa 119:159 Consider how I love your precepts ! Give me life , O Lord , according to your steadfast love . Psa 119:160 The sum of your word is truth , and every one of your righteous rules endures forever . Sin and Shin Psa 119:161 Princes persecute me without cause , but my heart stands in awe of your words . Psa 119:162 I rejoice at your word like one who finds great spoil . Psa 119:163 I hate and abhor falsehood , but I love your law . Psa 119:164 Seven times a day I praise you for your righteous rules . Psa 119:165 Great peace have those who love your law ; nothing can make them stumble . Psa 119:166 I hope for your salvation , O Lord , and I do your commandments . Psa 119:167 My soul keeps your testimonies ; I love them exceedingly . Psa 119:168 I keep your precepts and testimonies , for all my ways are before you . Taw Psa 119:169 Let my cry come before you, O Lord ; give me understanding according to your word ! Psa 119:170 Let my plea come before you; deliver me according to your word . Psa 119:171 My lips will pour forth praise , for you teach me your statutes . Psa 119:172 My tongue will sing of your word , for all your commandments are right . Psa 119:173 Let your hand be ready to help me, for I have chosen your precepts . Psa 119:174 I long for your salvation , O Lord , and your law is my delight . Psa 119:175 Let my soul live and praise you, and let your rules help me . Psa 119:176 I have gone astray like a lost sheep ; seek your servant , for I do not forget your commandments ."
+  },
+  "1850": {
+   "passage_ref": "Psa 132:4-14",
+   "verse_refs": [
+    "Psa 132:4",
+    "Psa 132:5",
+    "Psa 132:6",
+    "Psa 132:7",
+    "Psa 132:8",
+    "Psa 132:9",
+    "Psa 132:10",
+    "Psa 132:11",
+    "Psa 132:12",
+    "Psa 132:13",
+    "Psa 132:14",
+    "Psa 132:15"
+   ],
+   "text": "Psa 132:4 I will not give sleep to my eyes or slumber to my eyelids , Psa 132:5 until I find a place for the Lord , a dwelling place for the Mighty One of Jacob .” Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar . Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !” Psa 132:8 Arise , O Lord , and go to your resting place , you and the ark of your might . Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy . Psa 132:10 For the sake of your servant David , do not turn away the face of your anointed one. Psa 132:11 The Lord swore to David a sure oath from which he will not turn back : “One of the sons of your body I will set on your throne . Psa 132:12 If your sons keep my covenant and my testimonies that I shall teach them, their sons also forever shall sit on your throne .” Psa 132:13 For the Lord has chosen Zion ; he has desired it for his dwelling place : Psa 132:14 “ This is my resting place forever ; here I will dwell , for I have desired it . Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread."
+  },
+  "1851": {
+   "passage_ref": "Psa 132:16-18",
+   "verse_refs": [
+    "Psa 132:16",
+    "Psa 132:17",
+    "Psa 132:18"
+   ],
+   "text": "Psa 132:16 Her priests I will clothe with salvation , and her saints will shout for joy . Psa 132:17 There I will make a horn to sprout for David ; I have prepared a lamp for my anointed . Psa 132:18 His enemies I will clothe with shame , but on him his crown will shine .”"
+  },
+  "1885": {
+   "passage_ref": "Psa 149:1-6",
+   "verse_refs": [
+    "Psa 149:1",
+    "Psa 149:2",
+    "Psa 149:3",
+    "Psa 149:4",
+    "Psa 149:5",
+    "Psa 149:6",
+    "Psa 149:7",
+    "Psa 149:8",
+    "Psa 149:9"
+   ],
+   "text": "Psa 149:1 Praise the Lord ! Sing to the Lord a new song , his praise in the assembly of the godly ! Psa 149:2 Let Israel be glad in his Maker ; let the children of Zion rejoice in their King ! Psa 149:3 Let them praise his name with dancing , making melody to him with tambourine and lyre ! Psa 149:4 For the Lord takes pleasure in his people ; he adorns the humble with salvation . Psa 149:5 Let the godly exult in glory ; let them sing for joy on their beds . Psa 149:6 Let the high praises of God be in their throats and two-edged swords in their hands , Psa 149:7 to execute vengeance on the nations and punishments on the peoples, Psa 149:8 to bind their kings with chains and their nobles with fetters of iron, Psa 149:9 to execute on them the judgment written ! This is honor for all his godly ones . Praise the Lord !"
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H0539:believ",
+   "meaning": "believe",
+   "lemma": "H0539",
+   "cluster": {
+    "code": "M13",
+    "name": "Truth",
+    "all_candidates": "M13(Truth)"
+   },
+   "instance_count": 6,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhp1cs, HVhp3cp, HVhw3mp",
+    "esv_words": "believe, believed",
+    "lexical_gloss": "be faithful",
+    "read_sense_variants": "believe (aman) | believe (aman, negated) | I believe I shall see his goodness"
+   },
+   "instances": [
+    {
+     "span_id": 269595,
+     "reference": "Psa 106:12",
+     "hebrew_surface": "believed",
+     "esv_word": "believed",
+     "morphology": {
+      "morph_code": "HVhw3mp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "believe (aman)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1788,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:12 Then they believed his words ; they sang his praise .",
+     "passage_id": 1788,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's words",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'Then they BELIEVED (aman) his words' - the flash of faith after the sea's deliverance, belief that would not last.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with singing his praise",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 270927,
+     "reference": "Psa 116:10",
+     "hebrew_surface": "believed",
+     "esv_word": "believed",
+     "morphology": {
+      "morph_code": "HVhp1cs",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "believe (aman)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1812,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”;",
+     "passage_id": 1812,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "even in affliction",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'I BELIEVED (aman), even when I spoke: I am greatly afflicted' - the faith that held even under affliction, belief speaking through pain.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being greatly afflicted",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 271995,
+     "reference": "Psa 119:66",
+     "hebrew_surface": "believe",
+     "esv_word": "believe",
+     "morphology": {
+      "morph_code": "HVhp1cs HSp2ms",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "believe (aman)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1825,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments .",
+     "passage_id": 1825,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v66: 'Teach me good judgment and knowledge, for I BELIEVE in your commandments' - faith in the commandments as ground for the plea to be taught.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 276222,
+     "reference": "Psa 27:13",
+     "hebrew_surface": "believe",
+     "esv_word": "believe",
+     "morphology": {
+      "morph_code": "HVhp1cs HTc",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "I believe I shall see his goodness",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1617,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 27:13 I believe that I shall look upon the goodness of the Lord in the land of the living !",
+     "passage_id": 1617,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I believe I shall see his goodness",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self believes it will look upon the goodness of the LORD in the land of the living - a faith that steadies against despair",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "sustaining-faith",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "believe-to-see",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'I BELIEVE that I shall look upon the GOODNESS of the LORD in the land of the living' - the operation is the faith that keeps the interior from collapse; belief that it will yet see good is what holds it.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283094,
+     "reference": "Psa 78:22",
+     "hebrew_surface": "believe",
+     "esv_word": "believe",
+     "morphology": {
+      "morph_code": "HVhp3cp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "believe (aman, negated)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1716,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:22 because they did not believe in God and did not trust his saving power .",
+     "passage_id": 1716,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to believe",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not trusting his saving power",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'because they did not BELIEVE (aman) in God' - the root unbelief beneath the complaint.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283150,
+     "reference": "Psa 78:32",
+     "hebrew_surface": "believe",
+     "esv_word": "believe",
+     "morphology": {
+      "morph_code": "HVhp3cp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "believe (aman, negated)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1718,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe .",
+     "passage_id": 1718,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to believe",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in his wonders",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the persistent sinning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and did not BELIEVE (aman) in his wonders' - unbelief that even miracles could not cure.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2623:saint",
+   "meaning": "saints",
+   "lemma": "H2623",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 5,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampc",
+    "esv_words": "saints",
+    "lexical_gloss": "pious",
+    "read_sense_variants": "saints (chasid) | saints / godly (chasid)"
+   },
+   "instances": [
+    {
+     "span_id": 270948,
+     "reference": "Psa 116:15",
+     "hebrew_surface": "saints",
+     "esv_word": "saints",
+     "morphology": {
+      "morph_code": "HAampc HR HSp3ms HSd",
+      "stem": ""
+     },
+     "read_characteristic": "saints (chasid)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1813,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 116:15 Precious in the sight of the Lord is the death of his saints .",
+     "passage_id": 1813,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be precious to God",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in their death",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v15: 'Precious in the sight of the LORD is the death of his SAINTS (chasid)' - the godly, whose very death God holds dear.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the preciousness of their death",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272943,
+     "reference": "Psa 132:16",
+     "hebrew_surface": "saints",
+     "esv_word": "saints",
+     "morphology": {
+      "morph_code": "HAampc HC",
+      "stem": ""
+     },
+     "read_characteristic": "saints (chasid)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1851,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 132:16 Her priests I will clothe with salvation , and her saints will shout for joy .",
+     "passage_id": 1851,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "shout for joy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at God's salvation",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'her SAINTS (chasid) will shout for joy' - the godly of Zion, jubilant at the salvation that clothes them.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the shout of joy",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272990,
+     "reference": "Psa 132:9",
+     "hebrew_surface": "saints",
+     "esv_word": "saints",
+     "morphology": {
+      "morph_code": "HAampc HC",
+      "stem": ""
+     },
+     "read_characteristic": "saints (chasid)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1850,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy .",
+     "passage_id": 1850,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "shout for joy",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'and let your SAINTS (chasid) shout for joy' - the godly, whose response to God's presence is jubilant.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the shout of joy",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 284235,
+     "reference": "Psa 85:8",
+     "hebrew_surface": "saints",
+     "esv_word": "saints",
+     "morphology": {
+      "morph_code": "HAampc HSp3ms HC",
+      "stem": ""
+     },
+     "read_characteristic": "saints / godly (chasid)",
+     "position": {
+      "word_index": 11,
+      "passage_id": 1738,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly .",
+     "passage_id": 1738,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints / godly (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "his saints",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be God's faithful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "who hear his peace",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not turning to folly",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'he will speak peace to his people, to his SAINTS (chasid)' - the covenant-faithful to whom God speaks peace, the godly community.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285635,
+     "reference": "Psa 97:10",
+     "hebrew_surface": "saints",
+     "esv_word": "saints",
+     "morphology": {
+      "morph_code": "HAampc",
+      "stem": ""
+     },
+     "read_characteristic": "saints (chasid)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1762,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 97:10 O you who love the Lord , hate evil ! He preserves the lives of his saints ; he delivers them from the hand of the wicked .",
+     "passage_id": 1762,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints (the godly)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be godly",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "preserved by God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'He preserves the lives of his SAINTS (chasid)' - the faithful whom God guards, the godly community.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being delivered from the wicked",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0539:faithful",
+   "meaning": "faithful",
+   "lemma": "H0539",
+   "cluster": {
+    "code": "M13",
+    "name": "Truth",
+    "all_candidates": "M13(Truth)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNp3cp, HVNp3fs, HVNrmpc",
+    "esv_words": "faithful",
+    "lexical_gloss": "be faithful",
+    "read_sense_variants": "be faithful (aman, negated) | faithful (aman)"
+   },
+   "instances": [
+    {
+     "span_id": 268855,
+     "reference": "Psa 101:6",
+     "hebrew_surface": "faithful",
+     "esv_word": "faithful",
+     "morphology": {
+      "morph_code": "HVNrmpc HR HSp1bs",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "faithful (aman)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1768,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 101:6 I will look with favor on the faithful in the land , that they may dwell with me; he who walks in the way that is blameless shall minister to me .",
+     "passage_id": 1768,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithful (aman)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithful in the land",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be faithful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'I will look with favour on the FAITHFUL (aman) in the land' - the trustworthy whom the king honours, faithfulness rewarded with nearness.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the blameless who minister",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283172,
+     "reference": "Psa 78:37",
+     "hebrew_surface": "faithful",
+     "esv_word": "faithful",
+     "morphology": {
+      "morph_code": "HVNp3cp",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "be faithful (aman, negated)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1719,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant .",
+     "passage_id": 1719,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be faithful (aman, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to be faithful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to his covenant",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the unsteady heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they were not FAITHFUL (aman) to his covenant' - the fidelity their words feigned but their hearts withheld.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283451,
+     "reference": "Psa 78:8",
+     "hebrew_surface": "faithful",
+     "esv_word": "faithful",
+     "morphology": {
+      "morph_code": "HVNp3fs",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "be faithful (aman, negated)",
+     "position": {
+      "word_index": 12,
+      "passage_id": 1715,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God .",
+     "passage_id": 1715,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be faithful (aman, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to be faithful",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the unsteady heart",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'whose spirit was not FAITHFUL (aman) to God' - the fidelity of heart that the fathers lacked toward God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2623:godly",
+   "meaning": "godly",
+   "lemma": "H2623",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 3,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampc, HAamsa",
+    "esv_words": "godly",
+    "lexical_gloss": "pious",
+    "read_sense_variants": "the godly have vanished | godly / faithful (chasid - in the presence of the godly) | godly (chasid)"
+   },
+   "instances": [
+    {
+     "span_id": 272740,
+     "reference": "Psa 12:1",
+     "hebrew_surface": "godly",
+     "esv_word": "godly",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "the godly have vanished",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1588,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "To the choirmaster : according to The Sheminith . A Psalm of David . Psa 12:1 Save , O Lord , for the godly one is gone ; for the faithful have vanished from among the children of man .",
+     "passage_id": 1588,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the godly have vanished",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self laments that the godly one is gone and the faithful have disappeared from among men - grief at the failure of faithfulness",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "lament-over-loss",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "godly-vanished",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'Save, O LORD, for the GODLY one is gone; the FAITHFUL have vanished from among the children of man' - the interior grieves a social collapse: it can no longer find a trustworthy person.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 279875,
+     "reference": "Psa 52:9",
+     "hebrew_surface": "godly",
+     "esv_word": "godly",
+     "morphology": {
+      "morph_code": "HAampc HSp2ms",
+      "stem": ""
+     },
+     "read_characteristic": "godly / faithful (chasid - in the presence of the godly)",
+     "position": {
+      "word_index": 9,
+      "passage_id": 1658,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 52:9 I will thank you forever , because you have done it. I will wait for your name , for it is good , in the presence of the godly .",
+     "passage_id": 1658,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly / faithful (chasid - in the presence of the godly)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly (the psalmist's company)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the community in whose presence he waits and thanks",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'in the presence of the GODLY (chasid)' — the faithful community, the psalmist's true company; chasid (recurs Ps50:5) the covenant-loyal among whom he waits and gives thanks — the opposite fellowship to the tyrant, belonging that steadies hope",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279875",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279875",
+       "to_span": "279870",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 284329,
+     "reference": "Psa 86:2",
+     "hebrew_surface": "godly",
+     "esv_word": "godly",
+     "morphology": {
+      "morph_code": "HAamsa",
+      "stem": ""
+     },
+     "read_characteristic": "godly (chasid)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1739,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God .",
+     "passage_id": 1739,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be godly / devoted",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with trusting God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'preserve my life, for I am GODLY (chasid)' - the covenant-devotion David claims, not merit but belonging to God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H6213:execut",
+   "meaning": "execute",
+   "lemma": "H6213",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqcc",
+    "esv_words": "execute",
+    "lexical_gloss": "to make: do; to make; to make: offer; to make: [do]; to press",
+    "read_sense_variants": "the honour of executing judgment | execute the decreed vengeance"
+   },
+   "instances": [
+    {
+     "span_id": 274496,
+     "reference": "Psa 149:9",
+     "hebrew_surface": "execute",
+     "esv_word": "execute",
+     "morphology": {
+      "morph_code": "HVqcc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "the honour of executing judgment",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1885,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 149:9 to execute on them the judgment written ! This is honor for all his godly ones . Praise the Lord !",
+     "passage_id": 1885,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the honour of executing judgment",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "to carry out the written judgment is the honour of all God's saints - dignity in obedience",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "dignified-obedience",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "honour-in-judgment",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'to EXECUTE on them the JUDGMENT written! This is HONOUR for all his godly ones' - the operation is the sense of dignity in performing the decreed judgment; obedience felt as honour.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 308216,
+     "reference": "Psa 149:7",
+     "hebrew_surface": "execute",
+     "esv_word": "execute",
+     "morphology": {
+      "morph_code": "HVqcc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "execute the decreed vengeance",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1885,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 149:7 to execute vengeance on the nations and punishments on the peoples,",
+     "passage_id": 1885,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "execute the decreed vengeance",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the godly are agents to execute vengeance on the nations and punishments on the peoples",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "agency-of-judgment",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "execute-vengeance",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'to EXECUTE vengeance on the nations and punishments on the peoples' - the interior resolve turns outward as commissioned action, carrying out a judgment not self-devised.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0571:truth",
+   "meaning": "truth",
+   "lemma": "H0571",
+   "cluster": {
+    "code": "M13",
+    "name": "Truth",
+    "all_candidates": "M13(Truth)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcfsa",
+    "esv_words": "truth",
+    "lexical_gloss": "truth: faithful; truth: true; truth: certain",
+    "read_sense_variants": "truth (emeth - the cause of truth) | truth / faithfulness (emeth - in the inward being)"
+   },
+   "instances": [
+    {
+     "span_id": 278961,
+     "reference": "Psa 45:4",
+     "hebrew_surface": "truth",
+     "esv_word": "truth",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "truth (emeth - the cause of truth)",
+     "position": {
+      "word_index": 5,
+      "passage_id": 1644,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds !",
+     "passage_id": 1644,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "truth (emeth - the cause of truth)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king (his cause)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with meekness and righteousness",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'ride out victoriously for the cause of TRUTH (emeth) and meekness and righteousness' — the moral cause the king champions; emeth here the truth his rule advances, the first of the triad of virtues he rides to establish",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278961",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "278961",
+       "to_span": "278962",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 279758,
+     "reference": "Psa 51:6",
+     "hebrew_surface": "truth",
+     "esv_word": "truth",
+     "morphology": {
+      "morph_code": "HNcfsa",
+      "stem": ""
+     },
+     "read_characteristic": "truth / faithfulness (emeth - in the inward being)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1657,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart .",
+     "passage_id": 1657,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "truth / faithfulness (emeth - in the inward being)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "what God delights in / desires (v6)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "in the inward being",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with wisdom taught in the secret heart",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Behold, you delight in TRUTH (emeth) in the inward being' — the integrity God desires deep within; emeth here inner truthfulness, not outward conformity — the honesty of the hidden self (tuchoth), what God's delight (the qualifier) seeks, answered by wisdom taught in the secret heart",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:heart",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279757",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 104,
+       "label": "seat",
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279759",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279758",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279762",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0539:faith",
+   "meaning": "faith",
+   "lemma": "H0539",
+   "cluster": {
+    "code": "M13",
+    "name": "Truth",
+    "all_candidates": "M13(Truth)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hiphil",
+    "morph_codes": "HVhp3cp",
+    "esv_words": "faith",
+    "lexical_gloss": "be faithful",
+    "read_sense_variants": "faith (aman, negated)"
+   },
+   "instances": [
+    {
+     "span_id": 269670,
+     "reference": "Psa 106:24",
+     "hebrew_surface": "faith",
+     "esv_word": "faith",
+     "morphology": {
+      "morph_code": "HVhp3cp",
+      "stem": "Hiphil"
+     },
+     "read_characteristic": "faith (aman, negated)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1790,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:24 Then they despised the pleasant land , having no faith in his promise .",
+     "passage_id": 1790,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faith (aman, negated)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have no faith",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in God's promise",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v24: 'having no FAITH (aman) in his promise' - the unbelief that could not trust God to give the land.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with despising the land",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2623:faithful",
+   "meaning": "faithful",
+   "lemma": "H2623",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampc",
+    "esv_words": "faithful",
+    "lexical_gloss": "pious",
+    "read_sense_variants": "faithful / godly ones (chasid)"
+   },
+   "instances": [
+    {
+     "span_id": 283508,
+     "reference": "Psa 79:2",
+     "hebrew_surface": "faithful",
+     "esv_word": "faithful",
+     "morphology": {
+      "morph_code": "HAampc",
+      "stem": ""
+     },
+     "read_characteristic": "faithful / godly ones (chasid)",
+     "position": {
+      "word_index": 8,
+      "passage_id": 1722,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 79:2 They have given the bodies of your servants to the birds of the heavens for food , the flesh of your faithful to the beasts of the earth .",
+     "passage_id": 1722,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithful / godly ones (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly ones (chasidim) of the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be the faithful, now slain",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "given to the beasts",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the shame of the ravaged city",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'the flesh of your FAITHFUL (chasid) to the beasts of the earth' - the covenant-faithful, the godly ones, now corpses; their very faithfulness makes the outrage sharper - it is God's devoted who lie unburied.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H2623:faithfulon",
+   "meaning": "faithful ones",
+   "lemma": "H2623",
+   "cluster": {
+    "code": "M05",
+    "name": "Love",
+    "all_candidates": "M05(Love)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HAampc",
+    "esv_words": "faithful ones",
+    "lexical_gloss": "pious",
+    "read_sense_variants": "godly / faithful ones (chasid)"
+   },
+   "instances": [
+    {
+     "span_id": 279604,
+     "reference": "Psa 50:5",
+     "hebrew_surface": "faithful ones",
+     "esv_word": "faithful ones",
+     "morphology": {
+      "morph_code": "HAampc HR HSp1bs",
+      "stem": ""
+     },
+     "read_characteristic": "godly / faithful ones (chasid)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1654,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 50:5 “ Gather to me my faithful ones , who made a covenant with me by sacrifice !”",
+     "passage_id": 1654,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly / faithful ones (chasid)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "summoned by God who comes to judge (v1,3-4)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithful / godly ones (chasidim)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Gather to me my FAITHFUL ONES (chasidim), who made a covenant with me by sacrifice!' — the covenant-loyal summoned before the Judge; chasid (recurs Ps30,31,37) the godly whom God gathers (his summoning/coming = qualifier), the true worshippers distinguished from the wicked (v16)",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "279604",
+       "to_span": "279485",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279604",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H0898:faithles",
+   "meaning": "faithless",
+   "lemma": "H0898",
+   "cluster": {
+    "code": "M10",
+    "name": "Sin",
+    "all_candidates": "M10(Sin)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'faith-faithfulness-truth' expects cluster M13(Truth), but the term-cluster is M10(Sin)",
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmpa",
+    "esv_words": "faithless",
+    "lexical_gloss": "to act treacherously",
+    "read_sense_variants": "faithless (bagad)"
+   },
+   "instances": [
+    {
+     "span_id": 271569,
+     "reference": "Psa 119:158",
+     "hebrew_surface": "faithless",
+     "esv_word": "faithless",
+     "morphology": {
+      "morph_code": "HVqrmpa",
+      "stem": "Qal"
+     },
+     "read_characteristic": "faithless (bagad)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1831,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 119:158 I look at the faithless with disgust , because they do not keep your commands .",
+     "passage_id": 1831,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithless (bagad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithless",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deal faithlessly",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v158: 'I look at the FAITHLESS with disgust, because they do not keep your commands' - the treacherous who spurn God's commands.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

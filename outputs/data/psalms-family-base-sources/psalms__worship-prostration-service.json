@@ -1,0 +1,3627 @@
+{
+ "meta": {
+  "book": "Psalms",
+  "book_id": 19,
+  "scope": {
+   "family": "worship-prostration-service"
+  },
+  "generated": "2026-07-11",
+  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
+  "description": "Base source for the Psalms inner-being family 'worship-prostration-service': all meanings, instances, lexical ledgers, and verse/passage text.",
+  "counts": {
+   "meanings": 13,
+   "instances": 25,
+   "passages": 20
+  },
+  "dimension_legend": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "structure": {
+   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
+   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
+   "meanings[]": {
+    "char_key": "lemma:normalised-ESV key (record identity)",
+    "meaning": "readable meaning label (modal ESV rendering)",
+    "lemma": "base Strong's number",
+    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
+    "instance_count": "number of master spans",
+    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
+    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
+    "instances[]": {
+     "span_id": "verse_span_index.id (the unique master)",
+     "reference": "verse reference",
+     "hebrew_surface": "the Hebrew surface word of the span",
+     "esv_word": "the ESV rendering in this verse",
+     "morphology": "{morph_code, stem}",
+     "read_characteristic": "the read characteristic-in-words on the master",
+     "position": "{word_index, passage_id, is_passage_anchor, genre}",
+     "verse_text": "full text of this verse (ESV)",
+     "passage_id": "-> lookup in top-level passages map for the passage text",
+     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
+     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
+    }
+   }
+  }
+ },
+ "passages": {
+  "1575": {
+   "passage_ref": "Psa 2:5-12",
+   "verse_refs": [
+    "Psa 2:4",
+    "Psa 2:5",
+    "Psa 2:6",
+    "Psa 2:7",
+    "Psa 2:8",
+    "Psa 2:9",
+    "Psa 2:10",
+    "Psa 2:11",
+    "Psa 2:12"
+   ],
+   "text": "Psa 2:4 He who sits in the heavens laughs; the Lord holds them in derision. Psa 2:5 Then he will speak to them in his wrath , and terrify them in his fury , saying, Psa 2:6 “As for me , I have set my King on Zion , my holy hill .” Psa 2:7 I will tell of the decree : The Lord said to me, “You are my Son ; today I have begotten you . Psa 2:8 Ask of me, and I will make the nations your heritage , and the ends of the earth your possession . Psa 2:9 You shall break them with a rod of iron and dash them in pieces like a potter’s vessel .” Psa 2:10 Now therefore, O kings , be wise ; be warned , O rulers of the earth . Psa 2:11 Serve the Lord with fear , and rejoice with trembling . Psa 2:12 Kiss the Son , lest he be angry , and you perish in the way , for his wrath is quickly kindled . Blessed are all who take refuge in him ."
+  },
+  "1610": {
+   "passage_ref": "Psa 22:22-31",
+   "verse_refs": [
+    "Psa 22:22",
+    "Psa 22:23",
+    "Psa 22:24",
+    "Psa 22:25",
+    "Psa 22:26",
+    "Psa 22:27",
+    "Psa 22:28",
+    "Psa 22:29",
+    "Psa 22:30",
+    "Psa 22:31"
+   ],
+   "text": "Psa 22:22 I will tell of your name to my brothers ; in the midst of the congregation I will praise you : Psa 22:23 You who fear the Lord , praise him! All you offspring of Jacob , glorify him, and stand in awe of him, all you offspring of Israel ! Psa 22:24 For he has not despised or abhorred the affliction of the afflicted , and he has not hidden his face from him, but has heard , when he cried to him. Psa 22:25 From you comes my praise in the great congregation ; my vows I will perform before those who fear him. Psa 22:26 The afflicted shall eat and be satisfied ; those who seek him shall praise the Lord ! May your hearts live forever ! Psa 22:27 All the ends of the earth shall remember and turn to the Lord , and all the families of the nations shall worship before you. Psa 22:28 For kingship belongs to the Lord , and he rules over the nations . Psa 22:29 All the prosperous of the earth eat and worship ; before him shall bow all who go down to the dust , even the one who could not keep himself alive . Psa 22:30 Posterity shall serve him; it shall be told of the Lord to the coming generation ; Psa 22:31 they shall come and proclaim his righteousness to a people yet unborn, that he has done it."
+  },
+  "1615": {
+   "passage_ref": "Psa 26:1-12",
+   "verse_refs": [
+    "Psa 26:1",
+    "Psa 26:2",
+    "Psa 26:3",
+    "Psa 26:4",
+    "Psa 26:5",
+    "Psa 26:6",
+    "Psa 26:7",
+    "Psa 26:8",
+    "Psa 26:9",
+    "Psa 26:10",
+    "Psa 26:11",
+    "Psa 26:12"
+   ],
+   "text": "Of David . Psa 26:1 Vindicate me, O Lord , for I have walked in my integrity , and I have trusted in the Lord without wavering . Psa 26:2 Prove me, O Lord , and try me; test my heart and my mind . Psa 26:3 For your steadfast love is before my eyes , and I walk in your faithfulness . Psa 26:4 I do not sit with men of falsehood , nor do I consort with hypocrites . Psa 26:5 I hate the assembly of evildoers , and I will not sit with the wicked . Psa 26:6 I wash my hands in innocence and go around your altar , O Lord , Psa 26:7 proclaiming thanksgiving aloud , and telling all your wondrous deeds . Psa 26:8 O Lord , I love the habitation of your house and the place where your glory dwells . Psa 26:9 Do not sweep my soul away with sinners , nor my life with bloodthirsty men , Psa 26:10 in whose hands are evil devices, and whose right hands are full of bribes . Psa 26:11 But as for me , I shall walk in my integrity ; redeem me, and be gracious to me . Psa 26:12 My foot stands on level ground ; in the great assembly I will bless the Lord ."
+  },
+  "1635": {
+   "passage_ref": "Psa 38:1-20",
+   "verse_refs": [
+    "Psa 38:1",
+    "Psa 38:2",
+    "Psa 38:3",
+    "Psa 38:4",
+    "Psa 38:5",
+    "Psa 38:6",
+    "Psa 38:7",
+    "Psa 38:8",
+    "Psa 38:9",
+    "Psa 38:10",
+    "Psa 38:11",
+    "Psa 38:12",
+    "Psa 38:13",
+    "Psa 38:14",
+    "Psa 38:15",
+    "Psa 38:16",
+    "Psa 38:17",
+    "Psa 38:18",
+    "Psa 38:19",
+    "Psa 38:20",
+    "Psa 38:22"
+   ],
+   "text": "A Psalm of David , for the memorial offering . Psa 38:1 O Lord , rebuke me not in your anger , nor discipline me in your wrath ! Psa 38:2 For your arrows have sunk into me, and your hand has come down on me. Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin . Psa 38:4 For my iniquities have gone over my head ; like a heavy burden , they are too heavy for me . Psa 38:5 My wounds stink and fester because of my foolishness , Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning . Psa 38:7 For my sides are filled with burning , and there is no soundness in my flesh . Psa 38:8 I am feeble and crushed ; I groan because of the tumult of my heart . Psa 38:9 O Lord , all my longing is before you; my sighing is not hidden from you. Psa 38:10 My heart throbs ; my strength fails me, and the light of my eyes — it also has gone from me . Psa 38:11 My friends and companions stand aloof from my plague , and my nearest kin stand far off. Psa 38:12 Those who seek my life lay their snares ; those who seek my hurt speak of ruin and meditate treachery all day long. Psa 38:13 But I am like a deaf man; I do not hear , like a mute man who does not open his mouth . Psa 38:14 I have become like a man who does not hear , and in whose mouth are no rebukes . Psa 38:15 But for you, O Lord , do I wait ; it is you, O Lord my God , who will answer . Psa 38:16 For I said , “Only let them not rejoice over me, who boast against me when my foot slips !” Psa 38:17 For I am ready to fall , and my pain is ever before me. Psa 38:18 I confess my iniquity ; I am sorry for my sin . Psa 38:19 But my foes are vigorous , they are mighty , and many are those who hate me wrongfully . Psa 38:20 Those who render me evil for good accuse me because I follow after good . Psa 38:22 Make haste to help me, O Lord, my salvation!"
+  },
+  "1644": {
+   "passage_ref": "Psa 45:1-15",
+   "verse_refs": [
+    "Psa 45:1",
+    "Psa 45:2",
+    "Psa 45:3",
+    "Psa 45:4",
+    "Psa 45:5",
+    "Psa 45:6",
+    "Psa 45:7",
+    "Psa 45:8",
+    "Psa 45:9",
+    "Psa 45:10",
+    "Psa 45:11",
+    "Psa 45:12",
+    "Psa 45:13",
+    "Psa 45:14",
+    "Psa 45:15",
+    "Psa 45:17"
+   ],
+   "text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever ."
+  },
+  "1681": {
+   "passage_ref": "Psa 66:1-9",
+   "verse_refs": [
+    "Psa 66:1",
+    "Psa 66:2",
+    "Psa 66:3",
+    "Psa 66:4",
+    "Psa 66:5",
+    "Psa 66:6",
+    "Psa 66:7",
+    "Psa 66:8",
+    "Psa 66:9",
+    "Psa 66:10",
+    "Psa 66:11"
+   ],
+   "text": "To the choirmaster . A Song . A Psalm . Psa 66:1 Shout for joy to God , all the earth ; Psa 66:2 sing the glory of his name ; give to him glorious praise ! Psa 66:3 Say to God , “ How awesome are your deeds ! So great is your power that your enemies come cringing to you. Psa 66:4 All the earth worships you and sings praises to you; they sing praises to your name .” Selah Psa 66:5 Come and see what God has done: he is awesome in his deeds toward the children of man . Psa 66:6 He turned the sea into dry land ; they passed through the river on foot . There did we rejoice in him , Psa 66:7 who rules by his might forever , whose eyes keep watch on the nations — let not the rebellious exalt themselves. Selah Psa 66:8 Bless our God , O peoples ; let the sound of his praise be heard , Psa 66:9 who has kept our soul among the living and has not let our feet slip . Psa 66:10 For you, O God, have tested us; you have tried us as silver is tried. Psa 66:11 You brought us into the net ; you laid a crushing burden on our backs ;"
+  },
+  "1731": {
+   "passage_ref": "Psa 81:4-9",
+   "verse_refs": [
+    "Psa 81:4",
+    "Psa 81:5",
+    "Psa 81:6",
+    "Psa 81:7",
+    "Psa 81:8",
+    "Psa 81:9"
+   ],
+   "text": "Psa 81:4 For it is a statute for Israel , a rule of the God of Jacob . Psa 81:5 He made it a decree in Joseph when he went out over the land of Egypt . I hear a language I had not known : Psa 81:6 “I relieved your shoulder of the burden ; your hands were freed from the basket . Psa 81:7 In distress you called , and I delivered you; I answered you in the secret place of thunder ; I tested you at the waters of Meribah . Selah Psa 81:8 Hear , O my people , while I admonish you! O Israel , if you would but listen to me ! Psa 81:9 There shall be no strange god among you; you shall not bow down to a foreign god ."
+  },
+  "1740": {
+   "passage_ref": "Psa 86:9-17",
+   "verse_refs": [
+    "Psa 86:9",
+    "Psa 86:10",
+    "Psa 86:11",
+    "Psa 86:12",
+    "Psa 86:13",
+    "Psa 86:14",
+    "Psa 86:15",
+    "Psa 86:16",
+    "Psa 86:17"
+   ],
+   "text": "Psa 86:9 All the nations you have made shall come and worship before you, O Lord , and shall glorify your name . Psa 86:10 For you are great and do wondrous things ; you alone are God . Psa 86:11 Teach me your way , O Lord , that I may walk in your truth ; unite my heart to fear your name . Psa 86:12 I give thanks to you, O Lord my God , with my whole heart , and I will glorify your name forever . Psa 86:13 For great is your steadfast love toward me; you have delivered my soul from the depths of Sheol . Psa 86:14 O God , insolent men have risen up against me; a band of ruthless men seeks my life , and they do not set you before them . Psa 86:15 But you , O Lord , are a God merciful and gracious , slow to anger and abounding in steadfast love and faithfulness . Psa 86:16 Turn to me and be gracious to me; give your strength to your servant , and save the son of your maidservant . Psa 86:17 Show me a sign of your favor , that those who hate me may see and be put to shame because you , Lord , have helped me and comforted me ."
+  },
+  "1758": {
+   "passage_ref": "Psa 95:4-11",
+   "verse_refs": [
+    "Psa 95:4",
+    "Psa 95:5",
+    "Psa 95:6",
+    "Psa 95:7",
+    "Psa 95:8",
+    "Psa 95:9",
+    "Psa 95:10",
+    "Psa 95:11"
+   ],
+   "text": "Psa 95:4 In his hand are the depths of the earth ; the heights of the mountains are his also. Psa 95:5 The sea is his , for he made it, and his hands formed the dry land . Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker ! Psa 95:7 For he is our God , and we are the people of his pasture , and the sheep of his hand . Today , if you hear his voice , Psa 95:8 do not harden your hearts , as at Meribah , as on the day at Massah in the wilderness , Psa 95:9 when your fathers put me to the test and put me to the proof , though they had seen my work . Psa 95:10 For forty years I loathed that generation and said , “They are a people who go astray in their heart , and they have not known my ways .” Psa 95:11 Therefore I swore in my wrath , “They shall not enter my rest .”"
+  },
+  "1760": {
+   "passage_ref": "Psa 96:6-13",
+   "verse_refs": [
+    "Psa 96:6",
+    "Psa 96:7",
+    "Psa 96:8",
+    "Psa 96:9",
+    "Psa 96:10",
+    "Psa 96:11",
+    "Psa 96:12",
+    "Psa 96:13"
+   ],
+   "text": "Psa 96:6 Splendor and majesty are before him; strength and beauty are in his sanctuary . Psa 96:7 Ascribe to the Lord , O families of the peoples , ascribe to the Lord glory and strength ! Psa 96:8 Ascribe to the Lord the glory due his name ; bring an offering , and come into his courts ! Psa 96:9 Worship the Lord in the splendor of holiness ; tremble before him, all the earth ! Psa 96:10 Say among the nations , “The Lord reigns ! Yes , the world is established ; it shall never be moved ; he will judge the peoples with equity .” Psa 96:11 Let the heavens be glad , and let the earth rejoice ; let the sea roar , and all that fills it; Psa 96:12 let the field exult , and everything in it! Then shall all the trees of the forest sing for joy Psa 96:13 before the Lord , for he comes , for he comes to judge the earth . He will judge the world in righteousness , and the peoples in his faithfulness ."
+  },
+  "1762": {
+   "passage_ref": "Psa 97:5-12",
+   "verse_refs": [
+    "Psa 97:5",
+    "Psa 97:6",
+    "Psa 97:7",
+    "Psa 97:8",
+    "Psa 97:9",
+    "Psa 97:10",
+    "Psa 97:11",
+    "Psa 97:12"
+   ],
+   "text": "Psa 97:5 The mountains melt like wax before the Lord , before the Lord of all the earth . Psa 97:6 The heavens proclaim his righteousness , and all the peoples see his glory . Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods ! Psa 97:8 Zion hears and is glad , and the daughters of Judah rejoice , because of your judgments , O Lord . Psa 97:9 For you , O Lord , are most high over all the earth ; you are exalted far above all gods . Psa 97:10 O you who love the Lord , hate evil ! He preserves the lives of his saints ; he delivers them from the hand of the wicked . Psa 97:11 Light is sown for the righteous , and joy for the upright in heart . Psa 97:12 Rejoice in the Lord , O you righteous , and give thanks to his holy name !"
+  },
+  "1765": {
+   "passage_ref": "Psa 99:1-7",
+   "verse_refs": [
+    "Psa 99:1",
+    "Psa 99:2",
+    "Psa 99:3",
+    "Psa 99:4",
+    "Psa 99:5",
+    "Psa 99:6",
+    "Psa 99:7",
+    "Psa 99:8",
+    "Psa 99:9"
+   ],
+   "text": "Psa 99:1 The Lord reigns ; let the peoples tremble ! He sits enthroned upon the cherubim ; let the earth quake ! Psa 99:2 The Lord is great in Zion ; he is exalted over all the peoples . Psa 99:3 Let them praise your great and awesome name ! Holy is he ! Psa 99:4 The King in his might loves justice . You have established equity ; you have executed justice and righteousness in Jacob . Psa 99:5 Exalt the Lord our God ; worship at his footstool ! Holy is he ! Psa 99:6 Moses and Aaron were among his priests , Samuel also was among those who called upon his name . They called to the Lord , and he answered them . Psa 99:7 In the pillar of the cloud he spoke to them; they kept his testimonies and the statute that he gave them . Psa 99:8 O Lord our God, you answered them; you were a forgiving God to them, but an avenger of their wrongdoings. Psa 99:9 Exalt the Lord our God , and worship at his holy mountain ; for the Lord our God is holy !"
+  },
+  "1766": {
+   "passage_ref": "Psa 100:1-2",
+   "verse_refs": [
+    "Psa 100:1",
+    "Psa 100:2",
+    "Psa 100:3"
+   ],
+   "text": "A Psalm for giving thanks . Psa 100:1 Make a joyful noise to the Lord , all the earth ! Psa 100:2 Serve the Lord with gladness ! Come into his presence with singing ! Psa 100:3 Know that the Lord, he is God! It is he who made us, and we are his; we are his people, and the sheep of his pasture."
+  },
+  "1772": {
+   "passage_ref": "Psa 102:18-23",
+   "verse_refs": [
+    "Psa 102:18",
+    "Psa 102:19",
+    "Psa 102:20",
+    "Psa 102:21",
+    "Psa 102:22",
+    "Psa 102:23",
+    "Psa 102:26"
+   ],
+   "text": "Psa 102:18 Let this be recorded for a generation to come , so that a people yet to be created may praise the Lord : Psa 102:19 that he looked down from his holy height ; from heaven the Lord looked at the earth , Psa 102:20 to hear the groans of the prisoners , to set free those who were doomed to die , Psa 102:21 that they may declare in Zion the name of the Lord , and in Jerusalem his praise , Psa 102:22 when peoples gather together , and kingdoms , to worship the Lord . Psa 102:23 He has broken my strength in midcourse ; he has shortened my days . Psa 102:26 They will perish , but you will remain ; they will all wear out like a garment . You will change them like a robe , and they will pass away ,"
+  },
+  "1789": {
+   "passage_ref": "Psa 106:18-20",
+   "verse_refs": [
+    "Psa 106:18",
+    "Psa 106:19",
+    "Psa 106:20",
+    "Psa 106:21"
+   ],
+   "text": "Psa 106:18 Fire also broke out in their company ; the flame burned up the wicked . Psa 106:19 They made a calf in Horeb and worshiped a metal image . Psa 106:20 They exchanged the glory of God for the image of an ox that eats grass . Psa 106:21 They forgot God, their Savior, who had done great things in Egypt,"
+  },
+  "1791": {
+   "passage_ref": "Psa 106:38-48",
+   "verse_refs": [
+    "Psa 106:36",
+    "Psa 106:38",
+    "Psa 106:39",
+    "Psa 106:40",
+    "Psa 106:41",
+    "Psa 106:42",
+    "Psa 106:43",
+    "Psa 106:44",
+    "Psa 106:45",
+    "Psa 106:46",
+    "Psa 106:47",
+    "Psa 106:48"
+   ],
+   "text": "Psa 106:36 They served their idols , which became a snare to them. Psa 106:38 they poured out innocent blood , the blood of their sons and daughters , whom they sacrificed to the idols of Canaan , and the land was polluted with blood . Psa 106:39 Thus they became unclean by their acts , and played the whore in their deeds . Psa 106:40 Then the anger of the Lord was kindled against his people , and he abhorred his heritage ; Psa 106:41 he gave them into the hand of the nations , so that those who hated them ruled over them . Psa 106:42 Their enemies oppressed them, and they were brought into subjection under their power . Psa 106:43 Many times he delivered them, but they were rebellious in their purposes and were brought low through their iniquity . Psa 106:44 Nevertheless, he looked upon their distress , when he heard their cry . Psa 106:45 For their sake he remembered his covenant , and relented according to the abundance of his steadfast love . Psa 106:46 He caused them to be pitied by all those who held them captive . Psa 106:47 Save us, O Lord our God , and gather us from among the nations , that we may give thanks to your holy name and glory in your praise . Psa 106:48 Blessed be the Lord , the God of Israel , from everlasting to everlasting ! And let all the people say , “ Amen !” Praise the Lord ! Book Five"
+  },
+  "1797": {
+   "passage_ref": "Psa 107:37-43",
+   "verse_refs": [
+    "Psa 107:36",
+    "Psa 107:37",
+    "Psa 107:38",
+    "Psa 107:39",
+    "Psa 107:40",
+    "Psa 107:41",
+    "Psa 107:42",
+    "Psa 107:43"
+   ],
+   "text": "Psa 107:36 And there he lets the hungry dwell, and they establish a city to live in; Psa 107:37 they sow fields and plant vineyards and get a fruitful yield . Psa 107:38 By his blessing they multiply greatly , and he does not let their livestock diminish . Psa 107:39 When they are diminished and brought low through oppression , evil , and sorrow , Psa 107:40 he pours contempt on princes and makes them wander in trackless wastes ; Psa 107:41 but he raises up the needy out of affliction and makes their families like flocks . Psa 107:42 The upright see it and are glad , and all wickedness shuts its mouth . Psa 107:43 Whoever is wise , let him attend to these things; let them consider the steadfast love of the Lord ."
+  },
+  "1798": {
+   "passage_ref": "Psa 108:1-8",
+   "verse_refs": [
+    "Psa 108:1",
+    "Psa 108:2",
+    "Psa 108:3",
+    "Psa 108:4",
+    "Psa 108:5",
+    "Psa 108:6",
+    "Psa 108:7",
+    "Psa 108:8",
+    "Psa 108:9"
+   ],
+   "text": "A Song . A Psalm of David . Psa 108:1 My heart is steadfast , O God ! I will sing and make melody with all my being ! Psa 108:2 Awake , O harp and lyre ! I will awake the dawn ! Psa 108:3 I will give thanks to you, O Lord , among the peoples ; I will sing praises to you among the nations . Psa 108:4 For your steadfast love is great above the heavens ; your faithfulness reaches to the clouds . Psa 108:5 Be exalted , O God , above the heavens ! Let your glory be over all the earth ! Psa 108:6 That your beloved ones may be delivered , give salvation by your right hand and answer me ! Psa 108:7 God has promised in his holiness : “With exultation I will divide up Shechem and portion out the Valley of Succoth . Psa 108:8 Gilead is mine; Manasseh is mine; Ephraim is my helmet , Judah my scepter . Psa 108:9 Moab is my washbasin; upon Edom I cast my shoe; over Philistia I shout in triumph.”"
+  },
+  "1850": {
+   "passage_ref": "Psa 132:4-14",
+   "verse_refs": [
+    "Psa 132:4",
+    "Psa 132:5",
+    "Psa 132:6",
+    "Psa 132:7",
+    "Psa 132:8",
+    "Psa 132:9",
+    "Psa 132:10",
+    "Psa 132:11",
+    "Psa 132:12",
+    "Psa 132:13",
+    "Psa 132:14",
+    "Psa 132:15"
+   ],
+   "text": "Psa 132:4 I will not give sleep to my eyes or slumber to my eyelids , Psa 132:5 until I find a place for the Lord , a dwelling place for the Mighty One of Jacob .” Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar . Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !” Psa 132:8 Arise , O Lord , and go to your resting place , you and the ark of your might . Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy . Psa 132:10 For the sake of your servant David , do not turn away the face of your anointed one. Psa 132:11 The Lord swore to David a sure oath from which he will not turn back : “One of the sons of your body I will set on your throne . Psa 132:12 If your sons keep my covenant and my testimonies that I shall teach them, their sons also forever shall sit on your throne .” Psa 132:13 For the Lord has chosen Zion ; he has desired it for his dwelling place : Psa 132:14 “ This is my resting place forever ; here I will dwell , for I have desired it . Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread."
+  },
+  "1863": {
+   "passage_ref": "Psa 138:1-3",
+   "verse_refs": [
+    "Psa 138:1",
+    "Psa 138:2",
+    "Psa 138:3",
+    "Psa 138:4"
+   ],
+   "text": "Of David . Psa 138:1 I give you thanks , O Lord , with my whole heart ; before the gods I sing your praise ; Psa 138:2 I bow down toward your holy temple and give thanks to your name for your steadfast love and your faithfulness , for you have exalted above all things your name and your word . Psa 138:3 On the day I called , you answered me; my strength of soul you increased . Psa 138:4 All the kings of the earth shall give you thanks, O Lord, for they have heard the words of your mouth,"
+  }
+ },
+ "meanings": [
+  {
+   "char_key": "H7812:worship",
+   "meaning": "worship",
+   "lemma": "H7812",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 9,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hithpael",
+    "morph_codes": "HVti1cp, HVti3mp, HVtv2mp, HVvu3mp, HVvv2mp, HVvw3mp",
+    "esv_words": "worship, worships, Worship, worshiped",
+    "lexical_gloss": "to bow",
+    "read_sense_variants": "worship (shachah) | worship / bow down (shachah - all the earth worships you)"
+   },
+   "instances": [
+    {
+     "span_id": 269630,
+     "reference": "Psa 106:19",
+     "hebrew_surface": "worshiped",
+     "esv_word": "worshiped",
+     "morphology": {
+      "morph_code": "HVvw3mp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1789,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:19 They made a calf in Horeb and worshiped a metal image .",
+     "passage_id": 1789,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "a metal image",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v19: 'and WORSHIPED (shachah) a metal image' - the calf-worship at Horeb, the exchange of the living God for an idol.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with exchanging the glory",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 272979,
+     "reference": "Psa 132:7",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVti1cp HSp3ms",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1850,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !”",
+     "passage_id": 1850,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at God's footstool",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'Let us go to his dwelling place; let us WORSHIP (shachah) at his footstool!' - the operation of homage: the people bowing at the place of God's presence.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the resting-place of the ark",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 281344,
+     "reference": "Psa 66:4",
+     "hebrew_surface": "worships",
+     "esv_word": "worships",
+     "morphology": {
+      "morph_code": "HVti3mp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship / bow down (shachah - all the earth worships you)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1681,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 66:4 All the earth worships you and sings praises to you; they sing praises to your name .” Selah",
+     "passage_id": 1681,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship / bow down (shachah - all the earth worships you)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "before God's awesome deeds (v3)",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all the earth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship / bow down",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with singing praises to his name",
+       "item_type": "pair",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'All the earth WORSHIPS (shachah) you and sings praises to you' — universal homage before God's awesome deeds (the qualifier); shachah here the bowing of all creation to God - worship as the whole earth's fitting posture",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 103,
+       "label": "source",
+       "item_type": "pair",
+       "from_span": "281344",
+       "to_span": "281335",
+       "direction": null,
+       "resolution": "span"
+      },
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281344",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281344",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "pair",
+       "from_span": "281344",
+       "to_span": "281345",
+       "direction": null,
+       "resolution": "span"
+      }
+     ]
+    },
+    {
+     "span_id": 284378,
+     "reference": "Psa 86:9",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVvu3mp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1740,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 86:9 All the nations you have made shall come and worship before you, O Lord , and shall glorify your name .",
+     "passage_id": 1740,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all the nations",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with glorifying his name",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'All the nations... shall come and WORSHIP (shachah) before you' - the homage of the peoples, worship as the destiny of the nations.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285490,
+     "reference": "Psa 95:6",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVti1cp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker !",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship / bow",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'Oh come, let us WORSHIP (shachah) and bow down' - the reverent prostration before God, worship as homage.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with bowing and kneeling",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285614,
+     "reference": "Psa 96:9",
+     "hebrew_surface": "Worship",
+     "esv_word": "Worship",
+     "morphology": {
+      "morph_code": "HVtv2mp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1760,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 96:9 Worship the Lord in the splendor of holiness ; tremble before him, all the earth !",
+     "passage_id": 1760,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "all the earth",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the LORD in holy splendour",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'WORSHIP (shachah) the LORD in the splendour of holiness' - the reverent prostration before the holy God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with trembling before him",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285692,
+     "reference": "Psa 97:7",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVtv2mp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1762,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods !",
+     "passage_id": 1762,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the gods / all",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'WORSHIP (shachah) him, all you gods!' - the call for every power to bow to God, worship due him alone.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the idolaters shamed",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285825,
+     "reference": "Psa 99:5",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVvv2mp HSp1bp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1765,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 99:5 Exalt the Lord our God ; worship at his footstool ! Holy is he !",
+     "passage_id": 1765,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at God's footstool",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'WORSHIP (shachah) at his footstool!' - the prostration before God, reverence at his holy place.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with exalting God",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 285854,
+     "reference": "Psa 99:9",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVvv2mp HSp1bp",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "worship (shachah)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1765,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 99:9 Exalt the Lord our God , and worship at his holy mountain ; for the Lord our God is holy !",
+     "passage_id": 1765,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at God's holy mountain",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'and WORSHIP (shachah) at his holy mountain' - the reverent worship at Zion, homage to the holy God.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with exalting God",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5647:serv",
+   "meaning": "Serve",
+   "lemma": "H5647",
+   "cluster": {
+    "code": "M36",
+    "name": "Service",
+    "all_candidates": "M36(Service)"
+   },
+   "instance_count": 4,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqi3ms, HVqv2mp, HVqw3mp",
+    "esv_words": "Serve, serve, served",
+    "lexical_gloss": "to serve; to serve: minister; to serve: labour; to serve: burden",
+    "read_sense_variants": "serve (abad) | serve the LORD with fear | posterity shall serve and proclaim"
+   },
+   "instances": [
+    {
+     "span_id": 268783,
+     "reference": "Psa 100:2",
+     "hebrew_surface": "Serve",
+     "esv_word": "Serve",
+     "morphology": {
+      "morph_code": "HVqv2mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "serve (abad)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1766,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 100:2 Serve the Lord with gladness ! Come into his presence with singing !",
+     "passage_id": 1766,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "serve (abad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "serve",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the LORD with gladness",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'SERVE (abad) the LORD with gladness!' - the glad service of God, worship as joyful obedience.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with gladness and singing",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 269722,
+     "reference": "Psa 106:36",
+     "hebrew_surface": "served",
+     "esv_word": "served",
+     "morphology": {
+      "morph_code": "HVqw3mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "serve (abad)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1791,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 106:36 They served their idols , which became a snare to them.",
+     "passage_id": 1791,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "serve (abad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "serve",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "their idols",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v36: 'They SERVED (abad) their idols, which became a snare to them' - the idolatry that trapped the people.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the idols that snared them",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 275757,
+     "reference": "Psa 22:30",
+     "hebrew_surface": "serve",
+     "esv_word": "serve",
+     "morphology": {
+      "morph_code": "HVqi3ms",
+      "stem": "Qal"
+     },
+     "read_characteristic": "posterity shall serve and proclaim",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1610,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 22:30 Posterity shall serve him; it shall be told of the Lord to the coming generation ;",
+     "passage_id": 1610,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "posterity shall serve and proclaim",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "posterity",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "posterity shall serve God; it shall be told of the Lord to a coming generation, who proclaim his righteousness - the praise carried forward in time",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "generational-service",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "posterity-serves",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v30-31: 'Posterity shall SERVE him... they shall PROCLAIM his righteousness to a people yet unborn' - the operation extends the vindication into the future: unborn generations will serve and tell.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 276502,
+     "reference": "Psa 2:11",
+     "hebrew_surface": "Serve",
+     "esv_word": "Serve",
+     "morphology": {
+      "morph_code": "HVqv2mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "serve the LORD with fear",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1575,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 2:11 Serve the Lord with fear , and rejoice with trembling .",
+     "passage_id": 1575,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "serve the LORD with fear",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the kings",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the prudent response: to serve the LORD in fear - reverent submission replacing revolt",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "reverent-service",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "serve-in-fear",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v11: 'SERVE the LORD with FEAR' - the interior reorients from casting-off to serving; fear here is the fitting posture of the once-rebellious before the king.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7812:bowdown",
+   "meaning": "bow down",
+   "lemma": "H7812",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 2,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hithpael",
+    "morph_codes": "HVti1cs, HVti2ms",
+    "esv_words": "bow down",
+    "lexical_gloss": "to bow",
+    "read_sense_variants": "bow down (shachah, forbidden) | bow down (shachah)"
+   },
+   "instances": [
+    {
+     "span_id": 273316,
+     "reference": "Psa 138:2",
+     "hebrew_surface": "bow down",
+     "esv_word": "bow down",
+     "morphology": {
+      "morph_code": "HVti1cs",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "bow down (shachah)",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1863,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 138:2 I bow down toward your holy temple and give thanks to your name for your steadfast love and your faithfulness , for you have exalted above all things your name and your word .",
+     "passage_id": 1863,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bow down (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "bow down",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "toward the holy temple",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'I BOW DOWN (shachah) toward your holy temple' - the prostration of worship, the body enacting the thanks.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with giving thanks to God's name",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    },
+    {
+     "span_id": 283879,
+     "reference": "Psa 81:9",
+     "hebrew_surface": "bow down",
+     "esv_word": "bow down",
+     "morphology": {
+      "morph_code": "HVti2ms",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "bow down (shachah, forbidden)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1731,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 81:9 There shall be no strange god among you; you shall not bow down to a foreign god .",
+     "passage_id": 1731,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bow down (shachah, forbidden)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "you (Israel)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "bow down",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to a foreign god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the ban on the strange god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'you shall not BOW DOWN (shachah) to a foreign god' - the worship forbidden, exclusive allegiance the first demand.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5401:kis",
+   "meaning": "Kiss",
+   "lemma": "H5401",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "Kiss",
+    "lexical_gloss": "to kiss; to handle",
+    "read_sense_variants": "kiss the Son"
+   },
+   "instances": [
+    {
+     "span_id": 276507,
+     "reference": "Psa 2:12",
+     "hebrew_surface": "Kiss",
+     "esv_word": "Kiss",
+     "morphology": {
+      "morph_code": "HVpv2mp",
+      "stem": "Piel"
+     },
+     "read_characteristic": "kiss the Son",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1575,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 2:12 Kiss the Son , lest he be angry , and you perish in the way , for his wrath is quickly kindled . Blessed are all who take refuge in him .",
+     "passage_id": 1575,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kiss the Son",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the kings",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the act of homage: to kiss the Son, submission embodied, lest wrath be kindled",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "homage",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "kiss-the-son",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'KISS the Son, lest he be angry' - the interior submission takes outward form; the once-conspiring will now does homage.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3519:being",
+   "meaning": "being",
+   "lemma": "H3519",
+   "cluster": {
+    "code": "M22",
+    "name": "Praise",
+    "all_candidates": "M22(Praise)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'worship-prostration-service' expects cluster M36(Service), but the term-cluster is M22(Praise)",
+   "evidence": {
+    "stems": null,
+    "morph_codes": "HNcbsc",
+    "esv_words": "being",
+    "lexical_gloss": "glory",
+    "read_sense_variants": "being (kabod)"
+   },
+   "instances": [
+    {
+     "span_id": 270083,
+     "reference": "Psa 108:1",
+     "hebrew_surface": "being",
+     "esv_word": "being",
+     "morphology": {
+      "morph_code": "HNcbsc",
+      "stem": ""
+     },
+     "read_characteristic": "being (kabod)",
+     "position": {
+      "word_index": 10,
+      "passage_id": 1798,
+      "is_passage_anchor": true,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "A Song . A Psalm of David . Psa 108:1 My heart is steadfast , O God ! I will sing and make melody with all my being !",
+     "passage_id": 1798,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "being (kabod)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship with the whole self",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "toward God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'with all my BEING (kabod)!' - the whole self, glory and soul, engaged in praise, nothing held back.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the heart and singing",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7812:bow",
+   "meaning": "bow",
+   "lemma": "H7812",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": "T2(Supplementary)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Hithpael",
+    "morph_codes": "HVvv2fs",
+    "esv_words": "bow",
+    "lexical_gloss": "to bow",
+    "read_sense_variants": "bow down / do homage (shachah)"
+   },
+   "instances": [
+    {
+     "span_id": 278898,
+     "reference": "Psa 45:11",
+     "hebrew_surface": "bow",
+     "esv_word": "bow",
+     "morphology": {
+      "morph_code": "HVvv2fs HSp2fs",
+      "stem": "Hithpael"
+     },
+     "read_characteristic": "bow down / do homage (shachah)",
+     "position": {
+      "word_index": 6,
+      "passage_id": 1644,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him .",
+     "passage_id": 1644,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bow down / do homage (shachah)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the bride",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "bow / do homage",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the king (her lord)",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Since he is your lord, BOW (shachah) to him' — the bride's homage to the king; shachah (recurs Ps29:2 of worship) here the reverent submission owed to her lord, the posture of the queen toward the king",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278898",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278898",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H3766:bowdown",
+   "meaning": "bow down",
+   "lemma": "H3766",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "bow down",
+    "lexical_gloss": "to bow",
+    "read_sense_variants": "bow down (kara)"
+   },
+   "instances": [
+    {
+     "span_id": 285491,
+     "reference": "Psa 95:6",
+     "hebrew_surface": "bow down",
+     "esv_word": "bow down",
+     "morphology": {
+      "morph_code": "HVqc1cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "bow down (kara)",
+     "position": {
+      "word_index": 2,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker !",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bow down (kara)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "bow down",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'let us WORSHIP and BOW DOWN (kara)' - the bending of the body in reverence, humility before the Maker.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with worshipping",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5753:bow",
+   "meaning": "bowed",
+   "lemma": "H5753",
+   "cluster": {
+    "code": "M10",
+    "name": "Sin",
+    "all_candidates": "M10(Sin)"
+   },
+   "instance_count": 1,
+   "is_outlier": true,
+   "outlier_note": "meaning-family 'worship-prostration-service' expects cluster M36(Service), but the term-cluster is M10(Sin)",
+   "evidence": {
+    "stems": "Niphal",
+    "morph_codes": "HVNp1cs",
+    "esv_words": "bowed",
+    "lexical_gloss": "to twist; to pervert",
+    "read_sense_variants": "utterly bowed down, mourning all day"
+   },
+   "instances": [
+    {
+     "span_id": 277984,
+     "reference": "Psa 38:6",
+     "hebrew_surface": "bowed",
+     "esv_word": "bowed",
+     "morphology": {
+      "morph_code": "HVNp1cs",
+      "stem": "Niphal"
+     },
+     "read_characteristic": "utterly bowed down, mourning all day",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1635,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 38:6 I am utterly bowed down and prostrate; all the day I go about mourning .",
+     "passage_id": 1635,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "utterly bowed down, mourning all day",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self is utterly bowed down and prostrate; all the day it goes about mourning - a whole day bent under grief",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "prostration",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "bowed-and-mourning",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'I am utterly BOWED DOWN and prostrate; all the day I go about MOURNING' - the operation is the body folded by grief; the interior's mourning bends the whole frame.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7817:broughtlow",
+   "meaning": "brought low",
+   "lemma": "H7817",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "brought low",
+    "lexical_gloss": "to bow",
+    "read_sense_variants": "brought low (shachach)"
+   },
+   "instances": [
+    {
+     "span_id": 270007,
+     "reference": "Psa 107:39",
+     "hebrew_surface": "brought low",
+     "esv_word": "brought low",
+     "morphology": {
+      "morph_code": "HVqw3mp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "brought low (shachach)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1797,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 107:39 When they are diminished and brought low through oppression , evil , and sorrow ,",
+     "passage_id": 1797,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "brought low (shachach)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the people",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be brought low",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "through oppression",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v39: 'When they are diminished and BROUGHT LOW (shachach)' - the abasement of the people through affliction.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with sorrow",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H1288:kneel",
+   "meaning": "kneel",
+   "lemma": "H1288",
+   "cluster": {
+    "code": "M39",
+    "name": "Blessing",
+    "all_candidates": "M39(Blessing)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqc1cp",
+    "esv_words": "kneel",
+    "lexical_gloss": "to bless",
+    "read_sense_variants": "kneel (barak)"
+   },
+   "instances": [
+    {
+     "span_id": 285492,
+     "reference": "Psa 95:6",
+     "hebrew_surface": "kneel",
+     "esv_word": "kneel",
+     "morphology": {
+      "morph_code": "HVqc1cp",
+      "stem": "Qal"
+     },
+     "read_characteristic": "kneel (barak)",
+     "position": {
+      "word_index": 3,
+      "passage_id": 1758,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 95:6 Oh come , let us worship and bow down ; let us kneel before the Lord , our Maker !",
+     "passage_id": 1758,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kneel (barak)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the worshippers",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "kneel",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before the LORD our Maker",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'let us KNEEL (barak) before the LORD our Maker!' - the kneeling of worship, creatures before their creator.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with bowing down",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H7364:wash",
+   "meaning": "wash",
+   "lemma": "H7364",
+   "cluster": {
+    "code": null,
+    "name": null,
+    "all_candidates": null
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": null,
+    "morph_codes": null,
+    "esv_words": "wash",
+    "lexical_gloss": "to wash: wash",
+    "read_sense_variants": "wash my hands in innocence"
+   },
+   "instances": [
+    {
+     "span_id": 276164,
+     "reference": "Psa 26:6",
+     "hebrew_surface": "wash",
+     "esv_word": null,
+     "morphology": {
+      "morph_code": "HVqi1cs",
+      "stem": "Qal"
+     },
+     "read_characteristic": "wash my hands in innocence",
+     "position": {
+      "word_index": 0,
+      "passage_id": 1615,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 26:6 I wash my hands in innocence and go around your altar , O Lord ,",
+     "passage_id": 1615,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "wash my hands in innocence",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self washes its hands in innocence and goes around the altar - approaching worship with a cleansed conscience",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "ritual-purity",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "wash-in-innocence",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'I WASH my hands in INNOCENCE and go around your altar, O LORD' - the operation is a deliberate purification before drawing near; clean conscience as the ticket to the altar.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5647:worship",
+   "meaning": "worship",
+   "lemma": "H5647",
+   "cluster": {
+    "code": "M36",
+    "name": "Service",
+    "all_candidates": "M36(Service)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqcc",
+    "esv_words": "worship",
+    "lexical_gloss": "to serve; to serve: minister; to serve: labour; to serve: burden",
+    "read_sense_variants": "worship (abad)"
+   },
+   "instances": [
+    {
+     "span_id": 268998,
+     "reference": "Psa 102:22",
+     "hebrew_surface": "worship",
+     "esv_word": "worship",
+     "morphology": {
+      "morph_code": "HVqcc HR",
+      "stem": "Qal"
+     },
+     "read_characteristic": "worship (abad)",
+     "position": {
+      "word_index": 4,
+      "passage_id": 1772,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 102:22 when peoples gather together , and kingdoms , to worship the Lord .",
+     "passage_id": 1772,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worship (abad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "peoples and kingdoms",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship / serve",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the LORD",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v22: 'and kingdoms, to WORSHIP (abad) the LORD' - the nations gathering to serve God, worship widened to all peoples.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the gathering of peoples",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "char_key": "H5647:worshiper",
+   "meaning": "worshipers",
+   "lemma": "H5647",
+   "cluster": {
+    "code": "M36",
+    "name": "Service",
+    "all_candidates": "M36(Service)"
+   },
+   "instance_count": 1,
+   "is_outlier": false,
+   "evidence": {
+    "stems": "Qal",
+    "morph_codes": "HVqrmpc",
+    "esv_words": "worshipers",
+    "lexical_gloss": "to serve; to serve: minister; to serve: labour; to serve: burden",
+    "read_sense_variants": "worshipers of images (abad)"
+   },
+   "instances": [
+    {
+     "span_id": 285687,
+     "reference": "Psa 97:7",
+     "hebrew_surface": "worshipers",
+     "esv_word": "worshipers",
+     "morphology": {
+      "morph_code": "HVqrmpc",
+      "stem": "Qal"
+     },
+     "read_characteristic": "worshipers of images (abad)",
+     "position": {
+      "word_index": 1,
+      "passage_id": 1762,
+      "is_passage_anchor": false,
+      "genre": "poetic/wisdom"
+     },
+     "verse_text": "Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods !",
+     "passage_id": 1762,
+     "lexical": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "worshipers of images (abad)",
+       "item_type": "value"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "item_type": "value"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "idolaters",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "worship images",
+       "item_type": "event"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "instead of God",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "item_type": "flag"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "item_type": "flag",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'All WORSHIPERS (abad) of images are put to shame' - those who serve carved gods, false devotion exposed and confounded.",
+       "item_type": "note"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "item_type": "value"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being put to shame",
+       "item_type": "value"
+      }
+     ],
+     "edges": [
+      {
+       "on_dimension": 105,
+       "label": "bearer",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 107,
+       "label": "target",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred"
+      },
+      {
+       "on_dimension": 112,
+       "label": "coupling",
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
