@@ -1,170 +1,1865 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 5,
-  "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read of Psalm 5 (21 chars). God-portrait (delights-not/hate/abhor) vs wicked (boastful/deceit/inmost-destruction/rebel); rov chesed v7 vs rov pesha v10; joy-cluster; aheb love God's name. Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "280696": {"gloss":"pray (v2, 'to you do I pray')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"pray / intercede (palal)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":280696,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"pray"},{"n":107,"l":"target","k":"pair","v":"you (my King and my God)","from":280696,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"prayer (palal) to 'my King and my God' — the morning approach; the whole psalm framed as prayer to the sovereign"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280705": {"gloss":"delights (v4, 'not a God who delights in wickedness')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"delight / take pleasure (chaphets)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":280705,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"wickedness (delight in it — negated)","from":280705,"to":280706,"res":"span"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":113,"l":"prohibition","k":"flag","v":"negated ('not a God who delights in wickedness')"},{"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"God does NOT DELIGHT (chaphets) in wickedness — the divine character defined negatively; same delight-root as Ps1:2 (delight in law): God's pleasure is incompatible with evil"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280706": {"gloss":"wickedness (v4)", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"wickedness (resha)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"object God will not delight in","from":280706,"to":280705,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing"},
-      {"n":114,"l":"discovery","k":"note","v":"wickedness (resha) as what God cannot delight in / evil that 'may not dwell' with him — the moral reality excluded from the divine presence"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280710": {"gloss":"boastful (v5, 'the boastful shall not stand before your eyes')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"boastful / arrogant (halal = boast here)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the boastful class)","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing"},
-      {"n":114,"l":"discovery","k":"note","v":"the BOASTFUL (holelim) cannot stand before God — arrogance/self-exaltation shut out of the divine presence; halal here = boast (distinct from Ps78:63 marriage-song and from praise-halal)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280716": {"gloss":"hate (v5, 'you hate all evildoers')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"hate (sane)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":280716,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"all evildoers","from":280716,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"God HATES (sane) all evildoers — active divine antipathy to evil, not neutrality; God's inner-being response to wickedness (part of the vv4-6 portrait)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280723": {"gloss":"abhors (v6, 'the LORD abhors the bloodthirsty and deceitful')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"abhor / detest (ta'av)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":280723,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"abhor"},{"n":107,"l":"target","k":"pair","v":"the bloodthirsty and deceitful man","from":280723,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"the LORD ABHORS (ta'av) the violent-deceitful — stronger than hate; divine loathing of bloodshed and treachery; the climax of the God-portrait (destroys liars, abhors murderers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280725": {"gloss":"deceitful (v6)", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"deceit / treachery (mirmah)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the deceitful man)","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing"},
-      {"n":114,"l":"discovery","k":"note","v":"deceit (mirmah) paired with bloodthirst as what God abhors — treachery a defining mark of the wicked, the opposite of the truth God requires (cf v9 'no truth in their mouth')"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280729": {"gloss":"steadfast love (v7, 'the abundance of your steadfast love')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"steadfast love / covenant mercy (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your chesed)","to":280729,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"in abundance (rov)","to":280729,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"God's ABUNDANT chesed as the GROUND of access — 'through the abundance (rov) of your steadfast love I will enter your house'; not merit but covenant love grants entry. Pairs antithetically with 'abundance (rov) of their transgressions' (v10)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280736": {"gloss":"fear (v7, 'bow down... in the fear of you')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"reverent fear / awe (yirah)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":280736,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the register of bowing (bow in fear)","from":280736,"to":280732,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"worship 'in the FEAR of you' (yirah) — reverent awe as the posture of entering God's house; same reverent-fear as Ps2:11 (serve with fear); access by chesed met by reverence, not presumption"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280739": {"gloss":"righteousness (v8, 'lead me in your righteousness')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah — God's)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your righteousness)","to":280739,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"God's RIGHTEOUSNESS as the PATH — 'lead me in your righteousness because of my enemies'; asked to be guided in God's own right way (cf Ps23:3 paths of righteousness); a straight way against the enemies' crookedness"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280750": {"gloss":"destruction (v9, 'their inmost self is destruction')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"destruction / engulfing ruin (havvot)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies (their inmost self)","to":280750,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"striking INTERIOR reading: the enemies' INMOST SELF is DESTRUCTION (havvot) — their inner being is ruin/engulfing calamity, matching the lying mouth / open-grave throat / flattering tongue; the outside speech reveals the inside"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280661": {"gloss":"guilt (v10, 'make them bear their guilt')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"bear guilt / be held guilty (asham)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":280661,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"bear guilt (imprecation to God)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"the imprecation 'make them BEAR their GUILT' (asham) — appeal for God's just condemnation of the deceitful; guilt as the deserved verdict on their rebellion"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280667": {"gloss":"transgressions (v10, 'the abundance of their transgressions')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"transgression / revolt (pesha)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies (their transgressions)","to":280667,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"in abundance (rov)","to":280667,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing"},
-      {"n":114,"l":"discovery","k":"note","v":"the ABUNDANCE (rov) of their transgressions (pesha, willful revolt) justifying their casting out — ANTITHESIS to v7 'abundance (rov) of your steadfast love': the two 'abundances' are the psalm's poles, chesed vs pesha"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280669": {"gloss":"rebelled (v10, 'they have rebelled against you')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"rebel (marah)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":280669,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"rebel"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":280669,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"rebellion (marah) against GOD as the root of guilt — 'they have rebelled against YOU'; the offense is ultimately against God, not just the psalmist (marah, the wilderness-rebellion lemma, cf Ps78)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280672": {"gloss":"take refuge (v11, 'all who take refuge in you')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all the refuge-seekers","to":280672,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":280672,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"joined to 'rejoice'","from":280672,"to":280673,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"taking REFUGE (chasah) in God — same lemma as Ps2:12 ('blessed who take refuge in him'); the refuge-seekers rejoice, the exact opposite of the cast-out rebels (v10). Refuge vs rebellion"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280673": {"gloss":"rejoice (v11)", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"rejoice / be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280673,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"rejoice"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with take-refuge / sing-for-joy","from":280673,"to":280675,"res":"span"},
-      {"n":114,"l":"discovery","k":"note","v":"the refuge-seekers REJOICE (samach) — joy as response to God's protection; part of the closing joy-cluster (rejoice/sing/exult), the glad opposite of the destroyed enemies"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280675": {"gloss":"sing for joy (v11, 'let them ever sing for joy')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"sing / shout for joy (ranan)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280675,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"sing for joy"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"forever (ever)","from":280674,"to":280675,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"with rejoice","from":280675,"to":280673,"res":"span"},
-      {"n":114,"l":"discovery","k":"note","v":"singing for joy (ranan) FOREVER — sustained jubilation of the protected; ranan here = the worshipers' joy-cry (cf Ps78:65 God's battle-shout, different bearer); enduring praise as the fruit of refuge"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280677": {"gloss":"love (v11, 'those who love your name')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"love (aheb)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the refuge-seekers","to":280677,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"your name","from":280677,"to":280679,"res":"span"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"those who LOVE (aheb) God's NAME — rightly-ordered love directed to God (contrast Ps4:2 'love vanity'; cf Ps78:68 God's love for Zion); the object (God's name) sets the valence; love as the mark of the blessed"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280680": {"gloss":"exult (v11, 'may exult in you')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"exult / rejoice (alats)"},{"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who love God's name","to":280680,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"exult"},{"n":107,"l":"target","k":"pair","v":"in you (God)","from":280680,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"issues from love","from":280680,"to":280677,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"exulting (alats) IN God — the culmination of the joy-cluster; the God-lovers' exultation terminates on God himself, not merely his gifts"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280683": {"gloss":"righteous (v12, 'you bless the righteous')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the righteous class)","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"the RIGHTEOUS (tsaddiq) whom God BLESSES — the closing assurance; righteousness the disposition God favors (cf Ps1:5-6), the blessed opposite of the abhorred wicked (vv4-6)"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "280687": {"gloss":"favor (v12, 'you cover him with favor as with a shield')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"favor / goodwill / acceptance (ratson)"},{"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your favor)","to":280687,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god"},
-      {"n":114,"l":"discovery","k":"note","v":"God's FAVOR (ratson) as a surrounding SHIELD — the righteous encircled with divine goodwill; favor as protection (cf Ps3:3 shield); the psalm closes with enveloping favor answering the enemies' hostility"},{"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 5,
+ "provenance": "reread-psalms-2026",
+ "note": "Morning prayer: groaning/prayer/watching, worship in fear, longing for the straight way, enemies' deceit, refuge-joy",
+ "spans": {
+  "280660": {
+   "gloss": "groaning God is asked to consider",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "groaning God is asked to consider"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 280660,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self brings a groaning too deep for words, asking God to give heed to it - pre-verbal distress"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "groaning",
+     "to": 280660,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "consider-my-groaning",
+     "to": 280660,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Give ear to my words, O LORD; consider my GROANING' - the interior's first offering is not eloquence but a groan; it asks to be understood beneath the words."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280696": {
+   "gloss": "directed morning prayer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "directed morning prayer"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 280696,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the groaning becomes directed prayer - the cry of the king lifted specifically to God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "supplication",
+     "to": 280696,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "pray-to-you",
+     "to": 280696,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Give attention to the sound of my cry, my King and my God, for to you do I PRAY' - the interior shapes its distress into address, praying to a named king."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280702": {
+   "gloss": "prepare and watch at dawn",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prepare and watch at dawn"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 280702,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "in the morning the self orders its prayer like a sacrifice and then watches - expectant discipline"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "expectant-waiting",
+     "to": 280702,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "prepare-and-watch",
+     "to": 280702,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'in the morning I PREPARE a sacrifice for you and WATCH' - the operation is disciplined expectancy: the prayer laid out at dawn, then the alert waiting for an answer."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280730": {
+   "gloss": "enter to bow in the fear of God",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enter to bow in the fear of God"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 280730,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "borne by God's steadfast love, the self enters the house and bows toward the temple in reverent fear"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "reverent-worship",
+     "to": 280730,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bow-in-fear",
+     "to": 280730,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'through the abundance of your steadfast love I will ENTER your house; I will BOW DOWN toward your holy temple in the FEAR of you' - the interior approaches worship not on its own merit but on God's love, and the posture is fear."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280744": {
+   "gloss": "longing for the straightened way",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "longing for the straightened way"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 280744,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks to be led in righteousness and have the way made straight before it - the desire for a clear path amid foes"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "desire-for-guidance",
+     "to": 280744,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "make-way-straight",
+     "to": 280744,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'Lead me in your righteousness because of my enemies; make your WAY STRAIGHT before me' - the interior longs not just for rescue but for a level, unambiguous path through the enemies' terrain."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280756": {
+   "gloss": "enemies' grave-throated deceit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enemies' grave-throated deceit"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the enemies",
+     "to": 280756,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "their mouth has no truth, their throat an open grave, their tongue flatters - deceit is their inward reality"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "deceit",
+     "to": 280756,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "flattering-tongue",
+     "to": 280756,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'there is no truth in their MOUTH... their throat is an open grave; they FLATTER with their TONGUE' - the enemies' interior is read as radically false; the smooth speech masks a death-dealing inside."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280669": {
+   "gloss": "the enemies have rebelled",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the enemies have rebelled"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the enemies",
+     "to": 280669,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "they have rebelled against God, so the self asks God to let them fall by their own counsels - revolt as their bent"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "rebellion",
+     "to": 280669,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "rebelled-against-God",
+     "to": 280669,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'cast them out, for they have REBELLED against you' - beneath the deceit the deeper diagnosis: their interior is set against God himself; their treachery to the psalmist is really revolt against God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280672": {
+   "gloss": "the joy of those who take refuge",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the joy of those who take refuge"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who take refuge",
+     "to": 280672,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "all who take refuge in God rejoice and ever sing for joy under his protection - shelter blossoming into song"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "refuge-joy",
+     "to": 280672,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "refuge-and-sing",
+     "to": 280672,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'let all who TAKE REFUGE in you REJOICE; let them ever SING for joy' - over against the rebellious enemies, the interior of the sheltering is glad and vocal."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280677": {
+   "gloss": "those who love your name exult",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "those who love your name exult"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who love the name",
+     "to": 280677,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "those who love God's name exult in him - love of the name overflowing into exultation"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "name-love",
+     "to": 280677,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "love-and-exult",
+     "to": 280677,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'and those who LOVE your NAME may EXULT in you' - read distinct from refuge-joy: this joy springs specifically from love of who God is (his name), not only from being sheltered."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "280659": {
+   "gloss": "consider (bin)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "consider (bin)"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280660,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'CONSIDER my groaning' - the divine heed the groaning asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280699": {
+   "gloss": "hear my voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hear my voice"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280702,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'O LORD, in the morning you HEAR my voice' - the hearing the watching waits on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280705": {
+   "gloss": "delights not in wickedness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delights not in wickedness"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280669,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'you are not a God who DELIGHTS in wickedness' - God's character that dooms the rebels."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280716": {
+   "gloss": "hates evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hates evildoers"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280669,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'you HATE all evildoers' - the divine aversion the enemies fall under."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280723": {
+   "gloss": "abhors the bloodthirsty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "abhors the bloodthirsty"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280669,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'the LORD ABHORS the bloodthirsty and deceitful man' - God's revulsion at the enemies' deceit."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280737": {
+   "gloss": "Lead me in righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Lead me in righteousness"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280744,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'LEAD me, O LORD, in your righteousness' - the guiding act the longing asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280682": {
+   "gloss": "bless the righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bless the righteous"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280672,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'you BLESS the righteous, O LORD' - the favour crowning those who rejoice in refuge."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280685": {
+   "gloss": "cover with favour",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cover with favour"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 280672,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'you COVER him with FAVOUR as with a shield' - the protection under which they sing."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "280656": {
+   "gloss": "Give ear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Give ear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Give ear' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280661": {
+   "gloss": "guilt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "guilt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'guilt' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280663": {
+   "gloss": "fall",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fall"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'fall' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280664": {
+   "gloss": "counsels",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counsels"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'counsels' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280667": {
+   "gloss": "transgressions",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgressions"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'transgressions' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280668": {
+   "gloss": "cast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cast"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'cast' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280673": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'rejoice' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280674": {
+   "gloss": "ever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'ever' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280675": {
+   "gloss": "sing for joy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sing for joy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'sing for joy' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280676": {
+   "gloss": "protection",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "protection"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'protection' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280679": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'name' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280680": {
+   "gloss": "exult",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exult"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'exult' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280683": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'righteous' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280687": {
+   "gloss": "favor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "favor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'favor' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280689": {
+   "gloss": "Give attention",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Give attention"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Give attention' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280690": {
+   "gloss": "sound",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sound"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'sound' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280691": {
+   "gloss": "cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'cry' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280700": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'voice' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280703": {
+   "gloss": "watch",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "watch"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'watch' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280706": {
+   "gloss": "wickedness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wickedness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'wickedness' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280707": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'evil' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280710": {
+   "gloss": "boastful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "boastful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'boastful' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280718": {
+   "gloss": "evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evildoers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'evildoers' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280721": {
+   "gloss": "lies",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lies"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'lies' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280724": {
+   "gloss": "bloodthirsty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bloodthirsty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'bloodthirsty' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280725": {
+   "gloss": "deceitful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deceitful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'deceitful' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280729": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'steadfast love' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280731": {
+   "gloss": "house",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "house"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'house' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280732": {
+   "gloss": "bow down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bow down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'bow down' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280733": {
+   "gloss": "holy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'holy' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280734": {
+   "gloss": "temple",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "temple"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'temple' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280736": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'fear' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280739": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'righteousness' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280743": {
+   "gloss": "way",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "way"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'way' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280748": {
+   "gloss": "mouth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mouth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'mouth' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280750": {
+   "gloss": "destruction",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "destruction"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'destruction' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280751": {
+   "gloss": "throat",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "throat"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'throat' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280753": {
+   "gloss": "grave",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "grave"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'grave' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "280755": {
+   "gloss": "flatter",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "flatter"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'flatter' - substrate (house/temple/grave/shield imagery or enemy-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

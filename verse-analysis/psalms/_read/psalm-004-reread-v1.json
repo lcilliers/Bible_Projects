@@ -1,211 +1,1496 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 4,
-  "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read of Psalm 4 (16 characteristics). Poetic mandatory ledger 101,102,104,105,106,107,108,112 + optional 109/110/113/116 + 114 discovery + 115 role. source(103)/effect(111) = Phase-2 chapter-level (not per-span). Pair endpoints = span-ids. Directions: bearer/seat/manner: counterpart->char; target/coupling: char->counterpart. resolution: span|inferred|unknown|none.",
-  "verse_ids_by_num": {"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null,"8":null},
-  "spans": {
-    "279421": {"gloss":"righteousness (v1, 'God of my righteousness')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"righteousness (vindicated cause / right standing)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs suffix 'my')","to":279421,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded to God (construct 'God of my righteousness')","from":279421,"to":279420,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"ground-of-appeal: the psalmist's vindicated cause invoked as the basis on which he asks God to answer"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279424": {"gloss":"gracious (v1, 'be gracious to me')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"be gracious / show favour"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"God (addressee of the imperative)","to":279424,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"be gracious (chanan, imperative plea)"},
-      {"n":107,"l":"target","k":"pair","v":"the psalmist (1cs 'to me')","from":279424,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"grace sought as gift: the psalmist can only ask, not command God's favour; paired with 'hear my prayer'"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279431": {"gloss":"honor (v2, 'my honor turned to shame')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"honor / glory / dignity"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'my honor')","to":279431,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"honor under assault by the men; the honor->shame movement is a Phase-2 transition (recorded at chapter level, not per-span)"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279432": {"gloss":"shame (v2, honor 'turned into shame')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"shame / disgrace / humiliation"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (his honor becomes his shame)","to":279432,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"CORRECTS prior mechanical error (shame wrongly paired as 'manner-of love'/'welds love'); shame is the threatened terminus of honor, not a qualifier of love"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279433": {"gloss":"love (v2, 'love vainness / seek lies')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"love / set affection on"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the men (bene ish, 'you' 2mp)","from":279428,"to":279433,"res":"span"},
-      {"n":106,"l":"operation","k":"event","v":"love (aheb, disordered affection)"},
-      {"n":107,"l":"target","k":"pair","v":"vainness / empty words (riq)","from":279433,"to":279434,"res":"span"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing (love directed at emptiness)"},
-      {"n":114,"l":"discovery","k":"note","v":"disordered love: the object (vainness) sets the valence; love of emptiness twinned with seeking lies"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279438": {"gloss":"know (v3, 'know that the LORD has set apart the godly')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"know / recognise"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the men / addressees (2mp imperative)","to":279438,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"know (summoned cognition)"},
-      {"n":107,"l":"target","k":"pair","v":"the fact that the LORD has set apart the godly (clause object)","from":279438,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"redirect of the inner life: from loving vanity (v2) to knowing God's action (v3) — knowing as re-orientation"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279441": {"gloss":"godly (v3, 'set apart the godly for himself')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"godly / covenant-faithful (chasid)"},
-      {"n":102,"l":"type","k":"value","v":"quality"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the godly person (the chasid himself)","to":279441,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"CORRECTS prior bearer=Lord (nearest-proper error): the LORD *sets apart* the godly; godliness is borne by the chasid, and is the ground of his being set apart for God"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279448": {"gloss":"angry (v4, 'be angry, and do not sin')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"be angry / agitated / tremble (ragaz)"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the addressees (2mp imperative)","to":279448,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"be angry / agitated"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":114,"l":"discovery","k":"note","v":"permitted-but-bounded agitation: 'be angry yet sin not' — the affection is allowed, its overflow into sin forbidden (pairs with sin's prohibition)"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279449": {"gloss":"sin (v4, 'do not sin')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"sin / miss the mark (chata)"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the addressees (2mp)","to":279449,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"sin (jussive, negated)"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":113,"l":"prohibition","k":"flag","v":"forbidden (al + jussive: 'do NOT sin')"},
-      {"n":114,"l":"discovery","k":"note","v":"the boundary on anger: sin is the forbidden overflow; the prohibition is the key reading"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279451": {"gloss":"hearts (v4, 'ponder in your own hearts on your beds')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"heart(s) (levav)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"heart (self — this span is the seat)","to":279451,"res":"span"},
-      {"n":105,"l":"bearer","k":"pair","v":"the addressees (2mp 'your hearts')","to":279451,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"ponder / speak within (amar) — the operation seated in the heart"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded (be-) to ponder — 'in your heart'","from":279451,"to":279450,"res":"span"},
-      {"n":114,"l":"discovery","k":"note","v":"CORRECTS prior 'manner-of ponder'; the heart is the CHAMBER of nocturnal self-examination (ponder in-heart, on-bed, then be silent) — seat, not manner"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279457": {"gloss":"right (v5, 'offer right sacrifices' = sacrifices of righteousness)", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq, of true worship)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the worshippers (addressees)","to":279457,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":110,"l":"specifier","k":"pair","v":"specifies the sacrifices (construct 'sacrifices of righteousness')","from":279457,"to":279458,"res":"span"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded (construct) to sacrifices","from":279457,"to":279458,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"righteousness as the qualifier of true worship — right offerings (inner rightness) vs the empty words/lies of v2"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279459": {"gloss":"trust (v5, 'put your trust in the LORD')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"trust / rely (batach)"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the addressees (2mp)","to":279459,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"trust / rely"},
-      {"n":107,"l":"target","k":"pair","v":"the LORD (el-YHWH, 'trust IN the LORD')","from":279459,"to":279460,"res":"span"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:god (trust directed to the LORD)"},
-      {"n":114,"l":"discovery","k":"note","v":"the commanded reorientation: from self/vanity to trust anchored in the LORD — the positive counter to v2"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279462": {"gloss":"joy (v7, 'more joy in my heart')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"joy / gladness (simchah)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"heart (put 'in my heart')","from":279463,"to":279462,"res":"span"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'my heart')","to":279462,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":109,"l":"intensity","k":"value","v":"comparative-greater ('more...than' their grain and wine abound)"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"God-given joy exceeding harvest-joy: joy sourced in God surpasses the circumstantial gladness of abundance (grain/wine)"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279463": {"gloss":"heart (v7, seat of the God-given joy)", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"heart (lev)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"heart (self — this span is the seat)","to":279463,"res":"span"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'my heart')","to":279463,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"holds the joy put in it","from":279463,"to":279462,"res":"span"},
-      {"n":114,"l":"discovery","k":"note","v":"CORRECTS prior 'manner-of put/welds put'; the heart is the SEAT/container of the God-given joy, not the manner of the putting"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279470": {"gloss":"peace (v8, 'in peace I will lie down and sleep')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"peace / wholeness (shalom)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'I will lie down')","to":279470,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded (be- 'in peace') to lie-down","from":279470,"to":279472,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"peace as the ground of untroubled rest — able to lie down AND sleep because at peace; the security is God-given (v8 'you alone make me dwell')"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "279478": {"gloss":"safety (v8, 'you make me dwell in safety')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"safety / security (betach)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'make ME dwell')","to":279478,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded (la- 'in safety') to dwell","from":279478,"to":279477,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"CORRECTS prior bearer=Lord (nearest-proper): the LORD makes the psalmist dwell; the safety is the psalmist's, and its sole source is God ('you alone')"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 4,
+ "provenance": "reread-psalms-2026",
+ "note": "Evening psalm: call, disciplined anger, heart-searching, trust, God-given joy, peaceful sleep",
+ "spans": {
+  "279419": {
+   "gloss": "call on the God of righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "call on the God of righteousness"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 279419,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls to the God who has given relief in past distress - appeal grounded in remembered rescue"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "appeal",
+     "to": 279419,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "call-for-relief",
+     "to": 279419,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Answer me when I CALL, O God of my righteousness! You have given me relief in distress' - the interior appeals on the basis of a God who has widened the narrow place before."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279433": {
+   "gloss": "men love vanity, seek lies",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "men love vanity, seek lies"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the men",
+     "to": 279433,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the sons of men turn honour to shame because they love empty things and chase after lies - misdirected desire"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "misdirected-love",
+     "to": 279433,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "love-vanity",
+     "to": 279433,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'How long will you love VAIN words and seek after LIES?' - the operation diagnosed in the opponents is a disordered affection: the interior fastened on emptiness."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279438": {
+   "gloss": "know the LORD sets apart the godly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "know the LORD sets apart the godly"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 279438,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "settled knowledge that God has set apart the godly for himself and hears their call - assurance against the slander"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "assurance",
+     "to": 279438,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "know-set-apart",
+     "to": 279438,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'KNOW that the LORD has set apart the godly for himself; the LORD hears when I call' - against the men who shame him, the interior rests on being God's own."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279448": {
+   "gloss": "be angry and do not sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "be angry and do not sin"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 279448,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "anger is permitted but fenced - to feel it without letting it spill into sin, the passion disciplined"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "disciplined-anger",
+     "to": 279448,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "angry-not-sin",
+     "to": 279448,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'Be ANGRY, and do not SIN' - the operation is the governing of a strong emotion: not its suppression but its restraint short of wrongdoing."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279450": {
+   "gloss": "ponder in your heart, be silent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ponder in your heart, be silent"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 279450,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the counsel to search the heart on the bed and be still - reflective interior quiet"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "self-examination",
+     "to": 279450,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "ponder-and-still",
+     "to": 279450,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'PONDER in your own hearts on your beds, and be SILENT' - the interior is sent inward and hushed; night-time self-searching as the cure for restless anger."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279459": {
+   "gloss": "trust in the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust in the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 279459,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "after right sacrifices, the call to put trust in the LORD - reliance placed where offerings point"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "entrustment",
+     "to": 279459,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "put-trust",
+     "to": 279459,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'Offer right sacrifices, and put your TRUST in the LORD' - the interior is directed past ritual to reliance; the sacrifices mean nothing without the trust."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "305977": {
+   "gloss": "the many who crave 'some good'",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the many who crave 'some good'"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the many",
+     "to": 305977,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the crowd's restless question - who will show us any good? - a diffuse craving for benefit"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "restless-craving",
+     "to": 305977,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "who-shows-good",
+     "to": 305977,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'There are many who say, Who will show us some GOOD?' - the interior of the many is a vague, unanchored hunger for good, contrasted with the psalmist's located joy."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279462": {
+   "gloss": "joy greater than harvest",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "joy greater than harvest"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 279462,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "God has put more joy in the heart than the abundance of grain and wine gives - inner gladness surpassing plenty"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "surpassing-joy",
+     "to": 279462,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "joy-over-harvest",
+     "to": 279462,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'You have put more JOY in my HEART than they have when their grain and wine abound' - the operation is a gladness located in God that outweighs the best material happiness."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279472": {
+   "gloss": "in peace lie down and sleep",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "in peace lie down and sleep"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 279472,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self lies down and sleeps in peace, God alone making it dwell in safety - rest as trust's fruit"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "peaceful-rest",
+     "to": 279472,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "sleep-in-safety",
+     "to": 279472,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'In PEACE I will both lie down and SLEEP; for you alone, O LORD, make me dwell in safety' - the evening closes as Ps 3's morning did: sleep is the body's confession of security in God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "279422": {
+   "gloss": "gave relief in distress",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gave relief in distress"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 279419,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'you have GIVEN me RELIEF in distress' - the past rescue the call leans on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "279425": {
+   "gloss": "hear my prayer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hear my prayer"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 279419,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'be gracious to me and HEAR my prayer' - the divine hearing sought."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "279440": {
+   "gloss": "set apart the godly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "set apart the godly"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 279438,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'the LORD has SET APART the godly for himself' - the election the assurance rests on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "279443": {
+   "gloss": "hears when I call",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hears when I call"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 279438,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'the LORD HEARS when I call to him' - God's attentiveness undergirding the assurance."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "305978": {
+   "gloss": "lift the light of your face",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lift the light of your face"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 279462,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'LIFT UP the light of your face upon us' - the blessing whose granting is the source of the surpassing joy."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "279420": {
+   "gloss": "God",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "God"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'God' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279421": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'righteousness' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279423": {
+   "gloss": "distress",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "distress"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'distress' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279424": {
+   "gloss": "gracious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gracious"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'gracious' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279427": {
+   "gloss": "prayer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prayer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'prayer' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279428": {
+   "gloss": "men",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "men"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'men' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279431": {
+   "gloss": "honor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "honor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'honor' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279432": {
+   "gloss": "shame",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shame"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'shame' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279434": {
+   "gloss": "vain",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "vain"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'vain' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279435": {
+   "gloss": "seek",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'seek' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279436": {
+   "gloss": "lies",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lies"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'lies' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279441": {
+   "gloss": "godly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "godly"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'godly' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279445": {
+   "gloss": "call",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "call"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'call' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279449": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'sin' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279451": {
+   "gloss": "hearts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hearts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'hearts' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279454": {
+   "gloss": "silent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "silent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'silent' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279456": {
+   "gloss": "Offer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Offer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'Offer' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279457": {
+   "gloss": "right",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "right"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'right' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279458": {
+   "gloss": "sacrifices",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sacrifices"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'sacrifices' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279460": {
+   "gloss": "Lord",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Lord"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'Lord' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279463": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'heart' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279470": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'peace' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279473": {
+   "gloss": "sleep",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sleep"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'sleep' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279477": {
+   "gloss": "dwell",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dwell"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'dwell' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "279478": {
+   "gloss": "safety",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "safety"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'safety' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "305979": {
+   "gloss": "light",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "light"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'light' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "305980": {
+   "gloss": "face",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "face"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'face' - substrate (sacrifice/face/light imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }
