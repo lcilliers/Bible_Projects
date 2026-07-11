@@ -10,9 +10,7 @@ Usage examples:
 
     python -m engine.engine --register --word="sorrow" --source="High Confidence"
 
-    python -m engine.engine --mode=new_word --registry=42 --terms=H0015,H0016
-    python -m engine.engine --mode=new_word --registry=42 --terms=H0015 --dry-run
-    python -m engine.engine --mode=new_word --registry=42 --terms=H0015 --force
+    # NOTE: new_word mode RETIRED 2026-07-11 (replaced; was not correct — do not reintroduce).
 
     python -m engine.engine --mode=gap_fill                        (bulk — all Pending words)
     python -m engine.engine --mode=gap_fill  --streams=S1,S2        (bulk — selected stages only)
@@ -51,7 +49,6 @@ from .db import get_connection, get_schema_version
 from .migrate import run_migrations, check_version
 from .backup import pre_migration_backup, pre_run_backup, post_run_backup
 from .register import run_register, run_clear_lock, check_stale_locks
-from .new_word import run_new_word
 from .gap_fill import run_gap_fill, run_bulk_gap_fill
 from .audit_word import run_audit_word
 from .report import print_word_report
@@ -80,7 +77,7 @@ def _build_parser() -> argparse.ArgumentParser:
                             help="Report current schema version + engine control tables")
     mode_group.add_argument("--register",    action="store_true",
                             help="Register a new word in word_registry")
-    mode_group.add_argument("--mode",        choices=["new_word", "gap_fill", "audit_word"],
+    mode_group.add_argument("--mode",        choices=["gap_fill", "audit_word"],
                             help="Engine mode to run")
     mode_group.add_argument("--report",      action="store_true",
                             help="Print word overview report")
@@ -102,8 +99,6 @@ def _build_parser() -> argparse.ArgumentParser:
                     help="Extra output for migrations and diagnostics")
     ap.add_argument("--db",       metavar="PATH",
                     help="Path to SQLite database (defaults to analytics/bible_research.db)")
-    ap.add_argument("--pause",    action="store_true",
-                    help="Pause at key checkpoints for manual verification (new_word mode)")
     ap.add_argument("--add-book-code", metavar="SOURCE=OSIS",
                     help='Register a book name alias (e.g. --add-book-code "Psalms=Ps")')
 
@@ -111,9 +106,7 @@ def _build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--to", metavar="MXX",
                     help="Stop migration at this step (e.g. --to=M05)")
 
-    # ── --mode=new_word options ───────────────────────────────────────────────
-    ap.add_argument("--terms", metavar="H1234,G5678",
-                    help="Comma-separated Strong's numbers for --mode=new_word")
+    # (--terms / --pause removed 2026-07-11 with the retired new_word mode)
 
     # ── --mode=gap_fill options ───────────────────────────────────────────────
     ap.add_argument("--streams", metavar="S3,S4",
@@ -315,21 +308,7 @@ def main() -> int:
             print(f"[ERROR] --mode={args.mode} requires --registry=N", file=sys.stderr)
             return 1
 
-        if args.mode == "new_word":
-            if not args.terms:
-                print("[ERROR] --mode=new_word requires --terms=H1234,G5678", file=sys.stderr)
-                return 1
-            strongs_list = [t.strip() for t in args.terms.split(",") if t.strip()]
-            if not args.dry_run:
-                pre_run_backup(f"NEW_WORD-reg{args.registry}")
-            result = run_new_word(
-                conn, args.registry, strongs_list,
-                dry_run=args.dry_run, force=args.force,
-                pause=args.pause,
-            )
-            if not args.dry_run and result["outcome"] in ("COMPLETE", "PARTIAL"):
-                post_run_backup(f"NEW_WORD-reg{args.registry}")
-            return 0 if result["outcome"] in ("COMPLETE", "PARTIAL", "DRY_RUN") else 1
+        # new_word mode RETIRED 2026-07-11 — dispatch removed with the module.
 
         if args.mode == "gap_fill":
             streams = [s.strip() for s in args.streams.split(",")] if args.streams else None

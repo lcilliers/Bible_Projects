@@ -1769,7 +1769,7 @@ def run_audit_word(
             else:
                 return _stop(
                     f"A2: Structural data missing: {'; '.join(stop_reasons)}. "
-                    "Run --mode=new_word or check source data."
+                    "Check source data (Step 1 JSON)."
                 )
 
     # ── A3: Load Step 1 JSON ──────────────────────────────────────────────────
