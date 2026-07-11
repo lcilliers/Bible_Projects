@@ -61,6 +61,12 @@ Per unit (chapter/passage), in order:
 | **integrity sweep** | query per unit: `missing-dims / unroled / God-bearer / G9b` | **all must be 0** before commit |
 | bank | `git add -A && git commit` (the finisher may self-commit — Issue #7) | incremental, per batch |
 
+### 3a. MANDATORY per-book close steps (never skip — added 2026-07-11)
+After a book's units are read, before it is called done, run — and they are enforced as integrity invariants I10/I11/I7 (`wa-db-integrity-definition-authoritative-v1`):
+1. **Char-on-master + emergent seed feedback** — `scripts/_apply_charfix_master_v1_20260711.py --book-id N`: stamps `char_candidate=1` on any span that emerged as a characteristic without a seed flag (writes their lemmas to a `char-seed-extension-*` file for the next seed run) **and** populates `verse_span_index.characteristic` (the read char in words, from ve_lexical sense 101). **No characteristic may exist without a candidate flag (I10) or without its char on the master (I11).**
+2. **Rebuild the normalised index** — `scripts/_apply_build_ib_char_index_v1_20260711.py --book-id N`: (re)builds `ib_characteristic` (lemma-grain: char_key/key_word/key_span_id/operation/ledger/instance_count) from master+lexical and links every char-span via `verse_span_index.ib_char_id` (I7). **This runs on every book.**
+3. **Full integrity check** — I1–I11 must pass (per-book), not just the ledger gates.
+
 - **`Reading` API:** `r = Reading("Psa", book_id, chapter, note=...)`; `r.ch(sid, sense, typ, bearer, op, target, coupling, locus, disc)`; `r.qu(sid, sense, src_char_sid, disc)`; `r.st(sid, sense, disc)`; `r.write()`.
 - **Auto-standalone fallback** (for imagery/instrument/label-heavy units): after listing explicit chars + quals, sweep remaining candidate spans → standalone with a **surface-anchored** discovery note. Guarantees coverage while keeping notes honest. Use for hymnic/nature/theophany units (Ps 29/148/150 pattern).
 - **Provenance stamped:** `verse_span_index.role_provenance='read-2026'`, `ve_lexical.source_provenance='reread-<book>-2026'`, `verse.process_marker='reread-<book>-2026'`.
@@ -81,6 +87,9 @@ Per unit (chapter/passage), in order:
 | **6** | **Filename/loop slip** — `_tmp_ps09.py` vs the 3-digit `_tmp_ps009.py` silently skipped Ps 9 in a shell loop. | **Zero-pad chapter to 3 digits** in every builder filename and JSON path (`psalm-0NN`, `_tmp_psNNN`). The batch coverage check is the backstop that catches any silent skip — **always run it over the whole batch.** |
 | **7** | **git "nothing to commit"** after a unit. | Not an error — `_reread_finish` may **self-commit**. A redundant follow-up commit correctly sees a clean tree. |
 | **8** | **Slow ~670MB DB snapshot** on each `_apply_*`. | The reread apply already passes `--no-backup`; keep it on loop/batch runs (memory `feedback_pre_op_db_snapshots_prune_or_skip`). |
+| **9** | **Emergent chars not fed back to the seed** — 403 spans became `role='characteristic'` with no `char_candidate` flag; the "dynamic seed" never grew. | **Invariant I10:** every characteristic is a candidate. §3a step 1 stamps emergents + writes their lemmas to a `char-seed-extension-*` file the seed **must** consume next run. Check `role=characteristic AND char_candidate IS NULL = 0`. |
+| **10** | **The read char lived only in the lexical, never on the master** — "the char" was discussed for weeks but never captured in the DB where it belongs. | **Invariant I11:** `verse_span_index.characteristic` (the read char in words) populated for every char-span. §3a step 1. Check `role=characteristic AND characteristic IS NULL = 0`. |
+| **11** | **The read never fed the characteristic model** — 2,168 instances unlinked to any normalised characteristic. | **Invariant I7 + §3a step 2:** rebuild `ib_characteristic` and set `verse_span_index.ib_char_id` on **every** book run. Check `ib_char_id IS NULL = 0`. |
 
 ---
 

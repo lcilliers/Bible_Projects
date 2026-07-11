@@ -14,14 +14,20 @@
 | **I4 Passage membership** | Every verse carrying a characteristic span has a `passage_id` resolving to a `passage` row. | per-book method (b) | char-spans whose verse has NULL/dangling `passage_id` = 0 |
 | **I5 Ledger completeness** | Every characteristic span carries its full genre-mandatory ledger (M set + 114 discovery + 115 role + 116 locus); every mandatory dimension **explicitly stated** (`none` written, not omitted). | reread process doc §2; G10 | missing-dim chars = 0; ZERO-dim = none |
 | **I6 Role screen** | `role ∈ {characteristic, qualifier, standalone}` with `role_provenance` stamped; **no characteristic span has God as bearer (105)** (IB-screen). | Screen 0; `wa-ib-relevance-screen-correction` | God-bearer chars = 0; unroled candidates = 0 |
-| **I7 Characteristic-model linkage** | Every characteristic span links to a **defined characteristic** in the characteristic table (the many-instances → one-defined-characteristic connection). | current direction (2026-07-11): "working towards defined characteristics" | char-spans not linked to a characteristic = 0 · ***clause + structure finalised with the characteristic-table restructure (see the (b) plan); until that is approved this invariant is DECLARED-PENDING, not yet enforceable*** |
+| **I7 Characteristic-model linkage** | Every characteristic span links (`verse_span_index.ib_char_id`) to a normalised record in `ib_characteristic`. | direction 2026-07-11; built M66 | char-spans with `ib_char_id IS NULL` = 0 · **ENFORCEABLE** as of M66 |
+| **I10 Candidate flag** | Every span roled `characteristic` has `char_candidate=1` (no characteristic exists that was not a candidate; emergent chars are stamped + fed to the seed extension). | 2026-07-11 emergent-403 failure | role=characteristic AND char_candidate IS NULL = 0 |
+| **I11 Char-on-master** | Every characteristic span has its read char in words on the master (`verse_span_index.characteristic`, from ve_lexical sense 101). | 2026-07-11 ("the char must live on the master") | role=characteristic AND characteristic IS NULL/'' = 0 |
 | **I8 Soft-delete consistency** | `delete_flagged` applied consistently; no active row depends on a soft-deleted parent; pair endpoints (`from_span`/`to_span`) reference live spans. | soft-delete model; `_check_softdelete_integrity` | 0 active-on-deleted |
 | **I9 Provenance** | Provenance stamps present + consistent per dataset (`role_provenance`, `ve_lexical.source_provenance`, `verse.process_marker`). | reread process doc §3 | 0 missing/mismatched |
 
 ## Rules of use
-1. **"Integrity-clean" means ALL of I1–I9 pass** for the scope claimed. A subset (e.g. I5+I6, the step-(c) ledger gates) is **not** integrity — name it precisely ("ledger-clean", not "full integrity").
-2. **Book-close (step e) requires I1–I9 = pass.** No book is "done" on the ledger read (step c) alone.
+1. **"Integrity-clean" means ALL of I1–I11 pass** for the scope claimed. A subset (e.g. I5+I6, the step-(c) ledger gates) is **not** integrity — name it precisely ("ledger-clean", not "full integrity").
+2. **Book-close (step e) requires I1–I11 = pass.** No book is "done" on the ledger read (step c) alone.
 3. **One check runs them all:** a single per-book integrity script (extend `_integrity_full_check.py` → `_check_book_integrity_v1`) reports each invariant's violation count. Every write that is "integrity-gated" runs it pre + post and expects no new violation.
-4. **Report violations with counts, never a bare "clean."** (2026-07-11 baseline for Psalms: I2 = 261, I4 = 18, I7 = 2,168-unlinked, others pass.)
+4. **Report violations with counts, never a bare "clean."**
 
-*Filed 2026-07-11. Authoritative for what "DB integrity" means. Subordinate only to the researcher's direction. I7's enforceable form depends on the characteristic-table restructure being approved.*
+## Status per invariant — Psalms, 2026-07-11
+- **PASS:** I5, I6, I7 (M66), I8, I9, **I10** (403 fixed), **I11** (2,168 populated).
+- **OUTSTANDING (repair pending):** **I2 = 261** master-index orphans (engine onboarding, step d); **I4 = 18** passage-less spans. I1/I3 depend on I2 being closed.
+
+*Filed 2026-07-11. Updated same day (M66) to make I7 enforceable and add I10/I11. Authoritative for what "DB integrity" means. Subordinate only to the researcher's direction.*
