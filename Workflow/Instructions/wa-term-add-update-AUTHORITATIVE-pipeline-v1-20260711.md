@@ -1,5 +1,7 @@
 # Adding / updating a term — AUTHORITATIVE pipeline (v1)
 
+> *Entry point for **adding/updating a term** in the authoritative pipeline set — spine: `wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md` (§7C(a)); validations: `wa-db-integrity-definition-authoritative-v1`.*
+>
 > **READ THIS before any term work. It is THE source. Do not reconstruct it from source-file headers, memory, or the retired modules.** Every field below was read from the live engine code (`engine/register.py`, `engine/audit_word.py`, `engine/db.py`) on 2026-07-11. Supersedes any contrary bit in the `audit_word.py` header, CLAUDE.md §4, or older docs.
 >
 > **RETIRED — do not use, do not reintroduce:** `new_word.py` (deleted 2026-07-11), `gap_fill.py` (superseded). The one and only pipeline is below.

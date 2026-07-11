@@ -1,5 +1,7 @@
 # DB integrity — AUTHORITATIVE DEFINITION (v1)
 
+> *The **validations** (I1–I11) of the authoritative pipeline set — spine: `wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md` (§7C(d) completion = these checks).*
+>
 > **Why this exists:** "DB integrity" was used repeatedly (including by me) without ever being defined — which let ledger-completeness be reported as "full integrity" when 261 characteristic spans were master-index orphans and 18 had no passage. This document **defines** integrity for the verse-analysis / reread data, derived from the **schema** (declared FKs + the bypass-link model) and the **stated expectations** (per-book corrective method step (e); passage-completeness-rule-v2). It is the target that step (e) and any "integrity-clean" claim must be measured against. **v1 — open to researcher correction; version-bump on change.**
 >
 > Grounding facts (verified 2026-07-11): declared FKs — `ve_lexical.verse_span_id→verse_span_index.id`, `ve_lexical.verse_context_id→verse_context.id`, `wa_verse_records.{verse_id→verse, book_id→books, term_inv_id→wa_term_inventory, file_id→wa_file_index}`. `verse_span_index` and `verse` declare no FKs (bypass-link model, memory `reference_file_index_legacy_use_bypass_fks`). Master index = `wa_verse_records` (term ↔ span ↔ verse).
