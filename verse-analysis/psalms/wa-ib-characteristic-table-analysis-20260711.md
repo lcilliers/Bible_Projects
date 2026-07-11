@@ -1,5 +1,7 @@
 # `ib_characteristic` — table analysis (Psalms normalised index)
 
+> **⚠ SUPERSEDED IN PART (2026-07-11, same day):** this analyses the **v2 lemma-grain** index (502 records), which was found to **merge distinct meanings of one word** (§5a). The table was subsequently **re-keyed to meaning-in-context** — `(base-lemma, ESV rendering)`, 877 records — per cycle doc §7D v3 (builder `_apply_rebuild_ib_char_meaning_keyed_v3_20260711.py`). §1–§4 frequency/seat-vs-operation observations still hold at the *word* level; §5a (homograph merge) and §5e (family) are the problems the re-key addresses. Read this for provenance; the live grain is v3.
+>
 > Generated 2026-07-11 from `database/bible_research.db`. The table was rebuilt this session (§7D of the cycle doc) as the **normalised characteristic index**: one record per characteristic **word** (base Strong's), gathering all its read char-spans. This is an analysis of what the 502 Psalms records reveal — the observations, and the scenarios (both analytical opportunities and data-quality issues) that fall out of it.
 
 ## 0. Shape (verified)
