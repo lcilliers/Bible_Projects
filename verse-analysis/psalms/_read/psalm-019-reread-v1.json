@@ -1,28 +1,1393 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 19, "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read Ps19 (24 chars). Two witnesses: creation (kavod glory, daath knowledge, sus joy, sathar nothing-hidden) + Torah (tamim reviving nefesh, chakam wise, samach rejoicing lev, yirah clean, emeth/tsadeq true) -> personal coda: sin-gradation sathar/zed/pesha, and meditation of lev be ratson-acceptable to God the gaal. sathar bridges the halves (v6 sun exposes all -> v12 hidden faults). Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "275239": {"gloss":"glory v1","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - of God)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (declared by the heavens)","to":275239,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The heavens declare the GLORY (kavod) of God' — creation as the wordless herald of divine glory; kavod = the weighty splendour the skies proclaim, the first witness of the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275295": {"gloss":"knowledge v2","dims":[{"n":101,"l":"sense","k":"value","v":"knowledge (daath)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"night to night (creation)","to":275295,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'night to night reveals KNOWLEDGE (daath)' — creation's ceaseless teaching; daath = the knowledge of God the ordered cosmos pours out, wordless yet instructing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275310": {"gloss":"joy v5","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / exult (sus)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the sun (like a strong man)","to":275310,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice / exult"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"running its course","to":275310,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the sun 'like a strong man runs its course with JOY (sus)' — creation's exultation personified; sus = the glad vigour of the sun-runner, joy woven into the created order's obedience"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306144": {"gloss":"hidden v6","dims":[{"n":101,"l":"sense","k":"value","v":"hidden / concealed (sathar, negated)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"nothing (is hidden from the sun's heat)","to":306144,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('nothing is HIDDEN from its heat')"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'nothing is HIDDEN (sathar) from its heat' — the sun's all-exposing reach; sathar here bridges to v12's 'hidden faults' — as nothing escapes the sun, so nothing escapes God, the psalm's pivot from cosmos to conscience"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275313": {"gloss":"perfect v7","dims":[{"n":101,"l":"sense","k":"value","v":"perfect / whole (tamim - the law)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the law of the LORD","to":275313,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"reviving the soul","from":275313,"to":275315,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'The law of the LORD is PERFECT (tamim), reviving the soul' — the Torah's wholeness; tamim (elsewhere of God's way, Ps18:30) now of his word, and its effect is to restore the inner life"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275315": {"gloss":"soul v7","dims":[{"n":101,"l":"sense","k":"value","v":"soul / life (nefesh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":275315,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the person (revived)","to":275315,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"revived by the perfect law","from":275315,"to":275313,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the perfect law 'REVIVING the SOUL (nefesh)' — the Torah restores the whole living self; nefesh here = the life brought back, refreshed and re-animated by God's word"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275319": {"gloss":"wise v7","dims":[{"n":101,"l":"sense","k":"value","v":"make wise (chakam, hiphil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the testimony of the LORD","to":275319,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"make wise"},{"n":107,"l":"target","k":"pair","v":"the simple","to":275319,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the sure testimony 'making WISE (chakam) the simple' — the word imparts wisdom to the naive; chakam = the transformation of the untaught mind, God's word as the teacher of the simple"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275323": {"gloss":"right v8","dims":[{"n":101,"l":"sense","k":"value","v":"right / upright (yashar - the precepts)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the precepts of the LORD","to":275323,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"rejoicing the heart","from":275323,"to":275324,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'the precepts of the LORD are RIGHT (yashar), rejoicing the heart' — the straightness of God's precepts; yashar = the moral uprightness that, being true, gladdens the inner man"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275324": {"gloss":"rejoicing v8","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / gladden (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the precepts","from":275324,"to":275323,"res":"span"},{"n":106,"l":"operation","k":"event","v":"gladden"},{"n":107,"l":"target","k":"pair","v":"the heart","from":275324,"to":275325,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the heart","from":275324,"to":275325,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the precepts 'REJOICING (samach) the heart' — God's word acting on the affections; samach = the gladness the right law produces in the heart, not mere duty but delight"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275325": {"gloss":"heart v8","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":275325,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the person","to":275325,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"gladdened by the precepts","from":275325,"to":275324,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the HEART (lev) that the precepts gladden — the seat of the Torah's joy; this lev (gladdened by the word) is distinct from v14's lev (whose meditation must be acceptable) — the word both fills and is tested by the heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275331": {"gloss":"fear v9","dims":[{"n":101,"l":"sense","k":"value","v":"fear (of the LORD) (yirah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the fear of the LORD (as a name for the law)","to":275331,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the FEAR (yirah) of the LORD is clean, enduring forever' — reverent fear named among the synonyms for the law; yirah = the God-directed awe that is pure and everlasting, the inward correlate of the written word"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275338": {"gloss":"true v9","dims":[{"n":101,"l":"sense","k":"value","v":"truth (emeth - the rules are true)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the rules of the LORD","to":275338,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with righteous altogether","from":275338,"to":275339,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'the rules of the LORD are TRUE (emeth), and righteous altogether' — the reliability of God's ordinances; emeth = the firmness/faithfulness of the rules, the crown of the six-fold Torah-praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275339": {"gloss":"righteous v9","dims":[{"n":101,"l":"sense","k":"value","v":"be righteous (tsadeq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the rules of the LORD","to":275339,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"altogether","to":275339,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with true","from":275339,"to":275338,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the rules 'RIGHTEOUS (tsadeq) altogether' — the wholesale justice of God's law; tsadeq = the rightness that permeates every rule, no part of it unjust"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275244": {"gloss":"desired v10","dims":[{"n":101,"l":"sense","k":"value","v":"be desired / coveted (chamad)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the law/rules (more desired than gold)","to":275244,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"more than gold, sweeter than honey","to":275244,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'more to be DESIRED (chamad) than gold... sweeter than honey' — the law as the supreme object of longing; chamad = the covetous desire, here rightly directed to God's word above all treasure and pleasure"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275266": {"gloss":"hidden(faults) v12","dims":[{"n":101,"l":"sense","k":"value","v":"hidden things / secret faults (sathar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (his hidden faults)","to":275266,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Declare me innocent from HIDDEN faults (sathar)' — sins unknown even to oneself; sathar here = the concealed errors the psalmist cannot discern, echoing v6's 'nothing hidden' — the sun exposes all, so he asks God to cleanse what even he cannot see. First rung of the sin-gradation (hidden -> presumptuous -> great transgression)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275270": {"gloss":"presumptuous v13","dims":[{"n":101,"l":"sense","k":"value","v":"presumptuous / insolent (zed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"presumptuous sins (that would rule him)","to":275270,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"have dominion","to":275270,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David ('let them not rule over me')","to":275270,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('keep back your servant from... let them not rule')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Keep back your servant from PRESUMPTUOUS sins (zed); let them not have dominion' — deliberate, defiant sins that seek to enslave; zed = the insolent, high-handed transgression, the middle rung above hidden faults, feared as a would-be master"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275277": {"gloss":"transgression v13","dims":[{"n":101,"l":"sense","k":"value","v":"transgression / rebellion (pesha - great transgression)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (kept innocent of it)","to":275277,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('innocent of great transgression')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'innocent of GREAT TRANSGRESSION (pesha)' — the highest rung of the gradation; pesha = rebellion, the breach of covenant loyalty; the goal 'then I shall be blameless' is freedom from hidden, presumptuous, AND rebellious sin alike"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275281": {"gloss":"heart v14","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - meditation of my heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":275281,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275281,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"its meditation to be acceptable","from":275281,"to":275283,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'the MEDITATION of my HEART (lev) be acceptable' — the inner speech submitted to God; this lev's silent musing, like the words of the mouth, is offered for divine approval — the heart that was gladdened by the word (v8) now asks that its own thought please God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275283": {"gloss":"acceptable v14","dims":[{"n":101,"l":"sense","k":"value","v":"acceptable / favour (ratson)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the words and meditation (to be acceptable)","from":275283,"to":275281,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"God ('in your sight')","to":275283,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"in your sight","to":275283,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"of mouth and heart","from":275283,"to":275281,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'be ACCEPTABLE (ratson) in your sight' — the plea for divine favour on word and thought; ratson = God's good-pleasure, the standard by which the whole inner and outer life is measured, closing the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275287": {"gloss":"redeemer v14","dims":[{"n":101,"l":"sense","k":"value","v":"redeemer / kinsman-redeemer (gaal)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God ('my rock and my redeemer')","to":275287,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David","to":275287,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'O LORD, my rock and my REDEEMER (gaal)' — God as the kinsman who buys back; gaal = the near-relative who redeems, the intimate title on which the whole prayer for cleansing rests"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275302": {"gloss":"heard v3","dims":[{"n":101,"l":"sense","k":"value","v":"hear (shama - voice not heard)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v3-4: 'There is no speech nor words whose voice is not HEARD (shama); their voice goes out through all the earth' - the paradox of creation's silent-yet-universal testimony; wordless speech understood everywhere, God's witness needing no language"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "275258": {"gloss":"keeping v11","dims":[{"n":101,"l":"sense","k":"value","v":"keep / observe (shamar - in keeping them)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v11: 'by them your servant is warned; in KEEPING (shamar) them there is great reward' - the word both warns and rewards; the inner posture of heeding, the servant instructed and moved by the promise of reward, obedience as the response to the treasured law (v10)"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 19,
+ "provenance": "reread-psalms-2026",
+ "note": "The law's effects on the interior + the servant's self-examination and plea (heavens vv1-6 = standalone)",
+ "spans": {
+  "275314": {
+   "gloss": "soul revived by the law",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul revived by the law"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275314,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the perfect law of the LORD revives/restores the soul - the interior brought back to life by the word"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "revival",
+     "to": 275314,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "soul-revived",
+     "to": 275314,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'The law of the LORD is perfect, REVIVING the SOUL' - the operation is inner restoration: the word acts on the soul the way food acts on a faint body."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275319": {
+   "gloss": "the simple made wise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the simple made wise"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the simple",
+     "to": 275319,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the sure testimony of the LORD makes the simple wise - an interior maturing from naivety to wisdom"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "maturing",
+     "to": 275319,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "simple-made-wise",
+     "to": 275319,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'the testimony of the LORD is sure, making WISE the SIMPLE' - the operation is the opening of an untrained interior; the word grows understanding where there was none."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275324": {
+   "gloss": "the heart gladdened by precepts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the heart gladdened by precepts"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275324,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the right precepts of the LORD rejoice the heart - the word producing inner gladness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "gladdening",
+     "to": 275324,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heart-rejoices",
+     "to": 275324,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'the precepts of the LORD are right, REJOICING the HEART' - the operation is joy: the commandments do not merely bind, they gladden the interior that loves them."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275331": {
+   "gloss": "the fear of the LORD, clean",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the fear of the LORD, clean"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275331,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the fear of the LORD is clean, enduring forever - reverent fear as a pure and permanent interior posture"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "reverent-fear",
+     "to": 275331,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "clean-fear",
+     "to": 275331,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'the FEAR of the LORD is CLEAN, enduring forever' - the operation names reverence itself as a state of the interior; unlike defiling fears, this one is pure and lasts."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275244": {
+   "gloss": "desire the law above gold",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "desire the law above gold"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275244,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the rules of the LORD are more to be desired than much fine gold, sweeter than honey - a valuing that outbids treasure"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "supreme-valuing",
+     "to": 275244,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "desire-above-gold",
+     "to": 275244,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'More to be DESIRED are they than gold, even much fine gold' - the operation is appraisal: the interior weighs the word against wealth and prefers it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275262": {
+   "gloss": "discern hidden errors",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "discern hidden errors"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275262,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "who can discern his errors? the self asks to be declared innocent of hidden faults - awareness of unseen sin"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "self-scrutiny",
+     "to": 275262,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "discern-errors",
+     "to": 275262,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'Who can DISCERN his errors? Declare me INNOCENT from HIDDEN faults' - the operation is humble self-suspicion: the interior knows its own faults exceed its sight and asks God to cover them."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275270": {
+   "gloss": "kept from presumptuous sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "kept from presumptuous sin"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275270,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks to be kept from presumptuous sins and not let them have dominion - guarding against willful, ruling sin"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "guarding-against-dominion",
+     "to": 275270,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "keep-from-presumption",
+     "to": 275270,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'Keep back your servant also from PRESUMPTUOUS sins; let them not have DOMINION over me' - distinct from hidden faults: this is the deliberate sin the interior fears could master it; the plea is against being ruled."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275281": {
+   "gloss": "heart-meditation made acceptable",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart-meditation made acceptable"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275281,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self desires that the words of its mouth and the meditation of its heart be acceptable to God - the interior offered for approval"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "self-offering",
+     "to": 275281,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "acceptable-meditation",
+     "to": 275281,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'Let the words of my mouth and the MEDITATION of my HEART be ACCEPTABLE in your sight' - the operation offers the whole inner life (speech and thought) to God as an oblation seeking his approval."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275258": {
+   "gloss": "keeping them is great reward",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "keeping them is great reward"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275244,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'in KEEPING them there is great REWARD' - the benefit that grounds the desiring of the law."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275287": {
+   "gloss": "my redeemer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my redeemer"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275281,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'O LORD, my rock and my REDEEMER' - the God to whom the meditation is offered."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275239": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'glory' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275248": {
+   "gloss": "fine gold",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fine gold"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'fine gold' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275260": {
+   "gloss": "reward",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "reward"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'reward' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275263": {
+   "gloss": "errors",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "errors"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'errors' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275264": {
+   "gloss": "innocent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "innocent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'innocent' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275266": {
+   "gloss": "hidden",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hidden"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'hidden' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275267": {
+   "gloss": "back",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "back"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'back' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275272": {
+   "gloss": "dominion",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dominion"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'dominion' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275275": {
+   "gloss": "innocent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "innocent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'innocent' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275277": {
+   "gloss": "transgression",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgression"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'transgression' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275283": {
+   "gloss": "acceptable",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "acceptable"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'acceptable' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275295": {
+   "gloss": "knowledge",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "knowledge"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'knowledge' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275302": {
+   "gloss": "heard",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heard"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'heard' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275310": {
+   "gloss": "joy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "joy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'joy' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275311": {
+   "gloss": "law",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "law"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'law' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275313": {
+   "gloss": "perfect",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perfect"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'perfect' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275315": {
+   "gloss": "soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'soul' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275316": {
+   "gloss": "testimony",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "testimony"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'testimony' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275318": {
+   "gloss": "sure",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sure"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'sure' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275320": {
+   "gloss": "simple",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "simple"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'simple' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275321": {
+   "gloss": "precepts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "precepts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'precepts' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275323": {
+   "gloss": "right",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "right"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'right' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275325": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'heart' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275326": {
+   "gloss": "commandment",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "commandment"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'commandment' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275328": {
+   "gloss": "pure",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pure"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'pure' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275333": {
+   "gloss": "clean",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clean"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'clean' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275336": {
+   "gloss": "rules",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rules"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'rules' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275338": {
+   "gloss": "true",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "true"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'true' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275339": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'righteous' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306144": {
+   "gloss": "hidden",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hidden"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'hidden' - substrate (heavens-declare cosmic imagery vv1-6, or law-attribute label perfect/sure/right/pure/true); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

@@ -1,98 +1,967 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 23,
-  "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read of Psalm 23 (7 characteristics). Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "275819": {"gloss":"soul (v3, 'he restores my soul')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"soul / self / vitality (nefesh)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"soul (self — this span is the constitutional seat)","to":275819,"res":"span"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'my soul')","to":275819,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"none (the soul is restored, not acting)","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"object of 'restores' (nafshi yeshovev — the self God revives)","from":275819,"to":275818,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:seat"},
-      {"n":114,"l":"discovery","k":"note","v":"the soul as the restorable self — the whole vitality God revives (yeshovev = brings back); the recipient/seat of restoration, not an agent here"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275822": {"gloss":"righteousness (v3, 'paths of righteousness')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"righteousness / rightness (tsedeq)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":110,"l":"specifier","k":"pair","v":"specifies the paths (construct 'paths of righteousness')","from":275822,"to":275821,"res":"span"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded (construct) to paths","from":275822,"to":275821,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
-      {"n":114,"l":"discovery","k":"note","v":"righteousness as the character of the God-led way ('paths of righteousness for his name's sake') — the rightness is God's, the leading is grace, not the psalmist's own attainment"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275829": {"gloss":"fear (v4, 'I will fear no evil')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"fear / be afraid (yare)"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (1cs 'I will fear')","to":275829,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"fear (negated — 'I will NOT fear')"},
-      {"n":107,"l":"target","k":"pair","v":"evil / harm (the object of the renounced fear)","from":275829,"to":275831,"res":"span"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":113,"l":"prohibition","k":"flag","v":"negated (lo ira — 'I will not fear')"},
-      {"n":114,"l":"discovery","k":"note","v":"fear RENOUNCED in the presence of God ('for you are with me') — the absence of fear grounded in God's presence, not the absence of danger (walked through the valley of death's shadow)"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275831": {"gloss":"evil (v4, 'no evil')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"evil / harm / calamity (ra)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"none","res":"none"},
-      {"n":106,"l":"operation","k":"event","v":"none","res":"none"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},
-      {"n":116,"l":"locus","k":"value","v":"external:thing"},
-      {"n":114,"l":"discovery","k":"note","v":"ROLE RECONSIDERATION: 'evil' here = external calamity, the OBJECT of the renounced fear (captured as fear's target) — it functions as a qualifier of fear, not a standalone inner-being characteristic; flagged for role review (recorded minimally)"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275838": {"gloss":"comfort (v4, 'your rod and staff, they comfort me')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"comfort / console (nacham)"},
-      {"n":102,"l":"type","k":"value","v":"action"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"the psalmist (the one comforted / experiencer, 'comfort me')","to":275838,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"comfort / console"},
-      {"n":107,"l":"target","k":"pair","v":"none","res":"none"},
-      {"n":108,"l":"manner","k":"pair","v":"none","res":"none"},
-      {"n":112,"l":"coupling","k":"pair","v":"by the rod & staff (instrument of the comforting)","from":275838,"to":275835,"res":"span"},
-      {"n":114,"l":"discovery","k":"note","v":"comfort mediated by the shepherd's rod & staff (governance + protection) — God's comfort felt precisely in the valley; the instruments of discipline are experienced as consolation"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275852": {"gloss":"goodness (v6, 'goodness shall follow me')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"goodness / benevolence (tov)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"God's (goodness personified as God's own, the pursuer)","to":275852,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"follow / pursue (radaph — goodness is the subject that pursues)"},
-      {"n":107,"l":"target","k":"pair","v":"the psalmist (1cs 'follow me')","from":275852,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"all the days of my life (temporal extent)","from":275852,"to":275856,"res":"span"},
-      {"n":112,"l":"coupling","k":"pair","v":"compound subject of 'follow' (welded to radaph)","from":275852,"to":275854,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"external:god (God's goodness)"},
-      {"n":114,"l":"discovery","k":"note","v":"God's goodness PERSONIFIED as pursuer — not the psalmist chasing good (cf Ps 4:6 'who will show us good?') but good hunting HIM down, all his days"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]},
-    "275853": {"gloss":"mercy (v6, 'and mercy shall follow me')", "dims": [
-      {"n":101,"l":"sense","k":"value","v":"steadfast love / covenant mercy (chesed)"},
-      {"n":102,"l":"type","k":"value","v":"status"},
-      {"n":104,"l":"seat","k":"pair","v":"none","res":"none"},
-      {"n":105,"l":"bearer","k":"pair","v":"God's (chesed — God's covenant loyalty)","to":275853,"res":"inferred"},
-      {"n":106,"l":"operation","k":"event","v":"follow / pursue (radaph — mercy is the second compound subject)"},
-      {"n":107,"l":"target","k":"pair","v":"the psalmist (1cs 'follow me')","from":275853,"res":"inferred"},
-      {"n":108,"l":"manner","k":"pair","v":"all the days of my life (temporal extent)","from":275853,"to":275856,"res":"span"},
-      {"n":112,"l":"coupling","k":"pair","v":"welded with goodness as the compound subject of 'follow'","from":275853,"to":275852,"res":"span"},
-      {"n":116,"l":"locus","k":"value","v":"external:god (God's chesed)"},
-      {"n":114,"l":"discovery","k":"note","v":"chesed (covenant steadfast love) twinned with goodness as God's twin pursuers — the covenant faithfulness that hounds the psalmist with good, culminating in dwelling in God's house forever"},
-      {"n":115,"l":"role","k":"value","v":"characteristic"}
-    ]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 23,
+ "provenance": "reread-psalms-2026",
+ "note": "The shepherd: contentment, restored soul, fearlessness in the valley, comfort, pursued by goodness, dwelling with God",
+ "spans": {
+  "275809": {
+   "gloss": "I shall not want",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I shall not want"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275809,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "because the LORD shepherds it, the self lacks nothing - a contentment that rests in being led and fed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "contentment",
+     "to": 275809,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "shall-not-want",
+     "to": 275809,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'The LORD is my shepherd; I shall not WANT' - the operation is settled sufficiency: the interior, under a shepherd, is freed from craving and anxiety about need."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275819": {
+   "gloss": "he restores my soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he restores my soul"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275819,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the shepherd restores/revives the self's soul, leading it in right paths - inner renewal received"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "restoration",
+     "to": 275819,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "soul-restored",
+     "to": 275819,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'He RESTORES my SOUL; he leads me in paths of righteousness' - the operation is the soul brought back, revived after depletion, the interior renewed by the shepherd's care."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275829": {
+   "gloss": "I will fear no evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I will fear no evil"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275829,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "even walking through the valley of the shadow of death, the self fears no evil, for God is with it - fear dissolved by presence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fearlessness",
+     "to": 275829,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "fear-no-evil",
+     "to": 275829,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'Even though I WALK through the valley of the shadow of death, I will FEAR no EVIL, for you are with me' - the operation is fear refused; the darkest passage is faced without dread because of the felt companionship."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275838": {
+   "gloss": "your rod and staff comfort me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "your rod and staff comfort me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275838,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the shepherd's rod and staff comfort the self - a felt consolation from God's guiding, protecting nearness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "consolation",
+     "to": 275838,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "comforted",
+     "to": 275838,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'your rod and your staff, they COMFORT me' - the operation is the interior soothed; the very instruments of guidance and defence become a source of comfort."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275854": {
+   "gloss": "goodness and mercy pursue me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "goodness and mercy pursue me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275854,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is confident that goodness and mercy will pursue it all its days - assurance of being chased by good, not evil"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "assurance",
+     "to": 275854,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "goodness-follows",
+     "to": 275854,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'Surely GOODNESS and MERCY shall FOLLOW me all the days of my life' - the operation reverses the usual: instead of enemies pursuing, the interior trusts that God's good is on its trail."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275858": {
+   "gloss": "I shall dwell with God forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I shall dwell with God forever"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275858,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self will dwell in the house of the LORD forever - a settled, permanent hope of God's presence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "settled-hope",
+     "to": 275858,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "dwell-forever",
+     "to": 275858,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'and I shall DWELL in the house of the LORD forever' - the operation lands the psalm in a permanent belonging: the interior's final rest is unbroken nearness to God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275807": {
+   "gloss": "the LORD is my shepherd",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the LORD is my shepherd"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275809,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'The LORD is my SHEPHERD' - the shepherding that grounds the contentment."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275818": {
+   "gloss": "restores/leads",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "restores/leads"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275819,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'he leads me in paths of righteousness for his name's sake' - the shepherd's guiding that restores the soul."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275845": {
+   "gloss": "you anoint my head",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you anoint my head"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275838,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'you ANOINT my head with oil; my cup overflows' - the lavish care that comforts."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275810": {
+   "gloss": "lie down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lie down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'lie down' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275813": {
+   "gloss": "leads",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "leads"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'leads' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275820": {
+   "gloss": "leads",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "leads"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'leads' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275821": {
+   "gloss": "paths",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "paths"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'paths' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275822": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'righteousness' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275824": {
+   "gloss": "name’s",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name’s"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'name’s' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275826": {
+   "gloss": "walk",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "walk"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'walk' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275828": {
+   "gloss": "shadow of death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shadow of death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'shadow of death' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275831": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'evil' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275835": {
+   "gloss": "rod",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rod"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'rod' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275836": {
+   "gloss": "staff",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "staff"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'staff' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275840": {
+   "gloss": "prepare",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prepare"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'prepare' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275844": {
+   "gloss": "enemies",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enemies"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'enemies' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275850": {
+   "gloss": "overflows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "overflows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'overflows' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275852": {
+   "gloss": "goodness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "goodness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'goodness' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275853": {
+   "gloss": "mercy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mercy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'mercy' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275856": {
+   "gloss": "days",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "days"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'days' - substrate (pastures/waters/table/oil/cup imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

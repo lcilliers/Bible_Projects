@@ -1,22 +1,1036 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 24, "provenance": "reread-psalms-2026",
-  "note": "Ps24 (15 chars). Ascent liturgy: naqi clean hands + bar pure heart, nefesh not lifted to shav falsehood, berakah/tsedaqah/yesha reward, darash seek. Then King of glory (kavod) x5 antiphonal. Poetic ledger; span-id pairs.",
-  "spans": {
-    "275888": {"gloss":"clean v4","dims":[{"n":101,"l":"sense","k":"value","v":"clean / innocent (naqi - of hands)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who ascends","to":275888,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with a pure heart","from":275888,"to":275890,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'He who has CLEAN (naqi) hands' — outward purity of conduct; naqi (as Ps18) the innocence of the hands, first mark of the one who may ascend God's hill, paired with the inward pure heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275890": {"gloss":"pure v4","dims":[{"n":101,"l":"sense","k":"value","v":"pure (bar - of heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who ascends","to":275890,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"describes the heart","from":275890,"to":275891,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and a PURE (bar) heart' — inward cleanness matching the clean hands; bar = the unmixed, undivided heart, the moral centre of the ascent-requirement (cf Ps18:26 the purified)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275891": {"gloss":"heart v4","dims":[{"n":101,"l":"sense","k":"value","v":"heart (levav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":275891,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the one who ascends","to":275891,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"is pure","from":275891,"to":275890,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the HEART (levav) that must be pure — the seat qualified for God's presence; the inward centre whose cleanness (with clean hands) fits a person to stand in the holy place"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275895": {"gloss":"soul v4","dims":[{"n":101,"l":"sense","k":"value","v":"soul (nefesh - lifted to falsehood)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":275895,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the one who ascends","to":275895,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"lift up (negated)","to":275895,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"what is false","from":275895,"to":275896,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('does NOT lift up his soul to what is false')"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'who does not lift up his SOUL (nefesh) to what is false' — the soul's devotion not given to idols/vanity; nefesh here the seat of longing/worship, kept from being raised to shav (falsehood) — inner fidelity as the third mark"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275896": {"gloss":"false v4","dims":[{"n":101,"l":"sense","k":"value","v":"falsehood / vanity (shav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the false thing (idols/vanity)","to":275896,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the soul is not lifted to it","from":275896,"to":275895,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"the thing the soul must not be lifted to"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'to what is FALSE (shav)' — the empty/vain thing (often an idol); shav = worthless deception, the object the pure soul refuses to set its devotion on"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275899": {"gloss":"deceitfully v4","dims":[{"n":101,"l":"sense","k":"value","v":"deceit (mirmah - swear deceitfully, negated)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who ascends (does not)","to":275899,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('does not swear DECEITFULLY')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and does not swear DECEITFULLY (mirmah)' — truthfulness in oath; mirmah (as Ps17:1's guileless lips) negated, the fourth mark — no false swearing, integrity of word completing the ascent-portrait"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275901": {"gloss":"blessing v5","dims":[{"n":101,"l":"sense","k":"value","v":"blessing (berakah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the ascender (receives it)","to":275901,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"receive","to":275901,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"from the LORD","to":275901,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with righteousness","from":275901,"to":275904,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'He will receive BLESSING (berakah) from the LORD' — the reward of the pure ascender; berakah the gift granted to the one fit to stand, paired with righteousness from the God of salvation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275904": {"gloss":"righteousness v5","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the ascender (receives it)","to":275904,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"from the God of his salvation","from":275904,"to":275908,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"paired with blessing","from":275904,"to":275901,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and RIGHTEOUSNESS (tsedaqah) from the God of his salvation' — righteousness as a gift received, not achieved; tsedaqah bestowed on the ascender, vindication from the saving God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275908": {"gloss":"salvation v5","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (yesha - God of his salvation)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the ascender (God his salvation)","to":275908,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the source of righteousness","from":275908,"to":275904,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the God of his SALVATION (yesha)' — God titled as the ascender's salvation; yesha the source from which blessing and righteousness flow to the pure"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275911": {"gloss":"seek v6","dims":[{"n":101,"l":"sense","k":"value","v":"seek (darash)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the generation of seekers","to":275911,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"God (his face)","to":275911,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the generation of those who SEEK (darash) him, who seek the face of the God of Jacob' — the seekers defined; darash (as Ps22:26) the earnest pursuit of God's face, the mark of the true worshipping generation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275923": {"gloss":"glory v7","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - King of glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the King (God)","to":275923,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'that the King of GLORY (kavod) may come in' — the entrance of the glorious King; kavod the weighty splendour of God the gates must open for, first of the fivefold antiphon"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275928": {"gloss":"glory v8","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - King of glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the King (LORD strong and mighty)","to":275928,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Who is this King of GLORY (kavod)? The LORD, strong and mighty' — the answering identification; kavod defined by God's might in battle, the glory that is power"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275942": {"gloss":"glory v9","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - King of glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the King (God)","to":275942,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'that the King of GLORY (kavod) may come in' (repeated) — the antiphon renewed; the doubled summons to the gates heightens the anticipation of the glorious King's entry"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275873": {"gloss":"glory(a) v10","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - King of glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the King (LORD of hosts)","to":275873,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Who is this King of GLORY (kavod)?' — the final question; kavod pressed once more before the climactic answer, the LORD of hosts"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275878": {"gloss":"glory(b) v10","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - King of glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the King (LORD of hosts)","to":275878,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The LORD of hosts, he is the King of GLORY (kavod)!' — the climactic answer; kavod fully disclosed as the LORD of hosts, the fivefold repetition culminating in his triumphant identity"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275886": {"gloss":"holy v3","dims":[{"n":101,"l":"sense","k":"value","v":"holy place (qodesh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v3: 'Who shall ascend the hill of the LORD? Who shall stand in his HOLY (qodesh) place?' - the question the whole psalm answers; the holy place as the goal, entry to which requires clean hands and a pure heart (v4)"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 24,
+ "provenance": "reread-psalms-2026",
+ "note": "Who may ascend: clean-hands/pure-heart, soul not set on falsehood, the God-seeking generation (King-of-glory liturgy = standalone)",
+ "spans": {
+  "275890": {
+   "gloss": "clean hands and a pure heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clean hands and a pure heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the worshipper",
+     "to": 275890,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the one who may ascend has clean hands and a pure heart - integrity of deed matched by integrity of the inner self"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "purity",
+     "to": 275890,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "clean-hands-pure-heart",
+     "to": 275890,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'He who has CLEAN hands and a PURE HEART' - the operation names the qualification for God's presence as a doubled purity: the outward act and the inward heart both undefiled."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275894": {
+   "gloss": "the soul not lifted to falsehood",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the soul not lifted to falsehood"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the worshipper",
+     "to": 275894,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he does not lift up his soul to what is false or swear deceitfully - the self refuses to devote itself to an idol or a lie"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "undivided-devotion",
+     "to": 275894,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "soul-not-to-false",
+     "to": 275894,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'who does not LIFT UP his SOUL to what is false and does not swear deceitfully' - the operation is a refusal of misdirected devotion: the interior will not give itself to emptiness or back a lie with an oath."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275911": {
+   "gloss": "the generation that seeks God's face",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the generation that seeks God's face"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who seek",
+     "to": 275911,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "such is the generation of those who seek God, who seek the face of the God of Jacob - a whole company oriented to seeking him"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "God-seeking",
+     "to": 275911,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "seek-his-face",
+     "to": 275911,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'Such is the generation of those who SEEK him, who seek the FACE of the God of Jacob' - the operation defines a people by the direction of its desire: the seeking of God's face is what marks them."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275900": {
+   "gloss": "he will receive blessing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he will receive blessing"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275890,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'He will RECEIVE blessing from the LORD and righteousness from the God of his salvation' - the reward of the clean-handed, pure-hearted worshipper."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275873": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'glory' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275878": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'glory' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275881": {
+   "gloss": "ascend",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ascend"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'ascend' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275885": {
+   "gloss": "stand",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stand"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'stand' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275886": {
+   "gloss": "holy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'holy' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275888": {
+   "gloss": "clean",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clean"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'clean' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275891": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'heart' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275895": {
+   "gloss": "soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'soul' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275896": {
+   "gloss": "false",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "false"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'false' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275898": {
+   "gloss": "swear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "swear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'swear' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275899": {
+   "gloss": "deceitfully",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deceitfully"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'deceitfully' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275901": {
+   "gloss": "blessing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'blessing' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275904": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'righteousness' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275908": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'salvation' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275912": {
+   "gloss": "seek",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'seek' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275916": {
+   "gloss": "Lift up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Lift up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'Lift up' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275919": {
+   "gloss": "lifted up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lifted up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'lifted up' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275920": {
+   "gloss": "ancient",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ancient"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'ancient' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275921": {
+   "gloss": "doors",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "doors"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'doors' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275923": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'glory' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275924": {
+   "gloss": "come in",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "come in"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'come in' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275928": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'glory' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275931": {
+   "gloss": "mighty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mighty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'mighty' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275933": {
+   "gloss": "mighty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mighty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'mighty' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275934": {
+   "gloss": "battle",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "battle"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'battle' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275935": {
+   "gloss": "Lift up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Lift up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'Lift up' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275938": {
+   "gloss": "lift them up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lift them up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'lift them up' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275939": {
+   "gloss": "ancient",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ancient"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'ancient' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275940": {
+   "gloss": "doors",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "doors"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'doors' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275942": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'glory' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275943": {
+   "gloss": "come in",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "come in"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'come in' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306178": {
+   "gloss": "founded",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "founded"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'founded' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306182": {
+   "gloss": "established",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "established"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'established' - substrate (earth-founded, ascend-the-hill, King-of-glory gates liturgy, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

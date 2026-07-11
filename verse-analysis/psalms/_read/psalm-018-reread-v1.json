@@ -1,58 +1,3868 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 18, "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read Ps18 (large; David's deliverance song). Movements: racham love + chasah refuge -> distress/qara -> theophany (charah anger, aph nostrils) -> rescue (chaphets God delighted) -> tsedeq/bor righteousness-reward -> reciprocity (chasid/chasad, barar, ani/rum) -> battle empowerment (tamim, anvah gentleness made me great) -> doxology (rum, naqam, yadah/zamar, chesed). Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "274912": {"gloss":"love v1","dims":[{"n":101,"l":"sense","k":"value","v":"love (racham - womb/compassion love, here toward God)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":105,"l":"bearer","k":"pair","v":"David","to":274912,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"the LORD, his strength","to":274912,"res":"inferred"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I LOVE you (racham), O LORD, my strength' — the psalm's opening; racham normally = a mother's/God's tender compassion, here rare as human love directed TO God; the deepest visceral attachment, love welling from the delivered heart"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "274972": {"gloss":"take refuge v2","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":274972,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"the LORD (rock)","to":274972,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'my rock, in whom I TAKE REFUGE (chasah)' — refuge amid the cascade of God-names (rock/fortress/deliverer/shield/horn); chasah the personal act inside the piled metaphors of safety"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274975": {"gloss":"salvation(horn) v2","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (yesha - 'horn of my salvation')"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (God his salvation)","to":274975,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the HORN of my SALVATION (yesha)' — God as the strength-emblem that saves; first of many yesha/yasha facets in the psalm (contrast v35 shield of salvation, v50 great salvation)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275042": {"gloss":"call v3","dims":[{"n":101,"l":"sense","k":"value","v":"call upon (qara)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275042,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"call upon"},{"n":107,"l":"target","k":"pair","v":"the LORD, worthy to be praised","from":275042,"to":275044,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I CALL (qara) upon the LORD, worthy to be praised' — invocation joined to praise; the settled habit of the rescued, calling on the praiseworthy One (distinct from v6's qara out of distress)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275044": {"gloss":"praised v3","dims":[{"n":101,"l":"sense","k":"value","v":"praise / be worthy of praise (halal)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (as praiseworthy)","to":275044,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the One called upon","from":275044,"to":275042,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the LORD 'worthy to be PRAISED (halal)' — the object of invocation named by his praiseworthiness; the ground of confident calling"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275045": {"gloss":"saved v3","dims":[{"n":101,"l":"sense","k":"value","v":"be saved (yasha, niphal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275045,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be saved (from enemies)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I am SAVED (yasha) from my enemies' — the outcome of calling; deliverance as the answered result, stated before the long recital that unfolds how"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275203": {"gloss":"called v6","dims":[{"n":101,"l":"sense","k":"value","v":"call upon (qara, in distress)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275203,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"call upon (in distress)"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":275203,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"in my distress","to":275203,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'In my distress I CALLED (qara)... he heard my voice' — the cry from the cords of death; qara here born of anguish (contrast v3's habitual praise-call), and it reaches God's temple"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275222": {"gloss":"trembled v7","dims":[{"n":101,"l":"sense","k":"value","v":"tremble / quake (ragaz)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foundations of the mountains","to":275222,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"tremble / quake"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"because he was angry","to":275222,"res":"inferred"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the mountains' foundations TREMBLED (ragaz) 'because he was angry' — creation's fear-response to divine wrath; the cosmos itself quaking, the theophany's terror-register"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306053": {"gloss":"nostrils v8","dims":[{"n":101,"l":"sense","k":"value","v":"nostrils / anger (aph)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"God's nostrils (seat of wrath)","to":306053,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"God","to":306053,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'smoke went up from his NOSTRILS (aph)' — the anthropomorphic seat of God's anger; aph = nostrils as the very organ of wrath, smoke and devouring fire the burning of divine indignation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274937": {"gloss":"nostrils v15","dims":[{"n":101,"l":"sense","k":"value","v":"nostrils / anger (aph)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"God's nostrils (seat of wrath)","to":274937,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"God","to":274937,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'at the BLAST of the breath of your NOSTRILS (aph)' — the sea's channels laid bare by the wind of God's wrath; aph again as the wrath-organ, now the storm-breath that uncovers the deep"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274949": {"gloss":"hated v17","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - those who hated me)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":274949,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"David","to":274949,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"too mighty for me","to":274949,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'from those who HATED (sane) me, for they were too mighty' — the enmity God rescues from; sane = settled hostility, the human hatred behind the deadly threat (recurs v40)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274964": {"gloss":"delighted v19","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":274964,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"delight in"},{"n":107,"l":"target","k":"pair","v":"David ('in me')","to":274964,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'he rescued me, because he DELIGHTED (chaphets) in me' — the affectional ground of the whole rescue; God's pleasure in David, not David's strength, is the reason for deliverance"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274980": {"gloss":"righteousness v20","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":274980,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with cleanness of hands","from":274980,"to":274982,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'dealt with me according to my RIGHTEOUSNESS (tsedeq)' — the reward-principle opening; tsedeq here = David's covenant integrity, the moral ground God honours (restated v24)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274982": {"gloss":"cleanness v20","dims":[{"n":101,"l":"sense","k":"value","v":"cleanness / purity (bor - of hands)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":274982,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with righteousness","from":274982,"to":274980,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'according to the CLEANNESS (bor) of my hands he rewarded me' — purity of conduct, the outward hands mirroring the inward righteousness; the two paired as the basis of reward (v20, v24)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274991": {"gloss":"departed v21","dims":[{"n":101,"l":"sense","k":"value","v":"act wickedly / depart (rasha, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":274991,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"depart wickedly (negated)"},{"n":107,"l":"target","k":"pair","v":"from my God","to":274991,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('have NOT wickedly departed from my God')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I have kept the ways of the LORD, and have not wickedly DEPARTED (rasha) from my God' — loyalty stated as the absence of apostasy; rasha negated = the fidelity underlying the righteousness-claim"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275005": {"gloss":"blameless v23","dims":[{"n":101,"l":"sense","k":"value","v":"blameless / whole (tamim)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275005,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"before him","to":275005,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with keeping from guilt","from":275005,"to":275010,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I was BLAMELESS (tamim) before him, and I kept myself from my guilt' — integrity as wholeness before God; tamim (of the man here) will be echoed of God's own way (v30) and of the way God makes (v32)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275010": {"gloss":"guilt v23","dims":[{"n":101,"l":"sense","k":"value","v":"guilt / iniquity (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (kept from it)","to":275010,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"kept himself from it","from":275010,"to":275005,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('I kept myself from my guilt')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I kept myself from my GUILT (avon)' — vigilant self-guarding against iniquity; avon = the crookedness he refuses, the active side of blamelessness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275013": {"gloss":"righteousness v24","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275013,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with cleanness (v24)","from":275013,"to":275015,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'rewarded me according to my RIGHTEOUSNESS (tsedeq)' — the inclusio closing the reward-section (v20 reopened); the repetition frames the whole moral argument"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275015": {"gloss":"cleanness v24","dims":[{"n":101,"l":"sense","k":"value","v":"cleanness (bor - of hands, in his sight)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275015,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"in his sight","to":275015,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with righteousness","from":275015,"to":275013,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'CLEANNESS (bor) of my hands in his sight' — purity now qualified 'in his sight'; the reward measured by God's own seeing, not human reckoning"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275020": {"gloss":"merciful(man) v25","dims":[{"n":101,"l":"sense","k":"value","v":"merciful / loyal (chasid)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the merciful man","to":275020,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"God shows himself merciful to him","from":275020,"to":275021,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'with the MERCIFUL (chasid) you show yourself merciful' — the reciprocity principle; the chasid (covenant-loyal, chesed-bearing man) meets God's answering chesed; character mirrored back by God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275021": {"gloss":"merciful(God) v25","dims":[{"n":101,"l":"sense","k":"value","v":"show oneself merciful (chasad)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":275021,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"show oneself merciful"},{"n":107,"l":"target","k":"pair","v":"the merciful man","from":275021,"to":275020,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"toward the chasid","from":275021,"to":275020,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'you SHOW YOURSELF MERCIFUL (chasad)' — God reflecting the man's chesed; the verb from the same root as chasid, the reciprocity made verbal: God becomes to us what we are toward him"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275023": {"gloss":"blameless v25","dims":[{"n":101,"l":"sense","k":"value","v":"blameless (tamim)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blameless man","to":275023,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"God shows himself blameless to him","to":275023,"res":"inferred"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'with the BLAMELESS (tamim) you show yourself blameless' — tamim in the reciprocity series; God meets integrity with integrity, the second rung of the mirror-principle"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306093": {"gloss":"purified v26","dims":[{"n":101,"l":"sense","k":"value","v":"purified (barar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the purified man","to":306093,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"God shows himself pure to him","from":306093,"to":306094,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'with the PURIFIED (barar) you show yourself pure' — the third rung; barar = refined/clean, God answering purity with purity in the escalating reciprocity"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306094": {"gloss":"pure v26","dims":[{"n":101,"l":"sense","k":"value","v":"show oneself pure (barar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":306094,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"show oneself pure"},{"n":107,"l":"target","k":"pair","v":"the purified man","from":306094,"to":306093,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"toward the purified","from":306094,"to":306093,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God 'SHOWS himself PURE (barar)' — the divine side of the purity-mirror; the reciprocity turning on how a man comes to God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306096": {"gloss":"crooked v26","dims":[{"n":101,"l":"sense","k":"value","v":"crooked / perverse (iqqesh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the crooked man","to":306096,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"God makes himself tortuous to him","to":306096,"res":"inferred"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'with the CROOKED (iqqesh) you make yourself seem tortuous' — the dark pole of the reciprocity; to the twisted, God's dealings appear twisted; the moral mirror cuts both ways, the perverse meeting a God who resists them"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275027": {"gloss":"save v27","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":275027,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"save"},{"n":107,"l":"target","k":"pair","v":"a humble people","from":275027,"to":275028,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with bringing down the haughty","from":275027,"to":275030,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'you SAVE (yasha) a humble people, but the haughty eyes you bring down' — God's saving bent toward the lowly; yasha directed by disposition, the humble rescued and the proud abased"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275028": {"gloss":"humble v27","dims":[{"n":101,"l":"sense","k":"value","v":"humble / afflicted (ani)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"a humble people","to":275028,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the ones God saves","from":275028,"to":275027,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the HUMBLE (ani - lowly/afflicted) people God saves — the disposition that draws rescue; ani = the bowed-down, opposite of the haughty eyes"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275030": {"gloss":"haughty v27","dims":[{"n":101,"l":"sense","k":"value","v":"haughty / lofty (rum - haughty eyes)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the proud","to":275030,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"brought down (vs the saved humble)","from":275030,"to":275028,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the HAUGHTY (rum) eyes you bring down' — pride imaged in lifted eyes; rum = the self-exalting God abases, the foil to the humble he saves"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275050": {"gloss":"perfect v30","dims":[{"n":101,"l":"sense","k":"value","v":"perfect / blameless (tamim - God's way)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his way)","to":275050,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'This God - his way is PERFECT (tamim)' — the same word used of David's integrity (v23) now of God himself; the blameless man reflects a blameless God, and God is a shield to all who take refuge"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275056": {"gloss":"take refuge v30","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all those who take refuge in him","to":275056,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"God (a shield)","to":275056,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'he is a shield for all those who TAKE REFUGE (chasah) in him' — the refuge widened from David (v2) to all; chasah now a universal invitation, God the shield of every sheltering soul"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275074": {"gloss":"blameless v32","dims":[{"n":101,"l":"sense","k":"value","v":"blameless (tamim - the way God makes)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (his way, made so by God)","to":275074,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the God who... made my way BLAMELESS (tamim)' — the third tamim: the man's blamelessness (v23) is now revealed as God's gift; integrity equipped from above, not self-produced"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275091": {"gloss":"salvation(shield) v35","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (yesha - shield of your salvation)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (given to David)","to":275091,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with gentleness that made him great","from":275091,"to":275094,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the shield of your SALVATION (yesha)' — salvation as a defensive gift; yesha now the armour given, set beside the astonishing 'your gentleness made me great'"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275094": {"gloss":"gentleness v35","dims":[{"n":101,"l":"sense","k":"value","v":"gentleness / condescension (anvah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":275094,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"make great","to":275094,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David ('made me great')","to":275094,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the shield of salvation","from":275094,"to":275091,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'your GENTLENESS (anvah) made me great' — a gem: God's condescension/humility, his stooping down, is what exalts the man; the paradox that divine lowliness lifts, greatness born of God's gentle bending to us"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275127": {"gloss":"hated v40","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - those who hated me)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":275127,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"David","to":275127,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'those who HATED (sane) me I destroyed' — the same hatred of v17 now overcome; sane recurs to close the arc, the hostility that once was 'too mighty' now under his feet"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306112": {"gloss":"save v41","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha - none to save)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (there was none)","res":"none"},{"n":106,"l":"operation","k":"event","v":"save (none available)"},{"n":107,"l":"target","k":"pair","v":"the enemies","to":306112,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"absent ('there was none to save; the LORD did not answer them')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the enemies 'cried for help, but there was none to SAVE (yasha)' — yasha withheld; the dark counterpart to David's answered cry (v6), the wicked's unanswered plea"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275138": {"gloss":"known v43","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada - people I had not known)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275138,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with their serving","from":275138,"to":275139,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'people whom I had not KNOWN (yada) served me' — the reach of the deliverance; strangers subdued, the unknown nations bowing, the scope of God-given dominion"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275139": {"gloss":"served v43","dims":[{"n":101,"l":"sense","k":"value","v":"serve (avad)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the nations","to":275139,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"serve"},{"n":107,"l":"target","k":"pair","v":"David","from":275139,"to":275138,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"the unknown peoples SERVED (avad) him — submission of the nations; avad = the servile obedience of the conquered, the fruit of God's vindication"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275157": {"gloss":"exalted v46","dims":[{"n":101,"l":"sense","k":"value","v":"be exalted (rum - the God of my salvation)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (exalted by David's praise)","to":275157,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be exalted"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the God of my salvation","from":275157,"to":275160,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'EXALTED (rum) be the God of my salvation' — rum turned Godward in doxology; the same verb that abased the haughty (v27) now lifts God; man exalts the One who alone may be high"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275160": {"gloss":"salvation v46","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (yesha - God of my salvation)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (God his salvation)","to":275160,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with exalted","from":275160,"to":275157,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the God of my SALVATION (yesha)' — yesha as a title of God in the doxology; the horn of salvation (v2) now confessed as God's very identity"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275163": {"gloss":"vengeance v47","dims":[{"n":101,"l":"sense","k":"value","v":"vengeance (naqam)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (gives it to David)","to":275163,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"give vengeance","to":275163,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David","to":275163,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the God who gave me VENGEANCE (naqam)' — retribution as God's gift, not David's private revenge; naqam here is judicial, the vindication of the wronged executed through the king"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275172": {"gloss":"exalted v48","dims":[{"n":101,"l":"sense","k":"value","v":"exalt / lift high (rum)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":275172,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"exalt"},{"n":107,"l":"target","k":"pair","v":"David ('above those who rose against me')","to":275172,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'you EXALTED (rum) me above those who rose against me' — God lifts the man above his foes; rum now of David, exalted by God (contrast the self-exalting haughty of v27 whom God casts down)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275180": {"gloss":"praise v49","dims":[{"n":101,"l":"sense","k":"value","v":"praise / give thanks (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275180,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"praise / give thanks"},{"n":107,"l":"target","k":"pair","v":"the LORD (among the nations)","to":275180,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"among the nations","to":275180,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with singing","from":275180,"to":275183,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I will PRAISE (yadah) you, O LORD, among the nations' — thanksgiving carried out to the peoples; yadah = public confession of God's deeds, the delivered man become witness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275183": {"gloss":"sing v49","dims":[{"n":101,"l":"sense","k":"value","v":"sing praise (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":275183,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sing praise"},{"n":107,"l":"target","k":"pair","v":"God's name","to":275183,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with praise","from":275183,"to":275180,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and SING (zamar) to your name' — the musical praise completing the thanksgiving; zamar paired with yadah, word and song together, the full doxological response"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275192": {"gloss":"salvation v50","dims":[{"n":101,"l":"sense","k":"value","v":"salvation / deliverances (yeshuah - great salvation)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (brings it to his king)","to":275192,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"his king","to":275192,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with steadfast love to the anointed","from":275192,"to":275195,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'GREAT SALVATION (yeshuah) he brings to his king' — the psalm's final yesha-family word, now the sum of all deliverances; salvation crowned as God's covenant gift to the anointed line"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "275195": {"gloss":"steadfast love v50","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":275195,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"show","to":275195,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"his anointed (David and his offspring forever)","to":275195,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"forever","to":275195,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with great salvation","from":275195,"to":275192,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'shows CHESED (steadfast love) to his anointed, to David and his offspring forever' — the psalm closes on covenant loyalty; the chesid-reciprocity of v25 grounded finally in God's everlasting chesed to the messianic line"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274914": {"gloss":"strength v1","dims":[{"n":101,"l":"sense","k":"value","v":"strength (chezeq - 'my strength')"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v1: 'O LORD, my STRENGTH (chezeq)' - God named as the psalmist's personal strength, the object of his racham-love; the confession that his power is not his own"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "275226": {"gloss":"angry v7","dims":[{"n":101,"l":"sense","k":"value","v":"be angry / burn (charah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v7: the earth reeled 'because he was ANGRY (charah)' - the divine wrath that triggers the theophany; charah = the kindling/burning of anger, paired with the smoke of his nostrils (v8)"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "275123": {"gloss":"assailed v4","dims":[{"n":101,"l":"sense","k":"value","v":"assail / terrify (ba'ath - torrents of destruction)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v4-5: 'the cords of death encompassed me; the torrents of destruction ASSAILED (ba'ath) me' - the terror of near-death that presses the cry; the inner experience of being overwhelmed, snares of Sheol confronting the soul"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "306068": {"gloss":"wind v10","dims":[{"n":101,"l":"sense","k":"value","v":"wind (ruach - wings of the wind)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v10: 'he came swiftly on the WINGS of the WIND (ruach)' - ruach here literal wind, not the inner spirit; noted for lemma-distinction (the same word bears the inner sense elsewhere), the storm-swiftness of God's descent"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "275112": {"gloss":"strength v39","dims":[{"n":101,"l":"sense","k":"value","v":"strength / might (chayil - for the battle)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v39: 'you equipped me with STRENGTH (chayil) for the battle' - the war-strength God girds on; distinct from v1's chezeq (God as his strength) - here the enabling might poured into the man for combat"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "275148": {"gloss":"lost heart v45","dims":[{"n":101,"l":"sense","k":"value","v":"fade / lose heart (nabel)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v44-45: foreigners 'came cringing' and 'LOST HEART (nabel) and came trembling out of their fortresses' - the enemy's inner collapse; fear and failing courage as the subdued nations' response, the inverse of David's confidence"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "306121": {"gloss":"wind v42","dims":[{"n":101,"l":"sense","k":"value","v":"wind (ruach - as dust before the wind)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v42: 'I beat them fine as dust before the WIND (ruach)' - ruach again literal (the scattering wind); noted for the lemma record, the totality of the enemy's dispersal"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 18,
+ "provenance": "reread-psalms-2026",
+ "note": "Deliverance psalm: love/refuge/call/distress-cry + integrity (clean-hands/kept-ways/blameless) + humble-saved + doxology/praise. Theophany+battle=standalone",
+ "spans": {
+  "274912": {
+   "gloss": "love the LORD my strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "love the LORD my strength"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 274912,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self declares a tender love for the LORD its strength - the rare verb of intimate affection opening the psalm"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "tender-love",
+     "to": 274912,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "love-you-LORD",
+     "to": 274912,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I LOVE you, O LORD, my strength' - the operation is warm attachment (racham, womb-love); the whole deliverance-song opens not with thanks but with affection."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274972": {
+   "gloss": "take refuge in the rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "take refuge in the rock"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 274972,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self takes refuge in God named as rock, fortress, shield, horn of salvation - shelter in a cluster of strongholds"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "refuge-taking",
+     "to": 274972,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "take-refuge",
+     "to": 274972,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'my God, my rock, in whom I TAKE REFUGE' - the interior shelters in God under a pile of fortress-images; refuge is the posture from which the rescue is told."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275042": {
+   "gloss": "call and be saved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "call and be saved"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275042,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls on the LORD, who is worthy of praise, and is saved from its enemies - the summary confidence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "calling",
+     "to": 275042,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "call-and-saved",
+     "to": 275042,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'I CALL upon the LORD, who is worthy to be praised, and I am SAVED from my enemies' - the operation states the whole pattern in miniature: to call is to be delivered."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275203": {
+   "gloss": "cry in distress",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry in distress"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275203,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "in distress, with the cords of death around it, the self calls and cries, and its cry reaches God's ears"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "distress-cry",
+     "to": 275203,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "cry-in-distress",
+     "to": 275203,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'In my distress I CALLED upon the LORD... my CRY to him reached his ears' - distinct from the summary call of v3: this is the specific cry from the snares of death, the cry that triggers the theophany."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274980": {
+   "gloss": "clean hands, righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clean hands, righteousness"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 274980,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self reckons that God dealt with it according to its righteousness and the cleanness of its hands - a confidence of integrity rewarded"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "integrity-confidence",
+     "to": 274980,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "clean-hands",
+     "to": 274980,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'The LORD dealt with me according to my RIGHTEOUSNESS; according to the CLEANNESS of my hands he rewarded me' - the interior reads the deliverance as a response to its uprightness, not arbitrary."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274987": {
+   "gloss": "kept the ways of the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "kept the ways of the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 274987,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self has kept God's ways and not wickedly departed from him - sustained fidelity"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fidelity",
+     "to": 274987,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "keep-his-ways",
+     "to": 274987,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'For I have KEPT the ways of the LORD, and have not wickedly DEPARTED from my God' - the operation is a maintained loyalty; the clean hands of v20 rest on this kept course."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275005": {
+   "gloss": "blameless, kept from guilt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blameless, kept from guilt"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275005,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self was blameless before God and kept itself from its own guilt - a vigilant self-guarding against sin"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "self-guarding",
+     "to": 275005,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "keep-from-guilt",
+     "to": 275005,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v23: 'I was BLAMELESS before him, and I KEPT myself from my GUILT' - the operation turns inward: not just keeping God's ways but policing the self away from its own iniquity."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275028": {
+   "gloss": "the humble God saves",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the humble God saves"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the humble",
+     "to": 275028,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "God saves a humble people but brings down haughty eyes - lowliness as the saved condition"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "humility",
+     "to": 275028,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "humble-saved",
+     "to": 275028,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'For you SAVE a HUMBLE people, but the HAUGHTY eyes you bring down' - the operation contrasts two interiors: the humble are rescued, the proud abased; the psalmist reads himself among the former."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275155": {
+   "gloss": "bless the rock (doxology)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bless the rock (doxology)"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275155,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self blesses the living God, its rock and the God of its salvation - praise erupting as the rescue is recounted"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "doxology",
+     "to": 275155,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bless-my-rock",
+     "to": 275155,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v46: 'The LORD lives, and BLESSED be my rock, and exalted be the God of my salvation' - the interior breaks into blessing; the whole narration turns to ascribing greatness to the deliverer."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "275180": {
+   "gloss": "praise among the nations",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "praise among the nations"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 275180,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self will praise God among the nations and sing to his name - gratitude broadcast beyond Israel"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "proclamation",
+     "to": 275180,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "praise-among-nations",
+     "to": 275180,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v49: 'For this I will PRAISE you, O LORD, among the nations, and SING to your name' - the operation carries the private deliverance into public, international praise."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274903": {
+   "gloss": "delivered me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivered me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 274972,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1(title)/48: 'who DELIVERED him' - the rescue the refuge-taking rests on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "274962": {
+   "gloss": "rescued to a broad place",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rescued to a broad place"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 274972,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'He brought me out into a BROAD PLACE; he RESCUED me' - the liberation from the snares of death."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "274964": {
+   "gloss": "delighted in me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delighted in me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 274980,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'he rescued me, because he DELIGHTED in me' - God's favour behind the integrity-reward."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275210": {
+   "gloss": "heard my voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heard my voice"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275203,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'he HEARD my voice; my cry reached his ears' - the divine hearing that answers the distress-cry."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275082": {
+   "gloss": "trains my hands for war",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trains my hands for war"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 274980,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'He TRAINS my hands for war' - God's equipping the righteous self for battle."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275094": {
+   "gloss": "your gentleness made me great",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "your gentleness made me great"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 274912,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'your GENTLENESS made me great' - the tender divine dealing answering the psalmist's love."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "275195": {
+   "gloss": "steadfast love to his anointed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love to his anointed"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 275155,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v50: 'showing STEADFAST LOVE to his anointed' - the covenant loyalty the doxology celebrates."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "274914": {
+   "gloss": "strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strength"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'strength' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274920": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'voice' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274922": {
+   "gloss": "coals",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "coals"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'coals' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274923": {
+   "gloss": "fire",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fire"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'fire' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274934": {
+   "gloss": "blast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blast"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'blast' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274935": {
+   "gloss": "breath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "breath"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'breath' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274937": {
+   "gloss": "nostrils",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "nostrils"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'nostrils' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274946": {
+   "gloss": "rescued",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rescued"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'rescued' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274947": {
+   "gloss": "strong",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strong"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'strong' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274949": {
+   "gloss": "hated",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hated"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'hated' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274952": {
+   "gloss": "mighty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mighty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'mighty' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274961": {
+   "gloss": "broad place",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "broad place"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'broad place' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274967": {
+   "gloss": "rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rock"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'rock' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274968": {
+   "gloss": "fortress",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fortress"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'fortress' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274969": {
+   "gloss": "deliverer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliverer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'deliverer' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274971": {
+   "gloss": "rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rock"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'rock' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274973": {
+   "gloss": "shield",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shield"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'shield' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274974": {
+   "gloss": "horn",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "horn"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'horn' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274975": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'salvation' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274976": {
+   "gloss": "stronghold",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stronghold"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'stronghold' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274978": {
+   "gloss": "dealt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dealt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'dealt' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274982": {
+   "gloss": "cleanness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cleanness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'cleanness' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274984": {
+   "gloss": "rewarded",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rewarded"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'rewarded' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274991": {
+   "gloss": "departed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "departed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'departed' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274997": {
+   "gloss": "rules",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rules"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'rules' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274999": {
+   "gloss": "statutes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "statutes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'statutes' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275007": {
+   "gloss": "kept",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "kept"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v23: 'kept' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275010": {
+   "gloss": "guilt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "guilt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v23: 'guilt' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275012": {
+   "gloss": "rewarded",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rewarded"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'rewarded' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275013": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'righteousness' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275015": {
+   "gloss": "cleanness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cleanness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'cleanness' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275020": {
+   "gloss": "merciful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "merciful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'merciful' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275021": {
+   "gloss": "merciful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "merciful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'merciful' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275023": {
+   "gloss": "blameless",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blameless"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'blameless' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275027": {
+   "gloss": "save",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "save"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'save' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275030": {
+   "gloss": "haughty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "haughty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'haughty' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275032": {
+   "gloss": "bring down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bring down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'bring down' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275041": {
+   "gloss": "darkness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "darkness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'darkness' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275044": {
+   "gloss": "praised",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "praised"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'praised' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275045": {
+   "gloss": "saved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saved"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'saved' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275050": {
+   "gloss": "perfect",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perfect"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'perfect' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275054": {
+   "gloss": "shield",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shield"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'shield' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275056": {
+   "gloss": "take refuge",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "take refuge"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'take refuge' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275064": {
+   "gloss": "rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rock"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v31: 'rock' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275070": {
+   "gloss": "strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strength"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'strength' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275074": {
+   "gloss": "blameless",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blameless"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'blameless' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275075": {
+   "gloss": "made",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "made"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v33: 'made' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275084": {
+   "gloss": "war",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "war"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'war' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275085": {
+   "gloss": "arms",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "arms"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'arms' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275086": {
+   "gloss": "bend",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bend"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'bend' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275087": {
+   "gloss": "bow",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bow"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'bow' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275090": {
+   "gloss": "shield",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shield"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'shield' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275091": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'salvation' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275096": {
+   "gloss": "pursued",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pursued"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'pursued' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275098": {
+   "gloss": "overtook",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "overtook"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'overtook' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275100": {
+   "gloss": "turn back",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "turn back"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'turn back' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275103": {
+   "gloss": "through",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "through"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'through' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275107": {
+   "gloss": "fell",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fell"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'fell' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275112": {
+   "gloss": "strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strength"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'strength' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275113": {
+   "gloss": "battle",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "battle"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'battle' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275115": {
+   "gloss": "sink",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sink"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'sink' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275118": {
+   "gloss": "cords",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cords"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'cords' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275119": {
+   "gloss": "death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'death' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275121": {
+   "gloss": "torrents",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "torrents"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'torrents' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275122": {
+   "gloss": "destruction",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "destruction"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'destruction' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275123": {
+   "gloss": "assailed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "assailed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'assailed' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275127": {
+   "gloss": "hated",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hated"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'hated' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275128": {
+   "gloss": "destroyed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "destroyed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'destroyed' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275129": {
+   "gloss": "delivered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v43: 'delivered' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275131": {
+   "gloss": "strife",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strife"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v43: 'strife' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275138": {
+   "gloss": "known",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "known"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v43: 'known' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275139": {
+   "gloss": "served",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "served"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v43: 'served' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275142": {
+   "gloss": "heard",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heard"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v44: 'heard' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275143": {
+   "gloss": "obeyed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "obeyed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v44: 'obeyed' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275145": {
+   "gloss": "came cringing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "came cringing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v44: 'came cringing' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275148": {
+   "gloss": "lost heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lost heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v45: 'lost heart' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275149": {
+   "gloss": "came trembling",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "came trembling"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v45: 'came trembling' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275152": {
+   "gloss": "fortresses",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fortresses"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v45: 'fortresses' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275156": {
+   "gloss": "rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rock"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v46: 'rock' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275157": {
+   "gloss": "exalted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exalted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v46: 'exalted' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275160": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v46: 'salvation' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275163": {
+   "gloss": "vengeance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "vengeance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v47: 'vengeance' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275168": {
+   "gloss": "rescued",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rescued"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v48: 'rescued' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275172": {
+   "gloss": "exalted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exalted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v48: 'exalted' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275174": {
+   "gloss": "delivered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v48: 'delivered' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275177": {
+   "gloss": "violence",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "violence"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v48: 'violence' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275183": {
+   "gloss": "sing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v49: 'sing' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275184": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v49: 'name' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275185": {
+   "gloss": "cords",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cords"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'cords' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275186": {
+   "gloss": "Sheol",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Sheol"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'Sheol' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275188": {
+   "gloss": "snares",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "snares"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'snares' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275189": {
+   "gloss": "death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'death' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275191": {
+   "gloss": "Great",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Great"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v50: 'Great' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275192": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v50: 'salvation' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275207": {
+   "gloss": "help",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "help"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'help' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275211": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'voice' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275212": {
+   "gloss": "cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'cry' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275218": {
+   "gloss": "reeled",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "reeled"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'reeled' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275221": {
+   "gloss": "mountains",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mountains"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'mountains' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275222": {
+   "gloss": "trembled",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trembled"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'trembled' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275223": {
+   "gloss": "quaked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "quaked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'quaked' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "275226": {
+   "gloss": "angry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "angry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'angry' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306053": {
+   "gloss": "nostrils",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "nostrils"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'nostrils' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306055": {
+   "gloss": "fire",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fire"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'fire' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306057": {
+   "gloss": "coals",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "coals"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'coals' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306063": {
+   "gloss": "cherub",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cherub"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'cherub' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306068": {
+   "gloss": "wind",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wind"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'wind' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306070": {
+   "gloss": "darkness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "darkness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'darkness' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306074": {
+   "gloss": "clouds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clouds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'clouds' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306081": {
+   "gloss": "coals",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "coals"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'coals' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306082": {
+   "gloss": "fire",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fire"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'fire' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306084": {
+   "gloss": "clouds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "clouds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'clouds' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306086": {
+   "gloss": "arrows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "arrows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'arrows' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306087": {
+   "gloss": "scattered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "scattered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'scattered' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306089": {
+   "gloss": "lightnings",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lightnings"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'lightnings' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306093": {
+   "gloss": "purified",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "purified"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'purified' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306094": {
+   "gloss": "pure",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pure"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'pure' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306096": {
+   "gloss": "crooked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "crooked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'crooked' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306104": {
+   "gloss": "wide place",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wide place"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v36: 'wide place' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306109": {
+   "gloss": "slip",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "slip"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v36: 'slip' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306110": {
+   "gloss": "cried",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cried"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v41: 'cried' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306112": {
+   "gloss": "save",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "save"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v41: 'save' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306118": {
+   "gloss": "beat",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "beat"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v42: 'beat' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306121": {
+   "gloss": "wind",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wind"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v42: 'wind' - substrate (theophany: coals/fire/nostrils/cherub/clouds; battle: bow/arrows/pursue/fall; God-as-rock/shield/salvation, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }
