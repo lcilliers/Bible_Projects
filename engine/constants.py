@@ -54,7 +54,10 @@ Shared constants for the Session A v9 Automation Engine.
 # 2026-07-02: M61 applied (verse-first lexical model: passage table + verse.passage_id/is_passage_anchor/process_marker/genre [consecutive-run passages]; ve_lexical pair/event columns; related_tier deprecated). → 3.35.0.
 # 2026-07-02: M62 applied (ve_lexical span-keyable: verse_context_id nullable + verse_span_id [->verse_span_index] + gate; enables index-driven build so untagged content spans are lexicalised — the span-completeness "second gate"). → 3.36.0.
 # 2026-07-02: M63 applied (ve_lexical Phase 1 optimisation: archived 507,651 legacy rows -> ve_lexical_legacy so the live table holds the live model only [~1,990 rows]; dropped duplicate index ix_velex_vc; VACUUM reclaimed ~129 MB). → 3.37.0.
-EXPECTED_SCHEMA_VERSION = "3.37.0"
+# 2026-07-08: M64 role column, M65 char_candidate/char_candidate_tag on master (seed stamp). → 3.38.0 / 3.39.0.
+# 2026-07-11: M66 verse_span_index.characteristic + .ib_char_id (read char on master + normalised-index link); ib_characteristic index columns; ib_characteristic_legacy. → 3.40.0.
+#   ⚠ GOVERNANCE DEBT: M64–M66 were applied by scripts, not registered in engine/migrate.py. The constant is kept in sync here so audit_word's A2 gate passes; the migrate.py registry should be back-filled with these.
+EXPECTED_SCHEMA_VERSION = "3.40.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
