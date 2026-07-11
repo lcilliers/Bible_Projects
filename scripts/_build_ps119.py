@@ -287,12 +287,188 @@ for v,note in FALSE.items():
     sid=next((x['sid'] for x in CANDS if x['v']==v and x['ps']=='H8267'), None)
     if sid: ch(sid,"falsehood / false way (sheqer)","disposition","the foes / the false way","lie / deceive","against the psalmist and the truth","paired with the whole FALSEHOOD arc",IB, f"v{v}: {note}")
 
+# ---- per-verse QUALIFIER overrides (God-act direction of ambiguous lemmas) ----
+QOVR={
+ ('H3925',12):"teach (lamad)", ('H3925',26):"teach (lamad)", ('H3925',64):"teach (lamad)",
+ ('H3925',66):"teach good judgment (lamad)", ('H3925',68):"teach (lamad)", ('H3925',108):"teach (lamad)",
+ ('H3925',124):"teach (lamad)", ('H3925',135):"teach (lamad)", ('H3925',171):"teach (lamad)",
+ ('H0995',27):"make me understand (bin)", ('H0995',34):"give understanding (bin)", ('H0995',73):"give understanding (bin)",
+ ('H0995',125):"give understanding (bin)", ('H0995',130):"impart understanding (bin)", ('H0995',144):"give understanding (bin)",
+ ('H0995',169):"give understanding (bin)",
+ ('H2142',49):"remember your word (zakar)",
+ ('H5800',8):"forsake not (azab)",
+ ('H1245',176):"seek your servant (baqash)",
+ ('H0935',41):"let your love come (bo)", ('H0935',77):"let your mercy come (bo)",
+ ('H1540',18):"open my eyes (galah)", ('H6381',18):"wondrous things of the law (pala)", ('H6381',27):"wondrous works (pala)",
+ ('H5641',19):"hide not (sathar)", ('H1556',22):"take away scorn (galal)",
+ ('H5541',118):"spurn the strayers (salah)", ('H6565',126):"time to act, law broken (parar)",
+ ('H3474',128):"right precepts (yashar)", ('H6382',129):"wonderful testimonies (pala)",
+ ('H6662',137):"righteous (tsaddiq)", ('H3477',137):"right rules (yashar)",
+ ('H3245',152):"founded forever (yasad)",
+ ('H5493',29):"put false ways far (sur)", ('H6680',4):"commanded (tsavah)", ('H6680',138):"appointed in righteousness (tsavah)",
+ ('H1605',21):"rebuke the insolent (gaar)", ('H3190',68):"do good (yatab)",
+}
+# ---- per-verse STANDALONE overrides ----
+SOVR={
+ ('H3925',99):"teachers (lamad)", ('H2459',70):"fat (cheleb)", ('H7451',101):"evil way (ra)",
+ ('H8424',28):"sorrow (tugah)", ('H1320',120):"flesh (basar)", ('H6789',139):"consumes (tsamath)",
+ ('H8467',170):"plea (techinnah)", ('H5042',171):"pour forth (naba)",
+ ('H5766',3):"wrong (avlah)", ('H2954',70):"fat (cheleb)", ('H2895',71):"it is good (tob)",
+}
+# ---- remaining CHARACTERISTICS by (strong, verse): (sense, typ, bearer, op, locus, note) ----
+_P="the psalmist"
+CHARS={
+ # LEARN (I learn)
+ ('H3925',7):("learn (lamad)","action",_P,"learn","external:god","v7: 'I will praise you with an upright heart when I LEARN your righteous rules' - learning the rules as the ground of upright praise."),
+ ('H3925',71):("learn (lamad)","action",_P,"learn","external:god","v71: 'It is good for me that I was afflicted, that I might LEARN your statutes' - affliction valued as the school of learning."),
+ ('H3925',73):("learn (lamad)","action",_P,"learn","external:god","v73: 'give me understanding that I may LEARN your commandments' - learning as the aim of the understanding sought."),
+ # UNDERSTAND (I understand)
+ ('H0995',95):("understand / ponder (bin)","action",_P,"consider","external:god","v95: 'The wicked lie in wait to destroy me, but I UNDERSTAND (ponder) your testimonies' - pondering the word as refuge from the wicked's ambush."),
+ ('H0995',100):("understand (bin)","disposition",_P,"understand","external:god","v100: 'I UNDERSTAND more than the aged, for I keep your precepts' - understanding beyond the elders, born of keeping."),
+ ('H0995',104):("get understanding (bin)","disposition",_P,"gain understanding","external:god","v104: 'Through your precepts I get UNDERSTANDING; therefore I hate every false way' - understanding from the precepts that breeds hatred of falsehood."),
+ # SEEK
+ ('H1875',2):("seek (darash)","action",_P,"seek","external:god","v2: 'Blessed are those who keep his testimonies, who SEEK him with their whole heart' - the whole-hearted seeking of God."),
+ ('H1875',10):("seek (darash)","action",_P,"seek","external:god","v10: 'With my whole heart I SEEK you; let me not wander from your commandments' - the whole heart's seeking, guarded from straying."),
+ ('H1875',45):("seek (darash)","action",_P,"seek","external:god","v45: 'I shall walk in a wide place, for I have SOUGHT your precepts' - the sought precepts that open a wide place."),
+ ('H1875',94):("seek (darash)","action",_P,"seek","external:god","v94: 'I am yours; save me, for I have SOUGHT your precepts' - the seeking pleaded as ground for salvation."),
+ ('H1875',155):("seek (darash, negated)","disposition","the wicked","fail to seek","external:god","v155: 'Salvation is far from the wicked, for they do not SEEK your statutes' - the wicked's failure to seek, cause of their distance from salvation."),
+ # WALK
+ ('H1980',1):("walk (halak)","action","the blameless","walk","external:god","v1: 'Blessed are those whose way is blameless, who WALK in the law of the LORD!' - the blessed who walk in the law."),
+ ('H1980',3):("walk (halak)","action","the blameless","walk","external:god","v3: 'who also do no wrong, but WALK in his ways!' - walking in God's ways, doing no wrong."),
+ ('H1980',45):("walk (halak)","action",_P,"walk","external:god","v45: 'I shall WALK in a wide place, for I have sought your precepts' - walking freely in the wide place the word gives."),
+ # KNOW
+ ('H3045',75):("know (yada)","disposition",_P,"know","external:god","v75: 'I KNOW, O LORD, that your rules are righteous, and that in faithfulness you have afflicted me' - the settled knowledge that God's afflicting is righteous."),
+ ('H3045',79):("know (yada)","disposition","those who fear God","know","external:god","v79: 'Let those who fear you turn to me, that they may KNOW your testimonies' - the God-fearers who come to know the testimonies."),
+ ('H3045',125):("know (yada)","disposition",_P,"know","external:god","v125: 'I am your servant; give me understanding, that I may KNOW your testimonies!' - the knowing sought through understanding."),
+ ('H3045',152):("know (yada)","disposition",_P,"know","external:god","v152: 'Long have I KNOWN from your testimonies that you have founded them forever' - the long-held knowledge of the testimonies' permanence."),
+ # LONGS / failing eyes
+ ('H3615',81):("long / faint (kalah)","state",_P,"long / faint","internal:ib-state","v81: 'My soul LONGS (faints) for your salvation; I hope in your word' - the self fainting with longing for salvation."),
+ ('H3615',82):("long / fail (kalah)","state",_P,"long / fail (of the eyes)","internal:ib-state","v82: 'My eyes LONG (fail) for your promise; I ask, When will you comfort me?' - the eyes worn out watching for the promise."),
+ ('H3615',87):("be near ended (kalah)","state",_P,"be almost destroyed","internal:ib-state","v87: 'They had almost made an END of me on earth, but I have not forsaken your precepts' - the near-destruction endured without forsaking the word."),
+ ('H3615',123):("long / fail (kalah)","state",_P,"long / fail (of the eyes)","internal:ib-state","v123: 'My eyes LONG (fail) for your salvation and for the fulfilment of your righteous promise' - the eyes failing in the wait for salvation."),
+ # HATE (of evil)
+ ('H8130',104):("hate (sane)","disposition",_P,"hate","internal:ib-state","v104: 'Through your precepts I get understanding; therefore I HATE every false way' - hatred of falsehood as the fruit of understanding."),
+ ('H8130',113):("hate (sane)","disposition",_P,"hate","internal:ib-state","v113: 'I HATE the double-minded, but I love your law' - hatred of the divided heart, set against love of the law."),
+ ('H8130',128):("hate (sane)","disposition",_P,"hate","internal:ib-state","v128: 'I consider all your precepts to be right; I HATE every false way' - hatred of the false way, counterpart to esteeming the precepts."),
+ ('H8130',163):("hate (sane)","disposition",_P,"hate","internal:ib-state","v163: 'I HATE and abhor falsehood, but I love your law' - hatred of falsehood, the negative face of love for the law."),
+ # AFFLICTED / affliction
+ ('H6031',67):("be afflicted (anah)","state",_P,"be afflicted","internal:ib-state","v67: 'Before I was AFFLICTED I went astray, but now I keep your word' - affliction that turned him from straying to keeping."),
+ ('H6031',71):("be afflicted (anah)","state",_P,"be afflicted","internal:ib-state","v71: 'It is good for me that I was AFFLICTED, that I might learn your statutes' - affliction owned as good, the teacher of the statutes."),
+ ('H6031',75):("be afflicted (anah)","state",_P,"be afflicted","internal:ib-state","v75: 'in faithfulness you have AFFLICTED me' - affliction received as God's faithful dealing."),
+ ('H6031',107):("be afflicted (anah)","state",_P,"be severely afflicted","internal:ib-state","v107: 'I am severely AFFLICTED; give me life, O LORD, according to your word!' - deep affliction pleading for revival."),
+ ('H6040',50):("affliction (oni)","state",_P,"suffer affliction","internal:ib-state","v50: 'This is my comfort in my AFFLICTION, that your promise gives me life' - affliction comforted by the life-giving promise."),
+ ('H6040',92):("affliction (oni)","state",_P,"suffer affliction","internal:ib-state","v92: 'If your law had not been my delight, I would have perished in my AFFLICTION' - affliction survived only by delight in the law."),
+ ('H6040',153):("affliction (oni)","state",_P,"suffer affliction","internal:ib-state","v153: 'Look on my AFFLICTION and deliver me, for I do not forget your law' - affliction laid before God with the plea to deliver."),
+ # FEAR of God
+ ('H3372',63):("fear (yare)","disposition","those who fear God","fear / revere","external:god","v63: 'I am a companion of all who FEAR you, of those who keep your precepts' - fellowship with the God-fearing keepers."),
+ ('H3372',120):("fear (yare)","state",_P,"tremble in fear","external:god","v120: 'My flesh trembles for FEAR of you, and I am afraid of your judgments' - the body itself trembling in awe of God."),
+ ('H3373',74):("fear (yare)","disposition","those who fear God","fear / revere","external:god","v74: 'Those who FEAR you shall see me and rejoice, because I have hoped in your word' - the God-fearers gladdened by his hope."),
+ ('H3373',79):("fear (yare)","disposition","those who fear God","fear / revere","external:god","v79: 'Let those who FEAR you turn to me, that they may know your testimonies' - the reverent whose fellowship he seeks."),
+ ('H6342',161):("stand in awe (pachad)","state",_P,"stand in awe","external:god","v161: 'Princes persecute me without cause, but my heart stands in AWE of your words' - the heart's awe of the word amid persecution."),
+ ('H6343',120):("be afraid (pachad)","state",_P,"be afraid","external:god","v120: 'and I am AFRAID of your judgments' - dread of God's judgments joined to the trembling flesh."),
+ # CLING
+ ('H1692',25):("cling (dabaq)","state",_P,"cling to the dust","internal:ib-state","v25: 'My soul CLINGS to the dust; give me life according to your word!' - the self clinging low in the dust, pleading revival."),
+ ('H1692',31):("cling (dabaq)","action",_P,"cling to the testimonies","external:god","v31: 'I CLING to your testimonies, O LORD; let me not be put to shame!' - clinging fast to the word against shame."),
+ # TURN (my feet / the fearers)
+ ('H7725',59):("turn (shuv)","action",_P,"turn the feet","external:god","v59: 'When I think on my ways, I TURN my feet to your testimonies' - reflection that redirects the feet to the word."),
+ ('H7725',79):("turn (shuv)","action","those who fear God","turn to the psalmist","external:person","v79: 'Let those who fear you TURN to me' - the God-fearers turning to join him."),
+ # STRAY / WANDER
+ ('H7686',10):("wander (shagah, negated)","disposition",_P,"not wander","external:god","v10: 'let me not WANDER from your commandments' - the plea to be kept from straying."),
+ ('H7686',21):("wander (shagah)","disposition","the insolent","wander","external:god","v21: 'the insolent, accursed ones, who WANDER from your commandments' - the proud who stray from the law."),
+ ('H7686',118):("go astray (shagah)","disposition","the strayers","go astray","external:god","v118: 'You spurn all who GO ASTRAY from your statutes' - the strayers God rejects."),
+ ('H8582',110):("stray (taah, negated)","disposition",_P,"not stray","external:god","v110: 'The wicked have laid a snare for me, but I do not STRAY from your precepts' - not straying though snared."),
+ ('H8582',176):("go astray (taah)","state",_P,"go astray like a lost sheep","external:god","v176: 'I have gone ASTRAY like a lost sheep; seek your servant' - the closing confession of straying, the plea to be sought."),
+ ('H7683',67):("go astray (shagag)","state",_P,"go astray","external:god","v67: 'Before I was afflicted I WENT ASTRAY' - the straying of the unafflicted, corrected by affliction."),
+ # CHOSEN
+ ('H0977',30):("choose (bachar)","action",_P,"choose the way of faithfulness","external:god","v30: 'I have CHOSEN the way of faithfulness; I set your rules before me' - the deliberate choice of the faithful way."),
+ ('H0977',173):("choose (bachar)","action",_P,"choose the precepts","external:god","v173: 'Let your hand be ready to help me, for I have CHOSEN your precepts' - the chosen precepts pleaded as ground for help."),
+ # LONG (taab)
+ ('H8373',40):("long (taab)","disposition",_P,"long","external:god","v40: 'Behold, I LONG for your precepts; in your righteousness give me life!' - longing for the precepts joined to the plea for life."),
+ ('H8373',174):("long (taab)","disposition",_P,"long","external:god","v174: 'I LONG for your salvation, O LORD, and your law is my delight' - longing for salvation, the law still the delight."),
+ # PRAISE
+ ('H3034',7):("praise (yadah)","action",_P,"praise","external:god","v7: 'I will PRAISE you with an upright heart, when I learn your righteous rules' - praise resolved as learning grows."),
+ ('H3034',62):("praise (yadah)","action",_P,"praise","external:god","v62: 'At midnight I rise to PRAISE you, because of your righteous rules' - the midnight praise stirred by God's just rules."),
+ ('H1984',164):("praise (halal)","action",_P,"praise","external:god","v164: 'Seven times a day I PRAISE you for your righteous rules' - praise offered seven times daily, ceaseless."),
+ ('H1984',175):("praise (halal)","action",_P,"praise","external:god","v175: 'Let my soul live and PRAISE you, and let your rules help me' - the plea to live for praise."),
+ ('H8416',171):("praise (tehillah)","action",_P,"pour forth praise","external:god","v171: 'My lips will pour forth PRAISE, for you teach me your statutes' - praise overflowing the lips as God teaches."),
+ # CRY
+ ('H7121',145):("cry / call (qara)","action",_P,"cry","external:god","v145: 'With my whole heart I CRY; answer me, O LORD!' - the whole heart's cry for answer."),
+ ('H7121',146):("call (qara)","action",_P,"call","external:god","v146: 'I CALL to you; save me, that I may keep your testimonies' - calling for salvation to keep the word."),
+ ('H7440',169):("cry (rinnah)","action",_P,"cry","external:god","v169: 'Let my CRY come before you, O LORD; give me understanding according to your word!' - the cry brought before God for understanding."),
+ ('H7768',147):("cry for help (shava)","action",_P,"cry for help","external:god","v147: 'I rise before dawn and CRY for help; I hope in your words' - the pre-dawn cry, hoping in the word."),
+ # REMEMBER (I remember)
+ ('H2142',52):("remember (zakar)","action",_P,"remember","external:god","v52: 'When I think of your rules from of old, I take comfort, O LORD (I REMEMBER them)' - memory of God's ancient rules bringing comfort."),
+ ('H2142',55):("remember (zakar)","action",_P,"remember","external:god","v55: 'I REMEMBER your name in the night, O LORD, and keep your law' - remembering God's name through the night."),
+ # FORSAKE (foes/psalmist)
+ ('H5800',53):("forsake (azab)","action","the wicked","forsake the law","external:god","v53: 'Hot indignation seizes me because of the wicked, who FORSAKE your law' - the wicked's forsaking of the law that fires his indignation."),
+ ('H5800',87):("forsake (azab, negated)","disposition",_P,"not forsake","external:god","v87: 'They had almost made an end of me... but I have not FORSAKEN your precepts' - holding to the precepts though nearly destroyed."),
+ # --- singletons ---
+ ('H6466',3):("do no wrong (paal)","action","the blameless","do no wrong","internal:ib-state","v3: 'who also DO no wrong, but walk in his ways!' - the blameless who commit no wrong."),
+ ('H3476',7):("upright (yashar)","disposition",_P,"be upright","internal:ib-state","v7: 'I will praise you with an UPRIGHT heart' - the straightness of heart in which praise is offered."),
+ ('H3824',7):("heart (lebab)","faculty",_P,"praise with an upright heart","internal:ib-state","v7: 'I will praise you with an upright HEART' - the inner self, upright, engaged in praise."),
+ ('H6845',11):("store up (tsaphan)","action",_P,"treasure the word","internal:ib-state","v11: 'I have STORED UP your word in my heart, that I might not sin against you' - the word treasured within as a guard against sin."),
+ ('H2398',11):("sin (chata, negated)","disposition",_P,"not sin","external:god","v11: 'that I might not SIN against you' - the sin the treasured word guards against."),
+ ('H1288',12):("bless (barak)","action",_P,"bless God","external:god","v12: 'BLESSED are you, O LORD; teach me your statutes!' - the psalmist blessing God as he asks to be taught."),
+ ('H7737',30):("set (shavah)","action",_P,"set the rules before oneself","external:god","v30: 'I have chosen the way of faithfulness; I SET your rules before me' - the deliberate setting of God's rules before the eyes."),
+ ('H7323',32):("run (ruts)","action",_P,"run in the way","external:god","v32: 'I will RUN in the way of your commandments when you enlarge my heart!' - the eager running once the heart is freed."),
+ ('H3374',38):("be feared (yirah)","disposition",_P,"revere God","external:god","v38: 'Confirm to your servant your promise, that you may be FEARED' - the reverence the confirmed promise is meant to produce."),
+ ('H3025',39):("dread (yagor)","state",_P,"dread reproach","internal:ib-state","v39: 'Turn away the reproach that I DREAD, for your rules are good' - the reproach the psalmist fears, from which he seeks relief."),
+ ('H2778',42):("taunt (charaph)","action","the taunter","taunt","external:person","v42: 'then shall I have an answer for him who TAUNTS me, for I trust in your word' - the taunter answered by the psalmist's trust."),
+ ('H0982',42):("trust (batach)","disposition",_P,"trust","external:god","v42: 'for I TRUST in your word' - trust in the word that arms him against the taunter."),
+ ('H5375',48):("lift up (nasa)","action",_P,"lift up the hands","external:god","v48: 'I will LIFT UP my hands toward your commandments, which I love' - the lifted hands of devotion toward the loved commandments."),
+ ('H5165',50):("comfort (nechamah)","state",_P,"be comforted","internal:ib-state","v50: 'This is my COMFORT in my affliction, that your promise gives me life' - the consolation the promise brings in affliction."),
+ ('H3887',51):("deride (luts)","action","the insolent","deride","external:person","v51: 'The insolent utterly DERIDE me, but I do not turn away from your law' - the derision of the proud, unable to turn him from the law."),
+ ('H0270',53):("seize (achaz)","state",_P,"be seized with indignation","internal:ib-state","v53: 'Hot indignation SEIZES me because of the wicked' - the zeal-indignation that grips him at the wicked's lawlessness."),
+ ('H2470',58):("entreat (chalah)","action",_P,"entreat God's favour","external:god","v58: 'I ENTREAT your favour with all my heart; be gracious to me according to your promise' - the whole-hearted entreaty for grace."),
+ ('H2803',59):("think / consider (chashab)","action",_P,"consider one's ways","internal:ib-state","v59: 'When I THINK on my ways, I turn my feet to your testimonies' - the self-examination that redirects the feet."),
+ ('H2363',60):("hasten (chush)","action",_P,"hasten to obey","external:god","v60: 'I HASTEN and do not delay to keep your commandments' - the promptness of obedience."),
+ ('H4102',60):("delay (mahah, negated)","disposition",_P,"not delay","external:god","v60: 'I hasten and do not DELAY to keep your commandments' - obedience without procrastination."),
+ ('H0539',66):("believe (aman)","disposition",_P,"believe","external:god","v66: 'Teach me good judgment and knowledge, for I BELIEVE in your commandments' - faith in the commandments as ground for the plea to be taught."),
+ ('H2459',70):("unfeeling (tapash)","status","the insolent","have an unfeeling heart","internal:ib-state","v70: 'their heart is UNFEELING like fat, but I delight in your law' - the gross insensibility of the foes' heart."),
+ ('H8055',74):("rejoice (samach)","state","those who fear God","rejoice","internal:ib-state","v74: 'Those who fear you shall see me and REJOICE, because I have hoped in your word' - the God-fearers' joy at his hope."),
+ ('H5791',78):("wrong (avath)","action","the insolent","wrong the psalmist","external:person","v78: 'Let the insolent be put to shame, because they have WRONGED me with falsehood' - the wrong done by the proud with lies."),
+ ('H6960',95):("lie in wait (qavah)","action","the wicked","lie in wait","external:person","v95: 'The wicked LIE IN WAIT to destroy me, but I ponder your testimonies' - the ambush of the wicked, met by pondering the word."),
+ ('H2449',98):("be wise (chakam)","disposition",_P,"be made wiser","internal:ib-state","v98: 'Your commandment makes me WISER than my enemies, for it is ever with me' - the wisdom the ever-present commandment gives."),
+ ('H7919',99):("have understanding (sakal)","disposition",_P,"have understanding","internal:ib-state","v99: 'I have MORE UNDERSTANDING than all my teachers, for your testimonies are my meditation' - understanding beyond teachers from meditation."),
+ ('H3607',101):("hold back (kala)","action",_P,"hold back the feet from evil","external:god","v101: 'I HOLD BACK my feet from every evil way, in order to keep your word' - restraining the feet from evil to keep the word."),
+ ('H8342',111):("joy (sason)","state",_P,"rejoice in the testimonies","internal:ib-state","v111: 'Your testimonies are my heritage forever, for they are the JOY of my heart' - the testimonies as the heart's very joy."),
+ ('H5588',113):("double-minded (seeph)","status","the double-minded","be divided in heart","internal:ib-state","v113: 'I hate the DOUBLE-MINDED, but I love your law' - the divided-hearted, object of the psalmist's hatred."),
+ ('H7489',115):("evildoers (raa)","status","the evildoers","do evil","external:person","v115: 'Depart from me, you EVILDOERS, that I may keep the commandments of my God' - the evildoers put away so the word may be kept."),
+ ('H0205',133):("iniquity (aven)","state",_P,"resist iniquity's dominion","internal:ib-state","v133: 'Keep steady my steps according to your promise, and let no INIQUITY get dominion over me' - the iniquity the psalmist begs not to be ruled by."),
+ ('H7068',139):("zeal (qinah)","state",_P,"be consumed with zeal","internal:ib-state","v139: 'My ZEAL consumes me, because my foes forget your words' - the zeal for God's word that consumes him at the foes' forgetting."),
+ ('H0959',141):("be despised (bazah)","state",_P,"be small and despised","internal:ib-state","v141: 'I am small and DESPISED, yet I do not forget your precepts' - the low, despised estate held with unbroken memory."),
+ ('H4689',143):("anguish (matsoq)","state",_P,"be in anguish","internal:ib-state","v143: 'Trouble and ANGUISH have found me out, but your commandments are my delight' - anguish overtaken, yet delight unshaken."),
+ ('H6473',131):("open the mouth (paar)","action",_P,"open the mouth in longing","internal:ib-state","v131: 'I OPEN my mouth and pant, because I long for your commandments' - the mouth opened wide in yearning for the word."),
+ ('H7602',131):("pant (shaaph)","state",_P,"pant with longing","internal:ib-state","v131: 'I open my mouth and PANT, because I long for your commandments' - the panting of desire for the commandments."),
+ ('H2968',131):("long (yaab)","disposition",_P,"long","external:god","v131: 'because I LONG for your commandments' - the longing that opens the mouth to pant."),
+ ('H0898',158):("faithless (bagad)","status","the faithless","deal faithlessly","external:person","v158: 'I look at the FAITHLESS with disgust, because they do not keep your commands' - the treacherous who spurn God's commands."),
+ ('H6962',158):("disgust (qut)","state",_P,"be filled with disgust","internal:ib-state","v158: 'I look at the faithless with DISGUST, because they do not keep your commands' - the revulsion at the faithless."),
+ ('H8581',163):("abhor (taab)","disposition",_P,"abhor falsehood","internal:ib-state","v163: 'I hate and ABHOR falsehood, but I love your law' - the abhorrence of falsehood joined to hatred of it."),
+ ('H0935',170):("come before (bo)","action",_P,"let the plea come before God","external:god","v170: 'Let my plea COME before you; deliver me according to your word' - the supplication brought into God's presence."),
+ ('H6231',121):("oppressors (ashaq)","action","the oppressors","oppress","external:person","v121: 'I have done what is just and right; do not leave me to my OPPRESSORS' - the oppressors from whom he seeks not to be abandoned."),
+ ('H6231',122):("oppress (ashaq)","action","the insolent","oppress","external:person","v122: 'Give your servant a pledge of good; let not the insolent OPPRESS me' - the oppression the psalmist seeks surety against."),
+ ('H8549',1):("blameless (tamim)","disposition","the blameless","be blameless in the way","internal:ib-state","v1: 'Blessed are those whose way is BLAMELESS, who walk in the law of the LORD!' - the whole, blameless way of the blessed."),
+ ('H8549',80):("blameless (tamim)","disposition",_P,"be blameless in heart","internal:ib-state","v80: 'May my heart be BLAMELESS in your statutes, that I may not be put to shame!' - the plea for a blameless heart."),
+ ('H0835',1):("blessed (esher)","state","the blameless","be blessed","internal:ib-state","v1: 'BLESSED are those whose way is blameless' - the beatitude opening the psalm."),
+ ('H0835',2):("blessed (esher)","state","those who keep","be blessed","internal:ib-state","v2: 'BLESSED are those who keep his testimonies, who seek him with their whole heart' - the beatitude on the whole-hearted keepers."),
+ ('H1811',28):("melt away (dalaph)","state",_P,"melt away for sorrow","internal:ib-state","v28: 'My soul MELTS AWAY for sorrow; strengthen me according to your word!' - the self dissolving in grief, seeking strength."),
+ ('H5493',102):("turn aside (sur, negated)","disposition",_P,"not turn aside from the rules","external:god","v102: 'I do not TURN ASIDE from your rules, for you have taught me' - not swerving from the rules God himself taught."),
+ ('H5493',115):("depart / put away (sur)","action",_P,"put the evildoers away","external:person","v115: 'DEPART from me, you evildoers, that I may keep the commandments of my God!' - the separation from evildoers the psalmist enacts to keep the word."),
+}
+for (ps,v),(sense,typ,bearer,op,loc,note) in CHARS.items():
+    sid=next((x['sid'] for x in CANDS if x['v']==v and x['ps']==ps), None)
+    if sid and sid not in CH:
+        tgt="God's word" if loc=="external:god" else ("the psalmist" if loc=="external:person" else "none")
+        ch(sid,sense,typ,bearer,op,tgt,"paired within its char-arc across the psalm",loc,note)
+
 # =========================================================================
 # BUILD + coverage report (does NOT write until coverage complete unless --write)
 # =========================================================================
 def buildrole(x):
     """return ('char'|'qual'|'stand', payload) for a candidate not in CH"""
-    ps=x['ps']
+    ps=x['ps']; key=(ps,x['v'])
+    if key in QOVR: return ('qual', QOVR[key])
+    if key in SOVR: return ('stand', SOVR[key])
     if ps in WORD: return ('qual', WORD[ps])
     if ps in GODACT: return ('qual', GODACT[ps])
     if ps in STAND: return ('stand', STAND[ps])
@@ -307,3 +483,25 @@ rem=Counter(x['ps'] for x in remaining)
 for ps,n in rem.most_common():
     vs=sorted(x['v'] for x in remaining if x['ps']==ps)
     print(f"  ({ps}) x{n:2}  v={vs}  e.g. {next(x['surf'] for x in remaining if x['ps']==ps)!r}")
+
+# ---- write the JSON when fully covered ----
+if not remaining:
+    r=Reading("Psa",19,119,
+      note="Ps119 acrostic (176v, 641 spans). Read CHAR-BY-CHAR (each recurring disposition read across the whole psalm as one arc), NOT by the 22 alphabetic stanzas. CHARACTERISTICS = the psalmist's dispositions/acts toward God's word (keep/love/delight/meditate/hope/heart/soul/forget-not/seek/walk/learn/understand/fear/cling/long/praise/cry + the foes insolent/wicked/false/put-to-shame) - each occurrence read for its distinct verse-nuance. QUALIFIERS = the word-synonyms (law/testimonies/precepts/statutes/commandments/rules/word/promise/faithfulness) + God-acts petitioned (revive/teach/give-understanding/redeem/uphold...), source-linked to that verse's anchor disposition. STANDALONE = temporal/imagery (forever/lamp/honey/gold/way).")
+    anchor={}
+    for x in sorted(CANDS,key=lambda z:z['sid']):
+        if x['sid'] in CH and x['v'] not in anchor: anchor[x['v']]=x['sid']
+    FALLBACK=sorted(CH)[0]
+    for x in CANDS:
+        sid=x['sid']
+        if sid in CH:
+            d=CH[sid]
+            r.ch(sid,d['sense'],d['typ'],d['bearer'],d['op'],d['target'],d['coupling'],d['locus'],d['note'])
+        else:
+            role,sense=buildrole(x)
+            if role=='qual':
+                asid=anchor.get(x['v'],FALLBACK)
+                r.qu(sid,sense,asid,f"v{x['v']}: '{x['surf']}' - God's {sense}; the revelation/act the psalmist's disposition engages in this verse. Qualifier.")
+            else:
+                r.st(sid,sense,f"v{x['v']}: '{x['surf']}' - {sense}; image/temporal. Standalone.")
+    r.write()
