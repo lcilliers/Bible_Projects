@@ -1,32 +1,1697 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 30, "provenance": "reread-psalms-2026",
-  "note": "Ps30 (24 chars). Mourning->dancing. Heart-contrasts: aph anger-a-moment / ratson favor-a-lifetime; bekhi weeping-night / rinnah joy-morning; mispedd mourning -> simchah gladness. sathar negative hiding (v7 = dismay). nefesh from Sheol. kavod (the soul) sings. Poetic ledger; span-id pairs.",
-  "spans": {
-    "276570": {"gloss":"extol v1","dims":[{"n":101,"l":"sense","k":"value","v":"extol / lift up (rum)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276570,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"extol"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276570,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I will EXTOL (rum) you, O LORD, for you have drawn me up' — praise as lifting God high because he lifted the psalmist up; rum turned to worship (contrast the haughty rum of Ps18:27), gratitude for being drawn from the pit"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276575": {"gloss":"rejoice v1","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice (samach - foes not rejoice)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes (denied joy)","to":276575,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice (negated)"},{"n":107,"l":"target","k":"pair","v":"over David","to":276575,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('have NOT let my foes rejoice over me')"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'and have not let my foes REJOICE (samach) over me' — the enemies denied their gloating; samach here the malicious joy God prevented, the foes' triumph withheld"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276601": {"gloss":"soul v3","dims":[{"n":101,"l":"sense","k":"value","v":"soul / life (nefesh - brought up from Sheol)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":276601,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276601,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"from Sheol","to":276601,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'you have brought up my SOUL (nefesh) from Sheol' — the life-self rescued from death; nefesh here the whole person restored to life from the brink of the pit"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276607": {"gloss":"Sing v4","dims":[{"n":101,"l":"sense","k":"value","v":"sing praise (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the saints","from":276607,"to":276609,"res":"span"},{"n":106,"l":"operation","k":"event","v":"sing praise"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276607,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with giving thanks","from":276607,"to":276610,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'SING praises (zamar) to the LORD, O you his saints' — the summons to the community; zamar the congregation called to join the deliverance-praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276609": {"gloss":"saints v4","dims":[{"n":101,"l":"sense","k":"value","v":"saints / godly ones (chasid)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the godly (summoned to sing)","to":276609,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"summoned to sing","from":276609,"to":276607,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'O you his SAINTS (chasidim)' — the covenant-loyal called to praise; chasid (the chesed-bearers, as Ps18:25) the godly community summoned to thanksgiving"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276610": {"gloss":"give thanks v4","dims":[{"n":101,"l":"sense","k":"value","v":"give thanks (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the saints","to":276610,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"give thanks"},{"n":107,"l":"target","k":"pair","v":"his holy name","to":276610,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with singing","from":276610,"to":276607,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and GIVE THANKS (yadah) to his holy name' — thanksgiving to the holy name; yadah (recurs v9,12) the grateful confession the saints render for God's mercy"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276615": {"gloss":"anger v5","dims":[{"n":101,"l":"sense","k":"value","v":"anger (aph - for a moment)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"God's anger (aph)","to":276615,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276615,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"but for a moment","to":276615,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with lifelong favour","from":276615,"to":276617,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'For his ANGER (aph) is but for a moment' — divine wrath as brief; aph (recurs Ps18,27,30) here transient, set against the lifelong favour, the great consolation of the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276617": {"gloss":"favor v5","dims":[{"n":101,"l":"sense","k":"value","v":"favour / good pleasure (ratson - for a lifetime)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276617,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"for a lifetime","to":276617,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with momentary anger","from":276617,"to":276615,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and his FAVOUR (ratson) is for a lifetime' — God's good pleasure outweighing his brief anger; ratson (as Ps19:14) here the enduring favour, the lifelong grace against a moment's wrath"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276619": {"gloss":"Weeping v5","dims":[{"n":101,"l":"sense","k":"value","v":"weeping (bekhi)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the sufferer (night weeping)","to":276619,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"for the night","to":276619,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with morning joy","from":276619,"to":276622,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'WEEPING (bekhi) may tarry for the night, but joy comes with the morning' — sorrow as a lodger of the night; bekhi the tears that stay only till dawn, the transient grief matched to the momentary anger"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276622": {"gloss":"joy v5","dims":[{"n":101,"l":"sense","k":"value","v":"joy / ringing cry (rinnah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the delivered (morning joy)","to":276622,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"with the morning","to":276622,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with night weeping","from":276622,"to":276619,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'but JOY (rinnah) comes with the morning' — the dawn of gladness after night; rinnah = the ringing shout of joy that replaces weeping, the morning-song of the restored"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276630": {"gloss":"favor v7","dims":[{"n":101,"l":"sense","k":"value","v":"favour (ratson - by your favour)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276630,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David (made strong)","to":276630,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the hidden face","from":276630,"to":276635,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'By your FAVOUR (ratson), O LORD, you made my mountain stand strong' — favour as the source of security; ratson (recurs v5) here the good pleasure that established him — until God hid his face"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276635": {"gloss":"hid v7","dims":[{"n":101,"l":"sense","k":"value","v":"hide (sathar - you hid your face)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":276635,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hide face"},{"n":107,"l":"target","k":"pair","v":"David","to":276635,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with dismay","from":276635,"to":276638,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'you HID (sathar) your face; I was dismayed' — the withdrawal that undoes his security; sathar here the negative hiding (as Ps27:9's feared 'hide not your face') — God's hidden face immediately dismaying the soul"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276638": {"gloss":"dismayed v7","dims":[{"n":101,"l":"sense","k":"value","v":"be dismayed / terrified (bahal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276638,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be dismayed"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"caused by the hidden face","from":276638,"to":276635,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I was DISMAYED (bahal)' — inner terror at God's withdrawal; bahal = to be terrified/confounded, the immediate collapse of confidence when the divine face is hidden"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276641": {"gloss":"cry v8","dims":[{"n":101,"l":"sense","k":"value","v":"cry / call (qara)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276641,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"cry"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276641,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with pleading for mercy","from":276641,"to":276644,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'To you, O LORD, I CRY (qara), and to the LORD I plead' — the appeal from the dismay; qara the cry that turns terror back to God, seeking the hidden face"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276644": {"gloss":"plead v8","dims":[{"n":101,"l":"sense","k":"value","v":"plead for mercy (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276644,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"plead for mercy"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276644,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the cry","from":276644,"to":276641,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and to the LORD I PLEAD for mercy (chanan)' — the entreaty for grace; chanan (recurs v10) the plea for favour, the response to the hidden face"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276651": {"gloss":"praise v9","dims":[{"n":101,"l":"sense","k":"value","v":"praise / give thanks (yadah - will the dust praise?)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the dust (rhetorically cannot)","to":276651,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"praise (rhetorically none)"},{"n":107,"l":"target","k":"pair","v":"God","to":276651,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with telling faithfulness","from":276651,"to":276654,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"rhetorically none ('Will the dust PRAISE you?')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Will the dust PRAISE (yadah) you?' — the argument from death's silence; yadah here the praise the dead cannot render, the plea that God preserve life for continued thanksgiving"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276654": {"gloss":"faithfulness v9","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness / truth (emeth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his faithfulness)","to":276654,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the dust cannot tell it","from":276654,"to":276651,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Will it tell of your FAITHFULNESS (emeth)?' — God's faithfulness needs living witnesses; emeth (recurs Ps25,26) the truth the dead cannot proclaim, the ground for the plea to be spared"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276579": {"gloss":"merciful v10","dims":[{"n":101,"l":"sense","k":"value","v":"be merciful (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (asked to)","to":276579,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be merciful"},{"n":107,"l":"target","k":"pair","v":"David","to":276579,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with helper","from":276579,"to":276582,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Hear, O LORD, and be MERCIFUL (chanan) to me!' — the plea for grace repeated; chanan (recurs v8) the appeal to God's favour, joined to the cry for a helper"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276582": {"gloss":"helper v10","dims":[{"n":101,"l":"sense","k":"value","v":"help / be helper (azar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (asked to be)","to":276582,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be a helper"},{"n":107,"l":"target","k":"pair","v":"David","to":276582,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with being merciful","from":276582,"to":276579,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'O LORD, be my HELPER (azar)!' — the direct appeal for aid; azar (recurs Ps27,28) God asked to be the help the dismayed soul needs"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276584": {"gloss":"mourning v11","dims":[{"n":101,"l":"sense","k":"value","v":"mourning / wailing (mispedd)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (his mourning turned)","to":276584,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"turned into dancing","to":276584,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"turned into gladness","from":276584,"to":276589,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'You have turned my MOURNING (mispedd) into dancing' — the great reversal enacted; mispedd = the wailing of grief, transformed by God into dance, sackcloth exchanged for gladness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276589": {"gloss":"gladness v11","dims":[{"n":101,"l":"sense","k":"value","v":"gladness (simchah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (clothed with it)","to":276589,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"replaces mourning/sackcloth","from":276589,"to":276584,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'you have loosed my sackcloth and clothed me with GLADNESS (simchah)' — joy as a garment; simchah (the joy of Ps16,21) put on in place of mourning's sackcloth, the outward sign of the inward turning"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276590": {"gloss":"glory v12","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - the soul/self as 'glory')"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (his glory/soul)","to":276590,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"sings praise","from":276590,"to":276591,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'that my GLORY (kavod) may sing your praise and not be silent' — the inner self ('glory', the noblest part, as Ps16:9) made for praise; kavod here the soul that must sing, created to bless God, not to be silenced in death"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276591": {"gloss":"sing v12","dims":[{"n":101,"l":"sense","k":"value","v":"sing praise (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David's glory/soul","from":276591,"to":276590,"res":"span"},{"n":106,"l":"operation","k":"event","v":"sing praise"},{"n":107,"l":"target","k":"pair","v":"God","to":276591,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"not silent","to":276591,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with giving thanks","from":276591,"to":276596,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'that my glory may SING (zamar) your praise' — the purpose of the deliverance is song; zamar (recurs v4) the praise the restored soul owes, the reason God saved him from silence"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276596": {"gloss":"give thanks v12","dims":[{"n":101,"l":"sense","k":"value","v":"give thanks (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276596,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"give thanks"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276596,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"forever","to":276596,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with singing","from":276596,"to":276591,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'O LORD my God, I will GIVE THANKS (yadah) to you forever!' — the everlasting resolve closing the psalm; yadah (recurs v4,9) the endless thanksgiving of the delivered, mourning turned finally to perpetual praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306206": {"gloss":"healed v2","dims":[{"n":101,"l":"sense","k":"value","v":"heal (rapha)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v2: 'I CRIED to you for help, and you have HEALED (rapha) me' - the answered cry that restored him; rapha = God's healing of the near-dead, the deliverance the whole psalm celebrates"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "276627": {"gloss":"prosperity/never v6","dims":[{"n":101,"l":"sense","k":"value","v":"secure ease ('I shall never be moved')"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v6: 'in my PROSPERITY I said, I shall NEVER be moved' - the false security of ease; the presumption that untroubled prosperity bred, self-confidence that God's hidden face (v7) would shatter, the lesson that security is God's favour, not one's own standing"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 30,
+ "provenance": "reread-psalms-2026",
+ "note": "Healing-thanks: extol, cried+healed, summon saints, weeping->morning-joy, false security, dismay at hidden face, plead from pit, mortality-argument, mourning->dancing, unceasing thanks",
+ "spans": {
+  "276570": {
+   "gloss": "extol you, for you drew me up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "extol you, for you drew me up"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276570,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self extols God for drawing it up and not letting its foes rejoice over it - praise for being lifted from the depths"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "exalting-praise",
+     "to": 276570,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "extol-drawn-up",
+     "to": 276570,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I will EXTOL you, O LORD, for you have DRAWN me up and have not let my foes rejoice over me' - the operation lifts God high in praise, matching the lifting the self has received."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "306206": {
+   "gloss": "cried for help, and you healed me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cried for help, and you healed me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 306206,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self cried to God for help and was healed - the appeal answered with restoration"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "crying-answered",
+     "to": 306206,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "cried-and-healed",
+     "to": 306206,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'O LORD my God, I CRIED to you for help, and you have HEALED me' - the operation states the whole pattern: the cry met by healing."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276607": {
+   "gloss": "summon the saints to sing and thank",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "summon the saints to sing and thank"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the saints",
+     "to": 276607,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls God's saints to sing praises and give thanks to his holy name - drawing the community into thanksgiving"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "summoning-praise",
+     "to": 276607,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "saints-sing",
+     "to": 276607,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'SING praises to the LORD, O you his SAINTS, and give thanks to his holy name' - the operation widens the private healing into a corporate summons to praise."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276619": {
+   "gloss": "weeping tarries the night, joy at morning",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "weeping tarries the night, joy at morning"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276619,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self reflects that God's anger is momentary but his favour lifelong; weeping may tarry for the night, but joy comes with the morning - a hard-won reading of grief's arc"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "grief's-arc",
+     "to": 276619,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "weeping-to-joy",
+     "to": 276619,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'WEEPING may tarry for the night, but JOY comes with the morning' - the operation is a settled insight: the interior learns that sorrow is temporary and joy is the sure dawn."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276627": {
+   "gloss": "in prosperity, 'I shall never be moved'",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "in prosperity, 'I shall never be moved'"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276627,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self recalls that in its ease it presumed it would never be moved - the complacency of good times, now confessed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "complacency",
+     "to": 276627,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "never-be-moved",
+     "to": 276627,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'As for me, I said in my prosperity, I shall never be MOVED' - the operation names a past over-confidence: prosperity had lulled the interior into a false sense of permanence."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276638": {
+   "gloss": "you hid your face; I was dismayed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you hid your face; I was dismayed"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276638,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "when God hid his face, the self was dismayed - the collapse of the false security once favour was withdrawn"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "dismay",
+     "to": 276638,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "hidden-face-dismay",
+     "to": 276638,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'you HID your face; I was DISMAYED' - the operation is the terror that exposed the complacency: the moment God withdrew, the interior fell apart."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276641": {
+   "gloss": "cry and plead for mercy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry and plead for mercy"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276641,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "from the dismay the self cries to the LORD and pleads for mercy - the appeal from the edge of the pit"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "pleading",
+     "to": 276641,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "cry-and-plead",
+     "to": 276641,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'To you, O LORD, I CRY, and to the Lord I PLEAD for mercy' - the operation is the turn from dismay to petition; the shaken interior lifts a cry."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276651": {
+   "gloss": "will the dust praise you?",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "will the dust praise you?"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276651,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self argues its case: what profit in its death? can the dust praise God or tell his faithfulness? - motivating rescue by love of praising"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "mortality-argument",
+     "to": 276651,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "dust-cannot-praise",
+     "to": 276651,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'What PROFIT is there in my death... Will the DUST PRAISE you? Will it TELL of your faithfulness?' - the operation pleads for life by its desire to keep praising; the interior wants to remain among the worshippers."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276583": {
+   "gloss": "you turned my mourning into dancing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you turned my mourning into dancing"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276583,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "God turned the self's mourning into dancing, loosed its sackcloth and clothed it with gladness - the received reversal"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "transformation",
+     "to": 276583,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "mourning-to-dancing",
+     "to": 276583,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'You have TURNED for me my MOURNING into DANCING; you have loosed my sackcloth and clothed me with GLADNESS' - the operation is the felt reversal: the interior is re-dressed from grief to joy."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276591": {
+   "gloss": "my glory shall sing, not be silent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my glory shall sing, not be silent"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276591,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self vows that its glory will sing God's praise and not be silent; it will give thanks forever - a pledge of unending praise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "unceasing-praise",
+     "to": 276591,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "not-be-silent",
+     "to": 276591,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'that my glory may SING your praise and not be SILENT. O LORD my God, I will give thanks to you forever' - the operation binds the interior to perpetual praise; the rescued self will not fall silent."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "306207": {
+   "gloss": "you healed me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you healed me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 306206,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'and you have HEALED me' - the restoration the cry received."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276600": {
+   "gloss": "brought up my soul from Sheol",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "brought up my soul from Sheol"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276570,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'you have BROUGHT UP my soul from Sheol' - the deliverance the extolling celebrates."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276617": {
+   "gloss": "his favour is for a lifetime",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "his favour is for a lifetime"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276619,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'his FAVOUR is for a lifetime' - the lasting grace behind the morning-joy insight."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276568": {
+   "gloss": "dedication",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dedication"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'dedication' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276572": {
+   "gloss": "up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'up' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276575": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'rejoice' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276577": {
+   "gloss": "Hear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Hear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'Hear' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276579": {
+   "gloss": "merciful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "merciful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'merciful' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276582": {
+   "gloss": "helper",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "helper"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'helper' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276584": {
+   "gloss": "mourning",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mourning"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'mourning' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276585": {
+   "gloss": "dancing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dancing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'dancing' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276586": {
+   "gloss": "loosed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "loosed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'loosed' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276587": {
+   "gloss": "sackcloth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sackcloth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'sackcloth' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276589": {
+   "gloss": "gladness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gladness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'gladness' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276590": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'glory' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276593": {
+   "gloss": "silent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "silent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'silent' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276596": {
+   "gloss": "give thanks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "give thanks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'give thanks' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276598": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'forever' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276601": {
+   "gloss": "soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'soul' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276603": {
+   "gloss": "Sheol",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Sheol"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'Sheol' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276604": {
+   "gloss": "restored me to life",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "restored me to life"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'restored me to life' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276606": {
+   "gloss": "pit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'pit' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276609": {
+   "gloss": "saints",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saints"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'saints' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276610": {
+   "gloss": "give thanks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "give thanks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'give thanks' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276612": {
+   "gloss": "holy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'holy' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276615": {
+   "gloss": "anger",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "anger"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'anger' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276622": {
+   "gloss": "joy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "joy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'joy' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276628": {
+   "gloss": "moved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "moved"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'moved' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276630": {
+   "gloss": "favor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "favor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'favor' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276634": {
+   "gloss": "strong",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strong"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'strong' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276635": {
+   "gloss": "hid",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hid"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'hid' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276644": {
+   "gloss": "plead",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "plead"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'plead' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276645": {
+   "gloss": "profit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "profit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'profit' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276646": {
+   "gloss": "death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'death' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276649": {
+   "gloss": "pit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'pit' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276650": {
+   "gloss": "dust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dust"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'dust' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276652": {
+   "gloss": "tell",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "tell"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'tell' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276654": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'faithfulness' - substrate (Sheol/pit/sackcloth imagery or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

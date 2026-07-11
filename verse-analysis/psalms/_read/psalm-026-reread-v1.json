@@ -1,27 +1,1492 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 26, "provenance": "reread-psalms-2026",
-  "note": "Ps26 (21 chars). Integrity plea framed by tom (v1,v11). Tried heart: bachan prove + test lev heart & kilyoth mind. chesed+emeth before eyes. Separation from shav/rasha; aheb love of God's house. nefesh not swept with sinners. padah+chanan (echo Ps25). Poetic ledger; span-id pairs.",
-  "spans": {
-    "276112": {"gloss":"integrity v1","dims":[{"n":101,"l":"sense","k":"value","v":"integrity / completeness (tom)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276112,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"walked in it","to":276112,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with trust","from":276112,"to":276113,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Vindicate me, for I have walked in my INTEGRITY (tom)' — the ground of the appeal; tom (as Ps25:21) the wholeness of life, frames the psalm with v11, the basis on which vindication is sought"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276113": {"gloss":"trusted v1","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276113,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276113,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"without wavering","to":276113,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with integrity","from":276113,"to":276112,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I have TRUSTED (batach) in the LORD without wavering' — unshaken reliance joined to integrity; batach the steadfast trust that, with tom, grounds the plea for vindication"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276136": {"gloss":"Prove v2","dims":[{"n":101,"l":"sense","k":"value","v":"prove / assay (bachan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (invited to)","to":276136,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"prove / assay"},{"n":107,"l":"target","k":"pair","v":"heart and mind","from":276136,"to":276141,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'PROVE me (bachan), O LORD, and try me; test my heart and mind' — the confident invitation to divine testing; bachan (as Ps17:3) the assayer's trial, the integrity so sure it welcomes God's scrutiny of the inmost self"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276141": {"gloss":"heart v2","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - test my heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":276141,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276141,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the kidneys/mind","from":276141,"to":276142,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'test my HEART (lev)' — the seat submitted to God's assay; lev paired with kilyoth (mind/kidneys), the inner faculties offered together for divine testing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276142": {"gloss":"mind v2","dims":[{"n":101,"l":"sense","k":"value","v":"kidneys / inmost mind (kilyoth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"kidneys (self)","to":276142,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276142,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the heart","from":276142,"to":276141,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'and my MIND (kilyoth)' — the kidneys as the deepest seat of thought/conscience; kilyoth (as Ps16:7) paired with lev, the innermost self bared to God's testing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276144": {"gloss":"steadfast love v3","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his chesed before David's eyes)","to":276144,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"before my eyes","to":276144,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with faithfulness","from":276144,"to":276148,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'your CHESED (steadfast love) is before my eyes, and I walk in your faithfulness' — God's love the constant object of the gaze; chesed kept in view shapes the walk, integrity flowing from beholding grace"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276148": {"gloss":"faithfulness v3","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness / truth (emeth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (David walks in it)","to":276148,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with steadfast love","from":276148,"to":276144,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and I walk in your FAITHFULNESS (emeth)' — God's truth as the path of life; emeth (recurs Ps25:5,10) the reliable way David treads, love and truth together forming his conduct"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276153": {"gloss":"falsehood v4","dims":[{"n":101,"l":"sense","k":"value","v":"falsehood / vanity (shav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"men of falsehood (avoided)","to":276153,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"avoided ('I do not sit with men of falsehood')"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'I do not sit with men of FALSEHOOD (shav)' — separation from the deceitful; shav (as Ps24:4) the vain/false company the man of integrity refuses, purity kept by avoided association"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276157": {"gloss":"hate v5","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - the assembly of evildoers)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276157,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"the wicked","from":276157,"to":276163,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I HATE (sane) the assembly of evildoers' — righteous hatred of evil company; sane here the good hatred of wickedness (contrast the foes' sane in Ps25:19), moral aversion, refusing to sit with the wicked"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276163": {"gloss":"wicked v5","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (resha'im)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (shunned)","to":276163,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of righteous hatred","from":276163,"to":276157,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"avoided ('I will not sit with the wicked')"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'and I will not sit with the WICKED (resha'im)' — deliberate separation; resha'im the company the man of tom refuses, the negative side of integrity (cf Ps1:1 not sitting in the seat of scoffers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276166": {"gloss":"innocence v6","dims":[{"n":101,"l":"sense","k":"value","v":"innocence / cleanness (niqqayon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276166,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wash (hands in it)","to":276166,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I wash my hands in INNOCENCE (niqqayon), and go around your altar' — ritual cleanness enacting inner purity; niqqayon = the innocence the worshipper claims to approach God (cf clean hands, Ps24:4)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276171": {"gloss":"thanksgiving v7","dims":[{"n":101,"l":"sense","k":"value","v":"thanksgiving (todah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276171,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"proclaim aloud","to":276171,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"God","to":276171,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"aloud","to":276171,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'proclaiming THANKSGIVING (todah) aloud, telling all your wondrous deeds' — worship as public gratitude; todah the thank-offering of the voice, the integrity that draws near also declares God's works"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276177": {"gloss":"love v8","dims":[{"n":101,"l":"sense","k":"value","v":"love (aheb - the habitation of your house)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276177,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"the habitation of God's house","to":276177,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"where God's glory dwells","from":276177,"to":276182,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I LOVE (aheb) the habitation of your house' — affection for God's dwelling; aheb (the standard love-verb, distinct from racham Ps18:1) directed to the place of God's presence, the worshipper's delight in the sanctuary"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276182": {"gloss":"glory v8","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - where your glory dwells)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his glory)","to":276182,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the loved dwelling","from":276182,"to":276177,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the place where your GLORY (kavod) dwells' — God's glory as what makes the house lovely; kavod (as Ps24) the presence David loves, the sanctuary precious because glory abides there"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276186": {"gloss":"soul v9","dims":[{"n":101,"l":"sense","k":"value","v":"soul / life (nefesh - sweep not away)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":276186,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276186,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"not swept with sinners","from":276186,"to":276188,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('Do NOT sweep my soul away with sinners')"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'Do not sweep my SOUL (nefesh) away with sinners' — the plea not to share the fate of the wicked; nefesh the life David begs be separated from the doom of the bloodthirsty, integrity pleading distinct destiny"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276188": {"gloss":"sinners v9","dims":[{"n":101,"l":"sense","k":"value","v":"sinners (chatta)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"sinners / bloodthirsty men","to":276188,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose fate the soul must not share","from":276188,"to":276186,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'with SINNERS (chatta)... bloodthirsty men' — those from whose judgement David asks to be spared; chatta (recurs Ps25:8) here the doomed company, hands full of evil devices and bribes (v10)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276119": {"gloss":"evil v10","dims":[{"n":101,"l":"sense","k":"value","v":"evil device / lewdness (zimmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the sinners (in whose hands)","to":276119,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'in whose hands are EVIL devices (zimmah), and whose right hands are full of bribes' — the wicked characterised by scheming and corruption; zimmah = calculated wickedness, the inner depravity that fills their hands (contrast David's hands washed in innocence, v6)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276125": {"gloss":"integrity v11","dims":[{"n":101,"l":"sense","k":"value","v":"integrity (tom)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276125,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"walk in it","to":276125,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with the plea to redeem","from":276125,"to":276126,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'But as for me, I shall walk in my INTEGRITY (tom); redeem me' — tom closes the frame (v1); resolve for the future joined to the plea for grace, integrity and dependence held together"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276126": {"gloss":"redeem v11","dims":[{"n":101,"l":"sense","k":"value","v":"redeem / ransom (padah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (asked to)","to":276126,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"redeem"},{"n":107,"l":"target","k":"pair","v":"David","to":276126,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with be gracious","from":276126,"to":276127,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'REDEEM (padah) me, and be gracious to me' — integrity pleading grace, not merit; padah (echoes Ps25:22) the ransom sought even by the man of tom, who still needs redemption"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276127": {"gloss":"gracious v11","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (asked to)","to":276127,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be gracious"},{"n":107,"l":"target","k":"pair","v":"David","to":276127,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with redeem","from":276127,"to":276126,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and be GRACIOUS (chanan) to me' — the appeal to free favour; chanan (echoes Ps25:16) the grace even the upright depends on, integrity and grace not opposed but joined"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276134": {"gloss":"bless v12","dims":[{"n":101,"l":"sense","k":"value","v":"bless (barak)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276134,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"bless"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276134,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"in the great assembly","to":276134,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'My foot stands on level ground; in the great assembly I will BLESS (barak) the LORD' — the resolution of the plea in praise; barak the blessing of God from firm footing, the vindicated worshipper standing secure among the congregation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 26,
+ "provenance": "reread-psalms-2026",
+ "note": "Integrity portrait: walked-integrity, unwavering trust, invite-testing, walk-faithfulness, hate evildoers' company, wash-innocence, proclaim thanks, love the house, not-swept-with-sinners, resolve, bless",
+ "spans": {
+  "276111": {
+   "gloss": "walked in my integrity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "walked in my integrity"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276111,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self appeals for vindication on the ground that it has walked in integrity - a whole life offered as evidence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "integrity-of-life",
+     "to": 276111,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "walked-integrity",
+     "to": 276111,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Vindicate me, O LORD, for I have WALKED in my INTEGRITY' - the interior stakes its plea on a consistent, undivided manner of life."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276113": {
+   "gloss": "trusted without wavering",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trusted without wavering"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276113,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self has trusted in the LORD without wavering/slipping - steady reliance as part of the integrity"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "unwavering-trust",
+     "to": 276113,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "trust-not-waver",
+     "to": 276113,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'and I have TRUSTED in the LORD without WAVERING' - distinct from the walk: the interior's reliance has not slipped or sagged; a constancy of trust."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276139": {
+   "gloss": "invite God to test the heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "invite God to test the heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276139,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self invites God to prove, try and test its heart and mind - a confidence willing to be assayed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "confident-self-submission",
+     "to": 276139,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "test-my-heart",
+     "to": 276139,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'PROVE me, O LORD, and try me; TEST my HEART and my mind' - the operation offers the inmost self for examination; only an integrity sure of itself asks to be tested."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276147": {
+   "gloss": "walk in your faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "walk in your faithfulness"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276147,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "with God's steadfast love before its eyes, the self walks in his faithfulness - conduct shaped by keeping God in view"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "God-oriented-walk",
+     "to": 276147,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "walk-faithfulness",
+     "to": 276147,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'For your steadfast love is before my eyes, and I WALK in your FAITHFULNESS' - the operation keeps God's love in constant sight and lets it govern the walk."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276157": {
+   "gloss": "hate the assembly of evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hate the assembly of evildoers"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276157,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self will not sit with the false or hypocrites; it hates the assembly of evildoers and will not sit with the wicked - aversion to their company"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "separation",
+     "to": 276157,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "hate-their-company",
+     "to": 276157,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4-5: 'I do not sit with men of falsehood... I HATE the assembly of EVILDOERS and will not sit with the wicked' - the operation is a chosen distancing; the interior refuses the fellowship of the corrupt."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276164": {
+   "gloss": "wash my hands in innocence",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wash my hands in innocence"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276164,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self washes its hands in innocence and goes around the altar - approaching worship with a cleansed conscience"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "ritual-purity",
+     "to": 276164,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "wash-in-innocence",
+     "to": 276164,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'I WASH my hands in INNOCENCE and go around your altar, O LORD' - the operation is a deliberate purification before drawing near; clean conscience as the ticket to the altar."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276170": {
+   "gloss": "proclaim thanksgiving aloud",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "proclaim thanksgiving aloud"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276170,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self proclaims thanksgiving aloud and tells all God's wondrous deeds - gratitude published at the altar"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "proclamation",
+     "to": 276170,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "proclaim-thanks",
+     "to": 276170,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'PROCLAIMING THANKSGIVING aloud, and telling all your wondrous deeds' - the operation turns worship vocal: the interior recounts God's works for others to hear."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276177": {
+   "gloss": "love the house of the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "love the house of the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276177,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self loves the habitation of God's house, the place where his glory dwells - affection for God's dwelling"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "love-of-the-house",
+     "to": 276177,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "love-your-house",
+     "to": 276177,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'O LORD, I LOVE the habitation of your house and the place where your GLORY dwells' - the operation is a warm attachment to the very place of God's presence."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276186": {
+   "gloss": "do not sweep my soul with sinners",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "do not sweep my soul with sinners"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276186,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self pleads that God not sweep away its soul with sinners or its life with the bloodthirsty - a longing to be distinguished from the wicked at the reckoning"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "plea-for-distinction",
+     "to": 276186,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "not-swept-away",
+     "to": 276186,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'Do not sweep my SOUL away with sinners, nor my life with bloodthirsty men' - the operation asks that the integrity of the interior be honoured when judgment falls on the wicked."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276124": {
+   "gloss": "I shall walk in my integrity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I shall walk in my integrity"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276124,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "turning from plea to resolve, the self declares it will walk in its integrity, asking to be redeemed and shown grace - a forward commitment"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "forward-resolve",
+     "to": 276124,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "resolve-integrity",
+     "to": 276124,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'But as for me, I shall WALK in my INTEGRITY; redeem me, and be gracious to me' - distinct from the past claim of v1: this is the future pledge, the interior committing to keep its course."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276134": {
+   "gloss": "bless the LORD in the assembly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bless the LORD in the assembly"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276134,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "standing on level ground, the self will bless the LORD in the great assembly - the integrity ending in public praise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "doxology",
+     "to": 276134,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bless-in-assembly",
+     "to": 276134,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'My foot stands on level ground; in the great assembly I will BLESS the LORD' - the operation closes the psalm: the vindicated interior turns to blessing God among the congregation."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276107": {
+   "gloss": "Vindicate me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Vindicate me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276111,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'VINDICATE me, O LORD' - the judicial verdict the walked-integrity appeals for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276126": {
+   "gloss": "redeem me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "redeem me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276124,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'REDEEM me, and be gracious to me' - the rescue the resolve-to-walk asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276112": {
+   "gloss": "integrity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "integrity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'integrity' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276119": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'evil' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276122": {
+   "gloss": "bribes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bribes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'bribes' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276125": {
+   "gloss": "integrity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "integrity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'integrity' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276127": {
+   "gloss": "gracious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gracious"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'gracious' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276136": {
+   "gloss": "Prove",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Prove"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Prove' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276138": {
+   "gloss": "try",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "try"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'try' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276141": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'heart' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276142": {
+   "gloss": "mind",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mind"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'mind' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276144": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'steadfast love' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276148": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'faithfulness' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276153": {
+   "gloss": "falsehood",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "falsehood"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'falsehood' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276156": {
+   "gloss": "hypocrites",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hypocrites"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'hypocrites' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276159": {
+   "gloss": "evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evildoers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'evildoers' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276163": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'wicked' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276166": {
+   "gloss": "innocence",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "innocence"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'innocence' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276167": {
+   "gloss": "go around",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "go around"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'go around' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276171": {
+   "gloss": "thanksgiving",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "thanksgiving"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'thanksgiving' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276172": {
+   "gloss": "aloud",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "aloud"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'aloud' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276173": {
+   "gloss": "telling",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "telling"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'telling' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276175": {
+   "gloss": "wondrous deeds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wondrous deeds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'wondrous deeds' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276182": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'glory' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276188": {
+   "gloss": "sinners",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sinners"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'sinners' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276191": {
+   "gloss": "bloodthirsty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bloodthirsty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'bloodthirsty' - substrate (bribe/altar/glory imagery or wicked-label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

@@ -1,39 +1,1889 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 33, "provenance": "reread-psalms-2026",
-  "note": "Ps33 (30 chars). Hymn: creating word, ruling counsel, watching eye. chesed x3 (v5,18,22), three lev (God's plans v11 / hearts he fashions v15 / our glad heart v21), might-futility (yasha/teshuah), yare+yachal fear+hope. Poetic ledger; span-id pairs.",
-  "spans": {
-    "276977": {"gloss":"joy v1","dims":[{"n":101,"l":"sense","k":"value","v":"shout for joy (ranan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","from":276977,"to":276979,"res":"span"},{"n":106,"l":"operation","k":"event","v":"shout for joy"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276977,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the righteous","from":276977,"to":276979,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'SHOUT for JOY (ranan) in the LORD, O you righteous!' — the summons to praise; ranan (as Ps32:11) the ringing joy that befits the upright, opening the hymn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276979": {"gloss":"righteous v1","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (called to joy)","to":276979,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"summoned to shout for joy","from":276979,"to":276977,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'O you RIGHTEOUS (tsaddiq)!' — the righteous as the fitting praisers; tsaddiq (recurs Ps32:11) those for whom praise is comely, summoned to the joy of the hymn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276980": {"gloss":"Praise v1","dims":[{"n":101,"l":"sense","k":"value","v":"praise (tehillah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright (praise befits them)","from":276980,"to":276982,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"befits the upright","from":276980,"to":276982,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'PRAISE (tehillah) befits the upright' — praise as the seemly act of the godly; tehillah (recurs Ps22:3,25) the praise fitting for the upright, the vocation of the righteous"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276982": {"gloss":"upright v1","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright","to":276982,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"praise befits them","from":276982,"to":276980,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'befits the UPRIGHT (yashar)' — the straight ones for whom praise is fitting; yashar (recurs Ps32:11) here the upright praisers, echoed in v4 of God's own upright word"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277055": {"gloss":"Give thanks v2","dims":[{"n":101,"l":"sense","k":"value","v":"give thanks (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277055,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"give thanks"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277055,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"with the lyre","to":277055,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with making melody","from":277055,"to":277058,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'GIVE THANKS (yadah) to the LORD with the lyre' — instrumental thanksgiving; yadah (recurs Ps32:5) the grateful praise, now voiced with the harp"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277058": {"gloss":"make melody v2","dims":[{"n":101,"l":"sense","k":"value","v":"make melody (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277058,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"make melody"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277058,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"harp of ten strings","to":277058,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with giving thanks","from":277058,"to":277055,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'MAKE MELODY (zamar) to him with the harp' — musical praise; zamar (recurs Ps30) the skilled music-making that accompanies the thanksgiving"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277082": {"gloss":"Sing v3","dims":[{"n":101,"l":"sense","k":"value","v":"sing (shir - a new song)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277082,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sing"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277082,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"a new song, skillfully, with loud shouts","to":277082,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'SING (shir) to him a NEW song' — fresh praise for fresh mercies; shir the new song of the redeemed, sung skilfully with loud shouts, the fullness of the opening call to praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277091": {"gloss":"upright(word) v4","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar - the word of the LORD)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the word of the LORD","to":277091,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with faithful work","from":277091,"to":277094,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the word of the LORD is UPRIGHT (yashar)' — God's word as straight/reliable; yashar (recurs v1) now of God's word — the upright praise the upright word, the reason for the hymn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277094": {"gloss":"faithfulness v4","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness (emunah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (all his work)","to":277094,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the upright word","from":277094,"to":277091,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'all his work is done in FAITHFULNESS (emunah)' — God's reliability in action; emunah = steadfast trustworthiness, the character behind all God's deeds"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277095": {"gloss":"loves v5","dims":[{"n":101,"l":"sense","k":"value","v":"love (aheb - loves righteousness)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277095,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"righteousness and justice","from":277095,"to":277096,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'He LOVES (aheb) righteousness and justice' — God's own affections; aheb (as Ps26:8 of human love; here God's) the divine love for right and justice, the moral bent of the Creator whose earth is full of his chesed"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277096": {"gloss":"righteousness v5","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"righteousness (loved by God)","to":277096,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of God's love","from":277096,"to":277095,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'RIGHTEOUSNESS (tsedaqah) and justice' — what God loves; tsedaqah the right order God delights in, paired with justice as the objects of divine affection"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277100": {"gloss":"steadfast love v5","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (fills the earth)","to":277100,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the earth","to":277100,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the earth is full of the CHESED (steadfast love) of the LORD' — love filling creation; chesed the first of three (v5,18,22), here cosmic — the whole earth brimming with God's covenant love"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277114": {"gloss":"fear v8","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yare - let all the earth fear)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all the earth","to":277114,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"fear"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277114,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with standing in awe","from":277114,"to":277120,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Let all the earth FEAR (yare) the LORD' — the creating word calls forth fear; yare (recurs v18) the reverence owed the God who spoke and it was, the whole earth summoned to awe"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277120": {"gloss":"awe v8","dims":[{"n":101,"l":"sense","k":"value","v":"stand in awe / dread (gur)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all the inhabitants of the world","to":277120,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"stand in awe"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277120,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with fearing","from":277120,"to":277114,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'let all the inhabitants of the world STAND IN AWE (gur) of him!' — reverent dread of the Creator; gur = to be in awe/dread, the response to the God who spoke and it stood firm (v9)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276995": {"gloss":"heart(God) v11","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - the plans of his heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self, God's)","to":276995,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276995,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"to all generations","to":276995,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the counsel of the LORD stands forever, the plans of his HEART (lev) to all generations' — God's own heart, its purposes eternal; lev here the divine heart whose plans, unlike the nations' (v10), never fail — the first of three hearts (God's v11, men's v15, ours v21)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276998": {"gloss":"Blessed v12","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the nation whose God is the LORD","to":276998,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the nation whose God is the LORD' — the beatitude of the chosen people; esher (recurs Ps32:1,2) here corporate, the happiness of the nation God has chosen as his heritage"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277016": {"gloss":"hearts(men) v15","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - he fashions the hearts of all)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277016,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"all humankind (their hearts)","to":277016,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"fashioned by God","to":277016,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'he who FASHIONS the HEARTS (lev) of them all and observes all their deeds' — God the maker and watcher of every heart; lev here the human heart God forms and knows — the second of three hearts, the inner life fully open to its Creator"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277024": {"gloss":"saved v16","dims":[{"n":101,"l":"sense","k":"value","v":"be saved (yasha, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the king (not saved by his army)","to":277024,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be saved (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"by his great army","to":277024,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('The king is NOT saved by his great army')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The king is not SAVED (yasha) by his great army' — the futility of might; yasha negated, salvation not from military power (cf Ps20:7 chariots vs the name) — deliverance is God's alone"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277033": {"gloss":"false hope v17","dims":[{"n":101,"l":"sense","k":"value","v":"falsehood / vain thing (sheqer - the war horse)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the war horse (a false hope)","to":277033,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"cannot give salvation","from":277033,"to":277034,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"'The war horse is a FALSE HOPE (sheqer) for salvation' — misplaced trust in strength; sheqer (as Ps31:18) here the lie of relying on the horse, whose might cannot rescue"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277034": {"gloss":"salvation v17","dims":[{"n":101,"l":"sense","k":"value","v":"salvation / deliverance (teshuah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"salvation (not from the horse)","to":277034,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the horse a false hope for it","from":277034,"to":277033,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'a false hope for SALVATION (teshuah); by its great might it cannot rescue' — salvation not in strength; teshuah the deliverance the horse cannot supply, reserved to God alone (v18-19)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277043": {"gloss":"fear v18","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yare - those who fear him)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who fear the LORD","to":277043,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with those who hope in chesed","from":277043,"to":277045,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the eye of the LORD is on those who FEAR (yare) him' — God's watchful care over the reverent; yare (recurs v8) the God-fearers on whom the divine eye rests, matched by their hope in his love"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277045": {"gloss":"hope v18","dims":[{"n":101,"l":"sense","k":"value","v":"hope / wait (yachal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who hope in God's love","to":277045,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hope"},{"n":107,"l":"target","k":"pair","v":"his steadfast love","from":277045,"to":277047,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with fearing God","from":277045,"to":277043,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'on those who HOPE (yachal) in his steadfast love' — hope directed to God's chesed; yachal (recurs v22) the waiting expectation that, with the fear of God, draws his watchful eye"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277047": {"gloss":"steadfast love v18","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (hoped in)","to":277047,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of hope","from":277047,"to":277045,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'those who hope in his CHESED (steadfast love)' — the second chesed; God's love as the object of the God-fearers' hope, the ground of their expectation of rescue"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277050": {"gloss":"soul v19","dims":[{"n":101,"l":"sense","k":"value","v":"soul / life (nefesh - deliver their soul from death)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":277050,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"those who fear God","to":277050,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"delivered from death","to":277050,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'that he may deliver their SOUL (nefesh) from death' — the life God preserves; nefesh here the life kept from death and famine, the salvation the God-fearers hope for (first of two, v19,20)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277062": {"gloss":"soul v20","dims":[{"n":101,"l":"sense","k":"value","v":"soul (nefesh - our soul waits)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":277062,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the community ('our soul')","to":277062,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"waits for the LORD","from":277062,"to":277063,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'Our SOUL (nefesh) waits for the LORD' — the corporate soul in expectation; nefesh here the whole community's inner life waiting on God, their help and shield (second of two)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277063": {"gloss":"waits v20","dims":[{"n":101,"l":"sense","k":"value","v":"wait (chakah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"our soul","from":277063,"to":277062,"res":"span"},{"n":106,"l":"operation","k":"event","v":"wait"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277063,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the soul","from":277063,"to":277062,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'our soul WAITS (chakah) for the LORD; he is our help and our shield' — patient expectation on God; chakah (a wait-verb like qavah, Ps27:14) the soul's reliance, God its help and shield"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277070": {"gloss":"heart(ours) v21","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - our heart is glad)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277070,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the community","to":277070,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"is glad","from":277070,"to":277071,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'For our HEART (lev) is glad in him' — the third heart of the psalm; lev here our own heart rejoicing in God (God's plans v11, men's hearts v15, our glad heart v21) — the inner joy of trust in his holy name"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277071": {"gloss":"glad v21","dims":[{"n":101,"l":"sense","k":"value","v":"be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"our heart","from":277071,"to":277070,"res":"span"},{"n":106,"l":"operation","k":"event","v":"be glad"},{"n":107,"l":"target","k":"pair","v":"in him (God)","to":277071,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the heart, paired with trust","from":277071,"to":277073,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'our heart is GLAD (samach) in him, because we trust' — gladness flowing from trust; samach (recurs Ps32:11) the joy grounded in reliance on God's holy name"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277073": {"gloss":"trust v21","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the community","to":277073,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"his holy name","to":277073,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the ground of gladness","from":277073,"to":277071,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'because we TRUST (batach) in his holy name' — trust as the source of the glad heart; batach (recurs Ps32:10) the reliance on God's name that makes the heart glad"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277076": {"gloss":"steadfast love v22","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (asked to be upon us)","to":277076,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the community","to":277076,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with hope","from":277076,"to":277080,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Let your CHESED (steadfast love), O LORD, be upon us, even as we hope in you' — the closing prayer; the third chesed (v5,18,22), God's love invoked to rest on the hopeful, sealing the hymn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277080": {"gloss":"hope v22","dims":[{"n":101,"l":"sense","k":"value","v":"hope / wait (yachal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the community","to":277080,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hope"},{"n":107,"l":"target","k":"pair","v":"God ('in you')","to":277080,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with God's chesed","from":277080,"to":277076,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'even as we HOPE (yachal) in you' — hope as the measure of the chesed sought; yachal (recurs v18) the waiting trust on which the prayer for God's love rests, closing the psalm on hope"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277107": {"gloss":"breath-word v6","dims":[{"n":101,"l":"sense","k":"value","v":"breath / word (the creating word and breath)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v6: 'By the WORD of the LORD the heavens were made, and by the BREATH (ruach) of his mouth all their host' - creation by the spoken word; the ruach here God's creative breath/utterance (not the human spirit), the effortless power that spoke the cosmos into being (v9 'he spoke, and it came to be')"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "276984": {"gloss":"counsel-nations v10","dims":[{"n":101,"l":"sense","k":"value","v":"counsel / plans of the nations (etsah/machashabah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v10: 'The LORD brings the COUNSEL of the nations to nothing; he frustrates the PLANS of the peoples' - human schemes overthrown; the nations' counsel and plans annulled by God, set against the counsel of the LORD that stands forever (v11) - the futility of plans opposed to God's"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 33,
+ "provenance": "reread-psalms-2026",
+ "note": "Praise+providence: righteous shout for joy, skilful new song, the fear + hope God's eye rests on, soul waits, heart glad in trust, community's hope (word/works/counsel = qual/standalone)",
+ "spans": {
+  "276977": {
+   "gloss": "shout for joy, you righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shout for joy, you righteous"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 276977,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls the righteous to shout for joy in the LORD, for praise befits the upright - joy as the fitting act of the righteous"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fitting-joy",
+     "to": 276977,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "shout-for-joy",
+     "to": 276977,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Shout for JOY in the LORD, O you righteous! Praise befits the UPRIGHT' - the operation names joyful praise as the proper expression of an upright interior."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277082": {
+   "gloss": "sing a new song, skilfully",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sing a new song, skilfully"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the worshippers",
+     "to": 277082,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self summons a new song, played skilfully on strings with loud shouts - fresh, crafted praise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fresh-praise",
+     "to": 277082,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "new-song-skilful",
+     "to": 277082,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'SING to him a NEW song; play SKILFULLY on the strings, with loud shouts' - the operation is inventive, well-made praise; the interior brings craft and freshness, not rote."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277043": {
+   "gloss": "the fear God's eye rests on",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the fear God's eye rests on"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who fear him",
+     "to": 277043,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the eye of the LORD is on those who fear him - reverent fear as the posture God watches over"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "reverent-fear",
+     "to": 277043,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "eye-on-the-fearing",
+     "to": 277043,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'Behold, the EYE of the LORD is on those who FEAR him' - the operation names the fearing interior as the one God keeps in view; reverence draws his watchful care."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277045": {
+   "gloss": "hope in his steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hope in his steadfast love"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who hope",
+     "to": 277045,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the LORD's eye is on those who hope in his steadfast love - hope leaning on covenant love as the ground of God's regard"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "hope",
+     "to": 277045,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "hope-in-chesed",
+     "to": 277045,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'on those who HOPE in his steadfast love' - distinct from fear: this is the forward-leaning trust in God's love, the expectancy that draws his eye alongside reverence."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277062": {
+   "gloss": "our soul waits for the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "our soul waits for the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the community",
+     "to": 277062,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's soul waits for the LORD, its help and shield - patient, dependent expectancy"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "waiting",
+     "to": 277062,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "soul-waits",
+     "to": 277062,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'Our SOUL WAITS for the LORD; he is our help and our shield' - the operation is the interior's patient reliance; the soul holds still and looks to God as its defence."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277070": {
+   "gloss": "our heart is glad in his name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "our heart is glad in his name"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the community",
+     "to": 277070,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's heart is glad in God because it trusts in his holy name - gladness flowing from trust"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "trusting-gladness",
+     "to": 277070,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heart-glad-in-trust",
+     "to": 277070,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'For our HEART is GLAD in him, because we TRUST in his holy name' - the operation ties gladness to trust: the interior rejoices precisely because it relies on who God is."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277080": {
+   "gloss": "even as we hope in you",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "even as we hope in you"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the community",
+     "to": 277080,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God's steadfast love to be upon it, even as it hopes in him - present hope as the ground of the closing plea"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "present-hope",
+     "to": 277080,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "as-we-hope",
+     "to": 277080,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'Let your steadfast love, O LORD, be upon us, even as we HOPE in you' - distinct from v18's general hopers: this is the community's own present hope, offered as the reason for the plea."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277049": {
+   "gloss": "deliver their soul from death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliver their soul from death"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277043,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'that he may DELIVER their soul from death and keep them alive in famine' - the rescue God's eye-on-the-fearing secures."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277066": {
+   "gloss": "our help and our shield",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "our help and our shield"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277062,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'he is our HELP and our SHIELD' - the God the waiting soul looks to."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276979": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'righteous' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276980": {
+   "gloss": "Praise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Praise"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Praise' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276982": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'upright' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276984": {
+   "gloss": "counsel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counsel"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'counsel' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276987": {
+   "gloss": "frustrates",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "frustrates"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'frustrates' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276988": {
+   "gloss": "plans",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "plans"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'plans' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276990": {
+   "gloss": "counsel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counsel"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'counsel' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276993": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'forever' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276994": {
+   "gloss": "plans",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "plans"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'plans' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276995": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'heart' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276998": {
+   "gloss": "Blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'Blessed' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277004": {
+   "gloss": "chosen",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "chosen"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'chosen' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277008": {
+   "gloss": "looks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "looks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'looks' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277011": {
+   "gloss": "sees",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sees"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'sees' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277015": {
+   "gloss": "fashions",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fashions"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'fashions' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277016": {
+   "gloss": "hearts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hearts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'hearts' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277018": {
+   "gloss": "observes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "observes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'observes' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277021": {
+   "gloss": "deeds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deeds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'deeds' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277024": {
+   "gloss": "saved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saved"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'saved' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277026": {
+   "gloss": "army",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "army"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'army' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277029": {
+   "gloss": "delivered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'delivered' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277033": {
+   "gloss": "false hope",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "false hope"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'false hope' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277034": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'salvation' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277036": {
+   "gloss": "might",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "might"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'might' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277038": {
+   "gloss": "rescue",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rescue"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'rescue' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277047": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'steadfast love' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277050": {
+   "gloss": "soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'soul' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277052": {
+   "gloss": "death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'death' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277053": {
+   "gloss": "alive",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "alive"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'alive' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277054": {
+   "gloss": "famine",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "famine"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'famine' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277055": {
+   "gloss": "Give thanks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Give thanks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Give thanks' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277058": {
+   "gloss": "make melody",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "make melody"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'make melody' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277063": {
+   "gloss": "waits",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "waits"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'waits' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277068": {
+   "gloss": "shield",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shield"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'shield' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277071": {
+   "gloss": "glad",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glad"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'glad' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277073": {
+   "gloss": "trust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'trust' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277074": {
+   "gloss": "holy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'holy' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277075": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'name' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277076": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'steadfast love' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277086": {
+   "gloss": "skillfully",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "skillfully"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'skillfully' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277087": {
+   "gloss": "shouts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shouts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'shouts' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277089": {
+   "gloss": "word",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "word"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'word' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277091": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'upright' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277093": {
+   "gloss": "work",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "work"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'work' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277094": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'faithfulness' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277095": {
+   "gloss": "loves",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "loves"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'loves' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277096": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'righteousness' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277097": {
+   "gloss": "justice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "justice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'justice' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277100": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'steadfast love' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277103": {
+   "gloss": "word",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "word"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'word' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277107": {
+   "gloss": "breath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "breath"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'breath' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277114": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'fear' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277120": {
+   "gloss": "awe",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "awe"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'awe' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306220": {
+   "gloss": "commanded",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "commanded"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'commanded' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306225": {
+   "gloss": "looks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "looks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'looks' - substrate (God's word/creation/counsel/providence, army-no-salvation, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

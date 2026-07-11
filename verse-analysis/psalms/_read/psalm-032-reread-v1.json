@@ -1,36 +1,1779 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 32, "provenance": "reread-psalms-2026",
-  "note": "Ps32 (28 chars). Penitential. Three sin-words pesha/chattath/avon: forgiven (v1-2), confessed (v5). Double esher beatitude. ruach no deceit. shaagah groaning of silence. yada acknowledge + yadah confess. chesed surrounds the truster. joy-cluster v11 (samach/gil/ranan). Poetic ledger; span-id pairs.",
-  "spans": {
-    "276872": {"gloss":"Blessed v1","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one whose transgression is forgiven","from":276872,"to":276873,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the one whose transgression is forgiven' — the beatitude of the pardoned; esher (as Ps1:1) the deep happiness not of the sinless but of the forgiven, the psalm's opening note"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276873": {"gloss":"transgression v1","dims":[{"n":101,"l":"sense","k":"value","v":"transgression / rebellion (pesha, forgiven)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed one","to":276873,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"forgiven / lifted","to":276873,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with covered sin","from":276873,"to":276875,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'whose TRANSGRESSION (pesha) is forgiven' — rebellion lifted away; pesha (as Ps19:13) the first of the three sin-words, the willful breach now borne off, forgiven"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276875": {"gloss":"sin v1","dims":[{"n":101,"l":"sense","k":"value","v":"sin (chattath, covered)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed one","to":276875,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"covered","to":276875,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with forgiven transgression","from":276875,"to":276873,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'whose SIN (chattath) is covered' — the sin hidden from view; chattath (missing the mark) the second sin-word, now covered over by God, blotted from sight"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276892": {"gloss":"Blessed v2","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man against whom no iniquity is counted","to":276892,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the man against whom the LORD counts no iniquity' — the second beatitude; esher doubled, the happiness of the one whose iniquity God does not reckon and whose spirit is guileless"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276895": {"gloss":"counts v2","dims":[{"n":101,"l":"sense","k":"value","v":"count / reckon (chashab, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276895,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"count / reckon (negated)"},{"n":107,"l":"target","k":"pair","v":"iniquity","from":276895,"to":276897,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('counts NO iniquity')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'against whom the LORD COUNTS (chashab) no iniquity' — non-imputation of guilt; chashab (as Ps21:11 of the wicked's scheming; here God's reckoning) negated — God does not charge the sin to the pardoned's account"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276897": {"gloss":"iniquity v2","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed man (not counted to him)","to":276897,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"not counted","to":276897,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"not reckoned by God","from":276897,"to":276895,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'counts no INIQUITY (avon)' — the third sin-word, not reckoned; avon (guilt/crookedness) completes the triad pesha/chattath/avon, all three now unimputed"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276898": {"gloss":"spirit v2","dims":[{"n":101,"l":"sense","k":"value","v":"spirit (ruach - in whose spirit no deceit)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"spirit (self)","to":276898,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the blessed man","to":276898,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"in which there is no deceit","from":276898,"to":276900,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'in whose SPIRIT (ruach) there is no deceit' — the guileless inner self; ruach (as Ps31:5) here the spirit purged of self-deception, honest before God — the forgiven no longer hides sin"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276900": {"gloss":"deceit v2","dims":[{"n":101,"l":"sense","k":"value","v":"deceit / guile (remiyah, negated)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed man (without it)","to":276900,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"absent from the spirit","from":276900,"to":276898,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('no DECEIT in his spirit')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'no DECEIT (remiyah)' — self-honesty as the mark of the forgiven; remiyah = guile/slackness, negated — the spirit that no longer deceives itself about its sin, the opposite of the silence of v3"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276906": {"gloss":"groaning v3","dims":[{"n":101,"l":"sense","k":"value","v":"groaning / roaring (shaagah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (in his silence)","to":276906,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"all day long","to":276906,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'when I kept silent, my bones wasted away through my GROANING (shaagah) all day' — the agony of unconfessed sin; shaagah (as Ps22:1) the groan of the one who hides his guilt, the body wasting under silence"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276921": {"gloss":"acknowledged v5","dims":[{"n":101,"l":"sense","k":"value","v":"acknowledge / make known (yada, hiphil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276921,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"acknowledge"},{"n":107,"l":"target","k":"pair","v":"my sin (to God)","from":276921,"to":276922,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with not covering iniquity","from":276921,"to":276925,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I ACKNOWLEDGED (yada) my sin to you, and did not cover my iniquity' — the turn from silence to disclosure; yada here the owning of sin, the opposite of hiding it, the act that brings release"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276922": {"gloss":"sin(a) v5","dims":[{"n":101,"l":"sense","k":"value","v":"sin (chattath - acknowledged)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276922,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"acknowledged to God","from":276922,"to":276921,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I acknowledged my SIN (chattath) to you' — the sin now named before God; chattath the first of the confession's three sin-words, brought into the open"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276925": {"gloss":"iniquity(a) v5","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity (avon - not covered)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276925,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"not covered (by self)","to":276925,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with acknowledging","from":276925,"to":276921,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"not hidden ('I did NOT cover my iniquity')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I did not cover my INIQUITY (avon)' — the refusal to hide guilt; avon uncovered by the sinner (so that God may cover it, v1) — the paradox: he who hides sin is not covered, he who uncovers it is"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276927": {"gloss":"confess v5","dims":[{"n":101,"l":"sense","k":"value","v":"confess (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276927,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"confess"},{"n":107,"l":"target","k":"pair","v":"my transgressions (to the LORD)","from":276927,"to":276928,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I will CONFESS (yadah) my transgressions to the LORD' — the resolve to confess; yadah (the same root as give-thanks, Ps30) here confession, the open owning of sin that meets instant forgiveness ('and you forgave')"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276928": {"gloss":"transgressions v5","dims":[{"n":101,"l":"sense","k":"value","v":"transgressions (pesha - confessed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276928,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"confessed to God","from":276928,"to":276927,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'confess my TRANSGRESSIONS (pesha)' — the rebellions owned; pesha in the confession (as in the beatitude v1), the same sin-words that were forgiven now named by the sinner"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276932": {"gloss":"iniquity(b) v5","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity (avon - of my sin, forgiven)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276932,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"forgiven","to":276932,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with the forgiven sin","from":276932,"to":276933,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and you forgave the INIQUITY (avon) of my sin' — the guilt lifted the moment of confession; avon here forgiven, the immediate divine response to the owned sin"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276933": {"gloss":"sin(b) v5","dims":[{"n":101,"l":"sense","k":"value","v":"sin (chattath - forgiven)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":276933,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"forgiven","to":276933,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with forgiven iniquity","from":276933,"to":276932,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the iniquity of my SIN (chattath)' — the sin whose guilt is forgiven; chattath closing the confession's use of the triad — all three sin-words (pesha/chattath/avon) confessed and all forgiven, the psalm's central drama"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276937": {"gloss":"godly v6","dims":[{"n":101,"l":"sense","k":"value","v":"godly / loyal (chasid)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"everyone who is godly","to":276937,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"summoned to pray","from":276937,"to":276938,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'let everyone who is GODLY (chasid) offer prayer to you at a time when you may be found' — the forgiveness generalised; chasid (the covenant-loyal) urged to seek God while he may be found, learning from the psalmist's confession"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276938": {"gloss":"offer prayer v6","dims":[{"n":101,"l":"sense","k":"value","v":"pray / intercede (palal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the godly","from":276938,"to":276937,"res":"span"},{"n":106,"l":"operation","k":"event","v":"pray"},{"n":107,"l":"target","k":"pair","v":"God","to":276938,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the godly","from":276938,"to":276937,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'offer PRAYER (palal) to you' — the response the forgiveness invites; palal = to pray/intercede, the godly urged to approach God in the accessible time, safe from the flood of great waters"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276957": {"gloss":"instruct v8","dims":[{"n":101,"l":"sense","k":"value","v":"instruct / make wise (sakal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (or the psalmist as teacher)","to":276957,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"instruct"},{"n":107,"l":"target","k":"pair","v":"the hearer ('you')","to":276957,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"in the way you should go","to":276957,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I will INSTRUCT (sakal) you and teach you in the way you should go' — the divine tutoring of the forgiven; sakal = to give insight, God's promise to guide with his eye upon the pardoned (contrast the mindless beast, v9)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276969": {"gloss":"understanding v9","dims":[{"n":101,"l":"sense","k":"value","v":"understanding / discernment (bin, negated of the beast)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the horse/mule (without it)","to":276969,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"absent ('without UNDERSTANDING')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Be not like a horse or mule, without UNDERSTANDING (bin)' — the warning against beastly senselessness; bin absent = the lack of discernment that must be curbed by bit and bridle, the opposite of the teachable forgiven heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276879": {"gloss":"wicked v10","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (many sorrows)","to":276879,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the truster surrounded by chesed","from":276879,"to":276882,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'Many are the sorrows of the WICKED (rasha), but steadfast love surrounds the one who trusts' — the contrast of two fates; rasha's many sorrows set against the chesed encircling the truster"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276880": {"gloss":"steadfast love v10","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":276880,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"surround","to":276880,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the one who trusts","from":276880,"to":276882,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the wicked's sorrows","from":276880,"to":276879,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'CHESED (steadfast love) surrounds the one who trusts in the LORD' — love encircling the truster; chesed here the encompassing favour of God around the trusting heart, replacing the many sorrows of the wicked"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276882": {"gloss":"trusts v10","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who trusts","to":276882,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276882,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"surrounded by chesed","from":276882,"to":276880,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the one who TRUSTS (batach) in the LORD' — trust as the condition of being encircled by love; batach the reliance that draws God's surrounding chesed, the opposite of the wicked's self-reliant sorrow"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276884": {"gloss":"glad v11","dims":[{"n":101,"l":"sense","k":"value","v":"be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":276884,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be glad"},{"n":107,"l":"target","k":"pair","v":"in the LORD","to":276884,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with rejoicing","from":276884,"to":276886,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Be GLAD (samach) in the LORD, and rejoice, O righteous' — the summons to the forgiven's joy; samach opens the closing joy-cluster (samach/gil/ranan), gladness the fruit of pardon"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276886": {"gloss":"rejoice v11","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / exult (gil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":276886,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"exult"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with gladness","from":276886,"to":276884,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and REJOICE (gil), O righteous' — exultation joined to gladness; gil the leaping joy of the pardoned righteous, the second of the joy-cluster"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276887": {"gloss":"righteous v11","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (called to joy)","to":276887,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"summoned to be glad","from":276887,"to":276884,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'O RIGHTEOUS (tsaddiq)' — the forgiven now called righteous; tsaddiq (as Ps31:18) here the pardoned reckoned just, summoned to the joy that pardon brings"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276888": {"gloss":"joy v11","dims":[{"n":101,"l":"sense","k":"value","v":"shout for joy (ranan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright in heart","from":276888,"to":276890,"res":"span"},{"n":106,"l":"operation","k":"event","v":"shout for joy"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the upright in heart","from":276888,"to":276890,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and SHOUT for JOY (ranan), all you upright in heart!' — the ringing cry of the pardoned; ranan (as Ps30:5's rinnah) the loud joy that seals the psalm, the third of the joy-cluster"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276890": {"gloss":"upright v11","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar - in heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright","to":276890,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the heart, called to shout","from":276890,"to":276891,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'all you UPRIGHT (yashar) in heart' — the straight-hearted summoned to joy; yashar (as Ps25:8) the uprightness now residing in the heart of the forgiven, the inner rectitude that shouts for joy"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276891": {"gloss":"heart v11","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - upright in heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":276891,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the upright","to":276891,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the seat of uprightness","from":276891,"to":276890,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'upright in HEART (lev)' — the heart as the seat of uprightness; lev here the inner centre made straight, from which the pardoned's joy rises, closing the psalm on the honest heart (contrast the deceit-free spirit of v2)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276913": {"gloss":"heavy-hand v4","dims":[{"n":101,"l":"sense","k":"value","v":"heavy (kabed - your hand heavy upon me)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v4: 'day and night your HAND was HEAVY (kabed) upon me; my strength dried up as by summer heat' - the weight of unconfessed sin as God's discipline; the divine hand pressing on the silent sinner, life-sap withering until confession brings release (v5)"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 32,
+ "provenance": "reread-psalms-2026",
+ "note": "Confession psalm: beatitude of forgiveness, guileless spirit, silence-wastes-bones, heavy hand, the confessing turn, godly pray while found, not-a-mule understanding, trust surrounded by love, upright glad",
+ "spans": {
+  "276872": {
+   "gloss": "blessed is the forgiven",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessed is the forgiven"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the forgiven one",
+     "to": 276872,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self pronounces blessed the one whose transgression is forgiven, whose sin is covered - happiness located in pardon"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "beatitude-of-pardon",
+     "to": 276872,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "blessed-forgiven",
+     "to": 276872,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'BLESSED is the one whose transgression is FORGIVEN, whose sin is COVERED' - the operation weighs a life as happy not for innocence but for forgiveness; the interior's relief at being pardoned."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276898": {
+   "gloss": "a spirit without deceit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "a spirit without deceit"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the forgiven one",
+     "to": 276898,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "blessed is the one in whose spirit there is no deceit - a transparency before God that has stopped hiding"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "guilelessness",
+     "to": 276898,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "spirit-no-deceit",
+     "to": 276898,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'blessed is the man against whom the LORD counts no iniquity, and in whose SPIRIT there is no DECEIT' - the operation is an interior that has quit self-deception; the guile is gone because the sin is confessed."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276902": {
+   "gloss": "kept silent, my bones wasted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "kept silent, my bones wasted"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276902,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "when the self kept silent about its sin, its bones wasted away through its groaning all day - concealment corroding the body"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "concealment's-cost",
+     "to": 276902,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "silence-wastes",
+     "to": 276902,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'For when I kept SILENT, my bones WASTED AWAY through my GROANING all day long' - the operation is the self-destruction of the unconfessed: the interior, refusing to speak, rots itself."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276913": {
+   "gloss": "your hand was heavy on me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "your hand was heavy on me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276913,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "day and night God's hand was heavy on the self; its strength dried up as by summer heat - the felt pressure of conviction"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "conviction's-weight",
+     "to": 276913,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heavy-hand",
+     "to": 276913,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'For day and night your HAND was HEAVY upon me; my strength was DRIED UP as by the heat of summer' - the operation is the crushing weight of unrelieved guilt; the interior is pressed dry until it must confess."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276927": {
+   "gloss": "I confessed and did not cover it",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I confessed and did not cover it"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 276927,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self acknowledged its sin, did not cover its iniquity, resolved to confess - and God forgave - the decisive turn"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "confessing-turn",
+     "to": 276927,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "acknowledge-confess",
+     "to": 276927,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'I ACKNOWLEDGED my sin to you, and I did not COVER my iniquity... I will CONFESS my transgressions, and you FORGAVE the iniquity of my sin' - the operation is the hinge of the psalm: the interior stops hiding and speaks, and forgiveness follows at once."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276938": {
+   "gloss": "let the godly pray while you may be found",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "let the godly pray while you may be found"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the godly",
+     "to": 276938,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "therefore let everyone who is godly offer prayer at a time when God may be found, safe from the rush of great waters - urgency of seeking while there is time"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "timely-prayer",
+     "to": 276938,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "pray-while-found",
+     "to": 276938,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'let everyone who is GODLY OFFER PRAYER to you at a time when you may be FOUND' - the operation draws the lesson: the interior should seek God now, in the window of grace, before the flood."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276969": {
+   "gloss": "be not like a horse or mule, without understanding",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "be not like a horse or mule, without understanding"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 276969,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is warned not to be like a senseless horse or mule that must be curbed with bit and bridle - the call to willing understanding rather than forced compliance"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "teachable-understanding",
+     "to": 276969,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "not-a-mule",
+     "to": 276969,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'Be not like a HORSE or a mule, without UNDERSTANDING, which must be CURBED with bit and bridle' - the operation contrasts two interiors: the one that understands and comes freely, and the brute that must be dragged."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276882": {
+   "gloss": "steadfast love surrounds the one who trusts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love surrounds the one who trusts"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the one who trusts",
+     "to": 276882,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "many are the sorrows of the wicked, but steadfast love surrounds the one who trusts in the LORD - trust encircled by love"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "encircling-love",
+     "to": 276882,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "trust-surrounded",
+     "to": 276882,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'steadfast love SURROUNDS the one who TRUSTS in the LORD' - the operation sets the trusting interior inside a ring of love, over against the wicked's many sorrows."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276884": {
+   "gloss": "be glad and shout for joy, you upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "be glad and shout for joy, you upright"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous / upright",
+     "to": 276884,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls the righteous to be glad in the LORD, to rejoice and shout for joy, all the upright in heart - the confession ending in communal joy"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "summons-to-joy",
+     "to": 276884,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "glad-and-shout",
+     "to": 276884,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'Be GLAD in the LORD, and REJOICE, O righteous, and shout for JOY, all you upright in heart!' - the operation closes the psalm by turning the relief of forgiveness into a summons for all the upright to rejoice."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276931": {
+   "gloss": "you forgave my iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you forgave my iniquity"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276927,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'and you FORGAVE the iniquity of my sin' - the pardon that answered the confession."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276950": {
+   "gloss": "you preserve me from trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you preserve me from trouble"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276938,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'you PRESERVE me from trouble; you surround me with shouts of deliverance' - the hiding-place the godly pray to."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276957": {
+   "gloss": "I will instruct you in the way",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I will instruct you in the way"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276969,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'I will INSTRUCT you and TEACH you in the way you should go' - the divine guidance the mule-warning presses the hearer to receive willingly."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276873": {
+   "gloss": "transgression",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgression"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'transgression' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276874": {
+   "gloss": "forgiven",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forgiven"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'forgiven' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276875": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'sin' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276876": {
+   "gloss": "covered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "covered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'covered' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276878": {
+   "gloss": "sorrows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sorrows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'sorrows' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276879": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'wicked' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276880": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'steadfast love' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276881": {
+   "gloss": "surrounds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "surrounds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'surrounds' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276886": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'rejoice' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276887": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'righteous' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276888": {
+   "gloss": "joy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "joy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'joy' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276890": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'upright' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276891": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'heart' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276892": {
+   "gloss": "Blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Blessed' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276895": {
+   "gloss": "counts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'counts' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276897": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'iniquity' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276900": {
+   "gloss": "deceit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deceit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'deceit' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276904": {
+   "gloss": "wasted away",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wasted away"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'wasted away' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276906": {
+   "gloss": "groaning",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "groaning"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'groaning' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276916": {
+   "gloss": "dried up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dried up"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'dried up' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276917": {
+   "gloss": "heat",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heat"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'heat' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276921": {
+   "gloss": "acknowledged",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "acknowledged"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'acknowledged' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276922": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'sin' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276924": {
+   "gloss": "cover",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cover"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'cover' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276925": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'iniquity' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276928": {
+   "gloss": "transgressions",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgressions"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'transgressions' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276932": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'iniquity' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276933": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'sin' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276937": {
+   "gloss": "godly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "godly"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'godly' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276941": {
+   "gloss": "found",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "found"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'found' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276943": {
+   "gloss": "rush",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rush"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'rush' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276947": {
+   "gloss": "reach",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "reach"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'reach' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276952": {
+   "gloss": "trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trouble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'trouble' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276953": {
+   "gloss": "surround",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "surround"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'surround' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276955": {
+   "gloss": "deliverance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliverance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'deliverance' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276958": {
+   "gloss": "teach",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "teach"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'teach' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276959": {
+   "gloss": "way",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "way"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'way' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276961": {
+   "gloss": "counsel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counsel"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'counsel' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276971": {
+   "gloss": "curbed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "curbed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'curbed' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276972": {
+   "gloss": "bit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'bit' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276973": {
+   "gloss": "bridle",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bridle"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'bridle' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276975": {
+   "gloss": "near",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "near"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'near' - substrate (bit/bridle/waters imagery, God's-deliverance label, or repeated sin/iniquity noun carried by a char); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

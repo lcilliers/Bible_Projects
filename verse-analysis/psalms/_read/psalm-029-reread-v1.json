@@ -1,16 +1,865 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 29, "provenance": "reread-psalms-2026",
-  "note": "Ps29 (8 chars). Storm-theophany, qol YHWH sevenfold. kavod glory x4 (ascribe/God of glory/cry Glory!), hadar majesty, shachah worship, closes on shalom peace-blessing. Poetic ledger; span-id pairs.",
-  "spans": {
-    "276418": {"gloss":"glory v1","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - ascribe glory)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (ascribed by heavenly beings)","to":276418,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"ascribe","to":276418,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Ascribe to the LORD GLORY (kavod) and strength' — the heavenly beings summoned to render glory; kavod the weight of splendour the psalm calls the sons of God to acknowledge, first of four (v1,2,3,9)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276437": {"gloss":"glory v2","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - due his name)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276437,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with worship","from":276437,"to":276439,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Ascribe the GLORY (kavod) due his name; worship in the splendour of holiness' — glory owed to God's name; kavod here joined to worship, the fitting response of reverence to the holy One"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276439": {"gloss":"worship v2","dims":[{"n":101,"l":"sense","k":"value","v":"worship / bow down (shachah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the heavenly beings / worshippers","to":276439,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"worship"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":276439,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"in the splendour of holiness","to":276439,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with ascribing glory","from":276439,"to":276437,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'WORSHIP (shachah) the LORD in the splendour of holiness' — prostration before the holy God; shachah the bowing homage, the inner posture of reverence answering God's glory"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276447": {"gloss":"glory v3","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - the God of glory thunders)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (God of glory)","to":276447,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The God of GLORY (kavod) thunders' — glory revealed in the storm's voice; kavod here God manifest in thunder over the waters, majesty audible in the qol YHWH"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276458": {"gloss":"majesty v4","dims":[{"n":101,"l":"sense","k":"value","v":"majesty / splendour (hadar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the voice of the LORD","to":276458,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'the voice of the LORD is full of MAJESTY (hadar)' — the storm-voice robed in splendour; hadar (as Ps21:5) the regal glory of God's voice, powerful and majestic"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276489": {"gloss":"Glory v9","dims":[{"n":101,"l":"sense","k":"value","v":"glory (kavod - all cry 'Glory!')"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (glory cried in his temple)","to":276489,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"cry","to":276489,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and in his temple all cry, GLORY (kavod)!' — the worshippers' response to the storm-display; kavod the one-word acclamation, the climax of the ascribing (v1) — heaven and temple answering with 'Glory!'"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276432": {"gloss":"bless v11","dims":[{"n":101,"l":"sense","k":"value","v":"bless (barak)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":276432,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"bless"},{"n":107,"l":"target","k":"pair","v":"his people (with peace)","from":276432,"to":276434,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with peace","from":276432,"to":276434,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'May the LORD BLESS (barak) his people with peace!' — the storm-God's gift to his own; barak the blessing that follows the display of power, the mighty voice turned to bless"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276434": {"gloss":"peace v11","dims":[{"n":101,"l":"sense","k":"value","v":"peace (shalom)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"his people (blessed with it)","to":276434,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the content of the blessing","from":276434,"to":276432,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'bless his people with PEACE (shalom)' — the peace that crowns the psalm; shalom here the wholeness/well-being God grants his people, the storm's terror resolving into peace for the faithful (contrast the false shalom of Ps28:3)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "276474": {"gloss":"shakes v8","dims":[{"n":101,"l":"sense","k":"value","v":"shake / whirl (chul - the voice shakes the wilderness)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":114,"l":"discovery","k":"note","v":"v8: 'The voice of the LORD SHAKES (chul) the wilderness' - the qol YHWH convulsing creation; the whole earth trembling before God's voice, the theophany's power (the sevenfold 'voice of the LORD' v3-9 that breaks cedars, flashes fire, shakes the desert)"},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "276426": {"gloss":"enthroned v10","dims":[{"n":101,"l":"sense","k":"value","v":"enthroned as king forever (over the flood)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":114,"l":"discovery","k":"note","v":"v10: 'The LORD sits ENTHRONED over the flood; the LORD sits enthroned as king FOREVER' - God's sovereign kingship above the chaos-waters; the storm mastered, the LORD reigning over the flood as eternal king, the settled ground of the peace he gives (v11)"},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 29,
+ "provenance": "reread-psalms-2026",
+ "note": "Thunderstorm theophany (voice-of-the-LORD = standalone); human portion = ascribe-glory/worship + the temple-cry 'Glory!'",
+ "spans": {
+  "276413": {
+   "gloss": "ascribe glory, worship in holiness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ascribe glory, worship in holiness"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the heavenly beings / worshippers",
+     "to": 276413,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the summons to ascribe to the LORD glory and strength and to worship him in the splendour of holiness - the interior called to render God his due"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "ascription",
+     "to": 276413,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "ascribe-glory",
+     "to": 276413,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1-2: 'ASCRIBE to the LORD glory and strength; ascribe to the LORD the glory due his name; WORSHIP the LORD in the splendour of holiness' - the operation is the giving-back of glory: the interior is summoned to acknowledge God's weight and bow."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276489": {
+   "gloss": "in his temple all cry 'Glory!'",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "in his temple all cry 'Glory!'"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the worshippers",
+     "to": 276489,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "while the voice of the LORD shakes creation, in his temple all cry 'Glory!' - the worshippers' spontaneous exclamation"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "exclamation",
+     "to": 276489,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "cry-glory",
+     "to": 276489,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'and in his temple all cry, GLORY!' - the operation is the involuntary response of the interior to the theophany: awe forced up into a single word of praise."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "276432": {
+   "gloss": "bless his people with peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bless his people with peace"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 276413,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'May the LORD give strength to his people! May the LORD BLESS his people with PEACE!' - the benediction the ascription closes on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "276416": {
+   "gloss": "ascribe",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ascribe"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'ascribe' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276418": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'glory' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276419": {
+   "gloss": "strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strength"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'strength' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276426": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'forever' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276429": {
+   "gloss": "strength",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strength"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'strength' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276434": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'peace' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276435": {
+   "gloss": "Ascribe",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Ascribe"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'Ascribe' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276437": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'glory' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276438": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'name' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276439": {
+   "gloss": "worship",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "worship"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'worship' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276442": {
+   "gloss": "holiness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holiness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'holiness' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276443": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276447": {
+   "gloss": "glory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'glory' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276448": {
+   "gloss": "thunders",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "thunders"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'thunders' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276453": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276456": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276458": {
+   "gloss": "majesty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "majesty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'majesty' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276459": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276461": {
+   "gloss": "breaks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "breaks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'breaks' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276464": {
+   "gloss": "breaks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "breaks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'breaks' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276467": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276469": {
+   "gloss": "flashes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "flashes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'flashes' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276472": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276474": {
+   "gloss": "shakes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shakes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'shakes' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276477": {
+   "gloss": "shakes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shakes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'shakes' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276480": {
+   "gloss": "voice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "voice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'voice' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276483": {
+   "gloss": "give birth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "give birth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'give birth' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "276485": {
+   "gloss": "bare",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bare"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'bare' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306199": {
+   "gloss": "skip",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "skip"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'skip' - substrate (voice-of-the-LORD theophany: thunders/breaks-cedars/flashes/shakes-wilderness, or glory/name label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }
