@@ -31,12 +31,12 @@ RULES = [
  ('thanksgiving',                 r'\b(thank|thanksgiv|give.?you.?thanks)'),
  ('blessing-benediction',        r'\b(bless|blessed|blessing)'),
  ('joy-gladness',                 r'\b(joy|glad|rejoic|exult|jubil|mirth|cheer|delight in the lord|be merry)'),
- ('faith-faithfulness-truth',     r'\b(faith|believ|faithful|truth|trustworth)'),
+ ('faith-faithfulness-truth',     r'\b(faith|believ|faithful|truth|trustworth|godly|saint|devout)'),
  ('love-devotion',                r'\b(love|beloved|cleave|clung|devot|affection)'),
  ('grace-mercy-compassion',       r'\b(grace|gracious|merc|compassion|pity|generous|loyal love|kindness)'),
- ('desire-longing-appetite',      r'\b(desire|crav|long\b|longs|longing|thirst|hunger|hungr|pant|appetite|pleasure|yearn|covet|delight|zeal|jealous|\black|\bwant|\bneed)'),
+ ('desire-longing-appetite',      r'\b(desire|crav|long\b|longs|longing|thirst|hunger|hungr|pant|appetite|pleasure|pleasant|pleasing|yearn|covet|delight|zeal|jealous|\black|\bwant\b)'),
  # --- petition / communion ---
- ('prayer-petition-crying-out',   r'\b(pray|prayer|plea|plead|supplicat|cry|cries|cried|call|beseech|entreat|petition|complain|complaint|pour out|groan.*before)'),
+ ('prayer-petition-crying-out',   r'\b(pray|prayer|plea\b|pleas\b|plead|supplicat|cry|cries|cried|call|beseech|entreat|petition|complain|complaint|pour out|groan.*before)'),
  ('being-heard-listening',        r'\b(hear|listen|hearken|give ear|incline.*ear|answer|attend to my|regard my)'),
  # --- mind ---
  ('knowing-understanding',        r'\b(know|understand|discern|consider|perceiv|ponder|meditat|mind\b|think|thought|regard|reflect|comprehend)'),
@@ -61,7 +61,7 @@ RULES = [
  ('anger-wrath-vexation',         r'\b(anger|angry|wrath|rage|fury|furious|fierce|indignat|provoke|vex|fret|hot displeasure)'),
  ('violence-cruelty',             r'\b(violen|cruel|blood|destroy|devour|crush|oppression|ruthless|kill|slay|attack|conspire|contention|strife|fight|band together)'),
  # --- posture / state ---
- ('humility-lowliness-contrition',r'\b(humble|humbl|lowly|meek|contrite|broken|brokenhearted|poor\b|needy|bowed|submit|afflicted self)'),
+ ('humility-lowliness-contrition',r'\b(humble|humbl|lowly|meek|contrite|broken|brokenhearted|poor\b|needy|destitute|helpless|bowed|submit|afflicted self)'),
  ('rest-stillness-peace',         r'\b(rest\b|resteth|still|quiet|peace|calm|silen|repose|be at ease|tranquil)'),
  ('strength-courage-steadfastness',r'\b(strength|strong|courage|might|power|valou|bold|firm|steadfast|establish|uphold|stand fast|not be moved|fortitude)'),
  ('faint-despair-languishing',    r'\b(faint|melt|languish|downcast|disquiet|overwhelm|despair|fail\b|weary|pine|consumed|waste away|sink|feeble|distress|troubled|anguish|dismay|afflict|suffer|wither|\bpain)'),

@@ -39,16 +39,17 @@ fam_modal = {f: cc.most_common(1)[0][0] for f,cc in fam_clusters.items()}
 
 # clusters that are semantic NEIGHBOURS — a record landing here vs its family-twin is
 # a benign adjacency, not a genuine crossover.
-ADJ = [{'M10','M27','M16','M08'},          # sin / evil / folly / pride (the descent)
-       {'M09','M24','M07'},                # humility / weakness / shame (the low estate)
-       {'M04','M29','M22','M46'},          # joy / desire / praise / abundance (the up-swell)
-       {'M21','M37','M22','M18','M19'},    # prayer / calling / praise / hope / trust (Godward reach)
-       {'M15','M17','M13'},                # wisdom / counsel / truth (the mind)
-       {'M26','M12','M30'},                # righteousness / purity / obedience (the upright)
-       {'M42','M22'},                      # speech / praise (outflow)
-       {'M03','M24'},                      # grief / weakness
-       {'M05','M39','M36'},                # love / blessing / service
-       {'M11','M10'}]                      # repentance / sin
+ADJ = [{'M10','M27','M16','M08','M14','M06'},   # sin/evil/folly/pride/deceit/hate (the descent & against)
+       {'M09','M24','M07'},                     # humility / weakness / shame (the low estate)
+       {'M04','M29','M22','M46','M28'},         # joy/desire/praise/abundance/envy (the up-swell)
+       {'M21','M37','M22','M18','M19','M42','M41'}, # prayer/calling/praise/hope/trust/speech/remembrance (Godward reach & outflow)
+       {'M15','M17','M13','M16'},               # wisdom / counsel / truth / folly (the mind)
+       {'M26','M12','M30','M13'},               # righteousness / purity / obedience / truth (the upright)
+       {'M03','M24','M01','M20'},               # grief / weakness / fear / doubt (the affliction axis)
+       {'M05','M39','M36','M13'},               # love / blessing / service / truth (covenant)
+       {'M11','M10','M30','M45'},               # repentance / sin / obedience / transformation (the turning axis)
+       {'M38','M46','M23'},                     # salvation / abundance / strength (deliverance)
+       {'M02','M06','M28'}]                     # anger / hate / envy (the against axis)
 def adjacent(a,b):
     return any(a in s and b in s for s in ADJ)
 
