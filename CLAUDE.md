@@ -145,7 +145,7 @@ Invocation: `python -m engine.engine [options]`. Source: `engine/`. Audit pipeli
 | EXPORT | `--export-word --registry=N` | Export full word JSON |
 | EXPORT_REGISTRY | `--export-registry` | Export `word_registry` JSON |
 
-NEW_WORD and GAP_FILL modes are superseded for **auditing** — AUDIT_WORD handles audit + re-sync of new + existing words. **Caveat (2026-06-15):** they are **not yet archivable** — AUDIT_WORD does not create `wa_file_index` (only `new_word`/`gap_fill`/`_repair_03` do), so brand-new word *onboarding* still depends on them. Don't run them for analysis (stale, no H4 link/morph); proper retirement = move file_index creation into AUDIT_WORD/`--register` first. See memory `project_new_word_retirement_blocked`.
+**★ Adding / updating a term — THE authoritative pipeline:** [`Workflow/Instructions/wa-term-add-update-AUTHORITATIVE-pipeline-v1-20260711.md`](Workflow/Instructions/wa-term-add-update-AUTHORITATIVE-pipeline-v1-20260711.md) — read it before any term work; it enumerates every field written to every table. The whole flow is **3 commands**: `--register` (if new) → `word_study_extract.py --word X` → `--mode=audit_word --registry=N`. **`audit_word` auto-creates the `wa_file_index` stub** and inserts + span-links terms and verses in one pass. **`new_word.py` is RETIRED (deleted 2026-07-11); `gap_fill.py` superseded** — do not use either. (This corrects the old 2026-06-15 caveat that claimed audit_word does not create file_index — it now does.)
 
 **Common flags:** `--dry-run`, `--force`, `--interactive`, `--skip-span-backpop`, `--extract-file=PATH`.
 

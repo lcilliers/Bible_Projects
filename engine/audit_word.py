@@ -9,14 +9,13 @@ Input: Step 1 JSON file produced by scripts/word_study_extract.py
        research/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
        The latest file for the word is auto-selected unless --extract-file given.
 
-New word workflow:
-  1. Register word: python -m engine.engine --register --word="X" --source="..."
-  2. Create wa_file_index entry (manual or via script)
-  3. Extract: python scripts/word_study_extract.py --word X
-  4. Audit:   python -m engine.engine --mode=audit_word --registry=N
-  Terms and verses are inserted in a single pass. The gap report generates
-  MISSING_VERSE entries for NEW_TERM items, and A6 resolves ti_ids via
-  new_ti_map after term insertion. No second pass required.
+New word workflow (AUTHORITATIVE doc: Workflow/Instructions/wa-term-add-update-AUTHORITATIVE-pipeline-v1-20260711.md):
+  1. Register word: python -m engine.engine --register --word="X" --source="..."   (only if new)
+  2. Extract:       python scripts/word_study_extract.py --word X
+  3. Audit:         python -m engine.engine --mode=audit_word --registry=N
+  audit_word AUTO-CREATES the wa_file_index stub (no manual step). Terms + verses
+  are inserted and span-linked in a single pass; no second pass required.
+  (new_word.py retired 2026-07-11.)
 
 Key behaviours
 ──────────────
