@@ -17,16 +17,20 @@
 - [feedback_characteristic_list_validates_not_imputes](feedback_characteristic_list_validates_not_imputes.md) — characteristic list VALIDATES (verse→list), never imputes.
 - [feedback_verify_contributor_reference_text_first](feedback_verify_contributor_reference_text_first.md) — verify a cited reference against the verse TEXT before loading.
 - [feedback_verse_meaning_grounded_not_imported](feedback_verse_meaning_grounded_not_imported.md) — verse-meaning grounded in the verse, never imported/theological.
+- [feedback_read_by_passage_not_whole_chapter](feedback_read_by_passage_not_whole_chapter.md) — reading unit = the PASSAGE, never a whole long chapter in one sweep; batch passages.
 - [feedback_all_study_work_in_db](feedback_all_study_work_in_db.md) — ALL study work in the DB; no parallel docs.
 - [feedback_source_of_truth_is_written_record](feedback_source_of_truth_is_written_record.md) — truth = written record via file_manifest; verify, don't assert.
 - [feedback_no_stats_trends_review_fabricated_data](feedback_no_stats_trends_review_fabricated_data.md) — don't review by statistics/trends; verse evidence rules.
 - [feedback_two_governing_principles](feedback_two_governing_principles.md) — verse meaning is the data + rules analytics; capture all observations.
 - [feedback_interaction_protocols](feedback_interaction_protocols.md) — confirm before acting; write workings to files; no guessing.
+- [feedback_proceed_autonomously_on_stable_rules](feedback_proceed_autonomously_on_stable_rules.md) — once rules/plan set, run to completion; don't stop every step or re-invent rules.
 - [feedback_reusable_engine_scripts_and_continuous_learning](feedback_reusable_engine_scripts_and_continuous_learning.md) — scripts REUSABLE parameter-driven; read back, update rules, re-run.
 - [feedback_each_chapter_first_principles_find_the_gems](feedback_each_chapter_first_principles_find_the_gems.md) — every chapter AS IF THE FIRST; no templating; dig for GEMS.
 - [feedback_multilens_layered_reads_foundation_no_drift](feedback_multilens_layered_reads_foundation_no_drift.md) — understanding = MULTIPLE LENSES; by-book read = FOUNDATION; keep depth, DON'T DRIFT, validate every section.
 - [feedback_lens_is_inner_being_process_not_god_relation](feedback_lens_is_inner_being_process_not_god_relation.md) — lens on inner-being PROCESSES; God-interaction = arena not point.
+- [feedback_ib_screen_first_god_is_arena](feedback_ib_screen_first_god_is_arena.md) — ★ Screen 0: FIRST test on a candidate = is it the HUMAN IB? God's own attribute/action → qualifier, never a char; pure God-verse = no char. Read char-PASSAGES not chapters.
 - [feedback_resist_grouping_preserve_distinctions](feedback_resist_grouping_preserve_distinctions.md) — RESIST grouping; repeated spans NOT one operation — the DIFFERENCE is the finding.
+- [feedback_char_driven_read_not_span_sweep](feedback_char_driven_read_not_span_sweep.md) — read CHAR-BY-CHAR (char = lens); resolve its pairs across passage morphology; NOT span-sweep-then-pair.
 - [feedback_name_dimensions_not_just_codes](feedback_name_dimensions_not_just_codes.md) — write a dimension's NAME with its code ("D2 Source").
 - [feedback_review_via_files_not_chat](feedback_review_via_files_not_chat.md) — decisions as filed .md, not chat; avoid AskUserQuestion.
 - [feedback_integrity_and_intent_first](feedback_integrity_and_intent_first.md) — ask intent/integrity BEFORE acting; never act on unverified data.
@@ -54,6 +58,9 @@
 - [project_cluster_review_backlog_and_m12_method_20260624](project_cluster_review_backlog_and_m12_method_20260624.md) — review-backlog M07/M10/M11/M01/M02; continue M12.
 
 ## Active state
+- [project_lexical_cycle_finalised_and_integrity_invariant](project_lexical_cycle_finalised_and_integrity_invariant.md) — ★ LIVE (2026-07-08): cycle instruction finalised (§4A Stage0 passage / §7A DB-updates / §7B transition / §7C pipeline+completion / §3A principles); candidate-without-verse-record = DB INTEGRITY VIOLATION; passage rule v2 candidate-driven; dimension authority = VE-lexical catalogue (§9 ve_nr list); reset closed; instructions folder cleaned (13 active).
+- [project_reread_success_gates_and_scored_audit](project_reread_success_gates_and_scored_audit.md) — ★ LIVE (2026-07-08): book re-reads measured by 9 gates G0-G8 + scored audit; baseline-then-delta. Proverbs baseline=2/9. NEXT=confirm F-frame split → reset → re-read → re-measure.
+- [project_candidate_characteristic_seed_and_role_model](project_candidate_characteristic_seed_and_role_model.md) — ★ LIVE (2026-07-07): role={characteristic,standalone} (qualifier RETIRED); master got role column (M64); 824 OT candidate-characteristic seed → 25,155 spans. NEXT=seeded lexical read.
 - [project_per_book_corrective_pipeline](project_per_book_corrective_pipeline.md) — ★ LIVE per-book pipeline (a-e). Psalms Steps 1-2 DONE; Gate-1(d) done via BYPASS = REJECTED, redo via engine onboarding. See 2026-07-06 session log.
 - [project_otdbr009_overdeleted_core_ib_terms](project_otdbr009_overdeleted_core_ib_terms.md) — OT-DBR-009 over-deleted core IB terms (prayer/wisdom/pray) incl. mti+cluster; expect more per book.
 - [project_leviticus_terminology_study](project_leviticus_terminology_study.md) — Leviticus as TERMINOLOGY study, corpus-native in DB (ve_lexical coding + evidenced findings + catalogue Qs); infra+pilot done.
@@ -83,6 +90,7 @@
 - [reference_strongs_zero_padded_4digit_in_db](reference_strongs_zero_padded_4digit_in_db.md) — DB Strong's zero-padded 4-digit; zfill before comparing.
 - [reference_canonical_tier_scheme_is_T0_T7](reference_canonical_tier_scheme_is_T0_T7.md) — canonical tiers = DB T0–T7; T1–T8 doc superseded.
 - [reference_file_index_legacy_use_bypass_fks](reference_file_index_legacy_use_bypass_fks.md) — wa_file_index legacy; use bypass FKs, never join through it.
+- [reference_term_add_update_authoritative](reference_term_add_update_authoritative.md) — adding/updating a term = read the authoritative pipeline doc; 3 commands, every field enumerated; new_word DELETED.
 - [project_step_60cap_truncation_and_forwardwalk_fix](project_step_60cap_truncation_and_forwardwalk_fix.md) — STEP 60-cap truncation fixed (forward-walk + self-validate).
 - [project_location_seat_engine_fixed](project_location_seat_engine_fixed.md) — location seat-map fixed; gate on surface not gloss.
 - [project_new_word_retirement_blocked](project_new_word_retirement_blocked.md) — new_word/gap_fill superseded; onboarding blocker resolved.
