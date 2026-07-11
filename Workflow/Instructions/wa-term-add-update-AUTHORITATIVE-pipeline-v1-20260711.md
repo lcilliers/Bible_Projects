@@ -43,6 +43,10 @@ python scripts/word_study_extract.py --word "<english word>" [--anchors H1234,G5
 - **Writes NOTHING to the DB.** Queries STEP only.
 - Produces `research/discovery/{word}_step_data_{YYYYMMDD}.json` — the **Step 1 JSON** (all terms + all verses for the word). `audit_word` reads the latest such file automatically.
 - Requires the STEP server up (`http://localhost:8989`).
+- **Shortcut:** `audit_word --fetch-step [--anchors …]` auto-runs this extract, folding STEP 2 into STEP 3.
+
+### ⚠ TRIAGE GATE (mandatory before the live audit) — do not skip
+The extract's `include_codes` carry **STEP related-number noise** — STEP pulls homonyms/relatedNos that are NOT the intended term (e.g. onboarding `perek` H6531 also pulled the `H6532` "curtain" homonym). **Curate the extract's terms array down to the intended Strong's BEFORE the live write**, or `audit_word` onboards junk. Curate the `terms` ARRAY (memory `project_engine_onboard_curate_terms_array`). Dry-run first; run the integrity snapshot/compare gate.
 
 ---
 
