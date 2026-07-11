@@ -1,39 +1,1667 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 41, "provenance": "reread-psalms-2026",
-  "note": "Ps41 closes Book I (corrected method). Human IB: sakal wise compassion for the poor (esher blessed), David's confession (chata sinned, nefesh healed), enemies' inner malice (ra/shav/lev-aven/sane/chashab), the betrayal (shalom close friend, batach trusted, heel lifted - v9), tom integrity, barak blessing God. 6 God-acts (protect/keep-alive/gracious/heal/delight-in-me) = qualifiers. Every candidate roled.",
-  "spans": {
-    "278394": {"gloss":"Blessed v1","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who considers the poor","from":278394,"to":278395,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the one who considers the poor!' — the beatitude of the compassionate; esher (recurs Ps1,32,40) the happiness of the one whose regard for the weak God rewards with deliverance and protection"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278395": {"gloss":"considers v1","dims":[{"n":101,"l":"sense","k":"value","v":"consider wisely / give heed (sakal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed one","to":278395,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"consider / give heed"},{"n":107,"l":"target","k":"pair","v":"the poor","from":278395,"to":278396,"res":"span"},{"n":103,"l":"source","k":"pair","v":"whom the LORD protects and keeps alive (v2)","from":278395,"to":278433,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the one who CONSIDERS (sakal) the poor' — wise, attentive compassion for the weak; sakal = to act with insight, here the thoughtful care for the poor (dal) that God rewards (his protecting is the qualifier)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278396": {"gloss":"poor v1","dims":[{"n":101,"l":"sense","k":"value","v":"poor / weak (dal)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the poor (considered)","to":278396,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of wise consideration","from":278396,"to":278395,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'considers the POOR (dal)' — the weak/helpless who are the object of the blessed one's care; dal = the low/thin, the poor whom the compassionate heed and God defends"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278435": {"gloss":"called blessed v2","dims":[{"n":101,"l":"sense","k":"value","v":"be called blessed / happy (ashar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who considers the poor","to":278435,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"in the land","to":278435,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he is CALLED BLESSED (ashar) in the land' — the public happiness of the compassionate; ashar (verb of esher) — the man whose care for the poor makes him esteemed blessed among men, not given up to his enemies' will"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278438": {"gloss":"will v2","dims":[{"n":101,"l":"sense","k":"value","v":"will / desire (nefesh - of his enemies)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"his enemies (their craving)","to":278438,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the blessed one (not given up to it)","to":278438,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('you do NOT give him up to the will of his enemies')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'you do not give him up to the WILL (nefesh) of his enemies' — nefesh here as the enemies' greedy desire/appetite (cf Ps27:12); the blessed one protected from the foes' craving for his ruin"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278455": {"gloss":"me/soul v4","dims":[{"n":101,"l":"sense","k":"value","v":"soul / self (nefesh - heal me/my soul)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":278455,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278455,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"the healing/grace sought from God (v4)","from":278455,"to":278454,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose sin is confessed","from":278455,"to":278456,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'heal me (nefesh), for I have sinned against you' — the soul needing healing because of sin; nefesh here the self David asks God to heal (God's healing = qualifier), the cure sought being for a sin-sick soul"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278456": {"gloss":"sinned v4","dims":[{"n":101,"l":"sense","k":"value","v":"sin / miss the mark (chata)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278456,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sin"},{"n":107,"l":"target","k":"pair","v":"against you (God)","to":278456,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the confessed ground of needing healing","from":278456,"to":278455,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'be gracious to me; heal me, for I have SINNED (chata) against you!' — the honest confession within the plea; chata here owned before God, sin acknowledged as the reason for the soul's sickness and need of grace"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278460": {"gloss":"malice v5","dims":[{"n":101,"l":"sense","k":"value","v":"evil / malice (ra - enemies speak in malice)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemies","to":278460,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David","to":278460,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'My enemies say of me in MALICE (ra), When will he die?' — the enemies' evil-hearted speech; ra here the malice wishing David's death and the perishing of his name, the inner venom behind their words"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278470": {"gloss":"empty v6","dims":[{"n":101,"l":"sense","k":"value","v":"emptiness / falsehood (shav - empty words)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the visitor (his words)","to":278470,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"utter","to":278470,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"masking the heart that gathers iniquity","from":278470,"to":278471,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'when one comes to see me, he utters EMPTY (shav) words' — the hypocrite's hollow speech; shav (recurs Ps24,31) the vain/false words that hide a heart secretly gathering iniquity — sympathy on the lips, malice within"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278471": {"gloss":"heart v6","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - gathers iniquity)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":278471,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the false visitor","to":278471,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"gather (iniquity)","to":278471,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"iniquity","from":278471,"to":278473,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"behind the empty words","from":278471,"to":278470,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'while his HEART (lev) gathers iniquity' — the hypocrite's heart secretly hoarding malice; lev here the false visitor's inner reservoir of evil, at odds with his sympathetic speech, then spread abroad when he leaves"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278473": {"gloss":"iniquity v6","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity / trouble (aven)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the false visitor","to":278473,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"gathered by the heart","from":278473,"to":278471,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'his heart gathers INIQUITY (aven)' — the malice the hypocrite's heart amasses; aven (recurs Ps36) the mischief hoarded within to be published abroad against the sick man"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278478": {"gloss":"hate v7","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - all who hate me)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all who hate David","to":278478,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"David","to":278478,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"whispering together","to":278478,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with imagining the worst","from":278478,"to":278481,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'All who HATE (sane) me whisper together about me' — the conspiring hatred of the foes; sane (recurs Ps38:19) the enmity that gathers to whisper and plot the worst against the afflicted"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278481": {"gloss":"imagine v7","dims":[{"n":101,"l":"sense","k":"value","v":"devise / imagine (chashab - the worst)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the haters","to":278481,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"devise"},{"n":107,"l":"target","k":"pair","v":"the worst for David","from":278481,"to":278482,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with hatred","from":278481,"to":278478,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'they IMAGINE (chashab) the worst for me' — the haters' calculated devising of evil; chashab (recurs Ps35,36,41) the scheming that plots David's ruin, imagining a deadly fate for him"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278482": {"gloss":"worst v7","dims":[{"n":101,"l":"sense","k":"value","v":"evil / calamity (ra - the worst)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the haters (their devising)","to":278482,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David","to":278482,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing imagined","from":278482,"to":278481,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'they imagine the WORST (ra) for me' — the calamity the foes devise; ra here the evil fate imagined ('a deadly thing... he will not rise again'), the doom they wish on the sick man"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278491": {"gloss":"close v9","dims":[{"n":101,"l":"sense","k":"value","v":"friend of peace / intimate (shalom - my close friend)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the close friend (who betrayed)","to":278491,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"lift the heel (betray)","to":278491,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David","to":278491,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"who ate my bread","to":278491,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"the trusted one who betrayed","from":278491,"to":278493,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'Even my CLOSE friend (ish shalom - man of my peace), in whom I trusted, who ate my bread, has lifted his heel against me' — the deepest wound, betrayal by the intimate; shalom here the friend of one's peace, the trusted table-companion turned traitor (cited of Judas, Jn13:18)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278493": {"gloss":"trusted v9","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach - in whom I trusted)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278493,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"the close friend","from":278493,"to":278491,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the trust that was betrayed","from":278493,"to":278491,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'in whom I TRUSTED (batach)' — the misplaced human trust betrayed; batach here of trust in a friend (contrast trust in the LORD, Ps40:4) — the intimacy that made the betrayal cut deepest"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278410": {"gloss":"know v11","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278410,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know"},{"n":107,"l":"target","k":"pair","v":"that God delights in him","from":278410,"to":278411,"res":"span"},{"n":103,"l":"source","k":"pair","v":"grounded by God's grace to raise him up (v10)","from":278410,"to":278404,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'By this I KNOW (yada) that you delight in me: my enemy will not shout in triumph' — the assured inner knowledge of God's favour; yada here the confidence read from God's not letting the enemy triumph (God's delight = the qualifier)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278419": {"gloss":"integrity v12","dims":[{"n":101,"l":"sense","k":"value","v":"integrity / completeness (tom)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278419,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'you have upheld me because of my INTEGRITY (tom), and set me in your presence forever' — the wholeness God honours; tom (recurs Ps25:21, 26:1) the sincerity that, despite confessed sin (v4), marks David as upheld and set forever before God's face"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278423": {"gloss":"Blessed v13","dims":[{"n":101,"l":"sense","k":"value","v":"bless (barak - Blessed be the LORD)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David / Israel","to":278423,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"bless"},{"n":107,"l":"target","k":"pair","v":"the LORD, the God of Israel","to":278423,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"from everlasting to everlasting","to":278423,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (barak) be the LORD, the God of Israel, from everlasting to everlasting! Amen and Amen' — the doxology closing Book I of the Psalter; barak the blessing of God, the eternal praise that seals the first book (framed with esher of v1)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278433": {"gloss":"protects v2 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"protect / keep (shamar - God's act)"},{"n":103,"l":"source","k":"pair","v":"rewards the one who considers the poor (v2)","from":278433,"to":278395,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v2 QUALIFIER (God's act): 'the LORD PROTECTS (shamar) him and keeps him alive' - God's protecting is not a human IB char; it is the reward/source securing the one who considers the poor (278395). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278434": {"gloss":"alive v2 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"keep alive / preserve (chayah - God's act)"},{"n":103,"l":"source","k":"pair","v":"rewards the one who considers the poor (v2)","from":278434,"to":278395,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v2 QUALIFIER (God's act): 'and keeps him ALIVE (chayah)' - God's preserving is not a human IB char; the source keeping the compassionate one (278395). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278453": {"gloss":"gracious v4 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious (chanan - God's act sought)"},{"n":103,"l":"source","k":"pair","v":"the grace sought for David's soul (v4)","from":278453,"to":278455,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v4 QUALIFIER (God's act): 'O LORD, be GRACIOUS (chanan) to me; heal me' - God's graciousness is not a human IB char; the source David appeals to for his soul's healing (278455). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278454": {"gloss":"heal v4 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"heal (rapha - God's act)"},{"n":103,"l":"source","k":"pair","v":"the healing sought for David's soul (v4)","from":278454,"to":278455,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v4 QUALIFIER (God's act): 'HEAL (rapha) me, for I have sinned' - God's healing is not a human IB char; the cure David seeks for his sin-sick soul (278455). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278404": {"gloss":"gracious v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious (chanan - God's act sought)"},{"n":103,"l":"source","k":"pair","v":"grounds David's assured knowing (v10->v11)","from":278404,"to":278410,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's act): 'But you, O LORD, be GRACIOUS (chanan) to me, and raise me up' - God's graciousness is not a human IB char; the source grounding David's assurance that God delights in him (278410). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278411": {"gloss":"delight v11 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets - God delights in me)"},{"n":103,"l":"source","k":"pair","v":"what David's knowing rests on (v11)","from":278411,"to":278410,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v11 QUALIFIER (God's disposition): 'By this I know that you DELIGHT (chaphets) in me' - God's delight in David is not a human IB char; it is the object of David's assured knowing (278410) - God's favour is the ground, David's knowing it is the IB. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278399": {"gloss":"trouble v1 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"trouble / calamity (ra - day of trouble)"},{"n":114,"l":"discovery","k":"note","v":"v1: 'In the day of TROUBLE (ra) the LORD delivers him' - the calamitous circumstance from which the compassionate one is delivered; a time-of-trouble setting, not an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278406": {"gloss":"repay v10 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"repay / requite (shalam - that I may repay them)"},{"n":114,"l":"discovery","k":"note","v":"v10: 'raise me up, that I may REPAY (shalam) them' - David's stated purpose of requital on the foes; the intended action following restoration (the IB movement is the plea for grace, 278404). Standalone/purpose."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278414": {"gloss":"shout v11 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"shout in triumph (rua - enemy, negated)"},{"n":114,"l":"discovery","k":"note","v":"v11: 'my enemy will not SHOUT (rua) in triumph over me' - the foe's triumph-shout, denied; the sign by which David knows God's favour (278410). Standalone (the enemy's would-be triumph, prevented)."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278464": {"gloss":"name v5 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"name (shem - his name perish)"},{"n":114,"l":"discovery","k":"note","v":"v5: 'When will he die, and his NAME (shem) perish?' - the enemies' wish that David's name be blotted out; the name/memory the foes want erased, part of their malice (278460). Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278496": {"gloss":"lifted v9 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"lift / magnify (gadal - lifted his heel)"},{"n":106,"l":"operation","k":"pair","v":"the betrayal act of the close friend (278491)","from":278496,"to":278491,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v9: 'has LIFTED (gadal) his heel against me' - the act of betrayal by the trusted friend; qualifies the close friend's treachery (278491) - the heel-lifting gesture of contempt/betrayal. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278422": {"gloss":"forever v12 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"forever / eternity (olam - set me in your presence forever)"},{"n":114,"l":"discovery","k":"note","v":"v12: 'set me in your presence FOREVER (olam)' - the everlasting duration of David's standing before God; a time-word qualifying the being-upheld (integrity, 278419), not an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278428": {"gloss":"everlasting(a) v13 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"everlasting (olam)"},{"n":114,"l":"discovery","k":"note","v":"v13: 'from EVERLASTING (olam) to everlasting' - the eternal span of the doxology's blessing of God (278423); a time-word, not an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278429": {"gloss":"everlasting(b) v13 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"everlasting (olam)"},{"n":114,"l":"discovery","k":"note","v":"v13: 'from everlasting to EVERLASTING (olam)' - the second eternity-word of the closing doxology (278423); a time-word, not an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 41,
+ "provenance": "reread-psalms-2026",
+ "note": "Consider-the-poor + betrayal (Book I close): compassion, confess-and-heal, false-visitor, friend's-betrayal, God-delights, upheld-for-integrity, doxology",
+ "spans": {
+  "278395": {
+   "gloss": "blessed is the one who considers the poor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessed is the one who considers the poor"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the compassionate",
+     "to": 278395,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "blessed is the one who considers the poor; in the day of trouble the LORD delivers him - compassion that is itself blessed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "compassion",
+     "to": 278395,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "consider-the-poor",
+     "to": 278395,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'BLESSED is the one who CONSIDERS the poor! In the day of trouble the LORD delivers him' - the operation is an attentive care for the weak; the interior that weighs the poor's plight is pronounced happy and kept."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278456": {
+   "gloss": "heal me, for I have sinned against you",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heal me, for I have sinned against you"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278456,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God to be gracious and heal it, confessing that it has sinned against him - healing sought with confession"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "penitent-plea",
+     "to": 278456,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heal-me-i-sinned",
+     "to": 278456,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'O LORD, be gracious to me; HEAL me, for I have SINNED against you!' - the operation joins petition to confession: the interior does not plead innocence but asks healing while owning its sin."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278469": {
+   "gloss": "empty words, heart gathering malice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "empty words, heart gathering malice"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the false visitor",
+     "to": 278469,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "when one comes to see the self he utters empty words, while his heart gathers iniquity, and going out he tells it abroad - hollow sympathy masking inner malice"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "false-sympathy",
+     "to": 278469,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "empty-words-heart-malice",
+     "to": 278469,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'when one comes to SEE me, he utters EMPTY words, while his HEART GATHERS iniquity; when he goes out, he tells it abroad' - the operation exposes a split interior: the visitor's mouth offers comfort while his heart hoards malice to spread."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278491": {
+   "gloss": "my trusted friend has lifted his heel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my trusted friend has lifted his heel"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278491,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "even the self's close friend, in whom it trusted, who ate its bread, has lifted his heel against it - the wound of intimate betrayal"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "betrayal",
+     "to": 278491,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "friend-lifts-heel",
+     "to": 278491,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'Even my close FRIEND in whom I TRUSTED, who ATE my bread, has LIFTED his heel against me' - the operation is the sharpest social wound: the interior is stabbed by the very one it had drawn closest and fed."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278410": {
+   "gloss": "by this I know you delight in me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "by this I know you delight in me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278410,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "by this the self knows God delights in it: its enemy does not shout in triumph over it - assurance read from the outcome"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "assurance-of-favour",
+     "to": 278410,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "know-you-delight",
+     "to": 278410,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'By this I KNOW that you DELIGHT in me: my enemy will not shout in triumph over me' - the operation is confidence inferred from deliverance: the interior reads God's favour in the enemy's silencing."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278419": {
+   "gloss": "you uphold me because of my integrity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you uphold me because of my integrity"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278419,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "God has upheld the self because of its integrity and set it in his presence forever - integrity that God sustains"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "upheld-integrity",
+     "to": 278419,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "upheld-for-integrity",
+     "to": 278419,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'But you have UPHELD me because of my INTEGRITY, and set me in your presence forever' - the operation is the self's confidence that its uprightness is honoured: God holds it up and stations it before his face."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278423": {
+   "gloss": "blessed be the LORD, from everlasting to everlasting",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessed be the LORD, from everlasting to everlasting"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278423,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self blesses the LORD, the God of Israel, from everlasting to everlasting - the doxology closing Book I"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "doxology",
+     "to": 278423,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bless-everlasting",
+     "to": 278423,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'BLESSED be the LORD, the God of Israel, from EVERLASTING to everlasting! Amen and Amen' - the operation seals Book I in blessing; the interior lifts God above the whole span of time."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278401": {
+   "gloss": "the LORD delivers him",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the LORD delivers him"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278395,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'in the day of trouble the LORD DELIVERS him' - the keeping promised to the one who considers the poor."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278454": {
+   "gloss": "heal me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heal me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278456,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'HEAL me' - the restoration the confession pleads for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278405": {
+   "gloss": "raise me up",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "raise me up"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278419,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'be gracious to me, and RAISE me up' - the lifting the integrity-upheld self asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278394": {
+   "gloss": "Blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Blessed' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278396": {
+   "gloss": "poor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "poor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'poor' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278399": {
+   "gloss": "trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trouble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'trouble' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278404": {
+   "gloss": "gracious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gracious"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'gracious' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278406": {
+   "gloss": "repay",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "repay"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'repay' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278411": {
+   "gloss": "delight",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delight"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'delight' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278414": {
+   "gloss": "shout",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shout"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'shout' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278417": {
+   "gloss": "upheld",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upheld"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'upheld' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278420": {
+   "gloss": "set",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "set"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'set' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278422": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'forever' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278428": {
+   "gloss": "everlasting",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "everlasting"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'everlasting' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278429": {
+   "gloss": "everlasting",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "everlasting"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'everlasting' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278433": {
+   "gloss": "protects",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "protects"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'protects' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278434": {
+   "gloss": "alive",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "alive"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'alive' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278435": {
+   "gloss": "called blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "called blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'called blessed' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278438": {
+   "gloss": "will",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "will"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'will' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278442": {
+   "gloss": "sustains",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sustains"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'sustains' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278444": {
+   "gloss": "sickbed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sickbed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'sickbed' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278446": {
+   "gloss": "illness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "illness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'illness' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278447": {
+   "gloss": "restore",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "restore"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'restore' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278449": {
+   "gloss": "health",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "health"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'health' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278453": {
+   "gloss": "gracious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gracious"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'gracious' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278455": {
+   "gloss": "me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "me"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'me' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278460": {
+   "gloss": "malice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "malice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'malice' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278462": {
+   "gloss": "die",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "die"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'die' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278464": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'name' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278470": {
+   "gloss": "empty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "empty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'empty' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278471": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'heart' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278472": {
+   "gloss": "gathers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gathers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'gathers' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278473": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'iniquity' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278475": {
+   "gloss": "tells",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "tells"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'tells' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278478": {
+   "gloss": "hate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'hate' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278479": {
+   "gloss": "whisper",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "whisper"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'whisper' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278481": {
+   "gloss": "imagine",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "imagine"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'imagine' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278482": {
+   "gloss": "worst",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "worst"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'worst' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278483": {
+   "gloss": "deadly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deadly"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'deadly' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278485": {
+   "gloss": "poured",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "poured"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'poured' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278486": {
+   "gloss": "rise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rise"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'rise' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278487": {
+   "gloss": "again",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "again"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'again' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278489": {
+   "gloss": "lies",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lies"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'lies' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278493": {
+   "gloss": "trusted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trusted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'trusted' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278494": {
+   "gloss": "ate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'ate' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278496": {
+   "gloss": "lifted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lifted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'lifted' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278497": {
+   "gloss": "heel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heel"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'heel' - substrate (sickbed/health imagery, enemies'-malice-whispers, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

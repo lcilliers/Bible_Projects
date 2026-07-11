@@ -1,34 +1,1304 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 36, "provenance": "reread-psalms-2026",
-  "note": "Ps36 (28 chars). Wicked's corrupt heart (v1-4) vs God's abundant chesed (v5-9). chesed x3 (v5,7,10), two lev (wicked's heart where pesha speaks v1 / upright of heart v10), pachad no-fear-of-God, chasah refuge under wings, eden delights. (v9 fountain-of-life/light noted; no flagged span.) Poetic ledger; span-id pairs.",
-  "spans": {
-    "277492": {"gloss":"Transgression v1","dims":[{"n":101,"l":"sense","k":"value","v":"transgression (pesha - speaks to the wicked)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (in whose heart it speaks)","from":277492,"to":277494,"res":"span"},{"n":106,"l":"operation","k":"event","v":"speak (as an oracle)","to":277492,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the wicked's heart","from":277492,"to":277496,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"deep in his heart","to":277492,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'TRANSGRESSION (pesha) speaks to the wicked deep in his heart' — sin personified as an oracle within; pesha here a voice in the heart (like a false prophecy), the inner dictation of rebellion that leaves no room for the fear of God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277494": {"gloss":"wicked v1","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked man","to":277494,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"in whose heart transgression speaks","from":277494,"to":277492,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'to the WICKED (rasha)' — the man ruled by sin's inner voice; rasha (recurs v11) the wicked whose heart harbours transgression's oracle, no fear of God before his eyes"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277496": {"gloss":"heart v1","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - deep in his heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277496,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277496,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"where transgression speaks","from":277496,"to":277492,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'deep in his HEART (lev)' — the wicked's heart as sin's inner sanctum; lev here the corrupt seat where transgression whispers — the dark counterpart to v10's 'upright of heart', the two hearts of the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277498": {"gloss":"fear v1","dims":[{"n":101,"l":"sense","k":"value","v":"fear / dread (pachad - no fear of God)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (lacking it)","to":277498,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"absent ('there is NO fear of God before his eyes')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'there is no FEAR (pachad) of God before his eyes' — the root of the wickedness; pachad absent (cf Ps34's fear of the LORD as the fount of good) — the missing dread of God that lets transgression rule the heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277520": {"gloss":"flatters v2","dims":[{"n":101,"l":"sense","k":"value","v":"flatter / deceive (chalak)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277520,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"flatter (himself)"},{"n":107,"l":"target","k":"pair","v":"himself (in his own eyes)","to":277520,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with his iniquity unfound","from":277520,"to":277522,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he FLATTERS (chalak) himself in his own eyes' — self-deception; chalak = to be smooth/flatter, the wicked lying to himself that his iniquity will not be found out and hated"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277522": {"gloss":"iniquity v2","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277522,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with being hated","from":277522,"to":277524,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'that his INIQUITY (avon) cannot be found out and hated' — the guilt he imagines hidden; avon (recurs Ps32) the wicked's iniquity he flatters himself will escape detection"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277524": {"gloss":"hated v2","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - iniquity found out and hated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God/others (would hate it)","to":277524,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"his iniquity","from":277524,"to":277522,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the iniquity","from":277524,"to":277522,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'found out and HATED (sane)' — the hatred his iniquity deserves; sane here the just abhorrence of sin the wicked deludes himself he will escape"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277527": {"gloss":"trouble v3","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity / trouble (aven - words of his mouth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (his words)","to":277527,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with deceit","from":277527,"to":277528,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The words of his mouth are TROUBLE (aven) and deceit' — his speech itself iniquity; aven (recurs Ps28:3) the mischief his mouth pours out, joined with deceit"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277528": {"gloss":"deceit v3","dims":[{"n":101,"l":"sense","k":"value","v":"deceit (mirmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277528,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with trouble","from":277528,"to":277527,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'trouble and DECEIT (mirmah)' — the deceit filling his speech; mirmah (recurs Ps35:20) the guile of the wicked who has ceased to act wisely"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277530": {"gloss":"wisely v3","dims":[{"n":101,"l":"sense","k":"value","v":"act wisely (sakal, ceased)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (ceased to)","to":277530,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"act wisely (ceased)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"ceased ('he has CEASED to act wisely and do good')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he has ceased to act WISELY (sakal) and do good' — abandoned wisdom and goodness; sakal (as Ps32:8, there God's instruction) here the wisdom the wicked has forsaken, the collapse of moral discernment"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277532": {"gloss":"plots v4","dims":[{"n":101,"l":"sense","k":"value","v":"plot / devise (chashab)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277532,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"plot"},{"n":107,"l":"target","k":"pair","v":"trouble","from":277532,"to":277533,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"on his bed","to":277532,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'He PLOTS (chashab) trouble while on his bed' — scheming even in rest; chashab (recurs Ps35:4,20) the wicked's mind devising mischief in the night, the sleepless machinery of malice"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277533": {"gloss":"trouble v4","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity / trouble (aven - plots trouble)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277533,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing plotted","from":277533,"to":277532,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'plots TROUBLE (aven)' — the mischief he devises; aven (recurs v3) the iniquity plotted on the bed, the object of his nocturnal scheming"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277540": {"gloss":"good v4","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - a way not good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (sets himself in a not-good way)","to":277540,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with not rejecting evil","from":277540,"to":277543,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('a way that is NOT good')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he sets himself in a way that is not GOOD (tov)' — deliberate commitment to evil; tov negated, the wicked fixing himself in a bad path, refusing the good"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277543": {"gloss":"evil v4","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra - does not reject evil)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (does not reject it)","to":277543,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the not-good way","from":277543,"to":277540,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"not-rejected ('he does NOT reject evil')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he does not reject EVIL (ra)' — the embrace of evil; ra unrejected, the wicked's refusal to spurn what is evil, the climax of the portrait of corruption (v1-4)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277544": {"gloss":"steadfast love v5","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed - extends to the heavens)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277544,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"to the heavens","to":277544,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with faithfulness","from":277544,"to":277548,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Your CHESED (steadfast love), O LORD, extends to the heavens' — love of cosmic scope; chesed (first of three, v5,7,10) reaching to the skies, the sudden turn from the wicked's narrow heart to God's boundless love"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277548": {"gloss":"faithfulness v5","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness (emunah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277548,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"to the clouds","to":277548,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with steadfast love","from":277548,"to":277544,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'your FAITHFULNESS (emunah) to the clouds' — reliability reaching the skies; emunah (recurs Ps33:4) God's faithfulness paired with chesed, both immeasurable"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277550": {"gloss":"righteousness v6","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah - like the mountains)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277550,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"like the mountains of God","to":277550,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Your RIGHTEOUSNESS (tsedaqah) is like the mountains of God' — justice as vast and firm as mountains; tsedaqah (first of two, v6,10) God's unshakeable rightness, his judgements deep as the great deep"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277558": {"gloss":"save v6","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha - man and beast you save)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277558,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"save"},{"n":107,"l":"target","k":"pair","v":"man and beast","to":277558,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'man and beast you SAVE (yasha), O LORD' — God's preserving care over all creatures; yasha here the salvation extending even to the animals, the breadth of divine goodness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277562": {"gloss":"steadfast love v7","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed - how precious)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":277562,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the children of mankind","from":277562,"to":277566,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"precious","to":277562,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"under which they take refuge","from":277562,"to":277566,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'How precious is your CHESED (steadfast love), O God!' — love treasured; chesed (second of three) so precious that mankind takes refuge in the shadow of God's wings, the ground of shelter"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277566": {"gloss":"take refuge v7","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the children of mankind","to":277566,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"the shadow of God's wings","to":277566,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"drawn by the precious chesed","from":277566,"to":277562,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'take REFUGE (chasah) in the shadow of your wings' — sheltering under God's love; chasah (recurs Ps34:8) the refuge of mankind under the wings, feasting on the abundance of God's house"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277576": {"gloss":"delights v8","dims":[{"n":101,"l":"sense","k":"value","v":"delights (eden - river of your delights)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his delights)","to":277576,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"those who take refuge (given drink)","to":277576,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'you give them drink from the river of your DELIGHTS (eden)' — God's abundant joys; eden (the word of Eden = delight/pleasure) the river of pleasure from which the sheltered drink, the fountain of life and light (v9)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277502": {"gloss":"steadfast love v10","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed - continue it)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD (asked to continue it)","to":277502,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"those who know God","from":277502,"to":277503,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with righteousness to the upright","from":277502,"to":277504,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'continue your CHESED (steadfast love) to those who know you' — the prayer for love's continuance; chesed (third of three, v5,7,10) asked to be prolonged toward the God-knowers and the upright of heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277503": {"gloss":"know v10","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada - those who know you)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who know God","to":277503,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know"},{"n":107,"l":"target","k":"pair","v":"God","to":277503,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"recipients of continued chesed","from":277503,"to":277502,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'to those who KNOW (yada) you' — the God-knowers as recipients of love; yada here relational knowledge of God, paralleled with the upright of heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277504": {"gloss":"righteousness v10","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedaqah - to the upright)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (his righteousness)","to":277504,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the upright of heart","from":277504,"to":277505,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with chesed to God-knowers","from":277504,"to":277502,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and your RIGHTEOUSNESS (tsedaqah) to the upright of heart!' — justice for the upright; tsedaqah (second of two, v6,10) God's saving righteousness sought for the straight-hearted"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277505": {"gloss":"upright v10","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar - of heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright of heart","from":277505,"to":277506,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"describes the heart","from":277505,"to":277506,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'to the UPRIGHT (yashar) of heart' — the straight-hearted as recipients; yashar (recurs Ps33:1) the uprightness of the heart that receives God's righteousness — the bright counterpart to v1's corrupt heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277506": {"gloss":"heart v10","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - upright of heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277506,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the upright","to":277506,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the seat of uprightness","from":277506,"to":277505,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'the upright of HEART (lev)' — the good heart of the psalm; lev here the straight heart of God's people, the deliberate contrast to v1's heart where transgression speaks — the two hearts framing the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277508": {"gloss":"arrogance v11","dims":[{"n":101,"l":"sense","k":"value","v":"pride / arrogance (gaavah - foot of arrogance)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the arrogant (their foot)","to":277508,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David (deprecated)","to":277508,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the hand of the wicked","from":277508,"to":277511,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('Let NOT the foot of arrogance come upon me')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Let not the foot of ARROGANCE (gaavah) come upon me' — the plea against the proud; gaavah (recurs Ps31:18,23) the arrogance whose trampling foot David asks God to keep away"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277511": {"gloss":"wicked v11","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (their hand)","to":277511,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"drive away","to":277511,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David (deprecated)","to":277511,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the foot of arrogance","from":277511,"to":277508,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('nor the hand of the WICKED drive me away')"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'nor the hand of the WICKED (rasha) drive me away' — the plea against the wicked's power; rasha (recurs v1) the evildoer whose driving hand David asks God to restrain — 'there the evildoers lie fallen' (v12)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 36,
+ "provenance": "reread-psalms-2026",
+ "note": "Wicked's inner life (no-fear heart, self-flattery, ceased-wise, bed-scheming) vs feasting on God's abundance + knowing him",
+ "spans": {
+  "277496": {
+   "gloss": "no fear of God before his eyes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "no fear of God before his eyes"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the wicked",
+     "to": 277496,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes - reverence simply absent"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fearlessness-of-God",
+     "to": 277496,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "no-fear-in-heart",
+     "to": 277496,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Transgression speaks to the WICKED deep in his HEART; there is no FEAR of God before his eyes' - the operation is the root diagnosis: the wicked's interior has no reverence, and sin speaks in the vacuum."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277520": {
+   "gloss": "he flatters himself about his sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he flatters himself about his sin"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the wicked",
+     "to": 277520,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he flatters himself in his own eyes that his iniquity cannot be found out and hated - self-deception about guilt"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "self-flattery",
+     "to": 277520,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "flatter-himself",
+     "to": 277520,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'For he FLATTERS himself in his own eyes that his INIQUITY cannot be found out and HATED' - the operation is self-deceit: the interior tells itself its sin is invisible and unhateable."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277529": {
+   "gloss": "he has ceased to act wisely",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he has ceased to act wisely"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the wicked",
+     "to": 277529,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the words of his mouth are trouble and deceit; he has ceased to act wisely and do good - a deliberate giving-up of wisdom"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "abandonment-of-good",
+     "to": 277529,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "ceased-wise",
+     "to": 277529,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'he has CEASED to act WISELY and do GOOD' - the operation is a chosen abdication: the interior has stopped even trying to be wise or good."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277532": {
+   "gloss": "he plots trouble on his bed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he plots trouble on his bed"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the wicked",
+     "to": 277532,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he plots trouble while on his bed, sets himself in a way that is not good, and does not reject evil - scheming in the place of rest"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "nocturnal-scheming",
+     "to": 277532,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "plot-on-bed",
+     "to": 277532,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'He PLOTS trouble while on his bed; he sets himself in a way that is not good; he does not REJECT evil' - the operation is the interior at work even in bed, and its settled refusal to turn from evil."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277570": {
+   "gloss": "they feast on the abundance of your house",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "they feast on the abundance of your house"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who take refuge",
+     "to": 277570,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the children of men feast on the abundance of God's house and drink from the river of his delights - satisfaction found in God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "satisfaction-in-God",
+     "to": 277570,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "feast-on-abundance",
+     "to": 277570,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'They FEAST on the abundance of your house, and you give them DRINK from the river of your DELIGHTS' - the operation contrasts the wicked's dry scheming with an interior that drinks its fill from God himself."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277503": {
+   "gloss": "those who know you, upright in heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "those who know you, upright in heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who know God",
+     "to": 277503,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God to continue his steadfast love to those who know him, his righteousness to the upright in heart - knowledge and uprightness as the interior God favours"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "knowing-God",
+     "to": 277503,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "know-you-upright",
+     "to": 277503,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'Oh, continue your steadfast love to those who KNOW you, and your righteousness to the UPRIGHT in HEART!' - the operation names the interior that receives God's love: one that knows him and is straight within."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277576": {
+   "gloss": "the river of your delights",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the river of your delights"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277570,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'you give them drink from the RIVER of your delights' - the abundance the satisfied interior drinks from."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277558": {
+   "gloss": "you save man and beast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you save man and beast"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277503,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'you SAVE man and beast, O LORD' - God's preserving righteousness the knowers rest on."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277492": {
+   "gloss": "Transgression",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Transgression"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'Transgression' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277494": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'wicked' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277498": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'fear' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277501": {
+   "gloss": "continue",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "continue"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'continue' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277502": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'steadfast love' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277504": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'righteousness' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277505": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'upright' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277506": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'heart' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277508": {
+   "gloss": "arrogance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "arrogance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'arrogance' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277511": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'wicked' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277515": {
+   "gloss": "evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evildoers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'evildoers' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277516": {
+   "gloss": "fallen",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fallen"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'fallen' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277517": {
+   "gloss": "thrust down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "thrust down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'thrust down' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277519": {
+   "gloss": "rise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rise"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'rise' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277522": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'iniquity' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277523": {
+   "gloss": "found",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "found"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'found' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277524": {
+   "gloss": "hated",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hated"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'hated' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277527": {
+   "gloss": "trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trouble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'trouble' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277528": {
+   "gloss": "deceit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deceit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'deceit' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277530": {
+   "gloss": "wisely",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wisely"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'wisely' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277531": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'good' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277533": {
+   "gloss": "trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trouble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'trouble' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277537": {
+   "gloss": "sets",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sets"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'sets' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277540": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'good' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277542": {
+   "gloss": "reject",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "reject"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'reject' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277543": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'evil' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277544": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'steadfast love' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277548": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'faithfulness' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277550": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'righteousness' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277553": {
+   "gloss": "judgments",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "judgments"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'judgments' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277562": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'steadfast love' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277566": {
+   "gloss": "take",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "take"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'take' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277574": {
+   "gloss": "drink",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "drink"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'drink' - substrate (God's love/righteousness/fountain-of-light vv5-9, arrogance-foot/wicked-fallen, or attribute label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

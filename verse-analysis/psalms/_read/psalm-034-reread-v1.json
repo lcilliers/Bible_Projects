@@ -1,54 +1,2805 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 34, "provenance": "reread-psalms-2026",
-  "note": "Ps34 (40 chars, acrostic). God-fearer's testimony. yare/yirah fear x4 (teach the fear v11), tov good x5 (taste+see / do good), shabar broken x2 (brokenhearted v18 / bones unbroken v20), daka crushed in spirit, chasah refuge x2, darash seek x2, padah redeems the nefesh. Poetic ledger; span-id pairs.",
-  "spans": {
-    "277128": {"gloss":"bless v1","dims":[{"n":101,"l":"sense","k":"value","v":"bless (barak)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277128,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"bless"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277128,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"at all times","to":277128,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with continual praise","from":277128,"to":277133,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I will BLESS (barak) the LORD at all times' — unceasing blessing; barak (recurs Ps28,31) the continual praise the delivered vows, its praise ever in his mouth"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277133": {"gloss":"praise v1","dims":[{"n":101,"l":"sense","k":"value","v":"praise (tehillah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (praise in his mouth)","to":277133,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"continually","to":277133,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with blessing","from":277133,"to":277128,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'his PRAISE (tehillah) shall continually be in my mouth' — praise never ceasing; tehillah (recurs Ps33:1) the constant song of the God-fearer"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277213": {"gloss":"soul v2","dims":[{"n":101,"l":"sense","k":"value","v":"soul (nefesh - makes its boast)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":277213,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277213,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"makes its boast","from":277213,"to":277214,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'My SOUL (nefesh) makes its boast in the LORD' — the whole self glorying in God; nefesh here the inner person whose only boast is the LORD (first of two, v2,22)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277214": {"gloss":"boast v2","dims":[{"n":101,"l":"sense","k":"value","v":"boast / glory (halal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David's soul","from":277214,"to":277213,"res":"span"},{"n":106,"l":"operation","k":"event","v":"boast / glory"},{"n":107,"l":"target","k":"pair","v":"in the LORD","to":277214,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the soul","from":277214,"to":277213,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'makes its BOAST (halal) in the LORD' — glorying in God, not self; halal here the soul's exultant boasting in the LORD, that the humble may hear and be glad"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277216": {"gloss":"humble v2","dims":[{"n":101,"l":"sense","k":"value","v":"humble / afflicted (anav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the humble (who hear and are glad)","to":277216,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"hear and are glad","from":277216,"to":277218,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'let the HUMBLE (anav) hear and be glad' — the lowly gladdened by the testimony; anav (as Ps25:9) the humble who rejoice to hear of God's deliverance of the afflicted"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277218": {"gloss":"glad v2","dims":[{"n":101,"l":"sense","k":"value","v":"be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the humble","from":277218,"to":277216,"res":"span"},{"n":106,"l":"operation","k":"event","v":"be glad"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the humble","from":277218,"to":277216,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'hear and be GLAD (samach)' — the gladness the testimony awakens; samach (recurs Ps33:21) the joy of the humble at hearing the psalmist's boast in God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277241": {"gloss":"exalt v3","dims":[{"n":101,"l":"sense","k":"value","v":"exalt (rum - his name)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the congregation ('us')","to":277241,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"exalt"},{"n":107,"l":"target","k":"pair","v":"God's name","to":277241,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"together","to":277241,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'let us EXALT (rum) his name together!' — corporate lifting-up of God; rum (recurs Ps30:1) the shared exaltation, the psalmist calling others to magnify the LORD with him"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277244": {"gloss":"sought v4","dims":[{"n":101,"l":"sense","k":"value","v":"seek (darash)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277244,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277244,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I SOUGHT (darash) the LORD, and he answered me, and delivered me from all my fears' — seeking rewarded with deliverance from fear; darash (recurs Ps22:26) the earnest seeking that God answers, freeing from every dread"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277257": {"gloss":"ashamed v5","dims":[{"n":101,"l":"sense","k":"value","v":"be ashamed (chapher, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who look to God","to":277257,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be ashamed (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('their faces shall NEVER be ashamed')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Those who look to him are radiant, and their faces shall never be ASHAMED (chapher)' — the shining, unashamed face of the God-seeker; chapher negated, the radiance of those who look to God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277259": {"gloss":"poor man v6","dims":[{"n":101,"l":"sense","k":"value","v":"poor / afflicted (ani)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the poor man (David himself)","to":277259,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"cried and was saved","from":277259,"to":277260,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'This POOR man (ani) cried, and the LORD heard him' — the afflicted whose cry God answers; ani (as Ps25:16) the lowly one saved out of all his troubles, the paradigm of the delivered God-fearer"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277260": {"gloss":"cried v6","dims":[{"n":101,"l":"sense","k":"value","v":"cry / call (qara)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the poor man","from":277260,"to":277259,"res":"span"},{"n":106,"l":"operation","k":"event","v":"cry"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277260,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with being saved","from":277260,"to":277263,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'This poor man CRIED (qara), and the LORD heard' — the cry that reaches God; qara the appeal of the afflicted, answered with salvation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277263": {"gloss":"saved v6","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277263,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"save"},{"n":107,"l":"target","k":"pair","v":"the poor man","from":277263,"to":277259,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"out of all his troubles","to":277263,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with the cry","from":277263,"to":277260,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and SAVED (yasha) him out of all his troubles' — the rescue answering the cry; yasha (recurs v18) the salvation of the afflicted, delivered from every trouble"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277272": {"gloss":"fear v7","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yare - those who fear him)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who fear the LORD","to":277272,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The angel of the LORD encamps around those who FEAR (yare) him, and delivers them' — the God-fearers guarded; yare (first of four, v7,9x2,11) the reverent around whom God's angel camps"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277279": {"gloss":"good v8","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - the LORD is good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277279,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the blessed refuge-taker","from":277279,"to":277280,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Oh, taste and see that the LORD is GOOD (tov)!' — the invitation to experience God's goodness; tov (first of five, v8,10,12,14) the goodness of the LORD to be tasted, blessing the one who takes refuge"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277280": {"gloss":"Blessed v8","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man who takes refuge","from":277280,"to":277282,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"who takes refuge in God","from":277280,"to":277282,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the man who takes refuge in him!' — the beatitude of the refuge-taker; esher (recurs Ps32,33:12) the happiness of the one who shelters in the good God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277282": {"gloss":"refuge v8","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed man","from":277282,"to":277280,"res":"span"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"God","to":277282,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the ground of blessedness","from":277282,"to":277280,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'who TAKES REFUGE (chasah) in him' — the sheltering that is blessed; chasah (first of two, v8,22) the refuge in the good LORD (recurs from Ps31)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277284": {"gloss":"fear(imv) v9","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yare - Oh, fear the LORD)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"his saints","from":277284,"to":277286,"res":"span"},{"n":106,"l":"operation","k":"event","v":"fear"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277284,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"addressed to the saints","from":277284,"to":277286,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Oh, FEAR (yare) the LORD, you his saints' — the command to reverence; yare imperative, the saints summoned to the fear that lacks nothing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277286": {"gloss":"saints v9","dims":[{"n":101,"l":"sense","k":"value","v":"holy ones / saints (qadosh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the saints (called to fear)","to":277286,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"summoned to fear","from":277286,"to":277284,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'you his SAINTS (qedoshim)' — the holy ones addressed; qadosh (as Ps16:3) here the saints called to fear the LORD, promised no lack"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277288": {"gloss":"fear v9b","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yare - those who fear him have no lack)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who fear the LORD","to":277288,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'for those who FEAR (yare) him have no lack!' — the sufficiency of the God-fearers; yare (third of four) the reverent who want nothing, the promise attached to the fear of the LORD"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277140": {"gloss":"seek v10","dims":[{"n":101,"l":"sense","k":"value","v":"seek (darash)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who seek the LORD","to":277140,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277140,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"lack no good thing","from":277140,"to":277144,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'those who SEEK (darash) the LORD lack no good thing' — the seekers provided for; darash (recurs v4) here the ongoing seeking, contrasted with the young lions who hunger — God's seekers never lack good"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277144": {"gloss":"good v10","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - lack no good thing)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the seekers (lack no good)","to":277144,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"not lacked by the seekers","from":277144,"to":277140,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'lack no GOOD (tov) thing' — the good the seekers never miss; tov (second of five) the provision God grants those who seek him"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277150": {"gloss":"fear v11","dims":[{"n":101,"l":"sense","k":"value","v":"fear (yirah - I will teach you the fear of the LORD)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the children (taught the fear)","to":277150,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Come, O children... I will teach you the FEAR (yirah) of the LORD' — the fear as a teachable discipline; yirah (fourth of four) the reverence the psalmist sets out to instruct, the theme of the wisdom-section (v11-14)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277154": {"gloss":"desires v12","dims":[{"n":101,"l":"sense","k":"value","v":"desire / delight in (chaphets - desires life)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man who desires life","to":277154,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"life","to":277154,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with loving many days","from":277154,"to":277156,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'What man is there who DESIRES (chaphets) life?' — the longing for life the fear of God answers; chaphets (as Ps16:3) the desire that, rightly pursued, is met by guarding the tongue and doing good"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277156": {"gloss":"loves v12","dims":[{"n":101,"l":"sense","k":"value","v":"love (aheb - loves many days)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man who desires life","to":277156,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"many days (to see good)","from":277156,"to":277159,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with desiring life","from":277156,"to":277154,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and LOVES (aheb) many days, that he may see good' — the love of a long good life; aheb (recurs Ps33:5) here the desire for days that see good, the goal the fear of the LORD secures"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277159": {"gloss":"good v12","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - that he may see good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man (who would see good)","to":277159,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the loved days are to see it","from":277159,"to":277156,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'that he may see GOOD (tov)' — the good life aims at; tov (third of five) the good the God-fearer would enjoy, secured by righteous conduct"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277163": {"gloss":"evil v13","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra - keep tongue from evil)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-fearer (guards against it)","to":277163,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with deceit","from":277163,"to":277167,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('Keep your tongue from EVIL')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Keep your tongue from EVIL (ra) and your lips from deceit' — the fear of God begins with guarded speech; ra (first of the ra-cluster, v13,14,16) the evil the tongue must shun"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277167": {"gloss":"deceit v13","dims":[{"n":101,"l":"sense","k":"value","v":"deceit (mirmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-fearer (lips guarded from it)","to":277167,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with evil","from":277167,"to":277163,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('lips from speaking DECEIT')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and your lips from speaking DECEIT (mirmah)' — truthful speech as part of the fear; mirmah (recurs Ps24:4) the guile the God-fearer's lips avoid"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277170": {"gloss":"evil v14","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra - turn away from evil)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-fearer (turns from it)","to":277170,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with doing good","from":277170,"to":277172,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"turned-from ('Turn away from EVIL')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Turn away from EVIL (ra) and do good' — the double command of the fear; ra (second of the cluster) the evil to be forsaken, matched by the positive doing of good"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277172": {"gloss":"good v14","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - do good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-fearer","to":277172,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"do (good)","to":277172,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with turning from evil","from":277172,"to":277170,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and DO GOOD (tov)' — the active good matching the turn from evil; tov (fourth of five) the good deeds of the God-fearer, the positive half of the command"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277174": {"gloss":"peace v14","dims":[{"n":101,"l":"sense","k":"value","v":"peace (shalom - seek peace and pursue it)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-fearer (seeks it)","to":277174,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek and pursue","to":277174,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'SEEK PEACE (shalom) and pursue it' — peace as an active quest; shalom (recurs Ps29:11) the well-being the God-fearer not merely wants but chases after, the climax of the wisdom-instruction"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277179": {"gloss":"righteous v15","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (God's eyes toward them)","to":277179,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The eyes of the LORD are toward the RIGHTEOUS (tsaddiq)' — God's attentive regard; tsaddiq (first of four, v15,19,21) the righteous on whom God's eyes and ears rest, in contrast to his face against evildoers (v16)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277186": {"gloss":"evil v16","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra - those who do evil)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the evildoers","to":277186,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'The face of the LORD is against those who do EVIL (ra)' — God's opposition to the wicked; ra (third of the cluster) the evildoers whose memory God cuts off, the dark counterpart to his eyes toward the righteous"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277192": {"gloss":"cry for help v17","dims":[{"n":101,"l":"sense","k":"value","v":"cry for help (tsaaq)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277192,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"cry for help"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277192,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'When the righteous CRY FOR HELP (tsaaq), the LORD hears and delivers' — the answered cry of the just; tsaaq (a cry like zaaq, Ps22:5) the appeal God hears, delivering from all troubles"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277202": {"gloss":"brokenhearted v18","dims":[{"n":101,"l":"sense","k":"value","v":"broken (shabar - the brokenhearted)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self, broken)","to":277202,"res":"inferred"},{"n":105,"l":"bearer","k":"pair","v":"the brokenhearted","to":277202,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the LORD is near to them","to":277202,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the crushed in spirit","from":277202,"to":277204,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The LORD is near to the BROKENHEARTED (shabar - broken of heart)' — God's nearness to the shattered; shabar (first of two, v18 heart / v20 bones) the broken heart to which God draws close (contrast v20's unbroken bones)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277203": {"gloss":"saves v18","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha - saves the crushed)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277203,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"save"},{"n":107,"l":"target","k":"pair","v":"the crushed in spirit","from":277203,"to":277204,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and SAVES (yasha) the crushed in spirit' — God's rescue of the shattered; yasha (recurs v6) the salvation reserved for the humble and broken, near to those low in spirit"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277204": {"gloss":"crushed v18","dims":[{"n":101,"l":"sense","k":"value","v":"crushed / contrite (daka - of spirit)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"spirit (self, crushed)","to":277204,"res":"inferred"},{"n":105,"l":"bearer","k":"pair","v":"the crushed in spirit","to":277204,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"saved by God","from":277204,"to":277203,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the brokenhearted","from":277204,"to":277202,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'saves the CRUSHED (daka) in spirit' — the contrite spirit God rescues; daka = crushed/contrite, the lowly inner state (with the broken heart) that draws God's nearness and salvation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277207": {"gloss":"afflictions v19","dims":[{"n":101,"l":"sense","k":"value","v":"afflictions / evils (ra - many afflictions of the righteous)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","from":277207,"to":277208,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"many","to":277207,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"of the righteous","from":277207,"to":277208,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Many are the AFFLICTIONS (ra) of the righteous, but the LORD delivers him' — the sufferings of the just, all overcome; ra here in its sense of calamity/affliction (fourth of the cluster), many but not final, for God delivers from all"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277208": {"gloss":"righteous v19","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (delivered)","to":277208,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose afflictions are many","from":277208,"to":277207,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the RIGHTEOUS (tsaddiq)... the LORD delivers him out of them all' — the just delivered from every affliction; tsaddiq (second of four) the righteous whose many troubles God ends"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277224": {"gloss":"broken v20","dims":[{"n":101,"l":"sense","k":"value","v":"break (shabar - not one bone broken, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (his bones)","to":277224,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"break (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('not one of them is BROKEN')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'He keeps all his bones; not one of them is BROKEN (shabar)' — the preservation of the righteous; shabar (second of two) here negated of the bones — the broken heart (v18) draws God near, yet not a bone is broken, the righteous kept whole (fulfilled in Christ, Jn19:36)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277225": {"gloss":"Affliction v21","dims":[{"n":101,"l":"sense","k":"value","v":"evil / affliction (ra - shall slay the wicked)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (slain by their own evil)","to":277225,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"slay","to":277225,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the wicked","from":277225,"to":277227,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'AFFLICTION (ra) will slay the wicked' — evil recoiling on its doer; ra (fifth of the cluster) here the calamity that kills the wicked — the same word that afflicts the righteous (v19) destroys the wicked, opposite outcomes"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277227": {"gloss":"wicked v21","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (slain)","to":277227,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"slain by affliction","from":277227,"to":277225,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'will slay the WICKED (rasha)' — the wicked destroyed by evil; rasha the object of the recoiling calamity, whose hatred of the righteous brings condemnation"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277228": {"gloss":"hate v21","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - those who hate the righteous)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who hate the righteous","to":277228,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"the righteous","from":277228,"to":277229,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with being condemned","from":277228,"to":277230,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'those who HATE (sane) the righteous will be condemned' — the haters judged; sane (recurs Ps25:19) the hatred of the just that brings guilt, condemnation the fate of the righteous-haters"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277229": {"gloss":"righteous v21","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - hated)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (hated by the wicked)","to":277229,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the target of hatred","from":277229,"to":277228,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'those who hate the RIGHTEOUS (tsaddiq)' — the just as object of hatred; tsaddiq (fourth of four) the righteous whose haters are condemned, God's care for them vindicated"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277230": {"gloss":"condemned v21","dims":[{"n":101,"l":"sense","k":"value","v":"be condemned / held guilty (asham)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous-haters","from":277230,"to":277228,"res":"span"},{"n":106,"l":"operation","k":"event","v":"be condemned"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the fate of the haters","from":277230,"to":277228,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'will be CONDEMNED (asham)' — the guilt-verdict on the haters; asham (first of two, v21,22) = to be held guilty/desolate, the doom of those who hate the righteous"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277232": {"gloss":"redeems v22","dims":[{"n":101,"l":"sense","k":"value","v":"redeem / ransom (padah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":277232,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"redeem"},{"n":107,"l":"target","k":"pair","v":"the life of his servants","from":277232,"to":277233,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'The LORD REDEEMS (padah) the life of his servants' — the ransom of the faithful; padah (recurs Ps25,26,31) the redemption of the servants' life, the final assurance closing the acrostic"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277233": {"gloss":"life v22","dims":[{"n":101,"l":"sense","k":"value","v":"soul / life (nefesh - of his servants)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":277233,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"his servants","to":277233,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"redeemed by God","from":277233,"to":277232,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'the LIFE (nefesh) of his servants' — the life God ransoms; nefesh (second of two, v2,22) the servants' life redeemed, none who take refuge condemned"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277236": {"gloss":"take refuge v22","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who take refuge in God","to":277236,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"God","to":277236,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with not being condemned","from":277236,"to":277238,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'none of those who TAKE REFUGE (chasah) in him will be condemned' — the refuge-takers acquitted; chasah (second of two, v8,22) the sheltering that guarantees against condemnation, the acrostic's closing assurance"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277238": {"gloss":"condemned v22","dims":[{"n":101,"l":"sense","k":"value","v":"be condemned (asham, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who take refuge (not condemned)","from":277238,"to":277236,"res":"span"},{"n":106,"l":"operation","k":"event","v":"be condemned (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the refuge-takers","from":277238,"to":277236,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('NONE... will be condemned')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'will be CONDEMNED (asham)' — acquittal of the refuge-takers; asham (second of two) negated — the guilt that falls on the righteous-haters (v21) never touches those who shelter in God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 34,
+ "provenance": "reread-psalms-2026",
+ "note": "Taste-and-see: bless, soul-boast, magnify, sought/freed-of-fears, radiant, poor's cry, taste, fear/no-lack, seek, teach-the-fear, desire-life, guard-tongue, seek-peace, brokenhearted, refuge",
+ "spans": {
+  "277128": {
+   "gloss": "bless the LORD at all times",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bless the LORD at all times"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277128,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self resolves to bless the LORD at all times, his praise continually in the mouth - unbroken praise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "continual-praise",
+     "to": 277128,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bless-at-all-times",
+     "to": 277128,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I will BLESS the LORD at all times; his PRAISE shall continually be in my mouth' - the operation is praise made ceaseless, a standing posture of the interior."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277213": {
+   "gloss": "my soul boasts in the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my soul boasts in the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277213,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's soul makes its boast in the LORD, that the humble may hear and be glad - glorying redirected to God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "God-ward-boast",
+     "to": 277213,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "soul-boasts",
+     "to": 277213,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'My SOUL makes its BOAST in the LORD; let the HUMBLE hear and be GLAD' - the operation is boasting turned from self to God; the interior's pride is relocated onto him."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277239": {
+   "gloss": "magnify the LORD with me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "magnify the LORD with me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277239,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls others to magnify the LORD and exalt his name together - praise made communal"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "summoning-praise",
+     "to": 277239,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "magnify-together",
+     "to": 277239,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'Oh, MAGNIFY the LORD with me, and let us EXALT his name together' - the operation reaches out: the interior wants company in enlarging God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277244": {
+   "gloss": "I sought the LORD, freed from fears",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I sought the LORD, freed from fears"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277244,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self sought the LORD, who answered and delivered it from all its fears - seeking that dissolves dread"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "fear-dissolving-seeking",
+     "to": 277244,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "sought-and-freed",
+     "to": 277244,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'I SOUGHT the LORD, and he answered me and delivered me from all my FEARS' - the operation is the turning-to-God that empties the interior of its fears."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277254": {
+   "gloss": "those who look to him are radiant",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "those who look to him are radiant"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who look to him",
+     "to": 277254,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "those who look to God are radiant, their faces never ashamed - the interior lit up by looking to him"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "radiance",
+     "to": 277254,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "look-and-be-radiant",
+     "to": 277254,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'Those who LOOK to him are RADIANT, and their faces shall never be ashamed' - the operation is transformation by gaze: the interior that turns to God is lit and kept from shame."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277260": {
+   "gloss": "this poor man cried and was heard",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "this poor man cried and was heard"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the poor man",
+     "to": 277260,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "this poor man cried, and the LORD heard and saved him from all his troubles - the cry of the lowly answered"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "crying-answered",
+     "to": 277260,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "poor-man-cried",
+     "to": 277260,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'This poor man CRIED, and the LORD HEARD him and SAVED him out of all his troubles' - the operation is the lowly cry that reaches God; poverty of estate is no barrier to being heard."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277275": {
+   "gloss": "taste and see that the LORD is good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "taste and see that the LORD is good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the worshipper",
+     "to": 277275,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self invites others to taste and see that the LORD is good - trust made experiential, savoured"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "experiential-trust",
+     "to": 277275,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "taste-and-see",
+     "to": 277275,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'Oh, TASTE and see that the LORD is GOOD! Blessed is the man who takes refuge in him!' - the operation is a summons to first-hand experience; the interior is to sample God's goodness, not just hear of it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277284": {
+   "gloss": "fear the LORD, you his saints",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear the LORD, you his saints"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the saints",
+     "to": 277284,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls the saints to fear the LORD, for those who fear him have no lack - reverent fear that wants nothing"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "reverent-fear",
+     "to": 277284,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "fear-no-lack",
+     "to": 277284,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'Oh, FEAR the LORD, you his saints, for those who fear him have no LACK!' - the operation commends reverence as the interior posture that is fully supplied."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277140": {
+   "gloss": "those who seek the LORD lack no good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "those who seek the LORD lack no good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who seek",
+     "to": 277140,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the young lions hunger, but those who seek the LORD lack no good thing - seeking that is satisfied"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "satisfied-seeking",
+     "to": 277140,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "seek-no-good-lacking",
+     "to": 277140,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'those who SEEK the LORD lack no GOOD thing' - distinct from v4's seeking-freed-from-fear: this seeking is answered with provision; the interior that seeks God wants for nothing good."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277148": {
+   "gloss": "I will teach you the fear of the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I will teach you the fear of the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the teacher",
+     "to": 277148,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self calls children to listen and be taught the fear of the LORD - passing on reverence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "teaching-reverence",
+     "to": 277148,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "teach-the-fear",
+     "to": 277148,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'Come, O children, listen to me; I will TEACH you the FEAR of the LORD' - the operation turns instructor: the interior wants to hand its reverence to others."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277154": {
+   "gloss": "who desires life and to see good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "who desires life and to see good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the seeker of life",
+     "to": 277154,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self names the one who desires life and loves many days to see good - the longing the psalm will answer"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "desire-for-life",
+     "to": 277154,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "desire-life-good",
+     "to": 277154,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'What man is there who DESIRES life and LOVES many days, that he may see GOOD?' - the operation surfaces a universal want - a good, long life - and prepares to redirect it toward the fear of God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277160": {
+   "gloss": "keep your tongue from evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "keep your tongue from evil"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277160,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self teaches: keep the tongue from evil and the lips from deceit - the guarded mouth as the path to life"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "tongue-guarding",
+     "to": 277160,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "keep-tongue",
+     "to": 277160,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'KEEP your tongue from EVIL and your lips from speaking DECEIT' - the operation is the governed tongue; the interior that wants good life must first police its speech."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277173": {
+   "gloss": "seek peace and pursue it",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek peace and pursue it"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277173,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self teaches: turn from evil, do good, seek peace and pursue it - an active chase after peace"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "peace-pursuit",
+     "to": 277173,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "seek-and-pursue-peace",
+     "to": 277173,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'Turn away from evil and do good; SEEK PEACE and PURSUE it' - the operation makes peace a quarry: the interior does not merely wish peace but hunts it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277202": {
+   "gloss": "the LORD near the brokenhearted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the LORD near the brokenhearted"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the brokenhearted",
+     "to": 277202,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the LORD is near to the brokenhearted and saves the crushed in spirit - the shattered interior is where God draws closest"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "brokenness",
+     "to": 277202,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "brokenhearted-near",
+     "to": 277202,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'The LORD is NEAR to the BROKENHEARTED and saves the CRUSHED in SPIRIT' - the operation names the crushed interior not as abandoned but as the very place of God's nearness."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277236": {
+   "gloss": "none who take refuge are condemned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "none who take refuge are condemned"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who take refuge",
+     "to": 277236,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the LORD redeems the life of his servants; none who take refuge in him will be condemned - shelter that guarantees acquittal"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "refuge-taking",
+     "to": 277236,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "refuge-not-condemned",
+     "to": 277236,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'The LORD REDEEMS the life of his servants; none of those who TAKE REFUGE in him will be condemned' - the operation closes the acrostic on refuge: the interior that shelters in God is safe from condemnation."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277246": {
+   "gloss": "he answered me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he answered me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277244,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'and he ANSWERED me' - the response the seeking received."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277262": {
+   "gloss": "the LORD heard him",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the LORD heard him"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277260,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'and the LORD HEARD him' - the divine hearing that answered the poor man's cry."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277203": {
+   "gloss": "saves the crushed in spirit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saves the crushed in spirit"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277202,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'and SAVES the crushed in spirit' - the rescue God brings to the broken interior."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277122": {
+   "gloss": "changed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "changed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'changed' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277123": {
+   "gloss": "behavior",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "behavior"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'behavior' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277126": {
+   "gloss": "drove him out",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "drove him out"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'drove him out' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277133": {
+   "gloss": "praise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "praise"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'praise' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277138": {
+   "gloss": "suffer want",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "suffer want"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'suffer want' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277139": {
+   "gloss": "hunger",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hunger"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'hunger' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277142": {
+   "gloss": "lack",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lack"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'lack' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277144": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'good' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277147": {
+   "gloss": "listen",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "listen"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'listen' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277150": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'fear' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277156": {
+   "gloss": "loves",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "loves"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'loves' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277159": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'good' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277163": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'evil' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277167": {
+   "gloss": "deceit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deceit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'deceit' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277168": {
+   "gloss": "away",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "away"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'away' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277170": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'evil' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277172": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'good' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277174": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'peace' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277175": {
+   "gloss": "pursue",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pursue"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'pursue' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277179": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'righteous' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277182": {
+   "gloss": "cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'cry' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277186": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'evil' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277188": {
+   "gloss": "cut off",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut off"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'cut off' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277189": {
+   "gloss": "memory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "memory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'memory' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277192": {
+   "gloss": "cry for help",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry for help"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'cry for help' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277194": {
+   "gloss": "hears",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hears"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'hears' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277195": {
+   "gloss": "delivers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'delivers' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277199": {
+   "gloss": "troubles",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "troubles"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'troubles' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277204": {
+   "gloss": "crushed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "crushed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'crushed' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277205": {
+   "gloss": "spirit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "spirit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'spirit' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277207": {
+   "gloss": "afflictions",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "afflictions"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'afflictions' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277208": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'righteous' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277210": {
+   "gloss": "delivers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'delivers' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277214": {
+   "gloss": "boast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "boast"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'boast' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277216": {
+   "gloss": "humble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "humble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'humble' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277217": {
+   "gloss": "hear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'hear' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277218": {
+   "gloss": "glad",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glad"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'glad' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277219": {
+   "gloss": "keeps",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "keeps"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'keeps' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277224": {
+   "gloss": "broken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "broken"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'broken' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277225": {
+   "gloss": "Affliction",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Affliction"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'Affliction' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277226": {
+   "gloss": "slay",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "slay"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'slay' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277227": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'wicked' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277228": {
+   "gloss": "hate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'hate' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277229": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'righteous' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277230": {
+   "gloss": "condemned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "condemned"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'condemned' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277232": {
+   "gloss": "redeems",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "redeems"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'redeems' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277233": {
+   "gloss": "life",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "life"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'life' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277238": {
+   "gloss": "condemned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "condemned"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'condemned' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277241": {
+   "gloss": "exalt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exalt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'exalt' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277242": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'name' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277247": {
+   "gloss": "delivered",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivered"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'delivered' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277251": {
+   "gloss": "fears",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fears"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'fears' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277257": {
+   "gloss": "ashamed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ashamed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'ashamed' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277259": {
+   "gloss": "poor man",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "poor man"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'poor man' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277263": {
+   "gloss": "saved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saved"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'saved' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277267": {
+   "gloss": "troubles",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "troubles"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'troubles' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277268": {
+   "gloss": "angel",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "angel"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'angel' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277270": {
+   "gloss": "encamps",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "encamps"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'encamps' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277272": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'fear' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277273": {
+   "gloss": "delivers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'delivers' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277279": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'good' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277280": {
+   "gloss": "Blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'Blessed' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277282": {
+   "gloss": "refuge",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "refuge"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'refuge' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277286": {
+   "gloss": "saints",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saints"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'saints' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277288": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'fear' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277290": {
+   "gloss": "lack",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lack"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'lack' - substrate (angel-encamps/lions/bones imagery, wicked's-fate, or God's-deliverance label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

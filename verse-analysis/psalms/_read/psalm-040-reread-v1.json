@@ -1,59 +1,2709 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 40, "provenance": "reread-psalms-2026",
-  "note": "Ps40 thanksgiving->lament (corrected method). Human IB: qavah wait, tehillah new-song, chaphets delight-to-do-will (law in lev heart), unrestrained proclamation (kala-not/lev), lament (ra evils, avon iniquities, lev fails), foes/seekers, ani/evyon poor. ~20 God-attributes (tsedaqah/emunah/teshuah/chesed/emeth/racham + God's acts) = QUALIFIERS source-linked (the content proclaimed / the love that preserves). Every candidate roled.",
-  "spans": {
-    "278212": {"gloss":"waited v1","dims":[{"n":101,"l":"sense","k":"value","v":"wait (qavah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278212,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wait"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278212,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"patiently (emphatic doubling)","from":278212,"to":278213,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"answered by God inclining and hearing","from":278212,"to":278217,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I WAITED patiently (qavah) for the LORD; he inclined to me and heard my cry' — the patient expectant waiting rewarded; qavah (recurs Ps37,39) doubled here for intensity, the waiting that God answers by drawing him from the pit"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278319": {"gloss":"praise v3","dims":[{"n":101,"l":"sense","k":"value","v":"praise (tehillah - a new song)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278319,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"to our God","to":278319,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"a new song in the mouth","to":278319,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'He put a new song in my mouth, a song of PRAISE (tehillah) to our God' — the fresh praise of the rescued; tehillah the new song that makes many see and fear and trust — deliverance overflowing into evangelistic worship"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278323": {"gloss":"fear v3","dims":[{"n":101,"l":"sense","k":"value","v":"fear / revere (yare)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the many who see","to":278323,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"fear"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278323,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with putting trust","from":278323,"to":278324,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Many will see and FEAR (yare), and put their trust in the LORD' — the reverence David's testimony awakens in others; yare here the response of the many to his new song, fear leading to trust"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278324": {"gloss":"trust v3","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the many","to":278324,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278324,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with fear","from":278324,"to":278323,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'and put their TRUST (batach) in the LORD' — the trust born of witnessing God's deliverance of another; batach the reliance the testimony produces, faith spreading from the rescued to the watching many"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278326": {"gloss":"Blessed v4","dims":[{"n":101,"l":"sense","k":"value","v":"blessed / happy (esher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man who trusts the LORD","from":278326,"to":278331,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BLESSED (esher) is the man who makes the LORD his trust' — the beatitude of the truster; esher (recurs Ps1,32,34) the happiness of the one whose confidence is God, not the proud or the liars"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278331": {"gloss":"trust v4","dims":[{"n":101,"l":"sense","k":"value","v":"trust / confidence (mibtach)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blessed man","to":278331,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278331,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with turning to the proud","from":278331,"to":278335,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'who makes the LORD his TRUST (mibtach)' — God as the object of confidence; mibtach (the noun) the settled reliance that defines the blessed, set against the proud and the followers of lies"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278335": {"gloss":"proud v4","dims":[{"n":101,"l":"sense","k":"value","v":"proud / insolent (rahab)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the proud (not turned to)","to":278335,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the alternative the truster rejects","from":278335,"to":278331,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"avoided ('does NOT turn to the proud')"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'who does not turn to the PROUD (rahab), to those who go astray after a lie' — the arrogant the blessed man refuses; rahab = insolent pride, the false refuge the truster turns from to make the LORD his trust"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278372": {"gloss":"delight v8","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets - to do your will)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"heart (law within it)","to":278372,"res":"inferred"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278372,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"delight"},{"n":107,"l":"target","k":"pair","v":"to do your will","from":278372,"to":278374,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"met by God's not-delighting in mere sacrifice (v6)","from":278372,"to":278355,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I DELIGHT (chaphets) to do your will, O my God; your law is within my heart' — the heart of true obedience: not ritual but delighted willing conformity; chaphets the inner pleasure in God's will, the law internalised (contrast God's non-delight in mere sacrifice, v6; cited Heb10:7)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278386": {"gloss":"restrained v9","dims":[{"n":101,"l":"sense","k":"value","v":"restrain / hold back (kala - lips, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278386,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"restrain (negated)"},{"n":107,"l":"target","k":"pair","v":"my lips","to":278386,"res":"inferred"},{"n":103,"l":"source","k":"pair","v":"proclaiming God's deliverance (tsedeq, v9)","from":278386,"to":278381,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('I have NOT restrained my lips')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I have told the glad news of deliverance... I have not RESTRAINED (kala) my lips' — open, unstinting proclamation; kala negated, the refusal to hold back testimony to God's righteousness (its content, tsedeq, is the qualifier) — the mouth God opened (v6) now unmuzzled for praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278224": {"gloss":"heart v10","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - not hidden within it)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":278224,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278224,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"the deliverance/faithfulness not concealed but spoken","from":278224,"to":278222,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'I have not hidden your deliverance within my HEART (lev); I have spoken of your faithfulness and salvation' — the heart that refuses to conceal God's goodness; lev here the seat from which testimony flows outward, God's covenant attributes (tsedaqah/emunah/teshuah/chesed/emeth = the qualifiers) proclaimed not buried"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278245": {"gloss":"evils v12","dims":[{"n":101,"l":"sense","k":"value","v":"evils / troubles (ra - encompass me)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (encompassed)","to":278245,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"beyond number","to":278245,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with overtaking iniquities","from":278245,"to":278248,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'For EVILS (ra) have encompassed me beyond number' — the sudden turn from thanksgiving to distress; ra here the innumerable troubles that surround, hemming in the one who just praised — deliverance and distress held together"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278248": {"gloss":"iniquities v12","dims":[{"n":101,"l":"sense","k":"value","v":"iniquities (avon - overtaken me)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278248,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"overtake","to":278248,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David","to":278248,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"more than the hairs of his head","to":278248,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with encompassing evils","from":278248,"to":278245,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'my INIQUITIES (avon) have overtaken me... more than the hairs of my head' — guilt as a pursuer that catches him; avon (recurs Ps38,39) the sins so numerous they blind him ('I cannot see') and fail his heart"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278257": {"gloss":"heart v12","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - fails me)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":278257,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278257,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the heart that fails","from":278257,"to":278258,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'my heart (lev) fails me' — the inmost seat giving way under guilt and trouble; lev here the courage/vitality that forsakes David (contrast v10's lev that proclaimed) — the same heart now sinking"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278258": {"gloss":"fails v12","dims":[{"n":101,"l":"sense","k":"value","v":"forsake / fail (azab - heart fails)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David's heart","from":278258,"to":278257,"res":"span"},{"n":106,"l":"operation","k":"event","v":"forsake / fail"},{"n":107,"l":"target","k":"pair","v":"David","to":278258,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the heart","from":278258,"to":278257,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'my heart FAILS (azab) me' — vitality/courage abandoning him; azab (recurs Ps38:10 of strength) here of the heart deserting David under the weight of his iniquities"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278266": {"gloss":"put to shame v14","dims":[{"n":101,"l":"sense","k":"value","v":"be put to shame (bosh, imprecation)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who seek his life","to":278266,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be put to shame (invoked)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"altogether","to":278266,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with disappointment","from":278266,"to":278267,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Let those be put to SHAME (bosh)... who seek to snatch away my life' — shame invoked on the life-seekers; bosh (recurs Ps35:4) the disgrace prayed on the foes who delight in his hurt"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278267": {"gloss":"disappointed v14","dims":[{"n":101,"l":"sense","k":"value","v":"be disappointed / abashed (chaper)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":278267,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be disappointed (invoked)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with shame","from":278267,"to":278266,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and DISAPPOINTED (chaper) altogether' — abashment invoked with shame; chaper (recurs Ps35) the frustration prayed on those who seek David's ruin"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278271": {"gloss":"life v14","dims":[{"n":101,"l":"sense","k":"value","v":"life / soul (nefesh - snatched away)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":278271,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278271,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"sought by the foes","to":278271,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'who seek to snatch away my LIFE (nefesh)' — the life the foes hunt; nefesh (recurs Ps35,38) the life-self targeted, whose seekers David prays be shamed"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278274": {"gloss":"brought to dishonor v14","dims":[{"n":101,"l":"sense","k":"value","v":"be dishonoured / humiliated (kalam)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":278274,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be dishonoured (invoked)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"turned back","to":278274,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"who delight in his hurt","from":278274,"to":278275,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'let those be turned back and brought to DISHONOUR (kalam) who delight in my hurt' — humiliation invoked on those glad at his harm; kalam (recurs Ps35:4) the disgrace prayed on the hurt-delighters"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278275": {"gloss":"delight v14","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets - my hurt)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":278275,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"my hurt","from":278275,"to":278277,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'who DELIGHT (chaphets) in my hurt' — the foes' malicious pleasure; chaphets (same word as David's holy delight in God's will, v8) darkly inverted — delight in another's harm, the same faculty turned to evil"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278277": {"gloss":"hurt v14","dims":[{"n":101,"l":"sense","k":"value","v":"hurt / harm (ra - my hurt)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (the harm to him)","to":278277,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of the foes' delight","from":278277,"to":278275,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'who delight in my HURT (ra)' — the harm the foes relish; ra here David's injury, the object of the enemies' perverse joy"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278280": {"gloss":"shame v15","dims":[{"n":101,"l":"sense","k":"value","v":"shame (bosheth - appalled at their shame)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes (their shame)","to":278280,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"appalled / desolate","to":278280,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Let those be appalled because of their SHAME (bosheth) who say, Aha, Aha!' — the mockers' own shame recoiling on them; bosheth the disgrace that appals the scoffers who taunted David"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278285": {"gloss":"seek v16","dims":[{"n":101,"l":"sense","k":"value","v":"seek (baqash - all who seek you)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"all who seek God","to":278285,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"God ('you')","to":278285,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"who then rejoice and are glad","from":278285,"to":278286,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'may all who SEEK (baqash) you rejoice and be glad in you' — the God-seekers set against the life-seekers (v14); baqash here the earnest pursuit of God, rewarded with joy, the antithesis of the foes seeking David's life"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278286": {"gloss":"rejoice v16","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / exult (sus)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-seekers","from":278286,"to":278285,"res":"span"},{"n":106,"l":"operation","k":"event","v":"rejoice"},{"n":107,"l":"target","k":"pair","v":"in you (God)","to":278286,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with gladness","from":278286,"to":278287,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'may all who seek you REJOICE (sus) and be glad in you' — the joy of the God-seekers; sus (recurs Ps35:9) the exultation whose object is God himself, the proper joy contrasted with the foes' delight in hurt (v14)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278287": {"gloss":"glad v16","dims":[{"n":101,"l":"sense","k":"value","v":"be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the God-seekers","to":278287,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be glad"},{"n":107,"l":"target","k":"pair","v":"in you (God)","to":278287,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with rejoicing","from":278287,"to":278286,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and be GLAD (samach) in you' — gladness in God; samach paired with sus, the joy of the seekers whose delight is the LORD"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278288": {"gloss":"love v16","dims":[{"n":101,"l":"sense","k":"value","v":"love (aheb - who love your salvation)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who love God's salvation","to":278288,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"love"},{"n":107,"l":"target","k":"pair","v":"your salvation","from":278288,"to":278289,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'may those who LOVE (aheb) your salvation say continually, Great is the LORD!' — love directed to God's saving work; aheb (recurs Ps31:23) the affection for God's salvation that overflows in continual praise"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278295": {"gloss":"poor v17","dims":[{"n":101,"l":"sense","k":"value","v":"poor / afflicted (ani)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278295,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"sustained by God's mercy/steadfast love (v11) and thought (v17)","from":278295,"to":278240,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with needy","from":278295,"to":278296,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'As for me, I am POOR (ani) and needy, but the LORD takes thought for me' — the humble self-estimate that rests in God's care; ani (recurs Ps34,35,37) the afflicted David, sustained not by his own resources but by God's mercy, chesed and mindful thought (v11,17 = the qualifiers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278296": {"gloss":"needy v17","dims":[{"n":101,"l":"sense","k":"value","v":"needy (evyon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278296,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with poor","from":278296,"to":278295,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I am poor and NEEDY (evyon)' — the destitution David owns; evyon (recurs Ps35:10, 37:14) the beggar-poverty of the sufferer whom God nonetheless regards as his help and deliverer"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278213": {"gloss":"patiently v1 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"wait (qavah - emphatic 'patiently')"},{"n":108,"l":"manner","k":"pair","v":"intensifies the waiting (278212)","from":278213,"to":278212,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v1: 'I WAITED PATIENTLY (qavvoh qivviti)' - the infinitive-absolute doubling that intensifies the waiting (278212); qualifier (emphatic manner) of the wait."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278217": {"gloss":"heard v1 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"hear (shama - God heard)"},{"n":103,"l":"source","k":"pair","v":"answers the waiting (v1)","from":278217,"to":278212,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v1 QUALIFIER (God's act): 'he inclined to me and HEARD (shama) my cry' - God's hearing is not a human IB char; it is the answer to David's waiting (278212). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278341": {"gloss":"wondrous v5 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"wondrous deeds (pala - God's)"},{"n":103,"l":"source","k":"pair","v":"the deeds David's praise proclaims (v3,5)","from":278341,"to":278319,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v5 QUALIFIER (God's deeds): 'you have multiplied your WONDROUS deeds (pala)... none can compare' - God's works are not a human IB char; they are the content of David's praise (278319). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278343": {"gloss":"thoughts v5 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"thoughts / purposes (machashabah - God's toward us)"},{"n":103,"l":"source","k":"pair","v":"God's purposes David marvels at / proclaims","from":278343,"to":278319,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v5 QUALIFIER (God's thoughts): 'your THOUGHTS (machashabah) toward us' - God's purposes are not a human IB char; the object of David's wonder and praise (278319). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278355": {"gloss":"delighted v6 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets - God's, in sacrifice, negated)"},{"n":103,"l":"source","k":"pair","v":"God's non-delight in sacrifice grounds David's delight to obey (v6->v8)","from":278355,"to":278372,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v6 QUALIFIER (God's disposition): 'In sacrifice you have not DELIGHTED (chaphets)... you have given me an open ear' - God's (non-)delight is not a human IB char; it grounds David's own delight to do God's will (278372, v8). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278374": {"gloss":"will v8 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"will / pleasure (ratson - God's will)"},{"n":103,"l":"source","k":"pair","v":"the object David delights to do (v8)","from":278374,"to":278372,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v8 QUALIFIER (God's will): 'I delight to do your WILL (ratson)' - God's will is not a human IB char; it is the TARGET/object of David's delight (278372). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278381": {"gloss":"deliverance v9 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness / deliverance (tsedeq - God's)"},{"n":103,"l":"source","k":"pair","v":"the content of David's unrestrained proclamation (v9)","from":278381,"to":278386,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v9 QUALIFIER (God's righteousness): 'I have told the glad news of DELIVERANCE (tsedeq)' - God's saving righteousness is not a human IB char; it is the content David proclaims with unrestrained lips (278386). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278389": {"gloss":"know v9 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada - as you know)"},{"n":103,"l":"source","k":"pair","v":"God's knowledge witnesses David's proclamation (v9)","from":278389,"to":278386,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v9 QUALIFIER (God's knowledge): 'I have not restrained my lips, as you KNOW (yada), O LORD' - God's knowing is not a human IB char; it is the divine witness David appeals to for his open testimony (278386). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278222": {"gloss":"deliverance v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness / deliverance (tsedaqah - God's)"},{"n":103,"l":"source","k":"pair","v":"not hidden in David's heart but proclaimed (v10)","from":278222,"to":278224,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's righteousness): 'I have not hidden your DELIVERANCE (tsedaqah) within my heart' - God's righteousness is not a human IB char; it is what David refuses to conceal in his heart (278224). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278226": {"gloss":"faithfulness v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness (emunah - God's)"},{"n":103,"l":"source","k":"pair","v":"spoken from the un-concealing heart (v10)","from":278226,"to":278224,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's faithfulness): 'I have spoken of your FAITHFULNESS (emunah)' - God's faithfulness is not a human IB char; it is the content proclaimed from David's heart (278224). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278227": {"gloss":"salvation v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (teshuah - God's)"},{"n":103,"l":"source","k":"pair","v":"spoken from the un-concealing heart (v10)","from":278227,"to":278224,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's salvation): 'and your SALVATION (teshuah)' - God's salvation is not a human IB char; content proclaimed from David's heart (278224). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278230": {"gloss":"steadfast love v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed - God's)"},{"n":103,"l":"source","k":"pair","v":"not concealed but proclaimed (v10)","from":278230,"to":278224,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's chesed): 'I have not concealed your STEADFAST LOVE (chesed)' - God's covenant love is not a human IB char; content David refuses to hide (278224). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278231": {"gloss":"faithfulness v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness / truth (emeth - God's)"},{"n":103,"l":"source","k":"pair","v":"not concealed but proclaimed (v10)","from":278231,"to":278224,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's truth): 'your steadfast love and your FAITHFULNESS (emeth) from the great congregation' - God's faithfulness is not a human IB char; content proclaimed (278224). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278237": {"gloss":"restrain v11 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"restrain / withhold (kala - God's, negated)"},{"n":103,"l":"source","k":"pair","v":"God's not-withholding mercy preserves the poor David (v11->v17)","from":278237,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v11 QUALIFIER (God's act, negated): 'you will not RESTRAIN (kala) your mercy from me' - God's not-withholding is not a human IB char; it grounds David's preservation (278295, v17). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278238": {"gloss":"mercy v11 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"mercy / compassion (racham - God's)"},{"n":103,"l":"source","k":"pair","v":"preserves the poor David (v11->v17)","from":278238,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v11 QUALIFIER (God's mercy): 'you will not restrain your MERCY (racham) from me' - God's compassion is not a human IB char; the source preserving David (278295). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278240": {"gloss":"steadfast love v11 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed - God's)"},{"n":103,"l":"source","k":"pair","v":"ever preserves the poor David (v11->v17)","from":278240,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v11 QUALIFIER (God's chesed): 'your STEADFAST LOVE (chesed)... will ever preserve me' - God's covenant love is not a human IB char; the source of David's preservation (278295). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278241": {"gloss":"faithfulness v11 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness / truth (emeth - God's)"},{"n":103,"l":"source","k":"pair","v":"ever preserves the poor David (v11->v17)","from":278241,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v11 QUALIFIER (God's faithfulness): 'your steadfast love and your FAITHFULNESS (emeth) will ever preserve me' - God's faithfulness is not a human IB char; the source of David's preservation (278295). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278260": {"gloss":"pleased v13 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"be pleased / willing (ratsah - God's)"},{"n":103,"l":"source","k":"pair","v":"God's willingness sought to deliver the poor David (v13->v17)","from":278260,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v13 QUALIFIER (God's willingness): 'Be PLEASED (ratsah), O LORD, to deliver me!' - God's favour/willingness is not a human IB char; the source David appeals to for rescue (278295). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278262": {"gloss":"deliver v13 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"deliver (natsal - God's)"},{"n":103,"l":"source","k":"pair","v":"the rescue sought for the poor David (v13->v17)","from":278262,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v13 QUALIFIER (God's act): 'be pleased to DELIVER (natsal) me! make haste to help me!' - God's delivering is not a human IB char; the rescue David appeals for (278295). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278289": {"gloss":"salvation v16 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (teshuah - God's)"},{"n":103,"l":"source","k":"pair","v":"the salvation the seekers love (v16)","from":278289,"to":278288,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v16 QUALIFIER (God's salvation): 'those who love your SALVATION (teshuah)' - God's salvation is not a human IB char; it is the object of the seekers' love (278288). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278298": {"gloss":"thought v17 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"think of / regard (chashab - God takes thought)"},{"n":103,"l":"source","k":"pair","v":"God's mindful regard sustains the poor David (v17)","from":278298,"to":278295,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v17 QUALIFIER (God's act): 'but the LORD takes THOUGHT (chashab) for me' - God's mindful regard is not a human IB char; it is the source sustaining the poor and needy David (278295) - the whole psalm's resting-point. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278359": {"gloss":"sin-offering v6 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"sin offering (chattaah - not required)"},{"n":114,"l":"discovery","k":"note","v":"v6: 'Burnt offering and SIN OFFERING (chattaah) you have not required' - a sacrificial category, not an inner operation; part of the ritual-vs-obedience contrast that grounds David's delight to do God's will (v8). Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278337": {"gloss":"lie v4 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"lie / falsehood (kazab - go astray after a lie)"},{"n":114,"l":"discovery","k":"note","v":"v4: 'those who go astray after a LIE (kazab)' - the falsehood the proud pursue; the false object of misplaced trust, qualifying the proud (278335) the blessed man refuses. Standalone/qualifier of the proud."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278219": {"gloss":"cry v1 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"cry for help (shav'ah)"},{"n":114,"l":"discovery","k":"note","v":"v1: 'he heard my CRY (shav'ah)' - David's cry that God heard; the vocal appeal of the waiting one, closely tied to the waiting (278212). Standalone (the IB movement is the waiting itself)."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278269": {"gloss":"seek v14 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"seek (baqash - seek to snatch my life)"},{"n":114,"l":"discovery","k":"note","v":"v14: 'those who SEEK (baqash) to snatch away my life' - the foes' murderous pursuit; the seeking that targets David's nefesh (278271). Standalone/qualifier of the life-seekers (the IB finding is life 278271 + the shame invoked)."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278292": {"gloss":"Great v16 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"be great / magnified (gadal - Great is the LORD)"},{"n":114,"l":"discovery","k":"note","v":"v16: 'say continually, GREAT (gadal) is the LORD!' - the acclamation of God's greatness the seekers speak; a confession of God's magnitude (God's attribute), not a human inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 40,
+ "provenance": "reread-psalms-2026",
+ "note": "Thanks+plea: waited-heard, new-song, blessed-trust, proclaim-wondrous, delight-to-do-will, glad-news-of-deliverance, not-hidden-in-heart, iniquities-overwhelm/heart-fails, seekers-rejoice, poor-and-needy",
+ "spans": {
+  "278212": {
+   "gloss": "I waited patiently, he heard my cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I waited patiently, he heard my cry"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278212,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self waited patiently for the LORD, who inclined to it and heard its cry - patient waiting rewarded"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "patient-waiting",
+     "to": 278212,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "waited-and-heard",
+     "to": 278212,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I WAITED PATIENTLY for the LORD; he inclined to me and heard my CRY' - the operation is a sustained, quiet waiting that God bent down to answer; patience met by attention."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278319": {
+   "gloss": "a new song, that many may trust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "a new song, that many may trust"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278319,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "God put a new song of praise in the self's mouth; many will see, fear, and put their trust in the LORD - praise that propagates trust"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "contagious-praise",
+     "to": 278319,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "new-song",
+     "to": 278319,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'He put a NEW SONG in my mouth, a song of praise to our God. Many will SEE and FEAR, and put their TRUST in the LORD' - the operation is testimony that spreads: the interior's rescued song moves others to reverent trust."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278326": {
+   "gloss": "blessed is the man who trusts the LORD, not the proud",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessed is the man who trusts the LORD, not the proud"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the trusting man",
+     "to": 278326,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "blessed is the man who makes the LORD his trust and does not turn to the proud or to liars - trust rightly placed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "rightly-placed-trust",
+     "to": 278326,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "blessed-who-trusts",
+     "to": 278326,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'BLESSED is the man who makes the LORD his TRUST, who does not turn to the PROUD, to those who go astray after a lie' - the operation weighs as happy the interior that leans on God rather than on proud liars."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278347": {
+   "gloss": "I will proclaim your countless wondrous deeds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I will proclaim your countless wondrous deeds"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278347,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self proclaims and tells God's wondrous deeds and thoughts, too many to number - praise for the innumerable works"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "proclaiming-wonders",
+     "to": 278347,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "proclaim-wondrous",
+     "to": 278347,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'your WONDROUS deeds and your THOUGHTS toward us; none can compare... I will PROCLAIM and tell of them' - the operation is overflowing testimony; the interior cannot keep silent about deeds beyond counting."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278372": {
+   "gloss": "I delight to do your will, your law within my heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I delight to do your will, your law within my heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278372,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self delights to do God's will, its law within its heart - obedience become desire"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "delighted-obedience",
+     "to": 278372,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "delight-to-do-will",
+     "to": 278372,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'I DELIGHT to do your WILL, O my God; your law is within my HEART' - the operation is obedience felt as joy: the law is not an external weight but an internalised delight."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278380": {
+   "gloss": "I told the glad news, I did not restrain my lips",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I told the glad news, I did not restrain my lips"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278380,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self has told the glad news of deliverance in the great congregation and has not restrained its lips - unrestrained public witness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "unrestrained-witness",
+     "to": 278380,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "glad-news",
+     "to": 278380,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'I have told the GLAD NEWS of deliverance in the great congregation; behold, I have not RESTRAINED my lips' - the operation is a witness that refuses to hold back; the interior publishes God's rescue openly."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278221": {
+   "gloss": "I have not hidden your righteousness in my heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I have not hidden your righteousness in my heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278221,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self has not hidden God's deliverance within its heart but has spoken of his faithfulness and steadfast love - refusing to keep the good news private"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "open-heartedness",
+     "to": 278221,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "not-hidden-in-heart",
+     "to": 278221,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'I have NOT HIDDEN your deliverance within my HEART... I have not CONCEALED your steadfast love' - the operation is the deliberate opposite of secrecy: the interior will not lock God's goodness inside but broadcasts it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278245": {
+   "gloss": "iniquities overwhelm me, my heart fails",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquities overwhelm me, my heart fails"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278245,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "evils have encompassed the self beyond number; its iniquities have overtaken it till it cannot see, more than the hairs of its head, so its heart fails - being swamped by guilt"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "swamped-by-guilt",
+     "to": 278245,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "iniquities-overwhelm",
+     "to": 278245,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'my INIQUITIES have overtaken me, till I cannot see; they are more than the hairs of my head; my HEART FAILS me' - the operation is inundation: the interior is buried under uncountable guilt and its courage gives out."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278285": {
+   "gloss": "may all who seek you rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "may all who seek you rejoice"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who seek",
+     "to": 278285,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self prays that all who seek God may rejoice and be glad, and those who love his salvation say 'Great is the LORD' - seeking that ends in joyful praise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "joyful-seeking",
+     "to": 278285,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "seekers-rejoice",
+     "to": 278285,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'may all who SEEK you REJOICE and be GLAD in you; may those who LOVE your salvation say continually, Great is the LORD!' - the operation widens the self's rescue into a prayer that all seekers share its joy."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278295": {
+   "gloss": "I am poor and needy, but the Lord takes thought for me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I am poor and needy, but the Lord takes thought for me"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278295,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is poor and needy, but the Lord takes thought for it; he is its help and deliverer - lowliness confident of God's attention"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "confident-lowliness",
+     "to": 278295,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "poor-but-thought-of",
+     "to": 278295,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'As for me, I am POOR and NEEDY, but the Lord takes THOUGHT for me. You are my help and my deliverer' - the operation holds together weakness and confidence: the interior owns its poverty yet rests in being remembered by God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278217": {
+   "gloss": "he heard my cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he heard my cry"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278212,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'he inclined to me and HEARD my cry' - the answer the patient waiting received."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278303": {
+   "gloss": "he drew me up from the pit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "he drew me up from the pit"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278319,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'He DREW me up from the pit of destruction... and set my feet upon a rock' - the deliverance the new song celebrates."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278262": {
+   "gloss": "deliver me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliver me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278295,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'Be pleased, O LORD, to DELIVER me!' - the rescue the poor-and-needy self still asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278213": {
+   "gloss": "patiently",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "patiently"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'patiently' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278215": {
+   "gloss": "inclined",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "inclined"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'inclined' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278219": {
+   "gloss": "cry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'cry' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278222": {
+   "gloss": "deliverance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliverance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'deliverance' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278224": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'heart' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278226": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'faithfulness' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278227": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'salvation' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278229": {
+   "gloss": "concealed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "concealed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'concealed' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278230": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'steadfast love' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278231": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'faithfulness' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278233": {
+   "gloss": "congregation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "congregation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'congregation' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278237": {
+   "gloss": "restrain",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "restrain"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'restrain' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278238": {
+   "gloss": "mercy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mercy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'mercy' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278240": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'steadfast love' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278241": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'faithfulness' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278243": {
+   "gloss": "preserve",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "preserve"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'preserve' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278246": {
+   "gloss": "encompassed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "encompassed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'encompassed' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278247": {
+   "gloss": "number",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "number"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'number' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278248": {
+   "gloss": "iniquities",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquities"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'iniquities' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278249": {
+   "gloss": "overtaken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "overtaken"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'overtaken' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278250": {
+   "gloss": "cannot",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cannot"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'cannot' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278251": {
+   "gloss": "see",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "see"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'see' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278257": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'heart' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278258": {
+   "gloss": "fails",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fails"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'fails' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278260": {
+   "gloss": "pleased",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pleased"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'pleased' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278266": {
+   "gloss": "put to shame",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "put to shame"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'put to shame' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278267": {
+   "gloss": "disappointed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "disappointed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'disappointed' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278269": {
+   "gloss": "seek",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'seek' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278270": {
+   "gloss": "snatch",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "snatch"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'snatch' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278271": {
+   "gloss": "life",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "life"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'life' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278274": {
+   "gloss": "brought to dishonor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "brought to dishonor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'brought to dishonor' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278275": {
+   "gloss": "delight",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delight"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'delight' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278277": {
+   "gloss": "hurt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hurt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'hurt' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278278": {
+   "gloss": "appalled",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "appalled"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'appalled' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278280": {
+   "gloss": "shame",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shame"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'shame' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278286": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'rejoice' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278287": {
+   "gloss": "glad",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glad"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'glad' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278288": {
+   "gloss": "love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'love' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278289": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'salvation' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278292": {
+   "gloss": "Great",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Great"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'Great' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278296": {
+   "gloss": "needy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "needy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'needy' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278298": {
+   "gloss": "thought",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "thought"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'thought' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278300": {
+   "gloss": "deliverer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliverer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'deliverer' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278301": {
+   "gloss": "delay",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delay"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'delay' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278304": {
+   "gloss": "pit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'pit' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278305": {
+   "gloss": "destruction",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "destruction"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'destruction' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278306": {
+   "gloss": "miry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "miry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'miry' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278307": {
+   "gloss": "bog",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bog"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'bog' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278311": {
+   "gloss": "rock",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rock"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'rock' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278314": {
+   "gloss": "secure",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "secure"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'secure' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278322": {
+   "gloss": "see",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "see"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'see' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278323": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'fear' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278324": {
+   "gloss": "trust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'trust' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278329": {
+   "gloss": "makes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "makes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'makes' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278331": {
+   "gloss": "trust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'trust' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278333": {
+   "gloss": "turn",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "turn"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'turn' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278335": {
+   "gloss": "proud",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "proud"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'proud' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278336": {
+   "gloss": "go astray",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "go astray"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'go astray' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278337": {
+   "gloss": "lie",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lie"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'lie' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278341": {
+   "gloss": "wondrous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wondrous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'wondrous' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278343": {
+   "gloss": "thoughts",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "thoughts"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'thoughts' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278346": {
+   "gloss": "compare",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "compare"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'compare' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278351": {
+   "gloss": "told",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "told"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'told' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278352": {
+   "gloss": "sacrifice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sacrifice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'sacrifice' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278353": {
+   "gloss": "offering",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "offering"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'offering' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278355": {
+   "gloss": "delighted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delighted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'delighted' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278356": {
+   "gloss": "given",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "given"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'given' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278358": {
+   "gloss": "Burnt offering",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Burnt offering"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'Burnt offering' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278359": {
+   "gloss": "sin offering",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin offering"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'sin offering' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278361": {
+   "gloss": "required",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "required"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'required' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278366": {
+   "gloss": "scroll",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "scroll"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'scroll' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278367": {
+   "gloss": "book",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "book"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'book' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278368": {
+   "gloss": "written",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "written"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'written' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278374": {
+   "gloss": "will",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "will"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'will' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278379": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'heart' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278381": {
+   "gloss": "deliverance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deliverance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'deliverance' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278383": {
+   "gloss": "congregation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "congregation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'congregation' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278386": {
+   "gloss": "restrained",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "restrained"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'restrained' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278389": {
+   "gloss": "know",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "know"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'know' - substrate (pit/rock/bog imagery, sacrifice-not-required, scroll/book, enemies'-shame, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

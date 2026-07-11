@@ -1,36 +1,1756 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 39, "provenance": "reread-psalms-2026",
-  "note": "Ps39 introspective (corrected method). Guarded tongue/silence -> inner fire bursts (lev hot, hagig muse) -> mortality (yada know my end / man not know; days a breath) -> qavah/tocheleth wait+hope -> pesha/avon sin, scorn/fool -> tefillah/dimah prayer+tears. 2 God-acts (natsal Deliver, tigrah hostile hand) = qualifiers. Every candidate roled.",
-  "spans": {
-    "278017": {"gloss":"guard(ways) v1","dims":[{"n":101,"l":"sense","k":"value","v":"guard / keep watch (shamar - my ways)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278017,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"guard"},{"n":107,"l":"target","k":"pair","v":"my ways (that I not sin with my tongue)","from":278017,"to":278019,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with guarding the mouth","from":278017,"to":278022,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I will GUARD (shamar) my ways, that I may not sin with my tongue' — deliberate self-watchfulness over speech; shamar the resolve to police one's conduct, esp. the tongue, before the watching wicked"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278019": {"gloss":"sin v1","dims":[{"n":101,"l":"sense","k":"value","v":"sin / miss the mark (chata - with the tongue)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (guarding against it)","to":278019,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sin (guarded against)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"with the tongue","to":278019,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"the thing the guarding prevents","from":278019,"to":278017,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"guarded-against ('that I may NOT sin with my tongue')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'that I may not SIN (chata) with my tongue' — the specific fault guarded against; chata here of the tongue, the sin of speech David muzzles himself to avoid"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278022": {"gloss":"guard(mouth) v1","dims":[{"n":101,"l":"sense","k":"value","v":"guard / muzzle (shamar - my mouth)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278022,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"guard / muzzle"},{"n":107,"l":"target","k":"pair","v":"my mouth (while the wicked is present)","from":278022,"to":278026,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"with a muzzle","to":278022,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with guarding the ways","from":278022,"to":278017,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I will GUARD (shamar) my mouth with a muzzle, so long as the wicked are in my presence' — silence imposed on oneself before the wicked; shamar of the mouth, the second guarding, the self-muzzling that leads to the pent-up fire (v3)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278026": {"gloss":"wicked v1","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - in his presence)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked (present before David)","to":278026,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose presence prompts the muzzling","from":278026,"to":278022,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'so long as the WICKED (rasha) are in my presence' — the wicked whose watching prompts David's silence; rasha here the reason for restraint — he will not give them occasion by rash speech"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278073": {"gloss":"heart v3","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - became hot)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":278073,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278073,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"become hot","to":278073,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"within me","to":278073,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"the fire fed by musing","from":278073,"to":278076,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'My HEART (lev) became hot within me' — the suppressed emotion combusting under enforced silence; lev here the seat where pent feeling turns to fire, forcing speech at last — silence intensifies rather than quells the inner burning"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278076": {"gloss":"mused v3","dims":[{"n":101,"l":"sense","k":"value","v":"musing / murmuring (hagig)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278076,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"muse / meditate","to":278076,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the musing that kindles the heart's fire","from":278076,"to":278073,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'As I MUSED (hagig), the fire burned' — inner meditation feeding the flame; hagig = the murmuring reflection that, in the silence, stokes the heart until David must speak"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278083": {"gloss":"know(end) v4","dims":[{"n":101,"l":"sense","k":"value","v":"know / make known (yada, hiphil - my end)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (asks to know)","to":278083,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"come to know"},{"n":107,"l":"target","k":"pair","v":"my end / the measure of my days","to":278083,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with knowing how fleeting he is","from":278083,"to":278088,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'O LORD, make me KNOW (yada) my end and the measure of my days' — the plea for a felt knowledge of mortality; yada here the wisdom to grasp one's own transience (first of the know-thread, v4x2, v6)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278088": {"gloss":"know(fleeting) v4","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada - how fleeting I am)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278088,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know"},{"n":107,"l":"target","k":"pair","v":"how fleeting I am","to":278088,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with knowing his end","from":278088,"to":278083,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'let me KNOW (yada) how fleeting I am!' — the desire to internalise one's frailty; yada here the sobering self-knowledge of transience, the wisdom the whole psalm reaches for"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278115": {"gloss":"know(gather) v6","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada - does not know who will gather)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"man (heaping wealth, not knowing)","to":278115,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know (negated)"},{"n":107,"l":"target","k":"pair","v":"who will gather his wealth","to":278115,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('does NOT know who will gather')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'man heaps up wealth and does not KNOW (yada) who will gather' — the futile ignorance of the striving mortal; yada negated (contrast v4's sought knowledge) — the man who will not know his transience toils in vain for heirs unknown"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278120": {"gloss":"wait v7","dims":[{"n":101,"l":"sense","k":"value","v":"wait (qavah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278120,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wait"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278120,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"answered by hope in God","from":278120,"to":278122,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'And now, O LORD, for what do I WAIT (qavah)?' — the turn from mortality's despair to God; qavah (recurs Ps37) the waiting whose only object, amid life's vanity, is the LORD himself"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278122": {"gloss":"hope v7","dims":[{"n":101,"l":"sense","k":"value","v":"hope / expectation (tocheleth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278122,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"in you (God)","to":278122,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the answer to the waiting","from":278122,"to":278120,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'My HOPE (tocheleth) is in you' — the sole resting-place of expectation; tocheleth the hope fixed on God alone when all earthly striving is shown to be breath"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278127": {"gloss":"transgressions v8","dims":[{"n":101,"l":"sense","k":"value","v":"transgressions (pesha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278127,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"God asked to deliver from them (v8)","from":278127,"to":278125,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Deliver me from all my TRANSGRESSIONS (pesha)' — the sins David begs to be freed from; pesha (recurs Ps32) the rebellions from which he seeks deliverance (God's delivering = its qualifier), lest he become the fool's scorn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278130": {"gloss":"scorn v8","dims":[{"n":101,"l":"sense","k":"value","v":"scorn / reproach (cherpah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (fears becoming it)","to":278130,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the scorn of the fool","from":278130,"to":278131,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('Do NOT make me the scorn of the fool')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Do not make me the SCORN (cherpah) of the fool!' — the dread of being mocked by the godless; cherpah (recurs Ps22:6, 31:11) the reproach David fears if unforgiven, the shame of the disciplined believer before the fool"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278131": {"gloss":"fool v8","dims":[{"n":101,"l":"sense","k":"value","v":"fool (nabal)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the fool","to":278131,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose scorn David fears","from":278131,"to":278130,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'the scorn of the FOOL (nabal)' — the godless fool whose mockery David dreads; nabal (as Ps14:1 'the fool says no God') the senseless one whose contempt would compound the sufferer's shame"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278038": {"gloss":"sin v11","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity / sin (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"a man (disciplined for it)","to":278038,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"God's disciplining hand for it (v10-11)","from":278038,"to":278032,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with what is dear consumed","from":278038,"to":278041,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'When you discipline a man with rebukes for SIN (avon), you consume like a moth what is dear' — sin as the ground of the chastening; avon here the iniquity for which God's discipline (his hostile hand, v10, the qualifier) eats away what one treasures — man is a mere breath"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278041": {"gloss":"dear v11","dims":[{"n":101,"l":"sense","k":"value","v":"be dear / desirable (chamad - what is dear to him)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the disciplined man (his treasure)","to":278041,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"consumed like a moth eats","to":278041,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"consumed under discipline for sin","from":278041,"to":278038,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'you consume like a moth what is DEAR (chamad) to him' — the treasured thing the discipline eats away; chamad (usually 'covet/desire', Ps19:10) here the man's cherished possessions dissolving like moth-eaten cloth, the vanity of what mortals prize"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278048": {"gloss":"prayer v12","dims":[{"n":101,"l":"sense","k":"value","v":"prayer (tefillah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278048,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":278048,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with tears","from":278048,"to":278053,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Hear my PRAYER (tefillah), O LORD... hold not your peace at my tears' — the appeal of the sojourner; tefillah (recurs Ps17:1) the prayer offered with weeping by one who is a guest on earth, as all his fathers were"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278053": {"gloss":"tears v12","dims":[{"n":101,"l":"sense","k":"value","v":"tears / weeping (dimah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278053,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the prayer","from":278053,"to":278048,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'hold not your peace at my TEARS (dimah)' — the weeping that accompanies the prayer; dimah the tears of the transient sojourner, which he begs God not to meet with silence"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278125": {"gloss":"Deliver v8 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"deliver / snatch away (natsal - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds David's plea re transgressions (v8)","from":278125,"to":278127,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v8 QUALIFIER (God's act): 'DELIVER (natsal) me from all my transgressions' — God's delivering is not a human IB char; it is the SOURCE David appeals to for freedom from his sins — captured as a qualifier of pesha (v8)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278032": {"gloss":"hostility v10 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"hostility / blow of the hand (tigrah - God's)"},{"n":103,"l":"source","k":"pair","v":"the disciplining hand behind the affliction for sin (v10-11)","from":278032,"to":278038,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v10 QUALIFIER (God's act): 'I am spent by the HOSTILITY (tigrah) of your hand' — God's chastening hand is not a human IB char; it is the SOURCE consuming David under discipline for sin — captured as a qualifier of avon (v11)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278051": {"gloss":"cry v12 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"cry for help (shav'ah)"},{"n":112,"l":"coupling","k":"pair","v":"joined to the prayer","from":278051,"to":278048,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v12: 'give ear to my CRY (shav'ah)' - David's cry, joined to his prayer (278048); captured as a qualifier/coupling of the prayer. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278047": {"gloss":"Hear v12 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"hear (shama - God asked to hear)"},{"n":103,"l":"source","k":"pair","v":"the hearing sought for the prayer (v12)","from":278047,"to":278048,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v12 QUALIFIER (God's act sought): 'HEAR (shama) my prayer' - God's hearing is not a human IB char; it grounds/answers David's prayer (278048). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278050": {"gloss":"give-ear v12 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"give ear / attend (azan - God asked to attend)"},{"n":103,"l":"source","k":"pair","v":"the attending sought for the cry (v12)","from":278050,"to":278048,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v12 QUALIFIER (God's act sought): 'GIVE EAR (azan) to my cry' - God's attending is not a human IB char; it grounds the answered prayer (278048). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278052": {"gloss":"peace v12 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"be silent / deaf (charash - God asked not to, negated)"},{"n":103,"l":"source","k":"pair","v":"God's silence deprecated re David's tears (v12)","from":278052,"to":278053,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v12 QUALIFIER (God's act, negated): 'hold not your PEACE (charash) at my tears' - God's silence (deprecated) is not a human IB char; it qualifies the plea over David's tears (278053). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278070": {"gloss":"avail v2 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"good / benefit (tov - to no avail)"},{"n":114,"l":"discovery","k":"note","v":"v2: 'I held my peace to no AVAIL (tov / good)' - the benefit the silence failed to yield; an outcome-word (the futility of the restraint), not itself an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278071": {"gloss":"distress v2 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"pain / distress (keeb)"},{"n":114,"l":"discovery","k":"note","v":"v2: 'my DISTRESS (keeb) grew worse' - the pain intensifying under the enforced silence; the affliction-state that drives the heart to burn (v3). Standalone/condition (the IB movement is the heart's fire, 278073)."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278072": {"gloss":"grew-worse v2 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"be stirred / troubled (akar - grew worse)"},{"n":114,"l":"discovery","k":"note","v":"v2: distress 'GREW WORSE (akar)' - the worsening/stirring of the pain; a change-of-state verb qualifying the distress, not itself an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278089": {"gloss":"fleeting v4 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"fleeting / transient (chadel - how fleeting I am)"},{"n":114,"l":"discovery","k":"note","v":"v4: 'let me know how FLEETING (chadel) I am' - the transience David wants to grasp; the object of the knowing (278088), the frailty-fact, not itself an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278109": {"gloss":"shadow v6 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"shadow / image (tselem - man goes about as a shadow)"},{"n":114,"l":"discovery","k":"note","v":"v6: 'man goes about as a SHADOW (tselem)' - the transience-image of human life; a metaphor of mortality's insubstantiality, not an inner operation. Standalone (grounds the vanity-theme the knowing v4 reaches for)."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "278061": {"gloss":"smile v13 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"brighten / recover cheer (balag - that I may smile again)"},{"n":114,"l":"discovery","k":"note","v":"v13: 'Look away from me, that I may SMILE (balag) again, before I depart' - the momentary brightening/recovery of cheer David asks for before death; a wished-for lightening, closely tied to the plea. Standalone (the plea itself is carried by prayer/tears, 278048/278053)."},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 39,
+ "provenance": "reread-psalms-2026",
+ "note": "Transience+disciplined tongue: guard-tongue, failed-silence, heart-burns, know-my-end, man-a-breath, hope-in-you-alone, silent-submission, cry-as-sojourner, look-away",
+ "spans": {
+  "278017": {
+   "gloss": "guard my ways, muzzle my mouth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "guard my ways, muzzle my mouth"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278017,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self resolves to guard its ways so as not to sin with the tongue, keeping its mouth with a muzzle while the wicked are near - deliberate speech-restraint"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "tongue-guarding",
+     "to": 278017,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "muzzle-my-mouth",
+     "to": 278017,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I will GUARD my ways, that I may not sin with my tongue; I will guard my mouth with a MUZZLE, so long as the wicked are in my presence' - the operation is a self-imposed silence, the interior clamping down on speech to avoid sin."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278067": {
+   "gloss": "I was mute, and my distress grew worse",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I was mute, and my distress grew worse"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278067,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self was mute and silent, held its peace to no avail, and its distress only grew worse - the failure of forced silence"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "silence's-failure",
+     "to": 278067,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "mute-distress-worse",
+     "to": 278067,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'I was MUTE and SILENT; I held my peace to no avail, and my DISTRESS grew WORSE' - the operation is the backfiring of restraint: bottling the words did not ease the interior but inflamed it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278073": {
+   "gloss": "my heart grew hot, the fire burned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my heart grew hot, the fire burned"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278073,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's heart became hot within it; as it mused the fire burned, until it spoke - inner pressure building to speech"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "building-pressure",
+     "to": 278073,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heart-grew-hot",
+     "to": 278073,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'My HEART became HOT within me. As I MUSED, the fire BURNED; then I spoke with my tongue' - the operation is the heat of suppressed thought; the interior's fire builds under the muzzle until it must break out."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278083": {
+   "gloss": "make me know my end",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "make me know my end"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278083,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God to make it know its end and the measure of its days, to know how fleeting it is - a request to grasp its own mortality"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "mortality-awareness",
+     "to": 278083,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "know-my-end",
+     "to": 278083,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'O LORD, make me KNOW my END and what is the measure of my days; let me know how FLEETING I am!' - the operation is a strange petition: the interior asks to feel the shortness of its life, wanting the truth of its transience."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278104": {
+   "gloss": "man is a mere breath, a shadow",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "man is a mere breath, a shadow"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278104,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self reckons its days a few handbreadths, all mankind a mere breath, a man going about as a shadow, heaping up in turmoil for nothing - the meditation on human vanity"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "transience-reckoning",
+     "to": 278104,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "man-a-breath",
+     "to": 278104,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5-6: 'Surely all mankind stands as a mere BREATH! Surely a man goes about as a SHADOW!' - the operation is the settled insight of vanity: the interior sees life as vapour and busyness as futile turmoil."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278120": {
+   "gloss": "for what do I wait? my hope is in you",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "for what do I wait? my hope is in you"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278120,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "against the vanity, the self asks for what it waits and answers that its hope is in the Lord alone - hope narrowed to God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "narrowed-hope",
+     "to": 278120,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "hope-in-you",
+     "to": 278120,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'And now, O Lord, for what do I WAIT? My HOPE is in you' - the operation is the collapse of every other hope into one: if all is breath, the interior fastens its whole expectancy on God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278132": {
+   "gloss": "I am mute, for you have done it",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I am mute, for you have done it"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278132,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is mute and does not open its mouth, because it is God who has done it - silent submission to God's dealing"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "submissive-silence",
+     "to": 278132,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "mute-you-did-it",
+     "to": 278132,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'I am MUTE; I do not open my mouth, for it is you who have DONE it' - distinct from v1's tongue-guard: this silence is submission, the interior accepting the affliction as God's own act and not protesting."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278051": {
+   "gloss": "hold not your peace at my tears",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hold not your peace at my tears"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278051,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God to hear its prayer and cry, not to be silent at its tears, for it is a sojourner and guest with him - crying as a passing guest"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "sojourner-tears",
+     "to": 278051,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "cry-as-sojourner",
+     "to": 278051,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'Hear my prayer... hold not your peace at my TEARS! For I am a SOJOURNER with you, a guest' - the operation is a plea from transience: the interior weeps as a passing guest, asking the eternal host not to stay silent."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278059": {
+   "gloss": "look away, that I may smile again",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "look away, that I may smile again"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278059,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self asks God to look away from it, that it may smile again before it departs and is no more - a startling plea for the gaze of judgment to relent"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "plea-for-respite",
+     "to": 278059,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "look-away",
+     "to": 278059,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'LOOK AWAY from me, that I may SMILE again, before I depart and am no more!' - the operation is a poignant, almost desperate request: the interior asks the scrutinising God to ease off so it can know one last gladness before death."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278122": {
+   "gloss": "my hope is in you",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my hope is in you"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278120,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'My HOPE is in you' - the God the narrowed hope rests on (restated as its object)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278047": {
+   "gloss": "Hear my prayer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Hear my prayer"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278051,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'HEAR my prayer, O LORD, and give ear to my cry' - the attention the sojourner's tears plead for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278034": {
+   "gloss": "you discipline man for sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you discipline man for sin"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 278132,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'When you DISCIPLINE a man with rebukes for sin, you consume like a moth what is dear to him' - the divine dealing the self submits to in silence."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "278019": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'sin' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278022": {
+   "gloss": "guard",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "guard"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'guard' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278024": {
+   "gloss": "muzzle",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "muzzle"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'muzzle' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278026": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'wicked' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278029": {
+   "gloss": "stroke",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stroke"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'stroke' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278031": {
+   "gloss": "spent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "spent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'spent' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278032": {
+   "gloss": "hostility",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hostility"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'hostility' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278037": {
+   "gloss": "rebukes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rebukes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'rebukes' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278038": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'sin' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278039": {
+   "gloss": "consume",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "consume"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'consume' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278040": {
+   "gloss": "moth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "moth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'moth' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278041": {
+   "gloss": "dear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'dear' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278045": {
+   "gloss": "breath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "breath"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'breath' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278048": {
+   "gloss": "prayer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prayer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'prayer' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278050": {
+   "gloss": "give ear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "give ear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'give ear' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278052": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'peace' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278053": {
+   "gloss": "tears",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "tears"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'tears' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278061": {
+   "gloss": "smile",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "smile"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'smile' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278064": {
+   "gloss": "depart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "depart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'depart' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278068": {
+   "gloss": "silent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "silent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'silent' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278069": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'peace' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278070": {
+   "gloss": "avail",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "avail"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'avail' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278071": {
+   "gloss": "distress",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "distress"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'distress' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278072": {
+   "gloss": "grew worse",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "grew worse"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'grew worse' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278074": {
+   "gloss": "became hot",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "became hot"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'became hot' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278076": {
+   "gloss": "mused",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mused"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'mused' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278078": {
+   "gloss": "burned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "burned"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'burned' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278084": {
+   "gloss": "end",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "end"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'end' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278088": {
+   "gloss": "know",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "know"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'know' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278089": {
+   "gloss": "fleeting",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fleeting"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'fleeting' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278096": {
+   "gloss": "lifetime",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lifetime"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'lifetime' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278102": {
+   "gloss": "stands",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stands"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'stands' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278108": {
+   "gloss": "goes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "goes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'goes' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278109": {
+   "gloss": "shadow",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shadow"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'shadow' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278111": {
+   "gloss": "nothing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "nothing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'nothing' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278112": {
+   "gloss": "turmoil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "turmoil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'turmoil' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278115": {
+   "gloss": "know",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "know"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'know' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278125": {
+   "gloss": "Deliver",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Deliver"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'Deliver' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278127": {
+   "gloss": "transgressions",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgressions"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'transgressions' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278130": {
+   "gloss": "scorn",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "scorn"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'scorn' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278131": {
+   "gloss": "fool",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fool"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'fool' - substrate (breath/shadow/moth imagery, handbreadth-days, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

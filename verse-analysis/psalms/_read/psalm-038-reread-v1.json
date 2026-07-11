@@ -1,52 +1,2558 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 38, "provenance": "reread-psalms-2026",
-  "note": "Ps38 penitential (corrected method). Human IB: sin (chattath/avon/ivveleth) + anguish (lev tumult/throb, ta'avah, anachah, makob) + silent forbearance (deaf/mute) + yachal wait + confession (nagad/da'ag) + foes' malice. 5 God-acts (qetseph/chemah/za'am wrath; azab-not/teshuah) = QUALIFIERS source-linked. Every candidate roled. Poetic ledger; span-id pairs; roles read-2026.",
-  "spans": {
-    "277964": {"gloss":"health v3","dims":[{"n":101,"l":"sense","k":"value","v":"health / soundness / wholeness (shalom - lost)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277964,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"lost because of God's indignation (v3)","from":277964,"to":277962,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"absent ('there is NO health in my bones')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'there is no HEALTH (shalom) in my bones because of my sin' — the loss of whole-person soundness under sin; shalom here the wellness/wholeness destroyed by God's indignation (v3 qualifier) and David's own sin, the total un-peace of the guilty sufferer"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277968": {"gloss":"sin v3","dims":[{"n":101,"l":"sense","k":"value","v":"sin (chattath)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277968,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the cause of the lost health","from":277968,"to":277964,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'no health in my bones because of my SIN (chattath)' — sin as the root of the bodily/inner ruin; chattath (recurs v18) the missing-of-the-mark whose consequence is the sufferer's lost soundness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277969": {"gloss":"iniquities v4","dims":[{"n":101,"l":"sense","k":"value","v":"iniquities (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277969,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"gone over his head","to":277969,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"a heavy burden","from":277969,"to":277974,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'my INIQUITIES (avon) have gone over my head; like a heavy burden, too heavy for me' — guilt as an engulfing flood and crushing load; avon (recurs v18) the iniquity that overwhelms and weighs the sufferer beyond bearing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277982": {"gloss":"foolishness v5","dims":[{"n":101,"l":"sense","k":"value","v":"foolishness / folly (ivveleth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277982,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'My wounds stink and fester because of my FOOLISHNESS (ivveleth)' — folly named as the cause of the festering wounds; ivveleth the moral stupidity whose fruit is the sufferer's rotting hurt, sin owned as folly"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277989": {"gloss":"mourning v6","dims":[{"n":101,"l":"sense","k":"value","v":"mourn / go about darkly (qadar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277989,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"mourn"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"all the day, bowed down","to":277989,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'utterly bowed down... all the day I go about MOURNING (qadar)' — ceaseless darkened grief; qadar (recurs Ps35:14) the mourning-blackness that bends the sufferer low all day long"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278003": {"gloss":"heart v8","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - tumult of my heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":278003,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278003,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"its tumult makes him groan","from":278003,"to":278001,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'I groan because of the TUMULT of my HEART (lev)' — the roaring disquiet of the inmost seat; lev here the heart in turmoil (first of two, v8 tumult / v10 throbs) whose agitation forces groaning"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278006": {"gloss":"longing v9","dims":[{"n":101,"l":"sense","k":"value","v":"longing / desire (ta'avah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278006,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"before the LORD","to":278006,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with sighing","from":278006,"to":278009,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'all my LONGING (ta'avah) is before you' — the whole desire of the sufferer laid open to God; ta'avah (recurs Ps21:2) here the deep craving for relief, wholly exposed before the LORD"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "278009": {"gloss":"sighing v9","dims":[{"n":101,"l":"sense","k":"value","v":"sighing / groaning (anachah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":278009,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"not hidden from God","from":278009,"to":278011,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'my SIGHING (anachah) is not hidden from you' — the groan God fully sees; anachah (recurs Ps31:10) the sigh of grief, transparent before the LORD who misses nothing of the sufferer's inner state"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277872": {"gloss":"heart v10","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - throbs)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277872,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277872,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"throb / palpitate","to":277872,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with failing strength","from":277872,"to":277875,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'My HEART (lev) throbs; my strength fails me' — the palpitating, panting heart of exhaustion; lev here (second, cf v8) the seat in violent agitation, its throbbing draining the sufferer's strength and the light of his eyes"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277875": {"gloss":"fails v10","dims":[{"n":101,"l":"sense","k":"value","v":"forsake / fail (azab - strength fails)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David's strength","to":277875,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"forsake / fail"},{"n":107,"l":"target","k":"pair","v":"David","to":277875,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the throbbing heart","from":277875,"to":277872,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'my strength FAILS (azab) me' — vitality itself abandoning him; azab here of strength forsaking David (the same verb he begs God not to do, v21) — his own powers desert him as the light of his eyes goes out"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277883": {"gloss":"friends v11","dims":[{"n":101,"l":"sense","k":"value","v":"friends / those who love me (aheb)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David's friends (now aloof)","to":277883,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"stand aloof","to":277883,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"David","to":277883,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:person"},{"n":114,"l":"discovery","k":"note","v":"'My FRIENDS (aheb - those who love me) and companions stand aloof from my plague' — the abandonment by the very ones who loved him; aheb here names the lovers/friends who now withdraw, the loneliness of the afflicted deserted even by kin"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277891": {"gloss":"seek-life v12","dims":[{"n":101,"l":"sense","k":"value","v":"seek / hunt (baqash - seek my life)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277891,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek / hunt"},{"n":107,"l":"target","k":"pair","v":"my life","from":277891,"to":277892,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"laying snares","to":277891,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Those who SEEK (baqash) my life lay their snares' — the foes' murderous hunt; baqash the pursuit of David's life, snares set while friends stand aloof (parallel to darash v12b)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277892": {"gloss":"life v12","dims":[{"n":101,"l":"sense","k":"value","v":"life / soul (nefesh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"soul (self)","to":277892,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277892,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"sought by the foes","from":277892,"to":277891,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'those who seek my LIFE (nefesh)' — the life the foes hunt; nefesh here the life-self targeted by the snare-layers, the sufferer beset within (by guilt) and without (by enemies)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277894": {"gloss":"seek-hurt v12","dims":[{"n":101,"l":"sense","k":"value","v":"seek (darash - seek my hurt)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277894,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"my hurt","from":277894,"to":277895,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'those who SEEK (darash) my hurt speak of ruin' — the foes' pursuit of harm; darash (usually seek God, Ps34:4; here inverted) the searching-out of David's injury, joined to ruinous speech and treachery"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277895": {"gloss":"hurt v12","dims":[{"n":101,"l":"sense","k":"value","v":"hurt / harm (ra'ah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes (seeking it for David)","to":277895,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"David","to":277895,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing sought","from":277895,"to":277894,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'those who seek my HURT (ra'ah)' — the harm the foes pursue; ra'ah the injury/calamity they intend, the object of their malicious searching"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277897": {"gloss":"ruin v12","dims":[{"n":101,"l":"sense","k":"value","v":"ruin / destruction (havvah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes (their speech)","to":277897,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"speak","to":277897,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with meditating treachery","from":277897,"to":277898,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'they speak of RUIN (havvah)' — destructive words from the foes; havvah = engulfing ruin/calamity, the destruction their mouths pronounce against David"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277898": {"gloss":"meditate v12","dims":[{"n":101,"l":"sense","k":"value","v":"meditate / mutter (hagah - treachery)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277898,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"meditate / plot"},{"n":107,"l":"target","k":"pair","v":"treachery","from":277898,"to":277899,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"all day long","to":277898,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with ruinous speech","from":277898,"to":277897,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and MEDITATE (hagah) treachery all day long' — the foes' relentless inner plotting; hagah (the same word for meditating God's law, Ps1:2, and the righteous's wisdom, Ps37:30) here darkly inverted — the mind muttering deceit all day"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277899": {"gloss":"treachery v12","dims":[{"n":101,"l":"sense","k":"value","v":"treachery / deceit (mirmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277899,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing meditated","from":277899,"to":277898,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'meditate TREACHERY (mirmah)' — the deceit their plotting devises; mirmah (recurs Ps35:20) the guile the foes' minds work up against the afflicted"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277905": {"gloss":"hear/deaf v13","dims":[{"n":101,"l":"sense","k":"value","v":"hear (shama - like a deaf man, negated = silent forbearance)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277905,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hear (deliberately not)"},{"n":107,"l":"target","k":"pair","v":"the foes' words","to":277905,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"like a deaf/mute man","to":277905,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"continued as no rebukes in his mouth","from":277905,"to":277915,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"deliberate ('I do NOT hear, like a deaf man')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'But I am like a deaf man; I do not HEAR (shama), like a mute who does not open his mouth' — chosen silence before the foes; the deliberate deafness/muteness = patient forbearance, refusing to retaliate, leaving vindication to God (v15)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277919": {"gloss":"wait v15","dims":[{"n":101,"l":"sense","k":"value","v":"wait / hope (yachal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277919,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wait / hope"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277919,"res":"inferred"},{"n":103,"l":"source","k":"pair","v":"grounded by God's answering/salvation (v22)","from":277919,"to":306287,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'But for you, O LORD, do I WAIT (yachal); it is you who will answer' — the turn from silence to hope; yachal (recurs Ps33:18) the waiting-hope that is the sufferer's answer to the foes' malice — not retaliation but expectation of God"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277924": {"gloss":"rejoice v16","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice (samach - let them not rejoice)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes (denied joy)","to":277924,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice (deprecated)"},{"n":107,"l":"target","k":"pair","v":"over David","to":277924,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"boasting against him","from":277924,"to":277925,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('let them NOT rejoice over me')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'let them not REJOICE (samach) over me, who boast when my foot slips' — the foes' gloating David prays against; samach (recurs Ps35:19) the malicious joy that would triumph at his fall"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277931": {"gloss":"pain v17","dims":[{"n":101,"l":"sense","k":"value","v":"pain / sorrow (makob)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277931,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"ever before him","to":277931,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I am ready to fall, and my PAIN (makob) is ever before me' — unrelenting suffering held constantly in view; makob the pain/sorrow that never leaves the sufferer's sight, driving him to confession (v18)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277935": {"gloss":"confess v18","dims":[{"n":101,"l":"sense","k":"value","v":"declare / confess (nagad)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277935,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"confess"},{"n":107,"l":"target","k":"pair","v":"my iniquity","from":277935,"to":277936,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with sorrow for sin","from":277935,"to":277937,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'I CONFESS (nagad) my iniquity; I am sorry for my sin' — the open declaration of guilt; nagad = to make known/declare, the sufferer laying his iniquity before God, the penitential turn matching Ps32:5"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277936": {"gloss":"iniquity v18","dims":[{"n":101,"l":"sense","k":"value","v":"iniquity (avon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277936,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing confessed","from":277936,"to":277935,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I confess my INIQUITY (avon)' — the guilt now owned before God; avon (recurs v4, where it overwhelmed him) here brought to open confession, the flood-burden acknowledged"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277937": {"gloss":"sorry v18","dims":[{"n":101,"l":"sense","k":"value","v":"be anxious / sorry / grieve (da'ag)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277937,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be sorry / anxious"},{"n":107,"l":"target","k":"pair","v":"because of my sin","from":277937,"to":277939,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with confession","from":277937,"to":277935,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I am SORRY (da'ag) for my sin' — the anxious grief of contrition; da'ag = to be anxious/troubled, the inner sorrow over sin that accompanies confession, godly remorse"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277939": {"gloss":"sin v18","dims":[{"n":101,"l":"sense","k":"value","v":"sin (chattath)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277939,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the object of sorrow","from":277939,"to":277937,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I am sorry for my SIN (chattath)' — the sin grieved over; chattath (recurs v3) here the object of contrition, the sin whose consequences ravaged him now mourned in penitence"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277944": {"gloss":"hate v19","dims":[{"n":101,"l":"sense","k":"value","v":"hate (sane - wrongfully)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277944,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hate"},{"n":107,"l":"target","k":"pair","v":"David","to":277944,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"wrongfully / falsely","from":277944,"to":277945,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'many are those who HATE (sane) me wrongfully' — causeless hatred from the vigorous foes; sane (recurs Ps35:19) the groundless enmity, hatred without just cause multiplying against the afflicted"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277951": {"gloss":"evil v20","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra'ah - render evil for good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":277951,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"render","from":277951,"to":277950,"res":"span"},{"n":107,"l":"target","k":"pair","v":"David (in place of his good)","from":277951,"to":277953,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"repaid for his good","from":277951,"to":277953,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Those who render me EVIL (ra'ah) for good accuse me' — the foes' ingratitude; ra'ah (recurs Ps35:12) the evil returned for David's good, injustice heaped on the penitent sufferer"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277953": {"gloss":"good(repaid) v20","dims":[{"n":101,"l":"sense","k":"value","v":"good (tovah - repaid with evil)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David (his good to them)","to":277953,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"repaid with evil","from":277953,"to":277951,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'render me evil for GOOD (tovah)' — the good David did, returned as evil; tovah the kindness betrayed, the same injustice as Ps35:12"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277957": {"gloss":"good(followed) v20","dims":[{"n":101,"l":"sense","k":"value","v":"good (tov - I follow after good)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"David","to":277957,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"follow after","to":277957,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'they accuse me because I follow after GOOD (tov)' — David's pursuit of good, the very reason for their hostility; tov here the good David chases, his integrity provoking the foes' enmity"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277868": {"gloss":"anger v1 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"anger (qetseph - God's, rebuke)"},{"n":103,"l":"source","k":"pair","v":"the wrath David's suffering flows from (v1->v3)","from":277868,"to":277964,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v1 QUALIFIER (God's anger): 'O LORD, rebuke me not in your ANGER (qetseph)' — God's anger is not a human IB char; it is the SOURCE David dreads and suffers under, grounding his lost health (v3) — captured as a qualifier of shalom-loss (v3)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277871": {"gloss":"wrath v1 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"wrath / heat (chemah - God's)"},{"n":103,"l":"source","k":"pair","v":"the wrath David's suffering flows from (v1->v3)","from":277871,"to":277964,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v1 QUALIFIER (God's wrath): 'nor discipline me in your WRATH (chemah)' — God's hot wrath is not a human IB char; it is the SOURCE of David's chastening suffering — captured as a qualifier of shalom-loss (v3)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277962": {"gloss":"indignation v3 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"indignation (za'am - God's)"},{"n":103,"l":"source","k":"pair","v":"cause of David's lost health (v3)","from":277962,"to":277964,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v3 QUALIFIER (God's indignation): 'no soundness in my flesh because of your INDIGNATION (za'am)' — God's indignation is not a human IB char; it is the SOURCE of David's un-health — captured as a qualifier of shalom-loss (v3)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "306278": {"gloss":"forsake v21 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"forsake (azab - God's, negated plea)"},{"n":103,"l":"source","k":"pair","v":"grounds David's waiting-hope (v15,21)","from":306278,"to":277919,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v21 QUALIFIER (God's act, negated): 'Do not FORSAKE (azab) me, O LORD! be not far from me!' — God's not-forsaking is not a human IB char; it is the SOURCE grounding David's waiting-hope (v15) — captured as a qualifier of yachal (v15). (Note: azab-of-strength v10 IS a human-condition char; this v21 azab is God's.)"},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "306287": {"gloss":"salvation v22 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (teshuah - God's)"},{"n":103,"l":"source","k":"pair","v":"grounds David's waiting-hope (v15)","from":306287,"to":277919,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v22 QUALIFIER (God's provision): 'Make haste to help me, O LORD, my SALVATION (teshuah)!' — salvation as God's is not a human IB char; it is the SOURCE David waits for and appeals to — captured as a qualifier of yachal (v15)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277865": {"gloss":"memorial v1 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"bring to remembrance (zakar - 'for the memorial offering')"},{"n":114,"l":"discovery","k":"note","v":"v1 superscription: 'for the MEMORIAL offering (zakar / lehazkir)' - a liturgical designation of the psalm (the azkarah/memorial portion), not a human IB operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277974": {"gloss":"heavy v4 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"heavy / weigh down (kabed - like a heavy burden)"},{"n":108,"l":"manner","k":"pair","v":"qualifies the iniquities' crushing weight","from":277974,"to":277969,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v4: 'like a HEAVY (kabed) burden, they are too heavy for me' - the felt weight of the iniquities (277969); qualifies the guilt's crushing heaviness. Qualifier of iniquities."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278011": {"gloss":"hidden v9 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"hide (sathar - sighing not hidden, negated)"},{"n":112,"l":"coupling","k":"pair","v":"qualifies the sighing as not-hidden from God","from":278011,"to":278009,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v9: 'my sighing is not HIDDEN (sathar) from you' - the not-hiddenness of David's groaning; qualifies the sighing (278009) as fully open before God. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "278001": {"gloss":"tumult v8 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"tumult / roaring / disquiet (nehamah)"},{"n":112,"l":"coupling","k":"pair","v":"the disquiet of the heart (278003)","from":278001,"to":278003,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v8: 'I groan because of the TUMULT (nehamah) of my heart' - the roaring disquiet of the heart (278003); qualifies the heart's agitation. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277915": {"gloss":"hear/mute v14 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"hear (shama - like a man who does not hear)"},{"n":112,"l":"coupling","k":"pair","v":"continues the silent forbearance (277905)","from":277915,"to":277905,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v14: 'like a man who does not HEAR (shama), no rebukes in his mouth' - continues v13's chosen deafness/muteness; qualifies the silent forbearance (277905). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277925": {"gloss":"boast v16 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"magnify oneself / boast (gadal)"},{"n":108,"l":"manner","k":"pair","v":"the manner of the foes' would-be rejoicing (277924)","from":277925,"to":277924,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v16: 'who BOAST (gadal) against me when my foot slips' - the self-magnifying that accompanies the foes' gloating; qualifies rejoice (277924). Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277945": {"gloss":"wrongfully v19 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"falsehood / wrongfully (sheqer)"},{"n":108,"l":"manner","k":"pair","v":"qualifies the hatred as causeless/false","from":277945,"to":277944,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v19: those who hate me 'WRONGFULLY (sheqer)' - the falseness/causelessness qualifying the hatred (277944); no just ground. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277950": {"gloss":"render v20 [qualifier]","dims":[{"n":101,"l":"sense","k":"value","v":"repay / render (shalam)"},{"n":106,"l":"operation","k":"pair","v":"the repaying by which evil is given for good (277951)","from":277950,"to":277951,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v20: 'those who RENDER (shalam) me evil for good' - the act of repayment by which the foes give evil (277951) for David's good; qualifies the evil-for-good. Qualifier."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277960": {"gloss":"flesh v3 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"flesh (basar - no soundness in my flesh)"},{"n":114,"l":"discovery","k":"note","v":"v3: 'no soundness in my FLESH (basar)' - the body/flesh as the site of the suffering; physical, not an inner operation (the IB finding is the lost shalom, 277964). Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277996": {"gloss":"flesh v7 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"flesh (basar - no soundness in my flesh)"},{"n":114,"l":"discovery","k":"note","v":"v7: 'no soundness in my FLESH (basar)' (repeated from v3) - the burning-filled body; physical site of suffering, not an inner operation. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277985": {"gloss":"down v6 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"be bowed down / bent (shachah / avah)"},{"n":114,"l":"discovery","k":"note","v":"v6: 'I am utterly BOWED DOWN and prostrate' - the physical posture of grief accompanying the mourning (277989); a bodily bearing, captured as standalone alongside the mourning char. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 38,
+ "provenance": "reread-psalms-2026",
+ "note": "Penitential sickness: no-soundness, iniquity-burden, festering-wounds, bowed-mourning, groan-heart-tumult, longing-before-you, heart-throbs, friends-aloof, deaf-silence, wait, confess",
+ "spans": {
+  "277959": {
+   "gloss": "no soundness in my flesh because of sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "no soundness in my flesh because of sin"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277959,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "there is no soundness in the self's flesh because of God's indignation, no health in its bones because of its sin - the body sick with guilt"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "sin-sickness",
+     "to": 277959,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "no-soundness",
+     "to": 277959,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'There is no SOUNDNESS in my flesh because of your indignation; there is no health in my BONES because of my SIN' - the operation reads the illness as the body's registration of sin; guilt has gone into the flesh."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277969": {
+   "gloss": "my iniquities a burden too heavy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my iniquities a burden too heavy"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277969,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's iniquities have gone over its head; like a heavy burden they are too heavy for it - the crushing weight of guilt"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "guilt's-weight",
+     "to": 277969,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "iniquities-burden",
+     "to": 277969,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'For my INIQUITIES have gone over my head; like a HEAVY BURDEN, they are too heavy for me' - the operation is the felt mass of sin: the interior is pressed under a load it cannot carry."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277977": {
+   "gloss": "my wounds fester through my folly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my wounds fester through my folly"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277977,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's wounds stink and fester because of its foolishness - self-inflicted rot from folly"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "festering-folly",
+     "to": 277977,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "wounds-fester",
+     "to": 277977,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'My WOUNDS STINK and FESTER because of my FOOLISHNESS' - distinct from the sin-sickness: this names the wounds as the fruit of the self's own folly, corrupting from within."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277984": {
+   "gloss": "utterly bowed down, mourning all day",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "utterly bowed down, mourning all day"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277984,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is utterly bowed down and prostrate; all the day it goes about mourning - a whole day bent under grief"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "prostration",
+     "to": 277984,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "bowed-and-mourning",
+     "to": 277984,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'I am utterly BOWED DOWN and prostrate; all the day I go about MOURNING' - the operation is the body folded by grief; the interior's mourning bends the whole frame."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277999": {
+   "gloss": "I groan from the tumult of my heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I groan from the tumult of my heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277999,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is feeble and crushed; it groans because of the tumult of its heart - inner uproar breaking out as groaning"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "inner-tumult",
+     "to": 277999,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "groan-heart-tumult",
+     "to": 277999,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'I am feeble and crushed; I GROAN because of the TUMULT of my HEART' - the operation is the heart in uproar forcing itself out as a groan; the interior's turmoil is audible."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "278006": {
+   "gloss": "all my longing is before you",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "all my longing is before you"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 278006,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "all the self's longing is before the Lord; its sighing is not hidden from him - the desire laid open to God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "open-longing",
+     "to": 278006,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "longing-before-you",
+     "to": 278006,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'O Lord, all my LONGING is before you; my SIGHING is not hidden from you' - the operation exposes the interior: the self takes comfort that its whole ache is already visible to God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277872": {
+   "gloss": "my heart throbs, my strength fails",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my heart throbs, my strength fails"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277872,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's heart throbs, its strength fails, the light of its eyes gone - the collapse of vitality"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "vitality-failing",
+     "to": 277872,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heart-throbs",
+     "to": 277872,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'My HEART throbs; my STRENGTH fails me, and the light of my eyes - it also has gone from me' - the operation is the ebbing of life-force; the interior's engine falters and even sight dims."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277883": {
+   "gloss": "my friends stand aloof",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "my friends stand aloof"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277883,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self's friends and companions stand aloof from its plague; its nearest kin stand far off - the isolation of the afflicted"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "abandonment",
+     "to": 277883,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "friends-aloof",
+     "to": 277883,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'My FRIENDS and companions stand ALOOF from my plague, and my nearest kin stand far off' - the operation is the wound of being deserted; affliction has emptied the room of everyone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277903": {
+   "gloss": "like a deaf, mute man I do not answer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "like a deaf, mute man I do not answer"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277903,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self becomes like a deaf man who does not hear, a mute who does not open his mouth - a deliberate silence before accusers"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "chosen-silence",
+     "to": 277903,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "deaf-and-mute",
+     "to": 277903,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13-14: 'But I am like a DEAF man; I do not hear, like a MUTE man who does not open his mouth' - the operation is a chosen refusal to answer: the interior, though slandered, keeps silence and leaves its case to God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277919": {
+   "gloss": "for you, O LORD, do I wait",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "for you, O LORD, do I wait"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277919,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "for the LORD the self waits; it is he who will answer - hope fixed on God's response"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "waiting",
+     "to": 277919,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "wait-you-answer",
+     "to": 277919,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'But for you, O LORD, do I WAIT; it is you, O Lord my God, who will ANSWER' - the operation is the turn from silence to hope: the interior stops defending itself and waits for God to speak."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277935": {
+   "gloss": "I confess my iniquity, I am sorry for my sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "I confess my iniquity, I am sorry for my sin"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 277935,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self confesses its iniquity and is sorry for its sin - penitence spoken and felt"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "penitence",
+     "to": 277935,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "confess-and-sorry",
+     "to": 277935,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'I CONFESS my iniquity; I am SORRY for my sin' - the operation is the penitent turn: the interior names its guilt and grieves it, not merely its consequences."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277867": {
+   "gloss": "rebuke me not in your anger",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rebuke me not in your anger"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277959,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'O LORD, REBUKE me not in your anger' - the discipline the sin-sick body pleads to be spared."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277922": {
+   "gloss": "you will answer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you will answer"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277919,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'it is you, O Lord my God, who will ANSWER' - the response the waiting self expects."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "306284": {
+   "gloss": "make haste to help me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "make haste to help me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277935,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'MAKE HASTE to help me, O Lord, my salvation!' - the rescue the confession appeals for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277865": {
+   "gloss": "memorial offering",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "memorial offering"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'memorial offering' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277868": {
+   "gloss": "anger",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "anger"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'anger' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277869": {
+   "gloss": "discipline",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "discipline"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'discipline' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277871": {
+   "gloss": "wrath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wrath"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'wrath' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277873": {
+   "gloss": "throbs",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "throbs"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'throbs' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277875": {
+   "gloss": "fails",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fails"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'fails' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277886": {
+   "gloss": "aloof",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "aloof"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'aloof' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277887": {
+   "gloss": "plague",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "plague"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'plague' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277891": {
+   "gloss": "seek",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'seek' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277892": {
+   "gloss": "life",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "life"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'life' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277893": {
+   "gloss": "lay their snares",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lay their snares"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'lay their snares' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277894": {
+   "gloss": "seek",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'seek' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277895": {
+   "gloss": "hurt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hurt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'hurt' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277897": {
+   "gloss": "ruin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ruin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'ruin' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277898": {
+   "gloss": "meditate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "meditate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'meditate' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277899": {
+   "gloss": "treachery",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "treachery"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'treachery' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277905": {
+   "gloss": "hear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'hear' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277907": {
+   "gloss": "mute man",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mute man"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'mute man' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277909": {
+   "gloss": "open",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "open"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'open' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277915": {
+   "gloss": "hear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'hear' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277917": {
+   "gloss": "rebukes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rebukes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'rebukes' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277924": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'rejoice' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277925": {
+   "gloss": "boast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "boast"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'boast' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277928": {
+   "gloss": "slips",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "slips"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'slips' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277930": {
+   "gloss": "fall",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fall"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'fall' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277931": {
+   "gloss": "pain",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pain"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'pain' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277933": {
+   "gloss": "before",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "before"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'before' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277936": {
+   "gloss": "iniquity",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "iniquity"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'iniquity' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277937": {
+   "gloss": "sorry",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sorry"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'sorry' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277939": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'sin' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277942": {
+   "gloss": "mighty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mighty"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'mighty' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277944": {
+   "gloss": "hate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'hate' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277945": {
+   "gloss": "wrongfully",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wrongfully"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'wrongfully' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277946": {
+   "gloss": "arrows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "arrows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'arrows' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277947": {
+   "gloss": "sunk",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sunk"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'sunk' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277949": {
+   "gloss": "come down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "come down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'come down' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277950": {
+   "gloss": "render",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "render"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'render' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277951": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'evil' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277953": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'good' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277954": {
+   "gloss": "accuse",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "accuse"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'accuse' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277956": {
+   "gloss": "follow",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "follow"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'follow' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277957": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'good' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277960": {
+   "gloss": "flesh",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "flesh"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'flesh' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277962": {
+   "gloss": "indignation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "indignation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'indignation' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277964": {
+   "gloss": "health",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "health"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'health' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277965": {
+   "gloss": "bones",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bones"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'bones' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277968": {
+   "gloss": "sin",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sin"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'sin' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277970": {
+   "gloss": "gone",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gone"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'gone' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277972": {
+   "gloss": "heavy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heavy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'heavy' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277973": {
+   "gloss": "burden",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "burden"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'burden' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277974": {
+   "gloss": "heavy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heavy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'heavy' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277978": {
+   "gloss": "stink",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stink"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'stink' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277979": {
+   "gloss": "fester",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fester"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'fester' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277982": {
+   "gloss": "foolishness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "foolishness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'foolishness' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277985": {
+   "gloss": "down",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "down"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'down' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277989": {
+   "gloss": "mourning",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mourning"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'mourning' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277991": {
+   "gloss": "filled",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "filled"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'filled' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277992": {
+   "gloss": "burning",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "burning"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'burning' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277994": {
+   "gloss": "soundness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soundness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'soundness' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277996": {
+   "gloss": "flesh",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "flesh"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'flesh' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277997": {
+   "gloss": "feeble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "feeble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'feeble' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278001": {
+   "gloss": "tumult",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "tumult"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'tumult' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278003": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'heart' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278007": {
+   "gloss": "before",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "before"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'before' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278009": {
+   "gloss": "sighing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sighing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'sighing' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "278011": {
+   "gloss": "hidden",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hidden"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'hidden' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306278": {
+   "gloss": "forsake",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forsake"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'forsake' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306285": {
+   "gloss": "help",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "help"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'help' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306287": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'salvation' - substrate (arrows/plague imagery, enemies-snares/accuse, or God's-discipline label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

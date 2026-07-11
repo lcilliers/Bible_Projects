@@ -1,91 +1,4369 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 37, "provenance": "reread-psalms-2026",
-  "note": "Ps37 (wisdom acrostic) - FIRST corrected-method read. Screen 0 applied: human IB dispositions + the two moral conditions (rasha/tsaddiq, each occurrence a distinct facet) = characteristics; 13 God-acts (laughs/knows/loves/upholds/exalts/saves...) = QUALIFIERS, each source-linked (D3, ve_nr 103) to the IB char it grounds - never standalone. Poetic ledger; span-id pairs; role write-back read-2026.",
-  "spans": {
-    "277585": {"gloss":"Fret v1","dims":[{"n":101,"l":"sense","k":"value","v":"fret / burn with vexation (charah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader / righteous","to":277585,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"fret (deprecated)"},{"n":107,"l":"target","k":"pair","v":"because of evildoers","from":277585,"to":277586,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with envy","from":277585,"to":277587,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('FRET NOT because of evildoers')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'FRET not (charah) yourself because of evildoers' — the psalm's opening command against the inner heat of vexation at the wicked's success; charah = to burn/be inflamed, the agitation the whole psalm dismantles (recurs v7,8)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277587": {"gloss":"envious v1","dims":[{"n":101,"l":"sense","k":"value","v":"be envious / jealous (qana)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277587,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"envy (deprecated)"},{"n":107,"l":"target","k":"pair","v":"the wrongdoers","to":277587,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with fret","from":277587,"to":277585,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('be NOT envious of wrongdoers')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'be not ENVIOUS (qana) of wrongdoers' — the covetous resentment of the wicked's prosperity, twinned with fretting; qana = the jealous longing the righteous must not feel toward the flourishing evil"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277739": {"gloss":"Trust v3","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277739,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277739,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with doing good","from":277739,"to":277742,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'TRUST (batach) in the LORD, and do good' — reliance as the positive replacement for fretting; batach (recurs v5) the settled confidence that grounds the whole ethic of the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277742": {"gloss":"good v3","dims":[{"n":101,"l":"sense","k":"value","v":"good / do good (tov)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277742,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"do good"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with trust","from":277742,"to":277739,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and DO GOOD (tov)' — active goodness joined to trust; tov here the practised good that accompanies faith (recurs v27 'turn from evil and do good')"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277746": {"gloss":"faithfulness v3","dims":[{"n":101,"l":"sense","k":"value","v":"faithfulness (emunah - befriend/feed on it)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader (cultivating it)","to":277746,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'dwell in the land and befriend FAITHFULNESS (emunah)' — faithfulness as a practice to feed on / cultivate; emunah here the human's steady fidelity, the disposition to be nourished by (not God's faithfulness but the reader's own to be grown)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277814": {"gloss":"Delight v4","dims":[{"n":101,"l":"sense","k":"value","v":"delight oneself (anag)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277814,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"delight oneself"},{"n":107,"l":"target","k":"pair","v":"in the LORD","to":277814,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"its fruit is the heart's desires granted","from":277814,"to":277819,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'DELIGHT (anag) yourself in the LORD, and he will give you the desires of your heart' — luxuriating/taking exquisite pleasure in God; anag = to be soft/take delight, the disposition whose fruit is the reshaped desires of the heart (recurs v11 of the meek)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277819": {"gloss":"heart v4","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - desires of your heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277819,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277819,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose desires are granted through delight","from":277819,"to":277814,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'the desires of your HEART (lev)' — the heart whose longings God fulfils for the one who delights in him; lev the seat of desire, reshaped and satisfied by delight in the LORD"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277831": {"gloss":"trust v5","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach - commit your way and trust)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277831,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"commit way + trust"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277831,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'Commit your way to the LORD; TRUST (batach) in him, and he will act' — rolling one's whole course onto God; batach (recurs v3) the trust that hands over the way and rests in God's acting"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277835": {"gloss":"righteousness v6","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq - your righteousness)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader (his righteousness vindicated)","to":277835,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"brought forth as the light","to":277835,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'He will bring forth your RIGHTEOUSNESS (tsedeq) as the light' — the reader's own righteousness, hidden now, to be displayed by God as noonday; tsedeq here the human's vindicated integrity (God's bringing-forth is its qualifier)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277842": {"gloss":"fret v7","dims":[{"n":101,"l":"sense","k":"value","v":"fret / burn (charah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277842,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"fret (deprecated)"},{"n":107,"l":"target","k":"pair","v":"the one who prospers by evil devices","from":277842,"to":277847,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with be-still + wait","to":277842,"res":"inferred"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('FRET NOT over the one who prospers')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Be still before the LORD and wait patiently; FRET not (charah) over the one who prospers' — the second fret-command, set against stillness and patient waiting; charah the vexation the waiting soul renounces"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277847": {"gloss":"evil-devices v7","dims":[{"n":101,"l":"sense","k":"value","v":"evil devices / schemes (mezimmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the prospering wicked","to":277847,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the fretted-over prosperer carries them out","from":277847,"to":277842,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the man who carries out EVIL DEVICES (mezimmah)' — the wicked's successful scheming; mezimmah (recurs Ps21:11) the crafty plans whose prosperity tempts the righteous to fret"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277850": {"gloss":"anger v8","dims":[{"n":101,"l":"sense","k":"value","v":"anger (aph - HUMAN anger, refrain from)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader (to refrain from it)","to":277850,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with forsaking wrath","from":277850,"to":277851,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"to-be-refrained ('Refrain from ANGER')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Refrain from ANGER (aph), and forsake wrath!' — here aph is the READER's anger (not God's) to be renounced; the inner heat that 'tends only to evil', the fret matured into rage"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277851": {"gloss":"forsake v8","dims":[{"n":101,"l":"sense","k":"value","v":"forsake / let go (azab - forsake wrath)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277851,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"forsake / let go"},{"n":107,"l":"target","k":"pair","v":"wrath","from":277851,"to":277852,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with refraining anger","from":277851,"to":277850,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and FORSAKE (azab) wrath!' — the deliberate release of rage; azab here the good abandoning (of one's own wrath), the act of letting anger go"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277852": {"gloss":"wrath v8","dims":[{"n":101,"l":"sense","k":"value","v":"wrath / heat (chemah - human)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader (to forsake it)","to":277852,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the thing forsaken","from":277852,"to":277851,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'forsake WRATH (chemah)' — the burning heat of the reader's rage to be abandoned; chemah = hot fury, the intensified anger the righteous lets go lest it breed evil"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277853": {"gloss":"Fret v8","dims":[{"n":101,"l":"sense","k":"value","v":"fret / burn (charah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277853,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"fret (deprecated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"deprecated ('FRET NOT; it tends only to evil')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'FRET not (charah); it tends only to evil' — the third fret-command with its reason: fretting itself breeds wrongdoing; charah the vexation exposed as a seedbed of evil, not a harmless mood"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277858": {"gloss":"wait v9","dims":[{"n":101,"l":"sense","k":"value","v":"wait / hope (qavah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those who wait for the LORD","to":277858,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wait"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277858,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'those who WAIT (qavah) for the LORD shall inherit the land' — patient waiting as the mark of the heirs; qavah (recurs v34) the expectant hope opposed to fretting, rewarded with the inheritance"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277591": {"gloss":"wicked v10","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - transient)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277591,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'In a little while, the WICKED (rasha) will be no more' — the wicked in their transience; rasha here the moral condition marked by its impermanence, gone when one looks for its place (facet: the vanishing wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277594": {"gloss":"look v10","dims":[{"n":101,"l":"sense","k":"value","v":"look carefully / consider (bin)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277594,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"look carefully"},{"n":107,"l":"target","k":"pair","v":"the wicked's place (now empty)","to":277594,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'though you LOOK carefully (bin) at his place, he will not be there' — discerning contemplation of the wicked's disappearance; bin = to consider/perceive, the reflective looking that confirms the wicked's end"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277600": {"gloss":"meek v11","dims":[{"n":101,"l":"sense","k":"value","v":"meek / humble (anav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the meek","to":277600,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"who delight in abundant peace","from":277600,"to":277603,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'But the MEEK (anav) shall inherit the land' — meekness as the disposition of the heirs; anav (recurs Ps25:9, 34:2) the humble/lowly, the opposite of the fretting envier, delighting in peace (cited by Jesus, Mt5:5)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277603": {"gloss":"delight v11","dims":[{"n":101,"l":"sense","k":"value","v":"delight oneself (anag)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the meek","from":277603,"to":277600,"res":"span"},{"n":106,"l":"operation","k":"event","v":"delight oneself"},{"n":107,"l":"target","k":"pair","v":"abundant peace","from":277603,"to":277605,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the meek","from":277603,"to":277600,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and DELIGHT (anag) themselves in abundant peace' — the meek's luxuriating in peace; anag (recurs v4, there in the LORD) here in the shalom that is the meek's inheritance"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277605": {"gloss":"peace v11","dims":[{"n":101,"l":"sense","k":"value","v":"peace (shalom - abundant)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the meek","to":277605,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"abundant","to":277605,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"the meek delight in it","from":277605,"to":277603,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'abundant PEACE (shalom)' — the fullness of well-being the meek enjoy; shalom (recurs v37 'man of peace') the inner and outer wholeness that is the heir's delight"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277606": {"gloss":"wicked v12","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - plotter)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277606,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"plot + gnash teeth","to":277606,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the righteous","from":277606,"to":277608,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the plotting","from":277606,"to":277607,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The WICKED (rasha) plots against the righteous and gnashes his teeth' — the wicked as active plotter; rasha here the condition expressed in scheming malice and teeth-gnashing rage (facet: the plotting wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277607": {"gloss":"plots v12","dims":[{"n":101,"l":"sense","k":"value","v":"plot / scheme (zamam)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","from":277607,"to":277606,"res":"span"},{"n":106,"l":"operation","k":"event","v":"plot"},{"n":107,"l":"target","k":"pair","v":"the righteous","from":277607,"to":277608,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the wicked","from":277607,"to":277606,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'PLOTS (zamam) against the righteous' — the calculated scheming of the wicked; zamam (recurs Ps31:13) the fixed evil intent against the just, which God only laughs at (v13)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277608": {"gloss":"righteous v12","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - plotted against)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277608,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"secured by God's laughing at the wicked (v13)","from":277608,"to":306273,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the target of the wicked's plot","from":277608,"to":277607,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the RIGHTEOUS (tsaddiq)' plotted against — the just one as object of malice; tsaddiq here the righteous condition under threat, secured because the LORD laughs at the plotter (v13, its qualifier-source)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306273": {"gloss":"laughs v13 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"laugh / deride (sachaq - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds the righteous's security (v12)","from":306273,"to":277608,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v13 QUALIFIER (God's act, screened out as arena): 'the LORD LAUGHS (sachaq) at the wicked, for he sees his day is coming' — God's derision of the plotter is not a human IB characteristic; it is the SOURCE grounding the righteous's security (v12) and the reader's freedom from fret — captured here as a qualifier, never standalone."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277612": {"gloss":"wicked v14","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - violent)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277612,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"draw sword + bend bow","to":277612,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the poor and needy","from":277612,"to":277619,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The WICKED (rasha) draw the sword... to bring down the poor and needy' — the wicked as violent predator; rasha here the condition expressed in armed assault on the weak (facet: the violent wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277619": {"gloss":"poor v14","dims":[{"n":101,"l":"sense","k":"value","v":"poor / afflicted (ani)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the poor (targets of the wicked)","to":277619,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the needy","from":277619,"to":277620,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'to bring down the POOR (ani) and needy' — the afflicted as prey of the wicked; ani (recurs Ps35:10) the lowly the wicked's sword targets, whose way is upright"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277620": {"gloss":"needy v14","dims":[{"n":101,"l":"sense","k":"value","v":"needy (evyon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the needy","to":277620,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the poor","from":277620,"to":277619,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the poor and NEEDY (evyon)' — the destitute prey; evyon (recurs Ps35:10) the beggar-poor, paired with ani as the wicked's intended victims"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277624": {"gloss":"upright v14","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar - whose way is upright)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"those whose way is upright","to":277624,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'those whose way is UPRIGHT (yashar)' — the straight-walking whom the wicked would slay; yashar (recurs v37) the uprightness that marks the wicked's victims"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277627": {"gloss":"heart v15","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - their own heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self, the wicked's)","to":277627,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277627,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"pierced by their own sword","to":277627,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'their sword shall enter their own HEART (lev)' — the wicked's violence recoiling on their own inner seat; lev here the wicked's heart, pierced by the very sword they drew (v14), the boomerang of malice"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277630": {"gloss":"Better v16","dims":[{"n":101,"l":"sense","k":"value","v":"good / better (tov - the little of the righteous)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (his little)","from":277630,"to":277632,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the wicked's abundance","from":277630,"to":277636,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'BETTER (tov) is the little that the righteous has than the abundance of many wicked' — the wisdom-valuation that reorders desire; tov here the judgment that the righteous's little outweighs the wicked's much, curing envy (v1)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277632": {"gloss":"righteous v16","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - content with little)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277632,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose little is better","from":277632,"to":277630,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the little that the RIGHTEOUS (tsaddiq) has' — the just one content with little; tsaddiq here the condition marked by sufficiency in modest means (facet: the content righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277636": {"gloss":"wicked v16","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - abundant)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"many wicked","to":277636,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"whose abundance is worth less","from":277636,"to":277630,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the abundance of many WICKED (rasha)' — the wicked in their prosperity; rasha here the condition of abundant wealth that is nonetheless worth less than the righteous's little (facet: the affluent wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277638": {"gloss":"wicked v17","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - arms broken)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277638,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the upheld righteous","from":277638,"to":277642,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the arms of the WICKED (rasha) shall be broken' — the wicked's strength shattered; rasha here the condition whose power is broken while the righteous is upheld (facet: the broken wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277642": {"gloss":"righteous v17","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - upheld)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277642,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the broken wicked","from":277642,"to":277638,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'but the LORD upholds the RIGHTEOUS (tsaddiq)' — the just one sustained; tsaddiq here the condition secured by God's upholding (which is the qualifier-source), the counterpart to the broken wicked"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277644": {"gloss":"knows v18 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"know / regard (yada - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds the blameless's secure heritage (v18)","from":277644,"to":277646,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v18 QUALIFIER (God's act): 'the LORD KNOWS (yada) the days of the blameless, and their heritage will remain forever' — God's knowing is not a human IB char; it is the SOURCE grounding the blameless's secure, enduring heritage — captured as a qualifier of tamim (v18)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277646": {"gloss":"blameless v18","dims":[{"n":101,"l":"sense","k":"value","v":"blameless (tamim)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blameless","to":277646,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"secured by God's knowing their days (v18)","from":277646,"to":277644,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the LORD knows the days of the BLAMELESS (tamim)' — the whole-hearted whose heritage endures; tamim (recurs Ps18:23) the integrity God watches over, its security grounded in God's knowing (v18 qualifier)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277651": {"gloss":"put to shame v19","dims":[{"n":101,"l":"sense","k":"value","v":"be put to shame (bosh, negated)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blameless","to":277651,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be put to shame (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"in evil times","to":277651,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with abundance in famine","from":277651,"to":277657,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('NOT put to shame in evil times')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'they are not put to SHAME (bosh) in evil times' — the blameless spared disgrace when calamity comes; bosh negated, the security of the righteous through evil times and famine"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277657": {"gloss":"abundance v19","dims":[{"n":101,"l":"sense","k":"value","v":"be satisfied / have abundance (saba)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blameless","to":277657,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"have abundance"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"in the days of famine","to":277657,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with not being shamed","from":277657,"to":277651,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'in the days of famine they have ABUNDANCE (saba)' — the righteous satisfied when others starve; saba (recurs Ps17:15) here the God-given sufficiency of the blameless in famine"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277665": {"gloss":"wicked v20","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - perishing)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277665,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"vanish like smoke","to":277665,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'But the WICKED (rasha) will perish... vanish like smoke' — the wicked in their evaporation; rasha here the condition destined to dissolve like smoke (facet: the perishing wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277674": {"gloss":"wicked v21","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - defaulter)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277674,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"borrow, not repay","to":277674,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the generous righteous","from":277674,"to":277678,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The WICKED (rasha) borrows but does not pay back' — the wicked as defaulter; rasha here the condition of grasping dishonesty, set against the giving righteous (facet: the defaulting wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277678": {"gloss":"righteous v21","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - generous)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277678,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"expressed in generosity","from":277678,"to":277679,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'but the RIGHTEOUS (tsaddiq) is generous and gives' — the just one marked by open-handedness; tsaddiq here the condition expressed in generosity (facet: the giving righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277679": {"gloss":"generous v21","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious / generous (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","from":277679,"to":277678,"res":"span"},{"n":106,"l":"operation","k":"event","v":"be generous + give"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the righteous","from":277679,"to":277678,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'is GENEROUS (chanan) and gives' — gracious giving as the righteous's habit; chanan (recurs v26; usually 'be gracious') here the open-handed generosity that flows from righteousness"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277681": {"gloss":"blessed v22 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"bless (barak - blessed BY the LORD)"},{"n":103,"l":"source","k":"pair","v":"grounds the inheriting of the land (v22)","to":277681,"res":"inferred"},{"n":114,"l":"discovery","k":"note","v":"v22 QUALIFIER (God's act): 'those BLESSED (barak) by the LORD shall inherit the land, but those cursed by him cut off' — God's blessing/cursing is not a human IB char; it is the SOURCE determining who inherits — captured as a qualifier of the inheriting (the meek/righteous heirs, v11,29)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277690": {"gloss":"delights v23 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"delight in (chaphets - God delights in the man's way)"},{"n":114,"l":"discovery","k":"note","v":"v23 QUALIFIER (God's act): 'The steps of a man are established by the LORD, when he DELIGHTS (chaphets) in his way' — God's delight in the man's way is not a human IB char; it is the SOURCE that establishes the man's steps and upholds him when he falls (v24) — captured as a qualifier of the man's secured walk."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277705": {"gloss":"righteous v25","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - never forsaken)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277705,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"grounded by God never forsaking (v25)","from":277705,"to":277706,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I have not seen the RIGHTEOUS (tsaddiq) forsaken or his children begging' — the just one's lifelong provision; tsaddiq here the condition never abandoned, its security grounded in God's not-forsaking (v25 qualifier) (facet: the provided-for righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277706": {"gloss":"forsaken v25 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"forsake (azab - God's, negated)"},{"n":103,"l":"source","k":"pair","v":"grounds the righteous's provision (v25)","from":277706,"to":277705,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v25 QUALIFIER (God's act, negated): the righteous never seen 'FORSAKEN (azab)' — God's not-forsaking is the SOURCE grounding the righteous's lifelong provision, not a human IB char — captured as a qualifier of tsaddiq (v25)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277712": {"gloss":"generously v26","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious / lend generously (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277712,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"lend generously"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"ever / continually","to":277712,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'He is ever lending GENEROUSLY (chanan)' — habitual open-handedness; chanan (recurs v21) the continual gracious giving of the righteous, whose children become a blessing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277716": {"gloss":"evil v27","dims":[{"n":101,"l":"sense","k":"value","v":"evil (ra - turn from it)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader (turns from it)","to":277716,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with doing good","from":277716,"to":277718,"res":"span"},{"n":113,"l":"prohibition","k":"flag","v":"turned-from ('Turn away from EVIL')"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Turn away from EVIL (ra) and do good; so shall you dwell forever' — the double command of the wise; ra (recurs Ps34:14 identically) the evil forsaken, matched by active good, the way of enduring dwelling"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277718": {"gloss":"good v27","dims":[{"n":101,"l":"sense","k":"value","v":"good / do good (tov)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277718,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"do good"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with turning from evil","from":277718,"to":277716,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'and DO GOOD (tov)' — the positive command matching the turn from evil; tov (recurs v3) the active good that secures perpetual dwelling"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277722": {"gloss":"loves v28 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"love (aheb - God loves justice)"},{"n":103,"l":"source","k":"pair","v":"grounds the saints' preservation (v28)","from":277722,"to":277726,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v28 QUALIFIER (God's attribute): 'For the LORD LOVES (aheb) justice; he will not forsake his saints' — God's love of justice is not a human IB char; it is the SOURCE grounding the saints' being preserved forever — captured as a qualifier of chasid (v28)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277725": {"gloss":"forsake v28 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"forsake (azab - God's, negated)"},{"n":103,"l":"source","k":"pair","v":"grounds the saints' preservation (v28)","from":277725,"to":277726,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v28 QUALIFIER (God's act, negated): 'he will not FORSAKE (azab) his saints' — God's not-forsaking is the SOURCE of the saints' eternal preservation, not a human IB char — captured as a qualifier of chasid (v28)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277726": {"gloss":"saints v28","dims":[{"n":101,"l":"sense","k":"value","v":"godly / loyal ones (chasid)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the saints","to":277726,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"preserved because God loves justice + won't forsake (v28)","from":277726,"to":277722,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he will not forsake his SAINTS (chasid). They are preserved forever' — the covenant-loyal kept safe; chasid (recurs Ps30:4, 31:23) the godly whose eternal preservation is grounded in God's love of justice and faithfulness (v28 qualifiers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277730": {"gloss":"wicked v28","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - offspring cut off)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277730,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"contrasted with the preserved saints","from":277730,"to":277726,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the children of the WICKED (rasha) shall be cut off' — the wicked's line ended; rasha here the condition whose posterity is severed, contrasted with the saints preserved forever (facet: the cut-off wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277732": {"gloss":"righteous v29","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - inherit the land)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277732,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"forever","to":277732,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The RIGHTEOUS (tsaddiq) shall inherit the land and dwell upon it forever' — the just as everlasting heirs; tsaddiq here the condition rewarded with perpetual inheritance (the refrain of v9,11,22,29,34) (facet: the inheriting righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277748": {"gloss":"righteous v30","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - utters wisdom)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277748,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"utter wisdom + speak justice","to":277748,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"expressed in uttering wisdom","from":277748,"to":277749,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The mouth of the RIGHTEOUS (tsaddiq) utters wisdom' — the just one's wise speech; tsaddiq here the condition expressed in a mouth of wisdom and a tongue of justice (facet: the wise-speaking righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277749": {"gloss":"utters v30","dims":[{"n":101,"l":"sense","k":"value","v":"utter / murmur (hagah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous (his mouth)","from":277749,"to":277748,"res":"span"},{"n":106,"l":"operation","k":"event","v":"utter"},{"n":107,"l":"target","k":"pair","v":"wisdom","from":277749,"to":277750,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the righteous","from":277749,"to":277748,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'UTTERS (hagah) wisdom' — the meditative speech of the righteous; hagah (recurs Ps1:2 meditate, 35:28) here the low utterance of wisdom, the overflow of the meditated law (v31)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277750": {"gloss":"wisdom v30","dims":[{"n":101,"l":"sense","k":"value","v":"wisdom (chokmah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277750,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"uttered by the mouth","from":277750,"to":277749,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'utters WISDOM (chokmah)' — the wisdom the righteous speaks; chokmah here the skilled moral understanding that fills the righteous's mouth, rooted in the law in his heart (v31)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277756": {"gloss":"heart v31","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev - the law in his heart)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":277756,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277756,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"'The law of his God is in his HEART (lev); his steps do not slip' — the internalised law securing the walk; lev here the seat where God's law is lodged, the inner ground of the righteous's sure steps (cf Ps40:8)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277761": {"gloss":"wicked v32","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - murderous watcher)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277761,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"watch + seek to kill","to":277761,"res":"inferred"},{"n":107,"l":"target","k":"pair","v":"the righteous","from":277761,"to":277763,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The WICKED (rasha) watches for the righteous and seeks to put him to death' — the wicked as murderous stalker; rasha here the condition expressed in lethal watching (facet: the murderous wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277763": {"gloss":"righteous v32","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - stalked)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277763,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"kept because God won't abandon him (v33)","from":277763,"to":277768,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the target of the wicked's watching","from":277763,"to":277761,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the RIGHTEOUS (tsaddiq)' stalked to death — the just one hunted; tsaddiq here the condition under lethal threat, kept because God will not abandon him at trial (v33, its qualifier-source)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277768": {"gloss":"abandon v33 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"abandon (azab - God's, negated)"},{"n":103,"l":"source","k":"pair","v":"grounds the righteous's deliverance at trial (v33)","from":277768,"to":277763,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v33 QUALIFIER (God's act, negated): 'The LORD will not ABANDON (azab) him to his power or let him be condemned when brought to trial' — God's not-abandoning is the SOURCE keeping the righteous safe from the stalker, not a human IB char — captured as a qualifier of tsaddiq (v32)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277770": {"gloss":"condemned v33 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"condemn (rasha hiphil - God won't let, negated)"},{"n":103,"l":"source","k":"pair","v":"grounds the righteous's acquittal (v33)","from":277770,"to":277763,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v33 QUALIFIER (God's judicial act, negated): God will not let the righteous 'be CONDEMNED (rasha) when brought to trial' — God's non-condemnation is the SOURCE of the righteous's acquittal, not a human IB char — captured as a qualifier of tsaddiq (v32)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277773": {"gloss":"Wait v34","dims":[{"n":101,"l":"sense","k":"value","v":"wait / hope (qavah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the reader","to":277773,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"wait + keep his way"},{"n":107,"l":"target","k":"pair","v":"the LORD","to":277773,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"rewarded by God's exalting to inherit (v34)","from":277773,"to":277777,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'WAIT (qavah) for the LORD and keep his way, and he will exalt you to inherit' — the disciplined hope with its reward; qavah (recurs v9) the patient waiting God crowns with exaltation and inheritance (God's exalting = its qualifier)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277777": {"gloss":"exalt v34 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"exalt (rum - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds/rewards the waiting (v34)","from":277777,"to":277773,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v34 QUALIFIER (God's act): 'he will EXALT (rum) you to inherit the land' — God's exalting is not a human IB char; it is the SOURCE/reward that crowns the reader's waiting (v34) — captured as a qualifier of qavah (v34)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277781": {"gloss":"wicked v34","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - cut off, looked upon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277781,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'you will look on when the WICKED (rasha) are cut off' — the wicked seen in their end by the waiting righteous; rasha here the condition whose cutting-off the patient one witnesses (facet: the cut-off wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277784": {"gloss":"wicked v35","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - ruthless, flourishing)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"a wicked man","to":277784,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"spreading like a green tree","to":277784,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"described as ruthless","from":277784,"to":277785,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'I have seen a WICKED (rasha), ruthless man, spreading himself like a green laurel' — the flourishing wicked observed; rasha here the condition seen at its lush height before it vanishes (v36) (facet: the flourishing-then-gone wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277785": {"gloss":"ruthless v35","dims":[{"n":101,"l":"sense","k":"value","v":"ruthless / terrifying (arits)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked man","from":277785,"to":277784,"res":"span"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the wicked man","from":277785,"to":277784,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'a wicked, RUTHLESS (arits) man' — the terror-inspiring violence of the wicked; arits = ruthless/tyrannical, the intimidating cruelty that yet passes away and is not found"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277796": {"gloss":"blameless v37","dims":[{"n":101,"l":"sense","k":"value","v":"blameless (tam)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the blameless (to be marked)","to":277796,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the upright","from":277796,"to":277798,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'Mark the BLAMELESS (tam) and behold the upright' — the whole/complete man commended for observation; tam (recurs Ps37:18 tamim) the integrity whose end is a future of peace"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277798": {"gloss":"upright v37","dims":[{"n":101,"l":"sense","k":"value","v":"upright (yashar)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the upright","to":277798,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with the blameless; issues in peace","from":277798,"to":277801,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'behold the UPRIGHT (yashar), for there is a future for the man of peace' — the straight one whose end is peace; yashar (recurs v14) the uprightness rewarded with a posterity/future"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277801": {"gloss":"peace v37","dims":[{"n":101,"l":"sense","k":"value","v":"peace (shalom - man of peace)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the man of peace","to":277801,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"the future belongs to him","from":277801,"to":277798,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'a future for the man of PEACE (shalom)' — peace as the mark and reward of the blameless; shalom (recurs v11) the wholeness whose possessor has a future, unlike the cut-off wicked (v38)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277802": {"gloss":"transgressors v38","dims":[{"n":101,"l":"sense","k":"value","v":"transgressors / rebels (pasha)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the transgressors","to":277802,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"altogether destroyed","to":277802,"res":"inferred"},{"n":112,"l":"coupling","k":"pair","v":"paired with the wicked's cut-off future","from":277802,"to":277806,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'But TRANSGRESSORS (pasha) shall be altogether destroyed' — the rebels' total end; pasha (the verb of pesha, Ps32) the covenant-breakers whose future is cut off, the dark foil to the man of peace"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277806": {"gloss":"wicked v38","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - future cut off)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277806,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"paired with destroyed transgressors","from":277806,"to":277802,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'the future of the WICKED (rasha) shall be cut off' — the wicked with no posterity; rasha here the condition whose future is severed, sealing the psalm's contrast with the man of peace (facet: the futureless wicked)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277809": {"gloss":"righteous v39","dims":[{"n":101,"l":"sense","k":"value","v":"righteous (tsaddiq - saved by the LORD)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":277809,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":103,"l":"source","k":"pair","v":"their salvation is from the LORD (v39)","from":277809,"to":277808,"res":"span"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'The salvation of the RIGHTEOUS (tsaddiq) is from the LORD; he is their stronghold in trouble' — the just secured in God; tsaddiq here the condition whose salvation and stronghold is the LORD (v39 salvation = its qualifier-source) (facet: the God-saved righteous)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277808": {"gloss":"salvation v39 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (teshuah - from the LORD)"},{"n":103,"l":"source","k":"pair","v":"grounds the righteous's security (v39)","from":277808,"to":277809,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v39 QUALIFIER (God's provision): 'The SALVATION (teshuah) of the righteous is from the LORD' — salvation as God's is not a human IB char; it is the SOURCE that is the righteous's stronghold in trouble — captured as a qualifier of tsaddiq (v39)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277824": {"gloss":"wicked v40","dims":[{"n":101,"l":"sense","k":"value","v":"wicked (rasha - the refuge-taker delivered from them)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the wicked","to":277824,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"those from whom the refuge-taker is delivered","from":277824,"to":277826,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"'he delivers them from the WICKED (rasha)' — the wicked as that from which the refuge-taker is saved; rasha here the condition the trusting are rescued from (facet: the wicked as danger escaped)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277826": {"gloss":"take refuge v40","dims":[{"n":101,"l":"sense","k":"value","v":"take refuge (chasah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous / trusting","to":277826,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"take refuge"},{"n":107,"l":"target","k":"pair","v":"the LORD ('in him')","to":277826,"res":"inferred"},{"n":103,"l":"source","k":"pair","v":"grounded by God helping/saving them (v40)","from":277826,"to":277825,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"'he saves them, because they TAKE REFUGE (chasah) in him' — the sheltering that is the psalm's final human disposition; chasah (recurs Ps34:8,22, 31:1) the refuge-taking that draws God's help and salvation (v40 helps/saves = its qualifiers) — the whole psalm's counsel distilled: not fret, but take refuge"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "277821": {"gloss":"helps v40 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"help (azar - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds the refuge-taking (v40)","from":277821,"to":277826,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v40 QUALIFIER (God's act): 'The LORD HELPS (azar) them and delivers them' — God's helping is not a human IB char; it is the SOURCE that answers and grounds the refuge-taking — captured as a qualifier of chasah (v40)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277825": {"gloss":"saves v40 [GOD-QUALIFIER]","dims":[{"n":101,"l":"sense","k":"value","v":"save (yasha - God's act)"},{"n":103,"l":"source","k":"pair","v":"grounds the refuge-taking (v40)","from":277825,"to":277826,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"v40 QUALIFIER (God's act): 'he SAVES (yasha) them, because they take refuge in him' — God's saving is not a human IB char; it is the SOURCE that rewards the refuge-taking — captured as a qualifier of chasah (v40)."},{"n":115,"l":"role","k":"value","v":"qualifier"}]},
-    "277629": {"gloss":"broken(bows) v15 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"break (shabar - their bows)"},{"n":114,"l":"discovery","k":"note","v":"v15: 'their bows shall be BROKEN (shabar)' - physical outcome of the wicked's violence recoiling; not a human IB operation (the wicked's own heart-piercing sword is the IB finding, 277627). Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277639": {"gloss":"broken(arms) v17 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"break (shabar - the wicked's arms)"},{"n":114,"l":"discovery","k":"note","v":"v17: 'the arms of the wicked shall be BROKEN (shabar)' - physical shattering of the wicked's strength; the IB finding is the wicked/righteous condition (277638/277642). Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277652": {"gloss":"evil-times v19 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"evil / calamity (ra - evil times)"},{"n":114,"l":"discovery","k":"note","v":"v19: 'not put to shame in EVIL TIMES (ra)' - ra here the calamitous circumstance (times of trouble/famine) through which the blameless are kept, not an inner operation; the IB finding is the blameless's shame-free security (277651). Standalone/circumstance."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277714": {"gloss":"blessing v26 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"blessing (berakah - children become a blessing)"},{"n":114,"l":"discovery","k":"note","v":"v26: 'his children become a BLESSING (berakah)' - the outcome of the righteous's generosity (the IB finding is generosity, 277712), not itself an inner operation. Standalone/outcome."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277661": {"gloss":"wither v2 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"wither / fade (namal / nabel - like grass)"},{"n":114,"l":"discovery","k":"note","v":"v2: 'they will soon fade like the grass and WITHER (nabel) like the green herb' - the wicked's transience imaged in withering grass; a natural-metaphor outcome, not an inner operation. It grounds the fret-not command (v1): do not envy what so soon withers. Standalone."},{"n":115,"l":"role","k":"value","v":"standalone"}]},
-    "277792": {"gloss":"sought v36 [standalone]","dims":[{"n":101,"l":"sense","k":"value","v":"seek / look for (baqash)"},{"n":114,"l":"discovery","k":"note","v":"v36: 'though I SOUGHT (baqash) him, he could not be found' - the psalmist's searching for the once-flourishing wicked (v35) confirms his vanishing; the confirming search (cf 'look carefully' v10). The IB finding is the wicked's disappearance; this seeking is the observer's act. Standalone/qualifier of the vanishing wicked."},{"n":115,"l":"role","k":"value","v":"standalone"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 37,
+ "provenance": "reread-psalms-2026",
+ "note": "'Fret not' wisdom: fret-not/envy-not, trust+do-good, delight, commit-way, be-still+wait, refrain-anger, meek, generous, lending, turn-from-evil, utter-wisdom, law-in-heart, wait+keep-way, mark-blameless, refuge",
+ "spans": {
+  "277585": {
+   "gloss": "fret not, be not envious of evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fret not, be not envious of evildoers"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277585,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told not to fret over evildoers or be envious of wrongdoers - refusing the corrosive envy of the wicked's prosperity"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "refusing-envy",
+     "to": 277585,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "fret-not",
+     "to": 277585,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'FRET not yourself because of evildoers; be not ENVIOUS of wrongdoers' - the operation is the disciplining of a specific inner unrest: the interior refuses to burn with envy at the wicked's success."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277739": {
+   "gloss": "trust in the LORD and do good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust in the LORD and do good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277739,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to trust in the LORD and do good, dwelling in the land and befriending faithfulness - reliance joined to action"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "active-trust",
+     "to": 277739,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "trust-and-do-good",
+     "to": 277739,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'TRUST in the LORD, and do GOOD; dwell in the land and befriend FAITHFULNESS' - the operation pairs an inner reliance with an outward doing; trust is not passive but works."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277814": {
+   "gloss": "delight yourself in the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delight yourself in the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277814,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to delight in the LORD, who will give the desires of the heart - joy in God that reshapes desire"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "delight",
+     "to": 277814,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "delight-in-the-LORD",
+     "to": 277814,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'DELIGHT yourself in the LORD, and he will give you the DESIRES of your HEART' - the operation is the cultivation of joy in God; the interior that delights in him finds its wants aligned and met."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277828": {
+   "gloss": "commit your way to the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "commit your way to the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277828,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to commit its way to the LORD and trust him to act - handing over the whole course of life"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "entrustment",
+     "to": 277828,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "commit-your-way",
+     "to": 277828,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'COMMIT your way to the LORD; TRUST in him, and he will act' - the operation is the rolling of one's road onto God; the interior lets go of managing outcomes and trusts him to work."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277841": {
+   "gloss": "be still and wait patiently",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "be still and wait patiently"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277841,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to be still before the LORD and wait patiently, not fretting over the one who prospers - quiet, patient stillness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "stillness",
+     "to": 277841,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "be-still-and-wait",
+     "to": 277841,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'Be STILL before the LORD and WAIT patiently for him; fret not yourself over the one who prospers' - the operation is an inner quiet; the interior stops agitating and holds still before God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277849": {
+   "gloss": "refrain from anger, forsake wrath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "refrain from anger, forsake wrath"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277849,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to refrain from anger and forsake wrath, for fretting tends only to evil - the deliberate release of anger"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "anger-release",
+     "to": 277849,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "refrain-from-anger",
+     "to": 277849,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'REFRAIN from ANGER, and forsake WRATH! Fret not yourself; it tends only to evil' - the operation is the letting-go of anger; the interior is warned that nursed wrath breeds only harm."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277600": {
+   "gloss": "the meek delight in abundant peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the meek delight in abundant peace"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the meek",
+     "to": 277600,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the meek shall inherit the land and delight themselves in abundant peace - lowliness rewarded with peace-filled joy"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "meek-peace",
+     "to": 277600,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "meek-delight-in-peace",
+     "to": 277600,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'the MEEK shall inherit the land and DELIGHT themselves in abundant PEACE' - the operation is the interior contentment of the lowly; meekness ends not in loss but in a peace it delights in."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277679": {
+   "gloss": "the righteous is generous and gives",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the righteous is generous and gives"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 277679,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wicked borrows and does not repay, but the righteous is generous and gives - open-handedness as a mark of the righteous interior"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "generosity",
+     "to": 277679,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "generous-and-gives",
+     "to": 277679,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'the RIGHTEOUS is GENEROUS and gives' - the operation is open-handed giving; the righteous interior is marked by a freedom to give that the grasping wicked lacks."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277711": {
+   "gloss": "ever lending generously",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ever lending generously"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 277711,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he is ever lending generously, and his children become a blessing - habitual, ongoing generosity"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "habitual-generosity",
+     "to": 277711,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "ever-lending",
+     "to": 277711,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'He is ever LENDING GENEROUSLY, and his children become a blessing' - distinct from v21's giving: this is the sustained habit, a generosity that runs through the whole life and blesses the next generation."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277716": {
+   "gloss": "turn from evil and do good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "turn from evil and do good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277716,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to turn away from evil and do good, so as to dwell forever - the twofold moral turn"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "moral-turn",
+     "to": 277716,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "turn-and-do-good",
+     "to": 277716,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'Turn away from EVIL and do GOOD, so shall you dwell forever' - the operation is the double movement of the will: away from evil, toward good; the interior reorients its whole direction."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277748": {
+   "gloss": "the righteous utters wisdom",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the righteous utters wisdom"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 277748,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the mouth of the righteous utters wisdom and his tongue speaks justice - an interior so shaped that wise, just speech flows out"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "wise-speech",
+     "to": 277748,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "utter-wisdom",
+     "to": 277748,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'The mouth of the RIGHTEOUS utters WISDOM, and his tongue speaks JUSTICE' - the operation is speech welling from a wise interior; what the righteous heart holds, the mouth pours out as wisdom."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277754": {
+   "gloss": "the law in his heart, steps not slipping",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the law in his heart, steps not slipping"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 277754,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the law of his God is in his heart, so his steps do not slip - internalised law producing a steady walk"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "internalised-law",
+     "to": 277754,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "law-in-heart",
+     "to": 277754,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v31: 'The LAW of his God is in his HEART; his steps do not SLIP' - the operation is the law made inward; because it lives in the heart, the interior's walk stays sure-footed."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277773": {
+   "gloss": "wait for the LORD and keep his way",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wait for the LORD and keep his way"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the hearer",
+     "to": 277773,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is told to wait for the LORD and keep his way, and he will exalt it to inherit the land - patient waiting joined to obedient keeping"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "patient-obedience",
+     "to": 277773,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "wait-and-keep-way",
+     "to": 277773,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'WAIT for the LORD and KEEP his way, and he will exalt you to inherit the land' - distinct from v7's stillness: this waiting is active, coupled with keeping God's way while it waits."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277795": {
+   "gloss": "mark the blameless - the man of peace has a future",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mark the blameless - the man of peace has a future"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the observer",
+     "to": 277795,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self bids one mark the blameless and behold the upright, for there is a future for the man of peace - a discernment that reads the end of the righteous"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "discernment",
+     "to": 277795,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "mark-the-blameless",
+     "to": 277795,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'MARK the BLAMELESS and behold the UPRIGHT, for there is a FUTURE for the man of peace' - the operation is a trained perception: the interior learns to look past present appearances to the righteous man's lasting end."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277826": {
+   "gloss": "they take refuge in him",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "they take refuge in him"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 277826,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the LORD helps and delivers the righteous from the wicked because they take refuge in him - refuge as the ground of rescue"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "refuge-taking",
+     "to": 277826,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "take-refuge",
+     "to": 277826,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'The LORD helps them and delivers them... and saves them, because they TAKE REFUGE in him' - the operation closes the psalm on refuge: the whole deliverance of the righteous rests on their sheltering in God."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "277817": {
+   "gloss": "desires of your heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "desires of your heart"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277814,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'he will give you the DESIRES of your heart' - the fulfilment delighting in God brings."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277601": {
+   "gloss": "the meek shall inherit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the meek shall inherit"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277600,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'the meek shall INHERIT the land' - the possession that grounds the meek's peace-filled delight."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277641": {
+   "gloss": "the LORD upholds the righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the LORD upholds the righteous"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 277773,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'the LORD UPHOLDS the righteous' - the sustaining that rewards waiting and keeping his way."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "277586": {
+   "gloss": "evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evildoers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'evildoers' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277587": {
+   "gloss": "envious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "envious"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'envious' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277591": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277594": {
+   "gloss": "look",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "look"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'look' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277603": {
+   "gloss": "delight",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delight"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'delight' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277605": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'peace' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277606": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277607": {
+   "gloss": "plots",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "plots"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'plots' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277608": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277609": {
+   "gloss": "gnashes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "gnashes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'gnashes' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277611": {
+   "gloss": "teeth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "teeth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'teeth' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277612": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277613": {
+   "gloss": "draw",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "draw"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'draw' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277614": {
+   "gloss": "sword",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sword"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'sword' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277615": {
+   "gloss": "bend",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bend"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'bend' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277616": {
+   "gloss": "bows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'bows' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277618": {
+   "gloss": "bring",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bring"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'bring' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277619": {
+   "gloss": "poor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "poor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'poor' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277620": {
+   "gloss": "needy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "needy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'needy' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277622": {
+   "gloss": "slay",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "slay"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'slay' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277624": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'upright' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277625": {
+   "gloss": "sword",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sword"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'sword' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277627": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'heart' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277628": {
+   "gloss": "bows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'bows' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277630": {
+   "gloss": "Better",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Better"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'Better' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277632": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277636": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277637": {
+   "gloss": "arms",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "arms"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'arms' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277638": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277642": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277644": {
+   "gloss": "knows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "knows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'knows' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277646": {
+   "gloss": "blameless",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blameless"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'blameless' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277649": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'forever' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277651": {
+   "gloss": "put to shame",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "put to shame"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'put to shame' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277652": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'evil' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277656": {
+   "gloss": "famine",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "famine"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'famine' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277657": {
+   "gloss": "abundance",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "abundance"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'abundance' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277659": {
+   "gloss": "fade",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fade"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'fade' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277660": {
+   "gloss": "grass",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "grass"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'grass' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277661": {
+   "gloss": "wither",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wither"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'wither' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277663": {
+   "gloss": "green",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "green"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'green' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277664": {
+   "gloss": "herb",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "herb"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'herb' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277665": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277670": {
+   "gloss": "pastures",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pastures"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'pastures' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277671": {
+   "gloss": "vanish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "vanish"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'vanish' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277673": {
+   "gloss": "vanish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "vanish"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'vanish' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277674": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277675": {
+   "gloss": "borrows",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "borrows"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'borrows' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277677": {
+   "gloss": "pay",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pay"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'pay' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277678": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v21: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277681": {
+   "gloss": "blessed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'blessed' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277682": {
+   "gloss": "inherit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "inherit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'inherit' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277684": {
+   "gloss": "cursed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cursed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'cursed' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277685": {
+   "gloss": "cut off",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut off"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v22: 'cut off' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277688": {
+   "gloss": "established",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "established"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v23: 'established' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277690": {
+   "gloss": "delights",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delights"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v23: 'delights' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277693": {
+   "gloss": "fall",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fall"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'fall' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277695": {
+   "gloss": "cast",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cast"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'cast' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277697": {
+   "gloss": "upholds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upholds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v24: 'upholds' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277705": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277706": {
+   "gloss": "forsaken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forsaken"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'forsaken' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277708": {
+   "gloss": "begging",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "begging"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v25: 'begging' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277712": {
+   "gloss": "generously",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "generously"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'generously' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277714": {
+   "gloss": "blessing",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessing"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v26: 'blessing' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277718": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'good' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277720": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v27: 'forever' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277722": {
+   "gloss": "loves",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "loves"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'loves' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277723": {
+   "gloss": "justice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "justice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'justice' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277725": {
+   "gloss": "forsake",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forsake"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'forsake' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277726": {
+   "gloss": "saints",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saints"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'saints' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277727": {
+   "gloss": "preserved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "preserved"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'preserved' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277728": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'forever' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277730": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277731": {
+   "gloss": "cut",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v28: 'cut' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277732": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v29: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277733": {
+   "gloss": "inherit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "inherit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v29: 'inherit' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277742": {
+   "gloss": "good",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "good"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'good' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277745": {
+   "gloss": "befriend",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "befriend"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'befriend' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277746": {
+   "gloss": "faithfulness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "faithfulness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'faithfulness' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277749": {
+   "gloss": "utters",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "utters"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'utters' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277750": {
+   "gloss": "wisdom",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wisdom"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'wisdom' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277753": {
+   "gloss": "justice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "justice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v30: 'justice' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277756": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v31: 'heart' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277760": {
+   "gloss": "slip",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "slip"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v31: 'slip' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277761": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277762": {
+   "gloss": "watches",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "watches"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'watches' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277763": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277764": {
+   "gloss": "seeks",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seeks"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v32: 'seeks' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277768": {
+   "gloss": "abandon",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "abandon"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v33: 'abandon' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277770": {
+   "gloss": "condemned",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "condemned"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v33: 'condemned' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277772": {
+   "gloss": "trial",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trial"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v33: 'trial' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277775": {
+   "gloss": "keep",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "keep"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'keep' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277777": {
+   "gloss": "exalt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exalt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'exalt' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277778": {
+   "gloss": "inherit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "inherit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'inherit' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277781": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277782": {
+   "gloss": "cut off",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut off"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v34: 'cut off' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277784": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277785": {
+   "gloss": "ruthless",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ruthless"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'ruthless' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277786": {
+   "gloss": "spreading",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "spreading"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'spreading' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277787": {
+   "gloss": "green",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "green"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v35: 'green' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277789": {
+   "gloss": "passed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "passed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v36: 'passed' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277792": {
+   "gloss": "sought",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sought"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v36: 'sought' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277796": {
+   "gloss": "blameless",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blameless"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'blameless' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277798": {
+   "gloss": "upright",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "upright"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'upright' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277801": {
+   "gloss": "peace",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "peace"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v37: 'peace' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277802": {
+   "gloss": "transgressors",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "transgressors"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'transgressors' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277804": {
+   "gloss": "destroyed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "destroyed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'destroyed' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277806": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277807": {
+   "gloss": "cut",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v38: 'cut' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277808": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'salvation' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277809": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'righteous' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277811": {
+   "gloss": "stronghold",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stronghold"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v39: 'stronghold' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277819": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'heart' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277821": {
+   "gloss": "helps",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "helps"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'helps' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277822": {
+   "gloss": "delivers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'delivers' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277823": {
+   "gloss": "delivers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "delivers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'delivers' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277824": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'wicked' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277825": {
+   "gloss": "saves",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "saves"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v40: 'saves' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277831": {
+   "gloss": "trust",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'trust' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277835": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'righteousness' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277837": {
+   "gloss": "justice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "justice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'justice' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277842": {
+   "gloss": "fret",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fret"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'fret' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277843": {
+   "gloss": "prospers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prospers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'prospers' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277847": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'evil' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277850": {
+   "gloss": "anger",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "anger"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'anger' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277851": {
+   "gloss": "forsake",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forsake"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'forsake' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277852": {
+   "gloss": "wrath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wrath"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'wrath' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277853": {
+   "gloss": "Fret",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Fret"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'Fret' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277855": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'evil' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277856": {
+   "gloss": "evildoers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evildoers"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'evildoers' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277857": {
+   "gloss": "cut off",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cut off"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'cut off' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277858": {
+   "gloss": "wait",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wait"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'wait' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "277860": {
+   "gloss": "inherit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "inherit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'inherit' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306273": {
+   "gloss": "laughs",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "laughs"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'laughs' - substrate (righteous-vs-wicked fate: inherit/cut-off/grass/chaff/sword-bow imagery, or God's-act label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }
