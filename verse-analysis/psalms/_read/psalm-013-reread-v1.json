@@ -1,19 +1,794 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 13, "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read Ps13 (13 chars). gil foes(v4)/believer(v5); heart sorrow(v2)->rejoice(v5); shakach forget lament; chesed anchor. Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "273532": {"gloss":"forget v1","dims":[{"n":101,"l":"sense","k":"value","v":"forget (shakach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":273532,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"forget (questioned of God)"},{"n":107,"l":"target","k":"pair","v":"me","from":273532,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"the anguished question: will you FORGET (shakach) me forever? — the felt abandonment; God's remembering doubted (contrast Ps9:12,18 God does not forget); the lament voices the fear the psalm resolves"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273536": {"gloss":"hide v1","dims":[{"n":101,"l":"sense","k":"value","v":"hide (satar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":273536,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"hide (your face)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"'how long will you HIDE your face?' (satar) — the sense of divine withdrawal; the hidden face = felt absence of favour (satar, cf Ps10:11 the wicked's claim; here the believer's lament)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273545": {"gloss":"soul v2","dims":[{"n":101,"l":"sense","k":"value","v":"soul / self (nefesh)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"self (nefesh)","to":273545,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":273545,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"seat of the counsel-taking","from":273545,"to":273544,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"nefesh = the self churning with COUNSEL — 'how long must I take counsel in my soul?'; the restless inner deliberation of the anxious wrestling alone; the self as the arena of turmoil"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273546": {"gloss":"sorrow v2","dims":[{"n":101,"l":"sense","k":"value","v":"sorrow / grief (yagon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":273546,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"in the heart","from":273546,"to":273547,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"SORROW (yagon) in the heart 'all the day' — daily settled grief of the unanswered; yagon as the heart's abiding pain (reversed by v5)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273547": {"gloss":"heart v2","dims":[{"n":101,"l":"sense","k":"value","v":"heart (levav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":273547,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":273547,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"holds the sorrow","from":273547,"to":273546,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the HEART (levav) as seat of daily sorrow — where grief lodges; the SORROW-heart (v2) that becomes the REJOICING-heart (v5): the psalm's inner turn"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273552": {"gloss":"exalted v2","dims":[{"n":101,"l":"sense","k":"value","v":"be exalted / lifted (rum)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the enemy","to":273552,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be exalted over me"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"the enemy EXALTED (rum) over me — the foe's triumph the fourth 'how long'; the humiliation of the sufferer (rum, cf Ps12:8 vileness exalted)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273569": {"gloss":"rejoice v4","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / exult (gil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the foes","to":273569,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice (gloat)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"lest my foes REJOICE (gil) at my fall — the dread of the enemy's malicious joy; gil here = the WICKED's gloating, CONTRAST v5 the believer's gil in salvation (same lemma, opposite bearers)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273572": {"gloss":"trusted v5","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":273572,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"your steadfast love","from":273572,"to":273573,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the DECISIVE TURN: 'BUT I have TRUSTED (batach) in your steadfast love' — the pivot from lament to faith; trust anchored in chesed despite the felt absence; the hinge of the psalm"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273573": {"gloss":"steadfast love v5","dims":[{"n":101,"l":"sense","k":"value","v":"steadfast love (chesed)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your chesed)","to":273573,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God's CHESED (steadfast love) as the object of trust — the covenant love the psalmist rests in even unanswered; chesed the ground that outlasts the 'how long?' (cf Ps5:7, 6:4)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273574": {"gloss":"heart v5","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":273574,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":273574,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"set to rejoice","from":273574,"to":273575,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the HEART (lev) now set to REJOICE — the same heart that held sorrow (v2 levav) now anticipates joy; the inner turn sorrow-heart -> rejoicing-heart is the psalm's movement"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273575": {"gloss":"rejoice v5","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice / exult (gil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist (his heart)","to":273575,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice"},{"n":107,"l":"target","k":"pair","v":"in your salvation","from":273575,"to":273577,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"of the heart","from":273575,"to":273574,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the heart shall REJOICE (gil) in God's salvation — anticipated joy of deliverance; gil here = the BELIEVER's joy, CONTRAST v4 the foes' gil; the two joys (righteous vs malicious), same lemma"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "273577": {"gloss":"salvation v5","dims":[{"n":101,"l":"sense","k":"value","v":"salvation (yeshuah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your salvation)","to":273577,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God's SALVATION (yeshuah) as the ground of the heart's joy — deliverance trusted before seen; the object of anticipatory rejoicing (cf Ps3:8, 9:14)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306030": {"gloss":"sing v6","dims":[{"n":101,"l":"sense","k":"value","v":"sing (shir)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":306030,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sing"},{"n":107,"l":"target","k":"pair","v":"the LORD","from":306030,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the vow to SING (shir) to the LORD 'because he has dealt bountifully with me' — the lament ends in song; praise for God's bounty, the full turn from 'how long?' to gratitude"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 13,
+ "provenance": "reread-psalms-2026",
+ "note": "'How long?': the soul's daily counsel/sorrow, then the turn to trust, rejoicing heart, song",
+ "spans": {
+  "273544": {
+   "gloss": "counsel in the soul, sorrow in the heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "counsel in the soul, sorrow in the heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 273544,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self carries a wearying inner deliberation, taking counsel in its soul with sorrow in its heart all day - the churn of unrelieved anxiety"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "inner-churn",
+     "to": 273544,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "counsel-and-sorrow",
+     "to": 273544,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'How long must I take COUNSEL in my SOUL and have SORROW in my HEART all the day?' - the operation is the exhausting round of self-consultation that finds no rest, sorrow renewed daily."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "273572": {
+   "gloss": "trust in steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust in steadfast love"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 273572,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "against the churn the self plants itself on God's steadfast love - the deliberate turn to trust"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "the-turn-to-trust",
+     "to": 273572,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "trust-in-chesed",
+     "to": 273572,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'But I have TRUSTED in your steadfast love' - the hinge of the psalm: the interior stops deliberating and rests its weight on God's covenant love."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "273575": {
+   "gloss": "heart rejoices in salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart rejoices in salvation"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 273575,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the heart, having trusted, now rejoices in God's salvation - joy following the decision to trust"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "rejoicing",
+     "to": 273575,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "heart-rejoice",
+     "to": 273575,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'my HEART shall REJOICE in your salvation' - distinct from the trust itself: trust releases joy; the once-sorrowing heart of v2 now rejoices."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "306030": {
+   "gloss": "sing for his bounty",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sing for his bounty"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 306030,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self will sing to the LORD because he has dealt bountifully - gratitude become song"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "grateful-song",
+     "to": 306030,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "sing-for-bounty",
+     "to": 306030,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'I will SING to the LORD, because he has dealt bountifully with me' - the arc closes in song; the remembered bounty turns the interior from 'how long' to melody."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "273532": {
+   "gloss": "how long will you forget me",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "how long will you forget me"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 273544,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'How long, O LORD? Will you FORGET me forever?' - the felt divine absence that drives the soul's churn."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "273536": {
+   "gloss": "hide your face",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hide your face"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 273544,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'How long will you HIDE your face from me?' - the sense of God's withdrawal fuelling the sorrow."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "273555": {
+   "gloss": "consider and answer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "consider and answer"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 273572,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'CONSIDER and ANSWER me, O LORD my God' - the petition the turn to trust is voiced alongside."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "273559": {
+   "gloss": "light up my eyes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "light up my eyes"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 273572,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'LIGHT UP my eyes, lest I sleep the sleep of death' - the reviving act trust asks for."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "273545": {
+   "gloss": "soul",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'soul' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273546": {
+   "gloss": "sorrow",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sorrow"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'sorrow' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273547": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'heart' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273552": {
+   "gloss": "exalted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exalted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'exalted' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273556": {
+   "gloss": "answer",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "answer"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'answer' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273560": {
+   "gloss": "eyes",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "eyes"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'eyes' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273562": {
+   "gloss": "sleep",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sleep"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'sleep' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273563": {
+   "gloss": "death",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "death"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'death' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273567": {
+   "gloss": "prevailed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prevailed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'prevailed' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273569": {
+   "gloss": "rejoice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'rejoice' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273571": {
+   "gloss": "shaken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shaken"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'shaken' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273573": {
+   "gloss": "steadfast love",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "steadfast love"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'steadfast love' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273574": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'heart' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "273577": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'salvation' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306033": {
+   "gloss": "dealt bountifully",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dealt bountifully"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'dealt bountifully' - substrate (death-sleep imagery, enemy-gloating, or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

@@ -1,15 +1,884 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 15, "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read Ps15 (9 chars). Entrance liturgy: tamim blameless, emeth truth-in-heart (vs Ps12 double heart), bazah/kabed ordered affections, yare God-fearers, naqi innocent. Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "274618": {"gloss":"blamelessly v2","dims":[{"n":101,"l":"sense","k":"value","v":"blameless / whole (tamim)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who abides","to":274618,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the one who WALKS BLAMELESSLY (tamim — whole, with integrity) — the first mark of the one who dwells with God; tamim = wholeness of life (cf tom Ps7:8, Ps78:72 David's upright heart); integrity as the entrance requirement"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274620": {"gloss":"right v2","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness / do right (tsedeq)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who abides","to":274620,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"he DOES what is RIGHT (tsedeq — works righteousness) — practised justice, not merely professed; the doer of righteousness (contrast the fools who do abominable, Ps14:1)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274622": {"gloss":"truth v2","dims":[{"n":101,"l":"sense","k":"value","v":"truth (emeth)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who abides","to":274622,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"in his heart","from":274622,"to":274624,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"he SPEAKS TRUTH (emeth) in his heart — truthfulness rooted in the inner self; the heart itself truthful, the direct antithesis of the DOUBLE heart (Ps12:2); truth from the inside out"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274624": {"gloss":"heart v2","dims":[{"n":101,"l":"sense","k":"value","v":"heart (levav)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":274624,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the one who abides","to":274624,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"seat where truth is spoken","from":274624,"to":274622,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the HEART (levav) as the seat where truth is spoken — 'truth IN his heart'; inner sincerity, the opposite of the divided/double heart (Ps12:2)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274630": {"gloss":"evil v3","dims":[{"n":101,"l":"sense","k":"value","v":"evil / harm (ra)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the one who abides (does none)","to":274630,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('does no evil to his neighbour')"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"he does NO EVIL (ra) to his neighbour — harmlessness; the negative virtues (no slander, no evil, no reproach) marking the blameless; ra here = harm withheld"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274641": {"gloss":"despised v4","dims":[{"n":101,"l":"sense","k":"value","v":"despise / hold in contempt (bazah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":274641,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"despise"},{"n":107,"l":"target","k":"pair","v":"the vile person","from":274641,"to":274640,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"in his eyes the VILE is DESPISED (bazah) — right moral discrimination: he refuses to honour the reprobate; discerning contempt for evil, paired with honouring the God-fearers (the ordered affections)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274642": {"gloss":"honors v4","dims":[{"n":101,"l":"sense","k":"value","v":"honour / give weight (kabed)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the righteous","to":274642,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"honour"},{"n":107,"l":"target","k":"pair","v":"those who fear the LORD","from":274642,"to":274643,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"he HONOURS (kabed) those who fear the LORD — esteeming the godly; right valuation: contempt for the vile, honour for the God-fearer; the ordered affections of the righteous"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274643": {"gloss":"fear v4","dims":[{"n":101,"l":"sense","k":"value","v":"fear / revere (yare — the God-fearers)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the God-fearing class)","res":"none"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"those who FEAR (yare) the LORD whom he honours — the God-fearing as the honourable class; reverent fear the mark of the esteemed (cf Ps2:11, 5:7)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "274657": {"gloss":"innocent v5","dims":[{"n":101,"l":"sense","k":"value","v":"innocent (naqi)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (class)","res":"none"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the INNOCENT (naqi) against whom no bribe is taken — the righteous refuses to profit at the guiltless's expense; incorruptibility; the last mark of the one who 'shall never be moved'"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 15,
+ "provenance": "reread-psalms-2026",
+ "note": "Portrait of the righteous: blameless walk, inner truth, no slander, right valuation, costly oath-keeping, financial integrity, unshakeableness",
+ "spans": {
+  "274617": {
+   "gloss": "walks blamelessly, does right",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "walks blamelessly, does right"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274617,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the one who may dwell walks with integrity and does what is right - a whole manner of life without crookedness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "integrity-of-walk",
+     "to": 274617,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "walk-blameless",
+     "to": 274617,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'He who WALKS blamelessly and DOES what is right' - the operation is a consistent uprightness of conduct; the life itself is the first qualification."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274621": {
+   "gloss": "speaks truth in the heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "speaks truth in the heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274621,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he speaks truth in his heart - honesty that reaches the inmost self, not merely the words"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "inner-truthfulness",
+     "to": 274621,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "truth-in-heart",
+     "to": 274621,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'and SPEAKS TRUTH in his HEART' - distinct from outward conduct: the interior itself is truthful; he does not lie even to himself."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274626": {
+   "gloss": "refuses to slander",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "refuses to slander"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274626,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he does not slander with his tongue, does no evil to a neighbour, takes up no reproach against a friend - restrained speech that protects others"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "tongue-restraint",
+     "to": 274626,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "no-slander",
+     "to": 274626,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'who does not SLANDER with his tongue and does no EVIL to his neighbour' - the operation is the governed tongue: the interior refuses to trade in others' reputations."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274642": {
+   "gloss": "honours the God-fearers",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "honours the God-fearers"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274642,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "in his eyes a vile person is despised but he honours those who fear the LORD - valuing people by God's standard"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "right-valuation",
+     "to": 274642,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "honour-God-fearers",
+     "to": 274642,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'in whose eyes a VILE person is DESPISED, but who HONOURS those who fear the LORD' - the operation is a reordered esteem: the interior's approvals track God's, not status or power."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274645": {
+   "gloss": "keeps a costly oath",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "keeps a costly oath"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274645,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he swears to his own hurt and does not change - integrity that holds even when keeping the word costs him"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "costly-fidelity",
+     "to": 274645,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "swear-to-own-hurt",
+     "to": 274645,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'who SWEARS to his own HURT and does not change' - the operation is fidelity under cost: the interior will not renege on a promise merely because it turned out expensive."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274652": {
+   "gloss": "no usury, no bribe",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "no usury, no bribe"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274652,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "he does not lend money at interest or take a bribe against the innocent - integrity in money and justice"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "financial-integrity",
+     "to": 274652,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "no-usury-no-bribe",
+     "to": 274652,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'who does not put out his money at INTEREST and does not take a BRIBE against the innocent' - the operation refuses to profit from the vulnerable or to sell a just verdict."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274661": {
+   "gloss": "shall never be moved",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shall never be moved"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the righteous",
+     "to": 274661,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the one who does these things shall never be moved - the settled, unshakeable stability that integrity produces"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "unshakeableness",
+     "to": 274661,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "never-moved",
+     "to": 274661,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'He who does these things shall never be MOVED' - the closing note: this whole interior/conduct yields a stability nothing can topple; character as bedrock."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "274615": {
+   "gloss": "holy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'holy' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274618": {
+   "gloss": "blamelessly",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blamelessly"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'blamelessly' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274620": {
+   "gloss": "right",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "right"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'right' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274622": {
+   "gloss": "truth",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "truth"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'truth' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274624": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'heart' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274627": {
+   "gloss": "tongue",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "tongue"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'tongue' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274630": {
+   "gloss": "evil",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'evil' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274634": {
+   "gloss": "reproach",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "reproach"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'reproach' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274640": {
+   "gloss": "vile person",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "vile person"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'vile person' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274641": {
+   "gloss": "despised",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "despised"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'despised' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274643": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'fear' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274646": {
+   "gloss": "hurt",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hurt"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'hurt' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274655": {
+   "gloss": "bribe",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bribe"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'bribe' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "274657": {
+   "gloss": "innocent",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "innocent"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'innocent' - substrate (the holy hill/tent venue or label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }

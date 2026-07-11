@@ -1,32 +1,2209 @@
 {
-  "book": "Psa", "book_id": 19, "chapter": 9, "provenance": "reread-psalms-2026",
-  "note": "Char-driven re-read Ps9 (26 chars). darash seek(v10)/avenge(v12); shakach God-not-forget; poor/needy/afflicted cluster. Poetic ledger; span-id pairs; source/effect Phase-2.",
-  "spans": {
-    "285865": {"gloss":"give thanks v1","dims":[{"n":101,"l":"sense","k":"value","v":"give thanks / praise (yadah)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285865,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"give thanks"},{"n":107,"l":"target","k":"pair","v":"the LORD","from":285865,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"with my whole heart","from":285868,"to":285865,"res":"span"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"wholehearted thanks (yadah) — praise with the WHOLE, undivided heart; the psalm opens in gratitude for God's judgments"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285868": {"gloss":"heart v1","dims":[{"n":101,"l":"sense","k":"value","v":"heart (lev)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"heart (self)","to":285868,"res":"span"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285868,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"seat of the thanksgiving","from":285868,"to":285865,"res":"span"},{"n":116,"l":"locus","k":"value","v":"internal:seat"},{"n":114,"l":"discovery","k":"note","v":"the WHOLE heart (kol-lev) as seat of undivided praise — thanksgiving from the entire inner self, not partial"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285954": {"gloss":"glad v2","dims":[{"n":101,"l":"sense","k":"value","v":"be glad (samach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285954,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be glad"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with exult","from":285954,"to":285955,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"gladness (samach) IN God — joy directed to God himself; part of the praise-cluster glad/exult/sing"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285955": {"gloss":"exult v2","dims":[{"n":101,"l":"sense","k":"value","v":"exult (alats)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285955,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"exult"},{"n":107,"l":"target","k":"pair","v":"in you (God)","from":285955,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with glad","from":285955,"to":285954,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"exulting (alats) IN God — joy terminating on God himself (cf Ps5:11); jubilation over his saving judgments"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285956": {"gloss":"sing praise v2","dims":[{"n":101,"l":"sense","k":"value","v":"sing praise / make music (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285956,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sing praise"},{"n":107,"l":"target","k":"pair","v":"your name (the Most High)","from":285956,"to":285957,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"with exult","from":285956,"to":285955,"res":"span"},{"n":114,"l":"discovery","k":"note","v":"singing praise (zamar) to God's name — musical worship of the Most High by the delivered"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285971": {"gloss":"righteous v4","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq — God's judgment)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285971,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God's RIGHTEOUS judgment (tsedeq) from the throne — justice as the ground of thanks; the righteous Judge maintains the psalmist's cause"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285998": {"gloss":"righteousness v8","dims":[{"n":101,"l":"sense","k":"value","v":"righteousness (tsedeq — God's)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285998,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God judges the world in RIGHTEOUSNESS (tsedeq) + uprightness — the universal righteous rule; tsedeq the standard of divine governance"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285873": {"gloss":"know v10","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the faithful","to":285873,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know"},{"n":107,"l":"target","k":"pair","v":"your name","from":285873,"to":285874,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"issues in trust","from":285873,"to":285875,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"KNOWING (yada) God's name issues in TRUST — knowledge of who God is grounds reliance; knowing->trusting"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285875": {"gloss":"trust v10","dims":[{"n":101,"l":"sense","k":"value","v":"trust (batach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the faithful","to":285875,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"trust"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":285875,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"flows from knowing","from":285875,"to":285873,"res":"span"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"TRUST (batach) flowing from knowing God's name (cf Ps4:5) — those who know, trust; reliance grounded in knowledge"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285878": {"gloss":"forsaken v10","dims":[{"n":101,"l":"sense","k":"value","v":"forsake / abandon (azab)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285878,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"forsake (negated)"},{"n":107,"l":"target","k":"pair","v":"those who seek you","from":285878,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('have not forsaken')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God has NOT FORSAKEN (azab) the seekers — divine faithfulness the ground of trust; he does not abandon those who seek him"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285879": {"gloss":"seek v10","dims":[{"n":101,"l":"sense","k":"value","v":"seek / inquire (darash)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the faithful","to":285879,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"seek"},{"n":107,"l":"target","k":"pair","v":"you (God)","from":285879,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"SEEKING (darash) God — the sought are not forsaken; genuine seeking (contrast Ps78:34 judgment-coerced). darash=seek here, vs v12 darash=avenge"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285880": {"gloss":"Sing v11","dims":[{"n":101,"l":"sense","k":"value","v":"sing praise (zamar)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the congregation","to":285880,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"sing praise (imperative)"},{"n":107,"l":"target","k":"pair","v":"the LORD","from":285880,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"the CALL to sing praise (zamar) — summoning others to praise the enthroned-in-Zion King; praise made communal"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285887": {"gloss":"avenges v12","dims":[{"n":101,"l":"sense","k":"value","v":"avenge / require (darash — 'require blood')"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285887,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"avenge / require (blood)"},{"n":107,"l":"target","k":"pair","v":"blood (of the slain)","from":285887,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God AVENGES/requires blood (darash damim) — the avenger of the slain remembers the afflicted; darash here = 'require/avenge', a DIFFERENT sense from v10 darash=seek"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285891": {"gloss":"forget v12","dims":[{"n":101,"l":"sense","k":"value","v":"forget (shakach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285891,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"forget (negated)"},{"n":107,"l":"target","k":"pair","v":"the cry of the afflicted","from":285891,"to":285892,"res":"span"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('does not forget')"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"God does NOT FORGET (shakach) the afflicted's cry — divine remembrance of the suffering; contrast Ps78:11 'they forgot' — here God's non-forgetting is mercy"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285893": {"gloss":"afflicted v12","dims":[{"n":101,"l":"sense","k":"value","v":"afflicted / humble (anaw)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the afflicted class)","res":"none"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the AFFLICTED/humble (anaw) whose cry God remembers — the poor/oppressed as objects of God's special regard (theme vv12,18)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285894": {"gloss":"gracious v13","dims":[{"n":101,"l":"sense","k":"value","v":"be gracious (chanan)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God","to":285894,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be gracious (plea)"},{"n":107,"l":"target","k":"pair","v":"me","from":285894,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"the plea 'be GRACIOUS' (chanan) — turning from praise to petition; grace sought amid affliction (cf Ps4:1, 6:2)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285897": {"gloss":"affliction v13","dims":[{"n":101,"l":"sense","k":"value","v":"affliction / misery (oni)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285897,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the psalmist's AFFLICTION (oni) laid before God — 'see my affliction from those who hate me'; the suffering God is asked to behold"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285904": {"gloss":"praises v14","dims":[{"n":101,"l":"sense","k":"value","v":"praise (tehillah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"God (your praises)","to":285904,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"God's PRAISES (tehillot) to be recounted in Zion's gates — deliverance issuing in public praise; the vow of praise (cf Ps6:5)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285908": {"gloss":"rejoice v14","dims":[{"n":101,"l":"sense","k":"value","v":"rejoice (gil)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the psalmist","to":285908,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"rejoice"},{"n":107,"l":"target","k":"pair","v":"in your salvation","from":285908,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"rejoicing (gil) in God's SALVATION — joy in deliverance anticipated in Zion's gates"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285923": {"gloss":"known v16","dims":[{"n":101,"l":"sense","k":"value","v":"make known / reveal (yada niphal)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the LORD","to":285923,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"make known (himself)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:god"},{"n":114,"l":"discovery","k":"note","v":"the LORD MADE himself KNOWN (yada) by executing judgment — God self-revealed through his justice (the wicked snared by their own hands)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285939": {"gloss":"needy v18","dims":[{"n":101,"l":"sense","k":"value","v":"needy / destitute (evyon)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the needy class)","res":"none"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the NEEDY (evyon) not forever forgotten — God's assured remembrance of the destitute; reversal of the poor's neglect"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285942": {"gloss":"forgotten v18","dims":[{"n":101,"l":"sense","k":"value","v":"be forgotten (shakach)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the needy","to":285942,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"be forgotten (negated)"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":113,"l":"prohibition","k":"flag","v":"negated ('not always forgotten')"},{"n":114,"l":"discovery","k":"note","v":"the needy NOT FORGOTTEN (shakach) forever — echoes v12; certainty God will remember the poor; shakach again (God's non-forgetting)"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285943": {"gloss":"hope v18","dims":[{"n":101,"l":"sense","k":"value","v":"hope / expectation (tiqvah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the poor (their hope)","to":285943,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"internal:ib-state"},{"n":114,"l":"discovery","k":"note","v":"the poor's HOPE (tiqvah) shall not perish — expectation in God secure; hope as the inner anchor against despair"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "285944": {"gloss":"poor v18","dims":[{"n":101,"l":"sense","k":"value","v":"poor / afflicted (ani)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"none (the poor class)","res":"none"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the POOR (ani) whose hope endures — the afflicted humble (cf anaw v12); God's care for the lowly the psalm's refrain"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "305999": {"gloss":"fear v20","dims":[{"n":101,"l":"sense","k":"value","v":"fear / terror (morah)"},{"n":102,"l":"type","k":"value","v":"status"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the nations (put in fear)","to":305999,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"none","res":"none"},{"n":107,"l":"target","k":"pair","v":"none","res":"none"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":116,"l":"locus","k":"value","v":"external:thing"},{"n":114,"l":"discovery","k":"note","v":"the plea: put the nations in FEAR (morah) that they know they are 'but men' — fear as the humbling of arrogant nations, terror to teach mortality"},{"n":115,"l":"role","k":"value","v":"characteristic"}]},
-    "306002": {"gloss":"know v20","dims":[{"n":101,"l":"sense","k":"value","v":"know (yada)"},{"n":102,"l":"type","k":"value","v":"action"},{"n":104,"l":"seat","k":"pair","v":"none","res":"none"},{"n":105,"l":"bearer","k":"pair","v":"the nations","to":306002,"res":"inferred"},{"n":106,"l":"operation","k":"event","v":"know"},{"n":107,"l":"target","k":"pair","v":"that they are but men","from":306002,"res":"inferred"},{"n":108,"l":"manner","k":"pair","v":"none","res":"none"},{"n":112,"l":"coupling","k":"pair","v":"none","res":"none"},{"n":114,"l":"discovery","k":"note","v":"the nations made to KNOW (yada) they are 'but men' — humbling recognition of mortality/creatureliness vs their prevailing pretension"},{"n":115,"l":"role","k":"value","v":"characteristic"}]}
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 9,
+ "provenance": "reread-psalms-2026",
+ "note": "Thanksgiving + the oppressed's refuge: thanks/exult/trust/seek/proclaim + cry/affliction/hope",
+ "spans": {
+  "285865": {
+   "gloss": "give thanks with whole heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "give thanks with whole heart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 285865,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self resolves to thank the LORD with its whole heart, recounting all his wonders - undivided gratitude"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "wholehearted-thanks",
+     "to": 285865,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "thank-whole-heart",
+     "to": 285865,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'I will GIVE THANKS to the LORD with my whole HEART; I will recount all of your wonderful deeds' - the interior gives itself entire to gratitude, nothing held back."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285954": {
+   "gloss": "glad and exult in the Most High",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "glad and exult in the Most High"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 285954,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self is glad and exults, singing praise to the name of the Most High - joy lifted to its highest object"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "exultation",
+     "to": 285954,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "glad-and-exult",
+     "to": 285954,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'I will be GLAD and EXULT in you; I will sing praise to your name, O Most High' - distinct from the thanks-recital: this is upward-leaping joy fixed on the Most High."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285875": {
+   "gloss": "trust flows from knowing the name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trust flows from knowing the name"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who know the name",
+     "to": 285875,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "those who know God's name put their trust in him, for he has not forsaken those who seek him - knowledge grounding reliance"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "knowledge-grounded-trust",
+     "to": 285875,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "know-name-trust",
+     "to": 285875,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'those who KNOW your name put their TRUST in you, for you have not forsaken those who seek you' - the operation ties trust to acquaintance: to know who God is, is to rely on him."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285879": {
+   "gloss": "seek the LORD",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seek the LORD"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "those who seek",
+     "to": 285879,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self and its kind seek God, and are not forsaken - the sustained turning toward him"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "seeking",
+     "to": 285879,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "seek-the-LORD",
+     "to": 285879,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'you have not forsaken those who SEEK you' - the interior orientation of seeking is named as the condition God honours; a directed reaching after him."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285880": {
+   "gloss": "proclaim his deeds among peoples",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "proclaim his deeds among peoples"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "volition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 285880,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self summons others to sing and tells among the peoples what God has done - praise turned outward and public"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "proclamation",
+     "to": 285880,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "tell-the-deeds",
+     "to": 285880,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'SING praises to the LORD... tell among the peoples his DEEDS' - the interior gratitude will not stay private; it broadcasts God's acts to the nations."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285892": {
+   "gloss": "the cry of the afflicted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the cry of the afflicted"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the afflicted",
+     "to": 285892,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the afflicted cry out, and God does not forget their cry - the voiced pain of the crushed remembered"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "crying-out",
+     "to": 285892,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "afflicted-cry",
+     "to": 285892,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'he does not forget the CRY of the AFFLICTED' - the interior of the crushed is a cry that reaches and is retained by God, over against those who forget them."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285897": {
+   "gloss": "see my affliction",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "see my affliction"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 285897,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self pleads its own affliction from those who hate it, asking to be lifted from the gates of death"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "personal-suffering",
+     "to": 285897,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "my-affliction",
+     "to": 285897,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'see my AFFLICTION from those who hate me, O you who lift me up from the gates of death' - distinct from the general afflicted: the self brings its particular suffering, poised between death's gates and rescue."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285908": {
+   "gloss": "rejoice in your salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rejoice in your salvation"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 285908,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "at the gates of Zion the self recounts God's praises and rejoices in his salvation - joy located in being saved"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "salvation-joy",
+     "to": 285908,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "rejoice-in-salvation",
+     "to": 285908,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'that I may recount all your praises... and REJOICE in your SALVATION' - the interior's joy is grounded specifically in deliverance, praise voiced at the daughter of Zion's gates."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285943": {
+   "gloss": "the poor's hope shall not perish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the poor's hope shall not perish"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the poor / needy",
+     "to": 285943,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the needy shall not always be forgotten, nor the hope of the poor perish forever - hope that outlasts neglect"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "enduring-hope",
+     "to": 285943,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "hope-not-perish",
+     "to": 285943,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'the needy shall not always be forgotten, and the HOPE of the POOR shall not perish forever' - the interior of the poor holds a hope the psalm insists is durable, not finally disappointed."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "285889": {
+   "gloss": "mindful of blood",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mindful of blood"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 285892,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'he who avenges blood is MINDFUL of them' - God's remembering that answers the afflicted's cry."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "285894": {
+   "gloss": "be gracious",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "be gracious"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 285897,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'Be GRACIOUS to me, O LORD' - the mercy the personal affliction begs."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "285899": {
+   "gloss": "lift from death's gates",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lift from death's gates"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 285897,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'you who LIFT me up from the gates of death' - the rescuing act poised against the affliction."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "285873": {
+   "gloss": "you have not forsaken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "you have not forsaken"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 285879,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'you have not FORSAKEN those who seek you' - God's faithfulness that rewards seeking."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "286003": {
+   "gloss": "a stronghold for the oppressed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "a stronghold for the oppressed"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 285875,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'The LORD is a STRONGHOLD for the oppressed' - the refuge that grounds the trust."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "285868": {
+   "gloss": "heart",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "heart"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'heart' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285872": {
+   "gloss": "wonderful",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wonderful"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'wonderful' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285874": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'name' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285878": {
+   "gloss": "forsaken",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forsaken"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v10: 'forsaken' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285886": {
+   "gloss": "deeds",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "deeds"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v11: 'deeds' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285887": {
+   "gloss": "avenges",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "avenges"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'avenges' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285888": {
+   "gloss": "blood",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blood"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'blood' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285891": {
+   "gloss": "forget",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forget"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'forget' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285893": {
+   "gloss": "afflicted",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "afflicted"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v12: 'afflicted' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285898": {
+   "gloss": "hate",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "hate"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v13: 'hate' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285904": {
+   "gloss": "praises",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "praises"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'praises' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285910": {
+   "gloss": "salvation",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "salvation"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v14: 'salvation' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285912": {
+   "gloss": "sunk",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sunk"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'sunk' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285913": {
+   "gloss": "pit",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "pit"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'pit' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285916": {
+   "gloss": "net",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "net"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'net' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285921": {
+   "gloss": "caught",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "caught"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v15: 'caught' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285923": {
+   "gloss": "known",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "known"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'known' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285925": {
+   "gloss": "judgment",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "judgment"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'judgment' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285926": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'wicked' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285927": {
+   "gloss": "snared",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "snared"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'snared' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285928": {
+   "gloss": "work",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "work"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v16: 'work' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285932": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'wicked' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285937": {
+   "gloss": "forget",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forget"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v17: 'forget' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285939": {
+   "gloss": "needy",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "needy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'needy' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285942": {
+   "gloss": "forgotten",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forgotten"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'forgotten' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285944": {
+   "gloss": "poor",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "poor"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'poor' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285945": {
+   "gloss": "perish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perish"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v18: 'perish' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285950": {
+   "gloss": "prevail",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "prevail"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'prevail' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285952": {
+   "gloss": "judged",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "judged"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v19: 'judged' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285955": {
+   "gloss": "exult",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "exult"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'exult' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285956": {
+   "gloss": "sing praise",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sing praise"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'sing praise' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285957": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'name' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285962": {
+   "gloss": "stumble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stumble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'stumble' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285963": {
+   "gloss": "perish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perish"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'perish' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285966": {
+   "gloss": "just",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "just"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'just' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285967": {
+   "gloss": "cause",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "cause"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'cause' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285970": {
+   "gloss": "giving",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "giving"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'giving' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285971": {
+   "gloss": "righteous",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteous"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'righteous' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285972": {
+   "gloss": "rebuked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rebuked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'rebuked' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285974": {
+   "gloss": "wicked",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wicked"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'wicked' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285975": {
+   "gloss": "perish",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perish"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'perish' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285977": {
+   "gloss": "name",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "name"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'name' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285978": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v5: 'forever' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285983": {
+   "gloss": "ruins",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "ruins"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'ruins' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285984": {
+   "gloss": "rooted out",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "rooted out"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'rooted out' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285986": {
+   "gloss": "memory",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "memory"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'memory' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285987": {
+   "gloss": "perished",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "perished"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v6: 'perished' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285990": {
+   "gloss": "forever",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "forever"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'forever' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285994": {
+   "gloss": "justice",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "justice"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v7: 'justice' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285996": {
+   "gloss": "judges",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "judges"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'judges' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285998": {
+   "gloss": "righteousness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'righteousness' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "285999": {
+   "gloss": "judges",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "judges"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'judges' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "286001": {
+   "gloss": "uprightness",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "uprightness"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v8: 'uprightness' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "286004": {
+   "gloss": "oppressed",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "oppressed"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'oppressed' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "286005": {
+   "gloss": "stronghold",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "stronghold"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'stronghold' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "286007": {
+   "gloss": "trouble",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "trouble"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v9: 'trouble' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "305999": {
+   "gloss": "fear",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "fear"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'fear' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "306002": {
+   "gloss": "know",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "know"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v20: 'know' - substrate (judgment-scene: rebuked/perished/net/pit, or God's-justice label); standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
   }
+ }
 }
