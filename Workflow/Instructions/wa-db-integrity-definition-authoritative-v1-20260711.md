@@ -10,8 +10,9 @@
 |---|---|---|---|
 | **I1 Referential** | Every active `ve_lexical.verse_span_id` resolves to a `verse_span_index` row; every `verse_context_id` resolves; every `wa_verse_records` FK resolves. No dangling references. | declared FKs | LEFT JOIN each FK; expect 0 unresolved |
 | **I2 Master-index backlink** | Every `role='characteristic'` span has a live `wa_verse_records` row (`verse_span_id`) tying it to its term (`mti_term_id`/`term_inv_id`) and verse (`verse_id`). **A characteristic span with no verse-record is a violation.** | passage-rule-v2; memory `project_lexical_cycle_finalised_and_integrity_invariant` | char-spans with `NOT EXISTS(wa_verse_records …)` = 0 |
-| **I3 Forward/backward tracking** | For every characteristic span both directions resolve **by index/FK, never text-scan**: master-index → passage → lexical → verse, and verse → span → lexical → characteristic. | per-book method (b),(e) | trace both directions; 0 breaks |
-| **I4 Passage membership** | Every verse carrying a characteristic span has a `passage_id` resolving to a `passage` row. | per-book method (b) | char-spans whose verse has NULL/dangling `passage_id` = 0 |
+| **I3 Traceability chain (bidirectional)** — *researcher model, 2026-07-11* | The full chain resolves by index/FK, never text-scan: **char → span → verse**; **verse → passage** (single-verse passages allowed); **passage → its verses**; **verse → passage → lexical**. Every characteristic is reachable via its verse *and* its passage. | researcher 2026-07-11; per-book method (b),(e) | each link = 0 breaks |
+| **I4 Passage membership** | Every verse carrying a characteristic span has a `passage_id` resolving to a `passage` row (a **single-verse passage** if the char has no adjacent char-verse — passage-rule-v2). | researcher 2026-07-11; passage-rule-v2 | char-spans whose verse has NULL/dangling `passage_id` = 0 |
+| **I4b Read completeness** — *researcher rule, 2026-07-11* | A verse that is in the verse-records but has **no lexical** is legitimate **only if** its spans carry **no characteristics** (no `char_candidate`). Otherwise it is a verse that should have been read and was skipped. | researcher 2026-07-11 | verse-record verses with a `char_candidate` span but no lexical = 0 |
 | **I5 Ledger completeness** | Every characteristic span carries its full genre-mandatory ledger (M set + 114 discovery + 115 role + 116 locus); every mandatory dimension **explicitly stated** (`none` written, not omitted). | reread process doc §2; G10 | missing-dim chars = 0; ZERO-dim = none |
 | **I6 Role screen** | `role ∈ {characteristic, qualifier, standalone}` with `role_provenance` stamped; **no characteristic span has God as bearer (105)** (IB-screen). | Screen 0; `wa-ib-relevance-screen-correction` | God-bearer chars = 0; unroled candidates = 0 |
 | **I7 Characteristic-model linkage** | Every characteristic span links (`verse_span_index.ib_char_id`) to a normalised record in `ib_characteristic`. | direction 2026-07-11; built M66 | char-spans with `ib_char_id IS NULL` = 0 · **ENFORCEABLE** as of M66 |
@@ -27,7 +28,7 @@
 4. **Report violations with counts, never a bare "clean."**
 
 ## Status per invariant — Psalms, 2026-07-11
-- **PASS:** I5, I6, I7 (M66), I8, I9, **I10** (403 fixed), **I11** (2,168 populated).
-- **OUTSTANDING (repair pending):** **I2 = 261** master-index orphans (engine onboarding, step d); **I4 = 18** passage-less spans. I1/I3 depend on I2 being closed.
+- **PASS:** I4 (16 single-verse passages added), **I4b** (0 skipped reads — completeness holds), I5, I6, I7 (M66), I8, I9, I10 (403 fixed), I11 (2,168 populated).
+- **OUTSTANDING (repair pending):** **I2 = 261** master-index orphans — characteristic spans whose word is not a registered term (192) or whose verse-record was never built (69); repaired via **engine onboarding (step d)**, per passage-rule-v2's own invariant. I1/I3 depend on I2 being closed.
 
 *Filed 2026-07-11. Updated same day (M66) to make I7 enforceable and add I10/I11. Authoritative for what "DB integrity" means. Subordinate only to the researcher's direction.*
