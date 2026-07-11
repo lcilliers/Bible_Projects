@@ -396,3 +396,26 @@
 **4. CHARACTERISTIC (`ib_characteristic`)**
 - linked `ib_char_id=166`: char_key=`H3001` key_word=`strength dried to death` instance_count=3 family=None
 - operation: strength is dried up like a potsherd, the tongue stuck to the jaws, laid in the dust of death - the self desiccated to its end
+
+---
+## ⚠ CORRECTION (2026-07-11) — the earlier registered/unregistered split was wrong
+
+The split above used an exact Strong's `=` match, but the **master carries the base Strong's** (`H3820`, `H8085`) while **`mti_terms` stores the suffixed form** STEP assigns (`H3820A`=heart, `H8085G`=hear). So core terms were mis-counted as "unregistered." Re-classified on the **base** Strong's:
+
+| | earlier (wrong) | **corrected (base-match)** |
+|---|--:|--:|
+| registered term exists | 69 | **113** |
+| genuinely NOT a registered term | 192 | **148** (96 distinct lemmas) |
+
+**Root cause surfaced:** the base-vs-suffix mismatch between `verse_span_index.primary_strong` (base) and `mti_terms.strongs_number` / `wa_verse_records` (suffixed) is *why* many of these are orphans — the auto-linker matched on Strong's and failed. This is a **reconciliation** gap, not (for the 113) a missing-term gap.
+
+### Corrected fix scope
+- **113 registered** (term already exists):
+  - **73** — the verse **already has a matching verse-record**; the span just needs **relinking** → **no STEP**, pure DB.
+  - **40** — no matching record on that verse → a record must be built.
+- **148 genuinely unregistered** (96 lemmas, e.g. `stand` H5975, `kiss` H5401, `cast` H7993, `tongue` H3956) → term onboarding + verse pull (~5,401 verse-records if all pulled).
+
+### Blocker
+**STEP server (`localhost:8989`) is DOWN** → the 148-term onboarding (and any record that needs a STEP pull) **cannot run now**.
+
+*Correction filed 2026-07-11. No build performed on the corrected scope pending direction.*
