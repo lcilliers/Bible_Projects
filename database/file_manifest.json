@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T17:19:06Z",
+  "generated_at": "2026-07-12T17:28:37Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2178,
     "historical": 31,
-    "current": 2443,
+    "current": 2444,
     "archived": 2819,
     "cross-reference": 3398,
     "backup": 102
   },
-  "total_files": 10971,
-  "total_active": 8152,
+  "total_files": 10972,
+  "total_active": 8153,
   "total_archived": 2819,
   "files": [
     {
@@ -68567,6 +68567,22 @@
       "modified": "2026-07-12T04:59:59Z"
     },
     {
+      "path": "Workflow/Instructions/wa-two-narrative-rollout-method-v1-20260712.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-12",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 8866,
+      "modified": "2026-07-12T17:28:12Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md",
       "category": "workflow",
       "type": "other",
@@ -114307,8 +114323,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4894139,
-      "modified": "2026-07-12T05:18:02Z"
+      "size_bytes": 4936296,
+      "modified": "2026-07-12T17:19:06Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
