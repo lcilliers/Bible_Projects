@@ -1,6 +1,6 @@
 # Fan-out structure — per-track .md files (proposal for discussion)
 
-- **File:** verse-analysis/_reports/wa-fanout-track-structure-proposal-v1-20260628.md · 2026-06-28 · Author: Claude Code.
+- **File:** Workflow/methodology/wa-fanout-track-structure-proposal-v1-20260628.md · 2026-06-28 · Author: Claude Code.
 - **Trigger (researcher):** each track of a verse's fan-out should be its own .md — (a) easier to follow/digest, tracks differ, each has its own observations; (b) when the next verse in a track is analysed it can sit *adjacent* to the related verses — "one fan-out for all the verses in the track."
 - **Status:** proposal — nothing restructured yet.
 

@@ -182,7 +182,7 @@ def main():
 
     w("---")
     w("_Method: `Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`. "
-      "Poetic pipeline tracker: `verse-analysis/_reports/wa-psalms-chapter-readings-PROGRESS.md`._")
+      "Poetic pipeline tracker: `verse-analysis/psalms/wa-psalms-chapter-readings-PROGRESS.md`._")
 
     out = "\n".join(L)
     if a.stdout:

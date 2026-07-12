@@ -223,12 +223,20 @@ The **home for ALL verse-fanout method output** (the method that superseded the 
 |------|-------|--------|
 | Raw source collection (input — incl. researcher Logos/Claude material) | `verse-analysis/{Book}/` | `wa-{book}-{ccc}-{vvv}-fanout-v{n}-{YYYYMMDD}.md` |
 | Verse + observations extract (regenerable from `ib_observation`) | `verse-analysis/{Book}/` | `wa-{book}-{ccc}-{vvv}-observations-v{n}-{YYYYMMDD}.md` |
-| Cross-verse roll-ups (progress, worklist, anchor design) | `verse-analysis/_reports/` | `wa-verse-analysis-{topic}-v{n}-{YYYYMMDD}.md` |
+| **Per-book generated views / extracts** (lexical views, structure scouts, syntheses) | `verse-analysis/{Book}/` (may use `_`-prefixed subfolders: `phase1-views/`, `readings/`, `_synthesis/`, `_base-sources/`, `_lineage/`, `_family-analyses/`, `_model/`, `_reread/`, `_seg/`, `_reports/`, `_archive/`) | descriptive, dated |
+| **Cross-book characteristic studies** (a single characteristic across books: e.g. ruthlessness, the char harvest/dump) | `verse-analysis/characteristics/` | `wa-{characteristic}-{topic}-{YYYYMMDD}.md` |
+| **CROSS-BOOK roll-ups only** (whole-programme coverage/integrity/state, cross-book baselines) | `verse-analysis/_reports/` | `wa-{topic}-{YYYYMMDD}.md` |
 
 - **`{Book}`** = the **full lowercase book name** (`genesis`, `exodus`, `leviticus`, `psalms`, `proverbs`, `isaiah`, `mark`…). *(Convention corrected 2026-07-09: the earlier short-code form (`Gen`, `Exo`, `Psa`) was superseded in practice — the full-name folders held ~99% of the work — so the short-code stubs were consolidated into the full-name folders and this rule updated to match.)* **Chapter and verse zero-padded to 3 digits** in filenames (`exodus-001-013`, `psalms-119-176`) so the book's files sort; the DB reference (`Exo 1:13`) stays canonical.
-- **Flat within the book folder** — no per-verse subfolder. A file appears only when its verse is actually worked.
+- **Flat within the book folder for per-verse files** — no per-*verse* subfolder. A `_`-prefixed subfolder for a *type* of generated support material (views, base-sources, syntheses…) is allowed and encouraged for findability (see the sibling-book convention). A file appears only when its verse/artefact is actually worked.
 - **The DB is the single source of truth** for findings: observations → `ib_observation`; progress → `verse_analysis_progress`. Files here are **inputs** (raw collections) or **regenerable exports** (extracts) — never the record of findings.
-- **Method/governance docs are NOT here** — they stay in `Workflow/methodology/` and `Workflow/Catalogue/`. See `verse-analysis/README.md`.
+- **⚠ `_reports/` is for CROSS-BOOK roll-ups ONLY — it is NOT a catch-all.** *(Boundary added 2026-07-12 after it accumulated ~275 misfiled files.)* The following do **NOT** belong in `_reports/`:
+  - **Per-book** views/extracts/scouts/syntheses → the **`{book}/`** folder (or its `_`-subfolder).
+  - **Method / design / definition / validation docs** → **`Workflow/methodology/`** (or `Workflow/Catalogue/`).
+  - **Session logs, session-end, verbatim captures** → **`Workflow/Sessionlogs/`**.
+  - **Single-characteristic studies** → **`verse-analysis/characteristics/`**.
+  - If it names one book or one characteristic, it is NOT a cross-book report.
+- **Method/governance docs are NOT under `verse-analysis/` at all** — they stay in `Workflow/methodology/` and `Workflow/Catalogue/`. See `verse-analysis/README.md`.
 - The old `Sessions/` and `Sessions-v2/` trees remain read-only cross-reference.
 
 ### 3.0 `Sessions-v2/` — per-cluster working tree (cluster-rework phase, from 2026-06-05)

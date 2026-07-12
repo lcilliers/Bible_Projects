@@ -43,7 +43,7 @@ The lexical is **verse-first**: a verse yields a **list of terms** (each with a 
 - **Measure layer (source of all derivation):** `verse_morphology` (spans) · `lexicon` · `verse`.
 
 ## 6. Pending
-> Dimension statuses in §2 are pre-v8; the **authoritative current verdict is `verse-analysis/_reports/wa-lexical-14dim-validation-final-20260702.md`** — for Hebrew, D1–D14 are validated solid (D2 driver/restraint split ✅, D3 bearer ✅ approximate, D5 target ✅ conservative).
+> Dimension statuses in §2 are pre-v8; the **authoritative current verdict is `Workflow/methodology/wa-lexical-14dim-validation-final-20260702.md`** — for Hebrew, D1–D14 are validated solid (D2 driver/restraint split ✅, D3 bearer ✅ approximate, D5 target ✅ conservative).
 - **GREEK/NT parser** — the morph parser is Hebrew-only; Greek gets D1 only. Needs a case-based argument-structure parser (nominative/accusative/dative/prepositions). *Substantial, not yet built.*
 - **Poetic phase-2** — exercise the whole-poem enrichment end-to-end on a Psalms/Proverbs term.
 - **Legacy** — left in place, **not converged, not retired** (see §7). Allocate final `ve_nr`s for the new items (`process`, `genre`) when the writer is built (keep old numbers, add new).

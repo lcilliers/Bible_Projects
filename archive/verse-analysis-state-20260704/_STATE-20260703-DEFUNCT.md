@@ -334,4 +334,4 @@
 - `ib_observation` holds **81 observations** (23 open/needs-corroboration) from the retired D1–D13 verse-fan-out. **Transitional** — folding into `ve_lexical` (memory `project_ib_observation_folds_into_ve_lexical`); not the live tracker. Prior generator output is in git history if the detail is needed.
 
 ---
-_Method: `Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`. Poetic pipeline tracker: `verse-analysis/_reports/wa-psalms-chapter-readings-PROGRESS.md`._
+_Method: `Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`. Poetic pipeline tracker: `verse-analysis/psalms/wa-psalms-chapter-readings-PROGRESS.md`._

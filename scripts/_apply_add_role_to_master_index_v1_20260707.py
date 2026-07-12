@@ -1,7 +1,7 @@
 """_apply_add_role_to_master_index_v1_20260707.py — M64: add per-span `role` to the master index
 and backfill it verbatim from ve_lexical (ve_nr=115).
 
-Design + debate: verse-analysis/_reports/wa-master-index-role-column-design-and-debate-20260707.md
+Design + debate: Workflow/methodology/wa-master-index-role-column-design-and-debate-20260707.md
 
 Adds columns to verse_span_index: role, role_provenance, role_set_at, role_source_ve_id.
 Backfill (verbatim; these roles are known-imperfect, imported for analysis):

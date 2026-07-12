@@ -7,7 +7,7 @@ metadata:
   originSessionId: bf6ef2d7-5b5c-4775-88f2-f2ca15223daa
 ---
 
-**Researcher plan, 2026-07-01.** The dimension observations (D1–D13, currently in the `ib_observation` table, 81 rows) are **not** to stay in a separate table. The direction is to make the **dimension part of the ve-lexical**: each dimension expressed as `ve_lexical` items — **span→span pairs** (direction always 1→2) and **events** (processes/actions) — per the researcher comments captured in `verse-analysis/_reports/wa-observation-dimensions-extract-v1-20260701.md` §5.
+**Researcher plan, 2026-07-01.** The dimension observations (D1–D13, currently in the `ib_observation` table, 81 rows) are **not** to stay in a separate table. The direction is to make the **dimension part of the ve-lexical**: each dimension expressed as `ve_lexical` items — **span→span pairs** (direction always 1→2) and **events** (processes/actions) — per the researcher comments captured in `Workflow/methodology/wa-observation-dimensions-extract-v1-20260701.md` §5.
 
 **Sequence:** (1) confirm the new ve-lexical item model that carries the dimensions → (2) **convert** the current `ib_observation` rows into that new ve-lexical form (keyed on `verse_context_id`, at the correct term grain) → (3) **retire** `ib_observation` (it ceases to exist).
 

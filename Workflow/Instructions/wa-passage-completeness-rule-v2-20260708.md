@@ -37,6 +37,6 @@ The passage ↔ verse-record ↔ master relationship is **deterministic** once `
 
 ## Cross-reference
 - Cycle: `wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md` — this rule is its **Stage 0**; the cycle's DB-updates/integrity section states the same invariant.
-- Linkage: `verse-analysis/_reports/wa-verse-passage-lexical-master-term-record-linkage-map-20260708.md` — the join keys this rule relies on.
+- Linkage: `Workflow/methodology/wa-verse-passage-lexical-master-term-record-linkage-map-20260708.md` — the join keys this rule relies on.
 
 *Recorded 2026-07-08. Tool: extend `scripts/_apply_passage_completeness_v1_20260707.py` for the candidate-driven scope (dry-run first), or a v2 successor.*
