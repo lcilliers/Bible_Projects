@@ -20,7 +20,7 @@
 - **IB-screen: 0 God-bearer chars, 0 old-provenance candidates book-wide.**
 - Only non-zero: G0=159 (poetic genre caveat — gate scores a whole psalm as one passage; reading proceeded by char-arc; by design).
 - Characteristics fell 3,810 → **2,168** across the project as Screen 0 re-roled God-content/imagery off "characteristic" — fewer, truer chars, each with a full poetic ledger.
-- Snapshot: `verse-analysis/psalms/wa-psalms-reread-snapshot-v6-FINAL-20260711.md`.
+- Snapshot: `verse-analysis/psalms/_reread/wa-psalms-reread-snapshot-v6-FINAL-20260711.md`.
 
 ### 4. Throughput analysis (answering "×66 = a year?")
 - Grounded in DB span-counts: the "year" is a **~4–8× overcount** — it extrapolates per-book from the **densest, worst-case** book, counts a one-time rework as steady-state, and counts sequential single-threaded pace as the ceiling.

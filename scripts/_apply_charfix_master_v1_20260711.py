@@ -42,7 +42,7 @@ print(f"(a) stamped {len(emergent)} emergent characteristics as candidates; {len
 
 # write the seed-extension file (formal dynamic-extension record)
 os.makedirs('outputs/data', exist_ok=True)
-extpath=f"outputs/data/char-seed-extension-read-emergent-{BOOK}-20260711.json"
+extpath=f"verse-analysis/psalms/_model/char-seed-extension-read-emergent-{BOOK}-20260711.json"
 json.dump({"generated_utc":NOW,"origin":"read-emergent","book_id":BOOK,
            "note":"lemmas that surfaced as characteristics during reading but were absent from the base seed; the seed process MUST consume this on every run",
            "lemmas":[{"strong":k,"seed_word":v} for k,v in sorted(lemmas.items())]},

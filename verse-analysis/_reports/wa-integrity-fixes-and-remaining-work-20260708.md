@@ -21,7 +21,7 @@ Mechanism (all no-new-data, integrity-gated, backed up):
 - The verse master itself is **incomplete** for un-read books (Chronicles etc.) — verses simply aren't ingested. Real, but a separate ingestion job.
 
 ## Remaining work (honest, prioritised) — needs researcher input, NOT auto-run
-1. **Genuine onboarding holes: ~4,908 spans / ~210 new terms** (`char_candidate` with no record *at all*). This is the real (b). **Review the 210 new-term list before registering** (some seed IB-judgements are weak). Worklist: `outputs/data/audit-word-onboarding-worklist-20260708.md`.
+1. **Genuine onboarding holes: ~4,908 spans / ~210 new terms** (`char_candidate` with no record *at all*). This is the real (b). **Review the 210 new-term list before registering** (some seed IB-judgements are weak). Worklist: `research/investigations/audit-word-onboarding-worklist-20260708.md`.
 2. **`STRONG_NOT_IN_MASTER` (2,527)** — record strong disagrees with morphology (some look like corrupt `target_word`/strong). Needs per-case review; not auto-fixable.
 3. **`VERSE_NOT_IN_MASTER` (225)** — ingest the missing verses (morphology pull) for those references, or accept the master is IB-scoped only.
 4. **Passage reconciliation** — 1,051 `char_candidate` verses have no passage; widen the passage rule's scope to `char_candidate` (per decision (e): tight around characteristics that anchor to verse-records; no large char-free passages). Passage = Stage 0 before reading.
@@ -30,6 +30,6 @@ Mechanism (all no-new-data, integrity-gated, backed up):
 ## Reference docs produced
 - `wa-verse-passage-lexical-master-term-record-linkage-map-20260708.md` — the full linkage architecture.
 - `wa-cycle-db-updates-indexes-transition-passage-analysis-20260708.md` — the DB-update/index/transition/passage analysis + decisions.
-- `outputs/data/audit-word-onboarding-worklist-20260708.md` — the onboarding worklist (b+c).
+- `research/investigations/audit-word-onboarding-worklist-20260708.md` — the onboarding worklist (b+c).
 
 *Filed 2026-07-08. All writes backed up. Reading has NOT started — substrate work continues.*

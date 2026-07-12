@@ -116,7 +116,7 @@ L.append("- **Family says X, cluster says Y** — three causes: (a) my keyword f
          "e.g. a boast-word keyworded into praise but clustered Pride). Each is worth an eyeball; none is auto-wrong.")
 L.append("- The comparison is diagnostic, not corrective — nothing is changed here.")
 
-out = 'verse-analysis/psalms/wa-ib-char-family-vs-cluster-comparison-20260711.md'
+out = 'verse-analysis/psalms/_model/wa-ib-char-family-vs-cluster-comparison-20260711.md'
 open(out,'w',encoding='utf-8').write('\n'.join(L))
 print(f"records={len(rows)} testable={len(testable)} agree={len(agree)} adjacent={len(adj_out)} genuine={len(genuine)}")
 print(f"filed -> {out}")

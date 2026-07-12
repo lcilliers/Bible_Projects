@@ -29,11 +29,11 @@ See `wa-master-index-role-column-design-and-debate-20260707.md`.
 Purpose: **isolate the lemmas that COULD be a characteristic**, to seed the verse-level lexical process (which reads verse + passage and confirms/demotes + captures dimensions). The seed is **over-inclusive** (a candidate may be an object/standalone in a given verse) and **non-exhaustive** (the read may still surface misses).
 
 Built in layers (dead-ends recorded honestly):
-1. **Lemma inventory** — grouped all master lemmas excluding particles → `outputs/data/lemma-inventory-master-no-particles-20260707.json` (11,804 lemma entries; OT Hebrew 6,677 + Aramaic 636).
+1. **Lemma inventory** — grouped all master lemmas excluding particles → `research/discovery/lemma-inventory-master-no-particles-20260707.json` (11,804 lemma entries; OT Hebrew 6,677 + Aramaic 636).
 2. **✗ strongs_list route — REJECTED** (matched every co-occurring strong; LORD→lust).
 3. **✓ Registry direct match** — lemma gloss == registry English word (221 words) → **748** lemmas.
 4. **✗ 277 `characteristic` table — REJECTED** (phrasal short_names → incidental-word noise: dwell→Security, ear→Attention).
-5. **✓ Curated synonyms** — `outputs/data/registry-synonyms-curated-20260707.json` (reviewable) → **+414** (total 1,162 all-lang; 638 OT).
+5. **✓ Curated synonyms** — `research/discovery/registry-synonyms-curated-20260707.json` (reviewable) → **+414** (total 1,162 all-lang; 638 OT).
 6. **✓ IB-judgement pass** over the 6,675 unmatched OT lemmas — broad semantic net (269 flagged) → manual accept/reject → **+186** IB additions (74 rejected non-IB, 9 prefix-artifacts removed). Files: `ib-judgement-accepted-20260707.md`, `ib-judgement-rejected-20260707.md`.
 
 **Result: 824 OT candidate-characteristic lemmas** (`char_matched` = registry, `ib_candidate` = judged). In the master these mark **25,155 seed spans (10.8%)** across **12,672 verses (63.3%)**. ~36.7% of OT verses carry no candidate (genealogies, itineraries, ritual lists — correctly empty).
@@ -41,7 +41,7 @@ Built in layers (dead-ends recorded honestly):
 ## 5. DB / code state
 - **DB:** M64 role columns + backfill LIVE (schema 3.38.0). Integrity intact (325,474 master rows). ch7 NOT run (still dry-run only). No role reassessment beyond ch1–6.
 - **Scripts:** `_apply_add_role_to_master_index_v1_20260707.py` (M64). Analysis scripts in scratchpad (seed build, matches, IB judgement) — the durable outputs are the JSONs/mds below.
-- **Data artifacts (`outputs/data/`):** `lemma-inventory-master-no-particles-20260707.json` (the seed), `registry-synonyms-curated-20260707.json`, `ib-judgement-accepted/rejected-20260707.md`, `ot-lemmas-unmatched-20260707.md`.
+- **Data artifacts (`verse-analysis/psalms/_model/`):** `lemma-inventory-master-no-particles-20260707.json` (the seed), `registry-synonyms-curated-20260707.json`, `ib-judgement-accepted/rejected-20260707.md`, `ot-lemmas-unmatched-20260707.md`.
 - **Design/analysis (`verse-analysis/_reports/`):** `wa-master-index-role-column-design-and-debate-20260707.md`, `wa-ot10-morphology-and-16dim-derivability-20260707.md`, `wa-characteristic-table-full-dump-277-20260707.md`, this log.
 
 ## 6. ★ Starting point for TOMORROW (2026-07-08)

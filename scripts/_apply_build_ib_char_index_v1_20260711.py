@@ -32,7 +32,7 @@ if not hascol('verse_span_index','ib_char_id'):
 legacy=cur.execute("SELECT * FROM ib_characteristic WHERE char_key IS NULL").fetchall()
 if legacy:
     os.makedirs('outputs/data',exist_ok=True)
-    json.dump([dict(r) for r in legacy], open('outputs/data/ib_characteristic_legacy_29_export_20260711.json','w',encoding='utf-8'), indent=2, ensure_ascii=False)
+    json.dump([dict(r) for r in legacy], open('verse-analysis/psalms/_model/ib_characteristic_legacy_29_export_20260711.json','w',encoding='utf-8'), indent=2, ensure_ascii=False)
     cur.execute("""CREATE TABLE IF NOT EXISTS ib_characteristic_legacy AS SELECT * FROM ib_characteristic WHERE 0""")
     cur.execute("""INSERT INTO ib_characteristic_legacy SELECT * FROM ib_characteristic WHERE char_key IS NULL""")
     cur.execute("DELETE FROM ib_characteristic WHERE char_key IS NULL")

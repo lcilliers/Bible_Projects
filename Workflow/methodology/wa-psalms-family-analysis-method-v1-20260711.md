@@ -33,7 +33,7 @@ Work through the dimensions as the IB's anatomy and motion, always cited:
 - **the interior anatomy the data actually names:** assemble only the filled seats/sources/couplings.
 
 ## Output
-- Write the analysis to **`verse-analysis/psalms/wa-family-analysis-<slug>-20260711.md`** where `<slug>` is the family (from the file's `meta.scope.family`; for the outliers file use `OUTLIERS`).
+- Write the analysis to **`verse-analysis/psalms/_family-analyses/wa-family-analysis-<slug>-20260711.md`** where `<slug>` is the family (from the file's `meta.scope.family`; for the outliers file use `OUTLIERS`).
 - Suggested sections: **0. Data-integrity screen · 1. Coherence (does the label fit) · 2…n. The movements/operations evidenced (cited) · The network · The interior anatomy named · What could not be derived · Summary.**
 - British spelling. Terse, evidence-dense, no padding.
 - Your chat return = one line only (e.g. "Filed wa-family-analysis-<slug>-20260711.md — N meanings/M instances; <one-clause headline>."). The analysis lives in the file, not the chat.

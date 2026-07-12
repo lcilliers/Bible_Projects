@@ -3,7 +3,7 @@
 > Every fact below is a query/file result verified 2026-07-11, mapped to the researcher's three-part description of the model. Purpose: replace uncertainty ("if I remember / I suspect / I don't know what it looks like / not sure where the values sit") with the actual state, so the normalised-index discovery proceeds on facts.
 
 ## Layer 1 — the SEED (researcher's (a))
-- **Source file:** `outputs/data/lemma-inventory-master-no-particles-20260707.json` (11,804 lemma records + `registry_match` + `ib_judgement`).
+- **Source file:** `research/discovery/lemma-inventory-master-no-particles-20260707.json` (11,804 lemma records + `registry_match` + `ib_judgement`).
 - **Applied by:** `scripts/_apply_stamp_char_candidate_on_master_v1_20260708.py` → stamps `verse_span_index.char_candidate=1` + `char_candidate_tag`.
 - **Two seed streams:** word-registry match → tag `Reg N <word>`; IB judgement → tag `IB:<gloss>`.
 - **Instruction linkage:** referenced by `wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md` (partly formalised).

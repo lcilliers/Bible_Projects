@@ -6,7 +6,7 @@
 >
 > **Purpose:** so the next book is read the same way, first-time-right, and **every issue hit during Psalms is expressly prevented, not re-encountered.** Read this before starting the char-arc read of any book.
 >
-> **Evidence base:** `verse-analysis/psalms/wa-psalms-reread-snapshot-v6-FINAL-20260711.md` (final gate state) + the v1–v5 trail; `wa-psalms-reread-discipline-audit-20260710.md`. Success definition + gates: `verse-analysis/_reports/wa-proverbs-reread-success-criteria-20260708.md`. Memory: `project_reread_success_gates_and_scored_audit`.
+> **Evidence base:** `verse-analysis/psalms/_reread/wa-psalms-reread-snapshot-v6-FINAL-20260711.md` (final gate state) + the v1–v5 trail; `wa-psalms-reread-discipline-audit-20260710.md`. Success definition + gates: `verse-analysis/_reports/wa-proverbs-reread-success-criteria-20260708.md`. Memory: `project_reread_success_gates_and_scored_audit`.
 
 ---
 

@@ -97,7 +97,7 @@ if not LIVE:
 
 os.makedirs('outputs/data', exist_ok=True)
 exp = [dict(r) for r in cur.execute(f"SELECT * FROM ib_characteristic WHERE book_scope='{BOOK}'")]
-expfile = f"outputs/data/ib_characteristic_v2_book{BOOK}_pre_v3rebuild_{STAMP}.json"
+expfile = f"verse-analysis/psalms/_model/ib_characteristic_v2_book{BOOK}_pre_v3rebuild_{STAMP}.json"
 json.dump(exp, open(expfile,'w',encoding='utf-8'), indent=2, ensure_ascii=False, default=str)
 print(f"\nExported {len(exp)} v2 records -> {expfile} (reversibility)")
 

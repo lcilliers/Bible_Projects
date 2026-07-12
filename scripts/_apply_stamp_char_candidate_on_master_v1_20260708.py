@@ -11,7 +11,7 @@ Idempotent: re-run resets + re-stamps from the current JSON. Read-only unless --
 import sqlite3, os, sys, json, re, shutil, datetime
 DB=os.path.join('database','bible_research.db'); LIVE='--live' in sys.argv
 NOW=datetime.datetime.now(datetime.UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
-JSONP='outputs/data/lemma-inventory-master-no-particles-20260707.json'
+JSONP='research/discovery/lemma-inventory-master-no-particles-20260707.json'
 
 def base(s):
     m=re.match(r'([HG]\d+)', s or ''); return m.group(1) if m else s
