@@ -1,30 +1,74 @@
 {
  "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 2:1-2",
+    "Psa 4:1-5",
+    "Psa 37:1-12",
+    "Psa 55:1-5",
+    "Psa 58:1-5",
+    "Psa 59:1-5",
+    "Psa 76:7-12",
+    "Psa 78:37-46",
+    "Psa 78:48-59",
+    "Psa 106:22-32",
+    "Psa 112:1-10",
+    "Psa 119:42-63",
+    "Psa 124:3-7",
+    "Psa 138:5-8"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='anger-wrath-vexation');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__anger-wrath-vexation__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__anger-wrath-vexation__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
   "family": "anger-wrath-vexation",
   "book": "Psalms",
   "book_id": 19,
   "generated": "2026-07-12",
-  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
-  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
-  "linkage": {
-   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
-   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
-   "declared_foreign_keys": {
-    "ib_characteristic": [
-     "(none declared)"
-    ],
-    "verse_span_index": [
-     "(none declared)"
-    ],
-    "ve_lexical": [
-     "verse_span_id -> verse_span_index.id",
-     "verse_context_id -> verse_context.id"
-    ],
-    "verse": [
-     "(none declared)"
-    ]
-   }
-  },
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
   "ib_char_items": [
    {
     "char_key": "H0639:anger",
@@ -97,13 +141,136 @@
     "cluster": "Anger"
    }
   ],
-  "stats": {
-   "ib_char_items": 14,
-   "spans_joined": 15,
-   "lexicals": 15,
-   "passages": 14
+  "reading_map": {
+   "H7283:rage": [
+    {
+     "reading_id": "H7283:rage#1",
+     "anchor_ref": "Psa 2:1",
+     "anchor_passage": "Psa 2:1-2",
+     "recurs_at": []
+    }
+   ],
+   "H7264:angry": [
+    {
+     "reading_id": "H7264:angry#1",
+     "anchor_ref": "Psa 4:4",
+     "anchor_passage": "Psa 4:1-5",
+     "recurs_at": []
+    }
+   ],
+   "H2734:fret": [
+    {
+     "reading_id": "H2734:fret#1",
+     "anchor_ref": "Psa 37:1",
+     "anchor_passage": "Psa 37:1-12",
+     "recurs_at": []
+    }
+   ],
+   "H0639:anger": [
+    {
+     "reading_id": "H0639:anger#1",
+     "anchor_ref": "Psa 55:3",
+     "anchor_passage": "Psa 55:1-5",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0639:anger#2",
+     "anchor_ref": "Psa 124:3",
+     "anchor_passage": "Psa 124:3-7",
+     "recurs_at": []
+    }
+   ],
+   "H2534:venom": [
+    {
+     "reading_id": "H2534:venom#1",
+     "anchor_ref": "Psa 58:4",
+     "anchor_passage": "Psa 58:1-5",
+     "recurs_at": []
+    }
+   ],
+   "H5794:fiercemen": [
+    {
+     "reading_id": "H5794:fiercemen#1",
+     "anchor_ref": "Psa 59:3",
+     "anchor_passage": "Psa 59:1-5",
+     "recurs_at": []
+    }
+   ],
+   "H2534:wrath": [
+    {
+     "reading_id": "H2534:wrath#1",
+     "anchor_ref": "Psa 76:10",
+     "anchor_passage": "Psa 76:7-12",
+     "recurs_at": []
+    }
+   ],
+   "H8428:provok": [
+    {
+     "reading_id": "H8428:provok#1",
+     "anchor_ref": "Psa 78:41",
+     "anchor_passage": "Psa 78:37-46",
+     "recurs_at": []
+    }
+   ],
+   "H3707:anger": [
+    {
+     "reading_id": "H3707:anger#1",
+     "anchor_ref": "Psa 78:58",
+     "anchor_passage": "Psa 78:48-59",
+     "recurs_at": []
+    }
+   ],
+   "H3707:provok": [
+    {
+     "reading_id": "H3707:provok#1",
+     "anchor_ref": "Psa 106:29",
+     "anchor_passage": "Psa 106:22-32",
+     "recurs_at": []
+    }
+   ],
+   "H7107:anger": [
+    {
+     "reading_id": "H7107:anger#1",
+     "anchor_ref": "Psa 106:32",
+     "anchor_passage": "Psa 106:22-32",
+     "recurs_at": []
+    }
+   ],
+   "H3707:angry": [
+    {
+     "reading_id": "H3707:angry#1",
+     "anchor_ref": "Psa 112:10",
+     "anchor_passage": "Psa 112:1-10",
+     "recurs_at": []
+    }
+   ],
+   "H0270:seiz": [
+    {
+     "reading_id": "H0270:seiz#1",
+     "anchor_ref": "Psa 119:53",
+     "anchor_passage": "Psa 119:42-63",
+     "recurs_at": []
+    }
+   ],
+   "H0639:wrath": [
+    {
+     "reading_id": "H0639:wrath#1",
+     "anchor_ref": "Psa 138:7",
+     "anchor_passage": "Psa 138:5-8",
+     "recurs_at": []
+    }
+   ]
   },
-  "dimension_legend": {
+  "scope_counts": {
+   "ib_char_items": 14,
+   "passages": 14,
+   "lexicals": 15,
+   "distinct_readings": 15,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 1,
+   "ve_lexical_rows": 165
+  },
+  "dimension_frame": {
    "101": "sense",
    "102": "type",
    "103": "source",
@@ -120,7 +287,8 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  }
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
  },
  "passages": [
   {
@@ -131,64 +299,189 @@
      "ib_char": "rage",
      "char_key": "H7283:rage",
      "reference": "Psa 2:1",
+     "reading_id": "H7283:rage#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7690965,
+      7690966,
+      7690967,
+      7690968,
+      7690969,
+      7690970,
+      7690971,
+      7690972,
+      7690974,
+      7690975,
+      7690973
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "nations rage"
+       "value": "nations rage",
+       "ve_lexical_id": 7690965,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "affect"
+       "value": "affect",
+       "ve_lexical_id": 7690966,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7690967,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the nations",
-       "resolution": "inferred"
+       "ve_lexical_id": 7690968,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the peoples seethe in tumultuous uproar against the LORD and his anointed - collective fury"
+       "value": "the peoples seethe in tumultuous uproar against the LORD and his anointed - collective fury",
+       "ve_lexical_id": 7690969,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "tumult",
-       "resolution": "inferred"
+       "ve_lexical_id": 7690970,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7690971,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "rage",
-       "resolution": "inferred"
+       "ve_lexical_id": 7690972,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'Why do the nations RAGE?' - the interior of the massed peoples is a churning uproar; emotion, not yet plan, the raw heat of revolt."
+       "value": "v1: 'Why do the nations RAGE?' - the interior of the massed peoples is a churning uproar; emotion, not yet plan, the raw heat of revolt.",
+       "ve_lexical_id": 7690974,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7690975,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7690973,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -202,64 +495,189 @@
      "ib_char": "angry",
      "char_key": "H7264:angry",
      "reference": "Psa 4:4",
+     "reading_id": "H7264:angry#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7691329,
+      7691330,
+      7691331,
+      7691332,
+      7691333,
+      7691334,
+      7691335,
+      7691336,
+      7691338,
+      7691339,
+      7691337
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be angry and do not sin"
+       "value": "be angry and do not sin",
+       "ve_lexical_id": 7691329,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7691330,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691331,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the hearer",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691332,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279448",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "anger is permitted but fenced - to feel it without letting it spill into sin, the passion disciplined"
+       "value": "anger is permitted but fenced - to feel it without letting it spill into sin, the passion disciplined",
+       "ve_lexical_id": 7691333,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "disciplined-anger",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691334,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279448",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691335,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "angry-not-sin",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691336,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279448",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v4: 'Be ANGRY, and do not SIN' - the operation is the governing of a strong emotion: not its suppression but its restraint short of wrongdoing."
+       "value": "v4: 'Be ANGRY, and do not SIN' - the operation is the governing of a strong emotion: not its suppression but its restraint short of wrongdoing.",
+       "ve_lexical_id": 7691338,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7691339,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7691337,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -273,64 +691,189 @@
      "ib_char": "Fret",
      "char_key": "H2734:fret",
      "reference": "Psa 37:1",
+     "reading_id": "H2734:fret#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7698959,
+      7698960,
+      7698961,
+      7698962,
+      7698963,
+      7698964,
+      7698965,
+      7698966,
+      7698968,
+      7698969,
+      7698967
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "fret not, be not envious of evildoers"
+       "value": "fret not, be not envious of evildoers",
+       "ve_lexical_id": 7698959,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7698960,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7698961,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the hearer",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698962,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277585",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self is told not to fret over evildoers or be envious of wrongdoers - refusing the corrosive envy of the wicked's prosperity"
+       "value": "the self is told not to fret over evildoers or be envious of wrongdoers - refusing the corrosive envy of the wicked's prosperity",
+       "ve_lexical_id": 7698963,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "refusing-envy",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698964,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277585",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7698965,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "fret-not",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698966,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277585",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'FRET not yourself because of evildoers; be not ENVIOUS of wrongdoers' - the operation is the disciplining of a specific inner unrest: the interior refuses to burn with envy at the wicked's success."
+       "value": "v1: 'FRET not yourself because of evildoers; be not ENVIOUS of wrongdoers' - the operation is the disciplining of a specific inner unrest: the interior refuses to burn with envy at the wicked's success.",
+       "ve_lexical_id": 7698968,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7698969,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7698967,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -344,64 +887,189 @@
      "ib_char": "anger",
      "char_key": "H0639:anger",
      "reference": "Psa 55:3",
+     "reading_id": "H0639:anger#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653522,
+      7653523,
+      7653524,
+      7653525,
+      7653526,
+      7653527,
+      7653528,
+      7653529,
+      7653531,
+      7653532,
+      7653530
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "anger (aph - in anger they bear a grudge)"
+       "value": "anger (aph - in anger they bear a grudge)",
+       "ve_lexical_id": 7653522,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7653523,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653524,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653525,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280178",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653526,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653527,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280178",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653528,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the grudge they cherish",
-       "resolution": "span"
+       "ve_lexical_id": 7653529,
+       "item_type": "pair",
+       "from_span": "280178",
+       "to_span": "280179",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'and in ANGER (aph) they bear a grudge against me' — the enemies' hot hostility; aph (nose/anger) the burning resentment out of which they cherish enmity — anger settled into grudge"
+       "value": "'and in ANGER (aph) they bear a grudge against me' — the enemies' hot hostility; aph (nose/anger) the burning resentment out of which they cherish enmity — anger settled into grudge",
+       "ve_lexical_id": 7653531,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7653532,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653530,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -415,64 +1083,189 @@
      "ib_char": "venom",
      "char_key": "H2534:venom",
      "reference": "Psa 58:4",
+     "reading_id": "H2534:venom#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7654905,
+      7654906,
+      7654907,
+      7654908,
+      7654909,
+      7654910,
+      7654911,
+      7654912,
+      7654914,
+      7654915,
+      7654913
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "venom / poison-wrath (chemah - they have venom)"
+       "value": "venom / poison-wrath (chemah - they have venom)",
+       "ve_lexical_id": 7654905,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7654906,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7654907,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the wicked",
-       "resolution": "inferred"
+       "ve_lexical_id": 7654908,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7654909,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7654910,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "like the venom of a serpent, a deaf adder",
-       "resolution": "inferred"
+       "ve_lexical_id": 7654911,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the willful refusal to hear (v5)",
-       "resolution": "span"
+       "ve_lexical_id": 7654912,
+       "item_type": "pair",
+       "from_span": "280492",
+       "to_span": "280502",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'They have VENOM (chemah) like the venom of a serpent' — malice as deadly poison; chemah (heat/venom/wrath) the wicked's inner toxicity, likened to a serpent's — and worse, a deaf adder that will not be charmed (v5), venom joined to incorrigibility"
+       "value": "'They have VENOM (chemah) like the venom of a serpent' — malice as deadly poison; chemah (heat/venom/wrath) the wicked's inner toxicity, likened to a serpent's — and worse, a deaf adder that will not be charmed (v5), venom joined to incorrigibility",
+       "ve_lexical_id": 7654914,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7654915,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7654913,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -486,63 +1279,189 @@
      "ib_char": "fierce men",
      "char_key": "H5794:fiercemen",
      "reference": "Psa 59:3",
+     "reading_id": "H5794:fiercemen#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7655142,
+      7655143,
+      7655144,
+      7655145,
+      7655146,
+      7655147,
+      7655148,
+      7655149,
+      7655151,
+      7655152,
+      7655150
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "fierce / strong men (az - fierce men stir up strife)"
+       "value": "fierce / strong men (az - fierce men stir up strife)",
+       "ve_lexical_id": 7655142,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7655143,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7655144,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the fierce enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7655145,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280604",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7655146,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7655147,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7655148,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with their stirring up strife",
-       "resolution": "span"
+       "ve_lexical_id": 7655149,
+       "item_type": "pair",
+       "from_span": "280604",
+       "to_span": "280605",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'FIERCE men (az) stir up strife against me' — the mighty, ruthless foes; az (strong/fierce) the powerful enemies who band against the psalmist, and that though he has done no wrong (v3-4)"
+       "value": "'FIERCE men (az) stir up strife against me' — the mighty, ruthless foes; az (strong/fierce) the powerful enemies who band against the psalmist, and that though he has done no wrong (v3-4)",
+       "ve_lexical_id": 7655151,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7655152,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:person"
+       "value": "external:person",
+       "ve_lexical_id": 7655150,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -556,65 +1475,189 @@
      "ib_char": "wrath",
      "char_key": "H2534:wrath",
      "reference": "Psa 76:10",
+     "reading_id": "H2534:wrath#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7663210,
+      7663211,
+      7663212,
+      7663213,
+      7663214,
+      7663215,
+      7663216,
+      7663217,
+      7663219,
+      7663220,
+      7663218
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "wrath / fury (chemah - the wrath of man)"
+       "value": "wrath / fury (chemah - the wrath of man)",
+       "ve_lexical_id": 7663210,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7663211,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7663212,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "man / humanity",
-       "resolution": "inferred"
+       "ve_lexical_id": 7663213,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282784",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "turned to praise God",
-       "resolution": "span"
+       "ve_lexical_id": 7663214,
+       "item_type": "event",
+       "from_span": "282784",
+       "to_span": "282786",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7663215,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "even hostile rage made to serve God's glory",
-       "resolution": "inferred"
+       "ve_lexical_id": 7663216,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282784",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the praise it is made to render",
-       "resolution": "span"
+       "ve_lexical_id": 7663217,
+       "item_type": "pair",
+       "from_span": "282784",
+       "to_span": "282786",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'Surely the WRATH (chemah) of man shall praise you' - human fury, even in its rebellion, God turns to his own honour; chemah here the hot anger of men that, overruled, becomes an instrument of praise - the residue God restrains (the remnant of wrath, v10b)"
+       "value": "'Surely the WRATH (chemah) of man shall praise you' - human fury, even in its rebellion, God turns to his own honour; chemah here the hot anger of men that, overruled, becomes an instrument of praise - the residue God restrains (the remnant of wrath, v10b)",
+       "ve_lexical_id": 7663219,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7663220,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7663218,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -628,64 +1671,189 @@
      "ib_char": "provoked",
      "char_key": "H8428:provok",
      "reference": "Psa 78:41",
+     "reading_id": "H8428:provok#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7664318,
+      7664319,
+      7664320,
+      7664321,
+      7664322,
+      7664323,
+      7664324,
+      7664325,
+      7664327,
+      7664328,
+      7664326
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "provoke / pain (tavah)"
+       "value": "provoke / pain (tavah)",
+       "ve_lexical_id": 7664318,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7664319,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7664320,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "they",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664321,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "provoke / wound"
+       "value": "provoke / wound",
+       "ve_lexical_id": 7664322,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the Holy One of Israel",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664323,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7664324,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the testing",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664325,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'and PROVOKED (tavah) the Holy One of Israel' - the wounding of the Holy One by their limits set on him."
+       "value": "'and PROVOKED (tavah) the Holy One of Israel' - the wounding of the Holy One by their limits set on him.",
+       "ve_lexical_id": 7664327,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7664328,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7664326,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -699,64 +1867,189 @@
      "ib_char": "anger",
      "char_key": "H3707:anger",
      "reference": "Psa 78:58",
+     "reading_id": "H3707:anger#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7664417,
+      7664418,
+      7664419,
+      7664420,
+      7664421,
+      7664422,
+      7664423,
+      7664424,
+      7664426,
+      7664427,
+      7664425
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "provoke to anger (kaas)"
+       "value": "provoke to anger (kaas)",
+       "ve_lexical_id": 7664417,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7664418,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7664419,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "they",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664420,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283337",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "provoke to anger"
+       "value": "provoke to anger",
+       "ve_lexical_id": 7664421,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664422,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283337",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7664423,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with moving him to jealousy by idols",
-       "resolution": "inferred"
+       "ve_lexical_id": 7664424,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283337",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'For they provoked him to ANGER (kaas) with their high places' - the deliberate rousing of God's anger by their idolatry."
+       "value": "'For they provoked him to ANGER (kaas) with their high places' - the deliberate rousing of God's anger by their idolatry.",
+       "ve_lexical_id": 7664426,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7664427,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7664425,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -770,64 +2063,189 @@
      "ib_char": "provoked",
      "char_key": "H3707:provok",
      "reference": "Psa 106:29",
+     "reading_id": "H3707:provok#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7675031,
+      7675032,
+      7675033,
+      7675034,
+      7675035,
+      7675036,
+      7675037,
+      7675038,
+      7675040,
+      7675041,
+      7675039
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "provoke (kaas)"
+       "value": "provoke (kaas)",
+       "ve_lexical_id": 7675031,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7675032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675033,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the fathers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675034,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269694",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "provoke to anger"
+       "value": "provoke to anger",
+       "ve_lexical_id": 7675035,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the LORD by their deeds",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675036,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269694",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675037,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675038,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269694",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v29: 'they PROVOKED (kaas) the LORD to anger with their deeds' - the rousing of God's wrath, met by plague."
+       "value": "v29: 'they PROVOKED (kaas) the LORD to anger with their deeds' - the rousing of God's wrath, met by plague.",
+       "ve_lexical_id": 7675040,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7675041,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the plague and Phinehas' intervention"
+       "value": "paired with the plague and Phinehas' intervention",
+       "ve_lexical_id": 7675039,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -835,64 +2253,189 @@
      "ib_char": "angered",
      "char_key": "H7107:anger",
      "reference": "Psa 106:32",
+     "reading_id": "H7107:anger#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7675064,
+      7675065,
+      7675066,
+      7675067,
+      7675068,
+      7675069,
+      7675070,
+      7675071,
+      7675073,
+      7675074,
+      7675072
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "anger (qatsaph)"
+       "value": "anger (qatsaph)",
+       "ve_lexical_id": 7675064,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7675065,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675066,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the fathers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675067,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269716",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "anger / provoke"
+       "value": "anger / provoke",
+       "ve_lexical_id": 7675068,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God at Meribah",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675069,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269716",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675070,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675071,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269716",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v32: 'They ANGERED (qatsaph) him at the waters of Meribah' - the provoking at Meribah, whose fallout reached even Moses."
+       "value": "v32: 'They ANGERED (qatsaph) him at the waters of Meribah' - the provoking at Meribah, whose fallout reached even Moses.",
+       "ve_lexical_id": 7675073,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7675074,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with Moses' embittered spirit"
+       "value": "paired with Moses' embittered spirit",
+       "ve_lexical_id": 7675072,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -906,64 +2449,189 @@
      "ib_char": "angry",
      "char_key": "H3707:angry",
      "reference": "Psa 112:10",
+     "reading_id": "H3707:angry#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7678551,
+      7678552,
+      7678553,
+      7678554,
+      7678555,
+      7678556,
+      7678557,
+      7678558,
+      7678560,
+      7678561,
+      7678559
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "angry (kaas)"
+       "value": "angry (kaas)",
+       "ve_lexical_id": 7678551,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7678552,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7678553,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the wicked man",
-       "resolution": "inferred"
+       "ve_lexical_id": 7678554,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270654",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be angry"
+       "value": "be angry",
+       "ve_lexical_id": 7678555,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "at the righteous",
-       "resolution": "inferred"
+       "ve_lexical_id": 7678556,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270654",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7678557,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7678558,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270654",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v10: 'sees it and is ANGRY (kaas)' - the fury of the wicked at the God-fearer's good, envy turned to rage."
+       "value": "v10: 'sees it and is ANGRY (kaas)' - the fury of the wicked at the God-fearer's good, envy turned to rage.",
+       "ve_lexical_id": 7678560,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7678561,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with gnashing and melting"
+       "value": "paired with gnashing and melting",
+       "ve_lexical_id": 7678559,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -977,64 +2645,189 @@
      "ib_char": "seizes",
      "char_key": "H0270:seiz",
      "reference": "Psa 119:53",
+     "reading_id": "H0270:seiz#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7681436,
+      7681437,
+      7681438,
+      7681439,
+      7681440,
+      7681441,
+      7681442,
+      7681443,
+      7681445,
+      7681446,
+      7681444
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "seize (achaz)"
+       "value": "seize (achaz)",
+       "ve_lexical_id": 7681436,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7681437,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681438,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681439,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271913",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be seized with indignation"
+       "value": "be seized with indignation",
+       "ve_lexical_id": 7681440,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "none",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681441,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271913",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681442,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired within its char-arc across the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681443,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271913",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v53: 'Hot indignation SEIZES me because of the wicked' - the zeal-indignation that grips him at the wicked's lawlessness."
+       "value": "v53: 'Hot indignation SEIZES me because of the wicked' - the zeal-indignation that grips him at the wicked's lawlessness.",
+       "ve_lexical_id": 7681445,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7681446,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7681444,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1048,64 +2841,189 @@
      "ib_char": "anger",
      "char_key": "H0639:anger",
      "reference": "Psa 124:3",
+     "reading_id": "H0639:anger#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7684816,
+      7684817,
+      7684818,
+      7684819,
+      7684820,
+      7684821,
+      7684822,
+      7684823,
+      7684825,
+      7684826,
+      7684824
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "anger (aph)"
+       "value": "anger (aph)",
+       "ve_lexical_id": 7684816,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7684817,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684818,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684819,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272488",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "have anger ignite"
+       "value": "have anger ignite",
+       "ve_lexical_id": 7684820,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to devour the people",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684821,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272488",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684822,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684823,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272488",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v3: 'when their ANGER (aph) was kindled against us' - the operation of hostile fury igniting, wrath flaring to the point of swallowing its victim alive."
+       "value": "v3: 'when their ANGER (aph) was kindled against us' - the operation of hostile fury igniting, wrath flaring to the point of swallowing its victim alive.",
+       "ve_lexical_id": 7684825,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7684826,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the swallowing alive"
+       "value": "paired with the swallowing alive",
+       "ve_lexical_id": 7684824,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1119,64 +3037,189 @@
      "ib_char": "wrath",
      "char_key": "H0639:wrath",
      "reference": "Psa 138:7",
+     "reading_id": "H0639:wrath#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7687490,
+      7687491,
+      7687492,
+      7687493,
+      7687494,
+      7687495,
+      7687496,
+      7687497,
+      7687499,
+      7687500,
+      7687498
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "wrath (aph)"
+       "value": "wrath (aph)",
+       "ve_lexical_id": 7687490,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7687491,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7687492,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687493,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273364",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be wrathful"
+       "value": "be wrathful",
+       "ve_lexical_id": 7687494,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "against the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687495,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273364",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7687496,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687497,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273364",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'against the WRATH (aph) of my enemies' - the foes' fury, over which God's hand stretches to deliver."
+       "value": "v7: 'against the WRATH (aph) of my enemies' - the foes' fury, over which God's hand stretches to deliver.",
+       "ve_lexical_id": 7687499,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7687500,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with God's delivering hand"
+       "value": "paired with God's delivering hand",
+       "ve_lexical_id": 7687498,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }

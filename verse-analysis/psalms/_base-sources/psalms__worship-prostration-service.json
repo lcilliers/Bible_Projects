@@ -1,30 +1,80 @@
 {
  "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 2:5-12",
+    "Psa 22:22-31",
+    "Psa 26:1-12",
+    "Psa 38:1-20",
+    "Psa 45:1-15",
+    "Psa 66:1-9",
+    "Psa 81:4-9",
+    "Psa 86:9-17",
+    "Psa 95:4-11",
+    "Psa 96:6-13",
+    "Psa 97:5-12",
+    "Psa 99:1-7",
+    "Psa 100:1-2",
+    "Psa 102:18-23",
+    "Psa 106:18-20",
+    "Psa 106:38-48",
+    "Psa 107:37-43",
+    "Psa 108:1-8",
+    "Psa 132:4-14",
+    "Psa 138:1-3"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='worship-prostration-service');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__worship-prostration-service__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__worship-prostration-service__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
   "family": "worship-prostration-service",
   "book": "Psalms",
   "book_id": 19,
   "generated": "2026-07-12",
-  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
-  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
-  "linkage": {
-   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
-   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
-   "declared_foreign_keys": {
-    "ib_characteristic": [
-     "(none declared)"
-    ],
-    "verse_span_index": [
-     "(none declared)"
-    ],
-    "ve_lexical": [
-     "verse_span_id -> verse_span_index.id",
-     "verse_context_id -> verse_context.id"
-    ],
-    "verse": [
-     "(none declared)"
-    ]
-   }
-  },
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
   "ib_char_items": [
    {
     "char_key": "H7812:worship",
@@ -92,13 +142,194 @@
     "cluster": "Service"
    }
   ],
-  "stats": {
-   "ib_char_items": 13,
-   "spans_joined": 25,
-   "lexicals": 25,
-   "passages": 20
+  "reading_map": {
+   "H5647:serv": [
+    {
+     "reading_id": "H5647:serv#1",
+     "anchor_ref": "Psa 2:11",
+     "anchor_passage": "Psa 2:5-12",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5647:serv#2",
+     "anchor_ref": "Psa 22:30",
+     "anchor_passage": "Psa 22:22-31",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5647:serv#3",
+     "anchor_ref": "Psa 100:2",
+     "anchor_passage": "Psa 100:1-2",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5647:serv#4",
+     "anchor_ref": "Psa 106:36",
+     "anchor_passage": "Psa 106:38-48",
+     "recurs_at": []
+    }
+   ],
+   "H5401:kis": [
+    {
+     "reading_id": "H5401:kis#1",
+     "anchor_ref": "Psa 2:12",
+     "anchor_passage": "Psa 2:5-12",
+     "recurs_at": []
+    }
+   ],
+   "H7364:wash": [
+    {
+     "reading_id": "H7364:wash#1",
+     "anchor_ref": "Psa 26:6",
+     "anchor_passage": "Psa 26:1-12",
+     "recurs_at": []
+    }
+   ],
+   "H5753:bow": [
+    {
+     "reading_id": "H5753:bow#1",
+     "anchor_ref": "Psa 38:6",
+     "anchor_passage": "Psa 38:1-20",
+     "recurs_at": []
+    }
+   ],
+   "H7812:bow": [
+    {
+     "reading_id": "H7812:bow#1",
+     "anchor_ref": "Psa 45:11",
+     "anchor_passage": "Psa 45:1-15",
+     "recurs_at": []
+    }
+   ],
+   "H7812:worship": [
+    {
+     "reading_id": "H7812:worship#1",
+     "anchor_ref": "Psa 66:4",
+     "anchor_passage": "Psa 66:1-9",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#2",
+     "anchor_ref": "Psa 86:9",
+     "anchor_passage": "Psa 86:9-17",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#3",
+     "anchor_ref": "Psa 95:6",
+     "anchor_passage": "Psa 95:4-11",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#4",
+     "anchor_ref": "Psa 96:9",
+     "anchor_passage": "Psa 96:6-13",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#5",
+     "anchor_ref": "Psa 97:7",
+     "anchor_passage": "Psa 97:5-12",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#6",
+     "anchor_ref": "Psa 99:5",
+     "anchor_passage": "Psa 99:1-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#7",
+     "anchor_ref": "Psa 99:9",
+     "anchor_passage": "Psa 99:1-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#8",
+     "anchor_ref": "Psa 106:19",
+     "anchor_passage": "Psa 106:18-20",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:worship#9",
+     "anchor_ref": "Psa 132:7",
+     "anchor_passage": "Psa 132:4-14",
+     "recurs_at": []
+    }
+   ],
+   "H7812:bowdown": [
+    {
+     "reading_id": "H7812:bowdown#1",
+     "anchor_ref": "Psa 81:9",
+     "anchor_passage": "Psa 81:4-9",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7812:bowdown#2",
+     "anchor_ref": "Psa 138:2",
+     "anchor_passage": "Psa 138:1-3",
+     "recurs_at": []
+    }
+   ],
+   "H1288:kneel": [
+    {
+     "reading_id": "H1288:kneel#1",
+     "anchor_ref": "Psa 95:6",
+     "anchor_passage": "Psa 95:4-11",
+     "recurs_at": []
+    }
+   ],
+   "H3766:bowdown": [
+    {
+     "reading_id": "H3766:bowdown#1",
+     "anchor_ref": "Psa 95:6",
+     "anchor_passage": "Psa 95:4-11",
+     "recurs_at": []
+    }
+   ],
+   "H5647:worshiper": [
+    {
+     "reading_id": "H5647:worshiper#1",
+     "anchor_ref": "Psa 97:7",
+     "anchor_passage": "Psa 97:5-12",
+     "recurs_at": []
+    }
+   ],
+   "H5647:worship": [
+    {
+     "reading_id": "H5647:worship#1",
+     "anchor_ref": "Psa 102:22",
+     "anchor_passage": "Psa 102:18-23",
+     "recurs_at": []
+    }
+   ],
+   "H7817:broughtlow": [
+    {
+     "reading_id": "H7817:broughtlow#1",
+     "anchor_ref": "Psa 107:39",
+     "anchor_passage": "Psa 107:37-43",
+     "recurs_at": []
+    }
+   ],
+   "H3519:being": [
+    {
+     "reading_id": "H3519:being#1",
+     "anchor_ref": "Psa 108:1",
+     "anchor_passage": "Psa 108:1-8",
+     "recurs_at": []
+    }
+   ]
   },
-  "dimension_legend": {
+  "scope_counts": {
+   "ib_char_items": 13,
+   "passages": 20,
+   "lexicals": 25,
+   "distinct_readings": 25,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 3,
+   "ve_lexical_rows": 276
+  },
+  "dimension_frame": {
    "101": "sense",
    "102": "type",
    "103": "source",
@@ -115,7 +346,8 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  }
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
  },
  "passages": [
   {
@@ -126,64 +358,189 @@
      "ib_char": "Serve",
      "char_key": "H5647:serv",
      "reference": "Psa 2:11",
+     "reading_id": "H5647:serv#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7691020,
+      7691021,
+      7691022,
+      7691023,
+      7691024,
+      7691025,
+      7691026,
+      7691027,
+      7691029,
+      7691030,
+      7691028
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "serve the LORD with fear"
+       "value": "serve the LORD with fear",
+       "ve_lexical_id": 7691020,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7691021,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691022,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the kings",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691023,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the prudent response: to serve the LORD in fear - reverent submission replacing revolt"
+       "value": "the prudent response: to serve the LORD in fear - reverent submission replacing revolt",
+       "ve_lexical_id": 7691024,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "reverent-service",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691025,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691026,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "serve-in-fear",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691027,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276502",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v11: 'SERVE the LORD with FEAR' - the interior reorients from casting-off to serving; fear here is the fitting posture of the once-rebellious before the king."
+       "value": "v11: 'SERVE the LORD with FEAR' - the interior reorients from casting-off to serving; fear here is the fitting posture of the once-rebellious before the king.",
+       "ve_lexical_id": 7691029,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7691030,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7691028,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -191,64 +548,189 @@
      "ib_char": "Kiss",
      "char_key": "H5401:kis",
      "reference": "Psa 2:12",
+     "reading_id": "H5401:kis#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7691042,
+      7691043,
+      7691044,
+      7691045,
+      7691046,
+      7691047,
+      7691048,
+      7691049,
+      7691051,
+      7691052,
+      7691050
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "kiss the Son"
+       "value": "kiss the Son",
+       "ve_lexical_id": 7691042,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7691043,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691044,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the kings",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691045,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the act of homage: to kiss the Son, submission embodied, lest wrath be kindled"
+       "value": "the act of homage: to kiss the Son, submission embodied, lest wrath be kindled",
+       "ve_lexical_id": 7691046,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "homage",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691047,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7691048,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "kiss-the-son",
-       "resolution": "inferred"
+       "ve_lexical_id": 7691049,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276507",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v12: 'KISS the Son, lest he be angry' - the interior submission takes outward form; the once-conspiring will now does homage."
+       "value": "v12: 'KISS the Son, lest he be angry' - the interior submission takes outward form; the once-conspiring will now does homage.",
+       "ve_lexical_id": 7691051,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7691052,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7691050,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -262,64 +744,189 @@
      "ib_char": "Serve",
      "char_key": "H5647:serv",
      "reference": "Psa 22:30",
+     "reading_id": "H5647:serv#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7695188,
+      7695189,
+      7695190,
+      7695191,
+      7695192,
+      7695193,
+      7695194,
+      7695195,
+      7695197,
+      7695198,
+      7695196
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "posterity shall serve and proclaim"
+       "value": "posterity shall serve and proclaim",
+       "ve_lexical_id": 7695188,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7695189,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695190,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "posterity",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695191,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "posterity shall serve God; it shall be told of the Lord to a coming generation, who proclaim his righteousness - the praise carried forward in time"
+       "value": "posterity shall serve God; it shall be told of the Lord to a coming generation, who proclaim his righteousness - the praise carried forward in time",
+       "ve_lexical_id": 7695192,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "generational-service",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695193,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695194,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "posterity-serves",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695195,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275757",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v30-31: 'Posterity shall SERVE him... they shall PROCLAIM his righteousness to a people yet unborn' - the operation extends the vindication into the future: unborn generations will serve and tell."
+       "value": "v30-31: 'Posterity shall SERVE him... they shall PROCLAIM his righteousness to a people yet unborn' - the operation extends the vindication into the future: unborn generations will serve and tell.",
+       "ve_lexical_id": 7695197,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7695198,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7695196,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -333,64 +940,189 @@
      "ib_char": "wash",
      "char_key": "H7364:wash",
      "reference": "Psa 26:6",
+     "reading_id": "H7364:wash#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7696165,
+      7696166,
+      7696167,
+      7696168,
+      7696169,
+      7696170,
+      7696171,
+      7696172,
+      7696174,
+      7696175,
+      7696173
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "wash my hands in innocence"
+       "value": "wash my hands in innocence",
+       "ve_lexical_id": 7696165,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7696166,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7696167,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7696168,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self washes its hands in innocence and goes around the altar - approaching worship with a cleansed conscience"
+       "value": "the self washes its hands in innocence and goes around the altar - approaching worship with a cleansed conscience",
+       "ve_lexical_id": 7696169,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "ritual-purity",
-       "resolution": "inferred"
+       "ve_lexical_id": 7696170,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7696171,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "wash-in-innocence",
-       "resolution": "inferred"
+       "ve_lexical_id": 7696172,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276164",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'I WASH my hands in INNOCENCE and go around your altar, O LORD' - the operation is a deliberate purification before drawing near; clean conscience as the ticket to the altar."
+       "value": "v6: 'I WASH my hands in INNOCENCE and go around your altar, O LORD' - the operation is a deliberate purification before drawing near; clean conscience as the ticket to the altar.",
+       "ve_lexical_id": 7696174,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7696175,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7696173,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -404,64 +1136,189 @@
      "ib_char": "bowed",
      "char_key": "H5753:bow",
      "reference": "Psa 38:6",
+     "reading_id": "H5753:bow#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7699571,
+      7699572,
+      7699573,
+      7699574,
+      7699575,
+      7699576,
+      7699577,
+      7699578,
+      7699580,
+      7699581,
+      7699579
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "utterly bowed down, mourning all day"
+       "value": "utterly bowed down, mourning all day",
+       "ve_lexical_id": 7699571,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7699572,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7699573,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7699574,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self is utterly bowed down and prostrate; all the day it goes about mourning - a whole day bent under grief"
+       "value": "the self is utterly bowed down and prostrate; all the day it goes about mourning - a whole day bent under grief",
+       "ve_lexical_id": 7699575,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "prostration",
-       "resolution": "inferred"
+       "ve_lexical_id": 7699576,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7699577,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "bowed-and-mourning",
-       "resolution": "inferred"
+       "ve_lexical_id": 7699578,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277984",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'I am utterly BOWED DOWN and prostrate; all the day I go about MOURNING' - the operation is the body folded by grief; the interior's mourning bends the whole frame."
+       "value": "v6: 'I am utterly BOWED DOWN and prostrate; all the day I go about MOURNING' - the operation is the body folded by grief; the interior's mourning bends the whole frame.",
+       "ve_lexical_id": 7699580,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7699581,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7699579,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -475,63 +1332,189 @@
      "ib_char": "bow",
      "char_key": "H7812:bow",
      "reference": "Psa 45:11",
+     "reading_id": "H7812:bow#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7650392,
+      7650393,
+      7650394,
+      7650395,
+      7650396,
+      7650397,
+      7650398,
+      7650399,
+      7650401,
+      7650402,
+      7650400
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bow down / do homage (shachah)"
+       "value": "bow down / do homage (shachah)",
+       "ve_lexical_id": 7650392,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7650393,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650394,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the bride",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650395,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278898",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "bow / do homage"
+       "value": "bow / do homage",
+       "ve_lexical_id": 7650396,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the king (her lord)",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650397,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278898",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650398,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650399,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'Since he is your lord, BOW (shachah) to him' — the bride's homage to the king; shachah (recurs Ps29:2 of worship) here the reverent submission owed to her lord, the posture of the queen toward the king"
+       "value": "'Since he is your lord, BOW (shachah) to him' — the bride's homage to the king; shachah (recurs Ps29:2 of worship) here the reverent submission owed to her lord, the posture of the queen toward the king",
+       "ve_lexical_id": 7650401,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7650402,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:person"
+       "value": "external:person",
+       "ve_lexical_id": 7650400,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -545,70 +1528,198 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 66:4",
+     "reading_id": "H7812:worship#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7658236,
+      7658237,
+      7658244,
+      7658238,
+      7658239,
+      7658240,
+      7658241,
+      7658242,
+      7658243,
+      7658246,
+      7658247,
+      7658245
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship / bow down (shachah - all the earth worships you)"
+       "value": "worship / bow down (shachah - all the earth worships you)",
+       "ve_lexical_id": 7658236,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7658237,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 103,
        "label": "source",
        "value": "before God's awesome deeds (v3)",
-       "resolution": "span"
+       "ve_lexical_id": 7658244,
+       "item_type": "pair",
+       "from_span": "281344",
+       "to_span": "281335",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7658238,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "all the earth",
-       "resolution": "inferred"
+       "ve_lexical_id": 7658239,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281344",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship / bow down"
+       "value": "worship / bow down",
+       "ve_lexical_id": 7658240,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7658241,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281344",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7658242,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with singing praises to his name",
-       "resolution": "span"
+       "ve_lexical_id": 7658243,
+       "item_type": "pair",
+       "from_span": "281344",
+       "to_span": "281345",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'All the earth WORSHIPS (shachah) you and sings praises to you' — universal homage before God's awesome deeds (the qualifier); shachah here the bowing of all creation to God - worship as the whole earth's fitting posture"
+       "value": "'All the earth WORSHIPS (shachah) you and sings praises to you' — universal homage before God's awesome deeds (the qualifier); shachah here the bowing of all creation to God - worship as the whole earth's fitting posture",
+       "ve_lexical_id": 7658246,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7658247,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7658245,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -622,64 +1733,189 @@
      "ib_char": "bow down",
      "char_key": "H7812:bowdown",
      "reference": "Psa 81:9",
+     "reading_id": "H7812:bowdown#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7665736,
+      7665737,
+      7665738,
+      7665739,
+      7665740,
+      7665741,
+      7665742,
+      7665743,
+      7665745,
+      7665746,
+      7665744
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bow down (shachah, forbidden)"
+       "value": "bow down (shachah, forbidden)",
+       "ve_lexical_id": 7665736,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7665737,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7665738,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "you (Israel)",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665739,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "bow down"
+       "value": "bow down",
+       "ve_lexical_id": 7665740,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to a foreign god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665741,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7665742,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the ban on the strange god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665743,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283879",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v9: 'you shall not BOW DOWN (shachah) to a foreign god' - the worship forbidden, exclusive allegiance the first demand."
+       "value": "v9: 'you shall not BOW DOWN (shachah) to a foreign god' - the worship forbidden, exclusive allegiance the first demand.",
+       "ve_lexical_id": 7665745,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7665746,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7665744,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -693,64 +1929,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 86:9",
+     "reading_id": "H7812:worship#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7667181,
+      7667182,
+      7667183,
+      7667184,
+      7667185,
+      7667186,
+      7667187,
+      7667188,
+      7667190,
+      7667191,
+      7667189
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7667181,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7667182,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667183,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "all the nations",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667184,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7667185,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667186,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667187,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with glorifying his name",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667188,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284378",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v9: 'All the nations... shall come and WORSHIP (shachah) before you' - the homage of the peoples, worship as the destiny of the nations."
+       "value": "v9: 'All the nations... shall come and WORSHIP (shachah) before you' - the homage of the peoples, worship as the destiny of the nations.",
+       "ve_lexical_id": 7667190,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7667191,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7667189,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -764,64 +2125,189 @@
      "ib_char": "kneel",
      "char_key": "H1288:kneel",
      "reference": "Psa 95:6",
+     "reading_id": "H1288:kneel#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7670587,
+      7670588,
+      7670589,
+      7670590,
+      7670591,
+      7670592,
+      7670593,
+      7670594,
+      7670596,
+      7670597,
+      7670595
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "kneel (barak)"
+       "value": "kneel (barak)",
+       "ve_lexical_id": 7670587,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7670588,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670589,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670590,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "kneel"
+       "value": "kneel",
+       "ve_lexical_id": 7670591,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before the LORD our Maker",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670592,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670593,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670594,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285492",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'let us KNEEL (barak) before the LORD our Maker!' - the kneeling of worship, creatures before their creator."
+       "value": "v6: 'let us KNEEL (barak) before the LORD our Maker!' - the kneeling of worship, creatures before their creator.",
+       "ve_lexical_id": 7670596,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7670597,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with bowing down"
+       "value": "paired with bowing down",
+       "ve_lexical_id": 7670595,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -829,64 +2315,189 @@
      "ib_char": "bow down",
      "char_key": "H3766:bowdown",
      "reference": "Psa 95:6",
+     "reading_id": "H3766:bowdown#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7670576,
+      7670577,
+      7670578,
+      7670579,
+      7670580,
+      7670581,
+      7670582,
+      7670583,
+      7670585,
+      7670586,
+      7670584
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bow down (kara)"
+       "value": "bow down (kara)",
+       "ve_lexical_id": 7670576,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7670577,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670578,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670579,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "bow down"
+       "value": "bow down",
+       "ve_lexical_id": 7670580,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670581,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670582,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670583,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285491",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'let us WORSHIP and BOW DOWN (kara)' - the bending of the body in reverence, humility before the Maker."
+       "value": "v6: 'let us WORSHIP and BOW DOWN (kara)' - the bending of the body in reverence, humility before the Maker.",
+       "ve_lexical_id": 7670585,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7670586,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with worshipping"
+       "value": "paired with worshipping",
+       "ve_lexical_id": 7670584,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -894,64 +2505,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 95:6",
+     "reading_id": "H7812:worship#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7670565,
+      7670566,
+      7670567,
+      7670568,
+      7670569,
+      7670570,
+      7670571,
+      7670572,
+      7670574,
+      7670575,
+      7670573
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7670565,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7670566,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670567,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670568,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship / bow"
+       "value": "worship / bow",
+       "ve_lexical_id": 7670569,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670570,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670571,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670572,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285490",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'Oh come, let us WORSHIP (shachah) and bow down' - the reverent prostration before God, worship as homage."
+       "value": "v6: 'Oh come, let us WORSHIP (shachah) and bow down' - the reverent prostration before God, worship as homage.",
+       "ve_lexical_id": 7670574,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7670575,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with bowing and kneeling"
+       "value": "paired with bowing and kneeling",
+       "ve_lexical_id": 7670573,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -965,64 +2701,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 96:9",
+     "reading_id": "H7812:worship#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7670857,
+      7670858,
+      7670859,
+      7670860,
+      7670861,
+      7670862,
+      7670863,
+      7670864,
+      7670866,
+      7670867,
+      7670865
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7670857,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7670858,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670859,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "all the earth",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670860,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7670861,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the LORD in holy splendour",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670862,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7670863,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7670864,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285614",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v9: 'WORSHIP (shachah) the LORD in the splendour of holiness' - the reverent prostration before the holy God."
+       "value": "v9: 'WORSHIP (shachah) the LORD in the splendour of holiness' - the reverent prostration before the holy God.",
+       "ve_lexical_id": 7670866,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7670867,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with trembling before him"
+       "value": "paired with trembling before him",
+       "ve_lexical_id": 7670865,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1036,64 +2897,189 @@
      "ib_char": "worshipers",
      "char_key": "H5647:worshiper",
      "reference": "Psa 97:7",
+     "reading_id": "H5647:worshiper#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671022,
+      7671023,
+      7671024,
+      7671025,
+      7671026,
+      7671027,
+      7671028,
+      7671029,
+      7671031,
+      7671032,
+      7671030
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worshipers of images (abad)"
+       "value": "worshipers of images (abad)",
+       "ve_lexical_id": 7671022,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7671023,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671024,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "idolaters",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671025,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship images"
+       "value": "worship images",
+       "ve_lexical_id": 7671026,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "instead of God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671027,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671028,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671029,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285687",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'All WORSHIPERS (abad) of images are put to shame' - those who serve carved gods, false devotion exposed and confounded."
+       "value": "v7: 'All WORSHIPERS (abad) of images are put to shame' - those who serve carved gods, false devotion exposed and confounded.",
+       "ve_lexical_id": 7671031,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with being put to shame"
+       "value": "paired with being put to shame",
+       "ve_lexical_id": 7671030,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1101,64 +3087,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 97:7",
+     "reading_id": "H7812:worship#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671055,
+      7671056,
+      7671057,
+      7671058,
+      7671059,
+      7671060,
+      7671061,
+      7671062,
+      7671064,
+      7671065,
+      7671063
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7671055,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7671056,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671057,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the gods / all",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671058,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7671059,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671060,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671061,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671062,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285692",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'WORSHIP (shachah) him, all you gods!' - the call for every power to bow to God, worship due him alone."
+       "value": "v7: 'WORSHIP (shachah) him, all you gods!' - the call for every power to bow to God, worship due him alone.",
+       "ve_lexical_id": 7671064,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671065,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the idolaters shamed"
+       "value": "paired with the idolaters shamed",
+       "ve_lexical_id": 7671063,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1172,64 +3283,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 99:5",
+     "reading_id": "H7812:worship#6",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671531,
+      7671532,
+      7671533,
+      7671534,
+      7671535,
+      7671536,
+      7671537,
+      7671538,
+      7671540,
+      7671541,
+      7671539
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7671531,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7671532,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671533,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671534,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7671535,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "at God's footstool",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671536,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671537,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671538,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285825",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v5: 'WORSHIP (shachah) at his footstool!' - the prostration before God, reverence at his holy place."
+       "value": "v5: 'WORSHIP (shachah) at his footstool!' - the prostration before God, reverence at his holy place.",
+       "ve_lexical_id": 7671540,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671541,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with exalting God"
+       "value": "paired with exalting God",
+       "ve_lexical_id": 7671539,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1237,64 +3473,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 99:9",
+     "reading_id": "H7812:worship#7",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671597,
+      7671598,
+      7671599,
+      7671600,
+      7671601,
+      7671602,
+      7671603,
+      7671604,
+      7671606,
+      7671607,
+      7671605
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7671597,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7671598,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671599,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671600,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7671601,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "at God's holy mountain",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671602,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671603,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671604,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285854",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v9: 'and WORSHIP (shachah) at his holy mountain' - the reverent worship at Zion, homage to the holy God."
+       "value": "v9: 'and WORSHIP (shachah) at his holy mountain' - the reverent worship at Zion, homage to the holy God.",
+       "ve_lexical_id": 7671606,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671607,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with exalting God"
+       "value": "paired with exalting God",
+       "ve_lexical_id": 7671605,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1308,64 +3669,189 @@
      "ib_char": "Serve",
      "char_key": "H5647:serv",
      "reference": "Psa 100:2",
+     "reading_id": "H5647:serv#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671734,
+      7671735,
+      7671736,
+      7671737,
+      7671738,
+      7671739,
+      7671740,
+      7671741,
+      7671743,
+      7671744,
+      7671742
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "serve (abad)"
+       "value": "serve (abad)",
+       "ve_lexical_id": 7671734,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7671735,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671736,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshippers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671737,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "serve"
+       "value": "serve",
+       "ve_lexical_id": 7671738,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the LORD with gladness",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671739,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671740,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671741,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268783",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v2: 'SERVE (abad) the LORD with gladness!' - the glad service of God, worship as joyful obedience."
+       "value": "v2: 'SERVE (abad) the LORD with gladness!' - the glad service of God, worship as joyful obedience.",
+       "ve_lexical_id": 7671743,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671744,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with gladness and singing"
+       "value": "paired with gladness and singing",
+       "ve_lexical_id": 7671742,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1379,64 +3865,189 @@
      "ib_char": "worship",
      "char_key": "H5647:worship",
      "reference": "Psa 102:22",
+     "reading_id": "H5647:worship#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7672451,
+      7672452,
+      7672453,
+      7672454,
+      7672455,
+      7672456,
+      7672457,
+      7672458,
+      7672460,
+      7672461,
+      7672459
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (abad)"
+       "value": "worship (abad)",
+       "ve_lexical_id": 7672451,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7672452,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7672453,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "peoples and kingdoms",
-       "resolution": "inferred"
+       "ve_lexical_id": 7672454,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship / serve"
+       "value": "worship / serve",
+       "ve_lexical_id": 7672455,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the LORD",
-       "resolution": "inferred"
+       "ve_lexical_id": 7672456,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7672457,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7672458,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268998",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v22: 'and kingdoms, to WORSHIP (abad) the LORD' - the nations gathering to serve God, worship widened to all peoples."
+       "value": "v22: 'and kingdoms, to WORSHIP (abad) the LORD' - the nations gathering to serve God, worship widened to all peoples.",
+       "ve_lexical_id": 7672460,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7672461,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the gathering of peoples"
+       "value": "paired with the gathering of peoples",
+       "ve_lexical_id": 7672459,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1450,64 +4061,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 106:19",
+     "reading_id": "H7812:worship#8",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7674951,
+      7674952,
+      7674953,
+      7674954,
+      7674955,
+      7674956,
+      7674957,
+      7674958,
+      7674960,
+      7674961,
+      7674959
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7674951,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7674952,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7674953,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the fathers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7674954,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7674955,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "a metal image",
-       "resolution": "inferred"
+       "ve_lexical_id": 7674956,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7674957,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7674958,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269630",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v19: 'and WORSHIPED (shachah) a metal image' - the calf-worship at Horeb, the exchange of the living God for an idol."
+       "value": "v19: 'and WORSHIPED (shachah) a metal image' - the calf-worship at Horeb, the exchange of the living God for an idol.",
+       "ve_lexical_id": 7674960,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7674961,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with exchanging the glory"
+       "value": "paired with exchanging the glory",
+       "ve_lexical_id": 7674959,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1521,64 +4257,189 @@
      "ib_char": "Serve",
      "char_key": "H5647:serv",
      "reference": "Psa 106:36",
+     "reading_id": "H5647:serv#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7675133,
+      7675134,
+      7675135,
+      7675136,
+      7675137,
+      7675138,
+      7675139,
+      7675140,
+      7675142,
+      7675143,
+      7675141
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "serve (abad)"
+       "value": "serve (abad)",
+       "ve_lexical_id": 7675133,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7675134,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675135,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the fathers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675136,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "serve"
+       "value": "serve",
+       "ve_lexical_id": 7675137,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "their idols",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675138,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7675139,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7675140,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v36: 'They SERVED (abad) their idols, which became a snare to them' - the idolatry that trapped the people."
+       "value": "v36: 'They SERVED (abad) their idols, which became a snare to them' - the idolatry that trapped the people.",
+       "ve_lexical_id": 7675142,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7675143,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the idols that snared them"
+       "value": "paired with the idols that snared them",
+       "ve_lexical_id": 7675141,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1592,64 +4453,189 @@
      "ib_char": "brought low",
      "char_key": "H7817:broughtlow",
      "reference": "Psa 107:39",
+     "reading_id": "H7817:broughtlow#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7676225,
+      7676226,
+      7676227,
+      7676228,
+      7676229,
+      7676230,
+      7676231,
+      7676232,
+      7676234,
+      7676235,
+      7676233
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "brought low (shachach)"
+       "value": "brought low (shachach)",
+       "ve_lexical_id": 7676225,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7676226,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7676227,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the people",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676228,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be brought low"
+       "value": "be brought low",
+       "ve_lexical_id": 7676229,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "through oppression",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676230,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7676231,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676232,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270007",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v39: 'When they are diminished and BROUGHT LOW (shachach)' - the abasement of the people through affliction."
+       "value": "v39: 'When they are diminished and BROUGHT LOW (shachach)' - the abasement of the people through affliction.",
+       "ve_lexical_id": 7676234,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7676235,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with sorrow"
+       "value": "paired with sorrow",
+       "ve_lexical_id": 7676233,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1663,64 +4649,189 @@
      "ib_char": "being",
      "char_key": "H3519:being",
      "reference": "Psa 108:1",
+     "reading_id": "H3519:being#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7676864,
+      7676865,
+      7676866,
+      7676867,
+      7676868,
+      7676869,
+      7676870,
+      7676871,
+      7676873,
+      7676874,
+      7676872
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "being (kabod)"
+       "value": "being (kabod)",
+       "ve_lexical_id": 7676864,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "faculty"
+       "value": "faculty",
+       "ve_lexical_id": 7676865,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7676866,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676867,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship with the whole self"
+       "value": "worship with the whole self",
+       "ve_lexical_id": 7676868,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "toward God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676869,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7676870,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7676871,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270083",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'with all my BEING (kabod)!' - the whole self, glory and soul, engaged in praise, nothing held back."
+       "value": "v1: 'with all my BEING (kabod)!' - the whole self, glory and soul, engaged in praise, nothing held back.",
+       "ve_lexical_id": 7676873,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7676874,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the heart and singing"
+       "value": "paired with the heart and singing",
+       "ve_lexical_id": 7676872,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1734,64 +4845,189 @@
      "ib_char": "worship",
      "char_key": "H7812:worship",
      "reference": "Psa 132:7",
+     "reading_id": "H7812:worship#9",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7686024,
+      7686025,
+      7686026,
+      7686027,
+      7686028,
+      7686029,
+      7686030,
+      7686031,
+      7686033,
+      7686034,
+      7686032
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "worship (shachah)"
+       "value": "worship (shachah)",
+       "ve_lexical_id": 7686024,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7686025,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7686026,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the people",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686027,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "worship"
+       "value": "worship",
+       "ve_lexical_id": 7686028,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "at God's footstool",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686029,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7686030,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686031,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272979",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'Let us go to his dwelling place; let us WORSHIP (shachah) at his footstool!' - the operation of homage: the people bowing at the place of God's presence."
+       "value": "v7: 'Let us go to his dwelling place; let us WORSHIP (shachah) at his footstool!' - the operation of homage: the people bowing at the place of God's presence.",
+       "ve_lexical_id": 7686033,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7686034,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the resting-place of the ark"
+       "value": "paired with the resting-place of the ark",
+       "ve_lexical_id": 7686032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1805,64 +5041,189 @@
      "ib_char": "bow down",
      "char_key": "H7812:bowdown",
      "reference": "Psa 138:2",
+     "reading_id": "H7812:bowdown#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7687391,
+      7687392,
+      7687393,
+      7687394,
+      7687395,
+      7687396,
+      7687397,
+      7687398,
+      7687400,
+      7687401,
+      7687399
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bow down (shachah)"
+       "value": "bow down (shachah)",
+       "ve_lexical_id": 7687391,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7687392,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7687393,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687394,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "bow down"
+       "value": "bow down",
+       "ve_lexical_id": 7687395,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "toward the holy temple",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687396,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7687397,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7687398,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v2: 'I BOW DOWN (shachah) toward your holy temple' - the prostration of worship, the body enacting the thanks."
+       "value": "v2: 'I BOW DOWN (shachah) toward your holy temple' - the prostration of worship, the body enacting the thanks.",
+       "ve_lexical_id": 7687400,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7687401,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with giving thanks to God's name"
+       "value": "paired with giving thanks to God's name",
+       "ve_lexical_id": 7687399,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }

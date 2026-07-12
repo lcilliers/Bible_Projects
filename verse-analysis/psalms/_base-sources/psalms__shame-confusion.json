@@ -1,30 +1,81 @@
 {
  "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 31:1-24",
+    "Psa 34:1-22",
+    "Psa 44:15-26",
+    "Psa 53:1-6",
+    "Psa 69:3-7",
+    "Psa 69:9-10",
+    "Psa 74:17-23",
+    "Psa 79:4-6",
+    "Psa 83:15-18",
+    "Psa 86:9-17",
+    "Psa 89:28-52",
+    "Psa 97:5-12",
+    "Psa 109:24-25",
+    "Psa 109:28-31",
+    "Psa 119:1-18",
+    "Psa 119:27-32",
+    "Psa 119:42-63",
+    "Psa 119:66-82",
+    "Psa 119:104-116",
+    "Psa 127:1-3",
+    "Psa 129:1-5"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='shame-confusion');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__shame-confusion__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__shame-confusion__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
   "family": "shame-confusion",
   "book": "Psalms",
   "book_id": 19,
   "generated": "2026-07-12",
-  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
-  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
-  "linkage": {
-   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
-   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
-   "declared_foreign_keys": {
-    "ib_characteristic": [
-     "(none declared)"
-    ],
-    "verse_span_index": [
-     "(none declared)"
-    ],
-    "ve_lexical": [
-     "verse_span_id -> verse_span_index.id",
-     "verse_context_id -> verse_context.id"
-    ],
-    "verse": [
-     "(none declared)"
-    ]
-   }
-  },
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
   "ib_char_items": [
    {
     "char_key": "H0954:puttosham",
@@ -92,13 +143,193 @@
     "cluster": "Shame"
    }
   ],
-  "stats": {
-   "ib_char_items": 13,
-   "spans_joined": 28,
-   "lexicals": 28,
-   "passages": 21
+  "reading_map": {
+   "H2781:reproach": [
+    {
+     "reading_id": "H2781:reproach#1",
+     "anchor_ref": "Psa 31:11",
+     "anchor_passage": "Psa 31:1-24",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2781:reproach#2",
+     "anchor_ref": "Psa 69:7",
+     "anchor_passage": "Psa 69:3-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2781:reproach#3",
+     "anchor_ref": "Psa 69:9",
+     "anchor_passage": "Psa 69:9-10",
+     "recurs_at": []
+    }
+   ],
+   "H5102:radiant": [
+    {
+     "reading_id": "H5102:radiant#1",
+     "anchor_ref": "Psa 34:5",
+     "anchor_passage": "Psa 34:1-22",
+     "recurs_at": []
+    }
+   ],
+   "H1322:sham": [
+    {
+     "reading_id": "H1322:sham#1",
+     "anchor_ref": "Psa 44:15",
+     "anchor_passage": "Psa 44:15-26",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H1322:sham#2",
+     "anchor_ref": "Psa 109:29",
+     "anchor_passage": "Psa 109:28-31",
+     "recurs_at": []
+    }
+   ],
+   "H3639:disgrac": [
+    {
+     "reading_id": "H3639:disgrac#1",
+     "anchor_ref": "Psa 44:15",
+     "anchor_passage": "Psa 44:15-26",
+     "recurs_at": []
+    }
+   ],
+   "H0954:putthemtosham": [
+    {
+     "reading_id": "H0954:putthemtosham#1",
+     "anchor_ref": "Psa 53:5",
+     "anchor_passage": "Psa 53:1-6",
+     "recurs_at": []
+    }
+   ],
+   "H3639:dishonor": [
+    {
+     "reading_id": "H3639:dishonor#1",
+     "anchor_ref": "Psa 69:7",
+     "anchor_passage": "Psa 69:3-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H3639:dishonor#2",
+     "anchor_ref": "Psa 109:29",
+     "anchor_passage": "Psa 109:28-31",
+     "recurs_at": []
+    }
+   ],
+   "H1790:downtrodden": [
+    {
+     "reading_id": "H1790:downtrodden#1",
+     "anchor_ref": "Psa 74:21",
+     "anchor_passage": "Psa 74:17-23",
+     "recurs_at": []
+    }
+   ],
+   "H2781:becom": [
+    {
+     "reading_id": "H2781:becom#1",
+     "anchor_ref": "Psa 79:4",
+     "anchor_passage": "Psa 79:4-6",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2781:becom#2",
+     "anchor_ref": "Psa 89:41",
+     "anchor_passage": "Psa 89:28-52",
+     "recurs_at": []
+    }
+   ],
+   "H0954:puttosham": [
+    {
+     "reading_id": "H0954:puttosham#1",
+     "anchor_ref": "Psa 83:17",
+     "anchor_passage": "Psa 83:15-18",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0954:puttosham#2",
+     "anchor_ref": "Psa 86:17",
+     "anchor_passage": "Psa 86:9-17",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0954:puttosham#3",
+     "anchor_ref": "Psa 97:7",
+     "anchor_passage": "Psa 97:5-12",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0954:puttosham#4",
+     "anchor_ref": "Psa 109:28",
+     "anchor_passage": "Psa 109:28-31",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0954:puttosham#5",
+     "anchor_ref": "Psa 119:6",
+     "anchor_passage": "Psa 119:1-18",
+     "recurs_at": [
+      "Psa 119:31",
+      "Psa 119:46",
+      "Psa 119:80",
+      "Psa 119:116"
+     ]
+    },
+    {
+     "reading_id": "H0954:puttosham#6",
+     "anchor_ref": "Psa 127:5",
+     "anchor_passage": "Psa 127:1-3",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0954:puttosham#7",
+     "anchor_ref": "Psa 129:5",
+     "anchor_passage": "Psa 129:1-5",
+     "recurs_at": []
+    }
+   ],
+   "H2659:disgrac": [
+    {
+     "reading_id": "H2659:disgrac#1",
+     "anchor_ref": "Psa 83:17",
+     "anchor_passage": "Psa 83:15-18",
+     "recurs_at": []
+    }
+   ],
+   "H0955:sham": [
+    {
+     "reading_id": "H0955:sham#1",
+     "anchor_ref": "Psa 89:45",
+     "anchor_passage": "Psa 89:28-52",
+     "recurs_at": []
+    }
+   ],
+   "H2781:scorn": [
+    {
+     "reading_id": "H2781:scorn#1",
+     "anchor_ref": "Psa 109:25",
+     "anchor_passage": "Psa 109:24-25",
+     "recurs_at": []
+    }
+   ],
+   "H0954:put": [
+    {
+     "reading_id": "H0954:put#1",
+     "anchor_ref": "Psa 119:78",
+     "anchor_passage": "Psa 119:66-82",
+     "recurs_at": []
+    }
+   ]
   },
-  "dimension_legend": {
+  "scope_counts": {
+   "ib_char_items": 13,
+   "passages": 21,
+   "lexicals": 28,
+   "distinct_readings": 24,
+   "duplicate_lexicals": 4,
+   "items_with_variation": 5,
+   "ve_lexical_rows": 311
+  },
+  "dimension_frame": {
    "101": "sense",
    "102": "type",
    "103": "source",
@@ -115,7 +346,8 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  }
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
  },
  "passages": [
   {
@@ -126,64 +358,189 @@
      "ib_char": "reproach",
      "char_key": "H2781:reproach",
      "reference": "Psa 31:11",
+     "reading_id": "H2781:reproach#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7697139,
+      7697140,
+      7697141,
+      7697142,
+      7697143,
+      7697144,
+      7697145,
+      7697146,
+      7697148,
+      7697149,
+      7697147
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "a reproach, dreaded, fled from"
+       "value": "a reproach, dreaded, fled from",
+       "ve_lexical_id": 7697139,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7697140,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7697141,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7697142,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276683",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "because of adversaries the self has become a reproach, an object of dread to acquaintances, fled from in the street - the pain of social rejection"
+       "value": "because of adversaries the self has become a reproach, an object of dread to acquaintances, fled from in the street - the pain of social rejection",
+       "ve_lexical_id": 7697143,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "social-shame",
-       "resolution": "inferred"
+       "ve_lexical_id": 7697144,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276683",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7697145,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "reproach-shunned",
-       "resolution": "inferred"
+       "ve_lexical_id": 7697146,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276683",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v11: 'I have become a REPROACH... an object of DREAD to my acquaintances; those who see me in the street FLEE from me' - the operation is the wound of being shunned; the interior suffers the withdrawal of everyone."
+       "value": "v11: 'I have become a REPROACH... an object of DREAD to my acquaintances; those who see me in the street FLEE from me' - the operation is the wound of being shunned; the interior suffers the withdrawal of everyone.",
+       "ve_lexical_id": 7697148,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7697149,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7697147,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -197,64 +554,189 @@
      "ib_char": "radiant",
      "char_key": "H5102:radiant",
      "reference": "Psa 34:5",
+     "reading_id": "H5102:radiant#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7698001,
+      7698002,
+      7698003,
+      7698004,
+      7698005,
+      7698006,
+      7698007,
+      7698008,
+      7698010,
+      7698011,
+      7698009
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "those who look to him are radiant"
+       "value": "those who look to him are radiant",
+       "ve_lexical_id": 7698001,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "affect"
+       "value": "affect",
+       "ve_lexical_id": 7698002,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7698003,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "those who look to him",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698004,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277254",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "those who look to God are radiant, their faces never ashamed - the interior lit up by looking to him"
+       "value": "those who look to God are radiant, their faces never ashamed - the interior lit up by looking to him",
+       "ve_lexical_id": 7698005,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "radiance",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698006,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277254",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7698007,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "look-and-be-radiant",
-       "resolution": "inferred"
+       "ve_lexical_id": 7698008,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277254",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v5: 'Those who LOOK to him are RADIANT, and their faces shall never be ashamed' - the operation is transformation by gaze: the interior that turns to God is lit and kept from shame."
+       "value": "v5: 'Those who LOOK to him are RADIANT, and their faces shall never be ashamed' - the operation is transformation by gaze: the interior that turns to God is lit and kept from shame.",
+       "ve_lexical_id": 7698010,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7698011,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7698009,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -268,65 +750,189 @@
      "ib_char": "shame",
      "char_key": "H1322:sham",
      "reference": "Psa 44:15",
+     "reading_id": "H1322:sham#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7650035,
+      7650036,
+      7650037,
+      7650038,
+      7650039,
+      7650040,
+      7650041,
+      7650042,
+      7650044,
+      7650045,
+      7650043
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "shame (bosheth - covers my face)"
+       "value": "shame (bosheth - covers my face)",
+       "ve_lexical_id": 7650035,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7650036,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650037,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the nation",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650038,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278724",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "cover the face",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650039,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "278724",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650040,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "at the taunter and avenger",
-       "resolution": "span"
+       "ve_lexical_id": 7650041,
+       "item_type": "pair",
+       "from_span": "278724",
+       "to_span": "278730",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with disgrace",
-       "resolution": "span"
+       "ve_lexical_id": 7650042,
+       "item_type": "pair",
+       "from_span": "278724",
+       "to_span": "278722",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'and SHAME (bosheth) has covered my face' — shame as a veil over the countenance; bosheth (recurs Ps35:26) the disgrace that covers the face at the sound of the taunter and reviler (v16)"
+       "value": "'and SHAME (bosheth) has covered my face' — shame as a veil over the countenance; bosheth (recurs Ps35:26) the disgrace that covers the face at the sound of the taunter and reviler (v16)",
+       "ve_lexical_id": 7650044,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7650045,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7650043,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -334,70 +940,198 @@
      "ib_char": "disgrace",
      "char_key": "H3639:disgrac",
      "reference": "Psa 44:15",
+     "reading_id": "H3639:disgrac#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7650023,
+      7650024,
+      7650028,
+      7650025,
+      7650026,
+      7650027,
+      7650029,
+      7650030,
+      7650031,
+      7650033,
+      7650034,
+      7650032
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "disgrace / humiliation (kelimmah)"
+       "value": "disgrace / humiliation (kelimmah)",
+       "ve_lexical_id": 7650023,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7650024,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 103,
        "label": "source",
        "value": "God's rejecting and disgracing (v9)",
-       "resolution": "span"
+       "ve_lexical_id": 7650028,
+       "item_type": "pair",
+       "from_span": "278722",
+       "to_span": "278857",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650025,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the nation ('my disgrace')",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650026,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650027,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7650029,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "all day long before me",
-       "resolution": "inferred"
+       "ve_lexical_id": 7650030,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with shame covering the face",
-       "resolution": "span"
+       "ve_lexical_id": 7650031,
+       "item_type": "pair",
+       "from_span": "278722",
+       "to_span": "278724",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'All day long my DISGRACE (kelimmah) is before me' — the humiliation constantly in view; kelimmah the shame the nation carries, its source God's rejecting and disgracing (v9 qualifier), the taunter and reviler its occasion"
+       "value": "'All day long my DISGRACE (kelimmah) is before me' — the humiliation constantly in view; kelimmah the shame the nation carries, its source God's rejecting and disgracing (v9 qualifier), the taunter and reviler its occasion",
+       "ve_lexical_id": 7650033,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7650034,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7650032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -411,70 +1145,198 @@
      "ib_char": "put them to shame",
      "char_key": "H0954:putthemtosham",
      "reference": "Psa 53:5",
+     "reading_id": "H0954:putthemtosham#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653190,
+      7653191,
+      7653198,
+      7653192,
+      7653193,
+      7653194,
+      7653195,
+      7653196,
+      7653197,
+      7653200,
+      7653201,
+      7653199
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh - you put them to shame)"
+       "value": "be put to shame (bosh - you put them to shame)",
+       "ve_lexical_id": 7653190,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7653191,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 103,
        "label": "source",
        "value": "because God has rejected them (v5)",
-       "resolution": "span"
+       "ve_lexical_id": 7653198,
+       "item_type": "pair",
+       "from_span": "279936",
+       "to_span": "279939",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653192,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the evildoers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653193,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279936",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "be put to shame",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653194,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279936",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653195,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653196,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with their terror",
-       "resolution": "span"
+       "ve_lexical_id": 7653197,
+       "item_type": "pair",
+       "from_span": "279936",
+       "to_span": "279928",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'you put them to SHAME (bosh), for God has rejected them' — the disgrace of the godless when their confidence collapses; bosh here the enemies' shame — the inner ruin of exposure and defeat, grounded in God's rejection of them (the qualifier)"
+       "value": "'you put them to SHAME (bosh), for God has rejected them' — the disgrace of the godless when their confidence collapses; bosh here the enemies' shame — the inner ruin of exposure and defeat, grounded in God's rejection of them (the qualifier)",
+       "ve_lexical_id": 7653200,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7653201,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653199,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -488,66 +1350,189 @@
      "ib_char": "reproach",
      "char_key": "H2781:reproach",
      "reference": "Psa 69:7",
+     "reading_id": "H2781:reproach#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7660031,
+      7660032,
+      7660033,
+      7660034,
+      7660035,
+      7660036,
+      7660037,
+      7660038,
+      7660040,
+      7660041,
+      7660039
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "reproach (cherpah - for your sake I have borne reproach)"
+       "value": "reproach (cherpah - for your sake I have borne reproach)",
+       "ve_lexical_id": 7660031,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7660032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7660033,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660034,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281896",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "borne / carried",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660035,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281896",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "for God's sake",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660036,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281896",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "dishonor covering his face",
-       "resolution": "span"
+       "ve_lexical_id": 7660037,
+       "item_type": "pair",
+       "from_span": "281896",
+       "to_span": "281897",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "the reproaches that fell on him for God (v9)",
-       "resolution": "span"
+       "ve_lexical_id": 7660038,
+       "item_type": "pair",
+       "from_span": "281896",
+       "to_span": "281905",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'For it is for your sake that I have borne REPROACH (cherpah)' — shame suffered on God's account; cherpah here the reproach the psalmist carries because of his devotion to God - his disgrace bound up with God's, the reproaches of God's revilers falling on him (v9)"
+       "value": "'For it is for your sake that I have borne REPROACH (cherpah)' — shame suffered on God's account; cherpah here the reproach the psalmist carries because of his devotion to God - his disgrace bound up with God's, the reproaches of God's revilers falling on him (v9)",
+       "ve_lexical_id": 7660040,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7660041,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7660039,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -555,65 +1540,189 @@
      "ib_char": "dishonor",
      "char_key": "H3639:dishonor",
      "reference": "Psa 69:7",
+     "reading_id": "H3639:dishonor#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7660042,
+      7660043,
+      7660044,
+      7660045,
+      7660046,
+      7660047,
+      7660048,
+      7660049,
+      7660051,
+      7660052,
+      7660050
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "dishonor / shame (kelimmah - dishonor has covered my face)"
+       "value": "dishonor / shame (kelimmah - dishonor has covered my face)",
+       "ve_lexical_id": 7660042,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7660043,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
        "value": "the face",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660044,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281897",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660045,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281897",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "cover his face",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660046,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "281897",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7660047,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7660048,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the reproach borne for God",
-       "resolution": "span"
+       "ve_lexical_id": 7660049,
+       "item_type": "pair",
+       "from_span": "281897",
+       "to_span": "281896",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'that DISHONOR (kelimmah) has covered my face' — humiliation veiling the psalmist like a garment; kelimmah here the shame that covers his face, the visible mark of the reproach borne for God's sake"
+       "value": "'that DISHONOR (kelimmah) has covered my face' — humiliation veiling the psalmist like a garment; kelimmah here the shame that covers his face, the visible mark of the reproach borne for God's sake",
+       "ve_lexical_id": 7660051,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7660052,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7660050,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -627,65 +1736,189 @@
      "ib_char": "reproach",
      "char_key": "H2781:reproach",
      "reference": "Psa 69:9",
+     "reading_id": "H2781:reproach#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7660064,
+      7660065,
+      7660066,
+      7660067,
+      7660068,
+      7660069,
+      7660070,
+      7660071,
+      7660073,
+      7660074,
+      7660072
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "reproaches (cherpah - the reproaches of those who reproach you fell on me)"
+       "value": "reproaches (cherpah - the reproaches of those who reproach you fell on me)",
+       "ve_lexical_id": 7660064,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7660065,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7660066,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660067,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281905",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "fall on him",
-       "resolution": "span"
+       "ve_lexical_id": 7660068,
+       "item_type": "event",
+       "from_span": "281905",
+       "to_span": "281907",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "originally aimed at God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7660069,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281905",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7660070,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "the reproach borne for God (v7)",
-       "resolution": "span"
+       "ve_lexical_id": 7660071,
+       "item_type": "pair",
+       "from_span": "281905",
+       "to_span": "281896",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'the REPROACHES (cherpah) of those who reproach you have fallen on me' — the insults hurled at God landing on his servant; cherpah here the revilers' scorn of God, borne by the psalmist as his own - identification with God so complete that God's shame becomes his (cited Rom 15:3)"
+       "value": "'the REPROACHES (cherpah) of those who reproach you have fallen on me' — the insults hurled at God landing on his servant; cherpah here the revilers' scorn of God, borne by the psalmist as his own - identification with God so complete that God's shame becomes his (cited Rom 15:3)",
+       "ve_lexical_id": 7660073,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7660074,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7660072,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -699,71 +1932,198 @@
      "ib_char": "downtrodden",
      "char_key": "H1790:downtrodden",
      "reference": "Psa 74:21",
+     "reading_id": "H1790:downtrodden#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7662601,
+      7662602,
+      7662609,
+      7662603,
+      7662604,
+      7662605,
+      7662606,
+      7662607,
+      7662608,
+      7662611,
+      7662612,
+      7662610
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "downtrodden / crushed (dak - let not the downtrodden turn back in shame)"
+       "value": "downtrodden / crushed (dak - let not the downtrodden turn back in shame)",
+       "ve_lexical_id": 7662601,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status"
+       "value": "status",
+       "ve_lexical_id": 7662602,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 103,
        "label": "source",
        "value": "whom God is implored not to cast off (v1)",
-       "resolution": "span"
+       "ve_lexical_id": 7662609,
+       "item_type": "pair",
+       "from_span": "282619",
+       "to_span": "282522",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7662603,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the downtrodden",
-       "resolution": "inferred"
+       "ve_lexical_id": 7662604,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282619",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "be kept from turning back in shame",
-       "resolution": "inferred"
+       "ve_lexical_id": 7662605,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "282619",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7662606,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "not turned back in shame",
-       "resolution": "span"
+       "ve_lexical_id": 7662607,
+       "item_type": "pair",
+       "from_span": "282619",
+       "to_span": "282621",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the poor and needy who praise God",
-       "resolution": "span"
+       "ve_lexical_id": 7662608,
+       "item_type": "pair",
+       "from_span": "282619",
+       "to_span": "282622",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'Let not the DOWNTRODDEN (dak) turn back in shame' — the crushed people the psalmist pleads for; dak here the oppressed and beaten-down community, whom he begs God not to let go away disgraced - the afflicted whose vindication is at stake in God's answer"
+       "value": "'Let not the DOWNTRODDEN (dak) turn back in shame' — the crushed people the psalmist pleads for; dak here the oppressed and beaten-down community, whom he begs God not to let go away disgraced - the afflicted whose vindication is at stake in God's answer",
+       "ve_lexical_id": 7662611,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7662612,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7662610,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -777,64 +2137,189 @@
      "ib_char": "become",
      "char_key": "H2781:becom",
      "reference": "Psa 79:4",
+     "reading_id": "H2781:becom#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7665120,
+      7665121,
+      7665122,
+      7665123,
+      7665124,
+      7665125,
+      7665126,
+      7665127,
+      7665129,
+      7665130,
+      7665128
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "become a reproach (cherpah)"
+       "value": "become a reproach (cherpah)",
+       "ve_lexical_id": 7665120,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7665121,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7665122,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "we (the people)",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665123,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283511",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "become an object of scorn"
+       "value": "become an object of scorn",
+       "ve_lexical_id": 7665124,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to the neighbours",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665125,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283511",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7665126,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with being mocked and derided",
-       "resolution": "inferred"
+       "ve_lexical_id": 7665127,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283511",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v4: 'We have BECOME (cherpah) a taunt to our neighbours' - the communal humiliation, the shame of a people whose God seems to have abandoned them; disgrace felt as an inner wound."
+       "value": "v4: 'We have BECOME (cherpah) a taunt to our neighbours' - the communal humiliation, the shame of a people whose God seems to have abandoned them; disgrace felt as an inner wound.",
+       "ve_lexical_id": 7665129,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7665130,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7665128,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -848,64 +2333,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 83:17",
+     "reading_id": "H0954:puttosham#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7666275,
+      7666276,
+      7666277,
+      7666278,
+      7666279,
+      7666280,
+      7666281,
+      7666282,
+      7666284,
+      7666285,
+      7666283
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7666275,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7666276,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7666277,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666278,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283974",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be put to shame"
+       "value": "be put to shame",
+       "ve_lexical_id": 7666279,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666280,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283974",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7666281,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with being dismayed",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666282,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283974",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v17: 'Let them be PUT TO SHAME (bosh) and dismayed forever' - the enemies' humiliation invoked, disgrace as the outcome of their enmity."
+       "value": "v17: 'Let them be PUT TO SHAME (bosh) and dismayed forever' - the enemies' humiliation invoked, disgrace as the outcome of their enmity.",
+       "ve_lexical_id": 7666284,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7666285,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7666283,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -913,64 +2523,189 @@
      "ib_char": "disgrace",
      "char_key": "H2659:disgrac",
      "reference": "Psa 83:17",
+     "reading_id": "H2659:disgrac#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7666297,
+      7666298,
+      7666299,
+      7666300,
+      7666301,
+      7666302,
+      7666303,
+      7666304,
+      7666306,
+      7666307,
+      7666305
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "perish in disgrace (chapher)"
+       "value": "perish in disgrace (chapher)",
+       "ve_lexical_id": 7666297,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7666298,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7666299,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666300,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283978",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be disgraced"
+       "value": "be disgraced",
+       "ve_lexical_id": 7666301,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "and perish",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666302,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283978",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7666303,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the shame and dismay",
-       "resolution": "inferred"
+       "ve_lexical_id": 7666304,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283978",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v17: 'let them perish in DISGRACE (chapher)' - the confounded end of the confederates, honour stripped away."
+       "value": "v17: 'let them perish in DISGRACE (chapher)' - the confounded end of the confederates, honour stripped away.",
+       "ve_lexical_id": 7666306,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7666307,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7666305,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -984,64 +2719,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 86:17",
+     "reading_id": "H0954:puttosham#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7667324,
+      7667325,
+      7667326,
+      7667327,
+      7667328,
+      7667329,
+      7667330,
+      7667331,
+      7667333,
+      7667334,
+      7667332
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7667324,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7667325,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667326,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the haters",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667327,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284318",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be put to shame"
+       "value": "be put to shame",
+       "ve_lexical_id": 7667328,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "by God's help to the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667329,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284318",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667330,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the hatred",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667331,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284318",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v17: 'may see and be PUT TO SHAME (bosh)' - the confounding of the foes when God vindicates his servant."
+       "value": "v17: 'may see and be PUT TO SHAME (bosh)' - the confounding of the foes when God vindicates his servant.",
+       "ve_lexical_id": 7667333,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7667334,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7667332,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1055,64 +2915,189 @@
      "ib_char": "become",
      "char_key": "H2781:becom",
      "reference": "Psa 89:41",
+     "reading_id": "H2781:becom#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668213,
+      7668214,
+      7668215,
+      7668216,
+      7668217,
+      7668218,
+      7668219,
+      7668220,
+      7668222,
+      7668223,
+      7668221
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "become a scorn (cherpah)"
+       "value": "become a scorn (cherpah)",
+       "ve_lexical_id": 7668213,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7668214,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668215,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the king",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668216,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284759",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "become"
+       "value": "become",
+       "ve_lexical_id": 7668217,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "a scorn to his neighbours",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668218,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284759",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668219,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668220,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284759",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v41: 'he has BECOME (cherpah) the scorn of his neighbours' - the king's humiliation, the anointed made a reproach."
+       "value": "v41: 'he has BECOME (cherpah) the scorn of his neighbours' - the king's humiliation, the anointed made a reproach.",
+       "ve_lexical_id": 7668222,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7668223,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the enemies' rejoicing"
+       "value": "paired with the enemies' rejoicing",
+       "ve_lexical_id": 7668221,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1120,64 +3105,189 @@
      "ib_char": "shame",
      "char_key": "H0955:sham",
      "reference": "Psa 89:45",
+     "reading_id": "H0955:sham#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668235,
+      7668236,
+      7668237,
+      7668238,
+      7668239,
+      7668240,
+      7668241,
+      7668242,
+      7668244,
+      7668245,
+      7668243
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "shame (bushah)"
+       "value": "shame (bushah)",
+       "ve_lexical_id": 7668235,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7668236,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668237,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the king",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668238,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be covered with shame"
+       "value": "be covered with shame",
+       "ve_lexical_id": 7668239,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "by God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668240,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668241,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the days of his youth cut short",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668242,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v45: 'you have covered him with SHAME (bushah)' - the disgrace laid on the anointed, glory turned to humiliation."
+       "value": "v45: 'you have covered him with SHAME (bushah)' - the disgrace laid on the anointed, glory turned to humiliation.",
+       "ve_lexical_id": 7668244,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7668245,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7668243,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1191,64 +3301,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 97:7",
+     "reading_id": "H0954:puttosham#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671033,
+      7671034,
+      7671035,
+      7671036,
+      7671037,
+      7671038,
+      7671039,
+      7671040,
+      7671042,
+      7671043,
+      7671041
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "put to shame (bosh)"
+       "value": "put to shame (bosh)",
+       "ve_lexical_id": 7671033,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7671034,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671035,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the idolaters",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671036,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285689",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be put to shame"
+       "value": "be put to shame",
+       "ve_lexical_id": 7671037,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before the true God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671038,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285689",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7671039,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7671040,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285689",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'All worshipers of images are PUT TO SHAME (bosh)' - the confounding of idolaters when the true God appears."
+       "value": "v7: 'All worshipers of images are PUT TO SHAME (bosh)' - the confounding of idolaters when the true God appears.",
+       "ve_lexical_id": 7671042,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7671043,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with worshipping images"
+       "value": "paired with worshipping images",
+       "ve_lexical_id": 7671041,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1262,64 +3497,189 @@
      "ib_char": "scorn",
      "char_key": "H2781:scorn",
      "reference": "Psa 109:25",
+     "reading_id": "H2781:scorn#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677477,
+      7677478,
+      7677479,
+      7677480,
+      7677481,
+      7677482,
+      7677483,
+      7677484,
+      7677486,
+      7677487,
+      7677485
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "scorn (cherpah)"
+       "value": "scorn (cherpah)",
+       "ve_lexical_id": 7677477,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7677478,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677479,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677480,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270275",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be an object of scorn"
+       "value": "be an object of scorn",
+       "ve_lexical_id": 7677481,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to his accusers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677482,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270275",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677483,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677484,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270275",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v25: 'I am an object of SCORN (cherpah) to my accusers' - the psalmist's humiliation, mocked by his foes who wag their heads."
+       "value": "v25: 'I am an object of SCORN (cherpah) to my accusers' - the psalmist's humiliation, mocked by his foes who wag their heads.",
+       "ve_lexical_id": 7677486,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7677487,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the wagging heads"
+       "value": "paired with the wagging heads",
+       "ve_lexical_id": 7677485,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1333,64 +3693,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 109:28",
+     "reading_id": "H0954:puttosham#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677510,
+      7677511,
+      7677512,
+      7677513,
+      7677514,
+      7677515,
+      7677516,
+      7677517,
+      7677519,
+      7677520,
+      7677518
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "put to shame (bosh)"
+       "value": "put to shame (bosh)",
+       "ve_lexical_id": 7677510,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7677511,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677512,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the enemies",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677513,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270284",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be put to shame"
+       "value": "be put to shame",
+       "ve_lexical_id": 7677514,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "when they arise",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677515,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270284",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677516,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677517,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270284",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v28: 'They arise and are PUT TO SHAME (bosh), but your servant will be glad!' - the foes shamed, the servant gladdened."
+       "value": "v28: 'They arise and are PUT TO SHAME (bosh), but your servant will be glad!' - the foes shamed, the servant gladdened.",
+       "ve_lexical_id": 7677519,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7677520,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the servant's gladness"
+       "value": "paired with the servant's gladness",
+       "ve_lexical_id": 7677518,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1398,64 +3883,189 @@
      "ib_char": "shame",
      "char_key": "H1322:sham",
      "reference": "Psa 109:29",
+     "reading_id": "H1322:sham#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677554,
+      7677555,
+      7677556,
+      7677557,
+      7677558,
+      7677559,
+      7677560,
+      7677561,
+      7677563,
+      7677564,
+      7677562
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "shame (bosheth)"
+       "value": "shame (bosheth)",
+       "ve_lexical_id": 7677554,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7677555,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677556,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the accusers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677557,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270292",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be wrapped in shame"
+       "value": "be wrapped in shame",
+       "ve_lexical_id": 7677558,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "as a cloak",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677559,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270292",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677560,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677561,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270292",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v29: 'and wrapped in their own SHAME (bosheth) as in a cloak' - the shame that covers the accusers, their own disgrace their clothing."
+       "value": "v29: 'and wrapped in their own SHAME (bosheth) as in a cloak' - the shame that covers the accusers, their own disgrace their clothing.",
+       "ve_lexical_id": 7677563,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7677564,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the dishonor"
+       "value": "paired with the dishonor",
+       "ve_lexical_id": 7677562,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1463,64 +4073,189 @@
      "ib_char": "dishonor",
      "char_key": "H3639:dishonor",
      "reference": "Psa 109:29",
+     "reading_id": "H3639:dishonor#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677543,
+      7677544,
+      7677545,
+      7677546,
+      7677547,
+      7677548,
+      7677549,
+      7677550,
+      7677552,
+      7677553,
+      7677551
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "dishonor (kelimmah)"
+       "value": "dishonor (kelimmah)",
+       "ve_lexical_id": 7677543,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7677544,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677545,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the accusers",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677546,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270289",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be clothed with dishonor"
+       "value": "be clothed with dishonor",
+       "ve_lexical_id": 7677547,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before all",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677548,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270289",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677549,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677550,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270289",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v29: 'be clothed with DISHONOUR (kelimmah)' - the disgrace invoked on the accusers, worn like a garment."
+       "value": "v29: 'be clothed with DISHONOUR (kelimmah)' - the disgrace invoked on the accusers, worn like a garment.",
+       "ve_lexical_id": 7677552,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7677553,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the accusers and shame"
+       "value": "paired with the accusers and shame",
+       "ve_lexical_id": 7677551,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1534,64 +4269,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 119:6",
+     "reading_id": "H0954:puttosham#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7680321,
+      7680322,
+      7680323,
+      7680324,
+      7680325,
+      7680326,
+      7680327,
+      7680328,
+      7680330,
+      7680331,
+      7680329
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7680321,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7680322,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7680323,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680324,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271956",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7680325,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680326,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271956",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7680327,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680328,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271956",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'Then I shall not be PUT TO SHAME, having my eyes fixed on all your commandments' - shame averted by fixing the eyes on the commandments."
+       "value": "v6: 'Then I shall not be PUT TO SHAME, having my eyes fixed on all your commandments' - shame averted by fixing the eyes on the commandments.",
+       "ve_lexical_id": 7680330,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7680331,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7680329,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1605,64 +4465,194 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 119:31",
+     "reading_id": "H0954:puttosham#5",
+     "duplicate": true,
+     "same_as": {
+      "reading_id": "H0954:puttosham#5",
+      "anchor_ref": "Psa 119:6",
+      "anchor_passage": "Psa 119:1-18"
+     },
+     "ve_lexical_ids": [
+      7680913,
+      7680914,
+      7680915,
+      7680916,
+      7680917,
+      7680918,
+      7680919,
+      7680920,
+      7680922,
+      7680923,
+      7680921
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7680913,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7680914,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7680915,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680916,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7680917,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680918,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7680919,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7680920,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271786",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v31: 'I cling to your testimonies, O LORD; let me not be PUT TO SHAME!' - the plea against shame, clinging to the word."
+       "value": "v31: 'I cling to your testimonies, O LORD; let me not be PUT TO SHAME!' - the plea against shame, clinging to the word.",
+       "ve_lexical_id": 7680922,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7680923,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7680921,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1676,64 +4666,194 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 119:46",
+     "reading_id": "H0954:puttosham#5",
+     "duplicate": true,
+     "same_as": {
+      "reading_id": "H0954:puttosham#5",
+      "anchor_ref": "Psa 119:6",
+      "anchor_passage": "Psa 119:1-18"
+     },
+     "ve_lexical_ids": [
+      7681257,
+      7681258,
+      7681259,
+      7681260,
+      7681261,
+      7681262,
+      7681263,
+      7681264,
+      7681266,
+      7681267,
+      7681265
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7681257,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7681258,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681259,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681260,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271867",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7681261,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681262,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271867",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681263,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681264,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271867",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v46: 'I will also speak of your testimonies before kings and shall not be PUT TO SHAME' - bold testimony without shame before kings."
+       "value": "v46: 'I will also speak of your testimonies before kings and shall not be PUT TO SHAME' - bold testimony without shame before kings.",
+       "ve_lexical_id": 7681266,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7681267,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7681265,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1747,64 +4867,189 @@
      "ib_char": "put",
      "char_key": "H0954:put",
      "reference": "Psa 119:78",
+     "reading_id": "H0954:put#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7682091,
+      7682092,
+      7682093,
+      7682094,
+      7682095,
+      7682096,
+      7682097,
+      7682098,
+      7682100,
+      7682101,
+      7682099
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7682091,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7682092,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682093,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the insolent",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682094,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272081",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7682095,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682096,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272081",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682097,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682098,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272081",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v78: 'Let the insolent be PUT TO SHAME, because they have wronged me with falsehood' - the foes' shame invoked for their wrong."
+       "value": "v78: 'Let the insolent be PUT TO SHAME, because they have wronged me with falsehood' - the foes' shame invoked for their wrong.",
+       "ve_lexical_id": 7682100,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7682101,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7682099,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1812,64 +5057,194 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 119:80",
+     "reading_id": "H0954:puttosham#5",
+     "duplicate": true,
+     "same_as": {
+      "reading_id": "H0954:puttosham#5",
+      "anchor_ref": "Psa 119:6",
+      "anchor_passage": "Psa 119:1-18"
+     },
+     "ve_lexical_ids": [
+      7682202,
+      7682203,
+      7682204,
+      7682205,
+      7682206,
+      7682207,
+      7682208,
+      7682209,
+      7682211,
+      7682212,
+      7682210
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7682202,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7682203,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682204,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682205,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272104",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7682206,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682207,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272104",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682208,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682209,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272104",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v80: 'May my heart be blameless in your statutes, that I may not be PUT TO SHAME!' - shame guarded against by a blameless heart."
+       "value": "v80: 'May my heart be blameless in your statutes, that I may not be PUT TO SHAME!' - shame guarded against by a blameless heart.",
+       "ve_lexical_id": 7682211,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7682212,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7682210,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1883,64 +5258,194 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 119:116",
+     "reading_id": "H0954:puttosham#5",
+     "duplicate": true,
+     "same_as": {
+      "reading_id": "H0954:puttosham#5",
+      "anchor_ref": "Psa 119:6",
+      "anchor_passage": "Psa 119:1-18"
+     },
+     "ve_lexical_ids": [
+      7682988,
+      7682989,
+      7682990,
+      7682991,
+      7682992,
+      7682993,
+      7682994,
+      7682995,
+      7682997,
+      7682998,
+      7682996
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be put to shame (bosh)"
+       "value": "be put to shame (bosh)",
+       "ve_lexical_id": 7682988,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7682989,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682990,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682991,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be (or not be) put to shame"
+       "value": "be (or not be) put to shame",
+       "ve_lexical_id": 7682992,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God/men",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682993,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7682994,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the whole SHAME-arc of the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7682995,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271316",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v116: 'let me not be PUT TO SHAME in my hope!' - the hope that must not end in shame."
+       "value": "v116: 'let me not be PUT TO SHAME in my hope!' - the hope that must not end in shame.",
+       "ve_lexical_id": 7682997,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7682998,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7682996,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1954,64 +5459,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 127:5",
+     "reading_id": "H0954:puttosham#6",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685320,
+      7685321,
+      7685322,
+      7685323,
+      7685324,
+      7685325,
+      7685326,
+      7685327,
+      7685329,
+      7685330,
+      7685328
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "put to shame (bosh, negated)"
+       "value": "put to shame (bosh, negated)",
+       "ve_lexical_id": 7685320,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7685321,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685322,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the man with children",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685323,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272640",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "not be put to shame"
+       "value": "not be put to shame",
+       "ve_lexical_id": 7685324,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before enemies at the gate",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685325,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272640",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685326,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685327,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272640",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v5: 'he shall not be PUT TO SHAME (bosh) when he speaks with his enemies in the gate' - the operation of vindicated standing: the man backed by sons is unashamed in the contest at the city gate."
+       "value": "v5: 'he shall not be PUT TO SHAME (bosh) when he speaks with his enemies in the gate' - the operation of vindicated standing: the man backed by sons is unashamed in the contest at the city gate.",
+       "ve_lexical_id": 7685329,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685330,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the blessed man"
+       "value": "paired with the blessed man",
+       "ve_lexical_id": 7685328,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -2025,64 +5655,189 @@
      "ib_char": "put to shame",
      "char_key": "H0954:puttosham",
      "reference": "Psa 129:5",
+     "reading_id": "H0954:puttosham#7",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685602,
+      7685603,
+      7685604,
+      7685605,
+      7685606,
+      7685607,
+      7685608,
+      7685609,
+      7685611,
+      7685612,
+      7685610
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "put to shame (bosh)"
+       "value": "put to shame (bosh)",
+       "ve_lexical_id": 7685602,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7685603,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685604,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the haters of Zion",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685605,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272717",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "be put to shame"
+       "value": "be put to shame",
+       "ve_lexical_id": 7685606,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "and turned back",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685607,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272717",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685608,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685609,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272717",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v5: 'be PUT TO SHAME (bosh) and turned backward!' - the operation of the foes' collapse: the haters of Zion routed and shamed, like rooftop grass that withers."
+       "value": "v5: 'be PUT TO SHAME (bosh) and turned backward!' - the operation of the foes' collapse: the haters of Zion routed and shamed, like rooftop grass that withers.",
+       "ve_lexical_id": 7685611,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685612,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the hatred of Zion"
+       "value": "paired with the hatred of Zion",
+       "ve_lexical_id": 7685610,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }

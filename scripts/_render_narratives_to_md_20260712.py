@@ -35,6 +35,13 @@ def render(fam):
         for n in sorted(by_pass[pref], key=lambda x:x.get('anchor_ref','')):
             L.append(f"**{n['ib_char']}** — {n['anchor_ref']}  ·  `{n['reading_id']}`")
             L.append("")
+            if n.get('story'):
+                L.append("_Story_")
+                L.append("")
+                L.append(n['story'])
+                L.append("")
+            L.append("_Reading_")
+            L.append("")
             L.append(n['narrative'])
             L.append("")
             if n.get('variation_note'):

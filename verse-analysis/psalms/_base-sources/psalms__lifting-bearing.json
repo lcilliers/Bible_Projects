@@ -1,30 +1,77 @@
 {
  "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 24:3-10",
+    "Psa 25:1-3",
+    "Psa 55:9-23",
+    "Psa 63:1-11",
+    "Psa 75:4-10",
+    "Psa 86:2-7",
+    "Psa 89:12-14",
+    "Psa 89:28-52",
+    "Psa 110:1-7",
+    "Psa 116:13-15",
+    "Psa 119:42-63",
+    "Psa 121:1-5",
+    "Psa 123:2-4",
+    "Psa 126:5-6",
+    "Psa 131:1-3",
+    "Psa 134:1-2",
+    "Psa 143:1-12"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='lifting-bearing');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__lifting-bearing__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__lifting-bearing__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
   "family": "lifting-bearing",
   "book": "Psalms",
   "book_id": 19,
   "generated": "2026-07-12",
-  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
-  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
-  "linkage": {
-   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
-   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
-   "declared_foreign_keys": {
-    "ib_characteristic": [
-     "(none declared)"
-    ],
-    "verse_span_index": [
-     "(none declared)"
-    ],
-    "ve_lexical": [
-     "verse_span_id -> verse_span_index.id",
-     "verse_context_id -> verse_context.id"
-    ],
-    "verse": [
-     "(none declared)"
-    ]
-   }
-  },
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
   "ib_char_items": [
    {
     "char_key": "H5375:liftup",
@@ -62,13 +109,158 @@
     "cluster": null
    }
   ],
-  "stats": {
-   "ib_char_items": 7,
-   "spans_joined": 21,
-   "lexicals": 21,
-   "passages": 17
+  "reading_map": {
+   "H5375:liftup": [
+    {
+     "reading_id": "H5375:liftup#1",
+     "anchor_ref": "Psa 24:4",
+     "anchor_passage": "Psa 24:3-10",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#2",
+     "anchor_ref": "Psa 25:1",
+     "anchor_passage": "Psa 25:1-3",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#3",
+     "anchor_ref": "Psa 63:4",
+     "anchor_passage": "Psa 63:1-11",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#4",
+     "anchor_ref": "Psa 86:4",
+     "anchor_passage": "Psa 86:2-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#5",
+     "anchor_ref": "Psa 116:13",
+     "anchor_passage": "Psa 116:13-15",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#6",
+     "anchor_ref": "Psa 119:48",
+     "anchor_passage": "Psa 119:42-63",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#7",
+     "anchor_ref": "Psa 121:1",
+     "anchor_passage": "Psa 121:1-5",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#8",
+     "anchor_ref": "Psa 123:1",
+     "anchor_passage": "Psa 123:2-4",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#9",
+     "anchor_ref": "Psa 134:2",
+     "anchor_passage": "Psa 134:1-2",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:liftup#10",
+     "anchor_ref": "Psa 143:8",
+     "anchor_passage": "Psa 143:1-12",
+     "recurs_at": []
+    }
+   ],
+   "H5375:bear": [
+    {
+     "reading_id": "H5375:bear#1",
+     "anchor_ref": "Psa 55:12",
+     "anchor_passage": "Psa 55:9-23",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:bear#2",
+     "anchor_ref": "Psa 89:50",
+     "anchor_passage": "Psa 89:28-52",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:bear#3",
+     "anchor_ref": "Psa 126:6",
+     "anchor_passage": "Psa 126:5-6",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5375:bear#4",
+     "anchor_ref": "Psa 126:6",
+     "anchor_passage": "Psa 126:5-6",
+     "recurs_at": []
+    }
+   ],
+   "H2490:violat": [
+    {
+     "reading_id": "H2490:violat#1",
+     "anchor_ref": "Psa 55:20",
+     "anchor_passage": "Psa 55:9-23",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2490:violat#2",
+     "anchor_ref": "Psa 89:31",
+     "anchor_passage": "Psa 89:28-52",
+     "recurs_at": []
+    }
+   ],
+   "H7311:liftup": [
+    {
+     "reading_id": "H7311:liftup#1",
+     "anchor_ref": "Psa 75:4",
+     "anchor_passage": "Psa 75:4-10",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H7311:liftup#2",
+     "anchor_ref": "Psa 110:7",
+     "anchor_passage": "Psa 110:1-7",
+     "recurs_at": []
+    }
+   ],
+   "H8643:shout": [
+    {
+     "reading_id": "H8643:shout#1",
+     "anchor_ref": "Psa 89:15",
+     "anchor_passage": "Psa 89:12-14",
+     "recurs_at": []
+    }
+   ],
+   "H1361:liftedup": [
+    {
+     "reading_id": "H1361:liftedup#1",
+     "anchor_ref": "Psa 131:1",
+     "anchor_passage": "Psa 131:1-3",
+     "recurs_at": []
+    }
+   ],
+   "H7311:rais": [
+    {
+     "reading_id": "H7311:rais#1",
+     "anchor_ref": "Psa 131:1",
+     "anchor_passage": "Psa 131:1-3",
+     "recurs_at": []
+    }
+   ]
   },
-  "dimension_legend": {
+  "scope_counts": {
+   "ib_char_items": 7,
+   "passages": 17,
+   "lexicals": 21,
+   "distinct_readings": 21,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 4,
+   "ve_lexical_rows": 231
+  },
+  "dimension_frame": {
    "101": "sense",
    "102": "type",
    "103": "source",
@@ -85,7 +277,8 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  }
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
  },
  "passages": [
   {
@@ -96,64 +289,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 24:4",
+     "reading_id": "H5375:liftup#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7695585,
+      7695586,
+      7695587,
+      7695588,
+      7695589,
+      7695590,
+      7695591,
+      7695592,
+      7695594,
+      7695595,
+      7695593
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "the soul not lifted to falsehood"
+       "value": "the soul not lifted to falsehood",
+       "ve_lexical_id": 7695585,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition"
+       "value": "volition",
+       "ve_lexical_id": 7695586,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695587,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the worshipper",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695588,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275894",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "he does not lift up his soul to what is false or swear deceitfully - the self refuses to devote itself to an idol or a lie"
+       "value": "he does not lift up his soul to what is false or swear deceitfully - the self refuses to devote itself to an idol or a lie",
+       "ve_lexical_id": 7695589,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "undivided-devotion",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695590,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275894",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695591,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "soul-not-to-false",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695592,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275894",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v4: 'who does not LIFT UP his SOUL to what is false and does not swear deceitfully' - the operation is a refusal of misdirected devotion: the interior will not give itself to emptiness or back a lie with an oath."
+       "value": "v4: 'who does not LIFT UP his SOUL to what is false and does not swear deceitfully' - the operation is a refusal of misdirected devotion: the interior will not give itself to emptiness or back a lie with an oath.",
+       "ve_lexical_id": 7695594,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7695595,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7695593,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -167,64 +485,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 25:1",
+     "reading_id": "H5375:liftup#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7695710,
+      7695711,
+      7695712,
+      7695713,
+      7695714,
+      7695715,
+      7695716,
+      7695717,
+      7695719,
+      7695720,
+      7695718
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up my soul to you"
+       "value": "lift up my soul to you",
+       "ve_lexical_id": 7695710,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "affect"
+       "value": "affect",
+       "ve_lexical_id": 7695711,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695712,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695713,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275947",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self lifts up its soul to God - the whole inner self raised toward him as the psalm opens"
+       "value": "the self lifts up its soul to God - the whole inner self raised toward him as the psalm opens",
+       "ve_lexical_id": 7695714,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "self-offering",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695715,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275947",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7695716,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "lift-up-soul",
-       "resolution": "inferred"
+       "ve_lexical_id": 7695717,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "275947",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'To you, O LORD, I LIFT UP my SOUL' - the operation raises the entire interior toward God; the acrostic begins by handing the self over."
+       "value": "v1: 'To you, O LORD, I LIFT UP my SOUL' - the operation raises the entire interior toward God; the acrostic begins by handing the self over.",
+       "ve_lexical_id": 7695719,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7695720,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7695718,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -238,65 +681,189 @@
      "ib_char": "bear",
      "char_key": "H5375:bear",
      "reference": "Psa 55:12",
+     "reading_id": "H5375:bear#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653721,
+      7653722,
+      7653723,
+      7653724,
+      7653725,
+      7653726,
+      7653727,
+      7653728,
+      7653730,
+      7653731,
+      7653729
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bear / endure (nasa - then I could bear it)"
+       "value": "bear / endure (nasa - then I could bear it)",
+       "ve_lexical_id": 7653721,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7653722,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653723,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653724,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280052",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "bear / endure (hypothetically)",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653725,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280052",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "an enemy's taunt",
-       "resolution": "span"
+       "ve_lexical_id": 7653726,
+       "item_type": "pair",
+       "from_span": "280052",
+       "to_span": "280051",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653727,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with hiding from an open adversary",
-       "resolution": "span"
+       "ve_lexical_id": 7653728,
+       "item_type": "pair",
+       "from_span": "280052",
+       "to_span": "280057",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'then I could BEAR (nasa) it' — the endurance that open enmity allows; nasa (to lift/carry) the capacity to shoulder a known foe's reproach — a strength that the betrayal of a friend dissolves, for there is no bracing against a trusted hand"
+       "value": "'then I could BEAR (nasa) it' — the endurance that open enmity allows; nasa (to lift/carry) the capacity to shoulder a known foe's reproach — a strength that the betrayal of a friend dissolves, for there is no bracing against a trusted hand",
+       "ve_lexical_id": 7653730,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7653731,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653729,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -304,64 +871,189 @@
      "ib_char": "violated",
      "char_key": "H2490:violat",
      "reference": "Psa 55:20",
+     "reading_id": "H2490:violat#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653890,
+      7653891,
+      7653892,
+      7653893,
+      7653894,
+      7653895,
+      7653896,
+      7653897,
+      7653899,
+      7653900,
+      7653898
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "profane / violate (chalal - he violated his covenant)"
+       "value": "profane / violate (chalal - he violated his covenant)",
+       "ve_lexical_id": 7653890,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7653891,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653892,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the betrayer",
-       "resolution": "inferred"
+       "ve_lexical_id": 7653893,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280130",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "profane / break"
+       "value": "profane / break",
+       "ve_lexical_id": 7653894,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "his covenant",
-       "resolution": "span"
+       "ve_lexical_id": 7653895,
+       "item_type": "pair",
+       "from_span": "280130",
+       "to_span": "280132",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7653896,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the hand stretched against friends",
-       "resolution": "span"
+       "ve_lexical_id": 7653897,
+       "item_type": "pair",
+       "from_span": "280130",
+       "to_span": "280126",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'he VIOLATED (chalal) his covenant' — the sacred bond profaned; chalal (to profane/pollute) the treachery of breaking a sworn covenant of friendship — faithlessness at its most defiling, the trust desecrated"
+       "value": "'he VIOLATED (chalal) his covenant' — the sacred bond profaned; chalal (to profane/pollute) the treachery of breaking a sworn covenant of friendship — faithlessness at its most defiling, the trust desecrated",
+       "ve_lexical_id": 7653899,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7653900,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653898,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -375,66 +1067,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 63:4",
+     "reading_id": "H5375:liftup#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7656456,
+      7656457,
+      7656458,
+      7656459,
+      7656460,
+      7656461,
+      7656462,
+      7656463,
+      7656465,
+      7656466,
+      7656464
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up (the hands) (nasa - lift up my hands)"
+       "value": "lift up (the hands) (nasa - lift up my hands)",
+       "ve_lexical_id": 7656456,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7656457,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
        "value": "the hands",
-       "resolution": "inferred"
+       "ve_lexical_id": 7656458,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281058",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7656459,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281058",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up (the hands in worship)"
+       "value": "lift up (the hands in worship)",
+       "ve_lexical_id": 7656460,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to God, in his name",
-       "resolution": "inferred"
+       "ve_lexical_id": 7656461,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281058",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "in God's name",
-       "resolution": "inferred"
+       "ve_lexical_id": 7656462,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "281058",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "the gesture of the lifelong blessing",
-       "resolution": "span"
+       "ve_lexical_id": 7656463,
+       "item_type": "pair",
+       "from_span": "281058",
+       "to_span": "281054",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'in your name I will LIFT UP (nasa) my hands' — the bodily posture of prayer and blessing; nasa here the hands raised in God's name — the outward act of a heart lifted to God, worship enacted with the whole self"
+       "value": "'in your name I will LIFT UP (nasa) my hands' — the bodily posture of prayer and blessing; nasa here the hands raised in God's name — the outward act of a heart lifted to God, worship enacted with the whole self",
+       "ve_lexical_id": 7656465,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7656466,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7656464,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -448,65 +1263,189 @@
      "ib_char": "lift up",
      "char_key": "H7311:liftup",
      "reference": "Psa 75:4",
+     "reading_id": "H7311:liftup#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7663002,
+      7663003,
+      7663004,
+      7663005,
+      7663006,
+      7663007,
+      7663008,
+      7663009,
+      7663011,
+      7663012,
+      7663010
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up / exalt (rum - do not lift up your horn)"
+       "value": "lift up / exalt (rum - do not lift up your horn)",
+       "ve_lexical_id": 7663002,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7663003,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7663004,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the wicked",
-       "resolution": "inferred"
+       "ve_lexical_id": 7663005,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the horn (forbidden self-exaltation)"
+       "value": "lift up the horn (forbidden self-exaltation)",
+       "ve_lexical_id": 7663006,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the horn (symbol of strength/pride)",
-       "resolution": "span"
+       "ve_lexical_id": 7663007,
+       "item_type": "pair",
+       "from_span": "282722",
+       "to_span": "282723",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "on high, with haughty neck",
-       "resolution": "inferred"
+       "ve_lexical_id": 7663008,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with speaking with haughty neck (v5)",
-       "resolution": "span"
+       "ve_lexical_id": 7663009,
+       "item_type": "pair",
+       "from_span": "282722",
+       "to_span": "282729",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'Do not LIFT UP (rum) your horn; do not lift up your horn on high' — the arrogant self-exaltation God forbids; rum here the raising of the horn, the gesture of proud, defiant strength - self-promotion the wicked must abandon, for lifting up is God's to give (v7)"
+       "value": "'Do not LIFT UP (rum) your horn; do not lift up your horn on high' — the arrogant self-exaltation God forbids; rum here the raising of the horn, the gesture of proud, defiant strength - self-promotion the wicked must abandon, for lifting up is God's to give (v7)",
+       "ve_lexical_id": 7663011,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7663012,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7663010,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -520,64 +1459,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 86:4",
+     "reading_id": "H5375:liftup#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7667126,
+      7667127,
+      7667128,
+      7667129,
+      7667130,
+      7667131,
+      7667132,
+      7667133,
+      7667135,
+      7667136,
+      7667134
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up (nasa)"
+       "value": "lift up (nasa)",
+       "ve_lexical_id": 7667126,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7667127,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667128,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667129,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284349",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the soul"
+       "value": "lift up the soul",
+       "ve_lexical_id": 7667130,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to God",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667131,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284349",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7667132,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the soul gladdened",
-       "resolution": "inferred"
+       "ve_lexical_id": 7667133,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284349",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v4: 'for to you, O Lord, do I LIFT UP (nasa) my soul' - the aspiration of the whole self toward God, devotion as upward reach."
+       "value": "v4: 'for to you, O Lord, do I LIFT UP (nasa) my soul' - the aspiration of the whole self toward God, devotion as upward reach.",
+       "ve_lexical_id": 7667135,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7667136,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7667134,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -591,64 +1655,189 @@
      "ib_char": "shout",
      "char_key": "H8643:shout",
      "reference": "Psa 89:15",
+     "reading_id": "H8643:shout#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668070,
+      7668071,
+      7668072,
+      7668073,
+      7668074,
+      7668075,
+      7668076,
+      7668077,
+      7668079,
+      7668080,
+      7668078
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "festal shout (teruah)"
+       "value": "festal shout (teruah)",
+       "ve_lexical_id": 7668070,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7668071,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668072,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the people",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668073,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307041",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "raise the festal shout"
+       "value": "raise the festal shout",
+       "ve_lexical_id": 7668074,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to God the king",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668075,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307041",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668076,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668077,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307041",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v15: 'who know the festal SHOUT (teruah)' - the joyful acclamation of God as king, worship as jubilant cry."
+       "value": "v15: 'who know the festal SHOUT (teruah)' - the joyful acclamation of God as king, worship as jubilant cry.",
+       "ve_lexical_id": 7668079,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7668080,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with knowing and walking in the light"
+       "value": "paired with knowing and walking in the light",
+       "ve_lexical_id": 7668078,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -662,64 +1851,189 @@
      "ib_char": "violated",
      "char_key": "H2490:violat",
      "reference": "Psa 89:31",
+     "reading_id": "H2490:violat#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668169,
+      7668170,
+      7668171,
+      7668172,
+      7668173,
+      7668174,
+      7668175,
+      7668176,
+      7668178,
+      7668179,
+      7668177
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "violate (chalal)"
+       "value": "violate (chalal)",
+       "ve_lexical_id": 7668169,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7668170,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668171,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "David's children",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668172,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "profane / violate"
+       "value": "profane / violate",
+       "ve_lexical_id": 7668173,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God's statutes",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668174,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668175,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with not keeping his commandments",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668176,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v31: 'if they VIOLATE (chalal) my statutes' - the profaning of God's ordinances by the sons."
+       "value": "v31: 'if they VIOLATE (chalal) my statutes' - the profaning of God's ordinances by the sons.",
+       "ve_lexical_id": 7668178,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7668179,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7668177,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -727,64 +2041,189 @@
      "ib_char": "bear",
      "char_key": "H5375:bear",
      "reference": "Psa 89:50",
+     "reading_id": "H5375:bear#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668279,
+      7668280,
+      7668281,
+      7668282,
+      7668283,
+      7668284,
+      7668285,
+      7668286,
+      7668288,
+      7668289,
+      7668287
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bear (nasa)"
+       "value": "bear (nasa)",
+       "ve_lexical_id": 7668279,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7668280,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668281,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668282,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284838",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "bear / carry"
+       "value": "bear / carry",
+       "ve_lexical_id": 7668283,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the insults of the nations in the heart",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668284,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284838",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7668285,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7668286,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284838",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v50: 'how I BEAR (nasa) in my heart the insults of all the many nations' - the inward carrying of reproach, humiliation lodged in the heart."
+       "value": "v50: 'how I BEAR (nasa) in my heart the insults of all the many nations' - the inward carrying of reproach, humiliation lodged in the heart.",
+       "ve_lexical_id": 7668288,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7668289,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the servants' being mocked"
+       "value": "paired with the servants' being mocked",
+       "ve_lexical_id": 7668287,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -798,64 +2237,189 @@
      "ib_char": "lift up",
      "char_key": "H7311:liftup",
      "reference": "Psa 110:7",
+     "reading_id": "H7311:liftup#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677896,
+      7677897,
+      7677898,
+      7677899,
+      7677900,
+      7677901,
+      7677902,
+      7677903,
+      7677905,
+      7677906,
+      7677904
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up (rum)"
+       "value": "lift up (rum)",
+       "ve_lexical_id": 7677896,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state"
+       "value": "state",
+       "ve_lexical_id": 7677897,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677898,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the king",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677899,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270560",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up his head"
+       "value": "lift up his head",
+       "ve_lexical_id": 7677900,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "in triumph",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677901,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270560",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7677902,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7677903,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270560",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v7: 'therefore he will LIFT UP (rum) his head' - the king's triumphant exaltation, head raised in victory after God has shattered his foes."
+       "value": "v7: 'therefore he will LIFT UP (rum) his head' - the king's triumphant exaltation, head raised in victory after God has shattered his foes.",
+       "ve_lexical_id": 7677905,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7677906,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with drinking from the brook by the way"
+       "value": "paired with drinking from the brook by the way",
+       "ve_lexical_id": 7677904,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -869,64 +2433,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 116:13",
+     "reading_id": "H5375:liftup#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7679385,
+      7679386,
+      7679387,
+      7679388,
+      7679389,
+      7679390,
+      7679391,
+      7679392,
+      7679394,
+      7679395,
+      7679393
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up (nasa)"
+       "value": "lift up (nasa)",
+       "ve_lexical_id": 7679385,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7679386,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7679387,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7679388,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270931",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up"
+       "value": "lift up",
+       "ve_lexical_id": 7679389,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "the cup of salvation",
-       "resolution": "inferred"
+       "ve_lexical_id": 7679390,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270931",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7679391,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7679392,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270931",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v13: 'I will LIFT UP (nasa) the cup of salvation' - the thankful gesture, raising the cup in acknowledgement of God's rescue."
+       "value": "v13: 'I will LIFT UP (nasa) the cup of salvation' - the thankful gesture, raising the cup in acknowledgement of God's rescue.",
+       "ve_lexical_id": 7679394,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7679395,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with calling on God's name"
+       "value": "paired with calling on God's name",
+       "ve_lexical_id": 7679393,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -940,64 +2629,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 119:48",
+     "reading_id": "H5375:liftup#6",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7681294,
+      7681295,
+      7681296,
+      7681297,
+      7681298,
+      7681299,
+      7681300,
+      7681301,
+      7681303,
+      7681304,
+      7681302
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up (nasa)"
+       "value": "lift up (nasa)",
+       "ve_lexical_id": 7681294,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7681295,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681296,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681297,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271872",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the hands"
+       "value": "lift up the hands",
+       "ve_lexical_id": 7681298,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God's word",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681299,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271872",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7681300,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired within its char-arc across the psalm",
-       "resolution": "inferred"
+       "ve_lexical_id": 7681301,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271872",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v48: 'I will LIFT UP my hands toward your commandments, which I love' - the lifted hands of devotion toward the loved commandments."
+       "value": "v48: 'I will LIFT UP my hands toward your commandments, which I love' - the lifted hands of devotion toward the loved commandments.",
+       "ve_lexical_id": 7681303,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7681304,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god"
+       "value": "external:god",
+       "ve_lexical_id": 7681302,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1011,64 +2825,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 121:1",
+     "reading_id": "H5375:liftup#7",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7684522,
+      7684523,
+      7684524,
+      7684525,
+      7684526,
+      7684527,
+      7684528,
+      7684529,
+      7684531,
+      7684532,
+      7684530
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up the eyes (nasa)"
+       "value": "lift up the eyes (nasa)",
+       "ve_lexical_id": 7684522,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7684523,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684524,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684525,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272330",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the eyes"
+       "value": "lift up the eyes",
+       "ve_lexical_id": 7684526,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to seek help",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684527,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272330",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684528,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684529,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272330",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'I LIFT UP (nasa) my eyes to the hills. From where does my help come?' - the seeking gaze of the pilgrim, looking beyond the hills to God for help."
+       "value": "v1: 'I LIFT UP (nasa) my eyes to the hills. From where does my help come?' - the seeking gaze of the pilgrim, looking beyond the hills to God for help.",
+       "ve_lexical_id": 7684531,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7684532,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the help that comes from the LORD"
+       "value": "paired with the help that comes from the LORD",
+       "ve_lexical_id": 7684530,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1082,64 +3021,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 123:1",
+     "reading_id": "H5375:liftup#8",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7684732,
+      7684733,
+      7684734,
+      7684735,
+      7684736,
+      7684737,
+      7684738,
+      7684739,
+      7684741,
+      7684742,
+      7684740
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up the eyes (nasa)"
+       "value": "lift up the eyes (nasa)",
+       "ve_lexical_id": 7684732,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7684733,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684734,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684735,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307798",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the eyes"
+       "value": "lift up the eyes",
+       "ve_lexical_id": 7684736,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to God enthroned",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684737,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307798",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7684738,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7684739,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "307798",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'To you I LIFT UP (nasa) my eyes, O you who are enthroned in the heavens!' - the upward look of dependence, eyes raised to the enthroned God for mercy."
+       "value": "v1: 'To you I LIFT UP (nasa) my eyes, O you who are enthroned in the heavens!' - the upward look of dependence, eyes raised to the enthroned God for mercy.",
+       "ve_lexical_id": 7684741,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7684742,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the servant's upward look for mercy"
+       "value": "paired with the servant's upward look for mercy",
+       "ve_lexical_id": 7684740,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1153,64 +3217,189 @@
      "ib_char": "bear",
      "char_key": "H5375:bear",
      "reference": "Psa 126:6",
+     "reading_id": "H5375:bear#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685166,
+      7685167,
+      7685168,
+      7685169,
+      7685170,
+      7685171,
+      7685172,
+      7685173,
+      7685175,
+      7685176,
+      7685174
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bear (nasa)"
+       "value": "bear (nasa)",
+       "ve_lexical_id": 7685166,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7685167,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685168,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the sower",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685169,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272588",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "carry the seed out"
+       "value": "carry the seed out",
+       "ve_lexical_id": 7685170,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "in grief",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685171,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272588",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685172,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685173,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272588",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'BEARING (nasa) the seed for sowing' - the burdened going-out, carrying the precious seed to be given up to the ground."
+       "value": "v6: 'BEARING (nasa) the seed for sowing' - the burdened going-out, carrying the precious seed to be given up to the ground.",
+       "ve_lexical_id": 7685175,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685176,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with bringing sheaves home"
+       "value": "paired with bringing sheaves home",
+       "ve_lexical_id": 7685174,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1218,64 +3407,189 @@
      "ib_char": "bear",
      "char_key": "H5375:bear",
      "reference": "Psa 126:6",
+     "reading_id": "H5375:bear#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685188,
+      7685189,
+      7685190,
+      7685191,
+      7685192,
+      7685193,
+      7685194,
+      7685195,
+      7685197,
+      7685198,
+      7685196
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "bring (nasa)"
+       "value": "bring (nasa)",
+       "ve_lexical_id": 7685188,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7685189,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685190,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the sower",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685191,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272594",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "carry the sheaves home"
+       "value": "carry the sheaves home",
+       "ve_lexical_id": 7685192,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "in joy",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685193,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272594",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685194,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685195,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272594",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'BRINGING (nasa) his sheaves with him' - the joyful return-burden, the same arms that carried seed in tears now full of sheaves."
+       "value": "v6: 'BRINGING (nasa) his sheaves with him' - the joyful return-burden, the same arms that carried seed in tears now full of sheaves.",
+       "ve_lexical_id": 7685197,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685198,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with bearing the seed out"
+       "value": "paired with bearing the seed out",
+       "ve_lexical_id": 7685196,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1289,64 +3603,189 @@
      "ib_char": "lifted up",
      "char_key": "H1361:liftedup",
      "reference": "Psa 131:1",
+     "reading_id": "H1361:liftedup#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685880,
+      7685881,
+      7685882,
+      7685883,
+      7685884,
+      7685885,
+      7685886,
+      7685887,
+      7685889,
+      7685890,
+      7685888
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lifted up (gabah, negated)"
+       "value": "lifted up (gabah, negated)",
+       "ve_lexical_id": 7685880,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "disposition"
+       "value": "disposition",
+       "ve_lexical_id": 7685881,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685882,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685883,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272859",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "not exalt the heart"
+       "value": "not exalt the heart",
+       "ve_lexical_id": 7685884,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "in pride",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685885,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272859",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685886,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685887,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272859",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'my heart is not LIFTED UP (gabah)' - the pride deliberately negated, the heart kept from rising."
+       "value": "v1: 'my heart is not LIFTED UP (gabah)' - the pride deliberately negated, the heart kept from rising.",
+       "ve_lexical_id": 7685889,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685890,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the unproud heart"
+       "value": "paired with the unproud heart",
+       "ve_lexical_id": 7685888,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     },
@@ -1354,64 +3793,189 @@
      "ib_char": "raised",
      "char_key": "H7311:rais",
      "reference": "Psa 131:1",
+     "reading_id": "H7311:rais#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685891,
+      7685892,
+      7685893,
+      7685894,
+      7685895,
+      7685896,
+      7685897,
+      7685898,
+      7685900,
+      7685901,
+      7685899
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "raise the eyes (rum, negated)"
+       "value": "raise the eyes (rum, negated)",
+       "ve_lexical_id": 7685891,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7685892,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685893,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685894,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272862",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "not raise the eyes too high"
+       "value": "not raise the eyes too high",
+       "ve_lexical_id": 7685895,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "in ambition",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685896,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272862",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7685897,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "resolution": "inferred"
+       "ve_lexical_id": 7685898,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272862",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v1: 'my eyes are not RAISED (rum) too high' - the operation of restraint: the gaze kept from reaching above its station."
+       "value": "v1: 'my eyes are not RAISED (rum) too high' - the operation of restraint: the gaze kept from reaching above its station.",
+       "ve_lexical_id": 7685900,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7685901,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with not occupying with great things"
+       "value": "paired with not occupying with great things",
+       "ve_lexical_id": 7685899,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1425,64 +3989,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 134:2",
+     "reading_id": "H5375:liftup#9",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7686409,
+      7686410,
+      7686411,
+      7686412,
+      7686413,
+      7686414,
+      7686415,
+      7686416,
+      7686418,
+      7686419,
+      7686417
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up the hands (nasa)"
+       "value": "lift up the hands (nasa)",
+       "ve_lexical_id": 7686409,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action"
+       "value": "action",
+       "ve_lexical_id": 7686410,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7686411,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the servants",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686412,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273040",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "lift up the hands"
+       "value": "lift up the hands",
+       "ve_lexical_id": 7686413,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "to the holy place",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686414,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273040",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7686415,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "external:god",
-       "resolution": "inferred"
+       "ve_lexical_id": 7686416,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273040",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v2: 'LIFT UP (nasa) your hands to the holy place and bless the LORD!' - the gesture of worship: hands raised toward the sanctuary, the body enacting the blessing."
+       "value": "v2: 'LIFT UP (nasa) your hands to the holy place and bless the LORD!' - the gesture of worship: hands raised toward the sanctuary, the body enacting the blessing.",
+       "ve_lexical_id": 7686418,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7686419,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with blessing the LORD"
+       "value": "paired with blessing the LORD",
+       "ve_lexical_id": 7686417,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
@@ -1496,64 +4185,189 @@
      "ib_char": "lift up",
      "char_key": "H5375:liftup",
      "reference": "Psa 143:8",
+     "reading_id": "H5375:liftup#10",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7688889,
+      7688890,
+      7688891,
+      7688892,
+      7688893,
+      7688894,
+      7688895,
+      7688896,
+      7688898,
+      7688899,
+      7688897
+     ],
      "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "lift up the soul"
+       "value": "lift up the soul",
+       "ve_lexical_id": 7688889,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "affect"
+       "value": "affect",
+       "ve_lexical_id": 7688890,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7688891,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "resolution": "inferred"
+       "ve_lexical_id": 7688892,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273942",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the whole soul is lifted toward God - the self offered upward as the ground of the plea"
+       "value": "the whole soul is lifted toward God - the self offered upward as the ground of the plea",
+       "ve_lexical_id": 7688893,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "self-offering",
-       "resolution": "inferred"
+       "ve_lexical_id": 7688894,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273942",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none"
+       "value": "none",
+       "ve_lexical_id": 7688895,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "lift-the-soul",
-       "resolution": "inferred"
+       "ve_lexical_id": 7688896,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273942",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v8: 'to you I LIFT UP my SOUL' - the operation is the raising of the entire inner self as an oblation of trust."
+       "value": "v8: 'to you I LIFT UP my SOUL' - the operation is the raising of the entire inner self as an oblation of trust.",
+       "ve_lexical_id": 7688898,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic"
+       "value": "characteristic",
+       "ve_lexical_id": 7688899,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state"
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7688897,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
       }
      ]
     }
