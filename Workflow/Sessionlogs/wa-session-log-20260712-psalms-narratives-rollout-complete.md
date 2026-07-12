@@ -51,3 +51,16 @@ Six+ agents independently reported that dimensions 112 and 116 are **transposed*
 1. **coupling/locus transposition** — isolate root cause, repair, regenerate base sources, re-gate (see finding doc).
 2. **Narratives → DB** — the `WORK_CONTRACT` names the DB as the ultimate destination (JSON = transport, `.md` = readable view; "all study work in the DB"). The narratives are currently filed as JSON/MD only; the patch-to-DB step is outstanding for all 46 families.
 3. **Cross-term / cohabitation layer** — the style instruction (§3b) defers cohabitation to a cross-term story built after the single-term stories. With all 46 single-family narratives now complete, the cross-term layer is the natural next phase.
+
+## 6. Session end (addendum)
+
+Two follow-on items were completed after the rollout, at the researcher's request:
+
+1. **Method preserved as an instruction** — [`Workflow/Instructions/wa-two-narrative-rollout-method-v1-20260712.md`](../Instructions/wa-two-narrative-rollout-method-v1-20260712.md): the authoritative 3-stage process (base source → two narratives → render/gate/commit), generalised for all remaining books. Bakes in the lessons — the "ONE worker, do NOT spawn agents" clause, **Sonnet-not-Opus** cost guidance, the mandatory gate before commit, and the 112/116 data-check. The design point that makes it repeatable: the base source is self-describing (its `meta.WORK_CONTRACT` carries the whole contract).
+2. **Cost question answered** — the usage spike was **not** an expensive model. Every worker was `general-purpose` with no override → inherited the session model (**Opus 4.8 [1m]**); **fable was never invoked**. The spike = legitimate Opus volume for ~481 records **plus ~900k tokens wasted** by the one corrupted trust-refuge agent's 6 rogue fragment sub-agents. Mitigations now in the instruction (Sonnet + no-spawn).
+
+**Tree clean, all committed** (through `907cb2f1`). Manifest rebuilt. Daily NAS DB backup (18:00) + full mirror (18:30) cover this work.
+
+### ➡ Next session — rework of Proverbs lexicals
+
+Start the **Proverbs lexical rework**. Context already on disk: `verse-analysis/proverbs/` (`_reread/`, `_roles/`, `_seg/`). Relevant standing state in memory: [[project_reread_success_gates_and_scored_audit]] (Proverbs re-read measured by gates G0–G8 + scored audit; **baseline = 2/9**; NEXT = confirm F-frame split → reset → re-read → re-measure) and the live lexical method ([[project_ve_lexical_is_verse_first]], [[project_term_driven_genre_aware_lexical_method]], the cycle/dimension authority docs). Proverbs is **poetic** genre → the two-phase lexical treatment applies. First move next session: orient in `verse-analysis/proverbs/_reread/` (BASELINE-v2, success-criteria, gates-completeness-gap) and confirm the exact scope of "rework the lexicals" with the researcher before touching data.
