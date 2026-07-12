@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T17:47:55Z",
+  "generated_at": "2026-07-12T19:28:24Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 2179,
+    "other": 2180,
     "historical": 31,
-    "current": 2444,
+    "current": 2446,
     "archived": 2819,
     "cross-reference": 3398,
     "backup": 102
   },
-  "total_files": 10973,
-  "total_active": 8154,
+  "total_files": 10976,
+  "total_active": 8157,
   "total_archived": 2819,
   "files": [
     {
@@ -68359,6 +68359,22 @@
       "modified": "2026-07-12T04:59:59Z"
     },
     {
+      "path": "Workflow/Instructions/wa-book-lexical-readiness-assessment-AUTHORITATIVE-v1-20260712.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-12",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 12315,
+      "modified": "2026-07-12T19:24:56Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md",
       "category": "workflow",
       "type": "other",
@@ -114323,8 +114339,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4936743,
-      "modified": "2026-07-12T17:42:30Z"
+      "size_bytes": 4937213,
+      "modified": "2026-07-12T17:47:55Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -140215,6 +140231,22 @@
       "modified": "2026-07-12T05:00:44Z"
     },
     {
+      "path": "scripts/_check_book_lexical_readiness_v1_20260712.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-12",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 18439,
+      "modified": "2026-07-12T19:27:24Z"
+    },
+    {
       "path": "scripts/_check_doc_versions.py",
       "category": "script",
       "type": "other",
@@ -157287,6 +157319,22 @@
       "modified": "2026-07-12T05:00:50Z"
     },
     {
+      "path": "verse-analysis/proverbs/_reread/wa-proverbs-readiness-REPORT-v1-20260712.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-12",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3397,
+      "modified": "2026-07-12T19:27:32Z"
+    },
+    {
       "path": "verse-analysis/proverbs/_reread/wa-proverbs-readiness-check-DEFINITION-and-status-v1-20260712.md",
       "category": "other",
       "type": "other",
@@ -157299,8 +157347,8 @@
       "date": "2026-07-12",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 8477,
-      "modified": "2026-07-12T17:47:44Z"
+      "size_bytes": 10059,
+      "modified": "2026-07-12T19:17:42Z"
     },
     {
       "path": "verse-analysis/proverbs/_reread/wa-proverbs-reread-BASELINE-20260708.md",
