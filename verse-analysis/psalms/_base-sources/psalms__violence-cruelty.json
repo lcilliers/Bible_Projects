@@ -1,16 +1,106 @@
 {
  "meta": {
+  "family": "violence-cruelty",
   "book": "Psalms",
   "book_id": 19,
-  "scope": {
-   "family": "violence-cruelty"
+  "generated": "2026-07-12",
+  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
+  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
+  "linkage": {
+   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
+   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
+   "declared_foreign_keys": {
+    "ib_characteristic": [
+     "(none declared)"
+    ],
+    "verse_span_index": [
+     "(none declared)"
+    ],
+    "ve_lexical": [
+     "verse_span_id -> verse_span_index.id",
+     "verse_context_id -> verse_context.id"
+    ],
+    "verse": [
+     "(none declared)"
+    ]
+   }
   },
-  "generated": "2026-07-11",
-  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
-  "description": "Base source for the Psalms inner-being family 'violence-cruelty': all meanings, instances, lexical ledgers, and verse/passage text.",
-  "counts": {
-   "meanings": 14,
-   "instances": 21,
+  "ib_char_items": [
+   {
+    "char_key": "H3615:end",
+    "meaning": "end",
+    "cluster": "T2(Supplementary)"
+   },
+   {
+    "char_key": "H2555:violenc",
+    "meaning": "violence",
+    "cluster": "Evil"
+   },
+   {
+    "char_key": "H1792:crush",
+    "meaning": "crush",
+    "cluster": "Weakness"
+   },
+   {
+    "char_key": "H6184:ruthlessmen",
+    "meaning": "ruthless men",
+    "cluster": "Hate"
+   },
+   {
+    "char_key": "H1481:strif",
+    "meaning": "strife",
+    "cluster": "Fear"
+   },
+   {
+    "char_key": "H3898:attack",
+    "meaning": "attack",
+    "cluster": null
+   },
+   {
+    "char_key": "H1413:bandtogether",
+    "meaning": "band together",
+    "cluster": null
+   },
+   {
+    "char_key": "H1818:bloodthirsty",
+    "meaning": "bloodthirsty",
+    "cluster": null
+   },
+   {
+    "char_key": "H3289:conspir",
+    "meaning": "conspire",
+    "cluster": "Wisdom"
+   },
+   {
+    "char_key": "H4066:contention",
+    "meaning": "contention",
+    "cluster": "Anger"
+   },
+   {
+    "char_key": "H0398:eatup",
+    "meaning": "eat up",
+    "cluster": null
+   },
+   {
+    "char_key": "H2026:kill",
+    "meaning": "kill",
+    "cluster": null
+   },
+   {
+    "char_key": "H3615:passaway",
+    "meaning": "pass away",
+    "cluster": "T2(Supplementary)"
+   },
+   {
+    "char_key": "H7379:strif",
+    "meaning": "strife",
+    "cluster": "Anger"
+   }
+  ],
+  "stats": {
+   "ib_char_items": 14,
+   "spans_joined": 21,
+   "lexicals": 21,
    "passages": 16
   },
   "dimension_legend": {
@@ -30,3097 +120,1472 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  },
-  "structure": {
-   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
-   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
-   "meanings[]": {
-    "char_key": "lemma:normalised-ESV key (record identity)",
-    "meaning": "readable meaning label (modal ESV rendering)",
-    "lemma": "base Strong's number",
-    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
-    "instance_count": "number of master spans",
-    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
-    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
-    "instances[]": {
-     "span_id": "verse_span_index.id (the unique master)",
-     "reference": "verse reference",
-     "hebrew_surface": "the Hebrew surface word of the span",
-     "esv_word": "the ESV rendering in this verse",
-     "morphology": "{morph_code, stem}",
-     "read_characteristic": "the read characteristic-in-words on the master",
-     "position": "{word_index, passage_id, is_passage_anchor, genre}",
-     "verse_text": "full text of this verse (ESV)",
-     "passage_id": "-> lookup in top-level passages map for the passage text",
-     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
-     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
-    }
-   }
   }
  },
- "passages": {
-  "1659": {
+ "passages": [
+  {
    "passage_ref": "Psa 53:1-6",
-   "verse_refs": [
-    "Psa 53:1",
-    "Psa 53:2",
-    "Psa 53:3",
-    "Psa 53:4",
-    "Psa 53:5",
-    "Psa 53:6"
-   ],
-   "text": "To the choirmaster : according to Mahalath . A Maskil of David . Psa 53:1 The fool says in his heart , “There is no God .” They are corrupt , doing abominable iniquity ; there is none who does good . Psa 53:2 God looks down from heaven on the children of man to see if there are any who understand , who seek after God . Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one . Psa 53:4 Have those who work evil no knowledge , who eat up my people as they eat bread , and do not call upon God ? Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them . Psa 53:6 Oh , that salvation for Israel would come out of Zion ! When God restores the fortunes of his people , let Jacob rejoice , let Israel be glad ."
-  },
-  "1660": {
-   "passage_ref": "Psa 54:1-7",
-   "verse_refs": [
-    "Psa 54:1",
-    "Psa 54:2",
-    "Psa 54:3",
-    "Psa 54:4",
-    "Psa 54:5",
-    "Psa 54:6",
-    "Psa 54:7"
-   ],
-   "text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies ."
-  },
-  "1662": {
-   "passage_ref": "Psa 55:9-23",
-   "verse_refs": [
-    "Psa 55:8",
-    "Psa 55:9",
-    "Psa 55:10",
-    "Psa 55:11",
-    "Psa 55:12",
-    "Psa 55:13",
-    "Psa 55:14",
-    "Psa 55:15",
-    "Psa 55:16",
-    "Psa 55:17",
-    "Psa 55:18",
-    "Psa 55:19",
-    "Psa 55:20",
-    "Psa 55:21",
-    "Psa 55:22",
-    "Psa 55:23"
-   ],
-   "text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you ."
-  },
-  "1663": {
-   "passage_ref": "Psa 56:1-13",
-   "verse_refs": [
-    "Psa 56:1",
-    "Psa 56:2",
-    "Psa 56:3",
-    "Psa 56:4",
-    "Psa 56:5",
-    "Psa 56:6",
-    "Psa 56:7",
-    "Psa 56:8",
-    "Psa 56:9",
-    "Psa 56:10",
-    "Psa 56:11",
-    "Psa 56:12",
-    "Psa 56:13"
-   ],
-   "text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life ."
-  },
-  "1665": {
-   "passage_ref": "Psa 58:1-5",
-   "verse_refs": [
-    "Psa 58:1",
-    "Psa 58:2",
-    "Psa 58:3",
-    "Psa 58:4",
-    "Psa 58:5",
-    "Psa 58:7"
-   ],
-   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David . Psa 58:1 Do you indeed decree what is right , you gods ? Do you judge the children of man uprightly ? Psa 58:2 No , in your hearts you devise wrongs ; your hands deal out violence on earth . Psa 58:3 The wicked are estranged from the womb ; they go astray from birth , speaking lies . Psa 58:4 They have venom like the venom of a serpent , like the deaf adder that stops its ear , Psa 58:5 so that it does not hear the voice of charmers or of the cunning enchanter . Psa 58:7 Let them vanish like water that runs away; when he aims his arrows, let them be blunted."
-  },
-  "1667": {
-   "passage_ref": "Psa 59:1-5",
-   "verse_refs": [
-    "Psa 59:1",
-    "Psa 59:2",
-    "Psa 59:3",
-    "Psa 59:4",
-    "Psa 59:5"
-   ],
-   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah"
-  },
-  "1696": {
-   "passage_ref": "Psa 72:1-5",
-   "verse_refs": [
-    "Psa 72:1",
-    "Psa 72:2",
-    "Psa 72:3",
-    "Psa 72:4",
-    "Psa 72:5"
-   ],
-   "text": "Of Solomon . Psa 72:1 Give the king your justice , O God , and your righteousness to the royal son ! Psa 72:2 May he judge your people with righteousness , and your poor with justice ! Psa 72:3 Let the mountains bear prosperity for the people , and the hills , in righteousness ! Psa 72:4 May he defend the cause of the poor of the people , give deliverance to the children of the needy , and crush the oppressor ! Psa 72:5 May they fear you while the sun endures , and as long as the moon , throughout all generations !"
-  },
-  "1700": {
-   "passage_ref": "Psa 73:1-8",
-   "verse_refs": [
-    "Psa 73:1",
-    "Psa 73:2",
-    "Psa 73:3",
-    "Psa 73:4",
-    "Psa 73:5",
-    "Psa 73:6",
-    "Psa 73:7",
-    "Psa 73:8"
-   ],
-   "text": "A Psalm of Asaph . Psa 73:1 Truly God is good to Israel , to those who are pure in heart . Psa 73:2 But as for me, my feet had almost stumbled , my steps had nearly slipped . Psa 73:3 For I was envious of the arrogant when I saw the prosperity of the wicked . Psa 73:4 For they have no pangs until death ; their bodies are fat and sleek . Psa 73:5 They are not in trouble as others are; they are not stricken like the rest of mankind . Psa 73:6 Therefore pride is their necklace ; violence covers them as a garment . Psa 73:7 Their eyes swell out through fatness ; their hearts overflow with follies . Psa 73:8 They scoff and speak with malice ; loftily they threaten oppression ."
-  },
-  "1727": {
-   "passage_ref": "Psa 80:4-7",
-   "verse_refs": [
-    "Psa 80:4",
-    "Psa 80:5",
-    "Psa 80:6",
-    "Psa 80:7"
-   ],
-   "text": "Psa 80:4 O Lord God of hosts , how long will you be angry with your people’s prayers ? Psa 80:5 You have fed them with the bread of tears and given them tears to drink in full measure . Psa 80:6 You make us an object of contention for our neighbors , and our enemies laugh among themselves . Psa 80:7 Restore us, O God of hosts ; let your face shine , that we may be saved !"
-  },
-  "1735": {
-   "passage_ref": "Psa 83:1-5",
-   "verse_refs": [
-    "Psa 83:1",
-    "Psa 83:2",
-    "Psa 83:3",
-    "Psa 83:4",
-    "Psa 83:5"
-   ],
-   "text": "A Song . A Psalm of Asaph . Psa 83:1 O God , do not keep silence ; do not hold your peace or be still , O God ! Psa 83:2 For behold , your enemies make an uproar ; those who hate you have raised their heads . Psa 83:3 They lay crafty plans against your people ; they consult together against your treasured ones . Psa 83:4 They say , “ Come , let us wipe them out as a nation ; let the name of Israel be remembered no more !” Psa 83:5 For they conspire with one accord ; against you they make a covenant —"
-  },
-  "1740": {
-   "passage_ref": "Psa 86:9-17",
-   "verse_refs": [
-    "Psa 86:9",
-    "Psa 86:10",
-    "Psa 86:11",
-    "Psa 86:12",
-    "Psa 86:13",
-    "Psa 86:14",
-    "Psa 86:15",
-    "Psa 86:16",
-    "Psa 86:17"
-   ],
-   "text": "Psa 86:9 All the nations you have made shall come and worship before you, O Lord , and shall glorify your name . Psa 86:10 For you are great and do wondrous things ; you alone are God . Psa 86:11 Teach me your way , O Lord , that I may walk in your truth ; unite my heart to fear your name . Psa 86:12 I give thanks to you, O Lord my God , with my whole heart , and I will glorify your name forever . Psa 86:13 For great is your steadfast love toward me; you have delivered my soul from the depths of Sheol . Psa 86:14 O God , insolent men have risen up against me; a band of ruthless men seeks my life , and they do not set you before them . Psa 86:15 But you , O Lord , are a God merciful and gracious , slow to anger and abounding in steadfast love and faithfulness . Psa 86:16 Turn to me and be gracious to me; give your strength to your servant , and save the son of your maidservant . Psa 86:17 Show me a sign of your favor , that those who hate me may see and be put to shame because you , Lord , have helped me and comforted me ."
-  },
-  "1748": {
-   "passage_ref": "Psa 90:5-17",
-   "verse_refs": [
-    "Psa 90:1",
-    "Psa 90:2",
-    "Psa 90:3",
-    "Psa 90:5",
-    "Psa 90:6",
-    "Psa 90:7",
-    "Psa 90:8",
-    "Psa 90:9",
-    "Psa 90:10",
-    "Psa 90:11",
-    "Psa 90:12",
-    "Psa 90:13",
-    "Psa 90:14",
-    "Psa 90:15",
-    "Psa 90:16",
-    "Psa 90:17"
-   ],
-   "text": "Psa 90:1 A Prayer of Moses, the man of God.Lord, you have been our dwelling place in all generations. Psa 90:2 Before the mountains were brought forth , or ever you had formed the earth and the world , from everlasting to everlasting you are God . Psa 90:3 You return man to dust and say, “Return, O children of man!” Psa 90:5 You sweep them away as with a flood ; they are like a dream , like grass that is renewed in the morning : Psa 90:6 in the morning it flourishes and is renewed ; in the evening it fades and withers . Psa 90:7 For we are brought to an end by your anger ; by your wrath we are dismayed . Psa 90:8 You have set our iniquities before you, our secret sins in the light of your presence . Psa 90:9 For all our days pass away under your wrath ; we bring our years to an end like a sigh . Psa 90:10 The years of our life are seventy , or even by reason of strength eighty ; yet their span is but toil and trouble ; they are soon gone , and we fly away . Psa 90:11 Who considers the power of your anger , and your wrath according to the fear of you? Psa 90:12 So teach us to number our days that we may get a heart of wisdom . Psa 90:13 Return , O Lord ! How long ? Have pity on your servants ! Psa 90:14 Satisfy us in the morning with your steadfast love , that we may rejoice and be glad all our days . Psa 90:15 Make us glad for as many days as you have afflicted us, and for as many years as we have seen evil . Psa 90:16 Let your work be shown to your servants , and your glorious power to their children . Psa 90:17 Let the favor of the Lord our God be upon us, and establish the work of our hands upon us; yes, establish the work of our hands !"
-  },
-  "1755": {
-   "passage_ref": "Psa 94:2-5",
-   "verse_refs": [
-    "Psa 94:1",
-    "Psa 94:2",
-    "Psa 94:3",
-    "Psa 94:4",
-    "Psa 94:5",
-    "Psa 94:6"
-   ],
-   "text": "Psa 94:1 O Lord, God of vengeance, O God of vengeance, shine forth! Psa 94:2 Rise up , O judge of the earth ; repay to the proud what they deserve ! Psa 94:3 O Lord , how long shall the wicked , how long shall the wicked exult ? Psa 94:4 They pour out their arrogant words ; all the evildoers boast . Psa 94:5 They crush your people , O Lord , and afflict your heritage . Psa 94:6 They kill the widow and the sojourner, and murder the fatherless;"
-  },
-  "1756": {
-   "passage_ref": "Psa 94:7-23",
-   "verse_refs": [
-    "Psa 94:7",
-    "Psa 94:8",
-    "Psa 94:9",
-    "Psa 94:10",
-    "Psa 94:11",
-    "Psa 94:12",
-    "Psa 94:13",
-    "Psa 94:14",
-    "Psa 94:15",
-    "Psa 94:16",
-    "Psa 94:17",
-    "Psa 94:18",
-    "Psa 94:19",
-    "Psa 94:20",
-    "Psa 94:21",
-    "Psa 94:22",
-    "Psa 94:23"
-   ],
-   "text": "Psa 94:7 and they say , “The Lord does not see ; the God of Jacob does not perceive .” Psa 94:8 Understand , O dullest of the people ! Fools , when will you be wise ? Psa 94:9 He who planted the ear , does he not hear ? He who formed the eye , does he not see ? Psa 94:10 He who disciplines the nations , does he not rebuke ? He who teaches man knowledge — Psa 94:11 the Lord — knows the thoughts of man , that they are but a breath . Psa 94:12 Blessed is the man whom you discipline , O Lord , and whom you teach out of your law , Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked . Psa 94:14 For the Lord will not forsake his people ; he will not abandon his heritage ; Psa 94:15 for justice will return to the righteous , and all the upright in heart will follow it. Psa 94:16 Who rises up for me against the wicked ? Who stands up for me against evildoers ? Psa 94:17 If the Lord had not been my help , my soul would soon have lived in the land of silence . Psa 94:18 When I thought , “My foot slips ,” your steadfast love , O Lord , held me up . Psa 94:19 When the cares of my heart are many , your consolations cheer my soul . Psa 94:20 Can wicked rulers be allied with you, those who frame injustice by statute ? Psa 94:21 They band together against the life of the righteous and condemn the innocent to death . Psa 94:22 But the Lord has become my stronghold , and my God the rock of my refuge . Psa 94:23 He will bring back on them their iniquity and wipe them out for their wickedness ; the Lord our God will wipe them out ."
-  },
-  "1769": {
-   "passage_ref": "Psa 102:1-5",
-   "verse_refs": [
-    "Psa 102:1",
-    "Psa 102:2",
-    "Psa 102:3",
-    "Psa 102:4",
-    "Psa 102:5"
-   ],
-   "text": "A Prayer of one afflicted , when he is faint and pours out his complaint before the Lord . Psa 102:1 Hear my prayer , O Lord ; let my cry come to you! Psa 102:2 Do not hide your face from me in the day of my distress ! Incline your ear to me; answer me speedily in the day when I call ! Psa 102:3 For my days pass away like smoke , and my bones burn like a furnace . Psa 102:4 My heart is struck down like grass and has withered ; I forget to eat my bread . Psa 102:5 Because of my loud groaning my bones cling to my flesh ."
-  },
-  "1826": {
-   "passage_ref": "Psa 119:84-102",
-   "verse_refs": [
-    "Psa 119:84",
-    "Psa 119:85",
-    "Psa 119:86",
-    "Psa 119:87",
-    "Psa 119:88",
-    "Psa 119:89",
-    "Psa 119:90",
-    "Psa 119:91",
-    "Psa 119:92",
-    "Psa 119:93",
-    "Psa 119:94",
-    "Psa 119:95",
-    "Psa 119:96",
-    "Psa 119:97",
-    "Psa 119:98",
-    "Psa 119:99",
-    "Psa 119:100",
-    "Psa 119:101",
-    "Psa 119:102"
-   ],
-   "text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me ."
-  }
- },
- "meanings": [
-  {
-   "char_key": "H3615:end",
-   "meaning": "end",
-   "lemma": "H3615",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": "T2(Supplementary)"
-   },
-   "instance_count": 3,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Piel, Qal",
-    "morph_codes": "HVpp1cp, HVpp3cp, HVqp1cp",
-    "esv_words": "end",
-    "lexical_gloss": "to end: finish; to end: destroy; to end: expend; to end: decides",
-    "read_sense_variants": "be consumed / brought to an end (kalah) | bring to an end (kalah) | be near ended (kalah)"
-   },
-   "instances": [
+   "passage_text": "To the choirmaster : according to Mahalath . A Maskil of David . Psa 53:1 The fool says in his heart , “There is no God .” They are corrupt , doing abominable iniquity ; there is none who does good . Psa 53:2 God looks down from heaven on the children of man to see if there are any who understand , who seek after God . Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one . Psa 53:4 Have those who work evil no knowledge , who eat up my people as they eat bread , and do not call upon God ? Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them . Psa 53:6 Oh , that salvation for Israel would come out of Zion ! When God restores the fortunes of his people , let Jacob rejoice , let Israel be glad .",
+   "lexicals": [
     {
-     "span_id": 272139,
-     "reference": "Psa 119:87",
-     "hebrew_surface": "end",
-     "esv_word": "end",
-     "morphology": {
-      "morph_code": "HVpp3cp",
-      "stem": "Piel"
-     },
-     "read_characteristic": "be near ended (kalah)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1826,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts .",
-     "passage_id": 1826,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "be near ended (kalah)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be almost destroyed",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired within its char-arc across the psalm",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v87: 'They had almost made an END of me on earth, but I have not forsaken your precepts' - the near-destruction endured without forsaking the word.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272139",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272139",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272139",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 285040,
-     "reference": "Psa 90:7",
-     "hebrew_surface": "end",
-     "esv_word": "end",
-     "morphology": {
-      "morph_code": "HVqp1cp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "be consumed / brought to an end (kalah)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1748,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 90:7 For we are brought to an end by your anger ; by your wrath we are dismayed .",
-     "passage_id": 1748,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "be consumed / brought to an end (kalah)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "we (mankind)",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be consumed",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "by God's anger",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with being dismayed by wrath",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v7: 'For we are brought to an END (kalah) by your anger' - the perishing of frail humanity under God's wrath, consumed like the withering grass.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285040",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285040",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285040",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 285058,
-     "reference": "Psa 90:9",
-     "hebrew_surface": "end",
-     "esv_word": "end",
-     "morphology": {
-      "morph_code": "HVpp1cp HSp2ms",
-      "stem": "Piel"
-     },
-     "read_characteristic": "bring to an end (kalah)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1748,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 90:9 For all our days pass away under your wrath ; we bring our years to an end like a sigh .",
-     "passage_id": 1748,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "bring to an end (kalah)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "we (mankind)",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "end our years",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "like a sigh",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the fleeting sigh",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v9: 'we bring our years to an END (kalah) like a sigh' - the whole of life finished in a breath, our years spent and gone.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285058",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285058",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285058",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H2555:violenc",
-   "meaning": "violence",
-   "lemma": "H2555",
-   "cluster": {
-    "code": "M27",
-    "name": "Evil",
-    "all_candidates": "M27(Evil)"
-   },
-   "instance_count": 3,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "violence",
-    "lexical_gloss": "violence",
-    "read_sense_variants": "violence (chamas - I see violence in the city) | violence (chamas - deal out violence) | violence (chamas - violence covers them as a garment)"
-   },
-   "instances": [
-    {
-     "span_id": 280206,
-     "reference": "Psa 55:9",
-     "hebrew_surface": "violence",
-     "esv_word": "violence",
-     "morphology": {
-      "morph_code": "HNcmsa",
-      "stem": ""
-     },
-     "read_characteristic": "violence (chamas - I see violence in the city)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1662,
-      "is_passage_anchor": true,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city .",
-     "passage_id": 1662,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "violence (chamas - I see violence in the city)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the city's wicked",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "none",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with strife filling the city",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'for I see VIOLENCE (chamas) and strife in the city' — the pervasive cruelty of the place; chamas (violent wrong) the first of the heaped-up civic sins (vv9-11), the wicked's disposition made the very air of the city",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280206",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280206",
-       "to_span": "280207",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 280481,
-     "reference": "Psa 58:2",
-     "hebrew_surface": "violence",
-     "esv_word": "violence",
-     "morphology": {
-      "morph_code": "HNcmsc",
-      "stem": ""
-     },
-     "read_characteristic": "violence (chamas - deal out violence)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1665,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 58:2 No , in your hearts you devise wrongs ; your hands deal out violence on earth .",
-     "passage_id": 1665,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "violence (chamas - deal out violence)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the unjust rulers",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "dealt out",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "on the earth",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the outward form of the wrongs devised",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'your hands deal out VIOLENCE (chamas) on earth' — the harvest of the corrupt heart; chamas (violent wrong, cf Ps55) the cruelty the rulers spread abroad — injustice not merely thought but inflicted on the land",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280481",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "280481",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280481",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280481",
-       "to_span": "280478",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 282502,
-     "reference": "Psa 73:6",
-     "hebrew_surface": "violence",
-     "esv_word": "violence",
-     "morphology": {
-      "morph_code": "HNcmsa",
-      "stem": ""
-     },
-     "read_characteristic": "violence (chamas - violence covers them as a garment)",
-     "position": {
-      "word_index": 2,
-      "passage_id": 1700,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 73:6 Therefore pride is their necklace ; violence covers them as a garment .",
-     "passage_id": 1700,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "violence (chamas - violence covers them as a garment)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the wicked",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "cover them (like a garment)",
-       "item_type": "event",
-       "resolution": "span"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "as a garment enveloping them",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with their pride",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'VIOLENCE (chamas) covers them as a garment' — cruelty worn like clothing; chamas here the wicked's violence, wrapping them entirely - not an occasional act but their very dress, the whole self clothed in wrong",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "282502",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": "282502",
-       "to_span": "282503",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "pair",
-       "from_span": "282502",
-       "to_span": "282503",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "282502",
-       "to_span": "282500",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H1792:crush",
-   "meaning": "crush",
-   "lemma": "H1792",
-   "cluster": {
-    "code": "M24",
-    "name": "Weakness",
-    "all_candidates": "M24(Weakness)"
-   },
-   "instance_count": 2,
-   "is_outlier": true,
-   "outlier_note": "meaning-family 'violence-cruelty' expects cluster M06(Hate), but the term-cluster is M24(Weakness)",
-   "evidence": {
-    "stems": "Piel",
-    "morph_codes": "HVpi3mp, HVpu3ms",
-    "esv_words": "crush",
-    "lexical_gloss": "to crush",
-    "read_sense_variants": "crush (dakah - crush the oppressor) | crush (daka)"
-   },
-   "instances": [
-    {
-     "span_id": 282320,
-     "reference": "Psa 72:4",
-     "hebrew_surface": "crush",
-     "esv_word": "crush",
-     "morphology": {
-      "morph_code": "HVpu3ms",
-      "stem": "Piel"
-     },
-     "read_characteristic": "crush (dakah - crush the oppressor)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1696,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 72:4 May he defend the cause of the poor of the people , give deliverance to the children of the needy , and crush the oppressor !",
-     "passage_id": 1696,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "crush (dakah - crush the oppressor)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the king",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "crush",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "the oppressor",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the reverse of defending the poor",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'and CRUSH (dakah) the oppressor!' — the king breaking the power of the cruel; dakah here the shattering of the oppressor - justice that not only defends the weak but destroys their exploiters, the two sides of righteous rule",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "282320",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "pair",
-       "from_span": "282320",
-       "to_span": "282321",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "282320",
-       "to_span": "282314",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 285415,
-     "reference": "Psa 94:5",
-     "hebrew_surface": "crush",
-     "esv_word": "crush",
-     "morphology": {
-      "morph_code": "HVpi3mp",
-      "stem": "Piel"
-     },
-     "read_characteristic": "crush (daka)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1755,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 94:5 They crush your people , O Lord , and afflict your heritage .",
-     "passage_id": 1755,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "crush (daka)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the wicked",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "crush",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "God's people",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v5: 'They CRUSH (daka) your people, O LORD' - the violent oppression of the wicked against God's own.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with afflicting the heritage",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285415",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285415",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285415",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H6184:ruthlessmen",
-   "meaning": "ruthless men",
-   "lemma": "H6184",
-   "cluster": {
-    "code": "M06",
-    "name": "Hate",
-    "all_candidates": "M06(Hate)"
-   },
-   "instance_count": 2,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HAampa",
-    "esv_words": "ruthless men",
-    "lexical_gloss": "ruthless",
-    "read_sense_variants": "ruthless / violent men (arits - ruthless men seek my life) | ruthless men (arits)"
-   },
-   "instances": [
-    {
-     "span_id": 279984,
-     "reference": "Psa 54:3",
-     "hebrew_surface": "ruthless men",
-     "esv_word": "ruthless men",
-     "morphology": {
-      "morph_code": "HAampa HC HSp1bs",
-      "stem": ""
-     },
-     "read_characteristic": "ruthless / violent men (arits - ruthless men seek my life)",
-     "position": {
-      "word_index": 4,
-      "passage_id": 1660,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah",
-     "passage_id": 1660,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "ruthless / violent men (arits - ruthless men seek my life)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the ruthless enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "none",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "they do not set God before themselves",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with seeking the psalmist's life",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'RUTHLESS men (arits) seek my life; they do not set God before themselves' — the violent, God-ignoring aggressors; arits (the ruthless/terror-inspiring) the enemies whose godlessness (like the fool, Ps53) frees them to hunt the psalmist's life without restraint",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279984",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279984",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "279984",
-       "to_span": "279985",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 284285,
-     "reference": "Psa 86:14",
-     "hebrew_surface": "ruthless men",
-     "esv_word": "ruthless men",
-     "morphology": {
-      "morph_code": "HAampa",
-      "stem": ""
-     },
-     "read_characteristic": "ruthless men (arits)",
-     "position": {
-      "word_index": 5,
-      "passage_id": 1740,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 86:14 O God , insolent men have risen up against me; a band of ruthless men seeks my life , and they do not set you before them .",
-     "passage_id": 1740,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "ruthless men (arits)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "a band of ruthless men",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "seek the psalmist's life",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "without regard for God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the insolent",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v14: 'a band of RUTHLESS MEN (arits) seeks my life' - the merciless enemies, violence without conscience.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284285",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284285",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284285",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H1481:strif",
-   "meaning": "strife",
-   "lemma": "H1481",
-   "cluster": {
-    "code": "M01",
-    "name": "Fear",
-    "all_candidates": "M01(Fear)"
-   },
-   "instance_count": 2,
-   "is_outlier": true,
-   "outlier_note": "meaning-family 'violence-cruelty' expects cluster M06(Hate), but the term-cluster is M01(Fear)",
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqi3mp, HVqi3mp HSp1bs",
-    "esv_words": "strife",
-    "lexical_gloss": "to dread; to sojourn; to quarrel",
-    "read_sense_variants": "stir up strife / band together (gur - they stir up strife) | stir up strife / band together (gur - stir up strife against me)"
-   },
-   "instances": [
-    {
-     "span_id": 280298,
-     "reference": "Psa 56:6",
-     "hebrew_surface": "strife",
-     "esv_word": "strife",
-     "morphology": {
-      "morph_code": "HVqi3mp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "stir up strife / band together (gur - they stir up strife)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1663,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life .",
-     "passage_id": 1663,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "stir up strife / band together (gur - they stir up strife)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "band together / stir up",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "against the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with watching his steps",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'They STIR UP STRIFE / band together (gur), they lurk' — the enemies conspiring; gur (to gather/stir) the collusion of the foes, massing and lying in wait — organised malice, not random hostility",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280298",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280298",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280298",
-       "to_span": "280300",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 280605,
-     "reference": "Psa 59:3",
-     "hebrew_surface": "strife",
-     "esv_word": "strife",
-     "morphology": {
-      "morph_code": "HVqi3mp HSp1bs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "stir up strife / band together (gur - stir up strife against me)",
-     "position": {
-      "word_index": 5,
-      "passage_id": 1667,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord ,",
-     "passage_id": 1667,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "stir up strife / band together (gur - stir up strife against me)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the fierce men",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "band together / stir up strife",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "against the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the act of the fierce men",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'fierce men STIR UP STRIFE (gur) against me' — the massing of the foes; gur (to gather/attack) the enemies banding against him — organised hostility, not for any fault of his (cf Ps56:6)",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280605",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280605",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280605",
-       "to_span": "280604",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H3898:attack",
-   "meaning": "attack",
-   "lemma": "H3898",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "attack",
-    "lexical_gloss": "to fight; to feed on",
-    "read_sense_variants": "fight / attack (lacham - many attack me)"
-   },
-   "instances": [
-    {
-     "span_id": 280271,
-     "reference": "Psa 56:2",
-     "hebrew_surface": "attack",
-     "esv_word": null,
-     "morphology": {
-      "morph_code": "HVqrmpa",
-      "stem": "Qal"
-     },
-     "read_characteristic": "fight / attack (lacham - many attack me)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1663,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 56:2 my enemies trample on me all day long, for many attack me proudly .",
-     "passage_id": 1663,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "fight / attack (lacham - many attack me)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "many enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "fight / attack",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "proudly / from on high",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the trampling enemies now as warring assailants",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'for many ATTACK (lacham) me proudly' — the war waged against the psalmist; lacham (to fight/do battle) the assault of many foes, and their pride ('from on high') — the arrogant hostility that trust answers with 'what can flesh do to me?'",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280271",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280271",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "pair",
-       "from_span": "280271",
-       "to_span": "280272",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280271",
-       "to_span": "280266",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H1413:bandtogether",
-   "meaning": "band together",
-   "lemma": "H1413",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "band together",
-    "lexical_gloss": "to attack",
-    "read_sense_variants": "band together (gadad)"
-   },
-   "instances": [
-    {
-     "span_id": 285389,
-     "reference": "Psa 94:21",
-     "hebrew_surface": "band together",
-     "esv_word": "band together",
-     "morphology": {
-      "morph_code": "HVqi3mp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "band together (gadad)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1756,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 94:21 They band together against the life of the righteous and condemn the innocent to death .",
-     "passage_id": 1756,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "band together (gadad)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the wicked",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "band together / conspire",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "against the righteous",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v21: 'They BAND TOGETHER (gadad) against the life of the righteous' - the conspiracy of the wicked, malice organized against the just.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with condemning the innocent",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285389",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285389",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285389",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H1818:bloodthirsty",
-   "meaning": "bloodthirsty",
-   "lemma": "H1818",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "bloodthirsty",
-    "lexical_gloss": "blood",
-    "read_sense_variants": "bloodthirsty / men of blood (dam - save me from bloodthirsty men)"
-   },
-   "instances": [
-    {
-     "span_id": 280598,
-     "reference": "Psa 59:2",
-     "hebrew_surface": "bloodthirsty",
-     "esv_word": null,
-     "morphology": {
-      "morph_code": "HNcmpa",
-      "stem": ""
-     },
-     "read_characteristic": "bloodthirsty / men of blood (dam - save me from bloodthirsty men)",
-     "position": {
-      "word_index": 7,
-      "passage_id": 1667,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men .",
-     "passage_id": 1667,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "bloodthirsty / men of blood (dam - save me from bloodthirsty men)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "none",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the workers of evil",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'save me from BLOODTHIRSTY (dam) men' — the murderous character of the foes; 'men of blood' (anshei damim) whose appetite is for killing — the lethal intent behind the watching and lying-in-wait",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280598",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280598",
-       "to_span": "280594",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H3289:conspir",
-   "meaning": "conspire",
-   "lemma": "H3289",
-   "cluster": {
-    "code": "M15",
-    "name": "Wisdom",
-    "all_candidates": "M15(Wisdom)"
-   },
-   "instance_count": 1,
-   "is_outlier": true,
-   "outlier_note": "meaning-family 'violence-cruelty' expects cluster M06(Hate), but the term-cluster is M15(Wisdom)",
-   "evidence": {
-    "stems": "Niphal",
-    "morph_codes": "HVNp3cp",
-    "esv_words": "conspire",
-    "lexical_gloss": "to advise",
-    "read_sense_variants": "conspire (yaats)"
-   },
-   "instances": [
-    {
-     "span_id": 284011,
-     "reference": "Psa 83:5",
-     "hebrew_surface": "conspire",
-     "esv_word": "conspire",
-     "morphology": {
-      "morph_code": "HVNp3cp",
-      "stem": "Niphal"
-     },
-     "read_characteristic": "conspire (yaats)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1735,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 83:5 For they conspire with one accord ; against you they make a covenant —",
-     "passage_id": 1735,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "conspire (yaats)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "conspire",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "against God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with their single accord",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v5: 'For they CONSPIRE (yaats) with one accord' - the united scheming, many peoples fused into one hostile will.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284011",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284011",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284011",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H4066:contention",
-   "meaning": "contention",
-   "lemma": "H4066",
-   "cluster": {
-    "code": "M02",
-    "name": "Anger",
-    "all_candidates": "M02(Anger)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "contention",
-    "lexical_gloss": "strife",
-    "read_sense_variants": "object of contention (madon)"
-   },
-   "instances": [
-    {
-     "span_id": 283774,
-     "reference": "Psa 80:6",
-     "hebrew_surface": "contention",
-     "esv_word": "contention",
-     "morphology": {
-      "morph_code": "HNcmsa HSp1bp",
-      "stem": ""
-     },
-     "read_characteristic": "object of contention (madon)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1727,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 80:6 You make us an object of contention for our neighbors , and our enemies laugh among themselves .",
-     "passage_id": 1727,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "object of contention (madon)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "us (the people)",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "become a thing fought over",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "by the neighbours",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the enemies' laughter",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v6: 'You make us an object of CONTENTION (madon) for our neighbours' - the shame of a people wrangled over and mocked, humiliation felt as an inner wound.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283774",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283774",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283774",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H0398:eatup",
-   "meaning": "eat up",
-   "lemma": "H0398",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "eat up",
-    "lexical_gloss": "to eat",
-    "read_sense_variants": "eat up / devour (akal - eat up my people)"
-   },
-   "instances": [
-    {
-     "span_id": 279919,
+     "ib_char": "eat up",
+     "char_key": "H0398:eatup",
      "reference": "Psa 53:4",
-     "hebrew_surface": "eat up",
-     "esv_word": "eat up",
-     "morphology": {
-      "morph_code": "HVqrmpc",
-      "stem": "Qal"
-     },
-     "read_characteristic": "eat up / devour (akal - eat up my people)",
-     "position": {
-      "word_index": 4,
-      "passage_id": 1659,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 53:4 Have those who work evil no knowledge , who eat up my people as they eat bread , and do not call upon God ?",
-     "passage_id": 1659,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "eat up / devour (akal - eat up my people)",
-       "item_type": "value"
+       "value": "eat up / devour (akal - eat up my people)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action",
-       "item_type": "value"
+       "value": "action"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the evildoers",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "eat up / devour",
-       "item_type": "event"
+       "value": "eat up / devour"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "God's people",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "as they eat bread (casually, as food)",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with not calling upon God",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'who EAT UP (akal) my people as they eat bread' — predatory cruelty made routine; akal here the devouring of God's people as casually as one eats a meal — oppression without conscience, joined to a refusal to call on God",
-       "item_type": "note"
+       "value": "'who EAT UP (akal) my people as they eat bread' — predatory cruelty made routine; akal here the devouring of God's people as casually as one eats a meal — oppression without conscience, joined to a refusal to call on God"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279919",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279919",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "pair",
-       "from_span": "279919",
-       "to_span": "279921",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "279919",
-       "to_span": "279924",
-       "direction": null,
-       "resolution": "span"
+       "value": "external:person"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H2026:kill",
-   "meaning": "kill",
-   "lemma": "H2026",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "kill",
-    "lexical_gloss": "to kill",
-    "read_sense_variants": "kill (harag)"
-   },
-   "instances": [
+   "passage_ref": "Psa 54:1-7",
+   "passage_text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies .",
+   "lexicals": [
     {
-     "span_id": 307123,
-     "reference": "Psa 94:6",
-     "hebrew_surface": "kill",
-     "esv_word": "kill",
-     "morphology": {
-      "morph_code": "HVqi3mp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "kill (harag)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1755,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 94:6 They kill the widow and the sojourner, and murder the fatherless;",
-     "passage_id": 1755,
-     "lexical": [
+     "ib_char": "ruthless men",
+     "char_key": "H6184:ruthlessmen",
+     "reference": "Psa 54:3",
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "kill (harag)",
-       "item_type": "value"
+       "value": "ruthless / violent men (arits - ruthless men seek my life)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action",
-       "item_type": "value"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
-       "value": "the wicked",
-       "item_type": "flag",
+       "value": "the ruthless enemies",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "kill",
-       "item_type": "event"
+       "value": "none"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "the widow and sojourner",
-       "item_type": "flag",
-       "resolution": "inferred"
+       "value": "none"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "they do not set God before themselves",
+       "resolution": "inferred"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
+       "value": "paired with seeking the psalmist's life",
+       "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v6: 'They KILL (harag) the widow and the sojourner' - the murder of the defenceless, oppression at its cruelest.",
-       "item_type": "note"
+       "value": "'RUTHLESS men (arits) seek my life; they do not set God before themselves' — the violent, God-ignoring aggressors; arits (the ruthless/terror-inspiring) the enemies whose godlessness (like the fool, Ps53) frees them to hunt the psalmist's life without restraint"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with murdering the fatherless",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "307123",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "307123",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "307123",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "external:person"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H3615:passaway",
-   "meaning": "pass away",
-   "lemma": "H3615",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": "T2(Supplementary)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqp3cp",
-    "esv_words": "pass away",
-    "lexical_gloss": "to end: finish; to end: destroy; to end: expend; to end: decides",
-    "read_sense_variants": "pass away (kalah)"
-   },
-   "instances": [
+   "passage_ref": "Psa 55:9-23",
+   "passage_text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you .",
+   "lexicals": [
     {
-     "span_id": 269024,
-     "reference": "Psa 102:3",
-     "hebrew_surface": "pass away",
-     "esv_word": "pass away",
-     "morphology": {
-      "morph_code": "HVqp3cp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "pass away (kalah)",
-     "position": {
-      "word_index": 3,
-      "passage_id": 1769,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 102:3 For my days pass away like smoke , and my bones burn like a furnace .",
-     "passage_id": 1769,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "pass away (kalah)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "have his days pass away",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "like smoke",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v3: 'For my days PASS AWAY (kalah) like smoke' - the vanishing of life, days dissolving like smoke in the affliction.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with the burning bones",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "269024",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "269024",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "269024",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H7379:strif",
-   "meaning": "strife",
-   "lemma": "H7379",
-   "cluster": {
-    "code": "M02",
-    "name": "Anger",
-    "all_candidates": "M02(Anger)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HNcmsa",
-    "esv_words": "strife",
-    "lexical_gloss": "strife",
-    "read_sense_variants": "strife / contention (rib - violence and strife)"
-   },
-   "instances": [
-    {
-     "span_id": 280207,
+     "ib_char": "violence",
+     "char_key": "H2555:violenc",
      "reference": "Psa 55:9",
-     "hebrew_surface": "strife",
-     "esv_word": "strife",
-     "morphology": {
-      "morph_code": "HNcmsa HC",
-      "stem": ""
-     },
-     "read_characteristic": "strife / contention (rib - violence and strife)",
-     "position": {
-      "word_index": 7,
-      "passage_id": 1662,
-      "is_passage_anchor": true,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city .",
-     "passage_id": 1662,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "strife / contention (rib - violence and strife)",
-       "item_type": "value"
+       "value": "violence (chamas - I see violence in the city)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 103,
-       "label": "source",
-       "value": "the psalmist asks God to destroy and confuse their tongues (v9)",
-       "item_type": "pair",
-       "resolution": "span"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the city's wicked",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none",
-       "item_type": "event"
+       "value": "none"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "paired with violence",
-       "item_type": "pair",
+       "value": "paired with strife filling the city",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'violence and STRIFE (rib) in the city' — the ceaseless contention among the wicked; rib (quarrel/dispute) the discord that the psalmist prays God will deepen by confusing their tongues (v9, the qualifier) — Babel as judgment on a divided, violent city",
-       "item_type": "note"
+       "value": "'for I see VIOLENCE (chamas) and strife in the city' — the pervasive cruelty of the place; chamas (violent wrong) the first of the heaped-up civic sins (vv9-11), the wicked's disposition made the very air of the city"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
+       "value": "internal:ib-state"
       }
-     ],
-     "edges": [
+     ]
+    },
+    {
+     "ib_char": "strife",
+     "char_key": "H7379:strif",
+     "reference": "Psa 55:9",
+     "dimensions": [
       {
-       "on_dimension": 103,
+       "nr": 101,
+       "label": "sense",
+       "value": "strife / contention (rib - violence and strife)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 103,
        "label": "source",
-       "item_type": "pair",
-       "from_span": "280207",
-       "to_span": "280200",
-       "direction": null,
+       "value": "the psalmist asks God to destroy and confuse their tongues (v9)",
        "resolution": "span"
       },
       {
-       "on_dimension": 105,
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
        "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280207",
-       "direction": null,
+       "value": "the city's wicked",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 112,
+       "nr": 106,
+       "label": "operation",
+       "value": "none"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
        "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280207",
-       "to_span": "280206",
-       "direction": null,
+       "value": "paired with violence",
        "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'violence and STRIFE (rib) in the city' — the ceaseless contention among the wicked; rib (quarrel/dispute) the discord that the psalmist prays God will deepen by confusing their tongues (v9, the qualifier) — Babel as judgment on a divided, violent city"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 56:1-13",
+   "passage_text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life .",
+   "lexicals": [
+    {
+     "ib_char": "attack",
+     "char_key": "H3898:attack",
+     "reference": "Psa 56:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "fight / attack (lacham - many attack me)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "many enemies",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fight / attack"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "proudly / from on high",
+       "resolution": "span"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the trampling enemies now as warring assailants",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'for many ATTACK (lacham) me proudly' — the war waged against the psalmist; lacham (to fight/do battle) the assault of many foes, and their pride ('from on high') — the arrogant hostility that trust answers with 'what can flesh do to me?'"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person"
+      }
+     ]
+    },
+    {
+     "ib_char": "strife",
+     "char_key": "H1481:strif",
+     "reference": "Psa 56:6",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "stir up strife / band together (gur - they stir up strife)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "band together / stir up"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with watching his steps",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'They STIR UP STRIFE / band together (gur), they lurk' — the enemies conspiring; gur (to gather/stir) the collusion of the foes, massing and lying in wait — organised malice, not random hostility"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 58:1-5",
+   "passage_text": "To the choirmaster : according to Do Not Destroy . A Miktam of David . Psa 58:1 Do you indeed decree what is right , you gods ? Do you judge the children of man uprightly ? Psa 58:2 No , in your hearts you devise wrongs ; your hands deal out violence on earth . Psa 58:3 The wicked are estranged from the womb ; they go astray from birth , speaking lies . Psa 58:4 They have venom like the venom of a serpent , like the deaf adder that stops its ear , Psa 58:5 so that it does not hear the voice of charmers or of the cunning enchanter . Psa 58:7 Let them vanish like water that runs away; when he aims his arrows, let them be blunted.",
+   "lexicals": [
+    {
+     "ib_char": "violence",
+     "char_key": "H2555:violenc",
+     "reference": "Psa 58:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "violence (chamas - deal out violence)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the unjust rulers",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "dealt out",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "on the earth",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the outward form of the wrongs devised",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'your hands deal out VIOLENCE (chamas) on earth' — the harvest of the corrupt heart; chamas (violent wrong, cf Ps55) the cruelty the rulers spread abroad — injustice not merely thought but inflicted on the land"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 59:1-5",
+   "passage_text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah",
+   "lexicals": [
+    {
+     "ib_char": "bloodthirsty",
+     "char_key": "H1818:bloodthirsty",
+     "reference": "Psa 59:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bloodthirsty / men of blood (dam - save me from bloodthirsty men)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the workers of evil",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'save me from BLOODTHIRSTY (dam) men' — the murderous character of the foes; 'men of blood' (anshei damim) whose appetite is for killing — the lethal intent behind the watching and lying-in-wait"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    },
+    {
+     "ib_char": "strife",
+     "char_key": "H1481:strif",
+     "reference": "Psa 59:3",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "stir up strife / band together (gur - stir up strife against me)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fierce men",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "band together / stir up strife"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the act of the fierce men",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'fierce men STIR UP STRIFE (gur) against me' — the massing of the foes; gur (to gather/attack) the enemies banding against him — organised hostility, not for any fault of his (cf Ps56:6)"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 72:1-5",
+   "passage_text": "Of Solomon . Psa 72:1 Give the king your justice , O God , and your righteousness to the royal son ! Psa 72:2 May he judge your people with righteousness , and your poor with justice ! Psa 72:3 Let the mountains bear prosperity for the people , and the hills , in righteousness ! Psa 72:4 May he defend the cause of the poor of the people , give deliverance to the children of the needy , and crush the oppressor ! Psa 72:5 May they fear you while the sun endures , and as long as the moon , throughout all generations !",
+   "lexicals": [
+    {
+     "ib_char": "crush",
+     "char_key": "H1792:crush",
+     "reference": "Psa 72:4",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "crush (dakah - crush the oppressor)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "crush"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the oppressor",
+       "resolution": "span"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the reverse of defending the poor",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and CRUSH (dakah) the oppressor!' — the king breaking the power of the cruel; dakah here the shattering of the oppressor - justice that not only defends the weak but destroys their exploiters, the two sides of righteous rule"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 73:1-8",
+   "passage_text": "A Psalm of Asaph . Psa 73:1 Truly God is good to Israel , to those who are pure in heart . Psa 73:2 But as for me, my feet had almost stumbled , my steps had nearly slipped . Psa 73:3 For I was envious of the arrogant when I saw the prosperity of the wicked . Psa 73:4 For they have no pangs until death ; their bodies are fat and sleek . Psa 73:5 They are not in trouble as others are; they are not stricken like the rest of mankind . Psa 73:6 Therefore pride is their necklace ; violence covers them as a garment . Psa 73:7 Their eyes swell out through fatness ; their hearts overflow with follies . Psa 73:8 They scoff and speak with malice ; loftily they threaten oppression .",
+   "lexicals": [
+    {
+     "ib_char": "violence",
+     "char_key": "H2555:violenc",
+     "reference": "Psa 73:6",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "violence (chamas - violence covers them as a garment)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "cover them (like a garment)",
+       "resolution": "span"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "as a garment enveloping them",
+       "resolution": "span"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with their pride",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'VIOLENCE (chamas) covers them as a garment' — cruelty worn like clothing; chamas here the wicked's violence, wrapping them entirely - not an occasional act but their very dress, the whole self clothed in wrong"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 80:4-7",
+   "passage_text": "Psa 80:4 O Lord God of hosts , how long will you be angry with your people’s prayers ? Psa 80:5 You have fed them with the bread of tears and given them tears to drink in full measure . Psa 80:6 You make us an object of contention for our neighbors , and our enemies laugh among themselves . Psa 80:7 Restore us, O God of hosts ; let your face shine , that we may be saved !",
+   "lexicals": [
+    {
+     "ib_char": "contention",
+     "char_key": "H4066:contention",
+     "reference": "Psa 80:6",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "object of contention (madon)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "us (the people)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "become a thing fought over"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the neighbours",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the enemies' laughter",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'You make us an object of CONTENTION (madon) for our neighbours' - the shame of a people wrangled over and mocked, humiliation felt as an inner wound."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 83:1-5",
+   "passage_text": "A Song . A Psalm of Asaph . Psa 83:1 O God , do not keep silence ; do not hold your peace or be still , O God ! Psa 83:2 For behold , your enemies make an uproar ; those who hate you have raised their heads . Psa 83:3 They lay crafty plans against your people ; they consult together against your treasured ones . Psa 83:4 They say , “ Come , let us wipe them out as a nation ; let the name of Israel be remembered no more !” Psa 83:5 For they conspire with one accord ; against you they make a covenant —",
+   "lexicals": [
+    {
+     "ib_char": "conspire",
+     "char_key": "H3289:conspir",
+     "reference": "Psa 83:5",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "conspire (yaats)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemies",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "conspire"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against God",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with their single accord",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'For they CONSPIRE (yaats) with one accord' - the united scheming, many peoples fused into one hostile will."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 86:9-17",
+   "passage_text": "Psa 86:9 All the nations you have made shall come and worship before you, O Lord , and shall glorify your name . Psa 86:10 For you are great and do wondrous things ; you alone are God . Psa 86:11 Teach me your way , O Lord , that I may walk in your truth ; unite my heart to fear your name . Psa 86:12 I give thanks to you, O Lord my God , with my whole heart , and I will glorify your name forever . Psa 86:13 For great is your steadfast love toward me; you have delivered my soul from the depths of Sheol . Psa 86:14 O God , insolent men have risen up against me; a band of ruthless men seeks my life , and they do not set you before them . Psa 86:15 But you , O Lord , are a God merciful and gracious , slow to anger and abounding in steadfast love and faithfulness . Psa 86:16 Turn to me and be gracious to me; give your strength to your servant , and save the son of your maidservant . Psa 86:17 Show me a sign of your favor , that those who hate me may see and be put to shame because you , Lord , have helped me and comforted me .",
+   "lexicals": [
+    {
+     "ib_char": "ruthless men",
+     "char_key": "H6184:ruthlessmen",
+     "reference": "Psa 86:14",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "ruthless men (arits)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "a band of ruthless men",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "seek the psalmist's life"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "without regard for God",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the insolent",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v14: 'a band of RUTHLESS MEN (arits) seeks my life' - the merciless enemies, violence without conscience."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 90:5-17",
+   "passage_text": "Psa 90:1 A Prayer of Moses, the man of God.Lord, you have been our dwelling place in all generations. Psa 90:2 Before the mountains were brought forth , or ever you had formed the earth and the world , from everlasting to everlasting you are God . Psa 90:3 You return man to dust and say, “Return, O children of man!” Psa 90:5 You sweep them away as with a flood ; they are like a dream , like grass that is renewed in the morning : Psa 90:6 in the morning it flourishes and is renewed ; in the evening it fades and withers . Psa 90:7 For we are brought to an end by your anger ; by your wrath we are dismayed . Psa 90:8 You have set our iniquities before you, our secret sins in the light of your presence . Psa 90:9 For all our days pass away under your wrath ; we bring our years to an end like a sigh . Psa 90:10 The years of our life are seventy , or even by reason of strength eighty ; yet their span is but toil and trouble ; they are soon gone , and we fly away . Psa 90:11 Who considers the power of your anger , and your wrath according to the fear of you? Psa 90:12 So teach us to number our days that we may get a heart of wisdom . Psa 90:13 Return , O Lord ! How long ? Have pity on your servants ! Psa 90:14 Satisfy us in the morning with your steadfast love , that we may rejoice and be glad all our days . Psa 90:15 Make us glad for as many days as you have afflicted us, and for as many years as we have seen evil . Psa 90:16 Let your work be shown to your servants , and your glorious power to their children . Psa 90:17 Let the favor of the Lord our God be upon us, and establish the work of our hands upon us; yes, establish the work of our hands !",
+   "lexicals": [
+    {
+     "ib_char": "end",
+     "char_key": "H3615:end",
+     "reference": "Psa 90:7",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be consumed / brought to an end (kalah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "we (mankind)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be consumed"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God's anger",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being dismayed by wrath",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'For we are brought to an END (kalah) by your anger' - the perishing of frail humanity under God's wrath, consumed like the withering grass."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    },
+    {
+     "ib_char": "end",
+     "char_key": "H3615:end",
+     "reference": "Psa 90:9",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "bring to an end (kalah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "we (mankind)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "end our years"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "like a sigh",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the fleeting sigh",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'we bring our years to an END (kalah) like a sigh' - the whole of life finished in a breath, our years spent and gone."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 94:2-5",
+   "passage_text": "Psa 94:1 O Lord, God of vengeance, O God of vengeance, shine forth! Psa 94:2 Rise up , O judge of the earth ; repay to the proud what they deserve ! Psa 94:3 O Lord , how long shall the wicked , how long shall the wicked exult ? Psa 94:4 They pour out their arrogant words ; all the evildoers boast . Psa 94:5 They crush your people , O Lord , and afflict your heritage . Psa 94:6 They kill the widow and the sojourner, and murder the fatherless;",
+   "lexicals": [
+    {
+     "ib_char": "crush",
+     "char_key": "H1792:crush",
+     "reference": "Psa 94:5",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "crush (daka)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "crush"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's people",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'They CRUSH (daka) your people, O LORD' - the violent oppression of the wicked against God's own."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with afflicting the heritage"
+      }
+     ]
+    },
+    {
+     "ib_char": "kill",
+     "char_key": "H2026:kill",
+     "reference": "Psa 94:6",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kill (harag)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "kill"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the widow and sojourner",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'They KILL (harag) the widow and the sojourner' - the murder of the defenceless, oppression at its cruelest."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with murdering the fatherless"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 94:7-23",
+   "passage_text": "Psa 94:7 and they say , “The Lord does not see ; the God of Jacob does not perceive .” Psa 94:8 Understand , O dullest of the people ! Fools , when will you be wise ? Psa 94:9 He who planted the ear , does he not hear ? He who formed the eye , does he not see ? Psa 94:10 He who disciplines the nations , does he not rebuke ? He who teaches man knowledge — Psa 94:11 the Lord — knows the thoughts of man , that they are but a breath . Psa 94:12 Blessed is the man whom you discipline , O Lord , and whom you teach out of your law , Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked . Psa 94:14 For the Lord will not forsake his people ; he will not abandon his heritage ; Psa 94:15 for justice will return to the righteous , and all the upright in heart will follow it. Psa 94:16 Who rises up for me against the wicked ? Who stands up for me against evildoers ? Psa 94:17 If the Lord had not been my help , my soul would soon have lived in the land of silence . Psa 94:18 When I thought , “My foot slips ,” your steadfast love , O Lord , held me up . Psa 94:19 When the cares of my heart are many , your consolations cheer my soul . Psa 94:20 Can wicked rulers be allied with you, those who frame injustice by statute ? Psa 94:21 They band together against the life of the righteous and condemn the innocent to death . Psa 94:22 But the Lord has become my stronghold , and my God the rock of my refuge . Psa 94:23 He will bring back on them their iniquity and wipe them out for their wickedness ; the Lord our God will wipe them out .",
+   "lexicals": [
+    {
+     "ib_char": "band together",
+     "char_key": "H1413:bandtogether",
+     "reference": "Psa 94:21",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "band together (gadad)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the wicked",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "band together / conspire"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "against the righteous",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v21: 'They BAND TOGETHER (gadad) against the life of the righteous' - the conspiracy of the wicked, malice organized against the just."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with condemning the innocent"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 102:1-5",
+   "passage_text": "A Prayer of one afflicted , when he is faint and pours out his complaint before the Lord . Psa 102:1 Hear my prayer , O Lord ; let my cry come to you! Psa 102:2 Do not hide your face from me in the day of my distress ! Incline your ear to me; answer me speedily in the day when I call ! Psa 102:3 For my days pass away like smoke , and my bones burn like a furnace . Psa 102:4 My heart is struck down like grass and has withered ; I forget to eat my bread . Psa 102:5 Because of my loud groaning my bones cling to my flesh .",
+   "lexicals": [
+    {
+     "ib_char": "pass away",
+     "char_key": "H3615:passaway",
+     "reference": "Psa 102:3",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pass away (kalah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have his days pass away"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "like smoke",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'For my days PASS AWAY (kalah) like smoke' - the vanishing of life, days dissolving like smoke in the affliction."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the burning bones"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:84-102",
+   "passage_text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me .",
+   "lexicals": [
+    {
+     "ib_char": "end",
+     "char_key": "H3615:end",
+     "reference": "Psa 119:87",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be near ended (kalah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be almost destroyed"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v87: 'They had almost made an END of me on earth, but I have not forsaken your precepts' - the near-destruction endured without forsaking the word."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
       }
      ]
     }

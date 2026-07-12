@@ -1,16 +1,46 @@
 {
  "meta": {
+  "family": "life-death-vitality",
   "book": "Psalms",
   "book_id": 19,
-  "scope": {
-   "family": "life-death-vitality"
+  "generated": "2026-07-12",
+  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
+  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
+  "linkage": {
+   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
+   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
+   "declared_foreign_keys": {
+    "ib_characteristic": [
+     "(none declared)"
+    ],
+    "verse_span_index": [
+     "(none declared)"
+    ],
+    "ve_lexical": [
+     "verse_span_id -> verse_span_index.id",
+     "verse_context_id -> verse_context.id"
+    ],
+    "verse": [
+     "(none declared)"
+    ]
+   }
   },
-  "generated": "2026-07-11",
-  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
-  "description": "Base source for the Psalms inner-being family 'life-death-vitality': all meanings, instances, lexical ledgers, and verse/passage text.",
-  "counts": {
-   "meanings": 2,
-   "instances": 10,
+  "ib_char_items": [
+   {
+    "char_key": "H5315:life",
+    "meaning": "life",
+    "cluster": "M47(Constitution) | M25(Life)"
+   },
+   {
+    "char_key": "H2421:live",
+    "meaning": "live",
+    "cluster": "Life"
+   }
+  ],
+  "stats": {
+   "ib_char_items": 2,
+   "spans_joined": 10,
+   "lexicals": 10,
    "passages": 9
   },
   "dimension_legend": {
@@ -30,1432 +60,714 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  },
-  "structure": {
-   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
-   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
-   "meanings[]": {
-    "char_key": "lemma:normalised-ESV key (record identity)",
-    "meaning": "readable meaning label (modal ESV rendering)",
-    "lemma": "base Strong's number",
-    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
-    "instance_count": "number of master spans",
-    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
-    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
-    "instances[]": {
-     "span_id": "verse_span_index.id (the unique master)",
-     "reference": "verse reference",
-     "hebrew_surface": "the Hebrew surface word of the span",
-     "esv_word": "the ESV rendering in this verse",
-     "morphology": "{morph_code, stem}",
-     "read_characteristic": "the read characteristic-in-words on the master",
-     "position": "{word_index, passage_id, is_passage_anchor, genre}",
-     "verse_text": "full text of this verse (ESV)",
-     "passage_id": "-> lookup in top-level passages map for the passage text",
-     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
-     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
-    }
-   }
   }
  },
- "passages": {
-  "1653": {
-   "passage_ref": "Psa 49:5-20",
-   "verse_refs": [
-    "Psa 49:5",
-    "Psa 49:6",
-    "Psa 49:7",
-    "Psa 49:8",
-    "Psa 49:9",
-    "Psa 49:10",
-    "Psa 49:11",
-    "Psa 49:12",
-    "Psa 49:13",
-    "Psa 49:14",
-    "Psa 49:15",
-    "Psa 49:16",
-    "Psa 49:17",
-    "Psa 49:18",
-    "Psa 49:19",
-    "Psa 49:20"
-   ],
-   "text": "Psa 49:5 Why should I fear in times of trouble , when the iniquity of those who cheat me surrounds me , Psa 49:6 those who trust in their wealth and boast of the abundance of their riches ? Psa 49:7 Truly no man can ransom another , or give to God the price of his life , Psa 49:8 for the ransom of their life is costly and can never suffice , Psa 49:9 that he should live on forever and never see the pit . Psa 49:10 For he sees that even the wise die ; the fool and the stupid alike must perish and leave their wealth to others . Psa 49:11 Their graves are their homes forever , their dwelling places to all generations , though they called lands by their own names . Psa 49:12 Man in his pomp will not remain ; he is like the beasts that perish . Psa 49:13 This is the path of those who have foolish confidence; yet after them people approve of their boasts . Selah Psa 49:14 Like sheep they are appointed for Sheol ; death shall be their shepherd , and the upright shall rule over them in the morning . Their form shall be consumed in Sheol , with no place to dwell . Psa 49:15 But God will ransom my soul from the power of Sheol , for he will receive me. Selah Psa 49:16 Be not afraid when a man becomes rich , when the glory of his house increases . Psa 49:17 For when he dies he will carry nothing away; his glory will not go down after him. Psa 49:18 For though, while he lives , he counts himself blessed — and though you get praise when you do well for yourself — Psa 49:19 his soul will go to the generation of his fathers , who will never again see light . Psa 49:20 Man in his pomp yet without understanding is like the beasts that perish ."
-  },
-  "1660": {
-   "passage_ref": "Psa 54:1-7",
-   "verse_refs": [
-    "Psa 54:1",
-    "Psa 54:2",
-    "Psa 54:3",
-    "Psa 54:4",
-    "Psa 54:5",
-    "Psa 54:6",
-    "Psa 54:7"
-   ],
-   "text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies ."
-  },
-  "1663": {
-   "passage_ref": "Psa 56:1-13",
-   "verse_refs": [
-    "Psa 56:1",
-    "Psa 56:2",
-    "Psa 56:3",
-    "Psa 56:4",
-    "Psa 56:5",
-    "Psa 56:6",
-    "Psa 56:7",
-    "Psa 56:8",
-    "Psa 56:9",
-    "Psa 56:10",
-    "Psa 56:11",
-    "Psa 56:12",
-    "Psa 56:13"
-   ],
-   "text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life ."
-  },
-  "1667": {
-   "passage_ref": "Psa 59:1-5",
-   "verse_refs": [
-    "Psa 59:1",
-    "Psa 59:2",
-    "Psa 59:3",
-    "Psa 59:4",
-    "Psa 59:5"
-   ],
-   "text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah"
-  },
-  "1739": {
-   "passage_ref": "Psa 86:2-7",
-   "verse_refs": [
-    "Psa 86:1",
-    "Psa 86:2",
-    "Psa 86:3",
-    "Psa 86:4",
-    "Psa 86:5",
-    "Psa 86:6",
-    "Psa 86:7"
-   ],
-   "text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me ."
-  },
-  "1747": {
-   "passage_ref": "Psa 89:28-52",
-   "verse_refs": [
-    "Psa 89:28",
-    "Psa 89:29",
-    "Psa 89:30",
-    "Psa 89:31",
-    "Psa 89:32",
-    "Psa 89:33",
-    "Psa 89:34",
-    "Psa 89:35",
-    "Psa 89:36",
-    "Psa 89:37",
-    "Psa 89:38",
-    "Psa 89:39",
-    "Psa 89:40",
-    "Psa 89:41",
-    "Psa 89:42",
-    "Psa 89:43",
-    "Psa 89:44",
-    "Psa 89:45",
-    "Psa 89:46",
-    "Psa 89:47",
-    "Psa 89:48",
-    "Psa 89:49",
-    "Psa 89:50",
-    "Psa 89:51",
-    "Psa 89:52"
-   ],
-   "text": "Psa 89:28 My steadfast love I will keep for him forever , and my covenant will stand firm for him . Psa 89:29 I will establish his offspring forever and his throne as the days of the heavens . Psa 89:30 If his children forsake my law and do not walk according to my rules , Psa 89:31 if they violate my statutes and do not keep my commandments , Psa 89:32 then I will punish their transgression with the rod and their iniquity with stripes , Psa 89:33 but I will not remove from him my steadfast love or be false to my faithfulness . Psa 89:34 I will not violate my covenant or alter the word that went forth from my lips . Psa 89:35 Once for all I have sworn by my holiness ; I will not lie to David . Psa 89:36 His offspring shall endure forever , his throne as long as the sun before me . Psa 89:37 Like the moon it shall be established forever , a faithful witness in the skies .” Selah Psa 89:38 But now you have cast off and rejected ; you are full of wrath against your anointed . Psa 89:39 You have renounced the covenant with your servant ; you have defiled his crown in the dust . Psa 89:40 You have breached all his walls ; you have laid his strongholds in ruins . Psa 89:41 All who pass by plunder him; he has become the scorn of his neighbors . Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice . Psa 89:43 You have also turned back the edge of his sword , and you have not made him stand in battle . Psa 89:44 You have made his splendor to cease and cast his throne to the ground . Psa 89:45 You have cut short the days of his youth ; you have covered him with shame . Selah Psa 89:46 How long, O Lord ? Will you hide yourself forever ? How long will your wrath burn like fire ? Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man ! Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah Psa 89:49 Lord , where is your steadfast love of old , which by your faithfulness you swore to David ? Psa 89:50 Remember , O Lord , how your servants are mocked , and how I bear in my heart the insults of all the many nations , Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed . Psa 89:52 Blessed be the Lord forever ! Amen and Amen . Book Four"
-  },
-  "1817": {
-   "passage_ref": "Psa 118:14-21",
-   "verse_refs": [
-    "Psa 118:14",
-    "Psa 118:15",
-    "Psa 118:16",
-    "Psa 118:17",
-    "Psa 118:18",
-    "Psa 118:19",
-    "Psa 118:20",
-    "Psa 118:21",
-    "Psa 118:22"
-   ],
-   "text": "Psa 118:14 The Lord is my strength and my song ; he has become my salvation . Psa 118:15 Glad songs of salvation are in the tents of the righteous : “The right hand of the Lord does valiantly , Psa 118:16 the right hand of the Lord exalts , the right hand of the Lord does valiantly !” Psa 118:17 I shall not die , but I shall live , and recount the deeds of the Lord . Psa 118:18 The Lord has disciplined me severely , but he has not given me over to death . Psa 118:19 Open to me the gates of righteousness , that I may enter through them and give thanks to the Lord . Psa 118:20 This is the gate of the Lord ; the righteous shall enter through it . Psa 118:21 I thank you that you have answered me and have become my salvation . Psa 118:22 The stone that the builders rejected has become the cornerstone."
-  },
-  "1827": {
-   "passage_ref": "Psa 119:104-116",
-   "verse_refs": [
-    "Psa 119:104",
-    "Psa 119:105",
-    "Psa 119:106",
-    "Psa 119:107",
-    "Psa 119:108",
-    "Psa 119:109",
-    "Psa 119:110",
-    "Psa 119:111",
-    "Psa 119:112",
-    "Psa 119:113",
-    "Psa 119:114",
-    "Psa 119:115",
-    "Psa 119:116",
-    "Psa 119:117"
-   ],
-   "text": "Psa 119:104 Through your precepts I get understanding ; therefore I hate every false way . Nun Psa 119:105 Your word is a lamp to my feet and a light to my path . Psa 119:106 I have sworn an oath and confirmed it, to keep your righteous rules . Psa 119:107 I am severely afflicted ; give me life , O Lord , according to your word ! Psa 119:108 Accept my freewill offerings of praise , O Lord , and teach me your rules . Psa 119:109 I hold my life in my hand continually , but I do not forget your law . Psa 119:110 The wicked have laid a snare for me, but I do not stray from your precepts . Psa 119:111 Your testimonies are my heritage forever , for they are the joy of my heart . Psa 119:112 I incline my heart to perform your statutes forever , to the end . Samekh Psa 119:113 I hate the double-minded , but I love your law . Psa 119:114 You are my hiding place and my shield ; I hope in your word . Psa 119:115 Depart from me, you evildoers , that I may keep the commandments of my God . Psa 119:116 Uphold me according to your promise , that I may live , and let me not be put to shame in my hope ! Psa 119:117 Hold me up, that I may be safe and have regard for your statutes continually!"
-  },
-  "1835": {
-   "passage_ref": "Psa 121:7-8",
-   "verse_refs": [
-    "Psa 121:7",
-    "Psa 121:8"
-   ],
-   "text": "Psa 121:7 The Lord will keep you from all evil ; he will keep your life . Psa 121:8 The Lord will keep your going out and your coming in from this time forth and forevermore ."
-  }
- },
- "meanings": [
+ "passages": [
   {
-   "char_key": "H5315:life",
-   "meaning": "life",
-   "lemma": "H5315",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": "M47(Constitution) | M25(Life)"
-   },
-   "instance_count": 8,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HNcfsc",
-    "esv_words": "life",
-    "lexical_gloss": "soul: appetite; soul; soul: life; soul: myself; soul: person; soul: animal; soul: dead; soul: neck",
-    "read_sense_variants": "life / soul (nephesh) | soul / life (nefesh - ransom of their life) | life / soul (nefesh - seek my life) | life / soul (nefesh - upholder of my life) | life / soul (nefesh - waited for my life) | life / soul (nefesh - they lie in wait for my life) | soul (nephesh)"
-   },
-   "instances": [
+   "passage_ref": "Psa 49:5-20",
+   "passage_text": "Psa 49:5 Why should I fear in times of trouble , when the iniquity of those who cheat me surrounds me , Psa 49:6 those who trust in their wealth and boast of the abundance of their riches ? Psa 49:7 Truly no man can ransom another , or give to God the price of his life , Psa 49:8 for the ransom of their life is costly and can never suffice , Psa 49:9 that he should live on forever and never see the pit . Psa 49:10 For he sees that even the wise die ; the fool and the stupid alike must perish and leave their wealth to others . Psa 49:11 Their graves are their homes forever , their dwelling places to all generations , though they called lands by their own names . Psa 49:12 Man in his pomp will not remain ; he is like the beasts that perish . Psa 49:13 This is the path of those who have foolish confidence; yet after them people approve of their boasts . Selah Psa 49:14 Like sheep they are appointed for Sheol ; death shall be their shepherd , and the upright shall rule over them in the morning . Their form shall be consumed in Sheol , with no place to dwell . Psa 49:15 But God will ransom my soul from the power of Sheol , for he will receive me. Selah Psa 49:16 Be not afraid when a man becomes rich , when the glory of his house increases . Psa 49:17 For when he dies he will carry nothing away; his glory will not go down after him. Psa 49:18 For though, while he lives , he counts himself blessed — and though you get praise when you do well for yourself — Psa 49:19 his soul will go to the generation of his fathers , who will never again see light . Psa 49:20 Man in his pomp yet without understanding is like the beasts that perish .",
+   "lexicals": [
     {
-     "span_id": 271265,
-     "reference": "Psa 119:109",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc",
-      "stem": ""
-     },
-     "read_characteristic": "soul (nephesh)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1827,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 119:109 I hold my life in my hand continually , but I do not forget your law .",
-     "passage_id": 1827,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "soul (nephesh)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "faculty",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "long / cling / keep with the soul",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "toward God's word",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the whole SOUL-arc of the psalm",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v109: 'I hold my SOUL (life) in my hand continually, yet I do not forget your law' - the self held in constant peril, yet the law unforgotten.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271265",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271265",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271265",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 272374,
-     "reference": "Psa 121:7",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc HTo",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nephesh)",
-     "position": {
-      "word_index": 7,
-      "passage_id": 1835,
-      "is_passage_anchor": true,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 121:7 The Lord will keep you from all evil ; he will keep your life .",
-     "passage_id": 1835,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nephesh)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "faculty",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the pilgrim",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be kept",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "by the LORD",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v7: 'he will keep your LIFE (nephesh)' - the very self kept by God, the soul preserved from all evil.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with God keeping from all evil",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272374",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272374",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272374",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 279406,
+     "ib_char": "life",
+     "char_key": "H5315:life",
      "reference": "Psa 49:8",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc",
-      "stem": ""
-     },
-     "read_characteristic": "soul / life (nefesh - ransom of their life)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1653,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 49:8 for the ransom of their life is costly and can never suffice ,",
-     "passage_id": 1653,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "soul / life (nefesh - ransom of their life)",
-       "item_type": "value"
+       "value": "soul / life (nefesh - ransom of their life)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status",
-       "item_type": "value"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
        "value": "soul (self)",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "any man (his life unransomable)",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none",
-       "item_type": "event"
+       "value": "none"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "costly, can never suffice",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'for the ransom of their LIFE (nefesh) is costly and can never suffice' — the priceless, unbuyable soul; nefesh (first of three, v8,15,18) the life no wealth can redeem from the pit, beyond all human price",
-       "item_type": "note"
+       "value": "'for the ransom of their LIFE (nefesh) is costly and can never suffice' — the priceless, unbuyable soul; nefesh (first of three, v8,15,18) the life no wealth can redeem from the pit, beyond all human price"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:seat",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 104,
-       "label": "seat",
-       "item_type": "pair",
-       "from_span": "279406",
-       "to_span": "279406",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279406",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279406",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 279986,
-     "reference": "Psa 54:3",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nefesh - seek my life)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1660,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah",
-     "passage_id": 1660,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nefesh - seek my life)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "sought (by the enemies)",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the same nefesh God upholds (v4)",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'ruthless men seek my LIFE (nefesh)' — the psalmist's very life, the contested centre; nefesh (life/soul) here what the enemies hunt — the same nefesh that God is said to uphold (v4), the self endangered and then sustained",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279986",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "279986",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "279986",
-       "to_span": "279998",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 279998,
-     "reference": "Psa 54:4",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nefesh - upholder of my life)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1660,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life .",
-     "passage_id": 1660,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nefesh - upholder of my life)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 103,
-       "label": "source",
-       "value": "God the helper and upholder of this life (v4)",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "upheld (by God)",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the nefesh the enemies sought (v3)",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'the Lord is the upholder of my LIFE (nefesh)' — the endangered soul now sustained; nefesh here the life the enemies sought (v3), held up by God the helper (the qualifiers) — the turn from threat to confident security, 'Behold, God is my helper'",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 103,
-       "label": "source",
-       "item_type": "pair",
-       "from_span": "279998",
-       "to_span": "279996",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279998",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "279998",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "279998",
-       "to_span": "279986",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 280305,
-     "reference": "Psa 56:6",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nefesh - waited for my life)",
-     "position": {
-      "word_index": 7,
-      "passage_id": 1663,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life .",
-     "passage_id": 1663,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nefesh - waited for my life)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "targeted (by the enemies)",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the same nefesh God delivers from death (v13)",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'they have waited for my LIFE (nefesh)' — the psalmist's life, the prize the enemies hunt; nefesh here what they lie in wait for — the same soul God delivers from death (v13), endangered then rescued",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280305",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "280305",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280305",
-       "to_span": "280251",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 280603,
-     "reference": "Psa 59:3",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc HR",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nefesh - they lie in wait for my life)",
-     "position": {
-      "word_index": 3,
-      "passage_id": 1667,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord ,",
-     "passage_id": 1667,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nefesh - they lie in wait for my life)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "targeted (by the ambush)",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "the life for which God is called to awake and see (v4)",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'they lie in wait for my LIFE (nefesh)' — the psalmist's life, the prize of the ambush; nefesh here what the fierce men hunt, for which he calls God to awake, come, and see (v4, the qualifiers)",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280603",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "280603",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280603",
-       "to_span": "280615",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    },
-    {
-     "span_id": 284326,
-     "reference": "Psa 86:2",
-     "hebrew_surface": "life",
-     "esv_word": "life",
-     "morphology": {
-      "morph_code": "HNcfsc HSh",
-      "stem": ""
-     },
-     "read_characteristic": "life / soul (nephesh)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1739,
-      "is_passage_anchor": true,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God .",
-     "passage_id": 1739,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "life / soul (nephesh)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "faculty",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be preserved",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "by God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with being godly",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v2: 'PRESERVE my life (nephesh), for I am godly' - the self committed to God for keeping.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284326",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284326",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284326",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:seat"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H2421:live",
-   "meaning": "live",
-   "lemma": "H2421",
-   "cluster": {
-    "code": "M25",
-    "name": "Life",
-    "all_candidates": "M25(Life)"
-   },
-   "instance_count": 2,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqi1cs, HVqi3ms",
-    "esv_words": "live",
-    "lexical_gloss": "to live",
-    "read_sense_variants": "live (chayah)"
-   },
-   "instances": [
+   "passage_ref": "Psa 54:1-7",
+   "passage_text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies .",
+   "lexicals": [
     {
-     "span_id": 271076,
-     "reference": "Psa 118:17",
-     "hebrew_surface": "live",
-     "esv_word": "live",
-     "morphology": {
-      "morph_code": "HVqi1cs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "live (chayah)",
-     "position": {
-      "word_index": 3,
-      "passage_id": 1817,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 118:17 I shall not die , but I shall live , and recount the deeds of the Lord .",
-     "passage_id": 1817,
-     "lexical": [
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 54:3",
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "live (chayah)",
-       "item_type": "value"
+       "value": "life / soul (nefesh - seek my life)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state",
-       "item_type": "value"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "live and not die",
-       "item_type": "event"
+       "value": "sought (by the enemies)",
+       "resolution": "inferred"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "to recount God's deeds",
-       "item_type": "flag",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same nefesh God upholds (v4)",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'ruthless men seek my LIFE (nefesh)' — the psalmist's very life, the contested centre; nefesh (life/soul) here what the enemies hunt — the same nefesh that God is said to uphold (v4), the self endangered and then sustained"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    },
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 54:4",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - upholder of my life)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "God the helper and upholder of this life (v4)",
+       "resolution": "span"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "upheld (by God)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the nefesh the enemies sought (v3)",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'the Lord is the upholder of my LIFE (nefesh)' — the endangered soul now sustained; nefesh here the life the enemies sought (v3), held up by God the helper (the qualifiers) — the turn from threat to confident security, 'Behold, God is my helper'"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 56:1-13",
+   "passage_text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 56:6",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - waited for my life)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "targeted (by the enemies)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same nefesh God delivers from death (v13)",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they have waited for my LIFE (nefesh)' — the psalmist's life, the prize the enemies hunt; nefesh here what they lie in wait for — the same soul God delivers from death (v13), endangered then rescued"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 59:1-5",
+   "passage_text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 59:3",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - they lie in wait for my life)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "targeted (by the ambush)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the life for which God is called to awake and see (v4)",
+       "resolution": "span"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they lie in wait for my LIFE (nefesh)' — the psalmist's life, the prize of the ambush; nefesh here what the fierce men hunt, for which he calls God to awake, come, and see (v4, the qualifiers)"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 86:2-7",
+   "passage_text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 86:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nephesh)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be preserved"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
+       "value": "paired with being godly",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v17: 'I shall not die, but I shall LIVE (chayah), and recount the deeds of the LORD' - the resolve to live for testimony, life spared for praise.",
-       "item_type": "note"
+       "value": "v2: 'PRESERVE my life (nephesh), for I am godly' - the self committed to God for keeping."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with recounting his deeds",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271076",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271076",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271076",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 89:28-52",
+   "passage_text": "Psa 89:28 My steadfast love I will keep for him forever , and my covenant will stand firm for him . Psa 89:29 I will establish his offspring forever and his throne as the days of the heavens . Psa 89:30 If his children forsake my law and do not walk according to my rules , Psa 89:31 if they violate my statutes and do not keep my commandments , Psa 89:32 then I will punish their transgression with the rod and their iniquity with stripes , Psa 89:33 but I will not remove from him my steadfast love or be false to my faithfulness . Psa 89:34 I will not violate my covenant or alter the word that went forth from my lips . Psa 89:35 Once for all I have sworn by my holiness ; I will not lie to David . Psa 89:36 His offspring shall endure forever , his throne as long as the sun before me . Psa 89:37 Like the moon it shall be established forever , a faithful witness in the skies .” Selah Psa 89:38 But now you have cast off and rejected ; you are full of wrath against your anointed . Psa 89:39 You have renounced the covenant with your servant ; you have defiled his crown in the dust . Psa 89:40 You have breached all his walls ; you have laid his strongholds in ruins . Psa 89:41 All who pass by plunder him; he has become the scorn of his neighbors . Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice . Psa 89:43 You have also turned back the edge of his sword , and you have not made him stand in battle . Psa 89:44 You have made his splendor to cease and cast his throne to the ground . Psa 89:45 You have cut short the days of his youth ; you have covered him with shame . Selah Psa 89:46 How long, O Lord ? Will you hide yourself forever ? How long will your wrath burn like fire ? Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man ! Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah Psa 89:49 Lord , where is your steadfast love of old , which by your faithfulness you swore to David ? Psa 89:50 Remember , O Lord , how your servants are mocked , and how I bear in my heart the insults of all the many nations , Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed . Psa 89:52 Blessed be the Lord forever ! Amen and Amen . Book Four",
+   "lexicals": [
     {
-     "span_id": 284810,
+     "ib_char": "live",
+     "char_key": "H2421:live",
      "reference": "Psa 89:48",
-     "hebrew_surface": "live",
-     "esv_word": "live",
-     "morphology": {
-      "morph_code": "HVqi3ms",
-      "stem": "Qal"
-     },
-     "read_characteristic": "live (chayah)",
-     "position": {
-      "word_index": 2,
-      "passage_id": 1747,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah",
-     "passage_id": 1747,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "live (chayah)",
-       "item_type": "value"
+       "value": "live (chayah)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state",
-       "item_type": "value"
+       "value": "state"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "any man",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "live",
-       "item_type": "event"
+       "value": "live"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "yet not escape death",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "internal:ib-state",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v48: 'What man can LIVE (chayah) and never see death?' - the reflection on mortality, no one delivers his own soul from the grave.",
-       "item_type": "note"
+       "value": "v48: 'What man can LIVE (chayah) and never see death?' - the reflection on mortality, no one delivers his own soul from the grave."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "paired with the soul unable to escape Sheol",
-       "item_type": "value"
+       "value": "paired with the soul unable to escape Sheol"
       }
-     ],
-     "edges": [
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 118:14-21",
+   "passage_text": "Psa 118:14 The Lord is my strength and my song ; he has become my salvation . Psa 118:15 Glad songs of salvation are in the tents of the righteous : “The right hand of the Lord does valiantly , Psa 118:16 the right hand of the Lord exalts , the right hand of the Lord does valiantly !” Psa 118:17 I shall not die , but I shall live , and recount the deeds of the Lord . Psa 118:18 The Lord has disciplined me severely , but he has not given me over to death . Psa 118:19 Open to me the gates of righteousness , that I may enter through them and give thanks to the Lord . Psa 118:20 This is the gate of the Lord ; the righteous shall enter through it . Psa 118:21 I thank you that you have answered me and have become my salvation . Psa 118:22 The stone that the builders rejected has become the cornerstone.",
+   "lexicals": [
+    {
+     "ib_char": "live",
+     "char_key": "H2421:live",
+     "reference": "Psa 118:17",
+     "dimensions": [
       {
-       "on_dimension": 105,
+       "nr": 101,
+       "label": "sense",
+       "value": "live (chayah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
        "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284810",
-       "direction": null,
+       "value": "the psalmist",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 107,
+       "nr": 106,
+       "label": "operation",
+       "value": "live and not die"
+      },
+      {
+       "nr": 107,
        "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284810",
-       "direction": null,
+       "value": "to recount God's deeds",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 112,
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
        "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284810",
-       "direction": null,
+       "value": "internal:ib-state",
        "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v17: 'I shall not die, but I shall LIVE (chayah), and recount the deeds of the LORD' - the resolve to live for testimony, life spared for praise."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with recounting his deeds"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:104-116",
+   "passage_text": "Psa 119:104 Through your precepts I get understanding ; therefore I hate every false way . Nun Psa 119:105 Your word is a lamp to my feet and a light to my path . Psa 119:106 I have sworn an oath and confirmed it, to keep your righteous rules . Psa 119:107 I am severely afflicted ; give me life , O Lord , according to your word ! Psa 119:108 Accept my freewill offerings of praise , O Lord , and teach me your rules . Psa 119:109 I hold my life in my hand continually , but I do not forget your law . Psa 119:110 The wicked have laid a snare for me, but I do not stray from your precepts . Psa 119:111 Your testimonies are my heritage forever , for they are the joy of my heart . Psa 119:112 I incline my heart to perform your statutes forever , to the end . Samekh Psa 119:113 I hate the double-minded , but I love your law . Psa 119:114 You are my hiding place and my shield ; I hope in your word . Psa 119:115 Depart from me, you evildoers , that I may keep the commandments of my God . Psa 119:116 Uphold me according to your promise , that I may live , and let me not be put to shame in my hope ! Psa 119:117 Hold me up, that I may be safe and have regard for your statutes continually!",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 119:109",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "soul (nephesh)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "long / cling / keep with the soul"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "toward God's word",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole SOUL-arc of the psalm",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v109: 'I hold my SOUL (life) in my hand continually, yet I do not forget your law' - the self held in constant peril, yet the law unforgotten."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 121:7-8",
+   "passage_text": "Psa 121:7 The Lord will keep you from all evil ; he will keep your life . Psa 121:8 The Lord will keep your going out and your coming in from this time forth and forevermore .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 121:7",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nephesh)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the pilgrim",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be kept"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the LORD",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'he will keep your LIFE (nephesh)' - the very self kept by God, the soul preserved from all evil."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with God keeping from all evil"
       }
      ]
     }

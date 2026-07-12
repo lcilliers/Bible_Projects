@@ -1,16 +1,81 @@
 {
  "meta": {
+  "family": "rest-stillness-peace",
   "book": "Psalms",
   "book_id": 19,
-  "scope": {
-   "family": "rest-stillness-peace"
+  "generated": "2026-07-12",
+  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
+  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
+  "linkage": {
+   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
+   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
+   "declared_foreign_keys": {
+    "ib_characteristic": [
+     "(none declared)"
+    ],
+    "verse_span_index": [
+     "(none declared)"
+    ],
+    "ve_lexical": [
+     "verse_span_id -> verse_span_index.id",
+     "verse_context_id -> verse_context.id"
+    ],
+    "verse": [
+     "(none declared)"
+    ]
+   }
   },
-  "generated": "2026-07-11",
-  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
-  "description": "Base source for the Psalms inner-being family 'rest-stillness-peace': all meanings, instances, lexical ledgers, and verse/passage text.",
-  "counts": {
-   "meanings": 9,
-   "instances": 10,
+  "ib_char_items": [
+   {
+    "char_key": "H0481:mute",
+    "meaning": "mute",
+    "cluster": null
+   },
+   {
+    "char_key": "H7737:calm",
+    "meaning": "calmed",
+    "cluster": "T2(Supplementary)"
+   },
+   {
+    "char_key": "H7965:peac",
+    "meaning": "peace",
+    "cluster": "Peace"
+   },
+   {
+    "char_key": "H1826:quiet",
+    "meaning": "quieted",
+    "cluster": "Peace"
+   },
+   {
+    "char_key": "H7931:rest",
+    "meaning": "rest",
+    "cluster": null
+   },
+   {
+    "char_key": "H8252:rest",
+    "meaning": "rest",
+    "cluster": "Peace"
+   },
+   {
+    "char_key": "H7965:safety",
+    "meaning": "safety",
+    "cluster": "Peace"
+   },
+   {
+    "char_key": "H2790:silent",
+    "meaning": "silent",
+    "cluster": "Peace"
+   },
+   {
+    "char_key": "H8252:still",
+    "meaning": "still",
+    "cluster": "Peace"
+   }
+  ],
+  "stats": {
+   "ib_char_items": 9,
+   "spans_joined": 10,
+   "lexicals": 10,
    "passages": 8
   },
   "dimension_legend": {
@@ -30,1528 +95,702 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  },
-  "structure": {
-   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
-   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
-   "meanings[]": {
-    "char_key": "lemma:normalised-ESV key (record identity)",
-    "meaning": "readable meaning label (modal ESV rendering)",
-    "lemma": "base Strong's number",
-    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
-    "instance_count": "number of master spans",
-    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
-    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
-    "instances[]": {
-     "span_id": "verse_span_index.id (the unique master)",
-     "reference": "verse reference",
-     "hebrew_surface": "the Hebrew surface word of the span",
-     "esv_word": "the ESV rendering in this verse",
-     "morphology": "{morph_code, stem}",
-     "read_characteristic": "the read characteristic-in-words on the master",
-     "position": "{word_index, passage_id, is_passage_anchor, genre}",
-     "verse_text": "full text of this verse (ESV)",
-     "passage_id": "-> lookup in top-level passages map for the passage text",
-     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
-     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
-    }
-   }
   }
  },
- "passages": {
-  "1623": {
-   "passage_ref": "Psa 32:1-11",
-   "verse_refs": [
-    "Psa 32:1",
-    "Psa 32:2",
-    "Psa 32:3",
-    "Psa 32:4",
-    "Psa 32:5",
-    "Psa 32:6",
-    "Psa 32:7",
-    "Psa 32:8",
-    "Psa 32:9",
-    "Psa 32:10",
-    "Psa 32:11"
-   ],
-   "text": "A Maskil of David . Psa 32:1 Blessed is the one whose transgression is forgiven , whose sin is covered . Psa 32:2 Blessed is the man against whom the Lord counts no iniquity , and in whose spirit there is no deceit . Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long. Psa 32:4 For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer . Selah Psa 32:5 I acknowledged my sin to you, and I did not cover my iniquity ; I said , “I will confess my transgressions to the Lord ,” and you forgave the iniquity of my sin . Selah Psa 32:6 Therefore let everyone who is godly offer prayer to you at a time when you may be found ; surely in the rush of great waters , they shall not reach him. Psa 32:7 You are a hiding place for me; you preserve me from trouble ; you surround me with shouts of deliverance . Selah Psa 32:8 I will instruct you and teach you in the way you should go ; I will counsel you with my eye upon you. Psa 32:9 Be not like a horse or a mule , without understanding , which must be curbed with bit and bridle , or it will not stay near you . Psa 32:10 Many are the sorrows of the wicked , but steadfast love surrounds the one who trusts in the Lord . Psa 32:11 Be glad in the Lord , and rejoice , O righteous , and shout for joy , all you upright in heart !"
-  },
-  "1636": {
-   "passage_ref": "Psa 39:1-13",
-   "verse_refs": [
-    "Psa 39:1",
-    "Psa 39:2",
-    "Psa 39:3",
-    "Psa 39:4",
-    "Psa 39:5",
-    "Psa 39:6",
-    "Psa 39:7",
-    "Psa 39:8",
-    "Psa 39:9",
-    "Psa 39:10",
-    "Psa 39:11",
-    "Psa 39:12",
-    "Psa 39:13"
-   ],
-   "text": "To the choirmaster : to Jeduthun . A Psalm of David . Psa 39:1 I said , “I will guard my ways , that I may not sin with my tongue ; I will guard my mouth with a muzzle , so long as the wicked are in my presence .” Psa 39:2 I was mute and silent ; I held my peace to no avail , and my distress grew worse . Psa 39:3 My heart became hot within me. As I mused , the fire burned ; then I spoke with my tongue : Psa 39:4 “O Lord , make me know my end and what is the measure of my days ; let me know how fleeting I am! Psa 39:5 Behold , you have made my days a few handbreadths , and my lifetime is as nothing before you. Surely all mankind stands as a mere breath ! Selah Psa 39:6 Surely a man goes about as a shadow ! Surely for nothing they are in turmoil ; man heaps up wealth and does not know who will gather ! Psa 39:7 “And now , O Lord , for what do I wait ? My hope is in you . Psa 39:8 Deliver me from all my transgressions . Do not make me the scorn of the fool ! Psa 39:9 I am mute ; I do not open my mouth , for it is you who have done it. Psa 39:10 Remove your stroke from me; I am spent by the hostility of your hand . Psa 39:11 When you discipline a man with rebukes for sin , you consume like a moth what is dear to him; surely all mankind is a mere breath ! Selah Psa 39:12 “ Hear my prayer , O Lord , and give ear to my cry ; hold not your peace at my tears ! For I am a sojourner with you, a guest , like all my fathers . Psa 39:13 Look away from me, that I may smile again, before I depart and am no more !”"
-  },
-  "1662": {
-   "passage_ref": "Psa 55:9-23",
-   "verse_refs": [
-    "Psa 55:8",
-    "Psa 55:9",
-    "Psa 55:10",
-    "Psa 55:11",
-    "Psa 55:12",
-    "Psa 55:13",
-    "Psa 55:14",
-    "Psa 55:15",
-    "Psa 55:16",
-    "Psa 55:17",
-    "Psa 55:18",
-    "Psa 55:19",
-    "Psa 55:20",
-    "Psa 55:21",
-    "Psa 55:22",
-    "Psa 55:23"
-   ],
-   "text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you ."
-  },
-  "1711": {
-   "passage_ref": "Psa 76:7-12",
-   "verse_refs": [
-    "Psa 76:7",
-    "Psa 76:8",
-    "Psa 76:9",
-    "Psa 76:10",
-    "Psa 76:11",
-    "Psa 76:12"
-   ],
-   "text": "Psa 76:7 But you , you are to be feared ! Who can stand before you when once your anger is roused ? Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still , Psa 76:9 when God arose to establish judgment , to save all the humble of the earth . Selah Psa 76:10 Surely the wrath of man shall praise you; the remnant of wrath you will put on like a belt . Psa 76:11 Make your vows to the Lord your God and perform them; let all around him bring gifts to him who is to be feared , Psa 76:12 who cuts off the spirit of princes , who is to be feared by the kings of the earth ."
-  },
-  "1756": {
-   "passage_ref": "Psa 94:7-23",
-   "verse_refs": [
-    "Psa 94:7",
-    "Psa 94:8",
-    "Psa 94:9",
-    "Psa 94:10",
-    "Psa 94:11",
-    "Psa 94:12",
-    "Psa 94:13",
-    "Psa 94:14",
-    "Psa 94:15",
-    "Psa 94:16",
-    "Psa 94:17",
-    "Psa 94:18",
-    "Psa 94:19",
-    "Psa 94:20",
-    "Psa 94:21",
-    "Psa 94:22",
-    "Psa 94:23"
-   ],
-   "text": "Psa 94:7 and they say , “The Lord does not see ; the God of Jacob does not perceive .” Psa 94:8 Understand , O dullest of the people ! Fools , when will you be wise ? Psa 94:9 He who planted the ear , does he not hear ? He who formed the eye , does he not see ? Psa 94:10 He who disciplines the nations , does he not rebuke ? He who teaches man knowledge — Psa 94:11 the Lord — knows the thoughts of man , that they are but a breath . Psa 94:12 Blessed is the man whom you discipline , O Lord , and whom you teach out of your law , Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked . Psa 94:14 For the Lord will not forsake his people ; he will not abandon his heritage ; Psa 94:15 for justice will return to the righteous , and all the upright in heart will follow it. Psa 94:16 Who rises up for me against the wicked ? Who stands up for me against evildoers ? Psa 94:17 If the Lord had not been my help , my soul would soon have lived in the land of silence . Psa 94:18 When I thought , “My foot slips ,” your steadfast love , O Lord , held me up . Psa 94:19 When the cares of my heart are many , your consolations cheer my soul . Psa 94:20 Can wicked rulers be allied with you, those who frame injustice by statute ? Psa 94:21 They band together against the life of the righteous and condemn the innocent to death . Psa 94:22 But the Lord has become my stronghold , and my God the rock of my refuge . Psa 94:23 He will bring back on them their iniquity and wipe them out for their wickedness ; the Lord our God will wipe them out ."
-  },
-  "1833": {
-   "passage_ref": "Psa 120:6-7",
-   "verse_refs": [
-    "Psa 120:6",
-    "Psa 120:7"
-   ],
-   "text": "Psa 120:6 Too long have I had my dwelling among those who hate peace . Psa 120:7 I am for peace , but when I speak , they are for war !"
-  },
-  "1848": {
-   "passage_ref": "Psa 131:1-3",
-   "verse_refs": [
-    "Psa 131:1",
-    "Psa 131:2",
-    "Psa 131:3"
-   ],
-   "text": "A Song of Ascents . Of David . Psa 131:1 O Lord , my heart is not lifted up ; my eyes are not raised too high; I do not occupy myself with things too great and too marvelous for me . Psa 131:2 But I have calmed and quieted my soul , like a weaned child with its mother ; like a weaned child is my soul within me. Psa 131:3 O Israel , hope in the Lord from this time forth and forevermore ."
-  },
-  "3688": {
-   "passage_ref": "Psa 55:6",
-   "verse_refs": [
-    "Psa 55:6"
-   ],
-   "text": "Psa 55:6 And I say, “Oh, that I had wings like a dove! I would fly away and be at rest;"
-  }
- },
- "meanings": [
+ "passages": [
   {
-   "char_key": "H0481:mute",
-   "meaning": "mute",
-   "lemma": "H0481",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 2,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "mute",
-    "lexical_gloss": "be dumb",
-    "read_sense_variants": "I was mute, and my distress grew worse | I am mute, for you have done it"
-   },
-   "instances": [
+   "passage_ref": "Psa 32:1-11",
+   "passage_text": "A Maskil of David . Psa 32:1 Blessed is the one whose transgression is forgiven , whose sin is covered . Psa 32:2 Blessed is the man against whom the Lord counts no iniquity , and in whose spirit there is no deceit . Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long. Psa 32:4 For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer . Selah Psa 32:5 I acknowledged my sin to you, and I did not cover my iniquity ; I said , “I will confess my transgressions to the Lord ,” and you forgave the iniquity of my sin . Selah Psa 32:6 Therefore let everyone who is godly offer prayer to you at a time when you may be found ; surely in the rush of great waters , they shall not reach him. Psa 32:7 You are a hiding place for me; you preserve me from trouble ; you surround me with shouts of deliverance . Selah Psa 32:8 I will instruct you and teach you in the way you should go ; I will counsel you with my eye upon you. Psa 32:9 Be not like a horse or a mule , without understanding , which must be curbed with bit and bridle , or it will not stay near you . Psa 32:10 Many are the sorrows of the wicked , but steadfast love surrounds the one who trusts in the Lord . Psa 32:11 Be glad in the Lord , and rejoice , O righteous , and shout for joy , all you upright in heart !",
+   "lexicals": [
     {
-     "span_id": 278067,
-     "reference": "Psa 39:2",
-     "hebrew_surface": "mute",
-     "esv_word": "mute",
-     "morphology": {
-      "morph_code": "HVNp1cs",
-      "stem": "Niphal"
-     },
-     "read_characteristic": "I was mute, and my distress grew worse",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1636,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 39:2 I was mute and silent ; I held my peace to no avail , and my distress grew worse .",
-     "passage_id": 1636,
-     "lexical": [
+     "ib_char": "silent",
+     "char_key": "H2790:silent",
+     "reference": "Psa 32:3",
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "I was mute, and my distress grew worse",
-       "item_type": "value"
+       "value": "kept silent, my bones wasted"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "state",
-       "item_type": "value"
+       "value": "state"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self was mute and silent, held its peace to no avail, and its distress only grew worse - the failure of forced silence",
-       "item_type": "event"
+       "value": "when the self kept silent about its sin, its bones wasted away through its groaning all day - concealment corroding the body"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "concealment's-cost",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "silence-wastes",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v3: 'For when I kept SILENT, my bones WASTED AWAY through my GROANING all day long' - the operation is the self-destruction of the unconfessed: the interior, refusing to speak, rots itself."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 39:1-13",
+   "passage_text": "To the choirmaster : to Jeduthun . A Psalm of David . Psa 39:1 I said , “I will guard my ways , that I may not sin with my tongue ; I will guard my mouth with a muzzle , so long as the wicked are in my presence .” Psa 39:2 I was mute and silent ; I held my peace to no avail , and my distress grew worse . Psa 39:3 My heart became hot within me. As I mused , the fire burned ; then I spoke with my tongue : Psa 39:4 “O Lord , make me know my end and what is the measure of my days ; let me know how fleeting I am! Psa 39:5 Behold , you have made my days a few handbreadths , and my lifetime is as nothing before you. Surely all mankind stands as a mere breath ! Selah Psa 39:6 Surely a man goes about as a shadow ! Surely for nothing they are in turmoil ; man heaps up wealth and does not know who will gather ! Psa 39:7 “And now , O Lord , for what do I wait ? My hope is in you . Psa 39:8 Deliver me from all my transgressions . Do not make me the scorn of the fool ! Psa 39:9 I am mute ; I do not open my mouth , for it is you who have done it. Psa 39:10 Remove your stroke from me; I am spent by the hostility of your hand . Psa 39:11 When you discipline a man with rebukes for sin , you consume like a moth what is dear to him; surely all mankind is a mere breath ! Selah Psa 39:12 “ Hear my prayer , O Lord , and give ear to my cry ; hold not your peace at my tears ! For I am a sojourner with you, a guest , like all my fathers . Psa 39:13 Look away from me, that I may smile again, before I depart and am no more !”",
+   "lexicals": [
+    {
+     "ib_char": "mute",
+     "char_key": "H0481:mute",
+     "reference": "Psa 39:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I was mute, and my distress grew worse"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self was mute and silent, held its peace to no avail, and its distress only grew worse - the failure of forced silence"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "silence's-failure",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "mute-distress-worse",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v2: 'I was MUTE and SILENT; I held my peace to no avail, and my DISTRESS grew WORSE' - the operation is the backfiring of restraint: bottling the words did not ease the interior but inflamed it.",
-       "item_type": "note"
+       "value": "v2: 'I was MUTE and SILENT; I held my peace to no avail, and my DISTRESS grew WORSE' - the operation is the backfiring of restraint: bottling the words did not ease the interior but inflamed it."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278067",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278067",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278067",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
     },
     {
-     "span_id": 278132,
+     "ib_char": "mute",
+     "char_key": "H0481:mute",
      "reference": "Psa 39:9",
-     "hebrew_surface": "mute",
-     "esv_word": "mute",
-     "morphology": {
-      "morph_code": "HVNp1cs",
-      "stem": "Niphal"
-     },
-     "read_characteristic": "I am mute, for you have done it",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1636,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 39:9 I am mute ; I do not open my mouth , for it is you who have done it.",
-     "passage_id": 1636,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "I am mute, for you have done it",
-       "item_type": "value"
+       "value": "I am mute, for you have done it"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition",
-       "item_type": "value"
+       "value": "volition"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "the self is mute and does not open its mouth, because it is God who has done it - silent submission to God's dealing",
-       "item_type": "event"
+       "value": "the self is mute and does not open its mouth, because it is God who has done it - silent submission to God's dealing"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "submissive-silence",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "mute-you-did-it",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v9: 'I am MUTE; I do not open my mouth, for it is you who have DONE it' - distinct from v1's tongue-guard: this silence is submission, the interior accepting the affliction as God's own act and not protesting.",
-       "item_type": "note"
+       "value": "v9: 'I am MUTE; I do not open my mouth, for it is you who have DONE it' - distinct from v1's tongue-guard: this silence is submission, the interior accepting the affliction as God's own act and not protesting."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278132",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278132",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "278132",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H7737:calm",
-   "meaning": "calmed",
-   "lemma": "H7737",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": "T2(Supplementary)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Piel",
-    "morph_codes": "HVpp1cs",
-    "esv_words": "calmed",
-    "lexical_gloss": "be like; to set",
-    "read_sense_variants": "calm (shavah)"
-   },
-   "instances": [
+   "passage_ref": "Psa 55:6",
+   "passage_text": "Psa 55:6 And I say, “Oh, that I had wings like a dove! I would fly away and be at rest;",
+   "lexicals": [
     {
-     "span_id": 272870,
-     "reference": "Psa 131:2",
-     "hebrew_surface": "calmed",
-     "esv_word": "calmed",
-     "morphology": {
-      "morph_code": "HVpp1cs HTc HTn",
-      "stem": "Piel"
-     },
-     "read_characteristic": "calm (shavah)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1848,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 131:2 But I have calmed and quieted my soul , like a weaned child with its mother ; like a weaned child is my soul within me.",
-     "passage_id": 1848,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "calm (shavah)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "calm the soul",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "from craving",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v2: 'But I have CALMED (shavah) and quieted my soul' - the operation of self-stilling: the active work of settling the restless self.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with quieting the soul",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272870",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272870",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272870",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H7965:peac",
-   "meaning": "peace",
-   "lemma": "H7965",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HNcmsa",
-    "esv_words": "peace",
-    "lexical_gloss": "peace; peace: well-being; peace: friendship; peace: greeting; peace: completely; Peace [God]",
-    "read_sense_variants": "peace (shalom)"
-   },
-   "instances": [
-    {
-     "span_id": 272323,
-     "reference": "Psa 120:7",
-     "hebrew_surface": "peace",
-     "esv_word": "peace",
-     "morphology": {
-      "morph_code": "HNcmsa",
-      "stem": ""
-     },
-     "read_characteristic": "peace (shalom)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1833,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 120:7 I am for peace , but when I speak , they are for war !",
-     "passage_id": 1833,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "peace (shalom)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "disposition",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be for peace",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "toward the hostile",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v7: 'I am for PEACE (shalom), but when I speak, they are for war' - the psalmist's peaceable heart, met with the foes' appetite for war.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with their bent for war",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272323",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272323",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272323",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H1826:quiet",
-   "meaning": "quieted",
-   "lemma": "H1826",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Piel",
-    "morph_codes": "HVpp1cs",
-    "esv_words": "quieted",
-    "lexical_gloss": "to silence: silent; to silence: stationary; to wail; to silence: destroyed",
-    "read_sense_variants": "quiet (damam)"
-   },
-   "instances": [
-    {
-     "span_id": 272871,
-     "reference": "Psa 131:2",
-     "hebrew_surface": "quieted",
-     "esv_word": "quieted",
-     "morphology": {
-      "morph_code": "HVpp1cs",
-      "stem": "Piel"
-     },
-     "read_characteristic": "quiet (damam)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1848,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 131:2 But I have calmed and quieted my soul , like a weaned child with its mother ; like a weaned child is my soul within me.",
-     "passage_id": 1848,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "quiet (damam)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "quiet the soul",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "into stillness",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v2: 'I have calmed and QUIETED (damam) my soul' - the hushing of the inner clamour, the self brought to silence.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with calming the soul",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272871",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272871",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272871",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H8252:rest",
-   "meaning": "rest",
-   "lemma": "H8252",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Hiphil",
-    "morph_codes": "HVhcc",
-    "esv_words": "rest",
-    "lexical_gloss": "to quiet",
-    "read_sense_variants": "rest (shaqat)"
-   },
-   "instances": [
-    {
-     "span_id": 285328,
-     "reference": "Psa 94:13",
-     "hebrew_surface": "rest",
-     "esv_word": "rest",
-     "morphology": {
-      "morph_code": "HVhcc",
-      "stem": "Hiphil"
-     },
-     "read_characteristic": "rest (shaqat)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1756,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked .",
-     "passage_id": 1756,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "rest (shaqat)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the disciplined man",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "be given rest",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "from days of trouble",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v13: 'to give him REST (shaqat) from days of trouble' - the quiet God grants the disciplined while judgment ripens for the wicked.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with the pit dug for the wicked",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285328",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285328",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "285328",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H7931:rest",
-   "meaning": "rest",
-   "lemma": "H7931",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "rest",
-    "lexical_gloss": "to dwell",
-    "read_sense_variants": "be at rest / settle (shakan - and be at rest)"
-   },
-   "instances": [
-    {
-     "span_id": 306385,
+     "ib_char": "rest",
+     "char_key": "H7931:rest",
      "reference": "Psa 55:6",
-     "hebrew_surface": "rest",
-     "esv_word": "rest",
-     "morphology": {
-      "morph_code": "HVqc1cs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "be at rest / settle (shakan - and be at rest)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 3688,
-      "is_passage_anchor": true,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 55:6 And I say, “Oh, that I had wings like a dove! I would fly away and be at rest;",
-     "passage_id": 3688,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be at rest / settle (shakan - and be at rest)",
-       "item_type": "value"
+       "value": "be at rest / settle (shakan - and be at rest)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status",
-       "item_type": "value"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist (longing)",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
        "value": "long to rest / dwell in peace",
-       "item_type": "event",
        "resolution": "inferred"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "the goal of the longed-for flight",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'I would fly away and be at REST (shakan)' — the ache for peace, for a settled place away from strife; shakan (to dwell/settle) the repose the tormented heart craves — not mere escape but rest, the wilderness preferable to the treacherous city",
-       "item_type": "note"
+       "value": "'I would fly away and be at REST (shakan)' — the ache for peace, for a settled place away from strife; shakan (to dwell/settle) the repose the tormented heart craves — not mere escape but rest, the wilderness preferable to the treacherous city"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "306385",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "306385",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "306385",
-       "to_span": "306384",
-       "direction": null,
-       "resolution": "span"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H7965:safety",
-   "meaning": "safety",
-   "lemma": "H7965",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HNcmsa",
-    "esv_words": "safety",
-    "lexical_gloss": "peace; peace: well-being; peace: friendship; peace: greeting; peace: completely; Peace [God]",
-    "read_sense_variants": "safety / peace (shalom - in safety)"
-   },
-   "instances": [
+   "passage_ref": "Psa 55:9-23",
+   "passage_text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you .",
+   "lexicals": [
     {
-     "span_id": 280101,
+     "ib_char": "safety",
+     "char_key": "H7965:safety",
      "reference": "Psa 55:18",
-     "hebrew_surface": "safety",
-     "esv_word": "safety",
-     "morphology": {
-      "morph_code": "HNcmsa HR",
-      "stem": ""
-     },
-     "read_characteristic": "safety / peace (shalom - in safety)",
-     "position": {
-      "word_index": 2,
-      "passage_id": 1662,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me .",
-     "passage_id": 1662,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "safety / peace (shalom - in safety)",
-       "item_type": "value"
+       "value": "safety / peace (shalom - in safety)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "status",
-       "item_type": "value"
+       "value": "status"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist (his soul)",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "none",
-       "item_type": "event"
+       "value": "none"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "the peace in which the soul is redeemed",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'he redeems my soul in SAFETY (shalom)' — the wholeness/peace of the rescued self; shalom here the unharmed security into which God brings the soul out of battle — peace as the fruit of redemption, the opposite of the war in the betrayer's heart (v21)",
-       "item_type": "note"
+       "value": "'he redeems my soul in SAFETY (shalom)' — the wholeness/peace of the rescued self; shalom here the unharmed security into which God brings the soul out of battle — peace as the fruit of redemption, the opposite of the war in the betrayer's heart (v21)"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280101",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280101",
-       "to_span": "280100",
-       "direction": null,
-       "resolution": "span"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H2790:silent",
-   "meaning": "silent",
-   "lemma": "H2790",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Hiphil",
-    "morph_codes": "HVhp1cs",
-    "esv_words": "silent",
-    "lexical_gloss": "be quiet; to plow/plot",
-    "read_sense_variants": "kept silent, my bones wasted"
-   },
-   "instances": [
+   "passage_ref": "Psa 76:7-12",
+   "passage_text": "Psa 76:7 But you , you are to be feared ! Who can stand before you when once your anger is roused ? Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still , Psa 76:9 when God arose to establish judgment , to save all the humble of the earth . Selah Psa 76:10 Surely the wrath of man shall praise you; the remnant of wrath you will put on like a belt . Psa 76:11 Make your vows to the Lord your God and perform them; let all around him bring gifts to him who is to be feared , Psa 76:12 who cuts off the spirit of princes , who is to be feared by the kings of the earth .",
+   "lexicals": [
     {
-     "span_id": 276902,
-     "reference": "Psa 32:3",
-     "hebrew_surface": "silent",
-     "esv_word": "silent",
-     "morphology": {
-      "morph_code": "HVhp1cs",
-      "stem": "Hiphil"
-     },
-     "read_characteristic": "kept silent, my bones wasted",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1623,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long.",
-     "passage_id": 1623,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "kept silent, my bones wasted",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "when the self kept silent about its sin, its bones wasted away through its groaning all day - concealment corroding the body",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "concealment's-cost",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "silence-wastes",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v3: 'For when I kept SILENT, my bones WASTED AWAY through my GROANING all day long' - the operation is the self-destruction of the unconfessed: the interior, refusing to speak, rots itself.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276902",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276902",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276902",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H8252:still",
-   "meaning": "still",
-   "lemma": "H8252",
-   "cluster": {
-    "code": "M33",
-    "name": "Peace",
-    "all_candidates": "M33(Peace)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqp3fs",
-    "esv_words": "still",
-    "lexical_gloss": "to quiet",
-    "read_sense_variants": "be still / quiet (shaqat - and was still)"
-   },
-   "instances": [
-    {
-     "span_id": 282846,
+     "ib_char": "still",
+     "char_key": "H8252:still",
      "reference": "Psa 76:8",
-     "hebrew_surface": "still",
-     "esv_word": "still",
-     "morphology": {
-      "morph_code": "HVqp3fs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "be still / quiet (shaqat - and was still)",
-     "position": {
-      "word_index": 6,
-      "passage_id": 1711,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still ,",
-     "passage_id": 1711,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "be still / quiet (shaqat - and was still)",
-       "item_type": "value"
+       "value": "be still / quiet (shaqat - and was still)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "response",
-       "item_type": "value"
+       "value": "response"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the earth / its inhabitants",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "fall silent / be quieted",
-       "item_type": "event"
+       "value": "fall silent / be quieted"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "before God's judgment",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "hushed by dread",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with the earth's fear",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'the earth feared and was STILL (shaqat)' - the hush that follows the divine verdict; shaqat here the silence of awe, the earth stilled when God rises to judge - dread expressed not as clamour but as quiet",
-       "item_type": "note"
+       "value": "'the earth feared and was STILL (shaqat)' - the hush that follows the divine verdict; shaqat here the silence of awe, the earth stilled when God rises to judge - dread expressed not as clamour but as quiet"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
+       "value": "external:god"
       }
-     ],
-     "edges": [
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 94:7-23",
+   "passage_text": "Psa 94:7 and they say , “The Lord does not see ; the God of Jacob does not perceive .” Psa 94:8 Understand , O dullest of the people ! Fools , when will you be wise ? Psa 94:9 He who planted the ear , does he not hear ? He who formed the eye , does he not see ? Psa 94:10 He who disciplines the nations , does he not rebuke ? He who teaches man knowledge — Psa 94:11 the Lord — knows the thoughts of man , that they are but a breath . Psa 94:12 Blessed is the man whom you discipline , O Lord , and whom you teach out of your law , Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked . Psa 94:14 For the Lord will not forsake his people ; he will not abandon his heritage ; Psa 94:15 for justice will return to the righteous , and all the upright in heart will follow it. Psa 94:16 Who rises up for me against the wicked ? Who stands up for me against evildoers ? Psa 94:17 If the Lord had not been my help , my soul would soon have lived in the land of silence . Psa 94:18 When I thought , “My foot slips ,” your steadfast love , O Lord , held me up . Psa 94:19 When the cares of my heart are many , your consolations cheer my soul . Psa 94:20 Can wicked rulers be allied with you, those who frame injustice by statute ? Psa 94:21 They band together against the life of the righteous and condemn the innocent to death . Psa 94:22 But the Lord has become my stronghold , and my God the rock of my refuge . Psa 94:23 He will bring back on them their iniquity and wipe them out for their wickedness ; the Lord our God will wipe them out .",
+   "lexicals": [
+    {
+     "ib_char": "rest",
+     "char_key": "H8252:rest",
+     "reference": "Psa 94:13",
+     "dimensions": [
       {
-       "on_dimension": 105,
+       "nr": 101,
+       "label": "sense",
+       "value": "rest (shaqat)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
        "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "282846",
-       "direction": null,
+       "value": "the disciplined man",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 107,
+       "nr": 106,
+       "label": "operation",
+       "value": "be given rest"
+      },
+      {
+       "nr": 107,
        "label": "target",
-       "item_type": "pair",
-       "from_span": "282846",
-       "to_span": "282842",
-       "direction": null,
-       "resolution": "span"
-      },
-      {
-       "on_dimension": 108,
-       "label": "manner",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "282846",
-       "direction": null,
+       "value": "from days of trouble",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 112,
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
        "label": "coupling",
-       "item_type": "pair",
-       "from_span": "282846",
-       "to_span": "282845",
-       "direction": null,
-       "resolution": "span"
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'to give him REST (shaqat) from days of trouble' - the quiet God grants the disciplined while judgment ripens for the wicked."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the pit dug for the wicked"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 120:6-7",
+   "passage_text": "Psa 120:6 Too long have I had my dwelling among those who hate peace . Psa 120:7 I am for peace , but when I speak , they are for war !",
+   "lexicals": [
+    {
+     "ib_char": "peace",
+     "char_key": "H7965:peac",
+     "reference": "Psa 120:7",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "peace (shalom)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be for peace"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "toward the hostile",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'I am for PEACE (shalom), but when I speak, they are for war' - the psalmist's peaceable heart, met with the foes' appetite for war."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with their bent for war"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 131:1-3",
+   "passage_text": "A Song of Ascents . Of David . Psa 131:1 O Lord , my heart is not lifted up ; my eyes are not raised too high; I do not occupy myself with things too great and too marvelous for me . Psa 131:2 But I have calmed and quieted my soul , like a weaned child with its mother ; like a weaned child is my soul within me. Psa 131:3 O Israel , hope in the Lord from this time forth and forevermore .",
+   "lexicals": [
+    {
+     "ib_char": "quieted",
+     "char_key": "H1826:quiet",
+     "reference": "Psa 131:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "quiet (damam)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "quiet the soul"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "into stillness",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'I have calmed and QUIETED (damam) my soul' - the hushing of the inner clamour, the self brought to silence."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with calming the soul"
+      }
+     ]
+    },
+    {
+     "ib_char": "calmed",
+     "char_key": "H7737:calm",
+     "reference": "Psa 131:2",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "calm (shavah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "calm the soul"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from craving",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'But I have CALMED (shavah) and quieted my soul' - the operation of self-stilling: the active work of settling the restless self."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with quieting the soul"
       }
      ]
     }

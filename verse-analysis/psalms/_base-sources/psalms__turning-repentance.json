@@ -1,16 +1,96 @@
 {
  "meta": {
+  "family": "turning-repentance",
   "book": "Psalms",
   "book_id": 19,
-  "scope": {
-   "family": "turning-repentance"
+  "generated": "2026-07-12",
+  "purpose": "Per-passage base source: each node = passage text + the lexicals of this family's ib_char rows that fall in it. Write, per passage, a narrative of what the passage says about the ib_char item for the inner-being operations.",
+  "source_of_truth": "database/bible_research.db — authoritative; this is a regenerable view (delete it and nothing is lost).",
+  "linkage": {
+   "derivation": "ib_characteristic (this family) --[ib_char_id]--> verse_span_index --[verse_span_id]--> ve_lexical; and verse_span_index.verse_id --> verse --> passage. verse_span_index is the JOIN ONLY and is intentionally NOT emitted (dropped as noise).",
+   "does_ib_char_reference_ve_lexical": "No. ib_characteristic declares no FK; the one declared FK is ve_lexical.verse_span_id -> verse_span_index.id; the join to ve_lexical runs through verse_span_index.",
+   "declared_foreign_keys": {
+    "ib_characteristic": [
+     "(none declared)"
+    ],
+    "verse_span_index": [
+     "(none declared)"
+    ],
+    "ve_lexical": [
+     "verse_span_id -> verse_span_index.id",
+     "verse_context_id -> verse_context.id"
+    ],
+    "verse": [
+     "(none declared)"
+    ]
+   }
   },
-  "generated": "2026-07-11",
-  "source_provenance": "ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2",
-  "description": "Base source for the Psalms inner-being family 'turning-repentance': all meanings, instances, lexical ledgers, and verse/passage text.",
-  "counts": {
-   "meanings": 12,
-   "instances": 14,
+  "ib_char_items": [
+   {
+    "char_key": "H7725:repent",
+    "meaning": "repent",
+    "cluster": "Transformation"
+   },
+   {
+    "char_key": "H7725:turn",
+    "meaning": "turn",
+    "cluster": "Transformation"
+   },
+   {
+    "char_key": "H7725:return",
+    "meaning": "Return",
+    "cluster": "Transformation"
+   },
+   {
+    "char_key": "H6974:awak",
+    "meaning": "awake",
+    "cluster": null
+   },
+   {
+    "char_key": "H2487:chang",
+    "meaning": "change",
+    "cluster": "Transformation"
+   },
+   {
+    "char_key": "H5472:fallenaway",
+    "meaning": "fallen away",
+    "cluster": null
+   },
+   {
+    "char_key": "H5186:turnasid",
+    "meaning": "turn aside",
+    "cluster": null
+   },
+   {
+    "char_key": "H5493:turnasid",
+    "meaning": "turn aside",
+    "cluster": "Obedience"
+   },
+   {
+    "char_key": "H5472:turnback",
+    "meaning": "turn back",
+    "cluster": null
+   },
+   {
+    "char_key": "H7725:turnback",
+    "meaning": "turn back",
+    "cluster": "Transformation"
+   },
+   {
+    "char_key": "H2015:turn",
+    "meaning": "turned",
+    "cluster": "T2(Supplementary)"
+   },
+   {
+    "char_key": "H5472:turnedaway",
+    "meaning": "turned away",
+    "cluster": null
+   }
+  ],
+  "stats": {
+   "ib_char_items": 12,
+   "spans_joined": 14,
+   "lexicals": 14,
    "passages": 14
   },
   "dimension_legend": {
@@ -30,2216 +110,999 @@
    "114": "discovery",
    "115": "role",
    "116": "locus"
-  },
-  "structure": {
-   "meta": "book+family scope, provenance, counts, dimension_legend (ve_nr->name), and this structure doc",
-   "passages": "map of passage_id -> {passage_ref, verse_refs[], text}; instances reference it by passage_id (normalised to avoid repeating passage text)",
-   "meanings[]": {
-    "char_key": "lemma:normalised-ESV key (record identity)",
-    "meaning": "readable meaning label (modal ESV rendering)",
-    "lemma": "base Strong's number",
-    "cluster": "{code,name,all_candidates} — term-based M-code cluster (master->1 mti_term->1 cluster)",
-    "instance_count": "number of master spans",
-    "is_outlier": "true if the term-cluster is a genuine (non-adjacent) crossover from the family's expected cluster",
-    "evidence": "aggregate proof on the record: stems, morph_codes, esv_words, lexical_gloss (attested inventory), read_sense_variants (the read phrases)",
-    "instances[]": {
-     "span_id": "verse_span_index.id (the unique master)",
-     "reference": "verse reference",
-     "hebrew_surface": "the Hebrew surface word of the span",
-     "esv_word": "the ESV rendering in this verse",
-     "morphology": "{morph_code, stem}",
-     "read_characteristic": "the read characteristic-in-words on the master",
-     "position": "{word_index, passage_id, is_passage_anchor, genre}",
-     "verse_text": "full text of this verse (ESV)",
-     "passage_id": "-> lookup in top-level passages map for the passage text",
-     "lexical": "[] the full ve_lexical ledger for this span: one {nr,label,value,item_type,resolution?,notes?} per dimension. item_type = value|flag|event|note|pair (the method's item kinds). Dimensions: 101 sense,102 type,103 source,104 seat,105 bearer,106 operation,107 target,108 manner,109 intensity,110 specifier,111 effect,112 coupling,113 prohibition,114 discovery,115 role,116 locus",
-     "edges": "[] the relational sub-set of the ledger — dimensions whose item links to ANOTHER span (the inner-being network): {on_dimension,label,item_type,from_span,to_span,direction,resolution}"
-    }
-   }
   }
  },
- "passages": {
-  "1581": {
-   "passage_ref": "Psa 7:1-17",
-   "verse_refs": [
-    "Psa 7:1",
-    "Psa 7:2",
-    "Psa 7:3",
-    "Psa 7:4",
-    "Psa 7:5",
-    "Psa 7:6",
-    "Psa 7:7",
-    "Psa 7:8",
-    "Psa 7:9",
-    "Psa 7:10",
-    "Psa 7:11",
-    "Psa 7:12",
-    "Psa 7:13",
-    "Psa 7:14",
-    "Psa 7:15",
-    "Psa 7:16",
-    "Psa 7:17"
-   ],
-   "text": "A Shiggaion of David , which he sang to the Lord concerning the words of Cush , a Benjaminite . Psa 7:1 O Lord my God , in you do I take refuge ; save me from all my pursuers and deliver me , Psa 7:2 lest like a lion they tear my soul apart, rending it in pieces, with none to deliver . Psa 7:3 O Lord my God , if I have done this, if there is wrong in my hands , Psa 7:4 if I have repaid my friend with evil or plundered my enemy without cause , Psa 7:5 let the enemy pursue my soul and overtake it, and let him trample my life to the ground and lay my glory in the dust . Selah Psa 7:6 Arise , O Lord , in your anger ; lift yourself up against the fury of my enemies ; awake for me; you have appointed a judgment . Psa 7:7 Let the assembly of the peoples be gathered about you; over it return on high . Psa 7:8 The Lord judges the peoples ; judge me, O Lord , according to my righteousness and according to the integrity that is in me . Psa 7:9 Oh, let the evil of the wicked come to an end , and may you establish the righteous — you who test the minds and hearts , O righteous God ! Psa 7:10 My shield is with God , who saves the upright in heart . Psa 7:11 God is a righteous judge , and a God who feels indignation every day . Psa 7:12 If a man does not repent , God will whet his sword ; he has bent and readied his bow ; Psa 7:13 he has prepared for him his deadly weapons , making his arrows fiery shafts . Psa 7:14 Behold , the wicked man conceives evil and is pregnant with mischief and gives birth to lies . Psa 7:15 He makes a pit , digging it out, and falls into the hole that he has made . Psa 7:16 His mischief returns upon his own head , and on his own skull his violence descends . Psa 7:17 I will give to the Lord the thanks due to his righteousness , and I will sing praise to the name of the Lord , the Most High ."
-  },
-  "1621": {
-   "passage_ref": "Psa 30:3-12",
-   "verse_refs": [
-    "Psa 30:1",
-    "Psa 30:2",
-    "Psa 30:3",
-    "Psa 30:4",
-    "Psa 30:5",
-    "Psa 30:6",
-    "Psa 30:7",
-    "Psa 30:8",
-    "Psa 30:9",
-    "Psa 30:10",
-    "Psa 30:11",
-    "Psa 30:12"
-   ],
-   "text": "A Psalm of David . A song at the dedication of the temple . Psa 30:1 I will extol you, O Lord , for you have drawn me up and have not let my foes rejoice over me . Psa 30:2 O Lord my God, I cried to you for help, and you have healed me. Psa 30:3 O Lord , you have brought up my soul from Sheol ; you restored me to life from among those who go down to the pit . Psa 30:4 Sing praises to the Lord , O you his saints , and give thanks to his holy name . Psa 30:5 For his anger is but for a moment , and his favor is for a lifetime . Weeping may tarry for the night , but joy comes with the morning . Psa 30:6 As for me , I said in my prosperity , “I shall never be moved .” Psa 30:7 By your favor , O Lord , you made my mountain stand strong ; you hid your face ; I was dismayed . Psa 30:8 To you, O Lord , I cry , and to the Lord I plead for mercy: Psa 30:9 “What profit is there in my death , if I go down to the pit ? Will the dust praise you? Will it tell of your faithfulness ? Psa 30:10 Hear , O Lord , and be merciful to me! O Lord , be my helper !” Psa 30:11 You have turned for me my mourning into dancing ; you have loosed my sackcloth and clothed me with gladness , Psa 30:12 that my glory may sing your praise and not be silent . O Lord my God , I will give thanks to you forever !"
-  },
-  "1659": {
-   "passage_ref": "Psa 53:1-6",
-   "verse_refs": [
-    "Psa 53:1",
-    "Psa 53:2",
-    "Psa 53:3",
-    "Psa 53:4",
-    "Psa 53:5",
-    "Psa 53:6"
-   ],
-   "text": "To the choirmaster : according to Mahalath . A Maskil of David . Psa 53:1 The fool says in his heart , “There is no God .” They are corrupt , doing abominable iniquity ; there is none who does good . Psa 53:2 God looks down from heaven on the children of man to see if there are any who understand , who seek after God . Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one . Psa 53:4 Have those who work evil no knowledge , who eat up my people as they eat bread , and do not call upon God ? Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them . Psa 53:6 Oh , that salvation for Israel would come out of Zion ! When God restores the fortunes of his people , let Jacob rejoice , let Israel be glad ."
-  },
-  "1662": {
-   "passage_ref": "Psa 55:9-23",
-   "verse_refs": [
-    "Psa 55:8",
-    "Psa 55:9",
-    "Psa 55:10",
-    "Psa 55:11",
-    "Psa 55:12",
-    "Psa 55:13",
-    "Psa 55:14",
-    "Psa 55:15",
-    "Psa 55:16",
-    "Psa 55:17",
-    "Psa 55:18",
-    "Psa 55:19",
-    "Psa 55:20",
-    "Psa 55:21",
-    "Psa 55:22",
-    "Psa 55:23"
-   ],
-   "text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you ."
-  },
-  "1718": {
-   "passage_ref": "Psa 78:29-35",
-   "verse_refs": [
-    "Psa 78:29",
-    "Psa 78:30",
-    "Psa 78:31",
-    "Psa 78:32",
-    "Psa 78:33",
-    "Psa 78:34",
-    "Psa 78:35",
-    "Psa 78:36"
-   ],
-   "text": "Psa 78:29 And they ate and were well filled , for he gave them what they craved . Psa 78:30 But before they had satisfied their craving , while the food was still in their mouths , Psa 78:31 the anger of God rose against them, and he killed the strongest of them and laid low the young men of Israel . Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe . Psa 78:33 So he made their days vanish like a breath , and their years in terror . Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly. Psa 78:35 They remembered that God was their rock , the Most High God their redeemer . Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues."
-  },
-  "1720": {
-   "passage_ref": "Psa 78:48-59",
-   "verse_refs": [
-    "Psa 78:48",
-    "Psa 78:49",
-    "Psa 78:50",
-    "Psa 78:51",
-    "Psa 78:52",
-    "Psa 78:53",
-    "Psa 78:54",
-    "Psa 78:55",
-    "Psa 78:56",
-    "Psa 78:57",
-    "Psa 78:58",
-    "Psa 78:59"
-   ],
-   "text": "Psa 78:48 He gave over their cattle to the hail and their flocks to thunderbolts . Psa 78:49 He let loose on them his burning anger , wrath , indignation , and distress , a company of destroying angels . Psa 78:50 He made a path for his anger ; he did not spare them from death , but gave their lives over to the plague . Psa 78:51 He struck down every firstborn in Egypt , the firstfruits of their strength in the tents of Ham . Psa 78:52 Then he led out his people like sheep and guided them in the wilderness like a flock . Psa 78:53 He led them in safety , so that they were not afraid , but the sea overwhelmed their enemies . Psa 78:54 And he brought them to his holy land , to the mountain which his right hand had won . Psa 78:55 He drove out nations before them; he apportioned them for a possession and settled the tribes of Israel in their tents . Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies , Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow . Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols . Psa 78:59 When God heard , he was full of wrath, and he utterly rejected Israel ."
-  },
-  "1729": {
-   "passage_ref": "Psa 80:17-19",
-   "verse_refs": [
-    "Psa 80:17",
-    "Psa 80:18",
-    "Psa 80:19"
-   ],
-   "text": "Psa 80:17 But let your hand be on the man of your right hand , the son of man whom you have made strong for yourself ! Psa 80:18 Then we shall not turn back from you; give us life , and we will call upon your name ! Psa 80:19 Restore us, O Lord God of hosts ! Let your face shine , that we may be saved !"
-  },
-  "1738": {
-   "passage_ref": "Psa 85:1-13",
-   "verse_refs": [
-    "Psa 85:1",
-    "Psa 85:2",
-    "Psa 85:3",
-    "Psa 85:4",
-    "Psa 85:5",
-    "Psa 85:6",
-    "Psa 85:7",
-    "Psa 85:8",
-    "Psa 85:9",
-    "Psa 85:10",
-    "Psa 85:11",
-    "Psa 85:12",
-    "Psa 85:13"
-   ],
-   "text": "To the choirmaster . A Psalm of the Sons of Korah . Psa 85:1 Lord , you were favorable to your land ; you restored the fortunes of Jacob . Psa 85:2 You forgave the iniquity of your people ; you covered all their sin . Selah Psa 85:3 You withdrew all your wrath ; you turned from your hot anger . Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us ! Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ? Psa 85:6 Will you not revive us again , that your people may rejoice in you ? Psa 85:7 Show us your steadfast love , O Lord , and grant us your salvation . Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly . Psa 85:9 Surely his salvation is near to those who fear him, that glory may dwell in our land . Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. Psa 85:11 Faithfulness springs up from the ground , and righteousness looks down from the sky . Psa 85:12 Yes , the Lord will give what is good , and our land will yield its increase . Psa 85:13 Righteousness will go before him and make his footsteps a way ."
-  },
-  "1812": {
-   "passage_ref": "Psa 116:1-10",
-   "verse_refs": [
-    "Psa 116:1",
-    "Psa 116:2",
-    "Psa 116:3",
-    "Psa 116:4",
-    "Psa 116:5",
-    "Psa 116:6",
-    "Psa 116:7",
-    "Psa 116:8",
-    "Psa 116:9",
-    "Psa 116:10",
-    "Psa 116:11"
-   ],
-   "text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”"
-  },
-  "1824": {
-   "passage_ref": "Psa 119:42-63",
-   "verse_refs": [
-    "Psa 119:42",
-    "Psa 119:43",
-    "Psa 119:44",
-    "Psa 119:45",
-    "Psa 119:46",
-    "Psa 119:47",
-    "Psa 119:48",
-    "Psa 119:49",
-    "Psa 119:50",
-    "Psa 119:51",
-    "Psa 119:52",
-    "Psa 119:53",
-    "Psa 119:54",
-    "Psa 119:55",
-    "Psa 119:56",
-    "Psa 119:57",
-    "Psa 119:58",
-    "Psa 119:59",
-    "Psa 119:60",
-    "Psa 119:61",
-    "Psa 119:62",
-    "Psa 119:63",
-    "Psa 119:64"
-   ],
-   "text": "Psa 119:42 then shall I have an answer for him who taunts me, for I trust in your word . Psa 119:43 And take not the word of truth utterly out of my mouth , for my hope is in your rules . Psa 119:44 I will keep your law continually , forever and ever , Psa 119:45 and I shall walk in a wide place , for I have sought your precepts . Psa 119:46 I will also speak of your testimonies before kings and shall not be put to shame , Psa 119:47 for I find my delight in your commandments , which I love . Psa 119:48 I will lift up my hands toward your commandments , which I love , and I will meditate on your statutes . Zayin Psa 119:49 Remember your word to your servant , in which you have made me hope . Psa 119:50 This is my comfort in my affliction , that your promise gives me life . Psa 119:51 The insolent utterly deride me, but I do not turn away from your law . Psa 119:52 When I think of your rules from of old , I take comfort , O Lord . Psa 119:53 Hot indignation seizes me because of the wicked , who forsake your law . Psa 119:54 Your statutes have been my songs in the house of my sojourning . Psa 119:55 I remember your name in the night , O Lord , and keep your law . Psa 119:56 This blessing has fallen to me, that I have kept your precepts . Heth Psa 119:57 The Lord is my portion ; I promise to keep your words . Psa 119:58 I entreat your favor with all my heart ; be gracious to me according to your promise . Psa 119:59 When I think on my ways , I turn my feet to your testimonies ; Psa 119:60 I hasten and do not delay to keep your commandments . Psa 119:61 Though the cords of the wicked ensnare me, I do not forget your law . Psa 119:62 At midnight I rise to praise you, because of your righteous rules . Psa 119:63 I am a companion of all who fear you, of those who keep your precepts . Psa 119:64 The earth, O Lord, is full of your steadfast love; teach me your statutes!"
-  },
-  "1825": {
-   "passage_ref": "Psa 119:66-82",
-   "verse_refs": [
-    "Psa 119:65",
-    "Psa 119:66",
-    "Psa 119:67",
-    "Psa 119:68",
-    "Psa 119:69",
-    "Psa 119:70",
-    "Psa 119:71",
-    "Psa 119:72",
-    "Psa 119:73",
-    "Psa 119:74",
-    "Psa 119:75",
-    "Psa 119:76",
-    "Psa 119:77",
-    "Psa 119:78",
-    "Psa 119:79",
-    "Psa 119:80",
-    "Psa 119:81",
-    "Psa 119:82",
-    "Psa 119:83"
-   ],
-   "text": "Psa 119:65 TethYou have dealt well with your servant, O Lord, according to your word. Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments . Psa 119:67 Before I was afflicted I went astray , but now I keep your word . Psa 119:68 You are good and do good ; teach me your statutes . Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ; Psa 119:70 their heart is unfeeling like fat , but I delight in your law . Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes . Psa 119:72 The law of your mouth is better to me than thousands of gold and silver pieces. Yodh Psa 119:73 Your hands have made and fashioned me; give me understanding that I may learn your commandments . Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word . Psa 119:75 I know , O Lord , that your rules are righteous , and that in faithfulness you have afflicted me . Psa 119:76 Let your steadfast love comfort me according to your promise to your servant . Psa 119:77 Let your mercy come to me, that I may live ; for your law is my delight . Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts . Psa 119:79 Let those who fear you turn to me, that they may know your testimonies . Psa 119:80 May my heart be blameless in your statutes , that I may not be put to shame ! Kaph Psa 119:81 My soul longs for your salvation ; I hope in your word . Psa 119:82 My eyes long for your promise ; I ask , “ When will you comfort me ?” Psa 119:83 For I have become like a wineskin in the smoke, yet I have not forgotten your statutes."
-  },
-  "1826": {
-   "passage_ref": "Psa 119:84-102",
-   "verse_refs": [
-    "Psa 119:84",
-    "Psa 119:85",
-    "Psa 119:86",
-    "Psa 119:87",
-    "Psa 119:88",
-    "Psa 119:89",
-    "Psa 119:90",
-    "Psa 119:91",
-    "Psa 119:92",
-    "Psa 119:93",
-    "Psa 119:94",
-    "Psa 119:95",
-    "Psa 119:96",
-    "Psa 119:97",
-    "Psa 119:98",
-    "Psa 119:99",
-    "Psa 119:100",
-    "Psa 119:101",
-    "Psa 119:102"
-   ],
-   "text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me ."
-  },
-  "1839": {
-   "passage_ref": "Psa 125:3-5",
-   "verse_refs": [
-    "Psa 125:1",
-    "Psa 125:3",
-    "Psa 125:4",
-    "Psa 125:5"
-   ],
-   "text": "A Song of Ascents . Psa 125:1 Those who trust in the Lord are like Mount Zion , which cannot be moved , but abides forever . Psa 125:3 For the scepter of wickedness shall not rest on the land allotted to the righteous , lest the righteous stretch out their hands to do wrong . Psa 125:4 Do good , O Lord , to those who are good , and to those who are upright in their hearts ! Psa 125:5 But those who turn aside to their crooked ways the Lord will lead away with evildoers ! Peace be upon Israel !"
-  },
-  "1867": {
-   "passage_ref": "Psa 139:12-19",
-   "verse_refs": [
-    "Psa 139:12",
-    "Psa 139:13",
-    "Psa 139:14",
-    "Psa 139:15",
-    "Psa 139:16",
-    "Psa 139:17",
-    "Psa 139:18",
-    "Psa 139:19",
-    "Psa 139:20"
-   ],
-   "text": "Psa 139:12 even the darkness is not dark to you; the night is bright as the day , for darkness is as light with you. Psa 139:13 For you formed my inward parts ; you knitted me together in my mother’s womb . Psa 139:14 I praise you, for I am fearfully and wonderfully made . Wonderful are your works ; my soul knows it very well . Psa 139:15 My frame was not hidden from you, when I was being made in secret , intricately woven in the depths of the earth . Psa 139:16 Your eyes saw my unformed substance; in your book were written , every one of them, the days that were formed for me, when as yet there was none of them . Psa 139:17 How precious to me are your thoughts , O God ! How vast is the sum of them! Psa 139:18 If I would count them, they are more than the sand . I awake , and I am still with you . Psa 139:19 Oh that you would slay the wicked , O God ! O men of blood , depart from me ! Psa 139:20 They speak against you with malicious intent; your enemies take your name in vain."
-  }
- },
- "meanings": [
+ "passages": [
   {
-   "char_key": "H7725:repent",
-   "meaning": "repent",
-   "lemma": "H7725",
-   "cluster": {
-    "code": "M45",
-    "name": "Transformation",
-    "all_candidates": "M45(Transformation)"
-   },
-   "instance_count": 2,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqi3ms, HVqp3cp",
-    "esv_words": "repent, repented",
-    "lexical_gloss": "to return: again; to return: recall; to return: repent; to return: return; to return: turn back; to return: rescue; to return: pay; to return: reply; to return: refuse",
-    "read_sense_variants": "the wicked will not repent | repent / turn (shuv)"
-   },
-   "instances": [
+   "passage_ref": "Psa 7:1-17",
+   "passage_text": "A Shiggaion of David , which he sang to the Lord concerning the words of Cush , a Benjaminite . Psa 7:1 O Lord my God , in you do I take refuge ; save me from all my pursuers and deliver me , Psa 7:2 lest like a lion they tear my soul apart, rending it in pieces, with none to deliver . Psa 7:3 O Lord my God , if I have done this, if there is wrong in my hands , Psa 7:4 if I have repaid my friend with evil or plundered my enemy without cause , Psa 7:5 let the enemy pursue my soul and overtake it, and let him trample my life to the ground and lay my glory in the dust . Selah Psa 7:6 Arise , O Lord , in your anger ; lift yourself up against the fury of my enemies ; awake for me; you have appointed a judgment . Psa 7:7 Let the assembly of the peoples be gathered about you; over it return on high . Psa 7:8 The Lord judges the peoples ; judge me, O Lord , according to my righteousness and according to the integrity that is in me . Psa 7:9 Oh, let the evil of the wicked come to an end , and may you establish the righteous — you who test the minds and hearts , O righteous God ! Psa 7:10 My shield is with God , who saves the upright in heart . Psa 7:11 God is a righteous judge , and a God who feels indignation every day . Psa 7:12 If a man does not repent , God will whet his sword ; he has bent and readied his bow ; Psa 7:13 he has prepared for him his deadly weapons , making his arrows fiery shafts . Psa 7:14 Behold , the wicked man conceives evil and is pregnant with mischief and gives birth to lies . Psa 7:15 He makes a pit , digging it out, and falls into the hole that he has made . Psa 7:16 His mischief returns upon his own head , and on his own skull his violence descends . Psa 7:17 I will give to the Lord the thanks due to his righteousness , and I will sing praise to the name of the Lord , the Most High .",
+   "lexicals": [
     {
-     "span_id": 283158,
-     "reference": "Psa 78:34",
-     "hebrew_surface": "repented",
-     "esv_word": "repented",
-     "morphology": {
-      "morph_code": "HVqp3cp HSp3ms",
-      "stem": "Qal"
-     },
-     "read_characteristic": "repent / turn (shuv)",
-     "position": {
-      "word_index": 2,
-      "passage_id": 1718,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly.",
-     "passage_id": 1718,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "repent / turn (shuv)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "they",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "turn back",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "to God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the seeking",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'they REPENTED (shuv) and sought God earnestly' - the turning-back, though (v37) it proved shallow.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283158",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283158",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283158",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 283588,
+     "ib_char": "repent",
+     "char_key": "H7725:repent",
      "reference": "Psa 7:12",
-     "hebrew_surface": "repent",
-     "esv_word": "repent",
-     "morphology": {
-      "morph_code": "HVqi3ms",
-      "stem": "Qal"
-     },
-     "read_characteristic": "the wicked will not repent",
-     "position": {
-      "word_index": 2,
-      "passage_id": 1581,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 7:12 If a man does not repent , God will whet his sword ; he has bent and readied his bow ;",
-     "passage_id": 1581,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "the wicked will not repent",
-       "item_type": "value"
+       "value": "the wicked will not repent"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "volition",
-       "item_type": "value"
+       "value": "volition"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the wicked",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "if the wicked man does not turn/repent, God whets his sword - impenitence as the wicked's settled refusal",
-       "item_type": "event"
+       "value": "if the wicked man does not turn/repent, God whets his sword - impenitence as the wicked's settled refusal"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "impenitence",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "refuse-to-repent",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v12: 'if a man does not REPENT, God will whet his sword' - the wicked's interior is read as a refusal to turn; the judgment hangs on that unrelenting inner posture.",
-       "item_type": "note"
+       "value": "v12: 'if a man does not REPENT, God will whet his sword' - the wicked's interior is read as a refusal to turn; the judgment hangs on that unrelenting inner posture."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283588",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283588",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283588",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H7725:turn",
-   "meaning": "turn",
-   "lemma": "H7725",
-   "cluster": {
-    "code": "M45",
-    "name": "Transformation",
-    "all_candidates": "M45(Transformation)"
-   },
-   "instance_count": 2,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Hiphil, Qal",
-    "morph_codes": "HVhw1cs, HVqi3mp",
-    "esv_words": "turn",
-    "lexical_gloss": "to return: again; to return: recall; to return: repent; to return: return; to return: turn back; to return: rescue; to return: pay; to return: reply; to return: refuse",
-    "read_sense_variants": "turn (shuv)"
-   },
-   "instances": [
+   "passage_ref": "Psa 30:3-12",
+   "passage_text": "A Psalm of David . A song at the dedication of the temple . Psa 30:1 I will extol you, O Lord , for you have drawn me up and have not let my foes rejoice over me . Psa 30:2 O Lord my God, I cried to you for help, and you have healed me. Psa 30:3 O Lord , you have brought up my soul from Sheol ; you restored me to life from among those who go down to the pit . Psa 30:4 Sing praises to the Lord , O you his saints , and give thanks to his holy name . Psa 30:5 For his anger is but for a moment , and his favor is for a lifetime . Weeping may tarry for the night , but joy comes with the morning . Psa 30:6 As for me , I said in my prosperity , “I shall never be moved .” Psa 30:7 By your favor , O Lord , you made my mountain stand strong ; you hid your face ; I was dismayed . Psa 30:8 To you, O Lord , I cry , and to the Lord I plead for mercy: Psa 30:9 “What profit is there in my death , if I go down to the pit ? Will the dust praise you? Will it tell of your faithfulness ? Psa 30:10 Hear , O Lord , and be merciful to me! O Lord , be my helper !” Psa 30:11 You have turned for me my mourning into dancing ; you have loosed my sackcloth and clothed me with gladness , Psa 30:12 that my glory may sing your praise and not be silent . O Lord my God , I will give thanks to you forever !",
+   "lexicals": [
     {
-     "span_id": 271951,
-     "reference": "Psa 119:59",
-     "hebrew_surface": "turn",
-     "esv_word": "turn",
-     "morphology": {
-      "morph_code": "HVhw1cs",
-      "stem": "Hiphil"
-     },
-     "read_characteristic": "turn (shuv)",
-     "position": {
-      "word_index": 3,
-      "passage_id": 1824,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 119:59 When I think on my ways , I turn my feet to your testimonies ;",
-     "passage_id": 1824,
-     "lexical": [
+     "ib_char": "turned",
+     "char_key": "H2015:turn",
+     "reference": "Psa 30:11",
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "turn (shuv)",
-       "item_type": "value"
+       "value": "you turned my mourning into dancing"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action",
-       "item_type": "value"
+       "value": "affect"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "the psalmist",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "turn the feet",
-       "item_type": "event"
+       "value": "God turned the self's mourning into dancing, loosed its sackcloth and clothed it with gladness - the received reversal"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "God's word",
-       "item_type": "flag",
+       "value": "transformation",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "paired within its char-arc across the psalm",
-       "item_type": "flag",
+       "value": "mourning-to-dancing",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v59: 'When I think on my ways, I TURN my feet to your testimonies' - reflection that redirects the feet to the word.",
-       "item_type": "note"
+       "value": "v11: 'You have TURNED for me my MOURNING into DANCING; you have loosed my sackcloth and clothed me with GLADNESS' - the operation is the felt reversal: the interior is re-dressed from grief to joy."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271951",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271951",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271951",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    },
-    {
-     "span_id": 272090,
-     "reference": "Psa 119:79",
-     "hebrew_surface": "turn",
-     "esv_word": "turn",
-     "morphology": {
-      "morph_code": "HVqi3mp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "turn (shuv)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1825,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 119:79 Let those who fear you turn to me, that they may know your testimonies .",
-     "passage_id": 1825,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "turn (shuv)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "those who fear God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "turn to the psalmist",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired within its char-arc across the psalm",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v79: 'Let those who fear you TURN to me' - the God-fearers turning to join him.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:person",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272090",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272090",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272090",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H7725:return",
-   "meaning": "Return",
-   "lemma": "H7725",
-   "cluster": {
-    "code": "M45",
-    "name": "Transformation",
-    "all_candidates": "M45(Transformation)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqv2fs",
-    "esv_words": "Return",
-    "lexical_gloss": "to return: again; to return: recall; to return: repent; to return: return; to return: turn back; to return: rescue; to return: pay; to return: reply; to return: refuse",
-    "read_sense_variants": "return (shuv)"
-   },
-   "instances": [
+   "passage_ref": "Psa 53:1-6",
+   "passage_text": "To the choirmaster : according to Mahalath . A Maskil of David . Psa 53:1 The fool says in his heart , “There is no God .” They are corrupt , doing abominable iniquity ; there is none who does good . Psa 53:2 God looks down from heaven on the children of man to see if there are any who understand , who seek after God . Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one . Psa 53:4 Have those who work evil no knowledge , who eat up my people as they eat bread , and do not call upon God ? Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them . Psa 53:6 Oh , that salvation for Israel would come out of Zion ! When God restores the fortunes of his people , let Jacob rejoice , let Israel be glad .",
+   "lexicals": [
     {
-     "span_id": 271002,
-     "reference": "Psa 116:7",
-     "hebrew_surface": "Return",
-     "esv_word": "Return",
-     "morphology": {
-      "morph_code": "HVqv2fs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "return (shuv)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1812,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you .",
-     "passage_id": 1812,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "return (shuv)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "return",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "his soul to rest",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v7: 'RETURN (shuv), O my soul, to your rest' - the self-summons to peace, the soul called home to quiet after deliverance.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with the soul at rest",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271002",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271002",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271002",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H6974:awak",
-   "meaning": "awake",
-   "lemma": "H6974",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "awake",
-    "lexical_gloss": "to awake",
-    "read_sense_variants": "awake (qits) still with God"
-   },
-   "instances": [
-    {
-     "span_id": 273449,
-     "reference": "Psa 139:18",
-     "hebrew_surface": "awake",
-     "esv_word": "awake",
-     "morphology": {
-      "morph_code": "HVhp1cs HSn",
-      "stem": "Hiphil"
-     },
-     "read_characteristic": "awake (qits) still with God",
-     "position": {
-      "word_index": 4,
-      "passage_id": 1867,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 139:18 If I would count them, they are more than the sand . I awake , and I am still with you .",
-     "passage_id": 1867,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "awake (qits) still with God",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "state",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "consciousness returns from sleep and finds the God-presence unbroken",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "continuity of presence",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "waking-still-with",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v18: 'when I AWAKE, I am still with you' - the operation is the seamless continuity of the God-ward self across the break of sleep.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "273449",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "273449",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "273449",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H2487:chang",
-   "meaning": "change",
-   "lemma": "H2487",
-   "cluster": {
-    "code": "M45",
-    "name": "Transformation",
-    "all_candidates": "M45(Transformation)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": "HNcfpa",
-    "esv_words": "change",
-    "lexical_gloss": "change",
-    "read_sense_variants": "change (chaliphah - they do not change)"
-   },
-   "instances": [
-    {
-     "span_id": 280116,
-     "reference": "Psa 55:19",
-     "hebrew_surface": "change",
-     "esv_word": "change",
-     "morphology": {
-      "morph_code": "HNcfpa",
-      "stem": ""
-     },
-     "read_characteristic": "change (chaliphah - they do not change)",
-     "position": {
-      "word_index": 8,
-      "passage_id": 1662,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God .",
-     "passage_id": 1662,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "change (chaliphah - they do not change)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "status",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the enemies",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "do not change / will not repent",
-       "item_type": "event",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with their not fearing God",
-       "item_type": "pair",
-       "resolution": "span"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "'because they do not CHANGE (chaliphah) and do not fear God' — the moral fixity of the wicked; chaliphah (change/turning) here the refusal to alter course, obstinacy in evil — an unrepentance rooted in having no fear of God",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "280116",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 106,
-       "label": "operation",
-       "item_type": "event",
-       "from_span": null,
-       "to_span": "280116",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "pair",
-       "from_span": "280116",
-       "to_span": "280118",
-       "direction": null,
-       "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H5472:fallenaway",
-   "meaning": "fallen away",
-   "lemma": "H5472",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "fallen away",
-    "lexical_gloss": "to turn",
-    "read_sense_variants": "turn back / fall away (sug - they have all fallen away)"
-   },
-   "instances": [
-    {
-     "span_id": 279906,
+     "ib_char": "fallen away",
+     "char_key": "H5472:fallenaway",
      "reference": "Psa 53:3",
-     "hebrew_surface": "fallen away",
-     "esv_word": "fallen away",
-     "morphology": {
-      "morph_code": "HVqp3ms HSp3ms",
-      "stem": "Qal"
-     },
-     "read_characteristic": "turn back / fall away (sug - they have all fallen away)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1659,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 53:3 They have all fallen away ; together they have become corrupt ; there is none who does good , not even one .",
-     "passage_id": 1659,
-     "lexical": [
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "turn back / fall away (sug - they have all fallen away)",
-       "item_type": "value"
+       "value": "turn back / fall away (sug - they have all fallen away)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action",
-       "item_type": "value"
+       "value": "action"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "all mankind",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "turn back / fall away",
-       "item_type": "event"
+       "value": "turn back / fall away"
       },
       {
        "nr": 107,
        "label": "target",
        "value": "from God",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
        "value": "all together, without exception",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 112,
        "label": "coupling",
        "value": "paired with becoming corrupt together",
-       "item_type": "pair",
        "resolution": "span"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'They have all FALLEN AWAY (sug)' — the universal human defection from God; sug (to turn back/apostatize) the whole race's turning away — the answer to God's search of v2: not one seeks him, all have drawn back together",
-       "item_type": "note"
+       "value": "'They have all FALLEN AWAY (sug)' — the universal human defection from God; sug (to turn back/apostatize) the whole race's turning away — the answer to God's search of v2: not one seeks him, all have drawn back together"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
+       "value": "external:god"
       }
-     ],
-     "edges": [
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 55:9-23",
+   "passage_text": "Psa 55:8 I would hurry to find a shelter from the raging wind and tempest.” Psa 55:9 Destroy , O Lord , divide their tongues ; for I see violence and strife in the city . Psa 55:10 Day and night they go around it on its walls , and iniquity and trouble are within it; Psa 55:11 ruin is in its midst ; oppression and fraud do not depart from its marketplace . Psa 55:12 For it is not an enemy who taunts me— then I could bear it; it is not an adversary who deals insolently with me— then I could hide from him . Psa 55:13 But it is you , a man , my equal , my companion , my familiar friend . Psa 55:14 We used to take sweet counsel together ; within God’s house we walked in the throng . Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart . Psa 55:16 But I call to God , and the Lord will save me . Psa 55:17 Evening and morning and at noon I utter my complaint and moan , and he hears my voice . Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed against me . Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God . Psa 55:20 My companion stretched out his hand against his friends ; he violated his covenant . Psa 55:21 His speech was smooth as butter , yet war was in his heart ; his words were softer than oil , yet they were drawn swords . Psa 55:22 Cast your burden on the Lord , and he will sustain you; he will never permit the righteous to be moved . Psa 55:23 But you , O God , will cast them down into the pit of destruction ; men of blood and treachery shall not live out half their days . But I will trust in you .",
+   "lexicals": [
+    {
+     "ib_char": "change",
+     "char_key": "H2487:chang",
+     "reference": "Psa 55:19",
+     "dimensions": [
       {
-       "on_dimension": 105,
+       "nr": 101,
+       "label": "sense",
+       "value": "change (chaliphah - they do not change)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
        "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279906",
-       "direction": null,
+       "value": "the enemies",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 107,
+       "nr": 106,
+       "label": "operation",
+       "value": "do not change / will not repent",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 107,
        "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279906",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "none"
       },
       {
-       "on_dimension": 108,
+       "nr": 108,
        "label": "manner",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "279906",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "none"
       },
       {
-       "on_dimension": 112,
+       "nr": 112,
        "label": "coupling",
-       "item_type": "pair",
-       "from_span": "279906",
-       "to_span": "279908",
-       "direction": null,
+       "value": "paired with their not fearing God",
        "resolution": "span"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H5493:turnasid",
-   "meaning": "turn aside",
-   "lemma": "H5493",
-   "cluster": {
-    "code": "M30",
-    "name": "Obedience",
-    "all_candidates": "M30(Obedience)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqp1cs",
-    "esv_words": "turn aside",
-    "lexical_gloss": "to turn aside: remove; to turn aside: turn aside; to turn aside: depart",
-    "read_sense_variants": "turn aside (sur, negated)"
-   },
-   "instances": [
-    {
-     "span_id": 271226,
-     "reference": "Psa 119:102",
-     "hebrew_surface": "turn aside",
-     "esv_word": "turn aside",
-     "morphology": {
-      "morph_code": "HVqp1cs",
-      "stem": "Qal"
-     },
-     "read_characteristic": "turn aside (sur, negated)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1826,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 119:102 I do not turn aside from your rules , for you have taught me .",
-     "passage_id": 1826,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "turn aside (sur, negated)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "disposition",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "not turn aside from the rules",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "God's word",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired within its char-arc across the psalm",
-       "item_type": "flag",
-       "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "v102: 'I do not TURN ASIDE from your rules, for you have taught me' - not swerving from the rules God himself taught.",
-       "item_type": "note"
+       "value": "'because they do not CHANGE (chaliphah) and do not fear God' — the moral fixity of the wicked; chaliphah (change/turning) here the refusal to alter course, obstinacy in evil — an unrepentance rooted in having no fear of God"
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271226",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271226",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "271226",
-       "direction": null,
-       "resolution": "inferred"
+       "value": "internal:ib-state"
       }
      ]
     }
    ]
   },
   {
-   "char_key": "H5186:turnasid",
-   "meaning": "turn aside",
-   "lemma": "H5186",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "turn aside",
-    "lexical_gloss": "to stretch",
-    "read_sense_variants": "turn aside (natah)"
-   },
-   "instances": [
+   "passage_ref": "Psa 78:29-35",
+   "passage_text": "Psa 78:29 And they ate and were well filled , for he gave them what they craved . Psa 78:30 But before they had satisfied their craving , while the food was still in their mouths , Psa 78:31 the anger of God rose against them, and he killed the strongest of them and laid low the young men of Israel . Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe . Psa 78:33 So he made their days vanish like a breath , and their years in terror . Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly. Psa 78:35 They remembered that God was their rock , the Most High God their redeemer . Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues.",
+   "lexicals": [
     {
-     "span_id": 272552,
-     "reference": "Psa 125:5",
-     "hebrew_surface": "turn aside",
-     "esv_word": null,
-     "morphology": {
-      "morph_code": "HVhrmpa HC HTd",
-      "stem": "Hiphil"
-     },
-     "read_characteristic": "turn aside (natah)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1839,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 125:5 But those who turn aside to their crooked ways the Lord will lead away with evildoers ! Peace be upon Israel !",
-     "passage_id": 1839,
-     "lexical": [
+     "ib_char": "repent",
+     "char_key": "H7725:repent",
+     "reference": "Psa 78:34",
+     "dimensions": [
       {
        "nr": 101,
        "label": "sense",
-       "value": "turn aside (natah)",
-       "item_type": "value"
+       "value": "repent / turn (shuv)"
       },
       {
        "nr": 102,
        "label": "type",
-       "value": "action",
-       "item_type": "value"
+       "value": "action"
       },
       {
        "nr": 104,
        "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the crooked",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "turn aside",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "to crooked ways",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "internal:ib-state",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v5: 'But those who TURN ASIDE (natah) to their crooked ways' - the operation of apostasy: veering off the straight path onto crooked byways.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "paired with the evildoers led away",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272552",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272552",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "272552",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H5472:turnback",
-   "meaning": "turn back",
-   "lemma": "H5472",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "turn back",
-    "lexical_gloss": "to turn",
-    "read_sense_variants": "turn back (sug, negated)"
-   },
-   "instances": [
-    {
-     "span_id": 283738,
-     "reference": "Psa 80:18",
-     "hebrew_surface": "turn back",
-     "esv_word": "turn back",
-     "morphology": {
-      "morph_code": "HVqi1cp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "turn back (sug, negated)",
-     "position": {
-      "word_index": 1,
-      "passage_id": 1729,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 80:18 Then we shall not turn back from you; give us life , and we will call upon your name !",
-     "passage_id": 1729,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "turn back (sug, negated)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "disposition",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "we (the people)",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "not turn away",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "from God",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with calling on his name",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v18: 'Then we shall not TURN BACK (sug) from you' - the vowed fidelity, the promise not to apostatize if God will but restore.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283738",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283738",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283738",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H7725:turnback",
-   "meaning": "turn back",
-   "lemma": "H7725",
-   "cluster": {
-    "code": "M45",
-    "name": "Transformation",
-    "all_candidates": "M45(Transformation)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqj3mp",
-    "esv_words": "turn back",
-    "lexical_gloss": "to return: again; to return: recall; to return: repent; to return: return; to return: turn back; to return: rescue; to return: pay; to return: reply; to return: refuse",
-    "read_sense_variants": "turn back (shuv)"
-   },
-   "instances": [
-    {
-     "span_id": 284237,
-     "reference": "Psa 85:8",
-     "hebrew_surface": "turn back",
-     "esv_word": "turn back",
-     "morphology": {
-      "morph_code": "HVqj3mp",
-      "stem": "Qal"
-     },
-     "read_characteristic": "turn back (shuv)",
-     "position": {
-      "word_index": 13,
-      "passage_id": 1738,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly .",
-     "passage_id": 1738,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "turn back (shuv)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "disposition",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the saints",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "not turn back",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "to folly",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "paired with the folly warned against",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v8: 'but let them not TURN BACK (shuv) to folly' - the relapse guarded against, the danger that the restored might revert.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284237",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284237",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "284237",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H2015:turn",
-   "meaning": "turned",
-   "lemma": "H2015",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": "T2(Supplementary)"
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": "Qal",
-    "morph_codes": "HVqp2ms",
-    "esv_words": "turned",
-    "lexical_gloss": "to overturn",
-    "read_sense_variants": "you turned my mourning into dancing"
-   },
-   "instances": [
-    {
-     "span_id": 276583,
-     "reference": "Psa 30:11",
-     "hebrew_surface": "turned",
-     "esv_word": "turned",
-     "morphology": {
-      "morph_code": "HVqp2ms",
-      "stem": "Qal"
-     },
-     "read_characteristic": "you turned my mourning into dancing",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1621,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 30:11 You have turned for me my mourning into dancing ; you have loosed my sackcloth and clothed me with gladness ,",
-     "passage_id": 1621,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "you turned my mourning into dancing",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "affect",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 105,
-       "label": "bearer",
-       "value": "the psalmist",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 106,
-       "label": "operation",
-       "value": "God turned the self's mourning into dancing, loosed its sackcloth and clothed it with gladness - the received reversal",
-       "item_type": "event"
-      },
-      {
-       "nr": 107,
-       "label": "target",
-       "value": "transformation",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 108,
-       "label": "manner",
-       "value": "none",
-       "item_type": "flag"
-      },
-      {
-       "nr": 112,
-       "label": "coupling",
-       "value": "mourning-to-dancing",
-       "item_type": "flag",
-       "resolution": "inferred"
-      },
-      {
-       "nr": 114,
-       "label": "discovery",
-       "value": "v11: 'You have TURNED for me my MOURNING into DANCING; you have loosed my sackcloth and clothed me with GLADNESS' - the operation is the felt reversal: the interior is re-dressed from grief to joy.",
-       "item_type": "note"
-      },
-      {
-       "nr": 115,
-       "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
-      },
-      {
-       "nr": 116,
-       "label": "locus",
-       "value": "internal:ib-state",
-       "item_type": "value"
-      }
-     ],
-     "edges": [
-      {
-       "on_dimension": 105,
-       "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276583",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 107,
-       "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276583",
-       "direction": null,
-       "resolution": "inferred"
-      },
-      {
-       "on_dimension": 112,
-       "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "276583",
-       "direction": null,
-       "resolution": "inferred"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "char_key": "H5472:turnedaway",
-   "meaning": "turned away",
-   "lemma": "H5472",
-   "cluster": {
-    "code": null,
-    "name": null,
-    "all_candidates": null
-   },
-   "instance_count": 1,
-   "is_outlier": false,
-   "evidence": {
-    "stems": null,
-    "morph_codes": null,
-    "esv_words": "turned away",
-    "lexical_gloss": "to turn",
-    "read_sense_variants": "turn away / back (sug)"
-   },
-   "instances": [
-    {
-     "span_id": 283330,
-     "reference": "Psa 78:57",
-     "hebrew_surface": "turned away",
-     "esv_word": "turned away",
-     "morphology": {
-      "morph_code": "HVNw3mp",
-      "stem": "Niphal"
-     },
-     "read_characteristic": "turn away / back (sug)",
-     "position": {
-      "word_index": 0,
-      "passage_id": 1720,
-      "is_passage_anchor": false,
-      "genre": "poetic/wisdom"
-     },
-     "verse_text": "Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow .",
-     "passage_id": 1720,
-     "lexical": [
-      {
-       "nr": 101,
-       "label": "sense",
-       "value": "turn away / back (sug)",
-       "item_type": "value"
-      },
-      {
-       "nr": 102,
-       "label": "type",
-       "value": "action",
-       "item_type": "value"
-      },
-      {
-       "nr": 104,
-       "label": "seat",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 105,
        "label": "bearer",
        "value": "they",
-       "item_type": "flag",
        "resolution": "inferred"
       },
       {
        "nr": 106,
        "label": "operation",
-       "value": "turn away",
-       "item_type": "event"
+       "value": "turn back"
       },
       {
        "nr": 107,
        "label": "target",
-       "value": "from God",
-       "item_type": "flag",
+       "value": "to God",
        "resolution": "inferred"
       },
       {
        "nr": 108,
        "label": "manner",
-       "value": "none",
-       "item_type": "flag"
+       "value": "none"
       },
       {
        "nr": 112,
        "label": "coupling",
-       "value": "paired with acting treacherously",
-       "item_type": "flag",
+       "value": "paired with the seeking",
        "resolution": "inferred"
       },
       {
        "nr": 114,
        "label": "discovery",
-       "value": "'but TURNED AWAY (sug) and acted treacherously like their fathers' - the apostasy inherited from the fathers.",
-       "item_type": "note"
+       "value": "'they REPENTED (shuv) and sought God earnestly' - the turning-back, though (v37) it proved shallow."
       },
       {
        "nr": 115,
        "label": "role",
-       "value": "characteristic",
-       "item_type": "value"
+       "value": "characteristic"
       },
       {
        "nr": 116,
        "label": "locus",
-       "value": "external:god",
-       "item_type": "value"
+       "value": "external:god"
       }
-     ],
-     "edges": [
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 78:48-59",
+   "passage_text": "Psa 78:48 He gave over their cattle to the hail and their flocks to thunderbolts . Psa 78:49 He let loose on them his burning anger , wrath , indignation , and distress , a company of destroying angels . Psa 78:50 He made a path for his anger ; he did not spare them from death , but gave their lives over to the plague . Psa 78:51 He struck down every firstborn in Egypt , the firstfruits of their strength in the tents of Ham . Psa 78:52 Then he led out his people like sheep and guided them in the wilderness like a flock . Psa 78:53 He led them in safety , so that they were not afraid , but the sea overwhelmed their enemies . Psa 78:54 And he brought them to his holy land , to the mountain which his right hand had won . Psa 78:55 He drove out nations before them; he apportioned them for a possession and settled the tribes of Israel in their tents . Psa 78:56 Yet they tested and rebelled against the Most High God and did not keep his testimonies , Psa 78:57 but turned away and acted treacherously like their fathers ; they twisted like a deceitful bow . Psa 78:58 For they provoked him to anger with their high places ; they moved him to jealousy with their idols . Psa 78:59 When God heard , he was full of wrath, and he utterly rejected Israel .",
+   "lexicals": [
+    {
+     "ib_char": "turned away",
+     "char_key": "H5472:turnedaway",
+     "reference": "Psa 78:57",
+     "dimensions": [
       {
-       "on_dimension": 105,
+       "nr": 101,
+       "label": "sense",
+       "value": "turn away / back (sug)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
        "label": "bearer",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283330",
-       "direction": null,
+       "value": "they",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 107,
+       "nr": 106,
+       "label": "operation",
+       "value": "turn away"
+      },
+      {
+       "nr": 107,
        "label": "target",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283330",
-       "direction": null,
+       "value": "from God",
        "resolution": "inferred"
       },
       {
-       "on_dimension": 112,
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
        "label": "coupling",
-       "item_type": "flag",
-       "from_span": null,
-       "to_span": "283330",
-       "direction": null,
+       "value": "paired with acting treacherously",
        "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'but TURNED AWAY (sug) and acted treacherously like their fathers' - the apostasy inherited from the fathers."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 80:17-19",
+   "passage_text": "Psa 80:17 But let your hand be on the man of your right hand , the son of man whom you have made strong for yourself ! Psa 80:18 Then we shall not turn back from you; give us life , and we will call upon your name ! Psa 80:19 Restore us, O Lord God of hosts ! Let your face shine , that we may be saved !",
+   "lexicals": [
+    {
+     "ib_char": "turn back",
+     "char_key": "H5472:turnback",
+     "reference": "Psa 80:18",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn back (sug, negated)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "we (the people)",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "not turn away"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "from God",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with calling on his name",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v18: 'Then we shall not TURN BACK (sug) from you' - the vowed fidelity, the promise not to apostatize if God will but restore."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 85:1-13",
+   "passage_text": "To the choirmaster . A Psalm of the Sons of Korah . Psa 85:1 Lord , you were favorable to your land ; you restored the fortunes of Jacob . Psa 85:2 You forgave the iniquity of your people ; you covered all their sin . Selah Psa 85:3 You withdrew all your wrath ; you turned from your hot anger . Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us ! Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ? Psa 85:6 Will you not revive us again , that your people may rejoice in you ? Psa 85:7 Show us your steadfast love , O Lord , and grant us your salvation . Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly . Psa 85:9 Surely his salvation is near to those who fear him, that glory may dwell in our land . Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. Psa 85:11 Faithfulness springs up from the ground , and righteousness looks down from the sky . Psa 85:12 Yes , the Lord will give what is good , and our land will yield its increase . Psa 85:13 Righteousness will go before him and make his footsteps a way .",
+   "lexicals": [
+    {
+     "ib_char": "turn back",
+     "char_key": "H7725:turnback",
+     "reference": "Psa 85:8",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn back (shuv)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "not turn back"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to folly",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the folly warned against",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'but let them not TURN BACK (shuv) to folly' - the relapse guarded against, the danger that the restored might revert."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 116:1-10",
+   "passage_text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”",
+   "lexicals": [
+    {
+     "ib_char": "Return",
+     "char_key": "H7725:return",
+     "reference": "Psa 116:7",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "return (shuv)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "return"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "his soul to rest",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'RETURN (shuv), O my soul, to your rest' - the self-summons to peace, the soul called home to quiet after deliverance."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the soul at rest"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:42-63",
+   "passage_text": "Psa 119:42 then shall I have an answer for him who taunts me, for I trust in your word . Psa 119:43 And take not the word of truth utterly out of my mouth , for my hope is in your rules . Psa 119:44 I will keep your law continually , forever and ever , Psa 119:45 and I shall walk in a wide place , for I have sought your precepts . Psa 119:46 I will also speak of your testimonies before kings and shall not be put to shame , Psa 119:47 for I find my delight in your commandments , which I love . Psa 119:48 I will lift up my hands toward your commandments , which I love , and I will meditate on your statutes . Zayin Psa 119:49 Remember your word to your servant , in which you have made me hope . Psa 119:50 This is my comfort in my affliction , that your promise gives me life . Psa 119:51 The insolent utterly deride me, but I do not turn away from your law . Psa 119:52 When I think of your rules from of old , I take comfort , O Lord . Psa 119:53 Hot indignation seizes me because of the wicked , who forsake your law . Psa 119:54 Your statutes have been my songs in the house of my sojourning . Psa 119:55 I remember your name in the night , O Lord , and keep your law . Psa 119:56 This blessing has fallen to me, that I have kept your precepts . Heth Psa 119:57 The Lord is my portion ; I promise to keep your words . Psa 119:58 I entreat your favor with all my heart ; be gracious to me according to your promise . Psa 119:59 When I think on my ways , I turn my feet to your testimonies ; Psa 119:60 I hasten and do not delay to keep your commandments . Psa 119:61 Though the cords of the wicked ensnare me, I do not forget your law . Psa 119:62 At midnight I rise to praise you, because of your righteous rules . Psa 119:63 I am a companion of all who fear you, of those who keep your precepts . Psa 119:64 The earth, O Lord, is full of your steadfast love; teach me your statutes!",
+   "lexicals": [
+    {
+     "ib_char": "turn",
+     "char_key": "H7725:turn",
+     "reference": "Psa 119:59",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn (shuv)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "turn the feet"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v59: 'When I think on my ways, I TURN my feet to your testimonies' - reflection that redirects the feet to the word."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:66-82",
+   "passage_text": "Psa 119:65 TethYou have dealt well with your servant, O Lord, according to your word. Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments . Psa 119:67 Before I was afflicted I went astray , but now I keep your word . Psa 119:68 You are good and do good ; teach me your statutes . Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ; Psa 119:70 their heart is unfeeling like fat , but I delight in your law . Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes . Psa 119:72 The law of your mouth is better to me than thousands of gold and silver pieces. Yodh Psa 119:73 Your hands have made and fashioned me; give me understanding that I may learn your commandments . Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word . Psa 119:75 I know , O Lord , that your rules are righteous , and that in faithfulness you have afflicted me . Psa 119:76 Let your steadfast love comfort me according to your promise to your servant . Psa 119:77 Let your mercy come to me, that I may live ; for your law is my delight . Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts . Psa 119:79 Let those who fear you turn to me, that they may know your testimonies . Psa 119:80 May my heart be blameless in your statutes , that I may not be put to shame ! Kaph Psa 119:81 My soul longs for your salvation ; I hope in your word . Psa 119:82 My eyes long for your promise ; I ask , “ When will you comfort me ?” Psa 119:83 For I have become like a wineskin in the smoke, yet I have not forgotten your statutes.",
+   "lexicals": [
+    {
+     "ib_char": "turn",
+     "char_key": "H7725:turn",
+     "reference": "Psa 119:79",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn (shuv)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "those who fear God",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "turn to the psalmist"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v79: 'Let those who fear you TURN to me' - the God-fearers turning to join him."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:84-102",
+   "passage_text": "Psa 119:84 How long must your servant endure? When will you judge those who persecute me ? Psa 119:85 The insolent have dug pitfalls for me; they do not live according to your law . Psa 119:86 All your commandments are sure ; they persecute me with falsehood ; help me ! Psa 119:87 They have almost made an end of me on earth , but I have not forsaken your precepts . Psa 119:88 In your steadfast love give me life , that I may keep the testimonies of your mouth . Lamedh Psa 119:89 Forever , O Lord , your word is firmly fixed in the heavens . Psa 119:90 Your faithfulness endures to all generations ; you have established the earth , and it stands fast . Psa 119:91 By your appointment they stand this day , for all things are your servants . Psa 119:92 If your law had not been my delight , I would have perished in my affliction . Psa 119:93 I will never forget your precepts , for by them you have given me life . Psa 119:94 I am yours; save me, for I have sought your precepts . Psa 119:95 The wicked lie in wait to destroy me, but I consider your testimonies . Psa 119:96 I have seen a limit to all perfection , but your commandment is exceedingly broad . Mem Psa 119:97 Oh how I love your law ! It is my meditation all the day . Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me . Psa 119:99 I have more understanding than all my teachers , for your testimonies are my meditation . Psa 119:100 I understand more than the aged , for I keep your precepts . Psa 119:101 I hold back my feet from every evil way , in order to keep your word . Psa 119:102 I do not turn aside from your rules , for you have taught me .",
+   "lexicals": [
+    {
+     "ib_char": "turn aside",
+     "char_key": "H5493:turnasid",
+     "reference": "Psa 119:102",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn aside (sur, negated)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "not turn aside from the rules"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v102: 'I do not TURN ASIDE from your rules, for you have taught me' - not swerving from the rules God himself taught."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 125:3-5",
+   "passage_text": "A Song of Ascents . Psa 125:1 Those who trust in the Lord are like Mount Zion , which cannot be moved , but abides forever . Psa 125:3 For the scepter of wickedness shall not rest on the land allotted to the righteous , lest the righteous stretch out their hands to do wrong . Psa 125:4 Do good , O Lord , to those who are good , and to those who are upright in their hearts ! Psa 125:5 But those who turn aside to their crooked ways the Lord will lead away with evildoers ! Peace be upon Israel !",
+   "lexicals": [
+    {
+     "ib_char": "turn aside",
+     "char_key": "H5186:turnasid",
+     "reference": "Psa 125:5",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "turn aside (natah)"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the crooked",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "turn aside"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to crooked ways",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'But those who TURN ASIDE (natah) to their crooked ways' - the operation of apostasy: veering off the straight path onto crooked byways."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the evildoers led away"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 139:12-19",
+   "passage_text": "Psa 139:12 even the darkness is not dark to you; the night is bright as the day , for darkness is as light with you. Psa 139:13 For you formed my inward parts ; you knitted me together in my mother’s womb . Psa 139:14 I praise you, for I am fearfully and wonderfully made . Wonderful are your works ; my soul knows it very well . Psa 139:15 My frame was not hidden from you, when I was being made in secret , intricately woven in the depths of the earth . Psa 139:16 Your eyes saw my unformed substance; in your book were written , every one of them, the days that were formed for me, when as yet there was none of them . Psa 139:17 How precious to me are your thoughts , O God ! How vast is the sum of them! Psa 139:18 If I would count them, they are more than the sand . I awake , and I am still with you . Psa 139:19 Oh that you would slay the wicked , O God ! O men of blood , depart from me ! Psa 139:20 They speak against you with malicious intent; your enemies take your name in vain.",
+   "lexicals": [
+    {
+     "ib_char": "awake",
+     "char_key": "H6974:awak",
+     "reference": "Psa 139:18",
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "awake (qits) still with God"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "consciousness returns from sleep and finds the God-presence unbroken"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "continuity of presence",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none"
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "waking-still-with",
+       "resolution": "inferred"
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v18: 'when I AWAKE, I am still with you' - the operation is the seamless continuity of the God-ward self across the break of sleep."
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state"
       }
      ]
     }
