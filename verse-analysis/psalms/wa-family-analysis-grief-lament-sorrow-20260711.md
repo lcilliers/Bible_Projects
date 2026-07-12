@@ -1,6 +1,6 @@
 # Family analysis — `grief-lament-sorrow` (Psalms, in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__grief-lament-sorrow.json` only. Method: `_family-analysis-method-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Counts declared in `meta`: 22 meanings · 31 instances · 29 passages. All 31 instances read; tallies below reconcile to 31.
+> Source: `verse-analysis/psalms/_base-sources/psalms__grief-lament-sorrow.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Counts declared in `meta`: 22 meanings · 31 instances · 29 passages. All 31 instances read; tallies below reconcile to 31.
 
 ---
 

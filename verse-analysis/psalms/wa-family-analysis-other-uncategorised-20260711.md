@@ -1,6 +1,6 @@
 # Psalms family analysis — `other-uncategorised` (residual bucket)
 
-> Analysed in isolation from the single base source `outputs/data/psalms-family-base-sources/psalms__other-uncategorised.json` (method: `_family-analysis-method-20260711.md`). **This is the residual "other-uncategorised" bucket**, not a coherent family: it holds the 55 Psalms inner-being meanings that matched no family rule. Per the assignment I do **not** force one movement; I group the instances into the micro-clusters the data actually shows and report what kinds of IB material ended up unclassified. Every claim cites `reference · span · Dnnn(label)` into this file. Scope: 55 meanings / 55 instances / 42 passages; genre = `poetic/wisdom` for **all 55** (`position.genre`).
+> Analysed in isolation from the single base source `verse-analysis/psalms/_base-sources/psalms__other-uncategorised.json` (method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`). **This is the residual "other-uncategorised" bucket**, not a coherent family: it holds the 55 Psalms inner-being meanings that matched no family rule. Per the assignment I do **not** force one movement; I group the instances into the micro-clusters the data actually shows and report what kinds of IB material ended up unclassified. Every claim cites `reference · span · Dnnn(label)` into this file. Scope: 55 meanings / 55 instances / 42 passages; genre = `poetic/wisdom` for **all 55** (`position.genre`).
 
 ---
 

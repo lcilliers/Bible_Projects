@@ -1,6 +1,6 @@
 # Psalms inner-being family analysis — `shame-confusion`
 
-> Source (sole): `outputs/data/psalms-family-base-sources/psalms__shame-confusion.json`. Described **in isolation** per `_family-analysis-method-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Provenance: `ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2`. Scope counts (meta): **13 meanings · 28 instances · 21 passages**; all instances `genre = poetic/wisdom`.
+> Source (sole): `verse-analysis/psalms/_base-sources/psalms__shame-confusion.json`. Described **in isolation** per `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Provenance: `ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2`. Scope counts (meta): **13 meanings · 28 instances · 21 passages**; all instances `genre = poetic/wisdom`.
 
 ---
 

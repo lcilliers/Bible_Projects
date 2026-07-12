@@ -1,6 +1,6 @@
 # Family analysis (in isolation): Psalms — `wisdom-folly-teaching`
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__wisdom-folly-teaching.json` only. Book: Psalms (book_id 19). Declared counts: **27 meanings · 41 instances · 34 passages**. All 41 instances verified present and read. Every finding cites `reference · span · Dnnn(label)` into that file. Genre for all 41 = `poetic/wisdom`. Role (D115) = `characteristic` on all 41; none is qualifier or standalone.
+> Source: `verse-analysis/psalms/_base-sources/psalms__wisdom-folly-teaching.json` only. Book: Psalms (book_id 19). Declared counts: **27 meanings · 41 instances · 34 passages**. All 41 instances verified present and read. Every finding cites `reference · span · Dnnn(label)` into that file. Genre for all 41 = `poetic/wisdom`. Role (D115) = `characteristic` on all 41; none is qualifier or standalone.
 
 ---
 

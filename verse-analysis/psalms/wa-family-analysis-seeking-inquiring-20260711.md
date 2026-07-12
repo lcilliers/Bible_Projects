@@ -1,6 +1,6 @@
 # Family analysis — Psalms `seeking-inquiring` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__seeking-inquiring.json` only. Scope: 9 meanings · 37 instances · 28 passages. Every claim cites `reference · span · Dnnn(label)` into that file. Discovery notes cited as D114.
+> Source: `verse-analysis/psalms/_base-sources/psalms__seeking-inquiring.json` only. Scope: 9 meanings · 37 instances · 28 passages. Every claim cites `reference · span · Dnnn(label)` into that file. Discovery notes cited as D114.
 
 Lexical spread (from `evidence.stems` / `read_sense_variants`): **baqash** H1245 (15: 14 `seek` + 1 `sought`), **darash** H1875 (18: 13 `seek` + 4 `sought` + 1 `studied`), **shachar** H7836 (2), **chalah** H2470 (1), **yaats** H3289 (1). Term-clusters: **M41 Remembrance** ×35, **M15 Wisdom** ×1 (Psa 83:3), **M03 Grief** ×1 (Psa 45:12). No `is_outlier=true` records; no null/T2 clusters.
 

@@ -1,6 +1,6 @@
 # Family analysis — `torah-obedience-word` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__torah-obedience-word.json` only. Scope strictly that one file. 4 meanings / 4 instances / 4 passages, one master span each. Every claim cited `reference · span_id · Dnnn(label)`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__torah-obedience-word.json` only. Scope strictly that one file. 4 meanings / 4 instances / 4 passages, one master span each. Every claim cited `reference · span_id · Dnnn(label)`.
 
 The four instances:
 

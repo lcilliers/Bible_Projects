@@ -1,6 +1,6 @@
 # Family analysis — Psalms `righteousness-integrity` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__righteousness-integrity.json` (only). Scope: this one file. Counts (meta): **25 meanings · 69 instances · 42 passages**. All findings cited `reference · span_id · Dnnn(label)`. Discovery notes cited as D114. No external data used.
+> Source: `verse-analysis/psalms/_base-sources/psalms__righteousness-integrity.json` (only). Scope: this one file. Counts (meta): **25 meanings · 69 instances · 42 passages**. All findings cited `reference · span_id · Dnnn(label)`. Discovery notes cited as D114. No external data used.
 
 ---
 

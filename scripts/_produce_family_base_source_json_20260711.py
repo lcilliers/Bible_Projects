@@ -7,8 +7,8 @@ meaning-record, every instance (master span), with its full lexical ledger
 block documents the book+family scope, provenance, counts, the dimension legend,
 and the structure of the JSON itself.
 
-Outputs -> outputs/data/psalms-family-base-sources/psalms__<family>.json
-        -> outputs/data/psalms-family-base-sources/psalms__OUTLIERS.json
+Outputs -> verse-analysis/psalms/_base-sources/psalms__<family>.json
+        -> verse-analysis/psalms/_base-sources/psalms__OUTLIERS.json
 
 Read-only. Usage: python scripts/_produce_family_base_source_json_20260711.py
 """
@@ -16,7 +16,7 @@ import sqlite3, os, json, re
 from collections import defaultdict, OrderedDict
 
 GEN = "2026-07-11"
-OUT = "outputs/data/psalms-family-base-sources"
+OUT = "verse-analysis/psalms/_base-sources"
 os.makedirs(OUT, exist_ok=True)
 c = sqlite3.connect(os.path.join('database','bible_research.db')); c.row_factory = sqlite3.Row
 

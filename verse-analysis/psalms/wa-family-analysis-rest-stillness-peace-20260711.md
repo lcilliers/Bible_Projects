@@ -1,6 +1,6 @@
 # Family analysis — `rest-stillness-peace` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__rest-stillness-peace.json` only. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`. Scope strictly this one file. Citations = `reference · span · Dnnn(label)`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__rest-stillness-peace.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Scope strictly this one file. Citations = `reference · span · Dnnn(label)`.
 > Counts (meta): **9 meanings · 10 instances · 8 passages.** All genre `poetic/wisdom`; all `role`(D115)=`characteristic`.
 
 Instance roster (span · ref · lemma:meaning · D102 type · cluster):

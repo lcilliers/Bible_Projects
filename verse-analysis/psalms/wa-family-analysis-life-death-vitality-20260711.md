@@ -1,6 +1,6 @@
 # Family analysis — Psalms · life-death-vitality (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__life-death-vitality.json` ONLY. Method: `_family-analysis-method-20260711.md`. Every finding cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside the file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__life-death-vitality.json` ONLY. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Every finding cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside the file.
 >
 > Scope: `meta.scope.family = "life-death-vitality"`; 2 meanings, 10 instances, 9 passages.
 

@@ -1,6 +1,6 @@
 # Family analysis — Psalms · `pride-arrogance-scoffing`
 
-> Source (in isolation): `outputs/data/psalms-family-base-sources/psalms__pride-arrogance-scoffing.json`. Method: `_family-analysis-method-20260711.md`. Scope: 26 meanings · 42 instances · 27 passages, all genre `poetic/wisdom`. Every claim cites `reference · span · Dnnn(label)`. Nothing outside this file has been read.
+> Source (in isolation): `verse-analysis/psalms/_base-sources/psalms__pride-arrogance-scoffing.json`. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Scope: 26 meanings · 42 instances · 27 passages, all genre `poetic/wisdom`. Every claim cites `reference · span · Dnnn(label)`. Nothing outside this file has been read.
 
 ---
 

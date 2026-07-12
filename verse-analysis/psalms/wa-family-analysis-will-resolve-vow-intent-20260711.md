@@ -1,6 +1,6 @@
 # Family analysis — `will-resolve-vow-intent` (Psalms, in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__will-resolve-vow-intent.json` only. 28 meanings · 35 instances · 32 passages. Every instance is a `poetic/wisdom` genre span. Citations = `reference · span_id · Dnnn(label)`. Where the source cannot bear a reading it is flagged, not filled.
+> Source: `verse-analysis/psalms/_base-sources/psalms__will-resolve-vow-intent.json` only. 28 meanings · 35 instances · 32 passages. Every instance is a `poetic/wisdom` genre span. Citations = `reference · span_id · Dnnn(label)`. Where the source cannot bear a reading it is flagged, not filled.
 
 ---
 

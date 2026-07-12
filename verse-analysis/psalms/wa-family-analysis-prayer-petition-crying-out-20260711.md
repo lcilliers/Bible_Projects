@@ -1,6 +1,6 @@
 # Family analysis — `prayer-petition-crying-out` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__prayer-petition-crying-out.json` only. Scope strictly that one file. Counts (meta): **33 meanings · 103 instances · 70 passages**. Provenance: ib_characteristic v3 + family grouping v1 + term-based cluster v2. Every claim cited `reference · span · Dnnn(label)`. Dimension legend from `meta`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__prayer-petition-crying-out.json` only. Scope strictly that one file. Counts (meta): **33 meanings · 103 instances · 70 passages**. Provenance: ib_characteristic v3 + family grouping v1 + term-based cluster v2. Every claim cited `reference · span · Dnnn(label)`. Dimension legend from `meta`.
 
 ---
 

@@ -1,6 +1,6 @@
 # Family analysis — `praise-extol-sing` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__praise-extol-sing.json` only. Scope: 42 meanings · 172 instances · 94 passages (`meta.counts`). Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__praise-extol-sing.json` only. Scope: 42 meanings · 172 instances · 94 passages (`meta.counts`). Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
 
 ---
 

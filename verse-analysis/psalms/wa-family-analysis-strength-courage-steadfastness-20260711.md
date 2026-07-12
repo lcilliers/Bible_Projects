@@ -1,6 +1,6 @@
 # Family analysis — `strength-courage-steadfastness` (Psalms), in isolation
 
-> Scope: `outputs/data/psalms-family-base-sources/psalms__strength-courage-steadfastness.json` only. 7 meanings · 8 instances · 7 passages. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
+> Scope: `verse-analysis/psalms/_base-sources/psalms__strength-courage-steadfastness.json` only. 7 meanings · 8 instances · 7 passages. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
 
 Instance roster (span → ref → sense):
 - 270102 · Psa 108:13 · valiantly (chayil) — H2428, M23

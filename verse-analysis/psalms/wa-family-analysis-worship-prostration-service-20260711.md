@@ -1,6 +1,6 @@
 # Family analysis — `worship-prostration-service` (Psalms)
 
-> Single-source analysis, in isolation. Source: `outputs/data/psalms-family-base-sources/psalms__worship-prostration-service.json`. Scope: 13 meanings · 25 instances · 20 passages · all genre `poetic/wisdom`. Every claim is cited `reference · span_id · Dnnn(label)`. Nothing outside the file is used.
+> Single-source analysis, in isolation. Source: `verse-analysis/psalms/_base-sources/psalms__worship-prostration-service.json`. Scope: 13 meanings · 25 instances · 20 passages · all genre `poetic/wisdom`. Every claim is cited `reference · span_id · Dnnn(label)`. Nothing outside the file is used.
 
 ## Roster (meaning → lemma → cluster → instances)
 

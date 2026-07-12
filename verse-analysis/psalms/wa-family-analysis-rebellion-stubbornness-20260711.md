@@ -1,6 +1,6 @@
 # Family analysis — Psalms · `rebellion-stubbornness` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__rebellion-stubbornness.json` only. 20 meanings · 31 instances · 27 passages · all genre `poetic/wisdom`. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__rebellion-stubbornness.json` only. 20 meanings · 31 instances · 27 passages · all genre `poetic/wisdom`. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
 
 ## Roster (meaning → instances, lemma, cluster)
 

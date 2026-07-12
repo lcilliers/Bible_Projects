@@ -1,6 +1,6 @@
 # Family analysis (in isolation) — Psalms family `lifting-bearing`
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__lifting-bearing.json` only. Scope strictly this one file. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__lifting-bearing.json` only. Scope strictly this one file. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`.
 > Counts (meta): **7 meanings · 21 instances · 17 passages.** All genre `poetic/wisdom`. Every claim cited `reference · span_id · Dnnn(label)`.
 
 The 21 masters:

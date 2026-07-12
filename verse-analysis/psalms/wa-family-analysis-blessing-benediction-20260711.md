@@ -1,6 +1,6 @@
 # Family analysis — `blessing-benediction` (Psalms, in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__blessing-benediction.json` only. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that one file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__blessing-benediction.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)` into that one file. Nothing imported from outside it.
 >
 > **Scope of the file:** 5 meanings · 65 instances · 49 passages · provenance `ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2`. All 65 instances are `genre = poetic/wisdom`; 15 are passage anchors.
 

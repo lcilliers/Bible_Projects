@@ -1,6 +1,6 @@
 # Family analysis — `trust-refuge-security` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__trust-refuge-security.json` only. 18 meanings · 77 instances · 57 passages. Every claim is cited `reference · span · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__trust-refuge-security.json` only. 18 meanings · 77 instances · 57 passages. Every claim is cited `reference · span · Dnnn(label)` into that file. Nothing imported from outside it.
 
 ---
 

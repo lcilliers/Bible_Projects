@@ -1,6 +1,6 @@
 # Family analysis — `deceit-falsehood` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__deceit-falsehood.json` only. 29 meanings · 45 instances · 31 passages. Genre = poetic/wisdom throughout. All citations are `reference · span_id · Dnnn(label)` into that file. D114 discovery notes cited as source.
+> Source: `verse-analysis/psalms/_base-sources/psalms__deceit-falsehood.json` only. 29 meanings · 45 instances · 31 passages. Genre = poetic/wisdom throughout. All citations are `reference · span_id · Dnnn(label)` into that file. D114 discovery notes cited as source.
 
 ---
 

@@ -1,6 +1,6 @@
 # Family analysis — `sin-guilt-iniquity` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__sin-guilt-iniquity.json` only. 21 meanings · 55 instances · 32 passages. Every claim cites `reference · span_id · Dnnn(label)` into that file. British spelling. Nothing imported from outside the file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__sin-guilt-iniquity.json` only. 21 meanings · 55 instances · 32 passages. Every claim cites `reference · span_id · Dnnn(label)` into that file. British spelling. Nothing imported from outside the file.
 
 ---
 

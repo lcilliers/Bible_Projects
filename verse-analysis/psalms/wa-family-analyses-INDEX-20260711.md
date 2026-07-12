@@ -1,6 +1,6 @@
 # Psalms base-source analyses — index
 
-> 47 analyses, one per base source (46 families + OUTLIERS cross-cut). Each was produced **in isolation** (subagent reading only its one base source + the shared method [_family-analysis-method-20260711.md](_family-analysis-method-20260711.md)). Source-only, every finding cited to reference·span_id·dimension. Filed 2026-07-11.
+> 47 analyses, one per base source (46 families + OUTLIERS cross-cut). Each was produced **in isolation** (subagent reading only its one base source + the shared method [Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md](Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md)). Source-only, every finding cited to reference·span_id·dimension. Filed 2026-07-11.
 
 | analysis | family |
 |---|---|

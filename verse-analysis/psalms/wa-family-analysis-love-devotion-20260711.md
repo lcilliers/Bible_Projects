@@ -1,6 +1,6 @@
 # Family analysis — `love-devotion` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__love-devotion.json` only. Scope `meta.scope.family = "love-devotion"`; 8 meanings, 35 instances, 28 passages; genre = poetic/wisdom throughout. Every claim cites `reference · span_id · Dnnn(label)`. Nothing here is drawn from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__love-devotion.json` only. Scope `meta.scope.family = "love-devotion"`; 8 meanings, 35 instances, 28 passages; genre = poetic/wisdom throughout. Every claim cites `reference · span_id · Dnnn(label)`. Nothing here is drawn from outside this file.
 
 ## Roster (meaning → lemma → cluster → instances)
 

@@ -1,6 +1,6 @@
 # Family analysis — `humility-lowliness-contrition` (Psalms, in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__humility-lowliness-contrition.json` only. 21 meanings · 39 instances · 27 passages. All genre `poetic/wisdom`. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__humility-lowliness-contrition.json` only. 21 meanings · 39 instances · 27 passages. All genre `poetic/wisdom`. Every claim cited `reference · span_id · Dnnn(label)`. Nothing imported from outside this file.
 
 ---
 

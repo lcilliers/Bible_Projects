@@ -1,6 +1,6 @@
 # Family analysis — Psalms · grace-mercy-compassion (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__grace-mercy-compassion.json` only. Scope `meta.scope.family = grace-mercy-compassion`; counts declared: 11 meanings · 16 instances · 13 passages. Every claim cited `reference · span N · Dnnn(label)`. Nothing imported from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__grace-mercy-compassion.json` only. Scope `meta.scope.family = grace-mercy-compassion`; counts declared: 11 meanings · 16 instances · 13 passages. Every claim cited `reference · span N · Dnnn(label)`. Nothing imported from outside this file.
 
 ---
 

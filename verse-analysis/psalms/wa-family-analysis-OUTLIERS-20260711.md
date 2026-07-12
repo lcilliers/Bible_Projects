@@ -1,6 +1,6 @@
 # Family analysis — OUTLIERS (genuine crossovers) · Psalms · 2026-07-11
 
-> Source (read in isolation): `outputs/data/psalms-family-base-sources/psalms__OUTLIERS.json`.
+> Source (read in isolation): `verse-analysis/psalms/_base-sources/psalms__OUTLIERS.json`.
 > Scope `outliers-genuine-crossovers`. Counts (meta): **112 meanings · 158 instances · 111 passages**.
 > This is **not a family** — it is a **cross-cut**: the collected set of meanings whose term-based CLUSTER names a concept *unrelated (non-adjacent)* to their meaning-based FAMILY. It is a view of the **seams** of the classification, where the meaning-lens and the term-lens disagree. Every record carries `is_outlier=true` and an `outlier_note` naming the family, the family's *expected* cluster, and the *actual* term-cluster (verified: all 112 present). No single inner-being movement is claimed or forced.
 

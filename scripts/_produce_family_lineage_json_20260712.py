@@ -26,7 +26,7 @@ from collections import OrderedDict
 FAM = 'anger-wrath-vexation'; BOOK = '19'
 if '--family' in sys.argv: FAM = sys.argv[sys.argv.index('--family')+1]
 if '--book'   in sys.argv: BOOK = sys.argv[sys.argv.index('--book')+1]
-OUT = 'outputs/data/psalms-family-lineage'; os.makedirs(OUT, exist_ok=True)
+OUT = 'verse-analysis/psalms/_lineage'; os.makedirs(OUT, exist_ok=True)
 
 c = sqlite3.connect(os.path.join('database','bible_research.db')); c.row_factory = sqlite3.Row
 

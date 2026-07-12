@@ -1,6 +1,6 @@
 # Family analysis (in isolation) — `fear-of-god-awe` (Psalms)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__fear-of-god-awe.json` (only). Scope: **24 meanings · 79 instances · 61 passages**, all genre `poetic/wisdom`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__fear-of-god-awe.json` (only). Scope: **24 meanings · 79 instances · 61 passages**, all genre `poetic/wisdom`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
 
 ---
 

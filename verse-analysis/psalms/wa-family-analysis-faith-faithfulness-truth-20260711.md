@@ -1,6 +1,6 @@
 # Family analysis — `faith-faithfulness-truth` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__faith-faithfulness-truth.json` only. 10 meanings · 25 instances · 24 passages. Every claim cited `reference · span · Dnnn(label)`. British spelling. Nothing imported from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__faith-faithfulness-truth.json` only. 10 meanings · 25 instances · 24 passages. Every claim cited `reference · span · Dnnn(label)`. British spelling. Nothing imported from outside this file.
 
 ---
 

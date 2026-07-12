@@ -1,6 +1,6 @@
 # Family analysis — `faint-despair-languishing` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__faint-despair-languishing.json` (only). Provenance: ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2. Counts in `meta`: **33 meanings · 55 instances · 39 passages**. All 33 meanings and 55 instances are accounted for below. Every finding cites `reference · span · Dnnn(label)`. Genre of every instance = `poetic/wisdom`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__faint-despair-languishing.json` (only). Provenance: ib_characteristic v3 (meaning-keyed) + family grouping v1 + term-based cluster v2. Counts in `meta`: **33 meanings · 55 instances · 39 passages**. All 33 meanings and 55 instances are accounted for below. Every finding cites `reference · span · Dnnn(label)`. Genre of every instance = `poetic/wisdom`.
 
 ---
 

@@ -1,6 +1,6 @@
 # Family analysis — `anger-wrath-vexation` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__anger-wrath-vexation.json` only. 14 meanings · 15 instances · 14 passages. Every claim cited `reference · span_id · Dnnn(label)`. British spelling. Nothing imported from outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__anger-wrath-vexation.json` only. 14 meanings · 15 instances · 14 passages. Every claim cited `reference · span_id · Dnnn(label)`. British spelling. Nothing imported from outside this file.
 
 Instance roster (span · ref · sense · cluster):
 - 272488 · Psa 124:3 · anger (aph) · null/T2

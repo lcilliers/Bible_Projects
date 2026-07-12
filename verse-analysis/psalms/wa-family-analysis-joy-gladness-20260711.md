@@ -1,6 +1,6 @@
 # Family analysis — Psalms `joy-gladness` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__joy-gladness.json` only. Scope = that one file. 27 meanings · 95 instances · 62 passages · 16 distinct lemmas. Every claim cited `reference · span_id · Dnnn(label)`. Method: `_family-analysis-method-20260711.md`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__joy-gladness.json` only. Scope = that one file. 27 meanings · 95 instances · 62 passages · 16 distinct lemmas. Every claim cited `reference · span_id · Dnnn(label)`. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`.
 
 ---
 

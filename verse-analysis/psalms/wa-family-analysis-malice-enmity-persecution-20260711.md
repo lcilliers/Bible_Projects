@@ -1,6 +1,6 @@
 # Family analysis — `malice-enmity-persecution` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__malice-enmity-persecution.json` only. Scope `meta.scope.family = "malice-enmity-persecution"`. Counts (meta): **26 meanings · 56 instances · 35 passages**. Every claim cites `reference · span_id · Dnnn(label)` into that file. Method: `_family-analysis-method-20260711.md`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__malice-enmity-persecution.json` only. Scope `meta.scope.family = "malice-enmity-persecution"`. Counts (meta): **26 meanings · 56 instances · 35 passages**. Every claim cites `reference · span_id · Dnnn(label)` into that file. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`.
 
 ---
 

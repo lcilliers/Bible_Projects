@@ -1,6 +1,6 @@
 # Family analysis — `restoration-revival-satisfaction` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__restoration-revival-satisfaction.json` (generated 2026-07-11). Scope: this one file only. 15 meanings · 19 instances · 17 passages. Every claim cites `reference · span_id · Dnnn(label)`. Discovery notes cited as D114.
+> Source: `verse-analysis/psalms/_base-sources/psalms__restoration-revival-satisfaction.json` (generated 2026-07-11). Scope: this one file only. 15 meanings · 19 instances · 17 passages. Every claim cites `reference · span_id · Dnnn(label)`. Discovery notes cited as D114.
 
 Instance roster (span_id · reference · meaning · cluster · locus):
 274814 Psa 17:14 satisfied · M46 · internal · 275838 Psa 23:4 comfort · M05 · internal · 275314 Psa 19:7 reviving · M45 · internal · 275597 Psa 22:11 help · M38 · internal · 279648 Psa 51:10 renew · null · internal(spirit) · 281062 Psa 63:5 satisfied · M46 · internal · 281207 Psa 65:4 satisfied · M46 · internal · 281845 Psa 69:32 revive · M25 · internal(heart) · 282248 Psa 72:13 saves · null · external · 282255 Psa 72:14 redeems · null · external · 282317 Psa 72:4 give-deliverance · null · external · 306652 Psa 72:12 delivers · null · external · 271503 Psa 119:147 cry-for-help · null · external(god) · 271894 Psa 119:50 comfort · M33 · internal · 282951 Psa 77:2 comforted · M05 · internal · 283124 Psa 78:29 filled · M46 · internal · 283825 Psa 81:16 satisfy · M46 · internal · 284323 Psa 86:17 comforted · M05 · internal · 284472 Psa 88:3 full · M46 · internal.

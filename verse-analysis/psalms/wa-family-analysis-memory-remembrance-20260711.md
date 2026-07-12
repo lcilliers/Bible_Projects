@@ -1,6 +1,6 @@
 # Family analysis — `memory-remembrance` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__memory-remembrance.json` only. 7 meanings, 46 instances, 35 passages. Every claim cited `reference · span N · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__memory-remembrance.json` only. 7 meanings, 46 instances, 35 passages. Every claim cited `reference · span N · Dnnn(label)` into that file. Nothing imported from outside it.
 
 ## Roster (meaning → lemma → cluster → count)
 | # | char_key | lemma | cluster | instances |

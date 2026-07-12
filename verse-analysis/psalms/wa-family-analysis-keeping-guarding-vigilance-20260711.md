@@ -1,6 +1,6 @@
 # Family analysis (in isolation) — `keeping-guarding-vigilance` (Psalms)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__keeping-guarding-vigilance.json` only. Scope-bounded: nothing imported from outside this one file. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__keeping-guarding-vigilance.json` only. Scope-bounded: nothing imported from outside this one file. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`.
 > Counts (meta): 10 meanings · 49 instances · 29 passages. All 49 accounted for below.
 
 Lemma spread: **H8104 (shamar)** 32 inst — keep 23, observe 3, watch 3, guard 2, attend-to 1; **H5341 (natsar)** 14 inst — keep 11, kept 2, observe 1; **H7737 (set)** 2; **H7650 (swears)** 1.

@@ -1,6 +1,6 @@
 # Family analysis — `being-heard-listening` (Psalms)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__being-heard-listening.json` (in isolation). Scope = that one file only.
+> Source: `verse-analysis/psalms/_base-sources/psalms__being-heard-listening.json` (in isolation). Scope = that one file only.
 > Counts (meta): 6 meanings · 20 instances · 16 passages. Cited as `reference · span · Dnnn(label)`.
 
 Family membership (char_key → cluster → instances):

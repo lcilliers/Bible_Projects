@@ -1,6 +1,6 @@
 # In-depth analysis — base source `psalms__being-searched-tested-by-god`
 
-> **Source:** `outputs/data/psalms-family-base-sources/psalms__being-searched-tested-by-god.json` (7 meanings, 14 instances, 13 passages). **Method:** worked **only** from the source file. Every finding is back-trackable to `reference · span_id · Dn(dimension)`. Where the data does not support a reading, or a field is unusable, it is **flagged, not filled**. Discovery notes (D14) are the original reader's own read, carried in the source, and are cited as such. Filed 2026-07-11.
+> **Source:** `verse-analysis/psalms/_base-sources/psalms__being-searched-tested-by-god.json` (7 meanings, 14 instances, 13 passages). **Method:** worked **only** from the source file. Every finding is back-trackable to `reference · span_id · Dn(dimension)`. Where the data does not support a reading, or a field is unusable, it is **flagged, not filled**. Discovery notes (D14) are the original reader's own read, carried in the source, and are cited as such. Filed 2026-07-11.
 
 ---
 

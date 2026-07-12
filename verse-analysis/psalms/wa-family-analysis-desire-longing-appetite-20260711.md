@@ -1,6 +1,6 @@
 # Family analysis — `desire-longing-appetite` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__desire-longing-appetite.json` only. Scope `meta.scope.family = "desire-longing-appetite"`. Counts: **49 meanings · 80 instances · 55 passages**. Every claim is cited `reference · span_id · Dnnn(label)`. Nothing outside this file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__desire-longing-appetite.json` only. Scope `meta.scope.family = "desire-longing-appetite"`. Counts: **49 meanings · 80 instances · 55 passages**. Every claim is cited `reference · span_id · Dnnn(label)`. Nothing outside this file.
 
 ---
 

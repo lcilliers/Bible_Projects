@@ -1,6 +1,6 @@
 # Family analysis (in isolation) — Psalms · `wickedness-ungodliness`
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__wickedness-ungodliness.json` only. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`. Scope: strictly this one file. 20 meanings · 56 instances · 42 passages. Every claim cited `reference · span · Dnnn(label)`. Absent/underivable data is flagged, not filled.
+> Source: `verse-analysis/psalms/_base-sources/psalms__wickedness-ungodliness.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Scope: strictly this one file. 20 meanings · 56 instances · 42 passages. Every claim cited `reference · span · Dnnn(label)`. Absent/underivable data is flagged, not filled.
 
 ---
 

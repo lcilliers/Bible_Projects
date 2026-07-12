@@ -1,6 +1,6 @@
 # Family analysis — Psalms `thanksgiving` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__thanksgiving.json` only. Scope `meta.scope.family = "thanksgiving"`; counts `meanings: 6 · instances: 49 · passages: 38`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__thanksgiving.json` only. Scope `meta.scope.family = "thanksgiving"`; counts `meanings: 6 · instances: 49 · passages: 38`. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
 
 ## Family shape (6 meanings, all cluster M22 Praise, `is_outlier:false`)
 

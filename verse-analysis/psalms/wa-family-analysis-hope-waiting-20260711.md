@@ -1,6 +1,6 @@
 # Family analysis — `hope-waiting` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__hope-waiting.json` only. 17 meanings · 45 instances · 36 passages. Every finding cited `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
+> Source: `verse-analysis/psalms/_base-sources/psalms__hope-waiting.json` only. 17 meanings · 45 instances · 36 passages. Every finding cited `reference · span_id · Dnnn(label)` into that file. Nothing imported from outside it.
 
 Lemmas fused under the family keyword (from `meaning.lemma` + `evidence`): H3176 *yachal*, H6960 *qavah*, H8615 *tiqvah*, H7664 *sever*, H7663 *sabar*, H2442 *chakah*, H2342 *chul*, H4009 *mibtach*, H3689 *kesel*, H7725 *shuv*, H0693 *arab*, H1747 *dumiyyah*, H6186 *arak*.
 

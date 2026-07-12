@@ -1,6 +1,6 @@
 # Family analysis — `turning-repentance` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__turning-repentance.json` only. Scope strictly that one file. Counts declared: 12 meanings · 14 instances · 14 passages (verified: instance total 2+2+1+1+1+1+1+1+1+1+1+1 = 14). All genre `poetic/wisdom`; every `is_passage_anchor` = false (no span in the family sits on a passage anchor).
+> Source: `verse-analysis/psalms/_base-sources/psalms__turning-repentance.json` only. Scope strictly that one file. Counts declared: 12 meanings · 14 instances · 14 passages (verified: instance total 2+2+1+1+1+1+1+1+1+1+1+1 = 14). All genre `poetic/wisdom`; every `is_passage_anchor` = false (no span in the family sits on a passage anchor).
 
 Instance roster (span · ref · lemma · read-sense · cluster):
 - 283158 · Psa 78:34 · H7725 · repent/turn (shuv) · M45

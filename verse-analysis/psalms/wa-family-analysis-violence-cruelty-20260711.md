@@ -1,6 +1,6 @@
 # Family analysis — Psalms `violence-cruelty` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__violence-cruelty.json` only. Method: `verse-analysis/psalms/_family-analysis-method-20260711.md`. 14 meanings · 21 instances · 16 passages. Expected family cluster = **M06 (Hate)**. British spelling. Every claim cited `reference · span · Dnnn(label)`.
+> Source: `verse-analysis/psalms/_base-sources/psalms__violence-cruelty.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. 14 meanings · 21 instances · 16 passages. Expected family cluster = **M06 (Hate)**. British spelling. Every claim cited `reference · span · Dnnn(label)`.
 
 Instance roster (span · ref · lemma · read-sense · cluster):
 - 272139 · Psa 119:87 · H3615 end · "be near ended (kalah)" · null/T2

@@ -1,6 +1,6 @@
 # Family analysis — Psalms · `walk-way-conduct` (in isolation)
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__walk-way-conduct.json` only. Scope strictly that file. 24 meanings · 47 instances · 38 passages (meta). Every finding cited `reference · span · Dnnn(label)`. Dimension legend from the file: 101 sense · 102 type · 103 source · 104 seat · 105 bearer · 106 operation · 107 target · 108 manner · 109 intensity · 110 specifier · 111 effect · 112 coupling · 113 prohibition · 114 discovery · 115 role · 116 locus.
+> Source: `verse-analysis/psalms/_base-sources/psalms__walk-way-conduct.json` only. Scope strictly that file. 24 meanings · 47 instances · 38 passages (meta). Every finding cited `reference · span · Dnnn(label)`. Dimension legend from the file: 101 sense · 102 type · 103 source · 104 seat · 105 bearer · 106 operation · 107 target · 108 manner · 109 intensity · 110 specifier · 111 effect · 112 coupling · 113 prohibition · 114 discovery · 115 role · 116 locus.
 
 ---
 

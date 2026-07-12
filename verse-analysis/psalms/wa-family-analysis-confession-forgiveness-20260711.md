@@ -1,6 +1,6 @@
 # Family analysis — `confession-forgiveness` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__confession-forgiveness.json` only. Method: `_family-analysis-method-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)`. British spelling. Nothing imported from outside the file.
+> Source: `verse-analysis/psalms/_base-sources/psalms__confession-forgiveness.json` only. Method: `Workflow/methodology/wa-psalms-family-analysis-method-v1-20260711.md`. Every claim cites `reference · span_id · Dnnn(label)`. British spelling. Nothing imported from outside the file.
 
 **Scope counts (meta.counts):** 3 meanings · 3 instances · 3 passages. Each meaning has exactly one instance, so the family is three single spans:
 

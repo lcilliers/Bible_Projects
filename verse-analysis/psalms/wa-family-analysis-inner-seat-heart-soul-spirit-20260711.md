@@ -1,6 +1,6 @@
 # Family analysis — `inner-seat-heart-soul-spirit` (Psalms)
 
-> In-isolation analysis of a single base source: `outputs/data/psalms-family-base-sources/psalms__inner-seat-heart-soul-spirit.json`. Nothing outside that file is used. Every claim cites `reference · span_id · Dnnn(label)`.
+> In-isolation analysis of a single base source: `verse-analysis/psalms/_base-sources/psalms__inner-seat-heart-soul-spirit.json`. Nothing outside that file is used. Every claim cites `reference · span_id · Dnnn(label)`.
 > Scale (from `meta.counts`): **31 meanings · 185 instances · 109 passages**. Genre uniform: all 185 `poetic/wisdom`; 20 are passage anchors.
 
 ---

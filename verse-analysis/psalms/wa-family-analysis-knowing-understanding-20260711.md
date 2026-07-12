@@ -1,6 +1,6 @@
 # Family analysis — `knowing-understanding` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__knowing-understanding.json` (only). Scope: `meta.scope.family = knowing-understanding`. Counts declared: **43 meanings · 99 instances · 73 passages**. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing outside the file is used. British spelling.
+> Source: `verse-analysis/psalms/_base-sources/psalms__knowing-understanding.json` (only). Scope: `meta.scope.family = knowing-understanding`. Counts declared: **43 meanings · 99 instances · 73 passages**. Every claim cites `reference · span_id · Dnnn(label)` into that file. Nothing outside the file is used. British spelling.
 
 Dimension legend used below: D101 sense · D102 type · D103 source · D104 seat · D105 bearer · D106 operation · D107 target · D108 manner · D109 intensity · D110 specifier · D111 effect · D112 coupling · D113 prohibition · D114 discovery · D115 role · D116 locus.
 

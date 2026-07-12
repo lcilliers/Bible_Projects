@@ -1,6 +1,6 @@
 # Family analysis — `speech-mouth-tongue` (Psalms), in isolation
 
-> Source: `outputs/data/psalms-family-base-sources/psalms__speech-mouth-tongue.json` only.
+> Source: `verse-analysis/psalms/_base-sources/psalms__speech-mouth-tongue.json` only.
 > Scope: 24 meanings · 42 instances · 34 passages. Genre uniformly `poetic/wisdom`. Every finding cites `reference · span · Dnnn(label)` into that file. British spelling.
 
 ---
