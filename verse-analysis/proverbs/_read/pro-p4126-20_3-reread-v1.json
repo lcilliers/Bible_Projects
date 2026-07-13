@@ -1,0 +1,246 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 20,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4126 (Pro 20:3) — it is an honour to keep aloof from strife; every fool will be quarreling. (gala 'quarreling' = standalone.)",
+ "spans": {
+  "265020": {
+   "gloss": "honor (kabod)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "honour — of keeping aloof from strife"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the peaceable",
+     "to": 265020,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the honour a man has in keeping aloof from and ceasing strife"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the strife he avoids (265024)",
+     "to": 265020,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the conflict he honourably shuns",
+     "to": 265024,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "kabod (honour/glory) — 'it is an HONOUR for a man to keep aloof from strife'; to avoid conflict is not cowardice but honour (cf 20:3b). Restraint from quarreling adorns a man."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "265024": {
+   "gloss": "strife (rib)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "strife — honourably avoided"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the peaceable",
+     "to": 265024,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the strife/quarrel that the honourable man keeps aloof from"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the honour of avoiding it (265020)",
+     "to": 265024,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the honour of restraint",
+     "to": 265024,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "rib (strife/quarrel) — 'to keep aloof from STRIFE'; the conflict the wise avoid to their honour, against the fool who plunges in."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "265026": {
+   "gloss": "fool (evil)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "folly — every fool will be quarreling"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the fool",
+     "to": 265026,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the fool who, unlike the honourable, will always be embroiled in quarrels"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "(the honour of avoiding strife, by contrast)",
+     "to": 265026,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the honour of keeping aloof",
+     "to": 265026,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "evil (fool) — 'every FOOL will be quarreling'; folly cannot leave a quarrel alone. Where honour keeps aloof, folly plunges in and shows itself."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

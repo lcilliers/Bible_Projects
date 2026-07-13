@@ -1,0 +1,246 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 20,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4127 (Pro 20:4) — the sluggard does not plow in autumn; at harvest he begs and has nothing.",
+ "spans": {
+  "265028": {
+   "gloss": "sluggard (atsel)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "sloth — who will not plow in season"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the sluggard",
+     "to": 265028,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the sluggard who will not plow in autumn (the cold), and so begs empty-handed at harvest"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the plowing he skips (265030)",
+     "to": 265028,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the seasonable labour he refuses",
+     "to": 265030,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "atsel (sluggard) — 'the SLUGGARD does not plow in the autumn'; laziness skips the necessary labour in its season. Emergent: the sluggard who forfeits harvest by shirking the plough."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "265030": {
+   "gloss": "plow (charash)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "labour — the seasonal plowing the sluggard skips"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "action"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the sluggard",
+     "to": 265030,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the plowing/labour, done in its season, that the sluggard refuses"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the sloth that refuses it (265028)",
+     "to": 265030,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the sluggard who will not do it",
+     "to": 265030,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "charash (plough) — 'does not PLOW in the autumn'; the labour the sluggard shirks in its season, and so has nothing to reap. Work missed at its time cannot be recovered."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "265032": {
+   "gloss": "seek / beg (shaal)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "futile begging — the sluggard begs at harvest and gets nothing"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the sluggard",
+     "to": 265032,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the seeking/begging of the sluggard at harvest, who finds nothing because he did not sow"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "(the plowing he skipped)",
+     "to": 265032,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "the empty begging that follows shirked labour",
+     "to": 265032,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "shaal (ask/seek/beg) — 'he will SEEK at harvest and have nothing'; the sluggard begs where he did not work. Emergent: the futile seeking of one who shirked the labour that would have provided."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
