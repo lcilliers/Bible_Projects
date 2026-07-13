@@ -22,14 +22,15 @@
 
 Run BEFORE starting the next cycle; scope to the cycle's passages (and cumulative book state):
 
-- **A0. Rebuild the `ib_characteristic` index (I7).** `ib_char_id` is NOT written per passage — run the book-scoped **meaning-keyed derived rebuild** at cycle-close: `python scripts/_apply_rebuild_ib_char_meaning_keyed_v3_20260711.py --book <id> --live`. It re-derives the whole index over all read-so-far chars (record identity = base-lemma + stem + normalised-ESV) and sets `verse_span_index.ib_char_id`, then self-validates (0 null / 0 dangling). This makes I7 green each cycle.
+- **A0. `ib_characteristic` — PHASE 1 (capture meanings), at cycle-close.** `ib_characteristic` is **two-phased**: **Phase 1 captures the meanings from the lexicals** — the meaning-keyed records + the `ib_char_id` link — and is done **incrementally as passages/cycles complete** (NOT a per-passage write, and NOT deferred to book-close). **Phase 2 (derive the FAMILIES) is a book-close step** (see below). Run Phase 1 at cycle-close: `python scripts/_apply_rebuild_ib_char_meaning_keyed_v3_20260711.py --book <id> --live` — it re-derives the meaning records over all read-so-far chars (identity = base-lemma + stem + normalised-ESV), sets `verse_span_index.ib_char_id`, self-validates (0 null / 0 dangling), and leaves `family` NULL (Phase 2's job). This makes I7 green each cycle.
 - **A. Conformance to the instructions (method adherence).** For the cycle's characteristics: full genre-mandatory ledger present, `none` explicit (**I5 / G10**); Screen-0 held — no God-bearer characteristic (**I6**); every characteristic linked to `ib_characteristic` (**I7**) and its char on the master (**I11**); pairs keyed on span-ids (**I8 / G9**); role back-filled where a lexical exists (**D1**); `ve_lexical` only on `role=characteristic` (**D2**). Plus the **passage-reading-coverage gate** (`scripts/_check_passage_reading_coverage`) — every candidate span in the cycle's passages was read (nothing passed over).
 - **B. Quality (scored read-back).** Sample **2–3** of the cycle's passages; score each characteristic **sound / weak / wrong** on fidelity · working-completeness · movement · distinction. Bar: **≥90% sound, zero fidelity failures**. A missed pair on a `none`-call = a fidelity failure.
 - **C. Breather.** File a one-line cycle log (passages done, chars read, gate result, any fixes); pause for researcher review. Fix any conformance/quality miss **before** the next cycle — do not carry defects forward.
 
 ## Book close (after cycle 59)
 
-Full integrity **I1–I13** + the scored audit over a stratified book-wide sample + the G0–G10 measures (`_check_reread_measures_v3`), then the baseline→delta comparison (Proverbs baseline `wa-proverbs-reread-BASELINE-v2`). Book is "read" only when these pass.
+1. **`ib_characteristic` PHASE 2 — derive the FAMILIES.** Now that the whole book's meanings are captured (Phase 1, run each cycle), group the meaning-records into families: `python scripts/_apply_ib_char_family_grouping_v1_20260711.py --book <id> --live`. This is the emergent cross-char structure and belongs at book-close, not per-cycle (families only make sense over the complete set).
+2. **Full integrity + measures.** Integrity **I1–I13** + the scored audit over a stratified book-wide sample + the G0–G10 measures (`_check_reread_measures_v3`), then the baseline→delta comparison (Proverbs baseline `wa-proverbs-reread-BASELINE-v2`). Book is "read" only when these pass.
 
 ## Read scope — candidates PLUS old-model char-roles (seed-miss catch, learned cycle 1)
 
