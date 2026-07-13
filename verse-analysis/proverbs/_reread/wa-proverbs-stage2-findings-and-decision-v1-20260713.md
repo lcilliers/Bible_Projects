@@ -1,5 +1,7 @@
 # Proverbs re-read — Stage-2 findings + decision request (v1, 2026-07-13)
 
+> **SUPERSEDED 2026-07-13 (researcher):** the term↔registry allocation is scaffolding only — **ignored throughout the study** after the term/verse are added; the only check is that a term **has** a registry (any). So **no re-homing, no gloss-fix, no H7999 dedup** — every one of these 4 terms already has a registry, which is sufficient. The re-homing "decisions" in §"Decision needed" below are **withdrawn**. Stage 2 reduces to: **build the missing verse-records for the 4 terms via `audit_word`** (compliant), leaving their homes as-is. (`audit_word` verified NOT to re-home/reconcile owning_registry.) Rule baked into `wa-term-add-update-AUTHORITATIVE-pipeline-v1` (2026-07-12/13 amendment). The 2 Stage-1 deferrals (H7189, H3856) still stand as IB-relevance questions, separate from registry allocation.
+
 > After Stage-1 onboarding (I2 104→35), the remaining I2 gap is **35 spans = 33 term-present-no-record + 2 deferred**. Stage 2 was meant to be a mechanical "build the missing verse-records via `audit_word --registry`". It is **not** — the 33 spans are only **4 terms, and every one has a registry-home / gloss / duplication defect**. Building records via `audit_word` on their current registries would **propagate wrong associations**. Filed for a homing decision before any write. No DB changes made in Stage 2.
 
 ## The 4 terms (33 spans)

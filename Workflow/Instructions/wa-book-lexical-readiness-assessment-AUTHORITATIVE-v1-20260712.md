@@ -90,7 +90,7 @@ Prior-cycle records must be isolated so they cannot interfere: prior `ve_lexical
 ### §C. Seed sanity — "does the seed look right?" *(PRECONDITION, stage 0)*
 
 - Coverage sane: candidate count + `char_candidate_tag` provenance present; candidate:total ratio in a plausible band for the genre.
-- **Every candidate's word is a registered term** (§2.0 registry path): candidate base-Strong's with no active `mti_terms` row = the **stage-1 onboarding list** (existing-registry-first).
+- **Every candidate's word is a registered term** (§2.0 registry path): candidate base-Strong's with no active `mti_terms` row = the **stage-1 onboarding list** (existing-registry-first). **The check is existence only — a term merely needs to HAVE a registry.** The specific term↔registry allocation is scaffolding, ignored downstream; never re-home/reconcile it (see `wa-term-add-update-AUTHORITATIVE-pipeline-v1`).
 - OT-DBR-009 sweep: core IB terms for the book not over-deleted from `mti_terms`/cluster.
 - *(Role decidedness is NOT a seed check — role is assigned by the read, §2.1.)*
 

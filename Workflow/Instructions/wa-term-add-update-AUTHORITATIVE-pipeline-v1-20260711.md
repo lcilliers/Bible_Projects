@@ -130,6 +130,11 @@ The seed's `char_candidate_tag` (`"Reg N word"`) already names the intended exis
 
 **The compliant tools:** the 3-command pipeline above (`--register` → `word_study_extract` → `audit_word`) for a whole word; **`_run_gate1_onboard_batch_v1`** (audit_word path) for onboarding orphan strongs to registries.
 
+**The term↔registry allocation is scaffolding only — ignored downstream (researcher direction 2026-07-12).** A term's registry home exists for **one reason**: to give the term a hook so it can be onboarded (registered + its verses added). The specific allocation is **highly debatable and has NO analytical value in the study** — after the term/verse are added it is **ignored throughout**. Therefore:
+- **The only check is that a term HAS a registry (any).** Never re-home, reconcile, merge, move, or debate which registry a term sits under. A "wrong-looking" home (e.g. *ruach*→anger, *palas*→envy) is **not a defect** — it needs no fix.
+- Do **not** build tooling or steps that reconcile term↔registry allocation. (Verified 2026-07-13: `audit_word` does **not** re-home — it never rewrites `owning_registry_fk` on an existing term; `--add-terms` is isolated to the new terms. So this rule is already honoured by the engine; keep it that way.)
+- Onboarding still uses the seed's `char_candidate_tag` registry as the default hook, but its *correctness* is immaterial — pick any relevant existing registry and move on.
+
 **Prohibited / retired — they hand-write the term/verse tables, bypassing `audit_word`:**
 - **`_apply_gate1_term_onboard_v1`** (`INSERT INTO mti_terms`) — **RETIRED, do not use.** Use `_run_gate1_onboard_batch_v1` instead. (Runtime-guarded off 2026-07-12.)
 - `_apply_master_index_backfill_v1`, `_apply_psalms_gate1_completeness_v1`, `_apply_psalms_gate1_reactivate_v1`, `_repair_07_wa_verse_records` — may only ever touch **existing** rows (FK backfill / soft-delete reactivation), **never mint a new term or verse-record**. New identities go through `audit_word`, full stop.
