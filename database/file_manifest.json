@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T07:13:56Z",
+  "generated_at": "2026-07-13T07:42:57Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2187,
     "historical": 31,
-    "current": 2502,
+    "current": 2503,
     "archived": 2819,
     "cross-reference": 3420,
     "backup": 29
   },
-  "total_files": 10988,
-  "total_active": 8169,
+  "total_files": 10989,
+  "total_active": 8170,
   "total_archived": 2819,
   "files": [
     {
@@ -68903,6 +68903,22 @@
       "modified": "2026-07-12T04:59:59Z"
     },
     {
+      "path": "Workflow/Instructions/wa-reread-operating-model-cadence-v1-20260713.md",
+      "category": "workflow",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4362,
+      "modified": "2026-07-13T07:42:43Z"
+    },
+    {
       "path": "Workflow/Instructions/wa-synthesis-B-spec-reset-v1-20260624.md",
       "category": "workflow",
       "type": "other",
@@ -113523,8 +113539,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4944443,
-      "modified": "2026-07-13T06:22:37Z"
+      "size_bytes": 4944886,
+      "modified": "2026-07-13T07:13:56Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
