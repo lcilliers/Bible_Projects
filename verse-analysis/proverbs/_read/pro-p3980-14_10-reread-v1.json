@@ -1,0 +1,404 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 14,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3980 (Pro 14:10) — the heart knows its own bitterness, and no stranger shares its joy. The privacy of the inner life.",
+ "spans": {
+  "263310": {
+   "gloss": "heart (leb)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the heart — knows its own bitterness alone"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "seat"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "every person",
+     "to": 263310,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the heart that alone knows its own bitterness, unshared"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "its own knowing (263311)",
+     "to": 263310,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the intimate self-knowledge it holds",
+     "to": 263311,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "leb (heart) — 'the HEART knows its own bitterness'; the profound privacy of the inner life — the deepest grief is known to the heart alone. No one fully enters another's inner world."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "263311": {
+   "gloss": "knows (yada)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "self-knowing — the heart knows its own grief"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "every person",
+     "to": 263311,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the heart's intimate, private knowledge of its own bitterness"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the heart that knows (263310)",
+     "to": 263311,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the heart whose knowing it is",
+     "to": 263311,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "yada (know) — 'KNOWS its own bitterness'; the self's private, incommunicable knowledge of its own pain. The solitude of the suffering heart."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "263312": {
+   "gloss": "own / soul (nephesh)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "the self — whose bitterness only it knows"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "seat"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "every person",
+     "to": 263312,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the self/soul whose bitterness is known to it alone"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "its private bitterness (263313)",
+     "to": 263312,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the grief that is its own",
+     "to": 263313,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "nephesh (soul/self) — 'its OWN bitterness'; the bitterness belongs to the self alone. Grief is ultimately private, sealed within the soul."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "263313": {
+   "gloss": "bitterness (morah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "bitterness — the private grief the heart alone knows"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "every person",
+     "to": 263313,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the bitterness/grief that the heart knows in solitude, unshared"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the self whose it is (263312)",
+     "to": 263313,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the soul that bears it alone",
+     "to": 263313,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "morah (bitterness) — 'its own BITTERNESS'; the deep, private grief of the heart, which no other fully knows. The incommunicable core of suffering."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "263317": {
+   "gloss": "joy (simchah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "joy — private, no stranger shares it"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "every person",
+     "to": 263317,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the joy of the heart, which no stranger can fully share"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "(the bitterness equally private)",
+     "to": 263317,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "the gladness sealed within, as the bitterness is",
+     "to": 263317,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "simchah (joy) — 'no stranger shares its JOY'; even joy is finally private — its full sweetness known only to the heart that feels it. The inner life is a solitude of both grief and gladness."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
