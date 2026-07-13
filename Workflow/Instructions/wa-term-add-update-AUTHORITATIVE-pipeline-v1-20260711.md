@@ -115,3 +115,21 @@ Just STEP 2 then STEP 3 (`audit_word --registry=N`). The engine's gap report ins
 3. **A term not substantive enough to be its own study-word is folded into the best-fit existing registry**, never made a new registry. (E.g. Proverbs *marpe/riphuth* "healing" → folded into the existing `peace` registry on a best-fit basis, not made a new word.)
 
 The seed's `char_candidate_tag` (`"Reg N word"`) already names the intended existing registry for most candidates — use it; supply the association only where the tag is `IB:*` or absent.
+
+---
+
+## AMENDMENT 2026-07-12 (researcher direction) — `audit_word` is the ONLY method for term & verse additions
+
+**Mandatory, no exceptions.** Every addition of a **term** (`mti_terms`, `wa_term_inventory`) or a **verse-record** (`wa_verse_records`) is processed **only** through the integrated engine method **`audit_word`** (STEP 3). There is **no other sanctioned path to create these rows**:
+
+- **No** direct `INSERT` into `mti_terms` / `wa_term_inventory` / `wa_verse_records` — by hand, ad-hoc script, or raw SQL.
+- **No** patch (`apply_session_patch`) that mints term/verse rows.
+- A batch onboarder or repair tool is compliant **only if it invokes `audit_word`** — e.g. `_run_gate1_onboard_batch_v1` shells `python -m engine.engine --mode=audit_word --registry=N --extract-file=… --add-terms`. A script that writes those tables itself is **not** compliant, whatever its intent.
+
+**Why:** `audit_word` is the single pass that writes every field **and both master links** (`verse_id`, `verse_span_id`) **+ VTL + related-words + run-state**, under an integrity-gated pre/post backup. Hand-written inserts miss fields/links and silently break I1/I2/I3.
+
+**The compliant tools:** the 3-command pipeline above (`--register` → `word_study_extract` → `audit_word`) for a whole word; **`_run_gate1_onboard_batch_v1`** (audit_word path) for onboarding orphan strongs to registries.
+
+**Prohibited / retired — they hand-write the term/verse tables, bypassing `audit_word`:**
+- **`_apply_gate1_term_onboard_v1`** (`INSERT INTO mti_terms`) — **RETIRED, do not use.** Use `_run_gate1_onboard_batch_v1` instead. (Runtime-guarded off 2026-07-12.)
+- `_apply_master_index_backfill_v1`, `_apply_psalms_gate1_completeness_v1`, `_apply_psalms_gate1_reactivate_v1`, `_repair_07_wa_verse_records` — may only ever touch **existing** rows (FK backfill / soft-delete reactivation), **never mint a new term or verse-record**. New identities go through `audit_word`, full stop.

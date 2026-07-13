@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 """
+*** RETIRED 2026-07-12 (researcher direction). DO NOT USE. ***
+This tool hand-writes mti_terms, bypassing the integrated `audit_word` method. Term and
+verse additions MUST go through audit_word only — see wa-term-add-update-AUTHORITATIVE-
+pipeline-v1 (2026-07-12 amendment). Use _run_gate1_onboard_batch_v1 (audit_word path)
+instead. Runtime-guarded off; kept only for provenance.
+
 _apply_gate1_term_onboard_v1_20260705.py — onboard Gate-1-recovered inner-being terms into mti_terms.
 
 These content-strongs surfaced from the verse_span_index span-orphan scan (Genesis+Exodus+Leviticus)
@@ -44,7 +50,19 @@ ASSIGN = {
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--live',action='store_true')
-    ap.add_argument('--db',default=os.path.join('database','bible_research.db')); a=ap.parse_args()
+    ap.add_argument('--db',default=os.path.join('database','bible_research.db'))
+    ap.add_argument('--i-know-this-is-retired',action='store_true',
+                    help=argparse.SUPPRESS)
+    a=ap.parse_args()
+    # RETIRED 2026-07-12 (researcher direction): this script hand-writes mti_terms,
+    # bypassing the integrated audit_word method. Term/verse additions MUST go through
+    # audit_word only (see wa-term-add-update-AUTHORITATIVE-pipeline-v1, 2026-07-12
+    # amendment). Use _run_gate1_onboard_batch_v1 (audit_word path) instead.
+    if not a.__dict__.get('i_know_this_is_retired'):
+        import sys
+        sys.exit("RETIRED: this tool bypasses audit_word. Onboard terms via "
+                 "_run_gate1_onboard_batch_v1 (audit_word). See "
+                 "wa-term-add-update-AUTHORITATIVE-pipeline-v1 (2026-07-12).")
     conn=sqlite3.connect(a.db); conn.row_factory=sqlite3.Row; c=conn.cursor()
     now=datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     ins=skip=0
