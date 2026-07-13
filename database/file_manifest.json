@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T05:01:50Z",
+  "generated_at": "2026-07-13T05:12:14Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2184,
     "historical": 31,
-    "current": 2489,
+    "current": 2495,
     "archived": 2819,
     "cross-reference": 3415,
-    "backup": 13
+    "backup": 14
   },
-  "total_files": 10951,
-  "total_active": 8132,
+  "total_files": 10958,
+  "total_active": 8139,
   "total_archived": 2819,
   "files": [
     {
@@ -112887,6 +112887,22 @@
       "modified": "2026-07-13T04:47:17Z"
     },
     {
+      "path": "backups/bible_research_pre-proverbs-stage2_20260713_060231.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794124288,
+      "modified": "2026-07-13T05:02:32Z"
+    },
+    {
       "path": "backups/bible_research_pre-remaining-fixes_20260626.db",
       "category": "backup",
       "type": "other",
@@ -113188,7 +113204,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 4928429,
-      "modified": "2026-07-13T04:54:16Z"
+      "modified": "2026-07-13T05:01:50Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -119367,6 +119383,22 @@
       "modified": "2026-07-12T05:00:32Z"
     },
     {
+      "path": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
+      "category": "report",
+      "type": "report",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3851,
+      "modified": "2026-07-13T05:12:04Z"
+    },
+    {
       "path": "outputs/markdown/validation/wa-term-morph-roles-G5485_H2580_H2603-20260627.md",
       "category": "report",
       "type": "report",
@@ -123207,6 +123239,22 @@
       "modified": "2026-07-12T05:02:56Z"
     },
     {
+      "path": "research/discovery/056_envy_addterms_curated.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 56,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 12648,
+      "modified": "2026-07-13T05:04:11Z"
+    },
+    {
       "path": "research/discovery/056_envy_step_data_20260325.json",
       "category": "discovery",
       "type": "discovery-json",
@@ -123237,6 +123285,38 @@
       "archived": false,
       "size_bytes": 4013,
       "modified": "2026-07-12T05:02:56Z"
+    },
+    {
+      "path": "research/discovery/056_envy_step_data_20260713.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 56,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 21476,
+      "modified": "2026-07-13T05:04:11Z"
+    },
+    {
+      "path": "research/discovery/056_envy_step_data_20260713.md",
+      "category": "discovery",
+      "type": "discovery-summary",
+      "currency": "current",
+      "registry": 56,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 852,
+      "modified": "2026-07-13T05:04:11Z"
     },
     {
       "path": "research/discovery/057_evil_addterms_curated.json",
@@ -125747,8 +125827,8 @@
       "date": "2026-07-13",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 184152,
-      "modified": "2026-07-13T04:48:53Z"
+      "size_bytes": 1125881,
+      "modified": "2026-07-13T05:04:21Z"
     },
     {
       "path": "research/discovery/117_peace_step_data_20260713.md",
@@ -125763,8 +125843,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 2104,
-      "modified": "2026-07-13T04:48:53Z"
+      "size_bytes": 8764,
+      "modified": "2026-07-13T05:04:21Z"
     },
     {
       "path": "research/discovery/120_perverseness_addterms_curated.json",
@@ -127011,8 +127091,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 113033,
-      "modified": "2026-07-06T16:38:34Z"
+      "size_bytes": 95259,
+      "modified": "2026-07-13T05:02:35Z"
     },
     {
       "path": "research/discovery/146_shame_step_data_20260325.json",
@@ -127077,6 +127157,38 @@
       "archived": false,
       "size_bytes": 3190,
       "modified": "2026-07-12T05:02:56Z"
+    },
+    {
+      "path": "research/discovery/146_shame_step_data_20260713.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 146,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 178307,
+      "modified": "2026-07-13T05:02:34Z"
+    },
+    {
+      "path": "research/discovery/146_shame_step_data_20260713.md",
+      "category": "discovery",
+      "type": "discovery-summary",
+      "currency": "current",
+      "registry": 146,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1293,
+      "modified": "2026-07-13T05:02:34Z"
     },
     {
       "path": "research/discovery/147_sin_step_data_20260328.json",
