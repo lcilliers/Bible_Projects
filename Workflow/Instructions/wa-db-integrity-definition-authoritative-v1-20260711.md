@@ -51,3 +51,11 @@
 - **I10** is **directional**: every `role=characteristic` must have been a candidate (emergent chars are stamped + seed-fed). The **converse does not hold** — a candidate need not become a characteristic (`char_candidate ≠ role`, per I12).
 
 **"Integrity-clean" now means all of I1–I12 pass.**
+
+---
+
+## AMENDMENT 2026-07-13 (researcher direction) — I13 mti-uniqueness (isolate historic duplicates)
+
+**New invariant — I13 `mti_terms` uniqueness.** `mti_terms` is **unique per Strong's** (CLAUDE.md §3): **at most one *active* row per `strongs_number`.** Historic / orphan-stub duplicates (typically `owning_registry_fk IS NULL`, 0 verse-records — the OT-DBR-009 mess) must be **isolated (`delete_flagged`)** so they cannot interfere with the study — the readiness **isolation** principle (§B) applied to terms. Check: `strongs_number` values with >1 active row = 0.
+
+**Reconcile rule (systematic, not one-off):** per Strong's, keep the canonical active row — rank by `(owning_registry_fk IS NOT NULL, status<>'delete', active_verse_record_count)` desc — and `delete_flagged` the rest; **never flag a row that holds verse-records** (those need manual reconcile, not auto-isolation). Tool: `scripts/_apply_mti_dedup_active_duplicates_v1_20260713.py` (dry-run default). Applied 2026-07-13: 18 orphan stubs across 13 Strong's flagged → 0 active duplicates. (This is the *active-duplicate* half of OT-DBR-009; the over-deletion half is separate.)

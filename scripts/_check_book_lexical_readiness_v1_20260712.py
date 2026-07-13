@@ -191,6 +191,19 @@ class Readiness:
                  f"active ve_lexical by provenance: {detail}")
         self.add('B', 'Legacy isolation', 'PRECONDITION', GREEN if legacy==0 else AMBER,
                  f"ve_lexical_legacy rows joinable to book spans = {legacy} (archive; must not be read)")
+        # I13 mti-uniqueness: duplicate active mti_terms among THIS book's candidate strongs
+        cand_strongs = {base_strong(r[0]) for r in self.c.execute(
+            "SELECT DISTINCT si.primary_strong FROM verse_span_index si JOIN verse v ON v.id=si.verse_id "
+            "WHERE v.book_id=? AND si.char_candidate=1", (b,))}
+        cand_strongs.discard(None)
+        dupe = 0
+        for r in self.c.execute("SELECT strongs_number, COUNT(*) n FROM mti_terms "
+                                "WHERE COALESCE(delete_flagged,0)=0 GROUP BY strongs_number HAVING n>1"):
+            if base_strong(r[0]) in cand_strongs:
+                dupe += 1
+        self.add('B', 'I13 mti-uniqueness', 'PRECONDITION', GREEN if dupe==0 else AMBER,
+                 f"candidate strongs with >1 active mti_terms row = {dupe} "
+                 + ("(unique)" if dupe==0 else "(isolate duplicates: _apply_mti_dedup_active_duplicates_v1)"))
 
     # ---- §C seed sanity --------------------------------------------------
     def seed(self):

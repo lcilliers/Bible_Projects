@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T05:48:23Z",
+  "generated_at": "2026-07-13T05:56:07Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2184,
     "historical": 31,
-    "current": 2499,
+    "current": 2500,
     "archived": 2819,
     "cross-reference": 3419,
-    "backup": 23
+    "backup": 24
   },
-  "total_files": 10975,
-  "total_active": 8156,
+  "total_files": 10977,
+  "total_active": 8158,
   "total_archived": 2819,
   "files": [
     {
@@ -68771,8 +68771,8 @@
       "date": "2026-07-11",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 8938,
-      "modified": "2026-07-13T04:28:02Z"
+      "size_bytes": 10101,
+      "modified": "2026-07-13T05:55:31Z"
     },
     {
       "path": "Workflow/Instructions/wa-directive-instruction-v1_4-20260506.md",
@@ -113063,6 +113063,22 @@
       "modified": "2026-07-11T07:44:20Z"
     },
     {
+      "path": "backups/bible_research_pre-mti-dedup_20260713_065502.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794644480,
+      "modified": "2026-07-13T05:55:03Z"
+    },
+    {
       "path": "backups/bible_research_pre-proverbs-stage1_20260713_054715.db",
       "category": "backup",
       "type": "other",
@@ -113395,8 +113411,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794644480,
-      "modified": "2026-07-13T05:46:28Z"
+      "size_bytes": 794664960,
+      "modified": "2026-07-13T05:55:03Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113411,8 +113427,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4931959,
-      "modified": "2026-07-13T05:36:33Z"
+      "size_bytes": 4939114,
+      "modified": "2026-07-13T05:48:23Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138599,6 +138615,22 @@
       "modified": "2026-07-12T05:00:42Z"
     },
     {
+      "path": "scripts/_apply_mti_dedup_active_duplicates_v1_20260713.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3624,
+      "modified": "2026-07-13T05:54:35Z"
+    },
+    {
       "path": "scripts/_apply_passage_completeness_v1_20260707.py",
       "category": "script",
       "type": "other",
@@ -140131,8 +140163,8 @@
       "date": "2026-07-12",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 20330,
-      "modified": "2026-07-13T04:14:07Z"
+      "size_bytes": 21256,
+      "modified": "2026-07-13T05:55:47Z"
     },
     {
       "path": "scripts/_check_doc_versions.py",
