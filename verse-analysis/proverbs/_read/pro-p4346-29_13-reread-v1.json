@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 29,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4346 (Pro 29:13) — the poor and the oppressor meet together; the LORD gives light to the eyes of both.",
+ "spans": {
+  "308701": {
+   "gloss": "poor (rush)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shared humanity — the poor who meet the oppressor before one God"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the poor",
+     "to": 308701,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the poor man who meets the oppressor on common ground, both alike receiving the light of life from the LORD — a levelling truth that neither poverty nor oppression escapes the one God who gives them both their sight and breath"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the oppressor he meets (308702)",
+     "to": 308701,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the oppressor with whom he shares one God's light",
+     "to": 308702,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "rush (be poor) — 'the POOR man and the oppressor meet together; the LORD gives light to the eyes of both'; poor and oppressor share one Maker who gives both life (cf 22:2). The common gift of life levels them before God — and reminds the oppressor he is no less accountable."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "308702": {
+   "gloss": "oppressor (tok)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "shared accountability — the oppressor who owes his life to the same God as the poor"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the oppressor",
+     "to": 308702,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the oppressor who meets the poor on common ground, receiving the light of life from the same LORD — the one who grinds the poor yet depends on the God who also gives the poor their sight, and to whom he too must answer"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the poor he meets (308701)",
+     "to": 308702,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the poor with whom he shares one God's light",
+     "to": 308702,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "tok (oppression/oppressor) — 'the poor man and the OPPRESSOR meet together'; the oppressor shares the poor man's Maker and owes him his very sight. Emergent: the oppressor levelled with his victim before the God who gives both life — and judges both."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
