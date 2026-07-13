@@ -115,10 +115,10 @@ class Readiness:
         self.add('A', 'I5 Ledger completeness', 'READ-OUTPUT', INFO,
                  f"candidate spans carrying any active lexical = {read_spans}/{ncand} (baseline measures detail)")
 
-        # I6 role screen (PRECONDITION part): unroled candidates
+        # I6 role decidedness (READ-OUTPUT: role is assigned by the read, not pre-read)
         unroled = sum(1 for r in cand if r[3] is None)
-        self.add('A', 'I6 Role decidedness', 'PRECONDITION', GREEN if unroled==0 else AMBER,
-                 f"candidate spans with role=NULL (undecided) = {unroled} (God-bearer screen applies during read)")
+        self.add('A', 'I6 Role decidedness', 'READ-OUTPUT', INFO,
+                 f"candidate spans with role=NULL = {unroled} (role is assigned BY the read; not a pre-read defect)")
 
         # I7 char-model linkage (READ-OUTPUT)
         null_ibchar = sum(1 for r in cand if r[6] is None)
@@ -134,17 +134,38 @@ class Readiness:
                  f"active pairs with STRONG'S-encoded endpoints (must be span-ids) = {strong_ep}"
                  + ("" if strong_ep==0 else "  -> re-read must write integer span-id endpoints"))
 
-        # I10 candidate flag (PRECONDITION): role=characteristic without char_candidate=1
+        # I10 candidate/role relation (INFO: per rule 2.1 candidate and role MAY differ)
         i10 = self.q1("""SELECT COUNT(*) FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
                          WHERE v.book_id=? AND si.role='characteristic' AND COALESCE(si.char_candidate,0)<>1""", b)
-        self.add('A', 'I10 Candidate flag', 'PRECONDITION', GREEN if i10==0 else RED,
-                 f"role='characteristic' spans without char_candidate=1 = {i10}")
+        self.add('A', 'I10 Candidate/role relation', 'READ-OUTPUT', INFO,
+                 f"role='characteristic' spans not seed-flagged char_candidate = {i10} (candidate!=role is allowed; "
+                 f"emergent chars get stamped + seed-fed during the read)")
 
         # I11 char-on-master (READ-OUTPUT)
         i11 = self.q1("""SELECT COUNT(*) FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
                          WHERE v.book_id=? AND si.role='characteristic' AND (si.characteristic IS NULL OR si.characteristic='')""", b)
         self.add('A', 'I11 Char-on-master', 'READ-OUTPUT', INFO,
                  f"role='characteristic' spans with no characteristic word = {i11} (written BY the read)")
+
+        # D1 role backfill (PRECONDITION): active ve_lexical but role IS NULL
+        d1 = self.q1("""SELECT COUNT(DISTINCT si.id) FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
+                        JOIN ve_lexical x ON x.verse_span_id=si.id AND COALESCE(x.delete_flagged,0)=0
+                        WHERE v.book_id=? AND si.role IS NULL""", b)
+        self.add('A', 'D1 Role backfill', 'PRECONDITION', GREEN if d1==0 else RED,
+                 f"spans with an active ve_lexical but role IS NULL = {d1} (defect: back-fill role from the lexical)")
+
+        # D2 lexical only on characteristic (PRECONDITION at changeover)
+        d2 = self.q1("""SELECT COUNT(DISTINCT si.id) FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
+                        JOIN ve_lexical x ON x.verse_span_id=si.id AND COALESCE(x.delete_flagged,0)=0
+                        WHERE v.book_id=? AND (si.role IS NULL OR si.role<>'characteristic')""", b)
+        d2roles = self.c.execute("""SELECT COALESCE(si.role,'(null)') r, COUNT(DISTINCT si.id) n
+                        FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
+                        JOIN ve_lexical x ON x.verse_span_id=si.id AND COALESCE(x.delete_flagged,0)=0
+                        WHERE v.book_id=? AND (si.role IS NULL OR si.role<>'characteristic') GROUP BY r ORDER BY n DESC""", (b,)).fetchall()
+        self.add('A', 'D2 Lexical only on characteristic', 'PRECONDITION', GREEN if d2==0 else AMBER,
+                 f"non-characteristic spans carrying an active ve_lexical = {d2} "
+                 + ("(clean)" if d2==0 else "(old-model debt; changeover: read rebuilds characteristic-only, old lexicals soft-deleted) by role: "
+                    + ", ".join(f"{r[0]}={r[1]}" for r in d2roles)))
 
     def _span_has_no_lexical(self, span_id):
         return self.q1("SELECT COUNT(*) FROM ve_lexical WHERE verse_span_id=? AND COALESCE(delete_flagged,0)=0", span_id) == 0
@@ -186,9 +207,9 @@ class Readiness:
                  f"candidate spans={ncand}/{ntot} ({100*ncand//max(ntot,1)}%); role dist: " + ", ".join(f"{k}={v}" for k,v in rd.items()))
         self.add('C', 'Candidate tags present', 'PRECONDITION', GREEN if tag_null==0 else AMBER,
                  f"candidate spans with no char_candidate_tag = {tag_null}")
-        retired = rd.get('qualifier',0) + rd.get('process-qualifier',0)
-        self.add('C', 'Retired-role migration', 'PRECONDITION', GREEN if retired==0 else AMBER,
-                 f"stamped retired roles (qualifier/process-qualifier) still present = {retired} (live model = characteristic/standalone)")
+        # role mix is informational: qualifier/standalone are VALID roles (rule 2.1); role is read-assigned
+        self.add('C', 'Role mix (info)', 'READ-OUTPUT', INFO,
+                 f"roles present: {', '.join(f'{k}={v}' for k,v in rd.items())} (all of characteristic/qualifier/standalone are valid; assigned by the read)")
         # OT-DBR-009 proxy: candidate base-strongs missing from active mti_terms
         cand_strongs = {base_strong(r[0]) for r in self.c.execute(
             "SELECT DISTINCT si.primary_strong FROM verse_span_index si JOIN verse v ON v.id=si.verse_id WHERE v.book_id=? AND si.char_candidate=1", (b,))}

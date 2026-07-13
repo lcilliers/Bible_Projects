@@ -1,5 +1,7 @@
 # Proverbs readiness — repair plan + decision request (v1, 2026-07-12)
 
+> **RESOLVED 2026-07-12 (researcher):** decision = **registry path (i)** (existing-registry-first; new rarely). Role model corrected — `char_candidate` (seed) vs `role` (read-assigned) MAY differ; `qualifier` is VALID; defects are **D1** (lexical w/ null role → backfill) and **D2** (lexical only on `characteristic`). These are baked into the instruction §2 and the corrected runner. **Current verdict: `wa-proverbs-readiness-REPORT-v2-20260712.md`** (1 red I4, amber I2/D2/I8). True pre-read blockers = **I2 onboarding (~30 terms + 104 records)** and **I4 v2 passages**; D2/I8 are read-stage. The §1–§3 framing below is superseded by that; §4–§5 sequence stands. Next segment: the Stage-1 onboarding worklist.
+
 > The readiness assessment returned **NOT READY**. On drilling into each gap to repair it, **none is a clean mechanical fix** — every one either (a) hinges on the *register-terms-vs-relax-registry* architecture decision the 2026-07-11 session **put to the researcher and did not resolve** (`verse-analysis/psalms/_model/wa-evidence-261-orphans-18-passages-and-char-model-20260711.md`), (b) needs a **v2 candidate-driven passage builder that does not exist yet**, or (c) is a **stale label the re-read self-resolves**. So I stopped short of writing to the DB. This doc gives the precise blocker anatomy, my recommendation, and the decision I need to proceed. Read-only analysis; no DB changes made.
 
 ## 1. Why I did not auto-repair
