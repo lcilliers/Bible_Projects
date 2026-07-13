@@ -30,6 +30,13 @@ Run BEFORE starting the next cycle; scope to the cycle's passages (and cumulativ
 
 Full integrity **I1–I13** + the scored audit over a stratified book-wide sample + the G0–G10 measures (`_check_reread_measures_v3`), then the baseline→delta comparison (Proverbs baseline `wa-proverbs-reread-BASELINE-v2`). Book is "read" only when these pass.
 
+## Read scope — candidates PLUS old-model char-roles (seed-miss catch, learned cycle 1)
+
+The candidate-driven read is only as complete as the seed. **Old-model `role='characteristic'` spans that are NOT `char_candidate=1`** (provenance ≠ `read-2026`) are the signal of a **seed-missed char** — the seed never flagged it, so a candidate-only read skips it. Therefore:
+- The read of a passage covers its `char_candidate=1` spans **and** any old-model char-roled span in the same verses; the latter are **emergent** chars — read them, stamp `char_candidate=1`, feed the seed (cycle §4.4).
+- The **per-cycle conformance check must flag** any cycle-passage span with `role='characteristic'` and provenance ≠ `read-2026` (stale/old-model residue) → read it before the cycle closes. (Cycle 1: caught prudence/learning/greed, all central, seed-missed.)
+- The apply (`_apply_reread_lexical`) now writes `verse_span_index.characteristic` (I11) for characteristic spans (extended 2026-07-13).
+
 ## Governance
 
 - **Integrity-gated writes:** `_apply_reread_lexical` runs on a snapshot; the per-cycle conformance check is pre/post-comparable. Commit per cycle (incremental).
