@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 6,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3832 (Pro 6:33) — he will get wounds and dishonor; his disgrace will not be wiped away.",
+ "spans": {
+  "268264": {
+   "gloss": "dishonor (qalon)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dishonor — the shame the adulterer earns"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the adulterer",
+     "to": 268264,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the dishonour/shame that adultery brings upon the man"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "disgrace (its pair)",
+     "to": 268264,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to disgrace as the twin shame that clings",
+     "to": 268264,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "qalon (dishonour/shame) — 'wounds and qalon he will find'; the lasting shame of adultery, a wound that marks the person. Set against the thief's reparable case (6:31)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "268265": {
+   "gloss": "disgrace (cherpah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "disgrace — the reproach that is never wiped away"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the adulterer",
+     "to": 268265,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the reproach that clings to the adulterer, indelible, never erased"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "dishonor (its pair)",
+     "to": 268265,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to dishonour as the twin indelible shame",
+     "to": 268264,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "cherpah (reproach/disgrace) — 'his cherpah will NOT be wiped away'; the permanence of the shame. Where theft can be repaid, adultery leaves an ineradicable reproach. The read stresses the indelibility."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
