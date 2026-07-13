@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T04:16:26Z",
+  "generated_at": "2026-07-13T04:20:30Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 2182,
+    "other": 2183,
     "historical": 31,
     "current": 2446,
     "archived": 2819,
     "cross-reference": 3398,
     "backup": 102
   },
-  "total_files": 10978,
-  "total_active": 8159,
+  "total_files": 10979,
+  "total_active": 8160,
   "total_archived": 2819,
   "files": [
     {
@@ -114339,8 +114339,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4939028,
-      "modified": "2026-07-13T03:57:26Z"
+      "size_bytes": 4939477,
+      "modified": "2026-07-13T04:16:26Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -157445,6 +157445,22 @@
       "archived": false,
       "size_bytes": 3899,
       "modified": "2026-07-12T05:00:50Z"
+    },
+    {
+      "path": "verse-analysis/proverbs/_reread/wa-proverbs-stage1-onboarding-worklist-v1-20260712.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-07-12",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5077,
+      "modified": "2026-07-13T04:20:17Z"
     },
     {
       "path": "verse-analysis/proverbs/_roles/pro001-roles.json",
