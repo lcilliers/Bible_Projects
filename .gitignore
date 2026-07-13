@@ -143,6 +143,8 @@ outputs/cc/cc_packets.md.map
 outputs/cc/cc_output.md
 
 # Verse-span-lexical master index (large ~237MB, regenerable from _build_verse_span_lexical_index_*.py; kept on disk + NAS-mirrored)
+# recursive: covers outputs/ root AND outputs/archive/ (a copy landed there in the 20260709 filing move and blocked pushes until purged 20260713)
+outputs/**/wa-verse-span-lexical-index-*.json
 outputs/wa-verse-span-lexical-index-*.json
 
 # VE-lexical AI extracts (regenerable, large)
