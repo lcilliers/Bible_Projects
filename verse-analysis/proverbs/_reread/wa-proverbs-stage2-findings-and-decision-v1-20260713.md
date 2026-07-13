@@ -50,3 +50,14 @@ After root-fix A (morphology-anchored full-variant pull), the 4 terms were broug
 - **Follow-up (systematic, not one-off):** the `mti_terms` uniqueness/dedup (OT-DBR-009) is a separate programme-wide fix — do NOT one-off-clean H7307.
 
 **Readiness now:** I2 amber (2 deferred) · I4 red (Pro 22:27, needs the v2 passage builder = Stage 3) · D2 amber (read-stage). Remaining to READY: (1) researcher decision on the 2 deferred IB-borderline terms; (2) Stage 3 v2 passages.
+
+---
+
+## The 2 deferred terms — resolved (researcher I2 rule, 2026-07-13)
+
+Rule: *if the term's verse has no candidate characteristics AND the span has no supporting/qualifying role for adjacent candidate-bearing verses → delete; else keep and process when the verses are read.*
+
+- **H3856 (*madman*, Pro 26:18)** → **DELETED (candidacy cleared).** role=standalone; 0 other candidate chars in the verse; part of the 26:18–19 "madman/deceiver" simile (26:19 has no candidate); adjacent candidate verse 26:17 is an unrelated proverb. Not an inner-being operation. (Seed-inventory follow-up: the madman-sense H3856B should be reviewed out of the IB seed so a re-stamp doesn't re-introduce it — root, not one-off.)
+- **H7189B (*qoshet*/true, Pro 22:21)** → **KEPT + onboarded** (to worship, allocation-ignored; 2 verse-records). The verse HAS a candidate characteristic — "know" (H3045, role=characteristic) — so *qoshet* is kept for the read to judge (likely a qualifier of "know").
+
+**Result: I2 = 0/2123.** Proverbs term/verse foundation complete: every candidate has a term + verse-record; I1 clean; I13 mti-unique; master complete. **Only remaining readiness red = I4 (Pro 22:27) → Stage 3 (v2 passage builder).**

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T05:56:07Z",
+  "generated_at": "2026-07-13T06:04:13Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2184,
     "historical": 31,
-    "current": 2500,
+    "current": 2501,
     "archived": 2819,
-    "cross-reference": 3419,
-    "backup": 24
+    "cross-reference": 3420,
+    "backup": 27
   },
-  "total_files": 10977,
-  "total_active": 8158,
+  "total_files": 10982,
+  "total_active": 8163,
   "total_archived": 2819,
   "files": [
     {
@@ -16821,6 +16821,22 @@
       "archived": false,
       "size_bytes": 2170839,
       "modified": "2026-04-04T06:44:13Z"
+    },
+    {
+      "path": "Sessions/Session_A/STEP Extracts/worship_176_full_20260713_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 176,
+      "word": "worship",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 2529665,
+      "modified": "2026-07-13T06:03:26Z"
     },
     {
       "path": "Sessions/Session_A/STEP Extracts/worth_177_full_20260405_v1.json",
@@ -112951,6 +112967,22 @@
       "modified": "2026-07-13T05:46:26Z"
     },
     {
+      "path": "backups/bible_research_20260713_060327_AUDIT_WORD-reg176_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 176,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794664960,
+      "modified": "2026-07-13T06:03:26Z"
+    },
+    {
       "path": "backups/bible_research_KEEP-RESET-baseline-changeover_20260625.db",
       "category": "backup",
       "type": "other",
@@ -113031,6 +113063,22 @@
       "modified": "2026-07-13T05:44:52Z"
     },
     {
+      "path": "backups/bible_research_backup_20260713_060326_AUDIT_WORD-reg176.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 176,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794664960,
+      "modified": "2026-07-13T06:03:23Z"
+    },
+    {
       "path": "backups/bible_research_pre-canon-coverage-pilot_20260628.db",
       "category": "backup",
       "type": "other",
@@ -113061,6 +113109,22 @@
       "archived": false,
       "size_bytes": 789135360,
       "modified": "2026-07-11T07:44:20Z"
+    },
+    {
+      "path": "backups/bible_research_pre-deferred2_20260713_070322.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794664960,
+      "modified": "2026-07-13T06:03:23Z"
     },
     {
       "path": "backups/bible_research_pre-mti-dedup_20260713_065502.db",
@@ -113411,8 +113475,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794664960,
-      "modified": "2026-07-13T05:55:03Z"
+      "size_bytes": 794689536,
+      "modified": "2026-07-13T06:03:27Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113427,8 +113491,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4939114,
-      "modified": "2026-07-13T05:48:23Z"
+      "size_bytes": 4939987,
+      "modified": "2026-07-13T05:56:07Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -118035,8 +118099,8 @@
       "date": null,
       "ext": ".jsonl",
       "archived": false,
-      "size_bytes": 24420,
-      "modified": "2026-07-13T05:46:28Z"
+      "size_bytes": 24672,
+      "modified": "2026-07-13T06:03:28Z"
     },
     {
       "path": "outputs/integrity/onboard_catchup_vcids.txt",
@@ -118051,8 +118115,8 @@
       "date": null,
       "ext": ".txt",
       "archived": false,
-      "size_bytes": 1211,
-      "modified": "2026-07-13T05:46:28Z"
+      "size_bytes": 1295,
+      "modified": "2026-07-13T06:03:27Z"
     },
     {
       "path": "outputs/integrity/prov_ambig_plan.json",
@@ -128839,6 +128903,22 @@
       "modified": "2026-07-12T05:02:56Z"
     },
     {
+      "path": "research/discovery/176_worship_addterms_curated.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 176,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 7386,
+      "modified": "2026-07-13T06:03:25Z"
+    },
+    {
       "path": "research/discovery/176_worship_step_data_20260328.json",
       "category": "discovery",
       "type": "discovery-json",
@@ -128883,8 +128963,8 @@
       "date": "2026-07-13",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 20635,
-      "modified": "2026-07-13T04:44:31Z"
+      "size_bytes": 18417,
+      "modified": "2026-07-13T06:03:25Z"
     },
     {
       "path": "research/discovery/176_worship_step_data_20260713.md",
@@ -128899,8 +128979,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 949,
-      "modified": "2026-07-13T04:44:31Z"
+      "size_bytes": 832,
+      "modified": "2026-07-13T06:03:25Z"
     },
     {
       "path": "research/discovery/177_worth_addterms_curated.json",
@@ -157427,8 +157507,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6640,
-      "modified": "2026-07-13T05:48:22Z"
+      "size_bytes": 7873,
+      "modified": "2026-07-13T06:04:12Z"
     },
     {
       "path": "verse-analysis/proverbs/_roles/pro001-roles.json",
