@@ -36,3 +36,17 @@ The homes must be **corrected first**, then `audit_word` builds records against 
 Give the homing decisions (1–4 + the 2 deferrals). Then per term: fix the home/gloss (or dedup H7999) → `audit_word --registry=<corrected>` to build records → re-check I2 → **0** (or the confirmed drops). Then Stage 3 (v2 passage builder) → readiness READY → Stage 4 read.
 
 *Filed 2026-07-13. Read-only analysis; no DB writes in Stage 2. Blocks I2-closure until the homes are decided.*
+
+---
+
+## RESULT (2026-07-13) — bring-through executed via the fixed extractor
+
+After root-fix A (morphology-anchored full-variant pull), the 4 terms were brought through via `audit_word --add-terms` (targeted, not full re-audits): H3001/shame, H6424/envy, H7307/anger (ruach, RESOLVE→H7307G, full-variant verses), H7999/peace (A+B). **I2: 35 → 2** (only the 2 deferred borderline terms H3856, H7189 remain).
+
+**Re-check for new exceptions (researcher ask):**
+- **Stage-1 terms intact** (peace H8367/H4832/H7500 records untouched — `--add-terms` is isolated).
+- **I1 referential clean** (0 dangling) — additions broke no FK.
+- **`mti_terms` duplication is PRE-EXISTING (OT-DBR-009), not from this run** — 45 Proverbs candidate base-strongs already carry >1 active row (H5315=8, H7965=6, H8085=6…). The bring-through added ~1 (H7307 base + H7307G). A marginal addition to a large existing condition, not a new class.
+- **Follow-up (systematic, not one-off):** the `mti_terms` uniqueness/dedup (OT-DBR-009) is a separate programme-wide fix — do NOT one-off-clean H7307.
+
+**Readiness now:** I2 amber (2 deferred) · I4 red (Pro 22:27, needs the v2 passage builder = Stage 3) · D2 amber (read-stage). Remaining to READY: (1) researcher decision on the 2 deferred IB-borderline terms; (2) Stage 3 v2 passages.

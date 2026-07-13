@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T05:36:33Z",
+  "generated_at": "2026-07-13T05:48:23Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2184,
     "historical": 31,
-    "current": 2496,
+    "current": 2499,
     "archived": 2819,
-    "cross-reference": 3415,
-    "backup": 14
+    "cross-reference": 3419,
+    "backup": 23
   },
-  "total_files": 10959,
-  "total_active": 8140,
+  "total_files": 10975,
+  "total_active": 8156,
   "total_archived": 2819,
   "files": [
     {
@@ -12423,6 +12423,22 @@
       "modified": "2026-03-30T19:33:47Z"
     },
     {
+      "path": "Sessions/Session_A/STEP Extracts/anger_4_full_20260713_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 4,
+      "word": "anger",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 8638941,
+      "modified": "2026-07-13T05:44:51Z"
+    },
+    {
       "path": "Sessions/Session_A/STEP Extracts/anguish_5_full_20260330_v1.json",
       "category": "session",
       "type": "other",
@@ -13701,6 +13717,22 @@
       "archived": false,
       "size_bytes": 705463,
       "modified": "2026-04-01T03:14:50Z"
+    },
+    {
+      "path": "Sessions/Session_A/STEP Extracts/envy_56_full_20260713_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 56,
+      "word": "envy",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 798892,
+      "modified": "2026-07-13T05:44:04Z"
     },
     {
       "path": "Sessions/Session_A/STEP Extracts/evil_57_full_20260401_v1.json",
@@ -15031,6 +15063,22 @@
       "modified": "2026-07-13T04:48:58Z"
     },
     {
+      "path": "Sessions/Session_A/STEP Extracts/peace_117_full_20260713_v2.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 117,
+      "word": "peace",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 7328541,
+      "modified": "2026-07-13T05:46:27Z"
+    },
+    {
       "path": "Sessions/Session_A/STEP Extracts/perverseness_120_full_20260402_v1.json",
       "category": "session",
       "type": "other",
@@ -15765,6 +15813,22 @@
       "archived": false,
       "size_bytes": 1704973,
       "modified": "2026-07-06T16:38:36Z"
+    },
+    {
+      "path": "Sessions/Session_A/STEP Extracts/shame_146_full_20260713_v1.json",
+      "category": "session",
+      "type": "other",
+      "currency": "cross-reference",
+      "registry": 146,
+      "word": "shame",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 1821138,
+      "modified": "2026-07-13T05:43:08Z"
     },
     {
       "path": "Sessions/Session_A/STEP Extracts/sin_147_full_20260403_v1.json",
@@ -112823,6 +112887,70 @@
       "modified": "2026-07-13T04:50:09Z"
     },
     {
+      "path": "backups/bible_research_20260713_054308_AUDIT_WORD-reg146_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 146,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794157056,
+      "modified": "2026-07-13T05:43:07Z"
+    },
+    {
+      "path": "backups/bible_research_20260713_054404_AUDIT_WORD-reg56_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794177536,
+      "modified": "2026-07-13T05:44:04Z"
+    },
+    {
+      "path": "backups/bible_research_20260713_054451_AUDIT_WORD-reg4_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794390528,
+      "modified": "2026-07-13T05:44:51Z"
+    },
+    {
+      "path": "backups/bible_research_20260713_054627_AUDIT_WORD-reg117_post.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 117,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794624000,
+      "modified": "2026-07-13T05:46:26Z"
+    },
+    {
       "path": "backups/bible_research_KEEP-RESET-baseline-changeover_20260625.db",
       "category": "backup",
       "type": "other",
@@ -112837,6 +112965,70 @@
       "archived": false,
       "size_bytes": 522133504,
       "modified": "2026-06-25T06:09:30Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260713_054307_AUDIT_WORD-reg146.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 146,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794124288,
+      "modified": "2026-07-13T04:50:10Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260713_054403_AUDIT_WORD-reg56.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794165248,
+      "modified": "2026-07-13T05:43:09Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260713_054450_AUDIT_WORD-reg4.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794181632,
+      "modified": "2026-07-13T05:44:05Z"
+    },
+    {
+      "path": "backups/bible_research_backup_20260713_054626_AUDIT_WORD-reg117.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": 117,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794464256,
+      "modified": "2026-07-13T05:44:52Z"
     },
     {
       "path": "backups/bible_research_pre-canon-coverage-pilot_20260628.db",
@@ -112933,6 +113125,22 @@
       "archived": false,
       "size_bytes": 522133504,
       "modified": "2026-06-26T05:55:25Z"
+    },
+    {
+      "path": "backups/bible_research_pre-stage2-bringthrough_20260713_064302.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794124288,
+      "modified": "2026-07-13T05:43:03Z"
     },
     {
       "path": "backups/bible_research_prereread_Psa_ch4_20260709063134.db",
@@ -113187,8 +113395,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794124288,
-      "modified": "2026-07-13T04:50:10Z"
+      "size_bytes": 794644480,
+      "modified": "2026-07-13T05:46:28Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113203,8 +113411,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4931531,
-      "modified": "2026-07-13T05:12:15Z"
+      "size_bytes": 4931959,
+      "modified": "2026-07-13T05:36:33Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -117811,8 +118019,8 @@
       "date": null,
       "ext": ".jsonl",
       "archived": false,
-      "size_bytes": 23383,
-      "modified": "2026-07-13T04:50:10Z"
+      "size_bytes": 24420,
+      "modified": "2026-07-13T05:46:28Z"
     },
     {
       "path": "outputs/integrity/onboard_catchup_vcids.txt",
@@ -117827,8 +118035,8 @@
       "date": null,
       "ext": ".txt",
       "archived": false,
-      "size_bytes": 287,
-      "modified": "2026-07-13T04:50:10Z"
+      "size_bytes": 1211,
+      "modified": "2026-07-13T05:46:28Z"
     },
     {
       "path": "outputs/integrity/prov_ambig_plan.json",
@@ -121047,6 +121255,22 @@
       "modified": "2026-07-12T05:02:56Z"
     },
     {
+      "path": "research/discovery/004_anger_addterms_curated.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 4,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": null,
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 607574,
+      "modified": "2026-07-13T05:44:49Z"
+    },
+    {
       "path": "research/discovery/004_anger_step_data_20260323.md",
       "category": "discovery",
       "type": "discovery-summary",
@@ -121093,6 +121317,38 @@
       "archived": false,
       "size_bytes": 16767,
       "modified": "2026-07-12T05:02:56Z"
+    },
+    {
+      "path": "research/discovery/004_anger_step_data_20260713.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "currency": "current",
+      "registry": 4,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 2681511,
+      "modified": "2026-07-13T05:44:49Z"
+    },
+    {
+      "path": "research/discovery/004_anger_step_data_20260713.md",
+      "category": "discovery",
+      "type": "discovery-summary",
+      "currency": "current",
+      "registry": 4,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1283,
+      "modified": "2026-07-13T05:44:49Z"
     },
     {
       "path": "research/discovery/005_anguish_addterms_curated.json",
@@ -123252,7 +123508,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 12648,
-      "modified": "2026-07-13T05:04:11Z"
+      "modified": "2026-07-13T05:44:03Z"
     },
     {
       "path": "research/discovery/056_envy_step_data_20260325.json",
@@ -123300,7 +123556,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 21476,
-      "modified": "2026-07-13T05:04:11Z"
+      "modified": "2026-07-13T05:44:02Z"
     },
     {
       "path": "research/discovery/056_envy_step_data_20260713.md",
@@ -123316,7 +123572,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 852,
-      "modified": "2026-07-13T05:04:11Z"
+      "modified": "2026-07-13T05:44:02Z"
     },
     {
       "path": "research/discovery/057_evil_addterms_curated.json",
@@ -125715,8 +125971,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 41555,
-      "modified": "2026-07-13T04:48:53Z"
+      "size_bytes": 381037,
+      "modified": "2026-07-13T05:46:25Z"
     },
     {
       "path": "research/discovery/117_peace_step_data_20260325.json",
@@ -125827,8 +126083,8 @@
       "date": "2026-07-13",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 1125881,
-      "modified": "2026-07-13T05:04:21Z"
+      "size_bytes": 3204897,
+      "modified": "2026-07-13T05:46:25Z"
     },
     {
       "path": "research/discovery/117_peace_step_data_20260713.md",
@@ -125843,8 +126099,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 8764,
-      "modified": "2026-07-13T05:04:21Z"
+      "size_bytes": 8775,
+      "modified": "2026-07-13T05:46:25Z"
     },
     {
       "path": "research/discovery/120_perverseness_addterms_curated.json",
@@ -127092,7 +127348,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 95259,
-      "modified": "2026-07-13T05:02:35Z"
+      "modified": "2026-07-13T05:43:06Z"
     },
     {
       "path": "research/discovery/146_shame_step_data_20260325.json",
@@ -127171,8 +127427,8 @@
       "date": "2026-07-13",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 178307,
-      "modified": "2026-07-13T05:02:34Z"
+      "size_bytes": 192840,
+      "modified": "2026-07-13T05:43:06Z"
     },
     {
       "path": "research/discovery/146_shame_step_data_20260713.md",
@@ -127188,7 +127444,7 @@
       "ext": ".md",
       "archived": false,
       "size_bytes": 1293,
-      "modified": "2026-07-13T05:02:34Z"
+      "modified": "2026-07-13T05:43:06Z"
     },
     {
       "path": "research/discovery/147_sin_step_data_20260328.json",
@@ -157139,8 +157395,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5319,
-      "modified": "2026-07-13T05:01:25Z"
+      "size_bytes": 6640,
+      "modified": "2026-07-13T05:48:22Z"
     },
     {
       "path": "verse-analysis/proverbs/_roles/pro001-roles.json",
