@@ -40,3 +40,11 @@ Do not guess, make assumptions, or offer unsolicited opinions.
 ## PowerShell / Terminal Protocol
 
 It is not necessary to ask for permission before running PowerShell or terminal commands to read system state or execute approved work. Commands that modify the database or codebase should still be consistent with approved tasks.
+
+## Root Fix, Not One-Off (researcher direction 2026-07-13)
+
+Fix the **cause**, not the instance. A one-off / per-term / per-book / per-file patch is **rarely appropriate, and NEVER appropriate when the problem may recur.** When a defect is an instance of a class (a shared method, an extractor, a pipeline step is wrong), fix it at the shared mechanism so every future case is correct — do not remediate case-by-case and leave the mechanism broken. If you catch yourself hand-patching one case of a recurring problem, stop and fix the root. (Worked example: the STEP multi-variant verse drop was fixed in `word_study_extract`, not patched per Proverbs term.)
+
+## Bake Guidance into the Authoritative Instructions
+
+Researcher guidance, rules, decisions, and corrective actions must be written into the **authoritative instruction docs** (`Workflow/Instructions/`), not only into memory or a findings file — the written authoritative record is the source of truth (GR-REF-002). Add a dated amendment to the owning doc, then mirror a pointer in memory.

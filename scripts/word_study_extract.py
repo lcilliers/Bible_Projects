@@ -460,19 +460,71 @@ def apply_filters(
 
 # ── Phase 5: Verse fetching + span filter ──────────────────────────────────
 
+def _morphology_variant_codes(conn, code: str) -> list[str]:
+    """The STEP code-variants a Strong's spans, identified THROUGH THE MORPHOLOGY
+    (researcher direction 2026-07-13). STEP splits some Strong's across lettered
+    sub-codes (e.g. ruach H7307 -> H7307G/H/J; base = 0); resolving to a single code
+    silently drops the siblings' verses. The master (`verse_span_index`) tags every
+    occurrence's exact variant, so it is the authority for which variants to pull.
+    Returns the sorted variant codes for `code`'s base, or [code] if none / no DB."""
+    m = re.match(r"([HG]\d+)", code or "")
+    if not m or conn is None:
+        return [code]
+    base = m.group(1)
+    codes: set[str] = set()
+    try:
+        for (strongs,) in conn.execute(
+            "SELECT DISTINCT strongs FROM verse_span_index "
+            "WHERE primary_strong = ? OR primary_strong LIKE ?",
+            (base, base + "%"),
+        ):
+            for tok in (strongs or "").split():
+                mm = re.match(r"([HG]\d+)", tok)
+                if mm and mm.group(1) == base:
+                    codes.add(tok)
+    except Exception:
+        return [code]
+    return sorted(codes) if codes else [code]
+
+
 def fetch_verses(
     client:        StepClient,
     terms:         list[dict],
     terms_by_code: dict[str, dict],
+    conn=None,
 ) -> None:
-    """Fetch verses and apply span filter for every included term (in-place)."""
+    """Fetch verses and apply span filter for every included term (in-place).
+
+    Morphology-anchored, full-variant (root fix 2026-07-13): each term is pulled
+    across ALL the STEP variant codes the master attests for its Strong's (union,
+    dedup by osisId), not just the single resolved code — otherwise sibling
+    sub-codes' verses (whole books) are silently dropped. See
+    `wa-term-add-update-AUTHORITATIVE-pipeline-v1` (STEP-2 amendment)."""
     for t in terms:
         if t["action"] != "include":
             continue
 
         code = t["code"]
-        p(f"  [{code}] Fetching verses...")
-        records, html_map = client.get_verse_records_with_html(code)
+        variant_codes = _morphology_variant_codes(conn, code)
+        if variant_codes != [code]:
+            p(f"  [{code}] morphology variants: {variant_codes}")
+
+        # Union the pull across every morphology-attested variant (dedup by osisId).
+        records: list[dict] = []
+        html_map: dict[str, str] = {}
+        pulled_under: dict[str, str] = {}
+        seen: set[str] = set()
+        for vc in variant_codes:
+            p(f"  [{vc}] Fetching verses...")
+            recs, hm = client.get_verse_records_with_html(vc)
+            html_map.update(hm)
+            for rec in recs:
+                oid = rec["osisId"]
+                if oid in seen:
+                    continue
+                seen.add(oid)
+                records.append(rec)
+                pulled_under[oid] = vc
 
         t["verses_fetched"] = True
         t["verse_count"]    = len(records)
@@ -482,6 +534,7 @@ def fetch_verses(
         for rec in records:
             osis_id = rec["osisId"]
             html    = html_map.get(osis_id, "")
+            code    = pulled_under.get(osis_id, t["code"])  # variant this verse came from
 
             span_result  = apply_span_filter(html, code)
             target_word  = span_result["target_word"] or rec.get("target_word", "")
@@ -520,12 +573,12 @@ def fetch_verses(
         if t["verse_count"] == 0:
             t["data_quality_flags"].append("NO_VERSES")
             t["quality_flag_detail"]["NO_VERSES"] = (
-                f"No verses returned by STEP for {code} despite inclusion in cluster."
+                f"No verses returned by STEP for {t['code']} despite inclusion in cluster."
             )
         elif verse_list and all(v["span_strong_match"] == 0 for v in verse_list):
             t["data_quality_flags"].append("SPAN_RESOLUTION_CONFLICT")
             t["quality_flag_detail"]["SPAN_RESOLUTION_CONFLICT"] = (
-                f"All {len(verse_list)} verses for {code} have span_strong_match=0. "
+                f"All {len(verse_list)} verses for {t['code']} have span_strong_match=0. "
                 "Possible false positives from STEP search."
             )
 
@@ -712,7 +765,7 @@ def main() -> None:
 
     # ── Phase 5: Fetch verses for included terms ──────────────────────────
     p("=== Phase 5: Fetching verses (included terms only) ===")
-    fetch_verses(client, terms, terms_by_code)
+    fetch_verses(client, terms, terms_by_code, conn=_db_connect())
     p()
 
     # ── Phase 6: Build output and write files ─────────────────────────────

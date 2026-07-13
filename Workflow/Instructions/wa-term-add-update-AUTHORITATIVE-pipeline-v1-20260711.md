@@ -47,6 +47,14 @@ python scripts/word_study_extract.py --word "<english word>" [--anchors H1234,G5
 - Requires the STEP server up (`http://localhost:8989`).
 - **Shortcut:** `audit_word --fetch-step [--anchors …]` auto-runs this extract, folding STEP 2 into STEP 3.
 
+### ⚠ EXTRACTION MUST BE MORPHOLOGY-ANCHORED, FULL-VARIANT (researcher direction 2026-07-13)
+STEP splits some Strong's across **lettered sub-codes** (e.g. *ruach* H7307 → H7307**G/H/J**; base H7307 = 0), and single-code resolution (`_resolved_strong` → `vocabInfos[0]`) **silently drops the sibling codes' verses** — including whole books (the cause of missing verse-records). The extraction **must**:
+1. **Identify the variant(s) through the morphology** — the STEP codes the master (`verse_span_index`) actually tags for that Strong's (the double-control: morphology finds the variants, the verse-check finds what's missing);
+2. **do a full STEP pull for the Strong's across all those variants** (union, dedup by `osisId`), with morphology;
+3. **diff against what the DB already has** → the previously-missed verses; **bring them through** (via `audit_word`).
+
+This is a **root fix in the extractor** (`word_study_extract.fetch_verses` unions the morphology-attested variants), **not** a per-term patch — see the root-fix rule in Governance. `get_verse_records_with_html` preserves an exact variant code, so the union is a loop over the master's variant codes.
+
 ### ⚠ TRIAGE GATE (mandatory before the live audit) — do not skip
 The extract's `include_codes` carry **STEP related-number noise** — STEP pulls homonyms/relatedNos that are NOT the intended term (e.g. onboarding `perek` H6531 also pulled the `H6532` "curtain" homonym). **Curate the extract's terms array down to the intended Strong's BEFORE the live write**, or `audit_word` onboards junk. Curate the `terms` ARRAY (memory `project_engine_onboard_curate_terms_array`). Dry-run first; run the integrity snapshot/compare gate.
 
@@ -97,6 +105,7 @@ Just STEP 2 then STEP 3 (`audit_word --registry=N`). The engine's gap report ins
 - `mti_terms.status` is not NULL (A6b ran).
 
 ## Governance
+- **ROOT FIX, NOT ONE-OFF (researcher direction 2026-07-13).** Fix the *cause*, not the instance. A one-off / per-term / per-book patch is **rarely appropriate, and NEVER appropriate when the problem may recur** — a class of bug (e.g. the STEP multi-variant drop) is fixed in the shared extractor so **every** future term/book is correct, not remediated case-by-case. If you find yourself hand-patching one term's data, stop and fix the mechanism.
 - **Integrity-gated:** `audit_word` runs its own pre/post backup in live mode. Do not disable.
 - **Per word / per registry.** No cross-book, no cross-word bulk hand-edits.
 - **A term without a registry home cannot be onboarded** — decide its registry word first (Step 1), then Steps 2–3.

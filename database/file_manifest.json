@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T05:12:14Z",
+  "generated_at": "2026-07-13T05:36:33Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2184,
     "historical": 31,
-    "current": 2495,
+    "current": 2496,
     "archived": 2819,
     "cross-reference": 3415,
     "backup": 14
   },
-  "total_files": 10958,
-  "total_active": 8139,
+  "total_files": 10959,
+  "total_active": 8140,
   "total_archived": 2819,
   "files": [
     {
@@ -68851,8 +68851,8 @@
       "date": "2026-07-11",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 11682,
-      "modified": "2026-07-13T05:01:00Z"
+      "size_bytes": 13310,
+      "modified": "2026-07-13T05:32:21Z"
     },
     {
       "path": "Workflow/Instructions/wa-two-narrative-rollout-method-v1-20260712.md",
@@ -113203,8 +113203,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4928429,
-      "modified": "2026-07-13T05:01:50Z"
+      "size_bytes": 4931531,
+      "modified": "2026-07-13T05:12:15Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -113443,8 +113443,8 @@
       "date": null,
       "ext": ".md",
       "archived": false,
-      "size_bytes": 1902,
-      "modified": "2026-07-12T05:02:56Z"
+      "size_bytes": 2965,
+      "modified": "2026-07-13T05:32:52Z"
     },
     {
       "path": "docs/pipeline_decisions_20260323.md",
@@ -141255,6 +141255,22 @@
       "modified": "2026-07-12T05:02:57Z"
     },
     {
+      "path": "scripts/_repair_step_missing_verses_v1_20260713.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 6418,
+      "modified": "2026-07-13T05:21:46Z"
+    },
+    {
       "path": "scripts/_reread_finish_v1_20260709.py",
       "category": "script",
       "type": "other",
@@ -143491,8 +143507,8 @@
       "date": null,
       "ext": ".py",
       "archived": false,
-      "size_bytes": 31054,
-      "modified": "2026-07-12T05:02:57Z"
+      "size_bytes": 33499,
+      "modified": "2026-07-13T05:34:31Z"
     },
     {
       "path": "tasks.md",
