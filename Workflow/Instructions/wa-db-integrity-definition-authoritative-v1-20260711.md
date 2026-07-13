@@ -35,3 +35,19 @@
 - **OUTSTANDING (repair pending):** **I2 = 261** master-index orphans — characteristic spans whose word is not a registered term (192) or whose verse-record was never built (69); repaired via **engine onboarding (step d)**, per passage-rule-v2's own invariant. I1/I3 depend on I2 being closed.
 
 *Filed 2026-07-11. Updated same day (M66) to make I7 enforceable and add I10/I11. Authoritative for what "DB integrity" means. Subordinate only to the researcher's direction.*
+
+---
+
+## AMENDMENT 2026-07-12 (researcher direction) — the char_candidate/role/lexical model + I12 role–lexical coherence
+
+**The two master fields (clarified — they are distinct and set at different stages).** `char_candidate` (+`char_candidate_tag`) is the **seed's *potential*-candidate flag** (Axis-A / lemma, corpus-wide; **left blank** where not seeded). `role` is the **actual role**, assigned **BY the lexical read** (cycle §5): one of `characteristic | qualifier | standalone | undecided`. **The two MAY differ** — a seeded candidate may read as `standalone`; a span not seeded may read as a characteristic (emergent → stamped + fed to the seed extension).
+
+**New invariant — I12 Role–lexical coherence** (a defect either clause fails):
+- **D1 — role backfill.** An active `ve_lexical` on a span with `role IS NULL` is a **defect**: the lexical determines the role, so **back-fill `role` from the lexical**. Check: `active ve_lexical AND role IS NULL = 0`.
+- **D2 — lexical only on characteristics.** There must be **no active `ve_lexical` for a span whose `role` is not `characteristic`.** Qualifiers are captured as pair endpoints *within* a characteristic's lexical (§6); `standalone`/`undecided` carry none. Check: `active ve_lexical AND role <> 'characteristic' = 0`. *(Tooling: the re-read apply-path / `_reread_ledger_lib` must write lexicals for `characteristic` spans only.)*
+
+**Clarifications to existing invariants:**
+- **I6** — `qualifier` is a **fully VALID** role (NOT retired). The clause "unroled candidates = 0" is **withdrawn as a pre-read requirement**: role is assigned **by the read**, so a candidate with `role IS NULL` before its verse is read is normal, not a violation. The God-bearer screen stands.
+- **I10** is **directional**: every `role=characteristic` must have been a candidate (emergent chars are stamped + seed-fed). The **converse does not hold** — a candidate need not become a characteristic (`char_candidate ≠ role`, per I12).
+
+**"Integrity-clean" now means all of I1–I12 pass.**

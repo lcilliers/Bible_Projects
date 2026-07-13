@@ -37,14 +37,16 @@ Registry taken from the seed `char_candidate_tag` (23) or my existing-registry p
 | H8367 | ceases | 1 | peace (117) | *pick* (quieting of strife) |
 | H3856 | madman | 1 | despair (44) | *pick, SOFT* — H3856 languish/rage; despair is nearest existing (flag for review) |
 
-## B. Terms needing a NEW registry (the rare case) — 1
+## B. Healing — folded into an existing registry (researcher direction 2026-07-12)
 
-| strong | surface(s) | spans | proposal | note |
+Healing is **not substantive enough for a new registry** → folded into the **best-fit existing registry: `peace` (117)** (*marpe* = healing/**soundness**/health; shalom = wholeness/welfare/soundness — the nearest existing sense; "a sound heart is life to the body").
+
+| strong | surface(s) | spans | → registry (id) | source |
 |---|---|--:|---|---|
-| H4832 marpe | healing/health | 8 | **new registry "healing"** | no existing registry fits (searched heal/health/restore/cure/life) |
-| H7500 riphuth | healing | 1 | **new registry "healing"** | pairs with H4832 |
+| H4832 marpe | healing/health | 8 | peace (117) | *fold (best-fit)* |
+| H7500 riphuth | healing | 1 | peace (117) | *fold (best-fit)* |
 
-**Flag for researcher nod:** "healing" (marpe/riphuth — *"a gentle tongue is a tree of life", "healing to the flesh"*) is a recurring Proverbs inner-being effect with **no existing registry**. Per the selection rule this is the sanctioned rare "new registry of your choice" case. It is also borderline (physical health vs inner-being effect). **Two options:** (i) create a new `healing` registry (9 spans), or (ii) fold into the closest existing family instead — but none surfaced. I recommend (i) but hold it as the one item needing your confirmation before I create a new study-vocabulary word.
+**All 30 terms now map to an existing registry. No new registry created.**
 
 ## C. Execution plan (Stage 1 → 2 → 3)
 
@@ -54,11 +56,8 @@ Registry taken from the seed `char_candidate_tag` (23) or my existing-registry p
 4. **Stage 3 — v2 candidate-driven passages** — write/extend the v2 passage builder (v1 is misaligned), build Proverbs passages, fix I4 (Pro 22:27 +). Re-run readiness → expect READY.
 5. Then **Stage 4** the lexical read (with `_reread_ledger_lib` made D2-conformant).
 
-## D. What needs a nod before I go live
+## D. Status — cleared to execute
 
-- **Registry-selection review** (optional): the 5 *pick*s in §A, especially **H3856 → despair** (soft).
-- **Healing new registry** (§B): create it, or fold elsewhere.
-
-Everything else in §A is a mechanical existing-registry onboard I can run (dry-curate → live) once you confirm §D.
+All 30 terms map to an existing registry (healing folded → peace, researcher direction). **No open decisions.** Stage 1 is a mechanical existing-registry onboard: dry-curate (STEP resolution check) → snapshot → live batch → re-check I2. (The one soft pick, H3856 "madman" → despair, is noted for later read-time review; it does not block onboarding.)
 
 *Filed 2026-07-12. Read-only plan. No DB writes performed. Stage-1 of the Proverbs registry-path rework.*

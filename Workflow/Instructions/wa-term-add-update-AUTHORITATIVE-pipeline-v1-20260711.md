@@ -102,3 +102,16 @@ Just STEP 2 then STEP 3 (`audit_word --registry=N`). The engine's gap report ins
 - **A term without a registry home cannot be onboarded** — decide its registry word first (Step 1), then Steps 2–3.
 
 *Filed 2026-07-11. Authoritative for term add/update. If the engine changes, update THIS file the same day (version bump) — it is the single place this is documented.*
+
+---
+
+## AMENDMENT 2026-07-12 (researcher direction) — the REGISTRY PATH + registry-selection rule
+
+**Registry path (architecture decision, standing).** Every characteristic word **MUST be a registered term** — the term-backbone (`word_registry → mti_terms → wa_verse_records → verse_span_index`) is authoritative and must match the reading. We do **not** relax the registry requirement for emergent / seed-missed characteristics: a candidate whose word is unregistered, or which lacks a verse-record, is **onboarded via this pipeline before the read** (this closes the I2 gate; the cycle's Stage-3 step-d). This is the answer to the register-vs-relax question — **register**.
+
+**Registry-selection rule (mandatory, Step 1).** When choosing a term's registry home:
+1. **First, associate it with a RELEVANT EXISTING registry** — an existing `word_registry` word whose sense the term belongs to. This is the default and by far the common case.
+2. **Only rarely — where no existing registry fits — create a NEW registry** (your choice; note the justification).
+3. **A term not substantive enough to be its own study-word is folded into the best-fit existing registry**, never made a new registry. (E.g. Proverbs *marpe/riphuth* "healing" → folded into the existing `peace` registry on a best-fit basis, not made a new word.)
+
+The seed's `char_candidate_tag` (`"Reg N word"`) already names the intended existing registry for most candidates — use it; supply the association only where the tag is `IB:*` or absent.

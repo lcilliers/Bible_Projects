@@ -251,3 +251,11 @@ Drive the per-book pass off these two, **never** off raw span counts.
 10. Every cycle is **self-correcting** — improve the seed, re-stamp, record.
 
 *Filed 2026-07-08. Authoritative for the characteristic→candidate→role→lexical cycle. Supersedes prior attempts on this sub-process.*
+
+---
+
+## AMENDMENT 2026-07-12 (researcher direction)
+
+- **Registry path (Stage-3 step-d onboarding).** Every candidate characteristic's word is **registered as a term** — the register path is chosen over relaxing the registry requirement. Selection is **existing-registry-first; a new registry only rarely** (a non-substantive word folds into the best-fit existing registry). See `wa-term-add-update-AUTHORITATIVE-pipeline-v1` (2026-07-12 amendment).
+- **`char_candidate` vs `role` (reaffirmed, and now integrity-enforced).** `char_candidate` = the seed's *potential* flag (Axis-A/lemma; may be blank). `role` = assigned **by the read** (§5), one of characteristic/qualifier/standalone/undecided. **They MAY differ**; `qualifier` is a valid role. A `ve_lexical` exists **only for `role=characteristic`** (§6); a lexical on a null-role span means the role must be back-filled from the lexical. Enforced as **I12 (D1/D2)** in `wa-db-integrity-definition-authoritative-v1` (2026-07-12 amendment).
+- **Staged dependency sequence (per book).** seed (§4) → **register term** (I2) → **verse-record** (I2) → **passages** (Stage 0, §4A) → **read** (Stage 2, §5) → **integrity** (I1–I12, §7C(d)). Each stage is gated on the prior; the pre-read stages are gated by `wa-book-lexical-readiness-assessment-AUTHORITATIVE-v1`.
