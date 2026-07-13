@@ -18,6 +18,16 @@ import sys, os, argparse, importlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 g1 = importlib.import_module('_run_gate1_onboard_batch_v1_20260706')
 
+# Sub-entry resolutions for the Proverbs set (the IB sense of a split lemma), fed to
+# the shared curator. H2502 chalats: "to rescue" (Pro 11:8 delivered), not "to arm".
+g1.RESOLVE.update({'H2502': 'H2502A'})
+
+# DEFERRED (not in WORK below) — flagged for researcher review, not force-onboarded:
+#   H3856 (despair)  Pro 26:18 — sub-entry ambiguous (languish vs amaze), registry pick
+#                    soft, IB-relevance borderline.
+#   H7189 (worship)  Pro 22:21 — qoshet = "truth", mis-tagged to the worship registry;
+#                    IB-relevance borderline. Needs a better registry or drop.
+
 # strong -> (registry_word, cluster). Cluster deferred (None) — set post-read; the
 # registry association is the point at this stage. From the Stage-1 worklist.
 WORK = {
@@ -34,12 +44,11 @@ WORK = {
     'H3994': ('cursing', None),    'H6895': ('cursing', None),
     'H4860': ('deceit', None),
     'H5889': ('weakness', None),
-    'H7189': ('worship', None),
     'H7390': ('compassion', None),
     'H7456': ('appetite', None),
     'H4878': ('rebellion', None),
     'H8367': ('peace', None),      'H4832': ('peace', None),      'H7500': ('peace', None),
-    'H3856': ('despair', None),
+    # H7189 (worship) and H3856 (despair) DEFERRED — see note above.
 }
 
 

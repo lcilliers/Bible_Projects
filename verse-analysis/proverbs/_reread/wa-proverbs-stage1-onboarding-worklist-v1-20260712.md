@@ -56,6 +56,16 @@ Healing is **not substantive enough for a new registry** → folded into the **b
 4. **Stage 3 — v2 candidate-driven passages** — write/extend the v2 passage builder (v1 is misaligned), build Proverbs passages, fix I4 (Pro 22:27 +). Re-run readiness → expect READY.
 5. Then **Stage 4** the lexical read (with `_reread_ledger_lib` made D2-conformant).
 
+## RESULT (2026-07-13) — Stage 1 executed
+
+**28 of 30 terms onboarded** via `audit_word` (driver `_run_proverbs_stage1_onboard_v1`, 17 registries, 0 failures). Each term now registered programme-wide with verse-records + master links. **I2: 104 → 35** (69 Proverbs candidate spans closed); **candidate terms missing from `mti_terms`: 30 → 2**.
+
+**2 deferred for researcher review** (single-span each, not force-onboarded):
+- **H7189** (Pro 22:21) — *qoshet* = "truth", seed-tagged to `worship` (poor fit); IB-relevance borderline. Needs a better registry (truth/faithfulness?) or drop.
+- **H3856** (Pro 26:18) — sub-entry ambiguous (languish vs amaze); registry pick (`despair`) soft; IB-relevance borderline.
+
+Remaining I2 = 35 = **33 term-present-no-record** (Stage 2) + 2 deferred.
+
 ## D. Status — cleared to execute
 
 All 30 terms map to an existing registry (healing folded → peace, researcher direction). **No open decisions.** Stage 1 is a mechanical existing-registry onboard: dry-curate (STEP resolution check) → snapshot → live batch → re-check I2. (The one soft pick, H3856 "madman" → despair, is noted for later read-time review; it does not block onboarding.)
