@@ -17,26 +17,52 @@ DB = os.path.join('database', 'bible_research.db')
 SRC = 'passage-build-2026'
 
 
+import re as _re
+
+
+def _base(s):
+    m = _re.match(r'([HG]\d+)', s or '')
+    return m.group(1) if m else None
+
+
 def candidate_verses(c, book):
-    """(chapter, verse_num, verse_id, reference) for verses with >=1 char_candidate span, in canonical order."""
-    return c.execute(
-        """SELECT DISTINCT v.chapter, v.verse_num, v.id, v.reference
+    """Per candidate-bearing verse: chapter, verse_num, id, reference, and the SET of
+    candidate base-Strong's on it (the chars). Canonical order."""
+    rows = c.execute(
+        """SELECT v.chapter, v.verse_num, v.id, v.reference, GROUP_CONCAT(si.primary_strong) strs
            FROM verse v JOIN verse_span_index si ON si.verse_id = v.id
            WHERE v.book_id = ? AND si.char_candidate = 1
-           ORDER BY v.chapter, v.verse_num""", (book,)).fetchall()
+           GROUP BY v.id ORDER BY v.chapter, v.verse_num""", (book,)).fetchall()
+    out = []
+    for r in rows:
+        d = dict(r)
+        d['chars'] = {_base(x) for x in (r['strs'] or '').split(',')} - {None}
+        out.append(d)
+    return out
 
 
-def build_runs(rows):
-    """Group into maximal runs of consecutive verse_num within the same chapter."""
+def build_runs(rows, rule='char-continuity'):
+    """Group candidate verses into passages.
+
+    rule='maximal'        — maximal run of consecutive candidate verses (genre-blind;
+                            bundles independent proverbs — use only for discourse/poetry).
+    rule='char-continuity'— SEGMENTATION AROUND THE CHARS (researcher 2026-07-13): a run
+                            continues only while consecutive verses SHARE >=1 candidate
+                            characteristic; when the char focus changes, it breaks. Keeps
+                            genuine char-runs (e.g. the 'fool' cluster) together and splits
+                            independent proverbs into their own passages. Not thematic."""
     runs = []
     cur = []
     for r in rows:
-        if cur and r['chapter'] == cur[-1]['chapter'] and r['verse_num'] == cur[-1]['verse_num'] + 1:
+        if not cur:
+            cur = [r]; continue
+        prev = cur[-1]
+        consec = (r['chapter'] == prev['chapter'] and r['verse_num'] == prev['verse_num'] + 1)
+        join = consec and (rule != 'char-continuity' or bool(r.get('chars', set()) & prev.get('chars', set())))
+        if join:
             cur.append(r)
         else:
-            if cur:
-                runs.append(cur)
-            cur = [r]
+            runs.append(cur); cur = [r]
     if cur:
         runs.append(cur)
     return runs
@@ -45,6 +71,8 @@ def build_runs(rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--book', type=int, required=True)
+    ap.add_argument('--rule', choices=['char-continuity', 'maximal'], default='char-continuity',
+                    help="char-continuity (around the chars; default) or maximal (discourse/poetry)")
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument('--dry-run', action='store_true')
     g.add_argument('--live', action='store_true')
@@ -66,7 +94,8 @@ def main():
         return
 
     rows = candidate_verses(c, a.book)
-    runs = build_runs(rows)
+    runs = build_runs(rows, rule=a.rule)
+    print(f"rule = {a.rule}")
     nverses = sum(len(r) for r in runs)
     sizes = [len(r) for r in runs]
     print(f"book {a.book}: {len(rows)} candidate-bearing verses -> {len(runs)} passages "

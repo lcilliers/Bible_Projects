@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T06:22:37Z",
+  "generated_at": "2026-07-13T07:13:56Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -16,10 +16,10 @@
     "current": 2502,
     "archived": 2819,
     "cross-reference": 3420,
-    "backup": 28
+    "backup": 29
   },
-  "total_files": 10987,
-  "total_active": 8168,
+  "total_files": 10988,
+  "total_active": 8169,
   "total_archived": 2819,
   "files": [
     {
@@ -68867,8 +68867,8 @@
       "date": "2026-07-08",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 6567,
-      "modified": "2026-07-12T05:16:42Z"
+      "size_bytes": 8652,
+      "modified": "2026-07-13T07:12:14Z"
     },
     {
       "path": "Workflow/Instructions/wa-patch-instruction-v2_11-20260507.md",
@@ -113143,6 +113143,22 @@
       "modified": "2026-07-13T05:55:03Z"
     },
     {
+      "path": "backups/bible_research_pre-passage-restate_20260713_081139.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794693632,
+      "modified": "2026-07-13T07:11:40Z"
+    },
+    {
       "path": "backups/bible_research_pre-passagebuild-v2_20260713_070941.db",
       "category": "backup",
       "type": "other",
@@ -113491,8 +113507,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794693632,
-      "modified": "2026-07-13T06:09:42Z"
+      "size_bytes": 794734592,
+      "modified": "2026-07-13T07:11:41Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113507,8 +113523,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4943981,
-      "modified": "2026-07-13T06:15:47Z"
+      "size_bytes": 4944443,
+      "modified": "2026-07-13T06:22:37Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138739,8 +138755,8 @@
       "date": "2026-07-13",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 5746,
-      "modified": "2026-07-13T06:09:09Z"
+      "size_bytes": 7133,
+      "modified": "2026-07-13T07:11:20Z"
     },
     {
       "path": "scripts/_apply_passage_completeness_v1_20260707.py",
@@ -157395,8 +157411,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 4418,
-      "modified": "2026-07-13T06:22:23Z"
+      "size_bytes": 5190,
+      "modified": "2026-07-13T07:13:55Z"
     },
     {
       "path": "verse-analysis/proverbs/_reread/wa-proverbs-passage-reading-profile-v1-20260713.md",
@@ -157411,8 +157427,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 2269,
-      "modified": "2026-07-13T06:15:39Z"
+      "size_bytes": 2775,
+      "modified": "2026-07-13T07:13:55Z"
     },
     {
       "path": "verse-analysis/proverbs/_reread/wa-proverbs-readiness-REPAIR-PLAN-and-decision-v1-20260712.md",

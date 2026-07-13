@@ -1,5 +1,7 @@
 # Proverbs — passage reading profile (v1, 2026-07-13)
 
+> **SUPERSEDED 2026-07-13:** this profiles the *maximal-run* v2 passages (104), later found to be BUNDLES and replaced by the CHAR-CONTINUITY rebuild — **701 passages** (626 single-verse; mean 1.1 verses / 3.0 candidate chars; max 10 = fool cluster). See `wa-proverbs-passage-method-bundle-finding-v1` and `wa-passage-completeness-rule-v2` (2026-07-13 amendment). The distributions below are the OLD (bundled) shape, kept for provenance.
+
 > Profile of the v2 candidate-driven passages that will go through the Stage-4 read. Read-only; from `passage` + `verse_span_index.char_candidate` (book_id=20). Source of passages: `passage-build-2026`.
 
 ## Passages that will go through reading: **104**

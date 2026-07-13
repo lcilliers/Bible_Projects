@@ -40,3 +40,15 @@ The passage ↔ verse-record ↔ master relationship is **deterministic** once `
 - Linkage: `Workflow/methodology/wa-verse-passage-lexical-master-term-record-linkage-map-20260708.md` — the join keys this rule relies on.
 
 *Recorded 2026-07-08. Tool: extend `scripts/_apply_passage_completeness_v1_20260707.py` for the candidate-driven scope (dry-run first), or a v2 successor.*
+
+---
+
+## AMENDMENT 2026-07-13 (researcher direction) — the run is bounded by CHAR-CONTINUITY (segmentation around the chars)
+
+**The bug:** a *maximal* run of consecutive candidate verses is **genre-blind**. It works for **discourse / poetic** movement (Prov 1–9, Psalms laments) where consecutive verses develop one movement, but it **bundles** the **sentence-collections** (Prov 10–29), where every verse is an independent proverb with its own char — a "maximal run" there = the whole chapter = 30+ unrelated sayings in one "passage." Tested 2026-07-13: 48 of 54 Proverbs passages >4 verses spanned >2 discourse units (e.g. Pro 14:1–35 = 35 independent proverbs, 13 thematic segments overridden).
+
+**The correction — segmentation must be AROUND THE CHARS, not thematic and not maximal.** A passage is a run of consecutive candidate verses that continues **only while consecutive verses SHARE ≥1 candidate characteristic** (same base-Strong's on the master); when the char focus changes, the run **breaks**. This keeps a genuine char-run together (e.g. the *fool* cluster Prov 26:3–12) and splits independent proverbs into their own (mostly single-verse) passages. **Thematic segmentation (`segment_unit` themes) is explicitly NOT used** — the researcher's observation (2026-07-13) is that theme-grouping *distracts and overloads*; the **char is the heart of the passage** (this rule's Principle), so the char — not a theme — bounds it.
+
+- **Tool:** `scripts/_apply_passage_build_v2_20260713.py --book N --rule char-continuity` (default). `--rule maximal` remains for discourse/poetry-only books.
+- **Proverbs restated 2026-07-13:** 799 candidate verses → **701 passages** (626 single-verse; max 10 = the fool cluster; mean 1.1 verses / 3.0 candidate chars). Replaces the 104 maximal-run bundles. I4 green.
+- Everything else in this rule (integrity invariant, single-verse passages, what-gets-written, the gate) is unchanged. Choose the rule by genre: **char-continuity** for sentence/wisdom collections; **maximal** where consecutive verses form one movement.

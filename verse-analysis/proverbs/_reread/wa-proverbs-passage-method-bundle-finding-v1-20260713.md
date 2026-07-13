@@ -51,3 +51,11 @@ These are **different characteristics in unrelated sayings**. The candidate char
 The v2 passage build (104 passages, `passage-build-2026`) is **applied but should be reconsidered** before the read — do not read the F-frame bundles as-is. Snapshot before the v2 build: `backups/bible_research_pre-passagebuild-v2_*.db`. The readiness gate (I4) is satisfied by any coherent passage layer; the method choice is a genre/structure decision, not an integrity one.
 
 *Filed 2026-07-13. Read-only. Blocks Stage 4 read until the passage method is confirmed.*
+
+---
+
+## RESOLVED 2026-07-13 — restated to CHAR-CONTINUITY (segmentation around the chars)
+
+Researcher decision: option 1, but **around the chars, not thematic** — thematic segmentation distracts/overloads; the char is the heart. Rule: a run continues only while consecutive candidate verses SHARE ≥1 candidate characteristic; when the char focus changes it breaks. `--rule char-continuity` in `_apply_passage_build_v2`.
+
+**Proverbs rebuilt: 104 bundles → 701 char-focused passages** (626 single-verse; mean 1.1 verses / 3.0 candidate chars; max 10 = the *fool* cluster Prov 26:3–12, which is a genuine char-run). Pro 14: 1 bundle → 30 passages. I4 green; readiness READY-WITH-DEBT (0 red). Baked into `wa-passage-completeness-rule-v2` (2026-07-13 amendment).
