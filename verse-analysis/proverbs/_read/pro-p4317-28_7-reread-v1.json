@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 28,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4317 (Pro 28:7) — who keeps the law is a discerning son; a companion of gluttons shames his father.",
+ "spans": {
+  "266724": {
+   "gloss": "understanding son (bin)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "discernment — the law-keeping son who honours his father"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the son",
+     "to": 266724,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the understanding of the son who keeps the law — the discernment that both obeys and honours, the opposite of the shameful companion of gluttons"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the shame it is set against (266727)",
+     "to": 266724,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the son who shames his father",
+     "to": 266727,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "bin (understand/discern) — 'the one who keeps the law is a son with UNDERSTANDING'; law-keeping is the mark of a discerning son, and an honour to his father. Obedience and understanding go together."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266727": {
+   "gloss": "shames his father (kalam)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "dishonour — the son who disgraces his father by bad company"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the wayward son",
+     "to": 266727,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the shame a son brings on his father by being a companion of gluttons — dissolute company disgracing the parent, the reverse of the discerning son's honour"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the understanding it is set against (266724)",
+     "to": 266727,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the discerning son who honours his father",
+     "to": 266727,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "kalam (shame/disgrace) — 'but a companion of gluttons SHAMES his father'; the son who runs with the dissolute disgraces his parent. Company chosen reflects on the family (cf 23:20-21; 29:3)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
