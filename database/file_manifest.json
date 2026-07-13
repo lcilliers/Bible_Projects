@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T06:04:13Z",
+  "generated_at": "2026-07-13T06:10:28Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 2184,
+    "other": 2185,
     "historical": 31,
-    "current": 2501,
+    "current": 2502,
     "archived": 2819,
     "cross-reference": 3420,
-    "backup": 27
+    "backup": 28
   },
-  "total_files": 10982,
-  "total_active": 8163,
+  "total_files": 10985,
+  "total_active": 8166,
   "total_archived": 2819,
   "files": [
     {
@@ -113143,6 +113143,22 @@
       "modified": "2026-07-13T05:55:03Z"
     },
     {
+      "path": "backups/bible_research_pre-passagebuild-v2_20260713_070941.db",
+      "category": "backup",
+      "type": "other",
+      "currency": "backup",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "2",
+      "date": "2026-07-13",
+      "ext": ".db",
+      "archived": false,
+      "size_bytes": 794689536,
+      "modified": "2026-07-13T06:09:41Z"
+    },
+    {
       "path": "backups/bible_research_pre-proverbs-stage1_20260713_054715.db",
       "category": "backup",
       "type": "other",
@@ -113475,8 +113491,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794689536,
-      "modified": "2026-07-13T06:03:27Z"
+      "size_bytes": 794693632,
+      "modified": "2026-07-13T06:09:42Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113491,8 +113507,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4939987,
-      "modified": "2026-07-13T05:56:07Z"
+      "size_bytes": 4942213,
+      "modified": "2026-07-13T06:04:14Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138711,6 +138727,22 @@
       "modified": "2026-07-13T05:54:35Z"
     },
     {
+      "path": "scripts/_apply_passage_build_v2_20260713.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 5746,
+      "modified": "2026-07-13T06:09:09Z"
+    },
+    {
       "path": "scripts/_apply_passage_completeness_v1_20260707.py",
       "category": "script",
       "type": "other",
@@ -157397,6 +157429,22 @@
       "archived": false,
       "size_bytes": 3978,
       "modified": "2026-07-13T04:14:13Z"
+    },
+    {
+      "path": "verse-analysis/proverbs/_reread/wa-proverbs-readiness-REPORT-v3-20260713.md",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "3",
+      "date": "2026-07-13",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 3916,
+      "modified": "2026-07-13T06:10:07Z"
     },
     {
       "path": "verse-analysis/proverbs/_reread/wa-proverbs-readiness-check-DEFINITION-and-status-v1-20260712.md",
