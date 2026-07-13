@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T08:13:59Z",
+  "generated_at": "2026-07-13T08:20:57Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -11,15 +11,15 @@
     "other": "uncategorised"
   },
   "currency_counts": {
-    "other": 2203,
+    "other": 2205,
     "historical": 31,
     "current": 2503,
     "archived": 2819,
     "cross-reference": 3420,
     "backup": 30
   },
-  "total_files": 11006,
-  "total_active": 8187,
+  "total_files": 11008,
+  "total_active": 8189,
   "total_archived": 2819,
   "files": [
     {
@@ -68915,8 +68915,8 @@
       "date": "2026-07-13",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 5358,
-      "modified": "2026-07-13T08:13:46Z"
+      "size_bytes": 5990,
+      "modified": "2026-07-13T08:20:42Z"
     },
     {
       "path": "Workflow/Instructions/wa-synthesis-B-spec-reset-v1-20260624.md",
@@ -113539,8 +113539,8 @@
       "date": null,
       "ext": ".db",
       "archived": false,
-      "size_bytes": 794816512,
-      "modified": "2026-07-13T08:12:48Z"
+      "size_bytes": 794828800,
+      "modified": "2026-07-13T08:20:04Z"
     },
     {
       "path": "database/file_manifest.json",
@@ -113556,7 +113556,7 @@
       "ext": ".json",
       "archived": false,
       "size_bytes": 4952637,
-      "modified": "2026-07-13T08:13:29Z"
+      "modified": "2026-07-13T08:13:59Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -138963,8 +138963,8 @@
       "date": "2026-07-11",
       "ext": ".py",
       "archived": false,
-      "size_bytes": 8417,
-      "modified": "2026-07-12T05:04:30Z"
+      "size_bytes": 8685,
+      "modified": "2026-07-13T08:19:51Z"
     },
     {
       "path": "scripts/_apply_rebuild_passages_consecutive_v2_20260701.py",
@@ -166405,6 +166405,38 @@
       "archived": false,
       "size_bytes": 551294,
       "modified": "2026-07-11T20:21:40Z"
+    },
+    {
+      "path": "verse-analysis/psalms/_model/ib_characteristic_v2_book20_pre_v3rebuild_20260713T081852Z.json",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 2,
+      "modified": "2026-07-13T08:18:52Z"
+    },
+    {
+      "path": "verse-analysis/psalms/_model/ib_characteristic_v2_book20_pre_v3rebuild_20260713T082004Z.json",
+      "category": "other",
+      "type": "other",
+      "currency": "other",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-13",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 2,
+      "modified": "2026-07-13T08:20:04Z"
     },
     {
       "path": "verse-analysis/psalms/_model/wa-characteristic-restructure-and-integrity-fix-PLAN-20260711.md",

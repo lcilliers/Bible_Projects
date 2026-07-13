@@ -15,13 +15,14 @@
 1. **Pull the passage morphology** — all candidate spans in the passage's verses + their morph (the passage is the reading frame; §5 of the cycle).
 2. **Read char-driven** (cycle §5): for each candidate char — Screen 0 (IB-relevance; God = arena not subject) → role (characteristic / qualifier / standalone / undecided) → decompose the characteristics across dimensions 101–116, resolving pairs by reading across the passage; **`none` written explicitly, never omitted**.
 3. **Write to the DB** (`_apply_reread_lexical_v1_20260709.py --in <passage.json> --live`): soft-delete prior active `ve_lexical` for those spans, insert the new ledger with **integer span-id pair endpoints**, write back every span's `role` (`role_provenance='read-2026'`), set `verse.process_marker`. (Characteristic-only lexicals — D2.)
-4. **Master updates:** `ib_char_id` linkage (I7) and char-on-master `verse_span_index.characteristic` (I11) for each characteristic; emergent chars stamped + seed-fed (cycle §7).
+4. **Master update (per passage):** char-on-master `verse_span_index.characteristic` (I11) for each characteristic — the apply writes it. Emergent chars stamped candidate + seed-fed (cycle §7). *(NOTE: `ib_char_id` / I7 is NOT a per-passage write — it is a book-scoped **derived rebuild**, run at cycle-close; see below.)*
 5. Move to the next passage.
 
 ## Per CYCLE (~12 passages) — the breather + checks
 
 Run BEFORE starting the next cycle; scope to the cycle's passages (and cumulative book state):
 
+- **A0. Rebuild the `ib_characteristic` index (I7).** `ib_char_id` is NOT written per passage — run the book-scoped **meaning-keyed derived rebuild** at cycle-close: `python scripts/_apply_rebuild_ib_char_meaning_keyed_v3_20260711.py --book <id> --live`. It re-derives the whole index over all read-so-far chars (record identity = base-lemma + stem + normalised-ESV) and sets `verse_span_index.ib_char_id`, then self-validates (0 null / 0 dangling). This makes I7 green each cycle.
 - **A. Conformance to the instructions (method adherence).** For the cycle's characteristics: full genre-mandatory ledger present, `none` explicit (**I5 / G10**); Screen-0 held — no God-bearer characteristic (**I6**); every characteristic linked to `ib_characteristic` (**I7**) and its char on the master (**I11**); pairs keyed on span-ids (**I8 / G9**); role back-filled where a lexical exists (**D1**); `ve_lexical` only on `role=characteristic` (**D2**). Plus the **passage-reading-coverage gate** (`scripts/_check_passage_reading_coverage`) — every candidate span in the cycle's passages was read (nothing passed over).
 - **B. Quality (scored read-back).** Sample **2–3** of the cycle's passages; score each characteristic **sound / weak / wrong** on fidelity · working-completeness · movement · distinction. Bar: **≥90% sound, zero fidelity failures**. A missed pair on a `none`-call = a fidelity failure.
 - **C. Breather.** File a one-line cycle log (passages done, chars read, gate result, any fixes); pause for researcher review. Fix any conformance/quality miss **before** the next cycle — do not carry defects forward.

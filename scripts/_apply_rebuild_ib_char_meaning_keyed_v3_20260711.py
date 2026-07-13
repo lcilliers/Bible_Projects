@@ -31,6 +31,9 @@ PROV = 'ib-char-index-v3-meaning-keyed-2026'
 
 DB = os.path.join('database','bible_research.db')
 c = sqlite3.connect(DB); c.row_factory = sqlite3.Row; cur = c.cursor()
+# book-derived code prefix (was hardcoded 'psa-', which collided across books) — fix 2026-07-13
+_bpn = cur.execute("SELECT lower(substr(name,1,3)) FROM books WHERE id=?", (int(BOOK),)).fetchone()
+BOOK_PREFIX = (_bpn[0] if _bpn and _bpn[0] else f"b{BOOK}")
 
 def norm_esv(w):
     """Normalise an ESV surface word to a meaning-stem so inflections merge
@@ -113,7 +116,7 @@ for (lemma, nesv), spans in sorted(groups.items()):
     variants= ' | '.join(v for v,_ in Counter(s['sense'] for s in spans if s['sense']).most_common(10)) or None
     rep = spans[0]
     slug = re.sub(r'[^a-z0-9]+','-', name.lower()).strip('-')[:24]
-    code = f"psa-{lemma}-{slug}"
+    code = f"{BOOK_PREFIX}-{lemma}-{slug}"
     ledger = (f"{name} [{lemma}] — {len(spans)} occurrence(s) in book {BOOK}. "
               f"stem(s): {stems or 'n/a'}. ESV: {esvs or 'n/a'}. attested gloss: {gloss_for(lemma) or 'n/a'}.")
     cur.execute("""INSERT INTO ib_characteristic
