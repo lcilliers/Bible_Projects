@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 28,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4333 (Pro 28:23) — who rebukes a man will afterward find more favour than the flatterer.",
+ "spans": {
+  "266644": {
+   "gloss": "rebukes (yakach)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "honest reproof — the rebuke that in the end wins more favour than flattery"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the honest friend",
+     "to": 266644,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the rebuking of a man that afterward wins more favour than flattery — the honest reproof that, though it stings at first, earns lasting gratitude, unlike the flatterer's momentary charm"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the flattery it is set against (266650)",
+     "to": 266644,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the flattering tongue that pleases then fails",
+     "to": 266650,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "yakach (rebuke/reprove) — 'whoever REBUKES a man will afterward find more favor than he who flatters'; honest correction, resented at first, is valued in the end above flattery. Emergent: the reprover ultimately more loved than the flatterer (cf 27:5-6; 29:5)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266650": {
+   "gloss": "flatters (chalaq)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "flattery — the smooth tongue that pleases now but fails in the end"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the flatterer",
+     "to": 266650,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the flattering with the tongue that pleases for the moment but wins less lasting favour than honest rebuke — smooth speech that gratifies now and is valued less in the end"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the honest rebuke it is set against (266644)",
+     "to": 266650,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the reprover who wins lasting favour",
+     "to": 266650,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "chalaq (be smooth/flatter) — 'than he who FLATTERS with his tongue'; flattery charms momentarily but earns less true favour than an honest rebuke. Emergent: the flatterer preferred at first, forgotten at last (cf 26:28; 29:5)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
