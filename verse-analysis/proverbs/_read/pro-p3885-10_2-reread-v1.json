@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 10,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3885 (Pro 10:2) — treasures of wickedness do not profit; righteousness delivers from death. (natsal 'delivers' = standalone verb.)",
+ "spans": {
+  "262544": {
+   "gloss": "wickedness (resha)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wickedness — its treasures do not profit"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the wicked",
+     "to": 262544,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wickedness whose ill-gotten treasures bring no lasting profit"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "righteousness (262547)",
+     "to": 262544,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against righteousness as the profitless way",
+     "to": 262547,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "resha (wickedness) — 'treasures gained by WICKEDNESS do not profit'; ill-gotten wealth is empty. Character, not gain, decides one's end."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262547": {
+   "gloss": "righteousness (tsedaqah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness — delivers from death"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the righteous",
+     "to": 262547,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the righteousness that rescues its owner from death, where wicked treasure cannot"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "wickedness (262544)",
+     "to": 262547,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against wickedness as the delivering way",
+     "to": 262547,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "tsedaqah (righteousness) — 'RIGHTEOUSNESS delivers from death'; the antithesis — moral character, not material treasure, is what saves. The book's recurring wealth-vs-righteousness contrast."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
