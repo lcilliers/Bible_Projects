@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T04:37:02Z",
+  "generated_at": "2026-07-13T04:42:18Z",
   "generator": "scripts/build_file_manifest.py",
   "principle": "Every file in the study directory is indexed (whole-tree scan, incl. archives); VCS/build/cache machinery excluded.",
   "currency_legend": {
@@ -13,13 +13,13 @@
   "currency_counts": {
     "other": 2183,
     "historical": 31,
-    "current": 2446,
+    "current": 2447,
     "archived": 2819,
     "cross-reference": 3398,
     "backup": 102
   },
-  "total_files": 10979,
-  "total_active": 8160,
+  "total_files": 10980,
+  "total_active": 8161,
   "total_archived": 2819,
   "files": [
     {
@@ -114339,8 +114339,8 @@
       "date": null,
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4939936,
-      "modified": "2026-07-13T04:29:33Z"
+      "size_bytes": 4939937,
+      "modified": "2026-07-13T04:37:03Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -141749,6 +141749,22 @@
       "archived": false,
       "size_bytes": 23449,
       "modified": "2026-07-12T05:00:45Z"
+    },
+    {
+      "path": "scripts/_run_proverbs_stage1_onboard_v1_20260712.py",
+      "category": "script",
+      "type": "other",
+      "currency": "current",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-07-12",
+      "ext": ".py",
+      "archived": false,
+      "size_bytes": 3695,
+      "modified": "2026-07-13T04:42:02Z"
     },
     {
       "path": "scripts/_run_ve_reads_governed.py",
