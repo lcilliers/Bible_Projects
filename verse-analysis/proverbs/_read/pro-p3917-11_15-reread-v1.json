@@ -1,0 +1,246 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 11,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3917 (Pro 11:15) — whoever secures a stranger suffers harm; he who hates striking hands in pledge is secure. (ra 'harm' = standalone.)",
+ "spans": {
+  "262739": {
+   "gloss": "suffer harm (raa)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "being harmed — the rash guarantor surely suffers"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the surety-giver",
+     "to": 262739,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the harm that surely comes to one who pledges for a stranger"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "(the security of the cautious, by contrast)",
+     "to": 262739,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the security of the one who refuses pledges",
+     "to": 262739,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "raa (be harmed, Niphal) — 'will surely SUFFER harm'; the rash pledge brings inevitable injury. Imprudent generosity that becomes bondage."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262741": {
+   "gloss": "hates (sane)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "aversion — hating the rash pledge"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the prudent",
+     "to": 262741,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the prudent aversion to striking hands in surety"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the security it brings (262743)",
+     "to": 262741,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the safety this aversion secures",
+     "to": 262743,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "sane (hate) — 'he who HATES striking hands in pledge'; a wise, protective aversion to rash surety. Prudence expressed as refusal."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262743": {
+   "gloss": "secure (batach)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "security — the one who shuns surety is safe"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the prudent",
+     "to": 262743,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the security enjoyed by the one who refuses rash pledges"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the aversion that secures it (262741)",
+     "to": 262743,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the prudent hatred that keeps him safe",
+     "to": 262743,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "batach (be secure/confident) — 'is SECURE'; caution about pledges keeps a man safe. Security as the fruit of prudent restraint."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,404 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 11,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3926 (Pro 11:25-26) — the generous soul is enriched, the waterer is watered; the people curse the grain-hoarder, blessing on the seller. Two verses.",
+ "spans": {
+  "262816": {
+   "gloss": "generous soul (nephesh)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "generosity — the soul of blessing that is enriched"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the generous",
+     "to": 262816,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the liberal, blessing-bringing soul that is itself enriched"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the blessing it brings (262817)",
+     "to": 262816,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the blessing it dispenses",
+     "to": 262817,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "nephesh (soul) with berakah — 'a soul of BLESSING (a generous soul) will be enriched'; the liberal inner disposition that gives and is repaid. Generosity as a settled temper of soul."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262817": {
+   "gloss": "blessing (berakah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessing — that the generous bring and are enriched by"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the generous",
+     "to": 262817,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the blessing the liberal soul brings to others and gains for itself"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the generous soul (262816)",
+     "to": 262817,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the generous who dispense it",
+     "to": 262817,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "berakah (blessing) — 'whoever brings BLESSING will be enriched'; the blessing given returns; 'one who waters is watered'. Generosity's boomerang of good."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262818": {
+   "gloss": "enriched (dashen)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enrichment — the generous made prosperous"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the generous",
+     "to": 262818,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the enrichment/being-made-fat of the one who blesses others"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the blessing that enriches (262817)",
+     "to": 262818,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the blessing that returns as wealth",
+     "to": 262818,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "dashen (be made fat/prosperous) — 'will be ENRICHED'; the generous grow prosperous, watered as they water. Emergent: enrichment as the return on generosity."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262822": {
+   "gloss": "curse (qabab)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "imprecation — the people curse the grain-hoarder"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the people",
+     "to": 262822,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the communal cursing of the one who holds back grain in want"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "blessing on the seller (262825)",
+     "to": 262822,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the blessing on the one who sells",
+     "to": 262822,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "qabab (curse) — 'the people CURSE him who holds back grain'; the community's moral condemnation of hoarding in scarcity. Public imprecation on selfish withholding."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262825": {
+   "gloss": "blessing (berakah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessing — on the head of the one who sells grain"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the generous seller",
+     "to": 262825,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the blessing that rests on the one who sells grain rather than hoard"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the curse on the hoarder (262822)",
+     "to": 262825,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the people's curse on the hoarder",
+     "to": 262825,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "berakah (blessing) — 'a BLESSING is on the head of him who sells it'; the generous seller is blessed by the community, the bright antithesis of the cursed hoarder."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

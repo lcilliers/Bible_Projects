@@ -1,0 +1,325 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 11,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3924 (Pro 11:23) — the desire of the righteous ends only in good; the expectation of the wicked in wrath. (tob 'good' / ebrah 'wrath' = standalone outcomes.)",
+ "spans": {
+  "262802": {
+   "gloss": "desire (taavah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "desire — the righteous', ending only in good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the righteous",
+     "to": 262802,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the desire of the righteous, which issues only in good"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the righteous whose it is (262803)",
+     "to": 262802,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the righteous whose desire it is",
+     "to": 262803,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "taavah (desire) — 'the DESIRE of the righteous ends only in good'; the righteous' longings are wholesome and well-fulfilled, unlike the wicked's expectation that meets wrath."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262803": {
+   "gloss": "righteous (tsaddiq)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "righteousness — whose desire ends in good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the righteous",
+     "to": 262803,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the righteous whose longing issues only in good"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "his good-ending desire (262802)",
+     "to": 262803,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the desire that ends well",
+     "to": 262803,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "tsaddiq — the righteous' desire is good-directed and good-ending, the bright side of the couplet."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262806": {
+   "gloss": "expectation (tiqvah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "expectation — the wicked's, ending in wrath"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the wicked",
+     "to": 262806,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wicked's expectation, which comes to wrath"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the wicked whose it is (262807)",
+     "to": 262806,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the wickedness that dooms it",
+     "to": 262807,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "tiqvah (expectation/hope) — 'the EXPECTATION of the wicked in wrath'; the wicked's hopes end in fury and judgement. Emergent: expectation as forward-hope that character bends to good or wrath."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262807": {
+   "gloss": "wicked (rasha)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "wickedness — whose expectation is wrath"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the wicked",
+     "to": 262807,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wicked whose forward hope meets only wrath"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "his wrath-ending expectation (262806)",
+     "to": 262807,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the expectation it dooms",
+     "to": 262807,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "rasha — the wicked's expectation ends 'in wrath'; no good future for wickedness, the dark antithesis of the righteous' good-ending desire."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

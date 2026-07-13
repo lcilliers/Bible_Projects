@@ -1,0 +1,404 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 11,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3927 (Pro 11:27) — whoever diligently seeks good finds favour; evil comes to him who searches for it. (tob 'good' = standalone.)",
+ "spans": {
+  "262828": {
+   "gloss": "seeks (shachar)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seeking — diligently seeking good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the good-seeker",
+     "to": 262828,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the diligent, earnest seeking of good"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "(the favour it finds)",
+     "to": 262828,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "the earnest pursuit that ends in favour",
+     "to": 262828,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "shachar (seek early/diligently) — 'whoever DILIGENTLY SEEKS good'; earnest pursuit of good, the same eager verb used of seeking Wisdom (8:17). What one seeks, one becomes."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262830": {
+   "gloss": "seeks / procures (baqash)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "seeking — the good-seeker procures favour"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the good-seeker",
+     "to": 262830,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the seeking that procures favour for the one who pursues good"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the favour it gains (262831)",
+     "to": 262830,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the favour it secures",
+     "to": 262831,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "baqash (seek/procure) — 'seeks FAVOUR'; the diligent seeker of good procures favour (with God and man). Seeking good draws favour."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262831": {
+   "gloss": "favor (ratson)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "favour — found by the seeker of good"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the good-seeker",
+     "to": 262831,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the favour/goodwill that the seeker of good obtains"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the seeking that gains it (262830)",
+     "to": 262831,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the seeking that procures it",
+     "to": 262831,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "ratson (favour/goodwill) — 'seeks FAVOUR'; the good-seeker's reward. Emergent: favour as what earnest pursuit of good procures, against the evil that hunts its own seeker."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262832": {
+   "gloss": "evil (ra)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "evil — comes to the one who searches for it"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the evil-searcher",
+     "to": 262832,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the evil that comes upon the one who searches it out"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "his searching for it (262834)",
+     "to": 262832,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the searching that brings it",
+     "to": 262834,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "ra (evil) — 'EVIL comes to him who searches for it'; the seeker of evil is found by it. Pursuit of evil is self-fulfilling, the dark mirror of seeking good."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "262834": {
+   "gloss": "searches (darash)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "searching — hunting after evil, which then finds him"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "action"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the evil-searcher",
+     "to": 262834,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the searching-out of evil that brings evil upon the searcher"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the evil it summons (262832)",
+     "to": 262834,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the evil that answers the search",
+     "to": 262834,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "darash (seek/search/inquire) — 'him who SEARCHES for it'; to hunt evil is to summon it upon oneself. What one searches for comes."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
