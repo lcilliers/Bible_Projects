@@ -1,26 +1,52 @@
 {
  "meta": {
   "english_anchor": "strife",
-  "generated": "2026-07-06",
+  "generated": "2026-07-13",
   "step_version": "ESV_th",
   "anchor_codes": [
-   "H0079",
-   "H5319"
+   "H1566",
+   "H4079",
+   "H4090",
+   "H5916"
   ],
   "particle_ceiling": 1000,
-  "total_terms_evaluated": 10,
+  "total_terms_evaluated": 38,
   "summary_by_group": {
-   "G1": 2,
-   "G2r": 6,
-   "G3": 2
+   "G1": 3,
+   "G3": 24,
+   "G2r": 11
   },
   "include_codes": [
-   "H0079",
-   "H5319"
+   "H1566",
+   "H4079",
+   "H4090",
+   "H5916"
   ],
   "exclude_codes": [
-   "H5321G",
-   "H6619"
+   "H1568G",
+   "H1569",
+   "H1568H",
+   "H1568I",
+   "H1568J",
+   "H1835G",
+   "H4080H",
+   "H1840G",
+   "H1783",
+   "H4084",
+   "H1835H",
+   "H1839",
+   "H4080G",
+   "H4068",
+   "H4091",
+   "H1840H",
+   "H1842",
+   "H3036",
+   "H4092",
+   "H7384A",
+   "H7384B",
+   "H5918",
+   "H5917",
+   "H5925"
   ],
   "registry": {
    "id": 152,
@@ -32,13 +58,13 @@
    "phase1_status": "Complete",
    "phase1_output_file": null,
    "phase2_datasets": null,
-   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=30  verses=575  run_id=RUN-20260328_141423-AUDIT_WORD\n[AUDIT 2026-07-06] result=REVIEW  terms=29  verses=79  run_id=RUN-20260706_162601-AUDIT_WORD\n[AUDIT 2026-07-06] result=STOP  terms=32  verses=96  run_id=RUN-20260706_163301-AUDIT_WORD",
+   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=30  verses=575  run_id=RUN-20260328_141423-AUDIT_WORD\n[AUDIT 2026-07-06] result=REVIEW  terms=29  verses=79  run_id=RUN-20260706_162601-AUDIT_WORD\n[AUDIT 2026-07-06] result=STOP  terms=32  verses=96  run_id=RUN-20260706_163301-AUDIT_WORD\n[AUDIT 2026-07-06] result=STOP  terms=32  verses=115  run_id=RUN-20260706_200149-AUDIT_WORD",
    "automation_eligible": 1,
    "last_automation_run": "AUDITED",
-   "automation_run_id": "RUN-20260706_163301-AUDIT_WORD",
+   "automation_run_id": "RUN-20260706_200149-AUDIT_WORD",
    "phase1_term_count": 32,
-   "phase1_verse_count": 96,
-   "strongs_list": "[{\"strong\": \"H7230\", \"count\": 41}, {\"strong\": \"H7853\", \"count\": 12}, {\"strong\": \"H4066\", \"count\": 10}, {\"strong\": \"G2054\", \"count\": 9}, {\"strong\": \"H5327B\", \"count\": 7}, {\"strong\": \"H5327A\", \"count\": 7}, {\"strong\": \"H4683\", \"count\": 3}, {\"strong\": \"H7283\", \"count\": 2}, {\"strong\": \"H4808\", \"count\": 2}, {\"strong\": \"H4695\", \"count\": 1}, {\"strong\": \"G3055\", \"count\": 1}, {\"strong\": \"G3054\", \"count\": 1}]",
+   "phase1_verse_count": 115,
+   "strongs_list": "[{\"strong\": \"H7230\", \"count\": 57}, {\"strong\": \"H7853\", \"count\": 11}, {\"strong\": \"H4066\", \"count\": 11}, {\"strong\": \"G2054\", \"count\": 9}, {\"strong\": \"H5327B\", \"count\": 7}, {\"strong\": \"H5327A\", \"count\": 7}, {\"strong\": \"H4683\", \"count\": 3}, {\"strong\": \"H7283\", \"count\": 2}, {\"strong\": \"H4808\", \"count\": 2}, {\"strong\": \"H0079\", \"count\": 2}, {\"strong\": \"H5319\", \"count\": 1}, {\"strong\": \"H4695\", \"count\": 1}, {\"strong\": \"G3055\", \"count\": 1}, {\"strong\": \"G3054\", \"count\": 1}]",
    "description": "Strife is the condition of ongoing quarrel, conflict, and contention between people — the state where relationship has broken down into active hostility or persistent friction. The Hebrew and Greek vocabulary covers both the immediate quarrel and the underlying provocation that keeps conflict alive. Strife is treated as a social pathology: it destroys community, poisons relationships, and reflects the disordered inner states of those who generate it. The peaceable person is not one who never disagrees but one who does not stir up or maintain strife.",
    "origin": "original_list",
    "dimensions": "Relational/Social",
@@ -60,163 +86,948 @@
  },
  "terms": [
   {
-   "code": "H0079",
-   "gloss": "to wrestle",
-   "transliteration": "a.vaq",
-   "script_form": "אָבַק",
+   "code": "H1566",
+   "gloss": "to quarrel",
+   "transliteration": "ga.la",
+   "script_form": "גָּלַע",
    "language": "Hebrew",
-   "vocab_count": 2,
-   "medium_def": "(Niphal) to wrestle, grapple (get dusty), bedust",
+   "vocab_count": 3,
+   "medium_def": "1) to expose, lay bare\n1a) (Hithpael)\n1a1) to disclose oneself, break out\n1a2) to break out (in contention)",
    "lsj_entry": "",
    "short_def_mounce": "",
    "related_words": [
     {
-     "strong": "H0080",
-     "form": "אָבָק",
-     "gloss": "dust",
-     "translit": "a.vaq"
+     "strong": "H1568G",
+     "form": "גִּלְעָד",
+     "gloss": "Gilead",
+     "translit": "gil.ad"
     },
     {
-     "strong": "H0081",
-     "form": "אֲבָקָה",
-     "gloss": "aromatic powder",
-     "translit": "a.va.qah"
+     "strong": "H1568H",
+     "form": "גִּלְעָד",
+     "gloss": "Gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1568I",
+     "form": "גִּלְעָד",
+     "gloss": "Gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1568J",
+     "form": "גִּלְעָד",
+     "gloss": "Gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1568K",
+     "form": "גִּלְעָד",
+     "gloss": "[Mount] Gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1568L",
+     "form": "גִּלְעָד",
+     "gloss": "[Jabesh]-gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1568M",
+     "form": "גִּלְעָד",
+     "gloss": "[Ramoth]-gilead",
+     "translit": "gil.ad"
+    },
+    {
+     "strong": "H1569",
+     "form": "גִּלְעָדִי",
+     "gloss": "Gileadite",
+     "translit": "gil.a.di"
     }
    ],
-   "raw_related_numbers": "H0080, H0081, ",
-   "freq_list": "2;2;2;2;2;1;2;2;2;2;2;2;;2;2;2;2;2",
+   "raw_related_numbers": "H1568, H1568, H1568, H1568, H1568, H1568, H1568, H1569",
+   "freq_list": "3;3;4@3;3;3;;3;3;3;3;3;3;;3;3;3;;",
    "is_proper_noun": false,
    "is_sub_gloss": false,
-   "step_parent_code": "H0079",
+   "step_parent_code": "H1566",
    "step_section_type": "primary",
    "decision_group": "G1",
    "action": "include",
-   "decision_reason": "F4: parent H0079 in anchor list, section_type=primary",
+   "decision_reason": "F4: parent H1566 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 3,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": true,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Prov.17.14",
+     "ref": "Pro 17:14",
+     "book_code": "Prov",
+     "chapter": 17,
+     "verse_num": 14,
+     "esv_text": "Pro 17:14 The beginning of strife is like letting out water , so quit before the quarrel breaks out .",
+     "target_word": "breaks out",
+     "testament": "OT",
+     "fetched_under_code": "H1566",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.17.14' class='verseLink'><span class='verseNumber'>Pro 17:14</span></a> <span class='level1'></span>The <span morph='HNcfsc' strong='H7225G'>beginning</span> of <span morph='HNcmsa' strong='H4066'>strife</span> is like <span morph='HVqrmsa' strong='H6362'>letting out</span> <span morph='HNcmpa' strong='H4325G'>water</span>,<br /><span class='level2'></span>so  <span morph='HVqv2ms' strong='H5203'>quit</span> <span morph='HNcmpc HC HR' strong='H6440G H9002 H9005'>before</span> the <span morph='HNcmsa HTd' strong='H7379 H9009'>quarrel</span> <span morph='HVtp3ms' strong='H1566'>breaks out</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H1566",
+     "span_label_found": "to quarrel",
+     "context_before": "so quit before the quarrel",
+     "context_after": "."
+    },
+    {
+     "osisId": "Prov.18.1",
+     "ref": "Pro 18:1",
+     "book_code": "Prov",
+     "chapter": 18,
+     "verse_num": 1,
+     "esv_text": "Pro 18:1 Whoever isolates himself seeks his own desire ; he breaks out against all sound judgment .",
+     "target_word": "breaks out",
+     "testament": "OT",
+     "fetched_under_code": "H1566",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.18.1' class='verseLink'><span class='verseNumber'>Pro 18:1</span></a> <span class='level1'></span>Whoever  <span morph='HVNrmsa' strong='H6504'>isolates himself</span> <span morph='HVpi3ms' strong='H1245'>seeks</span> his own <span morph='HNcfsa HR' strong='H8378 H9005'>desire</span>;<br /><span class='level2'></span>he <span morph='HVti3ms' strong='H1566'>breaks out</span> against <span morph='HNcmsc HR' strong='H3605 H9003'>all</span> <span morph='HNcfsa' strong='H8454'>sound judgment</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H1566",
+     "span_label_found": "to quarrel",
+     "context_before": "his own desire ; he",
+     "context_after": "against all sound judgment ."
+    },
+    {
+     "osisId": "Prov.20.3",
+     "ref": "Pro 20:3",
+     "book_code": "Prov",
+     "chapter": 20,
+     "verse_num": 3,
+     "esv_text": "Pro 20:3 It is an honor for a man to keep aloof from strife , but every fool will be quarreling .",
+     "target_word": "quarreling",
+     "testament": "OT",
+     "fetched_under_code": "H1566",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.20.3' class='verseLink'><span class='verseNumber'>Pro 20:3</span></a> <span class='level1'></span>It is an <span morph='HNcmsa' strong='H3519'>honor</span> for a <span morph='HNcmsa HRd' strong='H0376G H9005'>man</span> to  <span morph='HNcfsa' strong='H7674'>keep aloof</span> <span morph='HR' strong='H9006'>from</span> <span morph='HNcmsa' strong='H7379'>strife</span>,<br /><span class='level2'></span>but <span morph='HNcmsa HC' strong='H3605 H9002'>every</span> <span morph='HAamsa' strong='H0191'>fool</span> will be <span morph='HVti3ms' strong='H1566'>quarreling</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H1566",
+     "span_label_found": "to quarrel",
+     "context_before": "but every fool will be",
+     "context_after": "."
+    }
+   ]
+  },
+  {
+   "code": "H4079",
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "script_form": "מִדְיָן",
+   "language": "Hebrew",
+   "vocab_count": 10,
+   "medium_def": "strife, contention",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H1777",
+     "form": "דִּין",
+     "gloss": "to judge",
+     "translit": "din"
+    },
+    {
+     "strong": "H1779",
+     "form": "דִּין",
+     "gloss": "judgment",
+     "translit": "din"
+    },
+    {
+     "strong": "H1781",
+     "form": "דַּיָּן",
+     "gloss": "judge",
+     "translit": "day.yan"
+    },
+    {
+     "strong": "H1783",
+     "form": "דִּינָה",
+     "gloss": "Dinah",
+     "translit": "di.nah"
+    },
+    {
+     "strong": "H1835G",
+     "form": "דָּן",
+     "gloss": "Dan",
+     "translit": "dan"
+    },
+    {
+     "strong": "H1835H",
+     "form": "דָּן",
+     "gloss": "Dan",
+     "translit": "dan"
+    },
+    {
+     "strong": "H1839",
+     "form": "דָּנִי",
+     "gloss": "Danite",
+     "translit": "da.ni"
+    },
+    {
+     "strong": "H1840G",
+     "form": "דָּנִיֵּאל, דָּנִאֵל",
+     "gloss": "Daniel",
+     "translit": "da.niy.yel da.ni.el"
+    },
+    {
+     "strong": "H1840H",
+     "form": "דָּנִיֵּאל, דָּנִאֵל",
+     "gloss": "Daniel",
+     "translit": "da.niy.yel da.ni.el"
+    },
+    {
+     "strong": "H1842",
+     "form": "יַעַן",
+     "gloss": "Jaan",
+     "translit": "ya.an"
+    },
+    {
+     "strong": "H3036",
+     "form": "יָדוֹן",
+     "gloss": "Jadon",
+     "translit": "ya.don"
+    },
+    {
+     "strong": "H4066",
+     "form": "מָדוֹן",
+     "gloss": "strife",
+     "translit": "ma.don"
+    },
+    {
+     "strong": "H4068",
+     "form": "מָדוֹן",
+     "gloss": "Madon",
+     "translit": "ma.don"
+    },
+    {
+     "strong": "H4080G",
+     "form": "מִדְיָן",
+     "gloss": "Midian",
+     "translit": "mid.yan"
+    },
+    {
+     "strong": "H4080H",
+     "form": "מִדְיָן",
+     "gloss": "Midian",
+     "translit": "mid.yan"
+    },
+    {
+     "strong": "H4082",
+     "form": "מְדִינָה",
+     "gloss": "province",
+     "translit": "me.di.nah"
+    },
+    {
+     "strong": "H4084",
+     "form": "מִדְיָנִי",
+     "gloss": "Midianite",
+     "translit": "mid.ya.ni"
+    },
+    {
+     "strong": "H4090",
+     "form": "מְדָן",
+     "gloss": "strife",
+     "translit": "me.dan"
+    },
+    {
+     "strong": "H4091",
+     "form": "מְדָן",
+     "gloss": "Medan",
+     "translit": "me.dan"
+    },
+    {
+     "strong": "H4092",
+     "form": "מְדָנִי",
+     "gloss": "Midianite",
+     "translit": "me.da.ni"
+    },
+    {
+     "strong": "H7384A",
+     "form": "דִּיפַת",
+     "gloss": "Riphath",
+     "translit": "di.phat"
+    },
+    {
+     "strong": "H7384B",
+     "form": "רִיפַת",
+     "gloss": "Riphath",
+     "translit": "ri.phat"
+    }
+   ],
+   "raw_related_numbers": "H1777, H1779, H1783, H1835, H1835, H1842, H1839, H1781, H1840, H1840, H4066, H4090, H4068, H4091, H4080, H4080, H4092, H4084, H4082, H3036, H7384, H7384",
+   "freq_list": "10;9;;3;9;;9;9;9;9;;9;;10;3;3@9;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H4079",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H4079 in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 10,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Prov.18.18",
+     "ref": "Pro 18:18",
+     "book_code": "Prov",
+     "chapter": 18,
+     "verse_num": 18,
+     "esv_text": "Pro 18:18 The lot puts an end to quarrels and decides between powerful contenders .",
+     "target_word": "quarrels",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.18.18' class='verseLink'><span class='verseNumber'>Pro 18:18</span></a> <span class='level1'></span> The <span morph='HNcmsa HTd' strong='H1486 H9009'>lot</span> puts an <span morph='HVhi3ms' strong='H7673A'>end</span> to <span morph='HNcmpa' strong='H4079'>quarrels</span><br /><span class='level2'></span>and <span morph='HVhi3ms' strong='H6504'>decides</span> <span morph='HAcmsc HC' strong='H0996G H9002'>between</span> <span morph='HAampa' strong='H6099'>powerful contenders</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "lot puts an end to",
+     "context_after": "and decides between powerful contenders"
+    },
+    {
+     "osisId": "Prov.18.19",
+     "ref": "Pro 18:19",
+     "book_code": "Prov",
+     "chapter": 18,
+     "verse_num": 19,
+     "esv_text": "Pro 18:19 A brother offended is more unyielding than a strong city , and quarreling is like the bars of a castle .",
+     "target_word": "quarreling",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.18.19' class='verseLink'><span class='verseNumber'>Pro 18:19</span></a> <span class='level1'></span>A <span morph='HNcmsa' strong='H0251G'>brother</span> <span morph='HVNrmsa' strong='H6586'>offended</span> is more unyielding <span morph='HR' strong='H9006'>than</span> a <span morph='HNcmsa' strong='H5797'>strong</span> <span morph='HNcfsc' strong='H7151'>city</span>,<br /><span class='level2'></span>and <span morph='HNcmpa HC' strong='H4079 H9002'>quarreling</span> is like the <span morph='HNcmsc HR' strong='H1280 H9004'>bars</span> of a <span morph='HNcmsa' strong='H0759H'>castle</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "a strong city , and",
+     "context_after": "is like the bars of"
+    },
+    {
+     "osisId": "Prov.19.13",
+     "ref": "Pro 19:13",
+     "book_code": "Prov",
+     "chapter": 19,
+     "verse_num": 13,
+     "esv_text": "Pro 19:13 A foolish son is ruin to his father , and a wife’s quarreling is a continual dripping of rain .",
+     "target_word": "quarreling",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.19.13' class='verseLink'><span class='verseNumber'>Pro 19:13</span></a> <span class='level1'></span> A <span morph='HAamsa' strong='H3684'>foolish</span> <span morph='HNcmsa HSp3ms' strong='H1121A H9023'>son</span> is <span morph='HNcfpa' strong='H1942'>ruin</span> to his <span morph='HNcmsc HR' strong='H0001G H9005'>father</span>,<br /><span class='level2'></span>and  a <span morph='HNcfsa' strong='H0802H'>wife’s</span> <span morph='HNcmpc' strong='H4079'>quarreling</span> is  a <span morph='HVqrmsa' strong='H2956'>continual</span> dripping of <span morph='HNcmsa HC' strong='H1812 H9002'>rain</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "father , and a wife’s",
+     "context_after": "is a continual dripping of"
+    },
+    {
+     "osisId": "Prov.21.19",
+     "ref": "Pro 21:19",
+     "book_code": "Prov",
+     "chapter": 21,
+     "verse_num": 19,
+     "esv_text": "Pro 21:19 It is better to live in a desert land than with a quarrelsome and fretful woman .",
+     "target_word": "quarrelsome",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.21.19' class='verseLink'><span class='verseNumber'>Pro 21:19</span></a> <span class='level1'></span>It is  <span morph='HAamsa' strong='H2896A'>better</span> to <span morph='HVqcc' strong='H3427'>live</span> in a <span morph='HNcmsa' strong='H4057B'>desert</span> <span morph='HNcfsc HR' strong='H0776G H9003'>land</span><br /><span class='level2'></span><span morph='HR' strong='H9006'>than</span> with a <span morph='HNcmpa' strong='H4079'>quarrelsome</span> and <span morph='HNcmsa HC' strong='H3708A H9002'>fretful</span> <span morph='HNcfsc' strong='H0802G'>woman</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "desert land than with a",
+     "context_after": "and fretful woman ."
+    },
+    {
+     "osisId": "Prov.21.9",
+     "ref": "Pro 21:9",
+     "book_code": "Prov",
+     "chapter": 21,
+     "verse_num": 9,
+     "esv_text": "Pro 21:9 It is better to live in a corner of the housetop than in a house shared with a quarrelsome wife .",
+     "target_word": "quarrelsome",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.21.9' class='verseLink'><span class='verseNumber'>Pro 21:9</span></a> <span class='level1'></span>It is  <span morph='HAamsa' strong='H2896A'>better</span> to <span morph='HVqcc HR' strong='H3427 H9005'>live</span> in a <span morph='HNcfsc HR' strong='H6438H H5921A'>corner</span> of the <span morph='HNcmsa' strong='H1406'>housetop</span><br /><span class='level2'></span><span morph='HR' strong='H9006'>than</span> in a <span morph='HNcmsc HC' strong='H1004B H9002'>house</span> <span morph='HNcmsa' strong='H2269'>shared</span> with a <span morph='HNcmpa' strong='H4079'>quarrelsome</span> <span morph='HNcfsc' strong='H0802H'>wife</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "a house shared with a",
+     "context_after": "wife ."
+    },
+    {
+     "osisId": "Prov.23.29",
+     "ref": "Pro 23:29",
+     "book_code": "Prov",
+     "chapter": 23,
+     "verse_num": 29,
+     "esv_text": "Pro 23:29 Who has woe ? Who has sorrow ? Who has strife ? Who has complaining ? Who has wounds without cause ? Who has redness of eyes ?",
+     "target_word": "strife",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.23.29' class='verseLink'><span class='verseNumber'>Pro 23:29</span></a> <span class='level1'></span> <span morph='HPi HR' strong='H4310 H9005'>Who</span> has <span morph='HTj' strong='H0188'>woe</span>? <span morph='HPi HR' strong='H4310 H9005'>Who</span> has <span morph='HTj' strong='H0017'>sorrow</span>?<br /><span class='level2'></span><span morph='HPi HR' strong='H4310 H9005'>Who</span> has <span morph='HNcmpa' strong='H4079'>strife</span>? <span morph='HPi HR' strong='H4310 H9005'>Who</span> has <span morph='HNcmsa' strong='H7879'>complaining</span>?<br /><span class='level1'></span><span morph='HPi HR' strong='H4310 H9005'>Who</span> has  <span morph='HNcmpa' strong='H6482'>wounds</span> <span morph='HD' strong='H2600'>without cause</span>?<br /><span class='level2'></span><span morph='HPi HR' strong='H4310 H9005'>Who</span> has  <span morph='HNcfsa' strong='H2448'>redness</span> of <span morph='HNcfda' strong='H5869A'>eyes</span>?<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "has sorrow ? Who has",
+     "context_after": "? Who has complaining ?"
+    },
+    {
+     "osisId": "Prov.25.24",
+     "ref": "Pro 25:24",
+     "book_code": "Prov",
+     "chapter": 25,
+     "verse_num": 24,
+     "esv_text": "Pro 25:24 It is better to live in a corner of the housetop than in a house shared with a quarrelsome wife .",
+     "target_word": "quarrelsome",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.25.24' class='verseLink'><span class='verseNumber'>Pro 25:24</span></a> <span class='level1'></span> It is <span morph='HAamsa' strong='H2896A'>better</span> to <span morph='HVqcc' strong='H3427'>live</span> <span morph='HR' strong='H5921A'>in</span> a <span morph='HNcfsc' strong='H6438H'>corner</span> of the <span morph='HNcmsa' strong='H1406'>housetop</span><br /><span class='level2'></span>than in a <span morph='HNcmsc HC' strong='H1004B H9002'>house</span> <span morph='HNcmsa' strong='H2269'>shared</span> with a <span morph='HNcmpa' strong='H4079'>quarrelsome</span> <span morph='HNcfsc HR' strong='H0802H H9006'>wife</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "a house shared with a",
+     "context_after": "wife ."
+    },
+    {
+     "osisId": "Prov.26.21",
+     "ref": "Pro 26:21",
+     "book_code": "Prov",
+     "chapter": 26,
+     "verse_num": 21,
+     "esv_text": "Pro 26:21 As charcoal to hot embers and wood to fire , so is a quarrelsome man for kindling strife .",
+     "target_word": "quarrelsome",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.26.21' class='verseLink'><span class='verseNumber'>Pro 26:21</span></a> <span class='level1'></span>As <span morph='HNcmsa' strong='H6352'>charcoal</span> to <span morph='HNcmpa HR' strong='H1513 H9005'>hot embers</span> and <span morph='HNcmpa HC' strong='H6086G H9002'>wood</span> to <span morph='HNcbsa HR' strong='H0784 H9005'>fire</span>,<br /><span class='level2'></span>so is  a <span morph='HNcmpa' strong='H4079'>quarrelsome</span> <span morph='HNcmsc HC' strong='H0376G H9002'>man</span> for <span morph='HVpcc HR' strong='H2787 H9005'>kindling</span> <span morph='HNcmsa' strong='H7379'>strife</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "fire , so is a",
+     "context_after": "man for kindling strife ."
+    },
+    {
+     "osisId": "Prov.27.15",
+     "ref": "Pro 27:15",
+     "book_code": "Prov",
+     "chapter": 27,
+     "verse_num": 15,
+     "esv_text": "Pro 27:15 A continual dripping on a rainy day and a quarrelsome wife are alike ;",
+     "target_word": "quarrelsome",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.27.15' class='verseLink'><span class='verseNumber'>Pro 27:15</span></a> <span class='level1'></span> A <span morph='HVqrmsa' strong='H2956'>continual</span> <span morph='HNcmsa' strong='H1812'>dripping</span> on a <span morph='HNcmsa' strong='H5464'>rainy</span> <span morph='HNcmsc HR' strong='H3117G H9003'>day</span><br /><span class='level2'></span>and a <span morph='HNcmpa' strong='H4079'>quarrelsome</span> <span morph='HNcfsc HC' strong='H0802H H9002'>wife</span> are <span morph='HVDp3ms' strong='H7737A'>alike</span>;<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "a rainy day and a",
+     "context_after": "wife are alike ;"
+    },
+    {
+     "osisId": "Prov.6.14",
+     "ref": "Pro 6:14",
+     "book_code": "Prov",
+     "chapter": 6,
+     "verse_num": 14,
+     "esv_text": "Pro 6:14 with perverted heart devises evil , continually sowing discord ;",
+     "target_word": "discord",
+     "testament": "OT",
+     "fetched_under_code": "H4079",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.6.14' class='verseLink'><span class='verseNumber'>Pro 6:14</span></a> <span class='level1'></span>with  <span morph='HNcfpa' strong='H8419'>perverted</span> <span morph='HNcmsc HR' strong='H3820A H9003'>heart</span>  <span morph='HVqrmsa HSp3ms' strong='H2790A H9023'>devises</span> <span morph='HAamsa' strong='H7451B'>evil</span>,<br /><span class='level2'></span><span morph='HNcmsc HR HNcbsa' strong='H3605 H9003 H6256'>continually</span>  <span morph='HVpi3ms' strong='H7971G'>sowing</span> <span morph='HNcmpa' strong='H4079'>discord</span>;<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H4079",
+     "span_label_found": "contention",
+     "context_before": "devises evil , continually sowing",
+     "context_after": ";"
+    }
+   ]
+  },
+  {
+   "code": "H4090",
+   "gloss": "strife",
+   "transliteration": "me.dan",
+   "script_form": "מְדָן",
+   "language": "Hebrew",
+   "vocab_count": 5,
+   "medium_def": "strife, contention",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H1777",
+     "form": "דִּין",
+     "gloss": "to judge",
+     "translit": "din"
+    },
+    {
+     "strong": "H1779",
+     "form": "דִּין",
+     "gloss": "judgment",
+     "translit": "din"
+    },
+    {
+     "strong": "H1781",
+     "form": "דַּיָּן",
+     "gloss": "judge",
+     "translit": "day.yan"
+    },
+    {
+     "strong": "H1783",
+     "form": "דִּינָה",
+     "gloss": "Dinah",
+     "translit": "di.nah"
+    },
+    {
+     "strong": "H1835G",
+     "form": "דָּן",
+     "gloss": "Dan",
+     "translit": "dan"
+    },
+    {
+     "strong": "H1835H",
+     "form": "דָּן",
+     "gloss": "Dan",
+     "translit": "dan"
+    },
+    {
+     "strong": "H1839",
+     "form": "דָּנִי",
+     "gloss": "Danite",
+     "translit": "da.ni"
+    },
+    {
+     "strong": "H1840G",
+     "form": "דָּנִיֵּאל, דָּנִאֵל",
+     "gloss": "Daniel",
+     "translit": "da.niy.yel da.ni.el"
+    },
+    {
+     "strong": "H1840H",
+     "form": "דָּנִיֵּאל, דָּנִאֵל",
+     "gloss": "Daniel",
+     "translit": "da.niy.yel da.ni.el"
+    },
+    {
+     "strong": "H1842",
+     "form": "יַעַן",
+     "gloss": "Jaan",
+     "translit": "ya.an"
+    },
+    {
+     "strong": "H3036",
+     "form": "יָדוֹן",
+     "gloss": "Jadon",
+     "translit": "ya.don"
+    },
+    {
+     "strong": "H4066",
+     "form": "מָדוֹן",
+     "gloss": "strife",
+     "translit": "ma.don"
+    },
+    {
+     "strong": "H4068",
+     "form": "מָדוֹן",
+     "gloss": "Madon",
+     "translit": "ma.don"
+    },
+    {
+     "strong": "H4079",
+     "form": "מִדְיָן",
+     "gloss": "contention",
+     "translit": "mid.yan"
+    },
+    {
+     "strong": "H4080G",
+     "form": "מִדְיָן",
+     "gloss": "Midian",
+     "translit": "mid.yan"
+    },
+    {
+     "strong": "H4080H",
+     "form": "מִדְיָן",
+     "gloss": "Midian",
+     "translit": "mid.yan"
+    },
+    {
+     "strong": "H4082",
+     "form": "מְדִינָה",
+     "gloss": "province",
+     "translit": "me.di.nah"
+    },
+    {
+     "strong": "H4084",
+     "form": "מִדְיָנִי",
+     "gloss": "Midianite",
+     "translit": "mid.ya.ni"
+    },
+    {
+     "strong": "H4091",
+     "form": "מְדָן",
+     "gloss": "Medan",
+     "translit": "me.dan"
+    },
+    {
+     "strong": "H4092",
+     "form": "מְדָנִי",
+     "gloss": "Midianite",
+     "translit": "me.da.ni"
+    },
+    {
+     "strong": "H7384A",
+     "form": "דִּיפַת",
+     "gloss": "Riphath",
+     "translit": "di.phat"
+    },
+    {
+     "strong": "H7384B",
+     "form": "רִיפַת",
+     "gloss": "Riphath",
+     "translit": "ri.phat"
+    }
+   ],
+   "raw_related_numbers": "H1777, H1779, H1783, H1835, H1835, H1842, H1839, H1781, H1840, H1840, H4079, H4066, H4068, H4091, H4080, H4080, H4092, H4084, H4082, H3036, H7384, H7384",
+   "freq_list": "2;3;2;2;3;;2;2;3;3;2;3;;2;3;3;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H4079",
+   "step_section_type": "related_term",
+   "decision_group": "G2r",
+   "action": "include",
+   "decision_reason": "F5b: parent H4079 in anchor list, section_type=related_term, root NOT confirmed",
    "verses_fetched": true,
    "verse_count": 2,
    "testament_coverage": "OT_only",
    "meaning_numbered": false,
    "causative_form_present": false,
-   "data_quality_flags": [],
-   "quality_flag_detail": {},
+   "data_quality_flags": [
+    "NOTE_ON_ROOT_FAMILY"
+   ],
+   "quality_flag_detail": {
+    "NOTE_ON_ROOT_FAMILY": "Root family of H4090 ('strife') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+   },
    "verses": [
     {
-     "osisId": "Gen.32.24",
-     "ref": "Gen 32:24",
-     "book_code": "Gen",
-     "chapter": 32,
-     "verse_num": 24,
-     "esv_text": "Gen 32:24 And Jacob was left alone . And a man wrestled with him until the breaking of the day .",
-     "target_word": "wrestled",
+     "osisId": "Prov.10.12",
+     "ref": "Pro 10:12",
+     "book_code": "Prov",
+     "chapter": 10,
+     "verse_num": 12,
+     "esv_text": "Pro 10:12 Hatred stirs up strife , but love covers all offenses .",
+     "target_word": "strife",
      "testament": "OT",
-     "fetched_under_code": "H0079",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.32.24' class='verseLink'><span class='verseNumber'>Gen 32:24</span></a> And <span morph='HNpm' strong='H3290'>Jacob</span> was <span morph='HVNw3ms' strong='H3498'>left</span> <span morph='HNcmsc HR' strong='H0905H H9005'>alone</span>. And  a <span morph='HNcmsa' strong='H0376G'>man</span> <span morph='HVNw3ms HSp3ms' strong='H0079 H9033'>wrestled</span> with him <span morph='HR' strong='H5704'>until</span> the <span morph='HVqcc HRd HSp3ms' strong='H5927L H5973A H9033'>breaking</span> of the <span morph='HNcmsa HTd' strong='H7837 H9009'>day</span>.</span> </div>",
+     "fetched_under_code": "H4090",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.10.12' class='verseLink'><span class='verseNumber'>Pro 10:12</span></a> <span class='level1'></span><span morph='HNcfsa' strong='H8135'>Hatred</span> <span morph='HVpi3fs' strong='H5782'>stirs up</span> <span morph='HNcmpa' strong='H4090'>strife</span>,<br /><span class='level2'></span>but  <span morph='HNcfsa' strong='H0160'>love</span> <span morph='HVpi3fs' strong='H3680'>covers</span> <span morph='HR HC HNcmsc' strong='H5921A H9002 H3605'>all</span> <span morph='HNcmpa' strong='H6588'>offenses</span>.<br /></span> </div>",
      "span_strong_match": 1,
-     "span_code_found": "H0079",
-     "span_label_found": "to wrestle",
-     "context_before": "alone . And a man",
-     "context_after": "with him until the breaking"
+     "span_code_found": "H4090",
+     "span_label_found": "strife",
+     "context_before": "Pro 10:12 Hatred stirs up",
+     "context_after": ", but love covers all"
     },
     {
-     "osisId": "Gen.32.25",
-     "ref": "Gen 32:25",
-     "book_code": "Gen",
-     "chapter": 32,
-     "verse_num": 25,
-     "esv_text": "Gen 32:25 When the man saw that he did not prevail against Jacob, he touched his hip socket , and Jacob’s hip was put out of joint as he wrestled with him .",
-     "target_word": "wrestled",
+     "osisId": "Prov.6.19",
+     "ref": "Pro 6:19",
+     "book_code": "Prov",
+     "chapter": 6,
+     "verse_num": 19,
+     "esv_text": "Pro 6:19 a false witness who breathes out lies , and one who sows discord among brothers .",
+     "target_word": "discord",
      "testament": "OT",
-     "fetched_under_code": "H0079",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.32.25' class='verseLink'><span class='verseNumber'>Gen 32:25</span></a> When the man <span morph='HVqw3ms' strong='H7200G'>saw</span> <span morph='HTc' strong='H3588A'>that</span> he did <span morph='HTn' strong='H3808'>not</span> <span morph='HVqp3ms' strong='H3201'>prevail</span> against Jacob, he <span morph='HVqw3ms HRd HSp3ms' strong='H5060 H9005 H9033'>touched</span> his <span morph='HNcfsc' strong='H3409'>hip</span> <span morph='HNcfsc HR' strong='H3709I H9003'>socket</span>, and <span morph='HNpm' strong='H3290'>Jacob’s</span> <span morph='HNcfsc HNcfsc' strong='H3409 H3709I'>hip</span> was put out of <span morph='HVqw3fs HSp3ms' strong='H3363 H9023'>joint</span> as <span morph='HSp3ms' strong='H9043'>he</span> <span morph='HVNcc HR' strong='H0079 H9003'>wrestled</span> <span morph='HRd' strong='H5973A'>with</span> <span morph='HSp3ms' strong='H9033'>him</span>.</span> </div>",
+     "fetched_under_code": "H4090",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.6.19' class='verseLink'><span class='verseNumber'>Pro 6:19</span></a> <span class='level1'></span> a <span morph='HNcmsa' strong='H8267'>false</span> <span morph='HNcmsc' strong='H5707'>witness</span> who  <span morph='HVqi3ms' strong='H6315'>breathes out</span> <span morph='HNcmpa' strong='H3577'>lies</span>,<br /><span class='level2'></span>and one who  <span morph='HVprmsa' strong='H7971G'>sows</span> <span morph='HNcmpa' strong='H4090'>discord</span> among <span morph='HNcmpa HAcmsc' strong='H0251G H0996G'>brothers</span>.<br /><span class='endLineGroup'></span></span> </div>",
      "span_strong_match": 1,
-     "span_code_found": "H0079",
-     "span_label_found": "to wrestle",
-     "context_before": "out of joint as he",
-     "context_after": "with him ."
+     "span_code_found": "H4090",
+     "span_label_found": "strife",
+     "context_before": ", and one who sows",
+     "context_after": "among brothers ."
     }
    ]
   },
   {
-   "code": "H5319",
-   "gloss": "wrestling",
-   "transliteration": "naph.tu.lim",
-   "script_form": "נַפְתּוּלִים",
+   "code": "H5916",
+   "gloss": "to trouble",
+   "transliteration": "a.khar",
+   "script_form": "עָכַר",
    "language": "Hebrew",
-   "vocab_count": 1,
-   "medium_def": "wrestlings",
+   "vocab_count": 14,
+   "medium_def": "1) to trouble, stir up, disturb, make (someone) taboo\n1a) (Qal) to disturb, trouble\n1b) (Niphal)\n1b1) to be disturbed, be stirred up\n1b2) disturbance, calamity (participle)",
    "lsj_entry": "",
    "short_def_mounce": "",
    "related_words": [
     {
-     "strong": "H5321G",
-     "form": "נַפְתָּלִי",
-     "gloss": "Naphtali",
-     "translit": "naph.ta.li"
+     "strong": "H5911",
+     "form": "עָכוֹר",
+     "gloss": "[Valley of] Achor",
+     "translit": "a.khor"
     },
     {
-     "strong": "H5321H",
-     "form": "נַפְתָּלִי",
-     "gloss": "[Kedesh]-naphtali",
-     "translit": "naph.ta.li"
+     "strong": "H5917",
+     "form": "עָכָר",
+     "gloss": "Achan",
+     "translit": "a.khar"
     },
     {
-     "strong": "H6616",
-     "form": "פָּתִיל",
-     "gloss": "cord",
-     "translit": "pa.til"
+     "strong": "H5918",
+     "form": "עׇכְרָן",
+     "gloss": "Ochran",
+     "translit": "okh.ran"
     },
     {
-     "strong": "H6617",
-     "form": "פָּתַל",
-     "gloss": "to twist",
-     "translit": "pa.tal"
+     "strong": "H5919",
+     "form": "עַכְשׁוּב",
+     "gloss": "viper",
+     "translit": "akh.shuv"
     },
     {
-     "strong": "H6618",
-     "form": "פְּתַלְתֹּל",
-     "gloss": "twisted",
-     "translit": "pe.tal.tol"
-    },
-    {
-     "strong": "H6619",
-     "form": "פִּתֹם",
-     "gloss": "Pithom",
-     "translit": "pi.tom"
+     "strong": "H5925",
+     "form": "עֻלָּא",
+     "gloss": "Ulla",
+     "translit": "ul.la"
     }
    ],
-   "raw_related_numbers": "H6617, H6616, H6618, H5321, H5321, H6619",
-   "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;1",
+   "raw_related_numbers": "H5917, H5911, H5918, H5919, H5925",
+   "freq_list": "14@13;14@13;30@13;13;14@13;;14@13;14@13;14@13;14@13;18@13;14@13;;14@13;14@13;14@13;1;1",
    "is_proper_noun": false,
    "is_sub_gloss": false,
-   "step_parent_code": "H5319",
+   "step_parent_code": "H5916",
    "step_section_type": "primary",
    "decision_group": "G1",
    "action": "include",
-   "decision_reason": "F4: parent H5319 in anchor list, section_type=primary",
+   "decision_reason": "F4: parent H5916 in anchor list, section_type=primary",
    "verses_fetched": true,
-   "verse_count": 1,
+   "verse_count": 13,
    "testament_coverage": "OT_only",
-   "meaning_numbered": false,
+   "meaning_numbered": true,
    "causative_form_present": false,
    "data_quality_flags": [],
    "quality_flag_detail": {},
    "verses": [
     {
-     "osisId": "Gen.30.8",
-     "ref": "Gen 30:8",
-     "book_code": "Gen",
-     "chapter": 30,
-     "verse_num": 8,
-     "esv_text": "Gen 30:8 Then Rachel said , “With mighty wrestlings I have wrestled with my sister and have prevailed .” So she called his name Naphtali .",
-     "target_word": "wrestlings",
+     "osisId": "1Chr.2.7",
+     "ref": "1Ch 2:7",
+     "book_code": "1Chr",
+     "chapter": 2,
+     "verse_num": 7,
+     "esv_text": "1Ch 2:7 The son of Carmi : Achan , the troubler of Israel , who broke faith in the matter of the devoted thing;",
+     "target_word": "troubler",
      "testament": "OT",
-     "fetched_under_code": "H5319",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.30.8' class='verseLink'><span class='verseNumber'>Gen 30:8</span></a> Then <span morph='HNpf' strong='H7354'>Rachel</span> <span morph='HVqw3fs' strong='H0559'>said</span>, “With <span morph='HNcmpa' strong='H0430G'>mighty</span> <span morph='HNcmpc' strong='H5319'>wrestlings</span>   I have <span morph='HVNp1cs' strong='H6617'>wrestled</span> with my <span morph='HNcfsc HR' strong='H0269 H5973A'>sister</span> and have <span morph='HVqp1cs HSp1bs HD' strong='H3201 H9020 H1571'>prevailed</span>.” So she <span morph='HVqw3fs' strong='H7121H'>called</span> his <span morph='HNcmsc' strong='H8034'>name</span>  <span morph='HNpm HSp3ms' strong='H5321G H9023'>Naphtali</span>. <p></p></span> </div>",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Chr.2.7' class='verseLink'><span class='verseNumber'>1Ch 2:7</span></a> The <span morph='HNcmpc HC' strong='H1121A H9002'>son</span>   of <span morph='HNpm' strong='H3756H'>Carmi</span>: <span morph='HNpm' strong='H5917'>Achan</span>, the <span morph='HVqrmsa' strong='H5916'>troubler</span> of <span morph='HNpl' strong='H3478'>Israel</span>, <span morph='HTr' strong='H0834A'>who</span>  <span morph='HVqp3ms' strong='H4603'>broke</span> faith in the matter of the <span morph='HNcmsa HRd' strong='H2764A H9003'>devoted</span> thing;</span> </div>",
      "span_strong_match": 1,
-     "span_code_found": "H5319",
-     "span_label_found": "wrestling",
-     "context_before": "Rachel said , “With mighty",
-     "context_after": "I have wrestled with my"
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "Carmi : Achan , the",
+     "context_after": "of Israel , who broke"
+    },
+    {
+     "osisId": "1Kgs.18.17",
+     "ref": "1Ki 18:17",
+     "book_code": "1Kgs",
+     "chapter": 18,
+     "verse_num": 17,
+     "esv_text": "1Ki 18:17 When Ahab saw Elijah , Ahab said to him, “Is it you, you troubler of Israel ?”",
+     "target_word": "troubler",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Kgs.18.17' class='verseLink'><span class='verseNumber'>1Ki 18:17</span></a> When <span morph='HNpm' strong='H0256G'>Ahab</span> <span morph='HVqcc HR HVqw3ms' strong='H7200G H9004 H1961'>saw</span> <span morph='HNpm HTo' strong='H0452G H0853'>Elijah</span>, <span morph='HNpm' strong='H0256G'>Ahab</span> <span morph='HVqw3ms' strong='H0559'>said</span> <span morph='HR' strong='H0413'>to</span> him,  “Is <span morph='HTm HSp3ms HPp2ms HTi' strong='H2088 H9033 H0859A H9008'>it</span> you, you  <span morph='HVqrmsa' strong='H5916'>troubler</span> of <span morph='HNpl' strong='H3478'>Israel</span>?”</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "him, “Is it you, you",
+     "context_after": "of Israel ?”"
+    },
+    {
+     "osisId": "1Kgs.18.18",
+     "ref": "1Ki 18:18",
+     "book_code": "1Kgs",
+     "chapter": 18,
+     "verse_num": 18,
+     "esv_text": "1Ki 18:18 And he answered , “I have not troubled Israel , but you have, and your father’s house , because you have abandoned the commandments of the Lord and followed the Baals .",
+     "target_word": "troubled",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Kgs.18.18' class='verseLink'><span class='verseNumber'>1Ki 18:18</span></a> And he <span morph='HVqw3ms' strong='H0559'>answered</span>, “I have <span morph='HTn' strong='H3808'>not</span> <span morph='HVqp1cs' strong='H5916'>troubled</span> <span morph='HNpl HTo' strong='H3478 H0853'>Israel</span>, <span morph='HTc HTc' strong='H3588B H0518B'>but</span> you have, and your <span morph='HNcmsc' strong='H0001G'>father’s</span> <span morph='HNcmsc HC HPp2ms' strong='H1004M H9002 H0859A'>house</span>, because you have  <span morph='HVqcc HR HSp2ms' strong='H5800A H9003 H9021'>abandoned</span> the <span morph='HNcfpc HSp2mp HTo' strong='H4687 H9046 H0853'>commandments</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> and  <span morph='HVqw2ms HAcmpc' strong='H1980N H0310A'>followed</span> the <span morph='HNtmpa HTd' strong='H1168A H9009'>Baals</span>.</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "answered , “I have not",
+     "context_after": "Israel , but you have,"
+    },
+    {
+     "osisId": "1Sam.14.29",
+     "ref": "1Sa 14:29",
+     "book_code": "1Sam",
+     "chapter": 14,
+     "verse_num": 29,
+     "esv_text": "1Sa 14:29 Then Jonathan said , “My father has troubled the land . See how my eyes have become bright because I tasted a little of this honey .",
+     "target_word": "troubled",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Sam.14.29' class='verseLink'><span class='verseNumber'>1Sa 14:29</span></a> Then <span morph='HNpm' strong='H3129N'>Jonathan</span> <span morph='HVqw3ms' strong='H0559'>said</span>, “My <span morph='HNcmsc' strong='H0001G'>father</span> has <span morph='HVqp3ms' strong='H5916'>troubled</span> the <span morph='HNcfsa HTd HSp1bs HTo' strong='H0776G H9009 H9020 H0853'>land</span>. <span morph='HVqv2mp HTj' strong='H7200G H4994'>See</span> <span morph='HTc' strong='H3588A'>how</span> my <span morph='HNcfdc' strong='H5869A'>eyes</span> have <span morph='HVqp3cp' strong='H0215'>become bright</span> <span morph='HTc HSp1bs' strong='H3588A H9020'>because</span> I <span morph='HVqp1cs' strong='H2938'>tasted</span> a <span morph='HNcmsc' strong='H4592'>little</span> of <span morph='HTm HTd' strong='H2088 H9009'>this</span> <span morph='HNcmsa' strong='H1706'>honey</span>.</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "said , “My father has",
+     "context_after": "the land . See how"
+    },
+    {
+     "osisId": "Gen.34.30",
+     "ref": "Gen 34:30",
+     "book_code": "Gen",
+     "chapter": 34,
+     "verse_num": 30,
+     "esv_text": "Gen 34:30 Then Jacob said to Simeon and Levi , “You have brought trouble on me by making me stink to the inhabitants of the land , the Canaanites and the Perizzites . My numbers are few , and if they gather themselves against me and attack me , I shall be destroyed , both I and my household .”",
+     "target_word": "brought trouble",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.34.30' class='verseLink'><span class='verseNumber'>Gen 34:30</span></a> Then <span morph='HNpm' strong='H3290'>Jacob</span> <span morph='HVqw3ms' strong='H0559'>said</span> <span morph='HR' strong='H0413'>to</span> <span morph='HNpm' strong='H8095G'>Simeon</span> and <span morph='HNpm HR HC' strong='H3878 H0413 H9002'>Levi</span>, <span class='normal'></span> “You have <span morph='HVqp2mp' strong='H5916'>brought trouble</span> on me  <span morph='HR' strong='H9005'>by</span> making me <span morph='HVhcc HTo HSp1bs' strong='H0887 H0853 H9030'>stink</span> to the <span morph='HVqrmsc HR HSp1bs' strong='H3427 H9003 H9030'>inhabitants</span> of the <span morph='HNcfsa HTd' strong='H0776G H9009'>land</span>, <span class='normal'></span> the <span morph='HNgmsa HRd' strong='H3669A H9003'>Canaanites</span> and the <span morph='HNgmsa HC HRd' strong='H6522 H9002 H9003'>Perizzites</span>. <span class='normal'></span> My <span morph='HNcmsa' strong='H4557'>numbers</span> are <span morph='HNcmpc HPp1bs HC' strong='H4962 H0589 H9002'>few</span>, and if they <span morph='HVNq3cp' strong='H0622'>gather themselves</span> <span morph='HRd' strong='H5921A'>against</span> me and <span morph='HVhq3cp HSp1bs' strong='H5221 H9030'>attack me</span>, I shall be <span morph='HVNq1cs HSp1bs' strong='H8045 H9030'>destroyed</span>, both I and <span morph='HSp1bs' strong='H9020'>my</span> <span morph='HNcmsc HC HPp1bs' strong='H1004M H9002 H0589'>household</span>.”</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "and Levi , “You have",
+     "context_after": "on me by making me"
+    },
+    {
+     "osisId": "Josh.6.18",
+     "ref": "Jos 6:18",
+     "book_code": "Josh",
+     "chapter": 6,
+     "verse_num": 18,
+     "esv_text": "Jos 6:18 But you , keep yourselves from the things devoted to destruction , lest when you have devoted them you take any of the devoted things and make the camp of Israel a thing for destruction and bring trouble upon it .",
+     "target_word": "bring trouble",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Josh.6.18' class='verseLink'><span class='verseNumber'>Jos 6:18</span></a> <span morph='HD HC' strong='H7535 H9002'>But</span> <span morph='HPp2mp' strong='H0859D'>you</span>, <span morph='HVqv2mp' strong='H8104H'>keep</span> yourselves <span morph='HR' strong='H4480A'>from</span> the things <span morph='HNcmsa HTd' strong='H2764A H9009'>devoted to destruction</span>, <span morph='HTc' strong='H6435'>lest</span> when you have <span morph='HVhi2mp' strong='H2763A'>devoted</span> them you <span morph='HVqq2mp' strong='H3947G'>take</span> any <span morph='HR' strong='H4480A'>of</span> the <span morph='HNcmsa HTd' strong='H2764A H9009'>devoted things</span> and <span morph='HVqq2mp' strong='H7760A'>make</span> the <span morph='HNcfsc HTo' strong='H4264 H0853'>camp</span> of <span morph='HNpl' strong='H3478'>Israel</span>  a <span morph='HNcmsa HR' strong='H2764A H9005'>thing for destruction</span> and  <span morph='HVqq2mp' strong='H5916'>bring trouble</span> upon <span morph='HTo HSp3ms' strong='H0853 H9033'>it</span>.</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "a thing for destruction and",
+     "context_after": "upon it ."
+    },
+    {
+     "osisId": "Josh.7.25",
+     "ref": "Jos 7:25",
+     "book_code": "Josh",
+     "chapter": 7,
+     "verse_num": 25,
+     "esv_text": "Jos 7:25 And Joshua said , “ Why did you bring trouble on us? The Lord brings trouble on you today .” And all Israel stoned him with stones . They burned them with fire and stoned them with stones .",
+     "target_word": "bring trouble",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Josh.7.25' class='verseLink'><span class='verseNumber'>Jos 7:25</span></a> And <span morph='HNpm' strong='H3091G'>Joshua</span> <span morph='HVqw3ms' strong='H0559'>said</span>, “<span morph='HPi' strong='H4100'>Why</span> did you  <span morph='HVqp2ms' strong='H5916'>bring trouble</span> on us? The <span class='small-caps'><span morph='HNpt HSp2ms' strong='H3068G H9031'>Lord</span></span> brings <span morph='HVqi3ms HSp1bp' strong='H5916 H9035'>trouble</span> on you <span morph='HNcmsa HRd' strong='H3117L H9003'>today</span>.” And <span morph='HNcmsc' strong='H3605'>all</span> <span morph='HNpl HTo HSp3ms' strong='H3478 H0853 H9033'>Israel</span>  <span morph='HVqw3mp HTm HTd' strong='H7275 H2088 H9009'>stoned</span> him with <span morph='HNcfsa' strong='H0068G'>stones</span>. <span class='normal'></span> They <span morph='HVqw3mp' strong='H8313'>burned</span> them with <span morph='HNcbsa HRd HTo HSp3mp' strong='H0784 H9003 H0853 H9038'>fire</span> and <span morph='HVqw3mp' strong='H5619'>stoned</span> them with <span morph='HNcmpa HRd HTo HSp3mp' strong='H0068G H9003 H0853 H9038'>stones</span>.</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": ", “ Why did you",
+     "context_after": "on us? The Lord brings"
+    },
+    {
+     "osisId": "Judg.11.35",
+     "ref": "Judg 11:35",
+     "book_code": "Judg",
+     "chapter": 11,
+     "verse_num": 35,
+     "esv_text": "Judg 11:35 And as soon as he saw her, he tore his clothes and said , “ Alas , my daughter ! You have brought me very low , and you have become the cause of great trouble to me . For I have opened my mouth to the Lord , and I cannot take back my vow.”",
+     "target_word": "trouble",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Judg.11.35' class='verseLink'><span class='verseNumber'>Judg 11:35</span></a> And as soon as he <span morph='HVqcc HR HVqw3ms' strong='H7200G H9004 H1961'>saw</span> her, he <span morph='HVqw3ms HSp3ms HTo HSp3fs' strong='H7167 H9043 H0853 H9034'>tore</span> his <span morph='HNcmpc HTo' strong='H0899B H0853'>clothes</span> and <span morph='HVqw3ms HSp3ms' strong='H0559 H9023'>said</span>, “<span morph='HTj' strong='H0162'>Alas</span>, my <span morph='HNcfsc' strong='H1323G'>daughter</span>! You have <span morph='HVhaa HSp1bs' strong='H3766 H9020'>brought</span> me <span morph='HVhp2fs' strong='H3766'>very low</span>, and you have <span morph='HVqp2fs' strong='H1961'>become</span> the cause of great <span morph='HVqrmpc HR HSp1bs HPp2fs HC' strong='H5916 H9003 H9030 H0859C H9002'>trouble</span> to <span morph='HPp1bs' strong='H0595'>me</span>. For I have <span morph='HVqp1cs HSp1bs HC' strong='H6475 H9030 H9002'>opened</span> my <span morph='HNcmsc' strong='H6310G'>mouth</span> <span morph='HR' strong='H0413'>to</span> the <span class='small-caps'><span morph='HNpt HSp1bs' strong='H3068G H9020'>Lord</span></span>, <span class='normal'></span> and I <span morph='HVqi1cs HTn HC' strong='H3201 H3808 H9002'>cannot</span> take <span morph='HVqcc HR' strong='H7725I H9005'>back</span> my vow.”</span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "become the cause of great",
+     "context_after": "to me . For I"
+    },
+    {
+     "osisId": "Prov.11.17",
+     "ref": "Pro 11:17",
+     "book_code": "Prov",
+     "chapter": 11,
+     "verse_num": 17,
+     "esv_text": "Pro 11:17 A man who is kind benefits himself , but a cruel man hurts himself .",
+     "target_word": "hurts",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.11.17' class='verseLink'><span class='verseNumber'>Pro 11:17</span></a> <span class='level1'></span> A <span morph='HNcmsc HSp3ms' strong='H0376G H9023'>man</span> who is <span morph='HNcmsa' strong='H2617A'>kind</span> <span morph='HVqrmsa' strong='H1580'>benefits</span> <span morph='HNcfsc' strong='H5315I'>himself</span>,<br /><span class='level2'></span>but a <span morph='HAamsa HSp3ms' strong='H0394 H9023'>cruel man</span> <span morph='HVqrmsa' strong='H5916'>hurts</span> <span morph='HNcmsc' strong='H7607'>himself</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": ", but a cruel man",
+     "context_after": "himself ."
+    },
+    {
+     "osisId": "Prov.11.29",
+     "ref": "Pro 11:29",
+     "book_code": "Prov",
+     "chapter": 11,
+     "verse_num": 29,
+     "esv_text": "Pro 11:29 Whoever troubles his own household will inherit the wind , and the fool will be servant to the wise of heart .",
+     "target_word": "Whoever",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.11.29' class='verseLink'><span class='verseNumber'>Pro 11:29</span></a> <span class='level1'></span><span morph='HVqrmsa' strong='H5916'>Whoever</span>  troubles his own <span morph='HNcmsc' strong='H1004M'>household</span> will  <span morph='HVqi3ms HSp3ms' strong='H5157 H9023'>inherit</span> the <span morph='HNcfsa' strong='H7307H'>wind</span>,<br /><span class='level2'></span>and the <span morph='HAamsa' strong='H0191'>fool</span> will be <span morph='HNcmsa HC' strong='H5650 H9002'>servant</span> to the <span morph='HAamsc HR' strong='H2450 H9005'>wise</span> of <span morph='HNcmsa' strong='H3820A'>heart</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "Pro 11:29",
+     "context_after": "troubles his own household will"
+    },
+    {
+     "osisId": "Prov.15.27",
+     "ref": "Pro 15:27",
+     "book_code": "Prov",
+     "chapter": 15,
+     "verse_num": 27,
+     "esv_text": "Pro 15:27 Whoever is greedy for unjust gain troubles his own household , but he who hates bribes will live .",
+     "target_word": "troubles",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.15.27' class='verseLink'><span class='verseNumber'>Pro 15:27</span></a> <span class='level1'></span>Whoever is  <span morph='HVqrmsa HSp3ms' strong='H1214I H9023'>greedy</span> for <span morph='HNcmsa' strong='H1215'>unjust gain</span>  <span morph='HVqrmsa' strong='H5916'>troubles</span> his own <span morph='HNcmsc' strong='H1004M'>household</span>,<br /><span class='level2'></span>but he who <span morph='HVqrmsa' strong='H8130'>hates</span>  <span morph='HNcfpa' strong='H4979'>bribes</span> will <span morph='HVqi3ms' strong='H2421'>live</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "is greedy for unjust gain",
+     "context_after": "his own household , but"
+    },
+    {
+     "osisId": "Prov.15.6",
+     "ref": "Pro 15:6",
+     "book_code": "Prov",
+     "chapter": 15,
+     "verse_num": 6,
+     "esv_text": "Pro 15:6 In the house of the righteous there is much treasure , but trouble befalls the income of the wicked .",
+     "target_word": "trouble befalls",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.15.6' class='verseLink'><span class='verseNumber'>Pro 15:6</span></a> <span class='level1'></span>In the <span morph='HNcmsc' strong='H1004B'>house</span> of the <span morph='HAamsa' strong='H6662'>righteous</span> there is <span morph='HAamsa' strong='H7227A'>much</span> <span morph='HNcmsa' strong='H2633'>treasure</span>,<br /><span class='level2'></span>but <span morph='HVNrfsa' strong='H5916'>trouble befalls</span> the <span morph='HNcfsc HC HR' strong='H8393 H9002 H9003'>income</span> of the <span morph='HNcmsa' strong='H7563'>wicked</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "is much treasure , but",
+     "context_after": "the income of the wicked"
+    },
+    {
+     "osisId": "Ps.39.2",
+     "ref": "Psa 39:2",
+     "book_code": "Ps",
+     "chapter": 39,
+     "verse_num": 2,
+     "esv_text": "Psa 39:2 I was mute and silent ; I held my peace to no avail , and my distress grew worse .",
+     "target_word": "grew worse",
+     "testament": "OT",
+     "fetched_under_code": "H5916",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.39.2' class='verseLink'><span class='verseNumber'>Psa 39:2</span></a> <span class='level1'></span>I was  <span morph='HVNp1cs' strong='H0481'>mute</span> and <span morph='HNcfsa' strong='H1747'>silent</span>;<br /><span class='level2'></span>I held my <span morph='HVhp1cs' strong='H2814'>peace</span> to no <span morph='HAamsa HR' strong='H2896B H9006'>avail</span>,<br /><span class='level1'></span>and my <span morph='HNcmsc HC' strong='H3511 H9002'>distress</span> <span morph='HVNp3ms HSp1bs' strong='H5916 H9020'>grew worse</span>.<br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H5916",
+     "span_label_found": "to trouble",
+     "context_before": "avail , and my distress",
+     "context_after": "."
     }
    ]
   }

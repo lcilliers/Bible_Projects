@@ -73,3 +73,18 @@ Grounding the above against the DB right now (Proverbs = book_id 20):
 Turn §2 into an **executable readiness script** (read-only) that runs A–E as queries and emits a green/amber/red report — the pre-flight analogue of the baseline runner — then settle the §F decisions. I can build and run that on approval; it would confirm the integrity invariant, the OT-DBR-009 sweep, the role-migration gap, and the tooling parameterisation in one pass, and produce a filed readiness snapshot to sign off before the first write.
 
 *Filed 2026-07-12. Read-only. Builds on the `_reread/` baseline + success-criteria + digestion docs; live probe grounds §3.*
+
+researcher comments:
+a) use this opportunity to formulate and document a deep book readiness assessment which should pass in full before the processing of the lexicals start.
+b) Areas to cover: 
+    i) DB integrity:
+    no orphans or unlinked entities for the book looking at existing data in MTI-terms, master, verse-inventory, verse-record, passages, ib_characteristics, cluster assignment, ve-lexical , seed builder json (did I leave anything out)
+    all old records that is no longer part of the current cycle is suitably isolated so it will not interfere.
+    all records must be forward and backward traceable FKs are all filled in.
+    ii) Seed builder: each book master record has a suitable seed for candidate characteristics. Radiness check ask - does this seed look right, make sense, and check that every verse-record span as a char.
+    iii) missing verses: all candidate characteristics have terms and verses in the correct tables
+    iv) passages: the passage table is populated for each span with candidate character looking forward and backward.  Note that all chapters and books are read via passages not whole chapters. Check the passage instruction.  (I am not sure if this is a pre-process for the lexical update as part of the pipeline, or a precondition for the pipeline to start)
+    v) it is OK if ib-char is empty, this table is the end result of the ve-lexical read.
+    vi) take a baseline success status reading to anchor the start point.
+
+    Ensure that the pre-read is established as formal repeatable instruction, and then perform the instruction.

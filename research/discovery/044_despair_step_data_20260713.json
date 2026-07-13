@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "english_anchor": "despair",
+    "generated": "2026-07-13",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "H3856A"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 2,
+    "summary_by_group": {
+      "G1": 2
+    },
+    "include_codes": [
+      "H3856A",
+      "H3856B"
+    ],
+    "exclude_codes": [],
+    "registry": {
+      "id": 44,
+      "no": 44,
+      "word": "despair",
+      "source_list": "High Confidence",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=30  verses=1807  run_id=RUN-20260328_140549-AUDIT_WORD",
+      "automation_eligible": 1,
+      "last_automation_run": "AUDITED",
+      "automation_run_id": "RUN-20260328_140549-AUDIT_WORD",
+      "phase1_term_count": 30,
+      "phase1_verse_count": 1807,
+      "strongs_list": "[{\"strong\": \"H0589\", \"count\": 376}, {\"strong\": \"H0408\", \"count\": 363}, {\"strong\": \"H3808\", \"count\": 331}, {\"strong\": \"H0595\", \"count\": 292}, {\"strong\": \"H0539\", \"count\": 100}, {\"strong\": \"H0571G\", \"count\": 66}, {\"strong\": \"H3809\", \"count\": 60}, {\"strong\": \"H0530\", \"count\": 49}, {\"strong\": \"H0571H\", \"count\": 48}, {\"strong\": \"H0543\", \"count\": 24}, {\"strong\": \"H8077A\", \"count\": 23}, {\"strong\": \"H0576B\", \"count\": 16}, {\"strong\": \"H0571I\", \"count\": 11}, {\"strong\": \"H0551\", \"count\": 9}, {\"strong\": \"H0529\", \"count\": 8}, {\"strong\": \"H2976\", \"count\": 6}, {\"strong\": \"H0552\", \"count\": 5}, {\"strong\": \"H0540\", \"count\": 3}, {\"strong\": \"G1820\", \"count\": 2}, {\"strong\": \"H0525\", \"count\": 2}, {\"strong\": \"H0546\", \"count\": 2}, {\"strong\": \"H0548\", \"count\": 2}, {\"strong\": \"H3819\", \"count\": 2}, {\"strong\": \"H0541\", \"count\": 1}, {\"strong\": \"H0542\", \"count\": 1}, {\"strong\": \"H0544\", \"count\": 1}, {\"strong\": \"H0545\", \"count\": 1}, {\"strong\": \"H0547\", \"count\": 1}, {\"strong\": \"H3818\", \"count\": 1}, {\"strong\": \"H5136\", \"count\": 1}]",
+      "description": "Despair is the collapse of hope — the inner state of the person who has stopped believing that things can be otherwise. The biblical vocabulary includes a Hebrew term that literally means not faithful, the failure of the capacity to trust, alongside images of devastation and the shattering of expectation. Despair is the most complete form of hopelessness: not just sadness but the extinction of the conviction that goodness is possible or that God is present. The psalms are unflinching in naming it.",
+      "origin": "original_list",
+      "dimensions": "Affective/Emotional",
+      "inference_note": null,
+      "session_b_status": "Verse Context Reset",
+      "cluster_assignment": "C06",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1,
+      "unique_term_count": 4,
+      "shared_term_count": 26,
+      "term_sharing_ratio": 0.867,
+      "verse_context_status": "Complete",
+      "dim_review_status": null,
+      "dim_review_version": null,
+      "word_synopsis": null
+    }
+  },
+  "terms": [
+    {
+      "code": "H3856A",
+      "gloss": "to languish",
+      "transliteration": "la.hah",
+      "script_form": "לָהַה",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "(Qal) to languish, faint",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H3856B",
+          "form": "לִהְלֵהַּ",
+          "gloss": "to amaze",
+          "translit": "lih.le.ah"
+        }
+      ],
+      "raw_related_numbers": "H3856, H3856",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "H3856A",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H3856A in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Gen.47.13",
+          "ref": "Gen 47:13",
+          "book_code": "Gen",
+          "chapter": 47,
+          "verse_num": 13,
+          "esv_text": "Gen 47:13 Now there was no food in all the land , for the famine was very severe , so that the land of Egypt and the land of Canaan languished by reason of the famine .",
+          "target_word": "languished",
+          "testament": "OT",
+          "fetched_under_code": "H3856A",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Gen.47.13' class='verseLink'><span class='verseNumber'>Gen 47:13</span></a> Now there was <span morph='HNcmsc' strong='H0369'>no</span> <span morph='HNcmsa HC' strong='H3899G H9002'>food</span> in <span morph='HNcmsc HR' strong='H3605 H9003'>all</span> the <span morph='HNcfsa HTd' strong='H0776G H9009'>land</span>, <span morph='HTc' strong='H3588A'>for</span> the <span morph='HNcmsa HTd' strong='H7458 H9009'>famine</span> was <span morph='HAcmsa' strong='H3966'>very</span> <span morph='HAamsa' strong='H3515'>severe</span>, so that the <span morph='HNcfsc' strong='H0776G'>land</span> of <span morph='HNpl' strong='H4714G'>Egypt</span> and the <span morph='HNcfsc HC' strong='H0776G H9002'>land</span> of <span morph='HNpl' strong='H3667A'>Canaan</span> <span morph='HVqw3fs' strong='H3856A'>languished</span> by <span morph='HNcmpc HR' strong='H6440I H9006'>reason</span> of the <span morph='HNcmsa HTd' strong='H7458 H9009'>famine</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H3856A",
+          "span_label_found": "to languish",
+          "context_before": "and the land of Canaan",
+          "context_after": "by reason of the famine"
+        }
+      ]
+    },
+    {
+      "code": "H3856B",
+      "gloss": "to amaze",
+      "transliteration": "lih.le.ah",
+      "script_form": "לִהְלֵהַּ",
+      "language": "Hebrew",
+      "vocab_count": 1,
+      "medium_def": "1) to amaze, startle\n1a) (Hithpalpel) madman (subst)",
+      "lsj_entry": "",
+      "short_def_mounce": "",
+      "related_words": [
+        {
+          "strong": "H3856A",
+          "form": "לָהַה",
+          "gloss": "to languish",
+          "translit": "la.hah"
+        }
+      ],
+      "raw_related_numbers": "H3856, ",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+      "is_proper_noun": false,
+      "is_sub_gloss": true,
+      "step_parent_code": "H3856A",
+      "step_section_type": "sub_gloss",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent H3856A in anchor list, section_type=sub_gloss",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "OT_only",
+      "meaning_numbered": true,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Prov.26.18",
+          "ref": "Pro 26:18",
+          "book_code": "Prov",
+          "chapter": 26,
+          "verse_num": 18,
+          "esv_text": "Pro 26:18 Like a madman who throws firebrands , arrows , and death",
+          "target_word": "madman",
+          "testament": "OT",
+          "fetched_under_code": "H3856B",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.26.18' class='verseLink'><span class='verseNumber'>Pro 26:18</span></a> <span class='level1'></span><span morph='HR' strong='H9004'>Like</span> a <span morph='HVtrmsa' strong='H3856B'>madman</span> who <span morph='HVqrmsa HTd' strong='H3384A H9009'>throws</span>  <span morph='HNcmpa' strong='H2131A'>firebrands</span>, <span morph='HNcmpa' strong='H2671'>arrows</span>, and <span morph='HNcmsa HC' strong='H4194 H9002'>death</span><br /></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "H3856B",
+          "span_label_found": "to amaze",
+          "context_before": "Pro 26:18 Like a",
+          "context_after": "who throws firebrands , arrows"
+        }
+      ]
+    }
+  ]
+}

@@ -1,27 +1,25 @@
 {
  "meta": {
   "english_anchor": "pride",
-  "generated": "2026-07-06",
+  "generated": "2026-07-13",
   "step_version": "ESV_th",
   "anchor_codes": [
-   "H6277",
-   "H7342I",
-   "H7426"
+   "H3093"
   ],
   "particle_ceiling": 1000,
-  "total_terms_evaluated": 13,
+  "total_terms_evaluated": 6,
   "summary_by_group": {
-   "G1": 4,
-   "G2r": 8,
-   "G3": 1
+   "G1": 1,
+   "G2r": 2,
+   "G3": 3
   },
   "include_codes": [
-   "H6277",
-   "H7342I",
-   "H7426"
+   "H3093"
   ],
   "exclude_codes": [
-   "H7342G"
+   "H3102",
+   "H3109G",
+   "H3109H"
   ],
   "registry": {
    "id": 123,
@@ -33,13 +31,13 @@
    "phase1_status": "Complete",
    "phase1_output_file": "WA-123-pride-data-2026-03-09.json",
    "phase2_datasets": 1.0,
-   "notes": "26 terms (26 extracted). 1 part. Session A Instruction v5. MTI: extracted.\n[AUDIT 2026-03-28] result=REVIEW  terms=64  verses=1170  run_id=RUN-20260328_141055-AUDIT_WORD",
+   "notes": "26 terms (26 extracted). 1 part. Session A Instruction v5. MTI: extracted.\n[AUDIT 2026-03-28] result=REVIEW  terms=64  verses=1170  run_id=RUN-20260328_141055-AUDIT_WORD\n[AUDIT 2026-07-06] result=STOP  terms=64  verses=810  run_id=RUN-20260706_162423-AUDIT_WORD",
    "automation_eligible": 1,
    "last_automation_run": "AUDITED",
-   "automation_run_id": "RUN-20260328_141055-AUDIT_WORD",
+   "automation_run_id": "RUN-20260706_162423-AUDIT_WORD",
    "phase1_term_count": 64,
-   "phase1_verse_count": 1170,
-   "strongs_list": "[{\"strong\": \"H0639G\", \"count\": 212}, {\"strong\": \"H7311A\", \"count\": 184}, {\"strong\": \"H7311B\", \"count\": 184}, {\"strong\": \"H8641\", \"count\": 63}, {\"strong\": \"H4791\", \"count\": 52}, {\"strong\": \"H1347\", \"count\": 45}, {\"strong\": \"H1364\", \"count\": 36}, {\"strong\": \"H2132H\", \"count\": 34}, {\"strong\": \"H1361\", \"count\": 33}, {\"strong\": \"G2744\", \"count\": 32}, {\"strong\": \"H0639H\", \"count\": 27}, {\"strong\": \"H0639I\", \"count\": 24}, {\"strong\": \"H4805H\", \"count\": 21}, {\"strong\": \"H1346\", \"count\": 19}, {\"strong\": \"H1363\", \"count\": 16}, {\"strong\": \"H0599\", \"count\": 14}, {\"strong\": \"H2086\", \"count\": 13}, {\"strong\": \"G2746\", \"count\": 12}, {\"strong\": \"G2745\", \"count\": 11}, {\"strong\": \"H2087\", \"count\": 11}, {\"strong\": \"H2102\", \"count\": 10}, {\"strong\": \"H1343\", \"count\": 9}, {\"strong\": \"H1348\", \"count\": 8}, {\"strong\": \"H1358\", \"count\": 8}, {\"strong\": \"G5448\", \"count\": 7}, {\"strong\": \"H4714J\", \"count\": 6}, {\"strong\": \"H5138\", \"count\": 6}, {\"strong\": \"H7312\", \"count\": 6}, {\"strong\": \"G5244\", \"count\": 5}, {\"strong\": \"H1342\", \"count\": 5}, {\"strong\": \"H7413\", \"count\": 5}, {\"strong\": \"H7292\", \"count\": 4}, {\"strong\": \"H7294\", \"count\": 4}, {\"strong\": \"G5187\", \"count\": 3}, {\"strong\": \"H1466\", \"count\": 3}, {\"strong\": \"G0212\", \"count\": 2}, {\"strong\": \"G0213\", \"count\": 2}, {\"strong\": \"G5243\", \"count\": 2}, {\"strong\": \"H0600\", \"count\": 2}, {\"strong\": \"H0601\", \"count\": 2}, {\"strong\": \"H1365\", \"count\": 2}, {\"strong\": \"H2132G\", \"count\": 2}, {\"strong\": \"H7293\", \"count\": 2}, {\"strong\": \"H7318\", \"count\": 2}, {\"strong\": \"H7830\", \"count\": 2}, {\"strong\": \"G5188\", \"count\": 1}, {\"strong\": \"G5450\", \"count\": 1}, {\"strong\": \"H1341\", \"count\": 1}, {\"strong\": \"H1344\", \"count\": 1}, {\"strong\": \"H1355\", \"count\": 1}, {\"strong\": \"H1467\", \"count\": 1}, {\"strong\": \"H2103\", \"count\": 1}, {\"strong\": \"H2121\", \"count\": 1}, {\"strong\": \"H4062\", \"count\": 1}, {\"strong\": \"H4714I\", \"count\": 1}, {\"strong\": \"H7295\", \"count\": 1}, {\"strong\": \"H7296\", \"count\": 1}, {\"strong\": \"H7315\", \"count\": 1}, {\"strong\": \"H7317\", \"count\": 1}, {\"strong\": \"H7419\", \"count\": 1}, {\"strong\": \"H7427\", \"count\": 1}, {\"strong\": \"H7433\", \"count\": 1}, {\"strong\": \"H8642\", \"count\": 1}]",
+   "phase1_verse_count": 810,
+   "strongs_list": "[{\"strong\": \"H7311B\", \"count\": 184}, {\"strong\": \"H7311A\", \"count\": 184}, {\"strong\": \"H8641\", \"count\": 63}, {\"strong\": \"H4791\", \"count\": 52}, {\"strong\": \"H1347\", \"count\": 45}, {\"strong\": \"H1361\", \"count\": 33}, {\"strong\": \"G2744\", \"count\": 32}, {\"strong\": \"H4805H\", \"count\": 21}, {\"strong\": \"H1346\", \"count\": 19}, {\"strong\": \"H1363\", \"count\": 16}, {\"strong\": \"H2086\", \"count\": 13}, {\"strong\": \"G2746\", \"count\": 12}, {\"strong\": \"H2087\", \"count\": 11}, {\"strong\": \"G2745\", \"count\": 11}, {\"strong\": \"H2102\", \"count\": 10}, {\"strong\": \"H1343\", \"count\": 9}, {\"strong\": \"H1358\", \"count\": 8}, {\"strong\": \"H1348\", \"count\": 8}, {\"strong\": \"G5448\", \"count\": 7}, {\"strong\": \"H7426\", \"count\": 6}, {\"strong\": \"H7312\", \"count\": 6}, {\"strong\": \"H7413\", \"count\": 5}, {\"strong\": \"H1342\", \"count\": 5}, {\"strong\": \"G5244\", \"count\": 5}, {\"strong\": \"H7294\", \"count\": 4}, {\"strong\": \"H7292\", \"count\": 4}, {\"strong\": \"H6277\", \"count\": 4}, {\"strong\": \"H1466\", \"count\": 3}, {\"strong\": \"G5187\", \"count\": 3}, {\"strong\": \"H7830\", \"count\": 2}, {\"strong\": \"H7342I\", \"count\": 2}, {\"strong\": \"H7293\", \"count\": 2}, {\"strong\": \"H1365\", \"count\": 2}, {\"strong\": \"G0213\", \"count\": 2}, {\"strong\": \"G0212\", \"count\": 2}, {\"strong\": \"H8642\", \"count\": 1}, {\"strong\": \"H7427\", \"count\": 1}, {\"strong\": \"H7419\", \"count\": 1}, {\"strong\": \"H7317\", \"count\": 1}, {\"strong\": \"H7315\", \"count\": 1}, {\"strong\": \"H7296\", \"count\": 1}, {\"strong\": \"H7295\", \"count\": 1}, {\"strong\": \"H4062\", \"count\": 1}, {\"strong\": \"H2103\", \"count\": 1}, {\"strong\": \"H1467\", \"count\": 1}, {\"strong\": \"H1355\", \"count\": 1}, {\"strong\": \"H1344\", \"count\": 1}, {\"strong\": \"H1341\", \"count\": 1}, {\"strong\": \"G5450\", \"count\": 1}, {\"strong\": \"G5243\", \"count\": 1}]",
    "description": "Pride is the inner conviction of one's own superiority — the heart that refuses to occupy its proper place as creature before Creator and equal before equal. The Hebrew vocabulary is extensive: arrogance, haughtiness, the lifting up of oneself, the refusal to bow. Scripture treats pride as the foundational human disorder — the sin beneath sins — because it is the root from which the refusal to trust and obey God grows. God opposes the proud. Yet the same vocabulary is used positively for the legitimate confidence of those who know who they are in God.",
    "origin": "original_list",
    "dimensions": "Character/Disposition",
@@ -61,257 +59,56 @@
  },
  "terms": [
   {
-   "code": "H6277",
-   "gloss": "arrogant",
-   "transliteration": "a.taq",
-   "script_form": "עָתָק",
+   "code": "H3093",
+   "gloss": "proud",
+   "transliteration": "ya.hir",
+   "script_form": "יָהִיר",
    "language": "Hebrew",
-   "vocab_count": 4,
-   "medium_def": "1) forward, bold, arrogant\n1a) of speech",
+   "vocab_count": 2,
+   "medium_def": "proud, arrogant, haughty",
    "lsj_entry": "",
    "short_def_mounce": "",
    "related_words": [
     {
-     "strong": "H6266",
-     "form": "עָתִיק",
-     "gloss": "surpassing",
-     "translit": "a.tiq"
+     "strong": "H2022G",
+     "form": "הַר",
+     "gloss": "mountain: mount",
+     "translit": "har"
     },
     {
-     "strong": "H6267",
-     "form": "עַתִּיק",
-     "gloss": "ancient/taken",
-     "translit": "at.tiq"
+     "strong": "H2022H",
+     "form": "הַר",
+     "gloss": "mountain: hill country",
+     "translit": "har"
     },
     {
-     "strong": "H6275",
-     "form": "עָתַק",
-     "gloss": "to proceed",
-     "translit": "a.taq"
+     "strong": "H3102",
+     "form": "יוֹב",
+     "gloss": "Yob",
+     "translit": "yov"
     },
     {
-     "strong": "H6276",
-     "form": "עָתֵק",
-     "gloss": "surpassing",
-     "translit": "a.teq"
+     "strong": "H3109G",
+     "form": "יוֹחָא",
+     "gloss": "Joha",
+     "translit": "yo.cha"
+    },
+    {
+     "strong": "H3109H",
+     "form": "יוֹחָא",
+     "gloss": "Joha",
+     "translit": "yo.cha"
     }
    ],
-   "raw_related_numbers": "H6275, H6276, H6266, H6267",
-   "freq_list": "4;4;4;4;4;;4;4;4;4;4;4;;4;4;4;;",
+   "raw_related_numbers": "H2022, H2022, H3102, H3109, H3109",
+   "freq_list": "2;2;2;2;2;;1;1;2;2;2;2;;2;2;2;;",
    "is_proper_noun": false,
    "is_sub_gloss": false,
-   "step_parent_code": "H6277",
+   "step_parent_code": "H3093",
    "step_section_type": "primary",
    "decision_group": "G1",
    "action": "include",
-   "decision_reason": "F4: parent H6277 in anchor list, section_type=primary",
-   "verses_fetched": true,
-   "verse_count": 4,
-   "testament_coverage": "OT_only",
-   "meaning_numbered": true,
-   "causative_form_present": false,
-   "data_quality_flags": [],
-   "quality_flag_detail": {},
-   "verses": [
-    {
-     "osisId": "1Sam.2.3",
-     "ref": "1Sa 2:3",
-     "book_code": "1Sam",
-     "chapter": 2,
-     "verse_num": 3,
-     "esv_text": "1Sa 2:3 Talk no more so very proudly , let not arrogance come from your mouth ; for the Lord is a God of knowledge , and by him actions are weighed .",
-     "target_word": "arrogance",
-     "testament": "OT",
-     "fetched_under_code": "H6277",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Sam.2.3' class='verseLink'><span class='verseNumber'>1Sa 2:3</span></a> <span class='level1'></span><span morph='HVpi2mp' strong='H1696G'>Talk</span> no <span morph='HVhi2mp HTn' strong='H7235A H0408'>more</span> so <span morph='HAafsa' strong='H1364'>very</span> <span morph='HAafsa' strong='H1364'>proudly</span>,<br /><span class='level2'></span>let not <span morph='HAamsa' strong='H6277'>arrogance</span> <span morph='HVqi3ms' strong='H3318O'>come</span> from your <span morph='HNcmsc HR' strong='H6310G H9006'>mouth</span>;<br /><span class='level1'></span>for the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> is a <span morph='HNcmsc HSp2mp HTc' strong='H0410G H9026 H3588A'>God</span> of <span morph='HNcfpa' strong='H1844'>knowledge</span>,<br /><span class='level2'></span>and <span morph='HRd' strong='H9005'>by</span> him <span morph='HNcfpa' strong='H5949'>actions</span> are <span morph='HVNp3cp HC HSp3ms' strong='H8505 H9002 H9033'>weighed</span>.<br /></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H6277",
-     "span_label_found": "arrogant",
-     "context_before": "very proudly , let not",
-     "context_after": "come from your mouth ;"
-    },
-    {
-     "osisId": "Ps.31.18",
-     "ref": "Psa 31:18",
-     "book_code": "Ps",
-     "chapter": 31,
-     "verse_num": 18,
-     "esv_text": "Psa 31:18 Let the lying lips be mute , which speak insolently against the righteous in pride and contempt .",
-     "target_word": "insolently",
-     "testament": "OT",
-     "fetched_under_code": "H6277",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.31.18' class='verseLink'><span class='verseNumber'>Psa 31:18</span></a> <span class='level1'></span>Let the <span morph='HNcmsa' strong='H8267'>lying</span> <span morph='HNcfdc' strong='H8193G'>lips</span> be <span morph='HVNi3fp' strong='H0481'>mute</span>,<br /><span class='level2'></span>which  <span morph='HVqrfpa HTd' strong='H1696G H9009'>speak</span>  <span morph='HAamsa' strong='H6277'>insolently</span> <span morph='HR' strong='H5921A'>against</span> the <span morph='HAamsa' strong='H6662'>righteous</span><br /><span class='level2'></span><span morph='HR' strong='H9003'>in</span> <span morph='HNcfsa' strong='H1346'>pride</span> and <span morph='HNcmsa HC' strong='H0937 H9002'>contempt</span>.<br /><span class='endLineGroup'></span></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H6277",
-     "span_label_found": "arrogant",
-     "context_before": "be mute , which speak",
-     "context_after": "against the righteous in pride"
-    },
-    {
-     "osisId": "Ps.75.5",
-     "ref": "Psa 75:5",
-     "book_code": "Ps",
-     "chapter": 75,
-     "verse_num": 5,
-     "esv_text": "Psa 75:5 do not lift up your horn on high , or speak with haughty neck .’”",
-     "target_word": "haughty",
-     "testament": "OT",
-     "fetched_under_code": "H6277",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.75.5' class='verseLink'><span class='verseNumber'>Psa 75:5</span></a> <span class='level1'></span>do <span morph='HTn' strong='H0408'>not</span> <span morph='HVhi2mp' strong='H7311A'>lift up</span> your <span morph='HNcfsc' strong='H7161A'>horn</span> on <span morph='HNcmsa HRd' strong='H4791 H9005'>high</span>,<br /><span class='level2'></span>or <span morph='HVpi2mp HSp2mp' strong='H1696G H9026'>speak</span> with <span morph='HAamsa' strong='H6277'>haughty</span> <span morph='HNcmsa HR' strong='H6677A H9003'>neck</span>.’”<br /><span class='endLineGroup'></span></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H6277",
-     "span_label_found": "arrogant",
-     "context_before": "high , or speak with",
-     "context_after": "neck .’”"
-    },
-    {
-     "osisId": "Ps.94.4",
-     "ref": "Psa 94:4",
-     "book_code": "Ps",
-     "chapter": 94,
-     "verse_num": 4,
-     "esv_text": "Psa 94:4 They pour out their arrogant words ; all the evildoers boast .",
-     "target_word": "arrogant",
-     "testament": "OT",
-     "fetched_under_code": "H6277",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.94.4' class='verseLink'><span class='verseNumber'>Psa 94:4</span></a> <span class='level1'></span>They <span morph='HVhi3mp' strong='H5042'>pour out</span> their  <span morph='HAamsa' strong='H6277'>arrogant</span> <span morph='HVpi3mp' strong='H1696G'>words</span>;<br /><span class='level2'></span><span morph='HNcmsc' strong='H3605'>all</span>  the <span morph='HVqrmpc HNcmsa' strong='H6466 H0205G'>evildoers</span> <span morph='HVti3mp' strong='H0559'>boast</span>.<br /></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H6277",
-     "span_label_found": "arrogant",
-     "context_before": "94:4 They pour out their",
-     "context_after": "words ; all the evildoers"
-    }
-   ]
-  },
-  {
-   "code": "H7342I",
-   "gloss": "broad: arrogant",
-   "transliteration": "ra.chav",
-   "script_form": "רָחָב",
-   "language": "Hebrew",
-   "vocab_count": 2,
-   "medium_def": "broad, wide\nA sub-meaning of ra.chav (רָחָב \": wide\" H7342H)",
-   "lsj_entry": "",
-   "short_def_mounce": "",
-   "related_words": [
-    {
-     "strong": "H4800",
-     "form": "מֶרְחָב",
-     "gloss": "broad",
-     "translit": "mer.chav"
-    },
-    {
-     "strong": "H7337",
-     "form": "רָחַב",
-     "gloss": "to enlarge",
-     "translit": "ra.chav"
-    },
-    {
-     "strong": "H7338",
-     "form": "רַ֫חַב",
-     "gloss": "breadth",
-     "translit": "ra.chav"
-    },
-    {
-     "strong": "H7339",
-     "form": "רְחוֹב",
-     "gloss": "street/plaza",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7340G",
-     "form": "רְחוֹב",
-     "gloss": "Rehob",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7340H",
-     "form": "רְחוֹב",
-     "gloss": "Rehob",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7340I",
-     "form": "רְחוֹב",
-     "gloss": "Rehob",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7340J",
-     "form": "רְחוֹב",
-     "gloss": "Rehob",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7340K",
-     "form": "רְחוֹב",
-     "gloss": "Rehob",
-     "translit": "re.chov"
-    },
-    {
-     "strong": "H7341",
-     "form": "רֹ֫חַב",
-     "gloss": "width",
-     "translit": "ro.chav"
-    },
-    {
-     "strong": "H7342G",
-     "form": "רָחָב",
-     "gloss": "Broad",
-     "translit": "ra.chav"
-    },
-    {
-     "strong": "H7342H",
-     "form": "רָחָב",
-     "gloss": "broad: wide",
-     "translit": "ra.chav"
-    },
-    {
-     "strong": "H7343",
-     "form": "רָחָב",
-     "gloss": "Rahab",
-     "translit": "ra.chav"
-    },
-    {
-     "strong": "H7344G",
-     "form": "רְחֹבוֹת",
-     "gloss": "Rehoboth",
-     "translit": "re.cho.vot"
-    },
-    {
-     "strong": "H7344H",
-     "form": "רְחֹבוֹת",
-     "gloss": "Rehoboth",
-     "translit": "re.cho.vot"
-    },
-    {
-     "strong": "H7344I",
-     "form": "רְחֹבוֹת",
-     "gloss": "Rehoboth",
-     "translit": "re.cho.vot"
-    },
-    {
-     "strong": "H7345",
-     "form": "רְחַבְיָהוּ",
-     "gloss": "Rehabiah",
-     "translit": "re.chav.ya.hu"
-    },
-    {
-     "strong": "H7346",
-     "form": "רְחַבְעָם",
-     "gloss": "Rehoboam",
-     "translit": "re.chav.am"
-    }
-   ],
-   "raw_related_numbers": "H7337, H7338, H7341, H7343, H7339, H7340, H7340, H7340, H7340, H7340, H7344, H7344, H7344, H7345, H7346, H4800, H7342, H7342, ",
-   "freq_list": "2;2;2;2;2;;2;2;2;2;2;2;;2;2;2;;",
-   "is_proper_noun": false,
-   "is_sub_gloss": true,
-   "step_parent_code": "H7342G",
-   "step_section_type": "sub_gloss",
-   "decision_group": "G1",
-   "action": "include",
-   "decision_reason": "F4: parent H7342G in anchor list, section_type=sub_gloss",
+   "decision_reason": "F4: parent H3093 in anchor list, section_type=primary",
    "verses_fetched": true,
    "verse_count": 2,
    "testament_coverage": "OT_only",
@@ -321,183 +118,38 @@
    "quality_flag_detail": {},
    "verses": [
     {
-     "osisId": "Prov.21.4",
-     "ref": "Pro 21:4",
+     "osisId": "Hab.2.5",
+     "ref": "Hab 2:5",
+     "book_code": "Hab",
+     "chapter": 2,
+     "verse_num": 5,
+     "esv_text": "Hab 2:5 “ Moreover , wine is a traitor , an arrogant man who is never at rest . His greed is as wide as Sheol ; like death he has never enough . He gathers for himself all nations and collects as his own all peoples .”",
+     "target_word": "arrogant",
+     "testament": "OT",
+     "fetched_under_code": "H3093",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Hab.2.5' class='verseLink'><span class='verseNumber'>Hab 2:5</span></a> <span class='level1'></span>“<span morph='HTj HC' strong='H0637 H9002'>Moreover</span>, <span morph='HNcmsa HTd HTc' strong='H3196 H9009 H3588A'>wine</span>   is  a <span morph='HVqrmsa' strong='H0898'>traitor</span>,<br /><span class='level2'></span>an <span morph='HAamsa' strong='H3093'>arrogant</span> <span morph='HNcmsa' strong='H1397'>man</span> who is <span morph='HTn HC' strong='H3808 H9002'>never</span> at <span morph='HVqi3ms' strong='H5115B'>rest</span>. <br /><span class='level1'></span>His <span morph='HNcfsc' strong='H5315L'>greed</span> is as <span morph='HVhp3ms HTr' strong='H7337 H0834A'>wide</span> as <span morph='HNcbsa HR' strong='H7585 H9004'>Sheol</span>;<br /><span class='level2'></span><span morph='HRd' strong='H9004'>like</span> <span morph='HNcmsa HSp3ms HPp3ms HC' strong='H4194 H9023 H1931 H9002'>death</span>  he has <span morph='HTn HC' strong='H3808 H9002'>never</span> <span morph='HVqi3ms' strong='H7646'>enough</span>.<br /><span class='level1'></span> He <span morph='HVqw3ms' strong='H0622'>gathers</span> for himself <span morph='HNcmsc' strong='H3605'>all</span> <span morph='HNcmpa HTd HR HSp3ms' strong='H1471A H9009 H0413 H9033'>nations</span><br /><span class='level2'></span>and <span morph='HVqw3ms' strong='H6908'>collects</span> as his own <span morph='HNcmsc' strong='H3605'>all</span> <span morph='HNcmpa HTd HR HSp3ms' strong='H5971A H9009 H0413 H9033'>peoples</span>.”<br /><span class='endLineGroup'></span></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H3093",
+     "span_label_found": "proud",
+     "context_before": "is a traitor , an",
+     "context_after": "man who is never at"
+    },
+    {
+     "osisId": "Prov.21.24",
+     "ref": "Pro 21:24",
      "book_code": "Prov",
      "chapter": 21,
-     "verse_num": 4,
-     "esv_text": "Pro 21:4 Haughty eyes and a proud heart , the lamp of the wicked , are sin .",
-     "target_word": "proud",
-     "testament": "OT",
-     "fetched_under_code": "H7342I",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.21.4' class='verseLink'><span class='verseNumber'>Pro 21:4</span></a> <span class='level1'></span> <span morph='HNcmsc' strong='H7312'>Haughty</span> <span morph='HNcfda' strong='H5869A'>eyes</span> and a <span morph='HAamsc HC' strong='H7342I H9002'>proud</span> <span morph='HNcmsa' strong='H3820A'>heart</span>,<br /><span class='level2'></span> the <span morph='HNcmsc' strong='H5216B'>lamp</span>   of the <span morph='HNcmpa' strong='H7563'>wicked</span>, are <span morph='HNcfsa' strong='H2403B'>sin</span>.<br /></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7342I",
-     "span_label_found": "broad: arrogant",
-     "context_before": "21:4 Haughty eyes and a",
-     "context_after": "heart , the lamp of"
-    },
-    {
-     "osisId": "Prov.28.25",
-     "ref": "Pro 28:25",
-     "book_code": "Prov",
-     "chapter": 28,
-     "verse_num": 25,
-     "esv_text": "Pro 28:25 A greedy man stirs up strife , but the one who trusts in the Lord will be enriched .",
-     "target_word": "greedy",
-     "testament": "OT",
-     "fetched_under_code": "H7342I",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.28.25' class='verseLink'><span class='verseNumber'>Pro 28:25</span></a> <span class='level1'></span>A <span morph='HAamsc' strong='H7342I'>greedy</span> <span morph='HNcfsa' strong='H5315J'>man</span>  <span morph='HVpi3ms' strong='H1624'>stirs up</span> <span morph='HNcmsa' strong='H4066'>strife</span>,<br /><span class='level2'></span>but the one who <span morph='HVqrmsa' strong='H0982'>trusts</span> in the <span class='small-caps'><span morph='HNpt HR' strong='H3068G H5921A'>Lord</span></span> will  be <span morph='HVPi3ms' strong='H1878'>enriched</span>.<br /></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7342I",
-     "span_label_found": "broad: arrogant",
-     "context_before": "Pro 28:25 A",
-     "context_after": "man stirs up strife ,"
-    }
-   ]
-  },
-  {
-   "code": "H7426",
-   "gloss": "be exalted",
-   "transliteration": "ra.mom",
-   "script_form": "רָמֹם",
-   "language": "Hebrew",
-   "vocab_count": 6,
-   "medium_def": "1) to be exalted, be lifted up\n1a) (Qal) to be exalted\n1b) (Niphal) to lift oneself",
-   "lsj_entry": "",
-   "short_def_mounce": "",
-   "related_words": [
-    {
-     "strong": "H7318",
-     "form": "רוֹמָם",
-     "gloss": "extolling",
-     "translit": "ro.mam"
-    },
-    {
-     "strong": "H7427",
-     "form": "רוֹמֵמוּת",
-     "gloss": "uplifting",
-     "translit": "ro.me.mut"
-    }
-   ],
-   "raw_related_numbers": "H7318, H7319, H7427, ",
-   "freq_list": "6;7;8@6;7;4;;6;7;6;6;7@6;7;;6;6;6;1;1",
-   "is_proper_noun": false,
-   "is_sub_gloss": false,
-   "step_parent_code": "H7426",
-   "step_section_type": "primary",
-   "decision_group": "G1",
-   "action": "include",
-   "decision_reason": "F4: parent H7426 in anchor list, section_type=primary",
-   "verses_fetched": true,
-   "verse_count": 6,
-   "testament_coverage": "OT_only",
-   "meaning_numbered": true,
-   "causative_form_present": false,
-   "data_quality_flags": [],
-   "quality_flag_detail": {},
-   "verses": [
-    {
-     "osisId": "Ezek.10.15",
-     "ref": "Eze 10:15",
-     "book_code": "Ezek",
-     "chapter": 10,
-     "verse_num": 15,
-     "esv_text": "Eze 10:15 And the cherubim mounted up . These were the living creatures that I saw by the Chebar canal .",
-     "target_word": "mounted up",
-     "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ezek.10.15' class='verseLink'><span class='verseNumber'>Eze 10:15</span></a>  And the <span morph='HNcmpa HTd' strong='H3742 H9009'>cherubim</span> <span morph='HVNw3mp' strong='H7426'>mounted up</span>. These were  the <span morph='HNcfsa HTd HPp3fs' strong='H2416C H9009 H1931'>living creatures</span> <span morph='HTr' strong='H0834A'>that</span> I <span morph='HVqp1cs' strong='H7200G'>saw</span> by  the <span morph='HNpl' strong='H3529'>Chebar</span> <span morph='HNcmsc HR' strong='H5104H H9003'>canal</span>.</span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "Eze 10:15 And the cherubim",
-     "context_after": ". These were the living"
-    },
-    {
-     "osisId": "Ezek.10.17",
-     "ref": "Eze 10:17",
-     "book_code": "Ezek",
-     "chapter": 10,
-     "verse_num": 17,
-     "esv_text": "Eze 10:17 When they stood still , these stood still , and when they mounted up , these mounted up with them, for the spirit of the living creatures was in them .",
-     "target_word": "mounted up",
-     "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ezek.10.17' class='verseLink'><span class='verseNumber'>Eze 10:17</span></a>  <span morph='HR' strong='H9003'>When</span> they <span morph='HVqcc' strong='H5975G'>stood still</span>, these <span morph='HVqi3mp HSp3mp' strong='H5975G H9048'>stood still</span>, and when they <span morph='HVqcc HC HR' strong='H7311A H9002 H9003'>mounted up</span>, these <span morph='HVNi3mp HSp3mp' strong='H7426 H9048'>mounted up</span> <span morph='HR' strong='H0854'>with</span> them, <span morph='HTc HSp3mp' strong='H3588A H9038'>for</span> the <span morph='HNcfsc' strong='H7307G'>spirit</span> of the <span morph='HNcfsa HTd' strong='H2416C H9009'>living creatures</span>   was in <span morph='HR HSp3mp' strong='H9003 H9038'>them</span>.<p></p></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "still , and when they",
-     "context_after": ", these mounted up with"
-    },
-    {
-     "osisId": "Ezek.10.19",
-     "ref": "Eze 10:19",
-     "book_code": "Ezek",
-     "chapter": 10,
-     "verse_num": 19,
-     "esv_text": "Eze 10:19 And the cherubim lifted up their wings and mounted up from the earth before my eyes as they went out , with the wheels beside them. And they stood at the entrance of the east gate of the house of the Lord , and the glory of the God of Israel was over them.",
-     "target_word": "mounted up",
-     "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ezek.10.19' class='verseLink'><span class='verseNumber'>Eze 10:19</span></a>  And the <span morph='HNcmpa HTd' strong='H3742 H9009'>cherubim</span> <span morph='HVqw3mp' strong='H5375G'>lifted up</span> their <span morph='HNcfdc HTo' strong='H3671 H0853'>wings</span> and <span morph='HVNw3mp HSp3mp' strong='H7426 H9028'>mounted up</span> <span morph='HR' strong='H4480A'>from</span> the <span morph='HNcfsa HTd' strong='H0776G H9009'>earth</span>  <span morph='HR' strong='H9005'>before</span> my <span morph='HNcfdc' strong='H5869J'>eyes</span> as they <span morph='HVqcc HR HSp1bs' strong='H3318G H9003 H9020'>went out</span>, with the <span morph='HNcmpa HTd HC HSp3mp' strong='H0212 H9009 H9002 H9048'>wheels</span> <span morph='HNcfsc HR' strong='H5980 H9005'>beside</span> them. And they <span morph='HVqw3ms HSp3mp' strong='H5975G H9038'>stood</span> at the <span morph='HNcmsc' strong='H6607'>entrance</span> of the  <span morph='HAamsa HTd' strong='H6931G H9009'>east</span> <span morph='HNcmsc' strong='H8179G'>gate</span> of the <span morph='HNcmsc' strong='H1004Q'>house</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>, and  the <span morph='HNcmsc HC' strong='H3519 H9002'>glory</span> of the <span morph='HNcmpc' strong='H0430G'>God</span> of <span morph='HNpl' strong='H3478'>Israel</span> <span morph='HAcbsa HR HR HSd HSp3mp' strong='H4605 H9005 H9006 H9011 H9038'>was</span> <span morph='HR' strong='H5921A'>over</span> them.<p></p></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "lifted up their wings and",
-     "context_after": "from the earth before my"
-    },
-    {
-     "osisId": "Job.24.24",
-     "ref": "Job 24:24",
-     "book_code": "Job",
-     "chapter": 24,
      "verse_num": 24,
-     "esv_text": "Job 24:24 They are exalted a little while , and then are gone ; they are brought low and gathered up like all others; they are cut off like the heads of grain .",
-     "target_word": "exalted",
+     "esv_text": "Pro 21:24 “ Scoffer ” is the name of the arrogant , haughty man who acts with arrogant pride .",
+     "target_word": "haughty",
      "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Job.24.24' class='verseLink'><span class='verseNumber'>Job 24:24</span></a> <span class='level1'></span>They are <span morph='HVqp3cp' strong='H7426'>exalted</span>  a <span morph='HNcmsa' strong='H4592'>little while</span>, and then  are <span morph='HNcmsc HC' strong='H0369 H9002'>gone</span>;<br /><span class='level2'></span><span morph='HSp3ms' strong='H9043'>they</span> are <span morph='HVHq3cp' strong='H4355'>brought low</span> and <span morph='HVNi3mp' strong='H7092'>gathered up</span> like <span morph='HNcmsa HRd' strong='H3605 H9004'>all</span> others;<br /><span class='level2'></span>they are  <span morph='HVNi3mp' strong='H5243A'>cut off</span> like the <span morph='HNcmsc HR HC HSn' strong='H7218A H9004 H9002 H9013'>heads</span> of <span morph='HNcfsa' strong='H7641B'>grain</span>.<br /></span> </div>",
+     "fetched_under_code": "H3093",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.21.24' class='verseLink'><span class='verseNumber'>Pro 21:24</span></a> <span class='level1'></span> “<span morph='HAamsa' strong='H3887'>Scoffer</span>” is the <span morph='HNcmsc' strong='H8034'>name</span> of the <span morph='HAamsa' strong='H2086'>arrogant</span>, <span morph='HAamsa' strong='H3093'>haughty</span> man<br /><span class='level2'></span>who <span morph='HVqrmsa HSp3ms' strong='H6213A H9023'>acts</span> with <span morph='HNcmsa' strong='H2087'>arrogant</span> <span morph='HNcfsc HR' strong='H5678 H9003'>pride</span>.<br /></span> </div>",
      "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "Job 24:24 They are",
-     "context_after": "a little while , and"
-    },
-    {
-     "osisId": "Num.16.45",
-     "ref": "Num 16:45",
-     "book_code": "Num",
-     "chapter": 16,
-     "verse_num": 45,
-     "esv_text": "Num 16:45 “ Get away from the midst of this congregation , that I may consume them in a moment .” And they fell on their faces .",
-     "target_word": "Get away",
-     "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Num.16.45' class='verseLink'><span class='verseNumber'>Num 16:45</span></a>  “<span morph='HVNv2mp' strong='H7426'>Get away</span> from the <span morph='HNcmsc HR' strong='H8432 H9006'>midst</span> of this <span morph='HNcfsa HTd' strong='H5712 H9009'>congregation</span>, that I may <span morph='HVpu1cs HTm HTd' strong='H3615H H2063 H9009'>consume</span> them in a <span morph='HNcmsa HR HTo HSp3mp' strong='H7281 H9004 H0853 H9038'>moment</span>.”  And they <span morph='HVqw3mp' strong='H5307G'>fell</span> <span morph='HR' strong='H5921A'>on</span> <span morph='HSp3mp' strong='H9028'>their</span> <span morph='HNcmpc' strong='H6440H'>faces</span>.</span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "Num 16:45 “",
-     "context_after": "from the midst of this"
-    },
-    {
-     "osisId": "Ps.118.16",
-     "ref": "Psa 118:16",
-     "book_code": "Ps",
-     "chapter": 118,
-     "verse_num": 16,
-     "esv_text": "Psa 118:16 the right hand of the Lord exalts , the right hand of the Lord does valiantly !”",
-     "target_word": "exalts",
-     "testament": "OT",
-     "fetched_under_code": "H7426",
-     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.118.16' class='verseLink'><span class='verseNumber'>Psa 118:16</span></a> <span class='level2'></span>the <span morph='HNcfsc' strong='H3225G'>right hand</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span> <span morph='HVprfsa' strong='H7426'>exalts</span>,<br /><span class='level2'></span>the <span morph='HNcfsc' strong='H3225G'>right hand</span> of the <span class='small-caps'><span morph='HNpt' strong='H3068G'>Lord</span></span>  <span morph='HVqrfsa' strong='H6213A'>does</span> <span morph='HNcmsa' strong='H2428G'>valiantly</span>!”<br /><span class='endLineGroup'></span></span> </div>",
-     "span_strong_match": 1,
-     "span_code_found": "H7426",
-     "span_label_found": "be exalted",
-     "context_before": "right hand of the Lord",
-     "context_after": ", the right hand of"
+     "span_code_found": "H3093",
+     "span_label_found": "proud",
+     "context_before": "name of the arrogant ,",
+     "context_after": "man who acts with arrogant"
     }
    ]
   }

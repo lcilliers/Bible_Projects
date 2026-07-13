@@ -1,0 +1,134 @@
+{
+ "meta": {
+  "english_anchor": "worship",
+  "generated": "2026-07-13",
+  "step_version": "ESV_th",
+  "anchor_codes": [
+   "H7189B"
+  ],
+  "particle_ceiling": 1000,
+  "total_terms_evaluated": 3,
+  "summary_by_group": {
+   "G1": 2,
+   "G2r": 1
+  },
+  "include_codes": [
+   "H7189B"
+  ],
+  "exclude_codes": [],
+  "registry": {
+   "id": 176,
+   "no": 176,
+   "word": "worship",
+   "source_list": "High Confidence",
+   "category_hint": null,
+   "phase1_input_file": null,
+   "phase1_status": "Complete",
+   "phase1_output_file": null,
+   "phase2_datasets": null,
+   "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=35  verses=1390  run_id=RUN-20260328_141708-AUDIT_WORD",
+   "automation_eligible": 1,
+   "last_automation_run": "AUDITED",
+   "automation_run_id": "RUN-20260328_141708-AUDIT_WORD",
+   "phase1_term_count": 34,
+   "phase1_verse_count": 1389,
+   "strongs_list": "[{\"strong\": \"H5650\", \"count\": 331}, {\"strong\": \"H6213A\", \"count\": 263}, {\"strong\": \"H7812\", \"count\": 158}, {\"strong\": \"H5647H\", \"count\": 142}, {\"strong\": \"H5647G\", \"count\": 88}, {\"strong\": \"H3372G\", \"count\": 76}, {\"strong\": \"H5656H\", \"count\": 73}, {\"strong\": \"G4352\", \"count\": 54}, {\"strong\": \"H5647I\", \"count\": 30}, {\"strong\": \"H5656I\", \"count\": 30}, {\"strong\": \"H5648\", \"count\": 25}, {\"strong\": \"H5656G\", \"count\": 23}, {\"strong\": \"G3000\", \"count\": 21}, {\"strong\": \"H8334\", \"count\": 21}, {\"strong\": \"H5457\", \"count\": 11}, {\"strong\": \"G2965\", \"count\": 5}, {\"strong\": \"G2999\", \"count\": 5}, {\"strong\": \"H5460\", \"count\": 5}, {\"strong\": \"H5456\", \"count\": 4}, {\"strong\": \"G3009\", \"count\": 3}, {\"strong\": \"H5481\", \"count\": 3}, {\"strong\": \"H5659\", \"count\": 3}, {\"strong\": \"H5647J\", \"count\": 2}, {\"strong\": \"H5657\", \"count\": 2}, {\"strong\": \"H7825\", \"count\": 2}, {\"strong\": \"G2151\", \"count\": 1}, {\"strong\": \"G2356\", \"count\": 1}, {\"strong\": \"G3050\", \"count\": 1}, {\"strong\": \"G4353\", \"count\": 1}, {\"strong\": \"G4574\", \"count\": 1}, {\"strong\": \"H4566\", \"count\": 1}, {\"strong\": \"H5452\", \"count\": 1}, {\"strong\": \"H5463\", \"count\": 1}, {\"strong\": \"H5652\", \"count\": 1}, {\"strong\": \"H7816\", \"count\": 1}]",
+   "description": "Worship is the total orientation of the person toward God — expressed in posture, voice, action, and the ordering of the whole life around his worth. The Hebrew vocabulary covers bowing down (shachah) and the service or ministry (abad) that gives God what he is owed; the Greek adds the sense of doing homage. Worship is not merely what happens in a gathered service but the fundamental posture of the creature rightly relating to the Creator: giving God what he is worth, which is everything. It is the outer expression of the inner reality of love, trust, and reverence.",
+   "origin": "original_list",
+   "dimensions": "Spiritual/God-ward",
+   "inference_note": null,
+   "session_b_status": "Verse Context Reset",
+   "cluster_assignment": "C15",
+   "sb_classification": null,
+   "sb_classification_reasoning": null,
+   "carry_forward": 1,
+   "unique_term_count": 30,
+   "shared_term_count": 4,
+   "term_sharing_ratio": 0.118,
+   "verse_context_status": "Complete",
+   "dim_review_status": null,
+   "dim_review_version": null,
+   "word_synopsis": null
+  },
+  "curated_note": "gate1 add-terms: worship"
+ },
+ "terms": [
+  {
+   "code": "H7189B",
+   "gloss": "truth",
+   "transliteration": "qo.shet",
+   "script_form": "קֹשְׁטְ",
+   "language": "Hebrew",
+   "vocab_count": 1,
+   "medium_def": "truth, balanced verity\nAramaic equivalent: qe.shot (קְשֹׁט \"truth\" H7187)",
+   "lsj_entry": "",
+   "short_def_mounce": "",
+   "related_words": [
+    {
+     "strong": "H7187",
+     "form": "קְשֹׁט",
+     "gloss": "truth",
+     "translit": "qe.shot"
+    },
+    {
+     "strong": "H7189A",
+     "form": "קֹ֫שֶׁט",
+     "gloss": "bow",
+     "translit": "qo.shet"
+    }
+   ],
+   "raw_related_numbers": "H7187, H7189, ",
+   "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;1;1;;",
+   "is_proper_noun": false,
+   "is_sub_gloss": false,
+   "step_parent_code": "H7189B",
+   "step_section_type": "primary",
+   "decision_group": "G1",
+   "action": "include",
+   "decision_reason": "F4: parent H7189B in anchor list, section_type=primary",
+   "verses_fetched": true,
+   "verse_count": 2,
+   "testament_coverage": "OT_only",
+   "meaning_numbered": false,
+   "causative_form_present": false,
+   "data_quality_flags": [],
+   "quality_flag_detail": {},
+   "verses": [
+    {
+     "osisId": "Ps.60.4",
+     "ref": "Psa 60:4",
+     "book_code": "Ps",
+     "chapter": 60,
+     "verse_num": 4,
+     "esv_text": "Psa 60:4 You have set up a banner for those who fear you, that they may flee to it from the bow . Selah",
+     "target_word": "bow",
+     "testament": "OT",
+     "fetched_under_code": "H7189A",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span class='startLineGroup'></span><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Ps.60.4' class='verseLink'><span class='verseNumber'>Psa 60:4</span></a> <span class='level1'></span>You have <span morph='HVqp2ms' strong='H5414H'>set up</span>  a <span morph='HNcmsa HSp2ms' strong='H5251H H9021'>banner</span> for those who <span morph='HAampc HR' strong='H3373 H9005'>fear</span> you,<br /><span class='level2'></span><span morph='HNcmpc HR HVtcc HR' strong='H6440I H9006 H5264 H9005'>that</span> they may flee to it  from the <span morph='HNcmsa' strong='H7189A'>bow</span>.  <em class='foreign'> <span morph='HTj' strong='H5542'>Selah</span></em> <br /></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H7189A",
+     "span_label_found": "bow",
+     "context_before": "flee to it from the",
+     "context_after": ". Selah"
+    },
+    {
+     "osisId": "Prov.22.21",
+     "ref": "Pro 22:21",
+     "book_code": "Prov",
+     "chapter": 22,
+     "verse_num": 21,
+     "esv_text": "Pro 22:21 to make you know what is right and true , that you may give a true answer to those who sent you ?",
+     "target_word": "right",
+     "testament": "OT",
+     "fetched_under_code": "H7189B",
+     "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Prov.22.21' class='verseLink'><span class='verseNumber'>Pro 22:21</span></a> <span class='level1'></span><span morph='HR' strong='H9005'>to</span>  make you <span morph='HVhcc' strong='H3045'>know</span> what is <span morph='HNcmsc HSp2ms' strong='H7189B H9031'>right</span> and <span morph='HNcmpc HNcfsa' strong='H0561 H0571H'>true</span>,<br /><span class='level2'></span>that you may give a <span morph='HNcmpa HNcfsa' strong='H0561 H0571H'>true</span> <span morph='HVhcc HR' strong='H7725M H9005'>answer</span> to those who <span morph='HVqrmpc HR' strong='H7971G H9005'>sent</span> <span morph='HSp2ms' strong='H9031'>you</span>?<br /><span class='endLineGroup'></span></span> </div>",
+     "span_strong_match": 1,
+     "span_code_found": "H7189B",
+     "span_label_found": "truth",
+     "context_before": "make you know what is",
+     "context_after": "and true , that you"
+    }
+   ]
+  }
+ ]
+}
