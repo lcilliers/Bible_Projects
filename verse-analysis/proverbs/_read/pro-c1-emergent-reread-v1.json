@@ -1,0 +1,45 @@
+{
+ "book": "Pro", "book_id": 20, "chapter": 1, "provenance": "reread-proverbs-2026",
+ "note": "Cycle-1 EMERGENT chars (seed-missed, discovered on the per-cycle conformance check via old-model role residue): prudence (ormah, 1:4), learning (leqach, 1:5), greed (batsa, 1:19). Raised to characteristics, read, stamped candidate + seed-fed (cycle method 4.4).",
+ "spans": {
+  "264827": {"gloss": "prudence (ormah)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"prudence — shrewd good sense (the wise use of the same craft that, misused, is craftiness)"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the simple, to be given it","to":264827,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"prudence put into the naive so they are no longer defenceless"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"the gift to the simple (peti), the counter to naivety","to":264828,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"EMERGENT: ormah heads 1:4's purpose ('to give prudence to the simple') yet the seed missed it. Prudence is the sharp, wary good sense the naive lack — bivalent (craftiness in the wicked), here wholly positive. A central Proverbs char, recovered on the cycle check."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264835": {"gloss": "learning (leqach)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"learning — the received teaching that is taken in and grows"},
+    {"n":102,"l":"type","k":"value","v":"cognition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the wise who increase in it","to":264835,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the wise increasing in learning by hearing"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"the fruit of the wise's hearing (shama) — what listening accumulates","to":264833,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"EMERGENT: leqach ('what is taken/received') is the growing store of teaching the wise add to by listening (1:5) — the object of 'increase'. Seed-missed; recovered on the cycle check."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264703": {"gloss": "greed for unjust gain (batsa)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"greed — the covetous grasping after unjust gain that cuts one off"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"everyone greedy for unjust gain","to":264703,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"greedily grasping unjust gain — the bent that seizes and, in seizing, destroys the self"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"welded to the loss of life/nephesh (1:19) — greed takes away the life of its possessor","to":264707,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"EMERGENT: batsa (to cut off / be greedy for gain) is the DRIVER of the whole 1:10-19 unit — the covetous grasping the chapter warns against; it names the inner root of the violence. Seed-missed; recovered on the cycle check. Descent read at full weight."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]}
+ }
+}

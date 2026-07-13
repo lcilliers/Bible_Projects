@@ -94,6 +94,8 @@ def main():
                  fr, to, res, pk))
             if d['n'] == 115 and d.get('v'):
                 role_of[s] = d['v']; role_srcid[s] = cur.lastrowid
+                if d['v'] == 'characteristic' and obj.get('gloss'):
+                    cur.execute('UPDATE verse_span_index SET characteristic=? WHERE id=?', (obj['gloss'], s))  # I11 char-on-master
             # collect real span-id pair endpoints (res='span') that point at a DIFFERENT span => qualifiers
             if d.get('res') == 'span':
                 for ep in (d.get('from'), d.get('to')):
