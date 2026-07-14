@@ -1,4 +1,4 @@
-"""Group the 877 meaning-records (ib_characteristic, book 19) into <=50 semantic
+"""Group meaning-records (ib_characteristic, a given book_scope) into <=50 semantic
 FAMILIES by similarity, writing the `family` column.
 
 Method: an ordered, transparent keyword->family rule map (first match wins),
@@ -7,13 +7,22 @@ assignment is auditable (the matched family is deterministic from the rules).
 Errs toward leaving a meaning in 'other-uncategorised' rather than forcing it —
 the residual is reported for read-back and rule refinement.
 
-Usage:  python scripts/_apply_ib_char_family_grouping_v1_20260711.py [--live]
-        (default = dry run: prints distribution + unmatched, writes nothing)
+The taxonomy below was authored on Psalms (book 19, Godward/worship-heavy) but is
+general to inner-being characteristics; wisdom-book records (Proverbs, book 20)
+populate the mind/conduct/vice families (wisdom-folly, righteousness, deceit,
+anger, pride, ...) with the worship families running lighter.
+
+Usage:  python scripts/_apply_ib_char_family_grouping_v1_20260711.py [--book 20] [--live]
+        (default = book 19, dry run: prints distribution + unmatched, writes nothing)
 """
 import sqlite3, os, re, sys, json
 from collections import Counter, defaultdict
 
 LIVE = '--live' in sys.argv
+BOOK = '19'
+for i, a in enumerate(sys.argv):
+    if a == '--book' and i + 1 < len(sys.argv):
+        BOOK = str(sys.argv[i + 1])
 DB = os.path.join('database','bible_research.db')
 c = sqlite3.connect(DB); c.row_factory = sqlite3.Row; cur = c.cursor()
 
@@ -40,7 +49,9 @@ RULES = [
  ('being-heard-listening',        r'\b(hear|listen|hearken|give ear|incline.*ear|answer|attend to my|regard my)'),
  # --- mind ---
  ('knowing-understanding',        r'\b(know|understand|discern|consider|perceiv|ponder|meditat|mind\b|think|thought|regard|reflect|comprehend)'),
- ('wisdom-folly-teaching',        r'\b(wise|wisdom|folly|fool|prudent|instruct|teach|learn|counsel|disciplin|understanding heart|simple\b|stupid|brutish|senseless|dull)'),
+ ('wisdom-folly-teaching',        r'\b(wise|wisdom|folly|fool|prudent|prudenc|shrewd|crafty|craftiness|sensible|good sense|instruct|teach|learn|counsel|disciplin|understanding heart|simple\b|stupid|brutish|senseless|dull)'),
+ ('sloth-diligence-industry',     r'\b(sluggard|slothful|sloth\b|lazy|lazi|idle|idlen|diligen|industri|work his land|willing hands)'),
+ ('wealth-poverty-riches',        r'\b(rich\b|riches|wealth|wealthy|affluent|money|profit|prosper|treasure|abundance of|unjust gain)'),
  ('memory-remembrance',           r'\b(remember|forget|mindful|recall|memory|call to mind|bring to remembrance)'),
  # --- speech ---
  ('speech-mouth-tongue',          r'\b(speak|speech|say\b|said|mouth|tongue|lips|declare|tell|utter|proclaim|talk|word of my|recount|boast in god)'),
@@ -48,7 +59,7 @@ RULES = [
  ('walk-way-conduct',             r'\b(walk|way\b|ways\b|path|go\b|goes|went|run\b|follow|step|tread|conduct|journey|wander|stray|astray|flee)'),
  ('keeping-guarding-vigilance',   r'\b(keep|guard|watch|observ|preserv|heed|attend|vigil)'),
  ('torah-obedience-word',         r'\b(obey|obedien|command|statute|\blaw\b|precept|ordinance|testimon|decree|keep your word|your word)'),
- ('righteousness-integrity',      r'\b(righteous|upright|blameless|integrity|pure|clean|innocen|honest|just\b|justice|perfect way)'),
+ ('righteousness-integrity',      r'\b(righteous|upright|blameless|integrity|pure|clean|innocen|honest|just\b|justice|injustic|unjust|perfect way)'),
  # --- the other side (descent / against) ---
  ('sin-guilt-iniquity',           r'\b(sin\b|sins|sinn|iniquit|transgress|guilt|guilty|trespass|wrongdoing|pollut|unclean|defile|impur)'),
  ('shame-confusion',              r'\b(shame|asham|confound|confus|disgrace|reproach|dishonou|scorn.*me|humiliat)'),
@@ -57,7 +68,7 @@ RULES = [
  ('wickedness-ungodliness',       r'\b(wicked|evil|ungodly|godless|worthless|vile|abomin)'),
  ('malice-enmity-persecution',    r'\b(hate|hated|hatr|enem|foe|advers|oppress|persecut|ambush|lurk|plot|scheme|devise.*evil|snare|pursue|assail|accus|oppose|curse|rise against|surround me)'),
  ('pride-arrogance-scoffing',     r'\b(pride|proud|arrogan|haughty|boast|boastful|scoff|mock|deride|derid|taunt|presumptuous|insolent|lofty|exalt themselves|exalt himself)'),
- ('deceit-falsehood',             r'\b(deceit|deceiv|lie\b|lies|lying|false|flatter|guile|treacher|hypocri|slander|betray)'),
+ ('deceit-falsehood',             r'\b(deceit|deceiv|lie\b|lies|lying|false|flatter|guile|treacher|hypocri|slander|betray|crooked|perverse|perversit|devious|twisted)'),
  ('anger-wrath-vexation',         r'\b(anger|angry|wrath|rage|fury|furious|fierce|indignat|provoke|vex|fret|hot displeasure)'),
  ('violence-cruelty',             r'\b(violen|cruel|blood|destroy|devour|crush|oppression|ruthless|kill|slay|attack|conspire|contention|strife|fight|band together)'),
  # --- posture / state ---
@@ -78,7 +89,8 @@ RULES = [
  ('light-darkness-inner',         r'\b(light|dark|gloom|shadow|lamp)'),
 ]
 
-rows = cur.execute("SELECT id,name,instance_count,operation,lexical_gloss FROM ib_characteristic WHERE book_scope='19'").fetchall()
+rows = cur.execute("SELECT id,name,instance_count,operation,lexical_gloss FROM ib_characteristic WHERE book_scope=?", (BOOK,)).fetchall()
+print(f"[book_scope={BOOK}]")
 
 def classify(r):
     name = (r['name'] or '').lower()
