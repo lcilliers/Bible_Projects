@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 30,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4364 (Pro 30:9) — lest, full, I deny you; or, poor, I steal and profane the name of my God.",
+ "spans": {
+  "267316": {
+   "gloss": "denial in plenty (kachash)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "self-sufficient forgetting — the satiety that denies God, 'who is the LORD?'"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the prosperous",
+     "to": 267316,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the denying of God in plenty — the danger that satiety breeds self-sufficient forgetting, so that the full man says 'who is the LORD?', needing God no longer in his own eyes"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the theft of want it is set against (267322)",
+     "to": 267316,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the poverty that drives to steal and profane God's name",
+     "to": 267322,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "kachash (deny/deceive) — 'lest I be FULL and DENY you and say, 'who is the LORD?'' (30:9); prosperity tempts a man to self-sufficient forgetting of God. Agur prays against riches lest plenty make him deny his Maker (cf Deut 8:12-14)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267322": {
+   "gloss": "theft in want (ganab)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "desperation-sin — the poverty that drives to steal and profane God's name"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the poor",
+     "to": 267322,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the stealing that poverty may drive a man to, profaning the name of his God — the danger that want breeds desperation-sin, dishonouring God by the theft it provokes"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the denial of plenty it is set against (267316)",
+     "to": 267322,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the satiety that denies God",
+     "to": 267322,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "ganab (steal) — 'or lest I be poor and STEAL and profane the name of my God' (30:9); poverty too has its spiritual peril, driving a man to theft that shames God. Agur prays against want no less than wealth. Emergent: desperation-sin as the danger of poverty (cf 6:30-31)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
