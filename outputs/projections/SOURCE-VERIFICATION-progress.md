@@ -1,14 +1,16 @@
 # Source-verification of every lexical dimension against the source
 
-**Started 2026-07-14.** Task (researcher): take each dimension for each lexical in Psalms + Proverbs and check
-the value **against the source** — no shortcuts, no statistics, no assumptions. Order = **dimension-major**:
-D1 for every lexical, then D2 for every lexical, and so on. The judgment is **mine, per value, read against
-the verse + Hebrew/Greek lemma + morphology** (STEP when the DB lexicon is insufficient). Scripts only pull
-the source and store my verdicts; they compute nothing about correctness.
+**Started 2026-07-14.** Task (researcher): check each dimension's stored value **against the source** — verse +
+Hebrew/Greek lemma + morphology, **read in passage context** (the method's read rule). Judgment is mine, per value.
 
-- **Verdict store (durable):** DB table `ve_lexical_verification` (span, ve_nr, stored_value, verdict, correct_value, note, source_checked, checked_at). Resumable.
-- **Puller:** `scripts/_pull_verify_batch_v1_20260714.py --book <id> --ve <nr> --limit N` (skips already-verified).
-- **Verdicts:** `correct` · `partial` (right idea, imprecise/conflated) · `wrong`.
+## Acceptance-sampling protocol (researcher, 2026-07-14)
+- **~4,137 lexicals per dense dimension** (Psalms 2,168 + Proverbs 1,969).
+- **Sample = 200 random lexicals per dimension, scattered across both books** (census if a dim has <200: source=123, prohibition=9). Samples are **disjoint across dimensions** (no lexical tests more than one dimension) and **fixed up-front** (seed 20260714, table `ve_verification_sample`) so they can't be cherry-picked.
+- **Accept** a dimension if its 200 are verified with **0 errors** → ~95% confidence its true defect rate is <~1.5% (rule of three, 3/200).
+- **Any error → the dimension FAILS**, and per the researcher a failure triggers a **full retest of all dimensions**.
+- **error** = wrong, or a genuine mis-scope against the source *in passage context*. A defensible value with a minor alternative = **researcher-flag**, not a pass-breaking error (surfaced for ruling).
+
+- **Verdict store (durable):** `ve_lexical_verification`. **Sample store:** `ve_verification_sample`. **Puller:** `_pull_verify_batch_v1 --ve <nr> --sample` (shows the whole passage, focus verse `>>`; resumable).
 
 ## Dimension order (ve_nr = D-number)
 
@@ -29,9 +31,11 @@ The puller (`_pull_verify_batch_v1`) now shows the **whole passage** (focus vers
 
 ## Progress
 
-| dim | book | verified | correct | partial | wrong | researcher-flags |
-|---|---|---|---|---|---|---|
-| D1 sense(101) | Psalms | 36 / 2168 | 36 | 0 | 0 | 1 (Ps 4:4 ragaz) |
+| dim | sample | verified | correct | errors | status |
+|---|---|---|---|---|---|
+| D1 sense(101) | 200 (random, both books) | 13 | 12 | **1 candidate** | ⏳ in progress — 1 candidate error at Pro 28:12 (*tsaddiq* sense = effect); awaiting researcher ruling |
+
+*(36 extra sequential Psalms D1 checks done earlier, all correct in passage context — evidence, not the acceptance sample.)*
 
 ### Running findings
 - **D1 sense — clean so far under the passage rule: 36/36 correct, 0 wrong.** (My earlier "31% partial" was a verification-standard error, not a data defect — see the corrected standard above.)
