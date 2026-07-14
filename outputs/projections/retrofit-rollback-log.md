@@ -156,3 +156,12 @@ Pre-roll DB snapshot: `backups/bible_research_pre-psalms-retrofit_20260714.db`.
 - Also cleaned coupling self-pair artifacts (to_span=self, resolution!=span, meaningless): 900 Psalms + 1188 Proverbs -> to_span NULL.
 - Kept 16 seat(104) span self-loops = reflexive seat ('soul (self)') — semantically valid, not noise.
 - Script: `_apply_dq01_locus_coupling_swap_v1`. Snapshot: `backups/bible_research_pre-dq01-swap_20260714.db`.
+
+## Reader-drift audit (2026-07-14) — from the AI's round-2 pass
+- **type(102) = reader-drift, CONFIRMED process-grade.** action 0%→50% across bands; type=faculty only Ps 76-138. Do not use for positional/cross-section analysis. Drifts in Psalms + Proverbs.
+- **locus(116) early-band drift:** Ps 1-25 = 100% internal:ib-state (blanket convention); differentiates from ~Ps 26. target(107) `none`-rate drifts.
+- **direction(118) band-flat** (45.9-50.9% toward-god) — read-grade confirmed. device(117) read-grade.
+- I-3 (faculty↔inward) RETRACTED (rested on type). **M-01 (seat-word inwardness, lemma+direction) STANDS** — ~27×, band-robust, non-tautological.
+- **DQ-05:** Psa 86:12 vs 111:1 identical fields, opposite direction tag (~20% on subset) — bounds M-01.
+- Qualifier layer: only 4.1% (296/7295) explicit char-links, 11.6% of readings — the rest is verse_ref inference. "Auditable" overstated in v2 first pass; corrected.
+- New tool: `_check_dimension_band_drift_v1`. Register: `WA-dimension-reliability-register-v1-20260714.md`.

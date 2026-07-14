@@ -3,6 +3,12 @@
 **Reviewing:** `outputs/projections/outputs/WA-session-log-psalms-macro-v1.0-2026-07-14.md` (the AI's session log).
 **Date:** 2026-07-14 · **Reviewer:** Claude Code · **Verified against:** live DB (`reread-psalms-2026`).
 
+> **⚠ CORRECTION (round 2, 2026-07-14).** This review vouched for `device`/`direction`/`effect` on a reliability
+> spectrum **but never tested the other dimensions for reader-drift** — a real gap. The analyst's round-2 pass
+> then showed `type(102)` records the reading order, not the text, and retracted its own I-3 finding. My "the
+> dimensions are honest" framing was **over-confident**. The corrective is `WA-dimension-reliability-register-v1-20260714.md`
+> (two-axis: stability + provenance) and the reusable screen `scripts/_check_dimension_band_drift_v1`. Read that register, not just this.
+
 ---
 
 ## Headline view

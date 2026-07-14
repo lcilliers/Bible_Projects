@@ -15,7 +15,11 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 ### Projection / re-read follow-ups (raised 2026-07-14, from the AI's first Psalms macro pass)
 
 - [ ] **Phase-2 EFFECT read — Psalms** (then bake into every book read). `effect(111)` currently ships **derivation-grade** (97.7% NONE = a floor, not measured silence). Read it per-passage with read-back, self-interpretable, verse-bounded. Spec: [Workflow/methodology/WA-psalms-effect-read-phase2-spec-v1-20260714.md](Workflow/methodology/WA-psalms-effect-read-phase2-spec-v1-20260714.md). **Blocks any Psalms consequence/outcome analysis.**
+- [ ] **`type(102)` reader-drift** — retire from analytical use OR re-read to a fixed controlled vocab in one pass (currently records reading-order, not text). Highest priority — core dimension, currently misleading. Register: [outputs/projections/WA-dimension-reliability-register-v1-20260714.md](outputs/projections/WA-dimension-reliability-register-v1-20260714.md).
+- [ ] **`locus(116)` Ps 1–25 re-read** — break the blanket 100% `internal:ib-state` early-reading convention.
+- [ ] **DQ-05 direction-consistency audit** — seat-word + give-thanks subset (Psa 86:12 vs 111:1 tag inward vs toward-god on identical fields; ~20% on subset).
 - [ ] _(consider)_ **Vehicle-node materialisation** — simile/metaphor vehicles are carried as readable text + 5 span-edges; most vehicle nouns are not indexed IB spans, so no graph edge. Decide whether to materialise vehicle nodes for a fuller imagery graph.
+- [x] Reader-drift audit across all dims (band-drift screen `_check_dimension_band_drift_v1`) — type confirmed process-grade; reliability register written — 2026-07-14.
 - [x] DQ-01 coupling/locus transposition fixed at source (666 Psalms spans) — `_apply_dq01_locus_coupling_swap_v1`, 2026-07-14.
 - [x] Projection v2 ships the qualifier layer (`<book>_qualifiers.csv` + `linked_qualifiers`) so effect/intensity/specifier NONE is auditable — 2026-07-14.
 - [x] Retrofit dims (device/intensity/specifier/effect/direction) rolled across Psalms + Proverbs, 0 ABSENT — 2026-07-14.
