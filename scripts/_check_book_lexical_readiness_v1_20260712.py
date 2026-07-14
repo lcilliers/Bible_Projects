@@ -293,15 +293,53 @@ def resolve_book(con, arg):
     return bid, seg, name
 
 
+def verse_coverage(con, bid, name):
+    """★ v2 verse-coverage gate (Proverbs retrospective): EVERY verse must be passaged
+    or explicitly skip-listed. A verse with passage_id IS NULL that carries char content
+    (char_candidate=1 OR role='characteristic', ANY provenance) is a coverage HOLE a
+    passage-driven read silently skips (the Proverbs 116-orphan gap). Read-only.
+    Returns (total, inpass, nullp, holes, hole_refs). RED if holes>0."""
+    q1 = lambda s, *a: con.execute(s, a).fetchone()[0]
+    total = q1("SELECT COUNT(*) FROM verse WHERE book_id=?", bid)
+    inpass = q1("SELECT COUNT(*) FROM verse WHERE book_id=? AND passage_id IS NOT NULL", bid)
+    nullp = total - inpass
+    # A HOLE = passage_id NULL + carries char content (candidate OR any char-role) + NOT yet read
+    # (a read verse is covered per the v2 verse-level definition, even if passage_id is NULL).
+    holes = con.execute("""SELECT v.reference FROM verse v WHERE v.book_id=? AND v.passage_id IS NULL
+        AND EXISTS (SELECT 1 FROM verse_span_index si WHERE si.verse_id=v.id
+                    AND (si.char_candidate=1 OR si.role='characteristic'))
+        AND NOT EXISTS (SELECT 1 FROM verse_span_index si2 WHERE si2.verse_id=v.id
+                        AND si2.role='characteristic' AND si2.role_provenance='read-2026')
+        ORDER BY v.chapter, v.verse_num""", (bid,)).fetchall()
+    hole_refs = [r[0] for r in holes]
+    return total, inpass, nullp, len(hole_refs), hole_refs
+
+def print_coverage(con, bid, name):
+    total, inpass, nullp, nholes, refs = verse_coverage(con, bid, name)
+    st = 'RED' if nholes else 'GREEN'
+    print(f"# verse-coverage gate — {name} (book_id={bid})")
+    print(f"  verses total          : {total}")
+    print(f"  in passages           : {inpass}")
+    print(f"  passage_id IS NULL     : {nullp}")
+    print(f"  >> HOLES (NULL + char content, must be passaged or skip-listed): {nholes}")
+    print(f"  VERDICT: [{st}] " + ("all verses passaged / no char-bearing orphans"
+          if not nholes else f"{nholes} coverage holes BLOCK the read — reconcile to passages or file on the skip-list"))
+    if refs:
+        print("  holes:", ", ".join(refs[:40]) + (" ..." if len(refs) > 40 else ""))
+    return 0 if not nholes else 1
+
 def main():
     if '--book' not in sys.argv:
-        print("usage: --book <id|code|name> [--md OUT]"); sys.exit(2)
+        print("usage: --book <id|code|name> [--md OUT] [--coverage]"); sys.exit(2)
     arg = sys.argv[sys.argv.index('--book')+1]
     con = sqlite3.connect(DB)
     rb = resolve_book(con, arg)
     if not rb:
         print(f"book not found: {arg}"); sys.exit(2)
     bid, seg, name = rb
+    if '--coverage' in sys.argv:   # standalone verse-coverage gate (v2)
+        con.row_factory = None
+        sys.exit(print_coverage(con, bid, name))
     con.row_factory = None
     rc = Readiness(con, bid, seg, name)
     rows = rc.run()
@@ -320,9 +358,17 @@ def main():
         if section != cur:
             cur = section; w(f"\n## {SECT.get(section, section)}")
         w(f"- [{MARK[status]}] **{code}** ({klass}): {detail}")
+    # ★ v2 verse-coverage gate (all verses, not just candidate-verses)
+    tot, inp, nul, nh, refs = verse_coverage(con, bid, name)
+    cst = GREEN if nh == 0 else RED
+    w(f"\n## D. Verse-coverage gate (v2 - ALL verses)")
+    w(f"- [{MARK[cst]}] **Verse coverage** (PRECONDITION, stage 3): verses total={tot} · in-passages={inp} · passage_id-NULL={nul} · "
+      f"**HOLES (NULL + char content) = {nh}**"
+      + ("" if nh == 0 else f" -> BLOCK: reconcile to passages or skip-list ({', '.join(refs[:20])}{' ...' if len(refs) > 20 else ''})"))
     w()
-    w("_Read-only. Per `wa-book-lexical-readiness-assessment-AUTHORITATIVE-v1-20260712.md`. "
-      "Preconditions must be green/waived before Stage 0; READ-OUTPUT items are expected empty pre-read._")
+    w("_Read-only. Per `wa-book-lexical-readiness-assessment-AUTHORITATIVE [current]` (v2, 2026-07-14). "
+      "Preconditions must be green/waived before Stage 0; READ-OUTPUT items are expected empty pre-read. "
+      "'Complete' is VERSE-level: every verse read or skip-listed._")
     text = out.getvalue()
     print(text)
     if '--md' in sys.argv:

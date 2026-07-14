@@ -1,0 +1,22 @@
+# Normalise line endings to LF in the repo (kills per-commit CRLF<->LF warnings on Windows).
+# Text files are stored LF; Git will not warn on checkout. Binaries are left untouched.
+* text=auto eol=lf
+
+# Explicit text types (belt-and-braces)
+*.md   text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.sql  text eol=lf
+*.txt  text eol=lf
+*.csv  text eol=lf
+*.sh   text eol=lf
+*.ps1  text eol=lf
+
+# Binary / never-normalise
+*.db      binary
+*.docx    binary
+*.pdf     binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.xlsx    binary

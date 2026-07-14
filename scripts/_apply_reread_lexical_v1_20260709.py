@@ -122,6 +122,22 @@ def main():
     c.commit()
     post = cur.execute('SELECT COUNT(*) FROM ve_lexical WHERE COALESCE(delete_flagged,0)=0').fetchone()[0]
     print(f"applied. active ve_lexical {pre} -> {post} (net {post-pre}). committed.")
+    # ★ v2 (Proverbs retrospective) — FLAG leftover old-model chars on the read verses.
+    # A span that is role='characteristic' with provenance != 'read-2026' on a verse we just
+    # read is a span read-but-not-re-selected. Flag it loudly (do NOT auto-demote: demotion is
+    # the explicit book-close 'demote-then-measure' step). Prevents these accumulating unseen.
+    if marked:
+        qv = ','.join('?' * len(marked))
+        emitted = set(int(s) for s in spans)
+        leftover = [r for r in c.execute(
+            f"""SELECT si.id, si.surface, v.reference FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
+                WHERE si.verse_id IN ({qv}) AND si.role='characteristic' AND si.role_provenance!='read-2026'""",
+            marked) if r[0] not in emitted]
+        if leftover:
+            print(f"  !! LEFTOVER legacy chars on read verses ({len(leftover)}) — read-but-not-re-selected; "
+                  f"demote at book-close (see cadence v2 'demote-then-measure'):")
+            for sid, surf, ref in leftover[:20]:
+                print(f"     {ref}  [{sid}] {(surf or '')[:22]}")
     c.close()
 
 if __name__ == '__main__':

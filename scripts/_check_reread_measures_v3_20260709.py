@@ -30,7 +30,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--book', required=True, help='book id or name substring')
     ap.add_argument('--label', default='baseline')
+    ap.add_argument('--layer', choices=['all', 'read-2026'], default='all',
+                    help="all (default) = whole span-index (legacy + read); read-2026 = only the reread char layer "
+                         "(v2, Proverbs retrospective — avoids legacy chars reading as false failures on the char-gates)")
     a = ap.parse_args()
+    # char-role provenance filter: applied to the characteristic-based gates when --layer read-2026
+    RP = " AND s.role_provenance='read-2026'" if a.layer == 'read-2026' else ""
     c = sqlite3.connect(DB); c.row_factory = sqlite3.Row
     q = lambda s, *ar: c.execute(s, ar).fetchall()
     one = lambda s, *ar: c.execute(s, ar).fetchone()[0]
@@ -49,7 +54,7 @@ def main():
     hdr('STRUCTURE')
     print('verses:', one('SELECT COUNT(*) FROM verse WHERE book_id=?', BID),
           '| candidate spans:', one('SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.char_candidate=1', BID),
-          '| characteristics:', one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'", BID),
+          '| characteristics:', one(f"SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'{RP}", BID),
           '| active lexical rows:', one('SELECT COUNT(*) FROM ve_lexical l JOIN verse_span_index s ON s.id=l.verse_span_id JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND COALESCE(l.delete_flagged,0)=0', BID))
     print('per-span ve_nr present:', [r[0] for r in q('SELECT DISTINCT l.ve_nr FROM ve_lexical l JOIN verse_span_index s ON s.id=l.verse_span_id JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND l.ve_nr BETWEEN 101 AND 116 AND COALESCE(l.delete_flagged,0)=0 ORDER BY l.ve_nr', BID)])
 
@@ -73,8 +78,8 @@ def main():
 
     # G2
     hdr('G2 worked, not named  PASS=0/0')
-    print('char NO lexical:', one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic' AND NOT EXISTS(SELECT 1 FROM ve_lexical l WHERE l.verse_span_id=s.id AND COALESCE(l.delete_flagged,0)=0)", BID),
-          '| char NO operation(106):', one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic' AND NOT EXISTS(SELECT 1 FROM ve_lexical l WHERE l.verse_span_id=s.id AND l.ve_nr=106 AND COALESCE(l.delete_flagged,0)=0)", BID))
+    print('char NO lexical:', one(f"SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'{RP} AND NOT EXISTS(SELECT 1 FROM ve_lexical l WHERE l.verse_span_id=s.id AND COALESCE(l.delete_flagged,0)=0)", BID),
+          '| char NO operation(106):', one(f"SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'{RP} AND NOT EXISTS(SELECT 1 FROM ve_lexical l WHERE l.verse_span_id=s.id AND l.ve_nr=106 AND COALESCE(l.delete_flagged,0)=0)", BID))
 
     # G3
     hdr('G3 read from the verse (pairs-only grounding)  PASS=0/0')
@@ -130,10 +135,10 @@ def main():
     CROSSVERSE = gen in NARRATIVE_GENRES
     MANDATORY = MANDATORY_NARRATIVE if CROSSVERSE else MANDATORY_POETIC
     print(f'genre={gen} -> mandatory set ({"narrative incl source/effect" if CROSSVERSE else "poetic/prophetic: source(103)/effect(111) are Phase-2, excluded per-span"}): {MANDATORY}')
-    nchar = one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'", BID)
+    nchar = one(f"SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'{RP}", BID)
     inlist = ','.join(str(d) for d in MANDATORY)
-    anymiss = one('''SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'
-        AND (SELECT COUNT(DISTINCT l.ve_nr) FROM ve_lexical l WHERE l.verse_span_id=s.id AND l.ve_nr IN (%s) AND COALESCE(l.delete_flagged,0)=0) < %d''' % (inlist, len(MANDATORY)), BID)
+    anymiss = one("SELECT COUNT(*) FROM verse_span_index s JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND s.role='characteristic'" + RP +
+        " AND (SELECT COUNT(DISTINCT l.ve_nr) FROM ve_lexical l WHERE l.verse_span_id=s.id AND l.ve_nr IN (%s) AND COALESCE(l.delete_flagged,0)=0) < %d" % (inlist, len(MANDATORY)), BID)
     print(f'characteristics: {nchar} | missing >=1 mandatory dim: {anymiss} (PASS=0)')
     zero = [d for d in MANDATORY if one("SELECT COUNT(*) FROM ve_lexical l JOIN verse_span_index s ON s.id=l.verse_span_id JOIN verse v ON v.id=s.verse_id WHERE v.book_id=? AND l.ve_nr=? AND COALESCE(l.delete_flagged,0)=0", BID, d) == 0]
     print('mandatory dims with ZERO rows in book:', zero)
