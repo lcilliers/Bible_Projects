@@ -24,7 +24,7 @@ DB = os.path.join('database', 'bible_research.db')
 OUTBASE = os.path.join('outputs', 'projections')
 DIMS = {101:'sense',102:'type',103:'source',104:'seat',105:'bearer',106:'operation',107:'target',
         108:'manner',109:'intensity',110:'specifier',111:'effect',112:'coupling',113:'prohibition',
-        114:'reading',115:'role',116:'locus'}          # 114 relabelled: discovery -> reading
+        114:'reading',115:'role',116:'locus',117:'device',118:'direction'}   # 114 relabelled; 117/118 added 2026-07-14
 PROV = {19:'reread-psalms-2026', 20:'reread-proverbs-2026'}
 
 PERSON = re.compile(r'\b(neighbou?r|enemy|enemies|king|queen|poor|needy|wife|husband|son|daughter|father|mother|'
@@ -80,11 +80,14 @@ def build_book(c, bid, bname):
            ORDER BY v.chapter, v.verse_num, si.id""", (bid,)).fetchall()
     # pivot ve_lexical (reread) per span
     pivot = defaultdict(dict)
-    for r in c.execute("""SELECT x.verse_span_id sid, x.ve_nr, x.value FROM ve_lexical x
+    veh_map = {}   # span -> vehicle span-id (from the device(117) typed pair)
+    for r in c.execute("""SELECT x.verse_span_id sid, x.ve_nr, x.value, x.to_span, x.resolution FROM ve_lexical x
            JOIN verse_span_index si ON si.id=x.verse_span_id JOIN verse v ON v.id=si.verse_id
-           WHERE v.book_id=? AND x.source_provenance=? AND x.delete_flagged=0 AND x.ve_nr BETWEEN 101 AND 116""",
+           WHERE v.book_id=? AND x.source_provenance=? AND x.delete_flagged=0 AND x.ve_nr BETWEEN 101 AND 118""",
            (bid, prov)):
         pivot[r['sid']][r['ve_nr']] = r['value']
+        if r['ve_nr'] == 117 and r['resolution'] == 'span' and r['to_span']:
+            veh_map[r['sid']] = r['to_span']
     # salience
     lemma_freq = Counter(s['strongs'] for s in spans)
     ckey_members = defaultdict(list)
@@ -96,7 +99,7 @@ def build_book(c, bid, bname):
                'char_key','ib_char','base_gloss','read_sense_variants','esv_words','family','cluster','cluster_all',
                'same_as','role_provenance','char_candidate_tag','lemma_freq_book','ib_instance_count',
                'sense','type','source','seat','bearer','operation','target','object_kind','manner',
-               'intensity','specifier','effect','coupling','prohibition','reading','discovery_flag',
+               'intensity','specifier','effect','device','vehicle','coupling','prohibition','reading','discovery_flag',
                'role','locus','direction','verse_text']
     with open(os.path.join(outdir, f"{bname.lower()}_reading_view.csv"), 'w', newline='', encoding='utf-8') as f:
         w = csv.writer(f); w.writerow(rv_cols)
@@ -116,9 +119,10 @@ def build_book(c, bid, bname):
                 lemma_freq[s['strongs']], s['instance_count'],
                 sense, state(p,102), state(p,103), state(p,104), state(p,105), state(p,106), state(p,107),
                 object_kind(p.get(107), p.get(105), p.get(116)), state(p,108),
-                state(p,109), state(p,110), state(p,111), state(p,112), state(p,113), reading,
+                state(p,109), state(p,110), state(p,111), state(p,117), veh_map.get(s['id'], ''),
+                state(p,112), state(p,113), reading,
                 'present' if FINDING.search(reading or '') else 'absent',
-                state(p,115), state(p,116), 'ABSENT', s['verse_text'],
+                state(p,115), state(p,116), state(p,118), s['verse_text'],
             ]
             w.writerow(row)
 

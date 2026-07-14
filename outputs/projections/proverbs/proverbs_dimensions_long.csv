@@ -14647,10 +14647,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266170,106,operation,"the honour that, given to a fool, is as out-of-place as snow in summer — dignity conferred where folly makes it ridiculous",,,,event
 266170,107,target,the fool it misfits (266173),,266170,inferred,flag
 266170,108,manner,none,,,none,flag
+266170,109,intensity,none,,,none,flag
+266170,110,specifier,'for a fool' — honour unfitting specifically to a fool,,,inferred,flag
+266170,111,effect,none,,,none,flag
 266170,112,coupling,set against the fool on whom it sits absurdly,,266170,inferred,flag
 266170,114,discovery,"kabod (honour) — 'HONOR is not fitting for a fool'; honour on a fool is incongruous, unnatural, doomed to look ridiculous. Some do not deserve, and cannot carry, the dignity given them.",,,,note
 266170,115,role,characteristic,,,,value
 266170,116,locus,internal:ib-state,,,,value
+266170,117,device,simile — vehicle: snow in summer / rain in harvest; honour on a fool is as out-of-season and unfitting,266170,266166,span,pair
+266170,118,direction,outward — misdirected toward a fool,,,inferred,value
 266173,101,sense,"folly — unworthy of honour, which sits on him absurdly",,,,value
 266173,102,type,disposition,,,,value
 266173,104,seat,none,,,none,flag
@@ -14658,10 +14663,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266173,106,operation,the fool for whom honour is as unfitting as snow in summer or rain in harvest — folly and honour are incongruous,,,,event
 266173,107,target,the honour that misfits him (266170),,266173,inferred,flag
 266173,108,manner,none,,,none,flag
+266173,109,intensity,none,,,none,flag
+266173,110,specifier,none,,,none,flag
+266173,111,effect,none,,,none,flag
 266173,112,coupling,set against the honour that does not suit him,266173,266170,span,pair
 266173,114,discovery,kesil (fool) — 'so HONOR is not fitting for a FOOL'; to honour a fool is as absurd and out-of-season as snow in summer. Folly and dignity do not belong together (cf 26:8).,,,,note
 266173,115,role,characteristic,,,,value
 266173,116,locus,internal:ib-state,,,,value
+266173,117,device,simile — the fool likened to snow-in-summer's incongruity; honour sits on him absurdly,266173,266166,span,pair
+266173,118,direction,static — a state of unfitness,,,inferred,value
 266179,101,sense,"liability — the fool (or drunkard) hired, wounding all around like a random archer",,,,value
 266179,102,type,disposition,,,,value
 266179,104,seat,none,,,none,flag
@@ -14669,10 +14679,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266179,106,operation,"the fool or drunkard whom one hires, a liability that wounds indiscriminately like an archer shooting at random — folly loosed into responsibility harms everyone",,,,event
 266179,107,target,(all whom his folly wounds),,266179,inferred,flag
 266179,108,manner,none,,,none,flag
+266179,109,intensity,indiscriminate — 'wounds EVERYONE',,,inferred,flag
+266179,110,specifier,none,,,none,flag
+266179,111,effect,random injury — the fool hired wounds all around,,,inferred,flag
 266179,112,coupling,"the folly that, given work, injures at random",,266179,inferred,flag
 266179,114,discovery,kesil (fool) — 'like an archer who wounds everyone is one who hires a passing FOOL' (26:10); to employ a fool is to loose random harm on all around. Folly in service wounds indiscriminately.,,,,note
 266179,115,role,characteristic,,,,value
 266179,116,locus,internal:ib-state,,,,value
+266179,117,device,simile — vehicle: an archer who wounds everyone; hiring a fool loosens random harm,,,inferred,value
+266179,118,direction,outward — harm scattered on all,,,inferred,value
 266185,101,sense,incorrigibility — the fool who repeats his folly like a dog its vomit,,,,value
 266185,102,type,disposition,,,,value
 266185,104,seat,none,,,none,flag
@@ -14680,10 +14695,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266185,106,operation,"the fool who returns to and repeats his folly as a dog returns to its vomit — folly's disgusting, incorrigible cycle, learning nothing",,,,event
 266185,107,target,the folly he returns to (266188),,266185,inferred,flag
 266185,108,manner,none,,,none,flag
+266185,109,intensity,none,,,none,flag
+266185,110,specifier,none,,,none,flag
+266185,111,effect,repetition — the folly cycled back to,,,inferred,flag
 266185,112,coupling,welded to the folly he cannot leave,266185,266188,span,pair
 266185,114,discovery,"kesil (fool) — 'like a dog that returns to his vomit is a FOOL who repeats his folly' (26:11); folly is incorrigible, cycling back to the same disgusting error. The fool learns nothing and returns to his sin (cf 2 Pet 2:22).",,,,note
 266185,115,role,characteristic,,,,value
 266185,116,locus,internal:ib-state,,,,value
+266185,117,device,simile — vehicle: a dog returning to its vomit; the fool repeating his folly,266185,266182,span,pair
+266185,118,direction,reciprocal — the fool returns to what he cast out,,,inferred,value
 266188,101,sense,relapse — the folly the fool returns to again and again,,,,value
 266188,102,type,disposition,,,,value
 266188,104,seat,none,,,none,flag
@@ -14691,10 +14711,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266188,106,operation,"the folly to which the fool returns again and again, as a dog to its vomit — the same error repeated, no lesson learned",,,,event
 266188,107,target,the fool who returns to it (266185),,266188,inferred,flag
 266188,108,manner,none,,,none,flag
+266188,109,intensity,repeated — 'again and again',,,inferred,flag
+266188,110,specifier,none,,,none,flag
+266188,111,effect,none,,,none,flag
 266188,112,coupling,welded to the incorrigible fool it belongs to,,266188,inferred,flag
 266188,114,discovery,"ivveleth (folly) — 'repeats his FOLLY' (26:11); the folly relapsed into, again and again. Folly's mark is not one error but the endless return to it.",,,,note
 266188,115,role,characteristic,,,,value
 266188,116,locus,internal:ib-state,,,,value
+266188,117,device,"simile — the folly as the dog's vomit, relapsed into",266188,266184,span,pair
+266188,118,direction,reciprocal — returned to repeatedly,,,inferred,value
 266191,101,sense,"self-conceit — the worst folly, worse than a fool's",,,,value
 266191,102,type,disposition,,,,value
 266191,104,seat,none,,,none,flag
@@ -14702,10 +14727,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266191,106,operation,"the man wise in his own eyes — self-conceit so blinding that there is more hope for a fool than for him, the crowning folly that cannot be taught",,,,event
 266191,107,target,the hope it forecloses (266193),,266191,inferred,flag
 266191,108,manner,none,,,none,flag
+266191,109,intensity,superlative — 'more hope for a fool THAN for him' (the worst folly),,,inferred,flag
+266191,110,specifier,'in his own eyes' — self-conceit,,,inferred,flag
+266191,111,effect,forecloses hope — self-conceit cannot be taught,,,inferred,flag
 266191,112,coupling,set against the hope even a fool has more of,266191,266193,span,pair
 266191,114,discovery,"chakam (wise, in his own eyes) — 'do you see a man who is WISE in his own eyes? there is more hope for a fool than for him' (26:12); self-conceit is the deepest folly — a fool may yet learn, but the self-wise never will. Pride in one's own wisdom is beyond cure (cf 3:7; 28:26).",,,,note
 266191,115,role,characteristic,,,,value
 266191,116,locus,internal:ib-state,,,,value
+266191,117,device,literal — direct portrait of the man wise in his own eyes,,,inferred,value
+266191,118,direction,inward — folded upon the self,,,inferred,value
 266193,101,sense,hopelessness — the self-wise beyond even the fool's hope of learning,,,,value
 266193,102,type,state,,,,value
 266193,104,seat,none,,,none,flag
@@ -14713,10 +14743,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266193,106,operation,"the hope that the self-conceited man forecloses — less than a fool's, because he cannot be taught what he thinks he already knows",,,,event
 266193,107,target,the self-conceit that forfeits it (266191),,266193,inferred,flag
 266193,108,manner,none,,,none,flag
+266193,109,intensity,none,,,none,flag
+266193,110,specifier,none,,,none,flag
+266193,111,effect,none,,,none,flag
 266193,112,coupling,set against the self-wisdom that leaves him beyond teaching,,266193,inferred,flag
 266193,114,discovery,"tiqvah (hope) — 'there is more HOPE for a fool than for him' (26:12); the self-wise are more hopeless than fools, for they will never seek what they think they possess. Emergent: hopelessness as the fruit of self-conceit — the one folly wisdom cannot reach.",,,,note
 266193,115,role,characteristic,,,,value
 266193,116,locus,internal:ib-state,,,,value
+266193,117,device,litotes/comparison — 'more hope for a fool than for him'; the self-wise least hopeful,,,inferred,value
+266193,118,direction,none,,,none,value
 266194,101,sense,teachable folly — with more hope than the self-conceited,,,,value
 266194,102,type,disposition,,,,value
 266194,104,seat,none,,,none,flag
@@ -14724,10 +14759,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266194,106,operation,"the fool who, for all his folly, has more hope than the self-conceited man — because a fool may yet be brought to see his need, where the self-wise cannot",,,,event
 266194,107,target,the self-wise who has less hope (266191),,266194,inferred,flag
 266194,108,manner,none,,,none,flag
+266194,109,intensity,none,,,none,flag
+266194,110,specifier,none,,,none,flag
+266194,111,effect,none,,,none,flag
 266194,112,coupling,set against the self-conceit that has even less hope,,266194,inferred,flag
 266194,114,discovery,"kesil (fool) — 'more hope for a FOOL than for him' (26:12); even the fool is better placed than the self-conceited, for folly may be owned and cured. To know one is a fool is the beginning of hope.",,,,note
 266194,115,role,characteristic,,,,value
 266194,116,locus,internal:ib-state,,,,value
+266194,117,device,comparison — the fool set above the self-conceited in hope,,,inferred,value
+266194,118,direction,none,,,none,value
 266196,101,sense,evasive sloth — inventing lions in the road to avoid going out,,,,value
 266196,102,type,cognition,,,,value
 266196,104,seat,none,,,none,flag
@@ -14735,10 +14775,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266196,106,operation,"the sluggard who says 'there is a lion in the road!' — sloth conjuring imaginary perils to excuse staying in, laziness so inventive that it peoples the streets with lions rather than step out to work",,,,event
 266196,107,target,(the imagined lion that keeps him in),,266196,inferred,flag
 266196,108,manner,none,,,none,flag
+266196,109,intensity,none,,,none,flag
+266196,110,specifier,none,,,none,flag
+266196,111,effect,excuse — the invented lion justifies staying in,,,inferred,flag
 266196,112,coupling,the idleness that invents dangers rather than face the day's work,,266196,inferred,flag
 266196,114,discovery,"atsel (sluggard) — 'the SLUGGARD says, 'there is a lion in the road!'' (26:13; cf 22:13); sloth excuses itself with fantastic fears. The lazy man sees lions where none are, sooner than admit he simply will not work.",,,,note
 266196,115,role,characteristic,,,,value
 266196,116,locus,internal:ib-state,,,,value
+266196,117,device,hyperbole — the imagined 'lion in the road'; sloth inventing dangers,,,inferred,value
+266196,118,direction,static — a self-serving evasion,,,inferred,value
 266206,101,sense,"fruitless sloth — the lazy man turning in bed, all motion and no progress",,,,value
 266206,102,type,disposition,,,,value
 266206,104,seat,none,,,none,flag
@@ -14746,10 +14791,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266206,106,operation,"the sluggard who turns on his bed as a door turns on its hinges — sloth that has motion but no progress, endless turning that goes nowhere, activity that never rises to action",,,,event
 266206,107,target,(the bed he never leaves),,266206,inferred,flag
 266206,108,manner,none,,,none,flag
+266206,109,intensity,none,,,none,flag
+266206,110,specifier,none,,,none,flag
+266206,111,effect,"no progress — turns and turns, never rises",,,inferred,flag
 266206,112,coupling,the busy idleness that turns and turns yet never gets up or gets on,,266206,inferred,flag
 266206,114,discovery,"atsel (sluggard) — 'as a door turns on its hinges, so does a SLUGGARD on his bed' (26:14); the lazy man is all motion and no advance, hinged to his bed. He stirs endlessly and arrives nowhere — the perfect image of fruitless sloth.",,,,note
 266206,115,role,characteristic,,,,value
 266206,116,locus,internal:ib-state,,,,value
+266206,117,device,simile — vehicle: a door turning on its hinges; motion without progress,266206,266202,span,pair
+266206,118,direction,"reciprocal — back and forth, going nowhere",,,inferred,value
 266209,101,sense,sloth — too lazy even to feed himself,,,,value
 266209,102,type,disposition,,,,value
 266209,104,seat,none,,,none,flag
@@ -14757,10 +14807,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266209,106,operation,"the sluggard so sunk in laziness that, having put his hand in the dish, he is too weary to bring it back to his mouth — sloth at its absurd extreme",,,,event
 266209,107,target,the weariness it feels at the least effort (266213),,266209,inferred,flag
 266209,108,manner,none,,,none,flag
+266209,109,intensity,extreme — will not even feed himself,,,inferred,flag
+266209,110,specifier,none,,,none,flag
+266209,111,effect,self-starvation — sooner starve than stir,,,inferred,flag
 266209,112,coupling,welded to the exhaustion the smallest task costs him,266209,266213,span,pair
 266209,114,discovery,"atsel (sluggard) — 'the SLUGGARD buries his hand in the dish; it wears him out to bring it back to his mouth' (cf 19:24); sloth grown so total it will not lift food to feed itself. Emergent: laziness as a self-defeating paralysis, comic and tragic at once.",,,,note
 266209,115,role,characteristic,,,,value
 266209,116,locus,internal:ib-state,,,,value
+266209,117,device,hyperbole — too weary to bring his hand back to his mouth; sloth's absurd extreme,,,inferred,value
+266209,118,direction,none,,,none,value
 266213,101,sense,enervation — the sluggard exhausted by the least effort,,,,value
 266213,102,type,affect,,,,value
 266213,104,seat,none,,,none,flag
@@ -14768,10 +14823,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266213,106,operation,the weariness that overcomes the sluggard at the least exertion — the enervation that makes even self-feeding too much trouble,,,,event
 266213,107,target,the sloth it flows from (266209),,266213,inferred,flag
 266213,108,manner,none,,,none,flag
+266213,109,intensity,wearied — exhausted by the smallest task,,,inferred,flag
+266213,110,specifier,none,,,none,flag
+266213,111,effect,none,,,none,flag
 266213,112,coupling,welded to the laziness that produces it,,266213,inferred,flag
 266213,114,discovery,laah (be weary/exhausted) — 'it WEARS him out to bring it back to his mouth'; the sluggard is exhausted by the smallest task. Sloth turns the least effort into an unbearable labour.,,,,note
 266213,115,role,characteristic,,,,value
 266213,116,locus,internal:ib-state,,,,value
+266213,117,device,literal — the enervation of the least effort,,,inferred,value
+266213,118,direction,none,,,none,value
 266217,101,sense,self-deception — the sluggard sure of his own wisdom,,,,value
 266217,102,type,disposition,,,,value
 266217,104,seat,none,,,none,flag
@@ -14779,10 +14839,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266217,106,operation,"the sluggard who, for all his uselessness, thinks himself wiser than seven sensible men — sloth compounded by self-conceit, blind to its own folly",,,,event
 266217,107,target,the conceit that inflates him (266218),,266217,inferred,flag
 266217,108,manner,none,,,none,flag
+266217,109,intensity,none,,,none,flag
+266217,110,specifier,'in his own eyes' — self-referential conceit,,,inferred,flag
+266217,111,effect,none,,,none,flag
 266217,112,coupling,welded to the self-wisdom that blinds him,266217,266218,span,pair
 266217,114,discovery,"atsel (sluggard) — 'the SLUGGARD is wiser in his own eyes than seven men who can answer sensibly'; the lazy man is also self-deceived, rating his idle opinions above real wisdom. Emergent: the sluggard's self-conceit, sloth armoured against correction.",,,,note
 266217,115,role,characteristic,,,,value
 266217,116,locus,internal:ib-state,,,,value
+266217,117,device,literal — the sluggard's self-estimate,,,inferred,value
+266217,118,direction,inward,,,inferred,value
 266218,101,sense,self-conceit — the sluggard's inflated self-estimate,,,,value
 266218,102,type,disposition,,,,value
 266218,104,seat,none,,,none,flag
@@ -14790,10 +14855,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266218,106,operation,the sluggard's conceit of being 'wiser in his own eyes' than seven who answer with sense — the self-flattery that shields him from ever learning,,,,event
 266218,107,target,the sloth it inflates (266217),,266218,inferred,flag
 266218,108,manner,none,,,none,flag
+266218,109,intensity,"emphatic — 'seven', a fullness of sense outweighed in his own mind",,,inferred,flag
+266218,110,specifier,none,,,none,flag
+266218,111,effect,armours against correction,,,inferred,flag
 266218,112,coupling,welded to the laziness it armours,,266218,inferred,flag
 266218,114,discovery,"chakam (wise, in his own eyes) — 'is WISER in his own eyes than seven men who can answer sensibly'; the sluggard's self-conceit rates his idleness above real discernment. Self-flattery keeps the lazy from ever being taught (cf 26:12).",,,,note
 266218,115,role,characteristic,,,,value
 266218,116,locus,internal:ib-state,,,,value
+266218,117,device,hyperbole — 'wiser than SEVEN men who answer sensibly'; inflated self-conceit,,,inferred,value
+266218,118,direction,inward,,,inferred,value
 266228,101,sense,"officiousness — seizing a quarrel not one's own, like grabbing a stray dog's ears",,,,value
 266228,102,type,affect,,,,value
 266228,104,seat,none,,,none,flag
@@ -14801,10 +14871,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266228,106,operation,"the meddling that seizes on a quarrel not one's own, as reckless as grabbing a passing dog by the ears — officiousness that invites a bite for nothing",,,,event
 266228,107,target,(the quarrel not his own that he seizes),,266228,inferred,flag
 266228,108,manner,none,,,none,flag
+266228,109,intensity,none,,,none,flag
+266228,110,specifier,'not his own' — a quarrel that is not the meddler's,,,inferred,flag
+266228,111,effect,courts a bite — needless harm,,,inferred,flag
 266228,112,coupling,the officious intrusion that courts needless harm,,266228,inferred,flag
 266228,114,discovery,chazaq (seize/take hold) — 'whoever meddles in a quarrel not his own is like one who TAKES a passing dog by the ears' (26:17); to intrude on others' disputes is to court a bite for nothing. Officiousness invites the harm it had no need to risk.,,,,note
 266228,115,role,characteristic,,,,value
 266228,116,locus,internal:ib-state,,,,value
+266228,117,device,simile — vehicle: grabbing a passing dog by the ears; meddling in another's quarrel,266228,266230,span,pair
+266228,118,direction,outward — intrusion into another's affair,,,inferred,value
 266239,101,sense,"malice masked as humour — deceiving a neighbour, then pleading 'only joking'",,,,value
 266239,102,type,disposition,,,,value
 266239,104,seat,none,,,none,flag
@@ -14812,10 +14887,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266239,106,operation,"the deceiving of a neighbour followed by 'I am only joking!' — the malice that does real harm and then hides behind humour, treating deception as a game and refusing responsibility for the wounds it inflicts, as dangerous as a madman scattering firebrands",,,,event
 266239,107,target,(the neighbour he deceives and injures),,266239,inferred,flag
 266239,108,manner,none,,,none,flag
+266239,109,intensity,none,,,none,flag
+266239,110,specifier,none,,,none,flag
+266239,111,effect,real harm masked — 'only joking' evades the guilt,,,inferred,flag
 266239,112,coupling,the harmful deceit that shelters behind the excuse of jest,,266239,inferred,flag
 266239,114,discovery,"ramah (deceive/betray) — 'is the man who DECEIVES his neighbor and says, 'I am only joking!'' (26:18-19); deceit dressed as humour is like a madman flinging firebrands. To do real harm and plead 'just joking' is malice evading its own guilt.",,,,note
 266239,115,role,characteristic,,,,value
 266239,116,locus,internal:ib-state,,,,value
+266239,117,device,simile — vehicle: a madman scattering firebrands/arrows (26:18); harmful deceit excused as jest,,,inferred,value
+266239,118,direction,outward — against the neighbour,,,inferred,value
 266251,101,sense,impotent malediction — the undeserved curse that finds no rest,,,,value
 266251,102,type,affect,,,,value
 266251,104,seat,none,,,none,flag
@@ -14823,10 +14903,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266251,106,operation,"the curse that is causeless — the undeserved malediction which, like a flitting bird, never lands or takes hold, powerless where there is no ground for it",,,,event
 266251,107,target,(the innocent it cannot touch),,266251,inferred,flag
 266251,108,manner,none,,,none,flag
+266251,109,intensity,none,,,none,flag
+266251,110,specifier,'causeless' — the undeserved curse,,,inferred,flag
+266251,111,effect,fails to alight — its intended harm finds no resting place,,,inferred,flag
 266251,112,coupling,the empty curse that finds no place to settle,,266251,inferred,flag
 266251,114,discovery,qelalah (curse) — 'a CURSE that is causeless does not alight'; an undeserved curse has no power to land — it flutters off like a bird with nowhere to perch. Innocence is a shield against malediction (cf Num 23:8).,,,,note
 266251,115,role,characteristic,,,,value
 266251,116,locus,internal:ib-state,,,,value
+266251,117,device,simile — vehicle: a fluttering sparrow/swallow; the causeless curse never alights,,,inferred,value
+266251,118,direction,"outward — aimed at another, but falls short",,,inferred,value
 266259,101,sense,contentiousness — the man who kindles strife as fuel feeds fire,,,,value
 266259,102,type,disposition,,,,value
 266259,104,seat,none,,,none,flag
@@ -14834,10 +14919,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266259,106,operation,the quarrelsome/contentious man who is to strife what charcoal is to embers and wood to fire — a nature that kindles and feeds conflict wherever he goes,,,,event
 266259,107,target,the strife he kindles (266262),,266259,inferred,flag
 266259,108,manner,none,,,none,flag
+266259,109,intensity,none,,,none,flag
+266259,110,specifier,none,,,none,flag
+266259,111,effect,kindles strife — his nature sets conflict ablaze,,,inferred,flag
 266259,112,coupling,welded to the conflict his nature feeds,266259,266262,span,pair
 266259,114,discovery,midyan (strife/contention) — 'so is a QUARRELSOME man for kindling strife' (26:21); some men are fuel for conflict — their very presence sets disputes ablaze. Contentiousness is a fire-starter (cf 15:18).,,,,note
 266259,115,role,characteristic,,,,value
 266259,116,locus,internal:ib-state,,,,value
+266259,117,device,"simile — vehicle: charcoal to embers, wood to fire; the quarreller kindles strife",,,inferred,value
+266259,118,direction,outward — igniting strife around him,,,inferred,value
 266262,101,sense,conflict — the strife a quarrelsome man sets ablaze,,,,value
 266262,102,type,affect,,,,value
 266262,104,seat,none,,,none,flag
@@ -14845,10 +14935,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266262,106,operation,"the strife/quarrel that the contentious man kindles — conflict flaring up wherever his combustible nature is added, as fire leaps up on fresh fuel",,,,event
 266262,107,target,the quarrelsome man who kindles it (266259),,266262,inferred,flag
 266262,108,manner,none,,,none,flag
+266262,109,intensity,none,,,none,flag
+266262,110,specifier,none,,,none,flag
+266262,111,effect,none,,,none,flag
 266262,112,coupling,welded to the contentious nature that feeds it,,266262,inferred,flag
 266262,114,discovery,"rib (strife/dispute) — 'for kindling STRIFE' (26:21); the conflict a quarrelsome man ignites. Where he is added, disputes catch and blaze.",,,,note
 266262,115,role,characteristic,,,,value
 266262,116,locus,internal:ib-state,,,,value
+266262,117,device,metaphor — strife as fire the quarreller kindles,,,inferred,value
+266262,118,direction,none,,,none,value
 266263,101,sense,dissembling malice — the hater who masks himself with his lips,,,,value
 266263,102,type,affect,,,,value
 266263,104,seat,none,,,none,flag
@@ -14856,10 +14951,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266263,106,operation,"the hatred of one who disguises himself with his lips, masking his enmity behind smooth speech while the malice burns unseen within",,,,event
 266263,107,target,the deceit it harbours (266267),,266263,inferred,flag
 266263,108,manner,none,,,none,flag
+266263,109,intensity,none,,,none,flag
+266263,110,specifier,none,,,none,flag
+266263,111,effect,none,,,none,flag
 266263,112,coupling,welded to the deceit stored inside,266263,266267,span,pair
 266263,114,discovery,sane (hate) — 'whoever HATES disguises himself with his lips' (26:24); the enemy hides his hatred behind a smooth-spoken mask. Malice learns to wear the face of friendship (cf 26:25-26).,,,,note
 266263,115,role,characteristic,,,,value
 266263,116,locus,internal:ib-state,,,,value
+266263,117,device,metaphor — 'DISGUISES himself with his lips'; hatred masked as friendly speech,,,inferred,value
+266263,118,direction,outward — masked toward the hated,,,inferred,value
 266267,101,sense,inward treachery — the deceit stored in the hater's heart,,,,value
 266267,102,type,disposition,,,,value
 266267,104,seat,none,,,none,flag
@@ -14867,10 +14967,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266267,106,operation,"the deceit/treachery the hater harbours within his heart, hidden beneath his disguising lips — the store of duplicity behind the friendly mask",,,,event
 266267,107,target,the disguised hatred that hides it (266263),,266267,inferred,flag
 266267,108,manner,none,,,none,flag
+266267,109,intensity,none,,,none,flag
+266267,110,specifier,'in his heart' — the inward store,,,inferred,flag
+266267,111,effect,none,,,none,flag
 266267,112,coupling,welded to the masked malice it serves,,266267,inferred,flag
 266267,114,discovery,mirmah (deceit/treachery) — 'and harbors DECEIT in his heart' (26:24); behind the smooth lips is a hoard of treachery. The disguise is the lips; the reality is the deceit within.,,,,note
 266267,115,role,characteristic,,,,value
 266267,116,locus,internal:ib-state,,,,value
+266267,117,device,metaphor — deceit as a hoard 'harboured in his heart',,,inferred,value
+266267,118,direction,inward,,,inferred,value
 266270,101,sense,deceptive charm — the smooth words masking a heart of abominations,,,,value
 266270,102,type,disposition,,,,value
 266270,104,seat,none,,,none,flag
@@ -14878,10 +14983,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266270,106,operation,"the gracious, charming speech of the hater — not to be believed, for it is a mask over a heart full of abominations",,,,event
 266270,107,target,the abominations it masks (266275),,266270,inferred,flag
 266270,108,manner,none,,,none,flag
+266270,109,intensity,none,,,none,flag
+266270,110,specifier,none,,,none,flag
+266270,111,effect,deceives — draws the hearer in,,,inferred,flag
 266270,112,coupling,welded to the seven abominations it hides,266270,266275,span,pair
 266270,114,discovery,"chanan (be gracious) — 'when he speaks GRACIOUSLY, believe him not' (26:25); the smooth charm of a malicious man is a lure, not a kindness. Gracious words from a hateful heart are to be distrusted.",,,,note
 266270,115,role,characteristic,,,,value
 266270,116,locus,internal:ib-state,,,,value
+266270,117,device,"irony — gracious-sounding speech that is a lure, not kindness",,,inferred,value
+266270,118,direction,outward — toward the deceived,,,inferred,value
 266275,101,sense,hidden depravity — the mass of evil in the deceiver's heart,,,,value
 266275,102,type,disposition,,,,value
 266275,104,seat,none,,,none,flag
@@ -14889,10 +14999,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266275,106,operation,"the 'seven abominations' — the full measure of hidden depravity in the deceiver's heart, belying every gracious word his lips can shape",,,,event
 266275,107,target,the gracious speech that masks them (266270),,266275,inferred,flag
 266275,108,manner,none,,,none,flag
+266275,109,intensity,"emphatic — 'seven', the fullness of evil",,,inferred,flag
+266275,110,specifier,'in his heart' — the hidden inward mass,,,inferred,flag
+266275,111,effect,none,,,none,flag
 266275,112,coupling,welded to the charming words that hide them,266275,266277,span,pair
 266275,114,discovery,"toebah (abomination) — 'for there are seven ABOMINATIONS in his heart' (26:25); 'seven' signals a heart wholly full of evil. However fair the speech, the heart behind it is utterly corrupt.",,,,note
 266275,115,role,characteristic,,,,value
 266275,116,locus,internal:ib-state,,,,value
+266275,117,device,hyperbole / number-symbolism — 'SEVEN abominations'; a heart wholly full of evil,,,inferred,value
+266275,118,direction,inward,,,inferred,value
 266277,101,sense,the corrupt heart — full of abominations behind fair words,,,,value
 266277,102,type,seat,,,,value
 266277,104,seat,none,,,none,flag
@@ -14900,10 +15015,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266277,106,operation,"the heart of the deceiver, filled with abominations that no gracious speech can cover — the true self behind the charming mask",,,,event
 266277,107,target,the abominations that fill it (266275),,266277,inferred,flag
 266277,108,manner,none,,,none,flag
+266277,109,intensity,none,,,none,flag
+266277,110,specifier,none,,,none,flag
+266277,111,effect,none,,,none,flag
 266277,112,coupling,welded to the seven evils it harbours,,266277,inferred,flag
 266277,114,discovery,"leb (heart) — 'seven abominations in his HEART' (26:25); the heart is the reality, the gracious lips only the disguise. What a man is, is in his heart, not his charm.",,,,note
 266277,115,role,characteristic,,,,value
 266277,116,locus,internal:ib-state,,,,value
+266277,117,device,metaphor — the heart as the true reality behind the gracious mask,,,inferred,value
+266277,118,direction,inward,,,inferred,value
 266278,101,sense,concealed enmity — the hatred masked with deception for a time,,,,value
 266278,102,type,affect,,,,value
 266278,104,seat,none,,,none,flag
@@ -14911,10 +15031,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266278,106,operation,"the hatred that is covered over with deception — enmity hidden behind guile, but only for a time, until it is dragged into the light",,,,event
 266278,107,target,the wickedness that will be exposed (266281),,266278,inferred,flag
 266278,108,manner,none,,,none,flag
+266278,109,intensity,none,,,none,flag
+266278,110,specifier,none,,,none,flag
+266278,111,effect,none,,,none,flag
 266278,112,coupling,welded to the wickedness time will reveal,266278,266281,span,pair
 266278,114,discovery,"sinah (hatred) — 'though his HATRED be covered with deception' (26:26); malice can be masked for a while, but not forever. Hidden hatred is on borrowed time.",,,,note
 266278,115,role,characteristic,,,,value
 266278,116,locus,internal:ib-state,,,,value
+266278,117,device,metaphor — hatred 'covered with deception'; masked for a time,,,inferred,value
+266278,118,direction,inward — concealed within,,,inferred,value
 266281,101,sense,revelation — the hidden evil dragged into the assembly's light,,,,value
 266281,102,type,disposition,,,,value
 266281,104,seat,none,,,none,flag
@@ -14922,10 +15047,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266281,106,operation,"the wickedness that, however long masked by deception, will at last be exposed in the public assembly — evil that cannot stay hidden forever",,,,event
 266281,107,target,the hidden hatred it flows from (266278),,266281,inferred,flag
 266281,108,manner,none,,,none,flag
+266281,109,intensity,none,,,none,flag
+266281,110,specifier,none,,,none,flag
+266281,111,effect,exposed — the hidden evil finally revealed publicly,,,inferred,flag
 266281,112,coupling,welded to the masked enmity it finally reveals,,266281,inferred,flag
 266281,114,discovery,"ra (evil/wickedness) — 'his WICKEDNESS will be exposed in the assembly' (26:26); the truth outs. Hidden malice is finally dragged into public light, unmasked before all. Concealment is only ever temporary (cf Luke 12:2).",,,,note
 266281,115,role,characteristic,,,,value
 266281,116,locus,internal:ib-state,,,,value
+266281,117,device,metaphor — wickedness 'dragged into the light' of the assembly,,,inferred,value
+266281,118,direction,outward — brought before the assembly,,,inferred,value
 266290,101,sense,falsehood — the lie that masks hatred of its victims,,,,value
 266290,102,type,disposition,,,,value
 266290,104,seat,none,,,none,flag
@@ -14933,10 +15063,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266290,106,operation,"the lying tongue that, far from being neutral, hates the very ones it crushes with its falsehoods — deceit springing from and serving malice",,,,event
 266290,107,target,the hatred it conceals (266292),,266290,inferred,flag
 266290,108,manner,none,,,none,flag
+266290,109,intensity,none,,,none,flag
+266290,110,specifier,none,,,none,flag
+266290,111,effect,crushes victims — the lie wields hatred against them,,,inferred,flag
 266290,112,coupling,welded to the hatred that drives it,266290,266292,span,pair
 266290,114,discovery,"sheqer (falsehood) — 'a LYING tongue hates its victims'; the lie is not idle but hostile, wielded against those it wounds. Falsehood serves hatred (cf 26:24-26).",,,,note
 266290,115,role,characteristic,,,,value
 266290,116,locus,internal:ib-state,,,,value
+266290,117,device,personification — 'a lying tongue HATES its victims'; the tongue given hatred,,,inferred,value
+266290,118,direction,outward — against the victims,,,inferred,value
 266292,101,sense,malice — the hatred behind the lying tongue,,,,value
 266292,102,type,affect,,,,value
 266292,104,seat,none,,,none,flag
@@ -14944,10 +15079,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266292,106,operation,the hatred with which the lying tongue regards its victims — the malice that the falsehood both hides and serves,,,,event
 266292,107,target,the lying tongue that masks it (266290),,266292,inferred,flag
 266292,108,manner,none,,,none,flag
+266292,109,intensity,none,,,none,flag
+266292,110,specifier,none,,,none,flag
+266292,111,effect,none,,,none,flag
 266292,112,coupling,welded to the falsehood that carries it,,266292,inferred,flag
 266292,114,discovery,sane (hate) — 'a lying tongue HATES its victims'; behind the lie is real enmity. To slander a man is to hate him. The tongue's falsehood is malice in action.,,,,note
 266292,115,role,characteristic,,,,value
 266292,116,locus,internal:ib-state,,,,value
+266292,117,device,literal — the hatred behind the lying tongue,,,inferred,value
+266292,118,direction,outward — toward the victims,,,inferred,value
 266294,101,sense,smooth ruin — the flattering mouth that works destruction,,,,value
 266294,102,type,disposition,,,,value
 266294,104,seat,none,,,none,flag
@@ -14955,10 +15095,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266294,106,operation,"the flattering, smooth-talking mouth that, for all its sweetness, works ruin — praise deployed to destroy, the twin of the lying tongue's hatred",,,,event
 266294,107,target,(the ruin it works),,266294,inferred,flag
 266294,108,manner,none,,,none,flag
+266294,109,intensity,none,,,none,flag
+266294,110,specifier,none,,,none,flag
+266294,111,effect,works ruin — smooth words that destroy,,,inferred,flag
 266294,112,coupling,the smooth speech that flatters in order to destroy,,266294,inferred,flag
 266294,114,discovery,"chelqah (smoothness/flattery) — 'and a FLATTERING mouth works ruin'; flattery is not kindness but a weapon, smooth words that undermine and destroy. Emergent: flattery as covert ruin, kin to the hateful lie (cf 29:5).",,,,note
 266294,115,role,characteristic,,,,value
 266294,116,locus,internal:ib-state,,,,value
+266294,117,device,personification / metaphor — 'a flattering MOUTH works ruin'; flattery as a weapon,,,inferred,value
+266294,118,direction,outward — against the flattered,,,inferred,value
 266301,101,sense,restraint — not answering a fool on his own foolish terms,,,,value
 266301,102,type,cognition,,,,value
 266301,104,seat,none,,,none,flag
@@ -14966,10 +15111,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266301,106,operation,"the folly of a fool that one must NOT answer according to, lest one sink to his level — the wisdom of not stooping to a fool's terms",,,,event
 266301,107,target,the conceit that must be punctured (266311),,266301,inferred,flag
 266301,108,manner,none,,,none,flag
+266301,109,intensity,none,,,none,flag
+266301,110,specifier,'according to his folly' — on the fool's own terms,,,inferred,flag
+266301,111,effect,lest you become like him — stooping to folly makes one a fool,,,inferred,flag
 266301,112,coupling,set against the times a fool must be answered to check his conceit,266301,266311,span,pair
 266301,114,discovery,"ivveleth (folly) — 'answer not a fool according to his FOLLY, lest you be like him' (26:4); do not descend to a fool's level of argument. Yet the paired verse (26:5) balances it — wisdom knows WHEN to engage and when to refrain.",,,,note
 266301,115,role,characteristic,,,,value
 266301,116,locus,internal:ib-state,,,,value
+266301,117,device,paradox — with 26:5 (answer-not / answer): the deliberate contradiction teaching discernment,,,inferred,value
+266301,118,direction,reciprocal — the folly would rub off on the answerer,,,inferred,value
 266311,101,sense,discernment — answering a fool to deflate his self-conceit,,,,value
 266311,102,type,cognition,,,,value
 266311,104,seat,none,,,none,flag
@@ -14977,10 +15127,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266311,106,operation,"the fool's being 'wise in his own eyes', which must sometimes be answered and punctured — the discernment to know when a fool's conceit needs checking",,,,event
 266311,107,target,the folly not to stoop to (266301),,266311,inferred,flag
 266311,108,manner,none,,,none,flag
+266311,109,intensity,none,,,none,flag
+266311,110,specifier,'wise in his own eyes' — the conceit to deflate,,,inferred,flag
+266311,111,effect,lest he be wise in his own eyes — unanswered folly hardens to conceit,,,inferred,flag
 266311,112,coupling,set against the restraint of not answering on foolish terms,,266311,inferred,flag
 266311,114,discovery,"chakam (wise, in his own eyes) — 'answer a fool according to his folly, lest he be WISE in his own eyes' (26:5); sometimes a fool must be answered, to deflate his conceit. The paradox with 26:4 teaches discernment — knowing which response each moment needs.",,,,note
 266311,115,role,characteristic,,,,value
 266311,116,locus,internal:ib-state,,,,value
+266311,117,device,paradox — the counter-half of 26:4: answer the fool to puncture his conceit,,,inferred,value
+266311,118,direction,inward — toward the fool's self-estimate,,,inferred,value
 266317,101,sense,unreliability — sending a message by a fool cuts off one's own feet,,,,value
 266317,102,type,disposition,,,,value
 266317,104,seat,none,,,none,flag
@@ -14988,10 +15143,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266317,106,operation,"the fool entrusted with a message, who is so unreliable that to use him is to cripple oneself — folly as a liability that wounds the one who trusts it",,,,event
 266317,107,target,the self-harm it brings (266321),,266317,inferred,flag
 266317,108,manner,none,,,none,flag
+266317,109,intensity,none,,,none,flag
+266317,110,specifier,none,,,none,flag
+266317,111,effect,self-injury — the sender maims himself and drinks harm,,,inferred,flag
 266317,112,coupling,welded to the violence one drinks by relying on him,266317,266321,span,pair
 266317,114,discovery,kesil (fool) — 'whoever sends a message by the hand of a FOOL cuts off his own feet' (26:6); to rely on a fool is to maim oneself. Folly entrusted with responsibility injures the one who trusted it.,,,,note
 266317,115,role,characteristic,,,,value
 266317,116,locus,internal:ib-state,,,,value
+266317,117,device,metaphor — 'cuts off his own feet and drinks violence'; self-harm of trusting a fool,,,inferred,value
+266317,118,direction,reciprocal — the harm recoils on the sender,,,inferred,value
 266321,101,sense,injury — the violence one 'drinks' by trusting a fool,,,,value
 266321,102,type,state,,,,value
 266321,104,seat,none,,,none,flag
@@ -14999,10 +15159,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266321,106,operation,"the violence/harm a man brings on himself by entrusting a fool with his affairs — self-inflicted injury, drunk down like poison",,,,event
 266321,107,target,the fool who causes it (266317),,266321,inferred,flag
 266321,108,manner,none,,,none,flag
+266321,109,intensity,none,,,none,flag
+266321,110,specifier,none,,,none,flag
+266321,111,effect,none,,,none,flag
 266321,112,coupling,welded to the folly relied on that wounds him,,266321,inferred,flag
 266321,114,discovery,chamas (violence) — 'and DRINKS violence' (26:6); to depend on a fool is to swallow harm. The imprudence recoils on the one who commits it.,,,,note
 266321,115,role,characteristic,,,,value
 266321,116,locus,internal:ib-state,,,,value
+266321,117,device,metaphor — 'DRINKS violence'; swallowing self-inflicted harm,,,inferred,value
+266321,118,direction,inward — harm swallowed by the imprudent,,,inferred,value
 266327,101,sense,"danger — giving honour to a fool, like binding a stone in a sling",,,,value
 266327,102,type,state,,,,value
 266327,104,seat,none,,,none,flag
@@ -15010,10 +15175,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266327,106,operation,"the giving of honour to a fool, as futile and dangerous as binding a stone in a sling — dignity that will only fly back and harm",,,,event
 266327,107,target,(the fool who cannot hold it),,266327,inferred,flag
 266327,108,manner,none,,,none,flag
+266327,109,intensity,none,,,none,flag
+266327,110,specifier,'to a fool' — honour misdirected,,,inferred,flag
+266327,111,effect,recoils — flies back like a slung stone and wounds,,,inferred,flag
 266327,112,coupling,"the honour that, given a fool, recoils like a slung stone",,266327,inferred,flag
 266327,114,discovery,"kabod (honour) — 'like one who binds the stone in the sling is one who gives HONOR to a fool' (26:8); honour on a fool is not only absurd (26:1) but dangerous — it flies back to wound. Emergent: honouring folly as a self-defeating, hazardous act.",,,,note
 266327,115,role,characteristic,,,,value
 266327,116,locus,internal:ib-state,,,,value
+266327,117,device,simile — vehicle: binding a stone in a sling; honour to a fool recoils dangerously,,,inferred,value
+266327,118,direction,outward — misdirected then recoiling,,,inferred,value
 266335,101,sense,"incapacity — wisdom useless in a fool's mouth, like a thorn in a drunkard's hand",,,,value
 266335,102,type,cognition,,,,value
 266335,104,seat,none,,,none,flag
@@ -15021,10 +15191,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 266335,106,operation,"the fool in whose mouth a proverb hangs useless (26:7) or does harm (26:9) — wisdom he cannot wield, dangerous or limp in his handling",,,,event
 266335,107,target,(the wisdom he misuses),,266335,inferred,flag
 266335,108,manner,none,,,none,flag
+266335,109,intensity,none,,,none,flag
+266335,110,specifier,none,,,none,flag
+266335,111,effect,wounds or hangs useless — wisdom mishandled by a fool,,,inferred,flag
 266335,112,coupling,the folly that cannot carry or use true wisdom,,266335,inferred,flag
 266335,114,discovery,"kesil (fool) — 'a proverb in the mouth of FOOLS' (26:7, 9); wisdom on a fool's lips is like a lame man's useless legs, or a thorn in a drunkard's hand — either limp or harmful. Folly cannot handle wisdom rightly.",,,,note
 266335,115,role,characteristic,,,,value
 266335,116,locus,internal:ib-state,,,,value
+266335,117,device,simile — vehicle: a thorn in a drunkard's hand; a proverb useless/harmful in a fool's mouth,266335,266329,span,pair
+266335,118,direction,none,,,none,value
 266337,101,sense,presumption — vaunting a future one does not command,,,,value
 266337,102,type,affect,,,,value
 266337,104,seat,none,,,none,flag
@@ -21170,10 +21345,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 302580,106,operation,"the evil/corruption of the heart that fervent lips are used to disguise — the wrong within, papered over by a glaze of eager speech",,,,event
 302580,107,target,the heart it fills (302581),,302580,inferred,flag
 302580,108,manner,none,,,none,flag
+302580,109,intensity,none,,,none,flag
+302580,110,specifier,none,,,none,flag
+302580,111,effect,none,,,none,flag
 302580,112,coupling,welded to the heart it corrupts,,302580,inferred,flag
 302580,114,discovery,ra (evil) — 'an EVIL heart' (26:23); the corruption glazed over by warm words. What the fervent lips coat is a heart full of wrong.,,,,note
 302580,115,role,characteristic,,,,value
 302580,116,locus,internal:ib-state,,,,value
+302580,117,device,metaphor — vehicle: glaze over cheap earthenware; fervent lips over an evil heart,302580,302577,span,pair
+302580,118,direction,inward — the corruption within,,,inferred,value
 302581,101,sense,concealed corruption — the evil heart glazed over with fervent lips,,,,value
 302581,102,type,seat,,,,value
 302581,104,seat,none,,,none,flag
@@ -21181,10 +21361,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 302581,106,operation,"the evil heart that fervent, smooth lips glaze over as cheap earthenware is glazed to look precious — corruption within, a shining coat of words without",,,,event
 302581,107,target,the evil that fills it (302580),,302581,inferred,flag
 302581,108,manner,none,,,none,flag
+302581,109,intensity,none,,,none,flag
+302581,110,specifier,'evil' heart — the corrupt inner reality,,,inferred,flag
+302581,111,effect,none,,,none,flag
 302581,112,coupling,welded to the wickedness it harbours,302581,302580,span,pair
 302581,114,discovery,"leb (heart) — 'fervent lips with an EVIL heart' (26:23); warm words can be a thin glaze over a corrupt heart, making cheap clay shine like silver. The mouth's warmth hides the heart's rot.",,,,note
 302581,115,role,characteristic,,,,value
 302581,116,locus,internal:ib-state,,,,value
+302581,117,device,metaphor — the evil heart glazed by smooth lips; cheap clay made to shine,302581,302577,span,pair
+302581,118,direction,inward,,,inferred,value
 302586,101,sense,self-disclosure — the heart as the true mirror of a man,,,,value
 302586,102,type,seat,,,,value
 302586,104,seat,none,,,none,flag
@@ -21566,10 +21751,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 308658,106,operation,"the fool whose back needs the rod as the horse needs a whip and the donkey a bridle — folly so brutish it answers only to force, not reason",,,,event
 308658,107,target,(the discipline it requires),,308658,inferred,flag
 308658,108,manner,none,,,none,flag
+308658,109,intensity,none,,,none,flag
+308658,110,specifier,none,,,none,flag
+308658,111,effect,none,,,none,flag
 308658,112,coupling,"the folly that yields, like a beast, only to the rod",,308658,inferred,flag
 308658,114,discovery,"kesil (fool) — 'a rod for the back of FOOLS' (26:3); folly is so unreasoning it must be driven like a beast. The fool learns, if at all, only under discipline (cf 10:13; 19:29).",,,,note
 308658,115,role,characteristic,,,,value
 308658,116,locus,internal:ib-state,,,,value
+308658,117,device,"analogy — vehicle: a whip for the horse, a bridle for the donkey; the fool driven like a beast",,,inferred,value
+308658,118,direction,inward — correction applied to the fool,,,inferred,value
 308671,101,sense,talebearing — the gossip whose whispers fuel strife,,,,value
 308671,102,type,disposition,,,,value
 308671,104,seat,none,,,none,flag
@@ -21577,10 +21767,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 308671,106,operation,"the whisperer/talebearer whose secret gossip is the fuel of strife — without whom, as without wood, the fire of quarreling dies down",,,,event
 308671,107,target,the quarreling it fuels (308672),,308671,inferred,flag
 308671,108,manner,none,,,none,flag
+308671,109,intensity,none,,,none,flag
+308671,110,specifier,none,,,none,flag
+308671,111,effect,feeds strife — the whisperer sustains conflict,,,inferred,flag
 308671,112,coupling,welded to the strife his whispers feed,308671,308672,span,pair
 308671,114,discovery,"ragan (whisper/murmur) — 'where there is no WHISPERER, quarreling ceases' (cf 26:22; 16:28); the gossip is the fuel of conflict. Remove the talebearer and strife starves for lack of tinder. Emergent: the whisperer as the fire-wood of quarrels.",,,,note
 308671,115,role,characteristic,,,,value
 308671,116,locus,internal:ib-state,,,,value
+308671,117,device,metaphor — the gossip as FUEL: 'without wood the fire goes out',,,inferred,value
+308671,118,direction,outward — sowing among others,,,inferred,value
 308672,101,sense,strife — that dies once the whisperer is gone,,,,value
 308672,102,type,affect,,,,value
 308672,104,seat,none,,,none,flag
@@ -21588,10 +21783,15 @@ verse_span_id,ve_nr,ve_label,value,from_span,to_span,resolution,pair_kind
 308672,106,operation,"the quarreling/strife that ceases once the whisperer is removed — conflict starved of its fuel, dying like a fire without wood",,,,event
 308672,107,target,the whisperer that fuels it (308671),,308672,inferred,flag
 308672,108,manner,none,,,none,flag
+308672,109,intensity,none,,,none,flag
+308672,110,specifier,none,,,none,flag
+308672,111,effect,ceases — dies when the whisperer is removed,,,inferred,flag
 308672,112,coupling,welded to the gossip whose whispers feed it,,308672,inferred,flag
 308672,114,discovery,madon (strife/contention) — 'quarreling CEASES' (26:20); strife dies when its fuel — the gossip's whispers — is withdrawn. Cut off the talebearer and the fire of conflict goes out.,,,,note
 308672,115,role,characteristic,,,,value
 308672,116,locus,internal:ib-state,,,,value
+308672,117,device,metaphor — strife as a fire that dies for lack of fuel,,,inferred,value
+308672,118,direction,none,,,none,value
 308686,101,sense,unsatisfied craving — the eyes of man that never have enough,,,,value
 308686,102,type,affect,,,,value
 308686,104,seat,none,,,none,flag
