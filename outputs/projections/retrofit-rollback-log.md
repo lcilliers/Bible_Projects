@@ -148,3 +148,11 @@ Pre-roll DB snapshot: `backups/bible_research_pre-psalms-retrofit_20260714.db`.
   - [265950] dev=literal — the betrayer of confidences earns a bad name that  | dir=static — the betrayer of confidences ear | int=emphatic — 'never' (the betray
   - [265964] dev=simile — vehicle: gold; wise correction, gladly received, is | dir=static — wise correction, gladly receive | int=none
 
+
+## DQ-01 fixed (2026-07-14) — coupling/locus transposition (surfaced by AI macro pass)
+- Swapped 666 Psalms spans where coupling(112) held a locus-enum and locus(116) held a coupling phrase.
+  Excluded 71 valid (coupling='none') + 9 ambiguous (both phrases). Proverbs was clean (0).
+- Post-check: 0 locus rows still hold 'paired ...'; locus is now a clean enum (ib-state 1300 / god 745 / person 76 / heart 25 / seat 16 / spirit 6).
+- Also cleaned coupling self-pair artifacts (to_span=self, resolution!=span, meaningless): 900 Psalms + 1188 Proverbs -> to_span NULL.
+- Kept 16 seat(104) span self-loops = reflexive seat ('soul (self)') — semantically valid, not noise.
+- Script: `_apply_dq01_locus_coupling_swap_v1`. Snapshot: `backups/bible_research_pre-dq01-swap_20260714.db`.
