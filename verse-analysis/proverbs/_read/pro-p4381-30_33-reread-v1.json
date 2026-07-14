@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 30,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4381 (Pro 30:33) — pressing milk yields curds, pressing the nose blood, pressing anger strife.",
+ "spans": {
+  "267264": {
+   "gloss": "pressing anger (aph)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "provoked wrath — forcing anger, which inevitably yields strife"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the provoker",
+     "to": 267264,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the pressing/forcing of anger — the stirring and provoking of wrath that yields strife as surely as churning milk yields curds and a struck nose yields blood, anger pressed always producing conflict"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the strife it inevitably yields (267266)",
+     "to": 267264,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the conflict pressing anger produces",
+     "to": 267266,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "aph (anger/nose, wordplay) — 'pressing ANGER produces strife' (30:33); as pressure on milk makes curds and on the nose makes blood, so pressing anger inevitably makes strife. Provoke wrath and conflict must follow — a reason to check the mouth (30:32)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267266": {
+   "gloss": "strife (rib)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "conflict — the inevitable yield of pressed anger"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the contentious",
+     "to": 267266,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the strife that pressing anger produces — the conflict that follows as inevitably from provoked wrath as curds from churned milk, the guaranteed harvest of stirring up anger"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the pressed anger that yields it (267264)",
+     "to": 267266,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the provoked wrath that produces it",
+     "to": 267266,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "rib (strife) — 'pressing anger produces STRIFE'; strife is the certain product of provoked anger. Stir the wrath and the quarrel is assured (cf 15:18; 29:22)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
