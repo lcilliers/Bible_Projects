@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 29,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4357 (Pro 29:25) — the fear of man lays a snare; whoever trusts in the LORD is safe.",
+ "spans": {
+  "266862": {
+   "gloss": "fear of man (cheredah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "snaring dread — the fear of people that traps a man"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the fearful",
+     "to": 266862,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the fear of man that lays a snare — the dread of people's opinion and power that traps a man into compromise, silence, or sin, the opposite of the safety of trusting God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the trust in the LORD it is set against (266866)",
+     "to": 266862,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the God-trust that makes one safe",
+     "to": 266866,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "cheredah (fear/dread) — 'the FEAR of man lays a snare'; dread of people is a trap, driving men to compromise truth and duty (cf 29:25b; Matt 10:28; Gal 1:10). Fear of man ensnares where fear of God frees."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266866": {
+   "gloss": "trusts in the LORD (batach)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "God-reliance — the trust that makes a man safe"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the trusting",
+     "to": 266866,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the trusting in the LORD that keeps a man safe — the God-reliance that lifts him above the fear of man, secure because his confidence rests where no human threat can reach"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the fear of man it is set against (266862)",
+     "to": 266866,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the fear of man that snares",
+     "to": 266866,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "batach (trust) — 'but whoever TRUSTS in the LORD is safe'; trust in God is the antidote to the fear of man. He who rests in the LORD is set on high, safe from the snare that dread of people lays (cf 18:10; 3:5-6)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}
