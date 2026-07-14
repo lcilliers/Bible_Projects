@@ -44,7 +44,7 @@ These are **assessed from the qualifier spans / pairs around the characteristic*
 - **`device`**(117) — the literary device the char is expressed through (literal / metaphor / simile / analogy / personification / paradox / hyperbole / litotes / metonymy / irony / symbolism / typology).
 - **`vehicle`** — the analogy/simile/metaphor **image** (e.g. "a door on its hinges"), carried as a **first-class node + typed edge** (`edge_type=device`), not discarded as `standalone`.
 
-**Note (transition):** the *current* projection may still show these `ABSENT` on some rows until the **retrofit pass** (linking modifying qualifiers to their char and filling the dimension) completes on Psalms + Proverbs; thereafter `ABSENT` means only a genuinely unreadable case, and every other row is `NONE`-or-value. See `WA-projection-schema-and-companion-spec-v1` §C.2 / §E.
+**Status (2026-07-14): retrofit COMPLETE for Psalms + Proverbs.** Every read-2026 characteristic in both books now carries all five dimensions — **0 `ABSENT`** across `intensity`/`specifier`/`effect`/`device`/`direction`. Each value is either `NONE`/`literal` (assessed, none) or a self-interpretable phrase. From here `ABSENT` would signal only a genuinely unreadable case; if you see it, treat it as a data gap to flag, not silence. Derived by `_derive_retrofit_dims_v1` (prose-driven; pairs as secondary imagery control); read-back log: `outputs/projections/retrofit-rollback-log.md`. See `WA-projection-schema-and-companion-spec-v1` §C.2 / §E.
 
 ## Genuine gap (flagged, not silently blank)
 - `hebrew_form` — empty: the stored `surface_en` is the **English** ESV word; the Hebrew surface is not stored (derivable via STEP).

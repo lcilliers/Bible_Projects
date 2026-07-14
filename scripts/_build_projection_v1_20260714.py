@@ -37,6 +37,13 @@ FINDING = re.compile(r'(\bnot a\b|\bNOT\b|\bthe finding\b|\bagainst\b|physical o
 TRANSLIT_HEAD = re.compile(r"^([a-z][a-zA-Z''\-]+(?:\s+[a-z][a-zA-Z''\-]+)?)\s*\(")   # 'sheqer (falsehood) ...'
 TRANSLIT_EMBED = re.compile(r"\b([A-Z]{2,})\s*\(([a-z][a-z''\-]+)\)")                   # 'PANTS (arag)'
 
+VEH_TXT = re.compile(r'vehicle:\s*([^;]+)')
+def vehicle_of(pivot, veh_map, sid):
+    """the device vehicle: the linked span-id if one exists, else the vehicle noun parsed from device text."""
+    if veh_map.get(sid): return veh_map[sid]
+    m = VEH_TXT.search(pivot.get(117) or '')
+    return m.group(1).strip() if m else ''
+
 def state(pivot, ve):
     """NONE / ABSENT / value for a dimension of this span."""
     if ve not in pivot: return 'ABSENT'
@@ -119,7 +126,7 @@ def build_book(c, bid, bname):
                 lemma_freq[s['strongs']], s['instance_count'],
                 sense, state(p,102), state(p,103), state(p,104), state(p,105), state(p,106), state(p,107),
                 object_kind(p.get(107), p.get(105), p.get(116)), state(p,108),
-                state(p,109), state(p,110), state(p,111), state(p,117), veh_map.get(s['id'], ''),
+                state(p,109), state(p,110), state(p,111), state(p,117), vehicle_of(p, veh_map, s['id']),
                 state(p,112), state(p,113), reading,
                 'present' if FINDING.search(reading or '') else 'absent',
                 state(p,115), state(p,116), state(p,118), s['verse_text'],
