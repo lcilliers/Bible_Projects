@@ -33,11 +33,32 @@ The puller (`_pull_verify_batch_v1`) now shows the **whole passage** (focus vers
 
 ## Progress
 
-| dim | sample | checked | correct | wrong | status |
-|---|---|---|---|---|---|
-| D1 sense(101) | 200 (random, both books) | 46* | 41 | **5** | ❌ **FAILED** — the sample contains a rule-violation (Pro 28:12); by protocol the dimension is not accepted |
+### SCOREBOARD (updated 2026-07-14; live table `ve_dimension_scoreboard`)
 
-*46 = 13 of the random sample + 36 earlier sequential (overlap 3). The **sample itself** already carries a wrong (Pro 28:12), so D1 fails regardless of the rest.*
+Protocol: test each dimension's 200-sample against its **written rule**; **first violation → FAILED, move on**; pass only if all 200 clean (95%).
+
+| D | ve_nr | dimension | status | checked | first violation |
+|---|---|---|---|---|---|
+| D1 | 101 | sense | ❌ FAILED | 46 | Pro 28:12 — records interpretation/effect, not the word's subgloss |
+| D2 | 102 | type | ❌ FAILED | 14 | Pro 21:30 — faculty vocab (cognition/affect…), not the rule's action/status/quality |
+| D3 | 103 | source | ❌ FAILED | 8 | Psa 42:5 — target-direction pair (term→object) in the source dim |
+| D4 | 104 | seat | ⏳ in progress | 16 | — (all `none`, correct so far) |
+| D5 | 105 | bearer | ⏳ in progress | 4 | — |
+| D6 | 106 | operation | ⏳ in progress | 5 | — |
+| D7 | 107 | target | ⏳ in progress | 4 | — |
+| D8 | 108 | manner | ⏳ in progress | 4 | — |
+| D9 | 109 | intensity | ❌ FAILED | 12 | Psa 1:2 — non-`none` values truncated mid-word (regex cap) |
+| D10 | 110 | specifier | ⏳ in progress | 6 | — (format clean; correctness unverified) |
+| D11 | 111 | effect | ❌ FAILED | 6 | Pro 16:24 — malformed truncated value |
+| D12 | 112 | coupling | ❌ FAILED | 4 | Pro 9:16 — semantic reading, not a morphological weld |
+| D13 | 113 | prohibition | ⏳ in progress | 4/9 | — (clean negations) |
+| D14 | 114 | reading | ⏳ in progress | 5 | — (genuine rich reads) |
+| D15 | 115 | role | ⏳ in progress | 4 | — (Screen-0 God-act mis-roles seen elsewhere → likely fails) |
+| D16 | 116 | locus | ⏳ in progress | 5 | — (drift-suspect from prior audit) |
+| D17 | 117 | device | ❌ FAILED | 12 | Pro 28:14 — malformed `literal — 28:14b).`; literal on figurative verses |
+| D18 | 118 | direction | ❌ FAILED | 10 | Pro 16:9 — truncated + wrong vector (heart-planning tagged toward-god) |
+
+**Result so far: 8 dimensions FAILED, 10 in progress, 0 passed the 95% mark.** Every dimension conclusively tested has failed. The 8 failures split into two causes: (a) the **regex-derived** dims I built (intensity, effect, device, direction) fail on malformed/truncated values; (b) **core read dims** fail on rule-compliance (sense records interpretation not the word; type uses the wrong vocabulary; source stores target-direction pairs; coupling stores semantic readings not morphological welds). The 10 in progress are mostly the genuine read dims + sparse dims; a full 200-check is needed to pass any of them.
 
 **D1 FAILED — 5 confirmed rule-violations (sense ≠ the word's per-occurrence subgloss; it records the char's interpretive function/effect):**
 - Pro 28:12 *tsaddiq* (righteous) → "public good…" (effect)
