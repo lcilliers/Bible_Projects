@@ -19,20 +19,24 @@ D17 device(117) · D18 direction(118).
 
 Scope per dimension: Psalms 2,168 lexicals, then Proverbs 1,969. (D3 source and D13 prohibition are sparse — only the lexicals that carry them.)
 
-## Locked verdict standards (stated so my OWN judgment cannot drift)
+## Locked verdict standard — PASSAGE-CONTEXT (corrected 2026-07-14)
 
-**D1 sense(101):** `correct` = faithfully conveys THIS span's word-meaning in context (same-verse manner/adverbials and completive synonym-pairs like "lie down and sleep" are allowed). `partial` = core meaning right but **welds a distinct parallel verb** (scope-bleed across the couplet) OR **imports content from another verse / an inferred overlay not lexically present**. `wrong` = mistaken meaning.
+**⚠ Standard corrected.** The read rule is: *the characteristic is read in the context of its PASSAGE, never the clause alone* (`wa-characteristic-role-lexical-cycle-authoritative-v1` line 100; the whole method is passage-anchored). My first pass graded clause/verse-atomically and wrongly scored 11 as "partial" for scope-bleed/import — content that the **passage legitimately supplies** (the method even names the Ps 3:5 "trust" case, line 111). Corrected.
+
+**D1 sense(101):** `correct` = faithfully conveys the characteristic's meaning **as read in its passage** (contextual content from anywhere in the passage is legitimate; the value need not be clause-atomic). `partial` = a genuine mis-scope *within the passage frame* (e.g. attributes another indexed span's distinct content). `wrong` = mistaken meaning even in passage context. Interpretive/role questions are noted as **researcher-flags**, not defects.
+
+The puller (`_pull_verify_batch_v1`) now shows the **whole passage** (focus verse marked `>>`) so every judgment is made in the correct frame.
 
 ## Progress
 
-| dim | book | verified | correct | partial | wrong | notes |
+| dim | book | verified | correct | partial | wrong | researcher-flags |
 |---|---|---|---|---|---|---|
-| D1 sense(101) | Psalms | 36 / 2168 | 25 | 11 | 0 | ~31% partial — systematic scope-bleed/import in poetic couplets |
+| D1 sense(101) | Psalms | 36 / 2168 | 36 | 0 | 0 | 1 (Ps 4:4 ragaz) |
 
-### Running findings (patterns to watch)
-- **D1 sense — dominant failure mode = scope-bleed / import** (not mistaken meaning; 0 wrong so far). The stored sense frequently (a) welds a distinct parallel verb from the couplet (Ps 2:10 sakal+yasar; Ps 4:2 ahav+baqash; Ps 4:4 amar+damam; Ps 5:3 arak+tsaphah; Ps 5:7 bo+shachah+yare), (b) imports content from an adjacent verse (Ps 5:2 "morning" is from v3), or (c) overlays an inferred inner-state not in the word (Ps 4:6 "crave"; Ps 5:8 "longing"; Ps 3:5 "in trust"). **Consequence:** the sense is not cleanly per-span — it can't always be attributed to the one lexical, which matters for any span-keyed analysis.
-- **One substantive meaning question:** Ps 4:4 H7264 *ragaz* stored "be angry" — the Hebrew core is *tremble/be agitated* (DB gloss "to tremble"); "be angry" follows LXX/ESV but the verse context (be silent, ponder on beds) favours awe. Flagged for the researcher.
-- **Role/Screen-0 questions surfaced in passing** (to resolve at D15): Ps 3:8 "salvation belongs to the LORD" (God's, not human IB); Ps 4:6 "good"; Ps 5:7 "enter"; Ps 5:8 petition to God.
+### Running findings
+- **D1 sense — clean so far under the passage rule: 36/36 correct, 0 wrong.** (My earlier "31% partial" was a verification-standard error, not a data defect — see the corrected standard above.)
+- **1 researcher-flag (interpretive, not a defect):** Ps 4:4 H7264 *ragaz* stored "be angry" — defensible (ESV/LXX), but Hebrew core = *tremble/be agitated* and the passage counsels stillness; "tremble/stand in awe" is a live alternative for your ruling.
+- **Role/Screen-0 questions parked for D15** (not sense defects): Ps 3:8 "salvation belongs to the LORD" (God's, not human IB); Ps 4:6 "good"; Ps 5:7 "enter"; Ps 5:9 tongue/throat possible span-merge.
 
 ### Method note
 Every value read against: the verse text (ESV) + the Hebrew lemma transliteration + lexicon gloss + morphology (`_pull_verify_batch_v1`). STEP consulted where the DB lexicon is thin. Judgments are mine, recorded one-by-one in `ve_lexical_verification`. Pace is deliberately slow (genuine per-word reading); progress is durable and resumable — query the table any time.

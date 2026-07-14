@@ -24,7 +24,7 @@ def main():
     prov = PROV[bid]
     done = {r[0] for r in c.execute("SELECT verse_span_id FROM ve_lexical_verification WHERE ve_nr=?", (ve,))}
     rows = c.execute("""SELECT si.id sid, v.reference ref, v.chapter, v.verse_num, si.strongs, si.primary_strong,
-              si.surface, si.morph_code, si.stem, v.verse_text,
+              si.surface, si.morph_code, si.stem, v.verse_text, v.passage_id,
               x.value stored, x.from_span, x.to_span, x.resolution
            FROM verse_span_index si JOIN verse v ON v.id=si.verse_id
            JOIN ve_lexical x ON x.verse_span_id=si.id AND x.ve_nr=? AND x.source_provenance=? AND x.delete_flagged=0
@@ -38,13 +38,19 @@ def main():
         if not base: return ('', '')
         m = c.execute("SELECT transliteration, gloss FROM mti_terms WHERE strongs_number=? AND COALESCE(delete_flagged,0)=0 LIMIT 1", (base.group(1),)).fetchone()
         return (m['transliteration'] or '', m['gloss'] or '') if m else ('', '')
+    def passage(pid, focus_ref):
+        if not pid: return "(no passage — verse read in isolation, itself a flag)"
+        vs = c.execute("SELECT reference, verse_text FROM verse WHERE passage_id=? ORDER BY chapter, verse_num", (pid,)).fetchall()
+        # mark the focus verse with >>
+        return " ".join((">>" if x['reference']==focus_ref else "") + x['verse_text'] for x in vs)
     for i, r in enumerate(todo[:limit]):
         idx = ndone + i + 1
         tr, gl = lex(r['primary_strong'] or r['strongs'])
         pair = f" | PAIR from={r['from_span']} to={r['to_span']} res={r['resolution']}" if r['resolution']=='span' else ""
         print(f"\n[{idx}] span {r['sid']} | {r['ref']} | {r['strongs']} morph={r['morph_code']} | translit={tr!r} gloss={gl!r}")
         print(f"    surface(EN)='{r['surface']}'{pair}")
-        print(f"    VERSE: {r['verse_text']}")
+        # READ RULE: the char is judged in its PASSAGE, never the clause alone (cycle authoritative line 100).
+        print(f"    PASSAGE (>> marks the focus verse): {passage(r['passage_id'], r['ref'])}")
         print(f"    STORED ve{ve}: {r['stored']!r}")
     c.close()
 
