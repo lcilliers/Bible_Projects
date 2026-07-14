@@ -34,8 +34,15 @@ To analyse difference: group by `lemma`, compare `base_gloss` against each readi
 ## Derived / heuristic columns — treat as review-grade, not authored
 - **`translit`** — parsed from `reading`/`sense` (~87% Proverbs; lower Psalms — the older-style rows). `translit_conf` = head / embed / none.
 - **`object_kind`** — god / person / self / abstraction / other / none, inferred from `target`+`bearer`+`locus`. `other` = uncategorised (not asserted).
-- **`direction`** — `ABSENT` everywhere: never read in the poetic method; authored going forward.
 
-## Genuine gaps (flagged, not silently blank)
+## Qualifier-derived dimensions — `intensity` / `specifier` / `effect` / `direction`
+These are **assessed from the qualifier spans / pairs around the characteristic**, and recorded as `NONE` (assessed, none) or a value — **not silently `ABSENT`**:
+- **`intensity`**(109) — from the degree/modifying qualifier ("greatly", "very", a doubled verb).
+- **`specifier`**(110) — from the narrowing qualifier ("of the LORD", "this").
+- **`effect`**(111) — from the result/consequence qualifier (also recorded at Phase-2 book level).
+- **`direction`** — the movement vector (toward-god / inward / outward / reciprocal) from the pair.
+
+**Note (transition):** the *current* projection may still show these `ABSENT` on some rows until the **retrofit pass** (linking modifying qualifiers to their char and filling the dimension) completes on Psalms + Proverbs; thereafter `ABSENT` means only a genuinely unreadable case, and every other row is `NONE`-or-value. See `WA-projection-schema-and-companion-spec-v1` §C.2 / §E.
+
+## Genuine gap (flagged, not silently blank)
 - `hebrew_form` — empty: the stored `surface_en` is the **English** ESV word; the Hebrew surface is not stored (derivable via STEP).
-- `intensity`(109), `specifier`(110), `effect`(111), `direction` — never read in the reread (poetic/Phase-2). `ABSENT`, honestly.

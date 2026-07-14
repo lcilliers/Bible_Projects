@@ -76,18 +76,20 @@ They are enrichments of the relational/movement model; the discovery question (b
 | `bearer` | 105 | free | — | who bears the characteristic |
 | `operation` | 106 | free | — | what it *does* in the verse |
 | `target` | 107 | free | — | what it is toward/against |
-| `object_kind` | derived | coded | — | **new** — god/person/self/thing/abstraction/none (from locus+target+bearer) |
+| `object_kind` | derived | coded | — | **new** — god/person/self/abstraction/other/none (from locus+target+bearer) |
 | `manner` | 108 | coded | often NONE | |
-| `intensity` | 109 | — | **ABSENT** | never read (poetic method) |
-| `specifier` | 110 | — | **ABSENT** | never read |
-| `effect` | 111 | — | **ABSENT** | Phase-2 |
+| `intensity` | 109 | coded/free | **NONE-or-value** | **★ ASSESSED FROM THE QUALIFIER, not ABSENT** — read the degree/modifying qualifier of the char (e.g. "greatly", "very", a doubled verb); write `none` if none. *(being reinstated — retrofit + bake-in.)* |
+| `specifier` | 110 | free | **NONE-or-value** | **★ ASSESSED FROM THE QUALIFIER** — the narrowing qualifier that specifies *which* (e.g. "of the LORD", "this"); `none` if none. |
+| `effect` | 111 | free | **NONE-or-value** | **★ ASSESSED FROM THE QUALIFIER / outcome** — the result the char produces via its qualifier/consequence; `none` if none. *(also recorded at Phase-2 book level.)* |
 | `coupling` | 112 | free + edge | — | the pairing **phrase**; the **edge** is in the technical layer |
 | `prohibition` | 113 | coded | rare (9) | |
 | `reading` | 114 | free | — | **RENAMED from `discovery`** — evidence-anchored note (translit + verse-quote + meaning + finding) |
 | `discovery_flag` | derived | coded | — | **new** — does `reading` carry a surfaced finding? (present/absent) — answers (b) |
 | `role` | 115 = `verse_span_index.role` | coded | — | characteristic/qualifier/standalone |
 | `locus` | 116 | coded | — | internal:ib-state / external:god / external:person |
-| `direction` | `ve_lexical.direction` | coded | **ABSENT** | gap; authored going forward |
+| `direction` | `ve_lexical.direction` | coded | **NONE-or-value** | **★ ASSESSED FROM THE MOVEMENT/pair** (toward-god / inward / outward / reciprocal); `none` if static. *(authored forward + retrofit.)* |
+
+**★ Anti-`ABSENT` principle (researcher, 2026-07-14):** intensity/specifier/effect/direction must **never** be shown `ABSENT` (never-assessed) — that is misleading, because the qualifier/pair evidence to assess them is present. Part of the lexical read is to **perform these assessments from the qualifier spans and the pairs** and record `NONE` (assessed, none found) or the value. After the retrofit + method bake-in, `ABSENT` on these means only "a legitimately unreadable case", not "we skipped it".
 
 ### C.3 Evidence-on-tap
 | column | source | notes |
