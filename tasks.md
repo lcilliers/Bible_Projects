@@ -12,6 +12,14 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 ## In Progress
 
+### Projection / re-read follow-ups (raised 2026-07-14, from the AI's first Psalms macro pass)
+
+- [ ] **Phase-2 EFFECT read — Psalms** (then bake into every book read). `effect(111)` currently ships **derivation-grade** (97.7% NONE = a floor, not measured silence). Read it per-passage with read-back, self-interpretable, verse-bounded. Spec: [Workflow/methodology/WA-psalms-effect-read-phase2-spec-v1-20260714.md](Workflow/methodology/WA-psalms-effect-read-phase2-spec-v1-20260714.md). **Blocks any Psalms consequence/outcome analysis.**
+- [ ] _(consider)_ **Vehicle-node materialisation** — simile/metaphor vehicles are carried as readable text + 5 span-edges; most vehicle nouns are not indexed IB spans, so no graph edge. Decide whether to materialise vehicle nodes for a fuller imagery graph.
+- [x] DQ-01 coupling/locus transposition fixed at source (666 Psalms spans) — `_apply_dq01_locus_coupling_swap_v1`, 2026-07-14.
+- [x] Projection v2 ships the qualifier layer (`<book>_qualifiers.csv` + `linked_qualifiers`) so effect/intensity/specifier NONE is auditable — 2026-07-14.
+- [x] Retrofit dims (device/intensity/specifier/effect/direction) rolled across Psalms + Proverbs, 0 ABSENT — 2026-07-14.
+
 - [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions_
 - [ ] _Phase_A_Prose: generate phase A prose — instruction filed [Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md](Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md). First application 2026-04-27: R030 contrition (6 prose_section rows captured). Legacy-prose audit pending: 5 registries (035 covetousness, 062 fellowship, 134 renewal, 206 vulnerability, 207 blindness_spiritual) have `.md` files in Sessions/Session_A/Data_Prose/ from 2026-04-20 but DB capture status unverified — see instruction §12._
 
