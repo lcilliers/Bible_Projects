@@ -87,7 +87,9 @@ They are enrichments of the relational/movement model; the discovery question (b
 | `discovery_flag` | derived | coded | — | **new** — does `reading` carry a surfaced finding? (present/absent) — answers (b) |
 | `role` | 115 = `verse_span_index.role` | coded | — | characteristic/qualifier/standalone |
 | `locus` | 116 | coded | — | internal:ib-state / external:god / external:person |
-| `direction` | `ve_lexical.direction` | coded | **NONE-or-value** | **★ ASSESSED FROM THE MOVEMENT/pair** (toward-god / inward / outward / reciprocal); `none` if static. *(authored forward + retrofit.)* |
+| `direction` | 118 (`ve_lexical.direction`) | coded/free | **NONE-or-value** | **★ ASSESSED FROM THE MOVEMENT/pair** (toward-god / inward / outward / reciprocal / static). |
+| `device` | 117 | value/pair | **literal-or-value** | **★ NEW — the literary device the char is expressed through** (literal / metaphor / simile / analogy / personification / paradox / hyperbole / litotes / metonymy / irony / symbolism / typology); **self-interpretable** (carries the device + its sense). |
+| `vehicle` | 117 pair `to_span` | free + edge | — | **★ NEW — the analogy/simile/metaphor VEHICLE** (the image that illuminates the char, e.g. "a door on its hinges"); a **first-class node + typed edge** (`edge_type=device/vehicle`) — no longer discarded as `standalone`. |
 
 **★ Anti-`ABSENT` principle (researcher, 2026-07-14):** intensity/specifier/effect/direction must **never** be shown `ABSENT` (never-assessed) — that is misleading, because the qualifier/pair evidence to assess them is present. Part of the lexical read is to **perform these assessments from the qualifier spans and the pairs** and record `NONE` (assessed, none found) or the value. After the retrofit + method bake-in, `ABSENT` on these means only "a legitimately unreadable case", not "we skipped it".
 

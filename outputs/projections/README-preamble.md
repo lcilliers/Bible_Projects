@@ -35,12 +35,14 @@ To analyse difference: group by `lemma`, compare `base_gloss` against each readi
 - **`translit`** — parsed from `reading`/`sense` (~87% Proverbs; lower Psalms — the older-style rows). `translit_conf` = head / embed / none.
 - **`object_kind`** — god / person / self / abstraction / other / none, inferred from `target`+`bearer`+`locus`. `other` = uncategorised (not asserted).
 
-## Qualifier-derived dimensions — `intensity` / `specifier` / `effect` / `direction`
-These are **assessed from the qualifier spans / pairs around the characteristic**, and recorded as `NONE` (assessed, none) or a value — **not silently `ABSENT`**:
-- **`intensity`**(109) — from the degree/modifying qualifier ("greatly", "very", a doubled verb).
-- **`specifier`**(110) — from the narrowing qualifier ("of the LORD", "this").
-- **`effect`**(111) — from the result/consequence qualifier (also recorded at Phase-2 book level).
-- **`direction`** — the movement vector (toward-god / inward / outward / reciprocal) from the pair.
+## Qualifier- and device-derived dimensions — assessed, self-interpretable, never silently `ABSENT`
+These are **assessed from the qualifier spans / pairs around the characteristic**, recorded as `NONE`/`literal` (assessed, none) or a **self-interpretable value** (readable without the verse):
+- **`intensity`**(109) — the degree qualifier ("greatly", "very", a doubled verb).
+- **`specifier`**(110) — the narrowing qualifier ("of the LORD", "this").
+- **`effect`**(111) — the result/consequence qualifier (also Phase-2 book level).
+- **`direction`**(118) — the movement vector (toward-god / inward / outward / reciprocal / static).
+- **`device`**(117) — the literary device the char is expressed through (literal / metaphor / simile / analogy / personification / paradox / hyperbole / litotes / metonymy / irony / symbolism / typology).
+- **`vehicle`** — the analogy/simile/metaphor **image** (e.g. "a door on its hinges"), carried as a **first-class node + typed edge** (`edge_type=device`), not discarded as `standalone`.
 
 **Note (transition):** the *current* projection may still show these `ABSENT` on some rows until the **retrofit pass** (linking modifying qualifiers to their char and filling the dimension) completes on Psalms + Proverbs; thereafter `ABSENT` means only a genuinely unreadable case, and every other row is `NONE`-or-value. See `WA-projection-schema-and-companion-spec-v1` §C.2 / §E.
 

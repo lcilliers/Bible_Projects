@@ -77,13 +77,21 @@ Rollup scope keys on `role` (method §13b). Role supersedes the crude mechanical
 | 106 | operation | D4 | event | governing predicate (the act) |
 | 107 | target | D5 | pair | term → object (+ object-type) |
 | 108 | manner | D6 | pair | prep-marked adverbial qualifier → term |
-| 109 | intensity | D6 | pair/flag | me'od / kol amount (split from manner) |
-| **110** | **specifier** | D5/D6 | pair | **construct-chain genitive specifying the term (added 2026-07-03)** |
-| 111 | effect | D8 | pair | term → produced-state (result verb, prose) |
+| 109 | intensity | D6 | pair/flag | degree/amount from the **modifying qualifier** (me'od/kol, a doubled verb, an emphatic) — **REINSTATED + MANDATORY (2026-07-14)**: assessed for every char, self-interpretable value or explicit `none` |
+| **110** | **specifier** | D5/D6 | pair | the **narrowing qualifier** that specifies *which* (construct-chain genitive, "of the LORD", "this") — **MANDATORY (2026-07-14)**: assessed always, value-or-`none` (added 2026-07-03) |
+| 111 | effect | D8 | pair | term → produced-state from the **result/consequence qualifier** — **MANDATORY (2026-07-14)**: assessed always, value-or-`none`; also recorded at Phase-2 book level |
 | 112 | coupling | D9 | pair | morphological weld only (construct/prep) |
 | 113 | prohibition | D10 | flag | mechanical negation/prohibition particle |
-| 114 | discovery | D11 | note | uncertainty / discovery-lookout channel |
+| 114 | **reading** (was discovery) | D11 | note | **RELABELLED 2026-07-14** — the evidence-anchored reading note (translit + capitalised verse-quote + meaning + surfaced finding); the primary evidence text |
 | 115 | role | — | value | sanity-check classification (§8) |
 | **116** | **locus** | D5/D3 | value | **target/bearer entity classified IB-internal vs external (god·adversary·proper·thing / seat·ib-state·body); mechanical from morphology+lemma (added 2026-07-04)** |
+| **117** | **device** | D-LIT | value/pair | **NEW 2026-07-14** — the literary device(s) through which the char is expressed (`literal`/metaphor/simile/analogy/personification/paradox/hyperbole/litotes/metonymy/irony/symbolism/typology); **pair-capable** — for comparison devices the pair endpoint = the **VEHICLE span**. MANDATORY, self-interpretable, default `literal` |
+| **118** | **direction** | D-DIR | value | **NEW 2026-07-14** — the movement vector (`toward-god`/from-god/`inward`/`outward`/`reciprocal`/`static`); MANDATORY, value-or-`none`, on `ve_lexical.direction` + as an assessed dim |
+
+### ★ 2026-07-14 additions — the qualifier / device enrichment (Proverbs+Psalms retrofit + bake-in)
+Two governing rules, from the researcher (see `WA-literary-device-layer-reconsideration-v1`, `WA-qualifier-model-reconsideration-analogy-and-rhetorical-typology-v1`):
+- **Self-interpretable values (MANDATORY for every dimension):** a dimension value must be **interpretable without re-reading the verse** — rich and self-contained, carrying its trigger and its sense (e.g. intensity = *"emphatic — the doubled verb 'greatly rejoice' (gil yagil)"*, device = *"simile — vehicle: a door on its hinges; the sluggard's motion without progress"*, not a bare code). The old thin values ("very", "of David") are the anti-pattern.
+- **Assess-from-the-qualifier, never silently ABSENT:** intensity/specifier/effect/device/direction are **derivatives of reading the qualifier spans / pairs** around the char. Part of the lexical is to **perform these assessments and record `none`** (looked, found none) — `ABSENT` (never assessed) is misleading and forbidden for these dims. The **modifying/rhetorical qualifier** (the intensifier, the specifier, the analogy vehicle, the antithetic pole) is **read into its dimension AND linked to the char as a typed pair** (it must not fall to `standalone`).
+- **Expanded mandatory ledger (poetic), M16:** `101,102,104,105,106,107,108,109,110,111,112,114,115,116,117,118` — every char assessed on all 16, `none` explicit. (103 source, 113 prohibition remain as applicable; 111 effect also Phase-2.)
 
 Verse-level (not per-`ve_nr`): **D14 passage** (`verse.passage_id`), **D7 process** (passage-level; ve_nr pending per §6), **genre** (`verse.genre`).
