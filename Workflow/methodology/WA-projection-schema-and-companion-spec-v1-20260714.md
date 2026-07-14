@@ -54,7 +54,10 @@ They are enrichments of the relational/movement model; the discovery question (b
 | `surface_en` | `verse_span_index.surface` | the **English ESV** word (spec's `hebrew_form` mislabels this) |
 | `hebrew_form` | — | **GENUINE GAP** — not stored; derivable via STEP+morph; flag |
 | `translit` | derived from `reading`/`sense` | spec ✓ (promote per §1); `translit_confidence` flag |
-| `char_key` / `ib_char` | `ib_characteristic.char_key` / `.name` | spec ✓ |
+| `char_key` / `ib_char` | `ib_characteristic.char_key` / `.name` | spec ✓ — the **meaning-in-context identity** (the nuance grouping) |
+| `base_gloss` | `ib_characteristic.lexical_gloss` | **new — the INVARIANT dictionary meaning of the lemma** (see §G) |
+| `read_sense_variants` | `ib_characteristic.read_sense_variants` | **new — the set of verse-derived nuances this identity spans** (see §G) |
+| `esv_words` / `stems` / `morph_codes` | `ib_characteristic.*` | **new** — aggregated forms behind the identity |
 | `family` | `ib_characteristic.family` | spec ✓ |
 | `cluster` / `cluster_all` | `verse_span_index.cluster` / `ib_characteristic.cluster_all` | spec ✓ (+all) |
 | `same_as` | readings sharing `char_key` | spec ✓ |
@@ -108,6 +111,25 @@ They are enrichments of the relational/movement model; the discovery question (b
 - **Gaps that remain, honestly flagged:** `hebrew_form` (not stored), `direction` (never read), `intensity`/`specifier`/`effect` (never read). None block the current analysis; all are marked, not silently blank.
 
 ---
+
+## G. Base meaning vs verse-derived nuance — the distinction is PRESERVED (researcher check, 2026-07-14)
+
+The flattening does **not** collapse the base lemma meaning into the contextual nuance. The reread's whole architecture (`project_term_is_sense_not_lemma`) rests on this distinction, and the projection carries it in **three explicit, analysable layers** — one row per reading, but the columns keep the layers apart:
+
+| layer | what it is | column(s) | invariance |
+|---|---|---|---|
+| **1. Lemma (base)** | the dictionary word + its base gloss | `strongs` / `lemma`, **`base_gloss`** (`ib_characteristic.lexical_gloss`) | **INVARIANT** across every occurrence |
+| **2. Meaning-in-context identity** | the derived nuance the lemma takes (grouping of like readings) | `ib_char`, `char_key`, **`read_sense_variants`** | varies **per nuance** — one lemma → many identities |
+| **3. Occurrence (reading)** | this specific verse's reading | **`span_id`**, `sense`(101), `operation`(106), `reading`(114), `verse_ref` | varies **per verse** — the finest grain |
+
+**Worked proof (live data): H3045 `yada`, `base_gloss = "to know"` — INVARIANT — fans into 14 meanings-in-context** across 54 readings: *know · teach (make-known/hiphil) · knowledge · known · considers · **regard/care** ("the righteous regards his beast's life") · **perceive** · **feel/insensible** ("the drunkard senseless even to blows") · confessed-ignorance (Agur).* All three layers sit side by side in the row, so the analyst can:
+- **group by `lemma`** → see the whole fan-out of nuances of one word;
+- **compare `base_gloss` vs the per-reading `sense`/`reading`** → measure how far the *context* pulls the word from its base (know → *feel/insensible* is a large pull; know → *known* is small);
+- **compare readings that share an `ib_char`** (same nuance) → the finer within-nuance differences live in each `span_id`'s `sense`/`reading`.
+
+Two readings of the same lemma with the same English nuance are **still distinct rows** (different `span_id`, `verse_ref`, `reading`) — the finest grain is never lost. The `NONE`/`ABSENT` codes further keep "the reader found the base sense unshifted here" distinct from "not read". **Nothing that distinguishes base meaning from verse-derived nuance is flattened away.**
+
+*(Optional deepening: for the fullest **lexicon** base entry — beyond the study's `base_gloss` — the lemma can be joined to `mti_terms` / `wa_meaning_parsed` on the Strong's number; offered as an enrichment, not required for the distinction above.)*
 
 ## F. Build plan (both books now + baked into the method)
 1. **Projection generator** (read-only) — emits `reading_view` + `nodes` + `edges` + `dimensions_long` for Psalms + Proverbs, with `reading` (relabel), derived `translit`/`object_kind`/`discovery_flag`, and the `NONE`/`ABSENT` codes. *(no DB write)*
