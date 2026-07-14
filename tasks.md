@@ -20,6 +20,9 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 - [ ] **DQ-05 direction-consistency audit** — seat-word + give-thanks subset (Psa 86:12 vs 111:1 tag inward vs toward-god on identical fields; ~20% on subset).
 - [ ] _(consider)_ **Vehicle-node materialisation** — simile/metaphor vehicles are carried as readable text + 5 span-edges; most vehicle nouns are not indexed IB spans, so no graph edge. Decide whether to materialise vehicle nodes for a fuller imagery graph.
 - [x] Reader-drift audit across all dims (band-drift screen `_check_dimension_band_drift_v1`) — type confirmed process-grade; reliability register written — 2026-07-14.
+- [x] **Content-validity gate built** (`_check_lexical_content_validity_v1`) + made a REQUIRED post-read gate (readiness doc v3 §5b). Completeness gates never validated content — now they must both be green. Both Psalms + Proverbs currently FAIL (type-drift) — 2026-07-14.
+- [ ] **Re-run content-validity on every re-read book** (not just Psalms/Proverbs) — the drift/domain/tag failures are likely systemic (source(103)/effect(111) already known zero everywhere). Establish the true content state per book.
+- [ ] **Decide `type(102)` disposition** — the confirmed reader-drift dimension. Retire from analysis, or re-read to a fixed vocab in one pass. Blocks any type-based analysis in every book.
 - [x] DQ-01 coupling/locus transposition fixed at source (666 Psalms spans) — `_apply_dq01_locus_coupling_swap_v1`, 2026-07-14.
 - [x] Projection v2 ships the qualifier layer (`<book>_qualifiers.csv` + `linked_qualifiers`) so effect/intensity/specifier NONE is auditable — 2026-07-14.
 - [x] Retrofit dims (device/intensity/specifier/effect/direction) rolled across Psalms + Proverbs, 0 ABSENT — 2026-07-14.
