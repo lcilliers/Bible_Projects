@@ -1,5 +1,8 @@
 # Database Functional Pools Companion — 2026-07-14
 
+## Companion Report
+- Relatedness/staleness assessment: [outputs/markdown/wa-programme-database-functional-pool-relatedness-assessment-20260714.md](outputs/markdown/wa-programme-database-functional-pool-relatedness-assessment-20260714.md)
+
 ## Scope
 Companion to [outputs/markdown/wa-programme-database-overview-20260714.md](outputs/markdown/wa-programme-database-overview-20260714.md), grouping all tables into related functional pools with consolidated counts and size estimates.
 
