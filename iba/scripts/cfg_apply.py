@@ -280,6 +280,18 @@ def main() -> int:
         return 0
 
     # ── 5. COMMIT + AUDIT ───────────────────────────────────────────────────
+    # MIRROR, not copy.  A copy-only commit leaves a file that staging DELETED
+    # alive in live -- so the config that was validated is not the config that
+    # results.  That bug shipped in the first version of this tool and produced
+    # 18 duplicate-id errors on the very next run (fetch.json merged into
+    # raw.json in staging, survived in live).  The tool validated one state and
+    # wrote another: exactly the failure it exists to prevent.
+    staged = {rel(p, st) for p in seed_files(st)}
+    for p in seed_files(CONFIG):
+        r = rel(p, CONFIG)
+        if r not in staged:
+            p.unlink()
+            print(f"[commit]   removed {r} (deleted in staging)")
     for p in seed_files(st):
         dst = CONFIG / rel(p, st)
         dst.parent.mkdir(parents=True, exist_ok=True)

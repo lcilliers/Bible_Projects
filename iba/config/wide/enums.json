@@ -204,7 +204,7 @@
       "kind": "enum",
       "subject": "governs",
       "status": "LIVE",
-      "version": 2,
+      "version": 3,
       "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums; base-layer carve ruled by researcher 2026-07-15",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
       "intent": "The study processes a rule can govern. These mirror the by-process rule-sets (plan A.11) and, roughly, the functional modules.",
@@ -216,12 +216,14 @@
             "description": "The initial word list: what qualifies a word as inner-being, the registry path, growth/addition policy, registry tags. ≈ module 2."
           },
           {
-            "value": "fetch",
-            "description": "Retrieval from STEP: what to fetch, Strong's resolution and suffixes, the 60-cap sectioning, retry, cache-to-DB-first. ≈ module 1."
+            "value": "raw",
+            "description": "THE ACQUISITION STAGE. Pulls STEP and creates the tables with the STEP data — NO DATA CONVERSION. Owns what to retrieve, when, and what is stored: the related-term option, the candidate-trigger cascade, source-precedence on a re-pull, no-duplication, immutability-to-the-application. Researcher 2026-07-15: 'raw pulls STEP and create the tables with the STEP data. No data conversion.' ABSORBED `fetch` (2026-07-15) — fetch was my word, not the researcher's; there is no fetch stage.",
+            "supersedes": "fetch (2026-07-15) — retired; raw is the stage that pulls"
           },
           {
             "value": "raw",
-            "description": "The raw data layer: what 'raw' is, its immutability, source-parity/completeness/no-null/FK controls, provenance stamping. ≈ module 1 output (the measure layer)."
+            "description": "THE ACQUISITION STAGE. Pulls STEP and creates the tables with the STEP data — NO DATA CONVERSION. Owns what to retrieve, when, and what is stored: the related-term option, the candidate-trigger cascade, source-precedence on a re-pull, no-duplication, immutability-to-the-application. Researcher 2026-07-15: 'raw pulls STEP and create the tables with the STEP data. No data conversion.' ABSORBED `fetch` (2026-07-15) — fetch was my word, not the researcher's; there is no fetch stage.",
+            "supersedes": "fetch (2026-07-15) — retired; raw is the stage that pulls"
           },
           {
             "value": "base",
@@ -868,7 +870,7 @@
       "id": "enum.step_api",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw",
         "registry"
       ],

@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.1",
+  "config_version": "0.1.3",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -13,7 +13,8 @@
         "required": true,
         "type": "string",
         "description": "Stable unique code for the rule — the identifier the rest of the config and the runtime refer to it by. Dotted, kind-prefixed, never reused or renumbered once issued (e.g. `enum.role`, `dim.116.locus`, `recon.role-enum`).",
-        "convention": "<kind-prefix>.<key>[.<label>]"
+        "convention": "<kind-prefix>.<key>[.<label>]",
+        "⚠ when_is_mint": "MINT = THE FIRST LOAD INTO THE DB, not the first appearance in a seed file. Clarified 2026-07-15 after the second id rename in one session (module.<ordinal>.<name> -> module.<name>; fetch.* -> raw.*). Both were correct: an id that encodes a mutable property, or a process that turns out not to exist, must be fixed BEFORE anything depends on it. Nothing has ever loaded, so nothing depends on these ids yet. Once cfg_version is loaded into a DB and a run pins to it, ids freeze for real — a rename after that is a migration, not an edit. The rule was always about protecting DEPENDENTS, and there are none yet."
       },
       "governs": {
         "required": true,
@@ -325,44 +326,32 @@
       {
         "file": "registry.json",
         "status": "authored",
-        "kind": null,
-        "note": "11 items. The starting point."
-      },
-      {
-        "file": "fetch.json",
-        "status": "authored",
-        "kind": null,
-        "note": "10 items. What to retrieve and when."
+        "note": "11 items. The starting point. -> module.registry"
       },
       {
         "file": "raw.json",
         "status": "authored",
-        "kind": null,
-        "note": "16 items. STEP data, no conversion."
+        "note": "26 items. Pulls STEP, creates the tables, no conversion. ABSORBED fetch.json 2026-07-15. -> module.raw"
       },
       {
         "file": "base.json",
         "status": "authored",
-        "kind": null,
-        "note": "17 items. The preparation stage; ends in signoff."
+        "note": "17 items. The preparation stage; ends in signoff. -> module.base"
       },
       {
         "file": "lexical.json",
         "status": "authored",
-        "kind": null,
-        "note": "45 items. The interpretive core; the layer that failed."
+        "note": "45 items. The interpretive core; the layer that failed. -> module.lexical"
       },
       {
         "file": "characteristics.json",
         "status": "authored",
-        "kind": null,
-        "note": "20 items. Screen 0, role, ib_characteristic."
+        "note": "20 items. Screen 0, role, ib_characteristic. -> module.characteristics"
       },
       {
         "file": "findings.json",
         "status": "pending",
-        "kind": null,
-        "note": "the last unauthored study process."
+        "note": "the last unauthored study process. -> module.findings"
       }
     ],
     "deleted": [
@@ -397,6 +386,10 @@
       {
         "file": "screen-role.json",
         "reason": "becomes the characteristics process's `process` node."
+      },
+      {
+        "file": "fetch.json",
+        "reason": "merged into raw.json (2026-07-15). `fetch` was not the researcher's terminology — 'raw pulls STEP and create the tables'. One stage, one module, one file."
       }
     ]
   },
@@ -412,29 +405,38 @@
     "_change_log.jsonl": "The AUDIT TRAIL, not config. Written by cfg_apply.py on every commit — version, when, why, and the item-level diff. It is an output OF the write path, so it is not declared as a seed (and the loader never reads it). A jsonl stand-in until ent.cfg.change-log exists in a DB.",
     "note": "Declaring it as a seed is what made this very edit fail its own validation — the file does not exist until the first commit creates it. The tool was right; the declaration was wrong."
   },
-  "⚠ how_this_config_is_maintained": {
-    "the_rule": "cfgmaint.sole-write-path — scripts/cfg_apply.py is the ONLY writer. Hand-edits are what it replaces.",
-    "the_lifecycle": "stage -> apply -> VALIDATE -> reject-or-commit. Validation happens BEFORE the live config is touched; an invalid edit never reaches disk.",
-    "⚠ the_confession": "Every change on 2026-07-15 before config_version 0.2.0 was a HAND-EDIT: an ad-hoc script mutated the JSON and the kernel ran afterwards. That is the inverse of cfgmaint.load-lifecycle, and it cost exactly what the rule predicts — invalid config reached disk three times in one session, including a shell-quoting bug that silently emptied enum value descriptions and which the kernel PASSED (a mangled string is still a string). The researcher asked 'are you using the configurator maintenance utility?'. The answer was no. cfg_apply.py exists because of that question.",
-    "what_still_is_not_enforced": "5 gates are declared LIVE and have no implementation: spec-schema, acyclic, alias-covers-retired, no-reconcile-in-scope, and (until now) seed-declared. A gate declared LIVE with no code is the failure this programme exists to end — 'rules not encoded, dependence on memory' — reproduced inside the configurator. Tracked as meta.open.gates-declared-not-implemented."
-  },
   "last_change": {
-    "version": "0.1.1",
-    "at": "2026-07-15T14:17:20Z",
-    "why": "Reconcile _manifest.sections with reality: base.json, config-maintenance.json and utility/step.json existed UNDECLARED (gate.cfgmaint.seed-declared). Declare the 8 retired files. Record that every change before 0.2.0 was a hand-edit, and open the gates-declared-not-implemented question.",
+    "version": "0.1.3",
+    "at": "2026-07-15T14:37:37Z",
+    "why": "Remove the stale process/fetch.json the copy-only commit left behind; record the cfg_apply mirror bug it exposed.",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
     "process/base.json": "f40e03d1dab58a56",
     "process/characteristics.json": "e9e801860ebc7c99",
-    "process/fetch.json": "cab67cdb84e38bb1",
     "process/lexical.json": "b32690281e0311e3",
-    "process/raw.json": "8c44b4fc7b4a39c0",
-    "process/registry.json": "edb364bc728a1dec",
+    "process/raw.json": "bf214488e14e44fd",
+    "process/registry.json": "071ea5f0de357261",
     "utility/config-maintenance.json": "d58c8bd71f79d65b",
-    "utility/step.json": "850dbe5a8dbb60a5",
-    "wide/enums.json": "07644a12a8e8d6ff",
-    "wide/pipeline.json": "f5cd1497dab85364",
+    "utility/step.json": "55cddd3d10015bd4",
+    "wide/enums.json": "5bb2dfd84536a7f2",
+    "wide/pipeline.json": "935026d22b924eee",
     "wide/reconciliations.json": "f77de2d05adf0341"
+  },
+  "★ the_stage_chain": {
+    "authority": "researcher 2026-07-15",
+    "chain": "REGISTRY -> RAW -> BASE -> [SIGNOFF] -> LEXICAL -> CHARACTERISTICS -> FINDINGS",
+    "one_stage_one_module_one_file": "Each study stage is one process file, one module, one governs value, one name. registry.json/module.registry, raw.json/module.raw, base.json/module.base, lexical.json/module.lexical, characteristics.json/module.characteristics, findings.json/module.findings.",
+    "the_exceptions_and_why": {
+      "module.validation": "governs util.validation — a UTILITY, not a study stage. Dual-role: a module AND every other module's gate. Its file is utility/validation.json (pending).",
+      "module.analysis-prep": "a marked PLACEHOLDER with no process — open.pipeline.module-8-and-prose."
+    }
+  },
+  "★ how_this_config_is_maintained": {
+    "the_rule": "cfgmaint.sole-write-path — scripts/cfg_apply.py is the ONLY writer. Hand-edits are what it replaces.",
+    "the_lifecycle": "stage -> apply -> VALIDATE -> reject-or-commit. Validation happens BEFORE the live config is touched; an invalid edit never reaches disk.",
+    "⚠ the_confession": "Every change on 2026-07-15 before config_version 0.2.0 was a HAND-EDIT: an ad-hoc script mutated the JSON and the kernel ran afterwards. That is the inverse of cfgmaint.load-lifecycle, and it cost exactly what the rule predicts — invalid config reached disk three times in one session, including a shell-quoting bug that silently emptied enum value descriptions and which the kernel PASSED (a mangled string is still a string). The researcher asked 'are you using the configurator maintenance utility?'. The answer was no. cfg_apply.py exists because of that question.",
+    "what_still_is_not_enforced": "5 gates are declared LIVE and have no implementation: spec-schema, acyclic, alias-covers-retired, no-reconcile-in-scope, and (until now) seed-declared. A gate declared LIVE with no code is the failure this programme exists to end — 'rules not encoded, dependence on memory' — reproduced inside the configurator. Tracked as meta.open.gates-declared-not-implemented.",
+    "the_commit_bug_20260715": "cfg_apply.py v1 COPIED staging over live instead of MIRRORING it, so a file DELETED in staging survived in live. The fetch->raw merge validated clean in staging (fetch.json gone) and produced an INVALID live config (fetch.json alive, 18 duplicate ids). THE TOOL VALIDATED ONE STATE AND WROTE ANOTHER — the exact failure class it was built to prevent, in its second run. Fixed: commit now removes live files absent from staging. The lesson is the one the whole programme keeps relearning: a control is not what you intended, it is what the code does."
   }
 }

@@ -47,7 +47,33 @@
         "recommendation": "A now, C as the model. B is too blunt — a gloss typo fix should not invalidate a book. But note the cascade is REAL and already latent: the multi-code fix (open.step.multi-code-fork) will add 144 verses to ruach alone, and every existing ruach read was made without them.",
         "resolve_by": "researcher decision — arises directly from the 2026-07-15 precedence ruling"
       }
-    ]
+    ],
+    "absorbed_fetch_20260715": {
+      "authority": "researcher 2026-07-15 (twice): 'the file names of the process json files are still not aligned with the pipeline'",
+      "what": "process/fetch.json is MERGED into process/raw.json and deleted. The `fetch` process and the `ingest` module are retired; RAW is the stage that pulls STEP and creates the tables.",
+      "★ why_i_had_it_wrong": {
+        "the_researcher's_words": "'raw pulls STEP and create the tables with the STEP data. No data conversion.' — the stage chain is REGISTRY -> RAW -> BASE -> LEXICAL -> CHARACTERISTICS -> FINDINGS. Six stages. `fetch` is not one of them.",
+        "where_my_words_came_from": "`fetch` I took from the plan's §A.11 by-process list ('2. Fetch from STEP'), and `ingest` I invented for the module. Neither is the researcher's terminology. I treated A.11's list as the vocabulary when the researcher had already given a different one — and A.11's own list covers 7 of 9 modules and never reconciles the difference (wide/pipeline.json meta).",
+        "why_i_defended_it": "I argued 'one module, two processes' was a deliberate demonstration that process != module. That reasoning was sound and the premise was wrong: there was no second process to demonstrate it with. I was defending a distinction I had introduced.",
+        "the_lesson": "The researcher flagged this twice. The first time I 'aligned the terminology' and explicitly recorded fetch/ingest as DELIBERATELY not aligned — defending my own invention against its author. Terminology comes from the researcher; the plan is evidence, not authority."
+      },
+      "the_boundary_that_survives": {
+        "util.step": "HOW STEP is reached and what it can do — endpoints, the cap, the oracle, response components. Cited by raw, never restated.",
+        "raw (this file)": "WHAT to retrieve, WHEN, and WHAT IS STORED — the whole stage: pull STEP, create the tables, no conversion.",
+        "base": "what we COMPUTED from raw."
+      },
+      "what_did_NOT_change": "The rules themselves. The related-term option, same-controls, candidate-triggers-pull, omission-recorded, step-precedence, no-duplication — all intact, all now under `raw`. This was a naming error, not a modelling error.",
+      "ids_renamed": {
+        "raw.include-related": "raw.include-related",
+        "raw.same-controls": "raw.same-controls",
+        "raw.candidate-triggers-pull": "raw.candidate-triggers-pull",
+        "raw.omission-is-recorded-not-assumed": "raw.omission-is-recorded-not-assumed",
+        "out.raw.report": "out.raw.report",
+        "gate.raw.no-bypass": "gate.raw.no-bypass",
+        "gate.raw.candidate-term-held": "gate.raw.candidate-term-held",
+        "gate.raw.omission-recorded": "gate.raw.omission-recorded"
+      }
+    }
   },
   "process": [
     {
@@ -144,7 +170,7 @@
       "id": "raw.boundary-with-fetch",
       "governs": [
         "raw",
-        "fetch"
+        "raw"
       ],
       "kind": "principle",
       "status": "LIVE",
@@ -211,7 +237,7 @@
       "id": "raw.step-precedence",
       "governs": [
         "raw",
-        "fetch",
+        "raw",
         "util.step"
       ],
       "kind": "principle",
@@ -248,7 +274,7 @@
       "id": "raw.no-duplication",
       "governs": [
         "raw",
-        "fetch"
+        "raw"
       ],
       "kind": "principle",
       "subject": "raw-duplication",
@@ -275,6 +301,142 @@
         "history": "The live DB required an XREF-duplication clean-up and a unique constraint on wa_verse_records (reference, term_id) at schema 3.33.0 — duplication is a demonstrated failure mode here, not a hypothetical. It was convention; it is now a constraint (plan §3.4.2 'no orphan-tolerant structure').",
         "cites": [
           "raw.step-precedence"
+        ]
+      }
+    },
+    {
+      "id": "raw.include-related",
+      "governs": [
+        "raw",
+        "util.step",
+        "raw"
+      ],
+      "kind": "setting",
+      "subject": "related-term-inclusion",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'the code must include the option to pull a term and all its related terms verses and terms meaning. The default is to not include all related terms and verses, but it may be required, and then the option must exist to pull and process using the same methods and controls.'",
+      "reference": "iba/config/utility/step.json step.response-validation",
+      "intent": "Make related-term depth a CHOICE the researcher makes per run, not a limit the code imposes. The default is off for cost; the option exists because relevance cannot be known without looking.",
+      "satisfaction": "The option exists, defaults to off, is settable per run, and when on pulls related terms through the identical pipeline.",
+      "validation": {
+        "axis": "C",
+        "check": "setting-resolves",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "default": false,
+        "scope": "per run — overridable at launch; the default lives in config",
+        "when_false": "Pull the main term only: its term, meaning, related-term NAMES, and its verses with spans. Related terms are recorded as named relations, NOT as evidence. The mitigation (fetch.candidate-triggers-pull) carries discovery.",
+        "when_true": "Additionally pull, FOR EVERY RELATED TERM NAMED: its term, its meaning, and its verses with spans — the full component set (step.response-validation), through the same fetch, the same gates, the same raw controls.",
+        "⚠ the_default_is_a_cost_decision_not_a_truth_claim": "OFF does not mean related terms are irrelevant. It means the study has not looked yet. Nothing downstream may treat an unpulled related term as evidence of absence — that would convert a budget decision into a finding (step.is-a-source-not-the-truth applies with equal force to our own omissions).",
+        "why_a_setting_and_not_a_rule": "The right depth is not a property of the method, it is a property of the QUESTION. A book being read at span depth may warrant it; a broad sweep will not. Config exists so that judgement stays with the researcher instead of being frozen into code.",
+        "cites": [
+          "raw.same-controls",
+          "raw.candidate-triggers-pull",
+          "step.response-validation"
+        ],
+        "resolves": "open.step.related-term-scope"
+      }
+    },
+    {
+      "id": "raw.same-controls",
+      "governs": [
+        "raw",
+        "raw",
+        "util.step"
+      ],
+      "kind": "principle",
+      "subject": "fetch-uniform-controls",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'the option must exist to pull and process using the same methods and controls'",
+      "reference": "iba/config/utility/step.json",
+      "intent": "Guarantee there is no second-class pull. A related term retrieved under the option is retrieved exactly as a main term is — same endpoints, same completeness arithmetic, same validation, same raw controls.",
+      "satisfaction": "No fetch path exists that bypasses any control a main-term fetch passes.",
+      "validation": {
+        "axis": "C",
+        "check": "no-bypass-path",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "ONE pipeline. A related-term pull uses the same methods and the same controls as a main-term pull. There is no 'quick side pull'.",
+        "what_it_forbids": "A convenience path that fetches related terms without the oracle check, without span validation, without step-precedence, or without the response-component gate. Data acquired outside the controls is data nothing can vouch for — and it would sit in the same tables as data that can, indistinguishably.",
+        "the_controls_that_apply_identically": [
+          "gate.step.available — the pre-flight (raw processes do not run without it)",
+          "gate.step.cap-exhausted — rows == STEP's reported total",
+          "gate.step.response-components — term, meaning, related, verses+span",
+          "gate.step.api-fit — no raw sourced from English-text search",
+          "raw.step-precedence — a re-pull validates; STEP wins on difference",
+          "raw.no-duplication — one live row per identity"
+        ],
+        "why_this_is_a_rule_and_not_an_assumption": "This is exactly where a shortcut is tempting — 666 related words is a lot to put through the full battery, and the pressure to 'just grab the glosses' is real. The failure record calls this pattern point-solutions: a side path built under time pressure that quietly becomes the main path. Naming it as red closes it.",
+        "the_corollary": "Because the controls are identical, a related term pulled under the option is INDISTINGUISHABLE from one onboarded directly — which is correct. It IS a term. The option is about WHETHER to look, never about how well."
+      }
+    },
+    {
+      "id": "raw.candidate-triggers-pull",
+      "governs": [
+        "raw",
+        "characteristics",
+        "raw"
+      ],
+      "kind": "principle",
+      "subject": "candidate-triggered-fetch",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15: 'The verses include span that potentially could be marked as a candidate characteristic, which would then trigger pulling the term with its verses if it does not already exist in the study.'",
+      "reference": "iba/config/process/characteristics.json char.seed-layers",
+      "intent": "Carry discovery when fetch.include-related is off. A pulled verse contains OTHER spans; any of them may be marked a candidate characteristic; a candidate whose term the study does not hold triggers that term's pull.",
+      "satisfaction": "Every candidate-marked span resolves to a term the study holds — pulling it if it does not.",
+      "validation": {
+        "axis": "C",
+        "check": "candidate-term-held",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "A span marked candidate-characteristic in a pulled verse TRIGGERS a pull of its term (with verses and meaning) if the study does not already hold it. The pull uses the same methods and controls (fetch.same-controls).",
+        "why_it_works": "The study's verses are dense with inner-being vocabulary. A term genuinely in the inner-being neighbourhood of a registered word very often OCCURS ALONGSIDE it — so reading the verse surfaces it for free, without pulling 666 relations. This is discovery through evidence rather than through the lexicon.",
+        "its_relationship_to_the_registry": "This is the `discovery` layer of char.seed-layers, given a fetch trigger. The seed is deliberately over-inclusive; this is how over-inclusion reaches terms the registry never named.",
+        "⚠ NOT_FOOLPROOF": "Named as such by the researcher, and the limit is structural, not incidental: the cascade can only ever see terms that CO-OCCUR with an already-pulled verse. A related term occurring only where no registered term appears is invisible to it — permanently, not merely late. See open.fetch.mitigation-blind-spot.",
+        "the_honest_summary": "It deepens the corpus the study already has. It cannot widen it. fetch.include-related is what widens it — which is why the option must exist.",
+        "cites": [
+          "raw.same-controls",
+          "char.seed-layers",
+          "char.screen0"
+        ]
+      }
+    },
+    {
+      "id": "raw.omission-is-recorded-not-assumed",
+      "governs": [
+        "raw",
+        "findings"
+      ],
+      "kind": "guardrail",
+      "subject": "fetch-omission",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "derived 2026-07-15 from the related-term ruling; plan §1.2 ('coverage was a mirage')",
+      "reference": "iba/config/process/fetch.json meta.the_related_term_problem",
+      "intent": "Keep what the study chose not to pull VISIBLE, so a scope decision can never be mistaken for a finding of absence.",
+      "satisfaction": "Every run records what it did not fetch and why; no analysis treats an unfetched term as absent.",
+      "validation": {
+        "axis": "C",
+        "check": "omission-recorded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "What was NOT pulled is recorded — the related terms named but not fetched, the depth not taken, the setting that governed. An omission the study knows about is a debt. An omission it has forgotten is a false result.",
+        "why_red": "This is the ONLY defence against fetch's invisible failure mode. Every other layer's gaps are visible as nulls or flags; an unfetched term leaves nothing at all. If the omission is not written down at the moment of the decision, it cannot be reconstructed afterwards — there is no trace to find.",
+        "connects": "The lexical layer already enforces this distinction as assess-never-absent: 'assessed and found nothing' is a finding, 'never assessed' is a defect. The same rule at the fetch boundary — and it matters more here, because fetch's silence is the earliest and the most total.",
+        "cites": [
+          "lexical.assess-never-absent",
+          "step.is-a-source-not-the-truth"
         ]
       }
     }
@@ -409,6 +571,36 @@
         "trigger": "migration completion; and on demand",
         "format": "md",
         "note": "Raw publishes almost nothing else — it is consumed by every layer above, not read by humans."
+      }
+    },
+    {
+      "id": "out.raw.report",
+      "governs": [
+        "raw"
+      ],
+      "kind": "output",
+      "subject": "fetch-report",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "fetch.omission-is-recorded-not-assumed; plan §3.6",
+      "reference": "plan §3.6",
+      "intent": "Report what a fetch retrieved AND what it deliberately did not — the second being the part nothing else can reconstruct.",
+      "satisfaction": "Every fetch run reports pulled terms, their component completeness, and the named-but-not-pulled set with the setting that governed.",
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "format": "md",
+        "must_include": [
+          "terms pulled, with rows-vs-oracle per term",
+          "RELATED TERMS NAMED BUT NOT PULLED — with the include-related setting that governed",
+          "candidate-triggered pulls (what the mitigation caught this run)",
+          "STEP gaps (attested by the master, untagged by STEP)"
+        ],
+        "the_important_section_is_the_second": "A fetch report that lists only what it fetched is a receipt. The value is the not-pulled set: it is the study's own record of the risk it accepted, at the moment it accepted it."
       }
     }
   ],
@@ -561,6 +753,88 @@
         "enforcement_note": "db: BEFORE UPDATE / BEFORE DELETE triggers that RAISE. gate: the patch validator rejects any non-INSERT op targeting a raw entity. Defence in depth — this rule is the floor of the whole study.",
         "implements": "raw.immutable"
       }
+    },
+    {
+      "id": "gate.raw.no-bypass",
+      "governs": [
+        "raw"
+      ],
+      "kind": "gate",
+      "subject": "fetch-uniform-controls",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "raw.same-controls",
+      "reference": "iba/config/process/fetch.json",
+      "intent": "Refuse any fetch that reached raw without passing every control a main-term fetch passes.",
+      "satisfaction": "Every raw row's provenance shows the full control set was applied, whatever triggered its pull.",
+      "validation": {
+        "axis": "C",
+        "check": "no-bypass-path",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per fetch",
+        "implements": "raw.same-controls",
+        "applies_equally_to": [
+          "main-term pulls",
+          "related-term pulls under fetch.include-related",
+          "candidate-triggered pulls"
+        ],
+        "note": "A pull's TRIGGER is provenance worth keeping — it says why the study holds this term. It is never a reason to apply different controls."
+      }
+    },
+    {
+      "id": "gate.raw.candidate-term-held",
+      "governs": [
+        "raw",
+        "characteristics"
+      ],
+      "kind": "gate",
+      "subject": "candidate-triggered-fetch",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "raw.candidate-triggers-pull",
+      "reference": "iba/config/process/characteristics.json",
+      "intent": "Catch a candidate-marked span whose term the study does not hold — the trigger that makes the default's discovery work.",
+      "satisfaction": "No candidate-marked span references a term absent from the study.",
+      "validation": {
+        "axis": "C",
+        "check": "candidate-term-held",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per candidate span",
+        "implements": "raw.candidate-triggers-pull",
+        "on_fail": "trigger the term's pull; halt only if the pull itself fails",
+        "relationship_to_I2": "char.candidate-requires-verse-record is the same shape one layer up — a candidate must resolve to a verse-record. This is: a candidate must resolve to a TERM THE STUDY HOLDS. Both say a candidate cannot point at nothing."
+      }
+    },
+    {
+      "id": "gate.raw.omission-recorded",
+      "governs": [
+        "raw"
+      ],
+      "kind": "gate",
+      "subject": "fetch-omission",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "raw.omission-is-recorded-not-assumed",
+      "reference": "iba/config/process/fetch.json",
+      "intent": "Refuse a fetch that does not record what it left behind.",
+      "satisfaction": "Every fetch records its named-but-not-pulled set and the governing setting.",
+      "validation": {
+        "axis": "C",
+        "check": "omission-recorded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per fetch",
+        "implements": "raw.omission-is-recorded-not-assumed",
+        "why_red": "Fetch is the one layer whose failure leaves no trace. Recorded at the time or lost forever — there is no later audit that can recover a decision nobody wrote down."
+      }
     }
   ],
   "naming": [
@@ -623,18 +897,22 @@
           "filing.version-bump-on-same-name",
           "filing.manifest-rebuild-after-write"
         ],
-        "note": "Parameters only — the archiving and versioning RULES live in the filing utility's config and are cited by id."
+        "note": "Parameters only — the archiving and versioning RULES live in the filing utility's config and are cited by id.",
+        "pull_artefact_tree": "research/discovery/ — the existing per-pull JSON home (step.pull-artefact, 278 files)"
       }
     }
   ],
   "implemented_by": {
-    "module": "module.ingest",
+    "module": "module.raw",
     "steps": [
-      "step.ingest.update-tables",
-      "step.ingest.validate"
+      "step.raw.get-strongs-by-word",
+      "step.raw.get-term-by-strongs",
+      "step.raw.get-related-terms",
+      "step.raw.get-verses",
+      "step.raw.get-morphology",
+      "step.raw.update-tables",
+      "step.raw.validate"
     ],
-    "note": "The PIPELINE says WHEN this process runs and in what units; THIS FILE says what its rules are. Two axes over one thing (plan §A.11): a module loads its governing rule-set before it runs, and this is that rule-set. Added 2026-07-15 so the two are navigable in both directions.",
-    "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
-    "⚠ shared_module": "module.ingest implements BOTH fetch and raw — one module, two processes. fetch owns the acquisition steps (what to retrieve); raw owns update-tables + validate (what is stored and its controls). Deliberate: open.pipeline.raw-fetch-coupling."
+    "note": "One stage, one module, one file. The pipeline says WHEN raw runs and in what units; this file says what its rules are."
   }
 }

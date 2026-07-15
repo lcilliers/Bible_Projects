@@ -179,14 +179,14 @@
       }
     },
     {
-      "id": "module.ingest",
+      "id": "module.raw",
       "governs": [
-        "fetch",
+        "raw",
         "raw",
         "util.step"
       ],
       "kind": "module",
-      "subject": "module-ingest",
+      "subject": "module-raw",
       "status": "LIVE",
       "version": 1,
       "authority": "plan §3.3.4 (1 Get data from STEP)",
@@ -426,7 +426,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "depends_on": "module.registry",
         "activation": "auto"
       }
@@ -453,7 +453,7 @@
       },
       "spec": {
         "module": "module.base",
-        "depends_on": "module.ingest",
+        "depends_on": "module.raw",
         "activation": "auto",
         "note": "The layer boundary in one edge: raw = what STEP said (no conversion); base = what we computed from it."
       }
@@ -542,13 +542,13 @@
   ],
   "module_gates": [
     {
-      "id": "mgate.ingest-post-oracle",
+      "id": "mgate.raw-post-oracle",
       "governs": [
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "dependency",
-      "subject": "mgate-ingest-oracle",
+      "subject": "mgate-raw-oracle",
       "status": "LIVE",
       "version": 1,
       "authority": "step.completeness-oracle",
@@ -562,7 +562,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "phase": "post",
         "gate_code": "gate.step.cap-exhausted",
         "severity": "red",
@@ -570,14 +570,14 @@
       }
     },
     {
-      "id": "mgate.ingest-pre-available",
+      "id": "mgate.raw-pre-available",
       "governs": [
-        "fetch",
+        "raw",
         "raw",
         "util.step"
       ],
       "kind": "dependency",
-      "subject": "mgate-ingest-available",
+      "subject": "mgate-raw-available",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 ('Check site is up is a pre-requisite for running raw processes - on error stop and warn researcher')",
@@ -591,7 +591,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "phase": "pre",
         "gate_code": "gate.step.available",
         "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one.",
@@ -834,12 +834,12 @@
       }
     },
     {
-      "id": "step.ingest.get-strongs-by-word",
+      "id": "step.raw.get-strongs-by-word",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-get-strongs-by-word",
+      "subject": "step-raw-get-strongs-by-word",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -853,7 +853,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 1,
         "does": "Get the Strong's numbers an ENGLISH word maps to — term discovery.",
         "handler": null,
@@ -863,12 +863,12 @@
       }
     },
     {
-      "id": "step.ingest.get-term-by-strongs",
+      "id": "step.raw.get-term-by-strongs",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-get-term-by-strongs",
+      "subject": "step-raw-get-term-by-strongs",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -882,7 +882,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 2,
         "does": "Get the term and its MEANING for a Strong's number — gloss, sub-glosses, definition.",
         "handler": null,
@@ -892,12 +892,12 @@
       }
     },
     {
-      "id": "step.ingest.get-related-terms",
+      "id": "step.raw.get-related-terms",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-get-related-terms",
+      "subject": "step-raw-get-related-terms",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -911,7 +911,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 3,
         "does": "Get the term's related words and root family.",
         "handler": null,
@@ -921,12 +921,12 @@
       }
     },
     {
-      "id": "step.ingest.get-verses",
+      "id": "step.raw.get-verses",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-get-verses",
+      "subject": "step-raw-get-verses",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -940,7 +940,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 4,
         "does": "Get every verse where the ORIGINAL-LANGUAGE word occurs.",
         "handler": null,
@@ -953,12 +953,12 @@
       }
     },
     {
-      "id": "step.ingest.get-morphology",
+      "id": "step.raw.get-morphology",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-get-morphology",
+      "subject": "step-raw-get-morphology",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -972,7 +972,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 5,
         "does": "Get the per-word interlinear morphology for each verse.",
         "handler": null,
@@ -982,12 +982,12 @@
       }
     },
     {
-      "id": "step.ingest.update-tables",
+      "id": "step.raw.update-tables",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-update-tables",
+      "subject": "step-raw-update-tables",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1001,7 +1001,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 6,
         "does": "Write the raw layer — verse, morphology, lexicon.",
         "handler": null,
@@ -1010,12 +1010,12 @@
       }
     },
     {
-      "id": "step.ingest.validate",
+      "id": "step.raw.validate",
       "governs": [
-        "fetch"
+        "raw"
       ],
       "kind": "step",
-      "subject": "step-ingest-validate",
+      "subject": "step-raw-validate",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1029,7 +1029,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.ingest",
+        "module": "module.raw",
         "ordinal": 7,
         "does": "Validate the raw layer — parity, completeness, no-null, FK, response components.",
         "handler": null,
@@ -1039,7 +1039,7 @@
           "gate.raw.no-null",
           "gate.raw.fk-integrity",
           "gate.raw.immutability",
-          "gate.fetch.omission-recorded"
+          "gate.raw.omission-recorded"
         ]
       }
     },

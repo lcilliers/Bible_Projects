@@ -158,7 +158,7 @@
       "id": "step.api-set",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "principle",
@@ -239,7 +239,7 @@
       "id": "step.result-cap",
       "governs": [
         "util.step",
-        "fetch"
+        "raw"
       ],
       "kind": "principle",
       "subject": "step-result-cap",
@@ -276,7 +276,7 @@
       "id": "step.no-cache-so-cache-to-db",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "principle",
@@ -330,7 +330,7 @@
       "id": "step.completeness-oracle",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "principle",
@@ -388,7 +388,7 @@
       "id": "step.multi-code-resolution",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw",
         "registry"
       ],
@@ -451,7 +451,7 @@
       "governs": [
         "util.step",
         "registry",
-        "fetch"
+        "raw"
       ],
       "kind": "principle",
       "subject": "step-route-model",
@@ -487,7 +487,7 @@
       "id": "step.response-validation",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "principle",
@@ -522,7 +522,7 @@
       "id": "step.pull-artefact",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "provenance",
@@ -620,7 +620,7 @@
       "id": "gate.step.cap-exhausted",
       "governs": [
         "util.step",
-        "fetch"
+        "raw"
       ],
       "kind": "gate",
       "subject": "step-result-cap",
@@ -711,7 +711,7 @@
       "id": "gate.step.response-components",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "gate",
@@ -745,7 +745,7 @@
       "id": "gate.step.related-terms-have-verses",
       "governs": [
         "util.step",
-        "fetch",
+        "raw",
         "raw"
       ],
       "kind": "gate",
@@ -764,14 +764,14 @@
       },
       "spec": {
         "scope": "per pull, per related term",
-        "conditional_on": "fetch.include-related",
+        "conditional_on": "raw.include-related",
         "when_on": "every related term named must carry term + meaning + verses with resolved spans (step.response-validation), pulled through the same controls (fetch.same-controls)",
         "when_off": "related terms are recorded as NAMES only, and the not-pulled set must appear in the fetch report (gate.fetch.omission-recorded). Absence of verses is then EXPECTED, not a defect.",
         "the_verified_gap": "2026-07-15, newest pull (176_worship): related_words[] carries only {strong, form, gloss, translit} — no verses, no spans; 6 of 9 related codes named were never fetched. That is correct behaviour under the DEFAULT. It becomes a defect only if include-related is on and the verses are still missing, or if the omission goes unrecorded.",
-        "implements": "fetch.include-related",
+        "implements": "raw.include-related",
         "cites": [
-          "fetch.include-related",
-          "fetch.same-controls",
+          "raw.include-related",
+          "raw.same-controls",
           "step.response-validation"
         ]
       }
