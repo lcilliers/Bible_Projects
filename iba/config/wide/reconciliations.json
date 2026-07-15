@@ -1,38 +1,82 @@
 {
   "section": "reconciliations",
   "kind": "reconciliation",
-
   "meta": {
     "purpose": "THE DECISION REGISTER. One item per concept that is defined divergently across the programme's sources, each needing ONE canonical value plus an alias/supersession map. These are researcher rulings, not research: every item already carries the variants found and a recommendation, so each is a ratify-or-overrule call.",
     "why_it_exists": "The programme's single most pervasive structural defect is the same concept defined 3-4 ways across the REF doc, the DB vocab tables, free-text SQL columns and synced patch copies — with divergent values (plan C.13). Rather than silently pick one, the config REFUSES to run on a contested rule and records the contest here until it is ruled on.",
     "how_it_binds": "An item elsewhere whose value is contested carries status=RECONCILE and names its `recon.*` id (e.g. enum.role -> recon.role-enum). The loader will not run any study module depending on a RECONCILE rule. Resolving an item here is therefore what UNBLOCKS work — this file is the critical path, not a backlog.",
-
     "envelope": "⚠ THESE ITEMS DO NOT CARRY THE COMMON ENVELOPE. They have their own shape (below) and their own status vocabulary. A reconciliation is not a rule — it is a decision ABOUT a rule, so authority/intent/satisfaction/validation do not apply to it. See meta.open.envelope-exemption.",
-
     "status_vocabulary": {
       "⚠ warning": "`status` HERE IS NOT `status` ELSEWHERE. Every other config item's status is the rule lifecycle (LIVE / LEGACY / RECONCILE — see _manifest.json vocab.status). On a reconciliation item, `status` is the DECISION state and takes the values below. The two vocabularies share a field name and share no values. See meta.open.status-collision.",
       "values": [
-        { "value": "OPEN", "description": "Not yet ruled. `decision` is null. Everything depending on this concept is blocked — no study module may run on it." },
-        { "value": "STANDING", "description": "Ruled, but permanently live rather than closed: the decision holds AND the item stays open as the register of ongoing supersession edges (recon.live-vs-legacy is the case — the paradigm keeps moving, so its edge list keeps growing). Does not block." },
-        { "value": "RESOLVED", "description": "Ruled and closed. `decision` holds the canonical value, `alias_map` maps the superseded variants onto it, and the dependent items flip RECONCILE -> LIVE. ⚠ NOT YET USED — no item has been ruled." }
+        {
+          "value": "OPEN",
+          "description": "Not yet ruled. `decision` is null. Everything depending on this concept is blocked — no study module may run on it."
+        },
+        {
+          "value": "STANDING",
+          "description": "Ruled, but permanently live rather than closed: the decision holds AND the item stays open as the register of ongoing supersession edges (recon.live-vs-legacy is the case — the paradigm keeps moving, so its edge list keeps growing). Does not block."
+        },
+        {
+          "value": "RESOLVED",
+          "description": "Ruled and closed. `decision` holds the canonical value, `alias_map` maps the superseded variants onto it, and the dependent items flip RECONCILE -> LIVE. ⚠ NOT YET USED — no item has been ruled."
+        }
       ]
     },
-
     "item_schema": {
       "fields": {
-        "id": { "required": true, "type": "string", "description": "Stable code, `recon.*`. What RECONCILE items elsewhere point at." },
-        "concept": { "required": true, "type": "string", "description": "The thing being contested, named plainly — the question the ruling answers." },
-        "status": { "required": true, "type": "vocab (see status_vocabulary)", "description": "The DECISION state — not the rule lifecycle." },
-        "decision": { "required": true, "type": "any | null", "description": "THE RULING — the canonical value, once made. null while OPEN. This field, and only this field, is authority; a `recommended` or a working value in a dependent item's spec is not." },
-        "variants": { "required": true, "type": "object (source -> value-set) | array", "description": "The divergent definitions found, keyed by source. The evidence the ruling is made against, so the decision is taken on what the sources actually say rather than from memory." },
-        "recommended": { "required": false, "type": "any", "description": "The proposed canonical value, for the researcher to ratify or overrule. A recommendation carries no authority and is never read at runtime." },
-        "alias_map": { "required": false, "type": "object (variant value -> canonical value)", "description": "Maps superseded variants onto the canonical value so existing data stays readable after the ruling. Feeds the loader's import mapping." },
-        "supersession_edges": { "required": false, "type": "array of string", "description": "For STANDING items: the record of what superseded what, and when. The programme's paradigm history." },
-        "sources": { "required": true, "type": "array of string", "description": "The documents the variants were read from — so any ruling can be re-checked against its sources." },
-        "note": { "required": false, "type": "string", "description": "What the ruling must settle beyond picking a value (e.g. recon.locus-vocab must also settle the Ps 1-25 blanket-convention data)." }
+        "id": {
+          "required": true,
+          "type": "string",
+          "description": "Stable code, `recon.*`. What RECONCILE items elsewhere point at."
+        },
+        "concept": {
+          "required": true,
+          "type": "string",
+          "description": "The thing being contested, named plainly — the question the ruling answers."
+        },
+        "status": {
+          "required": true,
+          "type": "vocab (see status_vocabulary)",
+          "description": "The DECISION state — not the rule lifecycle."
+        },
+        "decision": {
+          "required": true,
+          "type": "any | null",
+          "description": "THE RULING — the canonical value, once made. null while OPEN. This field, and only this field, is authority; a `recommended` or a working value in a dependent item's spec is not."
+        },
+        "variants": {
+          "required": true,
+          "type": "object (source -> value-set) | array",
+          "description": "The divergent definitions found, keyed by source. The evidence the ruling is made against, so the decision is taken on what the sources actually say rather than from memory."
+        },
+        "recommended": {
+          "required": false,
+          "type": "any",
+          "description": "The proposed canonical value, for the researcher to ratify or overrule. A recommendation carries no authority and is never read at runtime."
+        },
+        "alias_map": {
+          "required": false,
+          "type": "object (variant value -> canonical value)",
+          "description": "Maps superseded variants onto the canonical value so existing data stays readable after the ruling. Feeds the loader's import mapping."
+        },
+        "supersession_edges": {
+          "required": false,
+          "type": "array of string",
+          "description": "For STANDING items: the record of what superseded what, and when. The programme's paradigm history."
+        },
+        "sources": {
+          "required": true,
+          "type": "array of string",
+          "description": "The documents the variants were read from — so any ruling can be re-checked against its sources."
+        },
+        "note": {
+          "required": false,
+          "type": "string",
+          "description": "What the ruling must settle beyond picking a value (e.g. recon.locus-vocab must also settle the Ps 1-25 blanket-convention data)."
+        }
       }
     },
-
     "state": {
       "total": 9,
       "OPEN": 8,
@@ -41,7 +85,6 @@
       "blocking": "recon.mandatory-ledger blocks ledgers.json entirely. recon.role-enum, recon.resolution-vocab and recon.locus-vocab block their enums (and therefore any read that writes them). recon.ve-nr-master-list blocks the dimension set's boundary. recon.acceptance-sample blocks the definition of 'done'.",
       "note": "recon.acceptance-sample records a rule set verbally on 2026-07-14 (n=200/dimension, 0 errors = 95% confidence) that exists in no document — this register is currently its only written home."
     },
-
     "open": [
       {
         "id": "meta.open.status-collision",
@@ -53,7 +96,10 @@
           "C: leave it (two meanings, documented)"
         ],
         "recommendation": "A — cheap now (9 items, nothing loads yet), and it makes the field mean one thing everywhere. C is how the programme got here.",
-        "resolve_by": "researcher decision"
+        "resolve_by": "researcher decision",
+        "status": "RESOLVED 2026-07-15",
+        "decision": "Recommendation A applied: the field is now decision_status, governed by enum.decision_status. The name status means rule-lifecycle everywhere, without exception.",
+        "how_it_was_caught": "The kernel found it. Once cfg_kernel could read wide/*.json it rejected all 9 items with status='OPEN' not in vocab.status — a real load failure. The open had been filed since the first meta pass and was still theoretical; the moment a checker could see the file, the theory became a red error. That is the whole design in one incident: a defect that was documented and ignorable became a defect that stops the build."
       },
       {
         "id": "meta.open.envelope-exemption",
@@ -74,94 +120,219 @@
         "recommendation": "Add `decided_by` + `decided_date` + `rationale`, required whenever `decision` is non-null. Covered by meta.open.envelope-exemption option C (`authority`) if that is taken.",
         "resolve_by": "researcher decision"
       }
-    ]
+    ],
+    "field_rename_20260715": {
+      "what": "The field status was renamed to decision_status on every item in this register.",
+      "why": "A reconciliation is a DECISION ABOUT a rule, not a rule. Its states (OPEN/STANDING/RESOLVED) share no values with the rule lifecycle (LIVE/LEGACY/RECONCILE) — one field name, two unrelated vocabularies, which is exactly the defect this register exists to eliminate, sitting inside the register itself.",
+      "authority": "researcher ruling 2026-07-15 (b: no nomenclature without enums) + the filed recommendation in meta.open.status-collision",
+      "vocabulary": "enum.decision_status"
+    }
   },
-
   "items": [
     {
       "id": "recon.role-enum",
       "concept": "role (ve_nr 115) controlled vocabulary",
-      "status": "OPEN",
       "decision": null,
       "variants": {
-        "catalogue-§8": ["characteristic", "process-qualifier", "standalone", "uncertain"],
-        "cycle-§1": ["characteristic", "qualifier", "standalone", "undecided"],
-        "integrity/readiness": ["characteristic", "qualifier", "standalone"],
-        "success-criteria": ["characteristic", "qualifier", "process-qualifier"]
+        "catalogue-§8": [
+          "characteristic",
+          "process-qualifier",
+          "standalone",
+          "uncertain"
+        ],
+        "cycle-§1": [
+          "characteristic",
+          "qualifier",
+          "standalone",
+          "undecided"
+        ],
+        "integrity/readiness": [
+          "characteristic",
+          "qualifier",
+          "standalone"
+        ],
+        "success-criteria": [
+          "characteristic",
+          "qualifier",
+          "process-qualifier"
+        ]
       },
-      "recommended": ["characteristic", "qualifier", "standalone", "uncertain"],
-      "alias_map": { "process-qualifier": "qualifier", "undecided": "uncertain" },
-      "sources": ["wa-ve-lexical-catalogue-v1 §8", "wa-characteristic-role-lexical-cycle-authoritative-v1 §1", "wa-db-integrity-definition-authoritative-v1 I6"]
+      "recommended": [
+        "characteristic",
+        "qualifier",
+        "standalone",
+        "uncertain"
+      ],
+      "alias_map": {
+        "process-qualifier": "qualifier",
+        "undecided": "uncertain"
+      },
+      "sources": [
+        "wa-ve-lexical-catalogue-v1 §8",
+        "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
+        "wa-db-integrity-definition-authoritative-v1 I6"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.mandatory-ledger",
       "concept": "genre x role mandatory dimension set",
-      "status": "OPEN",
       "decision": null,
       "variants": {
-        "poetic-base-2026-07-11": ["101","102","104","105","106","107","108","112","116","114","115"],
-        "M16-2026-07-14": ["101","102","104","105","106","107","108","109","110","111","112","114","115","116","117","118"],
+        "poetic-base-2026-07-11": [
+          "101",
+          "102",
+          "104",
+          "105",
+          "106",
+          "107",
+          "108",
+          "112",
+          "116",
+          "114",
+          "115"
+        ],
+        "M16-2026-07-14": [
+          "101",
+          "102",
+          "104",
+          "105",
+          "106",
+          "107",
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118"
+        ],
         "narrative": "base + 103,111 per-span"
       },
       "note": "07-14 made 109/110/111/117/118 mandatory (contradicts 07-11 poetic base); 103/111 per-span vs Phase-2-only. Also settle per-role ledgers (characteristic full / qualifier reduced / standalone minimal).",
-      "sources": ["wa-corrected-charac-arc-reread-repeatable-process-v1 §2", "wa-ve-lexical-catalogue-v1 §9 ★"]
+      "sources": [
+        "wa-corrected-charac-arc-reread-repeatable-process-v1 §2",
+        "wa-ve-lexical-catalogue-v1 §9 ★"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.ve-nr-master-list",
       "concept": "the authoritative ve_nr master list",
-      "status": "OPEN",
       "decision": null,
-      "variants": { "catalogue-§9": "101-118", "cycle-§3": "101-116 (117/118 not folded in)" },
+      "variants": {
+        "catalogue-§9": "101-118",
+        "cycle-§3": "101-116 (117/118 not folded in)"
+      },
       "recommended": "101-118 (fold 117/118 into the cycle doc)",
-      "sources": ["wa-ve-lexical-catalogue-v1 §9", "wa-characteristic-role-lexical-cycle-authoritative-v1 §3"]
+      "sources": [
+        "wa-ve-lexical-catalogue-v1 §9",
+        "wa-characteristic-role-lexical-cycle-authoritative-v1 §3"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.integrity-numbering",
       "concept": "the integrity invariant set numbering",
-      "status": "OPEN",
       "decision": null,
-      "variants": { "title": "I1-I11", "actual": "I1-I13 (I12 also named D1/D2; I13 mti-uniqueness)" },
+      "variants": {
+        "title": "I1-I11",
+        "actual": "I1-I13 (I12 also named D1/D2; I13 mti-uniqueness)"
+      },
       "recommended": "canonical I1-I13; retire the D1/D2 double-naming",
-      "sources": ["wa-db-integrity-definition-authoritative-v1"]
+      "sources": [
+        "wa-db-integrity-definition-authoritative-v1"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.resolution-vocab",
       "concept": "resolution-state vocabulary",
-      "status": "OPEN",
       "decision": null,
       "variants": {
-        "catalogue": ["span", "inferred", "unknown", "none/silent"],
-        "01b": ["resolved", "NONE/silent", "UNRESOLVED"],
-        "collection": ["resolved", "UNRESOLVED"]
+        "catalogue": [
+          "span",
+          "inferred",
+          "unknown",
+          "none/silent"
+        ],
+        "01b": [
+          "resolved",
+          "NONE/silent",
+          "UNRESOLVED"
+        ],
+        "collection": [
+          "resolved",
+          "UNRESOLVED"
+        ]
       },
-      "recommended": ["span", "inferred", "unknown", "none"],
-      "sources": ["wa-ve-lexical-catalogue-v1 §1", "01b-VE-field-reliability-and-rules"]
+      "recommended": [
+        "span",
+        "inferred",
+        "unknown",
+        "none"
+      ],
+      "sources": [
+        "wa-ve-lexical-catalogue-v1 §1",
+        "01b-VE-field-reliability-and-rules"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.locus-vocab",
       "concept": "locus (ve_nr 116) vocabulary",
-      "status": "OPEN",
       "decision": null,
       "variants": {
-        "catalogue-classes": ["god", "adversary", "proper", "thing", "seat", "ib-state", "body"],
-        "stored-observed": ["internal:ib-state", "external:god", "external:person", "external:world", "none", "internal:heart", "internal:seat", "internal:spirit"]
+        "catalogue-classes": [
+          "god",
+          "adversary",
+          "proper",
+          "thing",
+          "seat",
+          "ib-state",
+          "body"
+        ],
+        "stored-observed": [
+          "internal:ib-state",
+          "external:god",
+          "external:person",
+          "external:world",
+          "none",
+          "internal:heart",
+          "internal:seat",
+          "internal:spirit"
+        ]
       },
       "note": "also decide handling of the early-band blanket convention (Ps 1-25 = 100% internal:ib-state)",
-      "sources": ["wa-ve-lexical-catalogue-v1 §9", "WA-dimension-reliability-register-v1"]
+      "sources": [
+        "wa-ve-lexical-catalogue-v1 §9",
+        "WA-dimension-reliability-register-v1"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.vocab-home",
       "concept": "where controlled-vocabulary values are authoritative",
-      "status": "OPEN",
       "decision": null,
-      "variants": ["REF doc §2+", "DB wa_vocab_set/wa_vocab_member (canonical post-M32)", "SQL free-text columns (unconstrained)", "patch §3.3 synced copy"],
+      "variants": [
+        "REF doc §2+",
+        "DB wa_vocab_set/wa_vocab_member (canonical post-M32)",
+        "SQL free-text columns (unconstrained)",
+        "patch §3.3 synced copy"
+      ],
       "recommended": "the new configurator (this seed -> DB) is the single home; pull existing member values from the live DB once to seed, then retire the others",
-      "sources": ["wa-reference-v5_6", "create_tables.sql"]
+      "sources": [
+        "wa-reference-v5_6",
+        "create_tables.sql"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.acceptance-sample",
       "concept": "the acceptance-sampling rule (validity acceptance)",
-      "status": "OPEN",
       "decision": null,
       "variants": {
         "book-close-scored-audit": "25 units stratified, >=90% sound, zero fidelity failures",
@@ -169,19 +340,23 @@
         "researcher-2026-07-14": "n=200 random / dimension, 0 errors = 95% confidence (rule of three, defect <~1.5%)"
       },
       "note": "the n=200/95% rule was set verbally this session and is not yet in any doc; decide the canonical acceptance rule (per-dimension n=200 vs per-unit scored audit) and bake it here.",
-      "sources": ["wa-proverbs-reread-success-criteria-20260708", "researcher 2026-07-14 (this session)"]
+      "sources": [
+        "wa-proverbs-reread-success-criteria-20260708",
+        "researcher 2026-07-14 (this session)"
+      ],
+      "decision_status": "OPEN"
     },
     {
       "id": "recon.live-vs-legacy",
       "concept": "the paradigm supersession (which model is authoritative)",
-      "status": "STANDING",
       "decision": "RESET model is authoritative for analysis/lexical/passage/role; programme-prose is authoritative for definition/scope/science/registry",
       "supersession_edges": [
         "change-over 2026-06-25: tier/189-question/cluster/Session-A-D -> focus-point/verse-fan-out/movement (prior 'completed' work = legacy-to-revisit)",
         "qualifier role: retired 2026-07-07 -> reinstated 2026-07-12",
         "passage rule: v1 verse-record-scoped -> v2 candidate-scoped -> 2026-07-13 char-continuity"
       ],
-      "note": "every config item carries status LIVE/LEGACY; this record holds the supersession edges."
+      "note": "every config item carries status LIVE/LEGACY; this record holds the supersession edges.",
+      "decision_status": "STANDING"
     }
   ]
 }

@@ -131,15 +131,34 @@ class Kernel:
         if recon:
             self.recon_ids = {i["id"] for i in recon["items"]}
 
-        for path in sorted(self.root.glob("process/*.json")) + sorted(
-            self.root.glob("utility/*.json")
-        ):
+        # Tier B (process/) and Tier A utilities use the six facets.  Tier A wide
+        # files use their own node names (modules / dependencies / module_gates).
+        # Rather than hard-code every node name -- which would make the kernel know
+        # about the layout, and the layout is authoring ergonomics, not architecture
+        # -- treat ANY array of envelope-bearing objects as a rule list.
+        paths = (sorted(self.root.glob("process/*.json"))
+                 + sorted(self.root.glob("utility/*.json"))
+                 + sorted(self.root.glob("wide/*.json")))
+        for path in paths:
+            rel = str(path.relative_to(self.root)).replace("\\", "/")
+            if rel == "wide/enums.json":
+                continue                      # already loaded as the vocabulary source
+            if rel == "wide/reconciliations.json":
+                # A DECISION REGISTER, not a rulebook.  Its items are decisions
+                # ABOUT rules and deliberately do not carry the envelope (see that
+                # file's meta.envelope + meta.open.envelope-exemption).  They use
+                # enum.decision_status, not enum.status.  Loaded above for recon_ids.
+                continue
             doc = self._read(path)
             if not doc:
                 continue
-            rel = str(path.relative_to(self.root)).replace("\\", "/")
-            for facet in FACETS:
-                for item in expand(doc.get(facet, [])):
+            for node, value in doc.items():
+                if node == "meta" or not isinstance(value, list):
+                    continue
+                if not any(isinstance(x, dict) and ("id" in x or MARKER_DEFAULTS in x)
+                           for x in value):
+                    continue                  # not a rule list (e.g. a plain string array)
+                for item in expand(value):
                     self.items.append((rel, item))
         return not self.errors
 

@@ -924,6 +924,37 @@
         "status_note": "Every value is INACTIVE per the researcher's 2026-07-15 ruling: the API roles are RECORDED now, and each flips to LIVE when a raw extract uses it. This exists because the knowledge was previously held only in code and session logs, and was re-learned expensively — see utility/step.json meta.the_hard_won_knowledge.",
         "not_yet_modelled": "The client also exposes extract_word_data() and get_related_term_cluster(), which COMPOSE the three calls above rather than adding endpoints. The METHOD is an implementation; the API is the rule. If a composition acquires rules of its own, it earns an entry."
       }
+    },
+    {
+      "id": "enum.decision_status",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "decision_status",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums; resolves reconciliations.json meta.open.status-collision",
+      "reference": "iba/config/wide/reconciliations.json",
+      "intent": "The state of a RECONCILIATION — a contested-value decision. Deliberately NOT enum.status: a decision is not a rule, and its lifecycle is not a rule lifecycle. The two were sharing the field name  with no shared values, which the kernel caught as a load failure on 2026-07-15.",
+      "satisfaction": "every reconciliation item carries a decision_status from spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "OPEN",
+            "description": "Not yet ruled. The decision field is null. Everything depending on this concept is blocked — no study module may run on it."
+          },
+          {
+            "value": "STANDING",
+            "description": "Ruled, but permanently live rather than closed: the decision holds AND the item stays open as the register of ongoing supersession edges (recon.live-vs-legacy is the case — the paradigm keeps moving, so its edge list keeps growing). Does not block."
+          },
+          {
+            "value": "RESOLVED",
+            "description": "Ruled and closed. The decision field holds the canonical value, alias_map maps superseded variants onto it, and dependent items flip RECONCILE to LIVE. NOTE: alias_map is not documentation — it is the MIGRATION INPUT that carries existing rows off a retired value (cfgmaint.alias-map-is-migration-input)."
+          }
+        ],
+        "canonical": true
+      }
     }
   ]
 }
