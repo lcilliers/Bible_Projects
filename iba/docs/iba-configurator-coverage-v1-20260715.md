@@ -105,3 +105,42 @@ Items 1–3 are not merely next; they are **already failing a check**. The kerne
 The mapping was done **programmatically against the live config, by rule id** — not by reading the config and judging. That matters: the same exercise done by recollection would have scored the framework higher. Three items I would have called homed were not (`STATED/INFERRED`, `field-authority`, `soft-delete discipline` — all real rules, all discussed today, none authored).
 
 That is the whole thesis in miniature: **what you remember deciding and what the artefact contains are different things, and only the second one runs.**
+
+---
+
+## 7. Re-scan addendum (2026-07-15) — the inventory is bigger than A.9
+
+Two re-scans were run after this map was drafted, at the researcher's suggestion. Full findings:
+[scan A — instructions & catalogue](scan-2026-07-15-instructions-catalogue.md) ·
+[scan B — rules, constants, settings](scan-2026-07-15-rules-constants-settings.md).
+
+**They closed three A.9 gaps and added ~22 items A.9 never named.** The revised count:
+
+| | v1 | **revised** |
+|---|---:|---:|
+| Inventory items | 92 | **~114** |
+| Homed | 43 | 43 |
+| Gap — home exists | 44 | **~66** |
+| Gap — NO HOME | 5 | 5 |
+
+**Closed** (the plan listed these as "still to pull"): the Tiers catalogue (**126 active questions** T0:9·T1:18·T2:6·T3:33·T4:18·T5:9·T6:13·T7:20, 16 dropped from 189, plus the **VE-01..VE-17** inventory) · the versecontext **R1–R4** rules · the registry-management vocabulary.
+
+**Added** — 12 vocabularies (role_provenance · vc_status · patch postures · quality scores · verdict classes · check classes · gate outcomes · skip-list reasons · T2 split · stem vocabulary · disposition) and ~10 rule-sets (I2b · D1/D2 · VC R1–R4 · re-run R1–R6 · API circuit-breaker · API self-verification · Gate-1 span-orphan · audit-clean 7 checks · the anomaly test · staged sequence 0–5 · readiness groups §A–F).
+
+**None of the additions needs a new file.** They land in the same eight pending files. §3's mapping holds — the framework absorbed a 24% larger inventory without a structural change, which is the strongest evidence yet that the shape is right.
+
+### ★ The scans found one live danger and four new reconciliations
+
+1. ** is a loaded gun** —  (REMOTE) and  (UNTAGGED). The client hard-codes localhost + ESV_th and ignores  entirely. **The only reason this study has tagged morphology is that the client ignores its own configuration.**  v1 ruled "rewrite the client to read .env" — which would have silently destroyed the evidentiary floor. **Corrected at 0.1.4**; 's values still need fixing, and the order matters:  first, then the client.
+2. **DB-vs-config authority** — all four pattern registers (rules · file patterns · label patterns · patch types) declare the **DB** their source of truth. The configurator claims to be the single home for rules. Both cannot be true.
+3. **Two version conventions** — GR-FILE-003 ( always) vs file-organisation-rules ( for session artefacts). Two pattern classes; needs a ruling.
+4. ** enum — new evidence.**  may be a **sub-form of qualifier**, not a peer. That possibility is not in 's variant list and changes the answer.
+5. **G8 is absent** from the measures runner while G0–G7, G9, G10 emit; **two thresholds exist only in code** (the G0 digestion budget; the candidate:total band, which has **no value at all**).
+
+### What the re-scan says about the method
+
+The scans found **more in four minutes than A.9's three scans recorded** — including a defect that would have broken the study. Three observations worth keeping:
+
+- **A.9 was a good index and an incomplete one.** It named ~92 of ~114. The 22 it missed were not obscure; they were in authoritative instruction docs. An inventory compiled by reading is always a sample.
+- **The most dangerous finding came from reading VALUES, not names.** The earlier audit grepped  for key names and reported a mismatch. The re-scan read what the keys said. Same file, same day, opposite conclusion.
+- **The framework did not move.** ~22 new items, zero new files. That is the test a structure has to pass.

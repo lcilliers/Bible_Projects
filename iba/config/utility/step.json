@@ -37,7 +37,22 @@
         "3. The defaults happened to be right, so nothing failed loudly. A config that silently does nothing is indistinguishable from one that works — until it isn't."
       ],
       "why_the_config_catches_this": "The plan (§4) recorded 'env-var names in the client currently mismatch .env — standardise in the configurator' as a tidy-up. It is not a tidy-up: it means the version stamped on six months of raw data is an assumption, not a record. gate.step.env-parity makes it a red load failure.",
-      "action": "The names are settled HERE (see step.connection). The client is rewritten to read them (plan §2.4 — existing scripts are a starting point, expected to be substantially rewritten). Do not 'fix' .env to match the client: config decides the names, code follows."
+      "action": "The names are settled HERE (see step.connection). The client is rewritten to read them (plan §2.4 — existing scripts are a starting point, expected to be substantially rewritten). Do not 'fix' .env to match the client: config decides the names, code follows.",
+      "★ WORSE_THAN_REPORTED_20260715": {
+        "what_the_re-scan_added": ".env's VALUES. The first report had only its key names.",
+        ".env actually holds": {
+          "STEP_API_BASE_URL": "https://www.stepbible.org/api  (REMOTE)",
+          "STEP_DEFAULT_VERSION": "ESV  (UNTAGGED)",
+          "STEP_REQUEST_TIMEOUT": "10"
+        },
+        "the client hard-codes": {
+          "base": "http://localhost:8989  (LOCAL)",
+          "version": "ESV_th  (TAGGED)",
+          "timeout": "30"
+        },
+        "★ the_conclusion": "The mismatch is not a harmless bug — IT IS THE ONLY THING KEEPING THE STUDY CORRECT. .env is configured for the remote public API with untagged ESV (exactly what docs/step_setup.md instructs). The client ignores .env entirely and uses the local server with the tagged module. Make the client read its configuration, change nothing else, and the study silently loses every Strong's number and every morph code it depends on — with no error at any layer.",
+        "how_close_this_came": "step.connection v1 ruled exactly that change ('the client is rewritten to read them; .env is NOT bent to match the client'). The rule was authored from a grep of key names. It took reading the values to see that the rule was a loaded gun."
+      }
     },
     "nodes": {
       "process": "How STEP is used: which API for what, the connection, the cap, the caching policy, the version-as-provenance rule.",
@@ -199,11 +214,11 @@
       "kind": "setting",
       "subject": "step-connection",
       "status": "LIVE",
-      "version": 1,
-      "authority": "researcher 2026-07-15; read from scripts/analytics/step_client.py + .env 2026-07-15",
+      "version": 2,
+      "authority": "researcher 2026-07-15; CORRECTED same day after reading .env's VALUES (v1 had only read its key names). v1's rule was dangerous.",
       "reference": "docs/step_setup.md; plan §4",
       "intent": "Settle the connection parameters and their NAMES in one place, ending the .env/client mismatch that made STEP configuration a no-op.",
-      "satisfaction": "The client reads exactly these names; .env declares exactly these names; gate.step.env-parity confirms it.",
+      "satisfaction": "The client reads exactly these names AND these values; .env declares the same names with the same values; gate.step.env-parity confirms BOTH.",
       "validation": {
         "axis": "C",
         "check": "env-parity",
@@ -211,28 +226,40 @@
         "enforcement": "gate"
       },
       "spec": {
-        "canonical_names": {
+        "canonical_names_and_values": {
           "STEP_API_BASE_URL": {
-            "default": "http://localhost:8989",
-            "note": "LOCAL server. Adopted from .env — the client's STEP_LOCAL_URL is RETIRED."
+            "value": "http://localhost:8989",
+            "⚠ .env currently holds": "https://www.stepbible.org/api — THE REMOTE PUBLIC API, which this project does not use",
+            "note": "Name adopted from .env; VALUE adopted from the client. The client's STEP_LOCAL_URL name is retired."
           },
           "STEP_DEFAULT_VERSION": {
-            "default": "ESV_th",
-            "note": "The STEP module. PROVENANCE of every raw row, not a preference — see open.step.version-is-provenance. Adopted from .env; the client's STEP_VERSION is RETIRED, as is bible_analytics' separate reading of this name for a different purpose."
+            "value": "ESV_th",
+            "⚠ .env currently holds": "ESV — UNTAGGED. ESV_th is the Tyndale-House TAGGED module carrying the Strong's numbers and morphology the entire study depends on.",
+            "note": "Name adopted from .env; VALUE adopted from the client. The client's STEP_VERSION name is retired."
           },
           "STEP_REQUEST_TIMEOUT": {
-            "default": "30",
-            "note": "Seconds. Adopted from .env — the client's STEP_TIMEOUT is RETIRED."
+            "value": "30",
+            "⚠ .env currently holds": "10",
+            "note": "Name from .env; value from the client."
           }
         },
-        "auth": "NONE. STEP is local and takes no key. STEP_API_KEY is referenced nowhere in .env and must not be introduced — an auth path to a local server is a liability with no benefit.",
+        "★ THE_CORRECTION": {
+          "what_v1_said": "'The .env names are canonical because config decides names and code follows. The client is rewritten to read them; .env is NOT bent to match the client.'",
+          "why_that_was_DANGEROUS": "v1 read .env's key NAMES and never read its VALUES. .env is configured for the REMOTE public API with UNTAGGED ESV — exactly what docs/step_setup.md describes. Rewriting the client to read .env as-is would silently point the study at stepbible.org asking for plain ESV: no Strong's, no morphology, a well-formed 200 response, and NO ERROR. Every fetch would return correct-looking text containing none of the study's evidence.",
+          "★ the_finding_underneath": "THE ONLY REASON THIS STUDY HAS TAGGED DATA IS THAT THE CLIENT IGNORES ITS OWN CONFIGURATION. The env-var mismatch is not a bug that has been harmless — it is the sole thing preventing catastrophe. Anyone 'tidying up' the names to match .env, with no other change, would destroy the evidentiary floor and nothing would fail.",
+          "the_corrected_rule": "NAMES from .env (they are the better names). VALUES from the client (they are the working values). .env's VALUES ARE WRONG and must be corrected. Both halves are config decisions; neither artefact is authoritative on its own.",
+          "the_lesson": "v1 was authored from key names read by grep — I checked WHICH keys existed and never asked WHAT THEY SAID. A config audit that reads names and not values is not an audit. This is the third doc-vs-code divergence found today, and the first that would have caused damage."
+        },
+        "auth": "NONE. STEP is local and takes no key. .env contains no STEP_API_KEY and none must be introduced.",
         "retired_names": [
           "STEP_LOCAL_URL",
           "STEP_VERSION",
           "STEP_TIMEOUT"
         ],
-        "why_env_wins": "The .env names are canonical because config decides names and code follows (plan §2.2/§2.4). The client is rewritten to read them; .env is NOT bent to match the client.",
-        "⚠ defect": "See meta.the_live_defect — the client currently reads none of these, so .env's STEP settings have never applied."
+        "⚠ migration_order": "CORRECT .ENV'S VALUES FIRST, THEN rewrite the client. Doing it the other way round — client first — switches the study to remote/untagged for the window in between, and the damage is silent.",
+        "cites": [
+          "step.api-set"
+        ]
       }
     },
     {
@@ -592,11 +619,11 @@
       "kind": "gate",
       "subject": "step-env-parity",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "step.connection; the defect found 2026-07-15",
       "reference": "iba/config/utility/step.json meta.the_live_defect",
       "intent": "Refuse to run when the names the code reads and the names the environment declares have drifted apart — the defect that made STEP configuration a silent no-op for six months.",
-      "satisfaction": "Every canonical name in step.connection is declared in the environment AND read by the client; no retired name is read by anything.",
+      "satisfaction": "Every canonical name is present in the environment WITH ITS CANONICAL VALUE; the client reads those names; no retired name is read anywhere.",
       "validation": {
         "axis": "C",
         "check": "env-parity",
@@ -608,12 +635,14 @@
         "implements": "step.connection",
         "checks": [
           "every canonical name is present in the environment",
+          "★ every canonical name holds its CANONICAL VALUE — base URL is the LOCAL server, version is ESV_th, not ESV",
           "the client reads the canonical names, not the retired ones",
           "no retired name (STEP_LOCAL_URL / STEP_VERSION / STEP_TIMEOUT) is read anywhere",
-          "no two consumers read different names for the same fact — the bible_analytics vs step_client version split"
+          "no two consumers read different names for the same fact"
         ],
         "why_red": "A silent fallback to a default is the failure mode. The application must not be able to run on configuration it is not actually reading.",
-        "would_have_caught": "The 2026-07-15 defect, on the first run."
+        "would_have_caught": "The 2026-07-15 name mismatch on the first run — AND the value defect, which the name check alone would have passed straight through.",
+        "⚠ why_the_value_check_is_the_important_half": "A name-only check passes on .env as it stands today — and .env as it stands today would point the study at the remote server asking for untagged ESV. The names were never the risk; the values are. gate.step.available's known-answer probe is the backstop: a server that is up and returning untagged text fails the probe, not the name check."
       }
     },
     {
