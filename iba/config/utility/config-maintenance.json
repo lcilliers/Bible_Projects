@@ -1,0 +1,613 @@
+{
+  "utility_code": "config-maintenance",
+  "tier": "A",
+  "name": "Configurator maintenance",
+
+  "meta": {
+    "purpose": "THE SOLE WRITE-PATH TO THE CONFIGURATOR. Authoring, loading, self-validating, versioning, diffing, rolling back — and, per the 2026-07-15 ruling, propagating a config change into the schema it governs. No module writes cfg_* directly; every change to what the application does passes through here and is audited.",
+    "why_it_is_first": "The configurator is what replaces 'the model remembering the rules' — the single named fix for six months of decided-vs-actual drift. This utility is the configurator's only door. If it is weak, the rules drift again and nothing else in the design matters.",
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
+    "node_shape": "Utility files use the SAME six nodes as process files (process · entities · output · validation · naming · filing). Consistency over novelty; an empty facet is simply absent. → open.cfgmaint.utility-node-shape.",
+
+    "the_bootstrap_paradox": {
+      "problem": "This utility's own rules live in the configurator it maintains. To load config it must already have config. To validate config it must already be valid. The design says nothing is hard-coded (plan §2.2) — but something must be, or the regress is infinite.",
+      "consequence": "There must be EXACTLY ONE hard-coded thing: the envelope-validator KERNEL. It cannot read its rules from the store it is checking, because a corrupt store would corrupt its own checker and report itself sound. That is not a hypothetical: 'AI-as-sole-quality-gate' and 'a scan gate silently non-operational across whole books' are both in the failure record.",
+      "the_rule": "The kernel is code, fixed, minimal, and versioned with the application — NOT config. It knows only the envelope (A.10) and how to check an item against it. Everything above the envelope — every study rule, gate, vocabulary and wiring — is config, as designed.",
+      "bounding_it": "The kernel is the ONLY permitted hard-coding in the application. Its boundary is testable: if the kernel needs to know anything about a dimension, a gate, a genre, or a vocabulary, that knowledge is in the wrong place. Name it, bound it, test it — an unnamed exception is how hard-coding sprawls back.",
+      "cold_start": "On an empty DB the utility loads its own seed with the kernel alone, self-validates, and stamps cfg_version 1. Only then can it load anything else. → open.cfgmaint.bootstrap-order."
+    },
+
+    "nodes": {
+      "process": "How maintenance works: the sole-write-path rule, the load lifecycle, versioning, audit, rollback, schema propagation, and the refusal rules.",
+      "entities": "What it owns: the rule store, the version register, the change log, the seed manifest.",
+      "output": "Load reports, version diffs, the migration proposal.",
+      "validation": "The self-validation battery — the checks that run BEFORE any study run.",
+      "naming": "Naming parameters.",
+      "filing": "Filing parameters."
+    },
+
+    "open": [
+      {
+        "id": "open.cfgmaint.schema-propagation-safety",
+        "issue": "THE DANGEROUS ONE. The 2026-07-15 ruling makes a config change a schema-change trigger. But a config edit can now imply a DESTRUCTIVE migration: remove a value from enum.role -> the CHECK constraint regenerates -> every existing row holding that value is suddenly invalid. The researcher edits one line of JSON; the utility proposes dropping data.",
+        "consequence": "The most ordinary maintenance act — editing a vocabulary — is now capable of data loss. There is currently NO rule saying what happens to rows that a config change invalidates.",
+        "options": [
+          "A: PROPOSE-only — the utility never applies a schema change; it emits a migration proposal + an impact report (n rows affected), and the researcher applies it",
+          "B: AUTO-APPLY additive changes (new enum value, new nullable column); PROPOSE anything narrowing or destructive",
+          "C: AUTO-APPLY everything; rely on backups"
+        ],
+        "recommendation": "B, with A as the floor: nothing narrowing or destructive is ever applied without an impact report and an explicit researcher act. And note the connection — `alias_map` is not documentation, it is THE MIGRATION INPUT: it is what maps rows off a retired value onto its canonical replacement. A narrowing change with no alias_map is incomplete config, and should be REFUSED, not applied.",
+        "resolve_by": "researcher decision — blocks any live use of schema propagation"
+      },
+      {
+        "id": "open.cfgmaint.precedence",
+        "issue": "Seed files are the human-editable input; the DB is authoritative at runtime (plan A.1). What happens when BOTH change — a `config set` edit in the DB, then a seed reload that does not know about it? Carried from plan A.8.",
+        "consequence": "The DB edit is silently reverted by the next load, or the seed is silently ignored. Either way the config says one thing and the files say another — which is the drift this whole build exists to end.",
+        "options": [
+          "A: seed is the ONLY write path; `config set` writes the seed file then reloads (files stay the source, git stays the history)",
+          "B: DB is the write path; the seed is exported FROM the DB after an edit",
+          "C: last-write-wins with a conflict warning"
+        ],
+        "recommendation": "A. It keeps git as the change history (a design goal), makes every change reviewable as a diff, and means there is exactly one direction of flow: seed -> DB. B loses git; C institutionalises drift.",
+        "resolve_by": "researcher decision — decides the whole editing model"
+      },
+      {
+        "id": "open.cfgmaint.check-spec-storage",
+        "issue": "`validation.check` is free text ('value-in-domain', 'pair-direction driver->term', 'mandatory-not-absent + self-interpretable'). The validation engine cannot dispatch on free text, and compound checks are jammed into one string with '+'. Carried from ../_manifest.json meta.open.check-vocabulary; this utility is where it lands.",
+        "options": [
+          "A: named check + typed parameters — `{check: 'value-in-domain', params: {enum: 'role'}}`; the engine has a registry of named checks",
+          "B: a small rule DSL / expression language",
+          "C: a query id pointing at stored SQL"
+        ],
+        "recommendation": "A. It is inspectable, testable, and each named check is a small unit of code the kernel can confirm exists at load (an unresolvable check = invalid config). B invents a language; C hides logic in SQL where nothing can review it.",
+        "resolve_by": "researcher decision — blocks the validation engine"
+      },
+      {
+        "id": "open.cfgmaint.one-home-enforceability",
+        "issue": "Layout v2 §2.3 rules that a rule has exactly one home. `gate.cfgmaint.id-unique` catches a duplicated ID — but NOT the same rule restated in prose under two different ids, which is exactly how the four divergent `role` vocabularies happened.",
+        "consequence": "The rule that prevents the programme's most pervasive defect is only partly mechanisable. A [C] gate sees ids, not meaning.",
+        "options": [
+          "A: accept partial — ids and cross-references are checked; semantic duplication is a review concern",
+          "B: [I] duplicate-detection pass at load (a model reads the store and flags near-duplicate statements)",
+          "C: structural — a rule may only be authored in its `governs`-owning file, making most duplication impossible by construction"
+        ],
+        "recommendation": "C + A. C removes the common case structurally; A accepts the residue honestly rather than claiming a gate that does not exist. B is a nice-to-have later, not a foundation.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.cfgmaint.bootstrap-order",
+        "issue": "Cold start: the utility must load its own config before it can load anything else, using only the kernel. The order and failure behaviour are unspecified.",
+        "recommendation": "Fixed order: kernel -> this utility's own seed -> _manifest envelope -> wide/enums -> wide/* -> utilities -> processes. Any failure halts the whole load; a partially-loaded config never runs.",
+        "resolve_by": "design, once the loader is built"
+      },
+      {
+        "id": "open.cfgmaint.utility-node-shape",
+        "issue": "Utility files here reuse the six process facets. `naming` and `filing` are thin for a utility, and `entities` means something different (its own control tables, not study data).",
+        "recommendation": "Keep the shape — consistency is worth more than a tailored node-set, and the DB flattens all of it to one rule table anyway (../_manifest.json meta.open.rule-table). Revisit only if a utility genuinely cannot express itself.",
+        "resolve_by": "researcher evaluation of this file"
+      }
+    ]
+  },
+
+  "process": [
+    {
+      "id": "cfgmaint.sole-write-path",
+      "governs": ["util.config-maintenance"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.3.3 'the sole write-path to the configurator'; §A.6",
+      "reference": "plan §3.3.3",
+      "intent": "Force every change to the application's behaviour through one audited door, so what the application does can never diverge from what was decided without a record of it.",
+      "satisfaction": "No module, script or hand-edit writes cfg_* directly. Every cfg_* write carries a cfg_version and a cfg_change_log entry.",
+      "validation": { "axis": "C", "check": "writer-is-cfgmaint", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "statement": "This utility is the ONLY writer of cfg_*. The read side is the config service; no other component writes.",
+        "enforcement_note": "db: cfg_* write permission is structurally limited (triggers rejecting writes without a valid run-context stamp). gate: the patch validator rejects any cfg_* target from another module.",
+        "failure_it_prevents": "'Rules not encoded — dependence on the model's memory' and 'a persistent drift between what was decided and what the live artefacts actually do' — both named root causes (plan §1.2). An unaudited side-door restores both."
+      }
+    },
+    {
+      "id": "cfgmaint.load-lifecycle",
+      "governs": ["util.config-maintenance"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.4",
+      "reference": "plan §A.4",
+      "intent": "Define the one path config takes from a human edit to runtime authority, so no step can be skipped.",
+      "satisfaction": "Every load runs: read seed -> self-validate -> write cfg_* -> stamp cfg_version with a source hash. A load that skips validation is impossible, not discouraged.",
+      "validation": { "axis": "C", "check": "lifecycle-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "steps": [
+          "1. READ — the seed files under config/ (never read again during a run)",
+          "2. SELF-VALIDATE — the full battery (see the validation node). Invalid -> REJECT, nothing written",
+          "3. WRITE — cfg_* replaced transactionally; a partial load never exists",
+          "4. VERSION — stamp cfg_version with a per-file hash of the seed",
+          "5. AUDIT — every changed item recorded in cfg_change_log (old -> new)"
+        ],
+        "atomicity": "The whole load is one transaction. A failure leaves the previous config intact and runnable.",
+        "runtime_rule": "NO FILE READS DURING A RUN (plan A.4.3). The DB is authoritative at runtime; the files are the seed only."
+      }
+    },
+    {
+      "id": "cfgmaint.reject-invalid",
+      "governs": ["util.config-maintenance"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.5 'invalid config -> load rejected; no run proceeds on invalid config'",
+      "reference": "plan §A.5",
+      "intent": "Catch bad wiring before it executes, rather than discovering it mid-run against real data.",
+      "satisfaction": "An invalid seed is rejected with a precise, located error. Nothing is written and no run proceeds.",
+      "validation": { "axis": "C", "check": "reject-on-invalid", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Invalid config -> load REJECTED. No partial loads, no warnings-and-continue, no 'fix it later'.",
+        "error_requirement": "The error must name the file, the item id, the field, and the rule broken. A load failure the researcher cannot act on is a load failure that gets bypassed.",
+        "note": "This is the point of the whole design: bad wiring never executes."
+      }
+    },
+    {
+      "id": "cfgmaint.refuse-reconcile",
+      "governs": ["util.config-maintenance"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15; config/README.md status discipline",
+      "reference": "iba/config/README.md",
+      "intent": "Refuse to run study work on a rule whose value is contested — because running on a known-unknown is precisely how invalid data was banked before.",
+      "satisfaction": "A study module whose rule-set contains a RECONCILE item does not run. The refusal names the item and its reconciliation id.",
+      "validation": { "axis": "C", "check": "no-reconcile-in-scope", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "RECONCILE blocks its dependent study modules. Config still LOADS with RECONCILE items — they are legitimate, recorded state — but the modules depending on them refuse to run.",
+        "scope_note": "Blocks STUDY modules only. Loading, diffing, reporting and reconciliation-resolution must all work while items are RECONCILE, or the register could never be worked through.",
+        "current_state": "14 RECONCILE items across the 3 authored process files + 3 enums. recon.mandatory-ledger and recon.role-enum are the hard blockers."
+      }
+    },
+    {
+      "id": "cfgmaint.version-pinning",
+      "governs": ["util.config-maintenance", "util.run"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.1 'every run is pinned to the config version it used'; §3.7.2",
+      "reference": "plan §A.4.4",
+      "intent": "Make a run reproducible by recording the exact rules it ran under — so an old result can be re-derived and a changed rule explains a changed result.",
+      "satisfaction": "Every run records its cfg_version; any run can be replayed against the exact config it used.",
+      "validation": { "axis": "C", "check": "run-has-cfg-version", "severity": "red", "enforcement": "db:not-null" },
+      "spec": {
+        "statement": "Every run is pinned to a cfg_version. A result without a config version is uninterpretable.",
+        "enforcement_note": "PROJECTED AS NOT NULL on the run table's cfg_version FK.",
+        "why": "Without this, 'the rules changed' and 'the read changed' are indistinguishable — which is the state the 07-14 audit had to untangle by hand."
+      }
+    },
+    {
+      "id": "cfgmaint.audit-every-change",
+      "governs": ["util.config-maintenance"],
+      "kind": "provenance",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.3.3 'every change audited in cfg_change_log'",
+      "reference": "plan §A.4.5",
+      "intent": "Record who changed what rule, when, from what, to what — so a rule's history is as recoverable as the data's.",
+      "satisfaction": "Every cfg_* item change writes a cfg_change_log row: version, item id, field, old, new, who, when, why.",
+      "validation": { "axis": "C", "check": "change-logged", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "holds": ["cfg_version", "item id", "field", "old value", "new value", "changed_by", "changed_at", "rationale"],
+        "rationale_required": true,
+        "note": "`changed_by` + `rationale` matter more here than anywhere: a ruling with no provenance is indistinguishable from a default someone typed (wide/reconciliations.json meta.open.decision-provenance). Git carries the seed diff; this carries the reason."
+      }
+    },
+    {
+      "id": "cfgmaint.schema-propagation",
+      "governs": ["util.config-maintenance"],
+      "kind": "principle",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (§1.1, §1.2)",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
+      "intent": "Carry the researcher's ruling that DB controls are subservient to config: when a config rule with db:* enforcement changes, the schema must follow — via this utility, never by hand.",
+      "satisfaction": "After any load, every db:*-enforced rule's projection in the live schema matches its config definition, or a migration is raised.",
+      "validation": { "axis": "C", "check": "schema-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "A config change to a db:*-enforced rule TRIGGERS a schema-change requirement. The utility diffs config against the live schema and raises the migration. The schema never authors a constraint; it only ever receives one.",
+        "mechanism": [
+          "1. read every rule whose validation.enforcement starts `db:` (or is `db+gate`)",
+          "2. derive its expected projection (CHECK from an enum's spec.values; FK; NOT NULL; index)",
+          "3. diff against the live schema",
+          "4. classify the delta: ADDITIVE (widening) vs NARROWING vs DESTRUCTIVE",
+          "5. produce a migration + an impact report (rows affected)"
+        ],
+        "canonical": false,
+        "reconcile": "open.cfgmaint.schema-propagation-safety",
+        "note": "⚠ RECONCILE — apply-vs-propose is UNRULED, and this is the dangerous one: editing one line of a vocabulary can now imply dropping data. No live use until ruled.",
+        "hand_applied_is_a_defect": "A constraint applied outside this utility is a defect by construction — plan §3.4.2 'no implicit/undocumented supersession'. It also silently breaks schema-parity."
+      }
+    },
+    {
+      "id": "cfgmaint.alias-map-is-migration-input",
+      "governs": ["util.config-maintenance"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "derived from the 2026-07-15 enforcement ruling",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
+      "intent": "Make explicit that alias_map is operational, not documentary — it is what carries existing rows off a retired value when a vocabulary narrows.",
+      "satisfaction": "Every narrowing vocabulary change supplies an alias_map covering every retired value that has rows.",
+      "validation": { "axis": "C", "check": "alias-covers-retired-values", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "alias_map is THE MIGRATION INPUT. A narrowing change with no alias_map for a value that has rows is INCOMPLETE CONFIG and is refused — not applied, not warned about.",
+        "example": "recon.role-enum's alias_map {process-qualifier -> qualifier, undecided -> uncertain} is exactly what will remap existing role rows when that reconciliation is ruled. Without it, ruling the reconciliation would invalidate rows with no path forward.",
+        "why_it_matters": "This turns a documentation field into the thing that makes a ruling safely applicable — and it means the alias maps already authored in wide/enums.json are load-bearing."
+      }
+    },
+    {
+      "id": "cfgmaint.rollback",
+      "governs": ["util.config-maintenance"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.3.3 'version diff and rollback'",
+      "reference": "plan §A.8",
+      "intent": "Make a config change reversible, so a bad rule is a setback rather than an incident.",
+      "satisfaction": "Any prior cfg_version can be restored; the restore is itself a versioned, audited change.",
+      "validation": { "axis": "C", "check": "rollback-restores", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Rollback restores a prior cfg_version. It is a NEW version (forward-only history), never an erasure.",
+        "⚠ schema_caveat": "A rollback of a db:*-enforced rule implies a REVERSE schema migration — with the same destructive risk as forward propagation. Rollback is not free once the schema follows config. Bound by open.cfgmaint.schema-propagation-safety.",
+        "note": "Config rollback does NOT roll back data written under the old config. Those are separate controls (the run manager's replayable patches)."
+      }
+    },
+    {
+      "id": "cfgmaint.kernel-is-the-only-hardcoding",
+      "governs": ["util.config-maintenance"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "derived from plan §2.2 + the bootstrap paradox (see meta)",
+      "reference": "plan §2.2 'never hard-coded'",
+      "intent": "Name and bound the one necessary exception to 'nothing is hard-coded', so it cannot sprawl back into the code it was built to eliminate.",
+      "satisfaction": "The kernel knows the envelope and nothing else. No study concept — dimension, gate, genre, vocabulary — appears in kernel code.",
+      "validation": { "axis": "C", "check": "kernel-knows-only-envelope", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "The envelope-validator KERNEL is the only permitted hard-coding in the application. It is code, fixed, minimal, versioned with the app — not config.",
+        "why_it_must_exist": "A validator that reads its rules from the store it is checking cannot detect that store being corrupt: it would corrupt its own checks and report itself sound.",
+        "the_test": "If the kernel needs to know anything about a dimension, a gate, a genre or a vocabulary, that knowledge is in the wrong place.",
+        "failure_it_prevents": "'Rules not encoded — dependence on the model's memory' (plan §1.2). An unnamed, unbounded exception is how hard-coding creeps back — and this design has exactly one."
+      }
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "ent.cfg.rule",
+      "governs": ["util.config-maintenance"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.10 (rule-centric schema)",
+      "reference": "plan §A.10; ../_manifest.json meta.envelope",
+      "intent": "The rule store — every configuration item, of every kind, as a row carrying the common envelope. This IS the configurator.",
+      "satisfaction": "One row per rule; envelope complete; kind-specific spec in a sub-table or a validated JSON body.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per rule",
+        "identity": "id (frozen at mint; globally unique)",
+        "holds": ["the envelope (id, governs, kind, status, version, authority, reference, intent, satisfaction, validation)", "the kind-specific spec", "cfg_version"],
+        "queryable_axes": ["by kind (what sort of rule)", "by governs (which process/utility loads it)"],
+        "note": "⚠ One table + kind-specific sub-tables, or table-per-kind? See ../_manifest.json meta.open.rule-table. The researcher's 'these will all become one table (perhaps)' points at the former, and so does the envelope's shape."
+      }
+    },
+    {
+      "id": "ent.cfg.version",
+      "governs": ["util.config-maintenance"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.3 cfg_version",
+      "reference": "plan §A.4",
+      "intent": "The version register — one row per load, with the seed hash that produced it. What every run pins to.",
+      "satisfaction": "One row per load; hash recorded; immutable once stamped.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per load",
+        "holds": ["version_id", "loaded_at", "per-file source hash", "loaded_by", "note"],
+        "immutable": true,
+        "note": "The per-file hash is what makes 'the config that ran' provable rather than assumed — _manifest.json currently says hashes are 'to be added when the loader is built'. They are not optional; without them the pin is a label, not evidence."
+      }
+    },
+    {
+      "id": "ent.cfg.change-log",
+      "governs": ["util.config-maintenance"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.3 cfg_change_log",
+      "reference": "plan §A.4.5",
+      "intent": "The audit trail — every field-level change to every rule, with who and why.",
+      "satisfaction": "One row per changed field per version; append-only.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per changed field per version",
+        "holds": ["cfg_version", "item id", "field", "old", "new", "changed_by", "changed_at", "rationale"],
+        "append_only": true,
+        "implements": "cfgmaint.audit-every-change"
+      }
+    },
+    {
+      "id": "ent.cfg.seed-manifest",
+      "governs": ["util.config-maintenance", "util.filing"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "config/_manifest.json",
+      "reference": "plan §A.12",
+      "intent": "What seed files exist, their hashes, and which are authored vs pending — so a load can prove it read everything it should have.",
+      "satisfaction": "Every seed file is declared and hashed; an undeclared file in config/ is an error, not a silent addition.",
+      "validation": { "axis": "C", "check": "seed-manifest-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "holds": ["file", "hash", "status (authored/pending)", "tier", "kind(s)"],
+        "note": "An undeclared seed file must FAIL the load. 'Silent gaps' is a named failure class — a config file nobody declared is exactly that.",
+        "live_state": "config/_manifest.json — currently 4 authored (envelope, enums, reconciliations) + 3 process files + this utility."
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "id": "out.cfg.load-report",
+      "governs": ["util.config-maintenance"],
+      "kind": "output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.6 'Reviews'",
+      "reference": "plan §3.6",
+      "intent": "Tell the researcher what loaded, what changed, and what is blocked — the routine artefact of maintaining config.",
+      "satisfaction": "Every load emits a report: version, files + hashes, items by kind/status, changes, and the blocked set.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "format": "md",
+        "must_include": ["cfg_version + hashes", "counts by kind and status", "the change list (old -> new)", "RECONCILE items and what they block", "validation results"]
+      }
+    },
+    {
+      "id": "out.cfg.migration-proposal",
+      "governs": ["util.config-maintenance"],
+      "kind": "output",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "cfgmaint.schema-propagation",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
+      "intent": "Show what a config change would do to the schema and the data BEFORE it does it.",
+      "satisfaction": "Every schema-affecting config change emits a proposal with an impact report.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "format": "md + sql",
+        "must_include": ["the delta, classified additive/narrowing/destructive", "ROWS AFFECTED per change", "the alias_map that carries them", "the reverse migration"],
+        "canonical": false,
+        "reconcile": "open.cfgmaint.schema-propagation-safety",
+        "note": "⚠ 'Rows affected' is the number that stops a one-line JSON edit becoming a data-loss incident. It is the whole point of the artefact."
+      }
+    },
+    {
+      "id": "out.cfg.version-diff",
+      "governs": ["util.config-maintenance"],
+      "kind": "output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.3.3 'version diff'",
+      "reference": "plan §A.8",
+      "intent": "Show what changed between two config versions — the rule-level answer to 'why did this run behave differently'.",
+      "satisfaction": "Any two cfg_versions can be diffed at item + field level.",
+      "validation": { "axis": "C", "check": "artefact-regenerable", "severity": "amber", "enforcement": "gate" },
+      "spec": { "format": "md", "note": "Git diffs the seed; this diffs what actually loaded. They should agree — if they do not, something wrote cfg_* outside this utility." }
+    }
+  ],
+
+  "validation": [
+    { "_comment": "── The self-validation battery (plan A.5). Runs at load, BEFORE any study run. Any red -> load rejected, nothing written." },
+
+    {
+      "id": "gate.cfgmaint.envelope-complete",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "../_manifest.json meta.envelope",
+      "reference": "plan §A.10",
+      "intent": "The kernel's own check — every item carries a complete, well-typed envelope.",
+      "satisfaction": "Every item has every required envelope field, and every controlled field holds a value from its vocabulary.",
+      "validation": { "axis": "C", "check": "envelope-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per item",
+        "kernel": true,
+        "checks": ["required fields present", "governs ⊆ vocab.governs", "kind ∈ vocab.kind", "status ∈ vocab.status", "validation.axis ∈ vocab.axis", "validation.severity ∈ vocab.severity", "validation.enforcement ∈ vocab.enforcement"],
+        "note": "PROVEN: run ad-hoc on 2026-07-15 against the 3 process files, it caught 47 real breaks — an invented `entity`/`output`/`route` kind, and `governs: lexical` failing everywhere because the vocabulary said `lexicon`. The lexicon/lexical collision had been a filed open question for a day; the kernel turned it into a load failure the moment anything used it. This is the design working before it exists."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.id-unique",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 open.id-uniqueness",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §6",
+      "intent": "Guarantee ids are globally unique, since they are the only stable handle a rule has and files may be re-cut freely.",
+      "satisfaction": "No id appears twice across the whole config.",
+      "validation": { "axis": "C", "check": "id-globally-unique", "severity": "red", "enforcement": "db:index" },
+      "spec": {
+        "scope": "whole config",
+        "enforcement_note": "PROJECTED AS A UNIQUE INDEX on ent.cfg.rule.id.",
+        "id_rule": "Id is FROZEN AT MINT. A relabel does not change the id — `dim.114.reading` was relabelled from 'discovery' on 2026-07-14, so the label inside an id is a mnemonic, never a fact. spec.label is authority for display."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.references-resolve",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.5",
+      "reference": "plan §A.5",
+      "intent": "Catch a dangling reference before it becomes a runtime failure against real data.",
+      "satisfaction": "Every cross-reference resolves to a real item.",
+      "validation": { "axis": "C", "check": "references-resolve", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "whole config",
+        "checks": [
+          "every validation.enum resolves to an enum.* item",
+          "every spec.reconcile resolves to a recon.* item",
+          "every spec.cites resolves to a real rule id (the one-home mechanism — layout v2 §2.3)",
+          "every spec.implements resolves",
+          "every ve_nr in a ledger resolves to a dimension",
+          "every gate in a module-gate resolves; every depends_on resolves"
+        ],
+        "note": "`spec.cites` is what makes 'reference, never restate' enforceable — a citation that does not resolve means a rule was paraphrased instead of cited."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.spec-schema",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.12 'the loader validates each kind against its own spec-schema'",
+      "reference": "plan §A.12",
+      "intent": "Check each item's kind-specific body against its own schema, since the envelope alone cannot.",
+      "satisfaction": "Every item's spec validates against its kind's spec-schema.",
+      "validation": { "axis": "C", "check": "spec-matches-kind-schema", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per item",
+        "schema_home": "each section file's meta.spec_schema",
+        "gap": "⚠ Only `enum` and `dimension` have authored spec-schemas so far. `entity`, `output`, `gate`, `route`, `principle`, `guardrail`, `pattern`, `utility` have NONE — so this gate currently cannot check most of the 92 authored items. A red gate with no schema is a gate that passes everything."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.acyclic",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.5 'the dependency graph is acyclic'",
+      "reference": "plan §A.5",
+      "intent": "Refuse a dependency graph that cannot be executed.",
+      "satisfaction": "The module dependency graph is acyclic and every handler resolves.",
+      "validation": { "axis": "C", "check": "graph-acyclic + handler-resolves", "severity": "red", "enforcement": "gate" },
+      "spec": { "scope": "whole config", "note": "Cannot run until pipeline.json is authored." }
+    },
+    {
+      "id": "gate.cfgmaint.no-reconcile-in-scope",
+      "governs": ["util.config-maintenance", "util.run"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "cfgmaint.refuse-reconcile",
+      "reference": "iba/config/README.md",
+      "intent": "Stop a study run whose rule-set contains a contested rule.",
+      "satisfaction": "No study module runs with a RECONCILE item in its governing rule-set.",
+      "validation": { "axis": "C", "check": "no-reconcile-in-scope", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per run plan",
+        "implements": "cfgmaint.refuse-reconcile",
+        "on_fail": "refuse the run; name every RECONCILE item and its reconciliation id",
+        "current_state": "14 RECONCILE items. lexical and characteristics BOTH refuse to run today — recon.mandatory-ledger and recon.role-enum are the blockers."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.schema-parity",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "cfgmaint.schema-propagation",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
+      "intent": "Detect config and schema having drifted apart — the ruling's whole point is that they cannot.",
+      "satisfaction": "Every db:*-enforced rule's projection in the live schema matches its config definition.",
+      "validation": { "axis": "C", "check": "schema-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "whole config vs live schema",
+        "implements": "cfgmaint.schema-propagation",
+        "canonical": false,
+        "reconcile": "open.cfgmaint.schema-propagation-safety",
+        "note": "⚠ RECONCILE. Also catches the reverse case: a constraint hand-applied to the schema shows up here as parity failure, which is exactly right — a hand-applied constraint is a defect."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.alias-covers-retired",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "cfgmaint.alias-map-is-migration-input",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
+      "intent": "Refuse a narrowing vocabulary change that has no path for the rows it would strand.",
+      "satisfaction": "Every retired enum value that has rows is covered by an alias_map entry.",
+      "validation": { "axis": "C", "check": "alias-covers-retired-values", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per vocabulary change",
+        "implements": "cfgmaint.alias-map-is-migration-input",
+        "on_fail": "REFUSE the load — incomplete config, not a warning",
+        "note": "This is the gate that makes ruling recon.role-enum safe: its alias_map {process-qualifier -> qualifier, undecided -> uncertain} is what carries existing rows across."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.seed-declared",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ent.cfg.seed-manifest",
+      "reference": "plan §A.12",
+      "intent": "Refuse an undeclared seed file, so config cannot grow silently.",
+      "satisfaction": "Every file under config/ is declared in _manifest.json; every declared file exists and matches its hash.",
+      "validation": { "axis": "C", "check": "seed-manifest-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "whole config",
+        "note": "Both directions. An undeclared file is a silent gap; a declared-but-missing file is a silent hole. Both are the same failure class."
+      }
+    }
+  ],
+
+  "naming": [
+    {
+      "id": "naming.cfgmaint.ids",
+      "governs": ["util.config-maintenance"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This utility's naming parameters only.",
+      "satisfaction": "Config-maintenance rule ids use the declared prefixes.",
+      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "prefixes": { "process": "cfgmaint.", "entity": "ent.cfg.", "gate": "gate.cfgmaint.", "output": "out.cfg." },
+        "cites": ["pattern.id-frozen-at-mint"]
+      }
+    }
+  ],
+
+  "filing": [
+    {
+      "id": "filing.cfgmaint.seed-home",
+      "governs": ["util.config-maintenance", "util.git"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.12; layout v2 §2.1",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2",
+      "intent": "Where the seed lives and how its history is kept.",
+      "satisfaction": "Seed files sit in the declared tree; every change is a git commit; superseded versions archived, never overwritten.",
+      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "seed_tree": "iba/config/",
+        "layout": { "wide": "iba/config/wide/", "utilities": "iba/config/utility/", "processes": "iba/config/process/", "archive": "iba/config/archive/" },
+        "output_tree": "outputs/config/",
+        "history": "git — the seed IS git-versioned; a config change is a commit. This is the second recovery line alongside the DB (plan §3.3.3).",
+        "cites": ["filing.version-bump-on-same-name", "filing.archive-superseded", "git.commit-per-unit-of-work"],
+        "note": "Parameters only. The versioning/archiving rules live in the filing utility's config; the commit discipline in the git utility's. Cited, not restated (layout v2 §2.3)."
+      }
+    }
+  ]
+}
