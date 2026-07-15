@@ -131,10 +131,10 @@ Two re-scans were run after this map was drafted, at the researcher's suggestion
 
 ### ★ The scans found one live danger and four new reconciliations
 
-1. ** is a loaded gun** —  (REMOTE) and  (UNTAGGED). The client hard-codes localhost + ESV_th and ignores  entirely. **The only reason this study has tagged morphology is that the client ignores its own configuration.**  v1 ruled "rewrite the client to read .env" — which would have silently destroyed the evidentiary floor. **Corrected at 0.1.4**; 's values still need fixing, and the order matters:  first, then the client.
+1. **The `.env` file is a loaded gun** — `STEP_API_BASE_URL=https://www.stepbible.org/api` (REMOTE) and `STEP_DEFAULT_VERSION=ESV` (UNTAGGED). The client hard-codes localhost + ESV_th and ignores `.env` entirely. **The only reason this study has tagged morphology is that the client ignores its own configuration.** `step.connection` v1 ruled "rewrite the client to read .env" — which would have silently destroyed the evidentiary floor. **Corrected at 0.1.4**; the values in `.env` still need fixing, and the order matters: fix `.env` first, then the client.
 2. **DB-vs-config authority** — all four pattern registers (rules · file patterns · label patterns · patch types) declare the **DB** their source of truth. The configurator claims to be the single home for rules. Both cannot be true.
-3. **Two version conventions** — GR-FILE-003 ( always) vs file-organisation-rules ( for session artefacts). Two pattern classes; needs a ruling.
-4. ** enum — new evidence.**  may be a **sub-form of qualifier**, not a peer. That possibility is not in 's variant list and changes the answer.
+3. **Two version conventions** — GR-FILE-003 (`v{major}_{minor}` always) vs file-organisation-rules (`-v{n}` for session artefacts). Two pattern classes; needs a ruling.
+4. **The `role` enum — new evidence.** `process-qualifier` may be a **sub-form of qualifier**, not a peer. That possibility is not in `recon.role-enum`'s variant list, and it changes the answer.
 5. **G8 is absent** from the measures runner while G0–G7, G9, G10 emit; **two thresholds exist only in code** (the G0 digestion budget; the candidate:total band, which has **no value at all**).
 
 ### What the re-scan says about the method
