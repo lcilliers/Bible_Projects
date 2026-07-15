@@ -209,13 +209,40 @@ class Kernel:
                     self.warnings.append(f"{ref} implements {c!r} -- unresolved")
 
     def check_reconcile_canonical(self):
-        """A RECONCILE item must name the decision that settles it."""
-        for src, it in self.reconcile:
+        """status must agree with spec.canonical / spec.reconcile, both ways.
+
+        RECONCILE means the value is contested: it must name the decision that
+        settles it, and must not claim to be canonical.
+        LIVE means it is settled: it must NOT still point at an unresolved
+        reconciliation, and must not be marked non-canonical.
+
+        The second direction matters because resolving a reconciliation is a
+        STATUS FLIP -- and a flip that leaves `canonical: false` or a dangling
+        `reconcile` pointer behind produces an item that reads as authoritative
+        while still declaring itself contested.  Nothing else would catch it.
+        """
+        for src, it in self.items:
             spec = it.get("spec", {})
-            if not spec.get("reconcile"):
-                self.warnings.append(
-                    f"{src}:{it['id']} is RECONCILE but names no `spec.reconcile` decision"
-                )
+            status, ref = it.get("status"), f"{src}:{it.get('id')}"
+            canonical, reconcile = spec.get("canonical"), spec.get("reconcile")
+
+            if status == "RECONCILE":
+                if not reconcile:
+                    self.warnings.append(f"{ref} is RECONCILE but names no `spec.reconcile` decision")
+                if canonical is True:
+                    self.errors.append(f"{ref} is RECONCILE but claims spec.canonical=true -- contradictory")
+            elif status == "LIVE":
+                if canonical is False:
+                    self.errors.append(
+                        f"{ref} is LIVE but spec.canonical=false -- a settled rule cannot "
+                        f"declare itself contested"
+                    )
+                if reconcile:
+                    self.errors.append(
+                        f"{ref} is LIVE but still points at reconcile={reconcile!r} -- "
+                        f"clear the pointer when a decision is ruled, or the item reads as "
+                        f"authoritative while declaring itself unsettled"
+                    )
 
     def check_nomenclature_has_enum(self):
         """gate.cfgmaint.nomenclature-has-enum -- researcher ruling 2026-07-15 (a, b2).

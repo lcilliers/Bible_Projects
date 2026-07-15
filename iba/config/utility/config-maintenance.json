@@ -29,6 +29,7 @@
     "open": [
       {
         "id": "open.cfgmaint.schema-propagation-safety",
+        "scope_note": "NARROWED 2026-07-15. The PRINCIPLE is settled and LIVE (cfgmaint.schema-propagation v2) — config drives the schema, full stop. What remains open is only the MECHANISM: what the utility is permitted to DO with a delta it finds. The diff always runs; the question is apply vs propose.",
         "issue": "THE DANGEROUS ONE. The 2026-07-15 ruling makes a config change a schema-change trigger. But a config edit can now imply a DESTRUCTIVE migration: remove a value from enum.role -> the CHECK constraint regenerates -> every existing row holding that value is suddenly invalid. The researcher edits one line of JSON; the utility proposes dropping data.",
         "consequence": "The most ordinary maintenance act — editing a vocabulary — is now capable of data loss. There is currently NO rule saying what happens to rows that a config change invalidates.",
         "options": [
@@ -214,9 +215,10 @@
       "id": "cfgmaint.schema-propagation",
       "governs": ["util.config-maintenance"],
       "kind": "principle",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "researcher ruling 2026-07-15 (§1.1, §1.2)",
+      "subject": "schema-propagation",
+      "status": "LIVE",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 (§1.1, §1.2); confirmed LIVE 2026-07-15",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §1.1",
       "intent": "Carry the researcher's ruling that DB controls are subservient to config: when a config rule with db:* enforcement changes, the schema must follow — via this utility, never by hand.",
       "satisfaction": "After any load, every db:*-enforced rule's projection in the live schema matches its config definition, or a migration is raised.",
@@ -230,10 +232,16 @@
           "4. classify the delta: ADDITIVE (widening) vs NARROWING vs DESTRUCTIVE",
           "5. produce a migration + an impact report (rows affected)"
         ],
-        "canonical": false,
-        "reconcile": "open.cfgmaint.schema-propagation-safety",
-        "note": "⚠ RECONCILE — apply-vs-propose is UNRULED, and this is the dangerous one: editing one line of a vocabulary can now imply dropping data. No live use until ruled.",
-        "hand_applied_is_a_defect": "A constraint applied outside this utility is a defect by construction — plan §3.4.2 'no implicit/undocumented supersession'. It also silently breaks schema-parity."
+        "canonical": true,
+        "status_note": "LIVE from 2026-07-15. The PRINCIPLE — config drives the schema, never the reverse — is ruled and in force; it was never contested (it IS the §1.1/§1.2 ruling). The first draft marked it RECONCILE by conflating it with the MECHANISM question (apply-vs-propose), which is a separate rule about HOW a propagation is executed safely. That question stays open and now sits only on the items that implement it: out.cfg.migration-proposal and gate.cfgmaint.schema-parity.",
+        "what_is_now_in_force": [
+          "a config change to a db:*-enforced rule TRIGGERS a schema-change requirement — not optional, not deferrable",
+          "the schema NEVER authors a constraint; it only ever receives one",
+          "a constraint applied outside this utility is a defect by construction",
+          "the diff (config vs live schema) always runs; what it is permitted to DO with the delta is the open mechanism question"
+        ],
+        "hand_applied_is_a_defect": "A constraint applied outside this utility is a defect by construction — plan §3.4.2 'no implicit/undocumented supersession'. It also silently breaks schema-parity.",
+        "⚠ live_but_unenforced": "This principle is LIVE while its enforcing gate (gate.cfgmaint.schema-parity) is still RECONCILE. The rule is therefore IN FORCE BUT NOT YET CHECKABLE — which is exactly the state ('rules not encoded, dependence on memory') that the failure record names as a root cause. Tolerable only because nothing is loading yet; it must not survive first use. Resolving open.cfgmaint.schema-propagation-safety closes the gap."
       }
     },
     {
