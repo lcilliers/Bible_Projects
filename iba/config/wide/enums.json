@@ -962,6 +962,113 @@
         ],
         "canonical": true
       }
+    },
+    {
+      "id": "enum.scope",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "scope",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
+      "reference": "plan §3.2 ('a run is scoped (e.g. by book, then passage, then term-in-verse)')",
+      "intent": "The unit a module or step runs over. Scope decides what a run covers, what a gate checks, and what a signoff attests to — so it must mean exactly one thing everywhere.",
+      "satisfaction": "every module/step scope is an ARRAY of these values",
+      "spec": {
+        "values": [
+          {
+            "value": "registry",
+            "description": "The whole word list. The registry module's natural unit — the list is maintained as a list, not per word."
+          },
+          {
+            "value": "term",
+            "description": "One Strong's term. The unit of a fetch: STEP is asked about a term."
+          },
+          {
+            "value": "book",
+            "description": "One book of Scripture. The unit of BASE and of signoff — base is built and signed off per book (base.signoff)."
+          },
+          {
+            "value": "passage",
+            "description": "One maximal run of consecutive candidate-bearing verses. THE READING UNIT (base.passages) — lexical reads a passage, never a whole chapter."
+          },
+          {
+            "value": "span",
+            "description": "One term-in-verse. The finest unit; the currency the interpretation layer is addressed in (base.spans)."
+          },
+          {
+            "value": "cluster",
+            "description": "One M-code cluster. ⚠ SCAFFOLDING — clusters are disposable (plan §1.4); a scope that only exists as a cluster is a scope that vanishes when the scaffolding is re-cut."
+          },
+          {
+            "value": "corpus",
+            "description": "The whole corpus. Used where a derivation has no smaller natural unit (the stem master)."
+          },
+          {
+            "value": "any",
+            "description": "No fixed unit — the module runs over whatever scope it is handed. Only the validation utility, which gates every other module at that module's scope."
+          }
+        ],
+        "canonical": true,
+        "⚠ shape_note": "SCOPE IS AN ARRAY, not a string. Before this enum existed, pipeline.json held values like 'book | cluster' and 'term | book' — TWO values jammed into one pipe-delimited string, which nothing could check. Same defect as the compound dimension shapes (open.lexical.compound-shapes): a multi-value pretending to be a value."
+      }
+    },
+    {
+      "id": "enum.activation",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "activation",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
+      "reference": "plan §3.2 ('Dependency activation'); §A.3 cfg_dependency",
+      "intent": "What the orchestrator does when a module's prerequisite is missing or stale. The plan's rule is absolute: activate or halt — NO SILENT SKIPPING.",
+      "satisfaction": "every dependency declares an activation",
+      "spec": {
+        "values": [
+          {
+            "value": "auto",
+            "description": "Activate the prerequisite chain and continue. For dependencies where a missing input is a normal state — the work simply has not been done yet."
+          },
+          {
+            "value": "halt",
+            "description": "Refuse to run, and say why. For dependencies where a missing input means something is WRONG, not merely undone — so building it silently would mask the fault. Also the only correct value for a HUMAN gate (dep.lexical-needs-base-signoff): auto-activating a signoff would defeat it."
+          }
+        ],
+        "canonical": true,
+        "the_rule_behind_it": "plan §3.2: 'the orchestrator activates the prerequisite chain first, or halts red with a clear reason — NO SILENT SKIPPING.' There is no third option, and that is the point: skipping is what made coverage a mirage."
+      }
+    },
+    {
+      "id": "enum.gate_phase",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "gate_phase",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
+      "reference": "plan §3.2 ('Every module runs inside a gated envelope: pre-validate -> run -> post-validate -> checkpoint/track')",
+      "intent": "When a gate runs relative to its module — the two halves of the gated envelope.",
+      "satisfaction": "every module-gate declares a phase",
+      "spec": {
+        "values": [
+          {
+            "value": "pre",
+            "description": "Before the module runs. A red pre-check REFUSES TO RUN the module — it protects the module from bad inputs."
+          },
+          {
+            "value": "post",
+            "description": "After the module runs. A red post-check REFUSES TO MARK THE MODULE DONE — it protects everything downstream from bad outputs. Note the ordering rule: post-gates run after update-tables, so they validate what was WRITTEN, not what was computed."
+          }
+        ],
+        "canonical": true
+      }
     }
   ]
 }

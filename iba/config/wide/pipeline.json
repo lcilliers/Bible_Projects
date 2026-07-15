@@ -120,6 +120,32 @@
         "reference_script": "the EXISTING script this step's rewrite starts from (plan §2.4). Where a step has no reference script, it is a genuinely new build.",
         "the_honest_state": "Every handler is null. This file is the plan for the code, not a description of code that exists."
       }
+    },
+    "terminology_alignment_20260715": {
+      "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
+      "1_characteristic_to_characteristics": {
+        "was": "module.characteristic (singular) while the process, the governs value and process/characteristics.json are all PLURAL.",
+        "why_it_matters": "It is one concept under two spellings. Every join, query and citation between the module and its process had to know which spelling applied where — and nothing checked. Trivial to fix, and exactly the kind of drift that is invisible until it is not.",
+        "now": "module.characteristics; step.characteristics.*; the module, the process and the governs value all read the same."
+      },
+      "2_scope_is_now_an_array": {
+        "was": "a STRING, and some values were 'book | cluster' / 'term | book' — TWO values pipe-jammed into one string.",
+        "why_it_matters": "Nothing could check it. A pipe-delimited multi-value is not a value; it is a sentence. Identical to the compound-shape defect in the dimensions (open.lexical.compound-shapes) and to the free-text `check` field — a controlled thing pretending to be prose.",
+        "now": "an ARRAY of enum.scope values. 8 values converted."
+      },
+      "3_on_fail_retired_into_severity": {
+        "was": "module_gates carried `on_fail` (halt | warn) while every gate carries `severity` (red | amber). red MEANS halt; amber MEANS log-and-continue. One concept, two vocabularies.",
+        "why_it_is_worse_than_untidy": "It is not just a duplicate name — it is a DISCRETION HOLE. Two vocabularies for one concept means a module-gate binding could set on_fail=warn on a gate whose severity is red, silently downgrading a control at its point of use. 'Remove discretion / mechanical-first' is a named guardrail, and the failure record's clearest instance is a scan gate that was silently non-operational across whole books.",
+        "the_ruling_applied": "ONE nomenclature (ruling a) + no rule defined twice (ruling b3). A gate's severity is the gate's property and a binding may not override it. A gate that should halt in one module and warn in another is TWO GATES with two names, not one gate with a dial.",
+        "now": "6 module_gates carry `severity` drawn from enum.severity. `on_fail` is gone.",
+        "⚠ note": "plan §A.3 defines cfg_module_gate.on_fail [halt|warn] AND cfg_gate.severity. The plan has the duplicate. This supersedes that column."
+      },
+      "4_what_is_deliberately_NOT_aligned": {
+        "module.ingest spans fetch+raw": "One MODULE, two PROCESSES. Not a mismatch — process and module are different axes (open.pipeline.raw-fetch-coupling). A fetch that does not store is useless; a raw write with no fetch cannot happen. The rules differ; the execution does not.",
+        "module.validation governs util.validation": "Correct. It is a UTILITY, not a study process — and it is dual-role: a module AND every other module's gate.",
+        "module.analysis-prep governs findings": "A PLACEHOLDER, marked as such. It has no process (open.pipeline.module-8-and-prose).",
+        "findings has no process file": "Pending. process/findings.json is the last unauthored study process."
+      }
     }
   },
   "modules": [
@@ -145,7 +171,9 @@
       "spec": {
         "ordinal": 0,
         "enabled": true,
-        "scope": "registry",
+        "scope": [
+          "registry"
+        ],
         "note": "Was folded into module.2 (seed maintenance). Split out 2026-07-15: the registry is the STARTING POINT, the seed is BASE. Two stages, two modules.",
         "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here"
       }
@@ -174,7 +202,10 @@
       "spec": {
         "ordinal": 1,
         "enabled": true,
-        "scope": "term | book",
+        "scope": [
+          "term",
+          "book"
+        ],
         "reference_script": "engine audit_word + scripts/word_study_extract.py — substantially rewritten (plan §2.4)",
         "note": "Spans TWO processes (fetch = what to retrieve, raw = what is stored). See open.pipeline.raw-fetch-coupling — deliberate, not an oversight.",
         "⚠ currently_also_does": "SPAN-LINKING (audit_word 'inserts + span-links in one pass'). That is base-layer work bundled into ingest — it belongs to the missing span module. See meta.★ THE_SPAN_LAYER_IS_THE_ANSWER."
@@ -202,7 +233,9 @@
       "spec": {
         "ordinal": 2,
         "enabled": true,
-        "scope": "book",
+        "scope": [
+          "book"
+        ],
         "produces": [
           "the span master (the join key)",
           "the stem master",
@@ -242,7 +275,9 @@
       "spec": {
         "ordinal": 5,
         "enabled": true,
-        "scope": "passage",
+        "scope": [
+          "passage"
+        ],
         "uses": [
           "util.api",
           "util.validation"
@@ -252,12 +287,12 @@
       }
     },
     {
-      "id": "module.characteristic",
+      "id": "module.characteristics",
       "governs": [
         "characteristics"
       ],
       "kind": "module",
-      "subject": "module-characteristic",
+      "subject": "module-characteristics",
       "status": "LIVE",
       "version": 1,
       "authority": "plan §3.3.4 (6 Characteristic maintenance)",
@@ -273,7 +308,9 @@
       "spec": {
         "ordinal": 6,
         "enabled": true,
-        "scope": "book",
+        "scope": [
+          "book"
+        ],
         "⚠ blocked": "recon.role-enum blocks this module AND module 5."
       }
     },
@@ -299,7 +336,9 @@
       "spec": {
         "ordinal": 7,
         "enabled": true,
-        "scope": "any",
+        "scope": [
+          "any"
+        ],
         "dual_role": "It is BOTH a standalone module AND the gate every other module calls. This is where 'done = verse-level validity, not coverage' is enforced.",
         "note": "A utility, not a study process — which is why it governs util.validation."
       }
@@ -326,7 +365,10 @@
       "spec": {
         "ordinal": 8,
         "enabled": false,
-        "scope": "book | cluster",
+        "scope": [
+          "book",
+          "cluster"
+        ],
         "canonical": false,
         "reconcile": "open.pipeline.module-8-and-prose",
         "⚠ governs_is_a_placeholder": "`findings` is a guess. This module has no process of its own — see open.pipeline.module-8-and-prose."
@@ -354,7 +396,10 @@
       "spec": {
         "ordinal": 9,
         "enabled": true,
-        "scope": "book | cluster",
+        "scope": [
+          "book",
+          "cluster"
+        ],
         "note": "process/findings.json is PENDING."
       }
     }
@@ -449,7 +494,7 @@
         "characteristics"
       ],
       "kind": "dependency",
-      "subject": "dep-char-lexical",
+      "subject": "dep-characteristics-lexical",
       "status": "LIVE",
       "version": 1,
       "authority": "plan §3.2",
@@ -463,7 +508,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "depends_on": "module.lexical",
         "activation": "auto"
       }
@@ -520,7 +565,8 @@
         "module": "module.ingest",
         "phase": "post",
         "gate_code": "gate.step.cap-exhausted",
-        "on_fail": "halt"
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     },
     {
@@ -548,8 +594,9 @@
         "module": "module.ingest",
         "phase": "pre",
         "gate_code": "gate.step.available",
-        "on_fail": "halt",
-        "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one."
+        "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one.",
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     },
     {
@@ -575,9 +622,10 @@
         "module": "module.lexical",
         "phase": "post",
         "gate_code": "gate.lexical.ledger-complete",
-        "on_fail": "halt",
         "canonical": false,
-        "reconcile": "recon.mandatory-ledger"
+        "reconcile": "recon.mandatory-ledger",
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     },
     {
@@ -604,10 +652,11 @@
         "module": "module.base",
         "phase": "post",
         "gate_code": "gate.base.signoff",
-        "on_fail": "halt",
         "canonical": false,
         "reconcile": "open.base.signoff-mechanism",
-        "note": "The only module-gate in the pipeline that a machine cannot pass."
+        "note": "The only module-gate in the pipeline that a machine cannot pass.",
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     },
     {
@@ -633,7 +682,8 @@
         "module": "module.base",
         "phase": "post",
         "gate_code": "gate.base.span-master-complete",
-        "on_fail": "halt"
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     },
     {
@@ -659,8 +709,9 @@
         "module": "module.base",
         "phase": "post",
         "gate_code": "gate.char.candidate-verse-record",
-        "on_fail": "halt",
-        "note": "halt and restore — repair before proceeding. Moved from module.2.seed with the seed."
+        "note": "halt and restore — repair before proceeding. Moved from module.2.seed with the seed.",
+        "severity": "red",
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
       }
     }
   ],
@@ -1429,12 +1480,12 @@
       }
     },
     {
-      "id": "step.characteristic.screen0",
+      "id": "step.characteristics.screen0",
       "governs": [
         "characteristics"
       ],
       "kind": "step",
-      "subject": "step-characteristic-screen0",
+      "subject": "step-characteristics-screen0",
       "status": "RECONCILE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1448,7 +1499,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "ordinal": 1,
         "does": "[I] Screen 0 — is this the HUMAN inner being? God's own attribute/action is the arena, never the object.",
         "handler": null,
@@ -1462,12 +1513,12 @@
       }
     },
     {
-      "id": "step.characteristic.assign-role",
+      "id": "step.characteristics.assign-role",
       "governs": [
         "characteristics"
       ],
       "kind": "step",
-      "subject": "step-characteristic-assign-role",
+      "subject": "step-characteristics-assign-role",
       "status": "RECONCILE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1481,7 +1532,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "ordinal": 2,
         "does": "[I] Assign the span's role at the sanity-check gate.",
         "handler": null,
@@ -1494,12 +1545,12 @@
       }
     },
     {
-      "id": "step.characteristic.derive-ib-characteristic",
+      "id": "step.characteristics.derive-ib-characteristic",
       "governs": [
         "characteristics"
       ],
       "kind": "step",
-      "subject": "step-characteristic-derive-ib-characteristic",
+      "subject": "step-characteristics-derive-ib-characteristic",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1513,19 +1564,19 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "ordinal": 3,
         "does": "Derive/maintain ib_characteristic, keyed on meaning-in-context.",
         "handler": null
       }
     },
     {
-      "id": "step.characteristic.update-tables",
+      "id": "step.characteristics.update-tables",
       "governs": [
         "characteristics"
       ],
       "kind": "step",
-      "subject": "step-characteristic-update-tables",
+      "subject": "step-characteristics-update-tables",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1539,19 +1590,19 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "ordinal": 4,
         "does": "Write roles and characteristics.",
         "handler": null
       }
     },
     {
-      "id": "step.characteristic.validate",
+      "id": "step.characteristics.validate",
       "governs": [
         "characteristics"
       ],
       "kind": "step",
-      "subject": "step-characteristic-validate",
+      "subject": "step-characteristics-validate",
       "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
@@ -1565,7 +1616,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.characteristic",
+        "module": "module.characteristics",
         "ordinal": 5,
         "does": "Validate — registry path resolves, roles in domain, axes independent.",
         "handler": null,

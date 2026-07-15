@@ -2,22 +2,17 @@
   "process_code": "registry",
   "tier": "B",
   "name": "Registry (the starting point)",
-
   "meta": {
     "purpose": "THE STARTING POINT. The list of English inner-being words the study begins from — what qualifies one, how the list grows, and what a registry entry is for. Everything downstream is reachable only from here.",
     "the_researcher_model": "researcher 2026-07-15: 'the registry create the starting point (this is also not yet in configurator)'. Flagged as missing while ruling the stage chain: REGISTRY -> RAW -> BASE -> [signoff] -> LEXICAL -> CHARACTERISTICS -> FINDINGS.",
     "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
-
     "the_thing_to_hold_onto": {
       "the_registry_is_scaffolding_not_the_object": "plan §1.1 states it outright: '~214 inner-being words... but the word registry is SCAFFOLDING, NOT THE OBJECT.' The object is a focus point — latent, emergent, inferred from the operations a verse describes. The registry is how the study gets its hands on verses; it is not what the study is about.",
       "why_that_matters_here": "This is the most seductive file in the configurator. A word list looks like an answer — finite, nameable, checkable. The failure record's DEEPEST ROOT is over-structuring an integrated subject, and the organising unit was rebuilt 4-5 times, STARTING FROM THE REGISTRY. Treating the list as the object is where that began.",
       "so_the_rule": "The registry decides WHERE TO LOOK. It never decides what is there."
     },
-
     "the_completeness_asymmetry": "The registry sets the outer bound of everything the study can ever find, and it does so INVISIBLY: a word never registered leaves no gap, no null, no flag. The two prior ~100-page studies failed by UNDERSTATING the inner being — and understating starts here, one layer above even fetch. This is why registry growth is a first-class rule and not an afterthought.",
-
     "state": "PARTIAL — authored 2026-07-15 to home the starting point the researcher flagged. Source-list vocabularies, registry-dimension tags, and the phase/status fields are stubs pending their own pass (and several are pre-reset LEGACY — see wide/enums.json meta.coverage).",
-
     "nodes": {
       "process": "What qualifies a word, how the list grows, the registry path, and the scaffolding rule.",
       "entities": "The registry entry.",
@@ -26,7 +21,6 @@
       "naming": "Naming parameters.",
       "filing": "Filing parameters."
     },
-
     "open": [
       {
         "id": "open.registry.qualification-rule",
@@ -61,11 +55,12 @@
       }
     ]
   },
-
   "process": [
     {
       "id": "registry.definition",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "principle",
       "subject": "registry-definition",
       "status": "LIVE",
@@ -74,7 +69,12 @@
       "reference": "plan §1.1",
       "intent": "Define the registry as the study's entry point: the English words whose Hebrew/Greek originals give the study its verses.",
       "satisfaction": "One entry per English inner-being word, each mapped to its original-language terms via Strong's.",
-      "validation": { "axis": "C", "check": "registry-entry-complete", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "registry-entry-complete",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "The registry is the STARTING POINT — ~214 English inner-being words, each mapped to Hebrew/Greek via Strong's. It is where the study reaches into Scripture.",
         "the_stage_chain": "REGISTRY -> RAW -> BASE -> [signoff] -> LEXICAL -> CHARACTERISTICS -> FINDINGS",
@@ -84,7 +84,11 @@
     },
     {
       "id": "registry.is-scaffolding",
-      "governs": ["registry", "characteristics", "findings"],
+      "governs": [
+        "registry",
+        "characteristics",
+        "findings"
+      ],
       "kind": "guardrail",
       "subject": "registry-scaffolding",
       "status": "LIVE",
@@ -93,18 +97,28 @@
       "reference": "plan §1.1",
       "intent": "Stop the word list being mistaken for the study's object — the mistake that began four to five rebuilds of the organising unit.",
       "satisfaction": "No finding is about a registry word. Findings are about focus points, inferred from verses; the registry only decided which verses were read.",
-      "validation": { "axis": "I", "check": "not-lemma-grounded", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "not-lemma-grounded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "The registry is SCAFFOLDING, not the object. It decides WHERE TO LOOK; it never decides what is there.",
         "the_object": "a focus point — latent, emergent, dynamic; never observed directly, only INFERRED from the operations a verse describes (plan §1.1)",
         "what_this_forbids": "any claim of the form 'the study found X about <registry word>'. A registry word is an English label on a search; it is not an inner-being reality, and it is not even a term (a term is a SPAN/SENSE, not a lemma).",
         "why_it_is_a_red_guardrail": "The deepest named root is over-structuring an integrated subject — 'the impulse to impose tidy structure on human inner life, which is not systemisable'. A finite named word list is the most tempting structure in the whole programme, because it looks like an answer.",
-        "cites": ["lexical.grain", "char.list-validates-never-imputes"]
+        "cites": [
+          "lexical.grain",
+          "char.list-validates-never-imputes"
+        ]
       }
     },
     {
       "id": "registry.growth",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "principle",
       "subject": "registry-growth",
       "status": "RECONCILE",
@@ -113,7 +127,12 @@
       "reference": "plan §1.1",
       "intent": "Keep the list open. The registry sets the outer bound of everything the study can find, and its initial boundary was inherited from the studies this one exists to correct.",
       "satisfaction": "Growth is triggered by evidence, not by attention; every addition is recorded with its trigger and reason.",
-      "validation": { "axis": "C", "check": "growth-recorded", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "growth-recorded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "The registry GROWS. Its boundary is provisional, never evidence.",
         "the_asymmetry": "A word never registered leaves NO gap, NO null, NO flag — it is invisible. Every other layer's omission is at least detectable. This one is not, which is why growth is a rule rather than housekeeping.",
@@ -129,7 +148,10 @@
     },
     {
       "id": "registry.path",
-      "governs": ["registry", "characteristics"],
+      "governs": [
+        "registry",
+        "characteristics"
+      ],
       "kind": "principle",
       "subject": "registry-path",
       "status": "LIVE",
@@ -138,20 +160,29 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "Guarantee every characteristic traces back to a registered term, so nothing enters the study by a side door and everything is reachable from the starting point.",
       "satisfaction": "Every characteristic resolves to a term that resolves to a registry entry.",
-      "validation": { "axis": "C", "check": "registry-path-resolves", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "registry-path-resolves",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "Every characteristic is a REGISTERED TERM. Existing-first: if a term is already registered, use that entry — do not create a parallel one.",
         "why": "It is what makes the study's scope knowable. If a characteristic could exist without a registry path, no one could ever answer 'what has this study looked at'.",
         "the_tension_it_creates": "Discovery finds terms the registry never named — and this rule says they must be REGISTERED before they can be characteristics. That is correct, and it is what makes registry.growth load-bearing: the path rule is only honest if the registry actually grows to meet it. A path rule with a frozen registry is a rule that quietly rejects discoveries.",
-        "cites": ["registry.growth", "fetch.candidate-triggers-pull"]
+        "cites": [
+          "registry.growth",
+          "fetch.candidate-triggers-pull"
+        ]
       }
     }
   ],
-
   "entities": [
     {
       "id": "ent.registry.word",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "entity",
       "subject": "registry-entry",
       "status": "LIVE",
@@ -160,22 +191,34 @@
       "reference": "plan §3.4.1 ('Base — entry: word_registry... Migrate, cleaned')",
       "intent": "One English inner-being word and its mapping into the original languages — the study's addressable entry point.",
       "satisfaction": "One row per English word; resolves to its Strong's terms; carries its origin and reason.",
-      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "validation": {
+        "axis": "C",
+        "check": "entity-integrity",
+        "severity": "red",
+        "enforcement": "db+gate"
+      },
       "spec": {
         "grain": "one row per English inner-being word",
         "identity": "the English word",
-        "holds": ["the word", "its terms (via Strong's)", "source_list / origin", "the reason it was registered", "status"],
+        "holds": [
+          "the word",
+          "its terms (via Strong's)",
+          "source_list / origin",
+          "the reason it was registered",
+          "status"
+        ],
         "layer": "base — entry (plan §3.4.1: MIGRATED, cleaned; six months of curation is worth keeping)",
         "migration_note": "Migrate cleaned: dedup (OT-DBR-009), status-clean, drop orphans on import (plan 3.4.1). ⚠ OT-DBR-009 over-deleted core IB terms (prayer/wisdom/pray) — memory project_otdbr009_overdeleted_core_ib_terms. The clean-up itself understated the registry, so the migration must not simply trust the current state.",
         "researcher_authored_fields": "inference_note, word_synopsis — the pipeline must never overwrite these (CLAUDE.md §14)."
       }
     }
   ],
-
   "output": [
     {
       "id": "out.registry.review",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "output",
       "subject": "registry-review",
       "status": "LIVE",
@@ -184,19 +227,30 @@
       "reference": "plan §3.6",
       "intent": "Show the registry's current reach and — more importantly — its candidate gaps.",
       "satisfaction": "The review reports the list, its growth since last run, and the gap-detector output.",
-      "validation": { "axis": "C", "check": "artefact-exists", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "format": "md",
-        "must_include": ["the list + term counts", "additions since last run, with trigger and reason", "CANDIDATE GAPS — unregistered terms surfaced by discovery, candidate-triggers, or route A"],
+        "must_include": [
+          "the list + term counts",
+          "additions since last run, with trigger and reason",
+          "CANDIDATE GAPS — unregistered terms surfaced by discovery, candidate-triggers, or route A"
+        ],
         "the_important_section_is_the_third": "The list is knowable at any time. What the list is MISSING is the only thing this artefact can tell you that a query cannot."
       }
     }
   ],
-
   "validation": [
     {
       "id": "gate.registry.path-resolves",
-      "governs": ["registry", "characteristics"],
+      "governs": [
+        "registry",
+        "characteristics"
+      ],
       "kind": "gate",
       "subject": "registry-path",
       "status": "LIVE",
@@ -205,12 +259,23 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "Catch a characteristic with no registry path — something in the study that nothing can account for.",
       "satisfaction": "Every characteristic resolves to a term that resolves to a registry entry.",
-      "validation": { "axis": "C", "check": "registry-path-resolves", "severity": "red", "enforcement": "gate" },
-      "spec": { "scope": "per characteristic", "implements": "registry.path", "on_fail": "halt — either register the term or the characteristic is unaccounted for" }
+      "validation": {
+        "axis": "C",
+        "check": "registry-path-resolves",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per characteristic",
+        "implements": "registry.path",
+        "on_fail": "halt — either register the term or the characteristic is unaccounted for"
+      }
     },
     {
       "id": "gate.registry.growth-recorded",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "gate",
       "subject": "registry-growth",
       "status": "LIVE",
@@ -219,7 +284,12 @@
       "reference": "iba/config/process/registry.json",
       "intent": "Require every addition to carry its trigger and reason, so the list's shape stays explicable.",
       "satisfaction": "Every registry entry records why it was added and what surfaced it.",
-      "validation": { "axis": "C", "check": "growth-recorded", "severity": "red", "enforcement": "db:not-null" },
+      "validation": {
+        "axis": "C",
+        "check": "growth-recorded",
+        "severity": "red",
+        "enforcement": "db:not-null"
+      },
       "spec": {
         "scope": "per addition",
         "implements": "registry.growth",
@@ -229,7 +299,9 @@
     },
     {
       "id": "gate.registry.gap-detector",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "gate",
       "subject": "registry-gap",
       "status": "RECONCILE",
@@ -238,7 +310,12 @@
       "reference": "iba/config/process/registry.json meta.the_completeness_asymmetry",
       "intent": "Measure what the registry is MISSING — the only check in the pipeline that looks outward rather than at what was produced.",
       "satisfaction": "Candidate gaps are surfaced each run and put to the researcher.",
-      "validation": { "axis": "C", "check": "registry-gap-scan", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "registry-gap-scan",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per book / on demand",
         "canonical": false,
@@ -253,11 +330,12 @@
       }
     }
   ],
-
   "naming": [
     {
       "id": "naming.registry.ids",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "pattern",
       "subject": "registry-ids",
       "status": "LIVE",
@@ -266,15 +344,31 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "This process's naming parameters only.",
       "satisfaction": "Registry rule ids use the declared prefixes.",
-      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
-      "spec": { "prefixes": { "process": "registry.", "entity": "ent.registry.", "gate": "gate.registry.", "output": "out.registry." }, "cites": ["pattern.id-frozen-at-mint"] }
+      "validation": {
+        "axis": "C",
+        "check": "id-prefix",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "prefixes": {
+          "process": "registry.",
+          "entity": "ent.registry.",
+          "gate": "gate.registry.",
+          "output": "out.registry."
+        },
+        "cites": [
+          "pattern.id-frozen-at-mint"
+        ]
+      }
     }
   ],
-
   "filing": [
     {
       "id": "filing.registry.outputs",
-      "governs": ["registry"],
+      "governs": [
+        "registry"
+      ],
       "kind": "pattern",
       "subject": "registry-filing",
       "status": "LIVE",
@@ -283,8 +377,30 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "Where this process's artefacts are filed.",
       "satisfaction": "Registry outputs land in the declared tree.",
-      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
-      "spec": { "output_tree": "outputs/registry/", "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write"] }
+      "validation": {
+        "axis": "C",
+        "check": "output-path",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "output_tree": "outputs/registry/",
+        "cites": [
+          "filing.version-bump-on-same-name",
+          "filing.manifest-rebuild-after-write"
+        ]
+      }
     }
-  ]
+  ],
+  "implemented_by": {
+    "module": "module.registry",
+    "steps": [
+      "step.registry.create-new-item",
+      "step.registry.update-tables",
+      "step.registry.validate",
+      "step.registry.gap-scan"
+    ],
+    "note": "The PIPELINE says WHEN this process runs and in what units; THIS FILE says what its rules are. Two axes over one thing (plan §A.11): a module loads its governing rule-set before it runs, and this is that rule-set. Added 2026-07-15 so the two are navigable in both directions.",
+    "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)"
+  }
 }

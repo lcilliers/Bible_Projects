@@ -626,5 +626,15 @@
         "note": "Parameters only — the archiving and versioning RULES live in the filing utility's config and are cited by id."
       }
     }
-  ]
+  ],
+  "implemented_by": {
+    "module": "module.ingest",
+    "steps": [
+      "step.ingest.update-tables",
+      "step.ingest.validate"
+    ],
+    "note": "The PIPELINE says WHEN this process runs and in what units; THIS FILE says what its rules are. Two axes over one thing (plan §A.11): a module loads its governing rule-set before it runs, and this is that rule-set. Added 2026-07-15 so the two are navigable in both directions.",
+    "authority": "researcher ruling 2026-07-15 — align the process files with the pipeline's terminology; the terminology belongs in the enums (ruling a)",
+    "⚠ shared_module": "module.ingest implements BOTH fetch and raw — one module, two processes. fetch owns the acquisition steps (what to retrieve); raw owns update-tables + validate (what is stored and its controls). Deliberate: open.pipeline.raw-fetch-coupling."
+  }
 }
