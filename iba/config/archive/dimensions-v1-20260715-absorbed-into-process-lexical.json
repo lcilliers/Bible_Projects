@@ -1,0 +1,208 @@
+{
+  "section": "dimensions",
+  "kind": "dimension",
+
+  "meta": {
+    "purpose": "THE ENCODED RULEBOOK for the ve_nr lexical dimensions (101-118) — one item per dimension, stating what it records, what shape it takes, which way its pair runs, whether it is mandatory, and how it is produced and checked. This is what replaces 'the model remembering the rules': the 2026-07-14 audit found 8 of 18 dimensions failing their own written rules precisely because the rules lived in prose and the model substituted its own.",
+    "scope_boundary": "This file says what each dimension IS. It does NOT say when one is required — that is genre × role, and lives in ledgers.json. A dimension's `spec.mandatory` here is its baseline; the ledger overrides per genre and role.",
+    "envelope": "Every item carries the common rule envelope — see _manifest.json meta.envelope. Its vocabularies (governs · kind · status · validation.axis · validation.severity) are defined there and are NOT restated here.",
+    "reconcile": "The master list itself is contested: 101-118 (catalogue §9) vs 101-116 (cycle §3, which never folded in 117/118). See recon.ve-nr-master-list. This file authors 101-118.",
+
+    "nodes": {
+      "envelope_defaults": {
+        "description": "Envelope fields shared by every item in `items`, hoisted so 18 items do not repeat them. An item MAY override any of them inline (dim.115.role overrides `governs`). Read an item as: envelope_defaults + the item's own fields.",
+        "caution": "A default is invisible at the item — when reading a single item, its status/governs/reference come from here unless stated."
+      },
+      "items": {
+        "description": "The dimensions themselves. One item = one ve_nr. Full envelope (via defaults) + the `spec` below."
+      },
+      "governing_value_rules": {
+        "description": "Rules that apply ACROSS dimensions rather than to one — the value-quality constraints (self-interpretable; assess-never-ABSENT) and the dropped-dimension register. They are what a read must satisfy no matter which dimension it is writing.",
+        "shape": "⚠ PARTIAL ENVELOPE — these carry only id · status · authority · statement. They have no governs/kind/reference/intent/satisfaction/validation/spec, so the loader cannot validate or enforce them like a rule. See meta.open.governing-rules-shape.",
+        "fields": {
+          "statement": "The rule's plain assertion (the envelope's `statement` attribute, plan A.10)."
+        }
+      },
+      "verse_level_items": {
+        "description": "POINTERS, not rules. Facts that live on the verse rather than on a span (passage membership, genre, the process marker) and therefore have no ve_nr — recorded here so the dimension reader knows they exist and where they live.",
+        "shape": "⚠ NOT RULES — id · home · note only. Informational until they find a real home.",
+        "fields": {
+          "home": "The DB column/table that actually holds the fact."
+        },
+        "note": "vl.process is explicitly unresolved ('ve_nr pending') — it may or may not become a dimension."
+      }
+    },
+
+    "spec_schema": {
+      "description": "The kind-specific body for kind=dimension.",
+      "fields": {
+        "ve_nr": {
+          "required": true,
+          "type": "integer",
+          "description": "The dimension's number — the code the DB (ve_lexical.ve_nr) and every read store against. Stable; never reused."
+        },
+        "label": {
+          "required": true,
+          "type": "string",
+          "description": "The dimension's name (sense, seat, bearer…). Always written WITH the code in any human-facing output ('D2 Source', never bare 'D2') — a researcher standing instruction."
+        },
+        "shape": {
+          "required": true,
+          "type": "vocab (see shape_vocabulary)",
+          "description": "The storage form of the value. Must agree with the ve_lexical.pair_kind actually written (enum.pair_kind checks this)."
+        },
+        "pair_from": {
+          "required": "when shape includes pair",
+          "type": "string",
+          "description": "The pair's ORIGIN endpoint."
+        },
+        "pair_to": {
+          "required": "when shape includes pair",
+          "type": "string",
+          "description": "The pair's DESTINATION endpoint. Direction is load-bearing, not cosmetic: D3 source runs driver->term and D7 target runs term->object, and the 2026-07-14 audit failed D3 precisely because it stored target-direction pairs. A reversed pair is a red failure."
+        },
+        "mandatory": {
+          "required": true,
+          "type": "boolean",
+          "description": "BASELINE requirement (the ledger overrides per genre/role). true = the read must produce a value or an explicit `none`. It NEVER licenses silence: see `dimrule.assess-never-absent` — 'not assessed' (ABSENT) is forbidden and distinct from 'assessed, found nothing' (`none`)."
+        },
+        "self_interpretable": {
+          "required": false,
+          "type": "boolean",
+          "description": "true = the value must be readable without re-opening the verse (it carries its own trigger + sense). Bare codes and thin values are a red failure. Added 2026-07-14 after the audit found truncated and uninterpretable values banked."
+        },
+        "derivation": {
+          "required": true,
+          "type": "vocab (see derivation_vocabulary)",
+          "description": "HOW THE VALUE IS PRODUCED. ⚠ NOT the same as validation.axis, which is how it is CHECKED — a value can be produced by the model and checked by code (that is the core design). See _manifest.json meta.open.axis-vs-derivation."
+        },
+        "enum": {
+          "required": "when the value is drawn from a vocabulary",
+          "type": "string",
+          "description": "The `enum.*` id whose spec.values is this dimension's permitted domain. Must resolve in enums.json (loader self-validation)."
+        },
+        "default": {
+          "required": false,
+          "type": "string",
+          "description": "The value assumed absent evidence to the contrary (D117 device = literal)."
+        },
+        "rule": {
+          "required": false,
+          "type": "string",
+          "description": "A dimension-specific constraint beyond shape/domain (D3 must split DRIVER vs RESTRAINT; D5 bearer != God)."
+        },
+        "genre_note": {
+          "required": false,
+          "type": "string",
+          "description": "How the dimension's applicability varies by genre (cross-verse dims are Phase-2 in poetry but per-span in narrative). ⚠ overlaps ledgers.json — see meta.open.genre-note-home."
+        },
+        "note": { "required": false, "type": "string", "description": "Reader context — typically why the stored data diverges from the rule." },
+        "added": { "required": false, "type": "string (ISO date)", "description": "When the dimension entered the rulebook. Provenance for reads predating it." },
+        "reinstated": { "required": false, "type": "string (ISO date)", "description": "When a previously-dropped dimension returned (D109 intensity, 2026-07-14)." },
+        "relabelled": { "required": false, "type": "string", "description": "When and from what the dimension was renamed (D114 reading, was 'discovery')." }
+      }
+    },
+
+    "shape_vocabulary": {
+      "description": "The storage form a dimension's value takes. Mirrors enum.pair_kind, which is checked against the row actually written.",
+      "values": [
+        { "value": "value", "description": "A single scalar on the span (sense, type, role, locus, direction)." },
+        { "value": "pair", "description": "A directed relation between two endpoints (`pair_from` -> `pair_to`). Carries a resolution state (enum.resolution)." },
+        { "value": "event", "description": "An act/predicate the characteristic performs (D106 operation)." },
+        { "value": "flag", "description": "A present/absent mechanical marker (D113 prohibition)." },
+        { "value": "note", "description": "Free prose — the uncertainty channel (D114 reading)." },
+        { "value": "pair/flag", "description": "⚠ COMPOUND (D109 intensity). Either form is permitted." },
+        { "value": "value/pair", "description": "⚠ COMPOUND (D117 device). A head value, plus a pair to the VEHICLE span when the device is comparative." }
+      ],
+      "open": "The two compound shapes are not in enum.pair_kind's values (pair·value·event·flag·note), so 'shape matches pair_kind' cannot be checked for D109/D117 — see meta.open.compound-shapes."
+    },
+
+    "derivation_vocabulary": {
+      "description": "How a dimension's value is PRODUCED. Distinct from validation.axis (how it is CHECKED).",
+      "values": [
+        { "value": "C", "description": "Mechanically derivable from morphology/lemma/POS with no inference. ⚠ HISTORY: this claim is what failed hardest — D109/D111/D117/D118 were derived by REGEX and produced malformed, truncated and misclassified values. 'C-derivable' means derivable by a correct deterministic rule, and never licenses a keyword sweep." },
+        { "value": "I", "description": "Genuine inference — the model reads the verse and produces the value, which a [C] gate then checks. D101 sense, D106 operation." },
+        { "value": "I-partial", "description": "Morphology narrows the candidates but the choice still needs inference (D103 source, D105 bearer, D107 target)." },
+        { "value": "read-only", "description": "Not derived at all — assigned BY the read as its own judgement (D114 reading, D115 role). Nothing mechanical produces it, so nothing mechanical can regenerate it; only a domain check applies." }
+      ]
+    },
+
+    "open": [
+      {
+        "id": "meta.open.governing-rules-shape",
+        "issue": "`governing_value_rules` and `verse_level_items` are not envelope rules — they carry a few ad-hoc fields each. Yet dimrule.self-interpretable and dimrule.assess-never-absent are among the most load-bearing rules in the study: they are two of the direct causes of the 2026-07-14 failures.",
+        "consequence": "The loader cannot validate them and the engine cannot enforce them, so the rules that broke the read layer are the rules the config currently cannot check. They are documentation sitting inside a rulebook.",
+        "options": [
+          "A: promote to full envelope items with validation specs (self-interpretable becomes a real gate; assess-never-absent becomes a real not-ABSENT check)",
+          "B: leave as prose and enforce them via gates.json instead, cross-referenced from here",
+          "C: leave as documentation (they stay unenforced — this is the status quo that failed)"
+        ],
+        "recommendation": "A or B — but NOT C. These two rules must end up executable somewhere before any re-read runs; where they live is a design choice, whether they are enforced is not.",
+        "resolve_by": "researcher decision; settle when gates.json is authored"
+      },
+      {
+        "id": "meta.open.compound-shapes",
+        "issue": "D109 shape `pair/flag` and D117 shape `value/pair` are not members of enum.pair_kind (pair·value·event·flag·note).",
+        "consequence": "enum.pair_kind's stated check 'matches-dimension-shape' cannot run for these two dimensions — a silent hole in a red gate. Both are dimensions that FAILED the 2026-07-14 audit.",
+        "options": [
+          "A: model the head and the pair as two rows (the head value + an optional pair row), so every row has a simple pair_kind",
+          "B: add the compound values to enum.pair_kind",
+          "C: allow `shape` to be an array of permitted pair_kinds"
+        ],
+        "recommendation": "A — it keeps one shape per stored row and makes the check total; the compound is a property of the dimension, not of a row.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "meta.open.genre-note-home",
+        "issue": "`spec.genre_note` (D103, D111) states genre-varying applicability in free text, but genre × role applicability is what ledgers.json is for.",
+        "consequence": "Two homes for one fact — and the mandatory ledger is already the subject of an open contradiction (recon.mandatory-ledger, where 103/111 per-span vs Phase-2-only is one of the disputed points).",
+        "recommendation": "Ledgers own applicability; genre_note is retired once ledgers.json is authored. Resolve together with recon.mandatory-ledger.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "meta.open.failed-dimension-status",
+        "issue": "All 18 items are status LIVE (via envelope_defaults), but 8 dimensions FAILED rule-validation on 2026-07-14 (D101 sense, D102 type, D103 source, D109 intensity, D111 effect, D112 coupling, D117 device, D118 direction) and the researcher's standing rule is that a failed dimension is redone in total.",
+        "consequence": "The status vocabulary describes the RULE's lifecycle, not the DATA's validity — and here they diverge: the rules are live and correct, it is the data written under them that failed. Nothing in this file records that, so the config reads as though all 18 are in good standing.",
+        "options": [
+          "A: nothing here — the rules ARE live; data validity belongs in the control layer (app_validation_result / the scoreboard), not the config",
+          "B: add a `data_state` field to the spec recording the last acceptance verdict per dimension, so the rulebook carries the debt visibly",
+          "C: migrate ve_dimension_scoreboard as the baseline (already the plan, 3.4.1) and let the config point at it"
+        ],
+        "recommendation": "A + C — the config defines rules, the scoreboard records verdicts, and conflating them would repeat 'completeness checked, not validity'. But the pointer must exist, or the re-run has no baseline to beat.",
+        "resolve_by": "researcher decision"
+      }
+    ]
+  },
+
+  "envelope_defaults": { "governs": ["lexicon"], "kind": "dimension", "status": "LIVE", "version": 1, "reference": "wa-ve-lexical-catalogue-v1 §2/§9; cycle §3" },
+  "items": [
+    { "id": "dim.101.sense", "intent": "per-occurrence sense of the word = the STEP sub-gloss (the spine; resolved first)", "satisfaction": "value gives THIS span's per-occurrence meaning (the sub-gloss), not the verse proposition/effect", "validation": { "axis": "I", "check": "matches-step-subgloss", "severity": "red" }, "spec": { "ve_nr": 101, "label": "sense", "shape": "value", "mandatory": true, "derivation": "I", "note": "authority = STEP sub-gloss + lexicon.gloss" } },
+    { "id": "dim.102.type", "intent": "POS-derived type of the characteristic", "satisfaction": "value in enum:type, derived from POS", "validation": { "axis": "C", "check": "value-in-domain", "enum": "type", "severity": "red" }, "spec": { "ve_nr": 102, "label": "type", "shape": "value", "mandatory": true, "derivation": "C", "enum": "type" } },
+    { "id": "dim.103.source", "intent": "the driver/antecedent of the characteristic", "satisfaction": "pair runs driver -> term (NOT term -> object); DRIVER vs RESTRAINT distinguished", "validation": { "axis": "I", "check": "pair-direction driver->term", "severity": "red" }, "spec": { "ve_nr": 103, "label": "source", "shape": "pair", "pair_from": "driver", "pair_to": "term", "mandatory": false, "derivation": "I-partial", "genre_note": "cross-verse Phase-2; per-span for narrative only", "rule": "must split DRIVER vs RESTRAINT" } },
+    { "id": "dim.104.seat", "intent": "constitutional seat (heart/soul/spirit) of the characteristic, via construct chain", "satisfaction": "pair seat -> term, construct-gated (not verse-wide)", "validation": { "axis": "C", "check": "pair-direction seat->term; construct-gated", "severity": "red" }, "spec": { "ve_nr": 104, "label": "seat", "shape": "pair", "pair_from": "seat", "pair_to": "term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.105.bearer", "intent": "the experiencer/subject who bears the characteristic", "satisfaction": "pair bearer -> term; bearer is ALWAYS human for a characteristic (never God)", "validation": { "axis": "I", "check": "pair-direction bearer->term; bearer!=God", "severity": "red" }, "spec": { "ve_nr": 105, "label": "bearer", "shape": "pair", "pair_from": "bearer", "pair_to": "term", "mandatory": false, "derivation": "I-partial", "rule": "bearer != God (Screen 0)" } },
+    { "id": "dim.106.operation", "intent": "the governing predicate (the act) the characteristic performs", "satisfaction": "an EVENT naming the act; not null for a characteristic (G2)", "validation": { "axis": "I", "check": "not-null", "severity": "red" }, "spec": { "ve_nr": 106, "label": "operation", "shape": "event", "mandatory": true, "derivation": "I" } },
+    { "id": "dim.107.target", "intent": "the object the characteristic acts on, with its object-type", "satisfaction": "pair term -> object; object-type in enum:object_type", "validation": { "axis": "I", "check": "pair-direction term->object; object-type-in-domain", "enum": "object_type", "severity": "red" }, "spec": { "ve_nr": 107, "label": "target", "shape": "pair", "pair_from": "term", "pair_to": "object", "mandatory": false, "derivation": "I-partial", "enum": "object_type" } },
+    { "id": "dim.108.manner", "intent": "prep-marked adverbial qualifier of the characteristic", "satisfaction": "pair qualifier -> term", "validation": { "axis": "C", "check": "pair-direction qualifier->term", "severity": "red" }, "spec": { "ve_nr": 108, "label": "manner", "shape": "pair", "pair_from": "qualifier", "pair_to": "term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.109.intensity", "intent": "degree/amount from the modifying qualifier (me'od/kol/doubled/emphatic)", "satisfaction": "value-or-explicit-none; self-interpretable; never silently ABSENT", "validation": { "axis": "C", "check": "mandatory-not-absent + self-interpretable", "severity": "red" }, "spec": { "ve_nr": 109, "label": "intensity", "shape": "pair/flag", "pair_from": "qualifier", "pair_to": "char", "mandatory": true, "self_interpretable": true, "derivation": "C", "reinstated": "2026-07-14" } },
+    { "id": "dim.110.specifier", "intent": "the narrowing qualifier (which one) - construct genitive / 'of the LORD' / 'this'", "satisfaction": "value-or-explicit-none; self-interpretable", "validation": { "axis": "C", "check": "mandatory-not-absent + self-interpretable", "severity": "red" }, "spec": { "ve_nr": 110, "label": "specifier", "shape": "pair", "pair_from": "qualifier", "pair_to": "char", "mandatory": true, "self_interpretable": true, "derivation": "C", "added": "2026-07-03" } },
+    { "id": "dim.111.effect", "intent": "the produced-state from the result/consequence qualifier", "satisfaction": "pair term -> produced-state; value-or-explicit-none; self-interpretable", "validation": { "axis": "C", "check": "pair-direction term->produced-state; mandatory-not-absent", "severity": "red" }, "spec": { "ve_nr": 111, "label": "effect", "shape": "pair", "pair_from": "term", "pair_to": "produced-state", "mandatory": true, "self_interpretable": true, "derivation": "C", "genre_note": "also Phase-2 book level" } },
+    { "id": "dim.112.coupling", "intent": "the morphological weld only (construct/preposition binding to a co-term)", "satisfaction": "records a morphological weld, NOT any semantic co-occurrence", "validation": { "axis": "C", "check": "morphological-weld-only", "severity": "red" }, "spec": { "ve_nr": 112, "label": "coupling", "shape": "pair", "pair_from": "term", "pair_to": "co-term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.113.prohibition", "intent": "a mechanical negation/prohibition particle on the term", "satisfaction": "flag present/absent, proximity-based", "validation": { "axis": "C", "check": "flag-mechanical", "severity": "amber" }, "spec": { "ve_nr": 113, "label": "prohibition", "shape": "flag", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.114.reading", "intent": "the evidence-anchored reading note (translit + capitalised verse-quote + meaning + surfaced finding); the uncertainty channel", "satisfaction": "not-null; write 'none' explicitly if nothing (looked-for, not skipped)", "validation": { "axis": "I", "check": "not-null", "severity": "red" }, "spec": { "ve_nr": 114, "label": "reading", "shape": "note", "mandatory": true, "derivation": "read-only", "relabelled": "2026-07-14 (was 'discovery')" } },
+    { "id": "dim.115.role", "intent": "the sanity-check classification of the span (set BY the read, not derived)", "satisfaction": "value in enum:role; assigned at the sanity-check gate", "validation": { "axis": "I", "check": "value-in-domain", "enum": "role", "severity": "red" }, "governs": ["characteristics", "lexicon"], "spec": { "ve_nr": 115, "label": "role", "shape": "value", "mandatory": true, "derivation": "read-only", "enum": "role" } },
+    { "id": "dim.116.locus", "intent": "classify the target/bearer entity as IB-internal vs external (mechanical from morphology+lemma)", "satisfaction": "value in enum:locus", "validation": { "axis": "C", "check": "value-in-domain", "enum": "locus", "severity": "red" }, "spec": { "ve_nr": 116, "label": "locus", "shape": "value", "mandatory": true, "derivation": "C", "enum": "locus", "added": "2026-07-04" } },
+    { "id": "dim.117.device", "intent": "the literary device the characteristic is expressed through; comparison-device pair endpoint = the VEHICLE span", "satisfaction": "head-value in enum:device; self-interpretable; default literal; never silently ABSENT", "validation": { "axis": "C", "check": "value-in-domain + mandatory-not-absent + self-interpretable", "enum": "device", "severity": "red" }, "spec": { "ve_nr": 117, "label": "device", "shape": "value/pair", "pair_to": "vehicle", "mandatory": true, "self_interpretable": true, "derivation": "C", "enum": "device", "default": "literal", "added": "2026-07-14" } },
+    { "id": "dim.118.direction", "intent": "the movement vector of the characteristic", "satisfaction": "head-value in enum:direction; value-or-none; self-interpretable; V3 tag-consistency applies", "validation": { "axis": "C", "check": "value-in-domain + mandatory-not-absent + tag-consistency", "enum": "direction", "severity": "red" }, "spec": { "ve_nr": 118, "label": "direction", "shape": "value", "mandatory": true, "self_interpretable": true, "derivation": "C", "enum": "direction", "added": "2026-07-14" } }
+  ],
+  "governing_value_rules": [
+    { "id": "dimrule.self-interpretable", "status": "LIVE", "authority": "catalogue §9 ★ (2026-07-14)", "statement": "every dimension value must be readable without re-reading the verse (carries its trigger + sense); bare codes / thin values forbidden" },
+    { "id": "dimrule.assess-never-absent", "status": "LIVE", "authority": "catalogue §9 ★ (2026-07-14)", "statement": "intensity/specifier/effect/device/direction are assessed from the qualifier spans and record 'none' explicitly; ABSENT (never assessed) is forbidden" },
+    { "id": "dimrule.dropped", "status": "LEGACY", "statement": "dropped/deprecated dims not to be written: D10 valence, D12 hidden-meaning, D13 cohabitation, related_tier T0-T7" }
+  ],
+  "verse_level_items": [
+    { "id": "vl.passage", "home": "verse.passage_id + passage table", "note": "consecutive-run membership; anchor = first verse" },
+    { "id": "vl.process", "home": "passage-level", "note": "escalation chain (prose narrative only); ve_nr pending" },
+    { "id": "vl.genre", "home": "verse.genre", "note": "drives passage treatment + ledger" }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "process_code": "raw",
+  "tier": "B",
+  "name": "Raw data",
+
+  "meta": {
+    "purpose": "The raw data layer — external-source data held exactly as the source gave it: verse text, verse morphology, and the Strong's lexicon. This process owns WHAT RAW IS and the controls that let it be trusted; it owns no interpretation whatsoever.",
+    "the_one_rule": "RAW IS IMMUTABLE. Write-once from the source, never overwritten by later processing. Every downstream layer references it and none may mutate it. This is the layer the whole study rests on: if raw drifts, every finding above it is unfalsifiable — and the programme has already lost a database once (2026-06-03).",
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope. Its vocabularies (governs · kind · status · validation.axis · validation.enforcement · validation.severity) are defined there and are NOT restated here.",
+    "why_this_file_is_the_simple_case": "Raw has no [I] rules at all. Every control is deterministic and most are expressible in DB technology — so this file is the clearest demonstration of the 2026-07-15 enforcement ruling: the rules live HERE, and `validation.enforcement` says which of them the schema projects as a CHECK / FK / NOT NULL / index.",
+
+    "nodes": {
+      "process": "How the layer works — immutability, provenance stamping, what qualifies as raw, and the boundary against `fetch` (which retrieves) and `base` (which derives).",
+      "entities": "The data it owns: verse · verse_morphology · lexicon. Definitional only — what each entity IS and how they relate. It does NOT declare tables or columns; that is the schema's job (layout v2 §1).",
+      "output": "What the layer emits for human consumption. Raw emits almost nothing — it is consumed, not published.",
+      "validation": "The ingest controls. Source-parity, completeness, no-null, FK integrity. Mostly db:*-enforced.",
+      "naming": "This process's naming parameters.",
+      "filing": "This process's filing parameters."
+    },
+
+    "open": [
+      {
+        "id": "open.raw.step-parity",
+        "issue": "`gate.raw.source-parity` is stated but has no mechanism: STEP is a live local server with NO cache, so re-querying it later is not a stable baseline to compare against — the source can change under us and we would not know.",
+        "consequence": "The most important raw control — 'is this what the source actually said' — is currently unenforceable. Migrating the live DB's raw layer as-is (plan 3.4.1) inherits this: it is trusted, not verified.",
+        "options": [
+          "A: snapshot the STEP response verbatim at ingest (a raw_source_payload store) and parity-check against the snapshot, not the server",
+          "B: checksum per verse/term at ingest; re-fetch and compare on demand",
+          "C: accept trust-on-first-ingest; parity is a spot-check only"
+        ],
+        "recommendation": "A — it makes raw genuinely replayable and is the only option that survives STEP changing or going away. It is also what 'raw is immutable' actually requires: you cannot assert immutability against a source you did not keep.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.raw.migrated-provenance",
+        "issue": "The plan migrates the live DB's raw layer as-is, stamped `migrated-from-<old>@<date>` (3.4.1). But that data's TRUE provenance is a STEP fetch of unknown date, made under the old engine.",
+        "consequence": "`prov.raw.source-stamp` would record the migration, not the origin — provenance that documents the copy rather than the source.",
+        "recommendation": "Stamp both: `source` = STEP (+ fetch date where recoverable, else `unknown`), `migrated_from` = the old DB. Never let the migration stamp masquerade as the origin.",
+        "resolve_by": "researcher decision; affects the migration module"
+      }
+    ]
+  },
+
+  "process": [
+    {
+      "id": "raw.definition",
+      "governs": ["raw"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan moonlit-launching-cocke §3.4 (data lifecycle layer 1)",
+      "reference": "plan §3.4 'The DB holds results in four distinct layers'",
+      "intent": "Define what qualifies as raw, so the boundary against derived data is not a judgement call at write time.",
+      "satisfaction": "A row is raw if and only if its every field came from an external source verbatim, with no conversion, derivation, inference or methodological processing applied.",
+      "validation": { "axis": "C", "check": "layer-membership", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Raw = untouched external-source data. Anything converted, parsed, derived or judged is BASE, not raw — even if it is mechanical.",
+        "boundary_examples": {
+          "raw": "the morph_code string as STEP returned it",
+          "base": "the `stem` derived FROM that morph_code — derivation makes it base, however deterministic"
+        },
+        "note": "This boundary is what makes `raw.immutable` enforceable. A layer that quietly admits derived values cannot be immutable, because derivations change when their rules change."
+      }
+    },
+    {
+      "id": "raw.immutable",
+      "governs": ["raw"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.4.2 'Do: Raw is immutable'",
+      "reference": "plan §3.4.2",
+      "intent": "Guarantee that the evidentiary floor never moves, so any finding can be re-derived from the same raw and any drift is attributable to the layer above.",
+      "satisfaction": "No UPDATE or DELETE has ever touched a raw row. Corrections arrive as a new versioned ingest, never as an edit.",
+      "validation": { "axis": "C", "check": "write-once", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "statement": "Raw tables are write-once. Downstream layers reference them and never mutate them. A correction is a new ingest with its own provenance, not an edit of the old row.",
+        "enforcement_note": "db: revoke UPDATE/DELETE at the schema level where SQLite permits (triggers). gate: the validation engine refuses any patch whose target is a raw table and whose op is not INSERT.",
+        "rationale": "The 2026-06-03 DB loss was survivable only where work was replayable. An immutable raw layer is what makes replay possible at all."
+      }
+    },
+    {
+      "id": "raw.no-analytical-values",
+      "governs": ["raw"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.4.2 'Don't: no analytical values on mechanical tables'; failure record 02-failures §eisegesis",
+      "reference": "plan §3.4.2",
+      "intent": "Prevent the specific failure where interpretation was stamped onto mechanical tables (role / char_candidate / characteristic written onto verse_span_index), which destroyed layer separation and made the analysis un-auditable.",
+      "satisfaction": "No raw entity carries a field whose value is a reading, judgement, classification or characteristic.",
+      "validation": { "axis": "C", "check": "no-interpretive-fields", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "An interpretive value must never be written onto a raw entity. Layers stay separated.",
+        "history": "The live DB's `verse_span_index` carries role/char_candidate/characteristic/ib_char_id — which is why the migration strips them and keeps only the structural span (plan 3.4.1)."
+      }
+    },
+    {
+      "id": "raw.boundary-with-fetch",
+      "governs": ["raw", "fetch"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §A.11 (3 Raw ≈ module 1 output)",
+      "reference": "plan §A.11",
+      "intent": "Separate retrieval from storage, so a fetch failure and a raw defect are distinguishable.",
+      "satisfaction": "`fetch` owns talking to STEP (pagination, the 60-cap sectioning, retries, Strong's resolution); `raw` owns what is stored and its controls. Neither restates the other.",
+      "validation": { "axis": "C", "check": "process-boundary", "severity": "amber", "enforcement": "gate" },
+      "spec": { "statement": "Fetch retrieves; raw stores and guards. The handoff is the ingest gate." }
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "ent.raw.verse",
+      "governs": ["raw"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "live DB schema 3.40.0 (measure layer, proven — plan §4)",
+      "reference": "plan §4 'Measure layer present'; schema-design.md (Appendix B)",
+      "intent": "The verse as Scripture gives it — the addressable unit the entire study hangs off. Every finding, span and passage resolves to a verse.",
+      "satisfaction": "One row per canonical verse; text verbatim; addressable by reference.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per canonical verse",
+        "identity": "book + chapter + verse (the canonical reference)",
+        "holds": ["the reference", "the verse text"],
+        "does_not_hold": [
+          "passage_id · is_passage_anchor · process_marker · genre — these are BASE (derived by verses-passages), not raw, though the live DB carries them ON the verse row"
+        ],
+        "note": "⚠ In the live 3.40.0 DB, `verse` mixes raw (text) and base (passage_id, genre, process_marker) on one row. The new schema must separate them or the immutability rule cannot hold — a genre re-derivation would be an UPDATE to a raw table. Flagged for Appendix B."
+      }
+    },
+    {
+      "id": "ent.raw.verse-morphology",
+      "governs": ["raw"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "live DB schema 3.40.0; memory project_morph_is_source_of_truth",
+      "reference": "plan §4",
+      "intent": "The per-word original-language morphology of each verse — the linguistic source of truth. Language, stem and part-of-speech all derive from it, never the reverse.",
+      "satisfaction": "One row per word-occurrence in a verse, carrying the source's own surface / Strong's / morph_code.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per word-occurrence (verse × word position)",
+        "identity": "verse + word position",
+        "holds": ["surface form", "strongs", "morph_code"],
+        "does_not_hold": ["stem · pos — DERIVED from morph_code, therefore BASE (see raw.definition)"],
+        "authority_rule": "morph_code is THE source of truth for language and stem. Anything that contradicts it is wrong, including the registry.",
+        "note": "⚠ The live DB carries `stem` and `pos` on this table (plan §4). Under raw.definition those are base. Same separation problem as ent.raw.verse — Appendix B."
+      }
+    },
+    {
+      "id": "ent.raw.lexicon",
+      "governs": ["raw", "lexical"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "live DB schema 3.40.0",
+      "reference": "plan §4 'lexicon (Strong's gloss)'",
+      "intent": "The Strong's lexicon entry per term — glosses and sub-glosses. Load-bearing far beyond raw: the SUB-GLOSS is the authority for D101 sense, the spine of the whole lexical read.",
+      "satisfaction": "One row per Strong's number, carrying the source's gloss and sub-glosses verbatim.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per Strong's number",
+        "identity": "Strong's number (zero-padded 4-digit; H/G prefix; suffix letters mark sub-entries)",
+        "holds": ["gloss", "sub-glosses"],
+        "downstream": "lexical.sense-authority binds D101 to this entity's sub-gloss. The 2026-07-14 audit failed D101 precisely because reads recorded interpretation instead of this value (tsaddiq -> 'public good').",
+        "note": "⚠ NAME COLLISION: this raw entity `lexicon` is NOT the `lexical` process. See ../_manifest.json meta.open.lexicon-naming."
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "id": "out.raw.reconciliation-report",
+      "governs": ["raw"],
+      "kind": "output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.4.1 'A reconciliation report closes the migration'",
+      "reference": "plan §3.4.1",
+      "intent": "The human-facing evidence that the raw layer is sound before any study run begins — raw-layer parity, registry completeness, old-vs-new diffs.",
+      "satisfaction": "Report produced, reviewed and signed off by the researcher before the first study run.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "trigger": "migration completion; and on demand",
+        "format": "md",
+        "note": "Raw publishes almost nothing else — it is consumed by every layer above, not read by humans."
+      }
+    }
+  ],
+
+  "validation": [
+    {
+      "id": "gate.raw.source-parity",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "plan §3.7.1 'Raw — ingest controls: source-parity'",
+      "reference": "plan §3.7.1",
+      "intent": "Prove that what is stored is what the source actually said — the control that makes every downstream claim falsifiable.",
+      "satisfaction": "Every raw row matches its source verbatim.",
+      "validation": { "axis": "C", "check": "source-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per ingest batch",
+        "canonical": false,
+        "reconcile": "open.raw.step-parity",
+        "note": "⚠ STATUS RECONCILE — no mechanism exists. STEP is a live server with no cache, so there is no stable baseline to compare against. This gate cannot run until open.raw.step-parity is ruled."
+      }
+    },
+    {
+      "id": "gate.raw.completeness",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.7.1",
+      "reference": "plan §3.7.1",
+      "intent": "Catch a partial ingest — the failure mode STEP's 60-result cap makes likely, and which silently understates the corpus.",
+      "satisfaction": "Row counts match the expected count for the scope; no gaps in verse sequence within a chapter.",
+      "validation": { "axis": "C", "check": "row-count-parity + sequence-gap", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per book",
+        "rationale": "STEP caps at 60 results and the client sections around it; a silently truncated section reads as a complete book. 'Coverage was a mirage' is a named prior failure (plan §1.2)."
+      }
+    },
+    {
+      "id": "gate.raw.no-null",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.7.1",
+      "reference": "plan §3.7.1",
+      "intent": "Refuse a raw row with a missing required field, rather than discovering it three layers up.",
+      "satisfaction": "Every required field on every raw entity is non-null.",
+      "validation": { "axis": "C", "check": "not-null", "severity": "red", "enforcement": "db:not-null" },
+      "spec": {
+        "scope": "per row",
+        "enforcement_note": "PROJECTED AS NOT NULL CONSTRAINTS by the config-maintenance utility. The rule lives here; the schema carries it. Per the 2026-07-15 ruling, the constraint is a projection — never a second definition."
+      }
+    },
+    {
+      "id": "gate.raw.fk-integrity",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.7.1; §3.4.2 'no orphan-tolerant structure'",
+      "reference": "plan §3.7.1",
+      "intent": "Guarantee morphology and lexicon rows resolve to a real verse and a real Strong's — no orphans, which the live DB has repeatedly produced.",
+      "satisfaction": "Every FK resolves; no orphan rows in any raw entity.",
+      "validation": { "axis": "C", "check": "fk-resolves", "severity": "red", "enforcement": "db:fk" },
+      "spec": {
+        "scope": "per row",
+        "enforcement_note": "PROJECTED AS FOREIGN KEYS by the config-maintenance utility.",
+        "history": "The live DB required an XREF-duplication clean-up and an orphan clear (schema 3.33.0) because this was convention, not constraint. Plan §3.4.2: enforced by schema + gates, never by convention."
+      }
+    },
+    {
+      "id": "gate.raw.strongs-format",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "CLAUDE.md §3 Conventions; memory reference_strongs_zero_padded_4digit_in_db",
+      "reference": "wa-reference [current] §2",
+      "intent": "Keep Strong's comparable across every join in the system.",
+      "satisfaction": "Every Strong's is H|G + zero-padded 4-digit, with optional suffix letter for sub-entries.",
+      "validation": { "axis": "C", "check": "pattern-match", "severity": "red", "enforcement": "db:check" },
+      "spec": {
+        "pattern": "^[HG][0-9]{4}[A-Z]?$",
+        "scope": "per row",
+        "enforcement_note": "PROJECTED AS A CHECK CONSTRAINT.",
+        "rationale": "Unpadded Strong's silently fail to join — a live-DB defect class that required zfill-before-compare as a workaround. The constraint removes the workaround."
+      }
+    },
+    {
+      "id": "gate.raw.immutability",
+      "governs": ["raw"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "raw.immutable",
+      "reference": "plan §3.4.2",
+      "intent": "Enforce raw.immutable at the point of write, since a violation is undetectable after the fact.",
+      "satisfaction": "No UPDATE or DELETE reaches a raw table.",
+      "validation": { "axis": "C", "check": "write-once", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "scope": "per write",
+        "enforcement_note": "db: BEFORE UPDATE / BEFORE DELETE triggers that RAISE. gate: the patch validator rejects any non-INSERT op targeting a raw entity. Defence in depth — this rule is the floor of the whole study.",
+        "implements": "raw.immutable"
+      }
+    }
+  ],
+
+  "naming": [
+    {
+      "id": "naming.raw.ids",
+      "governs": ["raw"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3 (one rule, one home)",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This process's naming parameters only — the rules themselves live in the wide pattern file and are cited, never restated.",
+      "satisfaction": "Raw rule ids are `raw.*` / `ent.raw.*` / `gate.raw.*` / `out.raw.*`.",
+      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "prefixes": { "process": "raw.", "entity": "ent.raw.", "gate": "gate.raw.", "output": "out.raw." },
+        "cites": ["pattern.id-frozen-at-mint", "pattern.zero-pad-strongs"],
+        "note": "Per layout v2 §2.3 this node carries PARAMETERS, not rules. `id frozen at mint`, `zero-pad`, `same-name -> version bump` are wide rules, cited by id and defined nowhere else."
+      }
+    }
+  ],
+
+  "filing": [
+    {
+      "id": "filing.raw.outputs",
+      "governs": ["raw"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "Where this process's human-facing artefacts are filed.",
+      "satisfaction": "Raw outputs land in the declared tree; superseded versions archived, never overwritten.",
+      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "output_tree": "outputs/raw/",
+        "archive_tree": "outputs/raw/archive/",
+        "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write"],
+        "note": "Parameters only — the archiving and versioning RULES live in the filing utility's config and are cited by id."
+      }
+    }
+  ]
+}

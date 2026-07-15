@@ -1,0 +1,464 @@
+{
+  "section": "enums",
+  "kind": "enum",
+
+  "meta": {
+    "purpose": "THE REGISTER OF CONTROLLED VOCABULARIES. Every word-group / lookup used anywhere in IBA is defined here, once, and assigned a code — and nowhere else. If a field anywhere in the application accepts only a fixed set of values, that set is an item in this file and the field points at its code. A vocabulary defined in a doc, a SQL CHECK, or a module's source is a defect, not a second opinion.",
+    "why_it_exists": "The programme currently has the same concept defined 3-4 ways across the REF doc, the DB wa_vocab_* tables, free-text SQL columns, and synced patch copies — with divergent values. Enforcing one home with one code is the fix (plan C.13 item 6, recon.vocab-home).",
+    "envelope": "Every item carries the common rule envelope — see _manifest.json meta.envelope. Its vocabularies (governs · kind · status · validation.axis · validation.severity) are defined there and are NOT restated here.",
+
+    "nodes": {
+      "items": "The vocabularies themselves. One item = one word-group = one code (`id`) = one lookup. Full envelope + the `spec` below."
+    },
+
+    "spec_schema": {
+      "description": "The kind-specific body for kind=enum. What the vocabulary actually contains.",
+      "fields": {
+        "values": {
+          "required": true,
+          "type": "array of string",
+          "description": "THE OPTIONS — the permitted values of the vocabulary, and the only ones any field bound to this code may hold. On a RECONCILE item this is the WORKING set (see `canonical`), not authority."
+        },
+        "canonical": {
+          "required": true,
+          "type": "boolean",
+          "description": "Whether `values` IS the decided, authoritative set. false = contested; the item's status will be RECONCILE, `reconcile` names the open decision, and `values` is a placeholder the loader will not run study modules on."
+        },
+        "reconcile": {
+          "required": "when canonical=false",
+          "type": "string",
+          "description": "The `recon.*` id in reconciliations.json holding the open decision that settles this vocabulary."
+        },
+        "variants": {
+          "required": "when canonical=false",
+          "type": "object (source -> array of string)",
+          "description": "The divergent value-sets found across sources, keyed by source. This is the evidence for the decision — kept so the reconciliation is made against what the sources actually say, not from memory."
+        },
+        "alias_map": {
+          "required": false,
+          "type": "object (old value -> canonical value)",
+          "description": "Maps superseded/variant values onto the canonical one, so historic data stays readable after the decision. Feeds the loader's import mapping."
+        },
+        "default": {
+          "required": false,
+          "type": "string (must be in values)",
+          "description": "The value assumed when the read finds nothing to the contrary (e.g. device defaults to `literal`). A default is NOT the same as `none`: default = the unmarked normal case; `none` = assessed and genuinely absent."
+        },
+        "labels": {
+          "required": false,
+          "type": "object (value -> string)",
+          "description": "Human-readable expansion where the value is a code rather than a word (e.g. segment_unit_type D = discourse). ⚠ ad-hoc — see meta.open.value-metadata."
+        },
+        "rule": {
+          "required": false,
+          "type": "string",
+          "description": "A constraint on USE of the vocabulary that domain-membership alone does not capture (e.g. resolution: `none` and `unknown` are distinct and must never be conflated)."
+        },
+        "note": {
+          "required": false,
+          "type": "string",
+          "description": "Anything a reader needs to interpret the item — typically why the stored data diverges from the rule."
+        }
+      }
+    },
+
+    "coverage": {
+      "state": "INCOMPLETE — 11 of the register authored. These are the live lexical vocabularies only; they are the first examples, not the set.",
+      "authored": 11,
+      "outstanding": {
+        "note": "Named by the plan's inventory scan (C.1) plus the sections still to be authored. Each still needs its members pulled from its actual source before it can be authored — the live DB wa_vocab_set/wa_vocab_member rows, the REF doc, or the SQL CHECK constraints. Not yet reviewed for scope by the researcher.",
+        "config_meta_vocabularies": {
+          "candidates": ["governs", "kind", "status", "axis", "severity", "decision_status"],
+          "blocked_by": "_manifest.json meta.open.self-hosting — decide whether the config self-hosts its own vocabularies here"
+        },
+        "lexical_and_read": {
+          "candidates": ["derivation", "shape", "verdict_class (READY / READY-WITH-DEBT / NOT-READY)", "validity_state (valid / invalid / amber-review / unchecked)", "stated_or_inferred"],
+          "note": "shape overlaps enum.pair_kind (values vs storage shape) — reconcile when dimensions/gates are settled"
+        },
+        "raw_and_measure": {
+          "candidates": ["language (Hebrew/Greek)", "testament", "pos", "stem", "book codes + variants"],
+          "note": "morphology-derived; pull from the live DB, do not author by hand"
+        },
+        "registry_and_term": {
+          "candidates": ["term_owner_type (OWNER/XREF)", "mti_terms.status", "source_list", "origin", "registry dimensions (14)", "evidential_status (5)", "dimensional-weight (PRIMARY/SECONDARY/PERIPHERAL)"],
+          "note": "the registry/term layer migrates (plan 3.4.1), so these vocabularies come with it and must be authored before that import"
+        },
+        "flag_code_sets": {
+          "candidates": ["research_flags (17)", "phase2_flags (25)", "data_quality_flags (9)", "crosslink_type (11)"],
+          "note": "sizeable; several are pre-reset"
+        },
+        "control_and_ops": {
+          "candidates": ["run status", "step status", "gate phase (pre/post)", "on_fail (halt/warn)", "activation (auto/halt)", "patch types (~15-20)", "patch operations", "debug levels", "output formats"],
+          "note": "these are the app's own vocabularies; author alongside pipeline.json / settings.json"
+        },
+        "legacy_pre_reset": {
+          "candidates": ["session_b_status", "verse_context_status", "phase1_status", "cluster.status", "cluster_finding.finding_status", "observation.status", "observation.provenance", "prose_section.status", "prose_section.author"],
+          "blocked_by": "meta.open.legacy-scope — decide whether the new config carries LEGACY vocabularies at all"
+        }
+      }
+    },
+
+    "open": [
+      {
+        "id": "meta.open.value-metadata",
+        "issue": "A value is a bare string. There is no per-value home for its meaning, its ordinal, or its aliases — so enum.segment_unit_type invented a side-map (`labels`), enum.role's aliases sit in a separate `alias_map`, and every other vocabulary's values are simply undefined. The plan's cfg_enum table expects value + ordinal + notes (A.3), which this shape cannot supply.",
+        "consequence": "Values cannot be self-interpretable — the same defect the read layer failed on (dimrule.self-interpretable). A reader of `enum.locus` cannot tell what `external:world` includes without going back to the source doc, which is exactly the drift this register is meant to end.",
+        "options": [
+          "A: keep bare strings; accept that value meanings live in the source docs (cheapest; does not meet cfg_enum; values stay uninterpretable)",
+          "B: values become objects { value, description, ordinal?, aliases? } — self-interpretable, matches cfg_enum, absorbs `labels`/`alias_map`; costs a rewrite of the 11 authored items before expansion",
+          "C: hybrid — bare strings allowed where the value IS its own definition (e.g. `action`/`status`/`quality`), objects required where it is not"
+        ],
+        "recommendation": "B, decided BEFORE expansion — the register is 11 of ~50+ items; changing the value shape after authoring the rest is the expensive order. Applying your own self-interpretable rule to the config is also the consistent one.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "meta.open.legacy-scope",
+        "issue": "The plan's new DB carries no legacy (3.4.2 'no legacy/quarantine carry-over'), but the envelope defines a LEGACY status and the README says superseded rules are marked, not deleted. It is not decided whether pre-reset vocabularies (session_b_status, cluster.*, the pre-reset flag sets) belong in this register as LEGACY or are simply out of scope.",
+        "consequence": "Roughly a dozen vocabularies are either in scope or not; it materially changes the size of this file.",
+        "options": [
+          "A: author them as LEGACY — the old DB stays readable and the archive stays interpretable",
+          "B: out of scope — the new config describes only the new model; the old DB's vocabularies stay documented in the old DB and the archive"
+        ],
+        "recommendation": "B for anything the new DB never stores, A for anything that arrives with the migrated registry/term layer (those values will be present in new-DB rows, so the new config must define them).",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "meta.open.source-of-members",
+        "issue": "For most outstanding vocabularies the authoritative member list is in the live DB (wa_vocab_set/wa_vocab_member) or a SQL CHECK, not in a doc.",
+        "consequence": "Authoring them from the docs or from memory would re-import the very drift this register exists to end.",
+        "resolve_by": "Pull members from the live DB once, as a one-time seed extraction, and author from that — per recon.vocab-home's recommendation. Needs a read-only extract script before expansion."
+      }
+    ]
+  },
+
+  "items": [
+    {
+      "id": "enum.resolution",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 (2026-07-02)",
+      "reference": "wa-ve-lexical-catalogue-v1 §1",
+      "intent": "the resolution state carried by every PAIR value (how the element1 was determined)",
+      "satisfaction": "every pair value's resolution is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": ["span", "inferred", "unknown", "none"],
+        "canonical": false,
+        "reconcile": "recon.resolution-vocab",
+        "variants": {
+          "catalogue": ["span", "inferred", "unknown", "none/silent"],
+          "01b": ["resolved", "NONE/silent", "UNRESOLVED"],
+          "collection": ["resolved", "UNRESOLVED"]
+        },
+        "rule": "silence (none) and unresolved (unknown) are DISTINCT and must never be conflated"
+      }
+    },
+    {
+      "id": "enum.role",
+      "governs": ["characteristics", "lexical"],
+      "kind": "enum",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §8 / cycle authoritative v1 §1",
+      "reference": "wa-ve-lexical-catalogue-v1 §8; wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
+      "intent": "the sanity-check classification of a span's function (assigned BY the read, not derived)",
+      "satisfaction": "every read-2026 span carries a role in the canonical set",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": ["characteristic", "qualifier", "standalone", "uncertain"],
+        "canonical": false,
+        "reconcile": "recon.role-enum",
+        "variants": {
+          "catalogue-§8": [
+            "characteristic",
+            "process-qualifier",
+            "standalone",
+            "uncertain"
+          ],
+          "cycle-§1": [
+            "characteristic",
+            "qualifier",
+            "standalone",
+            "undecided"
+          ],
+          "integrity-I6-readiness": [
+            "characteristic",
+            "qualifier",
+            "standalone"
+          ],
+          "success-criteria": [
+            "characteristic",
+            "qualifier",
+            "process-qualifier"
+          ]
+        },
+        "alias_map": {
+          "process-qualifier": "qualifier",
+          "undecided": "uncertain"
+        }
+      }
+    },
+    {
+      "id": "enum.type",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2 / 01b §4a",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "the POS-derived type of the characteristic (ve_nr 102)",
+      "satisfaction": "type value is one of spec.values, derived from POS",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain + POS-derived",
+        "severity": "red"
+      },
+      "spec": {
+        "values": ["action", "status", "quality"],
+        "canonical": true,
+        "note": "the live data used a faculty ontology (disposition/affect/cognition/faculty/volition/state/seat) which FAILED rule-validation (2026-07-14); that vocabulary is LEGACY, not the rule."
+      }
+    },
+    {
+      "id": "enum.object_type",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2 (D5) / 01b N1",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "the object-type sub-attribute of target (ve_nr 107)",
+      "satisfaction": "target's object-type is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": [
+          "person",
+          "God",
+          "group",
+          "thing",
+          "abstract",
+          "spiritual-being"
+        ],
+        "canonical": true
+      }
+    },
+    {
+      "id": "enum.locus",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 (added 2026-07-04)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "classify the target/bearer entity as IB-internal vs external (ve_nr 116)",
+      "satisfaction": "locus value is one of the canonical set",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": [
+          "internal:ib-state",
+          "external:god",
+          "external:person",
+          "external:world",
+          "none",
+          "internal:heart",
+          "internal:seat",
+          "internal:spirit"
+        ],
+        "canonical": false,
+        "reconcile": "recon.locus-vocab",
+        "variants": {
+          "catalogue-classes": [
+            "god",
+            "adversary",
+            "proper",
+            "thing",
+            "seat",
+            "ib-state",
+            "body"
+          ],
+          "stored-observed": [
+            "internal:ib-state",
+            "external:god",
+            "external:person",
+            "external:world",
+            "none",
+            "internal:heart",
+            "internal:seat",
+            "internal:spirit"
+          ]
+        },
+        "note": "catalogue states an entity-class scheme; the stored/observed values use an internal:/external: prefix scheme. Decide the canonical set + the early-band convention (Ps 1-25 was uniformly internal:ib-state)."
+      }
+    },
+    {
+      "id": "enum.device",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "the literary device the characteristic is expressed through (ve_nr 117); default literal",
+      "satisfaction": "device head-value is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": [
+          "literal",
+          "metaphor",
+          "simile",
+          "analogy",
+          "personification",
+          "paradox",
+          "hyperbole",
+          "litotes",
+          "metonymy",
+          "irony",
+          "symbolism",
+          "typology"
+        ],
+        "canonical": true,
+        "default": "literal"
+      }
+    },
+    {
+      "id": "enum.direction",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "the movement vector of the characteristic (ve_nr 118)",
+      "satisfaction": "direction head-value is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": [
+          "toward-god",
+          "from-god",
+          "inward",
+          "outward",
+          "reciprocal",
+          "static"
+        ],
+        "canonical": true
+      }
+    },
+    {
+      "id": "enum.pair_kind",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §5 / cycle §3",
+      "reference": "wa-ve-lexical-catalogue-v1 §5",
+      "intent": "the storage shape of a ve_lexical value (on ve_lexical.pair_kind)",
+      "satisfaction": "pair_kind is one of spec.values and matches the dimension's declared shape",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain + matches-dimension-shape",
+        "severity": "red"
+      },
+      "spec": {
+        "values": ["pair", "value", "event", "flag", "note"],
+        "canonical": true
+      }
+    },
+    {
+      "id": "enum.genre",
+      "governs": ["verses-passages", "lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §3 / verse-analysis-method v1 §3",
+      "reference": "wa-ve-lexical-catalogue-v1 §3",
+      "intent": "the genre on verse.genre; drives passage treatment + the mandatory ledger",
+      "satisfaction": "verse.genre is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": [
+          "law/narrative",
+          "narrative",
+          "poetic/wisdom",
+          "prophetic",
+          "gospel-narrative",
+          "epistle"
+        ],
+        "canonical": true
+      }
+    },
+    {
+      "id": "enum.gate_class",
+      "governs": ["lexical"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "verse-analysis-method v1 §12",
+      "reference": "wa-verse-analysis-method-v1 §12",
+      "intent": "the content-span gate a lexical was created under (on ve_lexical.gate)",
+      "satisfaction": "gate is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": { "values": ["1-primary", "2-relevant"], "canonical": true }
+    },
+    {
+      "id": "enum.segment_unit_type",
+      "governs": ["verses-passages"],
+      "kind": "enum",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "verse-analysis-method v1 §15",
+      "reference": "wa-verse-analysis-method-v1 §15",
+      "intent": "discourse-book segmentation unit type (segment_unit.unit_type)",
+      "satisfaction": "unit_type is one of spec.values",
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "severity": "red"
+      },
+      "spec": {
+        "values": ["D", "S", "C", "T", "F"],
+        "labels": {
+          "D": "discourse",
+          "S": "single-saying",
+          "C": "cluster",
+          "T": "thread",
+          "F": "frame/arena"
+        },
+        "canonical": true
+      }
+    }
+  ]
+}

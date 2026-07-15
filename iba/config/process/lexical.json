@@ -1,0 +1,632 @@
+{
+  "process_code": "lexical",
+  "tier": "B",
+  "name": "Lexical decomposition (the per-term lexical layer)",
+
+  "meta": {
+    "purpose": "The interpretive core — reading each characteristic-bearing span in its verse and recording what the verse does with it, as the ve_nr dimensions. This is the layer that FAILED: on 2026-07-14, 8 of 18 dimensions failed their own written rules and 0 passed. Everything in this file exists because a rule that lived in prose was ignored.",
+    "the_governing_shift": "Rules are no longer remembered — they are encoded here and enforced by the validation engine. The model produces only what genuinely requires inference ([I]), and every output it produces is checked by a [C] gate and retried on violation. An [I] value that fails its gate does not bank.",
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope. Its vocabularies are defined there and are NOT restated here.",
+    "supersedes": "config/dimensions.json (authored 2026-07-15) — absorbed into the `entities` node. Original archived at config/archive/dimensions-v1-20260715-absorbed-into-process-lexical.json.",
+
+    "definitional_split": {
+      "ruling": "researcher 2026-07-15: 'enums define the item, its options, and where it is used. How it is applied is process configuration.'",
+      "applied_here": "PROCEEDING ON RECOMMENDATION (../_manifest.json meta.open.definitional-extends) — the ruling names a CAUSE, not an enum instance, so it extends to dimensions. Each `entities` item is now DEFINITIONAL ONLY: ve_nr · label · shape · pair endpoints · mandatory · derivation · enum. Every check that was on a dimension is now a GATE in the `validation` node.",
+      "what_moved_out_of_dimensions": {
+        "validation blocks (all 18)": "-> validation node, as gates",
+        "spec.rule (D103 driver-vs-restraint, D105 bearer!=God)": "-> process node, as read rules",
+        "spec.default (D117 literal)": "-> process node (lexical.device-default)",
+        "spec.genre_note (D103, D111)": "-> process node (the ledger owns applicability)",
+        "governing_value_rules (self-interpretable, assess-never-absent)": "-> process node as rules + validation node as gates — they were unenforceable prose inside a rulebook (dimensions.json meta.open.governing-rules-shape)"
+      },
+      "what_moved_out_of_enums": {
+        "enum.resolution spec.rule (none != unknown)": "-> lexical.resolution-distinction",
+        "enum.device spec.default (literal)": "-> lexical.device-default"
+      },
+      "reversibility": "If the researcher overrules meta.open.definitional-extends, the gates fold back onto their dimensions. Nothing is lost — the content is the same rules, differently homed."
+    },
+
+    "nodes": {
+      "process": "How the read works — sense authority, grain, the ledger, genre routing, the read rules, and the value-quality rules that the 07-14 audit proved were unenforced.",
+      "entities": "The ve_nr dimensions (101-118) and the lexical record itself. DEFINITIONAL ONLY.",
+      "output": "Projections and review packs.",
+      "validation": "Every gate that checks a lexical value. This is where the 07-14 failures become mechanically impossible.",
+      "naming": "This process's naming parameters.",
+      "filing": "This process's filing parameters."
+    },
+
+    "state": {
+      "warning": "The dimension RULES here are LIVE and believed correct. The DATA written under them is not: 8 dimensions FAILED acceptance on 2026-07-14 and the researcher's standing rule is that a failed dimension is redone in total. Config records rules; the scoreboard records verdicts. See ../_manifest.json meta.open.failed-dimension-status.",
+      "failed_2026_07_14": ["101 sense", "102 type", "103 source", "109 intensity", "111 effect", "112 coupling", "117 device", "118 direction"],
+      "in_progress_2026_07_14": ["104 seat", "105 bearer", "106 operation", "107 target", "108 manner", "110 specifier", "113 prohibition", "114 reading", "115 role", "116 locus"],
+      "passed": [],
+      "baseline": "ve_dimension_scoreboard / ve_lexical_verification / ve_verification_sample (migrated as reference — plan 3.4.1). The new build must beat this baseline; it is the acceptance test."
+    },
+
+    "open": [
+      {
+        "id": "open.lexical.ledger-blocked",
+        "issue": "The genre x role mandatory ledger is contested — `recon.mandatory-ledger` (07-11 poetic base vs 07-14 M16 making 109/110/111/117/118 mandatory; 103/111 per-span vs Phase-2-only).",
+        "consequence": "`lexical.ledger` is status RECONCILE, so THE LOADER WILL NOT RUN THIS PROCESS. The ledger defines what a read must produce; without it, 'complete' is undefined.",
+        "resolve_by": "researcher ruling on recon.mandatory-ledger — the single hardest blocker on this process"
+      },
+      {
+        "id": "open.lexical.self-interpretable-check",
+        "issue": "`gate.lexical.self-interpretable` is declared [C] red, but 'is this value readable without the verse' is not obviously mechanically decidable. A length floor and a truncation check catch the 07-14 artefacts (malformed, truncated-mid-word values) but would pass a well-formed, uninterpretable value.",
+        "consequence": "The gate would give false assurance on exactly the rule it exists to enforce — the pattern the failure record names as 'completeness checked, not validity'.",
+        "options": [
+          "A: [C] structural floor only (not-truncated, min length, contains its trigger) + accept it is partial",
+          "B: [C] floor + [I] sampled judge on a sample per run",
+          "C: [I] per value (expensive; and the model self-certifying its own output is the failure mode this design exists to prevent)"
+        ],
+        "recommendation": "B — the [C] floor runs over everything and catches the known artefact class; the [I] judge samples and cannot self-certify because it judges a DIFFERENT model call's output. C is disallowed by the design's own logic.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.lexical.sense-authority-check",
+        "issue": "`gate.lexical.sense-matches-subgloss` is the gate for the dimension that failed hardest (D101 recorded interpretation, not the sub-gloss). But matching a produced sense against a lexicon sub-gloss is fuzzy, not exact — the sub-gloss is a gloss list, and the read must pick the per-occurrence one.",
+        "options": [
+          "A: exact membership — sense MUST be one of the sub-glosses verbatim (mechanical, red; may be too rigid for real text)",
+          "B: membership with a normalisation (case/punctuation/stem)",
+          "C: [I] judge: 'is this sense one of these sub-glosses?'"
+        ],
+        "recommendation": "A first, and see what it rejects. The 07-14 failure was not a near-miss — 'public good' for tsaddiq is not a sub-gloss at all, and a strict gate would have caught it on the first row. Loosen only against evidence.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.lexical.compound-shapes",
+        "issue": "D109 shape `pair/flag` and D117 shape `value/pair` are not members of enum.pair_kind, so `gate.lexical.shape-matches-pair-kind` cannot run for them. Both FAILED on 07-14.",
+        "recommendation": "Model the head and the pair as two rows (head value + optional pair row), so every stored row has one simple pair_kind and the gate is total. Carried from dimensions.json meta.open.compound-shapes.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.lexical.regex-prohibition",
+        "issue": "Five dimensions (109/111/117/118 + 110) were RETROFITTED BY REGEX and all failed. `lexical.no-mechanical-extraction` states the prohibition, but a [C] gate cannot see HOW a value was produced — only what it looks like.",
+        "consequence": "The single most damaging technique in the failure record is prohibited by a rule that cannot be enforced on the value itself.",
+        "options": [
+          "A: provenance-based — every ve_lexical row records the method that produced it; the gate refuses `method=regex` for [I]/[I-partial] dimensions",
+          "B: artefact-based only — the truncation/malformation gates catch regex output indirectly",
+          "C: process-based — the API adapter is the only writer for interpretive dims; regex has no write path"
+        ],
+        "recommendation": "A + C. C makes it structurally impossible; A makes it detectable if someone routes around C. B alone is what we had.",
+        "resolve_by": "researcher decision"
+      }
+    ]
+  },
+
+  "process": [
+    {
+      "id": "lexical.sense-authority",
+      "governs": ["lexical"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2 (D1); researcher 2026-07-14 (D1 acceptance failure)",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "Bind D101 sense to an external authority, so the read cannot substitute its own interpretation for the word's meaning. This is the spine: sense is resolved first and everything else hangs off it.",
+      "satisfaction": "Every D101 value is the STEP sub-gloss for THIS occurrence — not the verse's proposition, not the effect, not a paraphrase.",
+      "validation": { "axis": "I", "check": "matches-step-subgloss", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "sense = the per-occurrence STEP sub-gloss. Authority = ent.raw.lexicon (gloss + sub-glosses).",
+        "failure_it_prevents": "2026-07-14: D1 FAILED acceptance — reads recorded interpretation/effect instead of the sub-gloss (tsaddiq -> 'public good'). Per the researcher's rule, D1 must be redone in total.",
+        "gate": "gate.lexical.sense-matches-subgloss"
+      }
+    },
+    {
+      "id": "lexical.grain",
+      "governs": ["lexical"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "cycle authoritative v1 §3A; memory project_term_is_sense_not_lemma",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
+      "intent": "Fix the unit of the read as the occurrence, not the word — because the same lemma means different things in different verses, and reading at lemma grain relabels a fixed constant as a per-verse discovery.",
+      "satisfaction": "One lexical read per SPAN (term-in-verse). No value is carried across occurrences of the same lemma.",
+      "validation": { "axis": "C", "check": "grain-is-span", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "A term is a SPAN/SENSE, not a lemma. The grain is per-occurrence sub-gloss.",
+        "failure_it_prevents": "The grid relabelled fixed lemma-constants (faculty, type) as per-verse discoveries — a named root cause (plan §1.2, 'ungrounded frames read as findings')."
+      }
+    },
+    {
+      "id": "lexical.verse-bounded",
+      "governs": ["lexical"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "memory feedback_lexical_strictly_verse_bounded_no_implied_evidence; feedback_verse_meaning_grounded_not_imported",
+      "reference": "wa-verse-analysis-method-v1",
+      "intent": "Hold the read to what the verse actually says, which is the difference between inference and eisegesis. Cold-read validation found ~70-85% of analytical claims imported meaning the verses do not carry.",
+      "satisfaction": "Every value traces to something IN the verse (or its passage where the ledger permits cross-verse). A value with no basis in the text is an ERROR, not a weak reading.",
+      "validation": { "axis": "I", "check": "verse-grounded", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "The lexical records ONLY what the verse says. No implied evidence. A no-basis value is an error.",
+        "note": "Plausibility is not truth — a plausible value with no textual basis is the exact failure mode of the two prior studies, whose findings 'appeared strong at first but deteriorated under further questioning'."
+      }
+    },
+    {
+      "id": "lexical.no-mechanical-extraction",
+      "governs": ["lexical"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-14 (acceptance audit); plan §1.2 'extraction mistaken for inference'",
+      "reference": "outputs/projections/SOURCE-VERIFICATION-progress.md",
+      "intent": "Prohibit the technique that produced the worst of the 07-14 failures — regex/keyword sweeps logging values the verse never stated, dressed as analysis.",
+      "satisfaction": "No interpretive dimension value is produced by pattern-matching. Inference is inference; the API adapter is its only writer.",
+      "validation": { "axis": "C", "check": "method-provenance", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Infer, don't extract. Regex/keyword derivation of an interpretive value is prohibited.",
+        "failure_it_prevents": "D109 intensity, D111 effect, D117 device, D118 direction + D110 specifier were REGEX-RETROFITTED and all failed — malformed and truncated-mid-word values, wrong classifications.",
+        "open": "open.lexical.regex-prohibition — a [C] gate cannot see how a value was produced, only what it looks like."
+      }
+    },
+    {
+      "id": "lexical.self-interpretable",
+      "governs": ["lexical"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Make every value readable on its own, so the corpus can be audited without re-reading every verse — and so a thin value cannot masquerade as a finding.",
+      "satisfaction": "Every value carries its trigger and its sense, readable without re-opening the verse. Bare codes and thin values are forbidden.",
+      "validation": { "axis": "C", "check": "self-interpretable", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "A dimension value must be readable without re-reading the verse.",
+        "was": "dimensions.json governing_value_rules -> dimrule.self-interpretable — PROSE, unenforceable, inside a rulebook",
+        "now": "a rule here + gate.lexical.self-interpretable in validation",
+        "open": "open.lexical.self-interpretable-check"
+      }
+    },
+    {
+      "id": "lexical.assess-never-absent",
+      "governs": ["lexical"],
+      "kind": "guardrail",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Distinguish 'looked for and found nothing' from 'never looked' — without which silence is unreadable and coverage is a lie.",
+      "satisfaction": "109/110/111/117/118 are assessed from the qualifier spans and record `none` EXPLICITLY. ABSENT (never assessed) is forbidden.",
+      "validation": { "axis": "C", "check": "mandatory-not-absent", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Assessed-and-none is a finding. Never-assessed is a defect. Write `none`, never omit.",
+        "was": "dimensions.json governing_value_rules -> dimrule.assess-never-absent — prose",
+        "now": "a rule here + gate.lexical.mandatory-not-absent",
+        "connects": "silence is a valid finding (plan §1.1) — but only when it is RECORDED silence."
+      }
+    },
+    {
+      "id": "lexical.resolution-distinction",
+      "governs": ["lexical"],
+      "kind": "principle",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §1",
+      "reference": "wa-ve-lexical-catalogue-v1 §1",
+      "intent": "Keep the two kinds of emptiness apart: the verse says nothing (none) versus the read could not determine it (unknown). Conflating them destroys the meaning of both.",
+      "satisfaction": "Every pair's resolution distinguishes `none` (silence) from `unknown` (unresolved).",
+      "validation": { "axis": "C", "check": "value-in-domain", "enum": "resolution", "severity": "red", "enforcement": "db:check" },
+      "spec": {
+        "statement": "silence (`none`) and unresolved (`unknown`) are DISTINCT and must never be conflated.",
+        "moved_from": "enums.json enum.resolution spec.rule — an application rule sitting in a definitional item (2026-07-15 ruling §3)",
+        "canonical": false,
+        "reconcile": "recon.resolution-vocab",
+        "note": "⚠ RECONCILE — the vocabulary has 3 variants across sources (catalogue / 01b / collection). Blocks this process."
+      }
+    },
+    {
+      "id": "lexical.device-default",
+      "governs": ["lexical"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Make the unmarked case explicit, so 'literal' is a recorded read rather than an empty field.",
+      "satisfaction": "D117 device is `literal` unless the read finds a device.",
+      "validation": { "axis": "I", "check": "device-assessed", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "device defaults to `literal`. A default is NOT `none`: default = the unmarked normal case; `none` = assessed and genuinely absent.",
+        "moved_from": "enums.json enum.device spec.default — application, not definition (2026-07-15 ruling §3)"
+      }
+    },
+    {
+      "id": "lexical.source-driver-not-target",
+      "governs": ["lexical"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2 (D3); researcher 2026-07-14 (D3 acceptance failure)",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "Hold D103's direction, because a reversed pair records the opposite of what the verse says — and this is the error that failed D3.",
+      "satisfaction": "D103 runs driver -> term, and DRIVER is distinguished from RESTRAINT.",
+      "validation": { "axis": "I", "check": "pair-direction driver->term", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "source = what drives the characteristic (driver -> term), never what the characteristic acts on (that is D107 target, term -> object). DRIVER and RESTRAINT must be split.",
+        "moved_from": "dimensions.json dim.103.source spec.rule",
+        "failure_it_prevents": "2026-07-14: D3 FAILED — it stored target-direction pairs (term -> object)."
+      }
+    },
+    {
+      "id": "lexical.bearer-never-god",
+      "governs": ["lexical", "characteristics"],
+      "kind": "principle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "Screen 0; memory feedback_ib_screen_first_god_is_arena",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
+      "intent": "Keep the study's object in view: the HUMAN inner being. God is the arena in which it moves, never its bearer.",
+      "satisfaction": "D105 bearer is always human. A God-bearer is a Screen-0 failure, not a characteristic.",
+      "validation": { "axis": "I", "check": "bearer!=God", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "bearer != God. God's own attribute or action is a qualifier or the arena; a pure God-verse yields no characteristic.",
+        "moved_from": "dimensions.json dim.105.bearer spec.rule",
+        "failure_it_prevents": "2026-07-14: Screen-0 mis-roles seen in D115 — Pro 8:28 'God made firm the skies' was roled `characteristic`.",
+        "owner": "the rule is shared with the characteristics process (Screen 0); defined ONCE, here, and cited there (layout v2 §2.3)."
+      }
+    },
+    {
+      "id": "lexical.ledger",
+      "governs": ["lexical"],
+      "kind": "ledger",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9; wa-corrected-charac-arc-reread-repeatable-process-v1 §2",
+      "reference": "wa-ve-lexical-catalogue-v1 §9 ★",
+      "intent": "Define what a COMPLETE read is — which dimensions are required for a given genre and role. This is the definition of 'done' for the lexical layer.",
+      "satisfaction": "Every read produces every dimension its (genre, role) ledger requires, with `none` written where assessed-and-absent.",
+      "validation": { "axis": "C", "check": "ledger-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "canonical": false,
+        "reconcile": "recon.mandatory-ledger",
+        "variants": {
+          "poetic-base-2026-07-11": ["101", "102", "104", "105", "106", "107", "108", "112", "116", "114", "115"],
+          "M16-2026-07-14": ["101", "102", "104", "105", "106", "107", "108", "109", "110", "111", "112", "114", "115", "116", "117", "118"],
+          "narrative": "base + 103, 111 per-span"
+        },
+        "per_role": "characteristic = full · qualifier = reduced · standalone = minimal — ⚠ not yet specified",
+        "note": "⚠ RECONCILE — BLOCKS THIS ENTIRE PROCESS (open.lexical.ledger-blocked). 07-14 made 109/110/111/117/118 mandatory, contradicting the 07-11 poetic base. Ruled home = `process`, not `validation` (layout v2 §5): the ledger defines what the read must PRODUCE; gate.lexical.ledger-complete then checks it did."
+      }
+    },
+    {
+      "id": "lexical.genre-routing",
+      "governs": ["lexical", "verses-passages"],
+      "kind": "route",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "verse-analysis-method v1 §3; memory project_poetic_chapter_driven_method",
+      "reference": "wa-verse-analysis-method-v1 §3",
+      "intent": "Vary the read treatment by genre, because poetry and narrative carry the inner being differently — cross-verse movement is native to narrative and misleading in a poem read verse-by-verse.",
+      "satisfaction": "The read treatment matches ent.raw.verse's genre via this route.",
+      "validation": { "axis": "C", "check": "route-resolves", "enum": "genre", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "routes": {
+          "poetic/wisdom": "two-phase — Phase 1 per-verse with cross-verse OFF; Phase 2 whole-poem",
+          "narrative": "cross-verse ON; 103/111 per-span",
+          "law/narrative": "as narrative",
+          "prophetic": "oracle-passage variant — ⚠ not yet specified",
+          "gospel-narrative": "as narrative — ⚠ unconfirmed",
+          "epistle": "discourse segmentation (D/S/C/T/F) — ⚠ not yet specified"
+        },
+        "absorbs": "dimensions.json spec.genre_note on D103/D111 — applicability is the ledger's and this route's job, not a dimension's (dimensions.json meta.open.genre-note-home)",
+        "note": "⚠ Three routes unspecified. Prophetic and epistle cannot run until authored."
+      }
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "ent.lexical.record",
+      "governs": ["lexical"],
+      "kind": "entity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "cycle authoritative v1 §3; live DB ve_lexical",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3",
+      "intent": "The lexical read itself — one row per dimension-value on a span. The interpretation layer's atom.",
+      "satisfaction": "One row per (span, ve_nr, value), carrying its shape, resolution and provenance.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per dimension-value on a span",
+        "identity": "span-id + ve_nr (+ ordinal where a dimension may repeat)",
+        "join_key": "SPAN-ID — never Strong's-encoded endpoints (plan §3.4.2 'the span-id is the join key')",
+        "holds": ["ve_nr", "value", "pair_kind", "from_span / to_span", "resolution", "gate", "provenance", "stated_or_inferred"],
+        "layer": "interpretation — carries STATED-vs-INFERRED and full provenance (plan §3.4)",
+        "note": "⚠ The live DB's ve_lexical mixes ~620k live+legacy rows and must be filtered by pair_kind IS NOT NULL / source_provenance. The new DB does not inherit it — this layer is regenerated, never migrated (plan 3.4.1)."
+      }
+    },
+
+    { "_comment": "── The ve_nr dimensions (101-118). DEFINITIONAL ONLY per the 2026-07-15 ruling: no validation blocks, no rules, no defaults. Envelope defaults below apply to every dimension item." },
+
+    { "_envelope_defaults": { "governs": ["lexical"], "kind": "dimension", "status": "LIVE", "version": 1, "authority": "ve-lexical catalogue v1", "reference": "wa-ve-lexical-catalogue-v1 §2/§9; cycle §3" } },
+
+    { "id": "dim.101.sense", "intent": "the per-occurrence sense of the word = the STEP sub-gloss; the spine, resolved first", "spec": { "ve_nr": 101, "label": "sense", "shape": "value", "mandatory": true, "derivation": "I" } },
+    { "id": "dim.102.type", "intent": "the POS-derived type of the characteristic", "spec": { "ve_nr": 102, "label": "type", "shape": "value", "mandatory": true, "derivation": "C", "enum": "type" } },
+    { "id": "dim.103.source", "intent": "the driver/antecedent of the characteristic", "spec": { "ve_nr": 103, "label": "source", "shape": "pair", "pair_from": "driver", "pair_to": "term", "mandatory": false, "derivation": "I-partial" } },
+    { "id": "dim.104.seat", "intent": "the constitutional seat (heart/soul/spirit) of the characteristic, via construct chain", "spec": { "ve_nr": 104, "label": "seat", "shape": "pair", "pair_from": "seat", "pair_to": "term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.105.bearer", "intent": "the experiencer/subject who bears the characteristic", "spec": { "ve_nr": 105, "label": "bearer", "shape": "pair", "pair_from": "bearer", "pair_to": "term", "mandatory": false, "derivation": "I-partial" } },
+    { "id": "dim.106.operation", "intent": "the governing predicate — the act the characteristic performs", "spec": { "ve_nr": 106, "label": "operation", "shape": "event", "mandatory": true, "derivation": "I" } },
+    { "id": "dim.107.target", "intent": "the object the characteristic acts on, with its object-type", "spec": { "ve_nr": 107, "label": "target", "shape": "pair", "pair_from": "term", "pair_to": "object", "mandatory": false, "derivation": "I-partial", "enum": "object_type" } },
+    { "id": "dim.108.manner", "intent": "the prep-marked adverbial qualifier of the characteristic", "spec": { "ve_nr": 108, "label": "manner", "shape": "pair", "pair_from": "qualifier", "pair_to": "term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.109.intensity", "intent": "degree/amount from the modifying qualifier (me'od / kol / doubled / emphatic)", "spec": { "ve_nr": 109, "label": "intensity", "shape": "pair/flag", "pair_from": "qualifier", "pair_to": "char", "mandatory": true, "self_interpretable": true, "derivation": "C", "reinstated": "2026-07-14" } },
+    { "id": "dim.110.specifier", "intent": "the narrowing qualifier (which one) — construct genitive / 'of the LORD' / 'this'", "spec": { "ve_nr": 110, "label": "specifier", "shape": "pair", "pair_from": "qualifier", "pair_to": "char", "mandatory": true, "self_interpretable": true, "derivation": "C", "added": "2026-07-03" } },
+    { "id": "dim.111.effect", "intent": "the produced-state from the result/consequence qualifier", "spec": { "ve_nr": 111, "label": "effect", "shape": "pair", "pair_from": "term", "pair_to": "produced-state", "mandatory": true, "self_interpretable": true, "derivation": "C" } },
+    { "id": "dim.112.coupling", "intent": "the morphological weld only — construct/preposition binding to a co-term", "spec": { "ve_nr": 112, "label": "coupling", "shape": "pair", "pair_from": "term", "pair_to": "co-term", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.113.prohibition", "intent": "a mechanical negation/prohibition particle on the term", "spec": { "ve_nr": 113, "label": "prohibition", "shape": "flag", "mandatory": false, "derivation": "C" } },
+    { "id": "dim.114.reading", "intent": "the evidence-anchored reading note (translit + capitalised verse-quote + meaning + surfaced finding); the uncertainty channel", "spec": { "ve_nr": 114, "label": "reading", "shape": "note", "mandatory": true, "derivation": "read-only", "relabelled": "2026-07-14 (was 'discovery')" } },
+    { "id": "dim.115.role", "intent": "the sanity-check classification of the span (set BY the read, not derived)", "governs": ["characteristics", "lexical"], "spec": { "ve_nr": 115, "label": "role", "shape": "value", "mandatory": true, "derivation": "read-only", "enum": "role" } },
+    { "id": "dim.116.locus", "intent": "classify the target/bearer entity as IB-internal vs external", "spec": { "ve_nr": 116, "label": "locus", "shape": "value", "mandatory": true, "derivation": "C", "enum": "locus", "added": "2026-07-04" } },
+    { "id": "dim.117.device", "intent": "the literary device the characteristic is expressed through; the comparison-device pair endpoint is the VEHICLE span", "spec": { "ve_nr": 117, "label": "device", "shape": "value/pair", "pair_to": "vehicle", "mandatory": true, "self_interpretable": true, "derivation": "C", "enum": "device", "added": "2026-07-14" } },
+    { "id": "dim.118.direction", "intent": "the movement vector of the characteristic", "spec": { "ve_nr": 118, "label": "direction", "shape": "value", "mandatory": true, "self_interpretable": true, "derivation": "C", "enum": "direction", "added": "2026-07-14" } },
+
+    {
+      "id": "dim.dropped",
+      "governs": ["lexical"],
+      "kind": "dimension",
+      "status": "LEGACY",
+      "version": 1,
+      "authority": "wa-verse-analysis-method-v1 (2026-07-02)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Record the dropped dimensions so legacy data stays interpretable and no read reintroduces them.",
+      "spec": {
+        "dropped": ["D10 valence", "D12 hidden-meaning", "D13 cohabitation", "related_tier T0-T7"],
+        "rule": "not to be written. Present in legacy data only.",
+        "was": "dimensions.json governing_value_rules -> dimrule.dropped"
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "id": "out.lexical.projection",
+      "governs": ["lexical"],
+      "kind": "output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.6 'files are derived, human-facing artefacts'",
+      "reference": "plan §3.6",
+      "intent": "A readable projection of the lexical layer for researcher review — the DB is authoritative, this is regenerable.",
+      "satisfaction": "Projection regenerable from the DB at any time; nothing authoritative lives only here.",
+      "validation": { "axis": "C", "check": "artefact-regenerable", "severity": "amber", "enforcement": "gate" },
+      "spec": { "scope": "per book / per characteristic", "format": "md + csv", "note": "Replaces the ad-hoc outputs/projections/ scripts." }
+    },
+    {
+      "id": "out.lexical.scoreboard",
+      "governs": ["lexical"],
+      "kind": "output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-14 (acceptance-sampling protocol)",
+      "reference": "outputs/projections/SOURCE-VERIFICATION-progress.md",
+      "intent": "The per-dimension acceptance verdict — the artefact that told the truth on 07-14 when everything else said 'complete'.",
+      "satisfaction": "Every dimension carries a current verdict against the acceptance rule.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "format": "md + DB (ve_dimension_scoreboard successor)",
+        "baseline": "the 2026-07-14 verdicts (8 FAILED / 10 in-progress / 0 passed) are the baseline this build must beat",
+        "note": "This is the process's real definition of done — not coverage."
+      }
+    }
+  ],
+
+  "validation": [
+    { "_comment": "── Gates. Per the 2026-07-15 definitional ruling, every check that was a dimension's `validation` block now lives here as a gate. Each cites the dimension(s) it guards." },
+
+    {
+      "id": "gate.lexical.value-in-domain",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2/§9",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Refuse any enum-bound dimension value outside its vocabulary — the cheapest, most total check in the system.",
+      "satisfaction": "Every enum-bound value is a member of its enum's spec.values.",
+      "validation": { "axis": "C", "check": "value-in-domain", "severity": "red", "enforcement": "db:check" },
+      "spec": {
+        "guards": { "dim.102.type": "enum.type", "dim.107.target": "enum.object_type", "dim.115.role": "enum.role", "dim.116.locus": "enum.locus", "dim.117.device": "enum.device", "dim.118.direction": "enum.direction" },
+        "scope": "per value",
+        "enforcement_note": "PROJECTED AS CHECK CONSTRAINTS by the config-maintenance utility, generated from each enum's spec.values. The vocabulary is defined ONCE in wide/enums.json; the constraint is its projection (2026-07-15 ruling §1.1).",
+        "blocked": "role · locus are RECONCILE — their constraints cannot be generated until recon.role-enum and recon.locus-vocab are ruled."
+      }
+    },
+    {
+      "id": "gate.lexical.pair-direction",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §2; researcher 2026-07-14 (D3 failure)",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "Catch a reversed pair, which records the opposite of what the verse says. Direction is load-bearing, not cosmetic.",
+      "satisfaction": "Every pair's from/to endpoints match its dimension's declared pair_from / pair_to.",
+      "validation": { "axis": "C", "check": "pair-direction", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": ["dim.103.source", "dim.104.seat", "dim.105.bearer", "dim.107.target", "dim.108.manner", "dim.109.intensity", "dim.110.specifier", "dim.111.effect", "dim.112.coupling"],
+        "scope": "per pair",
+        "implements": "lexical.source-driver-not-target",
+        "failure_it_catches": "2026-07-14: D3 source stored target-direction pairs (term -> object instead of driver -> term). This gate would have red-halted it on the first row."
+      }
+    },
+    {
+      "id": "gate.lexical.mandatory-not-absent",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Enforce the difference between recorded silence and unexamined silence — the distinction that makes 'silence is a valid finding' meaningful.",
+      "satisfaction": "Every mandatory dimension has a value or an explicit `none`. No mandatory dimension is ABSENT.",
+      "validation": { "axis": "C", "check": "mandatory-not-absent", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": ["dim.109.intensity", "dim.110.specifier", "dim.111.effect", "dim.117.device", "dim.118.direction"],
+        "scope": "per span",
+        "implements": "lexical.assess-never-absent",
+        "note": "Cannot be db:not-null — 'mandatory' is per (genre, role) via lexical.ledger, not per column. A conditional rule is exactly what enforcement `gate` is for."
+      }
+    },
+    {
+      "id": "gate.lexical.self-interpretable",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
+      "reference": "wa-ve-lexical-catalogue-v1 §9",
+      "intent": "Refuse a value that cannot be read without the verse — and catch the malformed/truncated artefacts the regex retrofit produced.",
+      "satisfaction": "Every value is well-formed, not truncated, and carries its trigger + sense.",
+      "validation": { "axis": "C", "check": "self-interpretable", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": ["dim.109.intensity", "dim.110.specifier", "dim.111.effect", "dim.117.device", "dim.118.direction"],
+        "scope": "per value",
+        "implements": "lexical.self-interpretable",
+        "canonical": false,
+        "reconcile": "open.lexical.self-interpretable-check",
+        "checks_proposed": ["not-truncated (no mid-word termination)", "min length", "contains its trigger span"],
+        "note": "⚠ RECONCILE — a [C] structural floor catches the 07-14 artefact class but would pass a well-formed yet uninterpretable value. See open.lexical.self-interpretable-check."
+      }
+    },
+    {
+      "id": "gate.lexical.sense-matches-subgloss",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "lexical.sense-authority; researcher 2026-07-14 (D1 failure)",
+      "reference": "wa-ve-lexical-catalogue-v1 §2",
+      "intent": "Guard the spine. D101 failed acceptance by recording interpretation instead of the sub-gloss; this is the gate that makes that impossible.",
+      "satisfaction": "Every D101 value is a sub-gloss of the span's Strong's entry in ent.raw.lexicon.",
+      "validation": { "axis": "C", "check": "sense-in-subglosses", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": ["dim.101.sense"],
+        "scope": "per value",
+        "implements": "lexical.sense-authority",
+        "canonical": false,
+        "reconcile": "open.lexical.sense-authority-check",
+        "note": "⚠ RECONCILE — exact vs normalised vs [I]-judged membership undecided. Note the 07-14 failure was not a near-miss: 'public good' for tsaddiq is not a sub-gloss at all, so even the strictest form would have caught it."
+      }
+    },
+    {
+      "id": "gate.lexical.shape-matches-pair-kind",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "ve-lexical catalogue v1 §5",
+      "reference": "wa-ve-lexical-catalogue-v1 §5",
+      "intent": "Keep the stored row's shape honest against its dimension's declared shape.",
+      "satisfaction": "Every row's pair_kind matches its dimension's spec.shape.",
+      "validation": { "axis": "C", "check": "shape-matches-pair-kind", "enum": "pair_kind", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": "all dimensions",
+        "scope": "per row",
+        "gap": "⚠ CANNOT RUN for dim.109 (`pair/flag`) or dim.117 (`value/pair`) — compound shapes are not members of enum.pair_kind. Both FAILED on 07-14. A silent hole in a red gate: see open.lexical.compound-shapes."
+      }
+    },
+    {
+      "id": "gate.lexical.ledger-complete",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "lexical.ledger",
+      "reference": "wa-ve-lexical-catalogue-v1 §9 ★",
+      "intent": "Decide 'done' for a read — every dimension the (genre, role) ledger requires is present.",
+      "satisfaction": "The span's dimension set covers its ledger, with `none` where assessed-and-absent.",
+      "validation": { "axis": "C", "check": "ledger-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per span",
+        "implements": "lexical.ledger",
+        "canonical": false,
+        "reconcile": "recon.mandatory-ledger",
+        "note": "⚠ RECONCILE — blocked with the ledger. This is where 'done = validity, not coverage' is enforced (plan §3.2)."
+      }
+    },
+    {
+      "id": "gate.lexical.verse-bounded",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "lexical.verse-bounded",
+      "reference": "wa-verse-analysis-method-v1",
+      "intent": "Catch imported meaning — the ~70-85% eisegesis rate cold-read validation found. The gravest risk in the study, and the one only a challenge surfaces.",
+      "satisfaction": "Every value traces to text in the verse (or its passage where the ledger permits).",
+      "validation": { "axis": "I", "check": "verse-grounded", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "guards": "all [I] and [I-partial] dimensions",
+        "scope": "sampled per run",
+        "implements": "lexical.verse-bounded",
+        "note": "⚠ The only [I]-axis gate here. It judges a DIFFERENT model call's output — the model never certifies its own read. Ties to open.lexical.self-interpretable-check option B."
+      }
+    },
+    {
+      "id": "gate.lexical.acceptance-sample",
+      "governs": ["lexical"],
+      "kind": "gate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher 2026-07-14 (verbal); wa-proverbs-reread-success-criteria-20260708",
+      "reference": "recon.acceptance-sample",
+      "intent": "The per-dimension verdict that decides whether the layer may be trusted at all — the test that exposed the 07-14 failure.",
+      "satisfaction": "Every dimension passes the acceptance rule.",
+      "validation": { "axis": "I", "check": "acceptance-sample", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per dimension",
+        "canonical": false,
+        "reconcile": "recon.acceptance-sample",
+        "variants": {
+          "researcher-2026-07-14": "n=200 random per dimension, 0 errors = 95% confidence (rule of three, defect < ~1.5%)",
+          "book-close-scored-audit": "25 units stratified, >=90% sound, zero fidelity failures",
+          "per-cycle": "2-3 passages, >=90% sound, zero fidelity failures"
+        },
+        "standing_rule": "researcher: ANY FAILED DIMENSION MUST BE REDONE IN TOTAL. Not patched.",
+        "note": "⚠ RECONCILE — the n=200/95% rule was set verbally on 07-14 and exists in no document. This config is currently its only written home."
+      }
+    }
+  ],
+
+  "naming": [
+    {
+      "id": "naming.lexical.ids",
+      "governs": ["lexical"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This process's naming parameters only.",
+      "satisfaction": "Lexical rule ids use the declared prefixes.",
+      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "prefixes": { "process": "lexical.", "dimension": "dim.<ve_nr>.<label>", "entity": "ent.lexical.", "gate": "gate.lexical.", "output": "out.lexical." },
+        "cites": ["pattern.id-frozen-at-mint", "pattern.dimension-name-with-code"],
+        "note": "`dim.114.reading` was relabelled from 'discovery' on 2026-07-14 — the label inside an id is a MNEMONIC, never a fact. Id frozen at mint; spec.label is authority for display (layout v2 open.id-uniqueness). A dimension is always written with its name and code together ('D2 Source', never bare 'D2') — that RULE lives in wide/patterns.json and is cited here."
+      }
+    }
+  ],
+
+  "filing": [
+    {
+      "id": "filing.lexical.outputs",
+      "governs": ["lexical"],
+      "kind": "pattern",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "Where this process's artefacts are filed.",
+      "satisfaction": "Lexical outputs land in the declared tree; superseded versions archived.",
+      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "output_tree": "outputs/lexical/{book}/",
+        "archive_tree": "outputs/lexical/{book}/archive/",
+        "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write", "filing.archive-superseded"],
+        "note": "Parameters only. The archiving/versioning rules live in the filing utility's config, defined once, cited here."
+      }
+    }
+  ]
+}
