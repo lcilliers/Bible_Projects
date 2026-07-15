@@ -188,9 +188,334 @@
         "enum.locus spec.note (Ps 1-25 blanket convention)": "wide/reconciliations.json -> recon.locus-vocab.note"
       },
       "consequence": "A definitional item has no `validation` of its own — see ../_manifest.json meta.open.definitional-kinds. `validation` is therefore optional in the envelope for definitional kinds."
+    },
+    "self_hosting": {
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "statement": "This register holds the configurator's OWN vocabularies too. They are nomenclature like any other and get no exemption for being meta.",
+      "bootstrap": "The kernel loads this register first with envelope checks only, then validates everything — including this register — against it. It knows the envelope; it never knows a vocabulary VALUE."
     }
   },
   "items": [
+    {
+      "id": "enum.governs",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "governs",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "The study processes a rule can govern. These mirror the by-process rule-sets (plan A.11) and, roughly, the functional modules.",
+      "satisfaction": "every `governs` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "registry",
+            "description": "The initial word list: what qualifies a word as inner-being, the registry path, growth/addition policy, registry tags. ≈ module 2."
+          },
+          {
+            "value": "fetch",
+            "description": "Retrieval from STEP: what to fetch, Strong's resolution and suffixes, the 60-cap sectioning, retry, cache-to-DB-first. ≈ module 1."
+          },
+          {
+            "value": "raw",
+            "description": "The raw data layer: what 'raw' is, its immutability, source-parity/completeness/no-null/FK controls, provenance stamping. ≈ module 1 output (the measure layer)."
+          },
+          {
+            "value": "verses-passages",
+            "description": "Verse and passage construction: the passage rule (char-continuity, anchor, no whole-chapter), verse coverage, genre routing, the candidate⇒verse-record invariant. ≈ module 3."
+          },
+          {
+            "value": "lexical",
+            "description": "The per-term lexical decomposition layer: sense authority, the ve_nr dimension rules and ledgers, self-interpretable/never-ABSENT, grain, the stem master. ≈ module 5. RENAMED from `lexicon` on 2026-07-15 to end the collision with the raw Strong's-gloss `lexicon` entity (ent.raw.lexicon) — the PROCESS is `lexical`, the raw ENTITY is `lexicon`. Resolves meta.open.lexicon-naming on the filed recommendation; the collision had become an actual load failure across all three process files."
+          },
+          {
+            "value": "characteristics",
+            "description": "Screen 0, the candidate seed, the role model and per-role ledgers, ib_characteristic meaning-keying, the char-driven read. ≈ module 6."
+          },
+          {
+            "value": "findings",
+            "description": "Findings and observations: finding as the universal DB unit, STATED-vs-INFERRED, silence-is-a-finding, validity-by-convergence. ≈ module 9."
+          },
+          {
+            "value": "util.config-maintenance",
+            "description": "UTILITY. The sole write-path to the configurator: load · self-validate · version · edit · diff · rollback — and, per the 2026-07-15 ruling, diffing config against the live schema and raising the migration a config change requires."
+          },
+          {
+            "value": "util.run",
+            "description": "UTILITY. The run interface, orchestrator and run manager: run plan, gate enforcement, tracking, checkpoints, resume, debug, errors."
+          },
+          {
+            "value": "util.discovery",
+            "description": "UTILITY. Discovery/exploration over the corpus and the DB."
+          },
+          {
+            "value": "util.db",
+            "description": "UTILITY. The DB access layer: single standard path, live-schema-aware, transactional, backup-aware."
+          },
+          {
+            "value": "util.step",
+            "description": "UTILITY. The STEP client: local server, cache-to-DB-first."
+          },
+          {
+            "value": "util.morphology",
+            "description": "UTILITY. Canonical morph-code / stem derivation."
+          },
+          {
+            "value": "util.validation",
+            "description": "UTILITY. The deterministic rule checker — every module's pre/post gate and the standalone validation battery."
+          },
+          {
+            "value": "util.api",
+            "description": "UTILITY. The Claude API adapter — the ONLY place the API is used."
+          },
+          {
+            "value": "util.git",
+            "description": "UTILITY. Programmatic commit/branch/push under the project's git discipline."
+          },
+          {
+            "value": "util.filing",
+            "description": "UTILITY. Filing, folders, archiving, versioning, and file-manifest maintenance — including the process index."
+          },
+          {
+            "value": "util.auth",
+            "description": "UTILITY. `.env` / secrets handling; never logged or exported."
+          },
+          {
+            "value": "all",
+            "description": "Genuinely cross-cutting — applies to every process and utility alike (provenance, the behavioural guardrails)."
+          }
+        ],
+        "canonical": true,
+        "note": "Two populations: the 7 STUDY PROCESSES (a process transforms study data) and the UTILITIES (`util.*` — a utility provides a capability). Per the 2026-07-15 ruling, a rule may govern either. The utility set is provisional — see meta.open.utility-set."
+      }
+    },
+    {
+      "id": "enum.kind",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "kind",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "The sort of rule. Each kind maps to exactly one section file and one spec-schema.",
+      "satisfaction": "every `kind` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "enum",
+            "description": "A controlled vocabulary — a word-group/lookup defined once, assigned a code, listing its permitted options."
+          },
+          {
+            "value": "dimension",
+            "description": "A ve_nr lexical dimension: its shape, pair-direction, mandatoriness, derivability."
+          },
+          {
+            "value": "ledger",
+            "description": "A genre × role mandatory-dimension set — which dimensions are required for a given genre and role."
+          },
+          {
+            "value": "gate",
+            "description": "A validation gate or measure: integrity invariants, content-validity, drift, coverage, acceptance-sample."
+          },
+          {
+            "value": "module",
+            "description": "A functional pipeline module: its order, handler, enable flag, scope."
+          },
+          {
+            "value": "dependency",
+            "description": "An edge in the module dependency graph: what a module needs first, and whether a missing prerequisite auto-activates or halts."
+          },
+          {
+            "value": "principle",
+            "description": "Standing methodological guidance (the nine principles, infer-don't-extract, convergence-validity). Governs how reads are done; mostly [I]."
+          },
+          {
+            "value": "pattern",
+            "description": "A naming/filing/label/patch/versioning pattern."
+          },
+          {
+            "value": "setting",
+            "description": "An operational parameter: model tier, DB path, thresholds, retries, budget caps, debug level."
+          },
+          {
+            "value": "provenance",
+            "description": "A provenance or completion convention: markers, STATED-vs-INFERRED, completeness-as-validity, soft-delete discipline, field-authority."
+          },
+          {
+            "value": "guardrail",
+            "description": "A behavioural constraint drawn from the failure record that the app enforces (no-forced-structure, plausibility≠truth, resist-grouping, completeness≠validity)."
+          },
+          {
+            "value": "reconciliation",
+            "nature": "definitional",
+            "description": "A contested-value decision: one concept defined divergently across sources, needing ONE canonical value + an alias map. Carries its own decision-status vocabulary, not vocab.status — see wide/reconciliations.json meta."
+          },
+          {
+            "value": "entity",
+            "nature": "definitional",
+            "description": "A data entity a process owns — what it IS, its grain, its identity, what it holds, and which layer it belongs to. ADDED 2026-07-15 (the process files need it). ⚠ BOUNDARY: an entity item does NOT declare tables, columns or types — that is the schema's job (layout v2 §1). It says what the data MEANS; the schema says what structure holds it."
+          },
+          {
+            "value": "output",
+            "nature": "definitional",
+            "description": "A human-facing artefact a process emits — projections, review packs, reports. Never authoritative: the DB is the source and every output is regenerable (plan §3.6). ADDED 2026-07-15."
+          },
+          {
+            "value": "route",
+            "nature": "enforcement",
+            "description": "A conditional routing rule — which treatment applies under which condition (genre routing being the live case). ADDED 2026-07-15; anticipated by plan A.3 cfg_route."
+          },
+          {
+            "value": "utility",
+            "nature": "enforcement",
+            "description": "A rule governing an IBA utility rather than a study process. ADDED 2026-07-15 per the researcher's ruling that each utility gets its own json. Utility files are not yet authored — see meta.open.utility-set."
+          }
+        ],
+        "canonical": true,
+        "nature_note": "`nature` marks each kind DEFINITIONAL (it defines what a thing IS — enum, dimension, entity, output, reconciliation) or ENFORCEMENT (it constrains or wires — gate, module, dependency, route, pattern, setting, utility) or STANDING (principle, provenance, guardrail). Per the researcher's 2026-07-15 ruling, a definitional item defines the item, its options, and where it is used; HOW IT IS APPLIED is a separate enforcement rule with its own home. This is why `validation` is not-applicable on definitional kinds — see meta.open.definitional-kinds.",
+        "open": "`kind` is NO LONGER 1:1 with a file (layout v2 §2.2) — it selects the SPEC-SCHEMA; the file selects the process or utility. The `section` field is retired for the same reason. Still undefined: a kind for governance (GR-*/FLAG-*/interaction protocols). See meta.open.missing-kinds."
+      }
+    },
+    {
+      "id": "enum.status",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "status",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "The lifecycle state of a rule. Applies to every item EXCEPT reconciliation items, which use their own decision-status vocabulary.",
+      "satisfaction": "every `status` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "LIVE",
+            "description": "The current, authoritative rule. This is what the application enforces."
+          },
+          {
+            "value": "LEGACY",
+            "description": "A superseded rule, kept for provenance and marked, never deleted — so old data and old reads remain interpretable. The application does not enforce it and must not write new data under it."
+          },
+          {
+            "value": "RECONCILE",
+            "description": "The concept is real but its VALUE is contested — the same rule is defined divergently across sources and the canonical form is not yet decided. A researcher decision, tracked in reconciliations.json. THE LOADER REFUSES TO RUN ANY STUDY MODULE THAT DEPENDS ON A RECONCILE RULE until it is resolved: a contested rule is a known-unknown, and running on one is how the study banked invalid data before. A RECONCILE item's `spec` may carry a working value plus its `variants`; the working value is NOT authority."
+          }
+        ],
+        "canonical": true
+      }
+    },
+    {
+      "id": "enum.axis",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "axis",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "How a rule is validated — the [C]/[I] boundary. Nearly every rule is [C]; only Screen 0, role assignment, and the semantic content of sense/operation/reading plus pair-bindings are genuinely [I] (plan §4).",
+      "satisfaction": "every `axis` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "C",
+            "description": "Deterministic — checkable in code with no model involved (domain membership, shape, pair-direction, not-null, arithmetic, parity). Runs over the whole corpus in seconds, gives the same verdict every time, and CANNOT be overridden by the model. This is where the application's reliability comes from."
+          },
+          {
+            "value": "I",
+            "description": "Interpretive — requires genuine inference, so the model produces it and a [C] gate then checks the output and retries on violation. The model never self-certifies: an [I] value that fails its [C] gate does not bank. Used only where the meaning genuinely cannot be derived mechanically."
+          },
+          {
+            "value": "I-partial",
+            "description": "⚠ PRESENT IN dimensions.json (`spec.derivation`) BUT NOT A VALID `validation.axis` VALUE. Means: morphology narrows the candidates but the choice still needs inference. Currently only ever appears as a derivation, never as an axis — see meta.open.axis-vs-derivation."
+          }
+        ],
+        "canonical": true,
+        "note": "`validation.axis` takes C or I only. `spec.derivation` on a dimension is a DIFFERENT field with an overlapping vocabulary (C · I · I-partial · read-only) — the two are not the same thing and must not be conflated. See meta.open.axis-vs-derivation."
+      }
+    },
+    {
+      "id": "enum.enforcement",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "enforcement",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "Where a control is actually enforced. Config is always the SOURCE of the rule; this says which mechanism carries it. Values prefixed `db:` are emitted and maintained in the schema BY the configurator-maintenance utility — the schema never authors them.",
+      "satisfaction": "every `enforcement` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "db:check",
+            "description": "A CHECK constraint projects this rule (typically a domain drawn from an `enum.*` item)."
+          },
+          {
+            "value": "db:fk",
+            "description": "A foreign key projects this rule (a referential invariant)."
+          },
+          {
+            "value": "db:not-null",
+            "description": "A NOT NULL constraint projects this rule (a mandatory-value rule)."
+          },
+          {
+            "value": "db:index",
+            "description": "An index projects this rule (a uniqueness or access requirement). Uniqueness invariants live here."
+          },
+          {
+            "value": "gate",
+            "description": "The validation engine enforces it. Everything a DB constraint cannot express: multi-table, conditional, arithmetic, distributional, or interpretive-output checks."
+          },
+          {
+            "value": "db+gate",
+            "description": "Both — the DB rejects the plainly-invalid, and a gate carries the part the constraint cannot express. Defence in depth for a red control."
+          }
+        ],
+        "canonical": true,
+        "note": "A rule whose enforcement is `db:*` still lives HERE in full. The constraint is downstream. See iba/docs/iba-configurator-layout-v2-20260715.md §1.1."
+      }
+    },
+    {
+      "id": "enum.severity",
+      "governs": [
+        "all"
+      ],
+      "kind": "enum",
+      "subject": "severity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
+      "intent": "What a failed check does to the run. Set per rule, enforced by the validation engine, recorded in app_validation_result.",
+      "satisfaction": "every `severity` field value is one of spec.values",
+      "spec": {
+        "values": [
+          {
+            "value": "red",
+            "description": "HALT. A red pre-check refuses to run the module; a red post-check refuses to mark it done. Nothing that fails a red control banks. This is the mechanism behind 'done = validity, not coverage'."
+          },
+          {
+            "value": "amber",
+            "description": "Log and continue — flagged for human review, does not stop the run. The unit banks but carries an amber-review validity state and is queryable as such."
+          }
+        ],
+        "canonical": true
+      }
+    },
     {
       "id": "enum.resolution",
       "governs": [

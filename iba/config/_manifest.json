@@ -4,12 +4,10 @@
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
-
   "meta": {
     "purpose": "The config-level manifest AND the canonical definition of the rule envelope every config item carries. This is the ONE home for the shared envelope: each section file's meta describes only its own nodes and its own kind-specific `spec`, and refers here for `governs` / `kind` / `status` / `validation`. Do not restate these vocabularies in a section file — a second copy is how the same concept ends up defined four ways (the failure reconciliations.json exists to record).",
     "how_to_read": "Every configuration item is a RULE with a fixed anatomy (plan A.10): a common envelope (defined below) + a kind-specific `spec` body (defined in that section's meta). The loader validates the envelope against this file and each `spec` against its section's spec-schema.",
     "envelope_version": 1,
-
     "envelope": {
       "id": {
         "required": true,
@@ -21,19 +19,27 @@
         "required": true,
         "type": "array of vocab:governs",
         "description": "WHERE the rule is used — the process(es) AND/OR utility(ies) it applies to. A rule may govern more than one, and `all` is permitted for genuinely cross-cutting rules (provenance). This is the second query axis (plan A.11): asking for a process returns its full governing rule-set, which is what a module loads before it runs. NOTE (researcher ruling, 2026-07-15): `governs` does NOT decide tier. A Tier A (IBA-wide) rule is one where THE SAME RULE APPLIES IN ALL SITUATIONS — universality is the criterion — even though in practice it may only be used in some places, which is what `governs` records. So a wide rule legitimately carries a narrow `governs`.",
-        "vocabulary": "vocab.governs"
+        "vocabulary": "enum.governs"
       },
       "kind": {
         "required": true,
         "type": "vocab:kind",
-        "description": "WHAT SORT of rule it is. Determines which section file houses it and which spec-schema its `spec` is validated against — kind and section are 1:1.",
-        "vocabulary": "vocab.kind"
+        "description": "WHAT SORT of rule it is. Selects the spec-schema its `spec` is validated against. (No longer 1:1 with a file — the layout is process-primary; see layout v2 §2.2.)",
+        "vocabulary": "enum.kind"
+      },
+      "subject": {
+        "required": true,
+        "type": "string",
+        "description": "WHAT THE RULE IS ABOUT — the thing it constrains, named plainly (`bearer`, `sense`, `role`, `raw-immutability`, `seed-breadth`). From plan A.10's `composition` (subject · condition · value/threshold · scope), which the first envelope draft under-implemented: it collapsed composition into `spec` and dropped `subject` entirely. ADDED 2026-07-15 on the researcher's ruling (b3).",
+        "why_it_is_required": "It is the ONLY thing that makes 'the same type of rule for the same item must not be duplicated' mechanically checkable. `governs` says which PROCESS loads a rule; `subject` says what the rule is ABOUT. Two principles about `bearer` in two files are a duplication; a principle about `bearer` and a gate enforcing it are not — same subject, different kind, which is correct and expected.",
+        "uniqueness_rule": "(kind, subject) must be unique across the whole configurator. A second rule of the same kind about the same subject is a duplication — it must CITE the first, not restate it (layout v2 §2.3).",
+        "backfill": "⚠ The 120 items authored before this field existed do not carry it. gate.cfgmaint.subject-present reports the backfill."
       },
       "status": {
         "required": true,
         "type": "vocab:status",
         "description": "The rule's lifecycle state — whether it is the rule in force, a superseded one kept for provenance, or one whose value is contested and not yet decided.",
-        "vocabulary": "vocab.status"
+        "vocabulary": "enum.status"
       },
       "version": {
         "required": true,
@@ -69,7 +75,7 @@
             "required": true,
             "type": "vocab:axis",
             "description": "Whether the check is deterministic code or needs the model. This is the [C]/[I] boundary the whole application turns on: [C] is enforced in code and the model can never override it; [I] is the only place the API is used.",
-            "vocabulary": "vocab.axis"
+            "vocabulary": "enum.axis"
           },
           "check": {
             "required": true,
@@ -85,13 +91,13 @@
             "required": true,
             "type": "vocab:severity",
             "description": "What a failure does to the run.",
-            "vocabulary": "vocab.severity"
+            "vocabulary": "enum.severity"
           },
           "enforcement": {
             "required": true,
             "type": "vocab:enforcement",
             "description": "WHERE the control is enforced. The signalling node required by the researcher's ruling of 2026-07-15: the schema keeps regulating compliance with DB technology (CHECK · FK · NOT NULL · index), but those controls are SUBSERVIENT to the data-definition requirements defined here. A DB constraint is therefore a PROJECTION of a config rule, never a second definition of it — the configurator-maintenance utility reads this field, diffs config against the live schema, and raises the migration a config change requires. A hand-applied schema constraint on a config-governed control is a defect.",
-            "vocabulary": "vocab.enforcement"
+            "vocabulary": "enum.enforcement"
           }
         }
       },
@@ -101,102 +107,6 @@
         "description": "The kind-specific body — the rule's actual content (an enum's values, a dimension's shape, a gate's check). Its schema is defined in the meta of the section file that houses this kind, and each kind is validated against its own schema."
       }
     },
-
-    "vocabularies": {
-      "vocab.governs": {
-        "description": "The study processes a rule can govern. These mirror the by-process rule-sets (plan A.11) and, roughly, the functional modules.",
-        "values": [
-          { "value": "registry", "description": "The initial word list: what qualifies a word as inner-being, the registry path, growth/addition policy, registry tags. ≈ module 2." },
-          { "value": "fetch", "description": "Retrieval from STEP: what to fetch, Strong's resolution and suffixes, the 60-cap sectioning, retry, cache-to-DB-first. ≈ module 1." },
-          { "value": "raw", "description": "The raw data layer: what 'raw' is, its immutability, source-parity/completeness/no-null/FK controls, provenance stamping. ≈ module 1 output (the measure layer)." },
-          { "value": "verses-passages", "description": "Verse and passage construction: the passage rule (char-continuity, anchor, no whole-chapter), verse coverage, genre routing, the candidate⇒verse-record invariant. ≈ module 3." },
-          { "value": "lexical", "description": "The per-term lexical decomposition layer: sense authority, the ve_nr dimension rules and ledgers, self-interpretable/never-ABSENT, grain, the stem master. ≈ module 5. RENAMED from `lexicon` on 2026-07-15 to end the collision with the raw Strong's-gloss `lexicon` entity (ent.raw.lexicon) — the PROCESS is `lexical`, the raw ENTITY is `lexicon`. Resolves meta.open.lexicon-naming on the filed recommendation; the collision had become an actual load failure across all three process files." },
-          { "value": "characteristics", "description": "Screen 0, the candidate seed, the role model and per-role ledgers, ib_characteristic meaning-keying, the char-driven read. ≈ module 6." },
-          { "value": "findings", "description": "Findings and observations: finding as the universal DB unit, STATED-vs-INFERRED, silence-is-a-finding, validity-by-convergence. ≈ module 9." },
-
-          { "value": "util.config-maintenance", "description": "UTILITY. The sole write-path to the configurator: load · self-validate · version · edit · diff · rollback — and, per the 2026-07-15 ruling, diffing config against the live schema and raising the migration a config change requires." },
-          { "value": "util.run", "description": "UTILITY. The run interface, orchestrator and run manager: run plan, gate enforcement, tracking, checkpoints, resume, debug, errors." },
-          { "value": "util.discovery", "description": "UTILITY. Discovery/exploration over the corpus and the DB." },
-          { "value": "util.db", "description": "UTILITY. The DB access layer: single standard path, live-schema-aware, transactional, backup-aware." },
-          { "value": "util.step", "description": "UTILITY. The STEP client: local server, cache-to-DB-first." },
-          { "value": "util.morphology", "description": "UTILITY. Canonical morph-code / stem derivation." },
-          { "value": "util.validation", "description": "UTILITY. The deterministic rule checker — every module's pre/post gate and the standalone validation battery." },
-          { "value": "util.api", "description": "UTILITY. The Claude API adapter — the ONLY place the API is used." },
-          { "value": "util.git", "description": "UTILITY. Programmatic commit/branch/push under the project's git discipline." },
-          { "value": "util.filing", "description": "UTILITY. Filing, folders, archiving, versioning, and file-manifest maintenance — including the process index." },
-          { "value": "util.auth", "description": "UTILITY. `.env` / secrets handling; never logged or exported." },
-
-          { "value": "all", "description": "Genuinely cross-cutting — applies to every process and utility alike (provenance, the behavioural guardrails)." }
-        ],
-        "note": "Two populations: the 7 STUDY PROCESSES (a process transforms study data) and the UTILITIES (`util.*` — a utility provides a capability). Per the 2026-07-15 ruling, a rule may govern either. The utility set is provisional — see meta.open.utility-set."
-      },
-
-      "vocab.kind": {
-        "description": "The sort of rule. Each kind maps to exactly one section file and one spec-schema.",
-        "values": [
-          { "value": "enum", "section": "enums.json", "description": "A controlled vocabulary — a word-group/lookup defined once, assigned a code, listing its permitted options." },
-          { "value": "dimension", "section": "dimensions.json", "description": "A ve_nr lexical dimension: its shape, pair-direction, mandatoriness, derivability." },
-          { "value": "ledger", "section": "ledgers.json", "description": "A genre × role mandatory-dimension set — which dimensions are required for a given genre and role." },
-          { "value": "gate", "section": "gates.json", "description": "A validation gate or measure: integrity invariants, content-validity, drift, coverage, acceptance-sample." },
-          { "value": "module", "section": "pipeline.json", "description": "A functional pipeline module: its order, handler, enable flag, scope." },
-          { "value": "dependency", "section": "pipeline.json", "description": "An edge in the module dependency graph: what a module needs first, and whether a missing prerequisite auto-activates or halts." },
-          { "value": "principle", "section": "principles.json", "description": "Standing methodological guidance (the nine principles, infer-don't-extract, convergence-validity). Governs how reads are done; mostly [I]." },
-          { "value": "pattern", "section": "patterns.json", "description": "A naming/filing/label/patch/versioning pattern." },
-          { "value": "setting", "section": "settings.json", "description": "An operational parameter: model tier, DB path, thresholds, retries, budget caps, debug level." },
-          { "value": "provenance", "section": "provenance.json", "description": "A provenance or completion convention: markers, STATED-vs-INFERRED, completeness-as-validity, soft-delete discipline, field-authority." },
-          { "value": "guardrail", "section": "read-quality.json", "description": "A behavioural constraint drawn from the failure record that the app enforces (no-forced-structure, plausibility≠truth, resist-grouping, completeness≠validity)." },
-          { "value": "reconciliation", "nature": "definitional", "description": "A contested-value decision: one concept defined divergently across sources, needing ONE canonical value + an alias map. Carries its own decision-status vocabulary, not vocab.status — see wide/reconciliations.json meta." },
-
-          { "value": "entity", "nature": "definitional", "description": "A data entity a process owns — what it IS, its grain, its identity, what it holds, and which layer it belongs to. ADDED 2026-07-15 (the process files need it). ⚠ BOUNDARY: an entity item does NOT declare tables, columns or types — that is the schema's job (layout v2 §1). It says what the data MEANS; the schema says what structure holds it." },
-          { "value": "output", "nature": "definitional", "description": "A human-facing artefact a process emits — projections, review packs, reports. Never authoritative: the DB is the source and every output is regenerable (plan §3.6). ADDED 2026-07-15." },
-          { "value": "route", "nature": "enforcement", "description": "A conditional routing rule — which treatment applies under which condition (genre routing being the live case). ADDED 2026-07-15; anticipated by plan A.3 cfg_route." },
-          { "value": "utility", "nature": "enforcement", "description": "A rule governing an IBA utility rather than a study process. ADDED 2026-07-15 per the researcher's ruling that each utility gets its own json. Utility files are not yet authored — see meta.open.utility-set." }
-        ],
-        "nature_note": "`nature` marks each kind DEFINITIONAL (it defines what a thing IS — enum, dimension, entity, output, reconciliation) or ENFORCEMENT (it constrains or wires — gate, module, dependency, route, pattern, setting, utility) or STANDING (principle, provenance, guardrail). Per the researcher's 2026-07-15 ruling, a definitional item defines the item, its options, and where it is used; HOW IT IS APPLIED is a separate enforcement rule with its own home. This is why `validation` is not-applicable on definitional kinds — see meta.open.definitional-kinds.",
-        "open": "`kind` is NO LONGER 1:1 with a file (layout v2 §2.2) — it selects the SPEC-SCHEMA; the file selects the process or utility. The `section` field is retired for the same reason. Still undefined: a kind for governance (GR-*/FLAG-*/interaction protocols). See meta.open.missing-kinds."
-      },
-
-      "vocab.status": {
-        "description": "The lifecycle state of a rule. Applies to every item EXCEPT reconciliation items, which use their own decision-status vocabulary.",
-        "values": [
-          { "value": "LIVE", "description": "The current, authoritative rule. This is what the application enforces." },
-          { "value": "LEGACY", "description": "A superseded rule, kept for provenance and marked, never deleted — so old data and old reads remain interpretable. The application does not enforce it and must not write new data under it." },
-          { "value": "RECONCILE", "description": "The concept is real but its VALUE is contested — the same rule is defined divergently across sources and the canonical form is not yet decided. A researcher decision, tracked in reconciliations.json. THE LOADER REFUSES TO RUN ANY STUDY MODULE THAT DEPENDS ON A RECONCILE RULE until it is resolved: a contested rule is a known-unknown, and running on one is how the study banked invalid data before. A RECONCILE item's `spec` may carry a working value plus its `variants`; the working value is NOT authority." }
-        ]
-      },
-
-      "vocab.axis": {
-        "description": "How a rule is validated — the [C]/[I] boundary. Nearly every rule is [C]; only Screen 0, role assignment, and the semantic content of sense/operation/reading plus pair-bindings are genuinely [I] (plan §4).",
-        "values": [
-          { "value": "C", "description": "Deterministic — checkable in code with no model involved (domain membership, shape, pair-direction, not-null, arithmetic, parity). Runs over the whole corpus in seconds, gives the same verdict every time, and CANNOT be overridden by the model. This is where the application's reliability comes from." },
-          { "value": "I", "description": "Interpretive — requires genuine inference, so the model produces it and a [C] gate then checks the output and retries on violation. The model never self-certifies: an [I] value that fails its [C] gate does not bank. Used only where the meaning genuinely cannot be derived mechanically." },
-          { "value": "I-partial", "description": "⚠ PRESENT IN dimensions.json (`spec.derivation`) BUT NOT A VALID `validation.axis` VALUE. Means: morphology narrows the candidates but the choice still needs inference. Currently only ever appears as a derivation, never as an axis — see meta.open.axis-vs-derivation." }
-        ],
-        "note": "`validation.axis` takes C or I only. `spec.derivation` on a dimension is a DIFFERENT field with an overlapping vocabulary (C · I · I-partial · read-only) — the two are not the same thing and must not be conflated. See meta.open.axis-vs-derivation."
-      },
-
-      "vocab.enforcement": {
-        "description": "Where a control is actually enforced. Config is always the SOURCE of the rule; this says which mechanism carries it. Values prefixed `db:` are emitted and maintained in the schema BY the configurator-maintenance utility — the schema never authors them.",
-        "values": [
-          { "value": "db:check", "description": "A CHECK constraint projects this rule (typically a domain drawn from an `enum.*` item)." },
-          { "value": "db:fk", "description": "A foreign key projects this rule (a referential invariant)." },
-          { "value": "db:not-null", "description": "A NOT NULL constraint projects this rule (a mandatory-value rule)." },
-          { "value": "db:index", "description": "An index projects this rule (a uniqueness or access requirement). Uniqueness invariants live here." },
-          { "value": "gate", "description": "The validation engine enforces it. Everything a DB constraint cannot express: multi-table, conditional, arithmetic, distributional, or interpretive-output checks." },
-          { "value": "db+gate", "description": "Both — the DB rejects the plainly-invalid, and a gate carries the part the constraint cannot express. Defence in depth for a red control." }
-        ],
-        "note": "A rule whose enforcement is `db:*` still lives HERE in full. The constraint is downstream. See iba/docs/iba-configurator-layout-v2-20260715.md §1.1."
-      },
-
-      "vocab.severity": {
-        "description": "What a failed check does to the run. Set per rule, enforced by the validation engine, recorded in app_validation_result.",
-        "values": [
-          { "value": "red", "description": "HALT. A red pre-check refuses to run the module; a red post-check refuses to mark it done. Nothing that fails a red control banks. This is the mechanism behind 'done = validity, not coverage'." },
-          { "value": "amber", "description": "Log and continue — flagged for human review, does not stop the run. The unit banks but carries an amber-review validity state and is queryable as such." }
-        ]
-      }
-    },
-
     "open": [
       {
         "id": "meta.open.check-vocabulary",
@@ -253,63 +163,188 @@
         "consequence": "Two homes for 'what is a controlled vocabulary in this system'.",
         "resolve_by": "Decide whether the config self-hosts (its own vocabularies become enum items, loader bootstraps from them) or whether meta-vocabularies are deliberately held apart as the envelope's own definition. Researcher decision — affects the loader."
       }
-    ]
+    ],
+    "vocabularies_moved": {
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "what": "The configurator's own vocabularies (governs · kind · status · axis · enforcement · severity) moved from _manifest.meta.vocabularies into wide/enums.json as enum.* items on 2026-07-15.",
+      "why": "They are nomenclature like any other. Holding them here was a SECOND HOME for them — forbidden by the same day's ruling (b3), and caught by gate.cfgmaint.nomenclature-has-enum against this very file.",
+      "consequences": [
+        "THE CONFIG SELF-HOSTS — settles meta.open.self-hosting as YES.",
+        "ENUM VALUES ARE OBJECTS {value, description} — settles meta.open.value-metadata as option B. A bare string has no description and so cannot be cross-checked.",
+        "The envelope now CITES enum ids; it no longer carries vocabularies. The kernel reads them from the register at run time and still knows no vocabulary VALUES."
+      ],
+      "outstanding": "The 11 lexical enums still hold bare-string values and need sourced descriptions — a sourcing job against the live DB, not a typing job. See utility/config-maintenance.json open.cfgmaint.vocab-migration."
+    }
   },
-
   "layout": {
     "authority": "researcher ruling 2026-07-15; iba/docs/iba-configurator-layout-v2-20260715.md",
     "shape": "Two tiers. TIER A (wide/) = rules where THE SAME RULE APPLIES IN ALL SITUATIONS, plus one file per UTILITY. TIER B (process/) = one file per study process, with facets as NODES (process · entities · output · validation · naming · filing), not as separate files.",
     "note": "The file layout is authoring ergonomics, not architecture — at runtime every rule is a row carrying `kind` + `governs`, queryable on both axes regardless of which file authored it. The researcher's observation stands: consolidated into the DB, these plausibly become ONE table (see meta.open.rule-table). Files may therefore be re-cut cheaply; the envelope may not.",
     "state": "TRANSITIONAL — the 4 authored files still sit in the flat pre-ruling layout at config/ root. Nothing has been moved."
   },
-
   "sections": {
     "tier_a_wide": [
-      { "file": "_manifest.json", "status": "authored", "note": "config version + the canonical rule envelope (meta above)" },
-      { "file": "enums.json", "status": "authored — REWORK DUE", "kind": "enum", "note": "11 vocabularies. Rework: strip to DEFINITIONAL per the 2026-07-15 ruling (remove validation/default/rule/process-notes). Register INCOMPLETE — see its meta.coverage. Expansion gated on meta.open.value-metadata." },
-      { "file": "reconciliations.json", "status": "authored", "kind": "reconciliation", "note": "9 items — 8 OPEN, 1 STANDING" },
-      { "file": "pipeline.json", "status": "pending", "kind": ["module", "dependency"] },
-      { "file": "patterns.json", "status": "pending", "kind": "pattern", "note": "naming/label/patch/versioning RULES; see meta.open.filing-seam" },
-      { "file": "governance.json", "status": "pending", "kind": null, "note": "GR-* / FLAG-* / interaction protocols; kind undefined" },
-      { "file": "settings.json", "status": "pending", "kind": "setting" },
-      { "file": "db-governance.json", "status": "pending", "kind": ["gate", "provenance"], "note": "NEW — the bridge file: data layers · raw immutability · provenance · I1-I13 · soft-delete · replayable patches · field-authority. Each invariant declares its validation.enforcement." },
-      { "file": "principles.json", "status": "pending", "kind": ["principle", "guardrail"], "note": "absorbs the planned read-quality.json" }
+      {
+        "file": "_manifest.json",
+        "status": "authored",
+        "note": "config version + the canonical rule envelope (meta above)"
+      },
+      {
+        "file": "enums.json",
+        "status": "authored — REWORK DUE",
+        "kind": "enum",
+        "note": "11 vocabularies. Rework: strip to DEFINITIONAL per the 2026-07-15 ruling (remove validation/default/rule/process-notes). Register INCOMPLETE — see its meta.coverage. Expansion gated on meta.open.value-metadata."
+      },
+      {
+        "file": "reconciliations.json",
+        "status": "authored",
+        "kind": "reconciliation",
+        "note": "9 items — 8 OPEN, 1 STANDING"
+      },
+      {
+        "file": "pipeline.json",
+        "status": "pending",
+        "kind": [
+          "module",
+          "dependency"
+        ]
+      },
+      {
+        "file": "patterns.json",
+        "status": "pending",
+        "kind": "pattern",
+        "note": "naming/label/patch/versioning RULES; see meta.open.filing-seam"
+      },
+      {
+        "file": "governance.json",
+        "status": "pending",
+        "kind": null,
+        "note": "GR-* / FLAG-* / interaction protocols; kind undefined"
+      },
+      {
+        "file": "settings.json",
+        "status": "pending",
+        "kind": "setting"
+      },
+      {
+        "file": "db-governance.json",
+        "status": "pending",
+        "kind": [
+          "gate",
+          "provenance"
+        ],
+        "note": "NEW — the bridge file: data layers · raw immutability · provenance · I1-I13 · soft-delete · replayable patches · field-authority. Each invariant declares its validation.enforcement."
+      },
+      {
+        "file": "principles.json",
+        "status": "pending",
+        "kind": [
+          "principle",
+          "guardrail"
+        ],
+        "note": "absorbs the planned read-quality.json"
+      }
     ],
     "tier_a_utilities": {
       "status": "pending — set unconfirmed (meta.open.utility-set)",
       "note": "One json per utility, per the 2026-07-15 ruling. `filing` (filing · folders · file-manifest · the process index) and `git` (git usage) were requested as wide files and are proposed as utility files here — meta.open.utility-vs-wide.",
-      "candidates": ["config-maintenance", "run", "discovery", "db", "step", "morphology", "validation", "api", "git", "filing", "auth"]
+      "candidates": [
+        "config-maintenance",
+        "run",
+        "discovery",
+        "db",
+        "step",
+        "morphology",
+        "validation",
+        "api",
+        "git",
+        "filing",
+        "auth"
+      ]
     },
     "tier_b_processes": {
       "status": "pending",
       "note": "One file per process; facets as nodes. `dimensions.json` (authored) becomes lexical.entities; `ledgers.json` becomes lexical.process; `gates.json` dissolves into each process's validation node; `screen-role.json` becomes characteristics.process.",
       "files": [
-        { "file": "registry.json", "status": "pending" },
-        { "file": "fetch.json", "status": "pending" },
-        { "file": "raw.json", "status": "pending" },
-        { "file": "verses-passages.json", "status": "pending" },
-        { "file": "lexical.json", "status": "AUTHORED — for evaluation", "note": "45 items. Absorbs dimensions.json (18 dims, stripped to definitional). Built on the RECOMMENDATION for meta.open.definitional-extends — every dimension check is now a gate. 6 RECONCILE items block the process; recon.mandatory-ledger is the hardest." },
-        { "file": "characteristics.json", "status": "AUTHORED — for evaluation", "note": "20 items. The Screen-0 / [I]-heavy case. 4 RECONCILE items block the process; recon.role-enum blocks this AND lexical." },
-        { "file": "findings.json", "status": "pending" }
+        {
+          "file": "registry.json",
+          "status": "pending"
+        },
+        {
+          "file": "fetch.json",
+          "status": "pending"
+        },
+        {
+          "file": "raw.json",
+          "status": "pending"
+        },
+        {
+          "file": "verses-passages.json",
+          "status": "pending"
+        },
+        {
+          "file": "lexical.json",
+          "status": "AUTHORED — for evaluation",
+          "note": "45 items. Absorbs dimensions.json (18 dims, stripped to definitional). Built on the RECOMMENDATION for meta.open.definitional-extends — every dimension check is now a gate. 6 RECONCILE items block the process; recon.mandatory-ledger is the hardest."
+        },
+        {
+          "file": "characteristics.json",
+          "status": "AUTHORED — for evaluation",
+          "note": "20 items. The Screen-0 / [I]-heavy case. 4 RECONCILE items block the process; recon.role-enum blocks this AND lexical."
+        },
+        {
+          "file": "findings.json",
+          "status": "pending"
+        }
       ],
       "authored_for_evaluation": {
-        "chosen": ["raw", "lexical", "characteristics"],
+        "chosen": [
+          "raw",
+          "lexical",
+          "characteristics"
+        ],
         "why": "Deliberately three in depth rather than seven thin — they span the envelope's full range so the SHAPE can be evaluated before it is mass-produced. raw = the mechanical end (every control db:*-enforced, zero [I]). lexical = the hard end (the layer that failed; the definitional/enforcement split does the most work). characteristics = the [I] end (Screen 0 and role cannot be mechanised).",
-        "pending": ["registry", "fetch", "verses-passages", "findings"]
+        "pending": [
+          "registry",
+          "fetch",
+          "verses-passages",
+          "findings"
+        ]
       }
     },
     "deleted": [
-      { "file": "process-index.json", "reason": "ruled 2026-07-15 — part of the file/folder configuration (filing), backed by a utility that documents and indexes the processes. Not a standalone seed file." },
-      { "file": "gates.json", "reason": "dissolves into each process's validation node + db-governance.json" },
-      { "file": "ledgers.json", "reason": "becomes the lexical process's `process` node" },
-      { "file": "read-quality.json", "reason": "folds into principles.json" },
-      { "file": "provenance.json", "reason": "folds into db-governance.json" },
-      { "file": "screen-role.json", "reason": "becomes the characteristics process's `process` node" }
+      {
+        "file": "process-index.json",
+        "reason": "ruled 2026-07-15 — part of the file/folder configuration (filing), backed by a utility that documents and indexes the processes. Not a standalone seed file."
+      },
+      {
+        "file": "gates.json",
+        "reason": "dissolves into each process's validation node + db-governance.json"
+      },
+      {
+        "file": "ledgers.json",
+        "reason": "becomes the lexical process's `process` node"
+      },
+      {
+        "file": "read-quality.json",
+        "reason": "folds into principles.json"
+      },
+      {
+        "file": "provenance.json",
+        "reason": "folds into db-governance.json"
+      },
+      {
+        "file": "screen-role.json",
+        "reason": "becomes the characteristics process's `process` node"
+      }
     ]
   },
-
   "open_reconciliations": 8,
   "open_config_questions": 11,
-  "blocking_next_step": ["meta.open.definitional-extends", "meta.open.utility-set", "meta.open.utility-vs-wide"],
+  "blocking_next_step": [
+    "meta.open.definitional-extends",
+    "meta.open.utility-set",
+    "meta.open.utility-vs-wide"
+  ],
   "note": "RECONCILE items block their dependent study modules until resolved. Per-file hashes to be added when the loader is built."
 }

@@ -90,7 +90,9 @@ class Kernel:
         self.reconcile: list[tuple[str, dict]] = []
         self.vocab: dict[str, set[str]] = {}
         self.enum_ids: set[str] = set()
+        self.enum_values: dict[str, list] = {}   # group -> raw values (str or {value,description})
         self.recon_ids: set[str] = set()
+        self.no_subject: list[str] = []          # ruling 2026-07-15 (b3) backfill
 
     # ── load ─────────────────────────────────────────────────────────────────
     def _read(self, path: pathlib.Path):
@@ -104,15 +106,26 @@ class Kernel:
         man = self._read(self.root / "_manifest.json")
         if not man:
             return False
-        for name, body in man["meta"]["vocabularies"].items():
-            self.vocab[name] = {v["value"] for v in body["values"]}
 
+        # BOOTSTRAP.  The vocabularies live in the enum register like all other
+        # nomenclature (researcher ruling 2026-07-15 a; the config self-hosts).
+        # So the kernel reads the register FIRST, trusting only its envelope, then
+        # validates everything -- the register included -- against it.  The kernel
+        # still knows no vocabulary VALUE: it learns them here, at run time.
         enums = self._read(self.root / "wide" / "enums.json")
-        if enums:
-            # an enum's CODE is its id; validation.enum cites the bare group name
-            self.enum_ids = {i["id"].split(".", 1)[1] for i in enums["items"]}
-            for i in enums["items"]:
-                self.items.append(("wide/enums.json", i))
+        if not enums:
+            self.errors.append("wide/enums.json missing -- the register IS the vocabulary source")
+            return False
+
+        for i in enums["items"]:
+            group = i["id"].split(".", 1)[1]     # enum.kind -> kind
+            self.enum_ids.add(group)
+            values = i.get("spec", {}).get("values", [])
+            self.enum_values[group] = values
+            self.vocab[f"vocab.{group}"] = {
+                v["value"] if isinstance(v, dict) else v for v in values
+            }
+            self.items.append(("wide/enums.json", i))
 
         recon = self._read(self.root / "wide" / "reconciliations.json")
         if recon:
@@ -204,11 +217,78 @@ class Kernel:
                     f"{src}:{it['id']} is RECONCILE but names no `spec.reconcile` decision"
                 )
 
+    def check_nomenclature_has_enum(self):
+        """gate.cfgmaint.nomenclature-has-enum -- researcher ruling 2026-07-15 (a, b2).
+
+        No custom nomenclature may exist in the configurator without its
+        DESCRIPTION being cross-checkable in the enum register.  Every field
+        whose values are drawn from a fixed set is nomenclature; its set --
+        WITH a description per value -- lives in wide/enums.json and nowhere
+        else.  That includes the configurator's own vocabularies: the config
+        self-hosts.
+        """
+        for vocab in sorted({v for _, v in ENVELOPE.values() if v} |
+                            {v for _, v in VALIDATION_FIELDS.values() if v}):
+            group = vocab.split(".", 1)[1]          # vocab.kind -> kind
+            if group not in self.enum_ids:
+                self.errors.append(
+                    f"NOMENCLATURE `{group}` is used as a controlled field but has no "
+                    f"enum.{group} in the register (it lives in _manifest meta.vocabularies "
+                    f"-- a second home). See open.cfgmaint.vocab-migration."
+                )
+                continue
+            for value in sorted(self.vocab[vocab]):
+                if not self.value_described(group, value):
+                    self.errors.append(
+                        f"enum.{group} value {value!r} has no description -- "
+                        f"nomenclature must be cross-checkable (ruling 2026-07-15 a)"
+                    )
+
+    def value_described(self, group: str, value: str) -> bool:
+        """A value is cross-checkable only if it carries a description.
+
+        Bare-string values cannot -- which is what settles meta.open.value-metadata
+        in favour of object-form values.
+        """
+        vals = self.enum_values.get(group, [])
+        for v in vals:
+            if isinstance(v, dict) and v.get("value") == value:
+                return bool(v.get("description"))
+            if v == value:
+                return False        # bare string: present, but no description
+        return False
+
+    def check_no_duplicate_rule(self):
+        """gate.cfgmaint.no-duplicate-rule -- researcher ruling 2026-07-15 (b3).
+
+        The same TYPE of rule about the same ITEM must not live in two
+        configurations.  (kind, subject) is the identity; a second rule of the
+        same kind about the same subject must CITE the first, not restate it.
+
+        Different kinds about one subject are correct -- a principle stating a
+        rule and a gate enforcing it share a subject by design.
+        """
+        seen = collections.defaultdict(list)
+        for src, it in self.items:
+            subject = it.get("subject")
+            if not subject:
+                self.no_subject.append(f"{src}:{it.get('id')}")
+                continue
+            seen[(it.get("kind"), subject)].append(f"{src}:{it['id']}")
+        for (kind, subject), where in sorted(seen.items()):
+            if len(where) > 1:
+                self.errors.append(
+                    f"DUPLICATE RULE: kind={kind} subject={subject!r} defined in "
+                    f"{len(where)} places -- {', '.join(where)}. One must cite the other."
+                )
+
     def run(self):
         self.check_envelope()
         self.check_ids_unique()
         self.check_references()
         self.check_reconcile_canonical()
+        self.check_nomenclature_has_enum()
+        self.check_no_duplicate_rule()
 
 
 def main() -> int:
@@ -267,11 +347,25 @@ def main() -> int:
         for e in k.errors:
             print(f"  ERROR   {e}")
     else:
-        print("ENVELOPE VALID -- every item validates against _manifest.json meta.vocabularies")
+        print("VALID -- every item passes the envelope, nomenclature and duplication checks")
+
+    if k.no_subject:
+        print(f"\nBACKFILL -- {len(k.no_subject)} item(s) carry no `subject` "
+              f"(field added 2026-07-15 per ruling b3).")
+        print(f"  Until backfilled, no-duplicate-rule covers only "
+              f"{len(k.items) - len(k.no_subject)}/{len(k.items)} items -- the "
+              f"duplication check is PARTIAL, not clean.")
+
     if k.warnings:
+        # group repeated warning shapes so a systemic gap reads as one line
+        groups = collections.Counter(
+            w.split(" cites ")[0].split(":")[0] if " cites " in w else w.split(" -- ")[0]
+            for w in k.warnings
+        )
         print(f"\n{len(k.warnings)} warning(s):")
         for w in k.warnings:
             print(f"  WARN    {w}")
+
     if k.reconcile:
         print(f"\n{len(k.reconcile)} RECONCILE item(s) -- study modules depending on these refuse to run.")
         print("  (run with --blocked for the list)")

@@ -63,6 +63,18 @@
         "resolve_by": "researcher decision — blocks the validation engine"
       },
       {
+        "id": "open.cfgmaint.vocab-migration",
+        "issue": "The researcher's 2026-07-15 ruling (a) — 'no custom nomenclature may be added to the configurator without cross-checking its description in the enums' — makes the configurator's OWN vocabularies (governs · kind · status · axis · enforcement · severity) nomenclature like any other. They currently live in ../_manifest.json meta.vocabularies, which is a second home for them, which the same ruling (b3) forbids.",
+        "consequence": "_manifest.json is presently in violation of the rules it defines. Two things follow, and neither is optional: (1) THE CONFIG SELF-HOSTS — the vocabularies migrate into wide/enums.json as enum.* items, settling meta.open.self-hosting as YES; (2) ENUM VALUES BECOME OBJECTS — the ruling says cross-check its DESCRIPTION, and a bare string has none, settling meta.open.value-metadata as option B.",
+        "scope_of_the_migration": {
+          "config_meta_vocabularies (have descriptions — migrate as-is)": ["governs", "kind", "status", "axis", "enforcement", "severity"],
+          "vocabularies used but never declared (author from source)": ["shape (value/pair/event/flag/note + the 2 compounds)", "derivation (C/I/I-partial/read-only)", "decision_status (OPEN/STANDING/RESOLVED)", "nature (definitional/enforcement/standing)", "check (the named-check registry — open.cfgmaint.check-spec-storage)"],
+          "the 11 lexical enums (values are bare strings — need descriptions)": "⚠ THE REAL WORK. ~80 values need a sourced description. 3 are RECONCILE, so their values are not even settled. Per meta.open.source-of-members these must be pulled from their actual sources (live DB wa_vocab_*, the REF doc, SQL CHECKs) — authoring them from memory would re-import the drift the register exists to end."
+        },
+        "recommendation": "Migrate the 6 meta-vocabularies first (they have authored descriptions and unblock the kernel). Then author the undeclared ones. The 11 lexical enums are a sourcing job, not a typing job — do them against the live DB, and leave the 3 RECONCILE ones until ruled.",
+        "resolve_by": "researcher confirmation of the order; the ruling itself is not in question"
+      },
+      {
         "id": "open.cfgmaint.one-home-enforceability",
         "issue": "Layout v2 §2.3 rules that a rule has exactly one home. `gate.cfgmaint.id-unique` catches a duplicated ID — but NOT the same rule restated in prose under two different ids, which is exactly how the four divergent `role` vocabularies happened.",
         "consequence": "The rule that prevents the programme's most pervasive defect is only partly mechanisable. A [C] gate sees ids, not meaning.",
@@ -429,17 +441,80 @@
       "id": "gate.cfgmaint.id-unique",
       "governs": ["util.config-maintenance"],
       "kind": "gate",
+      "subject": "rule-id",
       "status": "LIVE",
-      "version": 1,
-      "authority": "layout v2 open.id-uniqueness",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 (b1); layout v2 open.id-uniqueness",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §6",
       "intent": "Guarantee ids are globally unique, since they are the only stable handle a rule has and files may be re-cut freely.",
-      "satisfaction": "No id appears twice across the whole config.",
+      "satisfaction": "No id appears twice across the whole configurator.",
       "validation": { "axis": "C", "check": "id-globally-unique", "severity": "red", "enforcement": "db:index" },
       "spec": {
-        "scope": "whole config",
-        "enforcement_note": "PROJECTED AS A UNIQUE INDEX on ent.cfg.rule.id.",
+        "scope": "WHOLE CONFIGURATOR — every json today; DB-wide once loaded (researcher ruling 2026-07-15: 'at this stage all jsons, later it would be DB wide'). The scope is the store, never the file: an id is unique across the configurator, not within its section.",
+        "enforcement_note": "PROJECTED AS A UNIQUE INDEX on ent.cfg.rule.id. The file-scoped check and the DB-scoped constraint are the same rule at two stages of the same lifecycle, not two rules.",
         "id_rule": "Id is FROZEN AT MINT. A relabel does not change the id — `dim.114.reading` was relabelled from 'discovery' on 2026-07-14, so the label inside an id is a mnemonic, never a fact. spec.label is authority for display."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.nomenclature-has-enum",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "subject": "nomenclature",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (a, b2)",
+      "reference": "iba/config/wide/enums.json meta.purpose",
+      "intent": "Refuse a controlled term that has no definition. No custom nomenclature may enter the configurator without its description being cross-checked in the enum register — so every term the application uses means one thing, defined once, readable.",
+      "satisfaction": "Every nomenclature-bearing field's value resolves to a value in an `enum.*` item, AND that value carries a description.",
+      "validation": { "axis": "C", "check": "nomenclature-in-enum", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "whole configurator",
+        "statement": "A field whose values are drawn from a fixed set is NOMENCLATURE. Its set lives in wide/enums.json, with a description per value, and nowhere else. An undefined term is invalid config — not a warning.",
+        "how_a_field_is_known_to_be_nomenclature": [
+          "envelope fields: declared in ../_manifest.json meta.envelope (`vocabulary` key)",
+          "spec fields: declared in that kind's spec_schema (`enum` binding)"
+        ],
+        "description_requirement": "The ruling says cross-check its DESCRIPTION. A value with no description cannot be cross-checked against anything — so a bare-string value fails this gate. This is what settles ../_manifest.json meta.open.value-metadata: enum values are OBJECTS `{value, description, ...}`.",
+        "consequence": "The config SELF-HOSTS. Its own vocabularies (governs · kind · status · axis · enforcement · severity · shape · derivation · decision_status · check) are nomenclature like any other, so they are enum items — settling ../_manifest.json meta.open.self-hosting. See open.cfgmaint.vocab-migration.",
+        "bootstrap": "The kernel loads the enum register FIRST with envelope checks only, then validates everything — including the register itself — against it. Self-consistent, and the kernel still knows no vocabulary VALUES (cfgmaint.kernel-is-the-only-hardcoding)."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.no-duplicate-rule",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "subject": "rule-duplication",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (b3); layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "Enforce one-rule-one-home mechanically. The same type of rule about the same item must not exist in two configurations — the defect that produced four divergent `role` vocabularies and six months of decided-vs-actual drift.",
+      "satisfaction": "(kind, subject) is unique across the whole configurator.",
+      "validation": { "axis": "C", "check": "kind-subject-unique", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "whole configurator",
+        "statement": "No two rules share a (kind, subject). A second rule of the same kind about the same subject must CITE the first, never restate it.",
+        "why_it_needs_subject": "`governs` says which process LOADS a rule; `subject` says what it is ABOUT. Only subject can answer 'is this the same rule twice'.",
+        "what_is_NOT_a_duplicate": "Different kinds about one subject are correct and expected — `lexical.bearer-never-god` (principle) and `gate.char.bearer-not-god` (gate) share subject `bearer` and differ in kind. The principle states it; the gate enforces it; the gate CITES the principle. That is the design, not a violation.",
+        "limits": "⚠ This catches STRUCTURAL duplication. It cannot catch the same rule restated in prose under two different subjects — see open.cfgmaint.one-home-enforceability. Honest partial, not a claimed total."
+      }
+    },
+    {
+      "id": "gate.cfgmaint.subject-present",
+      "governs": ["util.config-maintenance"],
+      "kind": "gate",
+      "subject": "rule-subject",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (b3); plan §A.10 composition",
+      "reference": "../_manifest.json meta.envelope.subject",
+      "intent": "Ensure every rule declares what it is about, without which gate.cfgmaint.no-duplicate-rule cannot run.",
+      "satisfaction": "Every item carries a `subject`.",
+      "validation": { "axis": "C", "check": "subject-present", "severity": "red", "enforcement": "db:not-null" },
+      "spec": {
+        "scope": "per item",
+        "enforcement_note": "PROJECTED AS NOT NULL on ent.cfg.rule.subject.",
+        "backfill": "⚠ The 120 items authored before 2026-07-15 have no subject. Until backfilled, no-duplicate-rule runs only over the items that do — so the duplication check is currently partial and reports its own coverage rather than implying a clean result."
       }
     },
     {
