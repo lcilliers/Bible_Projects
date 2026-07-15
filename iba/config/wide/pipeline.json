@@ -47,7 +47,8 @@
     "nodes": {
       "modules": "The pipeline segments — one item per module, with order, handler, scope and the process it governs.",
       "dependencies": "The dependency graph — one item per edge, with activation (auto | halt).",
-      "module_gates": "Which gates run pre/post per module, and what a failure does."
+      "module_gates": "Which gates run pre/post per module, and what a failure does.",
+      "steps": "★ THE PROCESSING UNITS — the anchors scripts hang off. One item per step, each naming its module, its order within it, what it does, and its script binding. Researcher ruling 2026-07-15."
     },
     "the_flow": "REGISTRY (0) -> {FETCH+RAW (1)} -> BASE (2: spans, stem master, char seed, passages) -> [SIGNOFF] -> LEXICAL (5) -> CHARACTERISTICS (6) -> VALIDATION (7) -> ANALYSIS-PREP (8) -> FINDINGS (9). Arrows are DEPENDENCIES, not hard-coded calls (plan §3.2). The signoff is the only HUMAN gate in the chain.",
     "open": [
@@ -91,11 +92,66 @@
         "recommendation": "Keep them as one module and two processes, and let this be the worked example that process != module. Splitting them would gain nothing: a fetch that does not store is useless, and a raw write with no fetch cannot happen. The rules differ; the execution does not.",
         "resolve_by": "no decision needed — recorded so the asymmetry is deliberate"
       }
-    ]
+    ],
+    "corrections_20260715": {
+      "1_file_order": "The modules array was not sorted by ordinal — module.registry (ordinal 0) sat SECOND, after ingest. Reading the file top-to-bottom, the starting point looked missing. It was not; it was out of order. Now sorted by ordinal, because a pipeline file that does not read in pipeline order is a pipeline file nobody can check.",
+      "2_ordinal_in_the_id": {
+        "what_was_wrong": "Ids embedded the ordinal (module.5.lexical, module.9.findings). After base absorbed the old modules 3 and 4, the sequence read 0,1,2,5,6,7,8,9 — gaps that look like missing modules.",
+        "why_it_is_a_design_error": "An ordinal CHANGES — reordering the pipeline is a config change, and this file has already reordered once today. An id is FROZEN AT MINT. Putting a mutable property inside an immutable id guarantees the id eventually lies. Exactly the defect already recorded as open.id-uniqueness (dim.114.reading was relabelled from 'discovery'; had the id carried the label as fact, it would now mislead).",
+        "the_fix": "Ids are now module.<name>. The ordinal lives in spec.ordinal, where it can change freely. An id says WHAT a thing is; never WHERE it currently sits."
+      }
+    },
+    "★ the_step_anchors": {
+      "the_ruling": "researcher 2026-07-15: 'I think the pipeline should include anchors for all the processing units. we literally will have script references hanging off these processing units. a few simple examples: Registry: Create new item, Update tables, Validate; ingest: Get STEP for term by word/ Get step for term by Strong; Get related terms; Get verses, update tables, validate.'",
+      "what_a_step_is": "The CONFIG/CODE BOUNDARY. Config says what the step IS, what it consumes, and what it must satisfy. The script says how. Plan §2.2: 'the code provides methods; the configurator provides the process' — the step is where those two meet, and until now there was no such place: a module bound to ONE handler (plan A.3 cfg_module.handler) with no way to say what happened inside it.",
+      "why_it_matters_more_than_it_looks": [
+        "ADDRESSABLE — a step can be cited, gated, versioned, disabled and re-bound to a different script without touching the module. A step buried in a module's spec can do none of that.",
+        "IT MAKES THE BUNDLING VISIBLE — audit_word 'inserts + span-links terms and verses in one pass' is THREE steps in one script, across TWO layers (raw and base). With steps declared, that is legible; without them it is a sentence in a docstring.",
+        "IT IS THE REWRITE PLAN — plan §2.4 says existing scripts are a starting point 'expected to be substantially rewritten'. reference_script per step says exactly where each module's rewrite begins, and how much of an existing script belongs to which step."
+      ],
+      "★ the_pattern_in_the_researcher's_examples": {
+        "observation": "Both examples end the same way: '...update tables, validate'. Registry = create new item, UPDATE TABLES, VALIDATE. Ingest = get by word / get by Strong / get related / get verses, UPDATE TABLES, VALIDATE.",
+        "what_it_is": "That is the plan's gated envelope (§3.2: 'pre-validate -> run -> post-validate -> checkpoint/track') expressed as steps. The work steps vary per module; the closing pair does not.",
+        "so_it_is_a_rule_not_a_coincidence": "EVERY module ends in update-tables then validate. Modelled explicitly (step.*.update-tables / step.*.validate) rather than left as a convention, because a convention is what the failure record calls 'a scan gate silently non-operational across whole books' — the step existed, nobody checked it ran.",
+        "the_ordering_matters": "update-tables comes BEFORE validate. The post-gate validates what was WRITTEN, not what was computed — otherwise it certifies an intention rather than a result."
+      },
+      "script_binding": {
+        "handler": "the module's own code, once built. NULL today — nothing is built.",
+        "reference_script": "the EXISTING script this step's rewrite starts from (plan §2.4). Where a step has no reference script, it is a genuinely new build.",
+        "the_honest_state": "Every handler is null. This file is the plan for the code, not a description of code that exists."
+      }
+    }
   },
   "modules": [
     {
-      "id": "module.1.ingest",
+      "id": "module.registry",
+      "governs": [
+        "registry"
+      ],
+      "kind": "module",
+      "subject": "module-registry",
+      "status": "LIVE",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 ('the registry create the starting point')",
+      "reference": "plan §3.3.4",
+      "intent": "Maintain the registry — the study's starting point and outer bound.",
+      "satisfaction": "Every registry entry resolves to its terms; every addition records its trigger and reason.",
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "ordinal": 0,
+        "enabled": true,
+        "scope": "registry",
+        "note": "Was folded into module.2 (seed maintenance). Split out 2026-07-15: the registry is the STARTING POINT, the seed is BASE. Two stages, two modules.",
+        "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here"
+      }
+    },
+    {
+      "id": "module.ingest",
       "governs": [
         "fetch",
         "raw",
@@ -125,34 +181,7 @@
       }
     },
     {
-      "id": "module.0.registry",
-      "governs": [
-        "registry"
-      ],
-      "kind": "module",
-      "subject": "module-registry",
-      "status": "LIVE",
-      "version": 2,
-      "authority": "researcher ruling 2026-07-15 ('the registry create the starting point')",
-      "reference": "plan §3.3.4",
-      "intent": "Maintain the registry — the study's starting point and outer bound.",
-      "satisfaction": "Every registry entry resolves to its terms; every addition records its trigger and reason.",
-      "validation": {
-        "axis": "C",
-        "check": "module-contract",
-        "severity": "red",
-        "enforcement": "gate"
-      },
-      "spec": {
-        "ordinal": 0,
-        "enabled": true,
-        "scope": "registry",
-        "note": "Was folded into module.2 (seed maintenance). Split out 2026-07-15: the registry is the STARTING POINT, the seed is BASE. Two stages, two modules.",
-        "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here"
-      }
-    },
-    {
-      "id": "module.2.base",
+      "id": "module.base",
       "governs": [
         "base"
       ],
@@ -192,7 +221,7 @@
       }
     },
     {
-      "id": "module.5.lexical",
+      "id": "module.lexical",
       "governs": [
         "lexical"
       ],
@@ -223,7 +252,7 @@
       }
     },
     {
-      "id": "module.6.characteristic",
+      "id": "module.characteristic",
       "governs": [
         "characteristics"
       ],
@@ -249,7 +278,7 @@
       }
     },
     {
-      "id": "module.7.validation",
+      "id": "module.validation",
       "governs": [
         "util.validation"
       ],
@@ -276,7 +305,7 @@
       }
     },
     {
-      "id": "module.8.analysis-prep",
+      "id": "module.analysis-prep",
       "governs": [
         "findings"
       ],
@@ -304,7 +333,7 @@
       }
     },
     {
-      "id": "module.9.findings",
+      "id": "module.findings",
       "governs": [
         "findings"
       ],
@@ -352,8 +381,8 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.1.ingest",
-        "depends_on": "module.0.registry",
+        "module": "module.ingest",
+        "depends_on": "module.registry",
         "activation": "auto"
       }
     },
@@ -378,8 +407,8 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.2.base",
-        "depends_on": "module.1.ingest",
+        "module": "module.base",
+        "depends_on": "module.ingest",
         "activation": "auto",
         "note": "The layer boundary in one edge: raw = what STEP said (no conversion); base = what we computed from it."
       }
@@ -405,8 +434,8 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.5.lexical",
-        "depends_on": "module.2.base",
+        "module": "module.lexical",
+        "depends_on": "module.base",
         "activation": "halt",
         "canonical": false,
         "reconcile": "open.base.signoff-mechanism",
@@ -434,8 +463,8 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.6.characteristic",
-        "depends_on": "module.5.lexical",
+        "module": "module.characteristic",
+        "depends_on": "module.lexical",
         "activation": "auto"
       }
     },
@@ -459,8 +488,8 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.9.findings",
-        "depends_on": "module.7.validation",
+        "module": "module.findings",
+        "depends_on": "module.validation",
         "activation": "halt",
         "why_halt": "Producing findings from unvalidated reads is the exact 2026-07-14 failure — 8 dimensions failing their own rules while the layer read as complete."
       }
@@ -488,7 +517,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.1.ingest",
+        "module": "module.ingest",
         "phase": "post",
         "gate_code": "gate.step.cap-exhausted",
         "on_fail": "halt"
@@ -516,7 +545,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.1.ingest",
+        "module": "module.ingest",
         "phase": "pre",
         "gate_code": "gate.step.available",
         "on_fail": "halt",
@@ -543,7 +572,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.5.lexical",
+        "module": "module.lexical",
         "phase": "post",
         "gate_code": "gate.lexical.ledger-complete",
         "on_fail": "halt",
@@ -572,7 +601,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.2.base",
+        "module": "module.base",
         "phase": "post",
         "gate_code": "gate.base.signoff",
         "on_fail": "halt",
@@ -601,7 +630,7 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.2.base",
+        "module": "module.base",
         "phase": "post",
         "gate_code": "gate.base.span-master-complete",
         "on_fail": "halt"
@@ -627,11 +656,1138 @@
         "enforcement": "gate"
       },
       "spec": {
-        "module": "module.2.base",
+        "module": "module.base",
         "phase": "post",
         "gate_code": "gate.char.candidate-verse-record",
         "on_fail": "halt",
         "note": "halt and restore — repair before proceeding. Moved from module.2.seed with the seed."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "step.registry.create-new-item",
+      "governs": [
+        "registry"
+      ],
+      "kind": "step",
+      "subject": "step-registry-create-new-item",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Create a new registry entry — an English inner-being word and its mapping into the original languages.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.registry",
+        "ordinal": 1,
+        "does": "Create a new registry entry — an English inner-being word and its mapping into the original languages.",
+        "handler": null,
+        "reference_script": "python -m engine.engine --register --word='...' --source='...'",
+        "note": "Records origin + reason (gate.registry.growth-recorded). The registry's boundary is the study's boundary; an entry nobody can explain is a boundary nobody can defend."
+      }
+    },
+    {
+      "id": "step.registry.update-tables",
+      "governs": [
+        "registry"
+      ],
+      "kind": "step",
+      "subject": "step-registry-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write the entry to the registry tables.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.registry",
+        "ordinal": 2,
+        "does": "Write the entry to the registry tables.",
+        "handler": null,
+        "reference_script": "engine --register"
+      }
+    },
+    {
+      "id": "step.registry.validate",
+      "governs": [
+        "registry"
+      ],
+      "kind": "step",
+      "subject": "step-registry-validate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate the entry — path resolves, growth recorded, no duplicate.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.registry",
+        "ordinal": 3,
+        "does": "Validate the entry — path resolves, growth recorded, no duplicate.",
+        "handler": null,
+        "gates": [
+          "gate.registry.path-resolves",
+          "gate.registry.growth-recorded"
+        ]
+      }
+    },
+    {
+      "id": "step.registry.gap-scan",
+      "governs": [
+        "registry"
+      ],
+      "kind": "step",
+      "subject": "step-registry-gap-scan",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Scan for candidate registry GAPS — unregistered terms surfaced by discovery, candidate-triggers, or STEP route A.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.registry",
+        "ordinal": 4,
+        "does": "Scan for candidate registry GAPS — unregistered terms surfaced by discovery, candidate-triggers, or STEP route A.",
+        "handler": null,
+        "gates": [
+          "gate.registry.gap-detector"
+        ],
+        "note": "⚠ RECONCILE. Not in the researcher's example — added because it is the only step in the module that looks OUTWARD. Everything else here maintains what the list already says; this asks what it is missing, which is the one question the registry cannot answer about itself.",
+        "canonical": false,
+        "reconcile": "open.registry.growth-trigger"
+      }
+    },
+    {
+      "id": "step.ingest.get-strongs-by-word",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-get-strongs-by-word",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Get the Strong's numbers an ENGLISH word maps to — term discovery.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 1,
+        "does": "Get the Strong's numbers an ENGLISH word maps to — term discovery.",
+        "handler": null,
+        "reference_script": "scripts/word_study_extract.py --word X (get_strongs_for_word)",
+        "uses_api": "search.masterSearch.text",
+        "note": "Route A. DISCOVERY ONLY — an English-text hit is not an original-language occurrence, so this step may never source a raw entity (gate.step.api-fit)."
+      }
+    },
+    {
+      "id": "step.ingest.get-term-by-strongs",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-get-term-by-strongs",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Get the term and its MEANING for a Strong's number — gloss, sub-glosses, definition.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 2,
+        "does": "Get the term and its MEANING for a Strong's number — gloss, sub-glosses, definition.",
+        "handler": null,
+        "reference_script": "step_client.get_vocab_info",
+        "uses_api": "module.getInfo",
+        "note": "The SUB-GLOSS from this call is the authority for D101 sense — the dimension that failed acceptance on 2026-07-14. Also where a code's lettered siblings are revealed, so it is where the multi-code defect lives (step.multi-code-resolution)."
+      }
+    },
+    {
+      "id": "step.ingest.get-related-terms",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-get-related-terms",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Get the term's related words and root family.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 3,
+        "does": "Get the term's related words and root family.",
+        "handler": null,
+        "reference_script": "step_client.get_related_term_cluster",
+        "uses_api": "module.getInfo",
+        "note": "Returns NAMES by default (strong/form/gloss/translit) — no verses, no spans. Verses for related terms only when fetch.include-related is ON, and then through the same controls (fetch.same-controls)."
+      }
+    },
+    {
+      "id": "step.ingest.get-verses",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-get-verses",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Get every verse where the ORIGINAL-LANGUAGE word occurs.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 4,
+        "does": "Get every verse where the ORIGINAL-LANGUAGE word occurs.",
+        "handler": null,
+        "reference_script": "step_client.get_verse_records / _with_html (_paginate_all forward-walk)",
+        "uses_api": "search.masterSearch.strong",
+        "gates": [
+          "gate.step.cap-exhausted"
+        ],
+        "note": "Subject to the 60-cap. Coverage is proved by ARITHMETIC against STEP's reported total (step.completeness-oracle), never by having applied a pagination strategy."
+      }
+    },
+    {
+      "id": "step.ingest.get-morphology",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-get-morphology",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Get the per-word interlinear morphology for each verse.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 5,
+        "does": "Get the per-word interlinear morphology for each verse.",
+        "handler": null,
+        "reference_script": "scripts/_apply_ingest_verse_morphology.py",
+        "uses_api": "bible.getBibleText",
+        "note": "★ The NO-CAP route — addressed by reference, not search (search ~25% miss, direct 0 miss). Called inline by the ingest script, NOT via step_client — so it currently sits outside every control the client carries."
+      }
+    },
+    {
+      "id": "step.ingest.update-tables",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write the raw layer — verse, morphology, lexicon.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 6,
+        "does": "Write the raw layer — verse, morphology, lexicon.",
+        "handler": null,
+        "reference_script": "engine --mode=audit_word --registry=N",
+        "note": "A re-pull VALIDATES existing raw: where stored differs from STEP, STEP takes precedence and the row is corrected, never duplicated (raw.step-precedence, raw.no-duplication)."
+      }
+    },
+    {
+      "id": "step.ingest.validate",
+      "governs": [
+        "fetch"
+      ],
+      "kind": "step",
+      "subject": "step-ingest-validate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate the raw layer — parity, completeness, no-null, FK, response components.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.ingest",
+        "ordinal": 7,
+        "does": "Validate the raw layer — parity, completeness, no-null, FK, response components.",
+        "handler": null,
+        "gates": [
+          "gate.step.response-components",
+          "gate.raw.completeness",
+          "gate.raw.no-null",
+          "gate.raw.fk-integrity",
+          "gate.raw.immutability",
+          "gate.fetch.omission-recorded"
+        ]
+      }
+    },
+    {
+      "id": "step.base.build-span-master",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-build-span-master",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "★ Derive the span master from raw morphology — one addressable span per term-in-verse.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 1,
+        "does": "★ Derive the span master from raw morphology — one addressable span per term-in-verse.",
+        "handler": null,
+        "reference_script": "audit_word span-backpop (--skip-span-backpop) — TO BE EXTRACTED into its own step",
+        "gates": [
+          "gate.base.span-master-complete"
+        ],
+        "note": "★ THE STEP THAT DID NOT EXIST. Everything above joins on its output, yet it is currently a side-effect of audit_word reachable by a flag. Extracting it IS the researcher's 'missing pre-processing'."
+      }
+    },
+    {
+      "id": "step.base.build-stem-master",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-build-stem-master",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Build the stem master from morph_code.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 2,
+        "does": "Build the stem master from morph_code.",
+        "handler": null,
+        "reference_script": "NONE — new build (plan §4: no stem-master table exists)",
+        "canonical": false,
+        "reconcile": "open.base.stem-master-shape"
+      }
+    },
+    {
+      "id": "step.base.build-char-seed",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-build-char-seed",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Nominate candidate spans through the seed layers — registry, synonyms, judgement, discovery.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 3,
+        "does": "Nominate candidate spans through the seed layers — registry, synonyms, judgement, discovery.",
+        "handler": null,
+        "gates": [
+          "gate.char.candidate-verse-record",
+          "gate.char.seed-recall"
+        ],
+        "note": "Over-inclusive and non-exhaustive. Screen 0 rejects later; nothing recovers a span never seeded."
+      }
+    },
+    {
+      "id": "step.base.build-passages",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-build-passages",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Build passages — maximal runs of consecutive candidate-bearing verses.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 4,
+        "does": "Build passages — maximal runs of consecutive candidate-bearing verses.",
+        "handler": null,
+        "note": "Depends on the seed: a passage is defined BY candidates."
+      }
+    },
+    {
+      "id": "step.base.update-tables",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write the base layer — spans, stems, seed, passages.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 5,
+        "does": "Write the base layer — spans, stems, seed, passages.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.base.validate",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-validate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate base — span master complete, regenerable from raw, no judgement.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 6,
+        "does": "Validate base — span master complete, regenerable from raw, no judgement.",
+        "handler": null,
+        "gates": [
+          "gate.base.span-master-complete",
+          "gate.base.regenerable",
+          "gate.base.no-judgement"
+        ]
+      }
+    },
+    {
+      "id": "step.base.review-pack",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-review-pack",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Produce the base review pack — what base built, what it covers, what it did not.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 7,
+        "does": "Produce the base review pack — what base built, what it covers, what it did not.",
+        "handler": null,
+        "note": "What the researcher signs off ON. There is no signoff without an artefact to sign."
+      }
+    },
+    {
+      "id": "step.base.signoff",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-signoff",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "★ RESEARCHER SIGNOFF — the stage boundary. Lexical does not start before it.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 8,
+        "does": "★ RESEARCHER SIGNOFF — the stage boundary. Lexical does not start before it.",
+        "handler": null,
+        "gates": [
+          "gate.base.signoff"
+        ],
+        "note": "★ THE ONLY STEP IN THE PIPELINE A MACHINE CANNOT PERFORM. handler is null and always will be — this step's 'script' is a person.",
+        "canonical": false,
+        "reconcile": "open.base.signoff-mechanism"
+      }
+    },
+    {
+      "id": "step.lexical.load-rules",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-load-rules",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Load the governing rule-set for the scope — dimensions, ledger, genre route, enums.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 1,
+        "does": "Load the governing rule-set for the scope — dimensions, ledger, genre route, enums.",
+        "handler": null,
+        "note": "Plan A.11: querying a process returns its full governing rule-set — which is what a module loads before it runs. This step IS that."
+      }
+    },
+    {
+      "id": "step.lexical.prepare-input",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-prepare-input",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Assemble the passage read input — verse text, morphology, spans, candidates, sub-glosses.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 2,
+        "does": "Assemble the passage read input — verse text, morphology, spans, candidates, sub-glosses.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.lexical.read",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-read",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "[I] Produce the ledger's dimensions for each span, via the API adapter.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 3,
+        "does": "[I] Produce the ledger's dimensions for each span, via the API adapter.",
+        "handler": null,
+        "reference_script": "util.api — the ONLY place the API is used",
+        "note": "The only genuinely interpretive step in the module. Everything around it is deterministic."
+      }
+    },
+    {
+      "id": "step.lexical.validate-output",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-validate-output",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "[C] Gate the model's output — domain, pair-direction, mandatory-not-absent, self-interpretable, sense-vs-subgloss.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 4,
+        "does": "[C] Gate the model's output — domain, pair-direction, mandatory-not-absent, self-interpretable, sense-vs-subgloss.",
+        "handler": null,
+        "gates": [
+          "gate.lexical.value-in-domain",
+          "gate.lexical.pair-direction",
+          "gate.lexical.mandatory-not-absent",
+          "gate.lexical.self-interpretable",
+          "gate.lexical.sense-matches-subgloss",
+          "gate.lexical.shape-matches-pair-kind"
+        ],
+        "note": "★ The model NEVER self-certifies. An [I] value that fails its [C] gate does not bank — it retries."
+      }
+    },
+    {
+      "id": "step.lexical.retry",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-retry",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Retry a violating read against the specific rule it broke; escalate the model tier if configured.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 5,
+        "does": "Retry a violating read against the specific rule it broke; escalate the model tier if configured.",
+        "handler": null,
+        "note": "Retry is part of the contract, not error handling: the design assumes the model will violate rules and gates them rather than trusting them."
+      }
+    },
+    {
+      "id": "step.lexical.update-tables",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write ve_lexical — only what passed.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 6,
+        "does": "Write ve_lexical — only what passed.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.lexical.validate",
+      "governs": [
+        "lexical"
+      ],
+      "kind": "step",
+      "subject": "step-lexical-validate",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate the layer — ledger complete, verse-bounded, acceptance sample.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.lexical",
+        "ordinal": 7,
+        "does": "Validate the layer — ledger complete, verse-bounded, acceptance sample.",
+        "handler": null,
+        "gates": [
+          "gate.lexical.ledger-complete",
+          "gate.lexical.verse-bounded",
+          "gate.lexical.acceptance-sample"
+        ],
+        "canonical": false,
+        "reconcile": "recon.mandatory-ledger"
+      }
+    },
+    {
+      "id": "step.characteristic.screen0",
+      "governs": [
+        "characteristics"
+      ],
+      "kind": "step",
+      "subject": "step-characteristic-screen0",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "[I] Screen 0 — is this the HUMAN inner being? God's own attribute/action is the arena, never the object.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.characteristic",
+        "ordinal": 1,
+        "does": "[I] Screen 0 — is this the HUMAN inner being? God's own attribute/action is the arena, never the object.",
+        "handler": null,
+        "gates": [
+          "gate.char.screen0",
+          "gate.char.bearer-not-god"
+        ],
+        "note": "The judgement that decides the study's object — and it was failing in live data (Pro 8:28 roled characteristic with God as bearer).",
+        "canonical": false,
+        "reconcile": "open.char.screen0-mechanism"
+      }
+    },
+    {
+      "id": "step.characteristic.assign-role",
+      "governs": [
+        "characteristics"
+      ],
+      "kind": "step",
+      "subject": "step-characteristic-assign-role",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "[I] Assign the span's role at the sanity-check gate.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.characteristic",
+        "ordinal": 2,
+        "does": "[I] Assign the span's role at the sanity-check gate.",
+        "handler": null,
+        "gates": [
+          "gate.char.role-domain",
+          "gate.char.two-axes"
+        ],
+        "canonical": false,
+        "reconcile": "recon.role-enum"
+      }
+    },
+    {
+      "id": "step.characteristic.derive-ib-characteristic",
+      "governs": [
+        "characteristics"
+      ],
+      "kind": "step",
+      "subject": "step-characteristic-derive-ib-characteristic",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Derive/maintain ib_characteristic, keyed on meaning-in-context.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.characteristic",
+        "ordinal": 3,
+        "does": "Derive/maintain ib_characteristic, keyed on meaning-in-context.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.characteristic.update-tables",
+      "governs": [
+        "characteristics"
+      ],
+      "kind": "step",
+      "subject": "step-characteristic-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write roles and characteristics.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.characteristic",
+        "ordinal": 4,
+        "does": "Write roles and characteristics.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.characteristic.validate",
+      "governs": [
+        "characteristics"
+      ],
+      "kind": "step",
+      "subject": "step-characteristic-validate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate — registry path resolves, roles in domain, axes independent.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.characteristic",
+        "ordinal": 5,
+        "does": "Validate — registry path resolves, roles in domain, axes independent.",
+        "handler": null,
+        "gates": [
+          "gate.registry.path-resolves",
+          "gate.char.role-domain",
+          "gate.char.two-axes"
+        ]
+      }
+    },
+    {
+      "id": "step.validation.run-battery",
+      "governs": [
+        "util.validation"
+      ],
+      "kind": "step",
+      "subject": "step-validation-run-battery",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Run the full gate battery for the scope.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.validation",
+        "ordinal": 1,
+        "does": "Run the full gate battery for the scope.",
+        "handler": null,
+        "reference_script": "scripts/_check_* family — readiness, content-validity, drift, acceptance-sample"
+      }
+    },
+    {
+      "id": "step.validation.update-scoreboard",
+      "governs": [
+        "util.validation"
+      ],
+      "kind": "step",
+      "subject": "step-validation-update-scoreboard",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Update the per-dimension acceptance scoreboard.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.validation",
+        "ordinal": 2,
+        "does": "Update the per-dimension acceptance scoreboard.",
+        "handler": null,
+        "note": "The artefact that told the truth on 2026-07-14 when everything else said 'complete'."
+      }
+    },
+    {
+      "id": "step.validation.report",
+      "governs": [
+        "util.validation"
+      ],
+      "kind": "step",
+      "subject": "step-validation-report",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Produce the validation report for researcher review.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.validation",
+        "ordinal": 3,
+        "does": "Produce the validation report for researcher review.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.analysis-prep.build-projections",
+      "governs": [
+        "findings"
+      ],
+      "kind": "step",
+      "subject": "step-analysis-prep-build-projections",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Build projections/extracts for downstream analysis.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.analysis-prep",
+        "ordinal": 1,
+        "does": "Build projections/extracts for downstream analysis.",
+        "handler": null,
+        "canonical": false,
+        "reconcile": "open.pipeline.module-8-and-prose"
+      }
+    },
+    {
+      "id": "step.analysis-prep.update-tables",
+      "governs": [
+        "findings"
+      ],
+      "kind": "step",
+      "subject": "step-analysis-prep-update-tables",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write the projections.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.analysis-prep",
+        "ordinal": 2,
+        "does": "Write the projections.",
+        "handler": null,
+        "canonical": false,
+        "reconcile": "open.pipeline.module-8-and-prose"
+      }
+    },
+    {
+      "id": "step.findings.capture",
+      "governs": [
+        "findings"
+      ],
+      "kind": "step",
+      "subject": "step-findings-capture",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Capture evidenced findings from validated lexicals — STATED vs INFERRED marked.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.findings",
+        "ordinal": 1,
+        "does": "Capture evidenced findings from validated lexicals — STATED vs INFERRED marked.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.findings.update-tables",
+      "governs": [
+        "findings"
+      ],
+      "kind": "step",
+      "subject": "step-findings-update-tables",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Write findings.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.findings",
+        "ordinal": 2,
+        "does": "Write findings.",
+        "handler": null
+      }
+    },
+    {
+      "id": "step.findings.validate",
+      "governs": [
+        "findings"
+      ],
+      "kind": "step",
+      "subject": "step-findings-validate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
+      "reference": "iba/config/wide/pipeline.json",
+      "intent": "Validate — every finding verse-grounded and traceable.",
+      "satisfaction": "the step completes and its gates pass",
+      "validation": {
+        "axis": "C",
+        "check": "step-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.findings",
+        "ordinal": 3,
+        "does": "Validate — every finding verse-grounded and traceable.",
+        "handler": null
       }
     }
   ]

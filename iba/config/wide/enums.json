@@ -302,7 +302,7 @@
       "kind": "enum",
       "subject": "kind",
       "status": "LIVE",
-      "version": 1,
+      "version": 3,
       "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
       "intent": "The sort of rule. Each kind maps to exactly one section file and one spec-schema.",
@@ -377,6 +377,11 @@
             "value": "utility",
             "nature": "enforcement",
             "description": "A rule governing an IBA utility rather than a study process. ADDED 2026-07-15 per the researcher's ruling that each utility gets its own json. Utility files are not yet authored — see meta.open.utility-set."
+          },
+          {
+            "value": "step",
+            "nature": "enforcement",
+            "description": "A PROCESSING UNIT inside a module — the anchor a script hangs off. ADDED 2026-07-15 on the researcher's ruling: 'the pipeline should include anchors for all the processing units. we literally will have script references hanging off these processing units.' A step is the config/code boundary: config says what the step IS and what it must satisfy; the script says how. A step is addressable, so it can be cited, gated, versioned and re-bound to a different script without touching the module."
           }
         ],
         "canonical": true,
