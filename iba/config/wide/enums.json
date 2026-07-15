@@ -390,8 +390,8 @@
       "kind": "enum",
       "subject": "status",
       "status": "LIVE",
-      "version": 1,
-      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums; INACTIVE added by researcher ruling 2026-07-15",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
       "intent": "The lifecycle state of a rule. Applies to every item EXCEPT reconciliation items, which use their own decision-status vocabulary.",
       "satisfaction": "every `status` field value is one of spec.values",
@@ -408,6 +408,10 @@
           {
             "value": "RECONCILE",
             "description": "The concept is real but its VALUE is contested — the same rule is defined divergently across sources and the canonical form is not yet decided. A researcher decision, tracked in reconciliations.json. THE LOADER REFUSES TO RUN ANY STUDY MODULE THAT DEPENDS ON A RECONCILE RULE until it is resolved: a contested rule is a known-unknown, and running on one is how the study banked invalid data before. A RECONCILE item's `spec` may carry a working value plus its `variants`; the working value is NOT authority."
+          },
+          {
+            "value": "INACTIVE",
+            "description": "The rule or capability is DEFINED AND CORRECT, but nothing uses it yet — it is knowledge held ready, not a rule in force. Flip to LIVE when a consumer is built. Distinct from the other three, and the distinction matters: LEGACY = was in force, now superseded; RECONCILE = contested, value undecided; INACTIVE = settled and understood, simply not yet wired. Its PURPOSE IS KNOWLEDGE RETENTION: an API role or a hard-won finding that is omitted because 'we don't use it yet' is rediscovered later at full cost — which is precisely what happened to this programme's STEP knowledge. INACTIVE does not block any module; it makes what we know visible while it waits."
           }
         ],
         "canonical": true
@@ -864,31 +868,49 @@
       "kind": "enum",
       "subject": "step_api",
       "status": "LIVE",
-      "version": 1,
-      "authority": "researcher 2026-07-15 ('which STEP API to use, and if more than one, specify it'); read from scripts/analytics/step_client.py",
-      "reference": "docs/step_setup.md; scripts/analytics/step_client.py",
-      "intent": "The STEP endpoints the application may call. There is MORE THAN ONE and they source different raw entities, so every fetch and every raw entity must name the API it came from — otherwise raw provenance says 'STEP' and nothing more, which is not a source.",
+      "version": 2,
+      "authority": "researcher 2026-07-15 ('which STEP API to use'; 'include the different API calls with explanations on what they do, set the status as inactive until we built raw extracts that use the API'); read from scripts/analytics/step_client.py + archive/scripts/_explore_soul_step_routes.py 2026-07-15",
+      "reference": "scripts/analytics/step_client.py; archive/scripts/_explore_soul_step_routes.py (the ROUTE model); outputs/markdown/wa-step-truncation-sweep-20260622.md; outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
+      "intent": "The STEP endpoints the application may call, WHAT EACH ONE IS FOR, and the role it plays in the study's evidence. There is more than one and they are NOT interchangeable — each answers a different question, and asking the wrong one returns data that looks right and is not. Every value carries its own status: a call is INACTIVE until a raw extract uses it, so the role is recorded rather than rediscovered.",
       "satisfaction": "every fetch and every raw entity names one of spec.values as its source API",
       "spec": {
         "values": [
           {
             "value": "module.getInfo",
+            "status": "INACTIVE",
             "endpoint": "GET /rest/module/getInfo/{version}//{strong}//",
-            "description": "The lexicon/vocab entry for a Strong's number — glosses, sub-glosses and the medium definition. SOURCES ent.raw.lexicon. Load-bearing beyond raw: the SUB-GLOSS from this call is the authority for D101 sense (lexical.sense-authority), the dimension that failed acceptance on 2026-07-14."
+            "client_method": "get_vocab_info(strong)",
+            "role": "LEXICON — what a Strong's number MEANS.",
+            "description": "Returns the lexicon entry for a Strong's number: gloss, sub-glosses, medium definition, and (per the client) whether the definition carries numbered sub-senses or names a causative stem. SOURCES ent.raw.lexicon. Load-bearing far beyond raw: the SUB-GLOSS from this call is the authority for D101 sense (lexical.sense-authority) — the dimension that failed acceptance on 2026-07-14 because reads recorded interpretation instead of this value.",
+            "also_used_for": "Strong's RESOLUTION — it is what reveals a code's lettered siblings, and therefore what the multi-code bug turns on (step.multi-code-resolution).",
+            "activates_when": "the raw lexicon extract is built"
           },
           {
             "value": "search.masterSearch.strong",
+            "status": "INACTIVE",
             "endpoint": "GET /rest/search/masterSearch/strong={strong}|version={version}[|reference={range}]",
-            "description": "Every verse occurrence of a Strong's number, with its text and per-word markup. SOURCES ent.raw.verse and ent.raw.verse-morphology. Subject to the 60-result cap — see step.result-cap."
+            "client_method": "get_verse_records(strong) / get_verse_records_with_html(strong)",
+            "role": "OCCURRENCE — every verse where the ORIGINAL-LANGUAGE word appears, regardless of how it is translated.",
+            "description": "The study's primary evidence route. Finds every verse where the Hebrew/Greek word appears, whatever the English does with it — which is exactly what the study needs, because verses qualify by ORIGINAL-LANGUAGE occurrence (principle 4), not by English wording. SOURCES ent.raw.verse and ent.raw.verse-morphology. This is Route B (Hebrew) / Route C (Greek) in the route model.",
+            "⚠ constraints": "Subject to the 60-result cap (step.result-cap) AND the multi-code sibling defect (step.multi-code-resolution). Both silently UNDER-return. Neither errors.",
+            "activates_when": "the raw verse extract is built"
           },
           {
             "value": "search.masterSearch.text",
+            "status": "INACTIVE",
             "endpoint": "GET /rest/search/masterSearch/version={version}|text=+{english_word}",
-            "description": "English text search, used to DISCOVER which Strong's numbers an English word maps to. Governs `registry`/`fetch` only — it must never source a raw entity, because an English-text hit is not an original-language occurrence (study principle: verses qualify by ORIGINAL-LANGUAGE occurrence)."
+            "client_method": "get_strongs_for_word(word) / get_verse_records_by_english(word) / get_meaning_terms(word)",
+            "role": "DISCOVERY — which Strong's numbers an ENGLISH word maps to. Route A in the route model.",
+            "description": "Finds every verse where the ENGLISH translation uses a word, and records which Strong's tagged it. Its role is to DISCOVER candidate terms for the registry — it answers 'what original-language words does ESV render as \"soul\"?'",
+            "⚠ MUST NEVER SOURCE RAW": "An English-text hit is NOT an original-language occurrence. Sourcing a verse record from this route would admit verses the study's own qualification rule excludes, at the evidentiary floor. Enforced by gate.step.api-fit (red).",
+            "its_real_value": "The SET DIFFERENCES against the occurrence route are findings in themselves (step.route-semantics): A \\ (B ∪ C) = English 'soul' verses with NO registered Strong's -> registry GAPS. (B ∪ C) \\ A = original-language occurrences NOT rendered 'soul' -> the term's TRANSLATION BREADTH. Neither is visible from one route alone.",
+            "activates_when": "the registry/fetch discovery module is built"
           }
         ],
         "canonical": true,
-        "note": "Read from the live client on 2026-07-15, not from memory. The client wraps these in methods (get_vocab_info, get_verse_records, get_verse_records_with_html, get_strongs_for_word, get_verse_records_by_english, get_meaning_terms, extract_word_data, get_related_term_cluster) — the METHOD is an implementation, the API is the rule."
+        "note": "Read from the live client on 2026-07-15, not from memory. The client wraps these in methods (get_vocab_info, get_verse_records, get_verse_records_with_html, get_strongs_for_word, get_verse_records_by_english, get_meaning_terms, extract_word_data, get_related_term_cluster) — the METHOD is an implementation, the API is the rule.",
+        "status_note": "Every value is INACTIVE per the researcher's 2026-07-15 ruling: the API roles are RECORDED now, and each flips to LIVE when a raw extract uses it. This exists because the knowledge was previously held only in code and session logs, and was re-learned expensively — see utility/step.json meta.the_hard_won_knowledge.",
+        "not_yet_modelled": "The client also exposes extract_word_data() and get_related_term_cluster(), which COMPOSE the three calls above rather than adding endpoints. The METHOD is an implementation; the API is the rule. If a composition acquires rules of its own, it earns an entry."
       }
     }
   ]

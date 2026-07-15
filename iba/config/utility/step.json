@@ -2,7 +2,6 @@
   "utility_code": "step",
   "tier": "A",
   "name": "STEP client (access and use of STEP)",
-
   "meta": {
     "purpose": "Access to STEP Bible — the application's ONLY external data source. Which APIs exist, which one sources what, how the server is reached, and the constraints its behaviour imposes (the 60-result cap, no cache, no key). Everything the study knows about Scripture in the original languages arrives through here.",
     "why_it_matters_more_than_it_looks": "STEP is the origin of the raw layer, and the raw layer is the evidentiary floor of the whole study. A defect here is invisible everywhere and fatal everywhere: a truncated fetch reads as a complete book, and a wrong version reads as Scripture. 'Coverage was a mirage' is a named prior failure.",
@@ -13,13 +12,20 @@
       "raw (process)": "WHAT IS STORED and its controls — immutability, parity, provenance.",
       "rule": "One rule, one home (layout v2 §2.3). raw and fetch CITE this utility's rules by id; they never restate them."
     },
-
     "the_live_defect": {
       "severity": "⚠ LIVE AND SILENT — found 2026-07-15 while authoring this file, by reading the code rather than the docs.",
       "finding": "step_client.py loads .env and then reads NONE of the STEP keys .env declares. Zero overlap. Every STEP call in the project's history has silently used the client's hard-coded defaults.",
       "evidence": {
-        ".env declares": ["STEP_API_BASE_URL", "STEP_DEFAULT_VERSION", "STEP_REQUEST_TIMEOUT"],
-        "step_client.py reads": ["STEP_LOCAL_URL", "STEP_VERSION", "STEP_TIMEOUT"],
+        ".env declares": [
+          "STEP_API_BASE_URL",
+          "STEP_DEFAULT_VERSION",
+          "STEP_REQUEST_TIMEOUT"
+        ],
+        "step_client.py reads": [
+          "STEP_LOCAL_URL",
+          "STEP_VERSION",
+          "STEP_TIMEOUT"
+        ],
         "overlap": "none",
         "STEP_API_BASE_URL": "read by NO python file in the repo",
         "STEP_REQUEST_TIMEOUT": "read by NO python file in the repo",
@@ -33,7 +39,6 @@
       "why_the_config_catches_this": "The plan (§4) recorded 'env-var names in the client currently mismatch .env — standardise in the configurator' as a tidy-up. It is not a tidy-up: it means the version stamped on six months of raw data is an assumption, not a record. gate.step.env-parity makes it a red load failure.",
       "action": "The names are settled HERE (see step.connection). The client is rewritten to read them (plan §2.4 — existing scripts are a starting point, expected to be substantially rewritten). Do not 'fix' .env to match the client: config decides the names, code follows."
     },
-
     "nodes": {
       "process": "How STEP is used: which API for what, the connection, the cap, the caching policy, the version-as-provenance rule.",
       "entities": "None of its own — STEP's data lands in the raw process's entities. This utility is a conduit.",
@@ -42,7 +47,6 @@
       "naming": "Naming parameters.",
       "filing": "Filing parameters."
     },
-
     "open": [
       {
         "id": "open.step.parity-baseline",
@@ -76,14 +80,68 @@
         "consequence": "The application's only source has no availability or identity check. A wrong-but-running server is worse than a stopped one.",
         "recommendation": "A pre-flight: server reachable + the configured version present in its module list + a known-answer probe (a fixed Strong's returning a known gloss). Cheap, and it distinguishes 'down' from 'different'.",
         "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.step.multi-code-fork",
+        "issue": "How to resolve a Strong's that STEP splits into lettered siblings. OPEN SINCE 2026-07-13; blocks Proverbs I2-closure; every multi-code term is currently under-pulling.",
+        "options": [
+          "A: GLOSS-HEAD UNION (filed recommendation) — union all siblings whose gloss head (text before ':') matches the primary's; dedup by osisId. Verified both ways: ruach -> 338 verses (16/19 Proverbs); H2502A 'to rescue' / H2502B 'to arm' stay correctly separate. Pragmatic, testable, big recovery. But a HEURISTIC — a wrong call silently corrupts an extraction, programme-wide.",
+          "B: UNION ALL SIBLINGS — simplest; merges homonyms (H2502 rescue+arm). REJECTED in the filed diagnosis.",
+          "C: PER-SPAN FROM THE MASTER — build the verse-record from the master span's OWN STEP code; the morphology already disambiguated the sense per verse. Most correct, but changes onboarding from per-term to per-span."
+        ],
+        "recommendation": "The filed diagnosis recommends A now (with ruach/H2502 as regression tests) and flags C as the more-correct long-term model. That still reads right — but note WHY C is better: it removes the heuristic entirely by deferring to morphology, which is already the study's declared source of truth (step.is-a-source-not-the-truth). A is a guess that works; C is the principle. If C is affordable, it is the answer.",
+        "resolve_by": "researcher decision — carried from 2026-07-13, still open"
       }
-    ]
+    ],
+    "the_hard_won_knowledge": {
+      "authority": "researcher 2026-07-15: 'a lot of work was done to understand the STEP API and a lot of mistakes were made, getting the wrong data back. This work, and findings need to find its way into the configurator.'",
+      "why_this_section_exists": "Every finding below cost real time and produced WRONG DATA THAT LOOKED RIGHT. None of it lived anywhere the application could enforce — it sat in session logs, one-off scripts and a docstring. This is the configurator doing the job it was built for: knowledge that survives a reset.",
+      "the_pattern_across_all_of_them": "STEP FAILS SILENTLY AND ALWAYS IN ONE DIRECTION — it UNDER-RETURNS. It never errors, never warns, and returns a well-formed subset that reads as complete. Every defect below is an under-return. That is why every STEP control is arithmetic (rows vs total), never a sanity impression.",
+      "sources": [
+        "outputs/markdown/wa-m10-rasha-coverage-gap-20260622.md — the 60-cap caught in the wild",
+        "outputs/markdown/wa-step-truncation-sweep-20260622.md — the programme-wide sweep (2,396 terms)",
+        "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md — the sibling-code defect (STILL OPEN)",
+        "archive/scripts/_explore_soul_step_routes.py — the route model (A/B/C)",
+        "archive/scripts/_check_step_truncation_sweep_20260622.py — the oracle + cutoff test"
+      ],
+      "findings": {
+        "1_the_60_cap": "rasha H7563 (anchor of M10b Wickedness): 180 verses held, ~250 actual — 28% MISSING, and Proverbs stopped dead at ch21 with exactly 60 links. Found only because the researcher noticed famous 'wicked' verses absent. FIXED via _paginate_all (self-validates against total).",
+        "2_the_sweep": "2,396 terms swept 2026-06-22: 6 CONFIRMED truncations — H5414G natan lost 945 verses (1187 vs 242), H3820A lev (HEART) lost 219, G4100 pisteuo 98, H5315G nephesh 51, H0341 oyev 32, G2564G kaleo 23. A core inner-being term (heart) was missing 40% of its occurrences while the study read it.",
+        "3_the_multi_code_bug": "STILL OPEN (2026-07-13). _resolved_strong returns only vocabInfos[0], silently dropping a Strong's lettered siblings. ruach H7307: kept H7307G (194), dropped H7307H (137) + H7307I (7) = 144 verses lost, Proverbs among them. NOT the 60-cap — a second, independent under-return, found four months later.",
+        "4_step_is_not_complete": "Even unioned, STEP does not tag 3 of 19 master Proverbs ruach spans. The MORPHOLOGY MASTER attests the Strong's at those verses and STEP does not. STEP is a source, not the truth.",
+        "5_the_docs_are_wrong": "docs/step_setup.md — the project's ONLY STEP documentation, cited by CLAUDE.md 5 — describes a DIFFERENT API entirely. See meta.the_documentation_defect."
+      },
+      "the_lesson": "Two independent silent under-returns, four months apart, each caught by accident rather than by a control — and one still open. Both were invisible because nothing ever compared what came back against what STEP said existed. The oracle (step.completeness-oracle) is free and answers this on every call. It is now a red gate."
+    },
+    "the_documentation_defect": {
+      "severity": "THE ONLY STEP DOCUMENTATION IN THE PROJECT IS WRONG IN EVERY PARTICULAR. Found 2026-07-15.",
+      "file": "docs/step_setup.md (201 lines) — cited by CLAUDE.md 5 as 'Detail: docs/step_setup.md'",
+      "it_describes": "the REMOTE public API at https://www.stepbible.org/api/ — a service the project does not use",
+      "the_project_actually_uses": "a LOCAL server at http://localhost:8989 with completely different routes",
+      "every_particular": {
+        "base URL": "doc: https://www.stepbible.org/api  |  actual: http://localhost:8989",
+        "endpoints": "doc: /bible/passage/{version}/{ref}, /bible/search/{version}/{query}, /bible/versions  |  actual: /rest/module/getInfo/..., /rest/search/masterSearch/... — the documented routes DO NOT EXIST in the client",
+        "version": "doc: ESV  |  actual: ESV_th — AND THIS IS THE DANGEROUS ONE (see below)",
+        "timeout": "doc: 10  |  actual: 30",
+        "client methods": "doc: client.get_passage(...), client.search(...)  |  actual: neither exists",
+        "client path": "doc: analytics/step_client.py  |  actual: scripts/analytics/step_client.py",
+        "troubleshooting": "doc: HTTP 429 rate limits, network errors — irrelevant to a local server",
+        "data layout": "doc: data/step/{passages,searches,cache}  |  actual: cached to the DB, no such tree"
+      },
+      "the_ESV_vs_ESV_th_trap": "This is very likely the origin of 'getting the wrong data back'. ESV_th is the Tyndale-House TAGGED module — it carries the Strong's numbers and morphology the entire study depends on. Plain ESV, which the doc instructs, returns English text with NO tagging. Query ESV and you get a well-formed, correct-looking response containing NONE of the evidence the study needs. It does not error. It just is not the data.",
+      "how_it_survived": "The doc was never wrong ABOUT something checkable — nothing compared it to the code. This is the 'drift between what was decided and what the live artefacts actually do' root cause, in its purest form: a document confidently describing a system that does not exist.",
+      "disposition": "docs/step_setup.md is SUPERSEDED by this file. It should be archived, not corrected — the configurator is the home for STEP knowledge now (one home per fact). Leaving it in place leaves a confident wrong answer where someone will find it.",
+      "recommendation": "Archive it and replace with a stub pointing here. Researcher decision — CLAUDE.md 5 cites it and would need the same pointer."
+    }
   },
-
   "process": [
     {
       "id": "step.api-set",
-      "governs": ["util.step", "fetch", "raw"],
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
       "kind": "principle",
       "subject": "step-api-selection",
       "status": "LIVE",
@@ -92,7 +150,13 @@
       "reference": "scripts/analytics/step_client.py; docs/step_setup.md",
       "intent": "Name the APIs and bind each to what it may source, so 'it came from STEP' is never an answer. There is more than one API and they are not interchangeable.",
       "satisfaction": "Every fetch and every raw entity names its source API from enum.step_api.",
-      "validation": { "axis": "C", "check": "value-in-domain", "enum": "step_api", "severity": "red", "enforcement": "db:check" },
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "enum": "step_api",
+        "severity": "red",
+        "enforcement": "db:check"
+      },
       "spec": {
         "statement": "The application may call exactly the APIs in enum.step_api, and every fetch records WHICH ONE it used.",
         "binding": {
@@ -101,12 +165,18 @@
           "search.masterSearch.text": "-> registry/fetch DISCOVERY ONLY — must never source a raw entity"
         },
         "the_text-search_rule": "An English-text hit is NOT an original-language occurrence. Verses qualify by original-language occurrence (study principle 4), so search.masterSearch.text may only propose Strong's numbers to investigate — never produce a verse record. Sourcing raw from it would admit verses the study's own qualification rule excludes.",
-        "cited_by": ["ent.raw.verse", "ent.raw.verse-morphology", "ent.raw.lexicon"]
+        "cited_by": [
+          "ent.raw.verse",
+          "ent.raw.verse-morphology",
+          "ent.raw.lexicon"
+        ]
       }
     },
     {
       "id": "step.connection",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "setting",
       "subject": "step-connection",
       "status": "LIVE",
@@ -115,22 +185,43 @@
       "reference": "docs/step_setup.md; plan §4",
       "intent": "Settle the connection parameters and their NAMES in one place, ending the .env/client mismatch that made STEP configuration a no-op.",
       "satisfaction": "The client reads exactly these names; .env declares exactly these names; gate.step.env-parity confirms it.",
-      "validation": { "axis": "C", "check": "env-parity", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "env-parity",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "canonical_names": {
-          "STEP_API_BASE_URL": { "default": "http://localhost:8989", "note": "LOCAL server. Adopted from .env — the client's STEP_LOCAL_URL is RETIRED." },
-          "STEP_DEFAULT_VERSION": { "default": "ESV_th", "note": "The STEP module. PROVENANCE of every raw row, not a preference — see open.step.version-is-provenance. Adopted from .env; the client's STEP_VERSION is RETIRED, as is bible_analytics' separate reading of this name for a different purpose." },
-          "STEP_REQUEST_TIMEOUT": { "default": "30", "note": "Seconds. Adopted from .env — the client's STEP_TIMEOUT is RETIRED." }
+          "STEP_API_BASE_URL": {
+            "default": "http://localhost:8989",
+            "note": "LOCAL server. Adopted from .env — the client's STEP_LOCAL_URL is RETIRED."
+          },
+          "STEP_DEFAULT_VERSION": {
+            "default": "ESV_th",
+            "note": "The STEP module. PROVENANCE of every raw row, not a preference — see open.step.version-is-provenance. Adopted from .env; the client's STEP_VERSION is RETIRED, as is bible_analytics' separate reading of this name for a different purpose."
+          },
+          "STEP_REQUEST_TIMEOUT": {
+            "default": "30",
+            "note": "Seconds. Adopted from .env — the client's STEP_TIMEOUT is RETIRED."
+          }
         },
         "auth": "NONE. STEP is local and takes no key. STEP_API_KEY is referenced nowhere in .env and must not be introduced — an auth path to a local server is a liability with no benefit.",
-        "retired_names": ["STEP_LOCAL_URL", "STEP_VERSION", "STEP_TIMEOUT"],
+        "retired_names": [
+          "STEP_LOCAL_URL",
+          "STEP_VERSION",
+          "STEP_TIMEOUT"
+        ],
         "why_env_wins": "The .env names are canonical because config decides names and code follows (plan §2.2/§2.4). The client is rewritten to read them; .env is NOT bent to match the client.",
         "⚠ defect": "See meta.the_live_defect — the client currently reads none of these, so .env's STEP settings have never applied."
       }
     },
     {
       "id": "step.result-cap",
-      "governs": ["util.step", "fetch"],
+      "governs": [
+        "util.step",
+        "fetch"
+      ],
       "kind": "principle",
       "subject": "step-result-cap",
       "status": "LIVE",
@@ -139,19 +230,30 @@
       "reference": "scripts/analytics/step_client.py `_paginate_all`; docs/step_setup.md",
       "intent": "Handle STEP's hard 60-result cap without ever mistaking a truncated answer for a complete one — the mechanism behind the study's worst coverage failures.",
       "satisfaction": "Every masterSearch returns rows == STEP's own reported `total` for its scope, at every split depth.",
-      "validation": { "axis": "C", "check": "rows-equal-total", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "rows-equal-total",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "cap": 60,
         "statement": "STEP caps EVERY masterSearch response at 60 rows and reports the true `total`. Coverage is proved by ARITHMETIC (rows == total), never by having applied a split.",
         "workaround": "Canonical section ranges (Torah / History / Poetry / Prophets / NT), halved again where a section itself exceeds 60.",
         "⚠ the_trap": "The splits are NOT a guarantee. The client's own docstring records half-sections still exceeding the cap — rāšāʿ H7563 cut Psalms 34/80 and Proverbs 60/77. A split that runs is not a scope that is covered.",
         "the_rule": "Trust the arithmetic, never the depth. A missing `total` is a FAILURE, not a pass — an unverifiable count must never bank.",
-        "cited_by": ["gate.raw.completeness"]
+        "cited_by": [
+          "gate.raw.completeness"
+        ]
       }
     },
     {
       "id": "step.no-cache-so-cache-to-db",
-      "governs": ["util.step", "fetch", "raw"],
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
       "kind": "principle",
       "subject": "step-caching",
       "status": "LIVE",
@@ -160,7 +262,12 @@
       "reference": "plan §3.3.3",
       "intent": "Read the DB before the wire. STEP holds no cache of its own, so the DB IS the cache — and the persisted raw layer is the authority, not the server.",
       "satisfaction": "A fetch checks the persisted raw layer first and calls STEP only for what is genuinely absent.",
-      "validation": { "axis": "C", "check": "db-checked-before-fetch", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "db-checked-before-fetch",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "STEP has NO CACHE. Read persisted raw (lexicon / verse / verse_morphology) FIRST; call STEP only for what is missing.",
         "consequence": "Once ingested, raw is answered from the DB — so a later STEP change cannot silently alter data already read and analysed. That is a feature of immutability, not a staleness bug.",
@@ -169,7 +276,10 @@
     },
     {
       "id": "step.version-is-provenance",
-      "governs": ["util.step", "raw"],
+      "governs": [
+        "util.step",
+        "raw"
+      ],
       "kind": "provenance",
       "subject": "step-version",
       "status": "RECONCILE",
@@ -178,20 +288,183 @@
       "reference": "iba/config/utility/step.json meta.the_live_defect",
       "intent": "Make the Bible module a recorded fact on every raw row, because it determines what the text IS — not a setting someone happened to have.",
       "satisfaction": "Every raw row carries the step_version it was fetched under.",
-      "validation": { "axis": "C", "check": "version-stamped", "severity": "red", "enforcement": "db:not-null" },
+      "validation": {
+        "axis": "C",
+        "check": "version-stamped",
+        "severity": "red",
+        "enforcement": "db:not-null"
+      },
       "spec": {
         "statement": "`version` is PROVENANCE, not preference. Stamp it on every raw row at ingest. A version change is a NEW ingest, never an update (raw.immutable).",
         "canonical": false,
         "reconcile": "open.step.version-is-provenance",
         "⚠ note": "RECONCILE — the raw schema has no such column, and six months of existing raw data cannot be attributed to a version at all, because two consumers read two different version variables. The migration must stamp `unknown` rather than assume ESV_th: an assumed provenance is worse than an absent one."
       }
+    },
+    {
+      "id": "step.completeness-oracle",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
+      "kind": "principle",
+      "subject": "step-completeness-oracle",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "archive/scripts/_check_step_truncation_sweep_20260622.py (STEP's reported TRUE total — the completeness oracle)",
+      "reference": "outputs/markdown/wa-step-truncation-sweep-20260622.md",
+      "intent": "Use the one thing STEP tells us for free and truthfully: on a FIRST CALL WITH NO RANGE it reports the TRUE total for a Strong's, even while capping returned rows at 60. That number is the oracle against which every fetch is proved.",
+      "satisfaction": "Every fetch records STEP's reported total and compares rows-returned against it.",
+      "validation": {
+        "axis": "C",
+        "check": "oracle-recorded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "The FIRST call with NO range reveals the true total. Capture it, and prove every fetch against it arithmetically.",
+        "why_it_matters": "It is the ONLY external check on completeness the study has, and it is free. Both silent under-returns (the 60-cap and the sibling-code bug) were invisible for months purely because nothing compared what came back against this number.",
+        "the_rule": "A missing total is a FAILURE, not a pass. An unverifiable count must never bank.",
+        "cited_by": [
+          "gate.step.cap-exhausted",
+          "gate.raw.completeness"
+        ]
+      }
+    },
+    {
+      "id": "step.truncation-signature",
+      "governs": [
+        "util.step",
+        "raw"
+      ],
+      "kind": "principle",
+      "subject": "step-truncation-diagnosis",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "outputs/markdown/wa-step-truncation-sweep-20260622.md (the chapter-cutoff test)",
+      "reference": "outputs/markdown/wa-m10-rasha-coverage-gap-20260622.md",
+      "intent": "Tell a real truncation apart from a legitimate gap — the discriminator that made a 2,396-term sweep actionable instead of 62 undifferentiated alarms.",
+      "satisfaction": "Any STEP-vs-DB gap is classified by the cutoff test before it is called a defect.",
+      "validation": {
+        "axis": "C",
+        "check": "cutoff-test",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "the_test": "In the term's OWN DENSEST BOOK: coverage contiguous from the book's start that then STOPS DEAD = cap truncation (recoverable). Coverage SCATTERED across the whole book = legitimate span-filter (the cluster kept only the inner-being sense) — not a defect.",
+        "worked_example": "rasha H7563 — Proverbs covered ch2-21 then NOTHING for ch22-31, with exactly 60 links. 'Took the first 60 and stopped.' Contiguous-then-cutoff is not a distribution any real word has.",
+        "the_yield": "Of 62 high-gap suspects, only 6 were real truncations. Without this test, 56 legitimate span-filters would have been chased as bugs — or, worse, all 62 dismissed together.",
+        "caveat": "Even a confirmed truncation's recoverable inner-being count is a SUBSET of the raw gap: re-ingest lets the span-filter re-select. The gap size is not the loss size."
+      }
+    },
+    {
+      "id": "step.multi-code-resolution",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw",
+        "registry"
+      ],
+      "kind": "principle",
+      "subject": "step-multi-code-resolution",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md (researcher decision pending since 2026-07-13)",
+      "reference": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
+      "intent": "Settle how a Strong's that STEP splits into lettered siblings is resolved — currently a live, unfixed defect that silently drops verses from every multi-code term, programme-wide.",
+      "satisfaction": "A term's fetch covers every sibling code that is the SAME WORD, and no sibling that is a different word.",
+      "validation": {
+        "axis": "C",
+        "check": "sibling-codes-resolved",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "the_defect": "step_client._resolved_strong returns vocabInfos[0] ONLY. get_verse_records then pulls that one code and silently drops every sibling. ruach H7307: kept H7307G (194), dropped H7307H (137) + H7307I (7). 144 verses lost, Proverbs among them.",
+        "not_the_60_cap": "A SECOND, INDEPENDENT under-return — found 2026-07-13, four months after the cap was fixed. Same signature (silent, well-formed, incomplete), different cause. Two of these are now known; that is the base rate to plan for.",
+        "the_correctness_fork": "Lettered siblings are TWO DIFFERENT THINGS sharing a transliteration, so translit cannot discriminate them: (i) sub-sense variants of ONE word must be UNIONED (ruach H7307G/H/I = spirit / spirit:breath / spirit:side); (ii) distinct HOMONYMS must NOT be unioned (chalats H2502A 'to rescue' vs H2502B 'to arm' — deliberately split in Stage 1).",
+        "canonical": false,
+        "reconcile": "open.step.multi-code-fork",
+        "blocking": "OPEN SINCE 2026-07-13. Blocks Proverbs I2-closure via audit_word, and every multi-code term is currently under-pulling.",
+        "why_it_is_config_not_code": "The union rule feeds ALL term onboarding programme-wide, and a wrong call silently corrupts an extraction. That is a study rule, not an implementation detail — which is exactly why it belongs here and not buried in _resolved_strong."
+      }
+    },
+    {
+      "id": "step.is-a-source-not-the-truth",
+      "governs": [
+        "util.step",
+        "raw",
+        "lexical"
+      ],
+      "kind": "guardrail",
+      "subject": "step-authority-limit",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md (genuine STEP gaps); memory project_morph_is_source_of_truth",
+      "reference": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
+      "intent": "Bound STEP's authority. It is where the evidence comes FROM; it is not the arbiter of what exists.",
+      "satisfaction": "A STEP absence is recorded as a STEP gap, never as evidence that a term does not occur.",
+      "validation": {
+        "axis": "C",
+        "check": "step-gap-recorded",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "STEP is a SOURCE, not the truth. Where the MORPHOLOGY MASTER attests a Strong's at a verse and STEP does not tag it, the master wins and the absence is a recorded STEP GAP.",
+        "evidence": "Even with all siblings unioned, STEP does not tag 3 of 19 master Proverbs ruach spans (Pro 14:29, 17:27, 29:11).",
+        "cites": [
+          "raw.definition"
+        ],
+        "why_it_matters": "Absence of evidence from one source is not evidence of absence — and the study's own principle is that morphology is the linguistic source of truth. Treating a STEP gap as a real gap would silently understate the inner being, which is the failure this programme is named against."
+      }
+    },
+    {
+      "id": "step.route-semantics",
+      "governs": [
+        "util.step",
+        "registry",
+        "fetch"
+      ],
+      "kind": "principle",
+      "subject": "step-route-model",
+      "status": "INACTIVE",
+      "version": 1,
+      "authority": "archive/scripts/_explore_soul_step_routes.py (the three-route model, registry 182 Soul)",
+      "reference": "archive/scripts/_explore_soul_step_routes.py",
+      "intent": "Retain the route model: the three STEP entry points answer three different questions, and the DIFFERENCES BETWEEN THEM are findings — not redundancy to be collapsed.",
+      "satisfaction": "Registry work uses the route set-analysis rather than a single route.",
+      "validation": {
+        "axis": "C",
+        "check": "routes-compared",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "routes": {
+          "A — English text search": "every verse where ESV USES the word, plus which Strong's tagged it (search.masterSearch.text)",
+          "B — Hebrew Strong's search": "every verse where the HEBREW word appears, however ESV renders it (search.masterSearch.strong)",
+          "C — Greek Strong's search": "every verse where the GREEK word appears, however ESV renders it (search.masterSearch.strong)"
+        },
+        "the_set_analysis_is_the_point": {
+          "A minus (B union C)": "English-word verses with NO registered Strong's -> REGISTRY GAPS (terms the study has not onboarded)",
+          "(B union C) minus A": "original-language occurrences NOT rendered by the English word -> the term's TRANSLATION BREADTH",
+          "A intersect (B union C)": "verses where the English word AND a registered term agree",
+          "B minus C, C minus B": "Hebrew-only / Greek-only within the union"
+        },
+        "why_INACTIVE": "The registry/fetch discovery module is not built. Recorded now per the researcher's 2026-07-15 ruling so the role of each route survives; flips to LIVE when discovery is built.",
+        "the_insight_worth_keeping": "Neither gap is visible from one route alone. A study that only ever searched Strong's would never learn which inner-being words it had failed to register — and under-registering is how the two prior studies understated the inner being."
+      }
     }
   ],
-
   "output": [
     {
       "id": "out.step.fetch-log",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "output",
       "subject": "step-fetch-log",
       "status": "LIVE",
@@ -200,18 +473,33 @@
       "reference": "plan §3.5",
       "intent": "Record every call to the application's only external source — what was asked, which API, which version, what came back, and whether the count reconciled.",
       "satisfaction": "One row per STEP call, with rows-returned and reported-total.",
-      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
-        "holds": ["api (enum.step_api)", "query", "version", "rows returned", "STEP's reported total", "cap-exhausted verdict", "timestamp", "run_id"],
+        "holds": [
+          "api (enum.step_api)",
+          "query",
+          "version",
+          "rows returned",
+          "STEP's reported total",
+          "cap-exhausted verdict",
+          "timestamp",
+          "run_id"
+        ],
         "why_red": "This log is the ONLY evidence that a fetch was complete. Without rows-vs-total per call, a truncated ingest is undetectable after the fact — and undetectable-after-the-fact is exactly how the coverage mirage happened."
       }
     }
   ],
-
   "validation": [
     {
       "id": "gate.step.env-parity",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "gate",
       "subject": "step-env-parity",
       "status": "LIVE",
@@ -220,7 +508,12 @@
       "reference": "iba/config/utility/step.json meta.the_live_defect",
       "intent": "Refuse to run when the names the code reads and the names the environment declares have drifted apart — the defect that made STEP configuration a silent no-op for six months.",
       "satisfaction": "Every canonical name in step.connection is declared in the environment AND read by the client; no retired name is read by anything.",
-      "validation": { "axis": "C", "check": "env-parity", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "env-parity",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "pre-flight, every run",
         "implements": "step.connection",
@@ -236,7 +529,10 @@
     },
     {
       "id": "gate.step.cap-exhausted",
-      "governs": ["util.step", "fetch"],
+      "governs": [
+        "util.step",
+        "fetch"
+      ],
       "kind": "gate",
       "subject": "step-result-cap",
       "status": "LIVE",
@@ -245,19 +541,29 @@
       "reference": "scripts/analytics/step_client.py `_paginate_all`",
       "intent": "Prove a fetch was complete by arithmetic, at every split depth, rather than by having applied a split.",
       "satisfaction": "rows returned == STEP's reported total, for every query and every sub-range.",
-      "validation": { "axis": "C", "check": "rows-equal-total", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "rows-equal-total",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per STEP query, at every depth",
         "implements": "step.result-cap",
         "on_fail": "halt — a short count must never bank",
         "missing_total_is_a_failure": "If STEP reports no `total`, the query FAILS. An unverifiable count is not a passing count.",
-        "cited_by": ["gate.raw.completeness"],
+        "cited_by": [
+          "gate.raw.completeness"
+        ],
         "note": "engine/migrate.py already carries a STEP_EXHAUST_CHECK flag — evidence this was a known risk handled by a toggle. A toggle is not a gate: it can be off."
       }
     },
     {
       "id": "gate.step.api-fit",
-      "governs": ["util.step", "raw"],
+      "governs": [
+        "util.step",
+        "raw"
+      ],
       "kind": "gate",
       "subject": "step-api-selection",
       "status": "LIVE",
@@ -266,7 +572,12 @@
       "reference": "iba/config/wide/enums.json enum.step_api",
       "intent": "Stop an API sourcing something it must not — specifically English-text search producing raw verse records.",
       "satisfaction": "Every raw row's source API is one the binding permits for its entity.",
-      "validation": { "axis": "C", "check": "api-entity-binding", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "api-entity-binding",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per raw row",
         "implements": "step.api-set",
@@ -275,7 +586,9 @@
     },
     {
       "id": "gate.step.available",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "gate",
       "subject": "step-availability",
       "status": "RECONCILE",
@@ -284,21 +597,31 @@
       "reference": "iba/config/utility/step.json meta.open",
       "intent": "Distinguish 'STEP is down' from 'STEP is answering differently' before a run trusts a single row it returns.",
       "satisfaction": "Server reachable, configured version present in its module list, and a known-answer probe returns the expected gloss.",
-      "validation": { "axis": "C", "check": "step-preflight", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "step-preflight",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "pre-flight, every run",
         "canonical": false,
         "reconcile": "open.step.availability",
-        "proposed": ["reachability", "configured version present in the module list", "known-answer probe (fixed Strong's -> known gloss)"],
+        "proposed": [
+          "reachability",
+          "configured version present in the module list",
+          "known-answer probe (fixed Strong's -> known gloss)"
+        ],
         "note": "⚠ RECONCILE — the known-answer probe needs a researcher-chosen fixed Strong's + expected gloss. A wrong-but-running server is more dangerous than a stopped one, because it fails silently."
       }
     }
   ],
-
   "naming": [
     {
       "id": "naming.step.ids",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "pattern",
       "subject": "step-ids",
       "status": "LIVE",
@@ -307,18 +630,31 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "This utility's naming parameters only.",
       "satisfaction": "STEP rule ids use the declared prefixes.",
-      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "id-prefix",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
-        "prefixes": { "process": "step.", "gate": "gate.step.", "output": "out.step." },
-        "cites": ["pattern.id-frozen-at-mint", "pattern.zero-pad-strongs"]
+        "prefixes": {
+          "process": "step.",
+          "gate": "gate.step.",
+          "output": "out.step."
+        },
+        "cites": [
+          "pattern.id-frozen-at-mint",
+          "pattern.zero-pad-strongs"
+        ]
       }
     }
   ],
-
   "filing": [
     {
       "id": "filing.step.outputs",
-      "governs": ["util.step"],
+      "governs": [
+        "util.step"
+      ],
       "kind": "pattern",
       "subject": "step-filing",
       "status": "LIVE",
@@ -327,10 +663,18 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "Where this utility's artefacts are filed.",
       "satisfaction": "STEP outputs land in the declared tree.",
-      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "output-path",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "output_tree": "outputs/step/",
-        "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write"],
+        "cites": [
+          "filing.version-bump-on-same-name",
+          "filing.manifest-rebuild-after-write"
+        ],
         "note": "The fetch LOG is a DB entity (control layer), not a file. Only human-facing reports land here."
       }
     }
