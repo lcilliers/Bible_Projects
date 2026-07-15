@@ -2,12 +2,10 @@
   "section": "pipeline",
   "tier": "A",
   "name": "Pipeline — modules, order, dependencies, module-gates",
-
   "meta": {
     "purpose": "The process wiring: which modules exist, in what order, depending on what, under which pre/post gates. Per plan §2.2 the flow is DATA, not code — the orchestrator builds a run plan by reading this, and changing the pipeline is a config change.",
     "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
     "authority": "plan moonlit-launching-cocke §3.1C, §3.2, §3.3.4, §A.3; authored 2026-07-15 on the researcher's observation that the pipeline configuration was missing and that a pre-processing step before lexical was unaccounted for.",
-
     "★ the_gap_the_researcher_found": {
       "the_observation": "researcher 2026-07-15: 'to me your raw and fetch is in the same pipeline, but there is a pre-processing before lexical that I am missing. I dont see the pipeline configration yet.'",
       "verdict": "CORRECT, and it is structural rather than a missing file. THE BASE LAYER HAS ALMOST NO PROCESS.",
@@ -18,7 +16,6 @@
         "prose (layer 4)": "no process, and no module either — the nine end at findings."
       },
       "the_module_analysis": "Of the plan's 9 modules, TWO map to no process: module 4 (Stem-master maintenance) and module 8 (Prepare data for analysis). The plan's own §A.11 lists 7 by-process rule-sets for 9 modules and never reconciles the difference. The gap was in the plan before it was in the config.",
-
       "★ THE_SPAN_LAYER_IS_THE_ANSWER": {
         "what_is_missing": "SPAN CONSTRUCTION — deriving, from raw morphology, the addressable term-in-verse spans that everything above joins on. That is the pre-processing before lexical.",
         "why_it_is_the_load-bearing_gap": [
@@ -32,18 +29,27 @@
         "⚠ why_that_is_dangerous": "A step everything joins on is SKIPPABLE, undocumented as a process, and has no gate of its own. `span_strong_match` is the field that proves a term is actually AT a verse — the difference between evidence and a reference — and it is produced by a bundled side-effect. A skipped backpop leaves spans absent; absent spans leave the lexical layer with nothing to read; and nothing announces it.",
         "the_layer_violation": "Span construction is DERIVATION from morphology, so by raw.definition it is BASE, not raw. Bundling it into the ingest module puts a base artefact inside a raw process — the same layer-mixing the plan forbids (§3.4.2 'no analytical values on mechanical tables'), one layer down."
       },
-
-      "what_this_file_does_about_it": "It states the modules and the wiring, and marks modules 4 and 8 (and the missing span module) explicitly rather than quietly omitting them. Whether to carve the base layer into processes is a researcher decision — see open.pipeline.base-layer-carve. This file does not pretend the gap is closed."
+      "what_this_file_does_about_it": "It states the modules and the wiring, and marks modules 4 and 8 (and the missing span module) explicitly rather than quietly omitting them. Whether to carve the base layer into processes is a researcher decision — see open.pipeline.base-layer-carve. This file does not pretend the gap is closed.",
+      "RULED_20260715": {
+        "the_ruling": "researcher 2026-07-15: 'the registry create the starting point (this is also not yet in configurator). raw pulls STEP and create the tables with the STEP data. No data conversion. Base then processes the data and prepare it for the lexical analysis. This requires master, char seed, and passages to be in place. With signoff of the base, the lexical analysis can start.'",
+        "the_stage_chain": "REGISTRY -> RAW -> BASE -> [SIGNOFF] -> LEXICAL -> CHARACTERISTICS -> FINDINGS",
+        "what_it_settled": [
+          "BASE IS ONE PROCESS, not three. My recommendation of three (spans/stems/passages) is OVERRULED, and the reason matters: I carved by WHAT IS PRODUCED; the researcher carves by WHEN IT IS DONE. A stage is a unit of COMPLETION — and base's completion is a signoff.",
+          "`verses-passages` RETIRED -> `base`. Passages are a base OUTPUT; treating one artefact of the stage as a peer of the stage was the carve error.",
+          "THE SEED IS BASE. char.seed-layers + ent.char.candidate moved out of characteristics -> process/base.json. Resolves open.pipeline.seed-layer-home.",
+          "SPANS ARE BASE, and now have a home (base.spans) and a gate (gate.base.span-master-complete) rather than being an audit_word side-effect behind --skip-span-backpop.",
+          "REGISTRY IS THE STARTING POINT and was missing entirely -> process/registry.json.",
+          "★ A HUMAN SIGNOFF GATES LEXICAL — the pipeline's only human gate (gate.base.signoff)."
+        ],
+        "why_the_signoff_is_the_important_part": "It is what makes base a STAGE rather than a bag of derivations. Base is also the last point where a defect is CHEAP: after it, everything is interpretation, and an error in the span master or the seed does not surface as a bad span — it surfaces as a wrong reading, months later, indistinguishable from a bad read. The 2026-07-14 audit could not tell those apart."
+      }
     },
-
     "nodes": {
       "modules": "The pipeline segments — one item per module, with order, handler, scope and the process it governs.",
       "dependencies": "The dependency graph — one item per edge, with activation (auto | halt).",
       "module_gates": "Which gates run pre/post per module, and what a failure does."
     },
-
-    "the_flow": "1 STEP ingest -> 2 Seed maintenance -> {3 Prepare passage, 4 Stem master} -> 5 Prepare lexical -> 6 Characteristic maintenance -> 7 Data validation -> 8 Prepare for analysis -> 9 Findings. Arrows are DEPENDENCIES, not hard-coded calls (plan §3.2).",
-
+    "the_flow": "REGISTRY (0) -> {FETCH+RAW (1)} -> BASE (2: spans, stem master, char seed, passages) -> [SIGNOFF] -> LEXICAL (5) -> CHARACTERISTICS (6) -> VALIDATION (7) -> ANALYSIS-PREP (8) -> FINDINGS (9). Arrows are DEPENDENCIES, not hard-coded calls (plan §3.2). The signoff is the only HUMAN gate in the chain.",
     "open": [
       {
         "id": "open.pipeline.base-layer-carve",
@@ -55,14 +61,21 @@
           "C: spans fold into `raw` — treat span-linking as part of ingest, as audit_word does today. REJECTED: spans are DERIVED, so by raw.definition they are base, and raw.immutable would then govern a derived artefact that changes whenever its derivation rule changes."
         ],
         "recommendation": "B. Spans and stems have nothing in common except being derived: a span is an ADDRESS (the join key for everything above), a stem is a LINGUISTIC DERIVATION. Bundling them under one `base` process would produce exactly the kind of catch-all that the failure record calls over-structuring. C is how it works today and is precisely what hides the step.",
-        "resolve_by": "researcher decision — BLOCKS a complete pipeline; modules 4 and the span module cannot declare `governs` until it is ruled"
+        "resolve_by": "researcher decision — BLOCKS a complete pipeline; modules 4 and the span module cannot declare `governs` until it is ruled",
+        "decision_status": "RESOLVED 2026-07-15",
+        "decision": "OPTION A — one `base` process. Overrules my recommendation of B (three processes).",
+        "decided_by": "researcher le Roux Cilliers, 2026-07-15",
+        "rationale": "Base is a STAGE, and a stage is a unit of completion. The four artefacts (span master, stem master, char seed, passages) always run together, always for the same scope, and are only ever FINISHED together — because they finish at one signoff. Carving them into three processes would have split one stage across three homes that could never be independently done."
       },
       {
         "id": "open.pipeline.seed-layer-home",
         "issue": "The candidate seed is BASE per plan §3.4.1 ('Base — derived: passages, stems, seed/candidate stamping | Regenerate'), but char.seed-layers and ent.char.candidate live in process/characteristics.json, an interpretation process.",
         "consequence": "An interpretation process owns a base artefact. Already flagged from the other side in characteristics.json (ent.char.candidate: 'layer: base (mechanical seed) — but the screen0 verdict is INTERPRETATION and must not live on this row').",
         "recommendation": "Split by layer, not by topic: the mechanical seed (which spans are candidates) is BASE; the Screen-0 verdict and the role (what a candidate IS) are INTERPRETATION. They are already two facts on one row, which is the actual defect — the live DB stamps role/char_candidate onto verse_span_index, and the migration strips exactly that (plan 3.4.1).",
-        "resolve_by": "researcher decision — follows open.pipeline.base-layer-carve"
+        "resolve_by": "researcher decision — follows open.pipeline.base-layer-carve",
+        "decision_status": "RESOLVED 2026-07-15",
+        "decision": "The seed is BASE. char.seed-layers + ent.char.candidate -> process/base.json; Screen-0/role stay in characteristics.",
+        "decided_by": "researcher le Roux Cilliers, 2026-07-15 (implied by \"base... requires master, char seed, and passages to be in place\")"
       },
       {
         "id": "open.pipeline.module-8-and-prose",
@@ -80,11 +93,14 @@
       }
     ]
   },
-
   "modules": [
     {
       "id": "module.1.ingest",
-      "governs": ["fetch", "raw", "util.step"],
+      "governs": [
+        "fetch",
+        "raw",
+        "util.step"
+      ],
       "kind": "module",
       "subject": "module-ingest",
       "status": "LIVE",
@@ -93,7 +109,12 @@
       "reference": "plan §3.3.4",
       "intent": "Retrieve from STEP and store the raw measure layer — verse, morphology, lexicon.",
       "satisfaction": "The requested scope's raw layer is present, complete against the oracle, and provenance-stamped.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "ordinal": 1,
         "enabled": true,
@@ -104,63 +125,77 @@
       }
     },
     {
-      "id": "module.2.seed",
-      "governs": ["registry", "characteristics"],
+      "id": "module.0.registry",
+      "governs": [
+        "registry"
+      ],
       "kind": "module",
-      "subject": "module-seed",
+      "subject": "module-registry",
       "status": "LIVE",
-      "version": 1,
-      "authority": "plan §3.3.4 (2 Characteristic-seed maintenance)",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 ('the registry create the starting point')",
       "reference": "plan §3.3.4",
-      "intent": "Maintain the registry and the candidate seed — which spans are nominated for reading.",
-      "satisfaction": "The seed is built through all layers, over-inclusive, and every candidate resolves to a verse-record.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "intent": "Maintain the registry — the study's starting point and outer bound.",
+      "satisfaction": "Every registry entry resolves to its terms; every addition records its trigger and reason.",
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "ordinal": 0,
+        "enabled": true,
+        "scope": "registry",
+        "note": "Was folded into module.2 (seed maintenance). Split out 2026-07-15: the registry is the STARTING POINT, the seed is BASE. Two stages, two modules.",
+        "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here"
+      }
+    },
+    {
+      "id": "module.2.base",
+      "governs": [
+        "base"
+      ],
+      "kind": "module",
+      "subject": "module-base",
+      "status": "LIVE",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 (the stage chain)",
+      "reference": "iba/config/wide/pipeline.json meta.★ THE_SPAN_LAYER_IS_THE_ANSWER",
+      "intent": "THE PREPARATION STAGE. Derive from raw everything the lexical read needs — span master, stem master, char seed, passages — and hand it over under signoff.",
+      "satisfaction": "All four base artefacts complete and gated for the scope, and the base review pack produced for signoff.",
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "ordinal": 2,
         "enabled": true,
         "scope": "book",
-        "⚠ layer_note": "The seed is BASE (plan §3.4.1) but its rules live in the characteristics process. See open.pipeline.seed-layer-home."
-      }
-    },
-    {
-      "id": "module.3.passage",
-      "governs": ["verses-passages"],
-      "kind": "module",
-      "subject": "module-passage",
-      "status": "LIVE",
-      "version": 1,
-      "authority": "plan §3.3.4 (3 Prepare reading passage)",
-      "reference": "plan §3.3.4",
-      "intent": "Build passages — maximal runs of consecutive candidate-bearing verses — and verse coverage.",
-      "satisfaction": "Every candidate-bearing verse belongs to a passage; coverage arithmetic reconciles.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
-      "spec": { "ordinal": 3, "enabled": true, "scope": "book", "note": "process/verses-passages.json is PENDING." }
-    },
-    {
-      "id": "module.4.stem",
-      "governs": ["raw"],
-      "kind": "module",
-      "subject": "module-stem",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "plan §3.3.4 (4 Stem-master maintenance)",
-      "reference": "plan §3.3.4; plan §4 ('No dedicated stem-master table exists — derive from verse_morphology')",
-      "intent": "Build and maintain the stem master, derived from morphology.",
-      "satisfaction": "Every attested stem is in the master, derived from morph_code.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
-      "spec": {
-        "ordinal": 4,
-        "enabled": false,
-        "scope": "corpus",
-        "canonical": false,
-        "reconcile": "open.pipeline.base-layer-carve",
-        "⚠ governs_is_a_placeholder": "`raw` is WRONG and is set only because the envelope requires a value and no correct one exists. A stem is DERIVED from morph_code, so it is BASE, not raw (raw.definition). This module cannot honestly declare what it governs until the base-layer carve is ruled.",
-        "note": "No stem-master table exists in the live DB (plan §4). This is a genuinely new build, not a rewrite."
+        "produces": [
+          "the span master (the join key)",
+          "the stem master",
+          "the char seed",
+          "passages"
+        ],
+        "ends_in": "gate.base.signoff — a RESEARCHER act, not a module outcome. Base is not done when its code finishes.",
+        "absorbs": [
+          "the old module.0.spans (the missing span step)",
+          "module.3.passage",
+          "module.4.stem",
+          "the seed half of module.2.seed"
+        ],
+        "reference_script": "audit_word's span-backpop + new build for the stem master (none exists — plan §4)",
+        "★ note": "This is the module the researcher identified as missing. It did not exist: spans were an audit_word side-effect behind --skip-span-backpop, stems had no module at all, and the seed sat in an interpretation process."
       }
     },
     {
       "id": "module.5.lexical",
-      "governs": ["lexical"],
+      "governs": [
+        "lexical"
+      ],
       "kind": "module",
       "subject": "module-lexical",
       "status": "LIVE",
@@ -169,19 +204,29 @@
       "reference": "plan §3.3.4",
       "intent": "The interpretive core — per passage/characteristic, produce the genre-mandatory ledger via the API adapter, gated by the validation engine.",
       "satisfaction": "Every span in scope carries its ledger's dimensions, every value passes its gates.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "ordinal": 5,
         "enabled": true,
         "scope": "passage",
-        "uses": ["util.api", "util.validation"],
+        "uses": [
+          "util.api",
+          "util.validation"
+        ],
         "⚠ blocked": "process/lexical.json carries 6 RECONCILE items; recon.mandatory-ledger is the hard one — without the ledger, 'complete' is undefined.",
         "⚠ its_input_has_no_producer": "This module reads SPANS. No module builds them (meta.★ THE_SPAN_LAYER_IS_THE_ANSWER). Its dependency chain currently runs to module 1 by accident, because span-linking is bundled there."
       }
     },
     {
       "id": "module.6.characteristic",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "module",
       "subject": "module-characteristic",
       "status": "LIVE",
@@ -190,12 +235,24 @@
       "reference": "plan §3.3.4",
       "intent": "Derive and maintain ib_characteristic; write back roles. Families/clusters remain disposable scaffolding.",
       "satisfaction": "Every read span has a role; characteristics are keyed on meaning-in-context.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
-      "spec": { "ordinal": 6, "enabled": true, "scope": "book", "⚠ blocked": "recon.role-enum blocks this module AND module 5." }
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "ordinal": 6,
+        "enabled": true,
+        "scope": "book",
+        "⚠ blocked": "recon.role-enum blocks this module AND module 5."
+      }
     },
     {
       "id": "module.7.validation",
-      "governs": ["util.validation"],
+      "governs": [
+        "util.validation"
+      ],
       "kind": "module",
       "subject": "module-validation",
       "status": "LIVE",
@@ -204,7 +261,12 @@
       "reference": "plan §3.2",
       "intent": "The full gate battery + scoreboard — AND every other module's pre/post gate.",
       "satisfaction": "Every gate in scope has run; the scoreboard is current.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "ordinal": 7,
         "enabled": true,
@@ -215,7 +277,9 @@
     },
     {
       "id": "module.8.analysis-prep",
-      "governs": ["findings"],
+      "governs": [
+        "findings"
+      ],
       "kind": "module",
       "subject": "module-analysis-prep",
       "status": "RECONCILE",
@@ -224,7 +288,12 @@
       "reference": "plan §3.3.4",
       "intent": "Projections and extracts for downstream analysis.",
       "satisfaction": "Projections regenerable from the DB; nothing authoritative lives only in them.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "ordinal": 8,
         "enabled": false,
@@ -236,7 +305,9 @@
     },
     {
       "id": "module.9.findings",
-      "governs": ["findings"],
+      "governs": [
+        "findings"
+      ],
       "kind": "module",
       "subject": "module-findings",
       "status": "LIVE",
@@ -245,121 +316,109 @@
       "reference": "plan §3.3.4",
       "intent": "Capture and produce evidenced findings from validated lexicals.",
       "satisfaction": "Every finding is verse-grounded, STATED-vs-INFERRED marked, and traceable.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
-      "spec": { "ordinal": 9, "enabled": true, "scope": "book | cluster", "note": "process/findings.json is PENDING." }
-    },
-    {
-      "id": "module.0.spans",
-      "governs": ["raw"],
-      "kind": "module",
-      "subject": "module-spans",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "researcher observation 2026-07-15 ('there is a pre-processing before lexical that I am missing'); derived from plan §3.4.2 ('the span-id is the join key')",
-      "reference": "iba/config/wide/pipeline.json meta.★ THE_SPAN_LAYER_IS_THE_ANSWER",
-      "intent": "★ THE MISSING MODULE. Derive the addressable term-in-verse spans from raw morphology — the currency every layer above is addressed in.",
-      "satisfaction": "Every term-in-verse in scope has a span with a resolved span_strong_match; every span resolves to a verse and a term.",
-      "validation": { "axis": "C", "check": "module-contract", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "module-contract",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
-        "ordinal": "between 1 and 3 — the base layer's first act",
-        "enabled": false,
-        "scope": "term | book",
-        "canonical": false,
-        "reconcile": "open.pipeline.base-layer-carve",
-        "⚠ does_not_exist_as_a_module": "Today this work happens inside audit_word ('inserts + span-links in one pass'), reachable via `--skip-span-backpop`. It has no module, no process, no rules and no gate of its own — while ve_lexical, char_candidate and every pair endpoint are addressed BY IT.",
-        "⚠ governs_is_a_placeholder": "`raw` is wrong — spans are DERIVED, therefore base. Set only because the envelope requires a value. Blocked on open.pipeline.base-layer-carve.",
-        "what_it_owns": [
-          "the span index — one addressable row per term-in-verse",
-          "span_strong_match — the field that proves the term is actually AT the verse (evidence vs reference)",
-          "span identity — the join key for ve_lexical, char_candidate, and every pair's from_span/to_span"
-        ],
-        "why_it_must_be_its_own_module": "Because everything above joins on its output. A step that universal must be independently runnable, independently gated, and impossible to skip by a flag on someone else's module."
+        "ordinal": 9,
+        "enabled": true,
+        "scope": "book | cluster",
+        "note": "process/findings.json is PENDING."
       }
     }
   ],
-
   "dependencies": [
     {
-      "id": "dep.spans-needs-raw",
-      "governs": ["raw"],
+      "id": "dep.raw-needs-registry",
+      "governs": [
+        "raw",
+        "registry"
+      ],
       "kind": "dependency",
-      "subject": "dep-spans-raw",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "raw.definition (derived from morphology = base)",
-      "reference": "iba/config/wide/pipeline.json",
-      "intent": "Spans are derived from raw morphology, so raw must be present and complete first.",
-      "satisfaction": "module.0.spans does not run until module.1.ingest's raw layer is complete for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.0.spans", "depends_on": "module.1.ingest", "activation": "auto", "canonical": false, "reconcile": "open.pipeline.base-layer-carve" }
-    },
-    {
-      "id": "dep.passage-needs-seed",
-      "governs": ["verses-passages"],
-      "kind": "dependency",
-      "subject": "dep-passage-seed",
+      "subject": "dep-raw-registry",
       "status": "LIVE",
       "version": 1,
-      "authority": "passage rule v2 (candidate-driven); cycle authoritative v1 §4A",
-      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
-      "intent": "A passage is a run of consecutive CANDIDATE-BEARING verses, so the seed must exist before passages can be built.",
-      "satisfaction": "module.3.passage does not run until module.2.seed is complete for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.3.passage", "depends_on": "module.2.seed", "activation": "auto" }
-    },
-    {
-      "id": "dep.lexical-needs-spans",
-      "governs": ["lexical"],
-      "kind": "dependency",
-      "subject": "dep-lexical-spans",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "plan §3.4.2 ('the span-id is the join key'); ent.lexical.record identity",
-      "reference": "iba/config/process/lexical.json",
-      "intent": "★ THE DEPENDENCY THE PIPELINE DID NOT STATE. The lexical read is ABOUT a span; without spans there is nothing to read.",
-      "satisfaction": "module.5.lexical does not run until spans exist for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
+      "authority": "researcher ruling 2026-07-15 (the stage chain)",
+      "reference": "iba/config/process/registry.json",
+      "intent": "Nothing is fetched that is not reachable from a registry entry.",
+      "satisfaction": "module.1.ingest runs only for terms resolving to a registry entry.",
+      "validation": {
+        "axis": "C",
+        "check": "dependency-satisfied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
-        "module": "module.5.lexical",
-        "depends_on": "module.0.spans",
-        "activation": "halt",
-        "canonical": false,
-        "reconcile": "open.pipeline.base-layer-carve",
-        "why_halt_not_auto": "If spans are missing, something upstream went wrong — silently building them mid-read would mask the fault. Halt and say so.",
-        "⚠ today_this_edge_is_invisible": "The plan's flow (§3.2) runs 1 -> 2 -> {3,4} -> 5, with no span step. The dependency is real and satisfied by accident, because span-linking is bundled into module 1. An accidental dependency is one nothing protects."
+        "module": "module.1.ingest",
+        "depends_on": "module.0.registry",
+        "activation": "auto"
       }
     },
     {
-      "id": "dep.lexical-needs-passage",
-      "governs": ["lexical"],
+      "id": "dep.base-needs-raw",
+      "governs": [
+        "base",
+        "raw"
+      ],
       "kind": "dependency",
-      "subject": "dep-lexical-passage",
+      "subject": "dep-base-raw",
       "status": "LIVE",
       "version": 1,
-      "authority": "plan §3.2; wa-verse-analysis-method-v1 (the read unit is the passage)",
-      "reference": "wa-verse-analysis-method-v1",
-      "intent": "The read unit is the passage, so passages must exist before lexical runs.",
-      "satisfaction": "module.5.lexical does not run until module.3.passage is complete for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.5.lexical", "depends_on": "module.3.passage", "activation": "auto" }
+      "authority": "researcher ruling 2026-07-15 ('raw pulls STEP... No data conversion. Base then processes the data')",
+      "reference": "iba/config/process/base.json",
+      "intent": "Base derives FROM raw, so raw must be present and complete for the scope first.",
+      "satisfaction": "module.2.base runs only where raw is complete against the oracle.",
+      "validation": {
+        "axis": "C",
+        "check": "dependency-satisfied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.2.base",
+        "depends_on": "module.1.ingest",
+        "activation": "auto",
+        "note": "The layer boundary in one edge: raw = what STEP said (no conversion); base = what we computed from it."
+      }
     },
     {
-      "id": "dep.lexical-needs-stem",
-      "governs": ["lexical"],
+      "id": "dep.lexical-needs-base-signoff",
+      "governs": [
+        "lexical",
+        "base"
+      ],
       "kind": "dependency",
-      "subject": "dep-lexical-stem",
+      "subject": "dep-lexical-base-signoff",
       "status": "RECONCILE",
       "version": 1,
-      "authority": "plan §3.2 (4 Stem master -> 5 Prepare lexical)",
-      "reference": "plan §3.2",
-      "intent": "The stem master supports the lexical read's morphological dimensions.",
-      "satisfaction": "module.5.lexical does not run until module.4.stem is complete for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.5.lexical", "depends_on": "module.4.stem", "activation": "auto", "canonical": false, "reconcile": "open.pipeline.base-layer-carve" }
+      "authority": "researcher ruling 2026-07-15: 'With signoff of the base, the lexical analysis can start.'",
+      "reference": "iba/config/process/base.json base.signoff",
+      "intent": "★ THE STAGE BOUNDARY. Lexical does not start until base is signed off — the pipeline's only human gate.",
+      "satisfaction": "A valid, current base signoff exists for the scope lexical is about to read.",
+      "validation": {
+        "axis": "C",
+        "check": "dependency-satisfied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.5.lexical",
+        "depends_on": "module.2.base",
+        "activation": "halt",
+        "canonical": false,
+        "reconcile": "open.base.signoff-mechanism",
+        "why_halt_and_never_auto": "Auto-activating a HUMAN gate would defeat it. This is the one edge in the pipeline the software must not be able to satisfy by itself.",
+        "what_it_replaces": "dep.lexical-needs-spans + dep.lexical-needs-passage + dep.lexical-needs-stem — three edges that were really one stage boundary. The old dep.lexical-needs-spans was the edge the plan's flow never stated at all, satisfied by accident because span-linking was bundled into ingest."
+      }
     },
     {
       "id": "dep.characteristic-needs-lexical",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "dependency",
       "subject": "dep-char-lexical",
       "status": "LIVE",
@@ -367,35 +426,53 @@
       "authority": "plan §3.2",
       "reference": "plan §3.2",
       "intent": "Characteristics are derived from validated lexical reads.",
-      "satisfaction": "module.6.characteristic does not run until module.5.lexical is complete for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.6.characteristic", "depends_on": "module.5.lexical", "activation": "auto" }
+      "satisfaction": "module.6.characteristic runs only where module.5.lexical is complete.",
+      "validation": {
+        "axis": "C",
+        "check": "dependency-satisfied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.6.characteristic",
+        "depends_on": "module.5.lexical",
+        "activation": "auto"
+      }
     },
     {
       "id": "dep.findings-needs-validation",
-      "governs": ["findings"],
+      "governs": [
+        "findings"
+      ],
       "kind": "dependency",
       "subject": "dep-findings-validation",
       "status": "LIVE",
       "version": 1,
-      "authority": "plan §3.2 (9 Findings <- 8 <- 7 Data validation)",
+      "authority": "plan §3.2",
       "reference": "plan §3.2",
-      "intent": "Findings are drawn only from VALIDATED lexicals — the enforcement point of 'done = validity, not coverage'.",
-      "satisfaction": "module.9.findings does not run until module.7.validation passes for the scope.",
-      "validation": { "axis": "C", "check": "dependency-satisfied", "severity": "red", "enforcement": "gate" },
+      "intent": "Findings are drawn only from VALIDATED lexicals — where 'done = validity, not coverage' is enforced.",
+      "satisfaction": "module.9.findings runs only where module.7.validation passes.",
+      "validation": {
+        "axis": "C",
+        "check": "dependency-satisfied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "module": "module.9.findings",
         "depends_on": "module.7.validation",
         "activation": "halt",
-        "why_halt": "Producing findings from unvalidated reads is the exact failure the 2026-07-14 audit exposed — 8 dimensions failing their own rules while the layer read as complete. Never auto-activate past this."
+        "why_halt": "Producing findings from unvalidated reads is the exact 2026-07-14 failure — 8 dimensions failing their own rules while the layer read as complete."
       }
     }
   ],
-
   "module_gates": [
     {
       "id": "mgate.ingest-post-oracle",
-      "governs": ["fetch", "raw"],
+      "governs": [
+        "fetch",
+        "raw"
+      ],
       "kind": "dependency",
       "subject": "mgate-ingest-oracle",
       "status": "LIVE",
@@ -404,12 +481,26 @@
       "reference": "iba/config/utility/step.json",
       "intent": "No ingest is marked done until its rows reconcile against STEP's reported total.",
       "satisfaction": "gate.step.cap-exhausted passes for every query in the run.",
-      "validation": { "axis": "C", "check": "module-gate", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.1.ingest", "phase": "post", "gate_code": "gate.step.cap-exhausted", "on_fail": "halt" }
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.1.ingest",
+        "phase": "post",
+        "gate_code": "gate.step.cap-exhausted",
+        "on_fail": "halt"
+      }
     },
     {
       "id": "mgate.ingest-pre-available",
-      "governs": ["fetch", "raw", "util.step"],
+      "governs": [
+        "fetch",
+        "raw",
+        "util.step"
+      ],
       "kind": "dependency",
       "subject": "mgate-ingest-available",
       "status": "LIVE",
@@ -418,12 +509,25 @@
       "reference": "iba/config/utility/step.json gate.step.available",
       "intent": "The STEP pre-flight is a PRE-REQUISITE for any raw process, not a runtime check.",
       "satisfaction": "gate.step.available passes before module.1.ingest starts.",
-      "validation": { "axis": "C", "check": "module-gate", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.1.ingest", "phase": "pre", "gate_code": "gate.step.available", "on_fail": "halt", "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one." }
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.1.ingest",
+        "phase": "pre",
+        "gate_code": "gate.step.available",
+        "on_fail": "halt",
+        "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one."
+      }
     },
     {
       "id": "mgate.lexical-post-ledger",
-      "governs": ["lexical"],
+      "governs": [
+        "lexical"
+      ],
       "kind": "dependency",
       "subject": "mgate-lexical-ledger",
       "status": "RECONCILE",
@@ -432,22 +536,103 @@
       "reference": "iba/config/process/lexical.json",
       "intent": "A lexical read is not done until its ledger is complete — the definition of done for the layer that failed.",
       "satisfaction": "gate.lexical.ledger-complete passes for every span in scope.",
-      "validation": { "axis": "C", "check": "module-gate", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.5.lexical", "phase": "post", "gate_code": "gate.lexical.ledger-complete", "on_fail": "halt", "canonical": false, "reconcile": "recon.mandatory-ledger" }
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.5.lexical",
+        "phase": "post",
+        "gate_code": "gate.lexical.ledger-complete",
+        "on_fail": "halt",
+        "canonical": false,
+        "reconcile": "recon.mandatory-ledger"
+      }
     },
     {
-      "id": "mgate.seed-post-integrity",
-      "governs": ["characteristics"],
+      "id": "mgate.base-post-signoff",
+      "governs": [
+        "base",
+        "lexical"
+      ],
       "kind": "dependency",
-      "subject": "mgate-seed-integrity",
+      "subject": "mgate-base-signoff",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "base.signoff (researcher ruling 2026-07-15)",
+      "reference": "iba/config/process/base.json",
+      "intent": "Base is not done until the researcher says so.",
+      "satisfaction": "gate.base.signoff passes before module.5.lexical starts.",
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.2.base",
+        "phase": "post",
+        "gate_code": "gate.base.signoff",
+        "on_fail": "halt",
+        "canonical": false,
+        "reconcile": "open.base.signoff-mechanism",
+        "note": "The only module-gate in the pipeline that a machine cannot pass."
+      }
+    },
+    {
+      "id": "mgate.base-post-spans",
+      "governs": [
+        "base"
+      ],
+      "kind": "dependency",
+      "subject": "mgate-base-spans",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.spans",
+      "reference": "iba/config/process/base.json",
+      "intent": "No base is signed off with holes in the span master — everything above joins on it.",
+      "satisfaction": "gate.base.span-master-complete passes.",
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.2.base",
+        "phase": "post",
+        "gate_code": "gate.base.span-master-complete",
+        "on_fail": "halt"
+      }
+    },
+    {
+      "id": "mgate.base-post-candidate",
+      "governs": [
+        "base"
+      ],
+      "kind": "dependency",
+      "subject": "mgate-base-candidate",
       "status": "LIVE",
       "version": 1,
       "authority": "char.candidate-requires-verse-record (I2)",
       "reference": "wa-db-integrity-definition-authoritative-v1 I2",
-      "intent": "The integrity invariant the researcher named: a candidate with no verse-record is a violation, not a gap.",
-      "satisfaction": "gate.char.candidate-verse-record passes for every candidate.",
-      "validation": { "axis": "C", "check": "module-gate", "severity": "red", "enforcement": "gate" },
-      "spec": { "module": "module.2.seed", "phase": "post", "gate_code": "gate.char.candidate-verse-record", "on_fail": "halt", "note": "halt and restore — repair before proceeding." }
+      "intent": "The integrity invariant: a candidate with no verse-record is a violation, not a gap.",
+      "satisfaction": "gate.char.candidate-verse-record passes.",
+      "validation": {
+        "axis": "C",
+        "check": "module-gate",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.2.base",
+        "phase": "post",
+        "gate_code": "gate.char.candidate-verse-record",
+        "on_fail": "halt",
+        "note": "halt and restore — repair before proceeding. Moved from module.2.seed with the seed."
+      }
     }
   ]
 }

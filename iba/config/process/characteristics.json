@@ -2,19 +2,16 @@
   "process_code": "characteristics",
   "tier": "B",
   "name": "Characteristics (seed · Screen 0 · role · registry)",
-
   "meta": {
     "purpose": "Decide WHAT IS BEING READ. This process seeds candidate spans, screens them for inner-being relevance, assigns each a role, and maintains the ib_characteristic registry. It is the study's gatekeeper: a span that gets past Screen 0 wrongly poisons every layer above it.",
     "the_hard_part": "Almost every rule here is [I]. Screen 0 and role assignment are two of only a handful of genuinely interpretive judgements in the whole application (plan §4) — they cannot be derived from morphology, because whether a verse is about the human inner being is a question about MEANING. This file is therefore the opposite of raw.json: the gates cannot do the work, they can only catch the errors.",
     "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
-
     "the_scaffolding_warning": {
       "ruling": "plan §1.4 'resists over-structuring' — clusters/characteristics remain DISPOSABLE SCAFFOLDING and the software treats them as such.",
       "why": "Over-structuring an integrated subject is named as THE DEEPEST ROOT of six months of failure: the impulse to impose tidy structure on human inner life, which is not systemisable. The organising unit was rebuilt 4-5 times (registry -> dimension -> term-similarity -> characteristic -> movements), each reset turning prior 'completed' work into legacy.",
       "consequence_for_this_file": "A characteristic is a HANDLE for finding evidence, not a claim about reality. Nothing downstream may depend on the characteristic set being stable, correct, or exhaustive. If this file's structures start looking authoritative, that is the failure recurring.",
       "the_object": "The real object is a focus point — latent, emergent, dynamic; never observed directly, only INFERRED from the operations a verse describes. The characteristic list VALIDATES (verse -> list), it never IMPUTES (list -> verse)."
     },
-
     "nodes": {
       "process": "Screen 0, the seed, role assignment, char-driven read, ib_characteristic keying.",
       "entities": "char_candidate · ib_characteristic · role. Definitional only.",
@@ -23,7 +20,6 @@
       "naming": "Naming parameters.",
       "filing": "Filing parameters."
     },
-
     "open": [
       {
         "id": "open.char.role-enum-blocked",
@@ -61,15 +57,24 @@
         "issue": "The seed is deliberately over-inclusive and non-exhaustive — Screen 0 then rejects. But there is no rule for what over-inclusive MEANS, so the seed's breadth is a judgement made per run.",
         "consequence": "Seed breadth silently sets the study's coverage. Too narrow and the inner being is understated — which is precisely what the two prior ~100-page studies did, and the quality bar this programme measures itself against.",
         "recommendation": "Bias to over-inclusion and let Screen 0 carry the cost. A false positive is caught by a gate; a false negative is invisible forever. State this as a rule with a measurable seed-recall check.",
-        "resolve_by": "researcher decision"
+        "resolve_by": "researcher decision",
+        "moved_to": "process/base.json — the seed lives there now"
       }
-    ]
+    ],
+    "seed_moved_20260715": {
+      "what": "char.seed-layers and ent.char.candidate moved to process/base.json.",
+      "why": "The seed is BASE (plan §3.4.1: 'Base — derived: passages, stems, seed/candidate stamping'), and the researcher's 2026-07-15 stage model states it directly: base 'requires master, char seed, and passages to be in place' before lexical can start. An interpretation process was holding a base artefact — flagged from the other side in the old ent.char.candidate note ('layer: base (mechanical seed) — but the screen0 verdict is INTERPRETATION and must not live on this row').",
+      "the_split": "WHICH spans are candidates = mechanical, BASE -> base.char-seed. WHAT a candidate IS (Screen 0, role, ib_characteristic) = judgement, INTERPRETATION -> stays here. Two facts that were on one row; that co-location is the defect the migration strips (plan 3.4.1).",
+      "resolves": "open.pipeline.seed-layer-home"
+    }
   },
-
   "process": [
     {
       "id": "char.screen0",
-      "governs": ["characteristics", "lexical"],
+      "governs": [
+        "characteristics",
+        "lexical"
+      ],
       "kind": "principle",
       "status": "LIVE",
       "version": 1,
@@ -77,18 +82,27 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
       "intent": "The first question asked of every candidate span, before any other work: is this the HUMAN inner being? Everything downstream assumes this was answered correctly.",
       "satisfaction": "Every span that proceeds is about the human inner being. God's own attribute or action is the ARENA, never the object.",
-      "validation": { "axis": "I", "check": "screen0-human-ib", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "screen0-human-ib",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "Screen 0: is it the HUMAN inner being? God's own attribute/action -> qualifier or arena. A pure God-verse yields NO characteristic.",
         "the_lens": "The lens is on inner-being PROCESSES. God-interaction is the arena in which they move — not the subject of the study.",
-        "cites": ["lexical.bearer-never-god"],
+        "cites": [
+          "lexical.bearer-never-god"
+        ],
         "failure_it_prevents": "2026-07-14: Pro 8:28 'God made firm the skies' was roled `characteristic` — a God-act read as a human inner-being characteristic. Screen 0 failing silently in live data.",
         "open": "open.char.screen0-mechanism"
       }
     },
     {
       "id": "char.list-validates-never-imputes",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "guardrail",
       "status": "LIVE",
       "version": 1,
@@ -96,7 +110,12 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "Keep the direction of inference right. The list is a check on what the verse produced, never a menu the verse is sorted into.",
       "satisfaction": "Every characteristic is read FROM the verse, then validated against the list. No characteristic is assigned because the list has a slot for it.",
-      "validation": { "axis": "I", "check": "direction-verse-to-list", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "direction-verse-to-list",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "The characteristic list VALIDATES (verse -> list). It NEVER imputes (list -> verse).",
         "failure_it_prevents": "'No forced categories — patterns emerge from evidence' is principle 3 of nine, and its breach is the named deepest root: sorting an integrated subject into a grid.",
@@ -105,7 +124,11 @@
     },
     {
       "id": "char.infer-dont-extract",
-      "governs": ["characteristics", "lexical", "findings"],
+      "governs": [
+        "characteristics",
+        "lexical",
+        "findings"
+      ],
       "kind": "principle",
       "status": "LIVE",
       "version": 1,
@@ -113,16 +136,26 @@
       "reference": "wa-study-foundations.md §a",
       "intent": "The governing method of the entire programme. A focus point is latent and can never be observed directly — only inferred from the operations a verse describes it performing.",
       "satisfaction": "Every characteristic is read BACKWARD from the act: this happened, what inner reality produced it? Never forward from lexical surface.",
-      "validation": { "axis": "I", "check": "inferred-not-extracted", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "inferred-not-extracted",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "Infer, don't extract. Read the verse BACKWARD (this act happened -> what inner reality produced it?), never FORWARD (this word appears -> log its category).",
         "why": "The inner being is not a grouping of distinct phenomena but an interrelated network of operations behaving dynamically under influences, triggers and effects. A forward read can only ever find the words; the object is what the words imply.",
-        "cites": ["lexical.no-mechanical-extraction"]
+        "cites": [
+          "lexical.no-mechanical-extraction"
+        ]
       }
     },
     {
       "id": "char.candidate-requires-verse-record",
-      "governs": ["characteristics", "verses-passages"],
+      "governs": [
+        "characteristics",
+        "base"
+      ],
       "kind": "principle",
       "status": "LIVE",
       "version": 1,
@@ -130,7 +163,12 @@
       "reference": "wa-db-integrity-definition-authoritative-v1 I2",
       "intent": "The DB integrity invariant the researcher named explicitly: a candidate span with no verse-record is not a gap to fill later, it is a violation to repair now.",
       "satisfaction": "Every char_candidate span resolves to a verse-record. Zero exceptions.",
-      "validation": { "axis": "C", "check": "candidate-has-verse-record", "severity": "red", "enforcement": "db+gate" },
+      "validation": {
+        "axis": "C",
+        "check": "candidate-has-verse-record",
+        "severity": "red",
+        "enforcement": "db+gate"
+      },
       "spec": {
         "statement": "A char_candidate span with no verse-record is a DB INTEGRITY VIOLATION. Halt and restore — repair before proceeding.",
         "enforcement_note": "db:fk projects the referential half. The gate carries the conditional half (a candidate must resolve to an ACTIVE, non-delete-flagged record).",
@@ -138,26 +176,11 @@
       }
     },
     {
-      "id": "char.seed-layers",
-      "governs": ["characteristics", "registry"],
-      "kind": "principle",
-      "status": "LIVE",
-      "version": 1,
-      "authority": "cycle authoritative v1 §4A; memory project_candidate_characteristic_seed_and_role_model",
-      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
-      "intent": "Build the candidate seed from widening layers, biased to over-inclusion, because Screen 0 can reject a false positive but nothing can recover a span never seeded.",
-      "satisfaction": "Seed built through all layers; over-inclusive and explicitly non-exhaustive.",
-      "validation": { "axis": "C", "check": "seed-layers-applied", "severity": "amber", "enforcement": "gate" },
-      "spec": {
-        "layers": ["registry (the ~214 words)", "synonyms", "judgement", "discovery"],
-        "stance": "OVER-INCLUSIVE and NON-EXHAUSTIVE — Screen 0 rejects; the seed does not pre-judge.",
-        "rationale": "A false positive costs one gate call. A false negative is invisible forever — and understating the inner being is the exact failure of the two prior studies this programme measures itself against.",
-        "open": "open.char.seed-over-inclusive"
-      }
-    },
-    {
       "id": "char.driven-read",
-      "governs": ["characteristics", "lexical"],
+      "governs": [
+        "characteristics",
+        "lexical"
+      ],
       "kind": "principle",
       "status": "LIVE",
       "version": 1,
@@ -165,7 +188,12 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "Read characteristic-by-characteristic, using the characteristic as a lens, rather than sweeping spans in document order — which records reading-order rather than the text.",
       "satisfaction": "The read is driven by the characteristic; pairs resolve across morphology.",
-      "validation": { "axis": "C", "check": "read-order-is-char", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "read-order-is-char",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "Read CHAR-BY-CHAR (the char is the lens), not span-sweep. Resolve pairs across morphology.",
         "failure_it_prevents": "Analyst drift — dimensions and depth drifted mid-run, recording reading ORDER rather than the text (band-drift is its signature)."
@@ -173,7 +201,9 @@
     },
     {
       "id": "char.resist-grouping",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "guardrail",
       "status": "LIVE",
       "version": 1,
@@ -181,7 +211,12 @@
       "reference": "wa-RESET-baseline-review-and-changeover-v1-20260625.md",
       "intent": "Protect the finding from the tidying instinct. Two occurrences of a word are not one thing seen twice — the DIFFERENCE between them is the discovery.",
       "satisfaction": "Repeated spans keep their distinctions. Grouping is resisted, not defaulted to.",
-      "validation": { "axis": "I", "check": "distinctions-preserved", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "distinctions-preserved",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "statement": "RESIST grouping. The DIFFERENCE between repeated spans IS the finding.",
         "why": "This is over-structuring in miniature — and over-structuring is the deepest named root. Every grouping is a small claim that the subject is systemisable."
@@ -189,7 +224,9 @@
     },
     {
       "id": "char.meaning-keyed",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "principle",
       "status": "LIVE",
       "version": 1,
@@ -197,39 +234,31 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "Key a characteristic on its MEANING-IN-CONTEXT rather than its lemma, because the same word carries different inner-being realities in different verses.",
       "satisfaction": "ib_characteristic is keyed on meaning-in-context (base-lemma + ESV), built two-phase.",
-      "validation": { "axis": "I", "check": "key-is-meaning", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "key-is-meaning",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "grain": "base-lemma + ESV meaning-in-context",
-        "phases": { "phase_1": "per-cycle — provisional keys as the read proceeds", "phase_2": "book-close — reconcile keys across the book" },
-        "cites": ["lexical.grain"],
+        "phases": {
+          "phase_1": "per-cycle — provisional keys as the read proceeds",
+          "phase_2": "book-close — reconcile keys across the book"
+        },
+        "cites": [
+          "lexical.grain"
+        ],
         "note": "The lemma is not the unit — a term is a SPAN/SENSE. Keying on lemma would reintroduce the fixed-constant-as-discovery failure."
       }
     }
   ],
-
   "entities": [
     {
-      "id": "ent.char.candidate",
-      "governs": ["characteristics"],
-      "kind": "entity",
-      "status": "LIVE",
-      "version": 1,
-      "authority": "cycle authoritative v1 §4A",
-      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
-      "intent": "A span nominated for reading — a question, not an assertion. Seeded over-inclusively; Screen 0 decides whether it survives.",
-      "satisfaction": "One row per nominated span, each resolving to a verse-record.",
-      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
-      "spec": {
-        "grain": "one row per candidate span",
-        "identity": "span-id",
-        "holds": ["span-id", "seed layer", "screen0 verdict", "provenance"],
-        "layer": "base (mechanical seed) — but the screen0 verdict is INTERPRETATION and must not live on this row (plan §3.4.2 'no analytical values on mechanical tables')",
-        "note": "⚠ Layer violation flagged: the live DB stamps role/char_candidate/characteristic ONTO verse_span_index. The new schema separates them — the migration keeps the structural span only and drops the analysis (plan 3.4.1)."
-      }
-    },
-    {
       "id": "ent.char.ib-characteristic",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "entity",
       "status": "LIVE",
       "version": 1,
@@ -237,18 +266,30 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
       "intent": "The characteristic registry — a HANDLE for gathering evidence, keyed on meaning-in-context. Explicitly disposable scaffolding, not a claim about reality.",
       "satisfaction": "One row per meaning-in-context; re-derivable from the spans beneath it.",
-      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "validation": {
+        "axis": "C",
+        "check": "entity-integrity",
+        "severity": "red",
+        "enforcement": "db+gate"
+      },
       "spec": {
         "grain": "base-lemma + ESV meaning-in-context",
         "identity": "⚠ CONTESTED — see open.char.disposability-vs-persistence",
-        "holds": ["the meaning key", "its spans", "provenance"],
+        "holds": [
+          "the meaning key",
+          "its spans",
+          "provenance"
+        ],
         "layer": "interpretation",
         "disposability": "MUST remain re-cuttable. Nothing durable should reference its id (recommendation: findings bind to SPANS). If downstream depends on this key, disposability is aspirational and the next re-cut is another reset."
       }
     },
     {
       "id": "ent.char.role",
-      "governs": ["characteristics", "lexical"],
+      "governs": [
+        "characteristics",
+        "lexical"
+      ],
       "kind": "entity",
       "status": "RECONCILE",
       "version": 1,
@@ -256,7 +297,13 @@
       "reference": "wa-ve-lexical-catalogue-v1 §8",
       "intent": "The span's function — assigned BY the read at the sanity-check gate, never derived. Decides which ledger applies and therefore what a complete read is.",
       "satisfaction": "Every read-2026 span carries a role from the canonical set.",
-      "validation": { "axis": "I", "check": "value-in-domain", "enum": "role", "severity": "red", "enforcement": "db:check" },
+      "validation": {
+        "axis": "I",
+        "check": "value-in-domain",
+        "enum": "role",
+        "severity": "red",
+        "enforcement": "db:check"
+      },
       "spec": {
         "grain": "one role per span",
         "surfaces_as": "dim.115.role in the lexical process",
@@ -266,11 +313,12 @@
       }
     }
   ],
-
   "output": [
     {
       "id": "out.char.review-pack",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "output",
       "status": "LIVE",
       "version": 1,
@@ -278,19 +326,29 @@
       "reference": "plan §3.6",
       "intent": "Put Screen-0 and role decisions in front of the researcher, because these are the [I] judgements the gates cannot fully carry.",
       "satisfaction": "Every run produces a reviewable sample of Screen-0 rejects and role assignments.",
-      "validation": { "axis": "C", "check": "artefact-exists", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "format": "md",
-        "must_include": ["Screen-0 REJECTS (the invisible decisions — what the study chose not to see)", "role distribution", "uncertain-roled spans"],
+        "must_include": [
+          "Screen-0 REJECTS (the invisible decisions — what the study chose not to see)",
+          "role distribution",
+          "uncertain-roled spans"
+        ],
         "rationale": "Rejects matter more than accepts: an accept is checked by every gate above it, a reject is checked by nothing. This is where a false negative becomes visible."
       }
     }
   ],
-
   "validation": [
     {
       "id": "gate.char.candidate-verse-record",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "gate",
       "status": "LIVE",
       "version": 1,
@@ -298,7 +356,12 @@
       "reference": "wa-db-integrity-definition-authoritative-v1 I2",
       "intent": "Enforce the integrity invariant at write time.",
       "satisfaction": "Zero candidate spans without an active verse-record.",
-      "validation": { "axis": "C", "check": "candidate-has-verse-record", "severity": "red", "enforcement": "db+gate" },
+      "validation": {
+        "axis": "C",
+        "check": "candidate-has-verse-record",
+        "severity": "red",
+        "enforcement": "db+gate"
+      },
       "spec": {
         "scope": "per candidate",
         "implements": "char.candidate-requires-verse-record",
@@ -308,7 +371,9 @@
     },
     {
       "id": "gate.char.screen0",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "gate",
       "status": "RECONCILE",
       "version": 1,
@@ -316,7 +381,12 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
       "intent": "Catch a God-act read as a human characteristic — the failure observed in live data on 07-14.",
       "satisfaction": "No span with a God bearer is roled `characteristic`.",
-      "validation": { "axis": "I", "check": "screen0-human-ib", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "screen0-human-ib",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per candidate",
         "implements": "char.screen0",
@@ -328,7 +398,10 @@
     },
     {
       "id": "gate.char.role-domain",
-      "governs": ["characteristics", "lexical"],
+      "governs": [
+        "characteristics",
+        "lexical"
+      ],
       "kind": "gate",
       "status": "RECONCILE",
       "version": 1,
@@ -336,7 +409,13 @@
       "reference": "recon.role-enum",
       "intent": "Refuse a role outside the canonical set.",
       "satisfaction": "Every role is a member of enum.role.",
-      "validation": { "axis": "C", "check": "value-in-domain", "enum": "role", "severity": "red", "enforcement": "db:check" },
+      "validation": {
+        "axis": "C",
+        "check": "value-in-domain",
+        "enum": "role",
+        "severity": "red",
+        "enforcement": "db:check"
+      },
       "spec": {
         "scope": "per span",
         "canonical": false,
@@ -346,7 +425,10 @@
     },
     {
       "id": "gate.char.bearer-not-god",
-      "governs": ["characteristics", "lexical"],
+      "governs": [
+        "characteristics",
+        "lexical"
+      ],
       "kind": "gate",
       "status": "LIVE",
       "version": 1,
@@ -354,17 +436,26 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
       "intent": "The mechanical half of Screen 0 — the part that does not need a model.",
       "satisfaction": "No span roled `characteristic` has a divine-name bearer.",
-      "validation": { "axis": "C", "check": "bearer-not-divine-name", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "bearer-not-divine-name",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per span",
         "implements": "lexical.bearer-never-god",
-        "cites": ["lexical.bearer-never-god"],
+        "cites": [
+          "lexical.bearer-never-god"
+        ],
         "note": "The RULE is defined once, in the lexical process, and cited here (layout v2 §2.3 — one rule, one home). This gate enforces it at the characteristics boundary. Would have caught Pro 8:28."
       }
     },
     {
       "id": "gate.char.two-axes",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "gate",
       "status": "LIVE",
       "version": 1,
@@ -372,12 +463,22 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §7A",
       "intent": "Keep candidacy and role independent — they answer different questions and conflating them hides both.",
       "satisfaction": "char_candidate and role are set independently; neither is derived from the other.",
-      "validation": { "axis": "C", "check": "axes-independent", "severity": "red", "enforcement": "gate" },
-      "spec": { "scope": "per span", "note": "Two orthogonal axes: 'is it a candidate?' and 'what does it do?'" }
+      "validation": {
+        "axis": "C",
+        "check": "axes-independent",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per span",
+        "note": "Two orthogonal axes: 'is it a candidate?' and 'what does it do?'"
+      }
     },
     {
       "id": "gate.char.seed-recall",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "gate",
       "status": "RECONCILE",
       "version": 1,
@@ -385,7 +486,12 @@
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
       "intent": "Measure what the seed MISSED — the study's only defence against the failure it is named after: understating the inner being.",
       "satisfaction": "Seed recall measured against a held-out sample; misses within tolerance.",
-      "validation": { "axis": "I", "check": "seed-recall", "severity": "red", "enforcement": "gate" },
+      "validation": {
+        "axis": "I",
+        "check": "seed-recall",
+        "severity": "red",
+        "enforcement": "gate"
+      },
       "spec": {
         "scope": "per book",
         "canonical": false,
@@ -394,11 +500,12 @@
       }
     }
   ],
-
   "naming": [
     {
       "id": "naming.char.ids",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "pattern",
       "status": "LIVE",
       "version": 1,
@@ -406,19 +513,32 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "This process's naming parameters only.",
       "satisfaction": "Characteristics rule ids use the declared prefixes.",
-      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "id-prefix",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
-        "prefixes": { "process": "char.", "entity": "ent.char.", "gate": "gate.char.", "output": "out.char." },
-        "cites": ["pattern.id-frozen-at-mint"],
+        "prefixes": {
+          "process": "char.",
+          "entity": "ent.char.",
+          "gate": "gate.char.",
+          "output": "out.char."
+        },
+        "cites": [
+          "pattern.id-frozen-at-mint"
+        ],
         "note": "⚠ ib_characteristic KEYS are not rule ids — they are data, keyed on meaning-in-context, and re-cuttable (open.char.disposability-vs-persistence). Do not stabilise them."
       }
     }
   ],
-
   "filing": [
     {
       "id": "filing.char.outputs",
-      "governs": ["characteristics"],
+      "governs": [
+        "characteristics"
+      ],
       "kind": "pattern",
       "status": "LIVE",
       "version": 1,
@@ -426,11 +546,20 @@
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
       "intent": "Where this process's artefacts are filed.",
       "satisfaction": "Characteristics outputs land in the declared tree; superseded versions archived.",
-      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "validation": {
+        "axis": "C",
+        "check": "output-path",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
       "spec": {
         "output_tree": "outputs/characteristics/{book}/",
         "archive_tree": "outputs/characteristics/{book}/archive/",
-        "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write", "filing.archive-superseded"]
+        "cites": [
+          "filing.version-bump-on-same-name",
+          "filing.manifest-rebuild-after-write",
+          "filing.archive-superseded"
+        ]
       }
     }
   ]

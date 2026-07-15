@@ -1,0 +1,425 @@
+{
+  "process_code": "base",
+  "tier": "B",
+  "name": "Base (prepare raw for lexical analysis)",
+
+  "meta": {
+    "purpose": "THE PREPARATION STAGE. Process raw into the substrate the lexical read needs — the span master, the stem master, the char seed, and passages — and hand it over under signoff. Everything here is mechanical: derivation, never judgement.",
+    "the_researcher_model": {
+      "quote": "researcher 2026-07-15: 'the registry create the starting point... raw pulls STEP and create the tables with the STEP data. No data conversion. Base then processes the data and prepare it for the lexical analysis. This requires master, char seed, and passages to be in place. With signoff of the base, the lexical analysis can start.'",
+      "the_stage_chain": "REGISTRY (the starting point) -> RAW (STEP data, no conversion) -> BASE (process it into what lexical needs) -> [SIGNOFF] -> LEXICAL -> CHARACTERISTICS -> FINDINGS",
+      "what_this_settled": "open.pipeline.base-layer-carve. Base is ONE process, not three. I had recommended three (spans / stems / passages) on the grounds that they are unrelated derivations. That was wrong, and the reason is instructive: I carved by WHAT IS PRODUCED; the researcher carves by WHEN IT IS DONE. A stage is a unit of completion — these four artefacts always run together, always for the same scope, and are only ever FINISHED together, because they finish at one signoff. That is what makes them one process.",
+      "the_signoff_is_the_boundary": "'With signoff of the base, the lexical analysis can start' is not a nicety — it is what makes base a stage rather than a bag of derivations. A stage has an end. This one's end is a human decision."
+    },
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
+    "supersedes": "`verses-passages` — retired 2026-07-15. Passages are a base OUTPUT, not a process of their own; treating one artefact of this stage as a peer of the stage was the carve error.",
+
+    "the_layer_rule": "Base is DERIVATION. Raw is what STEP said (no conversion); base is what we computed from it; interpretation is what we judged. Nothing in this file may contain a judgement — if a rule here needs to decide what something MEANS, it is in the wrong layer.",
+
+    "nodes": {
+      "process": "The stage's rules — what it derives, in what order, and the signoff that ends it.",
+      "entities": "What it owns: the span master, the stem master, the candidate seed, passages.",
+      "output": "The base review pack — what the researcher signs off.",
+      "validation": "The gates, including the signoff gate that releases lexical.",
+      "naming": "Naming parameters.",
+      "filing": "Filing parameters."
+    },
+
+    "open": [
+      {
+        "id": "open.base.signoff-mechanism",
+        "issue": "The signoff is a HUMAN gate — the only one in the pipeline so far. How is it recorded, what is its scope, and what invalidates it?",
+        "why_it_matters": "A signoff nobody can point at is not a control. And a signoff that survives its evidence changing is worse than none: it launders a stale approval into apparent authority.",
+        "questions": [
+          "SCOPE — per book? per scope-of-run? A book-level signoff is the natural unit (base runs per book), but a partial re-run then leaves the signoff covering data it never saw.",
+          "INVALIDATION — a re-pull can correct raw (raw.step-precedence). Does that void the base signoff for that scope? It must, or the signoff attests to evidence that no longer exists.",
+          "RECORD — who, when, on what evidence, at which cfg_version. Same requirement as any ruling (meta.open.decision-provenance)."
+        ],
+        "recommendation": "Per book; recorded with who/when/cfg_version + a hash of the base outputs it covers; AUTO-VOIDED when any input beneath it changes. The hash is what makes invalidation mechanical rather than remembered — the researcher signs off on a specific state, and if the state moves, the signature no longer matches it. That is the difference between a control and a habit.",
+        "resolve_by": "researcher decision — needed before base can actually gate lexical"
+      },
+      {
+        "id": "open.base.seed-over-inclusive",
+        "issue": "The seed is deliberately over-inclusive and non-exhaustive — Screen 0 then rejects. But there is no rule for what over-inclusive MEANS, so the seed's breadth is a judgement made per run. (Carried from characteristics.json; the seed lives here now.)",
+        "consequence": "Seed breadth silently sets the study's coverage. Too narrow and the inner being is understated — precisely what the two prior ~100-page studies did, and the quality bar this programme measures itself against.",
+        "recommendation": "Bias to over-inclusion and let Screen 0 carry the cost: a false positive is caught by a gate; a false negative is invisible forever. State it as a rule with a measurable seed-recall check (gate.char.seed-recall).",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.base.stem-master-shape",
+        "issue": "No stem-master table exists in the live DB (plan §4: 'No dedicated stem-master table exists — derive from verse_morphology'). This is a new build, and it is unclear whether the master is a persisted table or a derived view.",
+        "recommendation": "PERSISTED. A derive-on-demand view cannot be signed off, cannot be gated, and cannot carry provenance — and base's whole shape is 'produce it, prove it, sign it off'. Also carried in the plan's parking lot ('Stem-master: first-class persisted table vs derive-on-demand').",
+        "resolve_by": "researcher decision; affects Appendix B"
+      }
+    ]
+  },
+
+  "process": [
+    {
+      "id": "base.definition",
+      "governs": ["base"],
+      "kind": "principle",
+      "subject": "base-definition",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 ('Base then processes the data and prepare it for the lexical analysis'); plan §3.4 (layer 2)",
+      "reference": "plan §3.4",
+      "intent": "Define base as the derivation stage between raw and interpretation — everything the lexical read needs, computed from raw, with no judgement anywhere in it.",
+      "satisfaction": "Every base row is DERIVED from raw by a stated rule, is regenerable from raw alone, and contains no judgement.",
+      "validation": { "axis": "C", "check": "layer-membership", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "Base = what we COMPUTED from raw. Raw = what STEP SAID (no conversion). Interpretation = what we JUDGED. Base sits between and borrows from neither.",
+        "the_test": "Could this row be regenerated from raw alone, by a stated rule, with no reading of meaning? Yes -> base. Needs the source -> raw. Needs a judgement -> interpretation.",
+        "regenerable_not_migrated": "Base is REGENERATED, never migrated (plan §3.4.1: 'Base — derived: passages, stems, seed/candidate stamping | Regenerate | deterministic; rebuilt by the modules, never migrated'). A base layer that had to be migrated would be admitting it is not derivable — and then it is not base.",
+        "why_no_judgement_here": "Base is what the signoff attests to. A judgement inside base would be a judgement nobody screened, riding into lexical under a mechanical warrant."
+      }
+    },
+    {
+      "id": "base.spans",
+      "governs": ["base", "lexical", "characteristics"],
+      "kind": "principle",
+      "subject": "span-master",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 (base 'requires master... to be in place'); plan §3.4.2 ('the span-id is the join key')",
+      "reference": "iba/config/wide/pipeline.json meta",
+      "intent": "★ Mint the currency everything above is addressed in. Derive, from raw morphology, one addressable span per term-in-verse — the join key for every lexical read, every candidate, and every pair endpoint.",
+      "satisfaction": "Every term-in-verse in scope has exactly one span, carrying a resolved span_strong_match, resolving to a real verse and a real term.",
+      "validation": { "axis": "C", "check": "span-master-complete", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "statement": "The span master is derived from raw morphology: one addressable row per term-in-verse. It is THE join key — never Strong's-encoded endpoints (plan §3.4.2).",
+        "what_depends_on_it": [
+          "ent.lexical.record — identity is span-id + ve_nr",
+          "the candidate seed — a candidate IS a span",
+          "every pair — from_span / to_span",
+          "span_strong_match — the field that proves a term is actually AT a verse: the difference between evidence and a reference"
+        ],
+        "⚠ today_it_is_a_side_effect": "audit_word 'inserts + span-links terms and verses in one pass', reachable via `--skip-span-backpop`. A step everything joins on is currently SKIPPABLE, ungated, and has no process. That is the pre-processing the researcher identified as missing.",
+        "the_layer_correction": "Span-linking sits inside the ingest module today, which puts a DERIVED artefact inside a raw process. Spans are computed, therefore base. Moving them here is not tidying — it is what lets them be gated and signed off.",
+        "cites": ["base.definition", "raw.definition"]
+      }
+    },
+    {
+      "id": "base.stem-master",
+      "governs": ["base", "lexical"],
+      "kind": "principle",
+      "subject": "stem-master",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 (base 'requires master... to be in place'); plan §3.3.4 (module 4)",
+      "reference": "plan §4",
+      "intent": "Build the stem master from morphology, so the lexical read's morphological dimensions have a canonical derivation to rely on rather than re-deriving per read.",
+      "satisfaction": "Every attested stem is in the master, derived from morph_code, with no stem invented and none missing.",
+      "validation": { "axis": "C", "check": "stem-master-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "The stem master is derived from morph_code. Morphology is the source of truth; the stem is its derivation, never the reverse.",
+        "the_authority_direction": "morph_code -> stem. Anything contradicting morph_code is wrong, including the registry (memory project_morph_is_source_of_truth: language was buggily derived from the Strong's PREFIX, which is blind to Aramaic — 121 terms were relabelled Hebrew->Aramaic once morph became authoritative).",
+        "new_build": "No stem-master table exists in the live DB (plan §4). This is not a rewrite of an existing script — see open.base.stem-master-shape.",
+        "cites": ["base.definition"]
+      }
+    },
+    {
+      "id": "base.char-seed",
+      "governs": ["base", "characteristics"],
+      "kind": "principle",
+      "subject": "candidate-seed",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 (base 'requires... char seed... to be in place'); cycle authoritative v1 §4A; plan §3.4.1 (seed = base)",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
+      "intent": "Nominate the spans worth reading, through widening layers, biased to over-inclusion — because Screen 0 can reject a false positive but nothing can recover a span never seeded.",
+      "satisfaction": "The seed is built through all layers, is over-inclusive and explicitly non-exhaustive, and every candidate resolves to a verse-record.",
+      "validation": { "axis": "C", "check": "seed-layers-applied", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "layers": ["registry (the ~214 words)", "synonyms", "judgement", "discovery"],
+        "stance": "OVER-INCLUSIVE and NON-EXHAUSTIVE. The seed nominates; it does not pre-judge.",
+        "rationale": "A false positive costs one gate call. A false negative is invisible forever — and understating the inner being is the exact failure of the two prior studies this programme measures itself against.",
+        "moved_from": "process/characteristics.json (2026-07-15) — the seed is BASE (plan §3.4.1); an interpretation process was holding a base artefact.",
+        "⚠ the_layer_split_this_forces": "WHICH spans are candidates = mechanical, base, here. WHAT a candidate IS (Screen 0, role) = judgement, interpretation, characteristics. They were two facts on one row — and that co-location is exactly what the migration strips (the live DB stamps role/char_candidate onto verse_span_index).",
+        "⚠ the_judgement_layer_in_the_name": "Seed layer 3 is literally called 'judgement', which sits oddly in a no-judgement stage. It is a judgement about WHAT TO LOOK AT, not about what anything MEANS — a scope decision, not a reading. Base may decide where to point; it may never decide what it sees.",
+        "open": "open.base.seed-over-inclusive",
+        "cites": ["base.definition", "char.screen0"]
+      }
+    },
+    {
+      "id": "base.passages",
+      "governs": ["base", "lexical"],
+      "kind": "principle",
+      "subject": "passage-construction",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 (base 'requires... passages to be in place'); passage rule v2 (candidate-driven)",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
+      "intent": "Build the reading unit: a passage is a maximal run of consecutive candidate-bearing verses, anchored at its first verse.",
+      "satisfaction": "Every candidate-bearing verse belongs to exactly one passage; coverage arithmetic reconciles; no passage is a whole long chapter.",
+      "validation": { "axis": "C", "check": "passage-rule", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "rule": "v2, candidate-driven: a maximal run of CONSECUTIVE candidate-bearing verses. Anchor = the first verse. Single-verse passages are allowed. No whole-chapter passages.",
+        "depends_on": "base.char-seed — a passage is defined BY candidates, so the seed must exist first",
+        "genre_routing": "Treatment varies by genre (poetic two-phase vs narrative cross-verse vs discourse segmentation) — the routing rule is lexical.genre-routing; this rule builds the passages, it does not decide how they are read.",
+        "why_never_a_whole_chapter": "The reading unit is the passage precisely so that the read stays bounded and grounded. A whole-chapter 'passage' is how depth drifts into skim (memory feedback_read_by_passage_not_whole_chapter).",
+        "was": "the `verses-passages` process — retired 2026-07-15; passages are a base OUTPUT, not a process.",
+        "cites": ["base.char-seed", "base.definition"]
+      }
+    },
+    {
+      "id": "base.signoff",
+      "governs": ["base", "lexical"],
+      "kind": "principle",
+      "subject": "base-signoff",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'With signoff of the base, the lexical analysis can start.'",
+      "reference": "iba/config/process/base.json",
+      "intent": "★ The stage boundary. Base is not done when its modules finish — it is done when the researcher signs it off. Lexical does not start before that.",
+      "satisfaction": "A signed-off base for the scope, covering the state that actually exists.",
+      "validation": { "axis": "C", "check": "base-signed-off", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "statement": "The lexical analysis MAY NOT START until base is signed off for its scope. Signoff is a researcher act, not a module outcome.",
+        "what_is_signed_off": ["the span master", "the stem master", "the char seed", "passages", "and the gates over all four"],
+        "why_a_human_gate_here_and_nowhere_else": "Base is the last point where a defect is CHEAP. Everything after it is interpretation: an error in the span master or the seed does not surface as a bad span — it surfaces as a wrong reading, months later, indistinguishable from a bad read. The 2026-07-14 audit could not tell those apart, which is exactly why it took an acceptance sample to find anything.",
+        "it_is_also_the_scope_decision": "Signoff is where the researcher accepts the seed's breadth — and seed breadth silently sets what the study can ever find (open.base.seed-over-inclusive). Signing off base IS accepting the coverage. That should be visible at the moment of signing, not discovered later.",
+        "canonical": false,
+        "reconcile": "open.base.signoff-mechanism",
+        "⚠ note": "RECONCILE — the MECHANISM is undecided (scope, record, invalidation). The RULE is not in question: the researcher ruled it. What is open is how a signoff is recorded and what voids it.",
+        "the_invalidation_problem": "raw.step-precedence means raw CAN change under a signed-off base. A signoff that survives its evidence changing is worse than no signoff — it launders a stale approval into apparent authority. See open.base.signoff-mechanism.",
+        "cites": ["raw.step-precedence"]
+      }
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "ent.base.span",
+      "governs": ["base"],
+      "kind": "entity",
+      "subject": "span",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.spans; plan §3.4.2",
+      "reference": "iba/config/process/base.json",
+      "intent": "The addressable term-in-verse — the join key for the entire interpretation layer.",
+      "satisfaction": "One row per term-in-verse; resolves to a verse and a term; carries span_strong_match.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per term-in-verse",
+        "identity": "span-id",
+        "holds": ["verse", "word position", "term", "surface", "span_strong_match", "provenance"],
+        "does_not_hold": ["role · char_candidate · characteristic · ib_char_id — INTERPRETATION. The live DB stamps these onto verse_span_index; the migration strips them (plan 3.4.1)."],
+        "layer": "base",
+        "note": "The one entity every other layer's identity is built from."
+      }
+    },
+    {
+      "id": "ent.base.stem-master",
+      "governs": ["base"],
+      "kind": "entity",
+      "subject": "stem-master",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "base.stem-master; plan §3.3.4 (module 4)",
+      "reference": "plan §4",
+      "intent": "The canonical stem inventory, derived from morphology.",
+      "satisfaction": "One row per attested stem, derived from morph_code.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per stem",
+        "layer": "base",
+        "canonical": false,
+        "reconcile": "open.base.stem-master-shape",
+        "note": "⚠ Does not exist in the live DB (plan §4). New build; persisted-vs-derived undecided."
+      }
+    },
+    {
+      "id": "ent.base.candidate",
+      "governs": ["base", "characteristics"],
+      "kind": "entity",
+      "subject": "candidate",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.char-seed; cycle authoritative v1 §4A",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
+      "intent": "A span nominated for reading — a question, not an assertion. Seeded over-inclusively; Screen 0 decides whether it survives.",
+      "satisfaction": "One row per nominated span, each resolving to a verse-record.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per candidate span",
+        "identity": "span-id",
+        "holds": ["span-id", "seed layer", "provenance"],
+        "does_not_hold": ["the Screen-0 verdict · role — INTERPRETATION, and they live in process/characteristics.json. This is the layer split base.char-seed forces."],
+        "layer": "base",
+        "moved_from": "process/characteristics.json (2026-07-15), as ent.char.candidate"
+      }
+    },
+    {
+      "id": "ent.base.passage",
+      "governs": ["base", "lexical"],
+      "kind": "entity",
+      "subject": "passage",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.passages; passage rule v2",
+      "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §4A",
+      "intent": "The reading unit — a maximal run of consecutive candidate-bearing verses.",
+      "satisfaction": "One row per passage; anchored at its first verse; every candidate-bearing verse belongs to exactly one.",
+      "validation": { "axis": "C", "check": "entity-integrity", "severity": "red", "enforcement": "db+gate" },
+      "spec": {
+        "grain": "one row per maximal candidate-bearing run",
+        "identity": "passage-id; anchor = the first verse",
+        "holds": ["its verses", "anchor", "genre", "provenance"],
+        "layer": "base",
+        "note": "verse.passage_id / is_passage_anchor / genre sit ON the verse row in the live DB — which mixes raw and base on one row (flagged in ent.raw.verse). The new schema separates them, or raw's immutability cannot hold."
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "id": "out.base.review-pack",
+      "governs": ["base"],
+      "kind": "output",
+      "subject": "base-review-pack",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.signoff; plan §3.6 ('Reviews — for the researcher to sign off')",
+      "reference": "plan §3.6",
+      "intent": "The artefact the researcher signs off — what base built, what it covers, and what it chose not to.",
+      "satisfaction": "Every base run for a scope produces a review pack sufficient to sign off or reject on.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "format": "md",
+        "must_include": [
+          "span master — count, span_strong_match distribution, unresolved spans",
+          "stem master — stems derived, any morph_code that produced none",
+          "char seed — candidates by seed layer, and THE BREADTH (signing off base is accepting the coverage)",
+          "passages — count, verse coverage arithmetic, any whole-chapter or orphan verse",
+          "gate results across all four",
+          "what was NOT covered — and why"
+        ],
+        "why_red": "There is no signoff without something to sign off ON. A verbal 'base looks fine' is the habit this gate replaces."
+      }
+    }
+  ],
+
+  "validation": [
+    {
+      "id": "gate.base.signoff",
+      "governs": ["base", "lexical"],
+      "kind": "gate",
+      "subject": "base-signoff",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "base.signoff (researcher ruling 2026-07-15)",
+      "reference": "iba/config/process/base.json",
+      "intent": "★ Hold lexical until base is signed off for its scope. The pipeline's only human gate.",
+      "satisfaction": "A valid, current signoff exists for the scope lexical is about to read.",
+      "validation": { "axis": "C", "check": "base-signed-off", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per base scope (per book, proposed)",
+        "implements": "base.signoff",
+        "on_fail": "HALT. Lexical does not start. Not a warning, not a prompt — the stage boundary is the control.",
+        "canonical": false,
+        "reconcile": "open.base.signoff-mechanism",
+        "note": "The RULE is ruled; the MECHANISM (scope, record, what voids it) is open. A signoff that cannot be invalidated when its evidence changes is not a control."
+      }
+    },
+    {
+      "id": "gate.base.span-master-complete",
+      "governs": ["base", "lexical"],
+      "kind": "gate",
+      "subject": "span-master",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.spans",
+      "reference": "iba/config/process/base.json",
+      "intent": "Refuse a span master with holes — because a missing span is not a missing row, it is a verse the study can never read.",
+      "satisfaction": "Every term-in-verse in scope has a span; every span carries span_strong_match; no orphans.",
+      "validation": { "axis": "C", "check": "span-master-complete", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per book",
+        "implements": "base.spans",
+        "checks": ["every term-in-verse has exactly one span", "span_strong_match resolved on every span", "no span orphaned from its verse or term"],
+        "why_it_matters_most": "This gate is the reason spans became a process. Bundled inside audit_word behind --skip-span-backpop, span completeness had no gate at all — and everything above it joins on its output."
+      }
+    },
+    {
+      "id": "gate.base.regenerable",
+      "governs": ["base"],
+      "kind": "gate",
+      "subject": "base-definition",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.definition; plan §3.4.1 ('deterministic; rebuilt by the modules, never migrated')",
+      "reference": "plan §3.4.1",
+      "intent": "Prove base is genuinely derived — regenerating it from raw must reproduce it exactly.",
+      "satisfaction": "A regeneration from raw reproduces the base layer identically.",
+      "validation": { "axis": "C", "check": "regeneration-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per book, on demand",
+        "implements": "base.definition",
+        "why": "If base cannot be regenerated from raw, something in it was not derived — it was entered, judged, or inherited. This gate is what keeps the layer honest, and it is the same test the plan applies to the migration ('regenerate everything deterministic').",
+        "note": "Also the cheapest possible check on the correction-cascade (open.raw.correction-cascade): if raw changed, regeneration DIVERGES, and the divergence is exactly the set of base rows a raw correction invalidated."
+      }
+    },
+    {
+      "id": "gate.base.no-judgement",
+      "governs": ["base"],
+      "kind": "gate",
+      "subject": "base-layer-purity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "base.definition; plan §3.4.2 ('no analytical values on mechanical tables')",
+      "reference": "plan §3.4.2",
+      "intent": "Keep interpretation out of the stage the signoff treats as mechanical.",
+      "satisfaction": "No base entity carries a field whose value is a reading, verdict, classification or characteristic.",
+      "validation": { "axis": "C", "check": "no-interpretive-fields", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per base entity",
+        "implements": "base.definition",
+        "the_known_violation": "The live DB stamps role / char_candidate / characteristic / ib_char_id onto verse_span_index. The migration strips them (plan 3.4.1). This gate stops them coming back.",
+        "why_it_matters_here_specifically": "Base is signed off AS MECHANICAL. A judgement smuggled into base is a judgement that gets a researcher's signature without ever being screened."
+      }
+    }
+  ],
+
+  "naming": [
+    {
+      "id": "naming.base.ids",
+      "governs": ["base"],
+      "kind": "pattern",
+      "subject": "base-ids",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This process's naming parameters only.",
+      "satisfaction": "Base rule ids use the declared prefixes.",
+      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "prefixes": { "process": "base.", "entity": "ent.base.", "gate": "gate.base.", "output": "out.base." },
+        "cites": ["pattern.id-frozen-at-mint"]
+      }
+    }
+  ],
+
+  "filing": [
+    {
+      "id": "filing.base.outputs",
+      "governs": ["base"],
+      "kind": "pattern",
+      "subject": "base-filing",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "Where this process's artefacts are filed.",
+      "satisfaction": "Base outputs land in the declared tree; superseded versions archived.",
+      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "output_tree": "outputs/base/{book}/",
+        "archive_tree": "outputs/base/{book}/archive/",
+        "cites": ["filing.version-bump-on-same-name", "filing.archive-superseded", "filing.manifest-rebuild-after-write"]
+      }
+    }
+  ]
+}

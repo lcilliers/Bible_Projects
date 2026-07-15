@@ -204,8 +204,8 @@
       "kind": "enum",
       "subject": "governs",
       "status": "LIVE",
-      "version": 1,
-      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 (a) — no nomenclature without its description in the enums; base-layer carve ruled by researcher 2026-07-15",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md; plan §A.10",
       "intent": "The study processes a rule can govern. These mirror the by-process rule-sets (plan A.11) and, roughly, the functional modules.",
       "satisfaction": "every `governs` field value is one of spec.values",
@@ -224,8 +224,9 @@
             "description": "The raw data layer: what 'raw' is, its immutability, source-parity/completeness/no-null/FK controls, provenance stamping. ≈ module 1 output (the measure layer)."
           },
           {
-            "value": "verses-passages",
-            "description": "Verse and passage construction: the passage rule (char-continuity, anchor, no whole-chapter), verse coverage, genre routing, the candidate⇒verse-record invariant. ≈ module 3."
+            "value": "base",
+            "description": "THE PREPARATION STAGE. Processes raw into the substrate the lexical read needs, and hands it over under signoff. Owns the span master, the stem master, the char seed, and passages. Researcher 2026-07-15: 'Base then processes the data and prepare it for the lexical analysis. This requires master, char seed, and passages to be in place. With signoff of the base, the lexical analysis can start.' REPLACES `verses-passages`, which was one artefact of this stage mistaken for a process of its own.",
+            "supersedes": "verses-passages (2026-07-15) — passages are a base OUTPUT, not a process"
           },
           {
             "value": "lexical",
@@ -289,7 +290,8 @@
           }
         ],
         "canonical": true,
-        "note": "Two populations: the 7 STUDY PROCESSES (a process transforms study data) and the UTILITIES (`util.*` — a utility provides a capability). Per the 2026-07-15 ruling, a rule may govern either. The utility set is provisional — see meta.open.utility-set."
+        "note": "Two populations: the 7 STUDY PROCESSES (a process transforms study data) and the UTILITIES (`util.*` — a utility provides a capability). Per the 2026-07-15 ruling, a rule may govern either. The utility set is provisional — see meta.open.utility-set.",
+        "the_carve": "Ruled 2026-07-15. Base is ONE process, not three. The stage is the unit — 'process raw into what lexical needs' — and it has a natural boundary because it ENDS IN A SIGNOFF. Carving it by artefact type (spans / stems / passages) would have split a single stage across three processes that always run together, always for the same scope, and are only ever finished together. My recommendation of three was wrong: it carved by WHAT IS PRODUCED rather than by WHEN IT IS DONE, and 'done' is what a stage is for."
       }
     },
     {
@@ -785,7 +787,7 @@
     {
       "id": "enum.genre",
       "governs": [
-        "verses-passages",
+        "base",
         "lexical"
       ],
       "kind": "enum",
@@ -830,7 +832,7 @@
     {
       "id": "enum.segment_unit_type",
       "governs": [
-        "verses-passages"
+        "base"
       ],
       "kind": "enum",
       "status": "LIVE",
