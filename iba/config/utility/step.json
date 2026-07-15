@@ -91,6 +91,19 @@
         ],
         "recommendation": "The filed diagnosis recommends A now (with ruach/H2502 as regression tests) and flags C as the more-correct long-term model. That still reads right — but note WHY C is better: it removes the heuristic entirely by deferring to morphology, which is already the study's declared source of truth (step.is-a-source-not-the-truth). A is a guess that works; C is the principle. If C is affordable, it is the answer.",
         "resolve_by": "researcher decision — carried from 2026-07-13, still open"
+      },
+      {
+        "id": "open.step.related-term-scope",
+        "issue": "The researcher requires 'verses with span for all terms (main and related)'. The current pull fetches verses for MAIN terms only; related terms get {strong, form, gloss, translit} and nothing else — 6 of 9 related codes in the newest pull were never fetched at all.",
+        "consequence": "Related terms are names, not evidence. But fetching every related term recursively is a scope explosion: one word (worship) named 666 related words across 36 terms. Fetching all of them for all ~214 registry words is a different-sized programme.",
+        "options": [
+          "A: fetch verses+spans for every related term named — literal compliance; large, and it pulls in terms the registry never chose",
+          "B: fetch verses+spans for related terms that are IN THE REGISTRY (i.e. the study already owns them) — bounded, and every fetched term has a home",
+          "C: fetch verses+spans for related terms in the same ROOT FAMILY as the main term — the linguistically meaningful set",
+          "D: promote related terms to full terms via the normal onboarding path, and let the main-term rule cover them — no special case at all"
+        ],
+        "recommendation": "B or D. D is cleanest — it says a related term is either worth onboarding (and then it IS a term, with the same rules) or it is a pointer, and pointers do not carry evidence. That removes the category rather than special-casing it. A is a scope explosion for terms the registry never chose; the 666-related-words figure for one word is the warning.",
+        "resolve_by": "researcher decision — this is a SCOPE call, and it changes how much of Scripture the study pulls"
       }
     ],
     "the_hard_won_knowledge": {
@@ -106,12 +119,13 @@
       ],
       "findings": {
         "1_the_60_cap": "rasha H7563 (anchor of M10b Wickedness): 180 verses held, ~250 actual — 28% MISSING, and Proverbs stopped dead at ch21 with exactly 60 links. Found only because the researcher noticed famous 'wicked' verses absent. FIXED via _paginate_all (self-validates against total).",
-        "2_the_sweep": "2,396 terms swept 2026-06-22: 6 CONFIRMED truncations — H5414G natan lost 945 verses (1187 vs 242), H3820A lev (HEART) lost 219, G4100 pisteuo 98, H5315G nephesh 51, H0341 oyev 32, G2564G kaleo 23. A core inner-being term (heart) was missing 40% of its occurrences while the study read it.",
+        "2_the_sweep": "2,396 terms swept 2026-06-22: 6 CONFIRMED truncations — H5414G natan lost 945 verses (1187 vs 242), H3820A lev (HEART) lost 219, G4100 pisteuo 98, H5315G nephesh 51, H0341 oyev 32, G2564G kaleo 23. A core inner-being term (heart) was missing 40% of its occurrences while the study read it. ALL SIX WERE RECOVERED 2026-06-22 via `_apply_truncation_recover_term_*` in --full mode. 56 other high-gap suspects were legitimate span-filter, not truncation — the cutoff test is what told them apart.",
         "3_the_multi_code_bug": "STILL OPEN (2026-07-13). _resolved_strong returns only vocabInfos[0], silently dropping a Strong's lettered siblings. ruach H7307: kept H7307G (194), dropped H7307H (137) + H7307I (7) = 144 verses lost, Proverbs among them. NOT the 60-cap — a second, independent under-return, found four months later.",
         "4_step_is_not_complete": "Even unioned, STEP does not tag 3 of 19 master Proverbs ruach spans. The MORPHOLOGY MASTER attests the Strong's at those verses and STEP does not. STEP is a source, not the truth.",
-        "5_the_docs_are_wrong": "docs/step_setup.md — the project's ONLY STEP documentation, cited by CLAUDE.md 5 — describes a DIFFERENT API entirely. See meta.the_documentation_defect."
+        "5_the_docs_are_wrong": "docs/step_setup.md — the project's ONLY STEP documentation, cited by CLAUDE.md 5 — describes a DIFFERENT API entirely. See meta.the_documentation_defect.",
+        "6_the_no_cap_route": "★ bible.getBibleText (rest/bible/getBibleText/{ESV_th}/{ref}) has NO 60-cap — addressed by reference, not search. Recorded outcome on the measure-layer ingest: search = ~25% miss, direct = 0 MISS. This is the way PAST the defect that cost the programme most, and it was found only in a demoted memory + two ingest scripts — not in step_client.py, not in CLAUDE.md, not in docs/step_setup.md."
       },
-      "the_lesson": "Two independent silent under-returns, four months apart, each caught by accident rather than by a control — and one still open. Both were invisible because nothing ever compared what came back against what STEP said existed. The oracle (step.completeness-oracle) is free and answers this on every call. It is now a red gate."
+      "the_lesson": "Two independent silent under-returns, four months apart, each caught by accident rather than by a control — and one (multi-code) still open. Both were invisible because nothing compared what came back against what STEP said existed. The oracle is free and answers this on every call; it is now a red gate. AND: authoring this file from the DOCS produced two wrong rules (the cap mechanism, the missing fourth endpoint), both caught only by reading the code and the memory. The knowledge was real, correct, and written down — in four different places, none of them the one place anyone would look."
     },
     "the_documentation_defect": {
       "severity": "THE ONLY STEP DOCUMENTATION IN THE PROJECT IS WRONG IN EVERY PARTICULAR. Found 2026-07-15.",
@@ -225,8 +239,8 @@
       "kind": "principle",
       "subject": "step-result-cap",
       "status": "LIVE",
-      "version": 1,
-      "authority": "STEP server behaviour; scripts/analytics/step_client.py (canonical section ranges)",
+      "version": 2,
+      "authority": "STEP server behaviour; scripts/analytics/step_client.py `_paginate_all` (the FORWARD-WALK). CORRECTED 2026-07-15 — v1 described the superseded two-level split.",
       "reference": "scripts/analytics/step_client.py `_paginate_all`; docs/step_setup.md",
       "intent": "Handle STEP's hard 60-result cap without ever mistaking a truncated answer for a complete one — the mechanism behind the study's worst coverage failures.",
       "satisfaction": "Every masterSearch returns rows == STEP's own reported `total` for its scope, at every split depth.",
@@ -238,10 +252,16 @@
       },
       "spec": {
         "cap": 60,
-        "statement": "STEP caps EVERY masterSearch response at 60 rows and reports the true `total`. Coverage is proved by ARITHMETIC (rows == total), never by having applied a split.",
-        "workaround": "Canonical section ranges (Torah / History / Poetry / Prophets / NT), halved again where a section itself exceeds 60.",
-        "⚠ the_trap": "The splits are NOT a guarantee. The client's own docstring records half-sections still exceeding the cap — rāšāʿ H7563 cut Psalms 34/80 and Proverbs 60/77. A split that runs is not a scope that is covered.",
-        "the_rule": "Trust the arithmetic, never the depth. A missing `total` is a FAILURE, not a pass — an unverifiable count must never bank.",
+        "statement": "STEP caps EVERY masterSearch response at 60 rows and reports the true `total`. Coverage is proved by ARITHMETIC (rows == total), never by having applied a pagination strategy.",
+        "the_current_mechanism": "FORWARD-WALK (`_paginate_all`, 2026-06-22): query `<frontier>-Rev.22.21`, absorb the <=60 rows, advance the frontier to the canonically-last verse returned, repeat until the remainder fits one page. Uses book order only — no versification map. Self-validates against STEP's reported total and warns on any shortfall. Shared by all four paginating methods.",
+        "⚠ correction_2026_07_15": {
+          "what_v1_said": "'Canonical section ranges (Torah/History/Poetry/Prophets/NT), halved again where a section itself exceeds 60.'",
+          "why_it_was_wrong": "That is the OLD, BROKEN method — the one that silently truncated rasha. It was REPLACED on 2026-06-22 by the forward-walk precisely because a section-half could still exceed 60 and the client never recursed.",
+          "where_the_error_came_from": "CLAUDE.md §5, which still describes the section-split method. I took it from the compact reference instead of the code. The stale doc propagated into the config on first authoring — exactly the drift the configurator exists to end, reproduced inside the configurator.",
+          "the_lesson": "This is the second doc-vs-code divergence found today (docs/step_setup.md was the first). Read the code."
+        },
+        "the_rule": "Trust the arithmetic, never the strategy. A missing `total` is a FAILURE, not a pass.",
+        "the_way_around_it_entirely": "bible.getBibleText has NO cap — it is addressed by reference, not search. Where a reference is known, the cap is not a problem to be managed but a route to be avoided (enum.step_api).",
         "cited_by": [
           "gate.raw.completeness"
         ]
@@ -457,6 +477,70 @@
         "why_INACTIVE": "The registry/fetch discovery module is not built. Recorded now per the researcher's 2026-07-15 ruling so the role of each route survives; flips to LIVE when discovery is built.",
         "the_insight_worth_keeping": "Neither gap is visible from one route alone. A study that only ever searched Strong's would never learn which inner-being words it had failed to register — and under-registering is how the two prior studies understated the inner being."
       }
+    },
+    {
+      "id": "step.response-validation",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
+      "kind": "principle",
+      "subject": "step-response-validation",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'the configurator must include validation of the returned data. this must include the different components: term, meaning, related terms, verses with span for all terms (main and related)'",
+      "reference": "research/discovery/{word}_step_data_{date}.json (the pull artefact); scripts/word_study_extract.py",
+      "intent": "Validate what STEP actually returned, component by component — because STEP under-returns silently and a partial response is well-formed. Completeness arithmetic proves the COUNT; this proves the CONTENT.",
+      "satisfaction": "Every pull is validated across all four components, for the main term AND every related term.",
+      "validation": {
+        "axis": "C",
+        "check": "response-components-complete",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "the_four_components": {
+          "1_term": "code · gloss · transliteration · script_form · language · vocab_count. The term must resolve and be identified.",
+          "2_meaning": "medium_def · lsj_entry · short_def_mounce · meaning_numbered · causative_form_present. THE SUB-GLOSS IS THE D101 SENSE AUTHORITY — a missing or thin meaning silently starves the dimension that already failed acceptance once.",
+          "3_related_terms": "related_words[] (strong · form · gloss · translit) + raw_related_numbers. The term's family.",
+          "4_verses_with_span": "verses[] carrying osisId · ref · esv_text · target_word · fetched_under_code · span_strong_match · span_code_found · span_label_found · context_before/after. FOR ALL TERMS — MAIN AND RELATED."
+        },
+        "the_span_is_the_point": "A verse without a resolved span is not evidence — it is a reference. span_strong_match is what proves the term is actually AT that verse, and span_code_found vs fetched_under_code is what would expose a multi-code mis-resolution (step.multi-code-resolution).",
+        "cites": [
+          "step.completeness-oracle",
+          "step.multi-code-resolution"
+        ]
+      }
+    },
+    {
+      "id": "step.pull-artefact",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
+      "kind": "provenance",
+      "subject": "step-pull-artefact",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 ('I think there is a json written for each pull. so check that out'); verified 2026-07-15",
+      "reference": "research/discovery/{word}_step_data_{YYYYMMDD}.json — 278 present as of 2026-07-15",
+      "intent": "Record that a per-pull JSON already exists, what it does and does not capture, and why it is not yet the parity baseline it looks like.",
+      "satisfaction": "Every pull writes an artefact recording its response, its step_version, and its date.",
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "confirmed": "IT EXISTS. scripts/word_study_extract.py writes research/discovery/{word}_step_data_{date}.json — 278 present. It carries meta.step_version (ESV_th), the anchors, and every term with meaning, related_words and verses+spans.",
+        "the_other_json_is_not_this": "Sessions/Session_A/STEP Extracts/*.json (299 files) is a DB EXPORT (--export-word) — registry, run_history, statistics, schema_version. It is the DB's view of a word, NOT a STEP response. Two different artefacts; only the first is a pull.",
+        "⚠ why_it_is_not_yet_a_parity_baseline": "The pull artefact MIXES LAYERS. Alongside STEP's response it carries decision_group, action, decision_reason, data_quality_flags — those are JUDGEMENTS, not raw (raw.definition). A snapshot that contains decisions cannot prove what the source said, because it has already interpreted it.",
+        "what_this_means_for_parity": "open.step.parity-baseline recommended snapshotting the response verbatim. That is CHEAPER THAN IT LOOKED — the plumbing exists and already records step_version. What is needed is separating the verbatim response from the decisions layered onto it, not building a new mechanism.",
+        "provenance_value": "278 pulls with step_version stamped are a real asset: they are the ONLY existing evidence of which version historic raw came from — which open.step.version-is-provenance says the DB cannot answer. They may be able to reconstruct part of it."
+      }
     }
   ],
   "output": [
@@ -591,12 +675,12 @@
       ],
       "kind": "gate",
       "subject": "step-availability",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "derived 2026-07-15",
+      "status": "LIVE",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15: 'access is to the local site. Check site is up is a pre-requisite for running raw processes - on error stop and warn researcher'",
       "reference": "iba/config/utility/step.json meta.open",
-      "intent": "Distinguish 'STEP is down' from 'STEP is answering differently' before a run trusts a single row it returns.",
-      "satisfaction": "Server reachable, configured version present in its module list, and a known-answer probe returns the expected gloss.",
+      "intent": "Prove the local STEP server is up and answering as expected BEFORE any raw process runs. A pre-requisite, not a courtesy: every raw process depends entirely on this one local service.",
+      "satisfaction": "Server reachable AND the configured version present AND the known-answer probe returns its expected gloss — before any raw process starts.",
       "validation": {
         "axis": "C",
         "check": "step-preflight",
@@ -604,15 +688,82 @@
         "enforcement": "gate"
       },
       "spec": {
-        "scope": "pre-flight, every run",
-        "canonical": false,
-        "reconcile": "open.step.availability",
-        "proposed": [
-          "reachability",
-          "configured version present in the module list",
-          "known-answer probe (fixed Strong's -> known gloss)"
+        "scope": "PRE-REQUISITE for every raw process — runs before, not during",
+        "site": "the LOCAL server only (STEP_API_BASE_URL, default http://localhost:8989). The remote public API at stepbible.org is NOT used, whatever docs/step_setup.md says.",
+        "on_fail": "STOP AND WARN THE RESEARCHER. Halt the run; do not retry silently, do not degrade, do not proceed on partial data. A raw process without its source is not a slow run, it is a wrong one.",
+        "checks": [
+          "1. REACHABLE — the local server answers",
+          "2. VERSION PRESENT — the configured version (ESV_th) exists in its module list. A running server with the wrong module set is more dangerous than a stopped one: it answers, and the answers are untagged.",
+          "3. KNOWN-ANSWER PROBE — a fixed Strong's returns its expected gloss. Distinguishes 'up' from 'up and correct'."
         ],
-        "note": "⚠ RECONCILE — the known-answer probe needs a researcher-chosen fixed Strong's + expected gloss. A wrong-but-running server is more dangerous than a stopped one, because it fails silently."
+        "why_the_probe_matters": "'Up' is not the question — 'answering with the tagged module' is. The ESV vs ESV_th trap (meta.the_documentation_defect) is exactly a server that is up, responsive, and returning data with none of the study's evidence in it.",
+        "⚠ probe_values_needed": "The fixed Strong's + expected gloss are a researcher choice — pick one stable, unambiguous, tagged term.",
+        "implements": "step.connection",
+        "warn_channel": "the existing NAS-backup alert path (email) is the precedent; a halted raw run must reach the researcher, not just a log."
+      }
+    },
+    {
+      "id": "gate.step.response-components",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
+      "kind": "gate",
+      "subject": "step-response-validation",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "step.response-validation",
+      "reference": "iba/config/utility/step.json",
+      "intent": "Refuse a pull that is missing any component of the returned data, for any term it covers.",
+      "satisfaction": "Term, meaning, related terms, and verses+spans are all present and well-formed for every term in the pull.",
+      "validation": {
+        "axis": "C",
+        "check": "response-components-complete",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per pull, per term",
+        "implements": "step.response-validation",
+        "checks": [
+          "TERM: code resolves; gloss, transliteration, language non-empty",
+          "MEANING: medium_def non-empty — a term with no meaning cannot serve D101 sense",
+          "RELATED: related_words[] present (empty is a valid finding; ABSENT is not — the field must have been assessed)",
+          "VERSES: verses[] present and rows == STEP's reported total (gate.step.cap-exhausted)",
+          "SPAN: every verse carries span_strong_match; span_code_found is consistent with fetched_under_code"
+        ],
+        "the_absent_vs_empty_distinction": "Empty related_words is a fact about the term. A missing related_words KEY is a fact about the fetch. The same distinction the lexical layer enforces as assess-never-absent — silence must be recorded, not inferred from a gap."
+      }
+    },
+    {
+      "id": "gate.step.related-terms-have-verses",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw"
+      ],
+      "kind": "gate",
+      "subject": "step-related-term-coverage",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'verses with span for all terms (main and related)'",
+      "reference": "research/discovery/{word}_step_data_{date}.json",
+      "intent": "Require verses and spans for RELATED terms, not only the main term — the requirement the current pull does not meet.",
+      "satisfaction": "Every related term named by a pull carries its own verses with resolved spans.",
+      "validation": {
+        "axis": "C",
+        "check": "related-terms-have-verses",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per pull, per related term",
+        "canonical": false,
+        "reconcile": "open.step.related-term-scope",
+        "⚠ THE_GAP": "VERIFIED 2026-07-15 against the newest pull (176_worship): related_words[] carries ONLY {strong, form, gloss, translit}. NO verses. NO spans. And 6 of the 9 related codes named (H7127, H7129, H7149, H7162, H7170, H7188) were never fetched as terms at all — they are named and then dropped.",
+        "consequence": "The related-term layer is a LIST OF NAMES, not evidence. Any analysis treating a related term as attested is treating a gloss as a verse. The root family (root_family_count 31, related_word_count 666 for one word) has no verse-level substantiation behind it.",
+        "note": "RECONCILE because the SCOPE is a researcher decision, not the requirement — see open.step.related-term-scope."
       }
     }
   ],

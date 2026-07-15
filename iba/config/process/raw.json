@@ -34,6 +34,18 @@
         "consequence": "`prov.raw.source-stamp` would record the migration, not the origin — provenance that documents the copy rather than the source.",
         "recommendation": "Stamp both: `source` = STEP (+ fetch date where recoverable, else `unknown`), `migrated_from` = the old DB. Never let the migration stamp masquerade as the origin.",
         "resolve_by": "researcher decision; affects the migration module"
+      },
+      {
+        "id": "open.raw.correction-cascade",
+        "issue": "raw.step-precedence means stored raw CAN change. But interpretations were made against the old value — a lexical read cites a span whose morphology or gloss may now differ. Nothing currently detects that.",
+        "consequence": "A raw correction silently invalidates analysis built on it. Worse, it does so INVISIBLY: the read still points at a valid span, and the span now says something else. This is the layer-separation problem in reverse — raw moving under a completed interpretation.",
+        "options": [
+          "A: a raw correction FLAGS every dependent interpretation for re-read (amber), leaving the researcher to decide",
+          "B: a raw correction INVALIDATES dependent interpretations automatically (red) — they must be re-read before the layer is trusted",
+          "C: raw corrections are versioned and interpretations pin the raw version they read (fully correct, heaviest)"
+        ],
+        "recommendation": "A now, C as the model. B is too blunt — a gloss typo fix should not invalidate a book. But note the cascade is REAL and already latent: the multi-code fix (open.step.multi-code-fork) will add 144 verses to ruach alone, and every existing ruach read was made without them.",
+        "resolve_by": "researcher decision — arises directly from the 2026-07-15 precedence ruling"
       }
     ]
   },
@@ -72,11 +84,11 @@
       ],
       "kind": "principle",
       "status": "LIVE",
-      "version": 1,
-      "authority": "plan §3.4.2 'Do: Raw is immutable'",
+      "version": 2,
+      "authority": "plan §3.4.2 'Do: Raw is immutable', CORRECTED by researcher ruling 2026-07-15",
       "reference": "plan §3.4.2",
-      "intent": "Guarantee that the evidentiary floor never moves, so any finding can be re-derived from the same raw and any drift is attributable to the layer above.",
-      "satisfaction": "No UPDATE or DELETE has ever touched a raw row. Corrections arrive as a new versioned ingest, never as an edit.",
+      "intent": "Keep raw writable ONLY by its own source. No downstream layer may ever mutate it — but a re-pull is the source speaking again, and the source is the authority. Immutable to the application; correctable by STEP.",
+      "satisfaction": "No layer above raw has ever written a raw row. Every raw write is an ingest from STEP, carrying provenance, leaving exactly one live row per identity.",
       "validation": {
         "axis": "C",
         "check": "write-once",
@@ -84,10 +96,26 @@
         "enforcement": "db+gate"
       },
       "spec": {
-        "statement": "Raw tables are write-once. Downstream layers reference them and never mutate them. A correction is a new ingest with its own provenance, not an edit of the old row.",
-        "enforcement_note": "db: revoke UPDATE/DELETE at the schema level where SQLite permits (triggers). gate: the validation engine refuses any patch whose target is a raw table and whose op is not INSERT.",
-        "rationale": "The 2026-06-03 DB loss was survivable only where work was replayable. An immutable raw layer is what makes replay possible at all."
-      }
+        "statement": "Raw is immutable TO THE APPLICATION. Downstream layers reference it and never mutate it. STEP — via ingest — is raw's ONLY writer. A re-pull VALIDATES existing raw and, where it differs, STEP TAKES PRECEDENCE.",
+        "⚠ correction_2026_07_15": {
+          "what_v1_said": "'Raw tables are write-once. A correction is a NEW ingest with its own provenance, not an edit of the old row.'",
+          "why_it_was_wrong": "It read 'immutable' as write-once-forever, which makes a re-pull either impossible or duplicating. The researcher's ruling: THE WHOLE POINT OF A PULL IS TO VALIDATE EXISTING DATA, and if it differs STEP wins. v1 would have either refused the correction or stacked a second row beside the wrong one.",
+          "what_it_actually_means": "Immutability is about WHO MAY WRITE, not whether the value can ever change. The plan's intent — layer separation, no downstream mutation, replayability — is fully preserved. What is dropped is only the write-once reading, which was mine, not the researcher's.",
+          "the_reconciliation": "Immutable TO THE APPLICATION. Authoritative FROM THE SOURCE. Both hold at once."
+        },
+        "the_three_rules": [
+          "1. NO DOWNSTREAM WRITES — nothing above raw may write a raw row. Unchanged, and still the point.",
+          "2. STEP TAKES PRECEDENCE — a re-pull is a validation event. Where stored raw and STEP differ, STEP wins and the row is corrected.",
+          "3. ONE LIVE ROW PER IDENTITY — a correction UPDATES; it never stacks a duplicate (raw.no-duplication)."
+        ],
+        "how_replayability_survives": "A correction is recorded — what changed, from what, when, under which pull and which step_version. The audit trail moves from 'the row never changed' to 'every change is on the record'. That is what the 2026-06-03 loss actually needed: reconstructability, not stasis.",
+        "enforcement_note": "db: triggers reject any raw write whose provenance is not an ingest. gate: the validation engine refuses any raw write from a non-ingest module.",
+        "cites": [
+          "raw.step-precedence",
+          "raw.no-duplication"
+        ]
+      },
+      "subject": "raw-immutability"
     },
     {
       "id": "raw.no-analytical-values",
@@ -149,7 +177,7 @@
       "kind": "principle",
       "subject": "raw-source",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "researcher 2026-07-15 ('raw needs to cross reference to the utility')",
       "reference": "iba/config/utility/step.json",
       "intent": "Bind the raw layer to the utility that sources it, and require every raw row to name WHICH STEP API produced it — because 'it came from STEP' is not a provenance, there is more than one API and they are not interchangeable.",
@@ -171,11 +199,83 @@
           "step.version-is-provenance"
         ],
         "api_binding": {
-          "ent.raw.verse + ent.raw.verse-morphology": "search.masterSearch.strong",
+          "ent.raw.verse": "search.masterSearch.strong (occurrence) — subject to the 60-cap",
+          "ent.raw.verse-morphology": "bible.getBibleText (direct passage interlinear) — NO cap, 0 miss",
           "ent.raw.lexicon": "module.getInfo",
-          "never": "search.masterSearch.text — English-text hits are not original-language occurrences (step.api-set the_text-search_rule)"
+          "never": "search.masterSearch.text — English-text hits are not original-language occurrences"
         },
         "one_home_note": "The STEP access rules live in utility/step.json and are CITED here (layout v2 §2.3). This rule says only what RAW requires of its source; it does not restate how STEP is reached."
+      }
+    },
+    {
+      "id": "raw.step-precedence",
+      "governs": [
+        "raw",
+        "fetch",
+        "util.step"
+      ],
+      "kind": "principle",
+      "subject": "raw-source-precedence",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'the whole idea of a pull is to validate existing data, and if it is not the same, then STEP takes precedence'",
+      "reference": "iba/config/utility/step.json",
+      "intent": "Make a pull a VALIDATION event rather than a load. Re-pulling an existing term is how stored raw is proved still correct — and when it is not, the source decides, not the stored copy.",
+      "satisfaction": "Every re-pull compares STEP against stored raw component by component; every difference is resolved in STEP's favour and recorded.",
+      "validation": {
+        "axis": "C",
+        "check": "step-precedence-applied",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "A pull VALIDATES existing data. Where stored raw differs from STEP, STEP TAKES PRECEDENCE — the stored value is corrected, not kept, and not duplicated.",
+        "why_a_pull_is_a_validation": "Raw's only claim to authority is fidelity to its source. A stored value that has drifted from STEP is not raw — it is a stale copy wearing raw's provenance. Re-pulling is the only way to know, which is why a pull must never be a no-op on existing data.",
+        "what_gets_compared": "every component: term, meaning, related terms, and verses+spans for main AND related terms (step.response-validation).",
+        "what_a_difference_means": [
+          "STEP GAINED data (the common case) -> the stored copy was under-pulled. Both known under-returns (60-cap, multi-code) surface exactly here. Take STEP's.",
+          "STEP LOST data -> either a STEP-side change or a real STEP gap. Take STEP's, but RECORD it: an unexplained shrink is a signal, not a routine correction (step.is-a-source-not-the-truth).",
+          "VALUE CHANGED (gloss, text, morph) -> take STEP's and record the before/after. A silently changed gloss would move D101 sense under a completed read."
+        ],
+        "⚠ the_downstream_consequence": "Correcting raw can INVALIDATE analysis built on it. If a verse's morphology or a term's gloss changes, every lexical read on that span was made against different evidence. The correction must FLAG the dependent interpretations, not silently shift the ground under them — see open.raw.correction-cascade.",
+        "cites": [
+          "raw.immutable",
+          "step.completeness-oracle"
+        ]
+      }
+    },
+    {
+      "id": "raw.no-duplication",
+      "governs": [
+        "raw",
+        "fetch"
+      ],
+      "kind": "principle",
+      "subject": "raw-duplication",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-15: 'Duplications must be prevented'",
+      "reference": "iba/config/process/raw.json",
+      "intent": "Guarantee exactly one live raw row per identity, so a re-pull corrects rather than accumulates — and so no query can ever see the same fact twice.",
+      "satisfaction": "One live row per identity across every raw entity; a re-pull updates it in place.",
+      "validation": {
+        "axis": "C",
+        "check": "identity-unique",
+        "severity": "red",
+        "enforcement": "db:index"
+      },
+      "spec": {
+        "statement": "Exactly ONE live row per identity. A re-pull UPDATES; it never inserts a second row for the same fact.",
+        "identities": {
+          "ent.raw.verse": "the canonical reference",
+          "ent.raw.verse-morphology": "verse + word position",
+          "ent.raw.lexicon": "Strong's number"
+        },
+        "enforcement_note": "PROJECTED AS UNIQUE INDEXES by the config-maintenance utility. The DB refuses a duplicate; the gate explains why.",
+        "history": "The live DB required an XREF-duplication clean-up and a unique constraint on wa_verse_records (reference, term_id) at schema 3.33.0 — duplication is a demonstrated failure mode here, not a hypothetical. It was convention; it is now a constraint (plan §3.4.2 'no orphan-tolerant structure').",
+        "cites": [
+          "raw.step-precedence"
+        ]
       }
     }
   ],
@@ -245,9 +345,11 @@
         ],
         "authority_rule": "morph_code is THE source of truth for language and stem. Anything that contradicts it is wrong, including the registry.",
         "note": "⚠ The live DB carries `stem` and `pos` on this table (plan §4). Under raw.definition those are base. Same separation problem as ent.raw.verse — Appendix B.",
-        "source_api": "search.masterSearch.strong",
+        "source_api": "bible.getBibleText",
         "source_utility": "util.step — see step.api-set for the API/entity binding; step.connection for the server and version",
-        "source_version": "the STEP module the row was fetched under (STEP_DEFAULT_VERSION, default ESV_th). PROVENANCE, not preference — see step.version-is-provenance."
+        "source_version": "the STEP module the row was fetched under (STEP_DEFAULT_VERSION, default ESV_th). PROVENANCE, not preference — see step.version-is-provenance.",
+        "⚠ corrected_2026_07_15": "First authored as search.masterSearch.strong — WRONG. The measure layer (M60) was built on the DIRECT PASSAGE endpoint rest/bible/getBibleText/{ESV_th}/{ref}, which has NO 60-cap (search = ~25% miss, direct = 0 miss). Verified in scripts/_apply_ingest_verse_morphology.py:32.",
+        "scope_note": "Ingested for the 23,318 active-term verses, not the whole Bible (~31,102). Extending to the full Bible is an open researcher option (memory project_measure_layer_persisted)."
       }
     },
     {

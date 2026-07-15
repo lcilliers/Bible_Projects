@@ -868,9 +868,9 @@
       "kind": "enum",
       "subject": "step_api",
       "status": "LIVE",
-      "version": 2,
-      "authority": "researcher 2026-07-15 ('which STEP API to use'; 'include the different API calls with explanations on what they do, set the status as inactive until we built raw extracts that use the API'); read from scripts/analytics/step_client.py + archive/scripts/_explore_soul_step_routes.py 2026-07-15",
-      "reference": "scripts/analytics/step_client.py; archive/scripts/_explore_soul_step_routes.py (the ROUTE model); outputs/markdown/wa-step-truncation-sweep-20260622.md; outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
+      "version": 3,
+      "authority": "researcher 2026-07-15 ('which STEP API to use'; 'include the different API calls with explanations on what they do, set the status as inactive until we built raw extracts that use the API'); read from scripts/analytics/step_client.py + archive/scripts/_explore_soul_step_routes.py 2026-07-15; CORRECTED 2026-07-15 — bible.getBibleText added (verified in scripts/_apply_ingest_verse_morphology.py:32)",
+      "reference": "scripts/analytics/step_client.py; archive/scripts/_explore_soul_step_routes.py (the ROUTE model); outputs/markdown/wa-step-truncation-sweep-20260622.md; outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md; memory project_measure_layer_persisted; scripts/_apply_ingest_verse_morphology.py",
       "intent": "The STEP endpoints the application may call, WHAT EACH ONE IS FOR, and the role it plays in the study's evidence. There is more than one and they are NOT interchangeable — each answers a different question, and asking the wrong one returns data that looks right and is not. Every value carries its own status: a call is INACTIVE until a raw extract uses it, so the role is recorded rather than rediscovered.",
       "satisfaction": "every fetch and every raw entity names one of spec.values as its source API",
       "spec": {
@@ -884,6 +884,18 @@
             "description": "Returns the lexicon entry for a Strong's number: gloss, sub-glosses, medium definition, and (per the client) whether the definition carries numbered sub-senses or names a causative stem. SOURCES ent.raw.lexicon. Load-bearing far beyond raw: the SUB-GLOSS from this call is the authority for D101 sense (lexical.sense-authority) — the dimension that failed acceptance on 2026-07-14 because reads recorded interpretation instead of this value.",
             "also_used_for": "Strong's RESOLUTION — it is what reveals a code's lettered siblings, and therefore what the multi-code bug turns on (step.multi-code-resolution).",
             "activates_when": "the raw lexicon extract is built"
+          },
+          {
+            "value": "bible.getBibleText",
+            "status": "INACTIVE",
+            "endpoint": "GET /rest/bible/getBibleText/{version}/{ref-dotted}",
+            "client_method": "NOT IN step_client.py — called directly by scripts/_apply_ingest_verse_morphology.py and _apply_backfill_chapter_verses_v1_20260702.py",
+            "role": "INTERLINEAR / DIRECT PASSAGE — the full tagged text of a REFERENCE, with per-word morphology.",
+            "description": "Fetches a verse/passage directly by reference and returns the interlinear: every word with its surface form, Strong's and morph code. SOURCES ent.raw.verse-morphology — the measure layer (M60). This is the endpoint the whole morphology substrate was built on.",
+            "★ why_it_is_the_important_one": "IT HAS NO 60-CAP. It is addressed BY REFERENCE, not by search, so the cap does not apply. Recorded outcome: search = ~25% miss on the measure-layer ingest; direct = 0 MISS. The single most valuable piece of STEP knowledge the programme holds — the way past the defect that cost it most.",
+            "the_trade_off": "It answers 'what is at this reference', not 'where does this word occur'. It cannot find occurrences — so it complements the search route, it does not replace it. Use search to find WHERE; use this to get WHAT, completely.",
+            "scope_note": "Ingested for the 23,318 active-term verses (verses containing >=1 tagged term), not the whole Bible (~31,102). Extending to the full Bible is an open researcher option.",
+            "activates_when": "the raw morphology extract is built"
           },
           {
             "value": "search.masterSearch.strong",
@@ -908,7 +920,7 @@
           }
         ],
         "canonical": true,
-        "note": "Read from the live client on 2026-07-15, not from memory. The client wraps these in methods (get_vocab_info, get_verse_records, get_verse_records_with_html, get_strongs_for_word, get_verse_records_by_english, get_meaning_terms, extract_word_data, get_related_term_cluster) — the METHOD is an implementation, the API is the rule.",
+        "note": "Read from the live client AND from the direct-call scripts on 2026-07-15. NOTE: bible.getBibleText is NOT in step_client.py — it is called inline by the measure-layer ingest scripts. An endpoint outside the client is an endpoint outside every control the client carries (no forward-walk, no oracle check, no shared timeout). That it was missed on first authoring, by reading only step_client.py, is the evidence: knowledge outside the one place it belongs is knowledge that gets missed.",
         "status_note": "Every value is INACTIVE per the researcher's 2026-07-15 ruling: the API roles are RECORDED now, and each flips to LIVE when a raw extract uses it. This exists because the knowledge was previously held only in code and session logs, and was re-learned expensively — see utility/step.json meta.the_hard_won_knowledge.",
         "not_yet_modelled": "The client also exposes extract_word_data() and get_related_term_cluster(), which COMPOSE the three calls above rather than adding endpoints. The METHOD is an implementation; the API is the rule. If a composition acquires rules of its own, it earns an entry."
       }
