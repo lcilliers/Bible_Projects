@@ -103,7 +103,12 @@
           "D: promote related terms to full terms via the normal onboarding path, and let the main-term rule cover them — no special case at all"
         ],
         "recommendation": "B or D. D is cleanest — it says a related term is either worth onboarding (and then it IS a term, with the same rules) or it is a pointer, and pointers do not carry evidence. That removes the category rather than special-casing it. A is a scope explosion for terms the registry never chose; the 666-related-words figure for one word is the warning.",
-        "resolve_by": "researcher decision — this is a SCOPE call, and it changes how much of Scripture the study pulls"
+        "resolve_by": "researcher decision — this is a SCOPE call, and it changes how much of Scripture the study pulls",
+        "status": "RESOLVED 2026-07-15",
+        "decision": "OPTION, DEFAULT OFF, SAME CONTROLS WHEN ON. The code must include the option to pull a term and all its related terms verses and meaning; the default is not to; when required, the option pulls and processes using the same methods and controls. -> fetch.include-related + fetch.same-controls.",
+        "decided_by": "researcher le Roux Cilliers, 2026-07-15",
+        "rationale": "None of the options A-D offered was taken, and the reasoning is why: they all tried to DECIDE relevance in advance. A (fetch all) and D (remove the category) both foreclose the question — one by scope explosion, the other by assuming a pointer never matters. The ruling instead keeps the question OPEN and makes looking a choice: relevance cannot be known without looking, so the pipeline must never be what decides it. My D recommendation was wrong for a specific reason — it optimised for scope discipline, which is a cost, over completeness, which is the failure the study is named against.",
+        "note": "Two rules now carry it: fetch.include-related (the option, default off, per-run) and fetch.same-controls (no second-class pull). The default rests on fetch.candidate-triggers-pull, whose blind spot is stated in process/fetch.json open.fetch.mitigation-blind-spot rather than left implied."
       }
     ],
     "the_hard_won_knowledge": {
@@ -745,12 +750,12 @@
       ],
       "kind": "gate",
       "subject": "step-related-term-coverage",
-      "status": "RECONCILE",
-      "version": 1,
-      "authority": "researcher ruling 2026-07-15: 'verses with span for all terms (main and related)'",
+      "status": "LIVE",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-15 — the option to pull related terms exists; the DEFAULT is off. This gate enforces the option WHEN TAKEN; it does not require related verses unconditionally.",
       "reference": "research/discovery/{word}_step_data_{date}.json",
-      "intent": "Require verses and spans for RELATED terms, not only the main term — the requirement the current pull does not meet.",
-      "satisfaction": "Every related term named by a pull carries its own verses with resolved spans.",
+      "intent": "When fetch.include-related is ON, require the full component set for every related term — verses with spans, and meaning. When OFF, require only that the omission is recorded.",
+      "satisfaction": "If include-related is ON: every related term carries verses with resolved spans and a meaning. If OFF: the named-but-not-pulled set is recorded.",
       "validation": {
         "axis": "C",
         "check": "related-terms-have-verses",
@@ -759,11 +764,16 @@
       },
       "spec": {
         "scope": "per pull, per related term",
-        "canonical": false,
-        "reconcile": "open.step.related-term-scope",
-        "⚠ THE_GAP": "VERIFIED 2026-07-15 against the newest pull (176_worship): related_words[] carries ONLY {strong, form, gloss, translit}. NO verses. NO spans. And 6 of the 9 related codes named (H7127, H7129, H7149, H7162, H7170, H7188) were never fetched as terms at all — they are named and then dropped.",
-        "consequence": "The related-term layer is a LIST OF NAMES, not evidence. Any analysis treating a related term as attested is treating a gloss as a verse. The root family (root_family_count 31, related_word_count 666 for one word) has no verse-level substantiation behind it.",
-        "note": "RECONCILE because the SCOPE is a researcher decision, not the requirement — see open.step.related-term-scope."
+        "conditional_on": "fetch.include-related",
+        "when_on": "every related term named must carry term + meaning + verses with resolved spans (step.response-validation), pulled through the same controls (fetch.same-controls)",
+        "when_off": "related terms are recorded as NAMES only, and the not-pulled set must appear in the fetch report (gate.fetch.omission-recorded). Absence of verses is then EXPECTED, not a defect.",
+        "the_verified_gap": "2026-07-15, newest pull (176_worship): related_words[] carries only {strong, form, gloss, translit} — no verses, no spans; 6 of 9 related codes named were never fetched. That is correct behaviour under the DEFAULT. It becomes a defect only if include-related is on and the verses are still missing, or if the omission goes unrecorded.",
+        "implements": "fetch.include-related",
+        "cites": [
+          "fetch.include-related",
+          "fetch.same-controls",
+          "step.response-validation"
+        ]
       }
     }
   ],
