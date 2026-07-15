@@ -2,7 +2,7 @@
 
 > Handover record. Written at researcher instruction on session close.
 >
-> **State at close:** `config_version` **0.1.4** · **259 rule items** · kernel VALID · `cfg_apply --check` PASS · 35 RECONCILE · 115 items awaiting a `subject` backfill.
+> **State at close:** `config_version` **0.1.4** · **250 rule items validated** (259 items across all files; the kernel deliberately skips `wide/reconciliations.json`'s 9 — it is a decision register, not a rulebook, and its items carry `decision_status` rather than the rule envelope) · kernel VALID · `cfg_apply --check` PASS · 35 RECONCILE · 115 items awaiting a `subject` backfill, so `no-duplicate-rule` covers 135/250 and reports itself PARTIAL.
 >
 > Everything below is verifiable: `python iba/scripts/cfg_apply.py --check` · `python iba/scripts/cfg_kernel.py --blocked` · `git log --oneline iba/` · `iba/config/_change_log.jsonl`.
 
