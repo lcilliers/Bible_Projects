@@ -1,0 +1,338 @@
+{
+  "utility_code": "step",
+  "tier": "A",
+  "name": "STEP client (access and use of STEP)",
+
+  "meta": {
+    "purpose": "Access to STEP Bible — the application's ONLY external data source. Which APIs exist, which one sources what, how the server is reached, and the constraints its behaviour imposes (the 60-result cap, no cache, no key). Everything the study knows about Scripture in the original languages arrives through here.",
+    "why_it_matters_more_than_it_looks": "STEP is the origin of the raw layer, and the raw layer is the evidentiary floor of the whole study. A defect here is invisible everywhere and fatal everywhere: a truncated fetch reads as a complete book, and a wrong version reads as Scripture. 'Coverage was a mirage' is a named prior failure.",
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
+    "boundary": {
+      "util.step": "HOW to reach STEP and what it can do — endpoints, connection, version, limits, caching policy. This file.",
+      "fetch (process)": "WHAT to fetch and when — Strong's resolution, which terms, retry policy, worklist.",
+      "raw (process)": "WHAT IS STORED and its controls — immutability, parity, provenance.",
+      "rule": "One rule, one home (layout v2 §2.3). raw and fetch CITE this utility's rules by id; they never restate them."
+    },
+
+    "the_live_defect": {
+      "severity": "⚠ LIVE AND SILENT — found 2026-07-15 while authoring this file, by reading the code rather than the docs.",
+      "finding": "step_client.py loads .env and then reads NONE of the STEP keys .env declares. Zero overlap. Every STEP call in the project's history has silently used the client's hard-coded defaults.",
+      "evidence": {
+        ".env declares": ["STEP_API_BASE_URL", "STEP_DEFAULT_VERSION", "STEP_REQUEST_TIMEOUT"],
+        "step_client.py reads": ["STEP_LOCAL_URL", "STEP_VERSION", "STEP_TIMEOUT"],
+        "overlap": "none",
+        "STEP_API_BASE_URL": "read by NO python file in the repo",
+        "STEP_REQUEST_TIMEOUT": "read by NO python file in the repo",
+        "STEP_DEFAULT_VERSION": "read ONLY by scripts/analytics/bible_analytics.py — a DIFFERENT consumer with a DIFFERENT version variable"
+      },
+      "consequences": [
+        "1. .env's STEP configuration has never taken effect. The defaults (http://localhost:8989, ESV_th, 30s) are what ran.",
+        "2. WORSE — TWO VERSION VARIABLES. bible_analytics reads STEP_DEFAULT_VERSION; step_client reads STEP_VERSION. Setting one in .env makes the two consumers disagree about WHICH BIBLE VERSION the data came from, silently. That is raw provenance being wrong, not just untidy.",
+        "3. The defaults happened to be right, so nothing failed loudly. A config that silently does nothing is indistinguishable from one that works — until it isn't."
+      ],
+      "why_the_config_catches_this": "The plan (§4) recorded 'env-var names in the client currently mismatch .env — standardise in the configurator' as a tidy-up. It is not a tidy-up: it means the version stamped on six months of raw data is an assumption, not a record. gate.step.env-parity makes it a red load failure.",
+      "action": "The names are settled HERE (see step.connection). The client is rewritten to read them (plan §2.4 — existing scripts are a starting point, expected to be substantially rewritten). Do not 'fix' .env to match the client: config decides the names, code follows."
+    },
+
+    "nodes": {
+      "process": "How STEP is used: which API for what, the connection, the cap, the caching policy, the version-as-provenance rule.",
+      "entities": "None of its own — STEP's data lands in the raw process's entities. This utility is a conduit.",
+      "output": "The fetch log.",
+      "validation": "The gates: env parity, cap exhaustion, version stamping, API-fit.",
+      "naming": "Naming parameters.",
+      "filing": "Filing parameters."
+    },
+
+    "open": [
+      {
+        "id": "open.step.parity-baseline",
+        "issue": "gate.raw.source-parity (process/raw.json) cannot run: STEP is a live local server with NO cache, so re-querying it is not a stable baseline. The raw layer is trusted on first ingest, never verified. This is a STEP CAPABILITY question, which is why it lands here.",
+        "consequence": "'Raw is immutable' cannot actually be asserted — you cannot claim immutability against a source you did not keep. And the plan migrates six months of raw as-is, inheriting the same unverifiability.",
+        "options": [
+          "A: snapshot the STEP response VERBATIM at ingest (a raw_source_payload store); parity-checks run against the snapshot, not the server",
+          "B: checksum per verse/term at ingest; re-fetch and compare on demand",
+          "C: trust-on-first-ingest; parity is a spot-check only"
+        ],
+        "recommendation": "A. It is the only option that makes raw genuinely replayable, survives STEP changing or going away, and makes the immutability claim true rather than aspirational. It is also cheap — the payload is small and write-once.",
+        "resolve_by": "researcher decision — shared with process/raw.json open.raw.step-parity"
+      },
+      {
+        "id": "open.step.version-is-provenance",
+        "issue": "`version` (default ESV_th) selects which Bible module STEP answers from. It is therefore PROVENANCE of every raw row — but nothing currently records it on the data, and the two-version-variable defect means it was not even reliably known.",
+        "consequence": "Raw rows cannot answer 'which version is this text from'. If the version ever changed, no row could be attributed to before or after.",
+        "recommendation": "Stamp `step_version` on every raw row at ingest, and make a version change a NEW ingest rather than an update (raw.immutable). Also: is the version a SETTING or an ENUM? Its valid values are defined by STEP, not by IBA — so a setting, but one whose value is provenance, not preference.",
+        "resolve_by": "researcher decision; affects the raw schema (Appendix B)"
+      },
+      {
+        "id": "open.step.cap-exhaustion-trust",
+        "issue": "The client self-validates pagination against STEP's reported `total`, and engine/migrate.py carries a STEP_EXHAUST_CHECK flag — but the 60-cap workaround is two layers of canonical section splits, and the docstring records real cases where a half-section STILL exceeded 60 (rāšāʿ H7563: Psalms cut 34/80, Proverbs 60/77).",
+        "consequence": "A silently truncated section reads as a complete book. This is the mechanism behind 'the analytical layer reached ~9% of spans while verses were declared complete'.",
+        "recommendation": "Never trust the split depth; trust only the arithmetic. gate.step.cap-exhausted compares rows-returned against STEP's own `total` for EVERY query and red-halts on any shortfall, at any depth. If total is unavailable, that is itself a failure — not a pass.",
+        "resolve_by": "researcher decision"
+      },
+      {
+        "id": "open.step.availability",
+        "issue": "STEP is a LOCAL server (localhost:8989). If it is not running, every fetch fails; if it is running a different module set, results change silently.",
+        "consequence": "The application's only source has no availability or identity check. A wrong-but-running server is worse than a stopped one.",
+        "recommendation": "A pre-flight: server reachable + the configured version present in its module list + a known-answer probe (a fixed Strong's returning a known gloss). Cheap, and it distinguishes 'down' from 'different'.",
+        "resolve_by": "researcher decision"
+      }
+    ]
+  },
+
+  "process": [
+    {
+      "id": "step.api-set",
+      "governs": ["util.step", "fetch", "raw"],
+      "kind": "principle",
+      "subject": "step-api-selection",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 ('which STEP API to use, and if more than one, specify it')",
+      "reference": "scripts/analytics/step_client.py; docs/step_setup.md",
+      "intent": "Name the APIs and bind each to what it may source, so 'it came from STEP' is never an answer. There is more than one API and they are not interchangeable.",
+      "satisfaction": "Every fetch and every raw entity names its source API from enum.step_api.",
+      "validation": { "axis": "C", "check": "value-in-domain", "enum": "step_api", "severity": "red", "enforcement": "db:check" },
+      "spec": {
+        "statement": "The application may call exactly the APIs in enum.step_api, and every fetch records WHICH ONE it used.",
+        "binding": {
+          "module.getInfo": "-> ent.raw.lexicon (glosses + sub-glosses; the D101 sense authority)",
+          "search.masterSearch.strong": "-> ent.raw.verse + ent.raw.verse-morphology",
+          "search.masterSearch.text": "-> registry/fetch DISCOVERY ONLY — must never source a raw entity"
+        },
+        "the_text-search_rule": "An English-text hit is NOT an original-language occurrence. Verses qualify by original-language occurrence (study principle 4), so search.masterSearch.text may only propose Strong's numbers to investigate — never produce a verse record. Sourcing raw from it would admit verses the study's own qualification rule excludes.",
+        "cited_by": ["ent.raw.verse", "ent.raw.verse-morphology", "ent.raw.lexicon"]
+      }
+    },
+    {
+      "id": "step.connection",
+      "governs": ["util.step"],
+      "kind": "setting",
+      "subject": "step-connection",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15; read from scripts/analytics/step_client.py + .env 2026-07-15",
+      "reference": "docs/step_setup.md; plan §4",
+      "intent": "Settle the connection parameters and their NAMES in one place, ending the .env/client mismatch that made STEP configuration a no-op.",
+      "satisfaction": "The client reads exactly these names; .env declares exactly these names; gate.step.env-parity confirms it.",
+      "validation": { "axis": "C", "check": "env-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "canonical_names": {
+          "STEP_API_BASE_URL": { "default": "http://localhost:8989", "note": "LOCAL server. Adopted from .env — the client's STEP_LOCAL_URL is RETIRED." },
+          "STEP_DEFAULT_VERSION": { "default": "ESV_th", "note": "The STEP module. PROVENANCE of every raw row, not a preference — see open.step.version-is-provenance. Adopted from .env; the client's STEP_VERSION is RETIRED, as is bible_analytics' separate reading of this name for a different purpose." },
+          "STEP_REQUEST_TIMEOUT": { "default": "30", "note": "Seconds. Adopted from .env — the client's STEP_TIMEOUT is RETIRED." }
+        },
+        "auth": "NONE. STEP is local and takes no key. STEP_API_KEY is referenced nowhere in .env and must not be introduced — an auth path to a local server is a liability with no benefit.",
+        "retired_names": ["STEP_LOCAL_URL", "STEP_VERSION", "STEP_TIMEOUT"],
+        "why_env_wins": "The .env names are canonical because config decides names and code follows (plan §2.2/§2.4). The client is rewritten to read them; .env is NOT bent to match the client.",
+        "⚠ defect": "See meta.the_live_defect — the client currently reads none of these, so .env's STEP settings have never applied."
+      }
+    },
+    {
+      "id": "step.result-cap",
+      "governs": ["util.step", "fetch"],
+      "kind": "principle",
+      "subject": "step-result-cap",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "STEP server behaviour; scripts/analytics/step_client.py (canonical section ranges)",
+      "reference": "scripts/analytics/step_client.py `_paginate_all`; docs/step_setup.md",
+      "intent": "Handle STEP's hard 60-result cap without ever mistaking a truncated answer for a complete one — the mechanism behind the study's worst coverage failures.",
+      "satisfaction": "Every masterSearch returns rows == STEP's own reported `total` for its scope, at every split depth.",
+      "validation": { "axis": "C", "check": "rows-equal-total", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "cap": 60,
+        "statement": "STEP caps EVERY masterSearch response at 60 rows and reports the true `total`. Coverage is proved by ARITHMETIC (rows == total), never by having applied a split.",
+        "workaround": "Canonical section ranges (Torah / History / Poetry / Prophets / NT), halved again where a section itself exceeds 60.",
+        "⚠ the_trap": "The splits are NOT a guarantee. The client's own docstring records half-sections still exceeding the cap — rāšāʿ H7563 cut Psalms 34/80 and Proverbs 60/77. A split that runs is not a scope that is covered.",
+        "the_rule": "Trust the arithmetic, never the depth. A missing `total` is a FAILURE, not a pass — an unverifiable count must never bank.",
+        "cited_by": ["gate.raw.completeness"]
+      }
+    },
+    {
+      "id": "step.no-cache-so-cache-to-db",
+      "governs": ["util.step", "fetch", "raw"],
+      "kind": "principle",
+      "subject": "step-caching",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.3.3 'STEP client — with results cached into the DB (read persisted lexicon/verse_morphology first)'; §4 'STEP is local, no cache'",
+      "reference": "plan §3.3.3",
+      "intent": "Read the DB before the wire. STEP holds no cache of its own, so the DB IS the cache — and the persisted raw layer is the authority, not the server.",
+      "satisfaction": "A fetch checks the persisted raw layer first and calls STEP only for what is genuinely absent.",
+      "validation": { "axis": "C", "check": "db-checked-before-fetch", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "statement": "STEP has NO CACHE. Read persisted raw (lexicon / verse / verse_morphology) FIRST; call STEP only for what is missing.",
+        "consequence": "Once ingested, raw is answered from the DB — so a later STEP change cannot silently alter data already read and analysed. That is a feature of immutability, not a staleness bug.",
+        "connects": "This is also why open.step.parity-baseline matters: if the DB is the cache and STEP is not kept, the snapshot IS the only baseline parity could ever check against."
+      }
+    },
+    {
+      "id": "step.version-is-provenance",
+      "governs": ["util.step", "raw"],
+      "kind": "provenance",
+      "subject": "step-version",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "derived 2026-07-15 from the two-version-variable defect",
+      "reference": "iba/config/utility/step.json meta.the_live_defect",
+      "intent": "Make the Bible module a recorded fact on every raw row, because it determines what the text IS — not a setting someone happened to have.",
+      "satisfaction": "Every raw row carries the step_version it was fetched under.",
+      "validation": { "axis": "C", "check": "version-stamped", "severity": "red", "enforcement": "db:not-null" },
+      "spec": {
+        "statement": "`version` is PROVENANCE, not preference. Stamp it on every raw row at ingest. A version change is a NEW ingest, never an update (raw.immutable).",
+        "canonical": false,
+        "reconcile": "open.step.version-is-provenance",
+        "⚠ note": "RECONCILE — the raw schema has no such column, and six months of existing raw data cannot be attributed to a version at all, because two consumers read two different version variables. The migration must stamp `unknown` rather than assume ESV_th: an assumed provenance is worse than an absent one."
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "id": "out.step.fetch-log",
+      "governs": ["util.step"],
+      "kind": "output",
+      "subject": "step-fetch-log",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "plan §3.5 'Tracking'; mirrors the live term_fetch_log pattern",
+      "reference": "plan §3.5",
+      "intent": "Record every call to the application's only external source — what was asked, which API, which version, what came back, and whether the count reconciled.",
+      "satisfaction": "One row per STEP call, with rows-returned and reported-total.",
+      "validation": { "axis": "C", "check": "artefact-exists", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "holds": ["api (enum.step_api)", "query", "version", "rows returned", "STEP's reported total", "cap-exhausted verdict", "timestamp", "run_id"],
+        "why_red": "This log is the ONLY evidence that a fetch was complete. Without rows-vs-total per call, a truncated ingest is undetectable after the fact — and undetectable-after-the-fact is exactly how the coverage mirage happened."
+      }
+    }
+  ],
+
+  "validation": [
+    {
+      "id": "gate.step.env-parity",
+      "governs": ["util.step"],
+      "kind": "gate",
+      "subject": "step-env-parity",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "step.connection; the defect found 2026-07-15",
+      "reference": "iba/config/utility/step.json meta.the_live_defect",
+      "intent": "Refuse to run when the names the code reads and the names the environment declares have drifted apart — the defect that made STEP configuration a silent no-op for six months.",
+      "satisfaction": "Every canonical name in step.connection is declared in the environment AND read by the client; no retired name is read by anything.",
+      "validation": { "axis": "C", "check": "env-parity", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "pre-flight, every run",
+        "implements": "step.connection",
+        "checks": [
+          "every canonical name is present in the environment",
+          "the client reads the canonical names, not the retired ones",
+          "no retired name (STEP_LOCAL_URL / STEP_VERSION / STEP_TIMEOUT) is read anywhere",
+          "no two consumers read different names for the same fact — the bible_analytics vs step_client version split"
+        ],
+        "why_red": "A silent fallback to a default is the failure mode. The application must not be able to run on configuration it is not actually reading.",
+        "would_have_caught": "The 2026-07-15 defect, on the first run."
+      }
+    },
+    {
+      "id": "gate.step.cap-exhausted",
+      "governs": ["util.step", "fetch"],
+      "kind": "gate",
+      "subject": "step-result-cap",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "step.result-cap",
+      "reference": "scripts/analytics/step_client.py `_paginate_all`",
+      "intent": "Prove a fetch was complete by arithmetic, at every split depth, rather than by having applied a split.",
+      "satisfaction": "rows returned == STEP's reported total, for every query and every sub-range.",
+      "validation": { "axis": "C", "check": "rows-equal-total", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per STEP query, at every depth",
+        "implements": "step.result-cap",
+        "on_fail": "halt — a short count must never bank",
+        "missing_total_is_a_failure": "If STEP reports no `total`, the query FAILS. An unverifiable count is not a passing count.",
+        "cited_by": ["gate.raw.completeness"],
+        "note": "engine/migrate.py already carries a STEP_EXHAUST_CHECK flag — evidence this was a known risk handled by a toggle. A toggle is not a gate: it can be off."
+      }
+    },
+    {
+      "id": "gate.step.api-fit",
+      "governs": ["util.step", "raw"],
+      "kind": "gate",
+      "subject": "step-api-selection",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "step.api-set",
+      "reference": "iba/config/wide/enums.json enum.step_api",
+      "intent": "Stop an API sourcing something it must not — specifically English-text search producing raw verse records.",
+      "satisfaction": "Every raw row's source API is one the binding permits for its entity.",
+      "validation": { "axis": "C", "check": "api-entity-binding", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "per raw row",
+        "implements": "step.api-set",
+        "the_hard_rule": "search.masterSearch.text may NEVER source a raw entity. An English-text hit is not an original-language occurrence, and admitting one would breach the study's own verse-qualification principle at the evidentiary floor."
+      }
+    },
+    {
+      "id": "gate.step.available",
+      "governs": ["util.step"],
+      "kind": "gate",
+      "subject": "step-availability",
+      "status": "RECONCILE",
+      "version": 1,
+      "authority": "derived 2026-07-15",
+      "reference": "iba/config/utility/step.json meta.open",
+      "intent": "Distinguish 'STEP is down' from 'STEP is answering differently' before a run trusts a single row it returns.",
+      "satisfaction": "Server reachable, configured version present in its module list, and a known-answer probe returns the expected gloss.",
+      "validation": { "axis": "C", "check": "step-preflight", "severity": "red", "enforcement": "gate" },
+      "spec": {
+        "scope": "pre-flight, every run",
+        "canonical": false,
+        "reconcile": "open.step.availability",
+        "proposed": ["reachability", "configured version present in the module list", "known-answer probe (fixed Strong's -> known gloss)"],
+        "note": "⚠ RECONCILE — the known-answer probe needs a researcher-chosen fixed Strong's + expected gloss. A wrong-but-running server is more dangerous than a stopped one, because it fails silently."
+      }
+    }
+  ],
+
+  "naming": [
+    {
+      "id": "naming.step.ids",
+      "governs": ["util.step"],
+      "kind": "pattern",
+      "subject": "step-ids",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This utility's naming parameters only.",
+      "satisfaction": "STEP rule ids use the declared prefixes.",
+      "validation": { "axis": "C", "check": "id-prefix", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "prefixes": { "process": "step.", "gate": "gate.step.", "output": "out.step." },
+        "cites": ["pattern.id-frozen-at-mint", "pattern.zero-pad-strongs"]
+      }
+    }
+  ],
+
+  "filing": [
+    {
+      "id": "filing.step.outputs",
+      "governs": ["util.step"],
+      "kind": "pattern",
+      "subject": "step-filing",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "Where this utility's artefacts are filed.",
+      "satisfaction": "STEP outputs land in the declared tree.",
+      "validation": { "axis": "C", "check": "output-path", "severity": "amber", "enforcement": "gate" },
+      "spec": {
+        "output_tree": "outputs/step/",
+        "cites": ["filing.version-bump-on-same-name", "filing.manifest-rebuild-after-write"],
+        "note": "The fetch LOG is a DB entity (control layer), not a file. Only human-facing reports land here."
+      }
+    }
+  ]
+}

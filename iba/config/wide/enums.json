@@ -852,6 +852,44 @@
         },
         "canonical": true
       }
+    },
+    {
+      "id": "enum.step_api",
+      "governs": [
+        "util.step",
+        "fetch",
+        "raw",
+        "registry"
+      ],
+      "kind": "enum",
+      "subject": "step_api",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-15 ('which STEP API to use, and if more than one, specify it'); read from scripts/analytics/step_client.py",
+      "reference": "docs/step_setup.md; scripts/analytics/step_client.py",
+      "intent": "The STEP endpoints the application may call. There is MORE THAN ONE and they source different raw entities, so every fetch and every raw entity must name the API it came from — otherwise raw provenance says 'STEP' and nothing more, which is not a source.",
+      "satisfaction": "every fetch and every raw entity names one of spec.values as its source API",
+      "spec": {
+        "values": [
+          {
+            "value": "module.getInfo",
+            "endpoint": "GET /rest/module/getInfo/{version}//{strong}//",
+            "description": "The lexicon/vocab entry for a Strong's number — glosses, sub-glosses and the medium definition. SOURCES ent.raw.lexicon. Load-bearing beyond raw: the SUB-GLOSS from this call is the authority for D101 sense (lexical.sense-authority), the dimension that failed acceptance on 2026-07-14."
+          },
+          {
+            "value": "search.masterSearch.strong",
+            "endpoint": "GET /rest/search/masterSearch/strong={strong}|version={version}[|reference={range}]",
+            "description": "Every verse occurrence of a Strong's number, with its text and per-word markup. SOURCES ent.raw.verse and ent.raw.verse-morphology. Subject to the 60-result cap — see step.result-cap."
+          },
+          {
+            "value": "search.masterSearch.text",
+            "endpoint": "GET /rest/search/masterSearch/version={version}|text=+{english_word}",
+            "description": "English text search, used to DISCOVER which Strong's numbers an English word maps to. Governs `registry`/`fetch` only — it must never source a raw entity, because an English-text hit is not an original-language occurrence (study principle: verses qualify by ORIGINAL-LANGUAGE occurrence)."
+          }
+        ],
+        "canonical": true,
+        "note": "Read from the live client on 2026-07-15, not from memory. The client wraps these in methods (get_vocab_info, get_verse_records, get_verse_records_with_html, get_strongs_for_word, get_verse_records_by_english, get_meaning_terms, extract_word_data, get_related_term_cluster) — the METHOD is an implementation, the API is the rule."
+      }
     }
   ]
 }
