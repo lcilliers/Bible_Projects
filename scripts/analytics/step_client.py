@@ -1,24 +1,30 @@
 """
 step_client.py
 ──────────────
-Client for the locally-running STEP Bible instance (localhost:8989).
+Client for the locally-running STEP Bible instance.
 
-Discovered REST API (STEP v26.1.2, Tomcat embedded):
-  - Vocab/lexicon:  GET /rest/module/getInfo/{version}//{strong}//
-  - Verse search:   GET /rest/search/masterSearch/strong={strong}|version={version}
-                    Results capped at 60; use canonical section ranges for overflow.
+CONFIGURATION LIVES IN `iba/config/utility/step.json`, not here.
+The base URL, the version, the timeout, every API route, the 60-cap and the
+pagination parameters are read from that file at construction. Nothing STEP-related
+is read from the environment: STEP is ALWAYS the local server, never the web
+(researcher ruling 2026-07-16), so the connection is not environment-dependent.
 
-Configuration via environment (.env):
-  STEP_LOCAL_URL   — default: http://localhost:8989
-  STEP_VERSION     — default: ESV_th   (tagged Hebrew; ESV text + Strong's)
-  STEP_TIMEOUT     — default: 30 (seconds)
+This module holds only FACTS — the canon's book order, STEP's response field names,
+and how to parse its HTML. Those are not decisions anyone makes. Choices live in
+the json; facts live here.
 
-Non-canonical STEP Strong's (G9559, G9073, G6347, H9001, H9002 etc.):
-  Vocab data is returned but verse search yields 0 results — these are
-  STEP-internal SEMR numbers not used in verse tagging.
+`check.step.up` is enforced: the server is probed before the first request of every
+process, and a failure raises StepUnavailable rather than degrading. An untagged
+module answers a Strong's search with zero results and no error, so the probe checks
+for TAGGING, not merely for a response.
+
+Non-canonical STEP Strong's (G9559, H9001 …): vocab data is returned but verse
+search yields 0 results — STEP-internal SEMR numbers not used in verse tagging.
+See `options.limits.exclude_strongs_pattern`.
 """
 
-import os
+import json
+import pathlib
 import re
 import sys
 from html import unescape
@@ -26,41 +32,18 @@ from typing import Optional
 
 import requests
 
-try:  # canonical morph parser (H4: morph at the source) — resolve in both script + engine contexts
+try:  # canonical morph parser (H4: morph at the source) — script + engine contexts
     from morph_util import morph_for_span, morph_stem
 except ImportError:
     from analytics.morph_util import morph_for_span, morph_stem
 
-try:
-    from dotenv import load_dotenv
-    _ROOT = os.path.join(os.path.dirname(__file__), "..")
-    load_dotenv(os.path.join(_ROOT, ".env"))
-except ImportError:
-    pass
 
+CONFIG_PATH = (pathlib.Path(__file__).resolve().parents[2]
+               / "iba" / "config" / "utility" / "step.json")
 
-# Canonical OT/NT ranges for verse pagination (60-result cap workaround).
-_CANON_RANGES = [
-    ("Torah",     "Gen.1.1-Deut.34.12"),
-    ("History",   "Josh.1.1-Esth.10.3"),
-    ("Poetry",    "Job.1.1-Song.8.14"),
-    ("Prophets",  "Isa.1.1-Mal.4.6"),
-    ("NT",        "Matt.1.1-Rev.22.21"),
-]
-
-# Sub-ranges used when a parent section returns total > 60.
-# Each parent maps to ~equal halves that keep most word studies under the cap.
-_CANON_SUBSPLITS: dict[str, list[tuple[str, str]]] = {
-    "Torah":    [("Torah_A",    "Gen.1.1-Lev.27.34"),    ("Torah_B",    "Num.1.1-Deut.34.12")],
-    "History":  [("History_A",  "Josh.1.1-2Chr.36.23"),  ("History_B",  "Ezra.1.1-Esth.10.3")],
-    "Poetry":   [("Poetry_A",   "Job.1.1-Ps.150.6"),     ("Poetry_B",   "Prov.1.1-Song.8.14")],
-    "Prophets": [("Prophets_A", "Isa.1.1-Dan.12.13"),    ("Prophets_B", "Hos.1.1-Mal.4.6")],
-    "NT":       [("NT_A",       "Matt.1.1-Acts.28.31"),  ("NT_B",       "Rom.1.1-Rev.22.21")],
-}
-
-# Canonical OSIS book order (Gen→Rev). Drives cap-proof forward-walk pagination
-# (_paginate_all): the *order* is all that's needed to find the frontier verse —
-# no per-book chapter/verse counts required. Validated against STEP's reported total.
+# Canonical OSIS book order (Gen→Rev). A FACT, not a setting — it drives the
+# cap-proof forward-walk (_paginate_all), which needs only the *order* to find the
+# frontier verse; no per-book chapter/verse counts required.
 _OSIS_ORDER = [
     "Gen", "Exod", "Lev", "Num", "Deut", "Josh", "Judg", "Ruth",
     "1Sam", "2Sam", "1Kgs", "2Kgs", "1Chr", "2Chr", "Ezra", "Neh", "Esth",
@@ -73,33 +56,113 @@ _OSIS_ORDER = [
     "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev",
 ]
 _OSIS_IDX = {name: i for i, name in enumerate(_OSIS_ORDER)}
+_NT_BOOKS = frozenset(_OSIS_ORDER[_OSIS_IDX["Matt"]:])
 
-# OSIS book codes that belong to the New Testament.
-_NT_BOOKS = frozenset([
-    "Matt", "Mark", "Luke", "John", "Acts",
-    "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col",
-    "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm",
-    "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev",
-])
+
+class StepUnavailable(RuntimeError):
+    """check.step.up failed. The run stops here — a raw process without its source
+    is not a slow run, it is a wrong one."""
+
+
+def load_step_config(path: pathlib.Path = CONFIG_PATH) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))["options"]
 
 
 class StepClient:
     """Client for the locally-installed STEP Bible REST API.
 
-    Exposes two primary methods for Session A word-analysis use:
-      - ``get_vocab_info(strong)``   — lexical data (gloss, definition, related)
+    Primary methods:
+      - ``get_vocab_info(strong)``    — lexical data (gloss, definition, related)
       - ``get_verse_records(strong)`` — all ESV verse occurrences, fully paginated
       - ``extract_word_data(strong)`` — complete structured package for both
     """
 
-    def __init__(self) -> None:
-        self.base = os.getenv("STEP_LOCAL_URL", "http://localhost:8989").rstrip("/")
-        self.version = os.getenv("STEP_VERSION", "ESV_th")
-        self.timeout = int(os.getenv("STEP_TIMEOUT", "30"))
+    def __init__(self, config: Optional[dict] = None) -> None:
+        opts = config or load_step_config()
+        conn = opts["connection"]
+        self.base = conn["base_url"].rstrip("/")
+        self.version = conn["version"]
+        self.timeout = int(conn["timeout_seconds"])
+
+        self.apis = opts["apis"]
+        limits = opts["limits"]
+        self.cap = int(limits["result_cap"])
+        self.canon_start = limits["pagination"]["canon_start"]
+        self.canon_end = limits["pagination"]["canon_end"]
+        self.max_iterations = int(limits["pagination"]["max_iterations"])
+        self.base_fallback_threshold = int(limits["base_fallback_threshold"])
+        self.subgloss_suffixes = limits["subgloss_probe_suffixes"]
+        self.exclude_strongs = re.compile(limits["exclude_strongs_pattern"])
+
+        self.multi_code_policy = opts["multi_code"]["policy"]
+        self._preflight_done = False
+        self._in_preflight = False
+
+    # ── Routes (verbatim from config; formatted, never composed) ────────────
+
+    def _route(self, api: str, ranged: bool = False, **kw) -> str:
+        spec = self.apis[api]
+        key = "route_ranged" if ranged else "route"
+        if key not in spec:
+            raise KeyError(f"api {api!r} has no {key} in step.json")
+        return spec[key].format(version=self.version, **kw)
+
+    # ── check.step.up ───────────────────────────────────────────────────────
+
+    def preflight(self) -> None:
+        """Prove the local server is up AND answering with the tagged module.
+
+        Runs once per client, before the first request. Raises StepUnavailable on
+        any failure — the rule is stop, not degrade (researcher ruling 2026-07-16).
+        """
+        chk = next(c for c in _checks() if c["id"] == "check.step.up")
+        probe = chk["probe"]
+        strong = probe["strong"]
+        self._in_preflight = True
+        try:
+            # 1. REACHABLE + 2. VERSION ACCEPTED
+            try:
+                d = self._get_json(self._route("module.getInfo", strong=strong))
+            except requests.RequestException as exc:
+                raise StepUnavailable(
+                    f"STEP is not reachable at {self.base} ({exc.__class__.__name__}). "
+                    f"Start the local server and re-run."
+                ) from exc
+            vocabs = d.get("vocabInfos") or []
+            if not vocabs or not vocabs[0].get("stepGloss"):
+                raise StepUnavailable(
+                    f"STEP answered at {self.base} but returned no lexicon entry for the "
+                    f"probe {strong} under version {self.version!r}. The version is not "
+                    f"present or not answering."
+                )
+            # STEP's verse search answers only on the RESOLVED code: a base number
+            # returns 0 and no error (H0430 -> 0, H0430G -> 2088). Searching the
+            # unresolved code would read as an untagged module and halt every raw run
+            # on a healthy server.
+            resolved = vocabs[0].get("strongNumber", strong)
+            # 3. TAGGED — the discriminator. An untagged module returns 0 here too,
+            #    well-formed and without error, and every Strong's in the study
+            #    would silently vanish.
+            total = self._get_json(
+                self._route("search.masterSearch.strong", strong=resolved)
+            ).get("total", 0)
+            if total < probe["expect_verse_total_min"]:
+                raise StepUnavailable(
+                    f"STEP is up at {self.base} and version {self.version!r} answers, but a "
+                    f"Strong's search for the probe {strong} (resolved: {resolved}) returned "
+                    f"{total} verses. The module is NOT TAGGED — it will return "
+                    f"correct-looking text carrying none of the Strong's numbers or "
+                    f"morphology the study depends on."
+                )
+        finally:
+            self._in_preflight = False
+        self._preflight_done = True
 
     # ── Internal helpers ───────────────────────────────────────────────────
 
     def _get_json(self, path: str) -> dict:
+        if not self._preflight_done and not self._in_preflight:
+            self.preflight()
         url = f"{self.base}/{path.lstrip('/')}"
         r = requests.get(url, timeout=self.timeout)
         r.raise_for_status()
@@ -137,30 +200,29 @@ class StepClient:
 
     @staticmethod
     def _parse_osisid(osisid: str) -> tuple[str, int, int]:
-        """Parse 'Gen.31.27' → ('Gen', 31, 27). Single-chapter book returns chapter=1."""
+        """Parse 'Gen.31.27' → ('Gen', 31, 27)."""
         parts = osisid.split(".")
         book = parts[0]
         if len(parts) == 3:
             return book, int(parts[1]), int(parts[2])
-        # Unexpected format — return safe defaults
         return book, 0, 0
 
     def _search_range(self, strong: str, ref_range: Optional[str] = None) -> dict:
-        query = f"strong={strong}|version={self.version}"
         if ref_range:
-            query += f"|reference={ref_range}"
-        return self._get_json(f"rest/search/masterSearch/{query}")
+            return self._get_json(self._route("search.masterSearch.strong", ranged=True,
+                                              strong=strong, range=ref_range))
+        return self._get_json(self._route("search.masterSearch.strong", strong=strong))
 
     def _text_search_range(self, english_word: str, ref_range: Optional[str] = None) -> dict:
-        query = f"version={self.version}|text=+{english_word}"
         if ref_range:
-            query += f"|reference={ref_range}"
-        return self._get_json(f"rest/search/masterSearch/{query}")
+            return self._get_json(self._route("search.masterSearch.text", ranged=True,
+                                              text=english_word, range=ref_range))
+        return self._get_json(self._route("search.masterSearch.text", text=english_word))
 
     @staticmethod
     def _canon_key(osis_id: str) -> tuple:
-        """Canonical sort key (book_order, chapter, verse) parsed from an osisId
-        like 'Prov.28.1' (sub-verse markers such as '!a' are tolerated)."""
+        """Canonical sort key (book_order, chapter, verse) from an osisId like
+        'Prov.28.1' (sub-verse markers such as '!a' are tolerated)."""
         parts = osis_id.split(".")
         book = parts[0]
         ch = int(re.sub(r"\D.*", "", parts[1]) or 0) if len(parts) > 1 else 0
@@ -168,29 +230,28 @@ class StepClient:
         return (_OSIS_IDX.get(book, 999), ch, vs)
 
     def _paginate_all(self, search_fn, query: str) -> list[dict]:
-        """Cap-proof pagination over STEP's 60-result limit, for any masterSearch.
+        """Cap-proof pagination over STEP's result cap, for any masterSearch.
 
         `search_fn(query, ref_range=None)` is `_search_range` (Strong's) or
-        `_text_search_range` (English text). STEP caps every response at 60 rows
-        but reports the true `total`. We forward-walk the canon: query
-        `<frontier>-Rev.22.21`, absorb the (≤60) rows, then advance the frontier to
-        the canonically-last verse seen and repeat until the remaining total fits
-        one page. The frontier only needs canonical *order* (no versification map).
+        `_text_search_range` (English text). STEP caps every response at
+        `options.limits.result_cap` rows but reports the true `total`. We forward-walk
+        the canon: query `<frontier>-{canon_end}`, absorb the rows, advance the frontier
+        to the canonically-last verse seen, repeat until the remainder fits one page.
+        The frontier needs canonical *order* only — no versification map.
 
-        Replaces the old fixed section/sub-section split, which silently truncated
-        any section-half that itself exceeded 60 (e.g. rāšāʿ H7563: Psalms cut
-        34/80, Proverbs 60/77, Ecclesiastes 0/6). Self-validates against `total`
-        and warns on any shortfall so truncation can never again be silent.
+        Self-validates against `total` and warns on any shortfall, so a truncation can
+        never again be silent. (check.step.cap-exhausted makes that shortfall a halt;
+        it is not enforced here — see the note in the module docstring's config file.)
         """
         first = search_fn(query)
         total = first.get("total", 0)
         if total == 0:
             return []
-        if total <= 60:
+        if total <= self.cap:
             return first.get("results", [])
         seen: dict[str, dict] = {}
-        start, end = "Gen.1.1", "Rev.22.21"
-        for _ in range(400):  # safety bound; ~total/59 iterations in practice
+        start, end = self.canon_start, self.canon_end
+        for _ in range(self.max_iterations):
             d = search_fn(query, f"{start}-{end}")
             rows = d.get("results", [])
             remaining_total = d.get("total", 0)
@@ -202,7 +263,8 @@ class StepClient:
                     seen[osis] = it
             if remaining_total <= len(rows):
                 break  # everything from `start` onward fits this page
-            frontier = max(rows, key=lambda it: self._canon_key(it.get("osisId") or it.get("key", "")))
+            frontier = max(rows, key=lambda it: self._canon_key(
+                it.get("osisId") or it.get("key", "")))
             nxt = (frontier.get("osisId") or "").split("!")[0]
             if not nxt or nxt == start:
                 break  # no forward progress — stop rather than loop
@@ -216,12 +278,15 @@ class StepClient:
     def _resolved_strong(self, strong: str) -> str:
         """Return the Strong's number STEP actually uses for verse tagging.
 
-        Some base numbers (e.g. H0157, H2428) resolve to suffixed variants
-        (H0157G, H2428A) in STEP's lexicon and verse tagging.  This method
-        does a lightweight vocab lookup to get the canonical form.
+        Some base numbers (H0157, H2428) resolve to suffixed variants (H0157G, H2428A).
+
+        ⚠ options.multi_code.policy = 'primary_only' — this returns vocabInfos[0] and
+        silently DROPS lettered siblings. ruach H7307 keeps H7307G (194) and drops
+        H7307H (137) + H7307I (7). Every multi-code term under-pulls. The resolution
+        rule is a RECONCILE decision in step.json, not an implementation detail.
         """
         try:
-            d = self._get_json(f"rest/module/getInfo/{self.version}//{strong}//")
+            d = self._get_json(self._route("module.getInfo", strong=strong))
             vocabs = d.get("vocabInfos", [])
             if vocabs:
                 return vocabs[0].get("strongNumber", strong)
@@ -242,10 +307,10 @@ class StepClient:
           gloss               — primary English gloss (= step_search_gloss)
           occurrence_count    — token count (integer; NOT verse count)
           medium_def          — multi-line definition (HTML stripped, newlines preserved)
-          meaning_numbered    — True if medium_def contains numbered sub-senses (1), 1a)…)
+          meaning_numbered    — True if medium_def contains numbered sub-senses
           causative_form_present — True if medium_def names Hiphil or Piel stem
-          lsj_entry           — LSJ dictionary text, HTML stripped (Greek only; '' for Hebrew)
-          short_def_mounce    — Mounce short definition (Greek only; '' for Hebrew)
+          lsj_entry           — LSJ dictionary text, HTML stripped (Greek only)
+          short_def_mounce    — Mounce short definition (Greek only)
           related_words       — list of {strong, form, gloss, translit}
           raw_related_numbers — comma-separated related Strong's string
           freq_list           — raw frequency distribution string from STEP
@@ -253,9 +318,8 @@ class StepClient:
         Notes:
           - occurrence_count_qualifier ('about') is NOT available from the API.
           - also_spelled is NOT available from the API (STEP UI only).
-          - Both fields remain null / unset and must be filled from the source file.
         """
-        d = self._get_json(f"rest/module/getInfo/{self.version}//{strong}//")
+        d = self._get_json(self._route("module.getInfo", strong=strong))
         vocabs = d.get("vocabInfos", [])
         if not vocabs:
             return {}
@@ -270,20 +334,17 @@ class StepClient:
                 "translit": r.get("stepTransliteration", ""),
             })
 
-        # Normalise medium_def: convert <br> to newlines first, then strip tags
         raw_def = v.get("mediumDef", "") or ""
         medium_def = self._strip_html_preserve_newlines(raw_def)
 
         resolved_strong = v.get("strongNumber", strong)
         language = "Greek" if resolved_strong.startswith("G") else "Hebrew"
 
-        # Derived boolean flags from the definition text
         meaning_numbered = bool(re.search(r"\b1[a-z]?\)", medium_def))
         causative_form_present = bool(
             re.search(r"\b(Hiphil|Piel)\b", medium_def, re.IGNORECASE)
         )
 
-        # Greek-only fields
         lsj_raw = v.get("lsjDefs", "") or ""
         lsj_entry = self._strip_html_preserve_newlines(lsj_raw) if lsj_raw else ""
         short_def_mounce = v.get("shortDefMounce", "") or ""
@@ -310,23 +371,16 @@ class StepClient:
     def get_verse_records(self, strong: str) -> list[dict]:
         """Return all ESV verse records containing the given Strong's number.
 
-        Each record is a dict:
-          osisId, ref, esv_text, target_word,
-          testament ('OT' or 'NT'), book_code, chapter (int), verse_num (int)
+        Each record: osisId, ref, esv_text, target_word, testament ('OT'/'NT'),
+        book_code, chapter (int), verse_num (int), morph_code, stem.
 
-        Handles the 60-result cap via two layers of canonical section splits:
-          Layer 1 — five canonical sections (Torah / History / Poetry / Prophets / NT)
-          Layer 2 — halved sub-sections when a layer-1 section total > 60
-
-        All results are deduplicated by osisId and sorted canonically.
-        Non-canonical STEP internals return an empty list.
+        The result cap is handled by the forward-walk (_paginate_all), which
+        self-validates against STEP's reported total. Results are deduplicated by
+        osisId and sorted canonically. Non-canonical STEP internals return [].
         """
         resolved = self._resolved_strong(strong)
-        # First call (no range): reveals total; reuse results if total <= 60
         first = self._search_range(resolved)
-        total = first.get("total", 0)
-
-        if total == 0:
+        if first.get("total", 0) == 0:
             return []
 
         raw_results = self._paginate_all(self._search_range, resolved)
@@ -336,19 +390,18 @@ class StepClient:
             html = item.get("preview", "")
             osisid = item["osisId"]
             book_code, chapter, verse_num = self._parse_osisid(osisid)
-            testament = "NT" if book_code in _NT_BOOKS else "OT"
-            morph_code = morph_for_span(html, resolved)   # H4: morph parsed at the source, not dropped
+            morph_code = morph_for_span(html, resolved)   # H4: morph at the source
             records.append({
-                "osisId":     osisid,
-                "ref":        item["key"],
-                "esv_text":   self._strip_html(html),
+                "osisId":      osisid,
+                "ref":         item["key"],
+                "esv_text":    self._strip_html(html),
                 "target_word": self._target_word_in_span(html, resolved),
-                "testament":  testament,
-                "book_code":  book_code,
-                "chapter":    chapter,
-                "verse_num":  verse_num,
-                "morph_code": morph_code,
-                "stem":       morph_stem(morph_code),
+                "testament":   "NT" if book_code in _NT_BOOKS else "OT",
+                "book_code":   book_code,
+                "chapter":     chapter,
+                "verse_num":   verse_num,
+                "morph_code":  morph_code,
+                "stem":        morph_stem(morph_code),
             })
 
         records.sort(key=lambda r: r["osisId"])
@@ -357,37 +410,27 @@ class StepClient:
     def get_verse_records_with_html(self, strong: str) -> tuple[list[dict], dict[str, str]]:
         """Like get_verse_records() but also returns raw preview HTML per verse.
 
-        Returns:
-            (records, html_map)
-            records  — same list as get_verse_records()
-            html_map — dict mapping osisId → raw preview HTML string
-                       (used by engine/span_filter.py for span confirmation)
+        Returns (records, html_map); html_map maps osisId → raw preview HTML
+        (used by engine/span_filter.py for span confirmation).
 
-        Base-fallback: if a code with a letter suffix (e.g. H7965H) returns
-        very few results, automatically retries with the numeric base (H7965).
-        This handles consolidated/family codes where STEP's verse search uses
-        only the sub-gloss forms (H7965A..H7965F) in practise.
+        Base-fallback: a suffixed code returning <= options.limits.base_fallback_threshold
+        verses is retried against its numeric base, then base+'A'. Handles consolidated
+        family codes where STEP's verse search uses only the sub-gloss forms in practice
+        (H7965H → H7965 → H7965A: 0 → 148 results).
         """
-        import re as _re
         resolved = self._resolved_strong(strong)
         first = self._search_range(resolved)
         total = first.get("total", 0)
 
-        # Base-fallback: if code has a letter suffix and returns <= 5 verses,
-        # try the base number (strip trailing letter), then base+'A' (first sub-gloss).
-        # If either returns substantially more verses, use it instead.
-        # Example: H7965H → H7965 (0 results) → H7965A (148 results).
-        if total <= 5:
-            _base_m = _re.match(r'^([HG]\d+)[A-Za-z]$', resolved)
-            if _base_m:
-                base_code = _base_m.group(1)
-                for try_code in [base_code, base_code + 'A']:
+        if total <= self.base_fallback_threshold:
+            base_m = re.match(r"^([HG]\d+)[A-Za-z]$", resolved)
+            if base_m:
+                base_code = base_m.group(1)
+                for try_code in [base_code, base_code + "A"]:
                     base_first = self._search_range(try_code)
                     base_total = base_first.get("total", 0)
                     if base_total > total:
-                        resolved = try_code
-                        first    = base_first
-                        total    = base_total
+                        resolved, first, total = try_code, base_first, base_total
                         break
 
         if total == 0:
@@ -401,15 +444,14 @@ class StepClient:
             html = item.get("preview", "")
             osisid = item["osisId"]
             book_code, chapter, verse_num = self._parse_osisid(osisid)
-            testament = "NT" if book_code in _NT_BOOKS else "OT"
             html_map[osisid] = html
-            morph_code = morph_for_span(html, resolved)   # H4: morph at the source (parity with get_verse_records)
+            morph_code = morph_for_span(html, resolved)
             records.append({
                 "osisId":      osisid,
                 "ref":         item["key"],
                 "esv_text":    self._strip_html(html),
                 "target_word": self._target_word_in_span(html, resolved),
-                "testament":   testament,
+                "testament":   "NT" if book_code in _NT_BOOKS else "OT",
                 "book_code":   book_code,
                 "chapter":     chapter,
                 "verse_num":   verse_num,
@@ -420,101 +462,59 @@ class StepClient:
         records.sort(key=lambda r: r["osisId"])
         return records, html_map
 
-    # ── Public API — full extraction ───────────────────────────────────────
+    # ── Public API — English-text discovery ───────────────────────────────
+
+    def _tagging_strongs(self, html: str, word_pat: re.Pattern) -> list[str]:
+        """Base Strong's numbers whose span wraps the matching English word."""
+        span_pat = re.compile(
+            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<", re.IGNORECASE)
+        out: list[str] = []
+        for m in span_pat.finditer(html):
+            strongs_attr, word_text = m.group(1), m.group(2)
+            if not word_pat.search(word_text):
+                continue
+            for s in strongs_attr.split():
+                if not re.match(r"^[HG]\d{4}", s) or self.exclude_strongs.match(s):
+                    continue
+                base = re.sub(r"[A-Z]+$", "", s)   # H5315G → H5315
+                if base not in out:
+                    out.append(base)
+        return out
 
     def get_strongs_for_word(self, english_word: str) -> list[dict]:
         """Return all Strong's numbers that tag the given English word in ESV text.
 
-        Uses STEP's text search (``text=+{word}``), which returns verses whose ESV
-        text contains the English word with full Strong's span tagging.  The span
-        that wraps the matching English word carries the Strong's number(s) for that
-        translation choice.
+        DISCOVERY ONLY — search.masterSearch.text has an empty `may_source` in
+        step.json: an English-text hit is not an original-language occurrence, so
+        this may propose Strong's numbers to investigate but must never produce a
+        raw verse record (check.step.api-fit).
 
-        Two-level canonical pagination (identical to ``get_verse_records``) handles
-        the 60-result cap.  Grammar-particle codes (H9xxx / G9xxx) are excluded.
-        Suffix variants (H5315G → H5315) are merged into their base numbers.
-
-        Returns a list of ``{"strong": str, "count": int}`` dicts sorted by
-        ``count`` descending.  ``count`` is the number of unique verses where
-        the English word is tagged with that Strong's number.
-
-        Example::
-
-            client.get_strongs_for_word("soul")
-            # → [{"strong": "H5315", "count": 148}, {"strong": "G5590", "count": 31}, …]
+        Returns [{"strong": str, "count": int}, …] sorted by count desc, where count
+        is the number of unique verses tagging the English word with that Strong's.
         """
-        # Regex to match <span strong='...'> that contains the English word.
-        span_pat = re.compile(
-            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<",
-            re.IGNORECASE,
-        )
         word_pat = re.compile(r"\b" + re.escape(english_word) + r"\b", re.IGNORECASE)
-
-        seen: dict[str, str] = {}   # osisId → preview html (dedup verses)
-
-        def _collect(d: dict) -> None:
-            for item in d.get("results", []):
-                osis = item.get("osisId") or item.get("key", "")
-                if osis not in seen:
-                    seen[osis] = item.get("preview", "")
-
-        # Cap-proof pagination (shared with the Strong's-based searches).
+        seen: dict[str, str] = {}
         for item in self._paginate_all(self._text_search_range, english_word):
             osis = item.get("osisId") or item.get("key", "")
             if osis and osis not in seen:
                 seen[osis] = item.get("preview", "")
 
-        # Count how many verses tag the English word with each base Strong's.
         tally: dict[str, int] = {}
         for html in seen.values():
-            for span_m in span_pat.finditer(html):
-                strongs_attr, word_text = span_m.group(1), span_m.group(2)
-                if not word_pat.search(word_text):
-                    continue
-                for s in strongs_attr.split():
-                    # Skip grammar-particle internal codes (H9xxx / G9xxx)
-                    if not re.match(r"^[HG]\d{4}", s) or re.match(r"^[HG]9", s):
-                        continue
-                    base = re.sub(r"[A-Z]+$", "", s)  # H5315G → H5315
-                    tally[base] = tally.get(base, 0) + 1
+            for base in self._tagging_strongs(html, word_pat):
+                tally[base] = tally.get(base, 0) + 1
 
-        return [
-            {"strong": s, "count": c}
-            for s, c in sorted(tally.items(), key=lambda x: -x[1])
-        ]
+        return [{"strong": s, "count": c}
+                for s, c in sorted(tally.items(), key=lambda x: -x[1])]
 
     def get_verse_records_by_english(self, english_word: str) -> list[dict]:
         """Return all ESV verse records where the given English word appears.
 
-        Each record has the same fields as ``get_verse_records()`` plus:
-          tagging_strongs — list of base Strong's numbers (e.g. 'H5315', 'G5590')
-                            whose span in the verse HTML wraps the matching word.
-                            Grammar-particle codes (H9xxx / G9xxx) are excluded.
-                            Sub-gloss suffixes are stripped (H5315G → H5315).
-
-        Two-level canonical pagination handles the 60-result cap, identical to
-        the Strong's-based search.
-
-        This corresponds to STEP's "English word search" entry point — it finds
-        every verse where the ESV uses this word, regardless of which underlying
-        Hebrew/Greek term is tagged, and reports which term(s) drove each
-        translation choice.
+        Same fields as get_verse_records() plus `tagging_strongs`. DISCOVERY ONLY —
+        see get_strongs_for_word().
         """
-        span_pat = re.compile(
-            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<",
-            re.IGNORECASE,
-        )
         word_pat = re.compile(r"\b" + re.escape(english_word) + r"\b", re.IGNORECASE)
-
-        seen: dict[str, dict] = {}  # osisId → raw result item (dedup)
-
-        def _collect(d: dict) -> None:
-            for item in d.get("results", []):
-                osis = item.get("osisId") or item.get("key", "")
-                if osis not in seen:
-                    seen[osis] = item
-
-        # Cap-proof pagination (shared with the Strong's-based searches).
+        seen: dict[str, dict] = {}
         for item in self._paginate_all(self._text_search_range, english_word):
             osis = item.get("osisId") or item.get("key", "")
             if osis and osis not in seen:
@@ -524,31 +524,16 @@ class StepClient:
         for osisid, item in seen.items():
             html = item.get("preview", "")
             book_code, chapter, verse_num = self._parse_osisid(osisid)
-            testament = "NT" if book_code in _NT_BOOKS else "OT"
-
-            # Collect base Strong's numbers from spans that wrap the English word.
-            tagging_strongs: list[str] = []
-            for span_m in span_pat.finditer(html):
-                strongs_attr, word_text = span_m.group(1), span_m.group(2)
-                if not word_pat.search(word_text):
-                    continue
-                for s in strongs_attr.split():
-                    if not re.match(r"^[HG]\d{4}", s) or re.match(r"^[HG]9", s):
-                        continue
-                    base = re.sub(r"[A-Z]+$", "", s)   # H5315G → H5315
-                    if base not in tagging_strongs:
-                        tagging_strongs.append(base)
-
             records.append({
                 "osisId":          osisid,
                 "ref":             item["key"],
                 "esv_text":        self._strip_html(html),
                 "target_word":     english_word,
-                "testament":       testament,
+                "testament":       "NT" if book_code in _NT_BOOKS else "OT",
                 "book_code":       book_code,
                 "chapter":         chapter,
                 "verse_num":       verse_num,
-                "tagging_strongs": tagging_strongs,
+                "tagging_strongs": self._tagging_strongs(html, word_pat),
             })
 
         records.sort(key=lambda r: r["osisId"])
@@ -557,38 +542,19 @@ class StepClient:
     # ── Public API — meaning-based term discovery ─────────────────────────
 
     def get_meaning_terms(self, english_word: str) -> dict:
-        """Return STEP's curated list of terms whose meaning relates to a word.
+        """Return STEP's curated list of terms whose MEANING relates to a word.
 
-        Uses the ``meanings=`` search parameter, which maps to STEP's
-        ``ORIGINAL_MEANING`` search type.  This is the data shown in STEP's
-        **Related words** panel — a lexically curated set of Hebrew/Greek
-        terms whose meaning encompasses the English concept, regardless of
-        how the ESV translates each occurrence.
+        STEP's Related-words panel (ORIGINAL_MEANING search). Fundamentally different
+        from get_strongs_for_word(), which only finds codes where the ESV uses the
+        literal English word: meanings=anger returns H2734 (charah, 'to be incensed'),
+        which the ESV never renders as 'anger' but which is central to the concept.
 
-        This is fundamentally different from ``get_strongs_for_word()``, which
-        only finds codes where the ESV uses the literal English word.  For
-        example, ``meanings=anger`` returns H2734 (חָרָה, "to be incensed")
-        which the ESV never translates as "anger" but which is semantically
-        central to the concept.
+        DISCOVERY ONLY — empty `may_source` in step.json.
 
-        Returns a dict:
-          definitions       — list of term dicts, each with:
-                                strongNumber, matchingForm, stepTransliteration,
-                                gloss, type ('word'/'verb'), popularity (str)
-          strong_highlights — list of Strong's codes (same terms, flat list)
-          total_verses      — total verse count from the search
-
-        Example::
-
-            client.get_meaning_terms("anger")
-            # → {"definitions": [...37 terms...],
-            #    "strong_highlights": ["H0644", "H2734", ...],
-            #    "total_verses": 687}
+        Returns: definitions (term dicts), strong_highlights (flat code list),
+        total_verses.
         """
-        d = self._get_json(
-            f"rest/search/masterSearch/version={self.version}"
-            f"|meanings={english_word}"
-        )
+        d = self._get_json(self._route("search.masterSearch.meanings", text=english_word))
         return {
             "definitions":       d.get("definitions", []),
             "strong_highlights": d.get("strongHighlights", []),
@@ -598,25 +564,17 @@ class StepClient:
     # ── Public API — full extraction ───────────────────────────────────────
 
     def extract_word_data(self, strong: str) -> dict:
-        """Return a complete structured data package for Session A.
+        """Return a complete structured data package.
 
-        Keys:
-          strong         — the requested Strong's number
-          vocab          — output of get_vocab_info()
-          verse_records  — output of get_verse_records()
-          verse_count    — number of unique verses returned
-          testament      — 'OT', 'NT', or 'both' (derived from verse_records)
-          notes          — list of warning strings (e.g. non-canonical Strong's)
+        Keys: strong, vocab, verse_records, verse_count, testament, notes.
         """
         notes = []
         vocab = self.get_vocab_info(strong)
 
         if not vocab:
             notes.append(f"No vocab data found for {strong}")
-            return {
-                "strong": strong, "vocab": {}, "verse_records": [],
-                "verse_count": 0, "testament": None, "notes": notes,
-            }
+            return {"strong": strong, "vocab": {}, "verse_records": [],
+                    "verse_count": 0, "testament": None, "notes": notes}
 
         resolved = vocab["strong_number"]
         if resolved != strong:
@@ -637,7 +595,6 @@ class StepClient:
                 "Multiple occurrences in a single verse are counted once here."
             )
 
-        # Derive testament coverage
         testaments = {r["testament"] for r in verse_records}
         if testaments == {"OT"}:
             testament = "OT"
@@ -648,107 +605,54 @@ class StepClient:
         else:
             testament = None
 
-        return {
-            "strong":        strong,
-            "vocab":         vocab,
-            "verse_records": verse_records,
-            "verse_count":   vc,
-            "testament":     testament,
-            "notes":         notes,
-        }
+        return {"strong": strong, "vocab": vocab, "verse_records": verse_records,
+                "verse_count": vc, "testament": testament, "notes": notes}
 
     # ── Public API — term discovery (Phase 1) ─────────────────────────────
 
     def get_related_term_cluster(self, strong: str) -> dict:
-        """Return the full term cluster for a Strong's number — all sub-glosses
-        and semantically related terms as defined by STEP's ``relatedNos`` field.
+        """Return the full term cluster for a Strong's number — all sub-glosses and
+        semantically related terms as defined by STEP's ``relatedNos``.
 
-        This is a **read-only discovery method** — it never touches the database
-        and performs no extraction.  It is the foundation of Phase 1 term mapping.
+        Read-only discovery: never touches the database, performs no extraction.
 
-        Algorithm:
-          1. Resolve the input code and fetch its vocab.
-          2. Collect all codes from ``relatedNos`` (siblings + relatives).
-          3. Separately enumerate sub-gloss siblings — codes sharing the same
-             numeric base with a single letter suffix (e.g. H5315G … H5315N).
-          4. Union (2) and (3), then fetch vocab + verse_count for every code.
-          5. Return a structured dict separating sub-glosses from related terms.
-
-        Returns a dict:
-          primary_code    — the resolved Strong's code fetched first
-          primary_vocab   — vocab dict for the primary code (from get_vocab_info)
-          sub_glosses     — list of term_entry dicts for sibling sub-glosses
-                            (same numeric base, letter suffix; e.g. H5315G–H5315N)
-          related_terms   — list of term_entry dicts for other related codes
-                            (different numeric base or no suffix relationship)
-          all_codes       — flat list of all Strong's codes in the cluster
-
-        Each term_entry dict:
-          code            — Strong's code (e.g. H5315H)
-          gloss           — STEP stepGloss
-          transliteration — STEP romanisation
-          script_form     — accentedUnicode (Hebrew/Greek script)
-          vocab_count     — occurrence count across all STEP versions
-          verse_count     — verse count in ESV_th (from search API)
-          medium_def      — stripped multi-line definition
-          is_sub_gloss    — True if same numeric base as primary_code
-          is_proper_noun  — True if mediumDef or gloss suggests a name/place
-          notes           — list of warning strings
-
-        Proper-noun detection: if the gloss is title-cased and the definition
-        contains 'proper noun', 'name', or starts with a capital; also flags
-        H/G codes known to be grammar particles (H9xxx / G9xxx).
+        Returns: primary_code, primary_vocab, sub_glosses, related_terms, all_codes.
+        Each term entry: code, gloss, transliteration, script_form, vocab_count,
+        verse_count, medium_def, is_sub_gloss, is_proper_noun, notes.
         """
-        # ── Step 1: resolve primary code and fetch vocab ──────────────────
         primary_vocab = self.get_vocab_info(strong)
         if not primary_vocab:
-            return {
-                "primary_code":  strong,
-                "primary_vocab": {},
-                "sub_glosses":   [],
-                "related_terms": [],
-                "all_codes":     [],
-            }
+            return {"primary_code": strong, "primary_vocab": {}, "sub_glosses": [],
+                    "related_terms": [], "all_codes": []}
         primary_code = primary_vocab["strong_number"]
 
-        # Numeric base: strip trailing letter(s) — H5315G → H5315, G5590G → G5590
-        base_match = re.match(r'^([HG]\d+)[A-Za-z]+$', primary_code)
+        base_match = re.match(r"^([HG]\d+)[A-Za-z]+$", primary_code)
         numeric_base = base_match.group(1) if base_match else primary_code
 
-        # ── Step 2: collect related codes from relatedNos ─────────────────
         related_codes: set[str] = set()
         for rw in primary_vocab.get("related_words", []):
             code = rw.get("strong", "").strip()
             if code and code != primary_code:
                 related_codes.add(code)
 
-        # ── Step 3: collect all sub-glosses via probing (G → N) ──────────
-        # STEP's relatedNos often lists siblings, but probe explicitly to catch any gaps.
-        for suffix in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        # relatedNos often lists siblings, but probe explicitly to catch gaps.
+        for suffix in self.subgloss_suffixes:
             candidate = f"{numeric_base}{suffix}"
-            if candidate == primary_code:
-                continue   # already have primary
-            if candidate in related_codes:
-                continue   # already collected
-            # Probe: if STEP returns a vocabInfo for this code, it exists.
+            if candidate == primary_code or candidate in related_codes:
+                continue
             try:
-                d = self._get_json(
-                    f"rest/module/getInfo/{self.version}//{candidate}//"
-                )
+                d = self._get_json(self._route("module.getInfo", strong=candidate))
                 vis = d.get("vocabInfos", [])
                 if vis and vis[0].get("strongNumber") == candidate:
                     related_codes.add(candidate)
                 else:
-                    # No more sub-glosses — stop probing this family
-                    break
+                    break   # no more sub-glosses in this family
             except Exception:
                 break
 
-        # ── Step 4: fetch vocab + verse_count for every related code ──────
         def _term_entry(code: str) -> dict:
             entry_notes: list[str] = []
-            # Skip grammar-particle internal codes
-            if re.match(r'^[HG]9', code):
+            if self.exclude_strongs.match(code):
                 return {}
             try:
                 v = self.get_vocab_info(code)
@@ -757,10 +661,8 @@ class StepClient:
             if not v:
                 return {"code": code, "notes": ["no vocab data"]}
 
-            # Verse count
             try:
-                sd = self._search_range(code)
-                vc = sd.get("total", 0)
+                vc = self._search_range(code).get("total", 0)
             except Exception:
                 vc = 0
                 entry_notes.append("verse search failed")
@@ -768,14 +670,11 @@ class StepClient:
             gloss = v.get("gloss", "")
             medium_def = v.get("medium_def", "")
 
-            # Is this code a sub-gloss of our primary numeric base?
-            code_base_m = re.match(r'^([HG]\d+)[A-Za-z]+$', code)
+            code_base_m = re.match(r"^([HG]\d+)[A-Za-z]+$", code)
             code_base = code_base_m.group(1) if code_base_m else code
-            is_sub = code_base == numeric_base
 
-            # Proper-noun detection (heuristic)
             is_proper = bool(
-                re.search(r'\bproper noun\b|\bpersonal name\b|\bplace name\b',
+                re.search(r"\bproper noun\b|\bpersonal name\b|\bplace name\b",
                           medium_def, re.IGNORECASE)
                 or (gloss and gloss[0].isupper() and len(gloss.split()) == 1
                     and gloss not in ("I", "A"))
@@ -789,34 +688,31 @@ class StepClient:
                 "vocab_count":     v.get("occurrence_count", 0),
                 "verse_count":     vc,
                 "medium_def":      medium_def,
-                "is_sub_gloss":    is_sub,
+                "is_sub_gloss":    code_base == numeric_base,
                 "is_proper_noun":  is_proper,
                 "notes":           entry_notes,
             }
 
         sub_glosses: list[dict] = []
         related_terms: list[dict] = []
-
         for code in sorted(related_codes):
             entry = _term_entry(code)
             if not entry:
                 continue
-            if entry.get("is_sub_gloss"):
-                sub_glosses.append(entry)
-            else:
-                related_terms.append(entry)
+            (sub_glosses if entry.get("is_sub_gloss") else related_terms).append(entry)
 
-        # Sort sub-glosses by code, related terms by verse_count desc
         sub_glosses.sort(key=lambda e: e["code"])
         related_terms.sort(key=lambda e: -e.get("verse_count", 0))
-
-        all_codes = [primary_code] + [e["code"] for e in sub_glosses] + \
-                    [e["code"] for e in related_terms]
 
         return {
             "primary_code":  primary_code,
             "primary_vocab": primary_vocab,
             "sub_glosses":   sub_glosses,
             "related_terms": related_terms,
-            "all_codes":     all_codes,
+            "all_codes": ([primary_code] + [e["code"] for e in sub_glosses]
+                          + [e["code"] for e in related_terms]),
         }
+
+
+def _checks() -> list[dict]:
+    return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))["checks"]
