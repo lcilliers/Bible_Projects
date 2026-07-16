@@ -7,7 +7,7 @@ metadata:
   originSessionId: bf6ef2d7-5b5c-4775-88f2-f2ca15223daa
 ---
 
-**Two things landed 2026-07-02, after the ruthlessness (perek H6531) first-tier story was accepted.** Builds on [[project_term_driven_genre_aware_lexical_method]] and the architecture review `Workflow/methodology/wa-ve-lexical-architecture-review-v1-20260702.md`.
+**Two things landed 2026-07-02, after the ruthlessness (perek H6531) first-tier story was accepted.** Builds on [[project_term_driven_genre_aware_lexical_method]] and the architecture review `verse-analysis/_reports/wa-ve-lexical-architecture-review-v1-20260702.md`.
 
 **1. Pipeline ENDPOINT = story filed to prose.** The single-term story (lexicals-only, cited) is filed into `prose_section` under a NEW section type **`lexical_prose`** (`prose_section_type.code='lexical_prose'`, id 103) — "Lexical Prose (single-term story)", **one per owner term**. Ruthlessness = `prose_section` id **398** (registry_id 216, cluster_code M06, v1, status approved, author `claude_code`; verse list + `source:lexical-model-2026` in `metadata_json`; verses cited INLINE in the body — the finding-centric `wa_prose_section_citations` table does NOT fit lexical prose so it's unused). FTS (`prose_section_fts`) auto-populates via triggers. Script: `scripts/_apply_file_ruthlessness_lexical_prose_20260702.py`. This is the last step of the per-term pipeline (anchor lexical → all verses → sanity-check → synthesis → story → **prose**).
 
