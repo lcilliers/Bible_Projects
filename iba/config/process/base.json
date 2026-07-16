@@ -46,6 +46,12 @@
         "issue": "No stem-master table exists in the live DB (plan §4: 'No dedicated stem-master table exists — derive from verse_morphology'). This is a new build, and it is unclear whether the master is a persisted table or a derived view.",
         "recommendation": "PERSISTED. A derive-on-demand view cannot be signed off, cannot be gated, and cannot carry provenance — and base's whole shape is 'produce it, prove it, sign it off'. Also carried in the plan's parking lot ('Stem-master: first-class persisted table vs derive-on-demand').",
         "resolve_by": "researcher decision; affects Appendix B"
+      },
+      {
+        "id": "open.base.cluster-regenerability",
+        "issue": "base.cluster-assignment is declared not-re-run, but gate.base.regenerable requires base to reproduce exactly when regenerated. A never-re-run assignment cannot be proved that way — and if it were re-run against a changed cluster population it might not reproduce.",
+        "recommendation": "Treat the ASSIGNMENT as regenerable (the rule is stated, so it can be re-derived and compared) but never automatically OVERWRITE an existing one — re-derivation reports a divergence for the researcher rather than silently reassigning. That keeps the gate honest without re-litigating settled membership.",
+        "resolve_by": "researcher decision"
       }
     ]
   },
@@ -58,11 +64,11 @@
       "kind": "principle",
       "subject": "base-definition",
       "status": "LIVE",
-      "version": 1,
-      "authority": "researcher 2026-07-15 ('Base then processes the data and prepare it for the lexical analysis'); plan §3.4 (layer 2)",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-16 — 'base has several interpretive operations: seeding characteristics in master, cluster assignment, passage inclusion etc. regeneration of base should be possible if the config rules in base is followed. base feed off the raw STEP data, but is certainly not purely mechanical without judgements.'",
       "reference": "plan §3.4",
-      "intent": "Define base as the derivation stage between raw and interpretation — everything the lexical read needs, computed from raw, with no judgement anywhere in it.",
-      "satisfaction": "Every base row is DERIVED from raw by a stated rule, is regenerable from raw alone, and contains no judgement.",
+      "intent": "Define base as the RULE-GOVERNED derivation stage between raw and interpretation. Base judges — which spans to look at, where a passage breaks, which cluster a term joins — but every judgement follows a rule stated in this config, which is what makes base regenerable.",
+      "satisfaction": "Every base row is reproducible by following a rule stated in this component, without reading what the text means.",
       "validation": {
         "axis": "C",
         "check": "layer-membership",
@@ -70,10 +76,17 @@
         "enforcement": "gate"
       },
       "spec": {
-        "statement": "Base = what we COMPUTED from raw. Raw = what STEP SAID (no conversion). Interpretation = what we JUDGED. Base sits between and borrows from neither.",
-        "the_test": "Could this row be regenerated from raw alone, by a stated rule, with no reading of meaning? Yes -> base. Needs the source -> raw. Needs a judgement -> interpretation.",
+        "statement": "Base = what we DERIVED from raw by a stated rule. Raw = what STEP SAID (no conversion). Interpretation = what we JUDGED by reading meaning. Base judges, but only where a rule governs the judgement.",
+        "the_test": "Can this row be reproduced by following a rule stated in this config, without reading what the text MEANS? Yes -> base. Needs the source -> raw. Needs a reading of meaning -> interpretation.",
         "regenerable_not_migrated": "Base is REGENERATED, never migrated (plan §3.4.1: 'Base — derived: passages, stems, seed/candidate stamping | Regenerate | deterministic; rebuilt by the modules, never migrated'). A base layer that had to be migrated would be admitting it is not derivable — and then it is not base.",
-        "why_no_judgement_here": "Base is what the signoff attests to. A judgement inside base would be a judgement nobody screened, riding into lexical under a mechanical warrant."
+        "★ the_correction_20260716": {
+          "what_v1_said": "'everything the lexical read needs, computed from raw, with NO JUDGEMENT anywhere in it'.",
+          "why_it_was_wrong": "Base already housed three judgements when that was written: base.char-seed (which spans are worth reading), base.passages (where the reading unit breaks) and now base.cluster-assignment. Both existing ones already declared axis C -- they were being treated as rule-governed judgements while the definition denied judgement existed.",
+          "the_tell": "base.char-seed carried a spec key named `the_judgement_layer_in_the_name`, arguing that a seed layer literally called 'judgement' was 'a judgement about WHAT TO LOOK AT, not about what anything MEANS'. That is a rule defended by exception. The exception is now the rule: base judges, under a stated rule.",
+          "what_regenerable_now_means": "STRONGER, not weaker. Regeneration is the test that the rule was really written down: if base cannot be reproduced by following this config, the rule is missing or underspecified. gate.base.regenerable is unchanged and now has teeth.",
+          "what_the_signoff_attests": "not 'this was mechanical' but 'these rules were followed'.",
+          "no_api": "A base judgement must not require the model (researcher 2026-07-16: 'the judgements should not require any Claude API, but it is not impossible - although I would be surprised'). Base judgements are axis C: a stated rule, executed in code, escalating to the RESEARCHER -- never to the model -- when the rule cannot decide."
+        }
       }
     },
     {
@@ -252,6 +265,44 @@
           "raw.step-precedence"
         ]
       }
+    },
+    {
+      "id": "base.cluster-assignment",
+      "governs": [
+        "base"
+      ],
+      "kind": "principle",
+      "subject": "term-cluster-membership",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — 'check if the term has a cluster, if not, check if the term naturally belong in a cluster by comparing the terms in clusters — this assignment is done on the basis of a loose relationship and it is a judgement call. In the unlikely event that no cluster can be found, then it is flushed back to researcher for a decision.'",
+      "reference": "iba/docs/session-log-v1-20260716.md; researcher direction 2026-07-16",
+      "intent": "Put every term in an analysis group. A cluster is defined by the terms already in it, so membership is decided by comparing the candidate term against those members — a loose relationship, judged under this rule, never a reading of the term's meaning.",
+      "satisfaction": "Every term either carries a cluster, or carries a recorded escalation to the researcher. Nothing is left silently unassigned.",
+      "validation": {
+        "axis": "C",
+        "check": "cluster-assigned-or-escalated",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "trigger": "a new term is added. Not run otherwise.",
+        "scope": "a collection of terms",
+        "procedure": [
+          "1. [C] Does the term already carry a cluster? -> done. Membership is not re-decided.",
+          "2. [C] Compare the term against THE TERMS IN EACH CLUSTER. Where it relates loosely to a cluster's members, it joins that cluster.",
+          "3. [C] No cluster found -> ESCALATE TO THE RESEARCHER. Do not guess, do not create a cluster, do not leave it null and silent."
+        ],
+        "★ what_loose_relationship_means": "The comparison is TERM-TO-TERM against a cluster's existing members — a cluster has no definition apart from the terms in it. The relatedness is already in hand: STEP returns relatedNos, rawRelatedNumbers and definitions[] on the pull the term arrived through, and the root family derives from them. So 'does this term relate to that cluster's terms' is set overlap over data the study already holds — which is why this needs no model.",
+        "axis_note": "C. The judgement is real but it is RULED, and the escalation path goes to the RESEARCHER, never to the model (researcher 2026-07-16: 'the judgements should not require any Claude API').",
+        "is_not_re_run": "Researcher 2026-07-16: 'It is highly unlikely that the term-cluster membership will ever be re-run.' An isolated process, called on the trigger. This is the one base artefact that is not rebuilt wholesale — see open.base.cluster-regenerability.",
+        "why_base_and_not_raw": "It is not a raw-data determination (researcher 2026-07-16). Raw is what STEP said; which analysis group a term joins is derived. It is not interpretation either: it reads no meaning, it compares terms.",
+        "the_live_model": "mti_terms.cluster_code (49 clusters, M01..M47 + FLAG + T2) is the term->cluster edge; cluster_subgroup / mti_term_subgroup carry the sub-group placement. The model exists; the method did not.",
+        "history": "Researcher 2026-07-16: 'I guess you handled it by hook or by crook in the past by simply chatting and then updating, some of it I channeled through AI chat.' This entry is the method it never had.",
+        "cites": [
+          "base.definition"
+        ]
+      }
     }
   ],
   "entities": [
@@ -386,6 +437,39 @@
         "layer": "base",
         "note": "verse.passage_id / is_passage_anchor / genre sit ON the verse row in the live DB — which mixes raw and base on one row (flagged in ent.raw.verse). The new schema separates them, or raw's immutability cannot hold."
       }
+    },
+    {
+      "id": "ent.base.cluster",
+      "governs": [
+        "base"
+      ],
+      "kind": "entity",
+      "subject": "cluster",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — 'check if the term has a cluster, if not, check if the term naturally belong in a cluster by comparing the terms in clusters — this assignment is done on the basis of a loose relationship and it is a judgement call. In the unlikely event that no cluster can be found, then it is flushed back to researcher for a decision.'",
+      "reference": "iba/docs/session-log-v1-20260716.md; researcher direction 2026-07-16",
+      "intent": "The analysis group — a collection of terms studied together. It has no definition apart from its members, which is why membership is decided against them.",
+      "satisfaction": "Every cluster resolves to at least one term; every term resolves to at most one cluster.",
+      "validation": {
+        "axis": "C",
+        "check": "entity-integrity",
+        "severity": "red",
+        "enforcement": "db+gate"
+      },
+      "spec": {
+        "grain": "one row per cluster",
+        "identity": "cluster_code (M01..M47, FLAG, T2)",
+        "holds": [
+          "cluster_code",
+          "short_name",
+          "description",
+          "status"
+        ],
+        "the_edge": "term -> cluster is one edge (mti_terms.cluster_code). A term has at most one cluster.",
+        "sub_groups": "cluster_subgroup / mti_term_subgroup carry placement WITHIN a cluster — a separate, finer question this rule does not decide.",
+        "layer": "base — the membership is derived; the cluster list itself is researcher-owned"
+      }
     }
   ],
   "output": [
@@ -515,24 +599,55 @@
         "base"
       ],
       "kind": "gate",
-      "subject": "base-layer-purity",
+      "subject": "base-judgement-is-ruled",
       "status": "LIVE",
-      "version": 1,
-      "authority": "base.definition; plan §3.4.2 ('no analytical values on mechanical tables')",
+      "version": 2,
+      "authority": "researcher ruling 2026-07-16; recast from no-judgement",
       "reference": "plan §3.4.2",
-      "intent": "Keep interpretation out of the stage the signoff treats as mechanical.",
-      "satisfaction": "No base entity carries a field whose value is a reading, verdict, classification or characteristic.",
+      "intent": "Require every judgement in base to name the config rule that governs it — so base stays regenerable and the signoff attests to rules followed, not to a mechanical warrant it never had.",
+      "satisfaction": "Every base row produced by a judgement names its governing rule id; no base row carries a reading of meaning.",
       "validation": {
         "axis": "C",
-        "check": "no-interpretive-fields",
+        "check": "judgement-names-its-rule",
         "severity": "red",
         "enforcement": "gate"
       },
       "spec": {
         "scope": "per base entity",
         "implements": "base.definition",
-        "the_known_violation": "The live DB stamps role / char_candidate / characteristic / ib_char_id onto verse_span_index. The migration strips them (plan 3.4.1). This gate stops them coming back.",
-        "why_it_matters_here_specifically": "Base is signed off AS MECHANICAL. A judgement smuggled into base is a judgement that gets a researcher's signature without ever being screened."
+        "the_known_violation": "The live DB stamps role / char_candidate / characteristic / ib_char_id onto verse_span_index. Those name no rule AND are readings of meaning — this gate still catches them, on both counts.",
+        "why_it_matters_here_specifically": "Base is signed off AS MECHANICAL. A judgement smuggled into base is a judgement that gets a researcher's signature without ever being screened.",
+        "★ recast_20260716": "WAS 'no-interpretive-fields' — keep interpretation out of base. That was wrong: base legitimately judges (char-seed, passages, cluster-assignment). Banning judgement would have required parking three of base's own LIVE rules. The gate now bans UNRULED judgement, which is the thing that was actually dangerous.",
+        "what_it_no_longer_catches": "A rule-governed base judgement. That is correct: it is what base is for."
+      }
+    },
+    {
+      "id": "gate.base.cluster-assigned",
+      "governs": [
+        "base"
+      ],
+      "kind": "gate",
+      "subject": "term-cluster-membership",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — 'check if the term has a cluster, if not, check if the term naturally belong in a cluster by comparing the terms in clusters — this assignment is done on the basis of a loose relationship and it is a judgement call. In the unlikely event that no cluster can be found, then it is flushed back to researcher for a decision.'",
+      "reference": "iba/docs/session-log-v1-20260716.md; researcher direction 2026-07-16",
+      "intent": "Catch a term with no cluster and no escalation — a term the study holds but no analysis group owns, which is how a term goes silently unstudied.",
+      "satisfaction": "For every term: cluster_code is set, OR an escalation to the researcher is recorded.",
+      "validation": {
+        "axis": "C",
+        "check": "cluster-assigned-or-escalated",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per term",
+        "implements": "base.cluster-assignment",
+        "on_fail": "halt — an unassigned, unescalated term is invisible to the analysis",
+        "note": "This is the check a per-word registry signoff would read: a word is not signed off until every one of its terms passes this gate. The registry signoff itself is the researcher's to define (2026-07-16: 'I will separately deal with registry').",
+        "cites": [
+          "base.cluster-assignment"
+        ]
       }
     }
   ],

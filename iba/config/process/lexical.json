@@ -115,7 +115,7 @@
         "lexical"
       ],
       "kind": "principle",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §2 (D1); researcher 2026-07-14 (D1 acceptance failure)",
       "reference": "wa-ve-lexical-catalogue-v1 §2",
@@ -130,8 +130,10 @@
       "spec": {
         "statement": "sense = the per-occurrence STEP sub-gloss. Authority = ent.raw.lexicon (gloss + sub-glosses).",
         "failure_it_prevents": "2026-07-14: D1 FAILED acceptance — reads recorded interpretation/effect instead of the sub-gloss (tsaddiq -> 'public good'). Per the researcher's rule, D1 must be redone in total.",
-        "gate": "gate.lexical.sense-matches-subgloss"
-      }
+        "gate": "gate.lexical.sense-matches-subgloss",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.grain",
@@ -139,7 +141,7 @@
         "lexical"
       ],
       "kind": "principle",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "cycle authoritative v1 §3A; memory project_term_is_sense_not_lemma",
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3A",
@@ -153,8 +155,10 @@
       },
       "spec": {
         "statement": "A term is a SPAN/SENSE, not a lemma. The grain is per-occurrence sub-gloss.",
-        "failure_it_prevents": "The grid relabelled fixed lemma-constants (faculty, type) as per-verse discoveries — a named root cause (plan §1.2, 'ungrounded frames read as findings')."
-      }
+        "failure_it_prevents": "The grid relabelled fixed lemma-constants (faculty, type) as per-verse discoveries — a named root cause (plan §1.2, 'ungrounded frames read as findings').",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.verse-bounded",
@@ -162,7 +166,7 @@
         "lexical"
       ],
       "kind": "guardrail",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "memory feedback_lexical_strictly_verse_bounded_no_implied_evidence; feedback_verse_meaning_grounded_not_imported",
       "reference": "wa-verse-analysis-method-v1",
@@ -176,8 +180,10 @@
       },
       "spec": {
         "statement": "The lexical records ONLY what the verse says. No implied evidence. A no-basis value is an error.",
-        "note": "Plausibility is not truth — a plausible value with no textual basis is the exact failure mode of the two prior studies, whose findings 'appeared strong at first but deteriorated under further questioning'."
-      }
+        "note": "Plausibility is not truth — a plausible value with no textual basis is the exact failure mode of the two prior studies, whose findings 'appeared strong at first but deteriorated under further questioning'.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.no-mechanical-extraction",
@@ -185,7 +191,7 @@
         "lexical"
       ],
       "kind": "guardrail",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher 2026-07-14 (acceptance audit); plan §1.2 'extraction mistaken for inference'",
       "reference": "outputs/projections/SOURCE-VERIFICATION-progress.md",
@@ -200,8 +206,10 @@
       "spec": {
         "statement": "Infer, don't extract. Regex/keyword derivation of an interpretive value is prohibited.",
         "failure_it_prevents": "D109 intensity, D111 effect, D117 device, D118 direction + D110 specifier were REGEX-RETROFITTED and all failed — malformed and truncated-mid-word values, wrong classifications.",
-        "open": "open.lexical.regex-prohibition — a [C] gate cannot see how a value was produced, only what it looks like."
-      }
+        "open": "open.lexical.regex-prohibition — a [C] gate cannot see how a value was produced, only what it looks like.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.self-interpretable",
@@ -209,7 +217,7 @@
         "lexical"
       ],
       "kind": "guardrail",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -225,8 +233,10 @@
         "statement": "A dimension value must be readable without re-reading the verse.",
         "was": "dimensions.json governing_value_rules -> dimrule.self-interpretable — PROSE, unenforceable, inside a rulebook",
         "now": "a rule here + gate.lexical.self-interpretable in validation",
-        "open": "open.lexical.self-interpretable-check"
-      }
+        "open": "open.lexical.self-interpretable-check",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.assess-never-absent",
@@ -234,7 +244,7 @@
         "lexical"
       ],
       "kind": "guardrail",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -250,8 +260,10 @@
         "statement": "Assessed-and-none is a finding. Never-assessed is a defect. Write `none`, never omit.",
         "was": "dimensions.json governing_value_rules -> dimrule.assess-never-absent — prose",
         "now": "a rule here + gate.lexical.mandatory-not-absent",
-        "connects": "silence is a valid finding (plan §1.1) — but only when it is RECORDED silence."
-      }
+        "connects": "silence is a valid finding (plan §1.1) — but only when it is RECORDED silence.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.resolution-distinction",
@@ -259,7 +271,7 @@
         "lexical"
       ],
       "kind": "principle",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §1",
       "reference": "wa-ve-lexical-catalogue-v1 §1",
@@ -277,8 +289,10 @@
         "moved_from": "enums.json enum.resolution spec.rule — an application rule sitting in a definitional item (2026-07-15 ruling §3)",
         "canonical": false,
         "reconcile": "recon.resolution-vocab",
-        "note": "⚠ RECONCILE — the vocabulary has 3 variants across sources (catalogue / 01b / collection). Blocks this process."
-      }
+        "note": "⚠ RECONCILE — the vocabulary has 3 variants across sources (catalogue / 01b / collection). Blocks this process.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "lexical.device-default",
@@ -286,7 +300,7 @@
         "lexical"
       ],
       "kind": "principle",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9 (2026-07-14)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -300,8 +314,10 @@
       },
       "spec": {
         "statement": "device defaults to `literal`. A default is NOT `none`: default = the unmarked normal case; `none` = assessed and genuinely absent.",
-        "moved_from": "enums.json enum.device spec.default — application, not definition (2026-07-15 ruling §3)"
-      }
+        "moved_from": "enums.json enum.device spec.default — application, not definition (2026-07-15 ruling §3)",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.source-driver-not-target",
@@ -309,7 +325,7 @@
         "lexical"
       ],
       "kind": "principle",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §2 (D3); researcher 2026-07-14 (D3 acceptance failure)",
       "reference": "wa-ve-lexical-catalogue-v1 §2",
@@ -324,8 +340,10 @@
       "spec": {
         "statement": "source = what drives the characteristic (driver -> term), never what the characteristic acts on (that is D107 target, term -> object). DRIVER and RESTRAINT must be split.",
         "moved_from": "dimensions.json dim.103.source spec.rule",
-        "failure_it_prevents": "2026-07-14: D3 FAILED — it stored target-direction pairs (term -> object)."
-      }
+        "failure_it_prevents": "2026-07-14: D3 FAILED — it stored target-direction pairs (term -> object).",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.bearer-never-god",
@@ -334,7 +352,7 @@
         "characteristics"
       ],
       "kind": "principle",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "Screen 0; memory feedback_ib_screen_first_god_is_arena",
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §1",
@@ -350,8 +368,10 @@
         "statement": "bearer != God. God's own attribute or action is a qualifier or the arena; a pure God-verse yields no characteristic.",
         "moved_from": "dimensions.json dim.105.bearer spec.rule",
         "failure_it_prevents": "2026-07-14: Screen-0 mis-roles seen in D115 — Pro 8:28 'God made firm the skies' was roled `characteristic`.",
-        "owner": "the rule is shared with the characteristics process (Screen 0); defined ONCE, here, and cited there (layout v2 §2.3)."
-      }
+        "owner": "the rule is shared with the characteristics process (Screen 0); defined ONCE, here, and cited there (layout v2 §2.3).",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "lexical.ledger",
@@ -359,7 +379,7 @@
         "lexical"
       ],
       "kind": "ledger",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9; wa-corrected-charac-arc-reread-repeatable-process-v1 §2",
       "reference": "wa-ve-lexical-catalogue-v1 §9 ★",
@@ -409,8 +429,10 @@
           "narrative": "base + 103, 111 per-span"
         },
         "per_role": "characteristic = full · qualifier = reduced · standalone = minimal — ⚠ not yet specified",
-        "note": "⚠ RECONCILE — BLOCKS THIS ENTIRE PROCESS (open.lexical.ledger-blocked). 07-14 made 109/110/111/117/118 mandatory, contradicting the 07-11 poetic base. Ruled home = `process`, not `validation` (layout v2 §5): the ledger defines what the read must PRODUCE; gate.lexical.ledger-complete then checks it did."
-      }
+        "note": "⚠ RECONCILE — BLOCKS THIS ENTIRE PROCESS (open.lexical.ledger-blocked). 07-14 made 109/110/111/117/118 mandatory, contradicting the 07-11 poetic base. Ruled home = `process`, not `validation` (layout v2 §5): the ledger defines what the read must PRODUCE; gate.lexical.ledger-complete then checks it did.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "lexical.genre-routing",
@@ -453,7 +475,7 @@
         "lexical"
       ],
       "kind": "entity",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "cycle authoritative v1 §3; live DB ve_lexical",
       "reference": "wa-characteristic-role-lexical-cycle-authoritative-v1 §3",
@@ -480,8 +502,10 @@
           "stated_or_inferred"
         ],
         "layer": "interpretation — carries STATED-vs-INFERRED and full provenance (plan §3.4)",
-        "note": "⚠ The live DB's ve_lexical mixes ~620k live+legacy rows and must be filtered by pair_kind IS NOT NULL / source_provenance. The new DB does not inherit it — this layer is regenerated, never migrated (plan 3.4.1)."
-      }
+        "note": "⚠ The live DB's ve_lexical mixes ~620k live+legacy rows and must be filtered by pair_kind IS NOT NULL / source_provenance. The new DB does not inherit it — this layer is regenerated, never migrated (plan 3.4.1).",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "_comment": "── The ve_nr dimensions (101-118). DEFINITIONAL ONLY per the 2026-07-15 ruling: no validation blocks, no rules, no defaults. Envelope defaults below apply to every dimension item."
@@ -506,8 +530,11 @@
         "label": "sense",
         "shape": "value",
         "mandatory": true,
-        "derivation": "I"
-      }
+        "derivation": "I",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.102.type",
@@ -518,8 +545,11 @@
         "shape": "value",
         "mandatory": true,
         "derivation": "C",
-        "enum": "type"
-      }
+        "enum": "type",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.103.source",
@@ -531,8 +561,11 @@
         "pair_from": "driver",
         "pair_to": "term",
         "mandatory": false,
-        "derivation": "I-partial"
-      }
+        "derivation": "I-partial",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.104.seat",
@@ -544,8 +577,11 @@
         "pair_from": "seat",
         "pair_to": "term",
         "mandatory": false,
-        "derivation": "C"
-      }
+        "derivation": "C",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.105.bearer",
@@ -557,8 +593,11 @@
         "pair_from": "bearer",
         "pair_to": "term",
         "mandatory": false,
-        "derivation": "I-partial"
-      }
+        "derivation": "I-partial",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.106.operation",
@@ -568,8 +607,11 @@
         "label": "operation",
         "shape": "event",
         "mandatory": true,
-        "derivation": "I"
-      }
+        "derivation": "I",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.107.target",
@@ -582,8 +624,11 @@
         "pair_to": "object",
         "mandatory": false,
         "derivation": "I-partial",
-        "enum": "object_type"
-      }
+        "enum": "object_type",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.108.manner",
@@ -595,8 +640,11 @@
         "pair_from": "qualifier",
         "pair_to": "term",
         "mandatory": false,
-        "derivation": "C"
-      }
+        "derivation": "C",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.109.intensity",
@@ -610,8 +658,11 @@
         "mandatory": true,
         "self_interpretable": true,
         "derivation": "C",
-        "reinstated": "2026-07-14"
-      }
+        "reinstated": "2026-07-14",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.110.specifier",
@@ -625,8 +676,11 @@
         "mandatory": true,
         "self_interpretable": true,
         "derivation": "C",
-        "added": "2026-07-03"
-      }
+        "added": "2026-07-03",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.111.effect",
@@ -639,8 +693,11 @@
         "pair_to": "produced-state",
         "mandatory": true,
         "self_interpretable": true,
-        "derivation": "C"
-      }
+        "derivation": "C",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.112.coupling",
@@ -652,8 +709,11 @@
         "pair_from": "term",
         "pair_to": "co-term",
         "mandatory": false,
-        "derivation": "C"
-      }
+        "derivation": "C",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.113.prohibition",
@@ -663,8 +723,11 @@
         "label": "prohibition",
         "shape": "flag",
         "mandatory": false,
-        "derivation": "C"
-      }
+        "derivation": "C",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.114.reading",
@@ -675,8 +738,11 @@
         "shape": "note",
         "mandatory": true,
         "derivation": "read-only",
-        "relabelled": "2026-07-14 (was 'discovery')"
-      }
+        "relabelled": "2026-07-14 (was 'discovery')",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.115.role",
@@ -691,8 +757,11 @@
         "shape": "value",
         "mandatory": true,
         "derivation": "read-only",
-        "enum": "role"
-      }
+        "enum": "role",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.116.locus",
@@ -704,8 +773,11 @@
         "mandatory": true,
         "derivation": "C",
         "enum": "locus",
-        "added": "2026-07-04"
-      }
+        "added": "2026-07-04",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.117.device",
@@ -719,8 +791,11 @@
         "self_interpretable": true,
         "derivation": "C",
         "enum": "device",
-        "added": "2026-07-14"
-      }
+        "added": "2026-07-14",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.118.direction",
@@ -733,8 +808,11 @@
         "self_interpretable": true,
         "derivation": "C",
         "enum": "direction",
-        "added": "2026-07-14"
-      }
+        "added": "2026-07-14",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": null,
+      "status": "INACTIVE"
     },
     {
       "id": "dim.dropped",
@@ -742,7 +820,7 @@
         "lexical"
       ],
       "kind": "dimension",
-      "status": "LEGACY",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "wa-verse-analysis-method-v1 (2026-07-02)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -755,8 +833,10 @@
           "related_tier T0-T7"
         ],
         "rule": "not to be written. Present in legacy data only.",
-        "was": "dimensions.json governing_value_rules -> dimrule.dropped"
-      }
+        "was": "dimensions.json governing_value_rules -> dimrule.dropped",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LEGACY"
     }
   ],
   "output": [
@@ -766,7 +846,7 @@
         "lexical"
       ],
       "kind": "output",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.6 'files are derived, human-facing artefacts'",
       "reference": "plan §3.6",
@@ -781,8 +861,10 @@
       "spec": {
         "scope": "per book / per characteristic",
         "format": "md + csv",
-        "note": "Replaces the ad-hoc outputs/projections/ scripts."
-      }
+        "note": "Replaces the ad-hoc outputs/projections/ scripts.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "out.lexical.scoreboard",
@@ -790,7 +872,7 @@
         "lexical"
       ],
       "kind": "output",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher 2026-07-14 (acceptance-sampling protocol)",
       "reference": "outputs/projections/SOURCE-VERIFICATION-progress.md",
@@ -805,8 +887,10 @@
       "spec": {
         "format": "md + DB (ve_dimension_scoreboard successor)",
         "baseline": "the 2026-07-14 verdicts (8 FAILED / 10 in-progress / 0 passed) are the baseline this build must beat",
-        "note": "This is the process's real definition of done — not coverage."
-      }
+        "note": "This is the process's real definition of done — not coverage.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     }
   ],
   "validation": [
@@ -819,7 +903,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §2/§9",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -842,8 +926,10 @@
         },
         "scope": "per value",
         "enforcement_note": "PROJECTED AS CHECK CONSTRAINTS by the config-maintenance utility, generated from each enum's spec.values. The vocabulary is defined ONCE in wide/enums.json; the constraint is its projection (2026-07-15 ruling §1.1).",
-        "blocked": "role · locus are RECONCILE — their constraints cannot be generated until recon.role-enum and recon.locus-vocab are ruled."
-      }
+        "blocked": "role · locus are RECONCILE — their constraints cannot be generated until recon.role-enum and recon.locus-vocab are ruled.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "gate.lexical.pair-direction",
@@ -851,7 +937,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §2; researcher 2026-07-14 (D3 failure)",
       "reference": "wa-ve-lexical-catalogue-v1 §2",
@@ -877,8 +963,10 @@
         ],
         "scope": "per pair",
         "implements": "lexical.source-driver-not-target",
-        "failure_it_catches": "2026-07-14: D3 source stored target-direction pairs (term -> object instead of driver -> term). This gate would have red-halted it on the first row."
-      }
+        "failure_it_catches": "2026-07-14: D3 source stored target-direction pairs (term -> object instead of driver -> term). This gate would have red-halted it on the first row.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "gate.lexical.mandatory-not-absent",
@@ -886,7 +974,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -908,8 +996,10 @@
         ],
         "scope": "per span",
         "implements": "lexical.assess-never-absent",
-        "note": "Cannot be db:not-null — 'mandatory' is per (genre, role) via lexical.ledger, not per column. A conditional rule is exactly what enforcement `gate` is for."
-      }
+        "note": "Cannot be db:not-null — 'mandatory' is per (genre, role) via lexical.ledger, not per column. A conditional rule is exactly what enforcement `gate` is for.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "gate.lexical.self-interpretable",
@@ -917,7 +1007,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §9 ★ (2026-07-14)",
       "reference": "wa-ve-lexical-catalogue-v1 §9",
@@ -946,8 +1036,10 @@
           "min length",
           "contains its trigger span"
         ],
-        "note": "⚠ RECONCILE — a [C] structural floor catches the 07-14 artefact class but would pass a well-formed yet uninterpretable value. See open.lexical.self-interpretable-check."
-      }
+        "note": "⚠ RECONCILE — a [C] structural floor catches the 07-14 artefact class but would pass a well-formed yet uninterpretable value. See open.lexical.self-interpretable-check.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "gate.lexical.sense-matches-subgloss",
@@ -955,7 +1047,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "lexical.sense-authority; researcher 2026-07-14 (D1 failure)",
       "reference": "wa-ve-lexical-catalogue-v1 §2",
@@ -975,8 +1067,10 @@
         "implements": "lexical.sense-authority",
         "canonical": false,
         "reconcile": "open.lexical.sense-authority-check",
-        "note": "⚠ RECONCILE — exact vs normalised vs [I]-judged membership undecided. Note the 07-14 failure was not a near-miss: 'public good' for tsaddiq is not a sub-gloss at all, so even the strictest form would have caught it."
-      }
+        "note": "⚠ RECONCILE — exact vs normalised vs [I]-judged membership undecided. Note the 07-14 failure was not a near-miss: 'public good' for tsaddiq is not a sub-gloss at all, so even the strictest form would have caught it.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "gate.lexical.shape-matches-pair-kind",
@@ -984,7 +1078,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "ve-lexical catalogue v1 §5",
       "reference": "wa-ve-lexical-catalogue-v1 §5",
@@ -1000,8 +1094,10 @@
       "spec": {
         "guards": "all dimensions",
         "scope": "per row",
-        "gap": "⚠ CANNOT RUN for dim.109 (`pair/flag`) or dim.117 (`value/pair`) — compound shapes are not members of enum.pair_kind. Both FAILED on 07-14. A silent hole in a red gate: see open.lexical.compound-shapes."
-      }
+        "gap": "⚠ CANNOT RUN for dim.109 (`pair/flag`) or dim.117 (`value/pair`) — compound shapes are not members of enum.pair_kind. Both FAILED on 07-14. A silent hole in a red gate: see open.lexical.compound-shapes.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "gate.lexical.ledger-complete",
@@ -1009,7 +1105,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "lexical.ledger",
       "reference": "wa-ve-lexical-catalogue-v1 §9 ★",
@@ -1026,8 +1122,10 @@
         "implements": "lexical.ledger",
         "canonical": false,
         "reconcile": "recon.mandatory-ledger",
-        "note": "⚠ RECONCILE — blocked with the ledger. This is where 'done = validity, not coverage' is enforced (plan §3.2)."
-      }
+        "note": "⚠ RECONCILE — blocked with the ledger. This is where 'done = validity, not coverage' is enforced (plan §3.2).",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "gate.lexical.verse-bounded",
@@ -1035,7 +1133,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "lexical.verse-bounded",
       "reference": "wa-verse-analysis-method-v1",
@@ -1051,8 +1149,10 @@
         "guards": "all [I] and [I-partial] dimensions",
         "scope": "sampled per run",
         "implements": "lexical.verse-bounded",
-        "note": "⚠ The only [I]-axis gate here. It judges a DIFFERENT model call's output — the model never certifies its own read. Ties to open.lexical.self-interpretable-check option B."
-      }
+        "note": "⚠ The only [I]-axis gate here. It judges a DIFFERENT model call's output — the model never certifies its own read. Ties to open.lexical.self-interpretable-check option B.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "gate.lexical.acceptance-sample",
@@ -1060,7 +1160,7 @@
         "lexical"
       ],
       "kind": "gate",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher 2026-07-14 (verbal); wa-proverbs-reread-success-criteria-20260708",
       "reference": "recon.acceptance-sample",
@@ -1082,8 +1182,10 @@
           "per-cycle": "2-3 passages, >=90% sound, zero fidelity failures"
         },
         "standing_rule": "researcher: ANY FAILED DIMENSION MUST BE REDONE IN TOTAL. Not patched.",
-        "note": "⚠ RECONCILE — the n=200/95% rule was set verbally on 07-14 and exists in no document. This config is currently its only written home."
-      }
+        "note": "⚠ RECONCILE — the n=200/95% rule was set verbally on 07-14 and exists in no document. This config is currently its only written home.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     }
   ],
   "naming": [
@@ -1093,7 +1195,7 @@
         "lexical"
       ],
       "kind": "pattern",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "layout v2 §2.3",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
@@ -1117,8 +1219,10 @@
           "pattern.id-frozen-at-mint",
           "pattern.dimension-name-with-code"
         ],
-        "note": "`dim.114.reading` was relabelled from 'discovery' on 2026-07-14 — the label inside an id is a MNEMONIC, never a fact. Id frozen at mint; spec.label is authority for display (layout v2 open.id-uniqueness). A dimension is always written with its name and code together ('D2 Source', never bare 'D2') — that RULE lives in wide/patterns.json and is cited here."
-      }
+        "note": "`dim.114.reading` was relabelled from 'discovery' on 2026-07-14 — the label inside an id is a MNEMONIC, never a fact. Id frozen at mint; spec.label is authority for display (layout v2 open.id-uniqueness). A dimension is always written with its name and code together ('D2 Source', never bare 'D2') — that RULE lives in wide/patterns.json and is cited here.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     }
   ],
   "filing": [
@@ -1128,7 +1232,7 @@
         "lexical"
       ],
       "kind": "pattern",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "layout v2 §2.3",
       "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
@@ -1148,8 +1252,10 @@
           "filing.manifest-rebuild-after-write",
           "filing.archive-superseded"
         ],
-        "note": "Parameters only. The archiving/versioning rules live in the filing utility's config, defined once, cited here."
-      }
+        "note": "Parameters only. The archiving/versioning rules live in the filing utility's config, defined once, cited here.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     }
   ],
   "implemented_by": {

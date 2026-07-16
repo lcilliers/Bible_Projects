@@ -91,6 +91,12 @@
         "consequence": "Not a defect — process and module are different axes and need not be 1:1. But it means module 1's post-gates must cover BOTH processes' controls, and a module that spans two processes loads two rule-sets.",
         "recommendation": "Keep them as one module and two processes, and let this be the worked example that process != module. Splitting them would gain nothing: a fetch that does not store is useless, and a raw write with no fetch cannot happen. The rules differ; the execution does not.",
         "resolve_by": "no decision needed — recorded so the asymmetry is deliberate"
+      },
+      {
+        "id": "open.pipeline.gate-code-unresolved",
+        "issue": "module_gates[].spec.gate_code names a gate by id, but NOTHING resolves it. The kernel checks spec.cites and spec.implements only. Two gate_codes were dangling for a day and no check saw it — module.raw's pre and post gates both pointed at nothing.",
+        "recommendation": "Add gate_code to the kernel's reference resolution, or rename it to `cites` so the existing check covers it. A gate reference that nothing resolves is the declared-LIVE-never-implemented failure wearing a different hat.",
+        "resolve_by": "researcher decision"
       }
     ],
     "corrections_20260715": {
@@ -182,7 +188,6 @@
       "id": "module.raw",
       "governs": [
         "raw",
-        "raw",
         "util.step"
       ],
       "kind": "module",
@@ -260,7 +265,7 @@
       ],
       "kind": "module",
       "subject": "module-lexical",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.3.4 (5 Prepare lexical)",
       "reference": "plan §3.3.4",
@@ -283,8 +288,10 @@
           "util.validation"
         ],
         "⚠ blocked": "process/lexical.json carries 6 RECONCILE items; recon.mandatory-ledger is the hard one — without the ledger, 'complete' is undefined.",
-        "⚠ its_input_has_no_producer": "This module reads SPANS. No module builds them (meta.★ THE_SPAN_LAYER_IS_THE_ANSWER). Its dependency chain currently runs to module 1 by accident, because span-linking is bundled there."
-      }
+        "⚠ its_input_has_no_producer": "This module reads SPANS. No module builds them (meta.★ THE_SPAN_LAYER_IS_THE_ANSWER). Its dependency chain currently runs to module 1 by accident, because span-linking is bundled there.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "module.characteristics",
@@ -293,7 +300,7 @@
       ],
       "kind": "module",
       "subject": "module-characteristics",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.3.4 (6 Characteristic maintenance)",
       "reference": "plan §3.3.4",
@@ -311,8 +318,10 @@
         "scope": [
           "book"
         ],
-        "⚠ blocked": "recon.role-enum blocks this module AND module 5."
-      }
+        "⚠ blocked": "recon.role-enum blocks this module AND module 5.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "module.validation",
@@ -321,7 +330,7 @@
       ],
       "kind": "module",
       "subject": "module-validation",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.2 ('Data validation is dual-role')",
       "reference": "plan §3.2",
@@ -340,8 +349,10 @@
           "any"
         ],
         "dual_role": "It is BOTH a standalone module AND the gate every other module calls. This is where 'done = verse-level validity, not coverage' is enforced.",
-        "note": "A utility, not a study process — which is why it governs util.validation."
-      }
+        "note": "A utility, not a study process — which is why it governs util.validation.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "module.analysis-prep",
@@ -350,7 +361,7 @@
       ],
       "kind": "module",
       "subject": "module-analysis-prep",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.3.4 (8 Prepare data for analysis)",
       "reference": "plan §3.3.4",
@@ -371,8 +382,10 @@
         ],
         "canonical": false,
         "reconcile": "open.pipeline.module-8-and-prose",
-        "⚠ governs_is_a_placeholder": "`findings` is a guess. This module has no process of its own — see open.pipeline.module-8-and-prose."
-      }
+        "⚠ governs_is_a_placeholder": "`findings` is a guess. This module has no process of its own — see open.pipeline.module-8-and-prose.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "module.findings",
@@ -381,7 +394,7 @@
       ],
       "kind": "module",
       "subject": "module-findings",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.3.4 (9 Characteristic findings)",
       "reference": "plan §3.3.4",
@@ -400,8 +413,10 @@
           "book",
           "cluster"
         ],
-        "note": "process/findings.json is PENDING."
-      }
+        "note": "process/findings.json is PENDING.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     }
   ],
   "dependencies": [
@@ -495,7 +510,7 @@
       ],
       "kind": "dependency",
       "subject": "dep-characteristics-lexical",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.2",
       "reference": "plan §3.2",
@@ -510,8 +525,10 @@
       "spec": {
         "module": "module.characteristics",
         "depends_on": "module.lexical",
-        "activation": "auto"
-      }
+        "activation": "auto",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "dep.findings-needs-validation",
@@ -520,7 +537,7 @@
       ],
       "kind": "dependency",
       "subject": "dep-findings-validation",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "plan §3.2",
       "reference": "plan §3.2",
@@ -536,8 +553,10 @@
         "module": "module.findings",
         "depends_on": "module.validation",
         "activation": "halt",
-        "why_halt": "Producing findings from unvalidated reads is the exact 2026-07-14 failure — 8 dimensions failing their own rules while the layer read as complete."
-      }
+        "why_halt": "Producing findings from unvalidated reads is the exact 2026-07-14 failure — 8 dimensions failing their own rules while the layer read as complete.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     }
   ],
   "module_gates": [
@@ -550,7 +569,7 @@
       "kind": "dependency",
       "subject": "mgate-raw-oracle",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "step.completeness-oracle",
       "reference": "iba/config/utility/step.json",
       "intent": "No ingest is marked done until its rows reconcile against STEP's reported total.",
@@ -564,9 +583,10 @@
       "spec": {
         "module": "module.raw",
         "phase": "post",
-        "gate_code": "gate.step.cap-exhausted",
+        "gate_code": "check.step.cap-exhausted",
         "severity": "red",
-        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715.",
+        "⚠ renamed_20260716": "was `gate.step.cap-exhausted` — DANGLING. utility/step.json renamed its checks gate.step.* -> check.step.* on 2026-07-16 and this reference was not followed through, leaving module.raw's gates pointing at nothing. The kernel cannot see it: it resolves spec.cites and spec.implements, not gate_code. See open.pipeline.gate-code-unresolved."
       }
     },
     {
@@ -579,7 +599,7 @@
       "kind": "dependency",
       "subject": "mgate-raw-available",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "researcher ruling 2026-07-15 ('Check site is up is a pre-requisite for running raw processes - on error stop and warn researcher')",
       "reference": "iba/config/utility/step.json gate.step.available",
       "intent": "The STEP pre-flight is a PRE-REQUISITE for any raw process, not a runtime check.",
@@ -593,10 +613,11 @@
       "spec": {
         "module": "module.raw",
         "phase": "pre",
-        "gate_code": "gate.step.available",
+        "gate_code": "check.step.up",
         "note": "on_fail = halt AND warn the researcher — a raw process without its source is not a slow run, it is a wrong one.",
         "severity": "red",
-        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715.",
+        "⚠ renamed_20260716": "was `gate.step.available` — DANGLING. utility/step.json renamed its checks gate.step.* -> check.step.* on 2026-07-16 and this reference was not followed through, leaving module.raw's gates pointing at nothing. The kernel cannot see it: it resolves spec.cites and spec.implements, not gate_code. See open.pipeline.gate-code-unresolved."
       }
     },
     {
@@ -606,7 +627,7 @@
       ],
       "kind": "dependency",
       "subject": "mgate-lexical-ledger",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "lexical.ledger",
       "reference": "iba/config/process/lexical.json",
@@ -625,8 +646,10 @@
         "canonical": false,
         "reconcile": "recon.mandatory-ledger",
         "severity": "red",
-        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715."
-      }
+        "⚠ on_fail_retired": "`on_fail` (halt|warn) was a SECOND NAME for `severity` (red|amber) — one concept, two vocabularies, which ruling (a) forbids. Mapped to severity 2026-07-15. See meta.terminology_alignment_20260715.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "mgate.base-post-signoff",
@@ -1284,7 +1307,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-load-rules",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1301,8 +1324,10 @@
         "ordinal": 1,
         "does": "Load the governing rule-set for the scope — dimensions, ledger, genre route, enums.",
         "handler": null,
-        "note": "Plan A.11: querying a process returns its full governing rule-set — which is what a module loads before it runs. This step IS that."
-      }
+        "note": "Plan A.11: querying a process returns its full governing rule-set — which is what a module loads before it runs. This step IS that.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.prepare-input",
@@ -1311,7 +1336,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-prepare-input",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1327,8 +1352,10 @@
         "module": "module.lexical",
         "ordinal": 2,
         "does": "Assemble the passage read input — verse text, morphology, spans, candidates, sub-glosses.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.read",
@@ -1337,7 +1364,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-read",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1355,8 +1382,10 @@
         "does": "[I] Produce the ledger's dimensions for each span, via the API adapter.",
         "handler": null,
         "reference_script": "util.api — the ONLY place the API is used",
-        "note": "The only genuinely interpretive step in the module. Everything around it is deterministic."
-      }
+        "note": "The only genuinely interpretive step in the module. Everything around it is deterministic.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.validate-output",
@@ -1365,7 +1394,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-validate-output",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1390,8 +1419,10 @@
           "gate.lexical.sense-matches-subgloss",
           "gate.lexical.shape-matches-pair-kind"
         ],
-        "note": "★ The model NEVER self-certifies. An [I] value that fails its [C] gate does not bank — it retries."
-      }
+        "note": "★ The model NEVER self-certifies. An [I] value that fails its [C] gate does not bank — it retries.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.retry",
@@ -1400,7 +1431,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-retry",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1417,8 +1448,10 @@
         "ordinal": 5,
         "does": "Retry a violating read against the specific rule it broke; escalate the model tier if configured.",
         "handler": null,
-        "note": "Retry is part of the contract, not error handling: the design assumes the model will violate rules and gates them rather than trusting them."
-      }
+        "note": "Retry is part of the contract, not error handling: the design assumes the model will violate rules and gates them rather than trusting them.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.update-tables",
@@ -1427,7 +1460,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-update-tables",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1443,8 +1476,10 @@
         "module": "module.lexical",
         "ordinal": 6,
         "does": "Write ve_lexical — only what passed.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.lexical.validate",
@@ -1453,7 +1488,7 @@
       ],
       "kind": "step",
       "subject": "step-lexical-validate",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1476,8 +1511,10 @@
           "gate.lexical.acceptance-sample"
         ],
         "canonical": false,
-        "reconcile": "recon.mandatory-ledger"
-      }
+        "reconcile": "recon.mandatory-ledger",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "step.characteristics.screen0",
@@ -1486,7 +1523,7 @@
       ],
       "kind": "step",
       "subject": "step-characteristics-screen0",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1509,8 +1546,10 @@
         ],
         "note": "The judgement that decides the study's object — and it was failing in live data (Pro 8:28 roled characteristic with God as bearer).",
         "canonical": false,
-        "reconcile": "open.char.screen0-mechanism"
-      }
+        "reconcile": "open.char.screen0-mechanism",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "step.characteristics.assign-role",
@@ -1519,7 +1558,7 @@
       ],
       "kind": "step",
       "subject": "step-characteristics-assign-role",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1541,8 +1580,10 @@
           "gate.char.two-axes"
         ],
         "canonical": false,
-        "reconcile": "recon.role-enum"
-      }
+        "reconcile": "recon.role-enum",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "step.characteristics.derive-ib-characteristic",
@@ -1551,7 +1592,7 @@
       ],
       "kind": "step",
       "subject": "step-characteristics-derive-ib-characteristic",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1567,8 +1608,10 @@
         "module": "module.characteristics",
         "ordinal": 3,
         "does": "Derive/maintain ib_characteristic, keyed on meaning-in-context.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.characteristics.update-tables",
@@ -1577,7 +1620,7 @@
       ],
       "kind": "step",
       "subject": "step-characteristics-update-tables",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1593,8 +1636,10 @@
         "module": "module.characteristics",
         "ordinal": 4,
         "does": "Write roles and characteristics.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.characteristics.validate",
@@ -1603,7 +1648,7 @@
       ],
       "kind": "step",
       "subject": "step-characteristics-validate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1624,8 +1669,10 @@
           "gate.registry.path-resolves",
           "gate.char.role-domain",
           "gate.char.two-axes"
-        ]
-      }
+        ],
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.validation.run-battery",
@@ -1634,7 +1681,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-run-battery",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1651,8 +1698,10 @@
         "ordinal": 1,
         "does": "Run the full gate battery for the scope.",
         "handler": null,
-        "reference_script": "scripts/_check_* family — readiness, content-validity, drift, acceptance-sample"
-      }
+        "reference_script": "scripts/_check_* family — readiness, content-validity, drift, acceptance-sample",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.validation.update-scoreboard",
@@ -1661,7 +1710,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-update-scoreboard",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1678,8 +1727,10 @@
         "ordinal": 2,
         "does": "Update the per-dimension acceptance scoreboard.",
         "handler": null,
-        "note": "The artefact that told the truth on 2026-07-14 when everything else said 'complete'."
-      }
+        "note": "The artefact that told the truth on 2026-07-14 when everything else said 'complete'.",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.validation.report",
@@ -1688,7 +1739,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-report",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1704,8 +1755,10 @@
         "module": "module.validation",
         "ordinal": 3,
         "does": "Produce the validation report for researcher review.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.analysis-prep.build-projections",
@@ -1714,7 +1767,7 @@
       ],
       "kind": "step",
       "subject": "step-analysis-prep-build-projections",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1732,8 +1785,10 @@
         "does": "Build projections/extracts for downstream analysis.",
         "handler": null,
         "canonical": false,
-        "reconcile": "open.pipeline.module-8-and-prose"
-      }
+        "reconcile": "open.pipeline.module-8-and-prose",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "step.analysis-prep.update-tables",
@@ -1742,7 +1797,7 @@
       ],
       "kind": "step",
       "subject": "step-analysis-prep-update-tables",
-      "status": "RECONCILE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1760,8 +1815,10 @@
         "does": "Write the projections.",
         "handler": null,
         "canonical": false,
-        "reconcile": "open.pipeline.module-8-and-prose"
-      }
+        "reconcile": "open.pipeline.module-8-and-prose",
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "RECONCILE"
     },
     {
       "id": "step.findings.capture",
@@ -1770,7 +1827,7 @@
       ],
       "kind": "step",
       "subject": "step-findings-capture",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1786,8 +1843,10 @@
         "module": "module.findings",
         "ordinal": 1,
         "does": "Capture evidenced findings from validated lexicals — STATED vs INFERRED marked.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.findings.update-tables",
@@ -1796,7 +1855,7 @@
       ],
       "kind": "step",
       "subject": "step-findings-update-tables",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1812,8 +1871,10 @@
         "module": "module.findings",
         "ordinal": 2,
         "does": "Write findings.",
-        "handler": null
-      }
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
     },
     {
       "id": "step.findings.validate",
@@ -1822,7 +1883,7 @@
       ],
       "kind": "step",
       "subject": "step-findings-validate",
-      "status": "LIVE",
+      "status": "INACTIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1838,7 +1899,42 @@
         "module": "module.findings",
         "ordinal": 3,
         "does": "Validate — every finding verse-grounded and traceable.",
-        "handler": null
+        "handler": null,
+        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
+      },
+      "_parked_from": "LIVE"
+    },
+    {
+      "id": "step.base.assign-cluster",
+      "governs": [
+        "base"
+      ],
+      "kind": "step",
+      "subject": "step-base-assign-cluster",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — 'check if the term has a cluster, if not, check if the term naturally belong in a cluster by comparing the terms in clusters — this assignment is done on the basis of a loose relationship and it is a judgement call. In the unlikely event that no cluster can be found, then it is flushed back to researcher for a decision.'",
+      "reference": "iba/docs/session-log-v1-20260716.md; researcher direction 2026-07-16",
+      "intent": "Assign a newly added term to its analysis group, or escalate to the researcher.",
+      "satisfaction": "Every term reaching base carries a cluster or an escalation.",
+      "validation": {
+        "axis": "C",
+        "check": "cluster-assigned-or-escalated",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "module": "module.base",
+        "ordinal": 9,
+        "does": "Assign the term to a cluster by comparing it against the terms in each cluster; escalate if none fits.",
+        "handler": null,
+        "reference_script": "NONE — previously done by hand, through chat (researcher 2026-07-16)",
+        "scope": "term-collection",
+        "⚠ scope_differs_from_its_module": "module.base's scope is ['book']. This step's scope is a COLLECTION OF TERMS (researcher 2026-07-16). It is an isolated, trigger-driven process inside base, not part of the book-wise derive-and-rebuild pass — see base.cluster-assignment.is_not_re_run.",
+        "implements": "base.cluster-assignment",
+        "cites": [
+          "base.cluster-assignment"
+        ]
       }
     }
   ]

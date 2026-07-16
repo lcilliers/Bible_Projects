@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.6",
+  "config_version": "0.1.7",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -421,23 +421,23 @@
     "DBSchema/*.json": "CAPTURED DATA. A register is an OBSERVATION of a live schema -- it is written by build_dbschema.py reading the DB, not authored, and it carries no rule envelope. It is declared under sections.tier_a_registers and hashed like any other file (so a hand-edit is still caught), but the kernel never envelope-validates it."
   },
   "last_change": {
-    "version": "0.1.6",
-    "at": "2026-07-16T09:56:37Z",
-    "why": "DBSchema.json captured: 110 tables / 1177 columns at schema 3.40.0, all described from live-data profiles; flip declaration pending -> authored and reconcile its hash",
+    "version": "0.1.7",
+    "at": "2026-07-16T19:15:52Z",
+    "why": "park the 89 study-noise items; correct base.definition to rule-governed judgement per researcher ruling; author the cluster-assignment method; repair the two gate_codes broken by the step.json rename",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
     "DBSchema/DBSchema.json": "b9d71f28c43d0755",
-    "process/base.json": "f40e03d1dab58a56",
-    "process/characteristics.json": "e9e801860ebc7c99",
-    "process/lexical.json": "b32690281e0311e3",
+    "process/base.json": "8bcd16671eee8052",
+    "process/characteristics.json": "81d7b2436118f5c6",
+    "process/lexical.json": "37ede6c9931f6e3f",
     "process/raw.json": "bf214488e14e44fd",
     "process/registry.json": "071ea5f0de357261",
     "utility/config-maintenance.json": "d58c8bd71f79d65b",
     "utility/DBSchema_maintenance.json": "95d9351fedc25ba8",
-    "utility/step.json": "ec2617be4c6f6681",
+    "utility/step.json": "58dbdf73bb8d26e1",
     "wide/enums.json": "1da80a87c38f1af3",
-    "wide/pipeline.json": "935026d22b924eee",
+    "wide/pipeline.json": "02c5fbfcb02c85ca",
     "wide/reconciliations.json": "f77de2d05adf0341"
   },
   "★ the_stage_chain": {
