@@ -385,6 +385,12 @@ def build(code: str, entry: dict, out_path: pathlib.Path, dry_run: bool) -> dict
     out_path.write_text(json.dumps(reg, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[write]    {out_path.relative_to(ROOT)}  "
           f"({out_path.stat().st_size / 1_048_576:.1f} MB)")
+    # The register lives under config/, so cfg_apply hashes it -- and this script is
+    # not cfg_apply.  The stale hash is the seed-hash gate doing its job (it is what
+    # catches a hand-edit); it is not weakened for our convenience.  Reconcile it:
+    print("\n[next]     the config hash for this file is now stale -- reconcile it:\n"
+          f'           python iba/scripts/cfg_apply.py --sync --why "recaptured {code} '
+          f'@ {reg["schema_version"]}"')
     return reg
 
 

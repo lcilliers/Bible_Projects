@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.5",
+  "config_version": "0.1.6",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -401,9 +401,9 @@
     "tier_a_registers": [
       {
         "file": "DBSchema.json",
-        "status": "pending",
+        "status": "authored",
         "kind": null,
-        "note": "CAPTURED DATA, not a rulebook -- the live schema of database/bible_research.db, one file per database. Carries no rule envelope (same class as reconciliations.json); the kernel does not glob DBSchema/, which is correct. Governed by utility/DBSchema_maintenance.json. `pending` until build_dbschema.py first writes it."
+        "note": "CAPTURED DATA, not a rulebook -- the live schema of database/bible_research.db at schema 3.40.0, captured 2026-07-16: 110 tables, 1177 columns, 77 FKs, 6 checks, 169 indexes, 4 triggers, 2 views -- every table and column described from a profile of the live data. One file per database. Carries no rule envelope (same class as reconciliations.json); the kernel does not glob DBSchema/, which is correct. Rebuilt by: python iba/scripts/build_dbschema.py --db bible_research. Governed by utility/DBSchema_maintenance.json."
       }
     ]
   },
@@ -421,12 +421,13 @@
     "DBSchema/*.json": "CAPTURED DATA. A register is an OBSERVATION of a live schema -- it is written by build_dbschema.py reading the DB, not authored, and it carries no rule envelope. It is declared under sections.tier_a_registers and hashed like any other file (so a hand-edit is still caught), but the kernel never envelope-validates it."
   },
   "last_change": {
-    "version": "0.1.5",
-    "at": "2026-07-16T09:32:28Z",
-    "why": "add the DBSchema register + util.dbschema maintenance rules; dedupe the duplicated enum.governs value 'raw'",
+    "version": "0.1.6",
+    "at": "2026-07-16T09:56:37Z",
+    "why": "DBSchema.json captured: 110 tables / 1177 columns at schema 3.40.0, all described from live-data profiles; flip declaration pending -> authored and reconcile its hash",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
+    "DBSchema/DBSchema.json": "b9d71f28c43d0755",
     "process/base.json": "f40e03d1dab58a56",
     "process/characteristics.json": "e9e801860ebc7c99",
     "process/lexical.json": "b32690281e0311e3",
