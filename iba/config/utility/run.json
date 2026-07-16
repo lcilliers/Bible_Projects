@@ -1,0 +1,499 @@
+{
+  "utility_code": "run",
+  "tier": "A",
+  "name": "Run — the work package",
+  "doc": "run.md",
+  "meta": {
+    "purpose": "A WORK PACKAGE is one unit of work the researcher asks for: 'create a new word', 'refetch a term', 'validate a book'. It starts with a PowerShell script, moves through a list of sub-processes in order, and validates at the end. This component declares the work packages, the PowerShell script that starts each one, and the SEQUENCE LIST each one runs. Nothing else.",
+    "the_shape": "Researcher 2026-07-16: 'think of the stream as a work package with a workflow. it starts, moves the modules that get their scope from configs, perform tasks and validate at the end. each work package start with a PS script from run.json.'",
+    "★ scope_comes_from_the_run": "A module does NOT own a scope. Researcher 2026-07-16: 'module scope will be determined by the context of the run.' The work package says what it is running over — one word, one term, one book — and every module in its sequence inherits that. `raw` is never book-scoped; it is word- or term-scoped. `base` is not one integrated process but a collection of processes with various scopes, likely called BY another process. A per-book validation belongs to a per-book work package, not to a book-shaped module.",
+    "envelope": "Every item carries the common rule envelope — see ../_manifest.json meta.envelope.",
+    "boundary": {
+      "util.run (this file)": "WHAT work packages exist, what starts each, and in what order its sub-processes run.",
+      "wide/pipeline.json": "WHAT each module and step IS. This file sequences them; it does not define them.",
+      "the process files": "The RULES each sub-process obeys. Cited from the sequence, never restated here."
+    },
+    "nodes": {
+      "process": "How a work package runs: the sequence list, scope from context, the trigger, the end validation.",
+      "entities": "The work package and the run record.",
+      "output": "The run report.",
+      "validation": "The gates on a run.",
+      "naming": "Naming parameters.",
+      "filing": "Filing parameters."
+    },
+    "open": [
+      {
+        "id": "open.run.handler-contract",
+        "issue": "Every step in pipeline.json declares `handler: null`. Nothing says what a handler is, what it is given, or what it gives back. The sequence list below can name a step but cannot yet call one.",
+        "recommendation": "Define it before any Python is written: a handler takes (run context, scope, config) and returns (outcome, rows touched, gate results). Stubs exist so the handles are in place; the contract is not agreed.",
+        "resolve_by": "researcher decision — blocks the Python build-out"
+      },
+      {
+        "id": "open.run.trigger-mechanism",
+        "issue": "Researcher 2026-07-16: a raw validation may find 'it is a new term, that need a cluster. This triggers the assign cluster routine in the base.' So a sub-process in one module CALLS a routine in another, mid-sequence. That is a trigger, not a dependency, and the config has no way to express one.",
+        "recommendation": "Declare the trigger on the sequence entry that raises it (`raises`) and on the routine that answers it (`triggered_by`), so both ends are visible. Modelled that way below and MARKED FOR REVIEW.",
+        "resolve_by": "researcher decision"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "ent.run.work-package",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "entity",
+      "subject": "work-package",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "One unit of work the researcher asks for. It names the PowerShell script that starts it, the parameters it takes, what it runs over, and the ordered list of sub-processes it moves through.",
+      "satisfaction": "Every work package resolves to a real PS script, and every sub-process in its sequence resolves to a real step id.",
+      "validation": {
+        "axis": "C",
+        "check": "work-package-resolves",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "grain": "one entry per work package",
+        "identity": "code",
+        "holds": [
+          "code",
+          "ps_script",
+          "params",
+          "runs_over",
+          "sequence"
+        ],
+        "sequence_entry_holds": [
+          "step — the step id in pipeline.json",
+          "config — the component holding its rules",
+          "module — the module it belongs to",
+          "scope — what THIS entry runs over, inherited from runs_over unless stated",
+          "raises — a trigger this entry can fire (optional)"
+        ],
+        "★ loaded_in_memory": "Researcher 2026-07-16: 'run.json must have a sequence list of all the sub processes and their configs, that is loaded in memory. this sub processes are cross referenced to the configs.' The PS script loads the sequence once at the start of the package and works from it.",
+        "work_packages": [
+          {
+            "code": "new-word",
+            "name": "Create a new registry word and build it out",
+            "ps_script": "iba/ps/New-Word.ps1",
+            "status": "STUB — the handles exist; nothing is built out",
+            "params": [
+              {
+                "name": "Word",
+                "required": true,
+                "note": "the English inner-being word"
+              },
+              {
+                "name": "Source",
+                "required": true,
+                "note": "why it is being registered — feeds registry.growth"
+              },
+              {
+                "name": "Anchors",
+                "required": false,
+                "note": "explicit Strong's codes; when given, term discovery is skipped"
+              },
+              {
+                "name": "IncludeRelated",
+                "required": false,
+                "default": false,
+                "note": "raw.include-related — default off"
+              },
+              {
+                "name": "DryRun",
+                "required": false,
+                "default": false
+              }
+            ],
+            "runs_over": "word",
+            "sequence": [
+              {
+                "step": "step.registry.create-new-item",
+                "config": "process/registry.json",
+                "module": "module.registry",
+                "scope": "word",
+                "does": "Create the registry entry for the English word."
+              },
+              {
+                "step": "step.registry.update-tables",
+                "config": "process/registry.json",
+                "module": "module.registry",
+                "scope": "word",
+                "does": "Write the word to the registry tables."
+              },
+              {
+                "step": "step.raw.get-strongs-by-word",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "word",
+                "does": "Get the list of terms the English word maps to, from STEP."
+              },
+              {
+                "step": "step.raw.get-term-by-strongs",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "term",
+                "does": "Get each term and its meaning — gloss, sub-glosses, definition."
+              },
+              {
+                "step": "step.raw.get-related-terms",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "term",
+                "does": "Get each term's related words and root family."
+              },
+              {
+                "step": "step.raw.get-verses",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "term",
+                "does": "Get every verse where each term occurs."
+              },
+              {
+                "step": "step.raw.get-morphology",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "term",
+                "does": "Get the per-word interlinear for each verse fetched."
+              },
+              {
+                "step": "step.raw.update-tables",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "word",
+                "does": "Write all the tables — terms, related terms, meaning, verses, morphology.",
+                "raises": "trigger.new-term-needs-cluster",
+                "⚠ REVIEW": "The trigger is modelled here because this is where a NEW TERM first exists. Researcher to confirm whether it fires from update-tables or from raw's validation."
+              },
+              {
+                "step": "step.base.assign-cluster",
+                "config": "process/base.json",
+                "module": "module.base",
+                "scope": "term-collection",
+                "does": "Put each new term in an analysis group, or escalate to the researcher.",
+                "triggered_by": "trigger.new-term-needs-cluster",
+                "note": "Called BY this package, not a stage of it — base is a collection of routines (researcher 2026-07-16)."
+              },
+              {
+                "step": "step.raw.validate",
+                "config": "process/raw.json",
+                "module": "module.raw",
+                "scope": "word",
+                "does": "Back to raw — validate everything that was written."
+              },
+              {
+                "step": "step.registry.validate",
+                "config": "process/registry.json",
+                "module": "module.registry",
+                "scope": "word",
+                "does": "Back to registry — validate the word, INCLUDING that every one of its terms has a cluster."
+              },
+              {
+                "step": "step.registry.signoff",
+                "config": "process/registry.json",
+                "module": "module.registry",
+                "scope": "word",
+                "does": "Sign the word off.",
+                "⚠ REVIEW": "step.registry.signoff DOES NOT EXIST YET. Named here because the sequence needs it (researcher: 'then back to register to validate ... registry - sign off'). To be authored in registry.json, which the researcher is taking separately."
+              }
+            ]
+          }
+        ],
+        "⚠ REVIEW": "ONE work package is declared. The researcher also described a direct PS call to fetch a single term or all its related terms — not modelled here, because its sequence has not been described."
+      }
+    },
+    {
+      "id": "ent.run.record",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "entity",
+      "subject": "run-record",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "What actually ran: which work package, over what, under which config version, what it touched, and how it ended. Without it 'the config that ran' is an assumption.",
+      "satisfaction": "Every run writes one record, pinned to a config version, before it does any work.",
+      "validation": {
+        "axis": "C",
+        "check": "run-recorded",
+        "severity": "red",
+        "enforcement": "db:not-null"
+      },
+      "spec": {
+        "grain": "one row per run",
+        "holds": [
+          "run_id",
+          "work_package",
+          "params",
+          "runs_over",
+          "config_version",
+          "started_at",
+          "ended_at",
+          "outcome",
+          "gate_results"
+        ],
+        "cites": [
+          "cfgmaint.version-pinning"
+        ],
+        "⚠ REVIEW": "The live DB already carries engine_run_log, word_run_state and term_fetch_log. Whether the new run record replaces, wraps or ignores them is not decided."
+      }
+    }
+  ],
+  "process": [
+    {
+      "id": "run.work-package-is-the-unit",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "principle",
+      "subject": "work-package",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Make the work package the thing that runs. A module is not started on its own; a work package starts, moves through its sub-processes, and validates at the end.",
+      "satisfaction": "Nothing runs except as a sub-process of a declared work package.",
+      "validation": {
+        "axis": "C",
+        "check": "run-is-a-work-package",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "A work package = a PS script + parameters + what it runs over + an ordered sequence of sub-processes + a validation at the end.",
+        "cites": [
+          "ent.run.work-package"
+        ]
+      }
+    },
+    {
+      "id": "run.scope-from-context",
+      "governs": [
+        "util.run",
+        "raw",
+        "base",
+        "registry"
+      ],
+      "kind": "principle",
+      "subject": "run-scope",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — 'raw is never book scoped, it is word or term scoped. base is not one integrated process, it is a collection of different processes with various scopes, it is likely to be called by another process. A per book validation will be associated with a PS run that is per book. module scope will be determined by the context of the run.'",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Take scope off the module and put it on the run. What a module runs over is decided by the work package that called it, not fixed in the module's own declaration.",
+      "satisfaction": "No module declares a fixed scope; every sequence entry states what it runs over, inherited from the work package unless overridden.",
+      "validation": {
+        "axis": "C",
+        "check": "scope-from-run-context",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "The work package says what it runs over. Every module in its sequence inherits that, unless the sequence entry says otherwise.",
+        "what_this_corrects": {
+          "module.raw": "declared scope ['term','book'] — WRONG. Raw is word- or term-scoped, never book.",
+          "module.base": "declared scope ['book'] — WRONG. Base is a collection of routines with various scopes, called by other processes."
+        },
+        "the_per_book_case": "A per-book validation is a per-book WORK PACKAGE, not a book-shaped module."
+      }
+    },
+    {
+      "id": "run.sequence-is-loaded",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "principle",
+      "subject": "run-sequence",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Keep the order of work in config and not in the script. The PS script loads its sequence from here at the start of the package and works from it — so the order of work is a config change, never a code change.",
+      "satisfaction": "The PS script contains no step order of its own; it reads the sequence list.",
+      "validation": {
+        "axis": "C",
+        "check": "sequence-loaded-not-coded",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "run.json holds the sequence list of every sub-process and its config. It is loaded into memory at the start of the work package. Each sub-process is cross-referenced to the config that holds its rules.",
+        "cites": [
+          "ent.run.work-package"
+        ]
+      }
+    },
+    {
+      "id": "run.ends-in-validation",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "principle",
+      "subject": "run-end-validation",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Make every work package end by proving what it did, not by finishing its last task.",
+      "satisfaction": "Every work package's sequence ends with a validation sub-process.",
+      "validation": {
+        "axis": "C",
+        "check": "package-ends-validated",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "statement": "A work package is done when its end validation passes — not when its last task returns.",
+        "the_new_word_case": "back to raw to validate everything, then back to registry to validate (including that every term has a cluster), then sign off."
+      }
+    }
+  ],
+  "output": [
+    {
+      "id": "out.run.report",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "output",
+      "subject": "run-report",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Report what the work package did, what it touched, and which gates it passed.",
+      "satisfaction": "One report per run.",
+      "validation": {
+        "axis": "C",
+        "check": "artefact-exists",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "holds": [
+          "run_id",
+          "work package",
+          "params",
+          "per-sub-process outcome",
+          "gate results",
+          "escalations raised"
+        ]
+      }
+    }
+  ],
+  "validation": [
+    {
+      "id": "gate.run.package-resolves",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "gate",
+      "subject": "work-package",
+      "status": "INACTIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Refuse a work package whose PS script or whose sequence names something that does not exist.",
+      "satisfaction": "Every ps_script is a real file; every sequence step id and config path resolves.",
+      "validation": {
+        "axis": "C",
+        "check": "work-package-resolves",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per work package",
+        "implements": "ent.run.work-package",
+        "status_note": "INACTIVE until implemented. It would currently FAIL: step.registry.signoff does not exist."
+      }
+    },
+    {
+      "id": "gate.run.scope-declared",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "gate",
+      "subject": "run-scope",
+      "status": "INACTIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Catch a sub-process running without a declared scope, or a module declaring one of its own.",
+      "satisfaction": "Every sequence entry has a scope; no module declares a fixed scope.",
+      "validation": {
+        "axis": "C",
+        "check": "scope-from-run-context",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "scope": "per sequence entry",
+        "implements": "run.scope-from-context",
+        "status_note": "INACTIVE until implemented."
+      }
+    }
+  ],
+  "naming": [
+    {
+      "id": "naming.run.ids",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "pattern",
+      "subject": "run-ids",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This utility's naming parameters only.",
+      "satisfaction": "Run rule ids use the declared prefixes.",
+      "validation": {
+        "axis": "C",
+        "check": "id-prefix",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "prefixes": {
+          "process": "run.",
+          "entity": "ent.run.",
+          "output": "out.run.",
+          "gate": "gate.run.",
+          "trigger": "trigger."
+        },
+        "ps_scripts": "iba/ps/<Verb>-<Noun>.ps1 — PowerShell convention, e.g. New-Word.ps1"
+      }
+    }
+  ],
+  "filing": [
+    {
+      "id": "filing.run.outputs",
+      "governs": [
+        "util.run"
+      ],
+      "kind": "pattern",
+      "subject": "run-filing",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 — comments on iba/docs/stream-registry-word-buildout-v1-20260716.md",
+      "reference": "iba/docs/stream-registry-word-buildout-v1-20260716.md (researcher comments)",
+      "intent": "Where run artefacts are filed.",
+      "satisfaction": "Run reports land in the declared tree.",
+      "validation": {
+        "axis": "C",
+        "check": "output-path",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "output_tree": "outputs/runs/",
+        "ps_tree": "iba/ps/",
+        "handler_tree": "iba/modules/"
+      }
+    }
+  ]
+}

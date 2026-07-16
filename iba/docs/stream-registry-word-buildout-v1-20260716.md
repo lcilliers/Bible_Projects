@@ -279,3 +279,25 @@ M11 / M27 — **registry is word-scoped · raw is term|book · base is book · c
 term-collection.** One run for one word crosses all four. A per-word signoff cannot be satisfied
 by a per-book module completing, because a word's terms scatter across books and a book holds
 terms from many words. **The unit model has to be settled before the handlers can be written.**
+
+
+researcher comments:
+
+think of the stream as a work package with a workflow. it starts move the modules that get their scope from configs perform tasks and validate at the end.
+
+each work package start with a PS script from run.json.  Your M1 - M4 is correct, it needs building out - create a PS script stub for create new word, reference it is run.json, and create all the config element for it.
+
+run.json must have a sequence list of all the sub processes and their configs, that is loaded in memory.  this sub processes are cross referenced to the configs
+
+Hop 1 - think what need to be in place, and what happens for a new word create. ensure the config is ready with it
+
+after create new word in registry, next is to get the list of terms from STEP, this is all raw work. this is a whole series of steps to get the terms, get the verses, get the meaning of the term, and then update all the tables.  all the configs for validations must be set.  One of them may be that it is a new term, that need a cluster.  This triggers the assign cluster routine in the base. again, task processed, rules apply - all to be in config
+
+then back to raw the validate everything
+then back to register to validate (including rule that terms must have a cluster)
+
+my suggestion is that work step by step, document the missing configs and their missing entries if unsure mark the config for review, create stubs for the powershell and method scripts (without building anything out) - cross reference these so you have the handles - and describe the entire process for this run through the configs - in detail.  this will provide the basis for you to create and update all the configs, and finally the PS and Python code.
+
+One note: raw is never book scoped, it is word or term scoped. base is not one integrated process, it is a collection of different processes with various scopes, it is likely to be called by another process.  A per book validation will be associated with a PS run that is per book. module scope will be determined by the context of the run.
+
+Please keep terminology for all the stuff you create understandable, you tend to use terminology that only you can understand.

@@ -368,7 +368,7 @@
         "characteristics"
       ],
       "kind": "gate",
-      "status": "INACTIVE",
+      "status": "LIVE",
       "version": 1,
       "authority": "char.candidate-requires-verse-record",
       "reference": "wa-db-integrity-definition-authoritative-v1 I2",
@@ -385,9 +385,8 @@
         "implements": "char.candidate-requires-verse-record",
         "on_fail": "halt and restore — repair, do not proceed",
         "enforcement_note": "db:fk carries the referential half; the gate carries the conditional half (must be ACTIVE, not delete_flagged).",
-        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
-      },
-      "_parked_from": "LIVE"
+        "⚠ unparked_20260716": "MIS-PARKED earlier the same day by a park-by-governs sweep. This gate GOVERNS characteristics but GUARDS base (mgate.base-post-candidate). A rule can govern one process and guard another; the sweep only read `governs`."
+      }
     },
     {
       "id": "gate.char.screen0",

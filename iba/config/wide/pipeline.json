@@ -163,7 +163,7 @@
       "kind": "module",
       "subject": "module-registry",
       "status": "LIVE",
-      "version": 2,
+      "version": 3,
       "authority": "researcher ruling 2026-07-15 ('the registry create the starting point')",
       "reference": "plan §3.3.4",
       "intent": "Maintain the registry — the study's starting point and outer bound.",
@@ -177,11 +177,9 @@
       "spec": {
         "ordinal": 0,
         "enabled": true,
-        "scope": [
-          "registry"
-        ],
         "note": "Was folded into module.2 (seed maintenance). Split out 2026-07-15: the registry is the STARTING POINT, the seed is BASE. Two stages, two modules.",
-        "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here"
+        "produces": "the terms fetch retrieves — nothing enters the study that is not reachable from here",
+        "★ scope_removed_20260716": "was ['registry']. A module does not own a scope — the run does (researcher 2026-07-16: 'module scope will be determined by the context of the run'). Scope comes from the work package. See run.scope-from-context."
       }
     },
     {
@@ -193,7 +191,7 @@
       "kind": "module",
       "subject": "module-raw",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "plan §3.3.4 (1 Get data from STEP)",
       "reference": "plan §3.3.4",
       "intent": "Retrieve from STEP and store the raw measure layer — verse, morphology, lexicon.",
@@ -207,13 +205,10 @@
       "spec": {
         "ordinal": 1,
         "enabled": true,
-        "scope": [
-          "term",
-          "book"
-        ],
         "reference_script": "engine audit_word + scripts/word_study_extract.py — substantially rewritten (plan §2.4)",
         "note": "Spans TWO processes (fetch = what to retrieve, raw = what is stored). See open.pipeline.raw-fetch-coupling — deliberate, not an oversight.",
-        "⚠ currently_also_does": "SPAN-LINKING (audit_word 'inserts + span-links in one pass'). That is base-layer work bundled into ingest — it belongs to the missing span module. See meta.★ THE_SPAN_LAYER_IS_THE_ANSWER."
+        "⚠ currently_also_does": "SPAN-LINKING (audit_word 'inserts + span-links in one pass'). That is base-layer work bundled into ingest — it belongs to the missing span module. See meta.★ THE_SPAN_LAYER_IS_THE_ANSWER.",
+        "★ scope_removed_20260716": "was ['term', 'book']. A module does not own a scope — the run does (researcher 2026-07-16: 'module scope will be determined by the context of the run'). Raw is word- or term-scoped, NEVER book. See run.scope-from-context."
       }
     },
     {
@@ -224,7 +219,7 @@
       "kind": "module",
       "subject": "module-base",
       "status": "LIVE",
-      "version": 2,
+      "version": 3,
       "authority": "researcher ruling 2026-07-15 (the stage chain)",
       "reference": "iba/config/wide/pipeline.json meta.★ THE_SPAN_LAYER_IS_THE_ANSWER",
       "intent": "THE PREPARATION STAGE. Derive from raw everything the lexical read needs — span master, stem master, char seed, passages — and hand it over under signoff.",
@@ -238,9 +233,6 @@
       "spec": {
         "ordinal": 2,
         "enabled": true,
-        "scope": [
-          "book"
-        ],
         "produces": [
           "the span master (the join key)",
           "the stem master",
@@ -255,7 +247,8 @@
           "the seed half of module.2.seed"
         ],
         "reference_script": "audit_word's span-backpop + new build for the stem master (none exists — plan §4)",
-        "★ note": "This is the module the researcher identified as missing. It did not exist: spans were an audit_word side-effect behind --skip-span-backpop, stems had no module at all, and the seed sat in an interpretation process."
+        "★ note": "This is the module the researcher identified as missing. It did not exist: spans were an audit_word side-effect behind --skip-span-backpop, stems had no module at all, and the seed sat in an interpretation process.",
+        "★ scope_removed_20260716": "was ['book']. A module does not own a scope — the run does (researcher 2026-07-16: 'module scope will be determined by the context of the run'). Base is not one integrated process; it is a collection of routines with various scopes, likely called by another process. See run.scope-from-context."
       }
     },
     {
@@ -330,7 +323,7 @@
       ],
       "kind": "module",
       "subject": "module-validation",
-      "status": "INACTIVE",
+      "status": "LIVE",
       "version": 1,
       "authority": "plan §3.2 ('Data validation is dual-role')",
       "reference": "plan §3.2",
@@ -350,9 +343,8 @@
         ],
         "dual_role": "It is BOTH a standalone module AND the gate every other module calls. This is where 'done = verse-level validity, not coverage' is enforced.",
         "note": "A utility, not a study process — which is why it governs util.validation.",
-        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
-      },
-      "_parked_from": "LIVE"
+        "⚠ unparked_20260716": "MIS-PARKED earlier the same day by a park-by-governs sweep. module.validation is BOTH a module and the gate every other module calls — the researcher's run needs it at 'validate all DB tables'."
+      }
     },
     {
       "id": "module.analysis-prep",
@@ -1681,7 +1673,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-run-battery",
-      "status": "INACTIVE",
+      "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1699,9 +1691,8 @@
         "does": "Run the full gate battery for the scope.",
         "handler": null,
         "reference_script": "scripts/_check_* family — readiness, content-validity, drift, acceptance-sample",
-        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
-      },
-      "_parked_from": "LIVE"
+        "⚠ unparked_20260716": "MIS-PARKED earlier the same day by a park-by-governs sweep. module.validation is BOTH a module and the gate every other module calls — the researcher's run needs it at 'validate all DB tables'."
+      }
     },
     {
       "id": "step.validation.update-scoreboard",
@@ -1710,7 +1701,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-update-scoreboard",
-      "status": "INACTIVE",
+      "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1728,9 +1719,8 @@
         "does": "Update the per-dimension acceptance scoreboard.",
         "handler": null,
         "note": "The artefact that told the truth on 2026-07-14 when everything else said 'complete'.",
-        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
-      },
-      "_parked_from": "LIVE"
+        "⚠ unparked_20260716": "MIS-PARKED earlier the same day by a park-by-governs sweep. module.validation is BOTH a module and the gate every other module calls — the researcher's run needs it at 'validate all DB tables'."
+      }
     },
     {
       "id": "step.validation.report",
@@ -1739,7 +1729,7 @@
       ],
       "kind": "step",
       "subject": "step-validation-report",
-      "status": "INACTIVE",
+      "status": "LIVE",
       "version": 1,
       "authority": "researcher ruling 2026-07-15 (step anchors for all processing units)",
       "reference": "iba/config/wide/pipeline.json",
@@ -1756,9 +1746,8 @@
         "ordinal": 3,
         "does": "Produce the validation report for researcher review.",
         "handler": null,
-        "⚠ parked": "PARKED 2026-07-16 — not in the registry-word -> terms -> verses -> meaning -> cluster stream. Parked so it cannot trip the stream's build. Not superseded, not wrong: unwired. Flip back to LIVE when its stage is taken up."
-      },
-      "_parked_from": "LIVE"
+        "⚠ unparked_20260716": "MIS-PARKED earlier the same day by a park-by-governs sweep. module.validation is BOTH a module and the gate every other module calls — the researcher's run needs it at 'validate all DB tables'."
+      }
     },
     {
       "id": "step.analysis-prep.build-projections",

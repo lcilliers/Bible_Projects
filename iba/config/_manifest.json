@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.7",
+  "config_version": "0.1.8",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -288,8 +288,9 @@
       },
       {
         "file": "run.json",
-        "status": "pending",
-        "kind": "utility"
+        "status": "authored",
+        "kind": "utility",
+        "note": "The WORK PACKAGE: what a run is, the PS script that starts it, and the sequence list of sub-processes it moves through, cross-referenced to their configs. 1 work package authored (new-word) as a STUB."
       },
       {
         "file": "validation.json",
@@ -421,23 +422,24 @@
     "DBSchema/*.json": "CAPTURED DATA. A register is an OBSERVATION of a live schema -- it is written by build_dbschema.py reading the DB, not authored, and it carries no rule envelope. It is declared under sections.tier_a_registers and hashed like any other file (so a hand-edit is still caught), but the kernel never envelope-validates it."
   },
   "last_change": {
-    "version": "0.1.7",
-    "at": "2026-07-16T19:15:52Z",
-    "why": "park the 89 study-noise items; correct base.definition to rule-governed judgement per researcher ruling; author the cluster-assignment method; repair the two gate_codes broken by the step.json rename",
+    "version": "0.1.8",
+    "at": "2026-07-16T20:08:09Z",
+    "why": "author utility/run.json — the work package, its PS script and its sequence list; take scope off the modules (it comes from the run context); unpark module.validation and gate.char.candidate-verse-record, both mis-parked",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
     "DBSchema/DBSchema.json": "b9d71f28c43d0755",
     "process/base.json": "8bcd16671eee8052",
-    "process/characteristics.json": "81d7b2436118f5c6",
+    "process/characteristics.json": "4decc189efeb2caf",
     "process/lexical.json": "37ede6c9931f6e3f",
     "process/raw.json": "bf214488e14e44fd",
     "process/registry.json": "071ea5f0de357261",
     "utility/config-maintenance.json": "d58c8bd71f79d65b",
     "utility/DBSchema_maintenance.json": "95d9351fedc25ba8",
+    "utility/run.json": "c5ac0259aff22427",
     "utility/step.json": "58dbdf73bb8d26e1",
     "wide/enums.json": "1da80a87c38f1af3",
-    "wide/pipeline.json": "02c5fbfcb02c85ca",
+    "wide/pipeline.json": "4bffeeca7700ca02",
     "wide/reconciliations.json": "f77de2d05adf0341"
   },
   "★ the_stage_chain": {
