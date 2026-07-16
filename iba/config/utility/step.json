@@ -173,13 +173,12 @@
       "id": "step.api-set",
       "governs": [
         "util.step",
-        "raw",
         "raw"
       ],
       "kind": "principle",
       "subject": "step-api-selection",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "researcher 2026-07-15 ('which STEP API to use, and if more than one, specify it')",
       "reference": "scripts/analytics/step_client.py; docs/step_setup.md",
       "intent": "Name the APIs and bind each to what it may source, so 'it came from STEP' is never an answer. There is more than one API and they are not interchangeable.",
@@ -303,13 +302,12 @@
       "id": "step.no-cache-so-cache-to-db",
       "governs": [
         "util.step",
-        "raw",
         "raw"
       ],
       "kind": "principle",
       "subject": "step-caching",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "plan §3.3.3 'STEP client — with results cached into the DB (read persisted lexicon/verse_morphology first)'; §4 'STEP is local, no cache'",
       "reference": "plan §3.3.3",
       "intent": "Read the DB before the wire. STEP holds no cache of its own, so the DB IS the cache — and the persisted raw layer is the authority, not the server.",
@@ -357,13 +355,12 @@
       "id": "step.completeness-oracle",
       "governs": [
         "util.step",
-        "raw",
         "raw"
       ],
       "kind": "principle",
       "subject": "step-completeness-oracle",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "archive/scripts/_check_step_truncation_sweep_20260622.py (STEP's reported TRUE total — the completeness oracle)",
       "reference": "outputs/markdown/wa-step-truncation-sweep-20260622.md",
       "intent": "Use the one thing STEP tells us for free and truthfully: on a FIRST CALL WITH NO RANGE it reports the TRUE total for a Strong's, even while capping returned rows at 60. That number is the oracle against which every fetch is proved.",
@@ -416,13 +413,12 @@
       "governs": [
         "util.step",
         "raw",
-        "raw",
         "registry"
       ],
       "kind": "principle",
       "subject": "step-multi-code-resolution",
       "status": "RECONCILE",
-      "version": 1,
+      "version": 2,
       "authority": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md (researcher decision pending since 2026-07-13)",
       "reference": "outputs/markdown/validation/wa-step-extract-multicode-resolver-bug-v1-20260713.md",
       "intent": "Settle how a Strong's that STEP splits into lettered siblings is resolved — currently a live, unfixed defect that silently drops verses from every multi-code term, programme-wide.",
@@ -514,13 +510,12 @@
       "id": "step.response-validation",
       "governs": [
         "util.step",
-        "raw",
         "raw"
       ],
       "kind": "principle",
       "subject": "step-response-validation",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "researcher ruling 2026-07-15: 'the configurator must include validation of the returned data. this must include the different components: term, meaning, related terms, verses with span for all terms (main and related)'",
       "reference": "research/discovery/{word}_step_data_{date}.json (the pull artefact); scripts/word_study_extract.py",
       "intent": "Validate what STEP actually returned, component by component — because STEP under-returns silently and a partial response is well-formed. Completeness arithmetic proves the COUNT; this proves the CONTENT.",
@@ -549,13 +544,12 @@
       "id": "step.pull-artefact",
       "governs": [
         "util.step",
-        "raw",
         "raw"
       ],
       "kind": "provenance",
       "subject": "step-pull-artefact",
       "status": "LIVE",
-      "version": 1,
+      "version": 2,
       "authority": "researcher 2026-07-15 ('I think there is a json written for each pull. so check that out'); verified 2026-07-15",
       "reference": "research/discovery/{word}_step_data_{YYYYMMDD}.json — 278 present as of 2026-07-15",
       "intent": "Record that a per-pull JSON already exists, what it does and does not capture, and why it is not yet the parity baseline it looks like.",

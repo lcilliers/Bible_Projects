@@ -1,0 +1,420 @@
+{
+  "utility_code": "dbschema",
+  "tier": "A",
+  "name": "DBSchema register maintenance",
+  "meta": {
+    "purpose": "The rules for capturing a database's schema into a DBSchema register, and the list of the databases that get one. The registers live in ../DBSchema/, ONE FILE PER DATABASE. Today there is one (bible_research); the new IBA database will be the second, and its arrival is an entry in ent.dbschema.database -- not a code change.",
+    "envelope": "Every item carries the common rule envelope -- see ../_manifest.json meta.envelope.",
+    "★ the_register_is_not_a_rulebook": "A DBSchema file is CAPTURED DATA -- an observation of what a live schema currently is. Its entries deliberately carry no rule envelope, the same way wide/reconciliations.json's do not (see cfg_kernel.py load(), the reconciliations exemption). The kernel globs only process/, utility/ and wide/, so it never tries to envelope-validate DBSchema/ -- which is the correct outcome, not an oversight. Per _manifest.json meta.envelope.validation.enforcement a DB constraint is a PROJECTION of a config rule, never a second definition of it: the register records what the projection currently IS. It never authors a rule.",
+    "boundary": {
+      "util.dbschema (this file)": "WHAT a schema register holds and HOW it is captured and kept current.",
+      "util.db (db.json, pending)": "HOW a database is reached -- connection, transaction, backup. A different subject."
+    },
+    "nodes": {
+      "process": "How a register is captured: from the live DB, descriptions from the data, preserve on rebuild, retire never delete.",
+      "entities": "The database list -- the registry that makes this multi-database.",
+      "output": "The register files themselves.",
+      "validation": "The gates: read-only source, counts match, staleness visible.",
+      "naming": "Naming parameters.",
+      "filing": "Filing parameters."
+    },
+    "open": [
+      {
+        "id": "open.dbschema.iba-db",
+        "issue": "The new IBA database does not exist yet. Whether this utility only CAPTURES it once built, or also BUILDS it from config, is unruled.",
+        "recommendation": "Capture only, for now. A register that also authors a schema would invert the direction of authority (see ★ the_register_is_not_a_rulebook).",
+        "resolve_by": "researcher decision, when the IBA DB is designed"
+      },
+      {
+        "id": "open.dbschema.description-review",
+        "issue": "A description derived from a data profile is model output banked into the config. Its profile sits beside it so it is checkable against the data, but nothing checks it is INSIGHTFUL.",
+        "recommendation": "Treat a description as a reviewable draft, not a ruling. `description_source` records whether it came from the profiler or the researcher; a rebuild never overwrites `researcher`.",
+        "resolve_by": "researcher review of the first captured register"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "ent.dbschema.database",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "entity",
+      "subject": "database-list",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "THE DATABASE LIST. Every database the programme holds, declared in one place, so a register can never exist for an undeclared database and adding the next one is an entry here rather than an edit to a script.",
+      "satisfaction": "Every database with capture=true has a current register file; every file in DBSchema/ traces back to an entry here.",
+      "validation": {
+        "axis": "C",
+        "check": "database-declared",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "grain": "one entry per database",
+        "holds": [
+          "code",
+          "path",
+          "db_role",
+          "status",
+          "description",
+          "schema_version_source",
+          "schema_file",
+          "capture"
+        ],
+        "databases": [
+          {
+            "code": "bible_research",
+            "path": "database/bible_research.db",
+            "db_role": "source",
+            "status": "LIVE",
+            "description": "The live study database. 110 tables, schema 3.40.0, ~766MB. The SOURCE: it is what the new IBA database will be built from. Its schema grew by accretion over the programme and was never designed as a whole, so its register is evidence of what is there -- not a template to copy.",
+            "schema_version_source": {
+              "method": "table",
+              "sql": "SELECT version_code FROM schema_version WHERE id=(SELECT MAX(id) FROM schema_version)",
+              "note": "NOT PRAGMA user_version -- that is 0 in this DB. Pattern reused from scripts/export_database_schema.py::get_schema_version."
+            },
+            "schema_file": "DBSchema/DBSchema.json",
+            "capture": true,
+            "access": "read-only -- opened file:...?mode=ro; capture never writes to a source DB"
+          },
+          {
+            "code": "iba",
+            "path": null,
+            "db_role": "target",
+            "status": "INACTIVE",
+            "description": "The new IBA database. DOES NOT EXIST YET -- declared now so the list is complete from the start and its arrival is a status flip plus a path, not a new mechanism. INACTIVE is enum.status's 'defined and correct, nothing uses it yet'.",
+            "schema_version_source": {
+              "method": "config",
+              "note": "the target's version comes FROM config -- it is built, not observed"
+            },
+            "schema_file": "DBSchema/DBSchema_iba.json",
+            "capture": false,
+            "note": "see open.dbschema.iba-db"
+          }
+        ],
+        "db_role_values": {
+          "source": "An existing database the programme reads. Its schema is OBSERVED.",
+          "target": "A database the programme will build. Its schema is DESIGNED, and the register records what was built."
+        },
+        "note": "db_role is named db_role, never `role` -- `role` already means something else in the study (recon.role-enum) and a second meaning is how a word ends up defined four ways."
+      }
+    }
+  ],
+  "process": [
+    {
+      "id": "dbschema.from-the-live-db",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "principle",
+      "subject": "schema-capture-source",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "A register is built by READING THE DATABASE, never by editing the previous register or copying a prior document. Workflow/schema/database-schema-v3.29.0 (72 tables) and -v3.35.0 both drifted from the live DB and nothing said so; the live DB is the only thing that cannot be out of date with itself.",
+      "satisfaction": "Every register records the schema_version, the exported_date and the object counts it read from the live DB.",
+      "validation": {
+        "axis": "C",
+        "check": "counts-match-live-db",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "captures": [
+          "tables",
+          "columns (name, type, notnull, default, pk)",
+          "primary keys",
+          "foreign keys",
+          "check constraints",
+          "indexes (with their columns)",
+          "triggers",
+          "views",
+          "row counts"
+        ],
+        "why_this_list": "The first five were absent from scripts/export_database_schema.py, which read only PRAGMA table_info's first five fields and never called foreign_key_list or index_info. FKs and CHECKs survived only as text inside the CREATE TABLE string, which is not queryable."
+      }
+    },
+    {
+      "id": "dbschema.description-from-data",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "principle",
+      "subject": "schema-description-source",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher ruling 2026-07-16 -- 'derive the description of the column and the table from the current data'",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "A column's description is derived from PROFILING ITS ACTUAL VALUES -- not from the prior documentation, and not from guessing at its name. The profile is kept in the register beside the description, so any description can be checked against the data that produced it.",
+      "satisfaction": "Every described column carries a `profile`, and the description asserts nothing the profile does not show.",
+      "validation": {
+        "axis": "I",
+        "check": "description-grounded-in-profile",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "profile_holds": [
+          "null_count",
+          "null_rate",
+          "distinct_count",
+          "min",
+          "max",
+          "top_values (categorical columns only)",
+          "scope",
+          "rows_scanned"
+        ],
+        "categorical_cutoff": 200,
+        "categorical_cutoff_why": "Top values of a near-unique column are noise. word_registry.word is 218 distinct over 222 rows -- its min/max and distinct ratio say everything; a top-8 list says nothing.",
+        "sampling": {
+          "exact_below_rows": 50000,
+          "method_above": "deterministic rowid stride (WHERE rowid % k = 0) -- reproducible, which a random sample is not",
+          "affected": "the few large tables (finding ~343k, wa_verse_records ~230k)"
+        },
+        "★ scope_is_always_stamped": "Every profile records scope=exact|sampled and rows_scanned. A sampled statistic must never read as an exact one -- 'only three values exist' from a 15% sample is a confidently wrong description.",
+        "the_axis": "The profiling is [C] -- deterministic, and it is nearly all of the work. Only the description SENTENCE is [I]."
+      }
+    },
+    {
+      "id": "dbschema.preserve-descriptions",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "guardrail",
+      "subject": "schema-description-merge",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "Rebuilding a register is routine; the descriptions are the expensive part of it. A rebuild carries every existing description across, matched on (table, column) BY NAME -- never by position, since a column can be added mid-table and would silently shift every description onto the wrong column.",
+      "satisfaction": "A rebuild against an unchanged DB leaves every description byte-for-byte identical.",
+      "validation": {
+        "axis": "C",
+        "check": "rebuild-preserves-descriptions",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "match_on": "(table, column) by name",
+        "description_source": {
+          "profiler": "derived from the data profile -- a reviewable draft",
+          "researcher": "written or corrected by the researcher -- NEVER overwritten by a rebuild"
+        }
+      }
+    },
+    {
+      "id": "dbschema.retire-never-delete",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "guardrail",
+      "subject": "schema-object-retirement",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "A table or column that has gone from the DB moves to a `retired` block with the date and its last known description -- it is not dropped from the register. What a field USED to be is how an old artefact is read back; deleting it silently loses that.",
+      "satisfaction": "No object ever disappears from a register between two rebuilds; it appears under `retired`.",
+      "validation": {
+        "axis": "C",
+        "check": "removed-objects-retired",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "mirrors": "enum.status LEGACY -- a superseded thing is marked, not deleted"
+      }
+    },
+    {
+      "id": "dbschema.read-only-source",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "principle",
+      "subject": "schema-source-access",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "Capture opens a source database READ-ONLY. Reading a schema must never be able to change one -- and the study DB has already been lost once (2026-06-03).",
+      "satisfaction": "The connection is opened file:...?mode=ro; the source file's size and mtime are unchanged by a run.",
+      "validation": {
+        "axis": "C",
+        "check": "source-opened-read-only",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "connection": "sqlite3.connect(f'file:{path}?mode=ro', uri=True)"
+      }
+    },
+    {
+      "id": "dbschema.staleness-visible",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "principle",
+      "subject": "schema-register-staleness",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "Workflow/schema/database-schema-v3.35.0-20260702.json -- 5 versions stale with nothing to say so",
+      "intent": "A register records the schema_version and exported_date it captured, so it can be compared against the live DB and found stale. This is the whole reason the previous schema files failed: v3.29.0 (72 tables) and v3.35.0 sat on disk reading as current while the DB moved to 3.40.0 and 110 tables. A file that cannot be found stale will be believed.",
+      "satisfaction": "register.schema_version == the live DB's schema_version, or the difference is reported.",
+      "validation": {
+        "axis": "C",
+        "check": "register-version-matches-live",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "compare": "register.schema_version + table_count vs the live DB, on demand"
+      }
+    }
+  ],
+  "output": [
+    {
+      "id": "out.dbschema.register",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "output",
+      "subject": "schema-register-file",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "The register file itself -- one per database, the current shape of that database as config.",
+      "satisfaction": "The file exists at the entry's schema_file, and its counts match the live DB.",
+      "validation": {
+        "axis": "C",
+        "check": "file-exists-and-current",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "written_by": "iba/scripts/build_dbschema.py",
+        "shape": "database · database_path · schema_version · exported_date · table_count · tables{} · views{} · triggers{} · retired{}",
+        "lineage": "the shape of Workflow/schema/database-schema-v3.29.0-20260608.json, extended with primary_key, foreign_keys, checks, index columns, descriptions and profiles"
+      }
+    }
+  ],
+  "naming": [
+    {
+      "id": "naming.dbschema.ids",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "pattern",
+      "subject": "dbschema-ids",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "layout v2 §2.3",
+      "reference": "iba/docs/iba-configurator-layout-v2-20260715.md §2.3",
+      "intent": "This utility's naming parameters only.",
+      "satisfaction": "DBSchema rule ids use the declared prefixes.",
+      "validation": {
+        "axis": "C",
+        "check": "id-prefix",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "prefixes": {
+          "process": "dbschema.",
+          "entity": "ent.dbschema.",
+          "output": "out.dbschema.",
+          "gate": "gate.dbschema."
+        },
+        "register_file": "DBSchema/DBSchema.json for the first database; DBSchema/DBSchema_<code>.json thereafter",
+        "⚠ basename_must_be_unique": "Not cosmetic. cfg_apply.py check_seed_declared builds its set of actual files from p.name (BASENAMES) while check_hashes keys on relative paths -- so a register basename colliding with any other config file would be silently 'declared' by that other file's entry."
+      }
+    }
+  ],
+  "filing": [
+    {
+      "id": "filing.dbschema.register-home",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "pattern",
+      "subject": "dbschema-filing",
+      "status": "LIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "Where registers live, and why they carry no -vN suffix.",
+      "satisfaction": "Every register is at iba/config/DBSchema/, one per database.",
+      "validation": {
+        "axis": "C",
+        "check": "file-in-declared-home",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "home": "iba/config/DBSchema/",
+        "one_file_per_database": true,
+        "no_version_suffix": "A register is a LIVING file rebuilt in place -- its version is the schema_version it records, and its history is git. Dating the filename is what produced four stale schema exports nobody could tell apart."
+      }
+    }
+  ],
+  "validation": [
+    {
+      "id": "gate.dbschema.counts-match",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "gate",
+      "subject": "schema-register-completeness",
+      "status": "INACTIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "The register accounts for every object in the live DB -- no table, column, FK, check, index, trigger or view missing.",
+      "satisfaction": "Register counts == live DB counts, in both directions.",
+      "validation": {
+        "axis": "C",
+        "check": "counts-match-live-db",
+        "severity": "red",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "status_note": "INACTIVE until build_dbschema.py --verify implements it. A gate declared LIVE that nothing runs is the failure this programme exists to end (_manifest.json meta.open.gates-declared-not-implemented).",
+        "cites": [
+          "dbschema.from-the-live-db"
+        ]
+      }
+    },
+    {
+      "id": "gate.dbschema.description-complete",
+      "governs": [
+        "util.dbschema"
+      ],
+      "kind": "gate",
+      "subject": "schema-description-coverage",
+      "status": "INACTIVE",
+      "version": 1,
+      "authority": "researcher 2026-07-16 -- 'bring the schema json up to date by reading the current database'; one file per database",
+      "reference": "iba/config/utility/DBSchema_maintenance.json; iba/scripts/build_dbschema.py",
+      "intent": "Reports how many tables and columns still have no description -- coverage is a number, not an impression.",
+      "satisfaction": "Every table and column carries a description.",
+      "validation": {
+        "axis": "C",
+        "check": "description-present",
+        "severity": "amber",
+        "enforcement": "gate"
+      },
+      "spec": {
+        "status_note": "INACTIVE until build_dbschema.py --verify implements it.",
+        "cites": [
+          "dbschema.description-from-data"
+        ]
+      }
+    }
+  ]
+}

@@ -38,7 +38,7 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 ├── scripts/                      ← Utility/maintenance scripts (see §6 for prefix conventions)
 │   └── analytics/                ← STEP/Zotero clients, db_client, word_export
 ├── database/
-│   ├── bible_research.db         ← SQLite (~165 MB, NOT in Git)
+│   ├── bible_research.db         ← SQLite (~766 MB, NOT in Git)
 │   └── file_manifest.json        ← Machine-readable file index
 ├── Sessions-v2/                  ← **per-cluster working tree (cluster-rework phase from 2026-06-05) — HOME for ALL new cluster output**
 │   └── {CODE}-{Name}/            ← one folder per cluster (M01-Fear … M46-Abundance, FLAG, T2); see README + file-organisation-rules §3.0
@@ -75,7 +75,9 @@ For exact file lookup use `python scripts/build_file_manifest.py --search "..."`
 
 > **2026-06-15 grounding + normalisation (major):** schema → **3.33.0**. (a) **`ve_lexical`** created (M59) = the *items-in-verse-level* table: VE field-VALUES normalised here (one row per value: `verse_context_id · ve_nr · ve_label · related_tier · value · source_provenance`); the `finding` table is now **real findings only** (~11k: synthesis + meanings, was ~309k). (b) **`mti_terms` grounded** — unique per Strong's, status-clean, owned (2,402 active). (c) **`wa_verse_records` unique by `(reference, term_id)`** (58,966 active; XREF dups + orphans cleared). (d) **`word_registry_fk` bypass** (M58) on verse/term tables — **never join through legacy `wa_file_index`**. (e) Mode = `morph_code`/`stem` **columns** (not a finding); language is **morph-authoritative**. **All VE/lexical work is filed + indexed at [`research/VE-lexical/00-INDEX.md`](research/VE-lexical/00-INDEX.md)** (start there). See also `wa-xref-verse-duplication-blocker-*`, and memory `reference_file_index_legacy_use_bypass_fks`, `project_morph_is_source_of_truth`. The VE *values* are migrated as-is — a value rerun/validation is the next phase.
 
-**File:** `database/bible_research.db` (SQLite, ~165 MB, excluded from Git). Connection pattern: `sqlite3.connect('database/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
+**File:** `database/bible_research.db` (SQLite, **~766 MB**, excluded from Git). Connection pattern: `sqlite3.connect('database/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
+
+> **Live schema (measured 2026-07-16, schema 3.40.0):** 110 tables · 1177 columns · 105 PK columns · 77 FKs · 6 CHECK constraints · 169 indexes · 4 triggers · 2 views. The full captured schema — every table, column, FK, check, index, trigger and view, each with a description derived from profiling the live data — is at [`iba/config/DBSchema/DBSchema.json`](iba/config/DBSchema/DBSchema.json), rebuilt by `python iba/scripts/build_dbschema.py --db bible_research`. It supersedes `Workflow/schema/database-schema-v*.json` (newest is 3.35.0, 5 versions stale) and `Workflow/schema/create_tables.sql` (stale since 2026-04-19) — both of which also lack PKs, FKs, checks and index columns entirely.
 
 ### Table Groups
 

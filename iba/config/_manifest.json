@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.4",
+  "config_version": "0.1.5",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -320,6 +320,12 @@
         "file": "auth.json",
         "status": "pending",
         "kind": "utility"
+      },
+      {
+        "file": "DBSchema_maintenance.json",
+        "status": "authored",
+        "kind": "utility",
+        "note": "Rules for capturing a database's schema into a DBSchema register, + the database list (bible_research now, iba later). Implemented by iba/scripts/build_dbschema.py."
       }
     ],
     "tier_b_processes": [
@@ -391,6 +397,14 @@
         "file": "fetch.json",
         "reason": "merged into raw.json (2026-07-15). `fetch` was not the researcher's terminology — 'raw pulls STEP and create the tables'. One stage, one module, one file."
       }
+    ],
+    "tier_a_registers": [
+      {
+        "file": "DBSchema.json",
+        "status": "pending",
+        "kind": null,
+        "note": "CAPTURED DATA, not a rulebook -- the live schema of database/bible_research.db, one file per database. Carries no rule envelope (same class as reconciliations.json); the kernel does not glob DBSchema/, which is correct. Governed by utility/DBSchema_maintenance.json. `pending` until build_dbschema.py first writes it."
+      }
     ]
   },
   "open_reconciliations": 8,
@@ -403,12 +417,13 @@
   "note": "RECONCILE items block their dependent study modules until resolved. Per-file hashes are written by cfg_apply.py on every commit — a version pin without them is a label, not evidence (ent.cfg.version).",
   "not_a_seed_file": {
     "_change_log.jsonl": "The AUDIT TRAIL, not config. Written by cfg_apply.py on every commit — version, when, why, and the item-level diff. It is an output OF the write path, so it is not declared as a seed (and the loader never reads it). A jsonl stand-in until ent.cfg.change-log exists in a DB.",
-    "note": "Declaring it as a seed is what made this very edit fail its own validation — the file does not exist until the first commit creates it. The tool was right; the declaration was wrong."
+    "note": "Declaring it as a seed is what made this very edit fail its own validation — the file does not exist until the first commit creates it. The tool was right; the declaration was wrong.",
+    "DBSchema/*.json": "CAPTURED DATA. A register is an OBSERVATION of a live schema -- it is written by build_dbschema.py reading the DB, not authored, and it carries no rule envelope. It is declared under sections.tier_a_registers and hashed like any other file (so a hand-edit is still caught), but the kernel never envelope-validates it."
   },
   "last_change": {
-    "version": "0.1.4",
-    "at": "2026-07-15T15:26:09Z",
-    "why": "CRITICAL: step.connection v1 would have broken the study. .env holds the REMOTE url and UNTAGGED ESV; the client hard-codes localhost + ESV_th and ignores .env. v1 ruled 'rewrite the client to read .env' — which would silently switch the study to remote/untagged with no error. Names from .env, VALUES from the client.",
+    "version": "0.1.5",
+    "at": "2026-07-16T09:32:28Z",
+    "why": "add the DBSchema register + util.dbschema maintenance rules; dedupe the duplicated enum.governs value 'raw'",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
@@ -418,8 +433,9 @@
     "process/raw.json": "bf214488e14e44fd",
     "process/registry.json": "071ea5f0de357261",
     "utility/config-maintenance.json": "d58c8bd71f79d65b",
-    "utility/step.json": "8fda2e053ebb5139",
-    "wide/enums.json": "5bb2dfd84536a7f2",
+    "utility/DBSchema_maintenance.json": "95d9351fedc25ba8",
+    "utility/step.json": "ec2617be4c6f6681",
+    "wide/enums.json": "1da80a87c38f1af3",
     "wide/pipeline.json": "935026d22b924eee",
     "wide/reconciliations.json": "f77de2d05adf0341"
   },
