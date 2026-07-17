@@ -394,3 +394,18 @@ iba/ps/New-Word.ps1
 4. **`registry.growth` is RECONCILE** (W8) and would block this package at pre-flight. It is
    yours, with registry.
 5. **run.json and New-Word.ps1** — written before you said md-first. Keep, revise, or revert?
+
+researcher comments:
+this time round you saw the light, and are starting to work with the light shining on your work. that is good.  We are a long way from having teased out all the elements. our single run example (adding new word)  is a solid work package to dig into each and every layer of this work package.  you are using the md as a record of your thinking - that is good. I want to encourage you to continue doing it, because you make your thinking visible to me so I can steer it. This process has demonstrated how critical it is that I steer it. I also don't want to take over your work, you have a lot to contribute and you are good at it, if you stay focussed.  We need another round of thinking , this time going several layers down in thinking detail.  first let me answer your questions.
+
+7.1 - the add-rule is likely to be a combination of configs:a) the schema: defines the table, its columns, the use of the columns, and the expectation. The schema defines the where. b) the method config defines the when. There must be a cross correlation to ensure that every method thinks about what must be added when it is prosessing, and the schema must be ready to receive it and comply with the schema rules for the tables and columns. ultimately after all the methods is designed every schema entity must have at least one method that feeds it.  Several methods could feed a column in a table, they should not be in conflict.  c) we still miss the how and what - this is likely to be in the configs that govern the source e.g. run.config for run updates to the engine tables, or step.config where the step data is defined and generated. every config is likely to have a section that deals with what data is recorded where, when, and how.
+
+7.2 Triggers. yes, the concept of triggers creating diversions in the flow is everywhere.  That is what the role of the rule is, if the rule does not comply, what happens, where does it go to, can it resolve itself, where is that defined.
+
+7.3 escalation - I guess there is a utility that will deal with researcher interaction. this config will define the rules. the principle is that the app must first try to resolve it, and the rules must guide it, and if not, then need to pause the workflow, communicate with the researcher, get the feedback and return to the process - without venturing into to a whole new branch and never returning to finish the job.
+
+7.4 registry.growth. The short anwer is yes, the app should not add a new word without researcher approval.  this points to the escalation utility, this is all it is - a controlled researcher interaction.
+
+7.5 we are a long way off starting to write ps or python scripts, but you may create the stub, so you get the naming and purpose of the script in place.
+
+next actions:  build out all the missing configs in the .md; build out all the missing rules in the existing configs in the .md work through each hop, each branch, describe, think through it: test its completeness, check if the hop answers all the questions: what, where, how, when, why, who, what if, and validate.  this is a detail task, and must be thought through step by step, iterative, and at multiple levels.  all the work is in the .md
