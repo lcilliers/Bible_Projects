@@ -91,6 +91,7 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
     step = _load_json("step.json")
     run = _load_json("run.json")
     rules = _load_json("rules.json")
+    report = _load_json("report.json")
 
     conn.execute("INSERT INTO cfg_meta VALUES ('database', ?)", (schema["database"],))
     conn.execute("INSERT INTO cfg_meta VALUES ('config_version', ?)", (run["config_version"],))
@@ -141,6 +142,11 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
         for i, f in enumerate(flow):
             conn.execute("INSERT INTO cfg_status_flow VALUES (?,?,?,?)",
                          (entity, f["to"], f["by"], i))
+
+    # ── report / output ──
+    for k, s in report["settings"].items():
+        conn.execute("INSERT OR REPLACE INTO cfg_setting VALUES (?,?,?)",
+                     (k, json.dumps(s["value"]), s.get("use")))
 
     conn.commit()
     n = {r[0]: conn.execute(f'SELECT COUNT(*) FROM "{r[0]}"').fetchone()[0]

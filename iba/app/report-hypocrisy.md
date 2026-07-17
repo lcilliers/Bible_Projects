@@ -1,28 +1,12 @@
 # Raw layer — `hypocrisy`
 
-> Built by the IBA app (`iba/app`) into `iba\app\db\iba.db`. Every row is checkable against STEP:
->
-> - detail — `http://localhost:8989/rest/module/getInfo/ESV_th//G5272//`
-> - verses — `http://localhost:8989/rest/search/masterSearch/strong=G5272|version=ESV_th`
+> Built by the IBA app into `iba\app\db\iba.db`. What this report shows is config (`cfg_setting report.*`). Every row is checkable against STEP.
 
 **word_registry** — id 1 · status `raw-complete` · source gap scan
 
-## The layer, in numbers
-
-| table | rows |
-|---|---|
-| `word_strong` | 5 |
-| `strong` | 5 |
-| `strong_sense` | 5 |
-| `strong_meaning_tree` | 5 |
-| `strong_lexicon` | 3 |
-| `verse` | 17 |
-| `strong_verse` | 18 |
-| `span` | 262 |
-
 ## The strongs and their meaning (L1 → L2)
 
-| strong | gloss | script | translit | **the sense (head)** | count | verses |
+| strong | stepGloss | accentedUnicode | stepTransliteration | head | count | verses |
 |---|---|---|---|---|---|---|
 | `G0505` | genuine | ἀνυπόκριτος | anupokritos | **genuine** | 6 | 6 |
 | `G4942` | to join hypocrisy | συνυποκρίνομαι | sunupokrinomai | **to join hypocrisy** | 1 | 1 |
@@ -34,7 +18,9 @@
 
 ### Isa 32:6 — `Isa.32.6`
 
-| pos | surface | strong | morph | particle | held? · sense |
+> Isa 32:6 For the fool speaks folly , and his heart is busy with iniquity , to practice ungodliness , to utter error concerning the Lord , to leave the craving of the hungry unsatisfied , and to deprive the thirsty of drink .
+
+| position | surface | strong_variant | morph_code | is_particle | sense |
 |---|---|---|---|---|---|
 | 0 | fool | `H5036` | `HAamsa` |  |  |
 | 1 | fool | `H3588A` | `HTc` |  |  |
@@ -65,7 +51,9 @@
 
 ### Jer 23:12 — `Jer.23.12`
 
-| pos | surface | strong | morph | particle | held? · sense |
+> Jer 23:12 Therefore their way shall be to them like slippery paths in the darkness , into which they shall be driven and fall , for I will bring disaster upon them in the year of their punishment , declares the Lord .
+
+| position | surface | strong_variant | morph_code | is_particle | sense |
 |---|---|---|---|---|---|
 | 0 | Therefore | `H3651C` | `HD` |  |  |
 | 1 | Therefore | `H9005` | `HR` | · |  |
@@ -95,7 +83,9 @@
 
 ### Luk 12:1 — `Luke.12.1`
 
-| pos | surface | strong | morph | particle | held? · sense |
+> Luk 12:1 In the meantime , when so many thousands of the people had gathered together that they were trampling one another , he began to say to his disciples first , “ Beware of the leaven of the Pharisees , which is hypocrisy .
+
+| position | surface | strong_variant | morph_code | is_particle | sense |
 |---|---|---|---|---|---|
 | 0 | In | `G1722` | `PREP` |  |  |
 | 1 | meantime | `G3739` | `R-DPN` |  |  |

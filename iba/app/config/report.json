@@ -1,0 +1,15 @@
+{
+  "purpose": "The OUTPUT config. What the word-raw report shows is a config choice, not code. report.py is an interpreter that renders from these settings — the same principle as the rules.",
+  "boundary": {
+    "config holds": "WHAT the report shows — how many sample verses, whether the verse text appears, which fields per section.",
+    "code holds": "HOW a section is rendered (a markdown table) — a report shape, a fact, not a choice."
+  },
+  "settings": {
+    "report.sample_verses":  {"value": 3, "use": "how many sample verses to show the span layer for"},
+    "report.show_verse_text":{"value": true, "use": "show the verse's plain text above its spans"},
+    "report.strong_fields":  {"value": ["stepGloss", "accentedUnicode", "stepTransliteration", "head", "count", "verses"],
+                              "use": "which columns the L1->L2 strong table shows"},
+    "report.span_fields":    {"value": ["position", "surface", "strong_variant", "morph_code", "is_particle", "sense"],
+                              "use": "which columns the span table shows"}
+  }
+}
