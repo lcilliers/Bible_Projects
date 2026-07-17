@@ -555,3 +555,32 @@ iba/modules/base/assign_cluster.py      step.base.assign-cluster
 5. **R21 — the multi-code fork.** Disjoint senses vs union. It decides what a "term" is, and
    everything above it.
 6. **R5 — duplicate words.** 222 rows / 218 distinct, today. What if the word exists?
+
+researcher comments
+
+7.1 - not sure what the terminology, but every method must answer the question: what is the output- this could be a file (which then needs its own config rules) or DB rows (taking full CRUD into account) - it could also be different files at different stages, and different table updates at different points. Where ever the rules accross the configs are the same, it should not be repeated in every config - it should be considered to be a IBA wide config rule, or a utility. cross referencing configs, and cross resolving nodes need to be thought through very carefully as it is critical for efficient operation.
+
+7.2 the short answer is yes. The current database are really dirty with lots of columns that have real purpose and is just overhead. so this design effort hope to elliminate all this redundancy. We will only have the full new schema when all the different types of runs have been defined. There is no real value to enforce the check between columns and methods until then. what we can do is test and report during the design stage.
+
+§1.2 The feeder does not decide on what it pushes, by seeing what columns it have,  it defines what need to be pushed based on the source or the task, and then confirms the column exists, is coherent, is not duplicated elsewhere, is not recorded slightly different in another method.
+
+7.3 yes - in_fail is good, and defines a new path. in my view there are several types of paths rather than severity: report in engine, continue; pause for input, continue; report to chat, stop; self heal - take action to resolve
+
+7.4 the above should give some input in the design of the responses. the different types of responses will behave differently.  in terms of researcher interaction I can see two types - pre-prompted yes / no, or a specific input such as a new word - this must accompany preset details to share to facilite the response; and, interactive response where the result is derived from (research or debate around a topic) - this is a much more tricky one to build out, because the question is why is the response validated to continue.  I think this will emerge from each situation on how to deal with it.
+
+7.5 R21 - this is likely to branch out into a multi layered decision making three based on how the source STEP data is parsed into the destination data , ready for the columns. I expect a much more detail analysis of this section before I can respond on an element.
+
+7.6 R5 The current word list in the registry will be retained for the new table. Note that I am not expecting all the columns in the registry to be relevant for the next DB. lots of the columns are completely redundant and of no use.  However, your question - what if the word exist is absolutely relevant.  if the run is add new word - then the check is, does it exist, if so fail, report stop. (using the escalation config). A separate run will be configured for refresh existing word.
+
+Additional comments:
+each hop have a pre-hop and post-hop - from/to
+R22 - ESV is a classical example of a IBA-wide config.
+the hops - good progress, further build out will surface the missing configs. flesh this out.
+4 build out the detail for each element that need to be added in this section.
+4.3 add the schema entries you would expect for this run in this section.
+5 - B1 - Registry grow through using the new-word run, not through any other process.  The registry CRUD methods are still outstanding, it will be added later.
+6 - Stubs - good that you are putting this in.  check how the STEP fetch would work - you modelled the stubs around types, but the fetch may include all the types of data, and the stub methods could be organised around something like fetch, parse, fetch more, parse, backtrack - i am not sure, so dont take my approach as what you must do - the point i am making is the stubs must not dictate the flow of the task, the task must dictate the partitioning of the task.
+
+add more detail (think through next layer) in the hops - especially for exists, fails etc, including the full cycle and what should be configurations of it; the actual data inputs and outputs and behaviours around it; engine related updated in the hop, what is recorded where (this will drive the build out of the engine related config)
+
+still a long way to go.
