@@ -394,3 +394,13 @@ the source or the task, then confirms the column exists, is coherent, is not dup
 elsewhere.* Run that on `meaning` and every clause fails — **coherent** (wrong grain),
 **not duplicated** (two of them), **not recorded differently** (base vs sub-gloss). The check
 would have caught this on day one.
+
+researcher comments
+
+1.1 and 1.2 this reveal a lot of troubles of the past. a) lets redesign the terms table(s) to fit (this may mean some tables becomes redundant. investigate it properly and name the tables that becomes redundant and why) b) it sounds like you can get the span meaning and save it in digestable format right from the start. That may mean that the master table can then create the link to the correct meaning element. the other meaning elements are also relevant in the study, but only the understand the verse application of the meaning in a broader context.  if this reading of your observations holds, then it changes the raw data shape (for the good) right from the start.
+1.3 yes, the register will have much less columns. 3.1 origin - drop it; status and signoff has the same value. keep status drop signoff. signoff is achieved when the process is completed, validated and status is updated.
+the list does not show all current registry columns, the registry config must deal with all of them (or set to drop on migration)
+status enums: you need to have a config that sets each of these statuses, else drop the enum.
+2 - factor in the use / existence of the span.term.verse master index table. maybe the new structure replaces this index, it should not duplicate it.
+3.2 I would like to see the relationship table design for this - this is not a single row.  this would sort out what data you are saving at what level (e.g. language is at span level )
+3.3 can you explain to me what is the value/purpose of the 'owner' status of a term. what is the basis of deciding it? is there really a place for XREF.  in my view the following is expected to happen: word - find terms and related terms - find verses for all - get span of verses - find meaning of span. Each verse will have multiple span, span is backtracked to the term via the meaning.  confirming this structure is fundamental on how the hobs would work
