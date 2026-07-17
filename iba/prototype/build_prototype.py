@@ -49,21 +49,31 @@ PARTICLE_RE = re.compile(r"^[HG]9\d{3}$")
 
 
 def split_def(medium_def: str) -> tuple[str, str]:
-    """A code's mediumDef is '<head>' + newline + the lemma's TREE.
+    """Split a code's mediumDef into (head, tree).
 
-    The head is THIS CODE's meaning. The tree is the LEMMA's full range.
+    ★ THE ': ' PREFIX IS THE MARKER OF A SENSE.
 
-    ⚠ step_client already converts STEP's <br> to newlines, so the split is on the
-    first NEWLINE. Splitting on '<br>' (v1 of this prototype) never fired: every tree
-    came out empty, and the tree_shared test passed vacuously because len({''}) == 1.
-    A test that cannot fail is not a test.
+        H7965G  ": peace \\n 1) completeness, soundness..."
+                -> head "peace" + the LEMMA's shared tree
 
-    A code with no newline has a head and NO tree — a lemma with a one-line
-    definition (H7280C 'to harden').
+        H2790A  "1) to cut in, plough... \\n 1a) (Qal)..."
+                -> no head; the whole thing is THIS lemma's own tree
+
+    A leading ': ' means the code is one SENSE of a lemma, and everything after the first
+    newline is the lemma's tree — the same text on every sense of it. No ': ' means the
+    code IS a lemma in its own right: its gloss carries the sense, and the definition is
+    all tree.
+
+    ⚠ step_client already turns STEP's <br> into newlines, so the split is on the first
+    NEWLINE. Splitting on '<br>' (v1) never fired: every tree came out '' and the
+    tree_shared test passed vacuously on len({''}) == 1. A test that cannot fail is not a
+    test.
     """
-    d = (medium_def or "").strip().lstrip(": ").strip()
-    head, _, tree = d.partition("\n")
-    return head.strip(), tree.strip()
+    d = (medium_def or "").strip()
+    if d.startswith(":"):
+        head, _, tree = d[1:].strip().partition("\n")
+        return head.strip(), tree.strip()
+    return "", d                      # a lemma in its own right: no sense head, all tree
 
 
 def base_of(code: str) -> str:
@@ -132,14 +142,19 @@ def main() -> int:
         # A code with no tree is its own lemma with a one-line definition.
         groups: dict[str, list] = defaultdict(list)
         for s in family:
-            tree = split_def(s["medium_def"])[1]
-            groups[tree if tree else f"__own__{s['strong_number']}"].append(s)
+            head, tree = split_def(s["medium_def"])
+            # shared tree AND a sense head -> a sense of that lemma; otherwise its own term
+            groups[tree if (tree and head) else f"__own__{s['strong_number']}"].append(s)
 
         seen_base.add(base)
         for tree_key, group in groups.items():
             group.sort(key=lambda s: s["strong_number"])
             key = group[0]["strong_number"]        # the term's identity = its lowest code
-            tree = "" if tree_key.startswith("__own__") else tree_key
+            # A shared-tree group's tree is the shared text. An own-lemma group's tree is
+            # its OWN definition — which split_def returns as the tree when there is no
+            # ': ' head. (v2 of this script stored "" here and threw the definition away.)
+            tree = (split_def(group[0]["medium_def"])[1]
+                    if tree_key.startswith("__own__") else tree_key)
             terms[key] = {
                 "term_id": len(terms) + 1,
                 "strongs": key,
@@ -153,6 +168,8 @@ def main() -> int:
             for s in group:
                 head, _ = split_def(s["medium_def"])
                 senses[s["strong_number"]] = {
+                    "★ meaning": head or s["gloss"],   # the head, or the gloss where the code IS the lemma
+                    "medium_def": s["medium_def"],     # kept raw, so the split is re-derivable
                     "sense_id": len(senses) + 1,
                     "term_id": terms[key]["term_id"],           # FK -> term
                     "strongs": s["strong_number"],
@@ -172,11 +189,11 @@ def main() -> int:
             print(f"[term]  ★  {base:8} SPLITS into {len(groups)} terms (homonyms — different trees):")
             for tk, grp in groups.items():
                 print(f"              {'+'.join(s['strong_number'] for s in grp):<28} "
-                      f"{split_def(grp[0]['medium_def'])[0][:44]!r}")
+                      f"{(split_def(grp[0]['medium_def'])[0] or grp[0]['gloss'])[:44]!r}")
         else:
             g = list(groups.values())[0]
             print(f"[term]     {base:8} 1 term, {len(g)} sense(s)   "
-                  f"{', '.join(s['strong_number'] + '=' + repr(split_def(s['medium_def'])[0][:18]) for s in g[:4])}")
+                  f"{', '.join(s['strong_number'] + '=' + repr((split_def(s['medium_def'])[0] or s['gloss'])[:18]) for s in g[:4])}")
 
     word_term = [{"word_id": 1, "term_id": t["term_id"]} for t in terms.values()]
 
@@ -248,13 +265,15 @@ def main() -> int:
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     # ── the verdict ─────────────────────────────────────────────────────────
-    broken = [t["strongs"] for t in terms.values() if not t["★ tree_shared"]]
     multi = [t for t in terms.values() if t["sense_count"] > 1]
+    splits = sorted({t["base"] for t in terms.values() if t["★ shares_base_with_other_terms"]})
     print(f"\n{'='*66}")
     print(f"  terms {len(terms)} · senses {len(senses)} · verses {len(verses)} · spans {len(spans)}")
-    print(f"  terms with >1 sense : {len(multi)}")
-    print(f"  ★ tree shared across every sense : "
-          f"{'ALL PASS' if not broken else 'FAILED for ' + ', '.join(broken)}")
+    print(f"  bases {len({t['base'] for t in terms.values()})} -> terms {len(terms)}")
+    print(f"  terms with >1 sense (one lemma, many meanings) : {len(multi)}"
+          f"  {[t['strongs'] for t in multi]}")
+    print(f"  bases that SPLIT into >1 term (homonyms)       : {len(splits)}"
+          f"  {splits}")
     print(f"  spans linked to a sense we hold  : {linked:,} / {len(spans):,}"
           f"  ({unheld:,} name codes this word does not hold — other lemmas in the same verse)")
     print(f"{'='*66}")
