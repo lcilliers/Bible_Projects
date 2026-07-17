@@ -229,3 +229,15 @@ more rigidity and predictability and more concise."* Measured:
 
 **247,046 → 25,634.** `wa_verse_records` stores the verse once per term-in-verse. The
 `verse` + `strong_verse` split stores it once and indexes the rest. That is the concision.
+
+Researcher comments
+
+Q1+Q2
+L1 does not carry any columns about the strong, except the strong number, it is practically just the index to show the origin of the strongs per STEP either the word or another strong.The key for this table is the unique strong number with two additional columns, the word, and another strong. This is derived from the related numbers of the strongs , where a related number references a strong that is already in this list linked to a word, it is not duplicated, but ignored. 
+L2 carries all the detail for a strong and the FK is L1 with each L1 requiring only 1 L2.  Exclude related no as a column. it is captured in L1.
+L3 have verses for all the strong in L1 and L2 (by implication all related strongs also)
+Q3 - strong_verse is an index many to many relationship. it cannot be part of L3.
+Q4 - L4 is the old master. The API data is position, span number (strong variant), span, gloss, transliteration, also include verse_id, candidate_char (after seeding process), role (after analytics), status, deleted
+Q5 - I dont understand the issue
+Q6 - L2 only.
+Q7 - span is stored once in L4 for the verse. I suggest we add a column to show the count.
