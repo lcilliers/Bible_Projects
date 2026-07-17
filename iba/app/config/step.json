@@ -1,0 +1,36 @@
+{
+  "purpose": "STEP access for the app. The three calls the raw run makes, verbatim routes, and what each may source. relatedNos is NOT here — it is excluded noise.",
+  "connection": {
+    "base_url": "http://localhost:8989",
+    "version": "ESV_th",
+    "timeout_seconds": 30,
+    "note": "always localhost, never the web; ESV_th is the tagged module. The client reads these; nothing from the environment."
+  },
+  "cap": 60,
+  "apis": {
+    "call1_meanings": {
+      "route": "rest/search/masterSearch/version={version}|meanings={word}",
+      "input": "the English word",
+      "returns": "definitions[] (the seed strongs) + results[] (verses)",
+      "may_source": ["word_strong"],
+      "note": "definitions[].strongNumber -> word_strong. relatedNos NOT followed."
+    },
+    "call2_getInfo": {
+      "route": "rest/module/getInfo/{version}//{strong}//",
+      "input": "a strong",
+      "returns": "vocabInfos[0] — the detail and the meaning",
+      "may_source": ["strong", "strong_sense", "strong_meaning_tree", "strong_lexicon"]
+    },
+    "call3_strong": {
+      "route": "rest/search/masterSearch/strong={strong}|version={version}",
+      "input": "a strong",
+      "returns": "results[] — verses, each preview a full interlinear",
+      "may_source": ["strong_verse", "verse", "span"],
+      "note": "the span is a PARSE of results[].preview — no separate morphology call"
+    }
+  },
+  "excluded": {
+    "relatedNos": "root-family noise (H2519 smoothness -> 'to divide', 'Mount Halak'). Excluded from all action.",
+    "masterSearch.text": "an English-text hit is not an original-language occurrence. may_source: [] — must never source a raw row."
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "database": "iba",
+  "purpose": "The new IBA database — the raw slice. Every column carries its USE and its EXPECTATION (the add-rule's WHERE), and names the SOURCE field that feeds it (the WHAT). The method config says WHEN. Built from iba/docs/stream-registry-word-buildout-v7/v8.",
+  "note": "This file IS the schema config. build_db.py creates the DB from it; every handler writes only columns declared here; a column with no `source` and no `filled_by` is a defect.",
+  "tables": {
+
+    "word_registry": {
+      "grain": "one row per English inner-being word",
+      "use": "the study's entry point; scope of a new-word run",
+      "columns": {
+        "id":       {"type": "INTEGER", "pk": true,  "use": "surrogate key"},
+        "word":     {"type": "TEXT", "notnull": true, "unique": true, "use": "the English word", "source": "run.param.Word"},
+        "source":   {"type": "TEXT", "use": "why it was registered — the growth trigger", "source": "run.param.Source"},
+        "status":   {"type": "TEXT", "use": "registry processing stage", "expectation": "enum.word_status", "filled_by": "registry+raw+signoff"},
+        "created_at":{"type": "TEXT", "use": "when registered", "filled_by": "registry.create"},
+        "deleted":  {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "word_strong": {
+      "grain": "one row per (word, strong) the STEP word-search returned",
+      "use": "L1 — the discovery record: which strongs a word maps to. These strongs are the basis for L2. Carries the link only, no strong detail.",
+      "columns": {
+        "id":        {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "word_id":   {"type": "INTEGER", "notnull": true, "fk": "word_registry.id", "use": "the word", "source": "run.context.word_id"},
+        "strong":    {"type": "TEXT", "notnull": true, "fk": "strong.strongNumber", "use": "a strong the word returned", "source": "call1.definitions[].strongNumber"},
+        "deleted":   {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      },
+      "unique": ["word_id", "strong"]
+    },
+
+    "strong": {
+      "grain": "one row per strong — unique, global to the study",
+      "use": "L2 — the strong's identity. The meaning is normalised out (O4): it lives in strong_sense / strong_meaning_tree / strong_lexicon.",
+      "columns": {
+        "strongNumber":        {"type": "TEXT", "pk": true, "use": "the resolved Strong's code — the key", "source": "call2.vocabInfos[0].strongNumber"},
+        "accentedUnicode":     {"type": "TEXT", "use": "the actual Hebrew/Greek word", "source": "call2.vocabInfos[0].accentedUnicode"},
+        "stepGloss":           {"type": "TEXT", "use": "short English sense", "source": "call2.vocabInfos[0].stepGloss"},
+        "stepTransliteration": {"type": "TEXT", "use": "romanised form; never shown without the gloss", "source": "call2.vocabInfos[0].stepTransliteration"},
+        "language":            {"type": "TEXT", "use": "Hebrew/Greek from the code prefix", "source": "derived:call2.strongNumber"},
+        "count":               {"type": "INTEGER", "use": "STEP token frequency — NOT a verse count, may be capped", "source": "call2.vocabInfos[0].count"},
+        "freqList":            {"type": "TEXT", "use": "raw frequency distribution", "source": "call2.vocabInfos[0].freqList"},
+        "created_at":          {"type": "TEXT", "use": "when first fetched", "filled_by": "raw.detail"},
+        "deleted":             {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "strong_sense": {
+      "grain": "one row per strong — the sense HEAD",
+      "use": "the span's meaning, read constantly. The head is the first line of mediumDef (the sense); is_own_lemma marks a code that is its own lemma, where the gloss carries the sense.",
+      "columns": {
+        "strong":       {"type": "TEXT", "pk": true, "fk": "strong.strongNumber", "use": "the strong"},
+        "head":         {"type": "TEXT", "use": "the sense — THE SPAN'S MEANING", "source": "derived:call2.mediumDef.head"},
+        "is_own_lemma": {"type": "INTEGER", "use": "1 = no ': ' head; the code is its own lemma and the gloss is the sense", "source": "derived:call2.mediumDef"},
+        "deleted":      {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "strong_meaning_tree": {
+      "grain": "one row per sense-node of a LEMMA's definition tree",
+      "use": "the lemma's full range — read rarely, only when the broader context is needed. Keyed on the lemma (shared across its senses, which the prototype proved).",
+      "columns": {
+        "id":          {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "lemma_key":   {"type": "TEXT", "notnull": true, "use": "the base code the tree belongs to", "source": "derived:call2.strongNumber.base"},
+        "sense_code":  {"type": "TEXT", "use": "the tree position: 1), 1a), 1b1)", "source": "derived:call2.mediumDef.tree"},
+        "sense_text":  {"type": "TEXT", "use": "the sense line", "source": "derived:call2.mediumDef.tree"},
+        "sort":        {"type": "INTEGER", "use": "order within the tree", "source": "derived:call2.mediumDef.tree"},
+        "deleted":     {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "strong_lexicon": {
+      "grain": "one row per strong that has LSJ/Mounce (Greek)",
+      "use": "the large lexicon text — separate because rarely scanned",
+      "columns": {
+        "strong": {"type": "TEXT", "pk": true, "fk": "strong.strongNumber", "use": "the strong"},
+        "lsj":    {"type": "TEXT", "use": "LSJ entry (Greek)", "source": "call2.vocabInfos[0].lsjDefs"},
+        "mounce": {"type": "TEXT", "use": "Mounce short def (Greek)", "source": "call2.vocabInfos[0].shortDefMounce"},
+        "deleted":{"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "verse": {
+      "grain": "one row per verse — unique. Does NOT belong to a strong.",
+      "use": "L3 — the addressable verse. preview is the full interlinear, kept verbatim so span is re-derivable.",
+      "columns": {
+        "id":          {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "osisId":      {"type": "TEXT", "notnull": true, "unique": true, "use": "the machine key, e.g. Matt.23.28", "source": "call3.results[].osisId"},
+        "reference":   {"type": "TEXT", "use": "human reference, e.g. Mat 23:28", "source": "call3.results[].key"},
+        "preview":     {"type": "TEXT", "use": "the full interlinear HTML — the source of span", "source": "call3.results[].preview"},
+        "step_version":{"type": "TEXT", "use": "provenance — which STEP module", "source": "run.context.step_version"},
+        "created_at":  {"type": "TEXT", "use": "when first built", "filled_by": "raw.verses"},
+        "deleted":     {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "strong_verse": {
+      "grain": "one row per (strong, verse) — unique. The m:m index.",
+      "use": "the source's assertion 'this strong is in this verse'. The check side against span (what the parse found).",
+      "columns": {
+        "id":       {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "strong":   {"type": "TEXT", "notnull": true, "fk": "strong.strongNumber", "use": "the strong searched", "source": "call3.query.strong"},
+        "verse_id": {"type": "INTEGER", "notnull": true, "fk": "verse.id", "use": "the verse returned", "source": "call3.results[].osisId"},
+        "deleted":  {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      },
+      "unique": ["strong", "verse_id"]
+    },
+
+    "span": {
+      "grain": "ONE ROW PER CODE of a verse (O3) — particles get their own row",
+      "use": "L4a — SOURCE, immutable. A parse of verse.preview. position is the running code index; (verse, position) is the key.",
+      "columns": {
+        "id":            {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "verse_id":      {"type": "INTEGER", "notnull": true, "fk": "verse.id", "use": "the verse", "source": "parse:verse.preview"},
+        "position":      {"type": "INTEGER", "notnull": true, "use": "running code index in the verse — the key with verse_id", "source": "parse:verse.preview"},
+        "surface":       {"type": "TEXT", "use": "the English word this code belongs to; repeats across a word's codes", "source": "parse:verse.preview"},
+        "strong_variant":{"type": "TEXT", "fk": "strong.strongNumber", "use": "ONE strong code", "source": "parse:verse.preview"},
+        "morph_code":    {"type": "TEXT", "use": "the grammatical layer — one, aligned with the code", "source": "parse:verse.preview"},
+        "is_particle":   {"type": "INTEGER", "use": "1 if a grammar-particle code (H9xxx/G9xxx)", "source": "derived:strong_variant"},
+        "built_at":      {"type": "TEXT", "use": "raw time", "filled_by": "raw.verses"},
+        "deleted":       {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      },
+      "unique": ["verse_id", "position"]
+    },
+
+    "run": {
+      "grain": "one row per work-package run — the control record",
+      "use": "what ran, pinned to a config version, and RESUMABLE (O7): state + resume_point persisted so a pause survives the process.",
+      "columns": {
+        "id":            {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "run_id":        {"type": "TEXT", "notnull": true, "unique": true, "use": "the run identifier", "filled_by": "run.start"},
+        "work_package":  {"type": "TEXT", "use": "which package", "filled_by": "run.start"},
+        "params":        {"type": "TEXT", "use": "JSON of the run params", "filled_by": "run.start"},
+        "runs_over":     {"type": "TEXT", "use": "the scope value, e.g. the word", "filled_by": "run.start"},
+        "config_version":{"type": "TEXT", "use": "the config that ran — pinned before any work", "filled_by": "run.start"},
+        "state":         {"type": "TEXT", "use": "running | paused | done | failed", "expectation": "enum.run_state", "filled_by": "run"},
+        "resume_point":  {"type": "TEXT", "use": "the step to resume at on continue", "filled_by": "run"},
+        "started_at":    {"type": "TEXT", "use": "start", "filled_by": "run.start"},
+        "ended_at":      {"type": "TEXT", "use": "end", "filled_by": "run.end"},
+        "outcome":       {"type": "TEXT", "use": "the final result", "filled_by": "run.end"}
+      }
+    },
+
+    "escalation": {
+      "grain": "one row per researcher interaction — the pause",
+      "use": "the only sanctioned researcher interaction. A pause, not a fork: the run resumes at resume_point when answered.",
+      "columns": {
+        "id":          {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "run_id":      {"type": "TEXT", "notnull": true, "fk": "run.run_id", "use": "the paused run"},
+        "at_step":     {"type": "TEXT", "use": "where to resume — makes it a pause not a fork", "filled_by": "escalation.raise"},
+        "type":        {"type": "TEXT", "use": "prompted | interactive", "expectation": "enum.escalation_type", "filled_by": "escalation.raise"},
+        "question":    {"type": "TEXT", "use": "the question", "filled_by": "escalation.raise"},
+        "preset":      {"type": "TEXT", "use": "the context that lets it be answered (JSON)", "filled_by": "escalation.raise"},
+        "tried":       {"type": "TEXT", "use": "what the app attempted before asking", "filled_by": "escalation.raise"},
+        "state":       {"type": "TEXT", "use": "raised | answered | resumed", "filled_by": "escalation"},
+        "answer":      {"type": "TEXT", "use": "the researcher's decision", "filled_by": "escalation.answer"},
+        "answered_at": {"type": "TEXT", "use": "when", "filled_by": "escalation.answer"},
+        "raised_at":   {"type": "TEXT", "use": "when raised", "filled_by": "escalation.raise"}
+      }
+    }
+  },
+
+  "enums": {
+    "word_status":     ["proposed", "approved", "raw-complete", "signed-off", "rejected"],
+    "run_state":       ["running", "paused", "done", "failed"],
+    "escalation_type": ["prompted", "interactive"],
+    "on_fail":         ["report-continue", "pause-continue", "report-stop", "self-heal"]
+  }
+}

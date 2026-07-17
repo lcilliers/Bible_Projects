@@ -1,0 +1,25 @@
+{
+  "purpose": "The work packages. Each starts with a PS script and moves through a SEQUENCE of steps, each cross-referenced to its handler. The order lives here — changing it is a config change, not a code change.",
+  "config_version": "app-0.1.0",
+  "work_packages": {
+    "new-word": {
+      "name": "Create a new registry word and build its raw layer",
+      "ps_script": "iba/app/ps/New-Word.ps1",
+      "runs_over": "word",
+      "params": [
+        {"name": "Word",   "required": true},
+        {"name": "Source", "required": true},
+        {"name": "DryRun", "required": false, "default": false}
+      ],
+      "sequence": [
+        {"step": "registry.exists",  "handler": "iba.app.handlers.registry:exists",  "scope": "word",   "does": "stop if the word already exists (a refresh run handles that)"},
+        {"step": "registry.create",  "handler": "iba.app.handlers.registry:create",  "scope": "word",   "does": "create the word, status proposed->approved"},
+        {"step": "raw.discover",     "handler": "iba.app.handlers.raw:discover",      "scope": "word",   "does": "CALL 1 meanings= -> word_strong (the seed strongs)"},
+        {"step": "raw.detail",       "handler": "iba.app.handlers.raw:detail",        "scope": "word",   "does": "CALL 2 getInfo per strong -> strong + sense + tree + lexicon (the meaning)"},
+        {"step": "raw.verses",       "handler": "iba.app.handlers.raw:verses",        "scope": "word",   "does": "CALL 3 per strong -> strong_verse + verse + span (span parsed from preview)"},
+        {"step": "raw.write",        "handler": "iba.app.handlers.raw:write",         "scope": "word",   "does": "commit; mark raw-complete"},
+        {"step": "raw.validate",     "handler": "iba.app.handlers.raw:validate",      "scope": "word",   "does": "the parse-check: span vs strong_verse must agree"}
+      ]
+    }
+  }
+}
