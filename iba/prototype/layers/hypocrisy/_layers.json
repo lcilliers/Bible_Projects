@@ -15,13 +15,24 @@
     },
     {
       "layer": 2,
-      "call": "module.getInfo/<v>//<strong>//",
-      "answers": "the detail of one strong",
+      "call": "module.getInfo/<v>//<strong>//  AND  masterSearch strong=<strong>|version=<v>",
+      "answers": "everything by strong — its detail, and its verses",
       "tables": {
-        "layer2_strong": "one row per returned vocabInfo",
+        "layer2_strong": "one row per returned vocabInfo (the detail)",
         "layer2_related": "relatedNos — a repeating group, so its own table",
-        "layer2_morph": "morphInfos — likewise"
+        "layer2_morph": "morphInfos — likewise",
+        "layer2_search": "the verse search itself, per strong",
+        "layer2_verse": "the verses that search returned, with previews"
       }
+    },
+    {
+      "layer": 3,
+      "call": "NONE — a PARSE of layer 2's previews",
+      "answers": "the spans of each verse",
+      "tables": {
+        "layer3_span": "one row per word of a verse: surface, strong, morph, verbatim"
+      },
+      "note": "This layer is the only one that is OURS. Layers 1-2 are what STEP said; layer 3 is what we read out of the HTML STEP sent. It is the first place the study can be wrong on its own account."
     }
   ],
   "foreign_keys": [
@@ -40,6 +51,18 @@
     {
       "from": "layer2_related.l2_id",
       "to": "layer2_strong.l2_id"
+    },
+    {
+      "from": "layer2_search.l1_id",
+      "to": "layer1_strong.l1_id"
+    },
+    {
+      "from": "layer2_verse.l2s_id",
+      "to": "layer2_search.l2s_id"
+    },
+    {
+      "from": "layer3_span.l2v_id",
+      "to": "layer2_verse.l2v_id"
     }
   ],
   "counts": {
@@ -48,7 +71,10 @@
     "layer1_verse": 17,
     "layer2_strong": 5,
     "layer2_related": 28,
-    "layer2_morph": 0
+    "layer2_morph": 0,
+    "layer2_search": 5,
+    "layer2_verse": 18,
+    "layer3_span": 240
   },
   "fields_returned": {
     "layer1_search": [
@@ -132,6 +158,46 @@
       "stepTransliteration",
       "strongNumber"
     ],
-    "layer2_morph": []
+    "layer2_morph": [],
+    "layer2_search": [
+      "definitions_returned",
+      "extraVersions",
+      "interlinearMode",
+      "l1_id",
+      "l2s_id",
+      "masterVersion",
+      "pageNumber",
+      "pageSize",
+      "query",
+      "requested_strong",
+      "results_returned",
+      "route",
+      "searchRestriction",
+      "searchType",
+      "signature",
+      "strongHighlights",
+      "time",
+      "timeTookToRetrieveScripture",
+      "timeTookTotal",
+      "total"
+    ],
+    "layer2_verse": [
+      "key",
+      "l2s_id",
+      "l2v_id",
+      "of_strong",
+      "osisId",
+      "preview"
+    ],
+    "layer3_span": [
+      "l2v_id",
+      "l3_id",
+      "morph",
+      "osisId",
+      "strong",
+      "surface",
+      "word_index",
+      "★ names_the_searched_strong"
+    ]
   }
 }
