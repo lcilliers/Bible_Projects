@@ -259,3 +259,17 @@ Axis **C**, no API. `process/base.json`.
 | O5 | `enum.word_status` values, and whether `clustered` is a status or a derived read of the gate. |
 | O6 | the escalation channel — how the researcher is actually reached (email precedent: NAS backup). |
 | O7 | resumability — `run.json` must pause and resume for `pause-continue`; it cannot yet. |
+
+researcher comments
+
+I will answer you open items below.
+
+Generally speaking this buildout is still light on detail, and we must make a choice to continue to add individual items to create, or to proceed with the actual build and think through what is missing at that stage. Currently the buildout talks about some stuff, and mainly focus on things that was in focus, but it definitely not have all the items that will have to be included in the config files and resolve all the questions that may come from thinking through it.
+
+O1 + O2 - L1 only purpose is to show which strongs were returned from the STEP word search. these strongs are the basis for L2.
+O3 - use the same custom we used on the master list, e.g. particles have there own row, each span have a row. Simplies the parsing.
+O4 - the meaning block for each strong is complex and large, if we use different parts of it during the study, then it definely need to be be normalised into a separate table or tables, we defintely do not want to scan the whole block every time some element of the meaning block need to be used.
+05 - word status need to reflect the processing stages of the registry - simplied. clustering complete is achieved on a term level, not word level.
+06 - I am likely to use the VS code interface for the app user interface, so a message to the terminal could work.  I image I am going to use the chat to capture feedback, but if it is easy to create a message window then that is also good.
+O7 what would be best practice for resumeability. the app is moving away from the chat being the continuity interface, so I assume the resumeability is because the interaction is in a loop in the program with conditions for exit and continue.
+
