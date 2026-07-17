@@ -29,6 +29,15 @@
       "to": "verse.verse_id"
     },
     {
+      "from": "sense_verse.sense_id",
+      "to": "sense.sense_id",
+      "note": "★ WHAT STEP'S SEARCH SAID — the sense's occurrence list"
+    },
+    {
+      "from": "sense_verse.verse_id",
+      "to": "verse.verse_id"
+    },
+    {
       "from": "span.sense_id",
       "to": "sense.sense_id",
       "note": "★ THE BACKTRACK — a span names a SENSE, and reaches the term through it"
@@ -41,6 +50,8 @@
     "word_term": 5,
     "term_related": 28,
     "verse": 17,
-    "span": 228
+    "sense_verse": 18,
+    "span": 228,
+    "_parse_check": 5
   }
 }

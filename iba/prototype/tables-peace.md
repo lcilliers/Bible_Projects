@@ -30,6 +30,8 @@ word --< word_term >-- term --< sense --< span >-- verse
 | `sense.term_id` | `term.term_id` |  |
 | `term_related.term_id` | `term.term_id` |  |
 | `span.verse_id` | `verse.verse_id` |  |
+| `sense_verse.sense_id` | `sense.sense_id` | ★ WHAT STEP'S SEARCH SAID — the sense's occurrence list |
+| `sense_verse.verse_id` | `verse.verse_id` |  |
 | `span.sense_id` | `sense.sense_id` | ★ THE BACKTRACK — a span names a SENSE, and reaches the term through it |
 
 ---
@@ -53,36 +55,36 @@ Each base below produced **more than one term** because its codes carry **differ
 | term | codes | head of the first code | tree (first 90 chars) |
 |---|---|---|---|
 | `H1826A` | `H1826A` | stationary | 1) to be silent, be still, wait, be dumb, grow dumb 1a) (Qal) 1a1) to be silent 1a2) to b… |
-| `H1826B` | `H1826B` |  | wail |
+| `H1826B` | `H1826B` | to wail | wail |
 
 **`H2790`**
 
 | term | codes | head of the first code | tree (first 90 chars) |
 |---|---|---|---|
-| `H2790A` | `H2790A` |  | 1) to cut in, plough, engrave, devise 1a) (Qal) 1a1) to cut in, engrave 1a2) to plough 1a… |
-| `H2790B` | `H2790B` |  | 1) to be silent, be dumb, be speechless, be deaf 1a) (Qal) 1a1) to be silent 1a2) to be d… |
+| `H2790A` | `H2790A` | to plow/plot | 1) to cut in, plough, engrave, devise 1a) (Qal) 1a1) to cut in, engrave 1a2) to plough 1a… |
+| `H2790B` | `H2790B` | be quiet | 1) to be silent, be dumb, be speechless, be deaf 1a) (Qal) 1a1) to be silent 1a2) to be d… |
 
 **`H7280`**
 
 | term | codes | head of the first code | tree (first 90 chars) |
 |---|---|---|---|
-| `H7280A` | `H7280A` |  | 1) to act in an instant, stir up, disturb 1a) (Qal) to stir up, disturb 1b) (Hiphil) to m… |
-| `H7280B` | `H7280B` |  | 1) to rest or repose, be at rest or repose, settle, quiet, give rest 1a) (Niphal) 1a1) to… |
-| `H7280C` | `H7280C` |  | to harden |
+| `H7280A` | `H7280A` | to disturb | 1) to act in an instant, stir up, disturb 1a) (Qal) to stir up, disturb 1b) (Hiphil) to m… |
+| `H7280B` | `H7280B` | to rest | 1) to rest or repose, be at rest or repose, settle, quiet, give rest 1a) (Niphal) 1a1) to… |
+| `H7280C` | `H7280C` | to harden | to harden |
 
 **`H7965`**
 
 | term | codes | head of the first code | tree (first 90 chars) |
 |---|---|---|---|
 | `H7965G` | `H7965G`, `H7965I`, `H7965J`, `H7965K`, `H7965L` | peace | 1) completeness, soundness, welfare, peace 1a) completeness (in number) 1b) safety, sound… |
-| `H7965H` | `H7965H` |  | The Deity;  called LORD or LORD (KJV= Jehovah) (יהוה); or LORD (KJV= Jehovah) (יְהֹוִה); … |
+| `H7965H` | `H7965H` | Peace [God] | The Deity;  called LORD or LORD (KJV= Jehovah) (יהוה); or LORD (KJV= Jehovah) (יְהֹוִה); … |
 
 **`H7999`**
 
 | term | codes | head of the first code | tree (first 90 chars) |
 |---|---|---|---|
-| `H7999A` | `H7999A` |  | 1) to be complete, be sound 1a) (Qal) 1a1) to be complete, be finished, be ended 1a2) to … |
-| `H7999B` | `H7999B` |  | 1) to be in a covenant of peace, be at peace 1a) (Qal) 1a1) to be at peace 1a2) peaceful … |
+| `H7999A` | `H7999A` | to complete | 1) to be complete, be sound 1a) (Qal) 1a1) to be complete, be finished, be ended 1a2) to … |
+| `H7999B` | `H7999B` | to ally | 1) to be in a covenant of peace, be at peace 1a) (Qal) 1a1) to be at peace 1a2) peaceful … |
 
 ### The multi-sense lemmas — one term, several meanings
 
@@ -146,41 +148,41 @@ Each base below produced **more than one term** because its codes carry **differ
 
 | sense_id | strongs | → term | head | gloss | script | translit | occurs |
 |---|---|---|---|---|---|---|---|
-| 21 | `G0425` | `G0425` | **** | rest | ἄνεσις | anesis | 7 |
-| 8 | `G1514` | `G1514` | **** | be at peace | εἰρηνεύω | eirēneuō | 14 |
-| 16 | `G1515` | `G1515` | **** | peace | εἰρήνη | eirēnē | 307 |
-| 19 | `G1516` | `G1516` | **** | peaceful | εἰρηνικός | eirēnikos | 40 |
-| 26 | `G1517` | `G1517` | **** | to make peace | εἰρηνοποιέω | eirēnopoieō | 2 |
-| 20 | `G2263` | `G2263` | **** | quiet | ἤρεμος | ēremos | 1 |
-| 12 | `G2270` | `G2270` | **** | be quiet/give up | ἡσυχάζω | hēsuchazō | 38 |
-| 13 | `G4601` | `G4601` | **** | be silent | σιγάω | sigaō | 21 |
-| 9 | `G4623` | `G4623` | **** | be quiet | σιωπάω | siōpaō | 40 |
-| 27 | `G5392` | `G5392` | **** | to muzzle | φιμόω | fimoō | 9 |
-| 15 | `H1293` | `H1293` | **** | blessing | בְּרָכָה | be.ra.khah | 69 |
-| 25 | `H1585` | `H1585` | **** | to complete | גְּמַר | ge.mar | 1 |
+| 21 | `G0425` | `G0425` | **rest** | rest | ἄνεσις | anesis | 7 |
+| 8 | `G1514` | `G1514` | **be at peace** | be at peace | εἰρηνεύω | eirēneuō | 14 |
+| 16 | `G1515` | `G1515` | **peace** | peace | εἰρήνη | eirēnē | 307 |
+| 19 | `G1516` | `G1516` | **peaceful** | peaceful | εἰρηνικός | eirēnikos | 40 |
+| 26 | `G1517` | `G1517` | **to make peace** | to make peace | εἰρηνοποιέω | eirēnopoieō | 2 |
+| 20 | `G2263` | `G2263` | **quiet** | quiet | ἤρεμος | ēremos | 1 |
+| 12 | `G2270` | `G2270` | **be quiet/give up** | be quiet/give up | ἡσυχάζω | hēsuchazō | 38 |
+| 13 | `G4601` | `G4601` | **be silent** | be silent | σιγάω | sigaō | 21 |
+| 9 | `G4623` | `G4623` | **be quiet** | be quiet | σιωπάω | siōpaō | 40 |
+| 27 | `G5392` | `G5392` | **to muzzle** | to muzzle | φιμόω | fimoō | 9 |
+| 15 | `H1293` | `H1293` | **blessing** | blessing | בְּרָכָה | be.ra.khah | 69 |
+| 25 | `H1585` | `H1585` | **to complete** | to complete | גְּמַר | ge.mar | 1 |
 | 34 | `H1826A` | `H1826A` | **stationary** | to silence: stationary | דָּמַם | da.mam | 9 |
-| 35 | `H1826B` | `H1826B` | **** | to wail | דָּמַם | da.mam | 1 |
-| 33 | `H2013` | `H2013` | **** | to silence | הַס | has | 8 |
-| 10 | `H2790A` | `H2790A` | **** | to plow/plot | חָרַשׁ | cha.rash | 26 |
-| 11 | `H2790B` | `H2790B` | **** | be quiet | חָרֵשׁ | cha.resh | 48 |
-| 14 | `H2814` | `H2814` | **** | be silent | חָשָׁה | cha.shah | 16 |
-| 29 | `H5117` | `H5117` | **** | to rest | נוּחַ | nu.ach | 142 |
-| 30 | `H7280A` | `H7280A` | **** | to disturb | רָגַע | ra.ga | 6 |
-| 31 | `H7280B` | `H7280B` | **** | to rest | רָגַע | ra.ga | 6 |
-| 32 | `H7280C` | `H7280C` | **** | to harden | רָגַע | ra.ga | 1 |
-| 22 | `H7600` | `H7600` | **** | secure | שַׁאֲנָן | sha.a.nan | 10 |
-| 7 | `H7961` | `H7961` | **** | at ease | שָׁלֵו | sha.lev | 8 |
+| 35 | `H1826B` | `H1826B` | **to wail** | to wail | דָּמַם | da.mam | 1 |
+| 33 | `H2013` | `H2013` | **to silence** | to silence | הַס | has | 8 |
+| 10 | `H2790A` | `H2790A` | **to plow/plot** | to plow/plot | חָרַשׁ | cha.rash | 26 |
+| 11 | `H2790B` | `H2790B` | **be quiet** | be quiet | חָרֵשׁ | cha.resh | 48 |
+| 14 | `H2814` | `H2814` | **be silent** | be silent | חָשָׁה | cha.shah | 16 |
+| 29 | `H5117` | `H5117` | **to rest** | to rest | נוּחַ | nu.ach | 142 |
+| 30 | `H7280A` | `H7280A` | **to disturb** | to disturb | רָגַע | ra.ga | 6 |
+| 31 | `H7280B` | `H7280B` | **to rest** | to rest | רָגַע | ra.ga | 6 |
+| 32 | `H7280C` | `H7280C` | **to harden** | to harden | רָגַע | ra.ga | 1 |
+| 22 | `H7600` | `H7600` | **secure** | secure | שַׁאֲנָן | sha.a.nan | 10 |
+| 7 | `H7961` | `H7961` | **at ease** | at ease | שָׁלֵו | sha.lev | 8 |
 | 1 | `H7965G` | `H7965G` | **peace** | peace | שָׁלוֹם | sha.lom | 164 |
-| 6 | `H7965H` | `H7965H` | **** | Peace [God] | שָׁלוֹם | sha.lom | 1 |
+| 6 | `H7965H` | `H7965H` | **Peace [God]** | Peace [God] | שָׁלוֹם | sha.lom | 1 |
 | 2 | `H7965I` | `H7965G` | **well-being** | peace: well-being | שָׁלוֹם | sha.lom | 54 |
 | 3 | `H7965J` | `H7965G` | **friendship** | peace: friendship | שָׁלוֹם | sha.lom | 5 |
 | 4 | `H7965K` | `H7965G` | **greeting** | peace: greeting | שָׁלוֹם | sha.lom | 12 |
 | 5 | `H7965L` | `H7965G` | **completely** | peace: completely | שָׁלוֹם | sha.lom | 1 |
-| 23 | `H7999A` | `H7999A` | **** | to complete | שָׁלֵם | sha.lem | 103 |
-| 24 | `H7999B` | `H7999B` | **** | to ally | שָׁלַם | sha.lam | 13 |
-| 17 | `H8001` | `H8001` | **** | peace | שְׁלָם | she.lam | 4 |
-| 18 | `H8002` | `H8002` | **** | peace offering | שֶׁ֫לֶם | she.lem | 87 |
-| 28 | `H8252` | `H8252` | **** | to quiet | שָׁקַט | sha.qat | 44 |
+| 23 | `H7999A` | `H7999A` | **to complete** | to complete | שָׁלֵם | sha.lem | 103 |
+| 24 | `H7999B` | `H7999B` | **to ally** | to ally | שָׁלַם | sha.lam | 13 |
+| 17 | `H8001` | `H8001` | **peace** | peace | שְׁלָם | she.lam | 4 |
+| 18 | `H8002` | `H8002` | **peace offering** | peace offering | שֶׁ֫לֶם | she.lem | 87 |
+| 28 | `H8252` | `H8252` | **to quiet** | to quiet | שָׁקַט | sha.qat | 44 |
 
 ## `word_term` — the edge
 
@@ -254,24 +256,1091 @@ Each base below produced **more than one term** because its codes carry **differ
 
 _… 481 more_
 
+---
+
+## ★ `sense_verse` — THE VERSES, per sense
+
+910 rows. **This is what STEP's search returned** — one row per (sense, verse). Every list below is directly checkable:
+
+> `http://localhost:8989/rest/search/masterSearch/strong=<code>|version=ESV_th`
+
+**The parse check.** `sense_verse` is what the SOURCE said; `span.sense_id` is what our parse of the interlinear found. They must agree — where they do not, the parse is losing occurrences silently.
+
+**35 of 35 senses agree.**
+
+| sense | meaning | STEP verses | parse | agree? |
+|---|---|---|---|---|
+| `H7965G` | **peace** | 148 | 148 | yes |
+| `H5117` | **to rest** | 140 | 140 | yes |
+| `H7999A` | **to complete** | 94 | 94 | yes |
+| `G1515` | **peace** | 84 | 84 | yes |
+| `H8002` | **peace offering** | 84 | 84 | yes |
+| `H1293` | **blessing** | 64 | 64 | yes |
+| `H7965I` | **well-being** | 46 | 46 | yes |
+| `H2790B` | **be quiet** | 43 | 43 | yes |
+| `H8252` | **to quiet** | 41 | 41 | yes |
+| `H2790A` | **to plow/plot** | 22 | 22 | yes |
+| `H2814` | **be silent** | 16 | 16 | yes |
+| `H7999B` | **to ally** | 13 | 13 | yes |
+| `G4623` | **be quiet** | 11 | 11 | yes |
+| `H7600` | **secure** | 10 | 10 | yes |
+| `G4601` | **be silent** | 9 | 9 | yes |
+| `H1826A` | **stationary** | 9 | 9 | yes |
+| `H7965K` | **greeting** | 8 | 8 | yes |
+| `H7961` | **at ease** | 8 | 8 | yes |
+| `G5392` | **to muzzle** | 8 | 8 | yes |
+| `H2013` | **to silence** | 8 | 8 | yes |
+| `H7280A` | **to disturb** | 6 | 6 | yes |
+| `H7280B` | **to rest** | 6 | 6 | yes |
+| `H7965J` | **friendship** | 5 | 5 | yes |
+| `G2270` | **be quiet/give up** | 5 | 5 | yes |
+| `G0425` | **rest** | 5 | 5 | yes |
+| `G1514` | **be at peace** | 4 | 4 | yes |
+| `H8001` | **peace** | 4 | 4 | yes |
+| `G1516` | **peaceful** | 2 | 2 | yes |
+| `H7965L` | **completely** | 1 | 1 | yes |
+| `H7965H` | **Peace [God]** | 1 | 1 | yes |
+| `G2263` | **quiet** | 1 | 1 | yes |
+| `H1585` | **to complete** | 1 | 1 | yes |
+| `G1517` | **to make peace** | 1 | 1 | yes |
+| `H7280C` | **to harden** | 1 | 1 | yes |
+| `H1826B` | **to wail** | 1 | 1 | yes |
+
+### The verse list for every sense
+
+Check any of these against STEP's `masterSearch` for that code.
+
+**`H7965G`** — peace — **148 verses** (term `H7965G`)
+
+> Gen 15:15 · Gen 26:29 · Gen 26:31 · Gen 28:21 · Gen 37:4 · Gen 41:16 · Gen 43:23 · Gen 44:17 · Exo 4:18 · Exo 18:23 · Lev 26:6 · Num 6:26 · Num 25:12 · Deu 2:26 · Deu 20:10 · Deu 20:11 · Deu 23:6 · Jos 9:15 · Judg 4:17 · Judg 6:23 · Judg 8:9 · Judg 11:13 · Judg 11:31 · Judg 18:6 · Judg 19:20 · Judg 21:13 · 1Sa 1:17 · 1Sa 7:14 · 1Sa 16:4 · 1Sa 16:5 · 1Sa 20:42 · 1Sa 25:35 · 1Sa 29:7 · 2Sa 3:21 · 2Sa 3:22 · 2Sa 3:23 · 2Sa 15:9 · 2Sa 15:27 · 2Sa 17:3 · 1Ki 2:5 · 1Ki 2:6 · 1Ki 2:13 · 1Ki 2:33 · 1Ki 4:24 · 1Ki 5:12 · 1Ki 20:18 · 1Ki 22:17 · 1Ki 22:27 · 1Ki 22:28 · 2Ki 5:19 · 2Ki 9:17 · 2Ki 9:18 · 2Ki 9:19 · 2Ki 9:22 · 2Ki 9:31 · 2Ki 20:19 · 2Ki 22:20 · 1Ch 12:18 · 1Ch 22:9 · 2Ch 15:5 · 2Ch 18:16 · 2Ch 18:26 · 2Ch 18:27 · 2Ch 34:28 · Ezr 9:12 · Est 9:30 · Est 10:3 · Job 5:24 · Job 25:2 · Psa 4:8 · Psa 28:3 · Psa 29:11 · Psa 34:14 · Psa 35:20 · Psa 37:11 · Psa 37:37 · Psa 69:22 · Psa 72:7 · Psa 85:8 · Psa 85:10 · Psa 119:165 · Psa 120:6 · Psa 120:7 · Psa 122:6 · Psa 122:7 · Psa 122:8 · Psa 125:5 · Psa 128:6 · Psa 147:14 · Pro 3:2 · Pro 3:17 · Pro 12:20 · Ecc 3:8 · Song 8:10 · Isa 9:6 · Isa 9:7 · Isa 26:3 · Isa 26:12 · Isa 27:5 · Isa 32:17 · Isa 32:18 · Isa 33:7 · Isa 39:8 · Isa 48:18 · Isa 48:22 · Isa 52:7 · Isa 53:5 · Isa 54:10 · Isa 54:13 · Isa 55:12 · Isa 57:2 · Isa 57:19 · Isa 57:21 · Isa 59:8 · Isa 60:17 · Isa 66:12 · Jer 6:14 · Jer 8:11 · Jer 8:15 · Jer 9:8 · Jer 12:12 · Jer 14:13 · Jer 14:19 · Jer 16:5 · Jer 25:37 · Jer 28:9 · Jer 30:5 · Jer 34:5 · Jer 43:12 · Lam 3:17 · Eze 7:25 · Eze 13:10 · Eze 13:16 · Eze 34:25 · Eze 37:26 · Dan 10:19 · Obd 7 · Mic 3:5 · Mic 5:5 · Nah 1:15 · Hag 2:9 · Zec 6:13 · Zec 8:12 · Zec 8:16 · Zec 8:19 · Zec 9:10 · Mal 2:5 · Mal 2:6
+
+**`H5117`** — to rest — **140 verses** (term `H5117`)
+
+> Gen 2:15 · Gen 8:4 · Gen 19:16 · Gen 39:16 · Gen 42:33 · Exo 10:14 · Exo 16:23 · Exo 16:24 · Exo 16:33 · Exo 16:34 · Exo 17:11 · Exo 20:11 · Exo 23:12 · Exo 32:10 · Exo 33:14 · Lev 7:15 · Lev 16:23 · Lev 24:12 · Num 10:36 · Num 11:25 · Num 11:26 · Num 15:34 · Num 17:4 · Num 17:7 · Num 19:9 · Num 32:15 · Deu 3:20 · Deu 5:14 · Deu 12:10 · Deu 14:28 · Deu 25:19 · Deu 26:4 · Deu 26:10 · Jos 1:13 · Jos 1:15 · Jos 3:13 · Jos 4:3 · Jos 4:8 · Jos 6:23 · Jos 21:44 · Jos 22:4 · Jos 23:1 · Judg 2:23 · Judg 3:1 · Judg 6:18 · Judg 6:20 · Judg 16:26 · 1Sa 6:18 · 1Sa 10:25 · 1Sa 25:9 · 2Sa 7:1 · 2Sa 7:11 · 2Sa 16:11 · 2Sa 16:21 · 2Sa 17:12 · 2Sa 20:3 · 2Sa 21:10 · 1Ki 5:4 · 1Ki 7:47 · 1Ki 8:9 · 1Ki 13:29 · 1Ki 13:30 · 1Ki 13:31 · 1Ki 19:3 · 2Ki 2:15 · 2Ki 17:29 · 2Ki 23:18 · 1Ch 16:21 · 1Ch 22:9 · 1Ch 22:18 · 1Ch 23:25 · 2Ch 1:14 · 2Ch 4:8 · 2Ch 9:25 · 2Ch 14:6 · 2Ch 14:7 · 2Ch 15:15 · 2Ch 20:30 · Neh 9:28 · Est 3:8 · Est 9:17 · Est 9:18 · Est 9:22 · Job 3:13 · Job 3:17 · Job 3:26 · Psa 17:14 · Psa 105:14 · Psa 119:121 · Psa 125:3 · Pro 14:33 · Pro 21:16 · Pro 29:17 · Ecc 2:18 · Ecc 5:12 · Ecc 7:9 · Ecc 7:18 · Ecc 10:4 · Ecc 11:6 · Isa 7:2 · Isa 7:19 · Isa 11:2 · Isa 14:1 · Isa 14:3 · Isa 14:7 · Isa 23:12 · Isa 25:10 · Isa 28:2 · Isa 28:12 · Isa 30:32 · Isa 46:7 · Isa 57:2 · Isa 63:14 · Isa 65:15 · Jer 14:9 · Jer 27:11 · Jer 43:6 · Lam 5:5 · Eze 5:13 · Eze 16:39 · Eze 16:42 · Eze 21:17 · Eze 22:20 · Eze 24:13 · Eze 37:1 · Eze 37:14 · Eze 40:2 · Eze 40:42 · Eze 41:9 · Eze 41:11 · Eze 42:13 · Eze 42:14 · Eze 44:19 · Eze 44:30 · Dan 12:13 · Hos 4:17 · Amo 5:7 · Hab 3:16 · Zec 5:11 · Zec 6:8
+
+**`H7999A`** — to complete — **94 verses** (term `H7999A`)
+
+> Gen 44:4 · Exo 21:34 · Exo 21:36 · Exo 22:1 · Exo 22:3 · Exo 22:4 · Exo 22:5 · Exo 22:6 · Exo 22:7 · Exo 22:9 · Exo 22:11 · Exo 22:12 · Exo 22:13 · Exo 22:14 · Exo 22:15 · Lev 5:16 · Lev 6:5 · Lev 24:18 · Lev 24:21 · Deu 7:10 · Deu 23:21 · Deu 32:41 · Judg 1:7 · Rut 2:12 · 1Sa 24:19 · 2Sa 3:39 · 2Sa 10:19 · 2Sa 12:6 · 2Sa 15:7 · 1Ki 7:51 · 1Ki 9:25 · 2Ki 4:7 · 2Ki 9:26 · 2Ch 5:1 · Neh 6:15 · Job 8:6 · Job 9:4 · Job 21:19 · Job 21:31 · Job 22:27 · Job 23:14 · Job 34:11 · Job 34:33 · Job 41:11 · Psa 22:25 · Psa 31:23 · Psa 35:12 · Psa 37:21 · Psa 38:20 · Psa 41:10 · Psa 50:14 · Psa 56:12 · Psa 61:8 · Psa 62:12 · Psa 65:1 · Psa 66:13 · Psa 76:11 · Psa 116:14 · Psa 116:18 · Psa 137:8 · Pro 6:31 · Pro 7:14 · Pro 11:31 · Pro 13:13 · Pro 13:21 · Pro 19:17 · Pro 20:22 · Pro 22:27 · Pro 25:22 · Ecc 5:4 · Ecc 5:5 · Isa 19:21 · Isa 38:12 · Isa 38:13 · Isa 44:28 · Isa 57:18 · Isa 59:18 · Isa 60:20 · Isa 65:6 · Isa 66:6 · Jer 16:18 · Jer 18:20 · Jer 25:14 · Jer 32:18 · Jer 50:29 · Jer 51:6 · Jer 51:24 · Jer 51:56 · Eze 33:15 · Hos 14:2 · Joe 2:25 · Joe 3:4 · Jon 2:9 · Nah 1:15
+
+**`G1515`** — peace — **84 verses** (term `G1515`)
+
+> Mat 10:13 · Mat 10:34 · Mar 5:34 · Luk 1:79 · Luk 2:14 · Luk 2:29 · Luk 7:50 · Luk 8:48 · Luk 10:5 · Luk 10:6 · Luk 11:21 · Luk 12:51 · Luk 14:32 · Luk 19:38 · Luk 19:42 · Luk 24:36 · Joh 14:27 · Joh 16:33 · Joh 20:19 · Joh 20:21 · Joh 20:26 · Act 9:31 · Act 10:36 · Act 12:20 · Act 15:33 · Act 16:36 · Act 24:2 · Rom 1:7 · Rom 2:10 · Rom 3:17 · Rom 5:1 · Rom 8:6 · Rom 14:17 · Rom 14:19 · Rom 15:13 · Rom 15:33 · Rom 16:20 · 1Cor 1:3 · 1Cor 7:15 · 1Cor 14:33 · 1Cor 16:11 · 2Cor 1:2 · 2Cor 13:11 · Gal 1:3 · Gal 5:22 · Gal 6:16 · Eph 1:2 · Eph 2:14 · Eph 2:15 · Eph 2:17 · Eph 4:3 · Eph 6:15 · Eph 6:23 · Phili 1:2 · Phili 4:7 · Phili 4:9 · Col 1:2 · Col 3:15 · 1Th 1:1 · 1Th 5:3 · 1Th 5:23 · 2Th 1:2 · 2Th 3:16 · 1Ti 1:2 · 2Ti 1:2 · 2Ti 2:22 · Tit 1:4 · Phile 3 · Heb 7:2 · Heb 11:31 · Heb 12:14 · Heb 13:20 · Jam 2:16 · Jam 3:18 · 1Pe 1:2 · 1Pe 3:11 · 1Pe 5:14 · 2Pe 1:2 · 2Pe 3:14 · 2Jo 3 · 3Jo 15 · Jude 2 · Rev 1:4 · Rev 6:4
+
+**`H8002`** — peace offering — **84 verses** (term `H8002`)
+
+> Exo 20:24 · Exo 24:5 · Exo 29:28 · Exo 32:6 · Lev 3:1 · Lev 3:3 · Lev 3:6 · Lev 3:9 · Lev 4:10 · Lev 4:26 · Lev 4:31 · Lev 4:35 · Lev 6:12 · Lev 7:11 · Lev 7:13 · Lev 7:14 · Lev 7:15 · Lev 7:18 · Lev 7:20 · Lev 7:21 · Lev 7:29 · Lev 7:32 · Lev 7:33 · Lev 7:34 · Lev 7:37 · Lev 9:4 · Lev 9:18 · Lev 9:22 · Lev 10:14 · Lev 17:5 · Lev 19:5 · Lev 22:21 · Lev 23:19 · Num 6:14 · Num 6:17 · Num 6:18 · Num 7:17 · Num 7:23 · Num 7:29 · Num 7:35 · Num 7:41 · Num 7:47 · Num 7:53 · Num 7:59 · Num 7:65 · Num 7:71 · Num 7:77 · Num 7:83 · Num 7:88 · Num 10:10 · Num 15:8 · Num 29:39 · Deu 27:7 · Jos 8:31 · Jos 22:23 · Jos 22:27 · Judg 20:26 · Judg 21:4 · 1Sa 10:8 · 1Sa 11:15 · 1Sa 13:9 · 2Sa 6:17 · 2Sa 6:18 · 2Sa 24:25 · 1Ki 3:15 · 1Ki 8:63 · 1Ki 8:64 · 1Ki 9:25 · 2Ki 16:13 · 1Ch 16:1 · 1Ch 16:2 · 1Ch 21:26 · 2Ch 7:7 · 2Ch 29:35 · 2Ch 30:22 · 2Ch 31:2 · 2Ch 33:16 · Pro 7:14 · Eze 43:27 · Eze 45:15 · Eze 45:17 · Eze 46:2 · Eze 46:12 · Amo 5:22
+
+**`H1293`** — blessing — **64 verses** (term `H1293`)
+
+> Gen 12:2 · Gen 27:12 · Gen 27:35 · Gen 27:36 · Gen 27:38 · Gen 27:41 · Gen 28:4 · Gen 33:11 · Gen 39:5 · Gen 49:25 · Gen 49:26 · Gen 49:28 · Exo 32:29 · Lev 25:21 · Deu 11:26 · Deu 11:27 · Deu 11:29 · Deu 12:15 · Deu 16:17 · Deu 23:5 · Deu 28:2 · Deu 28:8 · Deu 30:1 · Deu 30:19 · Deu 33:1 · Deu 33:23 · Jos 8:34 · Jos 15:19 · Judg 1:15 · 1Sa 25:27 · 1Sa 30:26 · 2Sa 7:29 · 2Ki 5:15 · 2Ki 18:31 · Neh 9:5 · Neh 13:2 · Job 29:13 · Psa 3:8 · Psa 21:3 · Psa 21:6 · Psa 24:5 · Psa 37:26 · Psa 84:6 · Psa 109:17 · Psa 129:8 · Psa 133:3 · Pro 10:6 · Pro 10:7 · Pro 10:22 · Pro 11:11 · Pro 11:25 · Pro 11:26 · Pro 24:25 · Pro 28:20 · Isa 19:24 · Isa 36:16 · Isa 44:3 · Isa 65:8 · Eze 34:26 · Eze 44:30 · Joe 2:14 · Zec 8:13 · Mal 2:2 · Mal 3:10
+
+**`H7965I`** — well-being — **46 verses** (term `H7965G`)
+
+> Gen 29:6 · Gen 37:14 · Gen 43:27 · Gen 43:28 · Exo 18:7 · Deu 29:19 · Jos 10:21 · Judg 18:15 · 1Sa 17:18 · 1Sa 20:7 · 1Sa 20:13 · 1Sa 20:21 · 2Sa 8:10 · 2Sa 18:28 · 2Sa 18:29 · 2Sa 18:32 · 2Sa 19:24 · 2Sa 19:30 · 2Sa 20:9 · 2Ki 4:23 · 2Ki 4:26 · 2Ki 5:21 · 2Ki 5:22 · 2Ki 9:11 · 1Ch 18:10 · 2Ch 19:1 · Job 15:21 · Job 21:9 · Psa 35:27 · Psa 38:3 · Psa 55:18 · Psa 72:3 · Psa 73:3 · Isa 38:17 · Isa 41:3 · Isa 45:7 · Jer 4:10 · Jer 12:5 · Jer 15:5 · Jer 23:17 · Jer 29:7 · Jer 29:11 · Jer 33:6 · Jer 33:9 · Jer 38:4 · Zec 8:10
+
+**`H2790B`** — be quiet — **43 verses** (term `H2790B`)
+
+> Gen 24:21 · Gen 34:5 · Exo 14:14 · Num 30:4 · Num 30:7 · Num 30:11 · Num 30:14 · Judg 16:2 · Judg 18:19 · 1Sa 7:8 · 1Sa 10:27 · 2Sa 13:20 · 2Sa 19:10 · 2Ki 18:36 · Neh 5:8 · Est 4:14 · Est 7:4 · Job 6:24 · Job 11:3 · Job 13:5 · Job 13:13 · Job 13:19 · Job 33:31 · Job 33:33 · Job 41:12 · Psa 28:1 · Psa 32:3 · Psa 35:22 · Psa 39:12 · Psa 50:3 · Psa 50:21 · Psa 83:1 · Psa 109:1 · Pro 11:12 · Pro 17:28 · Isa 36:21 · Isa 41:1 · Isa 42:14 · Jer 4:19 · Jer 38:27 · Mic 7:16 · Hab 1:13 · Zep 3:17
+
+**`H8252`** — to quiet — **41 verses** (term `H8252`)
+
+> Jos 11:23 · Jos 14:15 · Judg 3:11 · Judg 3:30 · Judg 5:31 · Judg 8:28 · Judg 18:7 · Judg 18:27 · Rut 3:18 · 2Ki 11:20 · 1Ch 4:40 · 2Ch 14:1 · 2Ch 14:5 · 2Ch 14:6 · 2Ch 20:30 · 2Ch 23:21 · Job 3:13 · Job 3:26 · Job 34:29 · Job 37:17 · Psa 76:8 · Psa 83:1 · Psa 94:13 · Pro 15:18 · Isa 7:4 · Isa 14:7 · Isa 18:4 · Isa 30:15 · Isa 32:17 · Isa 57:20 · Isa 62:1 · Jer 30:10 · Jer 46:27 · Jer 47:6 · Jer 47:7 · Jer 48:11 · Jer 49:23 · Eze 16:42 · Eze 16:49 · Eze 38:11 · Zec 1:11
+
+**`H2790A`** — to plow/plot — **22 verses** (term `H2790A`)
+
+> Deu 22:10 · Judg 14:18 · 1Sa 8:12 · 1Sa 23:9 · 1Ki 19:19 · Job 1:14 · Job 4:8 · Psa 129:3 · Pro 3:29 · Pro 6:14 · Pro 6:18 · Pro 12:20 · Pro 14:22 · Pro 20:4 · Isa 28:24 · Jer 17:1 · Jer 26:18 · Hos 10:11 · Hos 10:13 · Amo 6:12 · Amo 9:13 · Mic 3:12
+
+**`H2814`** — be silent — **16 verses** (term `H2814`)
+
+> Judg 18:9 · 1Ki 22:3 · 2Ki 2:3 · 2Ki 2:5 · 2Ki 7:9 · Neh 8:11 · Psa 28:1 · Psa 39:2 · Psa 107:29 · Ecc 3:7 · Isa 42:14 · Isa 57:11 · Isa 62:1 · Isa 62:6 · Isa 64:12 · Isa 65:6
+
+**`H7999B`** — to ally — **13 verses** (term `H7999B`)
+
+> Deu 20:12 · Jos 10:1 · Jos 10:4 · Jos 11:19 · 2Sa 20:19 · 1Ki 22:44 · 1Ch 19:19 · Job 5:23 · Job 22:21 · Psa 7:4 · Pro 16:7 · Isa 42:19 · Isa 44:26
+
+**`G4623`** — be quiet — **11 verses** (term `G4623`)
+
+> Mat 20:31 · Mat 26:63 · Mar 3:4 · Mar 4:39 · Mar 9:34 · Mar 10:48 · Mar 14:61 · Luk 1:20 · Luk 18:39 · Luk 19:40 · Act 18:9
+
+**`H7600`** — secure — **10 verses** (term `H7600`)
+
+> 2Ki 19:28 · Job 12:5 · Psa 123:4 · Isa 32:9 · Isa 32:11 · Isa 32:18 · Isa 33:20 · Isa 37:29 · Amo 6:1 · Zec 1:15
+
+**`G4601`** — be silent — **9 verses** (term `G4601`)
+
+> Luk 9:36 · Luk 20:26 · Act 12:17 · Act 15:12 · Act 15:13 · Rom 16:25 · 1Cor 14:28 · 1Cor 14:30 · 1Cor 14:34
+
+**`H1826A`** — stationary — **9 verses** (term `H1826A`)
+
+> Exo 15:16 · Jos 10:12 · Jos 10:13 · 1Sa 14:9 · Job 30:27 · Psa 35:15 · Psa 37:7 · Jer 47:6 · Lam 2:18
+
+**`H7965K`** — greeting — **8 verses** (term `H7965G`)
+
+> 1Sa 10:4 · 1Sa 17:22 · 1Sa 25:5 · 1Sa 25:6 · 1Sa 30:21 · 2Sa 11:7 · 2Ki 10:13 · Est 2:11
+
+**`H7961`** — at ease — **8 verses** (term `H7961`)
+
+> 1Ch 4:40 · Job 16:12 · Job 20:20 · Job 21:23 · Psa 73:12 · Jer 49:31 · Eze 23:42 · Zec 7:7
+
+**`G5392`** — to muzzle — **8 verses** (term `G5392`)
+
+> Mat 22:12 · Mat 22:34 · Mar 1:25 · Mar 4:39 · Luk 4:35 · 1Cor 9:9 · 1Ti 5:18 · 1Pe 2:15
+
+**`H2013`** — to silence — **8 verses** (term `H2013`)
+
+> Num 13:30 · Judg 3:19 · Neh 8:11 · Amo 6:10 · Amo 8:3 · Hab 2:20 · Zep 1:7 · Zec 2:13
+
+**`H7280A`** — to disturb — **6 verses** (term `H7280A`)
+
+> Job 26:12 · Pro 12:19 · Isa 51:15 · Jer 31:35 · Jer 49:19 · Jer 50:44
+
+**`H7280B`** — to rest — **6 verses** (term `H7280B`)
+
+> Deu 28:65 · Isa 34:14 · Isa 51:4 · Jer 31:2 · Jer 47:6 · Jer 50:34
+
+**`H7965J`** — friendship — **5 verses** (term `H7965G`)
+
+> 1Ch 12:17 · Psa 41:9 · Psa 55:20 · Jer 20:10 · Jer 38:22
+
+**`G2270`** — be quiet/give up — **5 verses** (term `G2270`)
+
+> Luk 14:4 · Luk 23:56 · Act 11:18 · Act 21:14 · 1Th 4:11
+
+**`G0425`** — rest — **5 verses** (term `G0425`)
+
+> Act 24:23 · 2Cor 2:13 · 2Cor 7:5 · 2Cor 8:13 · 2Th 1:7
+
+**`G1514`** — be at peace — **4 verses** (term `G1514`)
+
+> Mar 9:50 · Rom 12:18 · 2Cor 13:11 · 1Th 5:13
+
+**`H8001`** — peace — **4 verses** (term `H8001`)
+
+> Ezr 4:17 · Ezr 5:7 · Dan 4:1 · Dan 6:25
+
+**`G1516`** — peaceful — **2 verses** (term `G1516`)
+
+> Heb 12:11 · Jam 3:17
+
+**`H7965L`** — completely — **1 verses** (term `H7965G`)
+
+> Jer 13:19
+
+**`H7965H`** — Peace [God] — **1 verses** (term `H7965H`)
+
+> Judg 6:24
+
+**`G2263`** — quiet — **1 verses** (term `G2263`)
+
+> 1Ti 2:2
+
+**`H1585`** — to complete — **1 verses** (term `H1585`)
+
+> Ezr 7:12
+
+**`G1517`** — to make peace — **1 verses** (term `G1517`)
+
+> Col 1:20
+
+**`H7280C`** — to harden — **1 verses** (term `H7280C`)
+
+> Job 7:5
+
+**`H1826B`** — to wail — **1 verses** (term `H1826B`)
+
+> Isa 23:2
+
+---
+
 ## `verse`
 
-883 rows. Sample:
+883 rows — every verse any of this word's senses occurs in.
 
 | verse_id | osis_id | reference | text |
 |---|---|---|---|
-| 1 | `Gen.15.15` | Gen 15:15 | Gen 15:15 As for you , you shall go to your fathers in peace ; you shall be… |
-| 2 | `Gen.26.29` | Gen 26:29 | Gen 26:29 that you will do us no harm , just as we have not touched you and… |
-| 3 | `Gen.26.31` | Gen 26:31 | Gen 26:31 In the morning they rose early and exchanged oaths . And Isaac se… |
-| 4 | `Gen.28.21` | Gen 28:21 | Gen 28:21 so that I come again to my father’s house in peace , then the Lor… |
-| 5 | `Gen.37.4` | Gen 37:4 | Gen 37:4 But when his brothers saw that their father loved him more than al… |
-| 6 | `Gen.41.16` | Gen 41:16 | Gen 41:16 Joseph answered Pharaoh , “It is not in me ; God will give Pharao… |
-| 7 | `Gen.43.23` | Gen 43:23 | Gen 43:23 He replied , “ Peace to you, do not be afraid . Your God and the … |
-| 8 | `Gen.44.17` | Gen 44:17 | Gen 44:17 But he said , “Far be it from me that I should do so ! Only the m… |
-| 9 | `Exod.4.18` | Exo 4:18 | Exo 4:18 Moses went back to Jethro his father-in-law and said to him, “ Ple… |
-| 10 | `Exod.18.23` | Exo 18:23 | Exo 18:23 If you do this , God will direct you, you will be able to endure … |
-| 11 | `Lev.26.6` | Lev 26:6 | Lev 26:6 I will give peace in the land , and you shall lie down , and none … |
+| 1 | `Gen.15.15` | Gen 15:15 | Gen 15:15 As for you , you shall go to your fathers in peace ; you shall be buried in a g… |
+| 2 | `Gen.26.29` | Gen 26:29 | Gen 26:29 that you will do us no harm , just as we have not touched you and have done to … |
+| 3 | `Gen.26.31` | Gen 26:31 | Gen 26:31 In the morning they rose early and exchanged oaths . And Isaac sent them on the… |
+| 4 | `Gen.28.21` | Gen 28:21 | Gen 28:21 so that I come again to my father’s house in peace , then the Lord shall be my … |
+| 5 | `Gen.37.4` | Gen 37:4 | Gen 37:4 But when his brothers saw that their father loved him more than all his brothers… |
+| 6 | `Gen.41.16` | Gen 41:16 | Gen 41:16 Joseph answered Pharaoh , “It is not in me ; God will give Pharaoh a favorable … |
+| 7 | `Gen.43.23` | Gen 43:23 | Gen 43:23 He replied , “ Peace to you, do not be afraid . Your God and the God of your fa… |
+| 8 | `Gen.44.17` | Gen 44:17 | Gen 44:17 But he said , “Far be it from me that I should do so ! Only the man in whose ha… |
+| 9 | `Exod.4.18` | Exo 4:18 | Exo 4:18 Moses went back to Jethro his father-in-law and said to him, “ Please let me go … |
+| 10 | `Exod.18.23` | Exo 18:23 | Exo 18:23 If you do this , God will direct you, you will be able to endure , and all this… |
+| 11 | `Lev.26.6` | Lev 26:6 | Lev 26:6 I will give peace in the land , and you shall lie down , and none shall make you… |
 | 12 | `Num.6.26` | Num 6:26 | Num 6:26 the Lord lift up his countenance upon you and give you peace . |
+| 13 | `Num.25.12` | Num 25:12 | Num 25:12 Therefore say , ‘ Behold , I give to him my covenant of peace , |
+| 14 | `Deut.2.26` | Deu 2:26 | Deu 2:26 “So I sent messengers from the wilderness of Kedemoth to Sihon the king of Heshb… |
+| 15 | `Deut.20.10` | Deu 20:10 | Deu 20:10 “When you draw near to a city to fight against it , offer terms of peace to it. |
+| 16 | `Deut.20.11` | Deu 20:11 | Deu 20:11 And if it responds to you peaceably and it opens to you, then all the people wh… |
+| 17 | `Deut.23.6` | Deu 23:6 | Deu 23:6 You shall not seek their peace or their prosperity all your days forever . |
+| 18 | `Josh.9.15` | Jos 9:15 | Jos 9:15 And Joshua made peace with them and made a covenant with them, to let them live … |
+| 19 | `Judg.4.17` | Judg 4:17 | Judg 4:17 But Sisera fled away on foot to the tent of Jael , the wife of Heber the Kenite… |
+| 20 | `Judg.6.23` | Judg 6:23 | Judg 6:23 But the Lord said to him, “ Peace be to you. Do not fear ; you shall not die .” |
+| 21 | `Judg.8.9` | Judg 8:9 | Judg 8:9 And he said to the men of Penuel , “ When I come again in peace , I will break d… |
+| 22 | `Judg.11.13` | Judg 11:13 | Judg 11:13 And the king of the Ammonites answered the messengers of Jephthah , “Because I… |
+| 23 | `Judg.11.31` | Judg 11:31 | Judg 11:31 then whatever comes out from the doors of my house to meet me when I return in… |
+| 24 | `Judg.18.6` | Judg 18:6 | Judg 18:6 And the priest said to them, “ Go in peace . The journey on which you go is und… |
+| 25 | `Judg.19.20` | Judg 19:20 | Judg 19:20 And the old man said , “ Peace be to you; I will care for all your wants . Onl… |
+| 26 | `Judg.21.13` | Judg 21:13 | Judg 21:13 Then the whole congregation sent word to the people of Benjamin who were at th… |
+| 27 | `1Sam.1.17` | 1Sa 1:17 | 1Sa 1:17 Then Eli answered , “ Go in peace , and the God of Israel grant your petition th… |
+| 28 | `1Sam.7.14` | 1Sa 7:14 | 1Sa 7:14 The cities that the Philistines had taken from Israel were restored to Israel , … |
+| 29 | `1Sam.16.4` | 1Sa 16:4 | 1Sa 16:4 Samuel did what the Lord commanded and came to Bethlehem . The elders of the cit… |
+| 30 | `1Sam.16.5` | 1Sa 16:5 | 1Sa 16:5 And he said , “ Peaceably ; I have come to sacrifice to the Lord . Consecrate yo… |
+| 31 | `1Sam.20.42` | 1Sa 20:42 | 1Sa 20:42 Then Jonathan said to David , “ Go in peace , because we have sworn both of us … |
+| 32 | `1Sam.25.35` | 1Sa 25:35 | 1Sa 25:35 Then David received from her hand what she had brought him. And he said to her,… |
+| 33 | `1Sam.29.7` | 1Sa 29:7 | 1Sa 29:7 So go back now ; and go peaceably , that you may not displease the lords of the … |
+| 34 | `2Sam.3.21` | 2Sa 3:21 | 2Sa 3:21 And Abner said to David , “I will arise and go and will gather all Israel to my … |
+| 35 | `2Sam.3.22` | 2Sa 3:22 | 2Sa 3:22 Just then the servants of David arrived with Joab from a raid , bringing much sp… |
+| 36 | `2Sam.3.23` | 2Sa 3:23 | 2Sa 3:23 When Joab and all the army that was with him came , it was told Joab , “ Abner t… |
+| 37 | `2Sam.15.9` | 2Sa 15:9 | 2Sa 15:9 The king said to him, “ Go in peace .” So he arose and went to Hebron . |
+| 38 | `2Sam.15.27` | 2Sa 15:27 | 2Sa 15:27 The king also said to Zadok the priest , “Are you not a seer ? Go back to the c… |
+| 39 | `2Sam.17.3` | 2Sa 17:3 | 2Sa 17:3 and I will bring all the people back to you as a bride comes home to her husband… |
+| 40 | `1Kgs.2.5` | 1Ki 2:5 | 1Ki 2:5 “Moreover, you also know what Joab the son of Zeruiah did to me, how he dealt wit… |
+| 41 | `1Kgs.2.6` | 1Ki 2:6 | 1Ki 2:6 Act therefore according to your wisdom , but do not let his gray head go down to … |
+| 42 | `1Kgs.2.13` | 1Ki 2:13 | 1Ki 2:13 Then Adonijah the son of Haggith came to Bathsheba the mother of Solomon . And s… |
+| 43 | `1Kgs.2.33` | 1Ki 2:33 | 1Ki 2:33 So shall their blood come back on the head of Joab and on the head of his descen… |
+| 44 | `1Kgs.4.24` | 1Ki 4:24 | 1Ki 4:24 For he had dominion over all the region west of the Euphrates from Tiphsah to Ga… |
+| 45 | `1Kgs.5.12` | 1Ki 5:12 | 1Ki 5:12 And the Lord gave Solomon wisdom , as he promised him. And there was peace betwe… |
+| 46 | `1Kgs.20.18` | 1Ki 20:18 | 1Ki 20:18 He said , “ If they have come out for peace , take them alive . Or if they have… |
+| 47 | `1Kgs.22.17` | 1Ki 22:17 | 1Ki 22:17 And he said , “I saw all Israel scattered on the mountains , as sheep that have… |
+| 48 | `1Kgs.22.27` | 1Ki 22:27 | 1Ki 22:27 and say , ‘ Thus says the king , “ Put this fellow in prison and feed him meage… |
+| 49 | `1Kgs.22.28` | 1Ki 22:28 | 1Ki 22:28 And Micaiah said , “ If you return in peace , the Lord has not spoken by me.” A… |
+| 50 | `2Kgs.5.19` | 2Ki 5:19 | 2Ki 5:19 He said to him, “ Go in peace .” But when Naaman had gone from him a short dista… |
+| 51 | `2Kgs.9.17` | 2Ki 9:17 | 2Ki 9:17 Now the watchman was standing on the tower in Jezreel , and he saw the company o… |
+| 52 | `2Kgs.9.18` | 2Ki 9:18 | 2Ki 9:18 So a man on horseback went to meet him and said , “ Thus says the king , ‘Is it … |
+| 53 | `2Kgs.9.19` | 2Ki 9:19 | 2Ki 9:19 Then he sent out a second horseman , who came to them and said , “ Thus the king… |
+| 54 | `2Kgs.9.22` | 2Ki 9:22 | 2Ki 9:22 And when Joram saw Jehu , he said , “Is it peace , Jehu ?” He answered , “ What … |
+| 55 | `2Kgs.9.31` | 2Ki 9:31 | 2Ki 9:31 And as Jehu entered the gate , she said , “Is it peace , you Zimri , murderer of… |
+| 56 | `2Kgs.20.19` | 2Ki 20:19 | 2Ki 20:19 Then Hezekiah said to Isaiah , “The word of the Lord that you have spoken is go… |
+| 57 | `2Kgs.22.20` | 2Ki 22:20 | 2Ki 22:20 Therefore , behold , I will gather you to your fathers , and you shall be gathe… |
+| 58 | `1Chr.12.18` | 1Ch 12:18 | 1Ch 12:18 Then the Spirit clothed Amasai , chief of the thirty , and he said, “We are you… |
+| 59 | `1Chr.22.9` | 1Ch 22:9 | 1Ch 22:9 Behold , a son shall be born to you who shall be a man of rest . I will give him… |
+| 60 | `2Chr.15.5` | 2Ch 15:5 | 2Ch 15:5 In those times there was no peace to him who went out or to him who came in , fo… |
+| 61 | `2Chr.18.16` | 2Ch 18:16 | 2Ch 18:16 And he said , “I saw all Israel scattered on the mountains , as sheep that have… |
+| 62 | `2Chr.18.26` | 2Ch 18:26 | 2Ch 18:26 and say , ‘ Thus says the king , Put this fellow in prison and feed him with me… |
+| 63 | `2Chr.18.27` | 2Ch 18:27 | 2Ch 18:27 And Micaiah said , “ If you return in peace , the Lord has not spoken by me.” A… |
+| 64 | `2Chr.34.28` | 2Ch 34:28 | 2Ch 34:28 Behold , I will gather you to your fathers , and you shall be gathered to your … |
+| 65 | `Ezra.9.12` | Ezr 9:12 | Ezr 9:12 Therefore do not give your daughters to their sons , neither take their daughter… |
+| 66 | `Esth.9.30` | Est 9:30 | Est 9:30 Letters were sent to all the Jews , to the 127 provinces of the kingdom of Ahasu… |
+| 67 | `Esth.10.3` | Est 10:3 | Est 10:3 For Mordecai the Jew was second in rank to King Ahasuerus , and he was great amo… |
+| 68 | `Job.5.24` | Job 5:24 | Job 5:24 You shall know that your tent is at peace , and you shall inspect your fold and … |
+| 69 | `Job.25.2` | Job 25:2 | Job 25:2 “ Dominion and fear are with God; he makes peace in his high heaven . |
+| 70 | `Ps.4.8` | Psa 4:8 | Psa 4:8 In peace I will both lie down and sleep ; for you alone , O Lord , make me dwell … |
+| 71 | `Ps.28.3` | Psa 28:3 | Psa 28:3 Do not drag me off with the wicked , with the workers of evil , who speak peace … |
+| 72 | `Ps.29.11` | Psa 29:11 | Psa 29:11 May the Lord give strength to his people ! May the Lord bless his people with p… |
+| 73 | `Ps.34.14` | Psa 34:14 | Psa 34:14 Turn away from evil and do good ; seek peace and pursue it . |
+| 74 | `Ps.35.20` | Psa 35:20 | Psa 35:20 For they do not speak peace , but against those who are quiet in the land they … |
+| 75 | `Ps.37.11` | Psa 37:11 | Psa 37:11 But the meek shall inherit the land and delight themselves in abundant peace . |
+| 76 | `Ps.37.37` | Psa 37:37 | Psa 37:37 Mark the blameless and behold the upright , for there is a future for the man o… |
+| 77 | `Ps.69.22` | Psa 69:22 | Psa 69:22 Let their own table before them become a snare ; and when they are at peace , l… |
+| 78 | `Ps.72.7` | Psa 72:7 | Psa 72:7 In his days may the righteous flourish , and peace abound , till the moon be no … |
+| 79 | `Ps.85.8` | Psa 85:8 | Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people… |
+| 80 | `Ps.85.10` | Psa 85:10 | Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. |
+| 81 | `Ps.119.165` | Psa 119:165 | Psa 119:165 Great peace have those who love your law ; nothing can make them stumble . |
+| 82 | `Ps.120.6` | Psa 120:6 | Psa 120:6 Too long have I had my dwelling among those who hate peace . |
+| 83 | `Ps.120.7` | Psa 120:7 | Psa 120:7 I am for peace , but when I speak , they are for war ! |
+| 84 | `Ps.122.6` | Psa 122:6 | Psa 122:6 Pray for the peace of Jerusalem ! “May they be secure who love you ! |
+| 85 | `Ps.122.7` | Psa 122:7 | Psa 122:7 Peace be within your walls and security within your towers !” |
+| 86 | `Ps.122.8` | Psa 122:8 | Psa 122:8 For my brothers and companions ’ sake I will say , “ Peace be within you !” |
+| 87 | `Ps.125.5` | Psa 125:5 | Psa 125:5 But those who turn aside to their crooked ways the Lord will lead away with evi… |
+| 88 | `Ps.128.6` | Psa 128:6 | Psa 128:6 May you see your children’s children ! Peace be upon Israel ! |
+| 89 | `Ps.147.14` | Psa 147:14 | Psa 147:14 He makes peace in your borders ; he fills you with the finest of the wheat . |
+| 90 | `Prov.3.2` | Pro 3:2 | Pro 3:2 for length of days and years of life and peace they will add to you . |
+| 91 | `Prov.3.17` | Pro 3:17 | Pro 3:17 Her ways are ways of pleasantness , and all her paths are peace . |
+| 92 | `Prov.12.20` | Pro 12:20 | Pro 12:20 Deceit is in the heart of those who devise evil , but those who plan peace have… |
+| 93 | `Eccl.3.8` | Ecc 3:8 | Ecc 3:8 a time to love , and a time to hate ; a time for war , and a time for peace . |
+| 94 | `Song.8.10` | Song 8:10 | Song 8:10 I was a wall , and my breasts were like towers ; then I was in his eyes as one … |
+| 95 | `Isa.9.6` | Isa 9:6 | Isa 9:6 For to us a child is born , to us a son is given ; and the government shall be up… |
+| 96 | `Isa.9.7` | Isa 9:7 | Isa 9:7 Of the increase of his government and of peace there will be no end , on the thro… |
+| 97 | `Isa.26.3` | Isa 26:3 | Isa 26:3 You keep him in perfect peace whose mind is stayed on you, because he trusts in … |
+| 98 | `Isa.26.12` | Isa 26:12 | Isa 26:12 O Lord , you will ordain peace for us, for you have indeed done for us all our … |
+| 99 | `Isa.27.5` | Isa 27:5 | Isa 27:5 Or let them lay hold of my protection , let them make peace with me, let them ma… |
+| 100 | `Isa.32.17` | Isa 32:17 | Isa 32:17 And the effect of righteousness will be peace , and the result of righteousness… |
+| 101 | `Isa.32.18` | Isa 32:18 | Isa 32:18 My people will abide in a peaceful habitation , in secure dwellings , and in qu… |
+| 102 | `Isa.33.7` | Isa 33:7 | Isa 33:7 Behold , their heroes cry in the streets ; the envoys of peace weep bitterly . |
+| 103 | `Isa.39.8` | Isa 39:8 | Isa 39:8 Then Hezekiah said to Isaiah , “The word of the Lord that you have spoken is goo… |
+| 104 | `Isa.48.18` | Isa 48:18 | Isa 48:18 Oh that you had paid attention to my commandments ! Then your peace would have … |
+| 105 | `Isa.48.22` | Isa 48:22 | Isa 48:22 “There is no peace ,” says the Lord , “ for the wicked .” |
+| 106 | `Isa.52.7` | Isa 52:7 | Isa 52:7 How beautiful upon the mountains are the feet of him who brings good news , who … |
+| 107 | `Isa.53.5` | Isa 53:5 | Isa 53:5 But he was pierced for our transgressions ; he was crushed for our iniquities ; … |
+| 108 | `Isa.54.10` | Isa 54:10 | Isa 54:10 For the mountains may depart and the hills be removed , but my steadfast love s… |
+| 109 | `Isa.54.13` | Isa 54:13 | Isa 54:13 All your children shall be taught by the Lord , and great shall be the peace of… |
+| 110 | `Isa.55.12` | Isa 55:12 | Isa 55:12 “For you shall go out in joy and be led forth in peace ; the mountains and the … |
+| 111 | `Isa.57.2` | Isa 57:2 | Isa 57:2 he enters into peace ; they rest in their beds who walk in their uprightness . |
+| 112 | `Isa.57.19` | Isa 57:19 | Isa 57:19 creating the fruit of the lips . Peace , peace , to the far and to the near ,” … |
+| 113 | `Isa.57.21` | Isa 57:21 | Isa 57:21 There is no peace ,” says my God , “ for the wicked .” |
+| 114 | `Isa.59.8` | Isa 59:8 | Isa 59:8 The way of peace they do not know , and there is no justice in their paths ; the… |
+| 115 | `Isa.60.17` | Isa 60:17 | Isa 60:17 Instead of bronze I will bring gold , and instead of iron I will bring silver ;… |
+| 116 | `Isa.66.12` | Isa 66:12 | Isa 66:12 For thus says the Lord : “ Behold , I will extend peace to her like a river , a… |
+| 117 | `Jer.6.14` | Jer 6:14 | Jer 6:14 They have healed the wound of my people lightly , saying , ‘ Peace , peace ,’ wh… |
+| 118 | `Jer.8.11` | Jer 8:11 | Jer 8:11 They have healed the wound of my people lightly , saying , ‘ Peace , peace ,’ wh… |
+| 119 | `Jer.8.15` | Jer 8:15 | Jer 8:15 We looked for peace , but no good came; for a time of healing , but behold , ter… |
+| 120 | `Jer.9.8` | Jer 9:8 | Jer 9:8 Their tongue is a deadly arrow ; it speaks deceitfully ; with his mouth each spea… |
+| 121 | `Jer.12.12` | Jer 12:12 | Jer 12:12 Upon all the bare heights in the desert destroyers have come , for the sword of… |
+| 122 | `Jer.14.13` | Jer 14:13 | Jer 14:13 Then I said : “ Ah , Lord God , behold , the prophets say to them, ‘You shall n… |
+| 123 | `Jer.14.19` | Jer 14:19 | Jer 14:19 Have you utterly rejected Judah ? Does your soul loathe Zion ? Why have you str… |
+| 124 | `Jer.16.5` | Jer 16:5 | Jer 16:5 “For thus says the Lord : Do not enter the house of mourning , or go to lament o… |
+| 125 | `Jer.25.37` | Jer 25:37 | Jer 25:37 and the peaceful folds are devastated because of the fierce anger of the Lord . |
+| 126 | `Jer.28.9` | Jer 28:9 | Jer 28:9 As for the prophet who prophesies peace , when the word of that prophet comes to… |
+| 127 | `Jer.30.5` | Jer 30:5 | Jer 30:5 “ Thus says the Lord : We have heard a cry of panic , of terror , and no peace . |
+| 128 | `Jer.34.5` | Jer 34:5 | Jer 34:5 You shall die in peace . And as spices were burned for your fathers , the former… |
+| 129 | `Jer.43.12` | Jer 43:12 | Jer 43:12 I shall kindle a fire in the temples of the gods of Egypt , and he shall burn t… |
+| 130 | `Lam.3.17` | Lam 3:17 | Lam 3:17 my soul is bereft of peace ; I have forgotten what happiness is; |
+| 131 | `Ezek.7.25` | Eze 7:25 | Eze 7:25 When anguish comes , they will seek peace , but there shall be none . |
+| 132 | `Ezek.13.10` | Eze 13:10 | Eze 13:10 Precisely because they have misled my people , saying , ‘ Peace ,’ when there i… |
+| 133 | `Ezek.13.16` | Eze 13:16 | Eze 13:16 the prophets of Israel who prophesied concerning Jerusalem and saw visions of p… |
+| 134 | `Ezek.34.25` | Eze 34:25 | Eze 34:25 “I will make with them a covenant of peace and banish wild beasts from the land… |
+| 135 | `Ezek.37.26` | Eze 37:26 | Eze 37:26 I will make a covenant of peace with them. It shall be an everlasting covenant … |
+| 136 | `Dan.10.19` | Dan 10:19 | Dan 10:19 And he said , “O man greatly loved , fear not , peace be with you; be strong an… |
+| 137 | `Obad.1.7` | Obd 7 | Obd 7 All your allies have driven you to your border ; those at peace with you have decei… |
+| 138 | `Mic.3.5` | Mic 3:5 | Mic 3:5 Thus says the Lord concerning the prophets who lead my people astray , who cry “ … |
+| 139 | `Mic.5.5` | Mic 5:5 | Mic 5:5 And he shall be their peace . When the Assyrian comes into our land and treads in… |
+| 140 | `Nah.1.15` | Nah 1:15 | Nah 1:15 Behold , upon the mountains , the feet of him who brings good news , who publish… |
+| 141 | `Hag.2.9` | Hag 2:9 | Hag 2:9 The latter glory of this house shall be greater than the former , says the Lord o… |
+| 142 | `Zech.6.13` | Zec 6:13 | Zec 6:13 It is he who shall build the temple of the Lord and shall bear royal honor , and… |
+| 143 | `Zech.8.12` | Zec 8:12 | Zec 8:12 For there shall be a sowing of peace . The vine shall give its fruit , and the g… |
+| 144 | `Zech.8.16` | Zec 8:16 | Zec 8:16 These are the things that you shall do : Speak the truth to one another ; render… |
+| 145 | `Zech.8.19` | Zec 8:19 | Zec 8:19 “ Thus says the Lord of hosts : The fast of the fourth month and the fast of the… |
+| 146 | `Zech.9.10` | Zec 9:10 | Zec 9:10 I will cut off the chariot from Ephraim and the war horse from Jerusalem ; and t… |
+| 147 | `Mal.2.5` | Mal 2:5 | Mal 2:5 My covenant with him was one of life and peace , and I gave them to him. It was a… |
+| 148 | `Mal.2.6` | Mal 2:6 | Mal 2:6 True instruction was in his mouth , and no wrong was found on his lips . He walke… |
+| 149 | `Gen.29.6` | Gen 29:6 | Gen 29:6 He said to them, “Is it well with him?” They said , “It is well ; and see , Rach… |
+| 150 | `Gen.37.14` | Gen 37:14 | Gen 37:14 So he said to him, “ Go now , see if it is well with your brothers and with the… |
+| 151 | `Gen.43.27` | Gen 43:27 | Gen 43:27 And he inquired about their welfare and said , “Is your father well , the old m… |
+| 152 | `Gen.43.28` | Gen 43:28 | Gen 43:28 They said , “Your servant our father is well ; he is still alive .” And they bo… |
+| 153 | `Exod.18.7` | Exo 18:7 | Exo 18:7 Moses went out to meet his father-in-law and bowed down and kissed him. And they… |
+| 154 | `Deut.29.19` | Deu 29:19 | Deu 29:19 one who, when he hears the words of this sworn covenant , blesses himself in hi… |
+| 155 | `Josh.10.21` | Jos 10:21 | Jos 10:21 then all the people returned safe to Joshua in the camp at Makkedah . Not a man… |
+| 156 | `Judg.18.15` | Judg 18:15 | Judg 18:15 And they turned aside there and came to the house of the young Levite , at the… |
+| 157 | `1Sam.17.18` | 1Sa 17:18 | 1Sa 17:18 Also take these ten cheeses to the commander of their thousand . See if your br… |
+| 158 | `1Sam.20.7` | 1Sa 20:7 | 1Sa 20:7 If he says , ‘ Good !’ it will be well with your servant , but if he is angry , … |
+| 159 | `1Sam.20.13` | 1Sa 20:13 | 1Sa 20:13 But should it please my father to do you harm , the Lord do so to Jonathan and … |
+| 160 | `1Sam.20.21` | 1Sa 20:21 | 1Sa 20:21 And behold , I will send the boy , saying, ‘ Go , find the arrows .’ If I say t… |
+| 161 | `2Sam.8.10` | 2Sa 8:10 | 2Sa 8:10 Toi sent his son Joram to King David , to ask about his health and to bless him … |
+| 162 | `2Sam.18.28` | 2Sa 18:28 | 2Sa 18:28 Then Ahimaaz cried out to the king , “All is well .” And he bowed before the ki… |
+| 163 | `2Sam.18.29` | 2Sa 18:29 | 2Sa 18:29 And the king said , “Is it well with the young man Absalom ?” Ahimaaz answered … |
+| 164 | `2Sam.18.32` | 2Sa 18:32 | 2Sa 18:32 The king said to the Cushite , “Is it well with the young man Absalom ?” And th… |
+| 165 | `2Sam.19.24` | 2Sa 19:24 | 2Sa 19:24 And Mephibosheth the son of Saul came down to meet the king . He had neither ta… |
+| 166 | `2Sam.19.30` | 2Sa 19:30 | 2Sa 19:30 And Mephibosheth said to the king , “ Oh , let him take it all , since my lord … |
+| 167 | `2Sam.20.9` | 2Sa 20:9 | 2Sa 20:9 And Joab said to Amasa , “Is it well with you , my brother ?” And Joab took Amas… |
+| 168 | `2Kgs.4.23` | 2Ki 4:23 | 2Ki 4:23 And he said , “ Why will you go to him today ? It is neither new moon nor Sabbat… |
+| 169 | `2Kgs.4.26` | 2Ki 4:26 | 2Ki 4:26 Run at once to meet her and say to her, ‘Is all well with you? Is all well with … |
+| 170 | `2Kgs.5.21` | 2Ki 5:21 | 2Ki 5:21 So Gehazi followed Naaman . And when Naaman saw someone running after him, he go… |
+| 171 | `2Kgs.5.22` | 2Ki 5:22 | 2Ki 5:22 And he said , “All is well . My master has sent me to say , ‘ There have just no… |
+| 172 | `2Kgs.9.11` | 2Ki 9:11 | 2Ki 9:11 When Jehu came out to the servants of his master , they said to him, “Is all wel… |
+| 173 | `1Chr.18.10` | 1Ch 18:10 | 1Ch 18:10 he sent his son Hadoram to King David , to ask about his health and to bless hi… |
+| 174 | `2Chr.19.1` | 2Ch 19:1 | 2Ch 19:1 Jehoshaphat the king of Judah returned in safety to his house in Jerusalem . |
+| 175 | `Job.15.21` | Job 15:21 | Job 15:21 Dreadful sounds are in his ears ; in prosperity the destroyer will come upon hi… |
+| 176 | `Job.21.9` | Job 21:9 | Job 21:9 Their houses are safe from fear , and no rod of God is upon them . |
+| 177 | `Ps.35.27` | Psa 35:27 | Psa 35:27 Let those who delight in my righteousness shout for joy and be glad and say eve… |
+| 178 | `Ps.38.3` | Psa 38:3 | Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no heal… |
+| 179 | `Ps.55.18` | Psa 55:18 | Psa 55:18 He redeems my soul in safety from the battle that I wage , for many are arrayed… |
+| 180 | `Ps.72.3` | Psa 72:3 | Psa 72:3 Let the mountains bear prosperity for the people , and the hills , in righteousn… |
+| 181 | `Ps.73.3` | Psa 73:3 | Psa 73:3 For I was envious of the arrogant when I saw the prosperity of the wicked . |
+| 182 | `Isa.38.17` | Isa 38:17 | Isa 38:17 Behold , it was for my welfare that I had great bitterness ; but in love you ha… |
+| 183 | `Isa.41.3` | Isa 41:3 | Isa 41:3 He pursues them and passes on safely , by paths his feet have not trod . |
+| 184 | `Isa.45.7` | Isa 45:7 | Isa 45:7 I form light and create darkness , I make well-being and create calamity ; I am … |
+| 185 | `Jer.4.10` | Jer 4:10 | Jer 4:10 Then I said , “ Ah , Lord God , surely you have utterly deceived this people and… |
+| 186 | `Jer.12.5` | Jer 12:5 | Jer 12:5 “ If you have raced with men on foot , and they have wearied you, how will you c… |
+| 187 | `Jer.15.5` | Jer 15:5 | Jer 15:5 “ Who will have pity on you, O Jerusalem , or who will grieve for you? Who will … |
+| 188 | `Jer.23.17` | Jer 23:17 | Jer 23:17 They say continually to those who despise the word of the Lord , ‘It shall be w… |
+| 189 | `Jer.29.7` | Jer 29:7 | Jer 29:7 But seek the welfare of the city where I have sent you into exile , and pray to … |
+| 190 | `Jer.29.11` | Jer 29:11 | Jer 29:11 For I know the plans I have for you, declares the Lord , plans for welfare and … |
+| 191 | `Jer.33.6` | Jer 33:6 | Jer 33:6 Behold , I will bring to it health and healing , and I will heal them and reveal… |
+| 192 | `Jer.33.9` | Jer 33:9 | Jer 33:9 And this city shall be to me a name of joy , a praise and a glory before all the… |
+| 193 | `Jer.38.4` | Jer 38:4 | Jer 38:4 Then the officials said to the king , “ Let this man be put to death , for he is… |
+| 194 | `Zech.8.10` | Zec 8:10 | Zec 8:10 For before those days there was no wage for man or any wage for beast , neither … |
+| 195 | `1Chr.12.17` | 1Ch 12:17 | 1Ch 12:17 David went out to meet them and said to them, “ If you have come to me in frien… |
+| 196 | `Ps.41.9` | Psa 41:9 | Psa 41:9 Even my close friend in whom I trusted , who ate my bread , has lifted his heel … |
+| 197 | `Ps.55.20` | Psa 55:20 | Psa 55:20 My companion stretched out his hand against his friends ; he violated his coven… |
+| 198 | `Jer.20.10` | Jer 20:10 | Jer 20:10 For I hear many whispering . Terror is on every side ! “ Denounce him! Let us d… |
+| 199 | `Jer.38.22` | Jer 38:22 | Jer 38:22 Behold , all the women left in the house of the king of Judah were being led ou… |
+| 200 | `1Sam.10.4` | 1Sa 10:4 | 1Sa 10:4 And they will greet you and give you two loaves of bread , which you shall accep… |
+| 201 | `1Sam.17.22` | 1Sa 17:22 | 1Sa 17:22 And David left the things in charge of the keeper of the baggage and ran to the… |
+| 202 | `1Sam.25.5` | 1Sa 25:5 | 1Sa 25:5 So David sent ten young men . And David said to the young men , “Go up to Carmel… |
+| 203 | `1Sam.25.6` | 1Sa 25:6 | 1Sa 25:6 And thus you shall greet him: ‘ Peace be to you , and peace be to your house , a… |
+| 204 | `1Sam.30.21` | 1Sa 30:21 | 1Sa 30:21 Then David came to the two hundred men who had been too exhausted to follow Dav… |
+| 205 | `2Sam.11.7` | 2Sa 11:7 | 2Sa 11:7 When Uriah came to him, David asked how Joab was doing and how the people were d… |
+| 206 | `2Kgs.10.13` | 2Ki 10:13 | 2Ki 10:13 Jehu met the relatives of Ahaziah king of Judah , and he said , “ Who are you ?… |
+| 207 | `Esth.2.11` | Est 2:11 | Est 2:11 And every day Mordecai walked in front of the court of the harem to learn how Es… |
+| 208 | `Jer.13.19` | Jer 13:19 | Jer 13:19 The cities of the Negeb are shut up , with none to open them; all Judah is take… |
+| 209 | `Judg.6.24` | Judg 6:24 | Judg 6:24 Then Gideon built an altar there to the Lord and called it, The Lord Is Peace .… |
+| 210 | `1Chr.4.40` | 1Ch 4:40 | 1Ch 4:40 where they found rich , good pasture , and the land was very broad , quiet , and… |
+| 211 | `Job.16.12` | Job 16:12 | Job 16:12 I was at ease , and he broke me apart; he seized me by the neck and dashed me t… |
+| 212 | `Job.20.20` | Job 20:20 | Job 20:20 “ Because he knew no contentment in his belly , he will not let anything in whi… |
+| 213 | `Job.21.23` | Job 21:23 | Job 21:23 One dies in his full vigor , being wholly at ease and secure , |
+| 214 | `Ps.73.12` | Psa 73:12 | Psa 73:12 Behold , these are the wicked ; always at ease , they increase in riches . |
+| 215 | `Jer.49.31` | Jer 49:31 | Jer 49:31 “Rise up , advance against a nation at ease, that dwells securely , declares th… |
+| 216 | `Ezek.23.42` | Eze 23:42 | Eze 23:42 The sound of a carefree multitude was with her; and with men of the common sort… |
+| 217 | `Zech.7.7` | Zec 7:7 | Zec 7:7 Were not these the words that the Lord proclaimed by the former prophets , when J… |
+| 218 | `Mark.9.50` | Mar 9:50 | Mar 9:50 Salt is good , but if the salt has lost its saltiness , how will you make it sal… |
+| 219 | `Rom.12.18` | Rom 12:18 | Rom 12:18 If possible , so far as it depends on you , live peaceably with all . |
+| 220 | `2Cor.13.11` | 2Cor 13:11 | 2Cor 13:11 Finally , brothers , rejoice . Aim for restoration , comfort one another, agre… |
+| 221 | `1Thess.5.13` | 1Th 5:13 | 1Th 5:13 and to esteem them very highly in love because of their work . Be at peace among… |
+| 222 | `Matt.20.31` | Mat 20:31 | Mat 20:31 The crowd rebuked them , telling them to be silent , but they cried out all the… |
+| 223 | `Matt.26.63` | Mat 26:63 | Mat 26:63 But Jesus remained silent . And the high priest said to him , “I adjure you by … |
+| 224 | `Mark.3.4` | Mar 3:4 | Mar 3:4 And he said to them , “Is it lawful on the Sabbath to do good or to do harm , to … |
+| 225 | `Mark.4.39` | Mar 4:39 | Mar 4:39 And he awoke and rebuked the wind and said to the sea , “ Peace ! Be still !” An… |
+| 226 | `Mark.9.34` | Mar 9:34 | Mar 9:34 But they kept silent , for on the way they had argued with one another about who… |
+| 227 | `Mark.10.48` | Mar 10:48 | Mar 10:48 And many rebuked him , telling him to be silent . But he cried out all the more… |
+| 228 | `Mark.14.61` | Mar 14:61 | Mar 14:61 But he remained silent and made no answer . Again the high priest asked him , “… |
+| 229 | `Luke.1.20` | Luk 1:20 | Luk 1:20 And behold , you will be silent and unable to speak until the day that these thi… |
+| 230 | `Luke.18.39` | Luk 18:39 | Luk 18:39 And those who were in front rebuked him, telling him to be silent . But he crie… |
+| 231 | `Luke.19.40` | Luk 19:40 | Luk 19:40 He answered , “I tell you , if these were silent , the very stones would cry ou… |
+| 232 | `Acts.18.9` | Act 18:9 | Act 18:9 And the Lord said to Paul one night in a vision , “Do not be afraid , but go on … |
+| 233 | `Deut.22.10` | Deu 22:10 | Deu 22:10 You shall not plow with an ox and a donkey together . |
+| 234 | `Judg.14.18` | Judg 14:18 | Judg 14:18 And the men of the city said to him on the seventh day before the sun went dow… |
+| 235 | `1Sam.8.12` | 1Sa 8:12 | 1Sa 8:12 And he will appoint for himself commanders of thousands and commanders of fiftie… |
+| 236 | `1Sam.23.9` | 1Sa 23:9 | 1Sa 23:9 David knew that Saul was plotting harm against him. And he said to Abiathar the … |
+| 237 | `1Kgs.19.19` | 1Ki 19:19 | 1Ki 19:19 So he departed from there and found Elisha the son of Shaphat , who was plowing… |
+| 238 | `Job.1.14` | Job 1:14 | Job 1:14 and there came a messenger to Job and said , “The oxen were plowing and the donk… |
+| 239 | `Job.4.8` | Job 4:8 | Job 4:8 As I have seen , those who plow iniquity and sow trouble reap the same. |
+| 240 | `Ps.129.3` | Psa 129:3 | Psa 129:3 The plowers plowed upon my back ; they made long their furrows .” |
+| 241 | `Prov.3.29` | Pro 3:29 | Pro 3:29 Do not plan evil against your neighbor , who dwells trustingly beside you . |
+| 242 | `Prov.6.14` | Pro 6:14 | Pro 6:14 with perverted heart devises evil , continually sowing discord ; |
+| 243 | `Prov.6.18` | Pro 6:18 | Pro 6:18 a heart that devises wicked plans , feet that make haste to run to evil , |
+| 244 | `Prov.14.22` | Pro 14:22 | Pro 14:22 Do they not go astray who devise evil ? Those who devise good meet steadfast lo… |
+| 245 | `Prov.20.4` | Pro 20:4 | Pro 20:4 The sluggard does not plow in the autumn ; he will seek at harvest and have noth… |
+| 246 | `Isa.28.24` | Isa 28:24 | Isa 28:24 Does he who plows for sowing plow continually ? Does he continually open and ha… |
+| 247 | `Jer.17.1` | Jer 17:1 | Jer 17:1 “The sin of Judah is written with a pen of iron ; with a point of diamond it is … |
+| 248 | `Jer.26.18` | Jer 26:18 | Jer 26:18 “ Micah of Moresheth prophesied in the days of Hezekiah king of Judah , and sai… |
+| 249 | `Hos.10.11` | Hos 10:11 | Hos 10:11 Ephraim was a trained calf that loved to thresh , and I spared her fair neck ; … |
+| 250 | `Hos.10.13` | Hos 10:13 | Hos 10:13 You have plowed iniquity ; you have reaped injustice ; you have eaten the fruit… |
+| 251 | `Amos.6.12` | Amo 6:12 | Amo 6:12 Do horses run on rocks ? Does one plow there with oxen ? But you have turned jus… |
+| 252 | `Amos.9.13` | Amo 9:13 | Amo 9:13 “ Behold , the days are coming ,” declares the Lord , “when the plowman shall ov… |
+| 253 | `Mic.3.12` | Mic 3:12 | Mic 3:12 Therefore because of you Zion shall be plowed as a field ; Jerusalem shall becom… |
+| 254 | `Gen.24.21` | Gen 24:21 | Gen 24:21 The man gazed at her in silence to learn whether the Lord had prospered his jou… |
+| 255 | `Gen.34.5` | Gen 34:5 | Gen 34:5 Now Jacob heard that he had defiled his daughter Dinah . But his sons were with … |
+| 256 | `Exod.14.14` | Exo 14:14 | Exo 14:14 The Lord will fight for you, and you have only to be silent .” |
+| 257 | `Num.30.4` | Num 30:4 | Num 30:4 and her father hears of her vow and of her pledge by which she has bound herself… |
+| 258 | `Num.30.7` | Num 30:7 | Num 30:7 and her husband hears of it and says nothing to her on the day that he hears , t… |
+| 259 | `Num.30.11` | Num 30:11 | Num 30:11 and her husband heard of it and said nothing to her and did not oppose her , th… |
+| 260 | `Num.30.14` | Num 30:14 | Num 30:14 But if her husband says nothing to her from day to day , then he establishes al… |
+| 261 | `Judg.16.2` | Judg 16:2 | Judg 16:2 The Gazites were told , “ Samson has come here .” And they surrounded the place… |
+| 262 | `Judg.18.19` | Judg 18:19 | Judg 18:19 And they said to him, “Keep quiet ; put your hand on your mouth and come with … |
+| 263 | `1Sam.7.8` | 1Sa 7:8 | 1Sa 7:8 And the people of Israel said to Samuel , “Do not cease to cry out to the Lord ou… |
+| 264 | `1Sam.10.27` | 1Sa 10:27 | 1Sa 10:27 But some worthless fellows said , “ How can this man save us?” And they despise… |
+| 265 | `2Sam.13.20` | 2Sa 13:20 | 2Sa 13:20 And her brother Absalom said to her, “Has Amnon your brother been with you? Now… |
+| 266 | `2Sam.19.10` | 2Sa 19:10 | 2Sa 19:10 But Absalom , whom we anointed over us, is dead in battle . Now therefore why d… |
+| 267 | `2Kgs.18.36` | 2Ki 18:36 | 2Ki 18:36 But the people were silent and answered him not a word , for the king’s command… |
+| 268 | `Neh.5.8` | Neh 5:8 | Neh 5:8 and said to them, “We, as far as we are able , have bought back our Jewish brothe… |
+| 269 | `Esth.4.14` | Est 4:14 | Est 4:14 For if you keep silent at this time , relief and deliverance will rise for the J… |
+| 270 | `Esth.7.4` | Est 7:4 | Est 7:4 For we have been sold , I and my people , to be destroyed , to be killed , and to… |
+| 271 | `Job.6.24` | Job 6:24 | Job 6:24 “ Teach me , and I will be silent ; make me understand how I have gone astray . |
+| 272 | `Job.11.3` | Job 11:3 | Job 11:3 Should your babble silence men , and when you mock , shall no one shame you? |
+| 273 | `Job.13.5` | Job 13:5 | Job 13:5 Oh that you would keep silent , and it would be your wisdom ! |
+| 274 | `Job.13.13` | Job 13:13 | Job 13:13 “Let me have silence , and I will speak , and let come on me what may. |
+| 275 | `Job.13.19` | Job 13:19 | Job 13:19 Who is there who will contend with me? For then I would be silent and die . |
+| 276 | `Job.33.31` | Job 33:31 | Job 33:31 Pay attention , O Job , listen to me; be silent , and I will speak . |
+| 277 | `Job.33.33` | Job 33:33 | Job 33:33 If not , listen to me; be silent , and I will teach you wisdom .” |
+| 278 | `Job.41.12` | Job 41:12 | Job 41:12 “I will not keep silence concerning his limbs , or his mighty strength , or his… |
+| 279 | `Ps.28.1` | Psa 28:1 | Of David . Psa 28:1 To you, O Lord , I call ; my rock , be not deaf to me, lest, if you b… |
+| 280 | `Ps.32.3` | Psa 32:3 | Psa 32:3 For when I kept silent , my bones wasted away through my groaning all day long. |
+| 281 | `Ps.35.22` | Psa 35:22 | Psa 35:22 You have seen , O Lord ; be not silent ! O Lord , be not far from me ! |
+| 282 | `Ps.39.12` | Psa 39:12 | Psa 39:12 “ Hear my prayer , O Lord , and give ear to my cry ; hold not your peace at my … |
+| 283 | `Ps.50.3` | Psa 50:3 | Psa 50:3 Our God comes ; he does not keep silence ; before him is a devouring fire , arou… |
+| 284 | `Ps.50.21` | Psa 50:21 | Psa 50:21 These things you have done , and I have been silent ; you thought that I was on… |
+| 285 | `Ps.83.1` | Psa 83:1 | A Song . A Psalm of Asaph . Psa 83:1 O God , do not keep silence ; do not hold your peace… |
+| 286 | `Ps.109.1` | Psa 109:1 | To the choirmaster . A Psalm of David . Psa 109:1 Be not silent , O God of my praise ! |
+| 287 | `Prov.11.12` | Pro 11:12 | Pro 11:12 Whoever belittles his neighbor lacks sense , but a man of understanding remains… |
+| 288 | `Prov.17.28` | Pro 17:28 | Pro 17:28 Even a fool who keeps silent is considered wise ; when he closes his lips , he … |
+| 289 | `Isa.36.21` | Isa 36:21 | Isa 36:21 But they were silent and answered him not a word , for the king’s command was ,… |
+| 290 | `Isa.41.1` | Isa 41:1 | Isa 41:1 Listen to me in silence , O coastlands ; let the peoples renew their strength ; … |
+| 291 | `Isa.42.14` | Isa 42:14 | Isa 42:14 For a long time I have held my peace ; I have kept still and restrained myself;… |
+| 292 | `Jer.4.19` | Jer 4:19 | Jer 4:19 My anguish , my anguish ! I writhe in pain ! Oh the walls of my heart ! My heart… |
+| 293 | `Jer.38.27` | Jer 38:27 | Jer 38:27 Then all the officials came to Jeremiah and asked him, and he answered them as … |
+| 294 | `Mic.7.16` | Mic 7:16 | Mic 7:16 The nations shall see and be ashamed of all their might ; they shall lay their h… |
+| 295 | `Hab.1.13` | Hab 1:13 | Hab 1:13 You who are of purer eyes than to see evil and cannot look at wrong , why do you… |
+| 296 | `Zeph.3.17` | Zep 3:17 | Zep 3:17 The Lord your God is in your midst , a mighty one who will save ; he will rejoic… |
+| 297 | `Luke.14.4` | Luk 14:4 | Luk 14:4 But they remained silent . Then he took him and healed him and sent him away . |
+| 298 | `Luke.23.56` | Luk 23:56 | Luk 23:56 Then they returned and prepared spices and ointments . On the Sabbath they rest… |
+| 299 | `Acts.11.18` | Act 11:18 | Act 11:18 When they heard these things they fell silent . And they glorified God , saying… |
+| 300 | `Acts.21.14` | Act 21:14 | Act 21:14 And since he would not be persuaded , we ceased and said , “Let the will of the… |
+| 301 | `1Thess.4.11` | 1Th 4:11 | 1Th 4:11 and to aspire to live quietly , and to mind your own affairs, and to work with y… |
+| 302 | `Luke.9.36` | Luk 9:36 | Luk 9:36 And when the voice had spoken , Jesus was found alone . And they kept silent and… |
+| 303 | `Luke.20.26` | Luk 20:26 | Luk 20:26 And they were not able in the presence of the people to catch him in what he sa… |
+| 304 | `Acts.12.17` | Act 12:17 | Act 12:17 But motioning to them with his hand to be silent , he described to them how the… |
+| 305 | `Acts.15.12` | Act 15:12 | Act 15:12 And all the assembly fell silent , and they listened to Barnabas and Paul as th… |
+| 306 | `Acts.15.13` | Act 15:13 | Act 15:13 After they finished speaking , James replied , “ Brothers , listen to me . |
+| 307 | `Rom.16.25` | Rom 16:25 | Rom 16:25 Now to him who is able to strengthen you according to my gospel and the preachi… |
+| 308 | `1Cor.14.28` | 1Cor 14:28 | 1Cor 14:28 But if there is no one to interpret , let each of them keep silent in church a… |
+| 309 | `1Cor.14.30` | 1Cor 14:30 | 1Cor 14:30 If a revelation is made to another sitting there, let the first be silent . |
+| 310 | `1Cor.14.34` | 1Cor 14:34 | 1Cor 14:34 the women should keep silent in the churches . For they are not permitted to s… |
+| 311 | `Judg.18.9` | Judg 18:9 | Judg 18:9 They said , “ Arise , and let us go up against them, for we have seen the land … |
+| 312 | `1Kgs.22.3` | 1Ki 22:3 | 1Ki 22:3 And the king of Israel said to his servants , “Do you know that Ramoth-gilead be… |
+| 313 | `2Kgs.2.3` | 2Ki 2:3 | 2Ki 2:3 And the sons of the prophets who were in Bethel came out to Elisha and said to hi… |
+| 314 | `2Kgs.2.5` | 2Ki 2:5 | 2Ki 2:5 The sons of the prophets who were at Jericho drew near to Elisha and said to him,… |
+| 315 | `2Kgs.7.9` | 2Ki 7:9 | 2Ki 7:9 Then they said to one another , “We are not doing right . This day is a day of go… |
+| 316 | `Neh.8.11` | Neh 8:11 | Neh 8:11 So the Levites calmed all the people , saying , “Be quiet , for this day is holy… |
+| 317 | `Ps.39.2` | Psa 39:2 | Psa 39:2 I was mute and silent ; I held my peace to no avail , and my distress grew worse… |
+| 318 | `Ps.107.29` | Psa 107:29 | Psa 107:29 He made the storm be still , and the waves of the sea were hushed . |
+| 319 | `Eccl.3.7` | Ecc 3:7 | Ecc 3:7 a time to tear , and a time to sew ; a time to keep silence , and a time to speak… |
+| 320 | `Isa.57.11` | Isa 57:11 | Isa 57:11 Whom did you dread and fear , so that you lied , and did not remember me, did n… |
+| 321 | `Isa.62.1` | Isa 62:1 | Isa 62:1 For Zion’s sake I will not keep silent , and for Jerusalem’s sake I will not be … |
+| 322 | `Isa.62.6` | Isa 62:6 | Isa 62:6 On your walls , O Jerusalem , I have set watchmen ; all the day and all the nigh… |
+| 323 | `Isa.64.12` | Isa 64:12 | Isa 64:12 Will you restrain yourself at these things , O Lord ? Will you keep silent , an… |
+| 324 | `Isa.65.6` | Isa 65:6 | Isa 65:6 Behold , it is written before me: “ I will not keep silent , but I will repay ; … |
+| 325 | `Gen.12.2` | Gen 12:2 | Gen 12:2 And I will make of you a great nation , and I will bless you and make your name … |
+| 326 | `Gen.27.12` | Gen 27:12 | Gen 27:12 Perhaps my father will feel me, and I shall seem to be mocking him and bring a … |
+| 327 | `Gen.27.35` | Gen 27:35 | Gen 27:35 But he said , “Your brother came deceitfully , and he has taken away your bless… |
+| 328 | `Gen.27.36` | Gen 27:36 | Gen 27:36 Esau said , “Is he not rightly named Jacob ? For he has cheated me these two ti… |
+| 329 | `Gen.27.38` | Gen 27:38 | Gen 27:38 Esau said to his father , “Have you but one blessing , my father ? Bless me, ev… |
+| 330 | `Gen.27.41` | Gen 27:41 | Gen 27:41 Now Esau hated Jacob because of the blessing with which his father had blessed … |
+| 331 | `Gen.28.4` | Gen 28:4 | Gen 28:4 May he give the blessing of Abraham to you and to your offspring with you, that … |
+| 332 | `Gen.33.11` | Gen 33:11 | Gen 33:11 Please accept my blessing that is brought to you, because God has dealt graciou… |
+| 333 | `Gen.39.5` | Gen 39:5 | Gen 39:5 From the time that he made him overseer in his house and over all that he had , … |
+| 334 | `Gen.49.25` | Gen 49:25 | Gen 49:25 by the God of your father who will help you, by the Almighty who will bless you… |
+| 335 | `Gen.49.26` | Gen 49:26 | Gen 49:26 The blessings of your father are mighty beyond the blessings of my parents , up… |
+| 336 | `Gen.49.28` | Gen 49:28 | Gen 49:28 All these are the twelve tribes of Israel . This is what their father said to t… |
+| 337 | `Exod.32.29` | Exo 32:29 | Exo 32:29 And Moses said , “ Today you have been ordained for the service of the Lord , e… |
+| 338 | `Lev.25.21` | Lev 25:21 | Lev 25:21 I will command my blessing on you in the sixth year , so that it will produce a… |
+| 339 | `Deut.11.26` | Deu 11:26 | Deu 11:26 “ See , I am setting before you today a blessing and a curse : |
+| 340 | `Deut.11.27` | Deu 11:27 | Deu 11:27 the blessing , if you obey the commandments of the Lord your God , which I comm… |
+| 341 | `Deut.11.29` | Deu 11:29 | Deu 11:29 And when the Lord your God brings you into the land that you are entering to ta… |
+| 342 | `Deut.12.15` | Deu 12:15 | Deu 12:15 “ However , you may slaughter and eat meat within any of your towns , as much a… |
+| 343 | `Deut.16.17` | Deu 16:17 | Deu 16:17 Every man shall give as he is able , according to the blessing of the Lord your… |
+| 344 | `Deut.23.5` | Deu 23:5 | Deu 23:5 But the Lord your God would not listen to Balaam ; instead the Lord your God tur… |
+| 345 | `Deut.28.2` | Deu 28:2 | Deu 28:2 And all these blessings shall come upon you and overtake you, if you obey the vo… |
+| 346 | `Deut.28.8` | Deu 28:8 | Deu 28:8 The Lord will command the blessing on you in your barns and in all that you unde… |
+| 347 | `Deut.30.1` | Deu 30:1 | Deu 30:1 “And when all these things come upon you, the blessing and the curse , which I h… |
+| 348 | `Deut.30.19` | Deu 30:19 | Deu 30:19 I call heaven and earth to witness against you today , that I have set before y… |
+| 349 | `Deut.33.1` | Deu 33:1 | Deu 33:1 This is the blessing with which Moses the man of God blessed the people of Israe… |
+| 350 | `Deut.33.23` | Deu 33:23 | Deu 33:23 And of Naphtali he said , “O Naphtali , sated with favor , and full of the bles… |
+| 351 | `Josh.8.34` | Jos 8:34 | Jos 8:34 And afterward he read all the words of the law , the blessing and the curse , ac… |
+| 352 | `Josh.15.19` | Jos 15:19 | Jos 15:19 She said to him, “ Give me a blessing . Since you have given me the land of the… |
+| 353 | `Judg.1.15` | Judg 1:15 | Judg 1:15 She said to him, “ Give me a blessing . Since you have given me the land of the… |
+| 354 | `1Sam.25.27` | 1Sa 25:27 | 1Sa 25:27 And now let this present that your servant has brought to my lord be given to t… |
+| 355 | `1Sam.30.26` | 1Sa 30:26 | 1Sa 30:26 When David came to Ziklag , he sent part of the spoil to his friends , the elde… |
+| 356 | `2Sam.7.29` | 2Sa 7:29 | 2Sa 7:29 Now therefore may it please you to bless the house of your servant , so that it … |
+| 357 | `2Kgs.5.15` | 2Ki 5:15 | 2Ki 5:15 Then he returned to the man of God , he and all his company , and he came and st… |
+| 358 | `2Kgs.18.31` | 2Ki 18:31 | 2Ki 18:31 Do not listen to Hezekiah , for thus says the king of Assyria : ‘ Make your pea… |
+| 359 | `Neh.9.5` | Neh 9:5 | Neh 9:5 Then the Levites , Jeshua , Kadmiel , Bani , Hashabneiah , Sherebiah , Hodiah , S… |
+| 360 | `Neh.13.2` | Neh 13:2 | Neh 13:2 for they did not meet the people of Israel with bread and water , but hired Bala… |
+| 361 | `Job.29.13` | Job 29:13 | Job 29:13 The blessing of him who was about to perish came upon me, and I caused the wido… |
+| 362 | `Ps.3.8` | Psa 3:8 | Psa 3:8 Salvation belongs to the Lord ; your blessing be on your people ! Selah |
+| 363 | `Ps.21.3` | Psa 21:3 | Psa 21:3 For you meet him with rich blessings ; you set a crown of fine gold upon his hea… |
+| 364 | `Ps.21.6` | Psa 21:6 | Psa 21:6 For you make him most blessed forever ; you make him glad with the joy of your p… |
+| 365 | `Ps.24.5` | Psa 24:5 | Psa 24:5 He will receive blessing from the Lord and righteousness from the God of his sal… |
+| 366 | `Ps.37.26` | Psa 37:26 | Psa 37:26 He is ever lending generously , and his children become a blessing . |
+| 367 | `Ps.84.6` | Psa 84:6 | Psa 84:6 As they go through the Valley of Baca they make it a place of springs ; the earl… |
+| 368 | `Ps.109.17` | Psa 109:17 | Psa 109:17 He loved to curse ; let curses come upon him! He did not delight in blessing ;… |
+| 369 | `Ps.129.8` | Psa 129:8 | Psa 129:8 nor do those who pass by say , “The blessing of the Lord be upon you! We bless … |
+| 370 | `Ps.133.3` | Psa 133:3 | Psa 133:3 It is like the dew of Hermon , which falls on the mountains of Zion ! For there… |
+| 371 | `Prov.10.6` | Pro 10:6 | Pro 10:6 Blessings are on the head of the righteous , but the mouth of the wicked conceal… |
+| 372 | `Prov.10.7` | Pro 10:7 | Pro 10:7 The memory of the righteous is a blessing , but the name of the wicked will rot . |
+| 373 | `Prov.10.22` | Pro 10:22 | Pro 10:22 The blessing of the Lord makes rich , and he adds no sorrow with it. |
+| 374 | `Prov.11.11` | Pro 11:11 | Pro 11:11 By the blessing of the upright a city is exalted , but by the mouth of the wick… |
+| 375 | `Prov.11.25` | Pro 11:25 | Pro 11:25 Whoever brings blessing will be enriched , and one who waters will himself be w… |
+| 376 | `Prov.11.26` | Pro 11:26 | Pro 11:26 The people curse him who holds back grain , but a blessing is on the head of hi… |
+| 377 | `Prov.24.25` | Pro 24:25 | Pro 24:25 but those who rebuke the wicked will have delight , and a good blessing will co… |
+| 378 | `Prov.28.20` | Pro 28:20 | Pro 28:20 A faithful man will abound with blessings , but whoever hastens to be rich will… |
+| 379 | `Isa.19.24` | Isa 19:24 | Isa 19:24 In that day Israel will be the third with Egypt and Assyria , a blessing in the… |
+| 380 | `Isa.36.16` | Isa 36:16 | Isa 36:16 Do not listen to Hezekiah . For thus says the king of Assyria : Make your peace… |
+| 381 | `Isa.44.3` | Isa 44:3 | Isa 44:3 For I will pour water on the thirsty land, and streams on the dry ground ; I wil… |
+| 382 | `Isa.65.8` | Isa 65:8 | Isa 65:8 Thus says the Lord : “ As the new wine is found in the cluster , and they say , … |
+| 383 | `Ezek.34.26` | Eze 34:26 | Eze 34:26 And I will make them and the places all around my hill a blessing , and I will … |
+| 384 | `Ezek.44.30` | Eze 44:30 | Eze 44:30 And the first of all the firstfruits of all kinds, and every offering of all ki… |
+| 385 | `Joel.2.14` | Joe 2:14 | Joe 2:14 Who knows whether he will not turn and relent , and leave a blessing behind him,… |
+| 386 | `Zech.8.13` | Zec 8:13 | Zec 8:13 And as you have been a byword of cursing among the nations , O house of Judah an… |
+| 387 | `Mal.2.2` | Mal 2:2 | Mal 2:2 If you will not listen , if you will not take it to heart to give honor to my nam… |
+| 388 | `Mal.3.10` | Mal 3:10 | Mal 3:10 Bring the full tithe into the storehouse , that there may be food in my house . … |
+| 389 | `Matt.10.13` | Mat 10:13 | Mat 10:13 And if the house is worthy , let your peace come upon it , but if it is not wor… |
+| 390 | `Matt.10.34` | Mat 10:34 | Mat 10:34 “Do not think that I have come to bring peace to the earth . I have not come to… |
+| 391 | `Mark.5.34` | Mar 5:34 | Mar 5:34 And he said to her , “ Daughter , your faith has made you well ; go in peace , a… |
+| 392 | `Luke.1.79` | Luk 1:79 | Luk 1:79 to give light to those who sit in darkness and in the shadow of death , to guide… |
+| 393 | `Luke.2.14` | Luk 2:14 | Luk 2:14 “ Glory to God in the highest , and on earth peace among those with whom he is p… |
+| 394 | `Luke.2.29` | Luk 2:29 | Luk 2:29 “ Lord , now you are letting your servant depart in peace , according to your wo… |
+| 395 | `Luke.7.50` | Luk 7:50 | Luk 7:50 And he said to the woman , “ Your faith has saved you ; go in peace .” |
+| 396 | `Luke.8.48` | Luk 8:48 | Luk 8:48 And he said to her , “ Daughter , your faith has made you well ; go in peace .” |
+| 397 | `Luke.10.5` | Luk 10:5 | Luk 10:5 Whatever house you enter , first say , ‘ Peace be to this house !’ |
+| 398 | `Luke.10.6` | Luk 10:6 | Luk 10:6 And if a son of peace is there , your peace will rest upon him . But if not , it… |
+| 399 | `Luke.11.21` | Luk 11:21 | Luk 11:21 When a strong man , fully armed , guards his own palace , his goods are safe ; |
+| 400 | `Luke.12.51` | Luk 12:51 | Luk 12:51 Do you think that I have come to give peace on earth ? No , I tell you , but ra… |
+| 401 | `Luke.14.32` | Luk 14:32 | Luk 14:32 And if not , while the other is yet a great way off , he sends a delegation and… |
+| 402 | `Luke.19.38` | Luk 19:38 | Luk 19:38 saying , “ Blessed is the King who comes in the name of the Lord ! Peace in hea… |
+| 403 | `Luke.19.42` | Luk 19:42 | Luk 19:42 saying , “ Would that you , even you , had known on this day the things that ma… |
+| 404 | `Luke.24.36` | Luk 24:36 | Luk 24:36 As they were talking about these things , Jesus himself stood among them , and … |
+| 405 | `John.14.27` | Joh 14:27 | Joh 14:27 Peace I leave with you ; my peace I give to you . Not as the world gives do I g… |
+| 406 | `John.16.33` | Joh 16:33 | Joh 16:33 I have said these things to you , that in me you may have peace . In the world … |
+| 407 | `John.20.19` | Joh 20:19 | Joh 20:19 On the evening of that day , the first day of the week , the doors being locked… |
+| 408 | `John.20.21` | Joh 20:21 | Joh 20:21 Jesus said to them again , “ Peace be with you . As the Father has sent me , ev… |
+| 409 | `John.20.26` | Joh 20:26 | Joh 20:26 Eight days later , his disciples were inside again , and Thomas was with them .… |
+| 410 | `Acts.9.31` | Act 9:31 | Act 9:31 So the church throughout all Judea and Galilee and Samaria had peace and was bei… |
+| 411 | `Acts.10.36` | Act 10:36 | Act 10:36 As for the word that he sent to Israel , preaching good news of peace through J… |
+| 412 | `Acts.12.20` | Act 12:20 | Act 12:20 Now Herod was angry with the people of Tyre and Sidon , and they came to him wi… |
+| 413 | `Acts.15.33` | Act 15:33 | Act 15:33 And after they had spent some time , they were sent off in peace by the brother… |
+| 414 | `Acts.16.36` | Act 16:36 | Act 16:36 And the jailer reported these words to Paul , saying , “The magistrates have se… |
+| 415 | `Acts.24.2` | Act 24:2 | Act 24:2 And when he had been summoned , Tertullus began to accuse him, saying : “Since t… |
+| 416 | `Rom.1.7` | Rom 1:7 | Rom 1:7 To all those in Rome who are loved by God and called to be saints : Grace to you … |
+| 417 | `Rom.2.10` | Rom 2:10 | Rom 2:10 but glory and honor and peace for everyone who does good , the Jew first and als… |
+| 418 | `Rom.3.17` | Rom 3:17 | Rom 3:17 and the way of peace they have not known .” |
+| 419 | `Rom.5.1` | Rom 5:1 | Rom 5:1 Therefore , since we have been justified by faith , we have peace with God throug… |
+| 420 | `Rom.8.6` | Rom 8:6 | Rom 8:6 For to set the mind on the flesh is death , but to set the mind on the Spirit is … |
+| 421 | `Rom.14.17` | Rom 14:17 | Rom 14:17 For the kingdom of God is not a matter of eating and drinking but of righteousn… |
+| 422 | `Rom.14.19` | Rom 14:19 | Rom 14:19 So then let us pursue what makes for peace and for mutual upbuilding . |
+| 423 | `Rom.15.13` | Rom 15:13 | Rom 15:13 May the God of hope fill you with all joy and peace in believing , so that by t… |
+| 424 | `Rom.15.33` | Rom 15:33 | Rom 15:33 May the God of peace be with you all . Amen . |
+| 425 | `Rom.16.20` | Rom 16:20 | Rom 16:20 The God of peace will soon crush Satan under your feet . The grace of our Lord … |
+| 426 | `1Cor.1.3` | 1Cor 1:3 | 1Cor 1:3 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 427 | `1Cor.7.15` | 1Cor 7:15 | 1Cor 7:15 But if the unbelieving partner separates , let it be so . In such cases the bro… |
+| 428 | `1Cor.14.33` | 1Cor 14:33 | 1Cor 14:33 For God is not a God of confusion but of peace . As in all the churches of the… |
+| 429 | `1Cor.16.11` | 1Cor 16:11 | 1Cor 16:11 So let no one despise him. Help him on his way in peace , that he may return t… |
+| 430 | `2Cor.1.2` | 2Cor 1:2 | 2Cor 1:2 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 431 | `Gal.1.3` | Gal 1:3 | Gal 1:3 Grace to you and peace from God our Father and the Lord Jesus Christ , |
+| 432 | `Gal.5.22` | Gal 5:22 | Gal 5:22 But the fruit of the Spirit is love , joy , peace , patience , kindness , goodne… |
+| 433 | `Gal.6.16` | Gal 6:16 | Gal 6:16 And as for all who walk by this rule , peace and mercy be upon them , and upon t… |
+| 434 | `Eph.1.2` | Eph 1:2 | Eph 1:2 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 435 | `Eph.2.14` | Eph 2:14 | Eph 2:14 For he himself is our peace , who has made us both one and has broken down in hi… |
+| 436 | `Eph.2.15` | Eph 2:15 | Eph 2:15 by abolishing the law of commandments expressed in ordinances , that he might cr… |
+| 437 | `Eph.2.17` | Eph 2:17 | Eph 2:17 And he came and preached peace to you who were far off and peace to those who we… |
+| 438 | `Eph.4.3` | Eph 4:3 | Eph 4:3 eager to maintain the unity of the Spirit in the bond of peace . |
+| 439 | `Eph.6.15` | Eph 6:15 | Eph 6:15 and , as shoes for your feet , having put on the readiness given by the gospel o… |
+| 440 | `Eph.6.23` | Eph 6:23 | Eph 6:23 Peace be to the brothers , and love with faith , from God the Father and the Lor… |
+| 441 | `Phil.1.2` | Phili 1:2 | Phili 1:2 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 442 | `Phil.4.7` | Phili 4:7 | Phili 4:7 And the peace of God , which surpasses all understanding , will guard your hear… |
+| 443 | `Phil.4.9` | Phili 4:9 | Phili 4:9 What you have learned and received and heard and seen in me — practice these th… |
+| 444 | `Col.1.2` | Col 1:2 | Col 1:2 To the saints and faithful brothers in Christ at Colossae : Grace to you and peac… |
+| 445 | `Col.3.15` | Col 3:15 | Col 3:15 And let the peace of Christ rule in your hearts , to which indeed you were calle… |
+| 446 | `1Thess.1.1` | 1Th 1:1 | 1Th 1:1 Paul , Silvanus , and Timothy , To the church of the Thessalonians in God the Fat… |
+| 447 | `1Thess.5.3` | 1Th 5:3 | 1Th 5:3 While people are saying , “There is peace and security ,” then sudden destruction… |
+| 448 | `1Thess.5.23` | 1Th 5:23 | 1Th 5:23 Now may the God of peace himself sanctify you completely , and may your whole sp… |
+| 449 | `2Thess.1.2` | 2Th 1:2 | 2Th 1:2 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 450 | `2Thess.3.16` | 2Th 3:16 | 2Th 3:16 Now may the Lord of peace himself give you peace at all times in every way . The… |
+| 451 | `1Tim.1.2` | 1Ti 1:2 | 1Ti 1:2 To Timothy , my true child in the faith : Grace , mercy , and peace from God the … |
+| 452 | `2Tim.1.2` | 2Ti 1:2 | 2Ti 1:2 To Timothy , my beloved child : Grace , mercy , and peace from God the Father and… |
+| 453 | `2Tim.2.22` | 2Ti 2:22 | 2Ti 2:22 So flee youthful passions and pursue righteousness , faith , love , and peace , … |
+| 454 | `Titus.1.4` | Tit 1:4 | Tit 1:4 To Titus , my true child in a common faith : Grace and peace from God the Father … |
+| 455 | `Phlm.1.3` | Phile 3 | Phile 3 Grace to you and peace from God our Father and the Lord Jesus Christ . |
+| 456 | `Heb.7.2` | Heb 7:2 | Heb 7:2 and to him Abraham apportioned a tenth part of everything . He is first , by tran… |
+| 457 | `Heb.11.31` | Heb 11:31 | Heb 11:31 By faith Rahab the prostitute did not perish with those who were disobedient , … |
+| 458 | `Heb.12.14` | Heb 12:14 | Heb 12:14 Strive for peace with everyone , and for the holiness without which no one will… |
+| 459 | `Heb.13.20` | Heb 13:20 | Heb 13:20 Now may the God of peace who brought again from the dead our Lord Jesus , the g… |
+| 460 | `Jas.2.16` | Jam 2:16 | Jam 2:16 and one of you says to them , “ Go in peace , be warmed and filled ,” without gi… |
+| 461 | `Jas.3.18` | Jam 3:18 | Jam 3:18 And a harvest of righteousness is sown in peace by those who make peace . |
+| 462 | `1Pet.1.2` | 1Pe 1:2 | 1Pe 1:2 according to the foreknowledge of God the Father , in the sanctification of the S… |
+| 463 | `1Pet.3.11` | 1Pe 3:11 | 1Pe 3:11 let him turn away from evil and do good ; let him seek peace and pursue it . |
+| 464 | `1Pet.5.14` | 1Pe 5:14 | 1Pe 5:14 Greet one another with the kiss of love . Peace to all of you who are in Christ . |
+| 465 | `2Pet.1.2` | 2Pe 1:2 | 2Pe 1:2 May grace and peace be multiplied to you in the knowledge of God and of Jesus our… |
+| 466 | `2Pet.3.14` | 2Pe 3:14 | 2Pe 3:14 Therefore , beloved , since you are waiting for these , be diligent to be found … |
+| 467 | `2John.1.3` | 2Jo 3 | 2Jo 3 Grace , mercy , and peace will be with us , from God the Father and from Jesus Chri… |
+| 468 | `3John.1.15` | 3Jo 15 | 3John.1.15 Peace be to you . The friends greet you . Greet the friends , each by name . |
+| 469 | `Jude.1.2` | Jude 2 | Jude 2 May mercy , peace , and love be multiplied to you . |
+| 470 | `Rev.1.4` | Rev 1:4 | Rev 1:4 John to the seven churches that are in Asia : Grace to you and peace from him who… |
+| 471 | `Rev.6.4` | Rev 6:4 | Rev 6:4 And out came another horse , bright red . Its rider was permitted to take peace f… |
+| 472 | `Ezra.4.17` | Ezr 4:17 | Ezr 4:17 The king sent an answer : “ To Rehum the commander and Shimshai the scribe and t… |
+| 473 | `Ezra.5.7` | Ezr 5:7 | Ezr 5:7 They sent him a report , in which was written as follows : “ To Darius the king ,… |
+| 474 | `Dan.4.1` | Dan 4:1 | Dan 4:1 King Nebuchadnezzar to all peoples , nations , and languages , that dwell in all … |
+| 475 | `Dan.6.25` | Dan 6:25 | Dan 6:25 Then King Darius wrote to all the peoples , nations , and languages that dwell i… |
+| 476 | `Exod.20.24` | Exo 20:24 | Exo 20:24 An altar of earth you shall make for me and sacrifice on it your burnt offering… |
+| 477 | `Exod.24.5` | Exo 24:5 | Exo 24:5 And he sent young men of the people of Israel , who offered burnt offerings and … |
+| 478 | `Exod.29.28` | Exo 29:28 | Exo 29:28 It shall be for Aaron and his sons as a perpetual due from the people of Israel… |
+| 479 | `Exod.32.6` | Exo 32:6 | Exo 32:6 And they rose up early the next day and offered burnt offerings and brought peac… |
+| 480 | `Lev.3.1` | Lev 3:1 | Lev 3:1 “If his offering is a sacrifice of peace offering , if he offers an animal from t… |
+| 481 | `Lev.3.3` | Lev 3:3 | Lev 3:3 And from the sacrifice of the peace offering , as a food offering to the Lord , h… |
+| 482 | `Lev.3.6` | Lev 3:6 | Lev 3:6 “If his offering for a sacrifice of peace offering to the Lord is an animal from … |
+| 483 | `Lev.3.9` | Lev 3:9 | Lev 3:9 Then from the sacrifice of the peace offering he shall offer as a food offering t… |
+| 484 | `Lev.4.10` | Lev 4:10 | Lev 4:10 (just as these are taken from the ox of the sacrifice of the peace offerings ); … |
+| 485 | `Lev.4.26` | Lev 4:26 | Lev 4:26 And all its fat he shall burn on the altar , like the fat of the sacrifice of pe… |
+| 486 | `Lev.4.31` | Lev 4:31 | Lev 4:31 And all its fat he shall remove , as the fat is removed from the peace offerings… |
+| 487 | `Lev.4.35` | Lev 4:35 | Lev 4:35 And all its fat he shall remove as the fat of the lamb is removed from the sacri… |
+| 488 | `Lev.6.12` | Lev 6:12 | Lev 6:12 The fire on the altar shall be kept burning on it; it shall not go out . The pri… |
+| 489 | `Lev.7.11` | Lev 7:11 | Lev 7:11 “And this is the law of the sacrifice of peace offerings that one may offer to t… |
+| 490 | `Lev.7.13` | Lev 7:13 | Lev 7:13 With the sacrifice of his peace offerings for thanksgiving he shall bring his of… |
+| 491 | `Lev.7.14` | Lev 7:14 | Lev 7:14 And from it he shall offer one loaf from each offering , as a gift to the Lord .… |
+| 492 | `Lev.7.15` | Lev 7:15 | Lev 7:15 And the flesh of the sacrifice of his peace offerings for thanksgiving shall be … |
+| 493 | `Lev.7.18` | Lev 7:18 | Lev 7:18 If any of the flesh of the sacrifice of his peace offering is eaten on the third… |
+| 494 | `Lev.7.20` | Lev 7:20 | Lev 7:20 but the person who eats of the flesh of the sacrifice of the Lord’s peace offeri… |
+| 495 | `Lev.7.21` | Lev 7:21 | Lev 7:21 And if anyone touches an unclean thing , whether human uncleanness or an unclean… |
+| 496 | `Lev.7.29` | Lev 7:29 | Lev 7:29 “ Speak to the people of Israel , saying , Whoever offers the sacrifice of his p… |
+| 497 | `Lev.7.32` | Lev 7:32 | Lev 7:32 And the right thigh you shall give to the priest as a contribution from the sacr… |
+| 498 | `Lev.7.33` | Lev 7:33 | Lev 7:33 Whoever among the sons of Aaron offers the blood of the peace offerings and the … |
+| 499 | `Lev.7.34` | Lev 7:34 | Lev 7:34 For the breast that is waved and the thigh that is contributed I have taken from… |
+| 500 | `Lev.7.37` | Lev 7:37 | Lev 7:37 This is the law of the burnt offering , of the grain offering , of the sin offer… |
+| 501 | `Lev.9.4` | Lev 9:4 | Lev 9:4 and an ox and a ram for peace offerings , to sacrifice before the Lord , and a gr… |
+| 502 | `Lev.9.18` | Lev 9:18 | Lev 9:18 Then he killed the ox and the ram , the sacrifice of peace offerings for the peo… |
+| 503 | `Lev.9.22` | Lev 9:22 | Lev 9:22 Then Aaron lifted up his hands toward the people and blessed them, and he came d… |
+| 504 | `Lev.10.14` | Lev 10:14 | Lev 10:14 But the breast that is waved and the thigh that is contributed you shall eat in… |
+| 505 | `Lev.17.5` | Lev 17:5 | Lev 17:5 This is to the end that the people of Israel may bring their sacrifices that the… |
+| 506 | `Lev.19.5` | Lev 19:5 | Lev 19:5 “When you offer a sacrifice of peace offerings to the Lord , you shall offer it … |
+| 507 | `Lev.22.21` | Lev 22:21 | Lev 22:21 And when anyone offers a sacrifice of peace offerings to the Lord to fulfill a … |
+| 508 | `Lev.23.19` | Lev 23:19 | Lev 23:19 And you shall offer one male goat for a sin offering , and two male lambs a yea… |
+| 509 | `Num.6.14` | Num 6:14 | Num 6:14 and he shall bring his gift to the Lord , one male lamb a year old without blemi… |
+| 510 | `Num.6.17` | Num 6:17 | Num 6:17 and he shall offer the ram as a sacrifice of peace offering to the Lord , with t… |
+| 511 | `Num.6.18` | Num 6:18 | Num 6:18 And the Nazirite shall shave his consecrated head at the entrance of the tent of… |
+| 512 | `Num.7.17` | Num 7:17 | Num 7:17 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 513 | `Num.7.23` | Num 7:23 | Num 7:23 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 514 | `Num.7.29` | Num 7:29 | Num 7:29 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 515 | `Num.7.35` | Num 7:35 | Num 7:35 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 516 | `Num.7.41` | Num 7:41 | Num 7:41 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 517 | `Num.7.47` | Num 7:47 | Num 7:47 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 518 | `Num.7.53` | Num 7:53 | Num 7:53 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 519 | `Num.7.59` | Num 7:59 | Num 7:59 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 520 | `Num.7.65` | Num 7:65 | Num 7:65 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 521 | `Num.7.71` | Num 7:71 | Num 7:71 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 522 | `Num.7.77` | Num 7:77 | Num 7:77 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 523 | `Num.7.83` | Num 7:83 | Num 7:83 and for the sacrifice of peace offerings , two oxen , five rams , five male goat… |
+| 524 | `Num.7.88` | Num 7:88 | Num 7:88 and all the cattle for the sacrifice of peace offerings twenty-four bulls , the … |
+| 525 | `Num.10.10` | Num 10:10 | Num 10:10 On the day of your gladness also, and at your appointed feasts and at the begin… |
+| 526 | `Num.15.8` | Num 15:8 | Num 15:8 And when you offer a bull as a burnt offering or sacrifice , to fulfill a vow or… |
+| 527 | `Num.29.39` | Num 29:39 | Num 29:39 “These you shall offer to the Lord at your appointed feasts , in addition to yo… |
+| 528 | `Deut.27.7` | Deu 27:7 | Deu 27:7 and you shall sacrifice peace offerings and shall eat there , and you shall rejo… |
+| 529 | `Josh.8.31` | Jos 8:31 | Jos 8:31 just as Moses the servant of the Lord had commanded the people of Israel , as it… |
+| 530 | `Josh.22.23` | Jos 22:23 | Jos 22:23 for building an altar to turn away from following the Lord . Or if we did so to… |
+| 531 | `Josh.22.27` | Jos 22:27 | Jos 22:27 but to be a witness between us and you, and between our generations after us, t… |
+| 532 | `Judg.20.26` | Judg 20:26 | Judg 20:26 Then all the people of Israel , the whole army , went up and came to Bethel an… |
+| 533 | `Judg.21.4` | Judg 21:4 | Judg 21:4 And the next day the people rose early and built there an altar and offered bur… |
+| 534 | `1Sam.10.8` | 1Sa 10:8 | 1Sa 10:8 Then go down before me to Gilgal . And behold , I am coming down to you to offer… |
+| 535 | `1Sam.11.15` | 1Sa 11:15 | 1Sa 11:15 So all the people went to Gilgal , and there they made Saul king before the Lor… |
+| 536 | `1Sam.13.9` | 1Sa 13:9 | 1Sa 13:9 So Saul said , “ Bring the burnt offering here to me, and the peace offerings .”… |
+| 537 | `2Sam.6.17` | 2Sa 6:17 | 2Sa 6:17 And they brought in the ark of the Lord and set it in its place , inside the ten… |
+| 538 | `2Sam.6.18` | 2Sa 6:18 | 2Sa 6:18 And when David had finished offering the burnt offerings and the peace offerings… |
+| 539 | `2Sam.24.25` | 2Sa 24:25 | 2Sa 24:25 And David built there an altar to the Lord and offered burnt offerings and peac… |
+| 540 | `1Kgs.3.15` | 1Ki 3:15 | 1Ki 3:15 And Solomon awoke , and behold , it was a dream . Then he came to Jerusalem and … |
+| 541 | `1Kgs.8.63` | 1Ki 8:63 | 1Ki 8:63 Solomon offered as peace offerings to the Lord 22,000 oxen and 120,000 sheep . S… |
+| 542 | `1Kgs.8.64` | 1Ki 8:64 | 1Ki 8:64 The same day the king consecrated the middle of the court that was before the ho… |
+| 543 | `1Kgs.9.25` | 1Ki 9:25 | 1Ki 9:25 Three times a year Solomon used to offer up burnt offerings and peace offerings … |
+| 544 | `2Kgs.16.13` | 2Ki 16:13 | 2Ki 16:13 and burned his burnt offering and his grain offering and poured his drink offer… |
+| 545 | `1Chr.16.1` | 1Ch 16:1 | 1Ch 16:1 And they brought in the ark of God and set it inside the tent that David had pit… |
+| 546 | `1Chr.16.2` | 1Ch 16:2 | 1Ch 16:2 And when David had finished offering the burnt offerings and the peace offerings… |
+| 547 | `1Chr.21.26` | 1Ch 21:26 | 1Ch 21:26 And David built there an altar to the Lord and presented burnt offerings and pe… |
+| 548 | `2Chr.7.7` | 2Ch 7:7 | 2Ch 7:7 And Solomon consecrated the middle of the court that was before the house of the … |
+| 549 | `2Chr.29.35` | 2Ch 29:35 | 2Ch 29:35 Besides the great number of burnt offerings , there was the fat of the peace of… |
+| 550 | `2Chr.30.22` | 2Ch 30:22 | 2Ch 30:22 And Hezekiah spoke encouragingly to all the Levites who showed good skill in th… |
+| 551 | `2Chr.31.2` | 2Ch 31:2 | 2Ch 31:2 And Hezekiah appointed the divisions of the priests and of the Levites , divisio… |
+| 552 | `2Chr.33.16` | 2Ch 33:16 | 2Ch 33:16 He also restored the altar of the Lord and offered on it sacrifices of peace of… |
+| 553 | `Prov.7.14` | Pro 7:14 | Pro 7:14 “I had to offer sacrifices , and today I have paid my vows ; |
+| 554 | `Ezek.43.27` | Eze 43:27 | Eze 43:27 And when they have completed these days , then from the eighth day onward the p… |
+| 555 | `Ezek.45.15` | Eze 45:15 | Eze 45:15 And one sheep from every flock of two hundred , from the watering places of Isr… |
+| 556 | `Ezek.45.17` | Eze 45:17 | Eze 45:17 It shall be the prince’s duty to furnish the burnt offerings , grain offerings … |
+| 557 | `Ezek.46.2` | Eze 46:2 | Eze 46:2 The prince shall enter by the vestibule of the gate from outside , and shall tak… |
+| 558 | `Ezek.46.12` | Eze 46:12 | Eze 46:12 When the prince provides a freewill offering , either a burnt offering or peace… |
+| 559 | `Amos.5.22` | Amo 5:22 | Amo 5:22 Even though you offer me your burnt offerings and grain offerings , I will not a… |
+| 560 | `Heb.12.11` | Heb 12:11 | Heb 12:11 For the moment all discipline seems painful rather than pleasant , but later it… |
+| 561 | `Jas.3.17` | Jam 3:17 | Jam 3:17 But the wisdom from above is first pure , then peaceable , gentle , open to reas… |
+| 562 | `1Tim.2.2` | 1Ti 2:2 | 1Ti 2:2 for kings and all who are in high positions , that we may lead a peaceful and qui… |
+| 563 | `Acts.24.23` | Act 24:23 | Act 24:23 Then he gave orders to the centurion that he should be kept in custody but have… |
+| 564 | `2Cor.2.13` | 2Cor 2:13 | 2Cor 2:13 my spirit was not at rest because I did not find my brother Titus there. So I t… |
+| 565 | `2Cor.7.5` | 2Cor 7:5 | 2Cor 7:5 For even when we came into Macedonia , our bodies had no rest , but we were affl… |
+| 566 | `2Cor.8.13` | 2Cor 8:13 | 2Cor 8:13 For I do not mean that others should be eased and you burdened , but that as a … |
+| 567 | `2Thess.1.7` | 2Th 1:7 | 2Th 1:7 and to grant relief to you who are afflicted as well as to us , when the Lord Jes… |
+| 568 | `2Kgs.19.28` | 2Ki 19:28 | 2Ki 19:28 Because you have raged against me and your complacency has come into my ears , … |
+| 569 | `Job.12.5` | Job 12:5 | Job 12:5 In the thought of one who is at ease there is contempt for misfortune ; it is re… |
+| 570 | `Ps.123.4` | Psa 123:4 | Psa 123:4 Our soul has had more than enough of the scorn of those who are at ease , of th… |
+| 571 | `Isa.32.9` | Isa 32:9 | Isa 32:9 Rise up , you women who are at ease , hear my voice ; you complacent daughters ,… |
+| 572 | `Isa.32.11` | Isa 32:11 | Isa 32:11 Tremble , you women who are at ease , shudder , you complacent ones ; strip , a… |
+| 573 | `Isa.33.20` | Isa 33:20 | Isa 33:20 Behold Zion , the city of our appointed feasts ! Your eyes will see Jerusalem ,… |
+| 574 | `Isa.37.29` | Isa 37:29 | Isa 37:29 Because you have raged against me and your complacency has come to my ears , I … |
+| 575 | `Amos.6.1` | Amo 6:1 | Amo 6:1 “ Woe to those who are at ease in Zion , and to those who feel secure on the moun… |
+| 576 | `Zech.1.15` | Zec 1:15 | Zec 1:15 And I am exceedingly angry with the nations that are at ease ; for while I was a… |
+| 577 | `Gen.44.4` | Gen 44:4 | Gen 44:4 They had gone only a short distance from the city . Now Joseph said to his stewa… |
+| 578 | `Exod.21.34` | Exo 21:34 | Exo 21:34 the owner of the pit shall make restoration . He shall give money to its owner … |
+| 579 | `Exod.21.36` | Exo 21:36 | Exo 21:36 Or if it is known that the ox has been accustomed to gore in the past , and its… |
+| 580 | `Exod.22.1` | Exo 22:1 | Exo 22:1 “ If a man steals an ox or a sheep , and kills it or sells it, he shall repay fi… |
+| 581 | `Exod.22.3` | Exo 22:3 | Exo 22:3 but if the sun has risen on him, there shall be bloodguilt for him. He shall sur… |
+| 582 | `Exod.22.4` | Exo 22:4 | Exo 22:4 If the stolen beast is found alive in his possession , whether it is an ox or a … |
+| 583 | `Exod.22.5` | Exo 22:5 | Exo 22:5 “ If a man causes a field or vineyard to be grazed over , or lets his beast loos… |
+| 584 | `Exod.22.6` | Exo 22:6 | Exo 22:6 “ If fire breaks out and catches in thorns so that the stacked grain or the stan… |
+| 585 | `Exod.22.7` | Exo 22:7 | Exo 22:7 “ If a man gives to his neighbor money or goods to keep safe , and it is stolen … |
+| 586 | `Exod.22.9` | Exo 22:9 | Exo 22:9 For every breach of trust , whether it is for an ox , for a donkey , for a sheep… |
+| 587 | `Exod.22.11` | Exo 22:11 | Exo 22:11 an oath by the Lord shall be between them both to see whether or not he has put… |
+| 588 | `Exod.22.12` | Exo 22:12 | Exo 22:12 But if it is stolen from him, he shall make restitution to its owner . |
+| 589 | `Exod.22.13` | Exo 22:13 | Exo 22:13 If it is torn by beasts , let him bring it as evidence . He shall not make rest… |
+| 590 | `Exod.22.14` | Exo 22:14 | Exo 22:14 “ If a man borrows anything of his neighbor , and it is injured or dies , the o… |
+| 591 | `Exod.22.15` | Exo 22:15 | Exo 22:15 If the owner was with it, he shall not make restitution ; if it was hired , it … |
+| 592 | `Lev.5.16` | Lev 5:16 | Lev 5:16 He shall also make restitution for what he has done amiss in the holy thing and … |
+| 593 | `Lev.6.5` | Lev 6:5 | Lev 6:5 or anything about which he has sworn falsely , he shall restore it in full and sh… |
+| 594 | `Lev.24.18` | Lev 24:18 | Lev 24:18 Whoever takes an animal’s life shall make it good , life for life . |
+| 595 | `Lev.24.21` | Lev 24:21 | Lev 24:21 Whoever kills an animal shall make it good , and whoever kills a person shall b… |
+| 596 | `Deut.7.10` | Deu 7:10 | Deu 7:10 and repays to their face those who hate him, by destroying them. He will not be … |
+| 597 | `Deut.23.21` | Deu 23:21 | Deu 23:21 “If you make a vow to the Lord your God , you shall not delay fulfilling it, fo… |
+| 598 | `Deut.32.41` | Deu 32:41 | Deu 32:41 if I sharpen my flashing sword and my hand takes hold on judgment , I will take… |
+| 599 | `Judg.1.7` | Judg 1:7 | Judg 1:7 And Adoni-bezek said , “ Seventy kings with their thumbs and their big toes cut … |
+| 600 | `Ruth.2.12` | Rut 2:12 | Rut 2:12 The Lord repay you for what you have done , and a full reward be given you by th… |
+| 601 | `1Sam.24.19` | 1Sa 24:19 | 1Sa 24:19 For if a man finds his enemy , will he let him go away safe ? So may the Lord r… |
+| 602 | `2Sam.3.39` | 2Sa 3:39 | 2Sa 3:39 And I was gentle today , though anointed king . These men , the sons of Zeruiah … |
+| 603 | `2Sam.10.19` | 2Sa 10:19 | 2Sa 10:19 And when all the kings who were servants of Hadadezer saw that they had been de… |
+| 604 | `2Sam.12.6` | 2Sa 12:6 | 2Sa 12:6 and he shall restore the lamb fourfold , because he did this thing , and because… |
+| 605 | `2Sam.15.7` | 2Sa 15:7 | 2Sa 15:7 And at the end of four years Absalom said to the king , “ Please let me go and p… |
+| 606 | `1Kgs.7.51` | 1Ki 7:51 | 1Ki 7:51 Thus all the work that King Solomon did on the house of the Lord was finished . … |
+| 607 | `2Kgs.4.7` | 2Ki 4:7 | 2Ki 4:7 She came and told the man of God , and he said , “ Go , sell the oil and pay your… |
+| 608 | `2Kgs.9.26` | 2Ki 9:26 | 2Ki 9:26 ‘As surely as I saw yesterday the blood of Naboth and the blood of his sons — de… |
+| 609 | `2Chr.5.1` | 2Ch 5:1 | 2Ch 5:1 Thus all the work that Solomon did for the house of the Lord was finished . And S… |
+| 610 | `Neh.6.15` | Neh 6:15 | Neh 6:15 So the wall was finished on the twenty-fifth day of the month Elul , in fifty-tw… |
+| 611 | `Job.8.6` | Job 8:6 | Job 8:6 if you are pure and upright , surely then he will rouse himself for you and resto… |
+| 612 | `Job.9.4` | Job 9:4 | Job 9:4 He is wise in heart and mighty in strength — who has hardened himself against him… |
+| 613 | `Job.21.19` | Job 21:19 | Job 21:19 You say, ‘ God stores up their iniquity for their children .’ Let him pay it ou… |
+| 614 | `Job.21.31` | Job 21:31 | Job 21:31 Who declares his way to his face , and who repays him for what he has done ? |
+| 615 | `Job.22.27` | Job 22:27 | Job 22:27 You will make your prayer to him, and he will hear you, and you will pay your v… |
+| 616 | `Job.23.14` | Job 23:14 | Job 23:14 For he will complete what he appoints for me, and many such things are in his m… |
+| 617 | `Job.34.11` | Job 34:11 | Job 34:11 For according to the work of a man he will repay him, and according to his ways… |
+| 618 | `Job.34.33` | Job 34:33 | Job 34:33 Will he then make repayment to suit you, because you reject it? For you must ch… |
+| 619 | `Job.41.11` | Job 41:11 | Job 41:11 Who has first given to me, that I should repay him? Whatever is under the whole… |
+| 620 | `Ps.22.25` | Psa 22:25 | Psa 22:25 From you comes my praise in the great congregation ; my vows I will perform bef… |
+| 621 | `Ps.31.23` | Psa 31:23 | Psa 31:23 Love the Lord , all you his saints ! The Lord preserves the faithful but abunda… |
+| 622 | `Ps.35.12` | Psa 35:12 | Psa 35:12 They repay me evil for good ; my soul is bereft . |
+| 623 | `Ps.37.21` | Psa 37:21 | Psa 37:21 The wicked borrows but does not pay back, but the righteous is generous and giv… |
+| 624 | `Ps.38.20` | Psa 38:20 | Psa 38:20 Those who render me evil for good accuse me because I follow after good . |
+| 625 | `Ps.41.10` | Psa 41:10 | Psa 41:10 But you , O Lord , be gracious to me, and raise me up, that I may repay them ! |
+| 626 | `Ps.50.14` | Psa 50:14 | Psa 50:14 Offer to God a sacrifice of thanksgiving , and perform your vows to the Most Hi… |
+| 627 | `Ps.56.12` | Psa 56:12 | Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . |
+| 628 | `Ps.61.8` | Psa 61:8 | Psa 61:8 So will I ever sing praises to your name , as I perform my vows day after day . |
+| 629 | `Ps.62.12` | Psa 62:12 | Psa 62:12 and that to you, O Lord , belongs steadfast love . For you will render to a man… |
+| 630 | `Ps.65.1` | Psa 65:1 | To the choirmaster . A Psalm of David . A Song . Psa 65:1 Praise is due to you, O God , i… |
+| 631 | `Ps.66.13` | Psa 66:13 | Psa 66:13 I will come into your house with burnt offerings ; I will perform my vows to yo… |
+| 632 | `Ps.76.11` | Psa 76:11 | Psa 76:11 Make your vows to the Lord your God and perform them; let all around him bring … |
+| 633 | `Ps.116.14` | Psa 116:14 | Psa 116:14 I will pay my vows to the Lord in the presence of all his people . |
+| 634 | `Ps.116.18` | Psa 116:18 | Psa 116:18 I will pay my vows to the Lord in the presence of all his people , |
+| 635 | `Ps.137.8` | Psa 137:8 | Psa 137:8 O daughter of Babylon , doomed to be destroyed , blessed shall he be who repays… |
+| 636 | `Prov.6.31` | Pro 6:31 | Pro 6:31 but if he is caught , he will pay sevenfold ; he will give all the goods of his … |
+| 637 | `Prov.11.31` | Pro 11:31 | Pro 11:31 If the righteous is repaid on earth , how much more the wicked and the sinner ! |
+| 638 | `Prov.13.13` | Pro 13:13 | Pro 13:13 Whoever despises the word brings destruction on himself , but he who reveres th… |
+| 639 | `Prov.13.21` | Pro 13:21 | Pro 13:21 Disaster pursues sinners , but the righteous are rewarded with good . |
+| 640 | `Prov.19.17` | Pro 19:17 | Pro 19:17 Whoever is generous to the poor lends to the Lord , and he will repay him for h… |
+| 641 | `Prov.20.22` | Pro 20:22 | Pro 20:22 Do not say , “I will repay evil ”; wait for the Lord , and he will deliver you . |
+| 642 | `Prov.22.27` | Pro 22:27 | Pro 22:27 If you have nothing with which to pay , why should your bed be taken from under… |
+| 643 | `Prov.25.22` | Pro 25:22 | Pro 25:22 for you will heap burning coals on his head , and the Lord will reward you . |
+| 644 | `Eccl.5.4` | Ecc 5:4 | Ecc 5:4 When you vow a vow to God , do not delay paying it, for he has no pleasure in foo… |
+| 645 | `Eccl.5.5` | Ecc 5:5 | Ecc 5:5 It is better that you should not vow than that you should vow and not pay . |
+| 646 | `Isa.19.21` | Isa 19:21 | Isa 19:21 And the Lord will make himself known to the Egyptians , and the Egyptians will … |
+| 647 | `Isa.38.12` | Isa 38:12 | Isa 38:12 My dwelling is plucked up and removed from me like a shepherd’s tent ; like a w… |
+| 648 | `Isa.38.13` | Isa 38:13 | Isa 38:13 I calmed myself until morning ; like a lion he breaks all my bones ; from day t… |
+| 649 | `Isa.44.28` | Isa 44:28 | Isa 44:28 who says of Cyrus , ‘He is my shepherd , and he shall fulfill all my purpose ’;… |
+| 650 | `Isa.57.18` | Isa 57:18 | Isa 57:18 I have seen his ways , but I will heal him; I will lead him and restore comfort… |
+| 651 | `Isa.59.18` | Isa 59:18 | Isa 59:18 According to their deeds , so will he repay , wrath to his adversaries , repaym… |
+| 652 | `Isa.60.20` | Isa 60:20 | Isa 60:20 Your sun shall no more go down , nor your moon withdraw itself; for the Lord wi… |
+| 653 | `Isa.66.6` | Isa 66:6 | Isa 66:6 “The sound of an uproar from the city ! A sound from the temple ! The sound of t… |
+| 654 | `Jer.16.18` | Jer 16:18 | Jer 16:18 But first I will doubly repay their iniquity and their sin , because they have … |
+| 655 | `Jer.18.20` | Jer 18:20 | Jer 18:20 Should good be repaid with evil ? Yet they have dug a pit for my life . Remembe… |
+| 656 | `Jer.25.14` | Jer 25:14 | Jer 25:14 For many nations and great kings shall make slaves even of them, and I will rec… |
+| 657 | `Jer.32.18` | Jer 32:18 | Jer 32:18 You show steadfast love to thousands , but you repay the guilt of fathers to th… |
+| 658 | `Jer.50.29` | Jer 50:29 | Jer 50:29 “ Summon archers against Babylon , all those who bend the bow . Encamp around h… |
+| 659 | `Jer.51.6` | Jer 51:6 | Jer 51:6 “ Flee from the midst of Babylon ; let every one save his life ! Be not cut off … |
+| 660 | `Jer.51.24` | Jer 51:24 | Jer 51:24 “I will repay Babylon and all the inhabitants of Chaldea before your very eyes … |
+| 661 | `Jer.51.56` | Jer 51:56 | Jer 51:56 for a destroyer has come upon her, upon Babylon ; her warriors are taken ; thei… |
+| 662 | `Ezek.33.15` | Eze 33:15 | Eze 33:15 if the wicked restores the pledge , gives back what he has taken by robbery , a… |
+| 663 | `Hos.14.2` | Hos 14:2 | Hos 14:2 Take with you words and return to the Lord ; say to him, “ Take away all iniquit… |
+| 664 | `Joel.2.25` | Joe 2:25 | Joe 2:25 I will restore to you the years that the swarming locust has eaten , the hopper … |
+| 665 | `Joel.3.4` | Joe 3:4 | Joe 3:4 “ What are you to me, O Tyre and Sidon , and all the regions of Philistia ? Are y… |
+| 666 | `Jonah.2.9` | Jon 2:9 | Jon 2:9 But I with the voice of thanksgiving will sacrifice to you; what I have vowed I w… |
+| 667 | `Deut.20.12` | Deu 20:12 | Deu 20:12 But if it makes no peace with you, but makes war against you, then you shall be… |
+| 668 | `Josh.10.1` | Jos 10:1 | Jos 10:1 As soon as Adoni-zedek , king of Jerusalem , heard how Joshua had captured Ai an… |
+| 669 | `Josh.10.4` | Jos 10:4 | Jos 10:4 “Come up to me and help me, and let us strike Gibeon . For it has made peace wit… |
+| 670 | `Josh.11.19` | Jos 11:19 | Jos 11:19 There was not a city that made peace with the people of Israel except the Hivit… |
+| 671 | `2Sam.20.19` | 2Sa 20:19 | 2Sa 20:19 I am one of those who are peaceable and faithful in Israel . You seek to destro… |
+| 672 | `1Kgs.22.44` | 1Ki 22:44 | 1Ki 22:44 Jehoshaphat also made peace with the king of Israel . |
+| 673 | `1Chr.19.19` | 1Ch 19:19 | 1Ch 19:19 And when the servants of Hadadezer saw that they had been defeated by Israel , … |
+| 674 | `Job.5.23` | Job 5:23 | Job 5:23 For you shall be in league with the stones of the field , and the beasts of the … |
+| 675 | `Job.22.21` | Job 22:21 | Job 22:21 “ Agree with God, and be at peace ; thereby good will come to you. |
+| 676 | `Ps.7.4` | Psa 7:4 | Psa 7:4 if I have repaid my friend with evil or plundered my enemy without cause , |
+| 677 | `Prov.16.7` | Pro 16:7 | Pro 16:7 When a man’s ways please the Lord , he makes even his enemies to be at peace wit… |
+| 678 | `Isa.42.19` | Isa 42:19 | Isa 42:19 Who is blind but my servant , or deaf as my messenger whom I send ? Who is blin… |
+| 679 | `Isa.44.26` | Isa 44:26 | Isa 44:26 who confirms the word of his servant and fulfills the counsel of his messengers… |
+| 680 | `Ezra.7.12` | Ezr 7:12 | Ezr 7:12 “ Artaxerxes , king of kings , to Ezra the priest , the scribe of the Law of the… |
+| 681 | `Col.1.20` | Col 1:20 | Col 1:20 and through him to reconcile to himself all things , whether on earth or in heav… |
+| 682 | `Matt.22.12` | Mat 22:12 | Mat 22:12 And he said to him , ‘ Friend , how did you get in here without a wedding garme… |
+| 683 | `Matt.22.34` | Mat 22:34 | Mat 22:34 But when the Pharisees heard that he had silenced the Sadducees , they gathered… |
+| 684 | `Mark.1.25` | Mar 1:25 | Mar 1:25 But Jesus rebuked him , saying , “Be silent , and come out of him !” |
+| 685 | `Luke.4.35` | Luk 4:35 | Luk 4:35 But Jesus rebuked him , saying , “Be silent and come out of him !” And when the … |
+| 686 | `1Cor.9.9` | 1Cor 9:9 | 1Cor 9:9 For it is written in the Law of Moses , “You shall not muzzle an ox when it trea… |
+| 687 | `1Tim.5.18` | 1Ti 5:18 | 1Ti 5:18 For the Scripture says , “You shall not muzzle an ox when it treads out the grai… |
+| 688 | `1Pet.2.15` | 1Pe 2:15 | 1Pe 2:15 For this is the will of God , that by doing good you should put to silence the i… |
+| 689 | `Josh.11.23` | Jos 11:23 | Jos 11:23 So Joshua took the whole land , according to all that the Lord had spoken to Mo… |
+| 690 | `Josh.14.15` | Jos 14:15 | Jos 14:15 Now the name of Hebron formerly was Kiriath-arba . (Arba was the greatest man a… |
+| 691 | `Judg.3.11` | Judg 3:11 | Judg 3:11 So the land had rest for forty years . Then Othniel the son of Kenaz died . |
+| 692 | `Judg.3.30` | Judg 3:30 | Judg 3:30 So Moab was subdued that day under the hand of Israel . And the land had rest f… |
+| 693 | `Judg.5.31` | Judg 5:31 | Judg 5:31 “ So may all your enemies perish , O Lord ! But your friends be like the sun as… |
+| 694 | `Judg.8.28` | Judg 8:28 | Judg 8:28 So Midian was subdued before the people of Israel , and they raised their heads… |
+| 695 | `Judg.18.7` | Judg 18:7 | Judg 18:7 Then the five men departed and came to Laish and saw the people who were there … |
+| 696 | `Judg.18.27` | Judg 18:27 | Judg 18:27 But the people of Dan took what Micah had made , and the priest who belonged t… |
+| 697 | `Ruth.3.18` | Rut 3:18 | Rut 3:18 She replied , “ Wait , my daughter , until you learn how the matter turns out , … |
+| 698 | `2Kgs.11.20` | 2Ki 11:20 | 2Ki 11:20 So all the people of the land rejoiced , and the city was quiet after Athaliah … |
+| 699 | `2Chr.14.1` | 2Ch 14:1 | 2Ch 14:1 Abijah slept with his fathers , and they buried him in the city of David . And A… |
+| 700 | `2Chr.14.5` | 2Ch 14:5 | 2Ch 14:5 He also took out of all the cities of Judah the high places and the incense alta… |
+| 701 | `2Chr.14.6` | 2Ch 14:6 | 2Ch 14:6 He built fortified cities in Judah , for the land had rest . He had no war in th… |
+| 702 | `2Chr.20.30` | 2Ch 20:30 | 2Ch 20:30 So the realm of Jehoshaphat was quiet , for his God gave him rest all around . |
+| 703 | `2Chr.23.21` | 2Ch 23:21 | 2Ch 23:21 So all the people of the land rejoiced , and the city was quiet after Athaliah … |
+| 704 | `Job.3.13` | Job 3:13 | Job 3:13 For then I would have lain down and been quiet ; I would have slept ; then I wou… |
+| 705 | `Job.3.26` | Job 3:26 | Job 3:26 I am not at ease , nor am I quiet ; I have no rest , but trouble comes .” |
+| 706 | `Job.34.29` | Job 34:29 | Job 34:29 When he is quiet , who can condemn ? When he hides his face , who can behold hi… |
+| 707 | `Job.37.17` | Job 37:17 | Job 37:17 you whose garments are hot when the earth is still because of the south wind ? |
+| 708 | `Ps.76.8` | Psa 76:8 | Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still , |
+| 709 | `Ps.94.13` | Psa 94:13 | Psa 94:13 to give him rest from days of trouble , until a pit is dug for the wicked . |
+| 710 | `Prov.15.18` | Pro 15:18 | Pro 15:18 A hot-tempered man stirs up strife , but he who is slow to anger quiets content… |
+| 711 | `Isa.7.4` | Isa 7:4 | Isa 7:4 And say to him, ‘Be careful , be quiet , do not fear , and do not let your heart … |
+| 712 | `Isa.14.7` | Isa 14:7 | Isa 14:7 The whole earth is at rest and quiet ; they break forth into singing . |
+| 713 | `Isa.18.4` | Isa 18:4 | Isa 18:4 For thus the Lord said to me: “I will quietly look from my dwelling like clear h… |
+| 714 | `Isa.30.15` | Isa 30:15 | Isa 30:15 For thus said the Lord God , the Holy One of Israel , “ In returning and rest y… |
+| 715 | `Isa.57.20` | Isa 57:20 | Isa 57:20 But the wicked are like the tossing sea ; for it cannot be quiet , and its wate… |
+| 716 | `Jer.30.10` | Jer 30:10 | Jer 30:10 “Then fear not , O Jacob my servant , declares the Lord , nor be dismayed , O I… |
+| 717 | `Jer.46.27` | Jer 46:27 | Jer 46:27 “But fear not , O Jacob my servant , nor be dismayed , O Israel , for behold , … |
+| 718 | `Jer.47.6` | Jer 47:6 | Jer 47:6 Ah , sword of the Lord ! How long till you are quiet ? Put yourself into your sc… |
+| 719 | `Jer.47.7` | Jer 47:7 | Jer 47:7 How can it be quiet when the Lord has given it a charge ? Against Ashkelon and a… |
+| 720 | `Jer.48.11` | Jer 48:11 | Jer 48:11 “ Moab has been at ease from his youth and has settled on his dregs ; he has no… |
+| 721 | `Jer.49.23` | Jer 49:23 | Jer 49:23 Concerning Damascus : “ Hamath and Arpad are confounded , for they have heard b… |
+| 722 | `Ezek.16.42` | Eze 16:42 | Eze 16:42 So will I satisfy my wrath on you, and my jealousy shall depart from you. I wil… |
+| 723 | `Ezek.16.49` | Eze 16:49 | Eze 16:49 Behold , this was the guilt of your sister Sodom : she and her daughters had pr… |
+| 724 | `Ezek.38.11` | Eze 38:11 | Eze 38:11 and say , ‘I will go up against the land of unwalled villages . I will fall upo… |
+| 725 | `Zech.1.11` | Zec 1:11 | Zec 1:11 And they answered the angel of the Lord who was standing among the myrtle trees,… |
+| 726 | `Gen.2.15` | Gen 2:15 | Gen 2:15 The Lord God took the man and put him in the garden of Eden to work it and keep … |
+| 727 | `Gen.8.4` | Gen 8:4 | Gen 8:4 and in the seventh month , on the seventeenth day of the month , the ark came to … |
+| 728 | `Gen.19.16` | Gen 19:16 | Gen 19:16 But he lingered . So the men seized him and his wife and his two daughters by t… |
+| 729 | `Gen.39.16` | Gen 39:16 | Gen 39:16 Then she laid up his garment by her until his master came home , |
+| 730 | `Gen.42.33` | Gen 42:33 | Gen 42:33 Then the man , the lord of the land , said to us, ‘ By this I shall know that y… |
+| 731 | `Exod.10.14` | Exo 10:14 | Exo 10:14 The locusts came up over all the land of Egypt and settled on the whole country… |
+| 732 | `Exod.16.23` | Exo 16:23 | Exo 16:23 he said to them , “ This is what the Lord has commanded : ‘ Tomorrow is a day o… |
+| 733 | `Exod.16.24` | Exo 16:24 | Exo 16:24 So they laid it aside till the morning , as Moses commanded them, and it did no… |
+| 734 | `Exod.16.33` | Exo 16:33 | Exo 16:33 And Moses said to Aaron , “ Take a jar , and put an omer of manna in it, and pl… |
+| 735 | `Exod.16.34` | Exo 16:34 | Exo 16:34 As the Lord commanded Moses , so Aaron placed it before the testimony to be kep… |
+| 736 | `Exod.17.11` | Exo 17:11 | Exo 17:11 Whenever Moses held up his hand , Israel prevailed , and whenever he lowered hi… |
+| 737 | `Exod.20.11` | Exo 20:11 | Exo 20:11 For in six days the Lord made the heavens and the earth , the sea , and all tha… |
+| 738 | `Exod.23.12` | Exo 23:12 | Exo 23:12 “ Six days you shall do your work , but on the seventh day you shall rest ; tha… |
+| 739 | `Exod.32.10` | Exo 32:10 | Exo 32:10 Now therefore let me alone , that my wrath may burn hot against them and I may … |
+| 740 | `Exod.33.14` | Exo 33:14 | Exo 33:14 And he said , “My presence will go with you, and I will give you rest .” |
+| 741 | `Lev.16.23` | Lev 16:23 | Lev 16:23 “Then Aaron shall come into the tent of meeting and shall take off the linen ga… |
+| 742 | `Lev.24.12` | Lev 24:12 | Lev 24:12 And they put him in custody , till the will of the Lord should be clear to them. |
+| 743 | `Num.10.36` | Num 10:36 | Num 10:36 And when it rested , he said , “ Return , O Lord , to the ten thousand thousand… |
+| 744 | `Num.11.25` | Num 11:25 | Num 11:25 Then the Lord came down in the cloud and spoke to him, and took some of the Spi… |
+| 745 | `Num.11.26` | Num 11:26 | Num 11:26 Now two men remained in the camp , one named Eldad , and the other named Medad … |
+| 746 | `Num.15.34` | Num 15:34 | Num 15:34 They put him in custody , because it had not been made clear what should be don… |
+| 747 | `Num.17.4` | Num 17:4 | Num 17:4 Then you shall deposit them in the tent of meeting before the testimony , where … |
+| 748 | `Num.17.7` | Num 17:7 | Num 17:7 And Moses deposited the staffs before the Lord in the tent of the testimony . |
+| 749 | `Num.19.9` | Num 19:9 | Num 19:9 And a man who is clean shall gather up the ashes of the heifer and deposit them … |
+| 750 | `Num.32.15` | Num 32:15 | Num 32:15 For if you turn away from following him, he will again abandon them in the wild… |
+| 751 | `Deut.3.20` | Deu 3:20 | Deu 3:20 until the Lord gives rest to your brothers , as to you, and they also occupy the… |
+| 752 | `Deut.5.14` | Deu 5:14 | Deu 5:14 but the seventh day is a Sabbath to the Lord your God . On it you shall not do a… |
+| 753 | `Deut.12.10` | Deu 12:10 | Deu 12:10 But when you go over the Jordan and live in the land that the Lord your God is … |
+| 754 | `Deut.14.28` | Deu 14:28 | Deu 14:28 “At the end of every three years you shall bring out all the tithe of your prod… |
+| 755 | `Deut.25.19` | Deu 25:19 | Deu 25:19 Therefore when the Lord your God has given you rest from all your enemies aroun… |
+| 756 | `Deut.26.4` | Deu 26:4 | Deu 26:4 Then the priest shall take the basket from your hand and set it down before the … |
+| 757 | `Deut.26.10` | Deu 26:10 | Deu 26:10 And behold , now I bring the first of the fruit of the ground , which you, O Lo… |
+| 758 | `Josh.1.13` | Jos 1:13 | Jos 1:13 “ Remember the word that Moses the servant of the Lord commanded you, saying , ‘… |
+| 759 | `Josh.1.15` | Jos 1:15 | Jos 1:15 until the Lord gives rest to your brothers as he has to you, and they also take … |
+| 760 | `Josh.3.13` | Jos 3:13 | Jos 3:13 And when the soles of the feet of the priests bearing the ark of the Lord , the … |
+| 761 | `Josh.4.3` | Jos 4:3 | Jos 4:3 and command them, saying , ‘ Take twelve stones from here out of the midst of the… |
+| 762 | `Josh.4.8` | Jos 4:8 | Jos 4:8 And the people of Israel did just as Joshua commanded and took up twelve stones o… |
+| 763 | `Josh.6.23` | Jos 6:23 | Jos 6:23 So the young men who had been spies went in and brought out Rahab and her father… |
+| 764 | `Josh.21.44` | Jos 21:44 | Jos 21:44 And the Lord gave them rest on every side just as he had sworn to their fathers… |
+| 765 | `Josh.22.4` | Jos 22:4 | Jos 22:4 And now the Lord your God has given rest to your brothers , as he promised them.… |
+| 766 | `Josh.23.1` | Jos 23:1 | Jos 23:1 A long time afterward , when the Lord had given rest to Israel from all their su… |
+| 767 | `Judg.2.23` | Judg 2:23 | Judg 2:23 So the Lord left those nations , not driving them out quickly , and he did not … |
+| 768 | `Judg.3.1` | Judg 3:1 | Judg 3:1 Now these are the nations that the Lord left , to test Israel by them, that is, … |
+| 769 | `Judg.6.18` | Judg 6:18 | Judg 6:18 Please do not depart from here until I come to you and bring out my present and… |
+| 770 | `Judg.6.20` | Judg 6:20 | Judg 6:20 And the angel of God said to him, “ Take the meat and the unleavened cakes , an… |
+| 771 | `Judg.16.26` | Judg 16:26 | Judg 16:26 And Samson said to the young man who held him by the hand , “ Let me feel the … |
+| 772 | `1Sam.6.18` | 1Sa 6:18 | 1Sa 6:18 and the golden mice , according to the number of all the cities of the Philistin… |
+| 773 | `1Sam.10.25` | 1Sa 10:25 | 1Sa 10:25 Then Samuel told the people the rights and duties of the kingship , and he wrot… |
+| 774 | `1Sam.25.9` | 1Sa 25:9 | 1Sa 25:9 When David’s young men came , they said all this to Nabal in the name of David ,… |
+| 775 | `2Sam.7.1` | 2Sa 7:1 | 2Sa 7:1 Now when the king lived in his house and the Lord had given him rest from all his… |
+| 776 | `2Sam.7.11` | 2Sa 7:11 | 2Sa 7:11 from the time that I appointed judges over my people Israel . And I will give yo… |
+| 777 | `2Sam.16.11` | 2Sa 16:11 | 2Sa 16:11 And David said to Abishai and to all his servants , “ Behold , my own son seeks… |
+| 778 | `2Sam.16.21` | 2Sa 16:21 | 2Sa 16:21 Ahithophel said to Absalom , “ Go in to your father’s concubines , whom he has … |
+| 779 | `2Sam.17.12` | 2Sa 17:12 | 2Sa 17:12 So we shall come upon him in some place where he is to be found , and we shall … |
+| 780 | `2Sam.20.3` | 2Sa 20:3 | 2Sa 20:3 And David came to his house at Jerusalem . And the king took the ten concubines … |
+| 781 | `2Sam.21.10` | 2Sa 21:10 | 2Sa 21:10 Then Rizpah the daughter of Aiah took sackcloth and spread it for herself on th… |
+| 782 | `1Kgs.5.4` | 1Ki 5:4 | 1Ki 5:4 But now the Lord my God has given me rest on every side . There is neither advers… |
+| 783 | `1Kgs.7.47` | 1Ki 7:47 | 1Ki 7:47 And Solomon left all the vessels unweighed, because there were so many of them; … |
+| 784 | `1Kgs.8.9` | 1Ki 8:9 | 1Ki 8:9 There was nothing in the ark except the two tablets of stone that Moses put there… |
+| 785 | `1Kgs.13.29` | 1Ki 13:29 | 1Ki 13:29 And the prophet took up the body of the man of God and laid it on the donkey an… |
+| 786 | `1Kgs.13.30` | 1Ki 13:30 | 1Ki 13:30 And he laid the body in his own grave . And they mourned over him, saying, “ Al… |
+| 787 | `1Kgs.13.31` | 1Ki 13:31 | 1Ki 13:31 And after he had buried him, he said to his sons , “ When I die , bury me in th… |
+| 788 | `1Kgs.19.3` | 1Ki 19:3 | 1Ki 19:3 Then he was afraid , and he arose and ran for his life and came to Beersheba , w… |
+| 789 | `2Kgs.2.15` | 2Ki 2:15 | 2Ki 2:15 Now when the sons of the prophets who were at Jericho saw him opposite them, the… |
+| 790 | `2Kgs.17.29` | 2Ki 17:29 | 2Ki 17:29 But every nation still made gods of its own and put them in the shrines of the … |
+| 791 | `2Kgs.23.18` | 2Ki 23:18 | 2Ki 23:18 And he said , “Let him be ; let no man move his bones .” So they let his bones … |
+| 792 | `1Chr.16.21` | 1Ch 16:21 | 1Ch 16:21 he allowed no one to oppress them; he rebuked kings on their account , |
+| 793 | `1Chr.22.18` | 1Ch 22:18 | 1Ch 22:18 “Is not the Lord your God with you? And has he not given you peace on every sid… |
+| 794 | `1Chr.23.25` | 1Ch 23:25 | 1Ch 23:25 For David said , “The Lord , the God of Israel , has given rest to his people ,… |
+| 795 | `2Chr.1.14` | 2Ch 1:14 | 2Ch 1:14 Solomon gathered together chariots and horsemen . He had 1,400 chariots and 12,0… |
+| 796 | `2Chr.4.8` | 2Ch 4:8 | 2Ch 4:8 He also made ten tables and placed them in the temple , five on the south side an… |
+| 797 | `2Chr.9.25` | 2Ch 9:25 | 2Ch 9:25 And Solomon had 4,000 stalls for horses and chariots , and 12,000 horsemen , who… |
+| 798 | `2Chr.14.7` | 2Ch 14:7 | 2Ch 14:7 And he said to Judah , “Let us build these cities and surround them with walls a… |
+| 799 | `2Chr.15.15` | 2Ch 15:15 | 2Ch 15:15 And all Judah rejoiced over the oath , for they had sworn with all their heart … |
+| 800 | `Neh.9.28` | Neh 9:28 | Neh 9:28 But after they had rest they did evil again before you, and you abandoned them t… |
+| 801 | `Esth.3.8` | Est 3:8 | Est 3:8 Then Haman said to King Ahasuerus , “There is a certain people scattered abroad a… |
+| 802 | `Esth.9.17` | Est 9:17 | Est 9:17 This was on the thirteenth day of the month of Adar , and on the fourteenth day … |
+| 803 | `Esth.9.18` | Est 9:18 | Est 9:18 But the Jews who were in Susa gathered on the thirteenth day and on the fourteen… |
+| 804 | `Esth.9.22` | Est 9:22 | Est 9:22 as the days on which the Jews got relief from their enemies , and as the month t… |
+| 805 | `Job.3.17` | Job 3:17 | Job 3:17 There the wicked cease from troubling , and there the weary are at rest . |
+| 806 | `Ps.17.14` | Psa 17:14 | Psa 17:14 from men by your hand , O Lord , from men of the world whose portion is in this… |
+| 807 | `Ps.105.14` | Psa 105:14 | Psa 105:14 he allowed no one to oppress them; he rebuked kings on their account, |
+| 808 | `Ps.119.121` | Psa 119:121 | Ayin Psa 119:121 I have done what is just and right ; do not leave me to my oppressors . |
+| 809 | `Ps.125.3` | Psa 125:3 | Psa 125:3 For the scepter of wickedness shall not rest on the land allotted to the righte… |
+| 810 | `Prov.14.33` | Pro 14:33 | Pro 14:33 Wisdom rests in the heart of a man of understanding , but it makes itself known… |
+| 811 | `Prov.21.16` | Pro 21:16 | Pro 21:16 One who wanders from the way of good sense will rest in the assembly of the dea… |
+| 812 | `Prov.29.17` | Pro 29:17 | Pro 29:17 Discipline your son , and he will give you rest ; he will give delight to your … |
+| 813 | `Eccl.2.18` | Ecc 2:18 | Ecc 2:18 I hated all my toil in which I toil under the sun , seeing that I must leave it … |
+| 814 | `Eccl.5.12` | Ecc 5:12 | Ecc 5:12 Sweet is the sleep of a laborer , whether he eats little or much , but the full … |
+| 815 | `Eccl.7.9` | Ecc 7:9 | Ecc 7:9 Be not quick in your spirit to become angry , for anger lodges in the heart of fo… |
+| 816 | `Eccl.7.18` | Ecc 7:18 | Ecc 7:18 It is good that you should take hold of this , and from that withhold not your h… |
+| 817 | `Eccl.10.4` | Ecc 10:4 | Ecc 10:4 If the anger of the ruler rises against you, do not leave your place , for calmn… |
+| 818 | `Eccl.11.6` | Ecc 11:6 | Ecc 11:6 In the morning sow your seed , and at evening withhold not your hand , for you d… |
+| 819 | `Isa.7.2` | Isa 7:2 | Isa 7:2 When the house of David was told , “ Syria is in league with Ephraim ,” the heart… |
+| 820 | `Isa.7.19` | Isa 7:19 | Isa 7:19 And they will all come and settle in the steep ravines , and in the clefts of th… |
+| 821 | `Isa.11.2` | Isa 11:2 | Isa 11:2 And the Spirit of the Lord shall rest upon him, the Spirit of wisdom and underst… |
+| 822 | `Isa.14.1` | Isa 14:1 | Isa 14:1 For the Lord will have compassion on Jacob and will again choose Israel , and wi… |
+| 823 | `Isa.14.3` | Isa 14:3 | Isa 14:3 When the Lord has given you rest from your pain and turmoil and the hard service… |
+| 824 | `Isa.23.12` | Isa 23:12 | Isa 23:12 And he said : “You will no more exult , O oppressed virgin daughter of Sidon ; … |
+| 825 | `Isa.25.10` | Isa 25:10 | Isa 25:10 For the hand of the Lord will rest on this mountain , and Moab shall be trample… |
+| 826 | `Isa.28.2` | Isa 28:2 | Isa 28:2 Behold , the Lord has one who is mighty and strong ; like a storm of hail , a de… |
+| 827 | `Isa.28.12` | Isa 28:12 | Isa 28:12 to whom he has said , “ This is rest ; give rest to the weary ; and this is rep… |
+| 828 | `Isa.30.32` | Isa 30:32 | Isa 30:32 And every stroke of the appointed staff that the Lord lays on them will be to t… |
+| 829 | `Isa.46.7` | Isa 46:7 | Isa 46:7 They lift it to their shoulders , they carry it, they set it in its place , and … |
+| 830 | `Isa.63.14` | Isa 63:14 | Isa 63:14 Like livestock that go down into the valley , the Spirit of the Lord gave them … |
+| 831 | `Isa.65.15` | Isa 65:15 | Isa 65:15 You shall leave your name to my chosen for a curse , and the Lord God will put … |
+| 832 | `Jer.14.9` | Jer 14:9 | Jer 14:9 Why should you be like a man confused , like a mighty warrior who cannot save ? … |
+| 833 | `Jer.27.11` | Jer 27:11 | Jer 27:11 But any nation that will bring its neck under the yoke of the king of Babylon a… |
+| 834 | `Jer.43.6` | Jer 43:6 | Jer 43:6 the men , the women , the children , the princesses , and every person whom Nebu… |
+| 835 | `Lam.5.5` | Lam 5:5 | Lam 5:5 Our pursuers are at our necks ; we are weary ; we are given no rest . |
+| 836 | `Ezek.5.13` | Eze 5:13 | Eze 5:13 “Thus shall my anger spend itself , and I will vent my fury upon them and satisf… |
+| 837 | `Ezek.16.39` | Eze 16:39 | Eze 16:39 And I will give you into their hands , and they shall throw down your vaulted c… |
+| 838 | `Ezek.21.17` | Eze 21:17 | Eze 21:17 I also will clap my hands , and I will satisfy my fury ; I the Lord have spoken… |
+| 839 | `Ezek.22.20` | Eze 22:20 | Eze 22:20 As one gathers silver and bronze and iron and lead and tin into a furnace , to … |
+| 840 | `Ezek.24.13` | Eze 24:13 | Eze 24:13 On account of your unclean lewdness , because I would have cleansed you and you… |
+| 841 | `Ezek.37.1` | Eze 37:1 | Eze 37:1 The hand of the Lord was upon me, and he brought me out in the Spirit of the Lor… |
+| 842 | `Ezek.37.14` | Eze 37:14 | Eze 37:14 And I will put my Spirit within you, and you shall live , and I will place you … |
+| 843 | `Ezek.40.2` | Eze 40:2 | Eze 40:2 In visions of God he brought me to the land of Israel , and set me down on a ver… |
+| 844 | `Ezek.40.42` | Eze 40:42 | Eze 40:42 And there were four tables of hewn stone for the burnt offering , a cubit and a… |
+| 845 | `Ezek.41.9` | Eze 41:9 | Eze 41:9 The thickness of the outer wall of the side chambers was five cubits . The free … |
+| 846 | `Ezek.41.11` | Eze 41:11 | Eze 41:11 And the doors of the side chambers opened on the free space , one door toward t… |
+| 847 | `Ezek.42.13` | Eze 42:13 | Eze 42:13 Then he said to me, “The north chambers and the south chambers opposite the yar… |
+| 848 | `Ezek.42.14` | Eze 42:14 | Eze 42:14 When the priests enter the Holy Place, they shall not go out of it into the out… |
+| 849 | `Ezek.44.19` | Eze 44:19 | Eze 44:19 And when they go out into the outer court to the people , they shall put off th… |
+| 850 | `Dan.12.13` | Dan 12:13 | Dan 12:13 But go your way till the end . And you shall rest and shall stand in your allot… |
+| 851 | `Hos.4.17` | Hos 4:17 | Hos 4:17 Ephraim is joined to idols ; leave him alone . |
+| 852 | `Amos.5.7` | Amo 5:7 | Amo 5:7 O you who turn justice to wormwood and cast down righteousness to the earth ! |
+| 853 | `Hab.3.16` | Hab 3:16 | Hab 3:16 I hear , and my body trembles ; my lips quiver at the sound ; rottenness enters … |
+| 854 | `Zech.5.11` | Zec 5:11 | Zec 5:11 He said to me, “ To the land of Shinar , to build a house for it. And when this … |
+| 855 | `Zech.6.8` | Zec 6:8 | Zec 6:8 Then he cried to me, “ Behold , those who go toward the north country have set my… |
+| 856 | `Job.26.12` | Job 26:12 | Job 26:12 By his power he stilled the sea ; by his understanding he shattered Rahab . |
+| 857 | `Prov.12.19` | Pro 12:19 | Pro 12:19 Truthful lips endure forever , but a lying tongue is but for a moment . |
+| 858 | `Isa.51.15` | Isa 51:15 | Isa 51:15 I am the Lord your God , who stirs up the sea so that its waves roar — the Lord… |
+| 859 | `Jer.31.35` | Jer 31:35 | Jer 31:35 Thus says the Lord , who gives the sun for light by day and the fixed order of … |
+| 860 | `Jer.49.19` | Jer 49:19 | Jer 49:19 Behold , like a lion coming up from the jungle of the Jordan against a perennia… |
+| 861 | `Jer.50.44` | Jer 50:44 | Jer 50:44 “ Behold , like a lion coming up from the thicket of the Jordan against a peren… |
+| 862 | `Deut.28.65` | Deu 28:65 | Deu 28:65 And among these nations you shall find no respite , and there shall be no resti… |
+| 863 | `Isa.34.14` | Isa 34:14 | Isa 34:14 And wild animals shall meet with hyenas ; the wild goat shall cry to his fellow… |
+| 864 | `Isa.51.4` | Isa 51:4 | Isa 51:4 “Give attention to me, my people , and give ear to me, my nation ; for a law wil… |
+| 865 | `Jer.31.2` | Jer 31:2 | Jer 31:2 Thus says the Lord : “The people who survived the sword found grace in the wilde… |
+| 866 | `Jer.50.34` | Jer 50:34 | Jer 50:34 Their Redeemer is strong ; the Lord of hosts is his name . He will surely plead… |
+| 867 | `Job.7.5` | Job 7:5 | Job 7:5 My flesh is clothed with worms and dirt ; my skin hardens , then breaks out afres… |
+| 868 | `Num.13.30` | Num 13:30 | Num 13:30 But Caleb quieted the people before Moses and said , “Let us go up at once and … |
+| 869 | `Judg.3.19` | Judg 3:19 | Judg 3:19 But he himself turned back at the idols near Gilgal and said , “I have a secret… |
+| 870 | `Amos.6.10` | Amo 6:10 | Amo 6:10 And when one’s relative , the one who anoints him for burial, shall take him up … |
+| 871 | `Amos.8.3` | Amo 8:3 | Amo 8:3 The songs of the temple shall become wailings in that day ,” declares the Lord Go… |
+| 872 | `Hab.2.20` | Hab 2:20 | Hab 2:20 But the Lord is in his holy temple ; let all the earth keep silence before him.” |
+| 873 | `Zeph.1.7` | Zep 1:7 | Zep 1:7 Be silent before the Lord God ! For the day of the Lord is near ; the Lord has pr… |
+| 874 | `Zech.2.13` | Zec 2:13 | Zec 2:13 Be silent , all flesh , before the Lord , for he has roused himself from his hol… |
+| 875 | `Exod.15.16` | Exo 15:16 | Exo 15:16 Terror and dread fall upon them; because of the greatness of your arm , they ar… |
+| 876 | `Josh.10.12` | Jos 10:12 | Jos 10:12 At that time Joshua spoke to the Lord in the day when the Lord gave the Amorite… |
+| 877 | `Josh.10.13` | Jos 10:13 | Jos 10:13 And the sun stood still , and the moon stopped , until the nation took vengeanc… |
+| 878 | `1Sam.14.9` | 1Sa 14:9 | 1Sa 14:9 If they say to us, ‘ Wait until we come to you,’ then we will stand still in our… |
+| 879 | `Job.30.27` | Job 30:27 | Job 30:27 My inward parts are in turmoil and never still ; days of affliction come to mee… |
+| 880 | `Ps.35.15` | Psa 35:15 | Psa 35:15 But at my stumbling they rejoiced and gathered ; they gathered together against… |
+| 881 | `Ps.37.7` | Psa 37:7 | Psa 37:7 Be still before the Lord and wait patiently for him; fret not yourself over the … |
+| 882 | `Lam.2.18` | Lam 2:18 | Lam 2:18 Their heart cried to the Lord . O wall of the daughter of Zion , let tears strea… |
+| 883 | `Isa.23.2` | Isa 23:2 | Isa 23:2 Be still , O inhabitants of the coast ; the merchants of Sidon , who cross the s… |
 
 ---
 
@@ -437,10 +1506,10 @@ Below: the 12 verses carrying the most held senses. `→ sense` is **the backtra
 | 2 | before | `H6440G H9005` | `HNcmpc HR` | `H9005` |  |  |  |
 | 3 | I | `H9020` | `HSp1bs` | `H9020` |  |  |  |
 | 4 | not | `H3808` | `HTn` |  |  |  |  |
-| 5 | keep silent | `H2814` | `HVqi1cs` |  | `H2814` | **** | `H2814` |
+| 5 | keep silent | `H2814` | `HVqi1cs` |  | `H2814` | **be silent** | `H2814` |
 | 6 | but | `H3588B H0518B` | `HTc HTc` |  |  |  |  |
-| 7 | repay | `H7999A` | `HVpp1cs` |  | `H7999A` | **** | `H7999A` |
-| 8 | repay | `H7999A` | `HVpq1cs` |  | `H7999A` | **** | `H7999A` |
+| 7 | repay | `H7999A` | `HVpp1cs` |  | `H7999A` | **to complete** | `H7999A` |
+| 8 | repay | `H7999A` | `HVpq1cs` |  | `H7999A` | **to complete** | `H7999A` |
 | 9 | into | `H5921A` | `HR` |  |  |  |  |
 | 10 | their | `H9028` | `HSp3mp` | `H9028` |  |  |  |
 | 11 | lap | `H2436I` | `HNcmsc` |  |  |  |  |
@@ -460,13 +1529,13 @@ Below: the 12 verses carrying the most held senses. `→ sense` is **the backtra
 | 4 | by | `H0853 H9002 H9031` | `HTo HC HSp2ms` | `H9002`, `H9031` |  |  |  |
 | 5 | Almighty | `H7706` | `HNpt` |  |  |  |  |
 | 6 | bless | `H1288` | `HVpu3ms` |  |  |  |  |
-| 7 | blessings | `H1293 H9031` | `HNcfpc HSp2ms` | `H9031` | `H1293` | **** | `H1293` |
+| 7 | blessings | `H1293 H9031` | `HNcfpc HSp2ms` | `H9031` | `H1293` | **blessing** | `H1293` |
 | 8 | heaven | `H8064` | `HNcmpa` |  |  |  |  |
-| 9 | blessings | `H1293 H5921A H9006` | `HNcfpc HNcmsa HR` | `H9006` | `H1293` | **** | `H1293` |
+| 9 | blessings | `H1293 H5921A H9006` | `HNcfpc HNcmsa HR` | `H9006` | `H1293` | **blessing** | `H1293` |
 | 10 | deep | `H8415` | `HNcfsa` |  |  |  |  |
 | 11 | crouches | `H7257` | `HVqrfsa` |  |  |  |  |
 | 12 | beneath | `H8478G` | `HNcmsa` |  |  |  |  |
-| 13 | blessings | `H1293` | `HNcfpc` |  | `H1293` | **** | `H1293` |
+| 13 | blessings | `H1293` | `HNcfpc` |  | `H1293` | **blessing** | `H1293` |
 | 14 | breasts | `H7699A` | `HNcmda` |  |  |  |  |
 | 15 | womb | `H7356A H9002` | `HNcmsa HC` | `H9002` |  |  |  |
 
@@ -483,10 +1552,10 @@ Below: the 12 verses carrying the most held senses. `→ sense` is **the backtra
 | 2 | Lord | `H3068G H9005` | `HNpt HR` | `H9005` |  |  |  |
 | 3 | long | `H5704 H0575` | `HR HTi` |  |  |  |  |
 | 4 | till | `H3808` | `HTn` |  |  |  |  |
-| 5 | quiet | `H8252` | `HVqi2fs` |  | `H8252` | **** | `H8252` |
+| 5 | quiet | `H8252` | `HVqi2fs` |  | `H8252` | **to quiet** | `H8252` |
 | 6 | Put | `H0622` | `HVNv2fs` |  |  |  |  |
 | 7 | scabbard | `H8593 H0413` | `HNcbsc HR` |  |  |  |  |
-| 8 | rest | `H7280B H9022` | `HVNv2fs HSp2fs` | `H9022` | `H7280B` | **** | `H7280B` |
+| 8 | rest | `H7280B H9022` | `HVNv2fs HSp2fs` | `H9022` | `H7280B` | **to rest** | `H7280B` |
 | 9 | still | `H1826A` | `HVqv2fs` |  | `H1826A` | **stationary** | `H1826A` |
 
 ### 1Ki 2:13 — `1Kgs.2.13`

@@ -39,10 +39,12 @@ def main() -> int:
 
     d = ROOT / "iba" / "prototype" / "data" / a.word
     T = {n: json.loads((d / f"{n}.json").read_text(encoding="utf-8"))
-         for n in ("word", "term", "sense", "word_term", "term_related", "verse", "span")}
+         for n in ("word", "term", "sense", "word_term", "term_related", "verse",
+                   "sense_verse", "span", "_parse_check")}
     schema = json.loads((d / "_schema.json").read_text(encoding="utf-8"))
 
     term_by_id = {t["term_id"]: t for t in T["term"]}
+    verse_by_id = {v["verse_id"]: v for v in T["verse"]}
     sense_by_id = {s["sense_id"]: s for s in T["sense"]}
     spans_by_verse: dict[int, list] = {}
     for s in T["span"]:
@@ -92,7 +94,7 @@ def main() -> int:
                 first = sense_by_id[[s["sense_id"] for s in T["sense"]
                                      if s["term_id"] == t["term_id"]][0]]
                 L.append(f"| `{t['strongs']}` | {', '.join(f'`{c}`' for c in t['sense_codes'])} | "
-                         f"{clip(first['head'], 46)} | {clip(t['tree'], 90) or '_(none)_'} |")
+                         f"{clip(first['★ meaning'], 46)} | {clip(t['tree'], 90) or '_(none)_'} |")
             L += [""]
 
     if multi:
@@ -103,7 +105,7 @@ def main() -> int:
                   "| sense code | head — **the span's meaning** | gloss | occurs |",
                   "|---|---|---|---|"]
             for s in [x for x in T["sense"] if x["term_id"] == t["term_id"]]:
-                L.append(f"| `{s['strongs']}` | **{clip(s['head'], 40)}** | {clip(s['gloss'], 26)} "
+                L.append(f"| `{s['strongs']}` | **{clip(s['★ meaning'], 40)}** | {clip(s['gloss'], 26)} "
                          f"| {s['occurrence_count']:,} |")
             L += [""]
 
@@ -126,7 +128,7 @@ def main() -> int:
           "|---|---|---|---|---|---|---|---|"]
     for s in sorted(T["sense"], key=lambda x: x["strongs"]):
         L.append(f"| {s['sense_id']} | `{s['strongs']}` | `{term_by_id[s['term_id']]['strongs']}` | "
-                 f"**{clip(s['head'], 40)}** | {clip(s['gloss'], 24)} | {esc(s['script_form'])} | "
+                 f"**{clip(s['★ meaning'], 40)}** | {clip(s['gloss'], 24)} | {esc(s['script_form'])} | "
                  f"{esc(s['transliteration'])} | {s['occurrence_count']:,} |")
     L += [""]
 
@@ -145,11 +147,55 @@ def main() -> int:
                  f"{clip(r['gloss'], 26)} | {esc(r['script_form'])} | {esc(r['transliteration'])} |")
     L += ["", f"_… {len(T['term_related']) - 25:,} more_", ""]
 
-    L += ["## `verse`", "", f"{len(T['verse']):,} rows. Sample:", "",
+    # ── sense_verse: what STEP's search SAID, in full ───────────────────────
+    sv_by_sense: dict[int, list] = {}
+    for r in T["sense_verse"]:
+        sv_by_sense.setdefault(r["sense_id"], []).append(r)
+    check = {p["sense_id"]: p for p in T["_parse_check"]}
+    dis = [p for p in T["_parse_check"] if not p["★ agrees"]]
+
+    L += ["---", "", "## ★ `sense_verse` — THE VERSES, per sense", "",
+          f"{len(T['sense_verse']):,} rows. **This is what STEP's search returned** — one row per "
+          "(sense, verse). Every list below is directly checkable:", "",
+          f"> `{B}/rest/search/masterSearch/strong=<code>|version=ESV_th`", "",
+          "**The parse check.** `sense_verse` is what the SOURCE said; `span.sense_id` is what our "
+          "parse of the interlinear found. They must agree — where they do not, the parse is losing "
+          "occurrences silently.", "",
+          f"**{len(T['_parse_check']) - len(dis)} of {len(T['_parse_check'])} senses agree.**"
+          + ("" if not dis else f" ⚠ **{len(dis)} DISAGREE — listed below.**"), ""]
+    if dis:
+        L += ["| sense | STEP returned | parse found | missed | e.g. |", "|---|---|---|---|---|"]
+        for p in sorted(dis, key=lambda x: -x["missed"]):
+            L.append(f"| `{p['strongs']}` | {p['verses_step_returned']} | "
+                     f"{p['verses_span_parse_found']} | **{p['missed']}** | "
+                     f"{', '.join(p['missed_examples'])} |")
+        L += [""]
+
+    L += ["| sense | meaning | STEP verses | parse | agree? |", "|---|---|---|---|---|"]
+    for s in sorted(T["sense"], key=lambda x: -len(sv_by_sense.get(x["sense_id"], []))):
+        p = check.get(s["sense_id"], {})
+        L.append(f"| `{s['strongs']}` | **{clip(s['★ meaning'], 30)}** | "
+                 f"{p.get('verses_step_returned', 0)} | {p.get('verses_span_parse_found', 0)} | "
+                 f"{'yes' if p.get('★ agrees') else '**NO**'} |")
+    L += [""]
+
+    L += ["### The verse list for every sense", "",
+          "Check any of these against STEP's `masterSearch` for that code.", ""]
+    for s in sorted(T["sense"], key=lambda x: -len(sv_by_sense.get(x["sense_id"], []))):
+        rows = sv_by_sense.get(s["sense_id"], [])
+        if not rows:
+            continue
+        refs = [verse_by_id[r["verse_id"]]["reference"] for r in rows]
+        L += [f"**`{s['strongs']}`** — {clip(s['★ meaning'], 44)} — **{len(refs)} verses** "
+              f"(term `{term_by_id[s['term_id']]['strongs']}`)", "",
+              "> " + " · ".join(refs), ""]
+
+    L += ["---", "", "## `verse`", "",
+          f"{len(T['verse']):,} rows — every verse any of this word's senses occurs in.", "",
           "| verse_id | osis_id | reference | text |", "|---|---|---|---|"]
-    for v in T["verse"][:12]:
+    for v in T["verse"]:
         L.append(f"| {v['verse_id']} | `{v['osis_id']}` | {esc(v['reference'])} | "
-                 f"{clip(v['text'], 76)} |")
+                 f"{clip(v['text'], 90)} |")
     L += [""]
 
     # ── spans + the backtrack ───────────────────────────────────────────────
@@ -175,7 +221,7 @@ def main() -> int:
             L.append(f"| {s['word_index']} | {esc(s['surface'])} | `{esc(s['strongs'])}` | "
                      f"`{esc(s['morph_code'])}` | {', '.join(f'`{p}`' for p in s['particles'])} | "
                      f"{'`' + se['strongs'] + '`' if se else ''} | "
-                     f"{'**' + clip(se['head'], 34) + '**' if se else ''} | "
+                     f"{'**' + clip(se['★ meaning'], 34) + '**' if se else ''} | "
                      f"{'`' + te['strongs'] + '`' if te else ''} |")
         L += [""]
 

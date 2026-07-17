@@ -200,6 +200,7 @@ def main() -> int:
     # ── verses + spans: ONE call per sense gives both ───────────────────────
     verses: dict[str, dict] = {}
     spans: list[dict] = []
+    sense_verse: list[dict] = []          # ★ what STEP's search SAID — the sense's occurrences
     for code, s in senses.items():
         rows = c._paginate_all(c._search_range, code)
         print(f"[verses]   {code:8} {len(rows):>4} verse(s)  ({s['gloss']!r})")
@@ -226,6 +227,12 @@ def main() -> int:
                         "sense_id": None,                       # FK -> sense; resolved below
                         "particles": [x for x in strongs.split() if PARTICLE_RE.match(x)],
                     })
+            # one row per (sense, verse) STEP's search returned — the sense's occurrence
+            # list, exactly what masterSearch.strong=<code> answers. Kept so the SPAN parse
+            # can be checked against what the SOURCE said, rather than trusted.
+            sense_verse.append({"sense_id": s["sense_id"],       # FK -> sense
+                                "verse_id": verses[osis]["verse_id"],   # FK -> verse
+                                "sense_strongs": code, "osis_id": osis})
 
     # ── ★ THE BACKTRACK: resolve each span to the SENSE it names ────────────
     by_code = {s["strongs"]: s for s in senses.values()}
@@ -239,10 +246,37 @@ def main() -> int:
         else:
             unheld += 1
 
+    verses_by_id = {v['verse_id']: v for v in verses.values()}
+
+    # ── ★ THE PARSE CHECK — does the span parse recover what STEP's search said? ──
+    #
+    # sense_verse is what the SOURCE said: "this sense occurs in these verses".
+    # span.sense_id is what OUR PARSE of the interlinear found.
+    # They must agree. Where they do not, the parse is losing occurrences — silently,
+    # which is how this study has lost data before.
+    searched = defaultdict(set)
+    for sv in sense_verse:
+        searched[sv["sense_id"]].add(sv["verse_id"])
+    parsed = defaultdict(set)
+    for sp in spans:
+        if sp["sense_id"]:
+            parsed[sp["sense_id"]].add(sp["verse_id"])
+    parse_check = []
+    for s in senses.values():
+        want, got = searched.get(s["sense_id"], set()), parsed.get(s["sense_id"], set())
+        parse_check.append({
+            "sense_id": s["sense_id"], "strongs": s["strongs"], "gloss": s["gloss"],
+            "verses_step_returned": len(want), "verses_span_parse_found": len(got),
+            "missed": len(want - got), "extra": len(got - want),
+            "★ agrees": want == got,
+            "missed_examples": [verses_by_id[v]["osis_id"] for v in sorted(want - got)][:5],
+        })
+
     # ── write the "tables" ──────────────────────────────────────────────────
     tables = {"word": [word_row], "term": list(terms.values()),
               "sense": list(senses.values()), "word_term": word_term,
-              "term_related": related, "verse": list(verses.values()), "span": spans}
+              "term_related": related, "verse": list(verses.values()),
+              "sense_verse": sense_verse, "span": spans, "_parse_check": parse_check}
     for name, rows in tables.items():
         (out / f"{name}.json").write_text(json.dumps(rows, indent=2, ensure_ascii=False),
                                           encoding="utf-8")
@@ -258,6 +292,9 @@ def main() -> int:
             {"from": "sense.term_id", "to": "term.term_id"},
             {"from": "term_related.term_id", "to": "term.term_id"},
             {"from": "span.verse_id", "to": "verse.verse_id"},
+            {"from": "sense_verse.sense_id", "to": "sense.sense_id",
+             "note": "★ WHAT STEP'S SEARCH SAID — the sense's occurrence list"},
+            {"from": "sense_verse.verse_id", "to": "verse.verse_id"},
             {"from": "span.sense_id", "to": "sense.sense_id",
              "note": "★ THE BACKTRACK — a span names a SENSE, and reaches the term through it"},
         ],
@@ -274,6 +311,14 @@ def main() -> int:
           f"  {[t['strongs'] for t in multi]}")
     print(f"  bases that SPLIT into >1 term (homonyms)       : {len(splits)}"
           f"  {splits}")
+    disagree = [p for p in parse_check if not p["★ agrees"]]
+    print(f"  ★ span parse vs STEP's search    : "
+          f"{len(parse_check)-len(disagree)}/{len(parse_check)} senses agree"
+          + (f"   *** {len(disagree)} DISAGREE ***" if disagree else ""))
+    for p_ in sorted(disagree, key=lambda x: -x["missed"])[:6]:
+        print(f"      {p_['strongs']:8} STEP {p_['verses_step_returned']:>4} verses · "
+              f"parse found {p_['verses_span_parse_found']:>4} · MISSED {p_['missed']:>4}"
+              f"   e.g. {', '.join(p_['missed_examples'][:3])}")
     print(f"  spans linked to a sense we hold  : {linked:,} / {len(spans):,}"
           f"  ({unheld:,} name codes this word does not hold — other lemmas in the same verse)")
     print(f"{'='*66}")

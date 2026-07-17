@@ -30,6 +30,8 @@ word --< word_term >-- term --< sense --< span >-- verse
 | `sense.term_id` | `term.term_id` |  |
 | `term_related.term_id` | `term.term_id` |  |
 | `span.verse_id` | `verse.verse_id` |  |
+| `sense_verse.sense_id` | `sense.sense_id` | ★ WHAT STEP'S SEARCH SAID — the sense's occurrence list |
+| `sense_verse.verse_id` | `verse.verse_id` |  |
 | `span.sense_id` | `sense.sense_id` | ★ THE BACKTRACK — a span names a SENSE, and reaches the term through it |
 
 ---
@@ -66,11 +68,11 @@ In this pull: **5 terms** from 5 bases · **0 bases split into homonyms** (none)
 
 | sense_id | strongs | → term | head | gloss | script | translit | occurs |
 |---|---|---|---|---|---|---|---|
-| 1 | `G0505` | `G0505` | **** | genuine | ἀνυπόκριτος | anupokritos | 6 |
-| 5 | `G4942` | `G4942` | **** | to join hypocrisy | συνυποκρίνομαι | sunupokrinomai | 1 |
-| 2 | `G5272` | `G5272` | **** | hypocrisy | ὑπόκρισις | hupokrisis | 7 |
-| 4 | `H2519` | `H2519` | **** | smoothness | חֲלַקְלַקּוֹת | cha.laq.laq.qot | 4 |
-| 3 | `H2612` | `H2612` | **** | profaneness | חֹ֫נֶף | cho.neph | 1 |
+| 1 | `G0505` | `G0505` | **genuine** | genuine | ἀνυπόκριτος | anupokritos | 6 |
+| 5 | `G4942` | `G4942` | **to join hypocrisy** | to join hypocrisy | συνυποκρίνομαι | sunupokrinomai | 1 |
+| 2 | `G5272` | `G5272` | **hypocrisy** | hypocrisy | ὑπόκρισις | hupokrisis | 7 |
+| 4 | `H2519` | `H2519` | **smoothness** | smoothness | חֲלַקְלַקּוֹת | cha.laq.laq.qot | 4 |
+| 3 | `H2612` | `H2612` | **profaneness** | profaneness | חֹ֫נֶף | cho.neph | 1 |
 
 ## `word_term` — the edge
 
@@ -118,24 +120,75 @@ In this pull: **5 terms** from 5 bases · **0 bases split into homonyms** (none)
 
 _… 3 more_
 
+---
+
+## ★ `sense_verse` — THE VERSES, per sense
+
+18 rows. **This is what STEP's search returned** — one row per (sense, verse). Every list below is directly checkable:
+
+> `http://localhost:8989/rest/search/masterSearch/strong=<code>|version=ESV_th`
+
+**The parse check.** `sense_verse` is what the SOURCE said; `span.sense_id` is what our parse of the interlinear found. They must agree — where they do not, the parse is losing occurrences silently.
+
+**5 of 5 senses agree.**
+
+| sense | meaning | STEP verses | parse | agree? |
+|---|---|---|---|---|
+| `G0505` | **genuine** | 6 | 6 | yes |
+| `G5272` | **hypocrisy** | 6 | 6 | yes |
+| `H2519` | **smoothness** | 4 | 4 | yes |
+| `H2612` | **profaneness** | 1 | 1 | yes |
+| `G4942` | **to join hypocrisy** | 1 | 1 | yes |
+
+### The verse list for every sense
+
+Check any of these against STEP's `masterSearch` for that code.
+
+**`G0505`** — genuine — **6 verses** (term `G0505`)
+
+> Rom 12:9 · 2Cor 6:6 · 1Ti 1:5 · 2Ti 1:5 · Jam 3:17 · 1Pe 1:22
+
+**`G5272`** — hypocrisy — **6 verses** (term `G5272`)
+
+> Mat 23:28 · Mar 12:15 · Luk 12:1 · Gal 2:13 · 1Ti 4:2 · 1Pe 2:1
+
+**`H2519`** — smoothness — **4 verses** (term `H2519`)
+
+> Psa 35:6 · Jer 23:12 · Dan 11:21 · Dan 11:34
+
+**`H2612`** — profaneness — **1 verses** (term `H2612`)
+
+> Isa 32:6
+
+**`G4942`** — to join hypocrisy — **1 verses** (term `G4942`)
+
+> Gal 2:13
+
+---
+
 ## `verse`
 
-17 rows. Sample:
+17 rows — every verse any of this word's senses occurs in.
 
 | verse_id | osis_id | reference | text |
 |---|---|---|---|
-| 1 | `Rom.12.9` | Rom 12:9 | Rom 12:9 Let love be genuine . Abhor what is evil ; hold fast to what is go… |
-| 2 | `2Cor.6.6` | 2Cor 6:6 | 2Cor 6:6 by purity , knowledge , patience , kindness , the Holy Spirit , ge… |
-| 3 | `1Tim.1.5` | 1Ti 1:5 | 1Ti 1:5 The aim of our charge is love that issues from a pure heart and a g… |
-| 4 | `2Tim.1.5` | 2Ti 1:5 | 2Ti 1:5 I am reminded of your sincere faith , a faith that dwelt first in y… |
-| 5 | `Jas.3.17` | Jam 3:17 | Jam 3:17 But the wisdom from above is first pure , then peaceable , gentle … |
-| 6 | `1Pet.1.22` | 1Pe 1:22 | 1Pe 1:22 Having purified your souls by your obedience to the truth for a si… |
-| 7 | `Matt.23.28` | Mat 23:28 | Mat 23:28 So you also outwardly appear righteous to others , but within you… |
-| 8 | `Mark.12.15` | Mar 12:15 | Mar 12:15 But , knowing their hypocrisy , he said to them , “ Why put me to… |
-| 9 | `Luke.12.1` | Luk 12:1 | Luk 12:1 In the meantime , when so many thousands of the people had gathere… |
-| 10 | `Gal.2.13` | Gal 2:13 | Gal 2:13 And the rest of the Jews acted hypocritically along with him , so … |
+| 1 | `Rom.12.9` | Rom 12:9 | Rom 12:9 Let love be genuine . Abhor what is evil ; hold fast to what is good . |
+| 2 | `2Cor.6.6` | 2Cor 6:6 | 2Cor 6:6 by purity , knowledge , patience , kindness , the Holy Spirit , genuine love ; |
+| 3 | `1Tim.1.5` | 1Ti 1:5 | 1Ti 1:5 The aim of our charge is love that issues from a pure heart and a good conscience… |
+| 4 | `2Tim.1.5` | 2Ti 1:5 | 2Ti 1:5 I am reminded of your sincere faith , a faith that dwelt first in your grandmothe… |
+| 5 | `Jas.3.17` | Jam 3:17 | Jam 3:17 But the wisdom from above is first pure , then peaceable , gentle , open to reas… |
+| 6 | `1Pet.1.22` | 1Pe 1:22 | 1Pe 1:22 Having purified your souls by your obedience to the truth for a sincere brotherl… |
+| 7 | `Matt.23.28` | Mat 23:28 | Mat 23:28 So you also outwardly appear righteous to others , but within you are full of h… |
+| 8 | `Mark.12.15` | Mar 12:15 | Mar 12:15 But , knowing their hypocrisy , he said to them , “ Why put me to the test ? Br… |
+| 9 | `Luke.12.1` | Luk 12:1 | Luk 12:1 In the meantime , when so many thousands of the people had gathered together tha… |
+| 10 | `Gal.2.13` | Gal 2:13 | Gal 2:13 And the rest of the Jews acted hypocritically along with him , so that even Barn… |
 | 11 | `1Tim.4.2` | 1Ti 4:2 | 1Ti 4:2 through the insincerity of liars whose consciences are seared , |
-| 12 | `1Pet.2.1` | 1Pe 2:1 | 1Pe 2:1 So put away all malice and all deceit and hypocrisy and envy and al… |
+| 12 | `1Pet.2.1` | 1Pe 2:1 | 1Pe 2:1 So put away all malice and all deceit and hypocrisy and envy and all slander . |
+| 13 | `Isa.32.6` | Isa 32:6 | Isa 32:6 For the fool speaks folly , and his heart is busy with iniquity , to practice un… |
+| 14 | `Ps.35.6` | Psa 35:6 | Psa 35:6 Let their way be dark and slippery , with the angel of the Lord pursuing them ! |
+| 15 | `Jer.23.12` | Jer 23:12 | Jer 23:12 Therefore their way shall be to them like slippery paths in the darkness , into… |
+| 16 | `Dan.11.21` | Dan 11:21 | Dan 11:21 In his place shall arise a contemptible person to whom royal majesty has not be… |
+| 17 | `Dan.11.34` | Dan 11:34 | Dan 11:34 When they stumble , they shall receive a little help . And many shall join them… |
 
 ---
 
@@ -156,7 +209,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 0 | And | `G2532` | `CONJ` |  |  |  |  |
 | 1 | rest | `G3062` | `A-NPM` |  |  |  |  |
 | 2 | Jews | `G2453` | `N-NPM-PG` |  |  |  |  |
-| 3 | acted hypocritically | `G4942` | `V-API-3P` |  | `G4942` | **** | `G4942` |
+| 3 | acted hypocritically | `G4942` | `V-API-3P` |  | `G4942` | **to join hypocrisy** | `G4942` |
 | 4 | along | `G2532` | `CONJ` |  |  |  |  |
 | 5 | him | `G0846` | `P-DSM` |  |  |  |  |
 | 6 | that | `G5620` | `CONJ` |  |  |  |  |
@@ -164,7 +217,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 8 | Barnabas | `G0921G` | `N-NSM-P` |  |  |  |  |
 | 9 | led astray | `G4879` | `V-API-3S` |  |  |  |  |
 | 10 | their | `G0846` | `P-GPM` |  |  |  |  |
-| 11 | hypocrisy | `G5272` | `N-DSF` |  | `G5272` | **** | `G5272` |
+| 11 | hypocrisy | `G5272` | `N-DSF` |  | `G5272` | **hypocrisy** | `G5272` |
 
 ### Rom 12:9 — `Rom.12.9`
 
@@ -175,7 +228,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | # | surface | strongs | morph | particles | → sense | **the span's meaning** | → term |
 |---|---|---|---|---|---|---|---|
 | 0 | love | `G0026` | `N-NSF` |  |  |  |  |
-| 1 | genuine | `G0505` | `A-NSF` |  | `G0505` | **** | `G0505` |
+| 1 | genuine | `G0505` | `A-NSF` |  | `G0505` | **genuine** | `G0505` |
 | 2 | Abhor | `G0655` | `V-PAP-NPM` |  |  |  |  |
 | 3 | evil | `G4190` | `A-ASN` |  |  |  |  |
 | 4 | hold fast | `G2853` | `V-PPP-NPM` |  |  |  |  |
@@ -196,7 +249,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 4 | the | `G1722` | `PREP` |  |  |  |  |
 | 5 | Holy | `G0040G` | `A-DSN` |  |  |  |  |
 | 6 | Spirit | `G4151G` | `N-DSN` |  |  |  |  |
-| 7 | genuine | `G1722 G0505` | `PREP A-DSF` |  | `G0505` | **** | `G0505` |
+| 7 | genuine | `G1722 G0505` | `PREP A-DSF` |  | `G0505` | **genuine** | `G0505` |
 | 8 | love | `G0026` | `N-DSF` |  |  |  |  |
 
 ### 1Ti 1:5 — `1Tim.1.5`
@@ -219,7 +272,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 9 | good | `G0018` | `A-GSF` |  |  |  |  |
 | 10 | conscience | `G4893` | `N-GSF` |  |  |  |  |
 | 11 | and | `G2532` | `CONJ` |  |  |  |  |
-| 12 | sincere | `G0505` | `A-GSF` |  | `G0505` | **** | `G0505` |
+| 12 | sincere | `G0505` | `A-GSF` |  | `G0505` | **genuine** | `G0505` |
 | 13 | faith | `G4102G` | `N-GSF` |  |  |  |  |
 
 ### 2Ti 1:5 — `2Tim.1.5`
@@ -233,7 +286,7 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 0 | am | `G2983` | `V-2AAP-NSM` |  |  |  |  |
 | 1 | reminded | `G5280` | `N-ASF` |  |  |  |  |
 | 2 | your | `G1722` | `PREP` |  |  |  |  |
-| 3 | sincere | `G0505` | `A-GSF` |  | `G0505` | **** | `G0505` |
+| 3 | sincere | `G0505` | `A-GSF` |  | `G0505` | **genuine** | `G0505` |
 | 4 | faith | `G4102G` | `N-GSF` |  |  |  |  |
 | 5 | that | `G3748` | `R-NSF` |  |  |  |  |
 | 6 | dwelt | `G1774` | `V-AAI-3S` |  |  |  |  |
@@ -276,4 +329,4 @@ Below: the 6 verses carrying the most held senses. `→ sense` is **the backtrac
 | 13 | good | `G0018` | `A-GPM` |  |  |  |  |
 | 14 | fruits | `G2590` | `N-GPM` |  |  |  |  |
 | 15 | impartial | `G0087` | `A-NSF` |  |  |  |  |
-| 16 | sincere | `G0505` | `A-NSF` |  | `G0505` | **** | `G0505` |
+| 16 | sincere | `G0505` | `A-NSF` |  | `G0505` | **genuine** | `G0505` |
