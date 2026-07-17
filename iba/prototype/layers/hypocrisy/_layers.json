@@ -1,0 +1,137 @@
+{
+  "word": "hypocrisy",
+  "principle": "one table per SEARCH LAYER. The table is what the call returned — nothing interpreted, nothing dropped, nothing renamed.",
+  "layers": [
+    {
+      "layer": 1,
+      "call": "masterSearch  version=<v>|meanings=<word>",
+      "route": "rest/search/masterSearch/version=ESV_th|meanings=hypocrisy",
+      "answers": "which strongs does this English word map to",
+      "tables": {
+        "layer1_search": "the search itself",
+        "layer1_strong": "one row per returned definition — word -> strong",
+        "layer1_verse": "the verses this same call returned"
+      }
+    },
+    {
+      "layer": 2,
+      "call": "module.getInfo/<v>//<strong>//",
+      "answers": "the detail of one strong",
+      "tables": {
+        "layer2_strong": "one row per returned vocabInfo",
+        "layer2_related": "relatedNos — a repeating group, so its own table",
+        "layer2_morph": "morphInfos — likewise"
+      }
+    }
+  ],
+  "foreign_keys": [
+    {
+      "from": "layer1_strong.search_id",
+      "to": "layer1_search.search_id"
+    },
+    {
+      "from": "layer1_verse.search_id",
+      "to": "layer1_search.search_id"
+    },
+    {
+      "from": "layer2_strong.l1_id",
+      "to": "layer1_strong.l1_id"
+    },
+    {
+      "from": "layer2_related.l2_id",
+      "to": "layer2_strong.l2_id"
+    }
+  ],
+  "counts": {
+    "layer1_search": 1,
+    "layer1_strong": 5,
+    "layer1_verse": 17,
+    "layer2_strong": 5,
+    "layer2_related": 28,
+    "layer2_morph": 0
+  },
+  "fields_returned": {
+    "layer1_search": [
+      "definitions_returned",
+      "extraVersions",
+      "interlinearMode",
+      "masterVersion",
+      "order",
+      "pageNumber",
+      "pageSize",
+      "query",
+      "results_returned",
+      "route",
+      "searchRestriction",
+      "searchType",
+      "search_id",
+      "signature",
+      "strongHighlights",
+      "time",
+      "timeTookToRetrieveScripture",
+      "timeTookTotal",
+      "total",
+      "word"
+    ],
+    "layer1_strong": [
+      "_es_Gloss",
+      "_zh_Gloss",
+      "_zh_tw_Gloss",
+      "gloss",
+      "l1_id",
+      "matchingForm",
+      "popularity",
+      "popularityList",
+      "search_id",
+      "stepTransliteration",
+      "strongNumber",
+      "type",
+      "word"
+    ],
+    "layer1_verse": [
+      "key",
+      "l1v_id",
+      "osisId",
+      "preview",
+      "search_id"
+    ],
+    "layer2_strong": [
+      "_es_Definition",
+      "_es_Gloss",
+      "_step_Type",
+      "_vi_Definition",
+      "_zh_Definition",
+      "_zh_Gloss",
+      "_zh_tw_Definition",
+      "_zh_tw_Gloss",
+      "accentedUnicode",
+      "count",
+      "freqList",
+      "l1_id",
+      "l2_id",
+      "lsjDefs",
+      "mediumDef",
+      "rawRelatedNumbers",
+      "requested_strong",
+      "shortDefMounce",
+      "stepGloss",
+      "stepTransliteration",
+      "strongNumber"
+    ],
+    "layer2_related": [
+      "_es_Gloss",
+      "_searchResultRange",
+      "_zh_Gloss",
+      "_zh_tw_Gloss",
+      "briefDef",
+      "gloss",
+      "l2_id",
+      "l2r_id",
+      "matchingForm",
+      "of_strong",
+      "stepTransliteration",
+      "strongNumber"
+    ],
+    "layer2_morph": []
+  }
+}
