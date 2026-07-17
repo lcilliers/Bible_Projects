@@ -1,15 +1,12 @@
-"""run.py — the step dispatcher and the run-state machine.
+"""run.py — the dispatcher and run-state machine. Config-governed.
 
-PowerShell is the orchestrator: it loads the sequence from run.json and calls THIS
-module once per step (`python -m iba.app.run <work_package> --step <step_id> ...`).
-Python does the work of one step and returns a status line the PS can read.
+The step's handler, its scope, the sequence order — all read from the config store
+(cfg_step). The handler returns a CONDITION; this dispatcher looks it up in cfg_on_fail
+to get the PATH. The code decides nothing: config maps condition -> path.
 
-Resumability (O7): the run's state lives in the DB (`run.state`, `run.resume_point`),
-not in memory. A step that returns pause-continue writes an escalation, marks the run
-paused at that step, and STOPS. Resuming is just running the package again: steps whose
-rows already exist are no-ops (global dedup), and the dispatcher skips to resume_point.
+    python -m iba.app.run <work_package> --step <id> --run-id <id> --param Name=Value
 
-Exit codes let PS branch: 0 ok · 2 paused · 3 stop.
+Exit codes let PowerShell branch: 0 ok/continue · 2 paused · 3 stop.
 """
 
 from __future__ import annotations
@@ -18,17 +15,15 @@ import argparse
 import datetime
 import importlib
 import json
-import pathlib
 import sys
 
-from .lib.db import Db, build_db
-from .handlers.base import Ctx, Result
+from .lib.cfg import Cfg
+from .lib.db import Db
+from .lib.stepapi import Step
+from .handlers.base import Ctx, Outcome
 
-APP = pathlib.Path(__file__).resolve().parent
-RUN_CFG = json.loads((APP / "config" / "run.json").read_text(encoding="utf-8"))
-STEP_VERSION = json.loads((APP / "config" / "step.json").read_text(encoding="utf-8"))["connection"]["version"]
-
-EXIT = {"ok": 0, "pause-continue": 2, "report-stop": 3}
+# path -> what the run does + the process exit code
+PATH_EXIT = {"ok": 0, "report-continue": 0, "self-heal": 0, "pause-continue": 2, "report-stop": 3}
 
 
 def _now() -> str:
@@ -40,49 +35,52 @@ def _resolve(handler: str):
     return getattr(importlib.import_module(mod), fn)
 
 
-def _ensure_run(db: Db, package: str, params: dict, run_id: str) -> dict:
-    row = db.get("run", run_id=run_id)
-    if row:
-        return dict(row)
+def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
+    if db.get("run", run_id=run_id):
+        return
     db.write("run", {
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
-        "runs_over": params.get("Word", ""), "config_version": RUN_CFG["config_version"],
-        "state": "running", "resume_point": "", "started_at": _now(),
-    })
-    return dict(db.get("run", run_id=run_id))
+        "runs_over": params.get("Word", ""), "config_version": cfg.config_version(),
+        "state": "running", "resume_point": "", "started_at": _now()})
 
 
-def run_step(package: str, step_id: str, params: dict, run_id: str) -> Result:
-    seq = {s["step"]: s for s in RUN_CFG["work_packages"][package]["sequence"]}
-    entry = seq[step_id]
-    db = Db()
-    try:
-        run = _ensure_run(db, package, params, run_id)
-        # resume guard: if the run is paused past this step, skip
-        wrow = db.get("word_registry", word=params["Word"])
-        ctx = Ctx(db=db, run_id=run_id, word=params["Word"],
-                  word_id=wrow["id"] if wrow else None, params=params,
-                  step_version=STEP_VERSION, step=step_id)
+def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
+    cfg = Cfg()
+    db = Db(cfg)
+    step_cfg = cfg.step(package, step_id)                 # <- handler, scope from config
+    handler = _resolve(step_cfg["handler"])
+    _ensure_run(db, cfg, package, params, run_id)
+    wrow = db.get("word_registry", word=params["Word"])
 
-        result: Result = _resolve(entry["handler"])(ctx)
+    ctx = Ctx(db=db, cfg=cfg, step=Step(cfg), run_id=run_id, word=params["Word"],
+              word_id=wrow["id"] if wrow else None, params=params, step_id=step_id)
 
-        if result.path == "pause-continue":
-            esc = result.escalation
-            db.write("escalation", {
-                "run_id": run_id, "at_step": esc["at_step"], "type": esc["type"],
-                "question": esc["question"], "preset": json.dumps(esc["preset"]),
-                "tried": esc["tried"], "state": "raised", "raised_at": _now()})
-            db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
-        elif result.path == "report-stop":
-            db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(),
-                      outcome=result.message)
-        else:
-            db.update("run", {"run_id": run_id}, resume_point=step_id)
-        db.close()
-        return result
-    except Exception:
-        db.close()
-        raise
+    outcome: Outcome = handler(ctx)
+
+    # resolve the CONDITION to a PATH via config (cfg_on_fail); 'ok' has no rule
+    if outcome.condition == "ok":
+        path, message = "ok", outcome.message
+    else:
+        rule = cfg.on_fail(step_id, outcome.condition)
+        path = rule["path"] if rule else "report-stop"
+        message = (rule["message"] + " — " if rule and rule["message"] else "") + outcome.message
+
+    # act on the path
+    if path == "pause-continue" and outcome.escalation:
+        e = outcome.escalation
+        db.write("escalation", {
+            "run_id": run_id, "at_step": step_id, "type": e["type"], "question": e["question"],
+            "preset": json.dumps(e["preset"]), "tried": e["tried"], "state": "raised",
+            "raised_at": _now()})
+        db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
+    elif path == "report-stop":
+        db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
+    else:
+        db.update("run", {"run_id": run_id}, resume_point=step_id)
+
+    db.close()
+    return {"step": step_id, "condition": outcome.condition, "path": path,
+            "message": message, "counts": outcome.counts}
 
 
 def main() -> int:
@@ -90,15 +88,12 @@ def main() -> int:
     ap.add_argument("package")
     ap.add_argument("--step", required=True)
     ap.add_argument("--run-id", required=True)
-    ap.add_argument("--param", action="append", default=[], help="Name=Value")
-    ap.add_argument("--build-db", action="store_true")
+    ap.add_argument("--param", action="append", default=[])
     a = ap.parse_args()
-    if a.build_db:
-        build_db()
     params = dict(p.split("=", 1) for p in a.param)
     r = run_step(a.package, a.step, params, a.run_id)
-    print(json.dumps({"step": a.step, "path": r.path, "message": r.message, "counts": r.counts}))
-    return EXIT.get(r.path, 0)
+    print(json.dumps(r))
+    return PATH_EXIT.get(r["path"], 0)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,36 @@
+{
+  "purpose": "The PROCESS RULES that used to live in the Python code. Now they are data. The code reads them from the config DB and enforces them — it decides nothing on its own.",
+  "boundary": {
+    "config holds": "every CHOICE — what to filter, what may write where, what happens on failure, the status flow.",
+    "code holds": "only FACTS that are not choices — the canonical book order, how STEP's HTML is shaped. A fact is not a rule."
+  },
+
+  "settings": {
+    "step.cap":                 {"value": 60,        "use": "STEP's hard result cap; > this triggers the forward-walk"},
+    "step.walk_start":          {"value": "Gen.1.1", "use": "forward-walk lower bound"},
+    "step.walk_end":            {"value": "Rev.22.21","use": "forward-walk upper bound"},
+    "step.walk_max_iter":       {"value": 400,       "use": "forward-walk safety bound"},
+    "discovery.particle_pattern":{"value": "^[HG]9\\d{3}$", "use": "grammar-particle codes; excluded from discovery, flagged on a span"},
+    "discovery.follow_related": {"value": false,     "use": "relatedNos is root-family noise (H2519 -> 'to divide', 'Mount Halak'). Not followed."},
+    "meaning.head_marker":      {"value": ": ",      "use": "a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma."},
+    "language.greek_prefix":    {"value": "G",       "use": "a strong starting with this is Greek; else Hebrew"}
+  },
+
+  "on_fail": [
+    {"step": "registry.exists", "condition": "word-exists",    "path": "report-stop",     "resolver": null, "message": "the word already exists; use a refresh run, not new-word"},
+    {"step": "raw.discover",    "condition": "zero-strongs",   "path": "pause-continue",  "resolver": null, "message": "the word maps to no strongs — a researcher question"},
+    {"step": "raw.detail",      "condition": "no-vocab",       "path": "report-continue", "resolver": null, "message": "a strong returned no vocab — recorded STEP gap"},
+    {"step": "raw.verses",      "condition": "shortfall",      "path": "report-continue", "resolver": null, "message": "a strong returned fewer rows than STEP's total"},
+    {"step": "raw.validate",    "condition": "parse-mismatch", "path": "report-stop",     "resolver": null, "message": "span does not recover strong_verse"}
+  ],
+
+  "status_flow": {
+    "word": [
+      {"to": "proposed",     "by": "registry (on new word, before approval)"},
+      {"to": "approved",     "by": "registry.create"},
+      {"to": "raw-complete", "by": "raw.write"},
+      {"to": "signed-off",   "by": "registry.signoff (not in this slice)"},
+      {"to": "rejected",     "by": "escalation (researcher declines)"}
+    ]
+  }
+}

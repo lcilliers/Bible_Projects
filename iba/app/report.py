@@ -10,7 +10,8 @@ from __future__ import annotations
 import argparse
 import pathlib
 
-from .lib.db import Db, DB_PATH, SCHEMA
+from .lib.cfg import DB_PATH
+from .lib.db import Db
 
 APP = pathlib.Path(__file__).resolve().parent
 B = "http://localhost:8989"

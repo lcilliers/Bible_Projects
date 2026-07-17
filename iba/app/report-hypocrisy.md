@@ -5,7 +5,7 @@
 > - detail — `http://localhost:8989/rest/module/getInfo/ESV_th//G5272//`
 > - verses — `http://localhost:8989/rest/search/masterSearch/strong=G5272|version=ESV_th`
 
-**word_registry** — id 1 · status `raw-complete` · source gap scan 2026-07-17
+**word_registry** — id 1 · status `raw-complete` · source gap scan
 
 ## The layer, in numbers
 
