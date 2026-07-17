@@ -1,0 +1,46 @@
+{
+  "model": "word --< word_term >-- term --< sense --< span >-- verse",
+  "grain": {
+    "word": "one per English word",
+    "term": "one per LEMMA (base Strong's)",
+    "sense": "one per SUB-GLOSS — the span's meaning",
+    "span": "one per word of a verse — names its SENSE",
+    "verse": "one per verse"
+  },
+  "foreign_keys": [
+    {
+      "from": "word_term.word_id",
+      "to": "word.word_id"
+    },
+    {
+      "from": "word_term.term_id",
+      "to": "term.term_id"
+    },
+    {
+      "from": "sense.term_id",
+      "to": "term.term_id"
+    },
+    {
+      "from": "term_related.term_id",
+      "to": "term.term_id"
+    },
+    {
+      "from": "span.verse_id",
+      "to": "verse.verse_id"
+    },
+    {
+      "from": "span.sense_id",
+      "to": "sense.sense_id",
+      "note": "★ THE BACKTRACK — a span names a SENSE, and reaches the term through it"
+    }
+  ],
+  "counts": {
+    "word": 1,
+    "term": 31,
+    "sense": 35,
+    "word_term": 31,
+    "term_related": 506,
+    "verse": 883,
+    "span": 11756
+  }
+}
