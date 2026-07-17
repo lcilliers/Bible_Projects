@@ -6,7 +6,11 @@ that call returned. Nothing is interpreted, nothing is dropped, nothing is renam
     layer 1   word   -> strong      masterSearch  version=<v>|meanings=<word>
     layer 2   strong -> detail      module.getInfo/<v>//<strong>//
               strong -> verses      masterSearch  strong=<strong>|version=<v>
-    layer 3   verse  -> spans       PARSED from layer 2's verse previews — NOT a call
+    layer 3   strong -> occurrence  the search's assertion: this strong IS in this verse
+    layer 4   verse  -> spans       the verse PARSED into its words — NOT a call
+
+    A layer-3 occurrence resolves to ONE OR MORE layer-4 spans: a strong can occur
+    twice in a verse. That is why STEP's `count` (tokens) exceeds its verse count.
 
 Repeating groups inside a response become their own table with an FK, because a
 repeating group is not a column. Nothing else is changed.
@@ -100,7 +104,8 @@ def main() -> int:
     layer2_morph = []            # morphInfos likewise
     layer2_search = []           # the verse search per strong — its own answer
     layer2_verse = []            # the verses that search returned
-    layer3_span = []             # PARSED from the previews — not a call
+    layer3_occurrence = []       # the SEARCH's assertion: this strong is in this verse
+    layer4_span = []             # the verse PARSED into its words — not a call
 
     print()
     for i, d in enumerate(layer1_strong, 1):
@@ -148,18 +153,33 @@ def main() -> int:
             layer2_verse.append({"l2v_id": vid, "l2s_id": sid,   # FK -> layer2_search
                                  "of_strong": code, **row})
 
-            # ── 3: verse -> SPANS.  A PARSE of the preview, not a call. ─────
+            # ── LAYER 4: the verse PARSED into its words. Not a call. ───────
+            first_span = len(layer4_span)
             for wi, (morph, strongs, surface) in enumerate(SPAN_RE.findall(row.get("preview", ""))):
-                layer3_span.append({
-                    "l3_id": len(layer3_span) + 1,
+                layer4_span.append({
+                    "l4_id": len(layer4_span) + 1,
                     "l2v_id": vid,                       # FK -> layer2_verse
                     "osisId": row.get("osisId"),
                     "word_index": wi,
                     "surface": surface.strip(),
                     "strong": strongs,                   # verbatim — may name several codes
                     "morph": morph,                      # verbatim — aligned with strong
-                    "★ names_the_searched_strong": code in strongs.split(),
                 })
+
+            # ── LAYER 3: the OCCURRENCE. The search said this strong is here.
+            # It resolves to the layer-4 spans that actually name it — one, or MORE.
+            hits = [sp for sp in layer4_span[first_span:] if code in sp["strong"].split()]
+            layer3_occurrence.append({
+                "l3_id": len(layer3_occurrence) + 1,
+                "l2s_id": sid,                           # FK -> layer2_search
+                "l2v_id": vid,                           # FK -> layer2_verse
+                "of_strong": code,
+                "osisId": row.get("osisId"),
+                "★ span_count": len(hits),               # 0 = the parse cannot find what the search asserted
+                "★ l4_ids": [sp["l4_id"] for sp in hits],   # FK -> layer4_span, one or MORE
+                "morphs": [sp["morph"] for sp in hits],
+                "surfaces": [sp["surface"] for sp in hits],
+            })
 
     tables = {
         "layer1_search": layer1_search,
@@ -170,7 +190,8 @@ def main() -> int:
         "layer2_morph": layer2_morph,
         "layer2_search": layer2_search,
         "layer2_verse": layer2_verse,
-        "layer3_span": layer3_span,
+        "layer3_occurrence": layer3_occurrence,
+        "layer4_span": layer4_span,
     }
     for name, rows in tables.items():
         (out / f"{name}.json").write_text(json.dumps(rows, indent=2, ensure_ascii=False),
@@ -193,12 +214,19 @@ def main() -> int:
                         "layer2_morph": "morphInfos — likewise",
                         "layer2_search": "the verse search itself, per strong",
                         "layer2_verse": "the verses that search returned, with previews"}},
-            {"layer": 3, "call": "NONE — a PARSE of layer 2's previews",
-             "answers": "the spans of each verse",
-             "tables": {"layer3_span": "one row per word of a verse: surface, strong, morph, verbatim"},
-             "note": "This layer is the only one that is OURS. Layers 1-2 are what STEP said; "
-                     "layer 3 is what we read out of the HTML STEP sent. It is the first place "
-                     "the study can be wrong on its own account."},
+            {"layer": 3, "call": "NONE — derived from layer 2's search result",
+             "answers": "the OCCURRENCE: the search asserted this strong is in this verse",
+             "tables": {"layer3_occurrence": "one row per (strong, verse) the search returned; "
+                                             "resolves to ONE OR MORE layer-4 spans"},
+             "note": "layer2_verse.preview holds the FULL verse. Layer 3 is not the verse and not "
+                     "the words — it is the claim 'this strong is here', which is what the search "
+                     "actually answered."},
+            {"layer": 4, "call": "NONE — a PARSE of layer 2's previews",
+             "answers": "the verse decomposed into its words",
+             "tables": {"layer4_span": "one row per word of a verse: surface, strong, morph, verbatim"},
+             "note": "This layer is the only one that is OURS. Layers 1-3 come from what STEP said; "
+                     "layer 4 is what we read out of the HTML STEP sent. It is the first place the "
+                     "study can be wrong on its own account."},
         ],
         "foreign_keys": [
             {"from": "layer1_strong.search_id", "to": "layer1_search.search_id"},
@@ -207,15 +235,27 @@ def main() -> int:
             {"from": "layer2_related.l2_id", "to": "layer2_strong.l2_id"},
             {"from": "layer2_search.l1_id", "to": "layer1_strong.l1_id"},
             {"from": "layer2_verse.l2s_id", "to": "layer2_search.l2s_id"},
-            {"from": "layer3_span.l2v_id", "to": "layer2_verse.l2v_id"},
+            {"from": "layer3_occurrence.l2v_id", "to": "layer2_verse.l2v_id"},
+            {"from": "layer3_occurrence.l4_ids", "to": "layer4_span.l4_id",
+             "note": "★ ONE OR MORE — a strong can occur twice in a verse"},
+            {"from": "layer4_span.l2v_id", "to": "layer2_verse.l2v_id"},
         ],
         "counts": {k: len(v) for k, v in tables.items()},
         "fields_returned": {k: sorted({f for row in v for f in row}) for k, v in tables.items()},
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
+    multi = [o for o in layer3_occurrence if o["★ span_count"] > 1]
+    missed = [o for o in layer3_occurrence if o["★ span_count"] == 0]
     print(f"\n{'='*66}")
     for k, v in tables.items():
         print(f"  {k:18} {len(v):>4} row(s)")
+    print()
+    print(f"  layer 3 -> layer 4 fan-out:")
+    print(f"    occurrences resolving to >1 span : {len(multi)}"
+          + ("".join(f"\n      {o['of_strong']} {o['osisId']} -> {o['★ span_count']} spans "
+                     f"{o['surfaces']}" for o in multi) if multi else ""))
+    print(f"    occurrences the parse CANNOT find: {len(missed)}"
+          + ("".join(f"\n      ⚠ {o['of_strong']} {o['osisId']}" for o in missed) if missed else "")) 
     print(f"  -> {out.relative_to(ROOT)}")
     print(f"{'='*66}")
     return 0

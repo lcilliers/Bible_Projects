@@ -27,12 +27,21 @@
     },
     {
       "layer": 3,
-      "call": "NONE — a PARSE of layer 2's previews",
-      "answers": "the spans of each verse",
+      "call": "NONE — derived from layer 2's search result",
+      "answers": "the OCCURRENCE: the search asserted this strong is in this verse",
       "tables": {
-        "layer3_span": "one row per word of a verse: surface, strong, morph, verbatim"
+        "layer3_occurrence": "one row per (strong, verse) the search returned; resolves to ONE OR MORE layer-4 spans"
       },
-      "note": "This layer is the only one that is OURS. Layers 1-2 are what STEP said; layer 3 is what we read out of the HTML STEP sent. It is the first place the study can be wrong on its own account."
+      "note": "layer2_verse.preview holds the FULL verse. Layer 3 is not the verse and not the words — it is the claim 'this strong is here', which is what the search actually answered."
+    },
+    {
+      "layer": 4,
+      "call": "NONE — a PARSE of layer 2's previews",
+      "answers": "the verse decomposed into its words",
+      "tables": {
+        "layer4_span": "one row per word of a verse: surface, strong, morph, verbatim"
+      },
+      "note": "This layer is the only one that is OURS. Layers 1-3 come from what STEP said; layer 4 is what we read out of the HTML STEP sent. It is the first place the study can be wrong on its own account."
     }
   ],
   "foreign_keys": [
@@ -61,7 +70,16 @@
       "to": "layer2_search.l2s_id"
     },
     {
-      "from": "layer3_span.l2v_id",
+      "from": "layer3_occurrence.l2v_id",
+      "to": "layer2_verse.l2v_id"
+    },
+    {
+      "from": "layer3_occurrence.l4_ids",
+      "to": "layer4_span.l4_id",
+      "note": "★ ONE OR MORE — a strong can occur twice in a verse"
+    },
+    {
+      "from": "layer4_span.l2v_id",
       "to": "layer2_verse.l2v_id"
     }
   ],
@@ -74,7 +92,8 @@
     "layer2_morph": 0,
     "layer2_search": 5,
     "layer2_verse": 18,
-    "layer3_span": 240
+    "layer3_occurrence": 18,
+    "layer4_span": 240
   },
   "fields_returned": {
     "layer1_search": [
@@ -189,15 +208,25 @@
       "osisId",
       "preview"
     ],
-    "layer3_span": [
+    "layer3_occurrence": [
+      "l2s_id",
       "l2v_id",
       "l3_id",
+      "morphs",
+      "of_strong",
+      "osisId",
+      "surfaces",
+      "★ l4_ids",
+      "★ span_count"
+    ],
+    "layer4_span": [
+      "l2v_id",
+      "l4_id",
       "morph",
       "osisId",
       "strong",
       "surface",
-      "word_index",
-      "★ names_the_searched_strong"
+      "word_index"
     ]
   }
 }
