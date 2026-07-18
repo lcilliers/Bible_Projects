@@ -54,15 +54,20 @@ def _snapshot(db: Db, cfg: Cfg, run_id: str, word: str, phase: str):
             "ran_at": _now(), "deleted": 0})
 
 
+def _scope(params: dict) -> str:
+    """The run's scope value — a word, a book, or whatever the work package runs over."""
+    return params.get("Word") or params.get("Book") or ""
+
+
 def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
     if db.get("run", run_id=run_id):
         return
     _grant(cfg, "run")
     db.write("run", {
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
-        "runs_over": params.get("Word", ""), "config_version": cfg.config_version(),
+        "runs_over": _scope(params), "config_version": cfg.config_version(),
         "state": "running", "resume_point": "", "started_at": _now()})
-    _snapshot(db, cfg, run_id, params.get("Word", ""), "pre")   # baseline before any work
+    _snapshot(db, cfg, run_id, _scope(params), "pre")   # baseline before any work
 
 
 def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
@@ -73,9 +78,9 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     step_cfg = cfg.step(package, step_id)                 # <- handler, scope from config
     handler = _resolve(step_cfg["handler"])
     _ensure_run(db, cfg, package, params, run_id)
-    wrow = db.get("word_registry", word=params["Word"])
+    wrow = db.get("word_registry", word=params["Word"]) if "Word" in params else None
 
-    ctx = Ctx(db=db, cfg=cfg, step=Step(cfg), run_id=run_id, word=params["Word"],
+    ctx = Ctx(db=db, cfg=cfg, step=Step(cfg), run_id=run_id, word=_scope(params),
               word_id=wrow["id"] if wrow else None, params=params, step_id=step_id)
 
     outcome: Outcome = handler(ctx)

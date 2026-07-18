@@ -174,13 +174,94 @@
         "answered_at": {"type": "TEXT", "use": "when", "filled_by": "escalation.answer"},
         "raised_at":   {"type": "TEXT", "use": "when raised", "filled_by": "escalation.raise"}
       }
+    },
+
+    "lemma_inventory": {
+      "grain": "one row per corpus lemma (base Strong's) — the INDEPENDENT substrate the seed net runs over",
+      "use": "L4b seed substrate; imported from the old study, NOT derived from the registry, so the seed is a real completeness control",
+      "columns": {
+        "id":         {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "lemma_key":  {"type": "TEXT", "notnull": true, "unique": true, "use": "base Strong's, sub-letters stripped", "source": "import:lemma-inventory"},
+        "gloss":      {"type": "TEXT", "use": "the lemma's English gloss — the meaning the net matches on", "source": "import:lemma-inventory"},
+        "language":   {"type": "TEXT", "use": "Hebrew/Greek", "source": "derived:lemma_key"},
+        "source":     {"type": "TEXT", "use": "import provenance", "filled_by": "migration"},
+        "created_at": {"type": "TEXT", "use": "when imported", "filled_by": "migration"},
+        "deleted":    {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "candidate_seed": {
+      "grain": "one row per assessed lemma — the over-inclusive Axis-A candidate assessment",
+      "use": "L4b seed decision (potential, not definite); the lexical stage is the real test. registry_match NULL on a candidate = a candidate MISSING registry word (the double control)",
+      "columns": {
+        "id":             {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "lemma_key":      {"type": "TEXT", "notnull": true, "unique": true, "fk": "lemma_inventory.lemma_key", "use": "the assessed lemma"},
+        "decision":       {"type": "TEXT", "use": "candidate (potential) | rejected | undecided", "expectation": "enum.candidate_decision", "filled_by": "candidate.seed"},
+        "layer":          {"type": "TEXT", "use": "which layer decided it", "expectation": "enum.candidate_source", "filled_by": "candidate.seed"},
+        "registry_match": {"type": "TEXT", "use": "the registry word covering this lemma, or NULL (NULL+candidate = missing registry word)", "filled_by": "candidate.seed"},
+        "tag":            {"type": "TEXT", "use": "IB label carried onto the stamp", "filled_by": "candidate.seed"},
+        "assessed_at":    {"type": "TEXT", "use": "when assessed", "filled_by": "candidate.seed"},
+        "deleted":        {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "span_candidate": {
+      "grain": "one row per CANDIDATE span (existence = candidate) — the L4b stamp over the L4a span",
+      "use": "over-inclusive candidate stamp; the lexical stage later tests each in context",
+      "columns": {
+        "id":            {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "span_id":       {"type": "INTEGER", "notnull": true, "unique": true, "fk": "span.id", "use": "the L4a span stamped"},
+        "lemma_key":     {"type": "TEXT", "use": "base Strong's of the span (denormalised for continuity/join)", "source": "derived:span.strong_variant"},
+        "candidate_tag": {"type": "TEXT", "use": "the IB label from the seed", "source": "candidate_seed.tag"},
+        "seed_source":   {"type": "TEXT", "use": "which seed layer", "expectation": "enum.candidate_source", "filled_by": "candidate.set"},
+        "set_at":        {"type": "TEXT", "use": "when stamped", "filled_by": "candidate.set"},
+        "deleted":       {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "passage": {
+      "grain": "one row per passage — a reading frame (global, per book)",
+      "use": "extends a characteristic's context to adjacent verses for assessing movement/process/qualifying spans; NOT a thematic unit",
+      "columns": {
+        "id":              {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "book":            {"type": "TEXT", "notnull": true, "use": "OSIS book code", "source": "derived:verse.osisId"},
+        "anchor_verse_id": {"type": "INTEGER", "notnull": true, "fk": "verse.id", "use": "first verse of the run — the anchor"},
+        "start_chapter":   {"type": "INTEGER", "use": "range start chapter", "filled_by": "passage.build"},
+        "start_verse":     {"type": "INTEGER", "use": "range start verse", "filled_by": "passage.build"},
+        "end_chapter":     {"type": "INTEGER", "use": "range end chapter", "filled_by": "passage.build"},
+        "end_verse":       {"type": "INTEGER", "use": "range end verse", "filled_by": "passage.build"},
+        "ref":             {"type": "TEXT", "use": "human range", "filled_by": "passage.build"},
+        "verse_count":     {"type": "INTEGER", "use": ">=1", "filled_by": "passage.build"},
+        "rule":            {"type": "TEXT", "use": "char-continuity | maximal", "expectation": "enum.passage_rule", "filled_by": "passage.build"},
+        "source":          {"type": "TEXT", "use": "passage-build | single-verse-emergent", "expectation": "enum.passage_source", "filled_by": "passage.build"},
+        "needs_review":    {"type": "INTEGER", "use": "1 when verse_count > passage.review_over — confirm one passage not several", "filled_by": "passage.build"},
+        "created_at":      {"type": "TEXT", "use": "when built", "filled_by": "passage.build"},
+        "deleted":         {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
+    "verse_passage": {
+      "grain": "one row per verse-in-a-passage — passage membership (L4b), keeps the raw verse pristine",
+      "use": "which passage a verse belongs to; a verse is in at most one passage",
+      "columns": {
+        "id":         {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "passage_id": {"type": "INTEGER", "notnull": true, "fk": "passage.id", "use": "the passage"},
+        "verse_id":   {"type": "INTEGER", "notnull": true, "unique": true, "fk": "verse.id", "use": "the verse (unique — one passage per verse)"},
+        "is_anchor":  {"type": "INTEGER", "use": "1 on the anchor verse", "filled_by": "passage.build"},
+        "created_at": {"type": "TEXT", "use": "when built", "filled_by": "passage.build"},
+        "deleted":    {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
     }
   },
 
   "enums": {
-    "word_status":     ["proposed", "approved", "raw-complete", "signed-off", "rejected"],
-    "run_state":       ["running", "paused", "done", "failed"],
-    "escalation_type": ["prompted", "interactive"],
-    "on_fail":         ["report-continue", "pause-continue", "report-stop", "self-heal"]
+    "word_status":       ["proposed", "approved", "raw-complete", "signed-off", "rejected"],
+    "run_state":         ["running", "paused", "done", "failed"],
+    "escalation_type":   ["prompted", "interactive"],
+    "on_fail":           ["report-continue", "pause-continue", "report-stop", "self-heal"],
+    "candidate_decision":["candidate", "rejected", "undecided"],
+    "candidate_source":  ["registry-direct", "curated-synonym", "ib-judgement", "read-emergent"],
+    "passage_rule":      ["char-continuity", "maximal"],
+    "passage_source":    ["passage-build", "single-verse-emergent"]
   }
 }

@@ -14,7 +14,12 @@
     "discovery.follow_related": {"value": false,     "use": "relatedNos is root-family noise (H2519 -> 'to divide', 'Mount Halak'). Not followed."},
     "meaning.head_marker":      {"value": ": ",      "use": "a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma."},
     "language.greek_prefix":    {"value": "G",       "use": "a strong starting with this is Greek; else Hebrew"},
-    "registry.strip_ends_pattern":{"value": "[^A-Za-z]", "use": "on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive."}
+    "registry.strip_ends_pattern":{"value": "[^A-Za-z]", "use": "on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive."},
+    "candidate.lemma_base_pattern":{"value": "^([HG]\\d+)([A-Z]?)$", "use": "capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this."},
+    "passage.default_rule":     {"value": "char-continuity", "use": "boundary rule when -Rule not given: run continues while consecutive verses share >=1 candidate base-strong"},
+    "passage.cross_chapter":    {"value": false,     "use": "passages do not cross a chapter boundary"},
+    "passage.min_shared_strongs":{"value": 1,        "use": "char-continuity threshold: verses must share at least this many candidate base-strongs to stay in one run"},
+    "passage.review_over":      {"value": 5,         "use": "a passage longer than this is flagged needs_review — a long run may be several passages under different char focuses"}
   },
 
   "on_fail": [
@@ -24,7 +29,10 @@
     {"step": "raw.discover",    "condition": "zero-strongs",   "path": "pause-continue",  "resolver": null, "message": "the word maps to no strongs — a researcher question"},
     {"step": "raw.detail",      "condition": "no-vocab",       "path": "report-continue", "resolver": null, "message": "a strong returned no vocab — recorded STEP gap"},
     {"step": "raw.verses",      "condition": "shortfall",      "path": "report-continue", "resolver": null, "message": "a strong returned fewer rows than STEP's total"},
-    {"step": "raw.validate",    "condition": "parse-mismatch", "path": "report-stop",     "resolver": null, "message": "span does not recover strong_verse"}
+    {"step": "raw.validate",    "condition": "parse-mismatch", "path": "report-stop",     "resolver": null, "message": "span does not recover strong_verse"},
+    {"step": "candidate.seed",  "condition": "no-inventory",   "path": "report-stop",     "resolver": null, "message": "lemma_inventory is empty — run the seed migration first"},
+    {"step": "candidate.set",   "condition": "no-spans",       "path": "report-stop",     "resolver": null, "message": "the book has no spans — build its words first"},
+    {"step": "passage.build",   "condition": "no-candidates",  "path": "report-stop",     "resolver": null, "message": "the book has no candidate spans — run set-candidates first"}
   ],
 
   "write_grants": {
@@ -33,7 +41,11 @@
     "raw.write":       ["word_registry"],
     "raw.validate":    ["validation_result"],
     "run":             ["run", "escalation", "word_registry", "validation_result"],
-    "escalation":      ["escalation", "word_registry"]
+    "escalation":      ["escalation", "word_registry"],
+    "candidate.seed":  ["lemma_inventory", "candidate_seed"],
+    "candidate.set":   ["span_candidate"],
+    "passage.build":   ["passage", "verse_passage"],
+    "migration":       ["lemma_inventory", "candidate_seed"]
   },
 
   "status_flow": {

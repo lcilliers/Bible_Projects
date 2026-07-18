@@ -20,6 +20,32 @@
         {"step": "raw.write",        "handler": "iba.app.handlers.raw:write",         "scope": "word",   "does": "commit; mark raw-complete"},
         {"step": "raw.validate",     "handler": "iba.app.handlers.raw:validate",      "scope": "word",   "does": "the parse-check: span vs strong_verse must agree"}
       ]
+    },
+
+    "set-candidates": {
+      "name": "Seed + stamp candidate characteristics (span L4b) for a book",
+      "ps_script": "iba/app/ps/Set-Candidates.ps1",
+      "runs_over": "book",
+      "params": [
+        {"name": "Book", "required": true}
+      ],
+      "sequence": [
+        {"step": "candidate.seed", "handler": "iba.app.handlers.candidate:seed", "scope": "global", "does": "refresh candidate_seed over lemma_inventory (independent net + registry-direct + config); recompute registry_match (the double control)"},
+        {"step": "candidate.set",  "handler": "iba.app.handlers.candidate:set",  "scope": "book",   "does": "stamp span_candidate on the book's spans whose base-strong is a candidate"}
+      ]
+    },
+
+    "build-passages": {
+      "name": "Build passages for a book from the candidate stamp",
+      "ps_script": "iba/app/ps/Build-Passages.ps1",
+      "runs_over": "book",
+      "params": [
+        {"name": "Book", "required": true},
+        {"name": "Rule", "required": false, "default": "char-continuity"}
+      ],
+      "sequence": [
+        {"step": "passage.build", "handler": "iba.app.handlers.passage:build", "scope": "book", "does": "recompute the book's passages from span_candidate (char-continuity|maximal); flag >review_over as needs_review"}
+      ]
     }
   }
 }

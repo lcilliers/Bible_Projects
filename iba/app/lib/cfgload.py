@@ -87,6 +87,9 @@ CFG_DDL = [
         config_version TEXT, seed_hash TEXT, loaded_at TEXT, validated INTEGER)""",
 
     "CREATE TABLE cfg_book_order (book TEXT PRIMARY KEY, ordinal INTEGER)",
+
+    """CREATE TABLE cfg_candidate_rule (    -- the editable candidate meaning-net inputs
+        kind TEXT, value TEXT, PRIMARY KEY (kind, value))""",
 ]
 
 
@@ -108,6 +111,7 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
     rules = _load_json("rules.json")
     report = _load_json("report.json")
     reference = _load_json("reference.json")
+    candidate = _load_json("candidate.json")
 
     # ── VALIDATE BEFORE WRITE (the config-maintenance discipline) ──
     ok, errors = cfgcheck.check(schema, step, run, rules, report)
@@ -197,6 +201,12 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
     for k, s in reference["patterns"].items():
         conn.execute("INSERT OR REPLACE INTO cfg_setting VALUES (?,?,?)",
                      (k, json.dumps(s["value"]), s.get("use")))
+
+    # ── candidate: the editable meaning-net inputs (synonyms / accept / reject) ──
+    for kind in ("synonyms", "accept", "reject"):
+        for v in candidate.get(kind, []):
+            conn.execute("INSERT OR IGNORE INTO cfg_candidate_rule VALUES (?,?)",
+                         (kind.rstrip("s") if kind == "synonyms" else kind, str(v)))
 
     # audit the accepted load
     conn.execute("INSERT INTO cfg_change_log (config_version, seed_hash, loaded_at, validated) "

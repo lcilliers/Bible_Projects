@@ -112,6 +112,13 @@ class Cfg:
         _trace("book_order()", rows)
         return rows
 
+    def candidate_rules(self, kind: str) -> list[str]:
+        """The editable candidate meaning-net inputs of one kind: synonym | accept | reject."""
+        rows = [r["value"] for r in self.conn.execute(
+            "SELECT value FROM cfg_candidate_rule WHERE kind=?", (kind,))]
+        _trace(f"candidate_rules({kind})", rows)
+        return rows
+
     def config_version(self) -> str:
         r = self.conn.execute("SELECT value FROM cfg_meta WHERE key='config_version'").fetchone()
         return r["value"] if r else "?"

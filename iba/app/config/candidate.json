@@ -1,0 +1,7 @@
+{
+  "purpose": "The editable meaning-net inputs for the candidate seed — curated synonyms and manual IB accept/reject, INDEPENDENT of the registry. Grown as reads surface misses (the self-learning path). Loaded into cfg_candidate_rule; the candidate.seed step consumes it.",
+  "note": "synonym = a gloss/word whose lemmas are candidates; accept = force a lemma_key candidate; reject = force a lemma_key rejected. Empty at first — the migration imports the bulk of the seed; these are the ongoing manual adjustments.",
+  "synonyms": [],
+  "accept": [],
+  "reject": []
+}
