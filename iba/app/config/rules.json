@@ -45,7 +45,7 @@
     "candidate.seed":  ["lemma_inventory", "candidate_seed"],
     "candidate.set":   ["span_candidate"],
     "passage.build":   ["passage", "verse_passage"],
-    "migration":       ["lemma_inventory", "candidate_seed"]
+    "migration":       ["lemma_inventory", "candidate_seed", "word_strong"]
   },
 
   "status_flow": {

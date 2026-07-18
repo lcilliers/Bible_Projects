@@ -81,45 +81,46 @@ def discover(ctx: Ctx) -> Outcome:
 
 
 # ── detail (the meaning) ─────────────────────────────────────────────────────
-def detail(ctx: Ctx) -> Outcome:
+def detail_one(ctx: Ctx, code: str, c: dict) -> None:
+    """Fetch + write the meaning for ONE strong (call2). Reusable per-strong, so a single
+    strong can be added to a word WITHOUT re-pulling the word's other strongs."""
     greek = ctx.cfg.setting("language.greek_prefix", "G")
+    if ctx.db.get("strong", strongNumber=code):
+        c["skipped"] += 1
+        return
+    v = (ctx.step.call2_getInfo(code).get("vocabInfos") or [None])[0]
+    if not v:
+        c["no_vocab"] += 1
+        return
+    resolved = v.get("strongNumber", code)
+    head, tree = _split_def(ctx, v.get("mediumDef", ""))
+    _write(ctx, "call2_getInfo", "strong", {
+        "strongNumber": resolved, "accentedUnicode": v.get("accentedUnicode"),
+        "stepGloss": v.get("stepGloss"), "stepTransliteration": v.get("stepTransliteration"),
+        "language": "Greek" if resolved.startswith(greek) else "Hebrew",
+        "count": v.get("count"), "freqList": v.get("freqList"),
+        "created_at": _now(), "deleted": 0}); c["strong"] += 1
+    _write(ctx, "call2_getInfo", "strong_sense", {
+        "strong": resolved, "head": head or v.get("stepGloss"),
+        "is_own_lemma": 0 if head else 1, "deleted": 0}); c["sense"] += 1
+    lemma = _base(resolved)
+    if tree and not ctx.db.get("strong_meaning_tree", lemma_key=lemma):
+        for i, line in enumerate(x for x in tree.split("\n") if x.strip()):
+            m = re.match(r"^(\d+[a-z]?\d*\))\s*(.*)$", line.strip())
+            sc, txt = (m.group(1), m.group(2)) if m else ("", line.strip())
+            _write(ctx, "call2_getInfo", "strong_meaning_tree",
+                   {"lemma_key": lemma, "sense_code": sc, "sense_text": txt,
+                    "sort": i, "deleted": 0}, upsert=False); c["tree"] += 1
+    if v.get("lsjDefs") or v.get("shortDefMounce"):
+        _write(ctx, "call2_getInfo", "strong_lexicon", {
+            "strong": resolved, "lsj": v.get("lsjDefs"),
+            "mounce": v.get("shortDefMounce"), "deleted": 0}); c["lexicon"] += 1
+
+
+def detail(ctx: Ctx) -> Outcome:
     c = {"strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0}
     for code in _strongs_for_word(ctx):
-        if ctx.db.get("strong", strongNumber=code):
-            c["skipped"] += 1
-            continue
-        v = (ctx.step.call2_getInfo(code).get("vocabInfos") or [None])[0]
-        if not v:
-            c["no_vocab"] += 1
-            continue
-        resolved = v.get("strongNumber", code)
-        head, tree = _split_def(ctx, v.get("mediumDef", ""))
-
-        _write(ctx, "call2_getInfo", "strong", {
-            "strongNumber": resolved, "accentedUnicode": v.get("accentedUnicode"),
-            "stepGloss": v.get("stepGloss"), "stepTransliteration": v.get("stepTransliteration"),
-            "language": "Greek" if resolved.startswith(greek) else "Hebrew",
-            "count": v.get("count"), "freqList": v.get("freqList"),
-            "created_at": _now(), "deleted": 0}); c["strong"] += 1
-
-        _write(ctx, "call2_getInfo", "strong_sense", {
-            "strong": resolved, "head": head or v.get("stepGloss"),
-            "is_own_lemma": 0 if head else 1, "deleted": 0}); c["sense"] += 1
-
-        lemma = _base(resolved)
-        if tree and not ctx.db.get("strong_meaning_tree", lemma_key=lemma):
-            for i, line in enumerate(x for x in tree.split("\n") if x.strip()):
-                m = re.match(r"^(\d+[a-z]?\d*\))\s*(.*)$", line.strip())
-                sc, txt = (m.group(1), m.group(2)) if m else ("", line.strip())
-                _write(ctx, "call2_getInfo", "strong_meaning_tree",
-                       {"lemma_key": lemma, "sense_code": sc, "sense_text": txt,
-                        "sort": i, "deleted": 0}, upsert=False); c["tree"] += 1
-
-        if v.get("lsjDefs") or v.get("shortDefMounce"):
-            _write(ctx, "call2_getInfo", "strong_lexicon", {
-                "strong": resolved, "lsj": v.get("lsjDefs"),
-                "mounce": v.get("shortDefMounce"), "deleted": 0}); c["lexicon"] += 1
-
+        detail_one(ctx, code, c)
     if c["no_vocab"]:
         return fail("no-vocab", f"detail done; {c['no_vocab']} strong(s) returned no vocab", **c)
     return ok(f"detail: {c['strong']} strong, {c['sense']} sense, {c['tree']} tree, "
@@ -127,31 +128,36 @@ def detail(ctx: Ctx) -> Outcome:
 
 
 # ── verses + spans ───────────────────────────────────────────────────────────
+def verses_one(ctx: Ctx, code: str, c: dict) -> None:
+    """Fetch + write verses/spans for ONE strong (call3). Reusable per-strong."""
+    total, rows = ctx.step.call3_strong(code)
+    if total and len(rows) < total:
+        c["short"] += 1
+    for r in rows:
+        osis = r.get("osisId")
+        if not osis:
+            continue
+        vid, vnew = _write(ctx, "call3_strong", "verse", {
+            "osisId": osis, "reference": r.get("key"), "preview": r.get("preview"),
+            "step_version": ctx.step.version, "created_at": _now(), "deleted": 0})
+        c["verse_new"] += vnew
+        c["strong_verse"] += _write(ctx, "call3_strong", "strong_verse",
+                                    {"strong": code, "verse_id": vid, "deleted": 0})[1]
+        # write spans for a NEW verse, or backfill a verse left span-less by a
+        # partial (interrupted) build — so a resumed run self-heals.
+        if vnew or not ctx.db.count("span", verse_id=vid):
+            for sp in ctx.step.parse_spans(r.get("preview", "")):
+                _write(ctx, "call3_strong", "span", {
+                    "verse_id": vid, "position": sp["position"], "surface": sp["surface"],
+                    "strong_variant": sp["strong_variant"], "morph_code": sp["morph_code"],
+                    "is_particle": sp["is_particle"], "built_at": _now(), "deleted": 0})
+                c["span_new"] += 1
+
+
 def verses(ctx: Ctx) -> Outcome:
     c = {"strong_verse": 0, "verse_new": 0, "span_new": 0, "short": 0}
     for code in _strongs_for_word(ctx):
-        total, rows = ctx.step.call3_strong(code)
-        if total and len(rows) < total:
-            c["short"] += 1
-        for r in rows:
-            osis = r.get("osisId")
-            if not osis:
-                continue
-            vid, vnew = _write(ctx, "call3_strong", "verse", {
-                "osisId": osis, "reference": r.get("key"), "preview": r.get("preview"),
-                "step_version": ctx.step.version, "created_at": _now(), "deleted": 0})
-            c["verse_new"] += vnew
-            c["strong_verse"] += _write(ctx, "call3_strong", "strong_verse",
-                                        {"strong": code, "verse_id": vid, "deleted": 0})[1]
-            # write spans for a NEW verse, or backfill a verse left span-less by a
-            # partial (interrupted) build — so a resumed run self-heals.
-            if vnew or not ctx.db.count("span", verse_id=vid):
-                for sp in ctx.step.parse_spans(r.get("preview", "")):
-                    _write(ctx, "call3_strong", "span", {
-                        "verse_id": vid, "position": sp["position"], "surface": sp["surface"],
-                        "strong_variant": sp["strong_variant"], "morph_code": sp["morph_code"],
-                        "is_particle": sp["is_particle"], "built_at": _now(), "deleted": 0})
-                    c["span_new"] += 1
+        verses_one(ctx, code, c)
     msg = f"{c['strong_verse']} strong_verse, {c['verse_new']} new verse(s), {c['span_new']} span(s)"
     if c["short"]:
         return fail("shortfall", msg + f" — {c['short']} strong(s) short of STEP's total", **c)
