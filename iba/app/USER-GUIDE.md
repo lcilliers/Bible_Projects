@@ -61,18 +61,43 @@ This prepares the environment and reports `READY`:
 
 ```
 IBA app — startup
-  ✓ config loaded (244 rows in 15 cfg_* tables)
+  ✓ config loaded (247 rows in 15 cfg_* tables)
     config_version: app-0.1.0
   ✓ data tables present (12 tables)
   ✓ STEP up and tagged (http://localhost:8989, ESV_th)
+    known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
 READY.
 ```
 
 It is **idempotent** — safe to run any time. What it does: validates the config, loads it into the
 DB if needed, builds the data tables if missing, and pre-flights STEP.
 
-**If STEP is not running**, it says so and stops short of ready — start the STEP server and run
-`Start-Iba.ps1` again. Runs refuse to start without STEP.
+**The STEP check is a known-answer probe, not a ping.** It does not merely ask "did something
+answer on the port" — it fetches a fixed Strong's (`H0430`) and requires the *expected* answer back:
+the gloss must contain `God` and the verse count must clear a floor. A stale, degraded, or wrongly
+tagged server that still answers the port **fails** the check with a specific reason — so a green
+STEP line means STEP genuinely served the right data, and the probe line shows the evidence. (The
+probe values live in config: `iba/app/config/step.json` → `preflight`.)
+
+**If STEP is not running / not right**, it says so and stops short of ready — for example:
+
+```
+  ⚠ STEP not ready: STEP answered but the known answer is WRONG: H0430 glossed '…',
+    expected to contain 'God'. Stale or wrong module.
+```
+
+Start (or restart) the STEP server and run `Start-Iba.ps1` again. Runs refuse to start without STEP.
+
+> **A note on "STEP looks closed but the app says up."** Closing the STEP *window* does not always
+> stop its *server* — a `step.exe` process can keep holding port 8989 and answering. If the app
+> reports up when you thought STEP was down, that stale process is why. Check what is really on the
+> port and, if it is a leftover, stop it before restarting STEP:
+>
+> ```powershell
+> Get-NetTCPConnection -LocalPort 8989 -State Listen | Select-Object OwningProcess
+> Get-Process -Id <that-pid>          # confirm it is step.exe
+> Stop-Process -Id <that-pid>         # only if it is a stale STEP you want gone
+> ```
 
 **Variants:**
 

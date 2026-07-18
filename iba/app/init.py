@@ -74,8 +74,11 @@ def main() -> int:
     # 4. STEP pre-flight
     from .lib.stepapi import Step, StepUnavailable
     try:
-        Step(cfg).up()
-        print(f"  ✓ STEP up and tagged ({cfg.connection('base_url')}, {cfg.connection('version')})")
+        ev = Step(cfg).up()
+        # report the EVIDENCE, not a bare 'up' — the known answer that proves it
+        print(f"  ✓ STEP up and tagged ({ev['base']}, {ev['version']})")
+        print(f"    known-answer probe: {ev['probe']} -> {ev['resolved']} "
+              f"gloss {ev['gloss']!r}, {ev['verses']} verses")
         step_ok = True
     except StepUnavailable as e:
         print(f"  ⚠ STEP not ready: {e}")

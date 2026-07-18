@@ -7,6 +7,12 @@
     "note": "always localhost, never the web; ESV_th is the tagged module. The client reads these; nothing from the environment."
   },
   "cap": 60,
+  "preflight": {
+    "note": "A KNOWN-ANSWER probe: the server must return the EXPECTED data, not merely a 200. This is what makes 'up' a checkable fact, not a claim. A degraded/stale/untagged server fails it.",
+    "probe_strong": "H0430",
+    "expect_gloss_contains": "God",
+    "expect_min_verses": 1000
+  },
   "apis": {
     "call1_meanings": {
       "route": "rest/search/masterSearch/version={version}|meanings={word}",

@@ -145,6 +145,11 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
         if k != "note":
             conn.execute("INSERT INTO cfg_connection VALUES (?,?)", (k, str(v)))
     conn.execute("INSERT INTO cfg_setting VALUES ('step.cap', ?, 'STEP result cap')", (str(step["cap"]),))
+    for k, v in step.get("preflight", {}).items():   # the known-answer probe values
+        if k == "note":
+            continue
+        conn.execute("INSERT OR REPLACE INTO cfg_setting VALUES (?,?,?)",
+                     (f"step.{k}", json.dumps(v), "STEP preflight known-answer probe"))
     for aname, api in step["apis"].items():
         conn.execute("INSERT INTO cfg_api VALUES (?,?,?,?)",
                      (aname, api["route"], api.get("input"), api.get("returns")))

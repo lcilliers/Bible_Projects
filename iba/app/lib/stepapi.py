@@ -59,18 +59,40 @@ class Step:
     def _route(self, api: str, **kw) -> str:
         return self.cfg.route(api).format(version=self.version, **kw)
 
-    def up(self) -> None:
+    def up(self) -> dict:
+        """A KNOWN-ANSWER preflight. Not 'did something answer 200' — 'did STEP return the
+        EXPECTED data'. A stale/degraded/untagged server that still answers the port FAILS
+        this and cannot report up. Returns the evidence it checked, so 'up' is a fact, not a
+        claim; raises StepUnavailable with the specific reason on any miss."""
+        probe = self.cfg.setting("step.probe_strong", "H0430")
+        want_gloss = self.cfg.setting("step.expect_gloss_contains", "")
+        min_verses = int(self.cfg.setting("step.expect_min_verses", 1))
+
+        # every network touch here is wrapped — a server that dies on the SECOND call is
+        # 'not reachable', never an uncaught crash that init can't tell from 'up'.
         try:
-            d = self._get(self._route("call2_getInfo", strong="H0430"))
+            d = self._get(self._route("call2_getInfo", strong=probe))
+            vocabs = d.get("vocabInfos") or []
+            if not vocabs or not vocabs[0].get("stepGloss"):
+                raise StepUnavailable(
+                    f"STEP answered but returned no lexicon for {probe} under {self.version!r} "
+                    f"— the module looks wrong or untagged.")
+            gloss = vocabs[0].get("stepGloss", "")
+            resolved = vocabs[0].get("strongNumber", probe)
+            if want_gloss and want_gloss.lower() not in gloss.lower():
+                raise StepUnavailable(
+                    f"STEP answered but the known answer is WRONG: {probe} glossed "
+                    f"{gloss!r}, expected to contain {want_gloss!r}. Stale or wrong module.")
+            total = self._get(self._route("call3_strong", strong=resolved)).get("total", 0)
         except requests.RequestException as e:
             raise StepUnavailable(f"STEP not reachable at {self.base} ({type(e).__name__}).") from e
-        vocabs = d.get("vocabInfos") or []
-        if not vocabs or not vocabs[0].get("stepGloss"):
-            raise StepUnavailable(f"STEP up but no lexicon for the probe under {self.version!r}.")
-        resolved = vocabs[0].get("strongNumber", "H0430")
-        total = self._get(self._route("call3_strong", strong=resolved)).get("total", 0)
-        if total < 1:
-            raise StepUnavailable("STEP up but the module is NOT TAGGED.")
+
+        if total < min_verses:
+            raise StepUnavailable(
+                f"STEP answered but returned only {total} verses for {resolved} "
+                f"(expected >= {min_verses}) — the module is NOT TAGGED / not fully loaded.")
+        return {"base": self.base, "version": self.version, "probe": probe,
+                "resolved": resolved, "gloss": gloss, "verses": total}
 
     def is_particle(self, code: str) -> bool:
         return bool(self.particle_re.match(code))
