@@ -60,6 +60,7 @@ Write-Host "sequence     : $($seq.Count) steps, loaded from the DB config store 
 Write-Host ""
 
 $halt = $false
+$exitCode = 0                       # 0 done · 2 paused · 3 stopped — so the script is composable
 foreach ($entry in $seq) {
     $json = python -m iba.app.run new-word `
         --step $entry.step --run-id $runId `
@@ -72,11 +73,11 @@ foreach ($entry in $seq) {
 
     if ($code -eq 2) {
         Write-Host "`nPAUSED — a researcher escalation was raised; the run is resumable." -ForegroundColor Yellow
-        $halt = $true; break
+        $halt = $true; $exitCode = 2; break
     }
     if ($code -eq 3) {
         Write-Host "`nSTOPPED — $($res.message)" -ForegroundColor Red
-        $halt = $true; break
+        $halt = $true; $exitCode = 3; break
     }
 }
 
@@ -85,3 +86,4 @@ if (-not $halt) {
     Write-Host "COMPLETE — raw layer built for '$Word'." -ForegroundColor Green
     Write-Host "  report: python -m iba.app.report --word $Word"
 }
+exit $exitCode
