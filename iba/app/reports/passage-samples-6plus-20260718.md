@@ -1,6 +1,6 @@
 # Passage samples — 6+ verses (2026-07-18)
 
-> The longer passages (verse_count > 5, i.e. the review-flagged runs), passed through for reading AS IS. Each verse in position order: text, then spans by position (surface, strong, gloss, morph). **Bold** = candidate (L4b); part = particle.
+> The longer passages (verse_count > 5, the review-flagged runs), passed through for reading AS IS. Each verse in position order: text, then spans by position (surface, strong, gloss, morph). **Bold** = candidate (L4b); part = particle.
 
 ## Gen 1:5-10  (6 verses · rule char-continuity · NEEDS REVIEW)
 
@@ -10,14 +10,14 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | called | **H7121H** | call by/name<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqw3ms | **✓ to call: call to** |
+| 1 | called | **H7121H** | call by/name | HVqw3ms | **✓ to call: call to** |
 | 2 | light | H0216 |  | HNcfsa |  |
 | 3 | light | H9005 |  | HRd | part |
 | 4 | Day | **H3117G** |  | HNcmsa | **✓ day** |
 | 5 | darkness | H2822 |  | HNcmsa |  |
 | 6 | darkness | H9002 |  | HC | part |
 | 7 | darkness | H9005 |  | HRd | part |
-| 8 | called | **H7121H** | call by/name<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqp3ms | **✓ to call: call to** |
+| 8 | called | **H7121H** | call by/name | HVqp3ms | **✓ to call: call to** |
 | 9 | Night | H3915 |  | HNcmsa |  |
 | 10 | was | **H1961** | to be | HVqw3ms | **✓ to be** |
 | 11 | evening | H6153 |  | HNcmsa |  |
@@ -32,7 +32,7 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see'** |
+| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see…** |
 | 2 | be | **H1961** | to be | HVqj3ms | **✓ to be** |
 | 3 | expanse | H7549 |  | HNcmsa |  |
 | 4 | midst | H8432 |  | HNcmsc |  |
@@ -52,7 +52,7 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | made | **H6213H** | make(OBJECT)<br>1) to do, fashion, accomplish, make<br>1a) (Qal)<br>1a1) to do, work, make, produce<br>1a1a) to do<br>1a1b) to work<br>1a1c) to deal (with)<br>1a1d) to act, act with effect, effect<br>1a2) to make<br>1a2a) to make<br>1a2b) to produce<br>1a2c) to prepare<br>1a2d) to make (an offering)<br>1a2e) to attend to, put in order<br>1a2f) to observe, celebrate<br>1a2g) to acquire (property)<br>1a2h) to appoint, ordain, institute<br>1a2i) to bring about<br>1a2j) to use<br>1a2k) to spend, pass<br>1b) (Niphal)<br>1b1) to be done<br>1b2) to be made<br>1b3) to be produced<br>1b4) to be offered<br>1b5) to be observed<br>1b6) to be used<br>1c) (Pual) to be made | HVqw3ms | **✓ practice (asah)** |
+| 1 | made | **H6213H** | make(OBJECT) | HVqw3ms | **✓ practice (asah)** |
 | 2 | expanse | H7549 |  | HNcmsa |  |
 | 3 | expanse | H9009 |  | HTd | part |
 | 4 | expanse | H0853 |  | HTo |  |
@@ -83,7 +83,7 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | called | **H7121H** | call by/name<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqw3ms | **✓ to call: call to** |
+| 1 | called | **H7121H** | call by/name | HVqw3ms | **✓ to call: call to** |
 | 2 | expanse | H7549 |  | HNcmsa |  |
 | 3 | expanse | H9005 |  | HRd | part |
 | 4 | Heaven | H8064 |  | HNcmpa |  |
@@ -100,7 +100,7 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see'** |
+| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see…** |
 | 2 | waters | H4325G |  | HNcmpa |  |
 | 3 | waters | H9009 |  | HTd | part |
 | 4 | under | H8478G |  | HNcmsc |  |
@@ -113,7 +113,7 @@
 | 11 | place | H4725 |  | HNcmsa |  |
 | 12 | dry land | H3004 |  | HNcfsa |  |
 | 13 | dry land | H9009 |  | HTd | part |
-| 14 | appear | **H7200G** | see/show<br>1) to see, look at, inspect, perceive, consider<br>1a) (Qal)<br>1a1) to see<br>1a2) to see, perceive<br>1a3) to see, have vision<br>1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out<br>1a5) to see, observe, consider, look at, give attention to, discern, distinguish<br>1a6) to look at, gaze at<br><br>1a7) to provide, choose<br>1b) (Niphal)<br>1b1) to appear, present oneself<br>1b2) to be seen<br>1b3) to be visible<br>1c) (Pual) to be seen<br>1d) (Hiphil)<br>1d1) to cause to see, show<br>1d2) to cause to look intently at, behold, cause to gaze at<br>1e) (Hophal)<br>1e1) to be caused to see, be shown<br>1e2) to be exhibited to<br>1f) (Hithpael) to look at each other, face | HVNu3fs | **✓ see (raah)** |
+| 14 | appear | **H7200G** | see/show | HVNu3fs | **✓ see (raah)** |
 | 15 | was | **H1961** | to be | HVqw3ms | **✓ to be** |
 | 16 | so | H3651C |  | HD |  |
 
@@ -123,7 +123,7 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | God | H0430G |  | HNcmpa |  |
-| 1 | called | **H7121H** | call by/name<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqw3ms | **✓ to call: call to** |
+| 1 | called | **H7121H** | call by/name | HVqw3ms | **✓ to call: call to** |
 | 2 | dry land | H3004 |  | HNcfsa |  |
 | 3 | dry land | H9005 |  | HRd | part |
 | 4 | Earth | H0776G |  | HNcfsa |  |
@@ -132,10 +132,10 @@
 | 7 | gathered together | **H4723C** | collection | HNcmsc | **✓ Kue** |
 | 8 | gathered together | H9002 |  | HC | part |
 | 9 | gathered together | H9005 |  | HR | part |
-| 10 | called | **H7121H** | call by/name<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqp3ms | **✓ to call: call to** |
+| 10 | called | **H7121H** | call by/name | HVqp3ms | **✓ to call: call to** |
 | 11 | Seas | H3220G |  | HNcmpa |  |
 | 12 | God | H0430G |  | HNcmpa |  |
-| 13 | saw | **H7200G** | see/show<br>1) to see, look at, inspect, perceive, consider<br>1a) (Qal)<br>1a1) to see<br>1a2) to see, perceive<br>1a3) to see, have vision<br>1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out<br>1a5) to see, observe, consider, look at, give attention to, discern, distinguish<br>1a6) to look at, gaze at<br><br>1a7) to provide, choose<br>1b) (Niphal)<br>1b1) to appear, present oneself<br>1b2) to be seen<br>1b3) to be visible<br>1c) (Pual) to be seen<br>1d) (Hiphil)<br>1d1) to cause to see, show<br>1d2) to cause to look intently at, behold, cause to gaze at<br>1e) (Hophal)<br>1e1) to be caused to see, be shown<br>1e2) to be exhibited to<br>1f) (Hithpael) to look at each other, face | HVqw3ms | **✓ see (raah)** |
+| 13 | saw | **H7200G** | see/show | HVqw3ms | **✓ see (raah)** |
 | 14 | good | **H2896A** | pleasant | HVqp3ms | **✓ pleasant** |
 | 15 | good | H3588A |  | HTc |  |
 
@@ -149,17 +149,17 @@
 | 0 | therefore | H1571 |  | HD |  |
 | 1 | stand still | H3320 |  | HVtv2mp |  |
 | 2 | stand still | H6258 |  | HD |  |
-| 3 | see | **H7200G** | see/show<br>1) to see, look at, inspect, perceive, consider<br>1a) (Qal)<br>1a1) to see<br>1a2) to see, perceive<br>1a3) to see, have vision<br>1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out<br>1a5) to see, observe, consider, look at, give attention to, discern, distinguish<br>1a6) to look at, gaze at<br><br>1a7) to provide, choose<br>1b) (Niphal)<br>1b1) to appear, present oneself<br>1b2) to be seen<br>1b3) to be visible<br>1c) (Pual) to be seen<br>1d) (Hiphil)<br>1d1) to cause to see, show<br>1d2) to cause to look intently at, behold, cause to gaze at<br>1e) (Hophal)<br>1e1) to be caused to see, be shown<br>1e2) to be exhibited to<br>1f) (Hithpael) to look at each other, face | HVqv2mp | **✓ see (raah)** |
+| 3 | see | **H7200G** | see/show | HVqv2mp | **✓ see (raah)** |
 | 4 | this | H2088 |  | HTm |  |
 | 5 | this | H9009 |  | HTd | part |
 | 6 | great | **H1419A** | great: large | HAamsa | **✓ great: large** |
 | 7 | great | H9009 |  | HTd | part |
-| 8 | thing | **H1697I** | thing/matter<br>1) speech, word, speaking, thing<br>1a) speech<br>1b) saying, utterance<br>1c) word, words<br>1d) business, occupation, acts, matter, case, something, manner (by extension) | HNcmsa | **✓ word** |
+| 8 | thing | **H1697I** | thing/matter | HNcmsa | **✓ word** |
 | 9 | thing | H9009 |  | HTd | part |
 | 10 | thing | H0853 |  | HTo |  |
 | 11 | that | H0834A |  | HTr |  |
 | 12 | Lord | H3068G |  | HNpt |  |
-| 13 | do | **H6213A** | do/perform<br>1) to do, fashion, accomplish, make<br>1a) (Qal)<br>1a1) to do, work, make, produce<br>1a1a) to do<br>1a1b) to work<br>1a1c) to deal (with)<br>1a1d) to act, act with effect, effect<br>1a2) to make<br>1a2a) to make<br>1a2b) to produce<br>1a2c) to prepare<br>1a2d) to make (an offering)<br>1a2e) to attend to, put in order<br>1a2f) to observe, celebrate<br>1a2g) to acquire (property)<br>1a2h) to appoint, ordain, institute<br>1a2i) to bring about<br>1a2j) to use<br>1a2k) to spend, pass<br>1b) (Niphal)<br>1b1) to be done<br>1b2) to be made<br>1b3) to be produced<br>1b4) to be offered<br>1b5) to be observed<br>1b6) to be used<br>1c) (Pual) to be made | HVqrmsa | **✓ practice (asah)** |
+| 13 | do | **H6213A** | do/perform | HVqrmsa | **✓ practice (asah)** |
 | 14 | your | H9026 |  | HSp2mp | part |
 | 15 | eyes | **H5869J** |  | HNcfdc | **✓ eye wasting from grief** |
 | 16 | eyes | H9005 |  | HR | part |
@@ -175,21 +175,21 @@
 | 3 | harvest | H7105A |  | HNcmsc |  |
 | 4 | today | **H3117G** |  | HNcmsa | **✓ day** |
 | 5 | today | H9009 |  | HTd | part |
-| 6 | call | **H7121G** | call to/invite/entreat<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqi1cs | **✓ to call: call to** |
+| 6 | call | **H7121G** | call to/invite/entreat | HVqi1cs | **✓ to call: call to** |
 | 7 | upon | H0413 |  | HR |  |
 | 8 | Lord | H3068G |  | HNpt |  |
-| 9 | send | **H5414G** | give/deliver/send/produce<br>1) to give, put, set<br>1a) (Qal)<br>1a1) to give, bestow, grant, permit, ascribe, employ, devote, consecrate, dedicate, pay wages, sell, exchange, lend, commit, entrust, give over, deliver up, yield produce, occasion, produce, requite to, report, mention, utter, stretch out, extend<br>1a2) to put, set, put on, put upon, set, appoint, assign, designate<br>1a3) to make, constitute<br>1b) (Niphal)<br>1b1) to be given, be bestowed, be provided, be entrusted to, be granted to, be permitted, be issued, be published, be uttered, be assigned<br>1b2) to be set, be put, be made, be inflicted<br>1c) (Hophal)<br>1c1) to be given, be bestowed, be given up, be delivered up<br>1c2) to be put upon | HVqu3ms | **✓ to give: give** |
+| 9 | send | **H5414G** | give/deliver/send/produce | HVqu3ms | **✓ to give: give** |
 | 10 | thunder | **H6963I** |  | HNcfpa | **✓ voice** |
 | 11 | rain | H4306 |  | HNcmsa |  |
 | 12 | rain | H9002 |  | HC | part |
 | 13 | know | **H3045** | to know | HVqv2mp | **✓ to know** |
-| 14 | see | **H7200G** | see/show<br>1) to see, look at, inspect, perceive, consider<br>1a) (Qal)<br>1a1) to see<br>1a2) to see, perceive<br>1a3) to see, have vision<br>1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out<br>1a5) to see, observe, consider, look at, give attention to, discern, distinguish<br>1a6) to look at, gaze at<br><br>1a7) to provide, choose<br>1b) (Niphal)<br>1b1) to appear, present oneself<br>1b2) to be seen<br>1b3) to be visible<br>1c) (Pual) to be seen<br>1d) (Hiphil)<br>1d1) to cause to see, show<br>1d2) to cause to look intently at, behold, cause to gaze at<br>1e) (Hophal)<br>1e1) to be caused to see, be shown<br>1e2) to be exhibited to<br>1f) (Hithpael) to look at each other, face | HVqv2mp | **✓ see (raah)** |
+| 14 | see | **H7200G** | see/show | HVqv2mp | **✓ see (raah)** |
 | 15 | that | H3588A |  | HTc |  |
-| 16 | wickedness | **H7451I** | harm<br>1) evil, misery, distress, injury<br>1a) evil, misery, distress<br>1b) evil, injury, wrong<br>1c) evil (ethical) | HNcfsc | **✓ bad: harmful** |
+| 16 | wickedness | **H7451I** | harm | HNcfsc | **✓ bad: harmful** |
 | 17 | great | **H7227A** | many | HAafsa | **✓ many** |
 | 18 | great | H9026 |  | HSp2mp | part |
 | 19 | which | H0834A |  | HTr |  |
-| 20 | done | **H6213A** | do/perform<br>1) to do, fashion, accomplish, make<br>1a) (Qal)<br>1a1) to do, work, make, produce<br>1a1a) to do<br>1a1b) to work<br>1a1c) to deal (with)<br>1a1d) to act, act with effect, effect<br>1a2) to make<br>1a2a) to make<br>1a2b) to produce<br>1a2c) to prepare<br>1a2d) to make (an offering)<br>1a2e) to attend to, put in order<br>1a2f) to observe, celebrate<br>1a2g) to acquire (property)<br>1a2h) to appoint, ordain, institute<br>1a2i) to bring about<br>1a2j) to use<br>1a2k) to spend, pass<br>1b) (Niphal)<br>1b1) to be done<br>1b2) to be made<br>1b3) to be produced<br>1b4) to be offered<br>1b5) to be observed<br>1b6) to be used<br>1c) (Pual) to be made | HVqp2mp | **✓ practice (asah)** |
+| 20 | done | **H6213A** | do/perform | HVqp2mp | **✓ practice (asah)** |
 | 21 | sight | **H5869H** |  | HNcfdc | **✓ eye wasting from grief** |
 | 22 | sight | H9003 |  | HR | part |
 | 23 | Lord | H3068G |  | HNpt |  |
@@ -205,21 +205,21 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | Samuel | H8050G |  | HNpm |  |
-| 1 | called | **H7121G** | call to/invite/entreat<br>1) to call, call out, recite, read, cry out, proclaim<br>1a) (Qal)<br>1a1) to call, cry, utter a loud sound<br>1a2) to call unto, cry (for help), call (with name of God)<br>1a3) to proclaim<br>1a4) to read aloud, read (to oneself), read<br>1a5) to summon, invite, call for, call and commission, appoint, call and endow<br>1a6) to call, name, give name to, call by<br>1b) (Niphal)<br>1b1) to call oneself<br>1b2) to be called, be proclaimed, be read aloud, be summoned, be named<br>1c) (Pual) to be called, be named, be called out, be chosen | HVqw3ms | **✓ to call: call to** |
+| 1 | called | **H7121G** | call to/invite/entreat | HVqw3ms | **✓ to call: call to** |
 | 2 | upon | H0413 |  | HR |  |
 | 3 | Lord | H3068G |  | HNpt |  |
 | 4 | Lord | H3068G |  | HNpt |  |
-| 5 | sent | **H5414G** | give/deliver/send/produce<br>1) to give, put, set<br>1a) (Qal)<br>1a1) to give, bestow, grant, permit, ascribe, employ, devote, consecrate, dedicate, pay wages, sell, exchange, lend, commit, entrust, give over, deliver up, yield produce, occasion, produce, requite to, report, mention, utter, stretch out, extend<br>1a2) to put, set, put on, put upon, set, appoint, assign, designate<br>1a3) to make, constitute<br>1b) (Niphal)<br>1b1) to be given, be bestowed, be provided, be entrusted to, be granted to, be permitted, be issued, be published, be uttered, be assigned<br>1b2) to be set, be put, be made, be inflicted<br>1c) (Hophal)<br>1c1) to be given, be bestowed, be given up, be delivered up<br>1c2) to be put upon | HVqw3ms | **✓ to give: give** |
+| 5 | sent | **H5414G** | give/deliver/send/produce | HVqw3ms | **✓ to give: give** |
 | 6 | thunder | **H6963I** |  | HNcfpa | **✓ voice** |
 | 7 | rain | H4306 |  | HNcmsa |  |
 | 8 | rain | H9002 |  | HC | part |
 | 9 | day | **H3117G** |  | HNcmsa | **✓ day** |
 | 10 | day | H9003 |  | HRd | part |
 | 11 | all | H3605 |  | HNcmsc |  |
-| 12 | people | **H5971A** | people/nation<br>1) nation, people<br>1a) people, nation<br>1b) persons, members of one's people, compatriots, country-men | HNcmsa | **✓ people** |
+| 12 | people | **H5971A** | people/nation | HNcmsa | **✓ people** |
 | 13 | people | H9009 |  | HTd | part |
 | 14 | greatly | **H3966** | much | HAcmsa | **✓ much** |
-| 15 | feared | **H3372H** | awesome(god)<br>1) to fear, revere, be afraid<br>1a) (Qal)<br>1a1) to fear, be afraid<br>1a2) to stand in awe of, be awed<br>1a3) to fear, reverence, honour, respect<br>1b) (Niphal)<br>1b1) to be fearful, be dreadful, be feared<br>1b2) to cause astonishment and awe, be held in awe<br>1b3) to inspire reverence or godly fear or awe<br>1c) (Piel) to make afraid, terrify<br>2) (TWOT) to shoot, pour<BR>Also means: <i>ya.re</i> (יָרֵא ": frightening" H3372) | HVqw3ms | **✓ to fear** |
+| 15 | feared | **H3372H** | awesome(god) | HVqw3ms | **✓ to fear** |
 | 16 | feared | H1931 |  | HPp3ms |  |
 | 17 | feared | H9009 |  | HTd | part |
 | 18 | Lord | H3068G |  | HNpt |  |
@@ -234,9 +234,9 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | all | H3605 |  | HNcmsc |  |
-| 1 | people | **H5971A** | people/nation<br>1) nation, people<br>1a) people, nation<br>1b) persons, members of one's people, compatriots, country-men | HNcmsa | **✓ people** |
+| 1 | people | **H5971A** | people/nation | HNcmsa | **✓ people** |
 | 2 | people | H9009 |  | HTd | part |
-| 3 | said | **H0559** | to say | HVqw3mp | **✓ 'God has forgotten, he won't see'** |
+| 3 | said | **H0559** | to say | HVqw3mp | **✓ 'God has forgotten, he won't see…** |
 | 4 | to | H0413 |  | HR |  |
 | 5 | Samuel | H8050G |  | HNpm |  |
 | 6 | Pray | **H6419** | to pray | HVtv2ms | **✓ to pray** |
@@ -251,11 +251,11 @@
 | 15 | not | H9021 |  | HSp2ms | part |
 | 16 | die | **H4191** | to die | HVqc1cp | **✓ to die** |
 | 17 | for | H3588A |  | HTc |  |
-| 18 | added | **H3254H** | add/more[amount]<br>1) to add, increase, do again<br>1a) (Qal) to add, increase, do again<br>1b) (Niphal)<br>1b1) to join, join oneself to<br>1b2) to be joined, be added to<br>1c) (Hiphil)<br>1c1) to cause to add, increase<br>1c2) to do more, do again | HVqp1cp | **✓ to add: again** |
+| 18 | added | **H3254H** | add/more[amount] | HVqp1cp | **✓ to add: again** |
 | 19 | to | **H5921A** | upon | HR | **✓ upon** |
 | 20 | all | H3605 |  | HNcmsc |  |
-| 21 | sins | **H2403B** | sin<br>1) sin, sin offering<br>1a) sin<br>1b) condition of sin, guilt of sin<br>1c) punishment for sin<br>1d) sin-offering<br>1e) purification from sins of ceremonial uncleanness | HNcfpc | **✓ sin** |
-| 22 | evil | **H7451I** | harm<br>1) evil, misery, distress, injury<br>1a) evil, misery, distress<br>1b) evil, injury, wrong<br>1c) evil (ethical) | HNcfsa | **✓ bad: harmful** |
+| 21 | sins | **H2403B** | sin | HNcfpc | **✓ sin** |
+| 22 | evil | **H7451I** | harm | HNcfsa | **✓ bad: harmful** |
 | 23 | evil | H9025 |  | HSp1bp | part |
 | 24 | ask | **H7592** | to ask | HVqcc | **✓ pray (shaal)** |
 | 25 | ask | H9005 |  | HR | part |
@@ -269,27 +269,27 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | Samuel | H8050G |  | HNpm |  |
-| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see'** |
+| 1 | said | **H0559** | to say | HVqw3ms | **✓ 'God has forgotten, he won't see…** |
 | 2 | to | H0413 |  | HR |  |
-| 3 | people | **H5971A** | people/nation<br>1) nation, people<br>1a) people, nation<br>1b) persons, members of one's people, compatriots, country-men | HNcmsa | **✓ people** |
+| 3 | people | **H5971A** | people/nation | HNcmsa | **✓ people** |
 | 4 | people | H9009 |  | HTd | part |
 | 5 | not | H0408 |  | HTn |  |
-| 6 | afraid | **H3372G** | frightening(DANGER)<br>1) to fear, revere, be afraid<br>1a) (Qal)<br>1a1) to fear, be afraid<br>1a2) to stand in awe of, be awed<br>1a3) to fear, reverence, honour, respect<br>1b) (Niphal)<br>1b1) to be fearful, be dreadful, be feared<br>1b2) to cause astonishment and awe, be held in awe<br>1b3) to inspire reverence or godly fear or awe<br>1c) (Piel) to make afraid, terrify<br>2) (TWOT) to shoot, pour | HVqj2mp | **✓ to fear** |
+| 6 | afraid | **H3372G** | frightening(DANGER) | HVqj2mp | **✓ to fear** |
 | 7 | you | H0859D |  | HPp2mp |  |
-| 8 | done | **H6213A** | do/perform<br>1) to do, fashion, accomplish, make<br>1a) (Qal)<br>1a1) to do, work, make, produce<br>1a1a) to do<br>1a1b) to work<br>1a1c) to deal (with)<br>1a1d) to act, act with effect, effect<br>1a2) to make<br>1a2a) to make<br>1a2b) to produce<br>1a2c) to prepare<br>1a2d) to make (an offering)<br>1a2e) to attend to, put in order<br>1a2f) to observe, celebrate<br>1a2g) to acquire (property)<br>1a2h) to appoint, ordain, institute<br>1a2i) to bring about<br>1a2j) to use<br>1a2k) to spend, pass<br>1b) (Niphal)<br>1b1) to be done<br>1b2) to be made<br>1b3) to be produced<br>1b4) to be offered<br>1b5) to be observed<br>1b6) to be used<br>1c) (Pual) to be made | HVqp2mp | **✓ practice (asah)** |
+| 8 | done | **H6213A** | do/perform | HVqp2mp | **✓ practice (asah)** |
 | 9 | all | H3605 |  | HNcmsc |  |
 | 10 | all | H0853 |  | HTo |  |
 | 11 | this | H2063 |  | HTm |  |
 | 12 | this | H9009 |  | HTd | part |
-| 13 | evil | **H7451I** | harm<br>1) evil, misery, distress, injury<br>1a) evil, misery, distress<br>1b) evil, injury, wrong<br>1c) evil (ethical) | HNcfsa | **✓ bad: harmful** |
+| 13 | evil | **H7451I** | harm | HNcfsa | **✓ bad: harmful** |
 | 14 | evil | H9009 |  | HTd | part |
 | 15 | Yet | H0389 |  | HD |  |
 | 16 | not | H0408 |  | HTn |  |
-| 17 | turn aside | **H5493I** | turn aside/deflect<br>1) to turn aside, depart<br>1a) (Qal)<br>1a1) to turn aside, turn in unto<br>1a2) to depart, depart from way, avoid<br>1a3) to be removed<br>1a4) to come to an end<br>1b) (Polel) to turn aside<br>1c) (Hiphil)<br>1c1) to cause to turn aside, cause to depart, remove, take away, put away, depose<br>1c2) to put aside, leave undone, retract, reject, abolish<br>1d) (Hophal) to be taken away, be removed | HVqj2mp | **✓ turn aside (sur, negated)** |
+| 17 | turn aside | **H5493I** | turn aside/deflect | HVqj2mp | **✓ turn aside (sur, negated)** |
 | 18 | from | H9006 |  | HR | part |
 | 19 | following | H0310A |  | HAcmpc |  |
 | 20 | Lord | H3068G |  | HNpt |  |
-| 21 | serve | **H5647G** | serve[someone]<br>1) to work, serve<br>1a) (Qal)<br>1a1) to labour, work, do work<br>1a2) to work for another, serve another by labour<br>1a3) to serve as subjects<br>1a4) to serve (God)<br>1a5) to serve (with Levitical service)<br>1b) (Niphal)<br>1b1) to be worked, be tilled (of land)<br>1b2) to make oneself a servant<br>1c) (Pual) to be worked<br>1d) (Hiphil)<br>1d1) to compel to labour or work, cause to labour, cause to serve<br>1d2) to cause to serve as subjects<br>1e) (Hophal) to be led or enticed to serve | HVqq2mp | **✓ to serve** |
+| 21 | serve | **H5647G** | serve[someone] | HVqq2mp | **✓ to serve** |
 | 22 | Lord | H3068G |  | HNpt |  |
 | 23 | Lord | H0853 |  | HTo |  |
 | 24 | all | H3605 |  | HNcmsc |  |
@@ -304,7 +304,7 @@
 | --: | --- | --- | --- | --- | --- |
 | 0 | not | H3808 |  | HTn |  |
 | 1 | not | H9002 |  | HC | part |
-| 2 | turn aside | **H5493I** | turn aside/deflect<br>1) to turn aside, depart<br>1a) (Qal)<br>1a1) to turn aside, turn in unto<br>1a2) to depart, depart from way, avoid<br>1a3) to be removed<br>1a4) to come to an end<br>1b) (Polel) to turn aside<br>1c) (Hiphil)<br>1c1) to cause to turn aside, cause to depart, remove, take away, put away, depose<br>1c2) to put aside, leave undone, retract, reject, abolish<br>1d) (Hophal) to be taken away, be removed | HVqi2mp | **✓ turn aside (sur, negated)** |
+| 2 | turn aside | **H5493I** | turn aside/deflect | HVqi2mp | **✓ turn aside (sur, negated)** |
 | 3 | after | H0310A |  | HAcmpc |  |
 | 4 | empty things | H8414 |  | HNcmsa |  |
 | 5 | empty things | H9009 |  | HTd | part |
@@ -342,7 +342,7 @@
 | --: | --- | --- | --- | --- | --- |
 | 0 | reward | **H7760H** |  | HVqw3mp | **✓ make (sim)** |
 | 1 | me | **H5921A** | upon | HR | **✓ upon** |
-| 2 | evil | **H7451I** | harm<br>1) evil, misery, distress, injury<br>1a) evil, misery, distress<br>1b) evil, injury, wrong<br>1c) evil (ethical) | HNcfsa | **✓ bad: harmful** |
+| 2 | evil | **H7451I** | harm | HNcfsa | **✓ bad: harmful** |
 | 3 | evil | H9030 |  | HSp1bs | part |
 | 4 | for | H8478H |  | HNcmsc |  |
 | 5 | good | **H2896C** | welfare | HNcfsa | **✓ pleasant** |
@@ -357,13 +357,13 @@
 
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
-| 0 | Appoint | **H6485J** | overseer/appoint<br>1) to attend to, muster, number, reckon, visit, punish, appoint, look after, care for<br>1a) (Qal)<br>1a1) to pay attention to, observe<br>1a2) to attend to<br>1a3) to seek, look about for<br>1a4) to seek in vain, need, miss, lack<br>1a5) to visit<br>1a6) to visit upon, punish<br>1a7) to pass in review, muster, number<br>1a8) to appoint, assign, lay upon as a charge, deposit<br>1b) (Niphal)<br>1b1) to be sought, be needed, be missed, be lacking<br>1b2) to be visited<br>1b3) to be visited upon<br>1b4) to be appointed<br>1b5) to be watched over<br>1c) (Piel) to muster, call up<br>1d) (Pual) to be passed in review, be caused to miss, be called, be called to account<br>1e) (Hiphil)<br>1e1) to set over, make overseer, appoint an overseer<br>1e2) to commit, entrust, commit for care, deposit<br>1f) (Hophal)<br>1f1) to be visited<br>1f2) to be deposited<br>1f3) to be made overseer, be entrusted<br>1g) (Hithpael) numbered<br>1h) (Hothpael) numbered | HVhv2ms | **✓ into your hand I commit my spirit** |
+| 0 | Appoint | **H6485J** | overseer/appoint | HVhv2ms | **✓ into your hand I commit my spiri…** |
 | 1 | wicked man | **H7563** | wicked | HNcmsa | **✓ wicked** |
 | 2 | wicked man | H9033 |  | HSp3ms | part |
 | 3 | against | **H5921A** | upon | HR | **✓ upon** |
 | 4 | accuser | **H7854** | Satan | HNcmsa | **✓ accuser (satan)** |
 | 5 | accuser | H9002 |  | HC | part |
-| 6 | stand | **H5975G** | stand/stop/establish<br>1) to stand, remain, endure, take one's stand<br>1a) (Qal)<br>1a1) to stand, take one's stand, be in a standing attitude, stand forth, take a stand, present oneself, attend upon, be or become servant of<br>1a2) to stand still, stop (moving or doing), cease<br>1a3) to tarry, delay, remain, continue, abide, endure, persist, be steadfast<br>1a4) to make a stand, hold one's ground<br>1a5) to stand upright, remain standing, stand up, rise, be erect, be upright<br>1a6) to arise, appear, come on the scene, stand forth, appear, rise up or against<br>1a7) to stand with, take one's stand, be appointed, grow flat, grow insipid<br>1b) (Hiphil)<br>1b1) to station, set<br>1b2) to cause to stand firm, maintain<br>1b3) to cause to stand up, cause to set up, erect<br>1b4) to present (one) before (king)<br>1b5) to appoint, ordain, establish<br>1c) (Hophal) to be presented, be caused to stand, be stood before | HVqi3ms | **✓ stands not in sinners' way** |
+| 6 | stand | **H5975G** | stand/stop/establish | HVqi3ms | **✓ stands not in sinners' way** |
 | 7 | at | **H5921A** | upon | HR | **✓ upon** |
 | 8 | his | H9023 |  | HSp3ms | part |
 | 9 | right hand | H3225G |  | HNcfsc |  |
@@ -374,8 +374,8 @@
 | pos | surface | strong | gloss | morph | candidate |
 | --: | --- | --- | --- | --- | --- |
 | 0 | When | H9003 |  | HR | part |
-| 1 | tried | **H8199** | to judge | HVNcc | **✓ defend / judge for (shaphat - may he defend the cause of the poor)** |
-| 2 | forth | **H3318G** | come/go out/escape<br>1) to go out, come out, exit, go forth<br>1a) (Qal)<br>1a1) to go or come out or forth, depart<br>1a2) to go forth (to a place)<br>1a3) to go forward, proceed to (to or toward something)<br>1a4) to come or go forth (with purpose or for result)<br>1a5) to come out of<br>1b) (Hiphil)<br>1b1) to cause to go or come out, bring out, lead out<br>1b2) to bring out of<br>1b3) to lead out<br>1b4) to deliver<br>1c) (Hophal) to be brought out or forth | HVqi3ms | **✓ to come out: come** |
+| 1 | tried | **H8199** | to judge | HVNcc | **✓ defend / judge for (shaphat - ma…** |
+| 2 | forth | **H3318G** | come/go out/escape | HVqi3ms | **✓ to come out: come** |
 | 3 | forth | H9043 |  | HSp3ms | part |
 | 4 | guilty | **H7563** | wicked | HNcmsa | **✓ wicked** |
 | 5 | prayer | **H8605** | prayer | HNcfsc | **✓ prayer** |
@@ -395,7 +395,7 @@
 | 2 | few | H4592 |  | HNcmpa |  |
 | 3 | few | H9023 |  | HSp3ms | part |
 | 4 | another | H0312 |  | HAamsa |  |
-| 5 | take | **H3947G** | take<br>1) to take, get, fetch, lay hold of, seize, receive, acquire, buy, bring, marry, take a wife, snatch, take away<br>1a) (Qal)<br>1a1) to take, take in the hand<br>1a2) to take and carry along<br>1a3) to take from, take out of, take, carry away, take away<br>1a4) to take to or for a person, procure, get, take possession of, select, choose, take in marriage, receive, accept<br>1a5) to take up or upon, put upon<br>1a6) to fetch<br>1a7) to take, lead, conduct<br>1a8) to take, capture, seize<br>1a9) to take, carry off 1a10) to take (vengeance)<br>1b) (Niphal)<br>1b1) to be captured<br>1b2) to be taken away, be removed<br>1b3) to be taken, brought unto<br>1c) (Pual)<br>1c1) to be taken from or out of<br>1c2) to be stolen from<br>1c3) to be taken captive<br>1c4) to be taken away, be removed<br>1d) (Hophal)<br>1d1) to be taken unto, be brought unto<br>1d2) to be taken out of<br>1d3) to be taken away<br>1e) (Hithpael)<br>1e1) to take hold of oneself<br>1e2) to flash about (of lightning) | HVqi3ms | **✓ to take: take** |
+| 5 | take | **H3947G** | take | HVqi3ms | **✓ to take: take** |
 | 6 | take | H9023 |  | HSp3ms | part |
 | 7 | office | H6486 |  | HNcfsc |  |
 
