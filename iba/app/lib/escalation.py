@@ -43,24 +43,24 @@ def raise_(db: Db, run_id: str, word: str, at_step: str, question: str,
 
 
 def pending_for_word(db: Db, word: str):
-    """The latest un-answered escalation for a word, or None."""
+    """The latest un-answered escalation for a word, or None. Case-insensitive on word."""
     return db.rows(
-        "SELECT * FROM escalation WHERE word=? AND state='raised' "
+        "SELECT * FROM escalation WHERE lower(word)=lower(?) AND state='raised' "
         "ORDER BY id DESC LIMIT 1", (word,))
     # returns a list; caller takes [0]
 
 
 def answered_for_word(db: Db, word: str, at_step: str):
-    """The latest ANSWERED escalation for a word at a step, or None."""
+    """The latest ANSWERED escalation for a word at a step, or None. Case-insensitive."""
     rows = db.rows(
-        "SELECT * FROM escalation WHERE word=? AND at_step=? AND state='answered' "
+        "SELECT * FROM escalation WHERE lower(word)=lower(?) AND at_step=? AND state='answered' "
         "ORDER BY id DESC LIMIT 1", (word, at_step))
     return rows[0] if rows else None
 
 
 def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str) -> str:
     """Record the researcher's answer and advance the word's status accordingly.
-    decision: 'yes' -> approved, 'no' -> rejected."""
+    decision: 'yes' -> approved, 'no' -> rejected. Case-insensitive on word."""
     rows = pending_for_word(db, word)
     if not rows:
         return f"no pending escalation for {word!r}"
@@ -69,8 +69,11 @@ def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str) -> str:
     db.update("escalation", {"id": esc["id"]}, state="answered",
               answer=decision, answered_at=_now())
     new_status = "approved" if decision == "yes" else "rejected"
-    if db.get("word_registry", word=word):
-        db.update("word_registry", {"word": word}, status=new_status)
+    wr = db.rows("SELECT id, word FROM word_registry WHERE lower(word)=lower(?) AND deleted=0",
+                 (esc["word"],))
+    if wr:
+        db.update("word_registry", {"id": wr[0]["id"]}, status=new_status)
+        word = wr[0]["word"]      # report the canonical stored form
     return f"escalation {esc['id']} answered {decision!r}; {word!r} status -> {new_status}"
 
 

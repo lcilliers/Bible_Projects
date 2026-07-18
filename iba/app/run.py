@@ -20,6 +20,7 @@ import sys
 from .lib.cfg import Cfg
 from .lib.db import Db
 from .lib.stepapi import Step
+from .lib.words import normalise
 from .handlers.base import Ctx, Outcome
 
 # path -> what the run does + the process exit code
@@ -54,6 +55,8 @@ def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
 def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     cfg = Cfg()
     db = Db(cfg)
+    if "Word" in params:                                  # normalise once, at the boundary
+        params["Word"] = normalise(params["Word"], cfg)
     step_cfg = cfg.step(package, step_id)                 # <- handler, scope from config
     handler = _resolve(step_cfg["handler"])
     _ensure_run(db, cfg, package, params, run_id)
@@ -76,8 +79,8 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     if path == "pause-continue" and outcome.escalation:
         e = outcome.escalation
         # idempotent: do not raise a duplicate if one is already pending for (word, step)
-        already = db.rows("SELECT id FROM escalation WHERE word=? AND at_step=? AND state='raised'",
-                          (ctx.word, step_id))
+        already = db.rows("SELECT id FROM escalation WHERE lower(word)=lower(?) AND at_step=? "
+                          "AND state='raised'", (ctx.word, step_id))
         if not already:
             _grant(cfg, "escalation")
             db.write("escalation", {
@@ -89,6 +92,11 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)
+        # close the run when the LAST step in the sequence completes on a continue path
+        seq = [r["step"] for r in cfg.sequence(package)]
+        if seq and step_id == seq[-1]:
+            db.update("run", {"run_id": run_id}, state="done", ended_at=_now(),
+                      outcome=message or "complete")
 
     db.close()
     return {"step": step_id, "condition": outcome.condition, "path": path,

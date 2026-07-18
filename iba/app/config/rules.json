@@ -13,7 +13,8 @@
     "discovery.particle_pattern":{"value": "^[HG]9\\d{3}$", "use": "grammar-particle codes; excluded from discovery, flagged on a span"},
     "discovery.follow_related": {"value": false,     "use": "relatedNos is root-family noise (H2519 -> 'to divide', 'Mount Halak'). Not followed."},
     "meaning.head_marker":      {"value": ": ",      "use": "a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma."},
-    "language.greek_prefix":    {"value": "G",       "use": "a strong starting with this is Greek; else Hebrew"}
+    "language.greek_prefix":    {"value": "G",       "use": "a strong starting with this is Greek; else Hebrew"},
+    "registry.strip_ends_pattern":{"value": "[^A-Za-z]", "use": "on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive."}
   },
 
   "on_fail": [

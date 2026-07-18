@@ -111,18 +111,37 @@ iba\app\ps\Start-Iba.ps1 -Reset     # rebuild the data tables — DROPS all data
 ## 3. The first run
 
 ```powershell
+iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
+# e.g.
 iba\app\ps\New-Word.ps1 -Word hypocrisy -Source "gap scan 2026-07-18"
 ```
 
 `-Word` is the English inner-being word; `-Source` is why you are registering it (it is recorded).
 
-The run walks 7 steps, and **the first time a word is seen it pauses for your approval**:
+**The word is normalised and de-duplicated at entry.** Surrounding whitespace and stray characters
+are stripped (`[hypocrisy]` → `hypocrisy`), and matching is **case-insensitive** (`Fear` and `fear`
+are one word). So a typo like `[hypocrisy]` is recognised as the existing word, not registered as a
+new one. Before registering, the app also checks whether an existing word already holds the same
+Strong's — if so, it asks you to confirm it really is a distinct word (see §4).
+
+The run walks 7 steps, and **the first time a genuinely new word is seen it pauses for your
+approval**:
 
 ```
-  registry.exists    ok             word is new or mid-build
-  registry.create    pause-continue a new word needs researcher approval — Register the new word 'hypocrisy'?
+  registry.exists    ok             'malice' is not in the registry — a new word
+  registry.create    pause-continue a new word needs researcher approval — Register the new word 'malice'?
 PAUSED — a researcher escalation was raised; the run is resumable.
 ```
+
+`registry.exists` tells you the true state of the word rather than a vague label:
+
+| the word is… | you see |
+| --- | --- |
+| never seen | `'<w>' is not in the registry — a new word` |
+| awaiting your approval | `'<w>' is in the registry awaiting your approval — will resume its approval` |
+| approved, not yet built | `'<w>' is approved but its raw layer is not built — will build it` |
+| previously rejected | `'<w>' was rejected before — will propose it again` |
+| already built | **stops:** `'<w>' is already built (status raw-complete)` |
 
 This is by design: the app will not add a new registry word without you.
 
@@ -155,9 +174,35 @@ iba\app\ps\New-Word.ps1 -Word hypocrisy -Source "gap scan 2026-07-18"
 The pause is durable — you can answer and resume minutes or a restart later. `yes` approves the
 word; `no` rejects it and the run stops.
 
+**When the app suspects a duplicate**, the question changes to a confirmation — for example if the
+word maps to Strong's already held by an existing word:
+
+```text
+#   #2 [envy] at registry.create —
+#   'envy' shares ALL 3 strongs with existing word 'jealousy'. Register it as a SEPARATE word anyway?
+```
+
+Answering `no` stops it (it was a duplicate/typo); `yes` registers it as a distinct word.
+
 ---
 
-## 5. The output
+## 5. Removing test data
+
+To remove a word you registered by mistake or while testing:
+
+```powershell
+python -m iba.app.tools.purge_word --word "[hypocrisy]"          # dry-run: shows what would go
+python -m iba.app.tools.purge_word --word "[hypocrisy]" --yes    # actually delete
+```
+
+It matches the word **literally** (so you can target malformed residue exactly as it sits in the
+registry) and removes only that word's own rows — its registry entry, discovery links, escalations,
+runs, and validations. It **does not** touch the shared raw layer (strongs, verses, spans), which
+other words may reference; a full cascading delete is a later operation. Always dry-run first.
+
+---
+
+## 6. The output
 
 **The report:**
 
@@ -176,7 +221,7 @@ verse · strong_verse · span`, plus the control tables `run · escalation · va
 
 ---
 
-## 6. What the report shows is configurable
+## 7. What the report shows is configurable
 
 The report content is config, not code. To change what it shows, edit the settings in the DB
 (`cfg_setting`) or the seed `iba/app/config/report.json` then `Start-Iba.ps1 -Reload`:
@@ -191,7 +236,7 @@ The report content is config, not code. To change what it shows, edit the settin
 
 ---
 
-## 7. Everyday commands, in order
+## 8. Everyday commands, in order
 
 ```powershell
 # once, at the start of a session:
@@ -206,6 +251,9 @@ iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"     # resume
 # read it:
 python -m iba.app.report --word <word>
 
+# remove a test word (dry-run, then --yes):
+python -m iba.app.tools.purge_word --word <word>
+
 # start clean (drops data, keeps config):
 iba\app\ps\Start-Iba.ps1 -Reset
 
@@ -215,16 +263,17 @@ iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>" -Trace
 
 ---
 
-## 8. Where things are
+## 9. Where things are
 
-```
+```text
 iba/app/
   config/*.json     the config SEEDS you edit (schema, step, run, rules, report, reference)
   db/iba.db         the database (config tables cfg_* + the data)
   ps/               Start-Iba.ps1 · New-Word.ps1
   init.py           the bootstrap (Start-Iba calls it)
-  lib/              cfg (read) · cfgload+cfgcheck (load+validate) · db · stepapi · escalation
+  lib/              cfg (read) · cfgload+cfgcheck (load+validate) · db · stepapi · escalation · words
   handlers/         registry · raw   (the step logic — interpreters, no hard rules)
+  tools/            purge_word (maintenance: remove a word's own records)
   run.py            the dispatcher
   report.py         the output
   GOVERNANCE.md     how config governs the code
