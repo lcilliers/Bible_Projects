@@ -1,8 +1,40 @@
 # IBA app — user guide
 
-> The Inner Being Analysis app, raw slice. Registers an inner-being word and builds its **raw
-> layer** from STEP into a database. This guide covers the environment, startup, running, answering
-> the app when it needs you, and reading the output.
+## About the application
+
+The **Inner Being Analysis (IBA) app** serves the Inner Being Analysis Programme — a structured
+academic Bible-research programme whose object is **how Scripture expresses the workings of the
+human inner being**: the whole inner life (moral, emotional, volitional, relational, vertical and
+horizontal), with no theological bias and the human in focus. It works from a registry of ~214
+inner-being words, growing over time, each mapped through the STEP Bible to its Hebrew/Greek
+originals via Strong's — but the word registry is **scaffolding, not the object**. The analytical
+unit is a **focus point**: a latent, emergent configuration of the inner being that is never
+observed directly, only **inferred** from what a verse describes it doing. The method is therefore
+**infer, don't extract**, with validity established by the **convergence** of independent
+verse-grounded witnesses. *(Plan §1.1.)*
+
+**Why the app exists.** For roughly six months the study was attempted through an AI chat interface
+and failed repeatedly — the recurring root causes were rules that lived in a model's memory and
+were ignored, extraction masquerading as inference, "completeness" measured as coverage rather than
+sound reading, and a fragile, un-replayable chat loop. The application exists to make the study
+reliable by moving **the rules, the verse-grounding, and the gates out of a model's memory and into
+enforced software**: rules encoded and checked deterministically; the model used only for genuine
+inference and always validated; runs that are gated, tracked, resumable and replayable in the
+database. *(Plan §1.2, §1.4.)*
+
+**How it is built.** PowerShell is the framework (orchestration and process logic); Python modules
+do the work; **rules, settings and dependencies live in the configurator, never hard-coded** —
+changing a study rule or the pipeline is a configuration change, not a code change. The app is
+built out **operation by operation**, within a common framework. *(Plan §2.)*
+
+> ### Scope of this guide — read this
+>
+> **The application is under active construction, and this guide grows with it.** Today **one
+> operation is live: the new-word run** (register an inner-being word and build its **raw layer**
+> from STEP — terms, meanings, verses, and the per-word span layer). The raw layer is the
+> evidentiary floor; the interpretive stages (base, lexical, characteristics, findings) and their
+> operations will be added in later increments, and this guide will be extended to cover each as it
+> lands. Where this guide describes a command or a report, it describes what exists now.
 
 ---
 
