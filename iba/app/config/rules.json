@@ -32,7 +32,7 @@
     "registry.create": ["word_registry", "escalation"],
     "raw.write":       ["word_registry"],
     "raw.validate":    ["validation_result"],
-    "run":             ["run", "escalation", "word_registry"],
+    "run":             ["run", "escalation", "word_registry", "validation_result"],
     "escalation":      ["escalation", "word_registry"]
   },
 

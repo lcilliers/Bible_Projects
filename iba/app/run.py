@@ -42,6 +42,18 @@ def _grant(cfg: Cfg, table: str):
         raise PermissionError(f"write-grant violation: 'run' may not write {table!r} (cfg_write_grant)")
 
 
+def _snapshot(db: Db, cfg: Cfg, run_id: str, word: str, phase: str):
+    """Record a row-count of every data table as the run's pre/post baseline. Written
+    under the 'run' grant into validation_result; delta = post - pre = what the run did."""
+    _grant(cfg, "validation_result")
+    for t in cfg.tables():
+        n = db.rows(f'SELECT COUNT(*) n FROM "{t}"')[0]["n"]
+        db.write("validation_result", {
+            "run_id": run_id, "word": word, "step": "snapshot",
+            "check_name": f"{phase}:{t}", "result": "count", "detail": str(n),
+            "ran_at": _now(), "deleted": 0})
+
+
 def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
     if db.get("run", run_id=run_id):
         return
@@ -50,6 +62,7 @@ def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
         "runs_over": params.get("Word", ""), "config_version": cfg.config_version(),
         "state": "running", "resume_point": "", "started_at": _now()})
+    _snapshot(db, cfg, run_id, params.get("Word", ""), "pre")   # baseline before any work
 
 
 def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
@@ -97,6 +110,7 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         if seq and step_id == seq[-1]:
             db.update("run", {"run_id": run_id}, state="done", ended_at=_now(),
                       outcome=message or "complete")
+            _snapshot(db, cfg, run_id, ctx.word, "post")   # final state for the delta
 
     db.close()
     return {"step": step_id, "condition": outcome.condition, "path": path,
