@@ -85,5 +85,16 @@ Write-Host ""
 if (-not $halt) {
     Write-Host "COMPLETE — raw layer built for '$Word'." -ForegroundColor Green
     Write-Host "  report: python -m iba.app.report --word $Word"
+
+    # coupling: a new word updates the candidate seed (the registry-direct layer picks it up,
+    # shrinking the missing-registry-word list). Best-effort — needs the seed migration first.
+    $seedRun = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-SEED-REFRESH"
+    $sj = python -m iba.app.run set-candidates --step candidate.seed --run-id $seedRun --param "Trigger=new-word"
+    if ($LASTEXITCODE -eq 0) {
+        $sr = $sj | ConvertFrom-Json
+        Write-Host "  candidate seed: $($sr.message)" -ForegroundColor DarkGray
+    } else {
+        Write-Host "  candidate seed not refreshed (run the seed migration first)" -ForegroundColor DarkGray
+    }
 }
 exit $exitCode

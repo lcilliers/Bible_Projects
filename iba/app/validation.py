@@ -225,11 +225,94 @@ def generate(word: str) -> pathlib.Path:
     return out, overall, (passes, warns, fails)
 
 
+def _base_checks(cfg: Cfg, db: Db, book: str) -> list[Check]:
+    """Base-layer checks (candidate L4b + passages) for a book. Config-derived where it can be."""
+    out = []
+    like = f"{book}.%"
+    S = "3. Candidate (L4b)"
+    P = "4. Passages"
+    q1 = lambda sql, pr=(): db.rows(sql, pr)[0]["n"]
+
+    # candidate integrity
+    orphan = q1("SELECT COUNT(*) n FROM span_candidate sc WHERE sc.deleted=0 AND NOT EXISTS "
+                "(SELECT 1 FROM span sp WHERE sp.id=sc.span_id)")
+    out.append(Check(S, "span_candidate -> span resolves", "0 orphan", f"{orphan} orphan",
+                     "PASS" if orphan == 0 else "FAIL"))
+    badinv = q1("SELECT COUNT(*) n FROM candidate_seed cs WHERE cs.deleted=0 AND NOT EXISTS "
+                "(SELECT 1 FROM lemma_inventory li WHERE li.lemma_key=cs.lemma_key)")
+    out.append(Check(S, "candidate_seed -> lemma_inventory", "0 orphan", f"{badinv} orphan",
+                     "PASS" if badinv == 0 else "FAIL"))
+    stamped = q1("SELECT COUNT(*) n FROM span_candidate sc JOIN span sp ON sp.id=sc.span_id "
+                 "JOIN verse v ON v.id=sp.verse_id WHERE v.osisId LIKE ? AND sc.deleted=0", (like,))
+    out.append(Check(S, "candidate spans stamped (book)", ">=0", str(stamped), "PASS"))
+    missing = q1("SELECT COUNT(*) n FROM candidate_seed WHERE decision='candidate' "
+                 "AND registry_match IS NULL AND deleted=0")
+    out.append(Check(S, "candidate missing registry words (double control)", "informational",
+                     f"{missing} lemma(s)", "WARN" if missing else "PASS",
+                     "candidate lemmas no registry word carries — grow the registry"))
+
+    # passages
+    pc = q1("SELECT COUNT(*) n FROM passage WHERE book=? AND deleted=0", (book,))
+    unpass = q1("SELECT COUNT(DISTINCT sp.verse_id) n FROM span_candidate sc "
+                "JOIN span sp ON sp.id=sc.span_id JOIN verse v ON v.id=sp.verse_id "
+                "WHERE v.osisId LIKE ? AND sc.deleted=0 AND NOT EXISTS "
+                "(SELECT 1 FROM verse_passage vp WHERE vp.verse_id=sp.verse_id)", (like,))
+    out.append(Check(P, "candidate-bearing verses unpassaged", "0", f"{unpass}",
+                     "PASS" if unpass == 0 else "FAIL", "completeness gate"))
+    dup = q1("SELECT COUNT(*) n FROM (SELECT vp.verse_id FROM verse_passage vp JOIN verse v "
+             "ON v.id=vp.verse_id WHERE v.osisId LIKE ? GROUP BY vp.verse_id HAVING COUNT(*)>1)", (like,))
+    out.append(Check(P, "verse in at most one passage", "0 dup", f"{dup} dup",
+                     "PASS" if dup == 0 else "FAIL"))
+    anc = q1("SELECT COUNT(*) n FROM verse_passage vp JOIN passage p ON p.id=vp.passage_id "
+             "WHERE p.book=? AND vp.is_anchor=1", (book,))
+    out.append(Check(P, "anchors = passage count", str(pc), str(anc), "PASS" if anc == pc else "FAIL"))
+    cross = q1("SELECT COUNT(*) n FROM passage WHERE book=? AND start_chapter<>end_chapter", (book,))
+    out.append(Check(P, "passages do not cross chapters", "0", f"{cross}",
+                     "PASS" if cross == 0 else "FAIL"))
+    nr = q1("SELECT COUNT(*) n FROM passage WHERE book=? AND needs_review=1", (book,))
+    out.append(Check(P, f"passages needing review (> review_over verses)", "reviewed", f"{nr} flagged",
+                     "WARN" if nr else "PASS", "a long run may be several passages — confirm the rule"))
+    return out
+
+
+def generate_book(book: str) -> tuple:
+    cfg = Cfg()
+    db = Db(cfg)
+    health, _ = _health(cfg, db, book)
+    # keep only the app/DB rows from health (drop the word-run row, which is word-scoped)
+    health = [c for c in health if c.name != "latest run complete"]
+    checks = health + _base_checks(cfg, db, book)
+    fails = sum(1 for c in checks if c.verdict == "FAIL")
+    warns = sum(1 for c in checks if c.verdict == "WARN")
+    passes = sum(1 for c in checks if c.verdict == "PASS")
+    overall = "FAIL" if fails else ("WARN" if warns else "PASS")
+
+    L = [f"# Base validation report — book {book!r}", "",
+         f"> Generated {_now()}. Read-only. Candidate (L4b) + passages.", "",
+         f"## Verdict: {_mark(overall)}   ({passes} pass · {warns} warn · {fails} fail)", ""]
+    for sec in ("1. App & DB", "3. Candidate (L4b)", "4. Passages"):
+        rows = [[_mark(c.verdict), c.name, c.expected, c.actual, c.detail]
+                for c in checks if c.section == sec]
+        if not rows:
+            continue
+        L.append(f"## {sec}")
+        L += _tbl(["verdict", "check", "expected", "actual", "detail"], rows)
+        L.append("")
+    db.close()
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    out = REPORTS / f"validation-book-{book}.md"
+    out.write_text("\n".join(L) + "\n", encoding="utf-8")
+    return out, overall, (passes, warns, fails)
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Raw-layer validation report for a word.")
-    ap.add_argument("--word", required=True)
+    ap = argparse.ArgumentParser(description="Validation report — raw layer (--word) or base layer (--book).")
+    ap.add_argument("--word")
+    ap.add_argument("--book")
     a = ap.parse_args()
-    out, overall, (p, w, f) = generate(a.word)
+    if not a.word and not a.book:
+        ap.error("give --word or --book")
+    out, overall, (p, w, f) = generate_book(a.book) if a.book else generate(a.word)
     print(f"{overall}  ({p} pass · {w} warn · {f} fail)  -> {out}")
     return 0 if overall != "FAIL" else 1
 

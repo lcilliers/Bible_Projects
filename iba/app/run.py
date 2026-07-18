@@ -67,7 +67,8 @@ def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
         "runs_over": _scope(params), "config_version": cfg.config_version(),
         "state": "running", "resume_point": "", "started_at": _now()})
-    _snapshot(db, cfg, run_id, _scope(params), "pre")   # baseline before any work
+    if _scope(params):                                   # skip for scope-less runs (e.g. seed refresh)
+        _snapshot(db, cfg, run_id, _scope(params), "pre")
 
 
 def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
@@ -115,7 +116,8 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         if seq and step_id == seq[-1]:
             db.update("run", {"run_id": run_id}, state="done", ended_at=_now(),
                       outcome=message or "complete")
-            _snapshot(db, cfg, run_id, ctx.word, "post")   # final state for the delta
+            if ctx.word:                                   # post-delta only for scoped runs
+                _snapshot(db, cfg, run_id, ctx.word, "post")
 
     db.close()
     return {"step": step_id, "condition": outcome.condition, "path": path,
