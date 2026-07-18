@@ -86,27 +86,61 @@ re-stamp.
 
 ## 3. New-app design
 
-### 3.1 Key adaptation — the seed is grounded in the registry→strong mapping
+### 3.1 The seed is INDEPENDENT of the registry — an over-inclusive control
 
-The app already links each registry inner-being word to its Strong's (`word_strong`, built by the
-raw slice). So the candidate set is **precise by construction**: the candidate lemmas are the
-**base-Strong's of the registry words** — no gloss-matching heuristic, and the old rejected
-routes are avoided outright. Curated-synonym and IB-judgement lemmas that no registry word carries
-are an **optional config extension**; read-emergent lemmas are the self-learning extension. This
-is strictly better-grounded than the old gloss match.
+> **Corrected 2026-07-18 (researcher).** An earlier draft grounded the seed in `word_strong`
+> (registry→strong). That is wrong: it makes the seed a mirror of the registry.
+
+The seed must **not** be derived from the registry, for three reasons:
+
+- **The registry is incomplete** and new inner-being words are still discovered. A registry-derived
+  seed can only reflect the registry — it can never reveal what the registry is *missing*.
+- **The independent seed is a double control on registry completeness.** Its whole value is that it
+  is assessed *independently*: a lemma the net judges inner-being but that **no registry word
+  carries is a candidate missing registry word** — a signal to grow the registry. Grounding the
+  seed in the registry destroys that control.
+- **The seed is over-inclusive by design — potential, not definite.** It marks lemmas that *could*
+  be a characteristic *in some context*, not only those that definitely are. The **actual test is
+  the lexical stage** (Axis B — each span's role re-evaluated in context), and the seed must stay
+  open to **continuous learning**: reads that surface new IB strongs feed back into it.
+
+So the seed runs an **over-inclusive meaning net over an independent corpus lemma inventory**, in
+the old study's three layers — (1) registry-direct match (the registry as *one* evidence layer,
+**and** the thing being checked, not the source), (2) curated synonyms (editable dictionary),
+(3) broad IB judgement + manual accept/reject — deliberately generous. The hard-won artifacts
+already exist (the ~11,804-lemma inventory, curated synonyms, IB-judgement, read-emergent
+extension); the app **imports them as the starting substrate** and maintains them (plan §1.5). The
+registry is one input and, simultaneously, the thing the seed **audits for completeness**.
 
 ### 3.2 New tables (proposed — schema.json additions)
 
-**`candidate_seed`** — the candidate dictionary (global; the Axis-A "which lemmas are candidates").
+**`lemma_inventory`** — the **independent** corpus lemma substrate the net runs over (imported;
+not derived from the registry). This is what makes the seed an independent control.
 
 | column | type | notes |
 | --- | --- | --- |
 | id | INTEGER pk | |
 | lemma_key | TEXT notnull **unique** | base Strong's (sub-letters stripped, e.g. `H2603`) |
-| decision | TEXT | `accept` \| `reject` (enum `candidate_decision`) |
-| tag | TEXT | IB label — the strong's gloss / registry word that made it a candidate |
-| source | TEXT | `registry-strong` \| `curated-synonym` \| `ib-judgement` \| `read-emergent` (enum `candidate_source`) |
+| gloss | TEXT | the lemma's English gloss (the meaning the net matches on) |
+| language | TEXT | Hebrew / Greek |
+| source | TEXT | import provenance (e.g. `lemma-inventory-master-2026`) |
 | created_at | TEXT | |
+
+**`candidate_seed`** — the **assessment** of each inventory lemma (over-inclusive; potential, not
+definite). One row per assessed lemma.
+
+| column | type | notes |
+| --- | --- | --- |
+| id | INTEGER pk | |
+| lemma_key | TEXT notnull **unique** **fk → lemma_inventory.lemma_key** | the assessed lemma |
+| decision | TEXT | `candidate` (potential — could be a char in some context) \| `rejected` \| `undecided` (enum `candidate_decision`) |
+| layer | TEXT | which layer decided it: `registry-direct` \| `curated-synonym` \| `ib-judgement` \| `read-emergent` (enum `candidate_source`) |
+| registry_match | TEXT | the registry word whose gloss matched, or NULL. **`decision=candidate` + NULL = a candidate missing registry word** (the double-control signal) |
+| tag | TEXT | IB label carried onto the stamp |
+| assessed_at | TEXT | |
+
+> `decision=candidate` means **potential**, deliberately over-inclusive — the definitive per-
+> occurrence test is the later lexical (role) stage, not this seed.
 
 **`span_candidate`** — the **L4b** stamp (one row per candidate span; existence = candidate).
 
@@ -155,12 +189,17 @@ Two work packages in `run.json`, each with its own PowerShell entry, both **runn
 against `cfg_book_order` — no book table needed).
 
 **Process (a) — `set-candidates` (manual).**  `Set-Candidates.ps1 -Book Prov`
-1. **`candidate.seed`** — refresh the global `candidate_seed` dictionary (idempotent): accept every
-   distinct base-Strong's in `word_strong`; apply the config accept/reject/synonym lists; consume
-   any `read-emergent` extensions. Writes `candidate_seed`.
-2. **`candidate.set`** — for every `span` in the book's verses whose base-Strong's is an `accept`
-   in `candidate_seed`, (re)write its `span_candidate` row (delete the book's rows first, then
-   restamp — clean re-derivation). Writes `span_candidate`.
+1. **`candidate.seed`** — refresh the global assessment (idempotent), **independently of the
+   registry**: ensure `lemma_inventory` is loaded (imported once), run the three-layer meaning net
+   over it — registry-direct match, curated synonyms, IB judgement (over-inclusive) — plus consume
+   any `read-emergent` extensions, and write `candidate_seed` decisions with the deciding `layer`
+   and `registry_match`. Emits the **double-control signal**: `decision=candidate` lemmas with
+   `registry_match IS NULL` = potential missing registry words. Writes `lemma_inventory` (first
+   run) + `candidate_seed`.
+2. **`candidate.set`** — for every `span` in the book's verses whose base-Strong's is a
+   `decision=candidate` lemma in `candidate_seed`, (re)write its `span_candidate` row (delete the
+   book's rows first, then restamp — clean re-derivation). Over-inclusive by intent; the lexical
+   stage later tests each in context. Writes `span_candidate`.
 
 **Process (b) — `build-passages` (manual, after (a)).**  `Build-Passages.ps1 -Book Prov [-Rule char-continuity|maximal]`
 1. **`passage.build`** — recompute the book's passages from `span_candidate`: sweep verses in
@@ -175,14 +214,19 @@ against `cfg_book_order` — no book table needed).
 - **settings (`rules.json`):** `candidate.lemma_base_pattern` = `^([HG]\d+)([A-Z]?)$` (capture the
   base — the app's "if the code reads it, it's config" principle); `passage.default_rule` =
   `char-continuity`; `passage.cross_chapter` = `false`; `passage.min_shared_strongs` = `1`.
-- **curated dictionary (`config/candidate.json`, new seed):** `{ "accept": [], "reject": [],
-  "synonyms": [] }` — the editable Axis-A dictionary, empty at first, grown as reads surface
-  misses (the self-learning path). Loaded into a `cfg_candidate_rule` table by `cfgload`.
-- **write grants:** `candidate.seed → [candidate_seed]` · `candidate.set → [span_candidate]` ·
-  `passage.build → [passage, verse_passage]`.
-- **enums:** `candidate_decision` (accept, reject) · `candidate_source` (registry-strong,
-  curated-synonym, ib-judgement, read-emergent) · `passage_rule` (char-continuity, maximal) ·
-  `passage_source` (passage-build, single-verse-emergent).
+- **imported substrate (read-only, from the old study — plan §1.5):** the lemma inventory
+  (`lemma-inventory-master-no-particles-20260707.json`, ~11,804 lemmas) → `lemma_inventory`; the
+  curated synonyms and the IB-judgement accept/reject lists → the net's config; the
+  `char-seed-extension-read-emergent-*` lists → consumed each seed run.
+- **editable dictionary (`config/candidate.json`, new seed):** `{ "synonyms": [], "accept": [],
+  "reject": [] }` — the editable meaning-net inputs (curated synonyms + manual IB accept/reject),
+  grown as reads surface misses (the self-learning path). Loaded into a `cfg_candidate_rule` table
+  by `cfgload`. **Not** the registry — an independent dictionary.
+- **write grants:** `candidate.seed → [lemma_inventory, candidate_seed]` ·
+  `candidate.set → [span_candidate]` · `passage.build → [passage, verse_passage]`.
+- **enums:** `candidate_decision` (candidate, rejected, undecided) · `candidate_source`
+  (registry-direct, curated-synonym, ib-judgement, read-emergent) · `passage_rule`
+  (char-continuity, maximal) · `passage_source` (passage-build, single-verse-emergent).
 - **on_fail:** `candidate.set / no-spans` → report-stop ("no spans for the book — build its words
   first"); `passage.build / candidate-unpassaged` → report-stop (the completeness gate);
   `passage.build / candidate-orphan` → report-stop (a candidate span with no verse — integrity).
@@ -195,7 +239,15 @@ New checks, book-scoped, added to the validation report so success is visible:
 - every `span_candidate` verse ends up **in a passage** after build (0 candidate-bearing verses
   unpassaged) — the completeness gate.
 - `verse_passage` unique per verse; anchors = passage count; passages don't cross chapters.
-- `candidate_seed` has no `lemma_key` that is both accept and reject.
+- every `candidate_seed.lemma_key` resolves to `lemma_inventory` (the net ran over the real
+  substrate); `decision` in the enum.
+
+**The double control (registry completeness) — a first-class output, not just a check.** The seed
+run reports the `decision=candidate` lemmas with `registry_match IS NULL` as **candidate missing
+registry words** (with gloss + layer), so the researcher can grow the registry. This is
+informational/WARN, never a failure — it is the point of an independent seed. Over-inclusiveness is
+expected: `span_candidate` count will far exceed the eventual confirmed characteristics, which the
+lexical stage resolves later.
 
 ### 3.6 Dependency & ordering
 
@@ -216,15 +268,21 @@ changed after its passages were last built (compare `set_at` vs passage `created
    pristine; the old column approach mutated the base verse.
 3. **Boundary rule via a `-Rule` flag now** (recommended), defaulting to `char-continuity`, with
    genre-driven auto-selection deferred (no `verse.genre` yet). Recommend the flag; add genre later.
-4. **Candidate seed keyed by base-Strong's, grounded in `word_strong`** (recommended) rather than
-   reproducing the old gloss-match. Curated-synonym / IB-judgement are optional config extensions;
-   read-emergent is the self-learning path. Recommend this — it is better-grounded and avoids the
-   old rejected routes by construction.
-5. **Scope = per book, derived from `osisId`** (recommended) — no book table; `Book` = OSIS code.
-6. **Out of scope here (confirm):** the Axis-B *role / lexical* read and the `ib_characteristic`
-   meaning-keyed index — a later process. This plan stops at the candidate stamp + passages.
+4. **Candidate seed INDEPENDENT of the registry** (recommended; corrects the earlier
+   word_strong-grounded draft — see §3.1). An over-inclusive meaning net over an imported corpus
+   lemma inventory (registry-direct + curated synonyms + IB judgement), serving as a double-control
+   on registry completeness; the lexical stage is the definitive test. Recommend this.
+5. **Import the old study's seed artifacts as the starting substrate** (recommended): the lemma
+   inventory, curated synonyms, IB-judgement lists, and read-emergent extension — read-only from
+   the old study files (plan §1.5). The alternative (rebuild the inventory from STEP/morphology) is
+   more work and less faithful. Recommend importing.
+6. **Scope = per book, derived from `osisId`** (recommended) — no book table; `Book` = OSIS code.
+7. **Out of scope here (confirm):** the Axis-B *role / lexical* read and the `ib_characteristic`
+   meaning-keyed index — a later process. This plan stops at the candidate stamp + passages. It is
+   also where the seed's continuous learning closes the loop (read-emergent feeds `candidate_seed`).
 
-**On confirmation** I will add the four tables + enums to `schema.json`, the two work packages and
+**On confirmation** I will add the five tables (`lemma_inventory`, `candidate_seed`,
+`span_candidate`, `passage`, `verse_passage`) + enums to `schema.json`, the two work packages and
 their steps to `run.json`, the settings/grants to `rules.json`, and the `candidate.json` seed —
 all through the config utility (validate → load) — then build the two handlers and their
 PowerShell entries, and extend the validation report. **Nothing touches the DB until you confirm.**
