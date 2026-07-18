@@ -19,7 +19,7 @@
     "passage.default_rule":     {"value": "char-continuity", "use": "boundary rule when -Rule not given: run continues while consecutive verses share >=1 candidate base-strong"},
     "passage.cross_chapter":    {"value": false,     "use": "passages do not cross a chapter boundary"},
     "passage.min_shared_strongs":{"value": 1,        "use": "char-continuity threshold: verses must share at least this many candidate base-strongs to stay in one run"},
-    "passage.review_over":      {"value": 5,         "use": "a passage longer than this is flagged needs_review — a long run may be several passages under different char focuses"}
+    "passage.review_over":      {"value": 10,        "use": "a passage longer than this is flagged needs_review. Set to 10: the IB role is only assessable read as a full passage, so only very long runs warrant a manual second look"}
   },
 
   "on_fail": [

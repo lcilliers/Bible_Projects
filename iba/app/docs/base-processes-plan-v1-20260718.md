@@ -226,8 +226,9 @@ against `cfg_book_order` — no book table needed).
 - **settings (`rules.json`):** `candidate.lemma_base_pattern` = `^([HG]\d+)([A-Z]?)$` (capture the
   base — the app's "if the code reads it, it's config" principle); `passage.default_rule` =
   `char-continuity`; `passage.cross_chapter` = `false`; `passage.min_shared_strongs` = `1`;
-  `passage.review_over` = `5` (a passage longer than this is flagged `needs_review` for a manual
-  double-check). Every choice a step makes is a named config entry — nothing hard-coded — so the
+  `passage.review_over` = `10` (a passage longer than this is flagged `needs_review` for a manual
+  double-check; raised from 5 — the IB role is only assessable read as a full passage, so only very
+  long runs warrant a second look). Every choice a step makes is a named config entry — nothing hard-coded — so the
   process is **consistently applied** on every run and every book.
 - **imported substrate (read-only, from the old study — plan §1.5):** the lemma inventory
   (`lemma-inventory-master-no-particles-20260707.json`, ~11,804 lemmas) → `lemma_inventory`; the
