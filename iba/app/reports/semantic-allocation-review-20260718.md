@@ -1,0 +1,97 @@
+# Semantic allocation of the residue — review
+
+> 165 candidates loose-allocated to 67 registry words; 21 rejected as not inner-being. Loose fit preferred over new words (researcher rule). Auditable/reversible via candidate_seed.registry_match. Applied 2026-07-18.
+
+## Allocations (by registry word)
+
+- **Ruthlessness** (3): H0394 cruel; H0393 cruel; H0395 cruel
+- **abomination** (1): G0655 to abhor
+- **appetite** (1): H0398 to eat
+- **awe** (1): G2317 reverence for God
+- **brokenness** (3): H1790 crushed; H2116 crushed; H6481 to wound
+- **comfort** (2): H7309 relief; H5205 solace
+- **compassion** (3): H2949 tender care; G4841 to suffer with; G4777 to suffer with
+- **consecration** (2): H5087 to vow; H5088 vow
+- **contempt** (1): H6962 to loath
+- **contentment** (1): H4490 portion
+- **covenant** (1): H6148 to pledge
+- **craving** (1): H2637 to lack
+- **deadness** (1): G2659 stupor
+- **deceit** (10): H2514 flattery; H2665 plot; H0693 to ambush; H5956 to conceal; H8266 to deal; H3655 to flatter; H3582 to hide; H5641 to hide; H6601 to open wide; H5230 to plot
+- **delight** (1): H7470 pleasure
+- **despair** (1): H3856 to languish
+- **devotion** (1): H1692 to cleave
+- **discernment** (2): H6175 prudent; H2095 to take heed
+- **doubt** (1): H4102 to delay
+- **dread** (10): H7494 quaking; H8178 shuddering; H0927 to dismay; H2727 to quake; H4131 to shake; H6426 to shudder; H7460 to tremble; H2111 to tremble; H7322 to tremble; H7578 trembling
+- **endurance** (1): H7323 to run: run
+- **evil** (1): H7854 Satan
+- **fear** (1): H1272 to flee
+- **fellowship** (2): H7931 to dwell; H3867 to join
+- **foolishness** (6): G4654 to darken; G4656 to darken; H2821 to darken; H6004 to darken; H0981 to speak rashly; H1892 vanity
+- **generosity** (1): H3051 to give
+- **greed** (1): H5392 interest
+- **grief** (1): H7908 bereavement
+- **hardness** (2): H2795 deaf; H2459 fat
+- **hope** (1): H2442 to wait
+- **humility** (5): H8217 low; G5011 lowly; G0036 lowly; H7807 lowly; H8438 worm
+- **iniquity** (1): H5868 iniquities
+- **intention** (1): H0908 to devise
+- **knowledge** (2): H8451 instruction; H3925 to learn: teach
+- **listen** (2): H8086 to hear; G4257 to hear beforehand
+- **longing** (3): H6772 thirst; H6771 thirsty; H6770 to thirst
+- **meditation** (1): H6845 to treasure
+- **memory** (4): H7913 forgetful; H5388 forgetfulness; H5382 to forget; H7876 to forget
+- **obedience** (1): H5341 to watch
+- **peace** (6): H4774 repose; H5118 rest; H4771 rest; H7282 restful; H4494 resting; H2308 to cease
+- **perverseness** (2): H5791 to pervert; H5557 to pervert
+- **prayer** (5): H7596 petition; H8467 supplication; H5258 to pour; H8210 to pour: pour; G2172 to pray/wish for
+- **prophecy** (1): H2372 to see
+- **purity** (4): H4935 cleansing; H2135 to clean; H6884 to refine; H7364 to wash: wash
+- **purpose** (1): H2162 plan
+- **rebellion** (1): H5472 to turn
+- **rejoicing** (1): H5938 exultant
+- **renewal** (5): H8644 healing; H7500 healing; H0724 health; H6974 to awake; H7495 to heal
+- **seeking** (4): H8159 to gaze; H5027 to look; H7291 to pursue; H2664 to search
+- **self-control** (6): H4148 discipline; H4622 restraint; H4623 restraint; H6113 to restrain; H3607 to restrain; H2413 to restrain
+- **sin** (4): H8582 to go astray; H7683 to go astray; H7686 to wander; H5112 wandering
+- **spirit** (1): H5396 breath
+- **strength** (2): H1396 to prevail; H5564 to support
+- **strife** (4): H7128 battle; H1413 to attack; H3898 to fight; H7853 to oppose
+- **stubbornness** (3): H3986 refusing; H3987 refusing; H3985 to refuse
+- **submission** (1): H1290 knee
+- **surrender** (1): H4560 to commit
+- **testimony** (2): H5608 to recount; H5046 to tell
+- **the afflicted** (9): H6135 barren; H8216 poverty; G3805 suffering; G2552 suffering; G4310 to suffer before; H5142 to suffer injury; H3023 weary; H3287 weary; H3019 weary
+- **treachery** (1): H0901 treacherous
+- **trust** (3): H0987 security; H1747 silence; H7993 to throw
+- **wickedness** (6): H2026 to kill; H7523 to murder; H6466 to work; H5240 vile; H2149 vileness; H2555 violence
+- **will** (2): H2782 to decide; H2852 to determine
+- **worship** (1): H2076 to sacrifice
+- **wrath** (2): H5358 to avenge; H5359 vengeance
+- **yielding** (2): G4964 to conform to; H0225 to consent
+- **zeal** (1): H2363 to hasten
+
+## Rejected — removed from the seed (not inner-being)
+
+- H6199 None (Hebrew)
+- H7342 Broad (Hebrew)
+- H0380 pupil (Hebrew)
+- H4405 speech (Hebrew)
+- H6186 to arrange (Hebrew)
+- H5042 to bubble (Hebrew)
+- H0935 to come [in]: come (Hebrew)
+- H2986 to conduct (Hebrew)
+- H4487 to count (Hebrew)
+- H5102 to flow (Hebrew)
+- H5774 to fly (Hebrew)
+- H3245 to found (Hebrew)
+- H1980 to go: went (Hebrew)
+- H0270 to grasp (Hebrew)
+- H2648 to hurry (Hebrew)
+- H1949 to make noise (Hebrew)
+- H6923 to meet (Hebrew)
+- H6473 to open (Hebrew)
+- H7301 to quench (Hebrew)
+- H6340 to scatter (Hebrew)
+- H7283 to throng (Hebrew)
