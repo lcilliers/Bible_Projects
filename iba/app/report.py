@@ -64,6 +64,7 @@ def main() -> int:
     # ── config: what to show ──
     sample_n = int(cfg.setting("report.sample_verses", 3))
     show_text = bool(cfg.setting("report.show_verse_text", True))
+    show_val = bool(cfg.setting("report.show_validation", True))
     strong_fields = cfg.setting("report.strong_fields", ["stepGloss", "head", "count", "verses"])
     span_fields = cfg.setting("report.span_fields",
                               ["position", "surface", "strong_variant", "morph_code", "is_particle", "sense"])
@@ -83,6 +84,20 @@ def main() -> int:
          f"What this report shows is config (`cfg_setting report.*`). Every row is checkable "
          f"against STEP.", "",
          f"**word_registry** — id {wid} · status `{w['status']}` · source {esc(w['source'])}", ""]
+
+    # ── validation (util.validation) ──
+    if show_val:
+        vr = db.rows("SELECT check_name, result, detail, ran_at FROM validation_result "
+                     "WHERE word=? ORDER BY id", (a.word,))
+        L += ["## Validation", ""]
+        if vr:
+            L += ["| check | result | detail |", "|---|---|---|"]
+            for r in vr:
+                mark = "✓ pass" if r["result"] == "pass" else "✗ **FAIL**"
+                L.append(f"| {r['check_name']} | {mark} | {clip(r['detail'], 70)} |")
+        else:
+            L += ["_No validation recorded — raw.validate has not run for this word._"]
+        L += [""]
 
     # ── strongs and their meaning ──
     L += ["## The strongs and their meaning (L1 → L2)", "",

@@ -7,6 +7,7 @@
   "settings": {
     "report.sample_verses":  {"value": 3, "use": "how many sample verses to show the span layer for"},
     "report.show_verse_text":{"value": true, "use": "show the verse's plain text above its spans"},
+    "report.show_validation":{"value": true, "use": "show the validation results (util.validation) for the word"},
     "report.strong_fields":  {"value": ["stepGloss", "accentedUnicode", "stepTransliteration", "head", "count", "verses"],
                               "use": "which columns the L1->L2 strong table shows"},
     "report.span_fields":    {"value": ["position", "surface", "strong_variant", "morph_code", "is_particle", "sense"],

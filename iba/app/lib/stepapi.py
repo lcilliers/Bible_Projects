@@ -1,10 +1,11 @@
-"""stepapi.py — the three STEP calls. Governed by config.
+"""stepapi.py — the three STEP calls. Governed by config, fully.
 
-Everything that is a CHOICE is read from the config store (cfg): the connection, the
-routes, the cap, the particle pattern, the forward-walk bounds. The only things
-hard-coded are FACTS that are not choices: the canonical book order (a property of the
-canon) and the shape of STEP's interlinear HTML (a property of STEP). A fact is not a
-rule; a rule is not a fact.
+Everything the code reads is config: the connection, the routes, the cap, the
+forward-walk bounds, the particle pattern, the canonical book order, and the shape of
+STEP's interlinear HTML. Nothing is hard-coded — the earlier 'facts vs rules' line
+(keeping book order and the HTML pattern in code) was my judgement call; the
+researcher's principle is stronger and simpler: if the code reads it, it is config.
+Both now live in config/reference.json -> cfg_book_order / cfg_setting.
 
 Each call takes an open Cfg so its reads are traced with the rest.
 """
@@ -17,26 +18,17 @@ import requests
 
 from .cfg import Cfg
 
-# ── FACTS (not config) ───────────────────────────────────────────────────────
-# The shape of STEP's HTML span. Not a choice — it is how STEP formats its output.
-SPAN_RE = re.compile(r"<span[^>]*\bmorph='([^']*)'[^>]*\bstrong='([^']*)'[^>]*>([^<]*)</span>")
-# Canonical OSIS book order. Not a choice — it is the order of the canon.
-_OSIS_ORDER = [
-    "Gen", "Exod", "Lev", "Num", "Deut", "Josh", "Judg", "Ruth",
-    "1Sam", "2Sam", "1Kgs", "2Kgs", "1Chr", "2Chr", "Ezra", "Neh", "Esth",
-    "Job", "Ps", "Prov", "Eccl", "Song",
-    "Isa", "Jer", "Lam", "Ezek", "Dan", "Hos", "Joel", "Amos", "Obad",
-    "Jonah", "Mic", "Nah", "Hab", "Zeph", "Hag", "Zech", "Mal",
-    "Matt", "Mark", "Luke", "John", "Acts",
-    "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col",
-    "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm",
-    "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev",
-]
-_OSIS_IDX = {b: i for i, b in enumerate(_OSIS_ORDER)}
-
 
 class StepUnavailable(RuntimeError):
     pass
+
+
+def _canon_key(osis: str, book_idx: dict[str, int]) -> tuple:
+    parts = osis.split(".")
+    book = book_idx.get(parts[0], 999)
+    ch = int(re.sub(r"\D.*", "", parts[1]) or 0) if len(parts) > 1 else 0
+    vs = int(re.sub(r"\D.*", "", parts[2]) or 0) if len(parts) > 2 else 0
+    return (book, ch, vs)
 
 
 class Step:
@@ -52,6 +44,9 @@ class Step:
         self.walk_end = cfg.setting("step.walk_end", "Rev.22.21")
         self.walk_max = int(cfg.setting("step.walk_max_iter", 400))
         self.particle_re = re.compile(cfg.setting("discovery.particle_pattern", r"^[HG]9\d{3}$"))
+        # book order and the span-HTML pattern now come from config, not the code
+        self.book_idx = cfg.book_order()
+        self.span_re = re.compile(cfg.setting("step.span_html"))
 
     def _get(self, path: str) -> dict:
         r = requests.get(f"{self.base}/{path.lstrip('/')}", timeout=self.timeout)
@@ -107,7 +102,7 @@ class Step:
                     seen[oid] = it
             if d.get("total", 0) <= len(rows):
                 break
-            frontier = max(rows, key=lambda it: _canon_key(it.get("osisId") or it.get("key", "")))
+            frontier = max(rows, key=lambda it: _canon_key(it.get("osisId") or it.get("key", ""), self.book_idx))
             nxt = (frontier.get("osisId") or "").split("!")[0]
             if not nxt or nxt == start:
                 break
@@ -118,7 +113,7 @@ class Step:
         """One row per CODE. A surface word maps to N codes; each is a row at its own
         running position; particles fall out as their own rows."""
         out, pos = [], 0
-        for morph_list, strong_list, surface in SPAN_RE.findall(preview):
+        for morph_list, strong_list, surface in self.span_re.findall(preview):
             strongs = strong_list.split()
             morphs = morph_list.split()
             for i, code in enumerate(strongs):
@@ -129,13 +124,6 @@ class Step:
                 pos += 1
         return out
 
-
-def _canon_key(osis: str) -> tuple:
-    parts = osis.split(".")
-    book = _OSIS_IDX.get(parts[0], 999)
-    ch = int(re.sub(r"\D.*", "", parts[1]) or 0) if len(parts) > 1 else 0
-    vs = int(re.sub(r"\D.*", "", parts[2]) or 0) if len(parts) > 2 else 0
-    return (book, ch, vs)
 
 
 def strip_html(html: str) -> str:

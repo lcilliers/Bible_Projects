@@ -1,0 +1,20 @@
+{
+  "purpose": "Reference DATA the code used to hard-code. The canonical book order and the STEP HTML span pattern were in Python behind a 'facts vs rules' line I drew myself. The researcher's principle is stronger: if the code reads it, it is config. So they live here.",
+  "book_order": [
+    "Gen", "Exod", "Lev", "Num", "Deut", "Josh", "Judg", "Ruth",
+    "1Sam", "2Sam", "1Kgs", "2Kgs", "1Chr", "2Chr", "Ezra", "Neh", "Esth",
+    "Job", "Ps", "Prov", "Eccl", "Song",
+    "Isa", "Jer", "Lam", "Ezek", "Dan", "Hos", "Joel", "Amos", "Obad",
+    "Jonah", "Mic", "Nah", "Hab", "Zeph", "Hag", "Zech", "Mal",
+    "Matt", "Mark", "Luke", "John", "Acts",
+    "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col",
+    "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm",
+    "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev"
+  ],
+  "patterns": {
+    "step.span_html": {
+      "value": "<span[^>]*\\bmorph='([^']*)'[^>]*\\bstrong='([^']*)'[^>]*>([^<]*)</span>",
+      "use": "how STEP formats an interlinear span in a verse preview: (morph, strong, surface). The forward-walk and the span parse read it."
+    }
+  }
+}

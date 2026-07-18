@@ -18,11 +18,22 @@
 
   "on_fail": [
     {"step": "registry.exists", "condition": "word-exists",    "path": "report-stop",     "resolver": null, "message": "the word already exists; use a refresh run, not new-word"},
+    {"step": "registry.create", "condition": "needs-approval", "path": "pause-continue",  "resolver": null, "message": "a new word needs researcher approval"},
+    {"step": "registry.create", "condition": "word-rejected",  "path": "report-stop",     "resolver": null, "message": "the researcher rejected the word"},
     {"step": "raw.discover",    "condition": "zero-strongs",   "path": "pause-continue",  "resolver": null, "message": "the word maps to no strongs — a researcher question"},
     {"step": "raw.detail",      "condition": "no-vocab",       "path": "report-continue", "resolver": null, "message": "a strong returned no vocab — recorded STEP gap"},
     {"step": "raw.verses",      "condition": "shortfall",      "path": "report-continue", "resolver": null, "message": "a strong returned fewer rows than STEP's total"},
     {"step": "raw.validate",    "condition": "parse-mismatch", "path": "report-stop",     "resolver": null, "message": "span does not recover strong_verse"}
   ],
+
+  "write_grants": {
+    "_note": "Which non-API writer (a step, or the dispatcher 'run') may write which table. API writers are granted by step.json's may_source. Together these are the complete, config-governed set of who may write what.",
+    "registry.create": ["word_registry", "escalation"],
+    "raw.write":       ["word_registry"],
+    "raw.validate":    ["validation_result"],
+    "run":             ["run", "escalation", "word_registry"],
+    "escalation":      ["escalation", "word_registry"]
+  },
 
   "status_flow": {
     "word": [

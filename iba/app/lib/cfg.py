@@ -86,10 +86,11 @@ class Cfg:
         _trace(f"route {api}", r["route"] if r else None)
         return r["route"]
 
-    def may_source(self, api: str) -> set[str]:
+    def may_write(self, writer: str) -> set[str]:
+        """Which tables this writer (an api, a step, or 'run') is granted to write."""
         rows = {r["table_name"] for r in self.conn.execute(
-            "SELECT table_name FROM cfg_api_source WHERE api=?", (api,))}
-        _trace(f"may_source({api})", rows)
+            "SELECT table_name FROM cfg_write_grant WHERE writer=?", (writer,))}
+        _trace(f"may_write({writer})", rows)
         return rows
 
     # ── run / sequence ───────────────────────────────────────────────────────
@@ -104,6 +105,12 @@ class Cfg:
                               (work_package, step)).fetchone()
         _trace(f"step {step}", r["handler"] if r else None)
         return r
+
+    def book_order(self) -> dict[str, int]:
+        rows = {r["book"]: r["ordinal"] for r in self.conn.execute(
+            "SELECT book, ordinal FROM cfg_book_order")}
+        _trace("book_order()", rows)
+        return rows
 
     def config_version(self) -> str:
         r = self.conn.execute("SELECT value FROM cfg_meta WHERE key='config_version'").fetchone()

@@ -35,9 +35,16 @@ def _resolve(handler: str):
     return getattr(importlib.import_module(mod), fn)
 
 
+def _grant(cfg: Cfg, table: str):
+    """The dispatcher writes control tables under the 'run' write grant — config-governed."""
+    if table not in cfg.may_write("run"):
+        raise PermissionError(f"write-grant violation: 'run' may not write {table!r} (cfg_write_grant)")
+
+
 def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
     if db.get("run", run_id=run_id):
         return
+    _grant(cfg, "run")
     db.write("run", {
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
         "runs_over": params.get("Word", ""), "config_version": cfg.config_version(),
@@ -68,10 +75,15 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     # act on the path
     if path == "pause-continue" and outcome.escalation:
         e = outcome.escalation
-        db.write("escalation", {
-            "run_id": run_id, "at_step": step_id, "type": e["type"], "question": e["question"],
-            "preset": json.dumps(e["preset"]), "tried": e["tried"], "state": "raised",
-            "raised_at": _now()})
+        # idempotent: do not raise a duplicate if one is already pending for (word, step)
+        already = db.rows("SELECT id FROM escalation WHERE word=? AND at_step=? AND state='raised'",
+                          (ctx.word, step_id))
+        if not already:
+            _grant(cfg, "escalation")
+            db.write("escalation", {
+                "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": e["type"],
+                "question": e["question"], "preset": json.dumps(e["preset"]), "tried": e["tried"],
+                "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
         db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
     elif path == "report-stop":
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)

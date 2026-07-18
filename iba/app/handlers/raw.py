@@ -31,12 +31,12 @@ def _base(code: str) -> str:
     return m.group(1) if m else code
 
 
-def _write(ctx: Ctx, api: str, table: str, row: dict, upsert=True):
-    """Write a row, ENFORCING may_source from config: the api must be permitted to
-    source this table. This is the control that was documented and never enforced."""
-    if table not in ctx.cfg.may_source(api):
-        raise PermissionError(f"may_source violation: api {api!r} may not write {table!r} "
-                              f"(cfg_api_source). This is a config-governed control.")
+def _write(ctx: Ctx, writer: str, table: str, row: dict, upsert=True):
+    """Write a row, ENFORCING the write grant from config: the writer (an api, a step,
+    or 'run') must be granted this table (cfg_write_grant). Every write is config-governed."""
+    if table not in ctx.cfg.may_write(writer):
+        raise PermissionError(f"write-grant violation: {writer!r} may not write {table!r} "
+                              f"(cfg_write_grant). This is a config-governed control.")
     return ctx.db.upsert(table, row) if upsert else (ctx.db.write(table, row), True)
 
 
@@ -165,8 +165,16 @@ def write(ctx: Ctx) -> Outcome:
     return ok("committed")
 
 
-# ── validate: the parse-check ────────────────────────────────────────────────
+# ── validate: the parse-check (util.validation — persisted) ──────────────────
+def _record(ctx: Ctx, check_name: str, result: str, detail: str):
+    _write(ctx, "raw.validate", "validation_result", {
+        "run_id": ctx.run_id, "word": ctx.word, "step": "raw.validate",
+        "check_name": check_name, "result": result, "detail": detail,
+        "ran_at": _now(), "deleted": 0}, upsert=False)
+
+
 def validate(ctx: Ctx) -> Outcome:
+    # check 1: the parse-check — span recovers strong_verse
     mism = []
     for code in _strongs_for_word(ctx):
         asserted = {r["verse_id"] for r in ctx.db.rows(
@@ -176,6 +184,22 @@ def validate(ctx: Ctx) -> Outcome:
         if asserted - parsed:
             mism.append((code, len(asserted - parsed)))
     if mism:
-        return fail("parse-mismatch",
-                    "; ".join(f"{c}:{n} missed" for c, n in mism))
-    return ok("parse-check PASSED; span recovers strong_verse for every strong", parse_check="pass")
+        d = "; ".join(f"{c}:{n} missed" for c, n in mism)
+        _record(ctx, "parse-check", "fail", d)
+        return fail("parse-mismatch", d)
+    nsv = ctx.db.rows("SELECT COUNT(*) n FROM strong_verse")[0]["n"]
+    _record(ctx, "parse-check", "pass", f"span recovers all {nsv} strong_verse assertions")
+
+    # check 2: no-null on required columns of the tables this run wrote
+    nulls = []
+    for tbl in ("strong", "verse", "span"):
+        for c in ctx.cfg.columns(tbl):
+            if c["notnull"]:
+                n = ctx.db.rows(f'SELECT COUNT(*) n FROM "{tbl}" WHERE "{c["name"]}" IS NULL')[0]["n"]
+                if n:
+                    nulls.append(f"{tbl}.{c['name']}={n}")
+    _record(ctx, "no-null", "fail" if nulls else "pass", "; ".join(nulls) or "no NULLs in required columns")
+    if nulls:
+        return fail("parse-mismatch", "no-null: " + "; ".join(nulls))
+
+    return ok("validation PASSED — parse-check + no-null recorded", parse_check="pass")

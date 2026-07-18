@@ -141,12 +141,29 @@
       }
     },
 
+    "validation_result": {
+      "grain": "one row per check a validate step ran",
+      "use": "util.validation — the outcome of a check, persisted so it can be inspected and reported. A passed check is a recorded fact, not just an advancing run.",
+      "columns": {
+        "id":        {"type": "INTEGER", "pk": true, "use": "surrogate key"},
+        "run_id":    {"type": "TEXT", "notnull": true, "fk": "run.run_id", "use": "the run that ran the check"},
+        "word":      {"type": "TEXT", "use": "the word the check was over", "filled_by": "validate"},
+        "step":      {"type": "TEXT", "use": "the step that ran it", "filled_by": "validate"},
+        "check_name":{"type": "TEXT", "use": "which check", "filled_by": "validate"},
+        "result":   {"type": "TEXT", "use": "pass | fail", "filled_by": "validate"},
+        "detail":   {"type": "TEXT", "use": "the specifics — counts, what failed", "filled_by": "validate"},
+        "ran_at":   {"type": "TEXT", "use": "when", "filled_by": "validate"},
+        "deleted":  {"type": "INTEGER", "default": "0", "use": "soft delete"}
+      }
+    },
+
     "escalation": {
       "grain": "one row per researcher interaction — the pause",
       "use": "the only sanctioned researcher interaction. A pause, not a fork: the run resumes at resume_point when answered.",
       "columns": {
         "id":          {"type": "INTEGER", "pk": true, "use": "surrogate key"},
         "run_id":      {"type": "TEXT", "notnull": true, "fk": "run.run_id", "use": "the paused run"},
+        "word":        {"type": "TEXT", "use": "the word this interaction is about — durable across runs", "filled_by": "escalation.raise"},
         "at_step":     {"type": "TEXT", "use": "where to resume — makes it a pause not a fork", "filled_by": "escalation.raise"},
         "type":        {"type": "TEXT", "use": "prompted | interactive", "expectation": "enum.escalation_type", "filled_by": "escalation.raise"},
         "question":    {"type": "TEXT", "use": "the question", "filled_by": "escalation.raise"},

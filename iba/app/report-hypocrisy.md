@@ -4,6 +4,13 @@
 
 **word_registry** — id 1 · status `raw-complete` · source gap scan
 
+## Validation
+
+| check | result | detail |
+|---|---|---|
+| parse-check | ✓ pass | span recovers all 18 strong_verse assertions |
+| no-null | ✓ pass | no NULLs in required columns |
+
 ## The strongs and their meaning (L1 → L2)
 
 | strong | stepGloss | accentedUnicode | stepTransliteration | head | count | verses |
