@@ -2,8 +2,8 @@
 
 Two sub-commands, both read-only:
 
-    python -m iba.app.tools.legacy_import words          # JSON list from the OLD study DB
-    python -m iba.app.tools.legacy_import pending <word> # at_step of a raised escalation (NEW app DB)
+    python -m iba.app.migration.legacy_import words          # JSON list from the OLD study DB
+    python -m iba.app.migration.legacy_import pending <word> # at_step of a raised escalation (NEW app DB)
 
 `words` reads the legacy `word_registry` in `database/bible_research.db` — opened READ-ONLY,
 never modified — and returns the English words to migrate, EXCLUDING those marked deleted or

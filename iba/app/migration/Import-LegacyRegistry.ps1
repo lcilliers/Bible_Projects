@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
-    Migrate the legacy registry word list into the IBA app by running the new-word
-    operation for each word, in series.
+    ONE-OFF migration: load the legacy registry word list into the IBA app by running the
+    new-word operation for each word, in series. Not a standard app method.
 
 .DESCRIPTION
     Reads the OLD study database (database/bible_research.db, READ-ONLY) and takes every
@@ -12,10 +12,11 @@
         curated, already-approved registry — that is the point of the migration),
       - any OTHER pause (e.g. a word that maps to no strongs) is NOT auto-resolved; it is
         logged as NEEDS-REVIEW and the batch moves on,
-      - a word already built in the app is skipped (so the batch is resumable — re-run it
-        any time and it continues where it stopped).
+      - a word already built in the app is skipped, so if the process fails it can simply
+        be re-run: already-processed words are skipped and it continues from where it stopped.
 
-    A markdown transcript is written to iba/app/reports/. Nothing in the old DB is touched.
+    A markdown transcript is written incrementally to iba/app/reports/ (so a mid-run failure
+    still leaves a record). Nothing in the old DB is touched.
 
 .PARAMETER Source   Override the Source recorded per word. Default: "legacy registry: <source_list>".
 .PARAMETER Limit    Process only the first N words (0 = all). Use for a trial.
@@ -40,10 +41,12 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $env:PYTHONUTF8 = '1'
 
+# this script lives in iba/app/migration; repo root is three parents up
 $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
 Set-Location $RepoRoot
-$NewWord = Join-Path $PSScriptRoot 'New-Word.ps1'
-$StartIba = Join-Path $PSScriptRoot 'Start-Iba.ps1'
+$PsDir    = Join-Path (Split-Path -Parent $PSScriptRoot) 'ps'    # iba/app/ps — the standard methods
+$NewWord  = Join-Path $PsDir 'New-Word.ps1'
+$StartIba = Join-Path $PsDir 'Start-Iba.ps1'
 
 # 1. app must be ready (config loaded, tables built, STEP up) — unless told to skip
 if (-not $DryRun -and -not $SkipStartup) {
@@ -55,18 +58,19 @@ if (-not $DryRun -and -not $SkipStartup) {
 }
 
 # 2. the word list from the OLD DB (read-only), excluding deleted/excluded
-$words = (python -m iba.app.tools.legacy_import words | ConvertFrom-Json)
+$words = (python -m iba.app.migration.legacy_import words | ConvertFrom-Json)
 if ($Limit -gt 0) { $words = $words | Select-Object -First $Limit }
 $total = ($words | Measure-Object).Count
 Write-Host ""
 Write-Host "legacy import — $total word(s) to process (deleted/excluded already filtered out)" -ForegroundColor Cyan
 
-# 3. transcript
+# 3. transcript — header written now, rows appended per word (survives a mid-run failure)
 $stamp = Get-Date -Format 'yyyyMMdd_HHmmss'
 $log = Join-Path $RepoRoot "iba/app/reports/legacy-import-$stamp.md"
-$lines = @("# Legacy registry import — $stamp", "",
-           "Source DB: ``database/bible_research.db`` (read-only). $total word(s).", "",
-           "| # | word | result | detail |", "| --- | --- | --- | --- |")
+@("# Legacy registry import — $stamp", "",
+  "Source DB: ``database/bible_research.db`` (read-only). $total word(s). Re-runnable: " +
+  "already-built words are skipped.", "",
+  "| # | word | result | detail |", "| --- | --- | --- | --- |") | Set-Content -Path $log -Encoding utf8
 $tally = @{ DONE = 0; SKIPPED = 0; 'NEEDS-REVIEW' = 0; ERROR = 0 }
 
 $i = 0
@@ -77,7 +81,7 @@ foreach ($w in $words) {
 
     if ($DryRun) {
         Write-Host ("  [{0}/{1}] would import '{2}'" -f $i, $total, $word)
-        $lines += "| $i | $word | (dry-run) | $src |"
+        Add-Content -Path $log -Value "| $i | $word | (dry-run) | $src |"
         continue
     }
 
@@ -96,7 +100,7 @@ foreach ($w in $words) {
     }
     elseif ($code -eq 2) {
         # what is it paused on? only a registry-approval pause is auto-answered
-        $at = (python -m iba.app.tools.legacy_import pending $word).Trim()
+        $at = (python -m iba.app.migration.legacy_import pending $word).Trim()
         if ($at -eq 'registry.create') {
             python -m iba.app.lib.escalation answer $word yes | Out-Null
             & $NewWord -Word $word -Source $src | Out-Host       # resume
@@ -115,15 +119,21 @@ foreach ($w in $words) {
 
     if (-not $tally.ContainsKey($result)) { $tally[$result] = 0 }
     $tally[$result]++
-    $lines += "| $i | $word | $result | $detail |"
-    Write-Host ("       -> {0} {1}" -f $result, $detail) -ForegroundColor Gray
+    Add-Content -Path $log -Value "| $i | $word | $result | $detail |"
+
+    # short end-of-word progress message to the terminal
+    Write-Host ("       progress {0}/{1} — DONE {2} · SKIP {3} · REVIEW {4} · ERR {5}  (last: {6})" -f `
+        $i, $total, $tally['DONE'], $tally['SKIPPED'], $tally['NEEDS-REVIEW'], $tally['ERROR'], $result) `
+        -ForegroundColor Cyan
 }
 
 # 4. summary
 $summary = "DONE $($tally['DONE']) · SKIPPED $($tally['SKIPPED']) · NEEDS-REVIEW $($tally['NEEDS-REVIEW']) · ERROR $($tally['ERROR'])"
-$lines += @("", "## Summary", "", $summary)
-$lines | Set-Content -Path $log -Encoding utf8
+Add-Content -Path $log -Value @("", "## Summary", "", $summary)
 
 Write-Host ""
 Write-Host $summary -ForegroundColor Cyan
 Write-Host "transcript: $log"
+
+# the batch's own exit code reflects the BATCH, not the last word: 0 unless a hard error
+exit ($(if ($tally['ERROR'] -gt 0) { 1 } else { 0 }))
