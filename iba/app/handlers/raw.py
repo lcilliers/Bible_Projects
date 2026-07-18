@@ -143,7 +143,9 @@ def verses(ctx: Ctx) -> Outcome:
             c["verse_new"] += vnew
             c["strong_verse"] += _write(ctx, "call3_strong", "strong_verse",
                                         {"strong": code, "verse_id": vid, "deleted": 0})[1]
-            if vnew:
+            # write spans for a NEW verse, or backfill a verse left span-less by a
+            # partial (interrupted) build — so a resumed run self-heals.
+            if vnew or not ctx.db.count("span", verse_id=vid):
                 for sp in ctx.step.parse_spans(r.get("preview", "")):
                     _write(ctx, "call3_strong", "span", {
                         "verse_id": vid, "position": sp["position"], "surface": sp["surface"],

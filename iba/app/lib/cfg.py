@@ -30,8 +30,15 @@ class Cfg:
     """One open handle to the config store. Cheap; make one per process."""
 
     def __init__(self, db_path: pathlib.Path = DB_PATH):
-        self.conn = sqlite3.connect(db_path)
+        self.conn = sqlite3.connect(db_path, timeout=30.0)
         self.conn.row_factory = sqlite3.Row
+        # WAL + a real busy-timeout: readers don't block writers, and brief lock
+        # contention waits instead of failing instantly with 'database is locked'.
+        try:
+            self.conn.execute("PRAGMA journal_mode=WAL")
+            self.conn.execute("PRAGMA busy_timeout=30000")
+        except sqlite3.Error:
+            pass
 
     # ── settings (scalar rules) ──────────────────────────────────────────────
     def setting(self, key: str, default=None):

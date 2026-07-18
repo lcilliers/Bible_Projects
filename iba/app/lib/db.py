@@ -71,17 +71,17 @@ class Db:
     """Data access. Column set and dedup keys come from config (cfg), not from here."""
 
     def __init__(self, cfg: Cfg | None = None, path: pathlib.Path = DB_PATH):
-        self.conn = sqlite3.connect(path)
-        self.conn.row_factory = sqlite3.Row
         self.cfg = cfg or Cfg(path)
         self._own_cfg = cfg is None
-        # FKs declared in DDL but NOT hard-enforced — the raw model references before
-        # its referent (word_strong before strong; span names strongs not held).
+        # ONE connection per process — the data layer SHARES the config handle's
+        # connection, so a write transaction and a config read never self-contend
+        # ('database is locked'). FKs declared in DDL but NOT hard-enforced — the raw
+        # model references before its referent (word_strong before strong).
+        self.conn = self.cfg.conn
 
     def close(self):
         self.conn.commit()
-        self.conn.close()
-        if self._own_cfg:
+        if self._own_cfg:          # the shared connection is closed by whoever owns the Cfg
             self.cfg.close()
 
     def write(self, table: str, row: dict) -> int:
