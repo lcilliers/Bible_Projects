@@ -1,6 +1,8 @@
 # Plan: the base-layer processes — candidate characteristics (L4b) + passages
 
-> **Status: DESIGN FOR CONFIRMATION. No DB changes until approved.** Directed 2026-07-18.
+> **Status: DESIGN CONFIRMED 2026-07-18** (tables + passage specs approved; additions folded in —
+> seed migrated-then-maintained §3.7, new-word coupling §3.7, the >5-verse passage review control,
+> and the passage's stated purpose). Ready to build; **no DB changes made yet.** Directed 2026-07-18.
 > Two processes, run as two separate manual steps; passages depend on the candidate
 > characteristics and are re-run after each change to them. Sources: the old study's
 > authoritative cycle, passage rule v2, verse-analysis method, and the captured old-DB schema.
@@ -166,6 +168,7 @@ definite). One row per assessed lemma.
 | verse_count | INTEGER | ≥1 |
 | rule | TEXT | `char-continuity` \| `maximal` (enum `passage_rule`) |
 | source | TEXT | `passage-build` \| `single-verse-emergent` (enum `passage_source`) |
+| needs_review | INTEGER | 1 when `verse_count` > `passage.review_over` — a long run to be confirmed as one passage, not several |
 | created_at | TEXT | |
 
 **`verse_passage`** — passage membership (**L4b**; keeps the raw `verse` table pristine).
@@ -201,19 +204,31 @@ against `cfg_book_order` — no book table needed).
    book's rows first, then restamp — clean re-derivation). Over-inclusive by intent; the lexical
    stage later tests each in context. Writes `span_candidate`.
 
+> **Purpose of a passage (design intent).** A passage exists for **one** reason: to **extend a
+> characteristic's context to its adjacent verses**, so that movement, process, and qualifying
+> spans can be assessed with that context. It is **not** a thematic or literary unit. This bounds
+> it — a char's local context should be tight, which is exactly why an over-long run is suspect and
+> gets the review control below.
+
 **Process (b) — `build-passages` (manual, after (a)).**  `Build-Passages.ps1 -Book Prov [-Rule char-continuity|maximal]`
 1. **`passage.build`** — recompute the book's passages from `span_candidate`: sweep verses in
    canonical order; a verse is *candidate-bearing* if it has ≥1 `span_candidate`; grow a run
    through consecutive same-chapter candidate-bearing verses while they **share ≥1 candidate
    base-Strong's** (char-continuity) or unconditionally (maximal); anchor = first verse;
-   single-verse runs allowed. Delete the book's passages first, then rebuild. Writes `passage` +
-   `verse_passage`.
+   single-verse runs allowed. **Flag `needs_review=1` on any passage with `verse_count` >
+   `passage.review_over` (default 5)** — a long consecutive run may in fact be *several* passages
+   under different char focuses (verses can run consecutively yet belong to distinct passages), so
+   it is double-checked that the passage rule genuinely applies. Delete the book's passages first,
+   then rebuild. Writes `passage` + `verse_passage`.
 
 ### 3.4 Config rules (proposed)
 
 - **settings (`rules.json`):** `candidate.lemma_base_pattern` = `^([HG]\d+)([A-Z]?)$` (capture the
   base — the app's "if the code reads it, it's config" principle); `passage.default_rule` =
-  `char-continuity`; `passage.cross_chapter` = `false`; `passage.min_shared_strongs` = `1`.
+  `char-continuity`; `passage.cross_chapter` = `false`; `passage.min_shared_strongs` = `1`;
+  `passage.review_over` = `5` (a passage longer than this is flagged `needs_review` for a manual
+  double-check). Every choice a step makes is a named config entry — nothing hard-coded — so the
+  process is **consistently applied** on every run and every book.
 - **imported substrate (read-only, from the old study — plan §1.5):** the lemma inventory
   (`lemma-inventory-master-no-particles-20260707.json`, ~11,804 lemmas) → `lemma_inventory`; the
   curated synonyms and the IB-judgement accept/reject lists → the net's config; the
@@ -241,6 +256,9 @@ New checks, book-scoped, added to the validation report so success is visible:
 - `verse_passage` unique per verse; anchors = passage count; passages don't cross chapters.
 - every `candidate_seed.lemma_key` resolves to `lemma_inventory` (the net ran over the real
   substrate); `decision` in the enum.
+- **passages with `verse_count > passage.review_over` are reported as NEEDS-REVIEW** (a long run
+  may be several passages under different char focuses) — a control, WARN not fail, listing each so
+  the researcher confirms the passage rule applied.
 
 **The double control (registry completeness) — a first-class output, not just a check.** The seed
 run reports the `decision=candidate` lemmas with `registry_match IS NULL` as **candidate missing
@@ -255,6 +273,21 @@ lexical stage resolves later.
 after more words are built, or a curated/emergent change) makes the book's passages stale — the
 researcher then re-runs `build-passages`. The validation report flags a book whose candidates
 changed after its passages were last built (compare `set_at` vs passage `created_at`).
+
+### 3.7 Candidate seed — migrated, then maintained
+
+- **Migration (once-off).** Import the old system's `candidate_seed` decisions and `lemma_inventory`
+  as the starting substrate, then **map them against the strongs already in the IBA DB** (the
+  `strong` / `word_strong` already built by the raw slice): set `registry_match` for every seed
+  lemma an IBA registry word now carries, and record which seed lemmas are present in the IBA strong
+  set. This once-off reconciliation aligns the imported seed to the app's actual data. Delivered as
+  a one-off utility under `iba/app/migration/` (like the registry import — not a standard method).
+- **Maintenance — a new word updates the seed.** The seed stays independent of the registry, but a
+  new registry word adds a gloss the **registry-direct layer** must see. So **after a new word is
+  built, `candidate.seed` re-runs**: the registry-direct layer picks up the new word — updating
+  `registry_match` (shrinking the missing-registry-word list) and marking any newly-matched
+  inventory lemma `candidate`. If that changes a book's stamp, its `span_candidate` and passages are
+  re-derived. This is the coupling "when a new word is introduced, the candidate_seed is updated."
 
 ---
 
