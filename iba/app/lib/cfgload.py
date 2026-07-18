@@ -80,7 +80,9 @@ CFG_DDL = [
         entity TEXT, status TEXT, set_by TEXT, ordinal INTEGER,
         PRIMARY KEY (entity, status))""",
 
-    """CREATE TABLE cfg_change_log (        -- audit: every accepted load, with a seed hash
+    # append-only audit; NOT dropped on reload (see the drop loop below) so the history
+    # of every accepted load survives. IF NOT EXISTS because it outlives the other cfg_* tables.
+    """CREATE TABLE IF NOT EXISTS cfg_change_log (   -- audit: every accepted load, with a seed hash
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         config_version TEXT, seed_hash TEXT, loaded_at TEXT, validated INTEGER)""",
 
@@ -115,8 +117,11 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
 
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(db_path)
-    # drop + recreate the cfg_* store (idempotent reload; data tables untouched here)
+    # drop + recreate the cfg_* store (idempotent reload; data tables untouched here).
+    # cfg_change_log is PRESERVED — it is the append-only audit of every accepted load.
     for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg_%'").fetchall():
+        if row[0] == "cfg_change_log":
+            continue
         conn.execute(f'DROP TABLE IF EXISTS "{row[0]}"')
     for ddl in CFG_DDL:
         conn.execute(ddl)
