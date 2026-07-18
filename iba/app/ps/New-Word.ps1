@@ -37,9 +37,15 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 
 if ($Fresh) {
-    Write-Host "[config] seeding cfg_* from the JSON into the DB, rebuilding data tables" -ForegroundColor DarkCyan
-    python -m iba.app.lib.cfgload | Out-Null
-    python -m iba.app.lib.db --reset | Out-Null
+    # convenience: rebuild the data tables before this run (keeps config)
+    python -m iba.app.init --reset | Out-Null
+}
+
+# The app must be initialised (config loaded, tables built). If not, point to Start-Iba.
+$ready = python -c "import sys; from iba.app.init import _config_loaded, _data_tables_exist; from iba.app.lib.cfg import Cfg; print('1' if (_config_loaded() and _data_tables_exist(Cfg())) else '0')" 2>$null
+if ($ready -ne '1') {
+    Write-Host "The app is not initialised. Run first:  iba\app\ps\Start-Iba.ps1" -ForegroundColor Yellow
+    exit 1
 }
 
 # The sequence comes from the CONFIG STORE IN THE DB.

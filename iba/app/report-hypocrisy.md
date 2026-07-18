@@ -2,7 +2,7 @@
 
 > Built by the IBA app into `iba\app\db\iba.db`. What this report shows is config (`cfg_setting report.*`). Every row is checkable against STEP.
 
-**word_registry** — id 1 · status `raw-complete` · source gap scan
+**word_registry** — id 1 · status `raw-complete` · source gap scan 2026-07-18
 
 ## Validation
 
