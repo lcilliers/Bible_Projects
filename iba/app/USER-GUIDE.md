@@ -263,19 +263,51 @@ iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>" -Trace
 
 ---
 
-## 9. Where things are
+## 9. Migrations (one-off setup)
+
+These run **once** to bring the legacy study into the app. They live in `iba/app/migration/`
+(kept separate from the standard methods) and are not part of the daily flow.
+
+**Migrate the legacy registry** — load the old word list, running the new-word build for each word
+in series:
+
+```powershell
+iba\app\migration\Import-LegacyRegistry.ps1 -DryRun     # preview the words (no changes, no STEP)
+iba\app\migration\Import-LegacyRegistry.ps1 -Limit 5    # trial the first few
+iba\app\migration\Import-LegacyRegistry.ps1             # the full run, in series
+```
+
+It reads the old registry **read-only** (excluding words marked deleted/excluded), auto-approves
+each (the list is your own curated, already-approved registry), **skips words already built** — so
+if it stops it can simply be re-run and it continues — and writes a transcript to
+`iba/app/reports/`.
+
+**Migrate the candidate seed** — load the independent candidate-characteristic seed (the base layer
+needs this before `Set-Candidates`):
+
+```powershell
+python -m iba.app.migration.import_seed
+```
+
+It imports the lemma inventory + candidate assessment from the old study and maps it against the
+strongs already in the app. Run it once; the new-word build keeps the seed current thereafter.
+
+---
+
+## 10. Where things are
 
 ```text
 iba/app/
-  config/*.json     the config SEEDS you edit (schema, step, run, rules, report, reference)
+  config/*.json     the config SEEDS you edit (schema, step, run, rules, report, reference, candidate)
   db/iba.db         the database (config tables cfg_* + the data)
-  ps/               Start-Iba.ps1 · New-Word.ps1
+  ps/               Start-Iba.ps1 · New-Word.ps1 · Set-Candidates.ps1 · Build-Passages.ps1
   init.py           the bootstrap (Start-Iba calls it)
   lib/              cfg (read) · cfgload+cfgcheck (load+validate) · db · stepapi · escalation · words
-  handlers/         registry · raw   (the step logic — interpreters, no hard rules)
+  handlers/         registry · raw · candidate · passage   (the step logic — interpreters, no hard rules)
+  migration/        one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed
   tools/            purge_word (maintenance: remove a word's own records)
   run.py            the dispatcher
-  report.py         the output
+  report.py · validation.py   the output + validation reports
   GOVERNANCE.md     how config governs the code
   UTILITIES.md      the utilities around the run
   USER-GUIDE.md     this file
