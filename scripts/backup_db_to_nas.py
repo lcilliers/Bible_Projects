@@ -38,7 +38,8 @@ from pathlib import Path
 
 # --- Defaults ---------------------------------------------------------------
 _ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SOURCE = _ROOT / "database" / "bible_research.db"
+#DEFAULT_SOURCE = _ROOT / "database" / "bible_research.db"
+DEFAULT_SOURCE = _ROOT / "iba" / "app"   / "db" / "iba.db"
 DEFAULT_TARGET = Path(r"\\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups")
 LOG_NAME = "backup_log.txt"
 
