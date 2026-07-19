@@ -1,0 +1,17 @@
+{
+  "_README": "Cost = recorded tokens x these rates. The TOKENS are exact (read from Claude Code's own session transcripts). The COST is an ESTIMATE at the rates below. Edit these to match what you actually pay, then re-run token_cost_history.py. Rates are US dollars per MILLION tokens.",
+  "_defaults_note": "Defaults are Anthropic's published Opus list prices (input $15, output $75, cache-read = 0.1x input, cache-write-5m = 1.25x input, cache-write-1h = 2x input). If your plan/billing differs, change them.",
+  "currency": "USD",
+  "per_million": {
+    "input": 15.00,
+    "output": 75.00,
+    "cache_read": 1.50,
+    "cache_write_5m": 18.75,
+    "cache_write_1h": 30.00
+  },
+  "long_context": {
+    "_note": "Opus 1M-context requests above the threshold input size may bill at a premium on some plans. Left OFF by default (multiplier 1.0). Set the multiplier to your plan's premium (e.g. 2.0) only if you know it applies.",
+    "threshold_input_tokens": 200000,
+    "premium_multiplier": 1.0
+  }
+}
