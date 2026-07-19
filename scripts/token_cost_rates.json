@@ -3,11 +3,19 @@
   "_defaults_note": "Defaults are Anthropic's published Opus list prices (input $15, output $75, cache-read = 0.1x input, cache-write-5m = 1.25x input, cache-write-1h = 2x input). If your plan/billing differs, change them.",
   "currency": "USD",
   "per_million": {
+    "_use": "Reference rates for Claude Code (all Opus). NOTE: if Claude Code is on a Claude subscription (it is — stripe_subscription/claude_pro), this is the list-price VALUE consumed, NOT your bill. Your real Claude Code cost is the subscription fee + any extra-usage overage.",
     "input": 15.00,
     "output": 75.00,
     "cache_read": 1.50,
     "cache_write_5m": 18.75,
     "cache_write_1h": 30.00
+  },
+  "api_models": {
+    "_use": "Per-model rates for DIRECT API usage (the Console CSVs). API is genuine pay-as-you-go. Model matched from the CSV's model_version by family. Edit to your actual API prices.",
+    "opus":   {"input": 15.00, "output": 75.00, "cache_read": 1.50, "cache_write_5m": 18.75, "cache_write_1h": 30.00},
+    "sonnet": {"input": 3.00,  "output": 15.00, "cache_read": 0.30, "cache_write_5m": 3.75,  "cache_write_1h": 6.00},
+    "haiku":  {"input": 1.00,  "output": 5.00,  "cache_read": 0.10, "cache_write_5m": 1.25,  "cache_write_1h": 2.00},
+    "_default": {"input": 3.00, "output": 15.00, "cache_read": 0.30, "cache_write_5m": 3.75, "cache_write_1h": 6.00}
   },
   "long_context": {
     "_note": "Opus 1M-context requests above the threshold input size may bill at a premium on some plans. Left OFF by default (multiplier 1.0). Set the multiplier to your plan's premium (e.g. 2.0) only if you know it applies.",

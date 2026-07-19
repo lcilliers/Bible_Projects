@@ -1,33 +1,46 @@
 # Combined cost ledger — Claude Code · API · Claude AI
 
-> Rebuilt 2026-07-19T04:51:58Z. Tokens are exact where they exist; cost is estimated at the rates in `scripts/token_cost_rates.json` unless a source supplies real cost.
+> Rebuilt 2026-07-19T05:06:49Z. Tokens are exact where they exist; cost is estimated at the rates in `scripts/token_cost_rates.json` unless a source supplies real cost.
+> **Claude Code billing detected: subscription [claude pro] (+extra-usage overage enabled).**
 
-## GRAND TOTAL — est. USD 15,392.70
+## ACTUAL MONEY (est.) — USD 117.95
 
-| surface | tokens | est. USD | fidelity |
-| --- | --: | --: | --- |
-| Claude Code | 6,335,137,981 | 15,392.70 | exact tokens · estimated cost |
-| Anthropic API | — | 0.00 | no export loaded |
-| Claude AI chat | n/a | 0.00 | subscription-flat (no tokens exist) |
-| **total** | | **15,392.70** | |
+> Claude Code runs on your **Claude subscription** — the same plan as claude.ai chat. Its per-token list value is shown below as a **reference only** and is **NOT** added to the money total; the flat subscription fee (record it in `cost_subscriptions.json`) is what covers it, plus any extra-usage overage. Only the **API** column is real pay-as-you-go spend.
+
+| surface | tokens | USD | counts toward money? | fidelity |
+| --- | --: | --: | --- | --- |
+| Claude Code | 6,337,231,156 | 15,398.03 | no — subscription | exact tokens · list-price reference |
+| Anthropic API (pay-as-you-go) | 17,928,204 | 117.95 | yes | estimated (per-model) |
+| Subscription fees (Claude Code + chat) | n/a | 0.00 | yes | flat fee you recorded |
+| **ACTUAL MONEY** | | **117.95** | | |
+
+*Reference: Claude Code consumed USD 15,398.03 of usage at API list prices — the value you got from the subscription, not a charge.*
 
 ## 1. Claude Code — by project folder
 
-| project folder | tokens | est. USD |
+| project folder | tokens | list value USD |
 | --- | --: | --: |
-| `c--Bible-study-projects` | 6,160,585,757 | 14,685.73 |
+| `c--Bible-study-projects` | 6,162,678,932 | 14,691.05 |
 | `subagents` | 174,244,437 | 698.48 |
 | `g--My-Drive-Bible-study-projects` | 256,680 | 6.95 |
 | `G--My-Drive-Bible-study-projects--claude-worktrees-reverent-swanson-3a3822` | 51,107 | 1.55 |
-| **all Claude Code** | **6,335,137,981** | **15,392.70** |
+| **all Claude Code** | **6,337,231,156** | **15,398.03** |
 
-Buckets: input 1,406,823 · cache-read 6,156,602,214 · cache-write 152,919,997 · output 24,208,947. For per-session/per-day Claude Code detail run `token_cost_history.py`.
+*This USD column is list-price VALUE, not a bill — Claude Code is on your subscription.*
 
-## 2. Anthropic API — from Console exports
+Buckets: input 1,406,854 · cache-read 6,158,648,462 · cache-write 152,947,969 · output 24,227,871. For per-session/per-day Claude Code detail run `token_cost_history.py`.
 
-**No API export loaded.** Direct API spend (e.g. the app's reading calls, the research subagent's monthly-limit spend) lives only in the Anthropic Console and is **NOT** counted above until you add it.
+## 2. Anthropic API — from Console exports (real pay-as-you-go)
 
-To include it: export CSV from **console.anthropic.com → Usage**, drop it in `outputs\cost-history\api-exports/`, re-run. See that folder's `README.md`.
+Read 25 rows from 2 export file(s) spanning 2026-05-03 … 2026-06-19: `claude_api_tokens_2026_05.csv`, `claude_api_tokens_2026_06.csv`.
+
+| model | input | output | cache-read | cache-write | est. USD |
+| --- | --: | --: | --: | --: | --: |
+| sonnet | 11,145,339 | 5,481,198 | 914,743 | 353,250 | 117.25 |
+| opus | 30,529 | 3,145 | 0 | 0 | 0.69 |
+| **total** | 11,175,868 | 5,484,343 | 914,743 | 353,250 | **117.95** |
+
+Cost estimated (per-model). This IS separate pay-as-you-go spend, on top of the subscription. The upcoming lexical read-passage phase will add to this table.
 
 ## 3. Claude AI chat — subscription (flat)
 
