@@ -209,10 +209,20 @@ def ingest_api(folder: pathlib.Path, rates: dict):
 
 # ---------------------------------------------------------------- subscriptions
 def read_subs(path: pathlib.Path):
+    """Return (currency, invoices, usd_per_gbp). Accepts the invoice model, or the
+    older monthly_usd x months model (converted to pseudo-invoices)."""
     if not path.exists():
-        return "USD", []
+        return "USD", [], 1.0
     d = json.loads(path.read_text(encoding="utf-8"))
-    return d.get("currency", "USD"), d.get("subscriptions", [])
+    cur = d.get("currency", "USD")
+    inv = list(d.get("invoices", []))
+    if not inv and d.get("subscriptions"):
+        for s in d["subscriptions"]:
+            amt = _num(s.get("monthly_usd")) * _num(s.get("months"))
+            inv.append({"date": "", "amount": amt, "status": "",
+                        "note": f"{s.get('service','')} {s.get('plan','')}".strip()})
+    fx = _num((d.get("fx") or {}).get("usd_per_gbp")) or 1.0
+    return cur, inv, fx
 
 
 # ---------------------------------------------------------------- main
@@ -241,12 +251,19 @@ def main() -> int:
     api_cost = api["cost"]
     api_cost_kind = "EXACT (from export)" if api["exact_cost"] is not None else "estimated (per-model)"
 
-    sub_cur, subs = read_subs(a.subs)
-    sub_cost = sum(_num(s.get("monthly_usd")) * _num(s.get("months")) for s in subs)
+    sub_cur, invoices, usd_per_gbp = read_subs(a.subs)
+    sub_cost = sum(_num(i.get("amount")) for i in invoices)   # in sub_cur (e.g. GBP)
 
-    # ACTUAL MONEY = subscription (covers Claude Code + chat) + pay-as-you-go API.
-    # Claude Code's list-price value is NOT added when it is subscription-billed.
-    money = sub_cost + api_cost + (0.0 if cc_is_sub else cc_value)
+    # The money total is reported in the subscription currency (what the card is charged).
+    # API cost is USD; convert into sub_cur when they differ.
+    if sub_cur.upper() == "USD" or usd_per_gbp in (0, 1.0):
+        api_in_sub = api_cost if sub_cur.upper() == "USD" else api_cost / (usd_per_gbp or 1.0)
+    else:
+        api_in_sub = api_cost / usd_per_gbp
+    cc_in_sub = 0.0 if cc_is_sub else (cc_value if sub_cur.upper() == "USD" else cc_value / (usd_per_gbp or 1.0))
+
+    # ACTUAL MONEY = invoices (cover Claude Code + chat + overage) + pay-as-you-go API.
+    money = sub_cost + api_in_sub + cc_in_sub
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     L = []
@@ -256,26 +273,28 @@ def main() -> int:
              f"the rates in `scripts/token_cost_rates.json` unless a source supplies real cost.")
     L.append(f"> **Claude Code billing detected: {cc_mode}.**")
     L.append("")
-    L.append(f"## ACTUAL MONEY (est.) — {cur} {money:,.2f}")
+    L.append(f"## ACTUAL MONEY (est.) — {sub_cur} {money:,.2f}")
+    L.append("")
+    L.append(f"> Real money you have paid, in {sub_cur}: your **invoices** (which already cover Claude Code + "
+             f"claude.ai chat + overage on the one plan) plus separate **pay-as-you-go API**. Claude Code's "
+             f"per-token list value is a **reference only** — NOT a charge — because it is on the subscription.")
+    L.append("")
+    L.append(f"| surface | native | in {sub_cur} | counts as money? |")
+    L.append("| --- | --: | --: | --- |")
+    cc_money_note = "no — on subscription" if cc_is_sub else "yes"
+    L.append(f"| Claude Code (value consumed) | USD {cc_value:,.2f} | {'(covered by invoices)' if cc_is_sub else f'{cc_in_sub:,.2f}'} | {cc_money_note} |")
+    api_native = f"USD {api_cost:,.2f}" if api["files"] else "—"
+    L.append(f"| Anthropic API (pay-as-you-go) | {api_native} | {api_in_sub:,.2f} | yes |")
+    L.append(f"| Subscription invoices (chat + Code + overage) | {sub_cur} {sub_cost:,.2f} | {sub_cost:,.2f} | yes |")
+    L.append(f"| **ACTUAL MONEY** | | **{money:,.2f}** | |")
     L.append("")
     if cc_is_sub:
-        L.append("> Claude Code runs on your **Claude subscription** — the same plan as claude.ai chat. "
-                 "Its per-token list value is shown below as a **reference only** and is **NOT** added to "
-                 "the money total; the flat subscription fee (record it in `cost_subscriptions.json`) is "
-                 "what covers it, plus any extra-usage overage. Only the **API** column is real pay-as-you-go spend.")
+        L.append(f"*Reference: Claude Code consumed **USD {cc_value:,.2f}** of usage at API list prices — the "
+                 f"value you extracted from the subscription, not a bill. You actually paid {sub_cur} "
+                 f"{sub_cost:,.2f} in invoices for it (with chat) + the API above.*")
         L.append("")
-    L.append(f"| surface | tokens | {cur} | counts toward money? | fidelity |")
-    L.append("| --- | --: | --: | --- | --- |")
-    cc_money_note = "no — subscription" if cc_is_sub else "yes"
-    L.append(f"| Claude Code | {_tok(cc_total):,} | {cc_value:,.2f} | {cc_money_note} | exact tokens · list-price {'reference' if cc_is_sub else 'estimate'} |")
-    api_tok = f"{_tok(api_b):,}" if api["files"] else "—"
-    L.append(f"| Anthropic API (pay-as-you-go) | {api_tok} | {api_cost:,.2f} | yes | {api_cost_kind if api['files'] else 'no export loaded'} |")
-    L.append(f"| Subscription fees (Claude Code + chat) | n/a | {sub_cost:,.2f} | yes | flat fee you recorded |")
-    L.append(f"| **ACTUAL MONEY** | | **{money:,.2f}** | | |")
-    L.append("")
-    if cc_is_sub:
-        L.append(f"*Reference: Claude Code consumed {cur} {cc_value:,.2f} of usage at API list prices — "
-                 f"the value you got from the subscription, not a charge.*")
+    if api['files'] and sub_cur.upper() != 'USD':
+        L.append(f"*API converted at USD {usd_per_gbp}/{sub_cur} (edit `fx` in cost_subscriptions.json).*")
         L.append("")
 
     # Claude Code detail
@@ -333,36 +352,39 @@ def main() -> int:
                  f"`{a.api_dir}/`, re-run. See that folder's `README.md`.")
     L.append("")
 
-    # Subscriptions detail
-    L.append("## 3. Claude AI chat — subscription (flat)")
+    # Subscription invoices detail
+    L.append("## 3. Subscription invoices — the real bill (chat + Claude Code + overage)")
     L.append("")
-    L.append("claude.ai chat is not billed per token and has no usage export. Its cost is the "
-             "monthly fee, recorded in `scripts/cost_subscriptions.json`.")
+    L.append("claude.ai / Claude Code share one subscription; there is no per-token export for it. "
+             "These are the actual invoices, recorded in `scripts/cost_subscriptions.json`.")
     L.append("")
-    if subs:
-        L.append(f"| service | plan | {sub_cur}/mo | months | subtotal | note |")
-        L.append("| --- | --- | --: | --: | --: | --- |")
-        for s in subs:
-            sub = _num(s.get("monthly_usd")) * _num(s.get("months"))
-            L.append(f"| {s.get('service','')} | {s.get('plan','')} | {_num(s.get('monthly_usd')):,.2f} "
-                     f"| {int(_num(s.get('months')))} | {sub:,.2f} | {s.get('note','')} |")
-        L.append(f"| **total** | | | | **{sub_cost:,.2f}** | |")
-        if sub_cost == 0:
+    if invoices:
+        idates = [i.get("date", "") for i in invoices if i.get("date")]
+        if idates:
+            L.append(f"{len(invoices)} invoices spanning {min(idates)} … {max(idates)}.")
             L.append("")
-            L.append("*(All zero — fill in `scripts/cost_subscriptions.json` with what you actually pay.)*")
+        L.append(f"| date | amount ({sub_cur}) | status | note |")
+        L.append("| --- | --: | --- | --- |")
+        for i in sorted(invoices, key=lambda x: x.get("date", ""), reverse=True):
+            L.append(f"| {i.get('date','')} | {_num(i.get('amount')):,.2f} | {i.get('status','')} | {i.get('note','')} |")
+        L.append(f"| **total** | **{sub_cost:,.2f}** | | |")
+        L.append("")
+        L.append("*Reconstructed from a pasted billing page — the total is exact; correct any date↔amount row.*")
+    else:
+        L.append("*No invoices recorded — add them to `scripts/cost_subscriptions.json`.*")
     L.append("")
     L.append("---")
-    L.append("*Claude Code detail: `token-history.md`. This file is the roll-up across all three surfaces.*")
+    L.append("*Claude Code detail: `token-history.md`. This file is the roll-up across all surfaces.*")
 
     a.out_dir.mkdir(parents=True, exist_ok=True)
     out = a.out_dir / "cost-ledger.md"
     out.write_text("\n".join(L) + "\n", encoding="utf-8")
 
     print(f"Claude Code billing: {cc_mode}")
-    print(f"Claude Code list-value {cur} {cc_value:,.2f} ({'NOT billed — subscription' if cc_is_sub else 'estimated'}) "
-          f"· API pay-as-you-go {cur} {api_cost:,.2f} ({'loaded' if api['files'] else 'no export'}) "
-          f"· subs {cur} {sub_cost:,.2f}")
-    print(f"ACTUAL MONEY est. {cur} {money:,.2f}")
+    print(f"Claude Code list-value USD {cc_value:,.2f} ({'NOT billed — subscription' if cc_is_sub else 'estimated'}) "
+          f"· API pay-as-you-go USD {api_cost:,.2f} ({'loaded' if api['files'] else 'no export'}) "
+          f"· invoices {sub_cur} {sub_cost:,.2f}")
+    print(f"ACTUAL MONEY est. {sub_cur} {money:,.2f}")
     print(f"  {out}")
     return 0
 

@@ -1,8 +1,22 @@
 {
-  "_README": "Flat monthly fees that are NOT billed per token. Claude AI chat (claude.ai Pro/Max/Team) has NO token or cost export anywhere — it is a flat subscription, so its only honest cost is the fee you pay. Record it here. Any API plan minimum or Claude Code subscription goes here too. cost = monthly_usd x months. Edit freely.",
-  "currency": "USD",
-  "subscriptions": [
-    {"service": "claude.ai chat", "plan": "", "monthly_usd": 0, "months": 0, "note": "fill in your claude.ai subscription (Pro/Max/Team) and how many months you have paid"},
-    {"service": "Claude Code / API plan", "plan": "", "monthly_usd": 0, "months": 0, "note": "any flat plan fee, if applicable (leave 0 if you pay per-token API only)"}
+  "_README": "Your ACTUAL Anthropic / claude.ai INVOICES — the real money. This subscription covers claude.ai chat AND Claude Code (they share one plan) PLUS any extra-usage overage. Amounts are as billed, in 'currency'. Reconstructed from a pasted billing page: the TOTAL is exact but the date<->amount pairing may be off — correct any row. 'fx.usd_per_gbp' folds the USD API spend into this currency for the combined total.",
+  "currency": "GBP",
+  "fx": {
+    "usd_per_gbp": 1.27,
+    "note": "USD per 1 GBP. Used only to add the USD API spend into the GBP total. Set to the rate your card was actually charged if you want it exact."
+  },
+  "invoices": [
+    {"date": "2026-07-15", "amount": 180.00, "status": "Paid", "note": "reconstructed pairing — verify"},
+    {"date": "2026-07-12", "amount": 12.62,  "status": "Paid", "note": "likely extra-usage overage"},
+    {"date": "2026-07-12", "amount": 12.56,  "status": "Paid", "note": "likely extra-usage overage"},
+    {"date": "2026-06-15", "amount": 90.00,  "status": "Paid", "note": "monthly subscription"},
+    {"date": "2026-05-15", "amount": 90.00,  "status": "Paid", "note": "monthly subscription"},
+    {"date": "2026-04-15", "amount": 90.00,  "status": "Paid", "note": "monthly subscription"},
+    {"date": "2026-04-07", "amount": 40.50,  "status": "Paid", "note": "prorated/partial"},
+    {"date": "2026-03-15", "amount": 90.00,  "status": "Paid", "note": "monthly subscription"},
+    {"date": "2026-03-02", "amount": 0.00,   "status": "Paid", "note": ""},
+    {"date": "2026-02-15", "amount": -78.73, "status": "Paid", "note": "credit / refund"},
+    {"date": "2026-02-01", "amount": 60.00,  "status": "Paid", "note": ""},
+    {"date": "2026-01-23", "amount": 180.00, "status": "Paid", "note": "initial signup (subscription created 2026-01-23)"}
   ]
 }
