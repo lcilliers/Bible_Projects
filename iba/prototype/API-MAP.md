@@ -179,3 +179,8 @@ related lexicon for free, and `build_layers.py` only stores it from call 2.
 | `tables-peace.md` · `tables-hypocrisy.md` | render the above |
 
 **Not deleted.** Renaming and deleting is a decision, and §4 is a proposal, not a ruling.
+
+
+Researching comments
+
+archive all redundant files.
