@@ -1,0 +1,8 @@
+{
+  "_README": "Flat monthly fees that are NOT billed per token. Claude AI chat (claude.ai Pro/Max/Team) has NO token or cost export anywhere — it is a flat subscription, so its only honest cost is the fee you pay. Record it here. Any API plan minimum or Claude Code subscription goes here too. cost = monthly_usd x months. Edit freely.",
+  "currency": "USD",
+  "subscriptions": [
+    {"service": "claude.ai chat", "plan": "", "monthly_usd": 0, "months": 0, "note": "fill in your claude.ai subscription (Pro/Max/Team) and how many months you have paid"},
+    {"service": "Claude Code / API plan", "plan": "", "monthly_usd": 0, "months": 0, "note": "any flat plan fee, if applicable (leave 0 if you pay per-token API only)"}
+  ]
+}
