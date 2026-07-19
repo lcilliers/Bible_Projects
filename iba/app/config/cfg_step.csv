@@ -1,0 +1,11 @@
+work_package,ordinal,step,handler,scope,does
+new-word,0,registry.exists,iba.app.handlers.registry:exists,word,stop if the word already exists (a refresh run handles that)
+new-word,1,registry.create,iba.app.handlers.registry:create,word,"create the word, status proposed->approved"
+new-word,2,raw.discover,iba.app.handlers.raw:discover,word,CALL 1 meanings= -> word_strong (the seed strongs)
+new-word,3,raw.detail,iba.app.handlers.raw:detail,word,CALL 2 getInfo per strong -> strong + sense + tree + lexicon (the meaning)
+new-word,4,raw.verses,iba.app.handlers.raw:verses,word,CALL 3 per strong -> strong_verse + verse + span (span parsed from preview)
+new-word,5,raw.write,iba.app.handlers.raw:write,word,commit; mark raw-complete
+new-word,6,raw.validate,iba.app.handlers.raw:validate,word,the parse-check: span vs strong_verse must agree
+set-candidates,0,candidate.seed,iba.app.handlers.candidate:seed,global,refresh candidate_seed over lemma_inventory (independent net + registry-direct + config); recompute registry_match (the double control)
+set-candidates,1,candidate.set,iba.app.handlers.candidate:set,book,stamp span_candidate on the book's spans whose base-strong is a candidate
+build-passages,0,passage.build,iba.app.handlers.passage:build,book,recompute the book's passages from span_candidate (char-continuity|maximal); flag >review_over as needs_review

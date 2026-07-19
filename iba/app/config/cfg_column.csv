@@ -1,0 +1,128 @@
+table_name,name,ordinal,type,is_pk,notnull,is_unique,dflt,fk,use,expectation,source,filled_by
+word_registry,id,0,INTEGER,1,0,0,,,surrogate key,,,
+word_registry,word,1,TEXT,0,1,1,,,the English word,,run.param.Word,
+word_registry,source,2,TEXT,0,0,0,,,why it was registered — the growth trigger,,run.param.Source,
+word_registry,status,3,TEXT,0,0,0,,,registry processing stage,enum.word_status,,registry+raw+signoff
+word_registry,created_at,4,TEXT,0,0,0,,,when registered,,,registry.create
+word_registry,deleted,5,INTEGER,0,0,0,0,,soft delete,,,
+word_strong,id,0,INTEGER,1,0,0,,,surrogate key,,,
+word_strong,word_id,1,INTEGER,0,1,0,,word_registry.id,the word,,run.context.word_id,
+word_strong,strong,2,TEXT,0,1,0,,strong.strongNumber,a strong the word returned,,call1.definitions[].strongNumber,
+word_strong,deleted,3,INTEGER,0,0,0,0,,soft delete,,,
+strong,strongNumber,0,TEXT,1,0,0,,,the resolved Strong's code — the key,,call2.vocabInfos[0].strongNumber,
+strong,accentedUnicode,1,TEXT,0,0,0,,,the actual Hebrew/Greek word,,call2.vocabInfos[0].accentedUnicode,
+strong,stepGloss,2,TEXT,0,0,0,,,short English sense,,call2.vocabInfos[0].stepGloss,
+strong,stepTransliteration,3,TEXT,0,0,0,,,romanised form; never shown without the gloss,,call2.vocabInfos[0].stepTransliteration,
+strong,language,4,TEXT,0,0,0,,,Hebrew/Greek from the code prefix,,derived:call2.strongNumber,
+strong,count,5,INTEGER,0,0,0,,,"STEP token frequency — NOT a verse count, may be capped",,call2.vocabInfos[0].count,
+strong,freqList,6,TEXT,0,0,0,,,raw frequency distribution,,call2.vocabInfos[0].freqList,
+strong,created_at,7,TEXT,0,0,0,,,when first fetched,,,raw.detail
+strong,deleted,8,INTEGER,0,0,0,0,,soft delete,,,
+strong_sense,strong,0,TEXT,1,0,0,,strong.strongNumber,the strong,,,
+strong_sense,head,1,TEXT,0,0,0,,,the sense — THE SPAN'S MEANING,,derived:call2.mediumDef.head,
+strong_sense,is_own_lemma,2,INTEGER,0,0,0,,,1 = no ': ' head; the code is its own lemma and the gloss is the sense,,derived:call2.mediumDef,
+strong_sense,deleted,3,INTEGER,0,0,0,0,,soft delete,,,
+strong_meaning_tree,id,0,INTEGER,1,0,0,,,surrogate key,,,
+strong_meaning_tree,lemma_key,1,TEXT,0,1,0,,,the base code the tree belongs to,,derived:call2.strongNumber.base,
+strong_meaning_tree,sense_code,2,TEXT,0,0,0,,,"the tree position: 1), 1a), 1b1)",,derived:call2.mediumDef.tree,
+strong_meaning_tree,sense_text,3,TEXT,0,0,0,,,the sense line,,derived:call2.mediumDef.tree,
+strong_meaning_tree,sort,4,INTEGER,0,0,0,,,order within the tree,,derived:call2.mediumDef.tree,
+strong_meaning_tree,deleted,5,INTEGER,0,0,0,0,,soft delete,,,
+strong_lexicon,strong,0,TEXT,1,0,0,,strong.strongNumber,the strong,,,
+strong_lexicon,lsj,1,TEXT,0,0,0,,,LSJ entry (Greek),,call2.vocabInfos[0].lsjDefs,
+strong_lexicon,mounce,2,TEXT,0,0,0,,,Mounce short def (Greek),,call2.vocabInfos[0].shortDefMounce,
+strong_lexicon,deleted,3,INTEGER,0,0,0,0,,soft delete,,,
+verse,id,0,INTEGER,1,0,0,,,surrogate key,,,
+verse,osisId,1,TEXT,0,1,1,,,"the machine key, e.g. Matt.23.28",,call3.results[].osisId,
+verse,reference,2,TEXT,0,0,0,,,"human reference, e.g. Mat 23:28",,call3.results[].key,
+verse,preview,3,TEXT,0,0,0,,,the full interlinear HTML — the source of span,,call3.results[].preview,
+verse,step_version,4,TEXT,0,0,0,,,provenance — which STEP module,,run.context.step_version,
+verse,created_at,5,TEXT,0,0,0,,,when first built,,,raw.verses
+verse,deleted,6,INTEGER,0,0,0,0,,soft delete,,,
+strong_verse,id,0,INTEGER,1,0,0,,,surrogate key,,,
+strong_verse,strong,1,TEXT,0,1,0,,strong.strongNumber,the strong searched,,call3.query.strong,
+strong_verse,verse_id,2,INTEGER,0,1,0,,verse.id,the verse returned,,call3.results[].osisId,
+strong_verse,deleted,3,INTEGER,0,0,0,0,,soft delete,,,
+span,id,0,INTEGER,1,0,0,,,surrogate key,,,
+span,verse_id,1,INTEGER,0,1,0,,verse.id,the verse,,parse:verse.preview,
+span,position,2,INTEGER,0,1,0,,,running code index in the verse — the key with verse_id,,parse:verse.preview,
+span,surface,3,TEXT,0,0,0,,,the English word this code belongs to; repeats across a word's codes,,parse:verse.preview,
+span,strong_variant,4,TEXT,0,0,0,,strong.strongNumber,ONE strong code,,parse:verse.preview,
+span,morph_code,5,TEXT,0,0,0,,,"the grammatical layer — one, aligned with the code",,parse:verse.preview,
+span,is_particle,6,INTEGER,0,0,0,,,1 if a grammar-particle code (H9xxx/G9xxx),,derived:strong_variant,
+span,built_at,7,TEXT,0,0,0,,,raw time,,,raw.verses
+span,deleted,8,INTEGER,0,0,0,0,,soft delete,,,
+run,id,0,INTEGER,1,0,0,,,surrogate key,,,
+run,run_id,1,TEXT,0,1,1,,,the run identifier,,,run.start
+run,work_package,2,TEXT,0,0,0,,,which package,,,run.start
+run,params,3,TEXT,0,0,0,,,JSON of the run params,,,run.start
+run,runs_over,4,TEXT,0,0,0,,,"the scope value, e.g. the word",,,run.start
+run,config_version,5,TEXT,0,0,0,,,the config that ran — pinned before any work,,,run.start
+run,state,6,TEXT,0,0,0,,,running | paused | done | failed,enum.run_state,,run
+run,resume_point,7,TEXT,0,0,0,,,the step to resume at on continue,,,run
+run,started_at,8,TEXT,0,0,0,,,start,,,run.start
+run,ended_at,9,TEXT,0,0,0,,,end,,,run.end
+run,outcome,10,TEXT,0,0,0,,,the final result,,,run.end
+validation_result,id,0,INTEGER,1,0,0,,,surrogate key,,,
+validation_result,run_id,1,TEXT,0,1,0,,run.run_id,the run that ran the check,,,
+validation_result,word,2,TEXT,0,0,0,,,the word the check was over,,,validate
+validation_result,step,3,TEXT,0,0,0,,,the step that ran it,,,validate
+validation_result,check_name,4,TEXT,0,0,0,,,which check,,,validate
+validation_result,result,5,TEXT,0,0,0,,,pass | fail,,,validate
+validation_result,detail,6,TEXT,0,0,0,,,"the specifics — counts, what failed",,,validate
+validation_result,ran_at,7,TEXT,0,0,0,,,when,,,validate
+validation_result,deleted,8,INTEGER,0,0,0,0,,soft delete,,,
+escalation,id,0,INTEGER,1,0,0,,,surrogate key,,,
+escalation,run_id,1,TEXT,0,1,0,,run.run_id,the paused run,,,
+escalation,word,2,TEXT,0,0,0,,,the word this interaction is about — durable across runs,,,escalation.raise
+escalation,at_step,3,TEXT,0,0,0,,,where to resume — makes it a pause not a fork,,,escalation.raise
+escalation,type,4,TEXT,0,0,0,,,prompted | interactive,enum.escalation_type,,escalation.raise
+escalation,question,5,TEXT,0,0,0,,,the question,,,escalation.raise
+escalation,preset,6,TEXT,0,0,0,,,the context that lets it be answered (JSON),,,escalation.raise
+escalation,tried,7,TEXT,0,0,0,,,what the app attempted before asking,,,escalation.raise
+escalation,state,8,TEXT,0,0,0,,,raised | answered | resumed,,,escalation
+escalation,answer,9,TEXT,0,0,0,,,the researcher's decision,,,escalation.answer
+escalation,answered_at,10,TEXT,0,0,0,,,when,,,escalation.answer
+escalation,raised_at,11,TEXT,0,0,0,,,when raised,,,escalation.raise
+lemma_inventory,id,0,INTEGER,1,0,0,,,surrogate key,,,
+lemma_inventory,lemma_key,1,TEXT,0,1,1,,,"base Strong's, sub-letters stripped",,import:lemma-inventory,
+lemma_inventory,gloss,2,TEXT,0,0,0,,,the lemma's English gloss — the meaning the net matches on,,import:lemma-inventory,
+lemma_inventory,language,3,TEXT,0,0,0,,,Hebrew/Greek,,derived:lemma_key,
+lemma_inventory,source,4,TEXT,0,0,0,,,import provenance,,,migration
+lemma_inventory,created_at,5,TEXT,0,0,0,,,when imported,,,migration
+lemma_inventory,deleted,6,INTEGER,0,0,0,0,,soft delete,,,
+candidate_seed,id,0,INTEGER,1,0,0,,,surrogate key,,,
+candidate_seed,lemma_key,1,TEXT,0,1,1,,lemma_inventory.lemma_key,the assessed lemma,,,
+candidate_seed,decision,2,TEXT,0,0,0,,,candidate (potential) | rejected | undecided,enum.candidate_decision,,candidate.seed
+candidate_seed,layer,3,TEXT,0,0,0,,,which layer decided it,enum.candidate_source,,candidate.seed
+candidate_seed,registry_match,4,TEXT,0,0,0,,,"the registry word covering this lemma, or NULL (NULL+candidate = missing registry word)",,,candidate.seed
+candidate_seed,tag,5,TEXT,0,0,0,,,IB label carried onto the stamp,,,candidate.seed
+candidate_seed,assessed_at,6,TEXT,0,0,0,,,when assessed,,,candidate.seed
+candidate_seed,deleted,7,INTEGER,0,0,0,0,,soft delete,,,
+span_candidate,id,0,INTEGER,1,0,0,,,surrogate key,,,
+span_candidate,span_id,1,INTEGER,0,1,1,,span.id,the L4a span stamped,,,
+span_candidate,lemma_key,2,TEXT,0,0,0,,,base Strong's of the span (denormalised for continuity/join),,derived:span.strong_variant,
+span_candidate,candidate_tag,3,TEXT,0,0,0,,,the IB label from the seed,,candidate_seed.tag,
+span_candidate,seed_source,4,TEXT,0,0,0,,,which seed layer,enum.candidate_source,,candidate.set
+span_candidate,set_at,5,TEXT,0,0,0,,,when stamped,,,candidate.set
+span_candidate,deleted,6,INTEGER,0,0,0,0,,soft delete,,,
+passage,id,0,INTEGER,1,0,0,,,surrogate key,,,
+passage,book,1,TEXT,0,1,0,,,OSIS book code,,derived:verse.osisId,
+passage,anchor_verse_id,2,INTEGER,0,1,0,,verse.id,first verse of the run — the anchor,,,
+passage,start_chapter,3,INTEGER,0,0,0,,,range start chapter,,,passage.build
+passage,start_verse,4,INTEGER,0,0,0,,,range start verse,,,passage.build
+passage,end_chapter,5,INTEGER,0,0,0,,,range end chapter,,,passage.build
+passage,end_verse,6,INTEGER,0,0,0,,,range end verse,,,passage.build
+passage,ref,7,TEXT,0,0,0,,,human range,,,passage.build
+passage,verse_count,8,INTEGER,0,0,0,,,>=1,,,passage.build
+passage,rule,9,TEXT,0,0,0,,,char-continuity | maximal,enum.passage_rule,,passage.build
+passage,source,10,TEXT,0,0,0,,,passage-build | single-verse-emergent,enum.passage_source,,passage.build
+passage,needs_review,11,INTEGER,0,0,0,,,1 when verse_count > passage.review_over — confirm one passage not several,,,passage.build
+passage,created_at,12,TEXT,0,0,0,,,when built,,,passage.build
+passage,deleted,13,INTEGER,0,0,0,0,,soft delete,,,
+verse_passage,id,0,INTEGER,1,0,0,,,surrogate key,,,
+verse_passage,passage_id,1,INTEGER,0,1,0,,passage.id,the passage,,,
+verse_passage,verse_id,2,INTEGER,0,1,1,,verse.id,the verse (unique — one passage per verse),,,
+verse_passage,is_anchor,3,INTEGER,0,0,0,,,1 on the anchor verse,,,passage.build
+verse_passage,created_at,4,TEXT,0,0,0,,,when built,,,passage.build
+verse_passage,deleted,5,INTEGER,0,0,0,0,,soft delete,,,

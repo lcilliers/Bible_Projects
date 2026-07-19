@@ -1,11 +1,12 @@
 """Candidate-characteristic handlers (span L4b) — interpreters, config-governed.
 
 Two steps:
-  seed — refresh candidate_seed over the INDEPENDENT lemma_inventory. The seed is not
-         derived from the registry: the registry-direct layer is ONE evidence layer, and
-         registry coverage is recorded as registry_match (a candidate with registry_match
-         NULL = a candidate MISSING registry word — the double control). Over-inclusive by
-         design; the lexical stage is the real test.
+  seed — refresh candidate_seed over the INDEPENDENT lemma_inventory. Candidacy is
+         meaning-based only: the migrated independent net (gloss/synonym/IB-judgement/
+         read-emergent) plus the editable cfg_candidate_rule inputs. Registry coverage
+         (word_strong) is NOT a candidacy route — it is recorded as registry_match, the
+         double control (a candidate with registry_match NULL = a candidate MISSING a
+         registry word). Over-inclusive by design; the lexical stage is the real test.
   set  — stamp span_candidate on a book's spans whose base-Strong's is a candidate.
 
 Every choice is config: the lemma-base pattern (candidate.lemma_base_pattern), the editable
@@ -52,36 +53,11 @@ def seed(ctx: Ctx) -> Outcome:
         return fail("no-inventory", "lemma_inventory is empty — run the seed migration first")
     _may(ctx, "candidate.seed", "candidate_seed")
     now = _now()
-    c = {"added_registry": 0, "match_updates": 0, "synonym": 0, "accepted": 0, "rejected": 0}
+    c = {"match_updates": 0, "synonym": 0, "accepted": 0, "rejected": 0}
 
-    # registry coverage: base-strong -> a registry word that carries it (the double-control input)
-    cover: dict[str, str] = {}
-    for r in ctx.db.rows(
-        "SELECT wr.word AS word, ws.strong AS strong FROM word_strong ws "
-        "JOIN word_registry wr ON wr.id = ws.word_id WHERE ws.deleted=0 AND wr.deleted=0"):
-        cover.setdefault(_base(ctx, r["strong"]), r["word"])
-
-    existing = {r["lemma_key"]: r for r in ctx.db.rows(
-        "SELECT lemma_key, decision, registry_match FROM candidate_seed WHERE deleted=0")}
-
-    # registry-direct: a covered lemma is a candidate; refresh registry_match on every row
-    for lk, word in cover.items():
-        if lk not in inv:
-            continue
-        if lk in existing:
-            if existing[lk]["registry_match"] != word:
-                ctx.db.update("candidate_seed", {"lemma_key": lk}, registry_match=word, assessed_at=now)
-                c["match_updates"] += 1
-        else:
-            ctx.db.write("candidate_seed", {
-                "lemma_key": lk, "decision": "candidate", "layer": "registry-direct",
-                "registry_match": word, "tag": inv.get(lk), "assessed_at": now, "deleted": 0})
-            c["added_registry"] += 1
-    for lk, r in existing.items():                       # a lemma no longer covered loses its match
-        if r["registry_match"] and lk not in cover:
-            ctx.db.update("candidate_seed", {"lemma_key": lk}, registry_match=None, assessed_at=now)
-
-    # config meaning-net: synonyms (gloss contains), accept, reject
+    # config meaning-net (the editable, INDEPENDENT inputs — all gloss/meaning-based):
+    # synonyms (gloss contains a curated synonym), accept (force a lemma candidate),
+    # reject (force a lemma out). These MAY create candidacy; word_strong may not.
     syn = [s.lower() for s in ctx.cfg.candidate_rules("synonym")]
     if syn:
         for lk, gloss in inv.items():
@@ -94,14 +70,31 @@ def seed(ctx: Ctx) -> Outcome:
         if lk in inv:
             _set_decision(ctx, lk, "rejected", "ib-judgement", now); c["rejected"] += 1
 
+    # registry coverage = the DOUBLE-CONTROL ONLY. word_strong co-occurrence NEVER makes a
+    # lemma a candidate — that is the explicitly-rejected 'LORD->lust' route (registry lists
+    # validate, they do not impute). It only records, on an already-independent candidate,
+    # which registry word carries its base-Strong's (else NULL = a candidate missing a
+    # registry word: the completeness signal).
+    cover: dict[str, str] = {}
+    for r in ctx.db.rows(
+        "SELECT wr.word AS word, ws.strong AS strong FROM word_strong ws "
+        "JOIN word_registry wr ON wr.id = ws.word_id WHERE ws.deleted=0 AND wr.deleted=0"):
+        cover.setdefault(_base(ctx, r["strong"]), r["word"])
+    for r in ctx.db.rows("SELECT lemma_key, registry_match FROM candidate_seed "
+                         "WHERE decision='candidate' AND deleted=0"):
+        lk = r["lemma_key"]; word = cover.get(lk)
+        if r["registry_match"] != word:
+            ctx.db.update("candidate_seed", {"lemma_key": lk}, registry_match=word, assessed_at=now)
+            c["match_updates"] += 1
+
     total = ctx.db.rows("SELECT COUNT(*) n FROM candidate_seed "
                         "WHERE decision='candidate' AND deleted=0")[0]["n"]
     missing = ctx.db.rows("SELECT COUNT(*) n FROM candidate_seed WHERE decision='candidate' "
                           "AND registry_match IS NULL AND deleted=0")[0]["n"]
     return ok(f"seed: {total} candidate lemma(s), {missing} without a registry word "
-              f"(candidate missing registry words); +{c['added_registry']} registry-direct, "
-              f"{c['match_updates']} match update(s)", candidate_total=total,
-              missing_registry_words=missing, **c)
+              f"(candidate missing registry words); {c['match_updates']} match update(s), "
+              f"+{c['synonym']} synonym, +{c['accepted']} accept, {c['rejected']} reject",
+              candidate_total=total, missing_registry_words=missing, **c)
 
 
 # ── set (book; stamp span_candidate) ─────────────────────────────────────────

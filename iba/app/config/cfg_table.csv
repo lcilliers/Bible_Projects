@@ -1,0 +1,18 @@
+name,grain,use
+word_registry,one row per English inner-being word,the study's entry point; scope of a new-word run
+word_strong,"one row per (word, strong) the STEP word-search returned","L1 — the discovery record: which strongs a word maps to. These strongs are the basis for L2. Carries the link only, no strong detail."
+strong,"one row per strong — unique, global to the study",L2 — the strong's identity. The meaning is normalised out (O4): it lives in strong_sense / strong_meaning_tree / strong_lexicon.
+strong_sense,one row per strong — the sense HEAD,"the span's meaning, read constantly. The head is the first line of mediumDef (the sense); is_own_lemma marks a code that is its own lemma, where the gloss carries the sense."
+strong_meaning_tree,one row per sense-node of a LEMMA's definition tree,"the lemma's full range — read rarely, only when the broader context is needed. Keyed on the lemma (shared across its senses, which the prototype proved)."
+strong_lexicon,one row per strong that has LSJ/Mounce (Greek),the large lexicon text — separate because rarely scanned
+verse,one row per verse — unique. Does NOT belong to a strong.,"L3 — the addressable verse. preview is the full interlinear, kept verbatim so span is re-derivable."
+strong_verse,"one row per (strong, verse) — unique. The m:m index.",the source's assertion 'this strong is in this verse'. The check side against span (what the parse found).
+span,ONE ROW PER CODE of a verse (O3) — particles get their own row,"L4a — SOURCE, immutable. A parse of verse.preview. position is the running code index; (verse, position) is the key."
+run,one row per work-package run — the control record,"what ran, pinned to a config version, and RESUMABLE (O7): state + resume_point persisted so a pause survives the process."
+validation_result,one row per check a validate step ran,"util.validation — the outcome of a check, persisted so it can be inspected and reported. A passed check is a recorded fact, not just an advancing run."
+escalation,one row per researcher interaction — the pause,"the only sanctioned researcher interaction. A pause, not a fork: the run resumes at resume_point when answered."
+lemma_inventory,one row per corpus lemma (base Strong's) — the INDEPENDENT substrate the seed net runs over,"L4b seed substrate; imported from the old study, NOT derived from the registry, so the seed is a real completeness control"
+candidate_seed,one row per assessed lemma — the over-inclusive Axis-A candidate assessment,"L4b seed decision (potential, not definite); the lexical stage is the real test. registry_match NULL on a candidate = a candidate MISSING registry word (the double control)"
+span_candidate,one row per CANDIDATE span (existence = candidate) — the L4b stamp over the L4a span,over-inclusive candidate stamp; the lexical stage later tests each in context
+passage,"one row per passage — a reading frame (global, per book)",extends a characteristic's context to adjacent verses for assessing movement/process/qualifying spans; NOT a thematic unit
+verse_passage,"one row per verse-in-a-passage — passage membership (L4b), keeps the raw verse pristine",which passage a verse belongs to; a verse is in at most one passage

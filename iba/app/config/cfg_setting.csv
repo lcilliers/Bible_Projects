@@ -1,0 +1,24 @@
+key,value,use
+step.probe_strong,"""H0430""",STEP preflight known-answer probe
+step.expect_gloss_contains,"""God""",STEP preflight known-answer probe
+step.expect_min_verses,1000,STEP preflight known-answer probe
+step.cap,60,STEP's hard result cap; > this triggers the forward-walk
+step.walk_start,"""Gen.1.1""",forward-walk lower bound
+step.walk_end,"""Rev.22.21""",forward-walk upper bound
+step.walk_max_iter,400,forward-walk safety bound
+discovery.particle_pattern,"""^[HG]9\\d{3}$""","grammar-particle codes; excluded from discovery, flagged on a span"
+discovery.follow_related,false,"relatedNos is root-family noise (H2519 -> 'to divide', 'Mount Halak'). Not followed."
+meaning.head_marker,""": """,a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma.
+language.greek_prefix,"""G""",a strong starting with this is Greek; else Hebrew
+registry.strip_ends_pattern,"""[^A-Za-z]""","on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive."
+candidate.lemma_base_pattern,"""^([HG]\\d+)([A-Z]?)$""",capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this.
+passage.default_rule,"""char-continuity""",boundary rule when -Rule not given: run continues while consecutive verses share >=1 candidate base-strong
+passage.cross_chapter,false,passages do not cross a chapter boundary
+passage.min_shared_strongs,1,char-continuity threshold: verses must share at least this many candidate base-strongs to stay in one run
+passage.review_over,10,"a passage longer than this is flagged needs_review. Set to 10: the IB role is only assessable read as a full passage, so only very long runs warrant a manual second look"
+report.sample_verses,3,how many sample verses to show the span layer for
+report.show_verse_text,true,show the verse's plain text above its spans
+report.show_validation,true,show the validation results (util.validation) for the word
+report.strong_fields,"[""stepGloss"", ""accentedUnicode"", ""stepTransliteration"", ""head"", ""count"", ""verses""]",which columns the L1->L2 strong table shows
+report.span_fields,"[""position"", ""surface"", ""strong_variant"", ""morph_code"", ""is_particle"", ""sense""]",which columns the span table shows
+step.span_html,"""<span[^>]*\\bmorph='([^']*)'[^>]*\\bstrong='([^']*)'[^>]*>([^<]*)</span>""","how STEP formats an interlinear span in a verse preview: (morph, strong, surface). The forward-walk and the span parse read it."

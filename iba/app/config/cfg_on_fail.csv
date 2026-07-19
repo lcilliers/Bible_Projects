@@ -1,0 +1,11 @@
+step,condition,path,resolver,message
+registry.exists,word-exists,report-stop,,"the word already exists; use a refresh run, not new-word"
+registry.create,needs-approval,pause-continue,,a new word needs researcher approval
+registry.create,word-rejected,report-stop,,the researcher rejected the word
+raw.discover,zero-strongs,pause-continue,,the word maps to no strongs — a researcher question
+raw.detail,no-vocab,report-continue,,a strong returned no vocab — recorded STEP gap
+raw.verses,shortfall,report-continue,,a strong returned fewer rows than STEP's total
+raw.validate,parse-mismatch,report-stop,,span does not recover strong_verse
+candidate.seed,no-inventory,report-stop,,lemma_inventory is empty — run the seed migration first
+candidate.set,no-spans,report-stop,,the book has no spans — build its words first
+passage.build,no-candidates,report-stop,,the book has no candidate spans — run set-candidates first

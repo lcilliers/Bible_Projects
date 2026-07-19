@@ -1,0 +1,6 @@
+entity,status,set_by,ordinal
+word,proposed,"registry (on new word, before approval)",0
+word,approved,registry.create,1
+word,raw-complete,raw.write,2
+word,signed-off,registry.signoff (not in this slice),3
+word,rejected,escalation (researcher declines),4

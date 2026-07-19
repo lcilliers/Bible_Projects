@@ -160,3 +160,6 @@ Sessions-v2/**/*.zip
 database/*.db-journal
 scratchpad_tmp/
 iba/app/db/*.db
+iba/app/db/*.db-shm
+iba/app/db/*.db-wal
+iba/app/db/*.bak-*
