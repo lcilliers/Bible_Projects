@@ -1,62 +1,88 @@
-# Session log — 2026-07-22 — reports fully config-governed (Phase 0)
+# Session log — 2026-07-22/23 — reports fully config-governed (CLOSED)
 
-**Continues in the same session tomorrow** — this log is a record + resumption pointer, not a
-handoff to a fresh context. Full technical detail lives in the two documents this log points to;
-it does not repeat them.
-
----
-
-## What happened, in order
-
-1. **Started from a narrow reading of an earlier instruction.** Asked how to add a table-of-contents
-   to `CONFIG-REPORT.md`. Investigation showed the section list was hardcoded in `cfgreport.py` —
-   no config governed report *content*, only report *path*.
-2. **Researcher corrected the scope** — the standing "all reports must be config driven" rule was
-   never meant to cover only need/type/location; it was meant to cover content-shape (title,
-   headers, sections, ToC, footer), naming/versioning/auto-archiving, and run-completion/exception
-   notification wording/routing too, for **every** report, plus a PS command mapping in config for
-   each.
-3. **Drafted a delivery plan**, revised across several rounds as the researcher's comments expanded
-   and corrected it: 4 missing reports identified (seed-candidate, strong-meaning, span-analysis,
-   schema-overview), MD+CSV dual output required by default, naming/archiving required, PS-script
-   notifications (not just the report itself) required config-driven wording, and a hard requirement
-   that the resulting config schema stay coherent and reviewable — "no config lives on an island."
-   Final plan: **`PLAN-reports-config-governance-v1-20260722.md`** (v3 + a v4 addendum, §10) — read
-   that file for the full design, the audit findings, the ownership ledger, and the open items still
-   marked for later phases.
-4. **Researcher approved ("proceed as planned")** — built and verified Phase 0 (existing
-   reports/notifications wired to config, content unchanged), in five sub-phases (0a–0e). Full
-   account, what was built, what was fixed along the way, and how it was verified:
-   **`GOVERNANCE.md` §13**.
+**Session closed 2026-07-23 — the next session starts fresh, with no memory of this conversation.**
+This log is written as a cold-start entry point: read it first, then follow its pointers. It does
+not repeat what those documents already say in full.
 
 ---
 
-## Where things stand right now
+## What this session did, start to finish
 
-- **Phase 0 is done, verified, and documented.** All 8 existing reports render from config; all 13
-  PS scripts render notifications from config via the new `iba/app/ps/_lib/Notify.ps1`;
-  `configmaint.validate` now hard-checks the new coherence rules; `CONFIG-REPORT.md` §12 is a new
-  generated per-report rollup.
-- **Nothing has been committed to git.** All of today's changes are sitting as uncommitted working-tree
-  changes (new + modified files under `iba/app/`). Confirm with the researcher before committing —
-  per this project's standing rule, commits happen only when explicitly asked.
-- **Two known, deliberately-unresolved items**, both flagged in-code, neither silently decided:
-  - `candidate.load`'s Load-mode PAUSED banner wording differs slightly from the other four guided
-    banners (comment left in `Candidate-Curate.ps1`).
-  - The one-off `(auto_report) regenerating CONFIG-REPORT.md...` line in `Config-Maintenance.ps1`
-    stayed hardcoded — a single-use string, not part of the repeated-boilerplate categories the
-    `notification.*` settings were built for.
+1. Started from a narrow reading of an earlier instruction (adding a ToC to `CONFIG-REPORT.md`).
+   Investigation showed report *content* wasn't config-governed at all, only report *path*.
+2. Researcher corrected the scope across several review rounds: **every** report needed
+   content-shape (title/headers/sections/ToC/footer), naming/versioning/auto-archiving, MD+CSV
+   dual output, and PS-notification wording — all config-driven, not just path/registration.
+3. Delivery plan drafted, reviewed, corrected, and approved:
+   **`PLAN-reports-config-governance-v1-20260722.md`** — the full design, the live-app audit
+   findings, the ownership ledger, and (§9.1–9.3/§10.1–10.3) every researcher ruling that shaped it.
+4. **Phase 0** built and verified: all 8 pre-existing reports + all 13 PS scripts wired onto the new
+   `cfg_report`/`cfg_report_section`/`cfg_report_csv_table`/`notification.*` schema via
+   `lib/reportkit.py` and `ps/_lib/Notify.ps1`. Full account: **`GOVERNANCE.md` §13**.
+5. **Phase 1** built and verified: the 4 new reports (`seed-candidate`, `strong-meaning`,
+   `span-analysis`, `schema-overview`), each its own work package, built directly on the Phase-0
+   scaffolding. Full account: **`GOVERNANCE.md` §14**.
+6. **Phase 2** built and verified: one-off/investigatory report naming
+   (`governance.oneoff_*` + `reportkit.oneoff_path()`). Full account: **`GOVERNANCE.md` §15**.
+   **This closed every phase in the plan — nothing from `PLAN-reports-config-governance-v1-20260722.md`
+   remains outstanding.**
+7. **Git processed twice** (both explicitly requested): first a 4-commit split of a multi-day
+   uncommitted backlog (today's report work, the pre-existing IBA backlog, unrelated project
+   housekeeping, unrelated Bible-study research outputs) — pushed. A real 2.2GB `.gitignore` gap
+   (`iba/app/db/snapshots/` was uncovered) was found and fixed while doing this. The researcher then
+   made their own commit (`75b41fdf "bulk commit"`) covering Phase 1 + Phase 2 — **not yet pushed**
+   (see "Current git state" below).
+8. **Final step: a genuine correctness/completeness review of `USER-GUIDE.md`/`BUILD.md`/
+   `GOVERNANCE.md`** — cross-checked against the live DB and filesystem, not just re-read. Found and
+   fixed real errors, not just staleness:
+   - `GOVERNANCE.md` named a table, `cfg_api_source`, that **has never existed** in the live schema
+     (3 mentions, all corrected — `may_source` is actually realized via `cfg_write_grant`).
+   - The `cfg_*` table count was wrong everywhere (17 → the true 20).
+   - `BUILD.md` §3A had no entry at all for the `log-retention`/`table-export` work packages despite
+     both being registered this session.
+   - All three docs' file trees were frozen mid-session, missing `reportkit.py`, `dbsnapshot.py`,
+     the 4 new report modules, `Notify.ps1`, the 4 new PS scripts, and ~8 migration scripts.
+   - `USER-GUIDE.md`'s worked example showed stale numbers ("247 rows in 15 cfg_* tables") — replaced
+     with live-verified figures (904 rows / 20 tables), and it had no section for the 4 new reports
+     or the new auto-archive/CSV-pairing-by-default behavior — added.
+   - **One live-app bug found, flagged, NOT fixed** (needs researcher approval — it's a
+     `configmaint.propose`, not a doc change): `cfg_table` wrongly declares `cfg_change_detail` (a
+     config-store table) as a data table, so `Start-Iba.ps1`'s "data tables present" count reads 18
+     instead of the true 17. Named in `GOVERNANCE.md` §2.
 
-## Not started — separate later phases, per the plan's own phasing
+---
 
-1. The 4 new reports: `seed-candidate`, `strong-meaning`, `span-analysis`, `schema-overview`
-   (first-cut content proposals already in the plan §3, researcher-agreed as a starting point).
-2. The one-off/investigatory report naming+folder config helper (`governance.oneoff_*` settings +
-   `reportkit.oneoff_path()`).
-3. `BUILD.md`'s own update to reflect Phase 0 (`GOVERNANCE.md` is updated; `BUILD.md` is not yet).
+## Current git state — check this first
 
-## Resuming tomorrow
+```text
+git log --oneline -3
+  75b41fdf bulk commit                                    <- researcher's own commit, NOT pushed
+  0239e1f9 research: John 1 span-heatmap ...               <- pushed
+  ...
+git status
+  M iba/app/BUILD.md
+  M iba/app/GOVERNANCE.md
+  M iba/app/USER-GUIDE.md                                  <- this session's doc-review fixes, UNCOMMITTED
+```
 
-Start at **`PLAN-reports-config-governance-v1-20260722.md`** §10.3/§8 for the phase list, then
-`GOVERNANCE.md` §13 for exactly what's already built — pick up at item 1 above (the 4 new reports)
-unless the researcher redirects.
+**Two things need a decision before/at the start of the next session:**
+
+1. `75b41fdf` ("bulk commit", Phase 1 + Phase 2) is **1 commit ahead of `origin/main`, not pushed.**
+2. The doc-correctness-review fixes to `BUILD.md`/`GOVERNANCE.md`/`USER-GUIDE.md` are **uncommitted
+   working-tree changes** — made after `75b41fdf`, so they sit on top of it.
+
+Per this project's standing rule, neither gets committed/pushed without being explicitly asked —
+don't assume either action; ask.
+
+---
+
+## Where to start a fresh session
+
+1. **Read this log**, then `PLAN-reports-config-governance-v1-20260722.md` (design + full history
+   of researcher rulings) if picking the report work back up.
+2. `GOVERNANCE.md` §13/§14/§15 for exactly what's built, in order, with what was verified.
+3. `git status` / `git log -5` to confirm the state above hasn't changed since this log was written.
+4. **Nothing is outstanding from the plan.** If the researcher wants more report work, it's a new
+   ask, not a continuation of an open item — the 4 first-cut reports (§3 of the plan) were
+   explicitly flagged as "yours to expand once built" (§9.3), so expanding their content is the
+   most likely next ask, not a known-pending task.

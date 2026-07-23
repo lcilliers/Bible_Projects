@@ -30,13 +30,16 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 > ### Scope of this guide — read this
 >
 > **The application is under active construction, and this guide grows with it — updated
-> 2026-07-22.** Live today: the raw layer (**new-word**, §3), the base layer (**candidate
+> 2026-07-23.** Live today: the raw layer (**new-word**, §3), the base layer (**candidate
 > stamping + passages**, §8), **config maintenance** (§9), **candidate curation** — one-row-at-a-time
-> and JSON-batch (§10), **standalone quality checks** (§11), **reports and CSV export** (§12), and
-> **log retention** (§13). The interpretive stages above the base layer (lexical, characteristics,
-> findings) are not built yet. Where this guide describes a command or a report, it describes what
-> exists now. Companion docs: `BUILD.md` (what's built, how the parts fit) and `GOVERNANCE.md` (how
-> config governs the code) — this guide is *how to run it*.
+> and JSON-batch (§10), **standalone quality checks** (§11), **reports and CSV export** (§12),
+> **log retention** (§13), and **4 analysis reports** — seed-candidate, strong-meaning,
+> span-analysis, schema-overview (§12a). **Every report now auto-archives its previous version and
+> pairs with a CSV export by default** (added 2026-07-22/23 — see §12). The interpretive stages
+> above the base layer (lexical, characteristics, findings) are not built yet. Where this guide
+> describes a command or a report, it describes what exists now. Companion docs: `BUILD.md` (what's
+> built, how the parts fit) and `GOVERNANCE.md` (how config governs the code) — this guide is *how
+> to run it*.
 
 ---
 
@@ -63,9 +66,9 @@ This prepares the environment and reports `READY`:
 
 ```
 IBA app — startup
-  ✓ config loaded (247 rows in 15 cfg_* tables)
+  ✓ config loaded (904 rows in 20 cfg_* tables)
     config_version: app-0.1.0
-  ✓ data tables present (12 tables)
+  ✓ data tables present (18)
   ✓ STEP up and tagged (http://localhost:8989, ESV_th)
     known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
 
@@ -157,29 +160,65 @@ This is by design: the app will not add a new registry word without you.
 
 ---
 
-## 4. Answering the app (escalations)
+## 4. Escalations — the complete reference
 
-Every pause is answered through **one** front door, `Escalation.ps1` (added 2026-07-21 — every
-other governed operation had a PS wrapper from the start, answering never did):
+**This is the one, complete place for how escalations work.** Every other section that mentions
+`Escalation.ps1` (§9, §10a, §10b, §11, §13, §14) is just that section's own moment of using it —
+come back here for the mechanism itself, rather than piecing it together from those examples.
+
+### 4.1 What an escalation is
+
+The **one** mechanism the app uses to pause and ask you something. Every pause — whatever raised
+it — becomes exactly one row in the `escalation` table. `Escalation.ps1` (added 2026-07-21) is the
+**one** front door for it; every other governed operation had a PS wrapper from the start, answering
+never did until then.
+
+### 4.2 The three shapes
+
+| shape | raised by | scope | answered with |
+|---|---|---|---|
+| **word-scoped** | `registry.create` (a genuinely new word, or a suspected duplicate) | one word | yes/no |
+| **run-scoped** | a real dispatcher pause — a `configmaint.propose` change, or a quality-check finding (`candidate.validate`/`passage.validate`/`configmaint.validate`) | one run | approve / reject / revise |
+| **manual** | **you**, via `-Action Raise` — not raised by any running step | a synthetic run_id | approve / reject / revise |
+
+Manual escalations answer through the exact same `AnswerRun` path as a real run-scoped one — there
+is no separate mechanism to learn. This is also how this session's "flag it now, fix it later"
+backlog workflow works: raising an item doesn't fix anything by itself, it just records it.
+
+### 4.3 The state a row moves through
+
+Today: **`raised`** (open, unanswered) → **`answered`** (you gave a decision; `answer` holds
+approve/reject/revise, `comment` optional unless revise). That is the whole lifecycle that exists
+right now — there is currently no way to edit an already-raised question's wording, pause one aside
+without answering it, or withdraw one without it counting as a decision. See the proposal below
+(§4.6) if you want those.
+
+### 4.4 The four actions that exist today
 
 ```powershell
+# see what's open — writes escalation.list_report_path (default iba/app/reports/escalation-list.md,
+# archived on regenerate) and prints a one-line pointer + count (fixed 2026-07-23; used to dump the
+# full list to the terminal only):
 iba\app\ps\Escalation.ps1 -Action List
-#   #1 [hypocrisy] at registry.create — Register the new word 'hypocrisy'?
-#   #238 (run RUN-...-CONFIGMAINT) at configmaint.propose — Add governance.build_md_on_code_change...
+
+# answer a WORD-scoped one:
+iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Yes    # or: No
+
+# answer a RUN-scoped one (config proposal, quality-check finding, or your own manual item):
+iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise [-Comment "..."]
+
+# raise your OWN item — not raised by a running step:
+iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>"
+# prints a synthetic run_id — answer it later with -Action AnswerRun same as any other
 ```
 
-**Two shapes of pause**, both listed together but answered differently:
+`-Action Raise`'s `-Question` text is stored **verbatim** — it does not get reworded or have
+analysis folded into it. That is deliberate: what you write is the record.
 
-- **Word-scoped** (a new-word approval) — yes/no:
-  ```powershell
-  iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Yes    # or: No
-  ```
-- **Run-scoped** (a config proposal, or any quality-check finding) — three-way:
-  ```powershell
-  iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise [-Comment "..."]
-  ```
+### 4.5 Resuming after answering a REAL (non-manual) pause
 
-Then **re-run the same command** — it resumes where it paused and finishes:
+A word- or run-scoped pause from an actual dispatcher run is durable — answer it any time, even
+after a restart — then **re-run the exact same command** that paused; it resumes where it stopped:
 
 ```powershell
 iba\app\ps\New-Word.ps1 -Word hypocrisy -Source "gap scan 2026-07-18"
@@ -188,9 +227,11 @@ iba\app\ps\New-Word.ps1 -Word hypocrisy -Source "gap scan 2026-07-18"
 #   COMPLETE — raw layer built for 'hypocrisy'.
 ```
 
-The pause is durable — you can answer and resume minutes or a restart later.
+A **manual** item (§4.2) has no underlying run to resume — answering it just closes the record; if
+it named a fix, the fix is done separately (by hand, or by asking Claude), not by re-running
+anything.
 
-**When the app suspects a duplicate**, the question changes to a confirmation — for example if the
+**Duplicate-word suspicion** is the same word-scoped mechanism with a different question — if a new
 word maps to Strong's already held by an existing word:
 
 ```text
@@ -198,14 +239,37 @@ word maps to Strong's already held by an existing word:
 #   'envy' shares ALL 3 strongs with existing word 'jealousy'. Register it as a SEPARATE word anyway?
 ```
 
-Answering `No` stops it (it was a duplicate/typo); `Yes` registers it as a distinct word.
+`No` stops it (it was a duplicate/typo); `Yes` registers it as a distinct word.
 
-**Adding your OWN item** (something you noticed, not raised by a running step):
+### 4.6 Editing, pausing, and retracting a MANUAL item (added 2026-07-23)
+
+Built for the "escalation as a backlog of work for Claude" workflow — a manual item (§4.2) is
+often a work instruction, not only a design decision awaiting approval, so it needs a bit more
+lifecycle than raised → answered. **Restricted to `MANUAL-`-prefixed run_ids only** — a real
+dispatcher-tied escalation (a config proposal, a quality-check finding) must still go through
+`AnswerRun`; pausing one of those risks a duplicate escalation on the next run (the dispatcher's own
+resume logic keys on `state='raised'`/`'answered'` specifically).
 
 ```powershell
-iba\app\ps\Escalation.ps1 -Action Raise -Question "Revisit the anger/spirit dual-characteristic overlap in candidate_seed"
-# prints a synthetic run_id — answer it later with -Action AnswerRun same as any other
+# replace the wording on a still-open item (old wording preserved in the row's history, not lost):
+iba\app\ps\Escalation.ps1 -Action Edit -RunId MANUAL-... -Question "corrected instruction..."
+
+# set one aside without answering it — still shown in -Action List, flagged, excluded from the
+# active queue:
+iba\app\ps\Escalation.ps1 -Action Pause -RunId MANUAL-... -Comment "why it's on hold"
+
+# bring it back into the active queue:
+iba\app\ps\Escalation.ps1 -Action Resume -RunId MANUAL-...
+
+# withdraw it — "never mind", NOT a reviewed decision (distinguishable in the record from an
+# actual approve/reject/revise):
+iba\app\ps\Escalation.ps1 -Action Retract -RunId MANUAL-... -Comment "why it's withdrawn"
 ```
+
+`-Action List`'s output now shows `raised` and `paused` items together (paused ones flagged), with
+a state column; `answered`/`retracted` items drop off the open list, same as before, but remain in
+the `escalation` table (and its own row's `answer`/`comment` fields) for audit — an `answer` of
+approve/reject/revise means a real decision was made; `retracted` means it was withdrawn instead.
 
 ---
 
@@ -418,14 +482,57 @@ iba\app\ps\Reports.ps1 -Step ReportWord -Word hypocrisy          # word-raw repo
 iba\app\ps\Reports.ps1 -Step ValidationWord -Word hypocrisy      # raw-layer validation report
 iba\app\ps\Reports.ps1 -Step ValidationBook -Book Gen            # base-layer validation report
 
-iba\app\ps\Export-Tables.ps1                                     # every table -> iba/app/export/*.csv
+iba\app\ps\Export-Tables.ps1                                     # every DATA table -> iba/app/export/*.csv
 iba\app\ps\Export-Tables.ps1 -Table candidate_seed,run           # just these tables
 iba\app\ps\Export-Tables.ps1 -Out some\other\dir
 ```
 
-`Export-Tables.ps1` dumps tables **verbatim** — no report narrative, no interpretation — for direct
-review in a spreadsheet, or as a point-in-time reference (this is exactly how a same-morning
-`candidate_seed.csv` export made a real recovery possible on 2026-07-22 — see `GOVERNANCE.md` §12).
+`Export-Tables.ps1` (now the registered `table-export`/`table.export` step) dumps tables
+**verbatim** — no report narrative, no interpretation — for direct review in a spreadsheet, or as a
+point-in-time reference (this is exactly how a same-morning `candidate_seed.csv` export made a real
+recovery possible on 2026-07-22 — see `GOVERNANCE.md` §12). It excludes `cfg_*` tables —
+`Config-Maintenance.ps1 -Step Report` (§9) is the dedicated config snapshot/export.
+
+**Every report now auto-archives and CSV-pairs by default (added 2026-07-22/23).** Every report in
+this guide (§6, this section, §11, §13, §12a below) — when it regenerates — first copies its
+*previous* version into an `archive/` subfolder beside it (timestamped), so a run never silently
+overwrites the last snapshot; and it writes a matching CSV of its underlying table(s) into an
+`export/` subfolder (git-ignored), so you get both the narrative analysis and the raw rows on every
+run, no extra command needed. `schema-overview` (§12a) is the one exception — it already *is* the
+schema, a CSV of it would just repeat the same information.
+
+---
+
+## 12a. The 5 analysis reports (added 2026-07-22/23; registry report added 2026-07-23)
+
+Read-only, run whenever you want them — same standalone shape as the quality checks (§11), each its
+own work package:
+
+```powershell
+iba\app\ps\SeedCandidate-Report.ps1
+#   -> iba/app/reports/seed-candidate.md — whole candidate_seed picture: counts by decision/layer/
+#      role, tag-length and rows-per-lemma distribution, busiest lemmas, open-vs-resolved over time
+
+iba\app\ps\StrongMeaning-Report.ps1
+#   -> iba/app/reports/strong-meaning.md — meaning-parse coverage: strong rows with no strong_sense
+#      yet, sense-count distribution, lsj/mounce lexicon completeness
+
+iba\app\ps\SpanAnalysis-Report.ps1
+#   -> iba/app/reports/span-analysis.md — span coverage per book, confirmed vs candidate span
+#      counts, morph-code distribution
+
+iba\app\ps\SchemaOverview-Report.ps1
+#   -> iba/app/reports/schema-overview.md — every data table: columns, types, PK/FK, indexes, row
+#      counts, introspected live (no CSV pairing — see above)
+
+iba\app\ps\Registry-Report.ps1
+#   -> iba/app/reports/registry.md — evaluate/review word_registry: summary (by status/source),
+#      joined to strong via word_strong, and a sense report grouping registry words by the
+#      gloss/broad meaning their strong carries
+```
+
+Full design + content rationale (first 4): `PLAN-reports-config-governance-v1-20260722.md` §3.1–3.4;
+build account: `GOVERNANCE.md` §14. Registry report: escalation #272, `GOVERNANCE.md` §15A.
 
 ---
 
@@ -475,6 +582,13 @@ iba\app\ps\Passage-Quality.ps1
 iba\app\ps\Config-Maintenance.ps1 -Step Validate
 iba\app\ps\Log-Retention.ps1
 
+# the 5 analysis reports, any time (§12a):
+iba\app\ps\SeedCandidate-Report.ps1
+iba\app\ps\StrongMeaning-Report.ps1
+iba\app\ps\SpanAnalysis-Report.ps1
+iba\app\ps\SchemaOverview-Report.ps1
+iba\app\ps\Registry-Report.ps1
+
 # remove a test word (dry-run, then --yes):
 python -m iba.app.tools.purge_word --word <word>
 
@@ -523,25 +637,44 @@ thereafter.
 
 ```text
 iba/app/
-  config/     schema/step/run/rules JSON seeds (archived — DB is master) · CONFIG-REPORT.md (generated)
+  config/     schema/step/run/rules JSON seeds (archived — DB is master) · CONFIG-REPORT.md (generated,
+              incl. a per-report governance rollup) · archive/ + export/ (auto-archived snapshots /
+              CSV pairing for CONFIG-REPORT.md itself)
   db/iba.db   the database (config tables cfg_* + the data)
   db/snapshots/  pre-run DB snapshots (added 2026-07-22) — every new run copies iba.db here first
   ps/         Start-Iba.ps1 · New-Word.ps1 · Set-Candidates.ps1 · Build-Passages.ps1 ·
               Config-Maintenance.ps1 · Candidate-Curate.ps1 · Candidate-Quality.ps1 ·
-              Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 · Log-Retention.ps1
+              Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 ·
+              Log-Retention.ps1 · SeedCandidate-Report.ps1 · StrongMeaning-Report.ps1 ·
+              SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 · Registry-Report.ps1 ·
+              create-iba-view-template.ps1 · create-passage-view-and-export.ps1 ·
+              create-passages-by-book-view-and-export.ps1 · export-iba-config-tables.ps1 ·
+              generate-iba-db-schema-report.ps1 (5 standalone investigation utilities, relocated
+              here from iba\scripts\ 2026-07-23) ·
+              _lib/Notify.ps1 (shared terminal wording, not run directly)
   init.py     the bootstrap (Start-Iba calls it)
   lib/        cfg (read) · cfgload+cfgcheck (load+validate) · cfgreport · cfgquality · valuequality ·
-              dbsnapshot · db · stepapi · escalation · words
+              dbsnapshot · db · stepapi · escalation · words · reportkit (shared report rendering +
+              archiving, incl. CSV writes + CSV pairing + one-off naming) · seedreport ·
+              strongreport · spanreport · schemareport · registryreport (the 5 analysis reports,
+              §12a)
   handlers/   registry · raw · configmaint · candidate · passage · reports   (interpreters, no hard rules)
-  migration/  one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed · several bootstrap/
-              schema-addition scripts (see GOVERNANCE.md for the full list)
-  tools/      purge_word · export_tables_csv · log_retention
+  migration/  one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed · ~20 further
+              bootstrap/schema-addition scripts (see GOVERNANCE.md §7 for the full current list)
+  tools/      purge_word · export_tables_csv · log_retention · _apply_verse_plaintext_column ·
+              build_span_heatmap_v1 (2 relocated from iba\scripts\ 2026-07-23)
   run.py            the dispatcher
-  report.py · validation.py   the output + validation reports
+  report.py · validation.py   the two original output + validation reports
+  reports/    every generated report (candidate-quality.md, seed-candidate.md, registry.md, ...) ·
+              archive/ (auto-archived prior versions, incl. CSVs) · export/ (per-report CSV AND
+              table-export's dump, consolidated into one folder 2026-07-23 — git-ignored)
+  archive/    non-report historical files (new 2026-07-23) — e.g. a superseded pre-restructure
+              New-Word.ps1 stub found outside iba/app/
   BUILD.md          what's built, how the parts fit
   GOVERNANCE.md     how config governs the code
   UTILITIES.md      the utilities around the run
   USER-GUIDE.md     this file
+  PLAN-reports-config-governance-v1-20260722.md   the reports-config-governance design + build log
 ```
 
 For the raw model (term → sense → span) and the data-layer design, see

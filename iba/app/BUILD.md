@@ -91,16 +91,17 @@ python -m iba.app.report --word hypocrisy      # -> iba/app/report-hypocrisy.md
 | `iba\app\ps\Reports.ps1 -Step ReportWord -Word <w>` | the word-raw report (`report.py`) |
 | `iba\app\ps\Reports.ps1 -Step ValidationWord -Word <w>` | the raw-layer validation report (`validation.py`) |
 | `iba\app\ps\Reports.ps1 -Step ValidationBook -Book <b>` | the base-layer validation report (`validation.py`) |
-| `iba\app\ps\Export-Tables.ps1 [-Out <dir>] [-Table t1,t2,...]` | dump every table (or a subset) to CSV, one file per table, verbatim — direct DB visibility for review, no report narrative in the way; default `iba/app/export/` |
-| `iba\app\ps\Escalation.ps1 -Action List` | show every open escalation |
+| `iba\app\ps\Export-Tables.ps1 [-Out <dir>] [-Table t1,t2,...]` | `table-export`/`table.export` (registered 2026-07-22/23) — dump every DATA table (or a subset) to CSV, one file per table, verbatim, excluding `cfg_*` (that's `configmaint.report`'s job); direct DB visibility for review, no report narrative in the way; default `iba/app/export/` |
+| `iba\app\ps\Escalation.ps1 -Action List` | write every open escalation to `escalation.list_report_path` (default `iba/app/reports/escalation-list.md`, archived on regenerate) — fixed 2026-07-23, used to dump the full list to the terminal only |
 | `iba\app\ps\Escalation.ps1 -Action Answer -Word <w> -Decision Yes\|No` | answer a new-word approval |
 | `iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <id> -Decision Approve\|Reject\|Revise [-Comment ..]` | answer a config-proposal or quality-check escalation |
 | `iba\app\ps\Escalation.ps1 -Action Raise -Question ".."` | add your OWN item to the escalation table — a researcher-initiated flag, not raised by a running step |
-| `iba\app\ps\Log-Retention.ps1` | run/escalation/validation_result log-retention & run-health report (read-only — no pruning) |
+| `iba\app\ps\Log-Retention.ps1` | `log-retention`/`retention.report` (registered 2026-07-22/23) — run/escalation/validation_result log-retention & run-health report (read-only — no pruning) |
 | `iba\app\ps\SeedCandidate-Report.ps1` | whole-`candidate_seed` analysis (decision/layer/role, tag/lemma distribution, busiest lemmas, open-vs-resolved over time) — added 2026-07-22/23, see GOVERNANCE.md §14 |
 | `iba\app\ps\StrongMeaning-Report.ps1` | meaning-parse layer coverage (`strong`/`strong_sense`/`strong_meaning_tree`/`strong_lexicon` gap list, sense-count distribution, lexicon completeness) |
 | `iba\app\ps\SpanAnalysis-Report.ps1` | span-layer coverage per book, confirmed vs candidate span counts, morph-code distribution |
 | `iba\app\ps\SchemaOverview-Report.ps1` | the app's own data-schema snapshot — every data table, columns, types, PK/FK, indexes, row counts, introspected live |
+| `iba\app\ps\Registry-Report.ps1` | evaluate/review `word_registry` — summary (by status/source), joined to `strong` via `word_strong`, sense report grouping registry words by gloss/broad meaning — added 2026-07-23, escalation #272, see GOVERNANCE.md §15A |
 
 `-Fresh` rebuilds the DB from `schema.json` first. Without it, the run adds to the existing DB.
 
@@ -176,6 +177,21 @@ does a run actually do").
 | 1 | `validation.word` | `reports:validation_word` | word | the raw-layer validation report (`validation.py`), sections governed by `validation.show_*` |
 | 2 | `validation.book` | `reports:validation_book` | book | the base-layer validation report (`validation.py`), same toggles |
 
+**`log-retention`** — runs over `none` · `iba\app\ps\Log-Retention.ps1` (registered 2026-07-22/23,
+GOVERNANCE.md §13 — was a standalone script calling `tools.log_retention` directly, outside the
+dispatcher, until this session)
+
+| # | step | handler | → report | does |
+|---|---|---|---|---|
+| 0 | `retention.report` | `reports:retention_report` | `iba/app/reports/log-retention.md` | `run`/`escalation`/`validation_result` row counts + age, stuck chained runs, open escalations, recent failures — read-only, no pruning |
+
+**`table-export`** — runs over `none` · `iba\app\ps\Export-Tables.ps1 [-Out <dir>] [-Table t1,t2,...]`
+(registered 2026-07-22/23, same session — was also standalone before)
+
+| # | step | handler | does |
+|---|---|---|---|
+| 0 | `table.export` | `reports:table_export` | CSV dump of every DATA table, verbatim, one file per table — **excludes `cfg_*`** (fixed 2026-07-22/23: it used to dump those too, duplicating `configmaint.report`). `-Out`/`-Table` are plain PS parameters (destination/subset override), not config — a parameter explained in the script's own inline help isn't a setting just because the script is dispatcher-registered. |
+
 **`seed-candidate-report`** / **`strong-meaning-report`** / **`span-analysis-report`** /
 **`schema-overview-report`** — each runs over `none`, single step, its own PS script (added
 2026-07-22/23, GOVERNANCE.md §14) — the 4 "missing reports" from
@@ -188,6 +204,13 @@ does a run actually do").
 | `strong-meaning-report` | `report.strong_meaning` | `reports:strong_meaning_report` | meaning-parse layer coverage |
 | `span-analysis-report` | `report.span_analysis` | `reports:span_analysis_report` | span-layer coverage per book |
 | `schema-overview-report` | `report.schema_overview` | `reports:schema_overview_report` | the app's own data-schema snapshot |
+
+**`registry-report`** — runs over `none` · `iba\app\ps\Registry-Report.ps1` (added 2026-07-23,
+escalation #272 — the registry had no evaluation report)
+
+| # | step | handler | does |
+|---|---|---|---|
+| 0 | `report.registry` | `reports:registry_report` | evaluate/review `word_registry`: summary (by status/source), joined to `strong` via `word_strong`, sense report grouping registry words by gloss/broad meaning |
 
 ---
 
@@ -297,37 +320,82 @@ read as still true of the whole app:
 
 ---
 
-## 8. Files — CORRECTED 2026-07-22 (was still only the 2026-07-17 raw slice; everything built since was missing)
+## 8. Files — CORRECTED 2026-07-23, script-folder consolidation (escalation #271, same day)
+
+Was frozen at 2026-07-22's state; §9/§10's own text had already moved past it — `dbsnapshot.py`,
+`reportkit.py`, the 4 new report modules, `Notify.ps1` and the new migrations were named in prose
+below but missing from this tree. **Extended again the same day**: 7 standalone investigation/
+utility scripts previously scattered outside `iba/app/` (2 in `iba\scripts\`'s Python side, 5 in its
+PowerShell side — view-creation, schema-report, and a one-off column-migration script, all of which
+already targeted `iba/app/db/iba.db`) were relocated into `iba/app/tools/`/`iba/app/ps/`; a stale,
+pre-restructure duplicate `iba\ps\New-Word.ps1` (a STUB referencing the old `iba/config/utility/
+run.json` design, superseded by the real `iba/app/ps/New-Word.ps1`) was archived to
+`iba/app/archive/`, and both now-empty folders (`iba\ps\` entirely; the 7 relocated files' entries
+in `iba\scripts\`) were removed. The canonical folders are now real config (`cfg_setting
+governance.scripts_ps_dir` = `iba/app/ps`, `governance.scripts_python_dir` = `iba/app/tools`), not
+just convention.
+
+**`iba\scripts\` still holds 5 files deliberately NOT moved** — they belong to genuinely different
+systems, confirmed by reading each file, not by folder name alone: `cfg_apply.py`/`cfg_helper.py`/
+`cfg_kernel.py`/`probe_step_api.py` are the OTHER, separate `iba/config` heavyweight configurator's
+own maintenance utilities (GOVERNANCE.md §6 — a different, not-yet-reconciled system from this app);
+`build_dbschema.py` is the main Bible-study programme's schema tool (root `CLAUDE.md` §3, operates
+on `bible_research.db`, not `iba.db`). Moving these would have been scope creep past what the
+folder name implies — the actual owning system, not the folder, decides where a script belongs.
 
 ```
 iba/app/
   config/     schema/step/run/rules JSON seeds (archived — DB is master, GOVERNANCE.md §10) ·
-              CONFIG-REPORT.md (generated snapshot, never hand-edited)
+              CONFIG-REPORT.md (generated snapshot, never hand-edited, incl. §12 per-report rollup) ·
+              archive/ (auto-archived prior snapshots) · export/ (cfg_* CSV pairing — git-ignored)
   lib/        cfg.py (the runtime reader) · cfgload.py (seed -> cfg_* on load) · cfgcheck.py ·
-              cfgreport.py · cfgquality.py (orphan/justification/report-path checks) ·
-              valuequality.py (the value-quality engine) · retention.py · db.py (schema from
-              cfg_column) · stepapi.py (STEP, governed by cfg) · escalation.py (the one researcher
-              interaction) · words.py (normalise)
+              cfgreport.py · cfgquality.py (orphan/justification/report-path/report-governance
+              checks) · valuequality.py (the value-quality engine) · retention.py · dbsnapshot.py
+              (pre-run rollback snapshots) · db.py (schema from cfg_column) · stepapi.py (STEP,
+              governed by cfg) · escalation.py (the one researcher interaction) · words.py
+              (normalise) · reportkit.py (shared report scaffold + archive-on-write, incl. CSV
+              writes since escalation #273 + CSV pairing + one-off report naming) · seedreport.py ·
+              strongreport.py · spanreport.py · schemareport.py (the 4 new reports, §3A) ·
+              registryreport.py (registry evaluation report, escalation #272)
   handlers/   base.py (Ctx/Outcome/ok/fail/escalate) · registry.py · raw.py · configmaint.py ·
               candidate.py · passage.py · reports.py
-  migration/  Import-LegacyRegistry.ps1 · legacy_import.py · import_seed.py ·
+  migration/  Import-LegacyRegistry.ps1 · legacy_import.py · import_seed.py · allocate_strongs.py ·
+              apply_semantic_allocation.py · build_base_all_books.py ·
               bootstrap_configuration_maintenance.py · bootstrap_setting_module_column.py ·
               bootstrap_quality_validate_steps.py · bootstrap_reports_registration.py ·
               bootstrap_report_persistence_governance.py · add_work_package_chained_column.py ·
-              add_candidate_seed_strong_variant.py · fix_stuck_run_states.py ·
-              delete_blank_tag_candidates.py · repair_strong_sense_head.py   (one-off, idempotent)
-  tools/      purge_word.py · export_tables_csv.py · log_retention.py
+              add_candidate_seed_strong_variant.py · add_candidate_seed_referent_columns.py ·
+              fix_stuck_run_states.py · delete_blank_tag_candidates.py · repair_strong_sense_head.py ·
+              bootstrap_report_content_governance.py · bootstrap_retention_table_export_registration.py ·
+              bootstrap_new_reports_phase1.py · bootstrap_oneoff_report_naming.py   (all one-off, idempotent)
+  tools/      purge_word.py · export_tables_csv.py (archive-on-write, escalation #273) ·
+              log_retention.py · _apply_verse_plaintext_column.py (relocated from iba\scripts\,
+              escalation #271) · build_span_heatmap_v1.py (ditto)
   ps/         Start-Iba.ps1 (session bootstrap) · New-Word.ps1 · Set-Candidates.ps1 ·
               Build-Passages.ps1 · Config-Maintenance.ps1 · Candidate-Curate.ps1 ·
               Candidate-Quality.ps1 · Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 ·
-              Escalation.ps1 · Log-Retention.ps1
+              Escalation.ps1 · Log-Retention.ps1 · SeedCandidate-Report.ps1 ·
+              StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 ·
+              create-iba-view-template.ps1 · create-passage-view-and-export.ps1 ·
+              create-passages-by-book-view-and-export.ps1 · export-iba-config-tables.ps1 ·
+              generate-iba-db-schema-report.ps1 (5 relocated from iba\scripts\, escalation #271;
+              standalone investigation utilities, not dispatcher-registered) ·
+              _lib/Notify.ps1 (shared terminal-notification rendering, dot-sourced by every script)
   run.py                                               the dispatcher + run-state machine
   init.py                                              the session bootstrap (Start-Iba.ps1 calls it)
-  report.py · validation.py                            the two report generators
+  report.py · validation.py                            the two original report generators
   db/iba.db                                            the IBA database (built; git-ignored)
-  reports/    candidate-quality.md · passage-quality.md · log-retention.md ·
-              validation-book-*.md / report-*.md       (generated, per-run outputs)
+  db/snapshots/                                        pre-run rollback snapshots (git-ignored)
+  reports/    candidate-quality.md · passage-quality.md · log-retention.md · candidate-load.md ·
+              seed-candidate.md · strong-meaning.md · span-analysis.md · schema-overview.md ·
+              validation-book-*.md / report-*.md       (generated, per-run outputs) ·
+              archive/ (auto-archived prior versions, incl. archived CSVs since #273) ·
+              export/ (per-report CSV pairing AND table-export's full dump since #273 — git-ignored;
+              was two separate folders, `iba/app/export/` and this one, consolidated to one)
+  archive/    non-report historical files (new, escalation #271) — e.g. the superseded pre-
+              restructure `New-Word.ps1` stub
   BUILD.md · GOVERNANCE.md · USER-GUIDE.md · UTILITIES.md    this doc set
+  PLAN-reports-config-governance-v1-20260722.md · SESSION-LOG-20260722-reports-config-governance.md
 ```
 
 The full run-command reference (one line per script/mode) is §2 above, kept current there — not
@@ -449,3 +517,90 @@ every work-package script instead of each hardcoding its own `Write-Host` string
 `candidate.load` has its own `candidate.load_report_path` instead of a derived one; a real 2.2GB
 gap in `.gitignore` (`iba/app/db/snapshots/` was uncovered) found and fixed while processing git
 for this session's commits.
+
+---
+
+## 11. Code changes this session (2026-07-23, later) — clearing the escalation backlog (#269–#275)
+
+Full technical account: GOVERNANCE.md §15A. Summary of what changed in code (config changes are
+§15A's, not repeated here):
+
+- **`handlers/configmaint.py:CFG_TABLES`** — added `cfg_report`/`cfg_report_section`/
+  `cfg_report_csv_table`, missing since §13 despite already having `cfg_write_grant` rows. Real
+  regression: `configmaint.propose` could not change any report config until this was fixed
+  (escalation #274 surfaced it).
+- **`lib/reportkit.py`** — new `archive_before_write()` helper (the same archive-on-write convention
+  `write_report()` already used, now shared); wired into `_write_csv` so every CSV pairing archives
+  its predecessor instead of silently overwriting it (escalation #273).
+- **`tools/export_tables_csv.py`** — uses the same `archive_before_write()`; `DEFAULT_OUT` moved to
+  `iba/app/reports/export` (was a separate `iba/app/export`, escalation #273).
+- **`lib/strongreport.py`** (escalations #274/#275) — the intro's "with lexicon detail" figure was
+  computed by a raw, un-joined `strong_lexicon` count while the completeness breakdown table used a
+  properly `strong`-joined one; they happened to agree on live data (1506 both ways) but were one
+  orphan-row away from silently disagreeing. Now both derive from the same joined counts, plus an
+  explicit reconciling total line. Added: a "neither meaning nor lexicon" heading stat, and a new
+  `sense_by_registry` section (registry word → strong → gloss → sense count, 4767 rows) —
+  registered via a new `cfg_report_section` row (ordinal 2, shifting `lexicon_completeness` to 3).
+- **7 files relocated** from `iba\scripts\` into `iba/app/tools/`/`iba/app/ps/` (escalation #271;
+  full list in §8); their own usage-docstring path references updated to match. A stale
+  pre-restructure `iba\ps\New-Word.ps1` stub archived to the new `iba/app/archive/`.
+- **`registry-report` built** (escalation #272) — `lib/registryreport.py` (new), `handlers/
+  reports.py:registry_report`, `ps/Registry-Report.ps1` (new), fully config-registered (`cfg_report`/
+  3 `cfg_report_section` rows/`cfg_report_csv_table`/`report.registry_path` setting); added to
+  `lib/cfgquality.REPORT_STEPS` so its own coherence check covers the new report from day one.
+- **`lib/escalation.py:list`** (raised separately, same session, not one of #269–#275) — `Escalation.
+  ps1 -Action List` had always printed the open-escalation list to the terminal only, never
+  persisting it — the same `governance.reports_must_persist` standard every other report in this app
+  already followed. New `write_list_report()` writes `escalation.list_report_path` (default
+  `iba/app/reports/escalation-list.md`, archived on regenerate); the CLI now prints a one-line
+  pointer + count instead of the full dump. New `escalation` config_module (enum value) added so the
+  new path setting has a proper home, matching every other utility's own module.
+
+**Verified:** `report.hypocrisy.md` and `strong-meaning.md` both regenerated and manually inspected
+post-fix; `table-export` re-run confirmed archive-on-write fires correctly against the now-shared
+export folder (12 pre-existing files archived with original timestamps, none lost);
+`registry.md` regenerated and inspected (summary/by_strong/sense_report sections all correct);
+`Escalation.ps1 -Action List` re-run, confirmed it now writes the file and the terminal shows only
+the pointer line; `configmaint.validate` re-run clean of hard errors throughout (advisory orphan/
+justification findings are a separate, still-open researcher judgement call, not a regression from
+this work).
+
+---
+
+## 12. Escalation lifecycle extended — Edit / Pause / Resume / Retract (2026-07-23, later)
+
+The researcher pointed out `USER-GUIDE.md`'s escalation instructions were scattered across six
+sections with no single complete reference, and asked for the ability to edit/pause/retract a
+work item raised via `Escalation.ps1 -Action Raise` — the escalation table doubles as a backlog of
+things for Claude to action, not only design decisions awaiting approval, and that lifecycle needed
+more than raised → answered.
+
+**Schema:** new `cfg_enum` group `escalation_state` (`raised`/`answered`/`paused`/`retracted`) —
+`state` had no governed vocabulary at all before this (free-text, unlike every other enum-backed
+field in the app).
+
+**`lib/escalation.py`:** four new functions — `edit_question()`, `pause_run()`, `resume_run()`,
+`retract_run()` — plus a shared `_manual_only()` guard. **Deliberately restricted to
+`MANUAL-`-prefixed run_ids**, found necessary while building, not part of the original ask: a real
+dispatcher-tied escalation (`configmaint.propose`, `candidate.validate`, ...) is read by two
+downstream checks keyed specifically on `state='raised'`/`'answered'` — `run.py`'s own pause-continue
+dedup (line ~112) and `answered_for_run()`. Pausing one of those would flip its state to `paused`,
+matching neither check, so re-running the underlying command before resuming it would raise a
+**second** escalation row for the same run_id+step instead of recognizing the existing pause. Manual
+items have no such downstream reader, so the four new actions simply refuse a non-`MANUAL-` run_id
+with a clear message rather than risk that class of bug. `write_list_report()` (§ escalation-list,
+above) now shows `raised`+`paused` together (paused flagged), with a state column.
+
+**`ps/Escalation.ps1`:** four new `-Action` values (`Edit`/`Pause`/`Resume`/`Retract`), each with its
+own parameter validation, added to the existing `ValidateSet`.
+
+**`USER-GUIDE.md` §4 rewritten** as the single, complete escalation reference (states, the three
+scopes, all 8 actions, resume behavior) — every other section's mention of `Escalation.ps1` is now
+just that section's own usage moment, pointing back here instead of re-explaining.
+
+**Verified end-to-end:** raise → edit (old wording preserved in `tried`) → pause → list (shows
+`38 open (37 active, 1 paused)`) → resume → retract → list (back to 37, item gone from the open
+list); the `MANUAL-` guard confirmed rejecting a real `RUN-...-CONFIGMAINT` run_id with the intended
+message; `configmaint.validate` re-run clean of hard errors (`escalation_state` joins `escalation_answer`
+as an expected orphan enum — free-text state values, not looked up by enum name in code, same class
+already accepted for `escalation_answer`).

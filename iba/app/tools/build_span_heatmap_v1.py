@@ -12,8 +12,8 @@ Output: a self-contained, theme-aware HTML heat map (blue ramp = candidate-char,
 green ramp = non-char; each cell annotated with its raw count).
 
 Usage:
-  python iba/scripts/build_span_heatmap_v1.py --book John --chapter 1
-  python iba/scripts/build_span_heatmap_v1.py --book John --chapter 1 --out path.html
+  python iba/app/tools/build_span_heatmap_v1.py --book John --chapter 1
+  python iba/app/tools/build_span_heatmap_v1.py --book John --chapter 1 --out path.html
 
 `--book` is the OSIS book name as stored in verse.osisId (e.g. John, Gen, Ps, Matt).
 """

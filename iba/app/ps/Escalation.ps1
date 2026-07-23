@@ -5,7 +5,10 @@
     lib/escalation.py, which every other governed operation already has and this one didn't.
 
 .DESCRIPTION
-    -Action List        show every open (unanswered) escalation.
+    -Action List        writes every open (unanswered) escalation to escalation.list_report_path
+                        (default iba/app/reports/escalation-list.md; archived on regenerate, same
+                        convention as every other report) and prints a one-line pointer + count —
+                        fixed 2026-07-23, it used to dump the full list to the terminal only.
     -Action Answer       answer a WORD-scoped escalation (new-word approval). Needs -Word and
                          -Decision (Yes|No).
     -Action AnswerRun    answer a RUN-scoped escalation (a config proposal, or a quality-check
@@ -15,6 +18,20 @@
     -Action Raise        add your OWN item to the escalation table — a researcher-initiated
                          flag/note, not raised by a running step. Needs -Question. Prints the
                          synthetic run_id to answer it with later (AnswerRun, same as any other).
+
+    Added 2026-07-23 — for working the escalation table as a backlog of items for Claude, not only
+    design decisions awaiting approval. Run-scoped/manual only (same boundary AnswerRun already
+    draws against word-scoped Answer):
+    -Action Edit         replace a still-open (raised or paused) escalation's question wording.
+                         Needs -RunId and -Question. The old wording is preserved (not lost) in
+                         the row's `tried` field with a timestamp.
+    -Action Pause        set a raised escalation aside without answering it — excluded from the
+                         active queue a real dispatcher run would resume against, but still shown
+                         in -Action List, flagged. Needs -RunId; -Comment optional.
+    -Action Resume       bring a paused escalation back into the active (raised) queue. Needs -RunId.
+    -Action Retract      withdraw an open escalation — "never mind", not a reviewed decision.
+                         Terminal, like an answer, but distinguishable from one in the record.
+                         Needs -RunId; -Comment optional.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -26,11 +43,21 @@
     .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Revise -Comment "check the H0430 cluster first"
 .EXAMPLE
     .\Escalation.ps1 -Action Raise -Question "Revisit the anger/spirit dual-characteristic overlap in candidate_seed"
+.EXAMPLE
+    .\Escalation.ps1 -Action Edit -RunId MANUAL-20260723_055356_776621 -Question "Corrected wording..."
+.EXAMPLE
+    .\Escalation.ps1 -Action Pause -RunId MANUAL-20260723_060301_575459 -Comment "waiting on the STEP schema question first"
+.EXAMPLE
+    .\Escalation.ps1 -Action Resume -RunId MANUAL-20260723_060301_575459
+.EXAMPLE
+    .\Escalation.ps1 -Action Retract -RunId MANUAL-20260723_061922_821483 -Comment "superseded by #274's rework"
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise')] [string] $Action,
+    [Parameter(Mandatory = $true)]
+    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract')]
+    [string] $Action,
     [string] $Word,
     [string] $RunId,
     [ValidateSet('Yes', 'No', 'Approve', 'Reject', 'Revise')] [string] $Decision,
@@ -85,5 +112,41 @@ switch ($Action) {
             exit 1
         }
         python -m iba.app.lib.escalation raise $Question
+    }
+    'Edit' {
+        if (-not $RunId -or -not $Question) {
+            Write-Host "Edit needs -RunId and -Question." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation edit $RunId $Question
+    }
+    'Pause' {
+        if (-not $RunId) {
+            Write-Host "Pause needs -RunId." -ForegroundColor Yellow
+            exit 1
+        }
+        if ($Comment) {
+            python -m iba.app.lib.escalation pause $RunId $Comment
+        } else {
+            python -m iba.app.lib.escalation pause $RunId
+        }
+    }
+    'Resume' {
+        if (-not $RunId) {
+            Write-Host "Resume needs -RunId." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation resume $RunId
+    }
+    'Retract' {
+        if (-not $RunId) {
+            Write-Host "Retract needs -RunId." -ForegroundColor Yellow
+            exit 1
+        }
+        if ($Comment) {
+            python -m iba.app.lib.escalation retract $RunId $Comment
+        } else {
+            python -m iba.app.lib.escalation retract $RunId
+        }
     }
 }

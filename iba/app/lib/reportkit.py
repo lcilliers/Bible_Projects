@@ -82,6 +82,21 @@ def _anchor(heading: str) -> str:
     return slug.strip("-")
 
 
+def archive_before_write(path: pathlib.Path, archive_dir: str = "archive") -> None:
+    """If `path` already exists, move it to `path.parent/archive_dir/{stem}-{stamp}{suffix}` first
+    — shared by every report/export writer (`write_report`, `_write_csv`, `export_tables_csv.export`)
+    so a regenerate never silently destroys the prior snapshot (researcher's 2026-07-22 instruction,
+    extended 2026-07-23 to CSV exports — escalation #273 found this convention only covered .md
+    report writes, not the CSV pairing or the table-export dump, both of which were silently
+    overwriting on every run with no prior version kept)."""
+    if not path.exists():
+        return
+    adir = path.parent / archive_dir
+    adir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    path.replace(adir / f"{path.stem}-{stamp}{path.suffix}")
+
+
 def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
                  lines: list[str]) -> pathlib.Path:
     """Archive the existing file (if any) to cfg_report.archive_dir before writing the new content
@@ -89,11 +104,7 @@ def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
     rep = conn.execute("SELECT archive_dir FROM cfg_report WHERE step=?", (step,)).fetchone()
     archive_dir = (rep["archive_dir"] if rep else None) or "archive"
     path.parent.mkdir(parents=True, exist_ok=True)
-    if path.exists():
-        adir = path.parent / archive_dir
-        adir.mkdir(parents=True, exist_ok=True)
-        stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-        path.replace(adir / f"{path.stem}-{stamp}{path.suffix}")
+    archive_before_write(path, archive_dir)
     text = "\n".join(lines)
     if not text.endswith("\n"):
         text += "\n"
@@ -173,6 +184,7 @@ def oneoff_path(cfg, topic: str, ext: str | None = None) -> pathlib.Path:
 
 def _write_csv(path: pathlib.Path, cols: list[str], rows: list[list]) -> pathlib.Path:
     import csv
+    archive_before_write(path)
     with path.open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
         w.writerow(cols)

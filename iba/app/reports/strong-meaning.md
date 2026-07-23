@@ -6,11 +6,13 @@
 - with a `strong_sense` row: **3463** (100%)
 - with a `strong_meaning_tree` row: **3178** (92%)
 - with lexicon detail (`lsj`/`mounce`): **1506** (43%)
+- with **neither** a `strong_sense` row **nor** lexicon detail: **0** (0%)
 
 ## Contents
 
 - [strong rows with no strong_sense yet (by usage count)](#strong-rows-with-no-strong-sense-yet-by-usage-count)
 - [Sense-count distribution (strong_meaning_tree)](#sense-count-distribution-strong-meaning-tree)
+- [Sense distribution by registered word (with gloss)](#sense-distribution-by-registered-word-with-gloss)
 - [Lexicon completeness (lsj / mounce)](#lexicon-completeness-lsj-mounce)
 
 ## strong rows with no strong_sense yet (by usage count)
@@ -54,6 +56,4780 @@
 | 33 | 2 |
 | 35 | 1 |
 
+## Sense distribution by registered word (with gloss)
+
+**4767** registry-word/strong pairs — the sense distribution (with gloss) scoped to strongs actually linked to a registered word, vs. the full lemma set above:
+
+| registry word | strong | gloss | senses |
+| --- | --- | --- | --- |
+| Cursing | G0331 | cursed | 2 |
+| Cursing | G0332 | to take an oath | 2 |
+| Cursing | G0685 | curse | 1 |
+| Cursing | G0987 | to blaspheme | 2 |
+| Cursing | G1944 | cursed | 1 |
+| Cursing | G2551 | to curse/revile | 2 |
+| Cursing | G2616 | to oppress | 2 |
+| Cursing | G2617 | to dishonor | 2 |
+| Cursing | G2652 | curse | 1 |
+| Cursing | G2653 | to curse | 1 |
+| Cursing | G2671 | curse | 2 |
+| Cursing | G2672 | to curse | 2 |
+| Cursing | G6522 | to curse | 1 |
+| Cursing | G7906 | a curse | 1 |
+| Cursing | H0422 | to swear | 7 |
+| Cursing | H0423 | oath | 6 |
+| Cursing | H0779 | to curse | 7 |
+| Cursing | H1288 | to bless | 11 |
+| Cursing | H1697G | word/speech/command | 0 |
+| Cursing | H3994 | curse | 1 |
+| Cursing | H5173 | divination | 1 |
+| Cursing | H5344A | to pierce | 0 |
+| Cursing | H5344B | to curse | 0 |
+| Cursing | H6895 | to curse | 2 |
+| Cursing | H7043 | to lighten | 20 |
+| Cursing | H7045 | curse | 1 |
+| Cursing | H7621 | oath | 5 |
+| Cursing | H7650 | to swear | 9 |
+| Cursing | H8381 | curse | 1 |
+| Incurability | G2983 | to take | 2 |
+| Incurability | G6103 | incurable | 1 |
+| Incurability | G6345 | incurable | 1 |
+| Incurability | G7474 | incurring ridicule | 1 |
+| Incurability | H0605 | be incurable | 6 |
+| Incurability | H2470I | grieved/sorrowful | 0 |
+| Incurability | H5375J | look/lift(eyes) | 0 |
+| Ruthlessness | G0415 | merciless | 2 |
+| Ruthlessness | G0786 | irreconcilable | 2 |
+| Ruthlessness | H0393 | cruel | 1 |
+| Ruthlessness | H0394 | cruel | 1 |
+| Ruthlessness | H0395 | cruel | 1 |
+| Ruthlessness | H2556C | to oppress | 0 |
+| Ruthlessness | H4751 | bitter | 7 |
+| Ruthlessness | H5794 | strong | 1 |
+| Ruthlessness | H6184 | ruthless | 1 |
+| Soul | G5590G | soul | 0 |
+| Soul | G5590H | soul: life | 0 |
+| Soul | G5590I | soul: myself | 0 |
+| Soul | G5590J | soul: person | 0 |
+| Soul | G5590K | soul: animal | 0 |
+| Soul | H4578 | belly | 6 |
+| Soul | H5315G | soul | 0 |
+| Soul | H5315H | soul: life | 0 |
+| Soul | H5315I | soul: myself | 0 |
+| Soul | H5315J | soul: person | 0 |
+| Soul | H5315K | soul: animal | 0 |
+| Soul | H5315L | soul: appetite | 0 |
+| Soul | H5315M | soul: dead | 0 |
+| Soul | H5315N | soul: neck | 0 |
+| Soul | H5397 | breath | 6 |
+| abomination | G0111 | unlawful | 1 |
+| abomination | G0655 | to abhor | 2 |
+| abomination | G0946 | abomination | 2 |
+| abomination | G0947 | abominable | 2 |
+| abomination | G0948 | to abhor | 2 |
+| abomination | G6662 | abomination | 1 |
+| abomination | G8238 | abomination | 1 |
+| abomination | H0887 | to stink | 11 |
+| abomination | H2194 | be indignant | 6 |
+| abomination | H2214 | loathsome | 1 |
+| abomination | H4656 | horror | 1 |
+| abomination | H6292 | refuse | 2 |
+| abomination | H8251 | abomination | 1 |
+| abomination | H8262 | to detest | 3 |
+| abomination | H8263 | detestation | 1 |
+| abomination | H8441 | abomination | 3 |
+| abomination | H8581 | to abhor | 13 |
+| agony | G0074 | a struggle | 1 |
+| agony | G0928H | to torture: anguish | 0 |
+| agony | G3600 | be anguished | 2 |
+| agony | G5604 | labor | 2 |
+| agony | H1518 | to burst/come out | 7 |
+| agony | H2256B | pain | 0 |
+| agony | H2342I | writh in pain/wound | 0 |
+| agony | H2427A | agony | 0 |
+| agony | H2427B | agony | 0 |
+| agony | H7661 | agony | 2 |
+| agony | H8463 | disease | 1 |
+| ambition | G2052 | rivalry | 2 |
+| ambition | G5389 | to aspire | 2 |
+| anger | G2042 | to provoke/irritate | 2 |
+| anger | G2372 | wrath | 2 |
+| anger | G2373 | to anger | 2 |
+| anger | G3709 | wrath | 2 |
+| anger | G3710 | to anger | 2 |
+| anger | G3947 | to provoke | 2 |
+| anger | G3949 | to anger | 2 |
+| anger | G3950 | anger | 1 |
+| anger | G4292 | to provoke | 2 |
+| anger | G7026 | an object of anger | 1 |
+| anger | G8318 | vehement anger | 1 |
+| anger | H0639G | anger | 0 |
+| anger | H0639H | nose | 0 |
+| anger | H0639I | face | 0 |
+| anger | H0644 | to bake | 5 |
+| anger | H2195 | indignation | 1 |
+| anger | H2198 | vexed | 1 |
+| anger | H2528 | rage | 2 |
+| anger | H2534 | rage | 6 |
+| anger | H2552 | to warm | 7 |
+| anger | H2734 | to be incensed | 5 |
+| anger | H2740 | burning anger | 2 |
+| anger | H3707 | to provoke | 8 |
+| anger | H3708A | vexation | 0 |
+| anger | H3708B | vexation | 0 |
+| anger | H5006 | to spurn | 7 |
+| anger | H5201 | to keep | 5 |
+| anger | H5307K | angry/fallen(face) | 0 |
+| anger | H5674B | be angry | 0 |
+| anger | H5678 | fury | 4 |
+| anger | H5860A | to scream | 0 |
+| anger | H6440M | angry/(fallen)face | 0 |
+| anger | H7107 | be angry | 5 |
+| anger | H7110A | wrath | 0 |
+| anger | H7110B | splinter | 0 |
+| anger | H7265 | to enrage | 2 |
+| anger | H7267 | turmoil | 3 |
+| anger | H7307J | temper | 0 |
+| anger | H8474 | to contend | 2 |
+| anguish | G0074 | a struggle | 1 |
+| anguish | G0928H | to torture: anguish | 0 |
+| anguish | G2347 | pressure | 2 |
+| anguish | G3600 | be anguished | 2 |
+| anguish | G3601 | anguish | 2 |
+| anguish | G4192 | travail | 2 |
+| anguish | G4730 | hardship | 2 |
+| anguish | G4928 | anguish | 2 |
+| anguish | H2256B | pain | 0 |
+| anguish | H2342A | tremble/fear | 0 |
+| anguish | H2342B | be firm | 0 |
+| anguish | H2342H | give birth | 0 |
+| anguish | H2342I | writh in pain/wound | 0 |
+| anguish | H2342J | dance/shake | 0 |
+| anguish | H2342K | wait anxiously | 0 |
+| anguish | H2427A | agony | 0 |
+| anguish | H2479 | anguish | 1 |
+| anguish | H3015 | sorrow | 1 |
+| anguish | H4164 | constraint | 1 |
+| anguish | H4689 | distress | 1 |
+| anguish | H4691 | distress | 1 |
+| anguish | H4712 | terror | 1 |
+| anguish | H4751 | bitter | 7 |
+| anguish | H5100 | groaning | 1 |
+| anguish | H5892A | excitement | 0 |
+| anguish | H5999 | trouble | 4 |
+| anguish | H6088 | to pain | 2 |
+| anguish | H6695B | anguish | 0 |
+| anguish | H6735C | pang | 0 |
+| anguish | H6862B | distress | 0 |
+| anguish | H6862C | enemy | 0 |
+| anguish | H6869B | distress | 0 |
+| anguish | H7089 | anguish | 1 |
+| anguish | H7115 | shortness | 1 |
+| anguish | H7451C | harm | 0 |
+| anguish | H7661 | agony | 2 |
+| anointing | G0218 | to anoint | 1 |
+| anointing | G1472 | to rub on | 2 |
+| anointing | G2025 | to rub on | 2 |
+| anointing | G3462 | to anoint | 2 |
+| anointing | G5545 | anointing | 1 |
+| anointing | G5547 | Christ | 4 |
+| anointing | G5548 | to anoint | 2 |
+| anointing | G6221 | an anointing | 1 |
+| anointing | G8202 | to anoint | 1 |
+| anointing | H1101A | to mix | 0 |
+| anointing | H1878 | to prosper | 8 |
+| anointing | H3251 | to pour | 1 |
+| anointing | H3332G | pour | 0 |
+| anointing | H4473 | expanded | 2 |
+| anointing | H4886 | to anoint | 6 |
+| anointing | H4887 | oil | 1 |
+| anointing | H4888A | anointing | 0 |
+| anointing | H4888B | consecrated portion | 0 |
+| anointing | H4899 | anointed | 6 |
+| anointing | H5480 | to anoint | 6 |
+| anointing | H8081 | oil | 6 |
+| anxiety | G0253 | without anxiety | 2 |
+| anxiety | G0275 | untroubled | 2 |
+| anxiety | G3308 | concern | 2 |
+| anxiety | G4305 | to worry beforehand | 2 |
+| anxiety | G4329 | expectation | 2 |
+| anxiety | H1672 | be anxious | 4 |
+| anxiety | H1674 | anxiety | 1 |
+| anxiety | H1804 | to trouble | 2 |
+| anxiety | H5916 | to trouble | 5 |
+| anxiety | H6470 | to trouble | 4 |
+| anxiety | H7599 | to rest | 1 |
+| anxiety | H8312 | anxiety | 1 |
+| appetite | G0776 | fasting | 1 |
+| appetite | G2836 | belly/womb/stomach | 2 |
+| appetite | G3042 | hunger | 2 |
+| appetite | G3983 | to hunger | 2 |
+| appetite | H0398 | to eat | 21 |
+| appetite | H2421 | to live | 26 |
+| appetite | H5315L | soul: appetite | 0 |
+| appetite | H7457 | hungry | 4 |
+| appetite | H8264 | to rush | 3 |
+| authority | G0746 | beginning | 2 |
+| authority | G0747 | founder | 2 |
+| authority | G0758 | ruler | 2 |
+| authority | G0831 | to domineer | 1 |
+| authority | G0922 | burden | 2 |
+| authority | G1291 | to give orders | 2 |
+| authority | G1299 | to direct | 2 |
+| authority | G1413 | ruler | 2 |
+| authority | G1415 | able | 2 |
+| authority | G1849 | authority | 2 |
+| authority | G1850 | to have authority | 2 |
+| authority | G2003 | command | 2 |
+| authority | G2715 | to rule | 2 |
+| authority | G2963 | lordship | 2 |
+| authority | G4173 | city authority | 2 |
+| authority | G5242 | be higher | 2 |
+| authority | G5247 | authority | 1 |
+| authority | G6094 | to boast | 1 |
+| authority | H1935 | splendor | 1 |
+| authority | H2632 | authority | 2 |
+| authority | H3027H | hand/arm[anatomy] | 0 |
+| authority | H3027W | owner/rule/(under)hand | 0 |
+| authority | H3678I | throne: seat | 0 |
+| authority | H4474 | dominion | 3 |
+| authority | H4475 | dominion | 4 |
+| authority | H4910 | to rule | 5 |
+| authority | H4915B | dominion | 0 |
+| authority | H6485J | overseer/appoint | 0 |
+| authority | H7235A | to multiply | 0 |
+| authority | H7287A | to rule | 0 |
+| authority | H7558 | permission | 1 |
+| authority | H7980 | to domineer | 6 |
+| authority | H7981 | to rule | 3 |
+| authority | H7983 | power | 2 |
+| authority | H7985 | dominion | 3 |
+| authority | H7989 | domineering | 5 |
+| authority | H7990 | ruling | 5 |
+| authority | H8633 | power | 1 |
+| awe | G1169 | timid | 2 |
+| awe | G1568 | be awe-struck | 2 |
+| awe | G2124 | reverence | 1 |
+| awe | G2284 | to astonish | 2 |
+| awe | G2317 | reverence for God | 2 |
+| awe | G5401 | fear | 2 |
+| awe | G6156 | to stand in awe | 1 |
+| awe | G6786 | be in awe | 1 |
+| awe | G6791 | awful | 1 |
+| awe | G7904 | to awe | 1 |
+| awe | H1481C | to dread | 0 |
+| awe | H1945 | woe! | 1 |
+| awe | H2865 | to to be dismayed | 10 |
+| awe | H3372G | frightening(DANGER) | 0 |
+| awe | H3372H | awesome(god) | 0 |
+| awe | H6206 | to tremble | 8 |
+| awe | H6342 | to dread | 6 |
+| awe | H6343 | dread | 3 |
+| awe | H7264 | to tremble | 4 |
+| being | G0023 | be indignant | 2 |
+| being | G0050 | be ignorant | 2 |
+| being | G0069 | be watchful | 2 |
+| being | G0085 | be distressed | 2 |
+| being | G0101 | be impossible | 1 |
+| being | G0120 | be discouraged | 1 |
+| being | G0153 | be ashamed | 1 |
+| being | G0198 | be exactly | 1 |
+| being | G0226 | be truthful | 2 |
+| being | G0416 | be wind-blown | 1 |
+| being | G0433 | be fitting | 1 |
+| being | G0445 | to be proconsul | 2 |
+| being | G0480 | be an opponent | 2 |
+| being | G0548 | be absent | 1 |
+| being | G0566 | to receive/avoid | 2 |
+| being | G0567 | to refrain/ | 1 |
+| being | G0568G | to be distant | 0 |
+| being | G0581 | to cease to be | 1 |
+| being | G0639 | be perplexed | 2 |
+| being | G0662 | be bold | 2 |
+| being | G0691 | be idle | 2 |
+| being | G0714 | be sufficient | 2 |
+| being | G0757 | be first | 1 |
+| being | G0764 | be ungodly | 2 |
+| being | G0770G | be weak: weak | 0 |
+| being | G0770H | be weak: ill | 0 |
+| being | G0790 | be unsettled | 2 |
+| being | G0812 | be idle | 2 |
+| being | G0992 | must be put | 2 |
+| being | G1073 | be full | 1 |
+| being | G1096 | to be | 2 |
+| being | G1130 | be naked | 2 |
+| being | G1139 | be demonised | 2 |
+| being | G1163 | be necessary | 2 |
+| being | G1168 | be timid | 2 |
+| being | G1259 | be reconciled | 2 |
+| being | G1278 | be vexed | 2 |
+| being | G1280 | be perplexed | 2 |
+| being | G1282 | be furious | 2 |
+| being | G1316 | be separated | 2 |
+| being | G1398 | be a slave | 2 |
+| being | G1410 | be able | 1 |
+| being | G1414 | be able | 2 |
+| being | G1480 | be accustomed | 2 |
+| being | G1498 | may be | 1 |
+| being | G1510 | to be | 1 |
+| being | G1514 | be at peace | 2 |
+| being | G1553 | be away | 2 |
+| being | G1568 | be awe-struck | 2 |
+| being | G1572 | be enflamed | 2 |
+| being | G1605 | be astonished | 2 |
+| being | G1612 | be warped | 2 |
+| being | G1690 | be agitated | 2 |
+| being | G1693 | be enraged | 2 |
+| being | G1735 | be possible | 1 |
+| being | G1736 | be home | 2 |
+| being | G1740 | be glorified | 1 |
+| being | G1751 | be in | 2 |
+| being | G1754 | be active | 2 |
+| being | G1757 | be blessed | 2 |
+| being | G1764 | be present | 2 |
+| being | G1789 | be reared | 2 |
+| being | G1832 | be permitted | 2 |
+| being | G1847 | be rejected | 2 |
+| being | G1870 | be ashamed of | 1 |
+| being | G1902 | be clothed | 2 |
+| being | G1952 | be insufficient | 2 |
+| being | G20125 | be childless | 1 |
+| being | G2071 | will be | 1 |
+| being | G2077 | you be! | 1 |
+| being | G2114 | be cheerful | 2 |
+| being | G21401 | be inundated | 1 |
+| being | G2141 | be prosperous | 2 |
+| being | G21410 | be white | 1 |
+| being | G2164 | be fruitful | 2 |
+| being | G2174 | be glad | 2 |
+| being | G2192 | to have/be | 2 |
+| being | G2204 | be fervent | 2 |
+| being | G2206 | be eager | 2 |
+| being | G2240 | to come/be present | 2 |
+| being | G2270 | be quiet/give up | 2 |
+| being | G2274 | be lesser | 2 |
+| being | G2277 | let him/it be | 1 |
+| being | G2292 | be confident | 2 |
+| being | G2348 | to die/be dead | 2 |
+| being | G2450 | Jew | 7 |
+| being | G2468 | you should be | 1 |
+| being | G2480 | be strong | 2 |
+| being | G2520 | be fit | 2 |
+| being | G2577G | be weary/sick: weak | 0 |
+| being | G2577H | be weary/sick: ill | 0 |
+| being | G2686 | be cunning | 2 |
+| being | G2693 | be thrown down | 2 |
+| being | G2749 | to lay/be appointed | 2 |
+| being | G2793 | be in danger | 1 |
+| being | G2863 | be long-haired | 2 |
+| being | G2865 | to bring/be repaid | 2 |
+| being | G2929 | be clear | 2 |
+| being | G2990 | be hidden | 2 |
+| being | G3195 | to ensue | 2 |
+| being | G3322 | be in the middle | 2 |
+| being | G3356 | be gentle | 2 |
+| being | G3415 | to remember | 1 |
+| being | G3467 | be nearsighted | 1 |
+| being | G3471 | be foolish | 2 |
+| being | G3489 | be shipwrecked | 2 |
+| being | G3515 | be childlike | 2 |
+| being | G3525 | be sober | 2 |
+| being | G3552 | be sick | 2 |
+| being | G3600 | be anguished | 2 |
+| being | G3716 | be upright | 2 |
+| being | G3801 | was, is, will be | 1 |
+| being | G3873 | be present | 2 |
+| being | G3909 | be there | 2 |
+| being | G3912 | be insane | 2 |
+| being | G3918 | be present | 2 |
+| being | G3939 | be a stranger | 2 |
+| being | G4020 | be a busybody | 1 |
+| being | G4104 | be convinced | 2 |
+| being | G4147 | be rich | 2 |
+| being | G4176 | be a citizen | 2 |
+| being | G4241 | be proper | 2 |
+| being | G4243 | be ambassador | 1 |
+| being | G4360 | be angry | 2 |
+| being | G4391 | be formerly | 2 |
+| being | G4409 | be first | 2 |
+| being | G4433 | be poor | 2 |
+| being | G4445 | be feverish | 2 |
+| being | G4449 | be (fiery) red | 2 |
+| being | G4576 | be devout | 2 |
+| being | G4583 | be epileptic | 2 |
+| being | G4601 | be silent | 2 |
+| being | G4623 | be quiet | 2 |
+| being | G4659 | sad | 2 |
+| being | G4704 | be eager | 2 |
+| being | G4768 | be gloomy | 2 |
+| being | G4818 | be grieved | 2 |
+| being | G4840 | be present with | 1 |
+| being | G4851 | be profitable | 2 |
+| being | G4894 | be aware | 2 |
+| being | G4895 | to accompany | 1 |
+| being | G4916 | be buried with | 2 |
+| being | G4925 | be built up with | 2 |
+| being | G4927 | be next to | 2 |
+| being | G4980 | be devoted/empty | 2 |
+| being | G4993 | be of sound mind | 2 |
+| being | G5075 | be a tetrarch | 2 |
+| being | G5111 | be bold | 2 |
+| being | G5187 | be conceited | 2 |
+| being | G5198 | be healthy | 2 |
+| being | G5225 | be already | 1 |
+| being | G5229 | be haughty | 2 |
+| being | G5242 | be higher | 2 |
+| being | G5252 | be haughty | 2 |
+| being | G5309 | be arrogant | 2 |
+| being | G5383 | to love to be first | 2 |
+| being | G5431 | be careful | 2 |
+| being | G5492 | be storm-tossed | 2 |
+| being | G5520 | be angry | 1 |
+| being | G5534 | to ought/need | 2 |
+| being | G5541 | be kind | 2 |
+| being | G5600 | may be | 1 |
+| being | G5605 | be in labor | 2 |
+| being | G5607 | being | 1 |
+| being | G6023 | be discouraged | 2 |
+| being | G6028 | be amazed | 2 |
+| being | G6081 | be downcast | 2 |
+| being | G6083 | be conscious of | 2 |
+| being | G6108 | be better | 1 |
+| being | G6124 | be wild | 1 |
+| being | G6131 | to be kin | 1 |
+| being | G6141 | be despised | 1 |
+| being | G6185 | be discouraged | 1 |
+| being | G6215 | be a runaway | 1 |
+| being | G6297 | be fatigued | 1 |
+| being | G6300 | be effronted | 1 |
+| being | G6306 | not be turned away | 1 |
+| being | G6441 | be without a turban | 1 |
+| being | G6452 | be mute | 1 |
+| being | G6461 | be estranged | 1 |
+| being | G6542 | be ill | 1 |
+| being | G6589 | be barren | 1 |
+| being | G6596 | be unfortunate | 1 |
+| being | G6629 | be unwise | 1 |
+| being | G6656 | be weighed down | 1 |
+| being | G6772 | be naked | 1 |
+| being | G6786 | be in awe | 1 |
+| being | G6802 | be master | 1 |
+| being | G6804 | be second | 1 |
+| being | G6893 | be overawed | 1 |
+| being | G6948 | be cloven | 1 |
+| being | G6975 | be in power | 1 |
+| being | G7025 | be angry | 1 |
+| being | G7124 | be willing | 1 |
+| being | G7140 | be torn from | 1 |
+| being | G7223 | to be adversary | 1 |
+| being | G7235 | be pleased with | 1 |
+| being | G7255 | be related | 1 |
+| being | G7301 | be enough | 1 |
+| being | G7303 | be attached to | 1 |
+| being | G7376 | be used | 1 |
+| being | G7405 | be lenient | 1 |
+| being | G7428 | be possessed | 1 |
+| being | G7435 | be welcomed as a guest | 1 |
+| being | G7518 | be late | 1 |
+| being | G7533 | be approved | 1 |
+| being | G7565 | be moldy | 1 |
+| being | G7567 | be stable | 1 |
+| being | G7576 | be fragrant | 1 |
+| being | G7589 | be an enemy | 1 |
+| being | G7618 | be esteemed | 1 |
+| being | G7619 | be delicious | 1 |
+| being | G7635 | be calm | 1 |
+| being | G7752 | be clean | 1 |
+| being | G7767 | be late | 1 |
+| being | G7973 | be arrogant | 1 |
+| being | G7994 | being easily led on | 1 |
+| being | G8083 | be dizzy from wine | 1 |
+| being | G8128 | be with child | 1 |
+| being | G8146 | be silent | 1 |
+| being | G8147 | be mute | 1 |
+| being | G8186 | be white | 1 |
+| being | G8199 | be famished | 1 |
+| being | G8229 | be irresistibly led | 1 |
+| being | G8242 | be infirm | 1 |
+| being | G8313 | be content | 1 |
+| being | G8320 | be infuriated | 1 |
+| being | G8363 | be troubled with warts | 1 |
+| being | G8376 | be paralyzed | 1 |
+| being | G8422 | be yellowish | 1 |
+| being | G8463 | be drunk with wine | 1 |
+| being | G8466 | be drunk with wine | 1 |
+| being | G8468 | be undone | 1 |
+| being | G8485 | be faint-hearted | 1 |
+| being | G8513 | be sour | 1 |
+| being | G8546 | be straight up | 1 |
+| being | G8642 | be a bodyguard | 1 |
+| being | G8658 | be in heat | 1 |
+| being | G8687 | be darkened | 1 |
+| being | G8694 | be in need | 1 |
+| being | G8721 | be an advantage | 1 |
+| being | G8825 | be carried by wind | 1 |
+| being | G8854 | be numerous | 1 |
+| being | G8898 | be first to take | 1 |
+| being | G8926 | be burnt through | 1 |
+| being | G8963 | be seated first | 1 |
+| being | G8997 | be reddish | 1 |
+| being | H0014 | be willing | 5 |
+| being | H0142 | be glorious | 3 |
+| being | H0235 | be gone | 6 |
+| being | H0340 | be hostile | 4 |
+| being | H0377 | be manly | 1 |
+| being | H0383 | there is | 2 |
+| being | H0481 | be dumb | 5 |
+| being | H0539 | be faithful | 18 |
+| being | H0599 | be angry | 3 |
+| being | H0605 | be incurable | 6 |
+| being | H0749 | be proper | 5 |
+| being | H0816 | be guilty | 9 |
+| being | H0888 | be displeased | 2 |
+| being | H0909 | be alone | 4 |
+| being | H0954 | be ashamed | 10 |
+| being | H0973A | to loath | 0 |
+| being | H0973B | be greedy | 0 |
+| being | H1069 | to be/bear firstborn | 10 |
+| being | H1082 | be cheerful | 4 |
+| being | H1149 | be angry | 1 |
+| being | H1197B | be brutish | 0 |
+| being | H1203 | Beeshterah | 2 |
+| being | H1238A | be luxuriant | 0 |
+| being | H1672 | be anxious | 4 |
+| being | H1738 | be sick | 2 |
+| being | H1821 | be like | 2 |
+| being | H1933A | to fall | 0 |
+| being | H1933B | to be | 0 |
+| being | H1934 | to be | 6 |
+| being | H1951 | be ready | 2 |
+| being | H1961 | to be | 19 |
+| being | H1984C | to be foolish | 0 |
+| being | H1995B | be turbulent | 0 |
+| being | H2103 | be proud | 2 |
+| being | H2114A | be a stranger | 0 |
+| being | H2114B | be loathsome | 0 |
+| being | H2141 | be clean | 5 |
+| being | H2151B | be vile | 0 |
+| being | H2194 | be indignant | 6 |
+| being | H2204 | be old | 3 |
+| being | H2254C | be in labour | 0 |
+| being | H2300A | be sharp | 0 |
+| being | H2342B | be firm | 0 |
+| being | H2421 | to live | 26 |
+| being | H2449 | be wise | 6 |
+| being | H2456 | be sick | 1 |
+| being | H2470A | weak/disabled | 0 |
+| being | H2470H | ill/injured | 0 |
+| being | H2470I | grieved/sorrowful | 0 |
+| being | H2492A | be healthy | 0 |
+| being | H2556B | be red | 0 |
+| being | H2560C | be red | 0 |
+| being | H2603A | be gracious | 0 |
+| being | H2603B | be loathsome | 0 |
+| being | H2604 | be gracious | 3 |
+| being | H2616A | be kind | 0 |
+| being | H2659 | be ashamed | 3 |
+| being | H2666 | be free | 1 |
+| being | H2685 | be hasty | 1 |
+| being | H2718 | be wasted | 2 |
+| being | H2734 | to be incensed | 5 |
+| being | H2790A | to plow/plot | 0 |
+| being | H2790B | be quiet | 0 |
+| being | H2814 | be silent | 6 |
+| being | H2826 | be feeble | 3 |
+| being | H2859B | be related | 0 |
+| being | H2865 | to to be dismayed | 10 |
+| being | H2868 | be good | 2 |
+| being | H2891 | be pure | 18 |
+| being | H2895 | be pleasing | 8 |
+| being | H2902B | to be smeared | 0 |
+| being | H2954 | be insensitive | 1 |
+| being | H2973 | be foolish | 4 |
+| being | H2974 | be willing | 5 |
+| being | H2992 | be brother-in-law | 2 |
+| being | H3021 | be weary/toil | 6 |
+| being | H3161 | be joined | 3 |
+| being | H3190 | be good | 12 |
+| being | H3191 | be good | 2 |
+| being | H3201 | be able | 6 |
+| being | H3202 | be able | 4 |
+| being | H3267 | be fierce | 2 |
+| being | H3302 | be beautiful | 5 |
+| being | H3334 | be distressed | 2 |
+| being | H3365 | be precious | 5 |
+| being | H3415 | be ill | 1 |
+| being | H3426 | there | 5 |
+| being | H3456 | be desolate | 1 |
+| being | H3512A | be disheartened | 0 |
+| being | H3546 | be able | 2 |
+| being | H3637 | be humiliated | 10 |
+| being | H3665 | be humble | 7 |
+| being | H3688 | be stupid | 1 |
+| being | H3735 | be distressed | 1 |
+| being | H3736 | be clothed | 4 |
+| being | H3780 | be sated | 1 |
+| being | H3799 | be stained | 1 |
+| being | H3811 | be weary | 4 |
+| being | H3868 | be devious | 8 |
+| being | H4134 | be poor | 1 |
+| being | H4229C | be marrow | 0 |
+| being | H4603 | be unfaithful | 6 |
+| being | H4834 | be sick | 3 |
+| being | H4985 | be sweet | 7 |
+| being | H4998 | be lovely | 4 |
+| being | H5014 | be hollow | 2 |
+| being | H5034A | be senseless | 0 |
+| being | H5068 | be willing | 6 |
+| being | H5069 | be willing | 4 |
+| being | H5136 | be sick | 1 |
+| being | H5144B | be a Nazarite | 0 |
+| being | H5162G | comfort | 0 |
+| being | H5162H | relent | 0 |
+| being | H5276 | be pleasant | 1 |
+| being | H5314 | be refreshed | 1 |
+| being | H5361 | be alienated | 2 |
+| being | H5405 | be dry | 3 |
+| being | H5433B | be drunk | 0 |
+| being | H5487 | be fulfilled | 3 |
+| being | H5528 | be foolish | 4 |
+| being | H5532 | be useful | 6 |
+| being | H5535 | be silent | 2 |
+| being | H5674B | be angry | 0 |
+| being | H5674H | be arrogant | 0 |
+| being | H5701 | be grieved | 1 |
+| being | H5783 | be exposed | 1 |
+| being | H5810 | be strong | 3 |
+| being | H5888 | be faint | 2 |
+| being | H6009 | be deep | 3 |
+| being | H6031A | be occupied | 0 |
+| being | H6101 | be sluggish | 1 |
+| being | H6105A | be vast | 0 |
+| being | H6132 | be uprooted | 2 |
+| being | H6188 | be uncircumcised | 5 |
+| being | H6191 | be shrewd | 3 |
+| being | H6225 | be angry | 4 |
+| being | H6257 | be ready | 3 |
+| being | H6280 | be abundant | 3 |
+| being | H6313 | be numb | 3 |
+| being | H6338 | be refined | 2 |
+| being | H6339 | be agile | 3 |
+| being | H6348 | be reckless | 1 |
+| being | H6395 | be distinguished | 5 |
+| being | H6500 | be fruitful | 2 |
+| being | H6509 | be fruitful | 7 |
+| being | H6705 | be dazzling | 1 |
+| being | H6800A | be humble | 0 |
+| being | H6819 | be little | 2 |
+| being | H6879 | be leprous | 3 |
+| being | H6937 | be dark | 6 |
+| being | H6949 | be blunt | 3 |
+| being | H6994 | be small | 3 |
+| being | H7038 | be stunted | 1 |
+| being | H7065 | be jealous | 7 |
+| being | H7107 | be angry | 5 |
+| being | H7108 | be angry | 2 |
+| being | H7114A | be short | 0 |
+| being | H7292 | to be assertive | 3 |
+| being | H7304 | be wide | 3 |
+| being | H7311B | be rotten | 0 |
+| being | H7326 | be poor | 6 |
+| being | H7363A | be weak | 0 |
+| being | H7372 | be moist | 1 |
+| being | H7375 | be fresh | 1 |
+| being | H7401 | be tender | 9 |
+| being | H7426 | be exalted | 3 |
+| being | H7456 | be hungry | 3 |
+| being | H7488A | be fresh | 0 |
+| being | H7489A | be evil | 0 |
+| being | H7561 | be wicked | 8 |
+| being | H7662 | to be left | 3 |
+| being | H7672 | be perplexed | 2 |
+| being | H7696 | be mad | 5 |
+| being | H7737A | be like | 0 |
+| being | H7739A | be like | 0 |
+| being | H7739B | be set | 0 |
+| being | H7835 | be black | 2 |
+| being | H7867 | be gray | 2 |
+| being | H7868 | be gray | 2 |
+| being | H7901J | be dead | 0 |
+| being | H7919A | be prudent | 0 |
+| being | H7921A | be bereaved | 0 |
+| being | H7937 | be drunk | 5 |
+| being | H7954 | be safe | 2 |
+| being | H7965I | well-being | 0 |
+| being | H8000 | be complete | 3 |
+| being | H8074G | destroyed/deserted | 0 |
+| being | H8074H | appalled | 0 |
+| being | H8075 | be appalled | 2 |
+| being | H8192 | be bare | 3 |
+| being | H8214 | be low | 2 |
+| being | H8246 | be almond shaped | 1 |
+| being | H8367 | be quiet | 1 |
+| being | H8382 | be double | 3 |
+| being | H8429 | be startled | 1 |
+| being | H8524 | be eminent | 5 |
+| being | H8626 | be straight | 5 |
+| bitterness | G4087 | to embitter | 2 |
+| bitterness | G4088 | bitterness | 1 |
+| bitterness | G4089 | bitter | 2 |
+| bitterness | G7895 | very bitter | 1 |
+| bitterness | G8793 | bitterness | 1 |
+| bitterness | G8794 | a bitter herb | 1 |
+| bitterness | H3939 | wormwood | 2 |
+| bitterness | H4470 | bitterness | 1 |
+| bitterness | H4472 | bitterness | 1 |
+| bitterness | H4751 | bitter | 7 |
+| bitterness | H4784 | to rebel | 5 |
+| bitterness | H4786 | bitterness | 1 |
+| bitterness | H4787 | bitterness | 1 |
+| bitterness | H4805H | rebellion | 0 |
+| bitterness | H4814 | bitterness | 1 |
+| bitterness | H4815 | bitter | 1 |
+| bitterness | H4834 | be sick | 3 |
+| bitterness | H4843 | to provoke | 10 |
+| bitterness | H4844 | bitterness | 1 |
+| bitterness | H4846 | gall | 5 |
+| bitterness | H7219 | poison | 1 |
+| bitterness | H8563 | bitterness | 1 |
+| blessing | G1757 | be blessed | 2 |
+| blessing | G2036 | to say: said | 2 |
+| blessing | G2127 | to praise/bless | 2 |
+| blessing | G2128 | praiseworthy | 2 |
+| blessing | G2129 | praise | 1 |
+| blessing | G3106 | to bless | 2 |
+| blessing | G3107 | blessed | 2 |
+| blessing | G3108 | blessedness | 2 |
+| blessing | G5485 | grace | 2 |
+| blessing | G5486 | gift | 2 |
+| blessing | G5487 | to favor | 2 |
+| blessing | G6050 | to bless | 2 |
+| blessing | G8231 | most blessed | 1 |
+| blessing | H0833 | to bless | 10 |
+| blessing | H0835 | blessed | 3 |
+| blessing | H1288 | to bless | 11 |
+| blessing | H1289 | to bless | 5 |
+| blessing | H1293 | blessing | 6 |
+| blessing | H1926 | glory | 4 |
+| blessing | H3190 | be good | 12 |
+| boastfulness | G0212 | boasting | 2 |
+| boastfulness | G0213 | braggart | 2 |
+| boastfulness | G0850 | dingy | 1 |
+| boastfulness | G2620 | to boast | 2 |
+| boastfulness | G2744 | to boast | 2 |
+| boastfulness | G2745 | pride | 2 |
+| boastfulness | G2746 | pride | 2 |
+| boastfulness | G2755 | conceited | 2 |
+| boastfulness | G3004G | to say: says | 0 |
+| boastfulness | G3166 | to boast | 2 |
+| boastfulness | G4068 | to boast | 2 |
+| boastfulness | G5111 | be bold | 2 |
+| boastfulness | G5246 | boastful | 1 |
+| boastfulness | G6094 | to boast | 1 |
+| boastfulness | G7013 | to boast of | 1 |
+| boastfulness | H0907 | bluster | 1 |
+| boastfulness | H1346 | pride | 4 |
+| boastfulness | H1431 | to magnify | 15 |
+| boastfulness | H1696G | speak/tell/command | 0 |
+| boastfulness | H1984A | to shine | 0 |
+| boastfulness | H1984B | praise | 0 |
+| boastfulness | H1984C | to be foolish | 0 |
+| boastfulness | H1984H | boast | 0 |
+| boastfulness | H1984I | rave madly | 0 |
+| boastfulness | H3235 | to exchange | 4 |
+| boastfulness | H3513G | honour/glory | 0 |
+| boastfulness | H5947 | jubilant | 1 |
+| boastfulness | H6286A | to beautify | 0 |
+| boastfulness | H6350 | recklessness | 1 |
+| boastfulness | H7235A | to multiply | 0 |
+| boastfulness | H7312 | height | 4 |
+| boldness | G0662 | be bold | 2 |
+| boldness | G2292 | be confident | 2 |
+| boldness | G3954 | boldness | 2 |
+| boldness | G3955 | to preach boldly | 2 |
+| boldness | G4006 | confidence | 2 |
+| boldness | G5111 | be bold | 2 |
+| boldness | G5112 | more boldly | 2 |
+| boldness | G5113 | bold man | 2 |
+| boldness | G7683 | boldness | 1 |
+| boldness | G7684 | bold-hearted | 1 |
+| boldness | G7686 | bold | 1 |
+| boldness | H5797 | strength | 3 |
+| boldness | H5810 | be strong | 3 |
+| boldness | H7292 | to be assertive | 3 |
+| bondage | G0509 | from above/again | 2 |
+| bondage | G1397 | slavery | 1 |
+| bondage | G1398 | be a slave | 2 |
+| bondage | G1402 | to enslave | 2 |
+| bondage | G2615 | to enslave | 2 |
+| bondage | H0631 | to bind | 10 |
+| bondage | H3533 | to subdue | 8 |
+| bondage | H4805H | rebellion | 0 |
+| bondage | H5647G | serve[someone] | 0 |
+| bondage | H5650 | servant/slave | 8 |
+| bondage | H5656G | service[as servant/slave] | 0 |
+| bondage | H5656I | work/labour | 0 |
+| bondage | H5659 | slavery | 1 |
+| brokenness | G1284 | to tear | 2 |
+| brokenness | G1288 | to tear apart | 2 |
+| brokenness | G1358 | to break in | 2 |
+| brokenness | G1575 | to break off | 2 |
+| brokenness | G1846 | to dig through/out | 2 |
+| brokenness | G2801 | fragment | 2 |
+| brokenness | G2806 | to break | 1 |
+| brokenness | G3089 | to loose | 2 |
+| brokenness | G4917 | to shatter | 2 |
+| brokenness | G4937 | to break | 2 |
+| brokenness | G4977 | to split | 2 |
+| brokenness | G5259G | by/under: by | 0 |
+| brokenness | G6485 | a broken branch | 1 |
+| brokenness | H0006 | to perish | 14 |
+| brokenness | H1438 | to cut down/off | 6 |
+| brokenness | H1505 | to determine | 3 |
+| brokenness | H1638 | to break | 3 |
+| brokenness | H1790 | crushed | 1 |
+| brokenness | H1792 | to crush | 9 |
+| brokenness | H1794 | to crush | 6 |
+| brokenness | H1855 | to break up | 3 |
+| brokenness | H1986 | to smite | 1 |
+| brokenness | H2040 | to overthrow | 9 |
+| brokenness | H2116 | crushed | 1 |
+| brokenness | H2254B | to destroy | 0 |
+| brokenness | H2490H | profane | 0 |
+| brokenness | H2844B | shattered | 0 |
+| brokenness | H2865 | to to be dismayed | 10 |
+| brokenness | H3512A | be disheartened | 0 |
+| brokenness | H3782 | to stumble | 12 |
+| brokenness | H3807 | to crush | 10 |
+| brokenness | H4347 | wound | 7 |
+| brokenness | H4790 | crushed | 2 |
+| brokenness | H5181 | to descend | 8 |
+| brokenness | H5218B | stricken | 0 |
+| brokenness | H5310A | to shatter | 0 |
+| brokenness | H5421 | to break | 2 |
+| brokenness | H5423 | to tear | 16 |
+| brokenness | H5927L | dawn/(sun)rise | 0 |
+| brokenness | H6031B | to afflict | 0 |
+| brokenness | H6202 | to break the neck | 1 |
+| brokenness | H6331 | to break | 2 |
+| brokenness | H6480 | to split open | 2 |
+| brokenness | H6481 | to wound | 2 |
+| brokenness | H6524B | to break out | 0 |
+| brokenness | H6528 | broken | 2 |
+| brokenness | H6555 | to break through | 14 |
+| brokenness | H6556 | breach | 5 |
+| brokenness | H6561 | to tear | 5 |
+| brokenness | H6565A | to break | 0 |
+| brokenness | H6565B | to split | 0 |
+| brokenness | H7115 | shortness | 1 |
+| brokenness | H7280C | to harden | 0 |
+| brokenness | H7462B | to pasture | 0 |
+| brokenness | H7465 | to shatter | 2 |
+| brokenness | H7489B | to shatter | 0 |
+| brokenness | H7533 | to crush | 12 |
+| brokenness | H7576 | to bind | 3 |
+| brokenness | H7616 | fragment | 2 |
+| brokenness | H7665 | to break | 11 |
+| brokenness | H7667 | breaking | 5 |
+| brokenness | H7670 | breaking | 1 |
+| brokenness | H8406 | to break | 2 |
+| brokenness | H8601 | baked | 2 |
+| calling | G0235 | but | 1 |
+| calling | G0994 | to cry out | 2 |
+| calling | G1528 | to invite | 2 |
+| calling | G1793 | to call on | 2 |
+| calling | G1941 | to call (on)/name | 2 |
+| calling | G1951 | to call/choose | 2 |
+| calling | G2028 | to name | 2 |
+| calling | G2036 | to say: said | 2 |
+| calling | G2046 | to say: did said | 1 |
+| calling | G2564G | to call: call | 0 |
+| calling | G2564H | to call: name | 0 |
+| calling | G2821 | calling | 2 |
+| calling | G2822 | called | 1 |
+| calling | G2896 | to cry | 2 |
+| calling | G3004G | to say: says | 0 |
+| calling | G3004H | to say: name | 0 |
+| calling | G3333 | to summon | 2 |
+| calling | G3686 | name | 2 |
+| calling | G3687 | to name | 2 |
+| calling | G3870 | to plead/comfort | 2 |
+| calling | G4316 | to designate | 2 |
+| calling | G4341 | to call to/summon | 2 |
+| calling | G4377 | to call to/summon | 2 |
+| calling | G4779 | to call together | 2 |
+| calling | G5455 | to call | 2 |
+| calling | G5537 | to announce | 2 |
+| calling | G5581 | falsely called | 2 |
+| calling | G6285 | to call by name | 1 |
+| calling | G7099 | to call forth | 1 |
+| calling | G7115 | to call into account | 1 |
+| calling | H0559 | to say | 6 |
+| calling | H0560 | to say | 2 |
+| calling | H0833 | to bless | 10 |
+| calling | H5414I | make | 0 |
+| calling | H6030B | to answer | 0 |
+| calling | H6817 | to cry | 8 |
+| calling | H6950 | to gather | 8 |
+| calling | H7121G | call to/invite/entreat | 0 |
+| calling | H7121H | call by/name | 0 |
+| calling | H7121I | call out/shout/announce | 0 |
+| calling | H7121J | read out/dictated | 0 |
+| calling | H7123 | to read | 5 |
+| calling | H7148 | chosen | 1 |
+| calling | H7760A | make/establish | 0 |
+| calling | H7760M | name | 0 |
+| calling | H7768 | to cry | 1 |
+| calling | H7971G | depart/send | 0 |
+| calling | H8034 | name | 6 |
+| calling | H8085I | proclaim/loud | 0 |
+| character | G1382 | test | 2 |
+| character | G2239 | moral | 1 |
+| character | H2747 | stylus | 3 |
+| comfort | G2174 | be glad | 2 |
+| comfort | G2293 | take heart | 2 |
+| comfort | G3870 | to plead/comfort | 2 |
+| comfort | G3874 | encouragement | 2 |
+| comfort | G3875 | counsellor | 2 |
+| comfort | G3888 | to encourage | 2 |
+| comfort | G3889 | comfort | 2 |
+| comfort | G3890 | comfort | 2 |
+| comfort | G3931 | comfort | 1 |
+| comfort | G8618 | comforting | 1 |
+| comfort | G8619 | a comforter | 1 |
+| comfort | H1082 | be cheerful | 4 |
+| comfort | H4010 | cheer | 1 |
+| comfort | H5117 | to rest | 17 |
+| comfort | H5150 | comfort | 3 |
+| comfort | H5162G | comfort | 0 |
+| comfort | H5162H | relent | 0 |
+| comfort | H5165 | comfort | 1 |
+| comfort | H5205 | solace | 1 |
+| comfort | H5582 | to support | 5 |
+| comfort | H7309 | relief | 1 |
+| comfort | H7502 | to spread | 3 |
+| comfort | H8172 | to lean | 3 |
+| comfort | H8575 | consolation | 1 |
+| compassion | G1653 | to have mercy | 2 |
+| compassion | G1656 | mercy | 2 |
+| compassion | G2944 | to surround | 2 |
+| compassion | G3388 | womb | 1 |
+| compassion | G3627 | to have compassion | 2 |
+| compassion | G3628 | compassion | 2 |
+| compassion | G4013 | to take/go around | 2 |
+| compassion | G4022 | to go around | 2 |
+| compassion | G4033 | to surround | 1 |
+| compassion | G4184 | very compassionate | 2 |
+| compassion | G4697 | to pity | 2 |
+| compassion | G4698 | affection/entrails | 2 |
+| compassion | G4777 | to suffer with | 2 |
+| compassion | G4834 | to sympathize | 1 |
+| compassion | G4835 | sympathetic | 2 |
+| compassion | G4841 | to suffer with | 1 |
+| compassion | G7451 | to show compassion | 1 |
+| compassion | H0661 | to surround | 2 |
+| compassion | H2328 | to mark | 2 |
+| compassion | H2329 | circle | 2 |
+| compassion | H2347 | to pity | 1 |
+| compassion | H2550 | to spare | 1 |
+| compassion | H2551 | compassion | 1 |
+| compassion | H2594 | favor | 1 |
+| compassion | H2603A | be gracious | 0 |
+| compassion | H2617A | kindness | 0 |
+| compassion | H2949 | tender care | 1 |
+| compassion | H3749 | ledge | 1 |
+| compassion | H3803 | to surround | 3 |
+| compassion | H4230 | compass | 1 |
+| compassion | H4263 | compassion | 2 |
+| compassion | H5150 | comfort | 3 |
+| compassion | H5162G | comfort | 0 |
+| compassion | H5162H | relent | 0 |
+| compassion | H5164 | repentance | 1 |
+| compassion | H5362B | to surround | 0 |
+| compassion | H5437G | turn/bring around | 0 |
+| compassion | H5437H | surround/go round | 0 |
+| compassion | H5439G | around/border | 0 |
+| compassion | H5849A | to surround | 0 |
+| compassion | H7349 | compassionate | 2 |
+| compassion | H7355 | to have compassion | 6 |
+| compassion | H7356A | womb | 0 |
+| compassion | H7356B | compassion | 0 |
+| compassion | H7358 | womb | 3 |
+| compassion | H7359 | compassion | 2 |
+| compassion | H7362 | compassionate | 1 |
+| condemnation | G0176 | beyond reproach | 1 |
+| condemnation | G0843 | self-condemned | 1 |
+| condemnation | G1349 | condemnation | 1 |
+| condemnation | G1935 | condemned to death | 2 |
+| condemnation | G2607 | to condemn | 2 |
+| condemnation | G2613 | to condemn | 2 |
+| condemnation | G2631 | condemnation | 1 |
+| condemnation | G2632 | to condemn | 1 |
+| condemnation | G2633 | condemnation | 1 |
+| condemnation | G2917 | judgment | 2 |
+| condemnation | G2919 | to judge | 2 |
+| condemnation | G2920 | judgment | 2 |
+| condemnation | G5020 | hell: Tartarus | 3 |
+| condemnation | G5272 | hypocrisy | 2 |
+| condemnation | H0816 | be guilty | 9 |
+| condemnation | H4191 | to die | 11 |
+| condemnation | H6064 | to fine | 3 |
+| condemnation | H7561 | be wicked | 8 |
+| condemnation | H7563 | wicked | 4 |
+| condemnation | H7725K | pay/repay/revenge/reward | 0 |
+| condemnation | H8199 | to judge | 14 |
+| condemnation | H8201 | judgment | 1 |
+| conscience | G4893 | conscience | 1 |
+| conscience | G4894 | be aware | 2 |
+| conscience | H3629 | kidney | 5 |
+| consecration | G0037 | to sanctify | 2 |
+| consecration | G0040G | holy | 0 |
+| consecration | G0334 | offering | 1 |
+| consecration | G2564G | to call: call | 0 |
+| consecration | G4286 | purpose | 1 |
+| consecration | G5048 | to perfect | 2 |
+| consecration | G7751 | to consecrate | 1 |
+| consecration | H3027R | donate/ordain/(fill)hand | 0 |
+| consecration | H4390 | to fill | 17 |
+| consecration | H4394 | setting | 3 |
+| consecration | H4888B | consecrated portion | 0 |
+| consecration | H5087 | to vow | 2 |
+| consecration | H5088 | vow | 1 |
+| consecration | H5139 | Nazirite | 2 |
+| consecration | H5144A | to dedicate | 0 |
+| consecration | H5144B | be a Nazarite | 0 |
+| consecration | H5145G | consecration: Nazirite vow | 0 |
+| consecration | H5145H | consecration: crown | 0 |
+| consecration | H5145I | consecration: hair | 0 |
+| consecration | H6918G | holy | 0 |
+| consecration | H6942G | consecate/sanctify | 0 |
+| consecration | H6942H | dedicate | 0 |
+| consecration | H6942I | forfeit | 0 |
+| consecration | H6942J | prepare/set apart | 0 |
+| consecration | H6942K | holiness | 0 |
+| consecration | H6944G | holiness | 0 |
+| contempt | G1609 | to spit out | 2 |
+| contempt | G1702 | to mock | 2 |
+| contempt | G1847 | be rejected | 2 |
+| contempt | G1848 | to reject | 2 |
+| contempt | G2706 | to despise | 2 |
+| contempt | G3058 | to revile | 2 |
+| contempt | G3643 | to despise | 2 |
+| contempt | G3679 | to revile | 2 |
+| contempt | G3680 | reproach | 2 |
+| contempt | G3856 | to disgrace | 2 |
+| contempt | G4065 | to despise | 2 |
+| contempt | G7351 | contempt | 1 |
+| contempt | G7352 | contempt | 1 |
+| contempt | G7353 | a contemptible thing | 1 |
+| contempt | H0936 | to despise | 2 |
+| contempt | H0937 | contempt | 4 |
+| contempt | H0939 | contempt | 1 |
+| contempt | H0959 | to despise | 8 |
+| contempt | H0963 | contempt | 1 |
+| contempt | H1163 | to kick | 5 |
+| contempt | H1422 | taunt | 1 |
+| contempt | H1860 | abhorrence | 1 |
+| contempt | H2049 | mockery | 1 |
+| contempt | H2107 | to lavish/despise | 2 |
+| contempt | H2778A | to taunt | 0 |
+| contempt | H2781 | reproach | 4 |
+| contempt | H3887 | to mock | 11 |
+| contempt | H3932 | to mock | 4 |
+| contempt | H3933 | derision | 3 |
+| contempt | H3934 | mocking | 2 |
+| contempt | H3944 | scorning | 1 |
+| contempt | H4426 | mockery | 1 |
+| contempt | H4485 | mocking | 1 |
+| contempt | H4912 | proverb | 6 |
+| contempt | H5006 | to spurn | 7 |
+| contempt | H5007A | contempt | 0 |
+| contempt | H5007B | contempt | 0 |
+| contempt | H5034A | be senseless | 0 |
+| contempt | H6962 | to loath | 7 |
+| contempt | H7034 | to dishonor | 3 |
+| contempt | H7043 | to lighten | 20 |
+| contempt | H7046 | to mock | 3 |
+| contempt | H7047 | derision | 1 |
+| contempt | H7048 | derision | 1 |
+| contempt | H7589 | scorn | 1 |
+| contempt | H7590 | to despise | 4 |
+| contempt | H8148 | taunt | 1 |
+| contempt | H8322 | hissing | 1 |
+| contempt | H8591 | to mock | 7 |
+| contentment | G0073 | fight | 2 |
+| contentment | G0714 | be sufficient | 2 |
+| contentment | G0841 | self-sufficiency | 2 |
+| contentment | G0842 | self-sufficient | 2 |
+| contentment | G2052 | rivalry | 2 |
+| contentment | G2054 | quarrel | 2 |
+| contentment | G2106 | to delight | 2 |
+| contentment | G2213 | a question/dispute | 2 |
+| contentment | G3859 | contention | 2 |
+| contentment | G3948 | stirring up | 2 |
+| contentment | G8313 | be content | 1 |
+| contentment | H2974 | be willing | 5 |
+| contentment | H3190 | be good | 12 |
+| contentment | H4066 | strife | 3 |
+| contentment | H4079 | contention | 1 |
+| contentment | H4390 | to fill | 17 |
+| contentment | H4490 | portion | 1 |
+| contentment | H4683 | strife | 1 |
+| contentment | H4808 | provocation | 1 |
+| contentment | H7378 | to contend | 9 |
+| contentment | H7379 | strife | 3 |
+| contentment | H7646 | to satisfy | 11 |
+| contentment | H7648 | satiety | 3 |
+| contentment | H7649 | sated | 3 |
+| contentment | H7961 | at ease | 5 |
+| contentment | H8085G | hear | 0 |
+| contrition | H1792 | to crush | 9 |
+| contrition | H1793A | contrite | 0 |
+| contrition | H1793B | dust | 0 |
+| contrition | H1794 | to crush | 6 |
+| contrition | H5223 | crippled | 1 |
+| corruption | G0853 | to destroy | 2 |
+| corruption | G0889 | to make worthless | 2 |
+| corruption | G1311 | to destroy | 2 |
+| corruption | G1312 | decay | 2 |
+| corruption | G1612 | be warped | 2 |
+| corruption | G2585 | to peddle | 2 |
+| corruption | G2679 | to ruin | 2 |
+| corruption | G2692 | ruin | 2 |
+| corruption | G2704 | to deprave | 2 |
+| corruption | G3393 | defilement | 2 |
+| corruption | G3394 | defilement | 2 |
+| corruption | G4550 | rotten | 2 |
+| corruption | G4595 | to rot | 2 |
+| corruption | G4646 | crooked | 2 |
+| corruption | G4938 | ruin | 2 |
+| corruption | G5349 | perishable | 2 |
+| corruption | G5351 | to destroy | 2 |
+| corruption | G5356 | corruption | 2 |
+| corruption | G7946 | corruption | 1 |
+| corruption | H0006 | to perish | 14 |
+| corruption | H0444 | to corrupt | 1 |
+| corruption | H1097 | without | 4 |
+| corruption | H1100I | worthless | 0 |
+| corruption | H1942 | desire | 4 |
+| corruption | H2015 | to overturn | 17 |
+| corruption | H2254B | to destroy | 0 |
+| corruption | H2610 | to pollute | 7 |
+| corruption | H3589 | ruin | 1 |
+| corruption | H3832 | to ruin | 2 |
+| corruption | H4072 | ruin | 2 |
+| corruption | H4167 | to mock | 1 |
+| corruption | H4743 | to rot | 7 |
+| corruption | H4889 | destruction | 1 |
+| corruption | H4893B | corruption | 0 |
+| corruption | H5754 | ruin | 1 |
+| corruption | H5856 | ruin | 2 |
+| corruption | H7591 | ruin | 1 |
+| corruption | H7703 | to ruin | 12 |
+| corruption | H7843 | to ruin | 11 |
+| corruption | H7844 | to corrupt | 4 |
+| corruption | H7845G | Pit: hell | 0 |
+| corruption | H7845H | pit: grave | 0 |
+| corruption | H8395 | ruin | 1 |
+| counsel | G1011 | to plan | 2 |
+| counsel | G1012 | plan | 2 |
+| counsel | G4823 | to consult | 2 |
+| counsel | G4824 | counsel/council | 2 |
+| counsel | H1697G | word/speech/command | 0 |
+| counsel | H1697I | thing/matter | 0 |
+| counsel | H3272A | to counsel | 0 |
+| counsel | H3272B | counsellor | 0 |
+| counsel | H3289 | to advise | 6 |
+| counsel | H4156 | counsel | 1 |
+| counsel | H4427B | to advise | 0 |
+| counsel | H4431 | counsel | 2 |
+| counsel | H5475 | counsel | 8 |
+| counsel | H5779 | to plan | 1 |
+| counsel | H5843 | counsel | 1 |
+| counsel | H6098 | counsel | 1 |
+| counsel | H6310I | word/command | 0 |
+| counsel | H8458 | counsel | 5 |
+| courage | G0407 | to act like a man | 2 |
+| courage | G2114 | be cheerful | 2 |
+| courage | G2292 | be confident | 2 |
+| courage | G2293 | take heart | 2 |
+| courage | G2294 | courage/confidence | 2 |
+| courage | G5111 | be bold | 2 |
+| courage | G6326 | courage | 1 |
+| courage | H0533 | strong | 1 |
+| courage | H0553 | to strengthen | 5 |
+| courage | H1361 | to exult | 8 |
+| courage | H1369 | might | 5 |
+| courage | H2388G | strengthen/support/encourage | 0 |
+| courage | H2428G | strong | 0 |
+| courage | H7307G | spirit | 0 |
+| covenant | G1242 | covenant | 2 |
+| covenant | G1303 | to make a covenant | 1 |
+| covenant | G2787G | ark: covenant | 0 |
+| covenant | G4934 | to agree | 2 |
+| covenant | H1285 | covenant | 14 |
+| covenant | H3772H | make(covenant) | 0 |
+| covenant | H3772J | lack | 0 |
+| covenant | H6148 | to pledge | 9 |
+| covenant | H7650 | to swear | 9 |
+| covenant | H7802 | Shushan-eduth | 2 |
+| covenant | H7999B | to ally | 0 |
+| covetousness | G0866 | not greedy | 2 |
+| covetousness | G1937 | to long for | 2 |
+| covetousness | G1939 | desire | 2 |
+| covetousness | G2206 | be eager | 2 |
+| covetousness | G3713 | to aspire | 2 |
+| covetousness | G4123 | greedy | 2 |
+| covetousness | G4124 | greediness | 2 |
+| covetousness | G5366 | money-loving | 2 |
+| covetousness | H0183 | to desire | 3 |
+| covetousness | H1214G | to cut off | 0 |
+| covetousness | H1214H | to end | 0 |
+| covetousness | H1214I | to end | 0 |
+| covetousness | H1215 | unjust-gain | 1 |
+| covetousness | H2530A | to desire | 0 |
+| covetousness | H2530B | precious thing | 0 |
+| craving | G0025 | to love | 2 |
+| craving | G0154 | to ask | 1 |
+| craving | G1934 | to seek after | 2 |
+| craving | G1937 | to long for | 2 |
+| craving | G1938 | one who desires | 2 |
+| craving | G1939 | desire | 2 |
+| craving | G1971 | to long for | 2 |
+| craving | G3552 | be sick | 2 |
+| craving | G3713 | to aspire | 2 |
+| craving | G4124 | greediness | 2 |
+| craving | G7114 | craving | 1 |
+| craving | G8013 | to crave for strange food | 1 |
+| craving | H0183 | to desire | 3 |
+| craving | H0404 | to crave | 3 |
+| craving | H1942 | desire | 4 |
+| craving | H2637 | to lack | 7 |
+| craving | H7592 | to ask | 15 |
+| craving | H8378 | desire | 4 |
+| deadness | G0581 | to cease to be | 1 |
+| deadness | G0599 | to die | 2 |
+| deadness | G2253 | half-dead | 1 |
+| deadness | G2288 | death | 1 |
+| deadness | G2289 | to kill | 2 |
+| deadness | G2348 | to die/be dead | 2 |
+| deadness | G2659 | stupor | 2 |
+| deadness | G2837 | to sleep | 2 |
+| deadness | G2966 | corpse | 1 |
+| deadness | G3498 | dead | 2 |
+| deadness | G3499 | to put to death | 2 |
+| deadness | G3500 | death | 2 |
+| deadness | G4430 | corpse | 1 |
+| deadness | G5053 | to decease | 2 |
+| deadness | H0330 | fine linen | 1 |
+| deadness | H1472 | body | 2 |
+| deadness | H1478 | to die | 2 |
+| deadness | H2491A | killed | 0 |
+| deadness | H4191 | to die | 11 |
+| deadness | H4194 | death | 5 |
+| deadness | H5038 | carcass | 2 |
+| deadness | H5315M | soul: dead | 0 |
+| deadness | H6297 | corpse | 3 |
+| deadness | H7290 | to sleep | 1 |
+| deadness | H7496 | shade | 1 |
+| deadness | H7901J | be dead | 0 |
+| debauchery | G0766 | debauchery | 2 |
+| debauchery | G0810 | debauchery | 2 |
+| debauchery | G0811 | wildly | 2 |
+| deceit | G0539 | deceit | 2 |
+| deceit | G1386 | deceitful | 1 |
+| deceit | G1387 | to deceive | 2 |
+| deceit | G1388 | deceit | 1 |
+| deceit | G1818 | to deceive | 2 |
+| deceit | G3834 | craftiness | 2 |
+| deceit | G4106 | error | 2 |
+| deceit | G4108 | deceiving | 2 |
+| deceit | G5573 | lying | 2 |
+| deceit | G5574 | to lie | 2 |
+| deceit | G5579 | lie | 2 |
+| deceit | G5582 | falsehood | 2 |
+| deceit | G6957 | deceit | 1 |
+| deceit | H0205G | evil: wickedness | 0 |
+| deceit | H0391 | deceptive | 1 |
+| deceit | H0693 | to ambush | 6 |
+| deceit | H0898 | to act treacherously | 2 |
+| deceit | H2505B | to smooth | 0 |
+| deceit | H2514 | flattery | 1 |
+| deceit | H2665 | plot | 1 |
+| deceit | H3576 | to lie | 7 |
+| deceit | H3577 | lie | 1 |
+| deceit | H3582 | to hide | 8 |
+| deceit | H3584 | to deceive | 9 |
+| deceit | H3586 | deceptive | 1 |
+| deceit | H3655 | to flatter | 2 |
+| deceit | H3868 | be devious | 8 |
+| deceit | H4123 | deception | 1 |
+| deceit | H4209 | plot | 4 |
+| deceit | H4820 | deceit | 1 |
+| deceit | H4860 | guile | 1 |
+| deceit | H5230 | to plot | 6 |
+| deceit | H5377 | to deceive | 4 |
+| deceit | H5641 | to hide | 9 |
+| deceit | H5956 | to conceal | 7 |
+| deceit | H6121A | insidious | 0 |
+| deceit | H6280 | be abundant | 3 |
+| deceit | H7423A | deceit | 0 |
+| deceit | H7423B | slackness | 0 |
+| deceit | H7723G | false | 0 |
+| deceit | H8266 | to deal | 3 |
+| deceit | H8267 | deception | 10 |
+| deceit | H8419 | perversity | 1 |
+| deceit | H8496 | oppression | 3 |
+| deceit | H8649B | deceitfulness | 0 |
+| defilement | G0234 | defilement | 2 |
+| defilement | G0449 | unwashed | 1 |
+| defilement | G2839G | common: unsanctified | 0 |
+| defilement | G2840 | to profane | 2 |
+| defilement | G3392 | to stain | 2 |
+| defilement | G3393 | defilement | 2 |
+| defilement | G3394 | defilement | 2 |
+| defilement | G3435 | to defile | 2 |
+| defilement | G3436 | defilement | 2 |
+| defilement | G4510 | to defile | 2 |
+| defilement | G4695 | to stain | 2 |
+| defilement | G5351 | to destroy | 2 |
+| defilement | G7121 | to defile | 1 |
+| defilement | G7170 | to defile | 1 |
+| defilement | G8327 | defilement | 1 |
+| defilement | H1351 | to defile | 6 |
+| defilement | H1352 | defilement | 1 |
+| defilement | H1602 | to abhor | 4 |
+| defilement | H2490H | profane | 0 |
+| defilement | H2491B | profaned | 0 |
+| defilement | H2610 | to pollute | 7 |
+| defilement | H2930A | to defile | 0 |
+| defilement | H2931 | unclean | 4 |
+| defilement | H2932 | uncleanness | 6 |
+| defilement | H2933 | to defile | 2 |
+| defilement | H2936 | to soil | 1 |
+| defilement | H5079 | impurity | 6 |
+| defilement | H5953D | to thrust | 0 |
+| defilement | H6942I | forfeit | 0 |
+| defilement | H8262 | to detest | 3 |
+| delight | G0020 | joy | 2 |
+| delight | G0587 | pleasing | 2 |
+| delight | G0699 | pleasing | 1 |
+| delight | G0700 | to please | 2 |
+| delight | G2100 | to please | 1 |
+| delight | G2106 | to delight | 2 |
+| delight | G2234 | gladly | 2 |
+| delight | G4913 | to delight | 2 |
+| delight | G5463 | to rejoice | 1 |
+| delight | G5479 | joy | 2 |
+| delight | G7936 | to delight | 1 |
+| delight | H1523 | to rejoice | 4 |
+| delight | H2530A | to desire | 0 |
+| delight | H2531 | delight | 1 |
+| delight | H2532A | desire | 0 |
+| delight | H2532B | desirable thing | 0 |
+| delight | H2654A | to delight in | 0 |
+| delight | H2654B | to sway | 0 |
+| delight | H2655 | delighting | 1 |
+| delight | H2656 | pleasure | 5 |
+| delight | H2657H | My Delight Is in Her | 0 |
+| delight | H2896A | pleasant | 0 |
+| delight | H3302 | be beautiful | 5 |
+| delight | H4261 | desire | 1 |
+| delight | H4263 | compassion | 2 |
+| delight | H4574 | delicacy | 1 |
+| delight | H4885 | rejoicing | 1 |
+| delight | H4998 | be lovely | 4 |
+| delight | H5000 | lovely | 3 |
+| delight | H5273A | pleasant | 0 |
+| delight | H5276 | be pleasant | 1 |
+| delight | H5282 | pleasantness | 1 |
+| delight | H5414G | give/deliver/send/produce | 0 |
+| delight | H5727 | to luxuriate | 1 |
+| delight | H5730A | delicacy | 0 |
+| delight | H5730B | delight | 0 |
+| delight | H5965 | to rejoice | 5 |
+| delight | H6026 | to delight | 6 |
+| delight | H6027 | delight | 1 |
+| delight | H6149 | to please | 2 |
+| delight | H7306 | to smell | 3 |
+| delight | H7470 | pleasure | 2 |
+| delight | H7521 | to accept | 11 |
+| delight | H7522 | acceptance | 4 |
+| delight | H7797 | to rejoice | 2 |
+| delight | H7814 | laughter | 6 |
+| delight | H8055 | to rejoice | 7 |
+| delight | H8056 | glad | 3 |
+| delight | H8057 | joy | 4 |
+| delight | H8173A | to smear | 0 |
+| delight | H8173B | to delight | 0 |
+| delight | H8191 | delight | 3 |
+| delight | H8231 | to polish | 3 |
+| delight | H8342 | rejoicing | 2 |
+| delight | H8378 | desire | 4 |
+| delight | H8588 | luxury | 4 |
+| desire | G0154 | to ask | 1 |
+| desire | G0701 | pleasing | 2 |
+| desire | G1013 | plan | 2 |
+| desire | G1014 | to plan | 2 |
+| desire | G1809 | to demand/ask for | 2 |
+| desire | G1934 | to seek after | 2 |
+| desire | G1937 | to long for | 2 |
+| desire | G1938 | one who desires | 2 |
+| desire | G1939 | desire | 2 |
+| desire | G1971 | to long for | 2 |
+| desire | G1972 | longing | 2 |
+| desire | G1974 | longing | 2 |
+| desire | G2065 | to ask | 2 |
+| desire | G2107 | goodwill | 2 |
+| desire | G21415 | desirable | 1 |
+| desire | G2212 | to seek | 2 |
+| desire | G2307 | will/desire | 2 |
+| desire | G2309 | to will/desire | 2 |
+| desire | G2442 | to desire | 2 |
+| desire | G2691 | to desire | 2 |
+| desire | G3713 | to aspire | 2 |
+| desire | G3715 | lust | 2 |
+| desire | G3870 | to plead/comfort | 2 |
+| desire | G7410 | desire | 1 |
+| desire | G7411 | desirable | 1 |
+| desire | H0015 | oh that! | 1 |
+| desire | H0035 | desire | 1 |
+| desire | H0157G | lover | 0 |
+| desire | H0183 | to desire | 3 |
+| desire | H0185 | desire | 1 |
+| desire | H0977 | to choose | 4 |
+| desire | H1156 | to ask | 4 |
+| desire | H1245 | to seek | 9 |
+| desire | H1697H | speaking | 0 |
+| desire | H1942 | desire | 4 |
+| desire | H2530A | to desire | 0 |
+| desire | H2530B | precious thing | 0 |
+| desire | H2531 | delight | 1 |
+| desire | H2532A | desire | 0 |
+| desire | H2532B | desirable thing | 0 |
+| desire | H2550 | to spare | 1 |
+| desire | H2654A | to delight in | 0 |
+| desire | H2655 | delighting | 1 |
+| desire | H2656 | pleasure | 5 |
+| desire | H2836A | to desire | 0 |
+| desire | H2836B | to connect | 0 |
+| desire | H2837 | desire | 1 |
+| desire | H3700 | to long | 5 |
+| desire | H3970 | desire | 1 |
+| desire | H4180 | possession | 1 |
+| desire | H4261 | desire | 1 |
+| desire | H4262 | desirable | 1 |
+| desire | H4862 | petition | 1 |
+| desire | H5315L | soul: appetite | 0 |
+| desire | H5375O | trust/desire/lift(soul/heart) | 0 |
+| desire | H5690 | lust | 1 |
+| desire | H6634 | to will | 5 |
+| desire | H7522 | acceptance | 4 |
+| desire | H7592 | to ask | 15 |
+| desire | H7602A | to long for | 0 |
+| desire | H8378 | desire | 4 |
+| desire | H8669 | desire | 4 |
+| despair | G0560 | to despair | 2 |
+| despair | G1820 | to despair | 2 |
+| despair | H0605 | be incurable | 6 |
+| despair | H0954 | be ashamed | 10 |
+| despair | H1671 | sorrow | 1 |
+| despair | H2976 | to despair | 5 |
+| despair | H3372G | frightening(DANGER) | 0 |
+| despair | H3544 | faint | 1 |
+| despair | H4127 | to melt | 7 |
+| despair | H4523 | despairing | 1 |
+| despair | H4531A | despair | 0 |
+| despair | H4549 | to melt | 7 |
+| despair | H4816 | weakness | 1 |
+| despair | H5136 | be sick | 1 |
+| despair | H6323 | to distract | 2 |
+| despair | H7817 | to bow | 9 |
+| despair | H8077A | devastation | 0 |
+| despair | H8078 | horror | 1 |
+| devious | G3835 | crafty | 2 |
+| devious | H2505B | to smooth | 0 |
+| devious | H3868 | be devious | 8 |
+| devious | H3891 | perversity | 1 |
+| devious | H4209 | plot | 4 |
+| devotion | G0472 | to cling to | 2 |
+| devotion | G1872 | to follow after | 2 |
+| devotion | G2138 | compliant | 2 |
+| devotion | G2145 | devoted | 2 |
+| devotion | G4043 | to walk | 2 |
+| devotion | G4291 | to set before | 2 |
+| devotion | G4337 | to watch out | 2 |
+| devotion | G4342 | to continue in/with | 2 |
+| devotion | G4574 | object of worship | 2 |
+| devotion | G4980 | be devoted/empty | 2 |
+| devotion | G5021 | to appoint | 2 |
+| devotion | G5387 | affectionate | 2 |
+| devotion | H1692 | to cleave | 11 |
+| devotion | H2388K | persevere | 0 |
+| devotion | H2617A | kindness | 0 |
+| devotion | H2763A | to devote/destroy | 0 |
+| devotion | H2763B | to slash | 0 |
+| devotion | H2764A | devoted thing | 0 |
+| devotion | H2764B | net | 0 |
+| devotion | H4376 | to sell | 9 |
+| devotion | H5144A | to dedicate | 0 |
+| devotion | H5414H | put/set/appoint | 0 |
+| devotion | H5674C | to pass: bring | 0 |
+| devotion | H5737A | to help | 0 |
+| devotion | H7521 | to accept | 11 |
+| devotion | H8003 | complete | 7 |
+| devotion | H8104I | look at/watch | 0 |
+| dignity | G1391 | glory | 2 |
+| dignity | G4586 | noble | 2 |
+| dignity | G4587 | dignity | 2 |
+| dignity | G8117 | dignity | 1 |
+| dignity | H1363 | height | 4 |
+| dignity | H1420 | greatness | 3 |
+| dignity | H1926 | glory | 4 |
+| dignity | H3367 | honor | 2 |
+| dignity | H3519 | glory | 7 |
+| dignity | H4791 | height | 6 |
+| dignity | H5082 | honor | 3 |
+| dignity | H7613 | elevation | 4 |
+| discernment | G0144 | insight | 2 |
+| discernment | G0145 | sense | 1 |
+| discernment | G0350 | to investigate | 1 |
+| discernment | G1252 | to judge/doubt | 2 |
+| discernment | G1253 | discernment | 2 |
+| discernment | G1260 | to discuss | 2 |
+| discernment | G1381 | to test | 2 |
+| discernment | G2924 | discerning | 2 |
+| discernment | G4907 | understanding | 2 |
+| discernment | G4908 | intelligent | 2 |
+| discernment | H0995 | to understand | 13 |
+| discernment | H0998 | understanding | 6 |
+| discernment | H0999 | understanding | 2 |
+| discernment | H2095 | to take heed | 2 |
+| discernment | H2940 | taste | 4 |
+| discernment | H2942 | command | 3 |
+| discernment | H3045 | to know | 28 |
+| discernment | H3046 | to know | 3 |
+| discernment | H4209 | plot | 4 |
+| discernment | H5234A | to recognize | 0 |
+| discernment | H6175 | prudent | 3 |
+| discernment | H7200G | see/show | 0 |
+| discernment | H7922 | understanding | 5 |
+| discernment | H8085G | hear | 0 |
+| discernment | H8085K | judge/discern | 0 |
+| discernment | H8394 | understanding | 7 |
+| disobedience | G0506 | insubordinate | 2 |
+| disobedience | G0543 | disobedience | 1 |
+| disobedience | G0544 | to disobey | 2 |
+| disobedience | G0545 | disobedient | 1 |
+| disobedience | G3876 | disobedience | 2 |
+| disobedience | H4784 | to rebel | 5 |
+| distress | G0085 | be distressed | 2 |
+| distress | G0318 | necessity | 1 |
+| distress | G1568 | be awe-struck | 2 |
+| distress | G2346 | to press on | 2 |
+| distress | G2347 | pressure | 2 |
+| distress | G2669 | to oppress | 2 |
+| distress | G3076 | to grieve | 1 |
+| distress | G3600 | be anguished | 2 |
+| distress | G4660 | to trouble | 2 |
+| distress | G4729 | to press upon | 2 |
+| distress | G4730 | hardship | 2 |
+| distress | G4912 | to hold/oppress | 2 |
+| distress | G4928 | anguish | 2 |
+| distress | G8214 | distressing | 1 |
+| distress | H0205H | evil: trouble | 0 |
+| distress | H0888 | be displeased | 2 |
+| distress | H0926 | to dismay | 13 |
+| distress | H2201 | outcry | 4 |
+| distress | H2342A | tremble/fear | 0 |
+| distress | H2734 | to be incensed | 5 |
+| distress | H3334 | be distressed | 2 |
+| distress | H3510 | to pain | 7 |
+| distress | H3511 | pain | 1 |
+| distress | H3735 | be distressed | 1 |
+| distress | H4157 | distress | 1 |
+| distress | H4164 | constraint | 1 |
+| distress | H4689 | distress | 1 |
+| distress | H4691 | distress | 1 |
+| distress | H4712 | terror | 1 |
+| distress | H4751 | bitter | 7 |
+| distress | H5065 | to oppress | 6 |
+| distress | H6087A | to hurt | 0 |
+| distress | H6365 | disaster | 1 |
+| distress | H6682 | outcry | 1 |
+| distress | H6693 | to press | 1 |
+| distress | H6695A | distress | 0 |
+| distress | H6695B | anguish | 0 |
+| distress | H6696A | to confine | 0 |
+| distress | H6696B | to provoke | 0 |
+| distress | H6862A | narrow | 0 |
+| distress | H6862B | distress | 0 |
+| distress | H6862C | enemy | 0 |
+| distress | H6862D | hard | 0 |
+| distress | H6869A | dearth | 0 |
+| distress | H6869B | distress | 0 |
+| distress | H6869C | vexer | 0 |
+| distress | H6887B | to constrain | 0 |
+| distress | H6887C | to distress | 0 |
+| distress | H6887D | to vex | 0 |
+| distress | H6887E | to rival | 0 |
+| distress | H6973 | to loathe | 7 |
+| distress | H7185 | to harden | 14 |
+| distress | H7379 | strife | 3 |
+| distress | H7451A | harmful | 0 |
+| distress | H7451C | harm | 0 |
+| distress | H7451I | harm | 0 |
+| distress | H7489A | be evil | 0 |
+| distress | H7878 | to muse | 6 |
+| division | G0139 | sect | 1 |
+| division | G0141 | schismatic | 1 |
+| division | G0592 | to divide | 2 |
+| division | G1267 | division | 1 |
+| division | G1370 | dissension | 1 |
+| division | G2183 | division | 2 |
+| division | G3311 | division | 2 |
+| division | G4978 | split | 2 |
+| division | G5010 | order | 2 |
+| division | H0505H | clan | 0 |
+| division | H1416 | band | 4 |
+| division | H2506A | portion | 0 |
+| division | H2515 | division | 1 |
+| division | H4255 | class | 2 |
+| division | H4256 | division | 5 |
+| division | H4653 | division | 1 |
+| division | H4929 | custody | 4 |
+| division | H4931 | charge | 5 |
+| division | H5587A | division | 0 |
+| division | H6304 | redemption | 1 |
+| division | H6390 | stream | 3 |
+| division | H6391 | division | 2 |
+| division | H6392 | division | 2 |
+| division | H6635A | army | 0 |
+| division | H7218K | group | 0 |
+| dominion | G0746 | beginning | 2 |
+| dominion | G0932 | kingdom | 2 |
+| dominion | G1849 | authority | 2 |
+| dominion | G2634 | to master | 2 |
+| dominion | G2904 | power | 2 |
+| dominion | G2961 | to lord over | 2 |
+| dominion | G2963 | lordship | 2 |
+| dominion | H1166H | rule: to rule | 0 |
+| dominion | H2508 | portion | 2 |
+| dominion | H3027H | hand/arm[anatomy] | 0 |
+| dominion | H3027W | owner/rule/(under)hand | 0 |
+| dominion | H4410 | kingship | 1 |
+| dominion | H4438 | royalty | 5 |
+| dominion | H4467 | kingdom | 4 |
+| dominion | H4474 | dominion | 3 |
+| dominion | H4475 | dominion | 4 |
+| dominion | H4896 | rule | 1 |
+| dominion | H4910 | to rule | 5 |
+| dominion | H4915A | likeness | 0 |
+| dominion | H4915B | dominion | 0 |
+| dominion | H4951 | dominion | 1 |
+| dominion | H7287A | to rule | 0 |
+| dominion | H7287B | to scrape | 0 |
+| dominion | H7300 | to roam | 3 |
+| dominion | H7980 | to domineer | 6 |
+| dominion | H7985 | dominion | 3 |
+| doubt | G0571 | unbelieving | 2 |
+| doubt | G0639 | be perplexed | 2 |
+| doubt | G1252 | to judge/doubt | 2 |
+| doubt | G1261 | reasoning | 2 |
+| doubt | G1280 | be perplexed | 2 |
+| doubt | G1365 | to doubt | 1 |
+| doubt | G3349 | to worry | 2 |
+| doubt | G3843 | surely | 2 |
+| doubt | H4102 | to delay | 1 |
+| doubt | H7001 | joint | 3 |
+| dread | G5015 | to trouble | 2 |
+| dread | H0366 | terrible | 1 |
+| dread | H0367 | terror | 1 |
+| dread | H0574 | terrible | 1 |
+| dread | H0927 | to dismay | 3 |
+| dread | H1091 | terror | 1 |
+| dread | H1161 | terror | 1 |
+| dread | H1481C | to dread | 0 |
+| dread | H1672 | be anxious | 4 |
+| dread | H1763 | to fear | 5 |
+| dread | H2111 | to tremble | 6 |
+| dread | H2727 | to quake | 1 |
+| dread | H2844A | terror | 0 |
+| dread | H3016 | fearing | 1 |
+| dread | H3025 | to fear | 1 |
+| dread | H3372G | frightening(DANGER) | 0 |
+| dread | H3372H | awesome(god) | 0 |
+| dread | H3374 | fear | 5 |
+| dread | H4034 | fear | 1 |
+| dread | H4131 | to shake | 5 |
+| dread | H4172A | fear | 0 |
+| dread | H6178 | dreadful | 2 |
+| dread | H6206 | to tremble | 8 |
+| dread | H6342 | to dread | 6 |
+| dread | H6343 | dread | 3 |
+| dread | H6345 | dread | 1 |
+| dread | H6381 | to wonder | 11 |
+| dread | H6426 | to shudder | 1 |
+| dread | H6973 | to loathe | 7 |
+| dread | H7322 | to tremble | 1 |
+| dread | H7460 | to tremble | 5 |
+| dread | H7494 | quaking | 4 |
+| dread | H7578 | trembling | 1 |
+| dread | H8078 | horror | 1 |
+| dread | H8175A | to shudder | 0 |
+| dread | H8175B | to storm | 0 |
+| dread | H8175C | to know | 0 |
+| endurance | G0420 | not resentful | 1 |
+| endurance | G0430 | to endure | 1 |
+| endurance | G0941 | to carry | 2 |
+| endurance | G1476 | steadfast | 1 |
+| endurance | G1526 | they are | 1 |
+| endurance | G2553 | to endure | 2 |
+| endurance | G2594 | to endure | 2 |
+| endurance | G3114 | to have patience | 2 |
+| endurance | G3115 | patience | 2 |
+| endurance | G3306 | to stay | 2 |
+| endurance | G3958 | to suffer | 2 |
+| endurance | G3984 | test | 2 |
+| endurance | G4343 | perseverance | 1 |
+| endurance | G4722 | to endure | 2 |
+| endurance | G4778 | to suffer with | 2 |
+| endurance | G5159 | to put up with | 2 |
+| endurance | G5278 | to remain/endure | 2 |
+| endurance | G5281 | perseverance | 2 |
+| endurance | G5297 | to endure | 2 |
+| endurance | G5342 | to bear/lead | 2 |
+| endurance | H0386 | strong | 3 |
+| endurance | H0539 | be faithful | 18 |
+| endurance | H0748 | to prolong | 7 |
+| endurance | H1961 | to be | 19 |
+| endurance | H2342B | be firm | 0 |
+| endurance | H3201 | be able | 6 |
+| endurance | H3427 | to dwell | 18 |
+| endurance | H3557 | to sustain | 10 |
+| endurance | H3559H | establish/fix | 0 |
+| endurance | H3885A | to lodge | 0 |
+| endurance | H5375H | look/lift(eyes) | 0 |
+| endurance | H5375J | look/lift(eyes) | 0 |
+| endurance | H5375P | vow/swear/bless/lift(hand) | 0 |
+| endurance | H5769G | enduring/eternal | 0 |
+| endurance | H5769H | Everlasting [God] | 0 |
+| endurance | H5769I | any time | 0 |
+| endurance | H5769J | old/ancient | 0 |
+| endurance | H5975G | stand/stop/establish | 0 |
+| endurance | H6031B | to afflict | 0 |
+| endurance | H6276 | surpassing | 1 |
+| endurance | H6965B | rise/get going | 0 |
+| endurance | H6965I | establish/stand firm/confirm/fulfill/fix | 0 |
+| endurance | H6966I | establish/stand firm/confirm/fulfill/fix | 0 |
+| endurance | H7011 | enduring | 1 |
+| endurance | H7114A | be short | 0 |
+| endurance | H7646 | to satisfy | 11 |
+| envy | G2205 | zeal | 2 |
+| envy | G2206 | be eager | 2 |
+| envy | G3788 | eye | 2 |
+| envy | G5354 | to envy | 1 |
+| envy | G5355 | envy | 1 |
+| envy | G6041 | to envy | 2 |
+| envy | H6424 | to envy | 3 |
+| envy | H7065 | be jealous | 7 |
+| envy | H7068 | jealousy | 12 |
+| envy | H7520 | to watch with envy | 1 |
+| evil | G0093 | unrighteousness | 2 |
+| evil | G0824 | wrong | 2 |
+| evil | G0983 | harmful | 2 |
+| evil | G1426 | slander | 2 |
+| evil | G2549 | evil | 2 |
+| evil | G2551 | to curse/revile | 2 |
+| evil | G2554 | to do evil/harm | 2 |
+| evil | G2555 | wrongdoing | 2 |
+| evil | G2556G | evil/harm: evil | 0 |
+| evil | G2556H | evil/harm: harm | 0 |
+| evil | G2557 | criminal | 2 |
+| evil | G2559 | to harm | 2 |
+| evil | G2560 | badly | 1 |
+| evil | G2636 | slander | 2 |
+| evil | G4189 | evil | 2 |
+| evil | G4190 | evil/bad | 2 |
+| evil | G4191 | more evil | 1 |
+| evil | G5337 | evil | 1 |
+| evil | G7771 | an evil deed | 1 |
+| evil | G7772 | evil actions | 1 |
+| evil | G7773 | evil thinking | 1 |
+| evil | G7774 | evil-minded | 1 |
+| evil | H0192 | Evil-merodach | 2 |
+| evil | H0205G | evil: wickedness | 0 |
+| evil | H0205H | evil: trouble | 0 |
+| evil | H0873 | bad | 2 |
+| evil | H1100H | destruction | 0 |
+| evil | H1942 | desire | 4 |
+| evil | H2154 | wickedness | 4 |
+| evil | H2161 | to plan | 5 |
+| evil | H3415 | be ill | 1 |
+| evil | H4209 | plot | 4 |
+| evil | H4827 | mischief | 2 |
+| evil | H7451A | harmful | 0 |
+| evil | H7451B | bad: evil | 0 |
+| evil | H7451C | harm | 0 |
+| evil | H7451H | evil | 0 |
+| evil | H7451I | harm | 0 |
+| evil | H7455 | evil | 5 |
+| evil | H7489A | be evil | 0 |
+| evil | H7489B | to shatter | 0 |
+| evil | H7562 | wickedness | 4 |
+| evil | H7563 | wicked | 4 |
+| evil | H7854 | Satan | 6 |
+| experience | G1382 | test | 2 |
+| experience | G2334 | to see/experience | 2 |
+| experience | G3958 | to suffer | 2 |
+| experience | G3984 | test | 2 |
+| experience | H7200G | see/show | 0 |
+| experience | H7200H | examine/consider | 0 |
+| faith | G0569 | to disbelieve | 2 |
+| faith | G0570 | unbelief | 2 |
+| faith | G1680 | hope | 2 |
+| faith | G3640 | of little faith | 2 |
+| faith | G4100 | to trust (in) | 2 |
+| faith | G4102G | faith | 0 |
+| faith | G4102H | faith: faithfulness | 0 |
+| faith | G4103 | faithful | 2 |
+| faith | G6066 | little faith | 2 |
+| faith | H0529 | faithful | 2 |
+| faith | H0530 | faithfulness | 1 |
+| faith | H0539 | be faithful | 18 |
+| faith | H0540 | to trust | 6 |
+| faith | H0544 | faithfulness | 1 |
+| faith | H0571G | faithful | 0 |
+| faith | H0571H | true | 0 |
+| faith | H0571I | certain/fixed | 0 |
+| faith | H0898 | to act treacherously | 2 |
+| faith | H2616A | be kind | 0 |
+| faith | H2617A | kindness | 0 |
+| faith | H2623 | pious | 4 |
+| faith | H3559K | right/know/certain | 0 |
+| faith | H4395 | fruit | 1 |
+| faith | H4603 | be unfaithful | 6 |
+| faith | H4604 | unfaithfulness | 3 |
+| faithfulness | G0569 | to disbelieve | 2 |
+| faithfulness | G0570 | unbelief | 2 |
+| faithfulness | G1680 | hope | 2 |
+| faithfulness | G3640 | of little faith | 2 |
+| faithfulness | G4100 | to trust (in) | 2 |
+| faithfulness | G4102G | faith | 0 |
+| faithfulness | G4102H | faith: faithfulness | 0 |
+| faithfulness | G4103 | faithful | 2 |
+| faithfulness | G6066 | little faith | 2 |
+| faithfulness | H0529 | faithful | 2 |
+| faithfulness | H0530 | faithfulness | 1 |
+| faithfulness | H0539 | be faithful | 18 |
+| faithfulness | H0540 | to trust | 6 |
+| faithfulness | H0544 | faithfulness | 1 |
+| faithfulness | H0571G | faithful | 0 |
+| faithfulness | H0571H | true | 0 |
+| faithfulness | H0571I | certain/fixed | 0 |
+| faithfulness | H0898 | to act treacherously | 2 |
+| faithfulness | H2616A | be kind | 0 |
+| faithfulness | H2617A | kindness | 0 |
+| faithfulness | H2623 | pious | 4 |
+| faithfulness | H3559K | right/know/certain | 0 |
+| faithfulness | H4395 | fruit | 1 |
+| faithfulness | H4603 | be unfaithful | 6 |
+| faithfulness | H4604 | unfaithfulness | 3 |
+| fear | G0870 | fearlessly | 2 |
+| fear | G1167 | timidity | 2 |
+| fear | G1168 | be timid | 2 |
+| fear | G1169 | timid | 2 |
+| fear | G1630 | terrified | 2 |
+| fear | G1719 | afraid | 2 |
+| fear | G1790 | trembling | 1 |
+| fear | G2124 | reverence | 1 |
+| fear | G2125 | to revere | 2 |
+| fear | G2126 | devout | 2 |
+| fear | G2316 | God | 2 |
+| fear | G2318 | godly | 2 |
+| fear | G2360 | to alarm | 2 |
+| fear | G4423 | fear | 2 |
+| fear | G4576 | be devout | 2 |
+| fear | G5156 | trembling | 2 |
+| fear | G5398 | fearful | 2 |
+| fear | G5399 | to fear | 2 |
+| fear | G5400 | fearful thing | 2 |
+| fear | G5401 | fear | 2 |
+| fear | G6015 | fear | 2 |
+| fear | G7949 | fear | 1 |
+| fear | H0367 | terror | 1 |
+| fear | H1272 | to flee | 9 |
+| fear | H1481C | to dread | 0 |
+| fear | H1672 | be anxious | 4 |
+| fear | H1674 | anxiety | 1 |
+| fear | H1763 | to fear | 5 |
+| fear | H2119B | to fear | 0 |
+| fear | H2342A | tremble/fear | 0 |
+| fear | H2729 | to tremble | 9 |
+| fear | H2730 | trembling | 1 |
+| fear | H2731 | trembling | 3 |
+| fear | H2844A | terror | 0 |
+| fear | H3016 | fearing | 1 |
+| fear | H3025 | to fear | 1 |
+| fear | H3372G | frightening(DANGER) | 0 |
+| fear | H3372H | awesome(god) | 0 |
+| fear | H3373 | afraid | 1 |
+| fear | H3374 | fear | 5 |
+| fear | H3512A | be disheartened | 0 |
+| fear | H4032 | terror | 1 |
+| fear | H4034 | fear | 1 |
+| fear | H4035 | fear | 2 |
+| fear | H4116A | to hasten | 0 |
+| fear | H4172A | fear | 0 |
+| fear | H4172B | fear | 0 |
+| fear | H4177 | razor | 1 |
+| fear | H4549 | to melt | 7 |
+| fear | H6206 | to tremble | 8 |
+| fear | H6342 | to dread | 6 |
+| fear | H6343 | dread | 3 |
+| fear | H6345 | dread | 1 |
+| fear | H6427 | shuddering | 1 |
+| fear | H6973 | to loathe | 7 |
+| fear | H7200L | seer/visions/appear | 0 |
+| fear | H7267 | turmoil | 3 |
+| fear | H7297 | to fear | 2 |
+| fear | H7374 | panic | 1 |
+| fear | H7461B | trembling | 0 |
+| fear | H8175C | to know | 0 |
+| fear | H8539 | to astounded | 3 |
+| fellowship | G2842 | participation | 2 |
+| fellowship | G2844 | participant | 2 |
+| fellowship | G3352 | participation | 2 |
+| fellowship | G4790 | to share with | 2 |
+| fellowship | H2266 | to unite | 12 |
+| fellowship | H5475 | counsel | 8 |
+| fellowship | H7931 | to dwell | 11 |
+| fellowship | H8667 | security | 1 |
+| flesh | G0766 | debauchery | 2 |
+| flesh | G1939 | desire | 2 |
+| flesh | G2699 | mutilation | 1 |
+| flesh | G2907 | meat | 1 |
+| flesh | G4559 | fleshly | 2 |
+| flesh | G4561 | flesh | 2 |
+| flesh | G7143 | to tear off flesh | 1 |
+| flesh | G7681 | decaying flesh | 1 |
+| flesh | H1320 | flesh | 12 |
+| flesh | H1321 | flesh | 2 |
+| flesh | H3318G | come/go out/escape | 0 |
+| flesh | H3894 | intestine | 3 |
+| flesh | H4578 | belly | 6 |
+| flesh | H6371 | excess fat | 1 |
+| flesh | H7607 | flesh | 7 |
+| flesh | H8270 | umbilical cord | 1 |
+| foolishness | G0453 | foolish | 2 |
+| foolishness | G0454 | folly | 2 |
+| foolishness | G0801 | senseless | 2 |
+| foolishness | G0877 | foolishness | 2 |
+| foolishness | G0878 | foolish | 2 |
+| foolishness | G2756 | empty | 1 |
+| foolishness | G3471 | be foolish | 2 |
+| foolishness | G3472 | foolishness | 1 |
+| foolishness | G3473 | foolish talk | 2 |
+| foolishness | G3474 | foolish | 1 |
+| foolishness | G4654 | to darken | 2 |
+| foolishness | G4656 | to darken | 2 |
+| foolishness | H0191 | fool[ish] | 6 |
+| foolishness | H0196 | foolish | 1 |
+| foolishness | H0200 | folly | 1 |
+| foolishness | H0981 | to speak rashly | 3 |
+| foolishness | H1198 | stupid | 1 |
+| foolishness | H1892 | vanity | 5 |
+| foolishness | H1984C | to be foolish | 0 |
+| foolishness | H1984I | rave madly | 0 |
+| foolishness | H2821 | to darken | 9 |
+| foolishness | H2973 | be foolish | 4 |
+| foolishness | H3684 | fool | 1 |
+| foolishness | H3687 | stupidity | 1 |
+| foolishness | H3688 | be stupid | 1 |
+| foolishness | H3689 | loin | 3 |
+| foolishness | H3690 | confidence | 2 |
+| foolishness | H5034A | be senseless | 0 |
+| foolishness | H5036 | foolish | 1 |
+| foolishness | H5528 | be foolish | 4 |
+| foolishness | H5529 | folly | 1 |
+| foolishness | H5530 | fool | 1 |
+| foolishness | H5531A | folly | 0 |
+| foolishness | H5531B | folly | 0 |
+| foolishness | H6004 | to darken | 3 |
+| foolishness | H6612A | simple | 0 |
+| foolishness | H8604 | folly | 2 |
+| forgiveness | G0630G | to release: release | 0 |
+| forgiveness | G0859 | forgiveness | 2 |
+| forgiveness | G0863G | to release: leave | 0 |
+| forgiveness | G0863H | to release: forgive | 0 |
+| forgiveness | G0863I | to release: permit | 0 |
+| forgiveness | G2436 | propitious/gracious | 2 |
+| forgiveness | G5483 | to give grace | 2 |
+| forgiveness | H3680 | to cover | 13 |
+| forgiveness | H3722A | to atone | 0 |
+| forgiveness | H5375I | look/lift(eyes) | 0 |
+| forgiveness | H5545 | to forgive | 3 |
+| forgiveness | H5546 | forgiving | 1 |
+| forgiveness | H5547 | forgiveness | 1 |
+| forgiveness | H8058 | to release | 6 |
+| generosity | G0018 | good | 1 |
+| generosity | G0572 | openness | 2 |
+| generosity | H3051 | to give | 8 |
+| gentleness | G1932 | gentleness | 2 |
+| gentleness | G1933 | gentle | 2 |
+| gentleness | G2261 | gentle | 1 |
+| gentleness | G3356 | be gentle | 2 |
+| gentleness | G4235 | gentle | 2 |
+| gentleness | G4236 | gentleness | 1 |
+| gentleness | G4239 | gentle | 2 |
+| gentleness | G4240 | gentleness | 2 |
+| gentleness | G5544 | kindness | 2 |
+| gentleness | G6073 | gentleness | 2 |
+| gentleness | G8878 | gentle-minded | 1 |
+| gentleness | H1851 | thin | 3 |
+| gentleness | H4832 | healing | 5 |
+| gentleness | H6031B | to afflict | 0 |
+| gentleness | H6037 | gentleness | 4 |
+| gentleness | H6038 | gentleness | 2 |
+| gentleness | H7390 | tender | 5 |
+| gentleness | H7391 | tenderness | 2 |
+| gladness | G0020 | joy | 2 |
+| gladness | G0021 | to rejoice | 2 |
+| gladness | G2165 | to celebrate | 2 |
+| gladness | G2167 | joy | 2 |
+| gladness | G2174 | be glad | 2 |
+| gladness | G2431 | cheerful | 2 |
+| gladness | G5463 | to rejoice | 1 |
+| gladness | G5479 | joy | 2 |
+| gladness | H1523 | to rejoice | 4 |
+| gladness | H1524A | rejoicing | 0 |
+| gladness | H2302 | to rejoice | 3 |
+| gladness | H2304 | joy | 2 |
+| gladness | H2868 | be good | 2 |
+| gladness | H2896A | pleasant | 0 |
+| gladness | H2896C | welfare | 0 |
+| gladness | H2898 | goodness | 6 |
+| gladness | H3190 | be good | 12 |
+| gladness | H4885 | rejoicing | 1 |
+| gladness | H7440 | cry | 3 |
+| gladness | H7797 | to rejoice | 2 |
+| gladness | H8055 | to rejoice | 7 |
+| gladness | H8056 | glad | 3 |
+| gladness | H8057 | joy | 4 |
+| gladness | H8342 | rejoicing | 2 |
+| goodness | G0014 | to do good | 1 |
+| goodness | G0015 | to do good | 2 |
+| goodness | G0016 | doing good | 2 |
+| goodness | G0017 | doing good | 2 |
+| goodness | G0018 | good | 1 |
+| goodness | G0019 | goodness | 1 |
+| goodness | G0865 | hating good | 2 |
+| goodness | G0979 | life | 2 |
+| goodness | G2097 | to speak good news | 2 |
+| goodness | G2108 | good deed | 2 |
+| goodness | G2109 | to do good | 2 |
+| goodness | G2140 | doing good | 1 |
+| goodness | G2162 | good report | 2 |
+| goodness | G2566 | good | 2 |
+| goodness | G2567 | teaching good | 1 |
+| goodness | G2569 | to do good | 2 |
+| goodness | G2570G | good | 0 |
+| goodness | G2570H | Fair [Havens] | 0 |
+| goodness | G3776 | estate | 2 |
+| goodness | G4147 | be rich | 2 |
+| goodness | G4283 | to speak good news | 2 |
+| goodness | G4469 | fool | 2 |
+| goodness | G4632 | vessel | 2 |
+| goodness | G5223 | property | 2 |
+| goodness | G5224 | possession | 2 |
+| goodness | G5358 | lover of good | 2 |
+| goodness | G5543 | good/kind | 2 |
+| goodness | G5544 | kindness | 2 |
+| goodness | G6107 | to do good | 1 |
+| goodness | G7527 | good news | 1 |
+| goodness | G7534 | to enjoy good health | 1 |
+| goodness | G7548 | to have good vine branches | 1 |
+| goodness | G7559 | good-looking | 1 |
+| goodness | H0202 | strength | 3 |
+| goodness | H1309 | good news | 4 |
+| goodness | H1319 | to bear tidings | 6 |
+| goodness | H1580 | to wean | 7 |
+| goodness | H2617A | kindness | 0 |
+| goodness | H2868 | be good | 2 |
+| goodness | H2895 | be pleasing | 8 |
+| goodness | H2896A | pleasant | 0 |
+| goodness | H2896B | good | 0 |
+| goodness | H2896C | welfare | 0 |
+| goodness | H2898 | goodness | 6 |
+| goodness | H3190 | be good | 12 |
+| goodness | H3191 | be good | 2 |
+| goodness | H3520B | riches | 0 |
+| goodness | H4377 | merchandise | 1 |
+| goodness | H4465 | sale | 1 |
+| goodness | H4627 | merchandise | 1 |
+| goodness | H4728 | ware | 1 |
+| goodness | H5232 | wealth | 2 |
+| goodness | H7075 | acquisition | 3 |
+| goodness | H7399 | property | 5 |
+| goodness | H7998 | spoil | 5 |
+| goodness | H8408 | benefit | 1 |
+| grace | G2143 | beauty | 1 |
+| grace | G4380 | to favor | 2 |
+| grace | G5483 | to give grace | 2 |
+| grace | G5485 | grace | 2 |
+| grace | H2433 | beauty | 1 |
+| grace | H2580 | favor | 3 |
+| grace | H2603A | be gracious | 0 |
+| grace | H2617A | kindness | 0 |
+| grace | H8469 | supplication | 3 |
+| gratitude | G2169 | thankfulness | 2 |
+| gratitude | G2170 | thankful | 2 |
+| gratitude | G5485 | grace | 2 |
+| greed | G0146 | greedy | 1 |
+| greed | G0147 | greedily | 1 |
+| greed | G0724 | plunder | 2 |
+| greed | G4123 | greedy | 2 |
+| greed | G4124 | greediness | 2 |
+| greed | H1215 | unjust-gain | 1 |
+| greed | H5392 | interest | 1 |
+| grief | G3076 | to grieve | 1 |
+| grief | G3077 | grief | 2 |
+| grief | G3601 | anguish | 2 |
+| grief | G3996 | to mourn | 2 |
+| grief | G3997 | grief | 2 |
+| grief | G4727 | to groan | 2 |
+| grief | G5003 | to grieve | 2 |
+| grief | H0056 | to mourn | 11 |
+| grief | H0057 | mourning | 7 |
+| grief | H0099 | grieved | 1 |
+| grief | H0109 | to grieve | 2 |
+| grief | H2470I | grieved/sorrowful | 0 |
+| grief | H2483 | sickness | 1 |
+| grief | H3013 | to suffer | 4 |
+| grief | H3015 | sorrow | 1 |
+| grief | H3510 | to pain | 7 |
+| grief | H3511 | pain | 1 |
+| grief | H3708A | vexation | 0 |
+| grief | H3708B | vexation | 0 |
+| grief | H4341 | pain | 3 |
+| grief | H4786 | bitterness | 1 |
+| grief | H6001A | labour[er] | 0 |
+| grief | H6040 | affliction | 3 |
+| grief | H6087A | to hurt | 0 |
+| grief | H6094 | injury | 1 |
+| grief | H6330 | staggering | 2 |
+| grief | H6937 | be dark | 6 |
+| grief | H7451C | harm | 0 |
+| grief | H7908 | bereavement | 1 |
+| grief | H8424 | grief | 1 |
+| groaning | G0389 | to sigh deeply | 2 |
+| groaning | G1690 | be agitated | 2 |
+| groaning | G4726 | groan | 2 |
+| groaning | G4727 | to groan | 2 |
+| groaning | G4959 | to groan with | 2 |
+| groaning | G6697 | groaning | 1 |
+| groaning | G7929 | to groan | 1 |
+| groaning | H0584 | to sigh | 2 |
+| groaning | H0585 | sighing | 1 |
+| groaning | H0602 | to groan | 3 |
+| groaning | H0603 | groaning | 1 |
+| groaning | H1518 | to burst/come out | 7 |
+| groaning | H1901 | meditation | 3 |
+| groaning | H1993 | to roar | 7 |
+| groaning | H2603A | be gracious | 0 |
+| groaning | H5008 | to groan | 1 |
+| groaning | H5009 | groan | 1 |
+| groaning | H5098 | to groan | 4 |
+| groaning | H5100 | groaning | 1 |
+| groaning | H6463 | to groan | 1 |
+| groaning | H7580 | to roar | 2 |
+| groaning | H7581 | roaring | 2 |
+| guilt | G0156 | cause/charge | 2 |
+| guilt | G0159 | causer | 1 |
+| guilt | G0266 | sin | 2 |
+| guilt | G4893 | conscience | 1 |
+| guilt | H0816 | be guilty | 9 |
+| guilt | H0817 | guilt [offering] | 5 |
+| guilt | H0818 | guilty | 1 |
+| guilt | H0819 | guiltiness | 4 |
+| guilt | H2054 | guilty | 2 |
+| guilt | H2398 | to sin | 17 |
+| guilt | H2399 | sin | 5 |
+| guilt | H2401 | sin | 4 |
+| guilt | H2600 | for nothing | 4 |
+| guilt | H5375J | look/lift(eyes) | 0 |
+| guilt | H5771G | crime | 0 |
+| guilt | H5771H | guilt | 0 |
+| guilt | H5771I | punishment | 0 |
+| hardness | G1171 | terribly | 2 |
+| hardness | G1418 | hard | 1 |
+| hardness | G1419 | ponderous | 2 |
+| hardness | G1421 | hard to interpret | 2 |
+| hardness | G1422 | difficult | 1 |
+| hardness | G1423 | difficultly | 2 |
+| hardness | G1425 | hard to understand | 2 |
+| hardness | G21419 | hardness | 1 |
+| hardness | G2346 | to press on | 2 |
+| hardness | G2872 | to labor | 2 |
+| hardness | G4456 | to harden | 2 |
+| hardness | G4457 | hardening | 2 |
+| hardness | G4641 | hardness of heart | 2 |
+| hardness | G4642 | hard | 2 |
+| hardness | G4643 | hardness | 2 |
+| hardness | G4912 | to hold/oppress | 2 |
+| hardness | G6980 | hard of hearing | 1 |
+| hardness | H0280 | riddle | 2 |
+| hardness | H1419A | great: large | 0 |
+| hardness | H2388G | strengthen/support/encourage | 0 |
+| hardness | H2389 | strong | 5 |
+| hardness | H2459 | fat | 4 |
+| hardness | H2795 | deaf | 1 |
+| hardness | H2954 | be insensitive | 1 |
+| hardness | H3332J | firm | 0 |
+| hardness | H3513H | heavy/severe | 0 |
+| hardness | H3515 | heavy | 6 |
+| hardness | H4044 | covering | 2 |
+| hardness | H4165 | casting | 1 |
+| hardness | H5450 | burden | 1 |
+| hardness | H5797 | strength | 3 |
+| hardness | H6089A | toil | 0 |
+| hardness | H6093 | toil | 1 |
+| hardness | H6277 | arrogant | 2 |
+| hardness | H6381 | to wonder | 11 |
+| hardness | H6693 | to press | 1 |
+| hardness | H6862D | hard | 0 |
+| hardness | H7185 | to harden | 14 |
+| hardness | H7186 | severe | 6 |
+| hardness | H7188 | to harden | 4 |
+| hardness | H7451H | evil | 0 |
+| hardness | H7489A | be evil | 0 |
+| hatred | G2189 | hostility | 2 |
+| hatred | G3404 | to hate | 2 |
+| hatred | G7590 | hatred | 1 |
+| hatred | G8332 | hatred | 1 |
+| hatred | H0342 | enmity | 1 |
+| hatred | H1604 | loathing | 1 |
+| hatred | H2092 | to loathe | 1 |
+| hatred | H4895 | hatred | 1 |
+| hatred | H7520 | to watch with envy | 1 |
+| hatred | H7852 | to hate | 2 |
+| hatred | H8130 | to hate | 9 |
+| hatred | H8131 | to hate | 2 |
+| hatred | H8135 | hating | 3 |
+| hatred | H8374 | to loathe | 2 |
+| heart | G1457 | to inaugurate | 2 |
+| heart | G1573 | to lose heart | 1 |
+| heart | G2155 | compassionate | 2 |
+| heart | G2293 | take heart | 2 |
+| heart | G2588 | heart | 1 |
+| heart | G2589 | heart-knower | 2 |
+| heart | G4641 | hardness of heart | 2 |
+| heart | G4698 | affection/entrails | 2 |
+| heart | G5590G | soul | 0 |
+| heart | G6657 | heavy-hearted | 1 |
+| heart | G7684 | bold-hearted | 1 |
+| heart | G7798 | to take heart | 1 |
+| heart | G8419 | dull of heart | 1 |
+| heart | G8485 | be faint-hearted | 1 |
+| heart | H1079 | mind | 2 |
+| heart | H2243 | breast | 1 |
+| heart | H2436G | embrace/chest | 0 |
+| heart | H2450 | wise | 7 |
+| heart | H2504 | loin | 4 |
+| heart | H2836A | to desire | 0 |
+| heart | H2910 | inner parts | 1 |
+| heart | H3512A | be disheartened | 0 |
+| heart | H3516 | liver | 2 |
+| heart | H3629 | kidney | 5 |
+| heart | H3820A | heart | 0 |
+| heart | H3821 | heart | 2 |
+| heart | H3823A | to encourage | 0 |
+| heart | H3824 | heart | 12 |
+| heart | H3825 | heart | 2 |
+| heart | H3826 | heart | 1 |
+| heart | H4578 | belly | 6 |
+| heart | H5034B | to wither | 0 |
+| heart | H5315G | soul | 0 |
+| heart | H5315I | soul: myself | 0 |
+| heart | H5315L | soul: appetite | 0 |
+| heart | H7130H | inner parts | 0 |
+| heart | H7907 | heart | 2 |
+| heart | H8056 | glad | 3 |
+| holiness | G0037 | to sanctify | 2 |
+| holiness | G0038 | holiness | 2 |
+| holiness | G0039G | Holy Place | 0 |
+| holiness | G0039H | Most Holy Place | 0 |
+| holiness | G0040G | holy | 0 |
+| holiness | G0040H | holy: saint | 0 |
+| holiness | G0041 | holiness | 2 |
+| holiness | G0042 | holiness | 2 |
+| holiness | G0572 | openness | 2 |
+| holiness | G2150 | piety | 2 |
+| holiness | G2412 | reverent | 1 |
+| holiness | G2413 | sacred | 2 |
+| holiness | G3741 | sacred | 2 |
+| holiness | G3742 | holiness | 1 |
+| holiness | G3743 | devoutly | 1 |
+| holiness | G4151G | spirit/breath: spirit | 0 |
+| holiness | H2623 | pious | 4 |
+| holiness | H4720 | sanctuary | 6 |
+| holiness | H6422 | certain | 2 |
+| holiness | H6918G | holy | 0 |
+| holiness | H6918H | saint/priest | 0 |
+| holiness | H6922 | holy | 2 |
+| holiness | H6942G | consecate/sanctify | 0 |
+| holiness | H6942H | dedicate | 0 |
+| holiness | H6942I | forfeit | 0 |
+| holiness | H6942J | prepare/set apart | 0 |
+| holiness | H6942K | holiness | 0 |
+| holiness | H6944G | holiness | 0 |
+| holiness | H6944H | Most Holy Place | 0 |
+| holiness | H6944I | [Way of] Holiness | 0 |
+| holiness | H6944J | Holy Place | 0 |
+| honesty | G4587 | dignity | 2 |
+| honesty | H0530 | faithfulness | 1 |
+| honesty | H0571G | faithful | 0 |
+| honesty | H3476 | uprightness | 4 |
+| honesty | H5229 | upright | 3 |
+| honesty | H6666 | righteousness | 14 |
+| hope | G0362 | to await | 1 |
+| hope | G0560 | to despair | 2 |
+| hope | G0603 | eager expectation | 2 |
+| hope | G1561 | expectation | 1 |
+| hope | G1679 | to hope/expect | 2 |
+| hope | G1680 | hope | 2 |
+| hope | G3785 | I wish! | 2 |
+| hope | G4276 | to hope beforehand | 2 |
+| hope | G7379 | to raise hope | 1 |
+| hope | H0982 | to trust | 9 |
+| hope | H0986 | trust | 1 |
+| hope | H2342I | writh in pain/wound | 0 |
+| hope | H2442 | to wait | 6 |
+| hope | H2620 | to seek refuge | 2 |
+| hope | H2976 | to despair | 5 |
+| hope | H3175 | waiting | 1 |
+| hope | H3176G | wait[for time] | 0 |
+| hope | H3176H | hope/trust | 0 |
+| hope | H3689 | loin | 3 |
+| hope | H4007 | expectation | 1 |
+| hope | H4009 | confidence | 4 |
+| hope | H4268 | refuge | 3 |
+| hope | H4723A | Kue | 0 |
+| hope | H4723B | hope | 0 |
+| hope | H4723C | collection | 0 |
+| hope | H6960A | to await | 0 |
+| hope | H6960B | to collect | 0 |
+| hope | H7663B | to await | 0 |
+| hope | H7664 | hope | 1 |
+| hope | H7951 | to prosper | 5 |
+| hope | H8431 | hope | 1 |
+| hope | H8615A | cord | 0 |
+| hope | H8615B | hope | 0 |
+| humility | G0036 | lowly | 2 |
+| humility | G4240 | gentleness | 2 |
+| humility | G5011 | lowly | 2 |
+| humility | G5012 | humility | 2 |
+| humility | G5013 | to humble | 2 |
+| humility | G5014 | lowliness | 2 |
+| humility | H6037 | gentleness | 4 |
+| humility | H6038 | gentleness | 2 |
+| humility | H6800B | humble | 0 |
+| humility | H7807 | lowly | 1 |
+| humility | H8217 | low | 5 |
+| hypocrisy | G0505 | genuine | 2 |
+| hypocrisy | G4942 | to join hypocrisy | 2 |
+| hypocrisy | G5272 | hypocrisy | 2 |
+| hypocrisy | H2519 | smoothness | 3 |
+| hypocrisy | H2612 | profaneness | 1 |
+| idolatry | G1495 | idolatry | 2 |
+| idolatry | G2712 | idolatrous | 1 |
+| idolatry | H1544 | idol | 1 |
+| idolatry | H2183 | fornication | 1 |
+| idolatry | H8655 | teraphim | 2 |
+| image | G1504 | image | 2 |
+| image | G5480 | image/mark | 2 |
+| image | G5481 | reproduction | 2 |
+| image | H0457 | idol | 3 |
+| image | H1544 | idol | 1 |
+| image | H1823 | likeness | 3 |
+| image | H2553 | pillar | 2 |
+| image | H4541A | liquid | 0 |
+| image | H4541B | veil | 0 |
+| image | H4656 | horror | 1 |
+| image | H4676 | pillar | 5 |
+| image | H4906 | figure | 3 |
+| image | H5566 | idol | 1 |
+| image | H6087B | to shape | 0 |
+| image | H6091 | idol | 1 |
+| image | H6456 | idol | 2 |
+| image | H6459 | idol | 2 |
+| image | H6736 | image | 1 |
+| image | H6754 | image | 5 |
+| image | H6755 | image | 2 |
+| image | H6816 | image | 1 |
+| image | H7914 | craft | 2 |
+| image | H8403 | pattern | 5 |
+| image | H8544 | likeness | 1 |
+| image | H8655 | teraphim | 2 |
+| imagination | G1261 | reasoning | 2 |
+| imagination | G1271 | mind | 2 |
+| imagination | G1380 | to think | 2 |
+| imagination | G1761 | reflection | 2 |
+| imagination | G3053 | thought | 2 |
+| imagination | G3191 | to meditate/plot | 2 |
+| imagination | G3539 | to understand | 2 |
+| imagination | G3543 | to think | 2 |
+| imagination | G7050 | to imagine | 1 |
+| imagination | H1819 | to resemble | 8 |
+| imagination | H1897 | to mutter | 7 |
+| imagination | H2161 | to plan | 5 |
+| imagination | H2803I | devise/plot/plan | 0 |
+| imagination | H3336 | intention | 6 |
+| imagination | H4284 | plot | 4 |
+| imagination | H4906 | figure | 3 |
+| imagination | H8307 | stubbornness | 1 |
+| impurity | G0167 | impurity | 2 |
+| impurity | G0168 | uncleanness | 1 |
+| impurity | G0169 | unclean | 1 |
+| impurity | G2839G | common: unsanctified | 0 |
+| impurity | G2840 | to profane | 2 |
+| impurity | G6410 | impure | 1 |
+| impurity | H2930A | to defile | 0 |
+| impurity | H2932 | uncleanness | 6 |
+| impurity | H3971A | blemish | 0 |
+| impurity | H5079 | impurity | 6 |
+| impurity | H5509 | dross | 2 |
+| indignation | G0023 | be indignant | 2 |
+| indignation | G0024 | indignation | 1 |
+| indignation | G2205 | zeal | 2 |
+| indignation | G2372 | wrath | 2 |
+| indignation | G3709 | wrath | 2 |
+| indignation | G4448 | to burn | 2 |
+| indignation | H2152 | scorching | 1 |
+| indignation | H2194 | be indignant | 6 |
+| indignation | H2195 | indignation | 1 |
+| indignation | H2197 | rage | 1 |
+| indignation | H2534 | rage | 6 |
+| indignation | H3707 | to provoke | 8 |
+| indignation | H3708A | vexation | 0 |
+| indignation | H3708B | vexation | 0 |
+| indignation | H6087A | to hurt | 0 |
+| indignation | H7110A | wrath | 0 |
+| indignation | H8104I | look at/watch | 0 |
+| iniquity | G0092 | crime | 2 |
+| iniquity | G0093 | unrighteousness | 2 |
+| iniquity | G0094 | unjust | 1 |
+| iniquity | G0458 | lawlessness | 2 |
+| iniquity | G3892 | lawlessness | 2 |
+| iniquity | G4189 | evil | 2 |
+| iniquity | H0205G | evil: wickedness | 0 |
+| iniquity | H0205H | evil: trouble | 0 |
+| iniquity | H1697M | because | 0 |
+| iniquity | H5753B | to pervert | 0 |
+| iniquity | H5758 | iniquity | 1 |
+| iniquity | H5760 | unjust one | 1 |
+| iniquity | H5766A | injustice | 0 |
+| iniquity | H5766B | injustice | 0 |
+| iniquity | H5771G | crime | 0 |
+| iniquity | H5771H | guilt | 0 |
+| iniquity | H5771I | punishment | 0 |
+| iniquity | H5869K | sin | 0 |
+| iniquity | H5932 | iniquity | 2 |
+| iniquity | H5999 | trouble | 4 |
+| iniquity | H6041 | afflicted | 5 |
+| iniquity | H7562 | wickedness | 4 |
+| iniquity | H7725I | turn back/backslide | 0 |
+| innocence | G0053 | pure | 2 |
+| innocence | G0121 | innocent | 1 |
+| innocence | G0172 | innocent | 1 |
+| innocence | G0185 | innocent | 1 |
+| innocence | G0338 | innocent | 1 |
+| innocence | G1342 | just | 2 |
+| innocence | G2513 | clean | 2 |
+| innocence | G6177 | innocence | 1 |
+| innocence | H1249 | pure | 5 |
+| innocence | H1818 | blood | 2 |
+| innocence | H2134 | pure | 4 |
+| innocence | H2136 | innocence | 1 |
+| innocence | H2643 | clean | 1 |
+| innocence | H3682 | covering | 3 |
+| innocence | H5352 | to clear | 10 |
+| innocence | H5355A | innocent | 0 |
+| innocence | H5355B | innocent | 0 |
+| innocence | H5356A | innocence | 0 |
+| innocence | H5356B | bluntness | 0 |
+| innocence | H6662 | righteous | 6 |
+| innocence | H6663 | to justify | 14 |
+| innocence | H8535 | complete | 7 |
+| innocence | H8537 | integrity | 4 |
+| innocence | H8552 | to finish | 19 |
+| insight | G0143 | to perceive | 1 |
+| insight | G0144 | insight | 2 |
+| insight | G2529 | to perceive | 2 |
+| insight | G3563 | mind | 2 |
+| insight | G4907 | understanding | 2 |
+| insight | G4920 | to understand | 2 |
+| insight | G5428 | understanding | 2 |
+| insight | H0995 | to understand | 13 |
+| insight | H0998 | understanding | 6 |
+| insight | H2938 | to perceive | 3 |
+| insight | H5094B | illumination | 0 |
+| insight | H7919A | be prudent | 0 |
+| insight | H7922 | understanding | 5 |
+| insight | H7924 | insight | 2 |
+| insight | H8394 | understanding | 7 |
+| insight | H8454 | wisdom | 3 |
+| integrity | G0090 | unspoilable | 1 |
+| integrity | G0273 | blameless | 1 |
+| integrity | G0298 | blameless | 1 |
+| integrity | G0299 | blameless | 1 |
+| integrity | G0573 | sound | 1 |
+| integrity | G0658 | to complete | 2 |
+| integrity | G0861 | incorruptibility | 2 |
+| integrity | G2005 | to complete | 2 |
+| integrity | G2279 | sound | 2 |
+| integrity | G2675 | to complete | 2 |
+| integrity | G3648 | whole | 2 |
+| integrity | G3833 | complete armor | 2 |
+| integrity | G4537 | to sound a trumpet | 2 |
+| integrity | G4931 | to complete | 1 |
+| integrity | G5353 | sound | 2 |
+| integrity | H0530 | faithfulness | 1 |
+| integrity | H3476 | uprightness | 4 |
+| integrity | H4339 | uprightness | 4 |
+| integrity | H4974 | soundness | 1 |
+| integrity | H8535 | complete | 7 |
+| integrity | H8537 | integrity | 4 |
+| integrity | H8538 | integrity | 1 |
+| integrity | H8549H | blameless | 0 |
+| intention | G0816 | to gaze | 2 |
+| intention | G1013 | plan | 2 |
+| intention | G1014 | to plan | 2 |
+| intention | G1227 | to see clearly | 2 |
+| intention | G1619 | fervently | 1 |
+| intention | G1771 | thought/purpose | 2 |
+| intention | G1963 | thought | 2 |
+| intention | G2212 | to seek | 2 |
+| intention | G3879 | to stoop | 2 |
+| intention | G5426 | to reason | 2 |
+| intention | H0908 | to devise | 4 |
+| intention | H1701 | cause | 2 |
+| intention | H2161 | to plan | 5 |
+| intention | H3336 | intention | 6 |
+| intention | H3615I | decides/determines/longs | 0 |
+| intention | H4209 | plot | 4 |
+| intention | H4284 | plot | 4 |
+| intention | H4616 | because | 5 |
+| intention | H5668 | for the sake of | 4 |
+| intention | H6660 | ambush | 1 |
+| intention | H7760A | make/establish | 0 |
+| intention | H8245 | to watch | 4 |
+| intercession | G1783 | intercession | 2 |
+| intercession | G1793 | to call on | 2 |
+| intercession | G5241 | to intercede | 1 |
+| intercession | H6293 | to fall on | 13 |
+| jealousy | G2205 | zeal | 2 |
+| jealousy | G3863 | to make envious | 2 |
+| jealousy | G7600 | jealousy | 1 |
+| jealousy | G7601 | jealousy | 1 |
+| jealousy | H7068 | jealousy | 12 |
+| jealousy | H7069 | to buy | 11 |
+| jealousy | H7072 | jealous | 1 |
+| joy | G0020 | joy | 2 |
+| joy | G0021 | to rejoice | 2 |
+| joy | G2167 | joy | 2 |
+| joy | G2744 | to boast | 2 |
+| joy | G3685 | to have joy | 2 |
+| joy | G4796 | to rejoice with | 1 |
+| joy | G5463 | to rejoice | 1 |
+| joy | G5479 | joy | 2 |
+| joy | G6110 | a leap for joy | 1 |
+| joy | H1523 | to rejoice | 4 |
+| joy | H1524A | rejoicing | 0 |
+| joy | H1525 | rejoicing | 1 |
+| joy | H1750 | to dance | 1 |
+| joy | H1959 | shout | 3 |
+| joy | H2304 | joy | 2 |
+| joy | H2305 | joy | 2 |
+| joy | H4010 | cheer | 1 |
+| joy | H4885 | rejoicing | 1 |
+| joy | H5539 | to rejoice | 1 |
+| joy | H6681 | to cry aloud | 1 |
+| joy | H7440 | cry | 3 |
+| joy | H7442A | to overcome | 0 |
+| joy | H7442B | to sing | 0 |
+| joy | H7444 | to sing | 2 |
+| joy | H7797 | to rejoice | 2 |
+| joy | H8055 | to rejoice | 7 |
+| joy | H8056 | glad | 3 |
+| joy | H8057 | joy | 4 |
+| joy | H8342 | rejoicing | 2 |
+| justice | G1341 | justice | 2 |
+| justice | G1343 | righteousness | 2 |
+| justice | G1349 | condemnation | 1 |
+| justice | G1556 | to avenge | 2 |
+| justice | G1557 | vengeance | 2 |
+| justice | G2118 | righteousness | 2 |
+| justice | G2920 | judgment | 2 |
+| justice | G6928 | court of justice | 1 |
+| justice | H0197H | Hall [of Justice] | 0 |
+| justice | H1777 | to judge | 9 |
+| justice | H1779 | judgment | 7 |
+| justice | H1884 | judge | 1 |
+| justice | H4334 | plain | 4 |
+| justice | H4639H | justice/right/righteousness | 0 |
+| justice | H4941G | judgement/punishment | 0 |
+| justice | H4941H | justice/right/righteousness | 0 |
+| justice | H4941I | rule/prescription | 0 |
+| justice | H4941J | custom/manner | 0 |
+| justice | H4941K | [Hall of] Judgment | 0 |
+| justice | H5186 | to stretch | 13 |
+| justice | H6415 | judge | 2 |
+| justice | H6662 | righteous | 6 |
+| justice | H6663 | to justify | 14 |
+| justice | H6664G | righteousness | 0 |
+| justice | H6666 | righteousness | 14 |
+| justice | H8199 | to judge | 14 |
+| kindness | G0018 | good | 1 |
+| kindness | G1074 | generation | 2 |
+| kindness | G1085H | family: kind | 0 |
+| kindness | G1932 | gentleness | 2 |
+| kindness | G2261 | gentle | 1 |
+| kindness | G3634 | such as | 2 |
+| kindness | G4164 | various | 2 |
+| kindness | G4169 | what? | 2 |
+| kindness | G4217 | of what kind? | 1 |
+| kindness | G5363 | benevolence | 2 |
+| kindness | G5449 | nature | 2 |
+| kindness | G5541 | be kind | 2 |
+| kindness | G5543 | good/kind | 2 |
+| kindness | G5544 | kindness | 2 |
+| kindness | G8598 | of all kinds | 1 |
+| kindness | G8922 | kind | 1 |
+| kindness | H0375 | where? | 2 |
+| kindness | H0929 | animal | 4 |
+| kindness | H2177 | kind | 2 |
+| kindness | H2178 | kind | 2 |
+| kindness | H2603A | be gracious | 0 |
+| kindness | H2616A | be kind | 0 |
+| kindness | H2616B | to shame | 0 |
+| kindness | H2617A | kindness | 0 |
+| kindness | H2623 | pious | 4 |
+| kindness | H2896A | pleasant | 0 |
+| kindness | H3190 | be good | 12 |
+| kindness | H3610 | mixture | 2 |
+| kindness | H4327 | kind | 1 |
+| kindness | H5278 | pleasantness | 4 |
+| kindness | H5375Q | kindness/honour/favour/lift(head/face) | 0 |
+| kindness | H6440N | kindness/honour/favour/lift(head/face) | 0 |
+| kindness | H7356B | compassion | 0 |
+| knowledge | G0056 | ignorance | 1 |
+| knowledge | G1108 | knowledge | 2 |
+| knowledge | G1110 | acquainted with | 2 |
+| knowledge | G1492I | to perceive: know | 0 |
+| knowledge | G1922 | knowledge | 2 |
+| knowledge | G1990 | knowing | 2 |
+| knowledge | G2467 | to know | 2 |
+| knowledge | G4267 | to know/choose | 2 |
+| knowledge | G4894 | be aware | 2 |
+| knowledge | G4907 | understanding | 2 |
+| knowledge | G4924 | to live with | 2 |
+| knowledge | G6063 | to know | 3 |
+| knowledge | G7396 | knowledge | 1 |
+| knowledge | G7454 | higher knowledge | 1 |
+| knowledge | H0998 | understanding | 6 |
+| knowledge | H1843 | knowledge | 3 |
+| knowledge | H1844 | knowledge | 1 |
+| knowledge | H1847 | knowledge | 3 |
+| knowledge | H3045 | to know | 28 |
+| knowledge | H4093 | knowledge | 4 |
+| knowledge | H4486 | knowledge | 2 |
+| knowledge | H6213A | do/perform | 0 |
+| knowledge | H6213H | make(OBJECT) | 0 |
+| knowledge | H7922 | understanding | 5 |
+| knowledge | H8451 | instruction | 11 |
+| knowledge | H8454 | wisdom | 3 |
+| likeness | G0407 | to act like a man | 2 |
+| likeness | G0871 | to make like | 2 |
+| likeness | G1482 | Gentile-like | 1 |
+| likeness | G1483 | Gentile-way | 2 |
+| likeness | G1504 | image | 2 |
+| likeness | G21422 | such-like | 1 |
+| likeness | G2465 | like an angel | 2 |
+| likeness | G2473 | like-minded | 2 |
+| likeness | G3634 | such as | 2 |
+| likeness | G3663 | like | 2 |
+| likeness | G3664 | like | 1 |
+| likeness | G3665 | likeness | 2 |
+| likeness | G3667 | likeness | 2 |
+| likeness | G3669 | likeness | 1 |
+| likeness | G3675 | like-minded | 2 |
+| likeness | G3946 | like | 2 |
+| likeness | G4833 | to make like | 2 |
+| likeness | G5616 | like/as/about | 2 |
+| likeness | G6530 | a lion-like person | 1 |
+| likeness | G7813 | nut-like | 1 |
+| likeness | G8159 | like a covered chariot | 1 |
+| likeness | H1819 | to resemble | 8 |
+| likeness | H1821 | be like | 2 |
+| likeness | H1823 | likeness | 3 |
+| likeness | H1825 | likeness | 1 |
+| likeness | H3644G | like | 0 |
+| likeness | H3644H | [Geruth] Chimham | 0 |
+| likeness | H4915A | likeness | 0 |
+| likeness | H6754 | image | 5 |
+| likeness | H7521 | to accept | 11 |
+| likeness | H7737A | be like | 0 |
+| likeness | H7737B | to set | 0 |
+| likeness | H7739A | be like | 0 |
+| likeness | H7739B | be set | 0 |
+| likeness | H8403 | pattern | 5 |
+| likeness | H8544 | likeness | 1 |
+| listen | G0189 | hearing | 2 |
+| listen | G0191 | to hear | 1 |
+| listen | G0430 | to endure | 1 |
+| listen | G1522 | to listen to | 2 |
+| listen | G1801 | to listen to | 2 |
+| listen | G1873 | to listen to | 2 |
+| listen | G1874 | to listen ro | 2 |
+| listen | G3878 | to ignore | 2 |
+| listen | G4257 | to hear beforehand | 2 |
+| listen | G6354 | to listen in turn | 1 |
+| listen | G7214 | to listen to attentively | 1 |
+| listen | H0238 | to listen | 5 |
+| listen | H0241G | ear | 0 |
+| listen | H0241H | hearing | 0 |
+| listen | H2790B | be quiet | 0 |
+| listen | H4994 | please | 2 |
+| listen | H6963A | voice/shout/loud | 0 |
+| listen | H6963L | listen | 0 |
+| listen | H7181 | to listen | 3 |
+| listen | H8085G | hear | 0 |
+| listen | H8085H | obey | 0 |
+| listen | H8085I | proclaim/loud | 0 |
+| listen | H8085J | understand | 0 |
+| listen | H8085K | judge/discern | 0 |
+| listen | H8085L | welcome | 0 |
+| listen | H8086 | to hear | 3 |
+| longing | G0165H | an age: eternity | 0 |
+| longing | G0509 | from above/again | 2 |
+| longing | G0744 | ancient | 2 |
+| longing | G0891 | until | 2 |
+| longing | G1597 | of old | 2 |
+| longing | G1937 | to long for | 2 |
+| longing | G1939 | desire | 2 |
+| longing | G1971 | to long for | 2 |
+| longing | G1972 | longing | 2 |
+| longing | G1973 | longed for | 1 |
+| longing | G1974 | longing | 2 |
+| longing | G2193 | until | 2 |
+| longing | G2375 | long shield | 2 |
+| longing | G2863 | be long-haired | 2 |
+| longing | G3112 | far | 2 |
+| longing | G3114 | to have patience | 2 |
+| longing | G3117 | long/distant | 2 |
+| longing | G3118 | long-lived | 2 |
+| longing | G3173 | great | 2 |
+| longing | G3713 | to aspire | 2 |
+| longing | G3745 | just as/how much | 2 |
+| longing | G4119 | greater | 1 |
+| longing | G4183 | much | 1 |
+| longing | G4219 | when? | 1 |
+| longing | G5550 | time | 2 |
+| longing | G7383 | longed for | 1 |
+| longing | G7808 | with long sleeves | 1 |
+| longing | G8232 | long-lived | 1 |
+| longing | G8237 | to live a long time | 1 |
+| longing | G8859 | to delay long | 1 |
+| longing | G8860 | long-lived | 1 |
+| longing | H0183 | to desire | 3 |
+| longing | H0679 | joint | 1 |
+| longing | H0748 | to prolong | 7 |
+| longing | H0752 | long | 3 |
+| longing | H0753 | length | 4 |
+| longing | H1364 | high | 8 |
+| longing | H1419A | great: large | 0 |
+| longing | H1870J | direction | 0 |
+| longing | H2836A | to desire | 0 |
+| longing | H2837 | desire | 1 |
+| longing | H2968 | to long | 1 |
+| longing | H3117K | always/long time | 0 |
+| longing | H3508 | lobe | 1 |
+| longing | H3615I | decides/determines/longs | 0 |
+| longing | H3616 | longing | 1 |
+| longing | H3700 | to long | 5 |
+| longing | H3801 | tunic | 2 |
+| longing | H3975 | hole | 1 |
+| longing | H4059 | to extend | 2 |
+| longing | H4060A | measure | 0 |
+| longing | H4263 | compassion | 2 |
+| longing | H4900 | to draw | 13 |
+| longing | H5186 | to stretch | 13 |
+| longing | H5375O | trust/desire/lift(soul/heart) | 0 |
+| longing | H5704 | till | 13 |
+| longing | H5769G | enduring/eternal | 0 |
+| longing | H5769J | old/ancient | 0 |
+| longing | H6165 | to long for | 1 |
+| longing | H6315 | to breathe | 9 |
+| longing | H6446 | long-sleeved | 2 |
+| longing | H6485I | visit/inspect | 0 |
+| longing | H6546 | leader | 1 |
+| longing | H6770 | to thirst | 1 |
+| longing | H6771 | thirsty | 1 |
+| longing | H6772 | thirst | 1 |
+| longing | H7227A | many | 0 |
+| longing | H7230 | abundance | 5 |
+| longing | H7235A | to multiply | 0 |
+| longing | H7341 | width | 1 |
+| longing | H7469 | longing | 2 |
+| longing | H7602A | to long for | 0 |
+| longing | H7602B | to crush | 0 |
+| longing | H8264 | to rush | 3 |
+| longing | H8311 | to extend | 3 |
+| longing | H8373 | to long for | 1 |
+| longing | H8375 | longing | 1 |
+| longing | H8378 | desire | 4 |
+| love | G0025 | to love | 2 |
+| love | G0026 | love | 2 |
+| love | G0027 | beloved | 2 |
+| love | G0080 | brother | 2 |
+| love | G0866 | not greedy | 2 |
+| love | G1516 | peaceful | 2 |
+| love | G4375 | lovely | 2 |
+| love | G5358 | lover of good | 2 |
+| love | G5360 | brotherly love | 2 |
+| love | G5361 | loving the brothers | 1 |
+| love | G5362 | husband-loving | 2 |
+| love | G5363 | benevolence | 2 |
+| love | G5365 | love of money | 2 |
+| love | G5366 | money-loving | 2 |
+| love | G5368 | to love | 2 |
+| love | G5369 | pleasure-loving | 2 |
+| love | G5377 | God-loving | 2 |
+| love | G5379 | love of dispute | 2 |
+| love | G5380 | dispute-loving | 2 |
+| love | G5383 | to love to be first | 2 |
+| love | G5387 | affectionate | 2 |
+| love | G5388 | child loving | 2 |
+| love | G7493 | to love passionately | 1 |
+| love | H0157G | lover | 0 |
+| love | H0157H | friend | 0 |
+| love | H0158 | lover | 2 |
+| love | H0159 | beloved | 2 |
+| love | H0160 | love | 7 |
+| love | H1730G | beloved | 0 |
+| love | H1730H | love | 0 |
+| love | H1730I | male relative | 0 |
+| love | H2245 | to love | 1 |
+| love | H2617A | kindness | 0 |
+| love | H2623 | pious | 4 |
+| love | H2836A | to desire | 0 |
+| love | H2895 | be pleasing | 8 |
+| love | H2896A | pleasant | 0 |
+| love | H2898 | goodness | 6 |
+| love | H3033 | beloved | 1 |
+| love | H3039A | beloved | 0 |
+| love | H3039B | love | 0 |
+| love | H3303 | beautiful | 1 |
+| love | H4261 | desire | 1 |
+| love | H4998 | be lovely | 4 |
+| love | H5000 | lovely | 3 |
+| love | H5273A | pleasant | 0 |
+| love | H5690 | lust | 1 |
+| love | H5691 | lust | 1 |
+| love | H7355 | to have compassion | 6 |
+| love | H7356B | compassion | 0 |
+| love | H7474 | darling | 1 |
+| love | H8130 | to hate | 9 |
+| lust | G1937 | to long for | 2 |
+| lust | G1938 | one who desires | 2 |
+| lust | G1939 | desire | 2 |
+| lust | G2237 | pleasure | 2 |
+| lust | G3715 | lust | 2 |
+| lust | G3806 | passion | 2 |
+| lust | H0183 | to desire | 3 |
+| lust | H1432 | growing | 1 |
+| lust | H1942 | desire | 4 |
+| lust | H2530A | to desire | 0 |
+| lust | H5178B | lust | 0 |
+| lust | H5689 | to lust | 3 |
+| lust | H5690 | lust | 1 |
+| lust | H5691 | lust | 1 |
+| lust | H7904 | to lust | 2 |
+| lust | H8378 | desire | 4 |
+| lust | H8385A | estrous | 0 |
+| malice | G2549 | evil | 2 |
+| malice | G2550 | malice | 2 |
+| malice | G4189 | evil | 2 |
+| malice | H0205G | evil: wickedness | 0 |
+| malice | H1942 | desire | 4 |
+| malice | H5360 | vengeance | 2 |
+| malice | H5767 | unjust | 1 |
+| malice | H7589 | scorn | 1 |
+| malice | H8130 | to hate | 9 |
+| meaning | G0767 | insignificant | 1 |
+| meaning | G0880 | mute | 1 |
+| meaning | G1498 | may be | 1 |
+| meaning | G3004G | to say: says | 0 |
+| meaning | G3177 | to mean | 2 |
+| meaning | G3760 | by no means | 1 |
+| meaning | G5346 | to assert | 2 |
+| meaning | G8240 | by all means | 1 |
+| meaning | H0998 | understanding | 6 |
+| meaning | H1100I | worthless | 0 |
+| meaning | H3321 | to know | 2 |
+| meaning | H4911B | to use a proverb | 0 |
+| meaning | H5352 | to clear | 10 |
+| meaning | H6213A | do/perform | 0 |
+| meaning | H6592 | interpretation | 1 |
+| meaning | H6623 | interpretation | 2 |
+| meditation | G3191 | to meditate/plot | 2 |
+| meditation | G3437 | complaint | 1 |
+| meditation | G4304 | to premeditate | 1 |
+| meditation | G4820 | to ponder/confer | 2 |
+| meditation | G6139 | to meditate | 1 |
+| meditation | G6140 | meditation | 1 |
+| meditation | G8281 | meditation | 1 |
+| meditation | H0239 | to ponder | 1 |
+| meditation | H0559 | to say | 6 |
+| meditation | H1239 | to enquire | 5 |
+| meditation | H1897 | to mutter | 7 |
+| meditation | H1900 | meditation | 1 |
+| meditation | H1901 | meditation | 3 |
+| meditation | H1902G | Higgaion | 0 |
+| meditation | H1902H | meditation | 0 |
+| meditation | H6437G | to turn | 0 |
+| meditation | H6845 | to treasure | 6 |
+| meditation | H7742 | to meditate | 2 |
+| meditation | H7878 | to muse | 6 |
+| meditation | H7879 | complaint | 6 |
+| meditation | H7881 | meditation | 3 |
+| memory | G3417 | remembrance | 2 |
+| memory | G3422 | memorial | 2 |
+| memory | G5280 | remembrance | 2 |
+| memory | H0234 | memorial | 1 |
+| memory | H2142 | to remember | 9 |
+| memory | H2143 | memorial | 3 |
+| memory | H2146 | memorial | 1 |
+| memory | H3027M | monument/place/station/sign | 0 |
+| memory | H4676 | pillar | 5 |
+| memory | H5382 | to forget | 5 |
+| memory | H5388 | forgetfulness | 1 |
+| memory | H7876 | to forget | 1 |
+| memory | H7913 | forgetful | 1 |
+| mercy | G0448 | merciless | 1 |
+| mercy | G1653 | to have mercy | 2 |
+| mercy | G1655 | merciful | 2 |
+| mercy | G1656 | mercy | 2 |
+| mercy | G2433 | to propitiate | 2 |
+| mercy | G2435 | propitiation | 2 |
+| mercy | G2436 | propitious/gracious | 2 |
+| mercy | G3628 | compassion | 2 |
+| mercy | G3629 | compassionate | 2 |
+| mercy | G3741 | sacred | 2 |
+| mercy | G8849 | full of mercy | 1 |
+| mercy | H2347 | to pity | 1 |
+| mercy | H2550 | to spare | 1 |
+| mercy | H2551 | compassion | 1 |
+| mercy | H2587 | gracious | 1 |
+| mercy | H2603A | be gracious | 0 |
+| mercy | H2603B | be loathsome | 0 |
+| mercy | H2616A | be kind | 0 |
+| mercy | H2617A | kindness | 0 |
+| mercy | H2623 | pious | 4 |
+| mercy | H3722A | to atone | 0 |
+| mercy | H3727 | mercy seat | 3 |
+| mercy | H3819 | No Mercy | 4 |
+| mercy | H6279 | to pray | 4 |
+| mercy | H7349 | compassionate | 2 |
+| mercy | H7355 | to have compassion | 6 |
+| mercy | H7356A | womb | 0 |
+| mercy | H7356B | compassion | 0 |
+| mercy | H7359 | compassion | 2 |
+| mercy | H8469 | supplication | 3 |
+| might | H1369 | might | 5 |
+| might | H1370 | might | 2 |
+| might | H3581A | reptile | 0 |
+| might | H3581B | strength | 0 |
+| might | H5797 | strength | 3 |
+| might | H6978 | might | 1 |
+| might | H8632A | might | 0 |
+| might | H8632B | might | 0 |
+| mind | G0363 | to remind | 1 |
+| mind | G1011 | to plan | 2 |
+| mind | G1014 | to plan | 2 |
+| mind | G1106 | resolution | 2 |
+| mind | G1260 | to discuss | 2 |
+| mind | G1271 | mind | 2 |
+| mind | G1374 | double-minded | 1 |
+| mind | G1771 | thought/purpose | 2 |
+| mind | G2104 | of noble birth | 2 |
+| mind | G2473 | like-minded | 2 |
+| mind | G2588 | heart | 1 |
+| mind | G3130 | insanity | 2 |
+| mind | G3328 | to change mind | 2 |
+| mind | G3403 | to remember | 2 |
+| mind | G3415 | to remember | 1 |
+| mind | G3421 | to remember | 2 |
+| mind | G3510 | mind | 2 |
+| mind | G3524 | sober | 1 |
+| mind | G3525 | be sober | 2 |
+| mind | G3540 | mind/thought | 2 |
+| mind | G3563 | mind | 2 |
+| mind | G3675 | like-minded | 2 |
+| mind | G3912 | be insane | 2 |
+| mind | G4893 | conscience | 1 |
+| mind | G4993 | be of sound mind | 2 |
+| mind | G5279 | to remind | 2 |
+| mind | G5280 | remembrance | 2 |
+| mind | G5426 | to reason | 2 |
+| mind | G5427 | purpose | 1 |
+| mind | G5590G | soul | 0 |
+| mind | G5591 | natural | 2 |
+| mind | G7774 | evil-minded | 1 |
+| mind | G8272 | high-minded | 1 |
+| mind | G8878 | gentle-minded | 1 |
+| mind | H0047I | mighty: strong | 0 |
+| mind | H1079 | mind | 2 |
+| mind | H1984C | to be foolish | 0 |
+| mind | H2142 | to remember | 9 |
+| mind | H2803I | devise/plot/plan | 0 |
+| mind | H3336 | intention | 6 |
+| mind | H3629 | kidney | 5 |
+| mind | H3820A | heart | 0 |
+| mind | H3824 | heart | 12 |
+| mind | H3825 | heart | 2 |
+| mind | H3826 | heart | 1 |
+| mind | H5069 | be willing | 4 |
+| mind | H5162H | relent | 0 |
+| mind | H5315G | soul | 0 |
+| mind | H5315I | soul: myself | 0 |
+| mind | H5315L | soul: appetite | 0 |
+| mind | H5588 | divided | 1 |
+| mind | H6485I | visit/inspect | 0 |
+| mind | H7217 | head | 5 |
+| mind | H7307G | spirit | 0 |
+| mind | H7308 | spirit | 5 |
+| mind | H7896K | consider | 0 |
+| mind | H7907 | heart | 2 |
+| mind | H8104G | obey/observe | 0 |
+| mourning | G0214 | to wail | 2 |
+| mourning | G2354 | to lament | 2 |
+| mourning | G2799 | to weep | 2 |
+| mourning | G2870 | lamentation | 2 |
+| mourning | G2875 | to cut/mourn | 2 |
+| mourning | G3602 | mourning | 2 |
+| mourning | G3649 | to wail | 2 |
+| mourning | G3996 | to mourn | 2 |
+| mourning | G3997 | grief | 2 |
+| mourning | G7891 | to mourn | 1 |
+| mourning | G8692 | mournful | 1 |
+| mourning | H0056 | to mourn | 11 |
+| mourning | H0057 | mourning | 7 |
+| mourning | H0060 | mourning | 5 |
+| mourning | H0205H | evil: trouble | 0 |
+| mourning | H0421 | to wail | 1 |
+| mourning | H0578 | to lament | 1 |
+| mourning | H0584 | to sigh | 2 |
+| mourning | H0585 | sighing | 1 |
+| mourning | H0592 | lamentation | 1 |
+| mourning | H1058 | to weep | 9 |
+| mourning | H1068 | weeping | 1 |
+| mourning | H1897 | to mutter | 7 |
+| mourning | H1899 | moaning | 4 |
+| mourning | H1993 | to roar | 7 |
+| mourning | H2201 | outcry | 4 |
+| mourning | H3013 | to suffer | 4 |
+| mourning | H3213 | to wail | 1 |
+| mourning | H3215 | wailing | 1 |
+| mourning | H4553 | mourning | 1 |
+| mourning | H4798 | mourning | 4 |
+| mourning | H5091 | to wail | 3 |
+| mourning | H5092 | wailing | 3 |
+| mourning | H5098 | to groan | 4 |
+| mourning | H5110 | to wander | 14 |
+| mourning | H5162G | comfort | 0 |
+| mourning | H5594 | to mourn | 5 |
+| mourning | H6087A | to hurt | 0 |
+| mourning | H6213H | make(OBJECT) | 0 |
+| mourning | H6428 | to wallow | 2 |
+| mourning | H6937 | be dark | 6 |
+| mourning | H6941 | mournfully | 1 |
+| mourning | H6969 | to chant | 2 |
+| mourning | H7015 | dirge | 1 |
+| mourning | H7300 | to roam | 3 |
+| mourning | H7971G | depart/send | 0 |
+| mourning | H8386 | mourning | 1 |
+| name | G1941 | to call (on)/name | 2 |
+| name | G2028 | to name | 2 |
+| name | G2564G | to call: call | 0 |
+| name | G2564H | to call: name | 0 |
+| name | G3004H | to say: name | 0 |
+| name | G3686 | name | 2 |
+| name | G3687 | to name | 2 |
+| name | G5122 | by name | 2 |
+| name | G6285 | to call by name | 1 |
+| name | H1696I | promise/declare | 0 |
+| name | H2143 | memorial | 3 |
+| name | H5344A | to pierce | 0 |
+| name | H7121G | call to/invite/entreat | 0 |
+| name | H7121H | call by/name | 0 |
+| name | H7760A | make/establish | 0 |
+| name | H7760M | name | 0 |
+| name | H7761G | to set: make | 0 |
+| name | H8034 | name | 6 |
+| name | H8036 | name | 2 |
+| obedience | G3980 | to obey | 2 |
+| obedience | G5218 | obedience | 1 |
+| obedience | G5219 | to obey | 2 |
+| obedience | G5255 | obedient | 1 |
+| obedience | G5292 | submission | 2 |
+| obedience | G5293 | to subject | 2 |
+| obedience | G5442G | to keep/guard: observe | 0 |
+| obedience | H3349 | obedience | 1 |
+| obedience | H5341 | to watch | 8 |
+| obedience | H5401A | to kiss | 0 |
+| obedience | H8085G | hear | 0 |
+| obedience | H8085H | obey | 0 |
+| passion | G1939 | desire | 2 |
+| passion | G2237 | pleasure | 2 |
+| passion | G2372 | wrath | 2 |
+| passion | G2691 | to desire | 2 |
+| passion | G3715 | lust | 2 |
+| passion | G3804 | suffering | 2 |
+| passion | G3806 | passion | 2 |
+| passion | G3958 | to suffer | 2 |
+| passion | G7493 | to love passionately | 1 |
+| passion | G7513 | passion | 1 |
+| passion | H0185 | desire | 1 |
+| patience | G0530 | once | 2 |
+| patience | G3114 | to have patience | 2 |
+| patience | G3115 | patience | 2 |
+| patience | G5278 | to remain/endure | 2 |
+| patience | G5281 | perseverance | 2 |
+| patience | H0639G | anger | 0 |
+| patience | H0748 | to prolong | 7 |
+| patience | H0750 | slow | 2 |
+| patience | H0753 | length | 4 |
+| patience | H3811 | be weary | 4 |
+| peace | G0425 | rest | 1 |
+| peace | G1055 | calm | 1 |
+| peace | G1514 | be at peace | 2 |
+| peace | G1515 | peace | 2 |
+| peace | G1516 | peaceful | 2 |
+| peace | G1517 | to make peace | 2 |
+| peace | G2263 | quiet | 1 |
+| peace | G2270 | be quiet/give up | 2 |
+| peace | G2271 | quietness | 2 |
+| peace | G4601 | be silent | 2 |
+| peace | G4623 | be quiet | 2 |
+| peace | G5392 | to muzzle | 2 |
+| peace | H1293 | blessing | 6 |
+| peace | H1585 | to complete | 2 |
+| peace | H1824 | quiet | 1 |
+| peace | H1826H | silent | 0 |
+| peace | H2013 | to silence | 5 |
+| peace | H2308 | to cease | 4 |
+| peace | H2790A | to plow/plot | 0 |
+| peace | H2790B | be quiet | 0 |
+| peace | H2814 | be silent | 6 |
+| peace | H4494 | resting | 4 |
+| peace | H4771 | rest | 1 |
+| peace | H4774 | repose | 1 |
+| peace | H5117 | to rest | 17 |
+| peace | H5118 | rest | 2 |
+| peace | H7280B | to rest | 0 |
+| peace | H7282 | restful | 1 |
+| peace | H7600 | secure | 8 |
+| peace | H7961 | at ease | 5 |
+| peace | H7965G | peace | 0 |
+| peace | H7965H | Peace [God] | 0 |
+| peace | H7965I | well-being | 0 |
+| peace | H7965J | friendship | 0 |
+| peace | H7965K | greeting | 0 |
+| peace | H7965L | completely | 0 |
+| peace | H7999A | to complete | 0 |
+| peace | H7999B | to ally | 0 |
+| peace | H8001 | peace | 2 |
+| peace | H8002 | peace offering | 2 |
+| peace | H8252 | to quiet | 10 |
+| peace | H8253 | quietness | 1 |
+| perverseness | G1294 | to pervert | 2 |
+| perverseness | G1608 | to fornicate | 2 |
+| perverseness | G4646 | crooked | 2 |
+| perverseness | G6882 | perverseness | 1 |
+| perverseness | H2015 | to overturn | 17 |
+| perverseness | H2017 | perversity | 1 |
+| perverseness | H3399A | to push | 0 |
+| perverseness | H3399B | to wring | 0 |
+| perverseness | H3868 | be devious | 8 |
+| perverseness | H3891 | perversity | 1 |
+| perverseness | H4297 | perversion | 1 |
+| perverseness | H5557 | to pervert | 4 |
+| perverseness | H5558 | crookedness | 1 |
+| perverseness | H5753A | to twist | 0 |
+| perverseness | H5753B | to pervert | 0 |
+| perverseness | H5766B | injustice | 0 |
+| perverseness | H5773 | distortion | 1 |
+| perverseness | H5791 | to pervert | 6 |
+| perverseness | H5999 | trouble | 4 |
+| perverseness | H6140 | to twist | 5 |
+| perverseness | H6141 | twisted | 1 |
+| perverseness | H6143 | crookedness | 1 |
+| perverseness | H8397 | perversion | 2 |
+| perverseness | H8419 | perversity | 1 |
+| power | G0746 | beginning | 2 |
+| power | G1411 | power | 2 |
+| power | G1414 | be able | 2 |
+| power | G1415 | able | 2 |
+| power | G1753 | active energy | 2 |
+| power | G1756 | effective | 1 |
+| power | G1840 | to have power | 2 |
+| power | G1849 | authority | 2 |
+| power | G1850 | to have authority | 2 |
+| power | G2478 | strong | 2 |
+| power | G2479 | strength | 2 |
+| power | G2480 | be strong | 2 |
+| power | G2739 | to scorch | 2 |
+| power | G2888 | world power | 2 |
+| power | G2904 | power | 2 |
+| power | G3173 | great | 2 |
+| power | G3175 | great man | 2 |
+| power | G6975 | be in power | 1 |
+| power | G7027 | to have power over | 1 |
+| power | G8156 | power of speech | 1 |
+| power | H0047I | mighty: strong | 0 |
+| power | H0202 | strength | 3 |
+| power | H0410L | power | 0 |
+| power | H1368 | mighty man | 4 |
+| power | H1369 | might | 5 |
+| power | H1370 | might | 2 |
+| power | H1419A | great: large | 0 |
+| power | H2220 | arm | 5 |
+| power | H2388G | strengthen/support/encourage | 0 |
+| power | H2389 | strong | 5 |
+| power | H2392 | strength | 1 |
+| power | H2393 | strength | 1 |
+| power | H2428G | strong | 0 |
+| power | H2429 | strength | 3 |
+| power | H2632 | authority | 2 |
+| power | H3027G | hand/arm[anatomy] | 0 |
+| power | H3027H | hand/arm[anatomy] | 0 |
+| power | H3027I | hand/arm[anatomy] | 0 |
+| power | H3027J | hand/arm[anatomy] | 0 |
+| power | H3027K | hand/arm[anatomy] | 0 |
+| power | H3027L | hand/arm[anatomy] | 0 |
+| power | H3027M | monument/place/station/sign | 0 |
+| power | H3027N | penis | 0 |
+| power | H3027O | tool | 0 |
+| power | H3027P | bank/border | 0 |
+| power | H3027Q | spacious/(wide)hand | 0 |
+| power | H3027R | donate/ordain/(fill)hand | 0 |
+| power | H3027S | vow/swear/(raise)hand | 0 |
+| power | H3027T | expend/(reach)hand | 0 |
+| power | H3027U | undertake/(outstretch)hand | 0 |
+| power | H3027V | certainly/[hand to hand] | 0 |
+| power | H3027W | owner/rule/(under)hand | 0 |
+| power | H3027X | swear/allegience/hand(under) | 0 |
+| power | H3028 | hand | 2 |
+| power | H3524 | mighty | 1 |
+| power | H3581A | reptile | 0 |
+| power | H3581B | strength | 0 |
+| power | H3981 | power | 1 |
+| power | H4427A | to reign | 0 |
+| power | H4475 | dominion | 4 |
+| power | H4637 | terror | 1 |
+| power | H5794 | strong | 1 |
+| power | H5797 | strength | 3 |
+| power | H5807 | strength | 1 |
+| power | H5808 | mighty | 1 |
+| power | H5810 | be strong | 3 |
+| power | H6099 | mighty | 3 |
+| power | H6105A | be vast | 0 |
+| power | H6109 | strength | 1 |
+| power | H6184 | ruthless | 1 |
+| power | H6381 | to wonder | 11 |
+| power | H6965B | rise/get going | 0 |
+| power | H6978 | might | 1 |
+| power | H7786 | to reign | 3 |
+| power | H7981 | to rule | 3 |
+| power | H7983 | power | 2 |
+| power | H7989 | domineering | 5 |
+| power | H7990 | ruling | 5 |
+| power | H8280 | to strive | 2 |
+| power | H8592 | power | 1 |
+| power | H8617 | standing | 1 |
+| power | H8633 | power | 1 |
+| praise | G0103 | to sing | 1 |
+| praise | G0133 | praise | 2 |
+| praise | G0134 | to praise | 2 |
+| praise | G0136 | praise | 1 |
+| praise | G0437 | to praise | 2 |
+| praise | G0703 | virtue | 2 |
+| praise | G1391 | glory | 2 |
+| praise | G1392 | to glorify | 2 |
+| praise | G1584 | to shine out | 1 |
+| praise | G1867 | to praise | 1 |
+| praise | G1868 | praise | 1 |
+| praise | G2017 | to shine on | 2 |
+| praise | G2019 | to shout | 2 |
+| praise | G2127 | to praise/bless | 2 |
+| praise | G2128 | praiseworthy | 2 |
+| praise | G2129 | praise | 1 |
+| praise | G2162 | good report | 2 |
+| praise | G2358 | to triumph | 2 |
+| praise | G2905 | to shout | 2 |
+| praise | G2906 | shouting | 2 |
+| praise | G2989 | to shine | 1 |
+| praise | G3170 | to magnify | 2 |
+| praise | G3670 | to confess/profess | 2 |
+| praise | G4034 | to shine around | 1 |
+| praise | G4744 | to shine | 2 |
+| praise | G5214 | to praise | 2 |
+| praise | G5316 | to shine/appear | 2 |
+| praise | G5567 | to sing praise | 2 |
+| praise | G6165 | praise | 1 |
+| praise | G7765 | to sing praise | 1 |
+| praise | H1288 | to bless | 11 |
+| praise | H1289 | to bless | 5 |
+| praise | H1906 | shout | 1 |
+| praise | H1960 | praise | 1 |
+| praise | H1974 | praise | 3 |
+| praise | H1984A | to shine | 0 |
+| praise | H1984B | praise | 0 |
+| praise | H1984C | to be foolish | 0 |
+| praise | H1984H | boast | 0 |
+| praise | H1984I | rave madly | 0 |
+| praise | H2158 | song | 1 |
+| praise | H2167 | to sing | 5 |
+| praise | H3029 | to praise | 2 |
+| praise | H3034 | to give thanks | 10 |
+| praise | H3519 | glory | 7 |
+| praise | H4110 | praise | 1 |
+| praise | H5108B | fruit | 0 |
+| praise | H5115A | to beautify | 0 |
+| praise | H7318 | extolling | 2 |
+| praise | H7321 | to shout | 13 |
+| praise | H7452 | shouting | 2 |
+| praise | H7623A | to soothe | 0 |
+| praise | H7623B | to praise | 0 |
+| praise | H7624 | to praise | 2 |
+| praise | H7878 | to muse | 6 |
+| praise | H7891 | to sing | 8 |
+| praise | H7911 | to forget | 9 |
+| praise | H8416 | praise | 8 |
+| praise | H8426 | thanksgiving | 6 |
+| praise | H8663 | shout | 2 |
+| prayer | G1162 | petition | 2 |
+| prayer | G1189 | to pray | 2 |
+| prayer | G1783 | intercession | 2 |
+| prayer | G2171 | a vow/prayer | 2 |
+| prayer | G2172 | to pray/wish for | 2 |
+| prayer | G4335 | prayer | 2 |
+| prayer | G4336 | to pray | 1 |
+| prayer | H1156 | to ask | 4 |
+| prayer | H1159 | petition | 2 |
+| prayer | H1697G | word/speech/command | 0 |
+| prayer | H2470B | to beg | 0 |
+| prayer | H6279 | to pray | 4 |
+| prayer | H6739 | to pray | 2 |
+| prayer | H7596 | petition | 4 |
+| prayer | H7881 | meditation | 3 |
+| prayer | H8467 | supplication | 3 |
+| prayer | H8605 | prayer | 6 |
+| pride | G0212 | boasting | 2 |
+| pride | G2744 | to boast | 2 |
+| pride | G2745 | pride | 2 |
+| pride | G2746 | pride | 2 |
+| pride | G2754 | empty conceit | 2 |
+| pride | G5187 | be conceited | 2 |
+| pride | G5197 | insolent man | 2 |
+| pride | G5243 | pride | 2 |
+| pride | G5244 | arrogant | 2 |
+| pride | G5448 | to inflate | 2 |
+| pride | G5450 | arrogance | 2 |
+| pride | H0639I | face | 0 |
+| pride | H1341 | proud | 1 |
+| pride | H1343 | proud | 1 |
+| pride | H1344 | pride | 1 |
+| pride | H1346 | pride | 4 |
+| pride | H1347 | pride | 6 |
+| pride | H1348 | majesty | 5 |
+| pride | H1361 | to exult | 8 |
+| pride | H1363 | height | 4 |
+| pride | H1365 | haughtiness | 1 |
+| pride | H1466 | pride | 2 |
+| pride | H1467 | pride | 2 |
+| pride | H2087 | arrogance | 1 |
+| pride | H2103 | be proud | 2 |
+| pride | H3093 | proud | 1 |
+| pride | H4062 | insolence | 2 |
+| pride | H4791 | height | 6 |
+| pride | H7293 | Rahab | 4 |
+| pride | H7295 | proud | 1 |
+| pride | H7296 | pride | 1 |
+| pride | H7830 | pride | 2 |
+| prophecy | G4394 | prophecy | 2 |
+| prophecy | G4395 | to prophesy | 2 |
+| prophecy | G4397 | prophetic | 2 |
+| prophecy | H2372 | to see | 9 |
+| prophecy | H4853A | burden | 0 |
+| prophecy | H5002 | utterance | 3 |
+| prophecy | H5016 | prophecy | 6 |
+| prophecy | H5017 | prophesying | 2 |
+| prophecy | H5030 | prophet | 5 |
+| purity | G0047 | purity | 2 |
+| purity | G0048 | to purify | 2 |
+| purity | G0054 | purity | 1 |
+| purity | G0283 | pure | 1 |
+| purity | G0862 | incorruptible | 2 |
+| purity | G4101 | pure | 1 |
+| purity | H1252 | cleanness | 1 |
+| purity | H1305 | to purify | 14 |
+| purity | H2135 | to clean | 9 |
+| purity | H2889 | pure | 4 |
+| purity | H2890 | pureness | 4 |
+| purity | H2892A | purity | 0 |
+| purity | H2892B | clearness | 0 |
+| purity | H4935 | cleansing | 1 |
+| purity | H5343 | pure | 1 |
+| purity | H6337 | pure gold | 1 |
+| purity | H6884 | to refine | 9 |
+| purity | H7364 | wash | 6 |
+| purpose | G1011 | to plan | 2 |
+| purpose | G1012 | plan | 2 |
+| purpose | G1013 | plan | 2 |
+| purpose | G1106 | resolution | 2 |
+| purpose | G1520 | one | 2 |
+| purpose | G1771 | thought/purpose | 2 |
+| purpose | G2107 | goodwill | 2 |
+| purpose | G2443 | in order that/to | 2 |
+| purpose | G2761 | vainly | 2 |
+| purpose | G3661 | united | 2 |
+| purpose | G4160G | to do/make: do | 0 |
+| purpose | G4286 | purpose | 1 |
+| purpose | G4388 | to plan/present | 2 |
+| purpose | G5056 | goal/tax | 2 |
+| purpose | G5087 | to place | 2 |
+| purpose | G5427 | purpose | 1 |
+| purpose | H0559 | to say | 6 |
+| purpose | H1697M | because | 0 |
+| purpose | H1701 | cause | 2 |
+| purpose | H2161 | to plan | 5 |
+| purpose | H2162 | plan | 1 |
+| purpose | H2656 | pleasure | 5 |
+| purpose | H3276 | to gain | 1 |
+| purpose | H3289 | to advise | 6 |
+| purpose | H3335I | plan | 0 |
+| purpose | H3336 | intention | 6 |
+| purpose | H4209 | plot | 4 |
+| purpose | H4284 | plot | 4 |
+| purpose | H4616 | because | 5 |
+| purpose | H4617 | answer | 2 |
+| purpose | H5414H | put/set/appoint | 0 |
+| purpose | H5668 | for the sake of | 4 |
+| purpose | H6098 | counsel | 1 |
+| purpose | H6640 | thing | 3 |
+| purpose | H6656 | intended | 3 |
+| purpose | H6680 | to command | 11 |
+| purpose | H7760A | make/establish | 0 |
+| purpose | H7997A | to take | 0 |
+| purpose | H8356 | foundation | 1 |
+| reasoning | G0156 | cause/charge | 2 |
+| reasoning | G0158 | reason for charge | 1 |
+| reasoning | G0159 | causer | 1 |
+| reasoning | G0473 | for | 2 |
+| reasoning | G0701 | pleasing | 2 |
+| reasoning | G0804 | secure | 2 |
+| reasoning | G1063 | for | 1 |
+| reasoning | G1223 | through/because of | 2 |
+| reasoning | G1256 | to dispute | 2 |
+| reasoning | G1260 | to discuss | 2 |
+| reasoning | G1261 | reasoning | 2 |
+| reasoning | G1352 | therefore | 2 |
+| reasoning | G1500 | in vain | 2 |
+| reasoning | G1752 | because of | 2 |
+| reasoning | G1933 | gentle | 2 |
+| reasoning | G2138 | compliant | 2 |
+| reasoning | G2761 | vainly | 2 |
+| reasoning | G3049 | to count | 4 |
+| reasoning | G3050 | spiritual | 2 |
+| reasoning | G4802 | to debate | 2 |
+| reasoning | G4803 | discussion | 1 |
+| reasoning | G4817 | to discuss | 2 |
+| reasoning | G5426 | to reason | 2 |
+| reasoning | G5484 | because of | 2 |
+| reasoning | H0559 | to say | 6 |
+| reasoning | H1697M | because | 0 |
+| reasoning | H2600 | for nothing | 4 |
+| reasoning | H3198 | to rebuke | 11 |
+| reasoning | H3282 | because | 5 |
+| reasoning | H4101 | what? | 4 |
+| reasoning | H4486 | knowledge | 2 |
+| reasoning | H4616 | because | 5 |
+| reasoning | H5668 | for the sake of | 4 |
+| reasoning | H5921A | upon | 0 |
+| reasoning | H6440I | because | 0 |
+| reasoning | H6485K | missing/empty | 0 |
+| reasoning | H6903H | before: because | 0 |
+| reasoning | H8199 | to judge | 14 |
+| reasoning | H8394 | understanding | 7 |
+| rebellion | G0181 | disorder | 1 |
+| rebellion | G0485 | dispute | 2 |
+| rebellion | G0506 | insubordinate | 2 |
+| rebellion | G0646 | apostasy | 2 |
+| rebellion | G1881 | to rebel against | 2 |
+| rebellion | G1999 | insurrection | 1 |
+| rebellion | G3027 | robber/rebel | 2 |
+| rebellion | G3893 | to rebel | 2 |
+| rebellion | G3894 | rebellion | 1 |
+| rebellion | G6149 | rebellion | 1 |
+| rebellion | H4775 | to rebel | 5 |
+| rebellion | H4776 | rebellion | 2 |
+| rebellion | H4777 | rebellion | 3 |
+| rebellion | H4779 | rebellious | 1 |
+| rebellion | H4780 | rebellious | 1 |
+| rebellion | H4805H | rebellion | 0 |
+| rebellion | H4878 | faithlessness | 1 |
+| rebellion | H5472 | to turn | 6 |
+| rebellion | H5627 | revolt | 4 |
+| rebellion | H6586 | to transgress | 5 |
+| rebellion | H6588 | transgression | 11 |
+| rebellion | H6965B | rise/get going | 0 |
+| rebellion | H7311A | to exalt | 0 |
+| rebellion | H7846 | rebellion | 1 |
+| reconciliation | G2433 | to propitiate | 2 |
+| reconciliation | G2643 | reconciliation | 1 |
+| reconciliation | H2398 | to sin | 17 |
+| rejection | G0096 | failing | 2 |
+| rejection | G0114 | to reject | 2 |
+| rejection | G0544 | to disobey | 2 |
+| rejection | G0579 | rejected | 2 |
+| rejection | G0580 | deprivation | 2 |
+| rejection | G0593 | to reject | 1 |
+| rejection | G0654 | to turn away | 2 |
+| rejection | G0683 | to reject | 2 |
+| rejection | G0720 | to deny | 2 |
+| rejection | G1544 | to expel | 2 |
+| rejection | G1609 | to spit out | 2 |
+| rejection | G1847 | be rejected | 2 |
+| rejection | G1848 | to reject | 2 |
+| rejection | G2630 | to cast down | 2 |
+| rejection | G3868 | to refuse/excuse | 2 |
+| rejection | G6006 | to cast | 2 |
+| rejection | G6493 | rejection | 1 |
+| rejection | H1602 | to abhor | 4 |
+| rejection | H1920 | to thrust | 5 |
+| rejection | H1972 | to cast far off | 1 |
+| rejection | H2186A | to reject | 0 |
+| rejection | H2186B | to stink | 0 |
+| rejection | H2310 | rejected/fleeting | 1 |
+| rejection | H2904 | to cast | 6 |
+| rejection | H3032 | to cast a lot | 4 |
+| rejection | H3973 | refuse | 1 |
+| rejection | H3988A | to reject | 0 |
+| rejection | H3988B | to flow | 0 |
+| rejection | H4048 | to cast | 4 |
+| rejection | H5006 | to spurn | 7 |
+| rejection | H5034A | be senseless | 0 |
+| rejection | H5203 | to leave | 10 |
+| rejection | H5493G | remove | 0 |
+| rejection | H5493I | turn aside/deflect | 0 |
+| rejection | H5541A | to reject | 0 |
+| rejection | H5541B | to weigh | 0 |
+| rejection | H5800A | to leave: forsake | 0 |
+| rejection | H5800H | to leave: neglect | 0 |
+| rejection | H7412 | to cast | 9 |
+| rejection | H7725I | turn back/backslide | 0 |
+| rejection | H8581 | to abhor | 13 |
+| rejoicing | G0021 | to rejoice | 2 |
+| rejoicing | G2165 | to celebrate | 2 |
+| rejoicing | G2744 | to boast | 2 |
+| rejoicing | G2745 | pride | 2 |
+| rejoicing | G2746 | pride | 2 |
+| rejoicing | G4796 | to rejoice with | 1 |
+| rejoicing | G5463 | to rejoice | 1 |
+| rejoicing | G5479 | joy | 2 |
+| rejoicing | G7471 | to rejoice at | 1 |
+| rejoicing | G7953 | to rejoice against | 1 |
+| rejoicing | G8946 | to rejoice with | 1 |
+| rejoicing | H1523 | to rejoice | 4 |
+| rejoicing | H1524A | rejoicing | 0 |
+| rejoicing | H1524B | youth | 0 |
+| rejoicing | H1525 | rejoicing | 1 |
+| rejoicing | H2302 | to rejoice | 3 |
+| rejoicing | H4885 | rejoicing | 1 |
+| rejoicing | H5539 | to rejoice | 1 |
+| rejoicing | H5937 | to exult | 1 |
+| rejoicing | H5938 | exultant | 1 |
+| rejoicing | H5947 | jubilant | 1 |
+| rejoicing | H5951 | exultation | 1 |
+| rejoicing | H5965 | to rejoice | 5 |
+| rejoicing | H5970 | to rejoice | 2 |
+| rejoicing | H6670A | to cry out | 0 |
+| rejoicing | H7337 | to enlarge | 6 |
+| rejoicing | H7440 | cry | 3 |
+| rejoicing | H7442B | to sing | 0 |
+| rejoicing | H7445 | triumphing | 1 |
+| rejoicing | H7797 | to rejoice | 2 |
+| rejoicing | H7832 | to laugh | 9 |
+| rejoicing | H8055 | to rejoice | 7 |
+| rejoicing | H8056 | glad | 3 |
+| rejoicing | H8057 | joy | 4 |
+| rejoicing | H8342 | rejoicing | 2 |
+| rejoicing | H8643 | shout | 5 |
+| renewal | G0330 | to renew | 1 |
+| renewal | G0340 | to restore | 2 |
+| renewal | G0341 | to renew | 1 |
+| renewal | G0342 | renewal | 1 |
+| renewal | G0365 | to renew | 2 |
+| renewal | G3824 | regeneration | 2 |
+| renewal | G7361 | to renew | 1 |
+| renewal | H0724 | health | 1 |
+| renewal | H2318 | to renew | 5 |
+| renewal | H2487 | change | 5 |
+| renewal | H2498 | to pass | 12 |
+| renewal | H6974 | to awake | 2 |
+| renewal | H7375 | be fresh | 1 |
+| renewal | H7495 | to heal | 15 |
+| renewal | H7500 | healing | 1 |
+| renewal | H8644 | healing | 1 |
+| repentance | G0278 | irrevocable | 1 |
+| repentance | G3338 | to repent | 2 |
+| repentance | G3340 | to repent | 2 |
+| repentance | G3341 | repentance | 2 |
+| repentance | G8298 | repentance | 1 |
+| repentance | H5162G | comfort | 0 |
+| repentance | H5162H | relent | 0 |
+| repentance | H5164 | repentance | 1 |
+| repentance | H7725G | return | 0 |
+| repentance | H7725I | turn back/backslide | 0 |
+| repentance | H7725J | again/constantly | 0 |
+| repentance | H7725N | recall/turn(heart) | 0 |
+| repentance | H7725O | repent | 0 |
+| repentance | H7729 | returning | 1 |
+| righteousness | G1343 | righteousness | 2 |
+| righteousness | G1344 | to justify | 2 |
+| righteousness | G1345 | righteous act | 2 |
+| righteousness | G1347 | justification | 1 |
+| righteousness | G2118 | righteousness | 2 |
+| righteousness | H4334 | plain | 4 |
+| righteousness | H6663 | to justify | 14 |
+| righteousness | H6664G | righteousness | 0 |
+| righteousness | H6664H | Righteousness [God] | 0 |
+| righteousness | H6665 | righteousness | 2 |
+| righteousness | H6666 | righteousness | 14 |
+| salvation | G1295 | to save | 2 |
+| salvation | G1805 | to redeem | 2 |
+| salvation | G1929 | to give/deliver | 2 |
+| salvation | G3083 | ransom | 2 |
+| salvation | G3084 | to ransom | 2 |
+| salvation | G3086 | redeemer | 2 |
+| salvation | G4506 | to rescue | 2 |
+| salvation | G4982 | to save | 2 |
+| salvation | G4991 | salvation | 1 |
+| salvation | G4992 | saving | 2 |
+| salvation | H3444 | salvation | 5 |
+| salvation | H3467 | to save | 8 |
+| salvation | H3468 | salvation | 4 |
+| salvation | H4190 | salvation | 1 |
+| salvation | H5337 | to rescue | 15 |
+| salvation | H5338 | to rescue | 2 |
+| salvation | H6299 | to ransom | 5 |
+| salvation | H6302 | ransomed | 1 |
+| salvation | H6308 | to deliver | 2 |
+| salvation | H7804 | to rescue | 2 |
+| salvation | H8668G | salvation | 0 |
+| salvation | H8668H | victory | 0 |
+| seeking | G0327 | to search | 1 |
+| seeking | G1377 | to pursue | 2 |
+| seeking | G1567 | to seek out | 2 |
+| seeking | G1934 | to seek after | 2 |
+| seeking | G2021 | to attempt | 2 |
+| seeking | G2052 | rivalry | 2 |
+| seeking | G2212 | to seek | 2 |
+| seeking | G2614 | to seek | 2 |
+| seeking | H1156 | to ask | 4 |
+| seeking | H1239 | to enquire | 5 |
+| seeking | H1243 | seeking | 1 |
+| seeking | H1245 | to seek | 9 |
+| seeking | H1875 | to seek | 18 |
+| seeking | H2470B | to beg | 0 |
+| seeking | H2620 | to seek refuge | 2 |
+| seeking | H2664 | to search | 11 |
+| seeking | H2713 | to search | 8 |
+| seeking | H2714 | search | 1 |
+| seeking | H3947G | take | 0 |
+| seeking | H4672 | to find | 35 |
+| seeking | H5027 | to look | 6 |
+| seeking | H5756 | to seek refuge | 1 |
+| seeking | H5810 | be strong | 3 |
+| seeking | H7080 | to divine | 4 |
+| seeking | H7122H | toward/(come)against | 0 |
+| seeking | H7291 | to pursue | 12 |
+| seeking | H7592 | to ask | 15 |
+| seeking | H7836 | to seek | 3 |
+| seeking | H8159 | to gaze | 4 |
+| seeking | H8446 | to spy | 8 |
+| self-control | G0192 | self-indulgence | 1 |
+| self-control | G0193 | intemperate | 1 |
+| self-control | G1466 | self-control | 1 |
+| self-control | G1467 | to self-control | 2 |
+| self-control | G1468 | self-controlled | 2 |
+| self-control | G4993 | be of sound mind | 2 |
+| self-control | G4995 | self-discipline | 2 |
+| self-control | G4996 | in self-control | 2 |
+| self-control | G4997 | mental soundness | 2 |
+| self-control | G4998 | self-controlled | 2 |
+| self-control | H2413 | to restrain | 2 |
+| self-control | H3607 | to restrain | 7 |
+| self-control | H4622 | restraint | 1 |
+| self-control | H4623 | restraint | 1 |
+| self-control | H6113 | to restrain | 5 |
+| self-control | H7307J | temper | 0 |
+| shame | G0149 | shameful | 1 |
+| shame | G0150 | shameful | 2 |
+| shame | G0152 | shame | 1 |
+| shame | G0153 | be ashamed | 1 |
+| shame | G0524 | to become callous | 2 |
+| shame | G0808 | indecency | 2 |
+| shame | G0818 | to dishonor | 2 |
+| shame | G0819 | dishonour | 2 |
+| shame | G1165 | to disgrace | 2 |
+| shame | G1788 | to cause shame | 2 |
+| shame | G1791 | shame | 2 |
+| shame | G2617 | to dishonor | 2 |
+| shame | G3856 | to disgrace | 2 |
+| shame | G5195 | to mistreat | 2 |
+| shame | G6396 | to cast shame | 1 |
+| shame | H0887 | to stink | 11 |
+| shame | H0937 | contempt | 4 |
+| shame | H0954 | be ashamed | 10 |
+| shame | H0955 | shame | 1 |
+| shame | H1317 | shame | 3 |
+| shame | H1322 | shame | 3 |
+| shame | H2283 | terror | 1 |
+| shame | H2616B | to shame | 0 |
+| shame | H2617B | shame | 0 |
+| shame | H2659 | be ashamed | 3 |
+| shame | H2778A | to taunt | 0 |
+| shame | H2781 | reproach | 4 |
+| shame | H3001 | to wither | 10 |
+| shame | H3637 | be humiliated | 10 |
+| shame | H3639 | shame | 3 |
+| shame | H3640 | shame | 1 |
+| shame | H3700 | to long | 5 |
+| shame | H5949 | wantonness | 4 |
+| shame | H6173 | dishonor | 2 |
+| shame | H6440L | (PERSON eg 'his face' ie 'him')[face] | 0 |
+| shame | H7022 | disgrace | 1 |
+| shame | H7036 | dishonor | 3 |
+| shame | H8103 | derision | 1 |
+| shame | H8106B | Shemed | 0 |
+| shame | H8218 | humiliation | 1 |
+| sin | G0051 | error | 1 |
+| sin | G0053 | pure | 2 |
+| sin | G0264 | to sin | 2 |
+| sin | G0265 | sin | 2 |
+| sin | G0266 | sin | 2 |
+| sin | G0268 | sinful | 2 |
+| sin | G0361 | sinless | 1 |
+| sin | G21497 | Sin/Shin | 1 |
+| sin | G3781 | debtor | 2 |
+| sin | G3900 | trespass | 2 |
+| sin | G4202 | sexual sin | 2 |
+| sin | G4203 | to sin sexually | 2 |
+| sin | G4205 | sexual sinner | 2 |
+| sin | G4258 | to sin beforehand | 2 |
+| sin | G7292 | to lead into sin | 1 |
+| sin | H0205G | evil: wickedness | 0 |
+| sin | H0817 | guilt [offering] | 5 |
+| sin | H0819 | guiltiness | 4 |
+| sin | H2154 | wickedness | 4 |
+| sin | H2398 | to sin | 17 |
+| sin | H2399 | sin | 5 |
+| sin | H2400 | sinner | 4 |
+| sin | H2401 | sin | 4 |
+| sin | H2402 | sin offering | 2 |
+| sin | H2403A | sin | 0 |
+| sin | H2403B | sin | 0 |
+| sin | H2403H | sin offering | 0 |
+| sin | H2403I | punishment/purification | 0 |
+| sin | H2408 | sin | 2 |
+| sin | H2409 | sin offering | 2 |
+| sin | H4603 | be unfaithful | 6 |
+| sin | H5039 | folly | 4 |
+| sin | H5112 | wandering | 1 |
+| sin | H5512A | Pelusium | 0 |
+| sin | H5512B | Sin | 0 |
+| sin | H5674D | to pass: trespass | 0 |
+| sin | H5766A | injustice | 0 |
+| sin | H5771G | crime | 0 |
+| sin | H5771H | guilt | 0 |
+| sin | H5771I | punishment | 0 |
+| sin | H5869K | sin | 0 |
+| sin | H6586 | to transgress | 5 |
+| sin | H6588 | transgression | 11 |
+| sin | H7451I | harm | 0 |
+| sin | H7564 | wickedness | 4 |
+| sin | H7683 | to go astray | 4 |
+| sin | H7686 | to wander | 10 |
+| sin | H8582 | to go astray | 13 |
+| sincerity | G0055 | purely | 2 |
+| sincerity | G0097 | pure | 2 |
+| sincerity | G0228 | true | 1 |
+| sincerity | G0505 | genuine | 2 |
+| sincerity | G0572 | openness | 2 |
+| sincerity | G0858 | sincerity | 1 |
+| sincerity | G0861 | incorruptibility | 2 |
+| sincerity | G1103 | genuine | 2 |
+| sincerity | G1342 | just | 2 |
+| sincerity | G1505 | sincerity | 2 |
+| sincerity | G1506 | pure | 2 |
+| sincerity | H4339 | uprightness | 4 |
+| sincerity | H8549H | blameless | 0 |
+| slander | G0987 | to blaspheme | 2 |
+| slander | G0988 | blasphemy | 2 |
+| slander | G0989 | blasphemous | 2 |
+| slander | G1228G | Devil | 0 |
+| slander | G1228H | slanderous | 0 |
+| slander | G1426 | slander | 2 |
+| slander | G1908 | to mistreat | 2 |
+| slander | G2555 | wrongdoing | 2 |
+| slander | G2635 | to slander | 1 |
+| slander | G2636 | slander | 2 |
+| slander | G2637 | slanderous | 1 |
+| slander | G3059 | reviling | 2 |
+| slander | G5396 | to talk nonsense | 2 |
+| slander | H0205G | evil: wickedness | 0 |
+| slander | H1681 | slander | 4 |
+| slander | H1696G | speak/tell/command | 0 |
+| slander | H1848 | slander | 1 |
+| slander | H3956G | tongue/words | 0 |
+| slander | H3960 | to slander | 4 |
+| slander | H5414P | [do/give](ACTION) | 0 |
+| slander | H7167 | to tear | 9 |
+| slander | H7270 | to spy | 7 |
+| slander | H7279 | to grumble | 6 |
+| slander | H7400 | slander | 1 |
+| slander | H8193G | lips/mouth | 0 |
+| slander | H8267 | deception | 10 |
+| sloth | G3576 | dull | 2 |
+| sloth | G3636 | lazy | 2 |
+| sloth | G8474 | slothful | 1 |
+| sloth | H6101 | be sluggish | 1 |
+| sloth | H6102 | sluggish | 2 |
+| sloth | H6103 | sluggishness | 1 |
+| sloth | H7423B | slackness | 0 |
+| sloth | H7503 | to slacken | 14 |
+| sorcery | G3095 | magic | 1 |
+| sorcery | G5331 | sorcery | 2 |
+| sorcery | G5333 | sorcerer | 2 |
+| sorcery | H3784 | to practice sorcery | 2 |
+| sorcery | H3785 | sorcery | 1 |
+| sorcery | H5173 | divination | 1 |
+| sorcery | H6049B | to divine | 0 |
+| sorrow | G3076 | to grieve | 1 |
+| sorrow | G3077 | grief | 2 |
+| sorrow | G3600 | be anguished | 2 |
+| sorrow | G3601 | anguish | 2 |
+| sorrow | G3997 | grief | 2 |
+| sorrow | G4036 | sorrowful | 2 |
+| sorrow | G4818 | be grieved | 2 |
+| sorrow | G5604 | labor | 2 |
+| sorrow | H0017 | pain! | 1 |
+| sorrow | H0060 | mourning | 5 |
+| sorrow | H0205H | evil: trouble | 0 |
+| sorrow | H0585 | sighing | 1 |
+| sorrow | H0592 | lamentation | 1 |
+| sorrow | H1669 | to languish | 1 |
+| sorrow | H1670 | dismay | 1 |
+| sorrow | H1671 | sorrow | 1 |
+| sorrow | H1674 | anxiety | 1 |
+| sorrow | H1727 | to pine | 2 |
+| sorrow | H1741 | illness | 1 |
+| sorrow | H2256B | pain | 0 |
+| sorrow | H2342I | writh in pain/wound | 0 |
+| sorrow | H2427A | agony | 0 |
+| sorrow | H2427B | agony | 0 |
+| sorrow | H2490C | begin | 0 |
+| sorrow | H3013 | to suffer | 4 |
+| sorrow | H3015 | sorrow | 1 |
+| sorrow | H3510 | to pain | 7 |
+| sorrow | H3511 | pain | 1 |
+| sorrow | H3515 | heavy | 6 |
+| sorrow | H3707 | to provoke | 8 |
+| sorrow | H3708A | vexation | 0 |
+| sorrow | H3708B | vexation | 0 |
+| sorrow | H4044 | covering | 2 |
+| sorrow | H4341 | pain | 3 |
+| sorrow | H4620 | torment | 2 |
+| sorrow | H5999 | trouble | 4 |
+| sorrow | H6040 | affliction | 3 |
+| sorrow | H6089A | toil | 0 |
+| sorrow | H6090A | pain | 0 |
+| sorrow | H6093 | toil | 1 |
+| sorrow | H6094 | injury | 1 |
+| sorrow | H6735C | pang | 0 |
+| sorrow | H6862B | distress | 0 |
+| sorrow | H6937 | be dark | 6 |
+| sorrow | H7455 | evil | 5 |
+| sorrow | H8424 | grief | 1 |
+| spirit | G0040G | holy | 0 |
+| spirit | G2588 | heart | 1 |
+| spirit | G4151G | spirit/breath: spirit | 0 |
+| spirit | G4151H | spirit/breath: breath | 0 |
+| spirit | G4436 | divining spirit | 2 |
+| spirit | G4861 | harmonious | 2 |
+| spirit | G5326 | ghost | 2 |
+| spirit | H0178 | medium | 6 |
+| spirit | H0328A | mutterer | 0 |
+| spirit | H1100I | worthless | 0 |
+| spirit | H3820A | heart | 0 |
+| spirit | H4578 | belly | 6 |
+| spirit | H5301 | to breathe | 4 |
+| spirit | H5315G | soul | 0 |
+| spirit | H5315H | soul: life | 0 |
+| spirit | H5396 | breath | 2 |
+| spirit | H5397 | breath | 6 |
+| spirit | H7307G | spirit | 0 |
+| spirit | H7307H | breath/wind | 0 |
+| spirit | H7307I | side | 0 |
+| spirit | H7307J | temper | 0 |
+| spirit | H7308 | spirit | 5 |
+| spirit | H7496 | shade | 1 |
+| strength | G0102 | unable | 2 |
+| strength | G0194 | undiluted | 2 |
+| strength | G0772G | weak | 0 |
+| strength | G0972 | strong | 1 |
+| strength | G1411 | power | 2 |
+| strength | G1412 | to empower | 2 |
+| strength | G1743 | to strengthen | 2 |
+| strength | G1765 | to strengthen | 2 |
+| strength | G1840 | to have power | 2 |
+| strength | G1849 | authority | 2 |
+| strength | G2478 | strong | 2 |
+| strength | G2479 | strength | 2 |
+| strength | G2480 | be strong | 2 |
+| strength | G2729 | to prevail | 2 |
+| strength | G2904 | power | 2 |
+| strength | G3618 | to build | 2 |
+| strength | G4731 | strong | 2 |
+| strength | G4732 | to strengthen | 2 |
+| strength | G4991 | salvation | 1 |
+| strength | G6347 | without strength | 1 |
+| strength | H0193A | strength | 0 |
+| strength | H0202 | strength | 3 |
+| strength | H0353 | strength | 2 |
+| strength | H0360 | strength | 1 |
+| strength | H0386 | strong | 3 |
+| strength | H0533 | strong | 1 |
+| strength | H0554 | strong | 2 |
+| strength | H0555 | strength | 1 |
+| strength | H0556 | strength | 1 |
+| strength | H0820 | strong | 2 |
+| strength | H1082 | be cheerful | 4 |
+| strength | H1369 | might | 5 |
+| strength | H1396 | to prevail | 11 |
+| strength | H1433 | greatness | 4 |
+| strength | H1679 | strength | 1 |
+| strength | H2220 | arm | 5 |
+| strength | H2388G | strengthen/support/encourage | 0 |
+| strength | H2391 | strength | 1 |
+| strength | H2392 | strength | 1 |
+| strength | H2393 | strength | 1 |
+| strength | H2428A | soldiers/army | 0 |
+| strength | H2428G | strong | 0 |
+| strength | H2428H | rich/wealth | 0 |
+| strength | H2428I | worthy | 0 |
+| strength | H2429 | strength | 3 |
+| strength | H2502B | to arm | 0 |
+| strength | H2633 | wealth | 1 |
+| strength | H2634 | strong | 1 |
+| strength | H3027H | hand/arm[anatomy] | 0 |
+| strength | H3581A | reptile | 0 |
+| strength | H3581B | strength | 0 |
+| strength | H3624 | vigor | 1 |
+| strength | H3955 | juicy bit | 1 |
+| strength | H3966 | much | 11 |
+| strength | H4206A | belt | 0 |
+| strength | H4206B | belt | 0 |
+| strength | H4581 | security | 4 |
+| strength | H5315H | soul: life | 0 |
+| strength | H5326 | firmness | 1 |
+| strength | H5564 | to support | 6 |
+| strength | H5797 | strength | 3 |
+| strength | H5807 | strength | 1 |
+| strength | H5810 | be strong | 3 |
+| strength | H5934 | youth | 1 |
+| strength | H5953D | to thrust | 0 |
+| strength | H6099 | mighty | 3 |
+| strength | H6106G | bone/limb | 0 |
+| strength | H6108 | strength | 3 |
+| strength | H6109 | strength | 1 |
+| strength | H6697H | rock | 0 |
+| strength | H7293 | Rahab | 4 |
+| strength | H7296 | pride | 1 |
+| strength | H8443 | peak | 2 |
+| strength | H8617 | standing | 1 |
+| strength | H8624 | strong | 2 |
+| strength | H8631 | to grow strong | 5 |
+| strength | H8632B | might | 0 |
+| strength | H8633 | power | 1 |
+| strife | G0483 | to dispute | 1 |
+| strife | G0485 | dispute | 2 |
+| strife | G1264 | to contend sharply | 2 |
+| strife | G1864 | to contend | 2 |
+| strife | G2052 | rivalry | 2 |
+| strife | G2054 | quarrel | 2 |
+| strife | G2371 | to quarrel | 2 |
+| strife | G3054 | to quarrel | 2 |
+| strife | G3055 | quarrel | 2 |
+| strife | G3163 | quarrel | 2 |
+| strife | G3164 | to quarrel | 2 |
+| strife | G4866 | to contend | 2 |
+| strife | G5379 | love of dispute | 2 |
+| strife | H1413 | to attack | 5 |
+| strife | H1481B | to quarrel | 0 |
+| strife | H1566 | to quarrel | 4 |
+| strife | H1777 | to judge | 9 |
+| strife | H4066 | strife | 3 |
+| strife | H4079 | contention | 1 |
+| strife | H4090 | strife | 1 |
+| strife | H4683 | strife | 1 |
+| strife | H4695 | strife | 1 |
+| strife | H4808 | provocation | 1 |
+| strife | H4809H | Meribah | 0 |
+| strife | H6229 | to contend | 1 |
+| strife | H7128 | battle | 2 |
+| strife | H7379 | strife | 3 |
+| strife | H7853 | to oppose | 1 |
+| strife | H8409 | strife | 1 |
+| stubbornness | G4643 | hardness | 2 |
+| stubbornness | G4645 | to harden | 2 |
+| stubbornness | H0047I | mighty: strong | 0 |
+| stubbornness | H2389 | strong | 5 |
+| stubbornness | H3515 | heavy | 6 |
+| stubbornness | H3985 | to refuse | 1 |
+| stubbornness | H3986 | refusing | 1 |
+| stubbornness | H3987 | refusing | 1 |
+| stubbornness | H4696 | forehead | 1 |
+| stubbornness | H5620 | stubborn | 1 |
+| stubbornness | H5637 | to rebel | 4 |
+| stubbornness | H5797 | strength | 3 |
+| stubbornness | H6203 | neck | 5 |
+| stubbornness | H6484 | to press | 3 |
+| stubbornness | H7185 | to harden | 14 |
+| stubbornness | H7186 | severe | 6 |
+| stubbornness | H7190 | stubbornness | 1 |
+| stubbornness | H8307 | stubbornness | 1 |
+| submission | G5226 | to submit | 2 |
+| submission | G5292 | submission | 2 |
+| submission | G5293 | to subject | 2 |
+| submission | H1290 | knee | 3 |
+| surrender | G3860 | to deliver | 2 |
+| surrender | H3027H | hand/arm[anatomy] | 0 |
+| surrender | H3052 | to give | 7 |
+| surrender | H3318G | come/go out/escape | 0 |
+| surrender | H3318P | surrender/failed(heart) | 0 |
+| surrender | H4042 | to deliver | 1 |
+| surrender | H4560 | to commit | 3 |
+| surrender | H5307G | fall/drop/fail | 0 |
+| surrender | H5414G | give/deliver/send/produce | 0 |
+| surrender | H5462 | to shut | 15 |
+| temptation | G1185 | to entice | 2 |
+| temptation | G3986G | temptation/testing: temptation | 0 |
+| temptation | G3986H | temptation/testing: testing | 0 |
+| temptation | G4625 | stumbling block | 2 |
+| temptation | H4065 | enticement | 1 |
+| temptation | H4531B | trial | 0 |
+| terror | G1719 | afraid | 2 |
+| terror | G5399 | to fear | 2 |
+| terror | G5400 | fearful thing | 2 |
+| terror | G5401 | fear | 2 |
+| terror | G7898 | a terror | 1 |
+| terror | G7899 | to strike with terror | 1 |
+| terror | H0367 | terror | 1 |
+| terror | H0926 | to dismay | 13 |
+| terror | H0928 | dismay | 1 |
+| terror | H1091 | terror | 1 |
+| terror | H1161 | terror | 1 |
+| terror | H1204 | to terrify | 5 |
+| terror | H1205 | terror | 1 |
+| terror | H1670 | dismay | 1 |
+| terror | H2113 | trembling | 1 |
+| terror | H2189 | horror | 1 |
+| terror | H2283 | terror | 1 |
+| terror | H2729 | to tremble | 9 |
+| terror | H2731 | trembling | 3 |
+| terror | H2844A | terror | 0 |
+| terror | H2844B | shattered | 0 |
+| terror | H2847 | terror | 1 |
+| terror | H2849 | terror | 1 |
+| terror | H2851 | terror | 1 |
+| terror | H2865 | to to be dismayed | 10 |
+| terror | H2866 | terror | 1 |
+| terror | H3372G | frightening(DANGER) | 0 |
+| terror | H4032 | terror | 1 |
+| terror | H4035 | fear | 2 |
+| terror | H4036 | `Terror on Every Side` | 2 |
+| terror | H4172A | fear | 0 |
+| terror | H4172B | fear | 0 |
+| terror | H4288 | terror | 3 |
+| terror | H4637 | terror | 1 |
+| terror | H4712 | terror | 1 |
+| terror | H6206 | to tremble | 8 |
+| terror | H6342 | to dread | 6 |
+| terror | H6343 | dread | 3 |
+| terror | H6427 | shuddering | 1 |
+| terror | H6973 | to loathe | 7 |
+| terror | H8047H | appalled | 0 |
+| terror | H8606 | terror | 1 |
+| testimony | G3056 | word | 2 |
+| testimony | G3140 | to testify | 2 |
+| testimony | G3141 | testimony | 2 |
+| testimony | G3142 | testimony | 2 |
+| testimony | G4750 | mouth | 2 |
+| testimony | G5576 | to perjure | 2 |
+| testimony | G5577 | false testimony | 2 |
+| testimony | H0226H | 2_indicator | 0 |
+| testimony | H0974 | to test | 6 |
+| testimony | H5046 | to tell | 9 |
+| testimony | H5707 | witness | 3 |
+| testimony | H5713A | witness | 0 |
+| testimony | H5713B | testimony | 0 |
+| testimony | H5715 | testimony | 1 |
+| testimony | H5749B | to testify | 0 |
+| testimony | H6030B | to answer | 0 |
+| testimony | H6310I | word/command | 0 |
+| testimony | H6315 | to breathe | 9 |
+| testimony | H7802 | Shushan-eduth | 2 |
+| testimony | H8584 | testimony | 3 |
+| the afflicted | G0060 | of the marketplace | 2 |
+| the afflicted | G0540 | fatherless | 1 |
+| the afflicted | G0642 | to orphan | 2 |
+| the afflicted | G0832 | to play the flute | 2 |
+| the afflicted | G0835 | to spend the night | 2 |
+| the afflicted | G1005 | the north | 1 |
+| the afflicted | G1037 | the deep | 2 |
+| the afflicted | G1206 | the next day | 2 |
+| the afflicted | G1228G | Devil | 0 |
+| the afflicted | G1228H | slanderous | 0 |
+| the afflicted | G1273 | to spend the night | 2 |
+| the afflicted | G1359 | the twin gods | 2 |
+| the afflicted | G1887 | the next day | 2 |
+| the afflicted | G1888 | in the very act | 1 |
+| the afflicted | G2552 | suffering | 1 |
+| the afflicted | G2789 | to play the harp | 2 |
+| the afflicted | G2960 | the Lord’s | 2 |
+| the afflicted | G3303 | on the other hand | 2 |
+| the afflicted | G3322 | be in the middle | 2 |
+| the afflicted | G3547 | teacher of the law | 2 |
+| the afflicted | G3588 | the/this/who | 2 |
+| the afflicted | G3673 | of the same trade | 2 |
+| the afflicted | G3737 | orphan | 2 |
+| the afflicted | G3805 | suffering | 1 |
+| the afflicted | G3832 | with all the house | 2 |
+| the afflicted | G3891 | to break the law | 2 |
+| the afflicted | G3993 | poor | 1 |
+| the afflicted | G4310 | to suffer before | 2 |
+| the afflicted | G4311 | to help on the way | 2 |
+| the afflicted | G4434 | poor | 2 |
+| the afflicted | G4954 | of the same body | 2 |
+| the afflicted | G5005 | wretched | 1 |
+| the afflicted | G5284 | to sail the lee | 2 |
+| the afflicted | G5361 | loving the brothers | 1 |
+| the afflicted | G5476 | on the ground | 2 |
+| the afflicted | G5496 | to guide | 1 |
+| the afflicted | G7680 | affliction | 1 |
+| the afflicted | G7983 | to afflict grievously | 1 |
+| the afflicted | H0034 | needy | 4 |
+| the afflicted | H0797 | Ashdod | 2 |
+| the afflicted | H0956 | to lodge | 2 |
+| the afflicted | H1471A | nation | 0 |
+| the afflicted | H1471B | Goiim | 0 |
+| the afflicted | H1471G | Gentile | 0 |
+| the afflicted | H1471H | [Harosheth]-hagoyim | 0 |
+| the afflicted | H2179 | to cut off the tail | 2 |
+| the afflicted | H2181 | to fornicate | 11 |
+| the afflicted | H2489 | helpless | 1 |
+| the afflicted | H2567 | to take the fifth part | 2 |
+| the afflicted | H3019 | weary | 1 |
+| the afflicted | H3023 | weary | 1 |
+| the afflicted | H3238 | to oppress | 3 |
+| the afflicted | H3287 | weary | 1 |
+| the afflicted | H3490 | orphan | 1 |
+| the afflicted | H3885A | to lodge | 0 |
+| the afflicted | H3885B | to grumble | 0 |
+| the afflicted | H3905 | to oppress | 5 |
+| the afflicted | H4542 | poor | 1 |
+| the afflicted | H5142 | to suffer injury | 3 |
+| the afflicted | H5668 | for the sake of | 4 |
+| the afflicted | H5826 | to help | 4 |
+| the afflicted | H5971A | people/nation | 0 |
+| the afflicted | H5971B | kinsman | 0 |
+| the afflicted | H5971H | People's [Gate] | 0 |
+| the afflicted | H5971I | [Ibleam]-am | 0 |
+| the afflicted | H5971K | soldiers/army | 0 |
+| the afflicted | H5971L | creatures | 0 |
+| the afflicted | H6031B | to afflict | 0 |
+| the afflicted | H6033 | to afflict | 4 |
+| the afflicted | H6035 | poor | 5 |
+| the afflicted | H6039 | affliction | 1 |
+| the afflicted | H6040 | affliction | 3 |
+| the afflicted | H6041 | afflicted | 5 |
+| the afflicted | H6135 | barren | 1 |
+| the afflicted | H6231 | to oppress | 5 |
+| the afflicted | H8216 | poverty | 1 |
+| thought | G0515 | to deem worthy | 2 |
+| thought | G1261 | reasoning | 2 |
+| thought | G1270 | thought | 1 |
+| thought | G1271 | mind | 2 |
+| thought | G1380 | to think | 2 |
+| thought | G1760 | to reflect on | 2 |
+| thought | G1761 | reflection | 2 |
+| thought | G1771 | thought/purpose | 2 |
+| thought | G1963 | thought | 2 |
+| thought | G2233 | to govern | 1 |
+| thought | G2919 | to judge | 2 |
+| thought | G3049 | to count | 4 |
+| thought | G3053 | thought | 2 |
+| thought | G3141 | testimony | 2 |
+| thought | G3308 | concern | 2 |
+| thought | G3309 | to worry | 2 |
+| thought | G3540 | mind/thought | 2 |
+| thought | G3543 | to think | 2 |
+| thought | G5426 | to reason | 2 |
+| thought | G5429 | thoughtful | 1 |
+| thought | G7243 | a thought | 1 |
+| thought | G7244 | inner thought | 1 |
+| thought | H0559 | to say | 6 |
+| thought | H0995 | to understand | 13 |
+| thought | H2031 | fantasies | 1 |
+| thought | H2142 | to remember | 9 |
+| thought | H2711 | decree | 2 |
+| thought | H2803I | devise/plot/plan | 0 |
+| thought | H2803J | think/imagine | 0 |
+| thought | H2808 | explanation | 1 |
+| thought | H4093 | knowledge | 4 |
+| thought | H4180 | possession | 1 |
+| thought | H4209 | plot | 4 |
+| thought | H4284 | plot | 4 |
+| thought | H4427B | to advise | 0 |
+| thought | H4609A | thought | 0 |
+| thought | H5869I | appearance | 0 |
+| thought | H6245B | to think | 0 |
+| thought | H6246 | to plan | 2 |
+| thought | H6248 | thought | 1 |
+| thought | H6250 | thought | 1 |
+| thought | H6419 | to pray | 5 |
+| thought | H7454 | thought | 1 |
+| thought | H7476 | thought | 2 |
+| thought | H7725G | return | 0 |
+| thought | H7808 | thought | 1 |
+| thought | H8312 | anxiety | 1 |
+| transformation | G3339 | to transform | 2 |
+| transformation | G3345 | to transform | 2 |
+| transformation | H2015 | to overturn | 17 |
+| transformation | H4171 | to change | 5 |
+| transformation | H7760A | make/establish | 0 |
+| transgression | G0458 | lawlessness | 2 |
+| transgression | G3845 | to transgress | 2 |
+| transgression | G3847 | transgression | 2 |
+| transgression | G3848 | transgressor | 2 |
+| transgression | G3892 | lawlessness | 2 |
+| transgression | G3900 | trespass | 2 |
+| transgression | G5233 | to wrong | 2 |
+| transgression | G8634 | a transgression | 1 |
+| transgression | H0898 | to act treacherously | 2 |
+| transgression | H4603 | be unfaithful | 6 |
+| transgression | H4604 | unfaithfulness | 3 |
+| transgression | H5647H | minister/serve[God/tabernacle/temple]/worship | 0 |
+| transgression | H5674A | to pass | 0 |
+| transgression | H5674D | to pass: trespass | 0 |
+| transgression | H6580 | folly | 1 |
+| transgression | H6586 | to transgress | 5 |
+| transgression | H6588 | transgression | 11 |
+| treachery | H0899A | treachery | 0 |
+| treachery | H0900 | treachery | 1 |
+| treachery | H0901 | treacherous | 1 |
+| treachery | H3585 | lie | 2 |
+| treachery | H4603 | be unfaithful | 6 |
+| treachery | H4604 | unfaithfulness | 3 |
+| treachery | H4820 | deceit | 1 |
+| treachery | H7195 | conspiracy | 1 |
+| treachery | H8649A | treachery | 0 |
+| treachery | H8649B | deceitfulness | 0 |
+| trust | G1679 | to hope/expect | 2 |
+| trust | G1879 | to rest/rely on | 2 |
+| trust | G3982 | to persuade | 2 |
+| trust | G4006 | confidence | 2 |
+| trust | G4100 | to trust (in) | 2 |
+| trust | G4102G | faith | 0 |
+| trust | G4102H | faith: faithfulness | 0 |
+| trust | G4276 | to hope beforehand | 2 |
+| trust | G5287 | confidence/essence | 2 |
+| trust | G6381 | worthy of trust | 1 |
+| trust | H0530 | faithfulness | 1 |
+| trust | H0539 | be faithful | 18 |
+| trust | H0540 | to trust | 6 |
+| trust | H0982 | to trust | 9 |
+| trust | H0983 | security | 3 |
+| trust | H0985 | trust | 1 |
+| trust | H0986 | trust | 1 |
+| trust | H0987 | security | 1 |
+| trust | H1556 | to roll | 11 |
+| trust | H1747 | silence | 1 |
+| trust | H2342K | wait anxiously | 0 |
+| trust | H2620 | to seek refuge | 2 |
+| trust | H2622 | refuge | 1 |
+| trust | H3176H | hope/trust | 0 |
+| trust | H3559K | right/know/certain | 0 |
+| trust | H3689 | loin | 3 |
+| trust | H4009 | confidence | 4 |
+| trust | H4268 | refuge | 3 |
+| trust | H4498 | refuge | 3 |
+| trust | H4733 | refuge | 1 |
+| trust | H5375O | trust/desire/lift(soul/heart) | 0 |
+| trust | H6960A | to await | 0 |
+| trust | H7365 | to trust | 2 |
+| trust | H7965J | friendship | 0 |
+| trust | H7993 | to throw | 9 |
+| trust | H8172 | to lean | 3 |
+| truthfulness | G0225 | truth | 2 |
+| truthfulness | G0226 | be truthful | 2 |
+| truthfulness | G0227 | true | 1 |
+| truthfulness | G0230 | truly | 1 |
+| truthfulness | G0803 | security | 2 |
+| truthfulness | G3483 | yes | 2 |
+| truthfulness | G3689 | really | 2 |
+| truthfulness | H0061 | truly | 3 |
+| truthfulness | H0529 | faithful | 2 |
+| truthfulness | H0530 | faithfulness | 1 |
+| truthfulness | H0543 | amen | 1 |
+| truthfulness | H0544 | faithfulness | 1 |
+| truthfulness | H0551 | truly | 1 |
+| truthfulness | H0571G | faithful | 0 |
+| truthfulness | H0571H | true | 0 |
+| truthfulness | H0571I | certain/fixed | 0 |
+| truthfulness | H0637 | also | 5 |
+| truthfulness | H3330 | certain | 6 |
+| truthfulness | H3559K | right/know/certain | 0 |
+| truthfulness | H5229 | upright | 3 |
+| truthfulness | H6664G | righteousness | 0 |
+| truthfulness | H7187 | truth | 2 |
+| truthfulness | H7189A | bow | 0 |
+| truthfulness | H7189B | truth | 0 |
+| unbelief | G0543 | disobedience | 1 |
+| unbelief | G0544 | to disobey | 2 |
+| unbelief | G0570 | unbelief | 2 |
+| understanding | G0050 | be ignorant | 2 |
+| understanding | G0191 | to hear | 1 |
+| understanding | G0687 | no? | 1 |
+| understanding | G0801 | senseless | 2 |
+| understanding | G1065 | indeed | 2 |
+| understanding | G1097 | to know | 2 |
+| understanding | G1107 | to make known | 2 |
+| understanding | G1108 | knowledge | 2 |
+| understanding | G1271 | mind | 2 |
+| understanding | G1425 | hard to understand | 2 |
+| understanding | G1492G | to perceive: understand | 0 |
+| understanding | G1492I | to perceive: know | 0 |
+| understanding | G1921 | to come to know | 2 |
+| understanding | G1987 | to know/understand | 2 |
+| understanding | G1990 | knowing | 2 |
+| understanding | G2638 | to grasp | 2 |
+| understanding | G3049 | to count | 4 |
+| understanding | G3539 | to understand | 2 |
+| understanding | G3563 | mind | 2 |
+| understanding | G3609 | of one’s household | 2 |
+| understanding | G3877 | to follow | 2 |
+| understanding | G4907 | understanding | 2 |
+| understanding | G4908 | intelligent | 2 |
+| understanding | G4920 | to understand | 2 |
+| understanding | G5424 | thinking | 2 |
+| understanding | G5428 | understanding | 2 |
+| understanding | H0995 | to understand | 13 |
+| understanding | H0998 | understanding | 6 |
+| understanding | H0999 | understanding | 2 |
+| understanding | H1847 | knowledge | 3 |
+| understanding | H2940 | taste | 4 |
+| understanding | H3045 | to know | 28 |
+| understanding | H3046 | to know | 3 |
+| understanding | H3823A | to encourage | 0 |
+| understanding | H4486 | knowledge | 2 |
+| understanding | H5036 | foolish | 1 |
+| understanding | H7200H | examine/consider | 0 |
+| understanding | H7200I | behold! | 0 |
+| understanding | H7919A | be prudent | 0 |
+| understanding | H7919B | to cross hands | 0 |
+| understanding | H7922 | understanding | 5 |
+| understanding | H7924 | insight | 2 |
+| understanding | H8085G | hear | 0 |
+| understanding | H8085J | understand | 0 |
+| understanding | H8085K | judge/discern | 0 |
+| understanding | H8394 | understanding | 7 |
+| understanding | H8454 | wisdom | 3 |
+| unity | G1520 | one | 2 |
+| unity | G1775 | unity | 1 |
+| unity | G4886 | bond(age) | 2 |
+| uprightness | G1346 | rightly | 1 |
+| uprightness | G2117 | Straight | 2 |
+| uprightness | G2118 | righteousness | 2 |
+| uprightness | G3716 | be upright | 2 |
+| uprightness | G3717 | upright | 1 |
+| uprightness | G3718 | to cut straight | 1 |
+| uprightness | H3474 | to smooth | 11 |
+| uprightness | H3476 | uprightness | 4 |
+| uprightness | H3477G | upright:right | 0 |
+| uprightness | H3477H | Jashar | 0 |
+| uprightness | H3477I | upright:straight | 0 |
+| uprightness | H3483 | uprightness | 1 |
+| uprightness | H4334 | plain | 4 |
+| uprightness | H4339 | uprightness | 4 |
+| uprightness | H5228 | straightforward | 1 |
+| uprightness | H5229 | upright | 3 |
+| uprightness | H5749A | to return | 0 |
+| uprightness | H5975I | rise | 0 |
+| uprightness | H5977 | post | 1 |
+| uprightness | H6968 | uprightness | 1 |
+| uprightness | H7948 | frame | 1 |
+| uprightness | H8537 | integrity | 4 |
+| uprightness | H8549H | blameless | 0 |
+| uprightness | H8552 | to finish | 19 |
+| weakness | G0102 | unable | 2 |
+| weakness | G0674 | to faint | 2 |
+| weakness | G0769G | weakness: weak | 0 |
+| weakness | G0769H | weakness: ill | 0 |
+| weakness | G0770G | be weak: weak | 0 |
+| weakness | G0770H | be weak: ill | 0 |
+| weakness | G0771 | weakness | 2 |
+| weakness | G0772G | weak | 0 |
+| weakness | G0772H | weak: ill | 0 |
+| weakness | G1133 | weak-willed woman | 2 |
+| weakness | G1590 | to faint | 2 |
+| weakness | G2577G | be weary/sick: weak | 0 |
+| weakness | G3886 | to paralyze | 1 |
+| weakness | G3935 | to neglect | 2 |
+| weakness | G7735 | weak voiced | 1 |
+| weakness | H0535 | to weaken | 7 |
+| weakness | H0536 | weak | 1 |
+| weakness | H0537 | weak | 1 |
+| weakness | H1669 | to languish | 1 |
+| weakness | H1742 | faint | 1 |
+| weakness | H1800 | poor | 1 |
+| weakness | H1809 | to languish | 7 |
+| weakness | H2470A | weak/disabled | 0 |
+| weakness | H2470B | to beg | 0 |
+| weakness | H2470H | ill/injured | 0 |
+| weakness | H2470I | grieved/sorrowful | 0 |
+| weakness | H2476 | weakness | 1 |
+| weakness | H2522 | to weaken | 4 |
+| weakness | H2523 | weak | 1 |
+| weakness | H3286 | to faint | 3 |
+| weakness | H3543A | to grow dim | 0 |
+| weakness | H3782 | to stumble | 12 |
+| weakness | H4549 | to melt | 7 |
+| weakness | H4816 | weakness | 1 |
+| weakness | H5263 | to faint | 1 |
+| weakness | H5848C | to enfeeble | 0 |
+| weakness | H5889 | faint | 1 |
+| weakness | H5969 | fainting | 1 |
+| weakness | H6275 | to proceed | 8 |
+| weakness | H6296 | to faint | 1 |
+| weakness | H7363A | be weak | 0 |
+| weakness | H7390 | tender | 5 |
+| weakness | H7503 | to slacken | 14 |
+| weakness | H7504 | weak | 1 |
+| weakness | H7510 | feebleness | 1 |
+| wealth | G0979 | life | 2 |
+| wealth | G1411 | power | 2 |
+| wealth | G2142 | prosperity | 2 |
+| wealth | G2933 | possession | 2 |
+| wealth | G3126 | wealth | 2 |
+| wealth | G3776 | estate | 2 |
+| wealth | G4147 | be rich | 2 |
+| wealth | G4149 | riches | 1 |
+| wealth | G5094 | wealth | 2 |
+| wealth | G5536 | money | 2 |
+| wealth | H0202 | strength | 3 |
+| wealth | H1952 | substance | 5 |
+| wealth | H1991 | wealth | 1 |
+| wealth | H1995A | crowd | 0 |
+| wealth | H2428A | soldiers/army | 0 |
+| wealth | H2428G | strong | 0 |
+| wealth | H2428H | rich/wealth | 0 |
+| wealth | H2428I | worthy | 0 |
+| wealth | H2532A | desire | 0 |
+| wealth | H2633 | wealth | 1 |
+| wealth | H3018 | toil | 2 |
+| wealth | H3366 | preciousness | 5 |
+| wealth | H3502 | abundance | 1 |
+| wealth | H3519 | glory | 7 |
+| wealth | H3581B | strength | 0 |
+| wealth | H4301 | treasure | 1 |
+| wealth | H5232 | wealth | 2 |
+| wealth | H5233 | wealth | 2 |
+| wealth | H6213I | offer/give/get(IND.OBJ.) | 0 |
+| wealth | H6223 | rich | 4 |
+| wealth | H6238 | to enrich | 6 |
+| wealth | H6239 | riches | 1 |
+| wealth | H7399 | property | 5 |
+| wealth | H7769 | cry | 3 |
+| weeping | G1145 | to weep | 2 |
+| weeping | G2799 | to weep | 2 |
+| weeping | G2805 | weeping | 1 |
+| weeping | G6443 | to weep | 1 |
+| weeping | G8016 | a place of weeping | 1 |
+| weeping | H1058 | to weep | 9 |
+| weeping | H1065 | weeping | 1 |
+| weeping | H1068 | weeping | 1 |
+| weeping | H1811 | to drip | 4 |
+| weeping | H1830 | to weep | 1 |
+| weeping | H1832 | tears | 1 |
+| weeping | H2199 | to cry out | 11 |
+| weeping | H2200 | to cry out | 2 |
+| weeping | H2980 | to cry | 1 |
+| weeping | H3615H | destroy | 0 |
+| weeping | H4553 | mourning | 1 |
+| weeping | H4843 | to provoke | 10 |
+| weeping | H6818 | cry | 3 |
+| weeping | H6873 | to cry | 3 |
+| weeping | H7773 | to cry | 1 |
+| weeping | H7775 | cry | 1 |
+| whoredom | G3430 | adultery | 2 |
+| whoredom | G3431 | to commit adultery | 2 |
+| whoredom | G4204 | prostitute | 2 |
+| whoredom | H2181 | to fornicate | 11 |
+| whoredom | H2183 | fornication | 1 |
+| whoredom | H2184 | fornication | 1 |
+| whoredom | H5003 | to commit adultery | 12 |
+| whoredom | H5004 | adultery | 2 |
+| whoredom | H5005 | adultery | 1 |
+| whoredom | H6945 | male cult prostitute | 1 |
+| whoredom | H6948 | cult prostitute | 1 |
+| whoredom | H8457 | fornication | 1 |
+| wickedness | G0458 | lawlessness | 2 |
+| wickedness | G0763 | ungodlinessness | 2 |
+| wickedness | G2549 | evil | 2 |
+| wickedness | G4189 | evil | 2 |
+| wickedness | H0205G | evil: wickedness | 0 |
+| wickedness | H0205H | evil: trouble | 0 |
+| wickedness | H1100I | worthless | 0 |
+| wickedness | H2026 | to kill | 6 |
+| wickedness | H2149 | vileness | 1 |
+| wickedness | H2154 | wickedness | 4 |
+| wickedness | H2555 | violence | 1 |
+| wickedness | H4849 | wickedness | 1 |
+| wickedness | H5240 | vile | 1 |
+| wickedness | H5766A | injustice | 0 |
+| wickedness | H5766B | injustice | 0 |
+| wickedness | H5771G | crime | 0 |
+| wickedness | H5999 | trouble | 4 |
+| wickedness | H6466 | to work | 4 |
+| wickedness | H7451B | bad: evil | 0 |
+| wickedness | H7451C | harm | 0 |
+| wickedness | H7451I | harm | 0 |
+| wickedness | H7455 | evil | 5 |
+| wickedness | H7523 | to murder | 11 |
+| wickedness | H7561 | be wicked | 8 |
+| wickedness | H7562 | wickedness | 4 |
+| wickedness | H7563 | wicked | 4 |
+| wickedness | H7564 | wickedness | 4 |
+| will | G0829 | self-willed | 2 |
+| will | G0830 | self-chosen | 2 |
+| will | G1014 | to plan | 2 |
+| will | G1133 | weak-willed woman | 2 |
+| will | G2071 | will be | 1 |
+| will | G2307 | will/desire | 2 |
+| will | G2308 | will | 2 |
+| will | G2309 | to will/desire | 2 |
+| will | G3801 | was, is, will be | 1 |
+| will | G4289 | eager | 1 |
+| will | G4483 | to say: will say | 1 |
+| will | G4909 | to agree to | 2 |
+| will | G7124 | be willing | 1 |
+| will | H0014 | be willing | 5 |
+| will | H2086 | arrogant | 3 |
+| will | H2655 | delighting | 1 |
+| will | H2656 | pleasure | 5 |
+| will | H2782 | to decide | 6 |
+| will | H2852 | to determine | 2 |
+| will | H2974 | be willing | 5 |
+| will | H5068 | be willing | 6 |
+| will | H5069 | be willing | 4 |
+| will | H5071 | freewill offering | 3 |
+| will | H5081G | willing | 0 |
+| will | H5157 | to inherit | 12 |
+| will | H6634 | to will | 5 |
+| wisdom | G4678 | wisdom | 2 |
+| wisdom | G4679 | to make wise | 2 |
+| wisdom | G4680 | wise | 2 |
+| wisdom | G5428 | understanding | 2 |
+| wisdom | H0998 | understanding | 6 |
+| wisdom | H2445 | wise | 1 |
+| wisdom | H2449 | be wise | 6 |
+| wisdom | H2450 | wise | 7 |
+| wisdom | H2451 | wisdom | 6 |
+| wisdom | H2452 | wisdom | 2 |
+| wisdom | H2942 | command | 3 |
+| wisdom | H4905 | Maskil | 2 |
+| wisdom | H6195 | craftiness | 1 |
+| wisdom | H7919A | be prudent | 0 |
+| wisdom | H7922 | understanding | 5 |
+| wisdom | H8394 | understanding | 7 |
+| wisdom | H8454 | wisdom | 3 |
+| wonder | G1260 | to discuss | 2 |
+| wonder | G1569 | astonished | 1 |
+| wonder | G1611 | amazement | 2 |
+| wonder | G1839 | to amaze | 2 |
+| wonder | G2285 | amazement | 2 |
+| wonder | G2295 | marvel | 2 |
+| wonder | G2296 | to marvel | 2 |
+| wonder | G2297 | marvelous | 2 |
+| wonder | G2298 | marvellous | 2 |
+| wonder | G4217 | of what kind? | 1 |
+| wonder | G4592 | sign | 2 |
+| wonder | G5059 | wonders | 2 |
+| wonder | G7643 | to cause wonder | 1 |
+| wonder | H0226G | miraculous | 0 |
+| wonder | H1724 | to astonish | 2 |
+| wonder | H4159 | wonder | 3 |
+| wonder | H4652 | wonder | 1 |
+| wonder | H6381 | to wonder | 11 |
+| wonder | H6382 | wonder | 3 |
+| wonder | H6383 | incomprehensible | 1 |
+| wonder | H6395 | be distinguished | 5 |
+| wonder | H7583 | to gaze | 3 |
+| wonder | H8074H | appalled | 0 |
+| wonder | H8539 | to astounded | 3 |
+| wonder | H8540 | wonder | 1 |
+| worship | G1247 | to serve | 2 |
+| worship | G1391 | glory | 2 |
+| worship | G1479 | self-made religion | 2 |
+| worship | G2151 | to show piety | 2 |
+| worship | G2318 | godly | 2 |
+| worship | G2323 | to serve/heal | 2 |
+| worship | G2356 | religion | 2 |
+| worship | G2578 | to bend/bow | 2 |
+| worship | G2827 | to bow/lay down | 2 |
+| worship | G2999 | ministry | 2 |
+| worship | G3000 | to minister | 2 |
+| worship | G3009 | ministry | 2 |
+| worship | G4332 | to sit near/serve | 2 |
+| worship | G4352 | to worship | 2 |
+| worship | G4353 | worshiper | 1 |
+| worship | G4573 | to worship | 2 |
+| worship | G4574 | object of worship | 2 |
+| worship | G4576 | be devout | 2 |
+| worship | G5256 | to serve | 2 |
+| worship | H2076 | to sacrifice | 7 |
+| worship | H2331 | to explain | 3 |
+| worship | H3372G | frightening(DANGER) | 0 |
+| worship | H3372H | awesome(god) | 0 |
+| worship | H3373 | afraid | 1 |
+| worship | H3766 | to bow | 7 |
+| worship | H5457 | to do homage | 2 |
+| worship | H5647G | serve[someone] | 0 |
+| worship | H5647H | minister/serve[God/tabernacle/temple]/worship | 0 |
+| worship | H5647I | labour/do(work) | 0 |
+| worship | H5647J | burden | 0 |
+| worship | H5656H | ministry[for God]/tabernacle] | 0 |
+| worship | H6087B | to shape | 0 |
+| worship | H6213A | do/perform | 0 |
+| worship | H6213I | offer/give/get(IND.OBJ.) | 0 |
+| worship | H6282A | worshiper | 0 |
+| worship | H6282B | odour | 0 |
+| worship | H6399 | to serve | 4 |
+| worship | H6633 | to serve | 5 |
+| worship | H6642 | to serve | 1 |
+| worship | H6915 | to bow | 1 |
+| worship | H7812 | to bow | 9 |
+| worship | H8334 | to minister | 1 |
+| worth | G0514 | worthy | 2 |
+| worth | G1308 | to spread/surpass | 2 |
+| worth | G20258 | worth two talents | 1 |
+| worth | H3644G | like | 0 |
+| worth | H4373 | number | 3 |
+| worth | H6187 | valuation | 4 |
+| worth | H7737A | be like | 0 |
+| wrath | G2372 | wrath | 2 |
+| wrath | G3709 | wrath | 2 |
+| wrath | G3949 | to anger | 2 |
+| wrath | G3950 | anger | 1 |
+| wrath | G5433 | to rage | 2 |
+| wrath | H0639G | anger | 0 |
+| wrath | H0639H | nose | 0 |
+| wrath | H0639I | face | 0 |
+| wrath | H2121 | raging | 1 |
+| wrath | H2194 | be indignant | 6 |
+| wrath | H2195 | indignation | 1 |
+| wrath | H2197 | rage | 1 |
+| wrath | H2528 | rage | 2 |
+| wrath | H2534 | rage | 6 |
+| wrath | H2573 | bottle | 1 |
+| wrath | H2734 | to be incensed | 5 |
+| wrath | H2740 | burning anger | 2 |
+| wrath | H3708A | vexation | 0 |
+| wrath | H3708B | vexation | 0 |
+| wrath | H5358 | to avenge | 10 |
+| wrath | H5359 | vengeance | 2 |
+| wrath | H5590 | to rage | 7 |
+| wrath | H5674B | be angry | 0 |
+| wrath | H5678 | fury | 4 |
+| wrath | H5892A | excitement | 0 |
+| wrath | H7107 | be angry | 5 |
+| wrath | H7109 | wrath | 1 |
+| wrath | H7110A | wrath | 0 |
+| wrath | H7110B | splinter | 0 |
+| wrath | H7265 | to enrage | 2 |
+| wrath | H7266 | rage | 2 |
+| wrath | H7267 | turmoil | 3 |
+| yearning | G1971 | to long for | 2 |
+| yearning | G20833 | yearn for | 1 |
+| yearning | H1993 | to roar | 7 |
+| yearning | H3615J | expend/spend/empty/fail | 0 |
+| yearning | H3642 | to pine | 1 |
+| yearning | H3648 | to grow warm | 4 |
+| yearning | H4263 | compassion | 2 |
+| yearning | H4578 | belly | 6 |
+| yearning | H6315 | to breathe | 9 |
+| yielding | G0591 | to pay | 2 |
+| yielding | G0985 | to sprout | 2 |
+| yielding | G1325 | to give | 1 |
+| yielding | G1502 | to yield | 3 |
+| yielding | G1627 | to bring/carry out | 2 |
+| yielding | G2590 | fruit | 2 |
+| yielding | G4964 | to conform to | 2 |
+| yielding | G5342 | to bear/lead | 2 |
+| yielding | G7805 | to yield | 1 |
+| yielding | G7806 | a yield | 1 |
+| yielding | G7807 | a yield | 1 |
+| yielding | H0014 | be willing | 5 |
+| yielding | H0225 | to consent | 1 |
+| yielding | H1645 | produce | 1 |
+| yielding | H2981 | crops | 1 |
+| yielding | H3052 | to give | 7 |
+| yielding | H3254H | add/more[amount] | 0 |
+| yielding | H3318M | produce/birth/sprout(LIVING THINGS) | 0 |
+| yielding | H4832 | healing | 5 |
+| yielding | H5107 | to bear fruit | 3 |
+| yielding | H5186 | to stretch | 13 |
+| yielding | H5375H | look/lift(eyes) | 0 |
+| yielding | H5375K | look/lift(eyes) | 0 |
+| yielding | H5414G | give/deliver/send/produce | 0 |
+| yielding | H6213A | do/perform | 0 |
+| yielding | H6213H | make(OBJECT) | 0 |
+| yielding | H6779 | to spring | 10 |
+| yielding | H7737B | to set | 0 |
+| yielding | H8393 | produce | 5 |
+| zeal | G1618 | fervent | 2 |
+| zeal | G2205 | zeal | 2 |
+| zeal | G4710 | diligence | 2 |
+| zeal | H0149 | diligently | 1 |
+| zeal | H7065 | be jealous | 7 |
+| zeal | H7068 | jealousy | 12 |
+
 ## Lexicon completeness (lsj / mounce)
 
 | lsj | mounce | strong rows |
@@ -62,3 +4838,5 @@
 | ✓ |  | 1 |
 |  | ✓ | 1 |
 | (none) | (none) | 1957 |
+
+**Total: 3463** (1506 with some lexicon detail + 1957 with none = 3463).

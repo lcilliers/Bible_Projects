@@ -7,7 +7,7 @@ span). That HTML is retained (span data derives from it); this adds a sibling
 Safe to re-run: adds the column only if missing and repopulates every row.
 
 Usage:
-    python iba/scripts/_apply_verse_plaintext_column.py [--db PATH] [--dry-run]
+    python iba/app/tools/_apply_verse_plaintext_column.py [--db PATH] [--dry-run]
 """
 import argparse
 import html

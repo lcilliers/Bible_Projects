@@ -30,23 +30,34 @@
 
 ---
 
-## 2. The config store — 17 `cfg_*` tables in `iba/app/db/iba.db`
+## 2. The config store — 20 `cfg_*` tables in `iba/app/db/iba.db`
+
+**CORRECTED 2026-07-23** — was stale at 17, and named a table (`cfg_api_source`) that has never
+existed in the live schema.
 
 | table | holds | fed from |
 |---|---|---|
 | `cfg_table` · `cfg_column` · `cfg_unique` | the schema — every data table and column, with `use`/`expectation`/`source`/`filled_by` | originally `schema.json`; the DB is master now (§10) |
 | `cfg_enum` | the controlled vocabularies | ditto |
-| `cfg_connection` · `cfg_api` · `cfg_api_source` | STEP: connection, the 3 routes, and **may_source** (which api may write which table) | ditto |
-| `cfg_work_package` · `cfg_step` | the run sequence + each step's handler + scope + `chained` (§10, 5G) | ditto |
+| `cfg_connection` · `cfg_api` | STEP: connection + the 3 routes. **may_source** (which api may write which table) is NOT its own table — `cfgload.py` translates each API's `may_source` list straight into `cfg_write_grant` rows at load time; enforcement reads `cfg_write_grant`, keyed by writer=API name, the same table `configmaint.propose`'s own write-grant check uses. *(Corrected 2026-07-23 — this section, §3, and §4 all previously named a `cfg_api_source` table that does not exist in the live schema; found by querying `sqlite_master` directly, not by re-reading this doc.)* | ditto |
+| `cfg_work_package` · `cfg_step` | the run sequence + each step's handler + scope + `chained` (§10, 5G); `cfg_work_package` also carries `complete_message`/`next_step_hint`/`paused_message` (§13) | ditto |
 | `cfg_setting` | scalar rules, always module-attributed (`cfg_setting.module`, enum `config_module`) | ditto |
-| `cfg_on_fail` | the fork: `(step, condition) → path` (report-stop / pause-continue / report-continue / self-heal) | ditto |
+| `cfg_on_fail` | the fork: `(step, condition) → path` (report-stop / pause-continue / report-continue / self-heal), plus `route` (terminal vs terminal+report, §13) | ditto |
 | `cfg_status_flow` | which step sets which status | ditto |
 | `cfg_book_order` | the canonical OSIS book order (see §5 — this used to be code, it is config now) | ditto |
 | `cfg_candidate_rule` | the candidate-seed domain ruleset (its own dedicated table, not `cfg_setting` — §5F) | ditto |
-| `cfg_write_grant` | which writer may write which table (data or `cfg_*`) | added with `configuration_maintenance`, §9A |
+| `cfg_write_grant` | which writer may write which table (data or `cfg_*`) — data writers AND api `may_source` writers both live here | added with `configuration_maintenance`, §9A |
+| `cfg_report` · `cfg_report_section` · `cfg_report_csv_table` | a report's title/ToC/footer/naming/archiving, its sections, and its CSV pairing — read by `lib/reportkit.py` | added §13 (2026-07-22) |
 | `cfg_meta` | config_version + bookkeeping | — |
 | `cfg_change_log` | whole-reload audit events | — |
 | `cfg_change_detail` | row-level audit of every `configmaint.propose` write (table/op/where/set/before/applied_at) | added §9A |
+
+**Live counts, 2026-07-23:** 904 rows across the 20 tables above; `cfg_setting` alone holds 66 rows.
+(Also found while re-verifying this count: `cfg_table`'s own declared data-table list wrongly
+includes `cfg_change_detail` — a config-store table masquerading as a data table, so
+`Start-Iba.ps1`'s "data tables present" count reads 18 instead of the true 17. Not fixed in this
+pass — a `configmaint.propose` deleting that one `cfg_table` row is the correct fix; named here so
+it isn't lost.)
 
 **Every value, right now:** [`CONFIG-REPORT.md`](config/CONFIG-REPORT.md) — settings by module (§2),
 STEP APIs (§3), every work package's steps (§4), the full `on_fail` fork table split into
@@ -70,7 +81,7 @@ handlers (raw/registry) read every rule from cfg:
    │                      · seed filter          cfg_setting discovery.particle_pattern
    │                      · follow relatedNos?    cfg_setting discovery.follow_related   (false)
    │                      · meaning split marker  cfg_setting meaning.head_marker
-   │                      · may this api write?   cfg_api_source  (ENFORCED at every write)
+   │                      · may this api write?   cfg_write_grant  (ENFORCED at every write)
    │                      · the status to set     cfg_status_flow
    │  using:
 Step (stepapi)          reads connection, routes, cap, walk bounds, particle pattern, span_html from cfg
@@ -109,7 +120,7 @@ Coherence-checked before it ever reaches you (unknown table/column, bad enum, in
 
 ## 4. Proofs it is real, not decorative
 
-**A · `may_source` is enforced.** `call1_meanings` may write only `word_strong` (cfg_api_source).
+**A · `may_source` is enforced.** `call1_meanings` may write only `word_strong` (`cfg_write_grant`).
 Attempting `call1 → strong` is **blocked**:
 ```
 PermissionError: may_source violation: api 'call1_meanings' may not write 'strong'
@@ -180,28 +191,53 @@ exactly how book order and span_html went undocumented here.**
 
 ---
 
-## 7. Files — current inventory (corrected/extended 2026-07-22; §11 has the increment-by-increment version)
+## 7. Files — current inventory (corrected/extended 2026-07-23; §11 has the increment-by-increment version; §15A has the script-folder consolidation)
 
 ```
 iba/app/
-  config/    schema/step/run/rules seeds (archived, DB is master, §10) · CONFIG-REPORT.md (generated)
+  config/    schema/step/run/rules seeds (archived, DB is master, §10) · CONFIG-REPORT.md (generated,
+             incl. §12 per-report governance rollup) · archive/ (auto-archived prior CONFIG-REPORT.md
+             snapshots) · export/ (CONFIG-REPORT's own cfg_* CSV pairing — git-ignored)
   lib/       cfg.py (reader) · cfgload.py (seed->DB) · cfgcheck.py · cfgreport.py · cfgquality.py ·
-             valuequality.py · retention.py · db.py · stepapi.py · escalation.py · words.py
-  handlers/  base.py · registry.py · raw.py · configmaint.py · candidate.py · passage.py · reports.py
-  migration/ Import-LegacyRegistry.ps1 · legacy_import.py · import_seed.py ·
+             valuequality.py · retention.py · dbsnapshot.py · db.py · stepapi.py · escalation.py ·
+             words.py · reportkit.py (§13, shared report scaffold + archive-on-write, extended to
+             CSV writes §15A, + CSV pairing) · seedreport.py · strongreport.py · spanreport.py ·
+             schemareport.py (§14, the 4 new reports) · registryreport.py (§15A, registry
+             evaluation report, escalation #272)
+  handlers/  base.py · registry.py · raw.py · configmaint.py (CFG_TABLES whitelist fixed §15A —
+             cfg_report/cfg_report_section/cfg_report_csv_table were missing despite already having
+             write_grant) · candidate.py · passage.py · reports.py
+  migration/ Import-LegacyRegistry.ps1 · legacy_import.py · import_seed.py · allocate_strongs.py ·
+             apply_semantic_allocation.py · build_base_all_books.py ·
              bootstrap_configuration_maintenance.py · bootstrap_setting_module_column.py ·
              bootstrap_quality_validate_steps.py · bootstrap_reports_registration.py ·
              bootstrap_report_persistence_governance.py · add_work_package_chained_column.py ·
-             add_candidate_seed_strong_variant.py · fix_stuck_run_states.py ·
-             delete_blank_tag_candidates.py · repair_strong_sense_head.py
-  tools/     purge_word.py · export_tables_csv.py · log_retention.py
+             add_candidate_seed_strong_variant.py · add_candidate_seed_referent_columns.py ·
+             fix_stuck_run_states.py · delete_blank_tag_candidates.py · repair_strong_sense_head.py ·
+             bootstrap_report_content_governance.py · bootstrap_retention_table_export_registration.py ·
+             bootstrap_new_reports_phase1.py · bootstrap_oneoff_report_naming.py   (§13-15)
+  tools/     purge_word.py · export_tables_csv.py (archive-on-write §15A) · log_retention.py ·
+             _apply_verse_plaintext_column.py · build_span_heatmap_v1.py (both relocated from
+             iba\scripts\, §15A)
   ps/        Start-Iba.ps1 · New-Word.ps1 · Set-Candidates.ps1 · Build-Passages.ps1 ·
              Config-Maintenance.ps1 · Candidate-Curate.ps1 · Candidate-Quality.ps1 ·
-             Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 · Log-Retention.ps1
+             Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 · Log-Retention.ps1 ·
+             SeedCandidate-Report.ps1 · StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 ·
+             SchemaOverview-Report.ps1 · create-iba-view-template.ps1 ·
+             create-passage-view-and-export.ps1 · create-passages-by-book-view-and-export.ps1 ·
+             export-iba-config-tables.ps1 · generate-iba-db-schema-report.ps1 (5 relocated from
+             iba\scripts\, §15A) · _lib/Notify.ps1 (§13, shared terminal-notification rendering)
   run.py · report.py · validation.py · init.py
-  db/iba.db
-  reports/   candidate-quality.md · passage-quality.md · log-retention.md · validation-*.md (generated)
+  db/iba.db · db/snapshots/ (pre-run rollback snapshots, §12 — git-ignored)
+  reports/   candidate-quality.md · passage-quality.md · log-retention.md · candidate-load.md ·
+             seed-candidate.md · strong-meaning.md · span-analysis.md · schema-overview.md ·
+             validation-*.md / report-*.md (generated) · archive/ (auto-archived prior versions,
+             incl. CSVs since §15A) · export/ (per-report CSV pairing AND table-export's dump since
+             §15A, consolidated from two separate export folders into one — git-ignored)
+  archive/   non-report historical files (new, §15A) — e.g. the superseded pre-restructure
+             `New-Word.ps1` stub found in the (now-removed) `iba\ps\` folder
   BUILD.md · GOVERNANCE.md · USER-GUIDE.md · UTILITIES.md   (this doc set)
+  PLAN-reports-config-governance-v1-20260722.md · SESSION-LOG-20260722-reports-config-governance.md
 ```
 
 Full run-command reference (kept current in `BUILD.md` §2, not duplicated here).
@@ -832,3 +868,110 @@ Phase 1 §14, Phase 2 this section). Nothing from the plan remains outstanding �
 one-off/investigation scripts should call `reportkit.oneoff_path()` instead of hardcoding a path,
 but no existing script needed retrofitting (none existed yet using a hardcoded one-off path in a
 way this replaces).
+
+---
+
+## 15A. Script-folder consolidation, `configmaint.propose`'s stale table whitelist, CSV archive-on-write (2026-07-23, escalations #271/#273/#274/#275)
+
+Clearing the day's researcher-flagged escalation backlog (raised earlier the same session, held
+without action per the researcher's explicit escalate-only instruction, then actioned once told to
+clear it) surfaced two real app bugs and one real folder-scatter problem, alongside the
+report-content fixes §14 already covers the shape of.
+
+**A real `configmaint.propose` bug, found while actioning #274.** `handlers/configmaint.py`'s
+`CFG_TABLES` whitelist — the hard-coded list of tables the coherence check will accept — still
+listed only the 17 tables from before the §13 report-governance work; `cfg_report`,
+`cfg_report_section`, and `cfg_report_csv_table` (added that same day, §13) were never added to it,
+despite already correctly holding `cfg_write_grant` rows for `configmaint.propose`. Practical effect:
+**no report title/section/CSV-pairing config had been changeable via the sanctioned path since §13
+landed** — `configmaint.propose` rejected any such attempt with "not a recognised cfg_* table"
+before the write-grant check even ran. Fixed: the three table names added to `CFG_TABLES`. (The
+sibling `CFG_TABLES` constant in `migration/bootstrap_configuration_maintenance.py` — a one-off,
+already-executed bootstrap script predating `cfg_report`'s existence — was deliberately left as a
+historical artifact, not updated; it is not on any live enforcement path.)
+
+**Escalation #273 — two export folders.** `table_export.output_dir` (default `iba/app/export`) and
+every report's own CSV pairing (`{report.output_dir}/export`, now uniformly `iba/app/reports/
+export` after #269/#270) were two separate physical folders holding overlapping table names with
+different content — e.g. `candidate_seed.csv` was independently written by `candidate.load`,
+`candidate.validate`, `report.seed_candidate`, AND `validation.book`, each a different scoped slice,
+all landing at the same filename. Worse: **no CSV writer archived on overwrite** — `write_report()`
+had done this for `.md` output since the researcher's 2026-07-22 instruction, but `reportkit.
+write_csv_pairing`'s `_write_csv` and `tools/export_tables_csv.py`'s own inline writer both did not,
+so every regenerate silently destroyed whichever report's slice had been there before. Fixed:
+`lib/reportkit.archive_before_write()` (new, shared helper — the same timestamp-suffix-into-
+`archive/` convention `write_report` already used) is now called by `_write_csv` AND by
+`export_tables_csv.export()`; `table_export.output_dir` reproposed to `iba/app/reports/export` so
+there is exactly one export folder; the old `iba/app/export/`'s contents archived (not deleted) and
+the folder removed. Verified: running `table-export` immediately after archived every pre-existing
+same-named file from the folder it now shares (12 files correctly archived with original
+timestamps, none lost).
+
+**Escalation #271 — scripts scattered across four folders.** `iba\scripts\`, `iba\ps\`, `iba\app\
+ps\`, `iba\app\tools\` all held scripts. Investigated each file rather than moving by folder name
+alone: 7 files in `iba\scripts\` (2 Python, 5 PowerShell) already targeted `iba/app/db/iba.db`
+explicitly in their own code — genuinely IBA-app-scoped, just misplaced — and were relocated into
+`iba/app/tools/`/`iba/app/ps/` (BUILD.md §8 has the full list); their own docstring usage lines
+updated to match. The other 5 files remaining in `iba\scripts\` (`cfg_apply.py`/`cfg_helper.py`/
+`cfg_kernel.py`/`probe_step_api.py`, `build_dbschema.py`) were confirmed, by reading each file, to
+belong to genuinely different systems — the separate `iba/config` heavyweight configurator (§6) and
+the main Bible-study programme's own schema tool respectively — and were deliberately left in place;
+moving them would have been scope creep past what the escalation actually found broken.
+`iba\ps\New-Word.ps1` turned out to be a stale, pre-restructure STUB (its own docstring: "nothing is
+built out", referencing the old `iba/config/utility/run.json` design) superseded entirely by the
+real `iba/app/ps/New-Word.ps1` — archived (not deleted) to the new `iba/app/archive/`, and the
+now-empty `iba\ps\` folder removed. **The canonical locations are now real config**, not just
+convention: `cfg_setting governance.scripts_ps_dir` = `iba/app/ps`, `governance.scripts_python_dir`
+= `iba/app/tools`. Also normalized 4 `cfg_work_package.ps_script` rows
+(`configuration-maintenance`/`candidate-quality`/`passage-quality`/`reports`) that held a bare
+filename instead of a full path, for consistency with every other row — cosmetic (the field is
+informational, read only by `cfgreport.py`, not used to actually locate/invoke anything), found
+while auditing this table for the same escalation.
+
+**Left open, not self-resolved:** re-running `configmaint.validate` after all of the above flagged
+the two new `governance.scripts_*_dir` settings as orphans (not referenced by any executing code —
+they are stated convention, the same class as the pre-existing `governance.build_md_on_code_change`/
+`governance_md_on_rule_change` orphans). This is a genuine judgement call for the researcher (is a
+documentation-only convention setting an acceptable "orphan," per the orphan-detector's own design —
+§9A), not a mechanical implementation of an already-given instruction, so it was left as its own
+open escalation rather than self-approved under this session's backlog-clearing authorization.
+
+---
+
+## 15B. Escalation lifecycle extended — Edit/Pause/Resume/Retract (2026-07-23, later same day)
+
+Asked to consolidate `USER-GUIDE.md`'s scattered escalation instructions (§4, §9, §10a/b, §11, §13,
+§14 each showed a fragment, no single complete reference existed) and to add real methods to edit,
+pause, and retract a manual escalation — the table increasingly doubles as a backlog of work items
+for Claude, not only design decisions awaiting the researcher's approval, and `raised → answered`
+alone wasn't enough lifecycle for that.
+
+**Schema:** new `cfg_enum` group `escalation_state` (`raised`/`answered`/`paused`/`retracted`,
+4 rows via `configmaint.propose`) — `escalation.state` had no governed controlled vocabulary at all
+before this, unlike every other enum-backed field in the app (a small pre-existing gap, closed in
+passing).
+
+**`lib/escalation.py`:** `edit_question()` / `pause_run()` / `resume_run()` / `retract_run()`, each
+guarded by a new `_manual_only()` check. **Restricted to `MANUAL-`-prefixed run_ids** — found
+necessary while building, not part of the original request: a real dispatcher-tied escalation
+(`configmaint.propose`, `candidate.validate`, `passage.validate`, ...) is read by two checks keyed
+specifically on `state='raised'`/`'answered'` — `run.py`'s pause-continue dedup and
+`answered_for_run()`. Flipping one of those to `state='paused'` would match neither, so re-running
+the underlying command before resuming it would raise a **second** escalation row for the same
+run_id+step rather than recognize the existing pause — the same class of bug §10's `run.state` fix
+closed for a different reason. Manual items have no such downstream reader, so the guard simply
+refuses a non-manual run_id with a clear message. `write_list_report()` (§ escalation-list, §15A)
+now shows `raised`+`paused` together, paused ones flagged, with a state column.
+
+**`ps/Escalation.ps1`:** four new `-Action` values, added to the existing `ValidateSet`, each with
+its own parameter validation matching the existing Answer/AnswerRun pattern.
+
+**`USER-GUIDE.md` §4 rewritten** as the single, complete escalation reference — the three shapes,
+the state machine, all 8 actions, resume behavior, and the new §4.6 for Edit/Pause/Resume/Retract.
+Every other section's mention of `Escalation.ps1` now points back here rather than re-explaining.
+
+**Verified end-to-end:** raise → edit (old wording preserved in `tried`, not overwritten silently) →
+pause → list (correctly showed 1 paused among the total) → resume → retract → list (item gone from
+the open count); the `MANUAL-` guard confirmed rejecting a real `RUN-...-CONFIGMAINT` run_id with
+the intended message, not silently succeeding; `configmaint.validate` re-run clean of hard errors
+(`escalation_state` joins `escalation_answer` as an expected orphan enum, same accepted class).

@@ -40,7 +40,7 @@ REPORT_STEPS = (
     "configmaint.report", "candidate.validate", "candidate.load", "passage.validate",
     "report.word", "validation.word", "validation.book", "retention.report",
     "report.seed_candidate", "report.strong_meaning", "report.span_analysis",
-    "report.schema_overview",
+    "report.schema_overview", "report.registry",
 )
 
 

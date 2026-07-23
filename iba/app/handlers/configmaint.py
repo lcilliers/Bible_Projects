@@ -43,7 +43,8 @@ CFG_TABLES = (
     "cfg_meta", "cfg_table", "cfg_column", "cfg_unique", "cfg_enum", "cfg_connection",
     "cfg_api", "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting",
     "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule",
-    "cfg_change_log", "cfg_change_detail",
+    "cfg_change_log", "cfg_change_detail", "cfg_report", "cfg_report_section",
+    "cfg_report_csv_table",
 )
 
 # module -> the dedicated table it already has, if any (rule c's "very good reason" check).

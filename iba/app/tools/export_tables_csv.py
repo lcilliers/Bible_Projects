@@ -7,7 +7,13 @@ EXCLUDES cfg_* tables (fixed 2026-07-22 — it used to dump those too, duplicati
 `configmaint.report`/`CONFIG-REPORT.md`, the dedicated config report writer; one owner per
 concern, per PLAN-reports-config-governance-v1-20260722.md §3.5/§2C).
 
-    python -m iba.app.tools.export_tables_csv                       # -> iba/app/export/*.csv
+Archives the previous same-named file before overwriting (fixed 2026-07-23, escalation #273 —
+shares `reportkit.archive_before_write`, the same convention every report/CSV writer now follows).
+Default output folder consolidated into `iba/app/reports/export/` the same day — there used to be
+a second, separate `iba/app/export/` that only this tool wrote to, while every report's own CSV
+pairing wrote into `iba/app/reports/export/`; one export folder, not two.
+
+    python -m iba.app.tools.export_tables_csv                       # -> iba/app/reports/export/*.csv
     python -m iba.app.tools.export_tables_csv --out some/dir
     python -m iba.app.tools.export_tables_csv --table candidate_seed lemma_inventory
 """
@@ -20,9 +26,10 @@ import pathlib
 import sqlite3
 import sys
 
+from ..lib import reportkit
 from ..lib.cfg import DB_PATH
 
-DEFAULT_OUT = pathlib.Path(__file__).resolve().parent.parent / "export"
+DEFAULT_OUT = pathlib.Path(__file__).resolve().parent.parent / "reports" / "export"
 
 
 def _tables(conn: sqlite3.Connection) -> list[str]:
@@ -41,6 +48,7 @@ def export(out_dir: pathlib.Path, only: list[str] | None) -> list[tuple[str, int
         cols = [d[0] for d in conn.execute(f'SELECT * FROM "{t}" LIMIT 0').description]
         rows = conn.execute(f'SELECT * FROM "{t}"').fetchall()
         path = out_dir / f"{t}.csv"
+        reportkit.archive_before_write(path)
         # utf-8-sig: Hebrew/Greek (accentedUnicode) and Excel need the BOM to render correctly
         with path.open("w", newline="", encoding="utf-8-sig") as f:
             w = csv.writer(f)

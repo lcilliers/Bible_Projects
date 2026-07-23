@@ -24,14 +24,25 @@ at iba/app/lib/escalation.py, so it's invoked via iba.app.lib.escalation, not ib
     python -m iba.app.lib.escalation list
     python -m iba.app.lib.escalation answer <word> <yes|no>
     python -m iba.app.lib.escalation answer-run <run_id> <approve|reject|revise> [comment...]
+    python -m iba.app.lib.escalation raise <question...>
+
+Added 2026-07-23 for the researcher's backlog-of-work-for-Claude workflow — a manual escalation
+doubles as a work instruction, not only a design decision awaiting approval. Run-scoped/manual only
+(same boundary as answer-run vs. answer):
+    python -m iba.app.lib.escalation edit <run_id> <new question...>     -- replace the wording
+    python -m iba.app.lib.escalation pause <run_id> [comment...]         -- set aside, out of the active queue
+    python -m iba.app.lib.escalation resume <run_id>                    -- back into the active queue
+    python -m iba.app.lib.escalation retract <run_id> [comment...]      -- withdraw, not a decision
 """
 
 from __future__ import annotations
 
 import datetime
 import json
+import pathlib
 import sys
 
+from . import reportkit
 from .cfg import Cfg
 from .db import Db
 
@@ -145,17 +156,124 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
         f" — {comment!r}" if comment else "")
 
 
+# ── edit / pause / resume / retract — added 2026-07-23 for the researcher's own backlog-of-
+# items-for-Claude workflow (a manual escalation is a work instruction, not only a design decision
+# needing approval). Restricted to MANUAL-prefixed run_ids ONLY (not run-scoped-in-general) --
+# found while building this: a REAL dispatcher-tied escalation (configmaint.propose, candidate.
+# validate, ...) checks `answered_for_run` (state='answered') and run.py's own pause-continue dedup
+# checks `state='raised'` to decide whether to raise a duplicate; pausing one of those would flip
+# it to `state='paused'`, matching NEITHER check, so re-running the underlying command before
+# resuming would raise a second escalation row for the same run_id+step, not resume the real one.
+# Manual items have no such downstream reader, so this cannot happen to them.
+def _manual_only(run_id: str) -> str | None:
+    if not run_id.startswith("MANUAL-"):
+        return (f"{run_id!r} is not a manual escalation (run_id doesn't start with 'MANUAL-'). "
+               f"Edit/Pause/Resume/Retract are restricted to researcher-raised items only -- a "
+               f"real dispatcher-tied escalation must be answered via AnswerRun.")
+    return None
+
+
+def _latest_for_run(db: Db, run_id: str, states: tuple[str, ...]):
+    """The latest escalation row for a run in one of `states`, or None."""
+    ph = ",".join("?" * len(states))
+    rows = db.rows(f"SELECT * FROM escalation WHERE run_id=? AND state IN ({ph}) "
+                   f"ORDER BY id DESC LIMIT 1", (run_id, *states))
+    return rows[0] if rows else None
+
+
+def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
+    """Replace a still-open (raised or paused) MANUAL escalation's question text. The old wording
+    is preserved in `tried` with a timestamp, not silently lost -- the row's history stays readable."""
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("raised", "paused"))
+    if not esc:
+        return f"no open (raised/paused) escalation for run {run_id!r} to edit"
+    _grant(cfg, "escalation")
+    old_note = f"[edited {_now()}] was: {esc['question']}"
+    tried = f"{esc['tried']}\n{old_note}" if esc["tried"] else old_note
+    db.update("escalation", {"id": esc["id"]}, question=new_question, tried=tried)
+    return f"escalation {esc['id']} (run {run_id!r}) question updated"
+
+
+def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
+    """Set a raised MANUAL escalation aside without answering it -- still shown in the list,
+    flagged distinctly, until resumed."""
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("raised",))
+    if not esc:
+        return f"no raised escalation for run {run_id!r} to pause"
+    _grant(cfg, "escalation")
+    db.update("escalation", {"id": esc["id"]}, state="paused", comment=comment)
+    return f"escalation {esc['id']} (run {run_id!r}) paused" + (f" — {comment!r}" if comment else "")
+
+
+def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
+    """Bring a paused MANUAL escalation back into the active (raised) queue."""
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("paused",))
+    if not esc:
+        return f"no paused escalation for run {run_id!r} to resume"
+    _grant(cfg, "escalation")
+    db.update("escalation", {"id": esc["id"]}, state="raised")
+    return f"escalation {esc['id']} (run {run_id!r}) resumed — back in the active queue"
+
+
+def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
+    """Withdraw an open (raised or paused) MANUAL escalation without it counting as a decision --
+    'never mind', not 'reviewed and approved/rejected'. Terminal, like answered, but distinguishable
+    from it in the record."""
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("raised", "paused"))
+    if not esc:
+        return f"no open (raised/paused) escalation for run {run_id!r} to retract"
+    _grant(cfg, "escalation")
+    db.update("escalation", {"id": esc["id"]}, state="retracted", comment=comment,
+              answered_at=_now())
+    return f"escalation {esc['id']} (run {run_id!r}) retracted" + (f" — {comment!r}" if comment else "")
+
+
+def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, list]:
+    """`Escalation.ps1 -Action List` used to only print to the terminal — never persisted, the
+    same standard violation `governance.reports_must_persist` (GOVERNANCE.md §9E) already named
+    for every other report in this app. Fixed 2026-07-23: writes a real .md file (archived on
+    every regenerate, same convention as every other report) and returns the rows so the caller
+    can still print a short terminal pointer, not the full dump."""
+    rows = db.rows("SELECT id, run_id, word, at_step, state, question, raised_at FROM escalation "
+                   "WHERE state IN ('raised', 'paused') ORDER BY id")
+    n_paused = sum(1 for r in rows if r["state"] == "paused")
+    L = ["# Open escalations", "",
+         f"> Generated by `Escalation.ps1 -Action List`. {len(rows)} open escalation(s) "
+         f"({len(rows) - n_paused} active, {n_paused} paused).", ""]
+    if not rows:
+        L.append("_no open escalations_")
+    else:
+        L += ["| # | state | scope | at step | raised | question |", "|---|---|---|---|---|---|"]
+        for r in rows:
+            scope = f"word `{r['word']}`" if r["word"] else f"run `{r['run_id']}`"
+            q = str(r["question"]).replace("|", "\\|").replace("\n", " ")
+            state = "**paused**" if r["state"] == "paused" else r["state"]
+            L.append(f"| {r['id']} | {state} | {scope} | {r['at_step']} | {r['raised_at']} | {q} |")
+    reportkit.archive_before_write(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = "\n".join(L).rstrip() + "\n"
+    path.write_text(text, encoding="utf-8")
+    return path, rows
+
+
 def main() -> int:
     cfg = Cfg()
     db = Db(cfg)
     if len(sys.argv) >= 2 and sys.argv[1] == "list":
-        rows = db.rows("SELECT id, run_id, word, at_step, state, question FROM escalation "
-                       "WHERE state='raised' ORDER BY id")
-        if not rows:
-            print("no open escalations")
-        for r in rows:
-            label = f"[{r['word']}]" if r["word"] else f"(run {r['run_id']})"
-            print(f"  #{r['id']} {label} at {r['at_step']} — {r['question']}")
+        path = pathlib.Path(cfg.setting("escalation.list_report_path",
+                                        "iba/app/reports/escalation-list.md"))
+        out, rows = write_list_report(cfg, db, path)
+        n_paused = sum(1 for r in rows if r["state"] == "paused")
+        print(f"  {len(rows)} open escalation(s) ({len(rows) - n_paused} active, "
+             f"{n_paused} paused) -> {out}")
     elif len(sys.argv) >= 4 and sys.argv[1] == "answer":
         print("  " + answer_for_word(cfg, db, sys.argv[2], sys.argv[3]))
     elif len(sys.argv) >= 4 and sys.argv[1] == "answer-run":
@@ -166,11 +284,26 @@ def main() -> int:
         run_id = raise_manual(db, question)
         print(f"  raised — run_id {run_id!r}. Answer with:")
         print(f"    python -m iba.app.lib.escalation answer-run {run_id} <approve|reject|revise>")
+    elif len(sys.argv) >= 4 and sys.argv[1] == "edit":
+        question = " ".join(sys.argv[3:])
+        print("  " + edit_question(cfg, db, sys.argv[2], question))
+    elif len(sys.argv) >= 3 and sys.argv[1] == "pause":
+        comment = " ".join(sys.argv[3:]) or None
+        print("  " + pause_run(cfg, db, sys.argv[2], comment))
+    elif len(sys.argv) >= 3 and sys.argv[1] == "resume":
+        print("  " + resume_run(cfg, db, sys.argv[2]))
+    elif len(sys.argv) >= 3 and sys.argv[1] == "retract":
+        comment = " ".join(sys.argv[3:]) or None
+        print("  " + retract_run(cfg, db, sys.argv[2], comment))
     else:
         print("usage: python -m iba.app.escalation list"
               " | answer <word> <yes|no>"
               " | answer-run <run_id> <approve|reject|revise> [comment...]"
-              " | raise <question...>")
+              " | raise <question...>"
+              " | edit <run_id> <new question...>"
+              " | pause <run_id> [comment...]"
+              " | resume <run_id>"
+              " | retract <run_id> [comment...]")
     db.close()
     return 0
 
