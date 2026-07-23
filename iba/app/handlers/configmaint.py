@@ -83,13 +83,13 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
         if r["col"] not in columns.get(r["table_name"], set()):
             e.append(f"schema: {r['table_name']} unique names unknown column {r['col']!r}")
 
-    # STEP apis
-    for r in q("SELECT name, route FROM cfg_api"):
+    # STEP apis (inactive=0: escalation #310, deactivated config is excluded from validation)
+    for r in q("SELECT name, route FROM cfg_api WHERE inactive=0"):
         if "{version}" not in (r["route"] or ""):
             e.append(f"step: api {r['name']} route has no {{version}} placeholder")
 
     # write grants: every granted table must be a real table (data OR cfg_*)
-    for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant"):
+    for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant WHERE inactive=0"):
         if r["table_name"] not in tables and r["table_name"] not in real_cfg_tables:
             e.append(f"rules: write_grant {r['writer']!r} -> unknown table {r['table_name']!r}")
 
@@ -98,13 +98,14 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # answered_for_word and cfg_on_fail both match on `step` alone with no work_package in the
     # WHERE clause, so two work packages sharing a step name would collide at runtime. Found
     # 2026-07-21 during review; not in the original lib/cfgcheck.py checks either.
-    for r in q("SELECT step, COUNT(DISTINCT work_package) n FROM cfg_step GROUP BY step HAVING n > 1"):
+    for r in q("SELECT step, COUNT(DISTINCT work_package) n FROM cfg_step WHERE inactive=0 "
+              "GROUP BY step HAVING n > 1"):
         e.append(f"schema: step {r['step']!r} is registered under {r['n']} different work packages "
                  f"— step names must be globally unique (escalation/on_fail match by step alone)")
 
     # run: every step's handler must resolve
-    known_steps = {r["step"] for r in q("SELECT step FROM cfg_step")}
-    for r in q("SELECT work_package, step, handler FROM cfg_step"):
+    known_steps = {r["step"] for r in q("SELECT step FROM cfg_step WHERE inactive=0")}
+    for r in q("SELECT work_package, step, handler FROM cfg_step WHERE inactive=0"):
         h = r["handler"] or ""
         if ":" not in h:
             e.append(f"run: {r['work_package']}/{r['step']} handler {h!r} is not module:function")
@@ -118,7 +119,7 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
 
     # on_fail: path in enum, step known
     valid_paths = {r["value"] for r in q("SELECT value FROM cfg_enum WHERE name='on_fail'")}
-    for r in q("SELECT step, path FROM cfg_on_fail"):
+    for r in q("SELECT step, path FROM cfg_on_fail WHERE inactive=0"):
         if r["path"] not in valid_paths:
             e.append(f"rules: on_fail path {r['path']!r} not in enum.on_fail {sorted(valid_paths)}")
         if r["step"] not in known_steps:
@@ -126,14 +127,14 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
 
     # status_flow: word targets in enum.word_status
     valid_status = {r["value"] for r in q("SELECT value FROM cfg_enum WHERE name='word_status'")}
-    for r in q("SELECT status FROM cfg_status_flow WHERE entity='word'"):
+    for r in q("SELECT status FROM cfg_status_flow WHERE entity='word' AND inactive=0"):
         if r["status"] not in valid_status:
             e.append(f"rules: status {r['status']!r} not in enum.word_status {sorted(valid_status)}")
 
     # settings: a *pattern setting must compile; report.*_fields must name real columns
     span_cols = columns.get("span", set()) | {"sense"}
     strong_cols = columns.get("strong", set()) | columns.get("strong_sense", set()) | {"verses"}
-    for r in q("SELECT key, value FROM cfg_setting"):
+    for r in q("SELECT key, value FROM cfg_setting WHERE inactive=0"):
         if "pattern" in r["key"]:
             try:
                 re.compile(json.loads(r["value"]))
@@ -149,7 +150,7 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # catches typos/drift the moment they're written, added 2026-07-21 per the researcher's rule
     # against cfg_setting drifting into an untracked catch-all.
     valid_modules = {r["value"] for r in q("SELECT value FROM cfg_enum WHERE name='config_module'")}
-    for r in q("SELECT key, module FROM cfg_setting"):
+    for r in q("SELECT key, module FROM cfg_setting WHERE inactive=0"):
         if not r["module"]:
             e.append(f"consistency: cfg_setting {r['key']!r} has no module — every setting must "
                      f"be attributed to a module/utility")

@@ -6,7 +6,9 @@ The startup sequence, idempotent:
   3. build the data tables from the config if they are missing (or --reset to rebuild)
   4. pre-flight STEP — up AND answering with the tagged module
   5. orient on BUILD.md + GOVERNANCE.md — what's built, and how config governs it
-  6. print the status
+  6. print every governance.* cfg_setting explicitly — the only real 'usage' a process rule has
+     (added 2026-07-23, escalation #305 — see lib/cfgquality.find_orphan_configs)
+  7. print the status
 
 Run it before the first run of a session:
     python -m iba.app.init            # prepare + status (idempotent)
@@ -99,12 +101,23 @@ def main() -> int:
         print(f"    start the local STEP server, then re-run this. Runs will refuse to start without it.")
         step_ok = False
 
-    cfg.close()
-
     # 5. orientation — read before touching code or config; not a substitute for reading them in full
     print("\n  orientation (read before making changes):")
     print(f"    BUILD.md      {_doc_orientation(APP_DIR / 'BUILD.md')}")
     print(f"    GOVERNANCE.md {_doc_orientation(APP_DIR / 'GOVERNANCE.md')}")
+
+    # 6. governance rules — read EXPLICITLY here, not just pointed at via the doc above. Per the
+    # researcher's 2026-07-23 correction (escalation #305): a governance.* cfg_setting is a
+    # process rule the AI must comply with, not a runtime application input, so it has no code
+    # path that "applies its value" the way an ordinary setting does. Its only real 'usage' is
+    # being surfaced here, at the one place every session is required to run before doing any
+    # work — otherwise it's a rule that exists only as an unread database row.
+    print("\n  governance rules (must be complied with this session):")
+    for row in cfg.conn.execute(
+            "SELECT key, value FROM cfg_setting WHERE module='governance' ORDER BY key"):
+        print(f"    {row['key']}: {row['value']}")
+
+    cfg.close()
 
     print("\nREADY." if step_ok else "\nREADY (config + DB) — waiting on STEP.")
     print("  first run:  iba\\app\\ps\\New-Word.ps1 -Word <word> -Source \"<why>\"")

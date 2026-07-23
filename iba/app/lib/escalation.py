@@ -62,7 +62,8 @@ def raise_(db: Db, run_id: str, word: str, at_step: str, question: str,
     return db.write("escalation", {
         "run_id": run_id, "word": word, "at_step": at_step, "type": etype,
         "question": question, "preset": json.dumps(preset), "tried": tried,
-        "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+        "state": _check_state(db, "raised"), "answer": None, "answered_at": None,
+        "raised_at": _now()})
 
 
 def pending_for_word(db: Db, word: str):
@@ -89,7 +90,7 @@ def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str) -> str:
         return f"no pending escalation for {word!r}"
     esc = rows[0]
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state="answered",
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "answered"),
               answer=decision, answered_at=_now())
     new_status = "approved" if decision == "yes" else "rejected"
     wr = db.rows("SELECT id, word FROM word_registry WHERE lower(word)=lower(?) AND deleted=0",
@@ -100,10 +101,19 @@ def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str) -> str:
     return f"escalation {esc['id']} answered {decision!r}; {word!r} status -> {new_status}"
 
 
+def _check_state(db: Db, state: str) -> str:
+    """Validate a state value against cfg_enum 'escalation_state' — a real, live lookup (not a
+    hardcoded Python set) so a change to the DB's enum membership is something this code actually
+    responds to, per the researcher's 2026-07-23 correction (escalation #305): a cfg_enum's
+    genuine 'usage' is being queried by name at runtime, not just having its group name mentioned
+    somewhere in source."""
+    valid = db.cfg.enum("escalation_state")
+    if state not in valid:
+        raise ValueError(f"{state!r} is not a member of cfg_enum 'escalation_state' ({valid!r})")
+    return state
+
+
 # ── run-scoped (general — no word, three-way answer) ─────────────────────────
-RUN_ANSWERS = ("approve", "reject", "revise")
-
-
 def pending_for_run(db: Db, run_id: str):
     """The latest un-answered escalation for a run, or None."""
     return db.rows(
@@ -134,7 +144,8 @@ def raise_manual(db: Db, question: str, tried: str | None = None) -> tuple[int, 
         "run_id": run_id, "word": None, "at_step": "manual", "type": "interactive",
         "question": question, "preset": json.dumps({}),
         "tried": tried or "researcher-initiated — no run to resume; a standalone tracked note",
-        "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+        "state": _check_state(db, "raised"), "answer": None, "answered_at": None,
+        "raised_at": _now()})
     return run_id
 
 
@@ -142,15 +153,18 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     """Record the researcher's decision on a run-scoped (word-less) escalation.
     decision: 'approve' | 'reject' | 'revise' (revise carries feedback, not a rejection).
     No word_registry side-effect — the caller (e.g. configmaint.propose) acts on the
-    answer itself the next time the step runs."""
-    if decision not in RUN_ANSWERS:
-        return f"invalid decision {decision!r} — must be one of {RUN_ANSWERS}"
+    answer itself the next time the step runs.
+    Valid decisions come from cfg_enum 'escalation_answer' (a live lookup, not a hardcoded Python
+    tuple — see _check_state's docstring for why this matters, same reasoning applies here)."""
+    valid_answers = cfg.enum("escalation_answer")
+    if decision not in valid_answers:
+        return f"invalid decision {decision!r} — must be one of {valid_answers!r}"
     rows = pending_for_run(db, run_id)
     if not rows:
         return f"no pending escalation for run {run_id!r}"
     esc = rows[0]
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state="answered",
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "answered"),
               answer=decision, comment=comment, answered_at=_now())
     return f"escalation {esc['id']} (run {run_id!r}, step {esc['at_step']!r}) answered {decision!r}" + (
         f" — {comment!r}" if comment else "")
@@ -205,7 +219,7 @@ def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
     if not esc:
         return f"no raised escalation for run {run_id!r} to pause"
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state="paused", comment=comment)
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "paused"), comment=comment)
     return f"escalation {esc['id']} (run {run_id!r}) paused" + (f" — {comment!r}" if comment else "")
 
 
@@ -217,7 +231,7 @@ def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
     if not esc:
         return f"no paused escalation for run {run_id!r} to resume"
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state="raised")
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "raised"))
     return f"escalation {esc['id']} (run {run_id!r}) resumed — back in the active queue"
 
 
@@ -231,7 +245,7 @@ def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> st
     if not esc:
         return f"no open (raised/paused) escalation for run {run_id!r} to retract"
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state="retracted", comment=comment,
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "retracted"), comment=comment,
               answered_at=_now())
     return f"escalation {esc['id']} (run {run_id!r}) retracted" + (f" — {comment!r}" if comment else "")
 

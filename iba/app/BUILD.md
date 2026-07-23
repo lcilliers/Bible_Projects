@@ -604,3 +604,116 @@ list); the `MANUAL-` guard confirmed rejecting a real `RUN-...-CONFIGMAINT` run_
 message; `configmaint.validate` re-run clean of hard errors (`escalation_state` joins `escalation_answer`
 as an expected orphan enum — free-text state values, not looked up by enum name in code, same class
 already accepted for `escalation_answer`).
+
+---
+
+## 13. Orphan-config check redefined — usage is per-kind, not one grep (2026-07-23, escalation #305)
+
+The researcher raised escalation #305 flagging §12's own closing note above as itself the bug:
+accepting `escalation_state`/`escalation_answer` as orphans "same class already accepted" was
+papering over a check that was too weak, not confirming they were actually fine. Their correction:
+"usage" isn't one shape — it differs by config kind, and the existing grep-anywhere test proved
+none of them. Full detail: `GOVERNANCE.md` §15C.
+
+**`lib/cfgquality.find_orphan_configs()` rewritten**, three kinds now checked differently:
+
+- **plain `cfg_setting`** (most rows): the key literal must co-occur, in the SAME file, with an
+  actual `.setting(` call — not just appear anywhere in the multi-file corpus (which a stray
+  comment could satisfy without the code ever applying the value). Same-file rather than
+  same-call-site so settings read via a level of indirection (e.g. `validation.py`'s
+  `_WORD_SECTIONS` dict → `cfg.setting(key, True)` in a loop) still pass correctly.
+- **`cfg_setting` with `module='governance'`**: these are process rules for the AI/researcher
+  workflow, not runtime application inputs, so there's no "applies the value" behaviour to find.
+  Usage = read explicitly by `init.py` (the startup routine) — either the literal key, or (what
+  was actually built, see below) a generic `WHERE module='governance'` read.
+- **`cfg_enum` group**: usage = looked up BY NAME at runtime (`cfg.enum(name)`, or the equivalent
+  raw `cfg_enum WHERE name='<name>'` SQL a couple of handlers use directly) — a group's individual
+  VALUES appearing as hardcoded string literals elsewhere (`state == "paused"`) does NOT count;
+  that's the vocabulary being duplicated in Python, not read from the config.
+
+**`init.py`** gained step 6: prints every `module='governance'` `cfg_setting` row explicitly at
+startup, queried generically (`SELECT key, value FROM cfg_setting WHERE module='governance'`) so a
+future governance setting is picked up automatically, no init.py edit required each time. `cfg.close()`
+moved to after this block (was closing the connection before the orientation/governance-print steps
+even ran — harmless before since nothing after it touched `cfg.conn`, but this section now does).
+
+**`lib/escalation.py`**: `escalation_answer`'s hardcoded `RUN_ANSWERS` Python tuple replaced with a
+live `cfg.enum("escalation_answer")` call inside `answer_for_run()`. New `_check_state()` helper
+validates every `state=` write (`raise_`, `answer_for_word`, `raise_manual`, `answer_for_run`,
+`pause_run`, `resume_run`, `retract_run`) against a live `cfg.enum("escalation_state")` lookup
+instead of a bare literal — a DB-side enum change (e.g. removing `'paused'`) now actually changes
+what these functions accept, closing the exact gap the researcher described ("if the value of the
+config change, will the code automatically respond to it").
+
+**Verified:** `find_orphan_configs()` re-run directly against the live DB — 0 orphans (was 6:
+`governance.build_md_on_code_change`/`governance_md_on_rule_change`/`scripts_ps_dir`/
+`scripts_python_dir`, `escalation_answer`, `escalation_state`). A synthetic sanity check (fake
+never-used setting + fake never-used enum injected into an in-memory DB) confirmed the rewritten
+check still correctly flags genuinely-unused config — not just permissive. Full `escalation.py`
+lifecycle re-verified end-to-end post-change: raise → pause → resume → retract, and answer-run with
+both an invalid decision (correctly rejected via the live enum) and a valid one (`approve`) —
+all via the real `cfg.enum()` calls, not the old hardcoded tuples. `configmaint.validate` re-run via
+the actual dispatcher (`python -m iba.app.run`) confirms the message no longer mentions any
+orphans — only the 7 pre-existing `candidate.*` "needs justification" findings remain (a separate,
+untouched check — see `iba/app/docs/escalation-304-orphan-justification-review-v1-20260723.md` Part
+B for that one).
+
+**Left open:** escalation #304 itself (the original 6-orphan + 7-justification finding) is still
+`raised` — this session fixed the DETECTOR and the two real code gaps it found (governance settings
+unread, enums not looked up), it did not answer #304, since answering it is the researcher's
+judgement call on the review file, not something to self-resolve. A by-product `RUN-verify-orphan-
+fix-20260723` escalation (id 307) was raised by a manual dispatcher test run during verification —
+not a `MANUAL-` id, so it can't be retracted via the sanctioned path; flagged to the researcher
+rather than touched directly.
+
+---
+
+## 14. `inactive` config column built and applied to the whole candidate system (2026-07-23, escalations #306/#310)
+
+Escalation #306 ("`cfg_candidate_rule` makes no sense, assume unused — delete it") turned out
+factually wrong on inspection: `handlers/candidate.py`'s `seed()` reads its `accept`/`reject` kinds,
+but `_resolve_lemma()`/`_ib_referent()` — helpers the NEWER `candidate.load` routine calls — reuse
+its `synonym`/`body-part`/`other-being` kinds too (confirmed by grep + each function's own
+docstring). Deleting it would have broken the routine meant to replace `seed()`, not just retired
+dead weight. The researcher's actual instruction, once given: the WHOLE candidate system — old
+(`set-candidates`, `seed-candidate-report`) and new (`candidate-quality`, `candidate-curation`)
+alike — "will all be retracted in due course" as part of "a substantial mess up over the past few
+days," so ALL of it needs deactivating together, not selectively.
+
+That reuses escalation #310's separate ask ("add a column in each config table to mark a config as
+inactive. Inactive configs must be excluded from the validation but included as a list in the
+report") — built generally, not just for this one case:
+
+- **`migration/bootstrap_inactive_column.py`** (new, one-off): `ALTER TABLE ... ADD COLUMN
+  inactive INTEGER NOT NULL DEFAULT 0` + a `cfg_column` registration row, on 14 config-CONTENT
+  `cfg_*` tables (excludes `cfg_meta`/`cfg_change_log`/`cfg_change_detail` — audit/state, not
+  config content — and `cfg_table`/`cfg_column`/`cfg_unique` — describe other tables' schema, not
+  a toggleable item themselves).
+- **`handlers/configmaint.py:_validate_live()`** and **`lib/cfgquality.py`**
+  (`find_orphan_configs`/`find_settings_needing_justification`/`find_missing_report_paths`/
+  `find_missing_cfg_report_rows`/`find_chained_packages_missing_complete_message`) — every check
+  that reads one of the 14 tables now filters `WHERE inactive=0`; a new `_step_inactive()` helper
+  lets the two report-completeness checks (keyed off hardcoded `REPORT_STEPS`/
+  `QUALITY_CHECK_REPORT_PATH` Python tuples, disconnected from `cfg_step`) skip a retired step
+  entirely rather than keep flagging its now-deliberately-stale report config.
+- **`lib/cfgreport.py`**: new `_inactive_configs()` — every inactive row, listed (not silently
+  dropped), grouped by table; `cfg_candidate_rule` summarised by kind+count rather than listing
+  289 individual Strong's codes. Folded into the existing "findings" section of `CONFIG-REPORT.md`
+  rather than a new `cfg_report_section` row — same "config health" content, no new report
+  registration needed.
+- **`migration/retract_candidate_system.py`** (new, one-off): applies the above to every row
+  genuinely part of the candidate system, enumerated by direct query first (not guessed) — 4 work
+  packages, 6 steps, 5 write-grants, 7 settings, 3 `cfg_report` rows + 10 sections + 5 CSV
+  pairings, 10 `on_fail` rows, 4 enum groups (15 values), all 289 `cfg_candidate_rule` rows. 354
+  rows total, across 10 tables.
+
+**Verified:** `configmaint.validate` — clean `"ok"` before AND after (no regression from the new
+`WHERE inactive=0` filters when nothing was yet inactive; the pre-existing 7 candidate.*
+justification findings gone entirely after the retraction ran). `CONFIG-REPORT.md` regenerated,
+"Inactive configs" lists all 354 rows correctly grouped by table.
+
+**Deliberately NOT done:** `inactive` only excludes a row from `configmaint.validate`'s advisory/
+coherence checks — it does not block a retired step from actually being invoked (`run.py`'s
+dispatcher doesn't check it). Actually preventing execution of a deactivated work package wasn't
+asked for and is a separate decision (error vs. warn vs. silently allow) — flagged here rather than
+assumed.

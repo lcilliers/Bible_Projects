@@ -49,6 +49,62 @@ def _table(headers: list[str], rows: list[list]) -> list[str]:
     return out
 
 
+# the same 14 config-content tables the escalation #310 bootstrap added `inactive` to
+# (bootstrap_inactive_column.py) — kept here too rather than imported, so this list stays a
+# deliberate, reviewable fact the same way CFG_TABLES/REPORT_STEPS are, not a generic scan.
+INACTIVE_TABLES = (
+    "cfg_setting", "cfg_step", "cfg_work_package", "cfg_write_grant", "cfg_report",
+    "cfg_report_section", "cfg_report_csv_table", "cfg_candidate_rule", "cfg_enum",
+    "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_api", "cfg_connection",
+)
+
+# table -> the SQL expression identifying one inactive row, readably. cfg_candidate_rule is
+# grouped by kind+count instead (below) — individual accept/reject Strong's codes would make the
+# list unreadable at real volume (289 rows in one kind alone).
+_INACTIVE_LABEL = {
+    "cfg_setting": "key",
+    "cfg_step": "work_package || '/' || step",
+    "cfg_work_package": "name",
+    "cfg_write_grant": "writer || ' -> ' || table_name",
+    "cfg_report": "step",
+    "cfg_report_section": "step || '/' || section_key",
+    "cfg_report_csv_table": "step || '/' || table_name",
+    "cfg_enum": "name || '=' || value",
+    "cfg_on_fail": "step || '/' || condition",
+    "cfg_status_flow": "entity || '/' || status",
+    "cfg_book_order": "book",
+    "cfg_api": "name",
+    "cfg_connection": "key",
+}
+
+
+def _inactive_configs(q) -> list[str]:
+    """Every deactivated config row, escalation #310 — DEACTIVATED, not deleted: excluded from
+    configmaint.validate's coherence/orphan/justification checks (see cfgquality.py), but listed
+    here in full so nothing goes quietly missing. cfg_candidate_rule is summarised by kind+count
+    (individual Strong's codes at real volume would swamp the report, not inform it)."""
+    lines: list[str] = []
+    total_rows = 0
+    total_tables = 0
+    for table, expr in _INACTIVE_LABEL.items():
+        rows = q(f'SELECT {expr} AS label FROM "{table}" WHERE inactive=1 ORDER BY label')
+        if not rows:
+            continue
+        total_rows += len(rows)
+        total_tables += 1
+        lines.append(f"- **{table}** ({len(rows)}): " + ", ".join(f"`{r['label']}`" for r in rows))
+    cand = q("SELECT kind, COUNT(*) n FROM cfg_candidate_rule WHERE inactive=1 GROUP BY kind "
+             "ORDER BY kind")
+    if cand:
+        total_rows += sum(r["n"] for r in cand)
+        total_tables += 1
+        lines.append("- **cfg_candidate_rule** (by kind): "
+                     + ", ".join(f"{r['kind']}={r['n']}" for r in cand))
+    return [f"**Inactive configs** ({total_rows} row(s) across {total_tables} table(s)) — "
+            f"deactivated, not deleted; excluded from validation above:"] + (
+        lines if lines else ["_(none)_"])
+
+
 def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH) -> pathlib.Path:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
@@ -89,6 +145,7 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
     S += ["", f"**Missing report paths** ({len(missing_report_paths)}) — a quality-check step with "
              f"nowhere for its findings to persist (governance.reports_must_persist violation):"]
     S += ["- " + m for m in missing_report_paths] if missing_report_paths else ["_(none)_"]
+    S += [""] + _inactive_configs(q)
     sections["findings"] = S
 
     sections["connection"] = _table(["key", "value"], [[r["key"], r["value"]] for r in q(
