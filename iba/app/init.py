@@ -5,7 +5,8 @@ The startup sequence, idempotent:
   2. load the config into the DB if it is not already there (or --reload to reseed)
   3. build the data tables from the config if they are missing (or --reset to rebuild)
   4. pre-flight STEP — up AND answering with the tagged module
-  5. print the status
+  5. orient on BUILD.md + GOVERNANCE.md — what's built, and how config governs it
+  6. print the status
 
 Run it before the first run of a session:
     python -m iba.app.init            # prepare + status (idempotent)
@@ -16,11 +17,24 @@ Run it before the first run of a session:
 from __future__ import annotations
 
 import argparse
+import pathlib
 import sqlite3
 import sys
 
 from .lib.cfg import Cfg, DB_PATH
 from .lib import cfgload, db as dbmod
+
+APP_DIR = pathlib.Path(__file__).resolve().parent
+
+
+def _doc_orientation(path: pathlib.Path) -> str:
+    """First heading + first blockquote line of a doc — enough to orient without dumping it."""
+    if not path.exists():
+        return f"MISSING — expected at {path}"
+    lines = path.read_text(encoding="utf-8").splitlines()
+    heading = next((l.lstrip("#").strip() for l in lines if l.startswith("#")), path.name)
+    blurb = next((l[2:].strip() for l in lines if l.startswith(">")), "")
+    return f"{heading} — {blurb}"
 
 
 def _config_loaded() -> bool:
@@ -86,6 +100,12 @@ def main() -> int:
         step_ok = False
 
     cfg.close()
+
+    # 5. orientation — read before touching code or config; not a substitute for reading them in full
+    print("\n  orientation (read before making changes):")
+    print(f"    BUILD.md      {_doc_orientation(APP_DIR / 'BUILD.md')}")
+    print(f"    GOVERNANCE.md {_doc_orientation(APP_DIR / 'GOVERNANCE.md')}")
+
     print("\nREADY." if step_ok else "\nREADY (config + DB) — waiting on STEP.")
     print("  first run:  iba\\app\\ps\\New-Word.ps1 -Word <word> -Source \"<why>\"")
     return 0

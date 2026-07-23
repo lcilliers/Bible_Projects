@@ -21,6 +21,7 @@ from .lib.cfg import Cfg
 from .lib.db import Db
 from .lib.stepapi import Step
 from .lib.words import normalise
+from .lib import dbsnapshot
 from .handlers.base import Ctx, Outcome
 
 # path -> what the run does + the process exit code
@@ -62,6 +63,11 @@ def _scope(params: dict) -> str:
 def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
     if db.get("run", run_id=run_id):
         return
+    # a real DB file snapshot, once per NEW run (not on resume) — the pre-write rollback point
+    # this app didn't have until a candidate.load bug found the gap the hard way, 2026-07-22.
+    # IBA_NO_SNAPSHOT=1 skips it for a tight loop (e.g. a book-by-book sweep), same escape hatch
+    # the legacy engine's own _apply_* snapshotting uses.
+    dbsnapshot.snapshot(f"{package}-{run_id}")
     _grant(cfg, "run")
     db.write("run", {
         "run_id": run_id, "work_package": package, "params": json.dumps(params),
@@ -97,9 +103,14 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     # act on the path
     if path == "pause-continue" and outcome.escalation:
         e = outcome.escalation
-        # idempotent: do not raise a duplicate if one is already pending for (word, step)
-        already = db.rows("SELECT id FROM escalation WHERE lower(word)=lower(?) AND at_step=? "
-                          "AND state='raised'", (ctx.word, step_id))
+        # idempotent: do not raise a duplicate if THIS run already has one pending at this step.
+        # Keyed on run_id, not (word, step): a word-less run (every config/quality-check step —
+        # configmaint.propose, candidate.validate, ...) has ctx.word == "" for every invocation, so
+        # keying on word alone silently treated any second concurrent proposal as a "duplicate" of
+        # the first and never wrote its escalation row at all (found 2026-07-22, proposing two
+        # governance settings back to back — the run still paused, but only one escalation existed).
+        already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
+                          "AND state='raised'", (run_id, step_id))
         if not already:
             _grant(cfg, "escalation")
             db.write("escalation", {
@@ -111,9 +122,17 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)
-        # close the run when the LAST step in the sequence completes on a continue path
+        # Close the run when it's actually finished. For a CHAINED work package (every step runs
+        # under one run_id in one PS invocation — new-word, set-candidates, build-passages), that
+        # means the LAST step in the cfg_step sequence. For a NON-chained package (each step
+        # invoked independently, one per run_id — configuration-maintenance, reports, candidate-
+        # quality, passage-quality, candidate-curation), a standalone step can never BE the last
+        # step of a multi-step registration it only ever partially executes — it is done as soon
+        # as IT resolves on a continue path. Found 2026-07-22: the old "last-in-sequence-only"
+        # rule left 185 runs stuck 'paused'/'running' forever despite being fully resolved — see
+        # cfg_work_package.chained / migration/add_work_package_chained_column.py.
         seq = [r["step"] for r in cfg.sequence(package)]
-        if seq and step_id == seq[-1]:
+        if not cfg.is_chained(package) or (seq and step_id == seq[-1]):
             db.update("run", {"run_id": run_id}, state="done", ended_at=_now(),
                       outcome=message or "complete")
             if ctx.word:                                   # post-delta only for scoped runs

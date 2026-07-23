@@ -3,11 +3,14 @@
     Start the IBA app: prepare the environment and report ready.
 
 .DESCRIPTION
-    The session startup. Run this once when you begin, before any word run. It:
+    The session startup. Run this once when you begin, before any word run — and, per CLAUDE.md,
+    on opening this project at all, before any IBA work. It:
       - checks Python and the one dependency (requests) are available,
       - validates + loads the config into the DB (idempotent),
       - builds the data tables if missing,
       - pre-flights STEP (up and answering with the tagged module),
+      - surfaces BUILD.md (what's built) + GOVERNANCE.md (how config governs the code) so you
+        (or an agent) don't have to reconstruct the app's shape from scratch each session,
       - prints READY.
 
     The app needs NO .env and NO secrets: STEP is the local server named in config,

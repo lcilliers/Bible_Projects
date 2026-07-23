@@ -42,7 +42,16 @@ def _write(ctx: Ctx, writer: str, table: str, row: dict, upsert=True):
 
 def _split_def(ctx: Ctx, medium_def: str) -> tuple[str, str]:
     marker = ctx.cfg.setting("meaning.head_marker", ": ")
-    d = (medium_def or "").strip()
+    # Found 2026-07-21: for a subset of vocabInfos entries (mostly sub-lettered codes, e.g.
+    # H0639G/H/I), STEP's mediumDef separates tree lines with literal '<br>' tags instead of a
+    # real newline. partition("\n") then finds nothing, so the WHOLE marker-stripped remainder
+    # (head text + <br>-joined tree, unsplit) landed in `head` — and `tree` came back empty, so
+    # strong_meaning_tree was never populated for these lemmas either. Normalising <br> to \n
+    # first fixes both. 228/3463 strong_sense rows were affected; see migration/
+    # repair_strong_sense_head.py for the one-off repair of already-fetched strongs. Found
+    # 2026-07-21 (later same day): 242 tree rows still used the uppercase '<BR>' variant, missed
+    # by a case-sensitive match — made case-insensitive here.
+    d = re.sub(r"<br\s*/?>", "\n", (medium_def or ""), flags=re.IGNORECASE).strip()
     if d.startswith(marker.strip()):
         head, _, tree = d[len(marker.strip()):].strip().partition("\n")
         return head.strip(), tree.strip()

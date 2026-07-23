@@ -63,7 +63,18 @@ CFG_DDL = [
         writer TEXT, table_name TEXT, PRIMARY KEY (writer, table_name))""",
 
     """CREATE TABLE cfg_work_package (
-        name TEXT PRIMARY KEY, ps_script TEXT, runs_over TEXT)""",
+        name TEXT PRIMARY KEY, ps_script TEXT, runs_over TEXT, chained INTEGER DEFAULT 0)""",
+    # chained=1: every step runs under one run_id in one PS invocation (its PS wrapper `foreach`s
+    # the whole cfg_step sequence) — run.py's dispatcher only marks 'done' at the LAST step.
+    # chained=0: each step is invoked independently, one per run_id — 'done' fires on that step's
+    # own first ok/report-continue/self-heal, regardless of ordinal position. Added 2026-07-22
+    # (migration/add_work_package_chained_column.py) after 185 runs were found stuck 'paused'/
+    # 'running' forever: the old "done only at last-in-sequence" logic never fires for a
+    # standalone step, which by definition can never BE the last step of a multi-step
+    # registration it only ever partially executes. NOTE: run.json (the JSON seed this table is
+    # normally loaded from) does not currently exist at its live path to carry a `chained` field
+    # per package — this DDL is ready for it, but the seed itself is not yet rebuilt; the
+    # migration set the live values directly.
 
     """CREATE TABLE cfg_step (
         work_package TEXT, ordinal INTEGER, step TEXT,
@@ -167,8 +178,8 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
 
     # ── run / sequence ──
     for wpname, wp in run["work_packages"].items():
-        conn.execute("INSERT INTO cfg_work_package VALUES (?,?,?)",
-                     (wpname, wp.get("ps_script"), wp.get("runs_over")))
+        conn.execute("INSERT INTO cfg_work_package VALUES (?,?,?,?)",
+                     (wpname, wp.get("ps_script"), wp.get("runs_over"), 1 if wp.get("chained") else 0))
         for i, s in enumerate(wp["sequence"]):
             conn.execute("INSERT INTO cfg_step VALUES (?,?,?,?,?,?)",
                          (wpname, i, s["step"], s["handler"], s.get("scope"), s.get("does")))
